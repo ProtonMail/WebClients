@@ -366,6 +366,9 @@
       "Explore other ${ BRAND_NAME } plans": [
         "浏览其他 ${ BRAND_NAME } 账户等级"
       ],
+      "Explore other plans": [
+        "浏览其他套餐"
+      ],
       "Export": [
         "导出"
       ],
@@ -1223,6 +1226,14 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "将电子邮件工作效率提升到新水平。让 ${ BRAND_NAME } Scribe 帮您撰写、回复和校对电子邮件。"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "取消订阅"
+      ],
+      "Keep subscription": [
+        "继续订阅"
       ]
     },
     "Badge for domain": {
@@ -3008,6 +3019,11 @@
         "优先支持"
       ]
     },
+    "Easy switch": {
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "您正在将来自${ MAX_SYNC_FREE_USER }个外部账户的电子邮件转发至${ MAIL_APP_NAME }。"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "文本字段可选。您在本表中提供的信息只会出现在今后开具的发票上，不会影响现有发票。"
@@ -3279,6 +3295,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "目前付款不可用，请稍后再试"
+      ],
+      "Permissions request failed.": [
+        "权限请求失败。"
       ],
       "Please configure a custom domain before adding addresses.": [
         "添加地址前请先配置自有域名。"
@@ -3827,6 +3846,9 @@
     "Features: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
         "随时随地访问流媒体服务内容，包括 Netflix、Disney+、Prime Video 等"
+      ],
+      "Secure Core servers route your traffic through 2 VPN servers for extra security": [
+        "Secure Core 服务器通过 2 个 VPN 服务器路由您的流量，以提供额外安全。"
       ]
     },
     "fido2: Action": {
@@ -4658,6 +4680,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "具有专用 IP 地址的专用服务器可以添加到专用网关，以实现微调的访问控制。"
       ],
+      "Dedicated VPN servers": [
+        "专用 VPN 服务器"
+      ],
       "default email address": [
         "首选邮箱地址"
       ],
@@ -4883,6 +4908,9 @@
       "Free forever": [
         "永久免费"
       ],
+      "Gain visibility across your organization": [
+        "提高您组织内部的可见度"
+      ],
       "Gateways": [
         "网关"
       ],
@@ -5096,6 +5124,9 @@
       "Learn more": [
         "了解详情"
       ],
+      "Learn more about Activity Monitor": [
+        "详细了解活动监视器"
+      ],
       "Learn more about Gateways": [
         "了解网关"
       ],
@@ -5221,6 +5252,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "组织中的专用 VPN 服务器数量"
       ],
       "Numbers": [
         "数字"
@@ -6199,6 +6233,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "您将能够立即将这些服务器添加到另一个网关。"
@@ -7316,9 +7353,6 @@
       ],
       "Sign in success (awaiting second factor)": [
         "登录成功（等待 2FA）"
-      ],
-      "Sign in success (awaiting verify)": [
-        "登录成功（待验证）"
       ],
       "Sign out": [
         "登出"
@@ -8573,8 +8607,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } 优惠今天到期！"
       ],
+      "Don’t show this again": [
+        "不再显示此内容"
+      ],
       "Don’t show this offer again": [
         "不再显示此优惠"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "开通 ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "仅需 ${ pricingTitle } 即可获得 Drive Plus"
@@ -8628,9 +8668,20 @@
         "您的订阅即将续订"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "已加密的密码管理器"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 多项高级功能"
+      ],
+      "500 GB secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "Advanced threat protection": [
+        "高级威胁保护"
       ],
       "Custom email domain": [
         "自定义电子邮件域"
@@ -8652,6 +8703,9 @@
       ],
       "Storage": [
         "存储"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "遍布 110 多个国家/地区的超快 VPN 服务器"
       ]
     },
     "Onboarding": {
@@ -9042,6 +9096,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "银行转账"
       ],
@@ -9144,6 +9201,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "您将从您选定的付款方式收取 ${ amountToCharge } 费用。"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
@@ -9370,6 +9430,9 @@
     "Protection type": {
       "Blocked": [
         "已拦截"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "设备验证"
@@ -10064,8 +10127,20 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "安全浏览"
+      ],
+      "Get unlimited aliases": [
+        "获取无限量邮箱别名"
+      ],
       "Go to subscription plans": [
         "查看账户等级"
+      ],
+      "Keep passwords safe": [
+        "确保密码安全"
+      ],
+      "Unblock streaming content": [
+        "解锁流媒体内容"
       ],
       "Upgrade": [
         "升级账户"
@@ -10143,6 +10218,15 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "访问世界范围内的流媒体服务"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "获得 500 GB 以安全地存储您的所有文件和照片"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "使用 Sentinel 保护您的账户免受威胁"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "一次性开通两年 ${ planName } 更加优惠"
       ]
@@ -10987,6 +11071,9 @@
       ],
       "Address added": [
         "地址已添加"
+      ],
+      "Address successfully added": [
+        "地址已成功添加"
       ],
       "Administrator privileges restored": [
         "管理员权限已恢复"
@@ -12408,6 +12495,14 @@
       ],
       "Refund": [
         "退款"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/每月"
+      ],
+      "Only": [
+        "仅"
       ]
     },
     "unprivatization": {

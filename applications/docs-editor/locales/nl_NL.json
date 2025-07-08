@@ -442,6 +442,9 @@
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Er is een fout opgetreden bij het verwerken van wijzigingen in het document. Laad de pagina opnieuw en probeer het nogmaals."
+      ],
       "Tried to import Sheet data into Lexical": [
         "Probeerde Sheet gegevens te importeren in Lexical"
       ],
@@ -782,6 +785,71 @@
         "Invoegen"
       ]
     },
+    "sheets_2025:Spreadsheet editor more formats menu": {
+      "$ US Dollar": [
+        "$ Amerikaanse dollar"
+      ],
+      "Accounting": [
+        "Boekhouding"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Chinese Yuan"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Currency rounded": [
+        "Afgeronde valuta"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date time": [
+        "Datum en tijd"
+      ],
+      "Duration": [
+        "Duur"
+      ],
+      "Financial": [
+        "Financieel"
+      ],
+      "General": [
+        "Algemeen"
+      ],
+      "Long date": [
+        "Lange datum"
+      ],
+      "More currency": [
+        "Meer valuta"
+      ],
+      "Number": [
+        "Getal"
+      ],
+      "Percent": [
+        "Procent"
+      ],
+      "Plain text": [
+        "Platte tekst"
+      ],
+      "Scientific": [
+        "Wetenschappelijk"
+      ],
+      "Time": [
+        "Tijd"
+      ],
+      "£ Pound": [
+        "£ Pond"
+      ],
+      "¥ Yen": [
+        "¥ Yen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Roepie"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Vet"
@@ -791,6 +859,9 @@
       ],
       "Decrease decimal places": [
         "Aantal decimalen verkleinen"
+      ],
+      "Decrease font size": [
+        "Lettergrootte verkleinen"
       ],
       "Default (${ defaultFont })": [
         "Standaard (${ defaultFont })"
@@ -804,8 +875,14 @@
       "Increase decimal places": [
         "Aantal decimalen vergroten"
       ],
+      "Increase font size": [
+        "Lettergrootte vergroten"
+      ],
       "Italic": [
         "Schuin"
+      ],
+      "More formats": [
+        "Meer indelingen"
       ],
       "Redo": [
         "Opnieuw uitvoeren"

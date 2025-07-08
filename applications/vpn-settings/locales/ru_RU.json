@@ -697,7 +697,7 @@
         "Выбрать город ${ city }"
       ],
       "Select country": [
-        "Выберите страну"
+        "Выбрать страну"
       ],
       "Select country ${ country }": [
         "Выбрать страну ${ country }"
@@ -1074,6 +1074,45 @@
         "Новое письмо"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "200 GB storage": [
+        "200 ГБ хранилища"
+      ],
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Protect up to 10 devices": [
+        "Защитите до 10 устройств"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Stream your favorite content": [
+        "Смотрите любимый контент"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Используйте свой собственный домен электронной почты"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем."
@@ -1086,6 +1125,9 @@
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
       ],
+      "free for 14 days": [
+        "бесплатно 14 дней"
+      ],
       "on ${ formattedDate }": [
         "в ${ formattedDate }"
       ]
@@ -1096,6 +1138,14 @@
       ],
       "Amount due now": [
         "Сумма к оплате сейчас"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
+      "Keep subscription": [
+        "Продолжить подписку"
       ]
     },
     "Badge for domain": {
@@ -2835,6 +2885,9 @@
       "Download for Linux": [
         "Скачать для Linux"
       ],
+      "Download for macOS": [
+        "Скачать для macOS"
+      ],
       "Download for Windows": [
         "Скачать для Windows"
       ],
@@ -3061,6 +3114,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
+      ],
+      "Error publishing changes": [
+        "Ошибка при публикации изменений"
       ],
       "Failed to load the STL preview": [
         "Не удалось загрузить предварительный просмотр STL"
@@ -4034,6 +4090,9 @@
       "Organization key fingerprint": [
         "Отпечаток ключа организации"
       ],
+      "Payment details": [
+        "Информация платежа"
+      ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Экономьте много на лучших предложениях ${ VPN_APP_NAME }"
       ],
@@ -4768,6 +4827,9 @@
       ],
       "Enable auto-renew to keep access to your premium features.": [
         "Включите автообновление для сохранения доступа к вашим платным функциям."
+      ],
+      "Enable detailed events": [
+        "Включить подробные события"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Включите единый вход для обеспечения безопасности вашей организации"
@@ -6635,7 +6697,7 @@
         "Размещение папки"
       ],
       "Gateway name": [
-        "Имя Шлюза"
+        "Название шлюза"
       ],
       "Gift code": [
         "Подарочный код"
@@ -6876,6 +6938,9 @@
       ],
       "Search": [
         "Поиск"
+      ],
+      "Search for a name or email": [
+        "Поиск имени или электронной почты"
       ],
       "Second password": [
         "Второй пароль"
@@ -7284,11 +7349,62 @@
       ]
     },
     "Log event": {
+      "Account password change": [
+        "Смена пароля аккаунта"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Ошибка аутентификации (не удалось пройти проверку вторым фактором)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Ошибка аутентификации (неправильный пароль)"
+      ],
+      "Authentication success": [
+        "Аутентификация прошла успешно"
+      ],
+      "Mailbox password change": [
+        "Смена пароля почтового ящика"
+      ],
       "Password reset": [
         "Сброс пароля"
       ],
+      "Second factor disabled (authenticator app)": [
+        "Второй фактор отключён (приложение для аутентификации)"
+      ],
+      "Second factor disabled (security key)": [
+        "Второй фактор отключён (ключ безопасности)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Второй фактор включён (приложение для аутентификации)"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "Вход заблокирован (из-за злоупотреблений)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Не удалось войти (ошибка двухфакторной аутентификации)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Не удалось войти (неверный пароль)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Вход запрещен (из-за злоупотребления)"
+      ],
+      "Sign in success": [
+        "Вход выполнен успешно"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Вход выполнен успешно (ожидание двухфакторной аутентификации)"
+      ],
       "Sign out": [
         "Bыйти"
+      ],
+      "Two password mode disabled": [
+        "Двухпарольный режим отключён"
+      ],
+      "Two password mode enabled": [
+        "Двухпарольный режим включён"
+      ],
+      "Unknown": [
+        "Неизвестное"
       ]
     },
     "Log preference": {
@@ -7990,10 +8106,10 @@
     },
     "new_plans: feature highlight": {
       "${ admins } admin": [
-        "${ admins }администратор",
-        "${ admins }администратора",
-        "${ admins }администраторов",
-        "${ admins }администраторов"
+        "${ admins } администратор",
+        "${ admins } администратора",
+        "${ admins } администраторов",
+        "${ admins } администраторов"
       ],
       "${ users } user": [
         "${ users } пользователь",
@@ -8588,8 +8704,14 @@
       "${ pricingTitle } offer expires today!": [
         "Предложение ${ pricingTitle } истекает сегодня!"
       ],
+      "Don’t show this again": [
+        "Больше не показывать"
+      ],
       "Don’t show this offer again": [
         "Больше не показывать это предложение"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Получить ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Попробуйте Drive Plus всего за ${ pricingTitle }"
@@ -8643,9 +8765,17 @@
         "Ваша подписка скоро обновится"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 дополнительных премиум-функций"
+      ],
+      "500 GB secure storage": [
+        "500 ГБ защищённого хранилища"
       ],
       "Custom email domain": [
         "Пользовательский домен электронной почты"
@@ -8672,6 +8802,11 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Добро пожаловать в ${ appName }"
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "Продолжить"
       ]
     },
     "Option": {
@@ -9022,6 +9157,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Банковский перевод"
       ],
@@ -9365,6 +9503,15 @@
     "Protection type": {
       "Blocked": [
         "Заблокирован"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Ok": [
+        "OK"
+      ],
+      "Unknown": [
+        "Неизвестное"
       ]
     },
     "Recovery Email": {
@@ -9780,7 +9927,7 @@
     },
     "session_recovery:available:notification": {
       "Password saved": [
-        "Пароль сохранен"
+        "Пароль сохранён"
       ]
     },
     "session_recovery:available:title": {
@@ -9956,7 +10103,7 @@
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Сбросить пароль"
+        "Сброс пароля"
       ]
     },
     "session_recovery:sign_out:title": {
@@ -10106,6 +10253,9 @@
       ]
     },
     "specialoffer: Link": {
+      "Get unlimited aliases": [
+        "Получить неограниченное число псевдонимов"
+      ],
       "Go to subscription plans": [
         "Перейти к тарифам"
       ],
@@ -12130,6 +12280,9 @@
       "Subscription": [
         "Подписка"
       ],
+      "Subscription canceled": [
+        "Подписка отменена"
+      ],
       "Successfully created ${ n } user account": [
         "Успешно создан ${ n } аккаунт пользователя",
         "Успешно создано ${ n } аккаунта пользователя",
@@ -12498,6 +12651,11 @@
         "Возврат средств"
       ]
     },
+    "Unlimited offer": {
+      "Only": [
+        "Только"
+      ]
+    },
     "unprivatization": {
       "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
         "**Административный доступ ожидает:** Мы отправили запрос этому пользователю разрешить любому администратору управление его учетной записью."
@@ -12784,8 +12942,8 @@
         "${ n } подключения к VPN"
       ],
       "${ numberOfCountries } country": [
+        "${ numberOfCountries } страна",
         "${ numberOfCountries } страны",
-        "${ numberOfCountries } стран",
         "${ numberOfCountries } стран",
         "${ numberOfCountries } стран"
       ],

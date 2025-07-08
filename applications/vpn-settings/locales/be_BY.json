@@ -994,7 +994,7 @@
     },
     "Address action": {
       "Allow unsigned mail": [
-        "Дазвол. непадпіс. пошту"
+        "Дазволіць непадпісаную пошту"
       ],
       "Delete address": [
         "Выдаліць адрас"
@@ -4689,7 +4689,7 @@
         "Вы сапраўды хочаце выдаліць усіх удзельнікаў з гэтай групы?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "Вы ўпэўнены, што хочаце выдаліць дамен ${ boldDomain }?"
+        "Вы сапраўды хочаце выдаліць дамен ${ boldDomain }?"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Папрасіце адміністратара сваёй арганізацыі наладзіць шлюзы."
@@ -4725,7 +4725,7 @@
         "Перад стварэннем гэтага адраса, вам неабходна ўвесці пароль і стварыць для яго ключы шыфравання."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
+        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Каб вы маглі атрымліваць электронныя лісты для адрасоў вашага карыстальніцкага дамена ў ${ MAIL_APP_NAME }, вам спатрэбіцца дадаць наступныя два запісы MX у кансоль DNS (якія размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен). У нашай базе ведаў вы зможаце знайсці прыклад і некаторыя карысныя парады ${ kbLink }."
@@ -5427,7 +5427,7 @@
         "Шлюзы пакуль адсутнічаюць"
       ],
       "No payment is required at this time.": [
-        "Зараз аплата не патрабуецца."
+        "У дадзены момант аплата не патрабуецца."
       ],
       "No results found": [
         "Нічога не знойдзена"
@@ -6719,7 +6719,7 @@
         "Папрасіць удзельнікаў наладзіць 2ФА"
       ],
       "Assertion Consumer Service URL": [
-        "URL-адрас службы сцверджання кліентаў (ACS)"
+        "URL-адрас сэрвісу ACS (Assertion Consumer Service)"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -7620,7 +7620,7 @@
       "Sign in success (awaiting second factor)": [
         "Паспяховы ўваход (чаканне другога фактару)"
       ],
-      "Sign in success (awaiting verify)": [
+      "Sign in success (awaiting verification)": [
         "Паспяховы ўваход (чаканне праверкі)"
       ],
       "Sign out": [
@@ -8764,7 +8764,7 @@
         "Палепшыце прастору сховішча да ${ bundleStorage } на карыстальніка"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
+        "Павысце агульны аб'ём свайго сховішча да ${ bundleStorage }"
       ],
       "Browser extension": [
         "Пашырэнне для браўзера"
@@ -9504,9 +9504,6 @@
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Для SEPA прымаюцца толькі еўра. Ваша валюта зменена. Выкарыстоўвайце селектар, каб скінуць свой выбар."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
@@ -9575,6 +9572,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
@@ -11332,13 +11332,13 @@
         "Любыя карыстальніцкія дамены электроннай пошты будуць адключаны"
       ],
       "Automatic email forwarding": [
-        "Аўтаматычная перасылка электроннай пошты"
+        "Аўтаперасылка электроннай пошты"
       ],
       "Back up photos from your devices": [
         "Рэзерваваць фатаграфіі з вашай прылады"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты ў вашым уласным дамене."
+        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты са сваім уласным даменам."
       ],
       "Cancel subscription": [
         "Скасаваць падпіску"
@@ -11535,7 +11535,7 @@
         "і яшчэ 15 прэміяльных функцый"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+        "Аўтаперасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Папярэджанне ўцечкі даных ${ strongArgument }"
@@ -11573,10 +11573,10 @@
         "Вы ўпэўнены?"
       ],
       "Auto-pay is disabled": [
-        "Аўтаматычная аплата адключана"
+        "Аўтааплата адключана"
       ],
       "Auto-pay is enabled": [
-        "Аўтаматычная аплата ўключана"
+        "Аўтааплата ўключана"
       ],
       "Disable": [
         "Адключыць"
@@ -13404,10 +13404,10 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах"
       ],
       "Auto-selects from ${ numberOfCountries } country": [
-        "Аўтаматычны выбар з ${ numberOfCountries } краіны",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін"
+        "Аўтавыбар з ${ numberOfCountries } краіны",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Серверы ў больш, чым ${ numberOfCountries } краіне",

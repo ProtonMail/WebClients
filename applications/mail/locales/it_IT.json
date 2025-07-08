@@ -1156,9 +1156,6 @@
       "Save": [
         "Salva"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Salva in ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "Salvataggio${ ellipsis }"
       ],
@@ -1939,6 +1936,37 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze Lumo durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_USERS } utenti durante il periodo di prova."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Non puoi aggiungere domini personalizzati durante il periodo di prova."
+      ],
+      "You have reached the trial limit.": [
+        "Hai raggiunto il limite della prova."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Annulla l'abbonamento"
+      ],
+      "Keep subscription": [
+        "Mantieni l'abbonamento"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "La tua prova gratuita termina tra ${ timeRemaining }."
       ]
     },
     "bf2023: Deal details": {
@@ -4850,8 +4878,8 @@
       "Username must end with a letter or digit": [
         "Il nome utente deve terminare con una lettera o un numero/"
       ],
-      "Wrong second password": [
-        "Seconda password errata"
+      "Wrong password": [
+        "Password errata"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Non puoi inviare un'email a più di ${ maxContacts } destinatario",
@@ -6257,10 +6285,6 @@
         "${ messagesNotAuthorizedToMove } messaggio non può essere spostato.",
         "${ messagesNotAuthorizedToMove } messaggi non possono essere spostati."
       ],
-      "${ n } newsletter": [
-        "${ n } newsletter",
-        "${ n } newsletter"
-      ],
       "${ n } unread conversation": [
         "${ n } conversazione non letta",
         "${ n } conversazioni non lette"
@@ -6354,9 +6378,9 @@
         "${ trackersCount } tracker bloccato",
         "${ trackersCount } tracker bloccati"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "Abbonamento a ${ unreadCount } newsletter",
-        "Abbonamento a ${ unreadCount } newsletter"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } newsletter",
+        "${ unreadCount } newsletter"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } messaggio programmato",
@@ -7316,6 +7340,9 @@
       ],
       "New": [
         "Nuovo"
+      ],
+      "newsletter": [
+        "newsletter"
       ],
       "No action selected": [
         "Nessuna azione selezionata"
@@ -9205,9 +9232,8 @@
       "Mark as": [
         "Segna come"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "${ unreadCount } messaggio é segnato come letto.",
-        "${ unreadCount } messaggi sono segnati come letti."
+      "Marked as read": [
+        "Segnato come letto"
       ],
       "Message:": [
         "Messaggio:"
@@ -9227,17 +9253,14 @@
       "Move to Inbox": [
         "Sposta nella posta in arrivo"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "${ count } messaggio è spostato a ${ labelName }.",
-        "${ count } messaggi sono stati spostati in ${ labelName }."
+      "Moved to ${ labelName }": [
+        "Spostato in ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "${ count } messaggio è spostato nell'archivio.",
-        "${ count } messaggi sono spostati nell'archivio."
+      "Moved to Archive": [
+        "Spostato nell’archivio"
       ],
-      "Moved ${ count } message to Trash.": [
-        "${ count } messaggio é spostato nel cestino.",
-        "${ count } messaggi sono spostati nel cestino."
+      "Moved to Trash": [
+        "Spostato nel cestino"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
@@ -9560,11 +9583,14 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Le newsletter a cui annulli l'iscrizione appariranno qui."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Le newsletter o mailing list a cui annulli l'iscrizione appariranno qui."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Visualizza e gestisci qui gli abbonamenti alla newsletter e alla mailing list."
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Non hai nessun abbonamento a newsletter attiva o a mailing list."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Non hai nessun abbonamento a newsletter o a mailing list."
       ]
     },
     "Landmarks": {
@@ -11688,9 +11714,6 @@
       "More plans are available in other currencies": [
         "Sono disponibili altri piani in altre valute"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Per i pagamenti SEPA è accettato solo l’euro. La tua valuta è stata modificata. Usa il selettore per ripristinare la tua scelta."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
       ],
@@ -11742,6 +11765,9 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
@@ -14484,17 +14510,20 @@
       "Night theme": [
         "Tema notte"
       ],
+      "No active newsletters": [
+        "Nessuna newsletter attiva"
+      ],
       "No attachment found": [
         "Nessun allegato trovato"
       ],
       "No breaches detected": [
         "Nessuna violazione di dati rilevata"
       ],
-      "No mail subscriptions": [
-        "Nessun abbonamento alle email"
-      ],
       "No need to empty the trash": [
         "Non c'è bisogno di svuotare il cestino"
+      ],
+      "No newsletters found": [
+        "Nessuna newsletter trovata"
       ],
       "No trackers found": [
         "Nessun tracker trovato"

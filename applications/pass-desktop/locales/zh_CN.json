@@ -1328,6 +1328,12 @@
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "“${ payload.itemName }” 项目被拒绝"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "“${ payload.itemName }” 更新被拒绝"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } 已阻止"
       ],
@@ -1849,6 +1855,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2659,6 +2668,9 @@
       "City": [
         "城市"
       ],
+      "Class": [
+        "类型"
+      ],
       "Clear clipboard after": [
         "在清除剪贴板后"
       ],
@@ -2748,6 +2760,9 @@
       ],
       "Display name": [
         "称呼"
+      ],
+      "Doctor": [
+        "医生"
       ],
       "Domain": [
         "域名"
@@ -2899,6 +2914,9 @@
       "Holder Name": [
         "持有人姓名"
       ],
+      "Hospital": [
+        "医院"
+      ],
       "Host": [
         "主机"
       ],
@@ -2971,6 +2989,9 @@
       "Issuing Country": [
         "签发国家/地区"
       ],
+      "Issuing State/Country": [
+        "签发国家/地区"
+      ],
       "Item ID": [
         "项目 ID"
       ],
@@ -2982,6 +3003,9 @@
       ],
       "Key fingerprint": [
         "指纹识别"
+      ],
+      "Key type": [
+        "密钥类型"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "快捷键：${ shortcut }"
@@ -3019,6 +3043,9 @@
       "License number": [
         "许可编号"
       ],
+      "License Number": [
+        "许可编号"
+      ],
       "Limited time": [
         "限时"
       ],
@@ -3052,17 +3079,29 @@
       "max views reached": [
         "达到最大浏览量"
       ],
+      "Medical Conditions": [
+        "医疗状况"
+      ],
       "Medical Record": [
         "医疗记录"
       ],
+      "Medications": [
+        "药剂"
+      ],
       "Member ID": [
         "成员编号"
+      ],
+      "Member Name": [
+        "成员名称"
       ],
       "Members": [
         "成员"
       ],
       "Membership": [
         "成员资格"
+      ],
+      "Membership ID": [
+        "成员编号"
       ],
       "Middle name": [
         "中间名（若有）"
@@ -3148,6 +3187,9 @@
       "Organization": [
         "机构"
       ],
+      "Organization Name": [
+        "组织名称"
+      ],
       "Other": [
         "其他"
       ],
@@ -3177,6 +3219,9 @@
       ],
       "Password history": [
         "密码历史记录"
+      ],
+      "Patient Name": [
+        "患者姓名"
       ],
       "Permissions": [
         "权限"
@@ -3252,6 +3297,9 @@
       ],
       "Recent": [
         "最近"
+      ],
+      "Record Number": [
+        "记录编号"
       ],
       "Reddit handle": [
         "Reddit 用户名"
@@ -3432,6 +3480,9 @@
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "在 ${ date } 或达到查看限制之前，都可以访问此项目。"
+      ],
+      "Tier/Level": [
+        "成员级别"
       ],
       "Tier/Status": [
         "级别/状态"
@@ -3805,6 +3856,18 @@
       ],
       "Add note": [
         "添加备注"
+      ],
+      "Add password": [
+        "添加密码"
+      ],
+      "Add private key": [
+        "添加私钥"
+      ],
+      "Add public key": [
+        "添加公钥"
+      ],
+      "Add SSID": [
+        "添加 SSID"
       ],
       "Add text": [
         "添加文本"
@@ -4549,6 +4612,11 @@
       ],
       "URL is invalid": [
         "网址无效"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "将项目移至"
       ]
     },
     "Warning": {

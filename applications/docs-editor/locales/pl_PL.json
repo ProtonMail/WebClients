@@ -442,6 +442,9 @@
       "Request timed out": [
         "Upłynął limit czasu żądania"
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Wystąpił błąd podczas przetwarzania aktualizacji dokumentu. Odśwież stronę i spróbuj ponownie."
+      ],
       "Tried to import Sheet data into Lexical": [
         "Próbowano zaimportować dane arkusza do Lexical"
       ],
@@ -710,11 +713,17 @@
       "Make a copy": [
         "Utwórz kopię"
       ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "Move to folder": [
         "Przenieś do folderu"
       ],
       "Move to trash": [
         "Przenieś do kosza"
+      ],
+      "New spreadsheet": [
+        "Nowy arkusz kalkulacyjny"
       ],
       "Open ${ DRIVE_APP_NAME }": [
         "Otwórz ${ DRIVE_APP_NAME }"
@@ -724,11 +733,50 @@
       ],
       "See version history": [
         "Zobacz historię wersji"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Wartości rozdzielone tabulatorami (.tsv)"
+      ],
+      "View recent spreadsheets": [
+        "Wyświetl ostatnie arkusze kalkulacyjne"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Komórki"
+      ],
+      "Chart": [
+        "Wykres"
+      ],
+      "Columns": [
+        "Kolumny"
+      ],
+      "Insert 1 column left": [
+        "Wstaw 1 kolumnę z lewej"
+      ],
+      "Insert 1 column right": [
+        "Wstaw 1 kolumnę z prawej"
+      ],
+      "Insert 1 row above": [
+        "Wstaw 1 wiersz powyżej"
+      ],
+      "Insert 1 row below": [
+        "Wstaw 1 wiersz poniżej"
+      ],
+      "Insert cells and shift down": [
+        "Wstaw komórki i przesuń w dół"
+      ],
+      "Insert cells and shift right": [
+        "Wstaw komórki i przesuń w prawo"
+      ],
       "Note": [
         "Notatka"
+      ],
+      "Rows": [
+        "Wiersze"
+      ],
+      "Sheet": [
+        "Arkusz"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar title": {
@@ -739,6 +787,71 @@
         "Wstaw"
       ]
     },
+    "sheets_2025:Spreadsheet editor more formats menu": {
+      "$ US Dollar": [
+        "$ Dolar amerykański"
+      ],
+      "Accounting": [
+        "Księgowość"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Juan chiński"
+      ],
+      "Currency": [
+        "Waluta"
+      ],
+      "Currency rounded": [
+        "Waluta zaokrąglona"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Date time": [
+        "Data i czas"
+      ],
+      "Duration": [
+        "Czas trwania"
+      ],
+      "Financial": [
+        "Finansowy"
+      ],
+      "General": [
+        "Ogólne"
+      ],
+      "Long date": [
+        "Długa data"
+      ],
+      "More currency": [
+        "Więcej walut"
+      ],
+      "Number": [
+        "Liczba"
+      ],
+      "Percent": [
+        "Procent"
+      ],
+      "Plain text": [
+        "Zwykły tekst"
+      ],
+      "Scientific": [
+        "Naukowy"
+      ],
+      "Time": [
+        "Czas"
+      ],
+      "£ Pound": [
+        "£ Funt"
+      ],
+      "¥ Yen": [
+        "¥ Jen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupia"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Pogrubienie"
@@ -746,8 +859,32 @@
       "Clear formatting": [
         "Wyczyść formatowanie"
       ],
+      "Decrease decimal places": [
+        "Zmniejsz miejsca dziesiętne"
+      ],
+      "Decrease font size": [
+        "Zmniejsz rozmiar czcionki"
+      ],
+      "Default (${ defaultFont })": [
+        "Domyślny (${ defaultFont })"
+      ],
+      "Format as currency": [
+        "Sformatuj jako walutę"
+      ],
+      "Format as percent": [
+        "Sformatuj jako procent"
+      ],
+      "Increase decimal places": [
+        "Zwiększ miejsca dziesiętne"
+      ],
+      "Increase font size": [
+        "Zwiększ rozmiar czcionki"
+      ],
       "Italic": [
         "Kursywa"
+      ],
+      "More formats": [
+        "Więcej formatów"
       ],
       "Redo": [
         "Ponów"

@@ -1160,9 +1160,6 @@
       "Save": [
         "Salvare"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Salvare în ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "Se salvează${ ellipsis }"
       ],
@@ -1941,6 +1938,19 @@
       ],
       "Sender verification passed": [
         "Destinatar verificat cu succes"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
+      "Keep subscription": [
+        "Păstrare abonament"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Perioada de probare se încheie peste ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -4864,8 +4874,8 @@
       "Username must end with a letter or digit": [
         "Numele de utilizator trebuie să se termine cu o literă sau cifră."
       ],
-      "Wrong second password": [
-        "Parola secundară nu este corectă."
+      "Wrong password": [
+        "Parolă greșită"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nu puteți trimite mesaje la mai mult de ${ maxContacts } destinatar.",
@@ -6314,11 +6324,6 @@
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } mesaje.",
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } de mesaje."
       ],
-      "${ n } newsletter": [
-        "${ n } buletin informativ",
-        "${ n } buletine informative",
-        "${ n } de buletine informative"
-      ],
       "${ n } unread conversation": [
         "${ n } conversație necitită",
         "${ n } conversații necitite",
@@ -6430,10 +6435,10 @@
         "Instrumente de urmărire blocate: ${ trackersCount }",
         "Instrumente de urmărire blocate: ${ trackersCount }"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "Abonamente buletine de știri: ${ unreadCount }",
-        "Abonamente buletine de știri: ${ unreadCount }",
-        "Abonamente buletine de știri: ${ unreadCount }"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } buletin informativ",
+        "${ unreadCount } buletine informative",
+        "${ unreadCount } de buletine informative"
       ],
       "${ unreadCount } scheduled message": [
         "S-a programat un mesaj.",
@@ -7416,6 +7421,9 @@
       ],
       "New": [
         "Nou"
+      ],
+      "newsletter": [
+        "buletin informativ"
       ],
       "No action selected": [
         "Nicio acțiune selectată"
@@ -9332,10 +9340,8 @@
       "Mark as": [
         "Marcare"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "Mesaje marcate ca fiind citite: ${ unreadCount }",
-        "Mesaje marcate ca fiind citite: ${ unreadCount }",
-        "Mesaje marcate ca fiind citite: ${ unreadCount }"
+      "Marked as read": [
+        "Marcare: citit"
       ],
       "Message:": [
         "Mesaj:"
@@ -9355,20 +9361,14 @@
       "Move to Inbox": [
         "Mutare în «Primite»"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "Mesaje mutate în ${ labelName }: ${ count }",
-        "Mesaje mutate în ${ labelName }: ${ count }",
-        "Mesaje mutate în ${ labelName }: ${ count }"
+      "Moved to ${ labelName }": [
+        "S-a mutat în ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "Mesaje mutate în arhivă: ${ count }",
-        "Mesaje mutate în arhivă: ${ count }",
-        "Mesaje mutate în arhivă: ${ count }"
+      "Moved to Archive": [
+        "S-a mutat în arhivă"
       ],
-      "Moved ${ count } message to Trash.": [
-        "Mesaje mutate în gunoi: ${ count }",
-        "Mesaje mutate în gunoi: ${ count }",
-        "Mesaje mutate în gunoi: ${ count }"
+      "Moved to Trash": [
+        "S-a mutat în gunoi"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Trebuie să aibă cel puțin ${ MIN_PASSWORD_LENGTH } caractere"
@@ -9691,11 +9691,14 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Buletinele informative de la care vă dezabonați vor apărea aici."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Buletinele informative sau listele de adrese de la care vă dezabonați vor apărea aici."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Aici vizualizați și gestionați abonamentele la buletine informative și la listele de adrese."
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Nu aveți buletine informative active sau abonamente la liste de adrese."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Nu aveți buletine informative sau abonamente la liste de adrese."
       ]
     },
     "Landmarks": {
@@ -11850,9 +11853,6 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Se acceptă doar euro pentru zona SEPA. Moneda a fost schimbată. Utilizați selectorul dacă doriți să remodificați."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
       ],
@@ -11908,6 +11908,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
@@ -14730,17 +14733,20 @@
       "Night theme": [
         "Temă noapte"
       ],
+      "No active newsletters": [
+        "Nu există buletine de știri active"
+      ],
       "No attachment found": [
         "Nu s-a găsit niciun atașament"
       ],
       "No breaches detected": [
         "Nu există divulgări"
       ],
-      "No mail subscriptions": [
-        "Nu sunt abonamente pe e-mail"
-      ],
       "No need to empty the trash": [
         "Nu trebuie să goliți gunoiul"
+      ],
+      "No newsletters found": [
+        "Nu există buletine informative"
       ],
       "No trackers found": [
         "Nu s-au găsit funcții de urmărire"

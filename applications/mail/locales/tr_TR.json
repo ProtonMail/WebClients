@@ -1150,9 +1150,6 @@
       "Save": [
         "Kaydet"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } üzerine kaydet"
-      ],
       "Saving${ ellipsis }": [
         "Kaydediliyor${ ellipsis }"
       ],
@@ -1936,6 +1933,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } Lumo koltuğuna sahip olabilirsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcıya sahip olabilirsiniz."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Deneme süresi boyunca özel alan adları ekleyemezsiniz."
+      ],
+      "You have reached the trial limit.": [
+        "Deneme limitine ulaştınız."
       ]
     },
     "bf2023: Deal details": {
@@ -4841,8 +4856,8 @@
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
-      "Wrong second password": [
-        "İkinci parola yanlış"
+      "Wrong password": [
+        "Parola yanlış"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz",
@@ -6248,10 +6263,6 @@
         "${ messagesNotAuthorizedToMove } ileti taşınamadı.",
         "${ messagesNotAuthorizedToMove } ileti taşınamadı."
       ],
-      "${ n } newsletter": [
-        "${ n } duyuru",
-        "${ n } duyuru"
-      ],
       "${ n } unread conversation": [
         "${ n } okunmamış yazışma",
         "${ n } okunmamış yazışma"
@@ -6344,10 +6355,6 @@
       "${ trackersCount } tracker blocked": [
         "${ trackersCount } izleyici engellendi",
         "${ trackersCount } izleyici engellendi"
-      ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } duyuru aboneliği",
-        "${ unreadCount } duyuru aboneliği"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } zamanlanmış ileti",
@@ -9184,10 +9191,6 @@
       "Mark as": [
         "Şöyle işaretlensin"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "${ unreadCount } ileti okunmuş olarak işaretlendi.",
-        "${ unreadCount } ileti okunmuş olarak işaretlendi."
-      ],
       "Message:": [
         "İleti:"
       ],
@@ -9205,18 +9208,6 @@
       ],
       "Move to Inbox": [
         "Gelen kutusuna taşı"
-      ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "${ count } ileti ${ labelName } içine taşındı.",
-        "${ count } ileti ${ labelName } içine taşındı."
-      ],
-      "Moved ${ count } message to Archive.": [
-        "${ count } ileti arşivlendi.",
-        "${ count } ileti arşivlendi."
-      ],
-      "Moved ${ count } message to Trash.": [
-        "${ count } ileti çöpe atıldı.",
-        "${ count } ileti çöpe atıldı."
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "En az ${ MIN_PASSWORD_LENGTH } karakterden oluşmalıdır"
@@ -9536,14 +9527,6 @@
       ],
       "To: ${ to }": [
         "Nereye: ${ to }"
-      ]
-    },
-    "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Aboneliğinden ayrıldığınız duyurular burada görüntülenir."
-      ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Duyuru ve e-posta listesi aboneliklerini buradan görüntüleyin-p ve yönetebilirsiniz."
       ]
     },
     "Landmarks": {
@@ -14378,9 +14361,6 @@
       ],
       "No breaches detected": [
         "Herhangi bir veri sızıntısı yok"
-      ],
-      "No mail subscriptions": [
-        "Herhangi bir e-posta listesi aboneliği yok"
       ],
       "No need to empty the trash": [
         "Çöpü boşaltmanız gerekmez"

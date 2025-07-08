@@ -1156,9 +1156,6 @@
       "Save": [
         "შენახვა"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }-ზე შენახვა"
-      ],
       "Saving${ ellipsis }": [
         "შენახვა${ ellipsis }"
       ],
@@ -1916,6 +1913,19 @@
       ],
       "Sender verification passed": [
         "გამომგზავნის შემოწმება წარმატებულია"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "გამოწერის გაუქმება"
+      ],
+      "Keep subscription": [
+        "გამოწერის შენარჩუნება"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -4801,8 +4811,8 @@
       "Username must end with a letter or digit": [
         "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
       ],
-      "Wrong second password": [
-        "არასწორი მეორე პაროლი"
+      "Wrong password": [
+        "არასწორი პაროლი"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
@@ -6208,10 +6218,6 @@
         "${ messagesNotAuthorizedToMove } შეტყობინების გადატანა შეუძლებელია.",
         "${ messagesNotAuthorizedToMove } შეტყობინების გადატანა შეუძლებელია."
       ],
-      "${ n } newsletter": [
-        "${ n } სიახლე",
-        "${ n } სიახლე"
-      ],
       "${ n } unread conversation": [
         "${ n } წაუკითხავი საუბარი",
         "${ n } წაუკითხავი საუბარი"
@@ -6299,9 +6305,9 @@
         "დაბლოკილია ${ trackersCount } ტრეკერი",
         "დაბლოკილია ${ trackersCount } ტრეკერი"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } სიახლის გამოწერა.",
-        "${ unreadCount } სიახლის გამოწერა."
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } სიახლე",
+        "${ unreadCount } სიახლე"
       ],
       "${ unreadCount } scheduled message": [
         "რიგშია ${ unreadCount } შეტყობინება",
@@ -7225,6 +7231,9 @@
       ],
       "New": [
         "ახალი"
+      ],
+      "newsletter": [
+        "სიახლე"
       ],
       "No action selected": [
         "ქმედება არჩეული არაა"
@@ -9066,9 +9075,8 @@
       "Mark as": [
         "დანიშვნა, როგორც"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "${ unreadCount } შეტყობინება მოინიშნა წაკითხულად.",
-        "${ unreadCount } შეტყობინება მოინიშნა წაკითხულად."
+      "Marked as read": [
+        "მონიშნულია წაკითხულად"
       ],
       "Message:": [
         "შეტყობინება:"
@@ -9088,17 +9096,14 @@
       "Move to Inbox": [
         "შემომავლებში გადატანა"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "${ count } შეტყობინება გადატანა საქაღალდეში ${ labelName }.",
-        "${ count } შეტყობინება გადატანა საქაღალდეში ${ labelName }."
+      "Moved to ${ labelName }": [
+        "გადატანილია ${ labelName }-ში"
       ],
-      "Moved ${ count } message to Archive.": [
-        "${ count } შეტყობინება გადატანილია არქივში.",
-        "${ count } შეტყობინება გადატანილია არქივში."
+      "Moved to Archive": [
+        "გადატანილია არქივში"
       ],
-      "Moved ${ count } message to Trash.": [
-        "${ count } შეტყობინება გადატანილია ნაგვის ყუთში.",
-        "${ count } შეტყობინება გადატანილია ნაგვის ყუთში."
+      "Moved to Trash": [
+        "გადატანილია ნაგვის ყუთში"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
@@ -9418,14 +9423,6 @@
       ],
       "To: ${ to }": [
         "მიმღები: ${ to }"
-      ]
-    },
-    "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "სიახლეები, რომლების გამოწერასაც გააუქმებთ, აქ გამოჩნდება."
-      ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "დაათვალიერეთ და მართეთ ახალი ამბები და დაგზავნის სიების გამოწერები აქ."
       ]
     },
     "Landmarks": {
@@ -14280,17 +14277,20 @@
       "Night theme": [
         "ღამის თემა"
       ],
+      "No active newsletters": [
+        "აქტიური სახლეების გარეშე"
+      ],
       "No attachment found": [
         "მიმაგრებული ფაილების გარეშე"
       ],
       "No breaches detected": [
         "გაჟონვები აღმოჩენილი არაა"
       ],
-      "No mail subscriptions": [
-        "ელფოსტის გამოწერების გარეშე"
-      ],
       "No need to empty the trash": [
         "ნაგვის ყუთის გასუფთავება საჭირო არაა"
+      ],
+      "No newsletters found": [
+        "სიახლეები აღმოჩენილი არაა"
       ],
       "No trackers found": [
         "ტრეკერები ვერ ვიპოვე"

@@ -970,9 +970,6 @@
       "Next month": [
         "შემდეგი თვე"
       ],
-      "Next page": [
-        "შემდეგი გვერდი"
-      ],
       "No": [
         "არა"
       ],
@@ -1017,9 +1014,6 @@
       ],
       "Previous month": [
         "წინა თვე"
-      ],
-      "Previous page": [
-        "წინა გვერდი"
       ],
       "Publish changes": [
         "ცვლილებების გამოცემა"
@@ -1966,6 +1960,19 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "გასული ვარ ოფისთან, ელფოსტასთან შეზღუდული წვდომით."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "გამოწერის გაუქმება"
+      ],
+      "Keep subscription": [
+        "გამოწერის შენარჩუნება"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -8401,9 +8408,6 @@
       "Failed to fetch logs.": [
         "ჟურნალის მოთხოვნის შეცდომა."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "სწრაფი და ფოკუსის მქონე. ელფოსტა და კალენდარი პირდაპირ თქვენს სამუშაო მაგიდაზე."
-      ],
       "Featured in": [
         "მოიცავს"
       ],
@@ -9462,9 +9466,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-ით გაგზავნა მესამე პირების სერვისებს ან მოწყობილობებს, თქვენი დომენის მისამართებით, ${ MAIL_APP_NAME }-ის გავლით გაგზავნის საშუალებას აძლევს. ეს ფუნქცია ხელმისაწვდომია, მხოლოდ, ${ BRAND_NAME } for Business-ის მომხმარებლებისთვის, როლებიც არანაგულისხმევ დომენებს იყენებენ."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP მესამე პირების მიერ მოწოდებულ სერვისებისა და მოწყობილობებს ${ MAIL_APP_NAME }-ის გავლით თქვენი დომენის მისამართებზე ელფოსტის გაგზავნის საშუალებას იძლევა. წვდომის მოსათხოვნად, ${ createTicket } და აღწერეთ რისთვის გჭირდებათ ის, რომელი დომენების გამოყენებას აპირებთ და მიუთითეთ მოსალოდნელი საათობრივი და დღიური ელფოსტის რაოდენობები."
@@ -12671,9 +12672,6 @@
       ],
       "Sign in success (awaiting second factor)": [
         "შესვლა წარმატებულია (მეორე ფაქტორის მოლოდინი)"
-      ],
-      "Sign in success (awaiting verify)": [
-        "შესვლა წარმატებულია (შემოწმების მოლოდინი)"
       ],
       "Sign out": [
         "გასვლა"
@@ -16001,6 +15999,9 @@
       "Blocked": [
         "დაბლოკილია"
       ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
       "Device verification": [
         "მოწყობილობის შემოწმება"
       ],
@@ -17045,9 +17046,6 @@
     "Signup": {
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
-      ],
-      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
-        "${ FREE_PASS_ALIASES } hide-my-email სპამთან საბრძოლველად"
       ],
       "${ maxAddresses } address": [
         "${ maxAddresses } მისამართი",

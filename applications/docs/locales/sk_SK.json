@@ -1137,6 +1137,19 @@
         "Nepodporovaná udalosť"
       ]
     },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Zrušiť predplatné"
+      ],
+      "Keep subscription": [
+        "Ponechať predplatné"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Vaša bezplatná skúšobná verzia skončí o ${ timeRemaining }"
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 používateľ"
@@ -3245,6 +3258,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašom externom účte je príliš veľa priečinkov. Upravte import na zmazanie niektorých priečinkov, prosím."
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Pri spracovaní aktualizácií dokumentu došlo k chybe. Načítajte stránku znova a skúste to znova, prosím."
       ],
       "There was an error when exporting the contacts vCards": [
         "Pri exporte kontaktov do vCard došlo k chybe"
@@ -8466,9 +8482,6 @@
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Pre SEPA sa akceptuje len euro. Vaša mena bola zmenená. Na vrátenie pôvodnej voľby použite výber."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
@@ -8528,6 +8541,9 @@
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"

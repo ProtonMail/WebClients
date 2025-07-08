@@ -1238,6 +1238,19 @@
         "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
       ]
     },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
+      "Keep subscription": [
+        "Păstrare abonament"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Perioada de probare se încheie peste ${ timeRemaining }"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "Dezactivat"
@@ -7534,9 +7547,6 @@
       "Sign in success (awaiting second factor)": [
         "Conectare reușită (se așteaptă al doilea factor)."
       ],
-      "Sign in success (awaiting verify)": [
-        "Conectare reușită (se așteaptă verificarea)."
-      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -9391,9 +9401,6 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Se acceptă doar euro pentru zona SEPA. Moneda a fost schimbată. Utilizați selectorul dacă doriți să remodificați."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
       ],
@@ -9458,6 +9465,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Vi se va retrage suma de ${ amountToCharge } folosind metoda de plată selectată."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
@@ -9696,6 +9706,9 @@
     "Protection type": {
       "Blocked": [
         "Blocat"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Verificare dispozitiv"

@@ -2436,6 +2436,12 @@
       "Also included": [
         "Також включено"
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Приєднайте вашу CRM, сайт, принтери і т.д."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів… Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
       ],
@@ -2447,6 +2453,9 @@
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Отримуйте сповіщення, якщо ваш пароль або інші дані отримали витік зі стороннього сервісу."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Допоможіть вашій команді надійно зберігати паролі до конфіденційної ділової та клієнтської інформації."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
@@ -4912,9 +4921,6 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Не всі файли були передані. Спробуйте вивантажити або завантажити файли ще раз."
       ],
-      "Not connected": [
-        "Не під’єднано"
-      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Примітка: дані можуть бути досі доступними локально на пристроях, де встановлено ${ DRIVE_APP_NAME }."
       ],
@@ -5311,9 +5317,6 @@
       "This month": [
         "Цього місяця"
       ],
-      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and all it's data from ${ DRIVE_APP_NAME }. Folders you added to My Computers will stop syncing.": [
-        "Це призведе до вилучення синхронізованого пристрою ${ deviceName } з ${ DRIVE_APP_NAME } і всіх його даних з ${ DRIVE_APP_NAME }. Теки, які ви додали до Моїх комп'ютерів, припинять синхронізацію."
-      ],
       "This will replace the existing file with the folder": [
         "Це призведе до заміни наявного файлу текою"
       ],
@@ -5466,9 +5469,6 @@
       ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
-      ],
-      "VPN IP": [
-        "VPN IP"
       ],
       "Want to sync files faster?": [
         "Хочете синхронізувати файли швидше?"
@@ -5691,9 +5691,6 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Вашу інформацію було знайдено на ${ displayedDate }"
-      ],
-      "Your IP": [
-        "Ваш IP"
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
@@ -6374,12 +6371,6 @@
       ],
       "Your alias": [
         "Ваш псевдонім"
-      ],
-      "Your IP": [
-        "Ваш IP"
-      ],
-      "Your location": [
-        "Ваше розташування:"
       ]
     },
     "Label for contact group color": {
@@ -6459,6 +6450,9 @@
       "Drafts": [
         "Чернетки"
       ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Як увімкнути ${ PROTON_SENTINEL_NAME }"
+      ],
       "How to pay with Bitcoin?": [
         "Як оплатити за допомогою Bitcoin?"
       ],
@@ -6509,6 +6503,9 @@
       ],
       "Trash": [
         "Смітник"
+      ],
+      "Types of recovery methods": [
+        "Типи способів відновлення"
       ],
       "What’s this?": [
         "Що це?"
@@ -10627,6 +10624,9 @@
       ],
       "Uploading a large file or folder": [
         "Вивантаження великого файлу або теки"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ],
       "Verification failed": [
         "Не вдалося виконати перевірку"

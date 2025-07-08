@@ -506,6 +506,9 @@
       "More actions": [
         "Flere handlinger"
       ],
+      "More benefits": [
+        "Flere fordele"
+      ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
       ],
@@ -1000,6 +1003,17 @@
         "Luk ikke denne fane. Nogle anmodninger behandles stadig i baggrunden."
       ]
     },
+    "anniversary_2025: Offer": {
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Rabatter er baserede på en standard månedlig pris. Ved slutningen af faktureringsperioden fornys dit abonnement efter den standard årlige pris."
+      ],
+      "Online document editor": [
+        "Online dokumenteditor"
+      ],
+      "Share passwords easily": [
+        "Del let kodeord"
+      ]
+    },
     "anniversary_2025: Offers": {
       "${ n } month": [
         "${ n } måned",
@@ -1039,6 +1053,11 @@
     "Attendee role": {
       "Optional": [
         "Valgfri"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Keep subscription": [
+        "Behold abonnement"
       ]
     },
     "Badge": {
@@ -5551,6 +5570,9 @@
       "You will update all the events in this series. Removed participants will be notified.": [
         "Du vil opdatere alle begivenheder i denne serie. Fjernede deltagere vil blive underrettet."
       ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Der bliver ikke trukket noget hvis du annullerer inden ${ trialEndsOnFormatted }."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }.",
         "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }"
@@ -6495,6 +6517,9 @@
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Din konto er i fare for at blive slettet. For at undgå datatab skal du bede din administrator om at opgradere. ${ cta }"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Din lagerplads er fuld. Frigør plads eller ${ cta } for at fortsætte med at bruge ${ BRAND_NAME }-produkter."
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Dit abonnement er ophørt. ${ cta } og for at undgå datatab."
@@ -7899,7 +7924,7 @@
         "Tag imod tilbuddet"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Sidste chance for at spare 80% på den første måned af ${ plan } Plus "
+        "Sidste chance for at spare 80% på den første måned af ${ plan } Plus."
       ],
       "Last day to save": [
         "Sidste dag til at gemme"
@@ -7912,6 +7937,9 @@
       ],
       "Offer expires ${ formattedDate }.": [
         "Tilbud udløber ${ formattedDate }"
+      ],
+      "Pay annually, secure our best offer": [
+        "Betal årligt for at sikre vores bedste tilbud"
       ],
       "Save": [
         "Gem"
@@ -7995,6 +8023,11 @@
       ],
       "You will be able to change your theme any time in your settings.": [
         "Du kan til enhver tid ændre dit tema i dine indstillinger."
+      ]
+    },
+    "Onboarding Trial": {
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Nyd gratis sikkerhedsfunktioner for virksomheder indtil ${ trialEndsOnFormatted }."
       ]
     },
     "Option": {
@@ -8090,6 +8123,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Adgang til alle ${ BRAND_NAME } apps og premiumfunktioner"
+      ],
       "Secure vault sharing": [
         "Sikker deling af boks"
       ],
@@ -8186,6 +8222,9 @@
       ],
       "CVC": [
         "CVC"
+      ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Under denne periode vil du ikke kunne ændre eller annullere dit abonnement. Vent venligst indtil betalingen er gennemført før du forsøger at foretage ændringer. Tak for din tålmodighed."
       ],
       "Got it": [
         "Forstået"
@@ -8951,6 +8990,9 @@
       "Go to subscription plans": [
         "Gå til abonnementer"
       ],
+      "Unblock streaming content": [
+        "Lås op for streamet indhold"
+      ],
       "Upgrade": [
         "Opgradér"
       ],
@@ -9028,6 +9070,9 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Få adgang til indhold på streamingtjenester verden rundt"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Opgradér og spar mere med 2 års ${ planName }"
       ]
@@ -10473,6 +10518,9 @@
       ],
       "Start import process": [
         "Start importeringsprocessen"
+      ],
+      "Subscription canceled": [
+        "Abonnement annulleret"
       ],
       "Summary": [
         "Sammenfatning"

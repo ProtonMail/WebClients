@@ -442,6 +442,9 @@
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Es gab einen Fehler beim Aktualisierungen des Dokuments. Bitte lade die Seite neu und versuche es erneut."
+      ],
       "Tried to import Sheet data into Lexical": [
         "Es wurde versucht, Sheet-Daten in Lexical zu importieren"
       ],
@@ -782,6 +785,71 @@
         "Einfügen"
       ]
     },
+    "sheets_2025:Spreadsheet editor more formats menu": {
+      "$ US Dollar": [
+        "$ US-Dollar"
+      ],
+      "Accounting": [
+        "Buchhaltung"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Chinesischer Yuan"
+      ],
+      "Currency": [
+        "Währung"
+      ],
+      "Currency rounded": [
+        "Währung gerundet"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date time": [
+        "Datum / Zeit"
+      ],
+      "Duration": [
+        "Dauer"
+      ],
+      "Financial": [
+        "Finanzen"
+      ],
+      "General": [
+        "Allgemeines"
+      ],
+      "Long date": [
+        "Datum lang"
+      ],
+      "More currency": [
+        "Weitere Währungen"
+      ],
+      "Number": [
+        "Zahl"
+      ],
+      "Percent": [
+        "Prozent"
+      ],
+      "Plain text": [
+        "Unformatierter Reintext"
+      ],
+      "Scientific": [
+        "Wissenschaft"
+      ],
+      "Time": [
+        "Zeit"
+      ],
+      "£ Pound": [
+        "£ Pfund"
+      ],
+      "¥ Yen": [
+        "¥ Yen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupie"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Fett"
@@ -791,6 +859,9 @@
       ],
       "Decrease decimal places": [
         "Dezimalstellen verringern"
+      ],
+      "Decrease font size": [
+        "Schrift verkleinern"
       ],
       "Default (${ defaultFont })": [
         "Standard (${ defaultFont })"
@@ -804,8 +875,14 @@
       "Increase decimal places": [
         "Dezimalstellen erhöhen"
       ],
+      "Increase font size": [
+        "Schrift vergrößern"
+      ],
       "Italic": [
         "Kursiv"
+      ],
+      "More formats": [
+        "Weitere Formate"
       ],
       "Redo": [
         "Wiederherstellen"

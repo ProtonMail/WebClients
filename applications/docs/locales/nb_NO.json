@@ -3217,6 +3217,9 @@
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Det oppstod en feil under behandling av oppdateringer til dokumentet. Last inn siden på nytt og prøv igjen."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Det oppsto en feil under eksport av kontaktenes vCards."
       ],
@@ -8294,9 +8297,6 @@
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Kun Euro aksepteres for SEPA. Valutaen din er endret. Bruk velgeren for å angre valget ditt."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
@@ -8348,6 +8348,9 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"

@@ -1126,6 +1126,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_LUMO_SEATS } licenças do Lumo durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças do Scribe durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_USERS } usuários durante o período de avaliação."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Você não pode adicionar domínios personalizados durante o período de avaliação."
+      ],
+      "You have reached the trial limit.": [
+        "Você atingiu o limite de avaliação."
       ]
     },
     "b2b_trials_Action": {
@@ -3235,6 +3253,9 @@
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Houve um erro ao processar as atualizações do documento. Por favor, recarregue a página e tente novamente."
       ],
       "There was an error when exporting the contacts vCards": [
         "Houve um erro ao exportar os vCards dos contatos"
@@ -8321,9 +8342,6 @@
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis em outras moedas"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Apenas o euro é aceite para os pagos SEPA. Sua moeda foi trocada. Use o seletor para reverter sua escolha."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
       ],
@@ -8375,6 +8393,9 @@
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Sua moeda foi alterada para euros (€) porque transferências bancárias SEPA apenas suportam pagamentos em euros."
       ],
       "Your payment is still being processed": [
         "Seu pagamento ainda está sendo processado"

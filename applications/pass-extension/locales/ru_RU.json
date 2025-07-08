@@ -581,6 +581,9 @@
       "Sort vault items": [
         "Сортировать элементы хранилища"
       ],
+      "Start from scratch": [
+        "Начать заново"
+      ],
       "Submit": [
         "Отправить"
       ],
@@ -1170,7 +1173,7 @@
         "Неверный дополнительный пароль"
       ],
       "Wrong password": [
-        "Неверный пароль"
+        "Неправильный пароль"
       ],
       "Wrong PIN code. Try again.": [
         "Неверный PIN-код. Попробуйте снова."
@@ -1255,6 +1258,12 @@
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Элемент \"${ payload.itemName }\" был отклонен"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Обновление \"${ payload.itemName }\" было отклонено"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } заблокировано",
         "${ blockedEmailsCount } заблокированы",
@@ -1346,10 +1355,10 @@
         "${ repliedEmailsCount } отправлены"
       ],
       "${ trialDaysLeft } day left": [
-        "Остался ${ trialDaysLeft } день",
-        "Осталось ${ trialDaysLeft } дня",
-        "Осталось ${ trialDaysLeft } дней",
-        "Осталось ${ trialDaysLeft } дней"
+        "${ trialDaysLeft } день остался",
+        "${ trialDaysLeft } дня осталось",
+        "${ trialDaysLeft } дней осталось",
+        "${ trialDaysLeft } дней осталось"
       ],
       "(Empty)": [
         "(Пусто)"
@@ -1632,6 +1641,9 @@
       ],
       "Enter the address you want to email.": [
         "Введите адрес, на который вы хотите отправить электронное письмо."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
       ],
       "Enter your extra password": [
         "Введите дополнительный пароль"
@@ -2562,6 +2574,9 @@
       "Account": [
         "Аккаунт"
       ],
+      "Account Type": [
+        "Тип аккаунта"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Добавьте случайный префикс для этого домена при создании нового псевдонима."
       ],
@@ -2601,6 +2616,12 @@
       "Always show username field": [
         "Всегда показывать поле имени пользователя"
       ],
+      "API Credential": [
+        "Учетные данные API"
+      ],
+      "API Key": [
+        "Ключ API"
+      ],
       "Application logs": [
         "Журналы приложения"
       ],
@@ -2624,6 +2645,9 @@
       ],
       "Backup password": [
         "Пароль резервной копии"
+      ],
+      "Bank Account": [
+        "Банковский счёт"
       ],
       "Biometrics": [
         "Биометрия"
@@ -2655,6 +2679,9 @@
       "City": [
         "Город"
       ],
+      "Class": [
+        "Класс"
+      ],
       "Code": [
         "Код"
       ],
@@ -2677,7 +2704,7 @@
         "Копировать"
       ],
       "Copy password": [
-        "Скопировать пароль"
+        "Копировать пароль"
       ],
       "Country": [
         "Страна"
@@ -2690,6 +2717,9 @@
       ],
       "Create a credit card": [
         "Создать кредитную карту"
+      ],
+      "Create a custom item": [
+        "Создать пользовательский элемент"
       ],
       "Create a hide-my-email alias": [
         "Создать псевдоним hide-my-email"
@@ -2712,6 +2742,18 @@
       "Created at": [
         "Создано"
       ],
+      "Crypto Wallet": [
+        "Криптокошелёк"
+      ],
+      "Custom Items": [
+        "Пользовательские элементы"
+      ],
+      "Database": [
+        "База данных"
+      ],
+      "Database Type": [
+        "Тип базы данных"
+      ],
       "Date": [
         "Дата"
       ],
@@ -2727,6 +2769,9 @@
       "DNS": [
         "DNS"
       ],
+      "Doctor": [
+        "Доктор"
+      ],
       "Domain": [
         "Домен"
       ],
@@ -2741,6 +2786,9 @@
       ],
       "Download logs": [
         "Скачать журналы"
+      ],
+      "Driver License": [
+        "Водительские права"
       ],
       "Email": [
         "Электронная почта"
@@ -2772,6 +2820,9 @@
       "Export": [
         "Экспорт"
       ],
+      "Extra fields": [
+        "Дополнительные поля"
+      ],
       "Extra password": [
         "Дополнительный пароль"
       ],
@@ -2786,6 +2837,9 @@
       ],
       "File format": [
         "Формат файла"
+      ],
+      "Finance": [
+        "Финансы"
       ],
       "First name": [
         "Имя"
@@ -2819,6 +2873,9 @@
       ],
       "Hide password": [
         "Скрыть пароль"
+      ],
+      "Host": [
+        "Хост"
       ],
       "https://example.com": [
         "https://primer.com"
@@ -2877,6 +2934,12 @@
       "Key": [
         "Ключ"
       ],
+      "Key fingerprint": [
+        "Отпечаток ключа"
+      ],
+      "Key type": [
+        "Тип ключа"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Комбинация клавиш: ${ shortcut }"
       ],
@@ -2904,7 +2967,13 @@
       "License": [
         "Лицензия"
       ],
+      "License Key": [
+        "Лицензионный ключ"
+      ],
       "License number": [
+        "Номер лицензии"
+      ],
+      "License Number": [
         "Номер лицензии"
       ],
       "LinkedIn account": [
@@ -2937,6 +3006,9 @@
       "max views reached": [
         "достигнуто максимальное количество просмотров"
       ],
+      "Medical Record": [
+        "Медицинская документация"
+      ],
       "Members": [
         "Участники"
       ],
@@ -2960,6 +3032,9 @@
       ],
       "Need help?": [
         "Нужна помощь?"
+      ],
+      "Network": [
+        "Сеть"
       ],
       "New": [
         "Новое"
@@ -3009,6 +3084,9 @@
       "Other": [
         "Другое"
       ],
+      "Owner": [
+        "Владелец"
+      ],
       "Passkey": [
         "Ключ доступа"
       ],
@@ -3033,8 +3111,14 @@
       "Passwords": [
         "Пароли"
       ],
+      "Patient Name": [
+        "Имя пациента"
+      ],
       "Pause list": [
         "Список приостановки"
+      ],
+      "Personal": [
+        "Личное"
       ],
       "Personal details": [
         "Личная информация"
@@ -3065,6 +3149,12 @@
       ],
       "Priority:": [
         "Приоритет:"
+      ],
+      "Product": [
+        "Продукт"
+      ],
+      "Program Name": [
+        "Название программы"
       ],
       "Prompt for auto-save": [
         "Предлагать автосохранение"
@@ -3098,6 +3188,9 @@
       ],
       "Reveal password": [
         "Показать пароль"
+      ],
+      "Reward Program": [
+        "Программа вознаграждения"
       ],
       "Save passkeys": [
         "Сохранить passkeys"
@@ -3135,6 +3228,9 @@
       "Selected": [
         "Выбрано"
       ],
+      "Server": [
+        "Сервер"
+      ],
       "Settings": [
         "Настройки"
       ],
@@ -3164,6 +3260,12 @@
       ],
       "Special characters (!&*)": [
         "Специальные символы (!&*)"
+      ],
+      "SSH key": [
+        "Ключ SSH"
+      ],
+      "SSN": [
+        "ССН"
       ],
       "State or province": [
         "Штат или провинция"
@@ -3287,6 +3389,9 @@
       ],
       "Websites": [
         "Веб-сайты"
+      ],
+      "WiFi network": [
+        "Сеть WiFi"
       ],
       "Work details": [
         "Информация о работе"
@@ -3497,6 +3602,9 @@
       ],
       "Add note": [
         "Добавить заметку"
+      ],
+      "Add password": [
+        "Добавить пароль"
       ],
       "Add text": [
         "Добавить текст"
@@ -3891,6 +3999,9 @@
       ],
       "Grant permissions": [
         "Предоставить разрешения"
+      ],
+      "Hide my email": [
+        "Скрыть мою почту"
       ],
       "History": [
         "История"

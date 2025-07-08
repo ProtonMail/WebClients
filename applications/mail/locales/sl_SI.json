@@ -393,6 +393,9 @@
       "Delete permanently": [
         "Trajno izbriši"
       ],
+      "Deleting folder": [
+        "Brisanje mape"
+      ],
       "Deselect all": [
         "Odznači vse"
       ],
@@ -1014,6 +1017,9 @@
       "Read receipt sent": [
         "Potrdilo o branju je bilo poslano."
       ],
+      "Recently received": [
+        "Nedavno prejeto"
+      ],
       "Reconnect": [
         "Znova poveži"
       ],
@@ -1100,6 +1106,9 @@
       ],
       "Reset to default": [
         "Ponastavi na privzeto"
+      ],
+      "Resize panel": [
+        "Spremeni velikost okvirja"
       ],
       "Restore": [
         "Obnovi"
@@ -1325,6 +1334,9 @@
       ],
       "Stop generating result": [
         "Zaustavitev ustvarjanja besedila"
+      ],
+      "Stop marking as read": [
+        "Prekini označevati kot prebrano"
       ],
       "Stop moving to Archive": [
         "Ustavi premikanje v arhiv"
@@ -1693,6 +1705,42 @@
         "Nova e-pošta"
       ]
     },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "200 GB storage": [
+        "200 GB prostora"
+      ],
+      "thanks to you": [
+        "Hvala vam"
+      ],
+      "years": [
+        "leta"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Ponudba za obletnico"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "/ month": [
+        "/mesec"
+      ],
+      "12 months": [
+        "12 mesecev"
+      ],
+      "15 months": [
+        "15 mesecev"
+      ],
+      "24 months": [
+        "24 mesecev"
+      ],
+      "30 months": [
+        "30 mesecev"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikacije ${ BRAND_NAME }"
@@ -1760,6 +1808,14 @@
       ],
       "Sender verification passed": [
         "Preverjanje pošiljatelja je bilo uspešno"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Prekliči naročnino"
+      ],
+      "Keep subscription": [
+        "Ohrani naročnino"
       ]
     },
     "bf2023: Deal details": {
@@ -4631,8 +4687,8 @@
       "Username must end with a letter or digit": [
         "Uporabniško ime se mora končati s črko ali številko"
       ],
-      "Wrong second password": [
-        "Napačno drugo geslo"
+      "Wrong password": [
+        "Napačno geslo"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Sporočilo lahko pošljete največ ${ maxContacts } prejemniku.",
@@ -4651,6 +4707,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste največje število koledarjev."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Dosegli ste mejo za število stikov v vašem računu."
       ],
       "You must set a name": [
         "Vnesti morate ime"
@@ -5520,6 +5579,9 @@
     "Header": {
       "Contacts": [
         "Stiki"
+      ],
+      "Drawer": [
+        "Predal"
       ],
       "Hardware not compatible": [
         "Strojna oprema ni združljiva"
@@ -6625,6 +6687,9 @@
       "Dedicated servers": [
         "Namenski strežniki"
       ],
+      "Dedicated VPN servers": [
+        "Namenski VPN strežniki"
+      ],
       "default email address": [
         "privzeti e-poštni naslov"
       ],
@@ -7099,11 +7164,17 @@
       "Message headers": [
         "Glave sporočil"
       ],
+      "Message list": [
+        "Seznam sporočil"
+      ],
       "Message sent": [
         "Sporočilo poslano"
       ],
       "Message sent.": [
         "Sporočilo poslano."
+      ],
+      "Message view": [
+        "Pogled sporočila"
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
         "Sporočilo bo poslano zjutraj ob ${ formattedTime }"
@@ -8996,6 +9067,9 @@
       "Mark as": [
         "Označi kot"
       ],
+      "Marked as read": [
+        "Označeno kot prebrano"
+      ],
       "Message:": [
         "Sporočilo:"
       ],
@@ -9013,6 +9087,12 @@
       ],
       "Move to Inbox": [
         "Premakni v Prejeto"
+      ],
+      "Moved to Archive": [
+        "Premaknjeno v arhiv"
+      ],
+      "Moved to Trash": [
+        "Premaknjeno v smetnjak"
       ],
       "Name": [
         "Ime"
@@ -9325,11 +9405,6 @@
         "Za: ${ to }"
       ]
     },
-    "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "Odjavljene novice se bodo prikazale tukaj."
-      ]
-    },
     "Landmarks": {
       "Side panel": [
         "Stranska plošča"
@@ -9540,6 +9615,9 @@
       ],
       "Types of recovery methods": [
         "Vrste načinov obnovitve"
+      ],
+      "Views": [
+        "Pogledi"
       ],
       "What’s this?": [
         "Kaj je to?"
@@ -10958,6 +11036,9 @@
       "${ pricingTitle } offer expires today!": [
         "Ponudba ${ pricingTitle } poteče danes!"
       ],
+      "Don’t show this again": [
+        "Tega ne prikaži več"
+      ],
       "Don’t show this offer again": [
         "Te ponudbe ne prikazuj več"
       ],
@@ -11013,9 +11094,17 @@
         "Vaša naročnina se bo kmalu obnovila"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Šifriran upravitelj gesel"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+Še 10 premijskih funkcij"
+      ],
+      "500 GB secure storage": [
+        "500 GB varne shrambe"
       ],
       "Custom email domain": [
         "E-poštna domena po meri"
@@ -11195,6 +11284,9 @@
       ],
       "Cancel anytime before then.": [
         "Prekličite kadar koli pred tem."
+      ],
+      "contact our support team": [
+        "kontaktirajte našo podporo"
       ],
       "Continue": [
         "Nadaljuj"
@@ -11383,6 +11475,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Bančno nakazilo"
       ],
@@ -12409,6 +12504,9 @@
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ogled naročniških paketov"
+      ],
+      "Guard against threats": [
+        "Zaščitite se pred grožnjami"
       ],
       "Upgrade": [
         "Nadgradnja"
@@ -13557,6 +13655,14 @@
         "Včeraj"
       ]
     },
+    "Time unit": {
+      "${ ceilHours } hour": [
+        "${ ceilHours } ura",
+        "${ ceilHours } uri",
+        "${ ceilHours } ure",
+        "${ ceilHours } ur"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } ura",
@@ -14200,6 +14306,9 @@
       "New message": [
         "Novo sporočilo"
       ],
+      "Newsletters": [
+        "Glasila"
+      ],
       "Next conversation": [
         "Naslednji pogovor"
       ],
@@ -14568,6 +14677,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "Your subscriptions in one place": [
+        "Vaše naročnine na enem mestu"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14675,6 +14787,14 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Ta različica brskalnika Tor ni podprta. Posodobite na najnovejšo ${ stableRelease }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mesec"
+      ],
+      "Only": [
+        "Samo"
       ]
     },
     "Update font modal": {

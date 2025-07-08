@@ -1164,9 +1164,6 @@
       "Save": [
         "Uložit"
       ],
-      "Save to ${ DRIVE_APP_NAME }": [
-        "Uložit na ${ DRIVE_APP_NAME }"
-      ],
       "Saving${ ellipsis }": [
         "Ukládání${ ellipsis }"
       ],
@@ -1959,6 +1956,37 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební verze."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_LUMO_SEATS } licencí Lumo během zkušební verze."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_SCRIBE_SEATS } licencí Scribe během zkušební verze."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_USERS } uživatelů během zkušební verze."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Během zkušební doby nelze přidávat vlastní domény."
+      ],
+      "You have reached the trial limit.": [
+        "Dosáhli jste limitu zkušební verze."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Zrušit předplatné"
+      ],
+      "Keep subscription": [
+        "Zachovat předplatné"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Bezplatná zkušební verze končí za ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -4910,8 +4938,8 @@
       "Username must end with a letter or digit": [
         "Uživatelské jméno musí končit písmenem nebo číslicí"
       ],
-      "Wrong second password": [
-        "Druhé heslo je chybné"
+      "Wrong password": [
+        "Nesprávné heslo"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
@@ -6403,12 +6431,6 @@
         "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto.",
         "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto."
       ],
-      "${ n } newsletter": [
-        "${ n } e-mailový zpravodaj",
-        "${ n } e-mailové zpravodaje",
-        "${ n } e-mailových zpravodajů",
-        "${ n } e-mailových zpravodajů"
-      ],
       "${ n } unread conversation": [
         "${ n } nepřečtená konverzace",
         "${ n } nepřečtené konverzace",
@@ -6538,11 +6560,11 @@
         "${ trackersCount } sledovacích prvků zablokováno",
         "${ trackersCount } sledovacích prvků zablokováno"
       ],
-      "${ unreadCount } newsletter subscription": [
-        "${ unreadCount } odběr e-mailového zpravodaje",
-        "${ unreadCount } odběry e-mailového zpravodaje",
-        "${ unreadCount } odběrů e-mailového zpravodaje",
-        "${ unreadCount } odběrů e-mailového zpravodaje"
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } e-mailový zpravodaj",
+        "${ unreadCount } e-mailové zpravodaje",
+        "${ unreadCount } e-mailových zpravodajů",
+        "${ unreadCount } e-mailových zpravodajů"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } naplánovaná zpráva",
@@ -7548,6 +7570,9 @@
       ],
       "New": [
         "Nově"
+      ],
+      "newsletter": [
+        "e-mailový zpravodaj"
       ],
       "No action selected": [
         "Není vybrána žádná akce"
@@ -9494,11 +9519,8 @@
       "Mark as": [
         "Označit jako"
       ],
-      "Marked ${ unreadCount } message as read.": [
-        "${ unreadCount } zpráva označena jako přečtená.",
-        "${ unreadCount } zprávy označeny jako přečtené.",
-        "${ unreadCount } zpráv označeno jako přečtené.",
-        "${ unreadCount } zpráv označeno jako přečtené."
+      "Marked as read": [
+        "Označeno jako přečtené"
       ],
       "Message:": [
         "Zpráva:"
@@ -9518,23 +9540,14 @@
       "Move to Inbox": [
         "Přesunout do Doručené pošty"
       ],
-      "Moved ${ count } message to ${ labelName }.": [
-        "${ count } zpráva přesunuta do ${ labelName }.",
-        "${ count } zprávy přesunuty do ${ labelName }.",
-        "${ count } zpráv přesunuto do ${ labelName }.",
-        "${ count } zpráv přesunuto do ${ labelName }."
+      "Moved to ${ labelName }": [
+        "Přesunuto do ${ labelName }"
       ],
-      "Moved ${ count } message to Archive.": [
-        "${ count } zpráva přesunuta do archivu.",
-        "${ count } zprávy přesunuty do archivu.",
-        "${ count } zpráv přesunuto do archivu.",
-        "${ count } zpráv přesunuto do archivu."
+      "Moved to Archive": [
+        "Přesunuto do archivu"
       ],
-      "Moved ${ count } message to Trash.": [
-        "${ count } zpráva přesunuta do koše.",
-        "${ count } zprávy přesunuty do koše.",
-        "${ count } zpráv přesunuto do koše.",
-        "${ count } zpráv přesunuto do koše."
+      "Moved to Trash": [
+        "Přesunuto do koše"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Musí mít alespoň ${ MIN_PASSWORD_LENGTH } znaků"
@@ -9857,11 +9870,14 @@
       ]
     },
     "Labels": {
-      "Newsletters you unsubscribe from will show up here.": [
-        "E-mailové zpravodaje, z jejichž odběru se odhlásíte, se zobrazí zde."
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "E-mailové zpravodaje nebo e-mailové seznamy, z jejichž odběru se odhlásíte, se zobrazí zde."
       ],
-      "View and manage newsletter and mailing list subscriptions here.": [
-        "Zde můžete zobrazit a spravovat přihlášení k odběru e-mailových zpravodajů a e-mailových seznamů."
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Nemáte žádné aktivní e-mailové zpravodaje nebo odběry e-mailových seznamů."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Nemáte aktivní e-mailové zpravodaje nebo odběry e-mailových seznamů."
       ]
     },
     "Landmarks": {
@@ -12052,9 +12068,6 @@
       "More plans are available in other currencies": [
         "Další tarify jsou k dispozici v jiných měnách"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "V rámci SEPA je přijímáno pouze euro. Vaše měna byla změněna. Výběr můžete vrátit pomocí voliče."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
@@ -12114,6 +12127,9 @@
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Vaše měna byla změněna na euro (€), protože bankovní převody SEPA podporují pouze platby v eurech."
       ],
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
@@ -15026,17 +15042,20 @@
       "Night theme": [
         "Noční motiv"
       ],
+      "No active newsletters": [
+        "Žádné aktivní e-mailové zpravodaje"
+      ],
       "No attachment found": [
         "Žádná příloha nenalezena"
       ],
       "No breaches detected": [
         "Žádné úniky informací nebyly zjištěny"
       ],
-      "No mail subscriptions": [
-        "Žádné e-mailové odběry"
-      ],
       "No need to empty the trash": [
         "Nemusíte sami vyprazdňovat koš"
+      ],
+      "No newsletters found": [
+        "Nebyly nalezeny žádné e-mailové zpravodaje"
       ],
       "No trackers found": [
         "Bez sledovacích prvků"

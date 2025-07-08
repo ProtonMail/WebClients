@@ -542,7 +542,7 @@
         "CSV-voorbeeld downloaden"
       ],
       "Download for macOS": [
-        "Downloaden voor macOS"
+        "Download voor macOS"
       ],
       "Download for Windows": [
         "Download voor Windows"
@@ -970,9 +970,6 @@
       "Next month": [
         "Volgende maand"
       ],
-      "Next page": [
-        "Volgende pagina"
-      ],
       "No": [
         "Nee"
       ],
@@ -1017,9 +1014,6 @@
       ],
       "Previous month": [
         "Vorige maand"
-      ],
-      "Previous page": [
-        "Vorige pagina"
       ],
       "Publish changes": [
         "Publiceer wijzigingen"
@@ -1995,11 +1989,44 @@
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
       ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Door op \"Probeer\" te klikken, gaat u akkoord met onze ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Tijdens de proefperiode kunt u maximaal 10 gebruikers hebben."
+      ],
+      "free for 14 days": [
+        "14 dagen gratis"
+      ],
       "on ${ formattedDate }": [
         "op ${ formattedDate }"
       ],
+      "Try ${ selected } ${ freeFor14Days }": [
+        "Probeer ${ selected } ${ freeFor14Days }"
+      ],
       "Try it free for 14 days": [
         "Probeer het 14 dagen gratis uit"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Wanneer u annuleert, wordt uw gratis proefabonnement niet omgezet in een betaald abonnement, maar u kunt nog steeds van de voordelen van het abonnement genieten tot het einde van de proefperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } gratis abonnement."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } Lumo-plaatsen hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_USERS } gebruikers hebben tijdens de proefperiode."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "U kunt geen aangepaste domeinen toevoegen tijdens de proefperiode."
+      ],
+      "You have reached the trial limit.": [
+        "U hebt de proeflimiet bereikt."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -2008,6 +2035,19 @@
       ],
       "Amount due now": [
         "Nu verschuldigd bedrag"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
+      "Keep subscription": [
+        "Abonnement behouden"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Uw gratis proefversie eindigt over ${ timeRemaining }"
       ]
     },
     "Badge for domain": {
@@ -4578,6 +4618,16 @@
       ],
       "90 minutes": [
         "90 minuten"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } account, upgrade naar ${ planName }.",
+        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } accounts, upgrade naar ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } extern account naar ${ MAIL_APP_NAME }.",
+        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } externe accounts naar ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -8555,7 +8605,7 @@
         "Fout bij het ophalen van logboeken."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Snel en toegespitst. E-mail en agenda, direct op uw bureaublad."
+        "Snel en gefocust. E-mail en agenda, direct op uw bureaublad."
       ],
       "Featured in": [
         "Uitgelicht in"
@@ -9633,9 +9683,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Versturen via SMTP geeft derde partijen of apparaten de mogelijkheid om e-mail te sturen via ${ MAIL_APP_NAME } voor uw eigen domeinnamen. Deze functie is enkel beschikbaar voor ${ BRAND_NAME } voor zakelijke gebruikers met eigen domeinnamen."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Met SMTP-indiening kunnen services of apparaten van derden e-mail verzenden via ${ MAIL_APP_NAME } voor uw aangepaste domeinadressen. Om toegang aan te vragen, ${ createTicket } met een beschrijving van uw gebruiksscenario's, welke aangepaste domeinen u wilt gebruiken en verwachte e-mailvolumes per uur en per dag."
@@ -12180,7 +12227,7 @@
         "Tweede wachtwoord"
       ],
       "Select Linux package format": [
-        "Selecteer Linux pakketformaat"
+        "Selecteer Linux pakket format"
       ],
       "Select Linux platform": [
         "Selecteer Linux platform"
@@ -12905,9 +12952,6 @@
       ],
       "Sign in success (awaiting second factor)": [
         "Inloggen gelukt (afwachtend op tweestapsverificatie)"
-      ],
-      "Sign in success (awaiting verify)": [
-        "Inloggen gelukt (in afwachting van verificatie)"
       ],
       "Sign out": [
         "Uitloggen"
@@ -14773,7 +14817,7 @@
         "Betaal jaarlijks om te genieten van ons beste aanbod"
       ],
       "Save": [
-        "Opslaan"
+        "Bespaar"
       ],
       "Save 80% on your first month.": [
         "Bespaar 80% op uw eerste maand."
@@ -15875,9 +15919,6 @@
       "More plans are available in other currencies": [
         "Er zijn meer abonnementen beschikbaar in andere valuta"
       ],
-      "Only Euro is accepted for SEPA. Your currency has been changed. Please use the selector to revert your choice.": [
-        "Alleen Euro wordt geaccepteerd voor SEPA. Uw valuta is gewijzigd. Gebruik de selector om uw keuze ongedaan te maken."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
@@ -15938,6 +15979,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Via de geselecteerde betaalmethode wordt ${ amountToCharge } in rekening gebracht."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
       "Your payment is still being processed": [
         "Uw betaling wordt nog verwerkt"
@@ -16277,6 +16321,9 @@
     "Protection type": {
       "Blocked": [
         "Geblokkerd"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Apparaat verificatie"
@@ -17328,9 +17375,20 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email alias om spam te bestrijden",
+        "${ FREE_PASS_ALIASES } hide-my-email aliassen om spam te bestrijden"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adres",
         "${ maxAddresses } adressen"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } agenda",
+        "${ maxCalendars } agenda's"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } cloudopslag voor bestanden en foto's"
       ],
       "${ value } of secure storage": [
         "${ value } veilige opslag"
@@ -17385,6 +17443,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "krijg een veilig ${ MAIL_APP_NAME }-adres"
+      ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "Krijg een veilige van ons, of ${ internalButton }"
       ],
       "Manage user access": [
         "Beheer gebruikerstoegang"
@@ -17475,6 +17536,10 @@
       ],
       "use your own email.": [
         "gebruik uw eigen e-mailadres."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN met servers in ${ vpnServersCountData.free.countries } land",
+        "VPN met servers in ${ vpnServersCountData.free.countries } landen"
       ],
       "Yearly": [
         "Jaarlijks"
@@ -18796,6 +18861,9 @@
       ],
       "Address added": [
         "Adres toegevoegd"
+      ],
+      "Address successfully added": [
+        "Adres succesvol toegevoegd"
       ],
       "Address updated": [
         "Adres bijgewerkt"
