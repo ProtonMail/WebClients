@@ -36,7 +36,7 @@ const MailboxListContainer = (
             <div
                 ref={ref}
                 className={clsx(
-                    'items-column-list-container flex flex-nowrap flex-column relative h-full w-full',
+                    'items-column-list-container overflow-auto flex flex-nowrap flex-column relative h-full w-full',
                     noBorder ? '' : 'items-column-list-inner'
                 )}
                 data-testid={mailboxListLoading ? 'message-list-loading' : 'message-list-loaded'}
