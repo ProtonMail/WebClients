@@ -23,7 +23,7 @@ import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { FlagProvider } from '@proton/unleash';
 
 import { bootstrapApp } from './bootstrap';
-import * as config from './config';
+import config from './config';
 import type { CalendarStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
 
