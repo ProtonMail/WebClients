@@ -4,8 +4,8 @@ import { createContext, useContext, useEffect, useMemo, useRef, useState } from 
 import { c } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
-import type { Revision} from '@proton/drive';
-import { RevisionState, useDrive } from '@proton/drive';
+import type { Revision } from '@proton/drive';
+import { RevisionState, generateNodeUid, splitNodeRevisionUid, useDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
@@ -46,10 +46,7 @@ export const RevisionsProvider = ({
     const { createNotification } = useNotifications();
     const ref = useRef(null);
     const { getSharePermissions } = useDirectSharingInfo();
-    const {
-        drive,
-        internal: { generateNodeUid, splitNodeRevisionUid },
-    } = useDrive();
+    const { drive } = useDrive();
 
     const [isLoading, withLoading] = useLoading(true);
     const [currentRevision, setCurrentRevision] = useState<Revision | undefined>(undefined);
