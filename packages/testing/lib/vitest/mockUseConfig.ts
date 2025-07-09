@@ -15,6 +15,7 @@ export const mockUseConfig = (value?: Partial<ProtonConfig>) => {
         COMMIT: '',
         BRANCH: '',
         SENTRY_DSN: '',
+        SSO_URL: '',
         VERSION_PATH: '',
         ...value,
     });
