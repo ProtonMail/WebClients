@@ -107,7 +107,7 @@ import {
     getTemporarySignupParameters,
     getUserInfo,
 } from './helper';
-import type { PlanParameters, SignupModelV2, SignupParameters2, Upsell } from './interface';
+import type { OnTriggerModals, SignupModelV2, SignupParameters2 } from './interface';
 import { SignupMode, Steps } from './interface';
 import type { TelemetryMeasurementData } from './measure';
 import { getPaymentMethodsAvailable, getPlanNameFromSession, getSignupTelemetryData } from './measure';
@@ -447,16 +447,7 @@ const SingleSignupContainerV2 = ({
 
     const upsellPlanCard = planCards[audience].find((planCard) => planCard.type === 'best');
 
-    const triggerModals = ({
-        session,
-        upsell,
-        planParameters,
-    }: {
-        session: SessionData;
-        upsell: Upsell;
-        subscriptionData: SubscriptionData;
-        planParameters?: PlanParameters;
-    }) => {
+    const triggerModals: OnTriggerModals = ({ session, upsell, planParameters }) => {
         const planName = getPlanNameFromSession(session);
 
         if (session.state.access) {
@@ -1372,6 +1363,7 @@ const SingleSignupContainerV2 = ({
                         api={normalApi}
                         measure={measure}
                         currentPlan={model.upsell.currentPlan}
+                        onTriggerModals={triggerModals}
                         onOpenSwitch={() => {
                             if (model.loadingDependencies) {
                                 return;
