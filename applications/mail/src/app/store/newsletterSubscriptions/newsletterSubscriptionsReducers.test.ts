@@ -3,13 +3,15 @@ import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/Newsl
 
 import { SortSubscriptionsValue, SubscriptionTabs } from './interface';
 import type {
+    deleteNewsletterSubscription,
     fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
     unsubscribeSubscription,
     updateSubscription,
 } from './newsletterSubscriptionsActions';
 import {
-    deleteSubscriptionAnimationEndedReducer,
+    deleteNewsletterSubscriptionPending,
+    deleteNewsletterSubscriptionRejected,
     fetchNextNewsletterSubscriptionsPageFulfilled,
     filterSubscriptionListFulfilled,
     filterSubscriptionListPending,
@@ -23,6 +25,7 @@ import {
     sortSubscriptionFulfilled,
     sortSubscriptionPending,
     sortSubscriptionRejected,
+    unsubscribeSubscriptionAnimationEndedReducer,
     unsubscribeSubscriptionPending,
     unsubscribeSubscriptionRejected,
     updateSubscriptionFulfilled,
@@ -232,13 +235,13 @@ describe('Newsletter subscription reducers', () => {
         it('should reset the deleting subscription id', () => {
             state.value!.unsubscribingSubscriptionId = '1';
 
-            deleteSubscriptionAnimationEndedReducer(state);
+            unsubscribeSubscriptionAnimationEndedReducer(state);
 
             expect(state.value?.unsubscribingSubscriptionId).toBeUndefined();
         });
 
         it('should return undefined if the state is not initialized', () => {
-            deleteSubscriptionAnimationEndedReducer(undefinedValueState);
+            unsubscribeSubscriptionAnimationEndedReducer(undefinedValueState);
 
             expect(undefinedValueState.value).toBeUndefined();
         });
@@ -322,7 +325,7 @@ describe('Newsletter subscription reducers', () => {
     describe('unsubscribeSubscriptionRejected', () => {
         const meta: ReturnType<typeof unsubscribeSubscription.rejected>['meta'] = {
             arg: {
-                subscription: activeSubscription,
+                subscription: { ...activeSubscription, UnsubscribedTime: 100 },
                 subscriptionIndex: 0,
             },
             requestId: 'test-request-id',
@@ -341,8 +344,8 @@ describe('Newsletter subscription reducers', () => {
                     Name: 'New name',
                 },
             };
-            state.value!.tabs.unsubscribe.ids = [activeSubscription.ID];
-            state.value!.tabs.unsubscribe.totalCount = 1;
+            state.value!.tabs.unsubscribe.ids = [];
+            state.value!.tabs.unsubscribe.totalCount = 0;
             state.value!.tabs.active.ids = [];
             state.value!.tabs.active.totalCount = 0;
         });
@@ -393,7 +396,7 @@ describe('Newsletter subscription reducers', () => {
         });
 
         it('should reset the state of the tabs', () => {
-            const previousState = activeSubscription;
+            const previousState = { ...activeSubscription, UnsubscribedTime: 100 };
 
             unsubscribeSubscriptionRejected(state, {
                 type: 'newsletterSubscriptions/unsubscribeSubscription',
@@ -402,11 +405,11 @@ describe('Newsletter subscription reducers', () => {
                 error: {},
             });
 
-            expect(state.value?.tabs.active.ids).toEqual([activeSubscription.ID]);
-            expect(state.value?.tabs.active.totalCount).toEqual(1);
+            expect(state.value?.tabs.active.ids).toEqual([]);
+            expect(state.value?.tabs.active.totalCount).toEqual(0);
 
-            expect(state.value?.tabs.unsubscribe.ids).toEqual([]);
-            expect(state.value?.tabs.unsubscribe.totalCount).toEqual(0);
+            expect(state.value?.tabs.unsubscribe.ids).toEqual([activeSubscription.ID]);
+            expect(state.value?.tabs.unsubscribe.totalCount).toEqual(1);
         });
     });
 
@@ -825,7 +828,7 @@ describe('Newsletter subscription reducers', () => {
     describe('updateSubscriptionRejected', () => {
         const meta: ReturnType<typeof updateSubscription.rejected>['meta'] = {
             arg: {
-                subscription: activeSubscription,
+                subscription: { ...activeSubscription, UnsubscribedTime: 100 },
                 subscriptionIndex: 0,
                 data: {
                     Unsubscribed: true,
@@ -847,8 +850,8 @@ describe('Newsletter subscription reducers', () => {
                     Name: 'New name',
                 },
             };
-            state.value!.tabs.unsubscribe.ids = [activeSubscription.ID];
-            state.value!.tabs.unsubscribe.totalCount = 1;
+            state.value!.tabs.unsubscribe.ids = [];
+            state.value!.tabs.unsubscribe.totalCount = 0;
             state.value!.tabs.active.ids = [];
             state.value!.tabs.active.totalCount = 0;
         });
@@ -899,7 +902,7 @@ describe('Newsletter subscription reducers', () => {
         });
 
         it('should reset the state of the tabs', () => {
-            const previousState = activeSubscription;
+            const previousState = { ...activeSubscription, UnsubscribedTime: 100 };
 
             updateSubscriptionRejected(state, {
                 type: 'newsletterSubscriptions/unsubscribeSubscription',
@@ -908,11 +911,11 @@ describe('Newsletter subscription reducers', () => {
                 error: {},
             });
 
-            expect(state.value?.tabs.active.ids).toEqual([activeSubscription.ID]);
-            expect(state.value?.tabs.active.totalCount).toEqual(1);
+            expect(state.value?.tabs.active.ids).toEqual([]);
+            expect(state.value?.tabs.active.totalCount).toEqual(0);
 
-            expect(state.value?.tabs.unsubscribe.ids).toEqual([]);
-            expect(state.value?.tabs.unsubscribe.totalCount).toEqual(0);
+            expect(state.value?.tabs.unsubscribe.ids).toEqual([activeSubscription.ID]);
+            expect(state.value?.tabs.unsubscribe.totalCount).toEqual(1);
         });
 
         it('should return undefined if the state is not initialized', () => {
@@ -973,6 +976,216 @@ describe('Newsletter subscription reducers', () => {
             });
 
             expect(undefinedValueState.value).toBeUndefined();
+        });
+    });
+
+    describe('deleteNewsletterSubscriptionPending', () => {
+        const meta: ReturnType<typeof deleteNewsletterSubscription.pending>['meta'] = {
+            arg: {
+                subscription: activeSubscription,
+            },
+            requestId: 'test-request-id',
+            requestStatus: 'pending',
+        };
+
+        it('should unselect the subscription if it is the one currently selected', () => {
+            state.value!.byId = {
+                [activeSubscription.ID]: activeSubscription,
+            };
+            state.value!.tabs.active.ids = [activeSubscription.ID];
+            state.value!.tabs.active.totalCount = 1;
+
+            deleteNewsletterSubscriptionPending(state, {
+                type: 'newsletterSubscriptions/deleteNewsletterSubscription',
+                payload: undefined,
+                meta,
+            });
+
+            expect(state.value?.selectedSubscriptionId).toBeUndefined();
+            expect(state.value?.selectedElementId).toBeUndefined();
+        });
+
+        it('should remove the subscription from the store and active tab', () => {
+            state.value!.byId = {
+                [activeSubscription.ID]: activeSubscription,
+            };
+            state.value!.tabs.active.ids = [activeSubscription.ID];
+            state.value!.tabs.active.totalCount = 1;
+
+            deleteNewsletterSubscriptionPending(state, {
+                type: 'newsletterSubscriptions/deleteNewsletterSubscription',
+                payload: undefined,
+                meta,
+            });
+
+            expect(state.value?.tabs.active.ids).toEqual([]);
+            expect(state.value?.tabs.active.totalCount).toEqual(0);
+            expect(state.value?.byId).toStrictEqual({});
+        });
+
+        it('should remove the subscription from the unsubscribe tab', () => {
+            const unsubscribedSubscription = {
+                ...activeSubscription,
+                UnsubscribedTime: 100,
+            };
+
+            state.value!.byId = {
+                [unsubscribedSubscription.ID]: unsubscribedSubscription,
+            };
+            state.value!.tabs.unsubscribe.ids = [activeSubscription.ID];
+            state.value!.tabs.unsubscribe.totalCount = 1;
+
+            deleteNewsletterSubscriptionPending(state, {
+                type: 'newsletterSubscriptions/deleteNewsletterSubscription',
+                payload: undefined,
+                meta,
+            });
+
+            expect(state.value?.tabs.unsubscribe.ids).toEqual([]);
+            expect(state.value?.tabs.unsubscribe.totalCount).toEqual(0);
+            expect(state.value?.byId).toStrictEqual({});
+        });
+
+        it('should not delete the subscription if it is not in the store', () => {
+            const secondActiveSubscription = {
+                ...activeSubscription,
+                ID: 'second-active-subscription-id',
+            };
+
+            state.value!.byId = {
+                [secondActiveSubscription.ID]: secondActiveSubscription,
+            };
+            state.value!.tabs.active.ids = [secondActiveSubscription.ID];
+            state.value!.tabs.active.totalCount = 1;
+
+            deleteNewsletterSubscriptionPending(state, {
+                type: 'newsletterSubscriptions/deleteNewsletterSubscription',
+                payload: undefined,
+                meta,
+            });
+
+            expect(state.value?.tabs.active.ids).toEqual([secondActiveSubscription.ID]);
+            expect(state.value?.tabs.active.totalCount).toEqual(1);
+            expect(state.value?.byId[activeSubscription.ID]).toBeUndefined();
+        });
+
+        it('should return undefined if the state is not initialized', () => {
+            deleteNewsletterSubscriptionPending(undefinedValueState, {
+                type: 'newsletterSubscriptions/deleteNewsletterSubscription',
+                payload: undefined,
+                meta,
+            });
+
+            expect(undefinedValueState.value).toBeUndefined();
+        });
+    });
+
+    describe('deleteNewsletterSubscriptionRejected', () => {
+        const meta: ReturnType<typeof deleteNewsletterSubscription.rejected>['meta'] = {
+            arg: {
+                subscription: { ...activeSubscription, UnsubscribedTime: 100 },
+                subscriptionIndex: 0,
+            },
+            requestId: 'test-request-id',
+            requestStatus: 'rejected',
+            aborted: false,
+            condition: false,
+            rejectedWithValue: true,
+        };
+
+        beforeEach(() => {
+            state.value!.byId = {
+                [activeSubscription.ID]: {
+                    ...activeSubscription,
+                    UnsubscribedTime: 100,
+                    ReceivedMessageCount: 10,
+                    Name: 'New name',
+                },
+            };
+            state.value!.tabs.unsubscribe.ids = [];
+            state.value!.tabs.unsubscribe.totalCount = 0;
+
+            state.value!.tabs.active.ids = [];
+            state.value!.tabs.active.totalCount = 0;
+        });
+
+        it('should rollback the subscription to the previous state', () => {
+            const previousState = activeSubscription;
+
+            deleteNewsletterSubscriptionRejected(state, {
+                type: 'newsletterSubscriptions/deleteNewsletterSubscription',
+                payload: { previousState, originalIndex: 0 },
+                meta,
+                error: {},
+            });
+
+            expect(state.value?.byId[activeSubscription.ID].Name).toEqual(previousState.Name);
+            expect(state.value?.byId[activeSubscription.ID].UnsubscribedTime).toEqual(previousState.UnsubscribedTime);
+            expect(state.value?.byId[activeSubscription.ID].ReceivedMessageCount).toEqual(
+                previousState.ReceivedMessageCount
+            );
+        });
+
+        it('should rollback the subscription to the previous state', () => {
+            const previousState = activeSubscription;
+
+            deleteNewsletterSubscriptionRejected(state, {
+                type: 'newsletterSubscriptions/deleteNewsletterSubscription',
+                payload: { previousState, originalIndex: 0 },
+                meta,
+                error: {},
+            });
+
+            expect(state.value?.byId[activeSubscription.ID].Name).toEqual(previousState.Name);
+            expect(state.value?.byId[activeSubscription.ID].UnsubscribedTime).toEqual(previousState.UnsubscribedTime);
+            expect(state.value?.byId[activeSubscription.ID].ReceivedMessageCount).toEqual(
+                previousState.ReceivedMessageCount
+            );
+        });
+
+        it('should select the previous subscription and reset the deleting subscription id if no subscription is selected', () => {
+            const previousState = activeSubscription;
+
+            deleteNewsletterSubscriptionRejected(state, {
+                type: 'newsletterSubscriptions/deleteNewsletterSubscription',
+                payload: { previousState, originalIndex: 0 },
+                meta,
+                error: {},
+            });
+
+            expect(state.value?.selectedSubscriptionId).toEqual(activeSubscription.ID);
+            expect(state.value?.unsubscribingSubscriptionId).toBeUndefined();
+        });
+
+        it('should not reset the selected subscription if selected', () => {
+            const previousState = activeSubscription;
+            state.value!.selectedSubscriptionId = 'some-id';
+
+            deleteNewsletterSubscriptionRejected(state, {
+                type: 'newsletterSubscriptions/deleteNewsletterSubscription',
+                payload: { previousState, originalIndex: 0 },
+                meta,
+                error: {},
+            });
+
+            expect(state.value?.selectedSubscriptionId).toEqual('some-id');
+        });
+
+        it('should reset the state of the tabs', () => {
+            const previousState = { ...activeSubscription, UnsubscribedTime: 100 };
+
+            deleteNewsletterSubscriptionRejected(state, {
+                type: 'newsletterSubscriptions/deleteNewsletterSubscription',
+                payload: { previousState, originalIndex: 0 },
+                meta,
+                error: {},
+            });
+
+            expect(state.value?.tabs.active.ids).toEqual([]);
+            expect(state.value?.tabs.active.totalCount).toEqual(0);
+
+            expect(state.value?.tabs.unsubscribe.ids).toEqual([activeSubscription.ID]);
+            expect(state.value?.tabs.unsubscribe.totalCount).toEqual(1);
         });
     });
 
