@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { type ModalStateProps, useModalTwoStatic } from '@proton/components';
-import { useDrive } from '@proton/drive';
+import { generateNodeUid, splitNodeUid, useDrive } from '@proton/drive';
 
 import { type DecryptedLink, useDriveEventManager, useTreeForModals } from '../../store';
 import useListNotifications from '../../store/_actions/useListNotifications';
@@ -27,7 +27,7 @@ export const useMoveItemsModalState = ({
         toggleExpand,
         isLoaded: isTreeLoaded,
     } = useTreeForModals(shareId, { rootExpanded: true, foldersOnly: true });
-    const { drive, internal } = useDrive();
+    const { drive } = useDrive();
     const events = useDriveEventManager();
     const { createMovedItemsNotifications } = useListNotifications();
     const [createFolderModal, showCreateFolderModal] = useModalTwoStatic(CreateFolderModal);
@@ -36,7 +36,7 @@ export const useMoveItemsModalState = ({
 
     let treeSelectedFolder;
     if (targetFolderUid) {
-        treeSelectedFolder = internal.splitNodeUid(targetFolderUid).nodeId;
+        treeSelectedFolder = splitNodeUid(targetFolderUid).nodeId;
     }
 
     const undoMove = async (itemsUId: string[], parentMap: Map<string, string>) => {
@@ -52,10 +52,10 @@ export const useMoveItemsModalState = ({
 
             try {
                 for await (const result of drive.moveNodes([itemId], targetId)) {
-                    const { nodeId } = internal.splitNodeUid(result.uid);
+                    const { nodeId } = splitNodeUid(result.uid);
                     if (result.ok) {
                         successIds.push(nodeId);
-                        const { volumeId } = internal.splitNodeUid(targetId);
+                        const { volumeId } = splitNodeUid(targetId);
                         volumeIdSet.add(volumeId);
                     } else {
                         failedIds.push(nodeId);
@@ -80,14 +80,14 @@ export const useMoveItemsModalState = ({
             return;
         }
         const itemsUId = selectedItems.map((item) => {
-            const uid = internal.generateNodeUid(item.volumeId, item.linkId);
-            parentMap.set(uid, internal.generateNodeUid(item.volumeId, item.parentLinkId));
+            const uid = generateNodeUid(item.volumeId, item.linkId);
+            parentMap.set(uid, generateNodeUid(item.volumeId, item.parentLinkId));
             return uid;
         });
 
         try {
             for await (const result of drive.moveNodes(itemsUId, targetFolderUid)) {
-                const { nodeId } = internal.splitNodeUid(result.uid);
+                const { nodeId } = splitNodeUid(result.uid);
                 if (result.ok) {
                     successIds.push(nodeId);
                 } else {
@@ -97,7 +97,7 @@ export const useMoveItemsModalState = ({
 
             const undoFunc = () => undoMove(itemsUId, parentMap);
             createMovedItemsNotifications(selectedItems, successIds, failedIds, undoFunc);
-            const { volumeId } = internal.splitNodeUid(targetFolderUid);
+            const { volumeId } = splitNodeUid(targetFolderUid);
             await events.pollEvents.volumes(volumeId);
         } catch (e) {
             handleError(e, c('Error').t`Failed to move items`, { itemsUId, targetFolderUid });
@@ -106,7 +106,7 @@ export const useMoveItemsModalState = ({
 
     const onTreeSelect = async (link: DecryptedLink) => {
         // TODO: change on FolderTree sdk migration
-        const folderNodeUid = internal.generateNodeUid(link.volumeId, link.linkId);
+        const folderNodeUid = generateNodeUid(link.volumeId, link.linkId);
         setTargetFolderUid(folderNodeUid);
     };
 
@@ -132,7 +132,7 @@ export const useMoveItemsModalState = ({
                 setTargetFolderUid(newFolderUid);
 
                 // After creating the folder we want to expand its parent so it shows in the tree
-                const { nodeId } = internal.splitNodeUid(targetLinkId);
+                const { nodeId } = splitNodeUid(targetLinkId);
                 expand(nodeId);
             },
         });
