@@ -20,6 +20,7 @@ export const mockUseConfig = (value?: Partial<ReturnType<typeof useConfigModule.
         COMMIT: '',
         BRANCH: 'main',
         SENTRY_DSN: '',
+        SSO_URL: '',
         VERSION_PATH: '',
         ...value,
     });

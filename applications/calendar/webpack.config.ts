@@ -1,13 +1,18 @@
-import { Configuration } from 'webpack';
+import type { Configuration } from 'webpack';
 
-import getConfig from '@proton/pack/webpack.config';
-import { addDevEntry } from '@proton/pack/webpack/entries';
+import { type ConfigOptions, getWebpackOptions } from '@proton/pack/lib/configV2';
+import { addDevEntry, getConfigV2 } from '@proton/pack/webpack.config';
 
-const result = (env: any): Configuration => {
-    const config = getConfig(env);
-    if (env.appMode === 'standalone') {
+import appConfig from './appConfig';
+
+const result = (opts: ConfigOptions): Configuration => {
+    const webpackOptions = getWebpackOptions({ ...opts, appConfig });
+    const config = getConfigV2(webpackOptions);
+
+    if (opts.appMode === 'standalone') {
         addDevEntry(config);
     }
+
     return config;
 };
 
