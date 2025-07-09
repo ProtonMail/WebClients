@@ -167,12 +167,45 @@ export const getReactivatedAddressesKeys = async ({
     });
 };
 
-export const resetUserId = async (Key: Key, reactivatedKey: PrivateKeyReference) => {
+/**
+ * Normalize userID of `reactivatedKey` if necessary, based on the inactive `Key` in input
+ * @returns
+ *    `key`: reference to key with normalized userIDs
+ *    `replaced`: if false, the returned key reference is the same as the input `reactivatedKey`;
+ *          if true, a new key reference has been returned (and the input one should be cleared)
+ *
+ */
+export const resetOrReplaceUserId = async (
+    Key: Key,
+    reactivatedKey: PrivateKeyReference,
+    fallbackEmailAddress: string
+): Promise<{ key: PrivateKeyReference; replaced: boolean }> => {
     // Before the new key format imposed after key migration, the address and user key were the same key.
     // Users may have exported one of the two. Upon reactivation the fingerprint could match a user key
     // to the corresponding address key or vice versa. For that reason, the userids are reset to the userids
     // of the old key.
     const inactiveKey = await CryptoProxy.importPublicKey({ armoredKey: Key.PrivateKey });
+
+    // Some old keys had a dummy userID set; hence we need to create a new UserID.
+    // We ignore the case of empty UserIDs since it's unexpected for legacy keys,
+    // but v6 OpenPGP keys do not require them in principle, hence we want to avoid
+    // risking targetting them in the future
+    const inactiveKeyUserIDs = inactiveKey.getUserIDs();
+    const legacyKeyWithEmptyUserID =
+        inactiveKeyUserIDs.length > 0 && inactiveKeyUserIDs.every((userID) => userID === 'UserID');
+    if (legacyKeyWithEmptyUserID) {
+        return {
+            key: await CryptoProxy.cloneKeyAndChangeUserIDs({
+                privateKey: reactivatedKey,
+                userIDs: { email: fallbackEmailAddress, name: fallbackEmailAddress },
+            }),
+            replaced: true,
+        };
+    }
     // Warning: This function mutates the target key.
     await CryptoProxy.replaceUserIDs({ sourceKey: inactiveKey, targetKey: reactivatedKey });
+    return {
+        key: reactivatedKey,
+        replaced: false,
+    };
 };
