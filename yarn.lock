@@ -9313,10 +9313,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@protontech/authenticator-rust-core@npm:^0.21.1":
-  version: 0.21.1
-  resolution: "@protontech/authenticator-rust-core@npm:0.21.1"
-  checksum: 10c0/fd9883dd44a9396c4a3a46c621e26adf2baf7a9ca32614a231e3b1e7c69cbb5c2d9c5b0c5b84b9c7329850fd0e171096baa710bdf057892672495e12c0af6ec0
+"@protontech/authenticator-rust-core@npm:^0.24.0":
+  version: 0.24.2
+  resolution: "@protontech/authenticator-rust-core@npm:0.24.2"
+  checksum: 10c0/f4bb041ea5371979c2853405667f57c63ccaee86d3de51b43cccfe7139e78b0034d6f5cc07bf2d9c486422b207dba8d1c0d9756453ba7698594d6554bbe23179
   languageName: node
   linkType: hard
 
@@ -9379,13 +9379,6 @@ __metadata:
   version: 0.24.3
   resolution: "@protontech/pass-rust-core@npm:0.24.3"
   checksum: 10c0/3842d4a93d11b283d49f0c137b09a934a3bbe4f579ee6b4f56f2edba726ac11974126428454fd0a7042660efc21f0cf644af5562c487c6d5122e6fec09743abf
-  languageName: node
-  linkType: hard
-
-"@protontech/pass-rust-core@npm:^0.19.0":
-  version: 0.19.4
-  resolution: "@protontech/pass-rust-core@npm:0.19.4"
-  checksum: 10c0/ec8c519d84d7456522a11d0df84c594d3dd3c5ebea15392e1688d7c9d0df9febc5df82c032d2fbc11f5ef67383f9ca2610e501d4b666d579150ae9b83cd1ee29
   languageName: node
   linkType: hard
 
@@ -38035,8 +38028,7 @@ __metadata:
     "@proton/pack": "workspace:^"
     "@proton/pass": "workspace:^"
     "@proton/styles": "workspace:^"
-    "@protontech/authenticator-rust-core": "npm:^0.21.1"
-    "@protontech/pass-rust-core": "npm:^0.19.0"
+    "@protontech/authenticator-rust-core": "npm:^0.24.0"
     "@reduxjs/toolkit": "npm:^2.8.2"
     "@tauri-apps/api": "npm:^2"
     "@tauri-apps/cli": "npm:^2"
