@@ -1305,20 +1305,25 @@ export function getAvailableSubscriptionActions(subscription: Subscription): Sub
     } as SubscriptionActions;
 }
 
+/**
+ * @param downgradeIsTrial - if true, then downgrading from 24/12 months to 1 month is allowed to be a trial
+ */
 export const shouldPassIsTrial = ({
     plansMap,
     newPlanIDs,
     oldPlanIDs,
     newCycle,
     oldCycle,
+    downgradeIsTrial,
 }: {
     plansMap: PlansMap;
     newPlanIDs: PlanIDs;
     oldPlanIDs: PlanIDs;
     newCycle: CYCLE;
     oldCycle: CYCLE;
+    downgradeIsTrial: boolean;
 }) => {
-    if (newCycle !== oldCycle) {
+    if (newCycle !== oldCycle && (!downgradeIsTrial || newCycle !== CYCLE.MONTHLY)) {
         return false;
     }
 
