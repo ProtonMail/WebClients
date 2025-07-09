@@ -110,10 +110,17 @@ export const NewsletterSubscriptionCardFilterDropdown = ({ subscription, handleS
                             className="text-left flex flex-nowrap pl-6"
                             data-testid={`dropdown-item-${item.filter}`}
                         >
-                            <Icon name={item.icon} className="mr-2 mt-0.5" />
+                            <Icon name={item.icon} className="mr-2 mt-0.5 shrink-0" />
                             {item.label}
                         </DropdownMenuButton>
                     ))}
+                    <DropdownMenuButton
+                        onClick={() => handleSubscriptionFilter('RemoveFromList')}
+                        className="text-left flex flex-nowrap pl-6"
+                    >
+                        <Icon name="cross-circle" className="mr-2 mt-0.5 shrink-0" />
+                        {c('Action').t`Remove from list`}
+                    </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
 
