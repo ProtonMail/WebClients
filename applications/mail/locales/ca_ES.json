@@ -1603,6 +1603,10 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
       ]
     },
     "action": {
@@ -4884,6 +4888,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu la cerca i torneu-ho a provar."
+      ],
+      "Wrong password": [
+        "La contrasenya no es correcta."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7128,8 +7135,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8555,6 +8561,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Només sou a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } butlletí",
+        "${ unreadCount } butlletins"
+      ],
+      "newsletter": [
+        "butlletí"
       ]
     },
     "info": {
@@ -9487,6 +9500,18 @@
       ],
       "Your password (admin)": [
         "La vostra contrasenya (administrador)"
+      ],
+      "Marked as read": [
+        "S'ha marcat com a llegit"
+      ],
+      "Moved to ${ labelName }": [
+        "S\"ha mogut a ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "S'ha mogut a l'Arxiu"
+      ],
+      "Moved to Trash": [
+        "S'ha mogut a la paperera"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9565,6 +9590,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Visualitzeu i gestioneu les subscripcions a butlletins i llistes de correu aquí."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Els butlletins informatius o llistes de correu als quals anul·leu la subscripció apareixeran aquí."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "No teniu cap subscripció activa a butlletins informatius o a llistes de correu."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "No teniu cap subscripció a butlletins informatius o a llistes de correu."
       ]
     },
     "Landmarks": {
@@ -11746,6 +11780,9 @@
       ],
       "Your payment is still being processed": [
         "El vostre pagament encara s'està processant."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ]
     },
     "Payments.Error": {
@@ -14847,6 +14884,12 @@
       ],
       "Your subscriptions in one place": [
         "Les vostres subscripcions en un sol lloc"
+      ],
+      "No active newsletters": [
+        "No hi ha butlletins actius."
+      ],
+      "No newsletters found": [
+        "No s'ha trobat cap butlletí."
       ]
     },
     "Today icon tooltip in mini calendar": {

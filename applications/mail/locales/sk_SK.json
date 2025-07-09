@@ -1613,6 +1613,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Trust key": [
+        "Dôveryhodný kľúč",
+        "Dôveryhodný kľúč",
+        "Dôverovať kľúčom",
+        "Dôverovať novým kľúčom"
       ]
     },
     "action": {
@@ -4935,6 +4941,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "Wrong password": [
+        "Nesprávne heslo"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7333,10 +7342,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9753,6 +9759,18 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
+      ],
+      "Marked as read": [
+        "Označené ako prečítané"
+      ],
+      "Moved to ${ labelName }": [
+        "Presunuté do ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Presunuté do archívu"
+      ],
+      "Moved to Trash": [
+        "Presunuté do koša"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12083,6 +12101,9 @@
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ]
     },
     "Payments.Error": {
@@ -16033,6 +16054,19 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Zrušiť predplatné"
+      ],
+      "Keep subscription": [
+        "Ponechať predplatné"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Vaša bezplatná skúšobná verzia skončí o ${ timeRemaining }"
       ]
     }
   }

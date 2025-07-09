@@ -1603,6 +1603,10 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ]
     },
     "action": {
@@ -4838,6 +4842,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "თქვენმა ძებნამ მეტისმეტად ბევრი შედეგი მოიტანა. დაადეთ უფრო მეტი ლიმიტი და თავიდან სცადეთ."
+      ],
+      "Wrong password": [
+        "არასწორი პაროლი"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7043,7 +7050,6 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -8419,6 +8425,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } სიახლე",
+        "${ unreadCount } სიახლე"
+      ],
+      "newsletter": [
+        "სიახლე"
       ]
     },
     "info": {
@@ -9348,6 +9361,18 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ],
+      "Marked as read": [
+        "მონიშნულია წაკითხულად"
+      ],
+      "Moved to ${ labelName }": [
+        "გადატანილია ${ labelName }-ში"
+      ],
+      "Moved to Archive": [
+        "გადატანილია არქივში"
+      ],
+      "Moved to Trash": [
+        "გადატანილია ნაგვის ყუთში"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14647,6 +14672,12 @@
       ],
       "Your subscriptions in one place": [
         "თქვენი გამოწერები ერთ ადგილას"
+      ],
+      "No active newsletters": [
+        "აქტიური სახლეების გარეშე"
+      ],
+      "No newsletters found": [
+        "სიახლეები აღმოჩენილი არაა"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15237,6 +15268,19 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "გამოწერის გაუქმება"
+      ],
+      "Keep subscription": [
+        "გამოწერის შენარჩუნება"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ timeRemaining }"
       ]
     }
   }

@@ -1576,6 +1576,10 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
       ]
     },
     "action": {
@@ -1770,6 +1774,9 @@
       ],
       "30 months": [
         "30 kuukautta"
+      ],
+      "/ month": [
+        "/ kuukausi"
       ]
     },
     "Apps dropdown": {
@@ -4761,6 +4768,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ],
+      "Wrong password": [
+        "Väärä salasana"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6966,8 +6976,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8348,6 +8357,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** tulos kohteessa ${ labelName }",
+        "**${ total }** tulosta kohteessa ${ labelName }"
       ]
     },
     "info": {
@@ -9267,6 +9280,12 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "Marked as read": [
+        "Merkitty luetuksi"
+      ],
+      "Moved to Trash": [
+        "Siirretty roskakoriin"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10852,6 +10871,10 @@
       ],
       "Require 2FA": [
         "2FA-pakotus"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
       ]
     },
     "Notification": {
@@ -12672,6 +12695,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-yhteys/käyttäjä",
         "${ n } VPN-yhteyttä/käyttäjä"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti",
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti"
       ]
     },
     "Subscription change warning": {
@@ -14588,6 +14615,9 @@
     "Unlimited offer": {
       "Only": [
         "Vain"
+      ],
+      "/month": [
+        "/kuukausi"
       ]
     },
     "unprivatization": {
@@ -15063,6 +15093,11 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Peru tilaus"
       ]
     }
   }

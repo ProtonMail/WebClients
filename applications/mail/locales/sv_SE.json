@@ -1603,6 +1603,10 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
       ]
     },
     "action": {
@@ -4878,6 +4882,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Wrong password": [
+        "Fel lösenord"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7109,8 +7116,7 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8533,6 +8539,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } nyhetsbrev",
+        "${ unreadCount } nyhetsbrev"
+      ],
+      "newsletter": [
+        "nyhetsbrev"
       ]
     },
     "info": {
@@ -9465,6 +9478,18 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Marked as read": [
+        "Markerad som läst"
+      ],
+      "Moved to ${ labelName }": [
+        "Flyttad till ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Flyttad till arkiv"
+      ],
+      "Moved to Trash": [
+        "Flyttad till papperskorg"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9543,6 +9568,12 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Visa och hantera prenumerationer för nyhetsbrev och e-postlistor här."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Nyhetsbrev eller e-postlistor som du avslutar prenumeration på kommer visas här."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Du har inga prenumerationer på nyhetsbrev eller e-postlistor."
       ]
     },
     "Landmarks": {
@@ -11376,6 +11407,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Din domän och din prenumeration är redo att användas."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } betyder att du aldrig kommer se sponsrade annonser i våra appar."
       ]
     },
     "Onboarding Proton": {
@@ -14804,6 +14838,12 @@
       ],
       "Your subscriptions in one place": [
         "Dina prenumerationer på ett ställe"
+      ],
+      "No active newsletters": [
+        "Inga aktiva nyhetsbrev"
+      ],
+      "No newsletters found": [
+        "Inga nyhetsbrev hittades"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1608,6 +1608,11 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Chei de încredere",
+        "Chei de încredere"
       ]
     },
     "action": {
@@ -4903,6 +4908,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Limitați căutarea și reîncercați."
+      ],
+      "Wrong password": [
+        "Parolă greșită"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7230,9 +7238,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8679,6 +8685,14 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } buletin informativ",
+        "${ unreadCount } buletine informative",
+        "${ unreadCount } de buletine informative"
+      ],
+      "newsletter": [
+        "buletin informativ"
       ]
     },
     "info": {
@@ -9618,6 +9632,18 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Marked as read": [
+        "Marcare: citit"
+      ],
+      "Moved to ${ labelName }": [
+        "S-a mutat în ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "S-a mutat în arhivă"
+      ],
+      "Moved to Trash": [
+        "S-a mutat în gunoi"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9696,6 +9722,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aici vizualizați și gestionați abonamentele la buletine informative și la listele de adrese."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Buletinele informative sau listele de adrese de la care vă dezabonați vor apărea aici."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Nu aveți buletine informative active sau abonamente la liste de adrese."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Nu aveți buletine informative sau abonamente la liste de adrese."
       ]
     },
     "Landmarks": {
@@ -11911,6 +11946,9 @@
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ]
     },
     "Payments.Error": {
@@ -15099,6 +15137,12 @@
       ],
       "Your subscriptions in one place": [
         "Abonamentele personale într-un singur loc"
+      ],
+      "No active newsletters": [
+        "Nu există buletine de știri active"
+      ],
+      "No newsletters found": [
+        "Nu există buletine informative"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15736,6 +15780,19 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
+      "Keep subscription": [
+        "Păstrare abonament"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Perioada de probare se încheie peste ${ timeRemaining }"
       ]
     }
   }
