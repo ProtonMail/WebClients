@@ -1,10 +1,10 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import OfferSubscription from '@proton/components/containers/offers/helpers/offerSubscription';
-import { type Subscription } from '@proton/payments';
-import { isManagedExternally } from '@proton/payments';
+import { type Subscription, isManagedExternally } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 import { POST_SIGNUP_GO_UNLIMITED_ACCOUNT_AGE } from './interface';
 
@@ -47,6 +47,7 @@ export const getIsEligible = ({ user, subscription, protonConfig, parentApp }: P
         hasEligiblePlan &&
         hasNoScheduledSubscription &&
         shouldShow &&
+        !hasPassLifetime(user) &&
         user.canPay &&
         !user.isDelinquent
     );

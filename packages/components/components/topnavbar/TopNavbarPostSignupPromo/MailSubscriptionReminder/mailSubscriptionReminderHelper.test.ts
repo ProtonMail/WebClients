@@ -157,4 +157,25 @@ describe('Subscription reminder offer', () => {
             })
         ).toBeFalsy();
     });
+
+    it('should return false if user has pass lifetime', () => {
+        const user = {
+            isFree: true,
+            isDelinquent: false,
+            CreateTime: oneHundreadEightyDaysAgo,
+            Flags: { 'pass-lifetime': true },
+        } as unknown as UserModel;
+
+        expect(
+            getIsUserEligibleForSubscriptionReminder({
+                user,
+                protonConfig: mailConfig,
+                mailOfferState: {
+                    offerStartDate: ninetyDaysAgo,
+                    automaticOfferReminders: AUTOMATIC_OFFER_STATE.secondSpotlight,
+                },
+                lastReminderTimestamp: ninetyDaysAgo,
+            })
+        ).toBeFalsy();
+    });
 });
