@@ -372,7 +372,7 @@
         "설정으로 이동하기"
       ],
       "Got it": [
-        "알겠습니다"
+        "확인"
       ],
       "Help and feedback": [
         "도움말 및 의견"
@@ -1784,6 +1784,27 @@
     "Commander action": {
       "Search events": [
         "이벤트 검색"
+      ],
+      "Day view": [
+        "일간 보기"
+      ],
+      "Month view": [
+        "월간 보기"
+      ],
+      "New event": [
+        "신규 이벤트"
+      ],
+      "Next period": [
+        "다음 기간"
+      ],
+      "Previous period": [
+        "이전 기간"
+      ],
+      "Today": [
+        "오늘"
+      ],
+      "Week view": [
+        "주간 보기"
       ]
     },
     "Confirm modal title": {
@@ -2906,7 +2927,7 @@
         "사용 가능 여부 로드 중"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "연락처 병합 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+        "연락처 병합 중... 몇 분 정도 소요될 수 있습니다. 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
       "Set a data recovery method to prevent data loss.": [
         "데이터 손실을 방지하려면 데이터 복구 방법을 설정하세요."
@@ -5894,6 +5915,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "Dedicated VPN servers": [
+        "전용 VPN 서버"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "조직의 전용 VPN 서버 수"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "또한 ${ boldPlanTitle }의 모든 기능도 사용할 수 없게 됩니다:"
       ]
     },
     "info": {
@@ -8192,6 +8222,9 @@
       ],
       "Your subscription renews soon": [
         "구독이 곧 끝나게 됩니다"
+      ],
+      "Don’t show this again": [
+        "다시 보지 않기"
       ]
     },
     "Offer fearue": {
@@ -8226,6 +8259,15 @@
       ],
       "Storage": [
         "저장 공간"
+      ],
+      "500 GB secure storage": [
+        "500 GB 보안 저장공간"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가 내의 초고속 VPN 서버"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "신원 보호를 위한 무제한 별칭"
       ]
     },
     "Onboarding": {
@@ -8579,6 +8621,9 @@
       ],
       "Your payment is still being processed": [
         "회원님의 결제가 아직 처리 중입니다"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ]
     },
     "Payments.Error": {
@@ -8609,6 +8654,9 @@
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ details }": [
+        "은행 송금 - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -9285,6 +9333,21 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "${ pricingTitle }(으)로 업그레이드"
+      ],
+      "Browse securely": [
+        "안전하게 탐색"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME }으로 더 많은 것을 시작해 보세요"
+      ],
+      "Get unlimited aliases": [
+        "무제한 별칭 받기"
+      ],
+      "Increase your storage": [
+        "저장공간 늘리기"
+      ],
+      "Keep passwords safe": [
+        "안전하게 비밀번호 유지"
       ]
     },
     "specialoffer: Offers": {
@@ -9370,6 +9433,15 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "업그레이드로 2년 동안 더 저렴하게 ${ planName } 사용하기"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "모든 파일과 사진을 안전하게 저장할 수 있는 500 GB 스토리지를 받아보세요"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가의 초고속 VPN 서버에 접근"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "신원을 보호하고 스팸을 줄이기 위해 무제한 별칭을 받아보세요"
       ]
     },
     "specialoffer: Tooltip": {
@@ -10338,7 +10410,7 @@
         "캘린더 알림"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "${ MAIL_SHORT_APP_NAME } 구독 해지"
+        "${ MAIL_SHORT_APP_NAME } 구독 취소"
       ],
       "Cancel subscription?": [
         "구독을 취소하시겠어요?"
@@ -11012,6 +11084,9 @@
     "Unlimited offer": {
       "/month": [
         "/월간"
+      ],
+      "Only": [
+        "단"
       ]
     },
     "unprivatization": {
@@ -11442,6 +11517,19 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "구독 취소하기"
+      ],
+      "Keep subscription": [
+        "구독 유지"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "무료 체험이 ${ timeRemaining } 에 종료됩니다"
       ]
     }
   }
