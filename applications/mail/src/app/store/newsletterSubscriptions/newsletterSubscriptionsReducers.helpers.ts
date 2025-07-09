@@ -1,16 +1,16 @@
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type {
-    CreateEventItemUpdate,
-    DeleteEventItemUpdate,
-    UpdateEventItemUpdate,
-} from '@proton/shared/lib/helpers/updateCollection';
+import type { CreateEventItemUpdate, UpdateEventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
 import { getReceivedMessagesCount } from 'proton-mail/components/view/NewsletterSubscription/helper';
 
 import { type NewsletterSubscriptionsInterface, SortSubscriptionsValue } from './interface';
-import type { unsubscribeSubscription, updateSubscription } from './newsletterSubscriptionsActions';
+import type {
+    deleteNewsletterSubscription,
+    unsubscribeSubscription,
+    updateSubscription,
+} from './newsletterSubscriptionsActions';
 import type { NewsletterSubscriptionsStateType } from './newsletterSubscriptionsSlice';
 
 export const filterNewsletterSubscriptionList = (list: string[], idToRemove?: string) => {
@@ -43,7 +43,10 @@ export const updateSubscriptionState = (
 
 export const handleUpdateRejection = (
     state: NewsletterSubscriptionsStateType,
-    action: ReturnType<typeof updateSubscription.rejected> | ReturnType<typeof unsubscribeSubscription.rejected>
+    action:
+        | ReturnType<typeof updateSubscription.rejected>
+        | ReturnType<typeof unsubscribeSubscription.rejected>
+        | ReturnType<typeof deleteNewsletterSubscription.rejected>
 ) => {
     const stateValue = getStoreValue(state);
     const { previousState, originalIndex } = action.payload || {};
@@ -55,10 +58,12 @@ export const handleUpdateRejection = (
 
     stateValue.byId[subscriptionId] = previousState;
 
-    const unsubscribedId = stateValue.tabs.unsubscribe.ids.indexOf(subscriptionId);
-    if (unsubscribedId !== -1) {
-        stateValue.tabs.unsubscribe.ids.splice(unsubscribedId, 1);
-        stateValue.tabs.unsubscribe.totalCount = safeDecreaseCount(stateValue.tabs.unsubscribe.totalCount);
+    if (previousState.UnsubscribedTime) {
+        stateValue.tabs.unsubscribe.ids.splice(originalIndex, 0, subscriptionId);
+        stateValue.tabs.unsubscribe.totalCount = safeIncreaseCount(stateValue.tabs.unsubscribe.totalCount);
+    } else {
+        stateValue.tabs.active.ids.splice(originalIndex, 0, subscriptionId);
+        stateValue.tabs.active.totalCount = safeIncreaseCount(stateValue.tabs.active.totalCount);
     }
 
     // We select the previous subscription if we had an error
@@ -66,8 +71,6 @@ export const handleUpdateRejection = (
         stateValue.selectedSubscriptionId = subscriptionId;
     }
 
-    stateValue.tabs.active.ids.splice(originalIndex, 0, subscriptionId);
-    stateValue.tabs.active.totalCount = safeIncreaseCount(stateValue.tabs.active.totalCount);
     stateValue.unsubscribingSubscriptionId = undefined;
 };
 
@@ -177,29 +180,29 @@ export const handleUpdateServerEvent = (
     updateSubscriptionState(stateValue.byId, update.ID, update.NewsletterSubscription);
 };
 
-export const handleDeleteServerEvent = (state: NewsletterSubscriptionsStateType, update: DeleteEventItemUpdate) => {
+export const handleDeleteServerEvent = (state: NewsletterSubscriptionsStateType, id: string) => {
     const stateValue = getStoreValue(state);
     if (!stateValue) {
         return;
     }
 
-    if (stateValue.selectedSubscriptionId === update.ID) {
+    if (stateValue.selectedSubscriptionId === id) {
         stateValue.selectedSubscriptionId = undefined;
         stateValue.selectedElementId = undefined;
     }
 
     // Always remove from both tabs
-    stateValue.tabs.active.ids = filterNewsletterSubscriptionList(stateValue.tabs.active.ids, update.ID);
-    stateValue.tabs.unsubscribe.ids = filterNewsletterSubscriptionList(stateValue.tabs.unsubscribe.ids, update.ID);
+    stateValue.tabs.active.ids = filterNewsletterSubscriptionList(stateValue.tabs.active.ids, id);
+    stateValue.tabs.unsubscribe.ids = filterNewsletterSubscriptionList(stateValue.tabs.unsubscribe.ids, id);
 
     // We want to make sure the subscription is in the store before changing the counts and deleting it
-    if (stateValue.byId[update.ID]) {
-        if (stateValue.byId[update.ID].UnsubscribedTime) {
+    if (stateValue.byId[id]) {
+        if (stateValue.byId[id].UnsubscribedTime) {
             stateValue.tabs.unsubscribe.totalCount = safeDecreaseCount(stateValue.tabs.unsubscribe.totalCount);
         } else {
             stateValue.tabs.active.totalCount = safeDecreaseCount(stateValue.tabs.active.totalCount);
         }
     }
 
-    delete stateValue.byId[update.ID];
+    delete stateValue.byId[id];
 };
