@@ -1,9 +1,12 @@
-import type { Address as tsAddress, User as tsUser } from '../../lib/interfaces';
+import { CryptoProxy } from '@proton/crypto';
+
+import type { Key, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '../../lib/keys';
 import {
     getAddressReactivationPayload,
     getReactivatedAddressKeys,
     getReactivatedAddressesKeys,
+    resetOrReplaceUserId,
 } from '../../lib/keys/reactivation/reactivateKeyHelper';
 import { getAddressKey, getUserKey } from './keyDataHelper';
 
@@ -82,6 +85,33 @@ const getSetup2 = async () => {
 };
 
 describe('reactivate address keys', () => {
+    it("resetOrReplaceUserId - should not replace the userID if the inactive key's userID is not empty", async () => {
+        const userKeyWithValidUserID = await getUserKey('1', DEFAULT_KEYPASSWORD);
+        const fallbackEmail = 'fallback@test.proton.me';
+        const { key, replaced } = await resetOrReplaceUserId(
+            userKeyWithValidUserID.Key,
+            userKeyWithValidUserID.key.privateKey,
+            fallbackEmail
+        );
+        expect(replaced).toBeFalse();
+        expect(key.getUserIDs().length).toBe(1);
+        expect(key.getUserIDs()[0]).toEqual(userKeyWithValidUserID.key.publicKey.getUserIDs()[0]);
+    });
+
+    it("resetOrReplaceUserId - should fallback to email address if the inactive key's userID is legacy", async () => {
+        const keyWithEmptyUserID = await CryptoProxy.generateKey({ userIDs: { name: 'UserID' } });
+        const exportedKey = await CryptoProxy.exportPublicKey({ key: keyWithEmptyUserID });
+        const fallbackEmail = 'fallback@test.proton.me';
+        const { key, replaced } = await resetOrReplaceUserId(
+            { PrivateKey: exportedKey } as Key,
+            keyWithEmptyUserID,
+            fallbackEmail
+        );
+        expect(replaced).toBeTrue();
+        expect(key.getUserIDs().length).toBe(1);
+        expect(key.getUserIDs()[0]).toEqual(`${fallbackEmail} <${fallbackEmail}>`);
+    });
+
     it('should return an empty result', async () => {
         const { User, Address, userKeys } = await getSetup1();
         const result = await getReactivatedAddressKeys({
