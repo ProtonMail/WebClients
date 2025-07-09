@@ -16,7 +16,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { getCountryOptions, getVPNDedicatedIPs } from '@proton/payments';
+import { PLANS, getCountryOptions, getVPNDedicatedIPs } from '@proton/payments';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -138,14 +138,16 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         return createdGateway;
     };
 
-    const getCustomizeSubscriptionOpener = (source: typeof DASHBOARD | typeof UPSELLS) => () =>
-        openSubscriptionModal({
-            metrics: {
-                source,
-            },
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
-            plan: organization.PlanName,
-        });
+    const getCustomizeSubscriptionOpener =
+        (source: typeof DASHBOARD | typeof UPSELLS, plan = organization.PlanName) =>
+        () =>
+            openSubscriptionModal({
+                metrics: {
+                    source,
+                },
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                plan,
+            });
 
     const isAdmin = user.isAdmin && user.isSelf;
 
@@ -193,7 +195,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             <Button
                                 color="norm"
                                 fullWidth
-                                onClick={getCustomizeSubscriptionOpener(UPSELLS)}
+                                onClick={getCustomizeSubscriptionOpener(UPSELLS, PLANS.VPN_BUSINESS)}
                                 title={c('Title').t`Setup dedicated servers by upgrading to Business`}
                             >
                                 {c('Action').t`Upgrade to Business`}
