@@ -218,6 +218,50 @@ describe('Drive post signup one dollar eligibility', () => {
     });
 
     describe('Basic eligibilty test', () => {
+        it('should be eligible, account met requirements', () => {
+            const user = {
+                isFree: true,
+                isDelinquent: false,
+                CreateTime: subDays(today, 40).getTime() / 1000,
+                ProductUsedSpace: { Drive: 0 },
+                Flags: { 'pass-lifetime': false },
+            } as unknown as UserModel;
+
+            expect(
+                getIsUserEligibleForOneDollar({
+                    user,
+                    protonConfig,
+                    offerStartDateTimestamp: subDays(today, 30).getTime() / 1000,
+                    minimalAccountAgeTimestamp: subDays(today.getTime(), 60).getTime() / 1000,
+                    driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
+                    hasUploadedFile: true,
+                })
+            ).toBeTruthy();
+        });
+
+        it('should not be eligible, account has pass lifetime', () => {
+            const user = {
+                isFree: true,
+                isDelinquent: false,
+                CreateTime: subDays(today, 40).getTime() / 1000,
+                ProductUsedSpace: { Drive: 0 },
+                Flags: { 'pass-lifetime': true },
+            } as unknown as UserModel;
+
+            expect(
+                getIsUserEligibleForOneDollar({
+                    user,
+                    protonConfig,
+                    offerStartDateTimestamp: subDays(today, 30).getTime() / 1000,
+                    minimalAccountAgeTimestamp: subDays(today.getTime(), 60).getTime() / 1000,
+                    driveOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
+                    hasUploadedFile: true,
+                })
+            ).toBeFalsy();
+        });
+
         it('should not be eligible, flag disabled', () => {
             const nonFreeUser = {
                 isFree: false,
