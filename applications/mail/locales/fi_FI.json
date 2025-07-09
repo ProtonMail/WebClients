@@ -1576,6 +1576,10 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
       ]
     },
     "action": {
@@ -1770,6 +1774,9 @@
       ],
       "30 months": [
         "30 kuukautta"
+      ],
+      "/ month": [
+        "/ kuukausi"
       ]
     },
     "Apps dropdown": {
@@ -4761,6 +4768,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ],
+      "Wrong password": [
+        "Väärä salasana"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8331,6 +8341,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** tulos kohteessa ${ labelName }",
+        "**${ total }** tulosta kohteessa ${ labelName }"
+      ],
+      "Block sender": [
+        "Estä lähettäjä"
+      ],
+      "Message list": [
+        "Viestilista"
+      ],
+      "Message view": [
+        "Viestinäkymä"
+      ],
+      "Preferences updated": [
+        "Asetukset päivitettiin"
       ]
     },
     "info": {
@@ -9247,6 +9273,15 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "Alias title": [
+        "Aliaksen otsikko"
+      ],
+      "Marked as read": [
+        "Merkitty luetuksi"
+      ],
+      "Moved to Trash": [
+        "Siirretty roskakoriin"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10832,6 +10867,10 @@
       ],
       "Require 2FA": [
         "2FA-pakotus"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
       ]
     },
     "Notification": {
@@ -10964,6 +11003,12 @@
       ],
       "Your subscription renews soon": [
         "Tilauksesi uusiutuu pian"
+      ],
+      "Don’t show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Hanki ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -10990,6 +11035,9 @@
       ],
       "Storage": [
         "Tallennustila"
+      ],
+      "500 GB secure storage": [
+        "500 Gt suojattua tallennustilaa"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11154,6 +11202,9 @@
     "Onboarding Trial": {
       "Continue": [
         "Jatka"
+      ],
+      "If you need help,": [
+        "Jos tarvitset apua,"
       ]
     },
     "Online accounts": {
@@ -11321,6 +11372,9 @@
       ],
       "New credit/debit card": [
         "Uusi maksukortti"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12632,6 +12686,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-yhteys/käyttäjä",
         "${ n } VPN-yhteyttä/käyttäjä"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti",
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti"
       ]
     },
     "Subscription change warning": {
@@ -14433,6 +14491,9 @@
       ],
       "Your subscriptions in one place": [
         "Tilauksesi yhdessä paikassa"
+      ],
+      "Subscription canceled": [
+        "Tilaus on peruttu"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15015,6 +15076,24 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Peru tilaus"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/kuukausi"
+      ],
+      "Only": [
+        "Vain"
       ]
     }
   }

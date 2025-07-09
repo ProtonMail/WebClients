@@ -1421,7 +1421,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -1603,6 +1604,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Deleting folder": [
+        "Eliminando la carpeta"
+      ],
+      "Deleting label": [
+        "Eliminando la etiqueta"
       ]
     },
     "action": {
@@ -1939,6 +1946,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el periodo de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el periodo de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_USERS } usuarios durante el periodo de prueba."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "No puedes añadir dominios personalizados durante el periodo de prueba."
+      ],
+      "You have reached the trial limit.": [
+        "Has alcanzado el límite del periodo de prueba."
       ]
     },
     "bf2023: Deal details": {
@@ -2544,7 +2569,7 @@
         "Nuestro plan básico y gratuito con correo y almacenamiento cifrado de extremo a extremo. No incluye características prémium."
       ],
       "Save ${ upsellSavings }": [
-        "Ahorra un ${ upsellSavings }"
+        "Ahorra ${ upsellSavings }"
       ],
       "Save money with ${ upsellPlanName }": [
         "Ahorra dinero con ${ upsellPlanName }"
@@ -4881,6 +4906,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Tu búsqueda ha coincidido con muchos resultados. Limita tu búsqueda e inténtalo de nuevo."
+      ],
+      "No address with sending permissions": [
+        "No hay dirección con permisos de envío"
+      ],
+      "Permissions request failed.": [
+        "Error con la solicitud de permisos"
+      ],
+      "Wrong password": [
+        "La contraseña no es correcta."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8542,6 +8576,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } boletín",
+        "${ unreadCount } boletines"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "newsletter": [
+        "boletín"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados en la organización"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "También perderás acceso a las funciones de ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -9474,6 +9524,18 @@
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
+      ],
+      "Marked as read": [
+        "Marcado como leído"
+      ],
+      "Moved to ${ labelName }": [
+        "Movido a ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Archivado"
+      ],
+      "Moved to Trash": [
+        "Movido a la Papelera"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9552,6 +9614,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aquí puedes ver y administrar las suscripciones a boletines y listas de correo."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Los boletines o listas de direcciones de los que cancelas tu suscripción aparecerán aquí."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "No tienes ninguna suscripción activa a boletines o listas de correo."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "No tiene ninguna suscripción a boletines o listas de correo."
       ]
     },
     "Landmarks": {
@@ -11386,6 +11457,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "El dominio y la suscripción están listos para usar."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } significa que nunca verás anuncios patrocinados en nuestras aplicaciones."
+      ],
+      "Ad-free promise": [
+        "Nuestro compromiso sin publicidad"
       ]
     },
     "Onboarding Proton": {
@@ -11632,6 +11709,9 @@
       ],
       "New credit/debit card": [
         "Nueva tarjeta de crédito/débito"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11724,6 +11804,9 @@
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Tu moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo soportan pagos en euros."
       ]
     },
     "Payments.Error": {
@@ -14826,6 +14909,12 @@
       ],
       "Your subscriptions in one place": [
         "Tus suscripciones en un solo lugar"
+      ],
+      "No active newsletters": [
+        "No hay boletines activos."
+      ],
+      "No newsletters found": [
+        "No se han encontrado boletines."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15174,7 +15263,7 @@
         "Cada ${ interval } semanas los viernes"
       ],
       "Every ${ interval } week on Monday": [
-        "Cada semana los lunes ${ interval }",
+        "Cada ${ interval } semana los lunes ",
         "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
@@ -15416,6 +15505,27 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar la suscripción"
+      ],
+      "Keep subscription": [
+        "Mantener la suscripción"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Tu periodo de prueba gratuito termina en ${ timeRemaining }"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - tarjeta terminada en ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferencia bancaria - ${ details }"
       ]
     }
   }

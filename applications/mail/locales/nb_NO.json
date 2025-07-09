@@ -1606,6 +1606,10 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ]
     },
     "action": {
@@ -4868,6 +4872,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "No address with sending permissions": [
+        "Ingen adresse med tillatelser for sending"
+      ],
+      "Permissions request failed.": [
+        "Forespørsel om tillatelser mislyktes."
+      ],
+      "Wrong password": [
+        "Feil passord"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8529,6 +8542,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } nyhetsbrev",
+        "${ unreadCount } nyhetsbrev"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
+      "newsletter": [
+        "nyhetsbrev"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antall dedikerte VPN-tjenere i organisasjonen"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
       ]
     },
     "info": {
@@ -9458,6 +9487,18 @@
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
+      ],
+      "Marked as read": [
+        "Merket som lest"
+      ],
+      "Moved to ${ labelName }": [
+        "Flyttet til ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Flyttet til arkivet"
+      ],
+      "Moved to Trash": [
+        "Flyttet til papirkurven"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9536,6 +9577,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Vis og administrer abonnementer på nyhetsbrev og e-postlister her."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Nyhetsbrev eller e-postlister du avslutter abonnement på vises her."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Du har ingen aktive nyhetsbrev eller e-postlisteabonnementer."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Du har ingen nyhetsbrev eller e-postlisteabonnementer."
       ]
     },
     "Landmarks": {
@@ -11364,6 +11414,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domenet og abonnementet ditt er klart til bruk."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }: appene våre vil aldri vise sponsede annonser."
+      ],
+      "Ad-free promise": [
+        "Vår forpliktelse til reklamefrie tjenester"
       ]
     },
     "Onboarding Proton": {
@@ -11705,6 +11761,9 @@
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
       ]
     },
     "Payments.Error": {
@@ -14810,6 +14869,12 @@
       ],
       "Your subscriptions in one place": [
         "Dine abonnementer på ett sted"
+      ],
+      "No active newsletters": [
+        "Ingen aktive nyhetsbrev"
+      ],
+      "No newsletters found": [
+        "Ingen nyhetsbrev funnet"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15400,6 +15465,19 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Avbryt abonnement"
+      ],
+      "Keep subscription": [
+        "Behold abonnement"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Prøveperioden avsluttes om ${ timeRemaining }"
       ]
     }
   }

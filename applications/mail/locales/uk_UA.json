@@ -1445,6 +1445,15 @@
       ],
       "Zoom out": [
         "Зменшити"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Створити папку ${ boldFolderName }"
+      ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
       ]
     },
     "action": {
@@ -3721,6 +3730,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Приєднайте вашу CRM, сайт, принтери і т.д."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Допоможіть вашій команді надійно зберігати паролі до конфіденційної ділової та клієнтської інформації."
       ]
     },
     "description": {
@@ -4530,6 +4548,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "За вашим пошуковим запитом знайдено надто багато результатів. Обмежте пошуковий запит і спробуйте знову."
+      ],
+      "Wrong password": [
+        "Неправильний пароль"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7971,6 +7992,24 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
+      ],
+      "Ad targeting": [
+        "Націлювання реклами"
+      ],
+      "Block sender": [
+        "Заблокувати відправника"
+      ],
+      "No messages to show": [
+        "Немає повідомлень для відображення"
+      ],
+      "Preferences updated": [
+        "Налаштування оновлено"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "У вашій поштовій скриньці немає повідомлень від цього відправника."
+      ],
+      "Your online activity is protected": [
+        "Ваша онлайн активність захищена"
       ]
     },
     "info": {
@@ -8810,6 +8849,12 @@
       ],
       "Your location": [
         "Ваше розташування:"
+      ],
+      "Choose what to do instead": [
+        "Виберіть, що робити замість цього"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Не вдалося створити папку ${ customFolderName }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9077,6 +9122,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Щоб переглянути оновлене запрошення, вам необхідно повторно активувати свої ключі"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Як увімкнути ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Types of recovery methods": [
+        "Типи способів відновлення"
       ]
     },
     "Link to calendar event": {
@@ -13798,6 +13849,21 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "Desktop": [
+        "Настільний"
+      ],
+      "Download the app": [
+        "Завантажити програму"
+      ],
+      "How does it all work?": [
+        "Як це все працює?"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Скасувати підписку для цього відправника неможливо"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14465,6 +14531,11 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Завантажити для Windows"
       ]
     }
   }

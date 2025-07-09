@@ -610,7 +610,7 @@
         "설정으로 이동하기"
       ],
       "Got it": [
-        "알겠습니다"
+        "확인"
       ],
       "Help and feedback": [
         "도움말 및 의견"
@@ -1225,7 +1225,7 @@
         "수신 확인 보내기"
       ],
       "Send unsubscribe email": [
-        "구독 해지 이메일 전송"
+        "구독 취소 이메일 전송"
       ],
       "Set": [
         "설정"
@@ -1456,13 +1456,13 @@
         "별표 제거"
       ],
       "Unsubscribe": [
-        "구독 해지"
+        "구독 취소"
       ],
       "Unsubscribed": [
-        "구독 해지됨"
+        "구독 취소됨"
       ],
       "Unsubscribing": [
-        "구독 해지 중"
+        "구독 취소 중"
       ],
       "Untrust": [
         "신뢰하지 않음"
@@ -1595,6 +1595,15 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Deleting folder": [
+        "폴더 삭제 중"
+      ],
+      "Deleting label": [
+        "라벨 삭제 중"
+      ],
+      "Trust key": [
+        "키 신뢰하기"
       ]
     },
     "action": {
@@ -3941,7 +3950,7 @@
         "이벤트 초대장에 화상 회의 링크를 즉시 추가할 수 있습니다."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "연락처 병합 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+        "연락처 병합 중... 몇 분 정도 소요될 수 있습니다. 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "${ senderEmailAddress }을(를) 포함한 ${ otherSendersCount }개 주소로 새로운 이메일을 전송할 수 없으며, 완전히 삭제됩니다."
@@ -4824,6 +4833,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
+      ],
+      "No address with sending permissions": [
+        "발신 권한이 있는 주소가 없습니다."
+      ],
+      "Permissions request failed.": [
+        "권한 요청을 실패했습니다."
+      ],
+      "Wrong password": [
+        "잘못된 비밀번호입니다"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6391,7 +6409,7 @@
         "이 수신자에 대해 알 수 없는 공개 키가 발견되었습니다."
       ],
       "An unsubscribe email will be sent on your behalf.": [
-        "사용자를 대신하여 구독 해지 이메일이 자동 발송됩니다."
+        "사용자를 대신하여 구독 취소 요청 이메일이 자동 발송됩니다."
       ],
       "and": [
         "그리고"
@@ -6733,7 +6751,7 @@
         "각각의 코드는 한 번만 사용할 수 있습니다."
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
-        "간편하게 뉴스레터 및 메일링 리스트를 관리 및 구독 해지할 수 있어요."
+        "간편하게 뉴스레터 및 메일링 리스트를 관리 및 구독 취소할 수 있어요."
       ],
       "Edit email address": [
         "이메일 주소 변경"
@@ -7921,7 +7939,7 @@
         "저장되지 않은 변경 사항"
       ],
       "Unsubscribe": [
-        "구독 해지"
+        "구독 취소"
       ],
       "Unsupported file": [
         "지원되지 않는 파일"
@@ -8375,6 +8393,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount }개 뉴스레터"
+      ],
+      "Block sender": [
+        "발신자 차단"
+      ],
+      "Dedicated VPN servers": [
+        "전용 VPN 서버"
+      ],
+      "newsletter": [
+        "뉴스레터"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "조직의 전용 VPN 서버 수"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "또한 ${ boldPlanTitle }의 모든 기능도 사용할 수 없게 됩니다:"
       ]
     },
     "info": {
@@ -9291,6 +9327,21 @@
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "폴더 생성 실패 ${ customFolderName }"
+      ],
+      "Marked as read": [
+        "읽음으로 표시"
+      ],
+      "Moved to ${ labelName }": [
+        "${ labelName }(으)로 이동됨"
+      ],
+      "Moved to Archive": [
+        "보관함으로 이동됨"
+      ],
+      "Moved to Trash": [
+        "휴지통으로 이동됨"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9369,6 +9420,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "여기서 뉴스레터와 메일링 리스트 구독들을 확인 및 관리하세요."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "구독 취소한 뉴스레터 또는 메일링 리스트가 여기에 나타납니다."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "활성 상태의 뉴스레터 또는 메일링 리스트 구독이 없습니다."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "활성 상태의 뉴스레터 또는 메일링 리스트 구독이 없습니다."
       ]
     },
     "Landmarks": {
@@ -10986,6 +11046,9 @@
       ],
       "Your subscription renews soon": [
         "구독이 곧 끝나게 됩니다"
+      ],
+      "Don’t show this again": [
+        "다시 보지 않기"
       ]
     },
     "Offer fearue": {
@@ -11020,6 +11083,15 @@
       ],
       "Storage": [
         "저장 공간"
+      ],
+      "500 GB secure storage": [
+        "500 GB 보안 저장공간"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가 내의 초고속 VPN 서버"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "신원 보호를 위한 무제한 별칭"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11150,6 +11222,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "도메인과 구독을 사용할 수 있습니다."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }은 우리가 만든 앱에서는 절대 광고를 개재하지 않을 것이라는 고객과의 약속입니다."
+      ],
+      "Ad-free promise": [
+        "광고 없는 약속"
       ]
     },
     "Onboarding Proton": {
@@ -11486,6 +11564,9 @@
       ],
       "Your payment is still being processed": [
         "회원님의 결제가 아직 처리 중입니다"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ]
     },
     "Payments.Error": {
@@ -11516,6 +11597,9 @@
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "번호가 ${ paymentMethod.Details.Last4 }(으)로 끝나는 Apple Pay 카드"
+      ],
+      "Bank transfer - ${ details }": [
+        "은행 송금 - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -12381,6 +12465,21 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "${ pricingTitle }(으)로 업그레이드"
+      ],
+      "Browse securely": [
+        "안전하게 탐색"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME }으로 더 많은 것을 시작해 보세요"
+      ],
+      "Get unlimited aliases": [
+        "무제한 별칭 받기"
+      ],
+      "Increase your storage": [
+        "저장공간 늘리기"
+      ],
+      "Keep passwords safe": [
+        "안전하게 비밀번호 유지"
       ]
     },
     "specialoffer: Offers": {
@@ -12466,6 +12565,15 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "업그레이드로 2년 동안 더 저렴하게 ${ planName } 사용하기"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "모든 파일과 사진을 안전하게 저장할 수 있는 500 GB 스토리지를 받아보세요"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110개 이상 국가의 초고속 VPN 서버에 접근"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "신원을 보호하고 스팸을 줄이기 위해 무제한 별칭을 받아보세요"
       ]
     },
     "specialoffer: Tooltip": {
@@ -12547,7 +12655,7 @@
         "별칭 비활성화됨"
       ],
       "Unsubscribed": [
-        "구독 해지됨"
+        "구독 취소됨"
       ]
     },
     "Step": {
@@ -13659,7 +13767,7 @@
         "발신자 차단"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "${ MAIL_SHORT_APP_NAME } 구독 해지"
+        "${ MAIL_SHORT_APP_NAME } 구독 취소"
       ],
       "Cancel subscription?": [
         "구독을 취소하시겠어요?"
@@ -14124,7 +14232,7 @@
         "트래커를 찾을 수 없음"
       ],
       "No unsubscribed newsletters": [
-        "구독 해지된 이메일 없음"
+        "구독 취소한 이메일 없음"
       ],
       "No-reply address detected": [
         "회신 불가 주소 감지됨"
@@ -14382,7 +14490,7 @@
         "${ DARK_WEB_MONITORING_NAME } 켜기"
       ],
       "Unsubscribe": [
-        "구독 해지"
+        "구독 취소"
       ],
       "Unsubscribe from ${ subscription.Name }?": [
         "${ subscription.Name }(을)를 구독 취소하시겠어요?"
@@ -14473,6 +14581,15 @@
       ],
       "Your subscriptions in one place": [
         "뉴스레터 구독을 모아보기"
+      ],
+      "No active newsletters": [
+        "활성 상태인 뉴스레터 없음"
+      ],
+      "No newsletters found": [
+        "발견된 뉴스레터 없음"
+      ],
+      "Unsubscribe not available for this sender": [
+        "이 발신자에 대한 구독 취소가 지원되지 않습니다"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14585,6 +14702,9 @@
     "Unlimited offer": {
       "/month": [
         "/월간"
+      ],
+      "Only": [
+        "단"
       ]
     },
     "unprivatization": {
@@ -15013,6 +15133,19 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "구독 취소하기"
+      ],
+      "Keep subscription": [
+        "구독 유지"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "무료 체험이 ${ timeRemaining } 에 종료됩니다"
       ]
     }
   }

@@ -1605,6 +1605,17 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Deleting folder": [
+        "Ștergerea folderului"
+      ],
+      "Deleting label": [
+        "Ștergerea etichetei"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Chei de încredere",
+        "Chei de încredere"
       ]
     },
     "action": {
@@ -4894,6 +4905,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Limitați căutarea și reîncercați."
+      ],
+      "No address with sending permissions": [
+        "Nicio adresă cu permisiuni de trimitere."
+      ],
+      "Permissions request failed.": [
+        "Solicitarea de permisiuni a eșuat."
+      ],
+      "Wrong password": [
+        "Parolă greșită"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7886,7 +7906,7 @@
         "Sincronizați și gestionați mesajele cu aplicația ${ DRIVE_APP_NAME }. Creați și partajați documente în ${ DOCS_APP_NAME } și stocați-le în siguranță. Disponibile pe ${ ios }, ${ android } și ${ desktop }."
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
+        "Temporar indisponibil. Reveniți mai târziu."
       ],
       "Test link": [
         "Testare legătură web"
@@ -8549,10 +8569,10 @@
         "Ați atins numărul maxim de adrese din grupul de contacte."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, trebuie să plătiți toate facturile restante."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, trebuie să plătiți toate facturile restante."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Abonamentul ${ PASS_SHORT_APP_NAME } Plus va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
@@ -8662,6 +8682,23 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } buletin informativ",
+        "${ unreadCount } buletine informative",
+        "${ unreadCount } de buletine informative"
+      ],
+      "Dedicated VPN servers": [
+        "Servere VPN dedicate"
+      ],
+      "newsletter": [
+        "buletin informativ"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Număr de servere VPN dedicate din organizație"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -8959,7 +8996,7 @@
         "${ n } de luni"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
+        "(Temporar indisponibil. Reveniți mai târziu.)"
       ],
       "/month": [
         "/lună"
@@ -9531,7 +9568,7 @@
         "Thomas"
       ],
       "Time": [
-        "Ora"
+        "Oră"
       ],
       "To:": [
         "Către:"
@@ -9601,6 +9638,18 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Marked as read": [
+        "Marcare: citit"
+      ],
+      "Moved to ${ labelName }": [
+        "S-a mutat în ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "S-a mutat în arhivă"
+      ],
+      "Moved to Trash": [
+        "S-a mutat în gunoi"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9679,6 +9728,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aici vizualizați și gestionați abonamentele la buletine informative și la listele de adrese."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Buletinele informative sau listele de adrese de la care vă dezabonați vor apărea aici."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Nu aveți buletine informative active sau abonamente la liste de adrese."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Nu aveți buletine informative sau abonamente la liste de adrese."
       ]
     },
     "Landmarks": {
@@ -11542,6 +11600,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domeniul și abonamentul sunt pregătite de utilizare."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } înseamnă că nu veți vedea niciodată reclame sponsorizate în aplicațiile noastre."
+      ],
+      "Ad-free promise": [
+        "Promisiunea fără reclame"
       ]
     },
     "Onboarding Proton": {
@@ -11789,6 +11853,9 @@
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11885,6 +11952,9 @@
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ]
     },
     "Payments.Error": {
@@ -15070,6 +15140,12 @@
       ],
       "Your subscriptions in one place": [
         "Abonamentele personale într-un singur loc"
+      ],
+      "No active newsletters": [
+        "Nu există buletine de știri active"
+      ],
+      "No newsletters found": [
+        "Nu există buletine informative"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15707,6 +15783,27 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
+      "Keep subscription": [
+        "Păstrare abonament"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Perioada de probare se încheie peste ${ timeRemaining }"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - card care se termină cu ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transfer bancar - ${ details }"
       ]
     }
   }

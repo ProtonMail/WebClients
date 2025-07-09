@@ -155,7 +155,7 @@
         "Autentisera"
       ],
       "Auto-delete spam and trash": [
-        "Autoborttagning av skräppost och kastat"
+        "Ta bort skräppost och papperskorg automatiskt"
       ],
       "Back": [
         "Tillbaka"
@@ -1606,6 +1606,10 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
       ]
     },
     "action": {
@@ -4865,6 +4869,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Permissions request failed.": [
+        "Behörighetsbegäran misslyckades."
+      ],
+      "Wrong password": [
+        "Fel lösenord"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8510,6 +8520,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } nyhetsbrev",
+        "${ unreadCount } nyhetsbrev"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
+      ],
+      "newsletter": [
+        "nyhetsbrev"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerade VPN-servrar i organisationen"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
       ]
     },
     "info": {
@@ -9442,6 +9468,18 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Marked as read": [
+        "Markerad som läst"
+      ],
+      "Moved to ${ labelName }": [
+        "Flyttad till ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Flyttad till arkiv"
+      ],
+      "Moved to Trash": [
+        "Flyttad till papperskorg"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9520,6 +9558,12 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Visa och hantera prenumerationer för nyhetsbrev och e-postlistor här."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Nyhetsbrev eller e-postlistor som du avslutar prenumeration på kommer visas här."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Du har inga prenumerationer på nyhetsbrev eller e-postlistor."
       ]
     },
     "Landmarks": {
@@ -11353,6 +11397,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Din domän och din prenumeration är redo att användas."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } betyder att du aldrig kommer se sponsrade annonser i våra appar."
       ]
     },
     "Onboarding Proton": {
@@ -11721,6 +11768,9 @@
     "Payments.Saved payment method details": {
       "Bank transfer - ${ details }": [
         "Banköverföring - ${ details }"
+      ],
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort slutar på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14713,10 +14763,10 @@
         "Verifiering misslyckades"
       ],
       "Verifying your card...": [
-        "Verifierar ditt kort..."
+        "Verifierar ditt kort …"
       ],
       "Verifying your payment...": [
-        "Verifierar din betalning..."
+        "Verifierar din betalning …"
       ],
       "VPN explained": [
         "VPN förklarat"
@@ -14782,6 +14832,12 @@
       ],
       "Your subscriptions in one place": [
         "Dina prenumerationer på ett ställe"
+      ],
+      "No active newsletters": [
+        "Inga aktiva nyhetsbrev"
+      ],
+      "No newsletters found": [
+        "Inga nyhetsbrev hittades"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15372,6 +15428,19 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Avsluta prenumeration"
+      ],
+      "Keep subscription": [
+        "Behåll prenumeration"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Din gratis provperiod slutar om ${ timeRemaining }"
       ]
     }
   }

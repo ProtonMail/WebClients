@@ -1600,6 +1600,16 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ],
+      "Deleting folder": [
+        "A eliminar a pasta"
+      ],
+      "Deleting label": [
+        "A eliminar a etiqueta"
+      ],
+      "Trust key": [
+        "Confiar na chave",
+        "Confiar nas chaves"
       ]
     },
     "action": {
@@ -4862,6 +4872,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa obteve muitas correspondências. Limite a pesquisa e tente novamente."
+      ],
+      "No address with sending permissions": [
+        "Nenhum endereço com permissões de envio"
+      ],
+      "Permissions request failed.": [
+        "Erro no pedido de permissões"
+      ],
+      "Wrong password": [
+        "A palavra-passe está errada."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8523,6 +8542,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a alguns cliques de ter uma caixa de entrada organizada"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } boletim",
+        "${ unreadCount } boletins"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores VPN dedicados"
+      ],
+      "newsletter": [
+        "boletim"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados na organização"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Também perderá o acesso às funcionalidades do ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -9452,6 +9487,18 @@
       ],
       "Your password (admin)": [
         "A sua palavra-passe (admin)"
+      ],
+      "Marked as read": [
+        "Marcado como lido"
+      ],
+      "Moved to ${ labelName }": [
+        "Movido para ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Movido para o arquivo"
+      ],
+      "Moved to Trash": [
+        "Movida para o lixo"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9530,6 +9577,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Veja e gira as subscrições de boletins e lista de correio aqui."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Os boletins informativos ou listas de correio das quais cancelar a subscrição aparecerão aqui."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Não tem nenhuma subscrição ativa de boletim ou de listas de correio."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Não tem nenhuma subscrição de boletim ou de lista de correio."
       ]
     },
     "Landmarks": {
@@ -11358,6 +11414,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "O seu domínio e a sua subscrição estão prontos para serem usados."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }: nunca verá anúncios patrocinados nas nossas aplicações."
+      ],
+      "Ad-free promise": [
+        "O nosso compromisso sem anúncios"
       ]
     },
     "Onboarding Proton": {
@@ -11604,6 +11666,9 @@
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11696,6 +11761,9 @@
       ],
       "Your payment is still being processed": [
         "O seu pagamento ainda está a ser processado."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
       ]
     },
     "Payments.Error": {
@@ -14793,6 +14861,12 @@
       ],
       "Your subscriptions in one place": [
         "As suas subscrições num só lugar"
+      ],
+      "No active newsletters": [
+        "Não há boletins ativos."
+      ],
+      "No newsletters found": [
+        "Nenhum boletim encontrado"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15383,6 +15457,27 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar a subscrição"
+      ],
+      "Keep subscription": [
+        "Manter a subscrição"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "A sua avaliação gratuita termina em ${ timeRemaining }."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - cartão terminado em ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Transferência bancária - ${ details }"
       ]
     }
   }
