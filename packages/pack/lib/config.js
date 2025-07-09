@@ -162,8 +162,12 @@ const getConfigHead = ({ buildData, appData }) => {
 };
 
 module.exports = {
+    getApi,
     getConfigData,
     getConfigFile,
     getConfigHead,
-    getApi,
+    getGitBranch,
+    getGitCommitHash,
+    getGitTagVersion,
+    getVersionNumberFromTag,
 };
