@@ -1,7 +1,6 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 
-import { MemoryCache, ProtonDriveClient, generateNodeUid } from '@protontech/drive-sdk';
-import { splitInvitationUid, splitNodeRevisionUid, splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
+import { MemoryCache, ProtonDriveClient } from '@protontech/drive-sdk';
 import type { MemoryLogHandler } from '@protontech/drive-sdk/dist/telemetry';
 
 import { useLocalState } from '@proton/components';
@@ -15,6 +14,17 @@ import { initTelemetry } from './lib/telemetry';
 import { useAccount } from './lib/useAccount';
 import { useHttpClient } from './lib/useHttpClient';
 import { useSrpModule } from './lib/useSrpModule';
+
+export {
+    /** @deprecated only for transition to sdk */
+    splitInvitationUid,
+    /** @deprecated only for transition to sdk */
+    splitNodeRevisionUid,
+    /** @deprecated only for transition to sdk */
+    splitNodeUid,
+} from '@protontech/drive-sdk/dist/internal/uids';
+
+export { generateNodeUid } from '@protontech/drive-sdk';
 
 /* Type export */
 export type {
@@ -131,17 +141,5 @@ export function useDrive() {
         getLogs: useCallback(() => {
             return memoryLogHandlerSingleton?.getLogs() || [];
         }, []),
-        /**
-         * Internal methods that can be changed or removed anytime.
-         */
-        internal: useMemo(
-            () => ({
-                generateNodeUid,
-                splitNodeRevisionUid,
-                splitNodeUid,
-                splitInvitationUid,
-            }),
-            []
-        ),
     };
 }
