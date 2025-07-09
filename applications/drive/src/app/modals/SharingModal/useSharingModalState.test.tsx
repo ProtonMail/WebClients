@@ -4,7 +4,7 @@ import { when } from 'jest-when';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
-import { MemberRole, useDrive } from '@proton/drive/index';
+import { MemberRole, generateNodeUid, splitInvitationUid, useDrive } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -86,6 +86,8 @@ const mockedCreateNotification = jest.fn();
 const mockedUseUser = jest.mocked(useUser);
 const mockedUseNotifications = jest.mocked(useNotifications);
 const mockedUseDrive = jest.mocked(useDrive);
+const mockedGenerateNodeUid = jest.mocked(generateNodeUid);
+const mockedSplitInvitationUid = jest.mocked(splitInvitationUid);
 const mockedUseLoading = jest.mocked(useLoading);
 const mockedUseDriveEventManager = jest.mocked(useDriveEventManager);
 const mockedUseFlagsDriveDocsPublicSharing = jest.mocked(useFlagsDriveDocsPublicSharing);
@@ -132,10 +134,7 @@ describe('useSharingModalState', () => {
         shareNode: jest.fn(),
         resendInvitation: jest.fn(),
     };
-    const mockInternal = {
-        generateNodeUid: jest.fn(),
-        splitInvitationUid: jest.fn(),
-    };
+    const mockInternal = {};
     const mockEvents = {
         pollEvents: {
             volumes: jest.fn(),
@@ -164,15 +163,15 @@ describe('useSharingModalState', () => {
             handleError: mockHandleError,
         } as any);
 
-        when(mockInternal.generateNodeUid).calledWith(mockVolumeId, mockLinkId).mockReturnValue(mockNodeUid);
+        when(mockedGenerateNodeUid).calledWith(mockVolumeId, mockLinkId).mockReturnValue(mockNodeUid);
 
         when(mockDrive.getSharingInfo).calledWith(mockNodeUid).mockResolvedValue(mockShareResult);
 
         when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(mockNodeInfo);
 
-        when(mockInternal.splitInvitationUid)
+        when(mockedSplitInvitationUid)
             .calledWith(mockInvitationUid)
-            .mockReturnValue({ invitationId: mockInvitationId });
+            .mockReturnValue({ shareId: mockShareId, invitationId: mockInvitationId });
 
         mockedGetAppHref.mockReturnValue('https://example.com/invite-link');
     });
