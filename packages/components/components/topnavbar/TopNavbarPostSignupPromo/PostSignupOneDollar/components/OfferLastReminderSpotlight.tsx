@@ -2,7 +2,7 @@ import { type ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 
 import type { SUPPORTED_PRODUCTS } from '../interface';
 
@@ -13,8 +13,8 @@ interface Props {
 }
 
 export const OfferLastReminderSpotlight = ({ pricingTitle, imgSrc, product }: Props) => {
-    const plan = product === 'mail' ? MAIL_SHORT_APP_NAME : DRIVE_SHORT_APP_NAME;
-    const description = c('Offer').t`Last chance to get 80% off your first month of ${plan} Plus.`;
+    const plan = PLAN_NAMES[product === 'mail' ? PLANS.MAIL : PLANS.DRIVE];
+    const description = c('Offer').t`Last chance to get 80% off your first month of ${plan}.`;
 
     return (
         <div className="flex flex-nowrap items-start gap-4">

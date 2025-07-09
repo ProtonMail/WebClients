@@ -8,7 +8,7 @@ import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import type { IconSize } from '@proton/icons';
 import { PLANS, PLAN_SERVICES, type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
-import { getFreeTitle, getPlusTitle } from '@proton/shared/lib/apps/i18n';
+import { getFreeTitle } from '@proton/shared/lib/apps/i18n';
 import {
     APPS,
     DRIVE_SHORT_APP_NAME,
@@ -17,11 +17,12 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { CSS_BASE_UNIT_SIZE } from '@proton/styles/index';
+import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import FreeLogo from './FreeLogo/FreeLogo';
+import { getNormalizedPlanTitleToPlus } from './plusToPlusHelper';
 
 import './PlusUnlimitedComparison.scss';
 
@@ -65,28 +66,30 @@ const getPaidMap = (plansMap: PlansMap, logoSize: IconSize): { [key in PLANS]?: 
     return {
         [PLANS.DRIVE]: {
             plan: PLANS.DRIVE,
-            title: getPlusTitle(DRIVE_SHORT_APP_NAME),
+            // NOTE: In this component it's explicitly using a hardcoded plus value instead of the actual plan name
+            // because the layout of this component is made in such a way that it only supports `Drive Plus` and not `Drive Plus 200 GB`.
+            title: getNormalizedPlanTitleToPlus(PLANS.DRIVE),
             icon: <DriveLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
         },
         [PLANS.VPN2024]: {
             plan: PLANS.VPN2024,
-            title: getPlusTitle(VPN_SHORT_APP_NAME),
+            title: getNormalizedPlanTitleToPlus(PLANS.VPN2024),
             icon: <VpnLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
         },
         [PLANS.PASS]: {
             plan: PLANS.PASS,
-            title: getPlusTitle(PASS_SHORT_APP_NAME),
+            title: getNormalizedPlanTitleToPlus(PLANS.PASS),
             icon: <PassLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
         },
         [PLANS.MAIL]: {
             plan: PLANS.MAIL,
-            title: getPlusTitle(MAIL_SHORT_APP_NAME),
+            title: getNormalizedPlanTitleToPlus(PLANS.MAIL),
             icon: <MailLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,

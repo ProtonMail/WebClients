@@ -408,6 +408,7 @@ export {
     isCancellableOnlyViaSupport,
     isCheckForbidden,
     getIsPlanTransitionForbidden,
+    getHasSomeDrivePlusPlan,
     isLifetimePlan,
     isManagedExternally,
     isRegularCycle,

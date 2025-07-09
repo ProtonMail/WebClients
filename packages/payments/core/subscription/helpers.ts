@@ -507,6 +507,10 @@ export const getHasProPlan = (planName?: PLANS) => {
     );
 };
 
+export const getHasSomeDrivePlusPlan = (planName?: PLANS | ADDON_NAMES) => {
+    return planName && [PLANS.DRIVE, PLANS.DRIVE_1TB].some((otherPlanName) => otherPlanName === planName);
+};
+
 export const getHasPlusPlan = (planName?: PLANS | ADDON_NAMES) => {
     return (
         planName &&
