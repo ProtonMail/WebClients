@@ -6,6 +6,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Info from '@proton/components/components/link/Info';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
@@ -50,13 +51,10 @@ const ReferralSignatureToggle = () => {
 
     const availableApps = useAvailableApps();
 
-    if (
-        !mailSettings ||
-        loadingMailSettings ||
-        loadingUserSettings ||
-        !userSettings.Referral?.Link ||
-        !availableApps.includes(APPS.PROTONMAIL)
-    ) {
+    if (loadingMailSettings || loadingUserSettings) {
+        return <SkeletonLoader width="22rem" height="1.5rem" />;
+    }
+    if (!mailSettings || !userSettings.Referral?.Link || !availableApps.includes(APPS.PROTONMAIL)) {
         return null;
     }
 
