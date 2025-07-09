@@ -36,6 +36,8 @@ export const getNewsletterMessagesAction = (filterType: ModalFilterType) => {
             return NewsletterMessagesAction.moveToArchive;
         case 'MoveToTrash':
             return NewsletterMessagesAction.moveToTrash;
+        case 'RemoveFromList':
+            return NewsletterMessagesAction.removeFromList;
     }
 };
 
