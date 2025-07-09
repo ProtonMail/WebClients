@@ -9083,6 +9083,9 @@
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ]
     },
     "Payments.Error": {
@@ -12264,6 +12267,19 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Zrušiť predplatné"
+      ],
+      "Keep subscription": [
+        "Ponechať predplatné"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Vaša bezplatná skúšobná verzia skončí o ${ timeRemaining }"
       ]
     }
   }
