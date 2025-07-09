@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { useAppTitle } from '@proton/components';
-import { useDrive } from '@proton/drive/index';
+import { splitNodeUid } from '@proton/drive/index';
 
 import { FileBrowserStateProvider } from '../../../components/FileBrowser';
 import { getDevicesSectionName } from '../../../components/sections/Devices/constants';
@@ -14,13 +14,9 @@ export function DevicesView() {
     const sectionTitle = getDevicesSectionName();
     useAppTitle(sectionTitle);
     const { deviceList } = useDeviceStore();
-    const { internal } = useDrive();
 
     // Uses the legacy Device-Id because that's how the global file selection works right now
-    const itemIds = useMemo(
-        () => deviceList.map((device) => internal.splitNodeUid(device.uid).nodeId),
-        [deviceList, internal]
-    );
+    const itemIds = useMemo(() => deviceList.map((device) => splitNodeUid(device.uid).nodeId), [deviceList]);
 
     return (
         <FileBrowserStateProvider itemIds={itemIds}>

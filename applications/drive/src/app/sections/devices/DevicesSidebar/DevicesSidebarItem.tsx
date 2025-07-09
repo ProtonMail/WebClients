@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useDrive } from '@proton/drive';
+import { splitNodeUid } from '@proton/drive';
 
 import DriveExpandButton from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveExpandButton';
 import DriveSidebarSubfolders from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarFolders/DriveSidebarSubfolders';
@@ -16,8 +16,7 @@ export const DevicesSidebarItem = ({
     device: StoreDevice;
     setSidebarLevel: (level: number) => void;
 }) => {
-    const { internal } = useDrive();
-    const { nodeId } = internal.splitNodeUid(device.rootFolderUid);
+    const { nodeId } = splitNodeUid(device.rootFolderUid);
     const { deepestOpenedLevel, rootFolder, toggleExpand } = useFolderTree(device.shareId, {
         rootLinkId: nodeId,
     });
