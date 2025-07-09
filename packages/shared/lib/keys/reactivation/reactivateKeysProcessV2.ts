@@ -1,6 +1,6 @@
 import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
+import { USER_KEY_USERID, getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { getApiError } from '../../api/helpers/apiErrorHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
@@ -32,7 +32,11 @@ import { getPrimaryKey } from '../getPrimaryKey';
 import { getHasMigratedAddressKey } from '../keyMigration';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 import type { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
-import { getAddressReactivationPayload, getReactivatedAddressesKeys, resetUserId } from './reactivateKeyHelper';
+import {
+    getAddressReactivationPayload,
+    getReactivatedAddressesKeys,
+    resetOrReplaceUserId,
+} from './reactivateKeyHelper';
 
 interface ReactivateUserKeysArguments {
     addressRecordsInV2Format: KeyReactivationRecord[];
@@ -70,14 +74,21 @@ export const reactivateUserKeys = async ({
     let mutableAddresses = addresses;
 
     for (const keyToReactivate of keysToReactivate) {
-        const { id, Key, privateKey: reactivatedKey } = keyToReactivate;
+        const { id, Key, privateKey: reactivatedKeyWithMaybeInvalidUserIDs } = keyToReactivate;
         const { ID } = Key;
         try {
-            if (!reactivatedKey) {
+            if (!reactivatedKeyWithMaybeInvalidUserIDs) {
                 throw new Error('Missing key');
             }
 
-            await resetUserId(Key, reactivatedKey);
+            const { key: reactivatedKey, replaced } = await resetOrReplaceUserId(
+                Key,
+                reactivatedKeyWithMaybeInvalidUserIDs,
+                USER_KEY_USERID
+            );
+            if (replaced) {
+                await CryptoProxy.clearKey({ key: reactivatedKeyWithMaybeInvalidUserIDs });
+            }
 
             const privateKeyArmored = await CryptoProxy.exportPrivateKey({
                 privateKey: reactivatedKey,
@@ -196,14 +207,21 @@ export const reactivateAddressKeysV2 = async ({
     let mutableActiveKeys = activeKeys;
 
     for (const keyToReactivate of keysToReactivate) {
-        const { id, Key, privateKey: reactivatedKey } = keyToReactivate;
+        const { id, Key, privateKey: reactivatedKeyWithMaybeInvalidUserIDs } = keyToReactivate;
         const { ID, Flags } = Key;
         try {
-            if (!reactivatedKey) {
+            if (!reactivatedKeyWithMaybeInvalidUserIDs) {
                 throw new Error('Missing key');
             }
 
-            await resetUserId(Key, reactivatedKey);
+            const { key: reactivatedKey, replaced } = await resetOrReplaceUserId(
+                Key,
+                reactivatedKeyWithMaybeInvalidUserIDs,
+                address.Email
+            );
+            if (replaced) {
+                await CryptoProxy.clearKey({ key: reactivatedKeyWithMaybeInvalidUserIDs });
+            }
 
             const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
             const privateKeyArmored = await CryptoProxy.exportPrivateKey({
