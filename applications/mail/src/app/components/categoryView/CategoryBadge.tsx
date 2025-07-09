@@ -14,6 +14,7 @@ import {
     useTheme,
 } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcCheckmark, IcCrossBig } from '@proton/icons';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import clsx from '@proton/utils/clsx';
@@ -64,6 +65,10 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
 
         toggle();
 
+        if (category === labelValue) {
+            return;
+        }
+
         const newLabelPayload = {
             LabelID: category,
             IDs: [element.ID],
@@ -113,13 +118,41 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
                 {data.label}
             </button>
 
-            <Dropdown anchorRef={anchorRef} isOpen={isOpen} originalPlacement="bottom" onClose={close}>
+            <Dropdown
+                anchorRef={anchorRef}
+                isOpen={isOpen}
+                originalPlacement="bottom"
+                onClose={close}
+                onClick={(e) => e.stopPropagation()}
+            >
                 <DropdownMenu className="p-3">
-                    <p className="p-0 px-4 mb-2 text-sm color-weak">Select a category that best match this message</p>
+                    <div className="flex justify-between items-center flex-nowrap mb-2 gap-2">
+                        <p className="p-0 pl-4 text-sm color-weak">
+                            Which category should this be recategorized under?
+                        </p>
+                        <Button
+                            icon
+                            shape="ghost"
+                            size="tiny"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                toggle();
+                            }}
+                            className="shrink-0 color-weak"
+                        >
+                            <IcCrossBig />
+                        </Button>
+                    </div>
                     {Object.entries(categoryBadgeMapping).map(([key, value]) => {
-                        if (key === labelValue) {
-                            return null;
-                        }
+                        const icon =
+                            key === labelValue ? (
+                                <>
+                                    <IcCheckmark size={3} />
+                                    <Icon name={value.icon} size={3} />
+                                </>
+                            ) : (
+                                <Icon name={value.icon} size={3} />
+                            );
 
                         return (
                             <DropdownMenuButton
@@ -138,26 +171,13 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
                                     )}
                                 >
                                     <span className="flex items-center gap-2">
-                                        {loading ? <CircleLoader size="small" /> : <Icon name={value.icon} size={3} />}
+                                        {loading ? <CircleLoader size="small" /> : icon}
                                         {value.label}
                                     </span>
                                 </Badge>
                             </DropdownMenuButton>
                         );
                     })}
-                    <hr className="my-2 bg-weak" />
-                    <Button
-                        size="tiny"
-                        color="weak"
-                        className="text-right mx-2 px-4"
-                        shape="underline"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            toggle();
-                        }}
-                    >
-                        Cancel
-                    </Button>
                 </DropdownMenu>
             </Dropdown>
         </>
