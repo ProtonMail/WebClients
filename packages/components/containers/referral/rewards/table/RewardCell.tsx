@@ -18,7 +18,7 @@ const RewardCell = ({ referral, hasReachedRewardLimit }: Props) => {
         case ReferralState.TRIAL:
             if (!hasReachedRewardLimit) {
                 reward = c('Label').t`Pending`;
-                textColor = 'warning';
+                textColor = 'weak';
             }
             break;
         case ReferralState.COMPLETED:
@@ -30,7 +30,7 @@ const RewardCell = ({ referral, hasReachedRewardLimit }: Props) => {
                  * And at this stage we have no variables allowing us to know the amount.
                  */
                 reward = c('Label').t`Pending`;
-                textColor = 'warning';
+                textColor = 'weak';
             }
             break;
         case ReferralState.REWARDED:
