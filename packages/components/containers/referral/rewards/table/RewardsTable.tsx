@@ -12,6 +12,7 @@ import ActivityCell from './ActivityCell';
 import DateCell from './DateCell';
 import RewardCell from './RewardCell';
 import UserCell from './UserCell';
+import noReferrals from './no-referrals.svg';
 
 interface Props {
     loading?: boolean;
@@ -22,6 +23,16 @@ interface Props {
 const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
     if (loading) {
         return <Loader />;
+    }
+
+    if (referrals.length === 0) {
+        return (
+            <div className="border border-weak rounded-lg flex flex-column items-center gap-2 p-6 pb-12">
+                <img src={noReferrals} alt="" />
+                <div className="text-bold">{c('Info').t`You don't have any referrals.`}</div>
+                <div className="color-weak">{c('Info').t`Get started with the referral link above.`}</div>
+            </div>
+        );
     }
 
     return (
@@ -40,7 +51,7 @@ const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
                                     c('Label').t`User`,
                                     c('Label').t`Date`,
                                     c('Label').t`Activity`,
-                                    c('Label').t`Credits`,
+                                    c('Label').t`Reward`,
                                 ]}
                                 cells={[
                                     <UserCell key={`${referral.ReferralID}-date`} referral={referral} />,
