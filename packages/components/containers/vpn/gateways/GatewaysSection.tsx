@@ -67,6 +67,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const [deletingLogicals, setDeletingLogicals] = useState<readonly string[]>([]);
     const [updatedLogicals, setUpdatedLogicals] = useState<Record<string, GatewayLogical>>({});
     const {
+        hasGatewaysAccess,
         config: {
             Table: { IPv4, IPv6, Load, Deleted },
             ServerTable: serverTableConfig,
@@ -76,7 +77,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         locations,
         gateways,
         refresh,
-    } = useGateways(10 * MINUTE);
+    } = useGateways(organization, 10 * MINUTE);
     const refreshList = async () => {
         setUpdatedLogicals({});
         await refresh();
@@ -137,23 +138,21 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         return createdGateway;
     };
 
-    const getCustomizeSubscriptionOpener = (source: typeof DASHBOARD | typeof UPSELLS) => () =>
-        openSubscriptionModal({
-            metrics: {
-                source,
-            },
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
-            plan: organization.PlanName,
-        });
+    const getCustomizeSubscriptionOpener =
+        (source: typeof DASHBOARD | typeof UPSELLS, plan = organization.PlanName) =>
+        () =>
+            openSubscriptionModal({
+                metrics: {
+                    source,
+                },
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                plan,
+            });
 
     const isAdmin = user.isAdmin && user.isSelf;
 
     const countryOptions = getCountryOptions(userSettings);
 
-    const hasGatewaysAccess =
-        organization.PlanName === PLANS.VPN_BUSINESS ||
-        organization.PlanName === PLANS.BUNDLE_PRO ||
-        organization.PlanName === PLANS.BUNDLE_PRO_2024;
     if (!hasGatewaysAccess) {
         const boldDedicatedServers = (
             <b key="bold-dedicated-servers">{
@@ -196,7 +195,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             <Button
                                 color="norm"
                                 fullWidth
-                                onClick={getCustomizeSubscriptionOpener(UPSELLS)}
+                                onClick={getCustomizeSubscriptionOpener(UPSELLS, PLANS.VPN_BUSINESS)}
                                 title={c('Title').t`Setup dedicated servers by upgrading to Business`}
                             >
                                 {c('Action').t`Upgrade to Business`}
