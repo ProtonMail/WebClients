@@ -1,7 +1,9 @@
+import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+
 import type { MailState } from '../rootReducer';
 import type { MailThunkExtra } from '../store';
 import { SortSubscriptionsValue, SubscriptionTabs } from './interface';
-import { sortSubscriptionList } from './newsletterSubscriptionsActions';
+import { deleteNewsletterSubscription, sortSubscriptionList } from './newsletterSubscriptionsActions';
 import { newsletterSubscriptionName } from './newsletterSubscriptionsSlice';
 
 const mockApiFn = jest.fn();
@@ -89,6 +91,24 @@ describe('newsletterSubscriptions actions', () => {
             expect(mockApi).toHaveBeenCalledWith({
                 url: 'mail/v4/newsletter-subscriptions?PageSize=100&Active=0&Spam=0&Sort[Name]=ASC&Sort[ID]=DESC',
                 method: 'GET',
+            });
+        });
+    });
+
+    describe('deleteNewsletterSubscription', () => {
+        it('should call API with correct parameters when deleting a subscription', async () => {
+            const thunk = deleteNewsletterSubscription({
+                subscription: {
+                    ID: 'active-1',
+                } as NewsletterSubscription,
+                subscriptionIndex: 0,
+            });
+
+            await thunk(mockDispatch, mockGetState, mockExtra.extra);
+
+            expect(mockApi).toHaveBeenCalledWith({
+                url: `mail/v4/newsletter-subscriptions/active-1`,
+                method: 'DELETE',
             });
         });
     });

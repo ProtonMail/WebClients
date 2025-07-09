@@ -49,7 +49,7 @@ export const getFilterData = (
     action: ModalFilterType,
     subscription: NewsletterSubscription,
     applyToFuture: boolean
-): ApplyNewsletterSubscriptionsFilter => {
+): ApplyNewsletterSubscriptionsFilter | undefined => {
     switch (action) {
         case 'MarkAsRead':
             return {
@@ -68,6 +68,8 @@ export const getFilterData = (
                 DestinationFolder: MAILBOX_LABEL_IDS.ARCHIVE,
                 MarkAsRead: !!subscription.MarkAsRead,
             };
+        default:
+            return undefined;
     }
 };
 
@@ -106,13 +108,16 @@ export const getReceivedMessagesCount = (subscription: Partial<NewsletterSubscri
 };
 
 export const getNewsletterCopyForFilterAction = (filterType: ModalFilterType) => {
-    if (filterType === 'MarkAsRead') {
-        return c('Label').t`Marked as read`;
-    } else if (filterType === 'MoveToArchive') {
-        return c('Label').t`Moved to Archive`;
+    switch (filterType) {
+        case 'MarkAsRead':
+            return c('Label').t`Marked as read`;
+        case 'MoveToArchive':
+            return c('Label').t`Moved to Archive`;
+        case 'RemoveFromList':
+            return c('Label').t`Newsletter entry deleted`;
+        case 'MoveToTrash':
+            return c('Label').t`Moved to Trash`;
     }
-
-    return c('Label').t`Moved to Trash`;
 };
 
 export const getFilterDropdownData = (subscription: NewsletterSubscription, filters: Filter[]): FilterDropdownData => {

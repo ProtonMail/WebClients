@@ -103,6 +103,11 @@ describe('Newsletter subscriptions helpers', () => {
                 MarkAsRead: true,
             });
         });
+
+        it('Should return undefined for RemoveFromList', () => {
+            const result = getFilterData('RemoveFromList', simpleSubscription, false);
+            expect(result).toBeUndefined();
+        });
     });
 
     describe('getSubscriptionMoveToFolderName', () => {
@@ -259,6 +264,10 @@ describe('Newsletter subscriptions helpers', () => {
 
         it('Should return copy for move to trash', () => {
             expect(getNewsletterCopyForFilterAction('MoveToTrash')).toBe('Moved to Trash');
+        });
+
+        it('Should return copy for delete newsletter', () => {
+            expect(getNewsletterCopyForFilterAction('RemoveFromList')).toBe('Newsletter entry deleted');
         });
     });
 
