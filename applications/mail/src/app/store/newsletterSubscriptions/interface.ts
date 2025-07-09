@@ -64,3 +64,5 @@ export interface UnsubscribePayload extends ActionsWithRollback {}
 export interface UpdateSubscriptionPayload extends ActionsWithRollback {
     data: UpdateNewsletterSubscription;
 }
+
+export interface DeleteNewsletterSubscriptionPayload extends ActionsWithRollback {}

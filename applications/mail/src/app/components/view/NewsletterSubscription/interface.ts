@@ -1,7 +1,7 @@
 import type { IconName } from '@proton/components/components/icon/Icon';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-export type ModalFilterType = 'MarkAsRead' | 'MoveToArchive' | 'MoveToTrash';
+export type ModalFilterType = 'MarkAsRead' | 'MoveToArchive' | 'MoveToTrash' | 'RemoveFromList';
 
 export enum UnsubscribeMethod {
     OneClick = 'one-click',
@@ -51,6 +51,7 @@ export enum NewsletterMessagesAction {
     moveToArchive = 'moveToArchive',
     moveToTrash = 'moveToTrash',
     filterUpsell = 'filterUpsell',
+    removeFromList = 'removeFromList',
 }
 
 export enum NewsletterFolderDestination {
