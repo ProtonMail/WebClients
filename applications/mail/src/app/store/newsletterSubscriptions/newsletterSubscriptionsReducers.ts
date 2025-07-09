@@ -10,6 +10,7 @@ import type {
 import { normalizeSubscriptions } from './helpers';
 import type { SortSubscriptionsValue, SubscriptionTabs } from './interface';
 import type {
+    deleteNewsletterSubscription,
     fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
     unsubscribeSubscription,
@@ -99,7 +100,7 @@ export const removeSubscriptionFromActiveTabReducer = (
     }
 };
 
-export const deleteSubscriptionAnimationEndedReducer = (state: NewsletterSubscriptionsStateType) => {
+export const unsubscribeSubscriptionAnimationEndedReducer = (state: NewsletterSubscriptionsStateType) => {
     const stateValue = getStoreValue(state);
     if (!stateValue) {
         return;
@@ -262,6 +263,21 @@ export const updateSubscriptionFulfilled = (
     updateSubscriptionState(stateValue.byId, subscriptionId, action.payload.NewsletterSubscription);
 };
 
+export const deleteNewsletterSubscriptionPending = (
+    state: NewsletterSubscriptionsStateType,
+    action: ReturnType<typeof deleteNewsletterSubscription.pending>
+) => {
+    // The logic is the same as the one in the server event reducer
+    handleDeleteServerEvent(state, action.meta.arg.subscription.ID);
+};
+
+export const deleteNewsletterSubscriptionRejected = (
+    state: NewsletterSubscriptionsStateType,
+    action: ReturnType<typeof deleteNewsletterSubscription.rejected>
+) => {
+    handleUpdateRejection(state, action);
+};
+
 export const handleServerEvent = (state: NewsletterSubscriptionsStateType, action: ReturnType<typeof serverEvent>) => {
     const stateValue = getStoreValue(state);
     if (!stateValue) {
@@ -285,7 +301,7 @@ export const handleServerEvent = (state: NewsletterSubscriptionsStateType, actio
 
             // For the delete event we must remove the subscription from the appropriate tab, unselect it (if it was selected), and decrease it's total count
             if (update.Action === EVENT_ACTIONS.DELETE) {
-                handleDeleteServerEvent(state, update);
+                handleDeleteServerEvent(state, update.ID);
             }
         }
     }

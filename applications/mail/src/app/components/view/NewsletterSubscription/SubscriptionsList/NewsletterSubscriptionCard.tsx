@@ -46,7 +46,7 @@ export const NewsletterSubscriptionCard = ({ subscription, isDeleting }: Props) 
             timeout = setTimeout(() => {
                 // Removes the subscription from the active tab
                 dispatch(newsletterSubscriptionsActions.removeSubscriptionFromActiveTab(subscription.ID));
-                dispatch(newsletterSubscriptionsActions.deleteSubscriptionAnimationEnded());
+                dispatch(newsletterSubscriptionsActions.unsubscribeSubscriptionAnimationEnded());
             }, ANIMATION_DURATION);
         }
 
@@ -55,7 +55,7 @@ export const NewsletterSubscriptionCard = ({ subscription, isDeleting }: Props) 
                 // We want to remove the subscription if the component is unmounted before the animation is done
                 if (isDeleting) {
                     dispatch(newsletterSubscriptionsActions.removeSubscriptionFromActiveTab(subscription.ID));
-                    dispatch(newsletterSubscriptionsActions.deleteSubscriptionAnimationEnded());
+                    dispatch(newsletterSubscriptionsActions.unsubscribeSubscriptionAnimationEnded());
                 }
 
                 clearTimeout(timeout);

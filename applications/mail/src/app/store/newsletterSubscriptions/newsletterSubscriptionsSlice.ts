@@ -10,6 +10,7 @@ import { getPaginationQueryString, initialState, initialStateValue } from './con
 import { getTabData, normalizeSubscriptions } from './helpers';
 import { type NewsletterSubscriptionsInterface, SubscriptionTabs } from './interface';
 import {
+    deleteNewsletterSubscription,
     fetchNextNewsletterSubscriptionsPage,
     filterSubscriptionList,
     sortSubscriptionList,
@@ -17,7 +18,8 @@ import {
     updateSubscription,
 } from './newsletterSubscriptionsActions';
 import {
-    deleteSubscriptionAnimationEndedReducer,
+    deleteNewsletterSubscriptionPending,
+    deleteNewsletterSubscriptionRejected,
     fetchNextNewsletterSubscriptionsPageFulfilled,
     filterSubscriptionListFulfilled,
     filterSubscriptionListPending,
@@ -31,6 +33,7 @@ import {
     sortSubscriptionFulfilled,
     sortSubscriptionPending,
     sortSubscriptionRejected,
+    unsubscribeSubscriptionAnimationEndedReducer,
     unsubscribeSubscriptionPending,
     unsubscribeSubscriptionRejected,
     updateSubscriptionFulfilled,
@@ -104,7 +107,7 @@ const slice = createSlice({
         setSelectedSubscription: setSelectedSubscriptionReducer,
         setSelectedElementId: setSelectedElementIdReducer,
         removeSubscriptionFromActiveTab: removeSubscriptionFromActiveTabReducer,
-        deleteSubscriptionAnimationEnded: deleteSubscriptionAnimationEndedReducer,
+        unsubscribeSubscriptionAnimationEnded: unsubscribeSubscriptionAnimationEndedReducer,
     },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
@@ -123,6 +126,9 @@ const slice = createSlice({
         builder.addCase(updateSubscription.pending, updateSubscriptionPending);
         builder.addCase(updateSubscription.rejected, updateSubscriptionRejected);
         builder.addCase(updateSubscription.fulfilled, updateSubscriptionFulfilled);
+
+        builder.addCase(deleteNewsletterSubscription.pending, deleteNewsletterSubscriptionPending);
+        builder.addCase(deleteNewsletterSubscription.rejected, deleteNewsletterSubscriptionRejected);
 
         builder.addCase(fetchNextNewsletterSubscriptionsPage.fulfilled, fetchNextNewsletterSubscriptionsPageFulfilled);
 
