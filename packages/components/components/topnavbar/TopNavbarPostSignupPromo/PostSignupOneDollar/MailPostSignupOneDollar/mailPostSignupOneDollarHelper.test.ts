@@ -106,29 +106,6 @@ describe('Mail post signup one dollar eligibility', () => {
     });
 
     describe('Drive and Mail offer tests', () => {
-        it('should be eligible if no Drive offer', () => {
-            const user = {
-                isFree: true,
-                isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
-            } as unknown as UserModel;
-
-            expect(
-                getIsUserEligibleForOneDollar({
-                    user,
-                    protonConfig,
-                    offerStartDateTimeStamp: 0,
-                    mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
-                    driveOfferStartDateTimestamp: {
-                        automaticOfferReminders: 0,
-                        offerStartDate: 0,
-                    },
-                    nbrEmailsInAllMail: 10,
-                })
-            ).toBeTruthy();
-        });
-
         it('should not be eligible if Drive offer present', () => {
             const user = {
                 isFree: true,
@@ -200,6 +177,46 @@ describe('Mail post signup one dollar eligibility', () => {
     });
 
     describe('Basic eligibilty test', () => {
+        it('should be eligible, account met requirements', () => {
+            const user = {
+                isFree: true,
+                isDelinquent: false,
+                CreateTime: subDays(today, 40).getTime() / 1000,
+                Flags: { 'pass-lifetime': false },
+            } as unknown as UserModel;
+
+            expect(
+                getIsUserEligibleForOneDollar({
+                    user,
+                    protonConfig,
+                    offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
+                    mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
+                    nbrEmailsInAllMail: 10,
+                })
+            ).toBeTruthy();
+        });
+
+        it('should not be eligible, accont has pass lifetime', () => {
+            const user = {
+                isFree: true,
+                isDelinquent: false,
+                CreateTime: subDays(today, 40).getTime() / 1000,
+                Flags: { 'pass-lifetime': true },
+            } as unknown as UserModel;
+
+            expect(
+                getIsUserEligibleForOneDollar({
+                    user,
+                    protonConfig,
+                    offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
+                    mailOneDollarPostSignupFlag: true,
+                    lastSubscriptionEnd: 0,
+                    nbrEmailsInAllMail: 10,
+                })
+            ).toBeFalsy();
+        });
+
         it('should not be eligible, flag disabled', () => {
             const nonFreeUser = {
                 isFree: false,
