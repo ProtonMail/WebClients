@@ -1424,7 +1424,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1942,6 +1943,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente mensualmente el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Usted puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Usted puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias Scribe durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Usted puede tener hasta ${ TRIAL_MAX_USERS } usuarios durante el período de prueba."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Usted no puede añadir dominios personalizados durante el período de prueba."
+      ],
+      "You have reached the trial limit.": [
+        "Usted ha alcanzado el límite de la prueba."
       ]
     },
     "b2b_trials_Action": {
@@ -4903,6 +4922,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "Wrong password": [
+        "La contraseña no es correcta."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7147,8 +7169,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8574,6 +8595,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } boletín",
+        "${ unreadCount } boletines"
+      ],
+      "newsletter": [
+        "boletín"
       ]
     },
     "info": {
@@ -9506,6 +9534,18 @@
       ],
       "Your password (admin)": [
         "Su contraseña (admin)"
+      ],
+      "Marked as read": [
+        "Marcado como leído"
+      ],
+      "Moved to ${ labelName }": [
+        "Movido a ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Movido al archivo"
+      ],
+      "Moved to Trash": [
+        "Movido a la Papelera"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9584,6 +9624,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aquí puede ver y gestionar las suscripciones a los boletines y a la lista de correo."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Los boletines o listas de direcciones de los que cancela su suscripción aparecerán aquí."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "No tiene ninguna suscripción activa a boletines o listas de correo."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "No tiene ninguna suscripción a boletines o listas de correo."
       ]
     },
     "Landmarks": {
@@ -11765,6 +11814,9 @@
       ],
       "Your payment is still being processed": [
         "Su pago aún está siendo procesado"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."
       ]
     },
     "Payments.Error": {
@@ -14871,6 +14923,12 @@
       ],
       "Your subscriptions in one place": [
         "Sus suscripciones en un solo lugar"
+      ],
+      "No active newsletters": [
+        "No hay boletines activos."
+      ],
+      "No newsletters found": [
+        "No se encontraron boletines."
       ]
     },
     "Today icon tooltip in mini calendar": {
