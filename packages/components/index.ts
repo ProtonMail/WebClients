@@ -280,7 +280,6 @@ export { default as useSpotlightShow } from './components/spotlight/useSpotlight
 export {
     useCancellationReminderModal,
     useLightLabellingFeatureModal,
-    useReferralModal,
     useTrialEndedModal,
 } from './components/startupModals/startupModalHooks';
 export { default as StartupModals } from './components/startupModals/StartupModals';
