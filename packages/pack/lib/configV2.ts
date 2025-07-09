@@ -1,7 +1,5 @@
 import { join } from 'path';
 
-import type { AppMode } from '@proton/shared/lib/webpack.constants';
-
 // @ts-ignore TODO: these methods will be moved to this file at the end of the migration
 import { getGitBranch, getGitCommitHash, getGitTagVersion, getVersionNumberFromTag } from './config';
 import type { ProtonPackOptions, WebpackOptions } from './interface';
@@ -15,20 +13,25 @@ const LOCALES = (() => {
     }
 })();
 
-export interface ConfigOptions {
+/**
+ * This is sent from protonPack in `getWebpackArgsV2` as `--env protonPackOptions`
+ */
+export interface WebpackEnvArgumentsV2 {
+    protonPackOptions: string;
+}
+
+export interface ExtraWebpackOptions {
     appConfig: {
         sentry?: string;
         sentryDesktop?: string;
         clientType?: number;
         clientSecret?: string;
     };
-    appMode: AppMode;
-    protonPackOptions: string;
 }
 
-export const getWebpackOptions = (opts: ConfigOptions): WebpackOptions => {
+export const getWebpackOptions = (envArguments: WebpackEnvArgumentsV2, extra: ExtraWebpackOptions): WebpackOptions => {
     const { CI_COMMIT_TAG, NODE_ENV } = process.env;
-    const { appConfig } = opts;
+    const { appConfig } = extra;
 
     const isProduction = NODE_ENV === 'production';
     const isRelease = !!CI_COMMIT_TAG;
@@ -40,7 +43,7 @@ export const getWebpackOptions = (opts: ConfigOptions): WebpackOptions => {
         throw new Error('[pack][config] Missing app name');
     }
 
-    const protonPackOptions: Partial<ProtonPackOptions> = JSON.parse(opts.protonPackOptions);
+    const protonPackOptions: Partial<ProtonPackOptions> = JSON.parse(envArguments.protonPackOptions);
 
     const appData: WebpackOptions['appData'] = {
         api: protonPackOptions.api || `https://${appName.replaceAll(/proton-|-settings/g, '')}.proton.black`,
