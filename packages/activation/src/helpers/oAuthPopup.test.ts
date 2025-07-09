@@ -2,6 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 
 import { openOAuthPopup } from '@proton/activation/src/helpers/oAuthPopup';
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { GOOGLE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 
 jest.mock('@proton/shared/lib/desktop/ipcHelpers', () => ({
@@ -40,7 +41,7 @@ const setupWindowOpen = (override: Partial<Window> = {}) => {
 
 describe('openOAuthPopup', () => {
     const redirectUri = 'https://account.proton.me/oauth/callback';
-    const authorizationUrl = `https://account.proton,me/api/oauth-token/v1/authorization/google?proton_feature=byoe&redirect_uri=${encodeURIComponent(redirectUri)}`;
+    const authorizationUrl = `https://account.proton,me${GOOGLE_OAUTH_PATH}?proton_feature=byoe&redirect_uri=${encodeURIComponent(redirectUri)}`;
     const errorMessage = 'Something went wrong';
 
     beforeEach(() => {
