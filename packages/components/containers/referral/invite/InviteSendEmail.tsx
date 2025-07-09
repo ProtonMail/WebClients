@@ -186,8 +186,8 @@ const InviteSendEmail = ({ className }: { className?: string }) => {
                     <Button
                         color="norm"
                         onClick={handleSendEmails}
-                        loading={apiLoading || contactEmailIsLoading}
-                        disabled={hasInvalidRecipients}
+                        loading={apiLoading}
+                        disabled={hasInvalidRecipients || contactEmailIsLoading}
                     >
                         <span className="flex flex-nowrap items-center">
                             <Icon name="paper-plane" className="mr-2 shrink-0" /> {c('Button').t`Send`}
