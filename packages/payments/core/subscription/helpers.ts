@@ -523,6 +523,7 @@ export const getHasPlusPlan = (planName?: PLANS | ADDON_NAMES) => {
             PLANS.DRIVE_1TB,
             PLANS.VPN_PASS_BUNDLE,
             PLANS.WALLET,
+            PLANS.PASS_LIFETIME,
         ].some((otherPlanName) => otherPlanName === planName)
     );
 };
