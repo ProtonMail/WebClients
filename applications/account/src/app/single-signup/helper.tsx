@@ -3,8 +3,7 @@ import { c } from 'ttag';
 import { VpnLogo } from '@proton/components';
 import { getVPNPlan } from '@proton/components/containers/payments/features/plan';
 import { getAllPlatforms, getFreeFeatures, getRefundable } from '@proton/components/containers/payments/features/vpn';
-import { CYCLE, PLANS, type Plan } from '@proton/payments';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS, PLAN_NAMES, type Plan } from '@proton/payments';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
@@ -24,8 +23,8 @@ export const getOffText = (discount: string, billingCycle: string) => {
 };
 
 export const getPassText = () => {
-    // translator: full sentence is "Get a first year of Proton Pass Plus for free!"
-    const plan = `${PASS_APP_NAME} Plus`;
+    // translator: full sentence is "Get a first year of Pass Plus for free!"
+    const plan = PLAN_NAMES[PLANS.PASS];
     return c('vpn_2step: discount').t`Get a first year of ${plan} for free!`;
 };
 

@@ -26,7 +26,7 @@ import { PASS_PLUS_LIFETIME_PRICE, PASS_PLUS_PRICE, PROTON_UNLIMITED_PRICE, Upse
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { getUserCurrency, supportedCurrencies } from '@proton/pass/lib/user/user.currency';
 import { selectUser } from '@proton/pass/store/selectors';
-import { PLANS } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
@@ -100,6 +100,7 @@ export const Content: FC = () => {
     const user = useSelector(selectUser);
     const plusLifetimePrice = getSimplePriceString(getUserCurrency(user?.Currency), PASS_PLUS_LIFETIME_PRICE);
     const displayLifetimeCard = supportedCurrencies.includes(user?.Currency ?? '');
+    const plusTitle = PLAN_NAMES[PLANS.PASS];
 
     return (
         <section className="pass-onboarding-upgrade">
@@ -113,7 +114,7 @@ export const Content: FC = () => {
                         <div className="description--banner-card flex justify-space-between rounded-lg p-3 gap-2">
                             <div className="description--banner-card-content">
                                 <div className="text-semibold">{c('PassOnboardingOffer')
-                                    .t`${PASS_SHORT_APP_NAME} Plus Lifetime for ${plusLifetimePrice}`}</div>
+                                    .t`${plusTitle} Lifetime for ${plusLifetimePrice}`}</div>
                                 <div className="text-sm color-weak">{c('Title').t`Pay once, access forever.`}</div>
                             </div>
                             <Button
@@ -203,12 +204,12 @@ export const Description: FC = () => {
         return [
             {
                 value: PLANS.PASS,
-                title: c('Title').t`${PASS_SHORT_APP_NAME} Plus`,
+                title: PLAN_NAMES[PLANS.PASS],
                 label: getPriceLabel(passPlusPrice),
             },
             {
                 value: PLANS.BUNDLE,
-                title: c('Title').t`${BRAND_NAME} Unlimited`,
+                title: PLAN_NAMES[PLANS.BUNDLE],
                 label: getPriceLabel(protonUnlimitedPrice),
             },
         ];
