@@ -218,11 +218,15 @@ module.exports = ({
             WEBPACK_FEATURE_FLAGS: JSON.stringify(featureFlags),
         }),
 
-        new webpack.DefinePlugin(
-            Object.fromEntries(
-                Object.entries(defineWebpackConfig).map(([key, value]) => [`process.env.${key}`, JSON.stringify(value)])
-            )
-        ),
+        defineWebpackConfig &&
+            new webpack.DefinePlugin(
+                Object.fromEntries(
+                    Object.entries(defineWebpackConfig).map(([key, value]) => [
+                        `process.env.${key}`,
+                        JSON.stringify(value),
+                    ])
+                )
+            ),
 
         logical && new PostCssLogicalWebpackPlugin(),
 
