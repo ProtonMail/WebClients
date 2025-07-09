@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import {
     applyNewsletterSubscriptionFilter,
+    deleteNewsletterSubscriptionByID,
     getNewsletterSubscription,
     unsubscribeNewsletterSubscription,
     updateNewsletterSubscription,
@@ -15,6 +16,7 @@ import type {
 import { type MailThunkExtra } from '../store';
 import { getPaginationQueryString } from './constants';
 import {
+    type DeleteNewsletterSubscriptionPayload,
     type FilterSubscriptionPayload,
     type SortSubscriptionsValue,
     SubscriptionTabs,
@@ -76,6 +78,21 @@ export const filterSubscriptionList = createAsyncThunk<
         // can be removed if we use an async thunk in the filters slice
         void thunkExtra.extra.eventManager.call();
         return data;
+    } catch (error) {
+        return thunkExtra.rejectWithValue({
+            previousState: payload.subscription,
+            originalIndex: payload.subscriptionIndex ?? -1,
+        });
+    }
+});
+
+export const deleteNewsletterSubscription = createAsyncThunk<
+    void,
+    DeleteNewsletterSubscriptionPayload,
+    MailThunkExtra & { rejectValue: { previousState: NewsletterSubscription; originalIndex: number } }
+>('newsletterSubscriptions/delete', async (payload, thunkExtra) => {
+    try {
+        return await thunkExtra.extra.api(deleteNewsletterSubscriptionByID(payload.subscription.ID));
     } catch (error) {
         return thunkExtra.rejectWithValue({
             previousState: payload.subscription,
