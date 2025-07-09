@@ -57,43 +57,9 @@ const addGlobalOptions = (program) => {
         );
 };
 
-const getWebpackArgs = (options, env, { appData, buildData }) => {
-    const envArgs = {
-        api: appData.api === '/api' ? undefined : appData.api,
-        sso: appData.sso,
-        appMode: options.appMode,
-        publicPath: options.publicPath === '/' ? undefined : options.publicPath,
-        featureFlags: options.featureFlags,
-        writeSri: options.sri ? undefined : options.sri,
-        inlineIcons: options.inlineIcons,
-        warningLogs: options.warningLogs,
-        errorLogs: options.errorLogs,
-        overlayWarnings: options.overlayWarnings,
-        overlayErrors: options.overlayErrors,
-        overlayRuntimeErrors: options.overlayRuntimeErrors,
-        logical: Boolean(options.logical),
-        webpackOnCaffeine: Boolean(options.webpackOnCaffeine),
-        handleSupportAndErrors: Boolean(options.handleSupportAndErrors),
-        analyze: options.analyze,
-        optimizeAssets: options.optimizeAssets,
-        ...buildData,
-    };
+const getWebpackArgs = (options, env) => {
     const extraWebpackArgs = env.args.join(' ');
-    const webpackEnvArgs = Object.entries(envArgs)
-        .filter(([, value]) => value !== undefined && value !== '')
-        .reduce((acc, [key, value]) => {
-            if (typeof value === 'boolean') {
-                if (value) {
-                    return `${acc} --env ${key}`;
-                } else {
-                    return acc;
-                }
-            }
-
-            return `${acc} --env ${key}=${value.replace(/ /g, '\\ ')}`;
-        }, '');
-
-    return `${webpackEnvArgs} ${extraWebpackArgs}`;
+    return `--env protonPackOptions=${JSON.stringify(options)} ${extraWebpackArgs}`;
 };
 
 const commandWithLog = (...args) => {
@@ -106,15 +72,7 @@ addGlobalOptions(program.command('build').description('create an optimized produ
     .action(async (options, env) => {
         console.log(chalk.magenta('Creating a production build...\n'));
 
-        const configData = getConfigData(options);
-        const webpackArgs = getWebpackArgs(options, env, configData);
-
-        if (options.optimizeAssets) {
-            await writeConfigHead(getConfigHead(configData));
-        } else {
-            await writeConfig(getConfigFile(configData));
-        }
-
+        const webpackArgs = getWebpackArgs(options, env);
         const outputPath = path.resolve('./dist');
         await commandWithLog(`rm -rf ${outputPath}`);
         await commandWithLog(
@@ -151,16 +109,9 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
     .action(async (options, env) => {
         console.log(chalk.magenta('Starting development server...\n'));
 
-        const configData = getConfigData(options);
-        if (options.optimizeAssets) {
-            await writeConfigHead(getConfigHead(configData));
-        } else {
-            await writeConfig(getConfigFile(configData));
-        }
-
         const port = await getPort(options.port || 8080);
 
-        const webpackArgs = getWebpackArgs(options, env, configData);
+        const webpackArgs = getWebpackArgs(options, env);
         await commandWithLog(
             `${require.resolve('webpack-cli/bin/cli.js')} serve --progress --port=${port} ${webpackArgs}`,
             {
