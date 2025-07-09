@@ -48,6 +48,10 @@ describe('useNewsletterSubscriptionTelemetry.helpers', () => {
         it('Should return the correct action for MoveToTrash', () => {
             expect(getNewsletterMessagesAction('MoveToTrash')).toBe(NewsletterMessagesAction.moveToTrash);
         });
+
+        it('Should return the correct action for RemoveFromList', () => {
+            expect(getNewsletterMessagesAction('RemoveFromList')).toBe(NewsletterMessagesAction.removeFromList);
+        });
     });
 
     describe('getNewsletterDestinationFolder', () => {
