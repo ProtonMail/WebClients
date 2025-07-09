@@ -2,6 +2,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 import {
     POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE,
@@ -60,7 +61,12 @@ export const getIsUserEligibleForOneDollar = ({
     // We consider the user has the required mail if the offer already started
     const hasRequiredEmails = offerStartDateTimeStamp ? true : nbrEmailsInAllMail >= POST_SIGNUP_REQUIRED_EMAILS;
     const basicEligibility =
-        user.isFree && !user.isDelinquent && hasValidApp && hasRequiredEmails && !lastSubscriptionEnd;
+        user.isFree &&
+        !user.isDelinquent &&
+        hasValidApp &&
+        hasRequiredEmails &&
+        !lastSubscriptionEnd &&
+        !hasPassLifetime(user);
 
     return basicEligibility && isOfferStillValid && isAccountOldEnough;
 };
