@@ -3,6 +3,7 @@ import { differenceInDays, fromUnixTime } from 'date-fns';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 import {
     POST_SIGNUP_ONE_DOLLAR_DURATION,
@@ -25,8 +26,6 @@ export const getIsUserEligibleForSubscriptionReminder = ({
     mailOfferState,
     lastReminderTimestamp,
 }: Props) => {
-    const { isFree, isDelinquent } = user;
-    const isNotDelinquent = !isDelinquent;
     const hasValidApp = protonConfig.APP_NAME === APPS.PROTONMAIL;
 
     const today = new Date();
@@ -48,5 +47,7 @@ export const getIsUserEligibleForSubscriptionReminder = ({
 
     const isDomBusy = domIsBusy();
 
-    return isFree && isNotDelinquent && hasValidApp && shouldDisplayOffer && !isDomBusy;
+    return (
+        user.isFree && !user.isDelinquent && hasValidApp && shouldDisplayOffer && !isDomBusy && !hasPassLifetime(user)
+    );
 };
