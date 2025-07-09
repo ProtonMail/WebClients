@@ -1120,7 +1120,40 @@ export function isForbiddenPlusToPlus({
     const subscribedPlans = getSubscriptionPlanTitles(user, subscription);
     const isSubscribedToAPlusPlan = subscribedPlans.some(({ planName }) => getHasPlusPlan(planName));
     const isNotSamePlanName = !subscribedPlans.some(({ planName }) => planName === newPlanName);
-    return Boolean(isSubscribedToAPlusPlan && getHasPlusPlan(newPlanName) && isNotSamePlanName);
+    const allowPlusToPlusTransitions = [
+        {
+            // Going from Pass
+            from: [PLANS.PASS],
+            // To Pass lifetime
+            to: [PLANS.PASS_LIFETIME],
+        },
+        {
+            // Going from Drive 200 GB or Drive 1 TB
+            from: [PLANS.DRIVE, PLANS.DRIVE_1TB],
+            // To Drive 200 GB or Drive 1 TB should be allowed
+            to: [PLANS.DRIVE, PLANS.DRIVE_1TB],
+        },
+        {
+            // Going from VPN Plus or Pass plus
+            from: [PLANS.VPN, PLANS.VPN2024, PLANS.PASS],
+            // To VPN + Pass bundle
+            to: [PLANS.VPN_PASS_BUNDLE],
+        },
+        {
+            // Going from legacy vpn
+            from: [PLANS.VPN],
+            // To new vpn
+            to: [PLANS.VPN2024],
+        },
+    ];
+    const allowPlusToPlusTransition = !allowPlusToPlusTransitions.some(({ from, to }) => {
+        return subscribedPlans.some(
+            ({ planName }) => planName && newPlanName && from.includes(planName) && to.includes(newPlanName)
+        );
+    });
+    return Boolean(
+        isSubscribedToAPlusPlan && getHasPlusPlan(newPlanName) && isNotSamePlanName && allowPlusToPlusTransition
+    );
 }
 
 export function getIsPlanTransitionForbidden({
