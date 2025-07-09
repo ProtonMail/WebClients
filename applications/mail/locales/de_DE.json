@@ -400,7 +400,7 @@
         "Dauerhaft löschen"
       ],
       "Deleting folder": [
-        "Ordner löschen"
+        "Ordner wird gelöscht"
       ],
       "Deleting label": [
         "Kategorie löschen"
@@ -1606,6 +1606,10 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüssel vertrauen"
       ]
     },
     "action": {
@@ -1942,6 +1946,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } Lumo-Lizenzen haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_USERS } Benutzer haben."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kannst während des Testzeitraums keine eigenen Domains hinzufügen."
+      ],
+      "You have reached the trial limit.": [
+        "Du hast das Testversions-Limit erreicht."
       ]
     },
     "bf2023: Deal details": {
@@ -4884,6 +4906,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "No address with sending permissions": [
+        "Keine E-Mail-Adresse mit Sendeberechtigungen"
+      ],
+      "Permissions request failed.": [
+        "Berechtigungsanfrage fehlgeschlagen."
+      ],
+      "Wrong password": [
+        "Falsches Passwort"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6141,7 +6172,7 @@
         "${ boldBulkDelete }, alte E-Mails archivieren oder in einen Ordner verschieben."
       ],
       "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
-        "${ boldQuicklySpot }, welche Abonnemente nicht mehr relevant sind."
+        "${ boldQuicklySpot }, welche Abonnements nicht mehr relevant sind."
       ],
       "${ boldUnsubscribe } from them with one click.": [
         "${ boldUnsubscribe }, um dich mit einem Klick abzumelden."
@@ -6288,7 +6319,7 @@
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "${ PASS_SHORT_APP_NAME } Lifetime Deal hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung deines Abonnements ${ planTitle } bleiben unverändert."
+        "Das ${ PASS_SHORT_APP_NAME } Lifetime-Angebot hat keinen Verlängerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }. Der Preis und das Datum für die Verlängerung deines Abonnements ${ planTitle } bleiben unverändert."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -8191,7 +8222,7 @@
         "Wir konnten deine Zahlung nicht abschließen."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
-        "Wir haben Abonnemente, die speziell für Benutzer wie dich entwickelt wurden, die mehr als eine E-Mail-Adresse benötigen."
+        "Wir haben Abonnements, die speziell für Benutzer wie dich entwickelt wurden, die mehr als eine E-Mail-Adresse benötigen."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Wir müssen deine Zahlungsmethode bei deiner Bank authentifizieren."
@@ -8272,7 +8303,7 @@
         "Es wird nun ein neuer Tab im Browser geöffnet und folgende Adresse aufgerufen:"
       ],
       "You are about to open your default browser and visit:": [
-        "Du bist dabei, deinen Standardbrowser zu öffnen und zu besuchen:"
+        "Du bist dabei, deinen Standardbrowser zu öffnen und folgende Seite zu besuchen:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
@@ -8545,6 +8576,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } Newsletter",
+        "${ unreadCount } Newsletter"
+      ],
+      "Dedicated VPN servers": [
+        "Dezidierte VPN-Server"
+      ],
+      "newsletter": [
+        "Newsletter"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Anzahl der dedizierten VPN-Server in der Organisation"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du verlierst auch den Zugang zu den Funktionen von ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -9474,6 +9521,18 @@
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
+      ],
+      "Marked as read": [
+        "Als gelesen markiert"
+      ],
+      "Moved to ${ labelName }": [
+        "Verschoben nach ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Ins Archiv verschoben"
+      ],
+      "Moved to Trash": [
+        "In den Papierkorb verschoben"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9552,6 +9611,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Hier kannst du Newsletter- und Verteilerlisten-Abonnemente ansehen und verwalten."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Newsletter oder Verteilerlisten, von denen du abgemeldet bist, werden hier angezeigt."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Du hast keine aktiven Newsletter oder Verteilerlisten-Abonnemente."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Du hast keine Newsletter oder Verteilerlisten-Abonnemente."
       ]
     },
     "Landmarks": {
@@ -11067,8 +11135,8 @@
         "2FA erzwingen"
       ],
       "Support for ${ n } custom email domain": [
-        "Support für ${ n } benutzerdefinierte E-Mail-Domäne",
-        "Support für ${ n } benutzerdefinierte E-Mail-Domänen"
+        "Support für ${ n } benutzerdefinierte E-Mail-Domain",
+        "Support für ${ n } benutzerdefinierte E-Mail-Domains"
       ]
     },
     "Notification": {
@@ -11380,6 +11448,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Deine Domain und dein Abonnement sind jetzt bereit."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } bedeutet, dass du niemals gesponserte Anzeigen in unseren Apps sehen wirst."
+      ],
+      "Ad-free promise": [
+        "Werbefreies Versprechen"
       ]
     },
     "Onboarding Proton": {
@@ -11419,7 +11493,7 @@
         "Jederzeit vor dem ${ cancelDate } kündigen."
       ],
       "Cancel anytime before then.": [
-        "Du kannst jederzeit vorher abbrechen."
+        "Du kannst jederzeit vorher kündigen."
       ],
       "contact our support team": [
         "Kontaktiere unser Support-Team"
@@ -11692,7 +11766,7 @@
         "Wähle zum Bezahlen ein Rechnungsland aus"
       ],
       "terms & conditions": [
-        "Bedingungen & Konditionen"
+        "Allgemeine Geschäftsbedingungen"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
@@ -11721,6 +11795,9 @@
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ]
     },
     "Payments.Error": {
@@ -13194,7 +13271,7 @@
         "Wie wir lokale Aktivisten unterstützt haben, als die Privatsphäre und die Redefreiheit bedroht waren."
       ],
       "If you exceed free plan limits, you won't be able to:": [
-        "Wenn du die Limite der kostenlosen Version überschreitest, ist Folgendes nicht möglich:"
+        "Wenn du die Grenzen der kostenlosen Version überschreitest, ist Folgendes nicht mehr möglich:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
         "Wenn deine Nutzung die Limite der kostenlosen Version überschreitet, kann der Zugang zu den Produktfunktionen und deinen Daten eingeschränkt sein."
@@ -14494,7 +14571,7 @@
         "Auswahlliste „Aktionen“ öffnen"
       ],
       "Org setup": [
-        "Org.-Einrichtung"
+        "Organisationseinrichtung"
       ],
       "Organization setup": [
         "Organisationseinrichtung"
@@ -14831,6 +14908,12 @@
       ],
       "Your subscriptions in one place": [
         "Deine Abonnemente an einem Ort"
+      ],
+      "No active newsletters": [
+        "Keine aktiven Newsletter"
+      ],
+      "No newsletters found": [
+        "Keine Newsletter gefunden"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15421,6 +15504,19 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Abonnement kündigen"
+      ],
+      "Keep subscription": [
+        "Abonnement behalten"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Deine kostenlose Testversion endet in ${ timeRemaining }"
       ]
     }
   }

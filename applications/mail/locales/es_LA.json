@@ -1427,7 +1427,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1945,6 +1946,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente mensualmente el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Usted puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Usted puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias Scribe durante el período de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Usted puede tener hasta ${ TRIAL_MAX_USERS } usuarios durante el período de prueba."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Usted no puede añadir dominios personalizados durante el período de prueba."
+      ],
+      "You have reached the trial limit.": [
+        "Usted ha alcanzado el límite de la prueba."
       ]
     },
     "bf2023: Deal details": {
@@ -2550,7 +2569,7 @@
         "Nuestro plan gratuito básico con correo y almacenamiento cifrados de extremo a extremo. Sin funciones premium incluidas."
       ],
       "Save ${ upsellSavings }": [
-        "Ahorre un ${ upsellSavings }"
+        "Ahorre ${ upsellSavings }"
       ],
       "Save money with ${ upsellPlanName }": [
         "Ahorre dinero con ${ upsellPlanName }"
@@ -4887,6 +4906,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "No address with sending permissions": [
+        "No hay dirección con permisos de envío"
+      ],
+      "Permissions request failed.": [
+        "Error con la solicitud de permisos"
+      ],
+      "Wrong password": [
+        "La contraseña no es correcta."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8548,6 +8576,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } boletín",
+        "${ unreadCount } boletines"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores dedicados de VPN"
+      ],
+      "newsletter": [
+        "boletín"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Número de servidores VPN dedicados en la organización"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "También perderá acceso a las funciones de ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -9480,6 +9524,18 @@
       ],
       "Your password (admin)": [
         "Su contraseña (admin)"
+      ],
+      "Marked as read": [
+        "Marcado como leído"
+      ],
+      "Moved to ${ labelName }": [
+        "Movido a ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Movido al archivo"
+      ],
+      "Moved to Trash": [
+        "Movido a la Papelera"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9558,6 +9614,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Aquí puede ver y gestionar las suscripciones a los boletines y a la lista de correo."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Los boletines o listas de direcciones de los que cancela su suscripción aparecerán aquí."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "No tiene ninguna suscripción activa a boletines o listas de correo."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "No tiene ninguna suscripción a boletines o listas de correo."
       ]
     },
     "Landmarks": {
@@ -11392,6 +11457,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "El dominio y la suscripción están listos para usar."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } significa que usted nunca verá anuncios patrocinados en nuestras aplicaciones."
+      ],
+      "Ad-free promise": [
+        "Promesa sin anuncios"
       ]
     },
     "Onboarding Proton": {
@@ -11733,6 +11804,9 @@
       ],
       "Your payment is still being processed": [
         "Su pago aún está siendo procesado"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."
       ]
     },
     "Payments.Error": {
@@ -14843,6 +14917,12 @@
       ],
       "Your subscriptions in one place": [
         "Sus suscripciones en un solo lugar"
+      ],
+      "No active newsletters": [
+        "No hay boletines activos."
+      ],
+      "No newsletters found": [
+        "No se encontraron boletines."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15191,8 +15271,8 @@
         "Cada semana los viernes ${ interval }"
       ],
       "Every ${ interval } week on Monday": [
-        "Cada semana los lunes ${ interval }",
-        "Cada semana los lunes ${ interval }"
+        "Cada ${ interval } semana los lunes",
+        "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
         "Cada semana los lunes, ${ timesString } ${ interval }",
@@ -15433,6 +15513,19 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar la suscripción"
+      ],
+      "Keep subscription": [
+        "Mantener la suscripción"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Su prueba gratuita termina en ${ timeRemaining }"
       ]
     }
   }

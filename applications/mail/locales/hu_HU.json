@@ -1421,7 +1421,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Megbízható kulcs",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -4865,6 +4866,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
+      ],
+      "Wrong password": [
+        "Hibás jelszó"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6122,10 +6126,10 @@
         "${ boldBulkDelete }, archiválja vagy helyezze át a régi e-maileket egy mappába."
       ],
       "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
-        "${ boldQuicklySpot } mely előfizetések már nem relevánsak."
+        "${ boldQuicklySpot } mely előfizetések nem relevánsak."
       ],
       "${ boldUnsubscribe } from them with one click.": [
-        "${ boldUnsubscribe } tőlük egy kattintással."
+        "${ boldUnsubscribe } egy kattintással."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe segítségével gyorsan és könnyedén készíthet jobb e-maileket."
@@ -7534,7 +7538,7 @@
         "A dokumentum nyilvános megosztása még nem támogatott."
       ],
       "Quickly spot": [
-        "Gyorsan észrevenni"
+        "Gyorsabb észrevenni"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Forduljon hozzánk segítségért bármilyen ${ BRAND_NAME } témában."

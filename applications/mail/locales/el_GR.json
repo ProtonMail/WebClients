@@ -1606,6 +1606,10 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Trust key": [
+        "Εμπιστοσύνη στο κλειδί",
+        "Εμπιστοσύνη στα κλειδιά"
       ]
     },
     "action": {
@@ -4868,6 +4872,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "No address with sending permissions": [
+        "Δεν υπάρχει διεύθυνση με δικαιώματα αποστολής"
+      ],
+      "Permissions request failed.": [
+        "Το αίτημα αδειών απέτυχε."
+      ],
+      "Wrong password": [
+        "Λανθασμένος κωδικός πρόσβασης"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8529,6 +8542,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } ενημερωτικό δελτίο",
+        "${ unreadCount } ενημερωτικά δελτία"
+      ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
+      ],
+      "newsletter": [
+        "ενημερωτικό δελτίο"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Αριθμός αποκλειστικών διακομιστών VPN στον οργανισμό"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -9458,6 +9487,18 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Marked as read": [
+        "Επισημάνθηκε ως αναγνωσμένο"
+      ],
+      "Moved to ${ labelName }": [
+        "Μετακινήθηκε στο ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Μετακινήθηκε στα Αρχειοθετημένα"
+      ],
+      "Moved to Trash": [
+        "Μεταφέρθηκε στα Διαγραμμένα"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9536,6 +9577,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Δείτε και διαχειριστείτε τις συνδρομές ενημερωτικών δελτίων και λιστών αλληλογραφίας εδώ."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Ενημερωτικά δελτία ή λίστες αλληλογραφίας από τα οποία κάνετε απεγγραφή θα εμφανίζονται εδώ."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Δεν έχετε ενεργά ενημερωτικά δελτία ή συνδρομές σε λίστες αλληλογραφίας."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Δεν έχετε ενημερωτικά δελτία ή συνδρομές σε λίστες αλληλογραφίας."
       ]
     },
     "Landmarks": {
@@ -11364,6 +11414,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Ο τομέας και η συνδρομή σας είναι έτοιμα για χρήση."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } σημαίνει ότι δεν θα δείτε ποτέ διαφημίσεις χορηγών στις εφαρμογές μας."
+      ],
+      "Ad-free promise": [
+        "Υπόσχεση χωρίς διαφημίσεις"
       ]
     },
     "Onboarding Proton": {
@@ -11705,6 +11761,9 @@
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
       ]
     },
     "Payments.Error": {
@@ -14810,6 +14869,12 @@
       ],
       "Your subscriptions in one place": [
         "Οι συνδρομές σας σε ένα μέρος"
+      ],
+      "No active newsletters": [
+        "Δεν υπάρχουν ενεργά ενημερωτικά δελτία"
+      ],
+      "No newsletters found": [
+        "Δεν βρέθηκαν ενημερωτικά δελτία"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15400,6 +15465,19 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Ακύρωση συνδρομής"
+      ],
+      "Keep subscription": [
+        "Διατήρηση συνδρομής"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Η δωρεάν δοκιμή σας λήγει σε ${ timeRemaining }"
       ]
     }
   }

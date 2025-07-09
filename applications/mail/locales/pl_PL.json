@@ -1426,7 +1426,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufaj kluczowi",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1471,7 +1474,7 @@
         "Anuluj subskrypcję"
       ],
       "Unsubscribed": [
-        "Subskrypcja została anulowana"
+        "Anulowane"
       ],
       "Unsubscribing": [
         "Anulowanie subskrypcji"
@@ -1610,6 +1613,15 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Utwórz folder ${ boldFolderName }"
+      ],
+      "Deleting folder": [
+        "Usuwanie folderu"
+      ],
+      "Deleting label": [
+        "Usuwanie etykiety"
       ]
     },
     "action": {
@@ -1956,6 +1968,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_LUMO_SEATS } miejsc Lumo w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_SCRIBE_SEATS } miejsc Scribe w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_USERS } użytkowników w okresie próbnym."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nie możesz dodać niestandardowych domen w okresie próbnym."
+      ],
+      "You have reached the trial limit.": [
+        "Osiągnąłeś limit okresu próbnego."
       ]
     },
     "bf2023: Deal details": {
@@ -4942,6 +4972,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Wyszukiwanie pasuje do zbyt wielu wyników. Sprecyzuj wyszukiwanie i spróbuj ponownie."
+      ],
+      "No address with sending permissions": [
+        "Brak adresu z uprawnieniami do wysyłania"
+      ],
+      "Permissions request failed.": [
+        "Żądanie uprawnień nie powiodło się."
+      ],
+      "Wrong password": [
+        "Hasło jest nieprawidłowe"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8799,6 +8838,27 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "Block sender": [
+        "Zablokuj nadawcę"
+      ],
+      "Dedicated VPN servers": [
+        "Dedykowane serwery VPN"
+      ],
+      "No messages to show": [
+        "Brak wiadomości"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Liczba dedykowanych serwerów VPN organizacji"
+      ],
+      "Preferences updated": [
+        "Ustawienia zostały zaktualizowane"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "Brak wiadomości od tego nadawcy."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Stracisz również dostęp do funkcji planu ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -9736,6 +9796,24 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ],
+      "Choose what to do instead": [
+        "Wybierz, co zrobić zamiast tego"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "Nie udało się utworzyć folderu ${ customFolderName }"
+      ],
+      "Marked as read": [
+        "Oznacz jako przeczytane"
+      ],
+      "Moved to ${ labelName }": [
+        "Przeniesiono do ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Przeniesiono do archiwum"
+      ],
+      "Moved to Trash": [
+        "Przenieś do kosza"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11533,6 +11611,12 @@
       ],
       "Your subscription renews soon": [
         "Subskrypcja odnowi się wkrótce"
+      ],
+      "Don’t show this again": [
+        "Nie pokazuj ponownie"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Wybierz plan ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11559,6 +11643,18 @@
       ],
       "Storage": [
         "Przestrzeń dyskowa"
+      ],
+      "500 GB secure storage": [
+        "500 GB bezpiecznej przestrzeni dyskowej"
+      ],
+      "Advanced threat protection": [
+        "Zaawansowana ochrona przed zagrożeniami"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Ultraszybkie serwery w ponad 110 krajach"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Nieograniczona liczba aliasów chroniących tożsamość"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11689,6 +11785,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Twoja domena i subskrypcja są gotowe do użycia."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } oznacza to, że nigdy nie zobaczysz reklam sponsorowanych w naszych aplikacjach."
+      ],
+      "Ad-free promise": [
+        "Obietnica braku reklam"
       ]
     },
     "Onboarding Proton": {
@@ -11937,6 +12039,9 @@
       ],
       "New credit/debit card": [
         "Nowa karta płatnicza"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12998,6 +13103,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Ulepsz do planu ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Przeglądaj bezpiecznie"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Zrób więcej z ${ BRAND_NAME }"
+      ],
+      "Get unlimited aliases": [
+        "Uzyskaj nieograniczoną liczbę aliasów"
+      ],
+      "Guard against threats": [
+        "Ochrona przed zagrożeniami"
+      ],
+      "Increase your storage": [
+        "Zwiększ przestrzeń dyskową"
+      ],
+      "Keep passwords safe": [
+        "Przechowuj hasła bezpiecznie"
+      ],
+      "Unblock streaming content": [
+        "Odblokuj streaming"
       ]
     },
     "specialoffer: Offers": {
@@ -13074,6 +13200,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Ulepsz konto i zaoszczędź więcej dzięki dwuletniemu planowi ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Uzyskaj dostęp do streamingu na całym świecie"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Uzyskaj 500 GB na bezpieczne przechowywanie wszystkich plików i zdjęć"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Uzyskaj dostęp do ultraszybkich serwerów VPN w ponad 110 krajach"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Uzyskaj jeden plan, który zawiera wszystko. Uzyskaj plan ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Uzyskaj nieograniczoną liczbę aliasów, aby chronić swoją tożsamość i ograniczyć spam"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Przechowuj hasła bezpiecznie i uporządkowane w wielu sejfach"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Chroń swoje konto przed zagrożeniami dzięki funkcji Proton Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -15267,6 +15414,9 @@
       ],
       "Your subscriptions in one place": [
         "Twoje subskrypcje w jednym miejscu"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Anulowanie subskrypcji nie jest dostępne dla tego nadawcy"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15937,6 +16087,40 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Anuluj subskrypcję"
+      ],
+      "Keep subscription": [
+        "Zachowaj subskrypcję"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Darmowa wersja próbna zakończy się za ${ timeRemaining }"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Szyfrowany menadżer haseł"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Przelew bankowy — ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ miesiąc"
+      ],
+      "Only": [
+        "Tylko"
       ]
     }
   }

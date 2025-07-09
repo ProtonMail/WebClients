@@ -1600,6 +1600,16 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Deleting folder": [
+        "საქაღალდის წაშლა"
+      ],
+      "Deleting label": [
+        "ჭდის წაშლა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ]
     },
     "action": {
@@ -1812,6 +1822,9 @@
       ],
       "years": [
         "წელი"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "დაზოგეთ ბევრი VPN-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
       ]
     },
     "anniversary_2025: offer": {
@@ -4826,6 +4839,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "თქვენმა ძებნამ მეტისმეტად ბევრი შედეგი მოიტანა. დაადეთ უფრო მეტი ლიმიტი და თავიდან სცადეთ."
+      ],
+      "No address with sending permissions": [
+        "გაგზავნის უფლების მქონე მისამართის გარეშე"
+      ],
+      "Permissions request failed.": [
+        "წვდომების მოთხოვნა ჩავარდა."
+      ],
+      "Wrong password": [
+        "არასწორი პაროლი"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8400,6 +8422,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } სიახლე",
+        "${ unreadCount } სიახლე"
+      ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
+      "newsletter": [
+        "სიახლე"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "გამოყოფილი VPN სერვერების რაოდენობა ორგანიზაციაში"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
       ]
     },
     "info": {
@@ -9329,6 +9367,18 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ],
+      "Marked as read": [
+        "მონიშნულია წაკითხულად"
+      ],
+      "Moved to ${ labelName }": [
+        "გადატანილია ${ labelName }-ში"
+      ],
+      "Moved to Archive": [
+        "გადატანილია არქივში"
+      ],
+      "Moved to Trash": [
+        "გადატანილია ნაგვის ყუთში"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11223,6 +11273,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "თქვენი დომენი და გამოწერა ახლა გამოსაყენებლად მზადაა."
+      ],
+      "Ad-free promise": [
+        "დაპირება რეკლამის გარეშე"
       ]
     },
     "Onboarding Proton": {
@@ -11451,6 +11504,9 @@
       ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12531,6 +12587,24 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "ასწიეთ სატარიფო გეგმა დაზოგეთ მეტი 2 წლით ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "იქონიეთ წვდომა სტრიმინგის სერვისებთან მთელ მსოფლიოში"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "მიიღეთ 500გბ და შეინახეთ დაცულად ყველა თქვენი ფაილი და სურათი"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "მიიღეთ წვდომა უსწრაფეს VPN სერვერებთან 110+ ქვეყანაში"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "მიიღეთ შეუზღუდავი ფსევდონიმები, რომ დაიცვათ თავი და შეამციროთ სპამის რაოდენობა"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "იქონიეთ თქვენი პაროლები უსაფრთხოდ და დალაგებულად მრავალ საცავში "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "დაიცავით თქვენი ანგარიში საშიშროებებისგან Sentinel-თან ერთად"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14600,6 +14674,12 @@
       ],
       "Your subscriptions in one place": [
         "თქვენი გამოწერები ერთ ადგილას"
+      ],
+      "No active newsletters": [
+        "აქტიური სახლეების გარეშე"
+      ],
+      "No newsletters found": [
+        "სიახლეები აღმოჩენილი არაა"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15190,6 +15270,27 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "გამოწერის გაუქმება"
+      ],
+      "Keep subscription": [
+        "გამოწერის შენარჩუნება"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ timeRemaining }"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - ბარათის ვადა იწურება ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "საბანკო გადარიცხვა - ${ details }"
       ]
     }
   }

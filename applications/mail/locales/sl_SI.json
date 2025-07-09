@@ -1556,6 +1556,24 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Deleting folder": [
+        "Brisanje mape"
+      ],
+      "Recently received": [
+        "Nedavno prejeto"
+      ],
+      "Resize panel": [
+        "Spremeni velikost okvirja"
+      ],
+      "Stop marking as read": [
+        "Prekini označevati kot prebrano"
+      ],
+      "Trust key": [
+        "Zaupaj ključu",
+        "Zaupaj ključema",
+        "Zaupaj ključem",
+        "Zaupaj ključem"
       ]
     },
     "action": {
@@ -4669,6 +4687,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
+      ],
+      "Wrong password": [
+        "Napačno geslo"
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Dosegli ste mejo za število stikov v vašem računu."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5541,6 +5565,9 @@
       ],
       "Tell us more": [
         "Povejte nam več"
+      ],
+      "Drawer": [
+        "Predal"
       ]
     },
     "Hint": {
@@ -8349,6 +8376,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "Dedicated VPN servers": [
+        "Namenski VPN strežniki"
+      ],
+      "Message list": [
+        "Seznam sporočil"
+      ],
+      "Message view": [
+        "Pogled sporočila"
       ]
     },
     "info": {
@@ -9250,6 +9286,15 @@
       ],
       "Your location": [
         "Vaša lokacija"
+      ],
+      "Marked as read": [
+        "Označeno kot prebrano"
+      ],
+      "Moved to Archive": [
+        "Premaknjeno v arhiv"
+      ],
+      "Moved to Trash": [
+        "Premaknjeno v smetnjak"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9564,6 +9609,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Za ogled posodobljenega povabila morate ponovno aktivirati vaše ključe."
+      ],
+      "Views": [
+        "Pogledi"
       ]
     },
     "Link to calendar event": {
@@ -11008,6 +11056,9 @@
       ],
       "Your subscription renews soon": [
         "Vaša naročnina se bo kmalu obnovila"
+      ],
+      "Don’t show this again": [
+        "Tega ne prikaži več"
       ]
     },
     "Offer feature": {
@@ -11034,6 +11085,9 @@
       ],
       "Storage": [
         "Shramba"
+      ],
+      "500 GB secure storage": [
+        "500 GB varne shrambe"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11219,6 +11273,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Do konca preskusnega obdobja boste lahko uporabljali ${ planTitle } brezplačno."
+      ],
+      "contact our support team": [
+        "kontaktirajte našo podporo"
       ]
     },
     "Online accounts": {
@@ -11388,6 +11445,9 @@
       ],
       "New credit/debit card": [
         "Nova kreditna/debetna kartica"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12409,6 +12469,9 @@
       ],
       "Upgrade": [
         "Nadgradnja"
+      ],
+      "Guard against threats": [
+        "Zaščitite se pred grožnjami"
       ]
     },
     "specialoffer: Offers": {
@@ -14565,6 +14628,12 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "Newsletters": [
+        "Glasila"
+      ],
+      "Your subscriptions in one place": [
+        "Vaše naročnine na enem mestu"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15218,6 +15287,71 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB prostora za shranjevanje"
+      ],
+      "200 GB storage": [
+        "200 GB prostora"
+      ],
+      "thanks to you": [
+        "Hvala vam"
+      ],
+      "years": [
+        "leta"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Ponudba za obletnico"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "/ month": [
+        "/mesec"
+      ],
+      "12 months": [
+        "12 mesecev"
+      ],
+      "15 months": [
+        "15 mesecev"
+      ],
+      "24 months": [
+        "24 mesecev"
+      ],
+      "30 months": [
+        "30 mesecev"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Prekliči naročnino"
+      ],
+      "Keep subscription": [
+        "Ohrani naročnino"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Šifriran upravitelj gesel"
+      ]
+    },
+    "Time unit": {
+      "${ ceilHours } hour": [
+        "${ ceilHours } ura",
+        "${ ceilHours } uri",
+        "${ ceilHours } ure",
+        "${ ceilHours } ur"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/mesec"
+      ],
+      "Only": [
+        "Samo"
       ]
     }
   }

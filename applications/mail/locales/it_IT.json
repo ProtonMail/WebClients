@@ -1606,6 +1606,10 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Trust key": [
+        "Considera attendibile la chiave",
+        "Considera attendibili le chiavi"
       ]
     },
     "action": {
@@ -1942,6 +1946,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze Lumo durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_USERS } utenti durante il periodo di prova."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Non puoi aggiungere domini personalizzati durante il periodo di prova."
+      ],
+      "You have reached the trial limit.": [
+        "Hai raggiunto il limite della prova."
       ]
     },
     "bf2023: Deal details": {
@@ -4884,6 +4906,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "No address with sending permissions": [
+        "Nessun indirizzo con autorizzazioni di invio"
+      ],
+      "Permissions request failed.": [
+        "Richiesta di autorizzazioni non riuscita."
+      ],
+      "Wrong password": [
+        "Password errata"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8545,6 +8576,22 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } newsletter",
+        "${ unreadCount } newsletter"
+      ],
+      "Dedicated VPN servers": [
+        "Server VPN dedicati"
+      ],
+      "newsletter": [
+        "newsletter"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Numero di server VPN dedicati nell'organizzazione"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Perderai anche l'accesso alle funzionalità di ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -9477,6 +9524,18 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "Marked as read": [
+        "Segnato come letto"
+      ],
+      "Moved to ${ labelName }": [
+        "Spostato in ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Spostato nell’archivio"
+      ],
+      "Moved to Trash": [
+        "Spostato nel cestino"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9555,6 +9614,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Visualizza e gestisci qui gli abbonamenti alla newsletter e alla mailing list."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Le newsletter o mailing list a cui annulli l'iscrizione appariranno qui."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Non hai nessun abbonamento a newsletter attiva o a mailing list."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Non hai nessun abbonamento a newsletter o a mailing list."
       ]
     },
     "Landmarks": {
@@ -11388,6 +11456,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Il tuo dominio e il tuo abbonamento sono pronti per essere usati."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle }: non vedrai mai annunci sponsorizzati nelle nostre app."
+      ],
+      "Ad-free promise": [
+        "Il nostro impegno senza pubblicità"
       ]
     },
     "Onboarding Proton": {
@@ -11729,6 +11803,9 @@
       ],
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ]
     },
     "Payments.Error": {
@@ -14839,6 +14916,12 @@
       ],
       "Your subscriptions in one place": [
         "I tuoi abbonamenti in un unico posto"
+      ],
+      "No active newsletters": [
+        "Nessuna newsletter attiva"
+      ],
+      "No newsletters found": [
+        "Nessuna newsletter trovata"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15429,6 +15512,19 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Annulla l'abbonamento"
+      ],
+      "Keep subscription": [
+        "Mantieni l'abbonamento"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "La tua prova gratuita termina tra ${ timeRemaining }."
       ]
     }
   }

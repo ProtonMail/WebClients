@@ -157,7 +157,7 @@
         "Аўтэнтыфікаваць"
       ],
       "Auto-delete spam and trash": [
-        "Аўтаматычнае выдаленне спаму і смецця"
+        "Аўтавыдаленне спаму і смецця"
       ],
       "Back": [
         "Назад"
@@ -427,7 +427,7 @@
         "Адключэнне псеўданіма"
       ],
       "Discard": [
-        "Скасаваць"
+        "Адхіліць"
       ],
       "Dismiss": [
         "Адхіліць"
@@ -604,7 +604,7 @@
         "Атрымаць праверачны код"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
-        "Перайдзіце ў ${ DRIVE_APP_NAME }"
+        "Перайсці ў ${ DRIVE_APP_NAME }"
       ],
       "Go to label": [
         "Перайсці ў меткі"
@@ -667,7 +667,7 @@
         "Мне падабаецца гэты адказ"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Не атрымалася загрузіць відарыс з уключанай абаронай ад праграм сачэння."
+        "Не ўдалося загрузіць відарыс з уключанай абаронай ад праграм сачэння."
       ],
       "Image will be loaded without a proxy": [
         "Відарыс будзе загружаны без проксі"
@@ -1243,7 +1243,7 @@
         "Адправіць апавяшчэнне аб прачытанні"
       ],
       "Send unsubscribe email": [
-        "Адправіць ліст скасавання падпіскі"
+        "Адправіць ліст аб скасаванні падпіскі"
       ],
       "Set": [
         "Задаць"
@@ -1616,6 +1616,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ]
     },
     "action": {
@@ -1814,10 +1820,10 @@
         "Значная эканомія на прэміяльных функцыях Drive з абмежаванай па часе скідкай."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Значная эканомія на прэміяльныя функцыі Mail з абмежаванай па часе скідкай."
+        "Значная эканомія на прэміяльных функцыях Mail з абмежаванай па часе скідкай."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
-        "Значная эканомія на прэміяльныя функцыі Pass з абмежаванай па часе скідкай."
+        "Значная эканомія на прэміяльных функцыях Pass з абмежаванай па часе скідкай."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
         "Значная эканомія на прэміяльных функцыях VPN з абмежаванай па часе скідкай."
@@ -4376,10 +4382,10 @@
         "Патрабуецца псеўданім"
       ],
       "Alias options could not be resolved": [
-        "Не атрымалася вызначыць параметры псеўданіма"
+        "Не ўдалося вызначыць параметры псеўданіма"
       ],
       "Aliases could not be loaded": [
-        "Немагчыма загрузіць псеўданімы"
+        "Не ўдалося загрузіць псеўданімы"
       ],
       "Amount above the maximum.": [
         "Сума вышэй за максімум."
@@ -4388,10 +4394,10 @@
         "Сума ніжэй за мінімум (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
-        "Адбылася памылка падчас загрузкі параметраў псеўданіма"
+        "Падчас загрузкі параметраў псеўданіма адбылася памылка"
       ],
       "An error occurred while saving your alias": [
-        "Адбылася памылка падчас захавання вашага псеўданіма"
+        "Падчас захавання вашага псеўданіма адбылася памылка"
       ],
       "Attachments are limited to 25 MB": [
         "Максімальны памер далучэнняў складае 25 МБ"
@@ -4424,13 +4430,13 @@
         "Няпоўная ўмова"
       ],
       "Contact could not be saved": [
-        "Не атрымалася захаваць кантакт"
+        "Не ўдалося захаваць кантакт"
       ],
       "Contact name is too long": [
         "Імя кантакту занадта доўгае"
       ],
       "Contact signature could not be verified": [
-        "Не атрымалася праверыць подпіс кантакту"
+        "Не ўдалося праверыць подпіс кантакту"
       ],
       "Contact signature not verified": [
         "Подпіс кантакту неправераны"
@@ -4445,10 +4451,10 @@
         "Немагчыма ўключыць пошук па кантэксце. Перазапусціце праграму або ачысціце яе даныя."
       ],
       "Could not open created vault": [
-        "Немагчыма адкрыць створанае сховішча"
+        "Не ўдалося адкрыць створанае сховішча"
       ],
       "Could not open updated vault": [
-        "Немагчыма адкрыць абноўленае сховішча"
+        "Не ўдалося адкрыць абноўленае сховішча"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Памылка расшыфроўкі: не ўдалося расшыфраваць змесціва гэтага паведамлення."
@@ -4469,7 +4475,7 @@
         "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
       "Draft could not be saved. Try again.": [
-        "Не атрымалася захаваць чарнавік. Паспрабуйце яшчэ раз."
+        "Не ўдалося захаваць чарнавік. Паспрабуйце яшчэ раз."
       ],
       "Due to an error, text generation couldn't be canceled": [
         "Па прычыне памылкі немагчыма скасаваць генерацыю тэксту"
@@ -4748,10 +4754,10 @@
         "Не ўдалося праверыць подпіс"
       ],
       "Some contacts could not be deleted": [
-        "Не атрымалася выдаліць некаторыя кантакты"
+        "Не ўдалося выдаліць некаторыя кантакты"
       ],
       "Some groups could not be deleted": [
-        "Не атрымалася выдаліць некаторыя групы"
+        "Не ўдалося выдаліць некаторыя групы"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Назвы некаторых вашых папак недаступны. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
@@ -4790,10 +4796,10 @@
         "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "Не атрымалася расшыфраваць далучэнне.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайл з дапамогай праграмы, напрыклад, GnuPG.",
-        "Не атрымалася расшыфраваць далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
-        "Не атрымалася расшыфраваць далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
-        "Не атрымалася расшыфраваць далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG."
+        "Не ўдалося расшыфраваць далучэнне.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайл з дапамогай праграмы, напрыклад, GnuPG.",
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -4805,7 +4811,7 @@
         "Назва папкі занадта доўгая. Выберыце іншую назву."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
-        "Не атрымалася выняць уласцівасці ключа для ${ emailAddress }"
+        "Не ўдалося выняць уласцівасці ключа для ${ emailAddress }"
       ],
       "The label name is invalid. Please choose a different name.": [
         "Памылковая назва меткі. Выберыце іншую назву."
@@ -4826,7 +4832,7 @@
         "Несапраўдны ключ адпраўкі"
       ],
       "The system is busy at the moment. Please try again in a few minutes.": [
-        "Сістэма занята ў дадзены момант. Паспрабуйце яшчэ раз праз некалькі хвілін."
+        "У дадзены момант сістэма занята. Паспрабуйце яшчэ раз праз некалькі хвілін."
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Памочнік у напісанні не можа выканаць ваш запыт. Паспрабуйце змяніць яго."
@@ -4932,6 +4938,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
+      ],
+      "No address with sending permissions": [
+        "Адсутнічае адрас з дазволамі на адпраўку"
+      ],
+      "Permissions request failed.": [
+        "Збой запыту дазволаў."
+      ],
+      "Wrong password": [
+        "Няправільны пароль"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5069,7 +5084,7 @@
         "Апавяшчэнне па-за межамі"
       ],
       "Original recurring event could not be found": [
-        "Не атрымалася знайсці арыгінальную перыядычную падзею"
+        "Не ўдалося знайсці арыгінальную перыядычную падзею"
       ],
       "Time zone": [
         "Часавы пояс"
@@ -5150,10 +5165,10 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Не атрымалася расшыфраваць далучаны файл ICS"
+        "Не ўдалося расшыфраваць далучаны файл ICS"
       ],
       "Attached ICS file could not be read": [
-        "Не атрымалася прачытаць далучаны файл ICS"
+        "Не ўдалося прачытаць далучаны файл ICS"
       ],
       "Invalid invitation": [
         "Памылковае запрашэнне"
@@ -5162,10 +5177,10 @@
         "Памылковы адказ"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "Не атрымалася дадаць падзею ў ваш каляндар. Адказ не адпраўлены"
+        "Не ўдалося дадаць падзею ў ваш каляндар. Адказ не адпраўлены"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Не атрымалася абнавіць падзею ў вашым календары. Адказ не адпраўлены"
+        "Не ўдалося абнавіць падзею ў вашым календары. Адказ не адпраўлены"
       ],
       "Unsupported invitation": [
         "Запрашэнне не падтрымліваецца"
@@ -5174,19 +5189,19 @@
         "Адказ не падтрымліваецца"
       ],
       "We could not cancel the event in your calendar": [
-        "Мы не змаглі скасаваць падзею ў вашым календары"
+        "Не ўдалося скасаваць падзею ў вашым календары"
       ],
       "We could not retrieve the event from your calendar": [
-        "Мы не змаглі атрымаць падзею з вашага календара"
+        "Не ўдалося атрымаць падзею з вашага календара"
       ],
       "We could not update the event in your calendar": [
-        "Мы не змаглі абнавіць падзею ў вашым календары"
+        "Не ўдалося абнавіць падзею ў вашым календары"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "Ваш адказ адпраўлены, але не атрымалася дадаць падзею ў ваш каляндар"
+        "Ваш адказ адпраўлены, але не ўдалося дадаць падзею ў ваш каляндар"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Ваш адказ адпраўлены, але падзея ў календары не была абноўлена"
+        "Ваш адказ адпраўлены, але не ўдалося абнавіць падзею ў вашым календары"
       ]
     },
     "Event title": {
@@ -5657,7 +5672,7 @@
         "Цалкам блакіруйце электронныя лісты ад ашуканцаў."
       ],
       "Block unsavory senders": [
-        "Блакіруйце адпраўнікоў з дрэннай рэпутацыяй"
+        "Блакіруйце сумнеўных адпраўнікоў"
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Цудоўна, што робіце сваю электронную пошту яшчэ больш бяспечнай, зручнай, і актуальнай! Мы павялічылі аб'ём вашага бясплатнага месца ў сховішчы да 1 ГБ."
@@ -5924,16 +5939,16 @@
         "${ totalImported } падзей з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
-        "Адбылася памылка падчас шыфравання і дадавання падзеі. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашай падзеі. Ніводная падзея не была імпартавана."
+        "Падчас шыфравання і дадавання вашай падзеі адбылася памылка. Ніводная падзея не была імпартавана."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашых падзей. Ніводная падзея не была імпартавана."
+        "Падчас шыфравання і дадавання вашых падзей адбылася памылка. Ніводная падзея не была імпартавана."
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шыфраванне і дадаванне кантактаў: ${ totalImported }/${ totalToImport }"
@@ -5987,13 +6002,13 @@
         "${ totalImported } кантактаў з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашага кантакту. Ніводны кантакт не быў імпартаваны."
+        "Падчас шыфравання і дадавання вашага кантакту адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання кантактаў. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
+        "Падчас шыфравання і дадавання кантактаў адбылася памылка. Паспяхова імпартавана наступная колькасць кантактаў: ${ totalImported } з ${ totalToImport }."
       ],
       "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Адбылася памылка падчас шыфравання і дадавання вашых кантактаў. Ніводны кантакт не быў імпартаваны."
+        "Падчас шыфравання і дадавання вашых кантактаў адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Кантакт паспяхова імпартаваны. Імпартаваны кантакт цяпер з'явіцца ў вашым спісе кантактаў."
@@ -6560,9 +6575,9 @@
       ],
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** вынік знойдзены ў ${ labelName }",
-        "**${ total }** вынікі знойдзена ў ${ labelName }",
-        "**${ total }** вынікаў знойдзена ў ${ labelName }",
-        "**${ total }** вынікаў знойдзена ў ${ labelName }"
+        "**${ total }** вынікі знойдзены ў ${ labelName }",
+        "**${ total }** вынікаў знойдзены ў ${ labelName }",
+        "**${ total }** вынікаў знойдзены ў ${ labelName }"
       ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Аўтаматычнае падключэнне**: падключэнне да сервера VPN адбываецца адразу пасля ўключэння прылады."
@@ -6646,7 +6661,7 @@
         "Выраўнаваць па правым краі"
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Уся (${ totalFoldersCount } папка)",
+        "Усе (${ totalFoldersCount } папка)",
         "Усе (${ totalFoldersCount } папкі)",
         "Усе (${ totalFoldersCount } папак)",
         "Усе (${ totalFoldersCount } папкі)"
@@ -6745,10 +6760,10 @@
         "Вы сапраўды хочаце выдаліць гэту метку?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Вы сапраўды хочаце скасаваць змены?"
+        "Вы сапраўды хочаце адхіліць змены?"
       ],
       "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце скасаваць імпартаванне?"
+        "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
         "Вы сапраўды хочаце перамясціць усе паведамленні з гэтага месца ў архіў?"
@@ -6814,7 +6829,7 @@
         "Асноўныя функцыі навігацыі і дзеянні застаюцца даступнымі незалежна ад таго, актыўныя спалучэнні клавіш у наладах або не."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
+        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
       ],
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
@@ -6826,7 +6841,7 @@
         "Цела: "
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
-        "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
+        "Павысце ідэнтычнасць сваёй арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Перанясіце свае паведамленні, кантакты і календары ў ${ BRAND_NAME }."
@@ -6841,7 +6856,7 @@
         "Масавае выдаленне"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
+        "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні зноў пяройдзеце на яго."
       ],
       "Calendar side panel": [
         "Бакавая панэль календара"
@@ -7045,7 +7060,7 @@
         "Чарнавік"
       ],
       "Draft discarded": [
-        "Чарнавік скасаваны"
+        "Адхіліць чарнавік"
       ],
       "Draft saved.": [
         "Чарнавік захаваны."
@@ -7558,7 +7573,7 @@
         "Больш нічога не знойдзена"
       ],
       "No payment is required at this time.": [
-        "Зараз аплата не патрабуецца."
+        "У дадзены момант аплата не патрабуецца."
       ],
       "No results found": [
         "Нічога не знойдзена"
@@ -7888,7 +7903,7 @@
         "Адпраўлена з дапамогай бяспечнай электроннай пошты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
-        "Плацяжы SEPA у дадзены момант недаступныя. Паспрабуйце яшчэ раз пазней."
+        "У дадзены момант плацяжы SEPA недаступны. Паспрабуйце яшчэ раз пазней."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
@@ -8413,7 +8428,7 @@
         "Немагчыма ўключыць пошук па змесціве паведамленняў у гэтым браўзеры."
       ],
       "We could not verify the sender's trusted keys.": [
-        "Мы не змаглі праверыць давераныя ключы адпраўніка."
+        "Не ўдалося праверыць давераныя ключы адпраўніка."
       ],
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
@@ -8728,10 +8743,10 @@
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Ваша дата падаўжэння: ${ nextBillingDate }."
+        "Ваш бясплатны пробны перыяд быў паспяхова пераўтвораны ў ${ cycle }-месячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Ваша дата падаўжэння: ${ nextBillingDate }."
+        "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
@@ -8803,10 +8818,28 @@
         "Доступ да ${ boldPlanTitle } будзе страчаны ${ boldEndDate }."
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
-        "Вы ўсё яшчэ зможаце праглядаць даныя вашага ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+        "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } рассылка",
+        "${ unreadCount } рассылкі",
+        "${ unreadCount } рассылак",
+        "${ unreadCount } рассылак"
+      ],
+      "Dedicated VPN servers": [
+        "Вылучаныя VPN серверы"
+      ],
+      "newsletter": [
+        "рассылка"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Колькасць вылучаных VPN сервераў у арганізацыі"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Вы таксама страціце доступ да функцый ${ boldPlanTitle }:"
       ]
     },
     "info": {
@@ -8926,7 +8959,7 @@
         "Выдаліць незваротна"
       ],
       "Discard draft": [
-        "Скасаваць чарнавік"
+        "Адхіліць чарнавік"
       ],
       "Expand / contract composer": [
         "Разгарнуць / сціснуць рэдактар"
@@ -9756,6 +9789,18 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Marked as read": [
+        "Пазначыць як прачытанае"
+      ],
+      "Moved to ${ labelName }": [
+        "Перамешчана ў ${ labelName }"
+      ],
+      "Moved to Archive": [
+        "Перамешчана ў Архіў"
+      ],
+      "Moved to Trash": [
+        "Перамешчана ў Сметніцу"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9834,6 +9879,15 @@
       ],
       "View and manage newsletter and mailing list subscriptions here.": [
         "Праглядайце і кіруйце рассылкай і падпіскамі спіса рассылкі ў гэтым месцы."
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Скасаваныя вамі рассылкі або спісы з рассылкамі з'явяцца тут."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "У вас адсутнічаюць актыўныя рассылкі або падпіскі на спісы рассылкі."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "У вас адсутнічаюць рассылкі або падпіскі на спісы рассылкі."
       ]
     },
     "Landmarks": {
@@ -10252,7 +10306,7 @@
     },
     "Message image": {
       "Image could not be loaded.": [
-        "Не атрымалася загрузіць відарыс."
+        "Не ўдалося загрузіць відарыс."
       ],
       "Image has not been loaded in order to protect your privacy.": [
         "Відарыс не быў загружаны, каб абараніць вашу прыватнасць."
@@ -10678,16 +10732,16 @@
         "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Адна простая падпіска"
       ],
       "Auto-delete Spam and Trash": [
-        "Аўтаматычнае выдаленне спаму і смецця"
+        "Аўтавыдаленне спаму і смецця"
       ],
       "Auto-reply": [
-        "Аўтаматычны адказ"
+        "Аўтаадказ"
       ],
       "Autofill credit cards (coming soon)": [
         "Аўтазапаўненне крэдытных картак (неўзабаве з'явіцца)"
       ],
       "Automatic email forwarding": [
-        "Аўтаматычная перасылка пошты"
+        "Аўтаперасылка пошты"
       ],
       "Available on all platforms": [
         "Даступна на ўсіх платформах"
@@ -11034,7 +11088,7 @@
         "200 ГБ воблачнага сховішча, якое дазваляе вам лёгка захоўваць, сінхранізаваць і абагульваць файлы. Абаронена скразным шыфраваннем."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў"
+        "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў з адмысловай абаронай"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Пашыраная бяспека для каманд, якая выходзіць за рамкі прамысловых стандартаў."
@@ -11166,7 +11220,7 @@
         "Забяспечвае доступ да некалькіх сетак адначасова. Напрыклад, вы можаце глядзець фільм з іншай краіны і адначасова атрымліваць мясцовыя вынікі на пошукавыя запыты"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        "Дазваляе вам наладжваць аўтаматычныя адказы (аўтаадказчык) для ўваходных паведамленняў"
+        "Дазваляе наладжваць аўтаматычныя адказы (аўтаадказчык) для ўваходных паведамленняў"
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
         "Аўтаматычна выдаляе са сметніцы і спаму паведамленні, якія старэйшыя за 30 дзён"
@@ -11175,7 +11229,7 @@
         "Аўтаматычна перасылаць лісты адпраўленыя на ваш уліковы запіс ${ MAIL_APP_NAME } на любы іншы адрас электроннай пошты."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Масавая рассылка або адпраўка лістоў з дапамогай праграмных сродкаў у дадзены момант не падтрымліваюцца. Мы рэкамендуем для такіх выпадкаў знайсці спецыялізаваны сэрвіс пастаўшчыка паслуг электроннай пошты."
+        "Масавая рэкламная рассылка або адпраўка лістоў з дапамогай праграмных сродкаў у дадзены момант не падтрымліваюцца. Мы рэкамендуем для такіх выпадкаў знайсці спецыялізаваны сэрвіс пастаўшчыка паслуг электроннай пошты."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Выбірайце карыстальніцкі час для атрымання напаміну па электроннай пошце або для атрымання паведамлення"
@@ -11378,10 +11432,10 @@
         "Аўтаматычнае падключэнне"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "Палепшыце прастору сховішча да ${ bundleStorage } на карыстальніка"
+        "Павысце прастору сховішча да ${ bundleStorage } на карыстальніка"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
+        "Павысце агульны аб'ём свайго сховішча да ${ bundleStorage }"
       ],
       "Browser extension": [
         "Пашырэнне для браўзера"
@@ -11732,6 +11786,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Ваш дамен і падпіска гатовыя да выкарыстання."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } азначае, што вы ніколі не ўбачыце спонсарскую рэкламу ў нашых праграмах."
+      ],
+      "Ad-free promise": [
+        "Абяцанне без рэкламы"
       ]
     },
     "Onboarding Proton": {
@@ -11792,10 +11852,10 @@
         "Як толькі пачнецца ваша поўная падпіска..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
-        "Вы ўсё яшчэ зможаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can still cancel within 30 days and get a prorated refund.": [
-        "Вы ўсё яшчэ зможаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+        "Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
         "Вы можаце карыстацца ${ planTitle } да канца пробнага перыяду. Плата за гэта спаганяцца не будзе."
@@ -12083,6 +12143,9 @@
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ]
     },
     "Payments.Error": {
@@ -12112,7 +12175,7 @@
     },
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
-        "Apple Pay - карта, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
+        "Apple Pay - картка, якая заканчваецца на ${ paymentMethod.Details.Last4 }"
       ],
       "Bank transfer - ${ details }": [
         "Банкаўскі перавод - ${ details }"
@@ -12882,7 +12945,7 @@
         "Паведамленне падпісана з дапамогай PGP. Не ўдалося праверыць адпраўніка: ${ verificationErrorsMessage }"
       ],
       "Sender could not be verified: Message not signed": [
-        "Не атрымалася праверыць адпраўніка: паведамленне не падпісана"
+        "Не ўдалося праверыць адпраўніка: паведамленне не падпісана"
       ],
       "Sender verification failed": [
         "Не ўдалося праверыць адпраўніка"
@@ -13155,13 +13218,13 @@
         "Атрымайце доступ да звышхуткіх сервераў VPN у больш чым 110 краінах"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
-        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе функцыі."
+        "Атрымайце тарыфны план ${ BRAND_NAME } Unlimited, які аб'ядноўвае ўсе гэтыя функцыі."
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, каб абараніць сваю ідэнтычнасць і паменшыць спам"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
-        "Захоўвайце свае паролі ў бяспецы і ўпарадкаванымі пры дапамозе некалькіх сховішч "
+        "Захоўвайце свае паролі ў бяспецы і ўпарадкаваным выглядзе пры дапамозе некалькіх сховішч "
       ],
       "Protect your account from threats with Sentinel": [
         "Абараніце свой уліковы запіс ад пагроз з дамогай Sentinel"
@@ -13178,7 +13241,7 @@
         "Доступ да заблакіраванага змесціва і прыватны прагляд старонак у інтэрнэце. Уключае 1700 сервераў у больш чым 60 краінах свету, найвышэйшую хуткасць VPN, 10 падключэнняў па VPN, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Усе нашы прэміяльныя сэрвісы з іх найвышэйшымі квотамі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide-my-email, абагульванне календара, зашыфраванае воблачнае сховішча, абагульванне файлаў і іншыя функцыі."
+        "Усе нашы прэміяльныя сэрвісы з максімальнымі магчымасцямі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide-my-email, абагульванне календара, зашыфраванае воблачнае сховішча, абагульванне файлаў і іншыя функцыі."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
@@ -13578,13 +13641,13 @@
         "Любыя карыстальніцкія дамены электроннай пошты будуць адключаны"
       ],
       "Automatic email forwarding": [
-        "Аўтаматычная перасылка электроннай пошты"
+        "Аўтаперасылка электроннай пошты"
       ],
       "Back up photos from your devices": [
         "Рэзерваваць фатаграфіі з вашай прылады"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты ў вашым уласным дамене."
+        "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты са сваім уласным даменам."
       ],
       "Catch-all email address": [
         "Адрас для ўсёй пошты дамена"
@@ -13751,7 +13814,7 @@
         "і яшчэ 15 прэміяльных функцый"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+        "Аўтаперасылка электроннай пошты ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Папярэджанне ўцечкі даных ${ strongArgument }"
@@ -13789,10 +13852,10 @@
         "Вы ўпэўнены?"
       ],
       "Auto-pay is disabled": [
-        "Аўтаматычная аплата адключана"
+        "Аўтааплата адключана"
       ],
       "Auto-pay is enabled": [
-        "Аўтаматычная аплата ўключана"
+        "Аўтааплата ўключана"
       ],
       "Disable": [
         "Адключыць"
@@ -15364,6 +15427,12 @@
       ],
       "Your subscriptions in one place": [
         "Вашы падпіскі ў адным месцы"
+      ],
+      "No active newsletters": [
+        "Актыўныя рассылкі адсутнічаюць"
+      ],
+      "No newsletters found": [
+        "Рассылкі не знойдзены"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15430,10 +15499,10 @@
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Не атрымалася загрузіць відарыс"
+        "Не ўдалося загрузіць відарыс"
       ],
       "The image could not be loaded using proxy": [
-        "Не атрымалася загрузіць відарыс з выкарыстаннем проксі"
+        "Не ўдалося загрузіць відарыс з выкарыстаннем проксі"
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
@@ -15557,10 +15626,10 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах"
       ],
       "Auto-selects from ${ numberOfCountries } country": [
-        "Аўтаматычны выбар з ${ numberOfCountries } краіны",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін",
-        "Аўтаматычны выбар з ${ numberOfCountries } краін"
+        "Аўтавыбар з ${ numberOfCountries } краіны",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін"
       ],
       "Servers in ${ numberOfCountries }+ country": [
         "Серверы ў больш, чым ${ numberOfCountries } краіне",
@@ -15667,7 +15736,7 @@
         "Вы сапраўды хочаце незваротна выдаліць гэты кантакт?"
       ],
       "Contacts could not be merged": [
-        "Не атрымалася аб'яднаць кантакты"
+        "Не ўдалося аб'яднаць кантакты"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Калі вы не памятаеце свой пароль, то немагчыма паўторна актываваць ваш ключ. Мы можам дапамагчы вам адхіліць банер папярэджання, але ў працэсе вы незваротна страціце доступ да ўсіх даных, якія зашыфраваны гэтым ключом."
@@ -15709,7 +15778,7 @@
         "Гэта імпартаванне можа перавысіць ёмістасць сховішча, якое цяпер даступна для вашага ўліковага запісу ${ BRAND_NAME }. Змяніце налады імпартавання."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "На жаль, мы знаходзімся па-за межамі сеткі ў гэты момант. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
+        "На жаль, у дадзены момант наша каманда падтрымкі знаходзіцца па-за сеткай. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Мы не змаглі праверыць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
@@ -16048,6 +16117,19 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Скасаваць падпіску"
+      ],
+      "Keep subscription": [
+        "Пакінуць падпіску"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Ваш бясплатны пробны перыяд завершыцца ${ timeRemaining }"
       ]
     }
   }

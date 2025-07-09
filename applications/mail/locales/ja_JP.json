@@ -1574,6 +1574,33 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "「${ boldFolderName }」フォルダーを作成"
+      ],
+      "Deleting folder": [
+        "フォルダを削除中"
+      ],
+      "Deleting label": [
+        "ラベルを削除中"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "Move to Archive": [
+        "アーカイブに移動"
+      ],
+      "Send unsubscribe email": [
+        "登録解除メールを送る"
+      ],
+      "Stop moving to Archive": [
+        "アーカイブへの移動を停止"
+      ],
+      "Stop moving to Trash": [
+        "ごみ箱への移動を停止"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ]
     },
     "action": {
@@ -1726,6 +1753,75 @@
       ],
       "years": [
         "年"
+      ],
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "200 GB storage": [
+        "200GBストレージ"
+      ],
+      "500 GB encrypted storage": [
+        "500 GBの暗号化されたストレージ"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "${ BRAND_NAME } Mail、Pass、VPN、Drive、カレンダーの全てのプレミアム機能"
+      ],
+      "Block ads, trackers, and malware": [
+        "広告、トラッカー、マルウェアをブロック"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "お客様の暗号化済みストレージを2倍に — お客様のすべてのデータに1 TBを提供します"
+      ],
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
+      ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "これまでの道のりを祝う特別な贈り物です。"
+      ],
+      "High speed streaming with VPN": [
+        "VPNでの高速ストリーミング"
+      ],
+      "of privacy": [
+        "プライバシーの"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "家族(6人まで)のためのオンラインプライバシー"
+      ],
+      "Protect up to 10 devices": [
+        "最大10台のデバイスを保護"
+      ],
+      "Recover previous file versions": [
+        "以前のファイルを復元"
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムMail機能をお得にご利用いただけます。"
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムPass機能をお得にご利用いただけます。"
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "期間限定の割引で、プレミアムVPN機能をお得にご利用いただけます。"
+      ],
+      "Secure email with unlimited aliases": [
+        "無制限のエイリアスを備えたセキュアなメール"
+      ],
+      "Select any server": [
+        "サーバーを選択"
+      ],
+      "Short @pm.me address": [
+        "短い @pm.me メールアドレス"
+      ],
+      "Stream your favorite content": [
+        "お気に入りのコンテンツをストリーミングする"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "お客様の暗号化済みストレージを3倍に — お客様のすべてのデータに3 TBを提供します"
+      ],
+      "Unlimited folders, labels and filters": [
+        "無制限のフォルダー、ラベル、フィルター"
+      ],
+      "Use your own email domain": [
+        "独自メールドメインを使用する"
       ]
     },
     "anniversary_2025: offer": {
@@ -1739,6 +1835,21 @@
       ],
       "15 months": [
         "15 か月"
+      ],
+      "/ month": [
+        "/ 月"
+      ],
+      "12 months": [
+        "12 か月"
+      ],
+      "24 months": [
+        "24 か月"
+      ],
+      "30 months": [
+        "30 か月"
+      ],
+      "for ${ durationDeal }": [
+        "${ durationDeal } の場合"
       ]
     },
     "Apps dropdown": {
@@ -4720,6 +4831,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ],
+      "No address with sending permissions": [
+        "送信権限を持つアドレスがありません"
+      ],
+      "Permissions request failed.": [
+        "権限リクエストに失敗しました。"
+      ],
+      "Wrong password": [
+        "パスワードが正しくありません"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8229,6 +8349,60 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } 件のニュースレター"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "お客様のトライアル期間が${ boldCancelDate }に終了すると、${ boldProtonFree }にダウングレードされます。お客様の組織からすべてのユーザーアカウントが削除されます。"
+      ],
+      "Block sender": [
+        "差出人をブロック"
+      ],
+      "Dedicated VPN servers": [
+        "専用VPNサーバー"
+      ],
+      "Message list": [
+        "メッセージリスト"
+      ],
+      "Message view": [
+        "メッセージビュー"
+      ],
+      "More info": [
+        "もっと詳しく"
+      ],
+      "newsletter": [
+        "ニュースレター"
+      ],
+      "No messages to show": [
+        "表示するメッセージはありません"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "組織内の専用VPNサーバー数"
+      ],
+      "Preferences updated": [
+        "設定が更新されました"
+      ],
+      "Selection pane": [
+        "選択ペイン"
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "組織を保護するために ${ BRAND_NAME } をお選びいただきありがとうございます。"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "受信トレイには、この差出人からのメッセージはありません。"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "お客様の無料トライアルは、${ cycle }ヶ月サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "また、${ boldPlanTitle }の機能もご利用いただけなくなります。"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "${ boldEndDate }に${ boldPlanTitle }へアクセスできなくなります。"
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
       ]
     },
     "info": {
@@ -9136,6 +9310,27 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "Choose what to do instead": [
+        "代わりに何をするか選択してください"
+      ],
+      "Failed to create folder ${ customFolderName }": [
+        "「${ customFolderName }」フォルダーの作成に失敗しました"
+      ],
+      "Marked as read": [
+        "既読にされました"
+      ],
+      "Moved to ${ labelName }": [
+        "${ labelName }に移動されました"
+      ],
+      "Moved to Archive": [
+        "アーカイブに移動されました"
+      ],
+      "Moved to Trash": [
+        "ゴミ箱に移動されました"
+      ],
+      "Subject:": [
+        "件名:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9211,6 +9406,15 @@
     "Labels": {
       "View and manage newsletter and mailing list subscriptions here.": [
         "ニュースレターとメーリングリストのサブスクリプションの表示と管理は、こちらで行います。"
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "登録解除したニュースレターまたはメーリングリストがここに表示されます。"
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "アクティブなニュースレターまたはメーリングリストのサブスクリプションはありません。"
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "ニュースレターまたはメーリングリストのサブスクリプションはありません。"
       ]
     },
     "Landmarks": {
@@ -10391,6 +10595,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "ファイルの保存、同期、共有を簡単に行える 1 TB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
       ]
     },
     "new_plans: Subtext": {
@@ -10822,6 +11029,12 @@
       ],
       "Your subscription renews soon": [
         "サブスクリプションはまもなく更新されます"
+      ],
+      "Don’t show this again": [
+        "次回から表示しない"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimitedを入手"
       ]
     },
     "Offer feature": {
@@ -10848,6 +11061,18 @@
       ],
       "Storage": [
         "ストレージ"
+      ],
+      "500 GB secure storage": [
+        "500 GBの安全なストレージ"
+      ],
+      "Advanced threat protection": [
+        "高度な脅威保護"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110 か国以上にある超高速 VPN サーバー"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "無制限のエイリアスでお客様のユーザー情報を保護"
       ]
     },
     "Onboarding List Placeholder": {
@@ -10978,6 +11203,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "ドメインとサブスクリプションを使用する準備ができました。"
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } は、お客様のアプリでスポンサー広告が一切表示されないことを意味します。"
+      ],
+      "Ad-free promise": [
+        "広告なしの約束"
       ]
     },
     "Onboarding Proton": {
@@ -11026,6 +11257,33 @@
         "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
+      ],
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " ${ helpCenterLink }をご覧いただくか、${ contactSupportLink }をご利用ください。"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "${ cancelDate }までにいつでもキャンセルできます。"
+      ],
+      "Cancel anytime before then.": [
+        "それまでにいつでもキャンセルできます。"
+      ],
+      "contact our support team": [
+        "サポートチームにお問い合わせください"
+      ],
+      "Continue": [
+        "続ける"
+      ],
+      "If you need help,": [
+        "助けが必要な場合は、"
+      ],
+      "Your free trial has started": [
+        "無料トライアルが開始されました"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "あなたのフル ${ planTitle } サブスクリプションは ${ boldEndDate } に開始します。"
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
       ]
     },
@@ -11196,6 +11454,9 @@
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -11278,6 +11539,12 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "お客様の通貨はユーロ (€) に変更されました。これは、SEPA銀行振込がユーロ建ての支払いのみをサポートしているためです。"
       ]
     },
     "Payments.Error": {
@@ -12162,6 +12429,27 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "${ pricingTitle } へアップグレード"
+      ],
+      "Browse securely": [
+        "安全に閲覧"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME } でより多くのことを"
+      ],
+      "Get unlimited aliases": [
+        "無制限のエイリアスを獲得"
+      ],
+      "Guard against threats": [
+        "脅威から保護する"
+      ],
+      "Increase your storage": [
+        "ストレージを増やす"
+      ],
+      "Keep passwords safe": [
+        "パスワードを安全に保つ"
+      ],
+      "Unblock streaming content": [
+        "ストリーミングコンテンツのブロックを解除"
       ]
     },
     "specialoffer: Offers": {
@@ -12235,6 +12523,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "アップグレードして${ planName }の2年契約でもっとお得に"
+      ],
+      "Access content on streaming services worldwide": [
+        "世界中のストリーミングサービスでコンテンツにアクセス"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "すべてのファイルや写真を安全に保管する500 GBを入手"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110ヶ国以上での最高速のVPNサービスへのアクセスを獲得"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "全てを含む1つのプラン、${ BRAND_NAME } Unlimitedをご利用ください。"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "無制限のエイリアスで、お客様のユーザー情報を保護し、迷惑メールを削減します。"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "パスワードを複数の保管庫に安全に整理して保管する "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinelでアカウントを脅威から保護する"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13124,6 +13433,12 @@
       ],
       "The filter is active again": [
         "フィルターが再度有効になりました"
+      ],
+      "The filter has been disabled": [
+        "フィルターは無効化されました"
+      ],
+      "The filter has been enabled": [
+        "フィルターは有効化されました"
       ]
     },
     "Suffix": {
@@ -14230,6 +14545,21 @@
       ],
       "Your subscriptions in one place": [
         "サブスクリプションを一元管理"
+      ],
+      "No active newsletters": [
+        "有効なニュースレターはありません"
+      ],
+      "No newsletters found": [
+        "ニュースレターが見つかりません"
+      ],
+      "No unsubscribed newsletters": [
+        "購読解除されたニュースレターはありません"
+      ],
+      "Unsubscribe not available for this sender": [
+        "この差出人の登録解除は利用できません"
+      ],
+      "Your ${ planName } subscription has started": [
+        "${ planName }サブスクリプションが開始されました"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14765,6 +15095,45 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "割引を入手"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "サブスクリプションをキャンセル"
+      ],
+      "Keep subscription": [
+        "サブスクリプションを継続"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "無料トライアルは ${ timeRemaining } に終了します。"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "暗号化されたパスワードマネージャー"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - 末尾が${ paymentMethod.Details.Last4 }のカード"
+      ],
+      "Bank transfer - ${ details }": [
+        "銀行振込 - ${ details }"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ 月"
+      ],
+      "Only": [
+        "のみ"
       ]
     }
   }

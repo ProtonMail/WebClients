@@ -439,7 +439,7 @@
         "Скачать приложения ${ DRIVE_APP_NAME }"
       ],
       "Download now": [
-        "Загрузить"
+        "Скачать сейчас"
       ],
       "Download the desktop app": [
         "Скачать приложение для компьютера"
@@ -1183,7 +1183,7 @@
         "Выбрать платежный цикл ${ billingText }"
       ],
       "Select country": [
-        "Выберите страну"
+        "Выбрать страну"
       ],
       "Select date and time": [
         "Выберите дату и время"
@@ -1568,6 +1568,21 @@
       ],
       "Zoom out": [
         "Уменьшить масштаб"
+      ],
+      "Deleting label": [
+        "Удаление ярлыка"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "Move to Archive": [
+        "Переместить в Архив"
+      ],
+      "Trust key": [
+        "Доверять ключу",
+        "Доверять ключам",
+        "Доверять ключам",
+        "Доверять ключам"
       ]
     },
     "action": {
@@ -4766,6 +4781,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
+      ],
+      "Wrong password": [
+        "Неправильный пароль"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5473,10 +5491,10 @@
         "${ remainingDaysCount } дней"
       ],
       "${ remainingDaysCount } day left": [
-        "Остался ${ remainingDaysCount } день",
-        "Осталось ${ remainingDaysCount } дня",
-        "Осталось ${ remainingDaysCount } дней",
-        "Осталось ${ remainingDaysCount } дней"
+        "${ remainingDaysCount } день остался",
+        "${ remainingDaysCount } дня осталось",
+        "${ remainingDaysCount } дней осталось",
+        "${ remainingDaysCount } дней осталось"
       ],
       "account logins": [
         "имена пользователей аккаунта"
@@ -8545,6 +8563,27 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вы всего в нескольких нажатиях от почтового ящика, свободного от хлама"
+      ],
+      "Apply to future messages": [
+        "Применить к будущим сообщениям"
+      ],
+      "Block sender": [
+        "Заблокировать отправителя"
+      ],
+      "Composer:": [
+        "Редактор писем:"
+      ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
+      ],
+      "Message list": [
+        "Список сообщений"
+      ],
+      "Preferences updated": [
+        "Настройки обновлены"
       ]
     },
     "info": {
@@ -9443,6 +9482,12 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Message:": [
+        "Сообщение:"
+      ],
+      "Subject:": [
+        "Тема:"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10196,7 +10241,7 @@
       "${ n } calendar per user": [
         "${ n } календарь на пользователя",
         "${ n } календаря на пользователя",
-        "${ n } календаря на пользователя",
+        "${ n } календарей на пользователя",
         "${ n } календарей на пользователя"
       ],
       "${ n } custom email domain": [
@@ -10676,10 +10721,10 @@
     },
     "new_plans: feature highlight": {
       "${ admins } admin": [
-        "${ admins }администратор",
-        "${ admins }администратора",
-        "${ admins }администраторов",
-        "${ admins }администраторов"
+        "${ admins } администратор",
+        "${ admins } администратора",
+        "${ admins } администраторов",
+        "${ admins } администраторов"
       ],
       "${ users } user": [
         "${ users } пользователь",
@@ -11071,7 +11116,7 @@
         "Центральная панель управления"
       ],
       "Create up to ${ n } calendar": [
-        "Создайте до ${ n } календарей",
+        "Создать до ${ n } календаря",
         "Создать до ${ n } календарей",
         "Создать до ${ n } календарей",
         "Создать до ${ n } календарей"
@@ -11225,6 +11270,12 @@
       ],
       "Your subscription renews soon": [
         "Ваша подписка скоро обновится"
+      ],
+      "Don’t show this again": [
+        "Больше не показывать"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Получить ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -11251,6 +11302,9 @@
       ],
       "Storage": [
         "Хранилище"
+      ],
+      "500 GB secure storage": [
+        "500 ГБ защищённого хранилища"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11582,6 +11636,9 @@
       ],
       "New credit/debit card": [
         "Новая кредитная/дебетовая карта"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12334,7 +12391,7 @@
     },
     "session_recovery:available:notification": {
       "Password saved": [
-        "Пароль сохранен"
+        "Пароль сохранён"
       ]
     },
     "session_recovery:available:title": {
@@ -12446,7 +12503,7 @@
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Сбросить пароль"
+        "Сброс пароля"
       ]
     },
     "session_recovery:sign_out:title": {
@@ -12640,6 +12697,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Улучшить за ${ pricingTitle }"
+      ],
+      "Get unlimited aliases": [
+        "Получить неограниченное число псевдонимов"
       ]
     },
     "specialoffer: Offers": {
@@ -14306,7 +14366,7 @@
         "Высокая безопасность вашего аккаунта"
       ],
       "How does it all work?": [
-        "Как все это работает?"
+        "Как всё это работает?"
       ],
       "How to update your email address": [
         "Как обновить адрес электронной почты"
@@ -14678,7 +14738,7 @@
         "Настройки"
       ],
       "Share your calendar with your team": [
-        "Делитесь вашим календарем со своей командой"
+        "Делитесь своим календарём с командой"
       ],
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
@@ -14841,6 +14901,9 @@
       ],
       "Your subscriptions in one place": [
         "Ваши подписки в одном месте"
+      ],
+      "Subscription canceled": [
+        "Подписка отменена"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15008,8 +15071,8 @@
         "${ n } подключений к VPN"
       ],
       "${ numberOfCountries } country": [
+        "${ numberOfCountries } страна",
         "${ numberOfCountries } страны",
-        "${ numberOfCountries } стран",
         "${ numberOfCountries } стран",
         "${ numberOfCountries } стран"
       ],
@@ -15052,7 +15115,7 @@
         "Ваш запланированный тариф начинается с ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
-        "Ваша подписка будет автоматически обновлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
@@ -15517,6 +15580,68 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "200 GB storage": [
+        "200 ГБ хранилища"
+      ],
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Protect up to 10 devices": [
+        "Защитите до 10 устройств"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Stream your favorite content": [
+        "Смотрите любимый контент"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Используйте свой собственный домен электронной почты"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
+      "Keep subscription": [
+        "Продолжить подписку"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "Продолжить"
+      ]
+    },
+    "Unlimited offer": {
+      "Only": [
+        "Только"
       ]
     }
   }

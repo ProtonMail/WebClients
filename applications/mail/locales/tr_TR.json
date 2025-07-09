@@ -1421,7 +1421,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1603,6 +1604,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Deleting label": [
+        "Etiket siliniyor"
       ]
     },
     "action": {
@@ -1939,6 +1943,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } Lumo koltuğuna sahip olabilirsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcıya sahip olabilirsiniz."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Deneme süresi boyunca özel alan adları ekleyemezsiniz."
+      ],
+      "You have reached the trial limit.": [
+        "Deneme limitine ulaştınız."
       ]
     },
     "bf2023: Deal details": {
@@ -4881,6 +4903,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Permissions request failed.": [
+        "İzin isteği başarısız oldu."
+      ],
+      "Wrong password": [
+        "Parola yanlış"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8542,6 +8570,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusuna yalnızca birkaç tık uzaktasınız."
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } bülten",
+        "${ unreadCount } bülten"
+      ],
+      "newsletter": [
+        "bülten"
       ]
     },
     "info": {
@@ -9471,6 +9506,9 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ],
+      "Moved to ${ labelName }": [
+        "${ labelName } içine taşındı"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11198,6 +11236,12 @@
       ],
       "Your subscription renews soon": [
         "Aboneliğiniz yakında yenilenecek"
+      ],
+      "Don’t show this again": [
+        "Bunu bir daha gösterme"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited tarifesini alın"
       ]
     },
     "Offer feature": {
@@ -11354,6 +11398,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Etki alanınız ve aboneliğiniz kullanılmaya hazır."
+      ],
+      "Ad-free promise": [
+        "Reklamsız kullanma garantisi"
       ]
     },
     "Onboarding Proton": {
@@ -11600,6 +11647,9 @@
       ],
       "New credit/debit card": [
         "Yeni kredi ya da banka kartı"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12603,6 +12653,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "${ pricingTitle } karşılığında yükseltin"
+      ],
+      "Increase your storage": [
+        "Depolama alanınızı yükseltin"
       ]
     },
     "specialoffer: Offers": {
@@ -15331,6 +15384,16 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Keep subscription": [
+        "Aboneliği sürdür"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ay"
       ]
     }
   }
