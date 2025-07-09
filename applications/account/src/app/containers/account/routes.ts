@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { referralReward } from '@proton/components/containers/referral/constants';
 import { DEFAULT_CURRENCY, isManagedExternally } from '@proton/payments';
 import { Renew, type Subscription } from '@proton/payments';
 import {
@@ -476,9 +477,9 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Refer a friend`,
                 title: isReferralExpansionEnabled ? c('Title').t`Invite friends. Get credits.` : undefined,
                 description: isReferralExpansionEnabled
-                    ? // TODO: handle currency messaging
+                    ? // translator: Full sentence 'You’ll receive US$20 in Proton credit when the person you invite signs up for a Proton plan, and they’ll also get US$20 in credits to get started.'
                       c('Description')
-                          .t`You’ll receive $20 in ${BRAND_NAME} credit when the person you invite signs up for a ${BRAND_NAME} plan, and they’ll also get $20 in credits to get started.`
+                          .t`You’ll receive ${referralReward} in ${BRAND_NAME} credit when the person you invite signs up for a ${BRAND_NAME} plan, and they’ll also get ${referralReward} in credits to get started.`
                     : c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
                 to: '/referral',
                 icon: isReferralExpansionEnabled ? 'money-bills' : 'heart',
