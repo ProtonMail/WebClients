@@ -6004,6 +6004,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-tjenere"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antall dedikerte VPN-tjenere i organisasjonen"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
       ]
     },
     "info": {
@@ -8772,6 +8781,9 @@
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
       ]
     },
     "Payments.Error": {
@@ -11764,6 +11776,19 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Avbryt abonnement"
+      ],
+      "Keep subscription": [
+        "Behold abonnement"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Prøveperioden avsluttes om ${ timeRemaining }"
       ]
     }
   }

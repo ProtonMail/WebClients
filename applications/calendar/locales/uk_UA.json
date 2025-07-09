@@ -814,6 +814,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Безплатний пробний період програми для комп'ютера завершується ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reply with a note": [
+        "Відповісти із нотаткою"
       ]
     },
     "action": {
@@ -2703,6 +2706,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
+      ],
+      "Connect your CRM, website, printers, and more.": [
+        "Приєднайте вашу CRM, сайт, принтери і т.д."
+      ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Допоможіть вашій команді надійно зберігати паролі до конфіденційної ділової та клієнтської інформації."
       ]
     },
     "description": {
@@ -5542,6 +5554,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Схоже, системний часовий пояс змінено на ${ timezone }. Хочете оновити налаштування часового поясу?"
+      ],
+      "Ad targeting": [
+        "Націлювання реклами"
+      ],
+      "Your online activity is protected": [
+        "Ваша онлайн активність захищена"
       ]
     },
     "info": {
@@ -6252,6 +6270,12 @@
       ],
       "What’s this?": [
         "Що це?"
+      ],
+      "How to enable ${ PROTON_SENTINEL_NAME }": [
+        "Як увімкнути ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Types of recovery methods": [
+        "Типи способів відновлення"
       ]
     },
     "Link label (optional)": {
@@ -7935,6 +7959,9 @@
         "Роки",
         "Років",
         "Років"
+      ],
+      "Custom...": [
+        "Власний..."
       ]
     },
     "Option group label": {
@@ -9653,6 +9680,9 @@
       ],
       "You have successfully unsubscribed": [
         "Ви успішно скасували передплату"
+      ],
+      "Event content search enabled": [
+        "Пошук вмісту подій увімкнено"
       ]
     },
     "Suffix": {
@@ -10315,6 +10345,24 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "Desktop": [
+        "Настільний"
+      ],
+      "Download the app": [
+        "Завантажити програму"
+      ],
+      "Every week on ${ weekdaysLong[currentDay] }": [
+        "Щотижня в ${ weekdaysLong[currentDay] }"
+      ],
+      "How does it all work?": [
+        "Як це все працює?"
+      ],
+      "Schedule meetings in one click": [
+        "Запланувати зустрічі одним кліком"
+      ],
+      "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
+        "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10987,6 +11035,16 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "Commander action": {
+      "New event": [
+        "Нова подія"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Завантажити для Windows"
       ]
     }
   }

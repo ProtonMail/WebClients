@@ -1083,6 +1083,9 @@
       ],
       "30 months": [
         "30 kuukautta"
+      ],
+      "/ month": [
+        "/ kuukausi"
       ]
     },
     "Apps dropdown": {
@@ -6479,6 +6482,9 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "Alias title": [
+        "Aliaksen otsikko"
       ]
     },
     "Label for contact group color": {
@@ -7928,6 +7934,10 @@
       ],
       "Require 2FA": [
         "2FA-pakotus"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
       ]
     },
     "Note": {
@@ -8186,6 +8196,12 @@
       ],
       "Your subscription renews soon": [
         "Tilauksesi uusiutuu pian"
+      ],
+      "Don’t show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Hanki ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8212,6 +8228,9 @@
       ],
       "Storage": [
         "Tallennustila"
+      ],
+      "500 GB secure storage": [
+        "500 Gt suojattua tallennustilaa"
       ]
     },
     "Onboarding": {
@@ -8253,6 +8272,9 @@
     "Onboarding Trial": {
       "Continue": [
         "Jatka"
+      ],
+      "If you need help,": [
+        "Jos tarvitset apua,"
       ]
     },
     "Option": {
@@ -8434,6 +8456,9 @@
       ],
       "New credit/debit card": [
         "Uusi maksukortti"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -9504,6 +9529,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-yhteys/käyttäjä",
         "${ n } VPN-yhteyttä/käyttäjä"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti",
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti"
       ]
     },
     "Subscription change warning": {
@@ -10848,6 +10877,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Subscription canceled": [
+        "Tilaus on peruttu"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11437,6 +11469,47 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Peru tilaus"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Päivänäkymä"
+      ],
+      "Month view": [
+        "Kuukausinäkymä"
+      ],
+      "New event": [
+        "Uusi tapahtuma"
+      ],
+      "Next period": [
+        "Seuraava kausi"
+      ],
+      "Previous period": [
+        "Edellinen kausi"
+      ],
+      "Today": [
+        "Tänään"
+      ],
+      "Week view": [
+        "Viikkonäkymä"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Salattu salasanahallinta"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/kuukausi"
+      ],
+      "Only": [
+        "Vain"
       ]
     }
   }
