@@ -5889,6 +5889,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "Dedicated VPN servers": [
+        "专用 VPN 服务器"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "组织中的专用 VPN 服务器数量"
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
       ]
     },
     "info": {
@@ -8184,6 +8193,12 @@
       ],
       "Your subscription renews soon": [
         "您的订阅即将续订"
+      ],
+      "Don’t show this again": [
+        "不再显示此内容"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "开通 ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8210,6 +8225,15 @@
       ],
       "Storage": [
         "存储"
+      ],
+      "500 GB secure storage": [
+        "500 GB 安全存储空间"
+      ],
+      "Advanced threat protection": [
+        "高级威胁保护"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "遍布 110 多个国家/地区的超快 VPN 服务器"
       ]
     },
     "Onboarding": {
@@ -8472,6 +8496,9 @@
       ],
       "New credit/debit card": [
         "添加信用卡/借记卡"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -8557,6 +8584,9 @@
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ]
     },
     "Payments.Error": {
@@ -9252,6 +9282,18 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升级至 ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "安全浏览"
+      ],
+      "Get unlimited aliases": [
+        "获取无限量邮箱别名"
+      ],
+      "Keep passwords safe": [
+        "确保密码安全"
+      ],
+      "Unblock streaming content": [
+        "解锁流媒体内容"
       ]
     },
     "specialoffer: Offers": {
@@ -9325,6 +9367,15 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "一次性开通两年 ${ planName } 更加优惠"
+      ],
+      "Access content on streaming services worldwide": [
+        "访问世界范围内的流媒体服务"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "获得 500 GB 以安全地存储您的所有文件和照片"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "使用 Sentinel 保护您的账户免受威胁"
       ]
     },
     "specialoffer: Tooltip": {
@@ -11389,6 +11440,27 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "取消订阅"
+      ],
+      "Keep subscription": [
+        "继续订阅"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "已加密的密码管理器"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/每月"
+      ],
+      "Only": [
+        "仅"
       ]
     }
   }

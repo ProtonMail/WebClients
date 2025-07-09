@@ -8775,6 +8775,9 @@
       ],
       "Your payment is still being processed": [
         "O seu pagamento ainda está a ser processado."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
       ]
     },
     "Payments.Error": {
@@ -11763,6 +11766,19 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Cancelar a subscrição"
+      ],
+      "Keep subscription": [
+        "Manter a subscrição"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "A sua avaliação gratuita termina em ${ timeRemaining }."
       ]
     }
   }

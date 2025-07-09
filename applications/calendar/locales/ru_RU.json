@@ -300,7 +300,7 @@
         "Скачать приложения ${ DRIVE_APP_NAME }"
       ],
       "Download now": [
-        "Загрузить"
+        "Скачать сейчас"
       ],
       "Edit": [
         "Изменить"
@@ -690,7 +690,7 @@
         "Выберите вид календаря"
       ],
       "Select country": [
-        "Выберите страну"
+        "Выбрать страну"
       ],
       "Select time zone": [
         "Выберите часовой пояс"
@@ -5972,6 +5972,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Похоже, что ваш часовой пояс изменился на ${ timezone }. Вы хотите обновить настройки часового пояса?"
+      ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
       ]
     },
     "info": {
@@ -7721,10 +7727,10 @@
     },
     "new_plans: feature highlight": {
       "${ admins } admin": [
-        "${ admins }администратор",
-        "${ admins }администратора",
-        "${ admins }администраторов",
-        "${ admins }администраторов"
+        "${ admins } администратор",
+        "${ admins } администратора",
+        "${ admins } администраторов",
+        "${ admins } администраторов"
       ],
       "${ users } user": [
         "${ users } пользователь",
@@ -8438,6 +8444,12 @@
       ],
       "Your subscription renews soon": [
         "Ваша подписка скоро обновится"
+      ],
+      "Don’t show this again": [
+        "Больше не показывать"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Получить ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -8464,6 +8476,9 @@
       ],
       "Storage": [
         "Хранилище"
+      ],
+      "500 GB secure storage": [
+        "500 ГБ защищённого хранилища"
       ]
     },
     "Onboarding": {
@@ -8694,6 +8709,9 @@
       ],
       "New credit/debit card": [
         "Новая кредитная/дебетовая карта"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -9243,7 +9261,7 @@
     },
     "session_recovery:available:notification": {
       "Password saved": [
-        "Пароль сохранен"
+        "Пароль сохранён"
       ]
     },
     "session_recovery:available:title": {
@@ -9355,7 +9373,7 @@
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Сбросить пароль"
+        "Сброс пароля"
       ]
     },
     "session_recovery:sign_out:title": {
@@ -9543,6 +9561,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Улучшить за ${ pricingTitle }"
+      ],
+      "Get unlimited aliases": [
+        "Получить неограниченное число псевдонимов"
       ]
     },
     "specialoffer: Offers": {
@@ -11192,6 +11213,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
+      ],
+      "Subscription canceled": [
+        "Подписка отменена"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11362,8 +11386,8 @@
         "${ n } подключений к VPN"
       ],
       "${ numberOfCountries } country": [
+        "${ numberOfCountries } страна",
         "${ numberOfCountries } страны",
-        "${ numberOfCountries } стран",
         "${ numberOfCountries } стран",
         "${ numberOfCountries } стран"
       ],
@@ -11873,6 +11897,88 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "200 GB storage": [
+        "200 ГБ хранилища"
+      ],
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Protect up to 10 devices": [
+        "Защитите до 10 устройств"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
+      ],
+      "Stream your favorite content": [
+        "Смотрите любимый контент"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Используйте свой собственный домен электронной почты"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
+      "Keep subscription": [
+        "Продолжить подписку"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "Вид по дням"
+      ],
+      "New event": [
+        "Новое событие"
+      ],
+      "Next period": [
+        "Следующий период"
+      ],
+      "Previous period": [
+        "Предыдущий период"
+      ],
+      "Search events": [
+        "Поиск событий"
+      ],
+      "Today": [
+        "Cегодня"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Зашифрованный менеджер паролей"
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "Продолжить"
+      ]
+    },
+    "Unlimited offer": {
+      "Only": [
+        "Только"
       ]
     }
   }

@@ -8929,6 +8929,9 @@
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ]
     },
     "Payments.Error": {
@@ -12015,6 +12018,19 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
+      "Keep subscription": [
+        "Păstrare abonament"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Perioada de probare se încheie peste ${ timeRemaining }"
       ]
     }
   }

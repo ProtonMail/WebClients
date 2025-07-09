@@ -878,6 +878,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "More benefits": [
+        "Flere fordele"
       ]
     },
     "action": {
@@ -5642,6 +5645,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszone ser ud til at være ændret til ${ timezone }. Vil du opdatere din tidszone præferencer?"
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "Der bliver ikke trukket noget hvis du annullerer inden ${ trialEndsOnFormatted }."
       ]
     },
     "info": {
@@ -6498,6 +6504,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Dit abonnement er ophørt. ${ cta } og for at undgå datatab."
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "Din lagerplads er fuld. Frigør plads eller ${ cta } for at fortsætte med at bruge ${ BRAND_NAME }-produkter."
       ]
     },
     "Log preference": {
@@ -7899,7 +7908,7 @@
         "Tag imod tilbuddet"
       ],
       "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Sidste chance for at spare 80% på den første måned af ${ plan } Plus "
+        "Sidste chance for at spare 80% på den første måned af ${ plan } Plus."
       ],
       "Last day to save": [
         "Sidste dag til at gemme"
@@ -7933,6 +7942,9 @@
       ],
       "Your subscription renews soon": [
         "Dit abonnement fornyes snart"
+      ],
+      "Pay annually, secure our best offer": [
+        "Betal årligt for at sikre vores bedste tilbud"
       ]
     },
     "Offer feature": {
@@ -8098,6 +8110,9 @@
       ],
       "Unlimited logins, notes, credit cards and more": [
         "Ubegrænsede logins, noter, betalingskort og mere"
+      ],
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Adgang til alle ${ BRAND_NAME } apps og premiumfunktioner"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8244,6 +8259,9 @@
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
+      ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "Under denne periode vil du ikke kunne ændre eller annullere dit abonnement. Vent venligst indtil betalingen er gennemført før du forsøger at foretage ændringer. Tak for din tålmodighed."
       ]
     },
     "Payments.Error": {
@@ -8956,6 +8974,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Opgrader for ${ pricingTitle }"
+      ],
+      "Unblock streaming content": [
+        "Lås op for streamet indhold"
       ]
     },
     "specialoffer: Offers": {
@@ -9030,6 +9051,9 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Opgradér og spar mere med 2 års ${ planName }"
+      ],
+      "Access content on streaming services worldwide": [
+        "Få adgang til indhold på streamingtjenester verden rundt"
       ]
     },
     "specialoffer: Tooltip": {
@@ -10557,6 +10581,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Subscription canceled": [
+        "Abonnement annulleret"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11145,6 +11172,27 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "Rabatter er baserede på en standard månedlig pris. Ved slutningen af faktureringsperioden fornys dit abonnement efter den standard årlige pris."
+      ],
+      "Online document editor": [
+        "Online dokumenteditor"
+      ],
+      "Share passwords easily": [
+        "Del let kodeord"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Keep subscription": [
+        "Behold abonnement"
+      ]
+    },
+    "Onboarding Trial": {
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Nyd gratis sikkerhedsfunktioner for virksomheder indtil ${ trialEndsOnFormatted }."
       ]
     }
   }

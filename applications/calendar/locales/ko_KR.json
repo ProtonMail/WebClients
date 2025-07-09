@@ -372,7 +372,7 @@
         "설정으로 이동하기"
       ],
       "Got it": [
-        "알겠습니다"
+        "확인"
       ],
       "Help and feedback": [
         "도움말 및 의견"
@@ -2924,7 +2924,7 @@
         "사용 가능 여부 로드 중"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "연락처 병합 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+        "연락처 병합 중... 몇 분 정도 소요될 수 있습니다. 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
       "Set a data recovery method to prevent data loss.": [
         "데이터 손실을 방지하려면 데이터 복구 방법을 설정하세요."
@@ -8615,6 +8615,9 @@
       ],
       "Your payment is still being processed": [
         "회원님의 결제가 아직 처리 중입니다"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "SEPA 은행 송금이 유로화 결제만 지원하여 사용자의 통화가 유로화(€)로 변경되었습니다."
       ]
     },
     "Payments.Error": {
@@ -10401,7 +10404,7 @@
         "캘린더 알림"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
-        "${ MAIL_SHORT_APP_NAME } 구독 해지"
+        "${ MAIL_SHORT_APP_NAME } 구독 취소"
       ],
       "Cancel subscription?": [
         "구독을 취소하시겠어요?"
@@ -11505,6 +11508,19 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "구독 취소하기"
+      ],
+      "Keep subscription": [
+        "구독 유지"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "무료 체험이 ${ timeRemaining } 에 종료됩니다"
       ]
     }
   }

@@ -1080,6 +1080,9 @@
       ],
       "30 months": [
         "30 kuukautta"
+      ],
+      "/ month": [
+        "/ kuukausi"
       ]
     },
     "Apps dropdown": {
@@ -7951,6 +7954,10 @@
       ],
       "Require 2FA": [
         "2FA-pakotus"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
       ]
     },
     "Note": {
@@ -9547,6 +9554,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-yhteys/käyttäjä",
         "${ n } VPN-yhteyttä/käyttäjä"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti",
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti"
       ]
     },
     "Subscription change warning": {
@@ -11012,6 +11023,9 @@
     "Unlimited offer": {
       "Only": [
         "Vain"
+      ],
+      "/month": [
+        "/kuukausi"
       ]
     },
     "unprivatization": {
@@ -11488,6 +11502,11 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Peru tilaus"
       ]
     }
   }
