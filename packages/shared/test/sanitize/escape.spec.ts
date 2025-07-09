@@ -50,6 +50,12 @@ describe('Escape', () => {
 
             expect(recurringUnescapeCSSEncoding(string)).toEqual(expectedString);
         });
+
+        it('should correctly unescape CSS encoded /75 issue', () => {
+            const input = 'background: \\75\trl(https://attacker.com);';
+            const expected = 'background: url(https://attacker.com);';
+            expect(recurringUnescapeCSSEncoding(input)).toBe(expected);
+        });
     });
 
     describe('escapeURLinStyle', () => {
