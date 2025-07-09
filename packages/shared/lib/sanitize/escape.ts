@@ -5,7 +5,7 @@
  * - background:url&lpar;
  * - etc.
  */
-const CSS_URL = '((url|image-set)(\\(|&(#40|#x00028|lpar);))';
+const CSS_URL = '((url|image-set)\\s*(\\(|&(#40|#x00028|lpar);))';
 const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
 
 const REGEXP_HEIGHT_PERCENTAGE = /((?:min-|max-|line-)?height)\s*:\s*([\d.,]+%)/gi;
@@ -45,12 +45,13 @@ export const unescape = (string: string) => {
 export const unescapeCSSEncoding = (str: string) => {
     // Regexp declared inside the function to reset its state (because of the global flag).
     // cf https://stackoverflow.com/questions/1520800/why-does-a-regexp-with-global-flag-give-wrong-results
-    const UNESCAPE_CSS_ESCAPES_REGEX = /\\([0-9A-Fa-f]{1,6}) ?/g;
+    // Fixed to handle all CSS whitespace characters that can terminate escape sequences
+    const UNESCAPE_CSS_ESCAPES_REGEX = /\\([0-9A-Fa-f]{1,6})[ \t\n\r\f]?/g;
     const UNESCAPE_HTML_DEC_REGEX = /&#(\d+)(;|(?=[^\d;]))/g;
     const UNESCAPE_HTML_HEX_REGEX = /&#x([0-9A-Fa-f]+)(;|(?=[^\d;]))/g;
     const OTHER_ESC = /\\(.)/g;
 
-    const handleEscape = (radix: number) => (ignored: any, val: string) => {
+    const handleEscape = (radix: number) => (_ignored: any, val: string) => {
         try {
             return String.fromCodePoint(Number.parseInt(val, radix));
         } catch {
