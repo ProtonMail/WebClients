@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-
 import type { Parameters } from './interface';
 
-const planName = `${MAIL_APP_NAME} Plus`;
+// NOTE: This is hardcoded to avoid an import which breaks TypeScript compilation at this stage
+const planName = 'Mail Plus';
 
 const data = (): Parameters => ({
     title: c('Metadata title').t`Try ${planName} for free with this link`,

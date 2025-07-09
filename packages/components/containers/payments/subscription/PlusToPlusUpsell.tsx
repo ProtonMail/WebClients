@@ -11,6 +11,8 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { PLANS, type Plan, type PlansMap, getPlan } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import { getNormalizedPlanTitleToPlus, getPlusTitle } from './plusToPlusHelper';
+
 interface Props extends Omit<ModalProps, 'title' | 'onClose'> {
     onUpgrade: () => void;
     plansMap: PlansMap;
@@ -23,14 +25,15 @@ const PlusToPlusUpsell = ({ plansMap, unlockPlan, onUpgrade, ...rest }: Props) =
     const { information } = useTheme();
     const [subscription] = useSubscription();
     const currentPlan = getPlan(subscription);
-    const planTitle = currentPlan?.Title || '';
+    const planTitle = currentPlan?.Name ? getNormalizedPlanTitleToPlus(currentPlan.Name) : currentPlan?.Title;
     const upsellPlan = plansMap[PLANS.BUNDLE];
     const unlockPlanTitle = unlockPlan?.Title;
     const bundlePlanTitle = upsellPlan?.Title;
+    const protonPlus = getPlusTitle(BRAND_NAME);
     return (
         <ModalTwo {...rest} size="small" data-testid="plus-block">
             <ModalTwoHeader
-                title={c('plus_block').jt`All ${BRAND_NAME} Plus services.${br}One easy subscription.`}
+                title={c('plus_block').jt`All ${protonPlus} services.${br}One easy subscription.`}
                 className="text-center"
                 hasClose={false}
             />
