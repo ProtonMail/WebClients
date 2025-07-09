@@ -31,3 +31,8 @@ export const updateNewsletterSubscription = (subscriptionID: string, data: Updat
     method: 'POST',
     data,
 });
+
+export const deleteNewsletterSubscriptionByID = (subscriptionID: string) => ({
+    url: `mail/v4/newsletter-subscriptions/${subscriptionID}`,
+    method: 'DELETE',
+});
