@@ -35,6 +35,7 @@ import {
     ChargebeeSavedCardWrapper,
     type TaxCountryHook,
     TaxCountrySelector,
+    useIsB2BTrial,
     type VatNumberHook,
     VatNumberInput,
 } from '@proton/payments/ui';
@@ -53,6 +54,7 @@ import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
 import PaymentMethodDetails from './methods/PaymentMethodDetails';
 import PaymentMethodSelector from './methods/PaymentMethodSelector';
 import { NoPaymentRequiredNote } from './subscription/modal-components/NoPaymentRequiredNote';
+import { useOrganization } from '@proton/account/organization/hooks';
 
 export interface Props {
     flow: PaymentMethodFlow;
@@ -126,6 +128,8 @@ export const PaymentsNoApi = ({
     startTrial,
     currencyOverride,
 }: Props) => {
+    const [organization] = useOrganization();
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
     const enableVatIdFeature = useFlag('VatId');
 
     const isBitcoinMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
@@ -222,7 +226,7 @@ export const PaymentsNoApi = ({
     // We must collect payment method details when amount due is greater than 0, this is obvious. But also when user
     // wants to start a trial. We will not charge user in this case, but we still want to save the payment method
     // information.
-    const paymentMethodRequired = amount > 0 || startTrial;
+    const paymentMethodRequired = amount > 0 || startTrial || isB2BTrial;
 
     return (
         <>
