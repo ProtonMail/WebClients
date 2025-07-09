@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
-import { useDrive } from '@proton/drive';
+import { splitNodeUid, useDrive } from '@proton/drive';
 
 import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
@@ -30,7 +30,7 @@ export const useCreateFolderModalState = ({
 }: UseCreateFolderModalStateProps) => {
     const [folderName, setFolderName] = useState('');
     const { validator, onFormSubmit } = useFormErrors();
-    const { drive, internal } = useDrive();
+    const { drive } = useDrive();
     const events = useDriveEventManager();
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
@@ -62,7 +62,7 @@ export const useCreateFolderModalState = ({
         const newFolder = await drive.createFolder(parentFolderUid, name).catch((error: Error) => {
             handleError(error, c('Error').t`Failed to create folder`, { parentFolderUid });
         });
-        const { volumeId } = internal.splitNodeUid(parentFolderUid);
+        const { volumeId } = splitNodeUid(parentFolderUid);
         await events.pollEvents.volumes(volumeId);
 
         if (newFolder?.ok) {

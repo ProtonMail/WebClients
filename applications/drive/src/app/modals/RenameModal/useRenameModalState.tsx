@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { type ModalStateProps, useNotifications } from '@proton/components';
 import type { NodeEntity } from '@proton/drive';
-import { useDrive } from '@proton/drive';
+import { generateNodeUid, useDrive } from '@proton/drive';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
@@ -47,7 +47,7 @@ export const useRenameModalState = ({
     name,
     ...modalProps
 }: UseRenameModalProps) => {
-    const { drive, internal } = useDrive();
+    const { drive } = useDrive();
     const events = useDriveEventManager();
     const { createNotification } = useNotifications();
     const [node, setNode] = useState<null | NodeEntity>(null);
@@ -56,7 +56,7 @@ export const useRenameModalState = ({
     const { handleError } = useSdkErrorHandler();
     useEffect(() => {
         const fetchNode = async () => {
-            const tmpNode = await drive.getNode(internal.generateNodeUid(volumeId, linkId));
+            const tmpNode = await drive.getNode(generateNodeUid(volumeId, linkId));
             if (tmpNode?.ok) {
                 setNode(tmpNode.value);
             } else {
@@ -65,10 +65,10 @@ export const useRenameModalState = ({
             }
         };
         void fetchNode();
-    }, [volumeId, linkId, createNotification, internal, drive]);
+    }, [volumeId, linkId, createNotification, drive]);
 
     const handleSubmit = async (newName: string) => {
-        const nodeUid = internal.generateNodeUid(volumeId, linkId);
+        const nodeUid = generateNodeUid(volumeId, linkId);
         const successNotificationText = c('Notification').t`"${newName}" renamed successfully`;
         const unhandledErrorNotificationText = c('Notification').t`"${newName}" failed to be renamed`;
 

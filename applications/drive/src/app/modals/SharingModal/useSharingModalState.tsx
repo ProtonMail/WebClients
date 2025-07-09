@@ -5,7 +5,14 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components';
 import { useNotifications } from '@proton/components';
-import { MemberRole, type ShareNodeSettings, type ShareResult, useDrive } from '@proton/drive/index';
+import {
+    MemberRole,
+    type ShareNodeSettings,
+    type ShareResult,
+    generateNodeUid,
+    splitInvitationUid,
+    useDrive,
+} from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -51,9 +58,9 @@ export const useSharingModalState = ({
 
     const [user] = useUser();
 
-    const { drive, internal } = useDrive();
+    const { drive } = useDrive();
 
-    const nodeUid = useMemo(() => internal.generateNodeUid(volumeId, linkId), [volumeId, linkId, internal]);
+    const nodeUid = useMemo(() => generateNodeUid(volumeId, linkId), [volumeId, linkId]);
 
     const [isLoading, withLoading] = useLoading();
 
@@ -217,7 +224,7 @@ export const useSharingModalState = ({
     }, [drive, handleError, isDocsPublicSharingEnabled, nodeUid, withLoading]);
 
     const copyInvitationLink = (invitationUid: string, email: string) => {
-        const { invitationId } = internal.splitInvitationUid(invitationUid);
+        const { invitationId } = splitInvitationUid(invitationUid);
         textToClipboard(
             getAppHref(`/${volumeId}/${linkId}?invitation=${invitationId}&email=${email}`, APPS.PROTONDRIVE)
         );

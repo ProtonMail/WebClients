@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { Toolbar } from '@proton/components';
-import { useDrive } from '@proton/drive';
+import { splitNodeUid } from '@proton/drive';
 
 import { useSelection } from '../../../components/FileBrowser';
 import { LayoutButton } from '../../../components/sections/ToolbarButtons';
@@ -13,7 +13,6 @@ import { DeviceRenameButton } from './buttons/RenameButton';
 
 export const DevicesToolbar = () => {
     const { deviceList } = useDeviceStore();
-    const { internal } = useDrive();
     const selectionControls = useSelection()!;
 
     // TODO: remove once useSelection is converted
@@ -22,9 +21,9 @@ export const DevicesToolbar = () => {
         () =>
             deviceList.map((device) => ({
                 ...device,
-                id: internal.splitNodeUid(device.uid).nodeId,
+                id: splitNodeUid(device.uid).nodeId,
             })),
-        [deviceList, internal]
+        [deviceList]
     );
 
     const selectedItems = useMemo(

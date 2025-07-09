@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { useDrive } from '@proton/drive/index';
+import { splitNodeUid } from '@proton/drive/index';
 
 import type { BrowserItemId, ListViewHeaderItem } from '../../../components/FileBrowser';
 import FileBrowser, {
@@ -41,7 +41,6 @@ export function DevicesBrowser() {
     const { deviceList, isLoading } = useDeviceStore();
     const { layout } = useUserSettings();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
-    const { internal } = useDrive();
     const { navigateToLink } = useDriveNavigation();
     const browserItemContextMenu = useItemContextMenu();
     const selectionControls = useSelection();
@@ -56,12 +55,12 @@ export function DevicesBrowser() {
             deviceList.map((device) => ({
                 ...device,
                 modificationTime: device.creationTime.getTime(),
-                id: internal.splitNodeUid(device.uid).nodeId,
-                linkId: internal.splitNodeUid(device.rootFolderUid).nodeId,
-                volumeId: internal.splitNodeUid(device.rootFolderUid).volumeId,
+                id: splitNodeUid(device.uid).nodeId,
+                linkId: splitNodeUid(device.rootFolderUid).nodeId,
+                volumeId: splitNodeUid(device.rootFolderUid).volumeId,
                 haveLegacyName: false,
             })),
-        [deviceList, internal]
+        [deviceList]
     );
 
     const selectedItemsUid = useMemo(
