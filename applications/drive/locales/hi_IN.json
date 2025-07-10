@@ -4881,9 +4881,6 @@
       "of": [
         "का"
       ],
-      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
-        "जब यह प्रक्रिया पूरी हो जाएगी, तो आपको आपके रीस्टोर किए गए डाटा की एक प्रति एक नए फ़ोल्डर में मिलेगी, जिसका नाम \"Automated Recovery (today's date)\" होगा। इस डाटा की प्रति आपके स्टोरेज कोटे में शामिल नहीं होगी।"
-      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "आपके एन्क्रिप्ट किए ड्राइवों में से एक लॉक है। ये हाल में एक पासवर्ड रीसेट की वजह से होना चाहिए।"
       ],
@@ -4907,9 +4904,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "हमारे अलर्ट सुरक्षा को प्राथमिकता देते हैं। यदि आपको लीक हुई किसी भी जानकारी की पहचान नहीं होती, तो आप इस रिपोर्ट को सुरक्षित रूप से नजरअंदाज कर सकते हैं।"
-      ],
-      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
-        "हमारे सिस्टम ने देखा कि आपकी पिछली रिकवरी सफलतापूर्वक पूरी नहीं हुई, और कुछ फाइलें पूरी तरह से रीस्टोर नहीं हुई होंगी। हमने यह सुनिश्चित करने के लिए रिकवरी प्रक्रिया को स्वचालित रूप से वापिस शुरु कर दिया है।"
       ],
       "Owner": [
         "मालिक"
@@ -5466,6 +5460,9 @@
       "Visa Secure logo": [
         "Visa सेक्योर लोगो"
       ],
+      "VPN IP": [
+        "VPN IP"
+      ],
       "Want to sync files faster?": [
         "फ़ाइलों को तेज़ी से सिंक करना चाहते हैं?"
       ],
@@ -5492,9 +5489,6 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "हमें आपका भुगतान आपके बैंक से सत्यापित करना होगा।"
-      ],
-      "We sincerely apologize for the inconvenience this may have caused you.": [
-        "हम आपसे हुई असुविधा के लिए ईमानदारी से क्षमा चाहते हैं।"
       ],
       "We use 3-D Secure to protect your payments": [
         "आपके भुगतान की सुरक्षा के लिए हम 3-D सिक्योर का उपयोग करते हैं"
@@ -10060,9 +10054,6 @@
       "Auto-deletion is active": [
         "स्वचालित हटाना सक्रिय है"
       ],
-      "Automatic Recovery in Progress": [
-        "स्वचालित रिकवरी जारी है"
-      ],
       "Billing cycle": [
         "बिलिंग चक्र"
       ],
@@ -10276,6 +10267,9 @@
         "${ searchView.numberOfResults } परिणाम मिला",
         "${ searchView.numberOfResults } परिणाम मिले"
       ],
+      "Get more from your VPN": [
+        "अपने VPN से और पाएं"
+      ],
       "Get the apps": [
         "ऐप प्राप्त करें"
       ],
@@ -10342,6 +10336,9 @@
       ],
       "Minicalendar": [
         "छोटा-कैलेंडर"
+      ],
+      "Mobile": [
+        "मोबाइल"
       ],
       "Modified": [
         "बदलें गए"

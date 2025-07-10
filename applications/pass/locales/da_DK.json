@@ -46,6 +46,9 @@
       "Add domain": [
         "Tilføj domæne"
       ],
+      "Add field": [
+        "Tilføj felt"
+      ],
       "Add forwarding mailbox": [
         "Tilføj postkasse til videresendelse"
       ],
@@ -75,6 +78,9 @@
       ],
       "Apply lifetime coupon code": [
         "Anvend livstids-kuponkode"
+      ],
+      "Authenticate": [
+        "Godkend"
       ],
       "Back": [
         "Tilbage"
@@ -448,6 +454,9 @@
       "Reactivate now": [
         "Genaktiver nu"
       ],
+      "Read More": [
+        "Læs mere"
+      ],
       "Refresh the page": [
         "Opdater siden"
       ],
@@ -565,6 +574,9 @@
       "Show advanced options": [
         "Vis avancerede indstillinger"
       ],
+      "Show Less": [
+        "Vis færre"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Log ind på ${ BRAND_NAME }"
       ],
@@ -579,6 +591,9 @@
       ],
       "Sort vault items": [
         "Sortér elementer i boks"
+      ],
+      "Start from scratch": [
+        "Start fra bunden"
       ],
       "Submit": [
         "Indsend"
@@ -1143,6 +1158,9 @@
       "Unsupported 1Password file format": [
         "Ikke-understøttet 1Password filformat"
       ],
+      "Unsupported Bitwarden file format": [
+        "Ikke-understøttet Bitwarden filformat"
+      ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Opdatering af boksen \"${ payload.content.name }\" mislykkedes"
       ],
@@ -1260,6 +1278,10 @@
       "${ count } view": [
         "${ count } visning",
         "${ count } visninger"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visning",
+        "${ count }/${ maxReads } visninger"
       ],
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } videresendt",
@@ -1575,6 +1597,9 @@
       ],
       "Enter the address you want to email.": [
         "Indtast den adresse, du ønsker at sende en e-mail til."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast verifikationskode. Ciffer ${ digit }."
       ],
       "Enter your extra password": [
         "Indtast din ekstra adgangskode"
@@ -2448,6 +2473,9 @@
       "Account": [
         "Konto"
       ],
+      "Account Number": [
+        "Kontonummer"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Tilføj et tilfældigt præfiks til dette domæne, når du opretter et nyt alias."
       ],
@@ -2487,6 +2515,12 @@
       "Always show username field": [
         "Vis altid brugernavn-feltet"
       ],
+      "API Credential": [
+        "API-legitimation"
+      ],
+      "API Key": [
+        "API-nøgle"
+      ],
       "Application logs": [
         "Applikationslogs"
       ],
@@ -2495,6 +2529,12 @@
       ],
       "Backup password": [
         "Backupadgangskode"
+      ],
+      "Bank Account": [
+        "Bankkonto"
+      ],
+      "Bank Name": [
+        "Banknavn"
       ],
       "Beta Access": [
         "Beta-adgang"
@@ -2535,6 +2575,9 @@
       "City": [
         "By"
       ],
+      "Class": [
+        "Klasse"
+      ],
       "Code": [
         "Kode"
       ],
@@ -2568,6 +2611,9 @@
       "Create a credit card": [
         "Opret et betalingskort"
       ],
+      "Create a custom item": [
+        "Opret et brugerdefineret element"
+      ],
       "Create a hide-my-email alias": [
         "Opret et hide-my-email-alias"
       ],
@@ -2592,6 +2638,12 @@
       "Credit cards": [
         "Betalingskort"
       ],
+      "Custom Items": [
+        "Brugerdefinerede elementer"
+      ],
+      "Database": [
+        "Database"
+      ],
       "Date": [
         "Dato"
       ],
@@ -2607,6 +2659,9 @@
       "DNS": [
         "DNS"
       ],
+      "Doctor": [
+        "Praktiserende læge"
+      ],
       "Domain": [
         "Domæne"
       ],
@@ -2621,6 +2676,9 @@
       ],
       "Download logs": [
         "Hent logfiler"
+      ],
+      "Driver License": [
+        "Kørekort"
       ],
       "Email": [
         "E-mail"
@@ -2652,6 +2710,9 @@
       "Expired": [
         "Udløbet"
       ],
+      "Expiry Date": [
+        "Udløbsdato"
+      ],
       "Export": [
         "Eksportér"
       ],
@@ -2675,6 +2736,9 @@
       ],
       "File format": [
         "Filformat"
+      ],
+      "Finance": [
+        "Finans"
       ],
       "First name": [
         "Fornavn"
@@ -2709,6 +2773,9 @@
       "Generic CSV": [
         "Generisk CSV"
       ],
+      "Get ${ PASS_SHORT_APP_NAME } Plus": [
+        "Få ${ PASS_SHORT_APP_NAME } Plus"
+      ],
       "Get Started": [
         "Kom i gang"
       ],
@@ -2729,6 +2796,18 @@
       ],
       "Highest": [
         "Hurtigst"
+      ],
+      "Holder Name": [
+        "Indehavers navn"
+      ],
+      "Hospital": [
+        "Hospital"
+      ],
+      "Host": [
+        "Vært"
+      ],
+      "Hostname": [
+        "Værtsnavn"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Sådan låses ${ PASS_SHORT_APP_NAME } op"
@@ -2784,6 +2863,15 @@
       "Invitations": [
         "Invitationer"
       ],
+      "IP Address": [
+        "IP-adresse"
+      ],
+      "Issuing Country": [
+        "Udstedende land"
+      ],
+      "Issuing State/Country": [
+        "Stat/Land"
+      ],
       "Item ID": [
         "Element-ID"
       ],
@@ -2792,6 +2880,12 @@
       ],
       "Key": [
         "Nøgle"
+      ],
+      "Key fingerprint": [
+        "Nøglefingeraftryk"
+      ],
+      "Key type": [
+        "Nøgletype"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastaturgenvej: ${ shortcut }"
@@ -2823,7 +2917,13 @@
       "License": [
         "Licens"
       ],
+      "License Key": [
+        "Licensnøgle"
+      ],
       "License number": [
+        "Licensnummer"
+      ],
+      "License Number": [
         "Licensnummer"
       ],
       "Limited time": [
@@ -2856,8 +2956,26 @@
       "max views reached": [
         "maks. visninger opnået"
       ],
+      "Medical Conditions": [
+        "Medicinske forhold"
+      ],
+      "Medical Record": [
+        "Medicinsk journal"
+      ],
+      "Medications": [
+        "Medicin"
+      ],
+      "Member ID": [
+        "Medlems-ID"
+      ],
+      "Member Name": [
+        "Medlemsnavn"
+      ],
       "Members": [
         "Medlemmer"
+      ],
+      "Membership": [
+        "Medlemsskab"
       ],
       "Middle name": [
         "Mellemnavn"
@@ -2874,11 +2992,17 @@
       "Name": [
         "Navn"
       ],
+      "Name (SSID)": [
+        "Navn (SSID)"
+      ],
       "Name on card": [
         "Navn på kort"
       ],
       "Need help?": [
         "Behov for hjælp?"
+      ],
+      "Network": [
+        "Netværk"
       ],
       "New": [
         "Ny"
@@ -2928,11 +3052,17 @@
       "Open-source password manager for effortless protection.": [
         "Open source-adgangskodehåndtering til ubesværet beskyttelse."
       ],
+      "Operating System": [
+        "Operativsystem"
+      ],
       "Organization": [
         "Organisation"
       ],
       "Other": [
         "Andet"
+      ],
+      "Owner": [
+        "Indehaver"
       ],
       "Passkey": [
         "Adgangsnøgle"
@@ -2943,6 +3073,9 @@
       "Passport": [
         "Pas"
       ],
+      "Passport Number": [
+        "Pasnummer"
+      ],
       "Passport number": [
         "Pasnummer"
       ],
@@ -2951,6 +3084,12 @@
       ],
       "Password history": [
         "Adgangskodehistorik"
+      ],
+      "Permissions": [
+        "Tilladelser"
+      ],
+      "Personal": [
+        "Privat"
       ],
       "Personal details": [
         "Personlige oplysninger"
@@ -2988,11 +3127,26 @@
       "Priority:": [
         "Prioritet:"
       ],
+      "Private key": [
+        "Privat nøgle"
+      ],
+      "Private Key": [
+        "Privat nøgle"
+      ],
+      "Product": [
+        "Produkt"
+      ],
+      "Program Name": [
+        "Programnavn"
+      ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Beskyt ${ PASS_APP_NAME } med en ekstra adgangskode"
       ],
       "Public domain": [
         "Offentligt domæne"
+      ],
+      "Public key": [
+        "Offentlig nøgle"
       ],
       "Rate us": [
         "Bedøm os"
@@ -3015,8 +3169,17 @@
       "Reveal password": [
         "Vis adgangskode"
       ],
+      "Reward Program": [
+        "Belønningsprogram"
+      ],
+      "Routing Number": [
+        "Registreringsnummer"
+      ],
       "Second password": [
         "Anden adgangskode"
+      ],
+      "Secret": [
+        "Hemmelighed"
       ],
       "Secure links": [
         "Sikre links"
@@ -3057,6 +3220,9 @@
       "Selected": [
         "Valgte"
       ],
+      "Server": [
+        "Server"
+      ],
       "Share": [
         "Del"
       ],
@@ -3078,11 +3244,23 @@
       "Social security": [
         "Socialsikring"
       ],
+      "Social Security": [
+        "Socialsikring"
+      ],
       "Social security number": [
         "CPR-nummer (personnummer)"
       ],
+      "Software license": [
+        "Software-licens"
+      ],
       "Special characters (!&*)": [
         "Specielle tegn (!&*)"
+      ],
+      "SSH key": [
+        "SSH-nøgle"
+      ],
+      "SSN": [
+        "CPR"
       ],
       "State or province": [
         "Landsdel eller provins"
@@ -3108,6 +3286,9 @@
       "Support": [
         "Support"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC"
+      ],
       "Sync aliases with SimpleLogin": [
         "Synkroniser aliasser med SimpleLogin"
       ],
@@ -3116,6 +3297,9 @@
       ],
       "Tax number": [
         "Afgiftsnummer"
+      ],
+      "Technology": [
+        "Teknologi"
       ],
       "Text": [
         "Tekst"
@@ -3165,6 +3349,9 @@
       "Unnamed Credit Card": [
         "Unavngivet betalingskort"
       ],
+      "Unnamed custom item": [
+        "Unavngivet brugerdefineret element"
+      ],
       "Unnamed identity": [
         "Unavngiven identitet"
       ],
@@ -3173,6 +3360,12 @@
       ],
       "Unnamed note": [
         "Unavngivet note"
+      ],
+      "Unnamed SSH key": [
+        "Unavngivet SSH-nøgle"
+      ],
+      "Unspecified": [
+        "Uspecificeret"
       ],
       "Untitled": [
         "Unavngivet"
@@ -3204,8 +3397,14 @@
       "View logs": [
         "Vis logfiler"
       ],
+      "VPN Speed": [
+        "VPN hastighed"
+      ],
       "Vulnerable": [
         "Sårbar"
+      ],
+      "Wallet Name": [
+        "Wallet-navn"
       ],
       "Weak": [
         "Svag"
@@ -3421,6 +3620,15 @@
       ],
       "Add note": [
         "Tilføj note"
+      ],
+      "Add private key": [
+        "Tilføj privat nøgle"
+      ],
+      "Add public key": [
+        "Tilføj offentlig nøgle"
+      ],
+      "Add SSID": [
+        "Tilføj SSID"
       ],
       "Add text": [
         "Tilføj tekst"
@@ -3661,8 +3869,14 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresser"
       ],
+      "${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus": [
+        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Kontobeskyttelse"
