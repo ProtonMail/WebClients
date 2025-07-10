@@ -12,6 +12,7 @@
 		will-change: transform, opacity;
 		backface-visibility: hidden;
 		transform-style: preserve-3d;
+		pointer-events: none;
 	}
 
 	&--deleted {
