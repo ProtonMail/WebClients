@@ -970,6 +970,9 @@
       "Next month": [
         "Наступны месяц"
       ],
+      "Next page": [
+        "Наступная старонка"
+      ],
       "No": [
         "Не"
       ],
@@ -1014,6 +1017,9 @@
       ],
       "Previous month": [
         "Папярэдні месяц"
+      ],
+      "Previous page": [
+        "Папярэдняя старонка"
       ],
       "Publish changes": [
         "Апублікаваць змяненні"
@@ -4674,7 +4680,7 @@
         "Увайсці на іншай прыладзе"
       ],
       "Sign in with QR code": [
-        "Увайсці з дапамогай QR-кода"
+        "Уваходзіць з дапамогай QR-кода"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
         "Націсніце на кнопку **Увайсці з QR-кодам** у меню дапамогі экрана ўваходу, каб атрымаць код доступу прылады ў якую вы хочаце ўвайсці, а потым націсніце **Увесці ключ уручную**. "
@@ -8241,16 +8247,16 @@
         "Ствараючы ўліковы запіс ${ PASS_APP_NAME } з дапамогай вашай электроннай пошты SimpleLogin, вы можаце кіраваць сваімі псеўданімамі наўпрост з ${ PASS_APP_NAME }."
       ],
       "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Вы таксама ачысціце ўсю сваю гісторыю, калі адключыце маніторынг падзей бяспекі. Вы сапраўды хочаце яго адключыць?"
+        "Адключыўшы маніторынг падзей бяспекі, вы таксама ачысціце ўсю сваю гісторыю. Вы сапраўды хочаце яго адключыць?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
+        "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні зноў пяройдзеце на яго."
       ],
       "By leaving now, changes may not be saved": [
         "Калі выйсці цяпер, змяненні могуць не захавацца"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
-        "Каб падзяліцца ўсімі падрабязнасцямі падзей у гэтым календары, вы згаджаецеся даць доступ ${ BRAND_NAME } да гэтай зашыфраванай інфармацыі."
+        "Вы згаджаецеся даць доступ ${ BRAND_NAME } да гэтай зашыфраванай інфармацыі, каб падзяліцца ўсімі падрабязнасцямі падзей у гэтым календары."
       ],
       "Cancel anytime": [
         "Скасаваць можна ў любы час"
@@ -17390,7 +17396,7 @@
     },
     "session_recovery:cancelled:link": {
       "change your password now": [
-        "змяніць пароль"
+        "неадкладна змяніце свой пароль"
       ]
     },
     "session_recovery:disable:action": {
@@ -19307,7 +19313,7 @@
         "Адрас для ўсёй пошты дамена абноўлены"
       ],
       "Changes published. Your changes will be visible to all users in the next few hours.": [
-        "Змены апублікаваныя. Вашы змены будуць бачныя ўсім на працягу наступных некалькіх гадзін."
+        "Змены апублікаваныя. Вашы змены будуць бачныя ўсім карыстальнікам на працягу наступных некалькіх гадзін."
       ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
@@ -20042,7 +20048,7 @@
         "Выберыце ўліковы запіс"
       ],
       "Choose user affiliations": [
-        "Выбар прыналежнасцей карыстальніка"
+        "Выберыце прыналежнасці карыстальнікаў"
       ],
       "Click a value in the table to use it as filter": [
         "Націсніце значэнне ў табліцы, каб выкарыстоўваць яго ў якасці фільтра."
@@ -21268,7 +21274,7 @@
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
-        "Выберыце лічбу"
+        "Выберыце нумар"
       ]
     },
     "Title for payment methods table": {

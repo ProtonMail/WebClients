@@ -541,12 +541,6 @@
       "Download CSV sample": [
         "下载 csv 样例"
       ],
-      "Download for macOS": [
-        "下载 macOS 版"
-      ],
-      "Download for Windows": [
-        "下载 Windows 版"
-      ],
       "Download ICS": [
         "下载ICS"
       ],
@@ -970,6 +964,9 @@
       "Next month": [
         "下个月"
       ],
+      "Next page": [
+        "下一页"
+      ],
       "No": [
         "否"
       ],
@@ -1014,6 +1011,9 @@
       ],
       "Previous month": [
         "上个月"
+      ],
+      "Previous page": [
+        "上一页"
       ],
       "Publish changes": [
         "发布更改"
@@ -4446,14 +4446,6 @@
         "Windows 8/8.1/7 或 Windows 32位 (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu （.deb）"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat（.rpm）"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "创建一个免费的 ${ DRIVE_APP_NAME } 账户来安全地访问文件"
@@ -6697,14 +6689,6 @@
       ],
       "Your desktop app free trial has ended": [
         "您的桌面应用免费试用已结束"
-      ]
-    },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "App Store 上的 ${ appName }"
-      ],
-      "${ appName } on Play Store": [
-        "Play Store 上的 ${ appName }"
       ]
     },
     "Gmail forwarding": {
@@ -11273,9 +11257,6 @@
       "Backup password": [
         "备用密码"
       ],
-      "Beta": [
-        "测试版"
-      ],
       "Billing cycle": [
         "计费周期"
       ],
@@ -11998,9 +11979,6 @@
       ],
       "Second password": [
         "副密码"
-      ],
-      "Select Linux package format": [
-        "请选择 Linux 软件包格式"
       ],
       "Select Linux platform": [
         "选择 Linux 平台"
@@ -19607,15 +19585,6 @@
       ],
       "Folders and labels": [
         "标签与文件夹"
-      ],
-      "For Linux": [
-        "Linux 客户端"
-      ],
-      "For macOS": [
-        "macOS 客户端"
-      ],
-      "For Windows": [
-        "Windows 客户端"
       ],
       "Forgot password": [
         "忘记密码"

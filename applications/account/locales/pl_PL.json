@@ -541,6 +541,12 @@
       "Download CSV sample": [
         "Pobierz przykładowy plik CSV"
       ],
+      "Download for macOS": [
+        "Pobierz na macOS"
+      ],
+      "Download for Windows": [
+        "Pobierz na Windowsa"
+      ],
       "Download ICS": [
         "Pobierz plik ICS"
       ],
@@ -964,6 +970,9 @@
       "Next month": [
         "Następny miesiąc"
       ],
+      "Next page": [
+        "Następna strona"
+      ],
       "No": [
         "Nie"
       ],
@@ -1008,6 +1017,9 @@
       ],
       "Previous month": [
         "Poprzedni miesiąc"
+      ],
+      "Previous page": [
+        "Poprzednia strona"
       ],
       "Publish changes": [
         "Opublikuj zmiany"
@@ -4579,6 +4591,14 @@
         "Windows 8 / 8.1 / 7 lub Windows 32-bit (ARM64)"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb dla Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm dla Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Utwórz darmowe konto ${ DRIVE_APP_NAME }, aby uzyskać bezpieczny dostęp do pliku"
@@ -6899,6 +6919,14 @@
         "Darmowa wersja próbna aplikacji desktopowej zakończyła się"
       ]
     },
+    "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } w App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } w Google Play"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Automatyczne przekierowanie"
@@ -8760,6 +8788,9 @@
       "Failed to fetch logs.": [
         "Nie udało się pobrać logów."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Szybkość i skupienie. Poczta i kalendarz na pulpicie."
+      ],
       "Featured in": [
         "Wyróżniony w"
       ],
@@ -9854,6 +9885,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Funkcja jest dostępna dla użytkowników ${ BRAND_NAME } for Business z niestandardową domeną."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Aby uzyskać dostęp do tej funkcji, ${ createTicket } i opisz swoje potrzeby. Napisz jakiej niestandardowej domeny chcesz użyć i oszacuj zapotrzebowanie wiadomości."
@@ -11723,6 +11757,9 @@
       "Backup password": [
         "Hasło zapasowe"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -12445,6 +12482,9 @@
       ],
       "Second password": [
         "Drugie hasło"
+      ],
+      "Select Linux package format": [
+        "Wybierz format pakietu Linux"
       ],
       "Select Linux platform": [
         "Wybierz platformę Linux"
@@ -13173,6 +13213,9 @@
       ],
       "Sign in success (awaiting second factor)": [
         "Pomyślne logowanie (oczekiwanie na uwierzytelnianie dwustopniowe)"
+      ],
+      "Sign in success (awaiting verification)": [
+        "Pomyślne logowanie (oczekiwanie na weryfikację)"
       ],
       "Sign out": [
         "Wylogowanie"
@@ -16300,6 +16343,9 @@
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Kwota ${ amountToCharge } zostanie pobrana z wybranej metody płatności."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Twoja waluta została zmieniona na euro (€), ponieważ przelewy bankowe SEPA obsługują tylko płatności w euro."
       ],
       "Your payment is still being processed": [
         "Twoja płatność jest wciąż przetwarzana"
@@ -20481,6 +20527,15 @@
       ],
       "Folders and labels": [
         "Foldery i etykiety"
+      ],
+      "For Linux": [
+        "Linux"
+      ],
+      "For macOS": [
+        "macOS"
+      ],
+      "For Windows": [
+        "Windows"
       ],
       "Forgot password": [
         "Przypomnij hasło"

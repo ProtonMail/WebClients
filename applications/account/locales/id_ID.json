@@ -541,12 +541,6 @@
       "Download CSV sample": [
         "Unduh sampel CSV"
       ],
-      "Download for macOS": [
-        "Unduh untuk macOS"
-      ],
-      "Download for Windows": [
-        "Unduh untuk Windows"
-      ],
       "Download ICS": [
         "Unduh ICS"
       ],
@@ -970,6 +964,9 @@
       "Next month": [
         "Bulan selanjutnya"
       ],
+      "Next page": [
+        "Halaman selanjutnya"
+      ],
       "No": [
         "Tidak"
       ],
@@ -1014,6 +1011,9 @@
       ],
       "Previous month": [
         "Bulan sebelumnya"
+      ],
+      "Previous page": [
+        "Halaman sebelumnya"
       ],
       "Publish changes": [
         "Terbitkan perubahan"
@@ -4463,14 +4463,6 @@
         "Windows 8/8.1/7 atau Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb untuk Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm untuk Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Buat akun ${ DRIVE_APP_NAME } gratis untuk mengakses berkas ini secara aman"
@@ -6725,14 +6717,6 @@
         "Masa uji coba aplikasi desktop Anda telah berakhir"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } di App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } di Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Teruskan"
@@ -8450,9 +8434,6 @@
       "Failed to fetch logs.": [
         "Log gagal diperoleh."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Cepat dan terfokus. Email dan kalender, langsung di desktop Anda."
-      ],
       "Featured in": [
         "Terliput di"
       ],
@@ -9520,6 +9501,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } kepada alamat domain khusus milik Anda. Fitur ini hanya tersedia bagi pengguna ${ BRAND_NAME } for Business yang memiliki domain khusus."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Pengiriman SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirim email melalui ${ MAIL_APP_NAME } untuk alamat domain khusus Anda. Untuk meminta akses, silakan ${ createTicket } yang menyertakan rincian penggunaan Anda, domain khusus apa saja yang Anda ingin gunakan, dan kisaran volume email yang masuk per jamnya dan per harinya."
@@ -11311,9 +11295,6 @@
       "Backup password": [
         "Kata sandi cadangan"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing cycle": [
         "Siklus tagihan"
       ],
@@ -12037,9 +12018,6 @@
       "Second password": [
         "Kata sandi kedua"
       ],
-      "Select Linux package format": [
-        "Pilih format paket Linux"
-      ],
       "Select Linux platform": [
         "Pilih platform Linux"
       ],
@@ -12761,6 +12739,9 @@
       ],
       "Sign in success (awaiting second factor)": [
         "Upaya masuk berhasil (menunggu faktor kedua)"
+      ],
+      "Sign in success (awaiting verification)": [
+        "Upaya masuk berhasil (menunggu verifikasi)"
       ],
       "Sign out": [
         "Keluar"
@@ -19704,15 +19685,6 @@
       ],
       "Folders and labels": [
         "Folder dan label"
-      ],
-      "For Linux": [
-        "Untuk Linux"
-      ],
-      "For macOS": [
-        "Untuk macOS"
-      ],
-      "For Windows": [
-        "Untuk Windows"
       ],
       "Forgot password": [
         "Lupa kata sandi"
