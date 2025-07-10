@@ -11,7 +11,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { PLANS, type Plan, type PlansMap, getPlan } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { getNormalizedPlanTitleToPlus, getPlusTitle } from './plusToPlusHelper';
+import { getNormalizedPlanTitles, getPlusTitle } from './plusToPlusHelper';
 
 interface Props extends Omit<ModalProps, 'title' | 'onClose'> {
     onUpgrade: () => void;
@@ -25,10 +25,13 @@ const PlusToPlusUpsell = ({ plansMap, unlockPlan, onUpgrade, ...rest }: Props) =
     const { information } = useTheme();
     const [subscription] = useSubscription();
     const currentPlan = getPlan(subscription);
-    const planTitle = currentPlan?.Name ? getNormalizedPlanTitleToPlus(currentPlan.Name) : currentPlan?.Title;
     const upsellPlan = plansMap[PLANS.BUNDLE];
-    const unlockPlanTitle = unlockPlan?.Title;
-    const bundlePlanTitle = upsellPlan?.Title;
+
+    const { currentPlanTitle, upsellPlanTitle, unlockPlanTitle } = getNormalizedPlanTitles({
+        currentPlan,
+        unlockPlan,
+        upsellPlan,
+    });
     const protonPlus = getPlusTitle(BRAND_NAME);
     return (
         <ModalTwo {...rest} size="small" data-testid="plus-block">
@@ -41,7 +44,7 @@ const PlusToPlusUpsell = ({ plansMap, unlockPlan, onUpgrade, ...rest }: Props) =
                 <div className="mb-4 color-weak">
                     {getBoldFormattedText(
                         c('plus_block')
-                            .t`As a **${planTitle}** subscriber, you can unlock **${unlockPlanTitle}** and all premium ${BRAND_NAME} services by upgrading to **${bundlePlanTitle}**.`
+                            .t`As a **${currentPlanTitle}** subscriber, you can unlock **${unlockPlanTitle}** and all premium ${BRAND_NAME} services by upgrading to **${upsellPlanTitle}**.`
                     )}
                 </div>
                 <PlusUnlimitedComparison
@@ -52,10 +55,10 @@ const PlusToPlusUpsell = ({ plansMap, unlockPlan, onUpgrade, ...rest }: Props) =
                     plansMap={plansMap}
                 >
                     <Button color="norm" fullWidth className="mb-1" onClick={() => onUpgrade()}>
-                        {c('plus_block').t`Upgrade to ${bundlePlanTitle}`}
+                        {c('plus_block').t`Upgrade to ${upsellPlanTitle}`}
                     </Button>
                     <Button shape="ghost" color="norm" fullWidth onClick={rest.onClose}>
-                        {c('plus_block').t`Stay on ${planTitle}`}
+                        {c('plus_block').t`Stay on ${currentPlanTitle}`}
                     </Button>
                 </PlusUnlimitedComparison>
             </ModalTwoContent>
