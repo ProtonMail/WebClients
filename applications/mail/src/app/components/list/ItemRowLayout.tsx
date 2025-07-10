@@ -20,7 +20,7 @@ import { useExpiringElement } from '../../hooks/useExpiringElement';
 import type { Element } from '../../models/element';
 import type { ESMessage } from '../../models/encryptedSearch';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
-import { CategoryBadge } from '../categoryView/CategoryBadge';
+import { CategoryBadge } from '../categoryView/categoryBadge/CategoryBadge';
 import NumMessages from '../conversation/NumMessages';
 import ItemAction from './ItemAction';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
