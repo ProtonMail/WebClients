@@ -7,8 +7,7 @@ import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import type { IconSize } from '@proton/icons';
-import { PLANS, PLAN_SERVICES, type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
-import { getFreeTitle } from '@proton/shared/lib/apps/i18n';
+import { PLANS, PLAN_SERVICES, type Plan, type PlansMap, type SubscriptionPlan, getFreeTitle } from '@proton/payments';
 import {
     APPS,
     DRIVE_SHORT_APP_NAME,

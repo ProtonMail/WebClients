@@ -296,7 +296,7 @@ export {
 export { getRenewCycle } from './core/renewals';
 export { extractIBAN, type ExtendedExtractIBANResult } from './core/sepa';
 export { BillingPlatform, Renew, SubscriptionPlatform } from './core/subscription/constants';
-export { FREE_PLAN, getFreeCheckResult } from './core/subscription/freePlans';
+export { FREE_PLAN, getFreeCheckResult, getFreeTitle } from './core/subscription/freePlans';
 export {
     allCycles,
     canCheckItemGetStarted,
