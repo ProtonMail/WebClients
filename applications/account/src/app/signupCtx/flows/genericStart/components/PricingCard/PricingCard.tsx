@@ -61,6 +61,7 @@ const PricingFeatures = () => {
                         `${FREE_PASS_ALIASES} hide-my-email aliases to fight spam`,
                         FREE_PASS_ALIASES
                     )}
+                    highlighted
                 />
             </ul>
         </div>
