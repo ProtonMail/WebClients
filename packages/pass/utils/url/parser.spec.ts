@@ -133,5 +133,17 @@ describe('URL parsers', () => {
             expect(result.isSecure).toEqual(false);
             expect(result.protocol).toEqual(null);
         });
+
+        test('should respect custom private domains', () => {
+            const result = parseUrl('https://chicken.food.blog', new Set(['food.blog']));
+            expect(result.displayName).toEqual('chicken.food');
+            expect(result.domain).toEqual('chicken.food.blog');
+            expect(result.port).toEqual(null);
+            expect(result.subdomain).toEqual(null);
+            expect(result.isTopLevelDomain).toEqual(true);
+            expect(result.isPrivate).toEqual(true);
+            expect(result.isSecure).toEqual(true);
+            expect(result.protocol).toEqual('https:');
+        });
     });
 });

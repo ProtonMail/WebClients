@@ -22,6 +22,7 @@ export type SelectItemsByDomainOptions = {
     strict?: boolean;
 };
 
+export type GetLoginCandidatesOptions = { url?: string; shareIds?: string[]; strict?: boolean };
 export type SelectAutofillCandidatesOptions = ParsedUrl & { shareIds?: string[]; strict?: boolean };
 export type SelectOTPAutofillCandidateOptions = ParsedUrl & { submission?: FormSubmission };
 export type SelectAutosaveCandidatesOptions = { domain: string; userIdentifier?: string; shareIds?: string[] };
