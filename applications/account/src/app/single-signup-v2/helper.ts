@@ -34,7 +34,7 @@ import {
     getPlanFromPlanIDs,
     getSubscription,
     isLifetimePlanSelected,
-    isStringPLAN,
+    isValidPlanName,
 } from '@proton/payments';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -884,7 +884,7 @@ export const getAccessiblePlans = ({
     }
 
     const accessiblePlanNames = planCards[audience].map(({ plan }) => plan);
-    if (paramPlanName && isStringPLAN(paramPlanName)) {
+    if (paramPlanName && isValidPlanName(paramPlanName)) {
         accessiblePlanNames.push(paramPlanName);
     }
 
