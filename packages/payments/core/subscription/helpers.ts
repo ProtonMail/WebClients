@@ -12,6 +12,7 @@ import {
     TaxInclusive,
     type UserModel,
 } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
 import {
     ADDON_NAMES,
@@ -62,7 +63,7 @@ export function getPlan(subscription: Subscription | FreeSubscription | undefine
     return result;
 }
 
-export function getPrimaryPlan(subscription: Subscription | undefined) {
+export function getPrimaryPlan(subscription: Subscription | FreeSubscription | undefined) {
     if (!subscription) {
         return;
     }
@@ -1108,7 +1109,6 @@ export function isSubscriptionUnchanged(
 
 export function isForbiddenPlusToPlus({
     subscription,
-    user,
     newPlanName,
 }: {
     subscription: Subscription | FreeSubscription | null | undefined;
@@ -1118,9 +1118,14 @@ export function isForbiddenPlusToPlus({
     if (!subscription) {
         return false;
     }
-    const subscribedPlans = getSubscriptionPlanTitles(user, subscription);
-    const isSubscribedToAPlusPlan = subscribedPlans.some(({ planName }) => getHasPlusPlan(planName));
-    const isNotSamePlanName = !subscribedPlans.some(({ planName }) => planName === newPlanName);
+    const subscribedPlan = getPrimaryPlan(subscription?.UpcomingSubscription ?? subscription);
+    const subscribedPlans = [subscribedPlan].filter(isTruthy).filter(
+        /**
+         Ignore pass lifetime, they should always be allowed to change to another plus plan
+         **/ (plan) => plan.Name !== PLANS.PASS_LIFETIME
+    );
+    const isSubscribedToAPlusPlan = subscribedPlans.some((subscribedPlan) => getHasPlusPlan(subscribedPlan.Name));
+    const isNotSamePlanName = !subscribedPlans.some((subscribedPlan) => subscribedPlan.Name === newPlanName);
     const allowPlusToPlusTransitions = [
         {
             // Going from Pass
@@ -1149,12 +1154,12 @@ export function isForbiddenPlusToPlus({
     ];
     const allowPlusToPlusTransition = !allowPlusToPlusTransitions.some(({ from, to }) => {
         return subscribedPlans.some(
-            ({ planName }) => planName && newPlanName && from.includes(planName) && to.includes(newPlanName)
+            (subscribedPlan) =>
+                subscribedPlan.Name && newPlanName && from.includes(subscribedPlan.Name) && to.includes(newPlanName)
         );
     });
-    return Boolean(
-        isSubscribedToAPlusPlan && getHasPlusPlan(newPlanName) && isNotSamePlanName && allowPlusToPlusTransition
-    );
+    const isNewPlanAPlusPlan = getHasPlusPlan(newPlanName);
+    return Boolean(isSubscribedToAPlusPlan && isNewPlanAPlusPlan && isNotSamePlanName && allowPlusToPlusTransition);
 }
 
 export function getIsPlanTransitionForbidden({
