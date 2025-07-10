@@ -424,6 +424,9 @@ export {
     PLANS_WITH_AI_INCLUDED,
     regularCycles,
     willTrialExpire,
+    willTrialExpireInLessThan1Week,
+    type AggregatedPricing,
+    type PricingForCycles,
 } from './core/subscription/helpers';
 export {
     type Coupon,
