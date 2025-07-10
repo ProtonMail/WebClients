@@ -1,4 +1,4 @@
-import type { ReactNode, RefObject } from 'react';
+import type { Dispatch, ReactNode, RefObject, SetStateAction } from 'react';
 import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -8,10 +8,8 @@ import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import type { MailboxActions } from 'proton-mail/router/interface';
 
 import { pageFromUrl } from '../../helpers/mailboxUrl';
-import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
 import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
 import { useRouterNavigation } from '../../router/hooks/useRouterNavigation';
-import { selectComposersCount } from '../../store/composers/composerSelectors';
 import { paramsSelector } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 import MailboxListBannersWrapper from './MailboxListBannersWrapper';
@@ -33,6 +31,7 @@ interface MailboxListProps {
     listRef?: RefObject<HTMLDivElement>;
     noBorder?: boolean;
     noPlaceholder?: boolean;
+    setFocusID?: Dispatch<SetStateAction<string | undefined>>;
 }
 
 export default function MailboxList({
@@ -43,12 +42,13 @@ export default function MailboxList({
     noBorder = false,
     overrideColumnMode = false,
     noPlaceholder = false,
+    setFocusID,
 }: MailboxListProps) {
     const [labels = []] = useLabels();
     const location = useLocation();
     const params = useMailSelector(paramsSelector);
-    const { filter, labelID, elementID, sort } = params;
-    const { total, loading, placeholderCount, elementIDs } = elementsData;
+    const { labelID, elementID } = params;
+    const { total, loading, placeholderCount } = elementsData;
     const {
         handleElement,
         handleMarkAs,
@@ -73,23 +73,8 @@ export default function MailboxList({
     const internalListRef = useRef<HTMLDivElement>(null);
     const listRefToUse = externalListRef || internalListRef;
 
-    const composersCount = useMailSelector(selectComposersCount);
-    const isComposerOpened = composersCount > 0;
-
-    const { setFocusID } = useMailboxFocus({
-        elementIDs,
-        page: currentPage,
-        filter,
-        sort,
-        showList,
-        listRef: listRefToUse,
-        labelID,
-        isComposerOpened,
-        loading,
-    });
-
     const handleFocus = (elementID: string) => {
-        setFocusID(elementID);
+        setFocusID?.(elementID);
     };
 
     return (
