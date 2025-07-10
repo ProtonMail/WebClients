@@ -40,11 +40,11 @@ export const usePaginationSizeUpdates = () => {
         }
 
         if (previousPageSizeRef.current !== newPageSize) {
-            setPage(() => 0);
+            setPage(0);
         }
 
         previousPageSizeRef.current = newPageSize;
         previousHasScreenShareRef.current = hasScreenShare;
         previousIsSideBarOpenRef.current = isSideBarOpen;
-    }, [hasScreenShare, isSideBarOpen, setPageSize, setPage]);
+    }, [hasScreenShare, isSideBarOpen, setPageSize, setPage, sortedParticipants.length]);
 };
