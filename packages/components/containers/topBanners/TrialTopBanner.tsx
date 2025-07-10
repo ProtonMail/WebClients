@@ -13,17 +13,18 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Time from '@proton/components/components/time/Time';
 import TimeRemaining from '@proton/components/components/timeRemaining/TimeRemaining';
 import useConfig from '@proton/components/hooks/useConfig';
-import { Renew } from '@proton/payments';
-import { isTrial } from '@proton/payments';
+import { Renew, isTrial } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash';
 
 import LearnMoreModal from './LearnMoreModal';
 import TopBanner from './TopBanner';
 import TrialCanceledModal from './TrialCanceledModal';
 import { OPEN_TRIAL_CANCELED_MODAL } from './constants';
 import LegacyReferralTopBanner from './trials/LegacyReferralTopBanner';
+import ReferralTopBanner from './trials/ReferralTopBanner';
 
 const B2BTrialTopBanner = () => {
     const [closed, setClosed] = useState<boolean>(false);
@@ -97,10 +98,14 @@ const TrialTopBanner = ({ app }: { app: APP_NAMES }) => {
     const trial = isTrial(subscription);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
 
+    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
+
     let topBanner = undefined;
 
     if (isB2BTrial) {
         topBanner = <B2BTrialTopBanner />;
+    } else if (trial && isReferralExpansionEnabled) {
+        topBanner = <ReferralTopBanner app={app} />;
     } else if (trial && !isVpn && app) {
         topBanner = <LegacyReferralTopBanner fromApp={app} />;
     }
