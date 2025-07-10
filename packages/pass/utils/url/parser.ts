@@ -5,7 +5,7 @@ import { sanitizeURL } from './sanitize';
 import type { ParsedSender, ParsedUrl } from './types';
 import { isSupportedSenderUrl } from './utils';
 
-export const parseUrl = (url?: string): ParsedUrl => {
+export const parseUrl = (url?: string, customPrivateDomains?: Set<string>): ParsedUrl => {
     const check = sanitizeURL(url ?? '');
 
     if (!check.valid) {
@@ -22,11 +22,18 @@ export const parseUrl = (url?: string): ParsedUrl => {
         };
     }
 
-    const { domain, subdomain, domainWithoutSuffix, hostname, isPrivate } = parse(url ?? '', {
+    let { domain, subdomain, domainWithoutSuffix, hostname, isPrivate } = parse(url ?? '', {
         allowIcannDomains: true,
         allowPrivateDomains: true,
         detectIp: true,
     });
+    // if there is no subdomain or domain, pointless to check for private domain
+    if (subdomain && domain && customPrivateDomains?.has(domain)) {
+        domain = [subdomain, domain].join('.');
+        domainWithoutSuffix = [subdomain, domainWithoutSuffix].join('.');
+        subdomain = null;
+        isPrivate = true;
+    }
 
     return {
         displayName: domainWithoutSuffix ?? hostname,
