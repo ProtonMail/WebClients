@@ -126,7 +126,7 @@ export const NewsletterSubscriptionView = ({
         }
     }, [activeSubscription?.ID, params.newsletterSubscriptionID]);
 
-    // The view is not availabe on mobile, we want to make sure to avoid showing it to users
+    // The view is not available on mobile, we want to make sure to avoid showing it to users
     if (!newsletterSubscriptionsView || !mailboxRefactoring || breakpoints.viewportWidth['<=small']) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
