@@ -40,6 +40,12 @@ export type BaseMeasure<T> = (data: T) => Promise<void>;
 export type Measure = BaseMeasure<TelemetryMeasurementData>;
 export type OnOpenLogin = (data: { email: string; location: 'step2' | 'error_msg' }) => void;
 export type OnOpenSwitch = () => void;
+export type OnTriggerModals = (data: {
+    session: SessionData;
+    upsell: Upsell;
+    subscriptionData: SubscriptionData;
+    planParameters?: PlanParameters;
+}) => void;
 
 export interface OptimisticOptions {
     cycle: CYCLE;

@@ -3,7 +3,6 @@ import { nextFriday, nextMonday, nextSaturday, nextSunday, nextThursday, nextTue
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 
 import SnoozeDurationSelection from './SnoozeDurationSelection';
@@ -125,14 +124,14 @@ describe('SnoozeDurationSelection when start of week is Monday', () => {
 
     it('should render the upsell button for free users', () => {
         renderComponent(false);
-        expect(screen.getByAltText(`Upgrade to ${MAIL_APP_NAME} Plus to unlock`));
+        expect(screen.getByAltText(`Upgrade to Mail Plus to unlock`));
     });
 
     it('should not render the upsell button for free users', () => {
         useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
 
         renderComponent(false);
-        expect(screen.queryByAltText(`Upgrade to ${MAIL_APP_NAME} Plus to unlock`)).toBeNull();
+        expect(screen.queryByAltText(`Upgrade to Mail Plus to unlock`)).toBeNull();
     });
 });
 

@@ -3,8 +3,7 @@ import { c } from 'ttag';
 import { PassLogo, Toggle } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { ToggleProps } from '@proton/components/components/toggle/Toggle';
-import { type CYCLE, type Currency } from '@proton/payments';
-import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { type CYCLE, type Currency, PLANS, PLAN_NAMES } from '@proton/payments';
 
 import SaveLabel2 from './SaveLabel2';
 
@@ -16,7 +15,7 @@ interface VPNPassUpsellToggleProps extends Omit<ToggleProps, 'ref'> {
 
 const VPNPassUpsellToggle = ({ currency, cycle, view, ...rest }: VPNPassUpsellToggleProps) => {
     if (view === 'included') {
-        const plan = `${PASS_APP_NAME} Plus`;
+        const plan = PLAN_NAMES[PLANS.PASS];
         return (
             <div className="p-2 flex flex-nowrap gap-1 items-start">
                 <div className="shrink-0">
@@ -29,7 +28,7 @@ const VPNPassUpsellToggle = ({ currency, cycle, view, ...rest }: VPNPassUpsellTo
     }
 
     const price = getSimplePriceString(currency, 399, c('Suffix').t`/month`);
-    const plan = `${PASS_SHORT_APP_NAME} Plus`;
+    const plan = PLAN_NAMES[PLANS.PASS];
     return (
         <div className="p-2 flex flex-nowrap gap-1 items-start">
             <Toggle id="toggle-upsell-pass" className="mx-1 shrink-0" {...rest} />

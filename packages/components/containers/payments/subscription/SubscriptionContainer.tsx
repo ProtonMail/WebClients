@@ -7,7 +7,9 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button, Tooltip } from '@proton/atoms';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { setUsedBfOffer } from '@proton/components/containers/offers/bfOffer';
+import PlusToPlusUpsell from '@proton/components/containers/payments/subscription/PlusToPlusUpsell';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -20,25 +22,23 @@ import { type TelemetryPaymentFlow } from '@proton/components/payments/client-ex
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
-import type {
-    AddonGuard,
-    BillingAddress,
-    MultiCheckSubscriptionData,
-    PaymentMethodStatusExtended,
-    PaymentMethodType,
-    PaymentProcessorHook,
-    PaymentProcessorType,
-    PlainPaymentMethodType,
-} from '@proton/payments';
 import {
+    type AddonGuard,
+    type BillingAddress,
     type CheckSubscriptionData,
     type Currency,
     type Cycle,
     DEFAULT_CURRENCY,
     DisplayablePaymentError,
     type FreePlanDefault,
+    type MultiCheckSubscriptionData,
     PAYMENT_METHOD_TYPES,
     PLANS,
+    type PaymentMethodStatusExtended,
+    type PaymentMethodType,
+    type PaymentProcessorHook,
+    type PaymentProcessorType,
+    type PlainPaymentMethodType,
     type Plan,
     type PlanIDs,
     ProrationMode,
@@ -52,6 +52,7 @@ import {
     getHasSomeVpnPlan,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
+    getIsPlanTransitionForbidden,
     getIsVpnPlan,
     getMaximumCycleForApp,
     getPaymentsVersion,
@@ -281,6 +282,8 @@ const SubscriptionContainerInner = ({
     const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionCheckResponse[]>();
     const chargebeeContext = useChargebeeContext();
     const scribeEnabled = useAssistantFeatureEnabled();
+    const [upsellModal, setUpsellModal, renderUpsellModal] = useModalState();
+    const [plusToPlusUpsell, setPlusToPlusUpsell] = useState<{ unlockPlan: Plan | undefined } | null>(null);
 
     const [audience, setAudience] = useState(() => {
         if ((plan && getIsB2BAudienceFromPlan(plan)) || getIsB2BAudienceFromSubscription(subscription)) {
@@ -700,6 +703,27 @@ const SubscriptionContainerInner = ({
             setCheckResult(getFreeCheckResult(model.currency, model.cycle));
             setModel(copyNewModel);
             return;
+        }
+
+        const planTransitionForbidden = getIsPlanTransitionForbidden({
+            subscription,
+            user,
+            plansMap,
+            planIDs: copyNewModel.planIDs,
+            cycle: copyNewModel.cycle,
+        });
+        if (planTransitionForbidden?.type === 'plus-to-plus') {
+            setPlusToPlusUpsell({
+                unlockPlan: planTransitionForbidden.newPlanName
+                    ? plansMap[planTransitionForbidden.newPlanName]
+                    : undefined,
+            });
+            setUpsellModal(true);
+            // In case this transition is disallowed, reset the plan IDs to the plan IDs of the current subscription
+            copyNewModel.planIDs = getPlanIDs(latestSubscription);
+            // Also, reset the step to the previous step (so that it doesn't change from plan selection -> checkout)
+            copyNewModel.step = model.step;
+            // Continue here with the rest of the steps so that we actually perform the rest of the call correctly (but just with reset plan ids)
         }
 
         const dontQueryCheck = copyNewModel.step === SUBSCRIPTION_STEPS.PLAN_SELECTION;
@@ -1283,6 +1307,30 @@ const SubscriptionContainerInner = ({
 
     return (
         <>
+            {renderUpsellModal && plusToPlusUpsell && (
+                <PlusToPlusUpsell
+                    {...upsellModal}
+                    unlockPlan={plusToPlusUpsell.unlockPlan}
+                    plansMap={plansMap}
+                    onUpgrade={() => {
+                        upsellModal.onClose();
+                        check({
+                            ...model,
+                            planIDs: switchPlan({
+                                subscription: latestSubscription,
+                                newPlan: PLANS.BUNDLE,
+                                organization,
+                                plans,
+                                user,
+                            }),
+                            step: SUBSCRIPTION_STEPS.CHECKOUT,
+                        }).catch(noop);
+                    }}
+                    onClose={() => {
+                        upsellModal.onClose();
+                    }}
+                />
+            )}
             {calendarDowngradeModal((props) => {
                 return (
                     <CalendarDowngradeModal

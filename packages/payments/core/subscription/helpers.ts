@@ -12,6 +12,7 @@ import {
     TaxInclusive,
     type UserModel,
 } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
 import {
     ADDON_NAMES,
@@ -62,7 +63,7 @@ export function getPlan(subscription: Subscription | FreeSubscription | undefine
     return result;
 }
 
-export function getPrimaryPlan(subscription: Subscription | undefined) {
+export function getPrimaryPlan(subscription: Subscription | FreeSubscription | undefined) {
     if (!subscription) {
         return;
     }
@@ -504,6 +505,27 @@ export const getHasProPlan = (planName?: PLANS) => {
     return (
         planName &&
         [PLANS.VPN_PRO, PLANS.PASS_PRO, PLANS.MAIL_PRO, PLANS.DRIVE_PRO].some((ssoPlanName) => ssoPlanName === planName)
+    );
+};
+
+export const getHasSomeDrivePlusPlan = (planName?: PLANS | ADDON_NAMES) => {
+    return planName && [PLANS.DRIVE, PLANS.DRIVE_1TB].some((otherPlanName) => otherPlanName === planName);
+};
+
+export const getHasPlusPlan = (planName?: PLANS | ADDON_NAMES) => {
+    return (
+        planName &&
+        [
+            PLANS.MAIL,
+            PLANS.VPN,
+            PLANS.VPN2024,
+            PLANS.PASS,
+            PLANS.DRIVE,
+            PLANS.DRIVE_1TB,
+            PLANS.VPN_PASS_BUNDLE,
+            PLANS.WALLET,
+            PLANS.PASS_LIFETIME,
+        ].some((otherPlanName) => otherPlanName === planName)
     );
 };
 
@@ -1083,6 +1105,81 @@ export function isSubscriptionUnchanged(
     const cycleUnchanged = !cycle || cycle === subscription?.Cycle;
 
     return planIdsUnchanged && cycleUnchanged;
+}
+
+export function isForbiddenPlusToPlus({
+    subscription,
+    newPlanName,
+}: {
+    subscription: Subscription | FreeSubscription | null | undefined;
+    user: UserModel;
+    newPlanName: PLANS | undefined;
+}): boolean {
+    if (!subscription) {
+        return false;
+    }
+    const subscribedPlan = getPrimaryPlan(subscription?.UpcomingSubscription ?? subscription);
+    const subscribedPlans = [subscribedPlan].filter(isTruthy).filter(
+        /**
+         Ignore pass lifetime, they should always be allowed to change to another plus plan
+         **/ (plan) => plan.Name !== PLANS.PASS_LIFETIME
+    );
+    const isSubscribedToAPlusPlan = subscribedPlans.some((subscribedPlan) => getHasPlusPlan(subscribedPlan.Name));
+    const isNotSamePlanName = !subscribedPlans.some((subscribedPlan) => subscribedPlan.Name === newPlanName);
+    const allowPlusToPlusTransitions = [
+        {
+            // Going from Pass
+            from: [PLANS.PASS],
+            // To Pass lifetime
+            to: [PLANS.PASS_LIFETIME],
+        },
+        {
+            // Going from Drive 200 GB or Drive 1 TB
+            from: [PLANS.DRIVE, PLANS.DRIVE_1TB],
+            // To Drive 200 GB or Drive 1 TB should be allowed
+            to: [PLANS.DRIVE, PLANS.DRIVE_1TB],
+        },
+        {
+            // Going from VPN Plus or Pass plus
+            from: [PLANS.VPN, PLANS.VPN2024, PLANS.PASS],
+            // To VPN + Pass bundle
+            to: [PLANS.VPN_PASS_BUNDLE],
+        },
+        {
+            // Going from legacy vpn
+            from: [PLANS.VPN],
+            // To new vpn
+            to: [PLANS.VPN2024],
+        },
+    ];
+    const allowPlusToPlusTransition = !allowPlusToPlusTransitions.some(({ from, to }) => {
+        return subscribedPlans.some(
+            (subscribedPlan) =>
+                subscribedPlan.Name && newPlanName && from.includes(subscribedPlan.Name) && to.includes(newPlanName)
+        );
+    });
+    const isNewPlanAPlusPlan = getHasPlusPlan(newPlanName);
+    return Boolean(isSubscribedToAPlusPlan && isNewPlanAPlusPlan && isNotSamePlanName && allowPlusToPlusTransition);
+}
+
+export function getIsPlanTransitionForbidden({
+    subscription,
+    user,
+    plansMap,
+    planIDs,
+}: {
+    subscription: Subscription | FreeSubscription | null | undefined;
+    user: UserModel;
+    planIDs: PlanIDs;
+    cycle: CYCLE;
+    plansMap: PlansMap;
+}) {
+    const newPlan = getPlanFromPlanIDs(plansMap, planIDs);
+    const newPlanName = newPlan?.Name;
+    if (isForbiddenPlusToPlus({ subscription, user, newPlanName })) {
+        return { type: 'plus-to-plus', newPlanName };
+    }
+    return null;
 }
 
 export function isCheckForbidden(
