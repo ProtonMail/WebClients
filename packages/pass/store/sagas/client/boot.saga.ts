@@ -22,6 +22,7 @@ import {
     stopEventPolling,
 } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
@@ -76,7 +77,10 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
             yield put(withRevalidate(secureLinksGet.intent()));
             yield put(getAuthDevices.intent());
 
-            if (EXTENSION_BUILD) yield put(resolveWebsiteRules.intent());
+            if (EXTENSION_BUILD) {
+                yield put(resolveWebsiteRules.intent());
+                yield put(resolvePrivateDomains.intent());
+            }
 
             if (fromCache) {
                 /** These actions should only be revalidated when booting
