@@ -220,7 +220,7 @@ export function useAccessiblePlans({
 
     const isVpnSettingsApp = app === APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app === APPS.PROTONPASS;
-    const isDriveSettingsApp = app === APPS.PROTONDRIVE;
+    const isDriveSettingsApp = app === APPS.PROTONDRIVE || app === APPS.PROTONDOCS;
     const isWalletSettingsApp = app === APPS.PROTONWALLET;
 
     const plansMap = getPlansMap(plans, currency, false);
