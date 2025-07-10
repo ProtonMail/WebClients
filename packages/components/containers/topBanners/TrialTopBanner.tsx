@@ -12,9 +12,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Time from '@proton/components/components/time/Time';
 import TimeRemaining from '@proton/components/components/timeRemaining/TimeRemaining';
-import SubscriptionModalProvider, {
-    useSubscriptionModal,
-} from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
 import { CYCLE, PLANS, PLAN_NAMES, Renew } from '@proton/payments';
@@ -60,21 +58,6 @@ const ModalAction = ({ textAction, upsellRef }: { textAction: string; upsellRef:
     );
 };
 
-const WrappedModalAction = ({
-    fromApp,
-    ...rest
-}: {
-    fromApp: APP_NAMES;
-    textAction: string;
-    upsellRef: string | undefined;
-}) => {
-    return (
-        <SubscriptionModalProvider app={fromApp}>
-            <ModalAction {...rest} />
-        </SubscriptionModalProvider>
-    );
-};
-
 const TrialEndsActionButton = ({
     refApp,
     fromApp,
@@ -101,7 +84,7 @@ const TrialEndsActionButton = ({
     // If that's already Account or VPN settings app then we render the buton that will open the subscription modal
     // directly
     if (APP_NAME === APPS.PROTONACCOUNT || APP_NAME === APPS.PROTONVPN_SETTINGS) {
-        return <WrappedModalAction upsellRef={upsellRef} fromApp={fromApp} textAction={textAction} />;
+        return <ModalAction upsellRef={upsellRef} textAction={textAction} />;
     }
 
     // For all other apps we render the button that will redirect to the account app
