@@ -52,7 +52,6 @@ export {
     NodeType,
     MemberRole,
     RevisionState,
-    MetricContext,
     ThumbnailType,
     ProtonDriveError,
     ValidationError,
