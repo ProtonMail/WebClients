@@ -2581,6 +2581,11 @@
         "Ваша підписка ${ PLAN_NAMES[PLANS.PASS] } має спеціальну ціну ${ price } на рік. Перейшовши на тарифний план Безплатний, ви назавжди втратите знижку, навіть якщо в майбутньому знову перейдете на нього."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Завантажити для Windows"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Відкрити в ${ DRIVE_SHORT_APP_NAME }"
@@ -4267,6 +4272,9 @@
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
       ],
+      "Ad targeting": [
+        "Націлювання реклами"
+      ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
       ],
@@ -4921,6 +4929,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Не всі файли були передані. Спробуйте вивантажити або завантажити файли ще раз."
       ],
+      "Not connected": [
+        "Не під’єднано"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Примітка: дані можуть бути досі доступними локально на пристроях, де встановлено ${ DRIVE_APP_NAME }."
       ],
@@ -5470,6 +5481,9 @@
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
+      "VPN IP": [
+        "VPN IP"
+      ],
       "Want to sync files faster?": [
         "Хочете синхронізувати файли швидше?"
       ],
@@ -5692,6 +5706,9 @@
       "Your information was found on ${ displayedDate }": [
         "Вашу інформацію було знайдено на ${ displayedDate }"
       ],
+      "Your IP": [
+        "Ваш IP"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
       ],
@@ -5700,6 +5717,9 @@
       ],
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Ваша наступна дата виставлення рахунку — ${ renewalTime }. Якщо вам потрібна негайна зміна тарифу, зверніться до служби підтримки."
+      ],
+      "Your online activity is protected": [
+        "Ваша онлайн активність захищена"
       ],
       "Your password was leaked:": [
         "Ваш пароль було викрито:"
@@ -6371,6 +6391,12 @@
       ],
       "Your alias": [
         "Ваш псевдонім"
+      ],
+      "Your IP": [
+        "Ваш IP"
+      ],
+      "Your location": [
+        "Ваше розташування:"
       ]
     },
     "Label for contact group color": {
@@ -10241,6 +10267,9 @@
       "Deleting contacts": [
         "Видалення контактів"
       ],
+      "Desktop": [
+        "Настільний"
+      ],
       "Discard": [
         "Відхилити"
       ],
@@ -10255,6 +10284,9 @@
       ],
       "Download ${ date }": [
         "Завантажити ${ date }"
+      ],
+      "Download the app": [
+        "Завантажити програму"
       ],
       "Download unverified file?": [
         "Завантажити неперевірені файли?"
@@ -10345,6 +10377,9 @@
       ],
       "Hm, we couldn't find that one": [
         "Такої сторінки не знайдено"
+      ],
+      "How does it all work?": [
+        "Як це все працює?"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""

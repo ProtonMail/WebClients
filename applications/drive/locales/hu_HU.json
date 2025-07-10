@@ -2958,6 +2958,17 @@
         "Az Ön ${ PLAN_NAMES[PLANS.PASS] } előfizetése évi ${ price } kedvezményes áron vásárolható meg. Ha visszaminősít egy ingyenes csomagra, akkor végleg elveszíti a kedvezményt, még akkor is, ha a jövőben újra frissít."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Letöltés Linux rendszerre"
+      ],
+      "Download for macOS": [
+        "Letöltés macOS rendszerre"
+      ],
+      "Download for Windows": [
+        "Letöltés Windows rendszerre"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Megnyitás ebben: ${ DRIVE_SHORT_APP_NAME }"
@@ -3504,6 +3515,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Próbáljon csak betűket, számokat és _.-t használni"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Nem sikerült betölteni a VPN vezérlőpultot. Ellenőrizze a kapcsolatot és próbálkozzon újra."
       ],
       "Unable to set photo as cover": [
         "Nem lehet beállítani a fényképet borítóként"
@@ -4593,12 +4607,21 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } már létezik ezen a helyen."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "A ${ VPN_APP_NAME } maszkolja az IP-címet, így a weboldalak nem tudják azonosítani."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
         "(${ memberCount } tag)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /hónap)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automatikus kapcsolódás**: Megnyitja a VPN-t, és kapcsolódik hozzá, amint bekapcsolja az eszközét."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Vészkapcsoló**: Megállítja az adatszivárgást azáltal, hogy blokkolja az internetet, ha a VPN kapcsolat váratlanul megszakad."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bónusz tárterület"
@@ -4619,14 +4642,29 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Egy telefonszám csak egy ${ BRAND_NAME } fiók ellenőrzéséhez használható"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "A biztonságos kapcsolat elengedhetetlen a távmunkához. A VPN megvédi a vállalati adatokat a kiberfenyegetésektől, és privátban tartja a munkáját."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "A felhasználó egy fiókot jelent, amely egyetlen felhasználói nevet, e-mail fiókot és személyt takar"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "A VPN titkosítja a kapcsolatot és elrejti az IP-címét, így sokkal nehezebbé teszi, hogy bárki nyomon kövesse vagy figyelje a böngészését."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "A VPN elrejti az Ön IP-címét és titkosítja a böngészési tevékenységét, így a webhelyek, hirdetők és internetszolgáltatók nehezebben tudják Önt nyomon követni."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "A VPN egy biztonságos alagút az Ön eszköze és az internet között. Elrejti az Ön tartózkodási helyét és tevékenységét az internetszolgáltatója (ISP) és a meglátogatott webhelyek elől."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "A fiók hozzáférése rendezetlen számla miatt korlátozva lett. Kérjük lépjen kapcsolatba az adminisztrátorral."
       ],
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
+      ],
+      "Ad targeting": [
+        "Célzott hirdetések"
       ],
       "Address copied to clipboard": [
         "Cím a vágólapra másolva"
@@ -4636,6 +4674,9 @@
       ],
       "Admin account allocation": [
         "Tárhely admin fiók számára"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "A hirdetők nyomon követik az Ön böngészési tevékenységét, hogy célzott hirdetéseket mutassanak. A ${ VPN_APP_NAME } blokkolja a követőket és a hirdetéseket, ezáltal felgyorsítja a kapcsolatot, és javítja az online élményt."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "A mesterséges intelligenciával működő asszisztens segít jobb e-maileket készíteni, gyorsan és könnyedén."
@@ -4813,6 +4854,9 @@
       ],
       "Conflict": [
         "Ütközés"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Kapcsolódjon a ${ VPN_APP_NAME } alkalmazáshoz a privát böngészéshez"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Névjegy a csoporthoz rendelve: ${ contactGroupName }"
@@ -5082,6 +5126,9 @@
       "from the version history?": [
         "az előző változatok közül?"
       ],
+      "Geoblocking": [
+        "Földrajzi tiltás"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Szerezze be az alkalmazást a telefonjáról készült fényképek biztonsági mentéséhez, vagy töltse fel őket ide."
       ],
@@ -5096,6 +5143,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Nyissa meg a Saját fájlokat és töltsön fel néhány fájlt."
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "A kormányok és az internetszolgáltatók megfigyelhetik az online tevékenységeket. A valós IP-cím elrejtésével és a tevékenysége titkosításával az Ön böngészése privát lesz."
       ],
       "here": [
         "ide"
@@ -5152,6 +5202,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Adatok importálása innen: ${ fromEmail }, ide: ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "Korlátozó országokban"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "A következő lépésben egy Bitcoin címet használva küldhet befizetést."
       ],
@@ -5193,6 +5246,9 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "A lomtárba helyezett tételek itt maradnak, amíg törlésre nem kerülnek"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "A legjobb, ha mindig VPN-t használ. Amikor a kiberbiztonsági fenyegetések a legnagyobbak lehetnek:"
       ],
       "It’s easy and secure": [
         "Egyszerű és biztonságos"
@@ -5303,6 +5359,9 @@
       "More": [
         "Továbbiak"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "A legtöbb nyilvános Wi-Fi-hálózat biztonságos, de néhány nem rendelkezik megfelelő védelemmel, így ki van téve a kiberfenyegetéseknek. A VPN titkosítja a forgalmat, amivel védelmet nyújt."
+      ],
       "Moving files": [
         "Fájlok áthelyezése"
       ],
@@ -5351,6 +5410,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Nem minden fájl került átvitelre. Próbálja meg újra fel- vagy letölteni a fájlokat."
       ],
+      "Not connected": [
+        "Nincs kapcsolódva"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Megjegyzés: az adatok még mindig elérhetők lehetnek helyileg olyan eszközökön, ahol telepítette a ${ DRIVE_APP_NAME } alkalmazást."
       ],
@@ -5369,8 +5431,8 @@
       "of": [
         "/"
       ],
-      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
-        "Miután ez a folyamat befejeződött, a helyreállított adatok másolatát egy új mappában találja, amelynek neve „Automated Recovery (mai dátum)”. Az adatoknak ez a másolata nem számít bele a tárolási korlátba."
+      "On public WiFi networks": [
+        "Nyilvános Wi-Fi-hálózatokon"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Az egyik titkosított felhőtárolója le van zárva. A legvalószínűbb oka egy nemrégi jelszó-újraállítás lehet."
@@ -5404,9 +5466,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Figyelmeztetéseink a biztonságot helyezik előtérbe.Ha nem ismeri fel ezeket a feltört információkat nyugodtan figyelmen kívül hagyhatja ezt."
-      ],
-      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
-        "Rendszereink azt észlelték, hogy az előző helyreállítás nem fejeződött be sikeresen, és előfordulhat, hogy egyes fájlok nem lettek teljesen helyreállítva. Automatikusan újraindítottuk a helyreállítási folyamatot, így biztosítjuk, hogy minden teljesen helyre legyen állítva."
       ],
       "Owner": [
         "Tulajdonos"
@@ -5551,6 +5610,9 @@
       "Primary": [
         "Elsődleges"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "A privát böngészés (vagy „inkognitó” mód) csak arra jó, hogy a tevékenységét rejtve tartsa az eszközén. Megakadályozza, hogy a böngészője elmentse az előzményeket és a cookie-kat, de nem tesz láthatatlanná. Az internetszolgáltatója, a hálózati rendszergazda és az Ön által látogatott webhelyek továbbra is láthatják, hogy mit csinál az interneten."
+      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privát keresés engedélyezve. Bezárhatja ezt a párbeszédet és kereshet fájlokat és mappákat."
       ],
@@ -5604,6 +5666,9 @@
       ],
       "Scan issue": [
         "Beolvasási probléma"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Olvassa be a QR-kódot a mobilkészülékével"
       ],
       "Search cannot be enabled in this browser": [
         "A keresés nem engedélyezhető ebben a böngészőben"
@@ -5704,17 +5769,26 @@
       "Some files failed to upload. Try uploading the files again.": [
         "Néhány fájl feltöltése nem sikerült. Próbálja meg újra."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Egyes kormányok letiltják vagy korlátozzák a hozzáférést bizonyos weboldalakhoz. A VPN segít megkerülni a cenzúrát, miközben megőrzi az Ön tevékenysége és személyazonossága privát jellegét."
+      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Néhány fájlja már nem érhető el. Állítsa vissza a fájlok elérését. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Néhány fénykép ebben az albumban nincs mentve az idővonalára. Az album törlése véglegesen törli ezeket a fényképeket."
       ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Egyes weboldalak és videómegosztó szolgáltatások földrajzi régiónként blokkolják a tartalmakat. A VPN segítségével megkerülheti ezeket a korlátozásokat, és szabadon hozzáférhet az internethez."
+      ],
       "Something went wrong, please try again later.": [
         "Hiba történt. Kérjük, próbálkozzon később."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Kezdje el megosztani a névjegyeivel, és használja online szolgáltatásokhoz."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Maradjon könnyedén kapcsolatban a következő VPN-beállítások engedélyezésével:"
       ],
       "Storage allocated to other users in this organisation": [
         "A szervezet további felhasználói számára lefoglalt tárhely"
@@ -5740,6 +5814,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Az előfizetés megszűnik: Aktiválja újra eddig: ${ byDate } , hogy megtarthassa ezen csomagjának előnyeit: ${ planName } ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Megfigyelés"
       ],
       "Symbols (#$&)": [
         "Szimbólumok (#$&)"
@@ -5832,8 +5909,14 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "A hivatkozás egy korábbiváltozatban lett létrehozva és nem módosítható. A beállítások megváltoztatásához törölje a hivatkozást és készítsen egy újat."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Ez azt jelenti, hogy az internetszolgáltatója és az Ön által látogatott webhelyek nem tudják összekapcsolni személyes adatait az online tevékenységével."
+      ],
       "This month": [
         "Ebben a hónapban"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Ezt az egyedi kódot a weboldalak és az internetszolgáltatók felhasználhatják az Ön tartózkodási helyének és böngészési előzményeinek az eszközéhez való kapcsolására."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Ez csak az albumot törli. A fényképek az idővonalán maradnak. Ez a művelet nem vonható vissza."
@@ -5906,6 +5989,9 @@
       ],
       "Total VPN connections": [
         "Összes VPN kapcsolat"
+      ],
+      "Tracking": [
+        "Nyomkövetés"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\" fájl átvitele megszakítva"
@@ -6006,6 +6092,9 @@
       "Visa Secure logo": [
         "Visa biztonsági logó"
       ],
+      "VPN IP": [
+        "VPN IP"
+      ],
       "Want to sync files faster?": [
         "Szeretné gyorsabban szinkronizálni a fájlokat?"
       ],
@@ -6036,9 +6125,6 @@
       "We need to authenticate your payment with your bank.": [
         "A befizetését hitelesítenünk kell a bankjánál."
       ],
-      "We sincerely apologize for the inconvenience this may have caused you.": [
-        "Elnézést kérünk a kellemetlenségekért, amelyeket ez okozhatott Önnek."
-      ],
       "We use 3-D Secure to protect your payments": [
         "Erős ügyfélhitelesítést használunk az Ön fizetésének biztonsága érdekében."
       ],
@@ -6062,6 +6148,12 @@
       ],
       "What would you like to do?": [
         "Mit szeretne tenni?"
+      ],
+      "When working remotely": [
+        "Ha távolról dolgozik"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Amikor VPN-hez kapcsolódik, az titkosítási technológiát használ az IP-cím (az eszközhöz rendelt egyedi kód) elrejtéséhez."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Amikor engedélyezi a kétlépcsős azonosítást, biztosítunk helyreállítási kódokat is, amelyekkel akkor is bejelentkezhet, ha nem fér hozzá a hitelesítő alkalmazásához."
@@ -6267,6 +6359,15 @@
       "Your information was found on ${ displayedDate }": [
         "Az ön információja meg lett találva ezen a napon: ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Az internetszolgáltatója megfigyelheti vagy akár eladhatja az Ön adatait, és korlátozhatja, hogy mely weboldalakat érheti el."
+      ],
+      "Your IP": [
+        "Az Ön IP-címe"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Az Ön IP-címe látható, és felhasználható az online tevékenységének nyomon követésére."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "A bejelentkezési adatok az importálás befejezése után nem kerülnek tárolásra."
       ],
@@ -6276,11 +6377,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "A következő számlázási dátum ${ renewalTime }. Kérjük, vegye fel a kapcsolatot az ügyfélszolgálattal, ha azonnali csomagváltásra van szüksége."
       ],
+      "Your online activity is protected": [
+        "Az online tevékenysége védett"
+      ],
       "Your password was leaked:": [
         "Kiszivárgott a jelszava:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "A fizikai tartózkodási helye látható, és felhasználható az internethez való hozzáférése korlátozására."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "A csomagja maximum 10 változatot tesz lehetővé, maximum 7 napig"
@@ -6994,6 +7101,15 @@
       ],
       "Your alias": [
         "Az e-mail álneve"
+      ],
+      "Your IP": [
+        "Az Ön IP-címe"
+      ],
+      "Your ISP": [
+        "Az Ön internetszolgáltatója"
+      ],
+      "Your location": [
+        "Az ön tartózkodási helye"
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
@@ -11018,9 +11134,6 @@
       "Auto-deletion is active": [
         "Az automatikus törlés aktív"
       ],
-      "Automatic Recovery in Progress": [
-        "Automatikus helyreállítás folyamatban"
-      ],
       "Billing cycle": [
         "Számlázási ciklus"
       ],
@@ -11164,6 +11277,9 @@
       "Deleting contacts": [
         "Névjegyek törlése"
       ],
+      "Desktop": [
+        "Asztali számítógép"
+      ],
       "Discard": [
         "Elvetés"
       ],
@@ -11181,6 +11297,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } alkalmazások letöltése"
+      ],
+      "Download the app": [
+        "Töltse le az alkalmazást"
       ],
       "Download unverified file?": [
         "Ellenőrizetlen fájl letöltése?"
@@ -11264,6 +11383,9 @@
         "${ searchView.numberOfResults } találat",
         "${ searchView.numberOfResults } találat"
       ],
+      "Get more from your VPN": [
+        "Hozzon ki többet a VPN-ből"
+      ],
       "Get the apps": [
         "Alkalmazások letöltése"
       ],
@@ -11284,6 +11406,9 @@
       ],
       "Hm, we couldn't find that one": [
         "Sajnos, ez nem található"
+      ],
+      "How does it all work?": [
+        "Hogyan is működik ez az egész?"
       ],
       "Human verification": [
         "Robot ellenőrzés"
@@ -11325,6 +11450,9 @@
       "Location": [
         "Hely"
       ],
+      "Make a secure connection your default": [
+        "Tegye a biztonságos kapcsolatot alapértelmezetté"
+      ],
       "Manage secure link": [
         "Biztonságos hivatkozás kezelése"
       ],
@@ -11339,6 +11467,9 @@
       ],
       "Minicalendar": [
         "Mini naptár"
+      ],
+      "Mobile": [
+        "Mobil"
       ],
       "Modified": [
         "Módosítva"
@@ -11456,6 +11587,9 @@
       ],
       "Preview": [
         "Előnézet"
+      ],
+      "Private browsing vs VPN": [
+        "Privát böngészés és VPN"
       ],
       "Processing...": [
         "Folyamatban..."
@@ -11671,6 +11805,9 @@
       "Version history": [
         "Változatelőzmények"
       ],
+      "VPN explained": [
+        "A VPN működése"
+      ],
       "Warning": [
         "Figyelem"
       ],
@@ -11680,8 +11817,17 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Üdvözöljük a ${ BRAND_NAME } üzleti verziójánál"
       ],
+      "What can a VPN protect you from?": [
+        "Mitől véd meg egy VPN?"
+      ],
+      "What is a VPN?": [
+        "Mi az a VPN?"
+      ],
       "What would you like to import?": [
         "Mit szeretne importálni?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Mikor a legfontosabb a VPN használata?"
       ],
       "You can now create unlimited folders and labels": [
         "Mostantól korlátlan számú mappát és címkét hozhat létre"
