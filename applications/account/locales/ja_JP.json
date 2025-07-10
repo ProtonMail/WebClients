@@ -541,12 +541,6 @@
       "Download CSV sample": [
         "CSV サンプルをダウンロード"
       ],
-      "Download for macOS": [
-        "macOS 版をダウンロード"
-      ],
-      "Download for Windows": [
-        "Windows版をダウンロード"
-      ],
       "Download ICS": [
         "ICSをダウンロード"
       ],
@@ -970,6 +964,9 @@
       "Next month": [
         "翌月"
       ],
+      "Next page": [
+        "次のページ"
+      ],
       "No": [
         "いいえ"
       ],
@@ -1014,6 +1011,9 @@
       ],
       "Previous month": [
         "前月"
+      ],
+      "Previous page": [
+        "前のページ"
       ],
       "Publish changes": [
         "変更を公開"
@@ -4463,14 +4463,6 @@
         "Windows 8/8.1/7 または Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu 用の .deb"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat 用の .rpm"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "ファイルへの安全なアクセスのために、無料で${ DRIVE_APP_NAME }アカウントを作成"
@@ -6725,14 +6717,6 @@
         "デスクトップ アプリの無料トライアルは終了しました"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "App Store での ${ appName }"
-      ],
-      "${ appName } on Play Store": [
-        "Play Store での ${ appName }"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "自動転送"
@@ -8450,9 +8434,6 @@
       "Failed to fetch logs.": [
         "ログの読み込みに失敗しました。"
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "速くて集中できる。メールとカレンダーをデスクトップ上で。"
-      ],
       "Featured in": [
         "注目の"
       ],
@@ -9520,6 +9501,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "SMTP送信は、サードパーティのサービスやデバイスがお客様のカスタムドメインアドレス用に${ MAIL_APP_NAME }を介してメールを送信することを許可します。この機能は、カスタムドメインを持つ${ BRAND_NAME }のBusinessユーザーのみに利用可能です。"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタム ドメイン アドレスの ${ MAIL_APP_NAME } を介してメールを送信できるようになります。 アクセスをリクエストするには、ユースケース、使用したいカスタム ドメイン、および予想される時間ごとおよび日ごとのメールの量を説明する ${ createTicket } を送信してください。"
@@ -11311,9 +11295,6 @@
       "Backup password": [
         "バックアップパスワード"
       ],
-      "Beta": [
-        "ベータ"
-      ],
       "Billing cycle": [
         "支払い間隔"
       ],
@@ -12037,9 +12018,6 @@
       "Second password": [
         "セカンドパスワード"
       ],
-      "Select Linux package format": [
-        "Linuxパッケージフォーマットを選択"
-      ],
       "Select Linux platform": [
         "Linux プラットフォームを選択"
       ],
@@ -12761,6 +12739,9 @@
       ],
       "Sign in success (awaiting second factor)": [
         "サインイン成功 (二要素認証待機中)"
+      ],
+      "Sign in success (awaiting verification)": [
+        "サインイン成功 (検証待ち)"
       ],
       "Sign out": [
         "サインアウト"
@@ -17112,6 +17093,9 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
+        "迷惑メールをなくすために${ FREE_PASS_ALIASES }件のHide-my-email別名"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } 件のアドレス"
       ],
@@ -19701,15 +19685,6 @@
       ],
       "Folders and labels": [
         "フォルダーとラベル"
-      ],
-      "For Linux": [
-        "Linuxの場合"
-      ],
-      "For macOS": [
-        "macOSの場合"
-      ],
-      "For Windows": [
-        "Windowsの場合"
       ],
       "Forgot password": [
         "パスワードを忘れました"

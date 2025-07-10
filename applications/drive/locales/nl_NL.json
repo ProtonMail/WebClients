@@ -3005,6 +3005,17 @@
         "Uw ${ PLAN_NAMES[PLANS.PASS] }-abonnement heeft een speciale prijs van ${ price } per jaar. Als u downgrade naar een Free abonnement, zult u permanent uw korting verliezen, zelfs als u in de toekomst opnieuw upgrade."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Downloaden voor Linux"
+      ],
+      "Download for macOS": [
+        "Downloaden voor macOS"
+      ],
+      "Download for Windows": [
+        "Download voor Windows"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Openen in ${ DRIVE_SHORT_APP_NAME }"
@@ -3566,6 +3577,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Kan VPN dashboard niet laden. Controleer uw verbinding en probeer het opnieuw."
       ],
       "Unable to set photo as cover": [
         "Kan foto niet als cover instellen"
@@ -4655,12 +4669,21 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } bestaat al op deze plaats."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } maskeert uw IP-adres, zodat websites u niet kunnen identificeren."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/maand)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
@@ -4681,14 +4704,29 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Een veilige verbinding is essentieel bij het werken op afstand. Een VPN beschermt bedrijfsgegevens tegen cyberbedreigingen en houdt uw werk privé."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Een VPN versleutelt uw verbinding en verbergt uw IP-adres, waardoor het voor iedereen veel moeilijker is om browsen te volgen of te volgen."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Een VPN verbergt uw IP-adres en versleutelt uw browseractiviteit, waardoor het moeilijker wordt voor websites, adverteerders en internetproviders om u over een bepaalde periode te volgen."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Een VPN is een veilige tunnel tussen uw apparaat en het internet. Het verbergt uw locatie en activiteit van uw internetserviceprovider (ISP) en de websites die u bezoekt."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Toegang tot dit account is beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
+      ],
+      "Ad targeting": [
+        "Advertentie doelwit"
       ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
@@ -4698,6 +4736,9 @@
       ],
       "Admin account allocation": [
         "Toewijzing beheerdersaccount"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Adverteerders volgen uw internetgedrag om gerichte advertenties te tonen. ${ VPN_APP_NAME } blokkeert trackers en advertenties, maakt uw verbinding sneller en verbetert uw online ervaring."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
@@ -4875,6 +4916,9 @@
       ],
       "Conflict": [
         "Probleem"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Verbind met ${ VPN_APP_NAME } om privé te browsen"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contact toegekend aan groep ${ contactGroupName }"
@@ -5147,6 +5191,9 @@
       "from the version history?": [
         "van de versie geschiedenis?"
       ],
+      "Geoblocking": [
+        "Geoblocking"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Download de app om foto's van uw telefoon te back-uppen of upload hier."
       ],
@@ -5161,6 +5208,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Ga naar \"Mijn bestanden\" en upload eerst enkele bestanden."
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
       ],
       "here": [
         "hier"
@@ -5217,6 +5267,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "In restrictieve landen"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
       ],
@@ -5258,6 +5311,9 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "Items verplaatst naar de prullenbak blijven hier tot het verwijderd is"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Het is het beste om op elk moment een VPN te gebruiken. Maar hier is wanneer cyberbeveiligingsbedreigingen de grootste kunnen zijn:"
       ],
       "It’s easy and secure": [
         "Het is eenvoudig en veilig"
@@ -5368,6 +5424,9 @@
       "More": [
         "Meer"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "De meeste openbare wifi-netwerken zijn veilig, maar sommige zijn onveilig, waardoor u wordt blootgesteld aan cyberbedreigingen. Een VPN versleutelt uw verkeer en houdt u beschermd."
+      ],
       "Moving files": [
         "Bestanden verplaatsen"
       ],
@@ -5416,6 +5475,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Niet alle bestanden zijn overgeplaatst. Probeer de bestanden opnieuw te up- of downloaden."
       ],
+      "Not connected": [
+        "Niet verbonden"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Opmerking: gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ DRIVE_APP_NAME } hebt geïnstalleerd."
       ],
@@ -5437,8 +5499,8 @@
       "of": [
         "van"
       ],
-      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
-        "Zodra dit proces is voltooid, vindt u een kopie van uw herstelde gegevens in een nieuwe map genaamd \"Automated Recovery (huidige datum)\". Deze kopie van uw gegevens telt niet mee met uw opslagquota."
+      "On public WiFi networks": [
+        "Op openbare wifinetwerken"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Eén van uw versleutelde drives is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoordwijziging."
@@ -5472,9 +5534,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
-      ],
-      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
-        "Onze systemen hebben gedetecteerd dat uw vorige herstel niet succesvol is voltooid, en sommige bestanden zijn mogelijk niet volledig hersteld. We hebben het herstelproces automatisch opnieuw gestart om ervoor te zorgen dat alles volledig hersteld wordt."
       ],
       "Owner": [
         "Eigenaar"
@@ -5619,6 +5678,9 @@
       "Primary": [
         "Primair"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt je browser om geschiedenis en cookies op te slaan, maar het maakt je niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
+      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privézoeken ingeschakeld. U kunt dit dialoog nu afsluiten, en naar bestanden en folders zoeken."
       ],
@@ -5672,6 +5734,9 @@
       ],
       "Scan issue": [
         "Scan probleem"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Scan de QR-code met uw mobiele apparaat"
       ],
       "Search cannot be enabled in this browser": [
         "Zoeken kan niet ingeschakeld worden in deze browser"
@@ -5772,17 +5837,26 @@
       "Some files failed to upload. Try uploading the files again.": [
         "Sommige bestanden konden niet worden geüpload. Probeer de bestanden opnieuw te uploaden."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Sommige regeringen blokkeren of beperken de toegang tot bepaalde websites. Een VPN helpt censuur te omzeilen en uw activiteit en identiteit privé te houden."
+      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Sommige bestanden zijn niet meer toegankelijk. Herstel de toegang tot uw bestanden. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Sommige foto's in dit album zijn niet opgeslagen in uw tijdlijn. Als u dit album verwijdert, worden die foto's permanent verwijderd."
       ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Sommige websites en streaming services blokkeren de inhoud per regio. Een VPN stelt u in staat om deze beperkingen te omzeilen en toegang tot het internet te krijgen."
+      ],
       "Something went wrong, please try again later.": [
         "Er ging iets mis. Probeer het later nog eens."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begin het te delen met contacten en gebruik het voor online diensten."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Blijf moeiteloos verbonden door de volgende VPN-instellingen in te schakelen:"
       ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
@@ -5808,6 +5882,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Surveillance"
       ],
       "Symbols (#$&)": [
         "Symbolen (#$&)"
@@ -5900,8 +5977,14 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Deze koppeling is gemaakt met een oude versie van Drive en kan niet worden aangepast. Verwijder deze link en creeër een nieuwe om de instellingen te wijzigen."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Dit betekent dat uw internetprovider en de websites die u bezoekt, uw persoonlijke gegevens niet kunnen koppelen aan uw online activiteiten."
+      ],
       "This month": [
         "Deze maand"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Deze unieke code kan worden gebruikt door websites en ISP's (internetproviders) om uw locatie en browsegeschiedenis te koppelen aan uw apparaat"
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Dit verwijdert alleen het album. Uw foto's blijven in uw tijdlijn. Deze actie kan niet ongedaan worden gemaakt."
@@ -5974,6 +6057,9 @@
       ],
       "Total VPN connections": [
         "Totale VPN-verbindingen"
+      ],
+      "Tracking": [
+        "Tracking"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Overdracht geannuleerd voor bestand \"${ name }\""
@@ -6074,6 +6160,9 @@
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
+      "VPN IP": [
+        "VPN IP-adres"
+      ],
       "Want to sync files faster?": [
         "Wilt u bestanden sneller synchroniseren?"
       ],
@@ -6104,9 +6193,6 @@
       "We need to authenticate your payment with your bank.": [
         "We moeten uw betaling authenticeren met uw bank."
       ],
-      "We sincerely apologize for the inconvenience this may have caused you.": [
-        "Wij verontschuldigen ons voor dit ongemak."
-      ],
       "We use 3-D Secure to protect your payments": [
         "We gebruiken 3-D Secure om uw betalingen te beschermen"
       ],
@@ -6130,6 +6216,12 @@
       ],
       "What would you like to do?": [
         "Wat zou u willen doen?"
+      ],
+      "When working remotely": [
+        "Bij werken op afstand"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Wanneer u verbinding maakt met VPN, gebruikt het versleutelingstechnologie om uw IP-adres te verbergen (een unieke code toegewezen aan uw apparaat)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw authenticatie app."
@@ -6335,6 +6427,15 @@
       "Your information was found on ${ displayedDate }": [
         "Uw informatie is gevonden op ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Uw provider kan uw gegevens monitoren en soms verkopen, of zelfs beperken welke websites u kunt bezoeken."
+      ],
+      "Your IP": [
+        "Uw IP-adres"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Uw IP-adres is zichtbaar en kan worden gebruikt om uw online activiteit te volgen."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
       ],
@@ -6344,11 +6445,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Uw volgende factuurdatum is ${ renewalTime }. Neem contact op met support als u een onmiddellijke abonnementswijziging nodig heeft."
       ],
+      "Your online activity is protected": [
+        "Uw online activiteiten zijn beschermd"
+      ],
       "Your password was leaked:": [
         "Uw wachtwoord werd gelekt:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Uw fysieke locatie is zichtbaar en kan worden gebruikt om uw toegang tot het internet te beperken."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Uw abonnement is beperkt tot 10 versies tot 7 dagen."
@@ -7065,6 +7172,15 @@
       ],
       "Your alias": [
         "Uw alias"
+      ],
+      "Your IP": [
+        "Uw IP"
+      ],
+      "Your ISP": [
+        "Uw internetprovider"
+      ],
+      "Your location": [
+        "Uw locatie"
       ],
       "Your password (admin)": [
         "Uw wachtwoord (beheerder)"
@@ -11120,9 +11236,6 @@
       "Auto-deletion is active": [
         "Automatisch verwijderen is actief"
       ],
-      "Automatic Recovery in Progress": [
-        "Automatisch herstellen bezig"
-      ],
       "Billing cycle": [
         "Factuurperiode"
       ],
@@ -11266,6 +11379,9 @@
       "Deleting contacts": [
         "Contacten aan het verwijderen"
       ],
+      "Desktop": [
+        "Desktop"
+      ],
       "Discard": [
         "Weggooien"
       ],
@@ -11283,6 +11399,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
+      ],
+      "Download the app": [
+        "Download de app"
       ],
       "Download unverified file?": [
         "Ongeverifieerd bestand downloaden?"
@@ -11366,6 +11485,9 @@
         "${ searchView.numberOfResults } zoekresultaat",
         "${ searchView.numberOfResults } zoekresultaten"
       ],
+      "Get more from your VPN": [
+        "Haal meer uit uw VPN"
+      ],
       "Get the apps": [
         "Verkrijg de apps"
       ],
@@ -11386,6 +11508,9 @@
       ],
       "Hm, we couldn't find that one": [
         "Sorry, we konden deze niet vinden"
+      ],
+      "How does it all work?": [
+        "Hoe werkt het?"
       ],
       "Human verification": [
         "Persoonsverificatie"
@@ -11427,6 +11552,9 @@
       "Location": [
         "Locatie"
       ],
+      "Make a secure connection your default": [
+        "Maak een beveiligde verbinding uw standaard"
+      ],
       "Manage secure link": [
         "Beveiligde link beheren"
       ],
@@ -11441,6 +11569,9 @@
       ],
       "Minicalendar": [
         "Mini-agenda"
+      ],
+      "Mobile": [
+        "Mobiel"
       ],
       "Modified": [
         "Gewijzigd"
@@ -11558,6 +11689,9 @@
       ],
       "Preview": [
         "Voorbeeld"
+      ],
+      "Private browsing vs VPN": [
+        "Privé browsen versus VPN"
       ],
       "Processing...": [
         "Wordt verwerkt..."
@@ -11773,6 +11907,9 @@
       "Version history": [
         "Versiegeschiedenis"
       ],
+      "VPN explained": [
+        "VPN uitgelegd"
+      ],
       "Warning": [
         "Waarschuwing"
       ],
@@ -11782,8 +11919,17 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
       ],
+      "What can a VPN protect you from?": [
+        "Waartegen kan een VPN u beschermen?"
+      ],
+      "What is a VPN?": [
+        "Wat is een VPN?"
+      ],
       "What would you like to import?": [
         "Wat zou u willen importeren?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Wanneer is het erg belangrijk om een VPN te gebruiken?"
       ],
       "You can now create unlimited folders and labels": [
         "U kunt nu onbeperkt mappen en labels maken"
