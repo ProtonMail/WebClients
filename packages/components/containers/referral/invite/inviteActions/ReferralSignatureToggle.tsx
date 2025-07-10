@@ -13,13 +13,12 @@ import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updatePMSignature, updatePMSignatureReferralLink } from '@proton/shared/lib/api/mailSettings';
+import { updatePMSignatureReferralLink } from '@proton/shared/lib/api/mailSettings';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { PM_SIGNATURE_REFERRAL } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import useFlag from '@proton/unleash/useFlag';
-import noop from '@proton/utils/noop';
 
 const useAvailableApps = () => {
     const [user] = useUser();
@@ -54,7 +53,13 @@ const ReferralSignatureToggle = () => {
     if (loadingMailSettings || loadingUserSettings) {
         return <SkeletonLoader width="22rem" height="1.5rem" />;
     }
-    if (!mailSettings || !userSettings.Referral?.Link || !availableApps.includes(APPS.PROTONMAIL)) {
+
+    if (
+        !mailSettings ||
+        !mailSettings?.PMSignature ||
+        !userSettings.Referral?.Link ||
+        !availableApps.includes(APPS.PROTONMAIL)
+    ) {
         return null;
     }
 
@@ -69,13 +74,8 @@ const ReferralSignatureToggle = () => {
         dispatch(mailSettingsActions.updateMailSettings({ ...mailSettings, PMSignatureReferralLink: nextValue }));
     };
 
-    const enablePMSignature = async () => {
-        await api(updatePMSignature(1));
-        dispatch(mailSettingsActions.updateMailSettings({ ...mailSettings, PMSignature: 1 }));
-    };
-
     const handleReferralSignatureClick = async (checked: boolean) => {
-        await Promise.all([toggleReferralSignature(checked), !mailSettings.PMSignature ? enablePMSignature() : noop]);
+        await toggleReferralSignature(checked);
     };
 
     const signature = (
