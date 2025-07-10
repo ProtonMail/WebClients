@@ -57,8 +57,10 @@ const UnlockModal = ({
             <ModalTwoHeader title={title} className="text-center" hasClose={false} />
             <ModalTwoContent className="text-center">
                 <div className="mb-2 color-weak">
-                    {c('pass_signup_2023: Info')
-                        .t`The offer you selected is not available for ${currentPlanTitle} subscribers.`}
+                    {getBoldFormattedText(
+                        c('pass_signup_2023: Info')
+                            .t`The offer you selected is not available for **${currentPlanTitle}** subscribers.`
+                    )}
                 </div>
                 {(() => {
                     const hasUnlockPlan = hasBit(currentPlan?.Services, unlockPlan?.Services || 0);
