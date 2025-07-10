@@ -398,7 +398,7 @@ export const isTrial = (subscription: Subscription | FreeSubscription | undefine
     const trial = !!subscription.IsTrial;
 
     if (!plan) {
-        return !!subscription.IsTrial;
+        return trial;
     }
 
     return trial && getPlanName(subscription) === plan;
@@ -419,7 +419,7 @@ export const isTrialExpired = (subscription: Subscription | undefined) => {
     return now > fromUnixTime(subscription?.PeriodEnd || 0);
 };
 
-export const willTrialExpire = (subscription: Subscription | undefined) => {
+export const willTrialExpireInLessThan1Week = (subscription: Subscription | undefined) => {
     const now = new Date();
     return isBefore(fromUnixTime(subscription?.PeriodEnd || 0), addWeeks(now, 1));
 };
