@@ -1108,8 +1108,14 @@
       "High speed streaming with VPN": [
         "Nopea suoratoisto VPN:llä"
       ],
+      "Online document editor": [
+        "Selaimella käytettävä dokumenttieditori"
+      ],
       "Protect up to 10 devices": [
         "Suojaa jopa 10 laitetta"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ],
       "Select any server": [
         "Valitse mikä tahansa palvelin"
@@ -1128,12 +1134,18 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostiverkkotunnusta"
+      ],
+      "years": [
+        "vuoden"
       ]
     },
     "anniversary_2025: Offers": {
       "${ n } month": [
         "${ n } kuukausi",
         "${ n } kuukautta"
+      ],
+      "/ month": [
+        "/ kuukausi"
       ],
       "12 months": [
         "12 kuukautta"
@@ -1146,11 +1158,22 @@
       ],
       "30 months": [
         "30 kuukautta"
+      ],
+      "for ${ durationDeal }": [
+        "hintaan ${ durationDeal }"
       ]
     },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan viestejäsi."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Peru tilaus"
+      ],
+      "Keep subscription": [
+        "Pidä tilaus"
       ]
     },
     "Badge for domain": {
@@ -3703,6 +3726,11 @@
         "Turvallinen suoratoisto"
       ]
     },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa"
+      ]
+    },
     "fido2: Action": {
       "Delete key": [
         "Poista avain"
@@ -4672,6 +4700,9 @@
       ],
       "Enable auto-renew to keep access to your premium features.": [
         "Ota automaattiuudistus käyttöön, jotta premium ominaisuudet pysyvät käytössäsi."
+      ],
+      "Enable detailed events": [
+        "Käytä yksityiskohtaisia tapahtumatietoja"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Suojaaa organisaatiotasi ottamalla kertakirjautuminen käyttöön"
@@ -7117,8 +7148,50 @@
       ]
     },
     "Log event": {
+      "Account password change": [
+        "Tilin salasana vaihdettiin"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Tunnistautumisvirhe (toinen vaihe epäonnistui)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Tunnistautumisvirhe (väärä salasana)"
+      ],
+      "Authentication success": [
+        "Tunnistautuminen onnistui"
+      ],
+      "Mailbox password change": [
+        "Postilaatikon salasana vaihdettiin"
+      ],
       "Password reset": [
         "Salasanan nollaus"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Toinen tunnistautumistapa poistettiin käytöstä (todennussovellus)"
+      ],
+      "Second factor disabled (security key)": [
+        "Toinen tunnistautumistapa poistettiin käytöstä (suojausavain)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Toinen tunnistautumistapa otettiin käyttöön (todennussovellus)"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "Kirjautuminen estettiin (väärinkäytöksen vuoksi)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Kirjautumisvirhe (toinen vaihe epäonnistui)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Kirjautumisvirhe (väärä salasana)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Kirjautuminen kiellettiin (väärinkäytöksen vuoksi)"
+      ],
+      "Sign in success": [
+        "Onnistunut kirjautuminen"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Kirjautuminen onnistui (odotetaan toista vaihetta)"
       ],
       "Sign out": [
         "Uloskirjautuminen"
@@ -8233,6 +8306,10 @@
       ],
       "Require 2FA": [
         "2FA-pakotus"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
       ]
     },
     "news": {
@@ -8477,6 +8554,9 @@
     "Onboarding Trial": {
       "Continue": [
         "Jatka"
+      ],
+      "help center": [
+        "tukikeskus"
       ],
       "If you need help,": [
         "Jos tarvitset apua,"
@@ -9147,6 +9227,9 @@
     "Protection type": {
       "Blocked": [
         "Estetty"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Laitteen vahvistus"
@@ -9860,6 +9943,9 @@
       ]
     },
     "specialoffer: Link": {
+      "Get unlimited aliases": [
+        "Hanki aliaksia rajattomasti"
+      ],
       "Go to subscription plans": [
         "Siirry tilauksiin"
       ],
@@ -10379,6 +10465,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "Nopea VPN ${ maxVpn } laitteelle",
         "Nopea VPN ${ maxVpn } laitteelle"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti",
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti"
       ]
     },
     "Subscription change warning": {
@@ -12206,6 +12296,9 @@
       ]
     },
     "Unlimited offer": {
+      "/month": [
+        "/kuukausi"
+      ],
       "Only": [
         "Vain"
       ]
