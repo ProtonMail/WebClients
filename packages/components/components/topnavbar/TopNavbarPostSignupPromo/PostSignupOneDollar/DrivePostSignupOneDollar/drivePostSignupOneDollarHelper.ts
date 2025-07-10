@@ -1,4 +1,4 @@
-import { differenceInDays, fromUnixTime, isAfter } from 'date-fns';
+import { differenceInDays, fromUnixTime } from 'date-fns';
 
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
@@ -14,7 +14,6 @@ interface Props {
     user: UserModel;
     protonConfig: ProtonConfig;
     offerStartDateTimestamp: number;
-    minimalAccountAgeTimestamp: number;
     driveOneDollarPostSignupFlag: boolean;
     lastSubscriptionEnd: number;
     mailOfferStartDateTimestamp?: PostSubscriptionOneDollarOfferState;
@@ -25,7 +24,6 @@ export const getIsUserEligibleForOneDollar = ({
     user,
     protonConfig,
     offerStartDateTimestamp: postSignupTimestamp,
-    minimalAccountAgeTimestamp: postSignupThreshold,
     driveOneDollarPostSignupFlag,
     lastSubscriptionEnd,
     mailOfferStartDateTimestamp: mailOfferState,
@@ -47,12 +45,8 @@ export const getIsUserEligibleForOneDollar = ({
         return false;
     }
 
-    const postSignupThresholdDate = fromUnixTime(postSignupThreshold);
     const accountCreationDate = fromUnixTime(user.CreateTime);
     const offerExpirationDate = fromUnixTime(postSignupTimestamp);
-
-    // Accounts must be created after the signup threshold date (controlled by feature flag)
-    const isAccountCreatedAfterThreshold = isAfter(accountCreationDate, postSignupThresholdDate);
 
     // Account must be created 7 days ago to be eligible
     const isAccountOldEnough = differenceInDays(today, accountCreationDate) >= POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE;
@@ -64,7 +58,5 @@ export const getIsUserEligibleForOneDollar = ({
     const basicEligibility =
         user.isFree && !user.isDelinquent && hasValidApp && !lastSubscriptionEnd && !hasPassLifetime(user);
 
-    return (
-        basicEligibility && hasUploadedFile && isAccountCreatedAfterThreshold && isOfferStillValid && isAccountOldEnough
-    );
+    return basicEligibility && hasUploadedFile && isOfferStillValid && isAccountOldEnough;
 };
