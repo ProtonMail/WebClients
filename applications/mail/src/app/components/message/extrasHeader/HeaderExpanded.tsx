@@ -15,7 +15,7 @@ import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getHasOnlyIcsAttachments, getRecipients, isInternal, isScheduled } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { useCategoryViewExperiment } from 'proton-mail/components/categoryView/useCategoryViewExperiment';
+import { useCategoryViewExperiment } from 'proton-mail/components/categoryView/categoryBadge/useCategoryViewExperiment';
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
@@ -36,7 +36,7 @@ import RecipientType from '../recipients/RecipientType';
 import HeaderExtra from './HeaderExtra';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
 
-const ExtraMessageCategory = lazy(() => import('../../categoryView/ExtraMessageCategory'));
+const ExtraMessageCategory = lazy(() => import('../../categoryView/categoryBadge/ExtraMessageCategory'));
 
 interface Props {
     labelID: string;

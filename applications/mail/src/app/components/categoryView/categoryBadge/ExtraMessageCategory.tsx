@@ -1,8 +1,8 @@
 import { type MessageState } from '@proton/mail/store/messages/messagesTypes';
 
+import RecipientType from 'proton-mail/components/message/recipients/RecipientType';
 import type { Element } from 'proton-mail/models/element';
 
-import RecipientType from '../message/recipients/RecipientType';
 import { CategoryBadge } from './CategoryBadge';
 import { hasCategoryLabel } from './categoryViewHelpers';
 
