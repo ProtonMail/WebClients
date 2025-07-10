@@ -1089,6 +1089,9 @@
       "Remove from favorites": [
         "Usuń z ulubionych"
       ],
+      "Remove from list": [
+        "Usuń z listy"
+      ],
       "Remove gift code": [
         "Usuń kod podarunkowy"
       ],
@@ -6563,6 +6566,12 @@
         "Zablokowano ${ trackersCount } elementów śledzących",
         "Zablokowano ${ trackersCount } elementów śledzących"
       ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } newsletter",
+        "${ unreadCount } newslettery",
+        "${ unreadCount } newsletterów",
+        "${ unreadCount } newsletterów"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } zaplanowana wiadomość",
         "${ unreadCount } zaplanowane wiadomości",
@@ -7568,6 +7577,9 @@
       "New": [
         "Nowy"
       ],
+      "newsletter": [
+        "newsletter"
+      ],
       "No action selected": [
         "Nie wybrano akcji"
       ],
@@ -8260,6 +8272,9 @@
       ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Informacja została wyświetlona, ponieważ temat wiadomości zawiera słowa kluczowe związane z resetowaniem hasła."
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Spowoduje to usunięcie wpisu newslettera z listy. Nie spowoduje to anulowania subskrypcji. Pojawi się on ponownie, kiedy otrzymasz nowe wiadomości."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ta czynność spowoduje wylogowanie ze wszystkich kont."
@@ -9555,6 +9570,9 @@
       "New password": [
         "Nowe hasło"
       ],
+      "Newsletter entry deleted": [
+        "Wpis newslettera został usunięty"
+      ],
       "Newsletters": [
         "Newslettery"
       ],
@@ -9861,6 +9879,17 @@
       ],
       "To: ${ to }": [
         "Do: ${ to }"
+      ]
+    },
+    "Labels": {
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Newslettery lub subskrypcje list mailingowych, z których zrezygnowano, będą wyświetlane tutaj."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Brak aktywnych newsletterów lub subskrypcji list mailingowych."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Brak newsletterów lub subskrypcji list mailingowych."
       ]
     },
     "Landmarks": {
@@ -12110,6 +12139,9 @@
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Twoja waluta została zmieniona na euro (€), ponieważ przelewy bankowe SEPA obsługują tylko płatności w euro."
       ],
       "Your payment is still being processed": [
         "Twoja płatność jest wciąż przetwarzana"
@@ -15022,6 +15054,9 @@
       "Night theme": [
         "Ciemny motyw"
       ],
+      "No active newsletters": [
+        "Brak aktywnych newsletterów"
+      ],
       "No attachment found": [
         "Nie znaleziono załącznika"
       ],
@@ -15030,6 +15065,9 @@
       ],
       "No need to empty the trash": [
         "Nie musisz opróżniać kosza"
+      ],
+      "No newsletters found": [
+        "Nie znaleziono newsletterów"
       ],
       "No trackers found": [
         "Nie znaleziono elementów śledzących"
@@ -15126,6 +15164,9 @@
       ],
       "Recover data": [
         "Odzyskaj dane"
+      ],
+      "Remove from list?": [
+        "Usunąć z listy?"
       ],
       "Reply": [
         "Odpowiedz"

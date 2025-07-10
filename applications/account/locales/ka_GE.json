@@ -541,12 +541,6 @@
       "Download CSV sample": [
         "CSV მაგალითის გადმოწერა"
       ],
-      "Download for macOS": [
-        "გადმოწერა macOS-სთვის"
-      ],
-      "Download for Windows": [
-        "გადმოწერეთ Windows-სთვის"
-      ],
       "Download ICS": [
         "ICS-ის გადმოწერა"
       ],
@@ -970,6 +964,9 @@
       "Next month": [
         "შემდეგი თვე"
       ],
+      "Next page": [
+        "შემდეგი გვერდი"
+      ],
       "No": [
         "არა"
       ],
@@ -1014,6 +1011,9 @@
       ],
       "Previous month": [
         "წინა თვე"
+      ],
+      "Previous page": [
+        "წინა გვერდი"
       ],
       "Publish changes": [
         "ცვლილებების გამოცემა"
@@ -4436,14 +4436,6 @@
         "Windows 8/8.1/7 ან Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb Debian/Ubuntu-სთვის"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm Fedora / Red Hat-სთვის"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "შექმენით უფასო ${ DRIVE_APP_NAME }-ის ანგარიში, რომ ამ ფაილთან უსაფრთხო წვდომა გქონდეთ"
@@ -6662,14 +6654,6 @@
       ],
       "Your desktop app free trial has ended": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია დასრულდა"
-      ]
-    },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName }-ი App Store-ში"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName }-ი Play Store-ში"
       ]
     },
     "Gmail forwarding": {
@@ -11226,9 +11210,6 @@
       "Backup password": [
         "მარქაფი პაროლი"
       ],
-      "Beta": [
-        "ბეტა"
-      ],
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
@@ -11948,9 +11929,6 @@
       ],
       "Second password": [
         "მეორე პაროლი"
-      ],
-      "Select Linux package format": [
-        "აირჩიეთ Linux-ის პაკეტის ფორმატი"
       ],
       "Select Linux platform": [
         "აირჩიეთ Linux-ის პლატფორმა"
@@ -19655,15 +19633,6 @@
       ],
       "Folders and labels": [
         "საქაღალდეები და ჭდეები"
-      ],
-      "For Linux": [
-        "Linux-სთვის"
-      ],
-      "For macOS": [
-        "macOS-სთვის"
-      ],
-      "For Windows": [
-        "Windows-სთვის"
       ],
       "Forgot password": [
         "პაროლი დამავიწყდა"

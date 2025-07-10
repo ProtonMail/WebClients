@@ -427,6 +427,9 @@
       "Delete logo": [
         "Удалить логотип"
       ],
+      "Delete logs": [
+        "Удалить журналы"
+      ],
       "Delete member": [
         "Удалить участника"
       ],
@@ -439,6 +442,9 @@
       "Delete record": [
         "Удалить запись"
       ],
+      "Delete token “${ token.Name }”": [
+        "Удалить токен “${ token.Name }”"
+      ],
       "Delete user": [
         "Удалить пользователя"
       ],
@@ -447,6 +453,9 @@
       ],
       "Delete your account": [
         "Удалить учётную запись"
+      ],
+      "Delete “${ label.Name }”": [
+        "Удалить “${ label.Name }”"
       ],
       "Deleting label": [
         "Удаление ярлыка"
@@ -504,6 +513,12 @@
       ],
       "Download CSV sample": [
         "Скачать образец файла CSV"
+      ],
+      "Download for macOS": [
+        "Скачать для macOS"
+      ],
+      "Download for Windows": [
+        "Скачать для Windows"
       ],
       "Download ICS": [
         "Скачать ICS"
@@ -910,6 +925,9 @@
       "Next month": [
         "Следующий месяц"
       ],
+      "Next page": [
+        "Следующая страница"
+      ],
       "No": [
         "Нет"
       ],
@@ -954,6 +972,9 @@
       ],
       "Previous month": [
         "Предыдущий месяц"
+      ],
+      "Previous page": [
+        "Предыдущая страница"
       ],
       "Publish changes": [
         "Опубликовать изменения"
@@ -6640,6 +6661,11 @@
         "Бесплатный пробный период вашего приложения для настольных компьютеров закончился"
       ]
     },
+    "Get started checklist instructions": {
+      "${ appName } on Play Store": [
+        "${ appName } в Play Store"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Автоматическая пересылка"
@@ -6805,6 +6831,9 @@
       ],
       "Permissions": [
         "Разрешения"
+      ],
+      "Protection": [
+        "Защита"
       ],
       "Save big on the best ${ VPN_APP_NAME } deals": [
         "Экономьте много на лучших предложениях ${ VPN_APP_NAME }"
@@ -7711,6 +7740,9 @@
       ],
       "active": [
         "активный"
+      ],
+      "Activity Monitor": [
+        "Монитор Активности"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"Напиши мне в ${ MAIL_APP_NAME }\" или \"Отправь мне личное сообщение\"."
@@ -11356,6 +11388,9 @@
       "Backup password": [
         "Пароль резервной копии"
       ],
+      "Beta": [
+        "Бета"
+      ],
       "Billing cycle": [
         "Платежный цикл"
       ],
@@ -12800,6 +12835,9 @@
       ]
     },
     "Log preference": {
+      "Activity monitor": [
+        "Монитор активности"
+      ],
       "Enable ${ reason }": [
         "Включите ${ reason }"
       ],
@@ -18727,6 +18765,9 @@
       "Address added": [
         "Адрес добавлен"
       ],
+      "Address successfully added": [
+        "Адрес успешно добавлен"
+      ],
       "Address updated": [
         "Адрес обновлён"
       ],
@@ -19421,6 +19462,9 @@
       "Cancel subscription?": [
         "Отменить подписку?"
       ],
+      "Cannot add more users": [
+        "Невозможно добавить больше пользователей"
+      ],
       "Card verification": [
         "Проверка карты"
       ],
@@ -19861,6 +19905,12 @@
       ],
       "Folders and labels": [
         "Папки и ярлыки"
+      ],
+      "For Linux": [
+        "Для Linux"
+      ],
+      "For macOS": [
+        "Для macOS"
       ],
       "Forgot password": [
         "Забыл пароль"
@@ -20806,6 +20856,9 @@
       ],
       "Device information such as operating system": [
         "Информация об устройстве, например операционная система"
+      ],
+      "Device name and app version": [
+        "Имя устройства и версия приложения"
       ],
       "Display name for the entity in the eduGAIN database": [
         "Отображаемое имя в базе данных eduGAIN"
