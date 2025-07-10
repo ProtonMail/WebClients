@@ -1089,6 +1089,9 @@
       "Remove from favorites": [
         "Выдаліць з абранага"
       ],
+      "Remove from list": [
+        "Выдаліць са спіса"
+      ],
       "Remove gift code": [
         "Выдаліць падарункавы код"
       ],
@@ -6848,7 +6851,7 @@
         "Масавае выдаленне"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
+        "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні зноў пяройдзеце на яго."
       ],
       "Calendar side panel": [
         "Бакавая панэль календара"
@@ -8233,6 +8236,9 @@
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Гэта было паказана вам, бо тэма ліста змяшчае ключавыя словы для скідання пароля."
       ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Гэта дзеянне прывядзе да выдалення запісу рассылкі з гэтага спіса. Дадзенае дзеянне не скасуе вашу падпіску на рассылку. Яна з'явіцца зноў, калі вы атрымаеце новыя паведамленні."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
@@ -9526,6 +9532,9 @@
       ],
       "New password": [
         "Новы пароль"
+      ],
+      "Newsletter entry deleted": [
+        "Запіс рассылкі выдалены"
       ],
       "Newsletters": [
         "Рассылкі"
@@ -11752,7 +11761,7 @@
     },
     "Onboarding Proton": {
       "Choose your preferred look and feel.": [
-        "Выберыце пажаданы вонкавы выгляд"
+        "Выберыце пажаданы выгляд і стыль."
       ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Сканфігурыруйце вашу арганізацыю, звяжыце з ёй даменнае імя і стварыце ўліковыя запісы, каб забяспечыць абарону ўсіх удзельнікаў вашай арганізацыі."
@@ -12800,7 +12809,7 @@
     },
     "session_recovery:cancelled:link": {
       "change your password now": [
-        "змяніць пароль"
+        "неадкладна змяніце свой пароль"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -15113,6 +15122,9 @@
       ],
       "Recover data": [
         "Аднаўленне даных"
+      ],
+      "Remove from list?": [
+        "Выдаліць са спіса?"
       ],
       "Reply": [
         "Адказаць"
