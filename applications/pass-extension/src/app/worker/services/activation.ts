@@ -250,9 +250,10 @@ export const createActivationService = () => {
          * tracking the wakeup's request metadata can be consumed
          * in the UI to infer wakeup result - see `wakeup.saga.ts` */
         const tab = await browser.tabs.get(tabId).catch(noop);
-        const parsedUrl = parseUrl(tab?.url ?? '');
+        const url = tab?.url ?? '';
+        const parsedUrl = parseUrl(url);
         const { subdomain, domain, port, protocol } = parsedUrl;
-        const items = ctx.service.autofill.getLoginCandidates(parsedUrl);
+        const items = ctx.service.autofill.getLoginCandidates({ url });
         const hasAutofillCandidates = items.length > 0;
 
         const state = ctx.service.store.getState();

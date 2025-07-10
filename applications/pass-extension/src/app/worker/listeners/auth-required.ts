@@ -8,7 +8,6 @@ import { selectAutofillSettings } from '@proton/pass/store/selectors/settings';
 import type { ItemRevision } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { parseUrl } from '@proton/pass/utils/url/parser';
 
 type OnAuthRequiredParams = { items: ItemRevision<'login'>[]; url: string; attempt: AttemptCount };
 type RequestID = string;
@@ -59,7 +58,7 @@ export const createBasicAuthController = (): BasicAuthController => {
             const enabled = selectAutofillSettings(ctx.service.store.getState()).basicAuth ?? false;
             if (!(authorized && enabled)) return { cancel: false };
 
-            const items = ctx.service.autofill.getLoginCandidates(parseUrl(url));
+            const items = ctx.service.autofill.getLoginCandidates({ url });
             return resolveCredentials({ items, url, attempt });
         } finally {
             authRequests.set(requestId, attempt + 1);
