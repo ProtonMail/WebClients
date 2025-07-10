@@ -63,7 +63,6 @@ export enum FeatureCode {
     SubscriptionLastReminderDate = 'SubscriptionLastReminderDate',
     MailPostSignupOneDollarState = 'MailPostSignupOneDollarState',
     DrivePostSignupOneDollarState = 'DrivePostSignupOneDollarState',
-    DrivePostSignupOneDollarAccountAge = 'DrivePostSignupOneDollarAccountAge',
 
     // Flags needed by the b2b onboarding
     B2BOnboardingSpotlight = 'B2BOnboardingSpotlight',
