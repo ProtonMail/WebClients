@@ -93,6 +93,9 @@
       "Apply": [
         "Toteuta"
       ],
+      "Ask me next time": [
+        "Kysy seuraavalla kerralla"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
@@ -966,8 +969,14 @@
       "High speed streaming with VPN": [
         "Nopea suoratoisto VPN:llä"
       ],
+      "Online document editor": [
+        "Selaimella käytettävä dokumenttieditori"
+      ],
       "Protect up to 10 devices": [
         "Suojaa jopa 10 laitetta"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ],
       "Select any server": [
         "Valitse mikä tahansa palvelin"
@@ -986,12 +995,18 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostiverkkotunnusta"
+      ],
+      "years": [
+        "vuoden"
       ]
     },
     "anniversary_2025: Offers": {
       "${ n } month": [
         "${ n } kuukausi",
         "${ n } kuukautta"
+      ],
+      "/ month": [
+        "/ kuukausi"
       ],
       "12 months": [
         "12 kuukautta"
@@ -1004,6 +1019,9 @@
       ],
       "30 months": [
         "30 kuukautta"
+      ],
+      "for ${ durationDeal }": [
+        "hintaan ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1034,6 +1052,14 @@
       ],
       "Unsupported event": [
         "Tapahtumaa ei tueta"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Peru tilaus"
+      ],
+      "Keep subscription": [
+        "Pidä tilaus"
       ]
     },
     "bf2023: Deal details": {
@@ -3540,7 +3566,15 @@
         "Rajattomasti Hide-my-email-aliaksia"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Kytke ${ BRAND_NAME }-tiliisi liitetty suojausavain."
+      ],
       "Security key": [
         "Suojausavain"
       ]
@@ -4452,6 +4486,9 @@
       "Enter your own password (as organization admin).": [
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Virhe muunnettaessa dokumenttia: ${ errorMessage }"
+      ],
       "Error Syncing": [
         "Synkronointivirhe"
       ],
@@ -4511,6 +4548,12 @@
       ],
       "Geoblocking": [
         "Geoblokkaus"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Saat sähköpostipäivityksiä dokumentteihisi lisätyistä kommenteista ja ehdotuksista."
+      ],
+      "Get Notified About Comments": [
+        "Saat ilmoituksia kommenteista"
       ],
       "Go to ${ DRIVE_APP_NAME }": [
         "Avaa ${ DRIVE_APP_NAME }"
@@ -4654,6 +4697,9 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
+      "Making a copy...": [
+        "Luodaan kopiota..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
       ],
@@ -4693,6 +4739,9 @@
       ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Annetusta URL-osoitteesta ei löytynyt dokumenttia. Palaa ${ DRIVE_APP_NAME }en ja valitse dokumentti."
       ],
       "No email address": [
         "Ei sähköpostiosoitetta"
@@ -5719,6 +5768,9 @@
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
       ],
+      "Enable email notifications": [
+        "Ota sähköposti-ilmoitukset käyttöön"
+      ],
       "Encrypt emails": [
         "Salaa viestit"
       ],
@@ -5775,6 +5827,9 @@
       ],
       "Import to:": [
         "Tuo kohteeseen:"
+      ],
+      "Include document name in notification": [
+        "Sisällytä dokumentin nimi ilmoitukseen"
       ],
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
@@ -7417,6 +7472,10 @@
       ],
       "Require 2FA": [
         "2FA-pakotus"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
       ]
     },
     "Notification": {
@@ -7778,6 +7837,9 @@
     "Onboarding Trial": {
       "Continue": [
         "Jatka"
+      ],
+      "help center": [
+        "tukikeskus"
       ],
       "If you need help,": [
         "Jos tarvitset apua,"
@@ -8654,6 +8716,9 @@
       ]
     },
     "specialoffer: Link": {
+      "Get unlimited aliases": [
+        "Hanki aliaksia rajattomasti"
+      ],
       "Go to subscription plans": [
         "Siirry tilauksiin"
       ],
@@ -8923,6 +8988,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-yhteys/käyttäjä",
         "${ n } VPN-yhteyttä/käyttäjä"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti",
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti"
       ]
     },
     "Subscription change warning": {
@@ -10025,6 +10094,9 @@
       ]
     },
     "Unlimited offer": {
+      "/month": [
+        "/kuukausi"
+      ],
       "Only": [
         "Vain"
       ]
