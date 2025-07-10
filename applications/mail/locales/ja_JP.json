@@ -648,6 +648,9 @@
       "Hide toolbar": [
         "ツールバーを非表示"
       ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
       "hide-my-email aliases": [
         "hide-my-email エイリアス"
       ],
@@ -9047,6 +9050,9 @@
       "Mark as": [
         "としてマークする"
       ],
+      "Marked as read": [
+        "既読にされました"
+      ],
       "Message:": [
         "メッセージ:"
       ],
@@ -9064,6 +9070,15 @@
       ],
       "Move to Inbox": [
         "受信トレイに移動"
+      ],
+      "Moved to ${ labelName }": [
+        "${ labelName }に移動されました"
+      ],
+      "Moved to Archive": [
+        "アーカイブに移動されました"
+      ],
+      "Moved to Trash": [
+        "ゴミ箱に移動されました"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "少なくとも ${ MIN_PASSWORD_LENGTH } 文字以上でなければなりません"

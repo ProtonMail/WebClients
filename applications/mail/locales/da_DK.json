@@ -151,6 +151,9 @@
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
+      "Authenticate": [
+        "Godkend"
+      ],
       "Auto-delete spam and trash": [
         "Tøm spam og papirkurv automatisk"
       ],
@@ -334,6 +337,9 @@
       "Create folder": [
         "Opret mappe"
       ],
+      "Create folder ${ boldFolderName }": [
+        "Opret mappe ${ boldFolderName }"
+      ],
       "Create label": [
         "Opret etiket"
       ],
@@ -474,6 +480,9 @@
       "Email settings": [
         "E-mailindstillinger"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable": [
         "Aktivér"
       ],
@@ -536,6 +545,9 @@
       ],
       "Font": [
         "Skrifttype"
+      ],
+      "Forgot password?": [
+        "Glemt adgangskode?"
       ],
       "Formalize": [
         "Formaliser"
@@ -1684,21 +1696,62 @@
         "Ny e-mail"
       ]
     },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Tag imod tilbuddet"
+      ]
+    },
     "anniversary_2025: Offer": {
+      "200 GB storage": [
+        "200 GB lagerplads"
+      ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "Rabatter er baserede på en standard månedlig pris. Ved slutningen af faktureringsperioden fornys dit abonnement efter den standard årlige pris."
       ],
       "Online document editor": [
         "Online dokumenteditor"
       ],
+      "Online privacy for up to 2 people": [
+        "Online privatliv til op til 2 personer"
+      ],
+      "Protect up to 10 devices": [
+        "Beskyt op til 10 enheder"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
       "Share passwords easily": [
         "Del let kodeord"
+      ],
+      "Use your own email domain": [
+        "Brug dit eget e-mail-domæne"
+      ],
+      "years": [
+        "år"
       ]
     },
     "anniversary_2025: Offers": {
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
+      ],
+      "/ month": [
+        "/måned"
+      ],
+      "12 months": [
+        "12 måneder"
+      ],
+      "15 months": [
+        "15 måneder"
+      ],
+      "24 months": [
+        "24 måneder"
+      ],
+      "30 months": [
+        "30 måneder"
+      ],
+      "for ${ durationDeal }": [
+        "til ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1771,6 +1824,9 @@
       ]
     },
     "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Opsig abonnement"
+      ],
       "Keep subscription": [
         "Behold abonnement"
       ]
@@ -5064,6 +5120,24 @@
         "Ubegrænsede hide-my-email-aliasser"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -6329,6 +6403,9 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
       ],
+      "Block sender": [
+        "Bloker afsender"
+      ],
       "Body: ": [
         "Indhold: "
       ],
@@ -6391,6 +6468,9 @@
       ],
       "Close this screen to exit.": [
         "Luk denne skærm for at afslutte."
+      ],
+      "Composer:": [
+        "Skrivevindue:"
       ],
       "Confirm phishing report": [
         "Bekræft phishing-anmeldelse"
@@ -6471,6 +6551,9 @@
       ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerede VPN-servere"
       ],
       "default email address": [
         "standard e-mailadresse"
@@ -6620,6 +6703,12 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast verifikationskode. Ciffer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Anslået resterende tid: ${ estimatedMinutes } minut",
@@ -6932,6 +7021,9 @@
       "Message headers": [
         "Beskedoverskrfter"
       ],
+      "Message list": [
+        "Beskedliste"
+      ],
       "Message sent": [
         "Besked afsendt"
       ],
@@ -6962,6 +7054,9 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
+      "More info": [
+        "Mere info"
+      ],
       "More refine actions": [
         "Mere præcise handlinger"
       ],
@@ -6970,6 +7065,9 @@
       ],
       "New": [
         "Ny"
+      ],
+      "newsletter": [
+        "nyhedsbrev"
       ],
       "No action selected": [
         "Ingen handling valgt"
@@ -7170,6 +7268,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent venligst mens vi leder efter kontakter, der indeholder data krypteret med den inaktive nøgle."
+      ],
+      "Preferences updated": [
+        "Præferencer opdateret"
       ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
@@ -7866,6 +7967,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Da du aktiverede betroede nøgler for ${ senderName }, blev de offentlige nøgler tilføjet til kontaktoplysningerne."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Brug et alias i stedet for din e-mailadresse, når du tilmelder dig et nyhedsbrev. Din identitet forbliver skjult, og du kan altid deaktivere aliasset."
       ],
@@ -8497,6 +8601,9 @@
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
+      "Authenticator app": [
+        "Godkendelsesapp"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -8941,6 +9048,9 @@
       "Strong password": [
         "Stærk adgangskode"
       ],
+      "Subject:": [
+        "Emne:"
+      ],
       "Subscription options": [
         "Abonnementsmuligheder"
       ],
@@ -9027,6 +9137,9 @@
       ],
       "Your location": [
         "Din placering"
+      ],
+      "Your password (admin)": [
+        "Din adgangskode (admin)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10661,8 +10774,14 @@
       "${ planName } for 12 months": [
         "${ planName } i 12 måneder"
       ],
+      "Don’t show this again": [
+        "Vis ikke dette igen"
+      ],
       "Don’t show this offer again": [
         "Vis ikke dette tilbud igen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Få ${ BRAND_NAME } Unlimited"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Få Drive Plus for kun ${ pricingTitle }"
@@ -10713,9 +10832,17 @@
         "Dit abonnement fornyes snart"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Krypteret adgangskodehåndtering"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "Mere end +10 førsteklassesfunktioner"
+      ],
+      "500 GB secure storage": [
+        "500 GB sikker lagerplads"
       ],
       "Custom email domain": [
         "Tilpasset e-maildomæne"
@@ -10884,8 +11011,14 @@
       ]
     },
     "Onboarding Trial": {
+      "Continue": [
+        "Forsæt"
+      ],
       "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
         "Nyd gratis sikkerhedsfunktioner for virksomheder indtil ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "hjælp-center"
       ]
     },
     "Online accounts": {
@@ -11036,6 +11169,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Bankoverførsel"
       ],
@@ -11152,6 +11288,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Bank transfer - ${ details }": [
+        "Bankoverførsel - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -12025,6 +12166,9 @@
       ]
     },
     "specialoffer: Link": {
+      "Get unlimited aliases": [
+        "Få ubegrænsede aliasser"
+      ],
       "Go to subscription plans": [
         "Gå til abonnementer"
       ],
@@ -13028,6 +13172,9 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } fjernet"
+      ],
+      "The filter has been disabled": [
+        "Filtret er deaktiveret"
       ]
     },
     "Suffix": {
@@ -13560,6 +13707,9 @@
       "Enter 2FA code": [
         "Indtast 2FA-kode"
       ],
+      "Enter your password": [
+        "Indtast din adgangskode"
+      ],
       "Error": [
         "Fejl"
       ],
@@ -13788,6 +13938,9 @@
       ],
       "Night theme": [
         "Nattetema"
+      ],
+      "No active newsletters": [
+        "Ingen aktive nyhedsbreve"
       ],
       "No attachment found": [
         "Ingen vedhæftning fundet"
