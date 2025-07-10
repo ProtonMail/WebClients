@@ -25,9 +25,6 @@ export const useDrivePostSignupOneDollar = (): OfferHookReturnValue => {
     const { feature: mailOfferState, loading: mailOfferLoading } = useFeature<PostSubscriptionOneDollarOfferState>(
         FeatureCode.MailPostSignupOneDollarState
     );
-    const { feature: postSignupThreshold, loading: postSignupThresholdLoading } = useFeature(
-        FeatureCode.DrivePostSignupOneDollarAccountAge
-    );
 
     const isDomBusy = domIsBusy();
 
@@ -36,18 +33,12 @@ export const useDrivePostSignupOneDollar = (): OfferHookReturnValue => {
             user,
             protonConfig,
             offerStartDateTimestamp: driveOfferState?.Value?.offerStartDate ?? 0,
-            minimalAccountAgeTimestamp: postSignupThreshold?.Value,
             driveOneDollarPostSignupFlag,
             lastSubscriptionEnd: subscriptionEnd,
             mailOfferStartDateTimestamp: mailOfferState?.Value,
             hasUploadedFile: !!(user?.ProductUsedSpace?.Drive ?? 0 > 0),
         }),
-        isLoading:
-            loadingUser ||
-            postSignupDateLoading ||
-            postSignupThresholdLoading ||
-            mailOfferLoading ||
-            loadingSubscriptionEnd,
+        isLoading: loadingUser || postSignupDateLoading || mailOfferLoading || loadingSubscriptionEnd,
         openSpotlight: shouldOpenPostSignupOffer(driveOfferState?.Value) && !isDomBusy,
     };
 };
