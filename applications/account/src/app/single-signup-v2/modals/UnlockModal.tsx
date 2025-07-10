@@ -5,6 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import PlusUnlimitedComparison from '@proton/components/containers/payments/subscription/PlusUnlimitedComparison';
+import { getNormalizedPlanTitles } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -12,7 +14,6 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 
 import type { SubscriptionData } from '../../signup/interfaces';
-import PlanComparison from './PlanComparison';
 
 interface Props extends Omit<ModalProps, 'title'> {
     title: ReactNode;
@@ -42,9 +43,12 @@ const UnlockModal = ({
     onFree,
     ...rest
 }: Props) => {
-    const currentPlanTitle = currentPlan?.Title || '';
-    const unlockPlanTitle = unlockPlan?.Title || '';
-    const upsellPlanTitle = upsellPlan?.Title || '';
+    const { currentPlanTitle, upsellPlanTitle, unlockPlanTitle } = getNormalizedPlanTitles({
+        currentPlan,
+        unlockPlan,
+        upsellPlan,
+    });
+
     const checkout = subscriptionData
         ? getCheckout({
               planIDs: subscriptionData.planIDs,
@@ -52,13 +56,16 @@ const UnlockModal = ({
               checkResult: subscriptionData.checkResult,
           })
         : undefined;
+
     return (
         <ModalTwo {...rest} size="small" disableCloseOnEscape={true}>
             <ModalTwoHeader title={title} className="text-center" hasClose={false} />
             <ModalTwoContent className="text-center">
                 <div className="mb-2 color-weak">
-                    {c('pass_signup_2023: Info')
-                        .t`The offer you selected is not available for ${currentPlanTitle} subscribers.`}
+                    {getBoldFormattedText(
+                        c('pass_signup_2023: Info')
+                            .t`The offer you selected is not available for **${currentPlanTitle}** subscribers.`
+                    )}
                 </div>
                 {(() => {
                     const hasUnlockPlan = hasBit(currentPlan?.Services, unlockPlan?.Services || 0);
@@ -92,7 +99,7 @@ const UnlockModal = ({
                         </div>
                     );
                 })()}
-                <PlanComparison
+                <PlusUnlimitedComparison
                     dark={dark}
                     currentPlan={currentPlan}
                     upsellPlan={upsellPlan}
@@ -105,7 +112,7 @@ const UnlockModal = ({
                     <Button shape="ghost" color="norm" fullWidth onClick={onFree}>
                         {c('pass_signup_2023: Action').t`Continue to ${appName} without upgrading`}
                     </Button>
-                </PlanComparison>
+                </PlusUnlimitedComparison>
             </ModalTwoContent>
         </ModalTwo>
     );

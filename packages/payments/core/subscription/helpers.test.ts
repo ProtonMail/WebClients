@@ -1,4 +1,5 @@
 import { buildSubscription, buildUser } from '@proton/testing/builders';
+import { PLANS_MAP } from '@proton/testing/data';
 
 import { ADDON_NAMES, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '../constants';
 import { type PlanIDs } from '../interface';
@@ -7,6 +8,7 @@ import { FREE_PLAN } from './freePlans';
 import {
     canModify,
     getAvailableSubscriptionActions,
+    getIsPlanTransitionForbidden,
     getPlanIDs,
     getSubscriptionPlanTitle,
     isCheckForbidden,
@@ -479,5 +481,114 @@ describe('getAvailableActions', () => {
             canCancel: false,
             cantCancelReason: 'subscription_managed_externally',
         });
+    });
+});
+
+describe('forbidden plan transitions', () => {
+    const cycle = CYCLE.MONTHLY;
+    const plansMap = PLANS_MAP;
+
+    it('should be forbidden going from vpn to mail', () => {
+        const subscription = buildSubscription(PLANS.VPN2024);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.MAIL]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual({ type: 'plus-to-plus', newPlanName: PLANS.MAIL });
+    });
+
+    it('should be allowed going from pass to pass lifetime', () => {
+        const subscription = buildSubscription(PLANS.PASS);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.PASS_LIFETIME]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be allowed going from pass lifetime to mail', () => {
+        const subscription = buildSubscription(PLANS.PASS_LIFETIME);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.MAIL]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be forbidden going from mail to pass', () => {
+        const subscription = buildSubscription(PLANS.MAIL);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.PASS]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual({ type: 'plus-to-plus', newPlanName: PLANS.PASS });
+    });
+
+    it('should be forbidden going from drive to mail', () => {
+        const subscription = buildSubscription(PLANS.DRIVE);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.MAIL]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual({ type: 'plus-to-plus', newPlanName: PLANS.MAIL });
+    });
+
+    it('should be forbidden going from drive to vpn', () => {
+        const subscription = buildSubscription(PLANS.DRIVE);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.VPN2024]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual({ type: 'plus-to-plus', newPlanName: PLANS.VPN2024 });
+    });
+
+    it('should be allowed going from vpn to vpn', () => {
+        const subscription = buildSubscription(PLANS.VPN2024);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.VPN2024]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be allowed going from vpn to bundle', () => {
+        const subscription = buildSubscription(PLANS.VPN2024);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.BUNDLE]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be allowed going from legacy vpn to new vpn', () => {
+        const subscription = buildSubscription(PLANS.VPN);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.VPN2024]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be allowed going from vpn to vpn+pass bundle', () => {
+        const subscription = buildSubscription(PLANS.VPN2024);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.VPN_PASS_BUNDLE]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be allowed going from pass to vpn+pass bundle', () => {
+        const subscription = buildSubscription(PLANS.VPN2024);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.VPN_PASS_BUNDLE]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be allowed going from drive 200 gb to drive 1 tb', () => {
+        const subscription = buildSubscription(PLANS.DRIVE);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.DRIVE_1TB]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be allowed going from drive 1 tb to drive 200 gb', () => {
+        const subscription = buildSubscription(PLANS.DRIVE_1TB);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.DRIVE]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
     });
 });

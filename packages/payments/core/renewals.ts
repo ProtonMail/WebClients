@@ -1,10 +1,10 @@
 import { CYCLE, PLANS } from './constants';
 import { type PlanIDs } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
-import { isStringPLAN } from './type-guards';
+import { isValidPlanName } from './type-guards';
 
 export function getRenewCycle(plan: PlanIDs | PLANS, selectedCycle: CYCLE): CYCLE {
-    const planName = typeof plan === 'string' && isStringPLAN(plan) ? plan : getPlanNameFromIDs(plan);
+    const planName = typeof plan === 'string' && isValidPlanName(plan) ? plan : getPlanNameFromIDs(plan);
     if (!planName) {
         return selectedCycle;
     }

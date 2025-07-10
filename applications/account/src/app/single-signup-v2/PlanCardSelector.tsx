@@ -19,6 +19,7 @@ import {
     type PlansMap,
     type Subscription,
     type SubscriptionPlan,
+    getHasPlusPlan,
     getPlanFromPlanIDs,
     getPlanIDs,
     getPlanOffer,
@@ -36,7 +37,7 @@ import ArrowImage from './ArrowImage';
 import BundlePlanSubSection from './BundlePlanSubSection';
 import SaveLabel from './SaveLabel';
 import type { SubscriptionDataCycleMapping } from './helper';
-import { getHasAnyPlusPlan, getSubscriptionMapping } from './helper';
+import { getSubscriptionMapping } from './helper';
 import type { SignupParameters2 } from './interface';
 
 import './PlanCardSelector.scss';
@@ -498,7 +499,7 @@ export const UpsellCardSelector = ({
         <>
             <div className="mb-6">
                 {relativePrice &&
-                    getHasAnyPlusPlan(currentPlan.Name) &&
+                    getHasPlusPlan(currentPlan.Name) &&
                     (() => {
                         if (currentPlan?.Name === PLANS.PASS && plan?.Name === PLANS.VPN_PASS_BUNDLE) {
                             return getBoldFormattedText(

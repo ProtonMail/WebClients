@@ -17,7 +17,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
@@ -55,24 +55,27 @@ const getShortDayText = (day: Date, formatTime: string) => {
     return c('WeekDay').t`Mon, ${formatTime}`;
 };
 
-const SnoozeButton = ({ onClick, duration, leftText, rightText, showUpsellButton }: ButtonProps) => (
-    <Button
-        fullWidth
-        shape="ghost"
-        data-testid={`snooze-duration-${duration}`}
-        className={clsx('flex rounded-none', showUpsellButton ? 'gap-2' : 'justify-space-between')}
-        onClick={(e) => onClick(e, duration)}
-    >
-        <span>{leftText}</span>
-        {rightText && <span className="color-weak">{rightText}</span>}
+const SnoozeButton = ({ onClick, duration, leftText, rightText, showUpsellButton }: ButtonProps) => {
+    const plan = PLAN_NAMES[PLANS.MAIL];
+    return (
+        <Button
+            fullWidth
+            shape="ghost"
+            data-testid={`snooze-duration-${duration}`}
+            className={clsx('flex rounded-none', showUpsellButton ? 'gap-2' : 'justify-space-between')}
+            onClick={(e) => onClick(e, duration)}
+        >
+            <span>{leftText}</span>
+            {rightText && <span className="color-weak">{rightText}</span>}
 
-        {showUpsellButton && (
-            <span>
-                <img src={plusLogo} alt={c('Info').t`Upgrade to ${MAIL_APP_NAME} Plus to unlock`} />
-            </span>
-        )}
-    </Button>
-);
+            {showUpsellButton && (
+                <span>
+                    <img src={plusLogo} alt={c('Info').t`Upgrade to ${plan} to unlock`} />
+                </span>
+            )}
+        </Button>
+    );
+};
 
 const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooze, handleCustomClick }: Props) => {
     const [{ hasPaidMail }] = useUser();

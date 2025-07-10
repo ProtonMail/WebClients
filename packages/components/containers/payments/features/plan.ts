@@ -1,13 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { type FreePlanDefault, PLANS, PLAN_NAMES, type Plan, type PlansMap } from '@proton/payments';
-import {
-    BRAND_NAME,
-    DUO_MAX_USERS,
-    FAMILY_MAX_USERS,
-    PASS_SHORT_APP_NAME,
-    VPN_CONNECTIONS,
-} from '@proton/shared/lib/constants';
+import { BRAND_NAME, DUO_MAX_USERS, FAMILY_MAX_USERS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
@@ -353,12 +347,12 @@ export const getPassEssentialsSignupPlan = (plan?: Plan): ShortPlan => {
 
 export const getPassFamilyPlan = (plan?: Plan): ShortPlan => {
     const title = plan?.Title || '';
+    const plusTitle = PLAN_NAMES[PLANS.PASS];
     return {
         plan: PLANS.PASS_FAMILY,
         title,
         label: '',
-        description: c('new_plans: info')
-            .t`Protect your family with all premium features of ${PASS_SHORT_APP_NAME} Plus for 6 users.`,
+        description: c('new_plans: info').t`Protect your family with all premium features of ${plusTitle} for 6 users.`,
         cta: getCTA(title),
         features: [
             getPassUsers(FAMILY_MAX_USERS),

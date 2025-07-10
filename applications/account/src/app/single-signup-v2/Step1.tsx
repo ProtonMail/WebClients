@@ -81,17 +81,19 @@ import Guarantee from './Guarantee';
 import Layout from './Layout';
 import { PlanCardSelector } from './PlanCardSelector';
 import RightSummary from './RightSummary';
-import { getAccessiblePlans, getFreeSubscriptionData, getSubscriptionMapping } from './helper';
-import type {
-    Measure,
-    OnOpenLogin,
-    OnOpenSwitch,
-    OptimisticOptions,
-    SignupConfiguration,
-    SignupModelV2,
-    SignupParameters2,
+import { getAccessiblePlans, getFreeSubscriptionData, getSubscriptionMapping, getUpdatedPlanIDs } from './helper';
+import {
+    type Measure,
+    type OnOpenLogin,
+    type OnOpenSwitch,
+    type OnTriggerModals,
+    type OptimisticOptions,
+    type SignupConfiguration,
+    SignupMode,
+    type SignupModelV2,
+    type SignupParameters2,
+    UpsellTypes,
 } from './interface';
-import { SignupMode, UpsellTypes } from './interface';
 import DriveTrial2024UpsellModal from './modals/DriveTrial2024UpsellModal';
 import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
 import PassTrial2024UpsellModal from './modals/PassTrial2024UpsellModal';
@@ -127,6 +129,7 @@ const Step1 = ({
     vpnServersCountData,
     onOpenLogin,
     onOpenSwitch,
+    onTriggerModals,
     className,
     onSignOut,
     step1Ref,
@@ -161,6 +164,7 @@ const Step1 = ({
     currentPlan: SubscriptionPlan | undefined;
     mode: SignupMode;
     api: Api;
+    onTriggerModals: OnTriggerModals;
     onOpenLogin: OnOpenLogin;
     onOpenSwitch: OnOpenSwitch;
     className?: string;
@@ -404,6 +408,26 @@ const Step1 = ({
             });
 
             checkOptions.planIDs = switchedPlanIds;
+
+            const result = getUpdatedPlanIDs({
+                user: model.session.resumedSessionResult.User,
+                subscription: model.session.subscription,
+                organization: model.session.organization,
+                plans: model.plans,
+                toApp: app,
+                currentPlan,
+                options: { cycle: options.cycle, planIDs: checkOptions.planIDs },
+                plansMap: model.plansMap,
+            });
+            if (result?.upsell) {
+                checkOptions.planIDs = result.planIDs;
+                setModel((old) => ({ ...old, upsell: result.upsell }));
+                onTriggerModals({
+                    session: model.session,
+                    upsell: result.upsell,
+                    subscriptionData: model.subscriptionData,
+                });
+            }
         }
 
         // TODO(plavarin): hack until we have a proper way to optimistically determine whether
@@ -496,6 +520,7 @@ const Step1 = ({
             (mode === SignupMode.Invite && app === APPS.PROTONWALLET)) &&
         !hidePlanSelectorCoupons.has(model.subscriptionData.checkResult.Coupon?.Code as any) &&
         !hidePlanSelectorCoupons.has(model.optimistic.coupon as any) &&
+        model.upsell.mode !== UpsellTypes.UPSELL &&
         // Don't want to show an incomplete plan selector when the user has access to have a nicer UI
         !model.session?.state.access;
 
@@ -860,7 +885,7 @@ const Step1 = ({
             )}
             <div className="flex items-center flex-column">
                 {title}
-                {hasPlanSelector && model.upsell.mode !== UpsellTypes.UPSELL && (
+                {hasPlanSelector && (
                     <div className="flex flex-nowrap mb-4 gap-1 md:gap-8 text-sm md:text-rg">
                         {features.map(({ key, left, text }, i, arr) => {
                             return (
@@ -911,77 +936,52 @@ const Step1 = ({
                         <Box className="mt-8 w-full max-w-custom" style={boxWidth}>
                             <BoxHeader
                                 step={step++}
-                                title={
-                                    model.upsell.mode === UpsellTypes.PLANS
-                                        ? c('pass_signup_2023: Header').t`Select your plan`
-                                        : c('pass_signup_2023: Header').t`Upgrade your plan`
-                                }
+                                title={c('pass_signup_2023: Header').t`Select your plan`}
                                 middle={planSelectorHeaderMiddleText}
                                 right={
                                     <>
-                                        {model.upsell.mode === UpsellTypes.PLANS &&
-                                            mode !== SignupMode.MailReferral && (
-                                                <CycleSelector
-                                                    mode="buttons"
-                                                    cycle={options.cycle}
-                                                    options={cycleOptions}
-                                                    onSelect={(cycle) => handleChangeCycle(cycle as Cycle)}
-                                                    size="small"
-                                                    color="norm"
-                                                    separators={false}
-                                                    shape="ghost"
-                                                    className="p-1"
-                                                    pill
-                                                />
-                                            )}
+                                        {mode !== SignupMode.MailReferral && (
+                                            <CycleSelector
+                                                mode="buttons"
+                                                cycle={options.cycle}
+                                                options={cycleOptions}
+                                                onSelect={(cycle) => handleChangeCycle(cycle as Cycle)}
+                                                size="small"
+                                                color="norm"
+                                                separators={false}
+                                                shape="ghost"
+                                                className="p-1"
+                                                pill
+                                            />
+                                        )}
                                     </>
                                 }
                             />
                             <BoxContent>
-                                {(() => {
-                                    const oneOfCurrenciesIsRegional =
-                                        isRegionalCurrency(selectedPlan.Currency) ||
-                                        (currentPlan && isRegionalCurrency(currentPlan?.Currency));
-
-                                    const cantDisplayUpsell =
-                                        selectedPlan.Currency !== currentPlan?.Currency && oneOfCurrenciesIsRegional;
-
-                                    return model.upsell.mode === UpsellTypes.PLANS || cantDisplayUpsell ? (
-                                        <PlanCardSelector
-                                            subscriptionDataCycleMapping={model.subscriptionDataCycleMapping}
-                                            audience={audience}
-                                            plansMap={model.plansMap}
-                                            selectedPlanName={selectedPlan.Name}
-                                            cycle={options.cycle}
-                                            currency={options.currency}
-                                            dark={theme.dark}
-                                            planCards={planCards[audience]}
-                                            onSelect={handleChangePlan}
-                                            onSelectedClick={() => {
-                                                if (!viewportWidth['<=medium']) {
-                                                    accountDetailsRef.current?.scrollInto('email');
-                                                }
-                                            }}
-                                            loading={model.loadingDependencies}
-                                            signupParameters={signupParameters}
-                                        />
-                                    ) : null;
-                                })()}
-                                {model.upsell.mode === UpsellTypes.PLANS && (
-                                    <>
-                                        <div className="flex justify-center lg:justify-end">
-                                            <div className="inline-block mt-3 mb-2">{currencySelector}</div>
-                                        </div>
-                                        <div
-                                            className={clsx(
-                                                hasSelectedFree && 'visibility-hidden',
-                                                'flex justify-center'
-                                            )}
-                                        >
-                                            {!signupParameters.trial && <Guarantee />}
-                                        </div>
-                                    </>
-                                )}
+                                <PlanCardSelector
+                                    subscriptionDataCycleMapping={model.subscriptionDataCycleMapping}
+                                    audience={audience}
+                                    plansMap={model.plansMap}
+                                    selectedPlanName={selectedPlan.Name}
+                                    cycle={options.cycle}
+                                    currency={options.currency}
+                                    dark={theme.dark}
+                                    planCards={planCards[audience]}
+                                    onSelect={handleChangePlan}
+                                    onSelectedClick={() => {
+                                        if (!viewportWidth['<=medium']) {
+                                            accountDetailsRef.current?.scrollInto('email');
+                                        }
+                                    }}
+                                    loading={model.loadingDependencies}
+                                    signupParameters={signupParameters}
+                                />
+                                <div className="flex justify-center lg:justify-end">
+                                    <div className="inline-block mt-3 mb-2">{currencySelector}</div>
+                                </div>
+                                <div className={clsx(hasSelectedFree && 'visibility-hidden', 'flex justify-center')}>
+                                    {!signupParameters.trial && <Guarantee />}
+                                </div>
                             </BoxContent>
                         </Box>
                     </>

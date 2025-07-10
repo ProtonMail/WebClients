@@ -18,7 +18,7 @@ import { type FreeSubscription } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
 import { type Plan } from './plan/interface';
 import { type Subscription } from './subscription/interface';
-import { isPaymentMethodStatusExtended, isStringPLAN } from './type-guards';
+import { isPaymentMethodStatusExtended, isValidPlanName } from './type-guards';
 
 export function isChargebeePaymentMethod(paymentMethodType: PlainPaymentMethodType | undefined) {
     if (!paymentMethodType) {
@@ -203,7 +203,7 @@ export function getPreferredCurrency({
         const paramPlanSupportsCurrency: boolean =
             !paramPlanName ||
             paramPlanName === PLANS.FREE ||
-            !isStringPLAN(paramPlanName) ||
+            !isValidPlanName(paramPlanName) ||
             !!plans?.find((it) => it.Name === paramPlanName && it.Currency === preferredCurrency);
 
         const currency = paramPlanSupportsCurrency ? preferredCurrency : getFallbackCurrency(preferredCurrency);

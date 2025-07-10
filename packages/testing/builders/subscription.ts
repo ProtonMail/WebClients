@@ -8,7 +8,7 @@ import {
     SelectedPlan,
     type Subscription,
     SubscriptionPlatform,
-    isStringPLAN,
+    isValidPlanName,
 } from '@proton/payments';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import type { EitherOr } from '@proton/shared/lib/interfaces';
@@ -66,7 +66,7 @@ const getSelectedPlan = (plan: SelectedPlanParam): SelectedPlan => {
     const defaultCurrency: Currency = 'EUR';
     const defaultCycle: CYCLE = CYCLE.YEARLY;
 
-    if (typeof plan === 'string' && isStringPLAN(plan)) {
+    if (typeof plan === 'string' && isValidPlanName(plan)) {
         return new SelectedPlan({ [plan]: 1 }, getTestPlans(defaultCurrency), defaultCycle, defaultCurrency);
     }
 

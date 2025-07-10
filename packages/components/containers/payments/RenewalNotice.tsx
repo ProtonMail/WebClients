@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 import { Href } from '@proton/atoms';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Time, { getReadableTime } from '@proton/components/components/time/Time';
-import type { CheckoutModifiers } from '@proton/payments';
+import { type CheckoutModifiers, PLAN_NAMES } from '@proton/payments';
 import {
     CYCLE,
     type Currency,
@@ -348,8 +348,9 @@ export const getPassLifetimeRenewNoticeText = ({ subscription }: { subscription?
     }
 
     if (planName === PLANS.PASS) {
+        const plan = PLAN_NAMES[PLANS.PASS];
         return c('Info')
-            .t`Your ${PASS_SHORT_APP_NAME} Plus subscription will be replaced with ${PASS_SHORT_APP_NAME} Lifetime. The remaining balance of your subscription will be added to your account. ${PASS_SHORT_APP_NAME} lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${PASS_SHORT_APP_NAME}.`;
+            .t`Your ${plan} subscription will be replaced with ${PASS_SHORT_APP_NAME} Lifetime. The remaining balance of your subscription will be added to your account. ${PASS_SHORT_APP_NAME} lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${PASS_SHORT_APP_NAME}.`;
     }
 
     const planTitle = getPlanTitle(subscription);

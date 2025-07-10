@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
 import {
@@ -27,14 +25,16 @@ import {
     type SubscriptionPlan,
     getFreeCheckResult,
     getHas2024OfferCoupon,
+    getHasPlusPlan,
     getIsB2BAudienceFromPlan,
+    getIsPlanTransitionForbidden,
     getNormalCycleFromCustomCycle,
     getPaymentMethods,
     getPlan,
     getPlanFromPlanIDs,
     getSubscription,
     isLifetimePlanSelected,
-    isStringPLAN,
+    isValidPlanName,
 } from '@proton/payments';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -47,6 +47,7 @@ import type { Api, Organization, SubscriptionCheckResponse, User } from '@proton
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getOrganization } from '@proton/shared/lib/organization/api';
 import {
+    formatUser,
     canPay as getCanPay,
     isAdmin as getIsAdmin,
     hasPaidDrive,
@@ -61,10 +62,6 @@ import type { SessionData, SignupCacheResult, SubscriptionData } from '../signup
 import type { PlanCard } from './PlanCardSelector';
 import type { Options, PlanParameters, SignupConfiguration, SignupParameters2, Upsell } from './interface';
 import { UpsellTypes } from './interface';
-
-export const getFreeTitle = (appName: string) => {
-    return c('Title').t`${appName} Free`;
-};
 
 export const getIsProductB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
     const proPlans = [
@@ -82,12 +79,6 @@ export const getIsProductB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
 
 export const getIsBundleB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
     return [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].some((bundlePlan) => plan === bundlePlan);
-};
-
-export const getHasAnyPlusPlan = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
-    return [PLANS.MAIL, PLANS.DRIVE, PLANS.DRIVE_1TB, PLANS.VPN, PLANS.VPN2024, PLANS.PASS, PLANS.VPN_PASS_BUNDLE].some(
-        (plan) => plan === subscribedPlan
-    );
 };
 
 export const getFreeSubscriptionData = (
@@ -183,6 +174,36 @@ const getSafePlan = (plansMap: PlansMap, planName: PLANS | ADDON_NAMES) => {
     return plan;
 };
 
+const getDefaultUpsellData = ({
+    plansMap,
+    currentPlan,
+    toApp,
+}: {
+    plansMap: PlansMap;
+    currentPlan?: SubscriptionPlan | undefined;
+    toApp: APP_NAMES;
+}) => {
+    return {
+        plan: undefined,
+        unlockPlan: plansMap[getUnlockPlanName(toApp)],
+        currentPlan,
+        mode: UpsellTypes.PLANS,
+        subscriptionOptions: {},
+    };
+};
+
+const getUpsellDataHelper = (
+    plan: PLANS | ADDON_NAMES,
+    plansMap: PlansMap,
+    defaultUpsellData: ReturnType<typeof getDefaultUpsellData>
+) => {
+    return {
+        ...defaultUpsellData,
+        plan: plansMap[plan],
+        mode: UpsellTypes.UPSELL,
+    };
+};
+
 const getUpsell = ({
     audience,
     currentPlan,
@@ -205,13 +226,7 @@ const getUpsell = ({
 }): Upsell => {
     const hasMonthlyCycle = subscription?.Cycle === CYCLE.MONTHLY;
 
-    const noUpsell = {
-        plan: undefined,
-        unlockPlan: plansMap[getUnlockPlanName(toApp)],
-        currentPlan,
-        mode: UpsellTypes.PLANS,
-        subscriptionOptions: {},
-    };
+    const noUpsell = getDefaultUpsellData({ plansMap, currentPlan, toApp });
 
     // TODO: WalletEA
     if (toApp === APPS.PROTONWALLET) {
@@ -242,11 +257,7 @@ const getUpsell = ({
     };
 
     const getUpsellData = (plan: PLANS | ADDON_NAMES) => {
-        return {
-            ...noUpsell,
-            plan: plansMap[plan],
-            mode: UpsellTypes.UPSELL,
-        };
+        return getUpsellDataHelper(plan, plansMap, noUpsell);
     };
 
     if (user && hasPassLifetime(user) && isLifetimePlanSelected(options.planIDs ?? {})) {
@@ -267,7 +278,7 @@ const getUpsell = ({
         }
 
         if (getHas2024OfferCoupon(options.coupon)) {
-            if (getHasAnyPlusPlan(currentPlan.Name)) {
+            if (getHasPlusPlan(currentPlan.Name)) {
                 if (currentPlan.Name === PLANS.PASS) {
                     if (
                         options.cycle === CYCLE.YEARLY &&
@@ -335,7 +346,7 @@ const getUpsell = ({
                 }
                 return noUpsell;
             } else {
-                if (getHasAnyPlusPlan(currentPlan.Name)) {
+                if (getHasPlusPlan(currentPlan.Name)) {
                     if (
                         hasSelectedPlan(planParameters.plan, [PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY])
                     ) {
@@ -431,6 +442,59 @@ const hasAccess = ({
     return false;
 };
 
+export const getUpdatedPlanIDs = ({
+    options,
+    subscription,
+    user,
+    plansMap,
+    currentPlan,
+    toApp,
+    plans,
+    organization,
+}: {
+    options: {
+        planIDs: PlanIDs | undefined;
+        cycle: CYCLE;
+    };
+    user: User;
+    plansMap: PlansMap;
+    plans: Plan[];
+    toApp: APP_NAMES;
+    subscription: Subscription | undefined;
+    currentPlan: SubscriptionPlan | undefined;
+    organization: Organization | undefined;
+}) => {
+    if (!subscription || !organization || !options.planIDs) {
+        return;
+    }
+    const planTransitionForbidden = getIsPlanTransitionForbidden({
+        subscription,
+        user: formatUser(user),
+        plansMap,
+        planIDs: options.planIDs,
+        cycle: options.cycle,
+    });
+    if (planTransitionForbidden?.type === 'plus-to-plus') {
+        const upsell = getUpsellDataHelper(
+            PLANS.BUNDLE,
+            plansMap,
+            getDefaultUpsellData({
+                plansMap,
+                currentPlan,
+                toApp,
+            })
+        );
+        const planIDs = switchPlan({
+            subscription,
+            newPlan: PLANS.BUNDLE,
+            organization,
+            plans,
+            user,
+        });
+        return { upsell, planIDs };
+    }
+};
+
 export const getUserInfo = async ({
     api,
     audience,
@@ -495,9 +559,9 @@ export const getUserInfo = async ({
     const [paymentMethods, subscription, organization] = await Promise.all([
         state.payable ? getPaymentMethods(api, forcePaymentsVersion) : [],
         state.payable && state.admin && state.subscribed
-            ? api(getSubscription(forcePaymentsVersion)).then(
-                  ({ Subscription, UpcomingSubscription }) => UpcomingSubscription ?? Subscription
-              )
+            ? api<{ Subscription: Subscription; UpcomingSubscription: Subscription }>(
+                  getSubscription(forcePaymentsVersion)
+              ).then(({ Subscription, UpcomingSubscription }) => UpcomingSubscription ?? Subscription)
             : (FREE_SUBSCRIPTION as unknown as Subscription),
         state.subscribed ? getOrganization({ api }) : undefined,
     ]);
@@ -512,7 +576,7 @@ export const getUserInfo = async ({
         }
     })();
 
-    const upsell = getUpsell({
+    let upsell = getUpsell({
         audience,
         currentPlan,
         subscription,
@@ -543,32 +607,46 @@ export const getUserInfo = async ({
         return Math.max(...availableCycles);
     })();
 
-    const subscriptionData = await (() => {
-        const optionsWithSubscriptionDefaults = {
-            ...options,
-            cycle,
-            currency: options.currency,
-            coupon: subscription.CouponCode || options.coupon,
-        };
+    let optionsWithSubscriptionDefaults = {
+        ...options,
+        cycle,
+        currency: options.currency,
+        coupon: subscription.CouponCode || options.coupon,
+    };
 
+    if (upsell.plan) {
+        optionsWithSubscriptionDefaults = {
+            ...optionsWithSubscriptionDefaults,
+            ...upsell.subscriptionOptions,
+            planIDs: switchPlan({
+                subscription,
+                newPlan: upsell.plan.Name,
+                organization,
+                plans,
+                user,
+            }),
+        };
+    }
+
+    const result = getUpdatedPlanIDs({
+        user,
+        subscription,
+        organization,
+        plans,
+        toApp,
+        currentPlan,
+        options: optionsWithSubscriptionDefaults,
+        plansMap,
+    });
+    if (result?.upsell) {
+        upsell = result.upsell;
+        optionsWithSubscriptionDefaults.planIDs = result.planIDs;
+    }
+
+    const subscriptionData = await (() => {
         if (!state.payable || state.access) {
             return getFreeSubscriptionData(optionsWithSubscriptionDefaults);
         }
-
-        if (upsell.plan) {
-            return getSubscriptionData(paymentsApi, {
-                ...optionsWithSubscriptionDefaults,
-                ...upsell.subscriptionOptions,
-                planIDs: switchPlan({
-                    subscription,
-                    newPlan: upsell.plan.Name,
-                    organization,
-                    plans,
-                    user,
-                }),
-            });
-        }
-
         return getSubscriptionData(paymentsApi, optionsWithSubscriptionDefaults);
     })();
 
@@ -806,7 +884,7 @@ export const getAccessiblePlans = ({
     }
 
     const accessiblePlanNames = planCards[audience].map(({ plan }) => plan);
-    if (paramPlanName && isStringPLAN(paramPlanName)) {
+    if (paramPlanName && isValidPlanName(paramPlanName)) {
         accessiblePlanNames.push(paramPlanName);
     }
 
