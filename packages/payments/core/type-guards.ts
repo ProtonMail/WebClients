@@ -1,4 +1,4 @@
-import { MethodStorage, PAYMENT_METHOD_TYPES, PLANS } from './constants';
+import { type ADDON_NAMES, MethodStorage, PAYMENT_METHOD_TYPES, PLANS } from './constants';
 import type {
     CardPayment,
     ChargeablePaymentParameters,
@@ -140,7 +140,8 @@ export function isCheckWithAutomaticOptions(data: any): data is CheckWithAutomat
     return !!data && !!data.forcedVersion && !!data.reason;
 }
 
-export const isStringPLAN = (value: string): value is PLANS => Object.values(PLANS).includes(value as PLANS);
+export const isValidPlanName = (value: string | PLANS | ADDON_NAMES): value is PLANS =>
+    Object.values(PLANS).includes(value as PLANS);
 
 export function isSepaDetails(obj: any): obj is SepaDetails {
     if (!obj) {

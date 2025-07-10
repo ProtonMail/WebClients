@@ -453,7 +453,7 @@ export {
     isSavedPaymentMethodInternal,
     isSavedPaymentMethodSepa,
     isSepaDetails,
-    isStringPLAN,
+    isValidPlanName,
     isTokenPayment,
     isTokenPaymentMethod,
     isTransaction,
