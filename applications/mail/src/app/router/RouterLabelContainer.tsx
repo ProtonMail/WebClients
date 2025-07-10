@@ -187,6 +187,7 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
                     }
                     listRef={listRef}
                     noBorder={hasRowMode || !showContentPanel}
+                    setFocusID={setFocusID}
                 />
             </ResizableWrapper>
 
