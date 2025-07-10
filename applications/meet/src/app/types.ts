@@ -69,7 +69,8 @@ export enum ParticipantCapabilityPermission {
 }
 
 export interface ParticipantEntity {
-    ParticipantUUID: string;
+    ParticipantUUID?: string;
+    ParticipantUuid?: string;
     DisplayName: string;
     CanSubscribe: ParticipantCapabilityPermission;
     CanPublish: ParticipantCapabilityPermission;

@@ -17,7 +17,6 @@ interface PreJoinDetailsProps {
 }
 
 export const PreJoinDetails = ({
-    roomName,
     roomId,
     displayName,
     onDisplayNameChange,
@@ -29,13 +28,11 @@ export const PreJoinDetails = ({
 
     const actionLabel = instantMeeting
         ? c('l10n_nightly Action').t`Start meeting`
-        : c('l10n_nightly Action').t`Ask to join`;
-
-    const displayRoomName = roomName ? roomName : '...';
+        : c('l10n_nightly Action').t`Join meeting`;
 
     const title = instantMeeting
-        ? c('l10n_nightly Title').t`Talk freely`
-        : c('l10n_nightly Title').jt`Join ${displayRoomName}`;
+        ? c('l10n_nightly Title').t`Talk Confidentially`
+        : c('l10n_nightly Title').jt`Join Meeting`;
 
     const getSubtitle = () => {
         if (instantMeeting) {
@@ -43,10 +40,8 @@ export const PreJoinDetails = ({
                 .t`Our end-to-end encrypted meetings protect privacy and empower truly free expression.`;
         }
 
-        return !roomName
-            ? c('l10n_nightly Info').t`Decrypting room name...`
-            : c('l10n_nightly Info')
-                  .t`You've been invited to join a secure meeting. Confirm your name and click below to enter.`;
+        return c('l10n_nightly Info')
+            .t`You've been invited to join a secure meeting. Confirm your name and click below to enter.`;
     };
 
     const subtitle = getSubtitle();
@@ -111,7 +106,7 @@ export const PreJoinDetails = ({
                 size="large"
                 fullWidth
                 onClick={() => onJoinMeeting({ displayName })}
-                disabled={!displayName || (!roomName && !instantMeeting)}
+                disabled={!displayName}
             >
                 {actionLabel}
             </Button>

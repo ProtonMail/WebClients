@@ -6,6 +6,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { IcMagnifier } from '@proton/icons';
 
+import placeholder from '../../../assets/chat-empty-state.png';
+import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
@@ -17,7 +19,7 @@ import { MeetingSideBars } from '../../types';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
 import { ChatItem } from '../ChatItem/ChatItem';
 import { ChatMessage } from '../ChatMessage/ChatMessage';
-import { SideBarSearch } from '../SideBarSearch';
+import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
 
 import './Chat.scss';
 
@@ -27,7 +29,7 @@ export const Chat = () => {
 
     const { roomName, setChatMessages } = useMeetContext();
 
-    const { sideBarState } = useUIStateContext();
+    const { sideBarState, toggleSideBarState } = useUIStateContext();
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
@@ -93,15 +95,21 @@ export const Chat = () => {
         );
     }, [isSearchOn, searchExpression, meetingRoomUpdates]);
 
+    const hasNoMessages = !meetingRoomUpdates.length;
+
     if (!sideBarState[MeetingSideBars.Chat]) {
         return null;
     }
 
     return (
-        <SideBar>
+        <SideBar onClose={() => toggleSideBarState(MeetingSideBars.Chat)}>
             <div className="absolute top-0 left-0 w-full px-4 pt-4 pb-0 bg-norm rounded-xl" style={{ opacity: 0.9 }}>
                 {!isSearchOn && (
                     <div className="mb-4 h3 text-semibold flex items-center">
+                        <SecurityShield
+                            title={c('l10n_nightly Info').t`End-to-end encryption is active for this chat.`}
+                        />
+
                         {c('l10n_nightly Title').t`Chat`}
                         <Button
                             className="p-0 ml-2 flex items-center justify-center"
@@ -129,6 +137,22 @@ export const Chat = () => {
                 className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 h-full message-list"
                 onScroll={handleScroll}
             >
+                {hasNoMessages && (
+                    <div
+                        className="flex flex-column items-center justify-center my-auto mx-auto w-custom"
+                        style={{ width: '12.8125rem' }}
+                    >
+                        <img
+                            className="w-custom h-custom"
+                            src={placeholder}
+                            alt=""
+                            style={{ '--w-custom': '5rem', '--h-custom': '5rem' }}
+                        />
+                        <div className="text-center color-weak">
+                            {c('l10n_nightly Info').t`Only people in this call can read what you send.`}
+                        </div>
+                    </div>
+                )}
                 {filteredMeetingRoomUpdates.map((item, index) => (
                     <ChatItem
                         key={`${item.identity}-${item.timestamp}`}

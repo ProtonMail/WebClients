@@ -16,7 +16,7 @@ import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';
 import { MeetingSideBars } from '../../types';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
-import { SideBarSearch } from '../SideBarSearch';
+import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
 
 import './Participants.scss';
 
@@ -30,7 +30,7 @@ export const Participants = () => {
 
     const { participantNameMap, participantsWithDisabledVideos, setParticipantsWithDisabledVideos } = useMeetContext();
 
-    const { sideBarState } = useUIStateContext();
+    const { sideBarState, toggleSideBarState } = useUIStateContext();
 
     const filteredParticipants = useMemo(() => {
         if (!isSearchOn || !searchExpression) {
@@ -47,7 +47,7 @@ export const Participants = () => {
     }
 
     return (
-        <SideBar>
+        <SideBar onClose={() => toggleSideBarState(MeetingSideBars.Participants)}>
             <div className="absolute top-0 left-0 w-full px-4 pt-4 pb-0 bg-norm rounded-xl" style={{ opacity: 0.9 }}>
                 {isSearchOn ? (
                     <SideBarSearch

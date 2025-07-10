@@ -33,25 +33,17 @@ export const App = () => {
         return null;
     }
 
-    const href = window.location.href;
-    const joinPattern = /\/join\/id-[^\/#]+#[^\/#]+$/;
-
-    const joinMeeting = joinPattern.test(href);
-
     return (
         <ProtonApp config={config as ProtonConfig}>
             <style id="meet-dark-theme">{meetTheme.toString()}</style>
 
             {isGuest ? (
                 <GuestContainer>
-                    <Route
-                        path="/join"
-                        render={() => <ProtonMeetContainer guestMode={true} instantMeeting={!joinMeeting} />}
-                    />
+                    <Route path="/join" render={() => <ProtonMeetContainer guestMode={true} />} />
                 </GuestContainer>
             ) : (
                 <ProviderContainer>
-                    <Route path="/join" render={() => <ProtonMeetContainer instantMeeting={!joinMeeting} />} />
+                    <Route path="/join" render={() => <ProtonMeetContainer />} />
                     <Route path="/admin" component={AdminContainer} />
                 </ProviderContainer>
             )}

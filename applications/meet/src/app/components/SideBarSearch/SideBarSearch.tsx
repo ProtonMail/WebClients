@@ -4,7 +4,9 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
-import { IcCross } from '@proton/icons';
+import { IcMagnifier } from '@proton/icons';
+
+import './SideBarSearch.scss';
 
 interface SideBarSearchProps {
     searchExpression: string;
@@ -26,7 +28,8 @@ export const SideBarSearch = ({
     }, []);
 
     return (
-        <div className="mb-4 flex items-center w-full gap-2">
+        <div className="mb-4 flex items-center w-full gap-2 side-bar-search">
+            <IcMagnifier className="color-hint" size={6} />
             <Input
                 ref={inputRef}
                 value={searchExpression}
@@ -36,7 +39,7 @@ export const SideBarSearch = ({
                 placeholder={placeholder}
             />
             <Button
-                className="p-0 ml-2 flex items-center justify-center text-hint"
+                className="ml-2 flex items-center justify-center text-hint color-primary"
                 shape="ghost"
                 size="small"
                 onClick={() => {
@@ -45,7 +48,7 @@ export const SideBarSearch = ({
                 }}
                 aria-label={c('l10n_nightly Alt').t`Close search`}
             >
-                <IcCross size={6} />
+                {c('l10n_nightly Action').t`Cancel`}
             </Button>
         </div>
     );
