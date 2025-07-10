@@ -399,6 +399,9 @@
       "Delete permanently": [
         "Kalıcı olarak sil"
       ],
+      "Deleting label": [
+        "Etiket siliniyor"
+      ],
       "Deselect all": [
         "Tümünü bırak"
       ],
@@ -1951,6 +1954,11 @@
       ],
       "You have reached the trial limit.": [
         "Deneme limitine ulaştınız."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Keep subscription": [
+        "Aboneliği sürdür"
       ]
     },
     "bf2023: Deal details": {
@@ -4631,6 +4639,9 @@
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
       ],
+      "Permissions request failed.": [
+        "İzin isteği başarısız oldu."
+      ],
       "Please activate your search again": [
         "Lütfen arama özelliğini yeniden açın"
       ],
@@ -6356,6 +6367,10 @@
         "${ trackersCount } izleyici engellendi",
         "${ trackersCount } izleyici engellendi"
       ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } bülten",
+        "${ unreadCount } bülten"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } zamanlanmış ileti",
         "${ unreadCount } zamanlanmış ileti"
@@ -7311,6 +7326,9 @@
       ],
       "New": [
         "Yeni"
+      ],
+      "newsletter": [
+        "bülten"
       ],
       "No action selected": [
         "Herhangi bir işlem seçilmemiş"
@@ -9208,6 +9226,9 @@
       ],
       "Move to Inbox": [
         "Gelen kutusuna taşı"
+      ],
+      "Moved to ${ labelName }": [
+        "${ labelName } içine taşındı"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "En az ${ MIN_PASSWORD_LENGTH } karakterden oluşmalıdır"
@@ -11123,8 +11144,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } teklifi bugün sona eriyor!"
       ],
+      "Don’t show this again": [
+        "Bunu bir daha gösterme"
+      ],
       "Don’t show this offer again": [
         "Bu teklif bir daha görüntülenmesin"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited tarifesini alın"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
@@ -11245,6 +11272,9 @@
       ],
       "Activate selected": [
         "Seçilmişleri etkinleştir"
+      ],
+      "Ad-free promise": [
+        "Reklamsız kullanma garantisi"
       ],
       "Advanced encryption": [
         "Gelişmiş şifreleme"
@@ -11570,6 +11600,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Banka havalesi"
       ],
@@ -12575,6 +12608,9 @@
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
+      ],
+      "Increase your storage": [
+        "Depolama alanınızı yükseltin"
       ],
       "Upgrade": [
         "Yükselt"
@@ -14827,6 +14863,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Bu Tor Browser sürümü desteklenmiyor. Lütfen son ${ stableRelease } sürüme güncelleyin"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ay"
       ]
     },
     "unprivatization": {

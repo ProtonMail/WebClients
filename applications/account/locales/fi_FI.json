@@ -436,6 +436,9 @@
       "Delete logo": [
         "Poista logo"
       ],
+      "Delete logs": [
+        "Poista lokitiedot"
+      ],
       "Delete member": [
         "Poista jäsen"
       ],
@@ -459,6 +462,9 @@
       ],
       "Delete “${ label.Name }”": [
         "Poista \"${ label.Name }\""
+      ],
+      "Deleting label": [
+        "Tunnisteen poistaminen"
       ],
       "Deny access": [
         "Kiellä käyttöoikeus"
@@ -513,6 +519,12 @@
       ],
       "Download CSV sample": [
         "Lataa CSV-näyte"
+      ],
+      "Download for macOS": [
+        "Lataa macOS:lle"
+      ],
+      "Download for Windows": [
+        "Lataa Windowsille"
       ],
       "Download ICS": [
         "Lataa ICS-tiedosto"
@@ -609,6 +621,9 @@
       ],
       "Encrypt and export": [
         "Salaa ja vie"
+      ],
+      "Explore ${ target }": [
+        "Tutustu ${ target }:ään"
       ],
       "Explore group plans": [
         "Tutustu ryhmätilauksiin"
@@ -922,6 +937,9 @@
       "Next month": [
         "Seuraava kuukausi"
       ],
+      "Next page": [
+        "Seuraava sivu"
+      ],
       "No": [
         "En"
       ],
@@ -966,6 +984,9 @@
       ],
       "Previous month": [
         "Edellinen kuukausi"
+      ],
+      "Previous page": [
+        "Edellinen sivu"
       ],
       "Publish changes": [
         "Julkaise muutokset"
@@ -1738,8 +1759,14 @@
       "High speed streaming with VPN": [
         "Nopea suoratoisto VPN:llä"
       ],
+      "Online document editor": [
+        "Selaimella käytettävä dokumenttieditori"
+      ],
       "Protect up to 10 devices": [
         "Suojaa jopa 10 laitetta"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ],
       "Select any server": [
         "Valitse mikä tahansa palvelin"
@@ -1758,12 +1785,18 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostiverkkotunnusta"
+      ],
+      "years": [
+        "vuoden"
       ]
     },
     "anniversary_2025: Offers": {
       "${ n } month": [
         "${ n } kuukausi",
         "${ n } kuukautta"
+      ],
+      "/ month": [
+        "/ kuukausi"
       ],
       "12 months": [
         "12 kuukautta"
@@ -1776,6 +1809,9 @@
       ],
       "30 months": [
         "30 kuukautta"
+      ],
+      "for ${ durationDeal }": [
+        "hintaan ${ durationDeal }"
       ]
     },
     "app-switcher": {
@@ -1856,6 +1892,14 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "En ole töissä, enkä tarkasta sähköpostiani aktiivisesti."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Peru tilaus"
+      ],
+      "Keep subscription": [
+        "Pidä tilaus"
       ]
     },
     "Badge for domain": {
@@ -3972,6 +4016,15 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronoi tiedostot helposti pilveen työpöydältäsi ja käytä niitä mobiililaitteellasi."
       ],
+      "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Käytä näitä ominaisuuksia ottamalla ${ PROTON_SENTINEL_NAME } käyttöön"
+      ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Käytä näitä ominaisuuksia ottamalla yksityiskohtaiset tapahtumat ja ${ PROTON_SENTINEL_NAME } käyttöön"
+      ],
+      "Enable detailed events to access these features": [
+        "Käytä näitä ominaisuuksia ottamalla yksityiskohtaiset tapahtumat käyttöön"
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Kannusta kaksivaiheisen tunnistautumisen käyttöä organisaatiossasi turvallisuuden parantamiseksi."
       ],
@@ -4293,6 +4346,14 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 tai Windows 32-bit (ARM64)"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb Debianille/Ubuntulle"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm Fedoralle/Red Hatille"
       ]
     },
     "drive_signup_2023: Title": {
@@ -4677,6 +4738,12 @@
     "email_forwarding_2023: Header": {
       "Actions": [
         "Toiminnot"
+      ],
+      "Forward from": [
+        "Ohjaa osoitteesta"
+      ],
+      "Forward to": [
+        "Ohjattu osoitteeseen"
       ],
       "From": [
         "Osoitteesta"
@@ -6127,6 +6194,9 @@
       "Continue": [
         "Jatka"
       ],
+      "Everything in ${ PLAN_NAMES[PLANS.VPN2024] }": [
+        "Kaikki ${ PLAN_NAMES[PLANS.VPN2024] }-tilauksesta"
+      ],
       "Fastest VPN servers": [
         "Nopeimmat VPN-palvelimet"
       ],
@@ -6147,6 +6217,9 @@
       ]
     },
     "Features": {
+      "and more premium features...": [
+        "sekä lisää premium-ominaisuuksia..."
+      ],
       "Double VPN": [
         "Kaksois-VPN"
       ],
@@ -6160,6 +6233,11 @@
         "Turvallinen suoratoisto"
       ]
     },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa"
+      ]
+    },
     "fido2: Action": {
       "Delete key": [
         "Poista avain"
@@ -6171,6 +6249,9 @@
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
         "Poista kaksivaiheinen tunnistautuminen suojausavaimella käytöstä ennen TOTP:n käytöstäpoistoa"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Jotain meni pieleen suojausavaimesi rekisteröinnissä. Yritä uudelleen."
@@ -6191,6 +6272,9 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa suojausavaimen ${ name }?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Kytke ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ],
       "Insert your security key into your device's USB port.": [
         "Kytke suojausavaimesi laitteen USB-porttiin."
@@ -6472,6 +6556,14 @@
         "Ilmainen työpöytäsovelluksen kokeilujaksosi on päättynyt"
       ]
     },
+    "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } App Storessa"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } Play Kaupassa"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Automaattiohjaa"
@@ -6732,6 +6824,9 @@
       ],
       "Contact us": [
         "Ota yhteyttä"
+      ],
+      "Enjoying ${ planName }?": [
+        "Nautitko ${ planName }ista?"
       ],
       "Upgrade your privacy": [
         "Paranna yksityisyyttäsi"
@@ -7644,6 +7739,9 @@
       "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
         "Haluatko varmasti poistua ryhmästä? Jos poistut ja haluat myöhemmin palata, on ryhmän ylläpitäjän kutsuttava sinut uudelleen."
       ],
+      "Are you sure you want to permanently delete all your logs?": [
+        "Haluatko varmasti poistaa kaikki lokitiedot pysyvästi?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Haluatko varmasti poistaa ylläpito-oikeudet käyttäjältä?"
       ],
@@ -7739,6 +7837,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Luomalla ${ PASS_APP_NAME }-tilin SimpleLogin-sähköpostiosoitteellasi voit hallita aliaksiasi suoraan ${ PASS_APP_NAME }ista."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Turvallisuustapahtumien seurannan käytöstäpoiston yhteydessä tyhjennetään myös koko historiasi. Haluatko varmasti poistaa sen käytöstä?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
@@ -8075,6 +8176,9 @@
       "Enable auto-renew to keep access to your premium features.": [
         "Ota automaattiuudistus käyttöön, jotta premium ominaisuudet pysyvät käytössäsi."
       ],
+      "Enable detailed events": [
+        "Käytä yksityiskohtaisia tapahtumatietoja"
+      ],
       "Enable email notifications": [
         "Ota sähköposti-ilmoitukset käyttöön"
       ],
@@ -8185,6 +8289,12 @@
       ],
       "expires ${ expirationDate }": [
         "erääntyy ${ expirationDate }"
+      ],
+      "Failed to fetch logs.": [
+        "Lokien nouto epäonnistui."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Nopea ja kohdistettu. Sähköposti ja kalenteri suoraan työpöydälläsi."
       ],
       "Featured in": [
         "Esittelyssä"
@@ -9895,6 +10005,9 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kun ei käytössä, estää kuvatiedostoja latautumasta laitteellesi ilman tietoasi."
       ],
+      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
+        "Kun tämä on sallittu, tarkistamme onko ${ MAIL_APP_NAME } oletus sähköpostisovellus ja ilmoitamme, jos ei ole."
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetintarjoajaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetintarjoajasi soveltuviin tietokenttiin."
       ],
@@ -10973,6 +11086,9 @@
       ],
       "Backup password": [
         "Varasalasana"
+      ],
+      "Beta": [
+        "Beta-versio"
       ],
       "Billing cycle": [
         "Laskutusjakso"
@@ -12364,8 +12480,50 @@
       ]
     },
     "Log event": {
+      "Account password change": [
+        "Tilin salasana vaihdettiin"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Tunnistautumisvirhe (toinen vaihe epäonnistui)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Tunnistautumisvirhe (väärä salasana)"
+      ],
+      "Authentication success": [
+        "Tunnistautuminen onnistui"
+      ],
+      "Mailbox password change": [
+        "Postilaatikon salasana vaihdettiin"
+      ],
       "Password reset": [
         "Salasanan nollaus"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Toinen tunnistautumistapa poistettiin käytöstä (todennussovellus)"
+      ],
+      "Second factor disabled (security key)": [
+        "Toinen tunnistautumistapa poistettiin käytöstä (suojausavain)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Toinen tunnistautumistapa otettiin käyttöön (todennussovellus)"
+      ],
+      "Sign in blocked (due to abuse)": [
+        "Kirjautuminen estettiin (väärinkäytöksen vuoksi)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Kirjautumisvirhe (toinen vaihe epäonnistui)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Kirjautumisvirhe (väärä salasana)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Kirjautuminen kiellettiin (väärinkäytöksen vuoksi)"
+      ],
+      "Sign in success": [
+        "Onnistunut kirjautuminen"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Kirjautuminen onnistui (odotetaan toista vaihetta)"
       ],
       "Sign out": [
         "Uloskirjautuminen"
@@ -12383,6 +12541,9 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ota ${ reason } käyttöön"
+      ],
+      "Enable detailed events": [
+        "Käytä yksityiskohtaisia tapahtumatietoja"
       ]
     },
     "Mail import summary": {
@@ -13913,6 +14074,10 @@
       ],
       "Require 2FA": [
         "2FA-pakotus"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
       ]
     },
     "news": {
@@ -14283,6 +14448,9 @@
     "Onboarding Trial": {
       "Continue": [
         "Jatka"
+      ],
+      "help center": [
+        "tukikeskus"
       ],
       "If you need help,": [
         "Jos tarvitset apua,"
@@ -15566,6 +15734,9 @@
       "${ months } month plan": [
         "${ months } kuukauden tilaus",
         "${ months } kuukauden tilaus"
+      ],
+      "Enjoying ${ planName }?": [
+        "Nautitko ${ planName }ista?"
       ]
     },
     "Price": {
@@ -15616,6 +15787,9 @@
     "Protection type": {
       "Blocked": [
         "Estetty"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
       "Device verification": [
         "Laitteen vahvistus"
@@ -16670,6 +16844,9 @@
         "${ maxCalendars } kalenteri",
         "${ maxCalendars } kalenteria"
       ],
+      "${ value } of secure storage per user": [
+        "${ value } turvallista tallennustilaa/käyttäjä"
+      ],
       "/user": [
         "/käyttäjä"
       ],
@@ -16687,6 +16864,9 @@
       ],
       "Connect all your devices": [
         "Yhdistä kaikki laitteesi"
+      ],
+      "Continue with ${ PLAN_NAMES[plan] }": [
+        "Jatka ${ PLAN_NAMES[plan] } käyttäen"
       ],
       "Encrypted password manager": [
         "Salattu salasanahallinta"
@@ -16733,11 +16913,17 @@
       "Set your password": [
         "Aseta salasanasi"
       ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Yrityksen nimi näkyy käyttäjillesi, kun he ovat kirjautuneena."
+      ],
       "Total": [
         "Summa"
       ],
       "Ultra fast and private VPN": [
         "Huippunopea ja yksityinen VPN"
+      ],
+      "Up to 2 users": [
+        "2 käyttäjälle"
       ],
       "Up to 6 users": [
         "Enintään 6 käyttäjää"
@@ -16971,6 +17157,9 @@
       ]
     },
     "specialoffer: Link": {
+      "Get unlimited aliases": [
+        "Hanki aliaksia rajattomasti"
+      ],
       "Go to subscription plans": [
         "Siirry tilauksiin"
       ],
@@ -17586,6 +17775,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "Nopea VPN ${ maxVpn } laitteelle",
         "Nopea VPN ${ maxVpn } laitteelle"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti",
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti"
       ]
     },
     "Subscription change warning": {
@@ -19135,6 +19328,15 @@
       "Folders and labels": [
         "Kansiot ja tunnisteet"
       ],
+      "For Linux": [
+        "Linuxille"
+      ],
+      "For macOS": [
+        "MacOS:lle"
+      ],
+      "For Windows": [
+        "Windowsille"
+      ],
       "Forgot password": [
         "Unohtunut salasana"
       ],
@@ -20046,6 +20248,12 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Sallii videoneuvottelulinkkien saumattoman lisäämisen kalenterikutsuihin."
       ],
+      "An approximate location of the IP address": [
+        "IP-osoitteen arvioitu sijainti"
+      ],
+      "Any protection applied to suspicious activity": [
+        "Epäilyttävään toimintaan kohdistetut suojaustoimenpiteet"
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
@@ -20067,6 +20275,9 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Poista roskakorin ja roskapostin viestit 30 päivän kuluttua. Automaattisen poiston käyttöönotto asettaa roskakorissa/roskapostissa jo olevien viestien poistopäivän niiden siirtopäivän perusteella."
       ],
+      "Device information such as operating system": [
+        "Muun muassa käyttöjärjestelmän kaltaisia tietoja käytetystä laitteesta"
+      ],
       "Device name and app version": [
         "Laitteen nimi ja sovelluksen versio"
       ],
@@ -20084,6 +20295,9 @@
       ],
       "Enable/disable desktop and mobile notifications": [
         "Ota työpöytä- ja mobiili-ilmoitukset käyttöön/poista ne käytöstä"
+      ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Yksityiskohtaisten tapahtumatietojen käyttöönotto tallentaa kunkin tapahtuman IP-osoitteen."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteetintarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
@@ -20162,6 +20376,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Tuonti alkaa viimeisimmistä viesteistä."
+      ],
+      "The Internet Service Provider of the IP address": [
+        "IP-osoitteen Internet-palveluntarjoaja"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Uusi tilausjakso alkaa ${ formattedTime }"
@@ -20386,6 +20603,9 @@
       ]
     },
     "Unlimited offer": {
+      "/month": [
+        "/kuukausi"
+      ],
       "Only": [
         "Vain"
       ]

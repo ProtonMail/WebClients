@@ -469,6 +469,9 @@
       "Delete “${ label.Name }”": [
         "\"${ label.Name }\" etiketini sil"
       ],
+      "Deleting label": [
+        "Etiket siliniyor"
+      ],
       "Deny access": [
         "İzin verme"
       ],
@@ -949,6 +952,9 @@
       "Next month": [
         "Sonraki ay"
       ],
+      "Next page": [
+        "Sonraki sayfa"
+      ],
       "No": [
         "Hayır"
       ],
@@ -993,6 +999,9 @@
       ],
       "Previous month": [
         "Önceki ay"
+      ],
+      "Previous page": [
+        "Önceki sayfa"
       ],
       "Publish changes": [
         "Değişiklikleri yayınla"
@@ -2014,6 +2023,11 @@
       ],
       "Amount due now": [
         "Şimdi ödenecek tutar"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Keep subscription": [
+        "Aboneliği sürdür"
       ]
     },
     "Badge for domain": {
@@ -5442,6 +5456,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Ödemeler şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin"
+      ],
+      "Permissions request failed.": [
+        "İzin isteği başarısız oldu."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Lütfen adresleri eklemeden önce bir özel etki alanı yapılandırın."
@@ -14672,8 +14689,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } teklifi bugün sona eriyor!"
       ],
+      "Don’t show this again": [
+        "Bunu bir daha gösterme"
+      ],
       "Don’t show this offer again": [
         "Bu teklif bir daha görüntülenmesin"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited tarifesini alın"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
@@ -15742,6 +15765,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Banka havalesi"
       ],
@@ -17581,6 +17607,9 @@
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
+      ],
+      "Increase your storage": [
+        "Depolama alanınızı yükseltin"
       ],
       "Upgrade": [
         "Yükselt"
@@ -21067,6 +21096,11 @@
       ],
       "Refund": [
         "Geri ödeme"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ay"
       ]
     },
     "unprivatization": {

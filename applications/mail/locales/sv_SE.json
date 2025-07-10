@@ -1081,6 +1081,9 @@
       "Remove from favorites": [
         "Ta bort från favoriter"
       ],
+      "Remove from list": [
+        "Ta bort från listan"
+      ],
       "Remove gift code": [
         "Ta bort presentkod"
       ],
@@ -6292,6 +6295,10 @@
         "${ pureAttachmentsCount } fil bifogad",
         "${ pureAttachmentsCount } filer bifogade"
       ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } e-postmeddelande förra månaden",
+        "${ receivedMessagesCount } e-postmeddelanden förra månaden"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
@@ -6669,6 +6676,9 @@
       ],
       "Close this screen to exit.": [
         "Stäng denna skärm för att avsluta."
+      ],
+      "Composer:": [
+        "Kompositör:"
       ],
       "Confirm phishing report": [
         "Bekräfta nätfiskerapport"
@@ -9530,6 +9540,9 @@
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Nyhetsbrev eller e-postlistor som du avslutar prenumeration på kommer visas här."
       ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Du har inga aktiva nyhetsbrev eller prenumerationer på e-postlistor."
+      ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "Du har inga prenumerationer på nyhetsbrev eller e-postlistor."
       ]
@@ -11424,6 +11437,9 @@
       "Once your full subscription starts...": [
         "När din fullständiga prenumeration startar …"
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
+      ],
       "You can still cancel within 30 days and get a prorated refund.": [
         "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
       ],
@@ -12488,6 +12504,11 @@
     "Signup label": {
       "Display name": [
         "Visningsnamn"
+      ]
+    },
+    "Slack": {
+      "Join Slack huddle": [
+        "Gå med i Slack-samtal"
       ]
     },
     "SmartBanner": {
@@ -14542,6 +14563,9 @@
       ],
       "Recover data": [
         "Återställ data"
+      ],
+      "Remove from list?": [
+        "Ta bort från listan?"
       ],
       "Reply": [
         "Svara"

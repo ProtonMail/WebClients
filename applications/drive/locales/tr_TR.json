@@ -1389,6 +1389,11 @@
         "Deneme limitine ulaştınız."
       ]
     },
+    "b2b_trials_Action": {
+      "Keep subscription": [
+        "Aboneliği sürdür"
+      ]
+    },
     "Badge": {
       "Invited": [
         "Davet edildi"
@@ -2992,6 +2997,17 @@
         "${ PLAN_NAMES[PLANS.PASS] } aboneliğinizi yıllık ${ price } özel fiyatı ile kullanıyorsunuz. Free tarifesine geçtikten sonra, gelecekte yeniden tarifenizi yükseltseniz bile indirim hakkınızı kalıcı olarak kaybedersiniz."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Linux için indirin"
+      ],
+      "Download for macOS": [
+        "macOS için indirin"
+      ],
+      "Download for Windows": [
+        "Windows için indirin"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } uygulamasında aç"
@@ -3538,6 +3554,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "VPN panosu yüklenemedi. Lütfen bağlantınızı denetleyip yeniden deneyin."
       ],
       "Unable to set photo as cover": [
         "Fotoğraf kapak olarak ayarlanamadı"
@@ -4627,12 +4646,21 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } bu konumda zaten var."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } IP adresinizi gizliyor. Böylece siteler sizin kim olduğunuzu anlayamıyor."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/ay)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Otomatik bağlan**: Aygıtınızı açar açmaz VPN uygulamasını açar ve bağlanır."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Bağlantı kesici**: VPN bağlantısı beklenmedik bir şekilde kesilirse internet erişiminizi engelleyerek veri sızıntısını engeller."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
@@ -4653,14 +4681,29 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Uzaktan çalışırken güvenli bir bağlantı şarttır. VPN, şirket verilerini siber tehditlerden korur ve işinizin gizliliğini korur."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "Bir VPN, bağlantınızı şifreleyerek ve IP adresinizi gizleyerek herhangi birinin gezinme etkinliğinizi izlemesini oldukça zorlaştırır."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "Bir VPN, IP adresinizi gizler ve tarama etkinliğinizi şifreleyerek sitelerin, reklamcıların ve internet hizmet sağlayıcılarının zaman içinde sizi izlemesini zorlaştırır."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "Bir VPN, aygıtınız ile internet arasında güvenli bir tüneldir. Konumunuzu ve etkinliklerinizi internet hizmeti sağlayıcınızdan ve ziyaret ettiğiniz sitelerden gizler."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
       "Account successfully updated": [
         "Hesap güncellendi"
+      ],
+      "Ad targeting": [
+        "Hedeflenmiş reklam"
       ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
@@ -4670,6 +4713,9 @@
       ],
       "Admin account allocation": [
         "Yönetici hesabına ayrılan"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Reklam verenler, hedeflenmiş reklamlar göstermek için gezinme etkinliğinizi izler. ${ VPN_APP_NAME } izleyicileri ve reklamları engelleyerek bağlantınızı hızlandırır ve çevrim içi deneyiminizi iyileştirir."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
@@ -4847,6 +4893,9 @@
       ],
       "Conflict": [
         "Çakışma"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Gizliliğinizi koruyarak gezinmek için ${ VPN_APP_NAME } bağlantısı kurun"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kişi ${ contactGroupName } grubuna eklendi"
@@ -5116,6 +5165,9 @@
       "from the version history?": [
         "sürüm geçmişinden?"
       ],
+      "Geoblocking": [
+        "Coğrafi engelleme"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Telefonunuzdaki fotoğrafları yedeklemek için uygulamayı edinin ya da buradan yükleyin."
       ],
@@ -5130,6 +5182,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Önce \"Dosyalarım\" klasörüne gidip bazı dosyalar yükleyin."
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gerçek IP adresiniz gizlenerek ve etkinliğiniz şifrelenerek gezinme gizliliğiniz korunur."
       ],
       "here": [
         "buraya"
@@ -5186,6 +5241,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
       ],
+      "In restrictive countries": [
+        "Kısıtlama uygulayan ülkelerde"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
       ],
@@ -5227,6 +5285,9 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "Çöpe atılan dosyalar silinene kadar burada tutulur"
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Her zaman bir VPN kullanmak en iyisidir. Ancak siber güvenlik tehditlerinin en yüksek olabileceği zamanlar şunlardır:"
       ],
       "It’s easy and secure": [
         "Kolay ve güvenli"
@@ -5337,6 +5398,9 @@
       "More": [
         "Diğer"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Çoğu herkese açık Wi-Fi ağı güvenlidir. Ancak bazılarında güvenlik açıkları vardır ve sizi siber tehditlerle karşı karşıya bırakır. Bir VPN, trafiğinizi şifreleyerek sizi korur."
+      ],
       "Moving files": [
         "Dosyalar taşınıyor"
       ],
@@ -5385,6 +5449,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Tüm dosyalar aktarılmadı. Dosyaları yeniden yüklemeyi veya indirmeyi deneyin."
       ],
+      "Not connected": [
+        "Bağlı değil"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Not: Veriler, ${ DRIVE_APP_NAME } kurulu aygıtlarda yerel olarak bulunmayı sürdürebilir."
       ],
@@ -5403,8 +5470,8 @@
       "of": [
         "/"
       ],
-      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
-        "Bu işlem tamamlandığında geri yüklenen verilerinizin bir kopyasını “Otomatik kurtarma (bugünün tarihi)” adlı yeni bir klasörde bulacaksınız. Verilerinizin bu kopyaları depolama alanı kotanızı etkilemeyecek."
+      "On public WiFi networks": [
+        "Herkese açık Wi-Fi ağlarında"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Şifrelenmiş sürücülerinizden biri kilitli. Bu durum genellikle bir parola sıfırlama işleminde kaynaklanır."
@@ -5438,9 +5505,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Uyarılarımız güvenliğe öncelik verir. Sızdırılmış bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
-      ],
-      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
-        "Önceki kurtarma işleminizin tamamlanmadığı algılandı. Bazı dosyalar tam olarak geri yüklenmemiş olabilir. Her şeyin tam olarak geri yüklendiğinden emin olmak için kurtarma işlemi otomatik olarak yeniden başlatıldı."
       ],
       "Owner": [
         "Sahibi"
@@ -5585,6 +5649,9 @@
       "Primary": [
         "Birincil"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Gizli gezinme (veya “gizli” mod) yalnızca aygıtınızda etkinliğinizin gizliliğini korumak için kullanışlıdır. Tarayıcınızın geçmişi ve tanımlama bilgilerini kaydetmesini engeller, ancak sizi görünmez yapmaz. İnternet hizmeti sağlayıcınız, ağ yöneticiniz ve ziyaret ettiğiniz siteler çevrim içi ortamda ne yaptığınızı görmeyi sürdürebilir."
+      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Gizli arama özelliği açıldı. Bu pencereyi kapatarak dosya ve klasörlerde arama yapabilirsiniz."
       ],
@@ -5638,6 +5705,9 @@
       ],
       "Scan issue": [
         "Tarama sorunu"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Mobil aygıtınızla kare kodu tarayın"
       ],
       "Search cannot be enabled in this browser": [
         "Bu tarayıcıda arama özelliği açılamaz"
@@ -5738,17 +5808,26 @@
       "Some files failed to upload. Try uploading the files again.": [
         "Bazı dosyalar yüklenemedi. Dosyaları yeniden yüklemeyi deneyin."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Bazı devletler belirli sitelere erişimi engeller veya kısıtlar. VPN, etkinliğinizi ve kimliğinizi gizli tutarken engellemeyi aşmanıza yardımcı olur."
+      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Bazı dosyalarınıza artık erişilemiyor. Dosyalara yeniden erişim kazanın. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Bu albümdeki bazı fotoğraflar zaman akışınıza kaydedilmez. Bu albümün silinmesi bu fotoğrafları kalıcı olarak siler."
       ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Bazı siteler ve yayın akışı hizmetleri içeriği bölgelere göre engeller. Bir VPN, bu kısıtlamaları aşmanızı ve internete özgürce erişmenizi sağlar."
+      ],
       "Something went wrong, please try again later.": [
         "Bir şeyler ters gitti. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Aşağıdaki VPN ayarlarını etkinleştirerek kolayca bağlantıda kalın:"
       ],
       "Storage allocated to other users in this organisation": [
         "Bu kuruluştaki diğer kullanıcılara ayrılmış depolama alanı"
@@ -5774,6 +5853,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Gözetleme"
       ],
       "Symbols (#$&)": [
         "Simgeler (#$&)"
@@ -5866,8 +5948,14 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Bu bağlantı eski Drive sürümüyle oluşturulmuş ve düzenlenemiyor. Bu bağlantıyı silin ve ayarları değiştirmek için yeni bir tane oluşturun."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Bu durumda, internet hizmeti sağlayıcınız ve ziyaret ettiğiniz siteler kişisel bilgilerinizi çevrim içi etkinliğinizle ilişkilendiremez."
+      ],
       "This month": [
         "Bu ay"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Bu benzersiz kod, siteler ve internet hizmeti sağlayıcıları tarafından konumunuzu ve tarama geçmişinizi aygıtınızla ilişkilendirmek için kullanılabilir."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Bu işlem yalnızca albümü siler. Fotoğraflarınız zaman akışınızda kalır. Bu işlem geri alınamaz."
@@ -5940,6 +6028,9 @@
       ],
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
+      ],
+      "Tracking": [
+        "İzleme"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\" dosyasının aktarımı iptal edildi"
@@ -6040,6 +6131,9 @@
       "Visa Secure logo": [
         "Visa Secure logosu"
       ],
+      "VPN IP": [
+        "VPN IP adresi"
+      ],
       "Want to sync files faster?": [
         "Dosyaları daha hızlı eşitlemek ister misiniz?"
       ],
@@ -6070,9 +6164,6 @@
       "We need to authenticate your payment with your bank.": [
         "Ödemenizi bankanızla doğrulamamız gerekiyor."
       ],
-      "We sincerely apologize for the inconvenience this may have caused you.": [
-        "Vermiş olabileceğimiz rahatsızlıktan dolayı özür dileriz."
-      ],
       "We use 3-D Secure to protect your payments": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
       ],
@@ -6096,6 +6187,12 @@
       ],
       "What would you like to do?": [
         "Ne yapmak istersiniz?"
+      ],
+      "When working remotely": [
+        "Uzaktan çalışırken"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "VPN bağlantısı kurduğunuzda, IP adresinizi (aygıtınıza atanan benzersiz bir kod) gizlemek için şifreleme teknolojisi kullanılır."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
@@ -6301,6 +6398,15 @@
       "Your information was found on ${ displayedDate }": [
         "Bilgileriniz ${ displayedDate } tarihinde bulundu"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "İnternet hizmeti sağlayıcınız verilerinizi izleyebilir ve bazen satabilir. Hangi sitelere erişebileceğinizi de kısıtlayabilir."
+      ],
+      "Your IP": [
+        "IP adresiniz"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "IP adresiniz görülebilir ve çevrim içi etkinliğinizi izlemek için kullanılabilir."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
       ],
@@ -6310,11 +6416,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Bir sonraki fatura tarihiniz ${ renewalTime }. Tarifenizi hemen değiştirmeniz gerekiyorsa lütfen destek ekibi ile görüşün."
       ],
+      "Your online activity is protected": [
+        "Çevrim içi etkinlikleriniz korunuyor"
+      ],
       "Your password was leaked:": [
         "Parolanız sızdırılmış:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Fiziksel konumunuz görülebilir ve internete erişiminizi kısıtlamak için kullanılabilir."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Tarifeniz 10 sürüm ve 7 gün ile sınırlıdır"
@@ -7028,6 +7140,15 @@
       ],
       "Your alias": [
         "Takma adınız"
+      ],
+      "Your IP": [
+        "IP adresiniz"
+      ],
+      "Your ISP": [
+        "Hizmet sağlayıcınız"
+      ],
+      "Your location": [
+        "Konumunuz"
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
@@ -8824,8 +8945,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } teklifi bugün sona eriyor!"
       ],
+      "Don’t show this again": [
+        "Bunu bir daha gösterme"
+      ],
       "Don’t show this offer again": [
         "Bu teklif bir daha görüntülenmesin"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited tarifesini alın"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
@@ -9214,6 +9341,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Banka havalesi"
       ],
@@ -9944,6 +10074,9 @@
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
+      ],
+      "Increase your storage": [
+        "Depolama alanınızı yükseltin"
       ],
       "Upgrade": [
         "Yükselt"
@@ -10995,9 +11128,6 @@
       "Auto-deletion is active": [
         "Otomatik silme özelliği açık"
       ],
-      "Automatic Recovery in Progress": [
-        "Otomatik kurtarma işlemi sürüyor"
-      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -11141,6 +11271,9 @@
       "Deleting contacts": [
         "Kişileri sil"
       ],
+      "Desktop": [
+        "Bilgisayar"
+      ],
       "Discard": [
         "Yok say"
       ],
@@ -11158,6 +11291,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
+      ],
+      "Download the app": [
+        "Uygulamayı indirin"
       ],
       "Download unverified file?": [
         "Doğrulanmamış dosya indirilsin mi?"
@@ -11241,6 +11377,9 @@
         "${ searchView.numberOfResults } sonuç bulundu",
         "${ searchView.numberOfResults } sonuç bulundu"
       ],
+      "Get more from your VPN": [
+        "VPN hizmetinizden fazlasını alın"
+      ],
       "Get the apps": [
         "Uygulamaları indirme"
       ],
@@ -11261,6 +11400,9 @@
       ],
       "Hm, we couldn't find that one": [
         "Bunu bulamadık"
+      ],
+      "How does it all work?": [
+        "Tüm bunlar nasıl işliyor?"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
@@ -11302,6 +11444,9 @@
       "Location": [
         "Konum"
       ],
+      "Make a secure connection your default": [
+        "Bağlantınızın her zaman güvenli olmasını sağlayın"
+      ],
       "Manage secure link": [
         "Güvenli bağlantıyı yönet"
       ],
@@ -11316,6 +11461,9 @@
       ],
       "Minicalendar": [
         "Mini takvim"
+      ],
+      "Mobile": [
+        "Mobil"
       ],
       "Modified": [
         "Değiştirilme"
@@ -11433,6 +11581,9 @@
       ],
       "Preview": [
         "Ön izleme"
+      ],
+      "Private browsing vs VPN": [
+        "Gizle gezinme ile VPN karşılaştırması"
       ],
       "Processing...": [
         "İşleniyor..."
@@ -11648,6 +11799,9 @@
       "Version history": [
         "Sürüm geçmişi"
       ],
+      "VPN explained": [
+        "VPN nedir"
+      ],
       "Warning": [
         "Uyarı"
       ],
@@ -11657,8 +11811,17 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business uygulamasına hoş geldiniz"
       ],
+      "What can a VPN protect you from?": [
+        "Bir VPN sizi nelerden koruyabilir?"
+      ],
+      "What is a VPN?": [
+        "Bir VPN nedir?"
+      ],
       "What would you like to import?": [
         "Neyi içe aktarmak istersiniz?"
+      ],
+      "When is it most important to use a VPN?": [
+        "VPN kullanmak en çok ne zaman önemlidir?"
       ],
       "You can now create unlimited folders and labels": [
         "Artık sınırsız sayıda klasör ve etiket oluşturabilirsiniz"
@@ -11800,6 +11963,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ay"
       ]
     },
     "unprivatization": {
