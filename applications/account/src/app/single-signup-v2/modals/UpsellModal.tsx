@@ -11,6 +11,7 @@ import { getPassAppFeature } from '@proton/components/containers/payments/featur
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { getVPNAppFeature } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import { getNormalizedPlanTitles } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { type FreePlanDefault, PLANS, type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
@@ -76,8 +77,12 @@ const UpsellModal = ({
     onFree,
     ...rest
 }: Props) => {
-    const currentPlanTitle = currentPlan?.Title || '';
-    const upsellPlanTitle = upsellPlan?.Title || '';
+    const { currentPlanTitle, upsellPlanTitle } = getNormalizedPlanTitles({
+        currentPlan,
+        unlockPlan,
+        upsellPlan,
+    });
+
     const shortPlan = upsellPlan
         ? getShortPlan(upsellPlan.Name as PLANS, plansMap, { vpnServers: vpnServersCountData, freePlan })
         : null;

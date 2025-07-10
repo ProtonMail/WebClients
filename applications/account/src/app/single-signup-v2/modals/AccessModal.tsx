@@ -52,15 +52,17 @@ const AccessModal = ({ app, onClose, onContinue, onSignOut, user, ...rest }: Pro
 
     const isPassLifetime = user && hasPassLifetime(user);
 
+    const getWelcomeText = (plan: string) => {
+        return c('pass_signup_2023: Info').t`Welcome to ${plan}`;
+    };
+
     return (
         <ModalTwo {...rest} disableCloseOnEscape={true} size="small">
             <ModalTwoContent>
                 <div className="text-center">
                     {svg && <img src={svg} alt="" className="mb-4 mt-4" />}
                     <div className="mb-4 text-bold h3">
-                        {isPassLifetime
-                            ? c('pass_lifetime_signup: Info').t`Welcome to ${PLAN_NAMES[PLANS.PASS_LIFETIME]}`
-                            : c('pass_signup_2023: Info').t`Welcome to ${shortName} Plus`}
+                        {isPassLifetime ? getWelcomeText(PLAN_NAMES[PLANS.PASS_LIFETIME]) : getWelcomeText(shortName)}
                     </div>
                     <div className="mb-6 color-weak">
                         {c('pass_signup_2023: Info')

@@ -66,3 +66,10 @@ export const getFreeCheckResult = (
         RenewCycle: null,
     };
 };
+
+/**
+ * Used to get the combination of app name + free, for example `Proton Free` or `Mail Free`
+ */
+export const getFreeTitle = (appName: string) => {
+    return `${appName} ${PLAN_NAMES[PLANS.FREE]}`;
+};
