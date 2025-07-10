@@ -1143,6 +1143,11 @@
         "Deneme limitine ulaştınız."
       ]
     },
+    "b2b_trials_Action": {
+      "Keep subscription": [
+        "Aboneliği sürdür"
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 kullanıcı"
@@ -7926,8 +7931,14 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle } teklifi bugün sona eriyor!"
       ],
+      "Don’t show this again": [
+        "Bunu bir daha gösterme"
+      ],
       "Don’t show this offer again": [
         "Bu teklif bir daha görüntülenmesin"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "${ BRAND_NAME } Unlimited tarifesini alın"
       ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
@@ -8180,6 +8191,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Banka havalesi"
       ],
@@ -8998,6 +9012,9 @@
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
+      ],
+      "Increase your storage": [
+        "Depolama alanınızı yükseltin"
       ],
       "Upgrade": [
         "Yükselt"
@@ -10374,6 +10391,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/ay"
       ]
     },
     "unprivatization": {
