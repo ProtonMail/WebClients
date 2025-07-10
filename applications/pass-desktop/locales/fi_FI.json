@@ -1306,6 +1306,12 @@
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "Kohde \"${ payload.itemName }\" hylättiin"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "Kohteen \"${ payload.itemName }\" päivitys hylättiin"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } estetty",
         "${ blockedEmailsCount } estetty"
@@ -1803,6 +1809,9 @@
       ],
       "Low Priority": [
         "Alhainen tärkeys"
+      ],
+      "Manager": [
+        "Hallitsija"
       ],
       "me": [
         "minä"
@@ -2995,6 +3004,9 @@
       "License number": [
         "Ajokortin numero"
       ],
+      "License Number": [
+        "Rekisterinumero"
+      ],
       "Limited time": [
         "Rajoitetun ajan"
       ],
@@ -3163,6 +3175,9 @@
       "Patient Name": [
         "Potilaan nimi"
       ],
+      "Permissions": [
+        "Käyttöoikeudet"
+      ],
       "Personal": [
         "Henkilökohtainen"
       ],
@@ -3231,6 +3246,9 @@
       ],
       "Recent": [
         "Käytön mukaan"
+      ],
+      "Record Number": [
+        "Tietuenumero"
       ],
       "Reddit handle": [
         "Reddit-tunnus"
