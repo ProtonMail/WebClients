@@ -2794,6 +2794,17 @@
         "Vaša ${ PLAN_NAMES[PLANS.PASS] } naročnina je po posebni ceni ${ price } na leto. S podgraditvijo na paket Free boste trajno izgubili popust, tudi če v prihodnosti znova nadgradite."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Naloži za Linux"
+      ],
+      "Download for macOS": [
+        "Naloži za macOS"
+      ],
+      "Download for Windows": [
+        "Naloži za Windows"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Odpri v ${ DRIVE_SHORT_APP_NAME }"
@@ -4476,6 +4487,9 @@
       "${ uploadName } already exists in this location.": [
         "${ uploadName } že obstaja v tej lokaciji."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } prikriva vaš naslov IP, zato vas spletne strani ne morejo prepoznati."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } član)",
         "(${ memberCount } člana)",
@@ -4484,6 +4498,12 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mesec)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Samodejna povezava**: Odpre in vzpostavi povezavo s storitvijo VPN takoj, ko vklopite svojo napravo."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Stikalo za odklop**: Ustavi uhajanje podatkov tako, da blokira vašo internetno povezavo, če VPN nepričakovano preneha delovati."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } dodaten prostor za shranjevanje"
@@ -4506,14 +4526,29 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "S telefonsko številko lahko preverite samo en ${ BRAND_NAME } račun"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Varna povezava je bistvena pri delu na daljavo. VPN ščiti podatke podjetja pred kibernetskimi grožnjami in ohranja vaše delo zasebno."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Uporabnik je račun, povezan s posameznim uporabniškim imenom, poštnim nabiralnikom in osebo."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN šifrira vašo povezavo in skrije vaš naslov IP, zato je veliko težje komu slediti ali nadzorovati vaše brskanje."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN skrije vaš IP naslov in šifrira vaše brskanje, s čimer spletnim stranem, oglaševalcem in ponudnikom internetnih storitev (ISP) oteži sledenje vam skozi čas."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN je varen tunel med vašo napravo in internetom. Skrije vašo lokacijo in dejavnost pred vašim ponudnikom internetnih storitev (ISP) in spletnimi stranmi, ki jih obiskujete."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Zaradi neplačanih računov je dostop do računa omejen. Obrnite se na svojega skrbnika."
       ],
       "Account successfully updated": [
         "Račun je uspešno posodobljen"
+      ],
+      "Ad targeting": [
+        "Ciljno oglaševanje"
       ],
       "Address copied to clipboard": [
         "Naslov kopiran v odložišče"
@@ -4523,6 +4558,9 @@
       ],
       "Admin account allocation": [
         "Dodeljevanje skrbniškega računa."
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Oglaševalci sledijo vašemu brskanju, da vam kažejo ciljno usmerjene oglase. ${ VPN_APP_NAME } blokira sledilnike in oglase, s čimer pospeši vašo povezavo in izboljša vašo spletno izkušnjo."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Pomočnik z umetno inteligenco za hitro in preprosto ustvarjanje boljše e-pošte."
@@ -4697,6 +4735,9 @@
       ],
       "Conflict": [
         "Spor"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Povežite se s programom ${ VPN_APP_NAME } za zasebno brskanje"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Stik dodeljen skupini ${ contactGroupName }"
@@ -4950,6 +4991,9 @@
       "from the version history?": [
         "iz zgodovine različic?"
       ],
+      "Geoblocking": [
+        "Geoblokiranje"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Prenesite si applikacijo za varnostno kopiranje fotografij iz telefona ali pa jih naložite sem."
       ],
@@ -4964,6 +5008,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Pojdite v \"Moje datoteke\" in najprej prenesite nekaj datotek."
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Vlade in ponudniki internetnih storitev lahko spremljajo vašo spletno dejavnost. S skrivanjem vašega resničnega IP-ja in šifriranjem vaše dejavnosti postane vaše brskanje zasebno."
       ],
       "here": [
         "tukaj"
@@ -5019,6 +5066,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Uvažanje podatkov iz ${ fromEmail } v ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "V državah z omejitvami"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V naslednjem koraku boste lahko vložili polog z uporabo Bitcoin naslova."
       ],
@@ -5057,6 +5107,9 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "Predmeti, premaknjeni v smeti, ostanejo tukaj, dokler jih ne izbrišete."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Najbolje je VPN uporabljati ves čas. Tukaj pa so kibernetske grožnje lahko največje:"
       ],
       "It’s easy and secure": [
         "Preprosto in varno"
@@ -5157,6 +5210,9 @@
       "More": [
         "Več"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Večina javnih omrežij WiFi je varnih, vendar nekatera nimajo ustrezne varnosti, zato ste izpostavljeni kibernetskim grožnjam. VPN šifrira vaš promet in vas ohranja zaščitene."
+      ],
       "Moving files": [
         "Premikanje datotek"
       ],
@@ -5205,6 +5261,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Nekaj datotek ni bilo prenešenih. Poskusite ponovno naložiti ali prenesti datoteke."
       ],
+      "Not connected": [
+        "Niste povezani"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Opomba: podatki so morda še vedno na voljo lokalno v napravah, kjer ste namestili ${ DRIVE_APP_NAME }."
       ],
@@ -5219,6 +5278,9 @@
       ],
       "of": [
         "od"
+      ],
+      "On public WiFi networks": [
+        "V javnih omrežjih WiFi"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Eden od vaših šifriranih pogonov je zaklenjen. To je najverjetneje posledica nedavne ponastavitve gesla."
@@ -5382,6 +5444,9 @@
       "Primary": [
         "Glavni"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Zasebno brskanje (ali »način brez beleženja zgodovine«) je uporabno samo za ohranjanje zasebnosti vaše dejavnosti znotraj vaše naprave. Preprečuje, da bi vaš brskalnik shranjeval zgodovino in piškotke, vendar vas ne naredi nevidne. Vaš internetni ponudnik, skrbnik omrežja in spletne strani, ki jih obiskujete, lahko še vedno vidijo, kaj počnete v spletu."
+      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Omogočeno je zasebno iskanje. To pogovorno okno lahko zaprete in poiščete datoteke in mape."
       ],
@@ -5432,6 +5497,9 @@
       ],
       "Scan issue": [
         "Težava pri optičnem branju"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Skenirajte kodo QR z mobilno napravo."
       ],
       "Search cannot be enabled in this browser": [
         "Iskanja ni mogoče omogočiti v tem brskalniku"
@@ -5523,14 +5591,23 @@
       "Some files failed to upload. Try uploading the files again.": [
         "Nekaterih datotek ni bilo mogoče naložiti. Poskusite znova naložiti datoteke."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Nekatere vlade blokirajo ali omejujejo dostop do določenih spletnih strani. VPN vam pomaga zaobiti cenzuro, pri tem pa ohranja vašo dejavnost in identiteto zasebno."
+      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Nekatere vaše datoteke niso več dostopne. Obnovite dostop do svojih datotek. ${ StartRecoveryButton }"
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Nekatera spletna mesta in storitve pretakanja blokirajo vsebino glede na regijo. VPN vam omogoča, da zaobidete te omejitve in prosto dostopate do interneta."
       ],
       "Something went wrong, please try again later.": [
         "Nekaj je šlo narobe. Prosimo, poizkusite znova."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ga deliti s stiki in ga uporabljajte za spletne storitve."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Ostanite povezani brez težav tako, da omogočite naslednje nastavitve VPN:"
       ],
       "Storage allocated to other users in this organisation": [
         "Shramba, dodeljena drugim uporabnikom v tej organizaciji."
@@ -5552,6 +5629,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Konec naročnine: znova aktivirajte do ${ byDate }, da obdržite ugodnosti ${ planName }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Nadzor"
       ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
@@ -5637,8 +5717,14 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Ta povezava je bila ustvarjena s starejšo različico Drive in je ni mogoče spremeniti. Če želite spremeniti nastavitve, najprej izbrišite obstoječo povezavo in nato ustvarite novo."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "To pomeni, da vaš ponudnik internetnih storitev in spletne strani, ki jih obiskujete, ne morejo povezati vaših osebnih podatkov z vašo spletno aktivnostjo."
+      ],
       "This month": [
         "Ta mesec"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "To edinstveno kodo lahko spletne strani in ponudniki internetnih storitev (ISP) uporabijo za povezavo vaše lokacije in zgodovine brskanja z vašo napravo"
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "To bo izbrisalo samo album. Vaše fotografije bodo ostale v vašem časovnem traku. Tega dejanja ni mogoče razveljaviti. Vprašaj ChatGPT"
@@ -5699,6 +5785,9 @@
       ],
       "Total VPN connections": [
         "Skupno število VPN povezav"
+      ],
+      "Tracking": [
+        "Sledenje"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Prenos za datoteko »${ name }« je preklican"
@@ -5799,6 +5888,9 @@
       "Visa Secure logo": [
         "Visa Secure logotip"
       ],
+      "VPN IP": [
+        "VPN IP"
+      ],
       "Want to sync files faster?": [
         "Želite hitreje sinhronizirati datoteke?"
       ],
@@ -5849,6 +5941,12 @@
       ],
       "What would you like to do?": [
         "Kaj želite narediti?"
+      ],
+      "When working remotely": [
+        "Pri delu na daljavo"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Ko se povežete z VPN, ta uporablja tehnologijo šifriranja, da skrije vaš IP naslov (edinstvena koda, dodeljena vaši napravi)."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "bo obnovljen na različico iz ${ formattedRevisionDate }. Vse druge različice bodo še vedno shranjene."
@@ -6039,6 +6137,15 @@
       "Your information was found on ${ displayedDate }": [
         "Vaše informacije so bile najdene ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Vaš ponudnik internetnih storitev lahko nadzoruje in včasih prodaja vaše podatke ali celo omeji, katere spletne strani lahko obiščete."
+      ],
+      "Your IP": [
+        "Vaš IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Vaš IP naslov je viden in se lahko uporablja za sledenje vaši spletni aktivnosti."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Po končanem uvozu vaši podatki za prijavo ne bodo shranjeni."
       ],
@@ -6048,11 +6155,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Datum vašega naslednjega računa za plačilo je ${ renewalTime }. Če potrebujete takojšnjo spremembo paketa, se obrnite na podporo."
       ],
+      "Your online activity is protected": [
+        "Vaša spletna aktivnost je zaščitena"
+      ],
       "Your password was leaked:": [
         "Vaše geslo je bilo izpostavljeno:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Vaša fizična lokacija je vidna in se lahko uporablja za omejevanje vašega dostopa do interneta."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Vaš paket je omejen na 10 različic do 7 dni"
@@ -6750,6 +6863,15 @@
       ],
       "Your alias": [
         "Vaš vzdevek"
+      ],
+      "Your IP": [
+        "Vaš IP"
+      ],
+      "Your ISP": [
+        "Vaš internetni ponudnik"
+      ],
+      "Your location": [
+        "Vaša lokacija"
       ]
     },
     "Label for contact group color": {
@@ -10823,6 +10945,9 @@
       "Deleting contacts": [
         "Brisanje stikov"
       ],
+      "Desktop": [
+        "Namizje"
+      ],
       "Discard": [
         "Zavrzi"
       ],
@@ -10840,6 +10965,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Prenesite aplikacije ${ DRIVE_APP_NAME }"
+      ],
+      "Download the app": [
+        "Prenesi aplikacijo"
       ],
       "Download unverified file?": [
         "Prenesi nepreverjeno datoteko?"
@@ -10919,6 +11047,9 @@
         "Najdeni ${ searchView.numberOfResults } rezultati",
         "Najdenih ${ searchView.numberOfResults } rezultatov"
       ],
+      "Get more from your VPN": [
+        "Izkoristite več od svoje VPN"
+      ],
       "Get the apps": [
         "Namesti aplikacije"
       ],
@@ -10939,6 +11070,9 @@
       ],
       "Hm, we couldn't find that one": [
         "Hm, tega nismo mogli najti."
+      ],
+      "How does it all work?": [
+        "Kako vse to deluje?"
       ],
       "Human verification": [
         "Ali si človek"
@@ -10982,6 +11116,9 @@
       "Location": [
         "Lokacija"
       ],
+      "Make a secure connection your default": [
+        "Nastavite varno povezavo kot privzeto"
+      ],
       "Manage secure link": [
         "Upravljanje varne povezave"
       ],
@@ -10996,6 +11133,9 @@
       ],
       "Minicalendar": [
         "Mini koledar"
+      ],
+      "Mobile": [
+        "Mobilni"
       ],
       "Modified": [
         "Spremenjeno"
@@ -11098,6 +11238,9 @@
       ],
       "Preview": [
         "Predogled"
+      ],
+      "Private browsing vs VPN": [
+        "Zasebno brskanje v primerjavi z VPN"
       ],
       "Processing...": [
         "Obdelovanje ..."
@@ -11309,6 +11452,9 @@
       "Version history": [
         "Zgodovina različice"
       ],
+      "VPN explained": [
+        "Pojasnilo o VPN"
+      ],
       "Warning": [
         "Opozorilo"
       ],
@@ -11318,8 +11464,17 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Dobrodošli v ${ BRAND_NAME } for Business"
       ],
+      "What can a VPN protect you from?": [
+        "Pred čim vas lahko VPN zaščiti?"
+      ],
+      "What is a VPN?": [
+        "Kaj je VPN?"
+      ],
       "What would you like to import?": [
         "Kaj želite uvoziti?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Kdaj je uporaba VPN najbolj pomembna?"
       ],
       "You can now create unlimited folders and labels": [
         "Zdaj lahko ustvarite neomejeno število map in oznak"
