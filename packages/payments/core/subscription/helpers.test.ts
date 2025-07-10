@@ -504,6 +504,14 @@ describe('forbidden plan transitions', () => {
         expect(result).toEqual(null);
     });
 
+    it('should be allowed going from pass lifetime to mail', () => {
+        const subscription = buildSubscription(PLANS.PASS_LIFETIME);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.MAIL]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
+
     it('should be forbidden going from mail to pass', () => {
         const subscription = buildSubscription(PLANS.MAIL);
         const user = buildUser({ isPaid: true });
