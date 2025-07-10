@@ -20,7 +20,7 @@ import {
     isTrial,
     isTrialExpired,
     regularCycles,
-    willTrialExpire,
+    willTrialExpireInLessThan1Week,
 } from '@proton/payments';
 import { buildSubscription } from '@proton/testing/builders';
 
@@ -105,16 +105,16 @@ describe('isTrialExpired', () => {
     });
 });
 
-describe('willTrialExpire', () => {
+describe('willTrialExpireInLessThan1Week', () => {
     it('should detect close expiration', () => {
         const ts = Math.round((addWeeks(new Date(), 1).getTime() - 1000) / 1000);
-        expect(willTrialExpire({ ...subscription, PeriodEnd: ts })).toBe(true);
+        expect(willTrialExpireInLessThan1Week({ ...subscription, PeriodEnd: ts })).toBe(true);
     });
 
     it('should detect far expiration', () => {
         // Add 2 weeks from now and convert Date to unix timestamp
         const ts = Math.round(addWeeks(new Date(), 2).getTime() / 1000);
-        expect(willTrialExpire({ ...subscription, PeriodEnd: ts })).toBe(false);
+        expect(willTrialExpireInLessThan1Week({ ...subscription, PeriodEnd: ts })).toBe(false);
     });
 });
 
