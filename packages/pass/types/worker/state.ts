@@ -58,6 +58,7 @@ export type LocalStoreData = {
     lastReload: number;
     logs: string;
     onboarding: string;
+    privateDomains: string;
     ps: string;
     salt: string;
     settings: string;
