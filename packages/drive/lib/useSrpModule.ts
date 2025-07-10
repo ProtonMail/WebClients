@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 import { useApi } from '@proton/components';
 import { srpGetVerify } from '@proton/shared/lib/srp';
+import { computeKeyPassword } from '@proton/srp/lib';
 
 export type SRPVerifier = {
     modulusId: string;
@@ -26,9 +27,11 @@ export const useSrpModule = () => {
     // Ensure the reference is stable across renders. Never update the whole object.
     const srpModule = useRef({
         getSrpVerifier,
+        computeKeyPassword,
     });
 
     srpModule.current.getSrpVerifier = getSrpVerifier;
+    srpModule.current.computeKeyPassword = computeKeyPassword;
 
     return srpModule.current;
 };
