@@ -74,7 +74,7 @@ export const getDefaultSelectedProductPlans = ({
     let defaultB2CPlan = PLANS.MAIL;
     if (appName === APPS.PROTONVPN_SETTINGS) {
         defaultB2CPlan = getVPNPlanToUse({ plansMap, planIDs, cycle });
-    } else if (appName === APPS.PROTONDRIVE) {
+    } else if (appName === APPS.PROTONDRIVE || appName === APPS.PROTONDOCS) {
         defaultB2CPlan = PLANS.DRIVE;
     } else if (appName === APPS.PROTONPASS) {
         defaultB2CPlan = PLANS.PASS;
