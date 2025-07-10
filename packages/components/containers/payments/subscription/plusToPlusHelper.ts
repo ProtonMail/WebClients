@@ -1,6 +1,6 @@
 import {
     type ADDON_NAMES,
-    type PLANS,
+    PLANS,
     PLAN_NAMES,
     type Plan,
     type SubscriptionPlan,
@@ -17,6 +17,9 @@ export const getNormalizedPlanTitleToPlus = (planName: PLANS | ADDON_NAMES) => {
     // Drive is called `Drive Plus 200 GB` but in some cases we just want to call it `Drive Plus`
     if (getHasSomeDrivePlusPlan(planName)) {
         return getPlusTitle(DRIVE_SHORT_APP_NAME);
+    }
+    if (planName === PLANS.PASS_LIFETIME) {
+        return PLAN_NAMES[PLANS.PASS];
     }
     return isValidPlanName(planName) ? PLAN_NAMES[planName] : '';
 };
