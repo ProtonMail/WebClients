@@ -3,9 +3,12 @@ import { useHistory } from 'react-router-dom';
 
 import { RoomContext } from '@livekit/components-react';
 import type { Room } from 'livekit-client';
-import { c } from 'ttag';
 
+import useFlag from '@proton/unleash/useFlag';
+
+import { GuestMeetingSchedulingBlocked } from '../components/GuestMeetingSchedulingBlocked';
 import { PasswordPrompt } from '../components/PasswordPrompt/PasswordPrompt';
+import { JOIN_TITLE_TIMEOUT } from '../constants';
 import { DevicePermissionsContext } from '../contexts/DevicePermissionsContext';
 import { useCreateInstantMeeting } from '../hooks/admin/useCreateInstantMeeting';
 import type { SRPHandshakeInfo } from '../hooks/srp/useMeetSrp';
@@ -30,7 +33,9 @@ interface ProtonMeetContainerProps {
     instantMeeting?: boolean;
 }
 
-export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false }: ProtonMeetContainerProps) => {
+export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerProps) => {
+    const isGuestMeetingSchedulingAllowed = useFlag('AllowGuestInit');
+
     const history = useHistory();
     const createInstantMeeting = useCreateInstantMeeting();
 
@@ -38,6 +43,8 @@ export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false 
         MeetingDecryptionReadinessStatus.UNINITIALIZED
     );
     const { getRoomName, getHandshakeInfo, token, urlPassword } = useMeetingSetup();
+
+    const instantMeetingRef = useRef(!token);
 
     const join = useMeetingJoin();
 
@@ -66,12 +73,16 @@ export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false 
 
     const { getParticipants, participantNameMap } = useParticipantNameMap();
 
+    const [initialisedParticipantNameMap, setInitialisedParticipantNameMap] = useState(false);
+
     const handleDevicePermissionChange = useCallback(
         (permissions: { camera?: PermissionState; microphone?: PermissionState }) => {
             setDevicePermissions((prevPermissions) => ({ ...prevPermissions, ...permissions }));
         },
         []
     );
+
+    const loadingStartTimeRef = useRef(0);
 
     useDevicePermissionChangeListener(handleDevicePermissionChange);
 
@@ -130,20 +141,41 @@ export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false 
             setJoiningInProgress(true);
 
             try {
+                try {
+                    await getParticipants(meetingToken);
+                } catch (error) {
+                    console.error(error);
+                } finally {
+                    setInitialisedParticipantNameMap(true);
+                }
+
+                const timeBeforeJoin = Date.now();
+
                 const room = await join(participantSettings?.displayName as string, meetingToken);
 
                 await getParticipants(meetingToken);
 
                 roomRef.current = room;
 
-                setJoinedRoom(true);
+                const timeAfterJoin = Date.now();
+
+                const timeSinceStart = timeAfterJoin - loadingStartTimeRef.current;
+                const timeSinceJoinStarted = timeAfterJoin - timeBeforeJoin;
+
+                setTimeout(
+                    () => {
+                        setJoinedRoom(true);
+                        setJoiningInProgress(false);
+                    },
+                    Math.max(2 * JOIN_TITLE_TIMEOUT - timeSinceStart, JOIN_TITLE_TIMEOUT - timeSinceJoinStarted, 0)
+                );
             } catch (error) {
                 if (error instanceof Error) {
                     window.alert(error.message);
                 } else {
                     window.alert('An unknown error occurred');
                 }
-            } finally {
+
                 setJoiningInProgress(false);
             }
         },
@@ -152,12 +184,12 @@ export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false 
 
     const joinInstantMeeting = useCallback(
         async (participantSettings: ParticipantSettings) => {
+            loadingStartTimeRef.current = Date.now();
+
             setJoiningInProgress(true);
 
             const { id, passwordBase } = await createInstantMeeting({
-                params: {
-                    meetingName: c('l10n_nightly Info').t`Instant Meeting`,
-                },
+                params: {},
                 isGuest: guestMode,
             });
 
@@ -183,18 +215,12 @@ export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false 
         [createInstantMeeting, handleJoin, getRoomName, guestMode]
     );
 
-    const setup = async () => {
-        if (instantMeeting) {
-            setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
+    const joinMeeting = useCallback(
+        async (participantSettings: ParticipantSettings, meetingToken: string = token) => {
+            loadingStartTimeRef.current = Date.now();
 
-            return;
-        }
-
-        const { readyToDecrypt, handshakeInfo } = await handleHandsakeInfoFetch(token);
-
-        if (readyToDecrypt) {
             const roomName = await getRoomName({
-                token,
+                token: meetingToken,
                 customPassword: '',
                 urlPassword,
                 handshakeInfo: handshakeInfo as SRPHandshakeInfo,
@@ -205,8 +231,19 @@ export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false 
                 meetingName: roomName,
             }));
 
+            await handleJoin(participantSettings, meetingToken);
+        },
+        [handleJoin, getRoomName, handshakeInfo, urlPassword]
+    );
+
+    const setup = async () => {
+        if (instantMeetingRef.current) {
+            setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
+
             return;
         }
+
+        const { handshakeInfo } = await handleHandsakeInfoFetch(token);
 
         setHandshakeInfo(handshakeInfo as SRPHandshakeInfo);
     };
@@ -216,9 +253,14 @@ export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false 
     }, []);
 
     const handleLeave = useCallback(() => {
+        instantMeetingRef.current = false;
         void roomRef.current?.disconnect();
         setJoinedRoom(false);
     }, []);
+
+    if (!isGuestMeetingSchedulingAllowed && guestMode && instantMeetingRef.current) {
+        return <GuestMeetingSchedulingBlocked />;
+    }
 
     if (decryptionReadinessStatus === MeetingDecryptionReadinessStatus.UNINITIALIZED) {
         return null;
@@ -256,19 +298,21 @@ export const ProtonMeetContainer = ({ guestMode = false, instantMeeting = false 
                             roomName={meetingDetails.meetingName as string}
                             participantNameMap={participantNameMap}
                             getParticipants={() => getParticipants(meetingDetails.meetingId as string)}
-                            instantMeeting={instantMeeting}
+                            instantMeeting={instantMeetingRef.current}
                         />
                     </RoomContext.Provider>
                 ) : (
                     <PrejoinContainer
-                        handleJoin={instantMeeting ? joinInstantMeeting : handleJoin}
+                        handleJoin={instantMeetingRef.current ? joinInstantMeeting : joinMeeting}
                         loadingState={LoadingState.JoiningInProgress}
                         isLoading={joiningInProgress}
                         guestMode={guestMode}
                         shareLink={shareLink}
                         roomName={meetingDetails.meetingName as string}
                         roomId={token}
-                        instantMeeting={instantMeeting}
+                        instantMeeting={instantMeetingRef.current}
+                        initialisedParticipantNameMap={initialisedParticipantNameMap}
+                        participantNameMap={participantNameMap}
                     />
                 )}
             </div>

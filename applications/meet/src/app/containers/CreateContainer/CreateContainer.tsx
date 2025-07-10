@@ -21,10 +21,10 @@ import './CreateContainer.scss';
 
 const repeatOptions = [
     { label: 'No repeat', value: 'NO_REPEAT' },
-    { label: 'Every day', value: 'DAILY' },
-    { label: 'Every weekday', sublabel: 'Monday to Friday', value: 'EVERY_WEEKDAY' },
-    { label: 'Every month', value: 'EVERY_MONTH' },
-    { label: 'Every year', value: 'EVERY_YEAR' },
+    { label: 'Every day', value: 'FREQ=DAILY' },
+    { label: 'Every weekday', sublabel: 'Monday to Friday', value: 'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR' },
+    { label: 'Every month', value: 'FREQ=MONTHLY' },
+    { label: 'Every year', value: 'FREQ=YEARLY' },
 ];
 
 const minutes = ['00', '15', '30', '45'];
@@ -166,7 +166,7 @@ export const CreateContainer = ({ meetingDetails }: CreateContainerProps) => {
                         disabled={isDisabled}
                     >{c('l10n_nightly Action').t`Create meeting`}</Button>
 
-                    <Button shape="ghost" onClick={() => history.push('/')} className="rounded-full">
+                    <Button shape="ghost" onClick={() => history.push('/join')} className="rounded-full">
                         <IcCross size={6} />
                     </Button>
                 </div>

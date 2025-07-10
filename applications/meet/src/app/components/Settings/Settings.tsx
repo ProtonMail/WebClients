@@ -28,14 +28,14 @@ export const Settings = () => {
 
     const { resolution, handleResolutionChange } = useLocalParticipantResolution();
 
-    const { sideBarState } = useUIStateContext();
+    const { sideBarState, toggleSideBarState } = useUIStateContext();
 
     if (!sideBarState[MeetingSideBars.Settings]) {
         return null;
     }
 
     return (
-        <SideBar>
+        <SideBar onClose={() => toggleSideBarState(MeetingSideBars.Settings)}>
             <div className="mb-4 h3 text-semibold">{c('l10n_nightly Title').t`Settings`}</div>
 
             {increasedVideoQuality && (

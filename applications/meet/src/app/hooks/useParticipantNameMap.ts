@@ -35,7 +35,10 @@ export const useParticipantNameMap = () => {
             const participants = response.Participants;
 
             const updatedParticipantNameMap = Object.fromEntries(
-                participants.map((participant) => [participant.ParticipantUUID, participant.DisplayName])
+                participants.map((participant) => [
+                    participant.ParticipantUUID ?? participant.ParticipantUuid,
+                    participant.DisplayName,
+                ])
             );
 
             setParticipantNameMap(updatedParticipantNameMap);
@@ -51,20 +54,26 @@ export const useParticipantNameMap = () => {
 
     const getParticipants = useCallback(
         async (meetingLinkName: string) => {
-            if (isFetchingRef.current) {
-                return;
-            }
+            try {
+                if (isFetchingRef.current) {
+                    return;
+                }
 
-            isFetchingRef.current = true;
+                isFetchingRef.current = true;
 
-            if (countRef.current > PARTICIPANT_COUNT_THRESHOLD) {
-                const timeDiff = Date.now() - lastFetchTimestamp.current;
+                if (countRef.current > PARTICIPANT_COUNT_THRESHOLD) {
+                    const timeDiff = Date.now() - lastFetchTimestamp.current;
 
-                const timeout = Math.max(FETCH_TIME_CONSTRAINT_MS - timeDiff, 0);
+                    const timeout = Math.max(FETCH_TIME_CONSTRAINT_MS - timeDiff, 0);
 
-                timeoutRef.current = setTimeout(() => handleFetch(meetingLinkName), timeout);
-            } else {
-                await handleFetch(meetingLinkName);
+                    timeoutRef.current = setTimeout(() => handleFetch(meetingLinkName), timeout);
+                } else {
+                    await handleFetch(meetingLinkName);
+                }
+            } catch (error) {
+                console.error(error);
+            } finally {
+                isFetchingRef.current = false;
             }
         },
         [handleFetch]

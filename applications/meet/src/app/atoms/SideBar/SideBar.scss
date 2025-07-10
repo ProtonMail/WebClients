@@ -1,4 +1,8 @@
 .meet-side-bar {
 	border-radius: 1.5rem;
 	box-shadow: 0 0.5rem 2.5rem 0 #00000029;
+
+	.close-button {
+		z-index: +3;
+	}
 }

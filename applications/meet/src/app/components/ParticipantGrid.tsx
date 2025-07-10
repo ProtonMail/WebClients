@@ -13,7 +13,11 @@ export const ParticipantGrid = () => {
             return 'repeat(2, 1fr)';
         }
 
-        return 'repeat(3, 1fr)';
+        if (participantCount > 4 && participantCount <= 6) {
+            return 'repeat(3, 1fr)';
+        }
+
+        return 'repeat(4, 1fr)';
     };
 
     const gridTemplateRows = (participantCount: number) => {
@@ -21,7 +25,15 @@ export const ParticipantGrid = () => {
             return '1fr';
         }
 
-        return 'repeat(2, 1fr)';
+        if (participantCount >= 4 && participantCount <= 8) {
+            return 'repeat(2, 1fr)';
+        }
+
+        if (participantCount > 8 && participantCount <= 12) {
+            return 'repeat(3, 1fr)';
+        }
+
+        return 'repeat(4, 1fr)';
     };
 
     return (

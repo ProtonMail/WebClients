@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import type { MeetChatMessage, MeetingRoomUpdate, ParticipantEventRecord } from '../../types';
 import { ParticipantEvent } from '../../types';
+import { getParticipantInitials } from '../../utils/getParticipantInitials';
 
 import './ChatItem.scss';
 
@@ -43,13 +44,7 @@ export const ChatItem = ({ roomName, item, colors, displayDate = true, shouldGro
                     )}
                     style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
                 >
-                    <div>
-                        {name
-                            ?.split(' ')
-                            .map((part) => part[0].toLocaleUpperCase())
-                            .slice(0, 2)
-                            .join('')}
-                    </div>
+                    <div>{getParticipantInitials(name)}</div>
                 </div>
             </div>
 

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { IcMeetMicrophoneOff } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
+import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
@@ -54,8 +55,6 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
     const connectionQuality = participant._connectionQuality;
 
     const participantName = participantNameMap[participant.identity] ?? c('l10n_nightly Info').t`Loading...`;
-
-    console.log(participantNameMap, participant);
 
     return (
         <div
@@ -129,6 +128,9 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                 }}
                 title={participantName}
             >
+                <SecurityShield
+                    title={c('l10n_nightly Info').t`End-to-end encryption is active for audio and video.`}
+                />
                 {participantName}
             </div>
         </div>

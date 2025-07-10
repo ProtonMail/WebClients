@@ -1,8 +1,12 @@
+import { useState } from 'react';
+
 import { RoomAudioRenderer, useParticipants } from '@livekit/components-react';
 import type { LocalVideoTrack } from 'livekit-client';
+import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
+import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCurrentScreenShare } from '../../hooks/useCurrentScreenShare';
@@ -34,14 +38,24 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
 
     const { videoTrack, participant, isLocal, stopScreenShare, screenShareVideoRef } = useCurrentScreenShare();
 
+    const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
+
     const { participantNameMap, meetingLink } = useMeetContext();
 
     const { sideBarState } = useUIStateContext();
 
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
+    const getParticipantSideBarColumns = () => {
+        if (!participantSideBarOpen) {
+            return '0px';
+        }
+
+        return `${participants.length < 6 || isSideBarOpen ? 1 : 3}fr`;
+    };
+
     const defaultColumns = `8fr${isSideBarOpen ? ' minmax(0, 3fr)' : ''}`;
-    const screenShareColumns = `${isSideBarOpen ? 6 : 8}fr ${participants.length < 6 || isSideBarOpen ? 1 : 3}fr${isSideBarOpen ? ' minmax(0, 2fr)' : ''}`;
+    const screenShareColumns = `${isSideBarOpen ? 6 : 8}fr ${getParticipantSideBarColumns()}${isSideBarOpen ? ' minmax(0, 2fr)' : ''}`;
 
     return (
         <div className={clsx('w-full h-full flex flex-column flex-nowrap gap-4 overflow-hidden pl-4 pr-4 pb-0 pt-4')}>
@@ -57,16 +71,24 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
                 style={{
                     display: 'grid',
                     gridTemplateColumns: videoTrack ? screenShareColumns : defaultColumns,
-                    gap: 16,
+                    gap: participantSideBarOpen || isSideBarOpen ? 16 : 0,
                 }}
             >
                 {videoTrack && (
                     <div
-                        className="bg-strong w-full overflow-hidden mx-auto my-0 rounded"
+                        className="bg-strong w-full overflow-hidden mx-auto my-0 rounded relative"
                         style={{
                             background: '#000',
                         }}
                     >
+                        <div
+                            className="absolute bottom-custom left-custom z-up"
+                            style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
+                        >
+                            <SecurityShield
+                                title={c('l10n_nightly Info').t`End-to-end encryption is active for screen share`}
+                            />
+                        </div>
                         <video
                             className="screen-share-video w-full h-full block object-contain"
                             ref={screenShareVideoRef}
@@ -76,7 +98,14 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
                         />
                     </div>
                 )}
-                {videoTrack ? <ParticipantSidebar /> : <ParticipantGrid />}
+                {videoTrack ? (
+                    <ParticipantSidebar
+                        participantSideBarOpen={participantSideBarOpen}
+                        setParticipantSideBarOpen={setParticipantSideBarOpen}
+                    />
+                ) : (
+                    <ParticipantGrid />
+                )}
                 <Participants />
                 <Settings />
                 <Chat />

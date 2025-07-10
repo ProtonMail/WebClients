@@ -68,7 +68,7 @@ export const MeetingCreatedModal = ({
             onClose={onClose}
         >
             <ModalTwoHeader />
-            <ModalTwoContent className="py-4 flex flex-column items-center justify-center">
+            <ModalTwoContent className="flex flex-column items-center justify-center">
                 <div className="text-3xl text-semibold text-center mt-4">
                     {c('l10n_nightly Info').t`Meeting created`}
                 </div>

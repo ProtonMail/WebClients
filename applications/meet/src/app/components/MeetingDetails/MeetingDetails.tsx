@@ -11,14 +11,14 @@ import { MeetingSideBars } from '../../types';
 export const MeetingDetails = () => {
     const { meetingLink, roomName } = useMeetContext();
 
-    const { sideBarState } = useUIStateContext();
+    const { sideBarState, toggleSideBarState } = useUIStateContext();
 
     if (!sideBarState[MeetingSideBars.MeetingDetails]) {
         return null;
     }
 
     return (
-        <SideBar>
+        <SideBar onClose={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}>
             <h3 className="h4 mb-8 text-semibold">{c('l10n_nightly Title').t`Meeting details`}</h3>
             <h2 className="h3 mb-4">{roomName}</h2>
             <div className="flex flex-column">

@@ -29,6 +29,8 @@ interface PrejoinContainerProps {
     roomName: string;
     roomId: string;
     instantMeeting: boolean;
+    initialisedParticipantNameMap: boolean;
+    participantNameMap: Record<string, string>;
 }
 
 export const PrejoinContainer = ({
@@ -40,6 +42,8 @@ export const PrejoinContainer = ({
     roomName,
     roomId,
     instantMeeting = false,
+    initialisedParticipantNameMap,
+    participantNameMap,
 }: PrejoinContainerProps) => {
     const isScheduleInAdvanceEnabled = useFlag('ScheduleInAdvance');
 
@@ -87,7 +91,7 @@ export const PrejoinContainer = ({
             fromApp: APPS.PROTONMEET,
             forkType: ForkType.LOGIN,
             extra: {
-                returnUrl: encodeURIComponent(returnUrl),
+                returnUrl,
             },
         });
 
@@ -153,7 +157,14 @@ export const PrejoinContainer = ({
                         colorIndex={participantColorIndex.current}
                     />
                     {isLoading ? (
-                        <>{loadingState === LoadingState.JoiningInProgress && <JoiningRoomLoader />}</>
+                        <>
+                            {loadingState === LoadingState.JoiningInProgress && (
+                                <JoiningRoomLoader
+                                    participantsLoaded={initialisedParticipantNameMap}
+                                    participantCount={Object.keys(participantNameMap).length}
+                                />
+                            )}
+                        </>
                     ) : (
                         <PreJoinDetails
                             roomName={roomName}

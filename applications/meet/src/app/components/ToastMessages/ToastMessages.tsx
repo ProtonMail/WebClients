@@ -1,6 +1,8 @@
+import { useParticipants } from '@livekit/components-react';
 import { c } from 'ttag';
 
 import { Toast } from '../../atoms/Toast/Toast';
+import { NOTIFICATION_PARTICIPANT_LIMIT } from '../../constants';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useToastMessages } from '../../hooks/useToastMessages';
@@ -13,7 +15,9 @@ export const ToastMessages = () => {
 
     const { sideBarState } = useUIStateContext();
 
-    if (sideBarState[MeetingSideBars.Chat]) {
+    const participants = useParticipants();
+
+    if (sideBarState[MeetingSideBars.Chat] || participants.length > NOTIFICATION_PARTICIPANT_LIMIT) {
         return null;
     }
 
@@ -38,7 +42,7 @@ export const ToastMessages = () => {
                                     ? c('l10n_nightly Info').t`Joined`
                                     : c('l10n_nightly Info').t`Left`}{' '}
                                 <span className="ml-1" style={{ color: 'var(--interaction-norm)' }}>
-                                    {roomName}
+                                    {roomName || c('l10n_nightly Placeholder').t`the room`}
                                 </span>
                             </div>
                         </div>
