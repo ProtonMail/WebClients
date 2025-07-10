@@ -13,7 +13,7 @@ import type { CompiledRules } from '@proton/pass/lib/extension/rules/types';
 import browser from '@proton/pass/lib/globals/browser';
 import { intoIdentityItemPreview, intoLoginItemPreview, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
-import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
+import type { GetLoginCandidatesOptions } from '@proton/pass/lib/search/types';
 import { itemAutofilled } from '@proton/pass/store/actions';
 import { sagaEvents } from '@proton/pass/store/events';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
@@ -41,10 +41,13 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
-type AutofillServiceState = { rules: MaybeNull<CompiledRules> };
+type AutofillServiceState = {
+    privateDomains: MaybeNull<Set<string>>;
+    rules: MaybeNull<CompiledRules>;
+};
 
 export const createAutoFillService = () => {
-    const state: AutofillServiceState = { rules: null };
+    const state: AutofillServiceState = { privateDomains: null, rules: null };
 
     const init = withContext(async (ctx) => {
         const rules = parseRules(await ctx.service.storage.local.getItem('websiteRules'));
@@ -52,8 +55,14 @@ export const createAutoFillService = () => {
         if (state.rules) logger.info(`[AutofillService] Compiled website rules v${rules?.version}`);
     });
 
-    const getLoginCandidates = withContext<(options: SelectAutofillCandidatesOptions) => ItemRevision<'login'>[]>(
-        (ctx, options) => selectAutofillLoginCandidates(options)(ctx.service.store.getState())
+    const getLoginCandidates = withContext<(options: GetLoginCandidatesOptions) => ItemRevision<'login'>[]>(
+        (ctx, options) => {
+            const privateDomains = state.privateDomains;
+            const parsedUrl = parseUrl(options.url, privateDomains || undefined);
+            return selectAutofillLoginCandidates({ ...parsedUrl, shareIds: options.shareIds, strict: options.strict })(
+                ctx.service.store.getState()
+            );
+        }
     );
 
     const getCredentials = withContext<(item: SelectedItem) => Maybe<FormCredentials>>((ctx, { shareId, itemId }) => {
@@ -101,7 +110,7 @@ export const createAutoFillService = () => {
                 Promise.all(
                     tabs.map(({ id: tabId, url }) => {
                         if (tabId) {
-                            const items = getLoginCandidates(parseUrl(url));
+                            const items = getLoginCandidates({ url });
                             setPopupIconBadge(tabId, items.length).catch(noop);
 
                             WorkerMessageBroker.ports.broadcast({ type: WorkerMessageType.AUTOFILL_SYNC }, (name) =>
@@ -150,10 +159,9 @@ export const createAutoFillService = () => {
                 else throw new Error('');
             })();
 
-            const parsedUrl = parseUrl(host);
             const { shareIds, needsUpgrade } = getAutofillOptions(payload.writable);
 
-            const items = getLoginCandidates({ ...parsedUrl, shareIds }).map(intoLoginItemPreview);
+            const items = getLoginCandidates({ url: host, shareIds }).map(intoLoginItemPreview);
             if (tabId) void setPopupIconBadge(tabId, items.length);
             return { items, needsUpgrade };
         })
@@ -215,7 +223,7 @@ export const createAutoFillService = () => {
             try {
                 await ctx.ensureReady();
                 if (tabId) {
-                    const items = getLoginCandidates(parseUrl(tab.url));
+                    const items = getLoginCandidates({ url: tab.url });
                     await setPopupIconBadge(tabId, items.length);
                 }
             } catch {}
@@ -225,10 +233,15 @@ export const createAutoFillService = () => {
     sagaEvents.subscribe(
         withContext(async (ctx, evt) => {
             switch (evt.type) {
-                case 'website-rules::resolved': {
+                case 'website-rules::resolved':
                     void ctx.service.storage.local.setItem('websiteRules', JSON.stringify(evt.data));
                     state.rules = compileRules(evt.data);
-                }
+                    break;
+
+                case 'private-domains::resolved':
+                    void ctx.service.storage.local.setItem('privateDomains', evt.data.join('\n'));
+                    state.privateDomains = new Set(evt.data);
+                    break;
             }
         })
     );
