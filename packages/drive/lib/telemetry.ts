@@ -7,7 +7,7 @@ import type {
     MetricVerificationErrorEvent,
     MetricVolumeEventsSubscriptionsChangedEvent,
 } from '@protontech/drive-sdk';
-import { MetricContext } from '@protontech/drive-sdk';
+import { MetricVolumeType } from '@protontech/drive-sdk';
 import type { MetricRecord } from '@protontech/drive-sdk/dist/telemetry';
 import {
     ConsoleLogHandler,
@@ -75,7 +75,7 @@ class MetricHandler {
     private onUpload(metric: MetricUploadEvent) {
         metrics.drive_upload_success_rate_total.increment({
             status: !metric.error ? 'success' : 'failure',
-            shareType: this.getShareType(metric.context),
+            shareType: this.getShareType(metric.volumeType),
             retry: 'false', // TODO: we need to wire context from the app
             initiator: 'explicit',
         });
@@ -86,7 +86,7 @@ class MetricHandler {
     private onDownload(metric: MetricDownloadEvent) {
         metrics.drive_download_success_rate_total.increment({
             status: !metric.error ? 'success' : 'failure',
-            shareType: this.getShareType(metric.context),
+            shareType: this.getShareType(metric.volumeType),
             retry: 'false', // TODO: we need to wire context from the app
         });
 
@@ -105,7 +105,7 @@ class MetricHandler {
 
         metrics.drive_integrity_decryption_errors_total.increment({
             entity,
-            shareType: this.getShareType(metric.context),
+            shareType: this.getShareType(metric.volumeType),
             fromBefore2024: this.getYesNoUnknown(metric.fromBefore2024),
         });
 
@@ -126,7 +126,7 @@ class MetricHandler {
         }[metric.field] as 'ShareAddress' | 'NameSignatureEmail' | 'SignatureEmail' | 'NodeKey';
 
         metrics.drive_integrity_verification_errors_total.increment({
-            shareType: this.getShareType(metric.context),
+            shareType: this.getShareType(metric.volumeType),
             verificationKey,
             addressMatchingDefaultShare: this.getYesNoUnknown(metric.addressMatchingDefaultShare),
             fromBefore2024: this.getYesNoUnknown(metric.fromBefore2024),
@@ -155,14 +155,14 @@ class MetricHandler {
     // For now, we simply report devices or photos as main as well.
     // New photo volume or public sharing is not supported by the SDK,
     // so such even will not come.
-    private getShareType(context?: MetricContext): 'main' | 'shared' {
-        if (context === MetricContext.OwnVolume) {
+    private getShareType(context?: MetricVolumeType): 'main' | 'shared' {
+        if (context === MetricVolumeType.OwnVolume) {
             return 'main';
         }
-        if (context === MetricContext.Shared) {
+        if (context === MetricVolumeType.Shared) {
             return 'shared';
         }
-        if (context === MetricContext.SharedPublic) {
+        if (context === MetricVolumeType.SharedPublic) {
             return 'shared';
         }
         // If context is not known, we consider it is shared.
