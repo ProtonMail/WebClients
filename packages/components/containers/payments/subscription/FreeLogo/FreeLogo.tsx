@@ -3,11 +3,11 @@ import type { ComponentPropsWithoutRef } from 'react';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
-import driveFree from './logo/plan-drive-free.svg';
-import mailFree from './logo/plan-mail-free.svg';
-import passFreeDark from './logo/plan-pass-free-dark.svg';
-import passFreeLight from './logo/plan-pass-free-light.svg';
-import vpnFree from './logo/plan-vpn-free.svg';
+import driveFree from './plan-drive-free.svg';
+import mailFree from './plan-mail-free.svg';
+import passFreeDark from './plan-pass-free-dark.svg';
+import passFreeLight from './plan-pass-free-light.svg';
+import vpnFree from './plan-vpn-free.svg';
 
 const getLogo = (src: string, size: number | undefined, rest: any) => (
     // Magic padding to align with normal SVG logos

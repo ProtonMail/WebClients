@@ -29,18 +29,17 @@ import {
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
+import FreeLogo from '@proton/components/containers/payments/subscription/FreeLogo/FreeLogo';
 import type { IconSize } from '@proton/icons';
-import { PLANS, type Plan } from '@proton/payments';
-import { APPS, BRAND_NAME, PASS_APP_NAME, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES, type Plan, getFreeTitle } from '@proton/payments';
+import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
-import { CSS_BASE_UNIT_SIZE } from '@proton/styles/index';
+import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 import isTruthy from '@proton/utils/isTruthy';
 
-import FreeLogo from '../single-signup-v2/FreeLogo';
 import bundleVpnPass from '../single-signup-v2/bundle-vpn-pass.svg';
 import bundle from '../single-signup-v2/bundle.svg';
-import { getFreeTitle } from '../single-signup-v2/helper';
 import VpnProLogo from './VpnProLogo';
 
 export interface PlanInformation {
@@ -141,7 +140,7 @@ export const getPlanInformation = ({
             features: [],
             bundle: [
                 {
-                    title: `${VPN_APP_NAME} Plus`,
+                    title: PLAN_NAMES[PLANS.VPN2024],
                     features: [
                         getVPNSpeed('highest'),
                         getProtectDevices(VPN_CONNECTIONS),
@@ -150,7 +149,7 @@ export const getPlanInformation = ({
                     ],
                 },
                 {
-                    title: `${PASS_APP_NAME} Plus`,
+                    title: PLAN_NAMES[PLANS.PASS],
                     features: [
                         getLoginsAndNotes('paid'),
                         getHideMyEmailAliases('unlimited'),
