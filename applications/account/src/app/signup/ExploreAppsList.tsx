@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { Icon, Logo } from '@proton/components';
 import EarlyAccessBadge from '@proton/components/components/earlyAccessBadge/EarlyAccessBadge';
 import useLoading from '@proton/hooks/useLoading';
-import { PLANS } from '@proton/payments';
+import { PLANS, getHasPlusPlan } from '@proton/payments';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -109,16 +109,6 @@ interface Props {
 
 const allBits = PRODUCT_BIT.MAIL | PRODUCT_BIT.PASS | PRODUCT_BIT.DRIVE | PRODUCT_BIT.VPN | PRODUCT_BIT.WALLET;
 
-const plusPlans = new Set([
-    PLANS.MAIL,
-    PLANS.VPN,
-    PLANS.VPN2024,
-    PLANS.PASS,
-    PLANS.DRIVE,
-    PLANS.VPN_PASS_BUNDLE,
-    PLANS.WALLET,
-]);
-
 const professionalPlans = new Set([PLANS.MAIL_BUSINESS, PLANS.PASS_BUSINESS, PLANS.VPN_BUSINESS]);
 
 const essentialsPlans = new Set([PLANS.MAIL_PRO, PLANS.PASS_PRO, PLANS.VPN_PRO, PLANS.DRIVE_PRO]);
@@ -133,7 +123,7 @@ const getNameFromPlan = (plan?: PLANS) => {
     if (professionalPlans.has(plan)) {
         return 'Professional';
     }
-    if (plusPlans.has(plan)) {
+    if (getHasPlusPlan(plan)) {
         return 'Plus';
     }
 };
