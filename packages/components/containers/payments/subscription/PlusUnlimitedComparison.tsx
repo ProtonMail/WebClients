@@ -117,7 +117,8 @@ const PlusUnlimitedComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, ch
     const iconSize: IconSize = 5;
     const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
     const paidMap = getPaidMap(plansMap, iconSize);
-    const upsellPlanTitle = upsellPlan?.Title || '';
+    const upsellPlanTitle =
+        (upsellPlan?.Name ? getNormalizedPlanTitleToPlus(upsellPlan?.Name) : upsellPlan?.Title) || '';
 
     const left: Item[] = [
         currentPlan?.Name === PLANS.MAIL_PRO

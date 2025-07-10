@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import PlusUnlimitedComparison from '@proton/components/containers/payments/subscription/PlusUnlimitedComparison';
+import { getNormalizedPlanTitles } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { type Plan, type PlansMap, type SubscriptionPlan } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -42,9 +43,12 @@ const UnlockModal = ({
     onFree,
     ...rest
 }: Props) => {
-    const currentPlanTitle = currentPlan?.Title || '';
-    const unlockPlanTitle = unlockPlan?.Title || '';
-    const upsellPlanTitle = upsellPlan?.Title || '';
+    const { currentPlanTitle, upsellPlanTitle, unlockPlanTitle } = getNormalizedPlanTitles({
+        currentPlan,
+        unlockPlan,
+        upsellPlan,
+    });
+
     const checkout = subscriptionData
         ? getCheckout({
               planIDs: subscriptionData.planIDs,
@@ -52,6 +56,7 @@ const UnlockModal = ({
               checkResult: subscriptionData.checkResult,
           })
         : undefined;
+
     return (
         <ModalTwo {...rest} size="small" disableCloseOnEscape={true}>
             <ModalTwoHeader title={title} className="text-center" hasClose={false} />
