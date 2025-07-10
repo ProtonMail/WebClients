@@ -29,7 +29,7 @@ import {
     getPlansMap,
     getValidAudience,
     getValidCycle,
-    isStringPLAN,
+    isValidPlanName,
 } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -139,7 +139,7 @@ const PlansSectionInner = ({ app }: Props) => {
     // Clicking the "Select Plan" button opens the browser on Electron or the modal on the web
     const handlePlanChange = (newPlanIDs: PlanIDs, newCycle: Cycle, currency: Currency) => {
         const newPlanName = Object.keys(newPlanIDs)[0];
-        const isNewPlanCorrect = isStringPLAN(newPlanName);
+        const isNewPlanCorrect = isValidPlanName(newPlanName);
         if (isElectronApp && !hasInboxDesktopInAppPayments && newPlanName && isNewPlanCorrect) {
             upgradeButtonClick(newCycle, newPlanName);
             return;

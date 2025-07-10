@@ -18,7 +18,7 @@ export const getNormalizedPlanTitleToPlus = (planName: PLANS | ADDON_NAMES) => {
     if (getHasSomeDrivePlusPlan(planName)) {
         return getPlusTitle(DRIVE_SHORT_APP_NAME);
     }
-    return isValidPlanName(planName) ? PLAN_NAMES[planName] : undefined;
+    return isValidPlanName(planName) ? PLAN_NAMES[planName] : '';
 };
 
 export const getNormalizedPlanTitles = ({
