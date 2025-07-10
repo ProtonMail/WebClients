@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Godkend"
+      ],
       "Cancel": [
         "Annullér"
       ],
@@ -25,6 +28,9 @@
       ],
       "Edit sign-in details": [
         "Rediger login-detaljer"
+      ],
+      "Forgot password?": [
+        "Glemt adgangskode?"
       ],
       "Get verification code": [
         "Få bekræftelseskode"
@@ -909,6 +915,24 @@
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -1013,6 +1037,12 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast verifikationskode. Ciffer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "For yderligere information og for at fjerne begrænsninger, log ind på ${ mailLink }."
       ],
@@ -1055,6 +1085,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
       ],
@@ -1078,6 +1111,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Godkendelsesapp"
+      ],
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
       ],
@@ -1098,6 +1134,9 @@
       ],
       "Verification code": [
         "Verifikationskode"
+      ],
+      "Your password (admin)": [
+        "Din adgangskode (admin)"
       ]
     },
     "Link": {
@@ -1486,6 +1525,9 @@
       ],
       "Enter 2FA code": [
         "Indtast 2FA-kode"
+      ],
+      "Enter your password": [
+        "Indtast din adgangskode"
       ],
       "Human verification": [
         "Menneskelig bekræftelse"
