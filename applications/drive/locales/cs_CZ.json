@@ -3035,6 +3035,17 @@
         "Vaše předplatné ${ PLAN_NAMES[PLANS.PASS] } je za speciální cenu ${ price } ročně. Snížením na tarif Free trvale ztratíte slevu, a to i v případě, že v budoucnu opět navýšíte tarif."
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Linux": [
+        "Stáhnout pro Linux"
+      ],
+      "Download for macOS": [
+        "Stáhnout pro macOS"
+      ],
+      "Download for Windows": [
+        "Stáhnout pro Windows"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Otevřít v ${ DRIVE_SHORT_APP_NAME }"
@@ -3284,6 +3295,15 @@
       "Failed to create folder": [
         "Vytvoření složky selhalo"
       ],
+      "Failed to create public share node": [
+        "Nepodařilo se vytvořit veřejný uzel sdílení"
+      ],
+      "Failed to fetch node": [
+        "Nepodařilo se získat uzel"
+      ],
+      "Failed to fetch sharing info": [
+        "Nepodařilo se stáhnout informace o sdílení"
+      ],
       "Failed to load the STL preview": [
         "Načtení náhledu STL selhalo"
       ],
@@ -3295,6 +3315,12 @@
       ],
       "Failed to save some photos to your Drive": [
         "Uložení některých fotek na váš Proton Drive selhalo"
+      ],
+      "Failed to unshare node": [
+        "Nepodařilo se zrušit sdílení uzlu"
+      ],
+      "Failed to update direct share node": [
+        "Nepodařilo se aktualizovat uzel přímého sdílení"
       ],
       "Failed to update public share node": [
         "Nepodařilo se aktualizovat veřejný uzel sdílení"
@@ -3607,6 +3633,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Zkuste používat pouze písmena, číslice a _.-"
+      ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Nelze načíst ovládací panel VPN. Zkontrolujte prosím své připojení a zkuste to znovu."
       ],
       "Unable to set photo as cover": [
         "Nelze nastavit fotku jako obálku"
@@ -4792,6 +4821,9 @@
       "${ uploadName } already exists in this location.": [
         "Soubor ${ uploadName } již v tomto umístění existuje."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } maskuje vaši IP adresu, takže vás webové stránky nemohou identifikovat."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } člen)",
         "(${ memberCount } členové)",
@@ -4800,6 +4832,12 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/měsíc)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Automatické připojení**: Otevírá a připojuje k VPN, jakmile zapnete zařízení."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: Zabraňuje úniku dat zablokováním internetu v případě neočekávaného výpadku VPN."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
@@ -4822,14 +4860,29 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "Při práci na dálku je nezbytné zabezpečené připojení. VPN chrání firemní data před kybernetickými hrozbami a udržuje vaši práci v soukromí."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Uživatelem je účet spojený s jedním uživatelským jménem, poštovní schránkou a osobou"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN šifruje vaše připojení a skrývá vaši IP adresu, takže je mnohem těžší sledovat nebo zaznamenávat vaše prohlížení."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "VPN skrývá vaši IP adresu a šifruje vaši aktivitu při procházení, což ztěžuje dlouhodobé sledování vaší aktivity webovými stránkami, inzerenty a poskytovateli internetových služeb."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "VPN je zabezpečený tunel mezi vaším zařízením a internetem. Skrývá vaši polohu a aktivitu před poskytovatelem internetových služeb (ISP) a navštívenými webovými stránkami."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce vašeho účtu."
       ],
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
+      ],
+      "Ad targeting": [
+        "Cílení reklamy"
       ],
       "Address copied to clipboard": [
         "Adresa zkopírována do schránky"
@@ -4839,6 +4892,9 @@
       ],
       "Admin account allocation": [
         "Přidělení účtu správce"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Inzerenti sledují vaše procházení, aby mohli zobrazovat cílené reklamy. ${ VPN_APP_NAME } blokuje sledovací prvky a reklamy, čímž zrychluje vaše připojení a zlepšuje váš online zážitek."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
@@ -5022,6 +5078,9 @@
       ],
       "Conflict": [
         "Konflikt"
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Připojte se k ${ VPN_APP_NAME } a procházejte soukromě"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt byl přiřazen do skupiny ${ contactGroupName }"
@@ -5302,6 +5361,9 @@
       "from the version history?": [
         "z historie verzí?"
       ],
+      "Geoblocking": [
+        "Zeměpisné blokování"
+      ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Získejte aplikaci pro zálohování fotek z telefonu nebo je nahrajte sem."
       ],
@@ -5316,6 +5378,9 @@
       ],
       "Go to \"My files\" and upload some files first.": [
         "Jděte na \"Moje Soubory\" a nahrajte nejdříve soubory."
+      ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Vlády a poskytovatelé internetových služeb mohou sledovat vaši online aktivitu. Skrytím vaší skutečné IP adresy a šifrováním vaší aktivity se vaše prohlížení stane soukromým."
       ],
       "here": [
         "zde"
@@ -5377,6 +5442,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
       ],
+      "In restrictive countries": [
+        "V restriktivních zemích"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V dalším kroku budete moci odeslat vklad pomocí bitcoinové adresy."
       ],
@@ -5418,6 +5486,9 @@
       ],
       "Items moved to the trash will stay here until deleted": [
         "Položky přesunuté do koše zde zůstanou, dokud nebudou smazány."
+      ],
+      "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
+        "Nejlepší je vždy používat VPN. Nejvyšší kybernetické riziko je:"
       ],
       "It’s easy and secure": [
         "Je to snadné a bezpečné"
@@ -5530,6 +5601,9 @@
       "More": [
         "Více"
       ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "Většina veřejných sítí Wi-Fi je bezpečná, ale některé nejsou dostatečně zabezpečené a vystavují vás kybernetickým hrozbám. VPN šifruje váš provoz a chrání vás."
+      ],
       "Moving files": [
         "Přesouvání souborů"
       ],
@@ -5578,6 +5652,9 @@
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "Ne všechny soubory byly přeneseny. Zkuste soubory znovu nahrát nebo stáhnout."
       ],
+      "Not connected": [
+        "Nepřipojeno"
+      ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "Poznámka: Na zařízeních, kde jste nainstalovali ${ DRIVE_APP_NAME }, mohou být data stále dostupná lokálně."
       ],
@@ -5599,8 +5676,8 @@
       "of": [
         "z"
       ],
-      "Once this process is finished you'll find a copy of your restored data in a new folder called \"Automated Recovery (today's date)\". This copy of your data will not count against your storage quota.": [
-        "Po dokončení tohoto procesu najdete kopii obnovených dat v nové složce s názvem \"Automatizované obnovení (dnešní datum)\". Tato kopie dat se nezapočítává do vašeho limitu úložiště."
+      "On public WiFi networks": [
+        "Ve veřejných sítích Wi-Fi"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Jeden z vašich šifrovaných disků je uzamčen. Je to pravděpodobně způsobeno nedávným resetem hesla."
@@ -5634,9 +5711,6 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Prioritou našich upozornění je bezpečnost. Pokud nepoznáváte žádné z uniklých informací, můžete tuto zprávu bez obav ignorovat."
-      ],
-      "Our systems detected that your previous recovery didn't complete successfully, and some files may not have been fully restored. We've automatically restarted the recovery process to ensure everything is fully restored.": [
-        "Naše systémy zjistily, že vaše předchozí obnovení nebylo úspěšně dokončeno a některé soubory nemusely být zcela obnoveny. Automaticky jsme restartovali proces obnovení, abychom se ujistili, že je vše plně obnoveno."
       ],
       "Owner": [
         "Vlastník"
@@ -5785,6 +5859,9 @@
       "Primary": [
         "Hlavní"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Soukromé prohlížení (nebo režim \"inkognito\") je užitečné pouze pro skrytí vaší aktivity v zařízení. Zabrání prohlížeči ukládat historii a soubory cookies, ale nezpůsobí, že budete neviditelní. Váš ISP, správce sítě a webové stránky, které navštěvujete, mohou stále vidět, co děláte online."
+      ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Soukromé vyhledávání zapnuto. Tento dialog můžete zavřít a vyhledávat soubory a složky."
       ],
@@ -5838,6 +5915,9 @@
       ],
       "Scan issue": [
         "Problém skenování"
+      ],
+      "Scan the QR code with your mobile device": [
+        "Naskenujte kód QR pomocí mobilního zařízení"
       ],
       "Search cannot be enabled in this browser": [
         "V tomto prohlížeči nelze zapnout vyhledávání"
@@ -5938,17 +6018,26 @@
       "Some files failed to upload. Try uploading the files again.": [
         "Některé soubory nebyly nahrány. Zkuste soubory znovu nahrát."
       ],
+      "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
+        "Některé vlády blokují nebo omezují přístup na určité webové stránky. VPN pomáhá obejít cenzuru a zároveň zachovává soukromí vašich aktivit a identity."
+      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Některé vaše soubory již nejsou přístupné. Obnovte přístup k souborům. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Některé fotky v tomto albu se neukládají na časovou osu. Smazáním tohoto alba budou tyto fotky trvale smazány."
       ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Některé webové stránky a streamovací služby blokují obsah podle regionu. VPN umožňuje tato omezení obejít a volně přistupovat k internetu."
+      ],
       "Something went wrong, please try again later.": [
         "Něco se pokazilo, prosím zkuste to později."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začněte ji sdílet s kontakty a používejte ji pro online služby."
+      ],
+      "Stay connected effortlessly by enabling the following VPN settings:": [
+        "Zůstaňte snadno připojeni povolením následujících nastavení VPN:"
       ],
       "Storage allocated to other users in this organisation": [
         "Úložný prostor přidělený ostatním uživatelům v této organizaci"
@@ -5976,6 +6065,9 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
+      ],
+      "Surveillance": [
+        "Sledování"
       ],
       "Symbols (#$&)": [
         "Symboly (#$&)"
@@ -6070,8 +6162,14 @@
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Odkaz byl vytvořen v předchozí verzi aplikace a nelze jej upravit. Chcete-li změnit jeho nastavení, odkaz smažte a vytvořte nový."
       ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "To znamená, že ISP a webové stránky, které navštěvujete, nemohou spojit vaše osobní údaje s vaší online aktivitou."
+      ],
       "This month": [
         "Tento měsíc"
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Tento jedinečný kód mohou webové stránky a ISP (poskytovatelé internetových služeb) použít k propojení vaší polohy a historie procházení s vaším zařízením."
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "Tím se smaže pouze album. Vaše fotky zůstanou na časové ose. Tuto akci nelze vzít zpět."
@@ -6144,6 +6242,9 @@
       ],
       "Total VPN connections": [
         "Celkem VPN připojení"
+      ],
+      "Tracking": [
+        "Sledování"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Přenos zrušen pro soubor \"${ name }\""
@@ -6244,6 +6345,9 @@
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
+      "VPN IP": [
+        "VPN IP"
+      ],
       "Want to sync files faster?": [
         "Chcete synchronizovat soubory rychleji?"
       ],
@@ -6274,9 +6378,6 @@
       "We need to authenticate your payment with your bank.": [
         "Potřebujeme ověřit vaši platbu u vaší banky."
       ],
-      "We sincerely apologize for the inconvenience this may have caused you.": [
-        "Upřímně se omlouváme za nepříjemnosti, které vám to mohlo způsobit."
-      ],
       "We use 3-D Secure to protect your payments": [
         "K zabezpečení vašich plateb používáme 3-D Secure"
       ],
@@ -6300,6 +6401,12 @@
       ],
       "What would you like to do?": [
         "Co chcete udělat?"
+      ],
+      "When working remotely": [
+        "Při práci na dálku"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Když se připojíte k VPN, použije se technologie šifrování ke skrytí vaší IP adresy (jedinečný kód přidělený vašemu zařízení)."
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Když odeberete ${ deviceName } jako synchronizované zařízení, všechny složky přidané do Moje počítače z tohoto zařízení budou z ${ DRIVE_APP_NAME } trvale smazány."
@@ -6520,6 +6627,15 @@
       "Your information was found on ${ displayedDate }": [
         "Vaše informace byly nalezeny ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Váš poskytovatel internetových služeb může sledovat a někdy i prodávat vaše data nebo dokonce omezovat přístup k webovým stránkám."
+      ],
+      "Your IP": [
+        "Vaše IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Vaše IP adresa je viditelná a může být použita ke sledování vaší online aktivity."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
       ],
@@ -6529,11 +6645,17 @@
       "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
         "Datum příští fakturace je ${ renewalTime }. Pokud požadujete okamžitou změnu tarifu, kontaktujte prosím podporu."
       ],
+      "Your online activity is protected": [
+        "Vaše online aktivita je chráněna"
+      ],
       "Your password was leaked:": [
         "Došlo k úniku vašeho hesla:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
+      ],
+      "Your physical location is visible and can be used to restrict your access to the internet.": [
+        "Vaše fyzická poloha je viditelná a může být použita k omezení vašeho přístupu k internetu."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Váš plán je limitovaný na 10 verzí až na 7 dní"
@@ -7264,6 +7386,15 @@
       ],
       "Your alias": [
         "Váš alias"
+      ],
+      "Your IP": [
+        "Vaše IP"
+      ],
+      "Your ISP": [
+        "Váš ISP"
+      ],
+      "Your location": [
+        "Vaše poloha"
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
@@ -8963,6 +9094,9 @@
       ],
       "Encrypted search activated": [
         "Vyhledávání v šifrovaných datech bylo zapnuto"
+      ],
+      "Error while listing devices": [
+        "Chyba při výpisu zařízení"
       ],
       "External invitation removed from the share": [
         "Externí pozvánka odebrána ze sdílení"
@@ -11532,9 +11666,6 @@
       "Auto-deletion is active": [
         "Automatické mazání je aktivní"
       ],
-      "Automatic Recovery in Progress": [
-        "Probíhá automatické obnovení"
-      ],
       "Billing cycle": [
         "Fakturační cyklus"
       ],
@@ -11682,6 +11813,9 @@
       "Deleting contacts": [
         "Mazání kontaktů"
       ],
+      "Desktop": [
+        "Desktop"
+      ],
       "Discard": [
         "Zahodit"
       ],
@@ -11699,6 +11833,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stáhnout aplikace ${ DRIVE_APP_NAME }"
+      ],
+      "Download the app": [
+        "Stáhněte si aplikaci"
       ],
       "Download unverified file?": [
         "Stáhnout neověřený soubor?"
@@ -11784,6 +11921,9 @@
         "Nalezeno ${ searchView.numberOfResults } výsledků",
         "Nalezeno ${ searchView.numberOfResults } výsledků"
       ],
+      "Get more from your VPN": [
+        "Získejte více ze své VPN"
+      ],
       "Get the apps": [
         "Získat aplikace"
       ],
@@ -11804,6 +11944,9 @@
       ],
       "Hm, we couldn't find that one": [
         "Hm, toto se nám nepodařilo najít"
+      ],
+      "How does it all work?": [
+        "Jak to všechno funguje?"
       ],
       "Human verification": [
         "Lidské ověření"
@@ -11847,6 +11990,9 @@
       "Location": [
         "Umístění"
       ],
+      "Make a secure connection your default": [
+        "Nastavte zabezpečené připojení jako výchozí"
+      ],
       "Manage secure link": [
         "Spravovat zabezpečený odkaz"
       ],
@@ -11861,6 +12007,9 @@
       ],
       "Minicalendar": [
         "Minikalendář"
+      ],
+      "Mobile": [
+        "Mobil"
       ],
       "Modified": [
         "Upraveno"
@@ -11978,6 +12127,9 @@
       ],
       "Preview": [
         "Náhled"
+      ],
+      "Private browsing vs VPN": [
+        "Soukromé procházení v porovnání s VPN"
       ],
       "Processing...": [
         "Zpracovávání..."
@@ -12195,6 +12347,9 @@
       "Version history": [
         "Historie verzí"
       ],
+      "VPN explained": [
+        "Vysvětlení VPN"
+      ],
       "Warning": [
         "Varování"
       ],
@@ -12204,8 +12359,17 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vítejte v ${ BRAND_NAME } for Business"
       ],
+      "What can a VPN protect you from?": [
+        "Před čím vás VPN může ochránit?"
+      ],
+      "What is a VPN?": [
+        "Co je VPN?"
+      ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"
+      ],
+      "When is it most important to use a VPN?": [
+        "Kdy je nejdůležitější používat VPN?"
       ],
       "You can now create unlimited folders and labels": [
         "Nyní můžete vytvořit neomezený počet složek a štítků"
