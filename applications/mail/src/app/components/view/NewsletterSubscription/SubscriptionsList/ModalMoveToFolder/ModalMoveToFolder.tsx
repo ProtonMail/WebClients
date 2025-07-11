@@ -69,7 +69,8 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
     const [applyToFuture, setApplyToFuture] = useState(false);
     const [selectedFolder, setSelectedFolder] = useState<FolderItem | null>(null);
 
-    const customFolderName = subscription.Name.slice(0, MAX_FOLDER_NAME_LENGTH);
+    const newFolderName = subscription.Name.slice(0, MAX_FOLDER_NAME_LENGTH);
+    const showCreateFolderButton = !folders?.find((folder) => folder.Name === newFolderName);
 
     const treeView = list
         .concat([
@@ -158,7 +159,7 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
 
         const label = await api(
             create({
-                Name: customFolderName,
+                Name: newFolderName,
                 Color: getRandomAccentColor(),
                 Type: LABEL_TYPE.MESSAGE_FOLDER,
             })
@@ -169,32 +170,36 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
             void call();
         } else {
             createNotification({
-                text: c('Label').t`Failed to create folder ${customFolderName}`,
+                text: c('Label').t`Failed to create folder ${newFolderName}`,
                 type: 'error',
             });
         }
     };
 
-    const boldFolderName = <BoldFolderName name={customFolderName} key="bold-folder-name" />;
+    const boldFolderName = <BoldFolderName name={newFolderName} key="bold-folder-name" />;
 
     return (
         <Prompt
             buttons={[
                 <div className="w-full">
-                    <hr className="mb-0 bg-weak divider-size" />
-                    <div className="my-1">
-                        <Button
-                            fullWidth
-                            onClick={() => withLoading(handleCreateFolder)}
-                            disabled={loading}
-                            shape="ghost"
-                            className="text-left flex items-start"
-                            data-testid="create-folder-button"
-                        >
-                            <Icon name="plus" className="mr-2 mt-0.5" />
-                            <span className="flex-1">{c('Action').jt`Create folder ${boldFolderName}`}</span>
-                        </Button>
-                    </div>
+                    {showCreateFolderButton && (
+                        <>
+                            <hr className="mb-0 bg-weak divider-size" />
+                            <div className="my-1">
+                                <Button
+                                    fullWidth
+                                    onClick={() => withLoading(handleCreateFolder)}
+                                    disabled={loading}
+                                    shape="ghost"
+                                    className="text-left flex items-start"
+                                    data-testid="create-folder-button"
+                                >
+                                    <Icon name="plus" className="mr-2 mt-0.5" />
+                                    <span className="flex-1">{c('Action').jt`Create folder ${boldFolderName}`}</span>
+                                </Button>
+                            </div>
+                        </>
+                    )}
                     <hr className="bg-weak divider-size" />
                     <Checkbox id="applyFuture" checked={applyToFuture} className="mb-2" onChange={handleChange}>
                         {c('Label').t`Apply to future messages`}
