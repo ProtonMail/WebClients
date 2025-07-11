@@ -7,7 +7,18 @@ import { render } from 'proton-mail/helpers/test/render';
 import { activeSubscription } from '../../testData';
 import { ModalMoveToFolder } from './ModalMoveToFolder';
 
+jest.mock('@proton/mail', () => ({
+    ...jest.requireActual('@proton/mail'),
+    useFolders: jest.fn(),
+}));
+
+const mockUseFolders = jest.requireMock('@proton/mail').useFolders;
+
 describe('ModalBlockSender', () => {
+    beforeEach(() => {
+        mockUseFolders.mockReturnValue([[], false]);
+    });
+
     it('should render the modal', async () => {
         await render(
             <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
@@ -63,5 +74,30 @@ describe('ModalBlockSender', () => {
 
         const sentFolder = screen.queryByTestId(`button-folder-${MAILBOX_LABEL_IDS.SENT}`);
         expect(sentFolder).not.toBeInTheDocument();
+    });
+
+    it('should hide the create folder button if a folder with the same name exists', async () => {
+        mockUseFolders.mockReturnValue([
+            [
+                {
+                    ID: 'folder-1',
+                    Name: 'Active Subscription',
+                    Color: '#000000',
+                    Path: '/',
+                    Expanded: 1,
+                    Type: 1,
+                    Order: 1,
+                    Notify: 0,
+                },
+            ],
+            false,
+        ]);
+
+        await render(
+            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
+        );
+
+        const createFolderButton = screen.queryByTestId('create-folder-button');
+        expect(createFolderButton).not.toBeInTheDocument();
     });
 });
