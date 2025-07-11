@@ -9,7 +9,7 @@ RUN corepack enable && \
 
 WORKDIR /clients/packages/atoms
 
-FROM harbor.protontech.ch/mcr.microsoft.com/playwright:v1.53.2-noble AS tests
+FROM harbor.protontech.ch/mcr.microsoft.com/playwright:v1.54.1-noble AS tests
 
 # TODO: Only copy what's needed for Storybook
 COPY --from=build /clients /clients
