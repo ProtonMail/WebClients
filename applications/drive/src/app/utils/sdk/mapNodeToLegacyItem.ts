@@ -5,11 +5,12 @@ import {
     RevisionState,
     splitNodeRevisionUid,
     splitNodeUid,
-} from '@proton/drive/index';
+} from '@proton/drive';
 
-import { type FileBrowserBaseItem } from '../../../components/FileBrowser';
-import type { EncryptedLink, LinkShareUrl, ShareWithKey, SignatureIssues } from '../../../store';
-import { getNodeEntity } from '../getNodeEntity';
+import { type FileBrowserBaseItem } from '../../components/FileBrowser';
+import type { EncryptedLink, LinkShareUrl, ShareWithKey, SignatureIssues } from '../../store';
+import { getNodeEntity } from './getNodeEntity';
+import { dateToLegacyTimestamp, getLegacyModifiedTime, getLegacyTrashedTime } from './legacyTime';
 
 export type LegacyItem = FileBrowserBaseItem & {
     uid: string;
@@ -33,17 +34,12 @@ export type LegacyItem = FileBrowserBaseItem & {
     isLegacy?: boolean;
 };
 
-const dateToLegacyTimestamp = (date: Date) => Math.floor(date.getTime() / 1000);
-
-const getLegacyModifiedTime = (node: NodeEntity) => {
-    let date = node.activeRevision?.claimedModificationTime
-        ? node.activeRevision.claimedModificationTime
-        : node.creationTime;
-
-    return dateToLegacyTimestamp(date);
+const getLegacyIsAnonymous = (node: NodeEntity) => {
+    if (node.type === NodeType.Folder) {
+        return node.keyAuthor.ok && node.keyAuthor.value === null;
+    }
+    return node.activeRevision?.contentAuthor.ok && node.activeRevision.contentAuthor.value === null;
 };
-
-const getLegacyTrashedTime = (node: NodeEntity) => (node.trashTime ? dateToLegacyTimestamp(node.trashTime) : null);
 
 // totalStorageSize is the sum of the sizes of all revisions, so it's not the size of the single file
 // Because of this we want to get the file size from the active revision and we use totalStorageSize only as a fallback
@@ -83,5 +79,6 @@ export const mapNodeToLegacyItem = async (maybeNode: MaybeNode, defaultShare: Sh
         linkId: splitNodeUid(node.uid).nodeId,
         volumeId: splitNodeUid(node.uid).volumeId,
         activeRevision,
+        isAnonymous: getLegacyIsAnonymous(node),
     };
 };
