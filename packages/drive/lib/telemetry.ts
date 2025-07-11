@@ -1,5 +1,6 @@
 import type {
     MetricAPIRetrySucceededEvent,
+    MetricBlockVerificationErrorEvent,
     MetricDecryptionErrorEvent,
     MetricDownloadEvent,
     MetricEvent,
@@ -7,7 +8,6 @@ import type {
     MetricVerificationErrorEvent,
     MetricVolumeEventsSubscriptionsChangedEvent,
 } from '@protontech/drive-sdk';
-import { MetricVolumeType } from '@protontech/drive-sdk';
 import type { MetricRecord } from '@protontech/drive-sdk/dist/telemetry';
 import {
     ConsoleLogHandler,
@@ -18,10 +18,13 @@ import {
 } from '@protontech/drive-sdk/dist/telemetry';
 
 import metrics from '@proton/metrics';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { SentryLogHandler } from './logHandlers/sentryLogHandler';
 
 export type UserPlan = 'free' | 'paid' | 'anonymous' | 'unknown';
+
+const REPORT_ERRORING_USERS_INTERVAL = 5 * 60 * 1000; // 5 minutes
 
 export function initTelemetry(userPlan: UserPlan = 'unknown', debug = false) {
     const memoryLogHandler = new MemoryLogHandler();
@@ -44,7 +47,13 @@ export function initTelemetry(userPlan: UserPlan = 'unknown', debug = false) {
     };
 }
 
-class MetricHandler {
+export class MetricHandler {
+    private lastUploadError: Date | undefined;
+
+    private lastDownloadError: Date | undefined;
+
+    private lastIntegrityError: Date | undefined;
+
     constructor(private userPlan: UserPlan) {
         this.userPlan = userPlan;
     }
@@ -60,114 +69,195 @@ class MetricHandler {
             this.onDecryptionError(metric.event);
         } else if (metric.event.eventName === 'verificationError') {
             this.onVerificationError(metric.event);
+        } else if (metric.event.eventName === 'blockVerificationError') {
+            this.onBlockVerificationError(metric.event);
         } else if (metric.event.eventName === 'volumeEventsSubscriptionsChanged') {
             this.onVolumeEventsSubscriptionsChanged(metric.event);
         } else {
-            console.warn(`[metric] unknown metric event: ${JSON.stringify(metric.event)}`);
+            captureMessage(`Metric event details: unknown metric event`, {
+                level: 'error',
+                tags: {
+                    driveSdkMetricEvent: 'unknownEvent',
+                },
+                extra: {
+                    event: metric.event,
+                },
+            });
         }
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     private onApiRetrySucceeded(metric: MetricAPIRetrySucceededEvent) {
-        // TODO: create a metric for this
+        metrics.drive_sdk_api_retry_succeeded_total.increment({
+            volumeType: 'unknown',
+        });
+
+        captureMessage('Metric event details: apiRetrySucceeded', {
+            level: 'info',
+            tags: {
+                driveSdkMetricEvent: 'apiRetrySucceeded',
+            },
+            extra: {
+                url: metric.url,
+                failedAttempts: metric.failedAttempts,
+            },
+        });
     }
 
     private onUpload(metric: MetricUploadEvent) {
-        metrics.drive_upload_success_rate_total.increment({
+        metrics.drive_sdk_upload_success_rate_total.increment({
+            volumeType: metric.volumeType || 'unknown',
             status: !metric.error ? 'success' : 'failure',
-            shareType: this.getShareType(metric.volumeType),
-            retry: 'false', // TODO: we need to wire context from the app
-            initiator: 'explicit',
         });
 
-        // TODO: handle error specific metrics
+        if (metric.error) {
+            metrics.drive_sdk_upload_errors_total.increment({
+                volumeType: metric.volumeType || 'unknown',
+                type: metric.error,
+            });
+
+            metrics.drive_sdk_upload_errors_transfer_size_histogram.observe({
+                Value: metric.uploadedSize,
+                Labels: {},
+            });
+            metrics.drive_sdk_upload_errors_file_size_histogram.observe({
+                Value: metric.expectedSize,
+                Labels: {},
+            });
+
+            // Report only once per interval.
+            if (!this.lastUploadError || this.lastUploadError.getTime() < Date.now() - REPORT_ERRORING_USERS_INTERVAL) {
+                metrics.drive_sdk_upload_erroring_users_total.increment({
+                    volumeType: metric.volumeType || 'unknown',
+                    userPlan: this.userPlan,
+                });
+                this.lastUploadError = new Date();
+            }
+
+            if (metric.error === 'unknown') {
+                captureMessage('Metric event details: upload unknown error', {
+                    level: 'error',
+                    tags: {
+                        driveSdkMetricEvent: 'uploadError',
+                    },
+                    extra: {
+                        error: metric.originalError,
+                    },
+                });
+            }
+        }
     }
 
     private onDownload(metric: MetricDownloadEvent) {
-        metrics.drive_download_success_rate_total.increment({
+        metrics.drive_sdk_download_success_rate_total.increment({
+            volumeType: metric.volumeType || 'unknown',
             status: !metric.error ? 'success' : 'failure',
-            shareType: this.getShareType(metric.volumeType),
-            retry: 'false', // TODO: we need to wire context from the app
         });
 
-        // TODO: handle error specific metrics
+        if (metric.error) {
+            metrics.drive_sdk_download_errors_total.increment({
+                volumeType: metric.volumeType || 'unknown',
+                type: metric.error,
+            });
+
+            metrics.drive_sdk_download_errors_transfer_size_histogram.observe({
+                Value: metric.downloadedSize,
+                Labels: {},
+            });
+            metrics.drive_sdk_download_errors_file_size_histogram.observe({
+                Value: metric.claimedFileSize || 0, // Zero is considered as unknown.
+                Labels: {},
+            });
+
+            // Report only once per interval.
+            if (
+                !this.lastDownloadError ||
+                this.lastDownloadError.getTime() < Date.now() - REPORT_ERRORING_USERS_INTERVAL
+            ) {
+                metrics.drive_sdk_download_erroring_users_total.increment({
+                    volumeType: metric.volumeType || 'unknown',
+                    userPlan: this.userPlan,
+                });
+                this.lastDownloadError = new Date();
+            }
+
+            if (metric.error === 'unknown') {
+                captureMessage('Metric event details: download unknown error', {
+                    level: 'error',
+                    tags: {
+                        driveSdkMetricEvent: 'downloadError',
+                    },
+                    extra: {
+                        error: metric.originalError,
+                    },
+                });
+            }
+        }
     }
 
     private onDecryptionError(metric: MetricDecryptionErrorEvent) {
-        // TODO: upgrade metrics to include field instead of entity, and use volume type instead
-        let entity: 'share' | 'node' | 'content' = 'node';
-        if (metric.field === 'shareKey') {
-            entity = 'share';
-        }
-        if (metric.field === 'nodeContentKey' || metric.field === 'content') {
-            entity = 'content';
-        }
+        // TODO: shareUrlPassword is not supported by metrics yet.
+        const field = metric.field === 'shareUrlPassword' ? 'shareKey' : metric.field;
 
-        metrics.drive_integrity_decryption_errors_total.increment({
-            entity,
-            shareType: this.getShareType(metric.volumeType),
+        metrics.drive_sdk_integrity_decryption_errors_total.increment({
+            volumeType: metric.volumeType || 'unknown',
+            field,
             fromBefore2024: this.getYesNoUnknown(metric.fromBefore2024),
         });
+        this.reportIntegrityErroringUsers(metric);
 
-        // TODO: handle erroring users
-        // TODO: send metric.error to Sentry as well
+        if (metric.fromBefore2024 !== false) {
+            captureMessage('Metric event details: decryption error', {
+                level: 'error',
+                tags: {
+                    driveSdkMetricEvent: 'decryptionError',
+                },
+                extra: {
+                    volumeType: metric.volumeType || 'unknown',
+                    field: metric.field,
+                    fromBefore2024: metric.fromBefore2024,
+                    error: metric.error,
+                },
+            });
+        }
     }
 
     private onVerificationError(metric: MetricVerificationErrorEvent) {
-        // TODO: upgrade metrics to include field instead of email, and use volume type instead
-        const verificationKey = {
-            shareKey: 'ShareAddress',
-            nodeKey: 'SignatureEmail',
-            nodeName: 'NameSignatureEmail',
-            nodeHashKey: 'NodeKey',
-            nodeExtendedAttributes: 'SignatureEmail',
-            nodeContentKey: 'NodeKey',
-            content: 'SignatureEmail',
-        }[metric.field] as 'ShareAddress' | 'NameSignatureEmail' | 'SignatureEmail' | 'NodeKey';
-
-        metrics.drive_integrity_verification_errors_total.increment({
-            shareType: this.getShareType(metric.volumeType),
-            verificationKey,
+        metrics.drive_sdk_integrity_verification_errors_total.increment({
+            volumeType: metric.volumeType || 'unknown',
+            field: metric.field,
             addressMatchingDefaultShare: this.getYesNoUnknown(metric.addressMatchingDefaultShare),
             fromBefore2024: this.getYesNoUnknown(metric.fromBefore2024),
         });
 
-        // TODO: handle erroring users
+        this.reportIntegrityErroringUsers(metric);
+    }
+
+    private reportIntegrityErroringUsers(metric: MetricDecryptionErrorEvent | MetricVerificationErrorEvent) {
+        if (
+            !this.lastIntegrityError ||
+            this.lastIntegrityError.getTime() < Date.now() - REPORT_ERRORING_USERS_INTERVAL
+        ) {
+            metrics.drive_sdk_integrity_erroring_users_total.increment({
+                volumeType: metric.volumeType || 'unknown',
+                userPlan: this.userPlan,
+            });
+            this.lastIntegrityError = new Date();
+        }
+    }
+
+    private onBlockVerificationError(metric: MetricBlockVerificationErrorEvent) {
+        metrics.drive_sdk_integrity_block_verification_errors_total.increment({
+            retryHelped: metric.retryHelped ? 'yes' : 'no',
+        });
     }
 
     private onVolumeEventsSubscriptionsChanged(metric: MetricVolumeEventsSubscriptionsChangedEvent) {
-        // Anonymous user will not listen to volumes.
-        // TODO: upgrade metric to inlucde unknown as user plan
-        if (this.userPlan === 'anonymous' || this.userPlan === 'unknown') {
-            return;
-        }
-
-        metrics.drive_volume_events_subscriptions_histogram.observe({
+        metrics.drive_sdk_volume_events_subscriptions_histogram.observe({
             Value: metric.numberOfVolumeSubscriptions,
             Labels: {
                 userPlan: this.userPlan,
             },
         });
-    }
-
-    // Context is volume-centric, while share type is share-centric.
-    // That is incompatible. We need to upgrade metrics to be volume-centric.
-    // For now, we simply report devices or photos as main as well.
-    // New photo volume or public sharing is not supported by the SDK,
-    // so such even will not come.
-    private getShareType(context?: MetricVolumeType): 'main' | 'shared' {
-        if (context === MetricVolumeType.OwnVolume) {
-            return 'main';
-        }
-        if (context === MetricVolumeType.Shared) {
-            return 'shared';
-        }
-        if (context === MetricVolumeType.SharedPublic) {
-            return 'shared';
-        }
-        // If context is not known, we consider it is shared.
-        // For new metric, we should have unknown state as well.
-        return 'shared';
     }
 
     private getYesNoUnknown(value: boolean | undefined): 'yes' | 'no' | 'unknown' {
