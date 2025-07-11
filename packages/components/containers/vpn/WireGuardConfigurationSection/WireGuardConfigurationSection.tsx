@@ -149,7 +149,7 @@ DNS = 10.2.0.1
 [Peer]
 # ${features?.peerName || peer.name}
 PublicKey = ${features?.peerPublicKey || peer.publicKey}
-AllowedIPs = 0.0.0.0/0
+AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint = ${features?.peerIp || peer.ip}:51820`;
 
 const privateKeyPlaceholder = '*****';
