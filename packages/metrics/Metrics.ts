@@ -53,6 +53,22 @@ import type { HttpsProtonMeDriveIntegrityDecryptionErrorsTotalV1SchemaJson } fro
 import type { HttpsProtonMeDriveIntegrityErroringUsersTotalV1SchemaJson } from './types/drive_integrity_erroring_users_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson } from './types/drive_integrity_verification_errors_total_v1.schema';
 import type { HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson } from './types/drive_photos_transfer_to_photo_stream_histogram_v1.schema';
+import type { HttpsProtonMeDriveSdkApiRetrySucceededTotalV1SchemaJson } from './types/drive_sdk_api_retry_succeeded_total_v1.schema';
+import type { HttpsProtonMeDriveSdkDownloadErroringUsersTotalV1SchemaJson } from './types/drive_sdk_download_erroring_users_total_v1.schema';
+import type { HttpsProtonMeDriveSdkDownloadErrorsFileSizeHistogramV1SchemaJson } from './types/drive_sdk_download_errors_file_size_histogram_v1.schema';
+import type { HttpsProtonMeDriveSdkDownloadErrorsTotalV1SchemaJson } from './types/drive_sdk_download_errors_total_v1.schema';
+import type { HttpsProtonMeDriveSdkDownloadErrorsTransferSizeHistogramV1SchemaJson } from './types/drive_sdk_download_errors_transfer_size_histogram_v1.schema';
+import type { HttpsProtonMeDriveSdkDownloadSuccessRateTotalV1SchemaJson } from './types/drive_sdk_download_success_rate_total_v1.schema';
+import type { HttpsProtonMeDriveSdkIntegrityBlockVerificationErrorsTotalV1SchemaJson } from './types/drive_sdk_integrity_block_verification_errors_total_v1.schema';
+import type { HttpsProtonMeDriveSdkIntegrityDecryptionErrorsTotalV1SchemaJson } from './types/drive_sdk_integrity_decryption_errors_total_v1.schema';
+import type { HttpsProtonMeDriveSdkIntegrityErroringUsersTotalV1SchemaJson } from './types/drive_sdk_integrity_erroring_users_total_v1.schema';
+import type { HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV1SchemaJson } from './types/drive_sdk_integrity_verification_errors_total_v1.schema';
+import type { HttpsProtonMeDriveSdkUploadErroringUsersTotalV1SchemaJson } from './types/drive_sdk_upload_erroring_users_total_v1.schema';
+import type { HttpsProtonMeDriveSdkUploadErrorsFileSizeHistogramV1SchemaJson } from './types/drive_sdk_upload_errors_file_size_histogram_v1.schema';
+import type { HttpsProtonMeDriveSdkUploadErrorsTotalV1SchemaJson } from './types/drive_sdk_upload_errors_total_v1.schema';
+import type { HttpsProtonMeDriveSdkUploadErrorsTransferSizeHistogramV1SchemaJson } from './types/drive_sdk_upload_errors_transfer_size_histogram_v1.schema';
+import type { HttpsProtonMeDriveSdkUploadSuccessRateTotalV1SchemaJson } from './types/drive_sdk_upload_success_rate_total_v1.schema';
+import type { HttpsProtonMeDriveSdkVolumeEventsSubscriptionsHistogramV1SchemaJson } from './types/drive_sdk_volume_events_subscriptions_histogram_v1.schema';
 import type { HttpsProtonMeDriveSyncErroringUsersTotalV1SchemaJson } from './types/drive_sync_erroring_users_total_v1.schema';
 import type { HttpsProtonMeDriveSyncErrorsTotalV1SchemaJson } from './types/drive_sync_errors_total_v1.schema';
 import type { HttpsProtonMeDriveSyncEventTotalV2SchemaJson } from './types/drive_sync_event_total_v2.schema';
@@ -252,6 +268,38 @@ class Metrics extends MetricsBase {
     public drive_integrity_verification_errors_total: Counter<HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson>;
 
     public drive_photos_transfer_to_photo_stream_histogram: Histogram<HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson>;
+
+    public drive_sdk_api_retry_succeeded_total: Counter<HttpsProtonMeDriveSdkApiRetrySucceededTotalV1SchemaJson>;
+
+    public drive_sdk_download_erroring_users_total: Counter<HttpsProtonMeDriveSdkDownloadErroringUsersTotalV1SchemaJson>;
+
+    public drive_sdk_download_errors_file_size_histogram: Histogram<HttpsProtonMeDriveSdkDownloadErrorsFileSizeHistogramV1SchemaJson>;
+
+    public drive_sdk_download_errors_total: Counter<HttpsProtonMeDriveSdkDownloadErrorsTotalV1SchemaJson>;
+
+    public drive_sdk_download_errors_transfer_size_histogram: Histogram<HttpsProtonMeDriveSdkDownloadErrorsTransferSizeHistogramV1SchemaJson>;
+
+    public drive_sdk_download_success_rate_total: Counter<HttpsProtonMeDriveSdkDownloadSuccessRateTotalV1SchemaJson>;
+
+    public drive_sdk_integrity_block_verification_errors_total: Counter<HttpsProtonMeDriveSdkIntegrityBlockVerificationErrorsTotalV1SchemaJson>;
+
+    public drive_sdk_integrity_decryption_errors_total: Counter<HttpsProtonMeDriveSdkIntegrityDecryptionErrorsTotalV1SchemaJson>;
+
+    public drive_sdk_integrity_erroring_users_total: Counter<HttpsProtonMeDriveSdkIntegrityErroringUsersTotalV1SchemaJson>;
+
+    public drive_sdk_integrity_verification_errors_total: Counter<HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV1SchemaJson>;
+
+    public drive_sdk_upload_erroring_users_total: Counter<HttpsProtonMeDriveSdkUploadErroringUsersTotalV1SchemaJson>;
+
+    public drive_sdk_upload_errors_file_size_histogram: Histogram<HttpsProtonMeDriveSdkUploadErrorsFileSizeHistogramV1SchemaJson>;
+
+    public drive_sdk_upload_errors_total: Counter<HttpsProtonMeDriveSdkUploadErrorsTotalV1SchemaJson>;
+
+    public drive_sdk_upload_errors_transfer_size_histogram: Histogram<HttpsProtonMeDriveSdkUploadErrorsTransferSizeHistogramV1SchemaJson>;
+
+    public drive_sdk_upload_success_rate_total: Counter<HttpsProtonMeDriveSdkUploadSuccessRateTotalV1SchemaJson>;
+
+    public drive_sdk_volume_events_subscriptions_histogram: Histogram<HttpsProtonMeDriveSdkVolumeEventsSubscriptionsHistogramV1SchemaJson>;
 
     public drive_sync_erroring_users_total: Counter<HttpsProtonMeDriveSyncErroringUsersTotalV1SchemaJson>;
 
@@ -711,6 +759,98 @@ class Metrics extends MetricsBase {
         this.drive_photos_transfer_to_photo_stream_histogram =
             new Histogram<HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson>(
                 { name: 'drive_photos_transfer_to_photo_stream_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_api_retry_succeeded_total = new Counter<HttpsProtonMeDriveSdkApiRetrySucceededTotalV1SchemaJson>(
+            { name: 'drive_sdk_api_retry_succeeded_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_sdk_download_erroring_users_total =
+            new Counter<HttpsProtonMeDriveSdkDownloadErroringUsersTotalV1SchemaJson>(
+                { name: 'drive_sdk_download_erroring_users_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_download_errors_file_size_histogram =
+            new Histogram<HttpsProtonMeDriveSdkDownloadErrorsFileSizeHistogramV1SchemaJson>(
+                { name: 'drive_sdk_download_errors_file_size_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_download_errors_total = new Counter<HttpsProtonMeDriveSdkDownloadErrorsTotalV1SchemaJson>(
+            { name: 'drive_sdk_download_errors_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_sdk_download_errors_transfer_size_histogram =
+            new Histogram<HttpsProtonMeDriveSdkDownloadErrorsTransferSizeHistogramV1SchemaJson>(
+                { name: 'drive_sdk_download_errors_transfer_size_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_download_success_rate_total =
+            new Counter<HttpsProtonMeDriveSdkDownloadSuccessRateTotalV1SchemaJson>(
+                { name: 'drive_sdk_download_success_rate_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_integrity_block_verification_errors_total =
+            new Counter<HttpsProtonMeDriveSdkIntegrityBlockVerificationErrorsTotalV1SchemaJson>(
+                { name: 'drive_sdk_integrity_block_verification_errors_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_integrity_decryption_errors_total =
+            new Counter<HttpsProtonMeDriveSdkIntegrityDecryptionErrorsTotalV1SchemaJson>(
+                { name: 'drive_sdk_integrity_decryption_errors_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_integrity_erroring_users_total =
+            new Counter<HttpsProtonMeDriveSdkIntegrityErroringUsersTotalV1SchemaJson>(
+                { name: 'drive_sdk_integrity_erroring_users_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_integrity_verification_errors_total =
+            new Counter<HttpsProtonMeDriveSdkIntegrityVerificationErrorsTotalV1SchemaJson>(
+                { name: 'drive_sdk_integrity_verification_errors_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_upload_erroring_users_total =
+            new Counter<HttpsProtonMeDriveSdkUploadErroringUsersTotalV1SchemaJson>(
+                { name: 'drive_sdk_upload_erroring_users_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_upload_errors_file_size_histogram =
+            new Histogram<HttpsProtonMeDriveSdkUploadErrorsFileSizeHistogramV1SchemaJson>(
+                { name: 'drive_sdk_upload_errors_file_size_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_upload_errors_total = new Counter<HttpsProtonMeDriveSdkUploadErrorsTotalV1SchemaJson>(
+            { name: 'drive_sdk_upload_errors_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_sdk_upload_errors_transfer_size_histogram =
+            new Histogram<HttpsProtonMeDriveSdkUploadErrorsTransferSizeHistogramV1SchemaJson>(
+                { name: 'drive_sdk_upload_errors_transfer_size_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_sdk_upload_success_rate_total = new Counter<HttpsProtonMeDriveSdkUploadSuccessRateTotalV1SchemaJson>(
+            { name: 'drive_sdk_upload_success_rate_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_sdk_volume_events_subscriptions_histogram =
+            new Histogram<HttpsProtonMeDriveSdkVolumeEventsSubscriptionsHistogramV1SchemaJson>(
+                { name: 'drive_sdk_volume_events_subscriptions_histogram', version: 1 },
                 this.requestService
             );
 
