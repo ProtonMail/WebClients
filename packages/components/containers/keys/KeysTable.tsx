@@ -56,80 +56,84 @@ const KeysTable = ({
                 <tr>{headerCells}</tr>
             </thead>
             <TableBody colSpan={5}>
-                {sortedKeys.map(({ ID, creationDate, type, fingerprint, algorithm, status, permissions }) => {
-                    const isInactiveKey = !status.isDecrypted;
-                    const keyFunction = getKeyFunction(status);
-                    return (
-                        <TableRow
-                            key={ID}
-                            style={{ verticalAlign: 'baseline', color: isInactiveKey ? 'var(--text-hint)' : '' }}
-                            labels={[
-                                c('Title header for keys table').t`Creation date`,
-                                c('Title header for keys table').t`Type`,
-                                c('Title header for keys table').t`Fingerprint`,
-                                c('Title header for keys table').t`Function`,
-                                c('Title header for keys table').t`Status`,
-                                c('Title header for keys table').t`Actions`,
-                            ]}
-                            cells={[
-                                format(creationDate, 'PP', { locale: dateLocale }),
-                                <div key={1} className="flex flex-row flex-nowrap items-center">
-                                    {algorithm}
-                                    {status.isWeak && (
-                                        <PersonalKeyWarningIcon className="ml-2 hidden md:flex shrink-0" />
-                                    )}
-                                </div>,
-                                <div key={2} className="flex flex-row flex-nowrap items-center">
-                                    <code
-                                        className="max-w-full inline-block text-ellipsis"
-                                        data-testid="fingerprint"
-                                        title={fingerprint}
-                                        style={{ color: isInactiveKey ? 'var(--text-hint)' : 'var(--text-weak)' }}
-                                    >
-                                        {fingerprint}
-                                    </code>
-                                    <Copy
-                                        size="small"
-                                        value={fingerprint}
-                                        className="shrink-0 ml-1 mr-2"
-                                        shape="ghost"
-                                        tooltipText={c('Label').t`Copy fingerprint`}
-                                        onCopy={() => {
-                                            createNotification({
-                                                text: c('Success').t`Fingerprint copied to clipboard`,
-                                            });
-                                        }}
-                                    />
-                                </div>,
-                                keyFunction.tooltip ? (
-                                    <Tooltip title={keyFunction.tooltip}>
-                                        <span>{keyFunction.label}</span>
-                                    </Tooltip>
-                                ) : (
-                                    keyFunction.label
-                                ),
-                                <KeysStatus key={3} type={type} {...status} />,
-                                <KeysActions
-                                    key={4}
-                                    isLoading={status.isLoading}
-                                    ID={ID}
-                                    onDeleteKey={permissions.canDelete ? onDeleteKey : undefined}
-                                    onExportPublicKey={permissions.canExportPublicKey ? onExportPublicKey : undefined}
-                                    onExportPrivateKey={
-                                        permissions.canExportPrivateKey ? onExportPrivateKey : undefined
-                                    }
-                                    onSetPrimary={permissions.canSetPrimary ? onSetPrimary : undefined}
-                                    onSetCompromised={permissions.canSetCompromised ? onSetCompromised : undefined}
-                                    onSetNotCompromised={
-                                        permissions.canSetNotCompromised ? onSetNotCompromised : undefined
-                                    }
-                                    onSetObsolete={permissions.canSetObsolete ? onSetObsolete : undefined}
-                                    onSetNotObsolete={permissions.canSetNotObsolete ? onSetNotObsolete : undefined}
-                                />,
-                            ]}
-                        />
-                    );
-                })}
+                {sortedKeys.map(
+                    ({ ID, creationDate, type, fingerprint, algorithm, status, permissions, invalidKeyError }) => {
+                        const isInactiveKey = !status.isDecrypted;
+                        const keyFunction = getKeyFunction(status);
+                        return (
+                            <TableRow
+                                key={ID}
+                                style={{ verticalAlign: 'baseline', color: isInactiveKey ? 'var(--text-hint)' : '' }}
+                                labels={[
+                                    c('Title header for keys table').t`Creation date`,
+                                    c('Title header for keys table').t`Type`,
+                                    c('Title header for keys table').t`Fingerprint`,
+                                    c('Title header for keys table').t`Function`,
+                                    c('Title header for keys table').t`Status`,
+                                    c('Title header for keys table').t`Actions`,
+                                ]}
+                                cells={[
+                                    format(creationDate, 'PP', { locale: dateLocale }),
+                                    <div key={1} className="flex flex-row flex-nowrap items-center">
+                                        {algorithm}
+                                        {status.isWeak && (
+                                            <PersonalKeyWarningIcon className="ml-2 hidden md:flex shrink-0" />
+                                        )}
+                                    </div>,
+                                    <div key={2} className="flex flex-row flex-nowrap items-center">
+                                        <code
+                                            className="max-w-full inline-block text-ellipsis"
+                                            data-testid="fingerprint"
+                                            title={fingerprint}
+                                            style={{ color: isInactiveKey ? 'var(--text-hint)' : 'var(--text-weak)' }}
+                                        >
+                                            {fingerprint}
+                                        </code>
+                                        <Copy
+                                            size="small"
+                                            value={fingerprint}
+                                            className="shrink-0 ml-1 mr-2"
+                                            shape="ghost"
+                                            tooltipText={c('Label').t`Copy fingerprint`}
+                                            onCopy={() => {
+                                                createNotification({
+                                                    text: c('Success').t`Fingerprint copied to clipboard`,
+                                                });
+                                            }}
+                                        />
+                                    </div>,
+                                    keyFunction.tooltip ? (
+                                        <Tooltip title={keyFunction.tooltip}>
+                                            <span>{keyFunction.label}</span>
+                                        </Tooltip>
+                                    ) : (
+                                        keyFunction.label
+                                    ),
+                                    <KeysStatus key={3} type={type} {...status} invalidKeyError={invalidKeyError} />,
+                                    <KeysActions
+                                        key={4}
+                                        isLoading={status.isLoading}
+                                        ID={ID}
+                                        onDeleteKey={permissions.canDelete ? onDeleteKey : undefined}
+                                        onExportPublicKey={
+                                            permissions.canExportPublicKey ? onExportPublicKey : undefined
+                                        }
+                                        onExportPrivateKey={
+                                            permissions.canExportPrivateKey ? onExportPrivateKey : undefined
+                                        }
+                                        onSetPrimary={permissions.canSetPrimary ? onSetPrimary : undefined}
+                                        onSetCompromised={permissions.canSetCompromised ? onSetCompromised : undefined}
+                                        onSetNotCompromised={
+                                            permissions.canSetNotCompromised ? onSetNotCompromised : undefined
+                                        }
+                                        onSetObsolete={permissions.canSetObsolete ? onSetObsolete : undefined}
+                                        onSetNotObsolete={permissions.canSetNotObsolete ? onSetNotObsolete : undefined}
+                                    />,
+                                ]}
+                            />
+                        );
+                    }
+                )}
             </TableBody>
         </Table>
     );

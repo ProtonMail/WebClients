@@ -19,7 +19,6 @@ import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
-import type { AlgorithmInfo } from '@proton/crypto';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -48,7 +47,7 @@ import ImportKeyModal from './importKeys/ImportKeyModal';
 import type { ImportKey } from './importKeys/interface';
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import { getKeyByID } from './shared/helper';
-import useDisplayKeys from './shared/useDisplayKeys';
+import { useKeysMetadata } from './shared/useKeysMetadata';
 
 const AddressKeysSection = () => {
     const { createModal } = useModals();
@@ -70,17 +69,16 @@ const AddressKeysSection = () => {
     const { ID: addressID = '', Email: addressEmail = '' } = Address || {};
     const addressWithKeys = addressesKeys?.find(({ address }) => address.ID === addressID);
     const addressKeys = addressWithKeys?.keys;
-    const addressKeysDisplay = useDisplayKeys({
-        keys: addressKeys,
-        Address,
-        User,
+
+    const {
+        address: { displayKeys: addressKeysDisplay, existingAlgorithms },
+    } = useKeysMetadata({
+        address: Address,
+        addressKeys,
+        user: User,
+        userKeys,
         loadingKeyID,
     });
-
-    const existingAlgorithms = addressKeysDisplay.reduce<AlgorithmInfo[]>(
-        (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
-        []
-    );
 
     const [addKeyProps, setAddKeyModalOpen, renderAddKey] = useModalState();
     const [importKeyProps, setImportKeyModalOpen, renderImportKey] = useModalState();
