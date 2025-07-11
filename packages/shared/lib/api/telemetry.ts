@@ -34,7 +34,7 @@ export enum TelemetryMeasurementGroups {
     mailPagingControls = 'mail.web.paging_controls',
     passNudge = 'mail.web.pass_nudge',
     mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
-    mailUnlimitedOffer2025 = 'mail.web.unlimited_offer_2025',
+    unlimitedOffer2025 = 'any.web.unlimited_offer_2025',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     vpnDrawer = 'any.web.vpn_drawer',
