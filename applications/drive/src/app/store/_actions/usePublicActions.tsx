@@ -145,7 +145,8 @@ export function usePublicActions() {
                 ? c('Info').t`This will permanently delete the file you uploaded.`
                 : c('Info').t`This will permanently delete the folder you uploaded.`;
         } else {
-            title = c('Title').t`Delete ${links.length} items?`;
+            const total = links.length;
+            title = c('Title').ngettext(msgid`Delete ${total} item?`, `Delete ${total} items?`, total);
             message = c('Info').t`This will permanently delete the selected items you uploaded.`;
         }
 
