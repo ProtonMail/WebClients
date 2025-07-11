@@ -51,6 +51,15 @@ const UnlockForm = ({ onSubmit }: Props) => {
                 autoFocus
                 value={keyPassword}
                 onValue={setKeyPassword}
+                /**
+                 * Mark this field as ignored for Pass extension, to avoid Pass
+                 * prompting auto-save after submitting the form, which could make users
+                 * accidentally overwrite their first password with their mailbox password
+                 * (login items in Pass only support a single password field).
+                 * This will also prevent Pass from autofilling this field but we expect most users
+                 * to only put their first password and not mailbox password as their login password.
+                 */
+                data-protonpass-ignore={true}
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
                 {data.cta}
