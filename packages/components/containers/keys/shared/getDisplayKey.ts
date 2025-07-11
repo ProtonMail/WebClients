@@ -1,4 +1,4 @@
-import type { AlgorithmInfo } from '@proton/crypto';
+import { type KeyMetadata } from '@proton/account/addressKeys/getKeyMetadata';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Address, Key, SignedKeyListItem, UserModel } from '@proton/shared/lib/interfaces';
@@ -9,26 +9,18 @@ import getPermissions from './getPermissions';
 import type { KeyDisplay, KeyStatus } from './interface';
 import { KeyType } from './interface';
 
-interface Arguments {
-    User: UserModel;
-    Address?: Address;
-    creationDate: Date;
-    fingerprint: string;
-    version: number;
-    isDecrypted: boolean;
+interface Arguments extends KeyMetadata<Key> {
+    user: UserModel;
+    address?: Address;
     isLoading: boolean;
-    Key: Key;
-    algorithmInfos: AlgorithmInfo[];
     signedKeyListMap: SimpleMap<SignedKeyListItem | undefined>;
     /** whether a v6 primary key is present in the set of keys being parsed */
     existsPrimaryKeyV6: boolean;
-    isWeak: boolean;
-    isE2EEForwardingKey: boolean;
 }
 
 export const getDisplayKey = ({
-    User,
-    Address,
+    user,
+    address,
     algorithmInfos,
     fingerprint,
     version,
@@ -40,17 +32,18 @@ export const getDisplayKey = ({
     Key,
     isWeak,
     isE2EEForwardingKey,
+    invalidKeyError,
 }: Arguments): KeyDisplay => {
-    const { isPrivate, isSelf } = User;
+    const { isPrivate, isSelf } = user;
     const signedKeyListItem = signedKeyListMap[Key.ID];
 
     const { ID, Flags, Primary, AddressForwardingID, GroupMemberID } = Key;
 
-    const flags = signedKeyListItem?.Flags ?? Flags ?? getDefaultKeyFlags(Address);
+    const flags = signedKeyListItem?.Flags ?? Flags ?? getDefaultKeyFlags(address);
     const primary = signedKeyListItem?.Primary ?? Primary;
 
-    const isAddressKey = !!Address;
-    const isAddressDisabled = Address?.Status === 0;
+    const isAddressKey = !!address;
+    const isAddressDisabled = address?.Status === 0;
 
     const isPrimary = primary === 1;
     const isPrimaryCompatibility = existsPrimaryKeyV6 && isPrimary && version !== 6;
@@ -91,6 +84,7 @@ export const getDisplayKey = ({
         version,
         algorithm: getFormattedAlgorithmNames(algorithmInfos, version),
         status,
+        invalidKeyError,
         permissions: getPermissions({
             ...status,
             canModify,

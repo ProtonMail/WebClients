@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
+import type { KeyMetadata } from '@proton/account/addressKeys/getKeyMetadata';
 import Badge from '@proton/components/components/badge/Badge';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import type { Key } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { KeyStatus } from './shared/interface';
@@ -16,11 +18,16 @@ const KeysStatus = ({
     isObsolete,
     isAddressDisabled,
     isForwarding,
-}: Partial<KeyStatus> & { type: KeyType }) => {
+    invalidKeyError,
+}: Partial<KeyStatus> & {
+    type: KeyType;
+    invalidKeyError: KeyMetadata<Key>['invalidKeyError'];
+}) => {
     const list = [
         isPrimary &&
             !isPrimaryCompatibility &&
             ({
+                key: 'primary',
                 tooltip:
                     type === KeyType.User
                         ? c('Tooltip').t`This key is used by ${MAIL_APP_NAME} to encrypt your contact's data`
@@ -31,6 +38,7 @@ const KeysStatus = ({
             } as const),
         isPrimaryCompatibility &&
             ({
+                key: 'primary-compat',
                 // no primary-compatibility for user keys
                 tooltip: c('Tooltip')
                     .t`This is the default key used by other ${MAIL_APP_NAME} users on older mobile apps to encrypt data they send to you`,
@@ -38,13 +46,23 @@ const KeysStatus = ({
                 type: 'success',
             } as const),
         !isDecrypted &&
+            !invalidKeyError &&
             ({
+                key: 'inactive',
                 tooltip: c('Tooltip').t`This key is encrypted with an old password`,
                 title: c('Key state badge').t`Inactive`,
                 type: 'error',
             } as const),
+        invalidKeyError &&
+            ({
+                key: 'error',
+                tooltip: invalidKeyError.errorMessage,
+                title: c('Key state badge').t`Invalid`,
+                type: 'error',
+            } as const),
         isCompromised &&
             ({
+                key: 'compromised',
                 tooltip: c('Tooltip')
                     .t`Signatures produced by this key are treated as invalid and this key cannot be used for encryption`,
                 title: c('Key state badge').t`Compromised`,
@@ -53,27 +71,30 @@ const KeysStatus = ({
         isObsolete &&
             !isCompromised &&
             ({
+                key: 'obsolete',
                 tooltip: c('Tooltip').t`This key cannot be used for encryption`,
                 title: c('Key state badge').t`Obsolete`,
                 type: 'warning',
             } as const),
         isAddressDisabled &&
             ({
+                key: 'disabled',
                 tooltip: c('Tooltip').t`This address has been disabled`,
                 title: c('Key state badge').t`Disabled`,
                 type: 'warning',
             } as const),
         isForwarding &&
             ({
+                key: 'forwarding',
                 tooltip: c('Tooltip').t`This key is used for email forwarding`,
                 title: c('Key state badge').t`Forwarding`,
                 type: 'info',
             } as const),
     ]
         .filter(isTruthy)
-        .map(({ tooltip, title, type }) => {
+        .map(({ key, tooltip, title, type }) => {
             return (
-                <Badge className="m-0" key={title} tooltip={tooltip} type={type}>
+                <Badge className="m-0" key={key} tooltip={tooltip} type={type}>
                     {title}
                 </Badge>
             );
