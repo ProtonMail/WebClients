@@ -193,6 +193,7 @@
 	&[aria-expanded='true'] {
 		background-color: inherit;
 
+		&:hover,
 		&:hover::after {
 			background-color: inherit;
 		}
