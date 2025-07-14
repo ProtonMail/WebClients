@@ -109,14 +109,9 @@ module.exports = function (config) {
                 flags: ['--no-sandbox'],
             },
         },
-        browsers: [
-            'ChromeHeadlessCI',
-            process.env.CI ? undefined : 'FirefoxHeadless',
-            // on Linux, we don't want to test webkit as the WebCrypto X25519 implementation has issues.
-            // To detech the OS, we look at the playwright installation path, see
-            // https://playwright.dev/python/docs/browsers#managing-browser-binaries
-            webkit.executablePath().includes('.cache') ? undefined : 'WebkitHeadless',
-        ].filter(Boolean),
+        browsers: ['ChromeHeadlessCI', process.env.CI ? undefined : 'FirefoxHeadless', 'WebkitHeadless'].filter(
+            Boolean
+        ),
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
