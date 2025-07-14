@@ -10,7 +10,7 @@ import './BitcoinQRCode.scss';
 export interface OwnProps {
     amount: number;
     address: string;
-    status: 'initial' | 'pending' | 'confirmed';
+    status: 'initial' | 'pending' | 'confirmed' | 'hidden';
 }
 
 const BitcoinQRCode = ({
@@ -21,7 +21,7 @@ const BitcoinQRCode = ({
     ...rest
 }: OwnProps & Omit<ComponentProps<typeof QRCode>, 'value'>) => {
     const url = `bitcoin:${address}?amount=${amount}`;
-    const blurred = status === 'pending' || status === 'confirmed' ? 'blurred' : null;
+    const blurred = status === 'pending' || status === 'confirmed' || status === 'hidden' ? 'blurred' : null;
 
     return (
         <div className="border rounded relative p-6">

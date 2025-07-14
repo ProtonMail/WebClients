@@ -1,11 +1,12 @@
 import { screen } from '@testing-library/react';
 
 import { CYCLE, FREE_PLAN, PLANS } from '@proton/payments';
+import { useTaxCountry } from '@proton/payments/ui';
 import { type SubscriptionCheckResponse, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
-import SubscriptionCheckout from './SubscriptionCheckout';
+import SubscriptionCheckout, { type SubscriptionCheckoutProps } from './SubscriptionCheckout';
 
 jest.mock('../../../../hooks/useConfig', () => ({
     __esModule: true,
@@ -15,7 +16,13 @@ jest.mock('../../../../hooks/useConfig', () => ({
 }));
 
 jest.mock('../../Checkout', () => ({ children }: any) => <>{children}</>);
-const freePlan = FREE_PLAN;
+
+const WrappedSubscriptionCheckout = (props: Omit<SubscriptionCheckoutProps, 'taxCountry'>) => {
+    const taxCountry = useTaxCountry({
+        zipCodeBackendValid: true,
+    });
+    return <SubscriptionCheckout {...props} taxCountry={taxCountry} />;
+};
 
 describe('SubscriptionCheckout', () => {
     let checkResult: SubscriptionCheckResponse;
@@ -40,8 +47,8 @@ describe('SubscriptionCheckout', () => {
         checkResult.Proration = -451;
 
         let { container } = renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
@@ -58,8 +65,9 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
-            ></SubscriptionCheckout>
+            />
         );
 
         expect(container).toHaveTextContent('Proration');
@@ -70,8 +78,8 @@ describe('SubscriptionCheckout', () => {
         checkResult.Proration = -451;
 
         let { container } = renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
@@ -88,8 +96,9 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
-            ></SubscriptionCheckout>
+            />
         );
 
         expect(container).toHaveTextContent('Proration');
@@ -100,8 +109,8 @@ describe('SubscriptionCheckout', () => {
         checkResult.Proration = -451;
 
         let { container } = renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
@@ -118,8 +127,9 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
-            ></SubscriptionCheckout>
+            />
         );
 
         expect(container).not.toHaveTextContent('Proration');
@@ -130,8 +140,8 @@ describe('SubscriptionCheckout', () => {
         checkResult.Proration = 0;
 
         let { container } = renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
@@ -150,8 +160,9 @@ describe('SubscriptionCheckout', () => {
                 })}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
-            ></SubscriptionCheckout>
+            />
         );
 
         expect(container).toHaveTextContent('Start date');
@@ -174,8 +185,8 @@ describe('SubscriptionCheckout', () => {
         };
 
         let { container } = renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
@@ -194,8 +205,9 @@ describe('SubscriptionCheckout', () => {
                 })}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
-            ></SubscriptionCheckout>
+            />
         );
 
         expect(container).toHaveTextContent('Proration');
@@ -207,7 +219,7 @@ describe('SubscriptionCheckout', () => {
      * An example when credits are negative:
      * - you have 10 credits on the account
      * - you upgrade to a 5$/month plan
-     * - you should see credits -5 in the <SubscriptionCheckout>
+     * - you should see credits -5 in the <WrappedSubscriptionCheckout>
      */
     it('should display negative credits value', () => {
         checkResult = {
@@ -225,8 +237,8 @@ describe('SubscriptionCheckout', () => {
         };
 
         let { container } = renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
@@ -245,8 +257,9 @@ describe('SubscriptionCheckout', () => {
                 })}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
-            ></SubscriptionCheckout>
+            />
         );
 
         expect(container).toHaveTextContent('Credit');
@@ -276,8 +289,8 @@ describe('SubscriptionCheckout', () => {
         };
 
         let { container } = renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
@@ -296,8 +309,9 @@ describe('SubscriptionCheckout', () => {
                 })}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
-            ></SubscriptionCheckout>
+            />
         );
 
         expect(container).toHaveTextContent('Credit');
@@ -307,8 +321,8 @@ describe('SubscriptionCheckout', () => {
 
     it('should display correct billing cycle text for yearly subscription', () => {
         const { container } = renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
@@ -325,6 +339,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
         );
@@ -335,8 +350,8 @@ describe('SubscriptionCheckout', () => {
 
     it('should not display <BillingCycleText> if a lifetime plan is selected', () => {
         const { container } = renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
@@ -353,6 +368,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
         );
@@ -363,8 +379,8 @@ describe('SubscriptionCheckout', () => {
 
     it('should display price row', () => {
         const { container } = renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
@@ -381,6 +397,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
         );
@@ -391,8 +408,8 @@ describe('SubscriptionCheckout', () => {
 
     it('should not display price row for lifetime plans', () => {
         const { container } = renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
@@ -409,6 +426,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
         );
@@ -419,8 +437,8 @@ describe('SubscriptionCheckout', () => {
 
     it('should display member price per month', () => {
         renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
@@ -437,6 +455,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
         );
@@ -447,8 +466,8 @@ describe('SubscriptionCheckout', () => {
 
     it('should not display member price per month for lifetime plans', () => {
         renderWithProviders(
-            <SubscriptionCheckout
-                freePlan={freePlan}
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
                 checkResult={checkResult}
                 plansMap={{} as any}
                 vpnServers={dummyServers}
@@ -465,6 +484,7 @@ describe('SubscriptionCheckout', () => {
                 subscription={buildSubscription()}
                 paymentNeeded={true}
                 paymentMethods={{} as any}
+                paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
         );

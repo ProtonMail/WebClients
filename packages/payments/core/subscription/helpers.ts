@@ -238,7 +238,7 @@ export const getPlanName = (subscription: Subscription | FreeSubscription | unde
     return plan?.Name;
 };
 
-export const getPlanTitle = (subscription: Subscription | undefined) => {
+export const getPlanTitle = (subscription: Subscription | FreeSubscription | undefined) => {
     const plan = getPlan(subscription);
     return plan?.Title;
 };

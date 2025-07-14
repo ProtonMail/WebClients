@@ -15,7 +15,7 @@ import type {
     Cycle,
     ForceEnableChargebee,
     PLANS,
-    PaymentMethodFlows,
+    PaymentMethodFlow,
     PaymentMethodStatusExtended,
     PaymentMethodType,
     PaymentProcessorType,
@@ -30,10 +30,10 @@ import type {
 import {
     PAYMENT_METHOD_TYPES,
     buyCredit,
+    createSubscription,
     isExistingPaymentMethod,
     payInvoice,
     setPaymentMethodV5,
-    subscribe,
     useApplePay,
     useSepaCurrencyOverride,
 } from '@proton/payments';
@@ -59,6 +59,7 @@ export interface OperationsSubscriptionData {
     product: ProductParam;
     taxBillingAddress: BillingAddress;
     StartTrial?: boolean;
+    vatNumber?: string;
 }
 
 export interface OperationsInvoiceData {
@@ -105,19 +106,21 @@ function getOperations(
                 throw new Error('The operations data for subscription must be provided in the facade');
             }
 
-            const { product, taxBillingAddress, ...data } = (operationsData.subscription ??
+            const { product, taxBillingAddress, vatNumber, ...data } = (operationsData.subscription ??
                 operationsDataParam) as OperationsSubscriptionData;
 
             const BillingAddress: BillingAddress = {
                 State: taxBillingAddress.State,
                 CountryCode: taxBillingAddress.CountryCode,
+                ZipCode: taxBillingAddress.ZipCode,
             };
 
             return api(
-                subscribe(
+                createSubscription(
                     {
                         PaymentToken: params.PaymentToken,
                         BillingAddress,
+                        VatId: vatNumber,
                         ...params,
                         ...data,
                     },
@@ -213,7 +216,7 @@ export const usePaymentFacade = (
             }
         ) => Promise<unknown>;
         coupon?: string;
-        flow: PaymentMethodFlows;
+        flow: PaymentMethodFlow;
         onMethodChanged?: OnMethodChangedHandler;
         paymentMethods?: SavedPaymentMethod[];
         paymentMethodStatusExtended?: PaymentMethodStatusExtended;
@@ -380,7 +383,6 @@ export const usePaymentFacade = (
     const paypal = usePaypal(
         {
             amountAndCurrency,
-            isCredit: false,
             onProcessPaymentToken,
             onProcessPaymentTokenFailed,
             onChargeable: (params) =>
@@ -393,32 +395,6 @@ export const usePaymentFacade = (
                         context: paymentContext.getOperationsData(),
                         paymentsVersion: 'v4',
                         paymentProcessorType: paypal.meta.type,
-                    }
-                ),
-            ignoreAmountCheck: paypalIgnoreAmountCheck,
-        },
-        {
-            api,
-            verifyPayment: verifyPaymentPaypal,
-        }
-    );
-
-    const paypalCredit = usePaypal(
-        {
-            amountAndCurrency,
-            isCredit: true,
-            onProcessPaymentToken,
-            onProcessPaymentTokenFailed,
-            onChargeable: (params) =>
-                onChargeable(
-                    getOperations(api, params, paymentContext.getOperationsData(), 'v4', chargebeeKillSwitch),
-                    {
-                        chargeablePaymentParameters: params,
-                        source: PAYMENT_METHOD_TYPES.PAYPAL_CREDIT,
-                        sourceType: params.type,
-                        context: paymentContext.getOperationsData(),
-                        paymentsVersion: 'v4',
-                        paymentProcessorType: paypalCredit.meta.type,
                     }
                 ),
             ignoreAmountCheck: paypalIgnoreAmountCheck,
@@ -447,6 +423,7 @@ export const usePaymentFacade = (
                     }
                 ),
             verifyOnly: flow === 'add-card' || isTrial,
+            paymentsStatus: paymentMethodStatusExtended,
         },
         {
             api,
@@ -460,7 +437,6 @@ export const usePaymentFacade = (
     const chargebeePaypal = useChargebeePaypal(
         {
             amountAndCurrency,
-            isCredit: false,
             onChargeable: (params) =>
                 onChargeable(
                     getOperations(api, params, paymentContext.getOperationsData(), 'v5', forceEnableChargebee),
@@ -602,10 +578,6 @@ export const usePaymentFacade = (
             return paypal;
         }
 
-        if (paymentMethodValue === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
-            return paypalCredit;
-        }
-
         if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
             return chargebeeCard;
         }
@@ -635,7 +607,6 @@ export const usePaymentFacade = (
         card,
         savedMethod,
         paypal,
-        paypalCredit,
         savedChargebeeMethod,
         chargebeeCard,
         chargebeePaypal,
@@ -650,7 +621,6 @@ export const usePaymentFacade = (
             savedChargebeeMethod,
             card,
             paypal,
-            paypalCredit,
             chargebeeCard,
             chargebeePaypal,
             bitcoinInhouse,
@@ -670,7 +640,6 @@ export const usePaymentFacade = (
         savedMethod,
         card,
         paypal,
-        paypalCredit,
         chargebeeCard,
         chargebeePaypal,
         applePay,

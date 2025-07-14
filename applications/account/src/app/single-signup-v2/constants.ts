@@ -15,6 +15,7 @@ const getDefaultSubscriptionData = (cycle: Cycle): SubscriptionData => {
         planIDs: {},
         checkResult: getFreeCheckResult(),
         billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+        zipCodeValid: true,
     };
 };
 

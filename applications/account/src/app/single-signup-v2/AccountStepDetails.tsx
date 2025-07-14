@@ -1,5 +1,5 @@
 import type { KeyboardEvent, MutableRefObject, ReactNode } from 'react';
-import { useImperativeHandle, useRef, useState } from 'react';
+import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -49,6 +49,7 @@ interface Props {
     footer: (data: { emailAlreadyUsed: boolean; email: string }) => ReactNode;
     emailDescription?: ReactNode;
     hideEmailLabel?: boolean;
+    onFormValidChange: (isValid: boolean) => void;
 }
 
 const AccountStepDetails = ({
@@ -63,6 +64,7 @@ const AccountStepDetails = ({
     passwordFields,
     emailDescription,
     hideEmailLabel = false,
+    onFormValidChange,
 }: Props) => {
     const {
         state,
@@ -76,6 +78,7 @@ const AccountStepDetails = ({
         errors,
         inputStates,
         getIsValid,
+        getIsValidSync,
         getValidAccountData,
         scrollInto,
     } = useAccountFormDataContext();
@@ -101,6 +104,14 @@ const AccountStepDetails = ({
         },
         scrollInto,
     }));
+
+    const isFormValid = getIsValidSync({ passwords: passwordFields });
+    useEffect(
+        function reportWhenFormIsValid() {
+            onFormValidChange(isFormValid);
+        },
+        [isFormValid]
+    );
 
     const inputsWrapper = 'flex flex-column';
     const dense = !passwordFields && state.signupTypes.size <= 1;

@@ -6,6 +6,7 @@ export { default as useInstance } from './useInstance';
 export { default as useInterval } from './useInterval';
 export { default as useLoading } from './useLoading';
 export { default as useSearchParams } from './useSearchParams';
+export { default as useStableLoading } from './useStableLoading';
 export { default as useStateRef } from './useStateRef';
 export { default as useSynchronizingState } from './useSynchronizingState';
 export { default as usePrevious } from './usePrevious';

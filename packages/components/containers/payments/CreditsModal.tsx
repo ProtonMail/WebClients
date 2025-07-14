@@ -30,10 +30,10 @@ import {
     type PaymentMethodStatusExtended,
     type PaymentProcessorHook,
     type PlainPaymentMethodType,
-    getHasSomeVpnPlan,
     getPaymentsVersion,
     isFreeSubscription,
 } from '@proton/payments';
+import { ChargebeePaypalButton } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -41,7 +41,6 @@ import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { ChargebeePaypalWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';
 import PaymentWrapper from './PaymentWrapper';
@@ -142,8 +141,6 @@ const CreditsModal = ({ status, ...props }: Props) => {
                 <StyledPayPalButton
                     type="submit"
                     paypal={paymentFacade.paypal}
-                    amount={debouncedAmount}
-                    currency={paymentFacade.currency}
                     loading={loading}
                     disabled={amountLoading}
                     data-testid="paypal-button"
@@ -161,13 +158,11 @@ const CreditsModal = ({ status, ...props }: Props) => {
             }
 
             return (
-                <div className="flex justify-end">
-                    <div className="w-1/2 mr-1">
-                        <ChargebeePaypalWrapper
-                            chargebeePaypal={paymentFacade.chargebeePaypal}
-                            iframeHandles={paymentFacade.iframeHandles}
-                        />
-                    </div>
+                <div>
+                    <ChargebeePaypalButton
+                        chargebeePaypal={paymentFacade.chargebeePaypal}
+                        iframeHandles={paymentFacade.iframeHandles}
+                    />
                 </div>
             );
         }
@@ -279,30 +274,24 @@ const CreditsModal = ({ status, ...props }: Props) => {
                     onChangeCurrency={setCurrency}
                     disableCurrencySelector={disableCurrencySelector}
                 />
-                <PaymentWrapper
-                    {...paymentFacade}
-                    onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
-                    noMaxWidth
-                    triggersDisabled={amountLoading}
-                    hasSomeVpnPlan={getHasSomeVpnPlan(subscription)}
-                />
-                {
-                    <p
-                        className="text-sm text-center color-weak min-h-custom"
-                        style={{
-                            '--min-h-custom': '1.5rem',
-                        }}
-                    >
-                        {amountToCharge
-                            ? c('Payments').jt`You will be charged ${amountToCharge} from your selected payment method.`
-                            : null}
-                    </p>
-                }
+                <PaymentWrapper {...paymentFacade} noMaxWidth />
+                <p
+                    className="text-sm text-center color-weak min-h-custom"
+                    style={{
+                        '--min-h-custom': '1.5rem',
+                    }}
+                >
+                    {amountToCharge
+                        ? c('Payments').jt`You will be charged ${amountToCharge} from your selected payment method.`
+                        : null}
+                </p>
             </ModalTwoContent>
 
             <ModalTwoFooter>
-                <Button onClick={props.onClose}>{c('Action').t`Close`}</Button>
-                {submit}
+                <div className="w-full flex justify-space-between">
+                    <Button onClick={props.onClose}>{c('Action').t`Close`}</Button>
+                    {submit}
+                </div>
             </ModalTwoFooter>
         </ModalTwo>
     );

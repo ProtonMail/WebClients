@@ -14,7 +14,7 @@ import {
     signupFlows,
 } from './constants';
 import {
-    type PaymentMethodFlows,
+    type PaymentMethodFlow,
     type PaymentMethodStatus,
     type PaymentsApi,
     type SavedPaymentMethod,
@@ -166,7 +166,7 @@ describe('getNewMethods()', () => {
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
     });
 
-    it.each(['signup'] as PaymentMethodFlows[])(
+    it.each(['signup'] as PaymentMethodFlow[])(
         'should not include Bitcoin when Bitcoin is not available due to flow %s',
         (flow) => {
             const methods = new PaymentMethods({
@@ -226,7 +226,7 @@ describe('getNewMethods()', () => {
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(true);
     });
 
-    it.each(['signup', 'signup-pass', 'signup-pass-upgrade', 'signup-wallet'] as PaymentMethodFlows[])(
+    it.each(['signup', 'signup-pass', 'signup-pass-upgrade', 'signup-wallet'] as PaymentMethodFlow[])(
         'should not include Cash when Cash is not available due to flow %s',
         (flow) => {
             const methods = new PaymentMethods({
@@ -694,7 +694,7 @@ describe('initializePaymentMethods()', () => {
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: 'coupon',
-            flow: 'subscription' as PaymentMethodFlows,
+            flow: 'subscription' as PaymentMethodFlow,
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             paymentsApi: {
                 statusExtendedAutomatic: () => paymentMethodStatus,
@@ -741,7 +741,7 @@ describe('initializePaymentMethods()', () => {
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: 'coupon',
-            flow: 'subscription' as PaymentMethodFlows,
+            flow: 'subscription' as PaymentMethodFlow,
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             paymentsApi: {
                 statusExtendedAutomatic: () => paymentMethodStatus,
@@ -763,7 +763,7 @@ describe('initializePaymentMethods()', () => {
 
 describe('Cash', () => {
     it('should display cash', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -785,7 +785,7 @@ describe('Cash', () => {
 
     it('should not display cash if status is false', () => {
         const st = { ...status, Cash: false };
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: st,
@@ -825,7 +825,7 @@ describe('Cash', () => {
     });
 
     it('should not display cash if user buys Pass Lifetime', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -849,7 +849,7 @@ describe('Cash', () => {
     });
 
     it('should display cash if user does not buy Pass Lifetime', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -873,7 +873,7 @@ describe('Cash', () => {
     });
 
     it('should not display cash if coupon is present', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -896,7 +896,7 @@ describe('Cash', () => {
 
 describe('Chargebee Bitcoin', () => {
     it('should display bitcoin', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -918,7 +918,7 @@ describe('Chargebee Bitcoin', () => {
 
     it('should not display bitcoin if status is false', () => {
         const st = { ...status, Bitcoin: false };
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: st,
@@ -946,7 +946,7 @@ describe('Chargebee Bitcoin', () => {
         'signup-vpn',
         'add-card',
         'add-paypal',
-    ] as PaymentMethodFlows[])('should not display bitcoin in %s flow', (flow) => {
+    ] as PaymentMethodFlow[])('should not display bitcoin in %s flow', (flow) => {
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
             paymentMethods: [],
@@ -966,7 +966,7 @@ describe('Chargebee Bitcoin', () => {
     });
 
     it('should not display bitcoin if amount is less than minimum', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -989,7 +989,7 @@ describe('Chargebee Bitcoin', () => {
     it.each([PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024])(
         'should not display bitcoin for b2b plans',
         (plan) => {
-            const flow: PaymentMethodFlows = 'subscription';
+            const flow: PaymentMethodFlow = 'subscription';
 
             const methods = new PaymentMethods({
                 paymentMethodStatus: status,
@@ -1011,7 +1011,7 @@ describe('Chargebee Bitcoin', () => {
     );
 
     it('should return false if INHOUSE_FORCED', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1033,7 +1033,7 @@ describe('Chargebee Bitcoin', () => {
 
     it('should return false in the migration condition', () => {
         // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === false
-        const flow: PaymentMethodFlows = 'credit';
+        const flow: PaymentMethodFlow = 'credit';
 
         const chargebeeUserExists = 0;
 
@@ -1057,7 +1057,7 @@ describe('Chargebee Bitcoin', () => {
 
     it('should return true for splitted users', () => {
         // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === true
-        const flow: PaymentMethodFlows = 'credit';
+        const flow: PaymentMethodFlow = 'credit';
 
         const chargebeeUserExists = 1;
 
@@ -1080,7 +1080,7 @@ describe('Chargebee Bitcoin', () => {
     });
 
     it('should disable bitcoin if user buys Pass Lifetime and has positive credit balance', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1107,7 +1107,7 @@ describe('Chargebee Bitcoin', () => {
     });
 
     it('should allow using bitcoin if user buys Pass Lifetime and has no credit balance', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1132,7 +1132,7 @@ describe('Chargebee Bitcoin', () => {
     });
 
     it('should disable bitcoin if user buys pass lifetime in one currency but subscription has another currency', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1162,7 +1162,7 @@ describe('Chargebee Bitcoin', () => {
     });
 
     it('should allow using bitcoin if user buys pass lifetime in one currency and subscription has the same currency', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1192,7 +1192,7 @@ describe('Chargebee Bitcoin', () => {
     });
 
     it('should allow bitcoin if user has free subscription and buys pass lifetime', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1218,7 +1218,7 @@ describe('Chargebee Bitcoin', () => {
     });
 
     it('should allow bitcoin if user has free subscription and buys regular plan', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1292,7 +1292,7 @@ describe('Chargebee Bitcoin', () => {
     });
 
     it('should display bitcoin if user is delinquent and the flow is credit', () => {
-        const flow: PaymentMethodFlows = 'credit';
+        const flow: PaymentMethodFlow = 'credit';
 
         const user = buildUser({
             Delinquent: UNPAID_STATE.AVAILABLE,
@@ -1361,7 +1361,7 @@ describe('Bitcoin', () => {
     it('should return true in the migration condition', () => {
         // chargebeeEnabled === CHARGEBEE_FORCED, BillingPlatform.Proton, chargebeeUserExists === false
 
-        const flow: PaymentMethodFlows = 'credit';
+        const flow: PaymentMethodFlow = 'credit';
 
         const chargebeeUserExists = 0;
 
@@ -1385,7 +1385,7 @@ describe('Bitcoin', () => {
 
     it('should not display bitcoin if status is false', () => {
         const st = { ...status, Bitcoin: false };
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: st,
@@ -1413,7 +1413,7 @@ describe('Bitcoin', () => {
         'signup-vpn',
         'add-card',
         'add-paypal',
-    ] as PaymentMethodFlows[])('should not display bitcoin in %s flow', (flow) => {
+    ] as PaymentMethodFlow[])('should not display bitcoin in %s flow', (flow) => {
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
             paymentMethods: [],
@@ -1433,7 +1433,7 @@ describe('Bitcoin', () => {
     });
 
     it('should not display bitcoin if amount is less than minimum', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1456,7 +1456,7 @@ describe('Bitcoin', () => {
     it.each([PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024])(
         'should not display bitcoin for b2b plans',
         (plan) => {
-            const flow: PaymentMethodFlows = 'subscription';
+            const flow: PaymentMethodFlow = 'subscription';
 
             const methods = new PaymentMethods({
                 paymentMethodStatus: status,
@@ -1601,7 +1601,7 @@ describe('Apple Pay', () => {
     });
 
     it('should display Apple Pay when all conditions are met', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1624,7 +1624,7 @@ describe('Apple Pay', () => {
     });
 
     it('should not display Apple Pay when canUseApplePay is false', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1648,7 +1648,7 @@ describe('Apple Pay', () => {
 
     it('should not display Apple Pay when not running in Safari', () => {
         mockIsSafari.mockReturnValue(false);
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1671,7 +1671,7 @@ describe('Apple Pay', () => {
     });
 
     it('should not display Apple Pay when amount is below minimum', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1702,7 +1702,7 @@ describe('Apple Pay', () => {
         'signup-v2-upgrade',
         'signup-vpn',
         'subscription',
-    ] as PaymentMethodFlows[])('should display Apple Pay for allowed flow %s', (flow) => {
+    ] as PaymentMethodFlow[])('should display Apple Pay for allowed flow %s', (flow) => {
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
             paymentMethods: [],
@@ -1723,7 +1723,7 @@ describe('Apple Pay', () => {
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(true);
     });
 
-    it.each(['credit', 'invoice', 'add-card', 'add-paypal'] as PaymentMethodFlows[])(
+    it.each(['credit', 'invoice', 'add-card', 'add-paypal'] as PaymentMethodFlow[])(
         'should not display Apple Pay for disallowed flow %s',
         (flow) => {
             const methods = new PaymentMethods({
@@ -1750,7 +1750,7 @@ describe('Apple Pay', () => {
     );
 
     it('should display Apple Pay with Chargebee enabled', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1773,7 +1773,7 @@ describe('Apple Pay', () => {
     });
 
     it('should not display Apple Pay when canUseApplePay is undefined (defaults to false)', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1796,7 +1796,7 @@ describe('Apple Pay', () => {
     });
 
     it('should display Apple Pay even with high amount', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1821,7 +1821,7 @@ describe('Apple Pay', () => {
 
 describe('Chargebee card', () => {
     it('should display chargebee card', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1842,7 +1842,7 @@ describe('Chargebee card', () => {
     });
 
     it('should disable CB card if INHOUSE_FORCED', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1875,7 +1875,7 @@ describe('Chargebee card', () => {
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
-            flow: flow as PaymentMethodFlows,
+            flow: flow as PaymentMethodFlow,
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
@@ -1899,7 +1899,7 @@ describe('Chargebee card', () => {
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
-            flow: flow as PaymentMethodFlows,
+            flow: flow as PaymentMethodFlow,
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
@@ -1913,7 +1913,7 @@ describe('Chargebee card', () => {
 
     it('should not display chargebee card if status is false', () => {
         const st = { ...status, Card: false };
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: st,
@@ -1934,7 +1934,7 @@ describe('Chargebee card', () => {
     });
 
     it('should display the chargebee card if CHARGEBEE_FORCED even if flow is not supported', () => {
-        const flow: PaymentMethodFlows = 'invoice';
+        const flow: PaymentMethodFlow = 'invoice';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1955,7 +1955,7 @@ describe('Chargebee card', () => {
     });
 
     it('should display the chargebee card if CHARGEBEE_FORCED even if disabled for B2B', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1978,7 +1978,7 @@ describe('Chargebee card', () => {
 
 describe('Chargebee PayPal', () => {
     it('should display chargebee paypal', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -1999,7 +1999,7 @@ describe('Chargebee PayPal', () => {
     });
 
     it('should disable CB paypal if INHOUSE_FORCED', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -2034,7 +2034,7 @@ describe('Chargebee PayPal', () => {
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
-            flow: flow as PaymentMethodFlows,
+            flow: flow as PaymentMethodFlow,
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
@@ -2058,7 +2058,7 @@ describe('Chargebee PayPal', () => {
             amount: 500,
             currency: TEST_CURRENCY,
             coupon: '',
-            flow: flow as PaymentMethodFlows,
+            flow: flow as PaymentMethodFlow,
             selectedPlanName: undefined,
             billingPlatform: BillingPlatform.Proton,
             chargebeeUserExists: chargebeeUserExists,
@@ -2071,7 +2071,7 @@ describe('Chargebee PayPal', () => {
     });
 
     it('should not render paypal if there is already one saved', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -2103,7 +2103,7 @@ describe('Chargebee PayPal', () => {
     });
 
     it('should disable paypal if the amount is too low', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -2124,7 +2124,7 @@ describe('Chargebee PayPal', () => {
     });
 
     it('should enable paypal for unpaid invoice even if the amount is too low', () => {
-        const flow: PaymentMethodFlows = 'invoice';
+        const flow: PaymentMethodFlow = 'invoice';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -2146,7 +2146,7 @@ describe('Chargebee PayPal', () => {
 
     it('should disable paypal if status is false', () => {
         const st = { ...status, Paypal: false };
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: st,
@@ -2169,7 +2169,7 @@ describe('Chargebee PayPal', () => {
 
 describe('SEPA', () => {
     it('should not display SEPA for inhouse forced users', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -2192,7 +2192,7 @@ describe('SEPA', () => {
     });
 
     it('should display SEPA', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -2222,7 +2222,7 @@ describe('SEPA', () => {
         'signup-v2-upgrade',
         'signup-vpn',
         'signup-wallet',
-    ] as PaymentMethodFlows[])('should offer SEPA for %s flow', (flow) => {
+    ] as PaymentMethodFlow[])('should offer SEPA for %s flow', (flow) => {
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
             paymentMethods: [],
@@ -2244,7 +2244,7 @@ describe('SEPA', () => {
     });
 
     it('should not offer SEPA if the country is not supported', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -2267,7 +2267,7 @@ describe('SEPA', () => {
     });
 
     it('should not display SEPA if feature is disabled', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const enableSepaFalse = false;
 
@@ -2292,7 +2292,7 @@ describe('SEPA', () => {
     });
 
     it('should not display SEPA if B2C plan is selected', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,
@@ -2315,7 +2315,7 @@ describe('SEPA', () => {
     });
 
     it('should not display SEPA if no plan is selected', () => {
-        const flow: PaymentMethodFlows = 'subscription';
+        const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
             paymentMethodStatus: status,

@@ -12,6 +12,7 @@ import {
     withConfig,
     withDeprecatedModals,
     withNotifications,
+    withReduxStore,
 } from '@proton/testing';
 import { buildUser } from '@proton/testing/builders';
 import noop from '@proton/utils/noop';
@@ -41,7 +42,8 @@ const PaymentStepContext = applyHOCs(
     withDeprecatedModals(),
     withAuthentication(),
     withNotifications(),
-    withCache()
+    withCache(),
+    withReduxStore()
 )(PaymentStep);
 
 jest.mock('@proton/components/payments/client-extensions/data-utils', () => ({
@@ -118,19 +120,22 @@ beforeEach(() => {
                 RenewCycle: null,
             },
             billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+            zipCodeValid: true,
         },
         plans,
         onPay: jest.fn(),
         onChangePlanIDs: jest.fn(),
         onChangeCurrency: jest.fn(),
         onChangeCycle: jest.fn(),
+        onChangeVatNumber: jest.fn(),
         plan: plans[0],
-        planName: plans[0].Name,
+        planTitle: plans[0].Title,
         onChangeBillingAddress: jest.fn(),
         currencySignupParam: undefined,
         paymentStatus: {
             CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
             State: DEFAULT_TAX_BILLING_ADDRESS.State,
+            ZipCode: DEFAULT_TAX_BILLING_ADDRESS.ZipCode,
             VendorStates: {
                 Card: true,
                 Paypal: true,
