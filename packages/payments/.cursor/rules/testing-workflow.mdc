@@ -24,6 +24,7 @@ When creating or modifying tests for files in the payments package, follow this 
 - Tests should cover payment method logic, validation, and edge cases
 - Mock external dependencies appropriately
 - Ensure tests pass before submitting any changes
+- There is `@proton/testing` package that is available in `packages/testing`. It includes some useful utilities for unit tests. Using them isn't mandatory, but might simplify some testing.
 
 ## Example Usage
 ```bash

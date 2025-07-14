@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { addMonths } from 'date-fns';
 
-import { PLANS, type CheckSubscriptionData } from '@proton/payments';
+import { type CheckSubscriptionData, PLANS } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { ChargebeeEnabled, SubscriptionMode } from '@proton/shared/lib/interfaces';
@@ -245,27 +245,6 @@ describe('usePaymentsApi', () => {
 
         await expect(resultPromise).resolves.toEqual(fallbackValue);
     });
-
-    it.each([PLANS.PASS_PRO, PLANS.PASS_BUSINESS])(
-        'should call v4 check when user is chargebee allowed calls B2B plans: %s',
-        (plan) => {
-            const { result } = renderHook(() => usePaymentsApi(), {
-                wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
-            });
-
-            const data = getCheckSubscriptionData();
-            data.Plans = {
-                [plan]: 1,
-            };
-
-            void result.current.paymentsApi.checkWithAutomaticVersion(data);
-            expect(apiMock).toHaveBeenCalledWith({
-                url: `payments/v4/subscription/check`,
-                method: 'post',
-                data,
-            });
-        }
-    );
 
     it.each([
         {

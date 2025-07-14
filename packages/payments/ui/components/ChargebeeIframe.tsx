@@ -40,25 +40,23 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { type ThemeCode } from '@proton/components/payments/client-extensions';
+import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { type ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { type ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
-import {
-    type ApplePayProcessorHook,
-    type ChargebeeIframeEvents,
-    type ChargebeeIframeHandles,
-    type GetChargebeeConfigurationResponse,
-    type InitializeCreditCardOptions,
-    type RemoveEventListener,
-    getChargebeeConfiguration,
-    getPaymentsVersion,
-} from '@proton/payments';
+import { type ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { type ThemeCode } from '../client-extensions';
-import { useChargebeeContext } from '../client-extensions/useChargebeeContext';
-import { type ChargebeeDirectDebitProcessorHook } from '../react-extensions/useSepaDirectDebit';
+import { type GetChargebeeConfigurationResponse, getChargebeeConfiguration, getPaymentsVersion } from '../../core/api';
+import type {
+    ChargebeeIframeEvents,
+    ChargebeeIframeHandles,
+    InitializeCreditCardOptions,
+    RemoveEventListener,
+} from '../../core/interface';
+import { type ApplePayProcessorHook } from '../../core/payment-processors/useApplePay';
 
 /**
  * Small helper to identify the messages sent to iframe.
@@ -268,6 +266,7 @@ type ChargebeeIframeProps = React.IframeHTMLAttributes<HTMLIFrameElement> & {
     onInitialized?: () => void;
     isNarrow?: boolean;
     themeCode?: ThemeCode;
+    width?: number | string;
 };
 
 interface ChargebeeConfiguration {
@@ -756,16 +755,47 @@ const useThreeDsChallenge = (iframe = false) => {
     };
 };
 
-function getInitialHeight(type: ChargebeeIframeProps['type']): number {
-    const initialHeight: Record<ChargebeeIframeProps['type'], number> = {
-        paypal: 52,
-        'saved-card': 0,
-        card: 300,
-        'apple-pay': 52,
-        'direct-debit': 0,
+export const IFRAME_PADDING = 8;
+export const MIN_PAYPAL_BUTTON_WIDTH = 150;
+
+export function getPaypalButtonWidth(width: string): string;
+export function getPaypalButtonWidth(width?: number): number;
+export function getPaypalButtonWidth(width?: number | string): number | string;
+export function getPaypalButtonWidth(width: number | string = MIN_PAYPAL_BUTTON_WIDTH): number | string {
+    if (typeof width === 'string') {
+        return width;
+    }
+
+    return Math.max(MIN_PAYPAL_BUTTON_WIDTH, width);
+}
+
+function getPaypalIframeWidth(width?: number | string): number | string {
+    if (typeof width === 'string') {
+        return width;
+    }
+
+    return getPaypalButtonWidth(width) + IFRAME_PADDING * 2;
+}
+
+function getInitialStyles(type: ChargebeeIframeProps['type']): {
+    initialHeight: number;
+    initialWidth: number | string | undefined;
+} {
+    const styles: Record<
+        ChargebeeIframeProps['type'],
+        {
+            initialHeight: number;
+            initialWidth: number | string | undefined;
+        }
+    > = {
+        paypal: { initialHeight: 52, initialWidth: getPaypalIframeWidth() },
+        'saved-card': { initialHeight: 0, initialWidth: '100%' },
+        card: { initialHeight: 300, initialWidth: '100%' },
+        'apple-pay': { initialHeight: 52, initialWidth: '100%' },
+        'direct-debit': { initialHeight: 0, initialWidth: '100%' },
     };
 
-    return initialHeight[type] ?? initialHeight.card;
+    return styles[type] ?? styles.card;
 }
 
 export const ChargebeeIframe = ({
@@ -900,26 +930,35 @@ export const ChargebeeIframe = ({
         return () => clearTimeout(loadingTimeoutRef.current);
     }, []);
 
-    const initialHeight = getInitialHeight(type);
+    const { initialHeight, initialWidth } = getInitialStyles(type);
+    const width = (() => {
+        if (type === 'paypal') {
+            return rest.width ? getPaypalIframeWidth(rest.width) : initialWidth;
+        }
+
+        return rest.width ?? initialWidth;
+    })();
 
     // The iframe document body has a margin of 8px by default. We don't remove it from within, because this additional
     // space is used to display the borders and other elements. The negative margin is used to compensate for the extra
     // space and for the iframe to fit perfectly. However if the iframe has height 0, we don't need to compensate for
     // the extra space, and rather hide it completely.
-    const divStyle = initialHeight > 0 ? { margin: -8 } : { display: 'none' };
+    const divStyle = initialHeight > 0 ? { margin: -IFRAME_PADDING } : { display: 'none' };
 
     return (
         <div style={divStyle}>
             <iframe
                 src={iframeHandles.iframeSrc}
                 ref={iframeRef}
-                height={initialHeight}
-                width="100%"
-                title="Credit card form"
+                title="Payments form"
                 frameBorder="0"
                 onLoad={onLoad}
                 data-testid="chargebee-iframe"
                 allow="payment"
+                style={{
+                    height: initialHeight,
+                    width,
+                }}
                 {...rest}
             ></iframe>
             {threeDs.showModal && <ThreeDsModal {...threeDs.modalProps} />}

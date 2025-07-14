@@ -72,7 +72,12 @@ import SignupSupportDropdown from './SignupSupportDropdown';
 import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import { getOptimisticDomains, getSignupApplication, getSubscriptionPrices, isMailReferAFriendSignup } from './helper';
+import {
+    getOptimisticDomains,
+    getSignupApplication,
+    getSubscriptionPricesWithFallback,
+    isMailReferAFriendSignup,
+} from './helper';
 import type { InviteData, SignupActionResponse, SignupCacheResult, SignupModel, SubscriptionData } from './interfaces';
 import { SignupSteps, SignupType } from './interfaces';
 import type { TelemetryMeasurementData } from './measure';
@@ -265,6 +270,9 @@ const SignupContainer = ({
         }));
     };
 
+    const plan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs);
+    const planTitle = plan?.Title;
+
     useEffect(() => {
         const fetchDependencies = async () => {
             const { referrer, invite } = signupParameters;
@@ -309,6 +317,7 @@ const SignupContainer = ({
             const billingAddress: BillingAddress = {
                 CountryCode: paymentStatus.CountryCode,
                 State: paymentStatus.State,
+                ZipCode: paymentStatus.ZipCode,
             };
             const coupon = signupParameters.coupon;
 
@@ -389,75 +398,122 @@ const SignupContainer = ({
 
     const defaultCountry = useMyCountry();
 
+    const checkFallbacks = {
+        invalidZipCodeFallback: () => {
+            setModelDiff({
+                subscriptionData: {
+                    ...model.subscriptionData,
+                    zipCodeValid: false,
+                },
+            });
+            return undefined;
+        },
+    };
+
     const handleChangeCurrency = async (currency: Currency) => {
-        const checkResult = await getSubscriptionPrices(
+        const checkResult = await getSubscriptionPricesWithFallback(
             paymentsSilentApi,
             model.subscriptionData.planIDs,
             currency,
             model.subscriptionData.cycle,
             model.subscriptionData.billingAddress,
-            model.subscriptionData.checkResult.Coupon?.Code
+            model.subscriptionData.checkResult.Coupon?.Code,
+            checkFallbacks
         );
+        if (!checkResult) {
+            return;
+        }
+
         setModelDiff({
             subscriptionData: {
                 ...model.subscriptionData,
                 currency,
                 checkResult,
+                zipCodeValid: true,
             },
         });
     };
 
     const handleChangeCycle = async (cycle: Cycle) => {
-        const checkResult = await getSubscriptionPrices(
+        const checkResult = await getSubscriptionPricesWithFallback(
             paymentsSilentApi,
             model.subscriptionData.planIDs,
             model.subscriptionData.currency,
             cycle,
             model.subscriptionData.billingAddress,
-            model.subscriptionData.checkResult.Coupon?.Code
+            model.subscriptionData.checkResult.Coupon?.Code,
+            checkFallbacks
         );
+
+        if (!checkResult) {
+            return;
+        }
+
         setModelDiff({
             subscriptionData: {
                 ...model.subscriptionData,
                 cycle,
                 checkResult,
+                zipCodeValid: true,
             },
         });
     };
 
     const handleChangePlanIDs = async (planIDs: PlanIDs) => {
-        const checkResult = await getSubscriptionPrices(
+        const checkResult = await getSubscriptionPricesWithFallback(
             paymentsSilentApi,
             planIDs,
             model.subscriptionData.currency,
             model.subscriptionData.cycle,
             model.subscriptionData.billingAddress,
-            model.subscriptionData.checkResult.Coupon?.Code
+            model.subscriptionData.checkResult.Coupon?.Code,
+            checkFallbacks
         );
+
+        if (!checkResult) {
+            return;
+        }
+
         setModelDiff({
             subscriptionData: {
                 ...model.subscriptionData,
                 planIDs,
                 checkResult,
+                zipCodeValid: true,
             },
         });
     };
 
     const handleChangeBillingAddress = async (billingAddress: BillingAddress) => {
-        const checkResult = await getSubscriptionPrices(
+        const checkResult = await getSubscriptionPricesWithFallback(
             paymentsSilentApi,
             model.subscriptionData.planIDs,
             model.subscriptionData.currency,
             model.subscriptionData.cycle,
             billingAddress,
-            model.subscriptionData.checkResult.Coupon?.Code
+            model.subscriptionData.checkResult.Coupon?.Code,
+            checkFallbacks
         );
+
+        if (!checkResult) {
+            return;
+        }
 
         setModelDiff({
             subscriptionData: {
                 ...model.subscriptionData,
                 billingAddress,
                 checkResult,
+                zipCodeValid: true,
+            },
+        });
+    };
+
+    const handleVatNumberChange = (vatNumber: string) => {
+        setModelDiff({
+            subscriptionData: {
+                ...model.subscriptionData,
+                vatNumber,
             },
         });
     };
@@ -469,6 +525,7 @@ const SignupContainer = ({
         const subscriptionData = {
             ...model.subscriptionData,
             ...subscriptionDataDiff,
+            zipCodeValid: true,
         };
         setModelDiff({
             subscriptionData,
@@ -482,8 +539,6 @@ const SignupContainer = ({
         }
     };
 
-    const plan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs);
-    const planName = plan?.Title;
     const verificationModel = cache?.humanVerificationResult?.verificationModel;
 
     const handleBackStep = (() => {
@@ -807,13 +862,14 @@ const SignupContainer = ({
                         try {
                             const validateFlow = createFlow();
                             const newCycle = cycle || model.subscriptionData.cycle;
-                            const checkResult = await getSubscriptionPrices(
+                            const checkResult = await getSubscriptionPricesWithFallback(
                                 paymentsSilentApi,
                                 planIDs,
                                 model.subscriptionData.currency,
                                 newCycle,
                                 model.subscriptionData.billingAddress,
-                                coupon || model.subscriptionData.checkResult.Coupon?.Code
+                                coupon || model.subscriptionData.checkResult.Coupon?.Code,
+                                checkFallbacks
                             );
                             if (!checkResult) {
                                 return;
@@ -845,12 +901,13 @@ const SignupContainer = ({
                     plans={model.plans}
                     paymentStatus={model.paymentStatus}
                     plan={plan}
-                    planName={planName}
+                    planTitle={planTitle}
                     subscriptionData={model.subscriptionData}
                     onChangeCurrency={handleChangeCurrency}
                     onChangeCycle={handleChangeCycle}
                     onChangePlanIDs={handleChangePlanIDs}
                     onChangeBillingAddress={handleChangeBillingAddress}
+                    onChangeVatNumber={handleVatNumberChange}
                     onPay={async (payment, type) => {
                         try {
                             if (!cache) {
@@ -1018,7 +1075,7 @@ const SignupContainer = ({
                         (accountData?.signupType === SignupType.External && getLocalPart(accountData.email)) ||
                         ''
                     }
-                    planName={planName}
+                    planTitle={planTitle}
                     onSubmit={async ({ displayName }) => {
                         try {
                             if (!cache) {
