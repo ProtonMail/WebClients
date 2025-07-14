@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
 import { type FreeSubscription, type Subscription, getPlanTitle, isTrial } from '@proton/payments';
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useIsB2BTrial } from '@proton/payments/ui';
 
 interface Props {
     subscription: Subscription | FreeSubscription | undefined;
@@ -9,8 +11,15 @@ interface Props {
 }
 
 export const NoPaymentRequiredNote = ({ subscription, hasPaymentMethod, taxCountry }: Props) => {
+    const [organization] = useOrganization();
     const trial = isTrial(subscription);
     const planTitle = getPlanTitle(subscription);
+
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
+
+    if (isB2BTrial) {
+        return null;
+    }
 
     return (
         <div>

@@ -33,7 +33,6 @@ import { hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helper
 import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 
 import Checkout from '../../Checkout';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '../../RenewalNotice';
@@ -158,7 +157,7 @@ const SubscriptionCheckout = ({
     const proration = checkResult.Proration ?? 0;
     const credit = checkResult.Credit ?? 0;
     const amount = (() => {
-        if (trial && checkResult.SubscriptionMode === SubscriptionMode.Trial) {
+        if (checkResult.Amount === 0 && trial) {
             return checkResult.BaseRenewAmount ?? 0; // Not ideal to default to 0, but it shouldn't happen
         }
 
@@ -177,7 +176,7 @@ const SubscriptionCheckout = ({
 
     const displayRenewNotice = isPaidPlanSelected && paymentNeeded;
 
-    const discountBadgeElement = (
+    const discountBadgeElement = !trial && (
         <Badge
             type="success"
             tooltip={c('Info')

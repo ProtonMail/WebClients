@@ -242,14 +242,6 @@ const SubscriptionContainerInner = ({
     const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
 
-    const TITLE = {
-        [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
-        [SUBSCRIPTION_STEPS.PLAN_SELECTION]: c('Title').t`Select a plan`,
-        [SUBSCRIPTION_STEPS.CHECKOUT]: c('new_plans: title').t`Review subscription and pay`,
-        [SUBSCRIPTION_STEPS.UPGRADE]: '',
-        [SUBSCRIPTION_STEPS.THANKS]: '',
-    };
-
     const metricStepMap: Record<SUBSCRIPTION_STEPS, MetricsStep> = {
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: 'network-error',
         [SUBSCRIPTION_STEPS.PLAN_SELECTION]: 'plan-selection',
@@ -666,7 +658,7 @@ const SubscriptionContainerInner = ({
         setAdditionalCheckResults([...additionalChecks, checkResult]);
     };
 
-    const shouldPassIsTrial = (newModel: Model) => {
+    const shouldPassIsTrial = (newModel: Model, downgradeIsTrial: boolean) => {
         if (!isB2BTrial) {
             return false;
         }
@@ -688,6 +680,7 @@ const SubscriptionContainerInner = ({
             oldPlanIDs,
             newCycle,
             oldCycle,
+            downgradeIsTrial,
         });
     };
 
@@ -809,7 +802,7 @@ const SubscriptionContainerInner = ({
                         currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
                             ? ProrationMode.Exact
                             : undefined,
-                    IsTrial: shouldPassIsTrial(newModel),
+                    IsTrial: shouldPassIsTrial(newModel, false),
                 };
 
                 const checkResult = await paymentsApi.checkWithAutomaticVersion(checkPayload, {
@@ -1039,6 +1032,17 @@ const SubscriptionContainerInner = ({
         }
 
         void process(paymentFacade.selectedProcessor);
+    };
+
+    const TITLE = {
+        [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
+        [SUBSCRIPTION_STEPS.PLAN_SELECTION]: c('Title').t`Select a plan`,
+        [SUBSCRIPTION_STEPS.CHECKOUT]:
+            checkResult?.AmountDue === 0 && shouldPassIsTrial(model, true)
+                ? c('new_plans: title').t`Review subscription`
+                : c('new_plans: title').t`Review subscription and pay`,
+        [SUBSCRIPTION_STEPS.UPGRADE]: '',
+        [SUBSCRIPTION_STEPS.THANKS]: '',
     };
 
     const modeType = mode ? mode : 'modal';
@@ -1271,7 +1275,7 @@ const SubscriptionContainerInner = ({
                                 taxCountry={taxCountry}
                                 user={user}
                                 couponConfig={couponConfig}
-                                trial={isB2BTrial}
+                                trial={shouldPassIsTrial(model, false)}
                                 {...checkoutModifiers}
                             />
                         </div>
