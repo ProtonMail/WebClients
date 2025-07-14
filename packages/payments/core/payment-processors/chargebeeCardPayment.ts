@@ -10,6 +10,7 @@ import { type Api } from '@proton/shared/lib/interfaces';
 
 import { isPostalCode } from '../cardDetails';
 import { PAYMENT_METHOD_TYPES } from '../constants';
+import { isAllowedCountry, isCountryWithStates } from '../countries';
 import {
     type ChargebeeCardParams,
     type PaymentVerificatorV5,
@@ -20,6 +21,7 @@ import type {
     ChargeableV5PaymentParameters,
     ChargebeeFetchedPaymentToken,
     ForceEnableChargebee,
+    PaymentMethodStatusExtended,
     V5PaymentToken,
 } from '../interface';
 import { type ChargebeeIframeEvents, type ChargebeeIframeHandles } from '../interface';
@@ -64,12 +66,16 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
         private events: ChargebeeIframeEvents,
         public verifyOnly: boolean,
         private forceEnableChargebee: ForceEnableChargebee,
+        paymentsStatus: PaymentMethodStatusExtended | undefined,
         public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
     ) {
         super(
             {
-                countryCode: 'US',
-                postalCode: '',
+                countryCode:
+                    paymentsStatus?.CountryCode && isAllowedCountry(paymentsStatus.CountryCode)
+                        ? paymentsStatus?.CountryCode
+                        : 'US',
+                postalCode: paymentsStatus?.ZipCode ?? '',
                 submitted: false,
             },
             amountAndCurrency
@@ -152,7 +158,7 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
     getErrors() {
         const errors: Record<string, string> = {};
 
-        if (!isPostalCode(this.postalCode)) {
+        if (isCountryWithStates(this.countryCode) && !isPostalCode(this.postalCode)) {
             errors.postalCode = c('Error').t`Invalid postal code`;
         }
 

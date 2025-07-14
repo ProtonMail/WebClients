@@ -8,7 +8,7 @@ import { getInitialStorage, getStorageRange } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { Subscription } from '@proton/payments';
-import { type PaymentsVersion, getIsPassB2BPlan, getIsVpnB2BPlan, subscribe } from '@proton/payments';
+import { type PaymentsVersion, createSubscription, getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/payments';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -363,12 +363,13 @@ export const handleSubscribeUser = async (
         const isTrial = subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
         const { Subscription } = await api<{ Subscription: Subscription }>(
-            subscribe(
+            createSubscription(
                 {
                     Plans: subscriptionData.planIDs,
                     Currency: subscriptionData.currency,
                     Cycle: subscriptionData.cycle,
                     BillingAddress: subscriptionData.billingAddress,
+                    VatId: subscriptionData.vatNumber,
                     ...{
                         Payment: subscriptionData.payment,
                         Amount: subscriptionData.checkResult.AmountDue,

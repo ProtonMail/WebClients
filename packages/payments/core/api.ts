@@ -3,8 +3,7 @@ import { getProductHeaders } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
 
-import type { BillingAddress, BillingAddressProperty } from './billing-address';
-import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
+import { type BillingAddress, type BillingAddressProperty, normalizeBillingAddress } from './billing-address';
 import type { Autopay, INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE, PAYMENT_TOKEN_STATUS } from './constants';
 import { PAYMENT_METHOD_TYPES, PLANS, PLAN_TYPES } from './constants';
 import type {
@@ -13,7 +12,6 @@ import type {
     Currency,
     Cycle,
     ExistingPayment,
-    PaymentMethodStatusExtended,
     PlanIDs,
     SavedPaymentMethod,
     TokenPayment,
@@ -23,7 +21,9 @@ import type {
     WrappedCryptoPayment,
     WrappedPaypalPayment,
 } from './interface';
+import { type PaymentMethodStatusExtended } from './interface';
 import { formatPaymentMethods } from './methods';
+import { normalizePaymentMethodStatus } from './payment-status';
 import { PlanState } from './plan/constants';
 import { getPlanNameFromIDs, isLifetimePlanSelected } from './plan/helpers';
 import type { FreePlanDefault, SubscriptionPlan } from './plan/interface';
@@ -38,25 +38,8 @@ export const queryPaymentMethodStatus = (version: PaymentsVersion) => ({
 });
 
 export async function getPaymentMethodStatus(api: Api) {
-    const status = await api<PaymentMethodStatusExtended>(queryPaymentMethodStatus('v5'));
-    if (!status.CountryCode) {
-        status.CountryCode = DEFAULT_TAX_BILLING_ADDRESS.CountryCode;
-    }
-
-    if ('VendorStates' in status) {
-        const keys = Object.keys(status.VendorStates) as (keyof PaymentMethodStatusExtended['VendorStates'])[];
-        // Normalizing the boolean values, converting them from 0 or 1 to false or true
-        for (const key of keys) {
-            status.VendorStates[key] = !!status.VendorStates[key];
-        }
-
-        // The backend doesn't return the Cash key. We still use it in the frontend,
-        // so we synthetize it here.
-        if (!Object.hasOwn(status.VendorStates, 'Cash')) {
-            status.VendorStates.Cash = true;
-        }
-    }
-    return status;
+    const result = await api<PaymentMethodStatusExtended>(queryPaymentMethodStatus('v5'));
+    return normalizePaymentMethodStatus(result);
 }
 
 export type PaymentsVersion = 'v4' | 'v5';
@@ -132,6 +115,7 @@ type CommonSubscribeData = {
     Cycle: Cycle;
     Codes?: string[];
     StartTrial?: boolean;
+    VatId?: string;
 } & AmountAndCurrency;
 
 type SubscribeDataV4 = CommonSubscribeData & TokenPaymentMethod & BillingAddressProperty;
@@ -172,6 +156,7 @@ function prepareSubscribeDataPayload(data: SubscribeData): SubscribeData {
         'Currency',
         'BillingAddress',
         'StartTrial',
+        'VatId',
     ];
     const payload: any = {};
     Object.keys(data).forEach((key: any) => {
@@ -219,7 +204,7 @@ export const buyProduct = (rawData: SubscribeData, product: ProductParam) => {
     return config;
 };
 
-export const subscribe = (rawData: SubscribeData, product: ProductParam, version: PaymentsVersion) => {
+export const createSubscription = (rawData: SubscribeData, product: ProductParam, version: PaymentsVersion) => {
     const sanitizedData = prepareSubscribeDataPayload(rawData);
 
     if (isLifetimePlanSelected(sanitizedData.Plans)) {
@@ -233,6 +218,10 @@ export const subscribe = (rawData: SubscribeData, product: ProductParam, version
             PaymentToken: sanitizedData.Payment.Details.Token,
             v: 5,
         };
+
+        if (v5Data.BillingAddress) {
+            v5Data.BillingAddress = normalizeBillingAddress(v5Data.BillingAddress);
+        }
 
         data = v5Data;
         delete (data as any).Payment;
@@ -249,6 +238,11 @@ export const subscribe = (rawData: SubscribeData, product: ProductParam, version
 
         data = v4Data;
         delete (data as any).PaymentToken;
+    }
+
+    if (data.VatId) {
+        (data as any).BillingAddress.VatId = data.VatId;
+        delete (data as any).VatId;
     }
 
     const config = {
@@ -554,27 +548,6 @@ export interface GetChargebeeConfigurationResponse {
 export const getChargebeeConfiguration = () => ({
     url: `payments/v5/web-configuration`,
     method: 'get',
-});
-
-// returns the ID. Or is it user's ID? hopefully.
-// Call only if ChargebeeEnabled is set to 0 (the system already supports cb but this user was not migrated yet)
-// Do not call for signups.
-// Do not call if ChargebeeEnabled is undefined.
-// If ChargebeeEnabled === 1 then always go to v5 and do not call this.
-export const importAccount = () => ({
-    url: 'payments/v5/import',
-    method: 'post',
-});
-
-export const checkImport = () => ({
-    url: 'payments/v5/import',
-    method: 'head',
-});
-
-// no parameter, ideally. Always call before importAccount.
-export const cleanupImport = () => ({
-    url: 'payments/v5/import',
-    method: 'delete',
 });
 
 export type GetSubscriptionResponse = {

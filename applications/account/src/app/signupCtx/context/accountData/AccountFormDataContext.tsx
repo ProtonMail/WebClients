@@ -179,6 +179,7 @@ interface AccountFormDataContextType {
         onInputsStateDiff: (diff: Partial<AccountFormDataInputState>) => void;
     };
     getIsValid: (options: { passwords: boolean }) => Promise<boolean>;
+    getIsValidSync: (options: { passwords: boolean }) => boolean;
     getValidAccountData: (options: { passwords: boolean }) => Promise<AccountData>;
     getAssistVisible: (key: keyof AccountFormDataInputState) => boolean;
     hasSwitchSignupType: boolean;
@@ -636,6 +637,16 @@ export const AccountFormDataContextProvider = ({ children, availableSignupTypes,
         return result.type === 'success';
     }, []);
 
+    const getIsValidSync: AccountFormDataContextType['getIsValidSync'] = useCallback(
+        (options: { passwords: boolean }) => {
+            const { values, asyncStates } = accountFormDataContextProviderStateRef.current;
+            const state = getCompleteStateValues(values, contextRef.current);
+            const result = getValidationResult(state, asyncStates, options);
+            return result.type === 'success';
+        },
+        []
+    );
+
     const getValidAccountData: AccountFormDataContextType['getValidAccountData'] = useCallback(async (options) => {
         const { state, result } = await handleValidation(options);
         if (result.type !== 'success') {
@@ -693,6 +704,7 @@ export const AccountFormDataContextProvider = ({ children, availableSignupTypes,
                     onDetailsDiff: setAccountDataStateDiff,
                 },
                 getIsValid,
+                getIsValidSync,
                 getValidAccountData,
                 getAssistVisible: useCallback(
                     (key) => getAssistVisible(accountFormDataContextProviderStateRef.current.inputStates[key]),

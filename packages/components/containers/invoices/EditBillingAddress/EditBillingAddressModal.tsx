@@ -15,7 +15,12 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { type FullBillingAddress, type Invoice, countriesWithStates } from '@proton/payments';
+import {
+    type FullBillingAddress,
+    type Invoice,
+    isCountryWithRequiredPostalCode,
+    isCountryWithStates,
+} from '@proton/payments';
 import { CountryStateSelector } from '@proton/payments/ui';
 import { useDispatch } from '@proton/redux-shared-store';
 
@@ -40,8 +45,12 @@ type Props = ModalProps &
     };
 
 const zipCodeValidator = (countryCode: string, zipCode: string | null) => {
-    if (countryCode === 'US' && !zipCode) {
-        return c('Error').t`ZIP code is required`;
+    if (isCountryWithRequiredPostalCode(countryCode) && !zipCode) {
+        if (countryCode === 'US') {
+            return c('Error').t`ZIP code is required`;
+        }
+
+        return c('Error').t`Postal code is required`;
     }
 
     return '';
@@ -71,7 +80,7 @@ const EditBillingAddressModal = ({ initialFullBillingAddress, ...props }: Props)
     };
 
     const showCountryAndState = !props.editExistingInvoice;
-    const showPostalCode = !props.editExistingInvoice || !countriesWithStates.includes(fullBillingAddress.CountryCode);
+    const showPostalCode = !props.editExistingInvoice || !isCountryWithStates(fullBillingAddress.CountryCode);
 
     return (
         <ModalTwo as={Form} onSubmit={handleSubmit} {...props}>

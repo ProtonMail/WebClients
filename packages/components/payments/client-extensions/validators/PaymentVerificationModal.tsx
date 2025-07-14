@@ -29,7 +29,7 @@ export interface Props {
     onClose: () => void;
     payment?: CardPayment;
     isAddCard?: boolean;
-    type?: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT | PAYMENT_METHOD_TYPES.CARD;
+    type?: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.CARD;
     onProcess: () => PromiseWithController;
     initialProcess?: PromiseWithController;
     processingDelay?: number;
@@ -45,7 +45,7 @@ const PaymentVerificationModal = ({
     processingDelay = DEFAULT_PROCESSING_DELAY,
     ...rest
 }: Props) => {
-    const isPayPal = [PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT].includes(type);
+    const isPayPal = [PAYMENT_METHOD_TYPES.PAYPAL].includes(type);
 
     let failTitle;
     if (isPayPal) {

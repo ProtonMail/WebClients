@@ -1,26 +1,27 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { ThemeCode, usePaymentFacade } from '@proton/components/payments/client-extensions';
-import type { BillingAddressStatus, Currency, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import type { Currency, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { type FreeSubscription, type Subscription } from '@proton/payments';
+import { type TaxCountryHook, type VatNumberHook } from '@proton/payments/ui';
 
 import { PaymentsNoApi } from './Payment';
 
 export type Props = ReturnType<typeof usePaymentFacade> & {
-    onPaypalCreditClick?: () => void;
     noMaxWidth?: boolean;
-    triggersDisabled?: boolean;
     hideFirstLabel?: boolean;
     hideSavedMethodsDetails?: boolean;
-    disabled?: boolean;
     isAuthenticated?: boolean;
     defaultMethod?: PAYMENT_METHOD_TYPES;
-    hasSomeVpnPlan: boolean;
     themeCode: ThemeCode;
     onMethod?: (method: string | undefined) => void;
-    billingAddressStatus?: BillingAddressStatus;
     onChargebeeInitialized?: () => void;
     showCardIcons?: boolean;
-    isTrial?: boolean;
+    startTrial?: boolean;
     onCurrencyChange?: (currency: Currency) => void;
+    taxCountry?: TaxCountryHook;
+    vatNumber?: VatNumberHook;
+    loadingBitcoin?: boolean;
+    subscription?: Subscription | FreeSubscription;
 };
 
 const PaymentWrapper = ({
@@ -52,7 +53,6 @@ const PaymentWrapper = ({
             savedMethodExternal={methods.savedExternalSelectedMethod}
             allMethods={methods.allMethods}
             isAuthenticated={isAuthenticated}
-            paymentStatus={methods.status}
             savedPaymentMethods={methods.savedMethods ?? []}
         />
     );

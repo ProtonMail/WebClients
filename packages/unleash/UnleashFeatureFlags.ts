@@ -81,6 +81,9 @@ enum PaymentsFlag {
     SepaPaymentsB2C = 'SepaPaymentsB2C',
     TransactionsView = 'TransactionsView',
     ApplePayWeb = 'ApplePayWeb',
+    VatId = 'VatId',
+    ManualTrialsFE = 'ManualTrialsFE',
+    PaymentsZipCodeValidation = 'PaymentsZipCodeValidation',
 }
 
 enum CalendarFeatureFlag {
@@ -183,10 +186,6 @@ enum WalletFlag {
     WalletExportTransaction = 'WalletExportTransaction',
 }
 
-enum PaymentsFeatureFlag {
-    ManualTrialsFE = 'ManualTrialsFE',
-}
-
 export type FeatureFlag =
     | `${CommonFeatureFlag}`
     | `${AccountFlag}`
@@ -196,5 +195,4 @@ export type FeatureFlag =
     | `${DocsFeatureFlag}`
     | `${MailFeatureFlag}`
     | `${AdminFeatureFlag}`
-    | `${WalletFlag}`
-    | `${PaymentsFeatureFlag}`;
+    | `${WalletFlag}`;

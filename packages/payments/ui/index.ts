@@ -1,7 +1,23 @@
+export {
+    ChargebeeIframe,
+    getChargebeeErrorMessage,
+    useCbIframe,
+    type CbIframeHandles,
+} from './components/ChargebeeIframe';
+export { ChargebeePaypalButton, type ChargebeePaypalButtonProps } from './components/ChargebeePaypalButton';
+export {
+    ChargebeeCreditCardWrapper,
+    ChargebeeSavedCardWrapper,
+    type ChargebeeCardWrapperProps,
+    type ChargebeeWrapperProps,
+} from './components/ChargebeeWrapper';
 export { CountriesDropdown } from './components/CountriesDropdown';
 export { CountryStateSelector } from './components/CountryStateSelector';
+export { InputWithSelectorPrefix, type InputWithSelectorPrefixProps } from './components/InputWithSelectorPrefix';
 export { OfferPrice, type Props as OfferPriceProps } from './components/OfferPrice';
-export { WrappedTaxCountrySelector, type OnBillingAddressChange } from './components/TaxCountrySelector';
+export { PayButton } from './components/PayButton';
+export { TaxCountrySelector } from './components/TaxCountrySelector';
+export { VatNumberInput } from './components/VatNumberInput';
 export { default as EditCardModal } from './containers/EditCardModal';
 export {
     getPlanToCheck,
@@ -14,10 +30,12 @@ export {
     type PlanToCheck,
     type PreloadedPaymentsContextType,
 } from './context/PaymentContext';
-export { default as useIsB2BTrial } from './hooks/useIsB2BTrial';
 export {
     PaymentsContextOptimisticProvider,
     usePaymentOptimistic,
     type PaymentsContextOptimisticType,
 } from './context/PaymentContextOptimistic';
 export { getBankSvg, type CreditCardType } from './helpers/credit-card-icons';
+export { default as useIsB2BTrial } from './hooks/useIsB2BTrial';
+export { useTaxCountry, type OnBillingAddressChange, type TaxCountryHook } from './hooks/useTaxCountry';
+export { useVatNumber, type VatNumberHook } from './hooks/useVatNumber';

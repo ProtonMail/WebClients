@@ -25,7 +25,6 @@ import type {
     Transaction,
     V5PaymentToken,
     V5Payments,
-    WrappedPaymentsVersion,
 } from './interface';
 
 export function isCardPayment(payment: CardPayment | undefined): payment is CardPayment {
@@ -38,14 +37,8 @@ export function isTokenPayment(
     return payment?.Type === PAYMENT_METHOD_TYPES.TOKEN || !!payment?.Details?.Token;
 }
 
-export function isWrappedPaymentsVersion(data: WrappedPaymentsVersion | undefined): data is WrappedPaymentsVersion {
-    return !!data && !!data.paymentsVersion;
-}
-
-export function isPaypalPayment(payment: PaypalPayment | CardPayment | undefined): payment is PaypalPayment {
-    return Boolean(
-        payment && (payment.Type === PAYMENT_METHOD_TYPES.PAYPAL || payment.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT)
-    );
+export function isPaypalPayment(payment: any): payment is PaypalPayment {
+    return payment && payment.Type === PAYMENT_METHOD_TYPES.PAYPAL;
 }
 
 export function isTokenPaymentMethod(data: TokenPaymentMethod | undefined): data is TokenPaymentMethod {

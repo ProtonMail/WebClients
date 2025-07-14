@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 
 import { c } from 'ttag';
@@ -6,7 +5,6 @@ import { c } from 'ttag';
 import Alert from '@proton/components/components/alert/Alert';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
-import useConfig from '@proton/components/hooks/useConfig';
 import { type DirectDebitProps, SepaDirectDebit } from '@proton/components/payments/chargebee/SepaDirectDebit';
 import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
@@ -14,33 +12,37 @@ import type { BitcoinHook } from '@proton/components/payments/react-extensions/u
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import { type ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
+import { useStableLoading } from '@proton/hooks';
 import {
-    BILLING_ADDRESS_VALID,
     type BillingAddressStatus,
     type Currency,
+    type FreeSubscription,
     MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
-    type PaymentMethodFlows,
-    type PaymentMethodStatusExtended,
+    type PaymentMethodFlow,
     type PaymentMethodType,
     type SavedPaymentMethod,
     type SavedPaymentMethodExternal,
     type SavedPaymentMethodInternal,
-    canUseChargebee,
+    type Subscription,
     type useSepaCurrencyOverride,
 } from '@proton/payments';
-import { APPS } from '@proton/shared/lib/constants';
-import type { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
-import { isBilledUser } from '@proton/shared/lib/interfaces';
-import clsx from '@proton/utils/clsx';
-
-import type { CbIframeHandles } from '../../payments/chargebee/ChargebeeIframe';
+import type { CbIframeHandles } from '@proton/payments/ui';
 import {
     type ChargebeeCardWrapperProps,
     ChargebeeCreditCardWrapper,
-    type ChargebeePaypalWrapperProps,
+    type ChargebeePaypalButtonProps,
     ChargebeeSavedCardWrapper,
-} from '../../payments/chargebee/ChargebeeWrapper';
+    type TaxCountryHook,
+    TaxCountrySelector,
+    type VatNumberHook,
+    VatNumberInput,
+} from '@proton/payments/ui';
+import type { User } from '@proton/shared/lib/interfaces';
+import { isBilledUser } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
+
 import Alert3DS from './Alert3ds';
 import { ApplePayView } from './ApplePayView';
 import Cash from './Cash';
@@ -50,29 +52,21 @@ import Bitcoin from './bitcoin/Bitcoin';
 import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
 import PaymentMethodDetails from './methods/PaymentMethodDetails';
 import PaymentMethodSelector from './methods/PaymentMethodSelector';
+import { NoPaymentRequiredNote } from './subscription/modal-components/NoPaymentRequiredNote';
 
 export interface Props {
-    children?: ReactNode;
-    flow: PaymentMethodFlows;
+    flow: PaymentMethodFlow;
     method?: PaymentMethodType;
     onMethod: (value: PaymentMethodType | undefined) => void;
-    paypal: any;
-    paypalCredit: any;
     noMaxWidth?: boolean;
-    paymentStatus: PaymentMethodStatusExtended | undefined;
-    disabled?: boolean;
-    paypalPrefetchToken?: boolean;
     hideFirstLabel?: boolean;
-    triggersDisabled?: boolean;
     hideSavedMethodsDetails?: boolean;
     defaultMethod?: PAYMENT_METHOD_TYPES;
     iframeHandles: CbIframeHandles;
     chargebeeCard: ChargebeeCardProcessorHook;
     chargebeePaypal: ChargebeePaypalProcessorHook;
-    hasSomeVpnPlan: boolean;
     user: User | undefined;
-    isTrial?: boolean;
-    currencyOverride: ReturnType<typeof useSepaCurrencyOverride>;
+    startTrial?: boolean;
     lastUsedMethod?: ViewPaymentMethod;
     allMethods: ViewPaymentMethod[];
     isAuthenticated: boolean;
@@ -81,65 +75,60 @@ export interface Props {
     savedMethodExternal?: SavedPaymentMethodExternal;
     currency: Currency;
     amount: number;
-    onPaypalCreditClick?: () => void;
     paymentComponentLoaded: () => void;
     themeCode?: ThemeCode;
-    bitcoinInhouse: BitcoinHook;
     bitcoinChargebee: BitcoinHook;
     directDebit: ChargebeeDirectDebitProcessorHook;
-    isChargebeeEnabled: () => ChargebeeEnabled;
     billingAddressStatus?: BillingAddressStatus;
     onChargebeeInitialized?: () => void;
     showCardIcons?: boolean;
     savedPaymentMethods: SavedPaymentMethod[];
+    vatNumber?: VatNumberHook;
+    taxCountry?: TaxCountryHook;
+    loadingBitcoin?: boolean;
+    showTaxCountry: boolean;
+    subscription?: Subscription | FreeSubscription;
+    currencyOverride: ReturnType<typeof useSepaCurrencyOverride>;
 }
 
 export const PaymentsNoApi = ({
-    children,
     flow,
     amount,
     currency,
-    paypal,
-    paypalCredit,
     method,
     onMethod,
     noMaxWidth = false,
-    disabled,
-    paypalPrefetchToken,
     lastUsedMethod,
     allMethods,
     isAuthenticated,
     loading,
     savedMethodInternal,
     savedMethodExternal,
-    onPaypalCreditClick,
     hideFirstLabel,
-    triggersDisabled,
     hideSavedMethodsDetails,
     defaultMethod,
     iframeHandles,
     chargebeeCard,
     chargebeePaypal,
-    hasSomeVpnPlan,
     paymentComponentLoaded,
     themeCode,
-    bitcoinInhouse,
     bitcoinChargebee,
-    isChargebeeEnabled,
     user,
     directDebit,
-    billingAddressStatus = BILLING_ADDRESS_VALID,
-    paymentStatus,
+    taxCountry,
     onChargebeeInitialized,
     showCardIcons,
     savedPaymentMethods,
-    isTrial,
+    vatNumber,
+    loadingBitcoin: loadingBitcoinProp,
+    showTaxCountry,
+    subscription,
+    startTrial,
     currencyOverride,
 }: Props) => {
-    const { APP_NAME } = useConfig();
+    const enableVatIdFeature = useFlag('VatId');
 
-    const isBitcoinMethod =
-        method === PAYMENT_METHOD_TYPES.BITCOIN || method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
+    const isBitcoinMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
     const showBitcoinMethod = isBitcoinMethod && !isBilledUser(user);
     const showBitcoinPlaceholder = isBitcoinMethod && isBilledUser(user);
 
@@ -163,6 +152,10 @@ export const PaymentsNoApi = ({
         }
     }, [loading, allMethods.length]);
 
+    const { loading: loadingHookProps, ...bitcoinProps } = bitcoinChargebee;
+
+    const loadingBitcoin = useStableLoading([loadingHookProps, !!loadingBitcoinProp]);
+
     if (flow === 'credit' && amount < MIN_CREDIT_AMOUNT) {
         const price = (
             <Price key="price" currency={currency}>
@@ -173,15 +166,6 @@ export const PaymentsNoApi = ({
             <Alert className="mb-4" type="error">{c('Error')
                 .jt`The minimum amount of credit that can be added is ${price}`}</Alert>
         );
-    }
-
-    if (amount <= 0 && !isTrial) {
-        const price = (
-            <Price key="price" currency={currency}>
-                {0}
-            </Price>
-        );
-        return <Alert className="mb-4" type="error">{c('Error').jt`The minimum payment we accept is ${price}`}</Alert>;
     }
 
     if (loading) {
@@ -202,7 +186,7 @@ export const PaymentsNoApi = ({
     );
 
     const sharedCbProps: Pick<
-        ChargebeeCardWrapperProps & ChargebeePaypalWrapperProps & DirectDebitProps,
+        ChargebeeCardWrapperProps & ChargebeePaypalButtonProps & DirectDebitProps,
         'iframeHandles' | 'chargebeePaypal' | 'chargebeeCard' | 'directDebit' | 'onInitialized'
     > = {
         iframeHandles,
@@ -214,19 +198,18 @@ export const PaymentsNoApi = ({
 
     const savedMethod = savedMethodInternal ?? savedMethodExternal;
 
-    const showPaypalView =
-        (method === PAYMENT_METHOD_TYPES.PAYPAL || method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) && !isSingleSignup;
-    const showPaypalCredit =
-        method === PAYMENT_METHOD_TYPES.PAYPAL &&
-        !isSingleSignup &&
-        APP_NAME !== APPS.PROTONVPN_SETTINGS &&
-        !hasSomeVpnPlan;
+    const isPaypalMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+    const showPaypalView = isPaypalMethod && !isSingleSignup;
 
-    const renderSavedChargebeeIframe =
-        savedMethod?.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
-        // CARD must use the Chargebee iframe if we are in migration mode. The migration mode can be detected
-        // by having a saved v4 payment method and the chargebeeEnabled flag being set to CHARGEBEE_ALLOWED.
-        (savedMethod?.Type === PAYMENT_METHOD_TYPES.CARD && canUseChargebee(isChargebeeEnabled()));
+    const renderSavedChargebeeIframe = savedMethod?.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+
+    const showVatInput = showTaxCountry; // basically the same condition as showTaxCountry for now. Can be changed later.
+
+    const vatInput = enableVatIdFeature && showVatInput && taxCountry && vatNumber && (
+        <VatNumberInput taxCountry={taxCountry} {...vatNumber} />
+    );
+
+    const billingCountryInput = showTaxCountry && taxCountry && <TaxCountrySelector className="mb-2" {...taxCountry} />;
 
     const defaultPaymentMethodMessage = flow === 'subscription' && (
         <DefaultPaymentMethodMessage
@@ -236,124 +219,148 @@ export const PaymentsNoApi = ({
         />
     );
 
+    // We must collect payment method details when amount due is greater than 0, this is obvious. But also when user
+    // wants to start a trial. We will not charge user in this case, but we still want to save the payment method
+    // information.
+    const paymentMethodRequired = amount > 0 || startTrial;
+
     return (
         <>
             <div
                 className={clsx('payment-container center', noMaxWidth === false && 'max-w-full md:max-w-custom')}
                 style={noMaxWidth === false ? { '--md-max-w-custom': '37em' } : undefined}
             >
-                <div>
-                    {!isSingleSignup && !hideFirstLabel && (
-                        <h2 className="text-rg text-bold mb-1" data-testid="payment-label">
-                            {c('Label').t`Payment method`}
-                        </h2>
-                    )}
-                    <PaymentMethodSelector
-                        options={allMethods}
-                        method={method}
-                        onChange={(value) => onMethod(value)}
-                        lastUsedMethod={lastUsedMethod}
-                        narrow={isSingleSignup}
-                        showCardIcons={showCardIcons}
-                    />
-                </div>
-                <div className="mt-4">
-                    {method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
-                        <>
-                            <ChargebeeCreditCardWrapper
-                                {...sharedCbProps}
-                                themeCode={themeCode}
-                                initialCountryCode={paymentStatus?.CountryCode}
-                            />
-                            {showAlert3ds && <Alert3DS />}
-                        </>
-                    )}
-                    {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
-                    {method === PAYMENT_METHOD_TYPES.APPLE_PAY && <ApplePayView />}
-                    {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
-                        <SepaDirectDebit
-                            {...sharedCbProps}
-                            isCurrencyOverriden={currencyOverride.isCurrencyOverriden}
+                {paymentMethodRequired && (
+                    <div>
+                        {!isSingleSignup && !hideFirstLabel && (
+                            <h2 className="text-rg text-bold mb-1" data-testid="payment-label">
+                                {c('Label').t`Payment method`}
+                            </h2>
+                        )}
+                        <PaymentMethodSelector
+                            options={allMethods}
+                            method={method}
+                            onChange={(value) => onMethod(value)}
+                            lastUsedMethod={lastUsedMethod}
+                            narrow={isSingleSignup}
+                            showCardIcons={showCardIcons}
                         />
-                    )}
-                    {(() => {
-                        if (!showBitcoinMethod) {
-                            return null;
-                        }
+                    </div>
+                )}
+                {paymentMethodRequired && (
+                    <div className="mt-4">
+                        {method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
+                            <>
+                                <ChargebeeCreditCardWrapper
+                                    {...sharedCbProps}
+                                    themeCode={themeCode}
+                                    suffix={
+                                        <>
+                                            {billingCountryInput}
+                                            {vatInput}
+                                        </>
+                                    }
+                                    // if we don't let user select the tax country then we still need a fallback way to
+                                    // collect the card country and the postal code
+                                    showCountry={!showTaxCountry}
+                                />
+                                {showAlert3ds && <Alert3DS />}
+                            </>
+                        )}
+                        {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
+                        {method === PAYMENT_METHOD_TYPES.APPLE_PAY && (
+                            <>
+                                <ApplePayView />
+                                <div className="mt-2">
+                                    {billingCountryInput}
+                                    {vatInput}
+                                </div>
+                            </>
+                        )}
+                        {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
+                            <>
+                                <SepaDirectDebit
+                                    {...sharedCbProps}
+                                    isCurrencyOverriden={currencyOverride.isCurrencyOverriden}
+                                />
 
-                        if (!isAuthenticated) {
-                            return (
-                                <p>{c('Info')
-                                    .t`In the next step, you’ll be able to submit a deposit using a Bitcoin address.`}</p>
-                            );
-                        }
+                                <div className="mt-2">
+                                    {billingCountryInput}
+                                    {vatInput}
+                                </div>
+                            </>
+                        )}
+                        {(function renderBitcoin() {
+                            if (!showBitcoinMethod) {
+                                return null;
+                            }
 
-                        if (method === PAYMENT_METHOD_TYPES.BITCOIN) {
-                            return (
-                                <>
-                                    <BitcoinInfoMessage />
-                                    <Bitcoin {...bitcoinInhouse} />
-                                </>
-                            );
-                        }
+                            if (!isAuthenticated) {
+                                return (
+                                    <p>{c('Info')
+                                        .t`In the next step, you’ll be able to submit a deposit using a Bitcoin address.`}</p>
+                                );
+                            }
 
-                        if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
-                            if (billingAddressStatus.valid) {
+                            if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
                                 return (
                                     <>
                                         <BitcoinInfoMessage />
-                                        <Bitcoin {...bitcoinChargebee} />
+                                        <Bitcoin
+                                            loading={
+                                                loadingBitcoin || (!!taxCountry && !taxCountry.billingAddressValid)
+                                            }
+                                            {...bitcoinProps}
+                                        />
+                                        <div className="mt-4">
+                                            {billingCountryInput}
+                                            {vatInput}
+                                        </div>
                                     </>
                                 );
                             }
 
-                            const text =
-                                billingAddressStatus.reason === 'missingCountry'
-                                    ? c('Payments').t`Please select your billing country first.`
-                                    : // translator: "state" as in "United States of America"
-                                      c('Payments').t`Please select your billing state first.`;
-
-                            return (
-                                <>
-                                    <Loader />
-                                    <p className="text-center">{text}</p>
-                                </>
-                            );
-                        }
-
-                        return null;
-                    })()}
-                    {showBitcoinPlaceholder && <BilledUserInlineMessage />}
-                    {showPaypalView && (
-                        <PayPalView
-                            method={method}
-                            paypal={paypal}
-                            paypalCredit={paypalCredit}
-                            amount={amount}
-                            currency={currency}
-                            type={flow}
-                            disabled={disabled}
-                            prefetchToken={paypalPrefetchToken}
-                            onClick={onPaypalCreditClick}
-                            triggersDisabled={triggersDisabled}
-                            showPaypalCredit={showPaypalCredit}
-                        />
-                    )}
-                    {savedMethod && (
-                        <>
-                            {!hideSavedMethodsDetails && (
-                                <PaymentMethodDetails type={savedMethod.Type} details={savedMethod.Details} />
-                            )}
-                            {(savedMethod.Type === PAYMENT_METHOD_TYPES.CARD ||
-                                savedMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) &&
-                                showAlert3ds && <Alert3DS />}
-                            {renderSavedChargebeeIframe && <ChargebeeSavedCardWrapper {...sharedCbProps} />}
-                        </>
-                    )}
-                    {children}
-                    {defaultPaymentMethodMessage}
-                </div>
+                            return null;
+                        })()}
+                        {showBitcoinPlaceholder && <BilledUserInlineMessage />}
+                        {isPaypalMethod && (
+                            <>
+                                {billingCountryInput}
+                                {vatInput}
+                                {showPaypalView ? (
+                                    <PayPalView method={method} amount={amount} currency={currency} />
+                                ) : null}
+                            </>
+                        )}
+                        {savedMethod && (
+                            <>
+                                {!hideSavedMethodsDetails && (
+                                    <PaymentMethodDetails type={savedMethod.Type} details={savedMethod.Details} />
+                                )}
+                                {billingCountryInput}
+                                {vatInput}
+                                {savedMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && showAlert3ds && (
+                                    <Alert3DS />
+                                )}
+                                {renderSavedChargebeeIframe && <ChargebeeSavedCardWrapper {...sharedCbProps} />}
+                            </>
+                        )}
+                        {defaultPaymentMethodMessage}
+                    </div>
+                )}
             </div>
+            {!paymentMethodRequired && (
+                <NoPaymentRequiredNote
+                    hasPaymentMethod={!!savedPaymentMethods?.length}
+                    subscription={subscription}
+                    taxCountry={
+                        <>
+                            {billingCountryInput}
+                            {vatInput}
+                        </>
+                    }
+                />
+            )}
         </>
     );
 };

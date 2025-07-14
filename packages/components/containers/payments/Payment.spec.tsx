@@ -1,9 +1,8 @@
 import { render, waitFor } from '@testing-library/react';
 
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
-import type { SavedPaymentMethod, SavedPaymentMethodInternal } from '@proton/payments';
+import type { SavedPaymentMethod, SavedPaymentMethodExternal, SavedPaymentMethodInternal } from '@proton/payments';
 import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { applyHOCs, withApi, withCache, withConfig } from '@proton/testing';
 
 import { PaymentsNoApi } from './Payment';
@@ -23,7 +22,7 @@ let lastUsedMethod: ViewPaymentMethod;
 
 let allMethods: ViewPaymentMethod[];
 
-const PaymentContext = applyHOCs(withApi(), withConfig(), withCache())(PaymentsNoApi);
+const WrappedPaymentsNoApi = applyHOCs(withApi(), withConfig(), withCache())(PaymentsNoApi);
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -127,29 +126,31 @@ describe('Payment', () => {
         const savedMethodInternal = paymentMethods.find(({ ID }) => method === ID) as SavedPaymentMethodInternal;
 
         render(
-            <PaymentContext
+            <WrappedPaymentsNoApi
                 flow="subscription"
                 onMethod={() => {}}
                 method={method}
                 amount={1000}
-                paypal={{}}
-                paypalCredit={{}}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
                 savedMethodInternal={savedMethodInternal}
                 loading={false}
                 currency="USD"
-                iframeHandles={null as any}
+                iframeHandles={
+                    {
+                        handles: {
+                            initializeSavedCreditCard: jest.fn(),
+                            getHeight: jest.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
+                        },
+                        iframeRef: { current: null },
+                    } as any
+                }
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
-                bitcoinInhouse={null as any}
-                bitcoinChargebee={null as any}
-                hasSomeVpnPlan={false}
+                bitcoinChargebee={{} as any}
                 paymentComponentLoaded={jest.fn()}
-                isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
-                paymentStatus={undefined}
                 directDebit={
                     {
                         customer: {} as any,
@@ -158,35 +159,38 @@ describe('Payment', () => {
                 }
                 savedPaymentMethods={[]}
                 currencyOverride={{ isCurrencyOverriden: false } as any}
+                showTaxCountry={true}
             />
         );
     });
 
     it('should not render <Alert3DS> if flow type is "signup"', async () => {
         let { container } = render(
-            <PaymentContext
+            <WrappedPaymentsNoApi
                 onMethod={() => {}}
                 flow="signup"
                 method={PAYMENT_METHOD_TYPES.CARD}
                 amount={1000}
-                paypal={{}}
-                paypalCredit={{}}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
                 savedMethodInternal={undefined}
                 loading={false}
                 currency="USD"
-                iframeHandles={null as any}
+                iframeHandles={
+                    {
+                        handles: {
+                            initializeSavedCreditCard: jest.fn(),
+                            getHeight: jest.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
+                        },
+                        iframeRef: { current: null },
+                    } as any
+                }
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
-                bitcoinInhouse={null as any}
-                bitcoinChargebee={null as any}
-                hasSomeVpnPlan={false}
+                bitcoinChargebee={{} as any}
                 paymentComponentLoaded={jest.fn()}
-                isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
-                paymentStatus={undefined}
                 directDebit={
                     {
                         customer: {} as any,
@@ -195,6 +199,7 @@ describe('Payment', () => {
                 }
                 savedPaymentMethods={[]}
                 currencyOverride={{ isCurrencyOverriden: false } as any}
+                showTaxCountry={true}
             />
         );
 
@@ -210,7 +215,7 @@ describe('Payment', () => {
                     PaymentMethods: [
                         {
                             ID: 'my-custom-method-123',
-                            Type: PAYMENT_METHOD_TYPES.CARD,
+                            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                         },
                     ],
                 };
@@ -222,7 +227,7 @@ describe('Payment', () => {
         paymentMethods = [
             {
                 ID: 'my-custom-method-123',
-                Type: PAYMENT_METHOD_TYPES.CARD,
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
                 Autopay: 1,
                 Order: 497,
                 Details: {
@@ -234,44 +239,50 @@ describe('Payment', () => {
                     Country: 'US',
                     ZIP: '11111',
                 },
-                External: MethodStorage.INTERNAL,
+                External: MethodStorage.EXTERNAL,
             },
         ];
 
-        let savedMethodInternal = paymentMethods[0] as SavedPaymentMethodInternal;
+        let savedMethodExternal = paymentMethods[0] as SavedPaymentMethodExternal;
 
         let { container } = render(
-            <PaymentContext
+            <WrappedPaymentsNoApi
                 onMethod={() => {}}
                 flow="subscription"
                 method="my-custom-method-123"
                 amount={1000}
-                paypal={{}}
-                paypalCredit={{}}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
-                savedMethodInternal={savedMethodInternal}
+                savedMethodExternal={savedMethodExternal}
                 loading={false}
                 currency="USD"
-                iframeHandles={{} as any}
+                iframeHandles={
+                    {
+                        iframeRef: { current: null },
+                        handles: {
+                            initializeSavedCreditCard: jest.fn(),
+                            getHeight: jest.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
+                        },
+                        notifyIframeUnloaded: jest.fn(),
+                        notifyIframeLoaded: jest.fn(),
+                    } as any
+                }
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
-                bitcoinInhouse={null as any}
-                bitcoinChargebee={null as any}
-                hasSomeVpnPlan={false}
+                bitcoinChargebee={{} as any}
                 paymentComponentLoaded={jest.fn()}
-                isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
-                paymentStatus={undefined}
                 directDebit={
                     {
                         customer: {} as any,
                         bankAccount: {} as any,
+                        reset: jest.fn(),
                     } as any
                 }
                 savedPaymentMethods={[]}
                 currencyOverride={{ isCurrencyOverriden: false } as any}
+                showTaxCountry={true}
             />
         );
 
@@ -287,7 +298,7 @@ describe('Payment', () => {
                     PaymentMethods: [
                         {
                             ID: 'my-custom-method-123',
-                            Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                         },
                     ],
                 };
@@ -299,7 +310,7 @@ describe('Payment', () => {
         paymentMethods = [
             {
                 ID: 'my-custom-method-123',
-                Type: PAYMENT_METHOD_TYPES.PAYPAL,
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                 Order: 497,
                 Details: {
                     BillingAgreementID: 'Billing1',
@@ -313,29 +324,30 @@ describe('Payment', () => {
         let savedMethodInternal: SavedPaymentMethodInternal = paymentMethods[0] as SavedPaymentMethodInternal;
 
         let { container } = render(
-            <PaymentContext
+            <WrappedPaymentsNoApi
                 onMethod={() => {}}
                 flow="subscription"
                 method="my-custom-method-123"
                 amount={1000}
-                paypal={{}}
-                paypalCredit={{}}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
                 savedMethodInternal={savedMethodInternal}
                 loading={false}
                 currency="USD"
-                iframeHandles={null as any}
+                iframeHandles={
+                    {
+                        iframeRef: { current: null },
+                        handles: {
+                            initializeSavedCreditCard: jest.fn(),
+                        },
+                    } as any
+                }
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
-                bitcoinInhouse={null as any}
-                bitcoinChargebee={null as any}
-                hasSomeVpnPlan={false}
+                bitcoinChargebee={{} as any}
                 paymentComponentLoaded={jest.fn()}
-                isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
-                paymentStatus={undefined}
                 directDebit={
                     {
                         customer: {} as any,
@@ -344,6 +356,7 @@ describe('Payment', () => {
                 }
                 savedPaymentMethods={[]}
                 currencyOverride={{ isCurrencyOverriden: false } as any}
+                showTaxCountry={true}
             />
         );
 

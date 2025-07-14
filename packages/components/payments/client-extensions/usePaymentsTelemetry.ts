@@ -1,6 +1,6 @@
 import useApi from '@proton/components/hooks/useApi';
 import { type Cycle } from '@proton/payments';
-import type { ADDON_NAMES, PLANS, PaymentMethodFlows } from '@proton/payments';
+import type { ADDON_NAMES, PLANS, PaymentMethodFlow } from '@proton/payments';
 import { type PaymentProcessorType, getSystemByHookType } from '@proton/payments';
 import { TelemetryMeasurementGroups, TelemetryPaymentsEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -25,7 +25,7 @@ export interface PaymentsTelemetry {
 }
 
 export type TelemetryPaymentFlow =
-    | PaymentMethodFlows
+    | PaymentMethodFlow
     | 'dashboard-upgrade-control'
     | 'dashboard-upgrade-A'
     | 'dashboard-upgrade-B';

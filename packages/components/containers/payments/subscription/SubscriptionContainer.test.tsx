@@ -7,15 +7,15 @@ import {
     plansDefaultResponse,
 } from '@proton/components/hooks/helpers/test';
 import {
+    type CheckSubscriptionData,
     type Currency,
     FREE_PLAN,
     PAYMENT_METHOD_TYPES,
     PLANS,
     type Plan,
-    getPlansMap,
-    type CheckSubscriptionData,
-    subscribe,
+    createSubscription,
     createTokenV4,
+    getPlansMap,
 } from '@proton/payments';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -187,7 +187,7 @@ describe('SubscriptionContainer', () => {
         fireEvent.submit(form);
 
         const createTokenUrl = createTokenV4({} as any).url;
-        const subscribeUrl = subscribe({} as any, '' as any, 'v4').url;
+        const subscribeUrl = createSubscription({} as any, '' as any, 'v4').url;
 
         await waitFor(() => {});
         expect(apiMock).not.toHaveBeenCalledWith(expect.objectContaining({ url: createTokenUrl }));

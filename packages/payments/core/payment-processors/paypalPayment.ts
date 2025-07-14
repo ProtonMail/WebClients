@@ -38,7 +38,6 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
         public verifyPayment: PaymentVerificator,
         public api: Api,
         amountAndCurrency: AmountAndCurrency,
-        private isCredit: boolean,
         public onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>,
         private ignoreAmountCheck?: boolean
     ) {
@@ -159,8 +158,8 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
         } as WrappedPaypalPayment;
     }
 
-    private getType(): PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT {
-        return this.isCredit ? PAYMENT_METHOD_TYPES.PAYPAL_CREDIT : PAYMENT_METHOD_TYPES.PAYPAL;
+    private getType() {
+        return PAYMENT_METHOD_TYPES.PAYPAL as const;
     }
 
     private checkAmount() {

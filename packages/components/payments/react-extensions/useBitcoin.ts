@@ -75,8 +75,11 @@ const useCheckStatus = ({
             while (active && enablePolling) {
                 const status = await validate(token);
                 if (status === 'chargeable' && active) {
-                    setPaymentValidated(true);
-                    onTokenValidated?.(token);
+                    if (!paymentValidated) {
+                        setPaymentValidated(true);
+                        onTokenValidated?.(token);
+                    }
+
                     active = false;
                     break;
                 }
@@ -97,7 +100,7 @@ const useCheckStatus = ({
         return () => {
             active = false;
         };
-    }, [token, enablePolling]);
+    }, [token, enablePolling, onTokenValidated, onTokenInvalid, api, paymentsVersion, paymentValidated]);
 
     return {
         bitcoinPaymentValidated: paymentValidated,
@@ -113,6 +116,7 @@ export interface BitcoinTokenModel {
     currency: string | null;
     countryCode: string | null;
     state: string | null;
+    zipCode: string | null;
 }
 
 export interface ValidatedBitcoinToken extends TokenPaymentMethod {
@@ -163,6 +167,7 @@ const useBitcoin = ({
 }: UseBitcoinParams): BitcoinHook => {
     const countryCode = billingAddress?.CountryCode ?? null;
     const state = billingAddress?.State ?? null;
+    const zipCode = billingAddress?.ZipCode ?? null;
 
     const silentApi = getSilentApi(api);
 
@@ -175,6 +180,7 @@ const useBitcoin = ({
         currency: null,
         countryCode: null,
         state: null,
+        zipCode: null,
     };
     const [model, setModel] = useState(INITIAL_STATE);
     const [loading, withLoading] = useLoading();
@@ -236,6 +242,7 @@ const useBitcoin = ({
                 currency: Currency,
                 countryCode,
                 state,
+                zipCode,
             });
         } catch (error) {
             setModel(INITIAL_STATE);
@@ -251,6 +258,7 @@ const useBitcoin = ({
             model.currency === Currency &&
             model.countryCode === countryCode &&
             model.state === state &&
+            model.zipCode === zipCode &&
             !!model.token;
 
         if (!isCorrectAmount || alreadyHasToken) {

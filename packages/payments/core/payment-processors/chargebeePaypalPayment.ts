@@ -1,6 +1,5 @@
 import { type PaymentIntent, chargebeeValidationErrorName, isMessageBusResponseFailure } from '@proton/chargebee/lib';
 import { type Api } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
 
 import { getTokenStatusV5 } from '../api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
@@ -41,7 +40,6 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
         amountAndCurrency: AmountAndCurrency,
         private handles: ChargebeeIframeHandles,
         private events: ChargebeeIframeEvents,
-        private isCredit: boolean,
         private forceEnableChargebee: ForceEnableChargebee,
         public paypalModalHandles: ChargebeePaypalModalHandles | undefined,
         public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
@@ -52,8 +50,6 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
             },
             amountAndCurrency
         );
-
-        (noop as any)(this.isCredit);
     }
 
     async fetchPaymentToken() {
@@ -62,7 +58,6 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
                 {
                     type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
                     amountAndCurrency: this.amountAndCurrency,
-                    // isCredit: this.isCredit, maybe for the future to pass inside CB
                 },
                 {
                     api: this.api,

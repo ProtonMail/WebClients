@@ -13,6 +13,7 @@ import {
     type OnChargeable,
     useCurrencies,
 } from '@proton/components/payments/client-extensions';
+import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import {
@@ -29,14 +30,18 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { type CheckSubscriptionData } from '../../core/api';
-import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address';
+import {
+    type BillingAddress,
+    DEFAULT_TAX_BILLING_ADDRESS,
+    getBillingAddressFromPaymentsStatus,
+} from '../../core/billing-address';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '../../core/constants';
 import { type getAvailableCurrencies, type getPreferredCurrency, mainCurrencies } from '../../core/helpers';
 import type {
     Currency,
     Cycle,
     FreeSubscription,
-    PaymentMethodFlows,
+    PaymentMethodFlow,
     PaymentMethodStatusExtended,
     PaymentsApi,
     PlanIDs,
@@ -70,7 +75,7 @@ export function getPlanToCheck(params: PlanToCheck): PlanToCheck {
 export interface InitializeProps {
     api: Api;
     paramCurrency?: Currency;
-    paymentFlow: PaymentMethodFlows;
+    paymentFlow: PaymentMethodFlow;
     planToCheck?: Omit<PlanToCheck, 'currency'>;
     onChargeable: OnChargeable;
     availablePlans?: { planIDs: PlanIDs; cycle: Cycle }[];
@@ -193,6 +198,7 @@ export interface PaymentsContextTypeInner {
 
     // TODO: exposing for now. Will likely want to abstract this result
     checkResult: RequiredCheckResponse;
+    zipCodeValid: boolean;
 
     // paymentFacade: ReturnType<typeof usePaymentFacade>;
 
@@ -218,6 +224,9 @@ export interface PaymentsContextTypeInner {
      */
     getAvailableCurrencies: (selectedPlanName: PLANS) => ReturnType<typeof getAvailableCurrencies>;
     getPreferredCurrency: (selectedPlanName: PLANS) => ReturnType<typeof getPreferredCurrency>;
+
+    setVatNumber: (vatNumber: string) => void;
+    vatNumber: string | undefined;
 }
 
 export type PaymentsContextType = Pick<
@@ -248,6 +257,9 @@ export type PaymentsContextType = Pick<
     | 'isGroupLoading'
     | 'isGroupChecked'
     | 'subscription'
+    | 'zipCodeValid'
+    | 'setVatNumber'
+    | 'vatNumber'
 >;
 
 export const PaymentsContext = createContext<PaymentsContextTypeInner | null>(null);
@@ -285,6 +297,8 @@ export const PaymentsContextProvider = ({
     );
 
     const [billingAddress, setBillingAddress] = useState<BillingAddress>(DEFAULT_TAX_BILLING_ADDRESS);
+    const [vatNumber, setVatNumberInner] = useState<string | undefined>(undefined);
+
     const plans = plansData.plans;
     const { getPaymentsApi, paymentsApi: initialPaymentsApi } = usePaymentsApi();
     const paymentsApiRef = useRef<PaymentsApi>(initialPaymentsApi);
@@ -313,9 +327,10 @@ export const PaymentsContextProvider = ({
         return result;
     };
 
-    const [{ planToCheck, checkResult }, setPlanToCheck] = useState<{
+    const [{ planToCheck, checkResult, zipCodeValid }, setPlanToCheck] = useState<{
         planToCheck: PlanToCheck;
         checkResult: EnrichedCheckResponse;
+        zipCodeValid: boolean;
     }>(() => {
         const autoCurrency = getPreferredCurrency({
             user,
@@ -339,26 +354,14 @@ export const PaymentsContextProvider = ({
         return {
             planToCheck,
             checkResult,
+            zipCodeValid: true,
         };
     });
 
+    const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
+    const selectedPlan = new SelectedPlan(planToCheck.planIDs, plansMap, planToCheck.cycle, planToCheck.currency);
+
     const [availableCurrencies, setAvailableCurrencies] = useState<readonly Currency[]>(mainCurrencies);
-
-    // const [facadeParams, setFacadeParams] = useState<{
-    //     flow: PaymentMethodFlows;
-    // }>({
-    //     flow: 'signup',
-    // });
-
-    // const paymentFacade = usePaymentFacade({
-    //     checkResult,
-    //     amount: checkResult.AmountDue,
-    //     currency: checkResult.Currency,
-    //     selectedPlanName: selectedPlan.getPlanName(),
-    //     onChargeable: onChargeableCallback,
-    //     paymentMethodStatusExtended: paymentsStatus,
-    //     ...facadeParams,
-    // });
 
     const multiCheckGroups = useMultiCheckGroups();
 
@@ -375,7 +378,7 @@ export const PaymentsContextProvider = ({
                 planIDs: newPlanToCheck.planIDs,
                 currency: newPlanToCheck.currency,
             });
-            setPlanToCheck({ planToCheck: newPlanToCheck, checkResult: newCheckResult });
+            setPlanToCheck({ planToCheck: newPlanToCheck, checkResult: newCheckResult, zipCodeValid: true });
             return newCheckResult;
         }
 
@@ -384,11 +387,25 @@ export const PaymentsContextProvider = ({
         if (newBillingAddress) {
             setBillingAddress((old) => (isDeepEqual(old, newBillingAddress) ? old : newBillingAddress));
         }
-        const newCheckResult = await paymentsApiRef.current.checkWithAutomaticVersion(subscriptionData);
-        setPlanToCheck({ planToCheck: newPlanToCheck, checkResult: newCheckResult });
-        paymentsApiRef.current.cacheMultiCheck(subscriptionData, undefined, newCheckResult);
 
-        return newCheckResult;
+        try {
+            const newCheckResult = await paymentsApiRef.current.checkWithAutomaticVersion(subscriptionData);
+            setPlanToCheck({ planToCheck: newPlanToCheck, checkResult: newCheckResult, zipCodeValid: true });
+            paymentsApiRef.current.cacheMultiCheck(subscriptionData, undefined, newCheckResult);
+            return newCheckResult;
+        } catch (error) {
+            if (error instanceof InvalidZipCodeError) {
+                setPlanToCheck((oldData) => ({
+                    ...oldData,
+                    planToCheck: newPlanToCheck,
+                    zipCodeValid: false,
+                }));
+
+                return checkResult;
+            } else {
+                throw error;
+            }
+        }
     };
 
     const preloadPaymentsData = async ({ api: apiOverride }: { api?: Api } = {}) => {
@@ -438,10 +455,11 @@ export const PaymentsContextProvider = ({
         });
         setAvailableCurrencies(availableCurrencies);
 
-        const billingAddress: BillingAddress = {
+        const billingAddress: BillingAddress = getBillingAddressFromPaymentsStatus({
             CountryCode: status.CountryCode,
             State: status.State,
-        };
+            ZipCode: status.ZipCode,
+        });
         setBillingAddress(billingAddress);
 
         const paymentsApi = getPaymentsApi(api);
@@ -616,13 +634,13 @@ export const PaymentsContextProvider = ({
     const isGroupLoading = multiCheckGroups.isGroupLoading;
     const isGroupChecked = multiCheckGroups.isGroupChecked;
 
-    const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
-
-    const selectedPlan = new SelectedPlan(planToCheck.planIDs, plansMap, planToCheck.cycle, planToCheck.currency);
-
     const getOptimisticCheckResult: PaymentsContextTypeInner['getOptimisticCheckResult'] = (planToCheck) => {
         const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
         return innerGetOptimisticCheckResult({ plansMap, ...planToCheck });
+    };
+
+    const setVatNumber = (vatNumber: string) => {
+        setVatNumberInner(vatNumber);
     };
 
     const value: PaymentsContextTypeInner = {
@@ -674,6 +692,7 @@ export const PaymentsContextProvider = ({
         getOptimisticCheckResult,
         getCoupon,
         checkResult,
+        zipCodeValid,
         // paymentFacade,
         billingAddress,
         uiData: {
@@ -685,6 +704,8 @@ export const PaymentsContextProvider = ({
         isGroupLoading,
         isGroupChecked,
         subscription,
+        setVatNumber,
+        vatNumber,
     };
 
     return <PaymentsContext.Provider value={value}>{children}</PaymentsContext.Provider>;

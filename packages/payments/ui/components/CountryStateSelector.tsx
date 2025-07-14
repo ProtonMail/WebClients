@@ -11,7 +11,7 @@ import { type FormFieldValidator } from '@proton/components/components/v2/useFor
 import clsx from '@proton/utils/clsx';
 
 import { type BillingAddress, billingCountryValidator, billingStateValidator } from '../../core/billing-address';
-import { countriesWithStates, getStateList } from '../../core/countries';
+import { getStateList, isCountryWithStates } from '../../core/countries';
 import { CountriesDropdown } from './CountriesDropdown';
 
 interface StateSelectorProps {
@@ -65,7 +65,7 @@ export const CountryStateSelector = ({
     validator,
 }: CountryStateSelectorProps) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(!!isDropdownOpenProp);
-    const showStateCode = countriesWithStates.includes(selectedCountryCode);
+    const showStateCode = isCountryWithStates(selectedCountryCode);
 
     const billingAddress: BillingAddress = { CountryCode: selectedCountryCode, State: federalStateCode };
 

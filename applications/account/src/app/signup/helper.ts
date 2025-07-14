@@ -1,15 +1,22 @@
 import type { Location } from 'history';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
+import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import type { BillingAddress, PaymentMethodStatusExtended, PaymentsApi } from '@proton/payments';
-import { type CheckSubscriptionData, type Cycle, DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
-import { PLANS, type PlanIDs } from '@proton/payments';
-import { type Currency } from '@proton/payments';
-import { getFreeCheckResult } from '@proton/payments';
+import {
+    type CheckSubscriptionData,
+    type Currency,
+    type Cycle,
+    DEFAULT_TAX_BILLING_ADDRESS,
+    PLANS,
+    type PlanIDs,
+    getFreeCheckResult,
+} from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
+import { type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 export async function getSubscriptionPrices(
     paymentsApi: PaymentsApi,
@@ -19,7 +26,7 @@ export async function getSubscriptionPrices(
     billingAddress?: BillingAddress,
     maybeCoupon?: string,
     trial?: boolean
-) {
+): Promise<SubscriptionCheckResponse> {
     if (!hasPlanIDs(planIDs) || planIDs[PLANS.FREE]) {
         return getFreeCheckResult(currency, cycle);
     }
@@ -37,6 +44,7 @@ export async function getSubscriptionPrices(
         data.BillingAddress = {
             State: billingAddress.State,
             CountryCode: billingAddress.CountryCode,
+            ZipCode: billingAddress.ZipCode,
         };
     }
 
@@ -45,6 +53,29 @@ export async function getSubscriptionPrices(
     }
 
     return paymentsApi.checkWithAutomaticVersion(data);
+}
+
+export async function getSubscriptionPricesWithFallback<T>(
+    paymentsApi: PaymentsApi,
+    planIDs: PlanIDs,
+    currency: Currency,
+    cycle: Cycle,
+    billingAddress: BillingAddress | undefined,
+    maybeCoupon: string | undefined,
+    {
+        invalidZipCodeFallback,
+    }: {
+        invalidZipCodeFallback: () => T;
+    }
+): Promise<SubscriptionCheckResponse | T> {
+    try {
+        return await getSubscriptionPrices(paymentsApi, planIDs, currency, cycle, billingAddress, maybeCoupon);
+    } catch (error) {
+        if (error instanceof InvalidZipCodeError) {
+            return invalidZipCodeFallback();
+        }
+        throw error;
+    }
 }
 
 export const isMailReferAFriendSignup = (location: Location) => {
@@ -84,6 +115,7 @@ export const getOptimisticPaymentMethods = (): PaymentMethodStatusExtended => {
         },
         CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
         State: DEFAULT_TAX_BILLING_ADDRESS.State,
+        ZipCode: DEFAULT_TAX_BILLING_ADDRESS.ZipCode,
     };
 
     return {

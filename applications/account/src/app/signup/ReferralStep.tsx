@@ -2,19 +2,23 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
+import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { Button, CircleLoader, Tooltip } from '@proton/atoms';
 import { ReferralFeaturesList, useConfig } from '@proton/components';
-import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
+import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import {
     type BillingAddress,
+    CYCLE,
+    DEFAULT_CURRENCY,
     DEFAULT_TAX_BILLING_ADDRESS,
     PLANS,
     PLAN_NAMES,
-    type PaymentMethodStatusExtended,
+    type PaymentsApi,
+    paymentStatusToBillingAddress,
 } from '@proton/payments';
-import { WrappedTaxCountrySelector } from '@proton/payments/ui';
+import { TaxCountrySelector, useTaxCountry } from '@proton/payments/ui';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import Content from '../public/Content';
@@ -27,36 +31,50 @@ import type { SubscriptionData } from './interfaces';
 type PlanType = 'free' | 'trial';
 
 interface Props {
+    paymentsApi: PaymentsApi;
     onSubscriptionData: (subscriptionData: Pick<SubscriptionData, 'planIDs' | 'billingAddress'>) => Promise<void>;
     onBack?: () => void;
 }
 
-const usePaymentsStatus = () => {
-    const paymentsApi = usePaymentsApi();
-
-    const [status, setStatus] = useState<PaymentMethodStatusExtended | undefined>();
-    const [statusLoading, withStatusLoading] = useLoading();
-
-    useEffect(() => {
-        void withStatusLoading(async () => {
-            const status = await paymentsApi.paymentsApi.statusExtendedAutomatic();
-            setStatus(status);
-        });
-    }, []);
-
-    return {
-        statusLoading,
-        status,
-    };
-};
-
-const ReferralStep = ({ onSubscriptionData, onBack }: Props) => {
+const ReferralStep = ({ paymentsApi, onSubscriptionData, onBack }: Props) => {
     const { APP_NAME } = useConfig();
     const [type, setType] = useState<PlanType | undefined>(undefined);
     const [loading, withLoading] = useLoading();
-    const mailPlus = PLAN_NAMES[PLANS.MAIL];
-    const { status, statusLoading } = usePaymentsStatus();
+    const plan = PLANS.MAIL;
+    const [status, statusLoading] = usePaymentStatus();
+
     const [billingAddress, setBillingAddress] = useState<BillingAddress>(DEFAULT_TAX_BILLING_ADDRESS);
+
+    const [loadingCheck, withLoadingCheck] = useLoading();
+    const [zipCodeBackendValid, setZipCodeBackendValid] = useState(true);
+
+    const onBillingAddressChange = (newBillingAddress: BillingAddress) => {
+        void withLoadingCheck(async () => {
+            setBillingAddress(newBillingAddress);
+
+            try {
+                await paymentsApi.checkWithAutomaticVersion({
+                    Plans: {
+                        [plan]: 1,
+                    },
+                    Currency: DEFAULT_CURRENCY,
+                    Cycle: CYCLE.MONTHLY,
+                    BillingAddress: newBillingAddress,
+                });
+                setZipCodeBackendValid(true);
+            } catch (error) {
+                if (error instanceof InvalidZipCodeError) {
+                    setZipCodeBackendValid(false);
+                }
+            }
+        });
+    };
+
+    const taxCountry = useTaxCountry({
+        statusExtended: status,
+        onBillingAddressChange,
+        zipCodeBackendValid,
+    });
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -65,6 +83,13 @@ const ReferralStep = ({ onSubscriptionData, onBack }: Props) => {
         });
     }, []);
 
+    useEffect(() => {
+        if (!statusLoading && status) {
+            onBillingAddressChange(paymentStatusToBillingAddress(status));
+        }
+    }, [statusLoading]);
+
+    const mailPlus = PLAN_NAMES[plan];
     return (
         <Main>
             <Header title={c('Heading in trial plan').t`Try the best of ${MAIL_APP_NAME} for free`} onBack={onBack} />
@@ -78,30 +103,32 @@ const ReferralStep = ({ onSubscriptionData, onBack }: Props) => {
                     {statusLoading ? (
                         <CircleLoader className="color-primary" size="small" />
                     ) : (
-                        <WrappedTaxCountrySelector
-                            statusExtended={status ?? DEFAULT_TAX_BILLING_ADDRESS}
-                            onBillingAddressChange={(newBillingAddress) => setBillingAddress(newBillingAddress)}
-                        />
+                        <TaxCountrySelector {...taxCountry} />
                     )}
                 </div>
-                <Button
-                    loading={loading && type === 'trial'}
-                    disabled={loading || statusLoading}
-                    color="norm"
-                    shape="solid"
-                    size="large"
-                    className="mb-2"
-                    onClick={() => {
-                        setType('trial');
-                        void withLoading(
-                            onSubscriptionData({
-                                planIDs: { [PLANS.MAIL]: 1 },
-                                billingAddress,
-                            })
-                        );
-                    }}
-                    fullWidth
-                >{c('Action in trial plan').t`Try free for 30 days`}</Button>
+                <Tooltip title={taxCountry.billingAddressErrorMessage} originalPlacement="bottom">
+                    {/* div is needed to enable the tooltip even if the button element is disabled */}
+                    <div>
+                        <Button
+                            loading={loading && type === 'trial'}
+                            disabled={loading || statusLoading || loadingCheck || !taxCountry.billingAddressValid}
+                            color="norm"
+                            shape="solid"
+                            size="large"
+                            className="mb-2"
+                            onClick={() => {
+                                setType('trial');
+                                void withLoading(
+                                    onSubscriptionData({
+                                        planIDs: { [plan]: 1 },
+                                        billingAddress,
+                                    })
+                                );
+                            }}
+                            fullWidth
+                        >{c('Action in trial plan').t`Try free for 30 days`}</Button>
+                    </div>
+                </Tooltip>
                 <p className="text-center mt-0 mb-2">
                     <small className="color-weak">{c('Info').t`No credit card required`}</small>
                 </p>

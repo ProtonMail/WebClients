@@ -15,7 +15,6 @@ import { usePaymentProcessor } from './usePaymentProcessor';
 
 interface Props {
     amountAndCurrency: AmountAndCurrency;
-    isCredit: boolean;
     onChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>;
     ignoreAmountCheck?: boolean;
     onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
@@ -33,7 +32,7 @@ export type PaypalProcessorHook = PaymentProcessorHook & {
     disabled: boolean;
     isInitialState: boolean;
     meta: {
-        type: 'paypal' | 'paypal-credit';
+        type: 'paypal';
     };
 };
 
@@ -42,19 +41,11 @@ export type PaypalProcessorHook = PaymentProcessorHook & {
  * like `processPaymentToken` method that supposed to be the main action.
  */
 export const usePaypal = (
-    {
-        amountAndCurrency,
-        isCredit,
-        onChargeable,
-        ignoreAmountCheck,
-        onProcessPaymentToken,
-        onProcessPaymentTokenFailed,
-    }: Props,
+    { amountAndCurrency, onChargeable, ignoreAmountCheck, onProcessPaymentToken, onProcessPaymentTokenFailed }: Props,
     { api, verifyPayment }: Dependencies
 ): PaypalProcessorHook => {
     const paymentProcessor = usePaymentProcessor(
-        () =>
-            new PaypalPaymentProcessor(verifyPayment, api, amountAndCurrency, isCredit, onChargeable, ignoreAmountCheck)
+        () => new PaypalPaymentProcessor(verifyPayment, api, amountAndCurrency, onChargeable, ignoreAmountCheck)
     );
     const [fetchingToken, withFetchingToken] = useLoading();
     const [verifyingToken, withVerifyingToken] = useLoading();
@@ -102,7 +93,7 @@ export const usePaypal = (
         return tokenPromise;
     };
 
-    const metaType: PaymentProcessorType = isCredit ? 'paypal-credit' : 'paypal';
+    const metaType: PaymentProcessorType = 'paypal';
     const processPaymentToken = async () => {
         onProcessPaymentToken?.(metaType);
 

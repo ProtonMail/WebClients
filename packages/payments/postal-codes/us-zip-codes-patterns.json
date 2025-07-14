@@ -1,0 +1,797 @@
+{
+    "AA": {
+        "name": "data/US/AA",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/AA",
+        "data": {
+            "id": "data/US/AA",
+            "key": "AA",
+            "name": "Armed Forces (AA)",
+            "lang": "en",
+            "zip": "340",
+            "zipex": "34000,34099"
+        }
+    },
+    "AE": {
+        "name": "data/US/AE",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/AE",
+        "data": {
+            "id": "data/US/AE",
+            "key": "AE",
+            "name": "Armed Forces (AE)",
+            "lang": "en",
+            "zip": "09",
+            "zipex": "09000,09999"
+        }
+    },
+    "AK": {
+        "name": "data/US/AK",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/AK",
+        "data": {
+            "id": "data/US/AK",
+            "key": "AK",
+            "name": "Alaska",
+            "lang": "en",
+            "zip": "99[5-9]",
+            "zipex": "99500,99999",
+            "isoid": "AK"
+        }
+    },
+    "AL": {
+        "name": "data/US/AL",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/AL",
+        "data": {
+            "id": "data/US/AL",
+            "key": "AL",
+            "name": "Alabama",
+            "lang": "en",
+            "zip": "3[56]",
+            "zipex": "35000,36999",
+            "isoid": "AL"
+        }
+    },
+    "AP": {
+        "name": "data/US/AP",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/AP",
+        "data": {
+            "id": "data/US/AP",
+            "key": "AP",
+            "name": "Armed Forces (AP)",
+            "lang": "en",
+            "zip": "96[2-6]",
+            "zipex": "96200,96699"
+        }
+    },
+    "AR": {
+        "name": "data/US/AR",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/AR",
+        "data": {
+            "id": "data/US/AR",
+            "key": "AR",
+            "name": "Arkansas",
+            "lang": "en",
+            "zip": "71[6-9]|72",
+            "zipex": "71600,72999",
+            "isoid": "AR"
+        }
+    },
+    "AS": {
+        "name": "data/US/AS",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/AS",
+        "data": {
+            "id": "data/US/AS",
+            "key": "AS",
+            "name": "American Samoa",
+            "lang": "en",
+            "zip": "96799",
+            "zipex": "96799"
+        }
+    },
+    "AZ": {
+        "name": "data/US/AZ",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/AZ",
+        "data": {
+            "id": "data/US/AZ",
+            "key": "AZ",
+            "name": "Arizona",
+            "lang": "en",
+            "zip": "8[56]",
+            "zipex": "85000,86999",
+            "isoid": "AZ"
+        }
+    },
+    "CA": {
+        "name": "data/US/CA",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/CA",
+        "data": {
+            "id": "data/US/CA",
+            "key": "CA",
+            "name": "California",
+            "lang": "en",
+            "zip": "9[0-5]|96[01]",
+            "zipex": "90000,96199",
+            "isoid": "CA"
+        }
+    },
+    "CO": {
+        "name": "data/US/CO",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/CO",
+        "data": {
+            "id": "data/US/CO",
+            "key": "CO",
+            "name": "Colorado",
+            "lang": "en",
+            "zip": "8[01]",
+            "zipex": "80000,81999",
+            "isoid": "CO"
+        }
+    },
+    "CT": {
+        "name": "data/US/CT",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/CT",
+        "data": {
+            "id": "data/US/CT",
+            "key": "CT",
+            "name": "Connecticut",
+            "lang": "en",
+            "zip": "06",
+            "zipex": "06000,06999",
+            "isoid": "CT"
+        }
+    },
+    "DC": {
+        "name": "data/US/DC",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/DC",
+        "data": {
+            "id": "data/US/DC",
+            "key": "DC",
+            "name": "District of Columbia",
+            "lang": "en",
+            "zip": "20[02-5]|569",
+            "zipex": "20000,56999",
+            "isoid": "DC"
+        }
+    },
+    "DE": {
+        "name": "data/US/DE",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/DE",
+        "data": {
+            "id": "data/US/DE",
+            "key": "DE",
+            "name": "Delaware",
+            "lang": "en",
+            "zip": "19[7-9]",
+            "zipex": "19700,19999",
+            "isoid": "DE"
+        }
+    },
+    "FL": {
+        "name": "data/US/FL",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/FL",
+        "data": {
+            "id": "data/US/FL",
+            "key": "FL",
+            "name": "Florida",
+            "lang": "en",
+            "zip": "3[23]|34[1-9]",
+            "zipex": "32000,34999",
+            "isoid": "FL"
+        }
+    },
+    "FM": {
+        "name": "data/US/FM",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/FM",
+        "data": {
+            "id": "data/US/FM",
+            "key": "FM",
+            "name": "Micronesia",
+            "lang": "en",
+            "zip": "9694[1-4]",
+            "zipex": "96941,96944"
+        }
+    },
+    "GA": {
+        "name": "data/US/GA",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/GA",
+        "data": {
+            "id": "data/US/GA",
+            "key": "GA",
+            "name": "Georgia",
+            "lang": "en",
+            "zip": "3[01]|398|39901",
+            "zipex": "30000,39901",
+            "isoid": "GA"
+        }
+    },
+    "GU": {
+        "name": "data/US/GU",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/GU",
+        "data": {
+            "id": "data/US/GU",
+            "key": "GU",
+            "name": "Guam",
+            "lang": "en",
+            "zip": "969([1-2]\\d|3[12])",
+            "zipex": "96910,96932"
+        }
+    },
+    "HI": {
+        "name": "data/US/HI",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/HI",
+        "data": {
+            "id": "data/US/HI",
+            "key": "HI",
+            "name": "Hawaii",
+            "lang": "en",
+            "zip": "967[0-8]|9679[0-8]|968",
+            "zipex": "96700,96899",
+            "isoid": "HI"
+        }
+    },
+    "IA": {
+        "name": "data/US/IA",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/IA",
+        "data": {
+            "id": "data/US/IA",
+            "key": "IA",
+            "name": "Iowa",
+            "lang": "en",
+            "zip": "5[0-2]",
+            "zipex": "50000,52999",
+            "isoid": "IA"
+        }
+    },
+    "ID": {
+        "name": "data/US/ID",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/ID",
+        "data": {
+            "id": "data/US/ID",
+            "key": "ID",
+            "name": "Idaho",
+            "lang": "en",
+            "zip": "83[2-9]",
+            "zipex": "83200,83999",
+            "isoid": "ID"
+        }
+    },
+    "IL": {
+        "name": "data/US/IL",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/IL",
+        "data": {
+            "id": "data/US/IL",
+            "key": "IL",
+            "name": "Illinois",
+            "lang": "en",
+            "zip": "6[0-2]",
+            "zipex": "60000,62999",
+            "isoid": "IL"
+        }
+    },
+    "IN": {
+        "name": "data/US/IN",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/IN",
+        "data": {
+            "id": "data/US/IN",
+            "key": "IN",
+            "name": "Indiana",
+            "lang": "en",
+            "zip": "4[67]",
+            "zipex": "46000,47999",
+            "isoid": "IN"
+        }
+    },
+    "KS": {
+        "name": "data/US/KS",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/KS",
+        "data": {
+            "id": "data/US/KS",
+            "key": "KS",
+            "name": "Kansas",
+            "lang": "en",
+            "zip": "6[67]",
+            "zipex": "66000,67999",
+            "isoid": "KS"
+        }
+    },
+    "KY": {
+        "name": "data/US/KY",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/KY",
+        "data": {
+            "id": "data/US/KY",
+            "key": "KY",
+            "name": "Kentucky",
+            "lang": "en",
+            "zip": "4[01]|42[0-7]",
+            "zipex": "40000,42799",
+            "isoid": "KY"
+        }
+    },
+    "LA": {
+        "name": "data/US/LA",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/LA",
+        "data": {
+            "id": "data/US/LA",
+            "key": "LA",
+            "name": "Louisiana",
+            "lang": "en",
+            "zip": "70|71[0-5]",
+            "zipex": "70000,71599",
+            "isoid": "LA"
+        }
+    },
+    "MA": {
+        "name": "data/US/MA",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/MA",
+        "data": {
+            "id": "data/US/MA",
+            "key": "MA",
+            "name": "Massachusetts",
+            "lang": "en",
+            "zip": "01|02[0-7]|05501|05544",
+            "zipex": "01000,05544",
+            "isoid": "MA"
+        }
+    },
+    "MD": {
+        "name": "data/US/MD",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/MD",
+        "data": {
+            "id": "data/US/MD",
+            "key": "MD",
+            "name": "Maryland",
+            "lang": "en",
+            "zip": "20[6-9]|21",
+            "zipex": "20600,21999",
+            "isoid": "MD"
+        }
+    },
+    "ME": {
+        "name": "data/US/ME",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/ME",
+        "data": {
+            "id": "data/US/ME",
+            "key": "ME",
+            "name": "Maine",
+            "lang": "en",
+            "zip": "039|04",
+            "zipex": "03900,04999",
+            "isoid": "ME"
+        }
+    },
+    "MH": {
+        "name": "data/US/MH",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/MH",
+        "data": {
+            "id": "data/US/MH",
+            "key": "MH",
+            "name": "Marshall Islands",
+            "lang": "en",
+            "zip": "969[67]",
+            "zipex": "96960,96979"
+        }
+    },
+    "MI": {
+        "name": "data/US/MI",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/MI",
+        "data": {
+            "id": "data/US/MI",
+            "key": "MI",
+            "name": "Michigan",
+            "lang": "en",
+            "zip": "4[89]",
+            "zipex": "48000,49999",
+            "isoid": "MI"
+        }
+    },
+    "MN": {
+        "name": "data/US/MN",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/MN",
+        "data": {
+            "id": "data/US/MN",
+            "key": "MN",
+            "name": "Minnesota",
+            "lang": "en",
+            "zip": "55|56[0-7]",
+            "zipex": "55000,56799",
+            "isoid": "MN"
+        }
+    },
+    "MO": {
+        "name": "data/US/MO",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/MO",
+        "data": {
+            "id": "data/US/MO",
+            "key": "MO",
+            "name": "Missouri",
+            "lang": "en",
+            "zip": "6[3-5]",
+            "zipex": "63000,65999",
+            "isoid": "MO"
+        }
+    },
+    "MP": {
+        "name": "data/US/MP",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/MP",
+        "data": {
+            "id": "data/US/MP",
+            "key": "MP",
+            "name": "Northern Mariana Islands",
+            "lang": "en",
+            "zip": "9695[0-2]",
+            "zipex": "96950,96952"
+        }
+    },
+    "MS": {
+        "name": "data/US/MS",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/MS",
+        "data": {
+            "id": "data/US/MS",
+            "key": "MS",
+            "name": "Mississippi",
+            "lang": "en",
+            "zip": "38[6-9]|39[0-7]",
+            "zipex": "38600,39799",
+            "isoid": "MS"
+        }
+    },
+    "MT": {
+        "name": "data/US/MT",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/MT",
+        "data": {
+            "id": "data/US/MT",
+            "key": "MT",
+            "name": "Montana",
+            "lang": "en",
+            "zip": "59",
+            "zipex": "59000,59999",
+            "isoid": "MT"
+        }
+    },
+    "NC": {
+        "name": "data/US/NC",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/NC",
+        "data": {
+            "id": "data/US/NC",
+            "key": "NC",
+            "name": "North Carolina",
+            "lang": "en",
+            "zip": "2[78]",
+            "zipex": "27000,28999",
+            "isoid": "NC"
+        }
+    },
+    "ND": {
+        "name": "data/US/ND",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/ND",
+        "data": {
+            "id": "data/US/ND",
+            "key": "ND",
+            "name": "North Dakota",
+            "lang": "en",
+            "zip": "58",
+            "zipex": "58000,58999",
+            "isoid": "ND"
+        }
+    },
+    "NE": {
+        "name": "data/US/NE",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/NE",
+        "data": {
+            "id": "data/US/NE",
+            "key": "NE",
+            "name": "Nebraska",
+            "lang": "en",
+            "zip": "6[89]",
+            "zipex": "68000,69999",
+            "isoid": "NE"
+        }
+    },
+    "NH": {
+        "name": "data/US/NH",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/NH",
+        "data": {
+            "id": "data/US/NH",
+            "key": "NH",
+            "name": "New Hampshire",
+            "lang": "en",
+            "zip": "03[0-8]",
+            "zipex": "03000,03899",
+            "isoid": "NH"
+        }
+    },
+    "NJ": {
+        "name": "data/US/NJ",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/NJ",
+        "data": {
+            "id": "data/US/NJ",
+            "key": "NJ",
+            "name": "New Jersey",
+            "lang": "en",
+            "zip": "0[78]",
+            "zipex": "07000,08999",
+            "isoid": "NJ"
+        }
+    },
+    "NM": {
+        "name": "data/US/NM",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/NM",
+        "data": {
+            "id": "data/US/NM",
+            "key": "NM",
+            "name": "New Mexico",
+            "lang": "en",
+            "zip": "87|88[0-4]",
+            "zipex": "87000,88499",
+            "isoid": "NM"
+        }
+    },
+    "NV": {
+        "name": "data/US/NV",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/NV",
+        "data": {
+            "id": "data/US/NV",
+            "key": "NV",
+            "name": "Nevada",
+            "lang": "en",
+            "zip": "889|89",
+            "zipex": "88900,89999",
+            "isoid": "NV"
+        }
+    },
+    "NY": {
+        "name": "data/US/NY",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/NY",
+        "data": {
+            "id": "data/US/NY",
+            "key": "NY",
+            "name": "New York",
+            "lang": "en",
+            "zip": "1[0-4]|06390|00501|00544",
+            "zipex": "10000,00544",
+            "isoid": "NY"
+        }
+    },
+    "OH": {
+        "name": "data/US/OH",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/OH",
+        "data": {
+            "id": "data/US/OH",
+            "key": "OH",
+            "name": "Ohio",
+            "lang": "en",
+            "zip": "4[3-5]",
+            "zipex": "43000,45999",
+            "isoid": "OH"
+        }
+    },
+    "OK": {
+        "name": "data/US/OK",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/OK",
+        "data": {
+            "id": "data/US/OK",
+            "key": "OK",
+            "name": "Oklahoma",
+            "lang": "en",
+            "zip": "7[34]",
+            "zipex": "73000,74999",
+            "isoid": "OK"
+        }
+    },
+    "OR": {
+        "name": "data/US/OR",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/OR",
+        "data": {
+            "id": "data/US/OR",
+            "key": "OR",
+            "name": "Oregon",
+            "lang": "en",
+            "zip": "97",
+            "zipex": "97000,97999",
+            "isoid": "OR"
+        }
+    },
+    "PA": {
+        "name": "data/US/PA",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/PA",
+        "data": {
+            "id": "data/US/PA",
+            "key": "PA",
+            "name": "Pennsylvania",
+            "lang": "en",
+            "zip": "1[5-8]|19[0-6]",
+            "zipex": "15000,19699",
+            "isoid": "PA"
+        }
+    },
+    "PR": {
+        "name": "data/US/PR",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/PR",
+        "data": {
+            "id": "data/US/PR",
+            "key": "PR",
+            "name": "Puerto Rico",
+            "lang": "en",
+            "zip": "00[679]",
+            "zipex": "00600,00999"
+        }
+    },
+    "PW": {
+        "name": "data/US/PW",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/PW",
+        "data": {
+            "id": "data/US/PW",
+            "key": "PW",
+            "name": "Palau",
+            "lang": "en",
+            "zip": "969(39|40)",
+            "zipex": "96940"
+        }
+    },
+    "RI": {
+        "name": "data/US/RI",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/RI",
+        "data": {
+            "id": "data/US/RI",
+            "key": "RI",
+            "name": "Rhode Island",
+            "lang": "en",
+            "zip": "02[89]",
+            "zipex": "02800,02999",
+            "isoid": "RI"
+        }
+    },
+    "SC": {
+        "name": "data/US/SC",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/SC",
+        "data": {
+            "id": "data/US/SC",
+            "key": "SC",
+            "name": "South Carolina",
+            "lang": "en",
+            "zip": "29",
+            "zipex": "29000,29999",
+            "isoid": "SC"
+        }
+    },
+    "SD": {
+        "name": "data/US/SD",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/SD",
+        "data": {
+            "id": "data/US/SD",
+            "key": "SD",
+            "name": "South Dakota",
+            "lang": "en",
+            "zip": "57",
+            "zipex": "57000,57999",
+            "isoid": "SD"
+        }
+    },
+    "TN": {
+        "name": "data/US/TN",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/TN",
+        "data": {
+            "id": "data/US/TN",
+            "key": "TN",
+            "name": "Tennessee",
+            "lang": "en",
+            "zip": "37|38[0-5]",
+            "zipex": "37000,38599",
+            "isoid": "TN"
+        }
+    },
+    "TX": {
+        "name": "data/US/TX",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/TX",
+        "data": {
+            "id": "data/US/TX",
+            "key": "TX",
+            "name": "Texas",
+            "lang": "en",
+            "zip": "7[5-9]|885|73301|73344",
+            "zipex": "75000,73344",
+            "isoid": "TX"
+        }
+    },
+    "UT": {
+        "name": "data/US/UT",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/UT",
+        "data": {
+            "id": "data/US/UT",
+            "key": "UT",
+            "name": "Utah",
+            "lang": "en",
+            "zip": "84",
+            "zipex": "84000,84999",
+            "isoid": "UT"
+        }
+    },
+    "VA": {
+        "name": "data/US/VA",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/VA",
+        "data": {
+            "id": "data/US/VA",
+            "key": "VA",
+            "name": "Virginia",
+            "lang": "en",
+            "zip": "201|2[23]|24[0-6]",
+            "zipex": "20100,24699",
+            "isoid": "VA"
+        }
+    },
+    "VI": {
+        "name": "data/US/VI",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/VI",
+        "data": {
+            "id": "data/US/VI",
+            "key": "VI",
+            "name": "Virgin Islands",
+            "lang": "en",
+            "zip": "008",
+            "zipex": "00800,00899"
+        }
+    },
+    "VT": {
+        "name": "data/US/VT",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/VT",
+        "data": {
+            "id": "data/US/VT",
+            "key": "VT",
+            "name": "Vermont",
+            "lang": "en",
+            "zip": "05",
+            "zipex": "05000,05999",
+            "isoid": "VT"
+        }
+    },
+    "WA": {
+        "name": "data/US/WA",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/WA",
+        "data": {
+            "id": "data/US/WA",
+            "key": "WA",
+            "name": "Washington",
+            "lang": "en",
+            "zip": "98|99[0-4]",
+            "zipex": "98000,99499",
+            "isoid": "WA"
+        }
+    },
+    "WI": {
+        "name": "data/US/WI",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/WI",
+        "data": {
+            "id": "data/US/WI",
+            "key": "WI",
+            "name": "Wisconsin",
+            "lang": "en",
+            "zip": "5[34]",
+            "zipex": "53000,54999",
+            "isoid": "WI"
+        }
+    },
+    "WV": {
+        "name": "data/US/WV",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/WV",
+        "data": {
+            "id": "data/US/WV",
+            "key": "WV",
+            "name": "West Virginia",
+            "lang": "en",
+            "zip": "24[7-9]|2[56]",
+            "zipex": "24700,26999",
+            "isoid": "WV"
+        }
+    },
+    "WY": {
+        "name": "data/US/WY",
+        "url": "https://chromium-i18n.appspot.com/ssl-address/data/US/WY",
+        "data": {
+            "id": "data/US/WY",
+            "key": "WY",
+            "name": "Wyoming",
+            "lang": "en",
+            "zip": "82|83[01]|83414",
+            "zipex": "82000,83414",
+            "isoid": "WY"
+        }
+    }
+}

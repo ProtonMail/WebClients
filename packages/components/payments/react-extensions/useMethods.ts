@@ -4,7 +4,7 @@ import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import type {
     AvailablePaymentMethod,
     BillingAddress,
-    PaymentMethodFlows,
+    PaymentMethodFlow,
     PaymentMethodStatusExtended,
     PaymentMethodType,
     PaymentMethods,
@@ -36,7 +36,7 @@ export interface Props {
     amount: number;
     currency: Currency;
     coupon?: string | null;
-    flow: PaymentMethodFlows;
+    flow: PaymentMethodFlow;
     paymentMethodStatusExtended?: PaymentMethodStatusExtended;
     paymentMethods?: SavedPaymentMethod[];
     onMethodChanged?: OnMethodChangedHandler;
@@ -191,7 +191,7 @@ export const useMethods = (
         pendingAmount?: number;
         pendingCurrency?: Currency;
         pendingCoupon?: string | null;
-        pendingFlow?: PaymentMethodFlows;
+        pendingFlow?: PaymentMethodFlow;
         pendingChargebee?: ChargebeeEnabled;
         pendingSelectedPlanName?: PLANS | ADDON_NAMES;
         pendingBillingAddress?: BillingAddress;

@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useConfig from '@proton/components/hooks/useConfig';
 import useModals from '@proton/components/hooks/useModals';
 import type {
     ADDON_NAMES,
@@ -11,7 +10,7 @@ import type {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
     PLANS,
-    PaymentMethodFlows,
+    PaymentMethodFlow,
     PaymentMethodStatusExtended,
     PaymentMethodType,
     PaymentProcessorType,
@@ -28,7 +27,7 @@ import {
     canUseChargebee,
     isTaxInclusive,
 } from '@proton/payments';
-import { APPS } from '@proton/shared/lib/constants';
+import { useCbIframe } from '@proton/payments/ui';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import {
     type Api,
@@ -40,7 +39,6 @@ import {
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
-import { useCbIframe } from '../chargebee/ChargebeeIframe';
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
 import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import type { ThemeCode, ThemeLike } from './helpers';
@@ -85,7 +83,7 @@ type PaymentFacadeProps = {
     /**
      * The flow parameter can modify the list of available payment methods and modify their behavior in certain cases.
      */
-    flow: PaymentMethodFlows;
+    flow: PaymentMethodFlow;
     telemetryFlow?: TelemetryPaymentFlow;
     /**
      * The main callback that will be called when the payment is ready to be charged
@@ -156,7 +154,6 @@ export const usePaymentFacade = ({
     const enableSepaB2C = useFlag('SepaPaymentsB2C');
     const enableApplePay = useFlag('ApplePayWeb');
 
-    const { APP_NAME } = useConfig();
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
 
@@ -256,7 +253,6 @@ export const usePaymentFacade = ({
         [PAYMENT_METHOD_TYPES.CARD]: true,
         [PAYMENT_METHOD_TYPES.CASH]: false,
         [PAYMENT_METHOD_TYPES.PAYPAL]: true,
-        [PAYMENT_METHOD_TYPES.PAYPAL_CREDIT]: true,
         [PAYMENT_METHOD_TYPES.TOKEN]: false,
         [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: true,
         [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: true,
@@ -285,18 +281,9 @@ export const usePaymentFacade = ({
         async function run() {
             if (hook.methods.isNewPaypal) {
                 hook.paypal.reset();
-                hook.paypalCredit.reset();
 
                 try {
                     await hook.paypal.fetchPaymentToken();
-                } catch {}
-
-                // even if token fetching fails (for example because of network or Human Verification),
-                // we still want to try to fetch the token for paypal-credit
-                try {
-                    if (APP_NAME !== APPS.PROTONVPN_SETTINGS) {
-                        await hook.paypalCredit.fetchPaymentToken();
-                    }
                 } catch {}
             }
         }
@@ -387,7 +374,7 @@ export const usePaymentFacade = ({
 
         const isMethodTaxCountry = isNewMethod || isSavedExternalMethod || isSavedInternalMethod;
 
-        const flowsWithoutTaxCountry: PaymentMethodFlows[] = ['invoice', 'credit', 'add-card', 'add-paypal'];
+        const flowsWithoutTaxCountry: PaymentMethodFlow[] = ['invoice', 'credit', 'add-card', 'add-paypal'];
 
         const showTaxCountry = isMethodTaxCountry && !flowsWithoutTaxCountry.includes(flow);
         return showTaxCountry;
@@ -420,3 +407,5 @@ export const usePaymentFacade = ({
         user,
     };
 };
+
+export type PaymentFacade = ReturnType<typeof usePaymentFacade>;
