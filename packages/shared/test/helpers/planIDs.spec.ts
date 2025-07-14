@@ -132,6 +132,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.VISIONARY;
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -148,6 +149,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -165,6 +167,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -183,6 +186,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -200,6 +204,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -217,6 +222,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.VPN_BUSINESS;
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -234,6 +240,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.MAIL;
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -251,6 +258,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.BUNDLE_PRO;
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -278,6 +286,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -308,6 +317,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -334,6 +344,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -360,6 +371,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -385,6 +397,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -407,6 +420,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -418,6 +432,28 @@ describe('switchPlan', () => {
         });
     });
 
+    it('should not transfer lumo addons if the feature flag is off', () => {
+        const currentPlanIDs = { [PLANS.VISIONARY]: 1 };
+        const newPlan = PLANS.DUO;
+        const organization = {
+            UsedLumo: 6,
+            MaxLumo: 6,
+        } as Organization;
+
+        expect(
+            switchPlan({
+                isLumoAddonAvailable: false,
+                currentPlanIDs,
+                newPlan,
+                plans: getLongTestPlans(),
+                organization,
+                user,
+            })
+        ).toEqual({
+            [PLANS.DUO]: 1,
+        });
+    });
+
     it('should not transfer lumo addons if the user already has lumo on mobile (multi-subs)', () => {
         const subscription = buildSubscription(PLANS.LUMO, {
             External: SubscriptionPlatform.iOS,
@@ -425,6 +461,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 subscription,
                 newPlan: PLANS.MAIL,
                 plans: getLongTestPlans(),
@@ -449,6 +486,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -466,6 +504,7 @@ describe('switchPlan', () => {
         });
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -484,6 +523,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -501,6 +541,7 @@ describe('switchPlan', () => {
         });
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -519,6 +560,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -536,6 +578,7 @@ describe('switchPlan', () => {
         });
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -554,6 +597,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -571,6 +615,7 @@ describe('switchPlan', () => {
         });
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -589,6 +634,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -606,6 +652,7 @@ describe('switchPlan', () => {
         });
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -625,6 +672,7 @@ describe('switchPlan', () => {
         // exclude all addons
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -639,6 +687,7 @@ describe('switchPlan', () => {
         // exclude all addons
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -653,6 +702,7 @@ describe('switchPlan', () => {
         // exclude all addons
         expect(
             switchPlan({
+                isLumoAddonAvailable: true,
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),

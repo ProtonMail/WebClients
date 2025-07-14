@@ -322,6 +322,7 @@ const SubscriptionContainerInner = ({
 
         if (newPlan) {
             return switchPlan({
+                isLumoAddonAvailable,
                 subscription: latestSubscription,
                 newPlan,
                 organization,
@@ -1317,6 +1318,7 @@ const SubscriptionContainerInner = ({
                         check({
                             ...model,
                             planIDs: switchPlan({
+                                isLumoAddonAvailable,
                                 subscription: latestSubscription,
                                 newPlan: PLANS.BUNDLE,
                                 organization,

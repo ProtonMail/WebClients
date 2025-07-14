@@ -197,6 +197,7 @@ const SingleSignupContainerV2 = ({
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const lumoSignupEnabled = useFlag('LumoSignupAvailable');
     const isB2BTrialEnabled = useFlag('ManualTrialsFE');
+    const isLumoAddonAvailable = useFlag('LumoAddonAvailable');
 
     const { flagsReady } = useFlagsStatus();
 
@@ -609,6 +610,7 @@ const SingleSignupContainerV2 = ({
                           .catch(() => undefined)
                     : undefined,
                 getUserInfo({
+                    isLumoAddonAvailable,
                     audience,
                     api: silentApi,
                     paymentsApi,
@@ -798,6 +800,7 @@ const SingleSignupContainerV2 = ({
 
             const paymentsApi = getPaymentsApi(silentApi);
             const userInfoPromise = getUserInfo({
+                isLumoAddonAvailable,
                 audience,
                 api: silentApi,
                 paymentsApi,
@@ -907,6 +910,7 @@ const SingleSignupContainerV2 = ({
             })();
 
             const { subscriptionData, upsell, ...userInfo } = await getUserInfo({
+                isLumoAddonAvailable,
                 api: silentApi,
                 audience,
                 paymentsApi: getPaymentsApi(silentApi, chargebeeEnabled.result),

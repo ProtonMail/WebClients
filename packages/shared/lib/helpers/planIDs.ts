@@ -91,6 +91,7 @@ type Addons = (typeof allAddons)[number];
 
 type SwitchPlanOptions = EitherOr<
     {
+        isLumoAddonAvailable: boolean;
         currentPlanIDs: PlanIDs;
         subscription: Subscription | FreeSubscription | null | undefined;
         newPlan?: PLANS | ADDON_NAMES;
@@ -113,6 +114,7 @@ type SwitchPlanOptions = EitherOr<
  * @returns
  */
 export const switchPlan = ({
+    isLumoAddonAvailable,
     currentPlanIDs: currentPlanIDsParam,
     subscription,
     newPlan,
@@ -148,7 +150,7 @@ export const switchPlan = ({
     {
         const multisubs = subscription && !isFreeSubscription(subscription) ? getSubscriptionsArray(subscription) : [];
         const hasExternallyManagedLumo = multisubs.some((sub) => isManagedExternally(sub) && hasLumo(sub));
-        if (hasExternallyManagedLumo) {
+        if (hasExternallyManagedLumo || !isLumoAddonAvailable) {
             dontTransferAddons.add('lumo');
         }
     }
