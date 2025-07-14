@@ -9,11 +9,11 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { ensureTokenChargeable, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
 import type { PaymentTokenResult } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, setPaymentMethodV4, createTokenV4 } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, createTokenV4, setPaymentMethodV4 } from '@proton/payments';
+import { ChargebeePaypalButton } from '@proton/payments/ui';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
@@ -155,7 +155,8 @@ export const PayPalV5Modal = ({ onClose, onMethodAdded, ...rest }: PaypalV5Props
             title={c('Title').t`Add PayPal payment method`}
             onClose={onClose}
             buttons={[
-                <ChargebeePaypalWrapper
+                <ChargebeePaypalButton
+                    width="100%"
                     chargebeePaypal={paymentFacade.chargebeePaypal}
                     iframeHandles={paymentFacade.iframeHandles}
                 />,

@@ -1,12 +1,6 @@
 @import '~@proton/styles/scss/lib';
 
-.centered-loader {
-	inset-inline-start: 50%;
-	inset-block-start: 50%;
-	transform: translateX(-50%) translateY(-50%);
-}
-
-.country-select {
+.selector-prefix-input {
 	.input-adornment {
 		color: var(--text-norm);
 		margin-inline: 0;
@@ -16,7 +10,7 @@
 			padding-inline-start: rem(12) !important;
 		}
 
-		// we want the country dropdown to take exactly half of the width
+		// we want the selector dropdown to take exactly half of the width
 		&:first-child {
 			flex: 0 0 50%;
 		}
@@ -25,9 +19,4 @@
 			border: none !important;
 		}
 	}
-}
-
-.error-container {
-	color: var(--signal-danger);
-	min-block-size: rem(20);
 }

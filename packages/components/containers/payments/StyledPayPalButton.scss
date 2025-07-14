@@ -6,4 +6,8 @@
 	--button-default-text-color: black;
 	--button-hover-text-color: black;
 	--button-active-text-color: black;
+
+	&--disabled {
+		filter: grayscale(1);
+	}
 }

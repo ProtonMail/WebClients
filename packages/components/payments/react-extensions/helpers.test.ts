@@ -11,10 +11,6 @@ describe('isChargebeePaymentProcessor', () => {
             expected: true,
         },
         {
-            type: 'chargebee-paypal-credit' as const,
-            expected: true,
-        },
-        {
             type: 'saved-chargebee' as const,
             expected: true,
         },
@@ -24,10 +20,6 @@ describe('isChargebeePaymentProcessor', () => {
         },
         {
             type: 'paypal' as const,
-            expected: false,
-        },
-        {
-            type: 'paypal-credit' as const,
             expected: false,
         },
         {

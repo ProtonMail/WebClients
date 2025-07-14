@@ -19,6 +19,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
+import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
@@ -45,15 +46,12 @@ import {
     type Subscription,
     captureWrongPlanIDs,
     captureWrongPlanName,
-    getBillingAddressStatus,
     getCheckoutModifiers,
     getFreeCheckResult,
     getHas2024OfferCoupon,
-    getHasSomeVpnPlan,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
     getIsPlanTransitionForbidden,
-    getIsVpnPlan,
     getMaximumCycleForApp,
     getPaymentsVersion,
     getPlanCurrencyFromPlanIDs,
@@ -68,7 +66,7 @@ import {
     isManagedExternally,
     shouldPassIsTrial as shouldPassIsTrialPayments,
 } from '@proton/payments';
-import { PaymentsContextProvider, useIsB2BTrial } from '@proton/payments/ui';
+import { PaymentsContextProvider, useIsB2BTrial, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS } from '@proton/shared/lib/constants';
@@ -114,7 +112,6 @@ import { getAutoCoupon, getDefaultSelectedProductPlans } from './helpers';
 import { getAllowedCycles } from './helpers/getAllowedCycles';
 import { getInitialCycle } from './helpers/getInitialCycle';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
-import { NoPaymentRequiredNote } from './modal-components/NoPaymentRequiredNote';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
@@ -135,7 +132,8 @@ export interface Model {
     gift?: string;
     initialCheckComplete: boolean;
     taxBillingAddress: BillingAddress;
-    noPaymentNeeded: boolean;
+    paymentForbidden: boolean;
+    zipCodeValid: boolean;
 }
 
 const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
@@ -362,8 +360,10 @@ const SubscriptionContainerInner = ({
             taxBillingAddress: {
                 CountryCode: paymentsStatus.CountryCode,
                 State: paymentsStatus.State,
+                ZipCode: paymentsStatus.ZipCode,
             },
-            noPaymentNeeded: false,
+            paymentForbidden: false,
+            zipCodeValid: true,
         };
 
         return model;
@@ -477,6 +477,8 @@ const SubscriptionContainerInner = ({
                     product: app,
                     taxBillingAddress: model.taxBillingAddress,
                     StartTrial: isTrial,
+                    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                    vatNumber: vatNumber.vatNumber,
                 });
 
                 if (codes.some((code) => getHas2024OfferCoupon(code))) {
@@ -544,16 +546,18 @@ const SubscriptionContainerInner = ({
     };
 
     const selectedPlanCurrency = checkResult?.Currency ?? DEFAULT_CURRENCY;
+    const selectedPlanName = getPlanFromPlanIDs(plansMap, model.planIDs)?.Name;
+
     const paymentFacade = usePaymentFacade({
         checkResult,
         amount,
         currency: selectedPlanCurrency,
-        selectedPlanName: getPlanFromPlanIDs(plansMap, model.planIDs)?.Name,
+        selectedPlanName,
         billingAddress: model.taxBillingAddress,
         billingPlatform: subscription?.BillingPlatform,
         chargebeeUserExists: user.ChargebeeUserExists,
         paymentMethodStatusExtended: paymentsStatus,
-        onChargeable: (operations, { sourceType, paymentProcessorType, source }) => {
+        onChargeable: (operations, { paymentProcessorType, source }) => {
             const context: SubscriptionContext = {
                 operationsSubscriptionData: {
                     Plans: model.planIDs,
@@ -562,18 +566,16 @@ const SubscriptionContainerInner = ({
                     Codes: getCodesForSubscription(),
                     taxBillingAddress: model.taxBillingAddress,
                     StartTrial: isTrial,
+                    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                    vatNumber: vatNumber.vatNumber,
                 },
                 paymentProcessorType,
                 paymentMethodValue: source,
             };
 
             const promise = withSubscribing(handleSubscribe(operations, context));
-            if (
-                sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
-                sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
-            ) {
-                promise.then(() => pollEventsMultipleTimes()).catch(noop);
-            }
+
+            promise.then(() => pollEventsMultipleTimes()).catch(noop);
 
             return promise.catch(noop);
         },
@@ -694,10 +696,11 @@ const SubscriptionContainerInner = ({
         wantToApplyNewGiftCode: boolean = false,
         selectedMethod?: PlainPaymentMethodType
     ): Promise<SubscriptionCheckResponse | undefined> => {
-        const copyNewModel = {
+        const copyNewModel: Model = {
             ...newModel,
             initialCheckComplete: true,
-            noPaymentNeeded: false,
+            paymentForbidden: false,
+            zipCodeValid: true,
         };
 
         if (!hasPlanIDs(copyNewModel.planIDs)) {
@@ -758,7 +761,7 @@ const SubscriptionContainerInner = ({
             });
             setModel({
                 ...copyNewModel,
-                noPaymentNeeded: true,
+                paymentForbidden: true,
             });
             return;
         }
@@ -800,6 +803,7 @@ const SubscriptionContainerInner = ({
                     BillingAddress: {
                         CountryCode: copyNewModel.taxBillingAddress.CountryCode,
                         State: copyNewModel.taxBillingAddress.State,
+                        ZipCode: copyNewModel.taxBillingAddress.ZipCode,
                     },
                     ProrationMode:
                         currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
@@ -810,6 +814,7 @@ const SubscriptionContainerInner = ({
 
                 const checkResult = await paymentsApi.checkWithAutomaticVersion(checkPayload, {
                     signal: abortControllerRef.current.signal,
+                    silence: true,
                 });
 
                 try {
@@ -819,12 +824,7 @@ const SubscriptionContainerInner = ({
                         checkResult,
                         abortControllerRef.current.signal
                     );
-                } catch (error) {
-                    // eslint-disable-next-line no-console
-                    console.warn(error);
-                    // eslint-disable-next-line no-console
-                    console.warn('Additional Check calls failed');
-                }
+                } catch {}
 
                 const { Gift = 0 } = checkResult;
                 const { Code = '' } = checkResult.Coupon || {}; // Coupon can equal null
@@ -854,6 +854,16 @@ const SubscriptionContainerInner = ({
                 if (error.name === 'OfflineError') {
                     setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
                 }
+
+                if (error instanceof InvalidZipCodeError) {
+                    setModel({
+                        ...model,
+                        zipCodeValid: false,
+                    });
+                    // We don't want to report this as an error to the parent of SubscriptionContainer
+                    return;
+                }
+
                 onCheck?.({ model, newModel: copyNewModel, type: 'error', error });
             }
 
@@ -924,6 +934,8 @@ const SubscriptionContainerInner = ({
                     product: app,
                     taxBillingAddress: model.taxBillingAddress,
                     StartTrial: isTrial,
+                    // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                    vatNumber: vatNumber.vatNumber,
                 });
                 await processor.processPaymentToken();
             } catch (e) {
@@ -998,13 +1010,26 @@ const SubscriptionContainerInner = ({
         void check({ ...model, taxBillingAddress: billingAddress });
     };
 
+    const taxCountry = useTaxCountry({
+        onBillingAddressChange: handleBillingAddressChange,
+        zipCodeBackendValid: model.zipCodeValid,
+        statusExtended: paymentsStatus,
+        paymentFacade,
+        previosValidZipCode: model.taxBillingAddress.ZipCode,
+    });
+
+    const vatNumber = useVatNumber({
+        selectedPlanName,
+        taxCountry,
+    });
+
     const backStep = BACK[model.step];
     const isFreeUserWithFreePlanSelected = user.isFree && isFreePlanSelected;
 
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();
 
-        if (model.noPaymentNeeded) {
+        if (model.paymentForbidden) {
             onCancel?.();
             return;
         }
@@ -1016,41 +1041,30 @@ const SubscriptionContainerInner = ({
         void process(paymentFacade.selectedProcessor);
     };
 
-    const hasSomeVpnPlan =
-        getHasSomeVpnPlan(subscription) || getIsVpnPlan(getPlanFromPlanIDs(plansMap, model.planIDs)?.Name);
-
     const modeType = mode ? mode : 'modal';
     const showFreePlan = modeType === 'upsell-modal' ? false : undefined;
 
     const hasPaymentMethod = !!paymentFacade.methods.savedMethods?.length;
-
-    const billingAddressStatus = getBillingAddressStatus(model.taxBillingAddress);
 
     const subscriptionCheckoutSubmit = (
         <>
             <SubscriptionSubmitButton
                 currency={model.currency}
                 onDone={onSubscribed}
-                paypal={paymentFacade.paypal}
                 step={model.step}
                 loading={
                     subscribing ||
                     paymentFacade.bitcoinInhouse.bitcoinLoading ||
                     paymentFacade.bitcoinChargebee.bitcoinLoading
                 }
-                paymentMethodValue={paymentFacade.selectedMethodValue}
-                paymentMethodType={paymentFacade.selectedMethodType}
                 checkResult={checkResult}
                 className="w-full"
                 disabled={isFreeUserWithFreePlanSelected}
-                chargebeePaypal={paymentFacade.chargebeePaypal}
-                iframeHandles={paymentFacade.iframeHandles}
-                noPaymentNeeded={model.noPaymentNeeded}
+                paymentForbidden={model.paymentForbidden}
                 subscription={subscription}
                 hasPaymentMethod={hasPaymentMethod}
-                billingAddressStatus={billingAddressStatus}
-                paymentProcessorType={paymentFacade.selectedProcessor?.meta.type}
-                applePay={paymentFacade.applePay}
+                taxCountry={taxCountry}
+                paymentFacade={paymentFacade}
             />
             {paymentFacade.showInclusiveTax && (
                 <InclusiveVatText
@@ -1062,7 +1076,7 @@ const SubscriptionContainerInner = ({
         </>
     );
 
-    const gift = !model.noPaymentNeeded && !couponConfig?.hidden && (
+    const gift = !model.paymentForbidden && !couponConfig?.hidden && (
         <>
             {couponCode && (
                 <div className="flex items-center mb-1">
@@ -1219,23 +1233,15 @@ const SubscriptionContainerInner = ({
                                 );
                             })()}
                             <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
-                            {/* avoid mounting/unmounting the component which re-triggers the hook */}
-                            <div className={amountDue ? undefined : 'hidden'}>
-                                <PaymentWrapper
-                                    {...paymentFacade}
-                                    onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
-                                    noMaxWidth
-                                    hideFirstLabel={true}
-                                    hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
-                                    hasSomeVpnPlan={hasSomeVpnPlan}
-                                    billingAddressStatus={billingAddressStatus}
-                                    onCurrencyChange={handleChangeCurrency}
-                                />
-                            </div>
-                            <NoPaymentRequiredNote
-                                checkResult={checkResult}
+                            <PaymentWrapper
+                                {...paymentFacade}
+                                noMaxWidth
+                                hideFirstLabel={true}
+                                hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
+                                onCurrencyChange={handleChangeCurrency}
+                                taxCountry={taxCountry}
+                                vatNumber={vatNumber}
                                 subscription={subscription}
-                                hasPaymentMethod={hasPaymentMethod}
                             />
                             <RenewalEnableNote subscription={subscription} {...checkoutModifiers} />
                         </div>
@@ -1258,12 +1264,11 @@ const SubscriptionContainerInner = ({
                                 cycle={model.cycle}
                                 planIDs={model.planIDs}
                                 onChangeCurrency={handleChangeCurrency}
-                                showTaxCountry={paymentFacade.showTaxCountry}
-                                statusExtended={paymentFacade.statusExtended}
+                                paymentFacade={paymentFacade}
                                 paymentMethods={paymentFacade.methods}
-                                onBillingAddressChange={handleBillingAddressChange}
                                 showPlanDescription={audience !== Audience.B2B}
-                                paymentNeeded={!model.noPaymentNeeded}
+                                paymentNeeded={!model.paymentForbidden}
+                                taxCountry={taxCountry}
                                 user={user}
                                 couponConfig={couponConfig}
                                 trial={isB2BTrial}
