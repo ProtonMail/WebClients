@@ -20,7 +20,6 @@ it('should render', () => {
                     Amount: 1000,
                     Currency: 'USD',
                 },
-                isCredit: false,
                 onChargeable: onChargeableMock,
             },
             {
@@ -40,34 +39,6 @@ it('should render', () => {
     expect(result.current.paymentProcessor).toBeDefined();
 });
 
-it('should render with credit', () => {
-    const { result } = renderHook(() =>
-        usePaypal(
-            {
-                amountAndCurrency: {
-                    Amount: 1000,
-                    Currency: 'USD',
-                },
-                isCredit: true,
-                onChargeable: onChargeableMock,
-            },
-            {
-                api: apiMock,
-                verifyPayment: verifyPaymentMock,
-            }
-        )
-    );
-
-    expect(result.current).toBeDefined();
-    expect(result.current.meta.type).toBe('paypal-credit');
-    expect(result.current.fetchingToken).toBe(false);
-    expect(result.current.verifyingToken).toBe(false);
-    expect(result.current.verificationError).toBe(null);
-    expect(result.current.tokenFetched).toBe(false);
-    expect(result.current.processingToken).toBe(false);
-    expect(result.current.paymentProcessor).toBeDefined();
-});
-
 it('should destroy payment processor on unmount', () => {
     const { result, unmount } = renderHook(() =>
         usePaypal(
@@ -76,7 +47,6 @@ it('should destroy payment processor on unmount', () => {
                     Amount: 1000,
                     Currency: 'USD',
                 },
-                isCredit: false,
                 onChargeable: onChargeableMock,
             },
             {
@@ -101,7 +71,6 @@ it('should update fetchedPaymentToken', () => {
                     Amount: 1000,
                     Currency: 'USD',
                 },
-                isCredit: false,
                 onChargeable: onChargeableMock,
             },
             {
@@ -126,7 +95,6 @@ it('should update verificationError', () => {
                     Amount: 1000,
                     Currency: 'USD',
                 },
-                isCredit: false,
                 onChargeable: onChargeableMock,
             },
             {
@@ -153,7 +121,6 @@ it('should update verificationError when token fetching fails', async () => {
                     Amount: 1000,
                     Currency: 'USD',
                 },
-                isCredit: false,
                 onChargeable: onChargeableMock,
             },
             {
@@ -182,7 +149,6 @@ it('should update verificationError when token verification fails', async () => 
                     Amount: 1000,
                     Currency: 'USD',
                 },
-                isCredit: false,
                 onChargeable: onChargeableMock,
             },
             {
@@ -212,7 +178,6 @@ it('should remove pre-fetched token if verification fails', async () => {
                     Amount: 1000,
                     Currency: 'USD',
                 },
-                isCredit: false,
                 onChargeable: onChargeableMock,
             },
             {
@@ -240,7 +205,6 @@ it('should process payment token', async () => {
                     Amount: 1000,
                     Currency: 'USD',
                 },
-                isCredit: false,
                 onChargeable: onChargeableMock,
             },
             {
@@ -275,7 +239,6 @@ it('should update desabled state when the amount changes', () => {
                         Amount,
                         Currency: 'USD',
                     },
-                    isCredit: false,
                     onChargeable: onChargeableMock,
                 },
                 {
@@ -331,7 +294,6 @@ it('should have isInitialState === true when tokenFetched === false and verifica
                         Amount,
                         Currency: 'USD',
                     },
-                    isCredit: false,
                     onChargeable: onChargeableMock,
                 },
                 {

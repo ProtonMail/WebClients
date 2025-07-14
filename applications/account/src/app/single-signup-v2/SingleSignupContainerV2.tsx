@@ -23,7 +23,7 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import metrics, { observeApiError } from '@proton/metrics';
-import type { FullPlansMap, PaymentMethodFlows, PaymentProcessorType } from '@proton/payments';
+import type { FullPlansMap, PaymentMethodFlow, PaymentProcessorType } from '@proton/payments';
 import {
     type Currency,
     DEFAULT_CYCLE,
@@ -629,6 +629,7 @@ const SingleSignupContainerV2 = ({
                         billingAddress: {
                             CountryCode: paymentMethodStatus.CountryCode,
                             State: paymentMethodStatus.State,
+                            ZipCode: paymentMethodStatus.ZipCode,
                         },
                         trial,
                     },
@@ -1109,7 +1110,7 @@ const SingleSignupContainerV2 = ({
         const method: PaymentProcessorType | 'n/a' = subscriptionData.payment?.paymentProcessorType ?? 'n/a';
         const plan = getPlanNameFromIDs(subscriptionData.planIDs);
 
-        const flow: PaymentMethodFlows = isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
+        const flow: PaymentMethodFlow = isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
 
         return {
             method,

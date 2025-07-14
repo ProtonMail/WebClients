@@ -1,90 +1,23 @@
-import { useEffect, useRef, useState } from 'react';
+import { type ChangeEvent, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { InlineLinkButton, Input } from '@proton/atoms';
+import Option from '@proton/components/components/option/Option';
+import SearchableSelect, {
+    type SearcheableSelectProps,
+} from '@proton/components/components/selectTwo/SearchableSelect';
+import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import clsx from '@proton/utils/clsx';
 
-import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, getBillingAddressStatus } from '../../core/billing-address';
-import { countriesWithStates, getStateList } from '../../core/countries';
-import { type PaymentMethodStatusExtended } from '../../core/interface';
-import { useCountries } from './CountriesDropdown';
-import { CountryStateSelector } from './CountryStateSelector';
+import { getStateList, getStateName, isCountryWithStates } from '../../core/countries';
+import { type TaxCountryHook } from '../hooks/useTaxCountry';
+import { CountriesDropdown, useCountries } from './CountriesDropdown';
+import { InputWithSelectorPrefix, WarningIcon } from './InputWithSelectorPrefix';
 
-function getStateName(countryCode: string, stateCode: string) {
-    const state = getStateList(countryCode).find(({ stateCode: code }) => code === stateCode);
-    return state?.stateName ?? '';
-}
+import './TaxCountrySelector.scss';
 
-export type OnBillingAddressChange = (billingAddress: BillingAddress) => void;
-
-interface HookProps {
-    onBillingAddressChange?: OnBillingAddressChange;
-    statusExtended?: Pick<PaymentMethodStatusExtended, 'CountryCode' | 'State'>;
-}
-
-interface HookResult {
-    selectedCountryCode: string;
-    setSelectedCountry: (countryCode: string) => void;
-    federalStateCode: string | null;
-    setFederalStateCode: (federalStateCode: string) => void;
-}
-
-export const useTaxCountry = (props: HookProps): HookResult => {
-    const billingAddress: BillingAddress = props.statusExtended
-        ? ({
-              CountryCode: props.statusExtended.CountryCode,
-              State: props.statusExtended.State,
-          } satisfies BillingAddress)
-        : DEFAULT_TAX_BILLING_ADDRESS;
-
-    const [taxBillingAddress, setTaxBillingAddress] = useState<BillingAddress>(billingAddress);
-    const previousBillingAddressRef = useRef(billingAddress);
-
-    useEffect(() => {
-        const previousValue = previousBillingAddressRef.current;
-        const statusChanged =
-            previousValue?.CountryCode !== billingAddress.CountryCode || previousValue?.State !== billingAddress.State;
-
-        if (statusChanged) {
-            setTaxBillingAddress(billingAddress);
-            props.onBillingAddressChange?.(billingAddress);
-            previousBillingAddressRef.current = billingAddress;
-        }
-    }, [billingAddress.CountryCode, billingAddress.State]);
-
-    const selectedCountryCode = taxBillingAddress.CountryCode;
-    const federalStateCode = taxBillingAddress.State ?? null;
-
-    const setSelectedCountry = (CountryCode: string) => {
-        const State = countriesWithStates.includes(CountryCode) ? getStateList(CountryCode)[0].stateCode : null;
-        const newValue = {
-            CountryCode,
-            State,
-        };
-        setTaxBillingAddress(newValue);
-        props.onBillingAddressChange?.(newValue);
-    };
-
-    const setFederalStateCode = (federalStateCode: string) => {
-        const newValue = {
-            CountryCode: taxBillingAddress.CountryCode,
-            State: federalStateCode,
-        };
-        setTaxBillingAddress(newValue);
-        props.onBillingAddressChange?.(newValue);
-    };
-
-    return {
-        selectedCountryCode,
-        setSelectedCountry,
-        federalStateCode,
-        setFederalStateCode,
-    };
-};
-
-export type TaxCountrySelectorProps = HookResult & {
+export type TaxCountrySelectorProps = TaxCountryHook & {
     className?: string;
     labelClassName?: string;
     buttonClassName?: string;
@@ -92,48 +25,75 @@ export type TaxCountrySelectorProps = HookResult & {
     forceExpand?: boolean;
 };
 
+type StateSelectorProps = {
+    onStateChange: (stateCode: string) => void;
+    federalStateCode: string | null;
+    selectedCountryCode: string;
+} & Omit<SearcheableSelectProps<string>, 'children'>;
+
+const StateSelector = ({ onStateChange, federalStateCode, selectedCountryCode, ...rest }: StateSelectorProps) => {
+    const states = useMemo(() => getStateList(selectedCountryCode), [selectedCountryCode]);
+
+    const props: SearcheableSelectProps<string> = {
+        onChange: ({ value: stateCode }: SelectChangeEvent<string>) => onStateChange?.(stateCode),
+        value: federalStateCode ?? '',
+        id: 'tax-state',
+        placeholder: c('Placeholder').t`Select state`,
+        children: states.map(({ stateName, stateCode }) => {
+            return (
+                <Option key={stateCode} value={stateCode} title={stateName} data-testid={`state-${stateCode}`}>
+                    {stateName}
+                </Option>
+            );
+        }),
+        ...rest,
+    };
+
+    return <SearchableSelect {...props} data-testid="tax-state-dropdown" />;
+};
+
 export const TaxCountrySelector = ({
     selectedCountryCode,
     setSelectedCountry,
     setFederalStateCode,
     federalStateCode,
+    setZipCode,
+    zipCode,
     className,
     labelClassName,
     buttonClassName,
     spacingClassName = 'pt-1 mb-1',
+    billingAddressStatus,
+    billingAddressErrorMessage,
+    zipCodeBackendValid,
 }: TaxCountrySelectorProps) => {
-    const showStateCode = countriesWithStates.includes(selectedCountryCode);
+    const showStateCode = isCountryWithStates(selectedCountryCode);
+    const showZipCode = showStateCode;
 
-    // If there is no state selection, then we collapse the component by default
-    // if there is state selection and state **is** specified, then we **collapse** the component by default
-    // If there is state selection and state **is not** specified, then we **expand** the component by default
-    const initialCollapsedState: boolean = !showStateCode || (showStateCode && !!federalStateCode);
+    const [collapsed, setCollapsed] = useState(true);
 
-    const [collapsed, setCollapsed] = useState(initialCollapsedState);
-    const { getCountryByCode } = useCountries();
-    const selectedCountry = getCountryByCode(selectedCountryCode);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-    const { valid: billingAddressValid, reason: billingAddressInvalidReason } = getBillingAddressStatus({
-        CountryCode: selectedCountryCode,
-        State: federalStateCode,
-    });
-
-    const [showTooltip, setShowTooltip] = useState(false);
     useEffect(() => {
-        let timeout: any;
-        if (!billingAddressValid) {
-            timeout = setTimeout(() => {
-                setShowTooltip(true);
-            }, 2000);
-        } else {
-            setShowTooltip(false);
+        if (!collapsed) {
+            return;
         }
 
-        return () => {
-            clearTimeout(timeout);
-        };
-    }, [billingAddressValid]);
+        setCollapsed(
+            // If there is no state selection, then we collapse the component by default
+            !!selectedCountryCode &&
+                // if there is state selection and state **is** specified, then we **collapse** the component by default
+                // If there is state selection and state **is not** specified, then we **expand** the component by default
+                (!showStateCode || !!federalStateCode) &&
+                // If there is ZIP code selection and zip code **is not** specified, then we **expand** the component by default
+                (!showZipCode || !!zipCode) &&
+                // If the billing address is invalid, then we **expand** the component by default
+                billingAddressStatus.valid
+        );
+    }, [selectedCountryCode, showStateCode, federalStateCode, showZipCode, zipCode, billingAddressStatus.valid]);
+
+    const { getCountryByCode } = useCountries();
+    const selectedCountry = getCountryByCode(selectedCountryCode);
+    const [isCountriesDropdownOpen, setIsCountriesDropdownOpen] = useState(false);
+    const [isStatesDropdownOpen, setIsStatesDropdownOpen] = useState(false);
 
     const collapsedText = (() => {
         if (selectedCountry?.label) {
@@ -142,38 +102,65 @@ export const TaxCountrySelector = ({
                 text += `, ${getStateName(selectedCountryCode, federalStateCode)}`;
             }
 
+            if (zipCode && showZipCode) {
+                text += `, ${zipCode}`;
+            }
+
             return text;
         }
 
         return c('Action').t`Select country`;
     })();
 
-    const tooltipText = (() => {
-        if (billingAddressInvalidReason === 'missingCountry') {
-            return c('Payments').t`Please select billing country`;
-        }
+    const showBoth = showStateCode && showZipCode;
 
-        if (billingAddressInvalidReason === 'missingState') {
-            // translator: "state" as in "United States of America"
-            return c('Payments').t`Please select billing state`;
-        }
+    const [postalCodeInputDirty, setPostalCodeInputDirty] = useState(false);
 
-        return null;
-    })();
+    const zipCodeInvalid = // show the error message if the ZIP code was checked on the backend and it's invalid
+        // show the error message if the local validation failed - but only if the input is dirty (interacted with).
+        !zipCodeBackendValid ||
+        (postalCodeInputDirty &&
+            (billingAddressStatus.reason === 'missingZipCode' || billingAddressStatus.reason === 'invalidZipCode'));
+
+    const countryInvalid = billingAddressStatus.reason === 'missingCountry';
+    const stateInvalid = billingAddressStatus.reason === 'missingState';
+
+    const shouldShowError =
+        // hide the error message if user opens a dropdown to change country or state
+        !isCountriesDropdownOpen && !isStatesDropdownOpen && (zipCodeInvalid || countryInvalid || stateInvalid);
+
+    const commonZipProps = {
+        value: zipCode ?? '',
+        onChange: (e: ChangeEvent<HTMLInputElement>) => setZipCode(e.target.value),
+        placeholder: selectedCountryCode === 'US' ? c('Placeholder').t`ZIP code` : c('Placeholder').t`Postal code`,
+        'data-testid': 'tax-zip-code',
+        error: shouldShowError,
+        className: 'zip-input',
+        onBlur: () => setPostalCodeInputDirty(true),
+    };
+
+    const commonStateProps = {
+        onStateChange: setFederalStateCode,
+        federalStateCode: federalStateCode,
+        selectedCountryCode: selectedCountryCode,
+        isOpen: isStatesDropdownOpen,
+        onOpen: () => setIsStatesDropdownOpen(true),
+        onClose: () => setIsStatesDropdownOpen(false),
+    };
 
     return (
-        <div className={clsx('field-two-container', className)}>
+        <div className={clsx('field-two-container tax-country-selector', className)}>
             <div className={spacingClassName} data-testid="billing-country">
-                <Tooltip title={tooltipText} isOpen={showTooltip && !!tooltipText}>
-                    <span className={clsx('text-bold', labelClassName)}>{c('Payments').t`Billing Country`}</span>
-                </Tooltip>
+                <span className="text-bold">{c('Payments').t`Billing Country`}</span>
                 {collapsed && (
                     <>
                         <span className={clsx('text-bold mr-2', labelClassName)}>:</span>
                         <InlineLinkButton
                             onClick={() => {
                                 setCollapsed(false);
-                                setIsDropdownOpen(true);
+                                if (!isCountryWithStates(selectedCountryCode)) {
+                                    setIsCountriesDropdownOpen(true);
+                                }
                             }}
                             data-testid="billing-country-collapsed"
                             className={buttonClassName}
@@ -184,45 +171,39 @@ export const TaxCountrySelector = ({
                 )}
             </div>
             {!collapsed && (
-                <CountryStateSelector
-                    selectedCountryCode={selectedCountryCode}
-                    setSelectedCountry={setSelectedCountry}
-                    federalStateCode={federalStateCode}
-                    setFederalState={setFederalStateCode}
-                    isDropdownOpen={isDropdownOpen}
-                />
+                <>
+                    <CountriesDropdown
+                        selectedCountryCode={selectedCountryCode}
+                        onChange={setSelectedCountry}
+                        id="tax-country"
+                        isOpen={isCountriesDropdownOpen}
+                        onOpen={() => setIsCountriesDropdownOpen(true)}
+                        onClose={() => setIsCountriesDropdownOpen(false)}
+                        data-testid="tax-country-dropdown"
+                        className={clsx('country-selector', showBoth && 'country-selector--triplet')}
+                    />
+                    {showStateCode && !showBoth ? <StateSelector {...commonStateProps} /> : null}
+                    {showZipCode && !showBoth ? <Input {...commonZipProps} /> : null}
+                    {showBoth ? (
+                        <InputWithSelectorPrefix
+                            prefix={<StateSelector {...commonStateProps} unstyled className="zip ml-4 mr-1" />}
+                            {...commonZipProps}
+                            className={clsx(commonZipProps.className, showBoth && 'zip-input--triplet')}
+                            showError={false}
+                        />
+                    ) : null}
+                    <div className="error-container mt-1 text-semibold text-sm flex">
+                        {billingAddressErrorMessage && (
+                            <>
+                                <WarningIcon className="mr-1" />
+                                <span data-testid="billing-country-error">{billingAddressErrorMessage}</span>
+                            </>
+                        )}
+                    </div>
+                </>
             )}
         </div>
     );
 };
 
-export const WrappedTaxCountrySelector = ({
-    className,
-    labelClassName,
-    buttonClassName,
-    spacingClassName,
-    onBillingAddressChange,
-    statusExtended,
-}: {
-    className?: string;
-    labelClassName?: string;
-    buttonClassName?: string;
-    spacingClassName?: string;
-    onBillingAddressChange?: OnBillingAddressChange;
-    statusExtended?: Pick<PaymentMethodStatusExtended, 'CountryCode' | 'State'>;
-}) => {
-    const taxCountryHook = useTaxCountry({
-        onBillingAddressChange,
-        statusExtended,
-    });
-
-    return (
-        <TaxCountrySelector
-            {...taxCountryHook}
-            className={className}
-            labelClassName={labelClassName}
-            buttonClassName={buttonClassName}
-            spacingClassName={spacingClassName}
-        />
-    );
-};
+export default TaxCountrySelector;

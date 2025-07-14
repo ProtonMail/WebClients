@@ -82,7 +82,7 @@ export const getIsBundleB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
 };
 
 export const getFreeSubscriptionData = (
-    subscriptionData: Omit<SubscriptionData, 'checkResult' | 'planIDs' | 'payment'>
+    subscriptionData: Omit<SubscriptionData, 'checkResult' | 'planIDs' | 'payment' | 'zipCodeValid'>
 ): SubscriptionData => {
     return {
         ...subscriptionData,
@@ -93,6 +93,7 @@ export const getFreeSubscriptionData = (
         ),
         planIDs: {},
         payment: undefined,
+        zipCodeValid: true,
     };
 };
 
@@ -146,6 +147,7 @@ export const getSubscriptionData = async (
         planIDs: planIDs || {},
         skipUpsell: options.skipUpsell ?? false,
         billingAddress: options.billingAddress,
+        zipCodeValid: true,
     };
 };
 
@@ -736,6 +738,7 @@ export const getOptimisticPlanCardSubscriptionData = ({
             PeriodEnd: 0,
         },
         billingAddress,
+        zipCodeValid: true,
     };
 };
 

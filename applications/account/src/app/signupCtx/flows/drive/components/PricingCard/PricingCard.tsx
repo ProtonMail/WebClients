@@ -3,11 +3,9 @@ import type { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 
 import { DriveLogo, Price, SkeletonLoader, getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components';
-import type { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { IcBagPercentFilled } from '@proton/icons';
 import type { Currency } from '@proton/payments';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
-import { WrappedTaxCountrySelector } from '@proton/payments/ui';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Tax } from '@proton/shared/lib/interfaces';
@@ -146,13 +144,7 @@ const PricingHeader = () => {
     );
 };
 
-const PricingFooter = ({
-    step,
-    paymentFacade,
-}: {
-    step: PricingStep;
-    paymentFacade?: ReturnType<typeof usePaymentFacade>;
-}) => {
+const PricingFooter = ({ step }: { step: PricingStep }) => {
     const payments = usePaymentOptimistic();
     const { uiData, selectedPlan } = payments;
     const { checkout } = uiData;
@@ -163,17 +155,6 @@ const PricingFooter = ({
     const showTaxRow = step === 'payment';
     const taxRow = showTaxRow && (
         <TaxRow tax={payments.checkResult?.Taxes?.[0]} currency={payments.checkResult?.Currency} />
-    );
-
-    const showTaxCountrySelector = step === 'payment' && paymentFacade?.showTaxCountry;
-    const taxCountrySelector = showTaxCountrySelector && (
-        <WrappedTaxCountrySelector
-            labelClassName="hidden"
-            buttonClassName="color-norm"
-            spacingClassName=""
-            statusExtended={paymentFacade.statusExtended}
-            onBillingAddressChange={payments.selectBillingAddress}
-        />
     );
 
     const showBillingCycle = (isPaidPlan && checkout.cycle !== CYCLE.MONTHLY) || step === 'payment';
@@ -239,7 +220,6 @@ const PricingFooter = ({
         <footer className="border-top border-weak">
             <div className="flex flex-column px-8 pt-5 gap-2">
                 {taxRow}
-                {taxCountrySelector}
                 {billingCycle}
                 {discount}
                 {divider}
@@ -249,13 +229,7 @@ const PricingFooter = ({
     );
 };
 
-export const PricingCard = ({
-    step,
-    paymentFacade,
-}: {
-    step: PricingStep;
-    paymentFacade?: ReturnType<typeof usePaymentFacade>;
-}) => {
+export const PricingCard = ({ step }: { step: PricingStep }) => {
     const payments = usePaymentOptimistic();
     const { uiData, selectedPlan } = payments;
     const { checkout } = uiData;
@@ -293,7 +267,7 @@ export const PricingCard = ({
             <div className="pricing-card-inner fade-in w-full flex flex-column shadow-raised gap-8 py-8 bg-norm">
                 <PricingHeader />
                 <PricingFeatures />
-                <PricingFooter step={step} paymentFacade={paymentFacade} />
+                <PricingFooter step={step} />
             </div>
             {renewalNotice}
         </section>

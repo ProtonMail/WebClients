@@ -5,11 +5,10 @@ import { c } from 'ttag';
 import { Banner, BannerVariants, Button } from '@proton/atoms';
 import Label from '@proton/components/components/label/Label';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import { CountriesDropdown } from '@proton/payments/ui';
+import { ChargebeeIframe, CountriesDropdown } from '@proton/payments/ui';
+import { type ChargebeeWrapperProps } from '@proton/payments/ui';
 
 import { type ChargebeeDirectDebitProcessorHook } from '../react-extensions/useSepaDirectDebit';
-import { ChargebeeIframe } from './ChargebeeIframe';
-import { type ChargebeeWrapperProps } from './ChargebeeWrapper';
 import { SepaAuthorizationText } from './SepaAuthorizationText';
 
 export interface DirectDebitProps extends ChargebeeWrapperProps {

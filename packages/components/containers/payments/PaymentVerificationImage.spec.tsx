@@ -6,18 +6,15 @@ import type { CardPayment, PaypalPayment } from '@proton/payments';
 import PaymentVerificationImage from './PaymentVerificationImage';
 
 describe('PaymentVerificationImage', () => {
-    it.each([PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT])(
-        'should render paypal image. Payment method: %s',
-        (Type) => {
-            const payment: PaypalPayment = {
-                Type: Type as any,
-            };
+    it.each([PAYMENT_METHOD_TYPES.PAYPAL])('should render paypal image. Payment method: %s', (Type) => {
+        const payment: PaypalPayment = {
+            Type: Type as any,
+        };
 
-            const { getByAltText } = render(<PaymentVerificationImage payment={payment} type={Type as any} />);
+        const { getByAltText } = render(<PaymentVerificationImage payment={payment} type={Type as any} />);
 
-            expect(getByAltText('PayPal')).toBeDefined();
-        }
-    );
+        expect(getByAltText('PayPal')).toBeDefined();
+    });
 
     it('should render Paypal if payment object is empty but the type is defined', () => {
         const { getByAltText } = render(

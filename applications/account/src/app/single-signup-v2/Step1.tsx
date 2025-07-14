@@ -22,6 +22,7 @@ import { useIsChargebeeEnabled } from '@proton/components/containers/payments/Pa
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
+import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
@@ -51,7 +52,7 @@ import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helper
 import { getPricingFromPlanIDs, getTotalFromPricing, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { Audience, SubscriptionMode } from '@proton/shared/lib/interfaces';
+import { Audience, ChargebeeEnabled, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin-logo.svg';
 import { useFlag } from '@proton/unleash';
@@ -186,6 +187,8 @@ const Step1 = ({
     const [checkTrialResult, setCheckTrialResult] = useState<CheckTrialPriceResult | undefined>();
     const [checkingTrial, withCheckingTrial] = useLoading();
 
+    const [isFormValid, setIsFormValid] = useState(false);
+
     const [upsellDriveTrialModal, setUpsellDriveTrialModal, renderUpsellDriveTrialModal] = useModalState();
     const [upsellPassTrialModal, setUpsellPassTrialModal, renderUpsellPassTrialModal] = useModalState();
     const [loadingSignup, withLoadingSignup] = useLoading();
@@ -277,13 +280,24 @@ const Step1 = ({
                         checkResult,
                         billingAddress: optimistic.billingAddress,
                         trial: optimistic.trial,
+                        zipCodeValid: true,
                     },
                     optimistic: {},
                 }));
             }
         } catch (e) {
             if (latestRef.current === latest) {
-                handleError(e);
+                if (e instanceof InvalidZipCodeError) {
+                    setModel((old) => ({
+                        ...old,
+                        subscriptionData: {
+                            ...old.subscriptionData,
+                            zipCodeValid: false,
+                        },
+                    }));
+                } else {
+                    handleError(e);
+                }
                 // Reset any optimistic state on failures
                 setModel((old) => ({
                     ...old,
@@ -1277,6 +1291,7 @@ const Step1 = ({
                                                                   }
                                                                 : accountStepPaymentRef.current?.process
                                                         }
+                                                        onFormValidChange={setIsFormValid}
                                                         footer={(details) => {
                                                             return (
                                                                 <>
@@ -1454,6 +1469,7 @@ const Step1 = ({
                                 onValidate={async () => {
                                     return accountDetailsRef.current?.validate() ?? true;
                                 }}
+                                isFormValid={isFormValid}
                                 withLoadingSignup={withLoadingSignup}
                                 onBillingAddressChange={(billingAddress: BillingAddress) => {
                                     handleOptimistic({ billingAddress });
@@ -1461,6 +1477,13 @@ const Step1 = ({
                                 setCurrencySelectorDisabled={(disableCurrencySelector) =>
                                     setModel((old) => ({ ...old, disableCurrencySelector }))
                                 }
+                                onVatNumberChange={(vatNumber) => {
+                                    setModel((model) => ({
+                                        ...model,
+                                        subscriptionData: { ...model.subscriptionData, vatNumber },
+                                    }));
+                                }}
+                                paymentsApi={getPaymentsApi(silentApi, ChargebeeEnabled.CHARGEBEE_FORCED)}
                             />
                         </BoxContent>
                     </Box>

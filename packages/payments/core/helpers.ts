@@ -8,7 +8,7 @@ import { type ADDON_NAMES, DEFAULT_CURRENCY, PLANS, signupFlows } from './consta
 import type {
     Currency,
     Invoice,
-    PaymentMethodFlows,
+    PaymentMethodFlow,
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
     PlainPaymentMethodType,
@@ -28,7 +28,6 @@ export function isChargebeePaymentMethod(paymentMethodType: PlainPaymentMethodTy
     switch (paymentMethodType) {
         case 'card':
         case 'paypal':
-        case 'paypal-credit':
         case 'bitcoin':
         case 'cash':
         case 'token':
@@ -273,7 +272,7 @@ export function extendStatus(status: PaymentMethodStatus | PaymentMethodStatusEx
     return status;
 }
 
-export function isSignupFlow(flow: PaymentMethodFlows): boolean {
+export function isSignupFlow(flow: PaymentMethodFlow): boolean {
     return signupFlows.includes(flow);
 }
 

@@ -9,10 +9,8 @@ import {
     type Breakpoints,
     CurrencySelector,
     Icon,
-    PayPalButton,
     Price,
     SkeletonLoader,
-    StyledPayPalButton,
     Toggle,
     getCheckoutRenewNoticeTextFromCheckResult,
     isBlackFridayPeriod as getIsBlackFridayPeriod,
@@ -27,10 +25,10 @@ import {
     getProtectDevices,
     getStreaming,
 } from '@proton/components/containers/payments/features/vpn';
-import { ApplePayButton, ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
+import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -47,14 +45,13 @@ import {
     type Plan,
     type PlanIDs,
     type StrictPlan,
-    getBillingAddressStatus,
     getHas2024OfferCoupon,
-    getIsVpnPlan,
     getPaymentsVersion,
     getPlanFromPlanIDs,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
@@ -233,8 +230,6 @@ const Step1 = ({
     const [changingCurrency, withChangingCurrency] = useLoading();
     const { getAvailableCurrencies } = useCurrencies();
 
-    const disablePayButton = Object.keys(model.optimistic).length > 0 || loadingPaymentDetails;
-
     const { vpnServersCountData, plansMap } = model;
     const initialLoading = model.loadingDependencies;
 
@@ -357,6 +352,7 @@ const Step1 = ({
                     planIDs: newPlanIDs,
                     checkResult,
                     billingAddress: newBillingAddress,
+                    zipCodeValid: true,
                 },
                 optimistic: {},
             }));
@@ -366,6 +362,16 @@ const Step1 = ({
                 ...old,
                 optimistic: {},
             }));
+
+            if (e instanceof InvalidZipCodeError) {
+                setModel((old) => ({
+                    ...old,
+                    subscriptionData: {
+                        ...old.subscriptionData,
+                        zipCodeValid: false,
+                    },
+                }));
+            }
         }
     };
 
@@ -385,7 +391,7 @@ const Step1 = ({
             dimensions: { currency: currency },
         });
 
-        withChangingCurrency(
+        void withChangingCurrency(
             onCurrencyChange(currency)
                 .then(() => {
                     metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
@@ -437,6 +443,9 @@ const Step1 = ({
     const handleChangeBillingAddress = (billingAddress: BillingAddress) => {
         void handleOptimistic({ billingAddress });
     };
+
+    const ghostPayments = Object.keys(model.optimistic).length > 0 || loadingPaymentDetails;
+    const disablePayButton = ghostPayments;
 
     const handleCompletion = async (subscriptionData: SubscriptionData) => {
         const accountDataWithoutPassword = await accountDetailsRef.current?.data();
@@ -527,7 +536,7 @@ const Step1 = ({
                 });
 
                 let paymentType: 'cc' | 'pp';
-                if (sourceType === PAYMENT_METHOD_TYPES.PAYPAL || sourceType === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
+                if (sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
                     paymentType = 'pp';
                 } else {
                     paymentType = 'cc';
@@ -557,6 +566,27 @@ const Step1 = ({
         },
     });
 
+    const taxCountry = useTaxCountry({
+        onBillingAddressChange: handleChangeBillingAddress,
+        statusExtended: model.paymentMethodStatusExtended,
+        zipCodeBackendValid: model.subscriptionData.zipCodeValid,
+        previosValidZipCode: model.subscriptionData.billingAddress.ZipCode,
+        paymentFacade,
+    });
+
+    const vatNumber = useVatNumber({
+        selectedPlanName: selectedPlan?.Name,
+        onChange: (vatNumber) =>
+            setModel((model) => ({
+                ...model,
+                subscriptionData: {
+                    ...model.subscriptionData,
+                    vatNumber,
+                },
+            })),
+        taxCountry,
+    });
+
     const price = (
         <Price key="price" currency={options.currency}>
             {options.checkResult.AmountDue}
@@ -569,7 +599,7 @@ const Step1 = ({
         return getLocaleTermsURL(APPS.PROTONVPN_SETTINGS);
     })();
     const termsAndConditions = (
-        <Href key="terms" href={termsHref}>
+        <Href key="terms" href={termsHref} className="color-weak">
             {
                 // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
                 c('new_plans: signup').t`terms and conditions`
@@ -833,10 +863,6 @@ const Step1 = ({
                     return 'pay_pp';
                 }
 
-                if (processor?.meta.type === 'paypal-credit') {
-                    return 'pay_pp_no_cc';
-                }
-
                 return 'pay_cc';
             })();
             measurePaySubmit(telemetryType);
@@ -971,8 +997,6 @@ const Step1 = ({
         );
     };
 
-    const hasSomeVpnPlan = getIsVpnPlan(options.plan.Name);
-
     const showCycleAndSelectors =
         !hasSelectedFree && (mode === 'pricing' || mode === 'vpn-pass-promotion') && checkoutMappingPlanIDs;
 
@@ -992,8 +1016,9 @@ const Step1 = ({
         />
     );
 
-    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue) || isTrial;
     const loadingPaymentsForm = model.loadingDependencies;
+
+    const [isFormValid, setIsFormValid] = useState(false);
 
     return (
         <Layout
@@ -1189,6 +1214,7 @@ const Step1 = ({
                                             measure={measure}
                                             accountStepDetailsRef={accountDetailsRef}
                                             disableChange={loadingSignup}
+                                            onFormValidChange={setIsFormValid}
                                             onSubmit={
                                                 hasSelectedFree
                                                     ? () => {
@@ -1332,120 +1358,76 @@ const Step1 = ({
                                                 <div className="border-bottom border-weak my-6" />
                                             </>
                                         )}
-                                        {renderingPaymentsWrapper ? (
-                                            <PaymentWrapper
-                                                {...paymentFacade}
-                                                disabled={loadingSignup}
-                                                hideFirstLabel
-                                                noMaxWidth
-                                                hasSomeVpnPlan={hasSomeVpnPlan}
-                                                billingAddressStatus={getBillingAddressStatus(
-                                                    model.subscriptionData.billingAddress
-                                                )}
-                                                isTrial={isTrial}
-                                                onCurrencyChange={handleChangeCurrency}
-                                            />
-                                        ) : (
-                                            <div className="mb-4">
-                                                {c('Info').t`No payment is required at this time.`}
-                                            </div>
-                                        )}
+                                        <PaymentWrapper
+                                            {...paymentFacade}
+                                            hideFirstLabel
+                                            noMaxWidth
+                                            taxCountry={taxCountry}
+                                            vatNumber={vatNumber}
+                                            startTrial={isTrial}
+                                            onCurrencyChange={handleChangeCurrency}
+                                        />
                                         {(() => {
                                             if (loadingPaymentsForm) {
                                                 return;
                                             }
-                                            if (
-                                                paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.PAYPAL &&
-                                                options.checkResult.AmountDue > 0
-                                            ) {
-                                                return (
-                                                    <div className="flex flex-column gap-2">
-                                                        <StyledPayPalButton
-                                                            paypal={paymentFacade.paypal}
-                                                            amount={paymentFacade.amount}
-                                                            currency={paymentFacade.currency}
-                                                            loading={loadingSignup}
-                                                            onClick={() => process(paymentFacade.paypal)}
-                                                        />
-                                                        {!hasSomeVpnPlan && (
-                                                            <PayPalButton
-                                                                id="paypal-credit"
-                                                                shape="ghost"
-                                                                color="norm"
-                                                                paypal={paymentFacade.paypalCredit}
-                                                                disabled={loadingSignup}
-                                                                amount={paymentFacade.amount}
-                                                                currency={paymentFacade.currency}
-                                                                onClick={() => process(paymentFacade.paypalCredit)}
-                                                            >
-                                                                {c('Link').t`PayPal without credit card`}
-                                                            </PayPalButton>
-                                                        )}
-                                                    </div>
-                                                );
-                                            }
 
-                                            if (
-                                                paymentFacade.selectedMethodType ===
-                                                    PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL &&
-                                                options.checkResult.AmountDue > 0
-                                            ) {
-                                                return (
-                                                    <ChargebeePaypalWrapper
-                                                        chargebeePaypal={paymentFacade.chargebeePaypal}
-                                                        iframeHandles={paymentFacade.iframeHandles}
-                                                    />
-                                                );
-                                            }
+                                            const guaranteeElement = hasGuarantee ? (
+                                                <div className="text-center color-success my-4">
+                                                    <Guarantee />
+                                                </div>
+                                            ) : null;
 
-                                            if (
-                                                paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY &&
-                                                options.checkResult.AmountDue > 0
-                                            ) {
-                                                return (
-                                                    <ApplePayButton
-                                                        applePay={paymentFacade.applePay}
-                                                        iframeHandles={paymentFacade.iframeHandles}
-                                                    />
-                                                );
-                                            }
+                                            const tncElement = (
+                                                <div className="mt-4 text-sm color-weak text-center">
+                                                    {isTrial
+                                                        ? // translator: Full sentence "By clicking on "Try", you agree to our terms and conditions."
+                                                          c('b2b_trials_2025_Info')
+                                                              .jt`By clicking on "Try", you agree to our ${termsAndConditions}.`
+                                                        : // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
+                                                          c('new_plans: signup')
+                                                              .jt`By clicking on "Pay", you agree to our ${termsAndConditions}.`}
+                                                </div>
+                                            );
 
                                             return (
-                                                <>
-                                                    <Button
-                                                        type="submit"
-                                                        size="large"
-                                                        loading={loadingSignup}
-                                                        disabled={disablePayButton}
-                                                        color="norm"
-                                                        data-testid="pay"
-                                                        fullWidth
-                                                    >
-                                                        {(() => {
-                                                            if (isTrial) {
-                                                                return c('Action').t`Try for free`;
-                                                            }
-                                                            return options.checkResult.AmountDue > 0
-                                                                ? c('Action').jt`Pay ${price}`
-                                                                : c('Action').t`Confirm`;
-                                                        })()}
-                                                    </Button>
-                                                    {hasGuarantee && (
-                                                        <div className="text-center color-success my-4">
-                                                            <Guarantee />
-                                                        </div>
-                                                    )}
-                                                    <Alert3ds />
-                                                    <div className="mt-4 text-sm color-weak text-center">
-                                                        {isTrial
-                                                            ? // translator: Full sentence "By clicking on "Try", you agree to our terms and conditions."
-                                                              c('b2b_trials_2025_Info')
-                                                                  .jt`By clicking on "Try", you agree to our ${termsAndConditions}.`
-                                                            : // translator: Full sentence "By clicking on "Pay", you agree to our terms and conditions."
-                                                              c('new_plans: signup')
-                                                                  .jt`By clicking on "Pay", you agree to our ${termsAndConditions}.`}
-                                                    </div>
-                                                </>
+                                                <PayButton
+                                                    size="large"
+                                                    color="norm"
+                                                    fullWidth
+                                                    taxCountry={taxCountry}
+                                                    paymentFacade={paymentFacade}
+                                                    loading={loadingSignup}
+                                                    disabled={disablePayButton}
+                                                    suffix={(type) => {
+                                                        if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
+                                                            return (
+                                                                <>
+                                                                    {guaranteeElement}
+                                                                    <Alert3ds />
+                                                                    {tncElement}
+                                                                </>
+                                                            );
+                                                        }
+
+                                                        return (
+                                                            <>
+                                                                {guaranteeElement}
+                                                                {tncElement}
+                                                            </>
+                                                        );
+                                                    }}
+                                                    formInvalid={!isFormValid}
+                                                >
+                                                    {(() => {
+                                                        if (isTrial) {
+                                                            return c('Action').t`Try for free`;
+                                                        }
+                                                        return options.checkResult.AmountDue > 0
+                                                            ? c('Action').jt`Pay ${price}`
+                                                            : c('Action').t`Confirm`;
+                                                    })()}
+                                                </PayButton>
                                             );
                                         })()}
                                     </form>
@@ -1459,10 +1441,8 @@ const Step1 = ({
                                             model={model}
                                             options={options}
                                             actualCheckout={actualCheckout}
-                                            loadingPaymentDetails={disablePayButton}
-                                            onBillingAddressChange={handleChangeBillingAddress}
-                                            showInclusiveTax={paymentFacade.showInclusiveTax}
-                                            showTaxCountry={paymentFacade.showTaxCountry}
+                                            loadingPaymentDetails={ghostPayments}
+                                            paymentFacade={paymentFacade}
                                             isB2bPlan={isB2bPlan}
                                             upsellToggle={getUpsellToggle()}
                                             planInformation={(() => {

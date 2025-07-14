@@ -7,7 +7,11 @@ import {
     miniSerializeError,
 } from '@reduxjs/toolkit';
 
-import { type PaymentMethodStatusExtended, getPaymentMethodStatus } from '@proton/payments';
+import {
+    type PaymentMethodStatusExtended,
+    getPaymentMethodStatus,
+    normalizePaymentMethodStatus,
+} from '@proton/payments';
 import { type ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     cacheHelper,
@@ -87,8 +91,9 @@ const thunk = ({ api: apiOverride }: { api?: Api } = {}): ThunkAction<
 
                 dispatch(slice.actions.pending());
                 const value = await getPaymentMethodStatus(api);
-                dispatch(slice.actions.fulfilled(value));
-                return value;
+                const normalizedPaymentStatus = normalizePaymentMethodStatus(value);
+                dispatch(slice.actions.fulfilled(normalizedPaymentStatus));
+                return normalizedPaymentStatus;
             } catch (error) {
                 dispatch(slice.actions.rejected(miniSerializeError(error)));
                 throw error;

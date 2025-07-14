@@ -146,7 +146,7 @@ const CustomStep = ({
                         (accountData?.signupType === SignupType.External && getLocalPart(accountData.email)) ||
                         ''
                     }
-                    planName={planName}
+                    planTitle={planName}
                     onSubmit={async ({ displayName }) => {
                         const validateFlow = createFlow();
                         try {

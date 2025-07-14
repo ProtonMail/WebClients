@@ -3,31 +3,33 @@ import { useEffect, useImperativeHandle, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Alert3ds, PayPalButton, StyledPayPalButton } from '@proton/components';
+import { Alert3ds } from '@proton/components';
 import { changeDefaultPaymentMethodBeforePayment } from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import { ApplePayButton, ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import type { WithLoading } from '@proton/hooks/useLoading';
-import type { ExtendedTokenPayment, PaymentMethodFlows, PaymentProcessorHook, TokenPayment } from '@proton/payments';
+import type {
+    ExtendedTokenPayment,
+    PaymentMethodFlow,
+    PaymentProcessorHook,
+    PaymentsApi,
+    TokenPayment,
+} from '@proton/payments';
 import {
     PAYMENT_METHOD_TYPES,
     type Plan,
-    getBillingAddressStatus,
     getIsB2BAudienceFromPlan,
-    getIsVpnPlan,
     getPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
-import { type OnBillingAddressChange } from '@proton/payments/ui';
+import { type OnBillingAddressChange, PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { APPS } from '@proton/shared/lib/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience, SubscriptionMode, isBilledUser } from '@proton/shared/lib/interfaces';
@@ -59,6 +61,7 @@ interface Props {
     loadingSignup: boolean;
     onPay: (payment: 'signup-token' | ExtendedTokenPayment, type: 'pp' | 'btc' | 'cc' | undefined) => Promise<void>;
     onValidate: () => Promise<boolean>;
+    isFormValid: boolean;
     isDarkBg?: boolean;
     withLoadingSignup: WithLoading;
     measure: Measure;
@@ -70,6 +73,8 @@ interface Props {
     showRenewalNotice: boolean;
     app: APP_NAMES;
     setCurrencySelectorDisabled: (disabled: boolean) => void;
+    paymentsApi: PaymentsApi;
+    onVatNumberChange: (vatNumber: string) => void;
 }
 
 const AccountStepPayment = ({
@@ -81,6 +86,7 @@ const AccountStepPayment = ({
     handleOptimistic,
     onPay,
     onValidate,
+    isFormValid,
     model,
     selectedPlan,
     options,
@@ -94,6 +100,8 @@ const AccountStepPayment = ({
     showRenewalNotice,
     app,
     setCurrencySelectorDisabled,
+    paymentsApi,
+    onVatNumberChange,
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -137,7 +145,7 @@ const AccountStepPayment = ({
 
     const isAuthenticated = !!model.session?.resumedSessionResult.UID;
 
-    const flow: PaymentMethodFlows = (() => {
+    const flow: PaymentMethodFlow = (() => {
         if (signupParameters.product === APPS.PROTONPASS) {
             return isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
         }
@@ -152,12 +160,12 @@ const AccountStepPayment = ({
     const user = model.session?.resumedSessionResult.User;
 
     const billingAddress = model.subscriptionData.billingAddress;
-    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+    const isTrial = model.subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
     const paymentFacade = usePaymentFacade({
-        checkResult: options.checkResult,
-        amount: options.checkResult.AmountDue,
-        currency: options.currency,
+        checkResult: model.subscriptionData.checkResult,
+        amount: model.subscriptionData.checkResult.AmountDue,
+        currency: model.subscriptionData.currency,
         selectedPlanName: selectedPlan.Name,
         flow,
         paymentMethods: model.session?.paymentMethods,
@@ -184,7 +192,7 @@ const AccountStepPayment = ({
 
                 const type = chargeablePaymentParameters.type;
                 let paymentType: 'cc' | 'pp' | 'btc';
-                if (type === PAYMENT_METHOD_TYPES.PAYPAL || type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
+                if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
                     paymentType = 'pp';
                 } else if (type === PAYMENT_METHOD_TYPES.BITCOIN || type === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
                     paymentType = 'btc';
@@ -228,6 +236,22 @@ const AccountStepPayment = ({
         [paymentFacade.selectedMethodType]
     );
 
+    const taxCountry = useTaxCountry({
+        onBillingAddressChange,
+        statusExtended: paymentFacade.statusExtended,
+        zipCodeBackendValid: subscriptionData.zipCodeValid,
+        previosValidZipCode: subscriptionData.billingAddress.ZipCode,
+        paymentFacade,
+    });
+
+    const vatNumber = useVatNumber({
+        isAuthenticated: !!model.session?.resumedSessionResult.UID,
+        paymentsApi,
+        selectedPlanName: selectedPlan?.Name,
+        onChange: onVatNumberChange,
+        taxCountry,
+    });
+
     const process = (processor: PaymentProcessorHook | undefined) => {
         async function run() {
             if (!processor) {
@@ -249,10 +273,6 @@ const AccountStepPayment = ({
                     return 'pay_pp';
                 }
 
-                if (processor?.meta.type === 'paypal-credit') {
-                    return 'pay_pp_no_cc';
-                }
-
                 if (processor?.meta.type === 'bitcoin') {
                     return 'pay_btc';
                 }
@@ -269,12 +289,12 @@ const AccountStepPayment = ({
                 const sentryError = getSentryError(error);
                 if (sentryError) {
                     const context = {
-                        currency: options.currency,
-                        amount: options.checkResult.AmountDue,
+                        currency: model.subscriptionData.currency,
+                        amount: model.subscriptionData.checkResult.AmountDue,
                         processorType: processor.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
-                        cycle: options.cycle,
+                        cycle: model.subscriptionData.cycle,
                         plan: selectedPlan,
                         planName: selectedPlan.Name,
                         paymentsVersion: getPaymentsVersion(),
@@ -312,8 +332,6 @@ const AccountStepPayment = ({
 
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlan.Name);
 
-    const hasSomeVpnPlan = getIsVpnPlan(selectedPlan.Name);
-
     const isSignupPass = paymentFacade.flow === 'signup-pass' || paymentFacade.flow === 'signup-pass-upgrade';
 
     const selectedMethodCard =
@@ -321,7 +339,6 @@ const AccountStepPayment = ({
         paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
     const showAlert3ds = selectedMethodCard && !isSignupPass;
 
-    const renderingPaymentsWrapper = model.loadingDependencies || Boolean(options.checkResult.AmountDue) || isTrial;
     const loadingPaymentsForm = model.loadingDependencies;
 
     const paymentsForm = (
@@ -371,140 +388,92 @@ const AccountStepPayment = ({
                         />
                     );
                 })()}
-                {renderingPaymentsWrapper ? (
-                    <PaymentWrapper
-                        {...paymentFacade}
-                        defaultMethod={defaultMethod} // needed for Bitcoin signup
-                        isAuthenticated={isAuthenticated} // needed for Bitcoin signup
-                        disabled={loadingSignup || loadingPaymentDetails}
-                        noMaxWidth
-                        hideFirstLabel
-                        hasSomeVpnPlan={hasSomeVpnPlan}
-                        billingAddressStatus={getBillingAddressStatus(billingAddress)}
-                        isTrial={isTrial}
-                        onCurrencyChange={(currency) => handleOptimistic({ currency })}
-                    />
-                ) : (
-                    <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
-                )}
+                <PaymentWrapper
+                    {...paymentFacade}
+                    defaultMethod={defaultMethod} // needed for Bitcoin signup
+                    isAuthenticated={isAuthenticated} // needed for Bitcoin signup
+                    noMaxWidth
+                    hideFirstLabel
+                    taxCountry={taxCountry}
+                    vatNumber={vatNumber}
+                    loadingBitcoin={loadingPaymentDetails}
+                    subscription={model.session?.subscription}
+                    startTrial={isTrial}
+                    onCurrencyChange={(currency) => handleOptimistic({ currency })}
+                />
                 {(() => {
                     if (loadingPaymentsForm) {
                         return;
                     }
-                    if (
-                        paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.PAYPAL &&
-                        options.checkResult.AmountDue > 0
-                    ) {
-                        return (
-                            <div className="flex flex-column gap-2">
-                                <StyledPayPalButton
-                                    paypal={paymentFacade.paypal}
-                                    amount={paymentFacade.amount}
-                                    currency={paymentFacade.currency}
-                                    loading={loadingSignup}
-                                    onClick={() => process(paymentFacade.paypal)}
-                                    pill
-                                />
-                                {!hasSomeVpnPlan && (
-                                    <PayPalButton
-                                        id="paypal-credit"
-                                        shape="ghost"
-                                        color="norm"
-                                        pill
-                                        paypal={paymentFacade.paypalCredit}
-                                        disabled={loadingSignup}
-                                        amount={paymentFacade.amount}
-                                        currency={paymentFacade.currency}
-                                        onClick={() => process(paymentFacade.paypalCredit)}
-                                    >
-                                        {c('Link').t`PayPal without credit card`}
-                                    </PayPalButton>
-                                )}
-                            </div>
-                        );
+
+                    const isBitcoin =
+                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN ||
+                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
+
+                    // Users who selected bitcoin, can't click "pay" to signup. They need to transfer BTC to the
+                    // displayed address, and then the subscription will be created.
+                    if (isBitcoin && isAuthenticated) {
+                        return null;
                     }
 
-                    if (
-                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL &&
-                        options.checkResult.AmountDue > 0
-                    ) {
-                        return (
-                            <ChargebeePaypalWrapper
-                                chargebeePaypal={paymentFacade.chargebeePaypal}
-                                iframeHandles={paymentFacade.iframeHandles}
-                            />
-                        );
-                    }
+                    const buttonProps = isBitcoin
+                        ? {
+                              type: 'button' as const,
+                              onClick: async () => {
+                                  measurePaySubmit('pay_btc');
+                                  const run = async () => {
+                                      if ((await onValidate()) && validatePayment()) {
+                                          return onPay('signup-token', undefined).catch(() => {
+                                              measurePayError('pay_btc');
+                                          });
+                                      }
+                                  };
+                                  withLoadingSignup(run()).catch(noop);
+                              },
+                          }
+                        : {};
 
-                    if (
-                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY &&
-                        options.checkResult.AmountDue > 0
-                    ) {
-                        return (
-                            <ApplePayButton
-                                applePay={paymentFacade.applePay}
-                                iframeHandles={paymentFacade.iframeHandles}
-                            />
-                        );
-                    }
-
-                    if (
-                        (paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN ||
-                            paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) &&
-                        options.checkResult.AmountDue > 0
-                    ) {
-                        if (isAuthenticated) {
-                            return null;
-                        }
-
-                        return (
-                            <Button
-                                type="button"
-                                size="large"
-                                loading={loadingSignup}
-                                color="norm"
-                                pill
-                                className="block mx-auto"
-                                onClick={async () => {
-                                    measurePaySubmit('pay_btc');
-                                    const run = async () => {
-                                        if ((await onValidate()) && validatePayment()) {
-                                            return onPay('signup-token', undefined).catch(() => {
-                                                measurePayError('pay_btc');
-                                            });
-                                        }
-                                    };
-                                    withLoadingSignup(run()).catch(noop);
-                                }}
-                            >
-                                {c('pass_signup_2023: Action').t`Continue with Bitcoin`}
-                            </Button>
-                        );
-                    }
+                    const guaranteeElement = (
+                        <div className="text-center color-success mt-4">
+                            {(() => {
+                                if (isTrial) {
+                                    return;
+                                } else if (subscriptionData.checkResult.AmountDue === 0) {
+                                    return c('Info').t`Cancel anytime`;
+                                } else {
+                                    return <Guarantee />;
+                                }
+                            })()}
+                        </div>
+                    );
 
                     return (
-                        <>
-                            <Button
-                                type="submit"
-                                size="large"
-                                loading={loadingSignup}
-                                color="norm"
-                                pill
-                                data-testid="pay"
-                                className="block mx-auto"
-                            >
-                                {cta}
-                            </Button>
-                            <div className="text-center color-success mt-4">
-                                {subscriptionData.checkResult.AmountDue === 0 ? (
-                                    !isTrial && c('Info').t`Cancel anytime`
-                                ) : (
-                                    <Guarantee />
-                                )}
-                            </div>
+                        <PayButton
+                            size="large"
+                            color="norm"
+                            fullWidth
+                            taxCountry={taxCountry}
+                            paymentFacade={paymentFacade}
+                            loading={loadingSignup || loadingPaymentDetails}
+                            pill
+                            data-testid="pay"
+                            suffix={(type) => {
+                                if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
+                                    return (
+                                        <>
+                                            {guaranteeElement}
+                                            {showAlert3ds && <Alert3ds />}
+                                        </>
+                                    );
+                                }
 
-                            {showAlert3ds && <Alert3ds />}
-                        </>
+                                return guaranteeElement;
+                            }}
+                            formInvalid={!isFormValid}
+                            {...buttonProps}
+                        >
+                            {isBitcoin ? c('pass_signup_2023: Action').t`Continue with Bitcoin` : cta}
+                        </PayButton>
                     );
                 })()}
                 {!loadingPaymentsForm && !isAuthenticated && terms}
@@ -521,10 +490,8 @@ const AccountStepPayment = ({
                 selectedPlan={selectedPlan}
                 vpnServersCountData={vpnServersCountData}
                 loadingPaymentDetails={loadingPaymentDetails}
-                onBillingAddressChange={onBillingAddressChange}
                 showRenewalNotice={showRenewalNotice}
                 showInclusiveTax={paymentFacade.showInclusiveTax}
-                showTaxCountry={paymentFacade.showTaxCountry}
                 app={app}
             />
         </div>

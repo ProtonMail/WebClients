@@ -9,7 +9,7 @@ import Badge from '@proton/components/components/badge/Badge';
 import Info from '@proton/components/components/link/Info';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import useConfig from '@proton/components/hooks/useConfig';
-import { useCurrencies } from '@proton/components/payments/client-extensions';
+import { type PaymentFacade, useCurrencies } from '@proton/components/payments/client-extensions';
 import { type MethodsHook } from '@proton/components/payments/react-extensions';
 import type { CheckoutModifiers } from '@proton/payments';
 import {
@@ -18,7 +18,6 @@ import {
     type FreePlanDefault,
     type FullPlansMap,
     PLANS,
-    type PaymentMethodStatusExtended,
     type Plan,
     type PlanIDs,
     type Subscription,
@@ -26,7 +25,7 @@ import {
     getPlanIDs,
     isLifetimePlanSelected,
 } from '@proton/payments';
-import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
+import { type TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
@@ -60,15 +59,14 @@ type Props = {
     gift?: ReactNode;
     onChangeCurrency: (currency: Currency) => void;
     showPlanDescription?: boolean;
-    statusExtended?: PaymentMethodStatusExtended;
-    showTaxCountry?: boolean;
-    onBillingAddressChange?: OnBillingAddressChange;
     subscription: Subscription;
     paymentNeeded: boolean;
     paymentMethods: MethodsHook;
     user: UserModel;
     trial: boolean;
     couponConfig?: CouponConfigRendered;
+    paymentFacade: PaymentFacade;
+    taxCountry: TaxCountryHook;
 };
 
 export const useAvailableCurrenciesForPlan = (plan: Plan | undefined, subscription: Subscription) => {
@@ -87,6 +85,8 @@ export const useAvailableCurrenciesForPlan = (plan: Plan | undefined, subscripti
     });
 };
 
+export type SubscriptionCheckoutProps = Props & CheckoutModifiers;
+
 const SubscriptionCheckout = ({
     freePlan,
     submit = c('Action').t`Pay`,
@@ -100,17 +100,16 @@ const SubscriptionCheckout = ({
     gift,
     onChangeCurrency,
     showPlanDescription = true,
-    statusExtended,
-    showTaxCountry,
-    onBillingAddressChange,
     subscription,
     paymentNeeded,
     paymentMethods,
     user,
     trial,
     couponConfig,
+    paymentFacade,
+    taxCountry,
     ...checkoutModifiers
-}: Props & CheckoutModifiers) => {
+}: SubscriptionCheckoutProps) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
@@ -335,22 +334,13 @@ const SubscriptionCheckout = ({
             )}
             {giftValue > 0 && <CheckoutRow title={c('Title').t`Gift`} amount={-giftValue} currency={currency} />}
             {checkoutModifiers.isScheduled && <StartDateCheckoutRow nextSubscriptionStart={subscription.PeriodEnd} />}
-
-            <div className="mb-4">
-                <hr />
-            </div>
-            {showTaxCountry && isPaidPlanSelected && (
-                <WrappedTaxCountrySelector
-                    statusExtended={statusExtended}
-                    onBillingAddressChange={onBillingAddressChange}
-                />
-            )}
+            <hr />
             <CheckoutRow
                 title={c('Title').t`Amount due`}
                 amount={amountDue}
                 currency={currency}
                 loading={loading}
-                className="text-bold m-0 text-2xl"
+                className="text-bold m-0 text-2xl mt-4"
                 data-testid="subscription-amout-due"
             />
             {(() => {

@@ -22,11 +22,11 @@ const getImage = (type: string): string => {
 
 export interface Props {
     payment: PaypalPayment | CardPayment | undefined;
-    type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT | PAYMENT_METHOD_TYPES.CARD;
+    type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.CARD;
 }
 
 const PaymentVerificationImage = ({ payment, type }: Props) => {
-    const isPaypalType = [PAYMENT_METHOD_TYPES.PAYPAL, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT].includes(type);
+    const isPaypalType = [PAYMENT_METHOD_TYPES.PAYPAL].includes(type);
 
     if (isPaypalPayment(payment) || isPaypalType) {
         return <img src={paypalSvg} alt="PayPal" />;

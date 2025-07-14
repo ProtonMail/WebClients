@@ -28,19 +28,11 @@ export const useCountries = () => {
     return { countries, country, setCountry, getCountryByCode };
 };
 
-interface Props {
+type Props = {
     onChange?: (countryCode: string) => void;
     selectedCountryCode: string;
     autoComplete?: string;
-    'data-testid'?: string;
-    id?: string;
-    unstyled?: boolean;
-    className?: string;
-    isOpen?: boolean;
-    onOpen?: () => void;
-    onClose?: () => void;
-    disabled?: boolean;
-}
+} & Omit<SearcheableSelectProps<CountryItem>, 'children' | 'value' | 'search' | 'onChange'>;
 
 export const CountriesDropdown = ({ onChange, selectedCountryCode, ...rest }: Props) => {
     const { countries, getCountryByCode } = useCountries();

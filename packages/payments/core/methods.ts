@@ -23,7 +23,7 @@ import type {
     Currency,
     FreeSubscription,
     PaymentMethodApplePay,
-    PaymentMethodFlows,
+    PaymentMethodFlow,
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
     PaymentsApi,
@@ -98,7 +98,7 @@ export interface PaymentMethodsParameters {
     amount: number;
     currency: Currency;
     coupon: string;
-    flow: PaymentMethodFlows;
+    flow: PaymentMethodFlow;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
@@ -170,11 +170,11 @@ export class PaymentMethods {
         this._coupon = value;
     }
 
-    public get flow(): PaymentMethodFlows {
+    public get flow(): PaymentMethodFlow {
         return this._flow;
     }
 
-    public set flow(value: PaymentMethodFlows) {
+    public set flow(value: PaymentMethodFlow) {
         this._flow = value;
     }
 
@@ -206,7 +206,7 @@ export class PaymentMethods {
 
     private _coupon: string;
 
-    private _flow: PaymentMethodFlows;
+    private _flow: PaymentMethodFlow;
 
     private _selectedPlanName: PLANS | ADDON_NAMES | undefined;
 
@@ -226,7 +226,7 @@ export class PaymentMethods {
 
     public subscription: Subscription | FreeSubscription | undefined;
 
-    public readonly directDebitEnabledFlows: readonly PaymentMethodFlows[] = [
+    public readonly directDebitEnabledFlows: readonly PaymentMethodFlow[] = [
         'signup',
         'signup-pass',
         'signup-pass-upgrade',
@@ -479,7 +479,7 @@ export class PaymentMethods {
     }
 
     private commonBtcConditions() {
-        const btcEnabledFlows: PaymentMethodFlows[] = [
+        const btcEnabledFlows: PaymentMethodFlow[] = [
             'signup-pass',
             'signup-pass-upgrade',
             'signup-wallet',
@@ -585,7 +585,7 @@ export class PaymentMethods {
             'signup-v2-upgrade',
             'signup-vpn',
             'subscription',
-        ] as PaymentMethodFlows[];
+        ] as PaymentMethodFlow[];
         const isAllowedFlow = flows.includes(this.flow);
 
         const isApplePayAmountValid = this.amount >= MIN_APPLE_PAY_AMOUNT;
@@ -645,7 +645,7 @@ export async function initializePaymentMethods({
     amount: number;
     currency: Currency;
     coupon: string;
-    flow: PaymentMethodFlows;
+    flow: PaymentMethodFlow;
     chargebeeEnabled: ChargebeeEnabled;
     paymentsApi: PaymentsApi;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;

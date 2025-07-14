@@ -27,7 +27,11 @@ interface InitializationStatus {
     vpnServersInitialized: boolean;
 }
 
-type OptimisticOptions = PlanToCheck & { billingAddress: BillingAddress; checkResult: RequiredCheckResponse };
+type OptimisticOptions = PlanToCheck & {
+    billingAddress: BillingAddress;
+    checkResult: RequiredCheckResponse;
+    vatNumber: string | undefined;
+};
 
 export type PaymentsContextOptimisticType = PaymentsContextType & {
     selectedPlan: SelectedPlan;
@@ -82,6 +86,7 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
                 CountryCode: '',
                 State: '',
             },
+            vatNumber: undefined,
         };
         const checkResult = paymentsContext.getOptimisticCheckResult(optimistic);
         setOptimistic({ ...optimistic, checkResult });
@@ -155,6 +160,7 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         currency: paymentsContext.selectedPlan.currency,
         billingAddress: paymentsContext.billingAddress,
         checkResult: paymentsContext.checkResult,
+        vatNumber: paymentsContext.vatNumber,
     };
     const options: OptimisticOptions = {
         ...subscriptionCheckOptions,

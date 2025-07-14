@@ -82,6 +82,8 @@ export interface SubscriptionData {
     payment?: ExtendedTokenPayment;
     type?: 'cc' | 'pp' | 'btc';
     billingAddress: BillingAddress;
+    zipCodeValid: boolean;
+    vatNumber?: string;
 }
 
 export interface ReferralData {

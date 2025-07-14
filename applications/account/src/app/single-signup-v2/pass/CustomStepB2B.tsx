@@ -98,7 +98,7 @@ const CustomStepB2B = ({ measure, productAppName, logo, model, signupParameters 
                         (accountData?.signupType === SignupType.External && getLocalPart(accountData.email)) ||
                         ''
                     }
-                    planName={undefined}
+                    planTitle={undefined}
                     onSubmit={async ({ displayName }) => {
                         const validateFlow = createFlow();
                         try {

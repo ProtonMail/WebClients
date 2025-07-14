@@ -1,0 +1,12 @@
+@import '~@proton/styles/scss/lib';
+
+.centered-loader {
+	inset-inline-start: 50%;
+	inset-block-start: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.error-container {
+	color: var(--signal-danger);
+	min-block-size: rem(20);
+}

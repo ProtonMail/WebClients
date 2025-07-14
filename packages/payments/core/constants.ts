@@ -1,4 +1,4 @@
-import type { Currency, MaxKeys, PaymentMethodFlows } from './interface';
+import type { Currency, MaxKeys, PaymentMethodFlow } from './interface';
 
 export enum PAYMENT_TOKEN_STATUS {
     STATUS_PENDING = 0,
@@ -11,7 +11,6 @@ export enum PAYMENT_TOKEN_STATUS {
 export enum PAYMENT_METHOD_TYPES {
     CARD = 'card',
     PAYPAL = 'paypal',
-    PAYPAL_CREDIT = 'paypal-credit',
     BITCOIN = 'bitcoin',
     CHARGEBEE_BITCOIN = 'chargebee-bitcoin',
     CASH = 'cash',
@@ -21,7 +20,7 @@ export enum PAYMENT_METHOD_TYPES {
     CHARGEBEE_SEPA_DIRECT_DEBIT = 'sepa-direct-debit',
     APPLE_PAY = 'apple-pay',
 }
-export const signupFlows: readonly PaymentMethodFlows[] = Object.freeze([
+export const signupFlows: readonly PaymentMethodFlow[] = Object.freeze([
     'signup',
     'signup-pass',
     'signup-pass-upgrade',

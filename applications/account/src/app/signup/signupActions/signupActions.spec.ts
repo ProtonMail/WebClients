@@ -44,6 +44,7 @@ describe('signupActions', () => {
                     RenewCycle: null,
                 },
                 billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+                zipCodeValid: true,
             };
 
             const cache: SignupCacheResult = {
@@ -107,6 +108,7 @@ describe('signupActions', () => {
                 },
                 payment,
                 billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+                zipCodeValid: true,
             };
 
             const cache: SignupCacheResult = {
@@ -178,6 +180,7 @@ describe('signupActions', () => {
                 },
                 payment,
                 billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+                zipCodeValid: true,
             };
 
             const cache: SignupCacheResult = {
@@ -242,6 +245,7 @@ describe('signupActions', () => {
                 },
                 payment,
                 billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+                zipCodeValid: true,
             };
 
             const humanVerificationResult = {

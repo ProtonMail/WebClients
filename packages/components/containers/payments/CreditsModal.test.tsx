@@ -29,8 +29,6 @@ const createTokenMock = jest.fn((request) => {
     let Token: string;
     if (type === 'paypal') {
         Token = 'paypal-payment-token-123';
-    } else if (type === 'paypal-credit') {
-        Token = 'paypal-credit-payment-token-123';
     } else {
         Token = 'payment-token-123';
     }
@@ -390,88 +388,6 @@ it.skip('should create payment token for paypal and then buy credits with it - c
                     Amount: 12300,
                     Currency: 'EUR',
                     type: 'paypal',
-                }),
-                method: 'post',
-                url: buyCreditUrl,
-            })
-        );
-    });
-
-    await waitFor(() => {
-        expect(mockEventManager.call).toHaveBeenCalled();
-    });
-    await waitFor(() => {
-        expect(onClose).toHaveBeenCalled();
-    });
-});
-
-it.skip('should disable paypal button while the amount is debouncing', async () => {
-    const onClose = jest.fn();
-    const { container, queryByTestId } = render(<ContextCreditsModal status={status} open={true} onClose={onClose} />);
-    await waitFor(() => {
-        selectMethod(container, 'PayPal');
-    });
-
-    const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
-    await userEvent.type(otherAmountInput, '123');
-    expect(queryByTestId('paypal-button')).toBeDisabled();
-    expect(queryByTestId('paypal-credit-button')).toBeDisabled();
-
-    await wait(1000);
-    expect(queryByTestId('paypal-button')).not.toBeDisabled();
-    expect(queryByTestId('paypal-credit-button')).not.toBeDisabled();
-});
-
-it.skip('should disable paypal button if the amount is too high', async () => {
-    const onClose = jest.fn();
-    const { container, queryByTestId } = render(<ContextCreditsModal status={status} open={true} onClose={onClose} />);
-    await waitFor(() => {
-        selectMethod(container, 'PayPal');
-    });
-
-    const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
-    await userEvent.type(otherAmountInput, '40001');
-
-    await wait(1000);
-    expect(queryByTestId('paypal-button')).toBeDisabled();
-    expect(queryByTestId('paypal-credit-button')).toBeDisabled();
-
-    await userEvent.clear(otherAmountInput);
-    await userEvent.type(otherAmountInput, '40000');
-    await wait(1000);
-
-    expect(queryByTestId('paypal-button')).not.toBeDisabled();
-    expect(queryByTestId('paypal-credit-button')).not.toBeDisabled();
-});
-
-it.skip('should create payment token for paypal-credit and then buy credits with it', async () => {
-    const onClose = jest.fn();
-    const { container, queryByTestId } = render(<ContextCreditsModal status={status} open={true} onClose={onClose} />);
-    await waitFor(() => {
-        selectMethod(container, 'PayPal');
-    });
-
-    const paypalCreditButton = queryByTestId('paypal-credit-button') as HTMLButtonElement;
-
-    fireEvent.click(paypalCreditButton);
-
-    await waitFor(() => {
-        expect(buyCreditMock).toHaveBeenCalled();
-    });
-
-    await waitFor(() => {
-        expect(buyCreditMock).toHaveBeenCalledWith(
-            expect.objectContaining({
-                data: expect.objectContaining({
-                    Payment: expect.objectContaining({
-                        Type: 'token',
-                        Details: expect.objectContaining({
-                            Token: 'paypal-credit-payment-token-123',
-                        }),
-                    }),
-                    Amount: 5000,
-                    Currency: 'EUR',
-                    type: 'paypal-credit',
                 }),
                 method: 'post',
                 url: buyCreditUrl,

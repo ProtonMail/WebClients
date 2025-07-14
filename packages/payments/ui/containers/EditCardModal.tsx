@@ -15,7 +15,6 @@ import RenewToggle, { useRenewToggle } from '@proton/components/containers/payme
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { ChargebeeCreditCardWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useLoading } from '@proton/hooks';
@@ -29,6 +28,7 @@ import { Autopay, PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { PaymentMethodCardDetails } from '../../core/interface';
 import { isV5PaymentToken } from '../../core/type-guards';
 import { paymentMethodPaymentsVersion, v5PaymentTokenToLegacyPaymentToken } from '../../core/utils';
+import { ChargebeeCreditCardWrapper } from '../components/ChargebeeWrapper';
 
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
     card?: CardModel;
@@ -157,6 +157,7 @@ const EditCardModal = ({
                     chargebeeCard={paymentFacade.chargebeeCard}
                     themeCode={paymentFacade.themeCode}
                     initialCountryCode={paymentFacade.methods.status?.CountryCode}
+                    showCountry={true}
                 />
             )}
             {enableRenewToggle && formFullyLoaded && (
