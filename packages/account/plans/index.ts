@@ -15,10 +15,12 @@ import {
 } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
+    CacheType,
     cacheHelper,
     createPromiseStore,
     getFetchedAt,
     getFetchedEphemeral,
+    getIsStaleRefetch,
     previousSelector,
 } from '@proton/redux-utilities';
 import { DAY } from '@proton/shared/lib/constants';
@@ -180,7 +182,12 @@ const thunk = ({
                     return plan1.Name === plan2.Name && plan1.Currency === plan2.Currency;
                 };
 
-                const currentPlans = select()?.value?.plans ?? [];
+                const currentPlansState = select();
+                // This ignores persisted values. This ensures that if the API removes a plan, we don't keep it forever in the cache.
+                const currentPlans =
+                    (getIsStaleRefetch(currentPlansState?.meta.fetchedEphemeral, CacheType.StaleRefetch)
+                        ? undefined
+                        : currentPlansState?.value?.plans) ?? [];
 
                 // if the plan already exists then we replace it with the new one if it's available
                 const updatedPlans = currentPlans.map((existingPlan) => {
