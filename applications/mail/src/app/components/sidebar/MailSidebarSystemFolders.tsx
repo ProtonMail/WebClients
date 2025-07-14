@@ -9,6 +9,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
+import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/interface';
+
 import { isConversationMode } from '../../helpers/mailSettings';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
@@ -28,7 +30,7 @@ interface Props {
     onToggleMoreItems: (display: boolean) => void;
     collapsed?: boolean;
     moveToFolder: (params: MoveParams) => void;
-    applyLabels: (params: any) => void;
+    applyLabels: (params: ApplyLabelsParams) => void;
 }
 
 const DND_MORE_FOLDER_ID = 'DND_MORE_FOLDER_ID';

@@ -11,6 +11,7 @@ import { type SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/u
 import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
 import { isMessage } from 'proton-mail/helpers/elements';
 import { setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from 'proton-mail/hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from 'proton-mail/hooks/actions/markAs/useMarkAs';
 import { useMoveToFolder } from 'proton-mail/hooks/actions/move/useMoveToFolder';
@@ -49,6 +50,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
 
     const { markAs, selectAllMarkModal } = useMarkAs();
     const getElementsFromIDs = useGetElementsFromIDs();
+    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveToSpamModal, moveSnoozedModal, moveScheduledModal, selectAllMoveModal } =
         useMoveToFolder();
     const onCompose = useOnCompose();
@@ -154,14 +156,23 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
 
     const handleMove = useCallback(
         async (newLabelID: string, sourceAction: SOURCE_ACTION): Promise<void> => {
-            await moveToFolder({
-                elements: getElementsFromIDs(selectedIDs),
-                sourceLabelID: labelID,
-                destinationLabelID: newLabelID,
-                folderName: getFolderName(newLabelID, folders),
-                selectAll,
-                sourceAction: sourceAction,
-            });
+            if (applyLocationEnabled && !selectAll) {
+                await applyLocation({
+                    elements: getElementsFromIDs(selectedIDs),
+                    labelChanges: { [newLabelID]: true, [labelID]: false },
+                    createFilters: false,
+                });
+            } else {
+                await moveToFolder({
+                    elements: getElementsFromIDs(selectedIDs),
+                    sourceLabelID: labelID,
+                    destinationLabelID: newLabelID,
+                    folderName: getFolderName(newLabelID, folders),
+                    selectAll,
+                    sourceAction: sourceAction,
+                });
+            }
+
             if (selectedIDs.includes(elementID || '')) {
                 handleBack();
             }

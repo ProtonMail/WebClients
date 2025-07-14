@@ -27,6 +27,7 @@ import { useOnCompose } from '../../containers/ComposeProvider';
 import { isStarred } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import type { Element } from '../../models/element';
+import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../actions/move/useMoveToFolder';
 import { useStar } from '../actions/useStar';
@@ -92,6 +93,7 @@ export const useMessageHotkeys = (
     const filterDropdownToggleRef = useRef<() => void>(noop);
 
     const { markAs } = useMarkAs();
+    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder();
     const star = useStar();
 
@@ -110,13 +112,21 @@ export const useMessageHotkeys = (
 
         const folderName = getFolderName(LabelID, folders);
 
-        await moveToFolder({
-            elements: [message.data],
-            sourceLabelID: labelID,
-            destinationLabelID: LabelID,
-            folderName,
-            sourceAction: SOURCE_ACTION.SHORTCUTS,
-        });
+        if (applyLocationEnabled) {
+            await applyLocation({
+                elements: [message.data],
+                labelChanges: { [LabelID]: true, [labelID]: false },
+                createFilters: false,
+            });
+        } else {
+            await moveToFolder({
+                elements: [message.data],
+                sourceLabelID: labelID,
+                destinationLabelID: LabelID,
+                folderName,
+                sourceAction: SOURCE_ACTION.SHORTCUTS,
+            });
+        }
     };
 
     const shouldStopPropagation = (e: KeyboardEvent, direction: ARROW_SCROLL_DIRECTIONS) => {
@@ -294,7 +304,20 @@ export const useMessageHotkeys = (
             async (e) => {
                 if (hotkeysEnabledAndMessageReady && message.data) {
                     e.stopPropagation();
-                    await star([message.data as Element], !isStarred(message.data), labelID, SOURCE_ACTION.SHORTCUTS);
+
+                    if (applyLocationEnabled) {
+                        await applyLocation({
+                            elements: [message.data as Element],
+                            labelChanges: { [MAILBOX_LABEL_IDS.STARRED]: !isStarred(message.data) },
+                        });
+                    } else {
+                        await star(
+                            [message.data as Element],
+                            !isStarred(message.data),
+                            labelID,
+                            SOURCE_ACTION.SHORTCUTS
+                        );
+                    }
                 }
             },
         ],

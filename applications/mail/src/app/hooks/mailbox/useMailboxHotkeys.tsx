@@ -22,6 +22,7 @@ import { isStarred } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import type { Element } from '../../models/element';
+import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from '../actions/delete/usePermanentDelete';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../actions/move/useMoveToFolder';
@@ -102,7 +103,7 @@ export const useMailboxHotkeys = (
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
     const elementIDForList = checkedIDs.length ? undefined : elementID;
     const elementRef = useRef<HTMLDivElement>(null);
-
+    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
     const star = useStar();
@@ -133,15 +134,24 @@ export const useMailboxHotkeys = (
 
         const folderName = getFolderName(LabelID, folders);
 
-        await moveToFolder({
-            elements,
-            sourceLabelID: labelID,
-            destinationLabelID: LabelID,
-            folderName,
-            selectAll,
-            onCheckAll: handleCheckAll,
-            sourceAction: SOURCE_ACTION.SHORTCUTS,
-        });
+        if (applyLocationEnabled && !selectAll) {
+            await applyLocation({
+                elements,
+                labelChanges: { [LabelID]: true, [labelID]: false },
+                createFilters: false,
+            });
+        } else {
+            await moveToFolder({
+                elements,
+                sourceLabelID: labelID,
+                destinationLabelID: LabelID,
+                folderName,
+                selectAll,
+                onCheckAll: handleCheckAll,
+                sourceAction: SOURCE_ACTION.SHORTCUTS,
+            });
+        }
+
         if (elementIDForList) {
             handleBack();
         }
@@ -380,7 +390,15 @@ export const useMailboxHotkeys = (
                     }
                     e.stopPropagation();
                     const isAllStarred = elements.filter((element) => isStarred(element)).length === elements.length;
-                    await star(elements, !isAllStarred, labelID, SOURCE_ACTION.SHORTCUTS);
+
+                    if (applyLocationEnabled) {
+                        await applyLocation({
+                            elements,
+                            labelChanges: { [MAILBOX_LABEL_IDS.STARRED]: !isAllStarred },
+                        });
+                    } else {
+                        await star(elements, !isAllStarred, labelID, SOURCE_ACTION.SHORTCUTS);
+                    }
                 }
             },
         ],
