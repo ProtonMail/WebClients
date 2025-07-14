@@ -242,6 +242,10 @@ export const getCountries = () => [
     { value: 'ZW', label: c('Country name').t`Zimbabwe` },
 ];
 
+export const isAllowedCountry = (countryCode: unknown) => {
+    return getCountries().some(({ value }) => value === countryCode);
+};
+
 export const getTopCounties = () => [
     { value: 'US', label: c('Country name').t`United States` },
     { value: 'GB', label: c('Country name').t`United Kingdom` },
@@ -251,7 +255,17 @@ export const getTopCounties = () => [
     { value: 'CA', label: c('Country name').t`Canada` },
 ];
 
-export const countriesWithStates = Object.freeze(['US', 'CA']);
+export const countriesWithStates = Object.freeze(['US', 'CA'] as const);
+export type CountryWithStates = (typeof countriesWithStates)[number];
+export function isCountryWithStates(countryCode: string): countryCode is CountryWithStates {
+    return countriesWithStates.includes(countryCode as CountryWithStates);
+}
+
+export const countriesWithRequiredPostalCode = Object.freeze(['US', 'CA'] as const);
+export type CountryWithRequiredPostalCode = (typeof countriesWithRequiredPostalCode)[number];
+export function isCountryWithRequiredPostalCode(countryCode: string): countryCode is CountryWithRequiredPostalCode {
+    return countriesWithRequiredPostalCode.includes(countryCode as CountryWithRequiredPostalCode);
+}
 
 export function getStateList(countryCode: string) {
     if (countryCode === 'US') {
@@ -339,6 +353,14 @@ export function getStateList(countryCode: string) {
     return [];
 }
 
+export function getDefaultState(countryCode: CountryWithStates) {
+    if (countryCode === 'US') {
+        return 'CA';
+    }
+
+    return getStateList(countryCode)[0].stateCode;
+}
+
 const getCountryByAbbrMap = () => {
     return getCountries().reduce<{ [key: string]: string }>(
         (list, country) => ({ ...list, [country.value]: country.label }),
@@ -398,3 +420,8 @@ export const getLocalizedCountryByAbbr = (abbr: string, options: CountryOptions)
 };
 
 export const correctAbbr = (abbr: string) => (abbr === 'UK' ? 'GB' : abbr);
+
+export function getStateName(countryCode: string, stateCode: string) {
+    const state = getStateList(countryCode).find(({ stateCode: code }) => code === stateCode);
+    return state?.stateName ?? '';
+}

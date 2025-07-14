@@ -8,9 +8,13 @@ import InclusiveVatText from '@proton/components/containers/payments/InclusiveVa
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components/containers/payments/RenewalNotice';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
-import { type Plan, getHas2024OfferCoupon, getIsB2BAudienceFromPlan, isTaxInclusive } from '@proton/payments';
-import { COUPON_CODES } from '@proton/payments';
-import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
+import {
+    COUPON_CODES,
+    type Plan,
+    getHas2024OfferCoupon,
+    getIsB2BAudienceFromPlan,
+    isTaxInclusive,
+} from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
@@ -31,10 +35,8 @@ interface Props {
     selectedPlan: Plan;
     vpnServersCountData: VPNServersCountData;
     loadingPaymentDetails: boolean;
-    onBillingAddressChange: OnBillingAddressChange;
     showRenewalNotice: boolean;
     showInclusiveTax: boolean;
-    showTaxCountry: boolean;
     app: APP_NAMES;
 }
 
@@ -44,10 +46,8 @@ const AccountStepPaymentSummary = ({
     options,
     vpnServersCountData,
     loadingPaymentDetails,
-    onBillingAddressChange,
     showRenewalNotice,
     showInclusiveTax,
-    showTaxCountry,
     app,
 }: Props) => {
     const summaryPlan = getSummaryPlan({
@@ -81,7 +81,6 @@ const AccountStepPaymentSummary = ({
     const credits = subscriptionData.checkResult?.Credit ?? 0;
     const isBFOffer = getHas2024OfferCoupon(subscriptionData.checkResult?.Coupon?.Code);
     const couponDiscount = isBFOffer || couponConfig?.hidden ? 0 : currentCheckout.couponDiscount || 0;
-    const billingAddress = subscriptionData.billingAddress;
 
     const isPorkbun = subscriptionData.checkResult.Coupon?.Code === COUPON_CODES.PORKBUN;
     const hideDiscount = isPorkbun || !!couponConfig?.hidden;
@@ -248,19 +247,6 @@ const AccountStepPaymentSummary = ({
                 mode={isB2BPlan ? 'addons' : undefined}
                 isTrial={isTrial}
             >
-                {!initialLoading && showTaxCountry && (
-                    <WrappedTaxCountrySelector
-                        className="mb-2"
-                        onBillingAddressChange={onBillingAddressChange}
-                        statusExtended={
-                            // If we are in signup-token mode, then it means that user created an account by clicking "Continue with bitcoin"
-                            // It also means that before user created the account, they might changed the billing address.
-                            // The account creation re-renders the entire component and resets the user choice. So if we know that this billing address
-                            // is rendered after the account creation, then we used the saved user choice from the model.
-                            model.signupTokenMode ? billingAddress : model.paymentMethodStatusExtended
-                        }
-                    />
-                )}
                 <div className="flex flex-column gap-2">
                     {priceBreakdown}
                     {showAmountDue && (

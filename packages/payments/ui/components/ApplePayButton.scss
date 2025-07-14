@@ -1,0 +1,78 @@
+// Base Apple Pay button with shared properties
+.apple-pay-button {
+	// Default color scheme (can be overridden by variants)
+	--button-default-background-color: black;
+	--button-hover-background-color: black;
+	--button-active-background-color: black;
+	--button-default-text-color: white;
+	--button-hover-text-color: white;
+	--button-active-text-color: white;
+
+	display: inline-block;
+	cursor: pointer;
+	inline-size: 100%;
+
+	&--disabled {
+		filter: grayscale(1);
+	}
+}
+
+// Color scheme variants
+.apple-pay-button-white {
+	--button-default-background-color: white;
+	--button-hover-background-color: white;
+	--button-active-background-color: white;
+	--button-default-text-color: black;
+	--button-hover-text-color: black;
+	--button-active-text-color: black;
+}
+
+// Native Apple Pay button support
+@supports (-webkit-appearance: -apple-pay-button) {
+	.apple-pay-button {
+		appearance: -apple-pay-button;
+	}
+
+	.apple-pay-button-black {
+		-apple-pay-button-style: black;
+	}
+
+	.apple-pay-button-white {
+		-apple-pay-button-style: white;
+	}
+
+	.apple-pay-button-white-with-line {
+		-apple-pay-button-style: white-outline;
+	}
+}
+
+// Fallback for browsers without native Apple Pay button support
+@supports not (-webkit-appearance: -apple-pay-button) {
+	.apple-pay-button {
+		background-size: 100% 60%;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		border-radius: 5px;
+		padding: 0;
+		box-sizing: border-box;
+		min-inline-size: 200px;
+		min-block-size: 32px;
+		max-block-size: 64px;
+	}
+
+	.apple-pay-button-black {
+		background-image: -webkit-named-image(apple-pay-logo-white);
+		background-color: var(--button-default-background-color);
+	}
+
+	.apple-pay-button-white {
+		background-image: -webkit-named-image(apple-pay-logo-black);
+		background-color: var(--button-default-background-color);
+	}
+
+	.apple-pay-button-white-with-line {
+		background-image: -webkit-named-image(apple-pay-logo-black);
+		background-color: var(--button-default-background-color);
+		border: 0.5px solid black;
+	}
+}
