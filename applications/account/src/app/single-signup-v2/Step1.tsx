@@ -435,7 +435,8 @@ const Step1 = ({
 
         // TODO(plavarin): hack until we have a proper way to optimistically determine whether
         // a plan supports trials. Currently, only B2B plans support trials.
-        if (trial && audience === Audience.B2B) {
+        // When we switch from B2C to B2B, the argument trial will be false, so we use signupParameters.trial instead
+        if (signupParameters.trial && audience === Audience.B2B) {
             checkOptions.trial = true;
         }
 
