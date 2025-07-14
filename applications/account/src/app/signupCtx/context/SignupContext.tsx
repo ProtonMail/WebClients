@@ -7,6 +7,7 @@ import metrics, { observeError } from '@proton/metrics/index';
 import {
     type Cycle,
     type ExtendedTokenPayment,
+    PLANS,
     type PlanIDs,
     type TokenPayment,
     isTokenPayment,
@@ -16,12 +17,13 @@ import {
 import { type PaymentsContextOptimisticType, type PlanToCheck } from '@proton/payments/ui';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
+import { postReferralRegistration } from '@proton/shared/lib/api/core/referrals';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { type ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { Optional } from '@proton/shared/lib/interfaces';
+import type { Optional, ReferralData } from '@proton/shared/lib/interfaces';
 import { type Unwrap } from '@proton/shared/lib/interfaces/utils';
 import noop from '@proton/utils/noop';
 
@@ -35,6 +37,7 @@ import {
 } from '../../signup/signupTelemetry';
 import { useGetAccountKTActivation } from '../../useGetAccountKTActivation';
 import { AccountFormDataContextProvider, useAccountFormDataContext } from './accountData/AccountFormDataContext';
+import { InvalidReferrerError, useReferralData } from './accountData/useReferralData';
 import { useSignupDomains } from './accountData/useSignupDomains';
 import { getClientType } from './helpers/getClientType';
 import { handleCreateUser } from './helpers/handleCreateUser';
@@ -142,6 +145,9 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
      * Configuration for the account form (username/email and password input form)
      */
     accountFormDataConfig: AccountFormDataConfig;
+
+    unverifiedReferralData?: ReferralData;
+    onReferralCheckError?: () => void;
 }
 
 const getPaymentDataFromChargeableCallback = (
@@ -194,11 +200,14 @@ export const InnerSignupContextProvider = ({
     paymentsDataConfig,
     accountFormDataConfig,
     loginUrl,
+    unverifiedReferralData,
+    onReferralCheckError,
 }: SignupContextProviderProps) => {
     const clientType = getClientType(app);
     const [loading, setLoading] = useState({ init: true, submitting: false });
     const setLoadingDiff = (data: Partial<typeof loading>) => setLoading((prev) => ({ ...prev, ...data }));
     const domainsData = useSignupDomains();
+    const { referralData, initReferralData } = useReferralData();
 
     const paymentsContext = usePaymentOptimistic();
     const setupUserResponseRef = useRef<Unwrap<ReturnType<typeof handleSetupUser>>>();
@@ -253,11 +262,11 @@ export const InnerSignupContextProvider = ({
                 });
             };
 
-            const initAccountData = async () => {
-                await domainsData.init(silentApi);
-            };
-
-            await Promise.all([initAccountData(), initPayments()]);
+            await Promise.all([
+                domainsData.init(silentApi),
+                unverifiedReferralData ? initReferralData({ unverifiedReferralData, api: silentApi }) : undefined,
+                initPayments(),
+            ]);
         };
 
         initialize()
@@ -267,6 +276,10 @@ export const InnerSignupContextProvider = ({
                 });
             })
             .catch((error) => {
+                if (error instanceof InvalidReferrerError) {
+                    onReferralCheckError?.();
+                    return;
+                }
                 notifyError(error);
 
                 observeError(error, (status) =>
@@ -349,7 +362,6 @@ export const InnerSignupContextProvider = ({
                 productParam: app,
                 humanVerificationResult: undefined,
                 inviteData: undefined,
-                referralData: undefined,
                 invite: undefined,
             });
 
@@ -430,6 +442,26 @@ export const InnerSignupContextProvider = ({
             });
 
             setupUserResponseRef.current = setupUserResponse;
+
+            if (referralData) {
+                const plan = (() => {
+                    if (paymentsContext.selectedPlan.getPlanName() === PLANS.FREE) {
+                        return;
+                    }
+
+                    return {
+                        name: paymentsContext.selectedPlan.getPlanName(),
+                        cycle: paymentsContext.selectedPlan.cycle,
+                    };
+                })();
+
+                await api(
+                    postReferralRegistration({
+                        plan,
+                        referralData,
+                    })
+                );
+            }
 
             stageRef.current = 'userSetup';
 
