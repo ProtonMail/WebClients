@@ -4,6 +4,7 @@ export {
     checkInvoice,
     createToken,
     createTokenV4,
+    createTokenV5,
     deletePaymentMethod,
     deleteSubscription,
     fetchPaymentIntentForExistingV5,
@@ -35,7 +36,7 @@ export {
     setPaymentMethodV4,
     setPaymentMethodV5,
     setPaymentsVersion,
-    subscribe,
+    createSubscription,
     updatePaymentMethod,
     validateCredit,
     type BackendPaymentIntent,
@@ -49,12 +50,16 @@ export {
     type GetChargebeeConfigurationResponse,
     type PaymentsVersion,
 } from './core/api';
+export { PAYMENTS_API_ERROR_CODES } from './core/api-error-codes';
 export {
     BILLING_ADDRESS_VALID,
     billingCountryValidator,
     billingStateValidator,
     DEFAULT_TAX_BILLING_ADDRESS,
+    getBillingAddressFromPaymentsStatus,
     getBillingAddressStatus,
+    normalizeBillingAddress,
+    paymentStatusToBillingAddress,
     type BillingAddress,
     type BillingAddressProperty,
     type BillingAddressStatus,
@@ -113,10 +118,12 @@ export {
 } from './core/constants';
 export {
     correctAbbr,
-    countriesWithStates,
     getCountryOptions,
     getLocalizedCountryByAbbr,
     getStateList,
+    getStateName,
+    isCountryWithRequiredPostalCode,
+    isCountryWithStates,
     type CountryOptions,
 } from './core/countries';
 export {
@@ -185,7 +192,7 @@ export type {
     NonChargeablePaymentToken,
     NonChargeableV5PaymentToken,
     PaymentMethodCardDetails,
-    PaymentMethodFlows,
+    PaymentMethodFlow,
     PaymentMethodPaypal,
     PaymentMethodSepa,
     PaymentMethodStatus,
@@ -244,6 +251,7 @@ export {
     type ApplePayModalHandles,
     type ApplePayProcessorHook,
 } from './core/payment-processors/useApplePay';
+export { normalizePaymentMethodStatus } from './core/payment-status';
 export {
     countAddonsByType,
     getAddonType,
@@ -268,11 +276,11 @@ export {
 export { PlanState } from './core/plan/constants';
 export {
     getIsB2BAudienceFromPlan,
+    getPlanCurrencyFromPlanIDs,
+    getPlanFromPlanIDs,
     getPlanNameFromIDs,
     isLifetimePlanSelected,
     isPlanEnabled,
-    getPlanFromPlanIDs,
-    getPlanCurrencyFromPlanIDs,
 } from './core/plan/helpers';
 export type {
     Addon,
@@ -337,9 +345,6 @@ export {
     getMaximumCycleForApp,
     getMaxValue,
     getMembersFromPlanIDs,
-    getPlansQuantity,
-    getPlansLimit,
-    shouldPassIsTrial,
     getNormalCycleFromCustomCycle,
     getPlan,
     getPlanIDs,
@@ -347,6 +352,8 @@ export {
     getPlanMembers,
     getPlanName,
     getPlanOffer,
+    getPlansLimit,
+    getPlansQuantity,
     getPlanTitle,
     getPricingPerMember,
     getRenewalTime,
@@ -419,6 +426,7 @@ export {
     PLANS_WITH_AI_INCLUDED,
     planSupportsSSO,
     regularCycles,
+    shouldPassIsTrial,
     upsellPlanSSO,
     willTrialExpire,
     type AggregatedPricing,
@@ -458,7 +466,6 @@ export {
     isTokenPaymentMethod,
     isTransaction,
     isV5PaymentToken,
-    isWrappedPaymentsVersion,
     methodMatches,
 } from './core/type-guards';
 export {
@@ -471,3 +478,5 @@ export {
     toV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from './core/utils';
+export { getDefaultPostalCodeByStateCode } from './postal-codes/default-postal-codes';
+export { isPostalCodeValid as validateZipCode } from './postal-codes/postal-codes-validation';

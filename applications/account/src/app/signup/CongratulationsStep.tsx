@@ -17,17 +17,17 @@ import { getSignupApplication } from './helper';
 
 interface Props {
     defaultName?: string;
-    planName?: string;
+    planTitle?: string;
     onSubmit: ({ displayName }: { displayName: string }) => Promise<void>;
     description?: ReactNode;
 }
 
-const CongratulationsStep = ({ defaultName = '', planName: maybePlanName, onSubmit, description }: Props) => {
+const CongratulationsStep = ({ defaultName = '', planTitle: maybePlanTitle, onSubmit, description }: Props) => {
     const { APP_NAME } = useConfig();
     const [displayName, setDisplayName] = useState(defaultName);
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
-    const planName = maybePlanName && <b key="plan-name">{maybePlanName}</b>;
+    const planTitleElement = maybePlanTitle && <b key="plan-name">{maybePlanTitle}</b>;
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -40,9 +40,9 @@ const CongratulationsStep = ({ defaultName = '', planName: maybePlanName, onSubm
         <Main>
             <Header title={c('Title').t`Set a display name`} />
             <Content>
-                {planName ? (
+                {planTitleElement ? (
                     <Text margin="small">{c('new_plans: signup')
-                        .jt`Your ${planName} subscription is now active.`}</Text>
+                        .jt`Your ${planTitleElement} subscription is now active.`}</Text>
                 ) : null}
                 <Text>
                     {description ||

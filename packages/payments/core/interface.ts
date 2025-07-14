@@ -21,7 +21,7 @@ import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout'
 
 import type { PaymentsVersion } from './api';
 import { type CheckSubscriptionData } from './api';
-import { type FullBillingAddress } from './billing-address';
+import { type BillingAddress, type FullBillingAddress } from './billing-address';
 import type {
     ADDON_NAMES,
     Autopay,
@@ -71,7 +71,7 @@ export type WrappedProcessorType = {
 export type ExtendedTokenPayment = Partial<TokenPayment> & WrappedProcessorType & WrappedPaymentsVersion;
 
 export interface PaypalPayment {
-    Type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT;
+    Type: PAYMENT_METHOD_TYPES.PAYPAL;
 }
 
 export interface WrappedPaypalPayment {
@@ -110,7 +110,6 @@ export type ChargeablePaymentParameters = Partial<V5PaymentToken> &
     AmountAndCurrency & {
         type:
             | PAYMENT_METHOD_TYPES.PAYPAL
-            | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
             | PAYMENT_METHOD_TYPES.CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
@@ -125,7 +124,6 @@ export type ChargeablePaymentToken = V5PaymentToken &
     AmountAndCurrency & {
         type:
             | PAYMENT_METHOD_TYPES.PAYPAL
-            | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
             | PAYMENT_METHOD_TYPES.CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
             | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
@@ -149,9 +147,7 @@ export interface PaymentMethodStatus {
     Bitcoin: boolean;
 }
 
-export interface PaymentMethodStatusExtended {
-    CountryCode: string;
-    State?: string | null;
+export interface PaymentMethodStatusExtended extends BillingAddress {
     VendorStates: PaymentMethodStatus;
 }
 
@@ -269,7 +265,7 @@ export interface AvailablePaymentMethod {
  * Important: Do not change this without contacting the payments team. Do not add new flows, do not remove existing
  * ones. The payment flow has an important role of displaying the payment methods and the tax country selector.
  */
-export type PaymentMethodFlows =
+export type PaymentMethodFlow =
     | 'invoice'
     | 'signup'
     | 'signup-pass'
