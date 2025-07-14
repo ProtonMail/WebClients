@@ -8,6 +8,8 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import orderBy from '@proton/utils/orderBy';
 
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
+
 import { getLabelIDs } from '../../helpers/elements';
 import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
 import type { Element } from '../../models/element';
@@ -32,6 +34,7 @@ const ItemLabels = ({
     showDropdown = true,
 }: Props) => {
     const history = useHistory();
+    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
     const { applyLabels } = useApplyLabels();
 
     const labelsSorted = useMemo<Label[]>(() => {
@@ -47,12 +50,21 @@ const ItemLabels = ({
 
     const handleGo = (label: Label) => () => history.push(`/${label.ID}`);
 
-    const handleUnlabel = (labelID: string) => () =>
-        applyLabels({
+    const handleUnlabel = (labelID: string) => () => {
+        if (applyLocationEnabled) {
+            return applyLocation({
+                elements: [element || ({} as Element)],
+                labelChanges: { [labelID]: false },
+                createFilters: false,
+            });
+        }
+
+        return applyLabels({
             elements: [element || ({} as Element)],
             changes: { [labelID]: false },
             labelID,
         });
+    };
 
     const labelsDescription = labelsSorted.map((label) => ({
         name: label.Name,

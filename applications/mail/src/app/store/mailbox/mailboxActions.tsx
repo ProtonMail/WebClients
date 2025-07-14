@@ -208,9 +208,3 @@ export const markConversationsAsUnread = createAsyncThunk<
         }
     }
 );
-
-// export const applyLabelsToMessages = createAction('mailbox/applyLabelsToMessages');
-// export const applyLabelsToConversations = createAction('mailbox/applyLabelsToConversations');
-// export const permanentlyDeleteMessages = createAction('mailbox/permanentlyDeleteMessages');
-// export const permanentlyDeleteConversations = createAction('mailbox/permanentlyDeleteConversations');
-// export const emptyLabel = createAction('mailbox/emptyLabel');

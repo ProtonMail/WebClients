@@ -22,6 +22,7 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getCounterMap } from '../../helpers/elements';
@@ -67,6 +68,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
     const foldersTreeview = useMemo(() => buildTreeview(foldersUI), [foldersUI]);
     const { applyLabels, applyLabelsToAllModal } = useApplyLabels();
+    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
     const mailboxCount = mailSettings.ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
@@ -294,7 +296,14 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                         showSnoozed={showSnoozed}
                         onToggleMoreItems={toggleDisplayMoreItems}
                         collapsed={collapsed}
-                        applyLabels={applyLabels}
+                        applyLabels={(params) =>
+                            applyLocationEnabled && !params.selectAll
+                                ? applyLocation({
+                                      elements: params.elements,
+                                      labelChanges: params.changes,
+                                  })
+                                : applyLabels(params)
+                        }
                         moveToFolder={moveToFolder}
                     />
 
