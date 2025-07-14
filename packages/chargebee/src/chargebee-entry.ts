@@ -324,7 +324,7 @@ async function renderCreditCardForm() {
             email: paymentIntent.email ?? 'fallback@payments.protontech.ch',
         };
 
-        const countiesWithZip = ['US'];
+        const countiesWithZip = ['US', 'CA'];
         if (countiesWithZip.includes(countryCode)) {
             additionalData.billingAddress.zip = zip;
         }

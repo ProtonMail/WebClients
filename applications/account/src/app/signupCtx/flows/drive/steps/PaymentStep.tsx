@@ -3,24 +3,20 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Alert3ds, PayPalButton, StyledPayPalButton } from '@proton/components';
+import { Alert3ds } from '@proton/components';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import { ApplePayButton, ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft, IcShield } from '@proton/icons';
 import {
     PAYMENT_METHOD_TYPES,
     type PaymentProcessorHook,
-    getBillingAddressStatus,
     getIsB2BAudienceFromPlan,
-    getIsVpnPlan,
     getPaymentsVersion,
     getPlanFromPlanIDs,
 } from '@proton/payments';
-import { usePaymentOptimistic } from '@proton/payments/ui';
+import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -74,7 +70,19 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         return true;
     };
 
-    const chargebeeContext = useChargebeeContext();
+    const taxCountry = useTaxCountry({
+        onBillingAddressChange: payments.selectBillingAddress,
+        statusExtended: payments.paymentsStatus,
+        zipCodeBackendValid: payments.zipCodeValid,
+        previosValidZipCode: payments.options.billingAddress.ZipCode,
+        paymentFacade,
+    });
+
+    const vatNumber = useVatNumber({
+        selectedPlanName: payments.selectedPlan.getPlanName(),
+        onChange: payments.setVatNumber,
+        taxCountry,
+    });
 
     const process = (processor: PaymentProcessorHook | undefined) => {
         if (!validatePayment()) {
@@ -102,7 +110,6 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                         plan: payments.selectedPlan,
                         planName: payments.selectedPlan.getPlanName(),
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                     };
 
                     captureMessage(`Payments: Failed to handle ${signup.flowId}`, {
@@ -128,7 +135,6 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
 
     const planName = payments.selectedPlan.getPlanName();
     const isB2BPlan = getIsB2BAudienceFromPlan(planName);
-    const hasSomeVpnPlan = getIsVpnPlan(planName);
 
     const paymentsForm = (
         <>
@@ -169,119 +175,39 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                         />
                     );
                 })()}
+
                 <PaymentWrapper
                     {...paymentFacade}
                     noMaxWidth
                     hideFirstLabel
-                    hasSomeVpnPlan={hasSomeVpnPlan}
-                    billingAddressStatus={getBillingAddressStatus(payments.options.billingAddress)}
                     onCurrencyChange={payments.selectCurrency}
+                    taxCountry={taxCountry}
+                    vatNumber={vatNumber}
                 />
 
-                {(() => {
-                    if (
-                        paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.PAYPAL &&
-                        payments.checkResult.AmountDue > 0
-                    ) {
-                        return (
-                            <div className="flex flex-column gap-2">
-                                <StyledPayPalButton
-                                    paypal={paymentFacade.paypal}
-                                    amount={paymentFacade.amount}
-                                    currency={paymentFacade.currency}
-                                    loading={submitting}
-                                    onClick={() => process(paymentFacade.paypal)}
-                                    pill
-                                />
-                                {!hasSomeVpnPlan && (
-                                    <PayPalButton
-                                        id="paypal-credit"
-                                        shape="ghost"
-                                        color="norm"
-                                        pill
-                                        paypal={paymentFacade.paypalCredit}
-                                        disabled={submitting}
-                                        amount={paymentFacade.amount}
-                                        currency={paymentFacade.currency}
-                                        onClick={() => process(paymentFacade.paypalCredit)}
-                                    >
-                                        {c('Link').t`PayPal without credit card`}
-                                    </PayPalButton>
-                                )}
-                            </div>
-                        );
+                <PayButton
+                    size="large"
+                    color="norm"
+                    fullWidth
+                    pill
+                    taxCountry={taxCountry}
+                    paymentFacade={paymentFacade}
+                    loading={submitting}
+                    data-testid="pay"
+                    className="py-4 text-semibold"
+                    paypalClassName=""
+                    suffix={
+                        <div className="text-center mt-8">
+                            <span className="color-success">
+                                <IcShield className="align-text-bottom mr-1" />
+                                <span>{c('Info').t`30-day money-back guarantee`}</span>
+                            </span>
+                        </div>
                     }
-
-                    if (
-                        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL &&
-                        payments.checkResult.AmountDue > 0
-                    ) {
-                        return (
-                            <ChargebeePaypalWrapper
-                                chargebeePaypal={paymentFacade.chargebeePaypal}
-                                iframeHandles={paymentFacade.iframeHandles}
-                            />
-                        );
-                    }
-
-                    if (paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY) {
-                        return (
-                            <ApplePayButton
-                                applePay={paymentFacade.applePay}
-                                iframeHandles={paymentFacade.iframeHandles}
-                            />
-                        );
-                    }
-
-                    if (
-                        (paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN ||
-                            paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) &&
-                        payments.checkResult.AmountDue > 0
-                    ) {
-                        return (
-                            <Button
-                                type="button"
-                                size="large"
-                                loading={submitting}
-                                color="norm"
-                                pill
-                                fullWidth
-                                className="py-4 text-semibold"
-                                onClick={() => {
-                                    captureMessage('Bitcoin payments not supported in CtxSignup');
-                                }}
-                            >
-                                {c('pass_signup_2023: Action').t`Continue with Bitcoin`}
-                            </Button>
-                        );
-                    }
-
-                    return (
-                        <>
-                            <Button
-                                type="submit"
-                                size="large"
-                                loading={submitting}
-                                color="norm"
-                                pill
-                                fullWidth
-                                data-testid="pay"
-                                className="py-4 text-semibold"
-                            >
-                                {c('Action').t`Confirm purchase`}
-                            </Button>
-
-                            <div className="text-center mt-8">
-                                <span className="color-success">
-                                    <IcShield className="align-text-bottom mr-1" />
-                                    <span>{c('Info').t`30-day money-back guarantee`}</span>
-                                </span>
-                            </div>
-
-                            {showAlert3ds && <Alert3ds />}
-                        </>
-                    );
-                })()}
+                >
+                    {c('Action').t`Confirm purchase`}
+                </PayButton>
+                {showAlert3ds && <Alert3ds />}
             </form>
         </>
     );
@@ -311,7 +237,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     <Terms />
                 </Main>
                 <Aside>
-                    <PricingCard step="payment" paymentFacade={paymentFacade} />
+                    <PricingCard step="payment" />
                 </Aside>
             </Wrapper>
             <Footer />

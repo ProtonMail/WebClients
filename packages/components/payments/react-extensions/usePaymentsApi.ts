@@ -9,11 +9,10 @@ import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlans
 import {
     type CheckSubscriptionData,
     type CheckWithAutomaticOptions,
-    DEFAULT_TAX_BILLING_ADDRESS,
     type FullBillingAddress,
     type MultiCheckOptions,
     type MultiCheckSubscriptionData,
-    PLANS,
+    PAYMENTS_API_ERROR_CODES,
     type PaymentMethodStatus,
     type PaymentMethodStatusExtended,
     type PaymentsApi,
@@ -28,6 +27,8 @@ import {
     isCheckWithAutomaticOptions,
     isLifetimePlanSelected,
     isPaymentMethodStatusExtended,
+    normalizeBillingAddress,
+    normalizePaymentMethodStatus,
     queryPaymentMethodStatus,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
@@ -38,12 +39,23 @@ import { getSentryError } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
+import { InvalidZipCodeError } from './errors';
 
-const checkSubscription = (data: CheckSubscriptionData, version: PaymentsVersion) => ({
-    url: `payments/${version}/subscription/check`,
-    method: 'post',
-    data,
-});
+const checkSubscription = (data: CheckSubscriptionData, version: PaymentsVersion) => {
+    let normalizedData: CheckSubscriptionData = {
+        ...data,
+    };
+
+    if (normalizedData.BillingAddress && normalizedData.BillingAddress.ZipCode) {
+        normalizedData.BillingAddress = normalizeBillingAddress(normalizedData.BillingAddress);
+    }
+
+    return {
+        url: `payments/${version}/subscription/check`,
+        method: 'post',
+        data: normalizedData,
+    };
+};
 
 const checkProduct = (data: CheckSubscriptionData) => {
     return {
@@ -56,6 +68,7 @@ const checkProduct = (data: CheckSubscriptionData) => {
             BillingAddress: data.BillingAddress ?? {
                 CountryCode: 'CH',
                 State: null,
+                ZipCode: null,
             },
         },
     };
@@ -166,6 +179,7 @@ export const useMultiCheckCache = () => {
             `.codes-${data.Codes?.join(',') ?? ''}` +
             `.cc-${data.BillingAddress?.CountryCode}` +
             `.s-${data.BillingAddress?.State}` +
+            `.z-${data.BillingAddress?.ZipCode}` +
             `.v-${options?.forcedVersion ?? ''}`;
 
         return btoa(id);
@@ -229,10 +243,6 @@ export const usePaymentsApi = (
                     // If that's already the extended status, aka v5 status, then we just return it,
                     // or set the country code to the default one if it's missing
                     if (isPaymentMethodStatusExtended(result)) {
-                        if (!result.CountryCode) {
-                            result.CountryCode = DEFAULT_TAX_BILLING_ADDRESS.CountryCode;
-                        }
-
                         return result;
                     }
 
@@ -240,24 +250,7 @@ export const usePaymentsApi = (
                     // It will simplify all further interactions with the status.
                     return extendStatus(result);
                 })
-                .then((status) => {
-                    const keys = Object.keys(
-                        status.VendorStates
-                    ) as (keyof PaymentMethodStatusExtended['VendorStates'])[];
-
-                    // Normalizing the boolean values, converting them from 0 or 1 to false or true
-                    for (const key of keys) {
-                        status.VendorStates[key] = !!status.VendorStates[key];
-                    }
-
-                    // The backend doesn't return the Cash key. We still use it in the frontend,
-                    // so we synthetize it here.
-                    if (!Object.hasOwn(status.VendorStates, 'Cash')) {
-                        status.VendorStates.Cash = true;
-                    }
-
-                    return status;
-                })
+                .then((status) => normalizePaymentMethodStatus(status))
                 .then((status) => {
                     // ProtonAccountLite doesn't support cash payments
                     if (APP_NAME === APPS.PROTONACCOUNTLITE) {
@@ -327,7 +320,11 @@ export const usePaymentsApi = (
                     ...result,
                     requestData: data,
                 };
-            } catch (error) {
+            } catch (error: any) {
+                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
+                    throw new InvalidZipCodeError();
+                }
+
                 if (fallback) {
                     return {
                         ...fallback,
@@ -366,15 +363,6 @@ export const usePaymentsApi = (
 
             if (options?.forcedVersion === 'v5') {
                 return checkV5(data, requestOptions, { system: 'chargebee', reason: options.reason });
-            }
-
-            const passB2bPlans = [PLANS.PASS_PRO, PLANS.PASS_BUSINESS];
-            const isPassB2b = passB2bPlans.some((plan) => (data.Plans[plan] ?? 0) > 0);
-            if (isPassB2b) {
-                return checkV4(data, requestOptions, {
-                    reason: 'pass b2b',
-                    system: 'inhouse',
-                });
             }
 
             return checkV5(data, requestOptions, { system: 'chargebee', reason: 'default' });

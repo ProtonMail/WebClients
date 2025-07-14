@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { type IconName } from '@proton/components/components/icon/Icon';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import type { AvailablePaymentMethod, PaymentMethodFlows, SavedPaymentMethod, SepaDetails } from '@proton/payments';
+import type { AvailablePaymentMethod, PaymentMethodFlow, SavedPaymentMethod, SepaDetails } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES, isSignupFlow } from '@proton/payments';
 
 import type { MethodsHook, Props } from '../react-extensions/useMethods';
@@ -102,7 +102,7 @@ const getMethod = (paymentMethod: SavedPaymentMethod): string => {
 export function convertMethod(
     method: AvailablePaymentMethod,
     getSavedMethodById: MethodsHook['getSavedMethodByID'],
-    flow: PaymentMethodFlows
+    flow: PaymentMethodFlow
 ): ViewPaymentMethod {
     if (method.paymentMethodId) {
         const savedMethod = getSavedMethodById(method.paymentMethodId) as SavedPaymentMethod;
@@ -114,7 +114,7 @@ export function convertMethod(
         };
     }
 
-    if (method.type === PAYMENT_METHOD_TYPES.PAYPAL || method.type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
+    if (method.type === PAYMENT_METHOD_TYPES.PAYPAL) {
         return {
             icon: 'brand-paypal' as const,
             text: c('Payment method option').t`PayPal`,
@@ -173,7 +173,7 @@ export function convertMethod(
  * @param flow – current payment flow. Might modify the text of the payment methods
  * @returns
  */
-export const wrapMethods = (methodsHook: MethodsHook, flow: PaymentMethodFlows): ClientMethodsHook => {
+export const wrapMethods = (methodsHook: MethodsHook, flow: PaymentMethodFlow): ClientMethodsHook => {
     const { getSavedMethodByID, usedMethods, newMethods, allMethods, lastUsedMethod } = methodsHook;
 
     return {

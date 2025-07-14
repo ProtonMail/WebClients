@@ -1,12 +1,12 @@
 import { act, render, waitFor } from '@testing-library/react';
 
 import {
+    type Currency,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
-    createTokenV4,
-    getTokenStatusV4,
+    createTokenV5,
+    getTokenStatusV5,
 } from '@proton/payments';
-import { type Currency } from '@proton/payments';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock, applyHOCs, flushPromises, withNotifications } from '@proton/testing';
 
@@ -33,7 +33,7 @@ const BitcoinTestComponent = (props: InnerProps) => {
         Currency: props.currency,
         onTokenValidated: props.onTokenValidated,
         enablePolling: true,
-        paymentsVersion: 'v4',
+        paymentsVersion: 'v5',
     });
 
     return <BitcoinContext {...props} {...bitcoinHook} />;
@@ -48,7 +48,7 @@ afterEach(() => {
     jest.useRealTimers();
 });
 
-const createTokenUrl = createTokenV4({} as any).url;
+const createTokenUrl = createTokenV5({} as any).url;
 const defaultTokenResponse = {
     Token: 'token-123',
     Data: {
@@ -114,11 +114,11 @@ it('should show loading during the initial fetching', async () => {
         />
     );
 
-    expect(queryByTestId('circle-loader')).toBeInTheDocument();
+    expect(queryByTestId('bitcoin-details-skeleton')).toBeInTheDocument();
 });
 
 it('should check the token every 10 seconds', async () => {
-    addApiMock(getTokenStatusV4('token-123').url, () => {
+    addApiMock(getTokenStatusV5('token-123').url, () => {
         return { Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING };
     });
 
@@ -137,7 +137,7 @@ it('should check the token every 10 seconds', async () => {
         await flushPromises();
     });
 
-    addApiMock(getTokenStatusV4('token-123').url, function second() {
+    addApiMock(getTokenStatusV5('token-123').url, function second() {
         return { Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE };
     });
 
@@ -152,7 +152,7 @@ it('should check the token every 10 seconds', async () => {
         Currency: 'USD',
         PaymentToken: 'token-123',
         chargeable: true,
-        type: PAYMENT_METHOD_TYPES.BITCOIN,
+        type: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
         v: 5,
     });
 
