@@ -196,6 +196,7 @@ const Step1 = ({
     const theme = usePublicTheme();
     const { getAvailableCurrencies } = useCurrencies();
     const [changingCurrency, withChangingCurrency] = useLoading();
+    const isLumoAddonAvailable = useFlag('LumoAddonAvailable');
 
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -400,6 +401,7 @@ const Step1 = ({
 
         if (model.session?.subscription && model.session.organization && model.plansMap[planName]) {
             const switchedPlanIds = switchPlan({
+                isLumoAddonAvailable,
                 subscription: model.session.subscription,
                 newPlan: planName,
                 organization: model.session.organization,
@@ -410,6 +412,7 @@ const Step1 = ({
             checkOptions.planIDs = switchedPlanIds;
 
             const result = getUpdatedPlanIDs({
+                isLumoAddonAvailable,
                 user: model.session.resumedSessionResult.User,
                 subscription: model.session.subscription,
                 organization: model.session.organization,

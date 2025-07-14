@@ -440,6 +440,7 @@ const PlanSelection = (props: Props) => {
     // strict plans map doens't have plan fallback if currency is missing. If there is no plan for specified currency,
     // then it will be exluded from the plans map. This way we display only plans with the selected currency.
     const plansMap = getPlansMap(plans, currency, false);
+    const isLumoAddonAvailable = useFlag('LumoAddonAvailable');
 
     const [user] = useUser();
 
@@ -644,6 +645,7 @@ const PlanSelection = (props: Props) => {
 
                     onChangePlanIDs(
                         switchPlan({
+                            isLumoAddonAvailable,
                             subscription,
                             newPlan: isFree ? undefined : planName,
                             organization,
