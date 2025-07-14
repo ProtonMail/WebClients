@@ -34,6 +34,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
@@ -111,6 +112,7 @@ const HeaderMoreDropdown = ({
     const dispatch = useMailDispatch();
     const [loading, withLoading] = useLoading();
     const star = useStar();
+    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
     const [user] = useUser();
     const { feature } = useFeature(FeatureCode.SetExpiration);
     const closeDropdown = useRef<() => void>();
@@ -188,7 +190,18 @@ const HeaderMoreDropdown = ({
     };
 
     const handleStar = async () => {
-        if (!loading) {
+        if (loading) {
+            return;
+        }
+
+        if (applyLocationEnabled) {
+            void withLoading(
+                applyLocation({
+                    elements: [message.data || ({} as Element)],
+                    labelChanges: { [MAILBOX_LABEL_IDS.STARRED]: !isStarred },
+                })
+            );
+        } else {
             void withLoading(star([message.data || ({} as Element)], !isStarred, labelID, SOURCE_ACTION.MORE_DROPDOWN));
         }
     };
