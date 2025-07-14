@@ -6,29 +6,14 @@ import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import { srpVerify } from '@proton/shared/lib/srp';
 
-import type {
-    AccountData,
-    InviteData,
-    ReferralData,
-    SignupCacheResult,
-    SignupInviteParameters,
-} from '../../../signup/interfaces';
+import type { AccountData, InviteData, SignupInviteParameters } from '../../../signup/interfaces';
 import { SignupType } from '../../../signup/interfaces';
-
-const getReferralDataQuery = (referralData: SignupCacheResult['referralData']) => {
-    if (referralData) {
-        return {
-            ReferralID: referralData.invite,
-            ReferralIdentifier: referralData.referrer,
-        };
-    }
-};
 
 export const getTokenPayment = (tokenPayment: string | undefined) => {
     return tokenPayment ? { TokenPayment: tokenPayment } : undefined;
 };
 
-const getSignupTypeQuery = (accountData: SignupCacheResult['accountData']) => {
+const getSignupTypeQuery = (accountData: AccountData) => {
     if (accountData.signupType === SignupType.Proton) {
         return { Domain: accountData.domain };
     }
@@ -39,7 +24,6 @@ export const handleCreateUser = async ({
     paymentToken,
     humanVerificationResult,
     inviteData,
-    referralData,
     productParam,
     clientType,
     api,
@@ -51,7 +35,6 @@ export const handleCreateUser = async ({
     humanVerificationResult: HumanVerificationResult | undefined;
     inviteData: InviteData | undefined;
     productParam: ProductParam | undefined;
-    referralData: ReferralData | undefined;
     api: Api;
     invite: SignupInviteParameters | undefined;
 }): Promise<{ user: User; humanVerificationResult: HumanVerificationResult | undefined }> => {
@@ -91,7 +74,6 @@ export const handleCreateUser = async ({
                             Payload: payload,
                             ...getTokenPayment(paymentToken),
                             ...getSignupTypeQuery(accountData),
-                            ...getReferralDataQuery(referralData),
                         },
                         productParam
                     )
