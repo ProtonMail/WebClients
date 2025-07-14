@@ -29,13 +29,7 @@ const DateCell = ({ referral }: Props) => {
             break;
     }
 
-    if (!nextDate) {
-        return null;
-    }
-
-    return (
-        <span className="color-weak">{format(fromUnixTime(referral.CreateTime), 'PP', { locale: dateLocale })}</span>
-    );
+    return <>{nextDate ? format(fromUnixTime(referral.CreateTime), 'P', { locale: dateLocale }) : null}</>;
 };
 
 export default DateCell;
