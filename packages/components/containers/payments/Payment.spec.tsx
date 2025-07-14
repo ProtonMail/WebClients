@@ -3,7 +3,7 @@ import { render, waitFor } from '@testing-library/react';
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import type { SavedPaymentMethod, SavedPaymentMethodExternal, SavedPaymentMethodInternal } from '@proton/payments';
 import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { applyHOCs, withApi, withCache, withConfig } from '@proton/testing';
+import { applyHOCs, withApi, withCache, withConfig, withReduxStore } from '@proton/testing';
 
 import { PaymentsNoApi } from './Payment';
 
@@ -22,7 +22,7 @@ let lastUsedMethod: ViewPaymentMethod;
 
 let allMethods: ViewPaymentMethod[];
 
-const WrappedPaymentsNoApi = applyHOCs(withApi(), withConfig(), withCache())(PaymentsNoApi);
+const WrappedPaymentsNoApi = applyHOCs(withApi(), withConfig(), withCache(), withReduxStore())(PaymentsNoApi);
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -208,7 +208,7 @@ describe('Payment', () => {
         });
     });
 
-    it('should render <Alert3DS> if user selected a perviously used credit card (customPaymentMethod)', async () => {
+    it('should render <Alert3DS> if user selected a previously used credit card (customPaymentMethod)', async () => {
         apiMock.mockImplementation((query) => {
             if (query.url === 'payments/v4/methods') {
                 return {
@@ -291,7 +291,7 @@ describe('Payment', () => {
         });
     });
 
-    it('should not render <Alert3DS> if user selected a perviously used method which is not a credit card', async () => {
+    it('should not render <Alert3DS> if user selected a previously used method which is not a credit card', async () => {
         apiMock.mockImplementation((query) => {
             if (query.url === 'payments/v4/methods') {
                 return {
