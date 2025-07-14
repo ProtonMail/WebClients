@@ -47,6 +47,7 @@ export const getRoutes = ({
     isPasswordPolicyEnabled,
     isOrganizationPolicyEnforced,
     isB2BTrial,
+    isReferralExpansionEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -67,6 +68,7 @@ export const getRoutes = ({
             memberships,
             isZoomIntegrationEnabled,
             isB2BTrial,
+            isReferralExpansionEnabled,
         }),
         mail: getMailAppRoutes({
             app,

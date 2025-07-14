@@ -6,7 +6,7 @@ import { useShowLightLabellingFeatureModal } from '@proton/components/containers
 import CancellationReminderModal from '@proton/components/containers/payments/subscription/cancellationReminder/CancellationReminderModal';
 import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { shouldOpenReminderModal } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
-import { getShouldOpenReferralModal } from '@proton/components/containers/referral/modals/helper';
+import { getShouldOpenReferralModal } from '@proton/components/containers/referralLegacy/modals/helper';
 import TrialEndedModal from '@proton/components/containers/subscription/TrialEndedModal';
 import { FeatureCode, useFeature } from '@proton/features';
 import { OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';

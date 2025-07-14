@@ -4,14 +4,16 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
-import TwitterButton from '@proton/components/components/button/TwitterButton';
 import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import clsx from '@proton/utils/clsx';
 import throttle from '@proton/utils/throttle';
 
-const InviteShareLink = () => {
-    const [userSettings, loadingUserSettings] = useUserSettings();
+import ReferralSignatureToggle from './inviteActions/ReferralSignatureToggle';
+
+const InviteShareLink = ({ className }: { className?: string }) => {
+    const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
 
     const referrerLink = userSettings.Referral?.Link || '';
@@ -30,37 +32,30 @@ const InviteShareLink = () => {
         [referrerLink]
     );
 
-    if (loadingUserSettings) {
-        return null;
-    }
-
     return (
-        <div>
-            <h2 className="h3 text-bold">{c('Label').t`Your referral link`}</h2>
-            <div className="invite-section-share-link flex items-stretch gap-2">
-                <div className="flex-1 flex items-center p-2 user-select border rounded" title={referrerLink}>
+        <div className={clsx('flex flex-column gap-4', className)}>
+            <h2 className="h3 text-bold">{c('Label').t`Share your referral link`}</h2>
+
+            <div className="flex gap-2 flex-column lg:flex-row bg-weak rounded-lg p-1">
+                <div className="flex-auto flex items-center p-2 user-select" title={referrerLink}>
                     <span className="text-ellipsis">{referrerLink}</span>
                 </div>
-                <div className="flex gap-2 flex-nowrap justify-end">
-                    <Button color="norm" onClick={onCopyButtonClick} title={c('Info').t`Copy your referral link`}>
-                        <span className="flex flex-nowrap items-center">
-                            <Icon name="link" className="mr-1 shrink-0" /> {c('Button').t`Copy`}
-                        </span>
-                    </Button>
-                    <TwitterButton
-                        href={encodeURI(
-                            'https://twitter.com/intent/tweet?text=' +
-                                c('Info')
-                                    .t`I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${referrerLink}`
-                        )}
-                        target="_blank"
+                <div className="flex lg:justify-end">
+                    <Button
+                        color="norm"
+                        onClick={onCopyButtonClick}
+                        title={c('Info').t`Copy your referral link`}
+                        disabled={!referrerLink}
+                        noDisabledStyles
                     >
                         <span className="flex flex-nowrap items-center">
-                            <Icon name="brand-twitter" className="mr-1 shrink-0" /> {c('Button').t`Tweet`}
+                            <Icon name="squares" className="mr-2 shrink-0" /> {c('Button').t`Copy`}
                         </span>
-                    </TwitterButton>
+                    </Button>
                 </div>
             </div>
+
+            <ReferralSignatureToggle />
         </div>
     );
 };

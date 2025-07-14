@@ -133,6 +133,7 @@ export type IconName =
     | 'circle'
     | 'circle-filled'
     | 'circle-half-filled'
+    | 'circle-radio-empty'
     | 'circle-slash'
     | 'clock'
     | 'clock-circle-filled'
@@ -541,6 +542,7 @@ export { IcChevronsRight } from './icons/IcChevronsRight';
 export { IcCircle } from './icons/IcCircle';
 export { IcCircleFilled } from './icons/IcCircleFilled';
 export { IcCircleHalfFilled } from './icons/IcCircleHalfFilled';
+export { IcCircleRadioEmpty } from './icons/IcCircleRadioEmpty';
 export { IcCircleSlash } from './icons/IcCircleSlash';
 export { IcClock } from './icons/IcClock';
 export { IcClockCircleFilled } from './icons/IcClockCircleFilled';
