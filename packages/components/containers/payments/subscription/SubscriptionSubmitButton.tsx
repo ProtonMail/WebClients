@@ -99,9 +99,21 @@ const SubscriptionSubmitButton = ({
 
         const amountDue = checkResult?.AmountDue || 0;
         if (amountDue > 0) {
+            if (isTrial(subscription)) {
+                return {
+                    children: c('Action').t`Cancel trial and pay`,
+                };
+            }
+
             const price = getSimplePriceString(currency, amountDue);
             return {
                 children: c('Action').t`Pay ${price} now`,
+            };
+        }
+
+        if (isTrial(subscription)) {
+            return {
+                children: c('Action').t`Save`,
             };
         }
 
