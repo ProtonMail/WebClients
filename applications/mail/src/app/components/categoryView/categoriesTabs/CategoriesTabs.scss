@@ -1,0 +1,82 @@
+@import '~@proton/styles/scss/lib';
+
+$category-colors: (
+	iris: (
+		base: var(--iris-500),
+		bg: var(--iris-50),
+		text: var(--iris-700),
+	),
+	sky: (
+		base: var(--sky-500),
+		bg: var(--sky-50),
+		text: var(--sky-700),
+	),
+	teal: (
+		base: var(--teal-500),
+		bg: var(--teal-50),
+		text: var(--teal-700),
+	),
+	pink: (
+		base: var(--pink-500),
+		bg: var(--pink-50),
+		text: var(--pink-700),
+	),
+	blue: (
+		base: var(--blue-500),
+		bg: var(--blue-50),
+		text: var(--blue-700),
+	),
+	purple: (
+		base: var(--purple-500),
+		bg: var(--purple-50),
+		text: var(--purple-700),
+	),
+	amber: (
+		base: var(--amber-500),
+		bg: var(--amber-50),
+		text: var(--amber-700),
+	),
+);
+
+.tab-container {
+	border-width: rem(3);
+
+	.text-default {
+		font-size: rem(13);
+	}
+
+	// Used to avoid jumping when the label get the semibold weight
+	.tag-label::before {
+		display: block;
+		content: attr(title);
+		speak: never;
+		font-weight: 600;
+		block-size: 0;
+		overflow: hidden;
+		visibility: hidden;
+	}
+
+	@each $name, $colors in $category-colors {
+		&.tab--#{$name} {
+			&--active {
+				border-color: map-get($colors, base);
+
+				svg {
+					color: map-get($colors, base);
+				}
+			}
+
+			.tag-count {
+				background-color: map-get($colors, bg);
+				color: map-get($colors, text);
+				border-radius: rem(6);
+			}
+
+			&:hover {
+				svg {
+					color: map-get($colors, base);
+				}
+			}
+		}
+	}
+}
