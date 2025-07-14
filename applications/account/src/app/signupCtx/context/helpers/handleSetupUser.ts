@@ -7,7 +7,7 @@ import {
     type PaymentsVersion,
     type PlanIDs,
     type Subscription,
-    subscribe,
+    createSubscription,
 } from '@proton/payments';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -34,6 +34,7 @@ export interface SubscriptionData2 {
     checkResult: RequiredCheckResponse;
     paymentToken: ExtendedTokenPayment | undefined;
     billingAddress: BillingAddress;
+    vatNumber: string | undefined;
 }
 
 const handleSubscribeUser = async (
@@ -56,12 +57,13 @@ const handleSubscribeUser = async (
         }
 
         const { Subscription } = await api<{ Subscription: Subscription }>(
-            subscribe(
+            createSubscription(
                 {
                     Plans: subscriptionData.planIDs,
                     Currency: subscriptionData.currency,
                     Cycle: subscriptionData.cycle,
                     BillingAddress: subscriptionData.billingAddress,
+                    VatId: subscriptionData.vatNumber,
                     ...{
                         Payment: subscriptionData.paymentToken,
                         Amount: subscriptionData.checkResult.AmountDue,

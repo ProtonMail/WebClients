@@ -13,18 +13,12 @@ import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useLoading } from '@proton/hooks';
 import type { Invoice, PaymentProcessorHook } from '@proton/payments';
-import {
-    type Currency,
-    PAYMENT_METHOD_TYPES,
-    checkInvoice,
-    getHasSomeVpnPlan,
-    getPaymentsVersion,
-} from '@proton/payments';
+import { type Currency, PAYMENT_METHOD_TYPES, checkInvoice, getPaymentsVersion } from '@proton/payments';
+import { ChargebeePaypalButton } from '@proton/payments/ui';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 
@@ -60,7 +54,6 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
     );
     const [subscription] = useSubscription();
     const [user] = useUser();
-    const hasSomeVpnPlan = getHasSomeVpnPlan(subscription);
 
     const { AmountDue, Amount, Currency, Credit } = result ?? {};
 
@@ -146,8 +139,6 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                 <StyledPayPalButton
                     type="submit"
                     paypal={paymentFacade.paypal}
-                    amount={amountDue}
-                    currency={paymentFacade.currency}
                     loading={loading}
                     data-testid="paypal-button"
                 />
@@ -158,7 +149,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             return (
                 <div className="flex justify-end">
                     <div className="w-1/2 mr-1">
-                        <ChargebeePaypalWrapper
+                        <ChargebeePaypalButton
                             chargebeePaypal={paymentFacade.chargebeePaypal}
                             iframeHandles={paymentFacade.iframeHandles}
                         />
@@ -232,18 +223,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             />
                         </Field>
                     </Row>
-                    {/* "Duplicated amountDue > 0 condition isn't a mistake. Even if we don't show the message above,
-                     we still will hide the PaymentWrapper if the amount is 0. This handles the case when user has 
-                     enough credits to pay for the invoice without adding a new payment method. So the amount to pay 
-                     will remain 0." */}
-                    {amountDue > 0 ? (
-                        <PaymentWrapper
-                            {...paymentFacade}
-                            onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
-                            noMaxWidth
-                            hasSomeVpnPlan={hasSomeVpnPlan}
-                        />
-                    ) : null}
+                    {amountDue > 0 ? <PaymentWrapper {...paymentFacade} noMaxWidth /> : null}
                 </>
             )}
         </FormModal>

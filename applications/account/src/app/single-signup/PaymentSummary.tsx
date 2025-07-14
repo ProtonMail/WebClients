@@ -10,8 +10,8 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
+import { type PaymentFacade } from '@proton/components/payments/client-extensions';
 import { ADDON_NAMES, type Plan } from '@proton/payments';
-import { type OnBillingAddressChange, WrappedTaxCountrySelector } from '@proton/payments/ui';
 import type { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { SubscriptionMode } from '@proton/shared/lib/interfaces';
@@ -28,9 +28,6 @@ import getAddonsPricing from './planCustomizer/getAddonsPricing';
 interface Props {
     model: VPNSignupModel;
     options: OptimisticOptions & { plan: Plan };
-    onBillingAddressChange: OnBillingAddressChange;
-    showInclusiveTax: boolean;
-    showTaxCountry: boolean;
     loadingPaymentDetails: boolean;
     actualCheckout: ReturnType<typeof getCheckout>;
     isB2bPlan: boolean;
@@ -38,14 +35,12 @@ interface Props {
     planInformation: ReturnType<typeof getPlanInformation>;
     upsellToggle: ReactNode;
     hasSelectedFree: boolean;
+    paymentFacade: PaymentFacade;
 }
 
 const PaymentSummary = ({
     model,
     options,
-    showTaxCountry,
-    showInclusiveTax,
-    onBillingAddressChange,
     loadingPaymentDetails,
     actualCheckout,
     isB2bPlan,
@@ -53,6 +48,7 @@ const PaymentSummary = ({
     planInformation,
     upsellToggle,
     hasSelectedFree,
+    paymentFacade,
 }: Props) => {
     const initialLoading = model.loadingDependencies;
     const loading = loadingPaymentDetails || initialLoading;
@@ -220,12 +216,6 @@ const PaymentSummary = ({
             )}
 
             <div className="mx-3 flex flex-column gap-2">
-                {showTaxCountry && (
-                    <WrappedTaxCountrySelector
-                        onBillingAddressChange={onBillingAddressChange}
-                        statusExtended={model.paymentMethodStatusExtended}
-                    />
-                )}
                 <div className={clsx('text-bold', 'flex justify-space-between text-rg gap-2')}>
                     <span>
                         {isTrial
@@ -245,7 +235,8 @@ const PaymentSummary = ({
                         )}
                     </span>
                 </div>
-                {showInclusiveTax && (
+
+                {paymentFacade.showInclusiveTax && (
                     <InclusiveVatText
                         tax={options.checkResult?.Taxes?.[0]}
                         currency={options.currency}

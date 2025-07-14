@@ -1,47 +1,23 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
-import { type Subscription } from '@proton/payments';
-import { getPlanTitle, isTrial } from '@proton/payments';
-import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { type FreeSubscription, type Subscription, getPlanTitle, isTrial } from '@proton/payments';
 
 interface Props {
-    checkResult: SubscriptionCheckResponse | undefined;
-    subscription: Subscription | undefined;
+    subscription: Subscription | FreeSubscription | undefined;
     hasPaymentMethod: boolean;
+    taxCountry: React.ReactNode;
 }
 
-export const NoPaymentRequiredNote = ({ checkResult, subscription, hasPaymentMethod }: Props) => {
-    const [user] = useUser();
-
-    const currencyConversion = user.Currency !== checkResult?.Currency;
-
+export const NoPaymentRequiredNote = ({ subscription, hasPaymentMethod, taxCountry }: Props) => {
     const trial = isTrial(subscription);
     const planTitle = getPlanTitle(subscription);
-    const creditsRemaining = user.Credit + (checkResult?.Credit ?? 0);
-
-    const amountDue = checkResult?.AmountDue;
-
-    if (amountDue || !checkResult) {
-        return null;
-    }
-
-    const showReaminingCredits = checkResult?.Credit && creditsRemaining && !currencyConversion && false;
 
     return (
         <div>
             {!trial && (
                 <>
+                    {taxCountry}
                     <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
-                    {showReaminingCredits ? (
-                        <div className="mb-4">
-                            {c('Info').ngettext(
-                                msgid`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credit remaining.`,
-                                `Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`,
-                                creditsRemaining
-                            )}
-                        </div>
-                    ) : null}
                 </>
             )}
             {trial && !hasPaymentMethod && (

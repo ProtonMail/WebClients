@@ -19,7 +19,6 @@ import { usePaymentProcessor } from './usePaymentProcessor';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
-    isCredit: boolean;
     onChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>;
 }
 
@@ -46,7 +45,7 @@ export type ChargebeePaypalProcessorHook = Omit<PaymentProcessorHook, keyof Over
 } & Overrides;
 
 export const useChargebeePaypal = (
-    { amountAndCurrency, isCredit, onChargeable }: Props,
+    { amountAndCurrency, onChargeable }: Props,
     { api, verifyPayment, handles, events, chargebeePaypalModalHandles, forceEnableChargebee }: Dependencies
 ): ChargebeePaypalProcessorHook => {
     const paypalIframeLoadedRef = useRef(false);
@@ -59,7 +58,6 @@ export const useChargebeePaypal = (
                 amountAndCurrency,
                 handles,
                 events,
-                isCredit,
                 forceEnableChargebee,
                 chargebeePaypalModalHandles,
                 onChargeable
@@ -132,7 +130,7 @@ export const useChargebeePaypal = (
         initialize,
         initializing,
         meta: {
-            type: isCredit ? 'chargebee-paypal-credit' : 'chargebee-paypal',
+            type: 'chargebee-paypal',
         },
     };
 };

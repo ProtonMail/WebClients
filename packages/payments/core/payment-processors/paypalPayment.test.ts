@@ -14,14 +14,12 @@ describe('PaypalPaymentProcessor', () => {
         Currency: 'USD',
     };
     const onTokenIsChargeable = jest.fn().mockResolvedValue(null);
-    const isCredit = false;
 
     function resetPaymentProcessor() {
         paymentProcessor = new PaypalPaymentProcessor(
             mockVerifyPayment,
             apiMock,
             amountAndCurrency,
-            isCredit,
             onTokenIsChargeable
         );
     }

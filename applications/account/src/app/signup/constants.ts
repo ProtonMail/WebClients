@@ -15,6 +15,7 @@ export const DEFAULT_SIGNUP_MODEL: SignupModel = {
         planIDs: {},
         checkResult: getFreeCheckResult(),
         billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+        zipCodeValid: true,
     },
     humanVerificationMethods: [],
     humanVerificationToken: '',
