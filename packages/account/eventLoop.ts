@@ -27,6 +27,7 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import type { Category } from '@proton/shared/lib/interfaces/Category';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import type {
     CalendarEventManager,
@@ -73,6 +74,7 @@ export interface EventLoop {
     GroupMembers?: EventItemUpdate<GroupMember, 'GroupMember'>[];
     GroupMemberships?: EventItemUpdate<GroupMembership, 'GroupMembership'>[];
     NewsletterSubscriptions?: EventItemUpdate<NewsletterSubscription, 'NewsletterSubscription'>[];
+    RetentionRules?: EventItemUpdate<RetentionRule, 'RetentionRule'>[];
     DriveShareRefresh?: {
         Action: EVENT_ACTIONS;
     };
