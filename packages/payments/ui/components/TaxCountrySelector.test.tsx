@@ -1,7 +1,16 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import useFlag from '@proton/unleash/useFlag';
+
 import { type OnBillingAddressChange, useTaxCountry } from '../hooks/useTaxCountry';
 import { TaxCountrySelector } from './TaxCountrySelector';
+
+// Mock the feature flag to be enabled by default for all tests (to match existing test expectations)
+jest.mock('@proton/unleash', () => ({
+    useFlag: jest.fn().mockReturnValue(true),
+}));
+
+const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
 
 // Test component that calls the hook and passes the result to TaxCountrySelector
 const TestTaxCountrySelector = ({
@@ -31,6 +40,11 @@ const TestTaxCountrySelector = ({
 };
 
 describe('TaxCountrySelector component', () => {
+    beforeEach(() => {
+        // Reset to default (enabled) before each test to match existing test expectations
+        mockUseFlag.mockReturnValue(true);
+    });
+
     it('should render', () => {
         const { container } = render(<TestTaxCountrySelector />);
         expect(container).not.toBeEmptyDOMElement();
