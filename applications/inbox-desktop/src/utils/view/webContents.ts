@@ -7,6 +7,7 @@ import {
     isAccountSwitch,
     isAccoutLite,
     isCalendar,
+    isGoogleOAuthAuthorizationURL,
     isHome,
     isHostAllowed,
     isMail,
@@ -192,7 +193,7 @@ export function handleWebContents(contents: WebContents) {
             return { action: "deny" };
         }
 
-        if (isAccount(url)) {
+        if (isAccount(url) && !isGoogleOAuthAuthorizationURL(url)) {
             if (isAccoutLite(url)) {
                 logWindowOpen("denied", `account lite in browser ${url}`);
                 shell.openExternal(url);
