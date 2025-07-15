@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "@protontech/drive-sdk": "^0.0.12",
-        "@types/node": "^22.16.0"
+        "@types/node": "^22.16.4"
     },
     "devDependencies": {
         "@types/jest": "^29.5.14",
@@ -20,7 +20,7 @@
         "ts-loader": "^9.5.2",
         "ts-node": "^10.9.2",
         "typescript": "^5.8.3",
-        "webpack": "^5.99.9",
+        "webpack": "^5.100.2",
         "webpack-cli": "^6.0.1"
     }
 }
