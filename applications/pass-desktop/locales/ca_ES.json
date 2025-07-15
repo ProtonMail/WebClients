@@ -1881,10 +1881,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
-      ],
       "Moving items": [
         "S'estan movent elements"
       ],
@@ -3892,8 +3888,8 @@
       ]
     },
     "PassOnboardingOffer": {
-      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
-        "${ PASS_SHORT_APP_NAME } Plus Lifetime per a ${ plusLifetimePrice }"
+      "${ plusTitle } Lifetime for ${ plusLifetimePrice }": [
+        "${ plusTitle } Lifetime per ${ plusLifetimePrice }"
       ],
       "${ price }/month": [
         "${ price }/mes"
@@ -4172,14 +4168,8 @@
       "${ BRAND_NAME } addresses": [
         "Adreces de ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
-      ],
-      "${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Protecció del compte"

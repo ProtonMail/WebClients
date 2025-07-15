@@ -544,6 +544,9 @@
       ],
       "With other ${ BRAND_NAME } users": [
         "Với người dùng ${ BRAND_NAME } khác"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Trình quản lý mật khẩu của bạn không có ở đây? Hãy yêu cầu nó."
       ]
     },
     "App menu": {
@@ -1303,6 +1306,12 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } để bật chê độ ngoại tuyến"
+      ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "Vui lòng xác nhận mật khẩu dự phòng để tắt chế độ ngoại tuyến"
+      ],
+      "Please confirm your extra password": [
+        "Vui lòng xác nhận mật khẩu bổ sung của bạn"
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Vui lòng xác nhận mật khẩu của bạn để tự động khóa bằng mật khẩu cấp 2."
@@ -2152,8 +2161,14 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Chọn kho lưu trữ để nhập bí danh SimpleLogin"
       ],
+      "Select theme": [
+        "Chọn chủ đề"
+      ],
       "Select your password manager": [
         "Chọn trình quản lý mật khẩu của bạn"
+      ],
+      "Select your theme": [
+        "Chọn chủ đề của bạn"
       ],
       "Selected": [
         "Đã chọn"
@@ -2428,6 +2443,9 @@
       ],
       "Add note": [
         "Thêm ghi chú"
+      ],
+      "Add SSID": [
+        "Thêm SSID"
       ],
       "Add text": [
         "Thêm văn bản"
@@ -2823,6 +2841,9 @@
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tất cả nội dung trong thùng rác của bạn sẽ bị xóa vĩnh viễn. Bạn không thể hoàn tác hành động này."
+      ],
+      "An error occurred while importing your data.": [
+        "Có lỗi xảy ra trong khi trích xuất dữ liệu của bạn."
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Không thể lấy hộp thư đến cho bí danh này bây giờ"

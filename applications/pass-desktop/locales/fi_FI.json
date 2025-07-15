@@ -1835,10 +1835,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
-      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -3774,9 +3770,6 @@
       ]
     },
     "PassOnboardingOffer": {
-      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
-        "${ PASS_SHORT_APP_NAME } Plus Lifetime hintaan ${ plusLifetimePrice }"
-      ],
       "${ price }/month": [
         "${ price }/kuukausi"
       ]
@@ -4051,14 +4044,8 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME }-osoitteet"
       ],
-      "${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
-      ],
-      "${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Tilin suojaus"
