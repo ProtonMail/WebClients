@@ -1078,11 +1078,17 @@
       ]
     },
     "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
       "200 GB storage": [
         "200 GB lagerplads"
       ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "Rabatter er baserede på en standard månedlig pris. Ved slutningen af faktureringsperioden fornys dit abonnement efter den standard årlige pris."
+      ],
+      "Encrypted password manager": [
+        "Krypteret adgangskodehåndtering"
       ],
       "Online document editor": [
         "Online dokumenteditor"
@@ -1098,6 +1104,9 @@
       ],
       "Share passwords easily": [
         "Del let kodeord"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
@@ -1229,9 +1238,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop app"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
@@ -3142,9 +3148,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Det mindste kreditstørrelse, der kan tilføjes, er ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "Den mindste betaling vi accepterer er ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Politiknavnet skal være mellem 3 og 40 tegn lang."
       ],
@@ -3586,6 +3589,11 @@
       ],
       "Secure streaming": [
         "Sikker streaming"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+, Prime Video og mere, hvor som helst"
       ]
     },
     "fido2: Action": {
@@ -4157,6 +4165,12 @@
       "active": [
         "aktiv"
       ],
+      "Activity monitor": [
+        "Aktivitetsovervågning"
+      ],
+      "Activity Monitor": [
+        "Aktivitetsovervågning"
+      ],
       "add a recovery method": [
         "tilføj en gendannelsesmetode"
       ],
@@ -4503,6 +4517,9 @@
       ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Aktivér auto-fornyelse for fortsat at have adgang til Plus-servere og -funktioner."
+      ],
+      "Enable detailed events": [
+        "Aktiver detaljerede begivenheder"
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivér single sign-on for at holde din organisation sikker"
@@ -5015,10 +5032,6 @@
       ],
       "Please fill in all required fields.": [
         "Udfyld venligst alle obligatoriske felter."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Bemærk, at når du klikker på knappen Bekræft, vil din konto have ${ creditsRemaining } kredit tilbage.",
-        "Bemærk, at når du klikker på knappen Bekræft, vil din konto have ${ creditsRemaining } kreditter tilbage."
       ],
       "please open a support ticket": [
         "åbn venligst en support-sag"
@@ -5716,9 +5729,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
-      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Du vil kunne gøre brugeren til administrator, når han/hun har accepteret invitationen."
       ],
@@ -5752,9 +5762,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Din adgangskode til ${ BRAND_NAME }"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Dit ${ PASS_SHORT_APP_NAME } Plus abonnement vil blive erstattet af ${ PASS_SHORT_APP_NAME } Lifetime. Den resterende del af dit abonnement vil blive tilføjet til din konto. ${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Dine ${ VPN_APP_NAME } og ${ MAIL_APP_NAME } konti er forbundet. Hvis du vil slette dem begge, skal du logge ind på ${ loginLink } og slette din konto der."
@@ -5816,6 +5823,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Valgfrit"
+      ],
       "Selected color:": [
         "Valgte farve:"
       ]
@@ -6186,6 +6196,9 @@
       ],
       "Entity ID": [
         "Enheds-ID"
+      ],
+      "Entity ID URL": [
+        "Enheds-ID URL"
       ],
       "Event": [
         "Begivenhed"
@@ -6652,9 +6665,6 @@
       "clearing your browser cache": [
         "rydder din browser-cache"
       ],
-      "click here": [
-        "klik hér"
-      ],
       "Common sign in issues": [
         "Almindelige tegn på problemer"
       ],
@@ -6742,9 +6752,6 @@
       "Pay invoice": [
         "Betal faktura"
       ],
-      "PayPal without credit card": [
-        "PayPal uden betalingskort"
-      ],
       "perform a password reset from your active session": [
         "udføre en nulstilling af adgangskoden fra din aktive session"
       ],
@@ -6829,17 +6836,56 @@
       ]
     },
     "Log event": {
+      "Account password change": [
+        "Kontoadgangskode ændring"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Godkendelsesfejl (anden faktor fejlede)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Godkendelsesfejl (forkert adgangskode)"
+      ],
+      "Authentication success": [
+        "Godkendelse lykkedes"
+      ],
+      "Mailbox password change": [
+        "Ændring af postkasseadgangskode"
+      ],
       "Password reset": [
         "Adgangskodenulstilling"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Anden faktor deaktiveret (autentificerings-app)"
+      ],
+      "Second factor disabled (security key)": [
+        "Anden faktor deaktiveret (sikkerhedsnøgle)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Anden faktor aktiveret (autentificerings-app)"
       ],
       "Sign in blocked (due to abuse)": [
         "Login blokeret (på grund af misbrug)"
       ],
+      "Sign in failure (second factor failed)": [
+        "Log ind-fejl (andet trin mislykkedes)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Fejl ved login (forkert adgangskode)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Login forbudt (på grund af misbrug)"
+      ],
       "Sign in success": [
         "Logget ind"
       ],
+      "Sign in success (awaiting second factor)": [
+        "Login succes (afventer anden faktor)"
+      ],
       "Sign out": [
         "Log ud"
+      ],
+      "Two password mode disabled": [
+        "To-adgangskodetilstand deaktiveret"
       ],
       "Two password mode enabled": [
         "To-adgangskodetilstand aktiveret"
@@ -7570,9 +7616,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Beskyt følsomme erhvervsoplysninger, og samarbejd sikkert."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Beskyt din familie med alle premium funktioner i ${ PASS_SHORT_APP_NAME } Plus til 6 brugere."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskyt din families privatliv med alle ${ BRAND_NAME } tjenester kombineret."
       ],
@@ -7927,6 +7970,10 @@
       ],
       "Require 2FA": [
         "Kræve 2FA"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Mulighed for ${ n } brugerdefineret e-mail-domæne",
+        "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
     "news": {
@@ -8083,9 +8130,6 @@
       "Get the deal": [
         "Tag imod tilbuddet"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Sidste chance for at spare 80% på den første måned af ${ plan } Plus."
-      ],
       "Last day to save": [
         "Sidste dag til at gemme"
       ],
@@ -8215,6 +8259,9 @@
       ],
       "Receive from all": [
         "Modtag fra alle"
+      ],
+      "Required": [
+        "Påkrævet"
       ],
       "Router": [
         "Router"
@@ -8363,6 +8410,11 @@
       ],
       "Unlimited logins, notes, credit cards and more": [
         "Ubegrænsede logins, noter, betalingskort og mere"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } abonnement"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8544,26 +8596,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
       ],
-      "Please select billing country": [
-        "Vælg venligst faktureringsland"
-      ],
-      "Please select billing state": [
-        "Vælg venligst faktureringsstat"
-      ],
-      "Please select your billing country first.": [
-        "Vælg venligst dit faktureringsland først."
-      ],
-      "Please select your billing state first.": [
-        "Vælg venligst dit faktureringsstat først."
-      ],
       "Processing payment": [
         "Behandler betaling"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, annuller når som helst."
-      ],
-      "Select billing country to pay": [
-        "Vælg faktureringsland for at betale"
       ],
       "terms & conditions": [
         "vilkår og betingelser"
@@ -8812,6 +8849,11 @@
       ],
       "Enjoying ${ planName }?": [
         "Glad for ${ planName }?"
+      ]
+    },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Opgradér til ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -9529,6 +9571,9 @@
       "Go to subscription plans": [
         "Gå til abonnementer"
       ],
+      "Keep passwords safe": [
+        "Hold adgangskoder sikre"
+      ],
       "Unblock streaming content": [
         "Lås op for streamet indhold"
       ],
@@ -9993,6 +10038,10 @@
       "High-speed VPN on ${ maxVpn } device": [
         "Højhastigheds VPN på ${ maxVpn } enhed",
         "Højhastigheds VPN på ${ maxVpn } enheder"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-forbindelse til ${ n } enhed per bruger",
+        "VPN-forbindelse til ${ n } enheder per bruger"
       ]
     },
     "Subscription change warning": {
@@ -10706,9 +10755,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Gratis"
-      ],
       "${ BRAND_NAME } Account password rules": [
         "${ BRAND_NAME }-konto adgangskoderegler"
       ],
@@ -10768,6 +10814,9 @@
       ],
       "Activate user": [
         "Aktiver bruger"
+      ],
+      "Activity monitor": [
+        "Aktivitetsovervågning"
       ],
       "Add ${ totalServerCount } server?": [
         "Tilføj ${ totalServerCount } server?",
@@ -11745,6 +11794,9 @@
     "Unlimited offer": {
       "/month": [
         "/måned"
+      ],
+      "Only": [
+        "Kun"
       ]
     },
     "unprivatization": {

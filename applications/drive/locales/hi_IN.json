@@ -525,9 +525,6 @@
       "Loading link": [
         "लिंक लोड हो रहा है"
       ],
-      "Loading verification": [
-        "सत्यापन लोड हो रहा है"
-      ],
       "Manage folders": [
         "फोल्डर संभाले"
       ],
@@ -1132,9 +1129,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } डेस्कटॉप ऐप"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } स्टोरेज"
@@ -3082,9 +3076,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "जोड़ने के लिए क्रेडिट रकम कम-से-कम ${ price } होना चाहिए"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "हम ${ price } से कम रकम नहीं लेते"
-      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "असली फाइल का नया संशोधन अभी तक अपलोड नहीं किया गया है, कृपया बाद में वापिस कोशिश करें"
       ],
@@ -4965,10 +4956,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "कृपया ध्यान दें कि इस प्रक्रिया में आपकी पता पुस्तिका के आकार के आधार पर कुछ समय लग सकता है।"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "कृपया ध्यान दें कि पुष्टिकरण बटन पर क्लिक करने पर, आपके खाते में ${ creditsRemaining } क्रेडिट शेष रहेगा।",
-        "कृपया ध्यान दें कि पुष्टिकरण बटन पर क्लिक करने पर, आपके खाते में ${ creditsRemaining } क्रेडिट शेष रहेंगे।"
-      ],
       "Please open the document to view it.": [
         "कृपया दस्तावेज़ खोलकर देखें।"
       ],
@@ -5617,9 +5604,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "डाउनग्रेड करने से पहले आपको किसी भी अतिरिक्त ${ MAIL_APP_NAME } उपयोगकर्ताओं, पतों और कस्टम डोमेन को अक्षम या निकालना होगा।"
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "आपके पास एक क्रेडिट कार्ड या बैंक खाता होना चाहिए जो आपके PayPal खाते से जुड़ा हो। यदि आपके पेपैल खाते में यह नहीं है, तो कृपया नीचे दिए गए बटन पर क्लिक करें।"
-      ],
       "You need access": [
         "आपको पहुंच चाहिए"
       ],
@@ -5647,9 +5631,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "आपका ${ BRAND_NAME } खाता वर्तमान में निलंबित है। ईमेल अब आपके इनबॉक्स में वितरित नहीं किए जा रहे हैं। आपके ड्राइव साझाकरण लिंक अब सक्रिय नहीं हैं, और आप नई फ़ाइलें अपलोड नहीं कर सकते। अपने खाते का उपयोग जारी रखने के लिए, कृपया किसी अतिदेय चालान का भुगतान करें।"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "आपकी ${ PASS_SHORT_APP_NAME } Plus सदस्यता को ${ PASS_SHORT_APP_NAME } Lifetime से बदल दिया जाएगा। आपकी सदस्यता का शेष बचा हुआ राशि आपके खाते में जोड़ दिया जाएगा। ${ PASS_SHORT_APP_NAME } लाइफटाइम सौदे में नवीनीकरण कीमत नहीं है, यह ${ PASS_SHORT_APP_NAME } तक जीवन भर पहुँच के लिए एक बार का भुगतान है।"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "आपके खाते में कम से कम एक अतिदेय चालान है। जल्द ही आपकी पहुँच प्रतिबंधित हो जाएगी। ${ payInvoiceLink }"
@@ -5719,6 +5700,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "वैकल्पिक"
+      ],
       "Selected color:": [
         "रंग चुनें:"
       ]
@@ -6291,9 +6275,6 @@
       "Start date": [
         "आरंभ करने की तिथि"
       ],
-      "State": [
-        "राज्य"
-      ],
       "Stolen data": [
         "चोरी किया डाटा"
       ],
@@ -6461,9 +6442,6 @@
       ],
       "clearing your browser cache": [
         "अपना ब्राउज़र कैश साफ़ करना"
-      ],
-      "click here": [
-        "यहाँ क्लिक करें"
       ],
       "Drafts": [
         "ड्राफ्ट"
@@ -7439,9 +7417,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "संवेदनशील व्यापारिक जानकारी की सुरक्षा करें और सुरक्षित रूप से सहयोग करें।"
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "अपने परिवार की सुरक्षा करें ${ PASS_SHORT_APP_NAME } Plus की सभी प्रीमियम सुविधाओं के साथ, 6 यूज़र के लिए।"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "सभी ${ BRAND_NAME } सेवाओं के साथ अपने परिवार की गोपनीयता की रक्षा करें।"
       ],
@@ -8079,9 +8054,6 @@
       "Get the deal": [
         "सौदा पाएं"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "आपके ${ plan } Plus के पहले महीने पर 80% छूट पाने का आख़िरी मौका।"
-      ],
       "Last day to save": [
         "बचत करने का आखिरी दिन"
       ],
@@ -8333,6 +8305,11 @@
         "सुरक्षित वॉल्ट साझाकरण"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } प्लान"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } यूज़र खाता",
@@ -8443,21 +8420,6 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "कृपया अपने सदस्यता को पहले फिर से सक्रिय करें ताकि ऐड-ऑन की संख्या कम हो सके।"
-      ],
-      "Please select billing country": [
-        "कृपया बिलिंग देश चुनें"
-      ],
-      "Please select billing state": [
-        "कृपया बिलिंग स्टेट चुनें"
-      ],
-      "Please select your billing country first.": [
-        "कृपया पहले अपना बिलिंग देश चुनें।"
-      ],
-      "Please select your billing state first.": [
-        "कृपया पहले अपना बिलिंग स्टेट चुनें।"
-      ],
-      "Select billing country to pay": [
-        "भुगतान के लिए बिलिंग देश चुनें"
       ],
       "terms & conditions": [
         "नियम और शर्तें"
@@ -10164,9 +10126,6 @@
         "${ count } संपर्क समूह हटाएं",
         "${ count } संपर्क समूह हटाएं"
       ],
-      "Delete ${ links.length } items?": [
-        "${ links.length } आइटम मिटाएं?"
-      ],
       "Delete ${ name }?": [
         "${ name } मिटाएं?"
       ],
@@ -10631,6 +10590,9 @@
       ],
       "Your exposed information": [
         "आपकी उजागर जानकारी"
+      ],
+      "Your plan": [
+        "आपका प्लान"
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"

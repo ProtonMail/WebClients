@@ -148,6 +148,9 @@
       "Add public holidays": [
         "Дадаць дзяржаўныя святы"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Дадаць рэферальную спасылку ў подпіс ${ MAIL_APP_NAME }"
+      ],
       "Add sieve filter": [
         "Дадаць фільтр Sieve"
       ],
@@ -191,7 +194,7 @@
         "Патрабуецца ўвага"
       ],
       "Authenticate": [
-        "Аўтэнтыфікаваць"
+        "Аўтэнтыфікацыя"
       ],
       "Authenticating": [
         "Аўтэнтыфікацыя"
@@ -216,6 +219,9 @@
       ],
       "Cancel subscription": [
         "Скасаваць падпіску"
+      ],
+      "Cancel trial and pay": [
+        "Скасаваць пробны перыяд і купіць падпіску"
       ],
       "Change": [
         "Змяніць"
@@ -263,7 +269,7 @@
         "Закрыць гэты банер"
       ],
       "Collaborate on documents": [
-        "Сумесная праца над дакументамі"
+        "Сумесна працуйце над дакументамі"
       ],
       "Color": [
         "Колер"
@@ -341,7 +347,7 @@
         "Скапіяваць ключ у буфер абмену"
       ],
       "Copy link": [
-        "Капіяваць спасылку"
+        "Скапіяваць спасылку"
       ],
       "Copy password": [
         "Скапіяваць пароль"
@@ -365,7 +371,7 @@
         "Стварыць"
       ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
-        "Стварыць спасылку для абагулення з любым карыстальнікам па-за межамі ${ BRAND_NAME }"
+        "Стварыць спасылку для абагульвання з любым карыстальнікам па-за межамі ${ BRAND_NAME }"
       ],
       "Create account": [
         "Стварыць уліковы запіс"
@@ -398,7 +404,7 @@
         "Стварыць карыстальнікаў"
       ],
       "Create your own": [
-        "Стварыце свой уласны"
+        "Стварыць свой уласны"
       ],
       "Current plan": [
         "Бягучы тарыфны план"
@@ -410,7 +416,7 @@
         "Наладзіць імпартаванне"
       ],
       "Customize plan": [
-        "Наладжванне тарыфнага плана"
+        "Наладзіць тарыфны план"
       ],
       "Decline": [
         "Адхіліць"
@@ -1946,7 +1952,7 @@
         "Выконваць на серверах ${ BRAND_NAME }"
       ],
       "Run on device": [
-        "Выконваецца на прыладзе"
+        "Выконваць на прыладзе"
       ]
     },
     "Assistant toggle": {
@@ -2126,8 +2132,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Настольная праграма ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus і ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } і ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } прасторы ў сховішчы"
@@ -4149,8 +4155,8 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Аўтаматычна сартуйце свае ўваходныя паведамленні перад тым, як яны трапяць у вашу паштовую скрыню."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "Даступна з ${ MAIL_APP_NAME } Plus"
+      "Available with ${ title }": [
+        "Даступна з ${ title }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
@@ -4263,6 +4269,9 @@
       "To start, give your organization a name.": [
         "Спачатку дайце назву сваёй арганізацыі."
       ],
+      "Track the status and activity of your referrals": [
+        "Сачэнне за статусам і актыўнасцю вашых рэферальных спасылак"
+      ],
       "Track the status and activity of your referrals.": [
         "Сачэнне за статусам і актыўнасцю вашых рэферальных спасылак."
       ],
@@ -4280,6 +4289,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
+      ],
+      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
+        "Вы атрымаеце ${ referralReward } у крэдытах ${ BRAND_NAME }, калі запрошаны вамі карыстальнік падпішацца на тарыфны план ${ BRAND_NAME }. У сваю чаргу карыстальнік таксама атрымае ${ referralReward } у якасці прывітальнага бонуса."
       ]
     },
     "description": {
@@ -5413,6 +5425,9 @@
       "Invalid verification code": [
         "Памылковы праверачны код"
       ],
+      "Invalid ZIP code": [
+        "Памылковы паштовы індэкс"
+      ],
       "Item content cannot exceed 40KB": [
         "Змесціва элемента не можа перавышаць 40 КБ"
       ],
@@ -5509,6 +5524,18 @@
       "Please enter a valid Entity ID URL": [
         "Увядзіце сапраўдны URL-адрас Entity ID"
       ],
+      "Please enter a valid postal code": [
+        "Увядзіце сапраўдны паштовы індэкс"
+      ],
+      "Please enter a valid ZIP code": [
+        "Увядзіце сапраўдны паштовы індэкс"
+      ],
+      "Please enter postal code": [
+        "Увядзіце паштовы індэкс"
+      ],
+      "Please enter ZIP code": [
+        "Увядзіце паштовы індэкс"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Выпраўце вылучаны канфлікт, каб працягнуць.",
         "Выпраўце вылучаныя канфлікты, каб працягнуць.",
@@ -5529,6 +5556,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Выберыце прынамсі аднаго карыстальніка або групу перад працягам."
+      ],
+      "Please select billing country": [
+        "Выберыце краіну выстаўлення рахунку"
+      ],
+      "Please select billing state": [
+        "Выберыце штат выстаўлення рахунку"
       ],
       "Please set a recovery email first": [
         "Спачатку задайце электронную пошту для аднаўлення доступу"
@@ -5559,6 +5592,9 @@
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
+      ],
+      "Postal code is required": [
+        "Патрабуецца ўвесці паштовы індэкс"
       ],
       "Primary address key is not decrypted": [
         "Ключ асноўнага адраса не расшыфраваны"
@@ -5655,9 +5691,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Мінімальная аплата, якую мы прымаем, складае ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Назва палітыкі павінна мець даўжыню ад 3 да 40 сімвалаў."
@@ -6337,7 +6370,7 @@
         "Стварайце і кіруйце ўліковымі запісамі ўдзельнікаў сямейнай групы, а таксама прызначайце прастору сховішча абагуленую паміж ${ DRIVE_APP_NAME } і ${ MAIL_APP_NAME }."
       ],
       "Create and manage family members.": [
-        "Стварыце і кіруйце ўдзельнікамі сям'і."
+        "Стварайце і кіруйце ўдзельнікамі сям'і."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Калі ў карыстальніка ўжо ёсць адрас ${ MAIL_APP_NAME }, увядзіце яго тут. У адваротным выпадку спачатку неабходна стварыць уліковы запіс."
@@ -7865,6 +7898,9 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Атрымайце адрас ${ BRAND_NAME }**, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Запрашайце сваіх сяброў** у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
+      ],
       "+ ${ invisibleCount } More": [
         "+ яшчэ ${ invisibleCount }",
         "+ яшчэ ${ invisibleCount }",
@@ -8310,7 +8346,7 @@
         "Працягніце падключэнне гэтага аб'екта з вашай арганізацыяй ${ BRAND_NAME }."
       ],
       "Continue with ${ freeName }": [
-        "Працягнуць з ${ freeName }"
+        "Працягнуць з тарыфным планам ${ freeName }"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Працягнуўшы, вы падключыце ўліковы запіс ${ BRAND_NAME } да ${ name }."
@@ -8331,7 +8367,7 @@
         "Скапіяваць прапанаваны пароль у буфер абмену"
       ],
       "Copy your referral link": [
-        "Капіяваць сваю рэферальную спасылку"
+        "Скапіяваць сваю рэферальную спасылку"
       ],
       "Country code": [
         "Код краіны"
@@ -8795,6 +8831,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Атрымаць доступ стварыўшы ўліковы запіс ${ BRAND_NAME } і прыняць запрашэнне."
       ],
+      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
+        "Вы і ваш сябар атрымаеце па **${ referralReward } крэдытаў** за кожную платную падпіску."
+      ],
       "Get it on Google Play": [
         "Спампаваць у Google Play"
       ],
@@ -8803,6 +8842,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Атрымлівайце апавяшчэнне, калі адбываецца ўцечка вашага пароля або іншых асабістых даных. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started with the referral link above.": [
+        "Пачніце па рэферальнай спасылцы вышэй."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Дайце токену апісальную назву. Гэта можа быць назва паслугі, з якой вы плануеце яго выкарыстоўваць, і выберыце адзін з вашых актыўных адрасоў карыстальніцкіх даменаў. Толькі гэты адрас зможа адпраўляць лісты з гэтым токенам."
@@ -9028,6 +9070,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Запрасіце свайго партнёра, сябра або тую асобу з якой вы абагульваеце тарыфны план ${ protonDuoPlanName }."
+      ],
+      "Invited": [
+        "Запрошаны"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Верагодна, што некаторыя з вашых даных зашыфраваны і заблакіраваны."
@@ -9437,6 +9482,9 @@
       "Paid for a monthly plan": [
         "Памесячная аплата тарыфнага плана"
       ],
+      "Paid for a plan": [
+        "Аплата тарыфнага плана"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - карыстальніцкая электронная пошта пацверджана"
       ],
@@ -9523,12 +9571,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Звярніце ўвагу, што калі вы выдаліце ​​фільтр ${ nameDeleted }, то мы больш не будзем апрацоўваць усе аўтаматычныя дзеянні, якія ён запускае."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдыт.",
-        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдыты.",
-        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдытаў.",
-        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдытаў."
       ],
       "please open a support ticket": [
         "адкрыйце запыт для службы падтрымкі"
@@ -10715,6 +10757,9 @@
       "You do not have permission to perform this action": [
         "У вас няма правоў, каб выканаць гэта дзеянне"
       ],
+      "You don't have any referrals.": [
+        "У вас пакуль няма рэфералаў."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
@@ -10765,9 +10810,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Вы павінны прывязаць крэдытную картку або банкаўскі рахунак да вашага ўліковага запісу PayPal для таго, каб выкарыстоўваць яго як спосаб аплаты."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Вы павінны прывязаць крэдытную картку або банкаўскі рахунак да вашага ўліковага запісу PayPal. Калі вы гэтага яшчэ не зрабілі, націсніце на кнопку ніжэй."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Вам неабходна мець актыўны асабісты каляндар для імпартавання вашых падзей з ICS."
@@ -10841,8 +10883,8 @@
       "Your ${ BRAND_NAME } password": [
         "Ваш пароль ${ BRAND_NAME }"
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Ваша падпіска ${ PASS_SHORT_APP_NAME } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Астатак балансу вашай падпіскі будзе дададзены на ваш рахунак. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Вашы ўліковыя запісы ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } звязаны паміж сабой. Каб выдаліць іх абодва, увайдзіце праз ${ loginLink } і там выдаліце свой уліковы запіс."
@@ -10891,6 +10933,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яго падаўжэнне адбудзецца: ${ nextBillingDate }."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Вашы сябры атрымаюць **2 тыдні бясплатнага выкарыстання** на тым тарыфным плане, які яны выбралі."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Ваша імпартаванне з ${ accounts } часова адкладзена.",
@@ -10980,6 +11025,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Optional": [
+        "Неабавязкова"
       ],
       "Selected color:": [
         "Выбраны колер:"
@@ -11795,7 +11843,7 @@
         "Канфігурацыя для падключэння да ${ serverName }"
       ],
       "Confirm email": [
-        "Пацвердзіць адрас электроннай пошты"
+        "Пацвердзіць электронную пошту"
       ],
       "Confirm link URLs": [
         "Пацвердзіць спасылку URL-адраса"
@@ -11804,16 +11852,16 @@
         "Пацвердзіць пароль уваходу"
       ],
       "Confirm new password": [
-        "Пацвердзіць новы пароль"
+        "Пацвердзіце новы пароль"
       ],
       "Confirm organization password": [
         "Пацвердзіць пароль арганізацыі"
       ],
       "Confirm password": [
-        "Пацвердзіце пароль"
+        "Пацвердзіць пароль"
       ],
       "Confirm second password": [
-        "Пацвердзіце другі пароль"
+        "Пацвердзіць другі пароль"
       ],
       "Contacts": [
         "Кантакты"
@@ -12406,6 +12454,9 @@
       "Reveal password": [
         "Паказаць пароль"
       ],
+      "Reward": [
+        "Узнагарода"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Жэнева"
       ],
@@ -12435,6 +12486,9 @@
       ],
       "Sequences": [
         "Паслядоўнасці"
+      ],
+      "Share your referral link": [
+        "Абагуліць сваю рэферальную спасылку"
       ],
       "Show ${ n } administrator": [
         "Паказаць ${ n } адміністратара",
@@ -12772,6 +12826,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Паштовы індэкс"
+      ],
       "ZIP code": [
         "Паштовы індэкс"
       ]
@@ -12846,9 +12903,6 @@
       ],
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
-      ],
-      "click here": [
-        "націсніце тут"
       ],
       "Common sign in issues": [
         "Распаўсюджаныя праблемы ўваходу"
@@ -12976,9 +13030,6 @@
       "Pay invoice": [
         "Аплаціць рахунак"
       ],
-      "PayPal without credit card": [
-        "PayPal без крэдытнай карткі"
-      ],
       "perform a password reset from your active session": [
         "ажыццявіць скіданне пароля з вашага актыўнага сеанса"
       ],
@@ -13008,6 +13059,9 @@
       ],
       "Terms": [
         "Умовы"
+      ],
+      "Terms and conditions": [
+        "Умовы выкарыстання"
       ],
       "Trouble signing in?": [
         "Праблемы з уваходам?"
@@ -13681,7 +13735,7 @@
     },
     "new_plans: action": {
       "Continue with Free": [
-        "Працягнуць бясплатнае выкарыстанне"
+        "Працягнуць з тарыфным планам Free"
       ],
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -14376,8 +14430,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Абарона адчувальных звестак бізнесу і бяспечнае супрацоўніцтва."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Абараніце сваю сям'ю з прэміяльнымі функцыямі ${ PASS_SHORT_APP_NAME } Plus для 6 карыстальнікаў."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Абараніце сваю сям'ю з прэміяльнымі функцыямі ${ plusTitle } для 6 карыстальнікаў."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
@@ -14456,8 +14510,8 @@
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Для таго, каб пачаць працу выберыце бачнае імя. Менавіта яго ўбачаць карыстальнікі, калі вы адправіце ім ліст, запрашэнне на падзею або абагулены файл."
       ],
-      "Your ${ planName } subscription is now active.": [
-        "Ваша падпіска на тарыфны план ${ planName } зараз актыўна."
+      "Your ${ planTitleElement } subscription is now active.": [
+        "Ваша падпіска на тарыфны план ${ planTitleElement } цяпер актыўная."
       ],
       "Your selected plan: ${ planName }": [
         "Выбраны тарыфны план: ${ planName }"
@@ -14480,6 +14534,9 @@
       ],
       "Downgrade account?": [
         "Панізіць уліковы запіс?"
+      ],
+      "Review subscription": [
+        "Прагляд падпіскі"
       ],
       "Review subscription and pay": [
         "Прагляд падпіскі і аплаты"
@@ -14552,7 +14609,7 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Стварыце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "Карыстальніцкія дамены для псеўданімаў, дадатковыя паштовыя скрыні, магчымасць адпраўляць лісты з псеўданімаў і многае іншае"
@@ -15081,8 +15138,8 @@
       "Get the deal": [
         "Атрымаць прапанову"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
       ],
       "Last day to save": [
         "Апошні дзень, калі можна сэканоміць"
@@ -15649,9 +15706,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Атрымайце пажыццёвы доступ да ўсіх бягучых і будучых прэміяльных функцый ${ PASS_APP_NAME } з аднаразовай аплатай."
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "Вітаем у ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15665,16 +15719,16 @@
         "Працягнуць"
       ],
       "Continue to ${ appName } without upgrading": [
-        "Працягнуць у ${ appName } без паляпшэння"
+        "Працягнуць працу з ${ appName } без паляпшэння"
       ],
       "Continue to ${ free }": [
-        "Працягнуць з ${ free }"
+        "Працягнуць з тарыфным планам ${ free }"
       ],
       "Continue with Bitcoin": [
         "Працягнуць з Bitcoin"
       ],
       "create a new account": [
-        "стварыць новы ўліковы запіс"
+        "стварыце новы ўліковы запіс"
       ],
       "Create another account instead": [
         "Стварыць іншы ўліковы запіс"
@@ -15739,9 +15793,6 @@
       ],
       "Select your plan": [
         "Выберыце тарыфны план"
-      ],
-      "Upgrade your plan": [
-        "Палепшыце свой тарыфны план"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15952,6 +16003,9 @@
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Выбраная прапанова недаступна для падпісчыкаў з тарыфным планам ${ currentPlanTitle }."
       ],
+      "The offer you selected is not available for **${ currentPlanTitle }** subscribers.": [
+        "Выбраная прапанова недаступна для падпісчыкаў з тарыфным планам **${ currentPlanTitle }**."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "каб пачаць выкарыстоўваць ${ PASS_APP_NAME } на тэлефоне"
       ],
@@ -15964,8 +16018,8 @@
       "Verifying your payment": [
         "Праверка вашага плацяжу"
       ],
-      "Welcome to ${ shortName } Plus": [
-        "Вітаем у ${ shortName } Plus"
+      "Welcome to ${ plan }": [
+        "Вітаем у ${ plan }"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "У вас ужо ёсць доступ да прэміяльных функцый ${ appName }. Няма неабходнасці купляць іх яшчэ раз."
@@ -15988,10 +16042,10 @@
         "Усе сэрвісы ${ BRAND_NAME } Plus.${ br }Адна нескладаная падпіска."
       ],
       "Create a ${ appName } account": [
-        "Стварыце ўліковы запіс ${ appName }"
+        "Стварыць уліковы запіс ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
-        "Стварыць уліковы запіс ${ BRAND_NAME }"
+        "Стварыце ўліковы запіс ${ BRAND_NAME }"
       ],
       "Request your organization administrator to upgrade": [
         "Папрасіце адміністратара вашай арганізацыі палепшыць тарыфны план"
@@ -16204,6 +16258,9 @@
       "Got it": [
         "Зразумела"
       ],
+      "I'm purchasing as a business": [
+        "Я купляю як юрыдычная асоба"
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -16213,18 +16270,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
-      "Please select billing country": [
-        "Выберыце краіну выстаўлення рахунку"
-      ],
-      "Please select billing state": [
-        "Выберыце штат выстаўлення рахунку"
-      ],
-      "Please select your billing country first.": [
-        "Першапачаткова выберыце вашу краіну выстаўлення рахунку."
-      ],
-      "Please select your billing state first.": [
-        "Спачатку выберыце ваш штат выстаўлення рахунку."
-      ],
       "Processing payment": [
         "Апрацоўка плацяжу"
       ],
@@ -16233,9 +16278,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
-      ],
-      "Select billing country to pay": [
-        "Выберыце краіну выстаўлення рахунку для аплаты"
       ],
       "terms & conditions": [
         "умовы выкарыстання"
@@ -16269,6 +16311,9 @@
         "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } за ${ renewalLength } месяцы. Скасаваць можна ў любы час.",
         "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } за ${ renewalLength } месяцаў. Скасаваць можна ў любы час.",
         "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } за ${ renewalLength } месяцаў. Скасаваць можна ў любы час."
+      ],
+      "This number will be shown on all future invoices": [
+        "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Гэты спосаб аплаты стане новым прадвызначаным для ўсіх будучых падаўжэнняў."
@@ -16325,6 +16370,20 @@
       ],
       "Street address, postal code, and city": [
         "Адрас вуліцы, паштовы індэкс і горад"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Нумар прадпрыемства"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Нумар ПДВ"
       ]
     },
     "Permission": {
@@ -16454,6 +16513,9 @@
       "Please select the main reason": [
         "Выберыце асноўную прычыну"
       ],
+      "Postal code": [
+        "Паштовы індэкс"
+      ],
       "Printer": [
         "Прынтар"
       ],
@@ -16504,6 +16566,9 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ],
+      "ZIP code": [
+        "Паштовы індэкс"
       ]
     },
     "placeholder": {
@@ -16574,6 +16639,20 @@
       ],
       "Enjoying ${ planName }?": [
         "Падабаецца ${ planName }?"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Усе сэрвісы ${ protonPlus }.${ br }Адна нескладаная падпіска."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Як падпісчык тарыфнага плана **${ currentPlanTitle }**, вы можаце разблакіраваць **${ unlockPlanTitle }** і ўсе прэміяльныя сэрвісы ${ BRAND_NAME }, палепшыўшы тарыфны план да **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Застацца на ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Палепшыць да ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -17087,7 +17166,7 @@
     },
     "scim: Action": {
       "Configure SCIM": [
-        "Сканфігураваць SCIM"
+        "Сканфігурыраваць SCIM"
       ],
       "Disable SCIM": [
         "Адключыць SCIM"
@@ -17755,7 +17834,7 @@
         "Падключыце ўсе свае прылады"
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
-        "Працягнуць з ${ PLAN_NAMES[plan] }"
+        "Працягнуць з тарыфным планам ${ PLAN_NAMES[plan] }"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Зашыфраваная электронная пошта з ${ totalMailStorageSize } сховішча"
@@ -17889,7 +17968,7 @@
         "Пароль ад ${ BRAND_NAME }"
       ],
       "Confirm password": [
-        "Пацвердзіце пароль"
+        "Пацвердзіць пароль"
       ],
       "Display name": [
         "Бачнае імя"
@@ -19322,7 +19401,7 @@
         "Скапіявана ў буфер абмену"
       ],
       "Credits added": [
-        "Крэдыты дабаўлены"
+        "Крэдыты даданыя"
       ],
       "Default calendar updated": [
         "Прадвызначаны каляндар абноўлены"
@@ -19540,7 +19619,7 @@
         "Сертыфікат падоўжаны да ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "Канфігурацыя \"${ name }\" створана, звярніце ўвагу, што прыватны ключ не захоўваецца, і не будзе паказаны зноў, вы павінны скапіяваць або спампаваць гэту канфігурацыю."
+        "Канфігурацыя \"${ name }\" створана. Звярніце ўвагу, што прыватны ключ не захоўваецца, і не будзе паказаны зноў, вы павінны скапіяваць або спампаваць гэту канфігурацыю."
       ],
       "Creating config file for ${ serverName }": [
         "Стварэнне файла канфігурацыі для ${ serverName }"
@@ -19765,9 +19844,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ appName } keyboard shortcuts": [
         "Спалучэнні клавіш ${ appName }"
       ],
@@ -20075,7 +20151,7 @@
         "Пацвердзіць страту бонусаў ${ BRAND_NAME }"
       ],
       "Confirm phone number": [
-        "Пацвердзіць нумар тэлефона"
+        "Пацвердзіце нумар тэлефона"
       ],
       "Connect ${ name }": [
         "Падключыць ${ name }"
@@ -20120,19 +20196,19 @@
         "Стварыць ${ selectedUserIds.length } карыстальнікаў"
       ],
       "Create a new Gateway": [
-        "Стварыць новы шлюз"
+        "Стварэнне новага шлюза"
       ],
       "Create a new gateway": [
-        "Стварыць новы шлюз"
+        "Стварэнне новага шлюза"
       ],
       "Create Gateway": [
-        "Стварыць шлюз"
+        "Стварэнне шлюза"
       ],
       "Create multiple user accounts": [
-        "Стварыце некалькі ўліковых запісаў карыстальніка"
+        "Стварэнне некалькіх уліковых запісаў карыстальніка"
       ],
       "Create new policy": [
-        "Стварыць новую палітыку"
+        "Стварэнне новай палітыкі"
       ],
       "Create organization key": [
         "Стварыць ключ арганізацыі"
@@ -20141,19 +20217,19 @@
         "Стварэнне публічнай спасылкі"
       ],
       "Create user accounts": [
-        "Стварыць уліковыя запісы карыстальніка"
+        "Стварэнне ўліковага запісу карыстальніка"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Стварыце свой уліковы запіс ${ BRAND_NAME }"
+        "Стварэнне свайго ўліковага запісу ${ BRAND_NAME }"
       ],
       "Create your ${ BRAND_NAME } address": [
-        "Стварыць свой адрас ${ BRAND_NAME }"
+        "Стварэнне свайго адрасу ${ BRAND_NAME }"
       ],
       "Created": [
         "Створана"
       ],
       "Creating user accounts": [
-        "Стварэнне ўліковых запісаў карыстальніка"
+        "Стварэнне ўліковых запісаў карыстальнікаў"
       ],
       "Credentials": [
         "Уліковыя даныя"
@@ -20183,7 +20259,7 @@
         "Наладзіць імпартаванне календара"
       ],
       "Customize the number of IP addresses in your plan": [
-        "Наладзьце колькасць IP-адрасоў на сваім тарыфным плане"
+        "Наладжванне колькасці IP-адрасоў на вашым тарыфным плане"
       ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
@@ -20527,6 +20603,9 @@
       "Gift code": [
         "Падарункавы код"
       ],
+      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
+        "Атрымайце ${ referralReward } і 2 тыдні бясплатна. Атрымайце ${ referralReward } крэдытаў."
+      ],
       "Group": [
         "Група"
       ],
@@ -20610,6 +20689,9 @@
       ],
       "Invitations": [
         "Запрашэнні"
+      ],
+      "Invite friends. Get credits.": [
+        "Запрашайце сяброў і атрымлівайце крэдыты."
       ],
       "Invoices": [
         "Рахункі"
@@ -20963,7 +21045,7 @@
         "Наладжванне перасылкі лістоў"
       ],
       "Set up two-factor authentication": [
-        "Наладзіць двухфактарную аўтэнтыфікацыю"
+        "Наладжванне двухфактарнай аўтэнтыфікацыі"
       ],
       "Set up your family account": [
         "Наладзіць сямейны ўліковы запіс"
@@ -21102,9 +21184,6 @@
       ],
       "Time zone": [
         "Часавы пояс"
-      ],
-      "Track your referrals": [
-        "Сачэнне за рэферальнымі запрашэннямі"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
@@ -21255,6 +21334,9 @@
       ],
       "Your recovery status": [
         "Ваш статус аднаўлення"
+      ],
+      "Your referrals": [
+        "Вашы рэфералы"
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
@@ -21410,7 +21492,7 @@
         "Націсніце тут, каб даведацца аб стварэнні індывідуальнага подпісу з дапамогай HTML."
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "Скапіюйце і ўстаўце гэты URL-адрас у поле ACS (Assertion Consumer Service) URL-адраса ваша пастаўшчыка пасведчанняў."
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле ACS (Assertion Consumer Service) URL-адраса вашага пастаўшчыка пасведчанняў."
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў"
@@ -21977,7 +22059,7 @@
         "Скасаваць"
       ],
       "Confirm password": [
-        "Пацвердзіце пароль"
+        "Пацвердзіць пароль"
       ],
       "Create password": [
         "Стварыць пароль"
