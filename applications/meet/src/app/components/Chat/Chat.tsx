@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms';
 import { IcMagnifier } from '@proton/icons';
 
 import placeholder from '../../../assets/chat-empty-state.png';
+import placeholderSearch from '../../../assets/search-empty-state.png';
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
@@ -102,55 +103,73 @@ export const Chat = () => {
     }
 
     return (
-        <SideBar onClose={() => toggleSideBarState(MeetingSideBars.Chat)}>
-            <div className="absolute top-0 left-0 w-full px-4 pt-4 pb-0 bg-norm rounded-xl" style={{ opacity: 0.9 }}>
-                {!isSearchOn && (
-                    <div className="mb-4 h3 text-semibold flex items-center">
-                        <SecurityShield
-                            title={c('l10n_nightly Info').t`End-to-end encryption is active for this chat.`}
+        <SideBar
+            onClose={() => toggleSideBarState(MeetingSideBars.Chat)}
+            absoluteHeader={true}
+            header={
+                <div className="flex items-center">
+                    {!isSearchOn && (
+                        <div className="text-semibold flex items-center">
+                            <SecurityShield
+                                title={c('l10n_nightly Info').t`End-to-end encryption is active for this chat.`}
+                            />
+
+                            <div className="text-semibold text-3xl">{c('l10n_nightly Title').t`Chat`}</div>
+                            <Button
+                                className="search-open-button p-0 ml-2 flex items-center justify-center"
+                                shape="ghost"
+                                size="small"
+                                onClick={() => setIsSearchOn(!isSearchOn)}
+                                aria-label={c('l10n_nightly Alt').t`Open chat message search`}
+                            >
+                                <IcMagnifier size={6} />
+                            </Button>
+                        </div>
+                    )}
+                    {isSearchOn && (
+                        <SideBarSearch
+                            searchExpression={searchExpression}
+                            setSearchExpression={setSearchExpression}
+                            setIsSearchOn={setIsSearchOn}
+                            placeholder={c('l10n_nightly Placeholder').t`Find...`}
                         />
-
-                        {c('l10n_nightly Title').t`Chat`}
-                        <Button
-                            className="p-0 ml-2 flex items-center justify-center"
-                            shape="ghost"
-                            size="small"
-                            onClick={() => setIsSearchOn(!isSearchOn)}
-                            aria-label={c('l10n_nightly Alt').t`Open chat message search`}
-                        >
-                            <IcMagnifier size={6} />
-                        </Button>
-                    </div>
-                )}
-                {isSearchOn && (
-                    <SideBarSearch
-                        searchExpression={searchExpression}
-                        setSearchExpression={setSearchExpression}
-                        setIsSearchOn={setIsSearchOn}
-                        placeholder={c('l10n_nightly Placeholder').t`Search messages`}
-                    />
-                )}
-            </div>
-
+                    )}
+                </div>
+            }
+        >
             <div
                 ref={scrollRef}
                 className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 h-full message-list"
                 onScroll={handleScroll}
             >
-                {hasNoMessages && (
+                {!isSearchOn && hasNoMessages && (
                     <div
                         className="flex flex-column items-center justify-center my-auto mx-auto w-custom"
                         style={{ width: '12.8125rem' }}
                     >
                         <img
-                            className="w-custom h-custom"
+                            className="w-custom h-custom mb-2"
                             src={placeholder}
                             alt=""
-                            style={{ '--w-custom': '5rem', '--h-custom': '5rem' }}
+                            style={{ '--w-custom': '3rem', '--h-custom': '3rem' }}
                         />
-                        <div className="text-center color-weak">
+                        <div className="text-center color-disabled">
                             {c('l10n_nightly Info').t`Only people in this call can read what you send.`}
                         </div>
+                    </div>
+                )}
+                {isSearchOn && filteredMeetingRoomUpdates.length === 0 && (
+                    <div
+                        className="flex flex-column items-center justify-center my-auto mx-auto w-custom"
+                        style={{ width: '12.8125rem' }}
+                    >
+                        <img
+                            className="w-custom h-custom mb-2"
+                            src={placeholderSearch}
+                            alt=""
+                            style={{ '--w-custom': '3rem', '--h-custom': '3rem' }}
+                        />
+                        <div className="text-center color-disabled">{c('l10n_nightly Info').t`No search results`}</div>
                     </div>
                 )}
                 {filteredMeetingRoomUpdates.map((item, index) => (

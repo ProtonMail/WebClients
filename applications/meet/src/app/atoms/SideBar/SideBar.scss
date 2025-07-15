@@ -6,3 +6,10 @@
 		z-index: +3;
 	}
 }
+
+.side-bar-header-wrapper {
+	border-start-start-radius: 1.5rem;
+	border-start-end-radius: 1.5rem;
+	border-end-start-radius: 0;
+	border-end-end-radius: 0;
+}

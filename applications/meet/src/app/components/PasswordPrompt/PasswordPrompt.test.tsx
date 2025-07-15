@@ -9,17 +9,17 @@ describe('PasswordPrompt', () => {
 
         const mockPassword = '123456';
 
-        render(<PasswordPrompt onPasswordSubmit={onPasswordSubmit} />);
-
-        const passwordInput = screen.getByLabelText('Password');
+        render(<PasswordPrompt password={mockPassword} setPassword={() => {}} onPasswordSubmit={onPasswordSubmit} />);
 
         const user = userEvent.setup();
 
-        await user.type(passwordInput, mockPassword);
+        const passwordInput = screen.getByLabelText('Password');
+
+        expect(passwordInput).toHaveValue(mockPassword);
 
         const submitButton = screen.getByText('Continue');
         await user.click(submitButton);
 
-        expect(onPasswordSubmit).toHaveBeenCalledWith(mockPassword);
+        expect(onPasswordSubmit).toHaveBeenCalled();
     });
 });

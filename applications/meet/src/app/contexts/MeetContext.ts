@@ -41,6 +41,7 @@ export interface MeetContextValues {
     setDisableVideos: (disableVideos: boolean) => void;
     participantsWithDisabledVideos: string[];
     setParticipantsWithDisabledVideos: (participantsWithDisabledVideos: string[]) => void;
+    displayName: string;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -79,6 +80,7 @@ export const MeetContext = createContext<MeetContextValues>({
     setDisableVideos: () => {},
     participantsWithDisabledVideos: [],
     setParticipantsWithDisabledVideos: () => {},
+    displayName: '',
 });
 
 export const useMeetContext = () => {

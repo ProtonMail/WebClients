@@ -79,6 +79,10 @@ export const useParticipantNameMap = () => {
         [handleFetch]
     );
 
+    const resetParticipantNameMap = useCallback(() => {
+        setParticipantNameMap({});
+    }, []);
+
     useEffect(() => {
         return () => {
             if (timeoutRef.current) {
@@ -87,5 +91,5 @@ export const useParticipantNameMap = () => {
         };
     }, []);
 
-    return { participantNameMap, getParticipants };
+    return { participantNameMap, getParticipants, resetParticipantNameMap };
 };

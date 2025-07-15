@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components';
+import { ModalTwo, ModalTwoContent, useModalState } from '@proton/components';
 
 import { useMeetContext } from '../../contexts/MeetContext';
 
@@ -23,19 +23,31 @@ export const LeaveModal = () => {
                 {c('l10n_nightly Alt').t`Leave`}
             </Button>
             {render && (
-                <ModalTwo {...modalProps} rootClassName="bg-transparent">
-                    <ModalTwoHeader title={c('l10n_nightly Action').t`Leave Meeting`} />
-                    <ModalTwoContent>
-                        <p>{c('l10n_nightly Info').t`Are you sure you want to leave the meeting?`}</p>
+                <ModalTwo {...modalProps} rootClassName="bg-transparent leave-modal" className="meet-radius">
+                    <ModalTwoContent className="flex flex-column justify-space-between p-4 mx-4 pb-0">
+                        <div className="text-center text-3xl">{c('l10n_nightly Action').t`Leave Meeting`}</div>
+
+                        <div className="w-full text-center color-weak">
+                            {c('l10n_nightly Info').t`Are you sure you want to leave the meeting?`}
+                        </div>
+
+                        <div className="flex flex-column justify-end gap-2">
+                            <Button
+                                className="border-none rounded-full w-full leave-meeting-button"
+                                onClick={handleLeave}
+                                size="large"
+                            >
+                                {c('l10n_nightly Action').t`Leave Meeting`}
+                            </Button>
+                            <Button
+                                className="border-none rounded-full w-full close-button"
+                                onClick={() => handleSetOpen(false)}
+                                size="large"
+                            >
+                                {c('l10n_nightly Action').t`Cancel`}
+                            </Button>
+                        </div>
                     </ModalTwoContent>
-                    <ModalTwoFooter className="flex justify-end gap-2">
-                        <Button className="rounded-full" color="weak" onClick={() => handleSetOpen(false)}>
-                            {c('l10n_nightly Action').t`Cancel`}
-                        </Button>
-                        <Button className="rounded-full" shape="outline" color="danger" onClick={handleLeave}>
-                            {c('l10n_nightly Action').t`Leave Meeting`}
-                        </Button>
-                    </ModalTwoFooter>
                 </ModalTwo>
             )}
         </div>

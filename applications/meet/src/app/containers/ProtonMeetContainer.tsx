@@ -16,6 +16,7 @@ import { useMeetingSetup } from '../hooks/srp/useMeetingSetup';
 import { useDevicePermissionChangeListener } from '../hooks/useDevicePermissionChangeListener';
 import { useMeetingJoin } from '../hooks/useMeetingJoin';
 import { useParticipantNameMap } from '../hooks/useParticipantNameMap';
+import { useWakeLock } from '../hooks/useWakeLock';
 import { CustomPasswordState } from '../response-types';
 import { LoadingState, type ParticipantSettings } from '../types';
 import { getMeetingLink } from '../utils/getMeetingLink';
@@ -34,6 +35,8 @@ interface ProtonMeetContainerProps {
 }
 
 export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerProps) => {
+    useWakeLock();
+
     const isGuestMeetingSchedulingAllowed = useFlag('AllowGuestInit');
 
     const history = useHistory();
@@ -42,6 +45,9 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     const [decryptionReadinessStatus, setDecryptionReadinessStatus] = useState(
         MeetingDecryptionReadinessStatus.UNINITIALIZED
     );
+
+    const [password, setPassword] = useState('');
+
     const { getRoomName, getHandshakeInfo, token, urlPassword } = useMeetingSetup();
 
     const instantMeetingRef = useRef(!token);
@@ -71,7 +77,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const [handshakeInfo, setHandshakeInfo] = useState<SRPHandshakeInfo | null>(null);
 
-    const { getParticipants, participantNameMap } = useParticipantNameMap();
+    const { getParticipants, participantNameMap, resetParticipantNameMap } = useParticipantNameMap();
 
     const [initialisedParticipantNameMap, setInitialisedParticipantNameMap] = useState(false);
 
@@ -86,10 +92,10 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     useDevicePermissionChangeListener(handleDevicePermissionChange);
 
-    const submitPassword = async (customPassword: string) => {
+    const submitPassword = async () => {
         try {
             const roomName = await getRoomName({
-                customPassword,
+                customPassword: password,
                 urlPassword,
                 token,
                 handshakeInfo: handshakeInfo as SRPHandshakeInfo,
@@ -219,9 +225,11 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         async (participantSettings: ParticipantSettings, meetingToken: string = token) => {
             loadingStartTimeRef.current = Date.now();
 
+            const handshakeInfo = await getHandshakeInfo(meetingToken);
+
             const roomName = await getRoomName({
                 token: meetingToken,
-                customPassword: '',
+                customPassword: password,
                 urlPassword,
                 handshakeInfo: handshakeInfo as SRPHandshakeInfo,
             });
@@ -233,10 +241,10 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
             await handleJoin(participantSettings, meetingToken);
         },
-        [handleJoin, getRoomName, handshakeInfo, urlPassword]
+        [handleJoin, getRoomName, getHandshakeInfo, urlPassword, password]
     );
 
-    const setup = async () => {
+    const setup = useCallback(async () => {
         if (instantMeetingRef.current) {
             setDecryptionReadinessStatus(MeetingDecryptionReadinessStatus.READY_TO_DECRYPT);
 
@@ -246,7 +254,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         const { handshakeInfo } = await handleHandsakeInfoFetch(token);
 
         setHandshakeInfo(handshakeInfo as SRPHandshakeInfo);
-    };
+    }, [handleHandsakeInfoFetch, token]);
 
     useEffect(() => {
         void setup();
@@ -255,8 +263,9 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     const handleLeave = useCallback(() => {
         instantMeetingRef.current = false;
         void roomRef.current?.disconnect();
+        resetParticipantNameMap();
         setJoinedRoom(false);
-    }, []);
+    }, [resetParticipantNameMap]);
 
     if (!isGuestMeetingSchedulingAllowed && guestMode && instantMeetingRef.current) {
         return <GuestMeetingSchedulingBlocked />;
@@ -277,7 +286,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         >
             <div className="h-full w-full">
                 {decryptionReadinessStatus === MeetingDecryptionReadinessStatus.INITIALIZED && (
-                    <PasswordPrompt onPasswordSubmit={submitPassword} />
+                    <PasswordPrompt password={password} setPassword={setPassword} onPasswordSubmit={submitPassword} />
                 )}
                 {joinedRoom && roomRef.current && participantSettings ? (
                     <RoomContext.Provider value={roomRef.current}>

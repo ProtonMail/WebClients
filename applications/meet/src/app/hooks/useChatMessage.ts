@@ -10,7 +10,7 @@ export const useChatMessage = () => {
     const room = useRoomContext();
     const { setChatMessages } = useMeetContext();
 
-    const { participantNameMap } = useMeetContext();
+    const { displayName } = useMeetContext();
 
     const sendMessage = useCallback(
         async (content: string) => {
@@ -36,7 +36,7 @@ export const useChatMessage = () => {
                     {
                         ...message,
                         identity: room.localParticipant.identity,
-                        name: participantNameMap[room.localParticipant.identity] || room.localParticipant.identity,
+                        name: displayName,
                         seen: true,
                         type: 'message',
                     },
@@ -45,7 +45,7 @@ export const useChatMessage = () => {
                 console.error('Error sending chat message:', error);
             }
         },
-        [room, participantNameMap]
+        [room, displayName]
     );
 
     return sendMessage;

@@ -34,8 +34,8 @@ export const ParticipantPlaceholder = ({
                     smallView ? 'radius-small' : 'radius-normal'
                 )}
                 style={{
-                    '--w-custom': smallView ? '4rem' : '5rem',
-                    '--h-custom': smallView ? '4rem' : '5rem',
+                    '--w-custom': smallView ? '3rem' : '5rem',
+                    '--h-custom': smallView ? '3rem' : '5rem',
                 }}
             >
                 {participantName ? (

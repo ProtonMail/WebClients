@@ -17,7 +17,11 @@ export const ParticipantGrid = () => {
             return 'repeat(3, 1fr)';
         }
 
-        return 'repeat(4, 1fr)';
+        if (participantCount > 6 && participantCount <= 12) {
+            return 'repeat(4, 1fr)';
+        }
+
+        return 'repeat(5, 1fr)';
     };
 
     const gridTemplateRows = (participantCount: number) => {
@@ -29,11 +33,7 @@ export const ParticipantGrid = () => {
             return 'repeat(2, 1fr)';
         }
 
-        if (participantCount > 8 && participantCount <= 12) {
-            return 'repeat(3, 1fr)';
-        }
-
-        return 'repeat(4, 1fr)';
+        return 'repeat(3, 1fr)';
     };
 
     return (
@@ -48,7 +48,13 @@ export const ParticipantGrid = () => {
                 }}
             >
                 {pagedParticipants.map((participant) => {
-                    return <ParticipantTile key={participant.identity} participant={participant} />;
+                    return (
+                        <ParticipantTile
+                            key={participant.identity}
+                            participant={participant}
+                            smallView={pagedParticipants.length > 6}
+                        />
+                    );
                 })}
             </div>
         </div>

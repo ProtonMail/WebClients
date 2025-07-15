@@ -18,8 +18,14 @@ export const MeetingDetails = () => {
     }
 
     return (
-        <SideBar onClose={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}>
-            <h3 className="h4 mb-8 text-semibold">{c('l10n_nightly Title').t`Meeting details`}</h3>
+        <SideBar
+            onClose={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
+            header={
+                <div className="text-semibold flex items-center">
+                    <div className="text-3xl">{c('l10n_nightly Title').t`Meeting details`}</div>
+                </div>
+            }
+        >
             <h2 className="h3 mb-4">{roomName}</h2>
             <div className="flex flex-column">
                 <div className="bold mb-2">{c('l10n_nightly Title').t`Joining info`}</div>

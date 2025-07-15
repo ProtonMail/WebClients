@@ -1,3 +1,9 @@
 .side-bar-search {
-	padding-inline-end: 3rem;
+	padding-inline-end: 0.5rem;
+}
+
+.search-cancel-button {
+	&:hover {
+		color: var(--primary) !important;
+	}
 }

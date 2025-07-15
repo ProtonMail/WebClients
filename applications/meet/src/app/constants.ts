@@ -1,11 +1,9 @@
 import { VideoQuality } from 'livekit-client';
 import { c } from 'ttag';
 
-export const PAGE_SIZE = 16;
+export const PAGE_SIZE = 15;
 
 export const SCREEN_SHARE_PAGE_SIZE = 3;
-
-export const SCREEN_SHARE_DOUBLE_PAGE_SIZE = 6;
 
 export const JOIN_TITLE_TIMEOUT = 2000;
 

@@ -5,18 +5,20 @@ import { describe, expect, it, vi } from 'vitest';
 import { ChatMessage } from './ChatMessage';
 
 describe('ChatMessage', () => {
+    const placeholderText = 'Type an encrypted message...';
+
     it('renders with correct placeholder text', () => {
         const mockOnMessageSend = vi.fn();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
-        expect(screen.getByPlaceholderText('Type a message...')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText(placeholderText)).toBeInTheDocument();
     });
 
     it('starts with empty message', () => {
         const mockOnMessageSend = vi.fn();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
-        const textarea = screen.getByPlaceholderText('Type a message...');
+        const textarea = screen.getByPlaceholderText(placeholderText);
         expect(textarea).toHaveValue('');
     });
 
@@ -25,7 +27,7 @@ describe('ChatMessage', () => {
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
-        const textarea = screen.getByPlaceholderText('Type a message...');
+        const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Hello world');
 
         expect(textarea).toHaveValue('Hello world');
@@ -36,10 +38,10 @@ describe('ChatMessage', () => {
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
-        const textarea = screen.getByPlaceholderText('Type a message...');
+        const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Test message');
 
-        const sendButton = screen.getByRole('button', { name: 'Send message' });
+        const sendButton = screen.getByRole('button', { name: 'Send an encrypted message' });
         await user.click(sendButton);
 
         expect(mockOnMessageSend).toHaveBeenCalledWith('Test message');
@@ -50,10 +52,10 @@ describe('ChatMessage', () => {
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
-        const textarea = screen.getByPlaceholderText('Type a message...');
+        const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Test message');
 
-        const sendButton = screen.getByRole('button', { name: 'Send message' });
+        const sendButton = screen.getByRole('button', { name: 'Send an encrypted message' });
         await user.click(sendButton);
 
         expect(textarea).toHaveValue('');
@@ -64,11 +66,11 @@ describe('ChatMessage', () => {
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
-        const sendButton = screen.getByRole('button', { name: 'Send message' });
+        const sendButton = screen.getByRole('button', { name: 'Send an encrypted message' });
 
         expect(sendButton).toBeDisabled();
 
-        const textarea = screen.getByPlaceholderText('Type a message...');
+        const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, '   ');
         expect(sendButton).toBeDisabled();
 
@@ -82,7 +84,7 @@ describe('ChatMessage', () => {
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
-        const textarea = screen.getByPlaceholderText('Type a message...');
+        const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Test message');
         await user.keyboard('{Enter}');
 
@@ -96,7 +98,7 @@ describe('ChatMessage', () => {
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
-        const textarea = screen.getByPlaceholderText('Type a message...') as HTMLTextAreaElement;
+        const textarea = screen.getByPlaceholderText(placeholderText) as HTMLTextAreaElement;
         await user.type(textarea, 'Test message');
         await user.keyboard('{Shift>}{Enter}{/Shift}');
 
@@ -109,7 +111,7 @@ describe('ChatMessage', () => {
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
-        const textarea = screen.getByPlaceholderText('Type a message...');
+        const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Line 1');
         await user.keyboard('{Shift>}{Enter}{/Shift}');
         await user.type(textarea, 'Line 2');
@@ -118,7 +120,7 @@ describe('ChatMessage', () => {
 
         expect(textarea).toHaveValue('Line 1\nLine 2');
 
-        const sendButton = screen.getByRole('button', { name: 'Send message' });
+        const sendButton = screen.getByRole('button', { name: 'Send an encrypted message' });
         await user.click(sendButton);
 
         expect(mockOnMessageSend).toHaveBeenCalledWith('Line 1\nLine 2');
@@ -129,7 +131,7 @@ describe('ChatMessage', () => {
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
-        const textarea = screen.getByPlaceholderText('Type a message...');
+        const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Test');
         await user.keyboard('{Enter}');
 
@@ -142,7 +144,7 @@ describe('ChatMessage', () => {
         const user = userEvent.setup();
         render(<ChatMessage onMessageSend={mockOnMessageSend} />);
 
-        const textarea = screen.getByPlaceholderText('Type a message...');
+        const textarea = screen.getByPlaceholderText(placeholderText);
 
         // Try to send empty message
         await user.keyboard('{Enter}');

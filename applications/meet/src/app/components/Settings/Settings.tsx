@@ -35,9 +35,14 @@ export const Settings = () => {
     }
 
     return (
-        <SideBar onClose={() => toggleSideBarState(MeetingSideBars.Settings)}>
-            <div className="mb-4 h3 text-semibold">{c('l10n_nightly Title').t`Settings`}</div>
-
+        <SideBar
+            onClose={() => toggleSideBarState(MeetingSideBars.Settings)}
+            header={
+                <div className="text-semibold flex items-center">
+                    <div className="text-3xl">{c('l10n_nightly Title').t`Settings`}</div>
+                </div>
+            }
+        >
             {increasedVideoQuality && (
                 <>
                     <Label>{c('l10n_nightly Label').t`Quality`}</Label>

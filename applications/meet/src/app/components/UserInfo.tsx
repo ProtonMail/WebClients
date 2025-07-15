@@ -25,7 +25,7 @@ export const UserInfo = ({ colorIndex }: { colorIndex: number }) => {
                     '--h-custom': '2.5rem',
                 }}
             >
-                {user.Name.charAt(0).toUpperCase()}
+                {user.Name && typeof user.Name === 'string' ? user.Name.charAt(0).toUpperCase() : ''}
             </div>
         </div>
     );

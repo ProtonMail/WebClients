@@ -1,13 +1,10 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 
-import { useLocalParticipant } from '@livekit/components-react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { IcChevronLeft, IcChevronRight } from '@proton/icons';
 
-import { useMeetContext } from '../../contexts/MeetContext';
-import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useSortedParticipants } from '../../hooks/useSortedParticipants';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
 
@@ -22,24 +19,7 @@ export const ParticipantSidebar = ({
 }) => {
     const [isParticipantSidebarHovered, setIsParticipantSidebarHovered] = useState(false);
 
-    const { localParticipant } = useLocalParticipant();
-    const { sortedParticipants, pagedParticipants } = useSortedParticipants();
-
-    const { selfView } = useMeetContext();
-
-    const { sideBarState } = useUIStateContext();
-
-    const filteredParticipants = useMemo(
-        () =>
-            sortedParticipants.filter((participant) =>
-                selfView ? true : sortedParticipants.length === 1 || participant.identity !== localParticipant.identity
-            ),
-        [sortedParticipants, selfView, localParticipant]
-    );
-
-    const sidebarOpen = Object.values(sideBarState).some((value) => value);
-
-    const columns = filteredParticipants.length < 6 || sidebarOpen ? 1 : 2;
+    const { pagedParticipants } = useSortedParticipants();
 
     return (
         <div
@@ -75,7 +55,7 @@ export const ParticipantSidebar = ({
                     )}
                 </Button>
             )}
-            {columns === 1 && participantSideBarOpen && (
+            {participantSideBarOpen && (
                 <div className="w-full h-full flex items-start flex-column">
                     {pagedParticipants.map((participant) => {
                         return (
@@ -83,7 +63,7 @@ export const ParticipantSidebar = ({
                                 key={participant.identity}
                                 className="w-custom h-custom"
                                 style={{
-                                    '--w-custom': `${100 / columns}%`,
+                                    '--w-custom': '100%',
                                     '--h-custom': '33.33%',
                                     boxSizing: 'border-box',
                                     padding: '0.3125rem',
@@ -94,21 +74,6 @@ export const ParticipantSidebar = ({
                             </div>
                         );
                     })}
-                </div>
-            )}
-            {columns === 2 && participantSideBarOpen && (
-                <div
-                    className="w-full h-full"
-                    style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(2, 1fr)',
-                        gridTemplateRows: 'repeat(3, 1fr)',
-                        gap: '0.3125rem',
-                    }}
-                >
-                    {pagedParticipants.map((participant) => (
-                        <ParticipantTile key={participant.identity} participant={participant} smallView={true} />
-                    ))}
                 </div>
             )}
         </div>

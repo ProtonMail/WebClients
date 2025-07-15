@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { RoomAudioRenderer, useParticipants } from '@livekit/components-react';
+import { RoomAudioRenderer } from '@livekit/components-react';
 import type { LocalVideoTrack } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -34,8 +34,6 @@ interface MeetingBodyProps {
 export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyProps) => {
     useMeetingInitialisation({ faceTrack, isFaceTrackingEnabled });
 
-    const participants = useParticipants();
-
     const { videoTrack, participant, isLocal, stopScreenShare, screenShareVideoRef } = useCurrentScreenShare();
 
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
@@ -47,11 +45,7 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
     const getParticipantSideBarColumns = () => {
-        if (!participantSideBarOpen) {
-            return '0px';
-        }
-
-        return `${participants.length < 6 || isSideBarOpen ? 1 : 3}fr`;
+        return participantSideBarOpen ? '1fr' : '0px';
     };
 
     const defaultColumns = `8fr${isSideBarOpen ? ' minmax(0, 3fr)' : ''}`;

@@ -27,7 +27,7 @@ export const useCreateInstantMeeting = () => {
             const { response, passwordBase } = await saveMeeting({
                 params: {
                     ...params,
-                    meetingName: '',
+                    meetingName: 'Secure meeting',
                     customPassword: '',
                     startTime: null,
                     endTime: null,

@@ -2,9 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { IcCross } from '@proton/icons';
-
+import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { CopyButton } from '../../atoms/CopyButton/CopyButton';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 
@@ -51,16 +49,11 @@ export const MeetingReadyPopup = ({ meetingLink }: MeetingReadyPopupProps) => {
                     '--h-custom': '20.1875rem',
                 }}
             >
-                <Button
-                    className="absolute top-custom right-custom color-weak"
-                    size="small"
-                    onClick={() => setMeetingReadyPopupOpen(false)}
-                    shape="ghost"
+                <CloseButton
+                    onClose={() => setMeetingReadyPopupOpen(false)}
+                    className="absolute top-custom right-custom"
                     style={{ '--top-custom': '0.5rem', '--right-custom': '0.5rem' }}
-                    aria-label={c('l10n_nightly Action').t`Close popup`}
-                >
-                    <IcCross size={4} />
-                </Button>
+                />
                 <div className="meeting-ready-popup-title text-3xl text-center text-semibold">{c('l10n_nightly Info')
                     .t`Your meeting is ready`}</div>
 

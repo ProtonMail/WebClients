@@ -6,10 +6,11 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { InputFieldTwo, Option, PasswordInputTwo, SelectTwo } from '@proton/components';
-import { IcArrowsRotate, IcCross, IcKey, IcTextAlignLeft } from '@proton/icons';
+import { IcArrowsRotate, IcKey, IcTextAlignLeft } from '@proton/icons';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
 import noop from '@proton/utils/noop';
 
+import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { MeetingCreatedModal } from '../../components/MeetingCreatedModal/MeetingCreatedModal';
 import { TimeInputBlock } from '../../components/TimeInputBlock';
 import { useCreateMeeting } from '../../hooks/admin/useCreateMeeting';
@@ -166,9 +167,7 @@ export const CreateContainer = ({ meetingDetails }: CreateContainerProps) => {
                         disabled={isDisabled}
                     >{c('l10n_nightly Action').t`Create meeting`}</Button>
 
-                    <Button shape="ghost" onClick={() => history.push('/join')} className="rounded-full">
-                        <IcCross size={6} />
-                    </Button>
+                    <CloseButton onClose={() => history.push('/join')} />
                 </div>
                 <div className="w-custom flex flex-column gap-2 my-auto" style={{ '--w-custom': '40rem' }}>
                     <div className="text-4xl mb-6 w-full text-center">{c('l10n_nightly Title')

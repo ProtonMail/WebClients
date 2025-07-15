@@ -145,7 +145,7 @@ export const ParticipantControls = () => {
                         toggleSideBarState(MeetingSideBars.Participants);
                     }}
                     indicatorContent={participants.length.toString()}
-                    indicatorStatus={'success'}
+                    indicatorStatus={sideBarState[MeetingSideBars.Participants] ? 'success' : 'default'}
                     ariaLabel={c('l10n_nightly Alt').t`Toggle participants`}
                 />
                 <ChatButton />

@@ -7,7 +7,6 @@ import { IcMeetCamera, IcMeetCameraOff, IcMeetMicrophoneOff } from '@proton/icon
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
-import { getDeviceLabel } from '../../utils/getDeviceLabel';
 import { AudioSettingsDropdown } from '../AudioSettings/AudioSettingsDropdown';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
 import { MicrophoneWithVolume } from '../MicrophoneWithVolume';
@@ -147,9 +146,8 @@ export const DeviceSettings = ({
                     label={
                         noMicrophonePermission
                             ? c('l10n_nightly Info').t`Permissions not given.`
-                            : getDeviceLabel(
-                                  microphones.find((microphone) => microphone.deviceId === selectedMicrophoneId)!
-                              )
+                            : (microphones.find((microphone) => microphone.deviceId === selectedMicrophoneId)?.label ??
+                              '')
                     }
                     icon="meet-microphone"
                     title={c('l10n_nightly Label').t`Audio`}
@@ -176,7 +174,7 @@ export const DeviceSettings = ({
                     label={
                         noCameraPermission
                             ? c('l10n_nightly Info').t`Permissions not given.`
-                            : getDeviceLabel(cameras.find((camera) => camera.deviceId === selectedCameraId)!)
+                            : (cameras.find((camera) => camera.deviceId === selectedCameraId)?.label ?? '')
                     }
                     icon="meet-camera"
                     title={c('l10n_nightly Label').t`Video`}
