@@ -1345,9 +1345,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Desktopová aplikácia ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } úložisko"
       ],
@@ -3438,9 +3435,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimálna výška kreditu, ktorý je možné pridať, je ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Minimálna platba, ktorú akceptujeme, je ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Názov politiky musí mať 3 až 40 znakov."
@@ -5564,12 +5558,6 @@
       "Please fill in all required fields.": [
         "Vyplňte všetky povinné polia, prosím."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kredit.",
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú ${ creditsRemaining } kredity.",
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov.",
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov."
-      ],
       "please open a support ticket": [
         "otvorte, prosím, žiadosť o technickú podporu"
       ],
@@ -6371,9 +6359,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Aby ste mohli pridať PayPal ako platobnú metódu, musíte ho mať prepojený s platobnou kartou alebo bankovým účtom."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Váš PayPal účet musí byť prepojený s platobnou kartou alebo bankovým účtom. Ak váš PayPal prepojený nie je, kliknite na tlačidlo nižšie."
-      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Používateľa budete môcť povýšiť na správcu, keď prijme pozvanie."
       ],
@@ -6424,9 +6409,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Vaše heslo ${ BRAND_NAME }"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Vaše predplatné ${ PASS_SHORT_APP_NAME } Plus bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na vaše konto. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vaše účty ${ VPN_APP_NAME } a ${ MAIL_APP_NAME } sú prepojené. Ak chcete obidva odstrániť, prihláste sa na ${ loginLink } a odstráňte tam svoj účet."
@@ -6508,6 +6490,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Voliteľné"
+      ],
       "Selected color:": [
         "Vybraná farba:"
       ]
@@ -7389,9 +7374,6 @@
       "clearing your browser cache": [
         "vymazanie medzipamäte prehliadača"
       ],
-      "click here": [
-        "kliknite sem"
-      ],
       "Common sign in issues": [
         "Bežné problémy s prihlásením"
       ],
@@ -7484,9 +7466,6 @@
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
-      ],
-      "PayPal without credit card": [
-        "PayPal bez platobnej karty"
       ],
       "perform a password reset from your active session": [
         "resetovať heslo z Vášho aktuálneho prihlásenia"
@@ -8422,9 +8401,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Chráňte citlivé obchodné informácie a bezpečne spolupracujte."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Chráňte svoju rodinu pomocou všetkých prémiových funkcií ${ PASS_SHORT_APP_NAME } Plus pre 6 používateľov."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
       ],
@@ -8960,9 +8936,6 @@
       "Get the deal": [
         "Využiť ponuku"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Posledná šanca ušetriť 80% za prvý mesiac s ${ plan } Plus."
-      ],
       "Last day to save": [
         "Posledný deň, kedy môžete ušetriť"
       ],
@@ -9305,6 +9278,11 @@
         "Neobmedzené prihlásenia, poznámky, platobné karty a oveľa viac"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } plán"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } používateľský účet",
@@ -9498,18 +9476,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
-      "Please select billing country": [
-        "Vyberte fakturačnú krajinu, prosím"
-      ],
-      "Please select billing state": [
-        "Vyberte štát platby, prosím"
-      ],
-      "Please select your billing country first.": [
-        "Najprv vyberte fakturačnú krajinu, prosím."
-      ],
-      "Please select your billing state first.": [
-        "Najprv vyberte fakturačný štát, prosím."
-      ],
       "Processing payment": [
         "Spracováva sa platba"
       ],
@@ -9518,9 +9484,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje sa za ${ renewPriceStr }, zrušiť môžete kedykoľvek."
-      ],
-      "Select billing country to pay": [
-        "Vyberte fakturačnú krajinu na platbu"
       ],
       "terms & conditions": [
         "podmienky používania"
@@ -11956,9 +11919,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ BRAND_NAME } Account password rules": [
         "Pravidlá pre heslo k ${ BRAND_NAME } účtu"
       ],

@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "Annuler l'abonnement"
       ],
+      "Cancel trial and pay": [
+        "Annuler l'essai et payer"
+      ],
       "Change": [
         "Modifier"
       ],
@@ -1385,8 +1388,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Application de bureau ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus et ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } et ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } d'espace de stockage"
@@ -3334,6 +3337,9 @@
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
       ],
+      "Invalid ZIP code": [
+        "Le code postal n'est pas valide."
+      ],
       "Name does not match": [
         "Les noms ne correspondent pas."
       ],
@@ -3394,6 +3400,18 @@
       "Please enter a valid Entity ID URL": [
         "Veuillez saisir une URL valide pour l'entité."
       ],
+      "Please enter a valid postal code": [
+        "Veuillez saisir un code postal valide."
+      ],
+      "Please enter a valid ZIP code": [
+        "Veuillez saisir un code postal valide."
+      ],
+      "Please enter postal code": [
+        "Veuillez saisir un code postal."
+      ],
+      "Please enter ZIP code": [
+        "Merci de saisir un code postal."
+      ],
       "Please generate keys before you try to change your password": [
         "Générez des clés avant d'essayer de changer votre mot de passe."
       ],
@@ -3408,6 +3426,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Sélectionnez au moins un utilisateur ou un groupe avant de continuer."
+      ],
+      "Please select billing country": [
+        "Veuillez sélectionner le pays pour la facturation."
+      ],
+      "Please select billing state": [
+        "Veuillez sélectionner l'état pour la facturation."
       ],
       "Please set a recovery email first": [
         "Définissez d'abord une adresse e-mail de récupération."
@@ -3432,6 +3456,9 @@
       ],
       "Please upload only 1 file": [
         "Veuillez importer un fichier uniquement."
+      ],
+      "Postal code is required": [
+        "Le code postal est requis"
       ],
       "Process aborted": [
         "Le processus a été abandonné."
@@ -3468,9 +3495,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Le montant minimum du crédit qui peut être ajouté est de ${ price }."
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Le paiement minimum accepté est de ${ price }."
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Le nom de la politique doit contenir entre 3 et 40 caractères."
@@ -5502,10 +5526,6 @@
       "Please fill in all required fields.": [
         "Veuillez remplir tous les champs obligatoires."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédit restant.",
-        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédits restants."
-      ],
       "please open a support ticket": [
         "ouvrez un ticket de support"
       ],
@@ -6279,9 +6299,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Pour pouvoir ajouter PayPal comme méthode de paiement, vous devez associer une carte de paiement ou un compte bancaire à votre compte PayPal."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Vous devez avoir une carte de paiement ou un compte bancaire lié à votre compte PayPal. Si ce n'est pas le cas, cliquez sur le lien ci-dessous."
-      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Vous pourrez promouvoir l'utilisateur au rang d'administrateur une fois qu'il aura accepté l'invitation."
       ],
@@ -6329,8 +6346,8 @@
       "Your ${ BRAND_NAME } password": [
         "Votre mot de passe ${ BRAND_NAME }"
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Votre abonnement ${ PASS_SHORT_APP_NAME } Plus sera remplacé par ${ PASS_SHORT_APP_NAME } Lifetime. Le solde de votre abonnement sera ajouté à votre compte. L'offre ${ PASS_SHORT_APP_NAME } Lifetime n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Votre abonnement ${ plan } sera remplacé par l'abonnement à vie ${ PASS_SHORT_APP_NAME }. Le solde restant sera ajouté à votre compte. L'abonnement à vie ${ PASS_SHORT_APP_NAME } n'a pas de prix de renouvellement ; il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vos comptes ${ VPN_APP_NAME } et ${ MAIL_APP_NAME } sont liés. Pour les supprimer tous les deux, nous vous invitons à vous connecter à ${ loginLink } et à y supprimer votre compte."
@@ -6408,6 +6425,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Facultatif"
+      ],
       "Selected color:": [
         "Couleur sélectionnée :"
       ]
@@ -7238,6 +7258,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Code postal"
+      ],
       "ZIP code": [
         "Code postal"
       ]
@@ -7278,9 +7301,6 @@
       ],
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
-      ],
-      "click here": [
-        "cliquez ici"
       ],
       "Common sign in issues": [
         "Problèmes de connexion courants"
@@ -7374,9 +7394,6 @@
       ],
       "Pay invoice": [
         "Payer la facture"
-      ],
-      "PayPal without credit card": [
-        "PayPal sans carte de paiement"
       ],
       "perform a password reset from your active session": [
         "réinitialiser le mot de passe depuis votre session active"
@@ -8280,8 +8297,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Protégez les informations sensibles de vos activités et collaborez en toute sécurité."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Protégez votre famille avec toutes les fonctionnalités premium de ${ PASS_SHORT_APP_NAME } Plus pour 6 utilisateurs."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Protégez votre famille avec toutes les fonctionnalités de ${ plusTitle } pour 6 utilisateurs."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protégez la vie privée de votre famille avec l'ensemble des services ${ BRAND_NAME }."
@@ -8357,6 +8374,9 @@
       ],
       "Downgrade account?": [
         "Passer à un abonnement inférieur ?"
+      ],
+      "Review subscription": [
+        "Révisez l'abonnement"
       ],
       "Review subscription and pay": [
         "Vérifier l'abonnement et payer"
@@ -8821,8 +8841,8 @@
       "Get the deal": [
         "Je profite de l'offre"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Dernière chance pour profiter de 80 % de réduction sur le premier mois pour ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Dernière chance pour profiter de 80 % de réduction sur le premier mois pour ${ plan }."
       ],
       "Last day to save": [
         "Dernier jour pour réaliser des économies"
@@ -9160,6 +9180,11 @@
         "Nombre illimité de connexions, de notes et de cartes de paiement et plus encore"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Abonnement ${ upsellPlanTitle }"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } compte utilisateur",
@@ -9345,6 +9370,9 @@
       "Got it": [
         "J'ai compris"
       ],
+      "I'm purchasing as a business": [
+        "J'achète en tant qu'entreprise."
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -9354,18 +9382,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
-      "Please select billing country": [
-        "Veuillez sélectionner le pays pour la facturation."
-      ],
-      "Please select billing state": [
-        "Veuillez sélectionner l'état pour la facturation."
-      ],
-      "Please select your billing country first.": [
-        "Veuillez d'abord sélectionner votre pays de facturation."
-      ],
-      "Please select your billing state first.": [
-        "Veuillez d'abord sélectionner votre état pour la facturation."
-      ],
       "Processing payment": [
         "Traitement du paiement"
       ],
@@ -9374,9 +9390,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renouvellement au prix de ${ renewPriceStr } avec possibilité de résiliation à tout moment."
-      ],
-      "Select billing country to pay": [
-        "Veuillez sélectionner l'état pour la facture à payer."
       ],
       "terms & conditions": [
         "les conditions générales d’utilisation"
@@ -9402,6 +9415,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment.",
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
+      ],
+      "This number will be shown on all future invoices": [
+        "Ce numéro sera indiqué sur toutes les factures futures."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Ce moyen de paiement deviendra votre nouveau moyen par défaut pour tous les futurs renouvellements."
@@ -9458,6 +9474,20 @@
       ],
       "Street address, postal code, and city": [
         "Adresse, code postal et ville"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Numéro d'entreprise"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Numéro de TVA"
       ]
     },
     "Permission": {
@@ -9553,6 +9583,9 @@
       "Please select the main reason": [
         "Sélectionnez la raison principale."
       ],
+      "Postal code": [
+        "Code postal"
+      ],
       "Search": [
         "Rechercher"
       ],
@@ -9594,6 +9627,9 @@
       ],
       "yourdomain.com": [
         "votredomaine.fr"
+      ],
+      "ZIP code": [
+        "Code postal"
       ]
     },
     "placeholder": {
@@ -9640,6 +9676,20 @@
       ],
       "Enjoying ${ planName }?": [
         "Vous appréciez ${ planName } ?"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Tous les services ${ protonPlus }.${ br }Un abonnement facile."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "En tant qu'abonné **${ currentPlanTitle }**, vous pouvez débloquer **${ unlockPlanTitle }** et tous les services de première qualité ${ BRAND_NAME } en passant à **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Conserver ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Passez à ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -11697,9 +11747,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ BRAND_NAME } Account password rules": [
         "Règles de mot de passe du compte ${ BRAND_NAME }"
       ],
