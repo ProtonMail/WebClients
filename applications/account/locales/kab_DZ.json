@@ -1323,9 +1323,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Asnas ${ MAIL_APP_NAME } i Desktop"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus d ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } n uḥraz"
       ],
@@ -3536,9 +3533,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Azal amezyan maḍi n usmad i izemren ad yettwarnu d ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Lexlaṣ amezyan maḍi i nezmer ad neqbel d ${ price }"
       ],
       "The sending key is not valid": [
         "Tasarut n tuzna ur d tameɣtut"
@@ -6038,9 +6032,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Yessefk ad tesɛuḍ takarḍa n usmad neɣ amiḍan n tbanka yeqqnen akked umiḍan-inek/m PayPal akken ad ternuḍ tarrayt n uxelleṣ."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Yessfk ad tesεuḍ takarḍa n usmad neɣ amiḍan n tbanka i icudden ɣer umiḍan-ik·im PayPal. Ma amiḍan-ik·im PayPal ur yesεi ara aya, ttxil-k·m sit ɣef tqeffalt ddaw."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Tesriḍ ad tesɛuḍ awitay urmid udmawen i uktar n yineḍruyen-ik·im seg ICS."
       ],
@@ -6097,6 +6088,9 @@
     "info": {
       "Key ${ fingerprint } has already been uploaded": [
         "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
+      ],
+      "Optional": [
+        "Afrayan"
       ]
     },
     "Info - folder colouring feature": {
@@ -7452,9 +7446,6 @@
       "clearing your browser cache": [
         "asfaḍ n tuffirt n iminig"
       ],
-      "click here": [
-        "sit dagi"
-      ],
       "Common sign in issues": [
         "Uguren n tuqqna i d-yettuɣalen"
       ],
@@ -8778,9 +8769,6 @@
       ],
       "Select your plan": [
         "Fren aɣawas"
-      ],
-      "Upgrade your plan": [
-        "Sali aɣawas-ik"
       ]
     },
     "pass_signup_2023: Info": {

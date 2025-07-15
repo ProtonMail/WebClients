@@ -541,6 +541,12 @@
       "Download CSV sample": [
         "CSV サンプルをダウンロード"
       ],
+      "Download for macOS": [
+        "macOS 版をダウンロード"
+      ],
+      "Download for Windows": [
+        "Windows版をダウンロード"
+      ],
       "Download ICS": [
         "ICSをダウンロード"
       ],
@@ -2101,9 +2107,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plusと${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
@@ -4089,9 +4092,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "受信トレイに届く前に、メールを自動的に分類します。"
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "${ MAIL_APP_NAME }Plusで利用可能"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "最初に組織を有効にし、メールアドレスをカスタマイズするように設定してください。"
       ],
@@ -4461,6 +4461,14 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 または Windows 32-bit (ARM64)"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        "Debian / Ubuntu 用の .deb"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        "Fedora / Red Hat 用の .rpm"
       ]
     },
     "drive_signup_2023: Title": {
@@ -5563,9 +5571,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "追加クレジットの最低金額は ${ price } です。"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "最低 ${ price } より受け付けています。"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "ポリシー名は 3 文字以上 40 文字以下で入力してください。"
@@ -6715,6 +6720,14 @@
       ],
       "Your desktop app free trial has ended": [
         "デスクトップ アプリの無料トライアルは終了しました"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "App Store での ${ appName }"
+      ],
+      "${ appName } on Play Store": [
+        "Play Store での ${ appName }"
       ]
     },
     "Gmail forwarding": {
@@ -8434,6 +8447,9 @@
       "Failed to fetch logs.": [
         "ログの読み込みに失敗しました。"
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "速くて集中できる。メールとカレンダーをデスクトップ上で。"
+      ],
       "Featured in": [
         "注目の"
       ],
@@ -9210,9 +9226,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "フィルター ${ nameDeleted } を削除すると、トリガーされるすべての自動アクションの処理が停止されることに注意してください。"
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "確認ボタンをクリックすると、アカウントには ${ creditsRemaining } クレジットが残りますのでご注意ください。"
       ],
       "please open a support ticket": [
         "サポートチケットを開いてください"
@@ -10405,9 +10418,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "支払い方法として PayPal を追加するには、クレジットカードまたは銀行口座が PayPal アカウントにリンクされている必要があります。"
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal アカウントにクレジットカードまたは銀行口座を登録しておく必要があります。PayPal アカウントをお持ちでない場合はこちらのボタンをクリックしてください。"
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "ICS からイベントをインポートするには、アクティブな個人カレンダーが必要です。"
       ],
@@ -10473,9 +10483,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "あなたの ${ BRAND_NAME } パスワード"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高はあなたのアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetime ディールには更新価格はなく、一度の支払いで ${ PASS_SHORT_APP_NAME } への生涯アクセスが得られます。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } と ${ MAIL_APP_NAME } のアカウントはリンクしています。両アカウントを削除するには ${ loginLink } へログインしてアカウントを削除してください。"
@@ -10604,6 +10611,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Optional": [
+        "任意"
       ],
       "Selected color:": [
         "選択した色:"
@@ -11294,6 +11304,9 @@
       ],
       "Backup password": [
         "バックアップパスワード"
+      ],
+      "Beta": [
+        "ベータ"
       ],
       "Billing cycle": [
         "支払い間隔"
@@ -12018,6 +12031,9 @@
       "Second password": [
         "セカンドパスワード"
       ],
+      "Select Linux package format": [
+        "Linuxパッケージフォーマットを選択"
+      ],
       "Select Linux platform": [
         "Linux プラットフォームを選択"
       ],
@@ -12441,9 +12457,6 @@
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
       ],
-      "click here": [
-        "ここをクリック"
-      ],
       "Common sign in issues": [
         "一般的なサインインの問題"
       ],
@@ -12569,9 +12582,6 @@
       ],
       "Pay invoice": [
         "請求の支払い"
-      ],
-      "PayPal without credit card": [
-        "クレジットカードなしでPaypal"
       ],
       "perform a password reset from your active session": [
         "アクティブなセッションからパスワードリセットを実行する"
@@ -13865,9 +13875,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "ビジネスの機密情報を保護して安全に共同作業"
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "家族を守るために、6 人のユーザー向けに${ PASS_SHORT_APP_NAME } Plusのすべてのプレミアム機能をご利用ください。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "すべての ${ BRAND_NAME } サービスを組み合わせて、ご家族のプライバシーを保護します。"
       ],
@@ -13944,9 +13951,6 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "利用開始の前に、表示名を設定してください。あなたがメール送信した人や予定に招待した人、ファイルを共有した人に表示されます。"
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "${ planName } サブスクリプションが有効になりました"
       ],
       "Your selected plan: ${ planName }": [
         "選択中のプラン: ${ planName }"
@@ -14546,9 +14550,6 @@
       "Get the deal": [
         "割引を入手"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "最初の月の${ plan } Plusが 80 %割引になる最後のチャンス。"
-      ],
       "Last day to save": [
         "節約できる最後の日"
       ],
@@ -15105,9 +15106,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "1度だけの支払いで、現在および将来のすべての ${ PASS_APP_NAME } プレミアム機能へのライフタイムアクセスを入手できます。"
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } へようこそ"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15195,9 +15193,6 @@
       ],
       "Select your plan": [
         "プランの選択"
-      ],
-      "Upgrade your plan": [
-        "プランのアップグレード"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15419,9 +15414,6 @@
       ],
       "Verifying your payment": [
         "お支払いの確認"
-      ],
-      "Welcome to ${ shortName } Plus": [
-        "${ shortName } Plus へようこそ"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "すでにプレミアム ${ appName } 機能にアクセスできます。再度購入する必要はありません。"
@@ -15666,18 +15658,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
-      "Please select billing country": [
-        "請求先の国を選択してください"
-      ],
-      "Please select billing state": [
-        "請求先の州を選択してください"
-      ],
-      "Please select your billing country first.": [
-        "最初に請求先の国を選択してください。"
-      ],
-      "Please select your billing state first.": [
-        "最初に請求先の州を選択してください。"
-      ],
       "Processing payment": [
         "支払いの処理中"
       ],
@@ -15686,9 +15666,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
-      ],
-      "Select billing country to pay": [
-        "支払い請求先の国を選択してください"
       ],
       "terms & conditions": [
         "利用規約"
@@ -19005,9 +18982,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ appName } keyboard shortcuts": [
         "${ appName } のキーボードショートカット"
       ],
@@ -19686,6 +19660,15 @@
       "Folders and labels": [
         "フォルダーとラベル"
       ],
+      "For Linux": [
+        "Linuxの場合"
+      ],
+      "For macOS": [
+        "macOSの場合"
+      ],
+      "For Windows": [
+        "Windowsの場合"
+      ],
       "Forgot password": [
         "パスワードを忘れました"
       ],
@@ -20315,9 +20298,6 @@
       ],
       "Time zone": [
         "タイムゾーン"
-      ],
-      "Track your referrals": [
-        "招待状況を確認"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } をオンにする"

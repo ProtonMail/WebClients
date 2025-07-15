@@ -2148,9 +2148,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus ve ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } depolama alanı"
       ],
@@ -4152,9 +4149,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Gelen iletilerinizi gelen kutunuza ulaşmadan önce otomatik olarak sıralayın."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "${ MAIL_APP_NAME } Plus tarifesi ile kullanılabilir"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Kuruluşunuzu açmak ve e-posta adresinizi özelleştirmek için önce bunu yapılandırın."
       ],
@@ -5614,9 +5608,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Kabul ettiğimiz en az ödeme: ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "İlke adının uzunluğu 3 ile 40 karakter arasında olmalıdır."
@@ -8247,6 +8238,9 @@
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
       ],
+      "Dedicated VPN servers": [
+        "Ayrılmış VPN sunucuları"
+      ],
       "default email address": [
         "varsayılan e-posta adresi"
       ],
@@ -9314,10 +9308,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "${ nameDeleted } süzgecini silerseniz, tetiklediği tüm otomatik işlemlerin durdurulacağını unutmayın."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın.",
-        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
       ],
       "please open a support ticket": [
         "lütfen bir destek kaydı açın"
@@ -10522,9 +10512,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ödeme yöntemi olarak eklemek için, PayPal hesabınızla bağlantılı bir kredi kartı ya da banka hesabı olmalıdır."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal hesabınızda bağlantılı bir kredi kartı ya da banka hesabı olmalıdır. PayPal hesabınızda bunlar yoksa, aşağıdaki düğmeye tıklayın."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Etkinliklerinizi ICS dosyasından içe aktarmak için etkin bir kişisel takviminiz olmalıdır."
       ],
@@ -10592,9 +10579,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "${ BRAND_NAME } parolanız"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime forsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
@@ -10723,6 +10707,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "${ fingerprint } anahtarı zaten yüklenmiş"
+      ],
+      "Optional": [
+        "İsteğe bağlı"
       ],
       "Selected color:": [
         "Seçilmiş renk:"
@@ -12568,9 +12555,6 @@
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
       ],
-      "click here": [
-        "buraya tıklayın"
-      ],
       "Common sign in issues": [
         "Sık karşılaşılan oturum açma sorunları"
       ],
@@ -12696,9 +12680,6 @@
       ],
       "Pay invoice": [
         "Faturayı öde"
-      ],
-      "PayPal without credit card": [
-        "Kredi kartı olmadan PayPal"
       ],
       "perform a password reset from your active session": [
         "etkin oturumunuzdan parola sıfırlama isteğinde bulunun"
@@ -14018,9 +13999,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Önemli iş bilgilerinizi koruyun ve güvende kalarak işbirliği yapın."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Ailenizi 6 kullanıcıya kadar ${ PASS_SHORT_APP_NAME } Plus tüm ücretli özellikleriyle koruyun."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
@@ -14097,9 +14075,6 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Başlamak için görüntülenecek bir ad yazın. Bu ad, e-posta ve etkinlik davetleri ile dosya paylaşımı gönderdiğiniz kişilere görüntülenir."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "${ planName } aboneliğiniz etkin."
       ],
       "Your selected plan: ${ planName }": [
         "Seçtiğiniz tarife: ${ planName }"
@@ -14707,9 +14682,6 @@
       "Get the deal": [
         "Tekliften yararlanın"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "${ plan } Plus aboneliğinin ilk ayında % 80 indirim kazanmak için son fırsat."
-      ],
       "Last day to save": [
         "İndirim kazanmak için son gün"
       ],
@@ -15252,9 +15224,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Tek seferlik ödeme ile var olan ve gelecekteki tüm ${ PASS_APP_NAME } ücretli özelliklerine ömür boyu erişim kazanın."
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } tarifesine hoş geldiniz"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15342,9 +15311,6 @@
       ],
       "Select your plan": [
         "Tarifenizi seçin"
-      ],
-      "Upgrade your plan": [
-        "Tarifenizi yükseltin"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15566,9 +15532,6 @@
       ],
       "Verifying your payment": [
         "Ödemeniz doğrulanıyor"
-      ],
-      "Welcome to ${ shortName } Plus": [
-        "${ shortName } Plus tarifesine hoş geldiniz"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Ücretli ${ appName } özelliklerine zaten erişiminiz var. Yeniden satın almanıza gerek yok."
@@ -15814,18 +15777,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
-      "Please select billing country": [
-        "Lütfen faturanın kesileceği ülkeyi seçin"
-      ],
-      "Please select billing state": [
-        "Lütfen faturanın kesileceği ili seçin"
-      ],
-      "Please select your billing country first.": [
-        "Lütfen önce faturanın kesileceği ülkeyi seçin."
-      ],
-      "Please select your billing state first.": [
-        "Lütfen önce faturanın kesileceği ili seçin."
-      ],
       "Processing payment": [
         "Ödeme işleniyor"
       ],
@@ -15834,9 +15785,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
-      "Select billing country to pay": [
-        "Ödeme için fatura ülkesini seçin"
       ],
       "terms & conditions": [
         "hükümler ve koşullar"
@@ -17611,6 +17559,9 @@
       "Increase your storage": [
         "Depolama alanınızı yükseltin"
       ],
+      "Unblock streaming content": [
+        "Yayın akışı içeriğinin engellemesini kaldırın"
+      ],
       "Upgrade": [
         "Yükselt"
       ],
@@ -19130,9 +19081,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ appName } keyboard shortcuts": [
         "${ appName } klavye kısayolları"
       ],
@@ -20440,9 +20388,6 @@
       ],
       "Time zone": [
         "Saat dilimi"
-      ],
-      "Track your referrals": [
-        "Önerilerinizi izleyin"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"

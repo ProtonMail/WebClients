@@ -148,6 +148,9 @@
       "Add public holidays": [
         "Lägg till allmänna helgdagar"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Lägg till hänvisningslänk till ${ MAIL_APP_NAME }-signatur"
+      ],
       "Add sieve filter": [
         "Lägg till Sieve-filter"
       ],
@@ -216,6 +219,9 @@
       ],
       "Cancel subscription": [
         "Avsluta prenumeration"
+      ],
+      "Cancel trial and pay": [
+        "Avbryt provperiod och betala"
       ],
       "Change": [
         "Ändra"
@@ -2111,8 +2117,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-skrivbordsapp"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus och ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsutrymme"
@@ -4110,11 +4116,15 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortera automatiskt dina inkommande meddelanden innan de når din inkorg."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "Tillgänglig med ${ MAIL_APP_NAME } Plus"
+      "Available with ${ title }": [
+        "Tillgänglig med ${ title }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurera detta först för att aktivera din organisation och anpassa din e-postadress."
+      ],
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
+        "Grattis! Du har tjänat maximalt ${ rewardsLimit } gratis månad av ${ plusPlanName }.",
+        "Grattis! Du har tjänat det maximala antalet ${ rewardsLimit } gratis månader av ${ plusPlanName }."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Anslut din CRM, webbplats, skrivare och mer."
@@ -4218,6 +4228,9 @@
       "To start, give your organization a name.": [
         "Börja med att ge din organisation ett namn."
       ],
+      "Track the status and activity of your referrals": [
+        "Spåra statusen och aktiviteten för dina hänvisningar"
+      ],
       "Track the status and activity of your referrals.": [
         "Spåra statusen och aktiviteten för dina hänvisningar."
       ],
@@ -4235,6 +4248,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
+      ],
+      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
+        "Du får ${ referralReward } i ${ BRAND_NAME }-kredit när personen du bjuder in registrerar sig för ett ${ BRAND_NAME }-paket, och de får också ${ referralReward } i krediter för att komma igång."
       ]
     },
     "description": {
@@ -5351,6 +5367,9 @@
       "Invalid verification code": [
         "Ogiltig verifieringskod"
       ],
+      "Invalid ZIP code": [
+        "Ogiltigt postnummer"
+      ],
       "Item content cannot exceed 40KB": [
         "Objektinnehåll får inte överstiga 40 kB"
       ],
@@ -5445,6 +5464,18 @@
       "Please enter a valid Entity ID URL": [
         "Ange en giltig entitets-ID-URL."
       ],
+      "Please enter a valid postal code": [
+        "Skriv in ett giltigt postnummer"
+      ],
+      "Please enter a valid ZIP code": [
+        "Ange ett giltigt postnummer"
+      ],
+      "Please enter postal code": [
+        "Ange postnummer"
+      ],
+      "Please enter ZIP code": [
+        "Ange postnummer"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Åtgärda den markerade konflikten för att fortsätta.",
         "Åtgärda de markerade konflikterna för att fortsätta."
@@ -5463,6 +5494,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Välj minst en användare eller grupp innan du fortsätter."
+      ],
+      "Please select billing country": [
+        "Välj faktureringsland"
+      ],
+      "Please select billing state": [
+        "Välj delstat för fakturering"
       ],
       "Please set a recovery email first": [
         "Ställ in en e-postadress för återställning först"
@@ -5493,6 +5530,9 @@
       ],
       "Port is required": [
         "Port är obligatoriskt"
+      ],
+      "Postal code is required": [
+        "Postnummer är obligatoriskt"
       ],
       "Primary address key is not decrypted": [
         "Primär adressnyckel är inte avkrypterad"
@@ -5587,9 +5627,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Minsta betalningen vi accepterar är ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Policynamnet måste vara mellan 3 och 40 tecken."
@@ -5866,6 +5903,9 @@
     "Error message": {
       "App currently unavailable": [
         "Appen är för närvarande otillgänglig"
+      ],
+      "Ask your administrator to enable Account monitor.": [
+        "Be din administratör att aktivera kontoövervakning."
       ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
@@ -7693,6 +7733,9 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Skaffa en ${ BRAND_NAME }-adress** för att använda alla ${ BRAND_NAME_TWO }-tjänster inklusive ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Mer",
         "+ ${ invisibleCount } Mer"
@@ -8601,6 +8644,9 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Bli aviserad om ditt lösenord eller annan personlig data har läckt. ${ learnMoreLinkNoBreach }"
       ],
+      "Get started with the referral link above.": [
+        "Kom igång med hänvisningslänken ovan."
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Ge detta token ett beskrivande namn, t.ex. vilken tjänst du avser att använda det med och välj en av dina aktiva anpassade domänadresser. Endast denna adress kan skicka e-post med denna token."
       ],
@@ -8821,6 +8867,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Bjud in din partner, en vän eller vem du än delar ditt ${ protonDuoPlanName }-paket med."
+      ],
+      "Invited": [
+        "Inbjuden"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Det verkar som om en del av dina data är krypterade och låsta."
@@ -9227,6 +9276,9 @@
       "Paid for a monthly plan": [
         "Betalade för ett månadspaket"
       ],
+      "Paid for a plan": [
+        "Betalat för ett paket"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - anpassad e-post bekräftad"
       ],
@@ -9309,10 +9361,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Observera att om du tar bort filtret ${ nameDeleted } kommer vi att sluta bearbeta alla automatiska åtgärder som det utlöser."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Vänligen notera att när du klickar på Bekräfta-knappen så kommer ditt konto att ha ${ creditsRemaining } kredit kvar.",
-        "Vänligen notera att när du klickar på Bekräfta-knappen så kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
       ],
       "please open a support ticket": [
         "öppna ett supportärende"
@@ -10467,6 +10515,9 @@
       "You do not have permission to perform this action": [
         "Du har inte behörighet att utföra denna åtgärd"
       ],
+      "You don't have any referrals.": [
+        "Du har inga hänvisningar."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir aviserad om ditt lösenord eller annan data har läckt från en tjänst från tredje part."
       ],
@@ -10513,9 +10564,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du måste ha ett kreditkort eller ett bankkonto kopplat till ditt PayPal-konto för att kunna lägga till det som en betalningsmetod."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du måste ha ett kreditkort eller bankkonto kopplat till ditt PayPal-konto. Om ditt PayPal-konto inte har det, klicka på knappen nedan."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Du måste ha en aktiv personlig kalender för att importera dina händelser från ICS."
@@ -10581,9 +10629,6 @@
       "Your ${ BRAND_NAME } password": [
         "Ditt ${ BRAND_NAME }-lösenord"
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Din ${ PASS_SHORT_APP_NAME } Plus-prenumeration kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Den kvarvarande balansen för din prenumeration kommer att läggas till i ditt konto.${ PASS_SHORT_APP_NAME } livstidserbjudandet har inget förnyelsepris, det är en engångsbetalning för livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Dina ${ VPN_APP_NAME }- och ${ MAIL_APP_NAME }-konton är länkade. För att ta bort båda, logga in på ${ loginLink } och ta bort ditt konto där."
       ],
@@ -10626,6 +10671,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en månadsprenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Dina vänner får **2 veckor gratis** på sitt valda paket."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Din import från ${ accounts } är tillfälligt fördröjd.",
@@ -10711,6 +10759,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Optional": [
+        "Valfritt"
       ],
       "Selected color:": [
         "Vald färg:"
@@ -12123,6 +12174,9 @@
       "Reveal password": [
         "Visa lösenord"
       ],
+      "Reward": [
+        "Belöning"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
       ],
@@ -12152,6 +12206,9 @@
       ],
       "Sequences": [
         "Sekvenser"
+      ],
+      "Share your referral link": [
+        "Dela din hänvisningslänk"
       ],
       "Show ${ n } administrator": [
         "Visa ${ n } administratör",
@@ -12490,6 +12547,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postnummer"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -12564,9 +12624,6 @@
       ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
-      ],
-      "click here": [
-        "klicka här"
       ],
       "Common sign in issues": [
         "Vanliga inloggningsproblem"
@@ -12694,9 +12751,6 @@
       "Pay invoice": [
         "Betala faktura"
       ],
-      "PayPal without credit card": [
-        "PayPal utan kreditkort"
-      ],
       "perform a password reset from your active session": [
         "utför en lösenordsåterställning från din aktiva session"
       ],
@@ -12726,6 +12780,9 @@
       ],
       "Terms": [
         "Villkor"
+      ],
+      "Terms and conditions": [
+        "Användarvillkor"
       ],
       "Trouble signing in?": [
         "Problem att logga in?"
@@ -14018,8 +14075,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Skydda känslig företagsinformation och samarbeta säkert."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Skydda din familj med alla premiumfunktioner i ${ PASS_SHORT_APP_NAME } Plus för 6 användare."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Skydda din familj med alla premiumfunktioner i ${ plusTitle } för 6 användare."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Skydda din familjs integritet med alla ${ BRAND_NAME }-tjänster kombinerade."
@@ -14098,8 +14155,8 @@
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "För att komma igång, välj ett visningsnamn. Det här är vad andra kommer att se när du skickar ett e-postmeddelande, bjuder in dem till en händelse eller delar en fil."
       ],
-      "Your ${ planName } subscription is now active.": [
-        "Din ${ planName }-prenumeration är nu aktiv."
+      "Your ${ planTitleElement } subscription is now active.": [
+        "Din ${ planTitleElement }-prenumeration är nu aktiv."
       ],
       "Your selected plan: ${ planName }": [
         "Ditt valda paket: ${ planName }"
@@ -14122,6 +14179,9 @@
       ],
       "Downgrade account?": [
         "Nedgradera konto?"
+      ],
+      "Review subscription": [
+        "Granska prenumeration"
       ],
       "Review subscription and pay": [
         "Granska prenumeration och betala"
@@ -14710,8 +14770,8 @@
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Sista chansen att få 80 % rabatt på din första månad med ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Sista chansen att få 80 % rabatt på din första månad med ${ plan }."
       ],
       "Last day to save": [
         "Sista dagen att spara"
@@ -15287,11 +15347,6 @@
         "Börja använda ${ PASS_APP_NAME }"
       ]
     },
-    "pass_lifetime_signup: Info": {
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "Välkommen till ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
-      ]
-    },
     "pass_signup_2023: Action": {
       "Buy now": [
         "Köp nu"
@@ -15377,9 +15432,6 @@
       ],
       "Select your plan": [
         "Välj ditt paket"
-      ],
-      "Upgrade your plan": [
-        "Uppgradera ditt paket"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15590,6 +15642,9 @@
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Erbjudandet du valde är inte tillgängligt för ${ currentPlanTitle }-prenumeranter."
       ],
+      "The offer you selected is not available for **${ currentPlanTitle }** subscribers.": [
+        "Erbjudandet du valde är inte tillgängligt för **${ currentPlanTitle }**-prenumeranter."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "för att börja använda ${ PASS_APP_NAME } på din telefon"
       ],
@@ -15602,8 +15657,8 @@
       "Verifying your payment": [
         "Verifierar din betalning"
       ],
-      "Welcome to ${ shortName } Plus": [
-        "Välkommen till ${ shortName } Plus"
+      "Welcome to ${ plan }": [
+        "Välkommen till ${ plan }"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Du har redan åtkomst till premiumfunktioner för ${ appName } – du behöver inte köpa igen."
@@ -15846,6 +15901,9 @@
       "Got it": [
         "Jag förstår"
       ],
+      "I'm purchasing as a business": [
+        "Jag köper som ett företag"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -15855,18 +15913,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
-      "Please select billing country": [
-        "Välj faktureringsland"
-      ],
-      "Please select billing state": [
-        "Välj delstat för fakturering"
-      ],
-      "Please select your billing country first.": [
-        "Välj ditt faktureringsland först."
-      ],
-      "Please select your billing state first.": [
-        "Välj din delstat för fakturering först."
-      ],
       "Processing payment": [
         "Bearbetar betalning"
       ],
@@ -15875,9 +15921,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
-      ],
-      "Select billing country to pay": [
-        "Välj faktureringsland för att betala"
       ],
       "terms & conditions": [
         "användarvillkor"
@@ -15903,6 +15946,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
         "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
+      ],
+      "This number will be shown on all future invoices": [
+        "Detta nummer kommer att visas på alla framtida fakturor"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denna betalningsmetod kommer bli din nya standard för alla framtida förnyelser."
@@ -15956,6 +16002,17 @@
       ],
       "Street address, postal code, and city": [
         "Gatuadress, postnummer och ort"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ]
     },
     "Permission": {
@@ -16085,6 +16142,9 @@
       "Please select the main reason": [
         "Välj huvudorsaken"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Printer": [
         "Skrivare"
       ],
@@ -16135,6 +16195,9 @@
       ],
       "yourdomain.com": [
         "dindomän.com"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "placeholder": {
@@ -16198,6 +16261,17 @@
       ],
       "Enjoying ${ planName }?": [
         "Gillar du ${ planName }?"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Alla ${ protonPlus }-tjänster.${ br }En enkel prenumeration."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Fortsätt med ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Uppgradera till ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -19256,9 +19330,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ appName } keyboard shortcuts": [
         "${ appName } tangentbordsgenvägar"
       ],
@@ -20013,6 +20084,9 @@
       "Gift code": [
         "Presentkod"
       ],
+      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
+        "Ge ${ referralReward } och 2 veckor gratis. Få ${ referralReward } krediter."
+      ],
       "Group": [
         "Grupp"
       ],
@@ -20097,6 +20171,9 @@
       ],
       "Invitations": [
         "Inbjudningar"
+      ],
+      "Invite friends. Get credits.": [
+        "Bjud in vänner. Få krediter."
       ],
       "Invoices": [
         "Fakturor"
@@ -20591,9 +20668,6 @@
       "Time zone": [
         "Tidszon"
       ],
-      "Track your referrals": [
-        "Spåra dina hänvisningar"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -20746,6 +20820,9 @@
       ],
       "Your recovery status": [
         "Din återställningsstatus"
+      ],
+      "Your referrals": [
+        "Dina hänvisningar"
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
