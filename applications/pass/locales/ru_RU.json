@@ -46,6 +46,9 @@
       "Add domain": [
         "Добавить домен"
       ],
+      "Add field": [
+        "Добавить поле"
+      ],
       "Add forwarding mailbox": [
         "Добавить пересылающий почтовый ящик"
       ],
@@ -2662,6 +2665,9 @@
       "Bank Account": [
         "Банковский счёт"
       ],
+      "Bank Name": [
+        "Название банка"
+      ],
       "Beta Access": [
         "Бета доступ"
       ],
@@ -2781,6 +2787,9 @@
       ],
       "Date": [
         "Дата"
+      ],
+      "Date of Birth": [
+        "Дата рождения"
       ],
       "Device": [
         "Устройство"
@@ -2935,8 +2944,14 @@
       "Highest": [
         "Наивысшая"
       ],
+      "Hospital": [
+        "Больница"
+      ],
       "Host": [
         "Хост"
+      ],
+      "Hostname": [
+        "Имя хоста"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Как разблокировать ${ PASS_SHORT_APP_NAME }"
@@ -2991,6 +3006,9 @@
       ],
       "Invitations": [
         "Приглашения"
+      ],
+      "IP Address": [
+        "IP-адрес"
       ],
       "Item ID": [
         "ID элемента"
@@ -3085,6 +3103,9 @@
       "Members": [
         "Участники"
       ],
+      "Membership": [
+        "Членство"
+      ],
       "Middle name": [
         "Отчество"
       ],
@@ -3157,8 +3178,14 @@
       "Open-source password manager for effortless protection.": [
         "Менеджер паролей с открытым исходным кодом для защиты без усилий."
       ],
+      "Operating System": [
+        "Операционная система"
+      ],
       "Organization": [
         "Организация"
+      ],
+      "Organization Name": [
+        "Название организации"
       ],
       "Other": [
         "Другое"
@@ -3175,6 +3202,9 @@
       "Passport": [
         "Паспорт"
       ],
+      "Passport Number": [
+        "Номер паспорта"
+      ],
       "Passport number": [
         "Номер паспорта"
       ],
@@ -3186,6 +3216,9 @@
       ],
       "Patient Name": [
         "Имя пациента"
+      ],
+      "Permissions": [
+        "Разрешения"
       ],
       "Personal": [
         "Личное"
@@ -3226,6 +3259,12 @@
       "Priority:": [
         "Приоритет:"
       ],
+      "Private key": [
+        "Закрытый ключ"
+      ],
+      "Private Key": [
+        "Закрытый ключ"
+      ],
       "Product": [
         "Продукт"
       ],
@@ -3237,6 +3276,9 @@
       ],
       "Public domain": [
         "Общедоступный домен"
+      ],
+      "Public key": [
+        "Открытый ключ"
       ],
       "Rate us": [
         "Оцените нас"
@@ -3328,8 +3370,14 @@
       "Social security": [
         "Социальное страхование"
       ],
+      "Social Security": [
+        "Социальное страхование"
+      ],
       "Social security number": [
         "Номер социального страхования"
+      ],
+      "Software license": [
+        "Лицензия программного обеспечения"
       ],
       "Special characters (!&*)": [
         "Специальные символы (!&*)"
@@ -3372,6 +3420,9 @@
       ],
       "Tax number": [
         "Налоговый номер"
+      ],
+      "Technology": [
+        "Технологии"
       ],
       "Text": [
         "Текст"
@@ -3436,6 +3487,9 @@
       "Unnamed note": [
         "Заметка без названия"
       ],
+      "Unspecified": [
+        "Не указано"
+      ],
       "Untitled": [
         "Без названия"
       ],
@@ -3477,6 +3531,9 @@
       ],
       "Vulnerable": [
         "Уязвимый"
+      ],
+      "Wallet Name": [
+        "Название кошелька"
       ],
       "Weak": [
         "Слабый"
@@ -3718,9 +3775,6 @@
       ]
     },
     "PassOnboardingOffer": {
-      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
-        "${ PASS_SHORT_APP_NAME } Plus Lifetime за ${ plusLifetimePrice }"
-      ],
       "${ price }/month": [
         "${ price } в месяц"
       ]
@@ -3737,6 +3791,15 @@
       ],
       "Add password": [
         "Добавить пароль"
+      ],
+      "Add private key": [
+        "Добавить закрытый ключ"
+      ],
+      "Add public key": [
+        "Добавить открытый ключ"
+      ],
+      "Add SSID": [
+        "Добавить SSID"
       ],
       "Add text": [
         "Добавить текст"
@@ -3987,14 +4050,8 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } адресов"
       ],
-      "${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "Монитор ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Защита аккаунта"
@@ -4499,6 +4556,14 @@
       ],
       "URL is invalid": [
         "URL недействителен"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Переместить элемент в",
+        "Переместить элементы в",
+        "Переместить элементы в",
+        "Переместить элементы в"
       ]
     },
     "Warning": {
