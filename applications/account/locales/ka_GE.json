@@ -2093,9 +2093,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus და ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } საცავი"
       ],
@@ -4080,9 +4077,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "თქვენი შემომავალი შეტყობინებების ავტომატური დალაგება მანამდე, სანამ ის თქვენს საფოსტო ყუთამდე მოაღწევს."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "ხელმისაწვდომია ${ MAIL_APP_NAME } Plus-თან ერთად"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "მოირგეთ ეს ჯერ, რომ გაააქტიუროთ თქვენი ორგანიზაცია და მოირგოთ თქვენი ელფოსტის მისამართი."
       ],
@@ -5498,9 +5492,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "გადახდის მინიმალური თანხაა ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "პოლიტიკის სახელი 3-40 სიმბოლოს უნდა შეიცავდეს."
@@ -9161,10 +9152,6 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "დაიმახსოვრეთ, რომ ფილტრის ${ nameDeleted } წაშლის შედეგად ასევე შეწყდება იმ ავტომატური ქმედებების დამუშავებაც, რომელსაც ის ატრიგერებს."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი.",
-        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
-      ],
       "please open a support ticket": [
         "გახსენით მხარდაჭერის ბილეთი"
       ],
@@ -10341,9 +10328,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "PayPal-ის გადახდის მეთოდად დასამატებლად მასზე საკრედიტო ბარათი ან ბანკის ანგარიში უნდა გქონდეთ მიბმული."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "თქვენ უნდა გქონდეთ საკრედიტო ბარათი ან საბანკო ანგარიში, რომელიც დაკავშირებულია თქვენს PayPal ანგარიშთან. თუ თქვენს PayPal ანგარიშს ეს არ აქვს, გთხოვთ, დააჭიროთ ქვემოთ მოცემულ ღილაკს."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "მოვლენების ICS-დან შემოსატანად პირადი კალენდრების ქონაა საჭირო."
       ],
@@ -10517,6 +10501,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Optional": [
+        "არასავალდებულო"
       ],
       "Selected color:": [
         "არჩეული ფერი:"
@@ -12354,9 +12341,6 @@
       "clearing your browser cache": [
         "ბრაუზერის ქეშის გასუფთავება"
       ],
-      "click here": [
-        "დააწკაპუნეთ აქ"
-      ],
       "Common sign in issues": [
         "შესვლის ზოგადი პრობლემები"
       ],
@@ -12482,9 +12466,6 @@
       ],
       "Pay invoice": [
         "ინვოისის გადახდა"
-      ],
-      "PayPal without credit card": [
-        "PayPal-ი საკრედიტო ბარათის გარეშე"
       ],
       "perform a password reset from your active session": [
         "პაროლი ჩამოყრა აქტიური სესიიდან"
@@ -13801,9 +13782,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "დაიცავით კონფიდენციალური კომპანიის ინფორმაცია და იმუშავეთ ერთად უსაფრთხოდ."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "დაიცავით თქვენი ოჯახი ${ PASS_SHORT_APP_NAME } Plus-ის ფასიანი ფუნქციებით 6 მომხმარებლისთვის."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "დაიცავით თქვენი ოჯახის კონფიდენციალობა ყველა ${ BRAND_NAME }-ის სერვისის ერთად."
       ],
@@ -13880,9 +13858,6 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "დასაწყისისთვის შეიყვანეთ საჩვენებელი სახელი. ეს ის სახელია, რომელსც ხალხი დაინახავს, როცა ელფოსტას გაუგზავნით, მოიწვევთ მოვლენაზე ან ფაილს გაუზიარებთ."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "თქვენი გამოწერა ${ planName } ახლა აქტიურია."
       ],
       "Your selected plan: ${ planName }": [
         "გადახდის არჩეული ტარიფი: ${ planName }"
@@ -14490,9 +14465,6 @@
       "Get the deal": [
         "ფასდაკლების მიღება"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan } Plus-დან."
-      ],
       "Last day to save": [
         "ბოლო დღე შესანახად"
       ],
@@ -15031,11 +15003,6 @@
         "${ PASS_APP_NAME }-ის გამოყენების დაწყება"
       ]
     },
-    "pass_lifetime_signup: Info": {
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "კეთილი იყოს თქვენი მობრძანება ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }-ში"
-      ]
-    },
     "pass_signup_2023: Action": {
       "Buy now": [
         "შეიძინეთ ახლა"
@@ -15121,9 +15088,6 @@
       ],
       "Select your plan": [
         "აირჩიეთ თქვენი გეგმა"
-      ],
-      "Upgrade your plan": [
-        "გააუმჯობესეთ თქვენი ტარიფი"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15345,9 +15309,6 @@
       ],
       "Verifying your payment": [
         "თქვენი გადახდის შემოწმება"
-      ],
-      "Welcome to ${ shortName } Plus": [
-        "მოგესალმებათ ${ shortName } Plus"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "${ appName }-ის ფასიან ფუნქციებთან წვდომა უკვე გაქვთ - თავიდან ყიდვა საჭირო არაა."
@@ -15590,18 +15551,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
       ],
-      "Please select billing country": [
-        "აირჩიეთ გადახდის ქვეყანა"
-      ],
-      "Please select billing state": [
-        "აირჩიეთ გადახდის მდგომარეობა"
-      ],
-      "Please select your billing country first.": [
-        "ჯერ აირჩიეთ თქვენი გადახდის ქვეყანა."
-      ],
-      "Please select your billing state first.": [
-        "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
-      ],
       "Processing payment": [
         "გადახდის დამუშავება"
       ],
@@ -15610,9 +15559,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
-      ],
-      "Select billing country to pay": [
-        "აირჩიეთ გადასახდელი ქვეყანა"
       ],
       "terms & conditions": [
         "პირობები და წესები"
@@ -18949,9 +18895,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ appName } keyboard shortcuts": [
         "${ appName }-ის კლავიატურის მალსახმობები"
       ],
@@ -20265,9 +20208,6 @@
       ],
       "Time zone": [
         "დროის სარტყელი"
-      ],
-      "Track your referrals": [
-        "ადევნეთ თვალყური თქვენს მიმართვებს"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"

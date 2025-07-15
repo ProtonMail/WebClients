@@ -430,6 +430,9 @@
       "Deleting folder": [
         "Brisanje mape"
       ],
+      "Deleting label": [
+        "Izbriši oznako"
+      ],
       "Deny access": [
         "Zavrni dostop"
       ],
@@ -1642,8 +1645,23 @@
       "200 GB storage": [
         "200 GB prostora"
       ],
+      "Block ads, trackers, and malware": [
+        "Blokiranje oglasov, sledilnikov in zlonamerne programske opreme"
+      ],
+      "High speed streaming with VPN": [
+        "Pretočne storitve z visoko hitrostjo z VPN"
+      ],
+      "Select any server": [
+        "Izberi katerikoli strežnik"
+      ],
       "thanks to you": [
         "Hvala vam"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
+      "Use your own email domain": [
+        "Uporabite svojo e-poštno domeno"
       ],
       "years": [
         "leta"
@@ -1870,9 +1888,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Program ${ MAIL_APP_NAME } za namizje"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus in ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } shrambe"
       ],
@@ -1947,6 +1962,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Zaračunano ${ amount } enkrat"
+      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnovitev po enem mesecu za ${ regularAmount }."
       ]
@@ -2374,6 +2392,9 @@
       ],
       "All ${ BRAND_NAME } apps and premium features": [
         "Vse aplikacije ${ BRAND_NAME } in premijske funkcije"
+      ],
+      "Cancel and downgrade": [
+        "Prekliči vse prenose"
       ],
       "Cloud storage and sharing for large files": [
         "Shramba v oblaku in skupna raba velikih datotek"
@@ -3789,9 +3810,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Samodejno razvrstite dohodna sporočila, preden prispejo v vaš nabiralnik."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "Na voljo s paketom ${ MAIL_APP_NAME } Plus"
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Povežite svoj CRM, spletno stran, tiskalnike in drugo."
       ],
@@ -5027,9 +5045,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Najmanjši znesek, ki ga lahko dodate, je ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Najmanjše plačilo, ki ga sprejemamo, je ${ price }"
       ],
       "The sending key is not valid": [
         "Ključ za pošiljanje ni veljaven"
@@ -8904,6 +8919,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Za potrditev vnesite ime uporabnika, katerega želite izbrisati."
       ],
+      "To continue to ${ product }": [
+        "Za nadaljevanje v ${ product }"
+      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Z namenom nenehnega izboljševanja naših storitev včasih zbiramo podatke za spremljanje pravilnega delovanja naših aplikacij. Te informacije ne delimo s tretjimi osebami."
       ],
@@ -9393,9 +9411,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Da bi jo dodali kot način plačila, morate imeti plačilno kartico ali bančni račun, ki je povezan z vašim PayPal računom."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Imeti morate kreditno kartico ali bančni račun, ki je povezan z vašim PayPal računom. Če vaš PayPal račun tega nima, kliknite na gumb spodaj."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Za uvoz dogodkov iz datoteke ICS morate imeti aktiven osebni koledar."
       ],
@@ -9544,6 +9559,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Ključ ${ fingerprint } je že bil naložen."
+      ],
+      "Optional": [
+        "Neobvezno"
       ],
       "Selected color:": [
         "Izberi barvo:"
@@ -11320,9 +11338,6 @@
       "clearing your browser cache": [
         "izpraznitev predpomnilnika brskalnika"
       ],
-      "click here": [
-        "kliknite tukaj"
-      ],
       "Common sign in issues": [
         "Pogoste težave pri vpisu"
       ],
@@ -12699,8 +12714,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Zaščitite občutljive poslovne informacije in varno sodelujte."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Zaščitite svojo družino z vsemi premijskimi funkcijami programa ${ PASS_SHORT_APP_NAME } Plus za 6 uporabnikov."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Zaščitite svojo družino z vsemi premium funkcijami programa ${ plusTitle } za 6 uporabnikov."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Zaščitite zasebnost vaše družine s kombinacijo vseh storitev ${ BRAND_NAME }."
@@ -12778,9 +12793,6 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Za začetek izberite prikazno ime. To je ime, ki ga bodo uporabniki videli, ko jim pošljete sporočilo, jih povabite na dogodek ali z njimi delite datoteko."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "Vaša ${ planName } naročnina je aktivirana."
       ],
       "Your selected plan: ${ planName }": [
         "Izbrali ste: ${ planName }"
@@ -13371,8 +13383,8 @@
       "Get the deal": [
         "Izkoristite posebno ponudbo"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Zadnja priložnost, da dobite 80 % popusta na prvi mesec ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Zadnja priložnost, da dobite 80 % popusta na prvi mesec ${ plan }."
       ],
       "Last day to save": [
         "Zadnji dan za prihranek"
@@ -13425,6 +13437,9 @@
       ],
       "500 GB secure storage": [
         "500 GB varne shrambe"
+      ],
+      "Advanced threat protection": [
+        "Napredni program za zaščito računa"
       ],
       "Custom email domain": [
         "E-poštna domena po meri"
@@ -13497,6 +13512,9 @@
       ],
       "Your free trial has started": [
         "Vaše brezplačno poskusno obdobje se je začelo"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Vaša polna ${ planTitle } naročnina se začne dne ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Do konca preskusnega obdobja boste lahko uporabljali ${ planTitle } brezplačno."
@@ -13985,9 +14003,6 @@
       ],
       "Select your plan": [
         "Izberite paket."
-      ],
-      "Upgrade your plan": [
-        "Nadgradite trenutni paket"
       ]
     },
     "pass_signup_2023: Info": {
@@ -14197,9 +14212,6 @@
       ],
       "Verifying your payment": [
         "Preverjanje vašega plačila"
-      ],
-      "Welcome to ${ shortName } Plus": [
-        "Dobrodošli pri ${ shortName } Plus"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Že imate dostop do funkcij premijskih storitev ${ appName } – ni vam jih treba ponovno kupiti."
@@ -14423,18 +14435,6 @@
       "More plans are available in other currencies": [
         "Več paketov je na voljo v drugih valutah"
       ],
-      "Please select billing country": [
-        "Izberite državo za izstavitev računa"
-      ],
-      "Please select billing state": [
-        "Izberite državo za izstavitev računa"
-      ],
-      "Please select your billing country first.": [
-        "Najprej izberite državo za izstavitev računa."
-      ],
-      "Please select your billing state first.": [
-        "Najprej izberite svojo državo za izstavitev računa."
-      ],
       "Processing payment": [
         "Plačilo v teku"
       ],
@@ -14443,9 +14443,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovi se za ${ renewPriceStr }. Prekliči kadar koli."
-      ],
-      "Select billing country to pay": [
-        "Izberite državo za izstavitev računa za plačilo"
       ],
       "terms & conditions": [
         "pogoji storitve"
@@ -15871,6 +15868,12 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Varno brskajte"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Prijava z ${ BRAND_NAME }."
+      ],
       "Go to subscription plans": [
         "Ogled naročniških paketov"
       ],
@@ -15953,6 +15956,12 @@
       ]
     },
     "specialoffer: Title": {
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Imejte svoja gesla varna in organizirana v več trezorjih"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Zaščitite svoj račun pred grožnjami s Sentinelom"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Nadgradite in prihranite več z 2 leti ${ planName }"
       ]
@@ -18435,9 +18444,6 @@
       ],
       "Time zone": [
         "Časovni pas"
-      ],
-      "Track your referrals": [
-        "Sledite svojim priporočilom."
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Vklopi ${ DARK_WEB_MONITORING_NAME }"
