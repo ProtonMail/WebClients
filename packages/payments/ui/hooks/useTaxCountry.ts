@@ -46,7 +46,7 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
         ? ({
               CountryCode: props.statusExtended.CountryCode,
               State: props.statusExtended.State,
-              ZipCode: props.statusExtended.ZipCode,
+              ZipCode: zipCodeValidation ? props.statusExtended.ZipCode : null,
           } satisfies BillingAddress)
         : DEFAULT_TAX_BILLING_ADDRESS;
 
@@ -86,7 +86,7 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
             ? ({
                   CountryCode: props.statusExtended.CountryCode,
                   State: props.statusExtended.State,
-                  ZipCode: props.statusExtended.ZipCode,
+                  ZipCode: zipCodeValidation ? props.statusExtended.ZipCode : null,
               } satisfies BillingAddress)
             : DEFAULT_TAX_BILLING_ADDRESS;
 
@@ -101,7 +101,12 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
             setTaxBillingAddress(currentFromProps);
             billingAddressChanged(currentFromProps);
         }
-    }, [props.statusExtended?.CountryCode, props.statusExtended?.State, props.statusExtended?.ZipCode]);
+    }, [
+        props.statusExtended?.CountryCode,
+        props.statusExtended?.State,
+        props.statusExtended?.ZipCode,
+        zipCodeValidation,
+    ]);
 
     const selectedCountryCode = taxBillingAddressRef.current.CountryCode;
     const federalStateCode = taxBillingAddressRef.current.State ?? null;
