@@ -1931,12 +1931,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
-      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -3990,9 +3984,6 @@
       ]
     },
     "PassOnboardingOffer": {
-      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
-        "${ PASS_SHORT_APP_NAME } Plus Lifetime za ${ plusLifetimePrice }"
-      ],
       "${ price }/month": [
         "${ price }/mesiac"
       ]
@@ -4274,14 +4265,8 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresy"
       ],
-      "${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
-      ],
-      "${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Ochrana účtu"

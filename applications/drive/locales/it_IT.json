@@ -581,9 +581,6 @@
       "Loading link": [
         "Caricamento del link in corso"
       ],
-      "Loading verification": [
-        "Caricamento della verifica in corso"
-      ],
       "Manage advanced account protections": [
         "Gestisci le protezioni avanzate dell'account"
       ],
@@ -1435,8 +1432,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Applicazione desktop di ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } di spazio d'archiviazione"
@@ -3542,9 +3539,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "Il pagamento minimo che accettiamo è di ${ price }"
-      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "La nuova revisione del file originale non è ancora stata caricata, riprova più tardi"
       ],
@@ -5622,10 +5616,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } credito rimanente.",
-        "Si prega di notare che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
-      ],
       "Please open the document to view it.": [
         "Apri il documento per visualizzarlo."
       ],
@@ -6350,9 +6340,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Devi disabilitare o rimuovere qualsiasi utente aggiuntivo di ${ MAIL_APP_NAME }, indirizzi e domini personalizzati prima di poter effettuare il downgrade."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Devi avere una carta di credito o un conto bancario collegato al tuo conto PayPal. Se il tuo account PayPal non lo ha, clicca sul pulsante qui sotto."
-      ],
       "You need access": [
         "Devi effettuare l'accesso"
       ],
@@ -6397,8 +6384,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Il tuo abbonamento a ${ PASS_SHORT_APP_NAME } Plus verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Il tuo abbonamento a ${ plan } verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
@@ -6508,6 +6495,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Facoltativo"
+      ],
       "Selected color:": [
         "Colore selezionato:"
       ]
@@ -7098,9 +7088,6 @@
       "Start date": [
         "Data di inizio"
       ],
-      "State": [
-        "Stato"
-      ],
       "Stolen data": [
         "Dati rubati"
       ],
@@ -7280,9 +7267,6 @@
       ],
       "clearing your browser cache": [
         "cancellare la cache del browser"
-      ],
-      "click here": [
-        "clicca qui"
       ],
       "Drafts": [
         "Bozze"
@@ -8378,8 +8362,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Proteggi le informazioni aziendali sensibili e collabora in modo sicuro."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Proteggi la tua famiglia con tutte le funzionalità premium di ${ PASS_SHORT_APP_NAME } Plus per 6 utenti."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Proteggi la tua famiglia con tutte le funzionalità premium di ${ plusTitle } per 6 utenti."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteggi la privacy della tua famiglia con tutti i servizi ${ BRAND_NAME } combinati."
@@ -9078,8 +9062,8 @@
       "Get the deal": [
         "Approfitta dell'offerta"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Ultima chance per avere l´80% di sconto sul tuo primo mese di ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Ultima chance per approfittare dell'80% di sconto sul tuo primo mese di ${ plan }."
       ],
       "Last day to save": [
         "Ultimo giorno per risparmiare"
@@ -9405,6 +9389,11 @@
         "Login, note, carte di credito illimitati e molto altro ancora"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Piano ${ upsellPlanTitle }"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } account utente",
@@ -9522,26 +9511,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
       ],
-      "Please select billing country": [
-        "Seleziona il paese di fatturazione"
-      ],
-      "Please select billing state": [
-        "Seleziona lo stato di fatturazione"
-      ],
-      "Please select your billing country first.": [
-        "Seleziona prima il paese di fatturazione."
-      ],
-      "Please select your billing state first.": [
-        "Seleziona prima lo stato di fatturazione."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "I prezzi di rinnovo sono soggetti a modifiche in base a ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
-      ],
-      "Select billing country to pay": [
-        "Seleziona il paese di fatturazione per il pagamento"
       ],
       "terms & conditions": [
         "termini e condizioni"
@@ -9752,6 +9726,20 @@
     "plan customizer, users": {
       "contact": [
         "contatto"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Tutti i servizi di ${ protonPlus }.${ br }Un semplice abbonamento."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "In quanto abbonato a **${ currentPlanTitle }**, puoi sbloccare **${ unlockPlanTitle }** e tutti i servizi premium di ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Rimani su ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Effettua l'upgrade a ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -11438,11 +11426,12 @@
         "Elimina ${ count } gruppo di contatti",
         "Elimina ${ count } gruppi di contatti"
       ],
-      "Delete ${ links.length } items?": [
-        "Eliminare ${ links.length } elementi?"
-      ],
       "Delete ${ name }?": [
         "Eliminare ${ name }?"
+      ],
+      "Delete ${ total } item?": [
+        "Eliminare ${ total } elemento?",
+        "Eliminare ${ total } elementi?"
       ],
       "Delete ${ value }": [
         "Elimina ${ value }"
@@ -12037,6 +12026,9 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
+      ],
+      "Your plan": [
+        "Il tuo piano"
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"

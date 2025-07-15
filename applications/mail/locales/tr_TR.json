@@ -769,9 +769,6 @@
       "Load more": [
         "Diğerlerini yükle"
       ],
-      "Loading verification": [
-        "Doğrulama yükleniyor"
-      ],
       "Loading${ ellipsis }": [
         "Yükleniyor${ ellipsis }"
       ],
@@ -1140,9 +1137,6 @@
       ],
       "Resume downloading": [
         "İndirmeyi sürdür"
-      ],
-      "Retry": [
-        "Yeniden dene"
       ],
       "Revert to original display": [
         "Özgün görünüme geri dön"
@@ -1988,9 +1982,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus ve ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } depolama alanı"
@@ -4795,9 +4786,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "Kabul ettiğimiz en az ödeme: ${ price }"
-      ],
       "The sending key is not valid": [
         "Gönderim anahtarı geçersiz"
       ],
@@ -6795,6 +6783,9 @@
       "Dedicated servers": [
         "Size ayrılmış sunucular"
       ],
+      "Dedicated VPN servers": [
+        "Ayrılmış VPN sunucuları"
+      ],
       "default email address": [
         "varsayılan e-posta adresi"
       ],
@@ -7483,10 +7474,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın.",
-        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
-      ],
       "Please open the document to view it.": [
         "Görüntülemek için lütfen belgeyi açın."
       ],
@@ -8105,9 +8092,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
       ],
-      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
-        "Kullanabilmek içn ${ MAIL_APP_NAME } Plus tarifesine geçin"
-      ],
       "Upgrade to add more addresses to your account.": [
         "Hesabınıza daha fazla adres eklemek için tarifenizi yükseltin."
       ],
@@ -8393,9 +8377,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Tarifenizi düşürmeden önce, ek ${ MAIL_APP_NAME } kullanıcılarını, adreslerini ve özel etki alanlarını kullanımdan kaldırmalı ya da silmelisiniz."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal hesabınızda bağlantılı bir kredi kartı ya da banka hesabı olmalıdır. PayPal hesabınızda bunlar yoksa, aşağıdaki düğmeye tıklayın."
-      ],
       "You selected **${ count } conversation** from this folder": [
         "Bu klasörde **${ count } yazışma** seçtiniz",
         "Bu klasörde **${ count } yazışma** seçtiniz"
@@ -8455,9 +8436,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime forsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
@@ -9104,9 +9082,6 @@
       "Extended address": [
         "Açık adres"
       ],
-      "Failed to create folder ${ customFolderName }": [
-        "${ customFolderName } klasörü oluşturulamadı."
-      ],
       "Filter Name": [
         "Süzgeç adı"
       ],
@@ -9368,9 +9343,6 @@
       "Start date": [
         "Başlangıç tarihi"
       ],
-      "State": [
-        "İl"
-      ],
       "Statement": [
         "Değerlendirme"
       ],
@@ -9586,9 +9558,6 @@
       ],
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
-      ],
-      "click here": [
-        "buraya tıklayın"
       ],
       "contact us": [
         "bizimle görüşün"
@@ -10734,9 +10703,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Önemli iş bilgilerinizi koruyun ve güvende kalarak işbirliği yapın."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Ailenizi 6 kullanıcıya kadar ${ PASS_SHORT_APP_NAME } Plus tüm ücretli özellikleriyle koruyun."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
@@ -11162,9 +11128,6 @@
       "Get the deal": [
         "Tekliften yararlanın"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "${ plan } Plus aboneliğinin ilk ayında % 80 indirim kazanmak için son fırsat."
-      ],
       "Last day to save": [
         "İndirim kazanmak için son gün"
       ],
@@ -11532,6 +11495,11 @@
         "Sınırsız sayıda oturum açma, not, kredi kartı ve diğer kayıtlar"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } tarifesi"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } kullanıcı hesabı",
@@ -11649,26 +11617,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
-      "Please select billing country": [
-        "Lütfen faturanın kesileceği ülkeyi seçin"
-      ],
-      "Please select billing state": [
-        "Lütfen faturanın kesileceği ili seçin"
-      ],
-      "Please select your billing country first.": [
-        "Lütfen önce faturanın kesileceği ülkeyi seçin."
-      ],
-      "Please select your billing state first.": [
-        "Lütfen önce faturanın kesileceği ili seçin."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Yenileme fiyatları ${ termsAndConditionsLink } metnine göre değişebilir."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
-      "Select billing country to pay": [
-        "Ödeme için fatura ülkesini seçin"
       ],
       "terms & conditions": [
         "hükümler ve koşullar"
@@ -12611,6 +12564,9 @@
       ],
       "Increase your storage": [
         "Depolama alanınızı yükseltin"
+      ],
+      "Unblock streaming content": [
+        "Yayın akışı içeriğinin engellemesini kaldırın"
       ],
       "Upgrade": [
         "Yükselt"
@@ -14392,6 +14348,9 @@
       "Night theme": [
         "Gece teması"
       ],
+      "No active newsletters": [
+        "Aktif bülten yok"
+      ],
       "No attachment found": [
         "Herhangi bir ek dosya bulunamadı"
       ],
@@ -14496,6 +14455,9 @@
       ],
       "Recover data": [
         "Verileri kurtar"
+      ],
+      "Remove from list?": [
+        "Listeden kaldırılsın mı?"
       ],
       "Reply": [
         "Yanıtla"
@@ -14750,6 +14712,9 @@
       ],
       "Your free trial has ended": [
         "Ücretsiz deneme süreniz sona erdi"
+      ],
+      "Your plan": [
+        "Tarifeniz"
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"

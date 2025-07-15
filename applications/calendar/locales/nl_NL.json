@@ -467,9 +467,6 @@
       "Load image": [
         "Afbeelding laden"
       ],
-      "Loading verification": [
-        "Verificatie laden"
-      ],
       "Make this participant optional": [
         "Maak deze deelnemer optioneel"
       ],
@@ -661,9 +658,6 @@
       ],
       "Resume indexing": [
         "Hervat indexeren"
-      ],
-      "Retry": [
-        "Opnieuw proberen"
       ],
       "Save": [
         "Opslaan"
@@ -1259,9 +1253,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus en ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } opslagruimte"
@@ -3698,9 +3689,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "De minimale betaling die we accepteren is ${ price }"
-      ],
       "The sending key is not valid": [
         "De verzend-sleutel is ongeldig"
       ],
@@ -5462,10 +5450,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credit over.",
-        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Voorzie een naam en een e-mailadres voor het aanmaken van een groep"
       ],
@@ -5903,9 +5887,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "U hebt deze uitnodiging eerder al geweigerd. Vraag de eigenaar naar een nieuwe uitnodiging"
       ],
@@ -5954,9 +5935,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Uw ${ PASS_SHORT_APP_NAME } Plus-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
@@ -6060,6 +6038,9 @@
       "${ filteredList.length } command found.": [
         "${ filteredList.length } opdracht gevonden.",
         "${ filteredList.length } opdrachten gevonden."
+      ],
+      "Optional": [
+        "Optioneel"
       ],
       "Selected color:": [
         "Geselecteerde kleur:"
@@ -6608,9 +6589,6 @@
       "Start date": [
         "Begindatum"
       ],
-      "State": [
-        "Staat"
-      ],
       "Street address": [
         "Adres"
       ],
@@ -6769,9 +6747,6 @@
       ],
       "clearing your browser cache": [
         "browsercache legen"
-      ],
-      "click here": [
-        "klik hier"
       ],
       "Drafts": [
         "Concepten"
@@ -7822,9 +7797,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Bescherm uw familie met alle premium-functies van ${ PASS_SHORT_APP_NAME } Plus voor 6 gebruikers."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
       ],
@@ -8376,9 +8348,6 @@
       "Get the deal": [
         "Kies deze deal"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan } Plus."
-      ],
       "Last day to save": [
         "Laatste dag om op te besparen"
       ],
@@ -8651,6 +8620,11 @@
         "Onbeperkt aantal logins, notities, creditcards, en meer"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }-abonnement"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } gebruikersaccount",
@@ -8768,26 +8742,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
-      "Please select billing country": [
-        "Selecteer factureringsland"
-      ],
-      "Please select billing state": [
-        "Selecteer factureringsstaat"
-      ],
-      "Please select your billing country first.": [
-        "Selecteer eerst uw factureringsland."
-      ],
-      "Please select your billing state first.": [
-        "Selecteer eerst uw factureringsstaat."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
-      ],
-      "Select billing country to pay": [
-        "Selecteer factureringsland om te betalen"
       ],
       "terms & conditions": [
         "algemene voorwaarden"
@@ -11210,6 +11169,9 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
+      ],
+      "Your plan": [
+        "Uw abonnement"
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"

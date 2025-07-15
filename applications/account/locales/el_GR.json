@@ -148,6 +148,9 @@
       "Add public holidays": [
         "Προσθήκη επίσημων αργιών"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Προσθήκη συνδέσμου παραπομπής στην υπογραφή του ${ MAIL_APP_NAME }"
+      ],
       "Add sieve filter": [
         "Προσθήκη φίλτρου sieve"
       ],
@@ -216,6 +219,9 @@
       ],
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
+      ],
+      "Cancel trial and pay": [
+        "Ακύρωση δοκιμής και πληρωμή"
       ],
       "Change": [
         "Αλλαγή"
@@ -2114,8 +2120,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus και ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } και ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } αποθηκευτικός χώρος"
@@ -4113,8 +4119,8 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ταξινομήστε αυτόματα τα εισερχόμενα μηνύματά σας πριν φτάσουν στα εισερχόμενά σας."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "Διατίθεται με το ${ MAIL_APP_NAME } Plus"
+      "Available with ${ title }": [
+        "Διατίθεται με το ${ title }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Ρυθμίστε πρώτα αυτό για να ενεργοποιήσετε τον οργανισμό σας και να προσαρμόσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -4225,6 +4231,9 @@
       "To start, give your organization a name.": [
         "Για να ξεκινήσετε, δώστε ένα όνομα στον οργανισμό σας."
       ],
+      "Track the status and activity of your referrals": [
+        "Παρακολουθήστε την κατάσταση και τη δραστηριότητα των παραπομπών σας"
+      ],
       "Track the status and activity of your referrals.": [
         "Παρακολουθήστε την κατάσταση και τη δραστηριότητα των παραπομπών σας."
       ],
@@ -4242,6 +4251,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
+      ],
+      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
+        "Θα λάβετε ${ referralReward } σε πίστωση στο ${ BRAND_NAME } όταν το άτομο που προσκαλείτε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }, και θα λάβουν επίσης ${ referralReward } σε πιστώσεις για να ξεκινήσουν."
       ]
     },
     "description": {
@@ -5367,6 +5379,9 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
+      "Invalid ZIP code": [
+        "Μη έγκυρος Ταχυδρομικός Κωδικός"
+      ],
       "Item content cannot exceed 40KB": [
         "Το περιεχόμενο του στοιχείου δεν μπορεί να υπερβαίνει τα 40KB"
       ],
@@ -5461,6 +5476,18 @@
       "Please enter a valid Entity ID URL": [
         "Εισαγάγετε ένα έγκυρο Αναγνωριστικό Οντότητας (Entity ID) διεύθυνσης URL"
       ],
+      "Please enter a valid postal code": [
+        "Παρακαλούμε εισάγετε έναν έγκυρο ταχυδρομικό κώδικα"
+      ],
+      "Please enter a valid ZIP code": [
+        "Παρακαλούμε εισάγετε έναν έγκυρο Ταχυδρομικό Κώδικα."
+      ],
+      "Please enter postal code": [
+        "Παρακαλώ εισάγετε τον ταχυδρομικό κώδικα"
+      ],
+      "Please enter ZIP code": [
+        "Παρακαλώ εισάγετε τον ταχυδρομικό κώδικα"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
@@ -5479,6 +5506,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Επιλέξτε τουλάχιστον έναν χρήστη ή ομάδα πριν συνεχίσετε."
+      ],
+      "Please select billing country": [
+        "Παρακαλούμε επιλέξτε χώρα χρέωσης"
+      ],
+      "Please select billing state": [
+        "Παρακαλούμε επιλέξτε τον νομό χρέωσης"
       ],
       "Please set a recovery email first": [
         "Παρακαλούμε ορίστε πρώτα μια διεύθυνση ανάκτησης"
@@ -5509,6 +5542,9 @@
       ],
       "Port is required": [
         "Απαιτείται θύρα"
+      ],
+      "Postal code is required": [
+        "Απαιτείται ταχυδρομικός κώδικας"
       ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
@@ -5603,9 +5639,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Το ελάχιστο ποσό πίστωσης που μπορεί να προστεθεί είναι ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Η ελάχιστη αποδεκτή πληρωμή είναι ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Το όνομα πολιτικής πρέπει να αποτελείται από 3 έως 40 χαρακτήρες."
@@ -7715,6 +7748,9 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Αποκτήστε μία ${ BRAND_NAME } διεύθυνση** για να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες συμπεριλαμβανομένων των ${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Προσκαλέστε τους φίλους σας** στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Περισσότερο",
         "+ ${ invisibleCount } Περισσότερα"
@@ -8617,6 +8653,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Αποκτήστε πρόσβαση με τη δημιουργία ενός λογαριασμού ${ BRAND_NAME } και με αποδοχή της πρόσκλησης."
       ],
+      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
+        "Κερδίστε και προσφέρετε **${ referralReward } πιστώσεις** για κάθε φίλο που κάνει εγγραφή."
+      ],
       "Get it on Google Play": [
         "Αποκτήστε το στο Google Play"
       ],
@@ -8625,6 +8664,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα προσωπικά δεδομένα έχουν διαρρεύσει. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started with the referral link above.": [
+        "Ξεκινήστε με τον σύνδεσμο παραπομπής παραπάνω."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Δώστε στο διακριτικό ένα περιγραφικό όνομα, όπως την υπηρεσία με την οποία σκοπεύετε να το χρησιμοποιήσετε και επιλέξτε μία από τις ενεργές προσαρμοσμένες διευθύνσεις τομέα σας. Μόνο αυτή η διεύθυνση θα μπορεί να στέλνει μηνύματα ηλ. ταχυδρομείου με αυτό το διακριτικό."
@@ -8846,6 +8888,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Προσκαλέστε τον σύντροφό σας, έναν φίλο ή οποιονδήποτε μοιράζεστε το πλάνο ${ protonDuoPlanName }."
+      ],
+      "Invited": [
+        "Προσκεκλημένοι"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Φαίνεται πως μερικά από τα δεδομένα σας είναι κρυπτογραφημένα και κλειδωμένα."
@@ -9249,6 +9294,9 @@
       "Paid for a monthly plan": [
         "Πλήρωσε για μηνιαίο πρόγραμμα"
       ],
+      "Paid for a plan": [
+        "Πλήρωσε για ένα πλάνο"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - επιβεβαιώθηκε προσαρμοσμένο email"
       ],
@@ -9331,10 +9379,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Παρακαλούμε λάβετε υπόψη ότι αν διαγράψετε το φίλτρο ${ nameDeleted } θα σταματήσουμε να επεξεργαζόμαστε όλες τις αυτοματοποιημένες ενέργειες που ενεργοποιεί."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }.",
-        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }."
       ],
       "please open a support ticket": [
         "παρακαλούμε ανοίξτε ένα εισιτήριο υποστήριξης"
@@ -10495,6 +10539,9 @@
       "You do not have permission to perform this action": [
         "Δεν έχετε τα απαραίτητα δικαιώματα για την εκτέλεση αυτής της ενέργειας"
       ],
+      "You don't have any referrals.": [
+        "Δεν έχετε καμία παραπομπή."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Λαμβάνετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτων."
       ],
@@ -10541,9 +10588,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal, έτσι ώστε να την προσθέσετε ως μέθοδο πληρωμής."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal. Εάν αυτό δεν υπάρχει στον λογαριασμό σας PayPal, παρακαλούμε πιέστε το παρακάτω κουμπί."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισάγετε τις εκδηλώσεις σας από αρχείο ICS."
@@ -10613,8 +10657,8 @@
       "Your ${ BRAND_NAME } password": [
         "Ο ${ BRAND_NAME } κωδικός πρόσβασής σας"
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Η συνδρομή σας ${ PASS_SHORT_APP_NAME } Plus θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Η συνδρομή σας ${ plan } θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Οι λογαριασμοί σας ${ VPN_APP_NAME } και ${ MAIL_APP_NAME } συνδέονται. Για να διαγράψετε και τους δύο, παρακαλούμε συνδεθείτε στο ${ loginLink } και διαγράψτε τον εκεί λογαριασμό σας."
@@ -10661,6 +10705,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Η δωρεάν δοκιμή σας μετατράπηκε επιτυχώς σε μηνιαία συνδρομή. Η ημερομηνία ανανέωσής σας είναι ${ nextBillingDate }."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Οι φίλοι σας αποκτούν **2 εβδομάδες δωρεάν** στο επιλεγμένο τους πλάνο."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Η εισαγωγή σας από ${ accounts } καθυστερεί προσωρινά.",
@@ -10746,6 +10793,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Optional": [
+        "Προαιρετικό"
       ],
       "Selected color:": [
         "Επιλεγμένο χρώμα:"
@@ -12158,6 +12208,9 @@
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
+      "Reward": [
+        "Ανταμοιβή"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Γενεύη"
       ],
@@ -12187,6 +12240,9 @@
       ],
       "Sequences": [
         "Ακολουθίες"
+      ],
+      "Share your referral link": [
+        "Κοινοποιήστε τον σύνδεσμο παραπομπής σας"
       ],
       "Show ${ n } administrator": [
         "Εμφάνιση ${ n } διαχειριστή",
@@ -12522,6 +12578,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Ταχυδρομικός κώδικας"
+      ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
       ]
@@ -12596,9 +12655,6 @@
       ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
-      ],
-      "click here": [
-        "κάντε κλικ εδώ"
       ],
       "Common sign in issues": [
         "Συνήθη προβλήματα εισόδου"
@@ -12726,9 +12782,6 @@
       "Pay invoice": [
         "Εξόφληση τιμολογίου"
       ],
-      "PayPal without credit card": [
-        "PayPal χωρίς πιστωτική κάρτα"
-      ],
       "perform a password reset from your active session": [
         "εκτελέστε επαναφορά κωδικού πρόσβασης από την ενεργή περίοδο λειτουργίας σας"
       ],
@@ -12758,6 +12811,9 @@
       ],
       "Terms": [
         "Όροι"
+      ],
+      "Terms and conditions": [
+        "Όροι και προϋποθέσεις"
       ],
       "Trouble signing in?": [
         "Πρόβλημα σύνδεσης;"
@@ -14056,8 +14112,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Προστατεύστε τις ευαίσθητες επιχειρηματικές πληροφορίες και συνεργαστείτε με ασφάλεια."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Προστατέψτε την οικογένειά σας με όλες τις premium δυνατότητες του ${ PASS_SHORT_APP_NAME } Plus για 6 χρήστες."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Προστατέψτε την οικογένειά σας με όλες τις premium δυνατότητες του ${ plusTitle } για 6 χρήστες."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Προστατέψτε το απόρρητο της οικογένειάς σας με όλες τις υπηρεσίες του ${ BRAND_NAME } σε συνδυασμό."
@@ -14136,8 +14192,8 @@
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Για να ξεκινήσετε, επιλέξτε ένα εμφανιζόμενο όνομα. Αυτό θα βλέπουν οι χρήστες όταν στέλνετε ένα μήνυμα ηλεκτρονικού ταχυδρομείου, τους προσκαλείτε σε ένα συμβάν ή μοιράζεστε ένα αρχείο."
       ],
-      "Your ${ planName } subscription is now active.": [
-        "Η συνδρομή σας ${ planName } είναι τώρα ενεργή."
+      "Your ${ planTitleElement } subscription is now active.": [
+        "Η συνδρομή σας ${ planTitleElement } είναι τώρα ενεργή."
       ],
       "Your selected plan: ${ planName }": [
         "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
@@ -14160,6 +14216,9 @@
       ],
       "Downgrade account?": [
         "Υποβάθμιση λογαριασμού;"
+      ],
+      "Review subscription": [
+        "Επισκόπηση συνδρομής"
       ],
       "Review subscription and pay": [
         "Ανασκόπηση συνδρομής και πληρωμή"
@@ -14745,8 +14804,8 @@
       "Get the deal": [
         "Αποκτήστε την προσφορά"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Τελευταία ευκαιρία να λάβετε έκπτωση 80% στον πρώτο μήνα του ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Τελευταία ευκαιρία να λάβετε έκπτωση 80% στον πρώτο μήνα του ${ plan }."
       ],
       "Last day to save": [
         "Τελευταία ημέρα αποθήκευσης"
@@ -15307,9 +15366,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Αποκτήστε ισόβια πρόσβαση σε όλες τις τρέχουσες και μελλοντικές premium δυνατότητες ${ PASS_APP_NAME } με μία μόνο εφάπαξ πληρωμή."
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "Καλώς ήρθατε στο ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15397,9 +15453,6 @@
       ],
       "Select your plan": [
         "Επιλέξτε το πλάνο σας"
-      ],
-      "Upgrade your plan": [
-        "Αναβαθμίστε το πλάνο σας"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15610,6 +15663,9 @@
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Η προσφορά που επιλέξατε δεν είναι διαθέσιμη για συνδρομητές του ${ currentPlanTitle }."
       ],
+      "The offer you selected is not available for **${ currentPlanTitle }** subscribers.": [
+        "Η προσφορά που επιλέξατε δεν είναι διαθέσιμη για συνδρομητές του **${ currentPlanTitle }**."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "για να ξεκινήσετε να χρησιμοποιείτε το ${ PASS_APP_NAME } στο τηλέφωνό σας"
       ],
@@ -15622,8 +15678,8 @@
       "Verifying your payment": [
         "Γίνεται επαλήθευση της πληρωμής σας"
       ],
-      "Welcome to ${ shortName } Plus": [
-        "Καλώς ήλθατε στο ${ shortName } Plus"
+      "Welcome to ${ plan }": [
+        "Καλώς ήρθατε στο ${ plan }"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Έχετε ήδη πρόσβαση σε premium δυνατότητες του ${ appName } — δε χρειάζεται να αγοράσετε ξανά."
@@ -15860,6 +15916,9 @@
       "Got it": [
         "Το κατάλαβα"
       ],
+      "I'm purchasing as a business": [
+        "Αγοράζω ως επιχείρηση"
+      ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
       ],
@@ -15869,18 +15928,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
       ],
-      "Please select billing country": [
-        "Παρακαλούμε επιλέξτε χώρα χρέωσης"
-      ],
-      "Please select billing state": [
-        "Παρακαλούμε επιλέξτε τον νομό χρέωσης"
-      ],
-      "Please select your billing country first.": [
-        "Παρακαλούμε επιλέξτε πρώτα τη χώρα χρέωσής σας."
-      ],
-      "Please select your billing state first.": [
-        "Παρακαλούμε επιλέξτε πρώτα την κατάσταση χρέωσής σας."
-      ],
       "Processing payment": [
         "Επεξεργασία πληρωμής"
       ],
@@ -15889,9 +15936,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
-      ],
-      "Select billing country to pay": [
-        "Επιλέξτε χώρα χρέωσης για πληρωμή"
       ],
       "terms & conditions": [
         "όροι και προϋποθέσεις"
@@ -15917,6 +15961,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "This number will be shown on all future invoices": [
+        "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Αυτή η μέθοδος πληρωμής θα γίνει η νέα σας προεπιλογή για όλες τις μελλοντικές ανανεώσεις."
@@ -15973,6 +16020,17 @@
       ],
       "Street address, postal code, and city": [
         "Οδός, ταχυδρομικός κώδικας και πόλη"
+      ]
+    },
+    "Payments.VAT number name": {
+      "Business Number": [
+        "Αριθμός Επιχείρησης"
+      ],
+      "EIN": [
+        "ΑΦΜ"
+      ],
+      "VAT number": [
+        "Αριθμός ΑΦΜ"
       ]
     },
     "Permission": {
@@ -16102,6 +16160,9 @@
       "Please select the main reason": [
         "Παρακαλούμε επιλέξτε τον κύριο λόγο"
       ],
+      "Postal code": [
+        "Ταχυδρομικός κώδικας"
+      ],
       "Printer": [
         "Εκτυπωτής"
       ],
@@ -16152,6 +16213,9 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ],
+      "ZIP code": [
+        "Ταχυδρομικός κώδικας"
       ]
     },
     "placeholder": {
@@ -16218,6 +16282,20 @@
       ],
       "Enjoying ${ planName }?": [
         "Απολαμβάνετε το ${ planName };"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Όλες οι ${ protonPlus } λειτουργίες.${ br }Μία εύκολη συνδρομή."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ως συνδρομητής **${ currentPlanTitle }**, μπορείτε να ξεκλειδώσετε **${ unlockPlanTitle }** και όλες τις premium υπηρεσίες ${ BRAND_NAME } αναβαθμίζοντας σε **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Παραμονή στο ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Αναβάθμιση σε ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -20030,6 +20108,9 @@
       "Gift code": [
         "Κωδικός δώρου"
       ],
+      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
+        "Δώστε ${ referralReward } και 2 εβδομάδες δωρεάν. Λάβετε ${ referralReward } πιστώσεις."
+      ],
       "Group": [
         "Ομάδα"
       ],
@@ -20111,6 +20192,9 @@
       ],
       "Invitations": [
         "Προσκλήσεις"
+      ],
+      "Invite friends. Get credits.": [
+        "Προσκαλέστε φίλους. Λάβετε πιστώσεις."
       ],
       "Invoices": [
         "Τιμολόγια"
@@ -20602,9 +20686,6 @@
       "Time zone": [
         "Ζωνη ωρας"
       ],
-      "Track your referrals": [
-        "Παρακολουθήστε τις παραπομπές σας"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ενεργοποίηση ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -20754,6 +20835,9 @@
       ],
       "Your recovery status": [
         "Το καθεστώς σας ανάκτησης"
+      ],
+      "Your referrals": [
+        "Οι παραπομπές σας"
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"

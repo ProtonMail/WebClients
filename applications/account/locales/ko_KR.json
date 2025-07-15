@@ -217,6 +217,9 @@
       "Cancel subscription": [
         "구독 취소"
       ],
+      "Cancel trial and pay": [
+        "무료 체험 취소 및 바로 결제"
+      ],
       "Change": [
         "변경"
       ],
@@ -1806,6 +1809,9 @@
       "High speed streaming with VPN": [
         "VPN을 통한 빠른 속도의 스트리밍"
       ],
+      "of privacy": [
+        "개인정보 보호에"
+      ],
       "Online document editor": [
         "온라인 문서 편집기"
       ],
@@ -1850,6 +1856,9 @@
       ],
       "Stream your favorite content": [
         "좋아하는 비디오 콘텐츠 스트리밍"
+      ],
+      "thanks to you": [
+        "감사드립니다"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
         "암호화된 저장 공간을 3배로 확장하세요 - 나의 모든 데이터를 저장할 3 TB 저장 공간을 받아보세요"
@@ -2102,8 +2111,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 데스크톱 앱"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus 및 ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 및 ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } 저장공간"
@@ -4089,8 +4098,8 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "받은 편지함에 도착하기 전에 수신 메시지를 자동으로 정렬합니다."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "${ MAIL_APP_NAME } Plus에서 사용 가능"
+      "Available with ${ title }": [
+        "${ title }(에)서 사용 가능"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "먼저 구성하여 조직을 활성화한 뒤 이메일 주소를 사용자화하세요."
@@ -4464,6 +4473,9 @@
       ]
     },
     "Download link": {
+      ".deb for Debian / Ubuntu": [
+        "Debian / Ubuntu용 .deb"
+      ],
       ".rpm for Fedora / Red Hat": [
         "Fedora / Red Hat용 .rpm"
       ]
@@ -5335,6 +5347,9 @@
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
+      "Invalid ZIP code": [
+        "유효하지 않은 우편 번호"
+      ],
       "Item content cannot exceed 40KB": [
         "항목 콘텐츠가 40KB를 초과할 수 없습니다."
       ],
@@ -5428,6 +5443,18 @@
       "Please enter a valid Entity ID URL": [
         "유효한 Entity ID URL을 입력해주세요"
       ],
+      "Please enter a valid postal code": [
+        "유효한 우편 번호를 입력해 주세요"
+      ],
+      "Please enter a valid ZIP code": [
+        "유효한 우편 번호를 입력해 주세요."
+      ],
+      "Please enter postal code": [
+        "우편 번호를 입력해 주세요"
+      ],
+      "Please enter ZIP code": [
+        "우편 번호를 입력해 주세요"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "계속하려면 표시된 충돌을 해결해 주세요."
       ],
@@ -5445,6 +5472,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "계속하기 전 한 명 이상의 사용자나 그룹을 선택해 주세요."
+      ],
+      "Please select billing country": [
+        "결제 청구 국가를 선택해 주세요"
+      ],
+      "Please select billing state": [
+        "결제 청구 지역을 선택해 주세요"
       ],
       "Please set a recovery email first": [
         "복구 이메일을 먼저 설정하세요"
@@ -5475,6 +5508,9 @@
       ],
       "Port is required": [
         "포트가 필요함"
+      ],
+      "Postal code is required": [
+        "우편 번호가 필요합니다"
       ],
       "Primary address key is not decrypted": [
         "기본 주소 키가 복호화되지 않았습니다"
@@ -5568,9 +5604,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "추가할 수 있는 최소 금액은 ${ price } 입니다."
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "허용되는 최소 결제 금액은 ${ price } 입니다."
       ],
       "The policy name must be between 3 and 40 characters.": [
         "정책 이름은 3자에서 40자 사이여야 합니다."
@@ -6723,6 +6756,9 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "App Store에서 ${ appName } 받기"
+      ],
       "${ appName } on Play Store": [
         "Play Store에서 ${ appName } 받기"
       ]
@@ -7629,7 +7665,7 @@
         "${ MAIL_SHORT_APP_NAME } 과 ${ CALENDAR_SHORT_APP_NAME } 를 포함하는 모든 ${ BRAND_NAME_TWO } 서비스를 사용하려면** ${ BRAND_NAME } 주소를 받으세요.**"
       ],
       "+ ${ invisibleCount } More": [
-        "외 ${ invisibleCount }명"
+        "+ ${ invisibleCount }명 더"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 추가 저장공간"
@@ -9227,9 +9263,6 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "이 필터 (${ nameDeleted }) 삭제 시 트리거되는 모든 자동화된 작업이 중단됩니다."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "확인 버튼을 누르시면 계정에는 ${ creditsRemaining } 크레딧이 남게 됩니다."
-      ],
       "please open a support ticket": [
         "지원 티켓을 만들어 주세요"
       ],
@@ -10421,9 +10454,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "결제 수단으로 추가하려면 PayPal 계정과 연결된 신용 카드 또는 은행 계좌가 있어야 합니다."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal 계정과 연결된 신용 카드 또는 은행 계좌가 있어야 합니다. PayPal 계정에 연결된 신용 카드나 은행 계좌가 없다면 아래 버튼을 클릭해 주세요."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "ICS의 이벤트에서 불러올 활성 상태의 개인 캘린더가 필요합니다."
       ],
@@ -10490,8 +10520,8 @@
       "Your ${ BRAND_NAME } password": [
         "사용자의 ${ BRAND_NAME } 비밀번호"
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 계정 크레딧에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 딜은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ plan } 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 사용자의 계정에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 혜택은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } 과 ${ MAIL_APP_NAME } 계정이 연결되어 있습니다. 둘 다 삭제하려면 ${ loginLink } 에 로그인하여 계정을 삭제하십시오."
@@ -10620,6 +10650,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Optional": [
+        "선택 사항"
       ],
       "Selected color:": [
         "선택한 색상:"
@@ -12391,6 +12424,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "우편 번호"
+      ],
       "ZIP code": [
         "우편번호"
       ]
@@ -12465,9 +12501,6 @@
       ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
-      ],
-      "click here": [
-        "여기를 클릭"
       ],
       "Common sign in issues": [
         "일반적인 로그인 문제"
@@ -12594,9 +12627,6 @@
       ],
       "Pay invoice": [
         "청구서 지불"
-      ],
-      "PayPal without credit card": [
-        "신용 카드 없는 PayPal"
       ],
       "perform a password reset from your active session": [
         "활성 상태의 세션에서 비밀번호를 재설정하시기 바랍니다."
@@ -13890,8 +13920,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "민감한 비즈니스 정보를 보호하고 안전하게 공동 작업하기."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "6명의 구성원을 위한 ${ PASS_SHORT_APP_NAME } Plus의 프리미엄 기능으로 우리 가족을 보호하세요."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "6명의 구성원을 위한 ${ plusTitle }의 모든 프리미엄 기능으로 가족을 보호하세요."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 서비스들로 가족의 개인정보를 보호하세요."
@@ -13970,8 +14000,8 @@
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "시작하려면 나의 계정이 타인에게 표시될 이름을 선택하세요. 이메일을 보내거나 이벤트에 초대 및 파일을 공유할 때 상대방 사용자에게 표시됩니다."
       ],
-      "Your ${ planName } subscription is now active.": [
-        "이제 ${ planName } 구독이 활성화 되었습니다."
+      "Your ${ planTitleElement } subscription is now active.": [
+        "${ planTitleElement } 구독이 활성화되었습니다."
       ],
       "Your selected plan: ${ planName }": [
         "${ planName } 플랜을 선택하셨습니다"
@@ -13994,6 +14024,9 @@
       ],
       "Downgrade account?": [
         "계정을 다운그레이드할까요?"
+      ],
+      "Review subscription": [
+        "구독 검토"
       ],
       "Review subscription and pay": [
         "구독 및 결제 검토"
@@ -14571,8 +14604,8 @@
       "Get the deal": [
         "특가 받기"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "${ plan } Plus의 첫 달 80% 할인 받을 마지막 기회입니다."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "${ plan }의 첫 달 80% 할인을 받을 수 있는 마지막 기회입니다."
       ],
       "Last day to save": [
         "매월에서 매년 구독으로 변경하여"
@@ -15151,9 +15184,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "한 번의 일회성 결제로 지금부터 모든 ${ PASS_APP_NAME } 프리미엄 기능에 평생 접근하세요."
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }에 오신 것을 환영합니다"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15241,9 +15271,6 @@
       ],
       "Select your plan": [
         "플랜을 선택하세요."
-      ],
-      "Upgrade your plan": [
-        "플랜을 업그레이드 하세요"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15269,7 +15296,7 @@
         "/월 /사용자, 매년 결제됨"
       ],
       "Access to all ${ BRAND_NAME } apps and premium features": [
-        "모든${ BRAND_NAME }앱과 프리미엄 기능에 접근하세요"
+        "모든 ${ BRAND_NAME }앱과 프리미엄 기능에 접근하세요"
       ],
       "Advanced protection that goes beyond industry standards": [
         "업계 표준을 뛰어넘는 고급 보호"
@@ -15454,6 +15481,9 @@
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "선택한 제안은 ${ currentPlanTitle } 구독에서 제공되지 않습니다."
       ],
+      "The offer you selected is not available for **${ currentPlanTitle }** subscribers.": [
+        "선택한 제안은 **${ currentPlanTitle }** 구독에서 제공되지 않습니다."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "${ PASS_APP_NAME }를 휴대폰에서 사용하려면 설치하세요."
       ],
@@ -15466,8 +15496,8 @@
       "Verifying your payment": [
         "결제 수단을 인증 중입니다."
       ],
-      "Welcome to ${ shortName } Plus": [
-        "${ shortName } Plus에 오신 것을 환영합니다."
+      "Welcome to ${ plan }": [
+        "${ plan }에 오신 것을 환영합니다."
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "프리미엄 ${ appName } 기능을 이미 사용하고 있습니다. - 다시 구매할 필요가 없습니다."
@@ -15703,6 +15733,9 @@
       "Got it": [
         "확인"
       ],
+      "I'm purchasing as a business": [
+        "사업체 용도로 구매합니다"
+      ],
       "MM/YY": [
         "MM/YY (월/년)"
       ],
@@ -15712,18 +15745,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
       ],
-      "Please select billing country": [
-        "결제 청구 국가를 선택하세요"
-      ],
-      "Please select billing state": [
-        "결제 청구 주를 선택하세요"
-      ],
-      "Please select your billing country first.": [
-        "결제 청구 국가를 먼저 선택하세요"
-      ],
-      "Please select your billing state first.": [
-        "결제 청구 주를 먼저 선택하세요"
-      ],
       "Processing payment": [
         "결제 처리 중"
       ],
@@ -15732,9 +15753,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
-      ],
-      "Select billing country to pay": [
-        "결제를 청구할 국가 선택"
       ],
       "terms & conditions": [
         "이용 약관"
@@ -15756,6 +15774,9 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "그 후 ${ renewalLength }개월 간 ${ renewPriceStr }(으)로 자동 갱신됩니다. 언제든 취소하실 수 있습니다."
+      ],
+      "This number will be shown on all future invoices": [
+        "이 번호는 향후 모든 송장에 표시됩니다."
       ],
       "This payment method will become your new default for all future renewals.": [
         "이 결제 수단이 향후 모든 갱신에 대한 새로운 결제 기본값으로 설정됩니다."
@@ -15812,6 +15833,20 @@
       ],
       "Street address, postal code, and city": [
         "주소명, 우편 번호 및 도시"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "사업자등록번호"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "부가가치세 번호"
       ]
     },
     "Permission": {
@@ -15941,6 +15976,9 @@
       "Please select the main reason": [
         "주요 사유를 선택해 주세요."
       ],
+      "Postal code": [
+        "우편 번호"
+      ],
       "Printer": [
         "프린터"
       ],
@@ -15991,6 +16029,9 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ],
+      "ZIP code": [
+        "우편 번호"
       ]
     },
     "placeholder": {
@@ -16055,6 +16096,20 @@
       ],
       "Enjoying ${ planName }?": [
         "${ planName }을(를) 잘 사용하고 계신가요?"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "모든 ${ protonPlus } 서비스.${ br }한 번의 쉬운 구독으로."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }** 구독자라면 **${ upsellPlanTitle }**으로 업그레이드하여 **${ unlockPlanTitle }** 및 모든 프리미엄 ${ BRAND_NAME } 서비스를 잠금 해제하실 수 있습니다."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle } 플랜 유지하기"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "${ upsellPlanTitle }(으)로 업그레이드"
       ]
     },
     "Price": {
@@ -17205,6 +17260,9 @@
       "get a secure ${ MAIL_APP_NAME } address.": [
         "안전한 ${ MAIL_APP_NAME } 주소 받기"
       ],
+      "Get a secure one from us, or ${ internalButton }": [
+        "저희로부터 안전한 주소를 받으시거나 ${ internalButton }"
+      ],
       "Manage user access": [
         "사용자 접근 관리"
       ],
@@ -17285,6 +17343,15 @@
       ],
       "Upload files of any size": [
         "모든 크기의 파일 업로드"
+      ],
+      "use your current email.": [
+        "현재 이메일을 사용하세요."
+      ],
+      "Use your email, or ${ externalButton }": [
+        "내 이메일을 사용하거나 ${ externalButton }"
+      ],
+      "use your own email.": [
+        "자신만의 이메일 주소를 사용해보세요."
       ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "${ vpnServersCountData.free.countries }개 국가에 소재된 서버의 VPN"
@@ -19717,6 +19784,9 @@
       "For Linux": [
         "Linux용"
       ],
+      "For macOS": [
+        "macOS용"
+      ],
       "For Windows": [
         "Windows용"
       ],
@@ -20349,9 +20419,6 @@
       ],
       "Time zone": [
         "시간대"
-      ],
-      "Track your referrals": [
-        "추천인 추적"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
