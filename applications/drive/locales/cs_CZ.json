@@ -591,9 +591,6 @@
       "Loading link": [
         "Načítání odkazu"
       ],
-      "Loading verification": [
-        "Načítání ověření"
-      ],
       "Manage advanced account protections": [
         "Spravovat pokročilé ochrany účtu"
       ],
@@ -1457,8 +1454,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus a ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
@@ -3299,7 +3296,7 @@
         "Nepodařilo se vytvořit veřejný uzel sdílení"
       ],
       "Failed to fetch node": [
-        "Nepodařilo se získat uzel"
+        "Nepodařilo se stáhnout uzel"
       ],
       "Failed to fetch sharing info": [
         "Nepodařilo se stáhnout informace o sdílení"
@@ -3391,6 +3388,9 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
+      "Invalid ZIP code": [
+        "Neplatné PSČ"
+      ],
       "Item content cannot exceed 40KB": [
         "Obsah položky nemůže přesáhnout 40KB"
       ],
@@ -3469,6 +3469,18 @@
       "Please activate your search again": [
         "Prosím, aktivujte znovu vyhledávání"
       ],
+      "Please enter a valid postal code": [
+        "Zadejte prosím platné poštovní směrovací číslo"
+      ],
+      "Please enter a valid ZIP code": [
+        "Zadejte prosím platné PSČ"
+      ],
+      "Please enter postal code": [
+        "Zadejte prosím poštovní směrovací číslo"
+      ],
+      "Please enter ZIP code": [
+        "Zadejte prosím PSČ"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
@@ -3483,6 +3495,12 @@
       ],
       "Please select a state": [
         "Vyberte prosím stát"
+      ],
+      "Please select billing country": [
+        "Vyberte prosím zemi platby"
+      ],
+      "Please select billing state": [
+        "Vyberte prosím stát platby"
       ],
       "Port is required": [
         "Port je povinná položka"
@@ -3585,9 +3603,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Minimální platba, kterou přijímáme je ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Nová revize původního souboru ještě nebyla nahrána, zkuste to prosím později"
@@ -5784,12 +5799,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane kredit ve výši ${ creditsRemaining }.",
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstanou kredity ve výši ${ creditsRemaining }.",
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstanou kredity ve výši ${ creditsRemaining }.",
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane ${ creditsRemaining } kreditů."
-      ],
       "Please open the document to view it.": [
         "Prosím, otevřete dokument pro jeho zobrazení."
       ],
@@ -6528,9 +6537,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Než budete moci přejít na nižší verzi, musíte deaktivovat nebo odebrat všechny další uživatele, adresy a vlastní domény účtu ${ MAIL_APP_NAME }."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Váš PayPal účet musíte mít propojený s platební kartou nebo bankovním účtem. Pokud nemáte, klikněte na tlačítko níže."
-      ],
       "You need access": [
         "Potřebujete přístup"
       ],
@@ -6579,8 +6585,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Vaše ${ PASS_SHORT_APP_NAME } Plus bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Vaše předplatné ${ plan } bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
@@ -6692,6 +6698,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Volitelné"
+      ],
       "Selected color:": [
         "Vybraná barva:"
       ]
@@ -7291,9 +7300,6 @@
       "Start date": [
         "Datum zahájení"
       ],
-      "State": [
-        "Stát"
-      ],
       "Stolen data": [
         "Odcizené údaje"
       ],
@@ -7411,6 +7417,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Poštovní směrovací číslo"
+      ],
       "ZIP code": [
         "PSČ"
       ]
@@ -7473,9 +7482,6 @@
       ],
       "clearing your browser cache": [
         "vyprazdňuji cache ve vašem prohlížeči"
-      ],
-      "click here": [
-        "klikněte zde"
       ],
       "Drafts": [
         "Koncepty"
@@ -8581,8 +8587,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Chraňte citlivé obchodní informace a bezpečně spolupracujte."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Chraňte svou rodinu pomocí všech prémiových funkcí ${ PASS_SHORT_APP_NAME } Plus pro 6 uživatelů."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Chraňte svou rodinu pomocí všech prémiových funkcí ${ plusTitle } pro 6 uživatelů."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chraňte soukromí své rodiny pomocí všech služeb ${ BRAND_NAME }."
@@ -9318,8 +9324,8 @@
       "Get the deal": [
         "Získejte nabídku"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Poslední šance získat 80 % slevu na první měsíc ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Poslední šance získat 80 % slevu na první měsíc ${ plan }."
       ],
       "Last day to save": [
         "Poslední den, kdy můžete ušetřit"
@@ -9645,6 +9651,11 @@
         "Neomezený počet přihlášení, poznámek, platebních karet a další"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Tarif ${ upsellPlanTitle }"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } uživatelský účet",
@@ -9755,6 +9766,9 @@
       "Got it": [
         "Rozumím"
       ],
+      "I'm purchasing as a business": [
+        "Kupuji jako firma"
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -9764,26 +9778,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
-      "Please select billing country": [
-        "Vyberte prosím zemi platby"
-      ],
-      "Please select billing state": [
-        "Vyberte prosím stát platby"
-      ],
-      "Please select your billing country first.": [
-        "Vyberte prosím nejprve vaší zemi platby."
-      ],
-      "Please select your billing state first.": [
-        "Vyberte prosím nejprve váš stát platby."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Ceny za obnovení se mohou změnit podle ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
-      ],
-      "Select billing country to pay": [
-        "Vyberte zemi platby"
       ],
       "terms & conditions": [
         "smluvních podmínek užívání"
@@ -9814,6 +9813,9 @@
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíce. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit."
+      ],
+      "This number will be shown on all future invoices": [
+        "Toto číslo bude uvedeno na všech budoucích fakturách"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Tato platební metoda se stane vaším novým výchozím způsobem pro všechna budoucí obnovení."
@@ -9867,6 +9869,20 @@
       ],
       "Street address, postal code, and city": [
         "Ulice, poštovní směrovací číslo a město"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "DIČ"
+      ],
+      "Business Number": [
+        "Firemní číslo"
+      ],
+      "EIN": [
+        "IČO"
+      ],
+      "VAT number": [
+        "DIČ"
       ]
     },
     "PGP key encryption warning": {
@@ -9963,6 +9979,9 @@
       "Please describe the problem and include any error messages": [
         "Popište prosím problém a uveďte jakékoli chybové zprávy"
       ],
+      "Postal code": [
+        "Poštovní směrovací číslo"
+      ],
       "Search for group name": [
         "Vyhledat název skupiny"
       ],
@@ -9992,6 +10011,9 @@
       ],
       "Your organization name": [
         "Název vaší organizace"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Placeholder for contact group name": {
@@ -10002,6 +10024,20 @@
     "plan customizer, users": {
       "contact": [
         "kontaktujte"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Všechny služby ${ protonPlus }.${ br }Jedno jednoduché předplatné."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Jako předplatitel **${ currentPlanTitle }** můžete odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Zůstat na ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Navýšit na ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -11798,11 +11834,14 @@
         "Smazat ${ count } skupin kontaktů",
         "Smazat ${ count } skupin kontaktů"
       ],
-      "Delete ${ links.length } items?": [
-        "Smazat ${ links.length } položek?"
-      ],
       "Delete ${ name }?": [
         "Smazat ${ name }?"
+      ],
+      "Delete ${ total } item?": [
+        "Smazat ${ total } položku?",
+        "Smazat ${ total } položky?",
+        "Smazat ${ total } položek?",
+        "Smazat ${ total } položek?"
       ],
       "Delete ${ value }": [
         "Smazat ${ value }"
@@ -12403,6 +12442,9 @@
       ],
       "Your exposed information": [
         "Vaše uniklé informace"
+      ],
+      "Your plan": [
+        "Váš tarif"
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
