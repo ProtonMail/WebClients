@@ -4,7 +4,7 @@ import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
 import getConfig from '@proton/pack/webpack.config';
 import { NamedDeterministicChunkIdsPlugin } from '@proton/pass/utils/webpack/chunks/plugin';
-import { sideEffectsRule } from '@proton/pass/utils/webpack/side-effects';
+import { sideEffectsRule } from '@proton/pass/utils/webpack/rules';
 
 const CRITICAL_OFFLINE_ASSETS = [
     /** main assets */
