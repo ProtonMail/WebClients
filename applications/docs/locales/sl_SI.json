@@ -459,9 +459,6 @@
       "Load image": [
         "Naloži sliko"
       ],
-      "Loading verification": [
-        "Nalaganje preverjanja"
-      ],
       "Make a copy": [
         "Naredi kopijo"
       ],
@@ -656,9 +653,6 @@
       ],
       "Restore this version?": [
         "Obnovi to različico?"
-      ],
-      "Retry": [
-        "Poskusite znova"
       ],
       "Save": [
         "Shrani"
@@ -941,8 +935,23 @@
       "200 GB storage": [
         "200 GB prostora"
       ],
+      "Block ads, trackers, and malware": [
+        "Blokiranje oglasov, sledilnikov in zlonamerne programske opreme"
+      ],
+      "High speed streaming with VPN": [
+        "Pretočne storitve z visoko hitrostjo z VPN"
+      ],
+      "Select any server": [
+        "Izberi katerikoli strežnik"
+      ],
       "thanks to you": [
         "Hvala vam"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
+      "Use your own email domain": [
+        "Uporabite svojo e-poštno domeno"
       ],
       "years": [
         "leta"
@@ -1036,9 +1045,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Program ${ MAIL_APP_NAME } za namizje"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus in ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } shrambe"
       ],
@@ -1113,6 +1119,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Zaračunano ${ amount } enkrat"
+      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnovitev po enem mesecu za ${ regularAmount }."
       ]
@@ -1289,6 +1298,9 @@
       ],
       "All ${ BRAND_NAME } apps and premium features": [
         "Vse aplikacije ${ BRAND_NAME } in premijske funkcije"
+      ],
+      "Cancel and downgrade": [
+        "Prekliči vse prenose"
       ],
       "Cloud storage and sharing for large files": [
         "Shramba v oblaku in skupna raba velikih datotek"
@@ -3035,9 +3047,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Najmanjši znesek, ki ga lahko dodate, je ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Najmanjše plačilo, ki ga sprejemamo, je ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Nova različica izvirne datoteke še ni naložena, poskusite znova pozneje"
@@ -5329,9 +5338,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Preden lahko zmanjšate paket, morate onemogočiti ali odstraniti vse dodatne uporabnike, naslove in domene po meri aplikacije ${ MAIL_APP_NAME }."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Imeti morate kreditno kartico ali bančni račun, ki je povezan z vašim PayPal računom. Če vaš PayPal račun tega nima, kliknite na gumb spodaj."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Dostop do funkcij ${ planTitle } boste izgubili na ta datum."
       ],
@@ -5442,6 +5448,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Neobvezno"
+      ],
       "Selected color:": [
         "Izberi barvo:"
       ]
@@ -5921,9 +5930,6 @@
       "Start date": [
         "Začetni datum"
       ],
-      "State": [
-        "Država"
-      ],
       "Stop sharing": [
         "Ustavi skupno rabo"
       ],
@@ -6062,9 +6068,6 @@
       ],
       "clearing your browser cache": [
         "izpraznitev predpomnilnika brskalnika"
-      ],
-      "click here": [
-        "kliknite tukaj"
       ],
       "How to add users": [
         "Kako dodati uporabnike"
@@ -7110,8 +7113,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Zaščitite občutljive poslovne informacije in varno sodelujte."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Zaščitite svojo družino z vsemi premijskimi funkcijami programa ${ PASS_SHORT_APP_NAME } Plus za 6 uporabnikov."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Zaščitite svojo družino z vsemi premium funkcijami programa ${ plusTitle } za 6 uporabnikov."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Zaščitite zasebnost vaše družine s kombinacijo vseh storitev ${ BRAND_NAME }."
@@ -7736,8 +7739,8 @@
       "Get the deal": [
         "Izkoristite posebno ponudbo"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Zadnja priložnost, da dobite 80 % popusta na prvi mesec ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Zadnja priložnost, da dobite 80 % popusta na prvi mesec ${ plan }."
       ],
       "Last day to save": [
         "Zadnji dan za prihranek"
@@ -7790,6 +7793,9 @@
       ],
       "500 GB secure storage": [
         "500 GB varne shrambe"
+      ],
+      "Advanced threat protection": [
+        "Napredni program za zaščito računa"
       ],
       "Custom email domain": [
         "E-poštna domena po meri"
@@ -7846,6 +7852,9 @@
       ],
       "Your free trial has started": [
         "Vaše brezplačno poskusno obdobje se je začelo"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Vaša polna ${ planTitle } naročnina se začne dne ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Do konca preskusnega obdobja boste lahko uporabljali ${ planTitle } brezplačno."
@@ -7904,6 +7913,11 @@
       ],
       "Unlimited logins, notes, credit cards and more": [
         "Neomejeno število prijav, zapiskov, plačilnih kartic in drugega"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } paket"
       ]
     },
     "pass_signup_2024: Info": {
@@ -8019,26 +8033,11 @@
       "More plans are available in other currencies": [
         "Več paketov je na voljo v drugih valutah"
       ],
-      "Please select billing country": [
-        "Izberite državo za izstavitev računa"
-      ],
-      "Please select billing state": [
-        "Izberite državo za izstavitev računa"
-      ],
-      "Please select your billing country first.": [
-        "Najprej izberite državo za izstavitev računa."
-      ],
-      "Please select your billing state first.": [
-        "Najprej izberite svojo državo za izstavitev računa."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Cena podaljšanja se lahko spremeni skladno z ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovi se za ${ renewPriceStr }. Prekliči kadar koli."
-      ],
-      "Select billing country to pay": [
-        "Izberite državo za izstavitev računa za plačilo"
       ],
       "terms & conditions": [
         "pogoji storitve"
@@ -8738,6 +8737,12 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Varno brskajte"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Prijava z ${ BRAND_NAME }."
+      ],
       "Go to subscription plans": [
         "Ogled naročniških paketov"
       ],
@@ -8820,6 +8825,12 @@
       ]
     },
     "specialoffer: Title": {
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Imejte svoja gesla varna in organizirana v več trezorjih"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Zaščitite svoj račun pred grožnjami s Sentinelom"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Nadgradite in prihranite več z 2 leti ${ planName }"
       ]
@@ -10025,6 +10036,9 @@
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"
+      ],
+      "Your plan": [
+        "Vaš paket"
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"

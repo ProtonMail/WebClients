@@ -474,9 +474,6 @@
       "Load image": [
         "Načítať obrázok"
       ],
-      "Loading verification": [
-        "Načítavanie overenia"
-      ],
       "Make a copy": [
         "Vytvoriť kópiu"
       ],
@@ -677,9 +674,6 @@
       ],
       "Restoring...": [
         "Obnovovanie..."
-      ],
-      "Retry": [
-        "Opakovať"
       ],
       "Save": [
         "Uložiť"
@@ -1177,9 +1171,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Desktopová aplikácia ${ MAIL_APP_NAME }"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } úložisko"
@@ -3235,9 +3226,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimálna výška kreditu, ktorý je možné pridať, je ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "Minimálna platba, ktorú akceptujeme, je ${ price }"
-      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Nová kontrola originálneho súboru ešte nie je nahratá, skúste to znova neskôr, prosím"
       ],
@@ -5105,12 +5093,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornenie, tento proces môže trvať nejakú dobu v závislosti na veľkosti Vášho adresára."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kredit.",
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú ${ creditsRemaining } kredity.",
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov.",
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Na vytvorenie skupiny zadajte meno a emailovú adresu, prosím."
       ],
@@ -5654,9 +5636,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Pred znížením predplatného musíte zakázať alebo odstrániť všetkých ďalších ${ MAIL_APP_NAME } používateľov, adresy a vlastné domény."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Váš PayPal účet musí byť prepojený s platobnou kartou alebo bankovým účtom. Ak váš PayPal prepojený nie je, kliknite na tlačidlo nižšie."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "V tento deň stratíte prístup k funkciám ${ planTitle }."
       ],
@@ -5695,9 +5674,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Emaily už nie sú doručované do vašej schránky. Vaše odkazy na zdieľanie na Disku už nie sú aktívne a nemôžete nahrávať nové súbory. Ak chcete svoj účet naďalej používať, uhraďte všetky faktúry po splatnosti."
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Vaše predplatné ${ PASS_SHORT_APP_NAME } Plus bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na vaše konto. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
@@ -5800,6 +5776,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Voliteľné"
+      ],
       "Selected color:": [
         "Vybraná farba:"
       ]
@@ -6297,9 +6276,6 @@
       "Start date": [
         "Dátum začiatku"
       ],
-      "State": [
-        "Štát"
-      ],
       "Stop sharing": [
         "Ukončiť zdieľanie"
       ],
@@ -6438,9 +6414,6 @@
       ],
       "clearing your browser cache": [
         "vymazanie medzipamäte prehliadača"
-      ],
-      "click here": [
-        "kliknite sem"
       ],
       "Enforcing 2FA for organizations": [
         "Vynútenie 2FA pre organizácie"
@@ -7513,9 +7486,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Chráňte citlivé obchodné informácie a bezpečne spolupracujte."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Chráňte svoju rodinu pomocou všetkých prémiových funkcií ${ PASS_SHORT_APP_NAME } Plus pre 6 používateľov."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
       ],
@@ -8175,9 +8145,6 @@
       "Get the deal": [
         "Využiť ponuku"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Posledná šanca ušetriť 80% za prvý mesiac s ${ plan } Plus."
-      ],
       "Last day to save": [
         "Posledný deň, kedy môžete ušetriť"
       ],
@@ -8366,6 +8333,11 @@
         "Neobmedzené prihlásenia, poznámky, platobné karty a oveľa viac"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } plán"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } používateľský účet",
@@ -8485,26 +8457,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
-      "Please select billing country": [
-        "Vyberte fakturačnú krajinu, prosím"
-      ],
-      "Please select billing state": [
-        "Vyberte štát platby, prosím"
-      ],
-      "Please select your billing country first.": [
-        "Najprv vyberte fakturačnú krajinu, prosím."
-      ],
-      "Please select your billing state first.": [
-        "Najprv vyberte fakturačný štát, prosím."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Ceny za obnovenie sa môžu zmeniť podľa ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje sa za ${ renewPriceStr }, zrušiť môžete kedykoľvek."
-      ],
-      "Select billing country to pay": [
-        "Vyberte fakturačnú krajinu na platbu"
       ],
       "terms & conditions": [
         "podmienky používania"
@@ -10636,6 +10593,9 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "Your plan": [
+        "Váš plán"
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
