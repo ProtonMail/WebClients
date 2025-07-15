@@ -1,5 +1,7 @@
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
+import { CategoriesTabs } from 'proton-mail/components/categoryView/categoriesTabs/CategoriesTabs';
+import { useCategoryViewAccess } from 'proton-mail/components/categoryView/useCategoryViewAccess';
 import Toolbar from 'proton-mail/components/toolbar/Toolbar';
 import { type ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
@@ -42,41 +44,46 @@ export const MailboxToolbar = ({
         handleCheck,
     } = actions;
 
+    const canSeeCategoryView = useCategoryViewAccess();
+
     const { labelDropdownToggleRef, moveDropdownToggleRef, columnMode } = useMailboxLayoutProvider();
 
     const [mailSettings] = useMailSettings();
 
     return (
-        <Toolbar
-            labelID={labelID}
-            elementID={elementID}
-            messageID={messageID}
-            selectedIDs={selectedIDs}
-            checkedIDs={checkedIDs}
-            elementIDs={elementIDs}
-            columnMode={overrideColumnMode ?? columnMode}
-            conversationMode={conversationMode}
-            onCheck={handleCheck}
-            page={page}
-            total={total}
-            isSearch={isSearching}
-            onPage={handlePage}
-            onBack={handleBack}
-            onElement={handleElement}
-            onMarkAs={handleMarkAs}
-            onMove={handleMove}
-            onDelete={handleDelete}
-            labelDropdownToggleRef={labelDropdownToggleRef}
-            moveDropdownToggleRef={moveDropdownToggleRef}
-            bordered
-            sort={sort}
-            onSort={handleSort}
-            onFilter={handleFilter}
-            filter={filter}
-            mailSettings={mailSettings!}
-            toolbarInHeader={inHeader}
-            loading={loading}
-            onCheckAll={handleCheckAll}
-        />
+        <>
+            <Toolbar
+                labelID={labelID}
+                elementID={elementID}
+                messageID={messageID}
+                selectedIDs={selectedIDs}
+                checkedIDs={checkedIDs}
+                elementIDs={elementIDs}
+                columnMode={overrideColumnMode ?? columnMode}
+                conversationMode={conversationMode}
+                onCheck={handleCheck}
+                page={page}
+                total={total}
+                isSearch={isSearching}
+                onPage={handlePage}
+                onBack={handleBack}
+                onElement={handleElement}
+                onMarkAs={handleMarkAs}
+                onMove={handleMove}
+                onDelete={handleDelete}
+                labelDropdownToggleRef={labelDropdownToggleRef}
+                moveDropdownToggleRef={moveDropdownToggleRef}
+                bordered
+                sort={sort}
+                onSort={handleSort}
+                onFilter={handleFilter}
+                filter={filter}
+                mailSettings={mailSettings!}
+                toolbarInHeader={inHeader}
+                loading={loading}
+                onCheckAll={handleCheckAll}
+            />
+            {canSeeCategoryView && <CategoriesTabs />}
+        </>
     );
 };
