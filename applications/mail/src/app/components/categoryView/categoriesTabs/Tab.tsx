@@ -57,7 +57,7 @@ export const Tab = ({ id, size = 'default', count, icon, active, colorShade, onC
             aria-selected={active}
             aria-label={getLabelFromCategoryId(id)}
         >
-            <Icon name={icon} />
+            <Icon className="shrink-0" name={icon} />
             <span title={getLabelFromCategoryId(id)} className={clsx('tag-label', layoutVariables[size].label)}>
                 {getLabelFromCategoryId(id)}
             </span>
