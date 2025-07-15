@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import { Audience, type Organization } from '@proton/shared/lib/interfaces';
 import illustration from '@proton/styles/assets/img/illustrations/activity-monitor-illustration.svg';
 
 import SettingsSectionWide from '../../account/SettingsSectionWide';
@@ -23,8 +23,9 @@ const B2BOrganizationUpsellBanner = ({ organization }: Props) => {
             metrics: {
                 source,
             },
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
-            plan: organization?.PlanName,
+            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+            defaultAudience: Audience.B2B,
+            plan: organization?.PlanName
         });
 
     return (
@@ -38,11 +39,11 @@ const B2BOrganizationUpsellBanner = ({ organization }: Props) => {
                     <div>
                         <b>{c('Info').t`Gain visibility across your organization`}</b>
                         <div>
-                            {c('Info').t`With a Business or Enterprise plan, unlock`}{' '}
+                            {c('Info').t`Upgrade to Professional or a higher plan to unlock`}{' '}
                             <b>{c('Info').t`Activity Monitor`}</b>
-                            {c('Info').t` - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.`}{' '}
+                            {c('Info').t` and other security features.`}{' '}
                             <Href
-                                href="https://protonvpn.com/support/business-activity-monitor"
+                                href="https://proton.me/support/business-activity-monitor"
                                 title={c('Info').t`Learn more about Activity Monitor`}
                             >{c('Link').t`Learn more`}</Href>
                         </div>
@@ -55,9 +56,9 @@ const B2BOrganizationUpsellBanner = ({ organization }: Props) => {
                             color="norm"
                             fullWidth
                             onClick={getCustomizeSubscriptionOpener('upsells')}
-                            title={c('Title').t`View organization events by upgrading to Business`}
+                            title={c('Title').t`View organization events by upgrading to Professional`}
                         >
-                            {c('Action').t`Upgrade to Business`}
+                            {c('Action').t`Upgrade to Professional`}
                         </Button>
                     )
                 }
