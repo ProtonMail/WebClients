@@ -193,7 +193,6 @@ const MainContainer = () => {
         organization,
         subscription,
         isReferralProgramEnabled: Boolean(userSettings.Referral?.Eligible),
-        isOrganizationPolicyEnforced: Boolean(userSettings?.OrganizationPolicy?.Enforced),
         isDataRecoveryAvailable,
         isSessionRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
