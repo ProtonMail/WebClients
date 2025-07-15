@@ -581,9 +581,6 @@
       "Loading link": [
         "Link betöltése"
       ],
-      "Loading verification": [
-        "Ellenőrzés folyamatban"
-      ],
       "Manage advanced account protections": [
         "A speciális fiókvédelmek kezelése"
       ],
@@ -1395,9 +1392,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus és ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } tárhely"
@@ -3468,9 +3462,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Legalább ${ price } kredit feltöltése szükséges"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "Legalacsonyabb elfogadható összeg: ${ price }"
-      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Az eredeti fájl új verziója még nincs feltöltve, próbálja meg később"
       ],
@@ -5539,10 +5530,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ez a folyamat eltarthat egy ideig, a névjegyzék méretétől függően."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "A megerősítés gombra kattintva a fiókban ${ creditsRemaining } kredit marad.",
-        "A megerősítés gombra kattintva a fiókban ${ creditsRemaining } kredit marad."
-      ],
       "Please open the document to view it.": [
         "Kérjük nyissa meg a dokumentumot, hogy megnézhesse."
       ],
@@ -6264,9 +6251,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "A lemondás előtt le kell tiltani vagy el kell távolítani a ${ MAIL_APP_NAME } további felhasználóit, címeit és a saját domain neveket."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát. Ha ezek egyike sincs, kattintson a lentebbi gombra."
-      ],
       "You need access": [
         "Hozzáférés szükséges"
       ],
@@ -6310,9 +6294,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Az Ön ${ BRAND_NAME } fiókja átmenetileg felfüggesztésre került. Az e-mailek nem kerülnek kézbesítésre, a Drive megosztások inaktívak és nem tölthet fel új fájlokat. A fiók további használatához kérjük rendezze elmaradt számláit."
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Az Ön ${ PASS_SHORT_APP_NAME } Plus előfizetése helyébe ${ PASS_SHORT_APP_NAME } Lifetime lép. \nAz előfizetése fennmaradó egyenlege hozzáadódik a számlájához. A ${ PASS_SHORT_APP_NAME } élethosszig tartó ajánlatnak nincs megújítási ára, ez egy egyszeri fizetés a ${ PASS_SHORT_APP_NAME } élethosszig tartó hozzáférésért."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
@@ -6419,6 +6400,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Nem kötelező"
+      ],
       "Selected color:": [
         "A kiválasztott szín:"
       ]
@@ -7006,9 +6990,6 @@
       "Start date": [
         "Kezdő dátum"
       ],
-      "State": [
-        "Állam"
-      ],
       "Stolen data": [
         "Lopott adat"
       ],
@@ -7188,9 +7169,6 @@
       ],
       "clearing your browser cache": [
         "böngésző gyorsítótárának ürítése"
-      ],
-      "click here": [
-        "kattintson ide"
       ],
       "Drafts": [
         "Piszkozatok"
@@ -8238,9 +8216,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Védje az érzékeny üzleti információkat és biztonságosan működjön együtt."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Védje családját a ${ PASS_SHORT_APP_NAME } Plus összes prémium funkciójával 6 felhasználó számára."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Védje a családja adatait az összes ${ BRAND_NAME } szolgáltatás kombinációjával."
       ],
@@ -8924,9 +8899,6 @@
       "Get the deal": [
         "Ajánlat elfogadása"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Utolsó esély, hogy 80% kedvezményt kapjon az első havi ${ plan } Plus díjából."
-      ],
       "Last day to save": [
         "Utolsó nap a mentésre"
       ],
@@ -9251,6 +9223,11 @@
         "Korlátlan bejelentkezés, jegyzet, bankkártya és még sok más"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } előfizetés"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } felhasználói fiók",
@@ -9365,26 +9342,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Kérjük, először aktiválja újra az előfizetését, hogy csökkenthesse a bővítmények számát."
       ],
-      "Please select billing country": [
-        "Kérjük, válassza ki a számlázási országot"
-      ],
-      "Please select billing state": [
-        "Kérjük, válassza ki a számlázási megyét"
-      ],
-      "Please select your billing country first.": [
-        "Először válassza ki a számlázási országot."
-      ],
-      "Please select your billing state first.": [
-        "Kérjük, először válassza ki a számlázási megyét."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "A megújítási árak a ${ termsAndConditionsLink } szerint változhatnak."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Az előfizetés megújul ${ renewPriceStr }, de bármikor lemondhatja."
-      ],
-      "Select billing country to pay": [
-        "A fizetéshez válassza ki a számlázási országot"
       ],
       "terms & conditions": [
         "szerződési feltételek"
@@ -11262,9 +11224,6 @@
         "${ count } névjegy csoport törlése",
         "${ count } névjegy csoport törlése"
       ],
-      "Delete ${ links.length } items?": [
-        "${ links.length } elem törlése?"
-      ],
       "Delete ${ name }?": [
         "${ name } törlése?"
       ],
@@ -11861,6 +11820,9 @@
       ],
       "Your exposed information": [
         "Az ön kiszivárgott információi"
+      ],
+      "Your plan": [
+        "Az ön csomagja"
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"

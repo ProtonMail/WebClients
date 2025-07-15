@@ -576,9 +576,6 @@
       "Loading link": [
         "リンクを読み込み中"
       ],
-      "Loading verification": [
-        "認証を読み込み中"
-      ],
       "Manage advanced account protections": [
         "高度なアカウント保護を管理"
       ],
@@ -1397,9 +1394,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plusと${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
@@ -3481,13 +3475,10 @@
         "ラベル名が長すぎます。別の名前を選択してください。"
       ],
       "The link to your item failed to be deleted": [
-        "項目へのリンクの削除に失敗しました"
+        "アイテムのリンクが削除できませんでした"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "追加クレジットの最低金額は ${ price } です。"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "最低 ${ price } より受け付けています。"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "元のファイルの新しいリビジョンのアップロードは完了していません、後ほど再度お試しください"
@@ -5121,7 +5112,7 @@
         "暗号化された検索はどのように機能しますか？"
       ],
       "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
-        "このファイルが${ deviceName }内に完全にダウンロードされていない場合、ファイルをアクセスできなくなる。"
+        "もし${ deviceName }にそのファイルが完全にローカルにダウンロードされていない場合、アクセスを失います。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
@@ -5506,9 +5497,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "確認ボタンをクリックすると、アカウントには ${ creditsRemaining } クレジットが残りますのでご注意ください。"
       ],
       "Please open the document to view it.": [
         "文書を表示するにはまず開いてください。"
@@ -6227,9 +6215,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "ダウングレードする前に、追加の ${ MAIL_APP_NAME } のユーザー、アドレス、独自ドメインを削除する必要があります。"
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal アカウントにクレジットカードまたは銀行口座を登録しておく必要があります。PayPal アカウントをお持ちでない場合はこちらのボタンをクリックしてください。"
-      ],
       "You need access": [
         "アクセスが必要です"
       ],
@@ -6271,9 +6256,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高はあなたのアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetime ディールには更新価格はなく、一度の支払いで ${ PASS_SHORT_APP_NAME } への生涯アクセスが得られます。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
@@ -6382,6 +6364,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "任意"
+      ],
       "Selected color:": [
         "選択した色:"
       ]
@@ -6963,9 +6948,6 @@
       "Start date": [
         "開始日"
       ],
-      "State": [
-        "州"
-      ],
       "Stolen data": [
         "盗難されたデータ"
       ],
@@ -7145,9 +7127,6 @@
       ],
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
-      ],
-      "click here": [
-        "ここをクリック"
       ],
       "Drafts": [
         "下書き"
@@ -8166,9 +8145,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "ビジネスの機密情報を保護して安全に共同作業"
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "家族を守るために、6 人のユーザー向けに${ PASS_SHORT_APP_NAME } Plusのすべてのプレミアム機能をご利用ください。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "すべての ${ BRAND_NAME } サービスを組み合わせて、ご家族のプライバシーを保護します。"
       ],
@@ -8840,9 +8816,6 @@
       "Get the deal": [
         "割引を入手"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "最初の月の${ plan } Plusが 80 %割引になる最後のチャンス。"
-      ],
       "Last day to save": [
         "節約できる最後の日"
       ],
@@ -9167,6 +9140,11 @@
         "無制限のログイン、メモ、クレジットカードなど"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } プラン"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } 個のユーザーアカウント"
@@ -9283,26 +9261,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
-      "Please select billing country": [
-        "請求先の国を選択してください"
-      ],
-      "Please select billing state": [
-        "請求先の州を選択してください"
-      ],
-      "Please select your billing country first.": [
-        "最初に請求先の国を選択してください。"
-      ],
-      "Please select your billing state first.": [
-        "最初に請求先の州を選択してください。"
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "更新価格は ${ termsAndConditionsLink }に応じて変更される可能性があります。"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
-      ],
-      "Select billing country to pay": [
-        "支払い請求先の国を選択してください"
       ],
       "terms & conditions": [
         "利用規約"
@@ -11132,9 +11095,6 @@
       "Delete ${ count } contact group": [
         "${ count } 件の連絡先を削除"
       ],
-      "Delete ${ links.length } items?": [
-        "${ links.length }個のアイテムを削除しますか？"
-      ],
       "Delete ${ name }?": [
         "${ name } を削除しますか？"
       ],
@@ -11728,6 +11688,9 @@
       ],
       "Your exposed information": [
         "あなたの公開情報"
+      ],
+      "Your plan": [
+        "現在のプラン"
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
