@@ -1239,6 +1239,12 @@
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "\"${ payload.itemName }\" element blev afvist"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "\"${ payload.itemName }\" opdatering blev afvist"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } blokeret",
         "${ blockedEmailsCount } blokerede"
@@ -1777,10 +1783,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2457,6 +2459,9 @@
       "Account Number": [
         "Kontonummer"
       ],
+      "Account Type": [
+        "Kontotype"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Tilføj et tilfældigt præfiks til dette domæne, når du opretter et nyt alias."
       ],
@@ -2559,6 +2564,9 @@
       "Catch-All": [
         "Catch-All"
       ],
+      "Checkbox": [
+        "Afkrydsningsfelt"
+      ],
       "City": [
         "By"
       ],
@@ -2625,14 +2633,23 @@
       "Created at": [
         "Oprettet kl."
       ],
+      "Crypto Wallet": [
+        "Wallet til kryptovaluta"
+      ],
       "Custom Items": [
         "Brugerdefinerede elementer"
       ],
       "Database": [
         "Database"
       ],
+      "Database Type": [
+        "Databasetype"
+      ],
       "Date": [
         "Dato"
+      ],
+      "Date of Birth": [
+        "Fødselsdato"
       ],
       "Device": [
         "Enhed"
@@ -2699,6 +2716,9 @@
       ],
       "Export": [
         "Eksportér"
+      ],
+      "Extra fields": [
+        "Ekstra felter"
       ],
       "Extra password": [
         "Ekstra adgangskode"
@@ -2814,6 +2834,9 @@
       "IP Address": [
         "IP-adresse"
       ],
+      "Issuing Authority": [
+        "Udstedende myndighed"
+      ],
       "Issuing Country": [
         "Udstedende land"
       ],
@@ -2919,6 +2942,9 @@
       "Membership": [
         "Medlemsskab"
       ],
+      "Membership ID": [
+        "Medlem-ID"
+      ],
       "Middle name": [
         "Mellemnavn"
       ],
@@ -2994,6 +3020,9 @@
       "Organization": [
         "Organisation"
       ],
+      "Organization Name": [
+        "Navn på organisation"
+      ],
       "Other": [
         "Andet"
       ],
@@ -3027,6 +3056,9 @@
       "Passwords": [
         "Adgangskoder"
       ],
+      "Patient Name": [
+        "Patientnavn"
+      ],
       "Pause list": [
         "Pauseliste"
       ],
@@ -3053,6 +3085,9 @@
       ],
       "PIN code": [
         "Pinkode"
+      ],
+      "Points Balance": [
+        "Pointsaldo"
       ],
       "Port": [
         "Port"
@@ -3141,6 +3176,9 @@
       "See member and permission overview": [
         "Se oversigt over medlemmer og tilladelser"
       ],
+      "Seed Phrase": [
+        "Startfrase"
+      ],
       "Select a domain": [
         "Vælg et domæne"
       ],
@@ -3167,6 +3205,9 @@
       ],
       "Share": [
         "Del"
+      ],
+      "Share ID": [
+        "Delings-ID"
       ],
       "Shared": [
         "Delt"
@@ -3245,6 +3286,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Tier/Level": [
+        "Niveau"
+      ],
+      "Tier/Status": [
+        "Niveau/Status"
       ],
       "Title": [
         "Titel"
@@ -3344,6 +3391,9 @@
       ],
       "Websites": [
         "Websider"
+      ],
+      "WiFi network": [
+        "WiFi-netværk"
       ],
       "Work details": [
         "Arbejdsdetaljer"
@@ -3519,6 +3569,9 @@
       "Add note": [
         "Tilføj note"
       ],
+      "Add password": [
+        "Tilføj adgangskode"
+      ],
       "Add private key": [
         "Tilføj privat nøgle"
       ],
@@ -3602,6 +3655,9 @@
       ],
       "Select a suffix": [
         "Vælg et suffiks"
+      ],
+      "Select option": [
+        "Vælg mulighed"
       ],
       "Unknown origin": [
         "Ukendt oprindelse"
@@ -3901,6 +3957,9 @@
       "Grant permissions": [
         "Giv tilladelser"
       ],
+      "Hide my email": [
+        "Skjul min e-mail"
+      ],
       "History": [
         "Historik"
       ],
@@ -4160,6 +4219,12 @@
       ],
       "URL is invalid": [
         "URL er ugyldig"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Flyt element til",
+        "Flyt elementer til"
       ]
     },
     "Warning": {
