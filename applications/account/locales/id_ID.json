@@ -2102,8 +2102,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus dan ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } dan ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "Ruang penyimpanan ${ storageSize }"
@@ -4089,8 +4089,8 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Urutkan pesan masuk Anda secara otomatis sebelum mencapai kotak masuk Anda."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "Tersedia dengan ${ MAIL_APP_NAME } Plus"
+      "Available with ${ title }": [
+        "Tersedia dengan ${ title }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Sesuaikan pengaturan ini terlebih dahulu untuk mengaktifkan organisasi Anda dan menyesuaikan alamat email Anda."
@@ -4461,6 +4461,14 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 atau Windows 32-bit (ARM64)"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb untuk Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm untuk Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Title": {
@@ -5563,9 +5571,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Nominal saldo minimal yang dapat ditambahkan adalah ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Nominal pembayaran minimal yang kami terima adalah ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Nama kebijakan harus terdiri dari 3 hingga 40 karakter."
@@ -6715,6 +6720,14 @@
       ],
       "Your desktop app free trial has ended": [
         "Masa uji coba aplikasi desktop Anda telah berakhir"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } di App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } di Play Store"
       ]
     },
     "Gmail forwarding": {
@@ -8434,6 +8447,9 @@
       "Failed to fetch logs.": [
         "Log gagal diperoleh."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Cepat dan terfokus. Email dan kalender, langsung di desktop Anda."
+      ],
       "Featured in": [
         "Terliput di"
       ],
@@ -9210,9 +9226,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Harap dicatat bahwa jika Anda menghapus filter ${ nameDeleted }, kami akan menghentikan pemrosesan semua tindakan otomatis yang dipicu olehnya."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo pada akun Anda akan berkurang menjadi ${ creditsRemaining }."
       ],
       "please open a support ticket": [
         "silakan buka tiket layanan dukungan"
@@ -10405,9 +10418,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun PayPal Anda untuk menambahkan layanan ini sebagai metode pembayaran."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Apabila akun Paypal Anda tidak memiliki kartu yang terhubung, silakan klik tombol di bawah ini."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Anda harus memiliki kalender personal yang aktif untuk mengimpor acara dari berkas ICS."
       ],
@@ -10474,8 +10484,8 @@
       "Your ${ BRAND_NAME } password": [
         "Kata sandi ${ BRAND_NAME } Anda"
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Langganan ${ PASS_SHORT_APP_NAME } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Langganan ${ plan } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } Lifetime ini tidak memiliki harga perpanjangan, karena sekalinya Anda membayar, Anda akan memperoleh akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Akun ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } Anda saling terhubung antar satu sama lain. Untuk menghapus keduanya, silakan masuk ke ${ loginLink } dan hapus akun Anda di sana."
@@ -10604,6 +10614,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Optional": [
+        "Opsional"
       ],
       "Selected color:": [
         "Warna terpilih:"
@@ -12018,6 +12031,9 @@
       "Second password": [
         "Kata sandi kedua"
       ],
+      "Select Linux package format": [
+        "Pilih format paket Linux"
+      ],
       "Select Linux platform": [
         "Pilih platform Linux"
       ],
@@ -12441,9 +12457,6 @@
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
       ],
-      "click here": [
-        "klik di sini"
-      ],
       "Common sign in issues": [
         "Masalah umum proses masuk"
       ],
@@ -12569,9 +12582,6 @@
       ],
       "Pay invoice": [
         "Bayar faktur"
-      ],
-      "PayPal without credit card": [
-        "PayPal tanpa kartu kredit"
       ],
       "perform a password reset from your active session": [
         "melangsungkan pengaturan ulang kata sandi dari sesi Anda yang sedang aktif"
@@ -13865,8 +13875,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Lindungi informasi bisnis yang sensitif dan berkolaborasi dengan aman."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Lindungi keluarga Anda dengan semua fitur premium dari ${ PASS_SHORT_APP_NAME } Plus untuk 6 pengguna."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Lindungi keluarga Anda dengan seluruh fitur premium ${ plusTitle } untuk 6 pengguna."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Lindungi privasi keluarga Anda dengan perlindungan gabungan dari seluruh layanan ${ BRAND_NAME }."
@@ -13944,9 +13954,6 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Untuk memulai, tentukan nama tampilan Anda. Nama ini merupakan nama yang akan dilihat oleh orang lain pada saat Anda mengirim email, mengajukan undangan, atau membagikan berkas kepada mereka."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "Langganan ${ planName } Anda kini telah aktif."
       ],
       "Your selected plan: ${ planName }": [
         "Paket yang Anda pilih: ${ planName }"
@@ -14546,8 +14553,8 @@
       "Get the deal": [
         "Dapatkan penawaran ini"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Plus Anda."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Anda."
       ],
       "Last day to save": [
         "Hari terakhir untuk menghemat"
@@ -15105,9 +15112,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Dapatkan akses seumur hidup ke seluruh fitur premium ${ PASS_APP_NAME } yang ada saat ini dan yang akan datang dengan satu kali pembayaran."
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "Selamat datang di ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15195,9 +15199,6 @@
       ],
       "Select your plan": [
         "Pilih paket Anda"
-      ],
-      "Upgrade your plan": [
-        "Tingkatkan paket Anda"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15408,6 +15409,9 @@
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Penawaran yang Anda pilih tidak tersedia untuk pelanggan ${ currentPlanTitle }."
       ],
+      "The offer you selected is not available for **${ currentPlanTitle }** subscribers.": [
+        "Penawaran yang Anda pilih tidak tersedia untuk pelanggan **${ currentPlanTitle }**."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "untuk mulai menggunakan ${ PASS_APP_NAME } pada ponsel Anda"
       ],
@@ -15420,8 +15424,8 @@
       "Verifying your payment": [
         "Memverifikasi pembayaran Anda"
       ],
-      "Welcome to ${ shortName } Plus": [
-        "Selamat datang di ${ shortName } Plus"
+      "Welcome to ${ plan }": [
+        "Selamat datang di ${ plan }"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Anda telah memiliki akses ke seluruh fitur premium ${ appName } — Anda tidak perlu membeli paket apapun lagi."
@@ -15666,18 +15670,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
-      "Please select billing country": [
-        "Silakan pilih negara bagian penagihan"
-      ],
-      "Please select billing state": [
-        "Silakan pilih negara bagian penagihan"
-      ],
-      "Please select your billing country first.": [
-        "Silakan pilih negara penagihan Anda terlebih dahulu"
-      ],
-      "Please select your billing state first.": [
-        "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
-      ],
       "Processing payment": [
         "Memproses pembayaran"
       ],
@@ -15686,9 +15678,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
-      ],
-      "Select billing country to pay": [
-        "Pilih negara bagian penagihan untuk membayar"
       ],
       "terms & conditions": [
         "syarat & ketentuan"
@@ -16009,6 +15998,20 @@
       ],
       "Enjoying ${ planName }?": [
         "Menikmati ${ planName }?"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Seluruh layanan ${ protonPlus }.${ br }Dalam satu langganan mudah."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Sebagai pelanggan **${ currentPlanTitle }**, Anda dapat membuka akses ke **${ unlockPlanTitle }** dan seluruh layanan premium ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Tetap di ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Tingkatkan ke ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -19005,9 +19008,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ appName } keyboard shortcuts": [
         "Pintasan keyboard ${ appName }"
       ],
@@ -20315,9 +20315,6 @@
       ],
       "Time zone": [
         "Zona waktu"
-      ],
-      "Track your referrals": [
-        "Lacak rujukan Anda"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"

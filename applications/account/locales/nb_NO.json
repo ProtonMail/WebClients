@@ -148,6 +148,9 @@
       "Add public holidays": [
         "Legg til offentlige helligdager"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Legg til vervekobling til ${ MAIL_APP_NAME }-signaturen"
+      ],
       "Add sieve filter": [
         "Legg til sieve-filter"
       ],
@@ -216,6 +219,9 @@
       ],
       "Cancel subscription": [
         "Avbryt abonnement"
+      ],
+      "Cancel trial and pay": [
+        "Avbryt prøveperioden og betal"
       ],
       "Change": [
         "Endre"
@@ -2114,8 +2120,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-skrivebordsapp"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsplass"
@@ -4113,8 +4119,8 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorter innkommende meldinger automatisk før de når innboksen din."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "Tilgjengelig med ${ MAIL_APP_NAME } Plus"
+      "Available with ${ title }": [
+        "Tilgjengelig med ${ title }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurer dette først for å aktivere organisasjonen din og tilpasse e-postadressen din."
@@ -4225,6 +4231,9 @@
       "To start, give your organization a name.": [
         "For å starte, gi organisasjonen din et navn."
       ],
+      "Track the status and activity of your referrals": [
+        "Spor statusen og aktiviteten til vervingene dine"
+      ],
       "Track the status and activity of your referrals.": [
         "Spor statusen og aktiviteten til vervingene dine."
       ],
@@ -4242,6 +4251,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
+      ],
+      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
+        "Du vil motta ${ referralReward } i ${ BRAND_NAME }-kreditt når personen du inviterer registrerer seg for en ${ BRAND_NAME }-plan, og de vil også få ${ referralReward } i kreditter for å komme i gang."
       ]
     },
     "description": {
@@ -5367,6 +5379,9 @@
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
       ],
+      "Invalid ZIP code": [
+        "Ugyldig postnummer"
+      ],
       "Item content cannot exceed 40KB": [
         "Elementinnhold kan ikke overskride 40KB"
       ],
@@ -5461,6 +5476,18 @@
       "Please enter a valid Entity ID URL": [
         "Angi en gyldig enhets-ID-URL"
       ],
+      "Please enter a valid postal code": [
+        "Skriv inn et gyldig postnummer"
+      ],
+      "Please enter a valid ZIP code": [
+        "Skriv inn et gyldig postnummer"
+      ],
+      "Please enter postal code": [
+        "Skriv inn postnummer"
+      ],
+      "Please enter ZIP code": [
+        "Skriv inn postnummer"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs den uthevede konflikten for å fortsette.",
         "Løs de uthevede konfliktene for å fortsette."
@@ -5479,6 +5506,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Velg minst én bruker eller gruppe før du fortsetter."
+      ],
+      "Please select billing country": [
+        "Velg faktureringsland"
+      ],
+      "Please select billing state": [
+        "Velg faktureringsstat"
       ],
       "Please set a recovery email first": [
         "Angi en gjenopprettings-e-post først"
@@ -5509,6 +5542,9 @@
       ],
       "Port is required": [
         "Port kreves"
+      ],
+      "Postal code is required": [
+        "Postnummer er påkrevd"
       ],
       "Primary address key is not decrypted": [
         "Hovedadressenøkkelen er ikke dekryptert"
@@ -5603,9 +5639,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Minimumsbetalingen vi aksepterer er ${ price }."
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Retningslinjenavnet må bestå av mellom 3 og 40 tegn."
@@ -7715,6 +7748,9 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Få en ${ BRAND_NAME }-adresse** for å bruke alle ${ BRAND_NAME_TWO }-tjenester inkludert ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Inviter vennene dine** til ${ BRAND_NAME } med vervekoblingen."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } til",
         "+ ${ invisibleCount } til"
@@ -8617,6 +8653,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få tilgang ved å opprette en ${ BRAND_NAME }-konto og akseptere invitasjonen."
       ],
+      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
+        "Få og gi **${ referralReward } kreditter** for hver venn som abonnerer."
+      ],
       "Get it on Google Play": [
         "Hent den på Google Play"
       ],
@@ -8625,6 +8664,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Bli varslet hvis passordet ditt eller andre personlige data ble lekket. ${ learnMoreLinkNoBreach }."
+      ],
+      "Get started with the referral link above.": [
+        "Kom i gang med vervekoblingen ovenfor."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Gi tokenet et beskrivende navn, slik som tjenesten du planlegger å bruke det med, og velg en av dine aktive egendefinerte domeneadresser. Kun denne adressen vil være i stand til å sende e-poster med dette tokenet."
@@ -8846,6 +8888,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Inviter partneren, en venn eller den du deler ${ protonDuoPlanName }-planen din med."
+      ],
+      "Invited": [
+        "Invitert"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Det ser ut til at noe av dataene dine er kryptert og låst."
@@ -9252,6 +9297,9 @@
       "Paid for a monthly plan": [
         "Betalt for en månedlig plan"
       ],
+      "Paid for a plan": [
+        "Betalt for en plan"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - tilpasset e-post bekreftet"
       ],
@@ -9334,10 +9382,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Vær oppmerksom på at hvis du sletter filteret, ${ nameDeleted }, slutter vi å behandle alle de automatiserte handlingene det utløser."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditt igjen.",
-        "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditter igjen."
       ],
       "please open a support ticket": [
         "åpne en støtteforespørsel"
@@ -10498,6 +10542,9 @@
       "You do not have permission to perform this action": [
         "Du har ikke rettigheter til å utføre denne handlingen"
       ],
+      "You don't have any referrals.": [
+        "Du har ingen vervinger."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
       ],
@@ -10544,9 +10591,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du må ha et kredittkort eller en bankkonto tilknyttet din PayPal-konto for å kunne legge den til som betalingsmåte."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du må ha et kredittkort eller en bankkonto knyttet til din PayPal konto. Hvis din PayPal konto ikke har det, klikk knappen nedenfor."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Du trenger en aktiv personlig kalender for å importere dine hendelser fra ICS."
@@ -10616,8 +10660,8 @@
       "Your ${ BRAND_NAME } password": [
         "Ditt ${ BRAND_NAME }-passord"
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Ditt ${ PASS_SHORT_APP_NAME } Plus-abonnement vil bli erstattet med livsvarig avtale for ${ PASS_SHORT_APP_NAME }. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } livstidsavtale har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ditt ${ plan }-abonnement vil bli erstattet med ${ PASS_SHORT_APP_NAME } Lifetime. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } Lifetime har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Dine ${ VPN_APP_NAME }- og ${ MAIL_APP_NAME }-kontoer er koblet. For å slette de begge, logg på ${ loginLink } og slett din konto der."
@@ -10664,6 +10708,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveversjon ble vellykket konvertert til et månedlig abonnement. Fornyelsesdatoen din er ${ nextBillingDate }."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Vennene dine får **2 uker gratis** på den valgte planen."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Importen fra ${ accounts } er midlertidig forsinket.",
@@ -10749,6 +10796,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Optional": [
+        "Valgfritt"
       ],
       "Selected color:": [
         "Valgt farge:"
@@ -12161,6 +12211,9 @@
       "Reveal password": [
         "Avslør passord"
       ],
+      "Reward": [
+        "Belønning"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -12190,6 +12243,9 @@
       ],
       "Sequences": [
         "Sekvenser"
+      ],
+      "Share your referral link": [
+        "Del vervekoblingen din"
       ],
       "Show ${ n } administrator": [
         "Vis ${ n } administrator",
@@ -12528,6 +12584,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postnummer"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -12602,9 +12661,6 @@
       ],
       "clearing your browser cache": [
         "tømmer hurtigbufferen til nettleseren"
-      ],
-      "click here": [
-        "klikk her"
       ],
       "Common sign in issues": [
         "Vanlige påloggingsutfordringer"
@@ -12732,9 +12788,6 @@
       "Pay invoice": [
         "Betal faktura"
       ],
-      "PayPal without credit card": [
-        "PayPal uten kredittkort"
-      ],
       "perform a password reset from your active session": [
         "utføre en tilbakestilling av passord fra den aktive økten"
       ],
@@ -12764,6 +12817,9 @@
       ],
       "Terms": [
         "Vilkår"
+      ],
+      "Terms and conditions": [
+        "Vilkår og betingelser"
       ],
       "Trouble signing in?": [
         "Problemer med å logge på?"
@@ -14062,8 +14118,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Beskytt sensitiv forretningsinformasjon og samarbeid sikkert."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Beskytt familien din med alle premiumfunksjonene til ${ PASS_SHORT_APP_NAME } Plus for 6 brukere."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Beskytt familien din med alle premiumfunksjonene til ${ plusTitle } for 6 brukere."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskytt familiens personvern med alle ${ BRAND_NAME }-tjenester kombinert."
@@ -14142,8 +14198,8 @@
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Velg et visningsnavn for å komme i gang. Dette er hva folk vil se når du sender en e-post, inviterer dem til et arrangement eller deler en fil."
       ],
-      "Your ${ planName } subscription is now active.": [
-        "Ditt ${ planName }-abonnement er nå aktiv."
+      "Your ${ planTitleElement } subscription is now active.": [
+        "Ditt ${ planTitleElement }-abonnement er nå aktivt."
       ],
       "Your selected plan: ${ planName }": [
         "Planen du har valgt: ${ planName }"
@@ -14166,6 +14222,9 @@
       ],
       "Downgrade account?": [
         "Nedgrader kontoen?"
+      ],
+      "Review subscription": [
+        "Se gjennom abonnementet"
       ],
       "Review subscription and pay": [
         "Se gjennom abonnement og betal"
@@ -14751,8 +14810,8 @@
       "Get the deal": [
         "Skaff deg avtalen"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan }."
       ],
       "Last day to save": [
         "Siste dag for å spare"
@@ -15334,9 +15393,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Få livstidstilgang til alle nåværende og fremtidige ${ PASS_APP_NAME } premiumfunksjoner med en enkelt engangsbetaling."
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "Velkommen til ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15424,9 +15480,6 @@
       ],
       "Select your plan": [
         "Velg din plan"
-      ],
-      "Upgrade your plan": [
-        "Oppgrader planen din"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15637,6 +15690,9 @@
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Tilbudet du valgte er ikke tilgjengelig for ${ currentPlanTitle }-abonnenter."
       ],
+      "The offer you selected is not available for **${ currentPlanTitle }** subscribers.": [
+        "Tilbudet du valgte er ikke tilgjengelig for **${ currentPlanTitle }**-abonnenter."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "for å begynne å bruke ${ PASS_APP_NAME } på telefonen din"
       ],
@@ -15649,8 +15705,8 @@
       "Verifying your payment": [
         "Verifiserer betalingen din"
       ],
-      "Welcome to ${ shortName } Plus": [
-        "Velkommen til ${ shortName } Plus"
+      "Welcome to ${ plan }": [
+        "Velkommen til ${ plan }"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Du har allerede tilgang til ${ appName }-premiumfunksjoner - du trenger ikke å kjøpe igjen."
@@ -15887,6 +15943,9 @@
       "Got it": [
         "Skjønner"
       ],
+      "I'm purchasing as a business": [
+        "Jeg kjøper som en bedrift."
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -15896,18 +15955,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
-      "Please select billing country": [
-        "Velg faktureringsland"
-      ],
-      "Please select billing state": [
-        "Velg faktureringsstat"
-      ],
-      "Please select your billing country first.": [
-        "Velg faktureringslandet ditt først."
-      ],
-      "Please select your billing state first.": [
-        "Velg faktureringsstaten din først."
-      ],
       "Processing payment": [
         "Behandler betaling"
       ],
@@ -15916,9 +15963,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
-      ],
-      "Select billing country to pay": [
-        "Velg faktureringsland for å betale"
       ],
       "terms & conditions": [
         "vilkår og betingelser"
@@ -15944,6 +15988,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Da vil den automatisk bli fornyet på ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
         "Da vil den automatisk bli fornyet på ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
+      ],
+      "This number will be shown on all future invoices": [
+        "Dette nummeret vil bli vist på alle fremtidige fakturaer"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
@@ -16000,6 +16047,20 @@
       ],
       "Street address, postal code, and city": [
         "Gateadresse, postnummer og by"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Businessnummer"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "MVA-nummer"
       ]
     },
     "Permission": {
@@ -16129,6 +16190,9 @@
       "Please select the main reason": [
         "Velg hovedårsaken"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Printer": [
         "Skriver"
       ],
@@ -16179,6 +16243,9 @@
       ],
       "yourdomain.com": [
         "dittdomene.no"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "placeholder": {
@@ -16245,6 +16312,20 @@
       ],
       "Enjoying ${ planName }?": [
         "Liker du ${ planName }?"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Alle ${ protonPlus }-tjenester.${ br }Ett enkelt abonnement."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Som abonnent på **${ currentPlanTitle }** kan du låse opp **${ unlockPlanTitle }** og alle ${ BRAND_NAME }-premiumtjenester ved å oppgradere til **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Behold ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Oppgrader til ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -20057,6 +20138,9 @@
       "Gift code": [
         "Gavekode"
       ],
+      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
+        "Gi ${ referralReward } og 2 uker gratis. Få ${ referralReward } kreditter."
+      ],
       "Group": [
         "Gruppe"
       ],
@@ -20138,6 +20222,9 @@
       ],
       "Invitations": [
         "Invitasjoner"
+      ],
+      "Invite friends. Get credits.": [
+        "Inviter venner. Få kreditter."
       ],
       "Invoices": [
         "Fakturaer"
@@ -20629,9 +20716,6 @@
       "Time zone": [
         "Tidssone"
       ],
-      "Track your referrals": [
-        "Spor vervingene dine"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -20781,6 +20865,9 @@
       ],
       "Your recovery status": [
         "Din gjenopprettingsstatus"
+      ],
+      "Your referrals": [
+        "Dine vervinger"
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"

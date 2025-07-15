@@ -187,6 +187,9 @@
       "Cancel subscription": [
         "Avsluta prenumeration"
       ],
+      "Cancel trial and pay": [
+        "Avbryt provperiod och betala"
+      ],
       "Carbon Copy": [
         "Kopia"
       ],
@@ -772,9 +775,6 @@
       "Load more": [
         "Ladda mer"
       ],
-      "Loading verification": [
-        "Laddar verifiering"
-      ],
       "Loading${ ellipsis }": [
         "Laddar${ ellipsis }"
       ],
@@ -1146,9 +1146,6 @@
       ],
       "Resume downloading": [
         "Återuppta nedladdning"
-      ],
-      "Retry": [
-        "Försök igen"
       ],
       "Revert to original display": [
         "Återgå till originalvisning"
@@ -1971,8 +1968,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-skrivbordsapp"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus och ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsutrymme"
@@ -4526,6 +4523,9 @@
       "Invalid verification code": [
         "Ogiltig verifieringskod"
       ],
+      "Invalid ZIP code": [
+        "Ogiltigt postnummer"
+      ],
       "Item content cannot exceed 40KB": [
         "Objektinnehåll får inte överstiga 40 kB"
       ],
@@ -4565,6 +4565,9 @@
       ],
       "No address with keys available to compose a message": [
         "Ingen adress med nycklar tillgängliga för att skriva ett meddelande"
+      ],
+      "No address with sending permissions": [
+        "Ingen adress med behörighet att skicka"
       ],
       "No calendars found to import": [
         "Inga kalendrar hittades att importera"
@@ -4619,6 +4622,18 @@
       "Please activate your search again": [
         "Aktivera din sökning igen"
       ],
+      "Please enter a valid postal code": [
+        "Skriv in ett giltigt postnummer"
+      ],
+      "Please enter a valid ZIP code": [
+        "Ange ett giltigt postnummer"
+      ],
+      "Please enter postal code": [
+        "Ange postnummer"
+      ],
+      "Please enter ZIP code": [
+        "Ange postnummer"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Åtgärda den markerade konflikten för att fortsätta.",
         "Åtgärda de markerade konflikterna för att fortsätta."
@@ -4634,6 +4649,12 @@
       ],
       "Please select a state": [
         "Välj en delstat"
+      ],
+      "Please select billing country": [
+        "Välj faktureringsland"
+      ],
+      "Please select billing state": [
+        "Välj delstat för fakturering"
       ],
       "Please try again or refresh the page.": [
         "Försök igen eller uppdatera sidan."
@@ -4768,9 +4789,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Minsta betalningen vi accepterar är ${ price }"
       ],
       "The sending key is not valid": [
         "Den skickande nyckeln är inte giltig"
@@ -7457,10 +7475,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Observera att processen kan ta lite tid beroende på storleken på din adressbok."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Vänligen notera att när du klickar på Bekräfta-knappen så kommer ditt konto att ha ${ creditsRemaining } kredit kvar.",
-        "Vänligen notera att när du klickar på Bekräfta-knappen så kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
-      ],
       "Please open the document to view it.": [
         "Öppna dokumentet för att visa det."
       ],
@@ -8079,8 +8093,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
-      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
-        "Uppgradera till ${ MAIL_APP_NAME } Plus för att låsa upp"
+      "Upgrade to ${ plan } to unlock": [
+        "Uppgradera till ${ plan } för att låsa upp"
       ],
       "Upgrade to add more addresses to your account.": [
         "Uppgradera för att lägga till fler adresser till ditt konto."
@@ -8367,9 +8381,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du måste inaktivera eller ta bort eventuella ytterligare ${ MAIL_APP_NAME }-användare, adresser och anpassade domäner innan du kan nedgradera."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du måste ha ett kreditkort eller bankkonto kopplat till ditt PayPal-konto. Om ditt PayPal-konto inte har det, klicka på knappen nedan."
-      ],
       "You selected **${ count } conversation** from this folder": [
         "Du valde **${ count } konversation** från denna mapp",
         "Du valde **${ count } konversationer** från denna mapp"
@@ -8429,9 +8440,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. E-post levereras inte längre till din inkorg. Dina delade länkar på Drive är inte längre aktiva och du kan inte ladda upp nya filer. För att fortsätta använda ditt konto, betala eventuella förfallna fakturor."
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Din ${ PASS_SHORT_APP_NAME } Plus-prenumeration kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Den kvarvarande balansen för din prenumeration kommer att läggas till i ditt konto.${ PASS_SHORT_APP_NAME } livstidserbjudandet har inget förnyelsepris, det är en engångsbetalning för livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ditt konto har minst en försenad faktura. Din åtkomst kommer snart att begränsas. ${ payInvoiceLink }"
@@ -9081,8 +9089,8 @@
       "Extended address": [
         "Utökad adress"
       ],
-      "Failed to create folder ${ customFolderName }": [
-        "Misslyckades att skapa mapp ${ customFolderName }"
+      "Failed to create folder ${ newFolderName }": [
+        "Misslyckades att skapa mapp ${ newFolderName }"
       ],
       "Filter Name": [
         "Filternamn"
@@ -9354,9 +9362,6 @@
       "Start date": [
         "Startdatum"
       ],
-      "State": [
-        "Delstat"
-      ],
       "Statement": [
         "Uttryck"
       ],
@@ -9505,6 +9510,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postnummer"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -9583,9 +9591,6 @@
       ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
-      ],
-      "click here": [
-        "klicka här"
       ],
       "contact us": [
         "kontakta oss"
@@ -10731,8 +10736,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Skydda känslig företagsinformation och samarbeta säkert."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Skydda din familj med alla premiumfunktioner i ${ PASS_SHORT_APP_NAME } Plus för 6 användare."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Skydda din familj med alla premiumfunktioner i ${ plusTitle } för 6 användare."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Skydda din familjs integritet med alla ${ BRAND_NAME }-tjänster kombinerade."
@@ -10779,6 +10784,9 @@
       ],
       "Downgrade account?": [
         "Nedgradera konto?"
+      ],
+      "Review subscription": [
+        "Granska prenumeration"
       ],
       "Review subscription and pay": [
         "Granska prenumeration och betala"
@@ -11164,8 +11172,8 @@
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Sista chansen att få 80 % rabatt på din första månad med ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Sista chansen att få 80 % rabatt på din första månad med ${ plan }."
       ],
       "Last day to save": [
         "Sista dagen att spara"
@@ -11548,6 +11556,11 @@
         "Obegränsade inloggningar, anteckningar, kreditkort och mer"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }-paket"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } användarkonto",
@@ -11662,6 +11675,9 @@
       "Got it": [
         "Jag förstår"
       ],
+      "I'm purchasing as a business": [
+        "Jag köper som ett företag"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -11671,26 +11687,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
-      "Please select billing country": [
-        "Välj faktureringsland"
-      ],
-      "Please select billing state": [
-        "Välj delstat för fakturering"
-      ],
-      "Please select your billing country first.": [
-        "Välj ditt faktureringsland först."
-      ],
-      "Please select your billing state first.": [
-        "Välj din delstat för fakturering först."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Priserna för förnyelse kan ändras enligt ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
-      ],
-      "Select billing country to pay": [
-        "Välj faktureringsland för att betala"
       ],
       "terms & conditions": [
         "användarvillkor"
@@ -11713,6 +11714,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
         "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
+      ],
+      "This number will be shown on all future invoices": [
+        "Detta nummer kommer att visas på alla framtida fakturor"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denna betalningsmetod kommer bli din nya standard för alla framtida förnyelser."
@@ -11763,6 +11767,17 @@
       ],
       "Street address, postal code, and city": [
         "Gatuadress, postnummer och ort"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ]
     },
     "PGP key encryption warning": {
@@ -11871,6 +11886,9 @@
       "Please share what you expected": [
         "Dela vad du förväntade dig"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Search date, name, email address, or subject line": [
         "Sök datum, namn, e-postadress eller ämnesrad"
       ],
@@ -11939,6 +11957,9 @@
       ],
       "Your organization name": [
         "Ditt organisationsnamn"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Placeholder for contact group name": {
@@ -11949,6 +11970,17 @@
     "plan customizer, users": {
       "contact": [
         "kontakt"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Alla ${ protonPlus }-tjänster.${ br }En enkel prenumeration."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Fortsätt med ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Uppgradera till ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -14817,6 +14849,9 @@
       ],
       "Your free trial has ended": [
         "Din gratis provperiod har avslutats"
+      ],
+      "Your plan": [
+        "Ditt paket"
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"

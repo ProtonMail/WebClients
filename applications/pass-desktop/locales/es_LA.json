@@ -1881,10 +1881,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
-      ],
       "Moving items": [
         "Moviendo los elementos"
       ],
@@ -3892,8 +3888,8 @@
       ]
     },
     "PassOnboardingOffer": {
-      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
-        "${ PASS_SHORT_APP_NAME } Plus Lifetime por ${ plusLifetimePrice }"
+      "${ plusTitle } Lifetime for ${ plusLifetimePrice }": [
+        "${ plusTitle } Lifetime por ${ plusLifetimePrice }"
       ],
       "${ price }/month": [
         "${ price }/mes"
@@ -4172,14 +4168,8 @@
       "${ BRAND_NAME } addresses": [
         "Direcciones de ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
-      ],
-      "${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Protección de la cuenta"

@@ -127,6 +127,9 @@
       "Cancel subscription": [
         "Cancelar assinatura"
       ],
+      "Cancel trial and pay": [
+        "Cancelar avaliação e pagar"
+      ],
       "Change sort order": [
         "Alterar ordem de classificação"
       ],
@@ -468,9 +471,6 @@
       "Load image": [
         "Carregar imagem"
       ],
-      "Loading verification": [
-        "Carregando verificação"
-      ],
       "Make a copy": [
         "Fazer uma cópia"
       ],
@@ -674,9 +674,6 @@
       ],
       "Restoring...": [
         "Restaurando..."
-      ],
-      "Retry": [
-        "Tentar novamente"
       ],
       "Save": [
         "Salvar"
@@ -1187,8 +1184,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para computador do ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
@@ -3054,6 +3051,9 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
+      "Invalid ZIP code": [
+        "O código não é valido."
+      ],
       "Item content cannot exceed 40KB": [
         "O conteúdo do item não pode exceder 40KB"
       ],
@@ -3123,6 +3123,18 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "O envio de fotos está temporariamente desativado. Tente novamente mais tarde."
       ],
+      "Please enter a valid postal code": [
+        "Insira um código postal válido"
+      ],
+      "Please enter a valid ZIP code": [
+        "Insira um CEP válido"
+      ],
+      "Please enter postal code": [
+        "Insira código postal"
+      ],
+      "Please enter ZIP code": [
+        "Insira o CEP"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrija o conflito em destaque para prosseguir.",
         "Corrija os conflitos em destaque para prosseguir."
@@ -3135,6 +3147,12 @@
       ],
       "Please select a state": [
         "Selecione um estado"
+      ],
+      "Please select billing country": [
+        "Selecione o país de cobrança"
+      ],
+      "Please select billing state": [
+        "Selecione estado de cobrança"
       ],
       "Port is required": [
         "Porta é necessária"
@@ -3229,9 +3247,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ price }."
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "O pagamento mínimo que aceitamos é ${ price }."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "A nova revisão do arquivo original ainda não foi carregada. Tente novamente mais tarde."
@@ -5018,10 +5033,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo, dependendo do tamanho da sua lista de contatos."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } crédito restante.",
-        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Forneça um nome e um endereço de e-mail para criar um grupo."
       ],
@@ -5557,9 +5568,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Você deve desativar ou remover quaisquer usuários adicionais, endereços e domínios personalizados do ${ MAIL_APP_NAME } antes de poder fazer o downgrade."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal. Se a sua conta do PayPal não tem isso, clique no botão abaixo."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Você perderá o acesso aos recursos do ${ planTitle } nessa data."
       ],
@@ -5597,8 +5605,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Sua conta da ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode enviar novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Sua assinatura do ${ PASS_SHORT_APP_NAME } Plus será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Sua assinatura do ${ plan } será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -5699,6 +5707,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Opcional"
+      ],
       "Selected color:": [
         "Cor selecionada:"
       ]
@@ -6193,9 +6204,6 @@
       "Start date": [
         "Data de início"
       ],
-      "State": [
-        "Estado"
-      ],
       "Stop sharing": [
         "Parar de compartilhar"
       ],
@@ -6286,6 +6294,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Código postal"
+      ],
       "ZIP code": [
         "CEP"
       ]
@@ -6334,9 +6345,6 @@
       ],
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
-      ],
-      "click here": [
-        "clique aqui"
       ],
       "Enforcing 2FA for organizations": [
         "Impondo a autenticação em dois fatores (2FA) para organizações"
@@ -7402,8 +7410,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Proteja as informações comerciais sensíveis e colabore com segurança."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Proteja sua família com todos os recursos premium do ${ PASS_SHORT_APP_NAME } Plus para 6 usuários."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Proteja sua família com todos os recursos premium do ${ plusTitle } para 6 usuários."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
@@ -7450,6 +7458,9 @@
       ],
       "Downgrade account?": [
         "Fazer downgrade da conta?"
+      ],
+      "Review subscription": [
+        "Revisar assinatura"
       ],
       "Review subscription and pay": [
         "Revisar assinatura e pagar"
@@ -8031,8 +8042,8 @@
       "Get the deal": [
         "Obtenha a oferta"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Última oportunidade de obter 80% de desconto no primeiro mês do ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Última oportunidade de obter 80% de desconto no primeiro mês do ${ plan }."
       ],
       "Last day to save": [
         "Último dia para economizar"
@@ -8222,6 +8233,11 @@
         "Inícios de sessão ilimitados, notas, cartões de crédito e muito mais"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Plano ${ upsellPlanTitle }"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } conta de usuário",
@@ -8336,6 +8352,9 @@
       "Got it": [
         "Entendi"
       ],
+      "I'm purchasing as a business": [
+        "Estou comprando como empresa"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -8345,26 +8364,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
       ],
-      "Please select billing country": [
-        "Selecione o país de cobrança"
-      ],
-      "Please select billing state": [
-        "Selecione o estado de cobrança"
-      ],
-      "Please select your billing country first.": [
-        "Selecione primeiro seu país de cobrança."
-      ],
-      "Please select your billing state first.": [
-        "Selecione primeiro seu estado de cobrança."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "O preço da renovação está sujeito a alterações de acordo com os ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renova por ${ renewPriceStr }, cancele a qualquer momento."
-      ],
-      "Select billing country to pay": [
-        "Selecione o país de cobrança para pagar"
       ],
       "terms & conditions": [
         "termos e condições"
@@ -8387,6 +8391,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } mês. Você pode cancelar a qualquer momento.",
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
+      ],
+      "This number will be shown on all future invoices": [
+        "Este número será mostrado em todas as faturas futuras"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este se tornará seu novo método de pagamento padrão para todas as futuras renovações."
@@ -8440,6 +8447,20 @@
       ],
       "Street address, postal code, and city": [
         "Endereço da rua, CEP e cidade"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Nome comercial"
+      ],
+      "Business Number": [
+        "Número comercial"
+      ],
+      "EIN": [
+        "CNPJ"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -8524,6 +8545,9 @@
       "Please describe the problem and include any error messages": [
         "Descreva o problema e inclua quaisquer mensagens de erro"
       ],
+      "Postal code": [
+        "Código postal"
+      ],
       "Search for group name": [
         "Pesquisar nome do grupo"
       ],
@@ -8553,6 +8577,9 @@
       ],
       "Your organization name": [
         "Seu nome da organização"
+      ],
+      "ZIP code": [
+        "CEP"
       ]
     },
     "Placeholder for contact group name": {
@@ -8563,6 +8590,20 @@
     "plan customizer, users": {
       "contact": [
         "contato"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Todos os serviços da ${ protonPlus }.${ br }assinatura facilitada."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Como assinante do **${ currentPlanTitle }**, você pode desbloquear **${ unlockPlanTitle }** e todos os serviços premium da ${ BRAND_NAME } fazendo upgrade para o **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Continuar no ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Faça upgrade para ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -10450,6 +10491,9 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
+      ],
+      "Your plan": [
+        "O seu plano"
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
