@@ -6,6 +6,7 @@ import type { Audience } from '@proton/shared/lib/interfaces';
 import { type VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import type { PublicTheme } from '../containers/PublicThemeProvider';
+import { getAuthenticatorConfiguration } from './authenticator/configuration';
 import { getDriveConfiguration } from './drive/configuration';
 import { getGenericConfiguration } from './generic/configuration';
 import type { SignupModelV2, SignupParameters2 } from './interface';
@@ -103,6 +104,12 @@ export const getSignupConfiguration = ({
 
     if (getIsLumoApp(toApp)) {
         return getLumoConfiguration({
+            defaultPlan: signupParameters.defaultPlan,
+        });
+    }
+
+    if (toApp === APPS.PROTONAUTHENTICATOR) {
+        return getAuthenticatorConfiguration({
             defaultPlan: signupParameters.defaultPlan,
         });
     }
