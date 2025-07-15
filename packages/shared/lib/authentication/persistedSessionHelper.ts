@@ -163,6 +163,40 @@ interface PersistSessionWithPasswordArgs {
     source: PersistedSession['source'];
 }
 
+/**
+ * This is an assertion to ensure that the client doesn't blindly overwrite existing session
+ * when it gets the same Local ID. This error should never happen, so it's not dealt with
+ * better than erroring out. It's only performed at login and not other flows as a first
+ * step to gather data how often it occurs.
+ */
+export const assertUniqueLocalID = async ({
+    api,
+    LocalID,
+    UID,
+}: Pick<PersistSessionWithPasswordArgs, 'api' | 'LocalID' | 'UID'>) => {
+    const persistedSession = getPersistedSession(LocalID);
+    if (!persistedSession) {
+        return;
+    }
+    try {
+        const session = await resumeSession({ api, localID: LocalID });
+        // This error should never happen, it's intended as a safety mechanism to not blindly overwrite existing and valid sessions that are
+        // already persisted at that local id. This check is needed because it doesn't trust the API to always give a unique local id for this client.
+        if (session.UID !== UID) {
+            captureMessage('Duplicate local id', { level: 'info', extra: { LocalID, UID, ExistingUID: session.UID } });
+            // If it happens, keep the old session and clear the new session.
+            api(withUIDHeaders(UID, revoke())).catch(noop);
+            throw new Error('Incorrect sign in state. Please try again.');
+        }
+    } catch (e) {
+        if (e instanceof InvalidPersistentSessionError || getIs401Error(e)) {
+            // If session resumption errors out it's fine
+            return;
+        }
+        throw e;
+    }
+};
+
 export const persistSession = async ({
     api,
     clearKeyPassword,
