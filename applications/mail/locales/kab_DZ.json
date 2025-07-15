@@ -583,9 +583,6 @@
       "Load more": [
         "Sali-d ugar"
       ],
-      "Loading verification": [
-        "Asali n usenqed"
-      ],
       "Loading${ ellipsis }": [
         "Asali${ ellipsis }"
       ],
@@ -879,9 +876,6 @@
       ],
       "Resume": [
         "Kemmel"
-      ],
-      "Retry": [
-        "Ɛref̣ tikelt-nniḍen"
       ],
       "Revert to original display": [
         "Uɣal s abeqqeḍ n tazwara"
@@ -1376,9 +1370,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Asnas ${ MAIL_APP_NAME } i Desktop"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus d ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } n uḥraz"
@@ -3485,9 +3476,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Azal amezyan maḍi n usmad i izemren ad yettwarnu d ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Lexlaṣ amezyan maḍi i nezmer ad neqbel d ${ price }"
       ],
       "The sending key is not valid": [
         "Tasarut n tuzna ur d tameɣtut"
@@ -5687,9 +5675,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Yessefk ad tessenseḍ neɣ ad tekkseḍ akk iseqdacen imernan n ${ MAIL_APP_NAME }, tansiwin, d taɣulin tudmawanin send ad tessadreḍ deg lqem."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Yessfk ad tesεuḍ takarḍa n usmad neɣ amiḍan n tbanka i icudden ɣer umiḍan-ik·im PayPal. Ma amiḍan-ik·im PayPal ur yesεi ara aya, ttxil-k·m sit ɣef tqeffalt ddaw."
-      ],
       "You selected **${ count } conversation** from this folder": [
         "Tferneḍ **${ count } udiwenni** seg ukaram-a",
         "Tferneḍ **${ count } yidiwenniyen** seg ukaram-a"
@@ -6464,9 +6449,6 @@
       "Start date": [
         "Azemz n tazwara"
       ],
-      "State": [
-        "Addad"
-      ],
       "Statement": [
         "Tuttra"
       ],
@@ -6617,9 +6599,6 @@
       ],
       "clearing your browser cache": [
         "asfaḍ n tuffirt n iminig"
-      ],
-      "click here": [
-        "sit dagi"
       ],
       "contact us": [
         "nermes-aɣ-d"
@@ -7582,6 +7561,11 @@
     "Participant name": {
       "You": [
         "Kečč/kemm"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Aɣawas ${ upsellPlanTitle }"
       ]
     },
     "passwordless": {
@@ -9412,6 +9396,9 @@
       ],
       "Your changes are not synced yet": [
         "Isenfal-ik mazal ur mtawan ara"
+      ],
+      "Your plan": [
+        "Aɣawas-ik·im"
       ]
     },
     "Today icon tooltip in mini calendar": {

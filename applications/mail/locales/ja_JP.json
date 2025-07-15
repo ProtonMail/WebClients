@@ -768,9 +768,6 @@
       "Load more": [
         "さらに読み込む"
       ],
-      "Loading verification": [
-        "認証を読み込み中"
-      ],
       "Loading${ ellipsis }": [
         "読み込み中${ ellipsis }"
       ],
@@ -1077,6 +1074,9 @@
       "Remove from favorites": [
         "お気に入りから削除"
       ],
+      "Remove from list": [
+        "リストから削除"
+      ],
       "Remove gift code": [
         "ギフトコードを削除"
       ],
@@ -1139,9 +1139,6 @@
       ],
       "Resume downloading": [
         "ダウンロードを再開"
-      ],
-      "Retry": [
-        "再試行"
       ],
       "Revert to original display": [
         "元の表示に戻す"
@@ -1960,9 +1957,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plusと${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
@@ -4742,9 +4736,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "追加クレジットの最低金額は ${ price } です。"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "最低 ${ price } より受け付けています。"
-      ],
       "The sending key is not valid": [
         "送信用の鍵が有効ではありません"
       ],
@@ -7351,9 +7342,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "確認ボタンをクリックすると、アカウントには ${ creditsRemaining } クレジットが残りますのでご注意ください。"
-      ],
       "Please open the document to view it.": [
         "文書を表示するにはまず開いてください。"
       ],
@@ -7867,6 +7855,9 @@
       "This was shown to you because your email subject line contains password reset keywords.": [
         "これは、メールの件名にパスワードリセットキーワードが含まれているため表示されました。"
       ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "このリストからニュースレターのエントリを削除します。ニュースレターの登録を解除することはありません。新規メッセージを受信すると、再び表示されます。"
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "これにより、現在ログインしているすべてのアカウントからサインアウトされます。"
       ],
@@ -7965,9 +7956,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
-      ],
-      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
-        "${ MAIL_APP_NAME } Plusにアップグレードしてロックを解除する"
       ],
       "Upgrade to add more addresses to your account.": [
         "アップグレードして更なるアドレスを手に入れましょう。"
@@ -8248,9 +8236,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "ダウングレードする前に、追加の ${ MAIL_APP_NAME } のユーザー、アドレス、独自ドメインを削除する必要があります。"
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal アカウントにクレジットカードまたは銀行口座を登録しておく必要があります。PayPal アカウントをお持ちでない場合はこちらのボタンをクリックしてください。"
-      ],
       "You selected **${ count } conversation** from this folder": [
         "このフォルダー内の **${ count } 件の会話**を選択中"
       ],
@@ -8301,9 +8286,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高はあなたのアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetime ディールには更新価格はなく、一度の支払いで ${ PASS_SHORT_APP_NAME } への生涯アクセスが得られます。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
@@ -8945,9 +8927,6 @@
       "Extended address": [
         "拡張アドレス"
       ],
-      "Failed to create folder ${ customFolderName }": [
-        "「${ customFolderName }」フォルダーの作成に失敗しました"
-      ],
       "Filter Name": [
         "フィルター名"
       ],
@@ -9051,7 +9030,7 @@
         "としてマークする"
       ],
       "Marked as read": [
-        "既読にされました"
+        "既読にしました"
       ],
       "Message:": [
         "メッセージ:"
@@ -9072,13 +9051,13 @@
         "受信トレイに移動"
       ],
       "Moved to ${ labelName }": [
-        "${ labelName }に移動されました"
+        "${ labelName }に移動しました"
       ],
       "Moved to Archive": [
-        "アーカイブに移動されました"
+        "アーカイブに移動しました"
       ],
       "Moved to Trash": [
-        "ゴミ箱に移動されました"
+        "ごみ箱に移動しました"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "少なくとも ${ MIN_PASSWORD_LENGTH } 文字以上でなければなりません"
@@ -9091,6 +9070,9 @@
       ],
       "New password": [
         "新しいパスワード"
+      ],
+      "Newsletter entry deleted": [
+        "ニュースレターの登録が削除されました"
       ],
       "Newsletters": [
         "ニュースレター"
@@ -9217,9 +9199,6 @@
       ],
       "Start date": [
         "開始日"
-      ],
-      "State": [
-        "州"
       ],
       "Statement": [
         "適用状態"
@@ -9447,9 +9426,6 @@
       ],
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
-      ],
-      "click here": [
-        "ここをクリック"
       ],
       "contact us": [
         "私たちに連絡"
@@ -10563,9 +10539,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "ビジネスの機密情報を保護して安全に共同作業"
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "家族を守るために、6 人のユーザー向けに${ PASS_SHORT_APP_NAME } Plusのすべてのプレミアム機能をご利用ください。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "すべての ${ BRAND_NAME } サービスを組み合わせて、ご家族のプライバシーを保護します。"
       ],
@@ -10988,9 +10961,6 @@
       "Get the deal": [
         "割引を入手"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "最初の月の${ plan } Plusが 80 %割引になる最後のチャンス。"
-      ],
       "Last day to save": [
         "節約できる最後の日"
       ],
@@ -11378,6 +11348,11 @@
         "無制限のログイン、メモ、クレジットカードなど"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } プラン"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } 個のユーザーアカウント"
@@ -11494,26 +11469,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
-      "Please select billing country": [
-        "請求先の国を選択してください"
-      ],
-      "Please select billing state": [
-        "請求先の州を選択してください"
-      ],
-      "Please select your billing country first.": [
-        "最初に請求先の国を選択してください。"
-      ],
-      "Please select your billing state first.": [
-        "最初に請求先の州を選択してください。"
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "更新価格は ${ termsAndConditionsLink }に応じて変更される可能性があります。"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
-      ],
-      "Select billing country to pay": [
-        "支払い請求先の国を選択してください"
       ],
       "terms & conditions": [
         "利用規約"
@@ -14304,6 +14264,9 @@
       "Recover data": [
         "データを復元する"
       ],
+      "Remove from list?": [
+        "リストから削除しますか？"
+      ],
       "Reply": [
         "返信"
       ],
@@ -14555,6 +14518,9 @@
       ],
       "Your free trial has ended": [
         "無料トライアルが終了しました"
+      ],
+      "Your plan": [
+        "現在のプラン"
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
