@@ -14,8 +14,8 @@ interface ScreenShareHeadingProps {
 export const ScreenShareHeading = ({ name, isLocalUser, onStopScreenShare }: ScreenShareHeadingProps) => {
     return (
         <div
-            className="screen-share-heading flex flex-nowrap items-center w-full h-custom rounded-lg px-4 py-3 justify-space-between"
-            style={{ '--h-custom': '3.875rem' }}
+            className="screen-share-heading flex flex-nowrap items-center w-full h-custom rounded-lg px-4 py-0 justify-space-between"
+            style={{ '--h-custom': '3rem' }}
         >
             <div className="flex flex-nowrap items-center gap-2">
                 <IcMeetScreenShare size={6} />

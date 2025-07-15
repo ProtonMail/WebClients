@@ -67,10 +67,11 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
             <div
                 className="absolute top-custom right-custom flex items-center justify-center gap-2"
                 style={{
-                    '--top-custom': smallView ? '0.5rem' : '1.25rem',
-                    '--right-custom': smallView ? '0.5rem' : '1.25rem',
+                    '--top-custom': smallView ? '0.5rem' : '1rem',
+                    '--right-custom': smallView ? '0.5rem' : '1rem',
                 }}
             >
+                {shouldShowConnectionIndicator && <ConnectionIndicator connectionQuality={connectionQuality} />}
                 {isSpeaking && audioIsOn && <SpeakingIndicator size={32} participant={participant} />}
                 {!audioIsOn && (
                     <div
@@ -84,7 +85,6 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                         <IcMeetMicrophoneOff size={4} />
                     </div>
                 )}
-                {shouldShowConnectionIndicator && <ConnectionIndicator connectionQuality={connectionQuality} />}
             </div>
 
             {isSpeaking && (
@@ -124,7 +124,7 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                 style={{
                     '--left-custom': smallView ? '1rem' : '1.25rem',
                     '--bottom-custom': smallView ? '0.5rem' : '1rem',
-                    '--max-w-custom': smallView ? '8rem' : '15rem',
+                    '--max-w-custom': '85%',
                 }}
                 title={participantName}
             >

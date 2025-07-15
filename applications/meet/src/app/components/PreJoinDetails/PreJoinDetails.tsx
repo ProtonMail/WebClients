@@ -31,7 +31,7 @@ export const PreJoinDetails = ({
         : c('l10n_nightly Action').t`Join meeting`;
 
     const title = instantMeeting
-        ? c('l10n_nightly Title').t`Talk Confidentially`
+        ? c('l10n_nightly Title').t`Talk confidentially`
         : c('l10n_nightly Title').jt`Join Meeting`;
 
     const getSubtitle = () => {

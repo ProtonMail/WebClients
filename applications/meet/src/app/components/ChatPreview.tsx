@@ -1,11 +1,8 @@
 import { useEffect, useMemo, useRef } from 'react';
 
 import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
-import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { IcCross } from '@proton/icons';
-
+import { CloseButton } from '../atoms/CloseButton/CloseButton';
 import { useMeetContext } from '../contexts/MeetContext';
 import { useUIStateContext } from '../contexts/UIStateContext';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
@@ -99,15 +96,7 @@ export const ChatPreview = () => {
                 shouldGrow={true}
             />
 
-            <Button
-                shape="ghost"
-                size="small"
-                className="ml-auto"
-                onClick={toggleChatPreview}
-                aria-label={c('l10n_nightly Alt').t`Close chat preview`}
-            >
-                <IcCross size={6} className="color-weak" />
-            </Button>
+            <CloseButton onClose={toggleChatPreview} className="ml-auto" />
         </div>
     );
 };

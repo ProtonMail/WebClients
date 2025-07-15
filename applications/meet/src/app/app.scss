@@ -101,19 +101,19 @@ $profile-colors:
 	}
 }
 
-.meet-radius {
-	border-radius: 1.5rem;
+.search-open-button {
+	color: var(--text-hint);
+
+	&:hover {
+		color: var(--color-norm);
+		background-color: transparent !important;
+	}
 }
 
-.meet-font-weight {
-	font-weight: 500;
-}
+.device-selector-dropdown {
+	max-inline-size: 50vw !important;
 
-.dropdown-content {
-	background-image: none !important;
-	scrollbar-color: var(--interaction-weak) transparent !important;
-
-	&::-webkit-scrollbar-thumb {
-		background: var(--interaction-weak) !important;
+	.dropdown-content {
+		max-inline-size: 50vw !important;
 	}
 }

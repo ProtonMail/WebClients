@@ -28,8 +28,8 @@ export const SideBarSearch = ({
     }, []);
 
     return (
-        <div className="mb-4 flex items-center w-full gap-2 side-bar-search">
-            <IcMagnifier className="color-hint" size={6} />
+        <div className="flex items-center w-full gap-2 side-bar-search">
+            <IcMagnifier className="color-norm" size={6} />
             <Input
                 ref={inputRef}
                 value={searchExpression}
@@ -39,7 +39,7 @@ export const SideBarSearch = ({
                 placeholder={placeholder}
             />
             <Button
-                className="ml-2 flex items-center justify-center text-hint color-primary"
+                className="search-cancel-button ml-2 flex items-center justify-center text-hint color-primary rounded-full"
                 shape="ghost"
                 size="small"
                 onClick={() => {

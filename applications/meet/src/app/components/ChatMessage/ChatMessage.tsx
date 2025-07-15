@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { InputFieldTwo, TextAreaTwo, useHotkeys } from '@proton/components';
-import { IcArrowUp } from '@proton/icons';
+import { IcMeetSend } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { trimMessage } from '../../utils/trim-message';
@@ -65,13 +65,12 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                     ref={textareaRef}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder={c('l10n_nightly Placeholder').t`Type a message...`}
+                    placeholder={c('l10n_nightly Placeholder').t`Type an encrypted message...`}
                     unstyled={true}
-                    className={clsx('border-none resize-none relative top-custom px-0', 'hide-scrollbar')}
+                    className={clsx('border-none resize-none px-0 my-auto', 'hide-scrollbar')}
                     style={{
                         minHeight: '2.25rem',
                         maxHeight: '6rem',
-                        '--top-custom': '-0.5rem',
                     }}
                     as={TextAreaTwo}
                     assistContainerClassName="display-none"
@@ -90,10 +89,10 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                         '--w-custom': '2.25rem',
                         '--h-custom': '2.25rem',
                     }}
-                    aria-label={c('l10n_nightly Alt').t`Send message`}
+                    aria-label={c('l10n_nightly Alt').t`Send an encrypted message`}
                     disabled={!trimMessage(message)}
                 >
-                    <IcArrowUp size={5} className="color-invert" />
+                    <IcMeetSend size={5} className="color-invert" />
                 </Button>
             </div>
         </div>

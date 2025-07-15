@@ -15,20 +15,13 @@ import { IcEye, IcEyeSlash } from '@proton/icons';
 import './PasswordPrompt.scss';
 
 interface PasswordPromptProps {
-    onPasswordSubmit: (password: string) => Promise<boolean>;
+    password: string;
+    setPassword: (password: string) => void;
+    onPasswordSubmit: () => Promise<boolean>;
 }
 
-export const PasswordPrompt = ({ onPasswordSubmit }: PasswordPromptProps) => {
-    const [password, setPassword] = useState('');
+export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit }: PasswordPromptProps) => {
     const [showPassword, setShowPassword] = useState(false);
-
-    const handleSubmit = async () => {
-        const result = await onPasswordSubmit(password);
-
-        if (result) {
-            setPassword('');
-        }
-    };
 
     return (
         <div className="password-prompt-wrapper text-center">
@@ -90,7 +83,7 @@ export const PasswordPrompt = ({ onPasswordSubmit }: PasswordPromptProps) => {
                                 className="continue-button rounded-full py-4 color-invert w-full text-semibold"
                                 color="norm"
                                 size="large"
-                                onClick={handleSubmit}
+                                onClick={onPasswordSubmit}
                                 disabled={!password}
                             >
                                 {c('l10n_nightly Action').t`Continue`}

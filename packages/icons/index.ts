@@ -271,6 +271,7 @@ export type IconName =
     | 'meet-microphone-filled-off'
     | 'meet-more'
     | 'meet-screen-share'
+    | 'meet-send'
     | 'meet-settings'
     | 'meet-shield-full'
     | 'meet-shield'
@@ -705,6 +706,7 @@ export { IcMeetMicrophoneFilled } from './icons/IcMeetMicrophoneFilled';
 export { IcMeetMicrophoneFilledOff } from './icons/IcMeetMicrophoneFilledOff';
 export { IcMeetMore } from './icons/IcMeetMore';
 export { IcMeetScreenShare } from './icons/IcMeetScreenShare';
+export { IcMeetSend } from './icons/IcMeetSend';
 export { IcMeetSettings } from './icons/IcMeetSettings';
 export { IcMeetShieldFull } from './icons/IcMeetShieldFull';
 export { IcMeetShield } from './icons/IcMeetShield';

@@ -33,6 +33,7 @@ export const MeetContainer = ({
         isFaceTrackingEnabled,
         isAudioEnabled,
         isVideoEnabled,
+        displayName,
     },
     setAudioDeviceId,
     setAudioOutputDeviceId,
@@ -109,6 +110,7 @@ export const MeetContainer = ({
                     setDisableVideos,
                     participantsWithDisabledVideos,
                     setParticipantsWithDisabledVideos,
+                    displayName,
                 }}
             >
                 <UIStateProvider instantMeeting={instantMeeting}>

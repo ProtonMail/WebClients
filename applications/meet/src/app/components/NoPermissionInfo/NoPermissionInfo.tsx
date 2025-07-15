@@ -69,11 +69,11 @@ export const NoPermissionInfo = () => {
             <Button
                 shape="ghost"
                 size="tiny"
-                className="ml-4"
+                className="ml-4 rounded-full"
                 onClick={() => setIsOpen(false)}
                 aria-label={c('l10n_nightly Action').t`Close`}
             >
-                <IcCross size={4} />
+                <IcCross className="color-hint" size={4} />
             </Button>
         </div>
     );

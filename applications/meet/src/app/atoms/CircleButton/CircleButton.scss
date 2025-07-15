@@ -17,7 +17,7 @@
 	color: var(--text-invert) !important;
 
 	&:hover {
-		--circle-button-bg: var(--interaction-norm-major-1);
+		--circle-button-bg: var(--interaction-norm-minor-1);
 	}
 }
 
@@ -25,7 +25,7 @@
 	--circle-button-bg: var(--interaction-weak-minor-1);
 
 	&:hover {
-		--circle-button-bg: var(--interaction-weak);
+		--circle-button-bg: var(--interaction-weak-minor-2);
 	}
 }
 

@@ -47,31 +47,36 @@ export const Participants = () => {
     }
 
     return (
-        <SideBar onClose={() => toggleSideBarState(MeetingSideBars.Participants)}>
-            <div className="absolute top-0 left-0 w-full px-4 pt-4 pb-0 bg-norm rounded-xl" style={{ opacity: 0.9 }}>
-                {isSearchOn ? (
-                    <SideBarSearch
-                        searchExpression={searchExpression}
-                        setSearchExpression={setSearchExpression}
-                        setIsSearchOn={setIsSearchOn}
-                        placeholder={c('l10n_nightly Placeholder').t`Search participants`}
-                    />
-                ) : (
-                    <div className="mb-4 h3 text-semibold flex items-center">
-                        {c('l10n_nightly Title').t`Participants`} ({participants.length})
-                        <Button
-                            className="p-0 ml-2 flex items-center justify-center"
-                            shape="ghost"
-                            size="small"
-                            onClick={() => setIsSearchOn(!isSearchOn)}
-                            aria-label={c('l10n_nightly Alt').t`Open participants search`}
-                        >
-                            <IcMagnifier size={6} />
-                        </Button>
-                    </div>
-                )}
-            </div>
-
+        <SideBar
+            onClose={() => toggleSideBarState(MeetingSideBars.Participants)}
+            absoluteHeader={true}
+            header={
+                <div className="flex items-center">
+                    {isSearchOn ? (
+                        <SideBarSearch
+                            searchExpression={searchExpression}
+                            setSearchExpression={setSearchExpression}
+                            setIsSearchOn={setIsSearchOn}
+                            placeholder={c('l10n_nightly Placeholder').t`Find...`}
+                        />
+                    ) : (
+                        <div className="text-semibold flex items-center">
+                            <div className="text-3xl">{c('l10n_nightly Title').t`Participants`}</div>
+                            <div className="text-semibold text-3xl">({participants.length})</div>
+                            <Button
+                                className="search-open-button p-0 ml-2 flex items-center justify-center"
+                                shape="ghost"
+                                size="small"
+                                onClick={() => setIsSearchOn(!isSearchOn)}
+                                aria-label={c('l10n_nightly Alt').t`Open participants search`}
+                            >
+                                <IcMagnifier size={6} />
+                            </Button>
+                        </div>
+                    )}
+                </div>
+            }
+        >
             <div className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 h-full participants-list">
                 {filteredParticipants.map((participant: Participant, index) => {
                     const videoPub = Array.from(participant.trackPublications.values()).find(
@@ -88,14 +93,14 @@ export const Participants = () => {
                     return (
                         <div
                             key={participant.identity}
-                            className="flex gap-2 h-custom"
+                            className="flex flex-nowrap gap-2 h-custom"
                             style={{ '--h-custom': 'fit-content', flexShrink: 0 }}
                         >
                             <div
                                 className={clsx(
                                     `meet-background-${(index % 6) + 1}`,
                                     `profile-color-${(index % 6) + 1}`,
-                                    'rounded-full flex items-center justify-center w-custom h-custom'
+                                    'rounded-full flex items-center justify-center w-custom h-custom shrink-0'
                                 )}
                                 style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
                             >
@@ -111,13 +116,13 @@ export const Participants = () => {
                                 </div>
                             </div>
                             <div
-                                className="max-w-custom text-ellipsis my-auto"
-                                style={{ '--max-w-custom': '12rem' }}
+                                className="min-w-custom text-ellipsis my-auto flex-1"
+                                style={{ '--min-w-custom': '12rem' }}
                                 title={name}
                             >
                                 {name}
                             </div>
-                            <div className="flex flex-nowrap items-center ml-auto gap-4 pr-4">
+                            <div className="flex flex-nowrap items-center ml-auto gap-4 pr-4 shrink-0">
                                 {!!activeSpeakers.find((p) => p.identity === participant.identity) ? (
                                     <SpeakingIndicator participant={participant} size={32} />
                                 ) : (
