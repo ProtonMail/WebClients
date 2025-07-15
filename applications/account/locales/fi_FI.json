@@ -2020,9 +2020,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } -työpöytäsovellus"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } tallennustilaa"
       ],
@@ -3995,9 +3992,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Lajittele saapuvat viestisi automaattisesti, ennen kuin ne saapuvat postilaatikkoosi."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "Saatavilla ${ MAIL_APP_NAME } Plussalla"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Määritä tämä ensin aktivoidaksesi organisaatiosi ja mukauttaaksesi sähköpostiosoitettasi."
       ],
@@ -5401,9 +5395,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Lisättävien krediittien vähimmäissumma on ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Hyväksymämme vähimmäismaksu on ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Käytännön nimen on oltava 3–40 merkkiä."
@@ -9047,10 +9038,6 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Huomioithan, että suodattimen ${ nameDeleted } poisto lopettaa myös kaikkien sen käynnistämien automaattisten toimintojen käsittelyn."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediitti.",
-        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
-      ],
       "please open a support ticket": [
         "avaa tukipyyntö"
       ],
@@ -10227,9 +10214,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "PayPal-tililläsi on oltava maksukortti tai pankkitili, jotta voit lisätä sen maksutavaksi."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal-tililläsi on oltava maksukortti tai pankkitili. Jos PayPal-tililläsi ei näitä ole, paina alla olevaa painiketta."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Sinulla on oltava aktiivinen henkilökohtainen kalenteri, jotta voit tuoda tapahtumat ICS-tiedostosta."
       ],
@@ -10284,9 +10268,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Sinun ${ BRAND_NAME } -salasanasi"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus -tilauksesi korvataan elinikäisellä ${ PASS_SHORT_APP_NAME }illa, ja tilauksesi jäljellä oleva saldo lisätään tilillesi. Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } - ja ${ MAIL_APP_NAME } -tilisi on yhdistetty. Poistaaksesi ne molemmat, kirjaudu osoitteessa ${ loginLink } ja poista tilisi sieltä."
@@ -10394,6 +10375,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Optional": [
+        "Valinnainen"
       ],
       "Selected color:": [
         "Valittu väri:"
@@ -12234,9 +12218,6 @@
       "clearing your browser cache": [
         "selaimen välimuistin tyhjennys"
       ],
-      "click here": [
-        "paina tästä"
-      ],
       "Common sign in issues": [
         "Yleisiä kirjautumisongelmia"
       ],
@@ -12362,9 +12343,6 @@
       ],
       "Pay invoice": [
         "Maksa lasku"
-      ],
-      "PayPal without credit card": [
-        "PayPal ilman maksukorttia"
       ],
       "perform a password reset from your active session": [
         "salasanan uudelleenasetus onnistua aktiivisen istunnon kautta"
@@ -13666,9 +13644,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Suojaa arkaluonteiset yritystiedot ja yhteiskäytä turvallisesti."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Suojaa perheesi kaikilla ${ PASS_SHORT_APP_NAME } Plussan premium-ominaisuuksista kuudelle käyttäjälle."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Suojaa perheesi yksityisyyttä kaikkien ${ BRAND_NAME } -palveluiden yhdistelmällä."
       ],
@@ -13745,9 +13720,6 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Aloita valitsemalla näyttönimi. Tämä näkyy sähköpostiviestien, tapahtumakutsujen ja tiedostojakojen vastaanottajille."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "${ planName }-tilauksesi on nyt käytössä."
       ],
       "Your selected plan: ${ planName }": [
         "Valitsemasi tilaus: ${ planName }"
@@ -14352,9 +14324,6 @@
       "Get the deal": [
         "Hyödynnä tarjous"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Viimeinen mahdollisuus saada 80 % alennus ${ plan } Plussan ensimmäisestä kuukaudesta."
-      ],
       "Last day to save": [
         "Viimeisin tallennettava päivä"
       ],
@@ -14866,9 +14835,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Hanki elinikäinen käyttöoikeus kaikkiin nykyisiin ja tuleviin ${ PASS_APP_NAME }-premium-ominaisuuksiin yhdellä kertamaksulla."
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "Tervetuloa ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } -tilaukseen"
       ]
     },
     "pass_signup_2023: Action": {
@@ -14956,9 +14922,6 @@
       ],
       "Select your plan": [
         "Valitse tilauksesi"
-      ],
-      "Upgrade your plan": [
-        "Päivitä tilauksesi"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15177,9 +15140,6 @@
       ],
       "Verifying your payment": [
         "Maksuasi vahvistetaan"
-      ],
-      "Welcome to ${ shortName } Plus": [
-        "Tervetuloa ${ shortName } Plus -tilaukseen"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Sinulla on jo käytössäsi ${ appName }-premium-ominaisuudet — niitä ei tarvitse ostaa uudelleen."
@@ -15425,18 +15385,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktivoi tilauksesi uudelleen, ennen kuin voit vähentää lisäosien määrää."
       ],
-      "Please select billing country": [
-        "Valitse laskutusmaa"
-      ],
-      "Please select billing state": [
-        "Valitse laskutusosavaltio"
-      ],
-      "Please select your billing country first.": [
-        "Valitse laskutusmaasi ensin."
-      ],
-      "Please select your billing state first.": [
-        "Valitse laskutusosavaltiosi ensin."
-      ],
       "Processing payment": [
         "Käsitellään maksua"
       ],
@@ -15445,9 +15393,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
-      ],
-      "Select billing country to pay": [
-        "Valitse laskutusmaa maksaaksesi"
       ],
       "terms & conditions": [
         "käyttöehdot"
@@ -18667,9 +18612,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ appName } keyboard shortcuts": [
         "${ appName }-pikanäppäimet"
       ],
@@ -19962,9 +19904,6 @@
       ],
       "Time zone": [
         "Aikavyöhyke"
-      ],
-      "Track your referrals": [
-        "Seuraa suosituksiasi"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"

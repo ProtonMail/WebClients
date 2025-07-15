@@ -148,6 +148,9 @@
       "Add public holidays": [
         "Añadir calendario de días festivos"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Añadir un enlace de referidos en la firma de ${ MAIL_APP_NAME }"
+      ],
       "Add sieve filter": [
         "Añadir un filtro Sieve"
       ],
@@ -216,6 +219,9 @@
       ],
       "Cancel subscription": [
         "Cancelar tu suscripción"
+      ],
+      "Cancel trial and pay": [
+        "Cancelar la prueba gratuita y pagar"
       ],
       "Change": [
         "Cambio"
@@ -2174,8 +2180,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicación para ordenador ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus y ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } y ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
@@ -4178,8 +4184,8 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ordena automáticamente tus mensajes entrantes antes de que lleguen a tu bandeja de entrada."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "Disponible con ${ MAIL_APP_NAME } Plus"
+      "Available with ${ title }": [
+        "Disponible con ${ title }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configura esto primero para activar tu organización y personalizar tu dirección de correo electrónico."
@@ -4290,6 +4296,9 @@
       "To start, give your organization a name.": [
         "Para empezar, asigna un nombre a tu organización."
       ],
+      "Track the status and activity of your referrals": [
+        "Sigue el estado y la actividad de tus referidos"
+      ],
       "Track the status and activity of your referrals.": [
         "Sigue el estado y la actividad de tus referidos."
       ],
@@ -4307,6 +4316,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
+      ],
+      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
+        "Recibirás ${ referralReward } en crédito de ${ BRAND_NAME } cuando la persona que invites se registre para un plan de ${ BRAND_NAME }, y también recibirán ${ referralReward } en créditos para empezar."
       ]
     },
     "description": {
@@ -5432,6 +5444,9 @@
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
+      "Invalid ZIP code": [
+        "Código postal inválido"
+      ],
       "Item content cannot exceed 40KB": [
         "El contenido del elemento no puede superar los 40 KB."
       ],
@@ -5526,6 +5541,18 @@
       "Please enter a valid Entity ID URL": [
         "Introduce una URL de ID de entidad válida."
       ],
+      "Please enter a valid postal code": [
+        "Por favor, introduzca un código postal válido"
+      ],
+      "Please enter a valid ZIP code": [
+        "Introduce un código postal válido"
+      ],
+      "Please enter postal code": [
+        "Por favor, introduzca el código postal"
+      ],
+      "Please enter ZIP code": [
+        "Por favor, introduzca el código postal"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregla el conflicto resaltado para continuar.",
         "Arregla los conflictos resaltados para continuar."
@@ -5544,6 +5571,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Selecciona al menos un usuario o grupo antes de continuar."
+      ],
+      "Please select billing country": [
+        "Por favor, selecciona el país de facturación"
+      ],
+      "Please select billing state": [
+        "Selecciona el estado de facturación"
       ],
       "Please set a recovery email first": [
         "Establece primero un correo electrónico de recuperación."
@@ -5574,6 +5607,9 @@
       ],
       "Port is required": [
         "Puerto requerido"
+      ],
+      "Postal code is required": [
+        "El código postal es requerido"
       ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada."
@@ -5668,9 +5704,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "El pago mínimo que aceptamos es de ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "El nombre de la política debe tener entre 3 y 40 caracteres."
@@ -7783,6 +7816,9 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Consigue una dirección de ${ BRAND_NAME }** para usar todos los servicios ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invita a tus amigos** a ${ BRAND_NAME } con tu enlace de referidos."
+      ],
       "+ ${ invisibleCount } More": [
         "+${ invisibleCount } más",
         "+${ invisibleCount } más"
@@ -8685,6 +8721,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obtén acceso al crear una cuenta de ${ BRAND_NAME } y aceptar la invitación."
       ],
+      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
+        "Consigue y regala **${ referralReward } créditos** por cada amigo que se suscriba."
+      ],
       "Get it on Google Play": [
         "Descárgala en Google Play"
       ],
@@ -8693,6 +8732,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Recibe notificaciones si tu contraseña u otro dato personal fue filtrado. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started with the referral link above.": [
+        "Empieza con el enlace de referido de arriba."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Ponle un nombre descriptivo al token, como el servicio con el que planeas utilizarlo, y selecciona una de tus direcciones con dominio personalizado activas. Solamente esa dirección podrá enviar correos con este token."
@@ -8914,6 +8956,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Invita a tu pareja, amigos o a quien sea con quien estés compartiendo tu plan de ${ protonDuoPlanName }."
+      ],
+      "Invited": [
+        "Invitado"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Parece que algunos de tus datos están cifrados y bloqueados."
@@ -9317,6 +9362,9 @@
       "Paid for a monthly plan": [
         "Pagado por un plan mensual"
       ],
+      "Paid for a plan": [
+        "Pagado por un plan"
+      ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - se ha confirmado el correo personalizado."
       ],
@@ -9399,10 +9447,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Ten en cuenta que si eliminas el filtro ${ nameDeleted }, dejaremos de procesar todas las acciones automatizadas que desencadena."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } crédito restante.",
-        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
       "please open a support ticket": [
         "abre un tiquete de soporte."
@@ -10563,6 +10607,9 @@
       "You do not have permission to perform this action": [
         "No tienes permiso para realizar esta acción."
       ],
+      "You don't have any referrals.": [
+        "No tienes ningún referido."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
@@ -10609,9 +10656,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta PayPal para añadirla como método de pago."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta de PayPal. Si tu cuenta de PayPal no lo tiene, haz clic en el botón de abajo."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Necesitas un calendario personal activo para importar tus eventos desde un archivo ICS."
@@ -10681,8 +10725,8 @@
       "Your ${ BRAND_NAME } password": [
         "Tu contraseña de ${ BRAND_NAME }"
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Tu suscripción ${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de tu suscripción se añadirá a tu cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Tu suscripción ${ plan } será reemplazada por ${ PASS_SHORT_APP_NAME } de por vida. El saldo restante de tu suscripción se añadirá a tu cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceder de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Tus cuentas ${ VPN_APP_NAME } y ${ MAIL_APP_NAME } están vinculadas. Para eliminar ambas, inicia sesión en ${ loginLink } y elimina tu cuenta allí."
@@ -10729,6 +10773,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Tu prueba gratuita se convirtió correctamente en una suscripción mensual. Tu fecha de renovación es ${ nextBillingDate }."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Tus amigos obtienen **2 semanas gratis** en el plan que elijan."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Tu importación desde ${ accounts } se ha retrasado temporalmente.",
@@ -10814,6 +10861,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "La clave ${ fingerprint } ya ha sido cargada."
+      ],
+      "Optional": [
+        "Opcional"
       ],
       "Selected color:": [
         "Color seleccionado:"
@@ -12226,6 +12276,9 @@
       "Reveal password": [
         "Mostrar contraseña"
       ],
+      "Reward": [
+        "Recompensa"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
       ],
@@ -12255,6 +12308,9 @@
       ],
       "Sequences": [
         "Secuencias"
+      ],
+      "Share your referral link": [
+        "Comparte tu enlace de referidos"
       ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
@@ -12590,6 +12646,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Código postal"
+      ],
       "ZIP code": [
         "Código postal"
       ]
@@ -12664,9 +12723,6 @@
       ],
       "clearing your browser cache": [
         "limpiando la memoria caché de tu navegador"
-      ],
-      "click here": [
-        "haz clic aquí"
       ],
       "Common sign in issues": [
         "Problemas comunes de inicio de sesión"
@@ -12794,9 +12850,6 @@
       "Pay invoice": [
         "Pagar factura"
       ],
-      "PayPal without credit card": [
-        "PayPal sin tarjeta de crédito"
-      ],
       "perform a password reset from your active session": [
         "restablecer la contraseña desde una sesión activa"
       ],
@@ -12826,6 +12879,9 @@
       ],
       "Terms": [
         "Términos"
+      ],
+      "Terms and conditions": [
+        "Términos y condiciones"
       ],
       "Trouble signing in?": [
         "¿Problemas para iniciar sesión?"
@@ -14124,8 +14180,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Protege la información sensible de tu negocio y colabora con seguridad."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Protege a tu familia con todas las características premium de ${ PASS_SHORT_APP_NAME } Plus para seis usuarios."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Protege a tu familia con todas las funciones prémium de ${ plusTitle } para 6 usuarios."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protege la privacidad de tu familia con todos los servicios combinados de ${ BRAND_NAME }."
@@ -14204,8 +14260,8 @@
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Para empezar, elige un Nombre a mostrar. Será el nombre que verán las demás personas cuando les envíes un correo, las invites a un evento o compartas archivos con ellas."
       ],
-      "Your ${ planName } subscription is now active.": [
-        "Tu suscripción de ${ planName } ahora está activa."
+      "Your ${ planTitleElement } subscription is now active.": [
+        "Tu suscripción de ${ planTitleElement } ahora está activa."
       ],
       "Your selected plan: ${ planName }": [
         "Has seleccionado el plan ${ planName }"
@@ -14228,6 +14284,9 @@
       ],
       "Downgrade account?": [
         "¿Pasar a un plan con menos funciones?"
+      ],
+      "Review subscription": [
+        "Revisar la suscripción"
       ],
       "Review subscription and pay": [
         "Verificar suscripción y pagar"
@@ -14813,8 +14872,8 @@
       "Get the deal": [
         "Aprovéchate de la oferta"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Última oportunidad para obtener un 80 % de descuento en tu primer mes de ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Última oportunidad para obtener un 80 % de descuento en tu primer mes de ${ plan }."
       ],
       "Last day to save": [
         "Último día para ahorrar"
@@ -15375,9 +15434,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Obtén acceso de por vida a todas las funciones premium ${ PASS_APP_NAME } actuales y futuras con un solo pago único."
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "Te damos la bienvenida a ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15465,9 +15521,6 @@
       ],
       "Select your plan": [
         "Elige tu plan"
-      ],
-      "Upgrade your plan": [
-        "Mejora tu plan"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15678,6 +15731,9 @@
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "La oferta que has seleccionado no se encuentra disponible para los suscriptores de ${ currentPlanTitle }."
       ],
+      "The offer you selected is not available for **${ currentPlanTitle }** subscribers.": [
+        "La oferta que has seleccionado no se encuentra disponible para los suscriptores de **${ currentPlanTitle }**."
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "para utilizar ${ PASS_APP_NAME } en tu teléfono"
       ],
@@ -15690,8 +15746,8 @@
       "Verifying your payment": [
         "Verificando tu pago"
       ],
-      "Welcome to ${ shortName } Plus": [
-        "Te damos la bienvenida a ${ shortName } Plus"
+      "Welcome to ${ plan }": [
+        "Te damos la bienvenida a ${ plan }"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Dispones de acceso a las características premium de ${ appName }— no es necesaria ninguna compra adicional."
@@ -15928,6 +15984,9 @@
       "Got it": [
         "Entendido"
       ],
+      "I'm purchasing as a business": [
+        "Estoy comprando como empresa"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -15937,18 +15996,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
-      "Please select billing country": [
-        "Selecciona el país de facturación"
-      ],
-      "Please select billing state": [
-        "Selecciona el estado de facturación"
-      ],
-      "Please select your billing country first.": [
-        "Selecciona primero tu país de facturación"
-      ],
-      "Please select your billing state first.": [
-        "Selecciona primero tu estado de facturación"
-      ],
       "Processing payment": [
         "Procesando el pago"
       ],
@@ -15957,9 +16004,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
-      ],
-      "Select billing country to pay": [
-        "Selecciona el país de facturación para pagar"
       ],
       "terms & conditions": [
         "los términos y condiciones"
@@ -15985,6 +16029,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puedes cancelar en cualquier momento.",
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puedes cancelar en cualquier momento."
+      ],
+      "This number will be shown on all future invoices": [
+        "Este número se mostrará en todas las futuras facturas"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en tu nuevo método de pago por defecto para todas las futuras renovaciones."
@@ -16041,6 +16088,20 @@
       ],
       "Street address, postal code, and city": [
         "Dirección, código postal y ciudad"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Número empresarial"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ]
     },
     "Permission": {
@@ -16170,6 +16231,9 @@
       "Please select the main reason": [
         "Selecciona el motivo principal."
       ],
+      "Postal code": [
+        "Código postal"
+      ],
       "Printer": [
         "Impresora"
       ],
@@ -16220,6 +16284,9 @@
       ],
       "yourdomain.com": [
         "tudominio.com"
+      ],
+      "ZIP code": [
+        "Código postal"
       ]
     },
     "placeholder": {
@@ -16286,6 +16353,20 @@
       ],
       "Enjoying ${ planName }?": [
         "¿Disfrutando de ${ planName }?"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Todos los servicios de ${ protonPlus }.${ br }Una suscripción sencilla."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Como suscriptor de **${ currentPlanTitle }**, puedes desbloquear **${ unlockPlanTitle }** y todos los servicios prémium de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Permanecer en ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Mejorar a ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -17639,7 +17720,7 @@
         "Cifrado de serie"
       ],
       "Calendar, password manager, file storage, and VPN included": [
-        "Calendario, gestor de contraseñas, almacenamiento de archivos y VPN incluidos"
+        "Incluye calendario, gestor de contraseñas, almacenamiento de archivos y VPN"
       ],
       "Device sync": [
         "Sincronización de dispositivos"
@@ -19355,9 +19436,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ appName } keyboard shortcuts": [
         "Atajos de teclado de ${ appName }"
       ],
@@ -20109,6 +20187,9 @@
       "Gift code": [
         "Código promocional"
       ],
+      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
+        "Regala ${ referralReward } y 2 semanas gratis. Obtén ${ referralReward } en créditos."
+      ],
       "Group": [
         "Grupo"
       ],
@@ -20190,6 +20271,9 @@
       ],
       "Invitations": [
         "Invitaciones"
+      ],
+      "Invite friends. Get credits.": [
+        "Invita a tus amigos. Obtén créditos."
       ],
       "Invoices": [
         "Facturas"
@@ -20681,9 +20765,6 @@
       "Time zone": [
         "Zona horaria"
       ],
-      "Track your referrals": [
-        "Mis referidos"
-      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activar ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -20833,6 +20914,9 @@
       ],
       "Your recovery status": [
         "Tu estado de recuperación"
+      ],
+      "Your referrals": [
+        "Tus referidos"
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."

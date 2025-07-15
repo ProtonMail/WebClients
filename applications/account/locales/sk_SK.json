@@ -2126,9 +2126,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Desktopová aplikácia ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } úložisko"
       ],
@@ -4149,9 +4146,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Automatické triedenie prichádzajúcich správ pred ich doručením do schránky."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "K dispozicii s ${ MAIL_APP_NAME } Plus"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Najprv nakonfigurujte túto možnosť, aby ste aktivovali svoju organizáciu a prispôsobili svoju emailovú adresu."
       ],
@@ -5655,9 +5649,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimálna výška kreditu, ktorý je možné pridať, je ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Minimálna platba, ktorú akceptujeme, je ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Názov politiky musí mať 3 až 40 znakov."
@@ -9524,12 +9515,6 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Vezmite prosím na vedomie, že ak zmažete filter ${ nameDeleted }, prestaneme spracovávať všetky automatické akcie, ktoré spúšťa."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kredit.",
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú ${ creditsRemaining } kredity.",
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov.",
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostane ${ creditsRemaining } kreditov."
-      ],
       "please open a support ticket": [
         "otvorte, prosím, žiadosť o technickú podporu"
       ],
@@ -10766,9 +10751,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Aby ste mohli pridať PayPal ako platobnú metódu, musíte ho mať prepojený s platobnou kartou alebo bankovým účtom."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Váš PayPal účet musí byť prepojený s platobnou kartou alebo bankovým účtom. Ak váš PayPal prepojený nie je, kliknite na tlačidlo nižšie."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Pred importovaním vašich udalostí z ICS musíte mať aktívny osobný kalendár."
       ],
@@ -10840,9 +10822,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Vaše heslo ${ BRAND_NAME }"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Vaše predplatné ${ PASS_SHORT_APP_NAME } Plus bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na vaše konto. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vaše účty ${ VPN_APP_NAME } a ${ MAIL_APP_NAME } sú prepojené. Ak chcete obidva odstrániť, prihláste sa na ${ loginLink } a odstráňte tam svoj účet."
@@ -10980,6 +10959,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Optional": [
+        "Voliteľné"
       ],
       "Selected color:": [
         "Vybraná farba:"
@@ -12847,9 +12829,6 @@
       "clearing your browser cache": [
         "vymazanie medzipamäte prehliadača"
       ],
-      "click here": [
-        "kliknite sem"
-      ],
       "Common sign in issues": [
         "Bežné problémy s prihlásením"
       ],
@@ -12975,9 +12954,6 @@
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
-      ],
-      "PayPal without credit card": [
-        "PayPal bez platobnej karty"
       ],
       "perform a password reset from your active session": [
         "resetovať heslo z Vášho aktuálneho prihlásenia"
@@ -14376,9 +14352,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Chráňte citlivé obchodné informácie a bezpečne spolupracujte."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Chráňte svoju rodinu pomocou všetkých prémiových funkcií ${ PASS_SHORT_APP_NAME } Plus pre 6 používateľov."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
       ],
@@ -14455,9 +14428,6 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Ak chcete začať, vyberte si zobrazované meno. Toto sa zobrazí ľuďom, keď im pošlete email, pozvete ich na udalosť alebo zdieľate súbor."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "Vaše predplatné ${ planName } je teraz aktívne."
       ],
       "Your selected plan: ${ planName }": [
         "Váš zvolený plán: ${ planName }"
@@ -15081,9 +15051,6 @@
       "Get the deal": [
         "Využiť ponuku"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Posledná šanca ušetriť 80% za prvý mesiac s ${ plan } Plus."
-      ],
       "Last day to save": [
         "Posledný deň, kedy môžete ušetriť"
       ],
@@ -15649,9 +15616,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Získajte doživotný prístup ku všetkým súčasným a budúcim prémiovým funkciám ${ PASS_APP_NAME } s jednorazovou platbou."
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "Vitajte v ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15739,9 +15703,6 @@
       ],
       "Select your plan": [
         "Vyberte svoj plán"
-      ],
-      "Upgrade your plan": [
-        "Upgradovať svoj plán"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15963,9 +15924,6 @@
       ],
       "Verifying your payment": [
         "Overujeme vašu platbu"
-      ],
-      "Welcome to ${ shortName } Plus": [
-        "Vitajte v ${ shortName } Plus"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Už máte prístup k prémiovým funkciám ${ appName } - nemusíte si ich kupovať znova."
@@ -16213,18 +16171,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
-      "Please select billing country": [
-        "Vyberte fakturačnú krajinu, prosím"
-      ],
-      "Please select billing state": [
-        "Vyberte štát platby, prosím"
-      ],
-      "Please select your billing country first.": [
-        "Najprv vyberte fakturačnú krajinu, prosím."
-      ],
-      "Please select your billing state first.": [
-        "Najprv vyberte fakturačný štát, prosím."
-      ],
       "Processing payment": [
         "Spracováva sa platba"
       ],
@@ -16233,9 +16179,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje sa za ${ renewPriceStr }, zrušiť môžete kedykoľvek."
-      ],
-      "Select billing country to pay": [
-        "Vyberte fakturačnú krajinu na platbu"
       ],
       "terms & conditions": [
         "podmienky používania"
@@ -19765,9 +19708,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ appName } keyboard shortcuts": [
         "${ appName } klávesové skratky"
       ],
@@ -21102,9 +21042,6 @@
       ],
       "Time zone": [
         "Časové pásmo"
-      ],
-      "Track your referrals": [
-        "Sledujte svoje odporúčania"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnúť ${ DARK_WEB_MONITORING_NAME }"

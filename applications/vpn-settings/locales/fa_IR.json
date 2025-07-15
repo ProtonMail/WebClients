@@ -1948,9 +1948,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "حداقل مبلغ اعتباری که می‌توان اضافه کرد ${ price } است"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "حداقل پرداختی که می‌پذیریم ${ price } است"
-      ],
       "This field is required": [
         "این قسمت الزامی است"
       ],
@@ -3014,9 +3011,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید تا بتوان آن را به‌عنوان یک روش پرداخت اضافه کنید."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید. اگر حساب PayPal شما این امکان را ندارد، لطفا روی دکمه زیر کلیک کنید."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "به زودی برای تایید پرداخت به PayPal هدایت می‌شوید."
       ],
@@ -3040,6 +3034,11 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "از شماره تلفن شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
+      ]
+    },
+    "info": {
+      "Optional": [
+        "اختیاری"
       ]
     },
     "Info for domain modal": {
@@ -3620,9 +3619,6 @@
       ],
       "clearing your browser cache": [
         "در حال پاک‌سازی حافظه نهان مرورگر"
-      ],
-      "click here": [
-        "اینجا کلیک کنید"
       ],
       "Common sign in issues": [
         "مشکلات متداول ورود به سیستم"

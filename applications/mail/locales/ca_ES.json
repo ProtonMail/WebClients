@@ -187,6 +187,9 @@
       "Cancel subscription": [
         "Cancel·la la subscripció"
       ],
+      "Cancel trial and pay": [
+        "Cancel·la la prova i pagar"
+      ],
       "Carbon Copy": [
         "Copia carbó"
       ],
@@ -772,9 +775,6 @@
       "Load more": [
         "Carrega'n més"
       ],
-      "Loading verification": [
-        "Carregant verificació"
-      ],
       "Loading${ ellipsis }": [
         "Carregant${ ellipsis }"
       ],
@@ -1146,9 +1146,6 @@
       ],
       "Resume downloading": [
         "Reprèn la descàrrega"
-      ],
-      "Retry": [
-        "Reintenta"
       ],
       "Revert to original display": [
         "Torna a la vista original"
@@ -1974,8 +1971,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus i ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } d'emmagatzematge"
@@ -4529,6 +4526,9 @@
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
       ],
+      "Invalid ZIP code": [
+        "Codi postal no vàlid"
+      ],
       "Item content cannot exceed 40KB": [
         "El contingut de l'element no pot excedir 40 kB."
       ],
@@ -4625,6 +4625,18 @@
       "Please activate your search again": [
         "Activeu de nou la vostra cerca."
       ],
+      "Please enter a valid postal code": [
+        "Introduïu un codi postal vàlid"
+      ],
+      "Please enter a valid ZIP code": [
+        "Introduïu un codi postal vàlid"
+      ],
+      "Please enter postal code": [
+        "Introduïu un codi postal"
+      ],
+      "Please enter ZIP code": [
+        "Introduïu el codi postal"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
@@ -4640,6 +4652,12 @@
       ],
       "Please select a state": [
         "Seleccioneu un estat"
+      ],
+      "Please select billing country": [
+        "Seleccioneu el país de facturació"
+      ],
+      "Please select billing state": [
+        "Seleccioneu l'estat de facturació"
       ],
       "Please try again or refresh the page.": [
         "Torneu-ho a provar o actualitzeu la pàgina."
@@ -4774,9 +4792,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "El pagament mínim que acceptem és ${ price }"
       ],
       "The sending key is not valid": [
         "La clau enviada no es vàlida"
@@ -7469,10 +7484,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Tingueu en compte que quan feu clic al botó «Confirmar», el vostre compte tindrà ${ creditsRemaining } crèdit restant.",
-        "Tingueu en compte que quan feu clic al botó «Confirmar», el vostre compte tindrà ${ creditsRemaining } crèdits restants."
-      ],
       "Please open the document to view it.": [
         "Obriu el document per visualitzar-lo."
       ],
@@ -8094,8 +8105,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
-      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
-        "Milloreu a ${ MAIL_APP_NAME } Plus per desbloquejar aquesta característica."
+      "Upgrade to ${ plan } to unlock": [
+        "Milloreu a ${ plan } per poder desbloquejar"
       ],
       "Upgrade to add more addresses to your account.": [
         "Milloreu el vostre pla per afegir més adreces al vostre compte."
@@ -8382,9 +8393,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Heu de desactivar o esborrar qualsevol usuari, adreça o domini personalitzat addicional de ${ MAIL_APP_NAME } abans de passar a un pla inferior."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal. Si el vostre compte de PayPal no en té, cliqueu el botó de sota."
-      ],
       "You selected **${ count } conversation** from this folder": [
         "Heu seleccionat **${ count } conversa** d'aquesta carpeta",
         "Heu seleccionat **${ count } converses** d'aquesta carpeta"
@@ -8445,8 +8453,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "El vostre compte de ${ BRAND_NAME } actualment està suspès. Els correus electrònics ja no es lliuren a la vostra safata d'entrada. Els vostres enllaços compartits de Drive ja no estan actius i no podeu carregar-hi fitxers nous. Per a continuar utilitzant el vostre compte, pagueu les factures vençudes."
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "La vostra subscripció ${ PASS_SHORT_APP_NAME } Plus se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant de la vostra subscripció s'afegirà al vostre compte. L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir de per vida a ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "La vostra subscripció ${ plan } se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant s'afegirà al vostre compte. L'oferta de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir a ${ PASS_SHORT_APP_NAME }.de per vida."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
@@ -9099,8 +9107,8 @@
       "Extended address": [
         "Adreça completa"
       ],
-      "Failed to create folder ${ customFolderName }": [
-        "No s'ha pogut crear la carpeta ${ customFolderName }"
+      "Failed to create folder ${ newFolderName }": [
+        "No s'ha pogut crear la carpeta ${ newFolderName }"
       ],
       "Filter Name": [
         "Nom del filtre"
@@ -9375,9 +9383,6 @@
       "Start date": [
         "Data d'inici"
       ],
-      "State": [
-        "Estat"
-      ],
       "Statement": [
         "Declaració"
       ],
@@ -9526,6 +9531,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Codi postal"
+      ],
       "ZIP code": [
         "Codi postal"
       ]
@@ -9604,9 +9612,6 @@
       ],
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
-      ],
-      "click here": [
-        "feu clic aquí"
       ],
       "contact us": [
         "contacteu amb nosaltres"
@@ -10752,8 +10757,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Protegiu la informació empresarial sensible i col·laboreu de manera segura."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Protegiu la vostra família amb totes les funcions prèmium de ${ PASS_SHORT_APP_NAME } Plus per a 6 usuaris."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Protegiu la vostra família amb totes les característiques prèmium de ${ plusTitle } per a 6 usuaris."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protegiu la privadesa de la vostra família amb tots els serveis de ${ BRAND_NAME } combinats."
@@ -10800,6 +10805,9 @@
       ],
       "Downgrade account?": [
         "Voleu passar a un pla inferior?"
+      ],
+      "Review subscription": [
+        "Revisa la subscripció"
       ],
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"
@@ -11180,8 +11188,8 @@
       "Get the deal": [
         "Aconseguiu l'oferta"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Última oportunitat d'aconseguir un 80% de descompte el primer mes de ${ plan }."
       ],
       "Last day to save": [
         "Últim dia per estalviar"
@@ -11576,6 +11584,11 @@
         "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit i més"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Pla ${ upsellPlanTitle }"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } compte d'usuari",
@@ -11684,6 +11697,9 @@
       "Got it": [
         "Entesos"
       ],
+      "I'm purchasing as a business": [
+        "Estic comprant com a empresa"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -11693,26 +11709,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
-      "Please select billing country": [
-        "Seleccioneu el país de facturació"
-      ],
-      "Please select billing state": [
-        "Seleccioneu l'estat de facturació"
-      ],
-      "Please select your billing country first.": [
-        "Seleccioneu primer el vostre país per a la facturació."
-      ],
-      "Please select your billing state first.": [
-        "Seleccioneu primer el vostre estat per a la facturació."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "El preu de la renovació està subjecte a canvis segons ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Es renova per ${ renewPriceStr } i ho podeu cancel·lar en qualsevol moment."
-      ],
-      "Select billing country to pay": [
-        "Seleccioneu el país de facturació per pagar"
       ],
       "terms & conditions": [
         "els termes i condicions"
@@ -11735,6 +11736,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mes. Podeu cancel·lar-ho en qualsevol moment.",
         "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mesos. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "This number will be shown on all future invoices": [
+        "Aquest número es mostrarà a totes les factures futures"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Aquest mètode de pagament esdevindrà el vostre nou mètode per defecte per a totes les renovacions futures."
@@ -11788,6 +11792,20 @@
       ],
       "Street address, postal code, and city": [
         "Adreça, codi postal i ciutat"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Número de negoci"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Número d'IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -11896,6 +11914,9 @@
       "Please share what you expected": [
         "Compartiu el que esperàveu"
       ],
+      "Postal code": [
+        "Codi postal"
+      ],
       "Search date, name, email address, or subject line": [
         "Cerca data, nom, adreça de correu electrònic o línia de l'assumpte"
       ],
@@ -11964,6 +11985,9 @@
       ],
       "Your organization name": [
         "El nom de la vostra organització"
+      ],
+      "ZIP code": [
+        "Codi postal"
       ]
     },
     "Placeholder for contact group name": {
@@ -11974,6 +11998,20 @@
     "plan customizer, users": {
       "contact": [
         "contacte"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Tots els serveis de ${ protonPlus }.${ br }Amb una simple subscripció."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Com a subscriptor de **${ currentPlanTitle }**, podreu desbloquejar **${ unlockPlanTitle }** i tots els serveis prèmium de ${ BRAND_NAME } tot millorant el pla a **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Manteniu-vos a ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Milloreu el vostre pla a ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -14848,6 +14886,9 @@
       ],
       "Your free trial has ended": [
         "La prova gratuïta ha finalitzat."
+      ],
+      "Your plan": [
+        "El vostre pla"
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
