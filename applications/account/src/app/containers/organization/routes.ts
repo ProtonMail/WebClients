@@ -35,7 +35,6 @@ interface Props {
     isZoomIntegrationEnabled: boolean;
     isSharedServerFeatureEnabled: boolean;
     isPasswordPolicyEnabled: boolean;
-    isOrganizationPolicyEnforced: boolean;
 }
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
@@ -53,7 +52,6 @@ export const getOrganizationAppRoutes = ({
     isZoomIntegrationEnabled,
     isSharedServerFeatureEnabled,
     isPasswordPolicyEnabled,
-    isOrganizationPolicyEnforced,
 }: Props) => {
     const isAdmin = user.isAdmin && user.isSelf;
 
@@ -82,7 +80,7 @@ export const getOrganizationAppRoutes = ({
         (hasOrganizationKey || hasOrganization);
 
     const canShowB2BActivityMonitorEvents =
-        (hasOrganizationKey || hasOrganization) && isOrganizationPolicyEnforced && isAdmin;
+        (hasOrganizationKey || hasOrganization) && isAdmin;
 
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
