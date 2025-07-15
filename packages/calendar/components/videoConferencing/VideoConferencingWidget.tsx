@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { type ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -21,6 +21,7 @@ interface Props {
     location: VideoConferenceLocation;
     data: BaseMeetingUrls;
     handleDelete?: () => void;
+    overrideJoinButton?: ReactNode;
 }
 
 const EventDetailsRow = ({
@@ -69,7 +70,7 @@ const EventDetailsRow = ({
     );
 };
 
-export const VideoConferencingWidget = ({ data, location, handleDelete }: Props) => {
+export const VideoConferencingWidget = ({ data, location, handleDelete, overrideJoinButton }: Props) => {
     const { createNotification } = useNotifications();
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -104,9 +105,13 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
                 onClick={toggleExpanded}
             >
                 <div className={clsx('flex flex-col items-center justify-space-between', !hasOnlyLink && 'mb-2')}>
-                    <ButtonLike as={Href} href={data.meetingUrl} shape="solid" color="norm">
-                        {joinText}
-                    </ButtonLike>
+                    {overrideJoinButton ? (
+                        overrideJoinButton
+                    ) : (
+                        <ButtonLike as={Href} href={data.meetingUrl} shape="solid" color="norm">
+                            {joinText}
+                        </ButtonLike>
+                    )}
 
                     <div className="flex gap-2">
                         <Copy
