@@ -26,8 +26,6 @@ import { categoryBadgeMapping } from './categoryViewConstants';
 import { isLabelIDCaregoryKey } from './categoryViewHelpers';
 import { useCategoryViewExperiment } from './useCategoryViewExperiment';
 
-import './CategoryBadge.scss';
-
 interface Props {
     element?: Element;
     labelIDs?: string[];
