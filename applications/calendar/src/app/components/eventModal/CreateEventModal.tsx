@@ -40,6 +40,7 @@ interface Props {
     onDisplayBusySlots: () => void;
     onExit: () => void;
     view: VIEWS;
+    hasZoomError: boolean;
 }
 
 const CreateEventModal = ({
@@ -58,6 +59,7 @@ const CreateEventModal = ({
     tzid,
     onDisplayBusySlots,
     view,
+    hasZoomError,
     ...rest
 }: Props) => {
     const [mailSettings] = useMailSettings();
@@ -211,6 +213,7 @@ const CreateEventModal = ({
                 isCalendarWritable={isCalendarWritable}
                 isDrawerApp={isDrawerApp}
                 onDisplayBusySlots={onDisplayBusySlots}
+                hasZoomError={hasZoomError}
                 view={view}
             />
         </BasicModal>
