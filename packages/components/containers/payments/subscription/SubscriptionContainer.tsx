@@ -1246,6 +1246,7 @@ const SubscriptionContainerInner = ({
                                 taxCountry={taxCountry}
                                 vatNumber={vatNumber}
                                 subscription={subscription}
+                                organization={organization}
                             />
                             <RenewalEnableNote subscription={subscription} {...checkoutModifiers} />
                         </div>

@@ -398,6 +398,7 @@ const AccountStepPayment = ({
                     vatNumber={vatNumber}
                     loadingBitcoin={loadingPaymentDetails}
                     subscription={model.session?.subscription}
+                    organization={model.session?.organization}
                     startTrial={isTrial}
                     onCurrencyChange={(currency) => handleOptimistic({ currency })}
                 />

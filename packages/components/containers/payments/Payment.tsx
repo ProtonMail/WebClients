@@ -35,11 +35,11 @@ import {
     ChargebeeSavedCardWrapper,
     type TaxCountryHook,
     TaxCountrySelector,
-    useIsB2BTrial,
     type VatNumberHook,
     VatNumberInput,
+    useIsB2BTrial,
 } from '@proton/payments/ui';
-import type { User } from '@proton/shared/lib/interfaces';
+import type { Organization, User } from '@proton/shared/lib/interfaces';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -54,7 +54,6 @@ import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
 import PaymentMethodDetails from './methods/PaymentMethodDetails';
 import PaymentMethodSelector from './methods/PaymentMethodSelector';
 import { NoPaymentRequiredNote } from './subscription/modal-components/NoPaymentRequiredNote';
-import { useOrganization } from '@proton/account/organization/hooks';
 
 export interface Props {
     flow: PaymentMethodFlow;
@@ -90,6 +89,7 @@ export interface Props {
     loadingBitcoin?: boolean;
     showTaxCountry: boolean;
     subscription?: Subscription | FreeSubscription;
+    organization?: Organization;
     currencyOverride: ReturnType<typeof useSepaCurrencyOverride>;
 }
 
@@ -125,10 +125,10 @@ export const PaymentsNoApi = ({
     loadingBitcoin: loadingBitcoinProp,
     showTaxCountry,
     subscription,
+    organization,
     startTrial,
     currencyOverride,
 }: Props) => {
-    const [organization] = useOrganization();
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const enableVatIdFeature = useFlag('VatId');
 
