@@ -140,11 +140,17 @@ export function getBillingAddressFromPaymentsStatus(billingAddress: BillingAddre
 /**
  * Use it before sending the billing address to the backend. Either /check endpoint or /subscription endpoint.
  */
-export function normalizeBillingAddress(billingAddress: BillingAddress): BillingAddress {
+export function normalizeBillingAddress(billingAddress: BillingAddress, hasZipCodeValidation: boolean): BillingAddress {
     if (!billingAddress.ZipCode) {
         return billingAddress;
     }
-
+    if (!hasZipCodeValidation) {
+        const copy = {
+            ...billingAddress,
+        };
+        delete copy.ZipCode;
+        return copy;
+    }
     return {
         ...billingAddress,
         ZipCode: normalizePostalCode(billingAddress.ZipCode, billingAddress.CountryCode),
