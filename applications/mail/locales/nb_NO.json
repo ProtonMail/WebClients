@@ -187,6 +187,9 @@
       "Cancel subscription": [
         "Avbryt abonnement"
       ],
+      "Cancel trial and pay": [
+        "Avbryt prøveperioden og betal"
+      ],
       "Carbon Copy": [
         "Kopi"
       ],
@@ -772,9 +775,6 @@
       "Load more": [
         "Last inn mer"
       ],
-      "Loading verification": [
-        "Laster verifisering"
-      ],
       "Loading${ ellipsis }": [
         "Laster${ ellipsis }"
       ],
@@ -1146,9 +1146,6 @@
       ],
       "Resume downloading": [
         "Gjenoppta nedlasting"
-      ],
-      "Retry": [
-        "Prøv på nytt"
       ],
       "Revert to original display": [
         "Vend tilbake til opprinnelig visning"
@@ -1974,8 +1971,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-skrivebordsapp"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsplass"
@@ -4529,6 +4526,9 @@
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
       ],
+      "Invalid ZIP code": [
+        "Ugyldig postnummer"
+      ],
       "Item content cannot exceed 40KB": [
         "Elementinnhold kan ikke overskride 40KB"
       ],
@@ -4625,6 +4625,18 @@
       "Please activate your search again": [
         "Aktiver søket ditt på nytt"
       ],
+      "Please enter a valid postal code": [
+        "Skriv inn et gyldig postnummer"
+      ],
+      "Please enter a valid ZIP code": [
+        "Skriv inn et gyldig postnummer"
+      ],
+      "Please enter postal code": [
+        "Skriv inn postnummer"
+      ],
+      "Please enter ZIP code": [
+        "Skriv inn postnummer"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs den uthevede konflikten for å fortsette.",
         "Løs de uthevede konfliktene for å fortsette."
@@ -4640,6 +4652,12 @@
       ],
       "Please select a state": [
         "Velg en stat"
+      ],
+      "Please select billing country": [
+        "Velg faktureringsland"
+      ],
+      "Please select billing state": [
+        "Velg faktureringsstat"
       ],
       "Please try again or refresh the page.": [
         "Forsøk igjen eller last inn siden på nytt."
@@ -4774,9 +4792,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Minimumsbetalingen vi aksepterer er ${ price }."
       ],
       "The sending key is not valid": [
         "Avsendernøkkelen er ikke gyldig"
@@ -7469,10 +7484,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Legg merke til at denne oppgaven kan ta litt tid avhengig av størrelsen på adresseboken din."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditt igjen.",
-        "Vær oppmerksom på at ved å klikke på Bekreft-knappen, vil kontoen din ha ${ creditsRemaining } kreditter igjen."
-      ],
       "Please open the document to view it.": [
         "Åpne dokumentet for å se det."
       ],
@@ -8094,8 +8105,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
       ],
-      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
-        "Oppgrader til ${ MAIL_APP_NAME } Plus for å låse opp"
+      "Upgrade to ${ plan } to unlock": [
+        "Oppgrader til ${ plan } for å låse opp"
       ],
       "Upgrade to add more addresses to your account.": [
         "Oppgrader for å legge til flere adresser til kontoen din."
@@ -8382,9 +8393,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du må ha et kredittkort eller en bankkonto knyttet til din PayPal konto. Hvis din PayPal konto ikke har det, klikk knappen nedenfor."
-      ],
       "You selected **${ count } conversation** from this folder": [
         "Du har valgt **${ count } samtale** fra denne mappen",
         "Du har valgt **${ count } samtaler** fra denne mappen"
@@ -8445,8 +8453,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, betal eventuelle forfalte fakturaer."
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Ditt ${ PASS_SHORT_APP_NAME } Plus-abonnement vil bli erstattet med livsvarig avtale for ${ PASS_SHORT_APP_NAME }. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } livstidsavtale har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ditt ${ plan }-abonnement vil bli erstattet med ${ PASS_SHORT_APP_NAME } Lifetime. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } Lifetime har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Kontoen din har minst en forfalt faktura. Din tilgang vil snart bli begrenset. ${ payInvoiceLink }"
@@ -9096,8 +9104,8 @@
       "Extended address": [
         "Utvidet adresse"
       ],
-      "Failed to create folder ${ customFolderName }": [
-        "Klarte ikke å opprette mappe ${ customFolderName }"
+      "Failed to create folder ${ newFolderName }": [
+        "Klarte ikke å opprette mappe ${ newFolderName }"
       ],
       "Filter Name": [
         "Filternavn"
@@ -9372,9 +9380,6 @@
       "Start date": [
         "Startdato"
       ],
-      "State": [
-        "Stat"
-      ],
       "Statement": [
         "Uttalelse"
       ],
@@ -9523,6 +9528,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postnummer"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -9601,9 +9609,6 @@
       ],
       "clearing your browser cache": [
         "tømmer hurtigbufferen til nettleseren"
-      ],
-      "click here": [
-        "klikk her"
       ],
       "contact us": [
         "kontakt oss"
@@ -10749,8 +10754,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Beskytt sensitiv forretningsinformasjon og samarbeid sikkert."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Beskytt familien din med alle premiumfunksjonene til ${ PASS_SHORT_APP_NAME } Plus for 6 brukere."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Beskytt familien din med alle premiumfunksjonene til ${ plusTitle } for 6 brukere."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskytt familiens personvern med alle ${ BRAND_NAME }-tjenester kombinert."
@@ -10797,6 +10802,9 @@
       ],
       "Downgrade account?": [
         "Nedgrader kontoen?"
+      ],
+      "Review subscription": [
+        "Se gjennom abonnementet"
       ],
       "Review subscription and pay": [
         "Se gjennom abonnement og betal"
@@ -11177,8 +11185,8 @@
       "Get the deal": [
         "Skaff deg avtalen"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan }."
       ],
       "Last day to save": [
         "Siste dag for å spare"
@@ -11567,6 +11575,11 @@
         "Ubegrenset antall pålogginger, notater, kredittkort og mer"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } plan"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } brukerkonto",
@@ -11675,6 +11688,9 @@
       "Got it": [
         "Skjønner"
       ],
+      "I'm purchasing as a business": [
+        "Jeg kjøper som en bedrift."
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -11684,26 +11700,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
-      "Please select billing country": [
-        "Velg faktureringsland"
-      ],
-      "Please select billing state": [
-        "Velg faktureringsstat"
-      ],
-      "Please select your billing country first.": [
-        "Velg faktureringslandet ditt først."
-      ],
-      "Please select your billing state first.": [
-        "Velg faktureringsstaten din først."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Fornyelsespriser kan endres i henhold til ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
-      ],
-      "Select billing country to pay": [
-        "Velg faktureringsland for å betale"
       ],
       "terms & conditions": [
         "vilkår og betingelser"
@@ -11726,6 +11727,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Da vil den automatisk bli fornyet på ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
         "Da vil den automatisk bli fornyet på ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
+      ],
+      "This number will be shown on all future invoices": [
+        "Dette nummeret vil bli vist på alle fremtidige fakturaer"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
@@ -11779,6 +11783,20 @@
       ],
       "Street address, postal code, and city": [
         "Gateadresse, postnummer og by"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Businessnummer"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "MVA-nummer"
       ]
     },
     "PGP key encryption warning": {
@@ -11887,6 +11905,9 @@
       "Please share what you expected": [
         "Del gjerne hva du forventet"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Search date, name, email address, or subject line": [
         "Søk dato, navn, e-postadresse eller emnelinje"
       ],
@@ -11955,6 +11976,9 @@
       ],
       "Your organization name": [
         "Organisasjonsnavnet ditt"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Placeholder for contact group name": {
@@ -11965,6 +11989,20 @@
     "plan customizer, users": {
       "contact": [
         "kontakt"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Alle ${ protonPlus }-tjenester.${ br }Ett enkelt abonnement."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Som abonnent på **${ currentPlanTitle }** kan du låse opp **${ unlockPlanTitle }** og alle ${ BRAND_NAME }-premiumtjenester ved å oppgradere til **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Behold ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Oppgrader til ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -14839,6 +14877,9 @@
       ],
       "Your free trial has ended": [
         "Din gratis prøveperiode har utløpt"
+      ],
+      "Your plan": [
+        "Din plan"
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
