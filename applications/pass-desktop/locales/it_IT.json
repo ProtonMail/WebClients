@@ -1881,10 +1881,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
-      ],
       "Moving items": [
         "Spostamento degli elementi"
       ],
@@ -3892,8 +3888,8 @@
       ]
     },
     "PassOnboardingOffer": {
-      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
-        "${ PASS_SHORT_APP_NAME } Plus Lifetime per ${ plusLifetimePrice }"
+      "${ plusTitle } Lifetime for ${ plusLifetimePrice }": [
+        "${ plusTitle } Lifetime per ${ plusLifetimePrice }"
       ],
       "${ price }/month": [
         "${ price }/mese"
@@ -4172,14 +4168,8 @@
       "${ BRAND_NAME } addresses": [
         "Indirizzi ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
-      ],
-      "${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Protezione dell'account"
