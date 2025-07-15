@@ -19,6 +19,7 @@ import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/u
 import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from 'proton-mail/hooks/useResizableUtils';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import type { MailboxActions, RouterNavigation } from 'proton-mail/router/interface';
 import { setParams } from 'proton-mail/store/elements/elementsActions';
@@ -143,7 +144,7 @@ export const NewsletterSubscriptionView = ({
                 <div ref={subscriptionContainerRef} className="flex flex-nowrap w-full subscription-container">
                     <ResizableWrapper
                         resizeHandlePosition={ResizeHandlePosition.RIGHT}
-                        minWidth={320}
+                        minWidth={DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST}
                         maxRatio={0.5}
                         containerRef={subscriptionContainerRef}
                         className="relative"

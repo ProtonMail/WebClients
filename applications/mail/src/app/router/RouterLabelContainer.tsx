@@ -19,6 +19,7 @@ import { type ElementsStructure, useGetElementsFromIDs } from 'proton-mail/hooks
 import { useMailboxFocus } from 'proton-mail/hooks/mailbox/useMailboxFocus';
 import { useMailboxHotkeys } from 'proton-mail/hooks/mailbox/useMailboxHotkeys';
 import { useWelcomeFlag } from 'proton-mail/hooks/mailbox/useWelcomeFlag';
+import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from 'proton-mail/hooks/useResizableUtils';
 import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
 import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailSelector } from 'proton-mail/store/hooks';
@@ -167,7 +168,8 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
                 resizeHandlePosition={ResizeHandlePosition.RIGHT}
                 containerRef={elementRef}
                 maxRatio={0.5}
-                minWidth={320}
+                // The MailboxList Toolbar is designed for 360px width
+                minWidth={DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST}
                 defaultRatio={0.4}
                 className="view-column-detail"
                 resizeHandleRef={resizeAreaRef}
