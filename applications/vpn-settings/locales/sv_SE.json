@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "Avsluta prenumeration"
       ],
+      "Cancel trial and pay": [
+        "Avbryt provperiod och betala"
+      ],
       "Change": [
         "Ändra"
       ],
@@ -1330,8 +1333,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-skrivbordsapp"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus och ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsutrymme"
@@ -3271,6 +3274,9 @@
       "Invalid verification code": [
         "Ogiltig verifieringskod"
       ],
+      "Invalid ZIP code": [
+        "Ogiltigt postnummer"
+      ],
       "Name does not match": [
         "Namn matchar inte"
       ],
@@ -3331,6 +3337,18 @@
       "Please enter a valid Entity ID URL": [
         "Ange en giltig entitets-ID-URL."
       ],
+      "Please enter a valid postal code": [
+        "Skriv in ett giltigt postnummer"
+      ],
+      "Please enter a valid ZIP code": [
+        "Ange ett giltigt postnummer"
+      ],
+      "Please enter postal code": [
+        "Ange postnummer"
+      ],
+      "Please enter ZIP code": [
+        "Ange postnummer"
+      ],
       "Please generate keys before you try to change your password": [
         "Generera nycklar innan du försöker ändra ditt lösenord"
       ],
@@ -3345,6 +3363,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Välj minst en användare eller grupp innan du fortsätter."
+      ],
+      "Please select billing country": [
+        "Välj faktureringsland"
+      ],
+      "Please select billing state": [
+        "Välj delstat för fakturering"
       ],
       "Please set a recovery email first": [
         "Ställ in en e-postadress för återställning först"
@@ -3369,6 +3393,9 @@
       ],
       "Please upload only 1 file": [
         "Ladda endast upp 1 fil"
+      ],
+      "Postal code is required": [
+        "Postnummer är obligatoriskt"
       ],
       "Process aborted": [
         "Process avbruten"
@@ -3405,9 +3432,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Minsta betalningen vi accepterar är ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Policynamnet måste vara mellan 3 och 40 tecken."
@@ -5433,10 +5457,6 @@
       "Please fill in all required fields.": [
         "Fyll i alla obligatoriska fält."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Vänligen notera att när du klickar på Bekräfta-knappen så kommer ditt konto att ha ${ creditsRemaining } kredit kvar.",
-        "Vänligen notera att när du klickar på Bekräfta-knappen så kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
-      ],
       "please open a support ticket": [
         "öppna ett supportärende"
       ],
@@ -6207,9 +6227,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du måste ha ett kreditkort eller ett bankkonto kopplat till ditt PayPal-konto för att kunna lägga till det som en betalningsmetod."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du måste ha ett kreditkort eller bankkonto kopplat till ditt PayPal-konto. Om ditt PayPal-konto inte har det, klicka på knappen nedan."
-      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Du kommer att kunna befordra användaren till administratör när de har accepterat inbjudan."
       ],
@@ -6252,9 +6269,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Ditt ${ BRAND_NAME }-lösenord"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Din ${ PASS_SHORT_APP_NAME } Plus-prenumeration kommer att ersättas med ${ PASS_SHORT_APP_NAME } Lifetime. Den kvarvarande balansen för din prenumeration kommer att läggas till i ditt konto.${ PASS_SHORT_APP_NAME } livstidserbjudandet har inget förnyelsepris, det är en engångsbetalning för livstids åtkomst till ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Dina ${ VPN_APP_NAME }- och ${ MAIL_APP_NAME }-konton är länkade. För att ta bort båda, logga in på ${ loginLink } och ta bort ditt konto där."
@@ -6332,6 +6346,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Valfritt"
+      ],
       "Selected color:": [
         "Vald färg:"
       ]
@@ -7165,6 +7182,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postnummer"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -7205,9 +7225,6 @@
       ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
-      ],
-      "click here": [
-        "klicka här"
       ],
       "Common sign in issues": [
         "Vanliga inloggningsproblem"
@@ -7301,9 +7318,6 @@
       ],
       "Pay invoice": [
         "Betala faktura"
-      ],
-      "PayPal without credit card": [
-        "PayPal utan kreditkort"
       ],
       "perform a password reset from your active session": [
         "utför en lösenordsåterställning från din aktiva session"
@@ -8194,8 +8208,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Skydda känslig företagsinformation och samarbeta säkert."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Skydda din familj med alla premiumfunktioner i ${ PASS_SHORT_APP_NAME } Plus för 6 användare."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Skydda din familj med alla premiumfunktioner i ${ plusTitle } för 6 användare."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Skydda din familjs integritet med alla ${ BRAND_NAME }-tjänster kombinerade."
@@ -8271,6 +8285,9 @@
       ],
       "Downgrade account?": [
         "Nedgradera konto?"
+      ],
+      "Review subscription": [
+        "Granska prenumeration"
       ],
       "Review subscription and pay": [
         "Granska prenumeration och betala"
@@ -8735,8 +8752,8 @@
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Sista chansen att få 80 % rabatt på din första månad med ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Sista chansen att få 80 % rabatt på din första månad med ${ plan }."
       ],
       "Last day to save": [
         "Sista dagen att spara"
@@ -9092,6 +9109,11 @@
         "Obegränsade inloggningar, anteckningar, kreditkort och mer"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }-paket"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } användarkonto",
@@ -9277,6 +9299,9 @@
       "Got it": [
         "Jag förstår"
       ],
+      "I'm purchasing as a business": [
+        "Jag köper som ett företag"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -9286,18 +9311,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
-      "Please select billing country": [
-        "Välj faktureringsland"
-      ],
-      "Please select billing state": [
-        "Välj delstat för fakturering"
-      ],
-      "Please select your billing country first.": [
-        "Välj ditt faktureringsland först."
-      ],
-      "Please select your billing state first.": [
-        "Välj din delstat för fakturering först."
-      ],
       "Processing payment": [
         "Bearbetar betalning"
       ],
@@ -9306,9 +9319,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
-      ],
-      "Select billing country to pay": [
-        "Välj faktureringsland för att betala"
       ],
       "terms & conditions": [
         "användarvillkor"
@@ -9334,6 +9344,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
         "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
+      ],
+      "This number will be shown on all future invoices": [
+        "Detta nummer kommer att visas på alla framtida fakturor"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denna betalningsmetod kommer bli din nya standard för alla framtida förnyelser."
@@ -9387,6 +9400,17 @@
       ],
       "Street address, postal code, and city": [
         "Gatuadress, postnummer och ort"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ]
     },
     "Permission": {
@@ -9482,6 +9506,9 @@
       "Please select the main reason": [
         "Välj huvudorsaken"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Search": [
         "Sök"
       ],
@@ -9523,6 +9550,9 @@
       ],
       "yourdomain.com": [
         "dindomän.com"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "placeholder": {
@@ -9569,6 +9599,17 @@
       ],
       "Enjoying ${ planName }?": [
         "Gillar du ${ planName }?"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Alla ${ protonPlus }-tjänster.${ br }En enkel prenumeration."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Fortsätt med ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Uppgradera till ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -11618,9 +11659,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ BRAND_NAME } Account password rules": [
         "Lösenordsregler för ${ BRAND_NAME }-konto"
       ],
