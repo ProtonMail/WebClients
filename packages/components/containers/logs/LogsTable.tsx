@@ -31,7 +31,7 @@ interface Props {
     error: boolean;
 }
 
-const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => {
+const LogsTable = ({ logs = [], logAuth, protonSentinel, loading, error }: Props) => {
     const isAuthLogAdvanced = logAuth === ADVANCED;
     const isProtonSentinelEnabled = protonSentinel === ENABLED;
 
@@ -72,11 +72,12 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
             className: isAuthLogAdvanced ? 'w-1/6' : 'bg-weak w-custom',
             style: { '--w-custom': '5%' },
             header: 'IP',
+            info: c('Tooltip').t`Origin IP address`,
         },
         {
             className: isUnavailableClass(),
             header: c('Header').t`Location`,
-            info: c('Tooltip').t`An approximate location of the IP address`,
+            info: c('Tooltip').t`User's approximate location (based on their IP address)`,
         },
         {
             className:
@@ -84,7 +85,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                     ? `${isUnavailableClass()}`
                     : `${isUnavailableClass()} w-1/10`,
             header: 'ISP',
-            info: c('Tooltip').t`The Internet Service Provider of the IP address`,
+            info: c('Tooltip').t`Origin Internet Service Provider (ISP)`,
         },
         {
             className: isUnavailableClass(false),
@@ -93,7 +94,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
         },
         {
             header: c('Header').t`Device`,
-            info: c('Tooltip').t`Device information such as operating system`,
+            info: c('Tooltip').t`Device name and app version`,
         },
     ].filter(isTruthy);
 
@@ -114,18 +115,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
             <TableBody loading={loading} colSpan={headerCells.length}>
                 {logs.map(
                     (
-                        {
-                            Time: time,
-                            AppVersion,
-                            Description,
-                            IP,
-                            InternetProvider,
-                            Location,
-                            Device,
-                            ProtectionDesc,
-                            Protection,
-                            Status,
-                        },
+                        log,
                         index
                     ) => {
                         const key = index.toString();
@@ -135,9 +125,9 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 className: 'text-left',
                                 content: (
                                     <div className="flex flex-column my-1">
-                                        <EventCell description={Description} status={Status} isB2B />
+                                        <EventCell description={log.Description} status={log.Status} isB2B />
                                         <Time format="PPp" className="color-weak mt-2 ml-2">
-                                            {time}
+                                            {log.Time}
                                         </Time>
                                     </div>
                                 ),
@@ -158,7 +148,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                     <IPCell
                                         isAuthLogAdvanced={isAuthLogAdvanced}
                                         isProtonSentinelEnabled={isProtonSentinelEnabled}
-                                        ip={IP}
+                                        ip={log.IP}
                                         firstRow={index === 0}
                                     />
                                 ),
@@ -172,7 +162,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 content: (
                                     <LocationCell
                                         isProtonSentinelEnabled={isProtonSentinelEnabled}
-                                        location={Location}
+                                        location={log.Location}
                                         firstRow={index === 0}
                                     />
                                 ),
@@ -180,18 +170,18 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                             isAuthLogAdvanced &&
                                 isProtonSentinelEnabled && {
                                     label: 'ISP',
-                                    content: <span className="flex-1">{InternetProvider || '-'}</span>,
+                                    content: <span className="flex-1">{log.InternetProvider || '-'}</span>,
                                 },
                             isProtonSentinelEnabled && {
                                 label: c('Header').t`Protection`,
-                                content: <ProtectionCell protection={Protection} protectionDesc={ProtectionDesc} />,
+                                content: <ProtectionCell protection={log.Protection} protectionDesc={log.ProtectionDesc} />,
                             },
                             {
                                 label: c('Header').t`Device`,
                                 content: (
                                     <div className="flex flex-column my-1">
-                                        <span>{isProtonSentinelEnabled ? Device : '-'}</span>
-                                        <AppVersionCell appVersion={AppVersion} />
+                                        <span>{isProtonSentinelEnabled ? log.Device : '-'}</span>
+                                        <AppVersionCell appVersion={log.AppVersion} />
                                     </div>
                                 ),
                             },

@@ -40,7 +40,7 @@ const useOrgAuthLogs = (api: any, query: AuthLogsQueryParams, page: number, wipe
         setError(undefined);
 
         try {
-            const queryString = getFormattedQueryString({ ...query, Page: page - 1, PageSize: 10 });
+            const queryString = getFormattedQueryString({ ...query, Page: page - 1, PageSize: 50 });
             const { Items, Total } = await api(getOrgAuthLogs(queryString));
             const data = Items.map((item: any) => item.Data);
             setAuthLogs(data);

@@ -14,7 +14,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { deleteOrgUsersAuthLogs } from '@proton/shared/lib/api/b2bevents';
-import { getAuthLogEventsI18N, type B2BAuthLog } from '@proton/shared/lib/authlog';
+import { type B2BAuthLog } from '@proton/shared/lib/authlog';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
@@ -25,7 +25,6 @@ import TogglingMonitoringModal from './TogglingMonitoringModal';
 import WipeLogsModal from './WipeLogsModal';
 import { updateMonitoringSetting } from './api';
 import B2BOrganizationUpsellBanner from './B2BOrganizationUpsellBanner';
-import { getHasProPlan } from '@proton/payments';
 import { escapeCsvValue } from '@proton/components/helpers/escapeCsvValue';
 
 const ActivityMonitorDescription = () => {
@@ -39,6 +38,7 @@ const ActivityMonitorDescription = () => {
 const ActivityMonitorEvents = () => {
     const api = useApi();
     const [organization] = useOrganization();
+    const monitoring = organization?.Settings?.LogAuth === 1 || organization?.Settings?.LogAuth === 2;
     const [logs, setLogs] = useState<B2BAuthLog[]>([]);
     const [togglingMonitoringModalProps, setTogglingMonitoringModalOpen, togglingMonitoringModalRender] =
         useModalState();
@@ -47,8 +47,12 @@ const ActivityMonitorEvents = () => {
     const [wipeLogsFlag, setWipeLogsFlag] = useState(false);
     const [loadingDownload, withLoadingDownload] = useLoading();
     const [reloadTrigger, setReloadTrigger] = useState(0);
-    const monitoring = organization?.Settings?.LogAuth === 1 || organization?.Settings?.LogAuth === 2;
     const dispatch = useDispatch();
+
+    // Defensive protection, ensure that the settings are available
+    if (!organization || !organization.Settings || !organization.Settings.OrganizationPolicy) {
+        return null;
+    }
 
     const triggerReload = () => {
         setReloadTrigger((prev) => prev + 1);
@@ -99,7 +103,7 @@ const ActivityMonitorEvents = () => {
         const data = logs.reduce((acc, log) => {
             const {
                 Time,
-                Event,
+                Description,
                 Status,
                 User,
                 IP,
@@ -112,7 +116,7 @@ const ActivityMonitorEvents = () => {
 
             const row = [
                 fromUnixTime(Time).toISOString(),
-                getAuthLogEventsI18N(Event),
+                Description,
                 Status || '',
                 User?.Name || '',
                 User?.Email || '',
@@ -153,7 +157,7 @@ const ActivityMonitorEvents = () => {
     };
 
     return (
-        getHasProPlan(organization?.PlanName) ? (
+        organization.Settings.OrganizationPolicy.Enforced === 0 ? (
             <B2BOrganizationUpsellBanner organization={organization}/>
         ) : (
             <>
