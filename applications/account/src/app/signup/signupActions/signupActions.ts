@@ -345,6 +345,7 @@ export const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SubscriptionData,
     productParam: ProductParam,
+    hasZipCodeValidation: boolean,
     reportPaymentSuccess: () => void,
     reportPaymentFailure: () => void
 ) => {
@@ -380,7 +381,8 @@ export const handleSubscribeUser = async (
                     },
                 },
                 productParam,
-                paymentsVersion
+                paymentsVersion,
+                hasZipCodeValidation
             )
         );
 
@@ -451,6 +453,7 @@ export const handleSetupUser = async ({
     setupKeys = true,
     reportPaymentSuccess,
     reportPaymentFailure,
+    hasZipCodeValidation,
 }: {
     cache: SignupCacheResult;
     api: Api;
@@ -459,6 +462,7 @@ export const handleSetupUser = async ({
     setupKeys?: boolean;
     reportPaymentSuccess: () => void;
     reportPaymentFailure: () => void;
+    hasZipCodeValidation: boolean;
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { username, email, domain, password, signupType },
@@ -499,6 +503,7 @@ export const handleSetupUser = async ({
             api,
             subscriptionData,
             productParam,
+            hasZipCodeValidation,
             reportPaymentSuccess,
             reportPaymentFailure
         );
