@@ -11,9 +11,10 @@ interface Props {
     model: EventModel;
     isCreateEvent: boolean;
     setModel: (value: EventModel) => void;
+    hasZoomError: boolean;
 }
 
-export const RowVideoConference = ({ model, setModel, isCreateEvent }: Props) => {
+export const RowVideoConference = ({ model, setModel, isCreateEvent, hasZoomError }: Props) => {
     const [user] = useUser();
     const [organization] = useOrganization();
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
@@ -55,6 +56,7 @@ export const RowVideoConference = ({ model, setModel, isCreateEvent }: Props) =>
                     setModel={setModel}
                     accessLevel={getAccessLevel()}
                     onRowClick={() => onClose()}
+                    hasZoomError={hasZoomError}
                 />
             </div>
         </Spotlight>
