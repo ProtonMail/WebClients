@@ -1,7 +1,11 @@
 import { revoke } from '@proton/shared/lib/api/auth';
 import { upgradePassword } from '@proton/shared/lib/api/settings';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import {
+    assertUniqueLocalID,
+    maybeResumeSessionByUser,
+    persistSession,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -110,6 +114,8 @@ export const finalizeLogin = async ({
         preAuthKTVerifier,
     });
     user = deviceRecoveryResult.user;
+
+    await assertUniqueLocalID({ ...authResponse, api });
 
     const sessionResult = await persistSession({
         ...authResponse,
