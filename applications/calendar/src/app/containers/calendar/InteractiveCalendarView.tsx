@@ -8,7 +8,6 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { CircleLoader } from '@proton/atoms';
-import { useZoomOAuth } from '@proton/calendar';
 import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
@@ -375,9 +374,10 @@ const InteractiveCalendarView = ({
     const { startNESTMetric, stopNESTMetric } = useCalendarNESTMetric();
     const { startEALMetric, stopEALMetric } = useCalendarEALMetric();
 
+    const [mustConnectToZoom, setMustConnectToZoom] = useState(false);
+
     const { viewportWidth } = useActiveBreakpoint();
 
-    const { triggerZoomOAuth } = useZoomOAuth();
     const { sendEventVideoConferenceZoomIntegration } = useVideoConfTelemetry();
 
     const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
@@ -541,6 +541,11 @@ const InteractiveCalendarView = ({
     const handleSetTemporaryEventModel = (model: EventModel) => {
         if (!temporaryEvent || isSavingEvent.current) {
             return;
+        }
+
+        // We reset the Zoom error state when we delete the Zoom meeting
+        if (model.isConferenceTmpDeleted) {
+            setMustConnectToZoom(false);
         }
 
         const newTemporaryEvent = getTemporaryEvent(temporaryEvent, model, tzid);
@@ -723,6 +728,9 @@ const InteractiveCalendarView = ({
     };
 
     const handleMouseDown = (mouseDownAction: MouseDownAction) => {
+        // Reset Zoom connection error state when starting any drag operation
+        setMustConnectToZoom(false);
+
         // Manually dispatch a mousedown event, since it has been blocked by our custom mouse handlers
         containerRef.current?.dispatchEvent(new Event('mousedown'));
 
@@ -1172,6 +1180,7 @@ const InteractiveCalendarView = ({
     const resetInteractiveData = () => {
         setInteractiveData(undefined);
         setOpenedSearchItem(undefined);
+        setMustConnectToZoom(false);
     };
 
     // Close modal and popover for a given uniqueId
@@ -1738,9 +1747,9 @@ const InteractiveCalendarView = ({
                             VideoConferenceZoomIntegration.create_zoom_meeting_failed,
                             `${VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR}-intaractiveCalendar`
                         );
-                        triggerZoomOAuth(async () => {
-                            syncRes = await handleSyncActions(syncActions);
-                        });
+
+                        setMustConnectToZoom(true);
+                        throw e;
                     } else {
                         throw e;
                     }
@@ -1837,6 +1846,11 @@ const InteractiveCalendarView = ({
             }
 
             if (e?.cause === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
+                createNotification({
+                    text: c('Error').t`Your Zoom connection has expired. Please reconnect to continue.`,
+                    type: 'error',
+                });
+
                 return;
             }
 
@@ -2364,6 +2378,7 @@ const InteractiveCalendarView = ({
                                 }}
                                 isDrawerApp={isDrawerApp}
                                 view={view}
+                                hasZoomError={mustConnectToZoom}
                             />
                         );
                     }
@@ -2550,6 +2565,7 @@ const InteractiveCalendarView = ({
                     setModel={handleSetTemporaryEventModel}
                     isInvitation={isInvitation}
                     isOpen={createEventModal.isOpen}
+                    hasZoomError={mustConnectToZoom}
                     onDisplayBusySlots={() => {
                         if (interactiveData?.temporaryEvent) {
                             switchFromModalToPopover(interactiveData.temporaryEvent);
@@ -2568,7 +2584,6 @@ const InteractiveCalendarView = ({
                                 isChangePartstat: false,
                                 isModal: true,
                             });
-                            closeModal('createEventModal');
                         } catch (error) {
                             return noop();
                         }

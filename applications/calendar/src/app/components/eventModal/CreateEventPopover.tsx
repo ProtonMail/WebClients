@@ -42,6 +42,7 @@ interface Props {
     isDraggingDisabled?: boolean;
     isDrawerApp?: boolean;
     view: VIEWS;
+    hasZoomError: boolean;
 }
 
 const MAX_OFFSCREEN_OFFSET = 20;
@@ -62,6 +63,7 @@ const CreateEventPopover = ({
     isDraggingDisabled = false,
     isDrawerApp,
     view,
+    hasZoomError,
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const dispatch = useCalendarDispatch();
@@ -212,6 +214,7 @@ const CreateEventPopover = ({
                     setParticipantError={setParticipantError}
                     isDrawerApp={isDrawerApp}
                     view={view}
+                    hasZoomError={hasZoomError}
                 />
                 <PopoverFooter className="justify-end flex-nowrap flex-column-reverse sm:flex-row gap-2">
                     <Button
