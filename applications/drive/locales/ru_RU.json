@@ -579,9 +579,6 @@
       "Loading link": [
         "Ссылка на загрузку"
       ],
-      "Loading verification": [
-        "Загружается проверка"
-      ],
       "Manage advanced account protections": [
         "Управление расширенной защитой аккаунта"
       ],
@@ -668,6 +665,9 @@
       ],
       "New shared album": [
         "Новый общий альбом"
+      ],
+      "New spreadsheet": [
+        "Новая электронная таблица"
       ],
       "Next": [
         "Далее"
@@ -1209,6 +1209,9 @@
       "200 GB storage": [
         "200 ГБ хранилища"
       ],
+      "500 GB encrypted storage": [
+        "500 ГБ зашифрованного хранилища"
+      ],
       "Encrypted password manager": [
         "Зашифрованный менеджер паролей"
       ],
@@ -1221,6 +1224,9 @@
       "Recover previous file versions": [
         "Восстановить предыдущие версии файла"
       ],
+      "Short @pm.me address": [
+        "Короткий адрес @pm.me"
+      ],
       "Stream your favorite content": [
         "Смотрите любимый контент"
       ],
@@ -1232,6 +1238,24 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "15 months": [
+        "15 месяца"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "30 months": [
+        "30 месяцев"
+      ],
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
       ]
@@ -1315,8 +1339,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus и ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } и ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
@@ -3414,9 +3438,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "Минимальный платеж, который мы принимаем, составляет ${ price }"
-      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Новая версия исходного файла еще не загружена, пожалуйста, повторите попытку позже"
       ],
@@ -4982,6 +5003,9 @@
       "Dedicated servers": [
         "Выделенные серверы"
       ],
+      "Dedicated VPN servers": [
+        "Выделенные VPN-серверы"
+      ],
       "default email address": [
         "адрес эл. почты по умолчанию"
       ],
@@ -5590,12 +5614,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Пожалуйста, обратите внимание, что этот процесс может занять некоторое время в зависимости от размера вашей адресной книги."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредит.",
-        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету.",
-        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов.",
-        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредита."
       ],
       "Please open the document to view it.": [
         "Откройте документ для просмотра."
@@ -6320,9 +6338,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Вы должны отключить или удалить всех дополнительных пользователей ${ MAIL_APP_NAME }, адреса и свои доменты перед переходом на более дешевую версию."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Вам необходимо связать кредитную карту или банковский счет с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
-      ],
       "You need access": [
         "Вам нужен доступ"
       ],
@@ -6347,6 +6362,15 @@
         "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }.",
         "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }."
       ],
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Вы собираетесь отклонить приглашение присоединиться к альбому ${ invitationName }. Если вы продолжите, вы не сможете получить доступ к нему, пока владелец не пригласит вас снова. Вы уверены, что хотите продолжить?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Вы собираетесь отклонить приглашение присоединиться к папке ${ invitationName }. Если вы продолжите, вы не сможете получить доступ к нему, пока владелец не пригласит вас снова. Вы уверены, что хотите продолжить?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Вы собираетесь отклонить приглашение присоединиться к элементу ${ invitationName }. Если вы продолжите, вы не сможете получить доступ к нему, пока владелец не пригласит вас снова. Вы уверены, что хотите продолжить?"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Вы достигли лимита количества адресов в группе(-ах) контактов:"
       ],
@@ -6359,8 +6383,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Ваша подписка ${ PASS_SHORT_APP_NAME } Plus будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша подписка ${ plan } будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш аккаунт имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
@@ -6454,6 +6478,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Необязательно"
+      ],
       "Selected color:": [
         "Выбранный цвет"
       ]
@@ -7047,9 +7074,6 @@
       "Start date": [
         "Дата начала"
       ],
-      "State": [
-        "Состояние"
-      ],
       "Stolen data": [
         "Украденные данные"
       ],
@@ -7229,9 +7253,6 @@
       ],
       "clearing your browser cache": [
         "очистка кеша браузера"
-      ],
-      "click here": [
-        "нажмите здесь"
       ],
       "Drafts": [
         "Черновики"
@@ -8331,8 +8352,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Защитите конфиденциальную деловую информацию и сотрудничайте безопасно."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Защитите свою семью, используя все платные функции ${ PASS_SHORT_APP_NAME } Plus для 6 пользователей."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Защитите свою семью, используя все платные функции ${ plusTitle } для 6 пользователей."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Защитите конфиденциальность вашей семьи с помощью комплекса услуг ${ BRAND_NAME }."
@@ -9047,9 +9068,6 @@
       "Get the deal": [
         "Получить скидку"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Последний шанс получить скидку 80% на первый месяц подписки ${ plan } Plus."
-      ],
       "Last day to save": [
         "Последний день, чтобы сэкономить"
       ],
@@ -9277,6 +9295,12 @@
     "Onboarding Trial": {
       "Continue": [
         "Продолжить"
+      ],
+      "help center": [
+        "справочный центр"
+      ],
+      "If you need help,": [
+        "Если вам нужна помощь,"
       ]
     },
     "Option": {
@@ -9321,6 +9345,11 @@
       ],
       "Unlimited logins, notes, credit cards and more": [
         "Неограниченное количество имен пользователей, заметок, кредитных карт и многое другое"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "тариф ${ upsellPlanTitle }"
       ]
     },
     "pass_signup_2024: Info": {
@@ -9442,26 +9471,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
-      "Please select billing country": [
-        "Пожалуйста, выберите страну выставления счета"
-      ],
-      "Please select billing state": [
-        "Пожалуйста, выберите государство выставления счета"
-      ],
-      "Please select your billing country first.": [
-        "Сначала выберите страну для выставления счета."
-      ],
-      "Please select your billing state first.": [
-        "Сначала выберите государство для выставления счета."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Цены продления могут быть изменены в соответствии с ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Продлевается по цене ${ renewPriceStr }, можно отменить в любое время."
-      ],
-      "Select billing country to pay": [
-        "Для оплаты, пожалуйста выберите страну"
       ],
       "terms & conditions": [
         "правила и условия"
@@ -9666,6 +9680,11 @@
     "plan customizer, users": {
       "contact": [
         "свяжитесь"
+      ]
+    },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Улучшить до ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -10510,10 +10529,10 @@
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
       ],
       "${ dayDiff } day left": [
-        "Остался ${ dayDiff } день",
-        "Осталось ${ dayDiff } дня",
-        "Осталось ${ dayDiff } дней",
-        "Осталось ${ dayDiff } дней"
+        "${ dayDiff } день остался",
+        "${ dayDiff } дня осталось",
+        "${ dayDiff } дней осталось",
+        "${ dayDiff } дней осталось"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
@@ -11116,6 +11135,32 @@
         "Видео"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } день",
+        "${ ceilDays } дня",
+        "${ ceilDays } дней",
+        "${ ceilDays } дней"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } час",
+        "${ ceilHours } часа",
+        "${ ceilHours } часов",
+        "${ ceilHours } часов"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } минута",
+        "${ ceilMinutes } минуты",
+        "${ ceilMinutes } минут",
+        "${ ceilMinutes } минут"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } ч",
@@ -11388,9 +11433,6 @@
         "Удаление ${ count } групп контактов",
         "Удаление ${ count } группы контактов"
       ],
-      "Delete ${ links.length } items?": [
-        "Удалить ${ links.length } элементов?"
-      ],
       "Delete ${ name }?": [
         "Удалить ${ name }?"
       ],
@@ -11618,6 +11660,9 @@
       ],
       "Network error": [
         "Ошибка сети"
+      ],
+      "Newsletters view": [
+        "Просмотр рассылок"
       ],
       "Night theme": [
         "Ночная тема"
@@ -11895,6 +11940,9 @@
       "Untitled document ${ date }": [
         "Документ без названия ${ date }"
       ],
+      "Untitled spreadsheet ${ date }": [
+        "Электронная таблица без названия ${ date }"
+      ],
       "Upgrade complete!": [
         "Улучшение выполнено!"
       ],
@@ -11981,6 +12029,9 @@
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"
+      ],
+      "Your plan": [
+        "Ваш тариф"
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
