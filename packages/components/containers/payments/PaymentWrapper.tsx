@@ -3,6 +3,7 @@ import type { ThemeCode, usePaymentFacade } from '@proton/components/payments/cl
 import type { Currency, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { type FreeSubscription, type Subscription } from '@proton/payments';
 import { type TaxCountryHook, type VatNumberHook } from '@proton/payments/ui';
+import type { Organization } from '@proton/shared/lib/interfaces';
 
 import { PaymentsNoApi } from './Payment';
 
@@ -22,6 +23,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     vatNumber?: VatNumberHook;
     loadingBitcoin?: boolean;
     subscription?: Subscription | FreeSubscription;
+    organization?: Organization;
 };
 
 const PaymentWrapper = ({
