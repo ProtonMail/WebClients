@@ -39,6 +39,7 @@ import {
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, ChargebeeEnabled, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 
 import useBitcoin from './useBitcoin';
 import { useCard } from './useCard';
@@ -69,6 +70,7 @@ export interface OperationsInvoiceData {
 export interface OperationsData {
     subscription?: OperationsSubscriptionData;
     invoice?: OperationsInvoiceData;
+    hasZipCodeValidation: boolean;
 }
 
 /**
@@ -115,6 +117,8 @@ function getOperations(
                 ZipCode: taxBillingAddress.ZipCode,
             };
 
+            const hasZipCodeValidation = operationsData.hasZipCodeValidation;
+
             return api(
                 createSubscription(
                     {
@@ -125,7 +129,8 @@ function getOperations(
                         ...data,
                     },
                     product,
-                    paymentsVersion
+                    paymentsVersion,
+                    hasZipCodeValidation
                 )
             ).then(wrappedAfterOperation);
         },
@@ -151,6 +156,7 @@ function getOperations(
  */
 const usePaymentContext = () => {
     const subscriptionData = useRef<OperationsSubscriptionData>();
+    const zipCodeValidation = useFlag('PaymentsZipCodeValidation');
 
     return {
         setSubscriptionData: (data: OperationsSubscriptionData | undefined) => {
@@ -162,6 +168,7 @@ const usePaymentContext = () => {
         getOperationsData: (): OperationsData => {
             return {
                 subscription: subscriptionData.current,
+                hasZipCodeValidation: zipCodeValidation,
             };
         },
     };

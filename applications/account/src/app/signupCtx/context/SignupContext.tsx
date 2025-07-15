@@ -25,6 +25,7 @@ import { type APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Optional, ReferralData } from '@proton/shared/lib/interfaces';
 import { type Unwrap } from '@proton/shared/lib/interfaces/utils';
+import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import type { SignupType } from '../../signup/interfaces';
@@ -208,6 +209,7 @@ export const InnerSignupContextProvider = ({
     const setLoadingDiff = (data: Partial<typeof loading>) => setLoading((prev) => ({ ...prev, ...data }));
     const domainsData = useSignupDomains();
     const { referralData, initReferralData } = useReferralData();
+    const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
 
     const paymentsContext = usePaymentOptimistic();
     const setupUserResponseRef = useRef<Unwrap<ReturnType<typeof handleSetupUser>>>();
@@ -439,6 +441,7 @@ export const InnerSignupContextProvider = ({
 
                 subscriptionData: paymentData?.subscriptionData,
                 productParam: app,
+                hasZipCodeValidation,
             });
 
             setupUserResponseRef.current = setupUserResponse;

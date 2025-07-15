@@ -41,6 +41,7 @@ const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SubscriptionData2,
     productParam: ProductParam,
+    hasZipCodeValidation: boolean,
     onPaymentSuccess?: () => void,
     onPaymentFailure?: () => void
 ) => {
@@ -73,7 +74,8 @@ const handleSubscribeUser = async (
                     },
                 },
                 productParam,
-                paymentsVersion
+                paymentsVersion,
+                hasZipCodeValidation
             )
         );
 
@@ -135,6 +137,7 @@ export const handleSetupUser = async ({
     subscriptionData,
     productParam,
     keyTransparencyActivation,
+    hasZipCodeValidation,
 }: {
     accountData: AccountData;
     api: Api;
@@ -144,6 +147,7 @@ export const handleSetupUser = async ({
     subscriptionData: SubscriptionData2 | undefined;
     productParam: ProductParam;
     keyTransparencyActivation: KeyTransparencyActivation;
+    hasZipCodeValidation: boolean;
 }) => {
     const { username, email, domain, password, signupType } = accountData;
 
@@ -169,7 +173,7 @@ export const handleSetupUser = async ({
     let subscription: Subscription | undefined;
     if (subscriptionData) {
         // Perform the subscription first to prevent "locked user" while setting up keys.
-        subscription = await handleSubscribeUser(api, subscriptionData, productParam);
+        subscription = await handleSubscribeUser(api, subscriptionData, productParam, hasZipCodeValidation);
     }
 
     void api(updateLocale(localeCode)).catch(noop);

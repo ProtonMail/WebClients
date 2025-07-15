@@ -204,8 +204,19 @@ export const buyProduct = (rawData: SubscribeData, product: ProductParam) => {
     return config;
 };
 
-export const createSubscription = (rawData: SubscribeData, product: ProductParam, version: PaymentsVersion) => {
+export const createSubscription = (
+    rawData: SubscribeData,
+    product: ProductParam,
+    version: PaymentsVersion,
+    hasZipCodeValidation: boolean
+) => {
     const sanitizedData = prepareSubscribeDataPayload(rawData);
+
+    // Additional check here because normalize billing address is not always called.
+    // This covers both buyProduct + v4 and v5 createSubscription.
+    if ('BillingAddress' in sanitizedData && sanitizedData.BillingAddress?.ZipCode && !hasZipCodeValidation) {
+        delete sanitizedData.BillingAddress.ZipCode;
+    }
 
     if (isLifetimePlanSelected(sanitizedData.Plans)) {
         return buyProduct(sanitizedData, product);
@@ -220,7 +231,7 @@ export const createSubscription = (rawData: SubscribeData, product: ProductParam
         };
 
         if (v5Data.BillingAddress) {
-            v5Data.BillingAddress = normalizeBillingAddress(v5Data.BillingAddress);
+            v5Data.BillingAddress = normalizeBillingAddress(v5Data.BillingAddress, hasZipCodeValidation);
         }
 
         data = v5Data;
@@ -589,6 +600,7 @@ export function markPaymentMethodAsDefault(api: Api, methodID: string, methods: 
     IDs.unshift(methodID);
     return api(orderPaymentMethods(IDs, 'v5'));
 }
+
 const addSubscriptionPlan = (subscription: Subscription): Subscription => {
     if (!subscription) {
         return subscription;

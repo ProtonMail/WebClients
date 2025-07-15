@@ -187,7 +187,7 @@ describe('SubscriptionContainer', () => {
         fireEvent.submit(form);
 
         const createTokenUrl = createTokenV4({} as any).url;
-        const subscribeUrl = createSubscription({} as any, '' as any, 'v4').url;
+        const subscribeUrl = createSubscription({} as any, '' as any, 'v4', true).url;
 
         await waitFor(() => {});
         expect(apiMock).not.toHaveBeenCalledWith(expect.objectContaining({ url: createTokenUrl }));
