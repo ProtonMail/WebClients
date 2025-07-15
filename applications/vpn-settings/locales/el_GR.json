@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
       ],
+      "Cancel trial and pay": [
+        "Ακύρωση δοκιμής και πληρωμή"
+      ],
       "Change": [
         "Αλλαγή"
       ],
@@ -1333,8 +1336,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus και ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } και ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } αποθηκευτικός χώρος"
@@ -3274,6 +3277,9 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
+      "Invalid ZIP code": [
+        "Μη έγκυρος Ταχυδρομικός Κωδικός"
+      ],
       "Name does not match": [
         "Το όνομα δεν ταιριάζει"
       ],
@@ -3334,6 +3340,18 @@
       "Please enter a valid Entity ID URL": [
         "Εισαγάγετε ένα έγκυρο Αναγνωριστικό Οντότητας (Entity ID) διεύθυνσης URL"
       ],
+      "Please enter a valid postal code": [
+        "Παρακαλούμε εισάγετε έναν έγκυρο ταχυδρομικό κώδικα"
+      ],
+      "Please enter a valid ZIP code": [
+        "Παρακαλούμε εισάγετε έναν έγκυρο Ταχυδρομικό Κώδικα."
+      ],
+      "Please enter postal code": [
+        "Παρακαλώ εισάγετε τον ταχυδρομικό κώδικα"
+      ],
+      "Please enter ZIP code": [
+        "Παρακαλώ εισάγετε τον ταχυδρομικό κώδικα"
+      ],
       "Please generate keys before you try to change your password": [
         "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
       ],
@@ -3348,6 +3366,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Επιλέξτε τουλάχιστον έναν χρήστη ή ομάδα πριν συνεχίσετε."
+      ],
+      "Please select billing country": [
+        "Παρακαλούμε επιλέξτε χώρα χρέωσης"
+      ],
+      "Please select billing state": [
+        "Παρακαλούμε επιλέξτε τον νομό χρέωσης"
       ],
       "Please set a recovery email first": [
         "Παρακαλούμε ορίστε πρώτα μια διεύθυνση ανάκτησης"
@@ -3372,6 +3396,9 @@
       ],
       "Please upload only 1 file": [
         "Παρακαλούμε ανεβάστε μόνο 1 αρχείο"
+      ],
+      "Postal code is required": [
+        "Απαιτείται ταχυδρομικός κώδικας"
       ],
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
@@ -3408,9 +3435,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Το ελάχιστο ποσό πίστωσης που μπορεί να προστεθεί είναι ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Η ελάχιστη αποδεκτή πληρωμή είναι ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Το όνομα πολιτικής πρέπει να αποτελείται από 3 έως 40 χαρακτήρες."
@@ -5442,10 +5466,6 @@
       "Please fill in all required fields.": [
         "Παρακαλούμε συμπληρώστε όλα τα απαιτούμενα πεδία."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }.",
-        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }."
-      ],
       "please open a support ticket": [
         "παρακαλούμε ανοίξτε ένα εισιτήριο υποστήριξης"
       ],
@@ -6219,9 +6239,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal, έτσι ώστε να την προσθέσετε ως μέθοδο πληρωμής."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal. Εάν αυτό δεν υπάρχει στον λογαριασμό σας PayPal, παρακαλούμε πιέστε το παρακάτω κουμπί."
-      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Θα μπορείτε να προβιβάσετε τον χρήστη σε διαχειριστή μόλις αποδεχτεί την πρόσκληση."
       ],
@@ -6269,8 +6286,8 @@
       "Your ${ BRAND_NAME } password": [
         "Ο ${ BRAND_NAME } κωδικός πρόσβασής σας"
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Η συνδρομή σας ${ PASS_SHORT_APP_NAME } Plus θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } εφ' όρου ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Η συνδρομή σας ${ plan } θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Οι λογαριασμοί σας ${ VPN_APP_NAME } και ${ MAIL_APP_NAME } συνδέονται. Για να διαγράψετε και τους δύο, παρακαλούμε συνδεθείτε στο ${ loginLink } και διαγράψτε τον εκεί λογαριασμό σας."
@@ -6348,6 +6365,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Προαιρετικό"
+      ],
       "Selected color:": [
         "Επιλεγμένο χρώμα:"
       ]
@@ -7178,6 +7198,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Ταχυδρομικός κώδικας"
+      ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
       ]
@@ -7218,9 +7241,6 @@
       ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
-      ],
-      "click here": [
-        "κλικ εδώ"
       ],
       "Common sign in issues": [
         "Συνήθη προβλήματα εισόδου"
@@ -7314,9 +7334,6 @@
       ],
       "Pay invoice": [
         "Εξόφληση τιμολογίου"
-      ],
-      "PayPal without credit card": [
-        "PayPal χωρίς πιστωτική κάρτα"
       ],
       "perform a password reset from your active session": [
         "εκτελέστε επαναφορά κωδικού πρόσβασης από την ενεργή περίοδο λειτουργίας σας"
@@ -8216,8 +8233,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Προστατεύστε τις ευαίσθητες επιχειρηματικές πληροφορίες και συνεργαστείτε με ασφάλεια."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Προστατέψτε την οικογένειά σας με όλες τις premium δυνατότητες του ${ PASS_SHORT_APP_NAME } Plus για 6 χρήστες."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Προστατέψτε την οικογένειά σας με όλες τις premium δυνατότητες του ${ plusTitle } για 6 χρήστες."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Προστατέψτε το απόρρητο της οικογένειάς σας με όλες τις υπηρεσίες του ${ BRAND_NAME } σε συνδυασμό."
@@ -8293,6 +8310,9 @@
       ],
       "Downgrade account?": [
         "Υποβάθμιση λογαριασμού;"
+      ],
+      "Review subscription": [
+        "Επισκόπηση συνδρομής"
       ],
       "Review subscription and pay": [
         "Ανασκόπηση συνδρομής και πληρωμή"
@@ -8754,8 +8774,8 @@
       "Get the deal": [
         "Αποκτήστε την προσφορά"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Τελευταία ευκαιρία να λάβετε έκπτωση 80% στον πρώτο μήνα του ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Τελευταία ευκαιρία να λάβετε έκπτωση 80% στον πρώτο μήνα του ${ plan }."
       ],
       "Last day to save": [
         "Τελευταία ημέρα αποθήκευσης"
@@ -9093,6 +9113,11 @@
         "Απεριόριστες συνδέσεις, σημειώσεις, πιστωτικές κάρτες και πολλά άλλα"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } πλάνο"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } λογαριασμός χρήστη",
@@ -9275,6 +9300,9 @@
       "Got it": [
         "Το κατάλαβα"
       ],
+      "I'm purchasing as a business": [
+        "Αγοράζω ως επιχείρηση"
+      ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
       ],
@@ -9284,18 +9312,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
       ],
-      "Please select billing country": [
-        "Παρακαλούμε επιλέξτε χώρα χρέωσης"
-      ],
-      "Please select billing state": [
-        "Παρακαλούμε επιλέξτε τον νομό χρέωσης"
-      ],
-      "Please select your billing country first.": [
-        "Παρακαλούμε επιλέξτε πρώτα τη χώρα χρέωσής σας."
-      ],
-      "Please select your billing state first.": [
-        "Παρακαλούμε επιλέξτε πρώτα την κατάσταση χρέωσής σας."
-      ],
       "Processing payment": [
         "Επεξεργασία πληρωμής"
       ],
@@ -9304,9 +9320,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
-      ],
-      "Select billing country to pay": [
-        "Επιλέξτε χώρα χρέωσης για πληρωμή"
       ],
       "terms & conditions": [
         "όροι και προϋποθέσεις"
@@ -9332,6 +9345,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "This number will be shown on all future invoices": [
+        "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Αυτή η μέθοδος πληρωμής θα γίνει η νέα σας προεπιλογή για όλες τις μελλοντικές ανανεώσεις."
@@ -9388,6 +9404,17 @@
       ],
       "Street address, postal code, and city": [
         "Οδός, ταχυδρομικός κώδικας και πόλη"
+      ]
+    },
+    "Payments.VAT number name": {
+      "Business Number": [
+        "Αριθμός Επιχείρησης"
+      ],
+      "EIN": [
+        "ΑΦΜ"
+      ],
+      "VAT number": [
+        "Αριθμός ΑΦΜ"
       ]
     },
     "Permission": {
@@ -9483,6 +9510,9 @@
       "Please select the main reason": [
         "Παρακαλούμε επιλέξτε τον κύριο λόγο"
       ],
+      "Postal code": [
+        "Ταχυδρομικός κώδικας"
+      ],
       "Search": [
         "Αναζήτηση"
       ],
@@ -9524,6 +9554,9 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ],
+      "ZIP code": [
+        "Ταχυδρομικός κώδικας"
       ]
     },
     "placeholder": {
@@ -9570,6 +9603,20 @@
       ],
       "Enjoying ${ planName }?": [
         "Απολαμβάνετε το ${ planName };"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Όλες οι ${ protonPlus } λειτουργίες.${ br }Μία εύκολη συνδρομή."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ως συνδρομητής **${ currentPlanTitle }**, μπορείτε να ξεκλειδώσετε **${ unlockPlanTitle }** και όλες τις premium υπηρεσίες ${ BRAND_NAME } αναβαθμίζοντας σε **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Παραμονή στο ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Αναβάθμιση σε ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -11622,9 +11669,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Δωρεάν"
-      ],
       "${ BRAND_NAME } Account password rules": [
         "Κανόνες κωδικού ${ BRAND_NAME } Λογαριασμού"
       ],
