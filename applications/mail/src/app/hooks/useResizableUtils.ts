@@ -220,6 +220,11 @@ const getTargetWidth = (
 
 /**
  * Default minimum width of the resizable area - it is kept 360 for the list of emails.
+ *
+ * IMPORTANT: Always use this constant instead of hardcoding 360px values.
+ * This ensures consistency across all resizable mail components and makes
+ * future width adjustments centralized and maintainable.
+ *
  * @default 360
  */
 export const DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST = 360;
