@@ -35129,6 +35129,7 @@ __metadata:
     jest: "npm:^29.7.0"
     prettier: "npm:^3.6.2"
     react-helmet: "npm:^6.1.0"
+    string-replace-loader: "npm:^3.2.0"
     typescript: "npm:^5.8.3"
     webextension-polyfill: "npm:^0.12.0"
     webpack: "npm:^5.99.9"
@@ -38274,7 +38275,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"schema-utils@npm:^4.0.0, schema-utils@npm:^4.2.0, schema-utils@npm:^4.3.0, schema-utils@npm:^4.3.2":
+"schema-utils@npm:^4, schema-utils@npm:^4.0.0, schema-utils@npm:^4.2.0, schema-utils@npm:^4.3.0, schema-utils@npm:^4.3.2":
   version: 4.3.2
   resolution: "schema-utils@npm:4.3.2"
   dependencies:
@@ -39585,6 +39586,17 @@ __metadata:
   dependencies:
     strip-ansi: "npm:^7.1.0"
   checksum: 10c0/11c050827774c19583c6c3be62810dd1cc621df8696416754c2cfa62d8de1bc903893571981e7ec45875076a214216109517fa8cd729f9e7249583f546f9b360
+  languageName: node
+  linkType: hard
+
+"string-replace-loader@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "string-replace-loader@npm:3.2.0"
+  dependencies:
+    schema-utils: "npm:^4"
+  peerDependencies:
+    webpack: ^5
+  checksum: 10c0/b1b35e9e52a124c0d7202ab8e2e4470fe17eac7fd9a31caf0417939a81e1b0cf6da70da58d522a27ffb9eca9b4e5da558bbabd263f77d235206558b8e00154a6
   languageName: node
   linkType: hard
 
