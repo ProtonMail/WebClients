@@ -56,6 +56,12 @@
       "Try another method": [
         "Prøv en anden metode"
       ],
+      "Use authentication code": [
+        "Brug godkendelseskode"
+      ],
+      "Use recovery code": [
+        "Brug gendannelseskode"
+      ],
       "Verify": [
         "Bekræft"
       ],
@@ -1031,8 +1037,14 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Det er ikke tilladt at oprette flere gratis konti i henhold til vores ${ termsLink }."
       ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
       "Edit email address": [
         "Rediger e-mailadresse"
+      ],
+      "Enter the code from your authenticator app": [
+        "Indtast koden fra din godkendelsesapp"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
@@ -1472,6 +1484,10 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Forøg din lagerplads til ${ bundleStorage } i alt"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Mulighed for ${ n } brugerdefineret e-mail-domæne",
+        "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
     "Placeholder": {
