@@ -80,7 +80,7 @@
         "Ужыць пажыццёвы код купона"
       ],
       "Authenticate": [
-        "Аўтэнтыфікаваць"
+        "Аўтэнтыфікацыя"
       ],
       "Back": [
         "Назад"
@@ -158,10 +158,10 @@
         "Скапіяваць і закрыць"
       ],
       "Copy forwarding address": [
-        "Капіяваць адрас перысылкі"
+        "Капіяваць адрас перасылкі"
       ],
       "Copy link": [
-        "Капіяваць спасылку"
+        "Скапіяваць спасылку"
       ],
       "Copy to clipboard": [
         "Скапіяваць у буфер абмену"
@@ -1931,12 +1931,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
-      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -2819,13 +2813,13 @@
         "Кампанія"
       ],
       "Confirm vault name": [
-        "Пацвярджэнне назвы сховішча"
+        "Пацвердзіце назву сховішча"
       ],
       "Contact created ${ time } ago.": [
         "Кантакт створаны ${ time } таму"
       ],
       "Contact details": [
-        "Кантактныя звесткі"
+        "Звесткі аб кантакце"
       ],
       "Contacts": [
         "Кантакты"
@@ -2873,7 +2867,7 @@
         "Крэдытныя карткі"
       ],
       "Crypto Wallet": [
-        "Крыпта-кашалёк"
+        "Крыптакашалёк"
       ],
       "Custom Items": [
         "Карыстальніцкія элементы"
@@ -3990,8 +3984,8 @@
       ]
     },
     "PassOnboardingOffer": {
-      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
-        "Пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } Plus за ${ plusLifetimePrice }"
+      "${ plusTitle } Lifetime for ${ plusLifetimePrice }": [
+        "Пажыццёвы доступ да ${ plusTitle } за ${ plusLifetimePrice }"
       ],
       "${ price }/month": [
         "${ price } у месяц"
@@ -4274,14 +4268,8 @@
       "${ BRAND_NAME } addresses": [
         "Адрасы ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
-      ],
-      "${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Абарона ўліковага запісу"
@@ -4338,7 +4326,7 @@
         "Пацвердзіць ідэнтычнасць"
       ],
       "Confirm PIN code": [
-        "Пацвердзіць PIN-код"
+        "Пацвердзіце PIN-код"
       ],
       "Confirm your email": [
         "Пацвердзіце сваю электронную пошту"
@@ -4368,7 +4356,7 @@
         "Карыстальніцкія дамены"
       ],
       "Custom email monitoring": [
-        "Карыстальніцкі адрас электроннай пошты для назірання"
+        "Карыстальніцкі адрас электроннай пошты для маніторынгу"
       ],
       "Custom emails": [
         "Карыстальніцкія адрасы электроннай пошты"
