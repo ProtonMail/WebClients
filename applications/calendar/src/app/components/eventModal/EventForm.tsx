@@ -63,6 +63,7 @@ export interface EventFormProps {
     isDrawerApp?: boolean;
     onDisplayBusySlots?: () => void;
     view: VIEWS;
+    hasZoomError: boolean;
 }
 
 const EventForm = ({
@@ -84,6 +85,7 @@ const EventForm = ({
     isDrawerApp,
     onDisplayBusySlots,
     view,
+    hasZoomError,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
     const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
@@ -335,7 +337,12 @@ const EventForm = ({
             />
             <RowLocation canEditSharedEventData={canEditSharedEventData} model={model} setModel={setModel} />
             {canEditSharedEventData && (
-                <RowVideoConference model={model} setModel={setModel} isCreateEvent={isCreateEvent} />
+                <RowVideoConference
+                    model={model}
+                    setModel={setModel}
+                    isCreateEvent={isCreateEvent}
+                    hasZoomError={hasZoomError}
+                />
             )}
             {!isMinimal && showNotifications && notificationsRow}
             <RowDescription canEditSharedEventData={canEditSharedEventData} model={model} setModel={setModel} />
