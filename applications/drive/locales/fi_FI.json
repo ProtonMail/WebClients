@@ -572,9 +572,6 @@
       "Loading link": [
         "Ladataan linkkiä"
       ],
-      "Loading verification": [
-        "Ladataan vahvistusta"
-      ],
       "Manage advanced account protections": [
         "Hallitse edistynyttä tilisuojausta"
       ],
@@ -1341,9 +1338,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } -työpöytäsovellus"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus ja ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } tallennustilaa"
@@ -3405,9 +3399,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Lisättävien krediittien vähimmäissumma on ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "Hyväksymämme vähimmäismaksu on ${ price }"
-      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Alkuperäisen tiedoston uutta versiota ei ole vielä tallennettu. Yritä myöhemmin uudelleen"
       ],
@@ -5449,10 +5440,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediitti.",
-        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
-      ],
       "Please open the document to view it.": [
         "Avaa dokumentti tarkastellaksesi sitä."
       ],
@@ -6149,9 +6136,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Kaikki laajemmat ${ MAIL_APP_NAME } -määritykset, kuten käyttäjät, osoitteet ja omat verkkotunnukset on poistettava käytöstä tai poistettava ennen tilauksen alennusta."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal-tililläsi on oltava maksukortti tai pankkitili. Jos PayPal-tililläsi ei näitä ole, paina alla olevaa painiketta."
-      ],
       "You need access": [
         "Tarvitset käyttöoikeuden"
       ],
@@ -6183,9 +6167,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME }-tilisi on jäädytetty, eikä postilaatikkosi enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus -tilauksesi korvataan elinikäisellä ${ PASS_SHORT_APP_NAME }illa, ja tilauksesi jäljellä oleva saldo lisätään tilillesi. Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tililläsi on ainakin yksi erääntynyt lasku. Pääsyäsi rajoitetaan pian. ${ payInvoiceLink }"
@@ -6277,6 +6258,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Valinnainen"
+      ],
       "Selected color:": [
         "Valittu väri:"
       ]
@@ -6864,9 +6848,6 @@
       "Start date": [
         "Aloituspäivä"
       ],
-      "State": [
-        "Osavaltio"
-      ],
       "Stolen data": [
         "Varastettua tietoa"
       ],
@@ -7046,9 +7027,6 @@
       ],
       "clearing your browser cache": [
         "selaimen välimuistin tyhjennys"
-      ],
-      "click here": [
-        "paina tästä"
       ],
       "Drafts": [
         "Luonnokset"
@@ -8090,9 +8068,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Suojaa arkaluonteiset yritystiedot ja yhteiskäytä turvallisesti."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Suojaa perheesi kaikilla ${ PASS_SHORT_APP_NAME } Plussan premium-ominaisuuksista kuudelle käyttäjälle."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Suojaa perheesi yksityisyyttä kaikkien ${ BRAND_NAME } -palveluiden yhdistelmällä."
       ],
@@ -8761,9 +8736,6 @@
       "Get the deal": [
         "Hyödynnä tarjous"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Viimeinen mahdollisuus saada 80 % alennus ${ plan } Plussan ensimmäisestä kuukaudesta."
-      ],
       "Last day to save": [
         "Viimeisin tallennettava päivä"
       ],
@@ -9040,6 +9012,11 @@
         "Rajattomasti kirjautumistietoja, muistiinpanoja, maksukortteja ja muuta"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } -tilaus"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } käyttäjätili",
@@ -9157,26 +9134,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktivoi tilauksesi uudelleen, ennen kuin voit vähentää lisäosien määrää."
       ],
-      "Please select billing country": [
-        "Valitse laskutusmaa"
-      ],
-      "Please select billing state": [
-        "Valitse laskutusosavaltio"
-      ],
-      "Please select your billing country first.": [
-        "Valitse laskutusmaasi ensin."
-      ],
-      "Please select your billing state first.": [
-        "Valitse laskutusosavaltiosi ensin."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Uusimishinnoittelu voi muuttua ehtojen ${ termsAndConditionsLink } mukaan."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
-      ],
-      "Select billing country to pay": [
-        "Valitse laskutusmaa maksaaksesi"
       ],
       "terms & conditions": [
         "käyttöehdot"
@@ -11003,9 +10965,6 @@
         "Poista ${ count } yhteystietoryhmä",
         "Poista ${ count } yhteystietoryhmää"
       ],
-      "Delete ${ links.length } items?": [
-        "Poistetaanko ${ links.length } kohdetta?"
-      ],
       "Delete ${ name }?": [
         "Poistetaanko ${ name }?"
       ],
@@ -11590,6 +11549,9 @@
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
+      ],
+      "Your plan": [
+        "Tilauksesi"
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"

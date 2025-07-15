@@ -354,6 +354,9 @@
       "Help": [
         "幫助"
       ],
+      "Help and feedback": [
+        "尋求協助與反映意見"
+      ],
       "Hide": [
         "隱藏"
       ],
@@ -408,9 +411,6 @@
       "Load image": [
         "載入圖像"
       ],
-      "Loading verification": [
-        "正在載入驗證"
-      ],
       "Manage folders": [
         "管理資料夾"
       ],
@@ -437,6 +437,9 @@
       ],
       "More actions": [
         "更多選項"
+      ],
+      "More benefits": [
+        "更多好處"
       ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
@@ -587,9 +590,6 @@
       ],
       "Restore this version?": [
         "還原此版本?"
-      ],
-      "Retry": [
-        "重試"
       ],
       "Save": [
         "儲存"
@@ -823,6 +823,25 @@
         "若您現在離開，有一些事件或會無法匯入"
       ]
     },
+    "anniversary_2025: Offer": {
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "折扣價格依標準月繳費率計算。在本繳款單週期結束後，將為您以標準年繳費率續約。"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Save time with built-in 2FA": [
+        "利用內建雙重驗證（2FA）以節省時間"
+      ],
+      "Share passwords easily": [
+        "輕鬆分享密碼"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } 個月"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 應用程式"
@@ -853,6 +872,11 @@
         "不支援的事件"
       ]
     },
+    "b2b_trials_Action": {
+      "Keep subscription": [
+        "保留訂購授權"
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 位使用者"
@@ -880,9 +904,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
@@ -2373,6 +2394,11 @@
         "優先支援"
       ]
     },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "備註：\n${ eventComment }"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "描述：${ eventDescription }"
@@ -2646,6 +2672,9 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
+      "Invalid ZIP code": [
+        "無效的郵遞區號"
+      ],
       "Item content cannot exceed 40KB": [
         "項目無法超越40KB"
       ],
@@ -2712,6 +2741,18 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "照片上載暫時停用。請稍後再試"
       ],
+      "Please enter a valid postal code": [
+        "請輸入有效的郵遞區號"
+      ],
+      "Please enter a valid ZIP code": [
+        "請輸入有效的郵遞區號"
+      ],
+      "Please enter postal code": [
+        "請輸入郵遞區號"
+      ],
+      "Please enter ZIP code": [
+        "請輸入郵遞區號"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
       ],
@@ -2723,6 +2764,12 @@
       ],
       "Please select a state": [
         "請選擇一個州"
+      ],
+      "Please select billing country": [
+        "請選擇您的付款國家"
+      ],
+      "Please select billing state": [
+        "請選擇您的付款州名"
       ],
       "Port is required": [
         "通訊埠為必填"
@@ -2816,9 +2863,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "付款的最低金額為 ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "原始檔案的新修訂版本尚未上載，請稍後再試"
@@ -4160,6 +4204,9 @@
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "如果您還是決定取消，現有 ${ planTitle } 授權將不再自動續購，到期日為 ${ expiryDate }"
       ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "如果您改變心意，您可以隨時再次訂購。對於您決定離開，我們感到遺憾。"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
@@ -4411,9 +4458,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
       ],
       "Please provide a name and an email address for creating a group.": [
         "請提供一個名子和電子郵件位址以創建群組。"
@@ -4856,9 +4900,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "您必須先停用或移除任何額外的 ${ MAIL_APP_NAME } 使用者、電郵位址及自訂網域，方可降級。"
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "您的 PayPal 帳號須先連結信用卡或銀行賬戶。如果您的 PayPal 帳號沒有，請按一下以下按鈕。"
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "您將於此日失去存取${ planTitle }功能"
       ],
@@ -4867,6 +4908,12 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "在截止日 ${ trialEndsOnFormatted } 到期之前取消，便不會向您收取任何費用。"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "您已達到聯絡人群組郵件地址最高上限："
@@ -4879,9 +4926,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期繳款單。"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "您的 ${ PASS_SHORT_APP_NAME } Plus 訂閱方案將被轉換成 ${ PASS_SHORT_APP_NAME } 終身方案。原訂閱中剩餘的額度將被退回您的帳戶。${ PASS_SHORT_APP_NAME } 終身方案不再需要續約，此次付費將能終身使用 ${ PASS_SHORT_APP_NAME }。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的帳號至少有一張逾期帳單。您的存取將受限制。${ payInvoiceLink }"
@@ -4948,6 +4992,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "可選"
+      ],
       "Selected color:": [
         "已選取的色彩:"
       ]
@@ -5421,9 +5468,6 @@
       "Start date": [
         "開始日期"
       ],
-      "State": [
-        "州"
-      ],
       "Stop sharing": [
         "停止共用"
       ],
@@ -5514,6 +5558,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "郵遞區號"
+      ],
       "ZIP code": [
         "郵遞區號"
       ]
@@ -5562,9 +5609,6 @@
       ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
-      ],
-      "click here": [
-        "按一下此處"
       ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
@@ -5638,6 +5682,9 @@
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "您的帳號可能會被刪除。為了避免資料損失，請向您的管理員查詢或升級。 ${ cta }"
       ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "您的儲存空間不足。要繼續使用 ${ BRAND_NAME } 平台，請釋出儲存空間或${ cta }。"
+      ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
       ]
@@ -5667,6 +5714,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "添加${ BRAND_NAME }訂閱撰寫扳手"
+      ],
+      "Add-on with free trial": [
+        "可免費試用的擴充功能"
       ],
       "for ${ price }": [
         "${ price } 版"
@@ -6478,9 +6528,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "保持敏感資料安全及安全地合作。"
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "透過${ PASS_SHORT_APP_NAME }頂級功能保護家庭及6位使用者。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務保護您家庭的隱私。"
       ],
@@ -6794,6 +6841,9 @@
       ],
       "Require 2FA": [
         "要求兩階段認證"
+      ],
+      "Support for ${ n } custom email domain": [
+        "支援 ${ n } 組自訂電子郵件網域"
       ]
     },
     "Notification": {
@@ -7038,6 +7088,9 @@
       "Don’t show this offer again": [
         "不再顯示此優惠"
       ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "取得 ${ BRAND_NAME } 無限版"
+      ],
       "Get Drive Plus for only ${ pricingTitle }": [
         "使用只要${ pricingTitle }取得Drive Plus"
       ],
@@ -7046,9 +7099,6 @@
       ],
       "Get the deal": [
         "取得優惠"
-      ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "最後獲得${ plan }進階首月80%折價"
       ],
       "Last day to save": [
         "最後優惠日"
@@ -7116,6 +7166,9 @@
     "Onboarding Trial": {
       "Continue": [
         "繼續"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "免費享有商業級安全保護功能直到 ${ trialEndsOnFormatted } 止。"
       ]
     },
     "Option": {
@@ -7160,8 +7213,16 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "使用全部 ${ BRAND_NAME } 應用程式與進階功能"
+      ],
       "Secure vault sharing": [
         "安全分享保管庫"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }方案"
       ]
     },
     "pass_signup_2024: Info": {
@@ -7222,6 +7283,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "銀行轉帳"
       ],
@@ -7253,8 +7317,14 @@
       "CVC": [
         "CVC"
       ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
+      ],
       "Got it": [
         "瞭解"
+      ],
+      "I'm purchasing as a business": [
+        "我以公司名義購買"
       ],
       "MM/YY": [
         "MM/YY"
@@ -7265,29 +7335,29 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "請先重新啟用訂閱以減少添加數量。"
       ],
-      "Please select billing country": [
-        "請選擇您的付款國家"
-      ],
-      "Please select billing state": [
-        "請選擇您的付款狀態"
-      ],
-      "Please select your billing country first.": [
-        "請先選擇您的計費國家。"
-      ],
-      "Please select your billing state first.": [
-        "請先選擇您的計費狀態。"
-      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "更新價 ${ renewPriceStr }，任何時間都可取消。"
-      ],
-      "Select billing country to pay": [
-        "選取繳款國家以付款"
       ],
       "terms & conditions": [
         "條款及細則"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "此折價券可適用續約訂購 ${ couponRedemptions } 次。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "前 ${ subscriptionLength } 個月，可享優惠價格 ${ priceWithDiscount }。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "首月限定優惠價為 ${ priceWithDiscount }。折價券可使用 ${ couponRedemptions } 次，之後將以一個月 ${ renewPriceStr } 的價格自動續約。您可以隨時取消。"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "到期後將自動以 ${ renewPriceStr } 的價格續約 ${ renewalLength } 個月。您可以隨時取消。"
+      ],
+      "This number will be shown on all future invoices": [
+        "未來所有的帳單將會顯示此統一編號"
       ],
       "Timeout exceeded": [
         "已經逾時"
@@ -7327,6 +7397,20 @@
       ],
       "Street address, postal code, and city": [
         "地址，郵政區碼，及城市"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "商業號碼（ABN）"
+      ],
+      "Business Number": [
+        "營業人統一編號"
+      ],
+      "EIN": [
+        "僱主身份識別號碼（EIN）"
+      ],
+      "VAT number": [
+        "增值稅編號（VAT）"
       ]
     },
     "PGP key encryption warning": {
@@ -7411,6 +7495,9 @@
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有)"
       ],
+      "Postal code": [
+        "郵遞區號"
+      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
@@ -7437,6 +7524,9 @@
       ],
       "Start typing an email address": [
         "在此輸入一個電郵位址"
+      ],
+      "ZIP code": [
+        "郵遞區號"
       ]
     },
     "Placeholder for contact group name": {
@@ -7910,6 +8000,9 @@
       "Go to subscription plans": [
         "查看訂購授權"
       ],
+      "Unblock streaming content": [
+        "解除封鎖影音串流內容"
+      ],
       "Upgrade": [
         "升級"
       ],
@@ -7983,6 +8076,9 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "存取全球影音串流服務內容"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
       ]
@@ -8151,6 +8247,9 @@
       ],
       "${ n } VPN connection per user": [
         "${ n } 個 VPN 連線 / 每一位使用者"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "每位使用者可以在 ${ n } 台裝置上連接 VPN"
       ]
     },
     "Subscription change warning": {
@@ -8457,6 +8556,20 @@
       ],
       "vCard field": [
         "vCard 欄位"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } 天"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } 小時"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } 分鐘"
+      ],
+      "${ seconds } second": [
+        "${ seconds } 秒"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -8968,6 +9081,9 @@
       "Stop sharing?": [
         "停止共用?"
       ],
+      "Subscription canceled": [
+        "訂購授權已取消"
+      ],
       "Summary": [
         "總結"
       ],
@@ -9039,6 +9155,9 @@
       ],
       "Your exposed information": [
         "你的外﻿﻿﻿洩資料"
+      ],
+      "Your plan": [
+        "您的方案"
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"

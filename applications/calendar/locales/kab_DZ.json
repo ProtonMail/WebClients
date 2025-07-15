@@ -347,9 +347,6 @@
       "Load image": [
         "Sali-d tugniwin"
       ],
-      "Loading verification": [
-        "Asali n usenqed"
-      ],
       "Make this participant optional": [
         "Err amttekki-a d afrayan"
       ],
@@ -505,9 +502,6 @@
       ],
       "Reset to default": [
         "Wennez ɣer umezwer"
-      ],
-      "Retry": [
-        "Ɛref̣ tikelt-nniḍen"
       ],
       "Save": [
         "Sekles"
@@ -838,9 +832,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Asnas ${ MAIL_APP_NAME } i Desktop"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus d ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } n uḥraz"
@@ -2676,9 +2667,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Azal amezyan maḍi n usmad i izemren ad yettwarnu d ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "Lexlaṣ amezyan maḍi i nezmer ad neqbel d ${ price }"
-      ],
       "The sending key is not valid": [
         "Tasarut n tuzna ur d tameɣtut"
       ],
@@ -4125,9 +4113,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Yessefk ad tessenseḍ neɣ ad tekkseḍ akk iseqdacen imernan n ${ MAIL_APP_NAME }, tansiwin, d taɣulin tudmawanin send ad tessadreḍ deg lqem."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Yessfk ad tesεuḍ takarḍa n usmad neɣ amiḍan n tbanka i icudden ɣer umiḍan-ik·im PayPal. Ma amiḍan-ik·im PayPal ur yesεi ara aya, ttxil-k·m sit ɣef tqeffalt ddaw."
-      ],
       "You will lose all unsaved changes.": [
         "Ad teṣruḥeḍ akk ibeddilen ur nettwasekles ara."
       ],
@@ -4184,6 +4169,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Izḍi usrid n unagraw-inek·inem yettban yettusenfel ɣer ${ timezone }. Tebɣiḍ ad tleqqmeḍ asmenyif-inek·inem n yizḍi usrid?"
+      ]
+    },
+    "info": {
+      "Optional": [
+        "Afrayan"
       ]
     },
     "Info message": {
@@ -4626,9 +4616,6 @@
       "Start date": [
         "Azemz n tazwara"
       ],
-      "State": [
-        "Addad"
-      ],
       "Street address": [
         "Tansa n uxxam"
       ],
@@ -4734,9 +4721,6 @@
       ],
       "clearing your browser cache": [
         "asfaḍ n tuffirt n iminig"
-      ],
-      "click here": [
-        "sit dagi"
       ],
       "Drafts": [
         "Irewwayen"
@@ -5711,6 +5695,11 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Wali taddart n yimttekkiyen"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Aɣawas ${ upsellPlanTitle }"
       ]
     },
     "passwordless": {
@@ -7043,6 +7032,9 @@
       ],
       "Your calendar link": [
         "Aseɣwen n uwitayen-ik"
+      ],
+      "Your plan": [
+        "Aɣawas-ik·im"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

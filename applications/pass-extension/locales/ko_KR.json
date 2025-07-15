@@ -1780,9 +1780,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
-      ],
       "Moving items": [
         "항목 이동 중"
       ],
@@ -2144,7 +2141,7 @@
         "이 항목은 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
       ],
       "This mailbox will use your previous email.": [
-        "이 메일함은 귀하의 이전 이메일을 사용할 것입니다."
+        "이 메일함이 사용자의 기존 이메일을 사용하게 됩니다."
       ],
       "This operation is irreversible.": [
         "이 작업은 되돌릴 수 없습니다."

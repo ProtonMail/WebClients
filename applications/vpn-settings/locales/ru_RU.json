@@ -1086,6 +1086,9 @@
       "200 GB storage": [
         "200 ГБ хранилища"
       ],
+      "500 GB encrypted storage": [
+        "500 ГБ зашифрованного хранилища"
+      ],
       "Encrypted password manager": [
         "Зашифрованный менеджер паролей"
       ],
@@ -1098,6 +1101,9 @@
       "Recover previous file versions": [
         "Восстановить предыдущие версии файла"
       ],
+      "Short @pm.me address": [
+        "Короткий адрес @pm.me"
+      ],
       "Stream your favorite content": [
         "Смотрите любимый контент"
       ],
@@ -1109,6 +1115,24 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "15 months": [
+        "15 месяца"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "30 months": [
+        "30 месяцев"
+      ],
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
       ]
@@ -1237,8 +1261,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus и ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } и ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
@@ -3319,9 +3343,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "Минимальный платеж, который мы принимаем, составляет ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Название политики должно содержать от 3 до 40 символов."
       ],
@@ -3787,6 +3808,11 @@
       ],
       "Secure streaming": [
         "Защищенный просмотр трансляций"
+      ]
+    },
+    "Features: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
+        "Получайте доступ к содержимому на службах трансляций, включая Netflix, Disney+, Prime Video и других, отовсюду"
       ]
     },
     "fido2: Action": {
@@ -4435,6 +4461,9 @@
       "active": [
         "активный"
       ],
+      "Activity monitor": [
+        "Монитор активности"
+      ],
       "Activity Monitor": [
         "Монитор Активности"
       ],
@@ -4704,6 +4733,9 @@
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с выделенными IP-адресами могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
+      ],
+      "Dedicated VPN servers": [
+        "Выделенные VPN-серверы"
       ],
       "default email address": [
         "адрес эл. почты по умолчанию"
@@ -5383,12 +5415,6 @@
       "Please fill in all required fields.": [
         "Заполните все обязательные поля."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредит.",
-        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету.",
-        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов.",
-        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредита."
-      ],
       "please open a support ticket": [
         "откройте заявку в службу поддержки"
       ],
@@ -5788,6 +5814,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для подтверждения введите имя пользователя, которого вы хотите удалить."
       ],
+      "To continue to ${ product }": [
+        "Чтобы продолжить в ${ product }"
+      ],
       "To create your first user group, go to": [
         "Чтобы создать свою первую группу пользователей, перейдите к"
       ],
@@ -6178,9 +6207,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Чтобы добавить PayPal в качестве способа оплаты вы должны привязать банковскую карту или банковский счет к вашей учетной записи PayPal."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Вам необходимо связать кредитную карту или банковский счет с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
-      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Вы сможете перевести пользователя в разряд администраторов, как только он примет приглашение."
       ],
@@ -6226,8 +6252,8 @@
       "Your ${ BRAND_NAME } password": [
         "Ваш пароль ${ BRAND_NAME }"
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Ваша подписка ${ PASS_SHORT_APP_NAME } Plus будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша подписка ${ plan } будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны. Чтобы удалить их оба, пожалуйста, войдите по ссылке: ${ loginLink } и удалите свой аккаунт."
@@ -6291,6 +6317,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Необязательно"
+      ],
       "Selected color:": [
         "Выбранный цвет"
       ]
@@ -7169,9 +7198,6 @@
       "clearing your browser cache": [
         "очистка кеша браузера"
       ],
-      "click here": [
-        "нажмите здесь"
-      ],
       "Common sign in issues": [
         "Частые проблемы при входе"
       ],
@@ -7264,9 +7290,6 @@
       ],
       "Pay invoice": [
         "Оплатить счёт"
-      ],
-      "PayPal without credit card": [
-        "PayPal без кредитной карты"
       ],
       "perform a password reset from your active session": [
         "выполнить сброс пароля из вашего активного сеанса"
@@ -8187,8 +8210,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Защитите конфиденциальную деловую информацию и сотрудничайте безопасно."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Защитите свою семью, используя все платные функции ${ PASS_SHORT_APP_NAME } Plus для 6 пользователей."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Защитите свою семью, используя все платные функции ${ plusTitle } для 6 пользователей."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Защитите конфиденциальность вашей семьи с помощью комплекса услуг ${ BRAND_NAME }."
@@ -8725,9 +8748,6 @@
       "Get the deal": [
         "Получить скидку"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Последний шанс получить скидку 80% на первый месяц подписки ${ plan } Plus."
-      ],
       "Last day to save": [
         "Последний день, чтобы сэкономить"
       ],
@@ -8810,6 +8830,12 @@
     "Onboarding Trial": {
       "Continue": [
         "Продолжить"
+      ],
+      "help center": [
+        "справочный центр"
+      ],
+      "If you need help,": [
+        "Если вам нужна помощь,"
       ]
     },
     "Option": {
@@ -9019,6 +9045,11 @@
         "Неограниченное количество имен пользователей, заметок, кредитных карт и многое другое"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "тариф ${ upsellPlanTitle }"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } аккаунт пользователя",
@@ -9212,18 +9243,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
-      "Please select billing country": [
-        "Пожалуйста, выберите страну выставления счета"
-      ],
-      "Please select billing state": [
-        "Пожалуйста, выберите государство выставления счета"
-      ],
-      "Please select your billing country first.": [
-        "Сначала выберите страну для выставления счета."
-      ],
-      "Please select your billing state first.": [
-        "Сначала выберите государство для выставления счета."
-      ],
       "Processing payment": [
         "Обработка платежа"
       ],
@@ -9232,9 +9251,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Продлевается по цене ${ renewPriceStr }, можно отменить в любое время."
-      ],
-      "Select billing country to pay": [
-        "Для оплаты, пожалуйста выберите страну"
       ],
       "terms & conditions": [
         "правила и условия"
@@ -9496,6 +9512,11 @@
       ],
       "Enjoying ${ planName }?": [
         "Вам нравится ${ planName }?"
+      ]
+    },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Улучшить до ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -10143,6 +10164,9 @@
       ]
     },
     "Signup label": {
+      "${ BRAND_NAME } password": [
+        "Пароль ${ BRAND_NAME }"
+      ],
       "Confirm password": [
         "Подтвердите пароль"
       ],
@@ -10872,10 +10896,10 @@
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
       ],
       "${ dayDiff } day left": [
-        "Остался ${ dayDiff } день",
-        "Осталось ${ dayDiff } дня",
-        "Осталось ${ dayDiff } дней",
-        "Осталось ${ dayDiff } дней"
+        "${ dayDiff } день остался",
+        "${ dayDiff } дня осталось",
+        "${ dayDiff } дней осталось",
+        "${ dayDiff } дней осталось"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
@@ -11247,6 +11271,9 @@
       ],
       "Expiring": [
         "Истекающий"
+      ],
+      "Free Trial": [
+        "Бесплатный пробный период"
       ]
     },
     "Subtitle": {
@@ -11562,6 +11589,32 @@
         "Темы"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } день",
+        "${ ceilDays } дня",
+        "${ ceilDays } дней",
+        "${ ceilDays } дней"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } час",
+        "${ ceilHours } часа",
+        "${ ceilHours } часов",
+        "${ ceilHours } часов"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } минута",
+        "${ ceilMinutes } минуты",
+        "${ ceilMinutes } минут",
+        "${ ceilMinutes } минут"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } Account password rules": [
         "Правила для пароля аккаунта ${ BRAND_NAME }"
@@ -11622,6 +11675,9 @@
       ],
       "Activate user": [
         "Активировать пользователя"
+      ],
+      "Activity monitor": [
+        "Монитор активности"
       ],
       "Add ${ totalServerCount } server?": [
         "Добавить ${ totalServerCount } сервер?",

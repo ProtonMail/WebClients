@@ -581,9 +581,6 @@
       "Loading link": [
         "ბმულის ჩატვირთვა"
       ],
-      "Loading verification": [
-        "შემოწმების ჩატვირთვა"
-      ],
       "Manage advanced account protections": [
         "ანგარიშის დამატებითი დაცვის მართვა"
       ],
@@ -1393,9 +1390,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus და ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } საცავი"
@@ -3466,9 +3460,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "გადახდის მინიმალური თანხაა ${ price }"
-      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "საწყისის ფაილი ახალი რევიზია ჯერ ატვირთული არაა. მოგვიანებით სცადეთ"
       ],
@@ -5507,10 +5498,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი.",
-        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
-      ],
       "Please open the document to view it.": [
         "გახსენით დოკუმენტი, რომ ნახოთ ის."
       ],
@@ -6195,9 +6182,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "სატარიფო გეგმის ჩამოწევამდე საჭიროა ${ MAIL_APP_NAME }-ის მომხმარებლების, მისამართების და ხელით მითითებული დომენების წაშლა."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "თქვენ უნდა გქონდეთ საკრედიტო ბარათი ან საბანკო ანგარიში, რომელიც დაკავშირებულია თქვენს PayPal ანგარიშთან. თუ თქვენს PayPal ანგარიშს ეს არ აქვს, გთხოვთ, დააჭიროთ ქვემოთ მოცემულ ღილაკს."
-      ],
       "You need access": [
         "გჭირდებათ წვდომა"
       ],
@@ -6329,6 +6313,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "არასავალდებულო"
+      ],
       "Selected color:": [
         "არჩეული ფერი:"
       ]
@@ -6916,9 +6903,6 @@
       "Start date": [
         "საწყისი თარიღი"
       ],
-      "State": [
-        "მდგომარეობა"
-      ],
       "Stolen data": [
         "მოპარული მონაცემები"
       ],
@@ -7098,9 +7082,6 @@
       ],
       "clearing your browser cache": [
         "ბრაუზერის ქეშის გასუფთავება"
-      ],
-      "click here": [
-        "დააწკაპუნეთ აქ"
       ],
       "Drafts": [
         "მონახაზები"
@@ -8139,9 +8120,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "დაიცავით კონფიდენციალური კომპანიის ინფორმაცია და იმუშავეთ ერთად უსაფრთხოდ."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "დაიცავით თქვენი ოჯახი ${ PASS_SHORT_APP_NAME } Plus-ის ფასიანი ფუნქციებით 6 მომხმარებლისთვის."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "დაიცავით თქვენი ოჯახის კონფიდენციალობა ყველა ${ BRAND_NAME }-ის სერვისის ერთად."
       ],
@@ -8831,9 +8809,6 @@
       "Get the deal": [
         "ფასდაკლების მიღება"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan } Plus-დან."
-      ],
       "Last day to save": [
         "ბოლო დღე შესანახად"
       ],
@@ -9140,6 +9115,11 @@
         "შეუზღუდავი შესვლის დეტალები, შენიშვნები, საკრედიტო ბარათები და სხვა"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "გეგმა ${ upsellPlanTitle }"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } მომხმარებლის ანგარიში",
@@ -9254,26 +9234,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
       ],
-      "Please select billing country": [
-        "აირჩიეთ გადახდის ქვეყანა"
-      ],
-      "Please select billing state": [
-        "აირჩიეთ გადახდის მდგომარეობა"
-      ],
-      "Please select your billing country first.": [
-        "ჯერ აირჩიეთ თქვენი გადახდის ქვეყანა."
-      ],
-      "Please select your billing state first.": [
-        "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "განახების ფასები იცვლება ${ termsAndConditionsLink }-ის წესებით."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
-      ],
-      "Select billing country to pay": [
-        "აირჩიეთ გადასახდელი ქვეყანა"
       ],
       "terms & conditions": [
         "პირობები და წესები"
@@ -11140,9 +11105,6 @@
         "${ count } კონტაქტების ჯგუფის წაშლა",
         "${ count } კონტაქტების ჯგუფის წაშლა"
       ],
-      "Delete ${ links.length } items?": [
-        "წავშალო ${ links.length } ელემენტი?"
-      ],
       "Delete ${ name }?": [
         "წავშალო ${ name }?"
       ],
@@ -11739,6 +11701,9 @@
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
+      ],
+      "Your plan": [
+        "თქვენი გეგმა"
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"

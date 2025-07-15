@@ -403,6 +403,9 @@
       "Retry": [
         "重試"
       ],
+      "Right click and download this CSV": [
+        "點擊右鍵並下載此 CSV"
+      ],
       "Save": [
         "儲存"
       ],
@@ -797,6 +800,9 @@
       "Vault name does not match": [
         "保管庫名稱不符"
       ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "我們在啟動 ${ PASS_SHORT_APP_NAME } 時遇到一項問題。若此問題持續發生，請聯絡我們的客服尋求協助。"
+      ],
       "Wrong extra password": [
         "第二密碼錯誤"
       ],
@@ -872,6 +878,9 @@
       ],
       "${ n } item": [
         "${ n } 項目"
+      ],
+      "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
+        "${ PASS_APP_NAME } 將需要您的 ${ BRAND_NAME } 密碼，以便離線存取資料。"
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count }邀請成功寄出"
@@ -1164,6 +1173,15 @@
       "Pinning item...": [
         "訂選項目..."
       ],
+      "Please confirm your backup password in order to disable offline mode": [
+        "要停用離線模式，請先確認您的備份密碼"
+      ],
+      "Please confirm your extra password": [
+        "請確認您的附加密碼"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "請確認您的附加密碼，以便使用自動生物辨識鎖。"
+      ],
       "Please confirm your PIN code to edit this setting.": [
         "請確認於設定編輯個人識別數字代碼"
       ],
@@ -1256,6 +1274,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "以下 ${ totalIgnored } 個項目無法匯入:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "您貼上的字已達${ maxLength }字元上限"
@@ -1910,6 +1931,9 @@
       "Second password": [
         "第二密碼"
       ],
+      "Secure links": [
+        "安全加密連結"
+      ],
       "Security": [
         "安全"
       ],
@@ -2187,6 +2211,9 @@
       "File": [
         "檔案"
       ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "若啟用此選項，匯出時將下載您所有檔案。所需時間將視您的網際網路連線情況而定。"
+      ],
       "Rename": [
         "重新命名"
       ],
@@ -2201,6 +2228,9 @@
       ]
     },
     "PassOnboardingOffer": {
+      "${ plusTitle } Lifetime for ${ plusLifetimePrice }": [
+        "${ plusTitle } 終身版，售價 ${ plusLifetimePrice }"
+      ],
       "${ price }/month": [
         "${ price }/月"
       ]
@@ -2707,12 +2737,23 @@
         "URL無效"
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "將項目移至"
+      ]
+    },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "需要 ${ BRAND_NAME } 密碼"
+      ],
       "2 consecutive dots are not allowed": [
         "不允許連續2點"
       ],
       "A description of the problem is required": [
         "需要解釋錯誤"
+      ],
+      "An error occurred while importing your data.": [
+        "匯入資料時發生錯誤。"
       ],
       "At least one email address is required": [
         "最少需要一個電子郵件位址"
@@ -2857,6 +2898,9 @@
       ],
       "Your session was locked.": [
         "您的作業階段已鎖定"
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "您的訂閱方案已無法新增更多保管庫。"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的訂閱不允許新增多重保管庫。預設會把所有項目匯入第一個保管庫。若要匯入多重保管庫，需升級訂閱。"

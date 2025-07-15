@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "Скасаваць падпіску"
       ],
+      "Cancel trial and pay": [
+        "Скасаваць пробны перыяд і купіць падпіску"
+      ],
       "Change": [
         "Змяніць"
       ],
@@ -151,7 +154,7 @@
         "Закрыць гэты банер"
       ],
       "Collaborate on documents": [
-        "Сумесная праца над дакументамі"
+        "Сумесна працуйце над дакументамі"
       ],
       "Compare all plans": [
         "Параўнайце ўсе тарыфныя планы"
@@ -1345,8 +1348,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Настольная праграма ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus і ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } і ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } прасторы ў сховішчы"
@@ -3304,6 +3307,9 @@
       "Invalid verification code": [
         "Памылковы праверачны код"
       ],
+      "Invalid ZIP code": [
+        "Памылковы паштовы індэкс"
+      ],
       "Name does not match": [
         "Назва не супадае"
       ],
@@ -3364,6 +3370,18 @@
       "Please enter a valid Entity ID URL": [
         "Увядзіце сапраўдны URL-адрас Entity ID"
       ],
+      "Please enter a valid postal code": [
+        "Увядзіце сапраўдны паштовы індэкс"
+      ],
+      "Please enter a valid ZIP code": [
+        "Увядзіце сапраўдны паштовы індэкс"
+      ],
+      "Please enter postal code": [
+        "Увядзіце паштовы індэкс"
+      ],
+      "Please enter ZIP code": [
+        "Увядзіце паштовы індэкс"
+      ],
       "Please generate keys before you try to change your password": [
         "Згенерыруйце ключы перад тым, як паспрабаваць змяніць пароль"
       ],
@@ -3378,6 +3396,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Выберыце прынамсі аднаго карыстальніка або групу перад працягам."
+      ],
+      "Please select billing country": [
+        "Выберыце краіну выстаўлення рахунку"
+      ],
+      "Please select billing state": [
+        "Выберыце штат выстаўлення рахунку"
       ],
       "Please set a recovery email first": [
         "Спачатку задайце электронную пошту для аднаўлення доступу"
@@ -3402,6 +3426,9 @@
       ],
       "Please upload only 1 file": [
         "Запампуйце толькі 1 файл"
+      ],
+      "Postal code is required": [
+        "Патрабуецца ўвесці паштовы індэкс"
       ],
       "Process aborted": [
         "Працэс перарваны"
@@ -3438,9 +3465,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Мінімальная аплата, якую мы прымаем, складае ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Назва палітыкі павінна мець даўжыню ад 3 да 40 сімвалаў."
@@ -5564,12 +5588,6 @@
       "Please fill in all required fields.": [
         "Запоўніце ўсе абавязковыя палі."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдыт.",
-        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдыты.",
-        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдытаў.",
-        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца ${ creditsRemaining } крэдытаў."
-      ],
       "please open a support ticket": [
         "адкрыйце запыт для службы падтрымкі"
       ],
@@ -6365,9 +6383,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Вы павінны прывязаць крэдытную картку або банкаўскі рахунак да вашага ўліковага запісу PayPal для таго, каб выкарыстоўваць яго як спосаб аплаты."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Вы павінны прывязаць крэдытную картку або банкаўскі рахунак да вашага ўліковага запісу PayPal. Калі вы гэтага яшчэ не зрабілі, націсніце на кнопку ніжэй."
-      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "У вас будзе магчымасць павысіць карыстальніка да адміністратара, як толькі ён прыме запрашэнне."
       ],
@@ -6419,8 +6434,8 @@
       "Your ${ BRAND_NAME } password": [
         "Ваш пароль ${ BRAND_NAME }"
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Ваша падпіска ${ PASS_SHORT_APP_NAME } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Астатак балансу вашай падпіскі будзе дададзены на ваш рахунак. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Вашы ўліковыя запісы ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } звязаны паміж сабой. Каб выдаліць іх абодва, увайдзіце праз ${ loginLink } і там выдаліце свой уліковы запіс."
@@ -6502,6 +6517,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Неабавязкова"
+      ],
       "Selected color:": [
         "Выбраны колер:"
       ]
@@ -7342,6 +7360,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Паштовы індэкс"
+      ],
       "ZIP code": [
         "Паштовы індэкс"
       ]
@@ -7382,9 +7403,6 @@
       ],
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
-      ],
-      "click here": [
-        "націсніце тут"
       ],
       "Common sign in issues": [
         "Распаўсюджаныя праблемы ўваходу"
@@ -7478,9 +7496,6 @@
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
-      ],
-      "PayPal without credit card": [
-        "PayPal без крэдытнай карткі"
       ],
       "perform a password reset from your active session": [
         "ажыццявіць скіданне пароля з вашага актыўнага сеанса"
@@ -8422,8 +8437,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Абарона адчувальных звестак бізнесу і бяспечнае супрацоўніцтва."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Абараніце сваю сям'ю з прэміяльнымі функцыямі ${ PASS_SHORT_APP_NAME } Plus для 6 карыстальнікаў."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Абараніце сваю сям'ю з прэміяльнымі функцыямі ${ plusTitle } для 6 карыстальнікаў."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
@@ -8499,6 +8514,9 @@
       ],
       "Downgrade account?": [
         "Панізіць уліковы запіс?"
+      ],
+      "Review subscription": [
+        "Прагляд падпіскі"
       ],
       "Review subscription and pay": [
         "Прагляд падпіскі і аплаты"
@@ -8966,8 +8984,8 @@
       "Get the deal": [
         "Атрымаць прапанову"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
       ],
       "Last day to save": [
         "Апошні дзень, калі можна сэканоміць"
@@ -9311,6 +9329,11 @@
         "Неабмежаваная колькасць запісаў уваходу, нататак, крэдытных картак і іншых функцый"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Тарыфны план ${ upsellPlanTitle }"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } уліковы запіс карыстальніка",
@@ -9498,6 +9521,9 @@
       "Got it": [
         "Зразумела"
       ],
+      "I'm purchasing as a business": [
+        "Я купляю як юрыдычная асоба"
+      ],
       "MM/YY": [
         "ММ/ГГ"
       ],
@@ -9507,18 +9533,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
-      "Please select billing country": [
-        "Выберыце краіну выстаўлення рахунку"
-      ],
-      "Please select billing state": [
-        "Выберыце штат выстаўлення рахунку"
-      ],
-      "Please select your billing country first.": [
-        "Першапачаткова выберыце вашу краіну выстаўлення рахунку."
-      ],
-      "Please select your billing state first.": [
-        "Спачатку выберыце ваш штат выстаўлення рахунку."
-      ],
       "Processing payment": [
         "Апрацоўка плацяжу"
       ],
@@ -9527,9 +9541,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
-      ],
-      "Select billing country to pay": [
-        "Выберыце краіну выстаўлення рахунку для аплаты"
       ],
       "terms & conditions": [
         "умовы выкарыстання"
@@ -9563,6 +9574,9 @@
         "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } за ${ renewalLength } месяцы. Скасаваць можна ў любы час.",
         "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } за ${ renewalLength } месяцаў. Скасаваць можна ў любы час.",
         "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } за ${ renewalLength } месяцаў. Скасаваць можна ў любы час."
+      ],
+      "This number will be shown on all future invoices": [
+        "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Гэты спосаб аплаты стане новым прадвызначаным для ўсіх будучых падаўжэнняў."
@@ -9619,6 +9633,20 @@
       ],
       "Street address, postal code, and city": [
         "Адрас вуліцы, паштовы індэкс і горад"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Нумар прадпрыемства"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Нумар ПДВ"
       ]
     },
     "Permission": {
@@ -9714,6 +9742,9 @@
       "Please select the main reason": [
         "Выберыце асноўную прычыну"
       ],
+      "Postal code": [
+        "Паштовы індэкс"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -9755,6 +9786,9 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ],
+      "ZIP code": [
+        "Паштовы індэкс"
       ]
     },
     "placeholder": {
@@ -9805,6 +9839,20 @@
       ],
       "Enjoying ${ planName }?": [
         "Падабаецца ${ planName }?"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Усе сэрвісы ${ protonPlus }.${ br }Адна нескладаная падпіска."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Як падпісчык тарыфнага плана **${ currentPlanTitle }**, вы можаце разблакіраваць **${ unlockPlanTitle }** і ўсе прэміяльныя сэрвісы ${ BRAND_NAME }, палепшыўшы тарыфны план да **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Застацца на ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Палепшыць да ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -11807,7 +11855,7 @@
         "Сертыфікат падоўжаны да ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "Канфігурацыя \"${ name }\" створана, звярніце ўвагу, што прыватны ключ не захоўваецца, і не будзе паказаны зноў, вы павінны скапіяваць або спампаваць гэту канфігурацыю."
+        "Канфігурацыя \"${ name }\" створана. Звярніце ўвагу, што прыватны ключ не захоўваецца, і не будзе паказаны зноў, вы павінны скапіяваць або спампаваць гэту канфігурацыю."
       ],
       "Creating config file for ${ serverName }": [
         "Стварэнне файла канфігурацыі для ${ serverName }"
@@ -11959,9 +12007,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ BRAND_NAME } Account password rules": [
         "Правілы для пароля ўліковага запісу ${ BRAND_NAME }"
       ],
@@ -12215,13 +12260,13 @@
         "Стварыць ${ selectedUserIds.length } карыстальнікаў"
       ],
       "Create a new Gateway": [
-        "Стварыць новы шлюз"
+        "Стварэнне новага шлюза"
       ],
       "Create a new gateway": [
-        "Стварыць новы шлюз"
+        "Стварэнне новага шлюза"
       ],
       "Create Gateway": [
-        "Стварыць шлюз"
+        "Стварэнне шлюза"
       ],
       "Create multiple user accounts": [
         "Стварыце некалькі ўліковых запісаў карыстальніка"
@@ -12251,7 +12296,7 @@
         "Персаналізацыя"
       ],
       "Customize the number of IP addresses in your plan": [
-        "Наладзьце колькасць IP-адрасоў на сваім тарыфным плане"
+        "Наладжванне колькасці IP-адрасоў на вашым тарыфным плане"
       ],
       "Date": [
         "Дата"
@@ -12904,7 +12949,7 @@
         "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "Скапіюйце і ўстаўце гэты URL-адрас у поле ACS (Assertion Consumer Service) URL-адраса ваша пастаўшчыка пасведчанняў."
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле ACS (Assertion Consumer Service) URL-адраса вашага пастаўшчыка пасведчанняў."
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў"

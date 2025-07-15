@@ -2097,9 +2097,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus 与 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
       ],
@@ -4084,9 +4081,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在邮件到达收件箱前自动分类。"
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "可使用 ${ MAIL_APP_NAME } Plus"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "首先进行配置，以激活您的组织并自定义您的邮箱地址。"
       ],
@@ -5543,9 +5537,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "支付金额不能低于 ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "策略名称必须在 3 至 40 个字符之间。"
@@ -9179,9 +9170,6 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "请注意，如果您删除过滤器 ${ nameDeleted }，我们将停止处理它触发的所有自动操作。"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "请注意，点击确认按钮后，您账户的余额将剩余 ${ creditsRemaining }。"
-      ],
       "please open a support ticket": [
         "请打开支持票据"
       ],
@@ -10367,9 +10355,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "您的 PayPal 账户需要绑定信用卡或银行账户才能作为支付方式。"
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "您需要在 PayPal 账户中绑定信用卡或银行账户，如果您没有绑定，请点击下方按钮。"
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "从ICS导入日程之前需要有一个在用的个人日历。"
       ],
@@ -10435,9 +10420,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "您的 ${ BRAND_NAME } 密码"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "您的 ${ PASS_SHORT_APP_NAME } Plus 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 账户已关联。要删除它们，请登录 ${ loginLink } 并在那里删除您的账户。"
@@ -10566,6 +10548,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "密钥 ${ fingerprint } 已上传"
+      ],
+      "Optional": [
+        "非必填"
       ],
       "Selected color:": [
         "所选颜色："
@@ -12403,9 +12388,6 @@
       "clearing your browser cache": [
         "清除浏览器缓存"
       ],
-      "click here": [
-        "点击此处"
-      ],
       "Common sign in issues": [
         "常见登录问题"
       ],
@@ -12531,9 +12513,6 @@
       ],
       "Pay invoice": [
         "前去支付"
-      ],
-      "PayPal without credit card": [
-        "使用PayPal付款（无需银行卡）"
       ],
       "perform a password reset from your active session": [
         "从您的活动会话中执行密码重置"
@@ -13824,9 +13803,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "保护敏感的商业信息并进行安全合作。"
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "为 6 为用户提供 ${ PASS_SHORT_APP_NAME } Plus 的所有高级功能，保护您的家人。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 全系服务协同保障您的家庭隐私。"
       ],
@@ -13903,9 +13879,6 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "开始使用前，请先填写您的称呼。当您发送邮件、邀请他人参与活动以及分享文件时都将展示这一名称。"
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "您的 ${ planName } 账户已激活。"
       ],
       "Your selected plan: ${ planName }": [
         "您所选的账户等级：${ planName }"
@@ -14505,9 +14478,6 @@
       "Get the deal": [
         "获取优惠"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "首月购买 ${ plan } Plus 八折优惠的最后机会。"
-      ],
       "Last day to save": [
         "保存的最后日期"
       ],
@@ -15061,9 +15031,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "您只需支付一次费用，即可永久解锁 ${ PASS_APP_NAME } 当前及未来推出的所有高级功能。"
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "欢迎使用 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15151,9 +15118,6 @@
       ],
       "Select your plan": [
         "选择账户等级"
-      ],
-      "Upgrade your plan": [
-        "升级账户"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15375,9 +15339,6 @@
       ],
       "Verifying your payment": [
         "确认支付"
-      ],
-      "Welcome to ${ shortName } Plus": [
-        "欢迎使用 ${ shortName } Plus"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "您已经有权访问高级 ${ appName } 功能——无需再次购买。"
@@ -15622,18 +15583,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "请先重新激活您的订阅以减少附加功能。"
       ],
-      "Please select billing country": [
-        "请选择您的计费国家/地区"
-      ],
-      "Please select billing state": [
-        "请选择账单省（州）"
-      ],
-      "Please select your billing country first.": [
-        "请先选择您的账单国家/地区。"
-      ],
-      "Please select your billing state first.": [
-        "请先选择您的账单省（州）。"
-      ],
       "Processing payment": [
         "处理支付中"
       ],
@@ -15642,9 +15591,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
-      ],
-      "Select billing country to pay": [
-        "选择要支付的账单国家/地区"
       ],
       "terms & conditions": [
         "服务条款"
@@ -20209,9 +20155,6 @@
       ],
       "Time zone": [
         "时区"
-      ],
-      "Track your referrals": [
-        "跟踪邀请进展"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"

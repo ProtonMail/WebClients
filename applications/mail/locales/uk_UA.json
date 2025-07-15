@@ -708,9 +708,6 @@
       "Load more": [
         "Завантажити ще"
       ],
-      "Loading verification": [
-        "Завантаження підтвердження"
-      ],
       "Loading${ ellipsis }": [
         "Завантаження${ ellipsis }"
       ],
@@ -1043,9 +1040,6 @@
       ],
       "Resume downloading": [
         "Відновити завантаження"
-      ],
-      "Retry": [
-        "Повторити спробу"
       ],
       "Revert to original display": [
         "Повернути оригінальний вигляд"
@@ -1681,9 +1675,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus і ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } сховища"
@@ -4185,6 +4176,9 @@
       "Invalid verification code": [
         "Недійсний код підтвердження"
       ],
+      "Invalid ZIP code": [
+        "Неправильний поштовий індекс"
+      ],
       "Item content cannot exceed 40KB": [
         "Вміст елемента не може перевищувати 40 кБ"
       ],
@@ -4281,6 +4275,18 @@
       "Please activate your search again": [
         "Повторно активуйте пошук"
       ],
+      "Please enter a valid postal code": [
+        "Будь ласка, введіть коректний поштовий індекс"
+      ],
+      "Please enter a valid ZIP code": [
+        "Будь ласка, введіть дійсний поштовий індекс"
+      ],
+      "Please enter postal code": [
+        "Будь ласка, введіть поштовий індекс"
+      ],
+      "Please enter ZIP code": [
+        "Введіть дійсний поштовий індекс"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
@@ -4298,6 +4304,12 @@
       ],
       "Please select a state": [
         "Виберіть регіон"
+      ],
+      "Please select billing country": [
+        "Будь ласка, виберіть країну для виставлення рахунку"
+      ],
+      "Please select billing state": [
+        "Будь ласка, виберіть штат для виставлення рахунку"
       ],
       "Please try again or refresh the page.": [
         "Повторіть спробу або оновіть сторінку."
@@ -4436,9 +4448,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Найменша сума, яку можна додати — ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Найменший платіж, який ми приймаємо — ${ price }"
       ],
       "The sending key is not valid": [
         "Ключ надсилання недійсний"
@@ -6108,6 +6117,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Користувач — це обліковий запис, пов'язаний з певним іменем користувача, поштовою скринькою та людиною"
       ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN шифрує ваше з’єднання та приховує вашу IP-адресу, що значно ускладнює відстеження або моніторинг вашої активності в Інтернеті."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ до облікового запису обмежений через несплачені рахунки. Будь ласка, зверніться до свого адміністратора."
       ],
@@ -6444,6 +6456,9 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Чи відомо вам, що ми зарезервували для вас коротку адресу електронної пошти? Це ваше ім'я користувача за яким слідує \"@${ PM_DOMAIN }\"."
       ],
+      "Discover new features unlocked and start using them right away!": [
+        "Відкрийте для себе нові функції, які стали доступними, та почніть користуватися ними просто зараз!"
+      ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
       ],
@@ -6719,6 +6734,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
+      ],
+      "In restrictive countries": [
+        "У країнах із обмеженнями"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Наступним кроком ви зможете внести депозит за допомогою адреси Bitcoin."
@@ -7016,12 +7034,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Зверніть увагу, що цей процес може тривати деякий час, залежно від розміру вашої адресної книги."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Зверніть увагу, що після натискання кнопки Підтвердити, на вашому рахунку залишиться ${ creditsRemaining } кредит.",
-        "Зверніть увагу, що після натискання кнопки Підтвердити, на вашому рахунку залишиться ${ creditsRemaining } кредити.",
-        "Зверніть увагу, що після натискання кнопки Підтвердити, на вашому рахунку залишиться ${ creditsRemaining } кредитів.",
-        "Зверніть увагу, що після натискання кнопки Підтвердити, на вашому рахунку залишиться ${ creditsRemaining } кредитів."
       ],
       "Please open the document to view it.": [
         "Щоб переглянути документ, відкрийте його."
@@ -7581,9 +7593,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
-      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
-        "Покращте до ${ MAIL_APP_NAME } Plus, щоб розблокувати"
-      ],
       "Upgrade to add more addresses to your account.": [
         "Передплатіть тарифний план, щоб додати більше адрес до свого облікового запису."
       ],
@@ -7863,9 +7872,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Для можливості переходу на тарифний план нижчого рівня ви повинні вилучити будь-яких додаткових користувачів ${ MAIL_APP_NAME }, адреси та власні домени."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Ваш обліковий запис PayPal повинен мати пов'язану кредитну картку чи банківський рахунок. Якщо у вас цього немає, будь ласка, натисніть кнопку внизу."
-      ],
       "You selected **${ count } conversation** from this folder": [
         "Ви вибрали **${ count } розмову** з цієї теки",
         "Ви вибрали **${ count } розмови** з цієї теки",
@@ -7935,9 +7941,6 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. Електронні листи більше не доставляються до вашої поштової скриньки. Ваші посилання на спільний доступ до Drive більше не активні, і ви не можете завантажувати нові файли. Щоб продовжити користуватися обліковим записом, будь ласка, сплатіть несплачені рахунки."
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Ваша ${ PASS_SHORT_APP_NAME } Plus підписка буде замінена на ${ PASS_SHORT_APP_NAME } Lifetime. Залишок коштів за підпискою буде додано на ваш рахунок. Угода ${ PASS_SHORT_APP_NAME } Lifetime не має ціни поновлення, це одноразовий платіж за довічний доступ до ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має несплачені рахунки. Ваш доступ невдовзі буде обмежено. ${ payInvoiceLink }"
       ],
@@ -7973,6 +7976,9 @@
       ],
       "Your IP": [
         "Ваш IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Ваша IP-адреса є видимою, і її можуть використати для відстеження вашої онлайн-активності."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
@@ -8525,9 +8531,6 @@
       "Extended address": [
         "Додаткова адреса"
       ],
-      "Failed to create folder ${ customFolderName }": [
-        "Не вдалося створити папку ${ customFolderName }"
-      ],
       "Filter Name": [
         "Назва фільтра"
       ],
@@ -8768,9 +8771,6 @@
       "Start date": [
         "Дата початку"
       ],
-      "State": [
-        "Стан"
-      ],
       "Statement": [
         "Відомість"
       ],
@@ -8895,6 +8895,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Поштовий індекс"
+      ],
       "ZIP code": [
         "Поштовий індекс"
       ]
@@ -8962,9 +8965,6 @@
       ],
       "clearing your browser cache": [
         "очищення кешу браузера"
-      ],
-      "click here": [
-        "клацніть тут"
       ],
       "contact us": [
         "зв'язатися з нами"
@@ -10096,9 +10096,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Захистіть конфіденційну ділову інформацію та безпечно співпрацюйте."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Захистіть свою сім'ю з усіма преміумфункціями ${ PASS_SHORT_APP_NAME } Плюс для 6 користувачів."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Захистіть приватність своєї родини за допомогою усіх послуг ${ BRAND_NAME }."
       ],
@@ -10763,6 +10760,11 @@
         "Безпечний спільний доступ до сховища"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Тарифний план ${ upsellPlanTitle }"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } обліковий запис користувача",
@@ -10864,6 +10866,9 @@
       "Got it": [
         "Зрозуміло"
       ],
+      "I'm purchasing as a business": [
+        "Я купую це, як бізнес"
+      ],
       "MM/YY": [
         "ММ/РР"
       ],
@@ -10873,29 +10878,17 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Будь ласка, спочатку активуйте свою підписку, щоб зменшити кількість доповнень."
       ],
-      "Please select billing country": [
-        "Будь ласка, виберіть країну виставлення рахунків"
-      ],
-      "Please select billing state": [
-        "Будь ласка, оберіть білінгову область"
-      ],
-      "Please select your billing country first.": [
-        "Будь ласка, спочатку оберіть країну виставлення рахунку."
-      ],
-      "Please select your billing state first.": [
-        "Будь ласка, спочатку оберіть свою білінгову область."
-      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Поновлюється за ціною ${ renewPriceStr }, скасувати можна будь-коли."
-      ],
-      "Select billing country to pay": [
-        "Оберіть країну виставлення рахунку для оплати"
       ],
       "terms & conditions": [
         "положення та умови"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом першого місяця. Потім вона буде автоматично поновлюватися за ціною ${ renewPriceStr } щомісяця. Ви можете скасувати її в будь-який момент."
+      ],
+      "This number will be shown on all future invoices": [
+        "Цей номер відображатиметься в усіх майбутніх рахунках"
       ],
       "Timeout exceeded": [
         "Перевищено час очікування"
@@ -10929,6 +10922,20 @@
     "Payments.Sepa": {
       "Street address, postal code, and city": [
         "Вулиця, поштовий код та місто"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Бізнес-номер"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Номер платника ПДВ"
       ]
     },
     "PGP key encryption warning": {
@@ -11034,6 +11041,9 @@
       "Please share what you expected": [
         "Будь ласка, поділіться тим, що ви очікували"
       ],
+      "Postal code": [
+        "Поштовий індекс"
+      ],
       "Search date, name, email address, or subject line": [
         "Пошук за датою, ім'ям, електронною адресою або темою листа"
       ],
@@ -11099,6 +11109,9 @@
       ],
       "Type text or keyword": [
         "Введіть текст чи ключове слово"
+      ],
+      "ZIP code": [
+        "Поштовий індекс"
       ]
     },
     "Placeholder for contact group name": {
@@ -13825,6 +13838,9 @@
       "Verifying your payment...": [
         "Триває перевірка платежу..."
       ],
+      "VPN explained": [
+        "VPN — простими словами"
+      ],
       "Warning": [
         "Попередження"
       ],
@@ -13860,6 +13876,9 @@
       ],
       "Your free trial has ended": [
         "Ваш безоплатний пробний період закінчився"
+      ],
+      "Your plan": [
+        "Ваш тарифний план"
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"

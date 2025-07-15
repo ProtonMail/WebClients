@@ -1327,9 +1327,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plusと${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
       ],
@@ -3394,9 +3391,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "追加クレジットの最低金額は ${ price } です。"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "最低 ${ price } より受け付けています。"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "ポリシー名は 3 文字以上 40 文字以下で入力してください。"
       ],
@@ -5381,9 +5375,6 @@
       "Please fill in all required fields.": [
         "必須項目をすべて入力してください。"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "確認ボタンをクリックすると、アカウントには ${ creditsRemaining } クレジットが残りますのでご注意ください。"
-      ],
       "please open a support ticket": [
         "サポートチケットを開いてください"
       ],
@@ -6143,9 +6134,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "支払い方法として PayPal を追加するには、クレジットカードまたは銀行口座が PayPal アカウントにリンクされている必要があります。"
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal アカウントにクレジットカードまたは銀行口座を登録しておく必要があります。PayPal アカウントをお持ちでない場合はこちらのボタンをクリックしてください。"
-      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "招待を受けた後、ユーザーを管理者にすることができます。"
       ],
@@ -6190,9 +6178,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "あなたの ${ BRAND_NAME } パスワード"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } Plus サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高はあなたのアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetime ディールには更新価格はなく、一度の支払いで ${ PASS_SHORT_APP_NAME } への生涯アクセスが得られます。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } と ${ MAIL_APP_NAME } のアカウントはリンクしています。両アカウントを削除するには ${ loginLink } へログインしてアカウントを削除してください。"
@@ -6268,6 +6253,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "任意"
+      ],
       "Selected color:": [
         "選択した色:"
       ]
@@ -7134,9 +7122,6 @@
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
       ],
-      "click here": [
-        "ここをクリック"
-      ],
       "Common sign in issues": [
         "一般的なサインインの問題"
       ],
@@ -7229,9 +7214,6 @@
       ],
       "Pay invoice": [
         "請求の支払い"
-      ],
-      "PayPal without credit card": [
-        "クレジットカードなしでPaypal"
       ],
       "perform a password reset from your active session": [
         "アクティブなセッションからパスワードリセットを実行する"
@@ -8110,9 +8092,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "ビジネスの機密情報を保護して安全に共同作業"
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "家族を守るために、6 人のユーザー向けに${ PASS_SHORT_APP_NAME } Plusのすべてのプレミアム機能をご利用ください。"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "すべての ${ BRAND_NAME } サービスを組み合わせて、ご家族のプライバシーを保護します。"
       ],
@@ -8645,9 +8624,6 @@
       "Get the deal": [
         "割引を入手"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "最初の月の${ plan } Plusが 80 %割引になる最後のチャンス。"
-      ],
       "Last day to save": [
         "節約できる最後の日"
       ],
@@ -8981,6 +8957,11 @@
         "無制限のログイン、メモ、クレジットカードなど"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } プラン"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } 個のユーザーアカウント"
@@ -9171,18 +9152,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
-      "Please select billing country": [
-        "請求先の国を選択してください"
-      ],
-      "Please select billing state": [
-        "請求先の州を選択してください"
-      ],
-      "Please select your billing country first.": [
-        "最初に請求先の国を選択してください。"
-      ],
-      "Please select your billing state first.": [
-        "最初に請求先の州を選択してください。"
-      ],
       "Processing payment": [
         "支払いの処理中"
       ],
@@ -9191,9 +9160,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
-      ],
-      "Select billing country to pay": [
-        "支払い請求先の国を選択してください"
       ],
       "terms & conditions": [
         "利用規約"
@@ -11449,9 +11415,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Free"
-      ],
       "${ BRAND_NAME } Account password rules": [
         "${ BRAND_NAME } アカウントパスワードルール"
       ],

@@ -464,9 +464,6 @@
       "Load image": [
         "Muat gambar"
       ],
-      "Loading verification": [
-        "Memuat verifikasi"
-      ],
       "Make this participant optional": [
         "Jadikan peserta ini opsional"
       ],
@@ -658,9 +655,6 @@
       ],
       "Resume indexing": [
         "Lanjutkan pengindeksan"
-      ],
-      "Retry": [
-        "Coba lagi"
       ],
       "Save": [
         "Simpan"
@@ -1225,8 +1219,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus dan ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } dan ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "Ruang penyimpanan ${ storageSize }"
@@ -3632,9 +3626,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Nominal saldo minimal yang dapat ditambahkan adalah ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "Nominal pembayaran minimal yang kami terima adalah ${ price }"
-      ],
       "The sending key is not valid": [
         "Kunci pengiriman tidak valid"
       ],
@@ -5353,9 +5344,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon diperhatikan bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo pada akun Anda akan berkurang menjadi ${ creditsRemaining }."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Mohon sediakan nama dan alamat email untuk membuat grup."
       ],
@@ -5788,9 +5776,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Apabila akun Paypal Anda tidak memiliki kartu yang terhubung, silakan klik tombol di bawah ini."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Anda sebelumnya telah menolak undangan ini. Silakan minta pemilik kalender untuk kembali mengundang Anda"
       ],
@@ -5839,8 +5824,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Langganan ${ PASS_SHORT_APP_NAME } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Langganan ${ plan } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } Lifetime ini tidak memiliki harga perpanjangan, karena sekalinya Anda membayar, Anda akan memperoleh akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
@@ -5942,6 +5927,9 @@
     "info": {
       "${ filteredList.length } command found.": [
         "${ filteredList.length } perintah ditemukan."
+      ],
+      "Optional": [
+        "Opsional"
       ],
       "Selected color:": [
         "Warna terpilih:"
@@ -6485,9 +6473,6 @@
       "Start date": [
         "Tanggal mulai"
       ],
-      "State": [
-        "Keadaan"
-      ],
       "Street address": [
         "Alamat jalan"
       ],
@@ -6646,9 +6631,6 @@
       ],
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
-      ],
-      "click here": [
-        "klik di sini"
       ],
       "Drafts": [
         "Draf"
@@ -7667,8 +7649,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Lindungi informasi bisnis yang sensitif dan berkolaborasi dengan aman."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Lindungi keluarga Anda dengan semua fitur premium dari ${ PASS_SHORT_APP_NAME } Plus untuk 6 pengguna."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Lindungi keluarga Anda dengan seluruh fitur premium ${ plusTitle } untuk 6 pengguna."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Lindungi privasi keluarga Anda dengan perlindungan gabungan dari seluruh layanan ${ BRAND_NAME }."
@@ -8197,8 +8179,8 @@
       "Get the deal": [
         "Dapatkan penawaran ini"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Plus Anda."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Anda."
       ],
       "Last day to save": [
         "Hari terakhir untuk menghemat"
@@ -8468,6 +8450,11 @@
         "Tanpa batasan jumlah entri masuk, catatan, kartu kredit, dan masih banyak lagi"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Paket ${ upsellPlanTitle }"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } akun pengguna"
@@ -8584,26 +8571,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
-      "Please select billing country": [
-        "Silakan pilih negara bagian penagihan"
-      ],
-      "Please select billing state": [
-        "Silakan pilih negara bagian penagihan"
-      ],
-      "Please select your billing country first.": [
-        "Silakan pilih negara penagihan Anda terlebih dahulu"
-      ],
-      "Please select your billing state first.": [
-        "Silakan pilih negara bagian penagihan Anda terlebih dahulu."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Harga pembaruan dapat berubah sewaktu-waktu sesuai dengan ${ termsAndConditionsLink } yang berlaku."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
-      ],
-      "Select billing country to pay": [
-        "Pilih negara bagian penagihan untuk membayar"
       ],
       "terms & conditions": [
         "syarat & ketentuan"
@@ -8821,6 +8793,20 @@
     "plan customizer, users": {
       "contact": [
         "hubungi"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Seluruh layanan ${ protonPlus }.${ br }Dalam satu langganan mudah."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Sebagai pelanggan **${ currentPlanTitle }**, Anda dapat membuka akses ke **${ unlockPlanTitle }** dan seluruh layanan premium ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Tetap di ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Tingkatkan ke ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -10970,6 +10956,9 @@
       ],
       "Your exposed information": [
         "Informasi Anda yang terpapar"
+      ],
+      "Your plan": [
+        "Paket Anda"
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"

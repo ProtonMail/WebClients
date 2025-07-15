@@ -521,9 +521,6 @@
       "Load more": [
         "Učitaj više"
       ],
-      "Loading verification": [
-        "Učitavanje potvrde"
-      ],
       "Loading${ ellipsis }": [
         "Učitavanje${ ellipsis }"
       ],
@@ -802,9 +799,6 @@
       ],
       "Resume": [
         "Nastavi"
-      ],
-      "Retry": [
-        "Pokušaj ponovno"
       ],
       "Save": [
         "Spremi"
@@ -1199,9 +1193,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop aplikacija"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } prostor za pohranu"
@@ -1604,6 +1595,11 @@
         "${ users } korisnik",
         "${ users } korisnika",
         "${ users } korisnika"
+      ],
+      "Total for ${ n } month": [
+        "Ukupno za ${ n } mjesec",
+        "Ukupno za ${ n } mjeseci",
+        "Ukupno za ${ n } mjeseca"
       ]
     },
     "Collapsible tooltip": {
@@ -3120,10 +3116,10 @@
         "Nepoznati status tokena za plaćanje"
       ],
       "Username must begin with a letter or digit": [
-        "Korisničko ime mora započeti s slovom ili brojkom"
+        "Korisničko ime mora započinjati slovom ili brojkom"
       ],
       "Username must end with a letter or digit": [
-        "Korisničko ime mora završiti s slovom ili brojkom"
+        "Korisničko ime mora završavati slovom ili brojkom"
       ],
       "You did not provide a file.": [
         "Niste pružili datoteku."
@@ -4643,6 +4639,9 @@
       "You can either update your search query or clear it": [
         "Možete ažurirati svoj upit za pretraživanje ili ukloniti ga"
       ],
+      "You can now return to the application to continue": [
+        "Sada se možete vratiti u aplikaciju i nastaviti"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
       ],
@@ -4668,9 +4667,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Morate onemogućiti ili ukloniti sve dodatne korisnike ${ MAIL_APP_NAME }-a, adrese i prilagođene domene prije nego što možete sniziti status."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Morate imati kreditnu karticu ili bankovni račun povezan sa vašim PayPal računom. Ukoliko nemate navedeno na vašem PayPal računu, molimo vas kliknite na dugme ispod."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Uskoro ćete biti preusmjereni na PayPal radi potvrde plaćanja."
@@ -5323,9 +5319,6 @@
       "Start date": [
         "Početni datum"
       ],
-      "State": [
-        "Država"
-      ],
       "Statement": [
         "Izjava"
       ],
@@ -5468,9 +5461,6 @@
       ],
       "clearing your browser cache": [
         "čišćenje predmemorije preglednika"
-      ],
-      "click here": [
-        "kliknite ovdje"
       ],
       "contact us": [
         "kontaktirajte nas"
@@ -7788,6 +7778,9 @@
       ],
       "Welcome ${ userName }": [
         "Dobrodošli ${ userName }"
+      ],
+      "Your plan": [
+        "Vaš plan"
       ]
     },
     "Today icon tooltip in mini calendar": {

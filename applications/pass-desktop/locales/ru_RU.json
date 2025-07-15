@@ -46,6 +46,9 @@
       "Add domain": [
         "Добавить домен"
       ],
+      "Add field": [
+        "Добавить поле"
+      ],
       "Add forwarding mailbox": [
         "Добавить пересылающий почтовый ящик"
       ],
@@ -1910,12 +1913,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
-      ],
       "Moving items": [
         "Перемещение элементов"
       ],
@@ -2734,6 +2731,9 @@
       "Bank Account": [
         "Банковский счёт"
       ],
+      "Bank Name": [
+        "Название банка"
+      ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
         "${ PASS_APP_NAME } не только хранит имена пользователя, но и защищает личные данные с помощью встроенной функции почтовых псевдонимов. Каждый раз, когда вы регистрируете аккаунт в Интернете, ${ PASS_APP_NAME } может автоматически создать псевдоним для защиты настоящего адреса электронной почты. "
       ],
@@ -2856,6 +2856,9 @@
       ],
       "Date": [
         "Дата"
+      ],
+      "Date of Birth": [
+        "Дата рождения"
       ],
       "Device": [
         "Устройство"
@@ -3016,8 +3019,14 @@
       "Highest": [
         "Наивысшая"
       ],
+      "Hospital": [
+        "Больница"
+      ],
       "Host": [
         "Хост"
+      ],
+      "Hostname": [
+        "Имя хоста"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Как разблокировать ${ PASS_SHORT_APP_NAME }"
@@ -3075,6 +3084,9 @@
       ],
       "Invitations": [
         "Приглашения"
+      ],
+      "IP Address": [
+        "IP-адрес"
       ],
       "Item ID": [
         "ID элемента"
@@ -3169,6 +3181,9 @@
       "Members": [
         "Участники"
       ],
+      "Membership": [
+        "Членство"
+      ],
       "Middle name": [
         "Отчество"
       ],
@@ -3244,8 +3259,14 @@
       "Open-source password manager for effortless protection.": [
         "Менеджер паролей с открытым исходным кодом для защиты без усилий."
       ],
+      "Operating System": [
+        "Операционная система"
+      ],
       "Organization": [
         "Организация"
+      ],
+      "Organization Name": [
+        "Название организации"
       ],
       "Other": [
         "Другое"
@@ -3265,6 +3286,9 @@
       "Passport": [
         "Паспорт"
       ],
+      "Passport Number": [
+        "Номер паспорта"
+      ],
       "Passport number": [
         "Номер паспорта"
       ],
@@ -3276,6 +3300,9 @@
       ],
       "Patient Name": [
         "Имя пациента"
+      ],
+      "Permissions": [
+        "Разрешения"
       ],
       "Personal": [
         "Личное"
@@ -3316,6 +3343,12 @@
       "Priority:": [
         "Приоритет:"
       ],
+      "Private key": [
+        "Закрытый ключ"
+      ],
+      "Private Key": [
+        "Закрытый ключ"
+      ],
       "Product": [
         "Продукт"
       ],
@@ -3327,6 +3360,9 @@
       ],
       "Public domain": [
         "Общедоступный домен"
+      ],
+      "Public key": [
+        "Открытый ключ"
       ],
       "Rate us": [
         "Оцените нас"
@@ -3433,8 +3469,14 @@
       "Social security": [
         "Социальное страхование"
       ],
+      "Social Security": [
+        "Социальное страхование"
+      ],
       "Social security number": [
         "Номер социального страхования"
+      ],
+      "Software license": [
+        "Лицензия программного обеспечения"
       ],
       "Special characters (!&*)": [
         "Специальные символы (!&*)"
@@ -3477,6 +3519,9 @@
       ],
       "Tax number": [
         "Налоговый номер"
+      ],
+      "Technology": [
+        "Технологии"
       ],
       "Text": [
         "Текст"
@@ -3544,6 +3589,9 @@
       "Unnamed note": [
         "Заметка без названия"
       ],
+      "Unspecified": [
+        "Не указано"
+      ],
       "Untitled": [
         "Без названия"
       ],
@@ -3585,6 +3633,9 @@
       ],
       "Vulnerable": [
         "Уязвимый"
+      ],
+      "Wallet Name": [
+        "Название кошелька"
       ],
       "Weak": [
         "Слабый"
@@ -3840,9 +3891,6 @@
       ]
     },
     "PassOnboardingOffer": {
-      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
-        "${ PASS_SHORT_APP_NAME } Plus Lifetime за ${ plusLifetimePrice }"
-      ],
       "${ price }/month": [
         "${ price } в месяц"
       ]
@@ -3859,6 +3907,15 @@
       ],
       "Add password": [
         "Добавить пароль"
+      ],
+      "Add private key": [
+        "Добавить закрытый ключ"
+      ],
+      "Add public key": [
+        "Добавить открытый ключ"
+      ],
+      "Add SSID": [
+        "Добавить SSID"
       ],
       "Add text": [
         "Добавить текст"
@@ -4109,14 +4166,8 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } адресов"
       ],
-      "${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "Монитор ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Защита аккаунта"
@@ -4621,6 +4672,14 @@
       ],
       "URL is invalid": [
         "URL недействителен"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Переместить элемент в",
+        "Переместить элементы в",
+        "Переместить элементы в",
+        "Переместить элементы в"
       ]
     },
     "Warning": {

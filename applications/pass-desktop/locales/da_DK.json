@@ -445,6 +445,9 @@
       "Pause monitoring": [
         "Sæt monitorering på pause"
       ],
+      "Pay once": [
+        "Betal én gang"
+      ],
       "Pin item": [
         "Fastgør element"
       ],
@@ -1324,6 +1327,12 @@
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "\"${ payload.itemName }\" element blev afvist"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "\"${ payload.itemName }\" opdatering blev afvist"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } blokeret",
         "${ blockedEmailsCount } blokerede"
@@ -1853,10 +1862,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2546,6 +2551,9 @@
       "Account Number": [
         "Kontonummer"
       ],
+      "Account Type": [
+        "Kontotype"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Tilføj et tilfældigt præfiks til dette domæne, når du opretter et nyt alias."
       ],
@@ -2618,6 +2626,9 @@
       "Browse faster, smarter": [
         "Browse hurtigere og smartere"
       ],
+      "Built-in 2FA": [
+        "Indbygget 2FA"
+      ],
       "Capital letters (A-Z)": [
         "Store bogstaver (A-Z)"
       ],
@@ -2635,6 +2646,9 @@
       ],
       "Catch-All": [
         "Catch-All"
+      ],
+      "Checkbox": [
+        "Afkrydsningsfelt"
       ],
       "Choose unlock method": [
         "Vælg metode til at låse op"
@@ -2711,14 +2725,23 @@
       "Credit cards": [
         "Betalingskort"
       ],
+      "Crypto Wallet": [
+        "Wallet til kryptovaluta"
+      ],
       "Custom Items": [
         "Brugerdefinerede elementer"
       ],
       "Database": [
         "Database"
       ],
+      "Database Type": [
+        "Databasetype"
+      ],
       "Date": [
         "Dato"
+      ],
+      "Date of Birth": [
+        "Fødselsdato"
       ],
       "Device": [
         "Enhed"
@@ -2795,6 +2818,9 @@
       "Extra email addresses": [
         "Ekstra e-mailadresser"
       ],
+      "Extra fields": [
+        "Ekstra felter"
+      ],
       "Extra password": [
         "Ekstra adgangskode"
       ],
@@ -2854,6 +2880,9 @@
       ],
       "Get ${ PASS_SHORT_APP_NAME } Plus": [
         "Få ${ PASS_SHORT_APP_NAME } Plus"
+      ],
+      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
+        "Få ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Kom i gang"
@@ -2947,6 +2976,9 @@
       ],
       "IP Address": [
         "IP-adresse"
+      ],
+      "Issuing Authority": [
+        "Udstedende myndighed"
       ],
       "Issuing Country": [
         "Udstedende land"
@@ -3059,6 +3091,9 @@
       "Membership": [
         "Medlemsskab"
       ],
+      "Membership ID": [
+        "Medlem-ID"
+      ],
       "Middle name": [
         "Mellemnavn"
       ],
@@ -3143,6 +3178,9 @@
       "Organization": [
         "Organisation"
       ],
+      "Organization Name": [
+        "Navn på organisation"
+      ],
       "Other": [
         "Andet"
       ],
@@ -3173,6 +3211,9 @@
       "Password history": [
         "Adgangskodehistorik"
       ],
+      "Patient Name": [
+        "Patientnavn"
+      ],
       "Permissions": [
         "Tilladelser"
       ],
@@ -3202,6 +3243,9 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Points Balance": [
+        "Pointsaldo"
       ],
       "Port": [
         "Port"
@@ -3296,6 +3340,9 @@
       "See member and permission overview": [
         "Se oversigt over medlemmer og tilladelser"
       ],
+      "Seed Phrase": [
+        "Startfrase"
+      ],
       "Select a domain": [
         "Vælg et domæne"
       ],
@@ -3325,6 +3372,9 @@
       ],
       "Share": [
         "Del"
+      ],
+      "Share ID": [
+        "Delings-ID"
       ],
       "Shared": [
         "Delt"
@@ -3416,6 +3466,12 @@
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Dette element er tilgængeligt indtil ${ date } eller indtil visningsgrænsen er nået."
       ],
+      "Tier/Level": [
+        "Niveau"
+      ],
+      "Tier/Status": [
+        "Niveau/Status"
+      ],
       "Title": [
         "Titel"
       ],
@@ -3503,6 +3559,9 @@
       "View logs": [
         "Vis logfiler"
       ],
+      "VPN Devices": [
+        "VPN-enheder"
+      ],
       "VPN Speed": [
         "VPN hastighed"
       ],
@@ -3520,6 +3579,9 @@
       ],
       "Websites": [
         "Websider"
+      ],
+      "WiFi network": [
+        "WiFi-netværk"
       ],
       "Work details": [
         "Arbejdsdetaljer"
@@ -3741,6 +3803,9 @@
       "Add note": [
         "Tilføj note"
       ],
+      "Add password": [
+        "Tilføj adgangskode"
+      ],
       "Add private key": [
         "Tilføj privat nøgle"
       ],
@@ -3824,6 +3889,9 @@
       ],
       "Select a suffix": [
         "Vælg et suffiks"
+      ],
+      "Select option": [
+        "Vælg mulighed"
       ],
       "Unknown origin": [
         "Ukendt oprindelse"
@@ -3989,14 +4057,8 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresser"
       ],
-      "${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
-      ],
-      "${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus"
       ],
       "Account protection": [
         "Kontobeskyttelse"
@@ -4477,6 +4539,12 @@
       ],
       "URL is invalid": [
         "URL er ugyldig"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Flyt element til",
+        "Flyt elementer til"
       ]
     },
     "Warning": {

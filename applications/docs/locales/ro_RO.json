@@ -471,9 +471,6 @@
       "Load image": [
         "Încărcare imagine"
       ],
-      "Loading verification": [
-        "În curs de verificare"
-      ],
       "Make a copy": [
         "Creare copie"
       ],
@@ -674,9 +671,6 @@
       ],
       "Restoring...": [
         "Restaurare..."
-      ],
-      "Retry": [
-        "Reîncercare"
       ],
       "Save": [
         "Salvare"
@@ -1168,8 +1162,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus și ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } și ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } spațiu de stocare"
@@ -3033,6 +3027,9 @@
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
+      "Invalid ZIP code": [
+        "Cod poștal nevalid"
+      ],
       "Item content cannot exceed 40KB": [
         "Conținutul articolului nu poate depăși 40 KiB."
       ],
@@ -3105,6 +3102,18 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Încărcarea fotografiilor este momentan dezactivată. Reîncercați mai târziu."
       ],
+      "Please enter a valid postal code": [
+        "Introduceți un cod poștal valid."
+      ],
+      "Please enter a valid ZIP code": [
+        "Introduceți un cod poștal valid."
+      ],
+      "Please enter postal code": [
+        "Introduceți codul poștal."
+      ],
+      "Please enter ZIP code": [
+        "Introduceți codul poștal."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Remediați conflictul evidențiat pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua.",
@@ -3118,6 +3127,12 @@
       ],
       "Please select a state": [
         "Alegeți un stat"
+      ],
+      "Please select billing country": [
+        "Selectați țara de facturare"
+      ],
+      "Please select billing state": [
+        "Selectați statul pentru facturare"
       ],
       "Port is required": [
         "Portul este obligatoriu"
@@ -3213,9 +3228,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Creditul minim care poate fi adăugat este de ${ price }."
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Plata minimă acceptată este de ${ price }."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Noua revizie a fișierului original nu a fost încărcată încă,. Reîncercați mai târziu."
@@ -5043,11 +5055,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "După apăsarea pe butonul de confirmare, în cont va mai rămâne ${ creditsRemaining } credit.",
-        "După apăsarea pe butonul de confirmare, în cont vor mai rămâne ${ creditsRemaining } credite.",
-        "După apăsarea pe butonul de confirmare, în cont vor mai rămâne ${ creditsRemaining } de credite."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Furnizați un nume și o adresă de e-mail pentru a crea un grup."
       ],
@@ -5587,9 +5594,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Trebuie să dezactivați sau să eliminați utilizatorii ${ MAIL_APP_NAME } adiționali, adresele și domeniile personale înainte de a putea retrograda."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Trebuie să aveți un card de credit sau cont bancar asociat la contul de PayPal. Dacă contul de PayPal nu are așa ceva, atunci faceţi clic pe butonul de mai jos."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Veți pierde accesul la funcțiile planului ${ planTitle } la această dată."
       ],
@@ -5628,8 +5632,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, trebuie să plătiți toate facturile restante."
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Abonamentul ${ PASS_SHORT_APP_NAME } Plus va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Abonamentul ${ plan } va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
@@ -5731,6 +5735,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Opțional"
+      ],
       "Selected color:": [
         "Culoare selectată:"
       ]
@@ -6225,9 +6232,6 @@
       "Start date": [
         "Dată început"
       ],
-      "State": [
-        "Județ/Stat"
-      ],
       "Stop sharing": [
         "Oprire partajare"
       ],
@@ -6318,6 +6322,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Cod poştal"
+      ],
       "ZIP code": [
         "Cod poștal"
       ]
@@ -6366,9 +6373,6 @@
       ],
       "clearing your browser cache": [
         "golind bufferul navigatorului web"
-      ],
-      "click here": [
-        "apăsați aici"
       ],
       "Enforcing 2FA for organizations": [
         "Impunere A2F pentru organizații"
@@ -7412,8 +7416,8 @@
       "Protect sensitive business information and collaborate securely.": [
         "Protejați informațiile confidențiale de afaceri și colaborați în siguranță."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Protejați-vă familia cu toate funcțiile premium din ${ PASS_SHORT_APP_NAME } Plus pentru 6 utilizatori."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Protejați-vă familia cu toate funcțiile speciale din ${ plusTitle } pentru 6 utilizatori."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protejați-vă confidențialitatea familiei cu toate serviciile ${ BRAND_NAME } combinate."
@@ -8055,8 +8059,8 @@
       "Get the deal": [
         "Luați oferta"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Ultima șansă pentru a obține 80% reducere în prima lună pentru ${ plan } Plus."
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Ultima șansă pentru a obține 80% reducere în prima lună pentru ${ plan }."
       ],
       "Last day to save": [
         "Ultima zi de economisire"
@@ -8246,6 +8250,11 @@
         "Date de autentificare, notițe și carduri de plată nelimitate și altele"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Abonament ${ upsellPlanTitle }"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } cont de utilizator",
@@ -8355,6 +8364,9 @@
       "Got it": [
         "Am înțeles"
       ],
+      "I'm purchasing as a business": [
+        "Achiziționez în calitate de companie"
+      ],
       "MM/YY": [
         "LL/AA"
       ],
@@ -8364,26 +8376,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
       ],
-      "Please select billing country": [
-        "Selectați țara de facturare"
-      ],
-      "Please select billing state": [
-        "Selectați statul de facturare"
-      ],
-      "Please select your billing country first.": [
-        "Selectați țara de facturare mai întâi."
-      ],
-      "Please select your billing state first.": [
-        "Selectați statul de facturare mai întâi."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Prețul de reînnoire poate fi modificat în conformitate cu informațiile din ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
-      ],
-      "Select billing country to pay": [
-        "Selectați țara de facturare pentru a plăti"
       ],
       "terms & conditions": [
         "termeni și condiții"
@@ -8410,6 +8407,9 @@
         "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } lună. Puteți anula oricând.",
         "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
         "Apoi se va autoreînnoi cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
+      ],
+      "This number will be shown on all future invoices": [
+        "Acest număr va fi afișat pe toate facturile viitoare."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
@@ -8463,6 +8463,20 @@
       ],
       "Street address, postal code, and city": [
         "Strada, cod poștal și oraș"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Cod unic de înregistrare"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Număr de TVA"
       ]
     },
     "PGP key encryption warning": {
@@ -8547,6 +8561,9 @@
       "Please describe the problem and include any error messages": [
         "Descrieți problema incluzând și mesajele de eroare ce apar"
       ],
+      "Postal code": [
+        "Cod poştal"
+      ],
       "Search for group name": [
         "Căutare nume grup"
       ],
@@ -8576,6 +8593,9 @@
       ],
       "Your organization name": [
         "Numele organizației"
+      ],
+      "ZIP code": [
+        "Cod poștal"
       ]
     },
     "Placeholder for contact group name": {
@@ -8586,6 +8606,20 @@
     "plan customizer, users": {
       "contact": [
         "contactați"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Toate serviciile ${ protonPlus }.${ br }Un singur abonament."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "În calitate de abonat la **${ currentPlanTitle }**, puteți debloca **${ unlockPlanTitle }** și toate serviciile premium ale ${ BRAND_NAME } trecând la **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Rămân la ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Trecere la ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -10464,6 +10498,9 @@
       ],
       "Your exposed information": [
         "Informații expuse"
+      ],
+      "Your plan": [
+        "Plan actual"
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"

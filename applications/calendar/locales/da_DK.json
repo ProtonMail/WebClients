@@ -464,9 +464,6 @@
       "Load image": [
         "Indlæs billede"
       ],
-      "Loading verification": [
-        "Indlæser verifikation"
-      ],
       "Make this participant optional": [
         "Gør denne deltager valgfri"
       ],
@@ -659,9 +656,6 @@
       "Resume indexing": [
         "Genoptag indeksering"
       ],
-      "Retry": [
-        "Prøv igen"
-      ],
       "Save": [
         "Gem"
       ],
@@ -845,8 +839,14 @@
       "Use a different payment method": [
         "Benyt en anden betalingsmetode"
       ],
+      "Use authentication code": [
+        "Brug godkendelseskode"
+      ],
       "Use for sending": [
         "Benyt til afsendelse"
+      ],
+      "Use recovery code": [
+        "Brug gendannelseskode"
       ],
       "Verify": [
         "Bekræft"
@@ -1015,11 +1015,17 @@
       ]
     },
     "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
       "200 GB storage": [
         "200 GB lagerplads"
       ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "Rabatter er baserede på en standard månedlig pris. Ved slutningen af faktureringsperioden fornys dit abonnement efter den standard årlige pris."
+      ],
+      "Encrypted password manager": [
+        "Krypteret adgangskodehåndtering"
       ],
       "Online document editor": [
         "Online dokumenteditor"
@@ -1035,6 +1041,9 @@
       ],
       "Share passwords easily": [
         "Del let kodeord"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
@@ -1142,9 +1151,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop app"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
@@ -1728,6 +1734,9 @@
       ],
       "Previous period": [
         "Forrige periode"
+      ],
+      "Search events": [
+        "Søg begivenheder"
       ],
       "Today": [
         "I dag"
@@ -3516,9 +3525,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Det mindste kreditstørrelse, der kan tilføjes, er ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "Den mindste betaling vi accepterer er ${ price }"
-      ],
       "The sending key is not valid": [
         "Afsendelsesnøgle er ikke gyldig"
       ],
@@ -4158,6 +4164,9 @@
     "Header": {
       "Contacts": [
         "Kontakter"
+      ],
+      "Drawer": [
+        "Sidepanel"
       ],
       "Name": [
         "Navn"
@@ -4900,6 +4909,9 @@
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
@@ -4917,6 +4929,9 @@
       ],
       "Enabling auto-deletion…": [
         "Aktivering af automatisk sletning…"
+      ],
+      "Enter the code from your authenticator app": [
+        "Indtast koden fra din godkendelsesapp"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Indtast loginoplysningerne for den e-mail-konto, du ønsker at importere fra."
@@ -5223,10 +5238,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Bemærk, at når du klikker på knappen Bekræft, vil din konto have ${ creditsRemaining } kredit tilbage.",
-        "Bemærk, at når du klikker på knappen Bekræft, vil din konto have ${ creditsRemaining } kreditter tilbage."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Angiv et navn og en e-mailadresse for at oprette en gruppe."
       ],
@@ -5461,6 +5472,9 @@
       "Total VPN connections": [
         "Samlet antal VPN-forbindelser"
       ],
+      "Tracking": [
+        "Sporing"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de bliver frigivet til offentligheden. Dette vil genindlæse applikationen"
       ],
@@ -5640,9 +5654,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdomæner, før du kan nedgradere."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
-      ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Du har tidligere afvist denne invitation. Bed ejeren om en ny invitation"
       ],
@@ -5691,9 +5702,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Der leveres ikke længere e-mails til din indbakke. Dine Drive-links til deling er ikke længere aktive, og du kan ikke uploade nye filer. Hvis du fortsat vil bruge din konto, skal du betale eventuelle forfaldne fakturaer."
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Dit ${ PASS_SHORT_APP_NAME } Plus abonnement vil blive erstattet af ${ PASS_SHORT_APP_NAME } Lifetime. Den resterende del af dit abonnement vil blive tilføjet til din konto. ${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
@@ -5773,6 +5781,9 @@
       "${ filteredList.length } command found.": [
         "${ filteredList.length } kommando fundet.",
         "${ filteredList.length } kommandoer funder."
+      ],
+      "Optional": [
+        "Valgfrit"
       ],
       "Selected color:": [
         "Valgte farve:"
@@ -6307,9 +6318,6 @@
       "Start date": [
         "Startdato"
       ],
-      "State": [
-        "Stat/Region"
-      ],
       "Street address": [
         "Adresse"
       ],
@@ -6468,9 +6476,6 @@
       ],
       "clearing your browser cache": [
         "rydder din browser-cache"
-      ],
-      "click here": [
-        "klik her"
       ],
       "Drafts": [
         "Kladder"
@@ -7506,9 +7511,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Beskyt følsomme erhvervsoplysninger, og samarbejd sikkert."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Beskyt din familie med alle premium funktioner i ${ PASS_SHORT_APP_NAME } Plus til 6 brugere."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskyt din families privatliv med alle ${ BRAND_NAME } tjenester kombineret."
       ],
@@ -7818,6 +7820,10 @@
       ],
       "Require 2FA": [
         "Kræve 2FA"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Mulighed for ${ n } brugerdefineret e-mail-domæne",
+        "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
     "Note": {
@@ -8037,9 +8043,6 @@
       ],
       "Get the deal": [
         "Tag imod tilbuddet"
-      ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Sidste chance for at spare 80% på den første måned af ${ plan } Plus."
       ],
       "Last day to save": [
         "Sidste dag til at gemme"
@@ -8265,6 +8268,11 @@
         "Ubegrænsede logins, noter, betalingskort og mere"
       ]
     },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } abonnement"
+      ]
+    },
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } brugerkonto",
@@ -8370,23 +8378,8 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
       ],
-      "Please select billing country": [
-        "Vælg venligst faktureringsland"
-      ],
-      "Please select billing state": [
-        "Vælg venligst faktureringsstat"
-      ],
-      "Please select your billing country first.": [
-        "Vælg venligst dit faktureringsland først."
-      ],
-      "Please select your billing state first.": [
-        "Vælg venligst dit faktureringsstat først."
-      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, annuller når som helst."
-      ],
-      "Select billing country to pay": [
-        "Vælg faktureringsland for at betale"
       ],
       "terms & conditions": [
         "vilkår og betingelser"
@@ -8596,6 +8589,11 @@
     "plan customizer, users": {
       "contact": [
         "kontakt"
+      ]
+    },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Opgradér til ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -9130,6 +9128,9 @@
       "Go to subscription plans": [
         "Gå til abonnementer"
       ],
+      "Keep passwords safe": [
+        "Hold adgangskoder sikre"
+      ],
       "Unblock streaming content": [
         "Lås op for streamet indhold"
       ],
@@ -9410,6 +9411,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-forbindelse pr. bruger",
         "${ n } VPN-forbindelser pr. bruger"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-forbindelse til ${ n } enhed per bruger",
+        "VPN-forbindelse til ${ n } enheder per bruger"
       ]
     },
     "Subscription change warning": {
@@ -10746,6 +10751,9 @@
       "Your exposed information": [
         "Dine blotlagte oplysninger"
       ],
+      "Your plan": [
+        "Dit abonnement"
+      ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
       ]
@@ -10863,6 +10871,9 @@
     "Unlimited offer": {
       "/month": [
         "/måned"
+      ],
+      "Only": [
+        "Kun"
       ]
     },
     "unprivatization": {

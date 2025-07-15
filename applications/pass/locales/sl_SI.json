@@ -956,6 +956,9 @@
       "Vault name does not match": [
         "Ime trezorja se ne ujema"
       ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Naleteli smo na težavo med zagonom ${ PASS_SHORT_APP_NAME }. Če se ta težava ponavlja, kontaktirajte našo podporo strankam za pomoč."
+      ],
       "Wrong password": [
         "Napačno geslo"
       ],
@@ -1097,6 +1100,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po uvozu vaših podatkov lahko zaradi varnosti izbrišete datoteko CSV, ki vsebuje vaša gesla."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Vzdevki v smeteh bodo še naprej posredovali e-pošto. Če želite prenehati prejemati e-pošto na ta naslov, ga raje onemogočite."
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Vzdevki z domenami po meri se ne nadzorujejo, dodajte jih kot e-poštni naslov po meri za spremljanje."
@@ -3240,6 +3246,9 @@
       "A description of the problem is required": [
         "Potreben je opis težave"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Vzdevki v smetnjaku bodo še naprej posredovali e-pošto."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Vsi vaši predmeti v smetnjaku bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
       ],
@@ -3404,6 +3413,9 @@
       ],
       "You must select at least one mailbox": [
         "Izbrati morate vsaj en poštni nabiralnik"
+      ],
+      "You will lose access to this item and its details. Do you want to continue?": [
+        "Izgubili boste dostop do tega predmeta in do njegovih podrobnosti. Ali želite nadaljevati?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ne boste več imeli dostopa do tega trezorja. Če se mu želite ponovno pridružiti, potrebujete novo povabilo."
