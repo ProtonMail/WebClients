@@ -1759,9 +1759,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } डेस्कटॉप ऐप"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } स्टोरेज"
       ],
@@ -3698,9 +3695,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "अपने इनबॉक्स तक पहुँचने से पहले अपने आने वाले संदेशों को स्वचालित रूप से सॉर्ट करें।"
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "${ MAIL_APP_NAME } Plus के साथ उपलब्ध"
-      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "एक क्लिक के साथ ज़ूम मीटिंग बनाएं और अपने कार्यक्रम में जॉइनिंग विवरण जोड़ें।"
       ],
@@ -4950,9 +4944,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "जोड़ने के लिए क्रेडिट रकम कम-से-कम ${ price } होना चाहिए"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "हम ${ price } से कम रकम नहीं लेते"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "नीति का नाम 3 और 40 वर्णों के बीच होना चाहिए।"
@@ -8425,10 +8416,6 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "कृपया ध्यान दें कि अगर आप इस फ़िल्टर ${ nameDeleted } को हटा देते हैं, तो हम उसके द्वारा उत्पन्न सभी स्वचालित क्रियाएँ प्रोसेस करना बंद कर देंगे।"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "कृपया ध्यान दें कि पुष्टिकरण बटन पर क्लिक करने पर, आपके खाते में ${ creditsRemaining } क्रेडिट शेष रहेगा।",
-        "कृपया ध्यान दें कि पुष्टिकरण बटन पर क्लिक करने पर, आपके खाते में ${ creditsRemaining } क्रेडिट शेष रहेंगे।"
-      ],
       "please open a support ticket": [
         "कृपया सहायता टिकट खोलें"
       ],
@@ -9562,9 +9549,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "भुगतान विधि के रूप में इसे जोड़ने के लिए आपके पास आपके PayPal खाते के साथ एक क्रेडिट कार्ड या बैंक खाता होना चाहिए।"
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "आपके पास एक क्रेडिट कार्ड या बैंक खाता होना चाहिए जो आपके PayPal खाते से जुड़ा हो। यदि आपके पेपैल खाते में यह नहीं है, तो कृपया नीचे दिए गए बटन पर क्लिक करें।"
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "ICS से अपने इवेंट आयात करने के लिए आपके पास एक सक्रिय कैलेंडर होना चाहिए।"
       ],
@@ -9618,9 +9602,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "आपका ${ BRAND_NAME } पासवर्ड"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "आपकी ${ PASS_SHORT_APP_NAME } Plus सदस्यता को ${ PASS_SHORT_APP_NAME } Lifetime से बदल दिया जाएगा। आपकी सदस्यता का शेष बचा हुआ राशि आपके खाते में जोड़ दिया जाएगा। ${ PASS_SHORT_APP_NAME } लाइफटाइम सौदे में नवीनीकरण कीमत नहीं है, यह ${ PASS_SHORT_APP_NAME } तक जीवन भर पहुँच के लिए एक बार का भुगतान है।"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "आपके ${ VPN_APP_NAME } और ${ MAIL_APP_NAME } खाते जुड़े हुए है। उन दोनों को मिटाने के लिए, कृपया ${ loginLink } पे साइन इन करें और वहां अपना खाता मिटाएं।"
@@ -9714,6 +9695,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
+      ],
+      "Optional": [
+        "वैकल्पिक"
       ],
       "Selected color:": [
         "रंग चुनें:"
@@ -11493,9 +11477,6 @@
       "clearing your browser cache": [
         "अपना ब्राउज़र कैश साफ़ करना"
       ],
-      "click here": [
-        "यहाँ क्लिक करें"
-      ],
       "Common sign in issues": [
         "मुद्दों में समानन्या संकेत"
       ],
@@ -11567,9 +11548,6 @@
       ],
       "Pay invoice": [
         "चालान भुगतान करें"
-      ],
-      "PayPal without credit card": [
-        "पेपैल बिना क्रेडिट कार्ड के"
       ],
       "perform a password reset from your active session": [
         "अपने सक्रिय सत्र से पासवर्ड रीसेट करें"
@@ -12794,9 +12772,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "संवेदनशील व्यापारिक जानकारी की सुरक्षा करें और सुरक्षित रूप से सहयोग करें।"
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "अपने परिवार की सुरक्षा करें ${ PASS_SHORT_APP_NAME } Plus की सभी प्रीमियम सुविधाओं के साथ, 6 यूज़र के लिए।"
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "सभी ${ BRAND_NAME } सेवाओं के साथ अपने परिवार की गोपनीयता की रक्षा करें।"
       ],
@@ -12873,9 +12848,6 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "शुरू करने के लिए, एक डिस्प्ले नाम चुने। दूसरे लोग ये नाम देखेंगे जब आप उनको ईमेल भेजेंगे, न्योता भेजेंगे, या फाइल शेयर करेंगे।"
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "आपकी ${ planName } सदस्यता अब सक्रिय है।"
       ],
       "Your selected plan: ${ planName }": [
         "आपकी चुनी हुई योजना: ${ planName }"
@@ -13461,9 +13433,6 @@
       "Get the deal": [
         "सौदा पाएं"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "आपके ${ plan } Plus के पहले महीने पर 80% छूट पाने का आख़िरी मौका।"
-      ],
       "Last day to save": [
         "बचत करने का आखिरी दिन"
       ],
@@ -14026,9 +13995,6 @@
       ],
       "Select your plan": [
         "अपनी योजना चुनें"
-      ],
-      "Upgrade your plan": [
-        "अपना प्लान अपग्रेड करें"
       ]
     },
     "pass_signup_2023: Info": {
@@ -14238,9 +14204,6 @@
       ],
       "Verifying your payment": [
         "आपका भुगतान सत्यापित कर रहे"
-      ],
-      "Welcome to ${ shortName } Plus": [
-        "${ shortName } Plus में स्वागत"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "आपके पास पहले से ही प्रीमियम ${ appName } की खासियतों तक पहुंच है — फिर से खरीदने की आवश्यकता नहीं।"
@@ -14471,23 +14434,8 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "कृपया अपने सदस्यता को पहले फिर से सक्रिय करें ताकि ऐड-ऑन की संख्या कम हो सके।"
       ],
-      "Please select billing country": [
-        "कृपया बिलिंग देश चुनें"
-      ],
-      "Please select billing state": [
-        "कृपया बिलिंग स्टेट चुनें"
-      ],
-      "Please select your billing country first.": [
-        "कृपया पहले अपना बिलिंग देश चुनें।"
-      ],
-      "Please select your billing state first.": [
-        "कृपया पहले अपना बिलिंग स्टेट चुनें।"
-      ],
       "Processing payment": [
         "भुगतान की प्रक्रिया जारी है"
-      ],
-      "Select billing country to pay": [
-        "भुगतान के लिए बिलिंग देश चुनें"
       ],
       "terms & conditions": [
         "नियम और शर्तें"
@@ -18713,9 +18661,6 @@
       ],
       "Time zone": [
         "समय क्षेत्र"
-      ],
-      "Track your referrals": [
-        "रेफरल ट्रैक करें"
       ],
       "TV sign in": [
         "टीवी पे साइनइन करें"
