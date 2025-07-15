@@ -2168,9 +2168,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus en ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } opslagruimte"
       ],
@@ -4172,9 +4169,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorteer automatisch inkomende berichten voordat ze uw inbox bereiken."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "Beschikbaar met ${ MAIL_APP_NAME } Plus"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configureer dit eerst om uw organisatie te activeren en uw e-mailadres aan te passen."
       ],
@@ -5654,9 +5648,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "De minimale betaling die we accepteren is ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "De naam van de policy moet tussen 3 en 40 tekens lang zijn."
@@ -9372,10 +9363,6 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Let op, wanneer u de filter wist ${ nameDeleted } zullen alle geautomatiseerde acties van de filter niet langer uitgevoerd worden."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credit over.",
-        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
-      ],
       "please open a support ticket": [
         "open een support ticket"
       ],
@@ -10579,9 +10566,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "U moet een kredietkaart of een bankrekening gekoppeld hebben aan uw PayPal-account om deze toe te voegen als betaalmethode."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "U heeft een actieve persoonlijke agenda nodig om uw afspraken uit ICS te importeren."
       ],
@@ -10649,9 +10633,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Uw wachtwoord voor ${ BRAND_NAME }"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Uw ${ PASS_SHORT_APP_NAME } Plus-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Uw ${ VPN_APP_NAME } en ${ MAIL_APP_NAME } accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
@@ -10783,6 +10764,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Optional": [
+        "Optioneel"
       ],
       "Selected color:": [
         "Geselecteerde kleur:"
@@ -12628,9 +12612,6 @@
       "clearing your browser cache": [
         "browsercache legen"
       ],
-      "click here": [
-        "klik hier"
-      ],
       "Common sign in issues": [
         "Veel voorkomende problemen bij aanmelden"
       ],
@@ -12756,9 +12737,6 @@
       ],
       "Pay invoice": [
         "Factuur betalen"
-      ],
-      "PayPal without credit card": [
-        "PayPal zonder creditcard"
       ],
       "perform a password reset from your active session": [
         "mogelijk een wachtwoord reset vanuit uw actieve sessie uitvoeren"
@@ -14084,9 +14062,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Bescherm uw familie met alle premium-functies van ${ PASS_SHORT_APP_NAME } Plus voor 6 gebruikers."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
       ],
@@ -14163,9 +14138,6 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Kies eerst een weergavenaam. Dit is de naam die mensen zien als u een e-mail verzendt, ze uitnodigt voor een gebeurtenis of een bestand deelt."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "Uw ${ planName }-abonnement is nu actief."
       ],
       "Your selected plan: ${ planName }": [
         "Uw geselecteerde abonnement: ${ planName }"
@@ -14773,9 +14745,6 @@
       "Get the deal": [
         "Kies deze deal"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Laatste kans om 80% korting te krijgen op uw eerste maand ${ plan } Plus."
-      ],
       "Last day to save": [
         "Laatste dag om op te besparen"
       ],
@@ -15335,9 +15304,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Krijg levenslang toegang tot alle huidige en toekomstige ${ PASS_APP_NAME } premiumfuncties met één enkele betaling."
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "Welkom bij ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15425,9 +15391,6 @@
       ],
       "Select your plan": [
         "Kies uw abonnement"
-      ],
-      "Upgrade your plan": [
-        "Upgrade uw abonnement"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15649,9 +15612,6 @@
       ],
       "Verifying your payment": [
         "Verifiëren van uw betaling"
-      ],
-      "Welcome to ${ shortName } Plus": [
-        "Welkom bij ${ shortName } Plus"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "U heeft al toegang tot de premium ${ appName }-functies — niet nodig om opnieuw aan te kopen."
@@ -15897,18 +15857,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
-      "Please select billing country": [
-        "Selecteer factureringsland"
-      ],
-      "Please select billing state": [
-        "Selecteer factureringsstaat"
-      ],
-      "Please select your billing country first.": [
-        "Selecteer eerst uw factureringsland."
-      ],
-      "Please select your billing state first.": [
-        "Selecteer eerst uw factureringsstaat."
-      ],
       "Processing payment": [
         "Betaling wordt verwerkt"
       ],
@@ -15917,9 +15865,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
-      ],
-      "Select billing country to pay": [
-        "Selecteer factureringsland om te betalen"
       ],
       "terms & conditions": [
         "algemene voorwaarden"
@@ -19312,9 +19257,6 @@
       ]
     },
     "Title": {
-      "${ appName } Free": [
-        "${ appName } Gratis"
-      ],
       "${ appName } keyboard shortcuts": [
         "${ appName } sneltoetsen"
       ],
@@ -20628,9 +20570,6 @@
       ],
       "Time zone": [
         "Tijdzone"
-      ],
-      "Track your referrals": [
-        "Uw doorverwijzingen opvolgen"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"

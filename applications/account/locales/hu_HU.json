@@ -2083,9 +2083,6 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus és ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } tárhely"
       ],
@@ -4082,9 +4079,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "A beérkező üzenetei automatikus rendezése még mielőtt a beérkezett üzenetek mappádba kerülnének."
       ],
-      "Available with ${ MAIL_APP_NAME } Plus": [
-        "Elérhető ${ MAIL_APP_NAME } Plus előfizetéssel"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurálja először ezt, hogy aktiválja a szervezetét és testre szabja az Ön e-mail címét."
       ],
@@ -5553,9 +5547,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Legalább ${ price } kredit feltöltése szükséges"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Legalacsonyabb elfogadható összeg: ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "A házirend neve 3-40 karakter hosszúságú lehet."
@@ -9265,10 +9256,6 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Amennyiben törli ezt a szűrőt (${ nameDeleted }), minden ebből kiinduló automatikus feldolgozás megszűnik."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "A megerősítés gombra kattintva a fiókban ${ creditsRemaining } kredit marad.",
-        "A megerősítés gombra kattintva a fiókban ${ creditsRemaining } kredit marad."
-      ],
       "please open a support ticket": [
         "kérjük, nyisson egy ügyfélszolgálati jegyet"
       ],
@@ -10472,9 +10459,6 @@
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Ahhoz, hogy felvehesse fizetési módként, a PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát. Ha ezek egyike sincs, kattintson a lentebbi gombra."
-      ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Egy ICS fájlból való importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
       ],
@@ -10542,9 +10526,6 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "A ${ BRAND_NAME } jelszava"
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Az Ön ${ PASS_SHORT_APP_NAME } Plus előfizetése helyébe ${ PASS_SHORT_APP_NAME } Lifetime lép. \nAz előfizetése fennmaradó egyenlege hozzáadódik a számlájához. A ${ PASS_SHORT_APP_NAME } élethosszig tartó ajánlatnak nincs megújítási ára, ez egy egyszeri fizetés a ${ PASS_SHORT_APP_NAME } élethosszig tartó hozzáférésért."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "A ${ VPN_APP_NAME } és ${ MAIL_APP_NAME } fiókok össze vannak kapcsolva. Mindkettő törléséhez lépjen be a következő címen és ott törölje a fiókokat: ${ loginLink }."
@@ -10673,6 +10654,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "A kulcs ${ fingerprint } már feltöltésre került"
+      ],
+      "Optional": [
+        "Nem kötelező"
       ],
       "Selected color:": [
         "A kiválasztott szín:"
@@ -12515,9 +12499,6 @@
       "clearing your browser cache": [
         "böngésző gyorsítótárának ürítése"
       ],
-      "click here": [
-        "kattintson ide"
-      ],
       "Common sign in issues": [
         "Általános bejelentkezési problémák"
       ],
@@ -12643,9 +12624,6 @@
       ],
       "Pay invoice": [
         "Számla kifizetése"
-      ],
-      "PayPal without credit card": [
-        "Paypal bankkártya nélkül"
       ],
       "perform a password reset from your active session": [
         "visszaállítani a jelszavát az aktív munkafolyamatból."
@@ -13971,9 +13949,6 @@
       "Protect sensitive business information and collaborate securely.": [
         "Védje az érzékeny üzleti információkat és biztonságosan működjön együtt."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Védje családját a ${ PASS_SHORT_APP_NAME } Plus összes prémium funkciójával 6 felhasználó számára."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Védje a családja adatait az összes ${ BRAND_NAME } szolgáltatás kombinációjával."
       ],
@@ -14050,9 +14025,6 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "A kezdéshez válasszon egy megjelenített nevet. Ezt fogják látni az emberek, ha e-mailt küld nekik, meghívja egy eseményre vagy megoszt egy fájlt."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "A ${ planName } csomagja most már aktív."
       ],
       "Your selected plan: ${ planName }": [
         "A választott csomagja: ${ planName }"
@@ -14660,9 +14632,6 @@
       "Get the deal": [
         "Ajánlat elfogadása"
       ],
-      "Last chance to get 80% off your first month of ${ plan } Plus.": [
-        "Utolsó esély, hogy 80% kedvezményt kapjon az első havi ${ plan } Plus díjából."
-      ],
       "Last day to save": [
         "Utolsó nap a mentésre"
       ],
@@ -15222,9 +15191,6 @@
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Élvezze a jelenlegi és jövőbeli összes ${ PASS_APP_NAME } prémium funkcióhoz való élethosszig tartó hozzáférést egyetlen, egyszeri fizetéssel."
-      ],
-      "Welcome to ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }": [
-        "Üdvözöljük a következőkben: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15312,9 +15278,6 @@
       ],
       "Select your plan": [
         "Válasszon csomagot"
-      ],
-      "Upgrade your plan": [
-        "Váltson nagyobb csomagra"
       ]
     },
     "pass_signup_2023: Info": {
@@ -15536,9 +15499,6 @@
       ],
       "Verifying your payment": [
         "Fizetés ellenőrzése"
-      ],
-      "Welcome to ${ shortName } Plus": [
-        "Üdvözli a ${ shortName } Plus."
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Már van hozzáférése a prémium ${ appName } funkciókhoz, nem kell újra megvenni."
@@ -15781,18 +15741,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Kérjük, először aktiválja újra az előfizetését, hogy csökkenthesse a bővítmények számát."
       ],
-      "Please select billing country": [
-        "Kérjük, válassza ki a számlázási országot"
-      ],
-      "Please select billing state": [
-        "Kérjük, válassza ki a számlázási megyét"
-      ],
-      "Please select your billing country first.": [
-        "Először válassza ki a számlázási országot."
-      ],
-      "Please select your billing state first.": [
-        "Kérjük, először válassza ki a számlázási megyét."
-      ],
       "Processing payment": [
         "Fizetés feldolgozása"
       ],
@@ -15801,9 +15749,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Az előfizetés megújul ${ renewPriceStr }, de bármikor lemondhatja."
-      ],
-      "Select billing country to pay": [
-        "A fizetéshez válassza ki a számlázási országot"
       ],
       "terms & conditions": [
         "szerződési feltételek"
@@ -20446,9 +20391,6 @@
       ],
       "Time zone": [
         "Időzóna"
-      ],
-      "Track your referrals": [
-        "Meghívók megtekintése"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
