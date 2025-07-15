@@ -1875,10 +1875,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
-        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
-      ],
       "Moving items": [
         "Elemek áthelyezése"
       ],
@@ -3886,9 +3882,6 @@
       ]
     },
     "PassOnboardingOffer": {
-      "${ PASS_SHORT_APP_NAME } Plus Lifetime for ${ plusLifetimePrice }": [
-        "${ PASS_SHORT_APP_NAME } Plus élettartam ${ plusLifetimePrice } áron"
-      ],
       "${ price }/month": [
         "${ price }/hónap"
       ]
@@ -4166,14 +4159,8 @@
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } cím"
       ],
-      "${ BRAND_NAME } Unlimited": [
-        "${ BRAND_NAME } Unlimited"
-      ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Figyelő"
-      ],
-      "${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plusz"
       ],
       "Account protection": [
         "Fiókvédelem"
