@@ -24,7 +24,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { B2BAuthLog } from '@proton/shared/lib/authlog';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { OrganizationExtended, OrganizationSettings, Recipient } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, OrganizationExtended, OrganizationSettings, Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -33,7 +33,7 @@ import RecipientsLimitationModal from '../b2bDashboard/ActivityMonitor/Recipient
 import { updateMonitoringSetting } from '../b2bDashboard/ActivityMonitor/api';
 import { getLocalTimeStringFromDate, getSearchType } from '../b2bDashboard/Pass/helpers';
 import B2BAuthLogsTable from '../logs/B2BAuthLogsTable';
-import { convertEnhancedMembersToContactEmails } from './groups/NewGroupMemberInput';
+import { convertEnhancedMembersToContactEmails, convertGroupMemberToRecipient } from './groups/NewGroupMemberInput';
 import useAuthLogsDateFilter from './useAuthLogsFilter';
 import useOrgAuthLogs from './useOrgAuthLogs';
 
@@ -51,6 +51,18 @@ export interface AuthLogsQueryParams {
     StartTime?: string;
     EndTime?: string;
     IP?: string;
+}
+
+const mapMembersToRecipients = (members: EnhancedMember[], Emails: string[]): Recipient[] => {
+    const filteredMembers = convertEnhancedMembersToContactEmails(
+        members.filter((member) => member.Addresses?.some((address) => Emails.includes(address.Email)))
+    );
+    const uniqueMembers = Array.from(
+        new Map(filteredMembers.map((m) => [m.ContactID, m])).values()
+    );
+    const newRecipients = convertGroupMemberToRecipient(uniqueMembers);
+
+    return newRecipients;
 }
 
 const AuthenticationLogs = ({
@@ -150,6 +162,8 @@ const AuthenticationLogs = ({
                 StartTime,
                 EndTime,
             });
+            const newRecipients = mapMembersToRecipients(members, Emails);
+            setRecipient(newRecipients);
             reset();
         }
     };
@@ -173,7 +187,13 @@ const AuthenticationLogs = ({
     const resetFilter = () => {
         handleStartDateChange(undefined);
         handleEndDateChange(undefined);
-        setRecipient([]);
+
+        // Map members and display them in the user filter
+        const membersArray = convertEnhancedMembersToContactEmails(members);
+        const Emails = membersArray.map((member) => member.Email);
+        const newRecipients = mapMembersToRecipients(members, Emails);
+        setRecipient(newRecipients);
+        
         setQuery({ Emails: [] });
         reset();
     };

@@ -78,6 +78,9 @@ export interface OrganizationSettings {
     PasswordPolicies: PasswordPolicySettings;
     LogAuth: number; // 0 = no logging, 1 = loging default, 2 = loging detailed auth
     HighSecurity: number; // 0 = no high security, 1 = high security enable
+    OrganizationPolicy: {
+        Enforced: number;
+    };
 }
 
 export interface OrganizationExtended extends Organization {
