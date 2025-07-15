@@ -38,43 +38,47 @@ $category-colors: (
 	),
 );
 
-.tab-container {
-	border-width: rem(3);
+.categories-tabs {
+	background-color: var(--toolbar-background-color);
 
-	.text-default {
-		font-size: rem(13);
-	}
+	.tab-container {
+		border-width: rem(3);
 
-	// Used to avoid jumping when the label get the semibold weight
-	.tag-label::before {
-		display: block;
-		content: attr(title);
-		speak: never;
-		font-weight: 600;
-		block-size: 0;
-		overflow: hidden;
-		visibility: hidden;
-	}
+		.text-default {
+			font-size: rem(13);
+		}
 
-	@each $name, $colors in $category-colors {
-		&.tab--#{$name} {
-			&--active {
-				border-color: map-get($colors, base);
+		// Used to avoid jumping when the label get the semibold weight
+		.tag-label::before {
+			display: block;
+			content: attr(title);
+			speak: never;
+			font-weight: 600;
+			block-size: 0;
+			overflow: hidden;
+			visibility: hidden;
+		}
 
-				svg {
-					color: map-get($colors, base);
+		@each $name, $colors in $category-colors {
+			&.tab--#{$name} {
+				&--active {
+					border-color: map-get($colors, base);
+
+					svg {
+						color: map-get($colors, base);
+					}
 				}
-			}
 
-			.tag-count {
-				background-color: map-get($colors, bg);
-				color: map-get($colors, text);
-				border-radius: rem(6);
-			}
+				.tag-count {
+					background-color: map-get($colors, bg);
+					color: map-get($colors, text);
+					border-radius: rem(6);
+				}
 
-			&:hover {
-				svg {
-					color: map-get($colors, base);
+				&:hover {
+					svg {
+						color: map-get($colors, base);
+					}
 				}
 			}
 		}
