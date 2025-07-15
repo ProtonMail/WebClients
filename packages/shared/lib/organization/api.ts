@@ -20,6 +20,9 @@ export const getDefaultOrganizationSettings = (): OrganizationSettings => {
         PasswordPolicies: [],
         LogAuth: 0,
         HighSecurity: 0,
+        OrganizationPolicy: {
+            Enforced: 0,
+        }
     };
 };
 

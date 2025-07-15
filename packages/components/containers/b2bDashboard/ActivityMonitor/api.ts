@@ -1,13 +1,3 @@
-export interface OrganizationSettings {
-    AllowedProducts: String[];
-    HighSecurity: number;
-    LogAuth: number;
-    LogoID: number;
-    ShowName: boolean;
-    ShowScribeWritingAssistant: boolean;
-    VideoConferencingEnabled: boolean;
-}
-
 export const updateMonitoringSetting = (monitoring: number) => ({
     url: 'core/v4/organizations/settings/logauth',
     method: 'put',
