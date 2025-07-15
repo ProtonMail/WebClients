@@ -1,3 +1,4 @@
+import { GOOGLE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 import { createUrl } from '@proton/shared/lib/fetch/helpers';
 import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces';
 
@@ -35,7 +36,7 @@ export const generateGoogleOAuthUrl = ({
     loginHint?: string;
 }) => {
     return createUrl(
-        '/api/oauth-token/v1/authorization/google',
+        GOOGLE_OAUTH_PATH,
         {
             proton_feature: features,
             redirect_uri: redirectUri,

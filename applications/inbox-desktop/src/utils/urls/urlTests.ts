@@ -1,5 +1,6 @@
 import { getAppURL } from "../../store/urlStore";
 import { mainLogger } from "../log";
+import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 
 const sessionRegex = /(?!:\/u\/)(\d+)(?!:\/)/g;
 export const getLocalID = (url?: string): string | null => {
@@ -86,6 +87,18 @@ export const isAccount = (urlString: string) => {
     try {
         const url = new URL(urlString);
         return getAppURL().account === url.origin;
+    } catch (error) {
+        return false;
+    }
+};
+
+export const isGoogleOAuthAuthorizationURL = (urlString: string) => {
+    try {
+        const url = new URL(urlString);
+
+        const isAuthPath = url.pathname.startsWith(GOOGLE_OAUTH_PATH);
+
+        return isAccount(urlString) && isAuthPath;
     } catch (error) {
         return false;
     }

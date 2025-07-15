@@ -1,4 +1,5 @@
 import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
+import { GOOGLE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 
 import { getScopeFromProvider } from '../components/Modals/OAuth/StepProducts/useStepProducts.helpers';
 import { EASY_SWITCH_FEATURES, ImportProvider, ImportType, OAUTH_PROVIDER } from '../interface';
@@ -162,7 +163,7 @@ describe('OAuth url generation', () => {
                 redirectUri,
             });
             expect(googleMailsAuthorizationURL).toStrictEqual(
-                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_MAIL}&redirect_uri=${encodeURIComponent(redirectUri)}`
+                `https://mail.proton.me${GOOGLE_OAUTH_PATH}?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_MAIL}&redirect_uri=${encodeURIComponent(redirectUri)}`
             );
 
             const googleContactsAuthorizationURL = generateGoogleOAuthUrl({
@@ -170,7 +171,7 @@ describe('OAuth url generation', () => {
                 redirectUri,
             });
             expect(googleContactsAuthorizationURL).toStrictEqual(
-                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CONTACTS}&redirect_uri=${encodeURIComponent(redirectUri)}`
+                `https://mail.proton.me${GOOGLE_OAUTH_PATH}?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CONTACTS}&redirect_uri=${encodeURIComponent(redirectUri)}`
             );
 
             const loginHint = 'login hint';
@@ -180,7 +181,7 @@ describe('OAuth url generation', () => {
                 loginHint,
             });
             expect(googleHintAuthorizationURL).toStrictEqual(
-                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CONTACTS}&redirect_uri=${encodeURIComponent(redirectUri)}&loginHint=login+hint`
+                `https://mail.proton.me${GOOGLE_OAUTH_PATH}?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CONTACTS}&redirect_uri=${encodeURIComponent(redirectUri)}&loginHint=login+hint`
             );
 
             const googleCalendarsAuthorizationURL = generateGoogleOAuthUrl({
@@ -188,7 +189,7 @@ describe('OAuth url generation', () => {
                 redirectUri,
             });
             expect(googleCalendarsAuthorizationURL).toStrictEqual(
-                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CALENDAR}&redirect_uri=${encodeURIComponent(redirectUri)}`
+                `https://mail.proton.me${GOOGLE_OAUTH_PATH}?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CALENDAR}&redirect_uri=${encodeURIComponent(redirectUri)}`
             );
 
             const googleAllScopesAuthorizationURL = generateGoogleOAuthUrl({
@@ -200,7 +201,7 @@ describe('OAuth url generation', () => {
                 redirectUri,
             });
             expect(googleAllScopesAuthorizationURL).toStrictEqual(
-                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_MAIL}&proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CALENDAR}&proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CONTACTS}&redirect_uri=${encodeURIComponent(redirectUri)}`
+                `https://mail.proton.me${GOOGLE_OAUTH_PATH}?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_MAIL}&proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CALENDAR}&proton_feature%5B%5D=${EASY_SWITCH_FEATURES.IMPORT_CONTACTS}&redirect_uri=${encodeURIComponent(redirectUri)}`
             );
 
             const BYOESAuthorizationURL = generateGoogleOAuthUrl({
@@ -208,7 +209,7 @@ describe('OAuth url generation', () => {
                 redirectUri,
             });
             expect(BYOESAuthorizationURL).toStrictEqual(
-                `https://mail.proton.me/api/oauth-token/v1/authorization/google?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.BYOE}&redirect_uri=${encodeURIComponent(redirectUri)}`
+                `https://mail.proton.me${GOOGLE_OAUTH_PATH}?proton_feature%5B%5D=${EASY_SWITCH_FEATURES.BYOE}&redirect_uri=${encodeURIComponent(redirectUri)}`
             );
         });
     });
