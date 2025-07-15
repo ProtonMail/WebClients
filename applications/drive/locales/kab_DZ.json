@@ -417,9 +417,6 @@
       "Loading link": [
         "Asali n useɣwen"
       ],
-      "Loading verification": [
-        "Asali n usenqed"
-      ],
       "Manage folders": [
         "Sefrek ikaramen"
       ],
@@ -925,9 +922,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Asnas ${ MAIL_APP_NAME } i Desktop"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus d ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } n uḥraz"
@@ -2451,9 +2445,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Azal amezyan maḍi n usmad i izemren ad yettwarnu d ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Lexlaṣ amezyan maḍi i nezmer ad neqbel d ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Acegger amaynut n ufaylu agejdan urɛad i d-yulk, ttxil-k ɛreḍ tikkelt niḍen tixki"
@@ -4124,9 +4115,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Yessefk ad tessenseḍ neɣ ad tekkseḍ akk iseqdacen imernan n ${ MAIL_APP_NAME }, tansiwin, d taɣulin tudmawanin send ad tessadreḍ deg lqem."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Yessfk ad tesεuḍ takarḍa n usmad neɣ amiḍan n tbanka i icudden ɣer umiḍan-ik·im PayPal. Ma amiḍan-ik·im PayPal ur yesεi ara aya, ttxil-k·m sit ɣef tqeffalt ddaw."
-      ],
       "You will lose all unsaved changes.": [
         "Ad teṣruḥeḍ akk ibeddilen ur nettwasekles ara."
       ],
@@ -4168,6 +4156,11 @@
       ],
       "Your previous recovery phrase": [
         "Tafyirt-ik•im n tririt yezrin"
+      ]
+    },
+    "info": {
+      "Optional": [
+        "Afrayan"
       ]
     },
     "Info on errors": {
@@ -4673,9 +4666,6 @@
       "Start date": [
         "Azemz n tazwara"
       ],
-      "State": [
-        "Addad"
-      ],
       "Stolen data": [
         "Isefka yettwakren"
       ],
@@ -4793,9 +4783,6 @@
       ],
       "clearing your browser cache": [
         "asfaḍ n tuffirt n iminig"
-      ],
-      "click here": [
-        "sit dagi"
       ],
       "Drafts": [
         "Irewwayen"
@@ -5582,6 +5569,11 @@
     "Participant name": {
       "You": [
         "Kečč/kemm"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Aɣawas ${ upsellPlanTitle }"
       ]
     },
     "passwordless": {
@@ -6883,6 +6875,9 @@
       ],
       "Your changes are not synced yet": [
         "Isenfal-ik mazal ur mtawan ara"
+      ],
+      "Your plan": [
+        "Aɣawas-ik·im"
       ],
       "Your welcome actions": [
         "Tigawin-ik n unsuf"
