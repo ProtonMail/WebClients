@@ -1607,6 +1607,12 @@
       "Trust key": [
         "Schlüssel vertrauen",
         "Schlüssel vertrauen"
+      ],
+      "Cancel trial and pay": [
+        "Testversion beenden und bezahlen"
+      ],
+      "Remove from list": [
+        "Aus Liste entfernen"
       ]
     },
     "action": {
@@ -2084,6 +2090,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } und ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -4925,6 +4934,27 @@
       ],
       "Wrong password": [
         "Falsches Passwort"
+      ],
+      "Invalid ZIP code": [
+        "Ungültige Postleitzahl"
+      ],
+      "Please enter a valid postal code": [
+        "Bitte gib eine gültige Postleitzahl ein"
+      ],
+      "Please enter a valid ZIP code": [
+        "Bitte gib eine gültige Postleitzahl ein"
+      ],
+      "Please enter postal code": [
+        "Bitte gib die Postleitzahl ein."
+      ],
+      "Please enter ZIP code": [
+        "Bitte gib eine Postleitzahl an"
+      ],
+      "Please select billing country": [
+        "Bitte wähle das Rechnungsland aus"
+      ],
+      "Please select billing state": [
+        "Bitte wähle den Rechnungsstaat aus"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7169,7 +7199,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8602,6 +8633,15 @@
       ],
       "newsletter": [
         "Newsletter"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Dadurch wird der Newsletter-Eintrag aus dieser Liste entfernt. Dadurch wirst du nicht aus dem Newsletter abgemeldet. Er wird wieder angezeigt, wenn neue Mitteilungen eingehen."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Upgraden auf ${ plan } um freizuschalten"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dein ${ plan }-Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Der verbleibende Restbetrag deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9543,6 +9583,33 @@
       ],
       "Moved to Trash": [
         "In den Papierkorb verschoben"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Ordner ${ newFolderName } konnte nicht erstellt werden"
+      ],
+      "Forums": [
+        "Foren"
+      ],
+      "Newsletter entry deleted": [
+        "Newslettereintrag gelöscht"
+      ],
+      "Primary": [
+        "Primäre"
+      ],
+      "Promotions": [
+        "Werbung"
+      ],
+      "Social": [
+        "Soziale Medien"
+      ],
+      "Transactions": [
+        "Transaktionen"
+      ],
+      "Unknown": [
+        "Unbekannt"
+      ],
+      "Updates": [
+        "Aktualisierungen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9585,6 +9652,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Postleitzahl"
+      ],
+      "Postal code": [
         "Postleitzahl"
       ]
     },
@@ -10845,6 +10915,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Schütze deine Familie mit allen Premium-Funktionen von ${ plusTitle } für 6 Benutzer."
       ]
     },
     "new_plans: Subtext": {
@@ -10870,6 +10943,9 @@
       ],
       "Switch plans?": [
         "Abonnement wechseln?"
+      ],
+      "Review subscription": [
+        "Abonnement überprüfen"
       ]
     },
     "new_plans: tooltip": {
@@ -11266,7 +11342,7 @@
         "Spare"
       ],
       "Save 80% on your first month.": [
-        "Spare 80% im ersten Monat."
+        "Spare 80 % im ersten Monat."
       ],
       "Save big when you pay annually": [
         "Spare kräftig, wenn du jährlich bezahlst"
@@ -11285,6 +11361,9 @@
       ],
       "Your subscription renews soon": [
         "Dein Abonnement verlängert sich bald"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Letzte Chance: 80 % Rabatt auf deinen ersten Monat mit ${ plan }"
       ]
     },
     "Offer fearue": {
@@ -11808,6 +11887,12 @@
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
+      ],
+      "I'm purchasing as a business": [
+        "Ich kaufe als Unternehmen"
+      ],
+      "This number will be shown on all future invoices": [
+        "Diese Nummer wird auf allen zukünftigen Rechnungen angezeigt."
       ]
     },
     "Payments.Error": {
@@ -12025,6 +12110,12 @@
       ],
       "Your organization name": [
         "Name deiner Organisation"
+      ],
+      "Postal code": [
+        "Postleitzahl"
+      ],
+      "ZIP code": [
+        "Postleitzahl"
       ]
     },
     "Placeholder for contact group name": {
@@ -12990,7 +13081,7 @@
         "${ app }-Speicherplatz"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% voll."
+        "${ storage } ${ percentage } % voll."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Durch das Downgraden verlierst du die folgenden Vorteile. Möchtest du wirklich fortfahren?"
@@ -13033,13 +13124,13 @@
         "Dein ${ appStorage }-Speicherplatz ist voll."
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
-        "Dein ${ productString } ist zu ${ percentage }% voll. ${ cta }."
+        "Dein ${ productString } ist zu ${ percentage } % voll. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
         "Dein ${ productString } ist voll. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Dein Speicherplatz ist zu ${ percentage }% voll. ${ cta }."
+        "Dein Speicherplatz ist zu ${ percentage } % voll. ${ cta }."
       ],
       "Your storage is full": [
         "Dein Speicherplatz ist voll."
@@ -14920,6 +15011,12 @@
       ],
       "No newsletters found": [
         "Keine Newsletter gefunden"
+      ],
+      "Remove from list?": [
+        "Aus Liste entfernen?"
+      ],
+      "Your plan": [
+        "Dein Abonnement"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15510,6 +15607,39 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } Abonnement"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Unternehmens-Identifikationsnummer (ABN)"
+      ],
+      "Business Number": [
+        "Unternehmensnummer"
+      ],
+      "EIN": [
+        "Arbeitgeber-Identifikationsnummer (EIN)"
+      ],
+      "VAT number": [
+        "Umsatzsteuernummer"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Alle ${ protonPlus }-Dienste.${ br }Ein einfaches Abonnement."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Als **${ currentPlanTitle }**-Abonnent kannst du **${ unlockPlanTitle }** und alle Premium ${ BRAND_NAME }-Dienste freischalten, indem du auf **${ upsellPlanTitle }** upgradest."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Bei ${ currentPlanTitle } bleiben"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Auf ${ upsellPlanTitle } upgraden"
       ]
     }
   }

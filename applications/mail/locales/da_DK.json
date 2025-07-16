@@ -1559,6 +1559,33 @@
       "Trust key": [
         "Stol på nøgle",
         "Stol på nøgler"
+      ],
+      "Authenticate": [
+        "Godkend"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Opret mappe ${ boldFolderName }"
+      ],
+      "Deleting folder": [
+        "Sletter mappe"
+      ],
+      "Emoji": [
+        "Emoji"
+      ],
+      "Forgot password?": [
+        "Glemt adgangskode?"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "Remove from list": [
+        "Fjern fra listen"
+      ],
+      "Use authentication code": [
+        "Brug godkendelseskode"
+      ],
+      "Use recovery code": [
+        "Brug gendannelseskode"
       ]
     },
     "action": {
@@ -1692,6 +1719,24 @@
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
+      ],
+      "/ month": [
+        "/måned"
+      ],
+      "12 months": [
+        "12 måneder"
+      ],
+      "15 months": [
+        "15 måneder"
+      ],
+      "24 months": [
+        "24 måneder"
+      ],
+      "30 months": [
+        "30 måneder"
+      ],
+      "for ${ durationDeal }": [
+        "til ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -5490,6 +5535,9 @@
       ],
       "Tell us more": [
         "Fortæl os mere"
+      ],
+      "Drawer": [
+        "Sidepanel"
       ]
     },
     "Hint": {
@@ -6792,7 +6840,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8141,6 +8190,48 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Der bliver ikke trukket noget hvis du annullerer inden ${ trialEndsOnFormatted }."
+      ],
+      "Block sender": [
+        "Bloker afsender"
+      ],
+      "Composer:": [
+        "Skrivevindue:"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerede VPN-servere"
+      ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
+      "Enter the code from your authenticator app": [
+        "Indtast koden fra din godkendelsesapp"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast verifikationskode. Ciffer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
+      ],
+      "Message list": [
+        "Beskedliste"
+      ],
+      "Message view": [
+        "Beskedvisning"
+      ],
+      "More info": [
+        "Mere info"
+      ],
+      "newsletter": [
+        "nyhedsbrev"
+      ],
+      "Preferences updated": [
+        "Præferencer opdateret"
+      ],
+      "Tracking": [
+        "Sporing"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
       ]
     },
     "info": {
@@ -9037,6 +9128,27 @@
       ],
       "Enable filter": [
         "Aktivér filter"
+      ],
+      "Authenticator app": [
+        "Godkendelsesapp"
+      ],
+      "Moved to Archive": [
+        "Flyttet til Arkiv"
+      ],
+      "Moved to Trash": [
+        "Flyttet til papirkurven"
+      ],
+      "Primary": [
+        "Primær"
+      ],
+      "Subject:": [
+        "Emne:"
+      ],
+      "Unknown": [
+        "Ukendt"
+      ],
+      "Your password (admin)": [
+        "Din adgangskode (admin)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10598,6 +10710,10 @@
       ],
       "Require 2FA": [
         "Kræve 2FA"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Mulighed for ${ n } brugerdefineret e-mail-domæne",
+        "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
     "Notification": {
@@ -10724,6 +10840,12 @@
       ],
       "Pay annually, secure our best offer": [
         "Betal årligt for at sikre vores bedste tilbud"
+      ],
+      "Don’t show this again": [
+        "Vis ikke dette igen"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "Få ${ BRAND_NAME } Unlimited"
       ]
     },
     "Offer feature": {
@@ -10750,6 +10872,9 @@
       ],
       "Storage": [
         "Lagerplads"
+      ],
+      "500 GB secure storage": [
+        "500 GB sikker lagerplads"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11052,6 +11177,9 @@
       ],
       "New credit/debit card": [
         "Nyt kredit/debetkort"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -12044,6 +12172,12 @@
       ],
       "Unblock streaming content": [
         "Lås op for streamet indhold"
+      ],
+      "Get unlimited aliases": [
+        "Få ubegrænsede aliasser"
+      ],
+      "Keep passwords safe": [
+        "Hold adgangskoder sikre"
       ]
     },
     "specialoffer: Offers": {
@@ -12363,6 +12497,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-forbindelse pr. bruger",
         "${ n } VPN-forbindelser pr. bruger"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-forbindelse til ${ n } enhed per bruger",
+        "VPN-forbindelse til ${ n } enheder per bruger"
       ]
     },
     "Subscription change warning": {
@@ -13036,6 +13174,9 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } fjernet"
+      ],
+      "The filter has been disabled": [
+        "Filtret er deaktiveret"
       ]
     },
     "Suffix": {
@@ -14158,6 +14299,18 @@
       ],
       "Subscription canceled": [
         "Abonnement annulleret"
+      ],
+      "Enter your password": [
+        "Indtast din adgangskode"
+      ],
+      "No active newsletters": [
+        "Ingen aktive nyhedsbreve"
+      ],
+      "Remove from list?": [
+        "Fjern fra listen?"
+      ],
+      "Your plan": [
+        "Dit abonnement"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14264,6 +14417,9 @@
     "Unlimited offer": {
       "/month": [
         "/måned"
+      ],
+      "Only": [
+        "Kun"
       ]
     },
     "unprivatization": {
@@ -14747,16 +14903,95 @@
       ],
       "Share passwords easily": [
         "Del let kodeord"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "200 GB storage": [
+        "200 GB lagerplads"
+      ],
+      "Encrypted password manager": [
+        "Krypteret adgangskodehåndtering"
+      ],
+      "Online privacy for up to 2 people": [
+        "Online privatliv til op til 2 personer"
+      ],
+      "Protect up to 10 devices": [
+        "Beskyt op til 10 enheder"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Brug dit eget e-mail-domæne"
+      ],
+      "years": [
+        "år"
       ]
     },
     "b2b_trials_Action": {
       "Keep subscription": [
         "Behold abonnement"
+      ],
+      "Cancel subscription": [
+        "Opsig abonnement"
       ]
     },
     "Onboarding Trial": {
       "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
         "Nyd gratis sikkerhedsfunktioner for virksomheder indtil ${ trialEndsOnFormatted }."
+      ],
+      "Continue": [
+        "Forsæt"
+      ],
+      "help center": [
+        "hjælp-center"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Tag imod tilbuddet"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Krypteret adgangskodehåndtering"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } abonnement"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Bank transfer - ${ details }": [
+        "Bankoverførsel - ${ details }"
+      ]
+    },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Opgradér til ${ upsellPlanTitle }"
       ]
     }
   }

@@ -1598,6 +1598,9 @@
       ],
       "Trust key": [
         "鍵を信頼する"
+      ],
+      "Remove from list": [
+        "リストから削除"
       ]
     },
     "action": {
@@ -7000,7 +7003,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8408,6 +8411,9 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "また、${ boldPlanTitle }の機能もご利用いただけなくなります。"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "このリストからニュースレターのエントリを削除します。ニュースレターの登録を解除することはありません。新規メッセージを受信すると、再び表示されます。"
       ]
     },
     "info": {
@@ -9326,19 +9332,28 @@
         "「${ customFolderName }」フォルダーの作成に失敗しました"
       ],
       "Marked as read": [
-        "既読にされました"
+        "既読にしました"
       ],
       "Moved to ${ labelName }": [
-        "${ labelName }に移動されました"
+        "${ labelName }に移動しました"
       ],
       "Moved to Archive": [
-        "アーカイブに移動されました"
+        "アーカイブに移動しました"
       ],
       "Moved to Trash": [
-        "ゴミ箱に移動されました"
+        "ごみ箱に移動しました"
       ],
       "Subject:": [
         "件名:"
+      ],
+      "Newsletter entry deleted": [
+        "ニュースレターの登録が削除されました"
+      ],
+      "Primary": [
+        "プライマリー"
+      ],
+      "Unknown": [
+        "不明"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14581,6 +14596,12 @@
       ],
       "Unsubscribe not available for this sender": [
         "この差出人の登録解除は利用できません"
+      ],
+      "Remove from list?": [
+        "リストから削除しますか？"
+      ],
+      "Your plan": [
+        "現在のプラン"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15137,6 +15158,11 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "無料トライアルは ${ timeRemaining } に終了します。"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } プラン"
       ]
     }
   }

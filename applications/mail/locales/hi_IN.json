@@ -1295,8 +1295,7 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "ट्रस्ट कुंजी",
-        "ट्रस्ट कुंजी"
+        "विश्वसनीय चाबी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -6558,7 +6557,8 @@
         "शुरू किया जा रहा है…"
       ],
       "Insert image": [
-        "तस्वीर डालें"
+        "तस्वीर डालें",
+        "तस्वीरें डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -8657,6 +8657,12 @@
       ],
       "Your alias": [
         "आपका उपनाम"
+      ],
+      "Primary": [
+        "प्राथमिक"
+      ],
+      "Unknown": [
+        "अज्ञात"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13543,6 +13549,9 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Your plan": [
+        "आपका प्लान"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14116,6 +14125,11 @@
       ],
       "Passcode:": [
         "पासकोड:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } प्लान"
       ]
     }
   }

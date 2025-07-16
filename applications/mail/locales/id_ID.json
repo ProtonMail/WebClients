@@ -1601,6 +1601,9 @@
       ],
       "Trust key": [
         "Percayai kunci"
+      ],
+      "Remove from list": [
+        "Hapus dari daftar"
       ]
     },
     "action": {
@@ -2034,6 +2037,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } dan ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -8411,6 +8417,15 @@
       ],
       "newsletter": [
         "buletin"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Tindakan ini akan menghapus entri buletin ini dari daftar ini. Hal ini tidak akan menghentikan langganan Anda dari buletin. Entri buletin ini akan kembali muncul apabila Anda menerima pesan baru."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Tingkatkan ke ${ plan } untuk menggunakan fitur"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Langganan ${ plan } Plus Anda akan digantikan dengan ${ PASS_SHORT_APP_NAME } Lifetime. Saldo sisa langganan Anda akan ditambahkan ke akun Anda. Penawaran ${ PASS_SHORT_APP_NAME } Lifetime ini tidak memiliki harga perpanjangan, karena sekalinya Anda membayar, Anda akan memperoleh akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9342,6 +9357,18 @@
       ],
       "Moved to Trash": [
         "Dipindahkan ke Sampah"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Folder ${ newFolderName } gagal dibuat"
+      ],
+      "Newsletter entry deleted": [
+        "Entri buletin dihapus"
+      ],
+      "Primary": [
+        "Utama"
+      ],
+      "Unknown": [
+        "Tidak diketahui"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10612,6 +10639,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Lindungi keluarga Anda dengan seluruh fitur premium ${ plusTitle } untuk 6 pengguna."
       ]
     },
     "new_plans: Subtext": {
@@ -11049,6 +11079,9 @@
       ],
       "Your subscription renews soon": [
         "Langganan Anda akan segera diperbarui"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Kesempatan terakhir untuk memperoleh diskon 80% bagi bulan pertama ${ plan } Anda."
       ]
     },
     "Offer fearue": {
@@ -14579,6 +14612,12 @@
       ],
       "No newsletters found": [
         "Tidak ada buletin yang ditemukan"
+      ],
+      "Remove from list?": [
+        "Hapus dari daftar?"
+      ],
+      "Your plan": [
+        "Paket Anda"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15143,6 +15182,25 @@
       ],
       "Bank transfer - ${ details }": [
         "Transfer bank - ${ details }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Paket ${ upsellPlanTitle }"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Seluruh layanan ${ protonPlus }.${ br }Dalam satu langganan mudah."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Sebagai pelanggan **${ currentPlanTitle }**, Anda dapat membuka akses ke **${ unlockPlanTitle }** dan seluruh layanan premium ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Tetap di ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Tingkatkan ke ${ upsellPlanTitle }"
       ]
     }
   }

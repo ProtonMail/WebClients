@@ -1613,6 +1613,9 @@
         "Cheie de încredere",
         "Chei de încredere",
         "Chei de încredere"
+      ],
+      "Remove from list": [
+        "Eliminare din listă"
       ]
     },
     "action": {
@@ -2056,6 +2059,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } și ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -4911,6 +4917,27 @@
       ],
       "Wrong password": [
         "Parolă greșită"
+      ],
+      "Invalid ZIP code": [
+        "Cod poștal nevalid"
+      ],
+      "Please enter a valid postal code": [
+        "Introduceți un cod poștal valid."
+      ],
+      "Please enter a valid ZIP code": [
+        "Introduceți un cod poștal valid."
+      ],
+      "Please enter postal code": [
+        "Introduceți codul poștal."
+      ],
+      "Please enter ZIP code": [
+        "Introduceți codul poștal."
+      ],
+      "Please select billing country": [
+        "Selectați țara de facturare"
+      ],
+      "Please select billing state": [
+        "Selectați statul pentru facturare"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7238,7 +7265,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8693,6 +8722,15 @@
       ],
       "newsletter": [
         "buletin informativ"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Aceasta va elimina intrarea buletinului informativ din această listă. Nu vă va dezabona de la buletinul informativ. Va reapărea dacă primiți mesaje noi."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Treceți la ${ plan } pentru a debloca"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Abonamentul ${ plan } va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9644,6 +9682,18 @@
       ],
       "Moved to Trash": [
         "S-a mutat în gunoi"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Crearea folderului ${ newFolderName } a eșuat"
+      ],
+      "Newsletter entry deleted": [
+        "Înregistrarea la buletinul informativ a fost ștearsă."
+      ],
+      "Primary": [
+        "Primar"
+      ],
+      "Unknown": [
+        "Necunoscut"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9687,6 +9737,9 @@
     "Label, credit card": {
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Postal code": [
+        "Cod poştal"
       ]
     },
     "Label/folder modal": {
@@ -10978,6 +11031,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Protejați-vă familia cu toate funcțiile speciale din ${ plusTitle } pentru 6 utilizatori."
       ]
     },
     "new_plans: Subtext": {
@@ -11421,6 +11477,9 @@
       ],
       "Your subscription renews soon": [
         "Abonamentul se va reînnoi în curând"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Ultima șansă pentru a obține 80% reducere în prima lună pentru ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -11949,6 +12008,12 @@
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
+      ],
+      "I'm purchasing as a business": [
+        "Achiziționez în calitate de companie"
+      ],
+      "This number will be shown on all future invoices": [
+        "Acest număr va fi afișat pe toate facturile viitoare."
       ]
     },
     "Payments.Error": {
@@ -12166,6 +12231,12 @@
       ],
       "Your organization name": [
         "Numele organizației"
+      ],
+      "Postal code": [
+        "Cod poştal"
+      ],
+      "ZIP code": [
+        "Cod poștal"
       ]
     },
     "Placeholder for contact group name": {
@@ -15143,6 +15214,12 @@
       ],
       "No newsletters found": [
         "Nu există buletine informative"
+      ],
+      "Remove from list?": [
+        "Eliminați din listă?"
+      ],
+      "Your plan": [
+        "Plan actual"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15793,6 +15870,39 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Perioada de probare se încheie peste ${ timeRemaining }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Abonament ${ upsellPlanTitle }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Cod unic de înregistrare"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Număr de TVA"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Toate serviciile ${ protonPlus }.${ br }Un singur abonament."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "În calitate de abonat la **${ currentPlanTitle }**, puteți debloca **${ unlockPlanTitle }** și toate serviciile premium ale ${ BRAND_NAME } trecând la **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Rămân la ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Trecere la ${ upsellPlanTitle }"
       ]
     }
   }
