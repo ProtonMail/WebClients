@@ -95,12 +95,13 @@ const AddressKeysSection = () => {
         loadingOutgoingAddressForwardings || !Address
             ? []
             : outgoingAddressForwardings.filter(
-                    ({ Type, ForwarderAddressID, State }) =>
-                        Type === ForwardingType.InternalEncrypted &&
-                        ForwarderAddressID === Address.ID &&
-                        // these states are already inactive and require re-confirmation by the forwardee, so we ignore them
-                        State !== ForwardingState.Outdated && State !== ForwardingState.Rejected
-            );
+                  ({ Type, ForwarderAddressID, State }) =>
+                      Type === ForwardingType.InternalEncrypted &&
+                      ForwarderAddressID === Address.ID &&
+                      // these states are already inactive and require re-confirmation by the forwardee, so we ignore them
+                      State !== ForwardingState.Outdated &&
+                      State !== ForwardingState.Rejected
+              );
     const hasOutgoingE2EEForwardings = outgoingE2EEForwardings.length > 0;
 
     const handleSetPrimaryKey = async (ID: string) => {
@@ -421,6 +422,7 @@ const AddressKeysSection = () => {
                     existingAlgorithms={existingAlgorithms}
                     onAdd={onAdd}
                     hasOutgoingE2EEForwardings={hasOutgoingE2EEForwardings}
+                    emailAddress={Address?.Email}
                     {...addKeyProps}
                 />
             )}

@@ -8,7 +8,7 @@ const getPausedForwardingNotice = () => {
     const autoReplySettingsTitle = getMailRouteTitles().autoReply;
     return getBoldFormattedText(
         c('Info')
-            .t`Existing forwarding emails will need to be manually reenabled under **${autoReplySettingsTitle}** in settings.`
+            .t`Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${autoReplySettingsTitle}** in settings.`
     );
 };
 
