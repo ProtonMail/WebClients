@@ -14,6 +14,7 @@ import {
     type PlanIDs,
     type PlansMap,
     type Subscription,
+    TRIAL_DURATION_DAYS,
     getCheckoutModifiers,
     getPlanNameFromIDs,
     isLifetimePlan,
@@ -446,8 +447,7 @@ export const getCheckoutRenewNoticeText = ({
 };
 
 const getTrialRenewalNoticeText = ({ checkResult }: { checkResult: RequiredCheckResponse }) => {
-    // hardcoded 14 days, for now. Need to get from BE
-    const trialEndDate = addDays(new Date(), 14);
+    const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
     const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
     const cycle = checkResult.RenewCycle;
 
