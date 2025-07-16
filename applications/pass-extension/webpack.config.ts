@@ -145,6 +145,7 @@ const config: Configuration = {
             import: './src/app/content/webauthn.ts',
             layer: 'injection',
         },
+        offscreen: './src/app/worker/offscreen/offscreen.ts',
 
         ...(BUILD_TARGET === 'firefox'
             ? {

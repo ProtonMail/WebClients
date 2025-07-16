@@ -88,6 +88,9 @@ export enum WorkerMessageType {
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
     B2B_EVENT = 'B2B_EVENT',
     CLIENT_INIT = 'CLIENT_INIT',
+    CLIPBOARD_WRITE = 'CLIPBOARD_WRITE',
+    CLIPBOARD_OFFSCREEN_READ = 'CLIPBOARD_OFFSCREEN_READ',
+    CLIPBOARD_OFFSCREEN_WRITE = 'CLIPBOARD_OFFSCREEN_WRITE',
     DEBUG = 'DEBUG',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
     FETCH_ABORT = 'FETCH_ABORT',
@@ -160,6 +163,12 @@ export type AutofillSyncMessage = { type: WorkerMessageType.AUTOFILL_SYNC };
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
 export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
 export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId }>;
+export type ClipboardOffscreenReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ };
+export type ClipboardOffscreenWriteMessage = WithPayload<
+    WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE,
+    { content: string }
+>;
+export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_WRITE, { content: string }>;
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
 export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
@@ -230,6 +239,9 @@ export type WorkerMessage =
     | AutoSaveRequestMessage
     | B2BEventMessage
     | ClientInitMessage
+    | ClipboardOffscreenReadMessage
+    | ClipboardOffscreenWriteMessage
+    | ClipboardWriteMessage
     | DebugMessage
     | FeatureFlagsUpdateMessage
     | FetchAbortMessage
@@ -299,6 +311,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
+    [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ]: { content: string };
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };

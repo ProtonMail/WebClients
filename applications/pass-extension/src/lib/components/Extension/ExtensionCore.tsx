@@ -175,7 +175,10 @@ const getPassCoreProviderProps = (
                 .then((res) => res.type === 'success')
                 .catch(() => false),
 
-        writeToClipboard: (value) => navigator.clipboard.writeText(value),
+        writeToClipboard: (content) =>
+            sendMessage(messageFactory({ type: WorkerMessageType.CLIPBOARD_WRITE, payload: { content } }))
+                .then(noop)
+                .catch(noop),
 
         popup: endpoint === 'popup' ? createPopupController() : undefined,
     };

@@ -6,6 +6,7 @@ import { createAuthService } from 'proton-pass-extension/app/worker/services/aut
 import { createAutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
 import { createAutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
 import { createB2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';
+import { createClipboardService } from 'proton-pass-extension/app/worker/services/clipboard';
 import { createPassCoreProxyService } from 'proton-pass-extension/app/worker/services/core';
 import { createFormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
 import { createI18nService } from 'proton-pass-extension/app/worker/services/i18n';
@@ -53,6 +54,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const core = createPassCoreProxyService();
     const auth = createAuthService(api, authStore);
     const store = createStoreService();
+    const settings = createSettingsService();
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     exposePassCrypto(createPassCrypto(core));
@@ -77,6 +79,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             autofill: createAutoFillService(),
             autosave: createAutoSaveService(),
             b2bEvents: createB2BEventsService(storage.local, store),
+            clipboard: createClipboardService(settings),
             core,
             formTracker: createFormTrackerService(),
             i18n: createI18nService(),
@@ -86,7 +89,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             otp: createOTPService(),
             passkey: createPasskeyService(),
             sentry: createSentryService(),
-            settings: createSettingsService(),
+            settings,
             spotlight: createSpotlightService(storage.local, store),
             storage,
             store,

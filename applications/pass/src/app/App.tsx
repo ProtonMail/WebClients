@@ -43,6 +43,7 @@ import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { getBiometricsStorageKey, inferBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
+import { createClipboardService } from '@proton/pass/lib/clipboard/service';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import {
@@ -133,7 +134,7 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
                 hash: page,
             }),
 
-        writeToClipboard: (value) => navigator.clipboard.writeText(value),
+        writeToClipboard: createClipboardService(settings, authStore.getLocalID()).writeClipboardContent,
 
         supportsBiometrics: isPRFSupported,
 
