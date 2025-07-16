@@ -76,6 +76,12 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         paymentFlow,
     }) => {
         /**
+         * Track this initialization to prevent race conditions with user actions
+         */
+        const latest = {};
+        latestOptimisticRef.current = latest;
+
+        /**
          * Optimistic check result initialization
          */
         const optimistic: Omit<OptimisticOptions, 'checkResult'> = {
@@ -112,8 +118,12 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
             fetchVpnServersCount,
         ]);
 
-        setOptimistic({});
-        setLoadingPaymentDetails(false);
+        // Only clear optimistic state if this initialization is still the latest operation
+        // This prevents race conditions where user actions during initialization would be overridden
+        if (latestOptimisticRef.current === latest) {
+            setOptimistic({});
+            setLoadingPaymentDetails(false);
+        }
 
         cacheRef.current = { availablePlans };
 
