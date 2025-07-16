@@ -15,6 +15,7 @@ export const I18N_TLDS = [
     'com.mx', // Mexico
     'com.sa', // Saudi Arabia
     'com.tr', // Turkey
+    'com', // USA
     'de', // Germany
     'es', // Spain
     'fr', // France
