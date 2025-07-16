@@ -138,7 +138,7 @@ const Step1 = ({
     measure,
     mode,
     onChangeCurrency,
-    trial,
+    signupTrial,
 }: {
     initialSessionsLength: boolean;
     signupConfiguration: SignupConfiguration;
@@ -172,7 +172,9 @@ const Step1 = ({
     step1Ref: MutableRefObject<Step1Rref | undefined>;
     activeSessions?: ActiveSession[];
     onChangeCurrency: (newCurrency: Currency) => Promise<FullPlansMap>;
-    trial: boolean;
+    // true iff trial detected through signupParameters (thus the signup prefix)
+    // We do not use signupParameters.trial because trials only applies to the B2B audience
+    signupTrial: boolean;
 }) => {
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
@@ -330,7 +332,7 @@ const Step1 = ({
         const completeCheckOptions = {
             ...subscriptionCheckOptions,
             coupon: subscriptionCheckOptions.coupon || signupParameters.coupon,
-            trial: subscriptionCheckOptions.trial || trial,
+            trial: subscriptionCheckOptions.trial || signupTrial,
             ...mergedCheckOptions,
         };
 
@@ -484,13 +486,15 @@ const Step1 = ({
         value: cycle,
     }));
 
+    // true iff trial detected through check result (thus the check prefix)
+    const checkTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+
     const cta = (() => {
         if (mode === SignupMode.MailReferral && selectedPlan.Name !== PLANS.FREE) {
             return c('Action in trial plan').t`Try free for 30 days`;
         }
 
-        const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
-        if (isTrial) {
+        if (checkTrial) {
             return c('Action').t`Try for free`;
         }
 
@@ -554,8 +558,7 @@ const Step1 = ({
         checkResult: options.checkResult,
     });
 
-    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
-    const showRenewalNotice = !hasSelectedFree && !isTrial;
+    const showRenewalNotice = !hasSelectedFree && !checkTrial;
     const renewalNotice = showRenewalNotice && (
         <div className="w-full text-sm color-norm opacity-70">
             *
@@ -933,7 +936,7 @@ const Step1 = ({
                         return;
                     }
 
-                    if (signupParameters.trial) {
+                    if (signupTrial) {
                         return;
                     }
 
@@ -998,7 +1001,7 @@ const Step1 = ({
                                     <div className="inline-block mt-3 mb-2">{currencySelector}</div>
                                 </div>
                                 <div className={clsx(hasSelectedFree && 'visibility-hidden', 'flex justify-center')}>
-                                    {!signupParameters.trial && <Guarantee />}
+                                    {!signupTrial && <Guarantee />}
                                 </div>
                             </BoxContent>
                         </Box>
@@ -1425,14 +1428,14 @@ const Step1 = ({
                         <BoxHeader
                             step={step++}
                             title={
-                                signupParameters.trial
+                                signupTrial
                                     ? c('b2b_trials_2025: Header').t`Payment details`
                                     : c('pass_signup_2023: Header').t`Checkout`
                             }
                             right={!hasPlanSelector ? currencySelector : null}
                         />
                         <BoxContent>
-                            {signupParameters.trial && (
+                            {signupTrial && (
                                 <div className="mb-4 text-sm color-weak">
                                     {c('b2b_trials_2025_Info').t`During the trial period, you can have up to 10 users.`}
                                 </div>

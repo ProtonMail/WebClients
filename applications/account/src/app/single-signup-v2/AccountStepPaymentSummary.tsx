@@ -11,6 +11,7 @@ import { getTotalBillingText } from '@proton/components/containers/payments/subs
 import {
     COUPON_CODES,
     type Plan,
+    TRIAL_DURATION_DAYS,
     getHas2024OfferCoupon,
     getIsB2BAudienceFromPlan,
     isTaxInclusive,
@@ -24,10 +25,56 @@ import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import type { SubscriptionData } from '../signup/interfaces';
 import RightPlanSummary, { RightPlanSummaryAddons } from './RightPlanSummary';
 import RightSummary from './RightSummary';
 import { getSummaryPlan } from './configuration';
 import type { OptimisticOptions, SignupModelV2 } from './interface';
+
+const TrialSummary = ({
+    loading,
+    options,
+    model,
+    app,
+    subscriptionData,
+}: {
+    loading: boolean;
+    options: OptimisticOptions;
+    model: SignupModelV2;
+    app: APP_NAMES;
+    subscriptionData: SubscriptionData;
+}) => {
+    const loaderNode = <SkeletonLoader width="4em" index={0} />;
+
+    const disclaimer = getCheckoutRenewNoticeTextFromCheckResult({
+        checkResult: options.checkResult,
+        plansMap: model.plansMap,
+        planIDs: options.planIDs,
+        subscription: model.session?.subscription,
+        app,
+    });
+
+    const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
+    const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
+
+    return (
+        <>
+            <div className="flex justify-space-between text-bold text-rg">
+                <span className="">{c('b2b_trials_2025_Label').t`Amount due after trial`}</span>
+                <span>
+                    {loading ? (
+                        loaderNode
+                    ) : (
+                        <Price currency={subscriptionData.currency}>{options.checkResult.BaseRenewAmount ?? 0}</Price>
+                    )}
+                </span>
+            </div>
+            <div className="text-sm color-weak">{c('b2b_trials_2025_Info').jt`on ${formattedDate}`}</div>
+            <hr className="m-0" />
+            <div className="text-sm color-weak">{disclaimer}</div>
+        </>
+    );
+};
 
 interface Props {
     model: SignupModelV2;
@@ -119,9 +166,7 @@ const AccountStepPaymentSummary = ({
                                 ) : (
                                     <>
                                         <Price currency={subscriptionData.currency}>
-                                            {isTrial
-                                                ? (options.checkResult.BaseRenewAmount ?? 0)
-                                                : currentCheckout.withDiscountPerCycle}
+                                            {currentCheckout.withDiscountPerCycle}
                                         </Price>
                                         {!showAmountDue && showRenewalNotice && '*'}
                                     </>
@@ -272,46 +317,15 @@ const AccountStepPaymentSummary = ({
                             {isTaxInclusive(options.checkResult) && taxInclusiveText}
                         </>
                     )}
-                    {(() => {
-                        if (!isTrial) {
-                            return null;
-                        }
-
-                        const disclaimer = getCheckoutRenewNoticeTextFromCheckResult({
-                            checkResult: options.checkResult,
-                            plansMap: model.plansMap,
-                            planIDs: options.planIDs,
-                            subscription: model.session?.subscription,
-                            app,
-                        });
-
-                        return (
-                            <>
-                                <div className="flex justify-space-between text-bold text-rg">
-                                    <span className="">{c('b2b_trials_2025_Label').t`Amount due after trial`}</span>
-                                    <span>
-                                        {loading ? (
-                                            loaderNode
-                                        ) : (
-                                            <Price currency={subscriptionData.currency}>
-                                                {options.checkResult.BaseRenewAmount ?? 0}
-                                            </Price>
-                                        )}
-                                    </span>
-                                </div>
-                                <div className="text-sm color-weak">
-                                    {(() => {
-                                        // hardcoded 14 days, for now. Need to get from BE
-                                        const trialEndDate = addDays(new Date(), 14);
-                                        const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
-                                        return c('b2b_trials_2025_Info').jt`on ${formattedDate}`;
-                                    })()}
-                                </div>
-                                <hr className="m-0" />
-                                <div className="text-sm color-weak">{disclaimer}</div>
-                            </>
-                        );
-                    })()}
+                    {isTrial && (
+                        <TrialSummary
+                            loading={loading}
+                            options={options}
+                            model={model}
+                            app={app}
+                            subscriptionData={subscriptionData}
+                        />
+                    )}
                     {loading && <span className="sr-only">{c('Info').t`Loading`}</span>}
                 </div>
             </RightPlanSummary>
