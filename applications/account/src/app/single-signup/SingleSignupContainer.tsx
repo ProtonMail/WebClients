@@ -169,6 +169,7 @@ const SingleSignupContainer = ({
     const isVariantB = getSearchParams().get('v') === 'b' || getSearchParams().get('v') === 'aff';
 
     const isB2BTrialEnabled = useFlag('ManualTrialsFE');
+    const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
 
     const { flagsReady } = useFlagsStatus();
 
@@ -564,6 +565,7 @@ const SingleSignupContainer = ({
                     const { method, overrides } = getTelemetryParams();
                     reportPaymentFailure(method, overrides);
                 },
+                hasZipCodeValidation,
             }),
             wait(3500),
         ]);

@@ -36,18 +36,19 @@ import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout'
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { type Api, ChargebeeEnabled, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
+import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
 import { InvalidZipCodeError } from './errors';
 
-const checkSubscription = (data: CheckSubscriptionData, version: PaymentsVersion) => {
+const checkSubscription = (data: CheckSubscriptionData, version: PaymentsVersion, hasZipCodeValidation: boolean) => {
     let normalizedData: CheckSubscriptionData = {
         ...data,
     };
 
     if (normalizedData.BillingAddress && normalizedData.BillingAddress.ZipCode) {
-        normalizedData.BillingAddress = normalizeBillingAddress(normalizedData.BillingAddress);
+        normalizedData.BillingAddress = normalizeBillingAddress(normalizedData.BillingAddress, hasZipCodeValidation);
     }
 
     return {
@@ -233,6 +234,7 @@ export const usePaymentsApi = (
     const { APP_NAME } = useConfig();
     const reportRoutingError = useReportRoutingError();
     const multiCheckCache = useMultiCheckCache();
+    const zipCodeValidation = useFlag('PaymentsZipCodeValidation');
 
     const getPaymentsApi = (api: Api, chargebeeEnabledOverride?: ChargebeeEnabled): PaymentsApi => {
         const getChargebeeEnabled = (): ChargebeeEnabled => chargebeeEnabledOverride ?? chargebeeEnabledCache();
@@ -278,7 +280,7 @@ export const usePaymentsApi = (
         ): Promise<EnrichedCheckResponse> => {
             try {
                 const result = await api({
-                    ...checkSubscription(data, 'v4'),
+                    ...checkSubscription(data, 'v4', zipCodeValidation),
                     ...requestOptions,
                 });
 
@@ -307,7 +309,7 @@ export const usePaymentsApi = (
                 const silence = !!fallback || !!requestOptions.silence;
 
                 const result = await api({
-                    ...checkSubscription(data, 'v5'),
+                    ...checkSubscription(data, 'v5', zipCodeValidation),
                     ...requestOptions,
                     silence,
                 });
