@@ -108,7 +108,7 @@
         "Патрабуецца ўвага"
       ],
       "Authenticate": [
-        "Аўтэнтыфікаваць"
+        "Аўтэнтыфікацыя"
       ],
       "Back": [
         "Назад"
@@ -159,7 +159,7 @@
         "Закрыць гэты банер"
       ],
       "Collaborate on documents": [
-        "Сумесная праца над дакументамі"
+        "Сумесна працуйце над дакументамі"
       ],
       "Collapse navigation bar": [
         "Згарнуць панэль навігацыі"
@@ -189,7 +189,7 @@
         "Працягнуць імпартаванне"
       ],
       "Continue to ${ calendarAppBareName }": [
-        "Працягнуць у ${ calendarAppBareName }"
+        "Працягнуць працу з ${ calendarAppBareName }"
       ],
       "Continue with Google": [
         "Працягнуць з Google"
@@ -207,10 +207,10 @@
         "Скапіяваць адрас электроннай пошты"
       ],
       "Copy email to clipboard": [
-        "Капіяваць ліст у буфер абмену"
+        "Скапіяваць ліст у буфер абмену"
       ],
       "Copy link": [
-        "Капіяваць спасылку"
+        "Скапіяваць спасылку"
       ],
       "Copy password": [
         "Скапіяваць пароль"
@@ -900,13 +900,28 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца праз 2 дні. ${ upgradeButton }"
+        "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца праз 2 дні. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца праз 5 дзён. ${ upgradeButton }"
+        "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца праз 5 дзён. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+        "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add Zoom meeting": [
+        "Дадаць сустрэчу ў Zoom"
+      ],
+      "Adding conferencing details": [
+        "Дадаванне падрабязнасцяў канферэнцыі"
+      ],
+      "Cancel trial and pay": [
+        "Скасаваць пробны перыяд і купіць падпіску"
+      ],
+      "Loading Zoom configuration": [
+        "Загрузка канфігурацыі Zoom"
+      ],
+      "Reconnect to Zoom": [
+        "Перападключыцца да Zoom"
       ]
     },
     "action": {
@@ -1250,7 +1265,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus і ${ CALENDAR_SHORT_APP_NAME }"
@@ -1332,6 +1347,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } і ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -1402,7 +1420,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -1847,7 +1865,7 @@
     },
     "Commander action": {
       "Day view": [
-        "Прагляд дня"
+        "Выгляд \"Дзень\""
       ],
       "Month view": [
         "Прагляд месяца"
@@ -2964,7 +2982,7 @@
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Выдаленне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
+        "Выдаленне кантактаў... Гэта можа заняць некалькі хвілін. Вы зможаце закрыць гэта акно, калі працэс будзе завершаны."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
@@ -3042,7 +3060,7 @@
         "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
-        "Вы можаце адпраўляць лісты кожнаму ўдзельніку ў групе адным націскам з дапамогай груп кантактаў."
+        "Вы зможаце адпраўляць лісты кожнаму ўдзельніку ў групе адным націскам з дапамогай груп кантактаў."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
@@ -3405,7 +3423,7 @@
         "Не ўдалося адкрыць абноўленае сховішча"
       ],
       "Decryption error: Decryption of this event's content failed.": [
-        "Памылка расшыфроўкі: Не ўдалося расшыфраваць змесціва гэтай падзеі."
+        "Памылка расшыфроўкі: не ўдалося расшыфраваць змесціва гэтай падзеі."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
@@ -3805,6 +3823,33 @@
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
+      ],
+      "Invalid ZIP code": [
+        "Памылковы паштовы індэкс"
+      ],
+      "Please enter a valid postal code": [
+        "Увядзіце сапраўдны паштовы індэкс"
+      ],
+      "Please enter a valid ZIP code": [
+        "Увядзіце сапраўдны паштовы індэкс"
+      ],
+      "Please enter postal code": [
+        "Увядзіце паштовы індэкс"
+      ],
+      "Please enter ZIP code": [
+        "Увядзіце паштовы індэкс"
+      ],
+      "Please select billing country": [
+        "Выберыце краіну выстаўлення рахунку"
+      ],
+      "Please select billing state": [
+        "Выберыце штат выстаўлення рахунку"
+      ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Вы зноў падключаны да Zoom. Цяпер вы можаце захаваць вашу падзею."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Ваша Zoom-падключэнне пратэрмінавана. Калі ласка, падключыцеся зноў, каб працягнуць."
       ]
     },
     "Error accepting calendar invitation": {
@@ -5099,7 +5144,7 @@
         "Ачысціць даныя"
       ],
       "Clear encrypted search data": [
-        "Ачысціць пошук зашыфраваных даных"
+        "Ачысціць зашыфраваныя даныя пошуку"
       ],
       "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
         "Ачыстка даных браўзера таксама ачысціць індэкс пошуку на гэтай прыладзе. Вам спатрэбіцца паўторна праіндэксаваць усе падзеі календара, каб зноў ужываць функцыю пошуку."
@@ -5183,7 +5228,7 @@
         "Вылучаныя серверы"
       ],
       "Dedicated VPN servers": [
-        "Вылучаныя VPN серверы"
+        "Вылучаныя серверы VPN"
       ],
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
@@ -6186,6 +6231,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
       ]
     },
     "info": {
@@ -6197,6 +6245,9 @@
       ],
       "Selected color:": [
         "Выбраны колер:"
+      ],
+      "Optional": [
+        "Неабавязкова"
       ]
     },
     "Info calendar search": {
@@ -6465,7 +6516,7 @@
         "Назва кампаніі"
       ],
       "Confirm password": [
-        "Пацвердзіце пароль"
+        "Пацвердзіць пароль"
       ],
       "Contacts": [
         "Кантакты"
@@ -6852,6 +6903,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Паштовы індэкс"
+      ],
+      "Postal code": [
         "Паштовы індэкс"
       ]
     },
@@ -7678,7 +7732,7 @@
         "Вылучаныя серверы аптымізаваныя для трансляцый"
       ],
       "Desktop app": [
-        "Настольная праграма"
+        "Праграма для камп'ютара"
       ],
       "DNS leak prevention": [
         "Прадухіленне ўцечак DNS"
@@ -8059,6 +8113,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Абараніце сваю сям'ю з прэміяльнымі функцыямі ${ plusTitle } для 6 карыстальнікаў."
       ]
     },
     "new_plans: Subtext": {
@@ -8084,6 +8141,9 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
+      ],
+      "Review subscription": [
+        "Прагляд падпіскі"
       ]
     },
     "new_plans: tooltip": {
@@ -8136,7 +8196,7 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Стварыце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "Карыстальніцкія дамены для псеўданімаў, дадатковыя паштовыя скрыні, магчымасць адпраўляць лісты з псеўданімаў і многае іншае"
@@ -8348,7 +8408,7 @@
         "Вылучаны менеджар уліковага запісу"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Размяшчэнні вылучаных сервераў у больш чым ${ numberOfCountries } краінах"
+        "Размяшчэнні вылучаных сервераў у больш чым у ${ numberOfCountries } краінах"
       ],
       "Dedicated server locations in North America and Europe": [
         "Размяшчэнне вылучаных сервераў у Паўночнай Амерыцы і Еўропе"
@@ -8673,6 +8733,9 @@
       ],
       "Your subscription renews soon": [
         "Ваша падпіска неўзабаве падоўжыцца"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -9099,6 +9162,12 @@
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
+      ],
+      "I'm purchasing as a business": [
+        "Я купляю як юрыдычная асоба"
+      ],
+      "This number will be shown on all future invoices": [
+        "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ]
     },
     "Payments.Error": {
@@ -9271,6 +9340,12 @@
       ],
       "Your organization name": [
         "Ваша назва арганізацыі"
+      ],
+      "Postal code": [
+        "Паштовы індэкс"
+      ],
+      "ZIP code": [
+        "Паштовы індэкс"
       ]
     },
     "Placeholder for contact group name": {
@@ -9597,7 +9672,7 @@
     },
     "session_recovery:cancelled:link": {
       "change your password now": [
-        "змяніць пароль"
+        "неадкладна змяніце свой пароль"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -10247,7 +10322,7 @@
         "Засталося ${ dayDiff } дзён"
       ],
       "${ MAIL_APP_NAME } desktop app": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } захоўвае вашы дзелавыя даныя ў бяспецы і дазваляе адпраўляць зашыфраваныя лісты любому карыстальніку."
@@ -10358,7 +10433,7 @@
         "Комплексная прыватнасць і бяспека"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Настольная праграма і падтрымка кліента электроннай пошты (праз IMAP)"
+        "Праграма для камп'ютара і падтрымка кліента электроннай пошты (праз IMAP)"
       ],
       "Direct contribution to our mission": [
         "Непасрэдны ўклад у нашу місію"
@@ -10522,7 +10597,7 @@
         "Папярэджанне ўцечкі даных ${ strongArgument }"
       ],
       "Desktop app": [
-        "Настольная праграма"
+        "Праграма для камп'ютара"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
@@ -10652,9 +10727,9 @@
       ],
       "Contact group deleted": [
         "Група кантактаў выдалена",
-        "Групы кантактаў выдалены",
-        "Групы кантактаў выдалены",
-        "Групы кантактаў выдалены"
+        "Група кантактаў выдалена",
+        "Група кантактаў выдалена",
+        "Група кантактаў выдалена"
       ],
       "Contact saved": [
         "Кантакт захаваны"
@@ -11095,7 +11170,7 @@
         "Стварэнне кантакту"
       ],
       "Create new group": [
-        "Стварыць новую групу"
+        "Стварэнне новай групы"
       ],
       "Create public link": [
         "Стварэнне публічнай спасылкі"
@@ -11594,11 +11669,14 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Your plan": [
+        "Ваш тарыфны план"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
-        "Выберыце лічбу"
+        "Выберыце нумар"
       ]
     },
     "Title; create calendar modal": {
@@ -11624,7 +11702,7 @@
         "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."
       ],
       "Change start date to unselect": [
-        "Выберыце пачатковую дату, каб скасаваць выбар"
+        "Змяніць пачатковую дату, каб скасаваць выбар"
       ],
       "Customize import to reduce the number of folders": [
         "Наладзьце імпартаванне, каб паменшыць колькасць папак"
@@ -12283,6 +12361,39 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Тарыфны план ${ upsellPlanTitle }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Нумар прадпрыемства"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Нумар ПДВ"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Усе сэрвісы ${ protonPlus }.${ br }Адна нескладаная падпіска."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Як падпісчык тарыфнага плана **${ currentPlanTitle }**, вы можаце разблакіраваць **${ unlockPlanTitle }** і ўсе прэміяльныя сэрвісы ${ BRAND_NAME }, палепшыўшы тарыфны план да **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Застацца на ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Палепшыць да ${ upsellPlanTitle }"
       ]
     }
   }

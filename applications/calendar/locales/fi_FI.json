@@ -1062,6 +1062,15 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostiverkkotunnusta"
+      ],
+      "Online document editor": [
+        "Selaimella käytettävä dokumenttieditori"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
+      ],
+      "years": [
+        "vuoden"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1083,6 +1092,9 @@
       ],
       "/ month": [
         "/ kuukausi"
+      ],
+      "for ${ durationDeal }": [
+        "hintaan ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1753,6 +1765,9 @@
       ],
       "Week view": [
         "Viikkonäkymä"
+      ],
+      "Search events": [
+        "Etsi tapahtumia"
       ]
     },
     "Confirm modal title": {
@@ -4085,6 +4100,9 @@
     "fido2: Info": {
       "Security key": [
         "Suojausavain"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Kytke ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ]
     },
     "fido2: Label": {
@@ -5874,6 +5892,9 @@
       ],
       "Selected color:": [
         "Valittu väri:"
+      ],
+      "Optional": [
+        "Valinnainen"
       ]
     },
     "Info calendar search": {
@@ -8300,6 +8321,9 @@
       ],
       "If you need help,": [
         "Jos tarvitset apua,"
+      ],
+      "help center": [
+        "tukikeskus"
       ]
     },
     "Option": {
@@ -9282,6 +9306,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Päivitä hintaan ${ pricingTitle }"
+      ],
+      "Get unlimited aliases": [
+        "Hanki aliaksia rajattomasti"
       ]
     },
     "specialoffer: Offers": {
@@ -10905,6 +10932,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Your plan": [
+        "Tilauksesi"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11507,6 +11537,19 @@
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Peru tilaus"
+      ],
+      "Keep subscription": [
+        "Pidä tilaus"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } -tilaus"
       ]
     }
   }
