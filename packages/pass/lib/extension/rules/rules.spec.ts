@@ -100,6 +100,7 @@ describe('Compiler', () => {
                 'www.amazon.com.mx/login',
                 'www.amazon.com.sa/login',
                 'www.amazon.com.tr/login',
+                'www.amazon.com/login',
                 'www.amazon.de/login',
                 'www.amazon.es/login',
                 'www.amazon.fr/login',
