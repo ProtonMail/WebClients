@@ -214,7 +214,9 @@ export const extractSCTs = (certificate: Certificate) => {
 export const verifySCT = async (certificate: Certificate, issuerCert: Certificate) => {
     const scts = extractSCTs(certificate);
 
-    const logs = ctLogs.operators.map(({ logs }) => logs.map(({ log_id, key }) => ({ log_id, key }))).flat();
+    const logs = ctLogs.operators.flatMap(({ logs, tiled_logs }) =>
+        [...logs, ...tiled_logs].map(({ log_id, key }) => ({ log_id, key }))
+    );
     const verified: boolean[] = [];
     const { verifySCTsForCertificate } = await importPkijs();
     try {
@@ -242,7 +244,10 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
         const logID = scts[i];
         if (isVerified) {
             for (const operator of ctLogs.operators) {
-                if (operator.logs.findIndex(({ log_id }) => log_id === logID) !== -1) {
+                if (
+                    operator.logs.some(({ log_id }) => log_id === logID) ||
+                    operator.tiled_logs.some(({ log_id }) => log_id === logID)
+                ) {
                     const operatorName = operator.name;
                     const previousCount = sctsFromOperators.get(operatorName) || 0;
                     sctsFromOperators.set(operatorName, previousCount + 1);
