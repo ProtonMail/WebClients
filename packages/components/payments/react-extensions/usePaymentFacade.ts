@@ -39,7 +39,7 @@ import {
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api, ChargebeeEnabled, ChargebeeUserExists, User } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
+import { useGetFlag } from '@proton/unleash';
 
 import useBitcoin from './useBitcoin';
 import { useCard } from './useCard';
@@ -156,7 +156,7 @@ function getOperations(
  */
 const usePaymentContext = () => {
     const subscriptionData = useRef<OperationsSubscriptionData>();
-    const zipCodeValidation = useFlag('PaymentsZipCodeValidation');
+    const getFlag = useGetFlag();
 
     return {
         setSubscriptionData: (data: OperationsSubscriptionData | undefined) => {
@@ -168,7 +168,7 @@ const usePaymentContext = () => {
         getOperationsData: (): OperationsData => {
             return {
                 subscription: subscriptionData.current,
-                hasZipCodeValidation: zipCodeValidation,
+                hasZipCodeValidation: getFlag('PaymentsZipCodeValidation'),
             };
         },
     };
