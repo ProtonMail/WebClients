@@ -49,7 +49,10 @@
         "storage",
         "unlimitedStorage",
         "webRequest",
-        "webRequestBlocking"
+        "webRequestBlocking",
+        "offscreen",
+        "clipboardRead",
+        "clipboardWrite"
     ],
     "optional_permissions": ["privacy", "webRequestAuthProvider"],
     "host_permissions": ["https://*/*", "http://*/*"],
