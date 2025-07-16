@@ -152,6 +152,7 @@ const SignupContainer = ({
     const getKtActivation = useGetAccountKTActivation();
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
+    const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
 
     // Override the app to always be mail in trial or refer-a-friend signup
     if (isMailRefer) {
@@ -991,6 +992,7 @@ const SignupContainer = ({
                                     const { method, overrides } = getTelemetryParams();
                                     reportPaymentFailure(method, overrides);
                                 },
+                                hasZipCodeValidation,
                             });
 
                             void measure(getSignupTelemetryData(model.plansMap, cache));
