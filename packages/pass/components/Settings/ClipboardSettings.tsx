@@ -31,6 +31,11 @@ export const ClipboardSettings: FC = () => {
                     <Option key={value} value={value} title={label} />
                 ))}
             </SelectTwo>
+            {value !== -1 && (
+                <span className="block color-weak text-sm">
+                    {c('Info').t`Please keep your browser open so the clipboard can be cleared automatically.`}
+                </span>
+            )}
         </SettingsPanel>
     );
 };

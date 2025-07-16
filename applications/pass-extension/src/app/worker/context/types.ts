@@ -20,6 +20,7 @@ import type { VaultsService } from 'proton-pass-extension/app/worker/services/va
 
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
+import type { ClipboardService } from '@proton/pass/lib/clipboard/types';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { AppState, AppStatus, MaybeNull } from '@proton/pass/types';
@@ -40,6 +41,7 @@ export interface WorkerContextInterface {
         autofill: AutoFillService;
         autosave: AutoSaveService;
         b2bEvents: MaybeNull<B2BEventsService>;
+        clipboard: ClipboardService;
         core: PassCoreProxy;
         formTracker: FormTrackerService;
         i18n: I18NService;
