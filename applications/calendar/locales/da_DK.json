@@ -887,6 +887,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Use authentication code": [
+        "Brug godkendelseskode"
+      ],
+      "Use recovery code": [
+        "Brug gendannelseskode"
       ]
     },
     "action": {
@@ -1041,6 +1047,15 @@
       ],
       "years": [
         "år"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "Encrypted password manager": [
+        "Krypteret adgangskodehåndtering"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1734,6 +1749,9 @@
       ],
       "Week view": [
         "Ugevisning"
+      ],
+      "Search events": [
+        "Søg begivenheder"
       ]
     },
     "Confirm modal title": {
@@ -4170,6 +4188,9 @@
       ],
       "Security Center": [
         "Sikkerhedscenter"
+      ],
+      "Drawer": [
+        "Sidepanel"
       ]
     },
     "Hint": {
@@ -5767,6 +5788,15 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszone ser ud til at være ændret til ${ timezone }. Vil du opdatere din tidszone præferencer?"
+      ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
+      "Enter the code from your authenticator app": [
+        "Indtast koden fra din godkendelsesapp"
+      ],
+      "Tracking": [
+        "Sporing"
       ]
     },
     "info": {
@@ -5776,6 +5806,9 @@
       ],
       "Selected color:": [
         "Valgte farve:"
+      ],
+      "Optional": [
+        "Valgfrit"
       ]
     },
     "Info calendar search": {
@@ -7818,6 +7851,10 @@
       ],
       "Require 2FA": [
         "Kræve 2FA"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Mulighed for ${ n } brugerdefineret e-mail-domæne",
+        "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
     "Note": {
@@ -9138,6 +9175,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Opgrader for ${ pricingTitle }"
+      ],
+      "Keep passwords safe": [
+        "Hold adgangskoder sikre"
       ]
     },
     "specialoffer: Offers": {
@@ -9410,6 +9450,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-forbindelse pr. bruger",
         "${ n } VPN-forbindelser pr. bruger"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-forbindelse til ${ n } enhed per bruger",
+        "VPN-forbindelse til ${ n } enheder per bruger"
       ]
     },
     "Subscription change warning": {
@@ -10748,6 +10792,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Your plan": [
+        "Dit abonnement"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10863,6 +10910,9 @@
     "Unlimited offer": {
       "/month": [
         "/måned"
+      ],
+      "Only": [
+        "Kun"
       ]
     },
     "unprivatization": {
@@ -11336,6 +11386,16 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } abonnement"
+      ]
+    },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Opgradér til ${ upsellPlanTitle }"
       ]
     }
   }

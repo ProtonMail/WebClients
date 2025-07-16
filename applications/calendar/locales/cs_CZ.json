@@ -907,6 +907,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add Zoom meeting": [
+        "Přidat schůzku na Zoomu"
+      ],
+      "Adding conferencing details": [
+        "Přidávání detailů o konferencích"
+      ],
+      "Loading Zoom configuration": [
+        "Načítání nastavení Zoomu"
       ]
     },
     "action": {
@@ -1358,6 +1367,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -3839,6 +3851,27 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
+      ],
+      "Invalid ZIP code": [
+        "Neplatné PSČ"
+      ],
+      "Please enter a valid postal code": [
+        "Zadejte prosím platné poštovní směrovací číslo"
+      ],
+      "Please enter a valid ZIP code": [
+        "Zadejte prosím platné PSČ"
+      ],
+      "Please enter postal code": [
+        "Zadejte prosím poštovní směrovací číslo"
+      ],
+      "Please enter ZIP code": [
+        "Zadejte prosím PSČ"
+      ],
+      "Please select billing country": [
+        "Vyberte prosím zemi platby"
+      ],
+      "Please select billing state": [
+        "Vyberte prosím stát platby"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6220,6 +6253,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Vaše předplatné ${ plan } bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -6231,6 +6267,9 @@
       ],
       "Selected color:": [
         "Vybraná barva:"
+      ],
+      "Optional": [
+        "Volitelné"
       ]
     },
     "Info calendar search": {
@@ -6887,6 +6926,9 @@
     "Label, credit card": {
       "ZIP code": [
         "PSČ"
+      ],
+      "Postal code": [
+        "Poštovní směrovací číslo"
       ]
     },
     "Label/folder modal": {
@@ -8093,6 +8135,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Chraňte svou rodinu pomocí všech prémiových funkcí ${ plusTitle } pro 6 uživatelů."
       ]
     },
     "new_plans: Subtext": {
@@ -8707,6 +8752,9 @@
       ],
       "Your subscription renews soon": [
         "Vaše předplatné se brzy obnoví"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Poslední šance získat 80 % slevu na první měsíc ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -9130,6 +9178,12 @@
       ],
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
+      ],
+      "I'm purchasing as a business": [
+        "Kupuji jako firma"
+      ],
+      "This number will be shown on all future invoices": [
+        "Toto číslo bude uvedeno na všech budoucích fakturách"
       ]
     },
     "Payments.Error": {
@@ -9302,6 +9356,12 @@
       ],
       "Your organization name": [
         "Název vaší organizace"
+      ],
+      "Postal code": [
+        "Poštovní směrovací číslo"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Placeholder for contact group name": {
@@ -11625,6 +11685,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
+      ],
+      "Your plan": [
+        "Váš tarif"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12314,6 +12377,33 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Tarif ${ upsellPlanTitle }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "Business Number": [
+        "Firemní číslo"
+      ],
+      "VAT number": [
+        "DIČ"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Všechny služby ${ protonPlus }.${ br }Jedno jednoduché předplatné."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Jako předplatitel **${ currentPlanTitle }** můžete odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Zůstat na ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Navýšit na ${ upsellPlanTitle }"
       ]
     }
   }

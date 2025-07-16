@@ -899,6 +899,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add Zoom meeting": [
+        "Aggiungi riunione Zoom"
+      ],
+      "Cancel trial and pay": [
+        "Annulla la prova e paga"
       ]
     },
     "action": {
@@ -1340,6 +1346,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } e ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -3773,6 +3782,9 @@
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
+      ],
+      "Invalid ZIP code": [
+        "CAP non valido"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6054,6 +6066,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Potrai ancora visualizzare i dati del tuo account, ma tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Il tuo abbonamento a ${ plan } verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -6063,6 +6078,9 @@
       ],
       "Selected color:": [
         "Colore selezionato:"
+      ],
+      "Optional": [
+        "Facoltativo"
       ]
     },
     "Info calendar search": {
@@ -6712,6 +6730,9 @@
     "Label, credit card": {
       "ZIP code": [
         "CAP"
+      ],
+      "Postal code": [
+        "Codice postale"
       ]
     },
     "Label/folder modal": {
@@ -7854,6 +7875,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Proteggi la tua famiglia con tutte le funzionalità premium di ${ plusTitle } per 6 utenti."
       ]
     },
     "new_plans: Subtext": {
@@ -8425,6 +8449,9 @@
       ],
       "Your subscription renews soon": [
         "Il tuo abbonamento si rinnoverà presto"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Ultima chance per approfittare dell'80% di sconto sul tuo primo mese di ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -9002,6 +9029,12 @@
       ],
       "Your organization name": [
         "Il nome della tua organizzazione"
+      ],
+      "Postal code": [
+        "Codice postale"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "Placeholder for contact group name": {
@@ -11221,6 +11254,9 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Your plan": [
+        "Il tuo piano"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11818,6 +11854,39 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Piano ${ upsellPlanTitle }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Numero aziendale australiano (ABN)"
+      ],
+      "Business Number": [
+        "Numero azienda"
+      ],
+      "EIN": [
+        "Numero d'identificazione fiscale (EIN)"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Tutti i servizi di ${ protonPlus }.${ br }Un semplice abbonamento."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "In quanto abbonato a **${ currentPlanTitle }**, puoi sbloccare **${ unlockPlanTitle }** e tutti i servizi premium di ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Rimani su ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Effettua l'upgrade a ${ upsellPlanTitle }"
       ]
     }
   }

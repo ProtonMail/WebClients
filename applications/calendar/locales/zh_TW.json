@@ -832,6 +832,27 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Add Zoom meeting": [
+        "新增 Zoom 會議"
+      ],
+      "Adding conferencing details": [
+        "新增詳細會議資料"
+      ],
+      "Cancel trial and pay": [
+        "取消試用並付款"
+      ],
+      "Help and feedback": [
+        "尋求協助與反映意見"
+      ],
+      "Loading Zoom configuration": [
+        "載入 Zoom 組態"
+      ],
+      "More benefits": [
+        "更多好處"
+      ],
+      "Reconnect to Zoom": [
+        "重新連接 Zoom"
       ]
     },
     "action": {
@@ -3385,6 +3406,33 @@
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
+      ],
+      "Invalid ZIP code": [
+        "無效的郵遞區號"
+      ],
+      "Please enter a valid postal code": [
+        "請輸入有效的郵遞區號"
+      ],
+      "Please enter a valid ZIP code": [
+        "請輸入有效的郵遞區號"
+      ],
+      "Please enter postal code": [
+        "請輸入郵遞區號"
+      ],
+      "Please enter ZIP code": [
+        "請輸入郵遞區號"
+      ],
+      "Please select billing country": [
+        "請選擇您的付款國家"
+      ],
+      "Please select billing state": [
+        "請選擇您的付款州名"
+      ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Zoom 已重新連接上。現在您可以儲存您的行事曆了。"
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "您 Zoom 連接階段已逾期，請重新連接以繼續。"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5448,6 +5496,15 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "如果您改變心意，您可以隨時再次訂購。對於您決定離開，我們感到遺憾。"
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "在截止日 ${ trialEndsOnFormatted } 到期之前取消，便不會向您收取任何費用。"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。"
       ]
     },
     "info": {
@@ -5456,6 +5513,9 @@
       ],
       "Selected color:": [
         "已選取的色彩:"
+      ],
+      "Optional": [
+        "可選"
       ]
     },
     "Info calendar search": {
@@ -6079,6 +6139,9 @@
     "Label, credit card": {
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Postal code": [
+        "郵遞區號"
       ]
     },
     "Label/folder modal": {
@@ -6257,6 +6320,9 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ],
+      "Your storage is full. To continue using ${ BRAND_NAME } products, free up space or ${ cta }.": [
+        "您的儲存空間不足。要繼續使用 ${ BRAND_NAME } 平台，請釋出儲存空間或${ cta }。"
       ]
     },
     "Log preference": {
@@ -6287,6 +6353,9 @@
       ],
       "for ${ price }": [
         "${ price } 版"
+      ],
+      "Add-on with free trial": [
+        "可免費試用的擴充功能"
       ]
     },
     "mailtrial2024: Action": {
@@ -7142,6 +7211,9 @@
       ],
       "Switch plans?": [
         "切換方案？"
+      ],
+      "Review subscription": [
+        "檢閱訂購授權"
       ]
     },
     "new_plans: tooltip": {
@@ -7404,6 +7476,9 @@
       ],
       "Require 2FA": [
         "要求兩階段認證"
+      ],
+      "Support for ${ n } custom email domain": [
+        "支援 ${ n } 組自訂電子郵件網域"
       ]
     },
     "Note": {
@@ -7632,6 +7707,9 @@
       ],
       "Your subscription renews soon": [
         "您的訂閱即將重新續約"
+      ],
+      "Get ${ BRAND_NAME } Unlimited": [
+        "取得 ${ BRAND_NAME } 無限版"
       ]
     },
     "Offer feature": {
@@ -7699,6 +7777,9 @@
     "Onboarding Trial": {
       "Continue": [
         "繼續"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "免費享有商業級安全保護功能直到 ${ trialEndsOnFormatted } 止。"
       ]
     },
     "Option": {
@@ -7792,6 +7873,9 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "安全分享保管庫"
+      ],
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "使用全部 ${ BRAND_NAME } 應用程式與進階功能"
       ]
     },
     "pass_signup_2024: Info": {
@@ -7860,6 +7944,9 @@
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ],
+      "Apple Pay": [
+        "Apple Pay"
       ]
     },
     "Payment.Sepa.Action": {
@@ -7924,6 +8011,27 @@
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
+      ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
+      ],
+      "I'm purchasing as a business": [
+        "我以公司名義購買"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "此折價券可適用續約訂購 ${ couponRedemptions } 次。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "前 ${ subscriptionLength } 個月，可享優惠價格 ${ priceWithDiscount }。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "首月限定優惠價為 ${ priceWithDiscount }。折價券可使用 ${ couponRedemptions } 次，之後將以一個月 ${ renewPriceStr } 的價格自動續約。您可以隨時取消。"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "到期後將自動以 ${ renewPriceStr } 的價格續約 ${ renewalLength } 個月。您可以隨時取消。"
+      ],
+      "This number will be shown on all future invoices": [
+        "未來所有的帳單將會顯示此統一編號"
       ]
     },
     "Payments.Error": {
@@ -8082,6 +8190,12 @@
       ],
       "Start typing an email address": [
         "在此輸入一個電郵位址"
+      ],
+      "Postal code": [
+        "郵遞區號"
+      ],
+      "ZIP code": [
+        "郵遞區號"
       ]
     },
     "Placeholder for contact group name": {
@@ -8592,6 +8706,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升級至${ pricingTitle }"
+      ],
+      "Unblock streaming content": [
+        "解除封鎖影音串流內容"
       ]
     },
     "specialoffer: Offers": {
@@ -8662,6 +8779,9 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
+      ],
+      "Access content on streaming services worldwide": [
+        "存取全球影音串流服務內容"
       ]
     },
     "specialoffer: Tooltip": {
@@ -8842,6 +8962,9 @@
       ],
       "${ n } VPN connection per user": [
         "${ n } 個 VPN 連線 / 每一位使用者"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "每位使用者可以在 ${ n } 台裝置上連接 VPN"
       ]
     },
     "Subscription change warning": {
@@ -10047,6 +10170,12 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Subscription canceled": [
+        "訂購授權已取消"
+      ],
+      "Your plan": [
+        "您的方案"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10576,6 +10705,68 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
+        "折扣價格依標準月繳費率計算。在本繳款單週期結束後，將為您以標準年繳費率續約。"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Save time with built-in 2FA": [
+        "利用內建雙重驗證（2FA）以節省時間"
+      ],
+      "Share passwords easily": [
+        "輕鬆分享密碼"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } 個月"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Keep subscription": [
+        "保留訂購授權"
+      ]
+    },
+    "Email body for comment (comment part)": {
+      "NOTE:\n${ eventComment }": [
+        "備註：\n${ eventComment }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }方案"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "商業號碼（ABN）"
+      ],
+      "Business Number": [
+        "營業人統一編號"
+      ],
+      "EIN": [
+        "僱主身份識別號碼（EIN）"
+      ],
+      "VAT number": [
+        "增值稅編號（VAT）"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } 天"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } 小時"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } 分鐘"
+      ],
+      "${ seconds } second": [
+        "${ seconds } 秒"
       ]
     }
   }
