@@ -1,5 +1,6 @@
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -14,12 +15,15 @@ import {
 } from '@proton/account';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
 import LoadingTextStepper from '@proton/components/components/loader/LoadingTextStepper';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from '@proton/components/hooks/useDeviceRecovery';
@@ -65,6 +69,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
     const loadingDependencies = loadingOutgoingAddressForwardings || loadingDeviceRecovery;
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState<Model>({ step: Step.CONFIRMATION });
+    const [understoodForceUpgrade, setUnderstoodForceUpgrade] = useState(false);
 
     const handleGenerateAddressKeyForAllAddresses = async () => {
         const [user, userKeys, addresses] = await Promise.all([
@@ -193,32 +198,63 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
         model.step === Step.IN_PROGRESS_ADDRESS_KEYS ||
         model.step === Step.IN_PROGRESS_ACCOUNT_KEY;
 
+    const forceUpgradeSeeHowLink = (
+        <Link key="see-how" to={'todo'}>
+            {c('Force upgrade safety review').t`See how`}
+        </Link>
+    );
+
     return (
         <ModalTwo size="medium" {...rest}>
-            <ModalTwoHeader title={c('PQC optin').t`Enable post-quantum protection`} />
+            <ModalTwoHeader
+                title={
+                    model.step === Step.CONFIRMATION
+                        ? c('PQC optin').t`Enable post-quantum protection?`
+                        : c('PQC optin').t`Enable post-quantum protection`
+                }
+            />
             <ModalTwoContent>
                 <div>
                     {model.step === Step.CONFIRMATION && (
                         <>
                             <div className="mb-2">
-                                {c('PQC account key generation')
-                                    .t`This will generate a new post-quantum account key, which will be used to encrypt future contact details, email encryption keys, and other data.`}
-                            </div>
-                            <div className="mb-2">
-                                {c('PQC address key generation')
-                                    .t`It will also generate a new address key, which will be used to encrypt future draft emails, among other data. Email messages sent from other ${BRAND_NAME} user will also be encrypted using this key.`}
-                            </div>
-                            <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
-                                <Icon name="exclamation-circle" className="shrink-0 color-warning" />
-                                <p className="text-sm color-weak flex-1 pl-4 my-0">{c('PQC compatibility warning')
-                                    .t`After enabling post-quantum protection, you will no longer be able to login from older versions of ${BRAND_NAME} mobile apps.`}</p>
+                                {c('PQC key generation')
+                                    .t`This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.`}
                             </div>
                             {hasOutgoingE2EEForwardingsAcrossAddresses && (
-                                <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
-                                    <Icon name="exclamation-circle" className="shrink-0 color-warning" />
+                                <div className="border border-weak rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
+                                    <Icon name="exclamation-circle-filled" className="shrink-0 color-warning" />
                                     <p className="text-sm color-weak flex-1 pl-4 my-0">{getPausedForwardingNotice()}</p>
                                 </div>
                             )}
+                            <div
+                                className="border rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4"
+                                style={{
+                                    backgroundColor: 'var(--signal-danger-minor-2)',
+                                    borderColor: 'var(--signal-danger-minor-2)',
+                                }}
+                            >
+                                <Icon name="exclamation-circle-filled" className="shrink-0 color-danger" />
+                                <p className="text-sm color-weak flex-1 pl-4 my-0">
+                                    {getBoldFormattedText(
+                                        c('PQC compatibility warning')
+                                            .t`Please update **all your ${BRAND_NAME} mobile apps** to the latest version.`
+                                    )}{' '}
+                                    {forceUpgradeSeeHowLink}
+                                </p>
+                            </div>
+                            <div className="flex flex-row items-start">
+                                <Checkbox
+                                    id="understood-pqc-force-upgrade"
+                                    className="mt-2 mr-2"
+                                    checked={understoodForceUpgrade}
+                                    onChange={() => setUnderstoodForceUpgrade(!understoodForceUpgrade)}
+                                />
+                                <Label htmlFor="understood-recovery-necessity" className="flex-1">
+                                    {c('Force upgrade safety review')
+                                        .t`I understand that I will no longer be able to sign in from older versions of ${BRAND_NAME} mobile apps.`}
+                                </Label>
+                            </div>
                         </>
                     )}
                     {isProgressStep && (
@@ -246,7 +282,6 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                     {model.step === Step.SUCCESS && (
                         <>
                             <div className="text-center">
-                                {/* <img src={forwardingSuccessIllustration} alt="" /> */}
                                 <p>
                                     {c('pqc-optin: Info').jt`Post-quantum protection has been enabled on your account!`}
                                 </p>
@@ -256,7 +291,6 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                     {model.step === Step.ERROR && (
                         <>
                             <div className="text-center">
-                                {/* <img src={} alt="" /> */}
                                 <p>{model.error}</p>
                             </div>
                         </>
@@ -268,13 +302,13 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                     <>
                         <Button disabled={loading} onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
                         <Button
-                            color="norm"
+                            color="danger"
                             loading={loading}
-                            disabled={loadingDependencies}
+                            disabled={loadingDependencies || !understoodForceUpgrade}
                             data-testid="confirm-pqc-opt-in"
                             onClick={() => withLoading(handleSubmit().catch(noop))}
                         >
-                            {c('PQC optin').t`Enable post-quantum protection`}
+                            {c('PQC optin').t`Enable and generate keys`}
                         </Button>
                     </>
                 )}

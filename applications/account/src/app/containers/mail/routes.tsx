@@ -182,7 +182,7 @@ export const getMailAppRoutes = ({
                         id: 'pgp-settings',
                     },
                     {
-                        text: c('Title').t`Post-Quantum protection`,
+                        text: c('Title').t`Post-quantum protection`,
                         id: 'pqc-optin',
                         available: isCryptoPostQuantumOptInEnabled,
                     },
