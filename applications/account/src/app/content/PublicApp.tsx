@@ -91,6 +91,7 @@ import ExternalSSOConsumer from './ExternalSSOConsumer';
 import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
 import { getActiveSessionLoginResult } from './actions/getActiveSessionLoginResult';
 import { getLoginResult } from './actions/getLoginResult';
+import { getSanitizedLocationDescriptorObject } from './actions/getSanitizedLocationDescriptorObject';
 import type { LoginLocationState, LoginResult } from './actions/interface';
 import { handleOAuthFork } from './fork/handleOAuthFork';
 import { handleProtonFork } from './fork/handleProtonFork';
@@ -415,7 +416,7 @@ const BasePublicApp = () => {
                                 const loginLocationState: LoginLocationState = {
                                     type: 'oauth-partners',
                                     payload: state,
-                                    location: { pathname: SSO_PATHS.OAUTH_PARTNERS },
+                                    location: SSO_PATHS.OAUTH_PARTNERS,
                                 };
                                 handleLoginResult(loginLocationState).catch(noop);
                             }}
@@ -684,11 +685,13 @@ const BasePublicApp = () => {
                                                             loader={loader}
                                                             clientType={clientType}
                                                             onValid={(inviteData) =>
-                                                                history.replace({
-                                                                    pathname: paths.signup,
-                                                                    search: '?mode=sps',
-                                                                    state: { invite: inviteData },
-                                                                })
+                                                                history.replace(
+                                                                    getSanitizedLocationDescriptorObject({
+                                                                        pathname: paths.signup,
+                                                                        search: '?mode=sps',
+                                                                        state: { invite: inviteData },
+                                                                    })
+                                                                )
                                                             }
                                                             onInvalid={() => history.push(paths.signup)}
                                                         />
