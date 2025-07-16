@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import {
@@ -661,7 +661,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             const result = await batchAPIHelper(abortSignal, {
                 linkIds: [...linksInfoForAlbum.keys()],
                 batchRequestSize: MAX_ADD_ALBUM_PHOTOS_BATCH,
-                ignoredCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS],
+                ignoredCodes: [API_CUSTOM_ERROR_CODES.ALREADY_EXISTS, API_CUSTOM_ERROR_CODES.INVALID_REQUIREMENT],
                 query: async (batchLinkIds) => {
                     let linksPayloads = [];
                     for (const linkId of batchLinkIds) {
@@ -712,28 +712,37 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             result: { successes: string[]; failures: Record<string, any> },
             albumName: string,
             // Prevent showing notification and call loadAlbumPhotos per upload when uploading directly
-            fromUpload: boolean = false
+            fromUpload: boolean = false,
+            mainlinkIds: string[]
         ) => {
             const nbFailures = Object.keys(result.failures).length;
             const nbSuccesses = result.successes.length;
+            const nbMainPhotosError = Object.keys(result.failures).filter((linkId) =>
+                mainlinkIds.includes(linkId)
+            ).length;
+            const nbMainPhotosSuccess = result.successes.filter((linkId) => mainlinkIds.includes(linkId)).length;
 
             if (nbFailures) {
                 createNotification({
                     type: 'error',
-                    text: c('Notification').t`Some photo(s) could not be added to "${albumName}"`,
+                    text: c('Notification').ngettext(
+                        msgid`${nbMainPhotosError} photo could not be added to "${albumName}"`,
+                        `${nbMainPhotosError} photos could not be added to "${albumName}"`,
+                        nbMainPhotosError
+                    ),
                     preWrap: true,
                 });
-            }
-
-            if (nbSuccesses && !fromUpload) {
+            } else if (nbSuccesses && !fromUpload) {
                 createNotification({
                     type: 'success',
-                    text: c('Notification').t`Your photo(s) have been added to "${albumName}"`,
+                    text: c('Notification').ngettext(
+                        msgid`${nbMainPhotosSuccess} photo have been added to "${albumName}"`,
+                        `${nbMainPhotosSuccess} photos have been added to "${albumName}"`,
+                        nbMainPhotosSuccess
+                    ),
                     preWrap: true,
                 });
-            }
-
-            if (!nbFailures && !nbSuccesses && !fromUpload) {
+            } else if (!fromUpload) {
                 createNotification({
                     type: 'info',
                     text: c('Notification').t`Selected photo(s) already in "${albumName}"`,
@@ -845,7 +854,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 }
             } else {
                 void loadAlbumPhotos(abortSignal, albumShareId, albumLinkId);
-                showNotifications(result, albumName, fromUpload);
+                showNotifications(result, albumName, fromUpload, linkIds);
                 // Reload albums to reload cover of current album - first photo is automatically set as cover.
                 if (albumPhotos.length === 0) {
                     void loadAlbums(abortSignal);
@@ -1055,14 +1064,22 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (nbFailures) {
                 createNotification({
                     type: 'error',
-                    text: c('Notification').t`Some photo(s) could not be removed from ${albumLink.name}`,
+                    text: c('Notification').ngettext(
+                        msgid`${nbFailures} photo could not be removed from "${albumLink.name}"`,
+                        `${nbFailures} photos could not be removed from "${albumLink.name}"`,
+                        nbFailures
+                    ),
                     preWrap: true,
                 });
             }
             if (nbSuccesses) {
                 createNotification({
                     type: 'success',
-                    text: c('Notification').t`Your photo(s) have been removed from ${albumLink.name}`,
+                    text: c('Notification').ngettext(
+                        msgid`${nbSuccesses} photo have been removed from "${albumLink.name}"`,
+                        `${nbSuccesses} photos have been removed from "${albumLink.name}"`,
+                        nbSuccesses
+                    ),
                     preWrap: true,
                 });
             }
