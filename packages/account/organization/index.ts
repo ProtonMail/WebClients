@@ -92,7 +92,7 @@ const slice = createSlice({
                 state.value = updateObject(state.value, {
                     ...action.payload.Organization,
                     ...(action.payload.OrganizationSettings
-                        ? { Settings: action.payload.OrganizationSettings }
+                        ? { Settings: updateObject(state.value.Settings, action.payload.OrganizationSettings) }
                         : undefined),
                 });
                 state.error = undefined;
