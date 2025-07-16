@@ -36,7 +36,7 @@ import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout'
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { type Api, ChargebeeEnabled, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
-import { useFlag } from '@proton/unleash';
+import { useGetFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
@@ -234,7 +234,7 @@ export const usePaymentsApi = (
     const { APP_NAME } = useConfig();
     const reportRoutingError = useReportRoutingError();
     const multiCheckCache = useMultiCheckCache();
-    const zipCodeValidation = useFlag('PaymentsZipCodeValidation');
+    const getFlag = useGetFlag();
 
     const getPaymentsApi = (api: Api, chargebeeEnabledOverride?: ChargebeeEnabled): PaymentsApi => {
         const getChargebeeEnabled = (): ChargebeeEnabled => chargebeeEnabledOverride ?? chargebeeEnabledCache();
@@ -279,6 +279,8 @@ export const usePaymentsApi = (
             additionalContext?: any
         ): Promise<EnrichedCheckResponse> => {
             try {
+                // These functions get stale, so need to ensure the flag is up-to-date
+                const zipCodeValidation = getFlag('PaymentsZipCodeValidation');
                 const result = await api({
                     ...checkSubscription(data, 'v4', zipCodeValidation),
                     ...requestOptions,
@@ -306,6 +308,9 @@ export const usePaymentsApi = (
 
             const fallback = checkV5Fallback?.(data);
             try {
+                // These functions get stale, so need to ensure the flag is up-to-date
+                const zipCodeValidation = getFlag('PaymentsZipCodeValidation');
+
                 const silence = !!fallback || !!requestOptions.silence;
 
                 const result = await api({
