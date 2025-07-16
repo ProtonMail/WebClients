@@ -14,6 +14,7 @@ const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('@proton/pac
 const fs = require('fs');
 
 const {
+    BETA,
     BUILD_TARGET,
     BUILD_STORE_TARGET,
     CLEAN_MANIFEST,
@@ -46,6 +47,7 @@ console.log(`ENV = ${ENV}`);
 console.log(`RELEASE = ${RELEASE}`);
 console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
 console.log(`BUILD_STORE_TARGET = ${BUILD_STORE_TARGET}`);
+console.log(`BETA = ${BETA}`);
 console.log(`MANIFEST_KEY = ${MANIFEST_KEY || 'none'}`);
 console.log(`PUBLIC_KEY = ${PUBLIC_KEY || 'none'}`);
 console.log(`CLEAN_MANIFEST = ${CLEAN_MANIFEST}`);
@@ -232,6 +234,7 @@ module.exports = {
     plugins: [
         new webpack.EnvironmentPlugin({ NODE_ENV: ENV }),
         new webpack.DefinePlugin({
+            BETA: JSON.stringify(BETA),
             BUILD_TARGET: JSON.stringify(BUILD_TARGET),
             BUILD_STORE_TARGET: JSON.stringify(BUILD_STORE_TARGET),
             DESKTOP_BUILD: false,
@@ -301,6 +304,16 @@ module.exports = {
                                     ];
                                     break;
                             }
+                        }
+
+                        if (BETA) {
+                            manifest.name = 'Proton Pass (BETA)';
+                            manifest.icons = {
+                                16: '/assets/protonpass-beta-icon-16.png',
+                                32: '/assets/protonpass-beta-icon-32.png',
+                                48: '/assets/protonpass-beta-icon-48.png',
+                                128: '/assets/protonpass-beta-icon-128.png',
+                            };
                         }
 
                         return Buffer.from(JSON.stringify(manifest, null, 2), 'utf-8');

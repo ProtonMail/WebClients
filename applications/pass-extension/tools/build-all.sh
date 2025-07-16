@@ -9,8 +9,10 @@ OUTDIR="$(mktemp -d)"
 COMMIT="$(git rev-parse --short HEAD)"
 BUILD_ID="ProtonPass-${VERSION}-${COMMIT}"
 
+export NODE_NO_WARNINGS=1
+
 function on_enter {
-    echo "Building $1..."
+    echo -e "\nBuilding $1..."
     cd "$PASSDIR" && rm -rf dist
 }
 
@@ -26,80 +28,72 @@ function set_manifest_key {
     jq --indent 4 --arg key "$key" '. + {"key": $key}' "$1" >manifest.json.tmp && mv manifest.json.tmp "$1"
 }
 
-function build_chromium_black {
-    on_enter "Chromium (Black)"
-    BUILD_TARGET=chrome MANIFEST_KEY="" yarn run build:extension:dev >/dev/null
+# Bundle extension for specific store target and environment
+# Usage: bundle_extension <env> <store_target> [beta]
+#
+# Parameters:
+#   env          - Environment: "prod" or "black"
+#   store_target - Target store: "chrome", "edge", "firefox", etc.
+#   beta         - Optional: "true" for beta build, defaults to "false"
+function bundle_extension {
+    local store_target="$1"
+    local env="$2"
+    local beta="${3:-false}"
 
+    local outputs=()
+
+    # Derive build command from $env
+    local cmd="build:extension"
+    [ "$env" = "black" ] && cmd="build:extension:dev"
+
+    # Derive BUILD_TARGET from $store_target
+    local target="$store_target"
+    [ "$store_target" = "edge" ] && target="chrome"
+
+    local display="$store_target"
+    [ "$beta" = "true" ] && display="$display:beta"
+    display="$display ($env)"
+
+    local env_vars=("BUILD_TARGET=$target" "MANIFEST_KEY=\"\"" "BUILD_STORE_TARGET=$store_target")
+    [ "$beta" = "true" ] && env_vars+=("BETA=true")
+    [ "$env" = "prod" ] && env_vars+=("RELEASE=true")
+
+    on_enter "$display"
+
+    for var in "${env_vars[@]}"; do
+        printf "\t%s\n" "$var"
+    done
+
+    eval "${env_vars[*]} yarn run $cmd >/dev/null"
     cd dist
 
-    # QA Black Chrome Build
-    set_manifest_key "./manifest.json" "chrome:production"
-    zip -rqX "$ARTEFACTSDIR/chrome/$BUILD_ID.black.zip" "."
+    local suffix=""
+    local name="$store_target"
 
-    on_leave "chrome/$BUILD_ID.black.zip"
+    [ "$env" = "black" ] && suffix=".black"
+    [ "$beta" = "true" ] && suffix="-beta$suffix"
+    [ "$beta" = "true" ] && name="$name-beta"
+
+    # Build final release for production
+    [ "$env" = "prod" ] && zip -rqX "$ARTEFACTSDIR/release/$BUILD_ID-$name.zip" . && outputs+=("release/$BUILD_ID-$name.zip")
+
+    # Staging QA Build - set manifest key for chromium builds
+    [ "$store_target" != "firefox" ] && set_manifest_key "./manifest.json" "$store_target:$([ "$beta" = "true" ] && echo "beta" || echo "production")"
+    zip -rqX "$ARTEFACTSDIR/$store_target/$BUILD_ID$suffix.zip" . && outputs+=("$store_target/$BUILD_ID$suffix.zip")
+
+    on_leave "${outputs[@]}"
 }
 
-function build_edge_black {
-    on_enter "Edge (Black)"
-    BUILD_TARGET=chrome BULD_STORE_TARGET=edge MANIFEST_KEY="" yarn run build:extension:dev >/dev/null
+# Bundle extension from sources
+# Usage: bundle_extension_from_sources <build_target>
+#
+# Parameters:
+#   build_target - Target platform (typically "firefox")
+function bundle_extension_from_sources {
+    local build_target="$1"
 
-    cd dist
-
-    # QA Black Edge Build
-    set_manifest_key "./manifest.json" "edge:production"
-    zip -rqX "$ARTEFACTSDIR/edge/$BUILD_ID.black.zip" "."
-
-    on_leave "edge/$BUILD_ID.black.zip"
-}
-
-function build_chromium_prod {
-    on_enter "Chromium (Prod)"
-
-    # store versions should not have a `key` in the manifest
-    RELEASE=true BUILD_TARGET=chrome MANIFEST_KEY="" yarn run build:extension >/dev/null
-
-    cd dist
-
-    # Chromium store version for release
-    zip -rqX "$ARTEFACTSDIR/release/$BUILD_ID-chromium.zip" "."
-
-    # QA Production Chrome build
-    set_manifest_key "./manifest.json" "chrome:production"
-    zip -rqX "$ARTEFACTSDIR/chrome/$BUILD_ID.zip" "."
-
-    on_leave "release/$BUILD_ID-chromium.zip" "chrome/$BUILD_ID.zip"
-}
-
-function build_edge_prod {
-    on_enter "Edge (Prod)"
-
-    # store versions should not have a `key` in the manifest
-    RELEASE=true BUILD_TARGET=chrome BULD_STORE_TARGET=edge MANIFEST_KEY="" yarn run build:extension >/dev/null
-
-    cd dist
-
-    # Edge store version for release
-    zip -rqX "$ARTEFACTSDIR/release/$BUILD_ID-edge.zip" "."
-
-    # QA Production Edge build
-    set_manifest_key "./manifest.json" "edge:production"
-    zip -rqX "$ARTEFACTSDIR/edge/$BUILD_ID.zip" "."
-
-    on_leave "release/$BUILD_ID-edge.zip" "edge/$BUILD_ID.zip"
-}
-
-function build_firefox_black {
-    on_enter "Firefox (Black)"
-    BUILD_TARGET=firefox yarn run build:extension:dev >/dev/null
-    cd dist
-    zip -rqX "$ARTEFACTSDIR/firefox/$BUILD_ID.black.zip" "."
-
-    on_leave "firefox/$BUILD_ID.black.zip"
-}
-
-function build_firefox_prod {
-    on_enter "Firefox (Sources)"
-    BUILD_TARGET=firefox NODE_ENV=production yarn run config
+    on_enter "$1 (sources)"
+    BUILD_TARGET=$1 NODE_ENV=production yarn run config >/dev/null
     # Preserve config.ts because the `yarn` postinstall script will overwrite it
     cp src/app/config.ts src/app/config.ff-release.ts
     cd ../../
@@ -134,7 +128,7 @@ function build_firefox_prod {
     mv "$OUTDIR/$BUILD_ID-FF-sources.zip" "$ARTEFACTSDIR/release"
     on_leave "release/$BUILD_ID-FF-sources.zip"
 
-    on_enter "Firefox (Prod)"
+    on_enter "$1 (prod)"
     mkdir -p "$OUTDIR/$BUILD_ID-FF-sources"
     cd "$OUTDIR/$BUILD_ID-FF-sources"
     unzip -q "$ARTEFACTSDIR/release/$BUILD_ID-FF-sources.zip"
@@ -147,16 +141,17 @@ function build_firefox_prod {
 }
 
 # Print debug vars
-echo "Building for all platforms... This may take a while."
+echo "Building extensions... This may take a while."
 printf "\tNode\t%s (%s)\n" "$(node --version)" "$(which node)"
 printf "\tnpm\tv%s (%s)\n" "$(npm --version)" "$(which npm)"
 printf "\tYarn\tv%s (%s)\n" "$(yarn --version)" "$(which yarn)"
+
 for var in "REPODIR" "PASSDIR" "VERSION" "ARTEFACTSDIR" "OUTDIR" "COMMIT" "BUILD_ID"; do
     printf "\t%s = %s\n" "${var}" "${!var}"
 done
 
 # Validate dependencies
-echo "Validating yarn.lock..."
+echo -e "\nValidating yarn.lock..."
 if [ -z ${CI+n} ]; then
     cd "$REPODIR"
     yarn install --immutable --immutable-cache >/dev/null
@@ -170,15 +165,25 @@ rm -rf "${ARTEFACTSDIR:-}" && mkdir -p "$ARTEFACTSDIR"
 mkdir -p "$ARTEFACTSDIR/chrome"
 mkdir -p "$ARTEFACTSDIR/edge"
 mkdir -p "$ARTEFACTSDIR/firefox"
-mkdir -p "$ARTEFACTSDIR/safari"
 mkdir -p "$ARTEFACTSDIR/release"
 
-# Execute individual builds
-build_firefox_black
-build_firefox_prod
+# NOTE: last build needs to contain sourcemaps
+# for i18n extraction in the CI
 
-build_chromium_prod
-build_chromium_black
+if [[ "${1-}" == "--beta" ]]; then
+    # Chrome store BETA builds
+    bundle_extension chrome prod true
+    bundle_extension chrome black true
+else
+    # Firefox builds
+    bundle_extension firefox black
+    bundle_extension_from_sources firefox
 
-build_edge_prod
-build_edge_black
+    # Microsoft store builds
+    bundle_extension edge prod
+    bundle_extension edge black
+
+    # Chrome store builds
+    bundle_extension chrome prod
+    bundle_extension chrome black
+fi
