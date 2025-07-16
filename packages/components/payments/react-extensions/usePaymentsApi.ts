@@ -440,6 +440,18 @@ export const usePaymentsApi = (
             };
         };
 
+        const normalizeBillingAddress = (value: FullBillingAddress): FullBillingAddress => {
+            // The API expects null over empty string for all optional values (all except CountryCode).
+            return Object.fromEntries(
+                Object.entries(value).map(([key, value]) => {
+                    if (key === 'CountryCode') {
+                        return [key, value];
+                    }
+                    return [key, value === '' ? null : value];
+                })
+            ) as FullBillingAddress;
+        };
+
         const getFullBillingAddress = async (): Promise<FullBillingAddress> => {
             const response = await api<FullBillingAddressResponse>(queryFullBillingAddress());
 
@@ -447,11 +459,11 @@ export const usePaymentsApi = (
         };
 
         const updateFullBillingAddress = async (fullBillingAddress: FullBillingAddress) => {
-            await api(putFullBillingAddress(fullBillingAddress));
+            await api(putFullBillingAddress(normalizeBillingAddress(fullBillingAddress)));
         };
 
         const updateInvoiceBillingAddress = async (invoiceId: string, fullBillingAddress: FullBillingAddress) => {
-            await api(putInvoiceBillingAddress(invoiceId, fullBillingAddress));
+            await api(putInvoiceBillingAddress(invoiceId, normalizeBillingAddress(fullBillingAddress)));
         };
 
         const getInvoiceBillingAddress = async (invoiceId: string): Promise<FullBillingAddress> => {
