@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -198,12 +197,6 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
         model.step === Step.IN_PROGRESS_ADDRESS_KEYS ||
         model.step === Step.IN_PROGRESS_ACCOUNT_KEY;
 
-    const forceUpgradeSeeHowLink = (
-        <Link key="see-how" to={'todo'}>
-            {c('Force upgrade safety review').t`See how`}
-        </Link>
-    );
-
     return (
         <ModalTwo size="medium" {...rest}>
             <ModalTwoHeader
@@ -239,8 +232,11 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                                     {getBoldFormattedText(
                                         c('PQC compatibility warning')
                                             .t`Please update **all your ${BRAND_NAME} mobile apps** to the latest version.`
-                                    )}{' '}
-                                    {forceUpgradeSeeHowLink}
+                                    )}
+                                    {/* {' '}
+                                    <Link key="see-how" to={'todo'}>
+                                        {c('Force upgrade safety review').t`See how`}
+                                    </Link> */}
                                 </p>
                             </div>
                             <div className="flex flex-row items-start">
