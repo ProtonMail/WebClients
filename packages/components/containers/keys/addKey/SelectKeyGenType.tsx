@@ -15,45 +15,54 @@ interface Props {
 }
 const SelectKeyGenType = ({ keyGenType, setKeyGenType }: Props) => {
     // translator: this bold text is used to make a remark about one of the encryption key options offered to the user.
-    // The full text will be '<bold>Classical protection</bold> <Key type>'
-    const classicalProtection = <strong key="CURVE25519">{c('Remark about a key type option').t`Classical`}</strong>;
+    // The full text will be '<bold>Classic</bold> <Key type>'
+    const classicalProtection = <strong key="CURVE25519">{c('Remark about a key type option').t`Classic`}</strong>;
     // translator: this bold text is used to make a remark about one of the encryption key options offered to the user.
-    // The full text will be '<bold>Post-Quantum protection</bold> <Key type>'
-    const postQuantumProtection = <strong key="PQC">{c('Remark about a key type option').t`Post-Quantum`}</strong>;
+    // The full text will be '<bold>Post-quantum</bold> <Key type>'
+    const postQuantumProtection = <strong key="PQC">{c('Remark about a key type option').t`Post-quantum`}</strong>;
 
     const radios = [
         {
-            label: c('Key type option').jt`${classicalProtection} ECC Curve25519 (Fastest)`,
+            label: c('Key type option').jt`${classicalProtection} (ECC Curve25519)`,
+            hint: c('Key type hint').t`Faster`,
             value: CURVE25519,
         },
         {
-            label: c('Key type option')
-                .jt`${postQuantumProtection} Hybrid MLDSA/MLKEM + ECC Curve25519 (Slower, but stronger long-term security)`,
+            label: c('Key type option').jt`${postQuantumProtection} (MLDSA/MLKEM + ECC Curve25519)`,
+            hint: c('Key type hint').t`Slower, but stronger long-term security`,
             value: PQC,
         },
     ];
 
     return (
-        <>
-            {radios.map(({ label, value }) => {
-                return (
-                    <Row key={value}>
-                        <Radio
-                            id={`encryptionChoice${value}`}
-                            data-testid={value}
-                            name="encryptionType"
-                            checked={value === keyGenType}
-                            onChange={() => setKeyGenType(value)}
-                        >
-                            <span className="flex-1">
-                                <span className="sr-only">{c('Label').t`Key strength`}</span>
-                                {label}
-                            </span>
-                        </Radio>
-                    </Row>
-                );
-            })}
-        </>
+        <div className="mt-8 mb-8">
+            <div className="mb-4">
+                <strong>{c('Key type selection').t`Select key type`}</strong>
+            </div>
+            <>
+                {radios.map(({ label, value, hint }) => {
+                    return (
+                        <Row key={value}>
+                            <Radio
+                                id={`encryptionChoice${value}`}
+                                data-testid={value}
+                                name="encryptionType"
+                                checked={value === keyGenType}
+                                onChange={() => setKeyGenType(value)}
+                            >
+                                <span className="flex flex-column">
+                                    <span>
+                                        <span className="sr-only">{c('Label').t`Key strength`}</span>
+                                        {label}
+                                    </span>
+                                    <span className="color-hint text-sm">{hint}</span>
+                                </span>
+                            </Radio>
+                        </Row>
+                    );
+                })}
+            </>
+        </div>
     );
 };
 

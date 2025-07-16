@@ -127,7 +127,13 @@ const UserKeysSections = () => {
     return (
         <>
             {renderAddKey && (
-                <AddKeyModal type="user" existingAlgorithms={existingAlgorithms} onAdd={onAdd} {...addKeyProps} />
+                <AddKeyModal
+                    type="user"
+                    emailAddress={undefined}
+                    existingAlgorithms={existingAlgorithms}
+                    onAdd={onAdd}
+                    {...addKeyProps}
+                />
             )}
             {children}
         </>
