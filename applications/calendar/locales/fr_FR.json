@@ -899,6 +899,21 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add Zoom meeting": [
+        "Ajouter une réunion Zoom"
+      ],
+      "Adding conferencing details": [
+        "Ajout des informations de la conférence"
+      ],
+      "Cancel trial and pay": [
+        "Annuler l'essai et payer"
+      ],
+      "Loading Zoom configuration": [
+        "Chargement de la configuration Zoom"
+      ],
+      "Reconnect to Zoom": [
+        "Reconnexion à Zoom"
       ]
     },
     "action": {
@@ -1340,6 +1355,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } et ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -3773,6 +3791,33 @@
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
+      ],
+      "Invalid ZIP code": [
+        "Le code postal n'est pas valide."
+      ],
+      "Please enter a valid postal code": [
+        "Veuillez saisir un code postal valide."
+      ],
+      "Please enter a valid ZIP code": [
+        "Veuillez saisir un code postal valide."
+      ],
+      "Please enter postal code": [
+        "Veuillez saisir un code postal."
+      ],
+      "Please enter ZIP code": [
+        "Veuillez saisir un code postal."
+      ],
+      "Please select billing country": [
+        "Veuillez sélectionner le pays de facturation."
+      ],
+      "Please select billing state": [
+        "Veuillez sélectionner l'état de facturation."
+      ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Vous êtes reconnecté à Zoom. Vous pouvez enregistrer votre événement maintenant."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Votre connexion Zoom a expiré. Veuillez vous reconnecter pour continuer."
       ]
     },
     "Error accepting calendar invitation": {
@@ -6054,6 +6099,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Votre abonnement ${ plan } sera remplacé par l'abonnement ${ PASS_SHORT_APP_NAME } Lifetime. Le solde restant sera ajouté à votre compte. L'abonnement ${ PASS_SHORT_APP_NAME } Lifetime n'a pas de prix de renouvellement : il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -6063,6 +6111,9 @@
       ],
       "Selected color:": [
         "Couleur sélectionnée :"
+      ],
+      "Optional": [
+        "Facultatif"
       ]
     },
     "Info calendar search": {
@@ -6711,6 +6762,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Code postal"
+      ],
+      "Postal code": [
         "Code postal"
       ]
     },
@@ -7854,6 +7908,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Protégez votre famille avec toutes les fonctionnalités de ${ plusTitle } pour 6 utilisateurs."
       ]
     },
     "new_plans: Subtext": {
@@ -7879,6 +7936,9 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
+      ],
+      "Review subscription": [
+        "Vérifier l'abonnement"
       ]
     },
     "new_plans: tooltip": {
@@ -8420,6 +8480,9 @@
       ],
       "Your subscription renews soon": [
         "Votre abonnement se renouvelle bientôt."
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Dernière chance pour profiter de 80 % de réduction sur le premier mois pour ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -8825,6 +8888,12 @@
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
+      ],
+      "I'm purchasing as a business": [
+        "J'achète en tant qu'entreprise."
+      ],
+      "This number will be shown on all future invoices": [
+        "Ce numéro sera indiqué sur toutes les prochaines factures."
       ]
     },
     "Payments.Error": {
@@ -8997,6 +9066,12 @@
       ],
       "Your organization name": [
         "Nom de votre organisation"
+      ],
+      "Postal code": [
+        "Code postal"
+      ],
+      "ZIP code": [
+        "Code postal"
       ]
     },
     "Placeholder for contact group name": {
@@ -11216,6 +11291,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Your plan": [
+        "Votre abonnement"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11813,6 +11891,39 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Abonnement ${ upsellPlanTitle }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Numéro d’entreprise australien (ABN)"
+      ],
+      "Business Number": [
+        "Numéro d'entreprise"
+      ],
+      "EIN": [
+        "Numéro d'identification fiscale (EIN)"
+      ],
+      "VAT number": [
+        "Numéro de TVA"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Tous les services ${ protonPlus }.${ br }Un abonnement facile."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "En tant qu'abonné **${ currentPlanTitle }**, vous pouvez débloquer **${ unlockPlanTitle }** et tous les services de première qualité ${ BRAND_NAME } en passant à **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Conserver ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Passez à ${ upsellPlanTitle }"
       ]
     }
   }

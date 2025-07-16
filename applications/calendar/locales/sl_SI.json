@@ -1034,6 +1034,21 @@
       ],
       "years": [
         "leta"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokiranje oglasov, sledilnikov in zlonamerne programske opreme"
+      ],
+      "High speed streaming with VPN": [
+        "Pretočne storitve z visoko hitrostjo z VPN"
+      ],
+      "Select any server": [
+        "Izberi katerikoli strežnik"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
+      "Use your own email domain": [
+        "Uporabite svojo e-poštno domeno"
       ]
     },
     "anniversary_2025: offer": {
@@ -1213,6 +1228,9 @@
     "BF2024: Offers": {
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnovitev po enem mesecu za ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Zaračunano ${ amount } enkrat"
       ]
     },
     "BF2024: Tooltip": {
@@ -1606,6 +1624,9 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra hiter in zaseben VPN"
+      ],
+      "Cancel and downgrade": [
+        "Prekliči vse prenose"
       ]
     },
     "Checkout row": {
@@ -1709,6 +1730,15 @@
       ],
       "Week view": [
         "Tedenski pogled"
+      ],
+      "Next period": [
+        "Naslednje obdobje"
+      ],
+      "Previous period": [
+        "Prejšnje obdobje"
+      ],
+      "Search events": [
+        "Iskanje dogodkov"
       ]
     },
     "Confirm modal title": {
@@ -5902,6 +5932,9 @@
       ],
       "Selected color:": [
         "Izberi barvo:"
+      ],
+      "Optional": [
+        "Neobvezno"
       ]
     },
     "Info calendar search": {
@@ -7728,6 +7761,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Uživate v promocijski ceni na vašem trenutnem paketu. Če boste zmanjšali svoj paket, boste izgubili promocijsko ceno in ta ne bo na voljo, če se poskusite ponovno naročiti."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Zaščitite svojo družino z vsemi premium funkcijami programa ${ plusTitle } za 6 uporabnikov."
       ]
     },
     "new_plans: Subtext": {
@@ -8330,6 +8366,9 @@
       ],
       "Your subscription renews soon": [
         "Vaša naročnina se bo kmalu obnovila"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Zadnja priložnost, da dobite 80 % popusta na prvi mesec ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -8364,6 +8403,9 @@
       ],
       "Storage": [
         "Shramba"
+      ],
+      "Advanced threat protection": [
+        "Napredni program za zaščito računa"
       ]
     },
     "Onboarding": {
@@ -8438,6 +8480,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Do konca preskusnega obdobja boste lahko uporabljali ${ planTitle } brezplačno."
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Vaša polna ${ planTitle } naročnina se začne dne ${ boldEndDate }."
       ]
     },
     "Option": {
@@ -9342,6 +9387,9 @@
     "SmartBanner": {
       "Private, fast, and organized": [
         "Zasebno, hitro in organizirano"
+      ],
+      "Faster on the app": [
+        "Hitrejše v aplikaciji"
       ]
     },
     "specialoffer: Action": {
@@ -9452,6 +9500,12 @@
       ],
       "Upgrade": [
         "Nadgradnja"
+      ],
+      "Browse securely": [
+        "Varno brskajte"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Prijava z ${ BRAND_NAME }."
       ]
     },
     "specialoffer: Offers": {
@@ -9528,6 +9582,12 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "Nadgradite in prihranite več z 2 leti ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Imejte svoja gesla varna in organizirana v več trezorjih"
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Zaščitite svoj račun pred grožnjami s Sentinelom"
       ]
     },
     "specialoffer: Tooltip": {
@@ -11067,6 +11127,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaš krajši naslov je zdaj pripravljen"
+      ],
+      "Your plan": [
+        "Vaš paket"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11733,6 +11796,11 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } paket"
       ]
     }
   }

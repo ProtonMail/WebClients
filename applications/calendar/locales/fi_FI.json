@@ -5905,6 +5905,9 @@
       ],
       "Selected color:": [
         "Valittu väri:"
+      ],
+      "Optional": [
+        "Valinnainen"
       ]
     },
     "Info calendar search": {
@@ -10942,6 +10945,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Your plan": [
+        "Tilauksesi"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11539,6 +11545,11 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } -tilaus"
       ]
     }
   }

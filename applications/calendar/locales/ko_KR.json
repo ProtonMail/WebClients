@@ -895,6 +895,21 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Add Zoom meeting": [
+        "Zoom 미팅 추가"
+      ],
+      "Adding conferencing details": [
+        "화상 회의 상세 정보 추가 중"
+      ],
+      "Cancel trial and pay": [
+        "무료 체험 취소 및 바로 결제"
+      ],
+      "Loading Zoom configuration": [
+        "Zoom 구성 로딩 중"
+      ],
+      "Reconnect to Zoom": [
+        "Zoom에 재연결"
       ]
     },
     "action": {
@@ -1108,6 +1123,12 @@
       ],
       "years": [
         "년"
+      ],
+      "of privacy": [
+        "개인정보 보호에"
+      ],
+      "thanks to you": [
+        "감사드립니다"
       ]
     },
     "anniversary_2025: offer": {
@@ -1117,7 +1138,7 @@
     },
     "anniversary_2025: Offers": {
       "${ n } month": [
-        "${ n }개월"
+        "${ n }/월간"
       ],
       "/ month": [
         "/ 월간"
@@ -1299,6 +1320,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 및 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -3700,6 +3724,33 @@
       ],
       "Your import will not be processed.": [
         "가져오기가 처리되지 않았습니다."
+      ],
+      "Invalid ZIP code": [
+        "유효하지 않은 우편 번호"
+      ],
+      "Please enter a valid postal code": [
+        "유효한 우편 번호를 입력해 주세요"
+      ],
+      "Please enter a valid ZIP code": [
+        "유효한 우편 번호를 입력해 주세요."
+      ],
+      "Please enter postal code": [
+        "우편 번호를 입력해 주세요"
+      ],
+      "Please enter ZIP code": [
+        "우편 번호를 입력해 주세요"
+      ],
+      "Please select billing country": [
+        "결제 청구 국가를 선택해 주세요"
+      ],
+      "Please select billing state": [
+        "결제 청구 지역을 선택해 주세요"
+      ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Zoom에 재연결되었습니다. 이제 이벤트를 저장할 수 있습니다."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Zoom 연결이 만료되었습니다. 계속하려면 재연결하십시오."
       ]
     },
     "Error accepting calendar invitation": {
@@ -5931,6 +5982,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ plan } 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 사용자의 계정에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 혜택은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
       ]
     },
     "info": {
@@ -5939,6 +5993,9 @@
       ],
       "Selected color:": [
         "선택한 색상:"
+      ],
+      "Optional": [
+        "선택 사항"
       ]
     },
     "Info calendar search": {
@@ -6580,6 +6637,9 @@
     "Label, credit card": {
       "ZIP code": [
         "우편번호"
+      ],
+      "Postal code": [
+        "우편 번호"
       ]
     },
     "Label/folder modal": {
@@ -7690,6 +7750,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "6명의 구성원을 위한 ${ plusTitle }의 모든 프리미엄 기능으로 가족을 보호하세요."
       ]
     },
     "new_plans: Subtext": {
@@ -7715,6 +7778,9 @@
       ],
       "Switch plans?": [
         "요금제를 변경할까요?"
+      ],
+      "Review subscription": [
+        "구독 검토"
       ]
     },
     "new_plans: tooltip": {
@@ -8232,6 +8298,9 @@
       ],
       "Your subscription renews soon": [
         "구독이 곧 끝나게 됩니다"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "${ plan }의 첫 달 80% 할인을 받을 수 있는 마지막 기회입니다."
       ]
     },
     "Offer fearue": {
@@ -8450,7 +8519,7 @@
     },
     "pass_signup_2023: Info": {
       "Access to all ${ BRAND_NAME } apps and premium features": [
-        "모든${ BRAND_NAME }앱과 프리미엄 기능에 접근하세요"
+        "모든 ${ BRAND_NAME }앱과 프리미엄 기능에 접근하세요"
       ],
       "Secure vault sharing": [
         "안전한 금고 공유"
@@ -8628,6 +8697,12 @@
       ],
       "Your payment is still being processed": [
         "회원님의 결제가 아직 처리 중입니다"
+      ],
+      "I'm purchasing as a business": [
+        "사업체 용도로 구매합니다"
+      ],
+      "This number will be shown on all future invoices": [
+        "이 번호는 향후 모든 송장에 표시됩니다."
       ]
     },
     "Payments.Error": {
@@ -8800,6 +8875,12 @@
       ],
       "Your organization name": [
         "조직 이름"
+      ],
+      "Postal code": [
+        "우편 번호"
+      ],
+      "ZIP code": [
+        "우편 번호"
       ]
     },
     "Placeholder for contact group name": {
@@ -10967,6 +11048,9 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Your plan": [
+        "내 플랜"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11518,6 +11602,39 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } 플랜"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "사업자등록번호"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "부가가치세 번호"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "모든 ${ protonPlus } 서비스.${ br }한 번의 쉬운 구독으로."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }** 구독자라면 **${ upsellPlanTitle }**으로 업그레이드하여 **${ unlockPlanTitle }** 및 모든 프리미엄 ${ BRAND_NAME } 서비스를 잠금 해제하실 수 있습니다."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle } 플랜 유지하기"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "${ upsellPlanTitle }(으)로 업그레이드"
       ]
     }
   }
