@@ -173,11 +173,18 @@ export const getAutoCoupon = ({
     planIDs,
     cycle,
     coupon,
+    trial,
 }: {
     planIDs: PlanIDs;
     cycle: CYCLE;
     coupon?: string | null;
+    trial?: boolean;
 }) => {
+    // Don't apply automatic coupons for trials
+    if (trial) {
+        return coupon || undefined;
+    }
+
     if (!coupon && [PLANS.DRIVE_BUSINESS].some((plan) => planIDs?.[plan])) {
         return COUPON_CODES.DRIVEB2BINTRO2024;
     }

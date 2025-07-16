@@ -11,7 +11,7 @@ import InclusiveVatText from '@proton/components/containers/payments/InclusiveVa
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { type PaymentFacade } from '@proton/components/payments/client-extensions';
-import { ADDON_NAMES, type Plan } from '@proton/payments';
+import { ADDON_NAMES, type Plan, TRIAL_DURATION_DAYS } from '@proton/payments';
 import type { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { SubscriptionMode } from '@proton/shared/lib/interfaces';
@@ -25,6 +25,30 @@ import type { getPlanInformation } from './getPlanInformation';
 import type { VPNSignupModel } from './interface';
 import getAddonsPricing from './planCustomizer/getAddonsPricing';
 
+const TrialSummary = ({ loading, options }: { loading: boolean; options: OptimisticOptions }) => {
+    const loaderNode = <SkeletonLoader width="4em" index={0} />;
+
+    const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
+    const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
+
+    return (
+        <>
+            <div className="mx-3 flex flex-column gap-2">
+                <div className="flex justify-space-between text-bold text-rg">
+                    <span>{c('b2b_trials_2025_Label').t`Amount due after trial`}</span>
+                    <span>
+                        {loading ? (
+                            loaderNode
+                        ) : (
+                            <Price currency={options.currency}>{options.checkResult.BaseRenewAmount ?? 0}</Price>
+                        )}
+                    </span>
+                </div>
+                <div className="text-sm color-weak">{c('b2b_trials_2025_Info').jt`on ${formattedDate}`}</div>
+            </div>
+        </>
+    );
+};
 interface Props {
     model: VPNSignupModel;
     options: OptimisticOptions & { plan: Plan };
@@ -189,7 +213,7 @@ const PaymentSummary = ({
                             });
                         })()}
                     </div>
-                    {!isTrial && <div className="mx-3 border-bottom border-weak" />}
+                    {!isTrial && <hr className="mx-3 my-0 border-bottom border-weak" />}
                 </>
             ) : null}
 
@@ -206,12 +230,12 @@ const PaymentSummary = ({
                 </div>
             )}
 
-            {isB2bPlan && <div className="mx-3 border-bottom border-weak" />}
+            {isB2bPlan && <hr className="mx-3 my-0 border-bottom border-weak" />}
 
             {isB2bPlan && !isTrial && (
                 <>
                     <div className="mx-3">{giftCode}</div>
-                    <div className="mx-3 border-bottom border-weak" />
+                    <hr className="mx-3 my-0 border-bottom border-weak" />
                 </>
             )}
 
@@ -229,8 +253,7 @@ const PaymentSummary = ({
                             loaderNode
                         ) : (
                             <>
-                                <Price currency={options.currency}>{options.checkResult.AmountDue}</Price>
-                                {!isTrial && '*'}
+                                <Price currency={options.currency}>{options.checkResult.AmountDue}</Price>*
                             </>
                         )}
                     </span>
@@ -244,36 +267,7 @@ const PaymentSummary = ({
                     />
                 )}
             </div>
-            {(() => {
-                if (!isTrial) {
-                    return null;
-                }
-                // hardcoded 14 days, for now. Need to get from BE
-                const trialEndDate = addDays(new Date(), 14);
-                const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
-
-                return (
-                    <>
-                        <div className="mx-3 flex flex-column gap-2">
-                            <div className="flex justify-space-between text-bold text-rg">
-                                <span>{c('b2b_trials_2025_Label').t`Amount due after trial`}</span>
-                                <span>
-                                    {loading ? (
-                                        loaderNode
-                                    ) : (
-                                        <Price currency={options.currency}>
-                                            {options.checkResult.BaseRenewAmount ?? 0}
-                                        </Price>
-                                    )}
-                                </span>
-                            </div>
-                            <div className="text-sm color-weak">
-                                {c('b2b_trials_2025_Info').jt`on ${formattedDate}`}
-                            </div>
-                        </div>
-                    </>
-                );
-            })()}
+            {isTrial && <TrialSummary loading={loading} options={options} />}
         </div>
     );
 };

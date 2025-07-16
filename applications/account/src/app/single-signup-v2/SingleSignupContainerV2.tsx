@@ -269,7 +269,8 @@ const SingleSignupContainerV2 = ({
     });
 
     const theme = getPublicTheme(toApp, audience, viewportWidth, signupParameters);
-    const trial = !!(signupParameters.trial && audience === Audience.B2B);
+    // true iff trial detected through signupParameters (thus the signup prefix)
+    const signupTrial = !!(signupParameters.trial && audience === Audience.B2B);
 
     const [model, setModel] = useState<SignupModelV2>(() => {
         // Add free plan
@@ -632,7 +633,7 @@ const SingleSignupContainerV2 = ({
                             State: paymentMethodStatus.State,
                             ZipCode: paymentMethodStatus.ZipCode,
                         },
-                        trial,
+                        trial: signupTrial,
                     },
                     toApp: product,
                     availableCycles: signupConfiguration.cycles,
@@ -813,7 +814,7 @@ const SingleSignupContainerV2 = ({
                     planIDs,
                     coupon: signupParameters.coupon,
                     billingAddress: model.subscriptionData.billingAddress,
-                    trial,
+                    trial: signupTrial,
                 },
                 planParameters: model.planParameters!,
                 signupParameters,
@@ -929,7 +930,7 @@ const SingleSignupContainerV2 = ({
                     planIDs,
                     coupon: model.subscriptionData.checkResult?.Coupon?.Code,
                     billingAddress: model.subscriptionData.billingAddress,
-                    trial,
+                    trial: signupTrial,
                 },
                 toApp: product,
                 availableCycles: signupConfiguration.cycles,
@@ -1500,7 +1501,7 @@ const SingleSignupContainerV2 = ({
                             }
                         }}
                         mode={signupParameters.mode}
-                        trial={trial}
+                        signupTrial={signupTrial}
                     />
                 )}
                 {model.step === Steps.Loading && (

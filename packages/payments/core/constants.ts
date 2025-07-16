@@ -246,7 +246,10 @@ export const MAX_IPS_ADDON = 100;
 export const MIN_MEMBER_PASS_B2B_ADDON = 3;
 export const MAX_MEMBER_PASS_PRO_ADDON = 30;
 
-// Trial limits, currently only used for B2B Trials
+// B2B Trial constants
+export const TRIAL_DURATION_DAYS = 14; // ideally we would use the BE as the source of truth, but we hardcoded it here and there
+
+// B2B Trial limits, currently only used for B2B Trials
 // Hardcoded FE side. Protections will (as of 2025-06-18) be added on the BE side too.
 export const TRIAL_MAX_USERS = 10;
 export const TRIAL_MAX_SCRIBE_SEATS = 10;
