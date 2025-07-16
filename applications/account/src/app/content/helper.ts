@@ -115,6 +115,9 @@ export const getSignupUrl = (
     return `${localePath}${path}${stringifySearchParams(params, '?')}`;
 };
 
+/**
+ * Note: These are paths, and may contain query strings.
+ */
 export interface Paths {
     login: string;
     signup: string;

@@ -164,7 +164,7 @@ export const getLoginResult = async ({
         };
         return {
             type: 'app-switcher',
-            location: { pathname: paths.appSwitcher },
+            location: paths.appSwitcher,
             payload: appSwitcherState,
         };
     }
@@ -178,7 +178,7 @@ export const getLoginResult = async ({
     ) {
         return {
             type: 'reauth',
-            location: { pathname: paths.reauth },
+            location: paths.reauth,
             payload: getReAuthState(forkParameters, session),
         };
     }
