@@ -1600,6 +1600,15 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Cancel trial and pay": [
+        "Deneme süresini iptal et ve öde"
+      ],
+      "Deleting folder": [
+        "Klasör siliniyor"
+      ],
+      "Remove from list": [
+        "Listeden kaldır"
       ]
     },
     "action": {
@@ -1959,6 +1968,9 @@
     "b2b_trials_Action": {
       "Keep subscription": [
         "Aboneliği sürdür"
+      ],
+      "Cancel subscription": [
+        "Aboneliği iptal et"
       ]
     },
     "bf2023: Deal details": {
@@ -2069,6 +2081,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } ve ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -4640,7 +4655,7 @@
         "Ödeme işlemi desteklenmiyor"
       ],
       "Permissions request failed.": [
-        "İzin isteği başarısız oldu."
+        "İzin isteği yapılamadı."
       ],
       "Please activate your search again": [
         "Lütfen arama özelliğini yeniden açın"
@@ -4904,6 +4919,30 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Invalid ZIP code": [
+        "Posta kodu geçersiz"
+      ],
+      "No address with sending permissions": [
+        "Gönderme izni olan bir e-posta adresi yok"
+      ],
+      "Please enter a valid postal code": [
+        "Lütfen geçerli bir posta kodu yazın"
+      ],
+      "Please enter a valid ZIP code": [
+        "Lütfen geçerli bir posta kodu yazın"
+      ],
+      "Please enter postal code": [
+        "Lütfen posta kodunu yazın"
+      ],
+      "Please enter ZIP code": [
+        "Lütfen posta kodunu yazın"
+      ],
+      "Please select billing country": [
+        "Lütfen faturanın kesileceği ülkeyi seçin"
+      ],
+      "Please select billing state": [
+        "Lütfen faturanın durumunu seçin"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6304,7 +6343,7 @@
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "${ PASS_SHORT_APP_NAME } Lifetime forsatının yenileme ücreti yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir. ${ planTitle } aboneliğinizin yenileme \nücreti ve tarihi değişmeden kalır."
+        "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir. ${ planTitle } aboneliğinizin yenileme \nücreti ve tarihi değişmeden kalır."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
@@ -6368,8 +6407,8 @@
         "${ trackersCount } izleyici engellendi"
       ],
       "${ unreadCount } newsletter": [
-        "${ unreadCount } bülten",
-        "${ unreadCount } bülten"
+        "${ unreadCount } duyuru",
+        "${ unreadCount } duyuru"
       ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } zamanlanmış ileti",
@@ -7328,7 +7367,7 @@
         "Yeni"
       ],
       "newsletter": [
-        "bülten"
+        "duyuru"
       ],
       "No action selected": [
         "Herhangi bir işlem seçilmemiş"
@@ -8562,6 +8601,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusuna yalnızca birkaç tık uzaktasınız."
+      ],
+      "Dedicated VPN servers": [
+        "Size ayrılmış VPN sunucuları"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Kuruluşunuza ayrılmış VPN sunucusu sayısı"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Bu işlem, duyuru kaydını bu listeden kaldırır. Sizi duyuru aboneliğinden çıkarmaz. Yeni iletiler alırsanız kayıt yeniden görünür."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Kullanabilmek için ${ plan } tarifesine yükseltin"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "${ boldPlanTitle } özelliklerine erişiminizi de kaybedeceksiniz:"
       ]
     },
     "info": {
@@ -9478,6 +9535,42 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "${ newFolderName } klasörü oluşturulamadı"
+      ],
+      "Forums": [
+        "Forumlar"
+      ],
+      "Marked as read": [
+        "Okunmuş olarak işaretlendi"
+      ],
+      "Moved to Archive": [
+        "Arşive taşındı"
+      ],
+      "Moved to Trash": [
+        "Çöpe atıldı"
+      ],
+      "Newsletter entry deleted": [
+        "Duyuru kaydı silindi"
+      ],
+      "Primary": [
+        "Birincil saat dilimi"
+      ],
+      "Promotions": [
+        "Kazançlar"
+      ],
+      "Social": [
+        "Sosyal ağ"
+      ],
+      "Transactions": [
+        "Hesap işlemleri"
+      ],
+      "Unknown": [
+        "Bilinmiyor"
+      ],
+      "Updates": [
+        "Güncellemeler"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9520,6 +9613,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Posta kodu"
+      ],
+      "Postal code": [
         "Posta kodu"
       ]
     },
@@ -10763,6 +10859,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Ailenizi 6 kullanıcıya kadar tüm ücretli ${ plusTitle } özellikleriyle koruyun."
       ]
     },
     "new_plans: Subtext": {
@@ -10788,6 +10887,9 @@
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
+      ],
+      "Review subscription": [
+        "Aboneliği gözden geçirin"
       ]
     },
     "new_plans: tooltip": {
@@ -11203,6 +11305,9 @@
       ],
       "Your subscription renews soon": [
         "Aboneliğiniz yakında yenilenecek"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "${ plan } aboneliğinin ilk ayında % 80 indirim kazanmak için son fırsat."
       ]
     },
     "Offer feature": {
@@ -11229,6 +11334,18 @@
       ],
       "Storage": [
         "Depolama alanı"
+      ],
+      "500 GB secure storage": [
+        "500 GB güvenli depolama alanı"
+      ],
+      "Advanced threat protection": [
+        "Gelişmiş tehdit koruması"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110 üzerinde ülkede Ultra hızlı VPN sunucuları"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Kimliğinizi korumak için sınırsız sayıda takma ad"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11362,6 +11479,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Etki alanınız ve aboneliğiniz kullanılmaya hazır."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } ile uygulamalarımızda asla sponsor reklamları görmeyeceksiniz."
       ]
     },
     "Onboarding Proton": {
@@ -11700,6 +11820,15 @@
       ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
+      ],
+      "I'm purchasing as a business": [
+        "Kurumsal olarak satın alıyorum"
+      ],
+      "This number will be shown on all future invoices": [
+        "Bu numara, sonraki tüm faturalarda görüntülenecek"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ]
     },
     "Payments.Error": {
@@ -11909,6 +12038,12 @@
       ],
       "Your organization name": [
         "Kuruluşunuzun adı"
+      ],
+      "Postal code": [
+        "Posta kodu"
+      ],
+      "ZIP code": [
+        "Posta kodu"
       ]
     },
     "Placeholder for contact group name": {
@@ -12610,13 +12745,31 @@
         "Abonelik tarifelerini görüntüle"
       ],
       "Increase your storage": [
-        "Depolama alanınızı yükseltin"
+        "Depolama alanınızı artırın"
       ],
       "Upgrade": [
         "Yükselt"
       ],
       "Upgrade for ${ pricingTitle }": [
         "${ pricingTitle } karşılığında yükseltin"
+      ],
+      "Browse securely": [
+        "Güvenli bir şekilde gezinin"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME } ile daha fazlasını yapın"
+      ],
+      "Get unlimited aliases": [
+        "Sınırsız sayıda takma ad edinin"
+      ],
+      "Guard against threats": [
+        "Tehditlere karşı koruma"
+      ],
+      "Keep passwords safe": [
+        "Parolaları güvende tutun"
+      ],
+      "Unblock streaming content": [
+        "Yayın akışı içeriğinin engellemesini kaldırın"
       ]
     },
     "specialoffer: Offers": {
@@ -12691,6 +12844,27 @@
     "specialoffer: Title": {
       "Upgrade and save more with 2 years of ${ planName }": [
         "2 yıllık ${ planName } tarifesine yükselterek daha fazla indirim kazanın"
+      ],
+      "Access content on streaming services worldwide": [
+        "Tüm dünyadaki yayın akışı hizmetlerinin içeriklerine erişim"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Tüm dosyalarınızı ve fotoğraflarınızı güvenle depolamak için 500 GB edinin"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110 üzerinde ülkede bulunan ultra hızlı VPN sunucularına erişin"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Tümünün bulunduğu tek bir tarife alın. ${ BRAND_NAME } Unlimited edinin"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Kimliğinizi korumak ve istenmeyen e-postaları azaltmak için sınırsız sayıda takma ad edinin"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Parolalarınızı birden fazla kasada güvende ve düzenli tutun "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinel ile hesabınızı tehditlere karşı koruyun"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13228,7 +13402,7 @@
         "${ planName } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde, ${ BRAND_NAME } Free tarifesine düşürülecek."
       ],
       "Yearly free storage bonuses": [
-        "Yıllık ücretsiz depolama alanı hediyeleri"
+        "Yıllık ücretsiz depolama alanı ödülleri"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "${ planName } aboneliğinizin ${ expiryDate } süresi daha var. Kalan süreye ait kredileri ${ BRAND_NAME } hesabınıza ekleyeceğiz. İptal etmeden önce ücretsiz tarifenin sınırlarını aşmadığınızdan emin olun. ${ learnMoreLink }"
@@ -14756,6 +14930,18 @@
       ],
       "Your subscriptions in one place": [
         "Abonelikleriniz tek bir yerde"
+      ],
+      "No active newsletters": [
+        "Etkin bir duyuru yok"
+      ],
+      "No newsletters found": [
+        "Herhangi bir duyuru bulunamadı"
+      ],
+      "Remove from list?": [
+        "Listeden kaldırılsın mı?"
+      ],
+      "Your plan": [
+        "Tarifeniz"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14868,6 +15054,9 @@
     "Unlimited offer": {
       "/month": [
         "/ay"
+      ],
+      "Only": [
+        "Yalnızca"
       ]
     },
     "unprivatization": {
@@ -15343,6 +15532,68 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Ücretsiz deneme süreniz ${ timeRemaining } sonra bitecek"
+      ]
+    },
+    "Labels": {
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Aboneliğinden ayrıldığınız duyurular veya e-posta listeleri burada görüntülenir."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Etkin bir duyurunuz veya e-posta listesi aboneliğiniz yok."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Bir duyuru veya e-posta listesi aboneliğiniz yok."
+      ]
+    },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Şifrelenmiş parola yöneticisi"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } tarifesi"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      ],
+      "Bank transfer - ${ details }": [
+        "Banka havalesi - ${ details }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "İş numarası"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "KDV numarası"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Tüm ${ protonPlus } hizmetleri.${ br }Tek bir kolay abonelik."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }** abonesi olarak, **${ upsellPlanTitle }** tarifesine yükseltebilir **${ unlockPlanTitle }** ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle } tarifesinde kal"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "${ upsellPlanTitle } tarifesine yükselt"
       ]
     }
   }

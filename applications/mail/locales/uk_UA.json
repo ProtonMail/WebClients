@@ -4547,6 +4547,27 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "За вашим пошуковим запитом знайдено надто багато результатів. Обмежте пошуковий запит і спробуйте знову."
+      ],
+      "Invalid ZIP code": [
+        "Неправильний поштовий індекс"
+      ],
+      "Please enter a valid postal code": [
+        "Будь ласка, введіть коректний поштовий індекс"
+      ],
+      "Please enter a valid ZIP code": [
+        "Будь ласка, введіть дійсний поштовий індекс"
+      ],
+      "Please enter postal code": [
+        "Будь ласка, введіть поштовий індекс"
+      ],
+      "Please enter ZIP code": [
+        "Введіть дійсний поштовий індекс"
+      ],
+      "Please select billing country": [
+        "Будь ласка, виберіть країну для виставлення рахунку"
+      ],
+      "Please select billing state": [
+        "Будь ласка, виберіть штат для виставлення рахунку"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8009,6 +8030,18 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "VPN шифрує ваше з’єднання та приховує вашу IP-адресу, що значно ускладнює відстеження або моніторинг вашої активності в Інтернеті."
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "Відкрийте для себе нові функції, які стали доступними, та почніть користуватися ними просто зараз!"
+      ],
+      "In restrictive countries": [
+        "У країнах із обмеженнями"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Ваша IP-адреса є видимою, і її можуть використати для відстеження вашої онлайн-активності."
       ]
     },
     "info": {
@@ -8854,6 +8887,12 @@
       ],
       "Your location": [
         "Ваше розташування:"
+      ],
+      "Primary": [
+        "Основний"
+      ],
+      "Unknown": [
+        "Невідомий"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8896,6 +8935,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Поштовий індекс"
+      ],
+      "Postal code": [
         "Поштовий індекс"
       ]
     },
@@ -10899,6 +10941,12 @@
       ],
       "Timeout exceeded": [
         "Перевищено час очікування"
+      ],
+      "I'm purchasing as a business": [
+        "Я купую це, як бізнес"
+      ],
+      "This number will be shown on all future invoices": [
+        "Цей номер відображатиметься в усіх майбутніх рахунках"
       ]
     },
     "Payments.Error": {
@@ -11099,6 +11147,12 @@
       ],
       "Type text or keyword": [
         "Введіть текст чи ключове слово"
+      ],
+      "Postal code": [
+        "Поштовий індекс"
+      ],
+      "ZIP code": [
+        "Поштовий індекс"
       ]
     },
     "Placeholder for contact group name": {
@@ -13863,6 +13917,12 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "VPN explained": [
+        "VPN — простими словами"
+      ],
+      "Your plan": [
+        "Ваш тарифний план"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14530,6 +14590,25 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Тарифний план ${ upsellPlanTitle }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Бізнес-номер"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Номер платника ПДВ"
       ]
     }
   }

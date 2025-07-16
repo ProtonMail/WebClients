@@ -1595,6 +1595,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Remove from list": [
+        "リストから削除"
       ]
     },
     "action": {
@@ -8409,6 +8412,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "このリストからニュースレターのエントリを削除します。ニュースレターの登録を解除することはありません。新規メッセージを受信すると、再び表示されます。"
       ]
     },
     "info": {
@@ -9051,7 +9057,7 @@
         "としてマークする"
       ],
       "Marked as read": [
-        "既読にされました"
+        "既読にしました"
       ],
       "Message:": [
         "メッセージ:"
@@ -9072,13 +9078,13 @@
         "受信トレイに移動"
       ],
       "Moved to ${ labelName }": [
-        "${ labelName }に移動されました"
+        "${ labelName }に移動しました"
       ],
       "Moved to Archive": [
-        "アーカイブに移動されました"
+        "アーカイブに移動しました"
       ],
       "Moved to Trash": [
-        "ゴミ箱に移動されました"
+        "ごみ箱に移動しました"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "少なくとも ${ MIN_PASSWORD_LENGTH } 文字以上でなければなりません"
@@ -9328,6 +9334,15 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "Newsletter entry deleted": [
+        "ニュースレターの登録が削除されました"
+      ],
+      "Primary": [
+        "プライマリー"
+      ],
+      "Unknown": [
+        "不明"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14561,6 +14576,12 @@
       ],
       "Your subscriptions in one place": [
         "サブスクリプションを一元管理"
+      ],
+      "Remove from list?": [
+        "リストから削除しますか？"
+      ],
+      "Your plan": [
+        "現在のプラン"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15104,6 +15125,11 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } プラン"
       ]
     }
   }

@@ -9353,6 +9353,12 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ],
+      "Primary": [
+        "ძირითადი"
+      ],
+      "Unknown": [
+        "უცნობი"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14647,6 +14653,9 @@
       ],
       "Your subscriptions in one place": [
         "თქვენი გამოწერები ერთ ადგილას"
+      ],
+      "Your plan": [
+        "თქვენი გეგმა"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15237,6 +15246,11 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "გეგმა ${ upsellPlanTitle }"
       ]
     }
   }
