@@ -14,7 +14,7 @@ export const useCopyToClipboard = () => {
             createNotification({ type: 'success', text: c('Info').t`Copied to clipboard`, showCloseButton: false });
         } catch (err) {
             createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
-            logger.error(`[Popup] unable to copy to clipboard`);
+            logger.error(`[Popup] unable to copy to clipboard`, err);
         }
     };
 };
