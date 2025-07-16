@@ -9304,6 +9304,12 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "Primary": [
+        "Ensisijainen"
+      ],
+      "Unknown": [
+        "Tuntematon"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14516,6 +14522,9 @@
       ],
       "Your subscriptions in one place": [
         "Tilauksesi yhdessä paikassa"
+      ],
+      "Your plan": [
+        "Tilauksesi"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15106,6 +15115,11 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } -tilaus"
       ]
     }
   }

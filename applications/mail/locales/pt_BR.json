@@ -1606,6 +1606,9 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Cancel trial and pay": [
+        "Cancelar avaliação e pagar"
       ]
     },
     "action": {
@@ -2083,6 +2086,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } e ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -4921,6 +4927,27 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "Invalid ZIP code": [
+        "O código não é valido."
+      ],
+      "Please enter a valid postal code": [
+        "Insira um código postal válido"
+      ],
+      "Please enter a valid ZIP code": [
+        "Insira um CEP válido"
+      ],
+      "Please enter postal code": [
+        "Insira código postal"
+      ],
+      "Please enter ZIP code": [
+        "Insira o CEP"
+      ],
+      "Please select billing country": [
+        "Selecione o país de cobrança"
+      ],
+      "Please select billing state": [
+        "Selecione estado de cobrança"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8591,6 +8618,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Faça upgrade para ${ plan } para desbloquear"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Sua assinatura do ${ plan } será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9522,6 +9555,30 @@
       ],
       "Your password (admin)": [
         "Sua senha (admin)"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Erro ao criar a pasta ${ newFolderName }"
+      ],
+      "Forums": [
+        "Fóruns"
+      ],
+      "Primary": [
+        "Primário"
+      ],
+      "Promotions": [
+        "Promoções"
+      ],
+      "Social": [
+        "Mídias sociais"
+      ],
+      "Transactions": [
+        "Transações"
+      ],
+      "Unknown": [
+        "Desconhecido"
+      ],
+      "Updates": [
+        "Atualizações"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9565,6 +9622,9 @@
     "Label, credit card": {
       "ZIP code": [
         "CEP"
+      ],
+      "Postal code": [
+        "Código postal"
       ]
     },
     "Label/folder modal": {
@@ -10818,6 +10878,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Proteja sua família com todos os recursos premium do ${ plusTitle } para 6 usuários."
       ]
     },
     "new_plans: Subtext": {
@@ -10843,6 +10906,9 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ],
+      "Review subscription": [
+        "Revisar assinatura"
       ]
     },
     "new_plans: Title": {
@@ -11263,6 +11329,9 @@
       ],
       "Your subscription renews soon": [
         "Sua assinatura renovará em breve"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Última oportunidade de obter 80% de desconto no primeiro mês do ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -11795,6 +11864,12 @@
       ],
       "Your payment is still being processed": [
         "Seu pagamento ainda está sendo processado"
+      ],
+      "I'm purchasing as a business": [
+        "Estou comprando como empresa"
+      ],
+      "This number will be shown on all future invoices": [
+        "Este número será mostrado em todas as faturas futuras"
       ]
     },
     "Payments.Error": {
@@ -12012,6 +12087,12 @@
       ],
       "Your organization name": [
         "Seu nome da organização"
+      ],
+      "Postal code": [
+        "Código postal"
+      ],
+      "ZIP code": [
+        "CEP"
       ]
     },
     "Placeholder for contact group name": {
@@ -14907,6 +14988,9 @@
       ],
       "Your subscriptions in one place": [
         "Suas assinaturas em um só lugar"
+      ],
+      "Your plan": [
+        "O seu plano"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15497,6 +15581,39 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Plano ${ upsellPlanTitle }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Número de empresa australiano (ABN)"
+      ],
+      "Business Number": [
+        "Número comercial"
+      ],
+      "EIN": [
+        "Número de identificação tributária (EIN)"
+      ],
+      "VAT number": [
+        "Número de IVA"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Todos os serviços da ${ protonPlus }.${ br }assinatura facilitada."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Como assinante do **${ currentPlanTitle }**, você pode desbloquear **${ unlockPlanTitle }** e todos os serviços premium da ${ BRAND_NAME } fazendo upgrade para o **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Continuar no ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Faça upgrade para ${ upsellPlanTitle }"
       ]
     }
   }

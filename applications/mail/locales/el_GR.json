@@ -1603,6 +1603,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Cancel trial and pay": [
+        "Ακύρωση δοκιμής και πληρωμή"
       ]
     },
     "action": {
@@ -2054,6 +2057,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } και ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -4884,6 +4890,27 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "Invalid ZIP code": [
+        "Μη έγκυρος Ταχυδρομικός Κωδικός"
+      ],
+      "Please enter a valid postal code": [
+        "Παρακαλούμε εισάγετε έναν έγκυρο ταχυδρομικό κώδικα"
+      ],
+      "Please enter a valid ZIP code": [
+        "Παρακαλούμε εισάγετε έναν έγκυρο Ταχυδρομικό Κώδικα."
+      ],
+      "Please enter postal code": [
+        "Παρακαλώ εισάγετε τον ταχυδρομικό κώδικα"
+      ],
+      "Please enter ZIP code": [
+        "Παρακαλώ εισάγετε τον ταχυδρομικό κώδικα"
+      ],
+      "Please select billing country": [
+        "Παρακαλούμε επιλέξτε χώρα χρέωσης"
+      ],
+      "Please select billing state": [
+        "Παρακαλούμε επιλέξτε τον νομό χρέωσης"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8554,6 +8581,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Αναβάθμιση σε ${ plan } για ξεκλείδωμα"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Η συνδρομή σας ${ plan } θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9482,6 +9515,30 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Αποτυχία δημιουργίας φακέλου ${ newFolderName }"
+      ],
+      "Forums": [
+        "Φόρουμ"
+      ],
+      "Primary": [
+        "Κύριο"
+      ],
+      "Promotions": [
+        "Προωθήσεις"
+      ],
+      "Social": [
+        "Κοινωνικά"
+      ],
+      "Transactions": [
+        "Συναλλαγές"
+      ],
+      "Unknown": [
+        "Άγνωστο"
+      ],
+      "Updates": [
+        "Ενημερώσεις"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9524,6 +9581,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Ταχυδρομικός κώδικας"
+      ],
+      "Postal code": [
         "Ταχυδρομικός κώδικας"
       ]
     },
@@ -10778,6 +10838,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Προστατέψτε την οικογένειά σας με όλες τις premium δυνατότητες του ${ plusTitle } για 6 χρήστες."
       ]
     },
     "new_plans: Subtext": {
@@ -10803,6 +10866,9 @@
       ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
+      ],
+      "Review subscription": [
+        "Επισκόπηση συνδρομής"
       ]
     },
     "new_plans: tooltip": {
@@ -11218,6 +11284,9 @@
       ],
       "Your subscription renews soon": [
         "Η συνδρομή σας ανανεωθεί σύντομα"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Τελευταία ευκαιρία να λάβετε έκπτωση 80% στον πρώτο μήνα του ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -11738,6 +11807,12 @@
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
+      ],
+      "I'm purchasing as a business": [
+        "Αγοράζω ως επιχείρηση"
+      ],
+      "This number will be shown on all future invoices": [
+        "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ]
     },
     "Payments.Error": {
@@ -11955,6 +12030,12 @@
       ],
       "Your organization name": [
         "Το όνομα του οργανισμού σας"
+      ],
+      "Postal code": [
+        "Ταχυδρομικός κώδικας"
+      ],
+      "ZIP code": [
+        "Ταχυδρομικός κώδικας"
       ]
     },
     "Placeholder for contact group name": {
@@ -14845,6 +14926,9 @@
       ],
       "Your subscriptions in one place": [
         "Οι συνδρομές σας σε ένα μέρος"
+      ],
+      "Your plan": [
+        "Το πακέτο σας"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15435,6 +15519,36 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } πλάνο"
+      ]
+    },
+    "Payments.VAT number name": {
+      "Business Number": [
+        "Αριθμός Επιχείρησης"
+      ],
+      "EIN": [
+        "ΑΦΜ"
+      ],
+      "VAT number": [
+        "Αριθμός ΑΦΜ"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Όλες οι ${ protonPlus } λειτουργίες.${ br }Μία εύκολη συνδρομή."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ως συνδρομητής **${ currentPlanTitle }**, μπορείτε να ξεκλειδώσετε **${ unlockPlanTitle }** και όλες τις premium υπηρεσίες ${ BRAND_NAME } αναβαθμίζοντας σε **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Παραμονή στο ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Αναβάθμιση σε ${ upsellPlanTitle }"
       ]
     }
   }

@@ -1603,6 +1603,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Cancel trial and pay": [
+        "Avbryt prøveperioden og betal"
       ]
     },
     "action": {
@@ -2054,6 +2057,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -4884,6 +4890,27 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Invalid ZIP code": [
+        "Ugyldig postnummer"
+      ],
+      "Please enter a valid postal code": [
+        "Skriv inn et gyldig postnummer"
+      ],
+      "Please enter a valid ZIP code": [
+        "Skriv inn et gyldig postnummer"
+      ],
+      "Please enter postal code": [
+        "Skriv inn postnummer"
+      ],
+      "Please enter ZIP code": [
+        "Skriv inn postnummer"
+      ],
+      "Please select billing country": [
+        "Velg faktureringsland"
+      ],
+      "Please select billing state": [
+        "Velg faktureringsstat"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8554,6 +8581,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Oppgrader til ${ plan } for å låse opp"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ditt ${ plan }-abonnement vil bli erstattet med ${ PASS_SHORT_APP_NAME } Lifetime. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } Lifetime har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9482,6 +9515,30 @@
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Klarte ikke å opprette mappe ${ newFolderName }"
+      ],
+      "Forums": [
+        "Forum"
+      ],
+      "Primary": [
+        "Primær"
+      ],
+      "Promotions": [
+        "Kampanjer"
+      ],
+      "Social": [
+        "Sosiale medier"
+      ],
+      "Transactions": [
+        "Transaksjoner"
+      ],
+      "Unknown": [
+        "Ukjent"
+      ],
+      "Updates": [
+        "Oppdateringer"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9524,6 +9581,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Postnummer"
+      ],
+      "Postal code": [
         "Postnummer"
       ]
     },
@@ -10778,6 +10838,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Beskytt familien din med alle premiumfunksjonene til ${ plusTitle } for 6 brukere."
       ]
     },
     "new_plans: Subtext": {
@@ -10803,6 +10866,9 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
+      ],
+      "Review subscription": [
+        "Se gjennom abonnementet"
       ]
     },
     "new_plans: tooltip": {
@@ -11218,6 +11284,9 @@
       ],
       "Your subscription renews soon": [
         "Abonnementet ditt fornyes snart"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -11738,6 +11807,12 @@
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
+      ],
+      "I'm purchasing as a business": [
+        "Jeg kjøper som en bedrift."
+      ],
+      "This number will be shown on all future invoices": [
+        "Dette nummeret vil bli vist på alle fremtidige fakturaer"
       ]
     },
     "Payments.Error": {
@@ -11955,6 +12030,12 @@
       ],
       "Your organization name": [
         "Organisasjonsnavnet ditt"
+      ],
+      "Postal code": [
+        "Postnummer"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Placeholder for contact group name": {
@@ -14845,6 +14926,9 @@
       ],
       "Your subscriptions in one place": [
         "Dine abonnementer på ett sted"
+      ],
+      "Your plan": [
+        "Din plan"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15435,6 +15519,39 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } plan"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Businessnummer"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "MVA-nummer"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Alle ${ protonPlus }-tjenester.${ br }Ett enkelt abonnement."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Som abonnent på **${ currentPlanTitle }** kan du låse opp **${ unlockPlanTitle }** og alle ${ BRAND_NAME }-premiumtjenester ved å oppgradere til **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Behold ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Oppgrader til ${ upsellPlanTitle }"
       ]
     }
   }

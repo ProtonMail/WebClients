@@ -1567,6 +1567,21 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Deleting folder": [
+        "Sletter mappe"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "Remove from list": [
+        "Fjern fra listen"
+      ],
+      "Use authentication code": [
+        "Brug godkendelseskode"
+      ],
+      "Use recovery code": [
+        "Brug gendannelseskode"
       ]
     },
     "action": {
@@ -1728,6 +1743,15 @@
       ],
       "years": [
         "år"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "Encrypted password manager": [
+        "Krypteret adgangskodehåndtering"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrænsede mapper, etiketter og filtre"
       ]
     },
     "anniversary_2025: Offers": {
@@ -5573,6 +5597,9 @@
       ],
       "Tell us more": [
         "Fortæl os mere"
+      ],
+      "Drawer": [
+        "Sidepanel"
       ]
     },
     "Hint": {
@@ -8247,6 +8274,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
+      "Enter the code from your authenticator app": [
+        "Indtast koden fra din godkendelsesapp"
+      ],
+      "Message view": [
+        "Beskedvisning"
+      ],
+      "Tracking": [
+        "Sporing"
       ]
     },
     "info": {
@@ -9140,6 +9179,18 @@
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
+      ],
+      "Moved to Archive": [
+        "Flyttet til Arkiv"
+      ],
+      "Moved to Trash": [
+        "Flyttet til papirkurven"
+      ],
+      "Primary": [
+        "Primær"
+      ],
+      "Unknown": [
+        "Ukendt"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10698,6 +10749,10 @@
       ],
       "Require 2FA": [
         "Kræve 2FA"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Mulighed for ${ n } brugerdefineret e-mail-domæne",
+        "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
     "Notification": {
@@ -12180,6 +12235,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Opgrader for ${ pricingTitle }"
+      ],
+      "Keep passwords safe": [
+        "Hold adgangskoder sikre"
       ]
     },
     "specialoffer: Offers": {
@@ -12499,6 +12557,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-forbindelse pr. bruger",
         "${ n } VPN-forbindelser pr. bruger"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-forbindelse til ${ n } enhed per bruger",
+        "VPN-forbindelse til ${ n } enheder per bruger"
       ]
     },
     "Subscription change warning": {
@@ -14300,6 +14362,12 @@
       ],
       "Your subscriptions in one place": [
         "Dine abonnementer ét sted"
+      ],
+      "Remove from list?": [
+        "Fjern fra listen?"
+      ],
+      "Your plan": [
+        "Dit abonnement"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14406,6 +14474,9 @@
     "Unlimited offer": {
       "/month": [
         "/måned"
+      ],
+      "Only": [
+        "Kun"
       ]
     },
     "unprivatization": {
@@ -14878,6 +14949,16 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } abonnement"
+      ]
+    },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Opgradér til ${ upsellPlanTitle }"
       ]
     }
   }

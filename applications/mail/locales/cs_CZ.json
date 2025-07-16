@@ -2100,6 +2100,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -4982,6 +4985,27 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
+      ],
+      "Invalid ZIP code": [
+        "Neplatné PSČ"
+      ],
+      "Please enter a valid postal code": [
+        "Zadejte prosím platné poštovní směrovací číslo"
+      ],
+      "Please enter a valid ZIP code": [
+        "Zadejte prosím platné PSČ"
+      ],
+      "Please enter postal code": [
+        "Zadejte prosím poštovní směrovací číslo"
+      ],
+      "Please enter ZIP code": [
+        "Zadejte prosím PSČ"
+      ],
+      "Please select billing country": [
+        "Vyberte prosím zemi platby"
+      ],
+      "Please select billing state": [
+        "Vyberte prosím stát platby"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8863,6 +8887,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Tím odeberete položku e-mailového zpravodaje z tohoto seznamu. Neodhlásí vás z jeho odběru. Znovu se objeví, pokud obdržíte nové zprávy."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Pro odemknutí navyšte tarif na ${ plan }"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Vaše předplatné ${ plan } bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9800,6 +9833,30 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Vytvoření složky ${ newFolderName } selhalo"
+      ],
+      "Forums": [
+        "Fóra"
+      ],
+      "Newsletter entry deleted": [
+        "Položka e-mailového zpravodaje smazána"
+      ],
+      "Primary": [
+        "Primární"
+      ],
+      "Promotions": [
+        "Propagační akce"
+      ],
+      "Transactions": [
+        "Transakce"
+      ],
+      "Unknown": [
+        "Neznámé"
+      ],
+      "Updates": [
+        "Aktualizace"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9843,6 +9900,9 @@
     "Label, credit card": {
       "ZIP code": [
         "PSČ"
+      ],
+      "Postal code": [
+        "Poštovní směrovací číslo"
       ]
     },
     "Label/folder modal": {
@@ -11160,6 +11220,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Chraňte svou rodinu pomocí všech prémiových funkcí ${ plusTitle } pro 6 uživatelů."
       ]
     },
     "new_plans: Subtext": {
@@ -11606,6 +11669,9 @@
       ],
       "Your subscription renews soon": [
         "Vaše předplatné se brzy obnoví"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Poslední šance získat 80 % slevu na první měsíc ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -12136,6 +12202,12 @@
       ],
       "Your payment is still being processed": [
         "Vaše platba se stále zpracovává"
+      ],
+      "I'm purchasing as a business": [
+        "Kupuji jako firma"
+      ],
+      "This number will be shown on all future invoices": [
+        "Toto číslo bude uvedeno na všech budoucích fakturách"
       ]
     },
     "Payments.Error": {
@@ -12353,6 +12425,12 @@
       ],
       "Your organization name": [
         "Název vaší organizace"
+      ],
+      "Postal code": [
+        "Poštovní směrovací číslo"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Placeholder for contact group name": {
@@ -15422,6 +15500,9 @@
       ],
       "Your subscriptions in one place": [
         "Vaše e-mailové odběry na jednom místě"
+      ],
+      "Your plan": [
+        "Váš tarif"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16106,6 +16187,33 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Tarif ${ upsellPlanTitle }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "Business Number": [
+        "Firemní číslo"
+      ],
+      "VAT number": [
+        "DIČ"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Všechny služby ${ protonPlus }.${ br }Jedno jednoduché předplatné."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Jako předplatitel **${ currentPlanTitle }** můžete odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Zůstat na ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Navýšit na ${ upsellPlanTitle }"
       ]
     }
   }
