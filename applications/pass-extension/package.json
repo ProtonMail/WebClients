@@ -5,10 +5,10 @@
     "scripts": {
         "build:extension": "cross-env NODE_ENV=production BUILD_TARGET=${BUILD_TARGET:-chrome} CLEAN_MANIFEST=true sh -c 'yarn clean && yarn run config && yarn build:extension:helper'",
         "build:extension:all": "./tools/build-all.sh",
+        "build:extension:beta": "./tools/build-all.sh --beta",
         "build:extension:dev": "cross-env NODE_ENV=development BUILD_TARGET=${BUILD_TARGET:-chrome} sh -c 'yarn clean && yarn run config:dev && yarn build:extension:helper'",
         "build:extension:ff": "cross-env RELEASE=true NODE_ENV=production BUILD_TARGET=firefox CLEAN_MANIFEST=true sh -c 'cat ./src/app/config.ff-release.ts > ./src/app/config.ts && yarn run build:extension:helper'",
         "build:extension:helper": "NODE_ENV=production webpack --config webpack.config.js && ./tools/release.sh ./dist",
-        "build:extension:qa": "./tools/build-all.sh --qa",
         "check-types": "tsc",
         "check-types:watch": "tsc --watch",
         "clean": "rm -rf ./dist/",
