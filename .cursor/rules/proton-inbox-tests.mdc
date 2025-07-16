@@ -1,0 +1,294 @@
+---
+description: Comprehensive testing guidelines for Proton Mail and Calendar E2E tests
+globs: tests/mail/*,tests/calendar/*
+alwaysApply: false
+---
+
+# Proton Inbox Tests Guidelines
+
+## POM Architecture Rules
+
+### NEVER use test.step() in POM methods
+- Move all test.step() calls to test files
+- POM methods should contain only the action logic
+
+```typescript
+// ❌ BAD: test.step() in POM method
+async getResizableWidth(): Promise<number> {
+    return test.step('Get current panel width', () => {
+        return this.resizableWrapper.evaluate((el) => el.getBoundingClientRect().width);
+    });
+}
+
+// ✅ GOOD: Clean POM method
+async getResizableWidth(): Promise<number> {
+    return this.resizableWrapper.evaluate((el) => el.getBoundingClientRect().width);
+}
+```
+
+### Use readonly class properties for locators
+```typescript
+// ✅ GOOD: Readonly properties with semantic selectors
+readonly resizableWrapper = this.page.getByTestId('resizable-wrapper');
+readonly resizeHandle = this.page.getByRole('button', { name: 'Resize panel' });
+
+// ❌ BAD: Generic locators in methods
+const resizableWrapper = this.page.locator('[data-testid="resizable-wrapper"]');
+```
+
+### Remove unused methods and use descriptive naming
+- Only keep methods that are actually referenced
+- Use clear, descriptive method names that explain the action
+- Example: `expandPanelByPixelsAndReturnWidth()` instead of `expandPanel()`
+
+## Wait Strategy Rules
+
+### NEVER use waitForTimeout() - prefer UI state and if unavailable use expect().toPass() 
+```typescript
+// ❌ BAD: Arbitrary timeout
+await this.page.waitForTimeout(300);
+
+// ✅ GOOD: Wait for state stability
+await inboxPage.hasMounted() // use some UI state like this or
+await inboxPage.conversationsListView.waitForListToBeLoaded(); // look for specific element to be loaded
+```
+
+### NEVER use waitForLoadState('networkidle') - use specific mounting methods
+```typescript
+// ❌ BAD: Generic network waiting
+await this.page.waitForLoadState('networkidle');
+
+// ✅ GOOD: Specific page mounting
+const inboxPage = new InboxPage(this.page);
+await inboxPage.hasMounted();
+```
+
+### Use existing wait utilities
+- Use `waitForListToBeLoaded()` instead of custom implementations
+- Use `inboxPage.hasMounted()` for page readiness
+- Use `expect().toPass()` for state stability checks
+
+## Timeout Management
+
+### Import timeout constants from helpers
+```typescript
+// ✅ GOOD: Import semantic timeouts
+import { MediumTimeouts, ShortTimeouts } from 'tests/mail/support/helpers';
+
+await expect(element).toBeVisible({ timeout: MediumTimeouts.S });
+
+// ❌ BAD: Hardcoded timeout values
+await expect(element).toBeVisible({ timeout: 10000 });
+```
+
+## User Setup Patterns
+
+### Use direct userBuilder commands for clarity
+```typescript
+// ✅ GOOD: Clear and explicit
+userBuilder.setFlag('Welcomed', true);
+userBuilder.setSubscription({ bundle2022: 1 });
+userBuilder.mailbox.setViewLayout('Column');
+
+// ❌ BAD: Helper method obscures what's happening
+LayoutTestHelpers.createColumnLayoutUser(userBuilder);
+```
+
+### Use dynamic user data generation
+```typescript
+// ✅ GOOD: Dynamic user creation
+const userData = generateUserData();
+userBuilder.setUserName(userData.address);
+
+// ✅ GOOD: Dynamic email generation
+from: chance.email()
+
+// ❌ BAD: Hardcoded user names
+const userName = 'resizeTestUser';
+```
+
+### Move variable declarations inside fixtures
+```typescript
+// ✅ GOOD: Variables inside fixtures
+const test = mailtest.extend<{
+    user: QuarkUser;
+    inboxPage: InboxPage;
+}>({
+    user: async ({ testFolders, quark }, use, testInfo) => {
+        const userData = generateUserData();
+        // ... user setup
+    }
+});
+
+// ❌ BAD: Global variable declarations
+const userName = 'testUser';
+const userEmail = 'test@example.com';
+```
+
+## Resize Testing (Mail-Specific)
+
+### CRITICAL: Always set Column layout for resize tests
+```typescript
+// ✅ REQUIRED: Column layout enables resize functionality
+userBuilder.mailbox.setViewLayout('Column');
+```
+
+### Use proper storage state for persistence testing
+```typescript
+// ✅ GOOD: Include storage state for IDB persistence
+storageState: await createAuthenticationState(user)
+```
+
+### Wait for IDB persistence appropriately
+- Use `layoutHelpers.waitForPersistence()` when testing persistence
+- IDB writes are async with no UI acknowledgment - timeout is acceptable here
+
+## Fixture and Locator Patterns
+
+### Use semantic fixture names
+```typescript
+// ✅ GOOD: Semantic fixture names
+inboxPage: InboxPage;
+layoutHelpers: LayoutTestHelpers;
+
+// ❌ BAD: Generic names
+mailPage: InboxPage;
+```
+
+### Define locators as readonly properties at class level
+```typescript
+// ✅ GOOD: Reusable readonly properties
+readonly conversationList = this.page.locator('.items-column-list-inner');
+readonly resizableWrapper = this.page.getByTestId('resizable-wrapper');
+```
+
+### Use visibility patterns efficiently
+```typescript
+// ✅ GOOD: Single call with visible parameter
+await expect(this.resizeHandle).toBeVisible({ visible: isVisible });
+
+// ❌ BAD: Separate if/else blocks
+if (visible) {
+    await expect(this.resizeHandle).toBeVisible();
+} else {
+    await expect(this.resizeHandle).not.toBeVisible();
+}
+```
+
+## Fixture Extension Patterns
+
+### Use proper fixture extension structure
+```typescript
+const test = mailtest.extend<{
+    user: QuarkUser;
+    inboxPage: InboxPage;
+    layoutHelpers: LayoutTestHelpers;
+}>({
+    user: async ({ testFolders, quark }, use, testInfo) => {
+        // User setup logic
+    },
+    inboxPage: async ({ page }, use) => {
+        await use(new InboxPage(page));
+    },
+    layoutHelpers: async ({ page }, use) => {
+        await use(new LayoutTestHelpers(page));
+    }
+});
+```
+
+## Import Guidelines
+
+### Mail-specific imports
+```typescript
+// Timeouts and helpers
+import { MediumTimeouts, ShortTimeouts } from 'tests/mail/support/helpers';
+
+// Page Objects
+import { InboxPage } from '../poms/mailbox/InboxPage';
+import { LayoutTestHelpers } from '../poms/mailbox/layout/LayoutTestHelpers';
+
+// User data utilities  
+import { generateUserData } from '../support/user-data';
+import { createAuthenticationState } from '../support/auth';
+```
+
+## Test Structure Best Practices
+
+### Use test.step() in test files, not POMs
+```typescript
+// ✅ GOOD: test.step() in test file
+test('should maintain minimum width constraint', async ({ inboxPage, layoutHelpers }) => {
+    const initialWidth = await test.step('Get initial width', async () => {
+        return await inboxPage.getResizableWidth();
+    });
+    
+    const constrainedWidth = await test.step('Test minimum width constraint', async () => {
+        return await inboxPage.testMinimumWidthConstraint(360);
+    });
+    
+    await test.step('Verify constraint was enforced', async () => {
+        expect(constrainedWidth.actualWidth).toBeGreaterThanOrEqual(359);
+    });
+});
+```
+
+## Anti-patterns to Avoid
+
+### Common mistakes from code reviews
+```typescript
+// ❌ NEVER: Async methods that only return test.step()
+async getWidth(): Promise<number> {
+    return test.step('Get width', async () => {
+        return await this.element.evaluate(...);
+    });
+}
+
+// ❌ NEVER: waitForTimeout in drag operations
+await this.page.mouse.up();
+await this.page.waitForTimeout(300); // Use expect().toPass() instead
+
+// ❌ NEVER: Hardcoded locators when reusable ones exist
+const list = this.page.locator('.items-column-list-inner'); // Use existing conversationList
+
+// ❌ NEVER: Helper methods that obscure user setup
+LayoutTestHelpers.createColumnLayoutUser(userBuilder); // Use direct commands
+
+// ❌ NEVER: Global variable declarations
+const testUserName = 'resize-test-user'; // Move inside fixtures
+```
+
+## Error-prone Patterns
+
+### ESLint issues to watch for
+- Methods that immediately return `test.step()` should NOT be marked `async`
+- If method body only contains `return test.step(...)`, remove `async` keyword
+- Avoid `return await` patterns - use intermediate variables instead
+
+### TypeScript patterns
+- Use proper Promise return types for methods that return test.step()
+- Avoid explicit type annotations when they can be inferred
+- Use readonly for class properties that don't change
+
+## Resize-Specific Guidelines
+
+### Column layout dependency
+- Resize functionality ONLY works in Column layout mode
+- Always verify layout is set before testing resize operations
+- Use `userBuilder.mailbox.setViewLayout('Column')` in user setup
+
+### State persistence testing
+- Use proper storage state with `createAuthenticationState`
+- Wait for IDB writes to complete before testing persistence
+- Reload page and verify width persists after storage
+
+### Drag operation patterns
+```typescript
+// ✅ GOOD: Reliable drag pattern with stability check
+await this.resizeHandle.hover();
+await this.page.mouse.down();
+await this.page.mouse.move(handleBox!.x + pixels, handleBox!.y, { steps: 5 });
+await this.page.mouse.up();
+
+// A timeout is fine here for stability
+await this.page.timeout(100);
+```
