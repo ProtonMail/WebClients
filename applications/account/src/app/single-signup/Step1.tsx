@@ -45,6 +45,7 @@ import {
     type Plan,
     type PlanIDs,
     type StrictPlan,
+    TRIAL_DURATION_DAYS,
     getHas2024OfferCoupon,
     getPaymentsVersion,
     getPlanFromPlanIDs,
@@ -129,9 +130,12 @@ const getBundleTitle = (a: string, b: string) => {
 };
 const getPlanTitle = (selected: string, trial?: boolean) => {
     if (trial) {
-        const freeFor14Days = <span className="color-success">{c('b2b_trials_2025_Info').t`free for 14 days`}</span>;
         // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
-        return c('b2b_trials_2025_Info').jt`Try ${selected} ${freeFor14Days}`;
+        const freeForNDays = (
+            <span className="color-success">{c('b2b_trials_2025_Info').t`free for ${TRIAL_DURATION_DAYS} days`}</span>
+        );
+        // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
+        return c('b2b_trials_2025_Info').jt`Try ${selected} ${freeForNDays}`;
     }
     return c('vpn_2step: info').t`Your ${selected} plan`;
 };
@@ -188,7 +192,7 @@ const Step1 = ({
     measure,
     className,
     currencyUrlParam,
-    trial,
+    signupTrial,
 }: {
     activeBreakpoint: Breakpoints;
     defaultEmail?: string;
@@ -212,7 +216,7 @@ const Step1 = ({
     measure: Measure;
     className?: string;
     currencyUrlParam?: Currency;
-    trial?: boolean;
+    signupTrial?: boolean; // true iff trial detected through signupParameters (thus the signup prefix)
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const normalApi = useApi();
@@ -336,7 +340,7 @@ const Step1 = ({
                 newCycle,
                 newBillingAddress,
                 coupon,
-                trial
+                signupTrial
             );
 
             if (!validateFlow()) {
@@ -470,9 +474,11 @@ const Step1 = ({
         return handleCompletion(subscriptionData);
     };
 
-    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+    // true iff trial detected through check result (thus the check prefix)
+    const checkTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
     const hasGuarantee =
-        ([PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan) && !isTrial;
+        ([PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan) &&
+        !checkTrial;
 
     const measurePay = (
         type: TelemetryPayType,
@@ -518,7 +524,7 @@ const Step1 = ({
         paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
-                const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !isTrial;
+                const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !checkTrial;
 
                 const extendedParams: ExtendedTokenPayment = {
                     paymentsVersion,
@@ -1088,7 +1094,7 @@ const Step1 = ({
                         return;
                     }
 
-                    if (trial) {
+                    if (signupTrial) {
                         return;
                     }
 
@@ -1300,7 +1306,7 @@ const Step1 = ({
                                         title={
                                             options.planIDs[PLANS.VPN_PASS_BUNDLE]
                                                 ? getBundleTitle(VPN_SHORT_APP_NAME, PASS_SHORT_APP_NAME)
-                                                : getPlanTitle(planInformation.title, trial)
+                                                : getPlanTitle(planInformation.title, signupTrial)
                                         }
                                     />
                                 </div>
@@ -1312,11 +1318,11 @@ const Step1 = ({
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
                             step={showStepLabel ? step++ : undefined}
-                            title={trial ? c('Header').t`Payment details` : c('Header').t`Checkout`}
+                            title={signupTrial ? c('Header').t`Payment details` : c('Header').t`Checkout`}
                             right={!showCycleAndSelectors ? currencySelector : null}
                         />
                         <BoxContent>
-                            {trial && (
+                            {signupTrial && (
                                 <div className="mb-4 text-sm color-weak">
                                     {c('b2b_trials_2025_Info').t`During the trial period, you can have up to 10 users.`}
                                 </div>
@@ -1353,7 +1359,7 @@ const Step1 = ({
                                                             noop
                                                         )
                                                     }
-                                                    isTrialMode={trial}
+                                                    isTrialMode={signupTrial}
                                                 />
                                                 <div className="border-bottom border-weak my-6" />
                                             </>
@@ -1364,7 +1370,7 @@ const Step1 = ({
                                             noMaxWidth
                                             taxCountry={taxCountry}
                                             vatNumber={vatNumber}
-                                            startTrial={isTrial}
+                                            startTrial={checkTrial}
                                             onCurrencyChange={handleChangeCurrency}
                                         />
                                         {(() => {
@@ -1380,7 +1386,7 @@ const Step1 = ({
 
                                             const tncElement = (
                                                 <div className="mt-4 text-sm color-weak text-center">
-                                                    {isTrial
+                                                    {checkTrial
                                                         ? // translator: Full sentence "By clicking on "Try", you agree to our terms and conditions."
                                                           c('b2b_trials_2025_Info')
                                                               .jt`By clicking on "Try", you agree to our ${termsAndConditions}.`
@@ -1420,7 +1426,7 @@ const Step1 = ({
                                                     formInvalid={!isFormValid}
                                                 >
                                                     {(() => {
-                                                        if (isTrial) {
+                                                        if (checkTrial) {
                                                             return c('Action').t`Try for free`;
                                                         }
                                                         return options.checkResult.AmountDue > 0
@@ -1469,7 +1475,7 @@ const Step1 = ({
                                                             options.cycle,
                                                             model.subscriptionData.billingAddress,
                                                             code,
-                                                            trial
+                                                            signupTrial
                                                         );
 
                                                         setModel((old) => ({
@@ -1494,7 +1500,7 @@ const Step1 = ({
                                                             options.cycle,
                                                             model.subscriptionData.billingAddress,
                                                             undefined, // don't pass coupon code, it will be removed
-                                                            trial
+                                                            signupTrial
                                                         );
 
                                                         setModel((old) => ({
