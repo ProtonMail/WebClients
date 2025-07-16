@@ -1,0 +1,38 @@
+---
+description: Secure Development Principles
+globs: applications/*, packages/*, shared/*, utilities/*
+alwaysApply: true
+---
+# Secure Development Principles
+
+These rules define essential practices for writing and generating secure code.  
+They apply universally — to manual development, automated tooling, and AI-generated code.
+
+All violations must include a clear explanation of which rule was triggered and why, to help developers understand and fix the issue effectively.
+
+## 1. Do Not Expose Secrets in Public Code
+- **Rule:** Secrets such as API keys, credentials, private keys, or tokens must not appear in frontend code, public repositories, or client-distributed files.
+
+## 2. Enforce Secure Communication Protocols
+- **Rule:** Only secure protocols (e.g., HTTPS, TLS) must be used for all external communications.
+
+## 3. Avoid Executing Dynamic Code
+- **Rule:** Dynamically constructed code or expressions must not be executed at runtime.
+
+## 4. Validate All External Input
+- **Rule:** Inputs from users, external APIs, or third-party systems must be validated before use.
+
+## 5. Do Not Log Sensitive Information
+- **Rule:** Logs must not contain credentials, tokens, personal identifiers, or other sensitive data. That includes reports to Sentry or telemetry events.
+
+## 6. Prevent Disabling of Security Controls
+- **Rule:** Security checks must not be disabled, bypassed, or suppressed without documented and reviewed justification.
+
+## 7. Limit Trust in Client-Side Logic
+- **Rule:** Critical logic related to permissions, authentication, or validation must not rely solely on client-side code.
+
+## 8. Detect and Eliminate Hardcoded Credentials
+- **Rule:** Credentials must not be hardcoded in source files, configuration, or scripts.
+
+## 9. Raw unencrypted data with PII or user sensitive information should not be stored in Persisted Storage e.g. IndexedDB 
+- **Rule** Data should always be stored with encryption based on derived keys from user's authentication if we are storing information that is PII or user sensitive.
