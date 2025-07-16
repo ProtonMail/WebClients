@@ -1418,8 +1418,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -7107,6 +7106,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -9453,6 +9453,12 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "Primary": [
+        "Elsődleges"
+      ],
+      "Unknown": [
+        "Ismeretlen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14790,6 +14796,9 @@
       ],
       "Your subscriptions in one place": [
         "Az előfizetései egy helyen"
+      ],
+      "Your plan": [
+        "Az ön csomagja"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15380,6 +15389,11 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } előfizetés"
       ]
     }
   }

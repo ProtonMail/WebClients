@@ -1607,6 +1607,12 @@
       "Trust key": [
         "Lita på nyckel",
         "Lita på nycklar"
+      ],
+      "Cancel trial and pay": [
+        "Avbryt provperiod och betala"
+      ],
+      "Remove from list": [
+        "Ta bort från listan"
       ]
     },
     "action": {
@@ -2055,6 +2061,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } och ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -4885,6 +4894,30 @@
       ],
       "Wrong password": [
         "Fel lösenord"
+      ],
+      "Invalid ZIP code": [
+        "Ogiltigt postnummer"
+      ],
+      "No address with sending permissions": [
+        "Ingen adress med behörighet att skicka"
+      ],
+      "Please enter a valid postal code": [
+        "Skriv in ett giltigt postnummer"
+      ],
+      "Please enter a valid ZIP code": [
+        "Ange ett giltigt postnummer"
+      ],
+      "Please enter postal code": [
+        "Ange postnummer"
+      ],
+      "Please enter ZIP code": [
+        "Ange postnummer"
+      ],
+      "Please select billing country": [
+        "Välj faktureringsland"
+      ],
+      "Please select billing state": [
+        "Välj delstat för fakturering"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5761,6 +5794,9 @@
       ],
       "Tell us more": [
         "Berätta mer"
+      ],
+      "Drawer": [
+        "Sidopanel"
       ]
     },
     "Hint": {
@@ -7116,7 +7152,8 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8546,6 +8583,19 @@
       ],
       "newsletter": [
         "nyhetsbrev"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } e-postmeddelande förra månaden",
+        "${ receivedMessagesCount } e-postmeddelanden förra månaden"
+      ],
+      "Composer:": [
+        "Kompositör:"
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Uppgradera till ${ plan } för att låsa upp"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Din gratis provperiod har konverterats till en ${ cycle }-månaders prenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
       ]
     },
     "info": {
@@ -9490,6 +9540,30 @@
       ],
       "Moved to Trash": [
         "Flyttad till papperskorg"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Misslyckades att skapa mapp ${ newFolderName }"
+      ],
+      "Forums": [
+        "Forum"
+      ],
+      "Primary": [
+        "Primär"
+      ],
+      "Promotions": [
+        "Kampanjer"
+      ],
+      "Social": [
+        "Socialt"
+      ],
+      "Transactions": [
+        "Transaktioner"
+      ],
+      "Unknown": [
+        "Okänd"
+      ],
+      "Updates": [
+        "Uppdateringar"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9533,6 +9607,9 @@
     "Label, credit card": {
       "ZIP code": [
         "Postnummer"
+      ],
+      "Postal code": [
+        "Postnummer"
       ]
     },
     "Label/folder modal": {
@@ -9574,6 +9651,9 @@
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "Du har inga prenumerationer på nyhetsbrev eller e-postlistor."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Du har inga aktiva nyhetsbrev eller prenumerationer på e-postlistor."
       ]
     },
     "Landmarks": {
@@ -10789,6 +10869,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Skydda din familj med alla premiumfunktioner i ${ plusTitle } för 6 användare."
       ]
     },
     "new_plans: Subtext": {
@@ -10814,6 +10897,9 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ],
+      "Review subscription": [
+        "Granska prenumeration"
       ]
     },
     "new_plans: Title": {
@@ -11234,6 +11320,9 @@
       ],
       "Your subscription renews soon": [
         "Din prenumeration förnyas snart"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Sista chansen att få 80 % rabatt på din första månad med ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -11480,6 +11569,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
       ]
     },
     "Online accounts": {
@@ -11748,6 +11840,12 @@
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
+      ],
+      "I'm purchasing as a business": [
+        "Jag köper som ett företag"
+      ],
+      "This number will be shown on all future invoices": [
+        "Detta nummer kommer att visas på alla framtida fakturor"
       ]
     },
     "Payments.Error": {
@@ -11965,6 +12063,12 @@
       ],
       "Your organization name": [
         "Ditt organisationsnamn"
+      ],
+      "Postal code": [
+        "Postnummer"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Placeholder for contact group name": {
@@ -14844,6 +14948,12 @@
       ],
       "No newsletters found": [
         "Inga nyhetsbrev hittades"
+      ],
+      "Remove from list?": [
+        "Ta bort från listan?"
+      ],
+      "Your plan": [
+        "Ditt paket"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15434,6 +15544,38 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }-paket"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Momsnummer"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Alla ${ protonPlus }-tjänster.${ br }En enkel prenumeration."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Fortsätt med ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Uppgradera till ${ upsellPlanTitle }"
+      ]
+    },
+    "Slack": {
+      "Join Slack huddle": [
+        "Gå med i Slack-samtal"
       ]
     }
   }

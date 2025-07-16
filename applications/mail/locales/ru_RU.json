@@ -1583,6 +1583,15 @@
         "Доверять ключам",
         "Доверять ключам",
         "Доверять ключам"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "Создать папку «${ boldFolderName }»"
+      ],
+      "Download all attachments": [
+        "Скачать все вложения"
+      ],
+      "Remove from list": [
+        "Удалить из списка"
       ]
     },
     "action": {
@@ -1795,6 +1804,24 @@
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_DEDICATED_IPS } выделенных серверов в течение пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_LUMO_SEATS } мест Lumo в течение пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_SCRIBE_SEATS } мест Scribe в течение пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_USERS } пользователей в течение пробного периода."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Вы не можете добавлять пользовательские домены в течение пробного периода."
+      ],
+      "You have reached the trial limit.": [
+        "Вы достигли лимита пробного периода."
       ]
     },
     "bf2023: Deal details": {
@@ -1905,6 +1932,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } и ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -6879,7 +6909,7 @@
         "Удобное управление и отказ от подписки на новостные рассылки и списки рассылок."
       ],
       "Edit email address": [
-        "Изменить адрес эл. почты"
+        "Изменить адрес электронной почты"
       ],
       "Edit encryption": [
         "Изменить шифрование"
@@ -7140,7 +7170,10 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение"
+        "Вставить изображение",
+        "Вставить изображения",
+        "Вставить изображения",
+        "Вставить изображения"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -8584,6 +8617,18 @@
       ],
       "Preferences updated": [
         "Настройки обновлены"
+      ],
+      "Dedicated VPN servers": [
+        "Выделенные VPN-серверы"
+      ],
+      "More info": [
+        "Подробнее"
+      ],
+      "newsletter": [
+        "рассылка"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша подписка ${ plan } будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9488,6 +9533,21 @@
       ],
       "Subject:": [
         "Тема:"
+      ],
+      "Moved to Archive": [
+        "Перемещено в Архив"
+      ],
+      "Newsletters": [
+        "Рассылки"
+      ],
+      "Primary": [
+        "Основной"
+      ],
+      "Unknown": [
+        "Неизвестно"
+      ],
+      "Unsubscribed from ${ truncatedName }.": [
+        "Вы отписались от ${ truncatedName }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10836,6 +10896,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Защитите свою семью, используя все платные функции ${ plusTitle } для 6 пользователей."
       ]
     },
     "new_plans: Subtext": {
@@ -13078,10 +13141,10 @@
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
       ],
       "${ dayDiff } day left": [
-        "Остался ${ dayDiff } день",
-        "Осталось ${ dayDiff } дня",
-        "Осталось ${ dayDiff } дней",
-        "Осталось ${ dayDiff } дней"
+        "${ dayDiff } день остался",
+        "${ dayDiff } дня осталось",
+        "${ dayDiff } дней осталось",
+        "${ dayDiff } дней осталось"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
@@ -13773,6 +13836,9 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } удалён"
+      ],
+      "The filter has been enabled": [
+        "Фильтр включён"
       ]
     },
     "Suffix": {
@@ -14904,6 +14970,24 @@
       ],
       "Subscription canceled": [
         "Подписка отменена"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } сообщение",
+        "${ numMessages } сообщения",
+        "${ numMessages } сообщений",
+        "${ numMessages } сообщений"
+      ],
+      "Newsletters": [
+        "Рассылки"
+      ],
+      "Newsletters view": [
+        "Просмотр рассылок"
+      ],
+      "Remove from list?": [
+        "Удалить из списка?"
+      ],
+      "Your plan": [
+        "Ваш тариф"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15614,11 +15698,35 @@
       ],
       "Use your own email domain": [
         "Используйте свой собственный домен электронной почты"
+      ],
+      "500 GB encrypted storage": [
+        "500 ГБ зашифрованного хранилища"
+      ],
+      "Short @pm.me address": [
+        "Короткий адрес @pm.me"
       ]
     },
     "anniversary_2025: Offers": {
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
+      ],
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
+      ],
+      "12 months": [
+        "12 месяцев"
+      ],
+      "15 months": [
+        "15 месяца"
+      ],
+      "24 months": [
+        "24 месяца"
+      ],
+      "30 months": [
+        "30 месяцев"
       ]
     },
     "b2b_trials_Action": {
@@ -15637,11 +15745,53 @@
     "Onboarding Trial": {
       "Continue": [
         "Продолжить"
+      ],
+      "help center": [
+        "справочный центр"
+      ],
+      "If you need help,": [
+        "Если вам нужна помощь,"
       ]
     },
     "Unlimited offer": {
       "Only": [
         "Только"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "тариф ${ upsellPlanTitle }"
+      ]
+    },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Улучшить до ${ upsellPlanTitle }"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } день",
+        "${ ceilDays } дня",
+        "${ ceilDays } дней",
+        "${ ceilDays } дней"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } час",
+        "${ ceilHours } часа",
+        "${ ceilHours } часов",
+        "${ ceilHours } часов"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } минута",
+        "${ ceilMinutes } минуты",
+        "${ ceilMinutes } минут",
+        "${ ceilMinutes } минут"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
       ]
     }
   }

@@ -1424,8 +1424,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Vertrouwde sleutels"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -7156,7 +7155,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Link invoegen"
@@ -9527,6 +9527,12 @@
       ],
       "Moved to Trash": [
         "Verplaatst naar Prullenbak"
+      ],
+      "Primary": [
+        "Primair"
+      ],
+      "Unknown": [
+        "Onbekend"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14904,6 +14910,9 @@
       ],
       "No newsletters found": [
         "Geen nieuwsbrieven gevonden"
+      ],
+      "Your plan": [
+        "Uw abonnement"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15507,6 +15516,11 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Uw gratis proefversie eindigt over ${ timeRemaining }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }-abonnement"
       ]
     }
   }

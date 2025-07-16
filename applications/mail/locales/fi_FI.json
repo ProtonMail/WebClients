@@ -1580,6 +1580,9 @@
       "Trust key": [
         "Luota avaimeen",
         "Luota avaimiin"
+      ],
+      "Deleting label": [
+        "Tunnisteen poistaminen"
       ]
     },
     "action": {
@@ -1756,6 +1759,15 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostiverkkotunnusta"
+      ],
+      "Online document editor": [
+        "Selaimella käytettävä dokumenttieditori"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
+      ],
+      "years": [
+        "vuoden"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1777,6 +1789,9 @@
       ],
       "/ month": [
         "/ kuukausi"
+      ],
+      "for ${ durationDeal }": [
+        "hintaan ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -5191,6 +5206,9 @@
     "fido2: Info": {
       "Security key": [
         "Suojausavain"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Kytke ${ BRAND_NAME }-tiliisi liitetty suojausavain."
       ]
     },
     "fido2: Label": {
@@ -6976,7 +6994,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8361,6 +8380,19 @@
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** tulos kohteessa ${ labelName }",
         "**${ total }** tulosta kohteessa ${ labelName }"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } uutiskirje",
+        "${ unreadCount } uutiskirjettä"
+      ],
+      "Composer:": [
+        "Kirjoitus:"
+      ],
+      "More info": [
+        "Lisätiedot"
+      ],
+      "newsletter": [
+        "uutiskirje"
       ]
     },
     "info": {
@@ -9286,6 +9318,15 @@
       ],
       "Moved to Trash": [
         "Siirretty roskakoriin"
+      ],
+      "Moved to ${ labelName }": [
+        "Sirretty sijaintiin ${ labelName }"
+      ],
+      "Primary": [
+        "Ensisijainen"
+      ],
+      "Unknown": [
+        "Tuntematon"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11214,6 +11255,9 @@
       ],
       "If you need help,": [
         "Jos tarvitset apua,"
+      ],
+      "help center": [
+        "tukikeskus"
       ]
     },
     "Online accounts": {
@@ -12376,6 +12420,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Päivitä hintaan ${ pricingTitle }"
+      ],
+      "Get unlimited aliases": [
+        "Hanki aliaksia rajattomasti"
       ]
     },
     "specialoffer: Offers": {
@@ -14503,6 +14550,9 @@
       ],
       "Your subscriptions in one place": [
         "Tilauksesi yhdessä paikassa"
+      ],
+      "Your plan": [
+        "Tilauksesi"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15098,6 +15148,19 @@
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Peru tilaus"
+      ],
+      "Keep subscription": [
+        "Pidä tilaus"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } -tilaus"
       ]
     }
   }

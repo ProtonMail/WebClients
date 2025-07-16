@@ -1619,6 +1619,12 @@
         "Dôveryhodný kľúč",
         "Dôverovať kľúčom",
         "Dôverovať novým kľúčom"
+      ],
+      "Cancel trial and pay": [
+        "Zrušiť skúšobné obdobie a zaplatiť"
+      ],
+      "Remove from list": [
+        "Odstrániť zo zoznamu"
       ]
     },
     "action": {
@@ -2067,6 +2073,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -4944,6 +4953,27 @@
       ],
       "Wrong password": [
         "Nesprávne heslo"
+      ],
+      "Invalid ZIP code": [
+        "Neplatné PSČ"
+      ],
+      "Please enter a valid postal code": [
+        "Zadajte platné PSČ, prosím"
+      ],
+      "Please enter a valid ZIP code": [
+        "Zadajte platné PSČ, prosím"
+      ],
+      "Please enter postal code": [
+        "Zadajte PSČ, prosím"
+      ],
+      "Please enter ZIP code": [
+        "Zadajte PSČ, prosím"
+      ],
+      "Please select billing country": [
+        "Vyberte fakturačnú krajinu, prosím"
+      ],
+      "Please select billing state": [
+        "Vyberte krajinu platby, prosím"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7342,7 +7372,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8813,6 +8846,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Na odomknutie upgradujte na ${ plan }"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Vaše ${ plan } predplatné bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na váš účet. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9771,6 +9810,15 @@
       ],
       "Moved to Trash": [
         "Presunuté do koša"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Nepodarilo sa vytvoriť priečinok ${ newFolderName }"
+      ],
+      "Primary": [
+        "Primárne"
+      ],
+      "Unknown": [
+        "Neznáme"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9813,6 +9861,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "PSČ"
+      ],
+      "Postal code": [
         "PSČ"
       ]
     },
@@ -11125,6 +11176,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Chráňte svoju rodinu pomocou všetkých prémiových funkcií ${ plusTitle } pre 6 používateľov."
       ]
     },
     "new_plans: Subtext": {
@@ -11150,6 +11204,9 @@
       ],
       "Switch plans?": [
         "Zmeniť plán?"
+      ],
+      "Review subscription": [
+        "Preskúmať predplatné"
       ]
     },
     "new_plans: tooltip": {
@@ -11571,6 +11628,9 @@
       ],
       "Your subscription renews soon": [
         "Vaše predplatné sa čoskoro obnoví"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Posledná šanca získať 80% zľavu na prvý mesiac ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -12104,6 +12164,12 @@
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
+      ],
+      "I'm purchasing as a business": [
+        "Nakupujem ako firma"
+      ],
+      "This number will be shown on all future invoices": [
+        "Toto číslo bude uvedené na všetkých budúcich faktúrach."
       ]
     },
     "Payments.Error": {
@@ -12321,6 +12387,12 @@
       ],
       "Your organization name": [
         "Názov vašej organizácie"
+      ],
+      "Postal code": [
+        "PSČ"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Placeholder for contact group name": {
@@ -15370,6 +15442,12 @@
       ],
       "Your subscriptions in one place": [
         "Vaše emailové odbery na jednom mieste"
+      ],
+      "Remove from list?": [
+        "Odstrániť zo zoznamu?"
+      ],
+      "Your plan": [
+        "Váš plán"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16067,6 +16145,39 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Vaša bezplatná skúšobná verzia skončí o ${ timeRemaining }"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } plán"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Daňové identifikačné číslo"
+      ],
+      "EIN": [
+        "Identifikačné číslo zamestnávateľa"
+      ],
+      "VAT number": [
+        "DIČ"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Všetky ${ protonPlus } služby.${ br }Jedno jednoduché predplatné."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ako predplatiteľ **${ currentPlanTitle }** si môžete odomknúť **${ unlockPlanTitle }** a všetky prémiové služby ${ BRAND_NAME } zvýšením úrovne na **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Pokračovať s ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Navýšiť na ${ upsellPlanTitle }"
       ]
     }
   }

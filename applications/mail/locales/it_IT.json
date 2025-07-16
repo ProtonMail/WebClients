@@ -1607,6 +1607,12 @@
       "Trust key": [
         "Considera attendibile la chiave",
         "Considera attendibili le chiavi"
+      ],
+      "Cancel trial and pay": [
+        "Annulla la prova e paga"
+      ],
+      "Remove from list": [
+        "Rimuovi dalla lista"
       ]
     },
     "action": {
@@ -2071,6 +2077,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } e ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -4912,6 +4921,9 @@
       ],
       "Wrong password": [
         "Password errata"
+      ],
+      "Invalid ZIP code": [
+        "CAP non valido"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7156,7 +7168,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8586,6 +8599,15 @@
       ],
       "newsletter": [
         "newsletter"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Questo rimuoverà la voce della newsletter da questa lista. Non cancellerà la tua iscrizione alla newsletter. Riapparirà se ricevi nuovi messaggi."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Effettua l'upgrade a ${ plan } per sbloccare"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Il tuo abbonamento a ${ plan } verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9530,6 +9552,18 @@
       ],
       "Moved to Trash": [
         "Spostato nel cestino"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Creazione della cartella ${ newFolderName } non riuscita"
+      ],
+      "Newsletter entry deleted": [
+        "Voce della newsletter eliminata"
+      ],
+      "Primary": [
+        "Primario"
+      ],
+      "Unknown": [
+        "Sconosciuto"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9573,6 +9607,9 @@
     "Label, credit card": {
       "ZIP code": [
         "CAP"
+      ],
+      "Postal code": [
+        "Codice postale"
       ]
     },
     "Label/folder modal": {
@@ -10832,6 +10869,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Proteggi la tua famiglia con tutte le funzionalità premium di ${ plusTitle } per 6 utenti."
       ]
     },
     "new_plans: Subtext": {
@@ -11277,6 +11317,9 @@
       ],
       "Your subscription renews soon": [
         "Il tuo abbonamento si rinnoverà presto"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Ultima chance per approfittare dell'80% di sconto sul tuo primo mese di ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -12017,6 +12060,12 @@
       ],
       "Your organization name": [
         "Il nome della tua organizzazione"
+      ],
+      "Postal code": [
+        "Codice postale"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "Placeholder for contact group name": {
@@ -14912,6 +14961,12 @@
       ],
       "No newsletters found": [
         "Nessuna newsletter trovata"
+      ],
+      "Remove from list?": [
+        "Rimuovi dall'elenco?"
+      ],
+      "Your plan": [
+        "Il tuo piano"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15515,6 +15570,39 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "La tua prova gratuita termina tra ${ timeRemaining }."
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Piano ${ upsellPlanTitle }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Numero aziendale australiano (ABN)"
+      ],
+      "Business Number": [
+        "Numero azienda"
+      ],
+      "EIN": [
+        "Numero d'identificazione fiscale (EIN)"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Tutti i servizi di ${ protonPlus }.${ br }Un semplice abbonamento."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "In quanto abbonato a **${ currentPlanTitle }**, puoi sbloccare **${ unlockPlanTitle }** e tutti i servizi premium di ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Rimani su ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Effettua l'upgrade a ${ upsellPlanTitle }"
       ]
     }
   }

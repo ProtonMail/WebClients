@@ -1424,8 +1424,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Clave de confianza"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1607,6 +1606,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Cancel trial and pay": [
+        "Cancelar prueba y pagar"
+      ],
+      "Remove from list": [
+        "Borrar de la lista"
       ]
     },
     "action": {
@@ -2084,6 +2089,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } y ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -4925,6 +4933,27 @@
       ],
       "Wrong password": [
         "La contraseña no es correcta."
+      ],
+      "Invalid ZIP code": [
+        "Código ZIP inválido"
+      ],
+      "Please enter a valid postal code": [
+        "Ingrese un código postal válido"
+      ],
+      "Please enter a valid ZIP code": [
+        "Ingrese un código postal válido"
+      ],
+      "Please enter postal code": [
+        "Ingrese un código postal"
+      ],
+      "Please enter ZIP code": [
+        "Ingrese el código ZIP"
+      ],
+      "Please select billing country": [
+        "Seleccione el país de facturación"
+      ],
+      "Please select billing state": [
+        "Seleccione el estado de facturación"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7169,7 +7198,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -7937,7 +7967,7 @@
         "Estas conversaciones serán marcadas como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
-        "Este correo electrónico no cumple con con los requisitos de autenticación del dominio. Puede estar falsificado o reenviado incorrectamente."
+        "Este correo electrónico no cumple con los requisitos de autenticación del dominio. Puede estar falsificado o reenviado incorrectamente."
       ],
       "This file is too large to preview": [
         "Este archivo es demasiado grande para previsualizarlo."
@@ -8602,6 +8632,15 @@
       ],
       "newsletter": [
         "boletín"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Esto eliminará la entrada del boletín de esta lista. No le cancelará la suscripción al boletín. Reaparecerá si recibe nuevos mensajes."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Mejore su plan a ${ plan } para desbloquear"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Su suscripción de ${ plan } será reemplazada por ${ PASS_SHORT_APP_NAME } de por vida. El saldo restante de su suscripción se añadirá a su cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceder de por vida a ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9546,6 +9585,33 @@
       ],
       "Moved to Trash": [
         "Movido a la Papelera"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "Error al crear carpeta ${ newFolderName }"
+      ],
+      "Forums": [
+        "Foros"
+      ],
+      "Newsletter entry deleted": [
+        "Se eliminó la entrada del boletín."
+      ],
+      "Primary": [
+        "Principal"
+      ],
+      "Promotions": [
+        "Promociones"
+      ],
+      "Social": [
+        "Redes Sociales"
+      ],
+      "Transactions": [
+        "Transacciones"
+      ],
+      "Unknown": [
+        "Desconocido"
+      ],
+      "Updates": [
+        "Actualizaciones"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9588,6 +9654,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Código postal"
+      ],
+      "Postal code": [
         "Código postal"
       ]
     },
@@ -10848,6 +10917,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Proteja a su familia con todas las funciones premium de ${ plusTitle } para 6 usuarios."
       ]
     },
     "new_plans: Subtext": {
@@ -10873,6 +10945,9 @@
       ],
       "Switch plans?": [
         "¿Quiere cambiar de plan?"
+      ],
+      "Review subscription": [
+        "Revisar suscripción"
       ]
     },
     "new_plans: tooltip": {
@@ -11288,6 +11363,9 @@
       ],
       "Your subscription renews soon": [
         "Su suscripción se renueva pronto."
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Última oportunidad para obtener un 80 % de descuento en su primer mes de ${ plan }."
       ]
     },
     "Offer fearue": {
@@ -11817,6 +11895,12 @@
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."
+      ],
+      "I'm purchasing as a business": [
+        "Estoy comprando como empresa"
+      ],
+      "This number will be shown on all future invoices": [
+        "Este número se mostrará en todas las facturas futuras"
       ]
     },
     "Payments.Error": {
@@ -12034,6 +12118,12 @@
       ],
       "Your organization name": [
         "El nombre de su organización"
+      ],
+      "Postal code": [
+        "Código postal"
+      ],
+      "ZIP code": [
+        "Código ZIP"
       ]
     },
     "Placeholder for contact group name": {
@@ -14929,6 +15019,12 @@
       ],
       "No newsletters found": [
         "No se encontraron boletines."
+      ],
+      "Remove from list?": [
+        "¿Borrar de la lista?"
+      ],
+      "Your plan": [
+        "El plan"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15519,6 +15615,39 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Plan ${ upsellPlanTitle }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Número de empresa australiano (ABN)"
+      ],
+      "Business Number": [
+        "Número de negocio"
+      ],
+      "EIN": [
+        "Número de identificación fiscal (EIN)"
+      ],
+      "VAT number": [
+        "Número de IGV"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Todos los servicios de ${ protonPlus }.${ br }Una suscripción sencilla."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Como suscriptor de **${ currentPlanTitle }**, puede desbloquear **${ unlockPlanTitle }** y todos los servicios premium de ${ BRAND_NAME } al actualizar su plan a **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Permanecer en ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Actualizar a ${ upsellPlanTitle }"
       ]
     }
   }

@@ -1411,7 +1411,7 @@
         "信任"
       ],
       "Trust key": [
-        "信任此密钥"
+        "信任密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -6991,7 +6991,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -9318,6 +9318,12 @@
       ],
       "Moved to Trash": [
         "已移至回收站"
+      ],
+      "Primary": [
+        "基本的"
+      ],
+      "Unknown": [
+        "未知"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14508,6 +14514,9 @@
       ],
       "No active newsletters": [
         "没有活跃的邮件列表"
+      ],
+      "Your plan": [
+        "您的账户等级"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15064,6 +15073,11 @@
       ],
       "Only": [
         "仅"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle } 计划"
       ]
     }
   }
