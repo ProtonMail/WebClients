@@ -109,6 +109,7 @@ export {
     PLANS,
     TransactionState,
     TransactionType,
+    TRIAL_DURATION_DAYS,
     TRIAL_MAX_DEDICATED_IPS,
     TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
     TRIAL_MAX_LUMO_SEATS,

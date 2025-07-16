@@ -332,7 +332,8 @@ const SingleSignupContainer = ({
         const isVpnPassPromotion = getIsVPNPassPromotion(coupon, selectedPlanCurrency);
         const billingAddress = maybeBillingAddress ?? model.subscriptionData.billingAddress;
 
-        const trial = withModel
+        // true iff trial detected through check result (if present) or signupParameters otherwise
+        const checkSignupTrial = withModel
             ? model.subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial
             : signupParameters.trial;
 
@@ -397,7 +398,7 @@ const SingleSignupContainer = ({
                 cycle,
                 coupon,
                 billingAddress,
-                trial,
+                trial: checkSignupTrial,
             });
         }
 
@@ -710,7 +711,7 @@ const SingleSignupContainer = ({
                             onCurrencyChange={updatePlans}
                             hideFreePlan={signupParameters.hideFreePlan}
                             upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
-                            trial={signupParameters.trial}
+                            signupTrial={signupParameters.trial}
                             toAppName={toAppName}
                         />
                     ) : (
@@ -728,7 +729,7 @@ const SingleSignupContainer = ({
                             setModel={setModel}
                             measure={measure}
                             currencyUrlParam={signupParameters.currency}
-                            trial={signupParameters.trial}
+                            signupTrial={signupParameters.trial}
                             onComplete={async (data) => {
                                 const { accountData, subscriptionData } = data;
                                 const accountType =

@@ -44,6 +44,7 @@ import {
     type Plan,
     type PlanIDs,
     type StrictPlan,
+    TRIAL_DURATION_DAYS,
     getHas2024OfferCoupon,
     getPaymentsVersion,
     getPlanFromPlanIDs,
@@ -131,9 +132,12 @@ const getBundleTitle = (a: string, b: string) => {
 
 const getPlanTitle = (selected: string, trial?: boolean) => {
     if (trial) {
-        const freeFor14Days = <span className="color-success">{c('b2b_trials_2025_Info').t`free for 14 days`}</span>;
         // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
-        return c('b2b_trials_2025_Info').jt`Try ${selected} ${freeFor14Days}`;
+        const freeForNDays = (
+            <span className="color-success">{c('b2b_trials_2025_Info').t`free for ${TRIAL_DURATION_DAYS} days`}</span>
+        );
+        // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
+        return c('b2b_trials_2025_Info').jt`Try ${selected} ${freeForNDays}`;
     }
     return c('vpn_2step: info').t`Your plan includes:`;
 };
@@ -184,7 +188,7 @@ const Step1B = ({
     measure,
     className,
     currencyUrlParam,
-    trial,
+    signupTrial,
     toAppName,
 }: {
     activeBreakpoint: Breakpoints;
@@ -209,7 +213,7 @@ const Step1B = ({
     measure: Measure;
     className?: string;
     currencyUrlParam?: Currency;
-    trial: boolean;
+    signupTrial: boolean; // true iff trial detected through signupParameters (thus the signup prefix)
     toAppName: string;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
@@ -336,7 +340,7 @@ const Step1B = ({
                 newCycle,
                 newBillingAddress,
                 coupon,
-                trial
+                signupTrial
             );
 
             if (!validateFlow()) {
@@ -467,9 +471,11 @@ const Step1B = ({
         return handleCompletion(subscriptionData);
     };
 
-    const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+    // true iff trial detected through check result (thus the check prefix)
+    const checkTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
     const hasGuarantee =
-        ([PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan) && !isTrial;
+        ([PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan) &&
+        !checkTrial;
 
     const measurePay = (
         type: TelemetryPayType,
@@ -517,7 +523,7 @@ const Step1B = ({
         paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
-                const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !isTrial;
+                const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !checkTrial;
 
                 const extendedParams: ExtendedTokenPayment = {
                     paymentsVersion,
@@ -1087,7 +1093,7 @@ const Step1B = ({
                             options.cycle,
                             model.subscriptionData.billingAddress,
                             code,
-                            trial
+                            signupTrial
                         );
 
                         setModel((old) => ({
@@ -1112,7 +1118,7 @@ const Step1B = ({
                             options.cycle,
                             model.subscriptionData.billingAddress,
                             undefined, // don't pass coupon code, it will be removed
-                            trial
+                            signupTrial
                         );
 
                         setModel((old) => ({
@@ -1176,7 +1182,7 @@ const Step1B = ({
                         return;
                     }
 
-                    if (isTrial) {
+                    if (checkTrial) {
                         return;
                     }
 
@@ -1363,7 +1369,7 @@ const Step1B = ({
                                     title={
                                         options.planIDs[PLANS.VPN_PASS_BUNDLE]
                                             ? getBundleTitle(VPN_SHORT_APP_NAME, PASS_SHORT_APP_NAME)
-                                            : getPlanTitle(planInformation.title, isTrial)
+                                            : getPlanTitle(planInformation.title, checkTrial)
                                     }
                                 />
                             </div>
@@ -1374,7 +1380,7 @@ const Step1B = ({
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
                             title={
-                                viewportWidth['>=large'] && !isTrial ? c('Header').t`Select your payment method` : ''
+                                viewportWidth['>=large'] && !checkTrial ? c('Header').t`Select your payment method` : ''
                             }
                             right={!showCycleAndSelectors ? currencySelector : null}
                         />
@@ -1390,7 +1396,7 @@ const Step1B = ({
                             </>
                         ) : null}
                         <BoxContent className="mt-4">
-                            {trial && (
+                            {signupTrial && (
                                 <div className="mb-4 text-sm color-weak">
                                     {c('b2b_trials_2025_Info').t`During the trial period, you can have up to 10 users.`}
                                 </div>
@@ -1427,7 +1433,7 @@ const Step1B = ({
                                                             noop
                                                         )
                                                     }
-                                                    isTrialMode={isTrial}
+                                                    isTrialMode={checkTrial}
                                                 />
                                                 <div className="border-bottom border-weak my-6" />
                                             </>
@@ -1439,7 +1445,7 @@ const Step1B = ({
                                             taxCountry={taxCountry}
                                             showCardIcons
                                             vatNumber={vatNumber}
-                                            startTrial={isTrial}
+                                            startTrial={checkTrial}
                                             onCurrencyChange={handleChangeCurrency}
                                         />
                                         {(() => {
@@ -1449,7 +1455,7 @@ const Step1B = ({
 
                                             const tncElement = (
                                                 <div className="mt-4 text-sm color-weak text-center">
-                                                    {isTrial
+                                                    {checkTrial
                                                         ? // translator: Full sentence "By clicking on "Try", you agree to our terms and conditions."
                                                           c('b2b_trials_2025_Info')
                                                               .jt`By clicking on "Try", you agree to our ${termsAndConditions}.`
@@ -1472,7 +1478,7 @@ const Step1B = ({
                                                     formInvalid={!isFormValid}
                                                 >
                                                     {(() => {
-                                                        if (isTrial) {
+                                                        if (checkTrial) {
                                                             return c('Action').t`Try for free`;
                                                         }
                                                         return options.checkResult.AmountDue > 0

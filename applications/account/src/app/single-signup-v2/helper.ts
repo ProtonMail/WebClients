@@ -775,6 +775,7 @@ export const getPlanCardSubscriptionData = async ({
     coupon: maybeCoupon,
     cycles,
     billingAddress,
+    trial,
 }: {
     cycles: CYCLE[];
     planIDs: PlanIDs[];
@@ -782,6 +783,7 @@ export const getPlanCardSubscriptionData = async ({
     paymentsApi: PaymentsApi;
     coupon?: string | null;
     billingAddress: BillingAddress;
+    trial?: boolean;
 }): Promise<SubscriptionDataCycleMapping> => {
     const result = await Promise.all(
         planIDs.flatMap((planIDs) =>
@@ -789,7 +791,9 @@ export const getPlanCardSubscriptionData = async ({
                 .map((cycle) => [planIDs, cycle] as const)
                 .map(async ([planIDs, cycle]): Promise<SubscriptionData> => {
                     const coupon =
-                        maybeCoupon === null ? undefined : getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle });
+                        maybeCoupon === null
+                            ? undefined
+                            : getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle, trial });
 
                     // make sure that the plan and all its addons exist
                     const plansToCheck = Object.keys(planIDs) as (PLANS | ADDON_NAMES)[];
@@ -821,6 +825,7 @@ export const getPlanCardSubscriptionData = async ({
                         currency,
                         billingAddress,
                         info: true,
+                        trial,
                     });
                     return subscriptionData;
                 })
