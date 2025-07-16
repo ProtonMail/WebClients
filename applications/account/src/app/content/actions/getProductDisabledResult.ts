@@ -30,7 +30,7 @@ export const getProductDisabledLoginResult = async ({
     };
     return {
         type: 'app-switcher',
-        location: { pathname: paths.appSwitcher },
+        location: paths.appSwitcher,
         payload: appSwitcherState,
     };
 };

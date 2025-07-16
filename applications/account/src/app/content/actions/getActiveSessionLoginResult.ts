@@ -15,6 +15,7 @@ import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';
 import { getLoginResult } from './getLoginResult';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
+import { getSanitizedLocationDescriptorObject } from './getSanitizedLocationDescriptorObject';
 import type { LoginResult } from './interface';
 
 export const getActiveSessionLoginResult = async ({
@@ -42,7 +43,7 @@ export const getActiveSessionLoginResult = async ({
         if (forkParameters.forkType === ForkType.SIGNUP) {
             return {
                 type: 'signup',
-                location: { pathname: paths.signup },
+                location: paths.signup,
                 payload: null,
             };
         }
@@ -50,7 +51,7 @@ export const getActiveSessionLoginResult = async ({
         if (forkParameters.forkType === ForkType.LOGIN) {
             return {
                 type: 'login',
-                location: { pathname: paths.login },
+                location: paths.login,
                 payload: null,
             };
         }
@@ -65,7 +66,7 @@ export const getActiveSessionLoginResult = async ({
             return {
                 type: 'oauth-partners',
                 payload,
-                location: { pathname: SSO_PATHS.OAUTH_PARTNERS },
+                location: SSO_PATHS.OAUTH_PARTNERS,
             };
         }
 
@@ -84,7 +85,7 @@ export const getActiveSessionLoginResult = async ({
             if (getShouldReAuth(forkParameters, session)) {
                 return {
                     type: 'reauth',
-                    location: { pathname: paths.reauth },
+                    location: paths.reauth,
                     payload: getReAuthState(forkParameters, session),
                 };
             }
@@ -103,14 +104,17 @@ export const getActiveSessionLoginResult = async ({
         return {
             type: 'sessions-switcher',
             payload: null,
-            location: { pathname: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login },
+            location: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login,
         };
     }
 
     if (initialSearchParams.get('prompt') === 'login') {
         return {
             type: 'login',
-            location: { pathname: paths.login, search: initialSearchParams.toString() },
+            location: getSanitizedLocationDescriptorObject({
+                pathname: paths.login,
+                search: initialSearchParams.toString(),
+            }),
             payload: null,
         };
     }
@@ -131,6 +135,6 @@ export const getActiveSessionLoginResult = async ({
     return {
         type: 'sessions-switcher',
         payload: null,
-        location: { pathname: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login },
+        location: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login,
     };
 };

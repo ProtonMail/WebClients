@@ -103,9 +103,7 @@ export const getProduceForkLoginResult = async ({
                 return {
                     type: 'auth-ext',
                     payload: state,
-                    location: {
-                        pathname: '/auth-ext',
-                    },
+                    location: '/auth-ext',
                 };
             }
 
@@ -155,9 +153,7 @@ export const getProduceForkLoginResult = async ({
         }
         return {
             type: 'confirm-oauth',
-            location: {
-                pathname: SSO_PATHS.OAUTH_CONFIRM_FORK,
-            },
+            location: SSO_PATHS.OAUTH_CONFIRM_FORK,
             payload: {
                 data,
                 session,
