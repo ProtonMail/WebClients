@@ -198,6 +198,7 @@ const SingleSignupContainerV2 = ({
     const lumoSignupEnabled = useFlag('LumoSignupAvailable');
     const isB2BTrialEnabled = useFlag('ManualTrialsFE');
     const isLumoAddonAvailable = useFlag('LumoAddonAvailable');
+    const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
 
     const { flagsReady } = useFlagsStatus();
 
@@ -1167,6 +1168,7 @@ const SingleSignupContainerV2 = ({
                 silentApi,
                 cache.subscriptionData,
                 productParam,
+                hasZipCodeValidation,
                 getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
                 getReportPaymentFailure(cache.subscriptionData, isAuthenticated)
             );
@@ -1202,6 +1204,7 @@ const SingleSignupContainerV2 = ({
                 setupMnemonic,
                 reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
                 reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
+                hasZipCodeValidation,
             }),
             wait(3500),
         ]);
