@@ -5,6 +5,7 @@ import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill
 import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 
 import { FieldType, FormType } from '@proton/pass/fathom';
+import { clientSessionLocked } from '@proton/pass/lib/client';
 import { findBoundingInputElement } from '@proton/pass/utils/dom/input';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -26,7 +27,7 @@ type CreateFieldHandlesOptions = {
 const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
     withContext((ctx) => {
         const { action, element } = field;
-        if (!action) return;
+        if (!(ctx && action)) return;
 
         requestAnimationFrame(async () => {
             if (actionPrevented(element)) return;
@@ -41,11 +42,14 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
             const attachedField = dropdown?.getCurrentField();
             const current = attachedField?.element;
             const opened = dropdown?.getState().visible;
+            const locked = clientSessionLocked(ctx.getState().status);
 
             const shouldClose = opened && !isActiveElement(current);
             const shouldOpen = ctx?.getState().authorized && (!opened || shouldClose);
 
-            if (shouldClose) dropdown?.close();
+            /** If the session is locked on focus and the dropdown is opened: force
+             * close it. Some websites capture input focus too aggressively */
+            if (shouldClose || locked) dropdown?.close();
             if (shouldOpen) {
                 ctx?.service.iframe.attachDropdown(field.getFormHandle().element)?.open({
                     action: action.type,
@@ -58,10 +62,12 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
 
 const onBlurField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
     withContext((ctx, _evt) => {
-        const dropdown = ctx?.service.iframe.dropdown;
-        const visible = dropdown?.getState().visible;
-        const attachedTo = dropdown?.getCurrentField();
-        if (!(attachedTo === field && visible)) field.detachIcon();
+        if (!actionPrevented(field.element)) {
+            const dropdown = ctx?.service.iframe.dropdown;
+            const visible = dropdown?.getState().visible;
+            const attachedTo = dropdown?.getCurrentField();
+            if (!(attachedTo === field && visible)) field.detachIcon();
+        }
     });
 
 /* on input change : close the dropdown if it was visible
@@ -84,7 +90,7 @@ const onInputField = (field: FieldHandle): ((evt: Event) => void) => {
         const { value } = field.element;
 
         if (dropdown && dropdown.getState().visible) {
-            if (!actionPrevented(element) && !action?.filterable) dropdown?.close();
+            if (!actionPrevented(element) && !action?.filterable) dropdown.close();
             else if (action?.filterable) syncAutofillFilter(value);
         }
 
