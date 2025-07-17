@@ -1128,8 +1128,8 @@ export function isForbiddenPlusToPlus({
     const isNotSamePlanName = !subscribedPlans.some((subscribedPlan) => subscribedPlan.Name === newPlanName);
     const allowPlusToPlusTransitions = [
         {
-            // Going from Pass
-            from: [PLANS.PASS],
+            // Going from any plan
+            from: ['*'],
             // To Pass lifetime
             to: [PLANS.PASS_LIFETIME],
         },
@@ -1155,7 +1155,10 @@ export function isForbiddenPlusToPlus({
     const allowPlusToPlusTransition = !allowPlusToPlusTransitions.some(({ from, to }) => {
         return subscribedPlans.some(
             (subscribedPlan) =>
-                subscribedPlan.Name && newPlanName && from.includes(subscribedPlan.Name) && to.includes(newPlanName)
+                subscribedPlan.Name &&
+                newPlanName &&
+                (from.includes(subscribedPlan.Name) || from.includes('*')) &&
+                to.includes(newPlanName)
         );
     });
     const isNewPlanAPlusPlan = getHasPlusPlan(newPlanName);
