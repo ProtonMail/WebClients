@@ -8524,6 +8524,18 @@
       "${ count } item failed to be decrypted": [
         "${ count }件のアイテムの復号に失敗しました"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } 枚の写真を「${ albumLink.name }」から削除できませんでした"
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } 枚の写真を「${ albumName }」に追加できませんでした"
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } 枚の写真が 「${ albumName }」 に追加されました"
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } 枚の写真が「${ albumLink.name }」から削除されました"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems }個のアイテムが削除されました"
       ],
@@ -8704,12 +8716,6 @@
       "Share invitation declined": [
         "共有への招待が拒否されました"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "一部の写真が「${ albumName }」に追加できませんでした"
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "一部の写真が「${ albumLink.name }」から削除できませんでした"
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "申し訳ありませんが、フォルダが空でないため、削除できませんでした。"
       ],
@@ -8754,12 +8760,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "古いファイルは72時間で削除されます"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "写真が「${ albumName }」に追加されました"
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "写真が${ albumLink.name }から削除されました"
       ],
       "Your settings failed to be saved": [
         "設定の保存に失敗しました"
