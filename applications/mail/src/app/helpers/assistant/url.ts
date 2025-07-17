@@ -1,6 +1,6 @@
 import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
 
-import { API_URL } from 'proton-mail/config';
+import config from '../../config';
 
 const LinksURLs: {
     [key: string]: {
@@ -132,7 +132,7 @@ export const replaceURLs = (dom: Document, uid: string, messageID: string): Docu
             const key = `${ASSISTANT_IMAGE_PREFIX}${indexURL++}`;
             const encodedImageUrl = encodeImageUri(protonSrcValue);
             const proxyImage = forgeImageURL({
-                apiUrl: API_URL,
+                apiUrl: config.API_URL,
                 url: encodedImageUrl,
                 uid,
                 origin: window.location.origin,
