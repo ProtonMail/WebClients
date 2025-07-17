@@ -1955,10 +1955,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } miesiące w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } mies. w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
@@ -1976,7 +1976,7 @@
         "Nie możesz dodać niestandardowych domen w okresie próbnym."
       ],
       "You have reached the trial limit.": [
-        "Osiągnąłeś limit okresu próbnego."
+        "Osiągnięto limit okresu próbnego."
       ]
     },
     "b2b_trials_Action": {
@@ -9441,6 +9441,9 @@
       "Folder location": [
         "Lokalizacja folderu"
       ],
+      "Forums": [
+        "Fora"
+      ],
       "Forwards to": [
         "Przekaż do"
       ],
@@ -9657,6 +9660,12 @@
       "Postal code": [
         "Kod pocztowy"
       ],
+      "Primary": [
+        "Główna"
+      ],
+      "Promotions": [
+        "Promocje"
+      ],
       "Proration": [
         "Dzielenie proporcjonalne"
       ],
@@ -9698,6 +9707,9 @@
       ],
       "Size:": [
         "Rozmiar:"
+      ],
+      "Social": [
+        "Media społecznościowe"
       ],
       "Starred": [
         "Wyróżnione"
@@ -9753,14 +9765,23 @@
       "Toolbar": [
         "Pasek narzędzi"
       ],
+      "Transactions": [
+        "Transakcje"
+      ],
       "Undisclosed Recipients": [
         "Nieznani odbiorcy"
+      ],
+      "Unknown": [
+        "Nieznany"
       ],
       "Unsafe or problematic": [
         "Problematyczny tekst"
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Anulowano subskrypcję ${ truncatedName }."
+      ],
+      "Updates": [
+        "Aktualizacje"
       ],
       "Upload picture": [
         "Prześlij zdjęcie"

@@ -4372,6 +4372,9 @@
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
+      "Invalid ZIP code": [
+        "Ugyldig postnummer"
+      ],
       "Item content cannot exceed 40KB": [
         "Element-indhold må ikke overstige 40 kB"
       ],
@@ -4477,6 +4480,12 @@
       ],
       "Please select a state": [
         "Vælg venligst en region"
+      ],
+      "Please select billing country": [
+        "Vælg venligst faktureringsland"
+      ],
+      "Please select billing state": [
+        "Vælg venligst faktureringsstat"
       ],
       "Please try again or refresh the page.": [
         "Prøv venligst igen eller opdater siden."
@@ -8573,6 +8582,9 @@
       "Address": [
         "Adresse"
       ],
+      "Alias title": [
+        "Aliastitel"
+      ],
       "ALL": [
         "ALLE"
       ],
@@ -9005,6 +9017,12 @@
       "Postal code": [
         "Postnummer"
       ],
+      "Primary": [
+        "Primær"
+      ],
+      "Promotions": [
+        "Kampagner"
+      ],
       "Proration": [
         "Proration"
       ],
@@ -9098,14 +9116,23 @@
       "Toolbar": [
         "Værktøjslinje"
       ],
+      "Transactions": [
+        "Transaktioner"
+      ],
       "Undisclosed Recipients": [
         "Oplyste modtagere"
+      ],
+      "Unknown": [
+        "Ukendt"
       ],
       "Unsafe or problematic": [
         "Usikkert eller problematisk"
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Afregistrer fra ${ truncatedName }"
+      ],
+      "Updates": [
+        "Opdateringer"
       ],
       "Upload picture": [
         "Upload billede"
@@ -9198,6 +9225,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postnummer"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -11302,6 +11332,11 @@
         "Adresse, postnummer og by"
       ]
     },
+    "Payments.VAT number name": {
+      "VAT number": [
+        "Momsnummer"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøgle kan ikke benyttes til kryptering"
@@ -11408,6 +11443,9 @@
       "Please share what you expected": [
         "Fortæl os, hvad du forventede"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Search date, name, email address, or subject line": [
         "Søg dato, navn, e-mailadresse eller emnelinje"
       ],
@@ -11476,6 +11514,9 @@
       ],
       "Your organization name": [
         "Dit organisationsnavn"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Placeholder for contact group name": {

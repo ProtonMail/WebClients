@@ -1941,10 +1941,10 @@
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -9156,6 +9156,9 @@
       "Folder location": [
         "Ubicación de la carpeta"
       ],
+      "Forums": [
+        "Foros"
+      ],
       "Forwards to": [
         "Reenvía a"
       ],
@@ -9372,6 +9375,12 @@
       "Postal code": [
         "Código postal"
       ],
+      "Primary": [
+        "Principal"
+      ],
+      "Promotions": [
+        "Promociones"
+      ],
       "Proration": [
         "Prorrateo"
       ],
@@ -9413,6 +9422,9 @@
       ],
       "Size:": [
         "Tamaño:"
+      ],
+      "Social": [
+        "Redes Sociales"
       ],
       "Starred": [
         "Destacados"
@@ -9468,14 +9480,23 @@
       "Toolbar": [
         "Barra de herramientas"
       ],
+      "Transactions": [
+        "Transacciones"
+      ],
       "Undisclosed Recipients": [
         "Destinatarios ocultos"
+      ],
+      "Unknown": [
+        "Desconocido"
       ],
       "Unsafe or problematic": [
         "No seguro o problemático"
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Se ha cancelado la suscripción de ${ truncatedName }."
+      ],
+      "Updates": [
+        "Actualizaciones"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -11833,13 +11854,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número empresarial"
       ],
       "EIN": [
-        "EIN"
+        "Número de identificación fiscal (EIN)"
       ],
       "VAT number": [
         "Número de IVA"
