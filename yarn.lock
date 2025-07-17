@@ -12910,6 +12910,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tauri-apps/plugin-http@npm:~2":
+  version: 2.5.0
+  resolution: "@tauri-apps/plugin-http@npm:2.5.0"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.6.0"
+  checksum: 10c0/eed47bb2adf012cde4409c4decae30e6b759f5828cb959cf43fc34c5fdfe68e6670f14f1134c8c4c941bc3fdb00e312772ebd72ec94e15c56ed1b7fbd47dd91c
+  languageName: node
+  linkType: hard
+
 "@tauri-apps/plugin-log@npm:~2":
   version: 2.6.0
   resolution: "@tauri-apps/plugin-log@npm:2.6.0"
@@ -38007,6 +38016,7 @@ __metadata:
     "@tauri-apps/cli": "npm:^2"
     "@tauri-apps/plugin-dialog": "npm:~2"
     "@tauri-apps/plugin-fs": "npm:~2"
+    "@tauri-apps/plugin-http": "npm:~2"
     "@tauri-apps/plugin-log": "npm:~2"
     "@tauri-apps/plugin-opener": "npm:^2"
     "@tauri-apps/plugin-store": "npm:~2"
