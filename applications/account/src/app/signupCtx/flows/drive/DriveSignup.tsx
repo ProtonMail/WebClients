@@ -80,9 +80,16 @@ const DriveSignupInner = () => {
 
     const signup = useSignup();
 
-    const { options } = usePaymentOptimistic();
+    const { options, initializationStatus } = usePaymentOptimistic();
 
     const notifyError = useNotifyErrorHandler();
+
+    /**
+     * Prevent content flashes where selected plan is initially the default before initialization occurs
+     */
+    if (!initializationStatus.triggered) {
+        return null;
+    }
 
     return (
         <>
