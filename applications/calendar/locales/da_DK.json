@@ -92,6 +92,12 @@
       "Add to group": [
         "Føj til gruppe"
       ],
+      "Add Zoom meeting": [
+        "Tilføj Zoom-møde"
+      ],
+      "Adding conferencing details": [
+        "Tilføjer mødedetaljer"
+      ],
       "Apply": [
         "Anvend"
       ],
@@ -463,6 +469,9 @@
       ],
       "Load image": [
         "Indlæs billede"
+      ],
+      "Loading Zoom configuration": [
+        "Indlæser Zoom-konfiguration"
       ],
       "Make this participant optional": [
         "Gør denne deltager valgfri"
@@ -3328,6 +3337,9 @@
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
+      "Invalid ZIP code": [
+        "Ugyldig postnummer"
+      ],
       "Invitation failed to be sent": [
         "Invitation kunne ikke sendes"
       ],
@@ -3433,6 +3445,12 @@
       ],
       "Please select a state": [
         "Vælg venligst en region"
+      ],
+      "Please select billing country": [
+        "Vælg venligst faktureringsland"
+      ],
+      "Please select billing state": [
+        "Vælg venligst faktureringsstat"
       ],
       "Port is required": [
         "Port er påkrævet."
@@ -5963,6 +5981,9 @@
       "Address": [
         "Adresse"
       ],
+      "Alias title": [
+        "Aliastitel"
+      ],
       "All day": [
         "Hele dagen"
       ],
@@ -6414,6 +6435,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postnummer"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -8445,6 +8469,11 @@
         "Adresse, postnummer og by"
       ]
     },
+    "Payments.VAT number name": {
+      "VAT number": [
+        "Momsnummer"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøgle kan ikke benyttes til kryptering"
@@ -8545,6 +8574,9 @@
       "Please select a country": [
         "Vælg venligst et land"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Search events": [
         "Søg efter begivenheder"
       ],
@@ -8574,6 +8606,9 @@
       ],
       "Your organization name": [
         "Dit organisationsnavn"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Placeholder for contact group name": {
@@ -11328,17 +11363,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Deltag i Zoom-møde"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Tilføj Zoom-møde"
-      ],
-      "Adding conferencing details": [
-        "Tilføjer mødedetaljer"
-      ],
-      "Loading Zoom configuration": [
-        "Indlæser Zoom-konfiguration"
       ]
     },
     "Zoom Meeting": {
