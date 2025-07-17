@@ -24,7 +24,7 @@ type CreateFieldHandlesOptions = {
  * does not match the dropdown's current field : this maybe the case
  * when changing focus with the dropdown open */
 const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
-    withContext((ctx, evt) => {
+    withContext((ctx) => {
         const { action, element } = field;
         if (!action) return;
 
@@ -37,13 +37,12 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
 
             field.attachIcon({ count });
 
-            const target = evt?.target;
             const dropdown = ctx?.service.iframe.dropdown;
             const attachedField = dropdown?.getCurrentField();
             const current = attachedField?.element;
             const opened = dropdown?.getState().visible;
 
-            const shouldClose = opened && current !== target;
+            const shouldClose = opened && !isActiveElement(current);
             const shouldOpen = ctx?.getState().authorized && (!opened || shouldClose);
 
             if (shouldClose) dropdown?.close();
