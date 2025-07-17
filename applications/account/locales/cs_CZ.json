@@ -148,6 +148,9 @@
       "Add public holidays": [
         "Přidat státní svátky"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Přidat doporučující odkaz k podpisu ${ MAIL_APP_NAME }"
+      ],
       "Add sieve filter": [
         "Přidat filtr Sieve"
       ],
@@ -216,6 +219,9 @@
       ],
       "Cancel subscription": [
         "Zrušit předplatné"
+      ],
+      "Cancel trial and pay": [
+        "Zrušit zkušební verzi a zaplatit"
       ],
       "Change": [
         "Změnit"
@@ -1459,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Navyšte svůj tarif pro povolení ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Přejít na tarif Professional"
+      ],
       "Upgrade to view all": [
         "Navyšte tarif pro zobrazení všeho"
       ],
@@ -2011,14 +2020,8 @@
       "During the trial period, you can have up to 10 users.": [
         "Během zkušební doby můžete mít až 10 uživatelů."
       ],
-      "free for 14 days": [
-        "zdarma na 14 dnů"
-      ],
       "on ${ formattedDate }": [
         "dne ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Vyzkoušejte ${ selected } ${ freeFor14Days }"
       ],
       "Try it free for 14 days": [
         "Vyzkoušet na 14 dní zdarma"
@@ -4327,6 +4330,9 @@
       ],
       "To start, give your organization a name.": [
         "Nejprve pojmenujte vaši organizaci."
+      ],
+      "Track the status and activity of your referrals": [
+        "Sledujte stav a aktivitu svých doporučení"
       ],
       "Track the status and activity of your referrals.": [
         "Sledujte stav a aktivitu svých doporučení."
@@ -7663,8 +7669,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - vaše řídicí centrum pro sledování aktivity uživatelů, odhalování hrozeb a zajišťování shody s předpisy v celé organizaci."
+      " and other security features.": [
+        " a další funkce zabezpečení."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
@@ -7950,6 +7956,9 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Získejte adresu ${ BRAND_NAME }** pro používání všech služeb ${ BRAND_NAME_TWO } včetně ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } další",
@@ -8890,6 +8899,9 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Dostanete upozornění, pokud došlo k úniku vašeho hesla nebo jiných osobních údajů. ${ learnMoreLinkNoBreach }"
       ],
+      "Get started with the referral link above.": [
+        "Začněte s doporučujícím odkazem výše."
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Pojmenujte token např. názvem služby, se kterou jej plánujete používat a vyberte jednu ze svých aktivních doménových adres. Pouze tato adresa bude moci odesílat e-maily tímto tokenem."
       ],
@@ -9114,6 +9126,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Pozvěte svého partnera, přítele nebo kohokoli, s kým sdílíte svůj tarif ${ protonDuoPlanName }."
+      ],
+      "Invited": [
+        "Pozván/a"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Zdá se, že některá z vašich dat jsou zašifrována a uzamčena."
@@ -9525,6 +9540,9 @@
       ],
       "Paid for a monthly plan": [
         "Zaplaceno za měsíční tarif"
+      ],
+      "Paid for a plan": [
+        "Zaplaceno za tarif"
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - potvrzen vlastní e-mail"
@@ -10639,9 +10657,6 @@
       "Why?": [
         "Proč?"
       ],
-      "With a Business or Enterprise plan, unlock": [
-        "S tarifem Business nebo Enterprise odemknete"
-      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "S plánem Business nebo Enterprise můžete pro svou organizaci zakoupit ${ boldDedicatedServers } a nastavit ${ boldGateways }, abyste mohli řídit, kteří uživatelé k nim mohou přistupovat."
       ],
@@ -10797,6 +10812,9 @@
       ],
       "You do not have permission to perform this action": [
         "K provedení této akce nemáte oprávnění"
+      ],
+      "You don't have any referrals.": [
+        "Nemáte žádná doporučení."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
@@ -10971,6 +10989,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaše bezplatná zkušební verze byla úspěšně převedena na měsíční předplatné. Datum obnovení je ${ nextBillingDate }."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Vaši přátelé získají **2 týdny zdarma** na svém zvoleném tarifu."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Váš import z ${ accounts } je dočasně opožděn.",
@@ -12489,6 +12510,9 @@
       "Reveal password": [
         "Zobrazit heslo"
       ],
+      "Reward": [
+        "Odměna"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ženeva"
       ],
@@ -12518,6 +12542,9 @@
       ],
       "Sequences": [
         "Sekvence"
+      ],
+      "Share your referral link": [
+        "Sdílejte svůj doporučující odkaz"
       ],
       "Show ${ n } administrator": [
         "Zobrazit ${ n } správce",
@@ -13091,6 +13118,9 @@
       ],
       "Terms": [
         "Podmínky"
+      ],
+      "Terms and conditions": [
+        "Smluvní podmínky užívání"
       ],
       "Trouble signing in?": [
         "Potíže s přihlášením?"
@@ -14563,6 +14593,9 @@
       ],
       "Downgrade account?": [
         "Snížit účet na nižší úroveň?"
+      ],
+      "Review subscription": [
+        "Zkontrolovat předplatné"
       ],
       "Review subscription and pay": [
         "Zkontrolovat předplatné a zaplatit"
@@ -16421,13 +16454,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "DIČ"
+        "ABN"
       ],
       "Business Number": [
         "Firemní číslo"
       ],
       "EIN": [
-        "IČO"
+        "EIN"
       ],
       "VAT number": [
         "DIČ"
@@ -20655,6 +20688,9 @@
       "Gift code": [
         "Dárkový kód"
       ],
+      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
+        "Dejte ${ referralReward } a 2 týdny zdarma. Získáte kredity ve výši ${ referralReward }."
+      ],
       "Group": [
         "Skupina"
       ],
@@ -20738,6 +20774,9 @@
       ],
       "Invitations": [
         "Pozvánky"
+      ],
+      "Invite friends. Get credits.": [
+        "Pozvěte přátele. Získejte kredity."
       ],
       "Invoices": [
         "Faktury"
@@ -21315,8 +21354,8 @@
       "Video conferencing": [
         "Videokonference"
       ],
-      "View organization events by upgrading to Business": [
-        "Zobrazení událostí organizace po navýšení na Business"
+      "View organization events by upgrading to Professional": [
+        "Zobrazení událostí organizace po navýšení na Professional"
       ],
       "VPN apps": [
         "VPN aplikace"
@@ -21380,6 +21419,9 @@
       ],
       "Your recovery status": [
         "Stav obnovy"
+      ],
+      "Your referrals": [
+        "Vaše doporučení"
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
@@ -21522,9 +21564,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Umožňuje snadno přidávat odkazy na videokonference do vašich pozvánek kalendáře."
       ],
-      "An approximate location of the IP address": [
-        "Přibližné umístění IP adresy"
-      ],
       "Any protection applied to suspicious activity": [
         "Jakákoli ochrana uplatňovaná na podezřelou aktivitu"
       ],
@@ -21548,9 +21587,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Po 30 dnech smaže zprávy v koši a spamu. Zapnutím automatického mazání se zprávám, které jsou již v koši/spamu, nastaví datum automatického smazání podle data, kdy tam byly přesunuty."
-      ],
-      "Device information such as operating system": [
-        "Informace o zařízení, jako je operační systém"
       ],
       "Device name and app version": [
         "Název zařízení a verze aplikace"
@@ -21615,6 +21651,12 @@
       "Not all information listed here was exposed for all users.": [
         "Ne všechny informace, které jsou zde uvedeny, byly zpřístupněny všem uživatelům."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Původní poskytovatel internetových služeb (ISP)"
+      ],
+      "Origin IP address": [
+        "Původní IP adresa"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Zdrojová IP adresa a poskytovatel internetových služeb (ISP)"
       ],
@@ -21656,9 +21698,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Poskytovatel IP adresy internetových služeb"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nový cyklus předplatného začíná ${ formattedTime }"

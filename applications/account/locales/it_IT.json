@@ -148,6 +148,9 @@
       "Add public holidays": [
         "Aggiungi i giorni festivi"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Aggiungi link di affiliazione alla firma di ${ MAIL_APP_NAME }"
+      ],
       "Add sieve filter": [
         "Aggiungi un filtro sieve"
       ],
@@ -216,6 +219,9 @@
       ],
       "Cancel subscription": [
         "Annulla abbonamento"
+      ],
+      "Cancel trial and pay": [
+        "Annulla la prova e paga"
       ],
       "Change": [
         "Modifica"
@@ -1459,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Effettua l'upgrade per abilitare ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Effettua l'upgrade a Professional"
+      ],
       "Upgrade to view all": [
         "Effettua l'upgrade per visualizzare tutto"
       ],
@@ -2001,14 +2010,8 @@
       "During the trial period, you can have up to 10 users.": [
         "Durante il periodo di prova, puoi avere fino a 10 utenti."
       ],
-      "free for 14 days": [
-        "gratis per 14 giorni"
-      ],
       "on ${ formattedDate }": [
         "il ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Prova ${ selected } ${ freeFor14Days }"
       ],
       "Try it free for 14 days": [
         "Provalo gratis per 14 giorni"
@@ -4290,6 +4293,9 @@
       "To start, give your organization a name.": [
         "Per iniziare, dai un nome alla tua organizzazione."
       ],
+      "Track the status and activity of your referrals": [
+        "Tieni traccia dello stato e dell'attività dei tuoi referral"
+      ],
       "Track the status and activity of your referrals.": [
         "Tieni traccia dello stato e dell'attività dei tuoi referral."
       ],
@@ -4307,6 +4313,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puoi importare eventi con il formato iCal (file ICS). Il file deve avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } o fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il tuo file è più grande, dividilo in file più piccoli."
+      ],
+      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
+        "Riceverai ${ referralReward } in credito ${ BRAND_NAME } quando la persona che inviti si registra a un piano ${ BRAND_NAME }, e riceverà anche ${ referralReward } in crediti per iniziare."
       ]
     },
     "description": {
@@ -5432,6 +5441,9 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Invalid ZIP code": [
+        "CAP non valido"
+      ],
       "Item content cannot exceed 40KB": [
         "Il contenuto dell'elemento non può superare i 40 Kb"
       ],
@@ -5526,6 +5538,18 @@
       "Please enter a valid Entity ID URL": [
         "Inserisci un URL ID Entità valido"
       ],
+      "Please enter a valid postal code": [
+        "Si prega di inserire un codice postale valido"
+      ],
+      "Please enter a valid ZIP code": [
+        "Per favore, inserisci un codice postale valido"
+      ],
+      "Please enter postal code": [
+        "Per favore inserisci il codice postale"
+      ],
+      "Please enter ZIP code": [
+        "Inserisci codice postale"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
@@ -5544,6 +5568,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Seleziona almeno un utente o un gruppo prima di continuare."
+      ],
+      "Please select billing country": [
+        "Seleziona il paese di fatturazione"
+      ],
+      "Please select billing state": [
+        "Seleziona lo stato di fatturazione"
       ],
       "Please set a recovery email first": [
         "Imposta prima un indirizzo email di recupero"
@@ -5574,6 +5604,9 @@
       ],
       "Port is required": [
         "La porta è obbligatoria"
+      ],
+      "Postal code is required": [
+        "Il codice postale è obbligatorio"
       ],
       "Primary address key is not decrypted": [
         "Chiave dell'indirizzo principale non decriptata"
@@ -7539,8 +7572,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - il tuo centro di comando per il monitoraggio dell'attività degli utenti, il rilevamento delle minacce e per garantire la conformità nella tua organizzazione."
+      " and other security features.": [
+        " e altre funzionalità di sicurezza."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } utente attualmente ha accesso ai server condivisi.",
@@ -7776,6 +7809,9 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Ottieni un indirizzo ${ BRAND_NAME }** per usare tutti i servizi ${ BRAND_NAME_TWO } inclusi ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invita i tuoi amici** a ${ BRAND_NAME } con il tuo link di affiliazione."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Altro",
@@ -8679,6 +8715,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Ottieni l'accesso creando un account ${ BRAND_NAME } e accettando l'invito."
       ],
+      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
+        "Ottieni e dai **${ referralReward } crediti** per ogni amico che si abbona."
+      ],
       "Get it on Google Play": [
         "Scarica da Google Play"
       ],
@@ -8687,6 +8726,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Ricevi una notifica se la tua password o altri dati personali vengono resi pubblici. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started with the referral link above.": [
+        "Inizia con il link di affiliazione qui sopra."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Assegna al token un nome descrittivo, some il servizio con cui pensi di usarlo, e seleziona uno dei tuoi indirizzi di dominio personalizzati attivi. Solamente questo indirizzo potrà inviare email con questo token."
@@ -8908,6 +8950,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Invita il tuo partner, un amico, o chiunque altro con cui condividere il tuo piano ${ protonDuoPlanName }."
+      ],
+      "Invited": [
+        "Invitato"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Sembra che alcuni dei tuoi dati siano crittografati e bloccati."
@@ -9313,6 +9358,9 @@
       ],
       "Paid for a monthly plan": [
         "Pagato per un piano mensile"
+      ],
+      "Paid for a plan": [
+        "Pagato per un piano"
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - email personalizzata confermata"
@@ -10168,6 +10216,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Effettua l'upgrade per aggiungere un indirizzo @pm.me al tuo account, più breve e più facile da condividere. Significa \"${ MAIL_APP_NAME } me\" o \"Private Message me\"."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Effettua l'upgrade a Professional o a un piano superiore per sbloccare"
+      ],
       "Upgrade to unlock": [
         "Effettua l'upgrade per sbloccare"
       ],
@@ -10411,9 +10462,6 @@
       "Why?": [
         "Perché?"
       ],
-      "With a Business or Enterprise plan, unlock": [
-        "Con un piano Business o Enterprise, sblocca"
-      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Con un piano Business o Enterprise, puoi acquistare ${ boldDedicatedServers } per la tua organizzazione e configurare ${ boldGateways } per controllare quali utenti possono accedervi."
       ],
@@ -10555,6 +10603,9 @@
       ],
       "You do not have permission to perform this action": [
         "Non hai i permessi per eseguire quest'azione"
+      ],
+      "You don't have any referrals.": [
+        "Non hai alcun referral."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Ricevi notifiche se la tua password o altri dati vengono divulgati da servizi di terze parti."
@@ -10719,6 +10770,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "La tua prova gratuita è stata convertita con successo in un abbonamento mensile. La tua data di rinnovo è il ${ nextBillingDate }."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "I tuoi amici ottengono **2 settimane gratis** sul piano che hanno scelto."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "L'importazione dagli account ${ accounts } è temporaneamente rinviato.",
@@ -12219,6 +12273,9 @@
       "Reveal password": [
         "Mostra la password"
       ],
+      "Reward": [
+        "Ricompensa"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -12248,6 +12305,9 @@
       ],
       "Sequences": [
         "Sequenze"
+      ],
+      "Share your referral link": [
+        "Condividi il tuo link affiliato"
       ],
       "Show ${ n } administrator": [
         "Mostra ${ n } amministratore",
@@ -12586,6 +12646,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Codice postale"
+      ],
       "ZIP code": [
         "CAP"
       ]
@@ -12816,6 +12879,9 @@
       ],
       "Terms": [
         "Termini"
+      ],
+      "Terms and conditions": [
+        "Termini e condizioni"
       ],
       "Trouble signing in?": [
         "Altre opzioni di accesso"
@@ -14194,6 +14260,9 @@
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Per iniziare, scegli un nome visualizzato. Questo è ciò che le persone vedranno quando invii un'email, le inviti a un evento o condividi un file."
       ],
+      "Your ${ planTitleElement } subscription is now active.": [
+        "Il tuo abbonamento ${ planTitleElement } è ora attivo."
+      ],
       "Your selected plan: ${ planName }": [
         "Il tuo piano selezionato: ${ planName }"
       ]
@@ -14215,6 +14284,9 @@
       ],
       "Downgrade account?": [
         "Vuoi effettuare il downgrade dell'account?"
+      ],
+      "Review subscription": [
+        "Rivedi abbonamento"
       ],
       "Review subscription and pay": [
         "Controlla abbonamento e paga"
@@ -15936,6 +16008,9 @@
       "Got it": [
         "Ho capito"
       ],
+      "I'm purchasing as a business": [
+        "Sto acquistando come azienda"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -15978,6 +16053,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
+      ],
+      "This number will be shown on all future invoices": [
+        "Questo numero sarà mostrato su tutte le fatture future"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
@@ -16034,6 +16112,20 @@
       ],
       "Street address, postal code, and city": [
         "Indirizzo, codice postale e città"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Numero aziendale australiano (ABN)"
+      ],
+      "Business Number": [
+        "Numero azienda"
+      ],
+      "EIN": [
+        "Numero d'identificazione fiscale (EIN)"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ]
     },
     "Permission": {
@@ -16163,6 +16255,9 @@
       "Please select the main reason": [
         "Seleziona il motivo principale"
       ],
+      "Postal code": [
+        "Codice postale"
+      ],
       "Printer": [
         "Stampante"
       ],
@@ -16213,6 +16308,9 @@
       ],
       "yourdomain.com": [
         "tuodominio.com"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "placeholder": {
@@ -20110,6 +20208,9 @@
       "Gift code": [
         "Codice regalo"
       ],
+      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
+        "Offri ${ referralReward } e 2 settimane gratis. Ottieni ${ referralReward } crediti."
+      ],
       "Group": [
         "Gruppo"
       ],
@@ -20191,6 +20292,9 @@
       ],
       "Invitations": [
         "Inviti"
+      ],
+      "Invite friends. Get credits.": [
+        "Invita amici. Ottieni crediti."
       ],
       "Invoices": [
         "Fatture"
@@ -20766,8 +20870,8 @@
       "Video conferencing": [
         "Videoconferenze"
       ],
-      "View organization events by upgrading to Business": [
-        "Visualizza gli eventi dell'organizzazione effettuando l'upgrade a Business"
+      "View organization events by upgrading to Professional": [
+        "Visualizza gli eventi dell'organizzazione effettuando l'upgrade a Professional"
       ],
       "VPN apps": [
         "App VPN"
@@ -20831,6 +20935,9 @@
       ],
       "Your recovery status": [
         "Il tuo stato di recupero"
+      ],
+      "Your referrals": [
+        "I tuoi riferimento"
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
@@ -20973,9 +21080,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Consente di aggiungere facilmente collegamenti di videoconferenza agli inviti del tuo calendario."
       ],
-      "An approximate location of the IP address": [
-        "Una posizione approssimativa dell'indirizzo IP"
-      ],
       "Any protection applied to suspicious activity": [
         "Qualsiasi protezione applicata alle attività sospette"
       ],
@@ -20999,9 +21103,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Elimina i messaggi nelle cartelle Cestino e Spam dopo 30 giorni. Attivare l'eliminazione automatica assegna ai messaggi già presenti nelle cartelle Cestino e Spam una data di eliminazione sulla base della data in cui sono stati spostati lì."
-      ],
-      "Device information such as operating system": [
-        "Informazioni sul dispositivo come il sistema operativo"
       ],
       "Device name and app version": [
         "Nome del dispositivo e versione dell'app"
@@ -21066,6 +21167,12 @@
       "Not all information listed here was exposed for all users.": [
         "Non tutte le informazioni elencate qui sono state esposte per tutti gli utenti."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Provider di servizi Internet (ISP) di origine"
+      ],
+      "Origin IP address": [
+        "Indirizzo IP di origine"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Origine indirizzo IP e fornitore di servizi Internet (ISP)"
       ],
@@ -21107,9 +21214,6 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Il fornitore di servizi Internet dell'indirizzo IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Il nuovo ciclo di abbonamento inizia il ${ formattedTime }"
