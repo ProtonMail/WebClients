@@ -4,6 +4,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { repaint } from '@proton/pass/utils/dom/repaint';
 import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 
@@ -59,6 +60,8 @@ export const TextAreaReadonly: FC<Props> = ({ children, className }) => {
 
     useLayoutEffect(() => {
         if (ref.current) {
+            /** Force layout repaint for accurate `scrollHeight` in Firefox */
+            repaint(ref.current);
             const scrollHeight = ref.current.scrollHeight;
             setScrollHeight(scrollHeight);
         }
