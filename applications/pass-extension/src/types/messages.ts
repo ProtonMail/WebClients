@@ -88,9 +88,9 @@ export enum WorkerMessageType {
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
     B2B_EVENT = 'B2B_EVENT',
     CLIENT_INIT = 'CLIENT_INIT',
-    CLIPBOARD_WRITE = 'CLIPBOARD_WRITE',
     CLIPBOARD_OFFSCREEN_READ = 'CLIPBOARD_OFFSCREEN_READ',
     CLIPBOARD_OFFSCREEN_WRITE = 'CLIPBOARD_OFFSCREEN_WRITE',
+    CLIPBOARD_START_CLEAR_TIMEOUT = 'CLIPBOARD_START_CLEAR_TIMEOUT',
     DEBUG = 'DEBUG',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
     FETCH_ABORT = 'FETCH_ABORT',
@@ -168,7 +168,10 @@ export type ClipboardOffscreenWriteMessage = WithPayload<
     WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE,
     { content: string }
 >;
-export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_WRITE, { content: string }>;
+export type ClipboardStartClearTimeoutMessage = WithPayload<
+    WorkerMessageType.CLIPBOARD_START_CLEAR_TIMEOUT,
+    { timeoutMs: number; content: string }
+>;
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
 export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
@@ -241,7 +244,7 @@ export type WorkerMessage =
     | ClientInitMessage
     | ClipboardOffscreenReadMessage
     | ClipboardOffscreenWriteMessage
-    | ClipboardWriteMessage
+    | ClipboardStartClearTimeoutMessage
     | DebugMessage
     | FeatureFlagsUpdateMessage
     | FetchAbortMessage

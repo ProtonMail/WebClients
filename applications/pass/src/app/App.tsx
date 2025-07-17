@@ -2,6 +2,7 @@ import { Router, matchPath } from 'react-router-dom';
 
 import config from 'proton-pass-web/app/config';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
+import { clipboard } from 'proton-pass-web/lib/clipboard';
 import { PASS_WEB_COMPAT } from 'proton-pass-web/lib/compatibility';
 import { core } from 'proton-pass-web/lib/core';
 import { PASS_CONFIG } from 'proton-pass-web/lib/env';
@@ -43,7 +44,6 @@ import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { getBiometricsStorageKey, inferBiometricsStorageKey } from '@proton/pass/lib/auth/lock/biometrics/utils';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import { createClipboardService } from '@proton/pass/lib/clipboard/service';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import {
@@ -134,7 +134,13 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
                 hash: page,
             }),
 
-        writeToClipboard: createClipboardService(settings, authStore.getLocalID()).writeClipboardContent,
+        writeToClipboard: async (content) => {
+            await navigator.clipboard.writeText(content);
+            const { clipboard: clipboardSettings } = await settings.read();
+            if (clipboardSettings && clipboardSettings.timeoutMs) {
+                clipboard.startClearTimeout(clipboardSettings.timeoutMs, content);
+            }
+        },
 
         supportsBiometrics: isPRFSupported,
 
