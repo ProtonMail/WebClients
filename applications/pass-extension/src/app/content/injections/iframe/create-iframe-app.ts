@@ -45,7 +45,7 @@ type CreateIFrameAppOptions<A> = {
     id: IFrameEndpoint;
     popover: PopoverController;
     src: string;
-    backdropExclude?: () => HTMLElement[];
+    backdropExclude?: () => Element[];
     onDestroy?: () => void;
     onError?: (error: unknown) => void;
     onOpen?: (state: IFrameState<A>) => void;
