@@ -655,7 +655,7 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                                                         toApp={maybePreAppIntent}
                                                         toAppName={toAppName}
                                                         searchParams={searchParams}
-                                                        onLogin={handleLogin}
+                                                        handleLogin={handleLogin}
                                                         fork={!!forkState}
                                                         onBack={
                                                             hasBackToSwitch

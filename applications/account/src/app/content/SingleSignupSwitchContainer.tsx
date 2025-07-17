@@ -19,7 +19,7 @@ interface Props {
     maybePreAppIntent: APP_NAMES | undefined;
     searchParams: URLSearchParams;
     initialSearchParams?: URLSearchParams;
-    onLogin: OnLoginCallback;
+    handleLogin: OnLoginCallback;
     productParam: ProductParam;
     toApp?: APP_NAMES;
     toAppName?: string;
@@ -38,7 +38,7 @@ interface Props {
 const SingleSignupSwitchContainer = ({
     maybePreAppIntent,
     initialSearchParams,
-    onLogin,
+    handleLogin,
     productParam,
     toAppName,
     clientType,
@@ -66,7 +66,7 @@ const SingleSignupSwitchContainer = ({
                 <SignupCtxRouter
                     onPreSubmit={onPreSubmit}
                     onStartAuth={onStartAuth}
-                    onLogin={onLogin}
+                    handleLogin={handleLogin}
                     loginUrl={paths.login}
                     productParam={productParam}
                 />
@@ -85,7 +85,7 @@ const SingleSignupSwitchContainer = ({
                     clientType={clientType}
                     toApp={maybePreAppIntent}
                     toAppName={toAppName}
-                    onLogin={onLogin}
+                    onLogin={handleLogin}
                     onBack={onBack}
                     onPreSubmit={onPreSubmit}
                     onStartAuth={onStartAuth}
@@ -105,7 +105,7 @@ const SingleSignupSwitchContainer = ({
             clientType={clientType}
             toApp={maybePreAppIntent}
             toAppName={toAppName}
-            onLogin={onLogin}
+            onLogin={handleLogin}
             fork={fork}
             onBack={onBack}
             onPreSubmit={onPreSubmit}
