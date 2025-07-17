@@ -504,6 +504,22 @@ describe('forbidden plan transitions', () => {
         expect(result).toEqual(null);
     });
 
+    it('should be allowed going from mail to pass lifetime', () => {
+        const subscription = buildSubscription(PLANS.MAIL);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.PASS_LIFETIME]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be allowed going from vpn to pass lifetime', () => {
+        const subscription = buildSubscription(PLANS.VPN2024);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.PASS_LIFETIME]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
+
     it('should be allowed going from pass lifetime to mail', () => {
         const subscription = buildSubscription(PLANS.PASS_LIFETIME);
         const user = buildUser({ isPaid: true });
