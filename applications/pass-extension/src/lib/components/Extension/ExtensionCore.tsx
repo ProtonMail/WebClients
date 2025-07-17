@@ -175,10 +175,20 @@ const getPassCoreProviderProps = (
                 .then((res) => res.type === 'success')
                 .catch(() => false),
 
-        writeToClipboard: (content) =>
-            sendMessage(messageFactory({ type: WorkerMessageType.CLIPBOARD_WRITE, payload: { content } }))
-                .then(noop)
-                .catch(noop),
+        writeToClipboard: async (content) => {
+            // First clipboard write can be done directly in the view
+            // But the clipboard clear has to be delayed out of the view which may be closed by then
+            await navigator.clipboard.writeText(content);
+            const { clipboard } = await settings.read();
+            if (clipboard && clipboard.timeoutMs > 0) {
+                await sendMessage(
+                    messageFactory({
+                        type: WorkerMessageType.CLIPBOARD_START_CLEAR_TIMEOUT,
+                        payload: { timeoutMs: clipboard.timeoutMs, content },
+                    })
+                );
+            }
+        },
 
         popup: endpoint === 'popup' ? createPopupController() : undefined,
     };

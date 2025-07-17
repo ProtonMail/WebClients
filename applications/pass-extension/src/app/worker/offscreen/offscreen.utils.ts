@@ -1,12 +1,13 @@
-import browser from '@proton/pass/lib/globals/browser';
-
 // A global promise to avoid concurrency issues
 let creating: Promise<void> | null = null;
 
+// Offscreen is only working on Chrome at the moment
+// `chrome` dedicated api will throw if you try from any other browser
+// But as the feature is not available, it would have thrown anyway
 export const setupOffscreenDocument = async (path: string) => {
     // Check all windows controlled by the service worker to see if one
     // of them is the offscreen document with the given path
-    const offscreenUrl = browser.runtime.getURL(path);
+    const offscreenUrl = chrome.runtime.getURL(path);
     const existingContexts = await chrome.runtime.getContexts({
         contextTypes: ['OFFSCREEN_DOCUMENT'],
         documentUrls: [offscreenUrl],
