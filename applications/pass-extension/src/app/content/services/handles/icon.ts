@@ -11,8 +11,9 @@ import {
     createIcon,
 } from 'proton-pass-extension/app/content/injections/icon';
 import type { FieldHandle, FieldIconHandle } from 'proton-pass-extension/app/content/types';
+import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 
-import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
+import { clientDisabled, clientLocked, clientSessionLocked } from '@proton/pass/lib/client';
 import type { AppStatus } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
@@ -73,23 +74,39 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
         });
     };
 
-    const onClick: (evt: MouseEvent) => void = withContext((ctx, evt) => {
+    const onPointerDown: (evt: PointerEvent) => void = withContext((ctx, evt) => {
+        icon.setPointerCapture(evt.pointerId);
         evt.preventDefault();
         evt.stopPropagation();
 
-        const { action } = field;
-        const iframe = ctx?.service.iframe;
-        const visible = iframe?.dropdown?.getState().visible;
+        if (!field.action || !ctx) return;
 
-        if (action) {
-            return visible
-                ? iframe?.dropdown?.close()
-                : iframe?.attachDropdown(field.getFormHandle().element)?.open({
-                      action: action.type,
-                      field,
-                  });
+        const iframe = ctx.service.iframe;
+
+        /** If the dropdown is currently visible then close it */
+        const visible = iframe.dropdown?.getState().visible;
+        if (visible) return iframe.dropdown?.close();
+
+        /** If the session is locked: trigger auto-focus in the injected dropdown
+         * for PIN unlock. Force blur the field to prevent aggressive website focus
+         * capture. Action trap prevents icon detachment during this sequence */
+        if (clientSessionLocked(ctx.getState().status)) {
+            actionTrap(field.element);
+            field.element.blur();
         }
+
+        iframe?.attachDropdown(field.getFormHandle().element)?.open({
+            action: field.action.type,
+            field,
+        });
     });
+
+    const onPointerUp = (evt: PointerEvent) => {
+        /** Release pointer capture and prevent any residual click events */
+        icon.releasePointerCapture(evt.pointerId);
+        evt.preventDefault();
+        evt.stopPropagation();
+    };
 
     const detach = safeCall(() => {
         listeners.removeAll();
@@ -105,7 +122,11 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
      * · on new elements added to the field box (ie: icons) */
     const target = field.element === field.boxElement ? field.element.parentElement! : field.boxElement;
 
-    listeners.addListener(icon, 'mousedown', onClick);
+    /** Pointer capturing events are preferred to handle cases where icon
+     * repositioning during interaction could generate unintended clicks */
+    listeners.addListener(icon, 'pointerdown', onPointerDown);
+    listeners.addListener(icon, 'pointerup', onPointerUp);
+
     listeners.addListener(window, 'resize', () => reposition(false));
     listeners.addResizeObserver(target, () => reposition(false));
     listeners.addObserver(
