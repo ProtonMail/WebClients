@@ -14,7 +14,7 @@ import type {
 } from '@proton/mail/store/messages/messagesTypes';
 import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
 
-import { API_URL } from '../../../config';
+import config from '../../../config';
 import { insertBlobImages, markEmbeddedAsLoaded, replaceEmbeddedUrls } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../../helpers/message/messageImages';
 import { loadBackgroundImages, loadImages, urlCreator } from '../../../helpers/message/messageRemotes';
@@ -138,7 +138,7 @@ export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: Payl
                 if (imageToLoad.url && uid) {
                     const encodedImageUrl = encodeImageUri(imageToLoad.url);
                     const loadingURL = forgeImageURL({
-                        apiUrl: API_URL,
+                        apiUrl: config.API_URL,
                         url: encodedImageUrl,
                         uid,
                         origin: window.location.origin,
