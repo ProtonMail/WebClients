@@ -356,6 +356,7 @@ export const PaymentsNoApi = ({
             {!paymentMethodRequired && (
                 <NoPaymentRequiredNote
                     hasPaymentMethod={!!savedPaymentMethods?.length}
+                    organization={organization}
                     subscription={subscription}
                     taxCountry={
                         <>
