@@ -149,7 +149,7 @@
         "Ajouter les jours fériés"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
-        "Ajouter votre lien de référence à la signature ${ MAIL_APP_NAME }"
+        "Ajouter votre lien de parrainage à la signature de ${ MAIL_APP_NAME }"
       ],
       "Add sieve filter": [
         "Ajouter un filtre Sieve"
@@ -1465,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to Professional": [
+        "Passer à l'abonnement Professionnel"
+      ],
       "Upgrade to view all": [
         "Améliorer l'abonnement pour tout voir"
       ],
@@ -2007,14 +2010,8 @@
       "During the trial period, you can have up to 10 users.": [
         "Vous pouvez ajouter jusqu’à 10 utilisateurs pendant la période d’essai."
       ],
-      "free for 14 days": [
-        "gratuit pendant 14 jours"
-      ],
       "on ${ formattedDate }": [
         "le ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Essayez ${ selected } ${ freeFor14Days }"
       ],
       "Try it free for 14 days": [
         "Essayez gratuitement pendant 14 jours"
@@ -4297,7 +4294,7 @@
         "Pour commencer, donnez un nom à votre organisation."
       ],
       "Track the status and activity of your referrals": [
-        "Suivez l'état et l'activité de vos références"
+        "Suivez l'état et l'activité de vos parrainages"
       ],
       "Track the status and activity of your referrals.": [
         "Suivez vos parrainages."
@@ -4318,7 +4315,7 @@
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
       ],
       "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Vous recevrez ${ referralReward } en crédit ${ BRAND_NAME } lorsque la personne que vous invitez s'inscrira à un plan ${ BRAND_NAME }, et qu'il/qu'elle recevra également ${ referralReward } en crédits pour commencer."
+        "Vous recevrez ${ referralReward } sous forme de crédits ${ BRAND_NAME } lorsque la personne que vous invitez s'inscrira à un abonnement ${ BRAND_NAME }, et qu'elle recevra également ${ referralReward } sous forme de crédits pour commencer."
       ]
     },
     "description": {
@@ -5551,7 +5548,7 @@
         "Veuillez saisir un code postal."
       ],
       "Please enter ZIP code": [
-        "Merci de saisir un code postal."
+        "Veuillez saisir un code postal."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
@@ -5573,10 +5570,10 @@
         "Sélectionnez au moins un utilisateur ou un groupe avant de continuer."
       ],
       "Please select billing country": [
-        "Veuillez sélectionner le pays pour la facturation."
+        "Veuillez sélectionner le pays de facturation."
       ],
       "Please select billing state": [
-        "Veuillez sélectionner l'état pour la facturation."
+        "Veuillez sélectionner l'état de facturation."
       ],
       "Please set a recovery email first": [
         "Définissez d'abord une adresse e-mail de récupération."
@@ -5609,7 +5606,7 @@
         "Le port est nécessaire."
       ],
       "Postal code is required": [
-        "Le code postal est requis"
+        "Le code postal est requis."
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée."
@@ -7578,8 +7575,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - Votre centre de contrôle pour le suivi de l’activité des utilisateurs, la détection des menaces et la garantie d'être en conformité au sein de votre organisation."
+      " and other security features.": [
+        " et d'autres fonctionnalités de sécurité."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } utilisateur a actuellement accès aux serveurs partagés.",
@@ -7817,7 +7814,7 @@
         "**Obtenez une adresse ${ BRAND_NAME }** pour utiliser tous les services ${ BRAND_NAME_TWO }, dont ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Invitez vos amis** à ${ BRAND_NAME } avec votre lien de référence."
+        "**Invitez vos amis** sur ${ BRAND_NAME } avec votre lien de parrainage."
       ],
       "+ ${ invisibleCount } More": [
         "${ invisibleCount } de plus",
@@ -8722,7 +8719,7 @@
         "Pour y accéder, créez un compte ${ BRAND_NAME } et acceptez l'invitation."
       ],
       "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Obtenez et donnez **${ referralReward } de crédits** pour chaque ami(e) qui s'abonne."
+        "Obtenez et donnez **${ referralReward } de crédits** pour chacun de vos amis qui s'abonne."
       ],
       "Get it on Google Play": [
         "Télécharger sur Google Play"
@@ -8734,7 +8731,7 @@
         "Recevez une notification lorsque votre mot de passe ou d'autres données personnelles ont été exposées. ${ learnMoreLinkNoBreach }"
       ],
       "Get started with the referral link above.": [
-        "Commencez par le lien de référence ci-dessus."
+        "Commencez par le lien de parrainage ci-dessus."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Donnez un nom descriptif au jeton, comme le service avec lequel vous prévoyez de l'utiliser, et sélectionnez une de vos adresses de domaine personnalisées actives. Seule cette adresse pourra envoyer des messages avec ce jeton."
@@ -9363,7 +9360,7 @@
         "Payé pour un abonnement mensuel"
       ],
       "Paid for a plan": [
-        "Vous avez payé."
+        "Vous avez payé pour un abonnement."
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - l'e-mail personnalisé a été confirmé."
@@ -10219,6 +10216,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Changez d'abonnement pour ajouter une adresse plus courte @pm.me à votre compte, plus facile à partager et qui signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Passez à un abonnement Professional ou supérieur pour débloquer."
+      ],
       "Upgrade to unlock": [
         "Changez d'abonnement pour débloquer cette fonctionnalité."
       ],
@@ -10461,9 +10461,6 @@
       ],
       "Why?": [
         "Pourquoi ?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Avec un abonnement Business ou Enterprise, vous accédez à"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Avec l'abonnement Business ou Enterprise, vous pouvez acheter des ${ boldDedicatedServers } pour votre organisation et configurer des ${ boldGateways } pour contrôler les utilisateurs y ayant accès."
@@ -10726,7 +10723,7 @@
         "Votre mot de passe ${ BRAND_NAME }"
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Votre abonnement ${ plan } sera remplacé par l'abonnement à vie ${ PASS_SHORT_APP_NAME }. Le solde restant sera ajouté à votre compte. L'abonnement à vie ${ PASS_SHORT_APP_NAME } n'a pas de prix de renouvellement ; il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
+        "Votre abonnement ${ plan } sera remplacé par l'abonnement ${ PASS_SHORT_APP_NAME } Lifetime. Le solde restant sera ajouté à votre compte. L'abonnement ${ PASS_SHORT_APP_NAME } Lifetime n'a pas de prix de renouvellement : il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vos comptes ${ VPN_APP_NAME } et ${ MAIL_APP_NAME } sont liés. Pour les supprimer tous les deux, nous vous invitons à vous connecter à ${ loginLink } et à y supprimer votre compte."
@@ -10775,7 +10772,7 @@
         "Votre période d'essai a été convertie en abonnement mensuel. Votre date de renouvellement est le ${ nextBillingDate }."
       ],
       "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Vos amis bénéficieront de **2 semaines gratuites** sur leur plan choisi."
+        "Vos amis bénéficieront de **2 semaines gratuites** sur l'abonnement qu'ils auront choisi."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Votre importation à partir de ${ accounts } est temporairement retardée.",
@@ -12277,7 +12274,7 @@
         "Afficher le mot de passe"
       ],
       "Reward": [
-        "Récompense(s)"
+        "Récompense"
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
@@ -14286,7 +14283,7 @@
         "Passer à un abonnement inférieur ?"
       ],
       "Review subscription": [
-        "Révisez l'abonnement"
+        "Vérifier l'abonnement"
       ],
       "Review subscription and pay": [
         "Vérifier l'abonnement et payer"
@@ -15732,7 +15729,7 @@
         "L'offre que vous avez sélectionnée n'est pas disponible pour les personnes abonnées à ${ currentPlanTitle }."
       ],
       "The offer you selected is not available for **${ currentPlanTitle }** subscribers.": [
-        "L'offre que vous avez choisi(e) n'est pas valide pour ceux abonnés à **${ currentPlanTitle }**."
+        "L'offre choisie n'est pas valide pour les abonnés à **${ currentPlanTitle }**."
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "pour utiliser ${ PASS_APP_NAME } sur votre téléphone."
@@ -16031,7 +16028,7 @@
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
       ],
       "This number will be shown on all future invoices": [
-        "Ce numéro sera indiqué sur toutes les factures futures."
+        "Ce numéro sera indiqué sur toutes les prochaines factures."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Ce moyen de paiement deviendra votre nouveau moyen par défaut pour tous les futurs renouvellements."
@@ -16092,13 +16089,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Numéro d’entreprise australien (ABN)"
       ],
       "Business Number": [
         "Numéro d'entreprise"
       ],
       "EIN": [
-        "EIN"
+        "Numéro d'identification fiscale (EIN)"
       ],
       "VAT number": [
         "Numéro de TVA"
@@ -20273,7 +20270,7 @@
         "Invitations"
       ],
       "Invite friends. Get credits.": [
-        "Invitez vos amis ; recevez des crédits."
+        "Invitez vos amis et recevez des crédits."
       ],
       "Invoices": [
         "Factures"
@@ -20849,8 +20846,8 @@
       "Video conferencing": [
         "Vidéoconférence"
       ],
-      "View organization events by upgrading to Business": [
-        "Affichez les événements de votre organisation en passant à un abonnement Business."
+      "View organization events by upgrading to Professional": [
+        "Affichez les événements de votre organisation en passant à un abonnement Professional."
       ],
       "VPN apps": [
         "Applications VPN"
@@ -21059,9 +21056,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Permet d'ajouter de manière transparente des liens de vidéoconférence à vos invitations de calendrier."
       ],
-      "An approximate location of the IP address": [
-        "Un emplacement approximatif de l'adresse IP"
-      ],
       "Any protection applied to suspicious activity": [
         "Toute protection appliquée aux activités suspectes"
       ],
@@ -21085,9 +21079,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Supprimez les messages dans vos dossiers Corbeille et Indésirables/spam après 30 jours. Activer la suppression automatique détermine une date de suppression pour les messages qui sont déjà dans ces deux dossiers, en fonction de la date à laquelle ils y ont été placés."
-      ],
-      "Device information such as operating system": [
-        "Informations sur l'appareil, comme le système d'exploitation"
       ],
       "Device name and app version": [
         "Nom de l'appareil et version de l'application"
@@ -21152,6 +21143,12 @@
       "Not all information listed here was exposed for all users.": [
         "Toutes les informations répertoriées ici n'ont pas été exposées à tous les utilisateurs."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Fournisseur d'accès internet (FAI)"
+      ],
+      "Origin IP address": [
+        "Adresse IP d'origine"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adresse IP d'origine et fournisseur d'accès internet (FAI)"
       ],
@@ -21193,9 +21190,6 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Le fournisseur d'accès internet (FAI) de l'adresse IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Le nouveau cycle d'abonnement commence le ${ formattedTime }."

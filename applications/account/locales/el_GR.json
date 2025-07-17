@@ -1465,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Αναβαθμίστε για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Αναβάθμιση σε Professional"
+      ],
       "Upgrade to view all": [
         "Αναβαθμίστε για προβολή όλων"
       ],
@@ -7510,8 +7513,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - το κέντρο εντολών σας για την παρακολούθηση της δραστηριότητας των χρηστών, τον εντοπισμό απειλών και τη διασφάλιση της συμμόρφωσης σε ολόκληρο τον οργανισμό σας."
+      " and other security features.": [
+        " και άλλες λειτουργίες ασφάλειας."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } χρήστης διαθέτει προς το παρόν πρόσβαση σε κοινόχρηστους διακομιστές",
@@ -10151,6 +10154,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Κάντε αναβάθμιση για να προσθέσετε μια συντομότερη διεύθυνση @pm.me στον λογαριασμό σας, η οποία θα είναι πιο εύκολη στην κοινή χρήση. Σημαίνει \"${ MAIL_APP_NAME } me\" ή \"Private Message me\". (Στείλε μου Προσωπικό Μήνυμα)"
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Αναβάθμιση σε Professional ή ένα υψηλότερο πλάνο για να ξεκλειδώσετε"
+      ],
       "Upgrade to unlock": [
         "Αναβαθμίστε για να ξεκλειδώσετε"
       ],
@@ -10393,9 +10399,6 @@
       ],
       "Why?": [
         "Γιατί;"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Με ένα πλάνο Business ή Enterprise, ξεκλειδώστε"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Με ένα Business ή Enterprise πλάνο, μπορείτε να αγοράσετε ${ boldDedicatedServers } για τον οργανισμό σας και να ρυθμίσετε τις ${ boldGateways } για να ελέγχετε ποιοι χρήστες μπορούν να έχουν πρόσβαση σε αυτές."
@@ -20770,8 +20773,8 @@
       "Video conferencing": [
         "Τηλεδιάσκεψη"
       ],
-      "View organization events by upgrading to Business": [
-        "Προβολή εκδηλώσεων οργανισμού με αναβάθμιση σε Business"
+      "View organization events by upgrading to Professional": [
+        "Προβολή εκδηλώσεων οργανισμού με αναβάθμιση σε Professional"
       ],
       "VPN apps": [
         "Εφαρμογές VPN"
@@ -20980,9 +20983,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης στις προσκλήσεις ημερολογίου σας."
       ],
-      "An approximate location of the IP address": [
-        "Μια κατά προσέγγιση τοποθεσία της διεύθυνσης IP"
-      ],
       "Any protection applied to suspicious activity": [
         "Οποιαδήποτε προστασία εφαρμόζεται σε ύποπτη δραστηριότητα"
       ],
@@ -21006,9 +21006,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Εξαλείψτε οριστικά τα μηνύματα στα Διαγραμμένα και τα Ενοχλητικά μετά από 30 ημέρες. Αυτή η ενεργοποίηση δίνει ημερομηνία αυτόματης εξάλειψης στα μηνύματα που βρίσκονται ήδη στα Διαγραμμένα/Ενοχλητικά βάσει της ημερομηνίας μετακίνησής τους εκεί."
-      ],
-      "Device information such as operating system": [
-        "Πληροφορίες συσκευής, όπως λειτουργικό σύστημα"
       ],
       "Device name and app version": [
         "Όνομα συσκευής και έκδοση εφαρμογής"
@@ -21073,6 +21070,12 @@
       "Not all information listed here was exposed for all users.": [
         "Δεν εκτέθηκαν όλες οι πληροφορίες που παρατίθενται εδώ για όλους τους χρήστες."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Πάροχος Υπηρεσιών Διαδικτύου (ISP) προέλευσης"
+      ],
+      "Origin IP address": [
+        "Διεύθυνση IP προέλευσης"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Διεύθυνση IP προέλευσης και Πάροχος Υπηρεσιών Διαδικτύου (ISP)"
       ],
@@ -21114,9 +21117,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Ο παροχός υπηρεσιών διαδικτύου της διεύθυνσης IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Ο νέος κύκλος συνδρομής ξεκινά στις ${ formattedTime }"

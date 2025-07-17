@@ -566,7 +566,7 @@
         "Спампаваць ${ MAIL_APP_NAME } Export Tool"
       ],
       "Download the desktop app": [
-        "Спампаваць настольную праграму"
+        "Спампаваць праграму для камп'ютара"
       ],
       "Edit": [
         "Рэдагаваць"
@@ -1465,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Палепшыце свой тарыфны план, каб уключыць ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Палепшыць да Professional"
+      ],
       "Upgrade to view all": [
         "Палепшыць, каб паглядзець усё"
       ],
@@ -2130,7 +2133,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
       "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ plan } і ${ CALENDAR_SHORT_APP_NAME }"
@@ -2365,7 +2368,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -6872,19 +6875,19 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
       "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features.": [
-        "Працягвайце атрымліваць асалоду ад хуткай, сканцэнтраванай і бяспечнай настольнай праграмы. Палепшыце, каб разблакіраваць неабмежаваны доступ і іншыя прэміяльныя функцыі."
+        "Працягвайце атрымліваць асалоду ад хуткай, сканцэнтраванай і бяспечнай праграмы для камп'ютара. Палепшыце, каб разблакіраваць неабмежаваны доступ і іншыя прэміяльныя функцыі."
       ],
       "Keep using the desktop app": [
-        "Працягнуць выкарыстанне настольнай праграмай"
+        "Працягнуць выкарыстанне праграмы для камп'ютара"
       ],
       "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
         "Адкрыць ${ MAIL_APP_NAME } у ${ webAppMessage }"
       ],
       "Your desktop app free trial has ended": [
-        "Ваш бясплатны пробны перыяд для настольнай праграмы завяршыўся"
+        "Ваш бясплатны пробны перыяд праграмы для камп'ютара завяршыўся"
       ]
     },
     "Get started checklist instructions": {
@@ -7610,8 +7613,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - ваш камандны цэнтр для адсочвання актыўнасці карыстальнікаў, выяўлення пагроз і забеспячэння адпаведнасці ў вашай арганізацыі."
+      " and other security features.": [
+        " і іншыя функцыі бяспекі."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } карыстальнік з ${ totalUsers } у цяперашні час мае доступ да абагуленых сервераў.",
@@ -8466,7 +8469,7 @@
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
       ],
       "Dedicated VPN servers": [
-        "Вылучаныя VPN серверы"
+        "Вылучаныя серверы VPN"
       ],
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
@@ -8691,7 +8694,7 @@
         "Паляпшэнне бяспекі вашай сеткі"
       ],
       "Enjoy a faster, focused emailing experience with the desktop app.": [
-        "Атрымлівайце асалоду ад больш хуткай і мэтанакіраванай адпраўкі электроннай пошты з настольнай праграмай."
+        "Атрымлівайце асалоду ад больш хуткай і мэтанакіраванай адпраўкі электроннай пошты з праграмай для кам'ютара."
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Увядзіце пароль, каб завяршыць падрыхтоўку ўліковага запісу ${ BRAND_NAME } і пачаць выкарыстоўваць ${ VPN_APP_NAME } паміж усімі вашымі прыладамі!"
@@ -10355,6 +10358,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Палепшыце свой тарыфны план, каб дадаць кароткі адрас @pm да свайго ўліковага запісу, якім лёгка дзяліцца з астатнімі. Ён абазначае “${ MAIL_APP_NAME } me” або “Private Message me”."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Палепшыце да тарыфнага плана Professional ці вышэйшага, каб разблакіраваць"
+      ],
       "Upgrade to unlock": [
         "Палепшыць, каб разблакіраваць"
       ],
@@ -10597,9 +10603,6 @@
       ],
       "Why?": [
         "Чаму?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "З тарыфным планам Business або Enterprise у вас будзе магчымасць"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "З тарыфнымі планамі Business або Enterprise, вы можаце купіць ${ boldDedicatedServers } для вашай арганізацыі і наладзіць ${ boldGateways } правы доступу карыстальнікаў да яго."
@@ -14033,7 +14036,7 @@
         "Вылучаныя серверы аптымізаваныя для трансляцый"
       ],
       "Desktop app": [
-        "Настольная праграма"
+        "Праграма для камп'ютара"
       ],
       "DNS leak prevention": [
         "Прадухіленне ўцечак DNS"
@@ -14832,7 +14835,7 @@
         "Вылучаны менеджар уліковага запісу"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Размяшчэнні вылучаных сервераў у больш чым ${ numberOfCountries } краінах"
+        "Размяшчэнні вылучаных сервераў у больш чым у ${ numberOfCountries } краінах"
       ],
       "Dedicated server locations in North America and Europe": [
         "Размяшчэнне вылучаных сервераў у Паўночнай Амерыцы і Еўропе"
@@ -18963,7 +18966,7 @@
         "Засталося ${ dayDiff } дзён"
       ],
       "${ MAIL_APP_NAME } desktop app": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } захоўвае вашы дзелавыя даныя ў бяспецы і дазваляе адпраўляць зашыфраваныя лісты любому карыстальніку."
@@ -19080,7 +19083,7 @@
         "Комплексная прыватнасць і бяспека"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Настольная праграма і падтрымка кліента электроннай пошты (праз IMAP)"
+        "Праграма для камп'ютара і падтрымка кліента электроннай пошты (праз IMAP)"
       ],
       "Direct contribution to our mission": [
         "Непасрэдны ўклад у нашу місію"
@@ -19268,7 +19271,7 @@
         "Папярэджанне ўцечкі даных ${ strongArgument }"
       ],
       "Desktop app": [
-        "Настольная праграма"
+        "Праграма для камп'ютара"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
@@ -20382,7 +20385,7 @@
         "Спампаваць ${ VPN_APP_NAME }"
       ],
       "Download the desktop app": [
-        "Спампоўка настольных праграм"
+        "Спампоўванне праграмы для камп'ютара"
       ],
       "Download the mobile apps": [
         "Спампоўка мабільных праграм"
@@ -21269,8 +21272,8 @@
       "Video conferencing": [
         "Відэаканферэнцыя"
       ],
-      "View organization events by upgrading to Business": [
-        "Палепшыце да тарыфнага плана Business, каб паглядзець падзеі арганізацыі"
+      "View organization events by upgrading to Professional": [
+        "Палепшыце да тарыфнага плана Professional, каб паглядзець падзеі арганізацыі"
       ],
       "VPN apps": [
         "Праграмы VPN"
@@ -21479,9 +21482,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцыі ў запрашэнні вашага календара."
       ],
-      "An approximate location of the IP address": [
-        "Прыблізнае месцазнаходжанне IP-адраса"
-      ],
       "Any protection applied to suspicious activity": [
         "Любая абарона ўжываецца да падазронай актыўнасці"
       ],
@@ -21505,9 +21505,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Выдаляць смецце і спам праз 30 дзён. Пры ўключэнні аўтаматычнага выдалення паведамленняў, якія ўжо знаходзяцца ў сметніцы/спаме, атрымаюць дату выдалення на аснове даты іх перамяшчэння туды."
-      ],
-      "Device information such as operating system": [
-        "Звесткі аб прыладзе, такія як аперацыйная сістэма"
       ],
       "Device name and app version": [
         "Назва прылады і версія праграмы"
@@ -21572,6 +21569,12 @@
       "Not all information listed here was exposed for all users.": [
         "Не ўсе пералічаныя тут звесткі былі скампраметаваныя для ўсіх карыстальнікаў."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Зыходны пастаўшчык паслуг інтэрнэту (ISP)"
+      ],
+      "Origin IP address": [
+        "Зыходны IP-адрас"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Зыходны IP-адрас і пастаўшчык паслуг інтэрнэту (ISP)"
       ],
@@ -21613,9 +21616,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Пастаўшчык паслуг інтэрнэту IP-адраса"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новы перыяд аплаты пачнецца ў ${ formattedTime }"
