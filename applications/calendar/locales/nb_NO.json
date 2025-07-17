@@ -92,6 +92,12 @@
       "Add to group": [
         "Legg til gruppe"
       ],
+      "Add Zoom meeting": [
+        "Legg til Zoom-møte"
+      ],
+      "Adding conferencing details": [
+        "Legger til konferansedetaljer"
+      ],
       "Apply": [
         "Anvend"
       ],
@@ -470,6 +476,9 @@
       "Load image": [
         "Last inn bilde"
       ],
+      "Loading Zoom configuration": [
+        "Laster inn Zoom-konfigurasjonen"
+      ],
       "Make this participant optional": [
         "Gjør denne deltakeren valgfri"
       ],
@@ -607,6 +616,9 @@
       ],
       "Reconnect": [
         "Koble til på nytt"
+      ],
+      "Reconnect to Zoom": [
+        "Koble til Zoom på nytt"
       ],
       "Recover data": [
         "Gjenopprett data"
@@ -3739,6 +3751,9 @@
       "You already added this holidays calendar": [
         "Du har allerede lagt til denne helligdagskalenderen"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Du er gjenkoblet til Zoom. Du kan lagre hendelsen din nå."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottakere."
@@ -3754,6 +3769,9 @@
       ],
       "Your import will not be processed.": [
         "Importen din blir ikke behandlet."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Zoom-tilkoblingen har utløpt. Koble til på nytt for å fortsette."
       ]
     },
     "Error accepting calendar invitation": {
@@ -11801,17 +11819,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Bli med på Zoom-møte"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Legg til Zoom-møte"
-      ],
-      "Adding conferencing details": [
-        "Legger til konferansedetaljer"
-      ],
-      "Loading Zoom configuration": [
-        "Laster inn Zoom-konfigurasjonen"
       ]
     },
     "Zoom Meeting": {

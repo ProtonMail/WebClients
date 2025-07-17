@@ -92,6 +92,12 @@
       "Add to group": [
         "그룹에 추가"
       ],
+      "Add Zoom meeting": [
+        "Zoom 미팅 추가"
+      ],
+      "Adding conferencing details": [
+        "화상 회의 상세 정보 추가 중"
+      ],
       "Apply": [
         "적용"
       ],
@@ -467,6 +473,9 @@
       "Load image": [
         "이미지 불러오기"
       ],
+      "Loading Zoom configuration": [
+        "Zoom 구성 로딩 중"
+      ],
       "Make this participant optional": [
         "이 참가자를 선택사항 만들기"
       ],
@@ -604,6 +613,9 @@
       ],
       "Reconnect": [
         "다시 연결"
+      ],
+      "Reconnect to Zoom": [
+        "Zoom에 재연결"
       ],
       "Recover data": [
         "데이터 복구"
@@ -1120,7 +1132,7 @@
     },
     "anniversary_2025: Offers": {
       "${ n } month": [
-        "${ n }개월"
+        "${ n }/월간"
       ],
       "/ month": [
         "/ 월간"
@@ -3707,6 +3719,9 @@
       "You already added this holidays calendar": [
         "이 연휴 캘린더를 이미 생성했습니다"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Zoom에 재연결되었습니다. 이제 이벤트를 저장할 수 있습니다."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
       ],
@@ -3721,6 +3736,9 @@
       ],
       "Your import will not be processed.": [
         "가져오기가 처리되지 않았습니다."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Zoom 연결이 만료되었습니다. 계속하려면 재연결하십시오."
       ]
     },
     "Error accepting calendar invitation": {
@@ -11550,17 +11568,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Zoom 회의 참여"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Zoom 미팅 추가"
-      ],
-      "Adding conferencing details": [
-        "컨퍼런스 상세 사항 추가 중"
-      ],
-      "Loading Zoom configuration": [
-        "Zoom 미팅 구성을 불러오는 중"
       ]
     },
     "Zoom Meeting": {

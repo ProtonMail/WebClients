@@ -92,6 +92,12 @@
       "Add to group": [
         "Añadir al grupo"
       ],
+      "Add Zoom meeting": [
+        "Añadir una reunión de Zoom"
+      ],
+      "Adding conferencing details": [
+        "Añadiendo los detalles de la conferencia"
+      ],
       "Apply": [
         "Aplicar"
       ],
@@ -470,6 +476,9 @@
       "Load image": [
         "Cargar imagen"
       ],
+      "Loading Zoom configuration": [
+        "Cargando la configuración de Zoom"
+      ],
       "Make this participant optional": [
         "Hacer opcional a este participante"
       ],
@@ -607,6 +616,9 @@
       ],
       "Reconnect": [
         "Reconectar"
+      ],
+      "Reconnect to Zoom": [
+        "Volver a conectarte a Zoom"
       ],
       "Recover data": [
         "Recuperar datos"
@@ -1193,10 +1205,10 @@
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -3773,6 +3785,9 @@
       "You already added this holidays calendar": [
         "Ya has añadido este calendario de días festivos."
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Estás reconectado a Zoom. Ahora puedes guardar tu evento."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No puedes enviar un correo a más de ${ maxContacts } destinatario.",
         "No puedes enviar un correo a más de ${ maxContacts } destinatarios."
@@ -3788,6 +3803,9 @@
       ],
       "Your import will not be processed.": [
         "No se procesará tu importación."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Tu conexión de Zoom ha expirado. Vuelve a conectarte para continuar."
       ]
     },
     "Error accepting calendar invitation": {
@@ -8877,13 +8895,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número empresarial"
       ],
       "EIN": [
-        "EIN"
+        "Número de identificación fiscal (EIN)"
       ],
       "VAT number": [
         "Número de IVA"
@@ -11838,17 +11856,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Unirte a la reunión de Zoom"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Añadir una reunión de Zoom"
-      ],
-      "Adding conferencing details": [
-        "Añadiendo los detalles de la conferencia"
-      ],
-      "Loading Zoom configuration": [
-        "Cargando la configuración de Zoom"
       ]
     },
     "Zoom Meeting": {

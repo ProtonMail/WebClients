@@ -92,6 +92,12 @@
       "Add to group": [
         "Lägg till i grupp"
       ],
+      "Add Zoom meeting": [
+        "Lägg till Zoom-möte"
+      ],
+      "Adding conferencing details": [
+        "Lägger till konferensdetaljer"
+      ],
       "Apply": [
         "Tillämpa"
       ],
@@ -470,6 +476,9 @@
       "Load image": [
         "Ladda bild"
       ],
+      "Loading Zoom configuration": [
+        "Laddar Zoom-konfiguration"
+      ],
       "Make this participant optional": [
         "Gör denna deltagare valfri"
       ],
@@ -607,6 +616,9 @@
       ],
       "Reconnect": [
         "Anslut igen"
+      ],
+      "Reconnect to Zoom": [
+        "Återanslut till Zoom"
       ],
       "Recover data": [
         "Återställ data"
@@ -3736,6 +3748,9 @@
       "You already added this holidays calendar": [
         "Du har redan lagt till denna helgdagskalender"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Du är återansluten till Zoom. Du kan spara din händelse nu."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
         "Du kan inte skicka ett e-postmeddelande till fler än ${ maxContacts } mottagare"
@@ -3751,6 +3766,9 @@
       ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Din Zoom-anslutning har löpt ut. Återanslut för att fortsätta."
       ]
     },
     "Error accepting calendar invitation": {
@@ -4321,6 +4339,9 @@
     "Header": {
       "Contacts": [
         "Kontakter"
+      ],
+      "Drawer": [
+        "Sidopanel"
       ],
       "Name": [
         "Namn"
@@ -5955,6 +5976,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Din gratis provperiod har konverterats till en ${ cycle }-månaders prenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en månadsprenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
@@ -11791,17 +11815,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Gå med i Zoom-möte"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Lägg till Zoom-möte"
-      ],
-      "Adding conferencing details": [
-        "Lägger till konferensdetaljer"
-      ],
-      "Loading Zoom configuration": [
-        "Laddar Zoom-konfiguration"
       ]
     },
     "Zoom Meeting": {

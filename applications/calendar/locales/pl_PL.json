@@ -92,6 +92,12 @@
       "Add to group": [
         "Dodaj do grupy"
       ],
+      "Add Zoom meeting": [
+        "Dodaj spotkanie Zoom"
+      ],
+      "Adding conferencing details": [
+        "Dodawanie szczegółów konferencji"
+      ],
       "Apply": [
         "Zastosuj"
       ],
@@ -476,6 +482,9 @@
       "Load image": [
         "Załaduj obraz"
       ],
+      "Loading Zoom configuration": [
+        "Ładowanie konfiguracji Zoom"
+      ],
       "Make this participant optional": [
         "Uczestnik opcjonalny"
       ],
@@ -613,6 +622,9 @@
       ],
       "Reconnect": [
         "Połącz ponownie"
+      ],
+      "Reconnect to Zoom": [
+        "Ponowne połączenie z Zoom"
       ],
       "Recover data": [
         "Odzyskaj dane"
@@ -1205,10 +1217,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } miesiące w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } mies. w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
@@ -1226,7 +1238,7 @@
         "Nie możesz dodać niestandardowych domen w okresie próbnym."
       ],
       "You have reached the trial limit.": [
-        "Osiągnąłeś limit okresu próbnego."
+        "Osiągnięto limit okresu próbnego."
       ]
     },
     "b2b_trials_Action": {
@@ -3837,6 +3849,9 @@
       "You already added this holidays calendar": [
         "Posiadasz już kalendarz świąt"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Połączono ponownie z Zoom. Możesz zapisać wydarzenie."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorcy",
         "Nie możesz wysłać wiadomości do ponad ${ maxContacts } odbiorców",
@@ -3854,6 +3869,9 @@
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Połączenie z Zoom wygasło. Połącz się ponownie, aby kontynuować."
       ]
     },
     "Error accepting calendar invitation": {
@@ -12328,17 +12346,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Dołącz do spotkania Zoom"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Dodaj spotkanie Zoom"
-      ],
-      "Adding conferencing details": [
-        "Dodawanie szczegółów wideokonferencji"
-      ],
-      "Loading Zoom configuration": [
-        "Ładowanie konfiguracji Zoom"
       ]
     },
     "Zoom Meeting": {

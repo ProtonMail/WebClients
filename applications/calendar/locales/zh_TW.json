@@ -89,6 +89,12 @@
       "Add to group": [
         "加入至群組"
       ],
+      "Add Zoom meeting": [
+        "新增 Zoom 會議"
+      ],
+      "Adding conferencing details": [
+        "新增詳細會議資料"
+      ],
       "Apply": [
         "套用"
       ],
@@ -112,6 +118,9 @@
       ],
       "Cancel subscription": [
         "取消訂購授權"
+      ],
+      "Cancel trial and pay": [
+        "取消試用並付款"
       ],
       "Chat with us": [
         "與我們往來對話"
@@ -440,6 +449,9 @@
       "Load image": [
         "載入圖像"
       ],
+      "Loading Zoom configuration": [
+        "載入 Zoom 組態"
+      ],
       "Make this participant optional": [
         "此參與者自由列席"
       ],
@@ -568,6 +580,9 @@
       ],
       "Reconnect": [
         "重新連線"
+      ],
+      "Reconnect to Zoom": [
+        "重新連接 Zoom"
       ],
       "Recover data": [
         "恢復資料"
@@ -948,6 +963,9 @@
       ]
     },
     "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "折扣價格依標準月繳費率計算。在本繳款單週期結束後，將為您以標準年繳費率續約。"
       ],
@@ -964,6 +982,15 @@
     "anniversary_2025: Offers": {
       "${ n } month": [
         "${ n } 個月"
+      ],
+      "12 months": [
+        "12 個月"
+      ],
+      "24 months": [
+        "24 個月"
+      ],
+      "30 months": [
+        "30個月"
       ]
     },
     "Apps dropdown": {
@@ -1603,6 +1630,11 @@
       ],
       "strawberry": [
         "草莓"
+      ]
+    },
+    "Commander action": {
+      "Week view": [
+        "週檢視"
       ]
     },
     "Confirm modal title": {
@@ -3415,6 +3447,9 @@
       "You already added this holidays calendar": [
         "您已新增此假期行事曆"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Zoom 已重新連接上。現在您可以儲存您的行事曆了。"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
       ],
@@ -3429,6 +3464,9 @@
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "您 Zoom 連接階段已逾期，請重新連接以繼續。"
       ]
     },
     "Error accepting calendar invitation": {
@@ -7184,6 +7222,9 @@
       "Downgrade account?": [
         "確定要換成精簡功能的帳號？"
       ],
+      "Review subscription": [
+        "檢閱訂購授權"
+      ],
       "Review subscription and pay": [
         "檢視訂購授權與繳款"
       ],
@@ -10676,17 +10717,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "加入Zoom會議"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "加入 Zoom 會議"
-      ],
-      "Adding conferencing details": [
-        "添加會議詳細資料"
-      ],
-      "Loading Zoom configuration": [
-        "載入 Zoom 設置"
       ]
     },
     "Zoom Meeting": {
