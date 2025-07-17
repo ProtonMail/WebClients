@@ -30,7 +30,7 @@ import * as sentry from '@proton/shared/lib/helpers/sentry';
 import { getRedirect } from '@proton/shared/lib/subscription/redirect';
 import noop from '@proton/utils/noop';
 
-import * as defaultConfig from '../app/config';
+import defaultConfig from '../app/config';
 import locales from '../app/locales';
 import { extendStore, setupStore } from '../app/store/store';
 import MainContainer from './MainContainer';

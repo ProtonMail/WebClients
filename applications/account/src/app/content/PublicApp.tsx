@@ -51,7 +51,7 @@ import noop from '@proton/utils/noop';
 
 import forgotUsernamePage from '../../pages/forgot-username';
 import resetPasswordPage from '../../pages/reset-password';
-import * as config from '../config';
+import config from '../config';
 import locales from '../locales';
 import LoginContainer, { type LoginContainerState } from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';

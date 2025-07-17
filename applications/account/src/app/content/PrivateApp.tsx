@@ -17,7 +17,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { FlagProvider } from '@proton/unleash';
 
-import * as config from '../config';
+import config from '../config';
 import type { AccountStore } from '../store/store';
 import { extraThunkArguments } from '../store/thunk';
 import AccountLoaderPage from './AccountLoaderPage';
