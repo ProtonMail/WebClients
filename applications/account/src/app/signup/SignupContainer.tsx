@@ -76,7 +76,7 @@ import {
     getOptimisticDomains,
     getSignupApplication,
     getSubscriptionPricesWithFallback,
-    isMailReferAFriendSignup,
+    isReferralSignup,
 } from './helper';
 import type { InviteData, SignupActionResponse, SignupCacheResult, SignupModel, SubscriptionData } from './interfaces';
 import { SignupSteps, SignupType } from './interfaces';
@@ -142,7 +142,7 @@ const SignupContainer = ({
     const { APP_NAME } = useConfig();
 
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
-    const isMailRefer = isMailReferAFriendSignup(location);
+    const isMailRefer = isReferralSignup(location);
 
     useMetaTags(isMailRefer ? mailReferPage() : metaTags);
 
@@ -300,7 +300,7 @@ const SignupContainer = ({
 
             const { plans: Plans, freePlan } = plansResult;
 
-            if (location.pathname === SSO_PATHS.REFER && !referralData) {
+            if (location.pathname === SSO_PATHS.REFERAL_PLAN_SELECTION && !referralData) {
                 history.replace(SSO_PATHS.SIGNUP);
             }
 

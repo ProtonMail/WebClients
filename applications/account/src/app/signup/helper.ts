@@ -78,8 +78,8 @@ export async function getSubscriptionPricesWithFallback<T>(
     }
 }
 
-export const isMailReferAFriendSignup = (location: Location) => {
-    return location.pathname.includes(SSO_PATHS.REFER);
+export const isReferralSignup = (location: Location) => {
+    return location.pathname.includes(SSO_PATHS.REFERAL_PLAN_SELECTION);
 };
 
 export const isPorkbunSignup = (location: Location) => {

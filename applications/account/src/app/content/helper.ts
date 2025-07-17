@@ -156,7 +156,7 @@ export const getPaths = ({
     };
 };
 
-export const getLocaleTermsURL = (app: APP_NAMES) => {
+export const getLocaleTermsURL = (app: APP_NAMES | undefined) => {
     return getTermsURL(app, getLocaleMapping(localeCode));
 };
 

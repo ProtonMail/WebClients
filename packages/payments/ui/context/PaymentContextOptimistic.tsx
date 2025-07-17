@@ -22,6 +22,11 @@ import {
 } from './PaymentContext';
 
 interface InitializationStatus {
+    /**
+     * Has initialization been triggered?
+     * ie has the correct default plan been set, and can we start rendering with a preselected plan
+     */
+    triggered: boolean;
     cacheInitialized: boolean;
     pricingInitialized: boolean;
     vpnServersInitialized: boolean;
@@ -63,6 +68,7 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
     const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
     const [vpnServersCountData, setVpnServersCountData] = useState<VPNServersCountData>(defaultVPNServersCountData);
     const [initializationStatus, setInitializationStatus] = useState<InitializationStatus>({
+        triggered: false,
         cacheInitialized: false,
         pricingInitialized: false,
         vpnServersInitialized: false,
@@ -96,6 +102,8 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         };
         const checkResult = paymentsContext.getOptimisticCheckResult(optimistic);
         setOptimistic({ ...optimistic, checkResult });
+
+        setInitializationStatus((prev) => ({ ...prev, triggered: true }));
         setLoadingPaymentDetails(true);
 
         // Fetch VPN servers count data in parallel with payments initialization
@@ -127,11 +135,11 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
 
         cacheRef.current = { availablePlans };
 
-        setInitializationStatus({
+        setInitializationStatus((prev) => ({
+            ...prev,
             cacheInitialized: true,
             pricingInitialized: true,
-            vpnServersInitialized: true,
-        });
+        }));
     };
 
     const handleOptimisticCheck = async (
