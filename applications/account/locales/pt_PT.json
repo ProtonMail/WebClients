@@ -1465,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Atualize para ativar ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Atualizar para Professional"
+      ],
       "Upgrade to view all": [
         "Atualize para ver tudo"
       ],
@@ -7510,8 +7513,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - o seu centro de comando para monitorizar as atividades dos utilizadores, detetar ameaças e garantir a conformidade em toda a sua organização."
+      " and other security features.": [
+        " e outras funcionalidades de segurança."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } utilizador atualmente tem acesso a servidores partilhados.",
@@ -10154,6 +10157,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Atualize para adicionar um endereço @pm.me mais curto à sua conta que seja mais fácil de partilhar. Significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Atualizar para o plano Professional ou um plano superior para desbloquear"
+      ],
       "Upgrade to unlock": [
         "Atualize para desbloquear"
       ],
@@ -10396,9 +10402,6 @@
       ],
       "Why?": [
         "Por quê?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Com um plano Business ou Enterprise, desbloqueie"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Com um plano Business ou Enterprise, pode obter ${ boldDedicatedServers } para a sua organização, e configurar ${ boldGateways } para controlar que utilizadores lhes podem aceder."
@@ -16036,13 +16039,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número da empresa"
       ],
       "EIN": [
-        "EIN"
+        "Número de identificação fiscal (EIN)"
       ],
       "VAT number": [
         "Número de IVA"
@@ -20782,8 +20785,8 @@
       "Video conferencing": [
         "Videoconferência"
       ],
-      "View organization events by upgrading to Business": [
-        "Consulta os eventos da organização ao atualizar para Business."
+      "View organization events by upgrading to Professional": [
+        "Consulta os eventos da organização ao atualizar para Professional."
       ],
       "VPN apps": [
         "Aplicações VPN"
@@ -20992,9 +20995,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Permite adicionar facilmente ligações de videoconferência aos convites da sua agenda."
       ],
-      "An approximate location of the IP address": [
-        "Uma localização aproximada do endereço IP"
-      ],
       "Any protection applied to suspicious activity": [
         "Qualquer proteção aplicada a atividade suspeita"
       ],
@@ -21018,9 +21018,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Elimina as mensagens do lixo e spam após 30 dias. Ao ativar a eliminação automática, as mensagens que já se encontram no lixo/spam têm uma data de eliminação baseada na data em que foram movidas para lá."
-      ],
-      "Device information such as operating system": [
-        "Informação de dispositivo como sistema operativo"
       ],
       "Device name and app version": [
         "Nome do dispositivo e versão da aplicação"
@@ -21085,6 +21082,12 @@
       "Not all information listed here was exposed for all users.": [
         "Nem todas as informações aqui listadas foram expostas para todos os utilizadores."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Fornecedor de serviços Internet (ISP) de origem"
+      ],
+      "Origin IP address": [
+        "Endereço IP de origem"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Endereço IP de origem e provedor de serviços de internet (ISP)"
       ],
@@ -21126,9 +21129,6 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "O provedor de serviços de internet do endereço IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de subscrição começa em ${ formattedTime }"
