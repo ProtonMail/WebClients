@@ -51,11 +51,19 @@ export const PinUnlock: FC<Props> = ({ header, onUnlock }) => {
     useSessionLockPinSubmitEffect(value, { onSubmit });
 
     useEffect(() => {
-        /** Force blur the parent field if dropdown becomes visible
-         * This helps when the dropdown has trouble gaining focus due
-         * to strict focus management in certain websites */
-        if (visible) ctrl.forwardMessage({ type: IFramePortMessageType.DROPDOWN_BLUR_FIELD });
-        else setError(null);
+        if (visible) {
+            /** Force blur the parent field if dropdown becomes visible
+             * This helps when the dropdown has trouble gaining focus due
+             * to strict focus management in certain websites */
+            const unregister = ctrl.registerHandler(IFramePortMessageType.DROPDOWN_FOCUS, rerender);
+            const ensureFocused = () => ctrl.forwardMessage({ type: IFramePortMessageType.DROPDOWN_FOCUS_CHECK });
+            const timer = setTimeout(ensureFocused, 150);
+
+            return () => {
+                unregister();
+                clearTimeout(timer);
+            };
+        } else setError(null);
     }, [visible]);
 
     return (
