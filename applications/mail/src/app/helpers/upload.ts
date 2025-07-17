@@ -4,7 +4,7 @@ import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/he
 import { serializeData } from '@proton/shared/lib/fetch/serialize';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 
-import { API_URL, APP_NAME, APP_VERSION } from '../config';
+import config from '../config';
 
 export type HTTPHeaders = { [key: string]: string };
 
@@ -26,8 +26,8 @@ export interface RequestParams {
     data: { [key: string]: Blob | string | undefined };
 }
 
-const clientID = getClientID(APP_NAME);
-const appVersionHeaders = getAppVersionHeaders(clientID, APP_VERSION);
+const clientID = getClientID(config.APP_NAME);
+const appVersionHeaders = getAppVersionHeaders(clientID, config.APP_VERSION);
 
 const defaultHeaders: HTTPHeaders = {
     'X-Requested-With': 'XMLHttpRequest',
@@ -78,7 +78,7 @@ export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<Re
             xhr.onload = resolve as any;
             xhr.upload.onerror = createErrorHandler(reject);
             xhr.onerror = createErrorHandler(reject);
-            xhr.open(params.method, `${API_URL}/${params.url}`);
+            xhr.open(params.method, `${config.API_URL}/${params.url}`);
             xhr.withCredentials = true;
             Object.keys(headers).forEach((key) => xhr.setRequestHeader(key, headers[key]));
             xhr.send(body);
