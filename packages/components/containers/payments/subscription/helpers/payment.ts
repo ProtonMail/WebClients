@@ -185,10 +185,6 @@ export const getAutoCoupon = ({
         return coupon || undefined;
     }
 
-    if (!coupon && [PLANS.DRIVE_BUSINESS].some((plan) => planIDs?.[plan])) {
-        return COUPON_CODES.DRIVEB2BINTRO2024;
-    }
-
     if (
         !coupon &&
         [PLANS.VPN2024].some((plan) => planIDs?.[plan]) &&
