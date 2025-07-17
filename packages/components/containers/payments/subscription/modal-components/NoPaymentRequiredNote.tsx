@@ -1,17 +1,17 @@
 import { c } from 'ttag';
 
 import { type FreeSubscription, type Subscription, getPlanTitle, isTrial } from '@proton/payments';
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useIsB2BTrial } from '@proton/payments/ui';
+import type { Organization } from '@proton/shared/lib/interfaces';
 
 interface Props {
     subscription: Subscription | FreeSubscription | undefined;
+    organization: Organization | undefined;
     hasPaymentMethod: boolean;
     taxCountry: React.ReactNode;
 }
 
-export const NoPaymentRequiredNote = ({ subscription, hasPaymentMethod, taxCountry }: Props) => {
-    const [organization] = useOrganization();
+export const NoPaymentRequiredNote = ({ organization, subscription, hasPaymentMethod, taxCountry }: Props) => {
     const trial = isTrial(subscription);
     const planTitle = getPlanTitle(subscription);
 
