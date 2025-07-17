@@ -24,7 +24,7 @@ import { FlagProvider } from '@proton/unleash';
 
 import { bootstrapApp } from './bootstrap';
 import NotificationManagerInjector from './components/notification/NotificationManagerInjector';
-import * as config from './config';
+import config from './config';
 import { type MailStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
 
