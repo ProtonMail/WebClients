@@ -8784,6 +8784,22 @@
         "${ count } Element konnte nicht entschlüsselt werden",
         "${ count } Elemente konnten nicht entschlüsselt werden"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } Foto konnte nicht aus \"${ albumLink.name }\" entfernt werden",
+        "${ nbFailures } Fotos konnten nicht aus \"${ albumLink.name }\" entfernt werden"
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } Foto konnte nicht zu „${ albumName }“ hinzugefügt werden",
+        "${ nbMainPhotosError } Fotos konnten nicht zu „${ albumName }“ hinzugefügt werden"
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } Foto wurde zu \"${ albumName }\" hinzugefügt",
+        "${ nbMainPhotosSuccess } Fotos wurden zu \"${ albumName }\" hinzugefügt"
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } Foto wurde aus \"${ albumLink.name }\" entfernt",
+        "${ nbSuccesses } Fotos wurden aus \"${ albumLink.name }\" entfernt"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } Eintrag gelöscht",
         "${ numberOfItems } Einträge gelöscht"
@@ -8978,12 +8994,6 @@
       "Share invitation declined": [
         "Einladung zur gemeinsamen Nutzung abgelehnt"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "Ein Foto konnte bzw. einige Fotos konnten nicht zu „${ albumName }“ hinzugefügt werden"
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Ein Foto konnte bzw. einige Fotos konnten nicht aus ${ albumLink.name } entfernt werden"
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Entschuldige, wir konnten den Ordner nicht löschen, da er nicht leer war.",
         "Entschuldige, wir konnten die Ordner nicht löschen, da sie nicht leer waren."
@@ -9031,12 +9041,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Deine alten Dateien werden innerhalb der nächsten 72 Stunden gelöscht"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Dein/e Foto(s) wurde(n) zu „${ albumName }“ hinzugefügt"
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Dein Foto wurde bzw. deine Fotos wurden aus ${ albumLink.name } entfernt"
       ],
       "Your settings failed to be saved": [
         "Deine Einstellungen konnten nicht gespeichert werden"
