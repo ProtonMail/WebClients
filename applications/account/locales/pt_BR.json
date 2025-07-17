@@ -1465,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Faça o upgrade para ativar o ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Upgrade para plano Profissional"
+      ],
       "Upgrade to view all": [
         "Atualize para ver todos"
       ],
@@ -2007,14 +2010,8 @@
       "During the trial period, you can have up to 10 users.": [
         "Durante o período de avaliação, você pode ter até 10 usuários."
       ],
-      "free for 14 days": [
-        "grátis por 14 dias"
-      ],
       "on ${ formattedDate }": [
         "em ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Experimente ${ selected } ${ freeFor14Days }"
       ],
       "Try it free for 14 days": [
         "Experimente grátis por 14 dias"
@@ -7578,8 +7575,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - seu centro de comando para rastrear a atividade do usuário, detectar ameaças e garantir a conformidade em toda a sua organização."
+      " and other security features.": [
+        " e outros recursos de segurança."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuário atualmente tem acesso a servidores compartilhados.",
@@ -10222,6 +10219,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Faça o upgrade do seu plano para adicionar um endereço curto @pm.me para a sua conta para compartilhá-la facilmente. Ele significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\"."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Faça upgrade para Professional ou um plano superior para desbloquear"
+      ],
       "Upgrade to unlock": [
         "Faça o upgrade para desbloquear"
       ],
@@ -10464,9 +10464,6 @@
       ],
       "Why?": [
         "Por quê?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Com um plano Business ou Enterprise, desbloqueie"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Com um plano Business ou Enterprise, você pode comprar ${ boldDedicatedServers } para sua organização e configurar ${ boldGateways } para controlar quais usuários podem acessá-los."
@@ -16119,13 +16116,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "Nome comercial"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número comercial"
       ],
       "EIN": [
-        "CNPJ"
+        "Número de identificação tributária (EIN)"
       ],
       "VAT number": [
         "Número de IVA"
@@ -20882,8 +20879,8 @@
       "Video conferencing": [
         "Videoconferência"
       ],
-      "View organization events by upgrading to Business": [
-        "Consulta os eventos da organização ao atualizar para Business."
+      "View organization events by upgrading to Professional": [
+        "Consulta os eventos da organização ao fazer upgrade para Professional."
       ],
       "VPN apps": [
         "Aplicativos de VPN"
@@ -21095,9 +21092,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Permite adicionar links de videoconferência de forma simples aos seus convites de calendário."
       ],
-      "An approximate location of the IP address": [
-        "Uma localização aproximada do endereço de IP"
-      ],
       "Any protection applied to suspicious activity": [
         "Qualquer proteção aplicada a uma atividade suspeita"
       ],
@@ -21121,9 +21115,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Exclua as mensagens da lixeira e spam após 30 dias. Ativar a exclusão automática dá às mensagens que já estão na lixeira/spam uma data de exclusão com base na data em que foram movidas para lá"
-      ],
-      "Device information such as operating system": [
-        "Informações do dispositivo, como sistema operacional"
       ],
       "Device name and app version": [
         "Nome do dispositivo e versão do aplicativo"
@@ -21188,6 +21179,12 @@
       "Not all information listed here was exposed for all users.": [
         "Nem todas as informações listadas aqui foram expostas para todos os usuários."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Provedor de Serviços de Internet (ISP) de Origem"
+      ],
+      "Origin IP address": [
+        "Endereço IP de origem"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Endereço IP de origem e provedor de serviços de internet (ISP)"
       ],
@@ -21229,9 +21226,6 @@
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "O provedor de serviços de internet do endereço de IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de assinatura começa em ${ formattedTime }"

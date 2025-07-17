@@ -1465,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Mejora para activar ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to Professional": [
+        "Mejora a Professional"
+      ],
       "Upgrade to view all": [
         "Mejorar para ver todo"
       ],
@@ -2002,19 +2005,13 @@
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
-        "Al pulsar en \"Probar\", aceptas nuestros ${ termsAndConditions }."
+        "Al hacer clic en \"Probar\", aceptas nuestros ${ termsAndConditions }."
       ],
       "During the trial period, you can have up to 10 users.": [
         "Durante el período de prueba, puedes tener hasta 10 usuarios."
       ],
-      "free for 14 days": [
-        "gratis durante 14 días"
-      ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Prueba ${ selected } ${ freeFor14Days }"
       ],
       "Try it free for 14 days": [
         "Pruébalo gratis durante 14 días"
@@ -2023,10 +2020,10 @@
         "Cuando canceles, tu prueba gratuita no se convertirá en una suscripción de pago, pero podrás seguir disfrutando de los beneficios del plan hasta el final del periodo de prueba. Después de eso, pasarás al plan ${ BRAND_NAME } Free."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -7578,8 +7575,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - tu centro de mando para rastrear la actividad de los usuarios, detectar amenazas y garantizar el cumplimiento en toda tu organización."
+      " and other security features.": [
+        " y otras características de seguridad"
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuario actualmente tiene acceso a servidores compartidos.",
@@ -10219,6 +10216,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Mejora tu cuenta para añadir una dirección corta @pm.me que es más fácil de compartir. Significa «${ MAIL_APP_NAME }» o «Private Message me»."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Mejora a Professional o a un plan superior para desbloquear"
+      ],
       "Upgrade to unlock": [
         "Mejora tu suscripción para desbloquear"
       ],
@@ -10461,9 +10461,6 @@
       ],
       "Why?": [
         "¿Por qué?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Con un plan Business o Enterprise, desbloquea"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Con un plan Business o Enterprise, puedes comprar ${ boldDedicatedServers } para tu organización y configurar ${ boldGateways } para controlar qué usuarios pueden acceder a ellas."
@@ -16092,13 +16089,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número empresarial"
       ],
       "EIN": [
-        "EIN"
+        "Número de identificación fiscal (EIN)"
       ],
       "VAT number": [
         "Número de IVA"
@@ -20849,8 +20846,8 @@
       "Video conferencing": [
         "Videoconferencia"
       ],
-      "View organization events by upgrading to Business": [
-        "Consulta los eventos de la organización al mejorar a Business"
+      "View organization events by upgrading to Professional": [
+        "Consulta los eventos de la organización al mejorar a Professional"
       ],
       "VPN apps": [
         "Aplicaciones VPN"
@@ -21059,9 +21056,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Permite fácilmente añadir enlaces a videoconferencias a tus invitaciones de calendario."
       ],
-      "An approximate location of the IP address": [
-        "Una ubicación aproximada de la dirección IP"
-      ],
       "Any protection applied to suspicious activity": [
         "Cualquier protección aplicada a una actividad sospechosa"
       ],
@@ -21085,9 +21079,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Elimina la papelera y el spam luego de 30 días. Al activar esta opción, los mensajes que ya están en las carpetas Papelera o Spam tienen una fecha de eliminación según la fecha en que se han movido allí."
-      ],
-      "Device information such as operating system": [
-        "Información del dispositivo como el sistema operativo"
       ],
       "Device name and app version": [
         "Nombre del dispositivo y versión de la aplicación"
@@ -21152,6 +21143,12 @@
       "Not all information listed here was exposed for all users.": [
         "No toda la información aquí mencionada fue expuesta para todos los usuarios."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Proveedor de servicios de Internet (ISP) de origen"
+      ],
+      "Origin IP address": [
+        "Dirección IP de origen"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Dirección IP de origen y proveedor de servicios de internet (ISP)"
       ],
@@ -21193,9 +21190,6 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "El proveedor de servicios de internet de la dirección IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"

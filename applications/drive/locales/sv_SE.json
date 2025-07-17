@@ -4115,6 +4115,9 @@
       "Create new shared album": [
         "Skapa nytt delat album"
       ],
+      "Drawer": [
+        "Sidopanel"
+      ],
       "Rename album": [
         "Byt namn på album"
       ],
@@ -6391,6 +6394,9 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Dina filer kommer krypteras och sedan sparas."
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Din gratis provperiod har konverterats till en ${ cycle }-månaders prenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en månadsprenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
@@ -8734,6 +8740,22 @@
         "${ count } objekt kunde inte dekrypteras",
         "${ count } objekt kunde inte dekrypteras"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } foto kunde inte tas bort från “${ albumLink.name }“",
+        "${ nbFailures } foton kunde inte tas bort från “${ albumLink.name }“"
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } foto kunde inte läggas till i “${ albumName }“",
+        "${ nbMainPhotosError } foton kunde inte läggas till i “${ albumName }“"
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } foto har lagts till i “${ albumName }“",
+        "${ nbMainPhotosSuccess } foton har lagts till i “${ albumName }“"
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } foto har tagits bort från “${ albumLink.name }“",
+        "${ nbSuccesses } foton har tagits bort från “${ albumLink.name }“"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } objekt borttaget",
         "${ numberOfItems } objekt borttagna"
@@ -8922,12 +8944,6 @@
       "Share invitation declined": [
         "Delningsinbjudan avböjd"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "Några foton kunde inte läggas till i “${ albumName }“"
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Några foton kunde inte tas bort från ${ albumLink.name }"
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Vi kunde inte ta bort mappen eftersom den inte är tom.",
         "Vi kunde inte ta bort mapparna eftersom de inte är tomma."
@@ -8975,12 +8991,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Dina gamla filer kommer att tas bort inom 72 timmar"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Dina foton har lagts till i “${ albumName }“"
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Dina foton har tagits bort från ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Dina inställningar misslyckades att sparas"

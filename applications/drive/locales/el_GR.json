@@ -8693,6 +8693,22 @@
         "${ count } αντικείμενο απέτυχε να αποκρυπτογραφηθεί",
         "${ count } αντικείμενα απέτυχαν να αποκρυπτογραφηθούν"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } φωτογραφία δεν μπορεί να καταργηθεί από το \"${ albumLink.name }\"",
+        "${ nbFailures } φωτογραφία δεν μπορούν να καταργηθούν από το \"${ albumLink.name }\""
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } φωτογραφία δεν μπορεί να προστεθεί στο \"${ albumName }\"",
+        "${ nbMainPhotosError } φωτογραφίες δεν μπορούν να προστεθούν στο \"${ albumName }\""
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } φωτογραφία έχει προστεθεί στο \"${ albumName }\"",
+        "${ nbMainPhotosSuccess } φωτογραφίες έχουν προστεθεί στο \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } φωτογραφία έχει αφαιρεθεί από το \"${ albumLink.name }\"",
+        "${ nbSuccesses } φωτογραφίες έχουν αφαιρεθεί από το \"${ albumLink.name }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } στοιχείο διαγράφηκε",
         "${ numberOfItems } στοιχεία διαγράφηκαν"
@@ -8887,12 +8903,6 @@
       "Share invitation declined": [
         "Η πρόσκληση κοινής χρήσης απορρίφθηκε"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "Δεν ήταν δυνατή η προσθήκη ορισμένων φωτογραφιών στο \"${ albumName }\""
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Δεν ήταν δυνατή η αφαίρεση ορισμένων φωτογραφιών από το ${ albumLink.name }"
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Λυπούμαστε, δεν ήταν δυνατή η διαγραφή του φακέλου επειδή δεν είναι κενός.",
         "Λυπούμαστε, δεν ήταν δυνατή η διαγραφή των φακέλων επειδή δεν είναι κενοί."
@@ -8940,12 +8950,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Τα παλιά αρχεία σας θα διαγραφούν σε 72 ώρες"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Οι φωτογραφίες σας προστέθηκαν στο ${ albumName }"
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Οι φωτογραφίες σας έχουν αφαιρεθεί από το ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Αποτυχία αποθήκευσης των ρυθμίσεών σας"
