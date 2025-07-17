@@ -870,6 +870,9 @@
       "Upgrade to Business": [
         "Fazer upgrade para o Business"
       ],
+      "Upgrade to Professional": [
+        "Upgrade para plano Profissional"
+      ],
       "Upgrade your plan": [
         "Faça upgrade do seu plano"
       ],
@@ -1249,14 +1252,8 @@
       "During the trial period, you can have up to 10 users.": [
         "Durante o período de avaliação, você pode ter até 10 usuários."
       ],
-      "free for 14 days": [
-        "grátis por 14 dias"
-      ],
       "on ${ formattedDate }": [
         "em ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Experimente ${ selected } ${ freeFor14Days }"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua avaliação gratuita não será convertida em uma assinatura paga, mas você ainda pode aproveitar os benefícios do plano até o final do período de avaliação. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
@@ -4370,8 +4367,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - seu centro de comando para rastrear a atividade do usuário, detectar ameaças e garantir a conformidade em toda a sua organização."
+      " and other security features.": [
+        " e outros recursos de segurança."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuário atualmente tem acesso a servidores compartilhados.",
@@ -6006,6 +6003,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Faça upgrade para Professional ou um plano superior para desbloquear"
+      ],
       "Upload your completed CSV file to create accounts": [
         "Envie o seu arquivo CSV completo para criar contas"
       ],
@@ -6173,9 +6173,6 @@
       ],
       "Why?": [
         "Por quê?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Com um plano Business ou Enterprise, desbloqueie"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Com um plano Business ou Enterprise, você pode comprar ${ boldDedicatedServers } para sua organização e configurar ${ boldGateways } para controlar quais usuários podem acessá-los."
@@ -9493,13 +9490,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "Nome comercial"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número comercial"
       ],
       "EIN": [
-        "CNPJ"
+        "Número de identificação tributária (EIN)"
       ],
       "VAT number": [
         "Número de IVA"
@@ -12580,8 +12577,8 @@
       "Video conferencing": [
         "Videoconferência"
       ],
-      "View organization events by upgrading to Business": [
-        "Consulta os eventos da organização ao atualizar para Business."
+      "View organization events by upgrading to Professional": [
+        "Consulta os eventos da organização ao fazer upgrade para Professional."
       ],
       "Warning": [
         "Aviso"
