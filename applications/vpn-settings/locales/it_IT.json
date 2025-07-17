@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "Vuoi annullare l'abbonamento"
       ],
+      "Cancel trial and pay": [
+        "Annulla la prova e paga"
+      ],
       "Change": [
         "Modifica"
       ],
@@ -867,6 +870,9 @@
       "Upgrade to Business": [
         "Passa a Business"
       ],
+      "Upgrade to Professional": [
+        "Effettua l'upgrade a Professional"
+      ],
       "Upgrade your plan": [
         "Effettua l'upgrade del piano"
       ],
@@ -1246,14 +1252,8 @@
       "During the trial period, you can have up to 10 users.": [
         "Durante il periodo di prova, puoi avere fino a 10 utenti."
       ],
-      "free for 14 days": [
-        "gratis per 14 giorni"
-      ],
       "on ${ formattedDate }": [
         "il ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Prova ${ selected } ${ freeFor14Days }"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando annulli, la tua prova gratuita non verrà convertita in un abbonamento a pagamento, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di prova. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
@@ -3334,6 +3334,9 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Invalid ZIP code": [
+        "CAP non valido"
+      ],
       "Name does not match": [
         "Il nome non corrisponde"
       ],
@@ -3394,6 +3397,18 @@
       "Please enter a valid Entity ID URL": [
         "Inserisci un URL ID Entità valido"
       ],
+      "Please enter a valid postal code": [
+        "Si prega di inserire un codice postale valido"
+      ],
+      "Please enter a valid ZIP code": [
+        "Per favore, inserisci un codice postale valido"
+      ],
+      "Please enter postal code": [
+        "Per favore inserisci il codice postale"
+      ],
+      "Please enter ZIP code": [
+        "Inserisci codice postale"
+      ],
       "Please generate keys before you try to change your password": [
         "Per favore genera le chiavi prima di provare a cambiare la tua password"
       ],
@@ -3408,6 +3423,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Seleziona almeno un utente o un gruppo prima di continuare."
+      ],
+      "Please select billing country": [
+        "Seleziona il paese di fatturazione"
+      ],
+      "Please select billing state": [
+        "Seleziona lo stato di fatturazione"
       ],
       "Please set a recovery email first": [
         "Imposta prima un indirizzo email di recupero"
@@ -3432,6 +3453,9 @@
       ],
       "Please upload only 1 file": [
         "Carica un solo file"
+      ],
+      "Postal code is required": [
+        "Il codice postale è obbligatorio"
       ],
       "Process aborted": [
         "Processo interrotto"
@@ -4343,8 +4367,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - il tuo centro di comando per il monitoraggio dell'attività degli utenti, il rilevamento delle minacce e per garantire la conformità nella tua organizzazione."
+      " and other security features.": [
+        " e altre funzionalità di sicurezza."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } utente attualmente ha accesso ai server condivisi.",
@@ -5979,6 +6003,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Effettua l'upgrade a Professional o a un piano superiore per sbloccare"
+      ],
       "Upload your completed CSV file to create accounts": [
         "Carica il tuo file CSV completato per creare gli account"
       ],
@@ -6146,9 +6173,6 @@
       ],
       "Why?": [
         "Perché?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Con un piano Business o Enterprise, sblocca"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Con un piano Business o Enterprise, puoi acquistare ${ boldDedicatedServers } per la tua organizzazione e configurare ${ boldGateways } per controllare quali utenti possono accedervi."
@@ -7237,6 +7261,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Codice postale"
+      ],
       "ZIP code": [
         "Codice postale"
       ]
@@ -8351,6 +8378,9 @@
       "Downgrade account?": [
         "Vuoi effettuare il downgrade dell'account?"
       ],
+      "Review subscription": [
+        "Rivedi abbonamento"
+      ],
       "Review subscription and pay": [
         "Controlla abbonamento e paga"
       ],
@@ -9364,6 +9394,9 @@
       "Got it": [
         "Ho capito"
       ],
+      "I'm purchasing as a business": [
+        "Sto acquistando come azienda"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -9406,6 +9439,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
+      ],
+      "This number will be shown on all future invoices": [
+        "Questo numero sarà mostrato su tutte le fatture future"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
@@ -9462,6 +9498,20 @@
       ],
       "Street address, postal code, and city": [
         "Indirizzo, codice postale e città"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Numero aziendale australiano (ABN)"
+      ],
+      "Business Number": [
+        "Numero azienda"
+      ],
+      "EIN": [
+        "Numero d'identificazione fiscale (EIN)"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ]
     },
     "Permission": {
@@ -9557,6 +9607,9 @@
       "Please select the main reason": [
         "Seleziona il motivo principale"
       ],
+      "Postal code": [
+        "Codice postale"
+      ],
       "Search": [
         "Cerca"
       ],
@@ -9598,6 +9651,9 @@
       ],
       "yourdomain.com": [
         "tuodominio.com"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "placeholder": {
@@ -12533,8 +12589,8 @@
       "Video conferencing": [
         "Videoconferenze"
       ],
-      "View organization events by upgrading to Business": [
-        "Visualizza gli eventi dell'organizzazione effettuando l'upgrade a Business"
+      "View organization events by upgrading to Professional": [
+        "Visualizza gli eventi dell'organizzazione effettuando l'upgrade a Professional"
       ],
       "Warning": [
         "Attenzione"

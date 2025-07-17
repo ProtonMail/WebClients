@@ -1368,22 +1368,22 @@
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada ${ cycle } meses el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente mensualmente el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
+        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada mes el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Usted puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Usted puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias Scribe durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Usted puede tener hasta ${ TRIAL_MAX_USERS } usuarios durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_USERS } usuarios durante el período de prueba."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Usted no puede añadir dominios personalizados durante el período de prueba."
+        "No puede agregar dominios personalizados durante el período de prueba."
       ],
       "You have reached the trial limit.": [
         "Usted ha alcanzado el límite de la prueba."
@@ -8790,6 +8790,22 @@
         "Error al descifrar ${ count } elemento",
         "Error al descifrar ${ count } elementos"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } foto no se pudo borrar de \"${ albumLink.name }\"",
+        "${ nbFailures } fotos no se pudieron borrar de \"${ albumLink.name }\""
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "No se pudo añadir ${ nbMainPhotosError } foto a \": ${ albumName }\"",
+        "No se pudieron añadir ${ nbMainPhotosError } fotos a «${ albumName }»."
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } foto fue añadida a ${ albumName }\"",
+        "${ nbMainPhotosSuccess } fotos fueron añadidas a \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } foto fue eliminada de ${ albumLink.name }\"",
+        "${ nbSuccesses } fotos fueron eliminadas de \"${ albumLink.name }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminado",
         "${ numberOfItems } elementos eliminados"
@@ -8984,12 +9000,6 @@
       "Share invitation declined": [
         "Invitación compartida rechazada"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "No se pudieron agregar algunas fotos a \"${ albumName }\"."
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "No se pudieron eliminar algunas fotos de ${ albumLink.name }."
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "No se pudo eliminar la carpeta porque no está vacía.",
         "No se pudieron eliminar las carpetas porque no están vacías."
@@ -9037,12 +9047,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Los archivos antiguos serán eliminados en 72 horas"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Sus fotos se han agregado a «${ albumName }»."
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Se eliminaron sus fotos de ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Error al guardar sus ajustes"
@@ -9638,13 +9642,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "Nombre comercial"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número de negocio"
       ],
       "EIN": [
-        "RUC"
+        "Número de identificación fiscal (EIN)"
       ],
       "VAT number": [
         "Número de IGV"

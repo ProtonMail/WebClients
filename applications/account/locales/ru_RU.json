@@ -1877,14 +1877,38 @@
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
       ],
-      "free for 14 days": [
-        "бесплатно 14 дней"
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Нажимая «Попробовать», вы соглашаетесь с нашими ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "В течение пробного периода вы можете добавить до 10 пользователей."
       ],
       "on ${ formattedDate }": [
         "в ${ formattedDate }"
       ],
       "Try it free for 14 days": [
         "Попробуйте бесплатно в течение 14 дней"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "После отмены ваша бесплатная пробная версия не будет преобразована в платную подписку, но вы все равно сможете пользоваться преимуществами плана до конца пробного периода. После этого вы будете переведены на бесплатный план ${ BRAND_NAME }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_DEDICATED_IPS } выделенных серверов в течение пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_LUMO_SEATS } мест Lumo в течение пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_SCRIBE_SEATS } мест Scribe в течение пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_USERS } пользователей в течение пробного периода."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Вы не можете добавлять пользовательские домены в течение пробного периода."
+      ],
+      "You have reached the trial limit.": [
+        "Вы достигли лимита пробного периода."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -8397,7 +8421,7 @@
         "Ранний доступ"
       ],
       "Edit email address": [
-        "Изменить адрес эл. почты"
+        "Изменить адрес электронной почты"
       ],
       "Edit label": [
         "Изменить ярлык"
@@ -20919,9 +20943,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Позволяет бесшовно добавлять ссылки на видеоконференции в приглашения календаря."
       ],
-      "An approximate location of the IP address": [
-        "Примерное местонахождение IP-адреса"
-      ],
       "Any protection applied to suspicious activity": [
         "Любая защита, применяемая в отношении подозрительных действий"
       ],
@@ -20945,9 +20966,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Удалять мусор и спам через 30 дней. При включении функции автоматического удаления сообщения, уже находящиеся в корзине/спаме, получают дату удаления, основанную на дате их перемещения туда."
-      ],
-      "Device information such as operating system": [
-        "Информация об устройстве, например операционная система"
       ],
       "Device name and app version": [
         "Имя устройства и версия приложения"
@@ -21044,9 +21062,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнётся с самых последних сообщений."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Поставщик услуг Интернета для IP-адреса"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новый цикл подписки начинается ${ formattedTime }"

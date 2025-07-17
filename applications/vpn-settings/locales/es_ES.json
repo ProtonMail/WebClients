@@ -870,6 +870,9 @@
       "Upgrade to Business": [
         "Mejorar a Business"
       ],
+      "Upgrade to Professional": [
+        "Mejora a Professional"
+      ],
       "Upgrade your plan": [
         "Mejora tu plan"
       ],
@@ -1244,28 +1247,22 @@
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
-        "Al pulsar en \"Probar\", aceptas nuestros ${ termsAndConditions }."
+        "Al hacer clic en \"Probar\", aceptas nuestros ${ termsAndConditions }."
       ],
       "During the trial period, you can have up to 10 users.": [
         "Durante el período de prueba, puedes tener hasta 10 usuarios."
       ],
-      "free for 14 days": [
-        "gratis durante 14 días"
-      ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Prueba ${ selected } ${ freeFor14Days }"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando canceles, tu prueba gratuita no se convertirá en una suscripción de pago, pero podrás seguir disfrutando de los beneficios del plan hasta el final del periodo de prueba. Después de eso, pasarás al plan ${ BRAND_NAME } Free."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -4370,8 +4367,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - tu centro de mando para rastrear la actividad de los usuarios, detectar amenazas y garantizar el cumplimiento en toda tu organización."
+      " and other security features.": [
+        " y otras características de seguridad"
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuario actualmente tiene acceso a servidores compartidos.",
@@ -6003,6 +6000,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Pasa a un plan superior ahora para obtener funciones premium, productos y almacenamiento a un precio especial."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Mejora a Professional o a un plan superior para desbloquear"
+      ],
       "Upload your completed CSV file to create accounts": [
         "Carga tu archivo CSV completo para crear cuentas."
       ],
@@ -6170,9 +6170,6 @@
       ],
       "Why?": [
         "¿Por qué?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Con un plan Business o Enterprise, desbloquea"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Con un plan Business o Enterprise, puedes comprar ${ boldDedicatedServers } para tu organización y configurar ${ boldGateways } para controlar qué usuarios pueden acceder a ellas."
@@ -9478,13 +9475,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número empresarial"
       ],
       "EIN": [
-        "EIN"
+        "Número de identificación fiscal (EIN)"
       ],
       "VAT number": [
         "Número de IVA"
@@ -12565,8 +12562,8 @@
       "Video conferencing": [
         "Videoconferencia"
       ],
-      "View organization events by upgrading to Business": [
-        "Consulta los eventos de la organización al mejorar a Business"
+      "View organization events by upgrading to Professional": [
+        "Consulta los eventos de la organización al mejorar a Professional"
       ],
       "Warning": [
         "Advertencia"

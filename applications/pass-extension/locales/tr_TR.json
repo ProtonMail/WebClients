@@ -1251,6 +1251,12 @@
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "\"${ payload.itemName }\" ögesi yok sayıldı"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "\"${ payload.itemName }\" güncellemesi yok sayıldı"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } engellendi",
         "${ blockedEmailsCount } engellendi"
@@ -4058,6 +4064,9 @@
       ],
       "Grant permissions": [
         "İzinleri ver"
+      ],
+      "Hide my email": [
+        "Hide my email"
       ],
       "History": [
         "Geçmiş"

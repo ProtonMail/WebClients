@@ -870,6 +870,9 @@
       "Upgrade to Business": [
         "Mejorar a Business"
       ],
+      "Upgrade to Professional": [
+        "Mejore a Professional"
+      ],
       "Upgrade your plan": [
         "Mejore el plan"
       ],
@@ -1241,40 +1244,34 @@
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada ${ cycle } meses el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente mensualmente el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
+        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada mes el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
-        "Al pulsar en \"Probar\", acepta nuestros ${ termsAndConditions }."
+        "Al hacer clic en \"Probar\", acepta nuestros ${ termsAndConditions }."
       ],
       "During the trial period, you can have up to 10 users.": [
         "Durante el período de prueba, puede tener hasta 10 usuarios."
       ],
-      "free for 14 days": [
-        "gratis por 14 días"
-      ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Pruebe ${ selected } ${ freeFor14Days }"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando cancele, su prueba gratuita no se convertirá en una suscripción de pago, pero aún podrá disfrutar de los beneficios del plan hasta el final del período de prueba. Después de eso, será degradado al plan ${ BRAND_NAME } Free."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Usted puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Usted puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias Scribe durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Usted puede tener hasta ${ TRIAL_MAX_USERS } usuarios durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_USERS } usuarios durante el período de prueba."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Usted no puede añadir dominios personalizados durante el período de prueba."
+        "No puede agregar dominios personalizados durante el período de prueba."
       ],
       "You have reached the trial limit.": [
         "Usted ha alcanzado el límite de la prueba."
@@ -4370,8 +4367,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - su centro de mando para rastrear la actividad del usuario, detectar amenazas y garantizar el cumplimiento en toda su organización."
+      " and other security features.": [
+        " y otras características de seguridad"
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuario actualmente tiene acceso a servidores compartidos.",
@@ -6003,6 +6000,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualice ahora para obtener funciones premium, productos y almacenamiento a un precio especial"
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Mejore a Professional o a un plan superior para desbloquear"
+      ],
       "Upload your completed CSV file to create accounts": [
         "Cargue el archivo CSV completo para crear cuentas"
       ],
@@ -6170,9 +6170,6 @@
       ],
       "Why?": [
         "¿Por qué?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Con un plan Business o Enterprise, desbloquee"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Con un plan Business o Enterprise, puede comprar ${ boldDedicatedServers } para la organización y configurar ${ boldGateways } para controlar cuáles usuarios pueden acceder a ellas."
@@ -9478,13 +9475,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "Nombre comercial"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número de negocio"
       ],
       "EIN": [
-        "RUC"
+        "Número de identificación fiscal (EIN)"
       ],
       "VAT number": [
         "Número de IGV"
@@ -12565,8 +12562,8 @@
       "Video conferencing": [
         "Videoconferencia"
       ],
-      "View organization events by upgrading to Business": [
-        "Consulte los eventos de la organización al mejorar a Business"
+      "View organization events by upgrading to Professional": [
+        "Consulte los eventos de la organización al mejorar a Professional"
       ],
       "Warning": [
         "Advertencia"

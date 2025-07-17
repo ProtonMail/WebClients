@@ -3025,6 +3025,9 @@
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
+      "Invalid ZIP code": [
+        "Ugyldig postnummer"
+      ],
       "Name does not match": [
         "Navn matcher ikke"
       ],
@@ -3090,6 +3093,12 @@
       ],
       "Please select a state": [
         "Vælg venligst en region"
+      ],
+      "Please select billing country": [
+        "Vælg venligst faktureringsland"
+      ],
+      "Please select billing state": [
+        "Vælg venligst faktureringsstat"
       ],
       "Please set a recovery email first": [
         "Angiv først en gendannelsesmail"
@@ -6452,6 +6461,9 @@
       "Search": [
         "Søg"
       ],
+      "Search for a name or email": [
+        "Søg efter navn eller e-mail"
+      ],
       "Second password": [
         "Anden adgangskode"
       ],
@@ -6624,6 +6636,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postnummer"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -8669,6 +8684,11 @@
         "Adresse, postnummer og by"
       ]
     },
+    "Payments.VAT number name": {
+      "VAT number": [
+        "Momsnummer"
+      ]
+    },
     "Permission": {
       "No permission": [
         "Ingen tilladelse"
@@ -8762,6 +8782,9 @@
       "Please select the main reason": [
         "Vælg venligst hovedårsagen"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Search": [
         "Søg"
       ],
@@ -8803,6 +8826,9 @@
       ],
       "yourdomain.com": [
         "ditdomæne.com"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "placeholder": {
@@ -9782,6 +9808,9 @@
       ],
       "Invalid confirmation code": [
         "Ugyldig bekræftelseskode"
+      ],
+      "Join ${ organizationName }": [
+        "Tilmeld ${ organizationName }"
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
         "Sørg for at gemme den et sikkert sted, så du kan komme tilbage til din konto, hvis du mister adgang til dine legitimationsoplysninger til din identitetsudbyder."

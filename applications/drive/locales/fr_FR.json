@@ -3442,7 +3442,7 @@
         "Veuillez saisir un code postal."
       ],
       "Please enter ZIP code": [
-        "Merci de saisir un code postal."
+        "Veuillez saisir un code postal."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
@@ -3458,10 +3458,10 @@
         "Sélectionnez une région"
       ],
       "Please select billing country": [
-        "Veuillez sélectionner le pays pour la facturation."
+        "Veuillez sélectionner le pays de facturation."
       ],
       "Please select billing state": [
-        "Veuillez sélectionner l'état pour la facturation."
+        "Veuillez sélectionner l'état de facturation."
       ],
       "Port is required": [
         "Le port est nécessaire."
@@ -6409,7 +6409,7 @@
         "Votre compte ${ BRAND_NAME } est suspendu. Les messages ne sont plus envoyés dans votre boite de réception. Vos liens de partage Drive ne sont plus actifs et vous ne pouvez pas télécharger de nouveaux fichiers. Pour continuer à utiliser votre compte, nous vous invitons à payer toutes les factures en retard."
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Votre abonnement ${ plan } sera remplacé par l'abonnement à vie ${ PASS_SHORT_APP_NAME }. Le solde restant sera ajouté à votre compte. L'abonnement à vie ${ PASS_SHORT_APP_NAME } n'a pas de prix de renouvellement ; il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
+        "Votre abonnement ${ plan } sera remplacé par l'abonnement ${ PASS_SHORT_APP_NAME } Lifetime. Le solde restant sera ajouté à votre compte. L'abonnement ${ PASS_SHORT_APP_NAME } Lifetime n'a pas de prix de renouvellement : il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
@@ -8451,7 +8451,7 @@
         "Passer à un abonnement inférieur ?"
       ],
       "Review subscription": [
-        "Révisez l'abonnement"
+        "Vérifier l'abonnement"
       ],
       "Review subscription and pay": [
         "Vérifier l'abonnement et payer"
@@ -8790,6 +8790,22 @@
         "${ count } élément n'a pas pu être déchiffré.",
         "${ count } éléments n'ont pas pu être déchiffrés."
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "Le retrait de ${ nbFailures } photo à « ${ albumLink.name } » n'a pas abouti.",
+        "Le retrait de ${ nbFailures } photos à « ${ albumLink.name } » n'ont pas abouti."
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "L'ajout de ${ nbMainPhotosError } photo à « ${ albumName } » n'a pas abouti.",
+        "L'ajout de ${ nbMainPhotosError } photos à « ${ albumName } » n'ont pas abouti."
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } photo a été ajoutée à « ${ albumName } »",
+        "${ nbMainPhotosSuccess } photos ont étés ajoutés à « ${ albumName } »"
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } photo a été retirée de « ${ albumLink.name } »",
+        "${ nbSuccesses } photos ont étés retirés de « ${ albumLink.name } »"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } élément supprimé",
         "${ numberOfItems } éléments supprimés"
@@ -8984,12 +9000,6 @@
       "Share invitation declined": [
         "L'invitation au partage a été refusée."
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "Certaines photos n'ont pas pu être ajoutées à « ${ albumName } »."
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Certaines photos n'ont pas pu être retirées de ${ albumLink.name }."
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Nous n'avons malheureusement pas pu supprimer le dossier car il n'est pas vide.",
         "Nous n'avons malheureusement pas pu supprimer les dossiers car ils ne sont pas vides."
@@ -9037,12 +9047,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Vos anciens fichiers seront supprimés dans 72 heures."
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Vos photos ont été ajoutées à « ${ albumName } »."
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Vos photos ont été retirées de ${ albumLink.name }."
       ],
       "Your settings failed to be saved": [
         "Vos paramètres n'ont pas pu être enregistrés."
@@ -9580,7 +9584,7 @@
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
       ],
       "This number will be shown on all future invoices": [
-        "Ce numéro sera indiqué sur toutes les factures futures."
+        "Ce numéro sera indiqué sur toutes les prochaines factures."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Ce moyen de paiement deviendra votre nouveau moyen par défaut pour tous les futurs renouvellements."
@@ -9638,13 +9642,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Numéro d’entreprise australien (ABN)"
       ],
       "Business Number": [
         "Numéro d'entreprise"
       ],
       "EIN": [
-        "EIN"
+        "Numéro d'identification fiscale (EIN)"
       ],
       "VAT number": [
         "Numéro de TVA"
@@ -11494,7 +11498,7 @@
       ],
       "Delete ${ total } item?": [
         "Voulez-vous supprimer ${ total } élément ?",
-        "Voulez-vous supprimer les ${ total } éléments ?"
+        "Voulez-vous supprimer ${ total } éléments ?"
       ],
       "Delete ${ value }": [
         "Supprimer ${ value } "

@@ -92,6 +92,12 @@
       "Add to group": [
         "Aggiungi ad un gruppo"
       ],
+      "Add Zoom meeting": [
+        "Aggiungi riunione Zoom"
+      ],
+      "Adding conferencing details": [
+        "Aggiunta di dettagli sulla conferenza"
+      ],
       "Apply": [
         "Applica"
       ],
@@ -116,6 +122,9 @@
       ],
       "Cancel subscription": [
         "Annulla abbonamento"
+      ],
+      "Cancel trial and pay": [
+        "Annulla la prova e paga"
       ],
       "Chat with us": [
         "Chatta con noi"
@@ -467,6 +476,9 @@
       "Load image": [
         "Carica Immagine"
       ],
+      "Loading Zoom configuration": [
+        "Caricamento configurazione Zoom"
+      ],
       "Make this participant optional": [
         "Rendi questo partecipante facoltativo"
       ],
@@ -604,6 +616,9 @@
       ],
       "Reconnect": [
         "Riconnetti"
+      ],
+      "Reconnect to Zoom": [
+        "Riconnetti a Zoom"
       ],
       "Recover data": [
         "Recupera dati"
@@ -3495,6 +3510,9 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Invalid ZIP code": [
+        "CAP non valido"
+      ],
       "Invitation failed to be sent": [
         "Invio dell'invito non riuscito"
       ],
@@ -3588,6 +3606,18 @@
       "Please create an address first.": [
         "Per favore prima crea un indirizzo."
       ],
+      "Please enter a valid postal code": [
+        "Si prega di inserire un codice postale valido"
+      ],
+      "Please enter a valid ZIP code": [
+        "Per favore, inserisci un codice postale valido"
+      ],
+      "Please enter postal code": [
+        "Per favore inserisci il codice postale"
+      ],
+      "Please enter ZIP code": [
+        "Inserisci codice postale"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
@@ -3600,6 +3630,12 @@
       ],
       "Please select a state": [
         "Per favore seleziona uno stato"
+      ],
+      "Please select billing country": [
+        "Seleziona il paese di fatturazione"
+      ],
+      "Please select billing state": [
+        "Seleziona lo stato di fatturazione"
       ],
       "Port is required": [
         "La porta è obbligatoria"
@@ -3749,6 +3785,9 @@
       "You already added this holidays calendar": [
         "Hai già aggiunto questo calendario dei giorni festivi"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Sei riconnesso a Zoom. Adesso puoi salvare il tuo evento."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Non puoi inviare un'email a più di ${ maxContacts } destinatario",
         "Non puoi inviare un'email a più di ${ maxContacts } destinatari"
@@ -3764,6 +3803,9 @@
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "La tua connessione a Zoom è scaduta. Riconnettiti per continuare."
       ]
     },
     "Error accepting calendar invitation": {
@@ -6694,6 +6736,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Codice postale"
+      ],
       "ZIP code": [
         "CAP"
       ]
@@ -7855,6 +7900,9 @@
       "Downgrade account?": [
         "Vuoi effettuare il downgrade dell'account?"
       ],
+      "Review subscription": [
+        "Rivedi abbonamento"
+      ],
       "Review subscription and pay": [
         "Controlla abbonamento e paga"
       ],
@@ -8753,6 +8801,9 @@
       "Got it": [
         "Ho capito"
       ],
+      "I'm purchasing as a business": [
+        "Sto acquistando come azienda"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -8789,6 +8840,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
+      ],
+      "This number will be shown on all future invoices": [
+        "Questo numero sarà mostrato su tutte le fatture future"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
@@ -8842,6 +8896,20 @@
       ],
       "Street address, postal code, and city": [
         "Indirizzo, codice postale e città"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Numero aziendale australiano (ABN)"
+      ],
+      "Business Number": [
+        "Numero azienda"
+      ],
+      "EIN": [
+        "Numero d'identificazione fiscale (EIN)"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -8944,6 +9012,9 @@
       "Please select a country": [
         "Seleziona un paese"
       ],
+      "Postal code": [
+        "Codice postale"
+      ],
       "Search events": [
         "Cerca eventi"
       ],
@@ -8973,6 +9044,9 @@
       ],
       "Your organization name": [
         "Il nome della tua organizzazione"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "Placeholder for contact group name": {
@@ -11787,17 +11861,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Partecipa alla riunione su Zoom"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Aggiungi riunione Zoom"
-      ],
-      "Adding conferencing details": [
-        "Aggiunta di dettagli sulla conferenza"
-      ],
-      "Loading Zoom configuration": [
-        "Caricamento configurazione Zoom"
       ]
     },
     "Zoom Meeting": {
