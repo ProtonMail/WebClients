@@ -1122,22 +1122,22 @@
         "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada ${ cycle } meses el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente mensualmente el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
+        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada mes el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Usted puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Usted puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias Scribe durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Usted puede tener hasta ${ TRIAL_MAX_USERS } usuarios durante el período de prueba."
+        "Puede tener hasta ${ TRIAL_MAX_USERS } usuarios durante el período de prueba."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Usted no puede añadir dominios personalizados durante el período de prueba."
+        "No puede agregar dominios personalizados durante el período de prueba."
       ],
       "You have reached the trial limit.": [
         "Usted ha alcanzado el límite de la prueba."
@@ -8446,13 +8446,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "Nombre comercial"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número de negocio"
       ],
       "EIN": [
-        "RUC"
+        "Número de identificación fiscal (EIN)"
       ],
       "VAT number": [
         "Número de IGV"
