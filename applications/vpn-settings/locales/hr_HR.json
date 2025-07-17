@@ -218,6 +218,9 @@
       "Fit to window": [
         "Prilagodi prozoru"
       ],
+      "Forgot password?": [
+        "Zaboravili ste lozinku?"
+      ],
       "Get ${ planOrAppName }": [
         "Nabavite ${ planOrAppName }"
       ],
@@ -464,6 +467,9 @@
       "sign up for free": [
         "registrirajte se besplatno"
       ],
+      "Signing in": [
+        "Prijavljivanje"
+      ],
       "Skip": [
         "Preskoči"
       ],
@@ -593,6 +599,9 @@
       "Active": [
         "Aktivno"
       ],
+      "Allow unsigned mail": [
+        "Dopusti nepotpisane poruke e-pošte"
+      ],
       "Default": [
         "Zadano"
       ],
@@ -629,6 +638,44 @@
       ],
       "New email": [
         "Nova e-pošta"
+      ]
+    },
+    "anniversary_2025": {
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ]
+    },
+    "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "200 GB storage": [
+        "200 MB prostora za pohranu"
+      ],
+      "years": [
+        "godine"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "/ month": [
+        "/ mjesec"
+      ],
+      "12 months": [
+        "12 mjeseci"
+      ],
+      "15 months": [
+        "15 mjeseci"
+      ],
+      "24 months": [
+        "24 mjeseca"
+      ],
+      "30 months": [
+        "30 mjeseci"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Otkaži pretplatu"
       ]
     },
     "Badge for domain": {
@@ -791,6 +838,14 @@
       ],
       "Two-year": [
         "2 godine"
+      ]
+    },
+    "Blog": {
+      "Independent security experts verified that ${ VPN_APP_NAME } does not log user data or engage in any practices that might compromise your privacy.": [
+        "Neovisni sigurnosni stručnjaci potvrdili su da ${ VPN_APP_NAME } ne bilježi korisničke podatke niti primjenjuje bilo kakvu praksu koja bi mogla ugroziti Vašu privatnost."
+      ],
+      "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
+        "Ovaj članak ažuriran je kako bi uključio protokole WireGuard i Stealth VPN."
       ]
     },
     "Bug category": {
@@ -1323,6 +1378,9 @@
       "Indonesia": [
         "Indonezija"
       ],
+      "International": [
+        "Međunarodno"
+      ],
       "Iran": [
         "Iran"
       ],
@@ -1789,6 +1847,9 @@
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
         "Jeste li sigurni da želite ukloniti ovu adresu?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Jednom kada se ova adresa ${ address } izbriše, više je nitko neće moći ponovno koristiti."
       ]
     },
     "Delete domain prompt": {
@@ -1820,8 +1881,35 @@
       ]
     },
     "Download": {
+      "Android": [
+        "Android"
+      ],
+      "Apple TV": [
+        "Apple TV"
+      ],
       "Browser": [
         "Preglednik"
+      ],
+      "Chrome": [
+        "Chrome"
+      ],
+      "Fire TV": [
+        "Fire TV"
+      ],
+      "Firefox": [
+        "Firefox"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "macOS Monterey": [
+        "macOS Monterey"
+      ],
+      "Mobile": [
+        "Mobitel"
       ],
       "TV": [
         "TV"
@@ -1929,8 +2017,14 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
       ],
+      "Please select a country": [
+        "Molimo odaberite državu"
+      ],
       "Please set a recovery phone number first": [
         "Prvo postavite broj telefona za oporavak"
+      ],
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
+        "Molimo nadogradite na poslovni plan s više od jednog korisnika kako biste upravljali višestrukim korisnicima."
       ],
       "Process aborted": [
         "Proces je prekinut"
@@ -2026,6 +2120,9 @@
       ],
       "customer support": [
         "korisnička podrška"
+      ],
+      "Manage addresses": [
+        "Upravljanje adresama"
       ],
       "Manage user accounts": [
         "Upravljanje korisničkim računima"
@@ -2263,6 +2360,9 @@
       "Best deal": [
         "Najbolja ponuda"
       ],
+      "Checkout": [
+        "Naplata"
+      ],
       "Device": [
         "Uređaj"
       ],
@@ -2286,6 +2386,9 @@
       ],
       "Organization key fingerprint": [
         "Jedinstveni ključ organizacije"
+      ],
+      "Payment details": [
+        "Detalji o plaćanju"
       ],
       "Server": [
         "Poslužitelj"
@@ -2416,6 +2519,9 @@
       ],
       "30-day money-back guarantee.": [
         "Povrat novca do 30 dana."
+      ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Za stvaranje grupa potrebna je prilagođena domena. Ako nemate postavljenu prilagođenu domenu, najprije to učinite na ${ linkToDomainPage }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
@@ -2548,6 +2654,9 @@
       "Expired": [
         "Isteklo"
       ],
+      "for choosing ${ product }": [
+        "što ste odabrali ${ product }"
+      ],
       "Free forever": [
         "Besplatno zauvijek"
       ],
@@ -2623,6 +2732,9 @@
       "Internet connection restored.": [
         "Uspostavljena je internetska veza."
       ],
+      "Item created in vault": [
+        "Stavka stvorena u trezoru"
+      ],
       "Labels:": [
         "Oznake:"
       ],
@@ -2655,6 +2767,9 @@
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dodijelite naziv svojoj novoj mapi i odaberite roditeljsku mapu u koju je želite staviti. Ako ne odaberete roditeljsku mapu, nova će se mapa stvoriti kao mapa najviše razine."
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Novi podaci o aktivnosti više se neće prikupljati niti prikazivati."
       ],
       "No addresses exist": [
         "Ne postoji ni jedna adresa e-pošte"
@@ -2737,6 +2852,9 @@
       "Session timed out": [
         "Sesija je istekla"
       ],
+      "Set up your organization": [
+        "Postavite vašu organizaciju"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
@@ -2760,6 +2878,9 @@
       "Thank you": [
         "Hvala vam"
       ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Hvala Vam što podržavate našu misiju izgradnje boljeg interneta gdje su privatnost i sloboda na prvom mjestu."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Naziv će biti vidljiv vašim korisnicima dok su prijavljeni."
       ],
@@ -2771,6 +2892,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Ovo može potrajati nekoliko sekundi ili nekoliko minuta, ovisno o uređaju"
+      ],
+      "This cannot be undone.": [
+        "Ovo se ne može poništiti."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ovaj je korisnik trenutno odgovoran za plaćanja za vašu organizaciju. Demotiranjem ovog člana postat ćete odgovorni za plaćanja za svoju organizaciju."
@@ -2799,11 +2923,17 @@
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
       ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        "Za nastavak, odaberite način za oporavak računa kako bismo mogli potvrditi zahtjev."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Dopunite svoj račun sa kreditima koje možete upotrijebiti za pretplatu na novi plan ili za obnovu trenutnog plana. Dobivate jedan kredit za svaku potrošenu ${ i18nCurrency }."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total VPN connections": [
+        "Ukupno VPN veza"
       ],
       "Two-factor authentication disabled": [
         "Onemogućena je provjera autentičnosti u dva koraka"
@@ -2915,6 +3045,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
+      ],
+      "You’ll be able to add these servers to another Gateway immediately.": [
+        "Moći ćete odmah dodati ove poslužitelje drugom pristupniku."
       ],
       "Zoom meeting": [
         "Sastanak na Zoomu"
@@ -3128,6 +3261,9 @@
       "Confirm password": [
         "Potvrdi lozinku"
       ],
+      "Confirm second password": [
+        "Potvrdite drugu lozinku"
+      ],
       "Copy": [
         "Kopiraj"
       ],
@@ -3305,6 +3441,9 @@
       "Phone number": [
         "Broj telefona"
       ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Molimo dodajte sljedeća dva MX zapisa. Napomena: Ažuriranje DNS zapisa može potrajati nekoliko sati."
+      ],
       "Postal code": [
         "Poštanski broj"
       ],
@@ -3356,6 +3495,9 @@
       "Type": [
         "Vrsta"
       ],
+      "Uppercase and lowercase letters": [
+        "Velika i mala slova"
+      ],
       "User": [
         "Korisnik"
       ],
@@ -3382,6 +3524,9 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, želim trajno izbrisati ovaj račun i sve njegove podatke."
+      ],
+      "Your password (admin)": [
+        "Vaša lozinka (administrator)"
       ],
       "ZIP code": [
         "Poštanski broj"
@@ -3430,6 +3575,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Poštanski broj"
+      ],
       "ZIP code": [
         "Poštanski broj"
       ]
@@ -3477,6 +3625,9 @@
       ],
       "Forgot username?": [
         "Zaboravili ste korisničko ime?"
+      ],
+      "Groups": [
+        "Grupe"
       ],
       "Help": [
         "Pomoć"
@@ -3526,6 +3677,62 @@
         "Saznajte više"
       ]
     },
+    "Log event": {
+      "Account password change": [
+        "Promjena lozinke računa"
+      ],
+      "Authentication failure (second factor failed)": [
+        "Neuspješna autentikacija (neuspješna dvofaktorska autentikacija)"
+      ],
+      "Authentication failure (wrong password)": [
+        "Neuspjela autentikacija (pogrešna lozinka)"
+      ],
+      "Authentication success": [
+        "Uspješna autentikacija"
+      ],
+      "Mailbox password change": [
+        "Promjena lozinke sandučića e-pošte"
+      ],
+      "Password reset": [
+        "Poništavanje lozinke"
+      ],
+      "Second factor disabled (authenticator app)": [
+        "Dvofaktorska autentikacija je onemogućena (autentikacijska aplikacija)"
+      ],
+      "Second factor disabled (security key)": [
+        "Dvofaktorska autentikacija je onemogućena (sigurnosni ključ)"
+      ],
+      "Second factor enabled (authenticator app)": [
+        "Dvofaktorska autentikacija je omogućena (autentikacijska aplikacija)"
+      ],
+      "Sign in failure (second factor failed)": [
+        "Neuspješna prijava (neuspješna dvofaktorska autentikacija)"
+      ],
+      "Sign in failure (wrong password)": [
+        "Neuspjela prijava (pogrešna lozinka)"
+      ],
+      "Sign in forbidden (due to abuse)": [
+        "Prijava zabranjena (zbog zlouporabe)"
+      ],
+      "Sign in success": [
+        "Uspješna prijava"
+      ],
+      "Sign in success (awaiting second factor)": [
+        "Uspješna prijava (čekanje dvofaktorske autentikacije)"
+      ],
+      "Sign out": [
+        "Odjava"
+      ],
+      "Two password mode disabled": [
+        "Način rada s dvije lozinke je onemogućen"
+      ],
+      "Two password mode enabled": [
+        "Način rada s dvije lozinke je omogućen"
+      ],
+      "Unknown": [
+        "Nepoznato"
+      ]
+    },
     "Log preference": {
       "Enable ${ reason }": [
         "Omogući ${ reason }"
@@ -3554,6 +3761,9 @@
       ],
       "Remove": [
         "Ukloni"
+      ],
+      "Resend invite link": [
+        "Ponovno pošalji poveznicu za poziv"
       ],
       "Revoke sessions": [
         "Opozovi sesije"
@@ -3692,6 +3902,9 @@
       "1 user": [
         "1 korisnik"
       ],
+      "Administration Panel": [
+        "Administracijska ploča"
+      ],
       "Auto-reply": [
         "Automatski odgovor"
       ],
@@ -3772,9 +3985,15 @@
     "new_plans: heading": {
       "Support": [
         "Podrška"
+      ],
+      "Team management": [
+        "Upravljanje timom"
       ]
     },
     "new_plans: info": {
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Sve ${ BRAND_NAME } aplikacije i njihove premium značajke"
+      ],
       "Popular": [
         "Popularno"
       ],
@@ -3784,8 +4003,14 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sigurna e-pošta s naprednim značajkama za svakodnevnu komunikaciju."
       ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Rješenja po mjeri za veće organizacije sa specifičnim sigurnosnim zahtjevima."
+      ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Besplatni početni račun osmišljen kako bi svima osigurao privatnost prema zadanim postavkama."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "Uživate u promotivnoj cijeni na Vašem trenutnom planu. Ako smanjite svoju pretplatu, izgubit ćete svoju promotivnu cijenu i ona neće biti dostupna ako se pokušate ponovo pretplatiti."
       ]
     },
     "new_plans: Label": {
@@ -3811,7 +4036,24 @@
         "Korištenje računa"
       ]
     },
+    "new_plans: tooltip": {
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Pristupite ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME } iz udobnosti svoje radne površine"
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "Omogućuje istovremeni pristup na više mreža, npr. streamanje filma iz druge zemlje dok i dalje dobivate lokalne rezultate pretrage."
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "Štiti od prijetnji privatnosti na VPN-u prosljeđivanjem Vašeg internetskog prometa kroz više poslužitelja."
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Zatvorite resurse svoje tvrtke za javni internet i učinite ih dostupnima samo putem Vaših privatnih pristupnika"
+      ]
+    },
     "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Dodajte više personalizacije s 15 adresa e-pošte i podrškom za 3 prilagođene domene e-pošte"
+      ],
       "Multi-platform support": [
         "Podrška na više platformi"
       ]
@@ -3831,6 +4073,9 @@
       ],
       "4-6 emails per year": [
         "4 do 6 e-pošta godišnje"
+      ],
+      "Daily email notifications": [
+        "Dnevne obavijesti e-pošte"
       ],
       "Email subscriptions": [
         "Redovno slanje e-pošte"
@@ -3886,6 +4131,14 @@
         "Dobrodošli u ${ appName }"
       ]
     },
+    "Onboarding Trial": {
+      "Continue": [
+        "Nastavite"
+      ],
+      "help center": [
+        "centar za pomoć"
+      ]
+    },
     "Option": {
       "Country configs": [
         "Postavke države"
@@ -3914,6 +4167,9 @@
       "Secure Core configs": [
         "Secure core konfiguracije"
       ],
+      "Setup incomplete": [
+        "Postavljanje nije dovršeno"
+      ],
       "Standard server configs": [
         "Postavke standardnog poslužitelja"
       ]
@@ -3923,6 +4179,19 @@
         "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji.",
         "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji.",
         "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji."
+      ]
+    },
+    "Organization logo upload": {
+      "Tips on choosing a good logo": [
+        "Savjeti za odabir dobrog logotipa"
+      ],
+      "Use a graphical icon or image rather than text.": [
+        "Koristite grafičku ikonu ili sliku umjesto teksta."
+      ]
+    },
+    "orgidentity": {
+      "Organization identity updated": [
+        "Identitet organizacije je ažuriran"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -3952,6 +4221,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bitcoin": [
         "Bitcoin"
       ],
@@ -4044,6 +4316,9 @@
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
       ],
+      "Postal code": [
+        "Poštanski broj"
+      ],
       "Search": [
         "Pretraga"
       ],
@@ -4061,6 +4336,9 @@
       ],
       "yourdomain.com": [
         "vasadomena.hr"
+      ],
+      "ZIP code": [
+        "Poštanski broj"
       ]
     },
     "placeholder": {
@@ -4080,14 +4358,36 @@
         "${ cycle } mjeseci"
       ]
     },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Nadogradite za ${ upsellPlanTitle }"
+      ]
+    },
     "Price": {
       "Free": [
         "Free"
       ]
     },
+    "Protection type": {
+      "Blocked": [
+        "Blokirana"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA"
+      ],
+      "Ok": [
+        "U redu"
+      ],
+      "Unknown": [
+        "Nepoznato"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Odustani"
+      ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Potvrdite sada ovu adresu e-pošte za oporavak: ${ email.Value }"
       ],
       "Verify with email": [
         "Potvrdite s e-poštom"
@@ -4159,6 +4459,9 @@
     "Select invoice document": {
       "Invoice": [
         "Račun"
+      ],
+      "Transactions": [
+        "Transakcije"
       ]
     },
     "Select search results": {
@@ -4255,6 +4558,16 @@
       ],
       "Use recovery method": [
         "Koristite metodu oporavka"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Ako imate postavljenu **metodu oporavka**, umjesto toga pokušajte oporaviti korisnički račun. To će Vam omogućiti da odmah promijenite lozinku."
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Ponovno postavljanje lozinke potvrđeno"
       ]
     },
     "session_recovery:initiation:title": {
@@ -4463,6 +4776,12 @@
       "Invalid confirmation code": [
         "Nevažeći kôd za potvrdu"
       ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Obavezno spremite ovu lozinku na sigurno mjesto kako biste mogli ponovno pristupiti svom računu u slučaju da izgubite pristup vjerodajnicama svog davatelja identiteta."
+      ],
+      "Set your backup password": [
+        "Postavite svoju rezervnu lozinku"
+      ],
       "Share the confirmation code with your administrator": [
         "Podijelite kôd za potvrdu s Vašim administratorom"
       ],
@@ -4471,6 +4790,9 @@
       ],
       "Sign in to your organization": [
         "Prijavite se u vašu organizaciju"
+      ],
+      "They will have to sign in again with your identity provider to access ${ BRAND_NAME } services. For this user to be able to sign in, make sure that they exist in your identity provider.": [
+        "Morat će se ponovno prijaviti kod vašeg davatelja identiteta za pristup uslugama ${ BRAND_NAME }. Kako bi se ovaj korisnik mogao prijaviti, provjerite da postoji kod Vašeg davatelja identiteta."
       ],
       "Welcome": [
         "Dobro došli"
@@ -4482,6 +4804,9 @@
       ],
       "Inactive": [
         "Neaktivano"
+      ],
+      "Pending activation": [
+        "Aktivacija na čekanju"
       ],
       "Signed out": [
         "Odjavljen"
@@ -4570,17 +4895,9 @@
     "Subscription change warning": {
       "Got it": [
         "Razumijem"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
       ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Vaš plan je kupljen pomoću Android aplikacije. Stoga, za izmjene Vašeg plana ili ažuriranje podataka o plaćanju, morat ćete otići na trgovinu Google Play."
       ]
     },
     "Subscription reminder": {
@@ -4628,8 +4945,25 @@
       "Reactivate": [
         "Ponovo aktiviraj"
       ],
+      "The best of ${ BRAND_NAME }": [
+        "Najbolje od ${ BRAND_NAME }"
+      ],
       "Version history": [
         "Povijest verzija"
+      ],
+      "Yearly free storage bonuses": [
+        "Godišnji besplatni bonusi za pohranu"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -4651,6 +4985,12 @@
       "Address added": [
         "Adresa je dodana"
       ],
+      "Address successfully added": [
+        "Adresa uspješno dodana"
+      ],
+      "Administrator privileges restored": [
+        "Administratorske ovlasti vraćene"
+      ],
       "Catch-all address updated": [
         "Dohvati-sve adresa je ažurirana"
       ],
@@ -4665,6 +5005,9 @@
       ],
       "Display name updated": [
         "Zaslonski naziv je ažuriran"
+      ],
+      "DMARC value copied to clipboard": [
+        "DMARC vrijednost kopirana u međuspremnik"
       ],
       "Domain verified": [
         "Domena je potvrđena"
@@ -4942,6 +5285,9 @@
       "Contact us": [
         "Kontaktirajte nas"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Create a new Gateway": [
         "Stvori novi pristupnik"
       ],
@@ -5005,6 +5351,9 @@
       "Downloads": [
         "Preuzimanja"
       ],
+      "Edit countries": [
+        "Uredi zemlje"
+      ],
       "Edit credit/debit card": [
         "Uredi kreditnu/debitnu karticu"
       ],
@@ -5035,11 +5384,20 @@
       "Email subscriptions": [
         "Redovno slanje e-pošte"
       ],
+      "Enter your password": [
+        "Unesite lozinku"
+      ],
       "Error": [
         "Pogreška"
       ],
       "Find email or username": [
         "Adresa e-pošte ili korisničko ime"
+      ],
+      "Forgot recovery method": [
+        "Zaboravili ste metodu oporavka"
+      ],
+      "Gateway": [
+        "Pristupnik"
       ],
       "Gateways": [
         "Pristupnici"
@@ -5104,6 +5462,9 @@
       "Organization name": [
         "Naziv organizacije"
       ],
+      "Origin": [
+        "Porijeklo"
+      ],
       "Password": [
         "Lozinka"
       ],
@@ -5143,6 +5504,9 @@
       "Recovery": [
         "Oporavak"
       ],
+      "Remove server?": [
+        "Ukloniti poslužitelj?"
+      ],
       "Remove user?": [
         "Ukloniti korisnika?"
       ],
@@ -5164,6 +5528,9 @@
       "Select a plan": [
         "Odaberite plan"
       ],
+      "Send new invite?": [
+        "Poslati novu pozivnicu?"
+      ],
       "Set new password": [
         "Postavi novu lozinku"
       ],
@@ -5172,6 +5539,9 @@
       ],
       "Set up two-factor authentication": [
         "Postavite dvofaktorsku autentikaciju"
+      ],
+      "Set up your organization": [
+        "Postavite vašu organizaciju"
       ],
       "Settings": [
         "Postavke"
@@ -5190,6 +5560,11 @@
       ],
       "Subscription": [
         "Pretplata"
+      ],
+      "Successfully created ${ n } user account": [
+        "Uspješno stvoren ${ n } korisnički račun",
+        "Uspješno stvorena ${ n } korisnička računa",
+        "Uspješno stvoreno ${ n } korisničkih računa"
       ],
       "Summary": [
         "Sažetak"
@@ -5229,6 +5604,9 @@
       ],
       "Warning": [
         "Upozorenje"
+      ],
+      "WireGuard configuration": [
+        "WireGuard konfiguracija"
       ],
       "Your current plan": [
         "Vaš trenutni plan"
@@ -5299,6 +5677,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ako ste kupili darovni kôd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
       ],
+      "Specify the users of the eduGAIN entity who are allowed to authenticate with SAML SSO": [
+        "Odredite korisnike eduGAIN entiteta kojima je dopuštena autentifikacija putem SAML SSO-a"
+      ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Otkrili smo problem s vašim DNS postavkama. Pobrinite se da se vaši zapisi podudaraju s uputama u nastavku. Ako se problem nastavi, morat ćemo isključiti potpisivanje DKIM-a."
       ],
@@ -5309,12 +5690,20 @@
         "Vaše DKIM potpisivanje radi."
       ]
     },
+    "tooltip": {
+      "Waiting for user to accept the invitation": [
+        "Čeka se da korisnik prihvati pozivnicu"
+      ]
+    },
     "Transaction state display as badge": {
       "Chargeback": [
         "Povrat"
       ],
       "Failed": [
         "Neuspješno"
+      ],
+      "Success": [
+        "Uspješno"
       ]
     },
     "Transaction type display as badge": {
@@ -5327,6 +5716,12 @@
       "Chargeback": [
         "Povrat"
       ],
+      "Credit": [
+        "Kredit"
+      ],
+      "Currency conversion": [
+        "Konverzija valuta"
+      ],
       "Payment": [
         "Plaćanje"
       ],
@@ -5334,9 +5729,23 @@
         "Povrat"
       ]
     },
+    "Unlimited offer": {
+      "/month": [
+        "/mjesec"
+      ]
+    },
     "unprivatization": {
       "Cancel request": [
         "Poništi zahtjev"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Zahtjev za upravljanje korisničkim računom poslan, čeka se odobrenje korisnika"
+      ],
+      "Send request": [
+        "Pošaljite zahtjev"
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Ovo će opozvati administratorsku dozvolu za upravljanje korisničkim računom ovog korisnika."
       ]
     },
     "upsell panel": {
@@ -5416,6 +5825,11 @@
         "Ostalo"
       ]
     },
+    "VPN Dashboard": {
+      "Set secure passwords without the hassle.": [
+        "Postavite sigurne lozinke bez komplikacija."
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i drugi."
@@ -5464,6 +5878,9 @@
         "${ n } godina",
         "${ n } godine",
         "${ n } godina"
+      ],
+      "Your ${ selected } plan": [
+        "Vaš ${ selected } plan"
       ]
     },
     "wallet_signup_2024: Info": {

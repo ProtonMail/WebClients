@@ -870,6 +870,9 @@
       "Upgrade to Business": [
         "Палепшыць да Business"
       ],
+      "Upgrade to Professional": [
+        "Палепшыць да Professional"
+      ],
       "Upgrade your plan": [
         "Палепшыце свой тарыфны план"
       ],
@@ -1346,7 +1349,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
       "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ plan } і ${ CALENDAR_SHORT_APP_NAME }"
@@ -1568,7 +1571,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -4370,8 +4373,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - ваш камандны цэнтр для адсочвання актыўнасці карыстальнікаў, выяўлення пагроз і забеспячэння адпаведнасці ў вашай арганізацыі."
+      " and other security features.": [
+        " і іншыя функцыі бяспекі."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } карыстальнік з ${ totalUsers } у цяперашні час мае доступ да абагуленых сервераў.",
@@ -4884,7 +4887,7 @@
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
       ],
       "Dedicated VPN servers": [
-        "Вылучаныя VPN серверы"
+        "Вылучаныя серверы VPN"
       ],
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
@@ -6077,6 +6080,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Палепшыце да тарыфнага плана Professional ці вышэйшага, каб разблакіраваць"
+      ],
       "Upload your completed CSV file to create accounts": [
         "Запампуйце свой завершаны файл CSV, каб стварыць уліковыя запісы"
       ],
@@ -6244,9 +6250,6 @@
       ],
       "Why?": [
         "Чаму?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "З тарыфным планам Business або Enterprise у вас будзе магчымасць"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "З тарыфнымі планамі Business або Enterprise, вы можаце купіць ${ boldDedicatedServers } для вашай арганізацыі і наладзіць ${ boldGateways } правы доступу карыстальнікаў да яго."
@@ -8093,7 +8096,7 @@
         "Вылучаныя серверы аптымізаваныя для трансляцый"
       ],
       "Desktop app": [
-        "Настольная праграма"
+        "Праграма для камп'ютара"
       ],
       "DNS leak prevention": [
         "Прадухіленне ўцечак DNS"
@@ -11401,7 +11404,7 @@
         "Комплексная прыватнасць і бяспека"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Настольная праграма і падтрымка кліента электроннай пошты (праз IMAP)"
+        "Праграма для камп'ютара і падтрымка кліента электроннай пошты (праз IMAP)"
       ],
       "Direct contribution to our mission": [
         "Непасрэдны ўклад у нашу місію"
@@ -11589,7 +11592,7 @@
         "Папярэджанне ўцечкі даных ${ strongArgument }"
       ],
       "Desktop app": [
-        "Настольная праграма"
+        "Праграма для камп'ютара"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
@@ -12835,8 +12838,8 @@
       "Video conferencing": [
         "Відэаканферэнцыя"
       ],
-      "View organization events by upgrading to Business": [
-        "Палепшыце да тарыфнага плана Business, каб паглядзець падзеі арганізацыі"
+      "View organization events by upgrading to Professional": [
+        "Палепшыце да тарыфнага плана Professional, каб паглядзець падзеі арганізацыі"
       ],
       "Warning": [
         "Папярэджанне"
