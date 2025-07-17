@@ -162,17 +162,16 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * strict (eg: ticketmaster.com) where the dropdown can never get a
      * full focus. In this case, blur the anchor field and force the active
      * element to blur to ensure we're in an "unfocused state". */
-    iframe.registerMessageHandler(IFramePortMessageType.DROPDOWN_BLUR_FIELD, () => {
-        requestAnimationFrame(() => {
-            if (document.activeElement !== popover.root.customElement) {
-                fieldRef.current?.element.blur();
+    iframe.registerMessageHandler(IFramePortMessageType.DROPDOWN_FOCUS_CHECK, () => {
+        if (document.activeElement !== popover.root.customElement) {
+            fieldRef.current?.element.blur();
 
-                setTimeout(() => {
-                    const { activeElement } = document;
-                    if (activeElement && isHTMLElement(activeElement)) activeElement.blur();
-                }, 50);
-            }
-        });
+            setTimeout(() => {
+                const { activeElement } = document;
+                if (activeElement && isHTMLElement(activeElement)) activeElement.blur();
+                iframe.sendPortMessage({ type: IFramePortMessageType.DROPDOWN_FOCUS });
+            }, 50);
+        }
     });
 
     /* On a login autofill request - resolve the credentials via
