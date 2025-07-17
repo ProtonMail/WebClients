@@ -695,7 +695,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -1382,7 +1382,7 @@
         "Засталося ${ trialDaysLeft } дзён"
       ],
       "(Empty)": [
-        "(Пуста)"
+        "(пуста)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Паспрабуйце прэміяльныя функцыі праграмы на працягу 7 дзён бясплатна. Толькі на працягу першага тыдня выкарыстання ${ BRAND_NAME }."
@@ -3632,13 +3632,13 @@
     },
     "Pass_file_attachments": {
       "\"${ file.name }\" could not be uploaded.": [
-        "Не ўдалося запампаваць \"${ file.name }\"."
+        "Файл з назвай \"${ file.name }\" не можа быць запампаваны."
       ],
       "\"${ filename }\" could not be imported.": [
-        "Не ўдалося імпартаваць \"${ filename }\"."
+        "Файл з назвай \"${ filename }\" не можа быць імпартаваны."
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
-        "Файл \"${ filename }\" занадта вялікі для запампоўкі. Максімальна дазволены памер (${ maxFileSizeInMB })"
+        "Файл з назвай \"${ filename }\" занадта вялікі для запампоўвання. Максімальна дазволены памер (${ maxFileSizeInMB })"
       ],
       "${ filesCount } file": [
         "${ filesCount } файл",
