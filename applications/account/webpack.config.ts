@@ -4,10 +4,12 @@ import path from 'path';
 import type webpack from 'webpack';
 import 'webpack-dev-server';
 
-import getConfig from '@proton/pack/webpack.config';
+import { type WebpackEnvArgumentsV2, getWebpackOptions } from '@proton/pack/lib/configV2';
+import { addDevEntry, getConfigV2 } from '@proton/pack/webpack.config';
 import CopyIndexHtmlWebpackPlugin from '@proton/pack/webpack/copy-index-html-webpack-plugin';
-import { addDevEntry, getIndexChunks, getSupportedEntry } from '@proton/pack/webpack/entries';
+import { getIndexChunks, getSupportedEntry } from '@proton/pack/webpack/entries';
 
+import appConfig from './appConfig';
 import type { HrefLang } from './pages/interface';
 import { getPages } from './pages/pages';
 import type { Parameters } from './src/pages/interface';
@@ -36,10 +38,10 @@ const getTemplateParameters = (
     };
 };
 
-const result = async (env: any): Promise<webpack.Configuration> => {
+const result = async (opts: WebpackEnvArgumentsV2): Promise<webpack.Configuration> => {
+    const webpackOptions = getWebpackOptions(opts, { appConfig });
+    const config = getConfigV2(webpackOptions);
     const pagePromise = getPages();
-
-    const config = getConfig(env);
 
     const plugins = config.plugins || [];
     config.plugins = plugins;
@@ -55,7 +57,7 @@ const result = async (env: any): Promise<webpack.Configuration> => {
 
     const { pre, unsupported } = config.entry as any;
 
-    if (env.appMode === 'standalone') {
+    if (webpackOptions.appMode === 'standalone') {
         config.entry = {
             pre,
             ['private-index']: [path.resolve('./src/app/private.tsx'), getSupportedEntry()],
