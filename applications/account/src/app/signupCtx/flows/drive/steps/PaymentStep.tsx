@@ -22,6 +22,7 @@ import { Audience } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import Terms from '../../../components/Terms';
 import { useSignup } from '../../../context/SignupContext';
 import { Aside } from '../components/Layout/Aside';
 import { Footer } from '../components/Layout/Footer';
@@ -30,7 +31,6 @@ import Layout from '../components/Layout/Layout';
 import { Main } from '../components/Layout/Main';
 import { Wrapper } from '../components/Layout/Wrapper';
 import { PricingCard } from '../components/PricingCard/PricingCard';
-import Terms from '../components/Terms';
 
 interface Props {
     onPaymentTokenProcessed: () => Promise<void>;
@@ -234,7 +234,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     </h1>
                     {paymentsForm}
 
-                    <Terms />
+                    <Terms className="mt-4" />
                 </Main>
                 <Aside>
                     <PricingCard step="payment" />
