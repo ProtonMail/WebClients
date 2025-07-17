@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Authenticate": [
+        "Autenticiraj"
+      ],
       "Cancel": [
         "Poništi"
       ],
@@ -25,6 +28,9 @@
       ],
       "Edit sign-in details": [
         "Uredite detalje za prijavu"
+      ],
+      "Forgot password?": [
+        "Zaboravili ste lozinku?"
       ],
       "Get verification code": [
         "Nabavi kôd za provjeru"
@@ -49,6 +55,9 @@
       ],
       "Try another method": [
         "Isprobajte drugu metodu"
+      ],
+      "Use recovery code": [
+        "Koristi kȏd za oporavak"
       ],
       "Verify": [
         "Potvrdi"
@@ -389,6 +398,9 @@
       ],
       "Indonesia": [
         "Indonezija"
+      ],
+      "International": [
+        "Međunarodno"
       ],
       "Iran": [
         "Iran"
@@ -877,6 +889,16 @@
         "Nešto je pošlo po zlu"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Sigurnosni ključ"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sigurnosni ključ"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -1016,6 +1038,9 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Aplikacija autentifikatora"
+      ],
       "Code is 6 digits without spaces": [
         "Kod se sastoji od 6 znamenki bez razmaka."
       ],
@@ -1036,6 +1061,9 @@
       ],
       "Verification code": [
         "Kôd za provjeru"
+      ],
+      "Your password (admin)": [
+        "Vaša lozinka (administrator)"
       ]
     },
     "Link": {
@@ -1151,6 +1179,16 @@
         "Neograničen broj poruka dnevno"
       ]
     },
+    "new_plans: tooltip": {
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Pristupite ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME } iz udobnosti svoje radne površine"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Dodajte više personalizacije s 15 adresa e-pošte i podrškom za 3 prilagođene domene e-pošte"
+      ]
+    },
     "Placeholder": {
       "Password": [
         "Lozinka"
@@ -1159,6 +1197,9 @@
     "sso": {
       "Sign in": [
         "Prijavi se"
+      ],
+      "Sign in to your organization": [
+        "Prijavite se u vašu organizaciju"
       ]
     },
     "Success": {
@@ -1170,6 +1211,9 @@
       ]
     },
     "Title": {
+      "Enter your password": [
+        "Unesite lozinku"
+      ],
       "Human verification": [
         "Ljudska provjera"
       ],

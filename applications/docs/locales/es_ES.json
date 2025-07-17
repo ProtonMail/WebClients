@@ -1125,10 +1125,10 @@
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -8446,13 +8446,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número empresarial"
       ],
       "EIN": [
-        "EIN"
+        "Número de identificación fiscal (EIN)"
       ],
       "VAT number": [
         "Número de IVA"
@@ -9028,7 +9028,7 @@
         "Reemplazar datos en la celda seleccionada"
       ],
       "Select a CSV or TSV file to import": [
-        "Selecciona un archivo CSV o TSV para importar"
+        "Seleccionar un archivo CSV o TSV para importar"
       ]
     },
     "sheets_2025:Label": {

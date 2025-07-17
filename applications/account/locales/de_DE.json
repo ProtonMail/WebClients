@@ -1465,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade um ${ PROTON_SENTINEL_NAME } zu aktivieren"
       ],
+      "Upgrade to Professional": [
+        "Auf Professional upgraden"
+      ],
       "Upgrade to view all": [
         "Upgraden, um alle anzusehen"
       ],
@@ -2007,14 +2010,8 @@
       "During the trial period, you can have up to 10 users.": [
         "Während des Testzeitraums kannst du bis zu 10 Benutzer haben."
       ],
-      "free for 14 days": [
-        "Für 14 Tage kostenlos"
-      ],
       "on ${ formattedDate }": [
         "am ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Teste ${ selected } ${ freeFor14Days }"
       ],
       "Try it free for 14 days": [
         "Teste es 14 Tage lang kostenlos aus"
@@ -7575,8 +7572,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " • Die Kommandozentrale für die Verfolgung von Benutzeraktivitäten, die Erkennung von Bedrohungen und die Sicherstellung der Konformität in deiner Organisation."
+      " and other security features.": [
+        " und andere Sicherheitsfunktionen."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } Benutzer hat derzeit Zugang zu gemeinsamen Servern.",
@@ -10216,6 +10213,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Upgrade auf Professional oder ein höheres Abonnement, um freizuschalten"
+      ],
       "Upgrade to unlock": [
         "Upgraden zum Freischalten"
       ],
@@ -10458,9 +10458,6 @@
       ],
       "Why?": [
         "Warum?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Mit einem Business- oder Enterprise-Tarif kann Folgendes freigeschaltet werden"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Mit einem Business- oder Enterprise-Abonnement kannst du ${ boldDedicatedServers } für dein Unternehmen kaufen und ${ boldGateways } einrichten, um zu kontrollieren, welche Benutzer darauf zugreifen können."
@@ -20843,8 +20840,8 @@
       "Video conferencing": [
         "Videokonferenzen"
       ],
-      "View organization events by upgrading to Business": [
-        "Ereignisse der Organisation anzeigen, durch Wechsel zu Business"
+      "View organization events by upgrading to Professional": [
+        "Ereignisse der Organisation anzeigen, durch Wechsel zu Professional"
       ],
       "VPN apps": [
         "VPN-Apps"
@@ -21053,9 +21050,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Ermöglicht das nahtlose Hinzufügen von Links zu Videokonferenzen zu deinen Kalendereinladungen."
       ],
-      "An approximate location of the IP address": [
-        "Ungefährer Standort der IP-Adresse"
-      ],
       "Any protection applied to suspicious activity": [
         "Jeder Schutz, der auf verdächtige Aktivitäten angewandt wird"
       ],
@@ -21079,9 +21073,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Nachrichten im Papierkorb oder Spam nach 30 Tagen löschen. Bei aktivierter automatischer Löschung erhalten Nachrichten, die sich bereits im Papierkorb/Spam befinden, ein Löschdatum, das auf dem Datum basiert, an dem sie dorthin verschoben wurden."
-      ],
-      "Device information such as operating system": [
-        "Geräteinformationen wie das Betriebssystem"
       ],
       "Device name and app version": [
         "Gerätename und App-Version"
@@ -21146,6 +21137,12 @@
       "Not all information listed here was exposed for all users.": [
         "Nicht alle hier aufgeführten Informationen wurden für alle Benutzer offengelegt."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Ursprungs-Internetdienstanbieter (ISP)"
+      ],
+      "Origin IP address": [
+        "Ursprungs-IP-Adresse"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Ursprüngliche IP-Adresse und Internetdienstanbieter (ISP)"
       ],
@@ -21187,9 +21184,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Der Internetdienstanbieter der IP-Adresse."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
