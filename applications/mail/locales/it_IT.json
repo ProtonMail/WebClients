@@ -187,6 +187,9 @@
       "Cancel subscription": [
         "Annulla abbonamento"
       ],
+      "Cancel trial and pay": [
+        "Annulla la prova e paga"
+      ],
       "Carbon Copy": [
         "Copia conoscenza"
       ],
@@ -4557,6 +4560,9 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Invalid ZIP code": [
+        "CAP non valido"
+      ],
       "Item content cannot exceed 40KB": [
         "Il contenuto dell'elemento non può superare i 40 Kb"
       ],
@@ -4653,6 +4659,18 @@
       "Please activate your search again": [
         "Attiva nuovamente la tua ricerca"
       ],
+      "Please enter a valid postal code": [
+        "Si prega di inserire un codice postale valido"
+      ],
+      "Please enter a valid ZIP code": [
+        "Per favore, inserisci un codice postale valido"
+      ],
+      "Please enter postal code": [
+        "Per favore inserisci il codice postale"
+      ],
+      "Please enter ZIP code": [
+        "Inserisci codice postale"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
@@ -4668,6 +4686,12 @@
       ],
       "Please select a state": [
         "Per favore seleziona uno stato"
+      ],
+      "Please select billing country": [
+        "Seleziona il paese di fatturazione"
+      ],
+      "Please select billing state": [
+        "Seleziona lo stato di fatturazione"
       ],
       "Please try again or refresh the page.": [
         "Riprova o aggiorna la pagina."
@@ -9129,6 +9153,9 @@
       "Folder location": [
         "Percorso cartella"
       ],
+      "Forums": [
+        "Forum"
+      ],
       "Forwards to": [
         "Inoltra a"
       ],
@@ -9345,6 +9372,12 @@
       "Postal code": [
         "Codice postale"
       ],
+      "Primary": [
+        "Primario"
+      ],
+      "Promotions": [
+        "Promozioni"
+      ],
       "Proration": [
         "Calcolo proporzionale"
       ],
@@ -9386,6 +9419,9 @@
       ],
       "Size:": [
         "Dimensione:"
+      ],
+      "Social": [
+        "Social"
       ],
       "Starred": [
         "Importante"
@@ -9441,14 +9477,23 @@
       "Toolbar": [
         "Barra degli strumenti"
       ],
+      "Transactions": [
+        "Transazioni"
+      ],
       "Undisclosed Recipients": [
         "Destinatari nascosti"
+      ],
+      "Unknown": [
+        "Sconosciuto"
       ],
       "Unsafe or problematic": [
         "È poco sicuro o problematico"
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "L'abbonamento a ${ truncatedName } è annullato."
+      ],
+      "Updates": [
+        "Aggiornamenti"
       ],
       "Upload picture": [
         "Carica immagine"
@@ -9541,6 +9586,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Codice postale"
+      ],
       "ZIP code": [
         "CAP"
       ]
@@ -10813,6 +10861,9 @@
       "Downgrade account?": [
         "Vuoi effettuare il downgrade dell'account?"
       ],
+      "Review subscription": [
+        "Rivedi abbonamento"
+      ],
       "Review subscription and pay": [
         "Controlla abbonamento e paga"
       ],
@@ -11700,6 +11751,9 @@
       "Got it": [
         "Ho capito"
       ],
+      "I'm purchasing as a business": [
+        "Sto acquistando come azienda"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -11736,6 +11790,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
+      ],
+      "This number will be shown on all future invoices": [
+        "Questo numero sarà mostrato su tutte le fatture future"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
@@ -11789,6 +11846,20 @@
       ],
       "Street address, postal code, and city": [
         "Indirizzo, codice postale e città"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Numero aziendale australiano (ABN)"
+      ],
+      "Business Number": [
+        "Numero azienda"
+      ],
+      "EIN": [
+        "Numero d'identificazione fiscale (EIN)"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -11897,6 +11968,9 @@
       "Please share what you expected": [
         "Condividi quello che ti aspettavi"
       ],
+      "Postal code": [
+        "Codice postale"
+      ],
       "Search date, name, email address, or subject line": [
         "Ricerca per data, nome, indirizzo email od oggetto del messaggio"
       ],
@@ -11965,6 +12039,9 @@
       ],
       "Your organization name": [
         "Il nome della tua organizzazione"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "Placeholder for contact group name": {
