@@ -1,17 +1,23 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { produce, setAutoFreeze } from 'immer';
 import path from 'path';
-import type { Configuration} from 'webpack';
+import type { Configuration } from 'webpack';
 import { ProvidePlugin } from 'webpack';
 import { InjectManifest } from 'workbox-webpack-plugin';
 
-import getConfig from '@proton/pack/webpack.config';
-import { addDevEntry, getIndexChunks, getSupportedEntry, mergeEntry } from '@proton/pack/webpack/entries';
+import { type WebpackEnvArgumentsV2, getWebpackOptions } from '@proton/pack/lib/configV2';
+import { addDevEntry, getConfigV2 } from '@proton/pack/webpack.config';
+import { getIndexChunks, getSupportedEntry, mergeEntry } from '@proton/pack/webpack/entries';
 
-const result = (env: any): Configuration => {
+import appConfig from './appConfig';
+
+const result = (opts: WebpackEnvArgumentsV2): Configuration => {
+    const webpackOptions = getWebpackOptions(opts, { appConfig });
+    const config = getConfigV2(webpackOptions);
+
     setAutoFreeze(false);
 
-    return produce(getConfig(env), (config) => {
+    return produce(config, (config) => {
         config.plugins = config.plugins || [];
         config.resolve = config.resolve || {};
         config.resolve.fallback = config.resolve.fallback || {};
@@ -58,7 +64,7 @@ const result = (env: any): Configuration => {
         }
         const htmlIndex = config.plugins.indexOf(htmlPlugin);
 
-        if (env.appMode === 'standalone') {
+        if (webpackOptions.appMode === 'standalone') {
             addDevEntry(config);
         }
 
