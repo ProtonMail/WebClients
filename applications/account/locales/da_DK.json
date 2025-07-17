@@ -3979,6 +3979,9 @@
       "To start, give your organization a name.": [
         "Start med at give deres organisation et navn."
       ],
+      "Track the status and activity of your referrals": [
+        "Følg status og aktivitet for dine henvisninger"
+      ],
       "Track the status and activity of your referrals.": [
         "Følg status og aktivitet for dine henvisninger."
       ],
@@ -5012,6 +5015,9 @@
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
+      "Invalid ZIP code": [
+        "Ugyldig postnummer"
+      ],
       "Item content cannot exceed 40KB": [
         "Element-indhold må ikke overstige 40 kB"
       ],
@@ -5115,6 +5121,12 @@
       ],
       "Please select a state": [
         "Vælg venligst en region"
+      ],
+      "Please select billing country": [
+        "Vælg venligst faktureringsland"
+      ],
+      "Please select billing state": [
+        "Vælg venligst faktureringsstat"
       ],
       "Please set a recovery email first": [
         "Angiv først en gendannelsesmail"
@@ -8317,6 +8329,9 @@
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Inviter din partner, en ven, eller hvem du nu deler dit ${ protonDuoPlanName }-abonnement med."
       ],
+      "Invited": [
+        "Inviteret"
+      ],
       "It appears some of your data is encrypted and locked.": [
         "Det ser ud til, at nogle af dine data er krypteret og låst."
       ],
@@ -11406,11 +11421,17 @@
       "Reveal password": [
         "Vis adgangskode"
       ],
+      "Reward": [
+        "Belønning"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
       ],
       "Search": [
         "Søg"
+      ],
+      "Search for a name or email": [
+        "Søg efter navn eller e-mail"
       ],
       "Second password": [
         "Anden adgangskode"
@@ -11755,6 +11776,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postnummer"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -13323,6 +13347,9 @@
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "For at komme i gang skal du vælge et visningsnavn. Det er det, folk vil se, når du sender en e-mail, inviterer dem til en begivenhed eller deler en fil."
+      ],
+      "Your ${ planTitleElement } subscription is now active.": [
+        "Dit ${ planTitleElement } abonnement er nu aktivt."
       ],
       "Your selected plan: ${ planName }": [
         "Dit valgte abonnement: ${ planName }"
@@ -15008,6 +15035,11 @@
         "Adresse, postnummer og by"
       ]
     },
+    "Payments.VAT number name": {
+      "VAT number": [
+        "Momsnummer"
+      ]
+    },
     "Permission": {
       "No permission": [
         "Ingen tilladelse"
@@ -15135,6 +15167,9 @@
       "Please select the main reason": [
         "Vælg venligst hovedårsagen"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Printer": [
         "Printer"
       ],
@@ -15185,6 +15220,9 @@
       ],
       "yourdomain.com": [
         "ditdomæne.com"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "placeholder": {
@@ -16314,6 +16352,9 @@
       ]
     },
     "Signup": {
+      "${ DRIVE_APP_NAME } for Business": [
+        "${ DRIVE_APP_NAME } for Business"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adresse",
         "${ maxAddresses } adresser"
@@ -16861,6 +16902,9 @@
       ],
       "Invalid confirmation code": [
         "Ugyldig bekræftelseskode"
+      ],
+      "Join ${ organizationName }": [
+        "Tilmeld ${ organizationName }"
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
         "Sørg for at gemme den et sikkert sted, så du kan komme tilbage til din konto, hvis du mister adgang til dine legitimationsoplysninger til din identitetsudbyder."
@@ -19602,9 +19646,6 @@
       "Account is disconnected": [
         "Kontoforbindelse er afbrudt"
       ],
-      "An approximate location of the IP address": [
-        "En omtrentlig placering af IP-adressen"
-      ],
       "Any protection applied to suspicious activity": [
         "Enhver form for beskyttelse mod mistænkelig aktivitet"
       ],
@@ -19625,9 +19666,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Slet papirkurven og spam-beskeder efter 30 dage. Hvis du slår automatisk sletning til, får beskeder, der allerede er i papirkurven/spam, en sletningsdato baseret på den dato, de blev flyttet dertil."
-      ],
-      "Device information such as operating system": [
-        "Enhedsoplysninger, som f.eks. operativsystem"
       ],
       "Device name and app version": [
         "Enhedsnavn og app-version"
@@ -19715,9 +19753,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "IP-adressens Internetudbyder"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementscyklus starter ${ formattedTime }"
