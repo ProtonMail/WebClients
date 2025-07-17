@@ -1830,7 +1830,7 @@
     },
     "anniversary_2025: Offers": {
       "${ n } month": [
-        "${ n }개월"
+        "${ n }/월간"
       ],
       "/ month": [
         "/ 월간"
@@ -9188,6 +9188,9 @@
       "Postal code": [
         "우편번호"
       ],
+      "Primary": [
+        "우선 순위"
+      ],
       "Proration": [
         "할당"
       ],
@@ -9286,6 +9289,9 @@
       ],
       "Undisclosed Recipients": [
         "받는 사람 비공개"
+      ],
+      "Unknown": [
+        "알 수 없음"
       ],
       "Unsafe or problematic": [
         "안전하지 않거나 문제의 여지가 있습니다"

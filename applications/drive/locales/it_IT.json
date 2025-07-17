@@ -141,6 +141,9 @@
       "Cancel subscription": [
         "Annulla abbonamento"
       ],
+      "Cancel trial and pay": [
+        "Annulla la prova e paga"
+      ],
       "Cancel upload": [
         "Annulla il caricamento"
       ],
@@ -3354,6 +3357,9 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Invalid ZIP code": [
+        "CAP non valido"
+      ],
       "Item content cannot exceed 40KB": [
         "Il contenuto dell'elemento non può superare i 40 Kb"
       ],
@@ -3426,6 +3432,18 @@
       "Please activate your search again": [
         "Attiva nuovamente la tua ricerca"
       ],
+      "Please enter a valid postal code": [
+        "Si prega di inserire un codice postale valido"
+      ],
+      "Please enter a valid ZIP code": [
+        "Per favore, inserisci un codice postale valido"
+      ],
+      "Please enter postal code": [
+        "Per favore inserisci il codice postale"
+      ],
+      "Please enter ZIP code": [
+        "Inserisci codice postale"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
@@ -3438,6 +3456,12 @@
       ],
       "Please select a state": [
         "Per favore seleziona uno stato"
+      ],
+      "Please select billing country": [
+        "Seleziona il paese di fatturazione"
+      ],
+      "Please select billing state": [
+        "Seleziona lo stato di fatturazione"
       ],
       "Port is required": [
         "La porta è obbligatoria"
@@ -7205,6 +7229,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Codice postale"
+      ],
       "ZIP code": [
         "CAP"
       ]
@@ -8411,6 +8438,9 @@
       "Downgrade account?": [
         "Vuoi effettuare il downgrade dell'account?"
       ],
+      "Review subscription": [
+        "Rivedi abbonamento"
+      ],
       "Review subscription and pay": [
         "Controlla abbonamento e paga"
       ],
@@ -8753,6 +8783,22 @@
         "Decrittografia di ${ count } elemento non riuscita",
         "Decrittografia di ${ count } elementi non riuscita"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "Non è stato possibile rimuovere ${ nbFailures } foto da \"${ albumLink.name }\"",
+        "Non è stato possibile rimuovere ${ nbFailures } foto da \"${ albumLink.name }\""
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "Non è stato possibile aggiungere ${ nbMainPhotosError } foto a \"${ albumName }\"",
+        "Non è stato possibile aggiungere ${ nbMainPhotosError } foto a \"${ albumName }\""
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } foto è stata aggiunta a \"${ albumName }\"",
+        "${ nbMainPhotosSuccess } foto sono state aggiunte a \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } foto è stata rimossa da \"${ albumLink.name }\"",
+        "${ nbSuccesses } foto sono state rimosse da ${ albumLink.name }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminato",
         "${ numberOfItems } elementi eliminati"
@@ -8947,12 +8993,6 @@
       "Share invitation declined": [
         "Invito alla condivisione rifiutato"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "Non è stato possibile aggiungere alcune foto a \"${ albumName }\""
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Non è stato possibile rimuovere alcune foto da ${ albumLink.name }"
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Spiacenti, non è stato possibile eliminare la cartella perché non è vuota.",
         "Spiacenti, non è stato possibile eliminare le cartelle perché non sono vuote."
@@ -9000,12 +9040,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "I tuoi vecchi file verranno eliminati entro 72 ore"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Le tue foto sono state aggiunte a \"${ albumName }\""
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Le tue foto sono state rimosse da ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Salvataggio delle impostazioni non riuscito"
@@ -9502,6 +9536,9 @@
       "Got it": [
         "Ho capito"
       ],
+      "I'm purchasing as a business": [
+        "Sto acquistando come azienda"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -9538,6 +9575,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
+      ],
+      "This number will be shown on all future invoices": [
+        "Questo numero sarà mostrato su tutte le fatture future"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
@@ -9591,6 +9631,20 @@
       ],
       "Street address, postal code, and city": [
         "Indirizzo, codice postale e città"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "Numero aziendale australiano (ABN)"
+      ],
+      "Business Number": [
+        "Numero azienda"
+      ],
+      "EIN": [
+        "Numero d'identificazione fiscale (EIN)"
+      ],
+      "VAT number": [
+        "Numero partita IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -9687,6 +9741,9 @@
       "Please describe the problem and include any error messages": [
         "Descrivi il problema e includi eventuali messaggi di errore"
       ],
+      "Postal code": [
+        "Codice postale"
+      ],
       "Search for group name": [
         "Cerca per nome gruppo"
       ],
@@ -9716,6 +9773,9 @@
       ],
       "Your organization name": [
         "Il nome della tua organizzazione"
+      ],
+      "ZIP code": [
+        "Codice postale"
       ]
     },
     "Placeholder for contact group name": {
