@@ -1,5 +1,5 @@
 export type ClipboardService = {
-    writeClipboardContent: (content: string) => Promise<void>;
+    startClearTimeout: (timeoutMs: number, content: string) => void;
 };
 
 export type ClipboardApi = {
