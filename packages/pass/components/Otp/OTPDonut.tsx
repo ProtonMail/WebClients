@@ -12,12 +12,13 @@ type Props = {
     colorFilled?: CSSVarColor;
     enabled: boolean;
     thickness?: number;
+    reverse?: boolean;
 };
 
 type OTPDonutColors = [empty: string, filled: string];
 
 export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
-    ({ colorEmpty = '--text-hint', colorFilled = '--signal-success', enabled, thickness = 3 }, ref) => {
+    ({ colorEmpty = '--text-hint', colorFilled = '--signal-success', enabled, thickness = 3, reverse }, ref) => {
         const wrapperRef = useRef<HTMLDivElement>(null);
         const canvasRef = useRef<HTMLCanvasElement>(null);
         const colorsRef = useRef<OTPDonutColors>();
@@ -27,8 +28,8 @@ export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
                 if (colorsRef.current) return colorsRef.current;
 
                 const computedStyle = window.getComputedStyle(canvas);
-                const filled = computedStyle.getPropertyValue(colorFilled);
-                const empty = computedStyle.getPropertyValue(colorEmpty);
+                const filled = computedStyle.getPropertyValue(reverse ? colorEmpty : colorFilled);
+                const empty = computedStyle.getPropertyValue(reverse ? colorFilled : colorEmpty);
 
                 return [empty, filled];
             },
