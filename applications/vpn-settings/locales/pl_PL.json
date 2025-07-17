@@ -870,6 +870,9 @@
       "Upgrade to Business": [
         "Ulepsz do planu Business"
       ],
+      "Upgrade to Professional": [
+        "Ulepsz konto do planu Professional"
+      ],
       "Upgrade your plan": [
         "Ulepsz plan"
       ],
@@ -1248,28 +1251,22 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } miesiące w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } mies. w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony, jeśli anulujesz subskrypcję przed ${ formattedDate }."
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
-        "Klikając na „Wypróbuj”, zgadzasz się na nasze ${ termsAndConditions }."
+        "Klikając „Wypróbuj”, zgadzasz się na nasze ${ termsAndConditions }."
       ],
       "During the trial period, you can have up to 10 users.": [
         "W okresie próbnym możesz mieć do 10 użytkowników."
       ],
-      "free for 14 days": [
-        "za darmo przez 14 dni"
-      ],
       "on ${ formattedDate }": [
         "dnia ${ formattedDate }"
       ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Wypróbuj ${ selected } ${ freeFor14Days }"
-      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Kiedy anulujesz, Twoja bezpłatna wersja próbna nie zostanie przekształcona w płatną subskrypcję, ale nadal możesz korzystać z korzyści planu do końca okresu próbnego. Następnie zostaniesz przeniesiony do planu ${ BRAND_NAME } Free."
+        "Kiedy anulujesz, Twoja bezpłatna wersja próbna nie zostanie przekształcona w płatną subskrypcję, ale nadal możesz korzystać z korzyści planu do końca okresu próbnego. Następnie zostaniesz przeniesiony(-a) do planu ${ BRAND_NAME } Free."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
@@ -1287,7 +1284,7 @@
         "Nie możesz dodać niestandardowych domen w okresie próbnym."
       ],
       "You have reached the trial limit.": [
-        "Osiągnąłeś limit okresu próbnego."
+        "Osiągnięto limit okresu próbnego."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -4430,8 +4427,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " — centrum dowodzenia do śledzenia aktywności użytkowników, wykrywania zagrożeń i zapewniania zgodności w całej organizacji."
+      " and other security features.": [
+        " i inne funkcje bezpieczeństwa."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } / ${ totalUsers } użytkownika ma dostęp do udostępnionych serwerów.",
@@ -6137,6 +6134,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ulepsz konto w specjalnej cenie, aby uzyskać dostęp do funkcji premium oraz większej przestrzeni dyskowej"
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Ulepsz konto do planu Professional lub wyższego, aby odblokować"
+      ],
       "Upload your completed CSV file to create accounts": [
         "Prześlij uzupełniony plik CSV, aby utworzyć użytkowników"
       ],
@@ -6304,9 +6304,6 @@
       ],
       "Why?": [
         "Dlaczego?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Plan Business lub Enterprise pozwala odblokować"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "W planach Business i Enterprise możesz kupić ${ boldDedicatedServers } dla organizacji oraz skonfigurować ${ boldGateways }, aby kontrolować dostęp użytkowników."
@@ -12879,8 +12876,8 @@
       "Video conferencing": [
         "Wideokonferencje"
       ],
-      "View organization events by upgrading to Business": [
-        "Sprawdzaj logi organizacji w planie Business"
+      "View organization events by upgrading to Professional": [
+        "Zobacz zdarzenia organizacji w planie Professional"
       ],
       "Warning": [
         "Ostrzeżenie"
