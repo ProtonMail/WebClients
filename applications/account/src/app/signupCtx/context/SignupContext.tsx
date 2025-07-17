@@ -105,7 +105,7 @@ const SignupContext = createContext<SignupContextType | null>(null);
 export interface BaseSignupContextProps {
     onPreSubmit?: () => Promise<void>;
     onStartAuth: () => Promise<void>;
-    onLogin: OnLoginCallback;
+    handleLogin: OnLoginCallback;
     loginUrl: string;
     productParam: ProductParam;
 }
