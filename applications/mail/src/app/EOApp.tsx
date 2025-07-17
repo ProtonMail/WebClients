@@ -24,7 +24,7 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 import { FlagProvider } from '@proton/unleash/index';
 
 import NotificationManagerInjector from './components/notification/NotificationManagerInjector';
-import * as config from './config';
+import config from './config';
 import EOContainer from './containers/eo/EOContainer';
 import locales from './locales';
 import { setupStore } from './store/eo/eoStore';

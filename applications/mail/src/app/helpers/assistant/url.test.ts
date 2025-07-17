@@ -1,7 +1,6 @@
 import { forgeImageURL } from '@proton/shared/lib/helpers/image';
 
-import { API_URL } from 'proton-mail/config';
-
+import config from '../../config';
 import { ASSISTANT_IMAGE_PREFIX, replaceURLs, restoreURLs } from './url';
 
 const linkUrl = 'https://example.com';
@@ -71,7 +70,7 @@ describe('restoreURLs', () => {
 
         // Remote to load using proxy
         const expectedProxyURL = forgeImageURL({
-            apiUrl: API_URL,
+            apiUrl: config.API_URL,
             url: 'https://example.com/image3.jpg',
             uid: 'uid',
             origin: window.location.origin,
