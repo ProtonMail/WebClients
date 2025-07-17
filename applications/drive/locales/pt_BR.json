@@ -8983,12 +8983,6 @@
       "Share invitation declined": [
         "Convite para compartilhamento recusado"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "⁠Algumas fotos não puderam ser adicionadas a \"${ albumName }''"
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Algumas fotos não puderam ser adicionadas a ${ albumLink.name }"
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Não foi possível excluir a pasta porque ela não está vazia.",
         "Não foi possível excluir as pastas porque elas não estão vazias."
@@ -9036,12 +9030,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Seus arquivos antigos serão excluídos em 72 horas"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Suas fotos foram adicionadas a ''${ albumName }''"
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Suas fotos foram removidas do ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Erro ao salvar as suas configurações"
@@ -9643,13 +9631,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "Nome comercial"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número comercial"
       ],
       "EIN": [
-        "CNPJ"
+        "Número de identificação tributária (EIN)"
       ],
       "VAT number": [
         "Número de IVA"
