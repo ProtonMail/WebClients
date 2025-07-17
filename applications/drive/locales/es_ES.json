@@ -1371,10 +1371,10 @@
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias Lumo durante el periodo de prueba."
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } licencias de Lumo durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -8984,12 +8984,6 @@
       "Share invitation declined": [
         "Se ha rechazado la invitación compartida."
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "No se han podido añadir algunas fotos a «${ albumName }»."
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "No se han podido eliminar algunas fotos de ${ albumLink.name }."
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "No se ha podido eliminar la carpeta porque no está vacía.",
         "No se han podido eliminar la carpeta porque no está vacía."
@@ -9037,12 +9031,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Se eliminarán tus archivos antiguos en 72 horas."
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Tus fotos se han añadido a «${ albumName }»."
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Se han eliminado tus fotos de ${ albumLink.name }."
       ],
       "Your settings failed to be saved": [
         "Error al guardar tu configuración"
@@ -9638,13 +9626,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número empresarial"
       ],
       "EIN": [
-        "EIN"
+        "Número de identificación fiscal (EIN)"
       ],
       "VAT number": [
         "Número de IVA"

@@ -1429,7 +1429,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
       "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ plan } і ${ CALENDAR_SHORT_APP_NAME }"
@@ -1581,7 +1581,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -2827,7 +2827,7 @@
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Выдаленне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
+        "Выдаленне кантактаў... Гэта можа заняць некалькі хвілін. Вы зможаце закрыць гэта акно, калі працэс будзе завершаны."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
@@ -5145,7 +5145,7 @@
         "Вылучаныя серверы"
       ],
       "Dedicated VPN servers": [
-        "Вылучаныя VPN серверы"
+        "Вылучаныя серверы VPN"
       ],
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
@@ -5355,7 +5355,7 @@
         "Атрымайце праграму для рэзервовай копіі фатаграфій з вашай прылады."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Атрымайце настольную праграму, каб сінхранізаваць файлы з камп'ютара."
+        "Атрымайце праграму для камп'ютара, каб мець магчымасць сінхранізаваць файлы."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Пазнаёмцеся з ${ DRIVE_APP_NAME } і атрымайце бонус у 3 ГБ! Гэта можна зрабіць ужо сёння."
@@ -8255,7 +8255,7 @@
         "Вылучаныя серверы аптымізаваныя для трансляцый"
       ],
       "Desktop app": [
-        "Настольная праграма"
+        "Праграма для камп'ютара"
       ],
       "DNS leak prevention": [
         "Прадухіленне ўцечак DNS"
@@ -8928,7 +8928,7 @@
         "Вылучаны менеджар уліковага запісу"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Размяшчэнні вылучаных сервераў у больш чым ${ numberOfCountries } краінах"
+        "Размяшчэнні вылучаных сервераў у больш чым у ${ numberOfCountries } краінах"
       ],
       "Dedicated server locations in North America and Europe": [
         "Размяшчэнне вылучаных сервераў у Паўночнай Амерыцы і Еўропе"
@@ -9226,12 +9226,6 @@
       "Share invitation declined": [
         "Абагуленае запрашэнне адхілена"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "Не ўдалося дадаць у \"${ albumName }\" некаторыя фатаграфіі"
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Не ўдалося выдаліць з ${ albumLink.name } некаторыя фатаграфіі"
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Немагчыма выдаліць папку, бо яна не пустая.",
         "Немагчыма выдаліць папкі, бо яны не пустыя.",
@@ -9285,12 +9279,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Вашы старыя файлы будуць выдалены на працягу 72 гадзін"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Вашы фатаграфіі былі дададзены ў \"${ albumName }\""
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Вашы фатаграфіі былі выдалены з ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Не ўдалося захаваць вашы налады"
@@ -9523,7 +9511,7 @@
         "Вызваліце прастору цвёрдага дыска на сваім камп'ютары"
       ],
       "Get the desktop app": [
-        "Атрымаць настольную праграму"
+        "Атрымаць праграму для камп'ютара"
       ],
       "Get the mobile app": [
         "Атрымаць мабільную праграму"
@@ -10948,7 +10936,7 @@
         "Засталося ${ dayDiff } дзён"
       ],
       "${ MAIL_APP_NAME } desktop app": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } захоўвае вашы дзелавыя даныя ў бяспецы і дазваляе адпраўляць зашыфраваныя лісты любому карыстальніку."
@@ -11059,7 +11047,7 @@
         "Комплексная прыватнасць і бяспека"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Настольная праграма і падтрымка кліента электроннай пошты (праз IMAP)"
+        "Праграма для камп'ютара і падтрымка кліента электроннай пошты (праз IMAP)"
       ],
       "Direct contribution to our mission": [
         "Непасрэдны ўклад у нашу місію"
@@ -11223,7 +11211,7 @@
         "Папярэджанне ўцечкі даных ${ strongArgument }"
       ],
       "Desktop app": [
-        "Настольная праграма"
+        "Праграма для камп'ютара"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."

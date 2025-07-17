@@ -1010,6 +1010,9 @@
       "Try another method": [
         "Prøv en anden metode"
       ],
+      "Try it now": [
+        "Prøv det nu"
+      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv at gemme igen. Det lykkedes ikke at gemme på grund af: ${ saveError }"
       ],
@@ -3142,6 +3145,9 @@
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
+      "Invalid ZIP code": [
+        "Ugyldig postnummer"
+      ],
       "Item content cannot exceed 40KB": [
         "Element-indhold må ikke overstige 40 kB"
       ],
@@ -3226,6 +3232,12 @@
       ],
       "Please select a state": [
         "Vælg venligst en region"
+      ],
+      "Please select billing country": [
+        "Vælg venligst faktureringsland"
+      ],
+      "Please select billing state": [
+        "Vælg venligst faktureringsstat"
       ],
       "Port is required": [
         "Port er påkrævet."
@@ -6279,6 +6291,9 @@
       "Address": [
         "Adresse"
       ],
+      "Alias title": [
+        "Aliastitel"
+      ],
       "All": [
         "Alle"
       ],
@@ -6850,6 +6865,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postnummer"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -8524,9 +8542,6 @@
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer vil blive slettet om 72 timer"
       ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Dine billeder er blevet tilføjet til \"${ albumName }\""
-      ],
       "Your settings failed to be saved": [
         "Dine indstillinger kunne ikke gemmes"
       ],
@@ -9032,6 +9047,11 @@
         "Adresse, postnummer og by"
       ]
     },
+    "Payments.VAT number name": {
+      "VAT number": [
+        "Momsnummer"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøgle kan ikke benyttes til kryptering"
@@ -9126,6 +9146,9 @@
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og medtag evt. fejlmeddelelser"
       ],
+      "Postal code": [
+        "Postnummer"
+      ],
       "Search for group name": [
         "Søg efter gruppenavn"
       ],
@@ -9155,6 +9178,9 @@
       ],
       "Your organization name": [
         "Dit organisationsnavn"
+      ],
+      "ZIP code": [
+        "Postnummer"
       ]
     },
     "Placeholder for contact group name": {

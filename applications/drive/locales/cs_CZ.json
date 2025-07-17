@@ -147,6 +147,9 @@
       "Cancel subscription": [
         "Zrušit předplatné"
       ],
+      "Cancel trial and pay": [
+        "Zrušit zkušební verzi a zaplatit"
+      ],
       "Cancel upload": [
         "Zrušit nahrávání"
       ],
@@ -8636,6 +8639,9 @@
       "Downgrade account?": [
         "Snížit účet na nižší úroveň?"
       ],
+      "Review subscription": [
+        "Zkontrolovat předplatné"
+      ],
       "Review subscription and pay": [
         "Zkontrolovat předplatné a zaplatit"
       ],
@@ -9203,12 +9209,6 @@
       "Share invitation declined": [
         "Pozvánka sdílení byla odmítnuta"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "Některé fotografie nebylo možné přidat do alba \"${ albumName }\""
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Některé fotografie nebylo možné odebrat z alba ${ albumLink.name }"
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Je nám líto, ale složku jsme nemohli smazat, protože není prázdná.",
         "Je nám líto, ale složky jsme nemohli smazat, protože nejsou prázdné.",
@@ -9262,12 +9262,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Vaše staré soubory budou smazány do 72 hodin"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Vaše fotografie byly přidány do alba \"${ albumName }\""
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Vaše fotografie byly odebrány z alba ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Vaše nastavení se nepodařilo uložit"
@@ -9873,13 +9867,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "DIČ"
+        "ABN"
       ],
       "Business Number": [
         "Firemní číslo"
       ],
       "EIN": [
-        "IČO"
+        "EIN"
       ],
       "VAT number": [
         "DIČ"

@@ -142,7 +142,7 @@
         "Cancel·la la subscripció"
       ],
       "Cancel trial and pay": [
-        "Cancel·la la prova i pagar"
+        "Cancel·leu la prova i procediu a pagar"
       ],
       "Cancel upload": [
         "Cancel·lar càrrega"
@@ -3324,7 +3324,7 @@
         "El codi de verificació no és vàlid."
       ],
       "Invalid ZIP code": [
-        "Codi postal no vàlid"
+        "Aquest codi postal no és vàlid"
       ],
       "Item content cannot exceed 40KB": [
         "El contingut de l'element no pot excedir 40 kB."
@@ -8417,7 +8417,7 @@
         "Voleu passar a un pla inferior?"
       ],
       "Review subscription": [
-        "Revisa la subscripció"
+        "Reviseu la subscripció"
       ],
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"
@@ -8756,6 +8756,22 @@
         "No s'ha pogut desxifrar ${ count } element.",
         "No s'han pogut desxifrar ${ count } elements."
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "No s'ha pogut eliminar ${ nbFailures } foto de «${ albumLink.name }»",
+        "No s'han pogut eliminar ${ nbFailures } fotos de «${ albumLink.name }»"
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "No s'ha pogut afegir ${ nbMainPhotosError } foto a «${ albumName }»",
+        "No s'han pogut afegir ${ nbMainPhotosError } fotos a «${ albumName }»"
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "S'ha afegit la foto ${ nbMainPhotosSuccess } a «${ albumName }»",
+        "S'han afegit ${ nbMainPhotosSuccess } fotos a «${ albumName }»"
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "S'ha esborrat ${ nbSuccesses } foto de \"${ albumLink.name }\"",
+        "S'han esborrat ${ nbSuccesses } fotos de \"${ albumLink.name }\""
+      ],
       "${ numberOfItems } item deleted": [
         "S'ha eliminat ${ numberOfItems } element",
         "S'han eliminat ${ numberOfItems } elements"
@@ -8950,12 +8966,6 @@
       "Share invitation declined": [
         "S'ha rebutjat la invitació per a compartir."
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "No s'han pogut afegir algunes fotos a «${ albumName }»"
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "No s'han pogut eliminar algunes fotos de ${ albumLink.name }"
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "No hem pogut eliminar la carpeta perquè no està buida.",
         "No hem pogut eliminar les carpetes perquè no estan buides."
@@ -9003,12 +9013,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Els vostres fitxers antics s'eliminaran en 72 hores"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "S'han afegit les vostres fotos a «${ albumName }»."
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Les vostres fotos s'han eliminat de ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "No s'ha pogut desar la configuració"
@@ -9604,13 +9608,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número d'empresa australià (ABN)"
       ],
       "Business Number": [
-        "Número de negoci"
+        "Número d'empresa"
       ],
       "EIN": [
-        "EIN"
+        "Número d’identificació fiscal (EIN)"
       ],
       "VAT number": [
         "Número d'IVA"

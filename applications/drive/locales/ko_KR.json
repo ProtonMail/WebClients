@@ -1301,7 +1301,7 @@
     },
     "anniversary_2025: Offers": {
       "${ n } month": [
-        "${ n }개월"
+        "${ n }/월간"
       ],
       "/ month": [
         "/ 월간"
@@ -8743,12 +8743,6 @@
       "Share invitation declined": [
         "캘린더 공유 거부됨"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "⁠일부 사진을 \"${ albumName }\"에 추가할 수 없습니다."
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "${ albumLink.name }(에)서 일부 사진을 제거하지 못했습니다."
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "죄송합니다, 폴더가 비어있지 않아 삭제할 수 없습니다."
       ],
@@ -8793,12 +8787,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "사용자의 오래된 파일이 72시간 내에 삭제됩니다"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "사진이 \"${ albumName }\"에 추가되었습니다."
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "사진이 ${ albumLink.name }(에)서 제거되었습니다."
       ],
       "Your settings failed to be saved": [
         "설정을 저장하지 못했습니다"
