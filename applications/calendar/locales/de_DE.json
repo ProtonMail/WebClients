@@ -92,6 +92,12 @@
       "Add to group": [
         "Zu Gruppe hinzufügen"
       ],
+      "Add Zoom meeting": [
+        "Zoom-Meeting hinzufügen"
+      ],
+      "Adding conferencing details": [
+        "Konferenzdetails werden hinzugefügt"
+      ],
       "Apply": [
         "Übernehmen"
       ],
@@ -470,6 +476,9 @@
       "Load image": [
         "Bild laden"
       ],
+      "Loading Zoom configuration": [
+        "Zoom-Konfiguration wird geladen"
+      ],
       "Make this participant optional": [
         "Diesen Teilnehmer als „Optional“ markieren"
       ],
@@ -607,6 +616,9 @@
       ],
       "Reconnect": [
         "Erneut verbinden"
+      ],
+      "Reconnect to Zoom": [
+        "Wieder mit Zoom verbinden"
       ],
       "Recover data": [
         "Daten wiederherstellen"
@@ -3773,6 +3785,9 @@
       "You already added this holidays calendar": [
         "Du hast diesen Feiertagskalender bereits hinzugefügt."
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Du bist wieder mit Zoom verbunden. Du kannst deinen Termin jetzt speichern."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden.",
         "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden."
@@ -3788,6 +3803,9 @@
       ],
       "Your import will not be processed.": [
         "Dein Import wird nicht verarbeitet."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Deine Zoom-Verbindung ist abgelaufen. Bitte verbinde dich erneut, um fortzufahren."
       ]
     },
     "Error accepting calendar invitation": {
@@ -11835,17 +11853,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Zoom-Meeting beitreten"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Zoom-Meeting hinzufügen"
-      ],
-      "Adding conferencing details": [
-        "Konferenzdetails werden hinzugefügt"
-      ],
-      "Loading Zoom configuration": [
-        "Zoom-Konfiguration wird geladen"
       ]
     },
     "Zoom Meeting": {

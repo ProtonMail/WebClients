@@ -147,6 +147,9 @@
       "Cancel subscription": [
         "Zrušiť predplatné"
       ],
+      "Cancel trial and pay": [
+        "Zrušiť skúšobné obdobie a zaplatiť"
+      ],
       "Cancel upload": [
         "Zrušiť nahrávanie"
       ],
@@ -1427,6 +1430,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Desktopová aplikácia ${ MAIL_APP_NAME }"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } úložisko"
@@ -3351,6 +3357,9 @@
       "Invalid verification code": [
         "Nesprávny overovací kód"
       ],
+      "Invalid ZIP code": [
+        "Neplatné PSČ"
+      ],
       "Item content cannot exceed 40KB": [
         "Obsah položky nesmie presiahnuť 40KB"
       ],
@@ -3429,6 +3438,18 @@
       "Please activate your search again": [
         "Aktivujte znovu vyhľadávanie"
       ],
+      "Please enter a valid postal code": [
+        "Zadajte platné PSČ, prosím"
+      ],
+      "Please enter a valid ZIP code": [
+        "Zadajte platné PSČ, prosím"
+      ],
+      "Please enter postal code": [
+        "Zadajte PSČ, prosím"
+      ],
+      "Please enter ZIP code": [
+        "Zadajte PSČ, prosím"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Ak chcete pokračovať, opravte zvýraznený problém.",
         "Ak chcete pokračovať, opravte zvýraznené problémy.",
@@ -3443,6 +3464,12 @@
       ],
       "Please select a state": [
         "Vyberte kraj, prosím"
+      ],
+      "Please select billing country": [
+        "Vyberte fakturačnú krajinu, prosím"
+      ],
+      "Please select billing state": [
+        "Vyberte krajinu platby, prosím"
       ],
       "Port is required": [
         "Port je požadovaný"
@@ -6527,6 +6554,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Emaily už nie sú doručované do vašej schránky. Vaše odkazy na zdieľanie na Disku už nie sú aktívne a nemôžete nahrávať nové súbory. Ak chcete svoj účet naďalej používať, uhraďte všetky faktúry po splatnosti."
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Vaše ${ plan } predplatné bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na váš účet. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
       ],
@@ -7356,6 +7386,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "PSČ"
+      ],
       "ZIP code": [
         "PSČ"
       ]
@@ -8523,6 +8556,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "Chráňte citlivé obchodné informácie a bezpečne spolupracujte."
       ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Chráňte svoju rodinu pomocou všetkých prémiových funkcií ${ plusTitle } pre 6 používateľov."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
       ],
@@ -8568,6 +8604,9 @@
       ],
       "Downgrade account?": [
         "Prejsť na nižšiu verziu účtu?"
+      ],
+      "Review subscription": [
+        "Preskúmať predplatné"
       ],
       "Review subscription and pay": [
         "Skontrolujte predplatné a zaplaťte"
@@ -9136,12 +9175,6 @@
       "Share invitation declined": [
         "Pozvánka na zdieľanie odmietnutá"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "Niektoré fotografie sa nepodarilo pridať do „${ albumName }“"
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Niektoré fotografie sa nepodarilo odstrániť z ${ albumLink.name }"
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Je nám ľúto, ale priečinok sme nemohli odstrániť, pretože nie je prázdny.",
         "Je nám ľúto, ale priečinky sme nemohli odstrániť, pretože nie sú prázdne.",
@@ -9195,12 +9228,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Vaše staré súbory budú zmazané do 72 hodín"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Vaše fotografie boli pridané do „${ albumName }“."
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Vaše fotografie boli odstránené z ${ albumLink.name }"
       ],
       "Your settings failed to be saved": [
         "Vaše nastavenia sa nepodarilo uložiť"
@@ -9256,6 +9283,9 @@
       ],
       "Get the deal": [
         "Využiť ponuku"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Posledná šanca získať 80% zľavu na prvý mesiac ${ plan }."
       ],
       "Last day to save": [
         "Posledný deň, kedy môžete ušetriť"
@@ -9696,6 +9726,9 @@
       "Got it": [
         "Rozumiem"
       ],
+      "I'm purchasing as a business": [
+        "Nakupujem ako firma"
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -9740,6 +9773,9 @@
         "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiace. Obnovenie môžete kedykoľvek zrušiť.",
         "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť.",
         "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť."
+      ],
+      "This number will be shown on all future invoices": [
+        "Toto číslo bude uvedené na všetkých budúcich faktúrach."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Tento spôsob platby sa stane vaším novým predvoleným pre všetky budúce obnovenia."
@@ -9793,6 +9829,20 @@
       ],
       "Street address, postal code, and city": [
         "Ulica, PSČ a mesto"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Daňové identifikačné číslo"
+      ],
+      "EIN": [
+        "Identifikačné číslo zamestnávateľa"
+      ],
+      "VAT number": [
+        "DIČ"
       ]
     },
     "PGP key encryption warning": {
@@ -9889,6 +9939,9 @@
       "Please describe the problem and include any error messages": [
         "Opíšte prosím problém a uveďte akékoľvek chybové správy"
       ],
+      "Postal code": [
+        "PSČ"
+      ],
       "Search for group name": [
         "Vyhľadať názov skupiny"
       ],
@@ -9918,6 +9971,9 @@
       ],
       "Your organization name": [
         "Názov vašej organizácie"
+      ],
+      "ZIP code": [
+        "PSČ"
       ]
     },
     "Placeholder for contact group name": {
@@ -9928,6 +9984,20 @@
     "plan customizer, users": {
       "contact": [
         "kontaktujte"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Všetky ${ protonPlus } služby.${ br }Jedno jednoduché predplatné."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ako predplatiteľ **${ currentPlanTitle }** si môžete odomknúť **${ unlockPlanTitle }** a všetky prémiové služby ${ BRAND_NAME } zvýšením úrovne na **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Pokračovať s ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Navýšiť na ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -11718,6 +11788,12 @@
       ],
       "Delete ${ name }?": [
         "Vymazať ${ name }?"
+      ],
+      "Delete ${ total } item?": [
+        "Vymazať ${ total } položku?",
+        "Vymazať ${ total } položky?",
+        "Vymazať ${ total } položiek?",
+        "Vymazať ${ total } položiek?"
       ],
       "Delete ${ value }": [
         "Vymazať ${ value }"

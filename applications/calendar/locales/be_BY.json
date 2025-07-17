@@ -92,6 +92,12 @@
       "Add to group": [
         "Дадаць у групу"
       ],
+      "Add Zoom meeting": [
+        "Дадаць сустрэчу ў Zoom"
+      ],
+      "Adding conferencing details": [
+        "Дадаванне падрабязнасцяў канферэнцыі"
+      ],
       "Apply": [
         "Ужыць"
       ],
@@ -476,6 +482,9 @@
       "Load image": [
         "Загрузіць відарыс"
       ],
+      "Loading Zoom configuration": [
+        "Загрузка канфігурацыі Zoom"
+      ],
       "Make this participant optional": [
         "Зрабіць гэтага ўдзельніка неабавязковым"
       ],
@@ -613,6 +622,9 @@
       ],
       "Reconnect": [
         "Перападключыцца"
+      ],
+      "Reconnect to Zoom": [
+        "Перападключыцца да Zoom"
       ],
       "Recover data": [
         "Аднавіць даныя"
@@ -897,13 +909,13 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
-        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца праз 2 дні. ${ upgradeButton }"
+        "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца праз 2 дні. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends in 5 days. ${ upgradeButton }": [
-        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца праз 5 дзён. ${ upgradeButton }"
+        "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца праз 5 дзён. ${ upgradeButton }"
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
-        "Ваш бясплатны пробны перыяд настольнай праграмы завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+        "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
       ]
     },
     "action": {
@@ -1247,7 +1259,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
       "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ plan } і ${ CALENDAR_SHORT_APP_NAME }"
@@ -1399,7 +1411,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -1844,7 +1856,7 @@
     },
     "Commander action": {
       "Day view": [
-        "Прагляд дня"
+        "Выгляд \"Дзень\""
       ],
       "Month view": [
         "Прагляд месяца"
@@ -2961,7 +2973,7 @@
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Выдаленне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
+        "Выдаленне кантактаў... Гэта можа заняць некалькі хвілін. Вы зможаце закрыць гэта акно, калі працэс будзе завершаны."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
@@ -3402,7 +3414,7 @@
         "Не ўдалося адкрыць абноўленае сховішча"
       ],
       "Decryption error: Decryption of this event's content failed.": [
-        "Памылка расшыфроўкі: Не ўдалося расшыфраваць змесціва гэтай падзеі."
+        "Памылка расшыфроўкі: не ўдалося расшыфраваць змесціва гэтай падзеі."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
@@ -3803,6 +3815,9 @@
       "You already added this holidays calendar": [
         "Вы ўжо дадавалі гэтыя святы ў каляндар"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Вы зноў падключаны да Zoom. Цяпер вы можаце захаваць вашу падзею."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
@@ -3820,6 +3835,9 @@
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Ваша Zoom-падключэнне пратэрмінавана. Калі ласка, падключыцеся зноў, каб працягнуць."
       ]
     },
     "Error accepting calendar invitation": {
@@ -5198,7 +5216,7 @@
         "Вылучаныя серверы"
       ],
       "Dedicated VPN servers": [
-        "Вылучаныя VPN серверы"
+        "Вылучаныя серверы VPN"
       ],
       "default email address": [
         "прадвызначаны адрас электроннай пошты"
@@ -7684,7 +7702,7 @@
         "Вылучаныя серверы аптымізаваныя для трансляцый"
       ],
       "Desktop app": [
-        "Настольная праграма"
+        "Праграма для камп'ютара"
       ],
       "DNS leak prevention": [
         "Прадухіленне ўцечак DNS"
@@ -8357,7 +8375,7 @@
         "Вылучаны менеджар уліковага запісу"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Размяшчэнні вылучаных сервераў у больш чым ${ numberOfCountries } краінах"
+        "Размяшчэнні вылучаных сервераў у больш чым у ${ numberOfCountries } краінах"
       ],
       "Dedicated server locations in North America and Europe": [
         "Размяшчэнне вылучаных сервераў у Паўночнай Амерыцы і Еўропе"
@@ -10283,7 +10301,7 @@
         "Засталося ${ dayDiff } дзён"
       ],
       "${ MAIL_APP_NAME } desktop app": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } захоўвае вашы дзелавыя даныя ў бяспецы і дазваляе адпраўляць зашыфраваныя лісты любому карыстальніку."
@@ -10394,7 +10412,7 @@
         "Комплексная прыватнасць і бяспека"
       ],
       "Desktop app and email client support (via IMAP)": [
-        "Настольная праграма і падтрымка кліента электроннай пошты (праз IMAP)"
+        "Праграма для камп'ютара і падтрымка кліента электроннай пошты (праз IMAP)"
       ],
       "Direct contribution to our mission": [
         "Непасрэдны ўклад у нашу місію"
@@ -10558,7 +10576,7 @@
         "Папярэджанне ўцечкі даных ${ strongArgument }"
       ],
       "Desktop app": [
-        "Настольная праграма"
+        "Праграма для камп'ютара"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
         "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
@@ -12303,17 +12321,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Далучыцца да сустрэчы ў Zoom"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Дадаць сустрэчу ў Zoom"
-      ],
-      "Adding conferencing details": [
-        "Дадаванне падрабязнасцяў аб канферэнцыі"
-      ],
-      "Loading Zoom configuration": [
-        "Загрузка канфігурацыі Zoom"
       ]
     },
     "Zoom Meeting": {

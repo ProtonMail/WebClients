@@ -149,7 +149,7 @@
         "Afegeix dies festius"
       ],
       "Add referral link to ${ MAIL_APP_NAME } signature": [
-        "Afegiu un enllaç de referència a la signatura del ${ MAIL_APP_NAME }"
+        "Afegiu un enllaç de recomanació a la signatura del ${ MAIL_APP_NAME }"
       ],
       "Add sieve filter": [
         "Afegeix un filtre Sieve"
@@ -221,7 +221,7 @@
         "Cancel·la la subscripció"
       ],
       "Cancel trial and pay": [
-        "Cancel·la la prova i pagar"
+        "Cancel·leu la prova i procediu a pagar"
       ],
       "Change": [
         "Canvia"
@@ -1464,6 +1464,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Millora per activar ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Professional": [
+        "Milloreu al pla Professional"
       ],
       "Upgrade to view all": [
         "Milloreu el pla per a veure-ho tot"
@@ -4253,7 +4256,7 @@
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
       ],
       "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Rebreu ${ referralReward } en crèdit de ${ BRAND_NAME } quan la persona que convideu s'inscrigui a un pla de ${ BRAND_NAME }. També rebrà ${ referralReward } en crèdits per començar."
+        "Obtindreu ${ referralReward } en crèdit de ${ BRAND_NAME } quan la persona que convideu subscrigui un pla de ${ BRAND_NAME }. I ella també rebrà ${ referralReward } en crèdits per començar."
       ]
     },
     "description": {
@@ -5380,7 +5383,7 @@
         "El codi de verificació no és vàlid."
       ],
       "Invalid ZIP code": [
-        "Codi postal no vàlid"
+        "Aquest codi postal no és vàlid"
       ],
       "Item content cannot exceed 40KB": [
         "El contingut de l'element no pot excedir 40 kB."
@@ -5544,7 +5547,7 @@
         "Es requereix el port"
       ],
       "Postal code is required": [
-        "Es requereix un codi postal"
+        "Cal un codi postal"
       ],
       "Primary address key is not decrypted": [
         "La clau de l'adreça primària no està desxifrada."
@@ -7510,8 +7513,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - el vostre centre de comandament per fer un seguiment de l'activitat dels usuaris, detectar amenaces i garantir l'acatament a tota la vostra organització."
+      " and other security features.": [
+        " i altres característiques de seguretat."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuari ten actualment accés als servidors compartits.",
@@ -7749,7 +7752,7 @@
         "**Obteniu una adreça de ${ BRAND_NAME }** per a utilitzar tots els serveis de ${ BRAND_NAME_TWO }, inclosos ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Convideu els vostres amics** a ${ BRAND_NAME } amb el vostre enllaç de referència."
+        "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } més",
@@ -8654,7 +8657,7 @@
         "Accedeix creant un compte ${ BRAND_NAME } i acceptant la invitació."
       ],
       "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Obteniu i doneu **${ referralReward } crèdits** per a tots els amics que es subscriuen."
+        "Obtingueu i doneu **${ referralReward } crèdits** per a cada amistat que es subscrigui."
       ],
       "Get it on Google Play": [
         "Obteniu-la a Google Play"
@@ -9295,7 +9298,7 @@
         "Ha pagat un pla mensual"
       ],
       "Paid for a plan": [
-        "Ha pagat un pla"
+        "Heu pagat un pla"
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - S'ha confirmat el correu electrònic personalitzat."
@@ -10151,6 +10154,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Milloreu per afegir una adreça @pm.me més curta al vostre compte que sigui més fàcil de compartir. Vol dir «${ MAIL_APP_NAME } me» o «Private Message me»."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Milloreu al pla Professional o a un de superior per poder desbloquejar"
+      ],
       "Upgrade to unlock": [
         "Milloreu el vostre pla per a desbloquejar"
       ],
@@ -10393,9 +10399,6 @@
       ],
       "Why?": [
         "Per què?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Amb un pla Business o Enterprise, desbloquegeu"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Amb un pla Business o Enterprise, podeu comprar ${ boldDedicatedServers } per a la vostra organització i configurar ${ boldGateways } per a controlar quins usuaris poden accedir-hi."
@@ -10707,7 +10710,7 @@
         "La prova gratuïta s'ha convertit correctament en una subscripció mensual. La data de renovació és ${ nextBillingDate }."
       ],
       "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Els vostres amics reben **2 setmanes de forma gratuïta** en el seu pla escollit."
+        "Les vostres amistats obtindran **2 setmanes de franc** en el seu pla escollit."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "La vostra importació de ${ accounts } s'ha retardat temporalment.",
@@ -12242,7 +12245,7 @@
         "Seqüències"
       ],
       "Share your referral link": [
-        "Comparteix el vostre enllaç de referència"
+        "Compartiu el vostre enllaç de recomanació"
       ],
       "Show ${ n } administrator": [
         "Mostra ${ n } administrador",
@@ -14193,7 +14196,7 @@
         "Per començar, trieu un nom a mostrar. Això és el que les persones veuran quan envieu un correu, les convideu a un esdeveniment o compartiu un fitxer."
       ],
       "Your ${ planTitleElement } subscription is now active.": [
-        "La vostra subscripció a ${ planTitleElement } ara està activa."
+        "La vostra subscripció a ${ planTitleElement } ja està activa."
       ],
       "Your selected plan: ${ planName }": [
         "El vostre pla seleccionat: ${ planName }"
@@ -14218,7 +14221,7 @@
         "Voleu passar a un pla inferior?"
       ],
       "Review subscription": [
-        "Revisa la subscripció"
+        "Reviseu la subscripció"
       ],
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"
@@ -16024,13 +16027,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número d'empresa australià (ABN)"
       ],
       "Business Number": [
-        "Número de negoci"
+        "Número d'empresa"
       ],
       "EIN": [
-        "EIN"
+        "Número d’identificació fiscal (EIN)"
       ],
       "VAT number": [
         "Número d'IVA"
@@ -20115,7 +20118,7 @@
         "Codi regal"
       ],
       "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Doneu ${ referralReward } i 2 setmanes de forma gratuïta. Obteniu ${ referralReward } crèdits."
+        "Doneu ${ referralReward } i 2 setmanes de forma gratuïta. Obtingueu ${ referralReward } crèdits."
       ],
       "Group": [
         "Grup"
@@ -20200,7 +20203,7 @@
         "Invitacions"
       ],
       "Invite friends. Get credits.": [
-        "Convideu a amics. Aconseguiu crèdits."
+        "Convideu amics. Aconseguiu crèdits."
       ],
       "Invoices": [
         "Factures"
@@ -20776,8 +20779,8 @@
       "Video conferencing": [
         "Videoconferència"
       ],
-      "View organization events by upgrading to Business": [
-        "Veureu els esdeveniments de l'organització tot millorant al pla Business"
+      "View organization events by upgrading to Professional": [
+        "Podreu veure els esdeveniments de l'organització si milloreu al pla Professional"
       ],
       "VPN apps": [
         "Aplicacions VPN"
@@ -20986,9 +20989,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Permet afegir sense problemes enllaços de videoconferència a les invitacions del vostre calendari."
       ],
-      "An approximate location of the IP address": [
-        "Una ubicació aproximada de l'adreça IP"
-      ],
       "Any protection applied to suspicious activity": [
         "Qualsevol protecció aplicada a l'activitat sospitosa"
       ],
@@ -21012,9 +21012,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Elimina els missatges de la paperera i el correu brossa després de 30 dies. Activant l'eliminació automàtica es dona als missatges que ja estan a la paperera o al correu brossa una data d'eliminació basada en la data en què s'hi han mogut."
-      ],
-      "Device information such as operating system": [
-        "Informació de dispositius com ara el sistema operatiu"
       ],
       "Device name and app version": [
         "Nom del dispositiu i versió de l'aplicació"
@@ -21079,6 +21076,12 @@
       "Not all information listed here was exposed for all users.": [
         "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Proveïdor de serveis d'internet (ISP)"
+      ],
+      "Origin IP address": [
+        "Adreça IP d'origen"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adreça IP d'origen i proveïdor de serveis d'internet (ISP)"
       ],
@@ -21120,9 +21123,6 @@
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "El proveïdor de serveis d'Internet de l'adreça IP"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nou cicle de subscripció comença el ${ formattedTime }"

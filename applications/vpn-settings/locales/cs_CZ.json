@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "Zrušit předplatné"
       ],
+      "Cancel trial and pay": [
+        "Zrušit zkušební verzi a zaplatit"
+      ],
       "Change": [
         "Změnit"
       ],
@@ -867,6 +870,9 @@
       "Upgrade to Business": [
         "Upgrade na Business"
       ],
+      "Upgrade to Professional": [
+        "Přejít na tarif Professional"
+      ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
       ],
@@ -1256,14 +1262,8 @@
       "During the trial period, you can have up to 10 users.": [
         "Během zkušební doby můžete mít až 10 uživatelů."
       ],
-      "free for 14 days": [
-        "zdarma na 14 dnů"
-      ],
       "on ${ formattedDate }": [
         "dne ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Vyzkoušejte ${ selected } ${ freeFor14Days }"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Když zrušíte bezplatnou zkušební verzi, nebude převedena na placené předplatné, ale výhody tarifu můžete využívat až do konce zkušebního doby. Poté budete převedeni na tarif ${ BRAND_NAME } Free."
@@ -4427,8 +4427,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - vaše řídicí centrum pro sledování aktivity uživatelů, odhalování hrozeb a zajišťování shody s předpisy v celé organizaci."
+      " and other security features.": [
+        " a další funkce zabezpečení."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
@@ -6304,9 +6304,6 @@
       ],
       "Why?": [
         "Proč?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "S tarifem Business nebo Enterprise odemknete"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "S plánem Business nebo Enterprise můžete pro svou organizaci zakoupit ${ boldDedicatedServers } a nastavit ${ boldGateways }, abyste mohli řídit, kteří uživatelé k nim mohou přistupovat."
@@ -8572,6 +8569,9 @@
       "Downgrade account?": [
         "Downgrade účtu?"
       ],
+      "Review subscription": [
+        "Zkontrolovat předplatné"
+      ],
       "Review subscription and pay": [
         "Zkontrolovat předplatné a zaplatit"
       ],
@@ -9706,13 +9706,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "DIČ"
+        "ABN"
       ],
       "Business Number": [
         "Firemní číslo"
       ],
       "EIN": [
-        "IČO"
+        "EIN"
       ],
       "VAT number": [
         "DIČ"
@@ -12909,8 +12909,8 @@
       "Video conferencing": [
         "Videokonference"
       ],
-      "View organization events by upgrading to Business": [
-        "Zobrazení událostí organizace po navýšení na Business"
+      "View organization events by upgrading to Professional": [
+        "Zobrazení událostí organizace po navýšení na Professional"
       ],
       "Warning": [
         "Varování"

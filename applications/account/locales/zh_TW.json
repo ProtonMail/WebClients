@@ -145,6 +145,9 @@
       "Add public holidays": [
         "新增公眾假期"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "將推薦連結加到 ${ MAIL_APP_NAME } 簽名檔裡"
+      ],
       "Add sieve filter": [
         "加入 Sieve 篩選器"
       ],
@@ -210,6 +213,9 @@
       ],
       "Cancel subscription": [
         "取消訂購授權"
+      ],
+      "Cancel trial and pay": [
+        "取消試用並付款"
       ],
       "Change": [
         "變更"
@@ -1333,6 +1339,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "升級以啟用${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "升級到專業版"
+      ],
       "Upgrade to view all": [
         "升級以瀏覽全部"
       ],
@@ -1609,6 +1618,9 @@
       ]
     },
     "anniversary_2025: Offer": {
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "折扣價格依標準月繳費率計算。在本繳款單週期結束後，將為您以標準年繳費率續約。"
       ],
@@ -1625,6 +1637,15 @@
     "anniversary_2025: Offers": {
       "${ n } month": [
         "${ n } 個月"
+      ],
+      "12 months": [
+        "12 個月"
+      ],
+      "24 months": [
+        "24 個月"
+      ],
+      "30 months": [
+        "30個月"
       ]
     },
     "app-switcher": {
@@ -3745,6 +3766,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
       ],
+      "Track the status and activity of your referrals": [
+        "追蹤您推薦邀請的狀態和進度"
+      ],
       "Track the status and activity of your referrals.": [
         "追蹤您推介的狀態和活動。"
       ],
@@ -3759,6 +3783,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
+      ],
+      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
+        "當您邀請的人註冊一項 ${ BRAND_NAME } 方案時，您便會收到 ${ referralReward } 的 ${ BRAND_NAME } 獎勵額度。同時，他們也將獲得 ${ referralReward } 獎勵額度來開始使用服務。"
       ]
     },
     "description": {
@@ -6620,6 +6647,9 @@
       ]
     },
     "Info": {
+      " and other security features.": [
+        " 以及其他安全性功能"
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "目前${ amountUsers }/${ totalUsers }位使用者有存取權至共享伺服器"
       ],
@@ -6796,6 +6826,9 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**取得一個 ${ BRAND_NAME } 位址**並用於全部 ${ BRAND_NAME_TWO } 服務，包括 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }。"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "使用您的推薦連結**邀請朋友**來 ${ BRAND_NAME }。"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 更多"
@@ -7580,6 +7613,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "透過創建${ BRAND_NAME }帳號和接受邀請以取得存取權。"
       ],
+      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
+        "您可取得並同時贈送 **${ referralReward } 獎勵額度** 給每一位訂購的朋友。"
+      ],
       "Get it on Google Play": [
         "於 Google Play取得"
       ],
@@ -7588,6 +7624,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "當密碼及其他個人資料外洩時獲得通知。${ learnMoreLinkNoBreach }"
+      ],
+      "Get started with the referral link above.": [
+        "從使用上方的推薦連結開始。"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "為通證取一個顧名思義的名稱，譬如說會用於甚麼服務，並選取您其一使用中的自訂網域電子郵件位址。僅此電子郵件位址將能夠以此通證傳送電子郵件。"
@@ -7792,6 +7831,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "邀請同伴,朋友或任何人共享${ protonDuoPlanName }方案。"
+      ],
+      "Invited": [
+        "已邀請"
       ],
       "It appears some of your data is encrypted and locked.": [
         "您的某些資料似乎已被加密和鎖定。"
@@ -8146,6 +8188,9 @@
       ],
       "Paid for a monthly plan": [
         "以每月方案付費"
+      ],
+      "Paid for a plan": [
+        "已付款訂購方案"
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - 自訂電子郵件已確認"
@@ -8921,6 +8966,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升級以新增較短且易於分享的 @pm.me 位址到您的帳號。其代表「${ MAIL_APP_NAME } 我」或是「寄私人訊息給我」。"
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "升級到專業版或高階方案來解鎖"
+      ],
       "Upgrade to unlock": [
         "升級以解鎖"
       ],
@@ -9278,6 +9326,9 @@
       "You do not have permission to perform this action": [
         "您沒有執行這個動作的權限"
       ],
+      "You don't have any referrals.": [
+        "你還沒有任何推薦紀錄"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
       ],
@@ -9412,6 +9463,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "您推薦的朋友所選擇的方案，將可獲得**免費使用兩星期**"
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "您從匯入 ${ accounts } 的操作被暫時推遲。"
@@ -10805,6 +10859,9 @@
       "Reveal password": [
         "顯示密碼"
       ],
+      "Reward": [
+        "獎勵"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -10825,6 +10882,9 @@
       ],
       "Sequences": [
         "序段"
+      ],
+      "Share your referral link": [
+        "分享您的推薦連結"
       ],
       "Show ${ n } administrator": [
         "顯示 ${ n } 管理員"
@@ -11331,6 +11391,9 @@
       "Terms": [
         "條款"
       ],
+      "Terms and conditions": [
+        "條款與細則"
+      ],
       "Trouble signing in?": [
         "登入遇到困難嗎？"
       ],
@@ -11408,6 +11471,14 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ]
+    },
+    "Log event": {
+      "Sign out": [
+        "退出"
+      ],
+      "Unknown": [
+        "未知"
       ]
     },
     "Log preference": {
@@ -12557,6 +12628,9 @@
       ],
       "Downgrade account?": [
         "確定要換成精簡功能的帳號？"
+      ],
+      "Review subscription": [
+        "檢閱訂購授權"
       ],
       "Review subscription and pay": [
         "檢視訂購授權與繳款"
@@ -14316,8 +14390,17 @@
       ]
     },
     "Protection type": {
+      "Blocked": [
+        "已封鎖"
+      ],
+      "CAPTCHA": [
+        "CAPTCHA 驗證碼"
+      ],
       "Ok": [
         "確定"
+      ],
+      "Unknown": [
+        "未知"
       ]
     },
     "Recovery Email": {
@@ -17385,6 +17468,15 @@
       "Folders and labels": [
         "資料夾和標籤"
       ],
+      "For Linux": [
+        "適用於 Linux"
+      ],
+      "For macOS": [
+        "適用於 macOS"
+      ],
+      "For Windows": [
+        "適用於 Windows"
+      ],
       "Forgot password": [
         "忘記密碼"
       ],
@@ -17438,6 +17530,9 @@
       ],
       "Gift code": [
         "禮品代碼"
+      ],
+      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
+        "提供 ${ referralReward } 並免費使用 2 星期。獲得 ${ referralReward } 獎勵額度。"
       ],
       "Group": [
         "群組"
@@ -17510,6 +17605,9 @@
       ],
       "Invitations": [
         "邀請"
+      ],
+      "Invite friends. Get credits.": [
+        "邀請朋友，獲得獎勵額度。"
       ],
       "Invoices": [
         "繳款單"
@@ -18051,6 +18149,9 @@
       "Video conferencing": [
         "視訊會議"
       ],
+      "View organization events by upgrading to Professional": [
+        "升級到專業版以查看組織層級事件"
+      ],
       "VPN apps": [
         "VPN 應用程式"
       ],
@@ -18104,6 +18205,9 @@
       ],
       "Your recovery status": [
         "你的復原狀態"
+      ],
+      "Your referrals": [
+        "您的推薦邀請"
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
@@ -18291,6 +18395,12 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "在 [已傳送] 或 [草稿] 資料夾中的郵件將繼續保留原處，即使您將郵件移動至另一個資料夾。"
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "來源網際網路服務提供商 (ISP)"
+      ],
+      "Origin IP address": [
+        "來源 IP 位址"
+      ],
       "Remove metadata from images to protect your privacy.": [
         "從照片中移除中繼資料以保護隱私"
       ],
@@ -18459,6 +18569,9 @@
       ],
       "Failed": [
         "失敗"
+      ],
+      "Success": [
+        "成功"
       ]
     },
     "Transaction type display as badge": {

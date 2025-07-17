@@ -870,6 +870,9 @@
       "Upgrade to Business": [
         "Auf Business upgraden"
       ],
+      "Upgrade to Professional": [
+        "Auf Professional upgraden"
+      ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
       ],
@@ -1249,14 +1252,8 @@
       "During the trial period, you can have up to 10 users.": [
         "Während des Testzeitraums kannst du bis zu 10 Benutzer haben."
       ],
-      "free for 14 days": [
-        "Für 14 Tage kostenlos"
-      ],
       "on ${ formattedDate }": [
         "am ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Teste ${ selected } ${ freeFor14Days }"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird deine kostenlose Testversion nicht in ein kostenpflichtiges Abonnement umgewandelt, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Testzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
@@ -4370,8 +4367,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " • Die Kommandozentrale für die Verfolgung von Benutzeraktivitäten, die Erkennung von Bedrohungen und die Sicherstellung der Konformität in deiner Organisation."
+      " and other security features.": [
+        " und andere Sicherheitsfunktionen."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } Benutzer hat derzeit Zugang zu gemeinsamen Servern.",
@@ -6003,6 +6000,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Upgrade auf Professional oder ein höheres Abonnement, um freizuschalten"
+      ],
       "Upload your completed CSV file to create accounts": [
         "Lade deine ausgefüllte CSV-Datei hoch, um Konten zu erstellen"
       ],
@@ -6170,9 +6170,6 @@
       ],
       "Why?": [
         "Warum?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Mit einem Business- oder Enterprise-Tarif kann Folgendes freigeschaltet werden"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Mit einem Business- oder Enterprise-Abonnement kannst du ${ boldDedicatedServers } für dein Unternehmen kaufen und ${ boldGateways } einrichten, um zu kontrollieren, welche Benutzer darauf zugreifen können."
@@ -12543,8 +12540,8 @@
       "Video conferencing": [
         "Videokonferenzen"
       ],
-      "View organization events by upgrading to Business": [
-        "Ereignisse der Organisation anzeigen, durch Wechsel zu Business"
+      "View organization events by upgrading to Professional": [
+        "Ereignisse der Organisation anzeigen, durch Wechsel zu Professional"
       ],
       "Warning": [
         "Warnhinweis"

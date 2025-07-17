@@ -92,6 +92,12 @@
       "Add to group": [
         "Adicionar ao grupo"
       ],
+      "Add Zoom meeting": [
+        "Adicionar uma reunião Zoom"
+      ],
+      "Adding conferencing details": [
+        "Adicionar informações sobre a conferência"
+      ],
       "Apply": [
         "Aplicar"
       ],
@@ -470,6 +476,9 @@
       "Load image": [
         "Carregar a imagem"
       ],
+      "Loading Zoom configuration": [
+        "A carregar a configuração de Zoom"
+      ],
       "Make this participant optional": [
         "Tornar este participante opcional"
       ],
@@ -607,6 +616,9 @@
       ],
       "Reconnect": [
         "Religar"
+      ],
+      "Reconnect to Zoom": [
+        "Voltar a ligar-se ao Zoom"
       ],
       "Recover data": [
         "Recuperar dados"
@@ -3739,6 +3751,9 @@
       "You already added this holidays calendar": [
         "Já adicionou este calendário de férias."
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Está novamente ligado ao Zoom. Pode guardar o seu evento."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Não pode enviar um e-mail para mais de ${ maxContacts } destinatário.",
         "Não pode enviar um e-mail para mais de ${ maxContacts } destinatários."
@@ -3754,6 +3769,9 @@
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "A sua ligação ao Zoom expirou. Volte a ligar-se para continuar."
       ]
     },
     "Error accepting calendar invitation": {
@@ -8840,13 +8858,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número de empresa australiano (ABN)"
       ],
       "Business Number": [
         "Número da empresa"
       ],
       "EIN": [
-        "EIN"
+        "Número de identificação fiscal (EIN)"
       ],
       "VAT number": [
         "Número de IVA"
@@ -11801,17 +11819,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Participar na reunião Zoom"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Adicionar uma reunião Zoom"
-      ],
-      "Adding conferencing details": [
-        "Adicionar informações sobre a conferência"
-      ],
-      "Loading Zoom configuration": [
-        "A carregar a configuração de Zoom"
       ]
     },
     "Zoom Meeting": {

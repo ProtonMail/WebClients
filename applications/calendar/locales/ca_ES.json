@@ -92,6 +92,12 @@
       "Add to group": [
         "Afegeix al grup"
       ],
+      "Add Zoom meeting": [
+        "Afegiu una reunió de Zoom"
+      ],
+      "Adding conferencing details": [
+        "S'estan afegint els detalls de la conferència"
+      ],
       "Apply": [
         "Aplica"
       ],
@@ -118,7 +124,7 @@
         "Cancel·la la subscripció"
       ],
       "Cancel trial and pay": [
-        "Cancel·la la prova i pagar"
+        "Cancel·leu la prova i procediu a pagar"
       ],
       "Chat with us": [
         "Xategeu amb nosaltres"
@@ -470,6 +476,9 @@
       "Load image": [
         "Carrega la imatge"
       ],
+      "Loading Zoom configuration": [
+        "S'està carregant la configuració de Zoom"
+      ],
       "Make this participant optional": [
         "Fer opcional aquest participant"
       ],
@@ -607,6 +616,9 @@
       ],
       "Reconnect": [
         "Reconnecta"
+      ],
+      "Reconnect to Zoom": [
+        "Reconnecteu-vos a Zoom"
       ],
       "Recover data": [
         "Recuperar dades"
@@ -3465,7 +3477,7 @@
         "El codi de verificació no és vàlid."
       ],
       "Invalid ZIP code": [
-        "Codi postal no vàlid"
+        "Aquest codi postal no és vàlid"
       ],
       "Invitation failed to be sent": [
         "No s'ha pogut enviar la invitació."
@@ -3739,6 +3751,9 @@
       "You already added this holidays calendar": [
         "Ja heu afegit aquest calendari de festius"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Us heu reconnectat a Zoom. Ara podeu desar l'esdeveniment."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
         "No podeu enviar un correu a més de ${ maxContacts } destinataris."
@@ -3754,6 +3769,9 @@
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "La vostra connexió de Zoom ha caducat. Torneu a connectar-vos per continuar."
       ]
     },
     "Error accepting calendar invitation": {
@@ -7849,7 +7867,7 @@
         "Voleu passar a un pla inferior?"
       ],
       "Review subscription": [
-        "Revisa la subscripció"
+        "Reviseu la subscripció"
       ],
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"
@@ -8843,13 +8861,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número d'empresa australià (ABN)"
       ],
       "Business Number": [
-        "Número de negoci"
+        "Número d'empresa"
       ],
       "EIN": [
-        "EIN"
+        "Número d’identificació fiscal (EIN)"
       ],
       "VAT number": [
         "Número d'IVA"
@@ -11804,17 +11822,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Uniu-vos a la reunió de Zoom"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Afegeix una reunió de Zoom"
-      ],
-      "Adding conferencing details": [
-        "S'estan afegint els detalls de la conferència"
-      ],
-      "Loading Zoom configuration": [
-        "S'està carregant la configuració del Zoom"
       ]
     },
     "Zoom Meeting": {

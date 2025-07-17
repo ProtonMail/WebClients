@@ -1465,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Uppgradera till Professional"
+      ],
       "Upgrade to view all": [
         "Uppgradera för att visa alla"
       ],
@@ -7498,6 +7501,9 @@
       ]
     },
     "Info": {
+      " and other security features.": [
+        " och andra säkerhetsfunktioner."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } användare har för närvarande åtkomst till delade servrar.",
         "${ amountUsers }/${ totalUsers } användare har för närvarande åtkomst till delade servrar."
@@ -10130,6 +10136,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Uppgradera till Professional eller ett högre paket för att låsa upp"
+      ],
       "Upgrade to unlock": [
         "Uppgradera för att låsa upp"
       ],
@@ -10372,9 +10381,6 @@
       ],
       "Why?": [
         "Varför?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Med ett Business- eller Enterprise-paket, lås upp"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med ett Business- eller Enterprise-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
@@ -10668,6 +10674,9 @@
       "Your free trial includes ${ ownedCount } dedicated server.": [
         "Din gratis provperiod inkluderar ${ ownedCount } dedikerad server.",
         "Din gratis provperiod inkluderar ${ ownedCount } dedikerade servrar."
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Din gratis provperiod har konverterats till en ${ cycle }-månaders prenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en månadsprenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
@@ -20752,8 +20761,8 @@
       "Video conferencing": [
         "Videokonferenser"
       ],
-      "View organization events by upgrading to Business": [
-        "Visa organisationens händelser genom att uppgradera till Business"
+      "View organization events by upgrading to Professional": [
+        "Visa organisationens händelser genom att uppgradera till Professional"
       ],
       "VPN apps": [
         "VPN-appar"
@@ -20965,9 +20974,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Gör det möjligt att sömlöst lägga till videokonferenslänkar till dina kalenderinbjudningar."
       ],
-      "An approximate location of the IP address": [
-        "En ungefärlig plats för IP-adressen"
-      ],
       "Any protection applied to suspicious activity": [
         "Allt skydd tillämpat till misstänkt aktivitet"
       ],
@@ -20991,9 +20997,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Ta bort kastade och skräppostmeddelanden efter 30 dagar. Om du aktiverar automatisk borttagning får meddelanden som redan är i kastade/skräppost ett datum för borttagning baserat på datumet de flyttades dit."
-      ],
-      "Device information such as operating system": [
-        "Enhetsinformation såsom operativsystem"
       ],
       "Device name and app version": [
         "Enhetsnamn och appversion"
@@ -21052,6 +21055,12 @@
       "Not all information listed here was exposed for all users.": [
         "All information som anges här har inte exponerats för alla användare."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Ursprunglig internetleverantör (ISP)"
+      ],
+      "Origin IP address": [
+        "Ursprunglig IP-adress"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Ursprunglig IP-adress och Internetleverantör (ISP)"
       ],
@@ -21093,9 +21102,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importering kommer att börja med de senaste meddelandena."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Internetleverantören för IP-adressen"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nya prenumerationscykeln startar den ${ formattedTime }"

@@ -870,6 +870,9 @@
       "Upgrade to Business": [
         "Business로 업그레이드"
       ],
+      "Upgrade to Professional": [
+        "Professional로 업그레이드"
+      ],
       "Upgrade your plan": [
         "요금제 업그레이드"
       ],
@@ -1205,7 +1208,7 @@
     },
     "anniversary_2025: Offers": {
       "${ n } month": [
-        "${ n }개월"
+        "${ n }/월간"
       ],
       "/ month": [
         "/ 월간"
@@ -4280,8 +4283,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - 조직 전체에 걸쳐 사용자 활동을 추적하고, 위협을 탐지하며, 규정 준수를 보장하는 커맨드 센터."
+      " and other security features.": [
+        " 과 다른 보안 기능을 잠금 해제하세요."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }명/${ totalUsers }명이 현재 공유된 서버 접근 권한을 소유하고 있습니다."
@@ -5879,6 +5882,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Professional 또는 더 상위의 플랜으로 업그레이드하여"
+      ],
       "Upload your completed CSV file to create accounts": [
         "계정을 생성하려면 완료된 CSV 파일을 업로드해주세요"
       ],
@@ -6046,9 +6052,6 @@
       ],
       "Why?": [
         "왜 그럴까요?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Business 또는 Enterprise 플랜 구매시 잠금 해제됩니다"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Business 및 Enterprise 요금제에서는 조직을 위한 ${ boldDedicatedServers }를 구매 및 ${ boldGateways } 설정으로 조직의 사용자가 접근을 관리하도록 할 수 있습니다."
@@ -12340,8 +12343,8 @@
       "Video conferencing": [
         "화상 회의"
       ],
-      "View organization events by upgrading to Business": [
-        "Business로 업그레이드하여 조직 이벤트를 확인하기"
+      "View organization events by upgrading to Professional": [
+        "Professional 플랜으로 업그레이드하여 조직 이벤트 확인"
       ],
       "Warning": [
         "경고"

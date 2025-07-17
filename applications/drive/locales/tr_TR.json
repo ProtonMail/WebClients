@@ -141,6 +141,9 @@
       "Cancel subscription": [
         "Aboneliği iptal et"
       ],
+      "Cancel trial and pay": [
+        "Deneme süresini iptal et ve öde"
+      ],
       "Cancel upload": [
         "Yüklemeyi iptal et"
       ],
@@ -1387,8 +1390,16 @@
       ]
     },
     "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Aboneliği iptal et"
+      ],
       "Keep subscription": [
         "Aboneliği sürdür"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Ücretsiz deneme süreniz ${ timeRemaining } sonra bitecek"
       ]
     },
     "Badge": {
@@ -1423,6 +1434,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } ve ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } depolama alanı"
@@ -3247,14 +3261,35 @@
       "Failed to create folder": [
         "Klasör oluşturulamadı."
       ],
+      "Failed to create public share node": [
+        "Herkese açık paylaşım noktası oluşturulamadı"
+      ],
+      "Failed to fetch node": [
+        "Nokta alınamadı"
+      ],
+      "Failed to fetch sharing info": [
+        "Paylaşım bilgileri alınamadı"
+      ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
       ],
       "Failed to move items": [
         "Ögeler taşınamadı"
       ],
+      "Failed to resend invitation": [
+        "Davet yeniden gönderilemedi"
+      ],
       "Failed to save some photos to your Drive": [
         "Bazı fotoğraflar Drive alanınıza kaydedilemedi"
+      ],
+      "Failed to unshare node": [
+        "Nokta paylaşımı kaldırılamadı"
+      ],
+      "Failed to update direct share node": [
+        "Doğrudan paylaşım noktası güncellenemedi"
+      ],
+      "Failed to update public share node": [
+        "Herkese açık paylaşım noktası güncellenemedi"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "\"${ item.name }\" dosyası \"${ error }\" hatası nedeniyle yüklenemedi"
@@ -3321,6 +3356,9 @@
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
+      ],
+      "Invalid ZIP code": [
+        "Posta kodu geçersiz"
       ],
       "Item content cannot exceed 40KB": [
         "Öge içeriği 40KB boyutundan büyük olamaz"
@@ -3394,6 +3432,18 @@
       "Please activate your search again": [
         "Lütfen arama özelliğini yeniden açın"
       ],
+      "Please enter a valid postal code": [
+        "Lütfen geçerli bir posta kodu yazın"
+      ],
+      "Please enter a valid ZIP code": [
+        "Lütfen geçerli bir posta kodu yazın"
+      ],
+      "Please enter postal code": [
+        "Lütfen posta kodunu yazın"
+      ],
+      "Please enter ZIP code": [
+        "Lütfen posta kodunu yazın"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
@@ -3406,6 +3456,12 @@
       ],
       "Please select a state": [
         "Lütfen bir eyalet seçin"
+      ],
+      "Please select billing country": [
+        "Lütfen faturanın kesileceği ülkeyi seçin"
+      ],
+      "Please select billing state": [
+        "Lütfen faturanın durumunu seçin"
       ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
@@ -3468,6 +3524,9 @@
       "status page": [
         "durum sayfası"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Bu öge paylaşımdan kaldırılamadı"
+      ],
       "Tab closed": [
         "Sekme kapatıldı"
       ],
@@ -3497,6 +3556,9 @@
       ],
       "The label name is too long. Please choose a different name.": [
         "Etiket adı çok uzun. Lütfen farklı bir ad seçin."
+      ],
+      "The link to your item failed to be deleted": [
+        "Öge bağlantınız silinemedi"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
@@ -4572,7 +4634,7 @@
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
-        "${ PASS_SHORT_APP_NAME } Lifetime forsatının yenileme ücreti yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir. ${ planTitle } aboneliğinizin yenileme \nücreti ve tarihi değişmeden kalır."
+        "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir. ${ planTitle } aboneliğinizin yenileme \nücreti ve tarihi değişmeden kalır."
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } duraklatıldı",
@@ -4963,7 +5025,7 @@
         "Size ayrılmış sunucular"
       ],
       "Dedicated VPN servers": [
-        "Ayrılmış VPN sunucuları"
+        "Size ayrılmış VPN sunucuları"
       ],
       "default email address": [
         "varsayılan e-posta adresi"
@@ -5188,6 +5250,9 @@
       ],
       "How does encrypted search work?": [
         "Şifrelenmiş arama nasıl çalışır?"
+      ],
+      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
+        "Bu dosyalar tam olarak ${ deviceName } üzerine yerel olarak indirilmemişse, onlara erişemeyeceksiniz."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -5454,6 +5519,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Kuruluşunuza ayrılmış VPN sunucusu sayısı"
       ],
       "Numbers": [
         "Rakamlar"
@@ -6184,6 +6252,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPN bağlantısı kurduğunuzda, IP adresinizi (aygıtınıza atanan benzersiz bir kod) gizlemek için şifreleme teknolojisi kullanılır."
       ],
+      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
+        "${ deviceName } uygulamasını eşitlenmiş aygıtlardan kaldırdığınızda, ${ DRIVE_APP_NAME } uygulaması ile bu aygıttan Bilgisayarlarım klasörüne eklenen tüm klasörler kalıcı olarak silinir."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
@@ -6337,6 +6408,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
@@ -6433,6 +6507,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Deneme süreniz ${ timeRemaining } sonra sona erecek."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "${ boldPlanTitle } özelliklerine erişiminizi de kaybedeceksiniz:"
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "${ boldEndDate } tarihinde ${ boldPlanTitle } tarifesine erişemeyeceksiniz."
@@ -7149,6 +7226,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Posta kodu"
+      ],
       "ZIP code": [
         "Posta kodu"
       ]
@@ -8258,6 +8338,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "Önemli iş bilgilerinizi koruyun ve güvende kalarak işbirliği yapın."
       ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Ailenizi 6 kullanıcıya kadar tüm ücretli ${ plusTitle } özellikleriyle koruyun."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
@@ -8303,6 +8386,9 @@
       ],
       "Downgrade account?": [
         "Hesap tarifesi düşürülsün mü?"
+      ],
+      "Review subscription": [
+        "Aboneliği gözden geçirin"
       ],
       "Review subscription and pay": [
         "Aboneliği ve ödemeyi gözden geçirin"
@@ -8741,6 +8827,9 @@
       "Encrypted search activated": [
         "Şifrelenmiş arama özelliği açıldı"
       ],
+      "Error while listing devices": [
+        "Aygıtlar listelenirken sorun çıktı"
+      ],
       "External invitation removed from the share": [
         "Paylaşımdan dış davet kaldırıldı"
       ],
@@ -8768,8 +8857,14 @@
       "Failed to reject share invitation": [
         "Paylaşma daveti reddedilemedi"
       ],
+      "Failed to remove device": [
+        "Aygıt kaldırılamadı"
+      ],
       "Failed to remove the file": [
         "Dosya kaldırılamadı"
+      ],
+      "Failed to rename device": [
+        "Aygıt yeniden adlandırılamadı"
       ],
       "Failed to upload files: ${ err }": [
         "Dosyalar yüklenemedi: ${ err }"
@@ -8826,12 +8921,6 @@
       "Share invitation declined": [
         "Paylaşma daveti reddedildi"
       ],
-      "Some photo(s) could not be added to \"${ albumName }\"": [
-        "Bazı fotoğraflar \"${ albumName }\" albümüne eklenemedi"
-      ],
-      "Some photo(s) could not be removed from ${ albumLink.name }": [
-        "Bazı fotoğraflar ${ albumLink.name } albümünden kaldırılamadı"
-      ],
       "Sorry, we couldn't delete the folder because it is not empty.": [
         "Üzgünüz, boş olmadığı için klasörü silemedik.",
         "Üzgünüz, boş olmadıkları için klasörleri silemedik."
@@ -8879,12 +8968,6 @@
       ],
       "Your old files will be deleted in 72 hours": [
         "Eski dosyalarınız 72 saat içinde silinecek"
-      ],
-      "Your photo(s) have been added to \"${ albumName }\"": [
-        "Fotoğraflarınız \"${ albumName }\" albümüne eklendi."
-      ],
-      "Your photo(s) have been removed from ${ albumLink.name }": [
-        "Fotoğraflarınız ${ albumLink.name } albümünden kaldırıldı"
       ],
       "Your settings failed to be saved": [
         "Ayarlarınız kaydedilemedi"
@@ -8941,6 +9024,9 @@
       "Get the deal": [
         "Tekliften yararlanın"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "${ plan } aboneliğinin ilk ayında % 80 indirim kazanmak için son fırsat."
+      ],
       "Last day to save": [
         "İndirim kazanmak için son gün"
       ],
@@ -8981,9 +9067,20 @@
         "Aboneliğiniz yakında yenilenecek"
       ]
     },
+    "Offer fearue": {
+      "Encrypted password manager": [
+        "Şifrelenmiş parola yöneticisi"
+      ]
+    },
     "Offer feature": {
       "+10 more premium features": [
         "+10 ücretli özellik daha"
+      ],
+      "500 GB secure storage": [
+        "500 GB güvenli depolama alanı"
+      ],
+      "Advanced threat protection": [
+        "Gelişmiş tehdit koruması"
       ],
       "Custom email domain": [
         "Özel e-posta etki alanı"
@@ -9005,6 +9102,12 @@
       ],
       "Storage": [
         "Depolama alanı"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "110 üzerinde ülkede Ultra hızlı VPN sunucuları"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Kimliğinizi korumak için sınırsız sayıda takma ad"
       ]
     },
     "Onboarding": {
@@ -9361,6 +9464,9 @@
       "Got it": [
         "Anladım"
       ],
+      "I'm purchasing as a business": [
+        "Kurumsal olarak satın alıyorum"
+      ],
       "MM/YY": [
         "AA/YY"
       ],
@@ -9398,11 +9504,17 @@
         "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenecektir. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından otomatik olarak ${ renewPriceStr } üzerinden ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
+      "This number will be shown on all future invoices": [
+        "Bu numara, sonraki tüm faturalarda görüntülenecek"
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
       ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
@@ -9433,12 +9545,34 @@
         "Free"
       ]
     },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - ${ paymentMethod.Details.Last4 } ile biten kart"
+      ],
+      "Bank transfer - ${ details }": [
+        "Banka havalesi - ${ details }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Bu ödemeyi onayladığınızda, bankanıza ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine hesabınızdan ödeme alma yetkisi verirsiniz. Bankanızla yaptığınız anlaşmanın koşullarına bağlı olarak, ödemenin yapıldığı tarihten başlayan 8 hafta içinde iade isteğinde bulunabilirsiniz."
       ],
       "Street address, postal code, and city": [
         "Sokak adresi, posta kodu ve il"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "İş numarası"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ]
     },
     "PGP key encryption warning": {
@@ -9535,6 +9669,9 @@
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
       ],
+      "Postal code": [
+        "Posta kodu"
+      ],
       "Search for group name": [
         "Grup adı ile arayın"
       ],
@@ -9564,6 +9701,9 @@
       ],
       "Your organization name": [
         "Kuruluşunuzun adı"
+      ],
+      "ZIP code": [
+        "Posta kodu"
       ]
     },
     "Placeholder for contact group name": {
@@ -9574,6 +9714,20 @@
     "plan customizer, users": {
       "contact": [
         "görüşün"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Tüm ${ protonPlus } hizmetleri.${ br }Tek bir kolay abonelik."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }** abonesi olarak, **${ upsellPlanTitle }** tarifesine yükseltebilir **${ unlockPlanTitle }** ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle } tarifesinde kal"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "${ upsellPlanTitle } tarifesine yükselt"
       ]
     },
     "Price": {
@@ -10037,11 +10191,26 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Güvenli bir şekilde gezinin"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "${ BRAND_NAME } ile daha fazlasını yapın"
+      ],
+      "Get unlimited aliases": [
+        "Sınırsız sayıda takma ad edinin"
+      ],
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
       ],
+      "Guard against threats": [
+        "Tehditlere karşı koruma"
+      ],
       "Increase your storage": [
-        "Depolama alanınızı yükseltin"
+        "Depolama alanınızı artırın"
+      ],
+      "Keep passwords safe": [
+        "Parolaları güvende tutun"
       ],
       "Unblock streaming content": [
         "Yayın akışı içeriğinin engellemesini kaldırın"
@@ -10123,6 +10292,27 @@
       ]
     },
     "specialoffer: Title": {
+      "Access content on streaming services worldwide": [
+        "Tüm dünyadaki yayın akışı hizmetlerinin içeriklerine erişim"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Tüm dosyalarınızı ve fotoğraflarınızı güvenle depolamak için 500 GB edinin"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "110 üzerinde ülkede bulunan ultra hızlı VPN sunucularına erişin"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Tümünün bulunduğu tek bir tarife alın. ${ BRAND_NAME } Unlimited edinin"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Kimliğinizi korumak ve istenmeyen e-postaları azaltmak için sınırsız sayıda takma ad edinin"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Parolalarınızı birden fazla kasada güvende ve düzenli tutun "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Sentinel ile hesabınızı tehditlere karşı koruyun"
+      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "2 yıllık ${ planName } tarifesine yükselterek daha fazla indirim kazanın"
       ]
@@ -10616,7 +10806,7 @@
         "${ planName } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde, ${ BRAND_NAME } Free tarifesine düşürülecek."
       ],
       "Yearly free storage bonuses": [
-        "Yıllık ücretsiz depolama alanı hediyeleri"
+        "Yıllık ücretsiz depolama alanı ödülleri"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "${ planName } aboneliğinizin ${ expiryDate } süresi daha var. Kalan süreye ait kredileri ${ BRAND_NAME } hesabınıza ekleyeceğiz. İptal etmeden önce ücretsiz tarifenin sınırlarını aşmadığınızdan emin olun. ${ learnMoreLink }"
@@ -11226,6 +11416,10 @@
       ],
       "Delete ${ name }?": [
         "${ name } albümü silinsin mi?"
+      ],
+      "Delete ${ total } item?": [
+        "${ total } öge silinsin mi?",
+        "${ total } öge silinsin mi?"
       ],
       "Delete ${ value }": [
         "${ value } sil"
@@ -11936,6 +12130,9 @@
     "Unlimited offer": {
       "/month": [
         "/ay"
+      ],
+      "Only": [
+        "Yalnızca"
       ]
     },
     "unprivatization": {
@@ -11960,6 +12157,9 @@
       ],
       "Name must not be empty": [
         "Ad boş olamaz"
+      ],
+      "Name must not contain slashes (/)": [
+        "Ad içinde bölü karakteri bulunmamalıdır (/)"
       ]
     },
     "Video control": {

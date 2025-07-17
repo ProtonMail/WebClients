@@ -92,6 +92,12 @@
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
+      "Add Zoom meeting": [
+        "Προσθήκη τηλεδιάσκεψης Zoom"
+      ],
+      "Adding conferencing details": [
+        "Προσθήκη λεπτομερειών διάσκεψης"
+      ],
       "Apply": [
         "Εφαρμογή"
       ],
@@ -470,6 +476,9 @@
       "Load image": [
         "Φόρτωση εικόνας"
       ],
+      "Loading Zoom configuration": [
+        "Γίνεται φόρτωση παραμέτρων Zoom"
+      ],
       "Make this participant optional": [
         "Κάντε αυτόν τον συμμετέχοντα προαιρετικό"
       ],
@@ -607,6 +616,9 @@
       ],
       "Reconnect": [
         "Επανασύνδεση"
+      ],
+      "Reconnect to Zoom": [
+        "Επανασύνδεση στο Zoom"
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
@@ -3739,6 +3751,9 @@
       "You already added this holidays calendar": [
         "Έχετε ήδη προσθέσει αυτό το εορτολόγιο"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Έχετε επανασυνδεθεί στο Zoom. Μπορείτε να αποθηκεύσετε την εκδήλωσή σας τώρα."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτες"
@@ -3754,6 +3769,9 @@
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Η σύνδεσή σας στο Zoom έχει λήξει. Παρακαλούμε επανασυνδεθείτε για να συνεχίσετε."
       ]
     },
     "Error accepting calendar invitation": {
@@ -11798,17 +11816,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Συνδεθείτε στη σύσκεψη Zoom"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Προσθήκη τηλεδιάσκεψης Zoom"
-      ],
-      "Adding conferencing details": [
-        "Προσθήκη λεπτομερειών διάσκεψης"
-      ],
-      "Loading Zoom configuration": [
-        "Γίνεται φόρτωση παραμέτρων Zoom"
       ]
     },
     "Zoom Meeting": {

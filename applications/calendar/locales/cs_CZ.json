@@ -92,6 +92,12 @@
       "Add to group": [
         "Přidat do skupiny"
       ],
+      "Add Zoom meeting": [
+        "Přidat schůzku na Zoomu"
+      ],
+      "Adding conferencing details": [
+        "Přidávání detailů o konferencích"
+      ],
       "Apply": [
         "Použít"
       ],
@@ -118,6 +124,9 @@
       ],
       "Cancel subscription": [
         "Zrušit předplatné"
+      ],
+      "Cancel trial and pay": [
+        "Zrušit zkušební verzi a zaplatit"
       ],
       "Chat with us": [
         "Chatujte s námi"
@@ -473,6 +482,9 @@
       "Load image": [
         "Načíst obrázek"
       ],
+      "Loading Zoom configuration": [
+        "Načítání nastavení Zoomu"
+      ],
       "Make this participant optional": [
         "Nastavit tohoto účastníka jako volitelného"
       ],
@@ -610,6 +622,9 @@
       ],
       "Reconnect": [
         "Obnovit připojení"
+      ],
+      "Reconnect to Zoom": [
+        "Znovu připojit k Zoomu"
       ],
       "Recover data": [
         "Obnovit data"
@@ -3834,6 +3849,9 @@
       "You already added this holidays calendar": [
         "Tento kalendář svátků jste již přidali"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Jste znovu připojeni k Zoomu. Nyní můžete uložit svou událost."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
@@ -3851,6 +3869,9 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Platnost vašeho připojení k Zoomu vypršela. Pro pokračování se prosím znovu připojte."
       ]
     },
     "Error accepting calendar invitation": {
@@ -8116,6 +8137,9 @@
       "Downgrade account?": [
         "Snížit účet na nižší úroveň?"
       ],
+      "Review subscription": [
+        "Zkontrolovat předplatné"
+      ],
       "Review subscription and pay": [
         "Zkontrolovat předplatné a zaplatit"
       ],
@@ -9174,13 +9198,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "DIČ"
+        "ABN"
       ],
       "Business Number": [
         "Firemní číslo"
       ],
       "EIN": [
-        "IČO"
+        "EIN"
       ],
       "VAT number": [
         "DIČ"
@@ -12331,17 +12355,6 @@
     "Zoom": {
       "Join Zoom meeting": [
         "Připojit se ke schůzce na Zoomu"
-      ]
-    },
-    "Zoom integration": {
-      "Add Zoom meeting": [
-        "Přidat schůzku na Zoomu"
-      ],
-      "Adding conferencing details": [
-        "Přidávání detailů o konferencích"
-      ],
-      "Loading Zoom configuration": [
-        "Načítání nastavení Zoomu"
       ]
     },
     "Zoom Meeting": {

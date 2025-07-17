@@ -1465,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Oppgrader for å aktivere ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Professional": [
+        "Oppgrader til Professional"
+      ],
       "Upgrade to view all": [
         "Oppgrader for å vise alle"
       ],
@@ -7510,8 +7513,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " – ditt kommandosenter for sporing av brukeraktivitet, oppdage trusler og sikre etterlevelse i hele organisasjonen."
+      " and other security features.": [
+        " og andre sikkerhetsfunksjoner."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } bruker har for øyeblikket tilgang til delte tjenere.",
@@ -10154,6 +10157,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Oppgrader for å legge til en kortere @pm.me-adresse til din konto som er enklere å dele. Den står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding\"."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Oppgrader til Professional eller en høyere plan for å låse opp"
+      ],
       "Upgrade to unlock": [
         "Oppgrader for å låse opp"
       ],
@@ -10396,9 +10402,6 @@
       ],
       "Why?": [
         "Hvorfor?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Med en Business- eller Enterprise-plan, lås opp"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med en Business- eller Enterprise-plan kan du kjøpe ${ boldDedicatedServers } for organisasjonen din, og konfigurere ${ boldGateways } for å kontrollere hvilke brukere som har tilgang til dem."
@@ -20800,8 +20803,8 @@
       "Video conferencing": [
         "Videokonferanse"
       ],
-      "View organization events by upgrading to Business": [
-        "Vis organisasjonshendelser ved å oppgradere til Business"
+      "View organization events by upgrading to Professional": [
+        "Vis organisasjonshendelser ved å oppgradere til Professional"
       ],
       "VPN apps": [
         "VPN-apper"
@@ -21010,9 +21013,6 @@
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Gjør det mulig å sømløst legge til videokonferansekoblinger i kalenderinvitasjonene dine."
       ],
-      "An approximate location of the IP address": [
-        "En omtrentlig plassering til IP-adressen"
-      ],
       "Any protection applied to suspicious activity": [
         "Enhver beskyttelse som brukes på mistenkelig aktivitet"
       ],
@@ -21036,9 +21036,6 @@
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Sletter papirkurvinnhold og søppelpostmeldinger etter 30 dager. Hvis du slår på automatisk sletting, får meldinger som allerede er i papirkurven/søppelposten, en slettedato basert på datoen de ble flyttet dit."
-      ],
-      "Device information such as operating system": [
-        "Enhetsinformasjon slik som operativsystem"
       ],
       "Device name and app version": [
         "Enhetsnavn og appversjon"
@@ -21103,6 +21100,12 @@
       "Not all information listed here was exposed for all users.": [
         "Ikke all informasjon som er oppført her, ble eksponert for alle brukere."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "Opprinnelig Internett-leverandør (ISP)"
+      ],
+      "Origin IP address": [
+        "Opprinnelses-IP-adresse"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Opprinnelse IP-adresse og Internett-leverandør (ISP)"
       ],
@@ -21144,9 +21147,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importen starter med de nyeste meldingene."
-      ],
-      "The Internet Service Provider of the IP address": [
-        "Internetttjenestetilbyderen til IP-adressen"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementssyklusen starter ${ formattedTime }"

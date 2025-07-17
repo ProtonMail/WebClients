@@ -121,7 +121,7 @@
         "Cancel·la la subscripció"
       ],
       "Cancel trial and pay": [
-        "Cancel·la la prova i pagar"
+        "Cancel·leu la prova i procediu a pagar"
       ],
       "Change": [
         "Canvia"
@@ -869,6 +869,9 @@
       ],
       "Upgrade to Business": [
         "Millora a Business"
+      ],
+      "Upgrade to Professional": [
+        "Milloreu al pla Professional"
       ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
@@ -3278,7 +3281,7 @@
         "El codi de verificació no és vàlid."
       ],
       "Invalid ZIP code": [
-        "Codi postal no vàlid"
+        "Aquest codi postal no és vàlid"
       ],
       "Name does not match": [
         "El nom no coincideix."
@@ -3398,7 +3401,7 @@
         "Carregueu només un arxiu."
       ],
       "Postal code is required": [
-        "Es requereix un codi postal"
+        "Cal un codi postal"
       ],
       "Process aborted": [
         "Procés anul·lat"
@@ -4310,8 +4313,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - el vostre centre de comandament per fer un seguiment de l'activitat dels usuaris, detectar amenaces i garantir l'acatament a tota la vostra organització."
+      " and other security features.": [
+        " i altres característiques de seguretat."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuari ten actualment accés als servidors compartits.",
@@ -5943,6 +5946,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Milloreu al pla Professional o a un de superior per poder desbloquejar"
+      ],
       "Upload your completed CSV file to create accounts": [
         "Pugeu el fitxer CSV completat per a crear comptes"
       ],
@@ -6110,9 +6116,6 @@
       ],
       "Why?": [
         "Per què?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Amb un pla Business o Enterprise, desbloquegeu"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Amb un pla Business o Enterprise, podeu comprar ${ boldDedicatedServers } per a la vostra organització i configurar ${ boldGateways } per a controlar quins usuaris poden accedir-hi."
@@ -8316,7 +8319,7 @@
         "Voleu passar a un pla amb menys funcions?"
       ],
       "Review subscription": [
-        "Revisa la subscripció"
+        "Reviseu la subscripció"
       ],
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"
@@ -9418,13 +9421,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Número d'empresa australià (ABN)"
       ],
       "Business Number": [
-        "Número de negoci"
+        "Número d'empresa"
       ],
       "EIN": [
-        "EIN"
+        "Número d’identificació fiscal (EIN)"
       ],
       "VAT number": [
         "Número d'IVA"
@@ -12500,8 +12503,8 @@
       "Video conferencing": [
         "Videoconferència"
       ],
-      "View organization events by upgrading to Business": [
-        "Veureu els esdeveniments de l'organització tot millorant al pla Business"
+      "View organization events by upgrading to Professional": [
+        "Podreu veure els esdeveniments de l'organització si milloreu al pla Professional"
       ],
       "Warning": [
         "Advertència"
