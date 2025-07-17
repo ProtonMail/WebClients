@@ -1339,6 +1339,12 @@
       ]
     },
     "Info": {
+      "\"${ payload.itemName }\" item was dismissed": [
+        "\"${ payload.itemName }\" ögesi yok sayıldı"
+      ],
+      "\"${ payload.itemName }\" update was dismissed": [
+        "\"${ payload.itemName }\" güncellemesi yok sayıldı"
+      ],
       "${ blockedEmailsCount } blocked": [
         "${ blockedEmailsCount } engellendi",
         "${ blockedEmailsCount } engellendi"
@@ -3882,6 +3888,9 @@
       ]
     },
     "PassOnboardingOffer": {
+      "${ plusTitle } Lifetime for ${ plusLifetimePrice }": [
+        "${ plusTitle } Lifetime ${ plusLifetimePrice } ile"
+      ],
       "${ price }/month": [
         "${ price }/ay"
       ]
