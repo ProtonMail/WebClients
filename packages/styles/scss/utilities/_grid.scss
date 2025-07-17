@@ -33,7 +33,7 @@
 $dummy-map: ();
 
 // Add `grid-cols` utilities to the map
-@each $columns in (2, 3, 4) {
+@each $columns in (2, 3, 4, 5) {
 	$dummy-map: map.merge(
 		$dummy-map,
 		(

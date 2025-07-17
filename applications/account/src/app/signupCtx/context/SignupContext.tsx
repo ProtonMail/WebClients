@@ -71,6 +71,7 @@ export interface AvailablePlan {
 }
 
 interface SignupContextType {
+    app: APP_NAMES | 'generic';
     domains: string[];
     /**
      * Sets the validated account data ready for the signup process.
@@ -662,6 +663,7 @@ export const InnerSignupContextProvider = ({
     }
 
     const value: SignupContextType = {
+        app,
         domains: domainsData.domains,
         login,
         submitAccountData: (accountData) => updateSignupData({ accountData }),

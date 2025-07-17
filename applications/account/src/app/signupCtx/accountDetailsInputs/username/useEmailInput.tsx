@@ -41,7 +41,7 @@ const useEmailInput = ({
 
     const [loadingChallenge, setLoadingChallenge] = useState(true);
 
-    const inputsWrapper = 'flex flex-column';
+    const inputsWrapper = 'relative flex flex-column';
 
     const { refs, state, errors, onValue, asyncStates, getAssistVisible } = accountDataContext;
 

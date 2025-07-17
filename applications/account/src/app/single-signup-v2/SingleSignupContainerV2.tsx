@@ -66,7 +66,7 @@ import mailReferPage from '../../pages/refer-a-friend';
 import { PublicThemeProvider, getPublicTheme } from '../containers/PublicThemeProvider';
 import type { Paths } from '../content/helper';
 import { cachedPlans, cachedPlansMap } from '../defaultPlans';
-import { getOptimisticDomains, isMailReferAFriendSignup, isPorkbunSignup } from '../signup/helper';
+import { getOptimisticDomains, isPorkbunSignup, isReferralSignup } from '../signup/helper';
 import type {
     InviteData,
     SessionData,
@@ -218,7 +218,7 @@ const SingleSignupContainerV2 = ({
         }
         return Audience.B2C;
     })();
-    const isMailRefer = isMailReferAFriendSignup(location);
+    const isMailRefer = isReferralSignup(location);
     const isPorkbun = isPorkbunSignup(location);
     useMetaTags(isMailRefer ? mailReferPage() : metaTags);
 

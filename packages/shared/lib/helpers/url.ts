@@ -360,7 +360,7 @@ export const getPrivacyPolicyURL = (app?: APP_NAMES) => {
     return getStaticURL('/legal/privacy');
 };
 
-export const getTermsURL = (app: APP_NAMES, locale?: string) => {
+export const getTermsURL = (app: APP_NAMES | undefined, locale?: string) => {
     if (app === APPS.PROTONWALLET) {
         return getStaticURL('/legal/wallet/terms');
     }

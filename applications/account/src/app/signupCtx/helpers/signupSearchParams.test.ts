@@ -1,6 +1,6 @@
 import { CYCLE } from '@proton/payments';
 
-import { getCycle } from './signupSearchParams';
+import { getCycle, getReferrerName } from './signupSearchParams';
 
 describe('getCycle', () => {
     it('should return undefined for empty search params', () => {
@@ -135,5 +135,41 @@ describe('getCycle', () => {
 
             expect(getCycle(searchParams, [key1])).toBe(CYCLE.MONTHLY);
         });
+    });
+});
+
+describe('getReferrerName', () => {
+    it('should return undefined for empty search params', () => {
+        const searchParams = new URLSearchParams();
+
+        expect(getReferrerName(searchParams)).toBeUndefined();
+    });
+
+    it('should return undefined for empty referrerName parameter', () => {
+        const key = 'referrerName';
+        const searchParams = new URLSearchParams(`${key}=`);
+
+        expect(getReferrerName(searchParams, key)).toBeUndefined();
+    });
+
+    it('should return the referrer name when present', () => {
+        const key = 'referrerName';
+        const searchParams = new URLSearchParams(`${key}=John Doe`);
+
+        expect(getReferrerName(searchParams, key)).toBe('John Doe');
+    });
+
+    it('should handle special characters in referrer name', () => {
+        const key = 'referrerName';
+        const searchParams = new URLSearchParams(`${key}=John%20Doe`);
+
+        expect(getReferrerName(searchParams, key)).toBe('John Doe');
+    });
+
+    it('should handle multiple parameters and return the correct one', () => {
+        const key = 'referrerName';
+        const searchParams = new URLSearchParams(`plan=plus&${key}=Jane Smith&currency=USD`);
+
+        expect(getReferrerName(searchParams, key)).toBe('Jane Smith');
     });
 });
