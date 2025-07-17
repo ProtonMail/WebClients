@@ -870,6 +870,9 @@
       "Upgrade to Business": [
         "Passer à l'abonnement Business"
       ],
+      "Upgrade to Professional": [
+        "Passer à l'abonnement Professionnel"
+      ],
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
       ],
@@ -1249,14 +1252,8 @@
       "During the trial period, you can have up to 10 users.": [
         "Vous pouvez ajouter jusqu’à 10 utilisateurs pendant la période d’essai."
       ],
-      "free for 14 days": [
-        "gratuit pendant 14 jours"
-      ],
       "on ${ formattedDate }": [
         "le ${ formattedDate }"
-      ],
-      "Try ${ selected } ${ freeFor14Days }": [
-        "Essayez ${ selected } ${ freeFor14Days }"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez, votre essai gratuit ne sera pas converti en abonnement payant, mais vous pourrez toujours profiter des avantages de l'abonnement jusqu'à la fin de la période d'essai. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
@@ -3410,7 +3407,7 @@
         "Veuillez saisir un code postal."
       ],
       "Please enter ZIP code": [
-        "Merci de saisir un code postal."
+        "Veuillez saisir un code postal."
       ],
       "Please generate keys before you try to change your password": [
         "Générez des clés avant d'essayer de changer votre mot de passe."
@@ -3428,10 +3425,10 @@
         "Sélectionnez au moins un utilisateur ou un groupe avant de continuer."
       ],
       "Please select billing country": [
-        "Veuillez sélectionner le pays pour la facturation."
+        "Veuillez sélectionner le pays de facturation."
       ],
       "Please select billing state": [
-        "Veuillez sélectionner l'état pour la facturation."
+        "Veuillez sélectionner l'état de facturation."
       ],
       "Please set a recovery email first": [
         "Définissez d'abord une adresse e-mail de récupération."
@@ -3458,7 +3455,7 @@
         "Veuillez importer un fichier uniquement."
       ],
       "Postal code is required": [
-        "Le code postal est requis"
+        "Le code postal est requis."
       ],
       "Process aborted": [
         "Le processus a été abandonné."
@@ -4370,8 +4367,8 @@
       ]
     },
     "Info": {
-      " - your command center for tracking user activity, detecting threats, and ensuring compliance across your organization.": [
-        " - Votre centre de contrôle pour le suivi de l’activité des utilisateurs, la détection des menaces et la garantie d'être en conformité au sein de votre organisation."
+      " and other security features.": [
+        " et d'autres fonctionnalités de sécurité."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } utilisateur a actuellement accès aux serveurs partagés.",
@@ -6003,6 +6000,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Passez à un abonnement Professional ou supérieur pour débloquer."
+      ],
       "Upload your completed CSV file to create accounts": [
         "Importez votre fichier CSV pour créer des comptes."
       ],
@@ -6170,9 +6170,6 @@
       ],
       "Why?": [
         "Pourquoi ?"
-      ],
-      "With a Business or Enterprise plan, unlock": [
-        "Avec un abonnement Business ou Enterprise, vous accédez à"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Avec l'abonnement Business ou Enterprise, vous pouvez acheter des ${ boldDedicatedServers } pour votre organisation et configurer des ${ boldGateways } pour contrôler les utilisateurs y ayant accès."
@@ -6347,7 +6344,7 @@
         "Votre mot de passe ${ BRAND_NAME }"
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Votre abonnement ${ plan } sera remplacé par l'abonnement à vie ${ PASS_SHORT_APP_NAME }. Le solde restant sera ajouté à votre compte. L'abonnement à vie ${ PASS_SHORT_APP_NAME } n'a pas de prix de renouvellement ; il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
+        "Votre abonnement ${ plan } sera remplacé par l'abonnement ${ PASS_SHORT_APP_NAME } Lifetime. Le solde restant sera ajouté à votre compte. L'abonnement ${ PASS_SHORT_APP_NAME } Lifetime n'a pas de prix de renouvellement : il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vos comptes ${ VPN_APP_NAME } et ${ MAIL_APP_NAME } sont liés. Pour les supprimer tous les deux, nous vous invitons à vous connecter à ${ loginLink } et à y supprimer votre compte."
@@ -8376,7 +8373,7 @@
         "Passer à un abonnement inférieur ?"
       ],
       "Review subscription": [
-        "Révisez l'abonnement"
+        "Vérifier l'abonnement"
       ],
       "Review subscription and pay": [
         "Vérifier l'abonnement et payer"
@@ -9417,7 +9414,7 @@
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
       ],
       "This number will be shown on all future invoices": [
-        "Ce numéro sera indiqué sur toutes les factures futures."
+        "Ce numéro sera indiqué sur toutes les prochaines factures."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Ce moyen de paiement deviendra votre nouveau moyen par défaut pour tous les futurs renouvellements."
@@ -9478,13 +9475,13 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Numéro d’entreprise australien (ABN)"
       ],
       "Business Number": [
         "Numéro d'entreprise"
       ],
       "EIN": [
-        "EIN"
+        "Numéro d'identification fiscale (EIN)"
       ],
       "VAT number": [
         "Numéro de TVA"
@@ -12565,8 +12562,8 @@
       "Video conferencing": [
         "Vidéoconférence"
       ],
-      "View organization events by upgrading to Business": [
-        "Affichez les événements de votre organisation en passant à un abonnement Business."
+      "View organization events by upgrading to Professional": [
+        "Affichez les événements de votre organisation en passant à un abonnement Professional."
       ],
       "Warning": [
         "Attention"
