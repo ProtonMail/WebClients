@@ -26,11 +26,12 @@ export default createRequestSaga({
         const experimental: boolean = yield select(selectFeatureFlag(PassFeature.PassExperimentalWebsiteRules));
         const url = experimental ? WEBSITE_RULES_EXPERIMENTAL_URL : WEBSITE_RULES_URL;
 
-        const response: Maybe<Response> = yield fetchIfModified(url, lastRequestedAt);
-        if (response) {
-            const rules = yield response.json();
-            if (validateRules(rules)) options.publish?.({ type: 'website-rules::resolved', data: rules });
-        }
+        yield fetchIfModified(url, lastRequestedAt).then(async (response) => {
+            if (response) {
+                const rules = await response.json();
+                if (validateRules(rules)) options.publish?.({ type: 'website-rules::resolved', data: rules });
+            }
+        });
 
         return true;
     },
