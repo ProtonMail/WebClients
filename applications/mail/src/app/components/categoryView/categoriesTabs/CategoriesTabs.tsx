@@ -6,10 +6,11 @@ import './CategoriesTabs.scss';
 
 interface Props {
     size?: TabSize;
+    labelID: string;
 }
 
 // In the future, we will only display the categories the user has enabled
-export const CategoriesTabs = ({ size = 'default' }: Props) => {
+export const CategoriesTabs = ({ size = 'default', labelID }: Props) => {
     return (
         <div
             className="categories-tabs flex flex-row flex-nowrap h-fit-content border-bottom border-weak"
@@ -22,9 +23,7 @@ export const CategoriesTabs = ({ size = 'default' }: Props) => {
                     size={size}
                     icon={category.icon}
                     colorShade={category.colorShade}
-                    count={0}
-                    active={false}
-                    onClick={() => {}}
+                    active={labelID === category.id}
                 />
             ))}
         </div>

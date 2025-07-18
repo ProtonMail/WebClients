@@ -59,28 +59,8 @@ $category-colors: (
 			visibility: hidden;
 		}
 
-		@each $name, $colors in $category-colors {
-			&.tab--#{$name} {
-				&--active {
-					border-color: map-get($colors, base);
-
-					svg {
-						color: map-get($colors, base);
-					}
-				}
-
-				.tag-count {
-					background-color: map-get($colors, bg);
-					color: map-get($colors, text);
-					border-radius: rem(6);
-				}
-
-				&:hover {
-					svg {
-						color: map-get($colors, base);
-					}
-				}
-			}
+		.tag-count {
+			border-radius: rem(6);
 		}
 	}
 }
