@@ -1,6 +1,7 @@
 import { Icon, useFolderColor } from '@proton/components';
-import type { FolderInfo } from '@proton/mail/store/labels/helpers';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+
+import type { FolderInfo } from '../../helpers/labels';
 
 interface Props {
     folderInfo: FolderInfo;

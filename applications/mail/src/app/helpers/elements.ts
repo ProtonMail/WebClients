@@ -1,7 +1,7 @@
 import { formatRelative, fromUnixTime } from 'date-fns';
 import type { Location } from 'history';
 
-import { isCustomLabel } from '@proton/mail/store/labels/helpers';
+import { isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
