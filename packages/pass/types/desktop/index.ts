@@ -5,6 +5,7 @@ export * from './autotype';
 
 export type ContextBridgeApi = {
     writeToClipboard: (text: string) => Promise<void>;
+    readFromClipboard: () => Promise<string>;
     navigate: (href: string) => Promise<void>;
     canCheckPresence: () => Promise<boolean>;
     checkPresence: (reason?: string) => Promise<void>;
@@ -13,8 +14,6 @@ export type ContextBridgeApi = {
     deleteSecret: (key: string) => Promise<void>;
     getInstallInfo: () => Promise<MaybeNull<string>>;
     setInstallSourceReported: () => Promise<void>;
-    setClipboardConfig: (config: ClipboardStoreProperties) => Promise<void>;
-    getClipboardConfig: () => Promise<Maybe<ClipboardStoreProperties>>;
     getTheme: () => Promise<Maybe<DesktopTheme>>;
     setTheme: (theme: DesktopTheme) => Promise<void>;
     autotype: ({ fields, enterAtTheEnd }: AutotypeProperties) => Promise<void>;

@@ -190,9 +190,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     if (DESKTOP_BUILD) {
                         /** Electron might need to apply or store certain settings, forward them */
                         const desktopBridge = window.ctxBridge;
-                        const { clipboard, theme } = update;
+                        const { theme } = update;
                         if (theme) desktopBridge?.setTheme(themeOptionToDesktop[theme]).catch(noop);
-                        if (clipboard?.timeoutMs) desktopBridge?.setClipboardConfig(clipboard).catch(noop);
                     }
                 },
 
