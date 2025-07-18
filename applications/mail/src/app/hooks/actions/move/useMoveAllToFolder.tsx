@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 
 import { useApi, useModalTwo, useNotifications } from '@proton/components';
 import { useFolders, useGetLabels, useLabels } from '@proton/mail';
-import { isCustomLabel } from '@proton/mail/store/labels/helpers';
+import { isCustomLabel } from '@proton/mail/helpers/location';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';

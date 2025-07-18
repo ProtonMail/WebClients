@@ -21,7 +21,7 @@ import {
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { useFolders } from '@proton/mail';
-import { getFolderName } from '@proton/mail/store/labels/helpers';
+import { getCurrentFolderID } from '@proton/mail/helpers/location';
 import type {
     MessageState,
     MessageStateWithData,
@@ -42,7 +42,7 @@ import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubs
 import { formatFileNameDate } from '../../../helpers/date';
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
 import { canSetExpiration, getExpirationTime } from '../../../helpers/expiration';
-import { getCurrentFolderID } from '../../../helpers/labels';
+import { getFolderName } from '../../../helpers/labels';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import type { MessageViewIcons } from '../../../helpers/message/icon';
 import { exportBlob } from '../../../helpers/message/messageExport';

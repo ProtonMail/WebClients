@@ -8,7 +8,7 @@ import type { ContactEditProps } from '@proton/components';
 import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import { getHumanLabelID } from '@proton/mail/store/labels/helpers';
+import { getHumanLabelID } from '@proton/mail/helpers/location';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';

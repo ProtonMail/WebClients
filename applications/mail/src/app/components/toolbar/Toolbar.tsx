@@ -2,11 +2,11 @@ import type { Ref } from 'react';
 import { memo } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { isLabelIDNewsletterSubscription } from '@proton/mail/store/labels/helpers';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
+import { isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import type { Props as ListSettingsProps } from '../list/ListSettings';
 import type { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import SelectAll from './SelectAll';
