@@ -828,28 +828,6 @@ export enum USER_STATUS {
     SUPER_ADMIN = 5,
 }
 
-export enum MAILBOX_IDENTIFIERS {
-    inbox = '0',
-    allDrafts = '1',
-    allSent = '2',
-    trash = '3',
-    spam = '4',
-    allmail = '5',
-    starred = '10',
-    archive = '6',
-    sent = '7',
-    drafts = '8',
-    outbox = '9',
-    search = 'search',
-    label = 'label',
-}
-
-export enum INCOMING_DEFAULTS_LOCATION {
-    INBOX = Number(MAILBOX_IDENTIFIERS.inbox),
-    SPAM = Number(MAILBOX_IDENTIFIERS.spam),
-    BLOCKED = 14,
-}
-
 /* eslint  no-useless-escape: "off" */
 export const REGEX_EMAIL =
     /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
@@ -945,6 +923,12 @@ export const LINKED_LABEL_IDS: {
     [MAILBOX_LABEL_IDS.SENT]: MAILBOX_LABEL_IDS.ALL_SENT,
     [MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]: MAILBOX_LABEL_IDS.ALL_MAIL,
 };
+
+export enum INCOMING_DEFAULTS_LOCATION {
+    INBOX = Number(MAILBOX_LABEL_IDS.INBOX),
+    SPAM = Number(MAILBOX_LABEL_IDS.SPAM),
+    BLOCKED = 14,
+}
 
 export enum AutoReplyDuration {
     FIXED = 0,
