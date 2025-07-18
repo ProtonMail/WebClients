@@ -144,6 +144,7 @@ export function normalizeBillingAddress(billingAddress: BillingAddress, hasZipCo
     if (!billingAddress.ZipCode) {
         return billingAddress;
     }
+    // If the feature flag is off, delete the ZipCode completely to revert to the pre-zip code feature behavior
     if (!hasZipCodeValidation) {
         const copy = {
             ...billingAddress,
