@@ -2,6 +2,7 @@ import { createMessageBroker } from 'proton-pass-extension/lib/message/message-b
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import browser from '@proton/pass/lib/globals/browser';
+import { logger } from '@proton/pass/utils/logger';
 
 // Use the offscreen document's `document` interface to write a new value to the system clipboard.
 //
@@ -28,23 +29,17 @@ const legacyClipboardWrite = (content: string) => {
 const MessageBroker = createMessageBroker({
     allowExternal: [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ, WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE],
     strictOriginCheck: [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ, WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE],
-    onError: (err) => {
-        console.warn('broker on error', err);
-    },
-    onDisconnect: (...args) => {
-        console.warn('broker on disconnect', args);
-    },
+    onError: () => logger.error('Offscreen broker error'),
+    onDisconnect: () => logger.debug('Offscreen broker disconnect'),
 });
 
 MessageBroker.registerMessage(WorkerMessageType.CLIPBOARD_OFFSCREEN_READ, async () => {
     const content = legacyClipboardRead();
-    console.warn('CLIPBOARD_OFFSCREEN_READ', content);
     return { content };
 });
 
 MessageBroker.registerMessage(WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, async ({ payload }) => {
     legacyClipboardWrite(payload.content);
-    console.warn('CLIPBOARD_OFFSCREEN_WRITE', payload);
     return true;
 });
 
