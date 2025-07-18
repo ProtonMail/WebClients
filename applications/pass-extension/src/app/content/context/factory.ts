@@ -12,6 +12,7 @@ import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/red
 import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
+import noop from '@proton/utils/noop';
 
 import { CSContext } from './context';
 import type { CSContextState, ContentScriptContext } from './types';
@@ -51,11 +52,16 @@ export const createContentScriptContext = (options: {
             autosave: createAutosaveService(),
             detector: createDetectorService(),
             formManager: createFormManager({
-                onDetection: (forms) => {
+                onDetection: async (forms) => {
                     /* attach or detach dropdown based on the detection results */
                     const didDetect = forms.length > 0;
                     if (didDetect) context.service.iframe.attachDropdown(document.body);
                     else context.service.iframe.dropdown?.destroy();
+
+                    /* Always prompt for OTP autofill before autosave. */
+                    await context.service.autofill.sync().catch(noop);
+                    const prompted = await context.service.autofill.promptOTP();
+                    await (!prompted && context.service.autosave.reconciliate());
                 },
             }),
             iframe: createIFrameService(options.elements),
