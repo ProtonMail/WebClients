@@ -1,4 +1,4 @@
-import { isCustomLabelOrFolder } from '@proton/mail/store/labels/helpers';
+import { isCustomLabelOrFolder } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft, isSentAutoReply } from '@proton/shared/lib/mail/messages';

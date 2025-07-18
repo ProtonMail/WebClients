@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 
 import { useItemsSelection } from '@proton/components';
 import { useFolders } from '@proton/mail';
-import { convertCustomViewLabelsToAlmostAllMail, getFolderName } from '@proton/mail/store/labels/helpers';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
@@ -22,6 +21,7 @@ import { useMailECRTMetric } from 'proton-mail/metrics/useMailECRTMetric';
 import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
+import { convertCustomViewLabelsToAlmostAllMail, getFolderName } from '../../helpers/labels';
 import { useMailboxLayoutProvider } from '../components/MailboxLayoutContext';
 import type { RouterNavigation } from '../interface';
 

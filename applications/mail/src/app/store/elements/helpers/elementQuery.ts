@@ -1,4 +1,3 @@
-import { convertCustomViewLabelsToAlmostAllMail } from '@proton/mail/store/labels/helpers';
 import { getConversation, queryConversations } from '@proton/shared/lib/api/conversations';
 import type { MailboxItemsQueryParams } from '@proton/shared/lib/api/mailbox';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
@@ -8,6 +7,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import range from '@proton/utils/range';
 
+import { convertCustomViewLabelsToAlmostAllMail } from '../../../helpers/labels';
 import type { Element } from '../../../models/element';
 import type { MailState } from '../../store';
 import { pollTaskRunning } from '../elementsActions';
