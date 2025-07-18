@@ -1,4 +1,4 @@
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 export const MESSAGE_FLAGS = {
     FLAG_RECEIVED: Math.pow(2, 0), // whether a message is received
@@ -92,6 +92,14 @@ export const LABEL_IDS_TO_HUMAN = {
     [MAILBOX_LABEL_IDS.OUTBOX]: 'outbox',
     [MAILBOX_LABEL_IDS.SCHEDULED]: 'scheduled',
     [MAILBOX_LABEL_IDS.SNOOZED]: 'snoozed',
+    // The order is based on the order of the categories in the UI not the labelIDs
+    [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]: 'inbox',
+    [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]: 'social',
+    [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]: 'promotions',
+    [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: 'newsletters',
+    [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: 'transactions',
+    [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: 'updates',
+    [MAILBOX_LABEL_IDS.CATEGORY_FORUMS]: 'forums',
 };
 
 export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc, [key, value]) => {
@@ -108,6 +116,12 @@ export const LABELS_UNMODIFIABLE_BY_USER = [
     MAILBOX_LABEL_IDS.SCHEDULED,
     MAILBOX_LABEL_IDS.SNOOZED,
 ];
+
+export const CATEGORY_LABELS_TO_ROUTE_SET = new Set(
+    [...CATEGORY_LABEL_IDS_SET].map((id) => {
+        return `/${LABEL_IDS_TO_HUMAN[id]}`;
+    })
+);
 
 // List of location where messages are marked automatically as read after moving by the API
 export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];

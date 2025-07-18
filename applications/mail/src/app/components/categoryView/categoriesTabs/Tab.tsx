@@ -1,19 +1,14 @@
-import { Icon, type IconName } from '@proton/components';
+import { useMemo } from 'react';
+import { NavLink } from 'react-router-dom';
+
+import { Icon, type IconName, useTheme } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import type { CATEGORIES_COLOR_SHADES, CATEGORY_LABEL_IDS } from '../categoriesConstants';
+import type { CATEGORIES_COLOR_SHADES } from '../categoriesConstants';
 import { getLabelFromCategoryId } from '../categoriesStringHelpers';
 import type { TabSize } from './tabsInterface';
-
-interface Props {
-    id: CATEGORY_LABEL_IDS;
-    size?: TabSize;
-    count: number;
-    icon: IconName;
-    active: boolean;
-    colorShade: CATEGORIES_COLOR_SHADES;
-    onClick: () => void;
-}
 
 interface LayoutVariables {
     container: string;
@@ -35,33 +30,61 @@ const layoutVariables: Record<TabSize, LayoutVariables> = {
     },
 };
 
-export const Tab = ({ id, size = 'default', count, icon, active, colorShade, onClick }: Props) => {
-    // The count is not implemented yet
-    const showCount = active && count > 0 && false;
+interface Props {
+    id: MAILBOX_LABEL_IDS;
+    size?: TabSize;
+    count?: number;
+    icon: IconName;
+    active: boolean;
+    colorShade: CATEGORIES_COLOR_SHADES;
+}
 
-    const handleClick = () => {
-        onClick();
-    };
+export const Tab = ({ id, size = 'default', count, icon, active, colorShade }: Props) => {
+    const theme = useTheme();
+
+    const classes = useMemo(() => {
+        return {
+            container: layoutVariables[size].container,
+            label: layoutVariables[size].label,
+        };
+    }, [size]);
+
+    const shadeClasses = useMemo(() => {
+        return {
+            border: theme.information.dark ? `border-${colorShade}-400` : `border-${colorShade}-500`,
+            text: theme.information.dark ? `color-${colorShade}-400` : `color-${colorShade}-500`,
+            background: theme.information.dark ? `bg-${colorShade}-900` : `bg-${colorShade}-50`,
+        };
+    }, [colorShade, theme.information.dark]);
 
     return (
-        <button
-            onClick={handleClick}
+        <NavLink
+            to={LABEL_IDS_TO_HUMAN[id] || LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]}
             className={clsx(
-                'tab-container flex flex-nowrap items-center border-bottom',
-                layoutVariables[size].container,
-                `tab--${colorShade}`,
-                active && `tab--${colorShade}--active text-semibold`,
-                !active && 'color-hint border-transparent'
+                classes.container,
+                `tab-container flex flex-nowrap items-center text-no-decoration border-bottom hover:${shadeClasses.text}`,
+                active
+                    ? `text-semibold color-norm hover:color-norm ${shadeClasses.border}`
+                    : 'color-hint border-transparent hover:color-weak'
             )}
             role="tab"
             aria-selected={active}
             aria-label={getLabelFromCategoryId(id)}
+            data-testid={`category-tab-${id}`}
         >
-            <Icon className="shrink-0" name={icon} />
-            <span title={getLabelFromCategoryId(id)} className={clsx('tag-label', layoutVariables[size].label)}>
+            <Icon className={clsx('shrink-0', active && shadeClasses.text)} name={icon} />
+            <span
+                title={getLabelFromCategoryId(id)}
+                className={clsx('tag-label', classes.label, active ? 'color-norm' : 'color-weak')}
+            >
                 {getLabelFromCategoryId(id)}
             </span>
-            {showCount && <span className="tag-count px-1.5 py-0.5 text-sm">{count}</span>}
-        </button>
+            {/* TODO: clarify how the count is supposed to work */}
+            {count && active && (
+                <span className={`tag-count px-1.5 py-0.5 text-sm ${shadeClasses.background} ${shadeClasses.text}`}>
+                    {count}
+                </span>
+            )}
+        </NavLink>
     );
 };
