@@ -58,6 +58,10 @@ const activeSubscription: NewsletterSubscription = {
     UnsubscribeMethods: {
         HttpClient: '',
     },
+    Unsubscribed: false,
+    Spam: false,
+    Hidden: false,
+    DiscussionsGroup: false,
 };
 
 describe('Newsletter subscription reducers', () => {
@@ -1431,6 +1435,58 @@ describe('Newsletter subscription reducers', () => {
                 expect(state.value?.tabs.unsubscribe.ids).toEqual([activeSubscription.ID, 'some-ID-1', 'some-ID-2']);
                 expect(state.value?.tabs.unsubscribe.totalCount).toEqual(3);
                 expect(state.value?.byId[activeSubscription.ID].UnsubscribedTime).toEqual(100);
+            });
+
+            it('should not create hidden, spam and discussions group subscriptions', () => {
+                const spamSubscriptionId = 'spam-subscription-id';
+                const hiddenSubscriptionId = 'hidden-subscription-id';
+                const discussionsGroupId = 'discussions-group-subscription-id';
+
+                // Initially the subscription doesn't exist in the store
+                state.value!.byId = {};
+                state.value!.tabs.active.ids = [];
+                state.value!.tabs.active.totalCount = 0;
+
+                handleServerEvent(state, {
+                    type: 'server event',
+                    payload: {
+                        NewsletterSubscriptions: [
+                            {
+                                Action: EVENT_ACTIONS.CREATE,
+                                NewsletterSubscription: {
+                                    Hidden: true,
+                                    ID: hiddenSubscriptionId,
+                                } as NewsletterSubscription,
+                                ID: hiddenSubscriptionId,
+                            },
+                            {
+                                Action: EVENT_ACTIONS.CREATE,
+                                NewsletterSubscription: {
+                                    Spam: true,
+                                    ID: spamSubscriptionId,
+                                } as NewsletterSubscription,
+                                ID: spamSubscriptionId,
+                            },
+                            {
+                                Action: EVENT_ACTIONS.CREATE,
+                                NewsletterSubscription: {
+                                    DiscussionsGroup: true,
+                                    ID: discussionsGroupId,
+                                } as NewsletterSubscription,
+                                ID: discussionsGroupId,
+                            },
+                        ],
+                        More: 0,
+                        EventID: 'test-event-id',
+                    },
+                });
+
+                // Verify the subscription was not created
+                expect(state.value?.byId[hiddenSubscriptionId]).toBeUndefined();
+                expect(state.value?.byId[spamSubscriptionId]).toBeUndefined();
+                expect(state.value?.byId[discussionsGroupId]).toBeUndefined();
+                expect(state.value?.tabs.active.ids).toEqual([]);
+                expect(state.value?.tabs.active.totalCount).toBe(0);
             });
         });
 

@@ -25,6 +25,10 @@ export const activeSubscription: NewsletterSubscription = {
         HttpClient: '',
         OneClick: 'OneClick',
     },
+    Unsubscribed: false,
+    Spam: false,
+    Hidden: false,
+    DiscussionsGroup: false,
 };
 
 export const unsubscribedSubscription: NewsletterSubscription = {
