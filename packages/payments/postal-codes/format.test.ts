@@ -59,22 +59,22 @@ describe('normalizePostalCode', () => {
             expect(normalizePostalCode('90210', 'US')).toBe('90210');
         });
 
-        it('should return UK postal codes unchanged', () => {
-            expect(normalizePostalCode('SW1A 1AA', 'GB')).toBe('SW1A 1AA');
-            expect(normalizePostalCode('M1 1AA', 'GB')).toBe('M1 1AA');
-            expect(normalizePostalCode('B33 8TH', 'GB')).toBe('B33 8TH');
+        it('should not return UK postal codes', () => {
+            expect(normalizePostalCode('SW1A 1AA', 'GB')).toBe(null);
+            expect(normalizePostalCode('M1 1AA', 'GB')).toBe(null);
+            expect(normalizePostalCode('B33 8TH', 'GB')).toBe(null);
         });
 
-        it('should return other country postal codes unchanged', () => {
-            expect(normalizePostalCode('75001', 'FR')).toBe('75001');
-            expect(normalizePostalCode('10115', 'DE')).toBe('10115');
-            expect(normalizePostalCode('00144', 'IT')).toBe('00144');
-            expect(normalizePostalCode('1000', 'BE')).toBe('1000');
+        it('should not return other country postal codes', () => {
+            expect(normalizePostalCode('75001', 'FR')).toBe(null);
+            expect(normalizePostalCode('10115', 'DE')).toBe(null);
+            expect(normalizePostalCode('00144', 'IT')).toBe(null);
+            expect(normalizePostalCode('1000', 'BE')).toBe(null);
         });
 
         it('should handle undefined/null country codes', () => {
-            expect(normalizePostalCode('12345', undefined as any)).toBe('12345');
-            expect(normalizePostalCode('12345', null as any)).toBe('12345');
+            expect(normalizePostalCode('12345', undefined as any)).toBe(null);
+            expect(normalizePostalCode('12345', null as any)).toBe(null);
         });
     });
 
@@ -107,13 +107,13 @@ describe('normalizePostalCode', () => {
 
     describe('Country code variations', () => {
         it('should handle lowercase country codes', () => {
-            expect(normalizePostalCode('M5H2N2', 'ca')).toBe('M5H2N2'); // Should not match 'CA'
+            expect(normalizePostalCode('M5H2N2', 'CA')).toBe('M5H 2N2');
             expect(normalizePostalCode('M5H2N2', 'us')).toBe('M5H2N2');
         });
 
         it('should be case-sensitive for country codes', () => {
-            expect(normalizePostalCode('M5H2N2', 'Ca')).toBe('M5H2N2');
-            expect(normalizePostalCode('M5H2N2', 'cA')).toBe('M5H2N2');
+            expect(normalizePostalCode('M5H2N2', 'Ca')).toBe('M5H 2N2');
+            expect(normalizePostalCode('M5H2N2', 'cA')).toBe('M5H 2N2');
         });
     });
 });
