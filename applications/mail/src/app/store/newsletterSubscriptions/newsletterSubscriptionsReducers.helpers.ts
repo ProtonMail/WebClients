@@ -115,6 +115,15 @@ export const handleCreateServerEvent = (
         return;
     }
 
+    // We don't want to create hidden, spam or discussions group subscriptions
+    if (
+        update.NewsletterSubscription.Hidden ||
+        update.NewsletterSubscription.Spam ||
+        update.NewsletterSubscription.DiscussionsGroup
+    ) {
+        return;
+    }
+
     if (update.NewsletterSubscription.UnsubscribedTime) {
         stateValue.tabs.unsubscribe.ids = moveIdToTop(stateValue.tabs.unsubscribe.ids, update.ID);
         stateValue.tabs.unsubscribe.totalCount = safeIncreaseCount(stateValue.tabs.unsubscribe.totalCount);
