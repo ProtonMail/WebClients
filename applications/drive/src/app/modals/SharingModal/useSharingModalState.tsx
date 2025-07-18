@@ -7,6 +7,7 @@ import type { ModalStateProps } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import {
     MemberRole,
+    NodeType,
     type ShareNodeSettings,
     type ShareResult,
     generateNodeUid,
@@ -211,10 +212,15 @@ export const useSharingModalState = ({
                 }
                 if (nodeInfo.ok) {
                     setName(nodeInfo.value.name);
-                    if (nodeInfo.value.mediaType && isProtonDocsDocument(nodeInfo.value.mediaType)) {
+                    if (
+                        nodeInfo.value.mediaType &&
+                        isProtonDocsDocument(nodeInfo.value.mediaType) &&
+                        nodeInfo.value.type !== NodeType.Album
+                    ) {
                         setIsPublicLinkEnabled(isDocsPublicSharingEnabled);
+                    } else {
+                        setIsPublicLinkEnabled(true);
                     }
-                    setIsPublicLinkEnabled(true);
                 }
             } catch (e) {
                 handleError(e, c('Error').t`Failed to fetch node`, { nodeUid });
