@@ -14,7 +14,7 @@ import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { isVisible } from '@proton/pass/fathom';
+import { isShadowRoot, isVisible } from '@proton/pass/fathom';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { type Maybe, type MaybeNull } from '@proton/pass/types';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
@@ -52,7 +52,14 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
             if (options.refocus) field?.focus();
             else if (!isActiveElement(fieldRef.current?.element)) fieldRef.current?.detachIcon();
         },
-        backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
+        backdropExclude: () => {
+            if (!fieldRef.current) return [];
+
+            const rootNode = fieldRef.current.element.getRootNode();
+            const host = isShadowRoot(rootNode) ? rootNode.host : null;
+
+            return [fieldRef.current.icon?.element, fieldRef.current.element, host].filter(truthy);
+        },
         position: (root: HTMLElement) => {
             const field = fieldRef.current;
             if (!field) return { top: 0, left: 0 };
@@ -162,17 +169,16 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * strict (eg: ticketmaster.com) where the dropdown can never get a
      * full focus. In this case, blur the anchor field and force the active
      * element to blur to ensure we're in an "unfocused state". */
-    iframe.registerMessageHandler(IFramePortMessageType.DROPDOWN_BLUR_FIELD, () => {
-        requestAnimationFrame(() => {
-            if (document.activeElement !== popover.root.customElement) {
-                fieldRef.current?.element.blur();
+    iframe.registerMessageHandler(IFramePortMessageType.DROPDOWN_FOCUS_CHECK, () => {
+        if (document.activeElement !== popover.root.customElement) {
+            fieldRef.current?.element.blur();
 
-                setTimeout(() => {
-                    const { activeElement } = document;
-                    if (activeElement && isHTMLElement(activeElement)) activeElement.blur();
-                }, 50);
-            }
-        });
+            setTimeout(() => {
+                const { activeElement } = document;
+                if (activeElement && isHTMLElement(activeElement)) activeElement.blur();
+                iframe.sendPortMessage({ type: IFramePortMessageType.DROPDOWN_FOCUS });
+            }, 50);
+        }
     });
 
     /* On a login autofill request - resolve the credentials via
