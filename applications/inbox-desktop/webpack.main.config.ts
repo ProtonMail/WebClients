@@ -1,17 +1,8 @@
 import { DefinePlugin, type Configuration } from "webpack";
 import { rules } from "./webpack.rules";
-import { readFileSync } from "node:fs";
-import { z } from "zod";
-import { resolve } from "node:path";
 
-const AppConfigSchema = z.object({
-    appConfig: z.object({
-        sentryDesktop: z.string(),
-    }),
-});
+import appConfig from "../mail/appConfig";
 
-const APP_CONFIG_PATH = resolve(__dirname, "../../packages/config/mail/appConfig.json");
-const { appConfig } = AppConfigSchema.parse(JSON.parse(readFileSync(APP_CONFIG_PATH, "utf8")));
 const sentryDSN = appConfig.sentryDesktop;
 
 export const mainConfig: Configuration = {

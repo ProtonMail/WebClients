@@ -16,6 +16,7 @@ packages/**/.turbo
 tests/**/.turbo
 config.ts
 !applications/account/src/app/config.ts
+!applications/admin/src/app/config.ts
 !applications/calendar/src/app/config.ts
 !applications/mail/src/app/config.ts
 tsconfig.tsbuildinfo
