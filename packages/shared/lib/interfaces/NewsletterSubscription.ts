@@ -24,6 +24,11 @@ export interface NewsletterSubscription {
         Last90Days: number;
     };
     UnsubscribeMethods: UnsubscribeMethods;
+    // Flags
+    Unsubscribed: boolean;
+    Spam: boolean;
+    Hidden: boolean;
+    DiscussionsGroup: boolean;
 }
 
 export interface POSTSubscriptionAPIResponse {
