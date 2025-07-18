@@ -8,9 +8,7 @@ export const createClipboardService = () => {
     const service = createCoreClipboardService(clipboardWorker);
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.CLIPBOARD_START_CLEAR_TIMEOUT, async ({ payload }) => {
-        console.warn('writeToClipboard on worker side', payload);
-
-        await service.startClearTimeout(payload.timeoutMs, payload.content);
+        service.startClearTimeout(payload.timeoutMs, payload.content);
         return true;
     });
 

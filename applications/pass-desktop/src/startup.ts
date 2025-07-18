@@ -1,6 +1,6 @@
 import { setupIpcHandlers as autotype } from './lib/autotype';
 import biometrics from './lib/biometrics';
-import { setupIpcHandlers as clipboard } from './lib/clipboard';
+import { setupIpcHandlers as clipboard } from './lib/clipboard.ipc';
 import { setupIpcHandlers as info } from './lib/install-info';
 import { setupIpcHandlers as navigation } from './lib/navigation';
 import { setupIpcHandlers as theming } from './lib/theming';

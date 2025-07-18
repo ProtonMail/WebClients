@@ -6,7 +6,6 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { ClipboardPermissionModal } from '@proton/pass/components/Settings/Clipboard/ClipboardSPermissionModal';
 import { ClipboardSettingsModal } from '@proton/pass/components/Settings/Clipboard/ClipboardSettingsModal';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { settingsEditIntent } from '@proton/pass/store/actions';
@@ -14,7 +13,7 @@ import { selectClipboardTTL } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-export type ClipboardAction = 'settings' | 'permission';
+export type ClipboardAction = 'settings';
 
 export type ClipboardContextValue = {
     modal: MaybeNull<ClipboardAction>;
@@ -35,7 +34,6 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     const clipboardTTL = useSelector(selectClipboardTTL);
 
     const [cachedCopy, setCachedCopy] = useState<MaybeNull<string>>(null);
-    const [cachedSetting, setCachedSetting] = useState<MaybeNull<number>>(null);
     const [modal, setModal] = useState<MaybeNull<ClipboardAction>>(null);
 
     const handleActualCopy = async (value: string) => {
@@ -49,15 +47,10 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
         }
     };
 
-    const handleActualSettings = async (timeoutMs: number, silent = false) => {
-        console.warn('handleActualSettings', { timeoutMs, silent });
-        dispatch(settingsEditIntent('behaviors', { clipboard: { timeoutMs } }, silent));
-    };
-
     const onCopyToClipboard = async (value: string) => {
         console.warn('onCopyToClipboard', { clipboardTTL });
 
-        if (clipboardTTL === undefined) {
+        if (BUILD_TARGET !== 'web' && clipboardTTL === undefined) {
             setCachedCopy(value);
             setModal('settings');
             return;
@@ -67,40 +60,14 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     };
 
     const onSettingsChange = async (timeoutMs: number, silent = false) => {
-        console.warn('onSettingsChange', { BUILD_TARGET, timeoutMs });
-
-        if (BUILD_TARGET === 'web' && timeoutMs !== -1) {
-            try {
-                const result = await navigator.permissions.query({ name: 'clipboard-read' });
-                if (result.state === 'prompt') {
-                    setCachedSetting(timeoutMs);
-                    setModal('permission');
-                    return;
-                }
-            } catch {
-                // noop
-            }
-        }
-
-        await handleActualSettings(timeoutMs, silent);
+        console.warn('onSettingsChange', { timeoutMs, silent });
+        dispatch(settingsEditIntent('behaviors', { clipboard: { timeoutMs } }, silent));
     };
 
     const onClose = async () => {
-        console.warn('onClose', { cachedCopy, cachedSetting });
+        console.warn('onClose', { cachedCopy });
 
         setModal(null);
-
-        if (cachedSetting !== null) {
-            setCachedSetting(null);
-            await handleActualSettings(cachedSetting, false);
-
-            // Special flow where we set the settings on a hanging copy
-            // In this case, we can go back to settings modal where we come from
-            if (cachedCopy !== null) {
-                setModal('settings');
-                return;
-            }
-        }
 
         if (cachedCopy !== null) {
             setCachedCopy(null);
@@ -121,7 +88,6 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
         <ClipboardContext.Provider value={contextValue}>
             {children}
             {modal === 'settings' ? <ClipboardSettingsModal onClose={onClose} /> : null}
-            {modal === 'permission' ? <ClipboardPermissionModal onClose={onClose} /> : null}
         </ClipboardContext.Provider>
     );
 };
