@@ -35,6 +35,7 @@ interface Props {
     isZoomIntegrationEnabled: boolean;
     isSharedServerFeatureEnabled: boolean;
     isPasswordPolicyEnabled: boolean;
+    isSsoForPbsEnabled: boolean;
     isRetentionPoliciesEnabled: boolean;
 }
 
@@ -53,6 +54,7 @@ export const getOrganizationAppRoutes = ({
     isZoomIntegrationEnabled,
     isSharedServerFeatureEnabled,
     isPasswordPolicyEnabled,
+    isSsoForPbsEnabled,
     isRetentionPoliciesEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && user.isSelf;
@@ -81,8 +83,7 @@ export const getOrganizationAppRoutes = ({
         canHaveOrganization &&
         (hasOrganizationKey || hasOrganization);
 
-    const canShowB2BActivityMonitorEvents =
-        (hasOrganizationKey || hasOrganization) && isAdmin;
+    const canShowB2BActivityMonitorEvents = (hasOrganizationKey || hasOrganization) && isAdmin;
 
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
@@ -328,7 +329,8 @@ export const getOrganizationAppRoutes = ({
                 icon: 'key',
                 available:
                     appSupportsSSO(app) &&
-                    (planSupportsSSO(organization?.PlanName) || upsellPlanSSO(organization?.PlanName)) &&
+                    (planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) ||
+                        upsellPlanSSO(organization?.PlanName)) &&
                     canHaveOrganization &&
                     (hasOrganizationKey || hasOrganization),
             },
