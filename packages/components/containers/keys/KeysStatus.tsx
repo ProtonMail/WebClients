@@ -12,7 +12,7 @@ import { KeyType } from './shared/interface';
 const KeysStatus = ({
     type,
     isPrimary,
-    isPrimaryCompatibility,
+    isPrimaryFallback,
     isDecrypted,
     isCompromised,
     isObsolete,
@@ -25,7 +25,7 @@ const KeysStatus = ({
 }) => {
     const list = [
         isPrimary &&
-            !isPrimaryCompatibility &&
+            !isPrimaryFallback &&
             ({
                 key: 'primary',
                 tooltip:
@@ -36,13 +36,13 @@ const KeysStatus = ({
                 title: c('Key state badge').t`Primary`,
                 type: 'primary',
             } as const),
-        isPrimaryCompatibility &&
+        isPrimaryFallback &&
             ({
-                key: 'primary-compat',
-                // no primary-compatibility for user keys
+                key: 'primary-fallback',
+                // no primary-fallback for user keys
                 tooltip: c('Tooltip')
                     .t`This is the default key used by other ${MAIL_APP_NAME} users on older mobile apps to encrypt data they send to you`,
-                title: c('Key state badge').t`Compatibility`,
+                title: c('Key state badge').t`Fallback`,
                 type: 'success',
             } as const),
         !isDecrypted &&
@@ -106,7 +106,7 @@ export default KeysStatus;
 
 export const getKeyFunction = (status: KeyStatus): { label: string; tooltip?: string } => {
     if (status.isPrimary) {
-        // incl. status.isPrimaryCompatibility
+        // incl. status.isPrimaryFallback
         return {
             label: c('Key function description').t`Encryption, decryption, signing, verification`,
         };
