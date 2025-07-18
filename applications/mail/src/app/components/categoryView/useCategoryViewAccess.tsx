@@ -1,3 +1,4 @@
+import { isCategoryLabel } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
@@ -8,5 +9,5 @@ export const useCategoryViewAccess = () => {
     const hasAccess = useFlag('CategoryView');
     const mailParams = useMailSelector(params);
 
-    return hasAccess && mailParams.labelID === MAILBOX_LABEL_IDS.INBOX;
+    return hasAccess && (mailParams.labelID === MAILBOX_LABEL_IDS.INBOX || isCategoryLabel(mailParams.labelID));
 };

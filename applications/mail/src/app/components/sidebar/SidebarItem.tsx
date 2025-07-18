@@ -16,7 +16,7 @@ import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
+import { CATEGORY_LABELS_TO_ROUTE_SET, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -186,6 +186,12 @@ const SidebarItem = ({
             <SidebarListItemLink
                 title={tooltipText}
                 to={link}
+                isActive={(match, location) => {
+                    if (link === '/inbox') {
+                        return CATEGORY_LABELS_TO_ROUTE_SET.has(location.pathname);
+                    }
+                    return !!match;
+                }}
                 onClick={handleClick}
                 {...dragProps}
                 onDrop={handleDrop}
