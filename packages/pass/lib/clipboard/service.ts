@@ -1,8 +1,9 @@
 import type { ClipboardApi, ClipboardService } from '@proton/pass/lib/clipboard/types';
+import type { Maybe } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 export const createClipboardService = (clipboard: ClipboardApi): ClipboardService => {
-    let clipboardTimer: NodeJS.Timeout | undefined;
+    let clipboardTimer: Maybe<NodeJS.Timeout>;
 
     const service = {
         startClearTimeout: (timeoutMs: number, content: string) => {

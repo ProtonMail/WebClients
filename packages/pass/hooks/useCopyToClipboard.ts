@@ -17,29 +17,13 @@ export const useCopyToClipboard = () => {
     const [cachedValue, setCachedValue] = useState<MaybeNull<string>>(null);
     const [showModal, setShowModal] = useState(false);
 
-    // return async (value: string) => {
-    //     console.log('clipboardTTL', clipboardTTL);
-
-    //     if (clipboardTTL === undefined) {
-    //         getProtonPassFeatureTooltipText;
-    //     }
-
-    //     try {
-    //         await writeToClipboard(value);
-    //         createNotification({ type: 'success', text: c('Info').t`Copied to clipboard`, showCloseButton: false });
-    //     } catch (err) {
-    //         createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
-    //         logger.error(`[Popup] unable to copy to clipboard`, err);
-    //     }
-    // };
-
     const handleActualCopy = async (value: string) => {
         try {
             await writeToClipboard(value);
             createNotification({ type: 'success', text: c('Info').t`Copied to clipboard`, showCloseButton: false });
-        } catch (err) {
+        } catch {
             createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
-            logger.error(`[Popup] unable to copy to clipboard`, err);
+            logger.error(`[Popup] unable to copy to clipboard`);
         }
     };
 
