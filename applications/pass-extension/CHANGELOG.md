@@ -1,3 +1,15 @@
+### Version 1.32.3
+
+- Add support for website-rules v2
+- Add support for web-components detection overrides
+- Fix extension crash on autosave failure due to deleted vault
+- Fix race-condition in classification pipeline
+- Fix search query resets during vault switch
+- Fix secure link note view on Firefox
+- Improve 2FA autofill UI
+- Improve default browser password manager setting toggling
+- Improve vault selector in autosave UI
+
 ### Version 1.32.2
 
 - Fix date fields accounting for TZ offset
