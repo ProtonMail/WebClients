@@ -212,10 +212,9 @@ export const createSubscription = (
 ) => {
     const sanitizedData = prepareSubscribeDataPayload(rawData);
 
-    // Additional check here because normalize billing address is not always called.
     // This covers both buyProduct + v4 and v5 createSubscription.
-    if ('BillingAddress' in sanitizedData && sanitizedData.BillingAddress?.ZipCode && !hasZipCodeValidation) {
-        delete sanitizedData.BillingAddress.ZipCode;
+    if ('BillingAddress' in sanitizedData && sanitizedData.BillingAddress) {
+        sanitizedData.BillingAddress = normalizeBillingAddress(sanitizedData.BillingAddress, hasZipCodeValidation);
     }
 
     if (isLifetimePlanSelected(sanitizedData.Plans)) {
@@ -229,10 +228,6 @@ export const createSubscription = (
             PaymentToken: sanitizedData.Payment.Details.Token,
             v: 5,
         };
-
-        if (v5Data.BillingAddress) {
-            v5Data.BillingAddress = normalizeBillingAddress(v5Data.BillingAddress, hasZipCodeValidation);
-        }
 
         data = v5Data;
         delete (data as any).Payment;
