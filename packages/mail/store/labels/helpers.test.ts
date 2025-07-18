@@ -6,6 +6,7 @@ import {
     getLabelName,
     getLabelNameAnonymised,
     getLabelNames,
+    isCategoryLabel,
     isCustomFolder,
     isCustomLabel,
     isCustomLabelOrFolder,
@@ -178,6 +179,22 @@ describe('label', () => {
         it('should return false if the value is custom folder ID', () => {
             const val = isHumanCustomViewKey('CUSTOM_FOLDER');
             expect(val).toBeFalsy();
+        });
+    });
+
+    describe('isCategoryLabel', () => {
+        it('should return true if the value is a category label', () => {
+            expect(isCategoryLabel(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL)).toBeTruthy();
+            expect(isCategoryLabel(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS)).toBeTruthy();
+            expect(isCategoryLabel(MAILBOX_LABEL_IDS.CATEGORY_UPDATES)).toBeTruthy();
+        });
+
+        it('should return false if the value is not a category label', () => {
+            expect(isCategoryLabel(MAILBOX_LABEL_IDS.INBOX)).toBeFalsy();
+            expect(isCategoryLabel(MAILBOX_LABEL_IDS.ALL_DRAFTS)).toBeFalsy();
+            expect(isCategoryLabel(MAILBOX_LABEL_IDS.ALL_SENT)).toBeFalsy();
+            expect(isCategoryLabel(MAILBOX_LABEL_IDS.TRASH)).toBeFalsy();
+            expect(isCategoryLabel(MAILBOX_LABEL_IDS.SPAM)).toBeFalsy();
         });
     });
 });
