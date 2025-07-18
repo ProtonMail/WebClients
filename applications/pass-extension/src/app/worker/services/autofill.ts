@@ -50,9 +50,14 @@ export const createAutoFillService = () => {
     const state: AutofillServiceState = { privateDomains: null, rules: null };
 
     const init = withContext(async (ctx) => {
-        const rules = parseRules(await ctx.service.storage.local.getItem('websiteRules'));
+        const result = await ctx.service.storage.local.getItems(['websiteRules', 'privateDomains']);
+
+        const rules = parseRules(result.websiteRules ?? null);
         state.rules = rules ? compileRules(rules) : null;
         if (state.rules) logger.info(`[AutofillService] Compiled website rules v${rules?.version}`);
+
+        state.privateDomains = result.privateDomains ? new Set(result.privateDomains.split('\n')) : null;
+        if (state.privateDomains) logger.info(`[AutofillService] Hydrated private domains`);
     });
 
     const getLoginCandidates = withContext<(options: GetLoginCandidatesOptions) => ItemRevision<'login'>[]>(
