@@ -42,29 +42,6 @@ type PredictionBestSelector<T extends string> = (
     candidates: [PredictionResult<T>, PredictionResult<T>]
 ) => PredictionResult<T>;
 
-/* We should run the detection when :
- * - a stale form is now considered of interest
- * - a tracked form has new visible input fields
- * - new dangling inputs can be clustered
- *
- * To keep track of these we leverage the `PROCESSED_INPUT_ATTR`
- * attribute which is added to processed fields. Run in async
- * `requestIdleCallback` to avoid blocking the UI on costly
- * visibility checks
- *
- * When considering dangling fields, only look
- * for fields not in a processed form and that is actually visible
- * to avoid flagging input fields as processed and missing out
- * on detection */
-const shouldRunDetection = (): Promise<boolean> =>
-    new Promise(async (resolve) => {
-        await wait(50);
-        requestIdleCallback(() => {
-            prepass();
-            resolve(shouldRunClassifier());
-        });
-    });
-
 const getPredictionsFor = <T extends string>(
     boundRuleset: BoundRuleset,
     options: {
@@ -217,7 +194,7 @@ const isEnabled = (features: Record<CSFeatures, boolean>): boolean =>
 export const createDetectorService = () => {
     const state: DetectorState = { rules: null };
 
-    return {
+    const detector = {
         init: async () => {
             await sendMessage
                 .onSuccess(contentScriptMessage({ type: WorkerMessageType.WEBSITE_RULES_REQUEST }), ({ rules }) => {
@@ -256,9 +233,26 @@ export const createDetectorService = () => {
         },
 
         isEnabled,
-        shouldRunDetection,
+
+        /* Run pre-detection checks with proper timing to avoid blocking the UI.
+         * Triggers rule application to exclude/include nodes for the classifier,
+         * then runs prepass for clustering and heuristic exclusions.
+         * Uses requestIdleCallback since visibility checks can be costly and
+         * trigger DOM repaints, with a small delay to ensure DOM stability. */
+        shouldRunDetection: (): Promise<boolean> =>
+            new Promise(async (resolve) => {
+                await wait(50);
+                requestIdleCallback(() => {
+                    detector.applyRules();
+                    prepass();
+                    resolve(shouldRunClassifier());
+                });
+            }),
+
         runDetection: createDetectionRunner(ruleset, document),
     };
+
+    return detector;
 };
 
 export type DetectorService = ReturnType<typeof createDetectorService>;
