@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
-import { MAILBOX_IDENTIFIERS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import useListTelemetry, {
@@ -36,10 +36,8 @@ const useSnooze = () => {
 
     const [snoozeState, setSnoozeState] = useState<SnoozeState>('snooze-selection');
 
-    const isInbox = labelID === MAILBOX_IDENTIFIERS.inbox;
-    const isSnoozed = labelID === MAILBOX_LABEL_IDS.SNOOZED;
-    const canSnooze = isInbox && conversationMode;
-    const canUnsnooze = isSnoozed && conversationMode;
+    const canSnooze = labelID === MAILBOX_LABEL_IDS.INBOX && conversationMode;
+    const canUnsnooze = labelID === MAILBOX_LABEL_IDS.SNOOZED && conversationMode;
 
     const { sendSimpleActionReport } = useListTelemetry();
 
