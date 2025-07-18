@@ -12,6 +12,7 @@ import {
     syncSuccess,
 } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
@@ -37,7 +38,10 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
         yield put(withRevalidate(secureLinksGet.intent()));
         yield put(getAuthDevices.intent());
 
-        if (EXTENSION_BUILD) yield put(withRevalidate(resolveWebsiteRules.intent()));
+        if (EXTENSION_BUILD) {
+            yield put(withRevalidate(resolveWebsiteRules.intent()));
+            yield put(withRevalidate(resolvePrivateDomains.intent()));
+        }
 
         yield put(syncSuccess(yield call(synchronize, payload.type)));
     } catch (e: unknown) {
