@@ -120,10 +120,8 @@ export const createFormManager = (options: FormManagerOptions) => {
             if (state.detectionRequest !== -1) return false;
             const gcd = garbagecollect();
 
-            ctx?.service.detector.applyRules();
-
             if (await ctx?.service.detector.shouldRunDetection()) {
-                state.detectionRequest = requestIdleCallback(async () => {
+                state.detectionRequest = requestIdleCallback(() => {
                     if (state.active) {
                         logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
@@ -135,11 +133,6 @@ export const createFormManager = (options: FormManagerOptions) => {
                                 formHandle.reconciliate(options.formType, options.fields);
                                 formHandle.attach();
                             });
-
-                            /* Always prompt for OTP autofill before autosave. */
-                            await ctx?.service.autofill.sync().catch(noop);
-                            const prompted = await ctx?.service.autofill.promptOTP();
-                            await (!prompted && ctx?.service.autosave.reconciliate());
 
                             options.onDetection(getTrackedForms());
                         } catch (err) {
