@@ -19,21 +19,36 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
     const api = useApi();
 
     const fetchJson = async (options: ProtonDriveHTTPClientJsonOptions) => {
-        const result = await api({
-            url: options.url,
-            method: options.method,
-            headers: Object.fromEntries(options.headers.entries()),
-            data: options.json,
-            signal: options.signal,
-            timeout: options.timeoutMs,
-            ignoreHandler: [
-                // SDK has own handling of 429s.
-                HTTP_ERROR_CODES.TOO_MANY_REQUESTS,
-            ],
-            // SDK has own parsing of responses.
-            output: 'raw',
-        });
-        return result;
+        try {
+            const result = await api({
+                url: options.url,
+                method: options.method,
+                headers: Object.fromEntries(options.headers.entries()),
+                data: options.json,
+                signal: options.signal,
+                timeout: options.timeoutMs,
+                ignoreHandler: [
+                    // SDK has own handling of 429s.
+                    HTTP_ERROR_CODES.TOO_MANY_REQUESTS,
+                ],
+                // Any notification should be explicit by the caller of the SDK.
+                silence: true,
+                // SDK has own parsing of responses.
+                output: 'raw',
+            });
+            return result;
+        } catch (error) {
+            // useApi throws StatusCodeError when the status code is not 2xx.
+            // SDK has own parsing of responses, thus we need to simulate
+            // the normal HTTP response.
+            // Ideally we could add a new output type to the api callback
+            // that would also kept the non-2xx responses as well.
+            if (error instanceof Error && error.name === 'StatusCodeError' && 'data' in error && 'status' in error) {
+                const status = Number(error.status) || 500;
+                return new Response(JSON.stringify(error.data), { status });
+            }
+            throw error;
+        }
     };
 
     // Both upload and download can avoid using useApi hook, as they don't
