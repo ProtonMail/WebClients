@@ -2,6 +2,8 @@ import { useCallback, useState } from 'react';
 
 import { MemoryCache, ProtonDriveClient } from '@protontech/drive-sdk';
 import type { MemoryLogHandler } from '@protontech/drive-sdk/dist/telemetry';
+// TODO: Remove that when sdk will be transpile with bun
+import 'core-js/actual/array/from-async';
 
 import { useLocalState } from '@proton/components';
 import { getClientID } from '@proton/shared/lib/apps/helper';
