@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import 'core-js/actual/array/from-async';
 import { c } from 'ttag';
 
 import { Loader } from '@proton/components';
