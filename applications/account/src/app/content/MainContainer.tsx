@@ -161,6 +161,7 @@ const MainContainer = () => {
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
+    const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
@@ -220,6 +221,7 @@ const MainContainer = () => {
         isB2BTrial,
         isReferralExpansionEnabled,
         isRetentionPoliciesEnabled,
+        isSsoForPbsEnabled,
     });
 
     useEffect(() => {
