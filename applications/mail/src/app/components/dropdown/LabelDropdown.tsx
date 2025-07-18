@@ -19,7 +19,7 @@ import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { getStandardFolders, isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
-import { LABEL_TYPE, MAILBOX_IDENTIFIERS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -252,12 +252,12 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
         );
 
         if (alsoArchive) {
-            const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
+            const folderName = getStandardFolders()[MAILBOX_LABEL_IDS.ARCHIVE].name;
             promises.push(
                 moveToFolder({
                     elements,
                     sourceLabelID: labelID,
-                    destinationLabelID: MAILBOX_IDENTIFIERS.archive,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     folderName,
                     sourceAction: SOURCE_ACTION.LABEL_DROPDOWN,
                     currentFolder: folderLocation(labelID, labels, folders),
