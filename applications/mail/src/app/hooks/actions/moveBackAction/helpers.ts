@@ -1,4 +1,4 @@
-import { isCustomFolder, isCustomLabel } from '@proton/mail/store/labels/helpers';
+import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

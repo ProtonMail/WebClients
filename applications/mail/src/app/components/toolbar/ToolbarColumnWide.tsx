@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { useElementBreakpoints } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
-import { getLabelName, isLabelIDNewsletterSubscription } from '@proton/mail/store/labels/helpers';
 import clsx from '@proton/utils/clsx';
 
 import { useMailSelector } from 'proton-mail/store/hooks';
 
+import { getLabelName, isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
 import { pageSize as pageSizeSelector } from '../../store/elements/elementsSelectors';
 import ListSettings from '../list/ListSettings';

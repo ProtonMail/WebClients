@@ -6,7 +6,6 @@ import type { HotkeyTuple } from '@proton/components';
 import { useEventManager, useHotkeys } from '@proton/components';
 import { useFolders } from '@proton/mail';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import { getFolderName } from '@proton/mail/store/labels/helpers';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isVisibleOnScreen } from '@proton/shared/lib/helpers/dom';
@@ -25,6 +24,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { isStarred } from '../../helpers/elements';
+import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import type { Element } from '../../models/element';
 import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';

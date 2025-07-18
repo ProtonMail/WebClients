@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { getHumanLabelID } from '@proton/mail/store/labels/helpers';
+import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { mockUseHistory } from '@proton/testing/lib/mockUseHistory';
 

@@ -6,7 +6,7 @@ import type { Location } from 'history';
 import type { HotkeyTuple } from '@proton/components';
 import { useHotkeys } from '@proton/components';
 import { useFolders } from '@proton/mail';
-import { getFolderName, labelIncludes } from '@proton/mail/store/labels/helpers';
+import { labelIncludes } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -19,6 +19,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { isStarred } from '../../helpers/elements';
+import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import type { Element } from '../../models/element';
