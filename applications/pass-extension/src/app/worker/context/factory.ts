@@ -54,7 +54,6 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const core = createPassCoreProxyService();
     const auth = createAuthService(api, authStore);
     const store = createStoreService();
-    const settings = createSettingsService();
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     exposePassCrypto(createPassCrypto(core));
@@ -79,7 +78,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             autofill: createAutoFillService(),
             autosave: createAutoSaveService(),
             b2bEvents: createB2BEventsService(storage.local, store),
-            clipboard: createClipboardService(settings),
+            clipboard: createClipboardService(),
             core,
             formTracker: createFormTrackerService(),
             i18n: createI18nService(),
@@ -89,7 +88,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             otp: createOTPService(),
             passkey: createPasskeyService(),
             sentry: createSentryService(),
-            settings,
+            settings: createSettingsService(),
             spotlight: createSpotlightService(storage.local, store),
             storage,
             store,
