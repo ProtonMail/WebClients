@@ -6,12 +6,13 @@ import { Prompt } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
-import { getLabelNames } from '@proton/mail/store/labels/helpers';
 import clsx from '@proton/utils/clsx';
 
 import { getLocationElementsCount } from 'proton-mail/helpers/elements';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import useMailModel from 'proton-mail/hooks/useMailModel';
+
+import { getLabelNames } from '../../../../helpers/labels';
 
 interface Props extends ModalProps {
     onResolve: () => void;
