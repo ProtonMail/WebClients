@@ -3,15 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    addressKeysThunk,
-    addressesThunk,
-    getKTActivation,
-    organizationKeyThunk,
-    userKeysThunk,
-    userSettingsActions,
-    userThunk,
-} from '@proton/account';
+import { generatePqcAddressKeys, generatePqcUserKey, optInToPqc } from '@proton/account';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
@@ -23,22 +15,16 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from '@proton/components/hooks/useDeviceRecovery';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { resignSKLWithPrimaryKey } from '@proton/key-transparency/lib';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
-import { updateFlags } from '@proton/shared/lib/api/settings';
-import { BRAND_NAME, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
-import { addAddressKeysProcess, addUserKeysProcess, getPrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { getMailRouteTitles } from '../../account/constants/settingsRouteTitles';
-import useKTVerifier from '../../keyTransparency/useKTVerifier';
 import getPausedForwardingNotice from '../changePrimaryKeyForwardingNotice/getPausedForwardingNotice';
 
 interface Props extends ModalProps {}
@@ -51,17 +37,15 @@ enum Step {
     SUCCESS,
     ERROR,
 }
+
 interface Model {
     step: Step;
     error?: ReactNode;
 }
 
 const PostQuantumOptInModal = ({ ...rest }: Props) => {
-    const api = useApi();
-    const createKTVerifier = useKTVerifier();
     const dispatch = useDispatch();
     const [outgoingAddressForwardings = [], loadingOutgoingAddressForwardings] = useOutgoingAddressForwardings();
-    const authentication = useAuthentication();
     const [isDeviceRecoveryAvailable, loadingDeviceRecovery] = useIsDeviceRecoveryAvailable();
     const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
 
@@ -69,51 +53,15 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState<Model>({ step: Step.CONFIRMATION });
     const [understoodForceUpgrade, setUnderstoodForceUpgrade] = useState(false);
+    const handleError = useErrorHandler();
 
     const handleGenerateAddressKeyForAllAddresses = async () => {
-        const [user, userKeys, addresses] = await Promise.all([
-            dispatch(userThunk()),
-            dispatch(userKeysThunk()),
-            dispatch(addressesThunk()),
-        ]);
         try {
-            await Promise.all(
-                addresses.map(async (address) => {
-                    const { ID: addressID } = address;
-                    const addressKeys = await dispatch(addressKeysThunk({ addressID }));
-                    // v6 key already present, skip (TODO: check PQC algo)
-                    if (addressKeys.some((key) => key.privateKey.isPrivateKeyV6())) {
-                        return;
-                    }
-                    const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-                    const [, updatedActiveKeys, formerActiveKeys] = await addAddressKeysProcess({
-                        api,
-                        userKeys,
-                        keyGenConfig: KEYGEN_CONFIGS.PQC,
-                        addresses,
-                        address,
-                        addressKeys,
-                        keyPassword: authentication.getPassword(),
-                        keyTransparencyVerify,
-                    });
-                    await Promise.all([
-                        resignSKLWithPrimaryKey({
-                            api,
-                            ktActivation: dispatch(getKTActivation()),
-                            address,
-                            newPrimaryKeys: getPrimaryAddressKeysForSigning(updatedActiveKeys, true),
-                            formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
-                            userKeys,
-                        }),
-                        keyTransparencyCommit(user, userKeys),
-                    ]);
-                })
-            );
-
-            await dispatch(addressesThunk({ cache: CacheType.None })); // Ensures address keys is up to date.
+            await dispatch(generatePqcAddressKeys());
             setModel({ step: Step.SUCCESS });
         } catch (error) {
             console.error(error);
+            handleError(error);
             const encryptionAndKeysSettingsTitle = getMailRouteTitles().keys;
             setModel({
                 step: Step.ERROR,
@@ -124,30 +72,13 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
     };
 
     const handleGenerateUserKey = async () => {
-        const [user, userKeys, addresses, organizationKey] = await Promise.all([
-            dispatch(userThunk()),
-            dispatch(userKeysThunk()),
-            dispatch(addressesThunk()),
-            dispatch(organizationKeyThunk()),
-        ]);
-
         try {
-            await addUserKeysProcess({
-                api,
-                user,
-                organizationKey,
-                isDeviceRecoveryAvailable,
-                isDeviceRecoveryEnabled,
-                keyGenConfig: KEYGEN_CONFIGS.PQC,
-                userKeys,
-                addresses,
-                passphrase: authentication.getPassword(),
-            });
-            await dispatch(userThunk({ cache: CacheType.None })); // Ensures user keys is up to date.
+            await dispatch(generatePqcUserKey({ isDeviceRecoveryEnabled, isDeviceRecoveryAvailable }));
             setModel({ step: Step.IN_PROGRESS_ADDRESS_KEYS });
             return await handleGenerateAddressKeyForAllAddresses();
         } catch (error) {
             console.error(error);
+            handleError(error);
             const encryptionAndKeysSettingsTitle = getMailRouteTitles().keys;
             setModel({
                 step: Step.ERROR,
@@ -159,17 +90,14 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
 
     const handleOptIn = async () => {
         try {
-            const updatedFlagSupportPgpV6Keys = { SupportPgpV6Keys: 1 } as const;
-            await api(updateFlags(updatedFlagSupportPgpV6Keys));
-            // optimistically update user settings without waiting for event loop;
-            // this is done only after awaiting the API response since it will fail if the action is not authorized.
-            dispatch(userSettingsActions.update({ UserSettings: { Flags: updatedFlagSupportPgpV6Keys } }));
+            await dispatch(optInToPqc());
             setModel({
                 step: Step.IN_PROGRESS_ACCOUNT_KEY,
             });
             return await handleGenerateUserKey();
         } catch (error) {
             console.error(error);
+            handleError(error);
             setModel({
                 step: Step.ERROR,
                 error: c('PQC optin').t`Enabling post-quantum protection failed. Try again later.`,
