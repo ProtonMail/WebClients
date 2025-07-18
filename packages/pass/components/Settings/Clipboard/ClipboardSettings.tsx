@@ -1,17 +1,20 @@
-import { type FC, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { type FC, useEffect, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Option, SelectTwo } from '@proton/components';
-import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
+import { useOnClipboardSettingsChange } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { selectClipboardTTL } from '@proton/pass/store/selectors';
 
-import { SettingsPanel } from './SettingsPanel';
+type Props = {
+    // Whether or not to initialize the settings value even if there is no changes
+    initializeSetting?: boolean;
+};
 
-export const ClipboardSettings: FC = () => {
-    const dispatch = useDispatch();
+export const ClipboardSettings: FC<Props> = ({ initializeSetting = false }) => {
     const storedValue = useSelector(selectClipboardTTL);
+    const onSettingsChange = useOnClipboardSettingsChange();
 
     const options: [value: number, label: string][] = [
         [-1, c('Label').t`Never`],
@@ -22,11 +25,16 @@ export const ClipboardSettings: FC = () => {
 
     const value = useMemo(() => options.find(([value]) => value === storedValue)?.[0] ?? options[0][0], [storedValue]);
 
-    const onValue = (timeoutMs: number) => dispatch(settingsEditIntent('behaviors', { clipboard: { timeoutMs } }));
+    useEffect(() => {
+        if (initializeSetting && storedValue === undefined) {
+            const timeoutMs = options[0][0];
+            void onSettingsChange(timeoutMs, true);
+        }
+    }, [initializeSetting, storedValue]);
 
     return (
-        <SettingsPanel title={c('Label').t`Clear clipboard after`}>
-            <SelectTwo onValue={onValue} value={value}>
+        <>
+            <SelectTwo onValue={onSettingsChange} value={value}>
                 {options.map(([value, label]) => (
                     <Option key={value} value={value} title={label} />
                 ))}
@@ -36,6 +44,6 @@ export const ClipboardSettings: FC = () => {
                     {c('Info').t`Please keep your browser open so the clipboard can be cleared automatically.`}
                 </span>
             )}
-        </SettingsPanel>
+        </>
     );
 };

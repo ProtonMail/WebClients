@@ -136,7 +136,7 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
 
         writeToClipboard: async (content) => {
             await navigator.clipboard.writeText(content);
-            const { clipboard: clipboardSettings } = await settings.read();
+            const { clipboard: clipboardSettings } = await settings.read(authStore.getLocalID());
             if (clipboardSettings && clipboardSettings.timeoutMs) {
                 clipboard.startClearTimeout(clipboardSettings.timeoutMs, content);
             }

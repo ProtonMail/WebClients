@@ -40,8 +40,11 @@ export const clipboardWorker: ClipboardApi = {
                 res.type === 'success' ? res.content : Promise.reject(new Error('Clipboard read failed'))
             );
         } catch {
-            throw new Error('No clipboard strategy worked');
+            logger.debug('[Clipboard] Failed to read clipboard using offscreen document');
         }
+
+        logger.error('[Clipboard] None clipboard read strategy worked');
+        return '';
     },
 
     write: async (content: string) => {
@@ -79,7 +82,9 @@ export const clipboardWorker: ClipboardApi = {
                 }
             );
         } catch {
-            throw new Error('No clipboard strategy worked');
+            logger.debug('[Clipboard] Failed to read clipboard using offscreen document');
         }
+
+        logger.error('[Clipboard] None clipboard write strategy worked');
     },
 };
