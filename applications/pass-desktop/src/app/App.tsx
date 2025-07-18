@@ -49,6 +49,7 @@ import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
+import { clipboard } from '../lib/clipboard';
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
 import { isFirstLaunch } from './firstLaunch';
@@ -115,7 +116,13 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
             hash: page,
         }),
 
-    writeToClipboard: async (str) => window.ctxBridge?.writeToClipboard(str),
+    writeToClipboard: async (content) => {
+        await window.ctxBridge?.writeToClipboard(content);
+        const { clipboard: clipboardSettings } = await settings.read(authStore.getLocalID());
+        if (clipboardSettings && clipboardSettings.timeoutMs) {
+            clipboard.startClearTimeout(clipboardSettings.timeoutMs, content);
+        }
+    },
 
     isFirstLaunch,
 });

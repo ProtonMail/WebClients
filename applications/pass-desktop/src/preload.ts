@@ -15,9 +15,8 @@ const invoke = <T extends keyof IPCChannels, P extends IPCChannels[T]['args'], R
 
 const contextBridgeApi: ContextBridgeApi = {
     /* clipboard */
-    writeToClipboard: (text) => invoke('clipboard:writeText', text),
-    setClipboardConfig: (config) => invoke('clipboard:setConfig', config),
-    getClipboardConfig: () => invoke('clipboard:getConfig'),
+    writeToClipboard: (text) => invoke('clipboard:write', text),
+    readFromClipboard: () => invoke('clipboard:read'),
 
     /* theming */
     getTheme: () => invoke('theming:getTheme'),
