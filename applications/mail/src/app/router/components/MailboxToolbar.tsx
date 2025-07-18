@@ -83,7 +83,7 @@ export const MailboxToolbar = ({
                 loading={loading}
                 onCheckAll={handleCheckAll}
             />
-            {canSeeCategoryView && <CategoriesTabs />}
+            {canSeeCategoryView && <CategoriesTabs labelID={labelID} />}
         </>
     );
 };
