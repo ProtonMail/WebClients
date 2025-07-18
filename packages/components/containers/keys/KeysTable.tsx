@@ -48,7 +48,7 @@ const KeysTable = ({
 
     // Keys are already sorted by the BE but need to be reordered
     // as we want the v6 primary key (if present) to appear before the v4 one
-    const sortedKeys = keys[0]?.status.isPrimaryCompatibility ? [keys[1], keys[0], ...keys.slice(2)] : keys;
+    const sortedKeys = keys[0]?.status.isPrimaryFallback ? [keys[1], keys[0], ...keys.slice(2)] : keys;
 
     return (
         <Table hasActions responsive="cards">

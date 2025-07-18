@@ -46,7 +46,7 @@ export const getDisplayKey = ({
     const isAddressDisabled = address?.Status === 0;
 
     const isPrimary = primary === 1;
-    const isPrimaryCompatibility = existsPrimaryKeyV6 && isPrimary && version !== 6;
+    const isPrimaryFallback = existsPrimaryKeyV6 && isPrimary && version !== 6;
 
     // Flags undefined for user keys
     const canEncrypt = flags === undefined ? true : hasBit(flags, KEY_FLAG.FLAG_NOT_OBSOLETE);
@@ -60,7 +60,7 @@ export const getDisplayKey = ({
     const status: KeyStatus = {
         isAddressDisabled,
         isPrimary,
-        isPrimaryCompatibility,
+        isPrimaryFallback,
         isDecrypted,
         isLoading,
         isCompromised,
