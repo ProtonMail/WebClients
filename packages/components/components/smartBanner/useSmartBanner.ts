@@ -7,6 +7,11 @@ import { MAIL_MOBILE_APP_LINKS } from '@proton/shared/lib/mail/constants';
 
 import type { SmartBannerApp } from './types';
 
+type StoreType = keyof (
+    | Omit<typeof CALENDAR_MOBILE_APP_LINKS, 'qrCode'>
+    | Omit<typeof MAIL_MOBILE_APP_LINKS, 'qrCode'>
+);
+
 const isUser = {
     [APPS.PROTONCALENDAR]: isCalendarMobileAppUser,
     [APPS.PROTONMAIL]: isMailMobileAppUser,
@@ -28,32 +33,25 @@ const storeLinks = {
     [APPS.PROTONMAIL]: MAIL_MOBILE_APP_LINKS,
 };
 
-type StoreType = keyof (
-    | Omit<typeof CALENDAR_MOBILE_APP_LINKS, 'qrCode'>
-    | Omit<typeof MAIL_MOBILE_APP_LINKS, 'qrCode'>
-);
+const getStoreLink = (app: SmartBannerApp, store: StoreType): string => {
+    return storeLinks[app][store] + utmParams[app][store];
+};
 
-const getStoreLink = (app: SmartBannerApp, store: StoreType) => storeLinks[app][store] + utmParams[app][store];
+const isMobileDevice = (): boolean => /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-export const useSmartBanner = (app: SmartBannerApp) => {
-    // We can't (easily) detect if a user has downloaded/installed the native app, but
-    // we can check if the user has ever used the app. If they have, don't render the banner.
+export const useSmartBanner = (app: SmartBannerApp): string | null => {
     const [userSettings] = useUserSettings();
-
     const hasUsedNativeApp = isUser[app](BigInt(userSettings.UsedClientFlags));
 
-    if (hasUsedNativeApp) {
-        return null;
-    }
+    if (hasUsedNativeApp) return null;
 
-    // The banner is only supported on iOS and Android devices.
+    if (isMobileDevice()) return null;
+
     const isAndroid = getIsAndroid();
     const isIos = getIsIos();
     const isSupportedOS = isAndroid || isIos;
 
-    if (!isSupportedOS) {
-        return null;
-    }
+    if (!isSupportedOS) return null;
 
     return getStoreLink(app, isAndroid ? 'playStore' : 'appStore');
 };
