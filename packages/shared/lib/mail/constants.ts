@@ -93,7 +93,7 @@ export const LABEL_IDS_TO_HUMAN = {
     [MAILBOX_LABEL_IDS.SCHEDULED]: 'scheduled',
     [MAILBOX_LABEL_IDS.SNOOZED]: 'snoozed',
     // The order is based on the order of the categories in the UI not the labelIDs
-    [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]: 'inbox',
+    [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]: 'primary',
     [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]: 'social',
     [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]: 'promotions',
     [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: 'newsletters',
