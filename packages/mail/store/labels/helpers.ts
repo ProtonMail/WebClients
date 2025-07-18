@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/icons';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { CATEGORY_LABEL_IDS_SET, type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import {
@@ -128,6 +128,10 @@ export const getStandardFolders = (): FolderMap => ({
     // },
 });
 
+export const isCategoryLabel = (labelID: string): labelID is CategoryLabelID => {
+    return CATEGORY_LABEL_IDS_SET.has(labelID as CategoryLabelID);
+};
+
 export const isSystemLabel = (labelID: string) => SYSTEM_LABELS.includes(labelID as MAILBOX_LABEL_IDS);
 
 export const isAlwaysMessageLabels = (labelID: string) => ALWAYS_MESSAGE_LABELS.includes(labelID as MAILBOX_LABEL_IDS);
@@ -186,7 +190,8 @@ export const getViewTitleFromLabel = (label: string) => {
 export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
     if (labelID in LABEL_IDS_TO_HUMAN) {
         const folders = getStandardFolders();
-        return folders[labelID].name;
+        const labelIDToUse = isCategoryLabel(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
+        return folders[labelIDToUse]?.name || folders[MAILBOX_LABEL_IDS.INBOX].name;
     }
 
     const labelsMap = toMap(labels, 'ID');
