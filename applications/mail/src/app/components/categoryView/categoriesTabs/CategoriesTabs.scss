@@ -1,37 +1,37 @@
 @import '~@proton/styles/scss/lib';
 
 $category-colors: (
-	iris: (
+	'iris': (
 		base: var(--iris-500),
 		bg: var(--iris-50),
 		text: var(--iris-700),
 	),
-	sky: (
+	'sky': (
 		base: var(--sky-500),
 		bg: var(--sky-50),
 		text: var(--sky-700),
 	),
-	teal: (
+	'teal': (
 		base: var(--teal-500),
 		bg: var(--teal-50),
 		text: var(--teal-700),
 	),
-	pink: (
+	'pink': (
 		base: var(--pink-500),
 		bg: var(--pink-50),
 		text: var(--pink-700),
 	),
-	blue: (
+	'blue': (
 		base: var(--blue-500),
 		bg: var(--blue-50),
 		text: var(--blue-700),
 	),
-	purple: (
+	'purple': (
 		base: var(--purple-500),
 		bg: var(--purple-50),
 		text: var(--purple-700),
 	),
-	amber: (
+	'amber': (
 		base: var(--amber-500),
 		bg: var(--amber-50),
 		text: var(--amber-700),
