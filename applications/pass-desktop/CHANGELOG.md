@@ -1,3 +1,8 @@
+### Version 1.32.3
+
+- Fix search query resets during vault switch
+- Fix secure link note view on Firefox
+
 ### Version 1.32.2
 
 - Fix date fields accounting for TZ offset
