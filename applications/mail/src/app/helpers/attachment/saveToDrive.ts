@@ -24,7 +24,7 @@ export const saveToDrive = async function (
     // useUploadHelper has an embedded util called findAvailableName that can be
     // repurposed here.
     const uploader = await client.getFileUploader(folder, name, { mediaType: type, expectedSize: size });
-    const uploadController = uploader.writeStream(stream, []);
+    const uploadController = await uploader.writeStream(stream, []);
     const nodeUid = await uploadController.completion();
 
     return nodeUid;
