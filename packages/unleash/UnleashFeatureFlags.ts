@@ -75,6 +75,7 @@ enum AccountFlag {
     VPNDashboard = 'VPNDashboard',
     PasswordPolicy = 'PasswordPolicy',
     DwmTrialFree2025 = 'DwmTrialFree2025',
+    DataRetentionPolicy = 'DataRetentionPolicy',
 }
 
 enum PaymentsFlag {
