@@ -16,6 +16,7 @@ import {
   useAppTitle,
   useAuthentication,
   usePopperAnchor,
+  useConfig,
 } from '@proton/components'
 import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
 import { isDocumentState, PostApplicationError } from '@proton/docs-core'
@@ -32,7 +33,6 @@ import { TrashedDocumentModal } from './TrashedDocumentModal'
 import { useWordCount } from '../../../WordCount'
 import type { EditorControllerInterface } from '@proton/docs-core'
 import { useExportToPDFModal } from './ExportToPDFModal'
-import { APP_VERSION } from '~/config'
 import type { RenameControllerInterface } from '@proton/docs-core'
 import { useDocsContext } from '../../../context'
 import { WordCountIcon } from '../icons'
@@ -75,6 +75,7 @@ export function DocumentTitleDropdown({
   const [sheetImportModal, openSheetImportModal] = useSheetImportModal()
   const [showVersionNumber, setShowVersionNumber] = useState(false)
   const isSheetsEnabled = useIsSheetsEnabled()
+  const { APP_VERSION } = useConfig()
 
   const [isRenaming, setIsRenaming] = useState(false)
   const [renameInputValue, setRenameInputValue] = useState(title)
