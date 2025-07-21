@@ -8,7 +8,6 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -25,10 +24,17 @@ interface Props extends ModalProps {
     link?: string;
     isOutside?: boolean;
     isPhishingAttempt?: boolean;
-    modalProps: ModalStateProps;
+    // Used as a confirmation callback when users confirms they want to open the link
+    onConfirm?: () => void;
 }
 
-const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt = false, modalProps }: Props) => {
+const LinkConfirmationModal = ({
+    link = '',
+    isOutside = false,
+    isPhishingAttempt = false,
+    onConfirm,
+    ...rest
+}: Props) => {
     const api = useApi();
     const dispatch = useDispatch();
     const [dontAskAgain, setDontAskAgain] = useState(false);
@@ -41,7 +47,8 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
     const isPunnyCodeLink = /:\/\/xn--/.test(link);
 
     const handleConfirm = async () => {
-        modalProps.onClose();
+        rest.onClose?.();
+        onConfirm?.();
 
         openNewTab(link);
 
@@ -54,7 +61,7 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
     };
 
     return (
-        <ModalTwo size="large" {...modalProps}>
+        <ModalTwo size="large" {...rest}>
             <ModalTwoHeader
                 title={
                     isPhishingAttempt ? c('Title').t`Warning: suspected fake website` : c('Title').t`Link confirmation`
@@ -78,7 +85,7 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button onClick={modalProps.onClose}>{c('Action').t`Cancel`}</Button>
+                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
                 {/* translator: this string is only for blind people, it will be vocalized: confirm opening of link https://link.com */}
                 <Button
                     autoFocus
