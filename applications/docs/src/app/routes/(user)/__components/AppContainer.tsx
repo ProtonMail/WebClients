@@ -8,7 +8,7 @@ import { useApi, useAuthentication, useConfig } from '@proton/components'
 import { Application } from '@proton/docs-core'
 import { useDriveCompat } from '@proton/drive-store'
 
-import { APP_VERSION } from '~/config'
+import config from '~/config'
 import { ApplicationProvider } from '~/utils/application-context'
 import { useFlag, useUnleashClient } from '@proton/unleash'
 import { DocsNotificationsProvider } from '../__utils/notifications-context'
@@ -71,7 +71,7 @@ function useApplication({ driveCompat }: ApplicationOptions) {
         uid: UID,
       },
       new DriveCompatWrapper({ userCompat: driveCompat }),
-      APP_VERSION,
+      config.APP_VERSION,
       unleashClient,
     )
     // Ensure only one application instance is created
