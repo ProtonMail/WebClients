@@ -17,6 +17,7 @@ import { selectUnprivatizationState } from '@proton/account/members/unprivatizeM
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetOrganizationKey, useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { accessMemberThunk } from '@proton/account/organizationKey/memberAccessAction';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { getSSODomainsSet } from '@proton/account/samlSSO/helper';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
@@ -361,15 +362,17 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         setSubUserCreateModalOpen(true);
     };
 
-    const handleLoginUser = async (member: EnhancedMember) => {
+    const handleLoginUser = wrapError(async (member: EnhancedMember) => {
         const organizationKey = await getOrganizationKey();
         const orgKeyError = validateOrganizationKey(getOrganizationKeyInfo(organization, organizationKey, addresses));
         if (orgKeyError) {
-            return createNotification({ type: 'error', text: orgKeyError });
+            createNotification({ type: 'error', text: orgKeyError });
+            return;
         }
         setTmpMemberID(member.ID);
+        await dispatch(accessMemberThunk({ member }));
         setLoginMemberModalOpen(true);
-    };
+    });
 
     const handleChangeMemberPassword = async (member: EnhancedMember) => {
         const organizationKey = await getOrganizationKey();
