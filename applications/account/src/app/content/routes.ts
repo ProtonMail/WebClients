@@ -47,6 +47,7 @@ export const getRoutes = ({
     isPasswordPolicyEnabled,
     isB2BTrial,
     isReferralExpansionEnabled,
+    isRetentionPoliciesEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -92,6 +93,7 @@ export const getRoutes = ({
             isZoomIntegrationEnabled,
             isSharedServerFeatureEnabled,
             isPasswordPolicyEnabled,
+            isRetentionPoliciesEnabled,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),

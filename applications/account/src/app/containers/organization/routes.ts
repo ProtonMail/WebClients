@@ -35,6 +35,7 @@ interface Props {
     isZoomIntegrationEnabled: boolean;
     isSharedServerFeatureEnabled: boolean;
     isPasswordPolicyEnabled: boolean;
+    isRetentionPoliciesEnabled: boolean;
 }
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
@@ -52,6 +53,7 @@ export const getOrganizationAppRoutes = ({
     isZoomIntegrationEnabled,
     isSharedServerFeatureEnabled,
     isPasswordPolicyEnabled,
+    isRetentionPoliciesEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && user.isSelf;
 
@@ -116,6 +118,8 @@ export const getOrganizationAppRoutes = ({
         videoConferenceValidApplications.has(app);
 
     const canShowAccessControl = hasSubUsers || hasOrganization || hasOrganizationKey;
+
+    const canShowRetentionPolicies = isRetentionPoliciesEnabled && (hasActiveOrganizationKey || hasActiveOrganization);
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
@@ -280,6 +284,13 @@ export const getOrganizationAppRoutes = ({
                         id: 'spam',
                     },
                 ],
+            },
+            retentionPolicies: <SectionConfig>{
+                text: c('Title').t`Data retention`,
+                to: '/retention-policies',
+                icon: 'archive-box',
+                available: canShowRetentionPolicies,
+                subsections: [{ id: 'retention-policies' }],
             },
             security: <SectionConfig>{
                 text: c('Title').t`Authentication security`,

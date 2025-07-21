@@ -13,6 +13,7 @@ import {
     OrganizationGroupsManagementSection,
     OrganizationPasswordPoliciesSection,
     OrganizationPasswordSection,
+    OrganizationRetentionPoliciesSection,
     OrganizationScheduleCallSection,
     OrganizationSection,
     OrganizationSpamFiltersSection,
@@ -56,6 +57,7 @@ const OrganizationSettingsRouter = ({
             orgKeys,
             users,
             filter,
+            retentionPolicies,
             security,
             sso,
             connectionEvents,
@@ -139,6 +141,13 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, filter)}>
                     <PrivateMainSettingsArea config={filter}>
                         <OrganizationSpamFiltersSection />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(retentionPolicies) && (
+                <Route path={getSectionPath(path, retentionPolicies)}>
+                    <PrivateMainSettingsArea config={retentionPolicies}>
+                        <OrganizationRetentionPoliciesSection organization={organization} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
