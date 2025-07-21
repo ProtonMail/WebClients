@@ -84,6 +84,7 @@ interface Props extends ModalProps {
     allowVpnAccessConfiguration?: boolean;
     allowPrivateMemberConfiguration?: boolean;
     allowAIAssistantConfiguration?: boolean;
+    allowLumoConfiguration: boolean;
     showMultipleUserUploadButton?: boolean;
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
@@ -105,6 +106,7 @@ const SubUserCreateModal = ({
     allowVpnAccessConfiguration,
     allowPrivateMemberConfiguration,
     allowAIAssistantConfiguration,
+    allowLumoConfiguration,
     showMultipleUserUploadButton,
     disableStorageValidation,
     disableDomainValidation,
@@ -136,8 +138,6 @@ const SubUserCreateModal = ({
 
     const isMagicLinkEnabled = useFlag('MagicLink');
     const csvMode = isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password;
-
-    const lumoAddonAvailable = useFlag('LumoAddonAvailable');
 
     const [model, setModel] = useState({
         mode: isMagicLinkEnabled ? CreateMemberMode.Invitation : CreateMemberMode.Password,
@@ -514,7 +514,7 @@ const SubUserCreateModal = ({
                         />
                     )}
 
-                    {lumoAddonAvailable && (
+                    {allowLumoConfiguration && (
                         <MemberToggleContainer
                             toggle={
                                 <Toggle
