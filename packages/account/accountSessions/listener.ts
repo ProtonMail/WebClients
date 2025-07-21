@@ -1,4 +1,5 @@
 import { getAccountSessions } from '@proton/account/accountSessions/accountSessions';
+import { updateAccountSessions } from '@proton/account/accountSessions/storage';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { CacheType, getIsStaleRefetch, isExpired } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -7,7 +8,7 @@ import {
     getMissingPersistedSessionsFromActiveSessions,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { DAY } from '@proton/shared/lib/constants';
+import { APPS, DAY } from '@proton/shared/lib/constants';
 import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
 
@@ -106,6 +107,32 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
                     api: getSilentApi(listenerApi.extra.api),
                     persistedSessions: missingPersistedSessions,
                 }).catch(noop);
+            };
+
+            const timeout = 1_000;
+            if (globalThis.requestIdleCallback) {
+                globalThis.requestIdleCallback(run, { timeout });
+            } else {
+                setTimeout(run, timeout);
+            }
+        },
+    });
+
+    startListening({
+        actionCreator: bootstrapEvent,
+        effect: async (_, listenerApi) => {
+            listenerApi.unsubscribe();
+
+            if (listenerApi.extra.config.APP_NAME === APPS.PROTONACCOUNT) {
+                return;
+            }
+
+            const run = () => {
+                // Rudimentary way of having a "primary" tab writing to avoid race conditions.
+                if (!isDocumentVisible()) {
+                    return;
+                }
+                updateAccountSessions();
             };
 
             const timeout = 1_000;
