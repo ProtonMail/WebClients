@@ -170,7 +170,29 @@ export interface SrpAuthModalProps
     extends Omit<OwnAuthModalProps, 'onSuccess'>,
         Omit<ModalProps<'div'>, 'as' | 'onSubmit' | 'size' | 'onSuccess' | 'onError'> {
     onSuccess?: (data: SrpAuthModalResult) => Promise<void> | void;
+    info?: InfoAuthedResponse;
 }
+
+const getInitialInfoResultRef = ({
+    infoResult,
+    scope,
+    userSettings,
+    app,
+}: Parameters<typeof getAuthTypes>[0]): {
+    data?: { infoResult?: InfoAuthedResponse; authTypes: ReturnType<typeof getAuthTypes> };
+} => {
+    if (!infoResult) {
+        return {};
+    }
+
+    const authTypes = getAuthTypes({ scope, infoResult, userSettings, app });
+    return {
+        data: {
+            infoResult,
+            authTypes,
+        },
+    };
+};
 
 const SrpAuthModal = ({
     config,
@@ -181,6 +203,7 @@ const SrpAuthModal = ({
     prioritised2FAItem = 'fido2',
     onRecoveryClick,
     scope,
+    info: initialInfo,
     ...rest
 }: SrpAuthModalProps) => {
     const { APP_NAME } = useConfig();
@@ -192,9 +215,15 @@ const SrpAuthModal = ({
     const hasBeenAutoSubmitted = useRef(false);
     const errorHandler = useErrorHandler();
     const [fidoError, setFidoError] = useState(false);
-    const infoResultRef = useRef<{
-        data?: { infoResult?: InfoAuthedResponse; authTypes: ReturnType<typeof getAuthTypes> };
-    }>({});
+    const initialInfoRef = useRef(initialInfo);
+    const infoResultRef = useRef(
+        getInitialInfoResultRef({
+            infoResult: initialInfo,
+            scope,
+            userSettings,
+            app: APP_NAME,
+        })
+    );
 
     const [password, setPassword] = useState('');
     const [rerender, setRerender] = useState(0);
@@ -203,6 +232,15 @@ const SrpAuthModal = ({
     const cancelClose = () => {
         onCancel?.();
         onClose?.();
+    };
+
+    const getInfoResult = async () => {
+        const value = initialInfoRef.current;
+        if (value) {
+            initialInfoRef.current = undefined;
+            return value;
+        }
+        return api<InfoAuthedResponse>(getInfo({ intent: 'Proton' }));
     };
 
     const handleSubmit = async ({
@@ -218,8 +256,7 @@ const SrpAuthModal = ({
             return;
         }
 
-        const infoResult = await api<InfoAuthedResponse>(getInfo({ intent: 'Proton' }));
-
+        const infoResult = await getInfoResult();
         const authTypes = getAuthTypes({ scope, infoResult, userSettings, app: APP_NAME });
 
         infoResultRef.current.data = { infoResult, authTypes };

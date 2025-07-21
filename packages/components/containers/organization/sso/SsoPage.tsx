@@ -303,6 +303,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     const [organization] = useOrganization();
     const [user] = useUser();
     const [openSubscriptionModal] = useSubscriptionModal();
+    const isSsoForPbsEnabled = useFlag('SsoForPbs');
 
     const [setupSSODomainModalProps, setSetupSSODomainModalOpen, renderSetupSSODomainModal] = useModalState();
     const [verifySSODOmainModalProps, setVerifySSODomainModalOpen, renderVerifySSODomainModal] = useModalState();
@@ -323,7 +324,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
 
     const ssoAppInfo = getSsoAppInfo(app, organization.PlanName);
 
-    if (!planSupportsSSO(organization.PlanName)) {
+    if (!planSupportsSSO(organization.PlanName, isSsoForPbsEnabled)) {
         return (
             <SettingsSectionWide>
                 <PromotionBanner

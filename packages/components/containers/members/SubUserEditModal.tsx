@@ -236,6 +236,8 @@ const SubUserEditModal = ({
         hasOrganizationSetupWithKeys(organization) &&
         // Not yourself, to avoid requesting unprivatization for yourself
         !isSelfAndPrivate &&
+        // Cannot toggle private for SSO users
+        !member.SSO &&
         // The user does not have an ongoing unprivatization request or an admin request is ongoing (to be able to remove it)
         (!unprivatization.exists || unprivatization.mode === MemberUnprivatizationMode.AdminAccess);
 
