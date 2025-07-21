@@ -3,7 +3,7 @@ import { type FC, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ClipboardProvider, useOnCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
+import { useOnCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { SelectionManager } from '@proton/pass/utils/dom/selection';
 import clsx from '@proton/utils/clsx';
 
@@ -13,9 +13,8 @@ export type ClickToCopyProps = {
     onCopy?: () => void;
 };
 
-const ClickToCopyInternal: FC<PropsWithChildren<ClickToCopyProps>> = ({ className, children, onCopy, value = '' }) => {
+export const ClickToCopy: FC<PropsWithChildren<ClickToCopyProps>> = ({ className, children, onCopy, value = '' }) => {
     const ref = useRef<HTMLDivElement>(null);
-    // const { showModal, onCloseModal, onCopyToClipboard } = useCopyToClipboard();
     const onCopyToClipboard = useOnCopyToClipboard();
     const getValue = () => (value instanceof Function ? value() : value);
 
@@ -42,13 +41,5 @@ const ClickToCopyInternal: FC<PropsWithChildren<ClickToCopyProps>> = ({ classNam
             <span className="sr-only"> {c('Info').t`Press Enter to copy`}</span>
             {children}
         </div>
-    );
-};
-
-export const ClickToCopy: FC<PropsWithChildren<ClickToCopyProps>> = (props) => {
-    return (
-        <ClipboardProvider>
-            <ClickToCopyInternal {...props} />
-        </ClipboardProvider>
     );
 };

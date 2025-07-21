@@ -34,6 +34,7 @@ import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLin
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
@@ -146,7 +147,9 @@ export const App = () => {
                                                 <AuthServiceProvider>
                                                     <StoreProvider>
                                                         <Localized>
-                                                            {showWelcome ? <WelcomeScreen /> : <AppGuard />}
+                                                            <ClipboardProvider>
+                                                                {showWelcome ? <WelcomeScreen /> : <AppGuard />}
+                                                            </ClipboardProvider>
                                                         </Localized>
                                                         <Portal>
                                                             <ModalsChildren />

@@ -9,8 +9,8 @@ import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHisto
 import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
+import { useOnCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 
 export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
@@ -18,7 +18,7 @@ export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
     const { shareId, itemId, modifyTime, createTime } = revision;
 
     const note = useDeobfuscatedValue(revision.data.metadata.note);
-    const copyToClipboard = useCopyToClipboard();
+    const onCopyToClipboard = useOnCopyToClipboard();
 
     return (
         <ItemViewPanel
@@ -33,7 +33,7 @@ export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
                               key="copy-to-clipboard-button"
                               shape="solid"
                               size="medium"
-                              onClick={() => copyToClipboard(note)}
+                              onClick={() => onCopyToClipboard(note)}
                               disabled={revision.optimistic}
                               title={c('Action').t`Copy to clipboard`}
                           >

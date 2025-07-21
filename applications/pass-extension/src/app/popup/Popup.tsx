@@ -9,6 +9,7 @@ import { WorkerMessageType, type WorkerMessageWithSender } from 'proton-pass-ext
 import { ErrorBoundary, NotificationsContext, useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
+import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 
 import { AppGuard } from './AppGuard';
@@ -38,7 +39,9 @@ export const Popup = () => {
                             <NavigationProvider>
                                 <PopupProvider ready={ready}>
                                     <Localized>
-                                        <AppGuard />
+                                        <ClipboardProvider>
+                                            <AppGuard />
+                                        </ClipboardProvider>
                                     </Localized>
                                 </PopupProvider>
                             </NavigationProvider>

@@ -7,8 +7,17 @@ import { Option, SelectTwo } from '@proton/components';
 import { useOnClipboardSettingsChange } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { selectClipboardTTL } from '@proton/pass/store/selectors';
 
+export const getClipboardTTLOptions = (): [value: number, label: string][] => [
+    [-1, c('Label').t`Never`],
+    [15_000, c('Label').t`15 seconds`],
+    [60_000, c('Label').t`1 minute`],
+    [120_000, c('Label').t`2 minutes`],
+];
+
+export const getClipboardTTLDefault = () => getClipboardTTLOptions()[0][0];
+
 type Props = {
-    // Whether or not to initialize the settings value even if there is no changes
+    // Whether or not to initialize the settings value even if there are no changes
     initializeSetting?: boolean;
 };
 
@@ -16,19 +25,14 @@ export const ClipboardSettings: FC<Props> = ({ initializeSetting = false }) => {
     const storedValue = useSelector(selectClipboardTTL);
     const onSettingsChange = useOnClipboardSettingsChange();
 
-    const options: [value: number, label: string][] = [
-        [-1, c('Label').t`Never`],
-        [15_000, c('Label').t`15 seconds`],
-        [60_000, c('Label').t`1 minute`],
-        [120_000, c('Label').t`2 minutes`],
-    ];
+    const options = getClipboardTTLOptions();
+    const defaultValue = getClipboardTTLDefault();
 
-    const value = useMemo(() => options.find(([value]) => value === storedValue)?.[0] ?? options[0][0], [storedValue]);
+    const value = useMemo(() => options.find(([value]) => value === storedValue)?.[0] ?? defaultValue, [storedValue]);
 
     useEffect(() => {
         if (initializeSetting && storedValue === undefined) {
-            const timeoutMs = options[0][0];
-            void onSettingsChange(timeoutMs, true);
+            void onSettingsChange(defaultValue, true);
         }
     }, [initializeSetting, storedValue]);
 
