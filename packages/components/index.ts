@@ -733,6 +733,7 @@ export { default as OrganizationPasswordSection } from './containers/organizatio
 export { default as OrganizationScheduleCallSection } from './containers/organization/OrganizationScheduleCallSection';
 export { default as OrganizationSection } from './containers/organization/OrganizationSection';
 export { default as OrganizationSpamFiltersSection } from './containers/organization/OrganizationSpamFiltersSection';
+export { default as OrganizationRetentionPoliciesSection } from './containers/organization/retentionPolicy/OrganizationRetentionPoliciesSection';
 export { default as OrganizationTwoFAEnforcementSection } from './containers/organization/OrganizationTwoFAEnforcementSection';
 export { default as OrganizationTwoFAHeader } from './containers/organization/OrganizationTwoFAHeader';
 export { default as OrganizationTwoFARemindersSection } from './containers/organization/OrganizationTwoFARemindersSection';

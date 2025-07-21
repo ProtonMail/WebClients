@@ -6,6 +6,7 @@ import {
     memberAuthDevicesReducer,
     passwordPoliciesReducer,
     paymentMethodsReducer,
+    retentionPoliciesReducer,
     samlReducer,
 } from '@proton/account';
 import { calendarsReducer } from '@proton/calendar';
@@ -20,4 +21,5 @@ export const rootReducer = combineReducers({
     ...samlReducer,
     ...allowAddressDeletionReducer,
     ...memberAuthDevicesReducer,
+    ...retentionPoliciesReducer,
 });
