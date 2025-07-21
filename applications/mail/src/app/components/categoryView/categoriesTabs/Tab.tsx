@@ -8,46 +8,17 @@ import clsx from '@proton/utils/clsx';
 
 import type { CATEGORIES_COLOR_SHADES } from '../categoriesConstants';
 import { getLabelFromCategoryId } from '../categoriesStringHelpers';
-import type { TabSize } from './tabsInterface';
-
-interface LayoutVariables {
-    container: string;
-    label: string;
-}
-
-const layoutVariables: Record<TabSize, LayoutVariables> = {
-    default: {
-        container: 'gap-2 py-3 px-6',
-        label: 'text-default',
-    },
-    small: {
-        container: 'gap-1.5 py-3 px-4',
-        label: 'text-sm',
-    },
-    tiny: {
-        container: 'gap-1.5 py-3 px-2',
-        label: 'text-sm',
-    },
-};
 
 interface Props {
     id: MAILBOX_LABEL_IDS;
-    size?: TabSize;
     count?: number;
     icon: IconName;
     active: boolean;
     colorShade: CATEGORIES_COLOR_SHADES;
 }
 
-export const Tab = ({ id, size = 'default', count, icon, active, colorShade }: Props) => {
+export const Tab = ({ id, count, icon, active, colorShade }: Props) => {
     const theme = useTheme();
-
-    const classes = useMemo(() => {
-        return {
-            container: layoutVariables[size].container,
-            label: layoutVariables[size].label,
-        };
-    }, [size]);
 
     const shadeClasses = useMemo(() => {
         return {
@@ -61,7 +32,6 @@ export const Tab = ({ id, size = 'default', count, icon, active, colorShade }: P
         <NavLink
             to={LABEL_IDS_TO_HUMAN[id] || LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]}
             className={clsx(
-                classes.container,
                 `tab-container flex flex-nowrap items-center text-no-decoration border-bottom hover:${shadeClasses.text}`,
                 active
                     ? `text-semibold color-norm hover:color-norm ${shadeClasses.border}`
@@ -75,7 +45,7 @@ export const Tab = ({ id, size = 'default', count, icon, active, colorShade }: P
             <Icon className={clsx('shrink-0', active && shadeClasses.text)} name={icon} />
             <span
                 title={getLabelFromCategoryId(id)}
-                className={clsx('tag-label', classes.label, active ? 'color-norm' : 'color-weak')}
+                className={clsx('tag-label tag-label-text', active ? 'color-norm' : 'color-weak')}
             >
                 {getLabelFromCategoryId(id)}
             </span>
