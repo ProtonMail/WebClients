@@ -493,8 +493,15 @@ export const getHasVpnB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasVpnPro(subscription) || hasVpnBusiness(subscription);
 };
 
-export const planSupportsSSO = (planName?: PLANS) => {
-    return planName && [PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS].some((ssoPlanName) => ssoPlanName === planName);
+export const planSupportsSSO = (planName: PLANS | undefined, isSsoForPbsEnabled: boolean) => {
+    if (!planName) {
+        return;
+    }
+    const plans = [PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS];
+    if (isSsoForPbsEnabled) {
+        plans.push(PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_PRO);
+    }
+    return plans.some((ssoPlanName) => ssoPlanName === planName);
 };
 
 export const upsellPlanSSO = (planName?: PLANS) => {
