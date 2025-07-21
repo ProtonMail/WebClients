@@ -1,6 +1,6 @@
 //
-// SafariExtensionEvent.swift
-// Proton Pass - Created on 17/05/2024.
+// ReadFromClipboard.swift
+// Proton Pass - Created on 23/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -20,12 +20,22 @@
 //
 
 import Foundation
+import SafariServices
 
-public enum SafariExtensionEvent: Sendable, Equatable {
-    case newCredentials(Credentials?)
-    case updateCredentials(RefreshedTokens)
-    case environment(PassEnvironment)
-    case readFromClipboard
-    case writeToClipboard(content: String)
-    case unknown
+public protocol ReadFromClipboardUseCase: Sendable {
+    func execute() async throws -> String?
+}
+
+public extension ReadFromClipboardUseCase {
+    func callAsFunction() async throws -> String? {
+        try await execute()
+    }
+}
+
+public final class ReadFromClipboard: Sendable, ReadFromClipboardUseCase {
+    public init() {}
+
+    public func execute() async throws -> String? {
+        return UIPasteboard.general.string
+    }
 }
