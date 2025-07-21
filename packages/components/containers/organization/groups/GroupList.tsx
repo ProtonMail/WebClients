@@ -14,7 +14,9 @@ interface Props {
     canOnlyDelete: boolean;
 }
 
-const compareGroupNames = (a: Group, b: Group) => a.Name.localeCompare(b.Name);
+// Sort by natural order e.g. [1, 10, 11, 2] -> [1, 2, 10, 11]
+const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
+const compareGroupNames = (a: Group, b: Group) => collator.compare(a.Name, b.Name);
 
 const getSortedGroups = (input: string, groups: Group[]) => {
     return input
