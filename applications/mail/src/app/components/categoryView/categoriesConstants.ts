@@ -29,7 +29,7 @@ export const categoriesArray: {
     },
     {
         colorShade: CATEGORIES_COLOR_SHADES.TEAL,
-        icon: 'bolt-filled',
+        icon: 'megaphone-filled',
         id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
     },
     {
