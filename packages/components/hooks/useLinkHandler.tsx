@@ -139,7 +139,7 @@ export const useLinkHandler: UseLinkHandler = (
             link={link}
             isOutside={isOutside}
             isPhishingAttempt={isPhishingAttempt}
-            modalProps={linkConfirmationModalProps}
+            {...linkConfirmationModalProps}
         />
     ) : null;
 
