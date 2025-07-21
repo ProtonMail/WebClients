@@ -1,0 +1,36 @@
+// Taken from applications/pass-extension/src/lib/components/Settings/PauseList.scss
+
+@import '~@proton/styles/scss/lib';
+
+.pass-pause-list--table {
+	th small {
+		display: block;
+	}
+
+	// Same width condition as packages/styles/scss/components/_simple-table.scss
+	@container (max-width: 35rem) {
+		tr {
+			position: relative;
+
+			td {
+				display: flex !important;
+				align-items: center;
+				gap: em(10);
+
+				label {
+					order: -1;
+				}
+
+				&.pass-pause-list--remove button {
+					position: absolute;
+					inset-block-start: em(10);
+					inset-inline-end: em(10);
+				}
+
+				&:first-of-type p {
+					display: none !important;
+				}
+			}
+		}
+	}
+}
