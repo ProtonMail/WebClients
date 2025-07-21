@@ -718,6 +718,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                     {c('Users table: badge').t`Writing assistant`}
                                                                 </UserTableBadge>
                                                             )}
+                                                            {member.NumLumo > 0 && (
+                                                                <UserTableBadge type="weak">
+                                                                    {c('Users table: badge').t`Lumo`}
+                                                                </UserTableBadge>
+                                                            )}
                                                             {Boolean(hasPendingAllowAdminAccessRequest) && (
                                                                 <UserTableBadge
                                                                     type="weak"
