@@ -161,6 +161,7 @@ const MainContainer = () => {
     const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -218,6 +219,7 @@ const MainContainer = () => {
         isPasswordPolicyEnabled,
         isB2BTrial,
         isReferralExpansionEnabled,
+        isRetentionPoliciesEnabled,
     });
 
     useEffect(() => {
