@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { type Subscription, getVPNDedicatedIPs } from '@proton/payments';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { BRAND_NAME, ORGANIZATION_STATE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_APP_NAME, ORGANIZATION_STATE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getNCalendarsText } from '../../features/calendar';
@@ -117,6 +117,16 @@ const getWritingAssistantText = (organization?: Organization) => {
     );
 };
 
+const getLumoText = (organization?: Organization) => {
+    const maxLumo = organization?.MaxLumo ?? 0;
+
+    if (maxLumo === 0) {
+        return null;
+    }
+
+    return LUMO_APP_NAME;
+};
+
 /**
  * Delinquant organizations have some different text for the subscription panel to avoid confusion
  * @param organization Organization to get the subscription panel text
@@ -152,5 +162,6 @@ export const getSubscriptionPanelText = (
         serverText: getServersText(subscription),
         maxVPNDevicesText: getMaxVPNDevicesText(),
         writingAssistantText: getWritingAssistantText(organization),
+        lumoText: getLumoText(organization),
     };
 };
