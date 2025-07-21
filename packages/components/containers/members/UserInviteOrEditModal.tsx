@@ -76,7 +76,7 @@ const UserInviteOrEditModal = ({
                 : clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
             vpn: !!member?.MaxVPN,
             numAI: aiSeatsRemaining && (isVisionary || isDuo || isFamily), // Visionary, Duo and Family users should have the toggle set to true by default
-            lumo: lumoSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
+            lumo: member ? !!member.NumLumo : lumoSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
             admin: member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
         }),
         [member]
