@@ -1,9 +1,17 @@
 import { fireEvent, screen } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
+import { openNewTab } from '@proton/shared/lib/helpers/browser';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
+
 import { render } from 'proton-mail/helpers/test/render';
 
 import { activeSubscription } from '../../testData';
 import ModalUnsubscribe from './ModalUnsubscribe';
+
+jest.mock('@proton/shared/lib/helpers/browser');
+const mockedOpenNewTab = jest.mocked(openNewTab);
 
 describe('ModalUnsubscribe', () => {
     it('should render the modal', async () => {
@@ -64,5 +72,87 @@ describe('ModalUnsubscribe', () => {
         fireEvent.click(cancelButton);
 
         expect(onClose).toHaveBeenCalled();
+    });
+
+    it('should open the link confirmation modal when https method is used and there is no settings', async () => {
+        const subscription = {
+            ...activeSubscription,
+            UnsubscribeMethods: {
+                HttpClient: 'https://example.com',
+            },
+        };
+
+        await render(<ModalUnsubscribe subscription={subscription} open={true} />, {
+            preloadedState: {
+                mailSettings: getModelState({} as MailSettings),
+            },
+        });
+
+        const title = screen.getByText(`Unsubscribe from ${activeSubscription.Name}?`);
+        expect(title).toBeInTheDocument();
+
+        const unsubscribeButton = screen.getByText('Unsubscribe');
+        fireEvent.click(unsubscribeButton);
+
+        const linkConfirmationModal = screen.getByText('Link confirmation');
+        expect(linkConfirmationModal).toBeInTheDocument();
+
+        expect(mockedOpenNewTab).not.toHaveBeenCalled();
+    });
+
+    it('should open the link confirmation modal when https method is used and setting is enabled', async () => {
+        const subscription = {
+            ...activeSubscription,
+            UnsubscribeMethods: {
+                HttpClient: 'https://example.com',
+            },
+        };
+
+        await render(<ModalUnsubscribe subscription={subscription} open={true} />, {
+            preloadedState: {
+                mailSettings: getModelState({
+                    ConfirmLink: CONFIRM_LINK.CONFIRM,
+                } as MailSettings),
+            },
+        });
+
+        const title = screen.getByText(`Unsubscribe from ${activeSubscription.Name}?`);
+        expect(title).toBeInTheDocument();
+
+        const unsubscribeButton = screen.getByText('Unsubscribe');
+        fireEvent.click(unsubscribeButton);
+
+        const linkConfirmationModal = screen.getByText('Link confirmation');
+        expect(linkConfirmationModal).toBeInTheDocument();
+
+        expect(mockedOpenNewTab).not.toHaveBeenCalled();
+    });
+
+    it('should not open the link confirmation modal when https method is used and setting is disabled', async () => {
+        const subscription = {
+            ...activeSubscription,
+            UnsubscribeMethods: {
+                HttpClient: 'https://example.com',
+            },
+        };
+
+        await render(<ModalUnsubscribe subscription={subscription} open={true} />, {
+            preloadedState: {
+                mailSettings: getModelState({
+                    ConfirmLink: CONFIRM_LINK.DISABLED,
+                } as MailSettings),
+            },
+        });
+
+        const title = screen.getByText(`Unsubscribe from ${activeSubscription.Name}?`);
+        expect(title).toBeInTheDocument();
+
+        const unsubscribeButton = screen.getByText('Unsubscribe');
+        fireEvent.click(unsubscribeButton);
+
+        const linkConfirmationModal = screen.queryByText('Link confirmation');
+        expect(linkConfirmationModal).not.toBeInTheDocument();
+
+        expect(mockedOpenNewTab).toHaveBeenCalledWith('https://example.com');
     });
 });
