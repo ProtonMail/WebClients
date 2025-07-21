@@ -10,7 +10,7 @@ import {
   type PublicDriveCompat,
   type PublicNodeMeta,
 } from '@proton/drive-store'
-import { APP_VERSION } from '~/config'
+import config from '~/config'
 import { WordCountProvider } from '~/components/document/WordCount'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { DocumentLayout } from '~/components/document/DocumentLayout/DocumentLayout'
@@ -42,7 +42,7 @@ export function PublicApplicationContent({
       publicDriveCompat.getPublicAuthHeaders(),
       undefined,
       new DriveCompatWrapper({ publicCompat: publicDriveCompat }),
-      APP_VERSION,
+      config.APP_VERSION,
       unleashClient,
     )
     // Ensure only one application instance is created
