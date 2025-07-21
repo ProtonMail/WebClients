@@ -7,9 +7,7 @@ import { writeAccountSessions } from './storage';
 
 export const startHostAccountSessionsListener = (startListening: SharedStartListening<AccountSessionsState>) => {
     startListening({
-        predicate: (action) => {
-            return bootstrapEvent.match(action);
-        },
+        actionCreator: bootstrapEvent,
         effect: async (_, listenerApi) => {
             listenerApi.unsubscribe();
             writeAccountSessions();
