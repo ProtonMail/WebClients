@@ -170,6 +170,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         serverText,
         maxVPNDevicesText,
         writingAssistantText,
+        lumoText,
     } = getSubscriptionPanelText(user, organization, addresses, subscription);
 
     const getVpnPlusItems = (): Item[] => {
@@ -414,6 +415,15 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                     icon: 'pen-sparks',
                     text: writingAssistantText,
                     actionElement,
+                };
+            })(),
+            (() => {
+                if (!lumoText) {
+                    return false;
+                }
+                return {
+                    icon: 'speech-bubble',
+                    text: lumoText,
                 };
             })(),
         ];
