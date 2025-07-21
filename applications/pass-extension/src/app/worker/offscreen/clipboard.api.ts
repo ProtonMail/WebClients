@@ -1,5 +1,6 @@
 import { setupOffscreenDocument } from 'proton-pass-extension/app/worker/offscreen/offscreen.utils';
 import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { ClipboardApi } from '@proton/pass/lib/clipboard/types';
@@ -27,8 +28,10 @@ export const clipboardWorker: ClipboardApi = {
         // In safari, use native implementation
         try {
             if (BUILD_TARGET === 'safari') {
-                console.warn('sendSafariMessage read clipboard todo');
-                throw new Error('not implemented');
+                console.warn('[DEBUG] clipboard worker clipboard safari native read');
+
+                const result = await sendSafariMessage({ readFromClipboard: {} });
+                return result as string;
             }
         } catch {
             logger.debug('[Clipboard] Failed to read clipboard using native Safari implementation');
@@ -50,7 +53,7 @@ export const clipboardWorker: ClipboardApi = {
         return '';
     },
 
-    write: async (content: string) => {
+    write: async (content) => {
         console.warn('[DEBUG] Writing clipboard from extension worker');
 
         // Navigator clipboard API is available in Firefox extensions
@@ -68,8 +71,10 @@ export const clipboardWorker: ClipboardApi = {
         // In safari, use native implementation
         try {
             if (BUILD_TARGET === 'safari') {
-                console.warn('sendSafariMessage write clipboard todo');
-                throw new Error('not implemented');
+                console.warn('[DEBUG] clipboard worker clipboard safari native write');
+
+                await sendSafariMessage({ writeToClipboard: { Content: content } });
+                return;
             }
         } catch {
             logger.debug('[Clipboard] Failed to read clipboard using native Safari implementation');

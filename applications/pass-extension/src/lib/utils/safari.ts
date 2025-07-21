@@ -15,6 +15,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 type NativeSafariMessage =
     | { credentials: MaybeNull<AuthSession> }
     | { refreshCredentials: Pick<RefreshSessionData, 'AccessToken' | 'RefreshTime' | 'RefreshToken'> }
+    | { readFromClipboard: {} }
+    | { writeToClipboard: { Content: string } }
     | { environment: string };
 
 export const sendSafariMessage = (message: NativeSafariMessage) =>
