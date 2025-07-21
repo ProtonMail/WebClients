@@ -85,6 +85,7 @@ const PassPolicies = () => {
     const showPasswordGenerator = useFlag('PassB2BPasswordGenerator');
     const showVaultCreation = useFlag('PassB2BVaultCreation');
     const showItemSharing = useFlag('PassB2BItemSharing');
+    const showPauseList = useFlag('PassB2BPauseList');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
     const policies = getPolicies({ showVaultCreation, showItemSharing });
@@ -218,20 +219,22 @@ const PassPolicies = () => {
                             </SubSettingsSection>
                         )}
 
-                        <SubSettingsSection
-                            id="pause-list"
-                            title={c('Title').t`Pause list`}
-                            className="container-section-sticky-section"
-                        >
-                            <div className="color-weak">
-                                {c('Description')
-                                    .t`You can customize the list of domains where certain auto functions in ${PASS_APP_NAME} browser extension (Autofill, Autosuggest, Autosave) should not be run.`}
-                            </div>
-                            <div className="color-weak mb-4 text-semibold">
-                                {c('Description').t`A checked box means the feature is disabled.`}
-                            </div>
-                            <PauseList />
-                        </SubSettingsSection>
+                        {showPauseList && (
+                            <SubSettingsSection
+                                id="pause-list"
+                                title={c('Title').t`Pause list`}
+                                className="container-section-sticky-section"
+                            >
+                                <div className="color-weak">
+                                    {c('Description')
+                                        .t`You can customize the list of domains where certain auto functions in ${PASS_APP_NAME} browser extension (Autofill, Autosuggest, Autosave) should not be run.`}
+                                </div>
+                                <div className="color-weak mb-4 text-semibold">
+                                    {c('Description').t`A checked box means the feature is disabled.`}
+                                </div>
+                                <PauseList />
+                            </SubSettingsSection>
+                        )}
                     </>
                 )}
             </SettingsSectionWide>
