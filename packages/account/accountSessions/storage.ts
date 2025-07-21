@@ -63,8 +63,8 @@ const from = (value: string | undefined): PersistedSessionLite[] | undefined => 
     } catch (e) {}
 };
 
-export const writeAccountSessions = () => {
-    const sessions = getPersistedSessions()
+export const writeAccountSessions = (persistedSessions = getPersistedSessions()) => {
+    const sessions = persistedSessions
         // Remove oauth sessions, we don't want them to be visible in the in-app account switcher
         .filter((session) => session.source !== SessionSource.Oauth)
         .map(getMinimalPersistedSession);
@@ -74,4 +74,19 @@ export const writeAccountSessions = () => {
 export const readAccountSessions = () => {
     const cookieValue = getCookie(cookieName);
     return from(cookieValue);
+};
+
+/**
+ * The purpose of this function is to extend the lifetime of the iaas cookie.
+ * It rewrites whatever value it currently has so that the expiration increases.
+ * This is important because browsers cap the maximum expiration of a cookie, where
+ * certain browsers like brave or safari cap them at 7 days.
+ */
+export const updateAccountSessions = () => {
+    const cookieValue = getCookie(cookieName);
+    if (!cookieValue) {
+        return false;
+    }
+    syncToCookie(cookieValue);
+    return true;
 };

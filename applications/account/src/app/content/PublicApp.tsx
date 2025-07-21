@@ -4,6 +4,7 @@ import { BrowserRouter, Redirect, Route, Switch, useHistory } from 'react-router
 import type * as H from 'history';
 
 import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
+import { writeAccountSessions } from '@proton/account/accountSessions/storage';
 import { createAuthentication, createUnleash, init, loadCrypto } from '@proton/account/bootstrap';
 import type { OnLoginCallback, OnLoginCallbackResult } from '@proton/components';
 import {
@@ -101,6 +102,10 @@ import { addSession } from './session';
 
 const bootstrapApp = () => {
     const api = createApi({ config, sendLocaleHeaders: true });
+    const initialSessions = getPersistedSessions();
+    const initialSessionsLength = initialSessions.length;
+    const initialSessionsLengthBool = Boolean(initialSessionsLength);
+    writeAccountSessions(initialSessions);
     registerSessionListener({ type: 'all' });
     handleLogoutFromURL({ api });
     const authentication = createAuthentication({ initialAuth: false });
@@ -117,6 +122,10 @@ const bootstrapApp = () => {
         authentication,
         store,
         api,
+        sessions: {
+            initialSessionsLength,
+            initialSessionsLengthBool,
+        },
     };
 };
 
@@ -196,11 +205,7 @@ const loginPaths = [
 
 const ephemeralLoginPaths = [SSO_PATHS.APP_SWITCHER, SSO_PATHS.REAUTH];
 
-// Optimistically calculate if the account switcher should be visible
-const initialSessionsLength = getPersistedSessions().length;
-const initialSessionsLengthBool = Boolean(initialSessionsLength);
-
-const BasePublicApp = () => {
+const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>['sessions'] }) => {
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
     const history = useHistory();
@@ -209,7 +214,7 @@ const BasePublicApp = () => {
     const refresh = useCallback(() => setState((i) => i + 1), []);
     const [forkState, setForkState] = useState<ProduceForkData | null>(readForkState);
     const [activeSessions, setActiveSessions] = useState<ActiveSession[]>();
-    const [maybeHasActiveSessions] = useState(initialSessionsLengthBool);
+    const [maybeHasActiveSessions] = useState(sessions.initialSessionsLength);
     const [locationState, setLocationState] = useState<null | LoginLocationState>(null);
 
     const searchParams = new URLSearchParams(location.search);
@@ -601,7 +606,7 @@ const BasePublicApp = () => {
                                                         <SwitchAccountContainer
                                                             api={extraThunkArguments.api}
                                                             metaTags={getLoginMeta(maybePreAppIntent)}
-                                                            initialSessionsLength={initialSessionsLength}
+                                                            initialSessionsLength={sessions.initialSessionsLength}
                                                             onGetActiveSessions={handleGetActiveSessions}
                                                             activeSessions={activeSessions}
                                                             onActiveSessions={setActiveSessions}
@@ -637,7 +642,7 @@ const BasePublicApp = () => {
                                                     ]}
                                                 >
                                                     <SingleSignupSwitchContainer
-                                                        initialSessionsLength={initialSessionsLengthBool}
+                                                        initialSessionsLength={sessions.initialSessionsLengthBool}
                                                         hasBFCoupon={hasBFCoupon}
                                                         maybePreAppIntent={maybePreAppIntent}
                                                         initialSearchParams={initialSearchParams}
@@ -832,7 +837,7 @@ const BasePublicApp = () => {
 };
 
 const PublicApp = () => {
-    const { store, authentication, api } = useInstance(bootstrapApp);
+    const { store, authentication, api, sessions } = useInstance(bootstrapApp);
 
     return (
         <ProtonApp config={config}>
@@ -841,7 +846,7 @@ const PublicApp = () => {
                     <ProtonStoreProvider store={store}>
                         <ApiProvider api={api}>
                             <ErrorBoundary big component={<StandardErrorPage big />}>
-                                <BasePublicApp />
+                                <BasePublicApp sessions={sessions} />
                             </ErrorBoundary>
                         </ApiProvider>
                     </ProtonStoreProvider>
