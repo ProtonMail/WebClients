@@ -30,7 +30,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces'
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces'
 
 import { bootstrapApp } from './__utils/bootstrap'
-import * as config from '~/config'
+import config from '~/config'
 import type { DocsStore } from '~/redux-store/store'
 import { extraThunkArguments } from '~/redux-store/thunk'
 import type { AvailabilityReport } from '@proton/utils/availability'
