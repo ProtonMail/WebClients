@@ -28,6 +28,8 @@ final class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
     private let setEnvironment = resolve(\SharedUseCaseContainer.setEnvironment)
     private let setCredentials = resolve(\SharedUseCaseContainer.setCredentials)
     private let updateCredentials = resolve(\SharedUseCaseContainer.updateCredentials)
+    private let readFromClipboard = resolve(\SharedUseCaseContainer.readFromClipboard)
+    private let writeToClipboard = resolve(\SharedUseCaseContainer.writeToClipboard)
     private let createLogger = resolve(\SharedUseCaseContainer.createLogger)
 
     func beginRequest(with context: NSExtensionContext) {
@@ -41,14 +43,18 @@ final class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
         if let message {
             Task { [weak self] in
-                await self?.handle(message: String(describing: message))
+                if let result = await self?.handle(message: String(describing: message)) {
+                    let response = NSExtensionItem()
+                    response.userInfo = [ SFExtensionMessageKey: result ]
+                    context.completeRequest(returningItems: [response], completionHandler: nil)
+                }
             }
         }
     }
 }
 
 private extension SafariWebExtensionHandler {
-    func handle(message: String) async {
+    func handle(message: String) async -> String? {
         let logger = createLogger(category: "SafariExtension")
         do {
             switch try processSafariExtensionEvent(message) {
@@ -58,11 +64,16 @@ private extension SafariWebExtensionHandler {
                 try await updateCredentials(tokens)
             case let .environment(environment):
                 try await setEnvironment(environment)
+            case .readFromClipboard:
+                return try await readFromClipboard()
+            case let .writeToClipboard(content):
+                try await writeToClipboard(content)
             case .unknown:
                 logger.error("Unknown message")
             }
         } catch {
             logger.error("Error handling message \(error.localizedDescription, privacy: .public)")
         }
+        return nil
     }
 }
