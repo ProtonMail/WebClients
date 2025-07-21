@@ -136,6 +136,7 @@ enum DriveFeatureFlag {
     DriveWebSDKCreateFolderModal = 'DriveWebSDKCreateFolderModal',
     DriveWebSDKSharingModal = 'DriveWebSDKSharingModal',
     DriveWebSDKDevices = 'DriveWebSDKDevices',
+    DriveWebSDKTrash = 'DriveWebSDKTrash',
 }
 
 enum DocsFeatureFlag {
