@@ -1,52 +1,11 @@
 @import '~@proton/styles/scss/lib';
 
-$category-colors: (
-	'iris': (
-		base: var(--iris-500),
-		bg: var(--iris-50),
-		text: var(--iris-700),
-	),
-	'sky': (
-		base: var(--sky-500),
-		bg: var(--sky-50),
-		text: var(--sky-700),
-	),
-	'teal': (
-		base: var(--teal-500),
-		bg: var(--teal-50),
-		text: var(--teal-700),
-	),
-	'pink': (
-		base: var(--pink-500),
-		bg: var(--pink-50),
-		text: var(--pink-700),
-	),
-	'blue': (
-		base: var(--blue-500),
-		bg: var(--blue-50),
-		text: var(--blue-700),
-	),
-	'purple': (
-		base: var(--purple-500),
-		bg: var(--purple-50),
-		text: var(--purple-700),
-	),
-	'amber': (
-		base: var(--amber-500),
-		bg: var(--amber-50),
-		text: var(--amber-700),
-	),
-);
-
 .categories-tabs {
 	background-color: var(--toolbar-background-color);
+	container-type: inline-size;
 
 	.tab-container {
 		border-width: rem(3);
-
-		.text-default {
-			font-size: rem(13);
-		}
 
 		// Used to avoid jumping when the label get the semibold weight
 		.tag-label::before {
@@ -61,6 +20,77 @@ $category-colors: (
 
 		.tag-count {
 			border-radius: rem(6);
+		}
+	}
+
+	// Icons only view (xsmall)
+	@container (max-width: 450px) {
+		.tab-container {
+			.tag-label,
+			.tag-count {
+				display: none;
+			}
+
+			padding-block: rem(12);
+			padding-inline: rem(8);
+			gap: 0;
+		}
+	}
+
+	// Only the selected category extended (xsmall to medium)
+	@container (min-width: 450px) and (max-width: 910px) {
+		.tab-container {
+			.tag-label,
+			.tag-count {
+				display: none;
+			}
+
+			.tag-label-text {
+				font-size: rem(12);
+			}
+
+			padding-block: rem(12);
+			padding-inline: rem(8);
+			gap: rem(6);
+
+			// Show label only for active tab
+			&[aria-selected='true'] {
+				.tag-label,
+				.tag-count {
+					display: block;
+				}
+			}
+		}
+	}
+
+	// Fully extended view (medium to large)
+	@container (min-width: 910px) {
+		.tab-container {
+			.tag-label,
+			.tag-count {
+				display: block;
+			}
+
+			.tag-label-text {
+				font-size: rem(12);
+			}
+
+			padding-block: rem(12);
+			padding-inline: rem(16);
+			gap: rem(6);
+		}
+	}
+
+	// Large screen fully extended view (large)
+	@container (min-width: 1100px) {
+		.tab-container {
+			.tag-label-text {
+				font-size: rem(13);
+			}
+
+			padding-block: rem(12);
+			padding-inline: rem(24);
+			gap: rem(8);
 		}
 	}
 }
