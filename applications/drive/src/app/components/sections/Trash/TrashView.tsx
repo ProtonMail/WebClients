@@ -12,7 +12,7 @@ import EmptyTrashNotification from './EmptyTrashNotification';
 import Trash from './Trash';
 import TrashToolbar from './TrashToolbar';
 
-const TrashView = () => {
+export const TrashViewDepecated = () => {
     useAppTitle(c('Title').t`Trash`);
     const { activeShareId, setDefaultRoot } = useActiveShare();
     useEffect(setDefaultRoot, []);
@@ -30,4 +30,3 @@ const TrashView = () => {
         </FileBrowserStateProvider>
     );
 };
-export default TrashView;
