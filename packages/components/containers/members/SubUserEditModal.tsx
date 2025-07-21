@@ -202,7 +202,7 @@ const SubUserEditModal = ({
 
     // We want to keep AI enabled if all seats are taken but the user already has a seat
     const disableAI = !organization?.MaxAI || (!aiSeatsRemaining && !member.NumAI);
-    const disableLumo = !organization?.MaxLumo || (!lumoSeatsRemaining && !member.NumLumo);
+    const disableLumo = (!organization?.MaxLumo || !lumoSeatsRemaining) && !member.NumLumo;
 
     useEffect(() => {
         dispatch(getMemberAddresses({ member })).catch(noop);

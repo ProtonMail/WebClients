@@ -239,7 +239,7 @@ const UserInviteOrEditModal = ({
                                 <Toggle
                                     id="lumo-toggle"
                                     checked={model.lumo}
-                                    disabled={!lumoSeatsRemaining}
+                                    disabled={!model.lumo && !lumoSeatsRemaining}
                                     onChange={({ target }) => handleChange('lumo')(target.checked)}
                                 />
                             }
