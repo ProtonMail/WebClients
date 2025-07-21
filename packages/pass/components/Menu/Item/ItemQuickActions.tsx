@@ -15,9 +15,9 @@ import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import { usePasswordGeneratorAction } from '@proton/pass/components/Password/PasswordGeneratorAction';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
+import { useOnCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
-import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useMatchUser } from '@proton/pass/hooks/useMatchUser';
 import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
@@ -51,7 +51,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
     const navigate = useNavigate();
     const passwordHistory = usePasswordHistoryActions();
     const generatePassword = usePasswordGeneratorAction();
-    const copyToClipboard = useCopyToClipboard();
+    const onCopyToClipboard = useOnCopyToClipboard();
     const paidUser = useMatchUser({ paid: true });
     const showCustomItem = useFeatureFlag(PassFeature.PassCustomTypeV1);
 
@@ -77,7 +77,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
             className: SubTheme.RED,
             onSubmit: (value) => {
                 passwordHistory.add({ value, origin });
-                copyToClipboard(value).catch(noop);
+                onCopyToClipboard(value).catch(noop);
             },
         });
     };
