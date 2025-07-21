@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { APP_VERSION } from '../../config';
+import config from '../../config';
 import type { TransferInitializationLog, TransferLog, TransferType } from './interface';
 
 export default function useTransferLog(transferType: TransferType) {
@@ -19,7 +19,7 @@ export default function useTransferLog(transferType: TransferType) {
         logs.current.push({
             transferType,
             time: new Date(),
-            message: `Transfer logging initialized. App version: ${APP_VERSION}`,
+            message: `Transfer logging initialized. App version: ${config.APP_VERSION}`,
         });
     }
 
