@@ -98,13 +98,30 @@ const UserInviteOrEditModal = ({
     };
 
     const sendInvitation = async () => {
-        const res = await api(
-            inviteMember(model.address, model.storage, allowAIAssistantUpdate && model.numAI ? 1 : 0)
-        );
+        const maxAI = (() => {
+            if (!allowAIAssistantUpdate) {
+                return;
+            }
 
-        if (lumoAddonAvailable && lumoHasChanged) {
-            await api(updateLumo(res.Member.ID, model.lumo ? 1 : 0));
-        }
+            return model.numAI ? 1 : 0;
+        })();
+
+        const maxLumo = (() => {
+            if (!allowLumoConfiguration) {
+                return;
+            }
+
+            return model.lumo ? 1 : 0;
+        })();
+
+        await api(
+            inviteMember({
+                email: model.address,
+                maxSpace: model.storage,
+                maxAI,
+                maxLumo,
+            })
+        );
 
         createNotification({ text: c('Success').t`Invitation sent` });
     };
