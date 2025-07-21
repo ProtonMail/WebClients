@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { getClipboardTTLOptions } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings';
 import { ClipboardSettingsModal } from '@proton/pass/components/Settings/Clipboard/ClipboardSettingsModal';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { settingsEditIntent } from '@proton/pass/store/actions';
@@ -37,10 +38,22 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     const [modal, setModal] = useState<MaybeNull<ClipboardAction>>(null);
 
     const handleActualCopy = async (value: string) => {
-        console.warn('handleActualCopy', { value });
+        console.warn('[DEBUG] handleActualCopy', { value });
+
         try {
             await writeToClipboard(value);
-            createNotification({ type: 'success', text: c('Info').t`Copied to clipboard`, showCloseButton: false });
+
+            const timeoutDurationHumanReadable = getClipboardTTLOptions().find(
+                ([value]) => value === clipboardTTL
+            )?.[1];
+
+            const text =
+                clipboardTTL === undefined
+                    ? c('Info').t`Copied to clipboard`
+                    : // translator: `timeoutDurationHumanReadable` may be 15 seconds, 1 minute or 2 minutes
+                      c('Info').t`Copied to clipboard, automatically deleted after ${timeoutDurationHumanReadable}`;
+
+            createNotification({ type: 'success', text, showCloseButton: false });
         } catch (err) {
             createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
             logger.error(`[Popup] unable to copy to clipboard`, err);
@@ -48,7 +61,7 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     };
 
     const onCopyToClipboard = async (value: string) => {
-        console.warn('onCopyToClipboard', { clipboardTTL });
+        console.warn('[DEBUG] onCopyToClipboard', { clipboardTTL });
 
         if (BUILD_TARGET !== 'web' && clipboardTTL === undefined) {
             setCachedCopy(value);
@@ -60,13 +73,12 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     };
 
     const onSettingsChange = async (timeoutMs: number, silent = false) => {
-        console.warn('onSettingsChange', { timeoutMs, silent });
+        console.warn('[DEBUG] onSettingsChange', { timeoutMs, silent });
+
         dispatch(settingsEditIntent('behaviors', { clipboard: { timeoutMs } }, silent));
     };
 
     const onClose = async () => {
-        console.warn('onClose', { cachedCopy });
-
         setModal(null);
 
         if (cachedCopy !== null) {
