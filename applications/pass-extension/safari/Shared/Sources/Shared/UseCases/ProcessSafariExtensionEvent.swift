@@ -73,6 +73,12 @@ public final class ProcessSafariExtensionEvent: ProcessSafariExtensionEventUseCa
                 return .updateCredentials(.init(accessToken: accessToken,
                                                 refreshToken: refreshToken))
             }
+        } else if dict["readFromClipboard"] is [String: String] {
+            return .readFromClipboard
+        } else if let writeToClipboard = dict["writeToClipboard"] as? [String: String] {
+            if let content = writeToClipboard["Content"] {
+                return .writeToClipboard(content: content)
+            }
         }
 
         return .unknown
