@@ -347,6 +347,7 @@ export { default as TextAreaTwo } from './components/v2/input/TextArea';
 export { default as TotpInput } from './components/v2/input/TotpInput';
 export { default as PhoneInput } from './components/v2/phone/LazyPhoneInput';
 
+export { default as LinkConfirmationModal } from './components/notifications/LinkConfirmationModal/LinkConfirmationModal';
 export { default as UncontainedWrapper } from './components/uncontainedwrapper/UncontainedWrapper';
 export { default as useFormErrors } from './components/v2/useFormErrors';
 export { default as AppVersion } from './components/version/AppVersion';
@@ -854,8 +855,8 @@ export { default as VpnDownloadSection } from './containers/vpn/VpnDownloadSecti
 export { default as VpnGetMoreSection } from './containers/vpn/VpnGetMoreSection/VpnGetMoreSection';
 export { default as WireGuardConfigurationSection } from './containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 export { getAppVersion } from './helpers/appVersion';
-export { getCustomSizingClasses } from './helpers/getCustomSizingClasses';
 export { escapeCsvValue } from './helpers/escapeCsvValue';
+export { getCustomSizingClasses } from './helpers/getCustomSizingClasses';
 export { getObjectKeys } from './helpers/getObjectKeys';
 export { DrawerProvider, default as useDrawer } from './hooks/drawer/useDrawer';
 export { default as useDrawerLocalStorage } from './hooks/drawer/useDrawerLocalStorage';
