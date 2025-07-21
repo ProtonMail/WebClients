@@ -2,12 +2,18 @@ import type { Configuration } from 'webpack'
 import path from 'node:path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-import getConfig from '@proton/pack/webpack.config'
-import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries'
+import { getIndexChunks } from '@proton/pack/webpack/entries'
 
-const result = (env: Record<string, any>): Configuration => {
-  const config = getConfig(env)
-  if (env.appMode === 'standalone') {
+import { type WebpackEnvArgumentsV2, getWebpackOptions } from '@proton/pack/lib/configV2'
+import { addDevEntry, getConfigV2 } from '@proton/pack/webpack.config'
+
+import appConfig from './appConfig'
+
+const result = (opts: WebpackEnvArgumentsV2): Configuration => {
+  const webpackOptions = getWebpackOptions(opts, { appConfig })
+  const config = getConfigV2(webpackOptions)
+
+  if (webpackOptions.appMode === 'standalone') {
     addDevEntry(config)
   }
 
@@ -22,16 +28,21 @@ const result = (env: Record<string, any>): Configuration => {
 
   const htmlIndex = config.plugins.indexOf(htmlPlugin)
 
+  const templateParameters = {
+    ...htmlPlugin.userOptions.templateParameters,
+    defineWebpackConfig: JSON.stringify(webpackOptions.defineWebpackConfig),
+  }
+
   config.plugins.splice(
     htmlIndex,
     1,
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'ejs-webpack-loader!src/app.ejs',
-      templateParameters: htmlPlugin.userOptions.templateParameters,
-      scriptLoading: 'defer',
-      inject: true,
       chunks: getIndexChunks('index', true),
+      filename: 'index.html',
+      inject: true,
+      scriptLoading: 'defer',
+      template: 'ejs-webpack-loader!src/app.ejs',
+      templateParameters,
     }),
   )
 
