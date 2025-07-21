@@ -1,6 +1,6 @@
 //
-// SafariExtensionEvent.swift
-// Proton Pass - Created on 17/05/2024.
+// WriteToClipboard.swift
+// Proton Pass - Created on 23/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -20,12 +20,22 @@
 //
 
 import Foundation
+import SafariServices
 
-public enum SafariExtensionEvent: Sendable, Equatable {
-    case newCredentials(Credentials?)
-    case updateCredentials(RefreshedTokens)
-    case environment(PassEnvironment)
-    case readFromClipboard
-    case writeToClipboard(content: String)
-    case unknown
+public protocol WriteToClipboardUseCase: Sendable {
+    func execute(_ content: String) async throws
+}
+
+public extension WriteToClipboardUseCase {
+    func callAsFunction(_ content: String) async throws {
+        try await execute(content)
+    }
+}
+
+public final class WriteToClipboard: Sendable, WriteToClipboardUseCase {
+    public init() {}
+
+    public func execute(_ content: String) async throws {
+        UIPasteboard.general.string = content
+    }
 }
