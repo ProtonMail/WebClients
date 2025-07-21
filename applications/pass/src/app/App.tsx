@@ -37,6 +37,7 @@ import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/The
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { PublicRoutes, getLocalPath, history } from '@proton/pass/components/Navigation/routing';
+import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
@@ -192,7 +193,9 @@ export const App = () => (
                                                                 <StoreProvider>
                                                                     <ThemeConnect />
                                                                     <Localized>
-                                                                        <AppGuard />
+                                                                        <ClipboardProvider>
+                                                                            <AppGuard />
+                                                                        </ClipboardProvider>
                                                                     </Localized>
                                                                     <Portal>
                                                                         <ModalsChildren />
