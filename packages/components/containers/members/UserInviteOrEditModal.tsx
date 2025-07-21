@@ -24,7 +24,6 @@ import { BRAND_NAME, LUMO_APP_NAME, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/s
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 import clamp from '@proton/utils/clamp';
 
 import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
@@ -37,6 +36,7 @@ interface Props extends ModalStateProps {
     allowAIAssistantConfiguration: boolean;
     allowAIAssistantUpdate: boolean;
     aiSeatsRemaining: boolean;
+    allowLumoConfiguration: boolean;
     lumoSeatsRemaining: boolean;
     allowStorageConfiguration?: boolean;
 }
@@ -48,6 +48,7 @@ const UserInviteOrEditModal = ({
     allowAIAssistantConfiguration,
     allowAIAssistantUpdate,
     aiSeatsRemaining,
+    allowLumoConfiguration,
     lumoSeatsRemaining,
     ...modalState
 }: Props) => {
@@ -60,8 +61,6 @@ const UserInviteOrEditModal = ({
     const storageRange = getStorageRange(member ?? {}, organization);
     const storageSizeUnit = sizeUnits.GB;
     const isEditing = !!member?.ID;
-
-    const lumoAddonAvailable = useFlag('LumoAddonAvailable');
 
     const [subscription] = useSubscription();
     const isVisionary = hasVisionary(subscription);
@@ -134,7 +133,7 @@ const UserInviteOrEditModal = ({
             await api(updateAI(member!.ID, model.numAI ? 1 : 0));
         }
 
-        if (lumoAddonAvailable && lumoHasChanged) {
+        if (allowLumoConfiguration && lumoHasChanged) {
             await api(updateLumo(member!.ID, model.lumo ? 1 : 0));
         }
 
@@ -232,7 +231,7 @@ const UserInviteOrEditModal = ({
                     </div>
                 )}
 
-                {lumoAddonAvailable && (
+                {allowLumoConfiguration && (
                     <div className="mb-4">
                         <MemberToggleContainer
                             toggle={
