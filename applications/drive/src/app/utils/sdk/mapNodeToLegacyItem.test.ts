@@ -10,6 +10,10 @@ jest.mock('./getNodeEntity');
 
 const mockGetNodeEntity = jest.mocked(getNodeEntity);
 
+const mockDrive = {
+    getNode: jest.fn(),
+} as any;
+
 const linkId = 'nodeLinkId';
 const volumeId = 'nodeVolumeId';
 const revId = 'nodeRevId';
@@ -86,6 +90,14 @@ describe('mapNodeToLegacyItem', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         mockGetNodeEntity.mockImplementation(jest.requireActual('./getNodeEntity').getNodeEntity);
+        mockDrive.getNode.mockResolvedValue({
+            ok: true,
+            value: {
+                uid: 'root-uid',
+                deprecatedShareId: 'share-id-1',
+                parentUid: undefined,
+            },
+        });
     });
 
     it('should map a successful node to legacy item', async () => {
@@ -94,12 +106,12 @@ describe('mapNodeToLegacyItem', () => {
             value: mockNodeEntity,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result).toEqual({
             uid: nodeUid,
             name: 'test-file.txt',
-            id: linkId,
+            id: nodeUid,
             mimeType: 'text/plain',
             isFile: true,
             shareId: shareId,
@@ -109,9 +121,14 @@ describe('mapNodeToLegacyItem', () => {
             size: 1000,
             trashed: null,
             parentLinkId: parentId,
+            parentUid: parentUid,
+            deprecatedShareId: shareId,
+            isLocked: false,
+            metaDataModifyTime: modifyTime / 1000,
             linkId: linkId,
             volumeId: volumeId,
             isAnonymous: false,
+            thumbnailId: 'nodeRevId',
             activeRevision: {
                 id: revId,
                 createTime: revisionTime / 1000,
@@ -139,7 +156,7 @@ describe('mapNodeToLegacyItem', () => {
             value: folderNode,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.isFile).toBe(false);
         expect(result.activeRevision).toBeUndefined();
@@ -156,7 +173,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithoutRevision,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.activeRevision).toBeUndefined();
         expect(result.size).toBe(1024); // Should use totalStorageSize
@@ -173,7 +190,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithoutMediaType,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.mimeType).toBe('');
     });
@@ -189,7 +206,7 @@ describe('mapNodeToLegacyItem', () => {
             value: trashedNode,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.trashed).toBe(trashedTime / 1000);
     });
@@ -210,7 +227,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithInactiveRevision,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.activeRevision?.state).toBe(0);
     });
@@ -233,7 +250,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithDifferentSizes,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.size).toBe(1500);
         expect(result.activeRevision?.size).toBe(2048);
@@ -257,7 +274,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithOnlyStorageSize,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.size).toBe(2048);
     });
@@ -274,7 +291,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithOnlyTotalStorageSize,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.size).toBe(3000);
     });
@@ -291,7 +308,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithZeroSizes,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.size).toBe(0);
     });
@@ -307,7 +324,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithoutDeprecatedShareId,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.shareId).toBe('share-id-1');
     });
@@ -328,7 +345,7 @@ describe('mapNodeToLegacyItem', () => {
             value: folderNode,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.isFile).toBe(false);
         expect(result.mimeType).toBe('');
@@ -352,7 +369,7 @@ describe('mapNodeToLegacyItem', () => {
             value: anonymousFileNode,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.isAnonymous).toBe(true);
     });
@@ -376,7 +393,7 @@ describe('mapNodeToLegacyItem', () => {
             value: anonymousFolderNode,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.isAnonymous).toBe(true);
         expect(result.isFile).toBe(false);
@@ -408,7 +425,7 @@ describe('mapNodeToLegacyItem', () => {
             errors: new Map([['name', { name: 'fallback name', error: 'Node retrieval failed' }]]),
         });
 
-        const result = await mapNodeToLegacyItem(failedNode, mockShare);
+        const result = await mapNodeToLegacyItem(failedNode, mockShare, mockDrive);
         expect(result.name).toBe('fallback name');
     });
 
@@ -429,7 +446,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithAuthorError,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.isAnonymous).toBe(false);
     });
@@ -450,7 +467,7 @@ describe('mapNodeToLegacyItem', () => {
             value: nodeWithDraftRevision,
         };
 
-        const result = await mapNodeToLegacyItem(maybeNode, mockShare);
+        const result = await mapNodeToLegacyItem(maybeNode, mockShare, mockDrive);
 
         expect(result.activeRevision?.state).toBe(0);
     });

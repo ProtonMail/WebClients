@@ -48,6 +48,7 @@ export type {
     ShareNodeSettings,
     Author,
     InvalidNameError,
+    ProtonDriveClient,
 } from '@protontech/drive-sdk';
 
 /* Other export */
