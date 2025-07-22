@@ -92,6 +92,12 @@
       "Add to group": [
         "グループに追加"
       ],
+      "Add Zoom meeting": [
+        "Zoomミーティングを追加"
+      ],
+      "Adding conferencing details": [
+        "会議の詳細を追加しています"
+      ],
       "Apply": [
         "適用"
       ],
@@ -115,6 +121,9 @@
       ],
       "Cancel subscription": [
         "サブスクリプションをキャンセル"
+      ],
+      "Cancel trial and pay": [
+        "トライアルをキャンセルして支払う"
       ],
       "Chat with us": [
         "チャットする"
@@ -464,6 +473,9 @@
       "Load image": [
         "画像を読み込む"
       ],
+      "Loading Zoom configuration": [
+        "Zoomの設定を読み込んでいます"
+      ],
       "Make this participant optional": [
         "この参加者の参加を任意にする"
       ],
@@ -601,6 +613,9 @@
       ],
       "Reconnect": [
         "再接続"
+      ],
+      "Reconnect to Zoom": [
+        "Zoomに再接続する"
       ],
       "Recover data": [
         "データを復元する"
@@ -1218,6 +1233,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan }と${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
@@ -3431,6 +3449,9 @@
       "Invalid verification code": [
         "無効な検証コード"
       ],
+      "Invalid ZIP code": [
+        "郵便番号が正しくありません"
+      ],
       "Invitation failed to be sent": [
         "招待の送信に失敗しました"
       ],
@@ -3521,6 +3542,18 @@
       "Please create an address first.": [
         "最初にアドレスを作成してください。"
       ],
+      "Please enter a valid postal code": [
+        "有効な郵便番号を入力してください"
+      ],
+      "Please enter a valid ZIP code": [
+        "有効な郵便番号を入力してください"
+      ],
+      "Please enter postal code": [
+        "郵便番号を入力してください"
+      ],
+      "Please enter ZIP code": [
+        "郵便番号を入力してください"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
       ],
@@ -3532,6 +3565,12 @@
       ],
       "Please select a state": [
         "州を選択してください"
+      ],
+      "Please select billing country": [
+        "請求先の国を選択してください"
+      ],
+      "Please select billing state": [
+        "請求先の州を選択してください"
       ],
       "Port is required": [
         "ポートは必須です"
@@ -3680,6 +3719,9 @@
       "You already added this holidays calendar": [
         "この祝日カレンダーはすでに追加されています"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Zoomに再接続されました。今予定を保存することができます。"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }件以上の宛先へメールを送信することはできません"
       ],
@@ -3694,6 +3736,9 @@
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Zoomの接続が期限切れになりました。続けるには再接続してください。"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5821,6 +5866,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。メールが受信トレイに届かなくなりました。Drive の共有リンクが無効になり、新しいファイルをアップロードできません。アカウントの使用を継続するには、未払いの請求をお支払いください。"
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ plan } サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高は、お客様のアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetime ディールには更新価格はなく、${ PASS_SHORT_APP_NAME } への生涯アクセスに対する1回限りの支払いです。"
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
@@ -6563,6 +6611,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "郵便番号"
+      ],
       "ZIP code": [
         "郵便番号"
       ]
@@ -7643,6 +7694,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "ビジネスの機密情報を保護して安全に共同作業"
       ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "家族を守るために、6 人のユーザー向けに${ plusTitle } のすべてのプレミアム機能をご利用ください。"
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "すべての ${ BRAND_NAME } サービスを組み合わせて、ご家族のプライバシーを保護します。"
       ],
@@ -7688,6 +7742,9 @@
       ],
       "Downgrade account?": [
         "アカウントをダウングレードしますか?"
+      ],
+      "Review subscription": [
+        "サブスクリプションを再検討"
       ],
       "Review subscription and pay": [
         "サブスクリプションを見なおして決済"
@@ -8170,6 +8227,9 @@
       "Get the deal": [
         "割引を入手"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "最初の月の${ plan }が80%割引になる最後のチャンスです。"
+      ],
       "Last day to save": [
         "節約できる最後の日"
       ],
@@ -8550,6 +8610,9 @@
       "Got it": [
         "わかった"
       ],
+      "I'm purchasing as a business": [
+        "法人として購入します"
+      ],
       "MM/YY": [
         "月/年"
       ],
@@ -8582,6 +8645,9 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "その後、 ${ renewPriceStr } で ${ renewalLength } ヶ月間自動的に更新されます。いつでもキャンセルできます。"
+      ],
+      "This number will be shown on all future invoices": [
+        "この番号は、今後すべての請求書に表示されます"
       ],
       "This payment method will become your new default for all future renewals.": [
         "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
@@ -8635,6 +8701,20 @@
       ],
       "Street address, postal code, and city": [
         "番地、郵便番号、市区町村名"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "法人番号"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "VAT 番号"
       ]
     },
     "PGP key encryption warning": {
@@ -8737,6 +8817,9 @@
       "Please select a country": [
         "国を選択してください"
       ],
+      "Postal code": [
+        "郵便番号"
+      ],
       "Search events": [
         "予定を検索"
       ],
@@ -8766,6 +8849,9 @@
       ],
       "Your organization name": [
         "あなたの組織の名前"
+      ],
+      "ZIP code": [
+        "郵便番号"
       ]
     },
     "Placeholder for contact group name": {
@@ -8781,6 +8867,20 @@
     "plan customizer, users": {
       "contact": [
         "お問い合わせ"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "すべての ${ protonPlus } サービス。${ br }1 つの簡単なサブスクリプション。"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }**の登録者として、**${ upsellPlanTitle }**にアップグレードすることで、**${ unlockPlanTitle }**とすべてのプレミアム${ BRAND_NAME }サービスがアンロックできます"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle }のままでいる"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "${ upsellPlanTitle }にアップグレード"
       ]
     },
     "Price": {
