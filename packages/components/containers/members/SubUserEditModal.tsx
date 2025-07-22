@@ -48,7 +48,6 @@ import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
-import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import Addresses from '../addresses/Addresses';
@@ -65,6 +64,7 @@ interface Props extends ModalProps<'form'> {
     allowVpnAccessConfiguration?: boolean;
     allowPrivateMemberConfiguration?: boolean;
     allowAIAssistantConfiguration?: boolean;
+    allowLumoConfiguration: boolean;
     showAddressesSection?: boolean;
     aiSeatsRemaining: boolean;
     lumoSeatsRemaining: boolean;
@@ -177,6 +177,7 @@ const SubUserEditModal = ({
     allowVpnAccessConfiguration,
     allowPrivateMemberConfiguration,
     allowAIAssistantConfiguration,
+    allowLumoConfiguration,
     showAddressesSection,
     aiSeatsRemaining,
     lumoSeatsRemaining,
@@ -184,7 +185,6 @@ const SubUserEditModal = ({
 }: Props) => {
     const [organization] = useOrganization();
     const [organizationKey] = useOrganizationKey();
-    const lumoAddonAvailable = useFlag('LumoAddonAvailable');
     const dispatch = useDispatch();
     const storageSizeUnit = sizeUnits.GB;
     const { validator, onFormSubmit } = useFormErrors();
@@ -201,8 +201,8 @@ const SubUserEditModal = ({
     const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
     // We want to keep AI enabled if all seats are taken but the user already has a seat
-    const disableAI = !organization?.MaxAI || (!aiSeatsRemaining && !member.NumAI);
-    const disableLumo = !organization?.MaxLumo || (!lumoSeatsRemaining && !member.NumLumo);
+    const disableAI = (!organization?.MaxAI || !aiSeatsRemaining) && !member.NumAI;
+    const disableLumo = (!organization?.MaxLumo || !lumoSeatsRemaining) && !member.NumLumo;
 
     useEffect(() => {
         dispatch(getMemberAddresses({ member })).catch(noop);
@@ -624,7 +624,7 @@ const SubUserEditModal = ({
                             />
                         )}
 
-                        {lumoAddonAvailable && (
+                        {allowLumoConfiguration && (
                             <MemberToggleContainer
                                 toggle={
                                     <Toggle

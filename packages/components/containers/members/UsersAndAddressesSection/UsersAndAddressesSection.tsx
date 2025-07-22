@@ -78,6 +78,7 @@ import {
     getOrganizationKeyInfo,
     validateOrganizationKey,
 } from '@proton/shared/lib/organization/helper';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
@@ -150,6 +151,14 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     // Allow to update seats (this should be done automatically for visionary, family and duo plans)
     const allowAIAssistantUpdate = accessToAssistant.enabled;
 
+    const lumoAddonAvailable = useFlag('LumoAddonAvailable');
+    const visionary = hasVisionary(subscription);
+
+    // Allow to display a toggle in the UI
+    const allowLumoConfiguration = lumoAddonAvailable && !visionary;
+    // Allow to update seats (this should be done automatically for visionary)
+    const allowLumoUpdate = lumoAddonAvailable;
+
     const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
     const showAddressesSection = !hasExternalMemberCapableB2BPlan && hasMaxAddresses;
     const showFeaturesColumn = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan || hasPassBusiness(subscription);
@@ -161,7 +170,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const isOrgAFamilyPlan = getOrganizationDenomination(organization) === 'familyGroup';
     const hasDuoPlan = hasDuo(subscription);
 
-    const canInviteProtonUsers = hasVisionary(subscription) || isOrgAFamilyPlan;
+    const canInviteProtonUsers = visionary || isOrgAFamilyPlan;
     const { createNotification } = useNotifications();
 
     const cleanOption = {
@@ -470,6 +479,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
+                        allowLumoConfiguration={allowLumoConfiguration}
                         showMultipleUserUploadButton={showMultipleUserUploadButton}
                         disableStorageValidation={!allowStorageConfiguration}
                         disableDomainValidation={useEmail}
@@ -493,6 +503,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
+                        allowLumoConfiguration={allowLumoConfiguration}
                         showAddressesSection={(() => {
                             const unprivatization = getMemberUnprivatizationMode(tmpMember);
                             return (
@@ -512,6 +523,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
                         allowAIAssistantUpdate={allowAIAssistantUpdate}
                         allowStorageConfiguration={allowStorageConfiguration}
+                        allowLumoConfiguration={allowLumoConfiguration}
+                        allowLumoUpdate={allowLumoUpdate}
                         {...userInviteOrEditModalProps}
                     />
                 )}
@@ -532,6 +545,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         lumoSeatsRemaining={lumoSeatsRemaining}
                         verifiedDomains={verifiedMailDomains}
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
+                        allowLumoConfiguration={allowLumoConfiguration}
                         onInviteUser={handleInviteUser}
                         app={app}
                         {...inviteOrCreateUserModalProps}
