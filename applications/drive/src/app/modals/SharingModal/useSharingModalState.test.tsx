@@ -627,7 +627,10 @@ describe('useSharingModalState', () => {
                 await result.current.actions.unshareNode(mockEmail);
             });
 
-            expect(mockHandleError).toHaveBeenCalledWith(error, 'Failed to unshare node', { nodeUid: mockNodeUid });
+            expect(mockHandleError).toHaveBeenCalledWith(error, {
+                fallbackMessage: 'Failed to unshare node',
+                extra: { nodeUid: mockNodeUid },
+            });
         });
 
         it('should handle error when updateShareDirect fails', async () => {
@@ -648,8 +651,11 @@ describe('useSharingModalState', () => {
                 await result.current.actions.updateShareDirect(shareNodeSettings);
             });
 
-            expect(mockHandleError).toHaveBeenCalledWith(error, 'Failed to update direct share node', {
-                nodeUid: mockNodeUid,
+            expect(mockHandleError).toHaveBeenCalledWith(error, {
+                fallbackMessage: 'Failed to update direct share node',
+                extra: {
+                    nodeUid: mockNodeUid,
+                },
             });
         });
 
@@ -679,8 +685,11 @@ describe('useSharingModalState', () => {
                 await result.current.actions.updateSharePublic(publicLinkSettings);
             });
 
-            expect(mockHandleError).toHaveBeenCalledWith(error, 'Failed to update public share node', {
-                nodeUid: mockNodeUid,
+            expect(mockHandleError).toHaveBeenCalledWith(error, {
+                fallbackMessage: 'Failed to update public share node',
+                extra: {
+                    nodeUid: mockNodeUid,
+                },
             });
         });
 
@@ -702,8 +711,11 @@ describe('useSharingModalState', () => {
                 await result.current.actions.createSharePublic();
             });
 
-            expect(mockHandleError).toHaveBeenCalledWith(error, 'Failed to create public share node', {
-                nodeUid: mockNodeUid,
+            expect(mockHandleError).toHaveBeenCalledWith(error, {
+                fallbackMessage: 'Failed to create public share node',
+                extra: {
+                    nodeUid: mockNodeUid,
+                },
             });
         });
 
@@ -721,9 +733,12 @@ describe('useSharingModalState', () => {
                 await result.current.actions.resendInvitation(mockInvitationUid);
             });
 
-            expect(mockHandleError).toHaveBeenCalledWith(error, 'Failed to resend invitation', {
-                nodeUid: mockNodeUid,
-                invitationUid: mockInvitationUid,
+            expect(mockHandleError).toHaveBeenCalledWith(error, {
+                fallbackMessage: 'Failed to resend invitation',
+                extra: {
+                    nodeUid: mockNodeUid,
+                    invitationUid: mockInvitationUid,
+                },
             });
         });
 
@@ -734,8 +749,11 @@ describe('useSharingModalState', () => {
             renderHook(() => useSharingModalState(mockProps));
 
             await waitFor(() => {
-                expect(mockHandleError).toHaveBeenCalledWith(error, 'Failed to fetch sharing info', {
-                    nodeUid: mockNodeUid,
+                expect(mockHandleError).toHaveBeenCalledWith(error, {
+                    fallbackMessage: 'Failed to fetch sharing info',
+                    extra: {
+                        nodeUid: mockNodeUid,
+                    },
                 });
             });
         });
@@ -747,7 +765,10 @@ describe('useSharingModalState', () => {
             renderHook(() => useSharingModalState(mockProps));
 
             await waitFor(() => {
-                expect(mockHandleError).toHaveBeenCalledWith(error, 'Failed to fetch node', { nodeUid: mockNodeUid });
+                expect(mockHandleError).toHaveBeenCalledWith(error, {
+                    fallbackMessage: 'Failed to fetch node',
+                    extra: { nodeUid: mockNodeUid },
+                });
             });
         });
 
@@ -765,8 +786,11 @@ describe('useSharingModalState', () => {
                 await result.current.actions.unsharePublic();
             });
 
-            expect(mockHandleError).toHaveBeenCalledWith(error, 'The link to your item failed to be deleted', {
-                nodeUid: mockNodeUid,
+            expect(mockHandleError).toHaveBeenCalledWith(error, {
+                fallbackMessage: 'The link to your item failed to be deleted',
+                extra: {
+                    nodeUid: mockNodeUid,
+                },
             });
         });
 
@@ -784,8 +808,11 @@ describe('useSharingModalState', () => {
                 await result.current.actions.stopSharing();
             });
 
-            expect(mockHandleError).toHaveBeenCalledWith(error, 'Stopping the sharing of this item has failed', {
-                nodeUid: mockNodeUid,
+            expect(mockHandleError).toHaveBeenCalledWith(error, {
+                fallbackMessage: 'Stopping the sharing of this item has failed',
+                extra: {
+                    nodeUid: mockNodeUid,
+                },
             });
         });
     });
