@@ -1,4 +1,4 @@
-import { isCategoryLabel } from '@proton/mail/store/labels/helpers';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash';
 
