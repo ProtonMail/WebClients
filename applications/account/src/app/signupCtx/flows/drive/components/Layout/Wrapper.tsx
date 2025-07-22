@@ -7,7 +7,10 @@ export const Wrapper = ({ children, minHeight }: { children: ReactNode; minHeigh
             style={{ '--min-h-custom': minHeight }}
         >
             <div className="flex items-center justify-center h-full">
-                <div className="flex flex-column md:flex-row flex-nowrap items-center justify-center w-full drive-signup-layout-gap p-4">
+                <div
+                    className="flex flex-column md:flex-row flex-nowrap items-center justify-center w-full p-4 gap-4 md:gap-custom"
+                    style={{ '--md-gap-custom': 'min(7vw, 10rem)' }}
+                >
                     {children}
                 </div>
             </div>

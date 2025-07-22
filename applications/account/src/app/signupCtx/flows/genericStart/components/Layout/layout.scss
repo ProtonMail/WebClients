@@ -1,25 +1,11 @@
 @import '~@proton/styles/scss/lib';
 
-.signup {
-	scroll-behavior: smooth;
-
+.generic-signup {
 	.button-outline-norm {
 		--button-default-text-color: var(--interaction-norm-major-1);
 	}
 }
 
-.signup-bg-gradient {
+.generic-signup-bg-gradient {
 	background: linear-gradient(122deg, #fff 8.63%, #f7f5fe 69.23%);
-}
-
-.signup-layout-gap {
-	gap: var(--space-4);
-
-	@include media('>medium') {
-		gap: 6rem;
-	}
-
-	@include media('>large') {
-		gap: 10rem;
-	}
 }

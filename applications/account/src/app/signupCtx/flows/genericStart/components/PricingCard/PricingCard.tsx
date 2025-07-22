@@ -10,8 +10,6 @@ import clsx from '@proton/utils/clsx';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
 
-import './PricingCard.scss';
-
 export type PricingStep = 'account-details' | 'payment';
 
 const PricingFeatures = () => {
@@ -109,8 +107,8 @@ const PricingHeader = () => {
 
 export const PricingCard = () => {
     return (
-        <section className={clsx('pricing-card w-full flex flex-column')}>
-            <div className="pricing-card-inner fade-in w-full flex flex-column shadow-raised gap-4 lg:gap-8 py-4 lg:py-8 bg-norm">
+        <section className={clsx('generic-signup-pricing-card w-full flex flex-column')}>
+            <div className="generic-signup-pricing-card-inner rounded-xl fade-in w-full flex flex-column shadow-raised gap-4 lg:gap-8 py-4 lg:py-8 bg-norm">
                 <PricingHeader />
                 <hr className="mx-4 lg:mx-8 my-0" />
                 <PricingFeatures />

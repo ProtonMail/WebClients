@@ -17,8 +17,6 @@ import { getReferrerName } from '../../../../helpers/signupSearchParams';
 import { getPlanIconPath } from '../../helpers/planIcons';
 import { FreeFeatures } from '../Features/FreeFeatures';
 
-import './PricingCard.scss';
-
 const LogoIconShape = ({ children, border = true }: { children: ReactNode; border?: boolean }) => {
     return (
         <div
@@ -181,8 +179,8 @@ export const PricingCard = () => {
     const isPaidPlan = selectedPlan.name !== PLANS.FREE;
 
     return (
-        <section className={clsx('pricing-card w-full flex flex-column')}>
-            <div className="pricing-card-inner fade-in w-full flex flex-column shadow-raised gap-4 lg:gap-8 py-4 lg:py-8 bg-norm">
+        <section className={clsx('referral-signup-pricing-card w-full flex flex-column')}>
+            <div className="referral-signup-pricing-card-inner rounded-xl fade-in w-full flex flex-column shadow-raised gap-4 lg:gap-8 py-4 lg:py-8 bg-norm">
                 {isPaidPlan ? (
                     <>
                         <PricingHeader />

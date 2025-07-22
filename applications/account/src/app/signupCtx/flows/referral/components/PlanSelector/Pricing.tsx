@@ -5,8 +5,6 @@ import { Price, SkeletonLoader } from '@proton/components';
 import { type PLANS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 
-import './PlanCard.scss';
-
 const Pricing = ({ plan }: { plan: PLANS }) => {
     const payments = usePaymentOptimistic();
 
