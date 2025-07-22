@@ -3,15 +3,19 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack from 'webpack';
 
-import getConfig from '@proton/pack/webpack.config';
-import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries';
+import { type WebpackEnvArgumentsV2, getWebpackOptions } from '@proton/pack/lib/configV2';
+import { addDevEntry, getConfigV2 } from '@proton/pack/webpack.config';
+import { getIndexChunks } from '@proton/pack/webpack/entries';
+
+import appConfig from './appConfig';
 
 /**
  * There are some specific references to Buffer in the drive application,
  * e.g. MimeTypes so it has to be polyfilled
  */
-const result = (env: any): webpack.Configuration => {
-    const config = getConfig(env);
+const result = (opts: WebpackEnvArgumentsV2): webpack.Configuration => {
+    const webpackOptions = getWebpackOptions(opts, { appConfig });
+    const config = getConfigV2(webpackOptions);
 
     config.plugins = config.plugins || [];
 
@@ -26,11 +30,16 @@ const result = (env: any): webpack.Configuration => {
         ['urls-index']: [path.resolve('./src/app/urls.tsx')],
     });
 
-    if (env.appMode === 'standalone') {
+    if (webpackOptions.appMode === 'standalone') {
         addDevEntry(config);
     }
 
     const htmlIndex = config.plugins.indexOf(htmlPlugin);
+
+    const templateParameters = {
+        ...htmlPlugin.userOptions.templateParameters,
+        defineWebpackConfig: JSON.stringify(webpackOptions.defineWebpackConfig),
+    };
 
     config.plugins.splice(
         htmlIndex,
@@ -38,7 +47,7 @@ const result = (env: any): webpack.Configuration => {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'ejs-webpack-loader!src/app.ejs',
-            templateParameters: htmlPlugin.userOptions.templateParameters,
+            templateParameters,
             scriptLoading: 'defer',
             inject: true,
             chunks: getIndexChunks('index', true),
@@ -51,7 +60,7 @@ const result = (env: any): webpack.Configuration => {
         new HtmlWebpackPlugin({
             filename: 'urls.html',
             template: `ejs-webpack-loader!src/urls.ejs`,
-            templateParameters: htmlPlugin.userOptions.templateParameters,
+            templateParameters,
             scriptLoading: 'defer',
             inject: true,
             chunks: getIndexChunks('urls-index', true),
