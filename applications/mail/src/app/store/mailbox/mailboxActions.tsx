@@ -6,7 +6,12 @@ import {
     markConversationsAsUnread as markConversationsAsUnreadApi,
 } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
-import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
+import {
+    labelMessages as labelMessagesApi,
+    markMessageAsRead,
+    markMessageAsUnread,
+    unlabelMessages as unlabelMessagesApi,
+} from '@proton/shared/lib/api/messages';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import UndoActionNotification from 'proton-mail/components/notifications/UndoActionNotification';
@@ -17,7 +22,11 @@ import type { Element } from 'proton-mail/models/element';
 
 import type { MailThunkExtra } from '../store';
 import type { MailThunkArguments } from '../thunk';
-import { getNotificationTextMarked } from './mailboxHelpers';
+import {
+    getNotificationTextLabelAdded,
+    getNotificationTextLabelRemoved,
+    getNotificationTextMarked,
+} from './mailboxHelpers';
 
 const runAction = async ({
     extra,
@@ -206,5 +215,64 @@ export const markConversationsAsUnread = createAsyncThunk<
             dispatch(conversationCountsActions.markConversationsAsUnreadRejected({ elements, labelID }));
             throw error;
         }
+    }
+);
+
+export const labelMessages = createAsyncThunk<
+    PromiseSettledResult<string | undefined>[],
+    {
+        elements: Element[];
+        labelID: string;
+        labelName: string;
+        isEncryptedSearch: boolean;
+        showSuccessNotification?: boolean;
+    },
+    MailThunkExtra
+>(
+    'mailbox/labelMessages',
+    async ({ elements, labelID, labelName, isEncryptedSearch, showSuccessNotification = true }, { extra }) => {
+        return runAction({
+            extra,
+            finallyFetchEvents: isEncryptedSearch,
+            notificationText: showSuccessNotification
+                ? getNotificationTextLabelAdded(true, elements.length, labelID, labelName)
+                : undefined,
+            elements,
+            action: (chunk) =>
+                labelMessagesApi({
+                    IDs: chunk.map((element: Element) => element.ID),
+                    LabelID: labelID,
+                    // SpamAction
+                }),
+        });
+    }
+);
+
+export const unlabelMessages = createAsyncThunk<
+    PromiseSettledResult<string | undefined>[],
+    {
+        elements: Element[];
+        labelID: string;
+        labelName: string;
+        isEncryptedSearch: boolean;
+        showSuccessNotification?: boolean;
+    },
+    MailThunkExtra
+>(
+    'mailbox/unlabelMessages',
+    async ({ elements, labelID, labelName, isEncryptedSearch, showSuccessNotification = true }, { extra }) => {
+        return runAction({
+            extra,
+            finallyFetchEvents: isEncryptedSearch,
+            notificationText: showSuccessNotification
+                ? getNotificationTextLabelRemoved(true, elements.length, labelID, labelName)
+                : undefined,
+            elements,
+            action: (chunk) =>
+                unlabelMessagesApi({
+                    IDs: chunk.map((element: Element) => element.ID),
+                    LabelID: labelID,
+                }),
+        });
     }
 );
