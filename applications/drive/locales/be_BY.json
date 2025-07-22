@@ -358,13 +358,13 @@
         "Адхіліць"
       ],
       "Display navigation bar": [
-        "Адлюстраваць панэль навігацыі"
+        "Паказваць панэль навігацыі"
       ],
       "Display next": [
-        "Адлюстраваць наступны"
+        "Паказваць наступны"
       ],
       "Display previous": [
-        "Адлюстраваць папярэдні"
+        "Паказваць папярэдні"
       ],
       "Done": [
         "Гатова"
@@ -406,7 +406,7 @@
         "Рэдагаваць нумар тэлефона"
       ],
       "Edit sign-in details": [
-        "Рэдагаваць звесткі ўваходу"
+        "Рэдагаваць падрабязнасці ўваходу"
       ],
       "Edit subscription": [
         "Рэдагаваць падпіску"
@@ -1249,7 +1249,7 @@
         "Скідкі разлічваюцца на падставе стандартнай платы. Пасля завяршэння перыяду аплаты ваша падпіска будзе аўтаматычна падоўжана па стандартнай гадавой стаўцы."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Удвойце ваша зашыфраванае сховішча. Атрымайце 1 ТБ для ўсіх сваіх даных"
+        "Удвойце сваё зашыфраванае сховішча. Атрымайце 1 ТБ для ўсіх сваіх даных"
       ],
       "Encrypted password manager": [
         "Зашыфраваны менеджар пароляў"
@@ -1607,7 +1607,7 @@
         "Праблема з Docs"
       ],
       "Drive problem": [
-        "Праблема з Дыскам"
+        "Праблема з Drive"
       ],
       "Feature request": [
         "Запытаць функцыю"
@@ -2833,7 +2833,7 @@
         "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
-        "Лёгка сінхранізуйце файлы ў воблака з вашага камп’ютара і атрымлівайце доступ да іх са сваёй мабільнай прылады."
+        "Лёгка сінхранізуйце файлы ў воблака са свайго камп’ютара і атрымлівайце доступ да іх на сваёй мабільнай прыладзе."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
@@ -5181,7 +5181,7 @@
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
       "Download ${ name } app": [
-        "Спампаваць праграму для ${ name }"
+        "Спампаваць праграму ${ name }"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Спампоўванне файла ${ downloadFileName } было перарвана"
@@ -5196,7 +5196,7 @@
         "Спампавана"
       ],
       "Downloading": [
-        "Спампоўваецца"
+        "Спампоўванне"
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -5208,7 +5208,7 @@
         "Перацягніце файлы сюды, каб запампаваць або націсніце адпаведную кнопку"
       ],
       "Drop to import": [
-        "Перацягніце для імпартавання"
+        "Перацягніце, каб імпартаваць"
       ],
       "Duplicate key updated": [
         "Дублікат ключа абноўлены"
@@ -8731,7 +8731,7 @@
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
+        "Лёгка дзяліцеся сваімі календарамі з сям'ёй, сябрамі або калегамі"
       ],
       "Email everyone in a group with a single email address": [
         "Адпраўка паведамлення кожнаму ў групе з адзінага адраса электроннай пошты"
@@ -9003,6 +9003,30 @@
         "Не ўдалося расшыфраваць ${ count } элементы",
         "Не ўдалося расшыфраваць ${ count } элементаў",
         "Не ўдалося расшыфраваць ${ count } элементаў"
+      ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } фатаграфію не атрымалася выдаліць з \"${ albumLink.name }\"",
+        "${ nbFailures } фатаграфіі не атрымалася выдаліць з \"${ albumLink.name }\"",
+        "${ nbFailures } фатаграфій не атрымалася выдаліць з \"${ albumLink.name }\"",
+        "${ nbFailures } фатаграфій не атрымалася выдаліць з \"${ albumLink.name }\""
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } фатаграфію не атрымалася дадаць у \"${ albumName }\"",
+        "${ nbMainPhotosError } фатаграфіі не атрымалася дадаць у \"${ albumName }\"",
+        "${ nbMainPhotosError } фатаграфій не атрымалася дадаць у \"${ albumName }\"",
+        "${ nbMainPhotosError } фатаграфій не атрымалася дадаць у \"${ albumName }\""
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } фатаграфія была дададзена ў ${ albumName }\"",
+        "${ nbMainPhotosSuccess } фатаграфіі былі дададзены ў ${ albumName }\"",
+        "${ nbMainPhotosSuccess } фатаграфій былі дададзены ў ${ albumName }\"",
+        "${ nbMainPhotosSuccess } фатаграфій былі дададзены ў ${ albumName }\""
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } фатаграфія была выдалена з ${ albumLink.name }\"",
+        "${ nbSuccesses } фатаграфіі былі выдалены з ${ albumLink.name }\"",
+        "${ nbSuccesses } фатаграфій былі выдалены з ${ albumLink.name }\"",
+        "${ nbSuccesses } фатаграфій былі выдалены з ${ albumLink.name }\""
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } элемент выдалены",

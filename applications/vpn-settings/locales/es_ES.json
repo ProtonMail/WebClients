@@ -5604,6 +5604,15 @@
       "Restore": [
         "Restaurar"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Se ha actualizado la regla de conservación «${ formData.name }»."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Se ha creado la regla de conservación «${ payload.Name }»."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Se ha eliminado la regla de conservación «${ retentionRule.Name }»."
+      ],
       "Revoke certificate ${ name }": [
         "Revocar certificado ${ name }"
       ],
@@ -9800,6 +9809,11 @@
         "Debido a un cambio de contraseña, tus privilegios de administrador en la organización se han limitado. Ya no se permiten las siguientes acciones:"
       ]
     },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Crea reglas de conservación para el tiempo que se deben conservar los datos de acuerdo con la política de conservación de datos de tu organización. También activa la purga automática de datos expirados."
+      ]
+    },
     "Role": {
       "Admin": [
         "Administrador"
@@ -12030,6 +12044,9 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Personaliza el número de direcciones IP en tu plan."
+      ],
+      "Data retention": [
+        "Conservación de datos"
       ],
       "Date": [
         "Fecha"

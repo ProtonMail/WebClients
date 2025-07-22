@@ -1030,6 +1030,12 @@
       "Publish changes": [
         "Änderungen veröffentlichen"
       ],
+      "Purge all": [
+        "Alles bereinigen"
+      ],
+      "Purge deleted": [
+        "Gelöschtes bereinigt"
+      ],
       "Quit": [
         "Beenden"
       ],
@@ -2005,7 +2011,7 @@
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
-        "Wenn du auf \"Testen\" klickst, erklärst du dich mit unseren ${ termsAndConditions } einverstanden."
+        "Wenn du auf „Testen“ klickst, erklärst du dich mit unseren ${ termsAndConditions } einverstanden."
       ],
       "During the trial period, you can have up to 10 users.": [
         "Während des Testzeitraums kannst du bis zu 10 Benutzer haben."
@@ -2014,7 +2020,7 @@
         "am ${ formattedDate }"
       ],
       "Try it free for 14 days": [
-        "Teste es 14 Tage lang kostenlos aus"
+        "14 Tage lang kostenlos testen"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird deine kostenlose Testversion nicht in ein kostenpflichtiges Abonnement umgewandelt, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Testzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
@@ -9583,6 +9589,15 @@
       "Restore": [
         "Wiederherstellen"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Aufbewahrungsregel \"${ formData.name }\" erfolgreich aktualisiert"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Aufbewahrungsregel \"${ payload.Name }\" erfolgreich erstellt"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Aufbewahrungsregel \"${ retentionRule.Name }\" erfolgreich gelöscht"
+      ],
       "Revoke certificate ${ name }": [
         "Zertifikat ${ name } widerrufen"
       ],
@@ -15142,6 +15157,9 @@
       "Free server configs": [
         "Kostenlose Server-Konfigurationen"
       ],
+      "Group": [
+        "Gruppe"
+      ],
       "I found another service that I like better": [
         "Ich habe einen anderen Dienst gefunden, der mir mehr zusagt"
       ],
@@ -15249,6 +15267,9 @@
       ],
       "Trash": [
         "In Papierkorb verschieben"
+      ],
+      "User": [
+        "Benutzer"
       ]
     },
     "option": {
@@ -16554,6 +16575,64 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Aufgrund einer Passwortänderung wurden deine Organisations-Administrationsprivilegien eingeschränkt. Die folgenden Aktionen sind nicht länger erlaubt:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Aufbewahrungsregel erstellen"
+      ],
+      "Delete": [
+        "Löschen"
+      ],
+      "Delete rule": [
+        "Regel löschen"
+      ],
+      "Edit": [
+        "Bearbeiten"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } weitere"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } Tag",
+        "${ rule.Lifetime } Tage"
+      ],
+      "Forever": [
+        "Dauerhaft"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Nach Regeln, Benutzern, Zeitraum, Aktion suchen"
+      ],
+      "Search policies": [
+        "Richtlinien suchen"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Aktion"
+      ],
+      "Applies to": [
+        "Gilt für"
+      ],
+      "Retention period": [
+        "Aufbewahrungsfrist"
+      ],
+      "Retention Rule": [
+        "Aufbewahrungsregel"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Keine Aufbewahrungsrichtlinien gefunden"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Erstelle Aufbewahrungsregeln dafür, wie lange Daten im Einklang mit der Datenaufbewahrungsrichtlinie deiner Organisation aufbewahrt werden sollen. Aktiviert auch die automatische Bereinigung abgelaufener Daten."
       ]
     },
     "Role": {
@@ -19851,6 +19930,9 @@
       ],
       "Data recovery": [
         "Datenwiederherstellung"
+      ],
+      "Data retention": [
+        "Aufbewahrung von Daten"
       ],
       "Date": [
         "Datum"

@@ -8790,6 +8790,22 @@
         "Error al descifrar ${ count } elemento",
         "Error al descifrar ${ count } elementos"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "No se pudo borrar ${ nbFailures } foto de «${ albumLink.name }»",
+        "No se pudieron borrar ${ nbFailures } fotos de «${ albumLink.name }»"
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "No se pudo añadir ${ nbMainPhotosError } foto a « ${ albumName }»",
+        "No se pudieron añadir ${ nbMainPhotosError } fotos a « ${ albumName }»"
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } foto fue añadida a «${ albumName }»",
+        "${ nbMainPhotosSuccess } fotos fueron añadidas a «${ albumName }»"
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } foto fue eliminada de «${ albumLink.name }»",
+        "${ nbSuccesses } fotos fueron eliminadas de «${ albumLink.name }»"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminado",
         "${ numberOfItems } elementos eliminados"

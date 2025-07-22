@@ -1030,6 +1030,12 @@
       "Publish changes": [
         "Pubblica le modifiche"
       ],
+      "Purge all": [
+        "Elimina tutto"
+      ],
+      "Purge deleted": [
+        "Eliminazione annullata"
+      ],
       "Quit": [
         "Chiudi"
       ],
@@ -2005,7 +2011,7 @@
         "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
-        "Facendo clic su «Prova», accetti i nostri ${ termsAndConditions }."
+        "Facendo clic su \"Prova\", accetti i nostri ${ termsAndConditions }."
       ],
       "During the trial period, you can have up to 10 users.": [
         "Durante il periodo di prova, puoi avere fino a 10 utenti."
@@ -9586,6 +9592,15 @@
       "Restore": [
         "Ripristina"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Regola di conservazione \"${ formData.name }\" aggiornata con successo"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Regola di conservazione \"${ payload.Name }\" creata con successo"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Regola di conservazione \"${ retentionRule.Name }\" eliminata con successo"
+      ],
       "Revoke certificate ${ name }": [
         "Revoca il certificato ${ name }"
       ],
@@ -15157,6 +15172,9 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
+      "Group": [
+        "Gruppo"
+      ],
       "I found another service that I like better": [
         "Ho trovato un altro servizio che mi piace di più"
       ],
@@ -15276,6 +15294,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "User": [
+        "Utente"
       ],
       "Windows": [
         "Windows"
@@ -16584,6 +16605,64 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "A causa di un cambiamento di password, i privilegi da amministratore della tua organizzazione sono stati limitati. Non saranno più permesse le seguenti azioni:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Crea una regola di conservazione"
+      ],
+      "Delete": [
+        "Elimina"
+      ],
+      "Delete rule": [
+        "Elimina regola"
+      ],
+      "Edit": [
+        "Modifica"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount }"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } giorno",
+        "${ rule.Lifetime } giorni"
+      ],
+      "Forever": [
+        "Per sempre"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Cerca per regola, utenti, periodo, azione"
+      ],
+      "Search policies": [
+        "Politiche di ricerca"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Azione"
+      ],
+      "Applies to": [
+        "Si applica a"
+      ],
+      "Retention period": [
+        "Periodo di conservazione"
+      ],
+      "Retention Rule": [
+        "Regola di conservazione"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Nessun criterio di conservazione trovato"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Crea regole di conservazione per quanto tempo conservare i dati in linea con la politica di conservazione dei dati della tua organizzazione. Inoltre, attiva la cancellazione automatica dei dati scaduti."
       ]
     },
     "Role": {
@@ -19881,6 +19960,9 @@
       ],
       "Data recovery": [
         "Recupero dei dati"
+      ],
+      "Data retention": [
+        "Conservazione dei dati"
       ],
       "Date": [
         "Data"

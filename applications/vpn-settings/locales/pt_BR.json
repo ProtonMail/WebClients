@@ -1247,7 +1247,7 @@
         "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
-        "Clicando em «Experimentar», você concorda com os nossos ${ termsAndConditions }."
+        "Clicando em \"Experimentar\", você concorda com nossos ${ termsAndConditions }."
       ],
       "During the trial period, you can have up to 10 users.": [
         "Durante o período de avaliação, você pode ter até 10 usuários."
@@ -1279,7 +1279,7 @@
     },
     "b2b_trials_2025_Label": {
       "Amount due after trial": [
-        "Valor devido após o período de teste"
+        "Valor devido após o período de avaliação"
       ],
       "Amount due now": [
         "Valor devido agora"
@@ -5607,6 +5607,15 @@
       "Restore": [
         "Restaurar"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "A regra de retenção «${ formData.name }» foi atualizada."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "A regra de retenção «${ payload.Name }» foi criada."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "A regra de retenção «${ retentionRule.Name }» foi excluída."
+      ],
       "Revoke certificate ${ name }": [
         "Revogar certificado ${ name }"
       ],
@@ -8992,6 +9001,9 @@
       "Free server configs": [
         "Configurações do servidor gratuito"
       ],
+      "Group": [
+        "Grupo"
+      ],
       "I found another service that I like better": [
         "Encontrei outro serviço que gosto mais"
       ],
@@ -9060,6 +9072,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "User": [
+        "Usuário"
       ]
     },
     "option": {
@@ -9813,6 +9828,53 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Devido a uma alteração de senha, seus privilégios de administrador da organização foram restritos. As seguintes ações já não são permitidas:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Delete": [
+        "Excluir"
+      ],
+      "Delete rule": [
+        "Excluir regra"
+      ],
+      "Edit": [
+        "Editar"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } mais"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } dia",
+        "${ rule.Lifetime } dias"
+      ],
+      "Forever": [
+        "Para sempre"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search policies": [
+        "Pesquisar diretrizes"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Ação"
+      ],
+      "Applies to": [
+        "Aplicar para"
+      ],
+      "Retention period": [
+        "Período de retenção"
+      ],
+      "Retention Rule": [
+        "Regra de retenção"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Crie regras de retenção para quanto tempo manter os dados conforme a política de retenção de dados da sua organização. Também ativa a limpeza automática de dados expirados."
       ]
     },
     "Role": {
@@ -12045,6 +12107,9 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Personalize o número de endereços IP no seu plano"
+      ],
+      "Data retention": [
+        "Retenção de dados"
       ],
       "Date": [
         "Data"

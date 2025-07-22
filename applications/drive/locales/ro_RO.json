@@ -144,6 +144,9 @@
       "Cancel subscription": [
         "Anulare abonament"
       ],
+      "Cancel trial and pay": [
+        "Anulare perioadă de probă și plătire"
+      ],
       "Cancel upload": [
         "Anulare încărcare"
       ],
@@ -8476,6 +8479,9 @@
       "Downgrade account?": [
         "Retrogradare cont?"
       ],
+      "Review subscription": [
+        "Revizuire abonament"
+      ],
       "Review subscription and pay": [
         "Revizuire abonament și plată"
       ],
@@ -8816,6 +8822,26 @@
         "Nu s-a putut decripta un articol.",
         "Nu s-au putut decripta ${ count } articole.",
         "Nu s-au putut decripta ${ count } de articole."
+      ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }",
+        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }",
+        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }"
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }",
+        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }",
+        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }"
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }",
+        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }",
+        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }"
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }",
+        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }",
+        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }"
       ],
       "${ numberOfItems } item deleted": [
         "Articole șterse: ${ numberOfItems }",

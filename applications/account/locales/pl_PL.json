@@ -1030,6 +1030,12 @@
       "Publish changes": [
         "Opublikuj zmiany"
       ],
+      "Purge all": [
+        "Usuń wszytsko"
+      ],
+      "Purge deleted": [
+        "Usunięto"
+      ],
       "Quit": [
         "Zakończ"
       ],
@@ -1834,7 +1840,7 @@
         "Edytor dokumentów online"
       ],
       "Online privacy for up to 2 people": [
-        "Prywatność w sieci dla maksymalnie 2 użytkowników"
+        "Prywatność w sieci dla 2 użytkowników"
       ],
       "Online privacy for your whole family (up to 6 users)": [
         "Prywatność online dla całej rodziny (do 6 użytkowników)"
@@ -2027,7 +2033,7 @@
         "Wypróbuj za darmo przez 14 dni"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Kiedy anulujesz, Twoja bezpłatna wersja próbna nie zostanie przekształcona w płatną subskrypcję, ale nadal możesz korzystać z korzyści planu do końca okresu próbnego. Następnie zostaniesz przeniesiony(-a) do planu ${ BRAND_NAME } Free."
+        "Kiedy anulujesz, Twoja bezpłatna wersja próbna nie zostanie przekształcona w płatną subskrypcję, ale nadal możesz korzystać z funkcji planu do końca okresu próbnego. Następnie zostaniesz przeniesiony(-a) do planu ${ BRAND_NAME } Free."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
@@ -9775,6 +9781,15 @@
       "Restore": [
         "Przywróć"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Reguła przechowywania \"${ formData.name }\" została zaktualizowana"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Reguła przechowywania \"${ payload.Name }\" została utworzona"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Reguła przechowywania \"${ retentionRule.Name }\" została usunięta"
+      ],
       "Revoke certificate ${ name }": [
         "Unieważnij certyfikat ${ name }"
       ],
@@ -15476,6 +15491,9 @@
       "Free server configs": [
         "Konfiguracje darmowego serwera"
       ],
+      "Group": [
+        "Grupa"
+      ],
       "I found another service that I like better": [
         "Mam inną, lepszą usługę"
       ],
@@ -15583,6 +15601,9 @@
       ],
       "Trash": [
         "Przenieś do kosza"
+      ],
+      "User": [
+        "Użytkownik"
       ]
     },
     "option": {
@@ -16910,6 +16931,66 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Ze względu na zmianę hasła, Twoje uprawnienia administratora organizacji zostały ograniczone. Następujące działania nie są dozwolone:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Utwórz regułę przechowywania"
+      ],
+      "Delete": [
+        "Usuń"
+      ],
+      "Delete rule": [
+        "Usuń regułę"
+      ],
+      "Edit": [
+        "Edytuj"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } więcej"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } dzień",
+        "${ rule.Lifetime } dni",
+        "${ rule.Lifetime } dni",
+        "${ rule.Lifetime } dnia"
+      ],
+      "Forever": [
+        "Na zawsze"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Szukaj reguły, użytkowników, okresu, akcji"
+      ],
+      "Search policies": [
+        "Szukaj zasad"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Akcja"
+      ],
+      "Applies to": [
+        "Dotyczy"
+      ],
+      "Retention period": [
+        "Okres przechowywania"
+      ],
+      "Retention Rule": [
+        "Reguła przechowywania"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Nie znaleziono zasady przechowywania"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Utwórz reguły przechowywania danych zgodne z polityką organizacji. Umożliwia również automatyczne usuwanie wygasłych danych."
       ]
     },
     "Role": {
@@ -20339,6 +20420,9 @@
       ],
       "Data recovery": [
         "Odzyskiwanie danych"
+      ],
+      "Data retention": [
+        "Przechowywanie danych"
       ],
       "Date": [
         "Data"
