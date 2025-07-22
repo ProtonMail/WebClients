@@ -110,6 +110,7 @@ export interface PaymentMethodsParameters {
     subscription?: Subscription | FreeSubscription;
     canUseApplePay?: boolean;
     enableApplePay?: boolean;
+    isTrial?: boolean;
 }
 
 const sepaCountries = new Set([
@@ -241,6 +242,8 @@ export class PaymentMethods {
 
     public enableApplePay: boolean;
 
+    public isTrial: boolean;
+
     constructor({
         paymentMethodStatus,
         paymentMethods,
@@ -260,6 +263,7 @@ export class PaymentMethods {
         subscription,
         canUseApplePay,
         enableApplePay,
+        isTrial,
     }: PaymentMethodsParameters) {
         this._statusExtended = extendStatus(paymentMethodStatus);
 
@@ -280,6 +284,7 @@ export class PaymentMethods {
         this.subscription = subscription;
         this.canUseApplePay = !!canUseApplePay;
         this.enableApplePay = !!enableApplePay;
+        this.isTrial = !!isTrial;
     }
 
     getAvailablePaymentMethods(): { usedMethods: AvailablePaymentMethod[]; methods: AvailablePaymentMethod[] } {
@@ -462,7 +467,8 @@ export class PaymentMethods {
             cbUser &&
             !this.isBF2024Offer() &&
             // separate flag for B2C plans
-            (this.isB2BPlan() || this.enableSepaB2C)
+            (this.isB2BPlan() || this.enableSepaB2C) &&
+            !this.isTrial
         );
     }
 
@@ -659,6 +665,7 @@ export async function initializePaymentMethods({
     subscription?: Subscription;
     canUseApplePay?: boolean;
     enableApplePay?: boolean;
+    isTrial?: boolean;
 }) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.statusExtendedAutomatic();
     const paymentMethodsPromise = (() => {
