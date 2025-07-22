@@ -8987,6 +8987,30 @@
         "${ count } položek se nepodařilo dešifrovat",
         "${ count } položek se nepodařilo dešifrovat"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } fotku se nepodařilo odebrat z ${ albumLink.name }\"",
+        "${ nbFailures } fotky se nepodařilo odebrat z ${ albumLink.name }\"",
+        "${ nbFailures } fotek se nepodařilo odebrat z ${ albumLink.name }\"",
+        "${ nbFailures } fotek se nepodařilo odebrat z ${ albumLink.name }\""
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } fotku se nepodařilo přidat do \"${ albumName }\"",
+        "${ nbMainPhotosError } fotky se nepodařilo přidat do \"${ albumName }\"",
+        "${ nbMainPhotosError } fotek se nepodařilo přidat do \"${ albumName }\"",
+        "${ nbMainPhotosError } fotek se nepodařilo přidat do \"${ albumName }\""
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } fotka byla přidána do \"${ albumName }\"",
+        "${ nbMainPhotosSuccess } fotky byly přidány do \"${ albumName }\"",
+        "${ nbMainPhotosSuccess } fotek bylo přidáno do \"${ albumName }\"",
+        "${ nbMainPhotosSuccess } fotek bylo přidáno do \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } fotka byla odebrána z \"${ albumLink.name }\"",
+        "${ nbSuccesses } fotky byly odebrány z \"${ albumLink.name }\"",
+        "${ nbSuccesses } fotek bylo odebráno z \"${ albumLink.name }\"",
+        "${ nbSuccesses } fotek bylo odebráno z \"${ albumLink.name }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } položka smazána",
         "${ numberOfItems } položky smazány",
