@@ -8750,6 +8750,22 @@
         "${ count } element ble ikke dekryptert",
         "${ count } elementer ble ikke dekryptert"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } bilde ble ikke fjernet fra \"${ albumLink.name }\"",
+        "${ nbFailures } bilder ble ikke fjernet fra \"${ albumLink.name }\""
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } bilde ble ikke lagt til i \"${ albumName }\"",
+        "${ nbMainPhotosError } bilder ble ikke lagt til i \"${ albumName }\""
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } bilde har blitt lagt til i \"${ albumName }\"",
+        "${ nbMainPhotosSuccess } bilder har blitt lagt til i \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } bilde er fjernet fra ${ albumLink.name }\"",
+        "${ nbSuccesses } bilder er fjernet fra ${ albumLink.name }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
         "${ numberOfItems } elementer slettet"
@@ -9586,10 +9602,10 @@
     },
     "Payments.VAT number name": {
       "ABN": [
-        "ABN"
+        "Australsk bedriftsnummer (ABN)"
       ],
       "Business Number": [
-        "Businessnummer"
+        "Bedriftsnummer"
       ],
       "EIN": [
         "EIN"

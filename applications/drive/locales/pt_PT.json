@@ -8693,6 +8693,22 @@
         "Erro ao desencriptar ${ count } item",
         "Erro ao desencriptar ${ count } itens"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } fotos não pôde ser removida de «${ albumLink.name }»",
+        "${ nbFailures } fotos não puderam ser removidas de «${ albumLink.name }»"
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } não foi possível adicionar a foto a «${ albumName }»",
+        "${ nbMainPhotosError } fotos não puderam ser adicionadas a «${ albumName }»"
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } a foto foi adicionada a «${ albumName }»",
+        "${ nbMainPhotosSuccess } as fotos foram adicionadas a «${ albumName }»"
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } a foto foi removida de «${ albumLink.name }»",
+        "${ nbSuccesses } as fotos foram removidas de «${ albumLink.name }»"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item eliminado",
         "${ numberOfItems } itens eliminados"
