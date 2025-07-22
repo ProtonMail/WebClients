@@ -25,7 +25,7 @@ import { FlagProvider } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { bootstrapApp } from './bootstrap';
-import * as config from './config';
+import config from './config';
 import type { DriveStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
 import { UserSettingsProvider } from './store';

@@ -14,7 +14,7 @@ import useFlag from '@proton/unleash/useFlag';
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
-import * as config from '../config';
+import config from '../config';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
