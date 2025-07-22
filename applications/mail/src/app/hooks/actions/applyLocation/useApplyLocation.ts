@@ -8,7 +8,7 @@ import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailbo
 
 export interface ApplyLocationParams {
     elements: Element[];
-    destinationLabelID: string;
+    targetLabelID: string;
     action: 'label' | 'unlabel';
     createFilters?: boolean;
     showSuccessNotification?: boolean;
@@ -18,7 +18,7 @@ export const useApplyLocation = () => {
     const enabled = useFlag('ApplyLabelsOptimisticRefactoring');
     const dispatch = useMailDispatch();
 
-    const applyLocation = ({ elements, action, destinationLabelID, showSuccessNotification }: ApplyLocationParams) => {
+    const applyLocation = ({ elements, action, targetLabelID, showSuccessNotification }: ApplyLocationParams) => {
         const [firstElement] = elements;
         const isMessage = testIsMessage(firstElement);
 
@@ -27,8 +27,8 @@ export const useApplyLocation = () => {
                 void dispatch(
                     labelMessages({
                         elements,
-                        labelID: destinationLabelID,
-                        labelName: getLabelName(destinationLabelID),
+                        labelID: targetLabelID,
+                        labelName: getLabelName(targetLabelID),
                         isEncryptedSearch: false,
                         showSuccessNotification,
                     })
@@ -37,8 +37,8 @@ export const useApplyLocation = () => {
                 void dispatch(
                     unlabelMessages({
                         elements,
-                        labelID: destinationLabelID,
-                        labelName: getLabelName(destinationLabelID),
+                        labelID: targetLabelID,
+                        labelName: getLabelName(targetLabelID),
                         isEncryptedSearch: false,
                         showSuccessNotification,
                     })
