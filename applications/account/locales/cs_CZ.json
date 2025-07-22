@@ -9772,6 +9772,12 @@
       "Restore": [
         "Obnovit"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Pravidlo retence \"${ formData.name }\" úspěšně aktualizováno"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Pravidlo retence \"${ payload.Name }\" úspěšně vytvořeno"
+      ],
       "Revoke certificate ${ name }": [
         "Zrušit certifikát ${ name }"
       ],
@@ -15479,6 +15485,9 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
+      "Group": [
+        "Skupina"
+      ],
       "I found another service that I like better": [
         "Našel jsem jinou službu, která se mi líbí více"
       ],
@@ -15598,6 +15607,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "User": [
+        "Uživatel"
       ],
       "Windows": [
         "Windows"
@@ -16928,6 +16940,44 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Z důvodu změny hesla byla omezena vaše oprávnění správce organizace. Následující akce již nejsou povoleny:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Vytvořit pravidlo retence"
+      ],
+      "Delete": [
+        "Smazat"
+      ],
+      "Delete rule": [
+        "Smazat pravidlo"
+      ],
+      "Edit": [
+        "Upravit"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } den",
+        "${ rule.Lifetime } dny",
+        "${ rule.Lifetime } dnů",
+        "${ rule.Lifetime } dnů"
+      ],
+      "Forever": [
+        "Navždy"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search policies": [
+        "Hledat zásady"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Akce"
+      ],
+      "Applies to": [
+        "Aplikované pro"
       ]
     },
     "Role": {
