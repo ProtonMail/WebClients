@@ -115,8 +115,7 @@ export const useMessageHotkeys = (
         if (applyLocationEnabled) {
             await applyLocation({
                 elements: [message.data],
-                labelChanges: { [LabelID]: true, [labelID]: false },
-                createFilters: false,
+                targetLabelID: LabelID,
             });
         } else {
             await moveToFolder({
@@ -308,7 +307,9 @@ export const useMessageHotkeys = (
                     if (applyLocationEnabled) {
                         await applyLocation({
                             elements: [message.data as Element],
-                            labelChanges: { [MAILBOX_LABEL_IDS.STARRED]: !isStarred(message.data) },
+                            targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                            removeLabel: isStarred(message.data),
+                            showSuccessNotification: false,
                         });
                     } else {
                         await star(

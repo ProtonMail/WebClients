@@ -150,7 +150,7 @@ const MoveDropdown = ({
         if (applyLocationEnabled && !selectAll) {
             await applyLocation({
                 elements,
-                labelChanges: { [selectedFolderID]: true, [labelID]: false },
+                targetLabelID: selectedFolderID,
                 createFilters: canApplyAlways ? always : false,
             });
         } else {

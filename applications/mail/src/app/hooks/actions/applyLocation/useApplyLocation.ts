@@ -10,7 +10,7 @@ import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailbo
 export interface ApplyLocationParams {
     elements: Element[];
     targetLabelID: string;
-    removeLabel: boolean;
+    removeLabel?: boolean;
     createFilters?: boolean;
     showSuccessNotification?: boolean;
 }
@@ -23,9 +23,9 @@ export const useApplyLocation = () => {
 
     const applyLocation = ({
         elements,
-        removeLabel,
+        removeLabel = false,
         targetLabelID,
-        showSuccessNotification,
+        showSuccessNotification = true,
     }: ApplyLocationParams): Promise<any> => {
         const [firstElement] = elements;
         const isMessage = testIsMessage(firstElement);

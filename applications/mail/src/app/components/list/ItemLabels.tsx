@@ -54,8 +54,8 @@ const ItemLabels = ({
         if (applyLocationEnabled) {
             return applyLocation({
                 elements: [element || ({} as Element)],
-                labelChanges: { [labelID]: false },
-                createFilters: false,
+                targetLabelID: labelID,
+                removeLabel: true,
             });
         }
 
