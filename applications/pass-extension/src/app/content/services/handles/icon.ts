@@ -85,7 +85,16 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
 
         /** If the dropdown is currently visible then close it */
         const visible = iframe.dropdown?.getState().visible;
-        if (visible) return iframe.dropdown?.close();
+        const attachedTo = iframe.dropdown?.getCurrentField();
+
+        if (visible) {
+            if (field === attachedTo) {
+                actionTrap(field.element);
+                field.element.focus();
+            }
+
+            return iframe.dropdown?.close();
+        }
 
         /** If the session is locked: trigger auto-focus in the injected dropdown
          * for PIN unlock. Force blur the field to prevent aggressive website focus
