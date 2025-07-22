@@ -78,7 +78,7 @@ export const useRenameModalState = ({
                 createNotification({ text: successNotificationText, preWrap: true });
             })
             .catch((e) => {
-                handleError(e, unhandledErrorNotificationText, { nodeUid });
+                handleError(e, { fallbackMessage: unhandledErrorNotificationText, extra: { nodeUid } });
             });
         await events.pollEvents.volumes(volumeId);
     };
