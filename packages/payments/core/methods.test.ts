@@ -2336,4 +2336,54 @@ describe('SEPA', () => {
             methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)
         ).toBe(false);
     });
+
+    it('should not include SEPA when in trial mode', () => {
+        const flow: PaymentMethodFlow = 'signup-v2';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow,
+            selectedPlanName: PLANS.BUNDLE_PRO_2024,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            billingAddress: { CountryCode: 'DE', State: '' },
+            enableSepa: true,
+            enableSepaB2C: true,
+            isTrial: true,
+        });
+
+        expect(
+            methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)
+        ).toBe(false);
+    });
+
+    it('should include SEPA when not in trial mode', () => {
+        const flow: PaymentMethodFlow = 'signup-v2';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow,
+            selectedPlanName: PLANS.BUNDLE_PRO_2024,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            billingAddress: { CountryCode: 'DE', State: '' },
+            enableSepa: true,
+            enableSepaB2C: true,
+            isTrial: false,
+        });
+
+        expect(
+            methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)
+        ).toBe(true);
+    });
 });
