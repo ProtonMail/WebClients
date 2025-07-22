@@ -36,7 +36,7 @@ import {
 } from 'lexical'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useSyncedState } from '../Hooks/useSyncedState'
-import * as config from '../config'
+import config from '../config'
 import clsx from '@proton/utils/clsx'
 import debounce from '@proton/utils/debounce'
 import locales from '../locales'
