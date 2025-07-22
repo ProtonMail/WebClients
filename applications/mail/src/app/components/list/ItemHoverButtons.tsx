@@ -87,8 +87,7 @@ const ItemHoverButtons = ({
         if (applyLocationEnabled) {
             void applyLocation({
                 elements: [element],
-                labelChanges: { [ARCHIVE]: true, [labelID]: false },
-                createFilters: false,
+                targetLabelID: ARCHIVE,
             });
         } else {
             void moveToFolder({
@@ -108,8 +107,7 @@ const ItemHoverButtons = ({
         if (applyLocationEnabled) {
             void applyLocation({
                 elements: [element],
-                labelChanges: { [TRASH]: true, [labelID]: false },
-                createFilters: false,
+                targetLabelID: TRASH,
             });
         } else {
             void moveToFolder({
@@ -142,7 +140,9 @@ const ItemHoverButtons = ({
             void withLoadingStar(
                 applyLocation({
                     elements: [element],
-                    labelChanges: { [MAILBOX_LABEL_IDS.STARRED]: !isStarred },
+                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    removeLabel: isStarred,
+                    showSuccessNotification: false,
                 })
             );
         } else {
