@@ -21,7 +21,7 @@ import {
     getSubscriptionsArray,
     getSupportedAddons,
     getSupportedB2BAddons,
-    hasLumo,
+    hasLumoPlan,
     isDomainAddon,
     isFreeSubscription,
     isIpAddon,
@@ -149,7 +149,7 @@ export const switchPlan = ({
     // we can remove addons from the resulting newPlanIDs instead of manipulating the dontTransferAddons set.
     {
         const multisubs = subscription && !isFreeSubscription(subscription) ? getSubscriptionsArray(subscription) : [];
-        const hasExternallyManagedLumo = multisubs.some((sub) => isManagedExternally(sub) && hasLumo(sub));
+        const hasExternallyManagedLumo = multisubs.some((sub) => isManagedExternally(sub) && hasLumoPlan(sub));
         if (hasExternallyManagedLumo || !isLumoAddonAvailable) {
             dontTransferAddons.add('lumo');
         }
