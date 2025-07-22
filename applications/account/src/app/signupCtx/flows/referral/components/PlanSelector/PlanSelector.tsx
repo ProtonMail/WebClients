@@ -23,8 +23,6 @@ import PlanCard from './PlanCard';
 import Pricing from './Pricing';
 import { ReferralPlanIcon } from './ReferralPlanIcon';
 
-import './PlanCard.scss';
-
 interface Props {
     onPlanClick: (selectedPlan: { planIDs: PlanIDs }) => void;
     onCTAClick: () => void;
