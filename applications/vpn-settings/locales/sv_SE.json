@@ -579,6 +579,9 @@
       "Publish changes": [
         "Publicera ändringar"
       ],
+      "Purge all": [
+        "Töm allt"
+      ],
       "Recover data": [
         "Återställ data"
       ],
@@ -8909,6 +8912,9 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
+      "Group": [
+        "Grupp"
+      ],
       "I found another service that I like better": [
         "Jag hittade en annan tjänst som jag gillar bättre"
       ],
@@ -8980,6 +8986,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "User": [
+        "Användare"
       ],
       "Windows": [
         "Windows"
@@ -9724,6 +9733,42 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "På grund av en lösenordsändring, har dina administratörsrättigheter för organisationen begränsats. Följande åtgärder är inte längre tillåtna:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Delete": [
+        "Ta bort"
+      ],
+      "Delete rule": [
+        "Ta bort regel"
+      ],
+      "Edit": [
+        "Redigera"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } dag",
+        "${ rule.Lifetime } dagar"
+      ],
+      "Forever": [
+        "För alltid"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Sök efter regel, användare, period, åtgärd"
+      ],
+      "Search policies": [
+        "Sök policyer"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Åtgärd"
+      ],
+      "Applies to": [
+        "Tillämpas på"
       ]
     },
     "Role": {

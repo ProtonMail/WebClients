@@ -579,6 +579,12 @@
       "Publish changes": [
         "Δημοσιεύστε τις αλλαγές"
       ],
+      "Purge all": [
+        "Εκκαθάριση όλων"
+      ],
+      "Purge deleted": [
+        "Εκκαθάριση διαγραμμένων"
+      ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
@@ -5550,6 +5556,15 @@
       "Restore": [
         "Επαναφορά"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Ο κανόνας διατήρησης \"${ formData.name }\" ενημερώθηκε επιτυχώς"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Ο κανόνας διατήρησης \"${ payload.Name }\" δημιουργήθηκε επιτυχώς"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Ο κανόνας διατήρησης \"${ retentionRule.Name }\" διαγράφηκε επιτυχώς."
+      ],
       "Revoke certificate ${ name }": [
         "Ανάκληση πιστοποιητικού ${ name }"
       ],
@@ -8925,6 +8940,9 @@
       "Free server configs": [
         "Ρυθμίσεις δωρεάν διακομιστή"
       ],
+      "Group": [
+        "Ομάδα"
+      ],
       "I found another service that I like better": [
         "Βρήκα μια άλλη υπηρεσία που μου αρέσει περισσότερο"
       ],
@@ -8984,6 +9002,9 @@
       ],
       "The whole organization": [
         "Ολόκληρος ο οργανισμός"
+      ],
+      "User": [
+        "Χρήστης"
       ]
     },
     "option": {
@@ -9731,6 +9752,64 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Λόγω αλλαγής κωδικού πρόσβασης, τα προνόμια του διαχειριστή του οργανισμού σας έχουν περιοριστεί. Οι ακόλουθες ενέργειες δεν επιτρέπονται πλέον:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Δημιουργία κανόνα διατήρησης"
+      ],
+      "Delete": [
+        "Διαγραφή"
+      ],
+      "Delete rule": [
+        "Διαγραφή κανόνα"
+      ],
+      "Edit": [
+        "Επεξεργασία"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } επιπλέον"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } ημέρα",
+        "${ rule.Lifetime } ημέρες"
+      ],
+      "Forever": [
+        "Για πάντα"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Αναζήτηση για κανόνα, χρήστες, περίοδο, ενέργεια"
+      ],
+      "Search policies": [
+        "Αναζήτηση πολιτικών"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Ενέργεια"
+      ],
+      "Applies to": [
+        "Ισχύει για"
+      ],
+      "Retention period": [
+        "Περίοδος διατήρησης"
+      ],
+      "Retention Rule": [
+        "Κανόνας Διατήρησης"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Δεν βρέθηκαν πολιτικές διατήρησης"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Δημιουργήστε κανόνες διατήρησης για το πόσο καιρό θα διατηρούνται τα δεδομένα σύμφωνα με την πολιτική διατήρησης δεδομένων του οργανισμού σας. Επίσης, ενεργοποιεί την αυτόματη εκκαθάριση των ληγμένων δεδομένων."
       ]
     },
     "Role": {
@@ -11958,6 +12037,9 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Προσαρμόστε τον αριθμό των διευθύνσεων IP στο πλάνο σας"
+      ],
+      "Data retention": [
+        "Διατήρηση δεδομένων"
       ],
       "Date": [
         "Ημερομηνία"
