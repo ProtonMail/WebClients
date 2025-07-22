@@ -25,7 +25,7 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { FlagProvider } from '@proton/unleash/index';
 import noop from '@proton/utils/noop';
 
-import * as config from './config';
+import config from './config';
 import PublicSharedLinkContainer from './containers/PublicSharedLinkContainer';
 import locales from './locales';
 import type { DriveStore } from './redux-store/store';
