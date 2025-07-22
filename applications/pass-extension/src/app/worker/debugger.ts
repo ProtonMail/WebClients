@@ -2,24 +2,28 @@
  * Captures and forwards errors, console logs, and network failures to the local
  * HTTP debug server. To launch the debug server, run `yarn debugger:http` */
 import { registerLoggerEffect } from '@proton/pass/utils/logger';
+import noop from '@proton/utils/noop';
+
+const ORIGINAL_FETCH = self.fetch;
+
+export const sendDebugLog = HTTP_DEBUGGER
+    ? (type: 'log' | 'info' | 'warn' | 'error' | 'debug', message: string) => {
+          void ORIGINAL_FETCH(
+              `http://localhost:${HTTP_DEBUGGER_PORT}/log?message=${encodeURIComponent(
+                  JSON.stringify({
+                      date: Date.now(),
+                      type,
+                      message,
+                  })
+              )}`
+          );
+      }
+    : noop;
 
 if (HTTP_DEBUGGER) {
-    const ORIGINAL_FETCH = self.fetch;
     const ORIGINAL_CONSOLE = { ...console };
     const ORIGINAL_ON_ERROR = self.onerror;
     const ORIGINAL_ON_UNHANDLED_REJECTION = self.onunhandledrejection;
-
-    const sendDebugLog = (type: 'log' | 'info' | 'warn' | 'error', message: string) => {
-        void ORIGINAL_FETCH(
-            `http://localhost:${HTTP_DEBUGGER_PORT}/log?message=${encodeURIComponent(
-                JSON.stringify({
-                    date: Date.now(),
-                    type,
-                    message,
-                })
-            )}`
-        );
-    };
 
     self.onerror = (message, source, lineno, colno, error) => {
         sendDebugLog('error', `Uncaught Error: ${error?.stack || message}\nAt: ${source}:${lineno}:${colno}`);
