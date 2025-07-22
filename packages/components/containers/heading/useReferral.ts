@@ -3,9 +3,9 @@ import type { useLocation } from 'react-router-dom';
 
 import { fromUnixTime } from 'date-fns';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import { subscription } from '@proton/components/containers/payments/subscription/__mocks__/data';
 import useConfig from '@proton/components/hooks/useConfig';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
@@ -16,6 +16,7 @@ import { addDays } from '@proton/shared/lib/date-fns-utc';
 export const useReferral = (location: ReturnType<typeof useLocation>) => {
     const { APP_NAME } = useConfig();
     const [userSettings] = useUserSettings();
+    const [subscription] = useSubscription();
     const [redDotReferral, setRedDotReferral] = useState(false);
 
     const { feature: referralProgramFeature } = useFeature(FeatureCode.ReferralProgram);
