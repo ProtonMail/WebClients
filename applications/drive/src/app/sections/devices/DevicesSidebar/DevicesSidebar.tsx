@@ -38,7 +38,7 @@ export const DevicesSidebar = ({
             setLoading(true);
             const tmpDevices = await Array.fromAsync(drive.iterateDevices()).catch((e) => {
                 const errorNotiticationText = c('Notification').t`Error while listing devices`;
-                handleError(e, errorNotiticationText);
+                handleError(e, { fallbackMessage: errorNotiticationText });
             });
             setLoading(false);
             if (tmpDevices) {

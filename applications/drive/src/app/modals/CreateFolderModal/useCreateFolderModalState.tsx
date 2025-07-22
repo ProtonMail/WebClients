@@ -60,7 +60,7 @@ export const useCreateFolderModalState = ({
         }
 
         const newFolder = await drive.createFolder(parentFolderUid, name).catch((error: Error) => {
-            handleError(error, c('Error').t`Failed to create folder`, { parentFolderUid });
+            handleError(error, { fallbackMessage: c('Error').t`Failed to create folder`, extra: { parentFolderUid } });
         });
         const { volumeId } = splitNodeUid(parentFolderUid);
         await events.pollEvents.volumes(volumeId);
