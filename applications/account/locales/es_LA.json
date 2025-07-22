@@ -1030,6 +1030,12 @@
       "Publish changes": [
         "Publicar cambios"
       ],
+      "Purge all": [
+        "Purgar todo"
+      ],
+      "Purge deleted": [
+        "Purgar eliminados"
+      ],
       "Quit": [
         "Salir"
       ],
@@ -1466,7 +1472,7 @@
         "Mejore para activar ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to Professional": [
-        "Mejore a Professional"
+        "Mejorar a Professional"
       ],
       "Upgrade to view all": [
         "Mejorar para ver todo"
@@ -4315,7 +4321,7 @@
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi el archivo es más grande, debe dividirlo en archivos más pequeños."
       ],
       "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Recibirá ${ referralReward } en crédito de ${ BRAND_NAME } cuando la persona que invite se registre para un plan de ${ BRAND_NAME }, y también recibirán ${ referralReward } en créditos para empezar."
+        "Recibirá ${ referralReward } en crédito de ${ BRAND_NAME } cuando la persona que invite se registre para un plan de ${ BRAND_NAME } y también recibirán ${ referralReward } en créditos para empezar."
       ]
     },
     "description": {
@@ -7576,7 +7582,7 @@
     },
     "Info": {
       " and other security features.": [
-        " y otras características de seguridad"
+        " y otras funciones de seguridad"
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } usuario actualmente tiene acceso a servidores compartidos.",
@@ -7814,7 +7820,7 @@
         "**Obtenga una dirección de ${ BRAND_NAME }** para usar todos los servicios de ${ BRAND_NAME_TWO } incluyendo ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Invite a sus amigos** a ${ BRAND_NAME } con su enlace de referidos."
+        "**Invite a sus amistades** a ${ BRAND_NAME } con su enlace de referidos."
       ],
       "+ ${ invisibleCount } More": [
         "+${ invisibleCount } más",
@@ -9360,7 +9366,7 @@
         "Pagó por un plan mensual"
       ],
       "Paid for a plan": [
-        "Pagar por un plan"
+        "Pagó por un plan"
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - correo personalizado confirmado"
@@ -9585,6 +9591,15 @@
       ],
       "Restore": [
         "Restaurar"
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Se ha actualizó la regla de conservación «${ formData.name }»."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Se creó la regla de conservación «${ payload.Name }»."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Se eliminó la regla de conservación «${ retentionRule.Name }»."
       ],
       "Revoke certificate ${ name }": [
         "Revocar certificado ${ name }"
@@ -10772,7 +10787,7 @@
         "Su prueba gratuita se convirtió en una suscripción mensual. Su fecha de renovación es ${ nextBillingDate }."
       ],
       "Your friends get **2 weeks for free** on their chosen plan.": [
-        "Sus amigos obtienen **2 semanas gratis** en su plan elegido."
+        "Sus amistades obtienen **2 semanas gratis** en su plan elegido."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "La importación desde ${ accounts } está retrasada temporalmente.",
@@ -15145,6 +15160,9 @@
       "Free server configs": [
         "Ajustes del servidor gratuito"
       ],
+      "Group": [
+        "Grupo"
+      ],
       "I found another service that I like better": [
         "Encontré otro servicio que me gusta mejor"
       ],
@@ -15252,6 +15270,9 @@
       ],
       "Trash": [
         "Enviar a papelera"
+      ],
+      "User": [
+        "Usuario"
       ]
     },
     "option": {
@@ -16557,6 +16578,64 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Debido a un cambio de contraseña, sus privilegios de administrador en la organización se han limitado. Ya no se permiten las siguientes acciones:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Crear regla de retención"
+      ],
+      "Delete": [
+        "Eliminar"
+      ],
+      "Delete rule": [
+        "Eliminar regla"
+      ],
+      "Edit": [
+        "Editar"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } más"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } día",
+        "${ rule.Lifetime } días"
+      ],
+      "Forever": [
+        "Para siempre"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Buscar regla, usuarios, periodo, acción"
+      ],
+      "Search policies": [
+        "Buscar políticas"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Acción"
+      ],
+      "Applies to": [
+        "Se aplica a"
+      ],
+      "Retention period": [
+        "Período de retención"
+      ],
+      "Retention Rule": [
+        "Regla de retención"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "No se encontraron políticas de retención"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Cree reglas de conservación para el tiempo que se deben conservar los datos de acuerdo con la política de conservación de datos de su organización. También activa la purga automática de datos expirados."
       ]
     },
     "Role": {
@@ -19855,6 +19934,9 @@
       "Data recovery": [
         "Recuperación de datos"
       ],
+      "Data retention": [
+        "Conservación de datos"
+      ],
       "Date": [
         "Fecha"
       ],
@@ -20267,7 +20349,7 @@
         "Invitaciones"
       ],
       "Invite friends. Get credits.": [
-        "Invite a sus amigos. Obtenga créditos."
+        "Invite a sus amistades. Obtenga créditos."
       ],
       "Invoices": [
         "Facturas"
