@@ -201,7 +201,7 @@ const SubUserEditModal = ({
     const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
     // We want to keep AI enabled if all seats are taken but the user already has a seat
-    const disableAI = !organization?.MaxAI || (!aiSeatsRemaining && !member.NumAI);
+    const disableAI = (!organization?.MaxAI || !aiSeatsRemaining) && !member.NumAI;
     const disableLumo = (!organization?.MaxLumo || !lumoSeatsRemaining) && !member.NumLumo;
 
     useEffect(() => {
