@@ -91,7 +91,15 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
         };
 
         const disconnectPort = safeCall(() => port.disconnect());
-        const destroy = pipe(disconnectPort, ExtensionContext.clear);
+
+        const destroy = pipe(
+            /** Safari fires disconnect events on self-initiated disconnections,
+             * Chrome/Firefox don't. Remove listener before disconnecting. */
+            () => port.onDisconnect.removeListener(onPortDisconnect),
+            disconnectPort,
+            ExtensionContext.clear
+        );
+
         port.onDisconnect.addListener(onPortDisconnect);
 
         return ExtensionContext.set({ endpoint: options.endpoint, port, tabId, senderTabId, url, destroy });
