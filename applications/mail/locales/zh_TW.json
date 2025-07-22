@@ -54,6 +54,9 @@
       "Add address": [
         "加入電郵位址"
       ],
+      "Add another account": [
+        "新增其它帳號"
+      ],
       "Add Bcc recipients": [
         "新增密件副本收件者"
       ],
@@ -378,6 +381,9 @@
       "Delete permanently": [
         "永久刪除"
       ],
+      "Deleting label": [
+        "刪除標籤"
+      ],
       "Deselect all": [
         "取消全選"
       ],
@@ -591,6 +597,9 @@
       "Help and feedback": [
         "尋求協助與反映意見"
       ],
+      "Help and resources": [
+        "尋求協助與資源"
+      ],
       "Hide": [
         "隱藏"
       ],
@@ -608,6 +617,9 @@
       ],
       "Hide messages": [
         "隱藏郵件"
+      ],
+      "Hide more benefits": [
+        "隱藏更多好處"
       ],
       "Hide toolbar": [
         "隱藏工具列"
@@ -836,6 +848,9 @@
       ],
       "Move to archive": [
         "移至封存檔"
+      ],
+      "Move to Archive": [
+        "移至「封存」"
       ],
       "Move to folder": [
         "移至資料夾"
@@ -1272,6 +1287,9 @@
       "Stop generating result": [
         "停止產生結果"
       ],
+      "Stop marking as read": [
+        "停止標記為已讀"
+      ],
       "Strikethrough": [
         "刪除線"
       ],
@@ -1540,6 +1558,9 @@
       "${ price } per domain": [
         "每網域${ price }"
       ],
+      "${ price } per seat": [
+        "${ price } 每席"
+      ],
       "${ price } per user": [
         "每使用者${ price }"
       ],
@@ -1612,6 +1633,9 @@
     "anniversary_2025: Offer": {
       "15 GB storage": [
         "15 GB 儲存空間"
+      ],
+      "200 GB storage": [
+        "200 GB 儲存空間"
       ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "折扣價格依標準月繳費率計算。在本繳款單週期結束後，將為您以標準年繳費率續約。"
@@ -1710,6 +1734,9 @@
       ]
     },
     "b2b_trials_Action": {
+      "Cancel subscription": [
+        "取消訂購授權"
+      ],
       "Keep subscription": [
         "保留訂購授權"
       ]
@@ -3879,6 +3906,9 @@
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
       ],
+      "Here's what changed:": [
+        "以下是變更內容："
+      ],
       "NOTE:": [
         "備注:"
       ],
@@ -4523,6 +4553,9 @@
       ],
       "Username must end with a letter or digit": [
         "使用者名稱的結尾必須為字母或數字"
+      ],
+      "Wrong password": [
+        "錯誤的密碼字元"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
@@ -6606,7 +6639,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -6701,6 +6734,9 @@
       "Manage your labels": [
         "管理您的標籤"
       ],
+      "Mark all as read": [
+        "全部標記為已讀"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 標誌"
       ],
@@ -6794,6 +6830,9 @@
       "No links cleaned": [
         "無需清理的連結"
       ],
+      "No messages to show": [
+        "沒有訊息可供顯示"
+      ],
       "No more results found": [
         "找不到更多結果"
       ],
@@ -6859,6 +6898,9 @@
       ],
       "Password copied to clipboard": [
         "密碼已複製至剪貼簿"
+      ],
+      "Password must have:": [
+        "密碼必須包含："
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付受 TLS 加密及瑞士隱私法律保護。"
@@ -6943,6 +6985,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "請稍候，我們正查找聯絡人中有沒有包含以非使用中金鑰加密的資料。"
+      ],
+      "Preferences updated": [
+        "偏好設定已更新"
       ],
       "Preview failed to be loaded": [
         "連結載入失敗"
@@ -7060,6 +7105,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆創建一個新的行事曆。"
+      ],
+      "Selection pane": [
+        "選擇窗格"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "傳送一封加密、密碼保護的郵件至 ${ boldText } 電郵位址。"
@@ -8148,6 +8196,9 @@
       "Actions": [
         "操作"
       ],
+      "Active filter:": [
+        "作用中篩選器:"
+      ],
       "Add email address": [
         "加入電郵位址"
       ],
@@ -8475,6 +8526,9 @@
       "Mark as": [
         "標記為"
       ],
+      "Marked as read": [
+        "標記為已讀取"
+      ],
       "Message:": [
         "訊息:"
       ],
@@ -8492,6 +8546,12 @@
       ],
       "Move to Inbox": [
         "移動到收件匣"
+      ],
+      "Moved to Archive": [
+        "已移至「封存」"
+      ],
+      "Moved to Trash": [
+        "已丟進垃圾桶"
       ],
       "Name": [
         "名稱"
@@ -11646,6 +11706,9 @@
       "Go to subscription plans": [
         "查看訂購授權"
       ],
+      "Keep passwords safe": [
+        "保護密碼字元安全"
+      ],
       "Unblock streaming content": [
         "解除封鎖影音串流內容"
       ],
@@ -12681,6 +12744,11 @@
         "vCard 欄位"
       ]
     },
+    "Teams": {
+      "Join Teams meeting": [
+        "加入Teams會議"
+      ]
+    },
     "Time": {
       "Yesterday": [
         "昨天"
@@ -13265,6 +13333,9 @@
       "New message": [
         "新訊息"
       ],
+      "Newsletters view": [
+        "電子報檢視"
+      ],
       "Next conversation": [
         "下一則往來對話"
       ],
@@ -13510,6 +13581,9 @@
       ],
       "Trash": [
         "垃圾桶"
+      ],
+      "Trash all messages?": [
+        "將所有訊息移至垃圾桶？"
       ],
       "Trust new key?": [
         "要信任新的金鑰嗎？"

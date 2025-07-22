@@ -1030,6 +1030,12 @@
       "Publish changes": [
         "Zverejniť zmeny"
       ],
+      "Purge all": [
+        "Vymazať všetko"
+      ],
+      "Purge deleted": [
+        "Čistenie vymazané"
+      ],
       "Quit": [
         "Ukončiť"
       ],
@@ -9716,6 +9722,15 @@
       "Restore": [
         "Obnoviť"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Pravidlo uchovávania \"${ formData.name }\" bolo úspešne aktualizované"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Pravidlo uchovávania \"${ payload.Name }\" bolo úspešne vytvorené"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Pravidlo uchovávania \"${ retentionRule.Name }\" bolo úspešne vymazané."
+      ],
       "Revoke certificate ${ name }": [
         "Zrušiť certifikát ${ name }"
       ],
@@ -15417,6 +15432,9 @@
       "Free server configs": [
         "Konfigurácia bezplatného servera"
       ],
+      "Group": [
+        "Skupina"
+      ],
       "I found another service that I like better": [
         "Našiel som inú službu, ktorá sa mi páči viac"
       ],
@@ -15524,6 +15542,9 @@
       ],
       "Trash": [
         "Kôš"
+      ],
+      "User": [
+        "Používateľ"
       ]
     },
     "option": {
@@ -16851,6 +16872,60 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Z dôvodu zmeny hesla boli obmedzené vaše oprávnenia správcu organizácie. Nasledujúce akcie už nie sú povolené:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Vytvoriť pravidlo uchovávania"
+      ],
+      "Delete": [
+        "Odstrániť"
+      ],
+      "Delete rule": [
+        "Vymazať pravidlo"
+      ],
+      "Edit": [
+        "Upraviť"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } ďalšie"
+      ],
+      "Forever": [
+        "Navždy"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Hľadať pravidlo, používateľov, obdobie, akciu"
+      ],
+      "Search policies": [
+        "Vyhľadať zásady"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Akcia"
+      ],
+      "Applies to": [
+        "Aplikované pre"
+      ],
+      "Retention period": [
+        "Doba uchovávania"
+      ],
+      "Retention Rule": [
+        "Pravidlo uschovania"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Nenašli sa žiadne politiky uchovávania"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Vytvorte pravidlá uchovávania pre to, ako dlho uchovávať dáta v súlade s pravidlami uchovávania dát vašej organizácie. Taktiež povolí automatické vymazávanie expirovaných dát."
       ]
     },
     "Role": {
@@ -20275,6 +20350,9 @@
       ],
       "Data recovery": [
         "Obnovenie údajov"
+      ],
+      "Data retention": [
+        "Uchovávanie údajov"
       ],
       "Date": [
         "Dátum"

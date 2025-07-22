@@ -54,6 +54,9 @@
       "Add address": [
         "加入電郵位址"
       ],
+      "Add another account": [
+        "新增其它帳號"
+      ],
       "Add birthday": [
         "新增生日"
       ],
@@ -468,6 +471,9 @@
       "Help and feedback": [
         "尋求協助與反映意見"
       ],
+      "Help and resources": [
+        "尋求協助與資源"
+      ],
       "Hide": [
         "隱藏"
       ],
@@ -476,6 +482,9 @@
       ],
       "Hide download options": [
         "隱藏下載選項"
+      ],
+      "Hide more benefits": [
+        "隱藏更多好處"
       ],
       "Image could not be loaded with tracker protection.": [
         "無法在啟用追蹤保護中載入影像。"
@@ -1080,6 +1089,9 @@
       "${ price } per domain": [
         "每網域${ price }"
       ],
+      "${ price } per seat": [
+        "${ price } 每席"
+      ],
       "${ price } per user": [
         "每使用者${ price }"
       ],
@@ -1101,6 +1113,9 @@
     "anniversary_2025: Offer": {
       "15 GB storage": [
         "15 GB 儲存空間"
+      ],
+      "200 GB storage": [
+        "200 GB 儲存空間"
       ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "折扣價格依標準月繳費率計算。在本繳款單週期結束後，將為您以標準年繳費率續約。"
@@ -1160,6 +1175,9 @@
       ]
     },
     "b2b_trials_Action": {
+      "Cancel subscription": [
+        "取消訂購授權"
+      ],
       "Keep subscription": [
         "保留訂購授權"
       ]
@@ -2722,6 +2740,9 @@
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
       ],
+      "Here's what changed:": [
+        "以下是變更內容："
+      ],
       "NOTE:": [
         "備注:"
       ],
@@ -2788,6 +2809,9 @@
       ]
     },
     "Error": {
+      "\"${ sanitizedName }\" already exists": [
+        "「${ sanitizedName }」已存在"
+      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME }無法連接外部帳號"
       ],
@@ -4335,6 +4359,9 @@
       "Anyone with this link can access your folder.": [
         "任何人憑此連結均可存取您的資料夾。"
       ],
+      "Apr": [
+        "四月"
+      ],
       "Are you sure you want to discard your changes?": [
         "您確定要捨棄所作的變更嗎？"
       ],
@@ -4361,6 +4388,9 @@
       ],
       "Attention required": [
         "需要您的處理"
+      ],
+      "Aug": [
+        "八月"
       ],
       "Automated Recovery ${ formattedDate }": [
         "自動復原${ formattedDate }"
@@ -4499,6 +4529,9 @@
       ],
       "Custom email domains": [
         "自訂電郵網域"
+      ],
+      "Dec": [
+        "十二月"
       ],
       "Decrypting files": [
         "正在解密檔案"
@@ -4643,6 +4676,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "開啟安全連結失敗。原因：${ error }"
+      ],
+      "Feb": [
+        "二月"
       ],
       "File \"${ name }\" was deleted during download": [
         "檔案 \"${ name }\" 在下載過程中被刪除"
@@ -4797,8 +4833,17 @@
       "It’s easy and secure": [
         "既簡單又安全"
       ],
+      "Jan": [
+        "一月"
+      ],
       "JCB logo": [
         "JCB 符號"
+      ],
+      "Jul": [
+        "七月"
+      ],
+      "Jun": [
+        "六月"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
@@ -4860,11 +4905,17 @@
       "Makes your account safer": [
         "讓您的帳號更安全"
       ],
+      "Mar": [
+        "三月"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 標誌"
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "最多 ${ MAX_SHARED_URL_PASSWORD_LENGTH } 個字元"
+      ],
+      "May": [
+        "五月"
       ],
       "Medium Priority": [
         "中等優先順序"
@@ -4938,11 +4989,17 @@
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "備註：資料將會持續在安裝 ${ DRIVE_APP_NAME } 的裝置上保持可用狀態。"
       ],
+      "Nov": [
+        "十一月"
+      ],
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
       ],
       "Numbers": [
         "數字"
+      ],
+      "Oct": [
+        "十月"
       ],
       "of": [
         "/"
@@ -4982,6 +5039,9 @@
       ],
       "Password copied to clipboard": [
         "密碼已複製至剪貼簿"
+      ],
+      "Password must have:": [
+        "密碼必須包含："
       ],
       "Paused": [
         "已暫停"
@@ -5180,6 +5240,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆創建一個新的行事曆。"
+      ],
+      "Sep": [
+        "九月"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "SEPA 付款目前不可用。請稍後再試。"
@@ -7862,6 +7925,18 @@
       "${ count } item failed to be decrypted": [
         "${ count } 個項目解密失敗"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "無法從「${ albumLink.name }」中移除 ${ nbFailures } 張照片"
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "無法新增 ${ nbMainPhotosError } 張相片至「${ albumName }」"
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "已新增 ${ nbMainPhotosSuccess } 張照片至「${ albumName }」"
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "已成功從「${ albumLink.name }」中移除 ${ nbSuccesses } 張照片"
+      ],
       "${ numberOfItems } item deleted": [
         "已刪除${ numberOfItems }項目"
       ],
@@ -9108,6 +9183,9 @@
       "Go to subscription plans": [
         "查看訂購授權"
       ],
+      "Keep passwords safe": [
+        "保護密碼字元安全"
+      ],
       "Unblock streaming content": [
         "解除封鎖影音串流內容"
       ],
@@ -9716,6 +9794,11 @@
     "Subscription saving": {
       "Save ${ priceString }": [
         "降價 ${ priceString }"
+      ]
+    },
+    "Subtitle": {
+      "Your tagged photos will appear here": [
+        "您標記的照片會顯示在這裡"
       ]
     },
     "Success": {
@@ -10361,6 +10444,9 @@
       ],
       "Network error": [
         "網路錯誤"
+      ],
+      "Newsletters view": [
+        "電子報檢視"
       ],
       "Night theme": [
         "夜間布景主題"

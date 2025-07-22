@@ -148,6 +148,9 @@
       "Add public holidays": [
         "祝日を追加"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "${ MAIL_APP_NAME }の署名に紹介リンクを追加する"
+      ],
       "Add sieve filter": [
         "仕分けフィルターを追加する"
       ],
@@ -216,6 +219,9 @@
       ],
       "Cancel subscription": [
         "サブスクリプションをキャンセル"
+      ],
+      "Cancel trial and pay": [
+        "トライアルをキャンセルして支払う"
       ],
       "Change": [
         "変更"
@@ -1459,6 +1465,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "アップグレードして ${ PROTON_SENTINEL_NAME } を有効にしてください"
       ],
+      "Upgrade to Professional": [
+        "Professionalにアップグレード"
+      ],
       "Upgrade to view all": [
         "すべて表示するにはアップグレードしてください"
       ],
@@ -2107,6 +2116,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan }と${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } ストレージ"
@@ -4092,6 +4104,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "受信トレイに届く前に、メールを自動的に分類します。"
       ],
+      "Available with ${ title }": [
+        "${ title }で利用可能"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "最初に組織を有効にし、メールアドレスをカスタマイズするように設定してください。"
       ],
@@ -4200,6 +4215,9 @@
       "To start, give your organization a name.": [
         "まず、組織に名前を付けてください。"
       ],
+      "Track the status and activity of your referrals": [
+        "招待の状態やアクティビティを確認します"
+      ],
       "Track the status and activity of your referrals.": [
         "招待の状態やアクティビティを確認します。"
       ],
@@ -4217,6 +4235,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
+      ],
+      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
+        "招待した人が${ BRAND_NAME }のプランにサインアップすると、あなたは${ BRAND_NAME }のクレジットで${ referralReward }を受け取り、その方も開始時に${ referralReward }のクレジットを受け取ることができます。"
       ]
     },
     "description": {
@@ -5338,6 +5359,9 @@
       "Invalid verification code": [
         "無効な検証コード"
       ],
+      "Invalid ZIP code": [
+        "郵便番号が正しくありません"
+      ],
       "Item content cannot exceed 40KB": [
         "アイテムの内容が40KBを超えることはできません"
       ],
@@ -5431,6 +5455,18 @@
       "Please enter a valid Entity ID URL": [
         "有効なエンティティID URLを入力してください"
       ],
+      "Please enter a valid postal code": [
+        "有効な郵便番号を入力してください"
+      ],
+      "Please enter a valid ZIP code": [
+        "有効な郵便番号を入力してください"
+      ],
+      "Please enter postal code": [
+        "郵便番号を入力してください"
+      ],
+      "Please enter ZIP code": [
+        "郵便番号を入力してください"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
       ],
@@ -5448,6 +5484,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "続行する前に少なくとも1つのユーザーまたはグループを選択してください。"
+      ],
+      "Please select billing country": [
+        "請求先の国を選択してください"
+      ],
+      "Please select billing state": [
+        "請求先の州を選択してください"
       ],
       "Please set a recovery email first": [
         "まず回復用メールアドレスを設定してください"
@@ -5478,6 +5520,9 @@
       ],
       "Port is required": [
         "ポートは必須です"
+      ],
+      "Postal code is required": [
+        "郵便番号は必須です"
       ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
@@ -7418,6 +7463,9 @@
       ]
     },
     "Info": {
+      " and other security features.": [
+        " およびその他のセキュリティ機能。"
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "現在、${ amountUsers }/${ totalUsers }人のユーザーが共有サーバーにアクセスできます。"
       ],
@@ -7627,6 +7675,9 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**${ BRAND_NAME } アドレス**を取得すると、${ MAIL_SHORT_APP_NAME } や ${ CALENDAR_SHORT_APP_NAME } を含むすべての ${ BRAND_NAME_TWO } サービスを使用できます。"
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "招待リンクで${ BRAND_NAME }に**友達を招待してください**"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 個以上"
@@ -8516,6 +8567,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "${ BRAND_NAME } アカウントを作成し、招待を承諾することでアクセスできます。"
       ],
+      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
+        "友達が登録するたびに、**${ referralReward } クレジット**を獲得できます。"
+      ],
       "Get it on Google Play": [
         "Google Playで入手する"
       ],
@@ -8524,6 +8578,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "パスワードやその他の個人データが漏洩した場合に通知を受け取ります。 ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started with the referral link above.": [
+        "上記の紹介リンクから始めてください。"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "トークンに、使用する予定のサービスなどのわかりやすい名前を付け、アクティブなカスタムドメインアドレスのいずれかを選択してください。このアドレスのみが、このトークンを使用してメールを送信することができます。"
@@ -8743,6 +8800,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "あなたのパートナー、友人、またはあなたの ${ protonDuoPlanName } プランを共有している人を招待してください。"
+      ],
+      "Invited": [
+        "招待済み"
       ],
       "It appears some of your data is encrypted and locked.": [
         "いくつかのデータの暗号化と復号を可能にします。"
@@ -9142,6 +9202,9 @@
       ],
       "Paid for a monthly plan": [
         "月額プランで支払い済み"
+      ],
+      "Paid for a plan": [
+        "支払い済みのプラン"
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - カスタムメールが確認されました"
@@ -9989,6 +10052,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "アップグレードすると、共有しやすくなる短い @pm.me アドレスがアカウントに追加されます。 これは「${ MAIL_APP_NAME } me」または「Private Message me」の略です。"
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "アンロックするにはProfessionalもしくはより上位のプランにアップグレード"
+      ],
       "Upgrade to unlock": [
         "アップグレードしてロックを解除"
       ],
@@ -10367,6 +10433,9 @@
       "You do not have permission to perform this action": [
         "このアクションを実行する権限がありません"
       ],
+      "You don't have any referrals.": [
+        "紹介はまだありません。"
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "他社のサービスからパスワードやその他のデータが漏洩した場合に通知を受け取ります。"
       ],
@@ -10478,6 +10547,9 @@
       "Your ${ BRAND_NAME } password": [
         "あなたの ${ BRAND_NAME } パスワード"
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ plan } サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高は、お客様のアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetime ディールには更新価格はなく、${ PASS_SHORT_APP_NAME } への生涯アクセスに対する1回限りの支払いです。"
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } と ${ MAIL_APP_NAME } のアカウントはリンクしています。両アカウントを削除するには ${ loginLink } へログインしてアカウントを削除してください。"
       ],
@@ -10522,6 +10594,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "あなたの友達は選択されたプランを**2週間無料**で利用できます。"
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts } からのインポートが一時的に遅延しています。"
@@ -12013,6 +12088,9 @@
       "Reveal password": [
         "パスワードを表示する"
       ],
+      "Reward": [
+        "特典"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "ジュネーブ、1228 Plan-les-Ouates、Route de la Galaise 32"
       ],
@@ -12042,6 +12120,9 @@
       ],
       "Sequences": [
         "シーケンス"
+      ],
+      "Share your referral link": [
+        "紹介リンクを共有"
       ],
       "Show ${ n } administrator": [
         "${ n }人の管理者を表示"
@@ -12376,6 +12457,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "郵便番号"
+      ],
       "ZIP code": [
         "郵便番号"
       ]
@@ -12605,6 +12689,9 @@
         "アカウントを切り替える"
       ],
       "Terms": [
+        "利用規約"
+      ],
+      "Terms and conditions": [
         "利用規約"
       ],
       "Trouble signing in?": [
@@ -13869,6 +13956,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "ビジネスの機密情報を保護して安全に共同作業"
       ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "家族を守るために、6 人のユーザー向けに${ plusTitle } のすべてのプレミアム機能をご利用ください。"
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "すべての ${ BRAND_NAME } サービスを組み合わせて、ご家族のプライバシーを保護します。"
       ],
@@ -13946,6 +14036,9 @@
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "利用開始の前に、表示名を設定してください。あなたがメール送信した人や予定に招待した人、ファイルを共有した人に表示されます。"
       ],
+      "Your ${ planTitleElement } subscription is now active.": [
+        "${ planTitleElement }サブスクリプションは現在有効です。"
+      ],
       "Your selected plan: ${ planName }": [
         "選択中のプラン: ${ planName }"
       ]
@@ -13967,6 +14060,9 @@
       ],
       "Downgrade account?": [
         "アカウントをダウングレードしますか?"
+      ],
+      "Review subscription": [
+        "サブスクリプションを再検討"
       ],
       "Review subscription and pay": [
         "サブスクリプションを見なおして決済"
@@ -14543,6 +14639,9 @@
       ],
       "Get the deal": [
         "割引を入手"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "最初の月の${ plan }が80%割引になる最後のチャンスです。"
       ],
       "Last day to save": [
         "節約できる最後の日"
@@ -15397,6 +15496,9 @@
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "選択したオファーは、${ currentPlanTitle } サブスクリプションには利用できません。"
       ],
+      "The offer you selected is not available for **${ currentPlanTitle }** subscribers.": [
+        "選択したオファーは、**${ currentPlanTitle }** サブスクリプションには利用できません。"
+      ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "してモバイル端末で ${ PASS_APP_NAME } を使い始めましょう"
       ],
@@ -15408,6 +15510,9 @@
       ],
       "Verifying your payment": [
         "お支払いの確認"
+      ],
+      "Welcome to ${ plan }": [
+        "${ plan } へようこそ"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "すでにプレミアム ${ appName } 機能にアクセスできます。再度購入する必要はありません。"
@@ -15643,6 +15748,9 @@
       "Got it": [
         "わかった"
       ],
+      "I'm purchasing as a business": [
+        "法人として購入します"
+      ],
       "MM/YY": [
         "月/年"
       ],
@@ -15681,6 +15789,9 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "その後、 ${ renewPriceStr } で ${ renewalLength } ヶ月間自動的に更新されます。いつでもキャンセルできます。"
+      ],
+      "This number will be shown on all future invoices": [
+        "この番号は、今後すべての請求書に表示されます"
       ],
       "This payment method will become your new default for all future renewals.": [
         "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
@@ -15737,6 +15848,20 @@
       ],
       "Street address, postal code, and city": [
         "番地、郵便番号、市区町村名"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "法人番号"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "VAT 番号"
       ]
     },
     "Permission": {
@@ -15866,6 +15991,9 @@
       "Please select the main reason": [
         "主な理由をお選びください。"
       ],
+      "Postal code": [
+        "郵便番号"
+      ],
       "Printer": [
         "プリンター"
       ],
@@ -15916,6 +16044,9 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ],
+      "ZIP code": [
+        "郵便番号"
       ]
     },
     "placeholder": {
@@ -15980,6 +16111,20 @@
       ],
       "Enjoying ${ planName }?": [
         "${ planName } を楽しんでいますか？"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "すべての ${ protonPlus } サービス。${ br }1 つの簡単なサブスクリプション。"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }**の登録者として、**${ upsellPlanTitle }**にアップグレードすることで、**${ unlockPlanTitle }**とすべてのプレミアム${ BRAND_NAME }サービスがアンロックできます"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle }のままでいる"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "${ upsellPlanTitle }にアップグレード"
       ]
     },
     "Price": {
@@ -19723,6 +19868,9 @@
       "Gift code": [
         "ギフトコード"
       ],
+      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
+        "${ referralReward }を与え、2週間の無料期間を提供します。${ referralReward }クレジットを取得してください。"
+      ],
       "Group": [
         "グループ"
       ],
@@ -19803,6 +19951,9 @@
       ],
       "Invitations": [
         "招待"
+      ],
+      "Invite friends. Get credits.": [
+        "友達を招待。クレジットを獲得。"
       ],
       "Invoices": [
         "請求書"
@@ -20377,6 +20528,9 @@
       "Video conferencing": [
         "ビデオ会議"
       ],
+      "View organization events by upgrading to Professional": [
+        "Professionalにアップグレードして組織の予定を表示"
+      ],
       "VPN apps": [
         "VPN アプリ"
       ],
@@ -20439,6 +20593,9 @@
       ],
       "Your recovery status": [
         "回復状態"
+      ],
+      "Your referrals": [
+        "あなたの紹介"
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
@@ -20667,6 +20824,12 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "ここに記載されているすべての情報がすべてのユーザーに公開されたわけではありません。"
+      ],
+      "Origin Internet Service Provider (ISP)": [
+        "発信元インターネットサービスプロバイダ (ISP)"
+      ],
+      "Origin IP address": [
+        "発信元IPアドレス"
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "発信元IPアドレスおよびインターネットサービスプロバイダ (ISP)"

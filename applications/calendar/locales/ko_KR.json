@@ -2991,7 +2991,7 @@
         "연락처 그룹으로, 한 번의 클릭으로 그룹 내 모든 사람들로 일괄 이메일 전송이 가능합니다."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "iCal 포맷 (ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING } 이벤트를 가지고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주십시오."
+        "iCal 포맷(ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING }개의 이벤트를 포함하고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "병합하거나 유지하고 싶지 않은 연락처를 삭제하도록 표시할 수 있습니다. 삭제는 병합 버튼을 클릭한 후에만 이루어집니다."
@@ -4388,7 +4388,7 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "이벤트 ${ totalToImport }개 중 ${ totalImported }개를 암호화하고 캘린더에 추가했습니다"
+        "이벤트 ${ totalToImport }개 중 ${ totalImported }개를 암호화 및 캘린더에 추가했습니다"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "이벤트를 암호화하고 추가하는 데 오류가 발생했습니다. 이벤트 ${ totalToImport }개 중 ${ totalImported }개를 성공적으로 불러왔습니다."
@@ -4485,10 +4485,10 @@
         "${ BRAND_NAME } 이(가) 계정에 연결할 수 없습니다. 확인해 주세요:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } 이(가) 외부 계정에 연결할 수 없습니다. 메일 서버 주소 및 포트 번호가 올바른지 확인하십시오."
+        "${ BRAND_NAME }이 외부 계정와 연결할 수 없습니다. 메일 서버 주소 및 포트 번호가 올바른지 확인하십시오."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "${ BRAND_NAME } 이(가) 외부 계정에 연결할 수 없습니다. 확인해 주세요:"
+        "${ BRAND_NAME }이 외부 계정와 연결할 수 없습니다. 다음 사항을 확인하세요:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } 이(가) Yahoo 계정에 연결할 수 없습니다. 메일 서버 주소 및 포트 번호가 올바른지 확인하십시오."
@@ -4506,7 +4506,7 @@
         "사용자의 외부 계정의 IMAP 접근이 활성화되었습니다."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "IMAP 접근이 Yahoo 계정에 활성화 되어있습니다."
+        "IMAP 접근이 Yahoo 계정에 활성화 되어 있는지 확인하세요."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "너무 많은 요청을 시도했습니다. 잠시 후 다시 시도해 주세요."
@@ -4527,7 +4527,7 @@
         "데이터를 내보내려면 이메일 계정이 필요합니다."
       ],
       "Your email address and app password are correct. Do not use your regular password.": [
-        "이메일 주소 및 앱 비밀번호가 일치합니다. 일반적인 비밀번호를 사용하지 마십시오."
+        "이메일 주소 및 앱 비밀번호가 일치하는지 확인하세요. 일반적인 비밀번호를 사용하지 마세요."
       ],
       "Your email address and password are correct.": [
         "이메일 주소 및 비밀번호가 올바릅니다."
@@ -4538,7 +4538,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "사용자의 이메일 서비스 제공자에 따라, ${ BRAND_NAME } 로 가져오기 전에 먼저 ${ knowledgeBaseLink } 를 생성해야 할 수도 있습니다."
+        "사용자의 이메일 서비스 제공자에 따라, ${ BRAND_NAME }으로 불러오기 전에 먼저 ${ knowledgeBaseLink }가 필요할 수 있습니다."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "3개의 점 (...) 을 클릭하여 드롭다운 메뉴를 확장하세요."
@@ -4547,13 +4547,13 @@
         "${ boldAppPassword }를 설정하고 ${ BRAND_NAME }에 표시되었던 기존 비밀번호를 입력하세요."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
-        "${ yahooMailLink } 의 프로필에서 ${ boldAccountInfo } 로 이동하세요."
+        "${ yahooMailLink } 프로필에서 ${ boldAccountInfo }로 이동하세요."
       ],
       "Go to ${ boldAccountSecurity }.": [
-        "${ boldAccountSecurity } 로 이동하세요"
+        "${ boldAccountSecurity }으로 이동하세요."
       ],
       "Open your ${ yahooMailLink } contacts.": [
-        "${ yahooMailLink } 연락처를 여세요."
+        "${ yahooMailLink } 연락처를 실행하세요."
       ],
       "Select ${ boldExportCSV }.": [
         "${ boldExportCSV } 선택"
@@ -4613,13 +4613,13 @@
     },
     "Import instructions step": {
       "Go to ${ calendarViewLink } in Yahoo.": [
-        "Yahoo에서 ${ calendarViewLink } 로 이동하세요"
+        "Yahoo에서 ${ calendarViewLink }로 이동하세요."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
         "가져오려는 캘린더 위에 마우스를 올려놓고 드롭다운 메뉴를 여세요."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
-        "캘린더를 ICS 파일로 내보내려면 ${ boldExport } 을(를) 선택하세요."
+        "캘린더를 ICS 파일로 내보내기 위해 ${ boldExport }를 선택하세요."
       ]
     },
     "Import provider": {
@@ -4703,7 +4703,7 @@
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
+        "${ plan.Title }은 최소 1개 이상 전용 서버가 필요합니다 ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME }이 의심스러운 활동에 대한 전담 모니터링으로 계정을 보호합니다."
@@ -4958,7 +4958,7 @@
         "가져온 메시지에 대한 라벨, 가져오기의 시간 범위 및 가져오려는 폴더를 만드세요."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "가져온 메시지에 대한 라벨, 가져오기의 시간 범위 및 가져오려는 라벨을 만드세요."
+        "가져온 메시지의 라벨, 이 가져오기의 시간 범위, 그리고 가져오고자 하는 라벨을 생성하세요."
       ],
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
@@ -5033,7 +5033,7 @@
         "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "당신이 가장 좋아하는 앱을 다운받고 어디서나 보안을 유지하세요."
+        "오늘 회원님이 선호하는 앱을 다운로드하여 언제 어디서나 프라이버시를 유지해 보세요."
       ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
@@ -5621,7 +5621,7 @@
         "사용자의 데이터를 복구하려면, 데이터가 생성되었을 때 사용된 계정 키를 다시 활성화해야 합니다. 활성화를 한 뒤 키가 생성되었을 때 사용된 비밀번호를 기억해야 합니다."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "주소 검증을 사용하려면 신뢰할 수 있는 키를 활성화하고 이 주소의 기본 키를 포함하여 사용 가능한 하나 이상의 공개 키를 신뢰해야 합니다. 이렇게 하면 암호화 키가 위조되지 않습니다."
+        "주소 검증을 사용하려면 신뢰할 수 있는 키를 활성화하고 이 주소의 기본 키를 포함하여 사용 가능한 하나 이상의 공개 키를 신뢰해야 합니다. 이 작업을 통해 암호화 키가 위조되지 않습니다."
       ],
       "Total email addresses": [
         "총 이메일 주소"
@@ -5639,7 +5639,7 @@
         "트래킹"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
+        "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 설정시 애플리케이션이 새로고침됩니다"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
@@ -7638,10 +7638,10 @@
         "${ last4 }(으)로 끝나는 ${ brand }"
       ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "종단간 암호화로 보호되는 1 TB의 클라우드 저장공간을 통해 파일을 쉽게 저장, 동기화 및 공유할 수 있어요."
+        "파일을 간편하게 저장, 동기화 및 공유하기 위한 종단간 암호화로 보호되는 1 TB의 클라우드 저장공간."
       ],
       "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
-        "종단간 암호화로 보호되는 200 GB의 클라우드 저장공간을 통해 파일을 쉽게 저장, 동기화 및 공유할 수 있어요."
+        "파일을 간편하게 저장, 동기화 및 공유하기 위한 종단간 암호화로 보호되는 200 GB의 클라우드 저장공간."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "전용 보안 게이트웨이를 사용한 고급 네트워크 보안 및 접속 관리"
@@ -7653,7 +7653,7 @@
         "모든 ${ BRAND_NAME } 앱들과 해당 앱들의 프리미엄 기능들"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능이 전체 비즈니스를 보호합니다."
+        "전체 비즈니스를 보호하는 모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "모든 ${ BRAND_NAME } 서비스를 결합한 포괄적인 개인 정보 보호 및 보안."
@@ -7668,7 +7668,7 @@
         "팀을 위한 향상된 보안 및 프리미엄 기능"
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "사용자 제한 없이 필수적인 보호와 안전한 협업을."
+        "무제한 사용자를 위한 필수 보호 및 안전한 협업."
       ],
       "For next-level password management and identity protection.": [
         "한 차원 높은 비밀번호 관리 및 신원 보호를 위한."
@@ -7698,25 +7698,25 @@
         "6명의 구성원을 위한 ${ plusTitle }의 모든 프리미엄 기능으로 가족을 보호하세요."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
-        "${ BRAND_NAME } 서비스들로 가족의 개인정보를 보호하세요."
+        "모든 ${ BRAND_NAME } 서비스로 결합하여 보호하는 우리 가족 프라이버시."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "어디에서나 기본 네트워크 모니터링으로 안전하게 인터넷에 접속하세요."
+        "언제 어디서든 기본 네트워크 모니터링으로 안전하게 인터넷에 접속하기"
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "일상적인 커뮤니케이션을 위한 고급 기능을 갖춘 안전한 이메일"
+        "일상적인 커뮤니케이션을 위한 고급 기능을 갖춘 안전한 이메일."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "특정 보안 요구 사항을 갖춘 대규모 조직을 위한 맞춤형 솔루션"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "인터넷에 안전하고 제한 없이 고속으로 접속할 수 있는 전용 VPN 솔루션입니다."
+        "인터넷에 안전하고 제한 없이 고속으로 접속할 수 있는 전용 VPN 솔루션."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "모두에게 프라이버시 보호를 제공하도록 설계된 무료 스타터 계정."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "최대 두 사람까지 무제한 프라이버시 및 더 많은 저장공간을 제공합니다."
+        "최대 두 명을 위한 무제한 개인정보 보호 및 추가적인 저장공간."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 삭제하신다면, 프로모션이 적용된 가격을 잃게되어 만일 새로운 계정을 추가한다고 하더라도 다시 누리실 수 없습니다."
@@ -9293,7 +9293,7 @@
     },
     "Slack": {
       "Join Slack huddle": [
-        "Slack Huddle에 참여하기"
+        "Slack 허들에 참여하기"
       ]
     },
     "SmartBanner": {
@@ -10939,7 +10939,7 @@
         "비밀번호 관리 간소화하기"
       ],
       "Start a new import": [
-        "사용자 지정 시작"
+        "신규 불러오기 시작"
       ],
       "Start import process": [
         "불러오기 과정 시작"

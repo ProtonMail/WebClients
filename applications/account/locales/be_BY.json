@@ -623,7 +623,7 @@
         "Рэдагаваць фільтр Sieve з назвай “${ Name }”"
       ],
       "Edit sign-in details": [
-        "Рэдагаваць звесткі ўваходу"
+        "Рэдагаваць падрабязнасці ўваходу"
       ],
       "Edit subscription": [
         "Рэдагаваць падпіску"
@@ -1029,6 +1029,12 @@
       ],
       "Publish changes": [
         "Апублікаваць змяненні"
+      ],
+      "Purge all": [
+        "Ачысціць усе"
+      ],
+      "Purge deleted": [
+        "Ачыстка выдалена"
       ],
       "Quit": [
         "Выйсці"
@@ -1671,7 +1677,7 @@
         "Адключыць адрас “${ emailAddress }”"
       ],
       "Disable E2EE mail": [
-        "Адключыць пошту E2EE"
+        "Адключыць E2EE пошты"
       ],
       "Disallow unsigned mail": [
         "Забар. непадпіс. пошту"
@@ -1816,7 +1822,7 @@
         "Скідкі разлічваюцца на падставе стандартнай платы. Пасля завяршэння перыяду аплаты ваша падпіска будзе аўтаматычна падоўжана па стандартнай гадавой стаўцы."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Удвойце ваша зашыфраванае сховішча. Атрымайце 1 ТБ для ўсіх сваіх даных"
+        "Удвойце сваё зашыфраванае сховішча. Атрымайце 1 ТБ для ўсіх сваіх даных"
       ],
       "Encrypted password manager": [
         "Зашыфраваны менеджар пароляў"
@@ -2394,7 +2400,7 @@
         "Праблема з Docs"
       ],
       "Drive problem": [
-        "Праблема з Дыскам"
+        "Праблема з Drive"
       ],
       "Feature request": [
         "Запытаць функцыю"
@@ -4189,7 +4195,7 @@
         "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
-        "Лёгка сінхранізуйце файлы ў воблака з вашага камп’ютара і атрымлівайце доступ да іх са сваёй мабільнай прылады."
+        "Лёгка сінхранізуйце файлы ў воблака са свайго камп’ютара і атрымлівайце доступ да іх на сваёй мабільнай прыладзе."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Уключыце ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
@@ -8523,7 +8529,7 @@
         "Лагатып Discover ProtectBuy"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DKIM дазваляе ${ BRAND_NAME } крыптаграфічна падпісваць вашы электронныя лісты і прадухіляць падробку вашай электроннай пошты зламыснікамі. Пераканайцеся, што вы дадалі наступныя тры запісы CNAME у вашу кансоль DNS (яны размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен)."
+        "DKIM дазваляе ${ BRAND_NAME } крыптаграфічна падпісваць вашы электронныя лісты і прадухіляць падробку вашай электроннай пошты зламыснікамі. Пераканайцеся, што вы дадалі наступныя тры запісы CNAME у сваю кансоль DNS (яны размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC правярае, ці паходзяць запісы SPF і DKIM адпраўніка ад вашага дамена. Гэта можа перашкодзіць зламыснікам выкарыстоўваць SPF і DKIM іншага дамена для выдачы яго за ваш. \"p=\" (policy) у гэтым запісе паказвае, як вы хочаце, каб платформы атрымальнікаў апрацоўвалі неаўтарызаваныя лісты. Мы рэкамендуем выкарыстоўваць для большасці даменаў палітыку \"p=quarantine\". Пераканайцеся, што вы дадалі наступны запіс TXT у кансоль DNS (які размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен)."
@@ -8577,7 +8583,7 @@
         "Спампававаць у App Store"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
-        "Спампуйце наш шаблон CSV, запоўніце падрабязнасці пра карыстальніка і запампуйце ваш запоўнены файл CSV для стварэння ўліковага запісу для гэтых карыстальнікаў."
+        "Спампуйце наш шаблон CSV, запоўніце падрабязнасці аб карыстальніку і запампуйце свой запоўнены файл CSV для стварэння ўліковых запісаў для гэтых карыстальнікаў."
       ],
       "Download recovery file": [
         "Спампаваць файл аднаўлення"
@@ -8592,7 +8598,7 @@
         "Перацягніце файл сюды, каб запампаваць"
       ],
       "Drop to import": [
-        "Перацягніце для імпартавання"
+        "Перацягніце, каб імпартаваць"
       ],
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
@@ -9716,6 +9722,15 @@
       "Restore": [
         "Аднавіць"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Правіла захоўвання \"${ formData.name }\" паспяхова абноўлена."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Правіла захоўвання \"${ payload.Name }\" паспяхова створана."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Правіла захоўвання \"${ retentionRule.Name }\" паспяхова выдалена."
+      ],
       "Revoke certificate ${ name }": [
         "Адклікаць сертыфікат ${ name }"
       ],
@@ -10359,7 +10374,7 @@
         "Палепшыце свой тарыфны план, каб дадаць кароткі адрас @pm да свайго ўліковага запісу, якім лёгка дзяліцца з астатнімі. Ён абазначае “${ MAIL_APP_NAME } me” або “Private Message me”."
       ],
       "Upgrade to Professional or a higher plan to unlock": [
-        "Палепшыце да тарыфнага плана Professional ці вышэйшага, каб разблакіраваць"
+        "Палепшыце да Professional або больш высокага тарыфнага плана, каб разблакіраваць"
       ],
       "Upgrade to unlock": [
         "Палепшыць, каб разблакіраваць"
@@ -11470,7 +11485,7 @@
         "Выдаліць"
       ],
       "Disables encryption with this key": [
-        "Адключае шыфраванне гэтым ключом"
+        "Адключае шыфраванне з гэтым ключом"
       ],
       "Disables signature verification and encryption with this key": [
         "Адключае праверку подпісу і магчымасць шыфравання гэтым ключом"
@@ -11954,7 +11969,7 @@
         "Апісанне"
       ],
       "Device/certificate name": [
-        "Прылада/назва сертыфіката"
+        "Прылада або назва сертыфіката"
       ],
       "Digits": [
         "Лічбы"
@@ -14627,7 +14642,7 @@
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
+        "Лёгка дзяліцеся сваімі календарамі з сям'ёй, сябрамі або калегамі"
       ],
       "Email everyone in a group with a single email address": [
         "Адпраўка паведамлення кожнаму ў групе з адзінага адраса электроннай пошты"
@@ -15237,7 +15252,7 @@
         "браўзер"
       ],
       "Desktop": [
-        "Працоўны стол"
+        "Desktop"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Для таго, каб пачаць працу выберыце бачнае імя. Менавіта яго ўбачаць карыстальнікі, калі вы адправіце ім ліст, запрашэнне на падзею або абагулены файл."
@@ -15417,6 +15432,9 @@
       "Free server configs": [
         "Канфігурацыі бясплатнага сервера"
       ],
+      "Group": [
+        "Група"
+      ],
       "I found another service that I like better": [
         "Я знайшоў больш прывабны сэрвіс"
       ],
@@ -15524,6 +15542,9 @@
       ],
       "Trash": [
         "Сметніца"
+      ],
+      "User": [
+        "Карыстальнік"
       ]
     },
     "option": {
@@ -16851,6 +16872,66 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Па прычыне змены пароля вашы правы адміністратара арганізацыі былі абмежаваны. Цяпер вам забаронены наступныя дзеянні:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Стварыць правіла захоўвання"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Delete rule": [
+        "Выдаліць правіла"
+      ],
+      "Edit": [
+        "Рэдагаваць"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "яшчэ ${ remainingCount }"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } дзень",
+        "${ rule.Lifetime } дні",
+        "${ rule.Lifetime } дзён",
+        "${ rule.Lifetime } дзён"
+      ],
+      "Forever": [
+        "Назаўсёды"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Пошук правіла, карыстальнікаў, перыяду, дзеяння"
+      ],
+      "Search policies": [
+        "Пошук палітык"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Дзеянне"
+      ],
+      "Applies to": [
+        "Ужыць да"
+      ],
+      "Retention period": [
+        "Перыяд захоўвання"
+      ],
+      "Retention Rule": [
+        "Правіла захоўвання"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Палітыкі захоўвання не знойдзены"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Стварыце правілы захоўвання ў адпаведнасці з палітыкай захоўвання даных вашай арганізацыі. Гэта таксама дазволіць аўтаматычна выдаляць састарэлыя даныя."
       ]
     },
     "Role": {
@@ -19667,7 +19748,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Падрабязнасці падзей, якія не былі экспартаваны"
+        "Падрабязнасці аб падзеях, якія не былі экспартаваны"
       ]
     },
     "summer2023: Tooltip": {
@@ -20275,6 +20356,9 @@
       ],
       "Data recovery": [
         "Аднаўленне даных"
+      ],
+      "Data retention": [
+        "Захоўванне даных"
       ],
       "Date": [
         "Дата"
@@ -21716,7 +21800,7 @@
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
       "Disables end-to-end email encryption for this group": [
-        "Адключыць скразное шыфраванне лістоў для гэтай групы"
+        "Адключае скразное шыфраванне лістоў для гэтай групы"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы і зашыфраваныя рэсурсы не будуць абагулены з гэтым карыстальнікам."

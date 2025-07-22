@@ -1235,13 +1235,13 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ cycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ cycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } annuleert."
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
-        "Door op \"Probeer\" te klikken, gaat u akkoord met onze ${ termsAndConditions }."
+        "Door op \"Proberen\" te klikken, gaat u akkoord met onze ${ termsAndConditions }."
       ],
       "During the trial period, you can have up to 10 users.": [
         "Tijdens de proefperiode kunt u maximaal 10 gebruikers hebben."
@@ -1250,7 +1250,7 @@
         "op ${ formattedDate }"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Wanneer u annuleert, wordt uw gratis proefabonnement niet omgezet in een betaald abonnement, maar u kunt nog steeds van de voordelen van het abonnement genieten tot het einde van de proefperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } gratis abonnement."
+        "Wanneer u opzegt, wordt uw gratis proefabonnement niet omgezet in een betaald abonnement, maar kunt u nog steeds van de voordelen van het abonnement genieten tot het einde van de proefperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } gratis abonnement."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
@@ -5568,6 +5568,15 @@
       "Restore": [
         "Herstel"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Bewaarregel \"${ formData.name }\" is succesvol bijgewerkt"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Bewaarbeleid \"${ payload.Name }\" succesvol aangemaakt"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Bewaarregel \"${ retentionRule.Name }\" succesvol verwijderd"
+      ],
       "Revoke certificate ${ name }": [
         "Certificaat ${ name } intrekken"
       ],
@@ -9677,6 +9686,11 @@
         "Als gevolg van het wijzigen van een wachtwoord zijn uw beheerdersbevoegdheden beperkt. De volgende acties zijn niet langer toegestaan:"
       ]
     },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Maak bewaarregels aan om te bepalen hoe lang u de data wilt bewaren in lijn met bewaarregels van uw organisatie. Schakelt ook het automatisch wissen van verlopen gegevens in."
+      ]
+    },
     "Role": {
       "Admin": [
         "Beheerder"
@@ -11895,6 +11909,9 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Verander de hoeveelheid IP-adressen in uw abonnement"
+      ],
+      "Data retention": [
+        "Gegevensbewaring"
       ],
       "Date": [
         "Datum"

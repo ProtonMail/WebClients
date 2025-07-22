@@ -51,6 +51,9 @@
       "Add address": [
         "加入電郵位址"
       ],
+      "Add another account": [
+        "新增其它帳號"
+      ],
       "Add birthday": [
         "新增生日"
       ],
@@ -360,11 +363,17 @@
       "Help and feedback": [
         "尋求協助與反映意見"
       ],
+      "Help and resources": [
+        "尋求協助與資源"
+      ],
       "Hide": [
         "隱藏"
       ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
+      ],
+      "Hide more benefits": [
+        "隱藏更多好處"
       ],
       "Image could not be loaded with tracker protection.": [
         "無法在啟用追蹤保護中載入影像。"
@@ -808,6 +817,9 @@
       "${ price } per domain": [
         "每網域${ price }"
       ],
+      "${ price } per seat": [
+        "${ price } 每席"
+      ],
       "${ price } per user": [
         "每使用者${ price }"
       ],
@@ -829,6 +841,9 @@
     "anniversary_2025: Offer": {
       "15 GB storage": [
         "15 GB 儲存空間"
+      ],
+      "200 GB storage": [
+        "200 GB 儲存空間"
       ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "折扣價格依標準月繳費率計算。在本繳款單週期結束後，將為您以標準年繳費率續約。"
@@ -888,6 +903,9 @@
       ]
     },
     "b2b_trials_Action": {
+      "Cancel subscription": [
+        "取消訂購授權"
+      ],
       "Keep subscription": [
         "保留訂購授權"
       ]
@@ -2426,6 +2444,9 @@
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
       ],
+      "Here's what changed:": [
+        "以下是變更內容："
+      ],
       "NOTE:": [
         "備注:"
       ],
@@ -2492,6 +2513,9 @@
       ]
     },
     "Error": {
+      "\"${ sanitizedName }\" already exists": [
+        "「${ sanitizedName }」已存在"
+      ],
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME }無法連接外部帳號"
       ],
@@ -4437,6 +4461,9 @@
       ],
       "Password copied to clipboard": [
         "密碼已複製至剪貼簿"
+      ],
+      "Password must have:": [
+        "密碼必須包含："
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付受 TLS 加密及瑞士隱私法律保護。"
@@ -8017,6 +8044,9 @@
     "specialoffer: Link": {
       "Go to subscription plans": [
         "查看訂購授權"
+      ],
+      "Keep passwords safe": [
+        "保護密碼字元安全"
       ],
       "Unblock streaming content": [
         "解除封鎖影音串流內容"

@@ -1297,6 +1297,9 @@
       "Show more": [
         "Vis mere"
       ],
+      "Show more benefits": [
+        "Vis flere fordele"
+      ],
       "Show more search options": [
         "Vis flere søgemuligheder"
       ],
@@ -1347,6 +1350,15 @@
       ],
       "Stop generating result": [
         "Stop generering af resultat"
+      ],
+      "Stop marking as read": [
+        "Stop markering som læst"
+      ],
+      "Stop moving to Archive": [
+        "Stop flytning til arkiv"
+      ],
+      "Stop moving to Trash": [
+        "Stop flytning til papirkurv"
       ],
       "Strikethrough": [
         "Gennemstregning"
@@ -1717,6 +1729,12 @@
       "200 GB storage": [
         "200 GB lagerplads"
       ],
+      "Add unlimited credit cards": [
+        "Tilføj ubegrænset antal betalingskort"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premiumfunktioner i ${ BRAND_NAME } Mail, Pass, VPN, Drive og Calendar"
+      ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "Rabatter er baserede på en standard månedlig pris. Ved slutningen af faktureringsperioden fornys dit abonnement efter den standard årlige pris."
       ],
@@ -1735,8 +1753,20 @@
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
       ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Spar stort på premium Drive-funktioner med en tidsbegrænset rabat."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Spar stort på premium VPN-funktioner med en tidsbegrænset rabat."
+      ],
+      "Save time with built-in 2FA": [
+        "Spar tid med indbygget 2FA"
+      ],
       "Share passwords easily": [
         "Del let kodeord"
+      ],
+      "thanks to you": [
+        "takket være dig"
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
@@ -1746,6 +1776,11 @@
       ],
       "years": [
         "år"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubilæumstilbud"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1954,6 +1989,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Faktureret med ${ amount } én gang"
+      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornys automatisk efter 1 måned til ${ regularAmount }."
       ]
@@ -4465,6 +4503,12 @@
       "Please activate your search again": [
         "Aktiver venligst din søgning igen"
       ],
+      "Please enter a valid postal code": [
+        "Indtast et gyldigt postnummer"
+      ],
+      "Please enter a valid ZIP code": [
+        "Indtast et gyldigt postnummer."
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs den fremhævede konflikt for at fortsætte.",
         "Løs de fremhævede konflikter for at fortsætte."
@@ -6325,6 +6369,9 @@
       "An unknown public key has been detected for this recipient.": [
         "En ukendt offentlig nøgle er fundet for denne modtager."
       ],
+      "An unsubscribe email will be sent on your behalf.": [
+        "En afmeldings-e-mail vil blive sendt på dine vegne."
+      ],
       "and": [
         "og"
       ],
@@ -6396,6 +6443,9 @@
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindst ${ BETTER_PASSWORD_LENGTH } tegn"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Ved udgangen af din prøveversion ${ boldCancelDate }, vil du blive nedgraderet til ${ boldProtonFree }. Alle brugerkonti vil blive fjernet fra din organisation."
       ],
       "Attach public key": [
         "Vedhæft offentlig nøgle"
@@ -6848,6 +6898,9 @@
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du annullerer, vil dit ${ planTitle }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
       ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Hvis du ombestemmer dig, kan du abonnere igen når som helst. Ked af at miste dig!"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
@@ -6916,8 +6969,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7128,6 +7180,9 @@
       ],
       "No links cleaned": [
         "Ingen links renset"
+      ],
+      "No messages to show": [
+        "Ingen beskeder at vise"
       ],
       "No more results found": [
         "Der er ikke flere resultater"
@@ -7628,6 +7683,9 @@
       "Themes can give your inbox a new look.": [
         "Temaer kan give din indbakke et nyt udseende."
       ],
+      "There are no messages from this sender in your inbox.": [
+        "Der er ingen beskeder fra denne afsender i din indbakke."
+      ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Der er opstået en fejl med den underskrift, der bruges til at verificere kontaktoplysningerne, hvilket kan være resultatet af en nulstilling af adgangskoden."
       ],
@@ -7746,6 +7804,9 @@
       ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Dette blev vist til dig, fordi din e-mail-emnelinje indeholder nøgleord til nulstilling af adgangskode."
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Dette vil fjerne nyhedsbrevposten fra denne liste. Det vil ikke afmelde dig fra nyhedsbrevet. Det vil dukke op igen, hvis du modtager nye beskeder."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
@@ -8188,6 +8249,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Der leveres ikke længere e-mails til din indbakke. Dine Drive-links til deling er ikke længere aktive, og du kan ikke uploade nye filer. Hvis du fortsat vil bruge din konto, skal du betale eventuelle forfaldne fakturaer."
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dit ${ plan }-abonnement vil blive erstattet af ${ PASS_SHORT_APP_NAME } Lifetime. Den resterende del af dit abonnement vil blive tilføjet til din konto. ${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
       ],
@@ -8214,6 +8278,12 @@
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Din gratis prøveperiode blev konverteret til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Din gratis prøveperiode blev konverteret til et månedligt abonnement. Din fornyelsesdato er ${ nextBillingDate }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Din hardware understøtter ikke at køre skriveassistenten lokalt. Prøv at køre den på en server."
@@ -8267,6 +8337,18 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Dit abonnement vil automatisk blive fornyet den ${ renewalTime }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Din prøveversion slutter om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du vil også miste adgang til ${ boldPlanTitle }-funktioner:"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Du vil miste adgangen til ${ boldPlanTitle } ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
@@ -8681,6 +8763,9 @@
       "CC": [
         "CC"
       ],
+      "Choose what to do instead": [
+        "Vælg, hvad der skal gøres i stedet"
+      ],
       "City": [
         "By"
       ],
@@ -8801,6 +8886,9 @@
       "Extended address": [
         "Udvidet adresse"
       ],
+      "Failed to create folder ${ newFolderName }": [
+        "Kunne ikke oprette mappe ${ newFolderName }"
+      ],
       "Filter Name": [
         "Filternavn"
       ],
@@ -8809,6 +8897,9 @@
       ],
       "Folder location": [
         "Mappeplacering"
+      ],
+      "Forums": [
+        "Fora"
       ],
       "Forwards to": [
         "Videresender til"
@@ -8903,6 +8994,9 @@
       "Mark as": [
         "Markér som"
       ],
+      "Marked as read": [
+        "Markér som læst"
+      ],
       "Message:": [
         "Besked:"
       ],
@@ -8921,6 +9015,9 @@
       "Move to Inbox": [
         "Flyt til Indbakke"
       ],
+      "Moved to ${ labelName }": [
+        "Flyttet til ${ labelName }"
+      ],
       "Moved to Archive": [
         "Flyttet til Arkiv"
       ],
@@ -8938,6 +9035,9 @@
       ],
       "New password": [
         "Ny adgangskode"
+      ],
+      "Newsletter entry deleted": [
+        "Nyhedsbrevpost slettet"
       ],
       "Newsletters": [
         "Nyhedsbreve"
@@ -9094,6 +9194,9 @@
       ],
       "System information": [
         "Systemoplysninger"
+      ],
+      "The filter is disabled. ${ enableButton }": [
+        "Filteret er deaktiveret. ${ enableButton }"
       ],
       "Theme": [
         "Tema"
@@ -9260,8 +9363,14 @@
       ]
     },
     "Labels": {
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Nyhedsbreve eller mailinglister, du afmelder, vises her."
+      ],
       "You don't have any active newsletters or mailing list subscriptions.": [
         "Du har ingen aktive nyhedsbreve eller mailinglisteabonnementer."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Du har ingen nyhedsbreve eller mailinglisteabonnementer."
       ]
     },
     "Landmarks": {
@@ -10379,6 +10488,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
       ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB lagring i skyen, der giver dig mulighed for nemt at gemme, synkronisere og dele filer. Sikret med end-to-end kryptering."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avanceret netværkssikkerhed og adgangshåndtering med dedikerede sikre Gateways"
       ],
@@ -10473,6 +10585,9 @@
       "Downgrade account?": [
         "Nedgradér konto?"
       ],
+      "Review subscription": [
+        "Gennemgå abonnement"
+      ],
       "Review subscription and pay": [
         "Gennemgå abonnement og betal"
       ],
@@ -10530,6 +10645,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opret op til ${ n } e-mailadresser/aliasser, som du kan tildele familiemedlemmer. Brug dem til onlineidentiteter, f.eks. JohnShopper@${ domain } til shoppingkonti."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Brugerdefinerede domæner til aliasser, ekstra postkasser, mulighed for at sende e-mails fra aliasser og meget mere"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedikerede servere med dedikerede IP adresser kan tilføjes til private gateways for at finjustere adgangen"
       ],
@@ -10565,6 +10683,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter er enkle tags, du kan tilføje til beskeder for at gøre dem lettere at finde eller anvende filtre på."
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Livstidsadgang til ${ PASS_APP_NAME } + SimpleLogin premium funktioner."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Ligesom en mappe, er en boks en praktisk måde, at organisere dine elementer på"
@@ -10819,6 +10940,9 @@
       "${ planName } for 12 months": [
         "${ planName } i 12 måneder"
       ],
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } tilbud udløber i dag!"
+      ],
       "Don’t show this again": [
         "Vis ikke dette igen"
       ],
@@ -10886,6 +11010,9 @@
       "500 GB secure storage": [
         "500 GB sikker lagerplads"
       ],
+      "Advanced threat protection": [
+        "Avanceret trusselsbeskyttelse"
+      ],
       "Custom email domain": [
         "Tilpasset e-maildomæne"
       ],
@@ -10912,11 +11039,17 @@
       "Finance": [
         "Finans"
       ],
+      "I have moved my logins to ${ BRAND_NAME }": [
+        "Jeg har flyttet mine logins til ${ BRAND_NAME }"
+      ],
       "Shopping": [
         "Shopping"
       ],
       "Social media": [
         "Sociale medier"
+      ],
+      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
+        "Brug din ${ MAIL_APP_NAME }-adresse til at logge ind på onlinetjenester for at undgå at blive sporet og profileret. Skift din e-mailadresse i populære tjenester nu. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11019,6 +11152,9 @@
       "You are all set!": [
         "Så er du klar!"
       ],
+      "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
+        "Dit domæne ${ domain } og ${ subscriptionName }-abonnement er klar til brug."
+      ],
       "Your domain and subscription are ready to use.": [
         "Dit domæne og abonnement er klar til brug."
       ]
@@ -11053,6 +11189,12 @@
       ]
     },
     "Onboarding Trial": {
+      "Cancel anytime before then.": [
+        "Annullér til enhver tid inden da."
+      ],
+      "contact our support team": [
+        "kontakt vores supportteam"
+      ],
       "Continue": [
         "Forsæt"
       ],
@@ -11061,6 +11203,21 @@
       ],
       "help center": [
         "hjælp-center"
+      ],
+      "Once your full subscription starts...": [
+        "Når dit fulde abonnement starter..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Du kan stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Du kan stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Du kan bruge ${ planTitle } indtil prøveversionen udløber, og du vil ikke får en opkrævning."
+      ],
+      "Your free trial has started": [
+        "Din gratis prøveperiode er startet"
       ]
     },
     "Online accounts": {
@@ -11182,11 +11339,20 @@
       "All premium features. 6 users. 1 easy subscription.": [
         "Alle premium-tjenester. 6 brugere. 1 nemt abonnement."
       ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Faktureres årligt til ${ yearlyPrice }. Spar ${ yearlySavedPrice } med ${ passFamilyPlanName } (fremfor 6 individuelle ${ passPlusPlanName }-abonnementer)."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Eksklusivt tilbud kun tilgængeligt for tidlige støtter af ${ PASS_APP_NAME }."
+      ],
       "Get it for ${ monthlyPrice }": [
         "Fås til ${ monthlyPrice }"
       ],
       "Introducing ${ passFamilyPlanName }": [
         "Vi præsenterer ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Tidsbegrænset tilbud."
       ]
     },
     "passwordless": {
@@ -11265,6 +11431,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
       ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Fornyelsespriser kan ændres i henhold til ${ termsAndConditionsLink }."
+      ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, annuller når som helst."
       ],
@@ -11290,8 +11459,14 @@
         "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måned. Du kan annullere det når som helst.",
         "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måneder. Du kan annullere det når som helst."
       ],
+      "This payment method will become your new default for all future renewals.": [
+        "Denne betalingsmetode bliver din nye standard for alle fremtidige fornyelser."
+      ],
       "Timeout exceeded": [
         "Timeout overskredet"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta er blevet ændret til euro (€), fordi SEPA-bankoverførsler kun understøtter betalinger i euro."
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
@@ -11323,16 +11498,25 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort, der slutter på ${ paymentMethod.Details.Last4 }"
+      ],
       "Bank transfer - ${ details }": [
         "Bankoverførsel - ${ details }"
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ved at bekræfte denne betaling autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at instruere din bank om at debitere din konto tilsvarende. Du kan få en tilbagebetaling inden for 8 uger fra debiteringsdatoen, under betingelserne i din aftale med din bank."
+      ],
       "Street address, postal code, and city": [
         "Adresse, postnummer og by"
       ]
     },
     "Payments.VAT number name": {
+      "Business Number": [
+        "Forretningsnummer"
+      ],
       "VAT number": [
         "Momsnummer"
       ]
@@ -11530,6 +11714,12 @@
       ]
     },
     "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Alle ${ protonPlus }-tjenester.${ br }Ét nemt abonnement."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Som **${ currentPlanTitle }**-abonnent kan du låse op for **${ unlockPlanTitle }** og alle premium ${ BRAND_NAME }-tjenester ved at opgradere til **${ upsellPlanTitle }**."
+      ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Opgradér til ${ upsellPlanTitle }"
       ]
@@ -12220,6 +12410,9 @@
       "Go to subscription plans": [
         "Gå til abonnementer"
       ],
+      "Guard against threats": [
+        "Beskyt mod trusler"
+      ],
       "Keep passwords safe": [
         "Hold adgangskoder sikre"
       ],
@@ -12305,6 +12498,15 @@
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
         "Få adgang til indhold på streamingtjenester verden rundt"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Få ét abonnement, der indeholder det hele, få ${ BRAND_NAME } Unlimited"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Opbevar dine adgangskoder sikkert og organiseret i flere bokse "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Beskyt din konto mod trusler med Sentinel"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Opgradér og spar mere med 2 års ${ planName }"
@@ -12465,6 +12667,9 @@
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Hvis du vil fortsætte med at uploade og synkronisere filer, skal du frigøre plads eller opgradere til mere lagerplads."
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "For at fortsætte med at bruge ${ BRAND_NAME }-produkter, frigør plads eller ${ upgrade }"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "For at sende eller modtage e-mails, frigør plads eller ${ upgrade }"
@@ -12631,6 +12836,9 @@
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } giver dig mulighed for at blive mere produktiv, organiseret og få kontrol over din indbakke, e-mailidentitet og meget mere."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } hjælper dig med at sikre, at alle dine familiemedlemmer - og deres data - er beskyttet, hver gang de er online."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } tilbyder ${ planMaxSpace } lagerplads til dine e-mails, vedhæftninger, events, adgangskoder og filer. Du er også berettiget til årlige lagerbonusser."
@@ -13230,6 +13438,9 @@
       ],
       "The filter has been disabled": [
         "Filtret er deaktiveret"
+      ],
+      "The filter is active again": [
+        "Filteret er aktivt igen"
       ]
     },
     "Suffix": {
@@ -14447,6 +14658,9 @@
       "This feature is only available for paid users": [
         "Denne funktion er kun tilgængelig for betalende brugere"
       ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Medmindre de dechifreres, forbliver krypterede adgangskoder sikre, selv hvis de eksponeres."
+      ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
       ]
@@ -14547,6 +14761,9 @@
       "Your new subscription will automatically renew in ${ cycle } month.": [
         "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måned.",
         "Dit nye abonnement vil automatisk blive fornyet om ${ cycle } måneder."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Dit planlagte abonnement starter ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dit abonnement vil automatisk forny i ${ cycle } måned.",
