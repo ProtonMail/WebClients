@@ -1,6 +1,6 @@
 import type { Dispatch, MutableRefObject, RefObject, SetStateAction } from 'react';
 import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
-import { Prompt } from 'react-router';
+import { Prompt, useHistory, useLocation } from 'react-router';
 
 import { c, msgid } from 'ttag';
 
@@ -8,6 +8,7 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { CircleLoader } from '@proton/atoms';
+import { calendarUrlQueryParams, calendarUrlQueryParamsActions } from '@proton/calendar';
 import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
@@ -373,6 +374,8 @@ const InteractiveCalendarView = ({
     const cancelClosePopoverRef = useRef(false);
     const { startNESTMetric, stopNESTMetric } = useCalendarNESTMetric();
     const { startEALMetric, stopEALMetric } = useCalendarEALMetric();
+    const history = useHistory();
+    const location = useLocation();
 
     const [mustConnectToZoom, setMustConnectToZoom] = useState(false);
 
@@ -2163,6 +2166,46 @@ const InteractiveCalendarView = ({
         tzid,
         view,
     });
+
+    // Used for preventing trigger the event form opening multiple times
+    const eventFormOpened = useRef(false);
+
+    // Opening the create event modal in case of having a create action in the url
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+
+        const shouldOpenEventForm =
+            searchParams.get(calendarUrlQueryParams.action) === calendarUrlQueryParamsActions.create &&
+            !isEventCreationDisabled;
+
+        if (
+            shouldOpenEventForm &&
+            createEventCalendar &&
+            createEventCalendarBootstrap &&
+            activeAddresses.length > 0 &&
+            !eventFormOpened.current
+        ) {
+            eventFormOpened.current = true;
+
+            handleCreateEvent({ attendees: [] });
+
+            // Cleanup so the query params don't have the create action anymore
+
+            searchParams.delete(calendarUrlQueryParams.action);
+
+            history.replace({
+                ...location,
+                search: searchParams.toString() ? `?${searchParams.toString()}` : '',
+            });
+        }
+    }, [
+        createEventCalendar,
+        createEventCalendarBootstrap,
+        activeAddresses.length,
+        handleCreateEvent,
+        history,
+        location,
+    ]);
 
     return (
         <>
