@@ -37,6 +37,7 @@ interface Props extends ModalStateProps {
     allowAIAssistantUpdate: boolean;
     aiSeatsRemaining: boolean;
     allowLumoConfiguration: boolean;
+    allowLumoUpdate: boolean;
     lumoSeatsRemaining: boolean;
     allowStorageConfiguration?: boolean;
 }
@@ -49,6 +50,7 @@ const UserInviteOrEditModal = ({
     allowAIAssistantUpdate,
     aiSeatsRemaining,
     allowLumoConfiguration,
+    allowLumoUpdate,
     lumoSeatsRemaining,
     ...modalState
 }: Props) => {
@@ -106,7 +108,7 @@ const UserInviteOrEditModal = ({
         })();
 
         const maxLumo = (() => {
-            if (!allowLumoConfiguration) {
+            if (!allowLumoUpdate) {
                 return;
             }
 
@@ -133,7 +135,7 @@ const UserInviteOrEditModal = ({
             await api(updateAI(member!.ID, model.numAI ? 1 : 0));
         }
 
-        if (allowLumoConfiguration && lumoHasChanged) {
+        if (allowLumoUpdate && lumoHasChanged) {
             await api(updateLumo(member!.ID, model.lumo ? 1 : 0));
         }
 
