@@ -1,7 +1,10 @@
 import { c, msgid } from 'ttag';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+
+import { getLabelName } from 'proton-mail/helpers/labels';
 
 export const getNotificationTextMarked = (isMessage: boolean, elementsCount: number, status: MARK_AS_STATUS) => {
     if (isMessage) {
@@ -92,12 +95,15 @@ export const getNotificationTextUnstarred = (isMessage: boolean, elementsCount: 
 export const getNotificationTextLabelRemoved = (
     isMessage: boolean,
     elementsCount: number,
-    labelID: string,
-    labelName: string
+    targetLabelID: string,
+    labels: Label[],
+    folders: Folder[]
 ) => {
-    if (labelID === MAILBOX_LABEL_IDS.STARRED) {
+    if (targetLabelID === MAILBOX_LABEL_IDS.STARRED) {
         return getNotificationTextUnstarred(isMessage, elementsCount);
     }
+
+    const labelName = getLabelName(targetLabelID, labels, folders);
 
     if (isMessage) {
         if (elementsCount === 1) {
@@ -124,12 +130,15 @@ export const getNotificationTextLabelRemoved = (
 export const getNotificationTextLabelAdded = (
     isMessage: boolean,
     elementsCount: number,
-    labelID: string,
-    labelName: string
+    targetLabelID: string,
+    labels: Label[],
+    folders: Folder[]
 ) => {
-    if (labelID === MAILBOX_LABEL_IDS.STARRED) {
+    if (targetLabelID === MAILBOX_LABEL_IDS.STARRED) {
         return getNotificationTextStarred(isMessage, elementsCount);
     }
+
+    const labelName = getLabelName(targetLabelID, labels, folders);
 
     if (isMessage) {
         if (elementsCount === 1) {

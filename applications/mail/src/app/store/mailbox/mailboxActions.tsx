@@ -12,6 +12,8 @@ import {
     markMessageAsUnread,
     unlabelMessages as unlabelMessagesApi,
 } from '@proton/shared/lib/api/messages';
+import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import UndoActionNotification from 'proton-mail/components/notifications/UndoActionNotification';
@@ -221,27 +223,31 @@ export const markConversationsAsUnread = createAsyncThunk<
 export const labelMessages = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: Element[];
-        labelID: string;
-        labelName: string;
+        elements: Message[];
+        targetLabelID: string;
         isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
+        labels: Label[];
+        folders: Folder[];
     },
     MailThunkExtra
 >(
     'mailbox/labelMessages',
-    async ({ elements, labelID, labelName, isEncryptedSearch, showSuccessNotification = true }, { extra }) => {
+    async (
+        { elements, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
+        { extra }
+    ) => {
         return runAction({
             extra,
             finallyFetchEvents: isEncryptedSearch,
             notificationText: showSuccessNotification
-                ? getNotificationTextLabelAdded(true, elements.length, labelID, labelName)
+                ? getNotificationTextLabelAdded(true, elements.length, targetLabelID, labels, folders)
                 : undefined,
             elements,
             action: (chunk) =>
                 labelMessagesApi({
                     IDs: chunk.map((element: Element) => element.ID),
-                    LabelID: labelID,
+                    LabelID: targetLabelID,
                     // SpamAction
                 }),
         });
@@ -251,27 +257,31 @@ export const labelMessages = createAsyncThunk<
 export const unlabelMessages = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
-        elements: Element[];
-        labelID: string;
-        labelName: string;
+        elements: Message[];
+        targetLabelID: string;
         isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
+        labels: Label[];
+        folders: Folder[];
     },
     MailThunkExtra
 >(
     'mailbox/unlabelMessages',
-    async ({ elements, labelID, labelName, isEncryptedSearch, showSuccessNotification = true }, { extra }) => {
+    async (
+        { elements, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
+        { extra }
+    ) => {
         return runAction({
             extra,
             finallyFetchEvents: isEncryptedSearch,
             notificationText: showSuccessNotification
-                ? getNotificationTextLabelRemoved(true, elements.length, labelID, labelName)
+                ? getNotificationTextLabelRemoved(true, elements.length, targetLabelID, labels, folders)
                 : undefined,
             elements,
             action: (chunk) =>
                 unlabelMessagesApi({
                     IDs: chunk.map((element: Element) => element.ID),
-                    LabelID: labelID,
+                    LabelID: targetLabelID,
                 }),
         });
     }
