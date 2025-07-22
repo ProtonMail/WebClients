@@ -9,7 +9,7 @@ import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailbo
 export interface ApplyLocationParams {
     elements: Element[];
     targetLabelID: string;
-    action: 'label' | 'unlabel';
+    removeLabel: boolean;
     createFilters?: boolean;
     showSuccessNotification?: boolean;
 }
@@ -18,22 +18,12 @@ export const useApplyLocation = () => {
     const enabled = useFlag('ApplyLabelsOptimisticRefactoring');
     const dispatch = useMailDispatch();
 
-    const applyLocation = ({ elements, action, targetLabelID, showSuccessNotification }: ApplyLocationParams) => {
+    const applyLocation = ({ elements, removeLabel, targetLabelID, showSuccessNotification }: ApplyLocationParams) => {
         const [firstElement] = elements;
         const isMessage = testIsMessage(firstElement);
 
         if (isMessage) {
-            if (action === 'label') {
-                void dispatch(
-                    labelMessages({
-                        elements,
-                        labelID: targetLabelID,
-                        labelName: getLabelName(targetLabelID),
-                        isEncryptedSearch: false,
-                        showSuccessNotification,
-                    })
-                );
-            } else {
+            if (removeLabel) {
                 void dispatch(
                     unlabelMessages({
                         elements,
@@ -43,10 +33,18 @@ export const useApplyLocation = () => {
                         showSuccessNotification,
                     })
                 );
+            } else {
+                void dispatch(
+                    labelMessages({
+                        elements,
+                        labelID: targetLabelID,
+                        labelName: getLabelName(targetLabelID),
+                        isEncryptedSearch: false,
+                        showSuccessNotification,
+                    })
+                );
             }
         }
-
-        throw new Error('Not implemented');
     };
 
     return { enabled, applyLocation };
