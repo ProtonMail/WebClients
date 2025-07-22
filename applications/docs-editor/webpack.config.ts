@@ -3,17 +3,21 @@ import { config as dotenvConfig } from 'dotenv'
 import path from 'node:path'
 dotenvConfig({ path: path.join(__dirname, '.env') })
 
-import getConfig from '@proton/pack/webpack.config'
-import { addDevEntry } from '@proton/pack/webpack/entries'
+import { type WebpackEnvArgumentsV2, getWebpackOptions } from '@proton/pack/lib/configV2'
+import { addDevEntry, getConfigV2 } from '@proton/pack/webpack.config'
 
-const result = (env: any): Configuration => {
-  const config = getConfig(env)
+import appConfig from './appConfig'
+
+const result = (opts: WebpackEnvArgumentsV2): Configuration => {
+  const webpackOptions = getWebpackOptions(opts, { appConfig })
+  const config = getConfigV2(webpackOptions)
+
   config.plugins?.push(
     new DefinePlugin({
       'process.env.DOCS_SHEETS_KEY': JSON.stringify(process.env.DOCS_SHEETS_KEY),
     }),
   )
-  if (env.appMode === 'standalone') {
+  if (webpackOptions.appMode === 'standalone') {
     addDevEntry(config)
   }
   // @ts-ignore
