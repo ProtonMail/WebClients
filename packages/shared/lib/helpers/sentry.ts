@@ -171,6 +171,8 @@ const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
         'AbortError',
         /unleash/i,
         /Unexpected EOF/i,
+        // React DOM throwing this error, however it seems it has no impact on user experience.
+        'Permission denied to access property "type"',
     ];
 };
 
