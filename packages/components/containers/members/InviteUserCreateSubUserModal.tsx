@@ -21,6 +21,7 @@ interface Props extends ModalStateProps {
     verifiedDomains: Domain[];
     onInviteUser: () => void;
     allowAIAssistantConfiguration: boolean;
+    allowLumoConfiguration: boolean;
     aiSeatsRemaining: boolean;
     lumoSeatsRemaining: boolean;
     app: APP_NAMES;
@@ -83,6 +84,7 @@ const InviteUserCreateSubUserModal = ({
     onInviteUser,
     app,
     allowAIAssistantConfiguration,
+    allowLumoConfiguration,
     aiSeatsRemaining,
     lumoSeatsRemaining,
     ...modalState
@@ -124,6 +126,7 @@ const InviteUserCreateSubUserModal = ({
                     allowVpnAccessConfiguration
                     allowPrivateMemberConfiguration
                     allowAIAssistantConfiguration={allowAIAssistantConfiguration}
+                    allowLumoConfiguration={allowLumoConfiguration}
                     app={app}
                 />
             )}
