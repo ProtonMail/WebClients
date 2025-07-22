@@ -16,11 +16,12 @@ const LOG_COLORS = {
     warning: ANSI_COLORS.YELLOW,
     error: ANSI_COLORS.RED,
     log: ANSI_COLORS.CYAN,
+    debug: ANSI_COLORS.PURPLE,
 };
 
 const writeLog = (type, date, message) =>
     console.log(
-        `${ANSI_COLORS.PURPLE}[Debugger]${ANSI_COLORS.RESET}`,
+        `${ANSI_COLORS.PURPLE}[${type}]${ANSI_COLORS.RESET}`,
         `${ANSI_COLORS.GRAY}${new Date(date).toISOString()}${ANSI_COLORS.RESET}`,
         `${LOG_COLORS[type] || LOG_COLORS.log}${message}${ANSI_COLORS.RESET}`
     );
