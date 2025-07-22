@@ -123,7 +123,7 @@ export const createFormManager = (options: FormManagerOptions) => {
             if (await ctx?.service.detector.shouldRunDetection()) {
                 state.detectionRequest = requestIdleCallback(() => {
                     if (state.active) {
-                        logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
+                        logger.debug(`[FormTracker::Detector] Running detection for "${reason}"`);
 
                         try {
                             const forms = ctx?.service.detector.runDetection({ onBottleneck, excludedFieldTypes });

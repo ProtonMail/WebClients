@@ -156,7 +156,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         },
 
         detach: withContext((ctx) => {
-            logger.info(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
+            logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
             const dropdown = ctx?.service.iframe.dropdown;
             const dropdownField = dropdown?.getCurrentField() ?? null;
 
