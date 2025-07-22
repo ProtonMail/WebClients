@@ -6,7 +6,8 @@ import { NOTIFICATION_PARTICIPANT_LIMIT } from '../../constants';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useToastMessages } from '../../hooks/useToastMessages';
-import { MeetingSideBars, ParticipantEvent, type ParticipantEventRecord } from '../../types';
+import type { ParticipantEventRecord } from '../../types';
+import { MeetingSideBars, ParticipantEvent } from '../../types';
 
 export const ToastMessages = () => {
     const { participantEventsToastMessages } = useToastMessages();

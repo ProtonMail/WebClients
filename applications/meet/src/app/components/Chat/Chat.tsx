@@ -91,9 +91,10 @@ export const Chat = () => {
         if (!isSearchOn || !searchExpression) {
             return meetingRoomUpdates;
         }
-        return meetingRoomUpdates.filter((item) =>
+        const filteredUpdates = meetingRoomUpdates.filter((item) =>
             (item as MeetChatMessage)?.message?.toLowerCase().includes(searchExpression.toLowerCase())
         );
+        return filteredUpdates;
     }, [isSearchOn, searchExpression, meetingRoomUpdates]);
 
     const hasNoMessages = !meetingRoomUpdates.length;

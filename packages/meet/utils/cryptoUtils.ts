@@ -43,6 +43,27 @@ export const decryptMetadataWithKey = async (key: CryptoKey, encryptedData: stri
     return utf8ArrayToString(decryptedData);
 };
 
+interface DecryptSessionKeyParams {
+    encryptedSessionKey: string;
+    password: string;
+    salt: string;
+}
+
+export const decryptSessionKey = async ({ encryptedSessionKey, password, salt }: DecryptSessionKeyParams) => {
+    const sessionKeyPassphrase = await computeBcryptHash(password, salt);
+
+    const encryptedSessionKeyData = base64StringToUint8Array(encryptedSessionKey);
+
+    const result = await CryptoProxy.decryptSessionKey({
+        binaryMessage: encryptedSessionKeyData,
+        passwords: [sessionKeyPassphrase],
+    });
+
+    const sessionKey = result?.data;
+
+    return sessionKey;
+};
+
 interface DecryptMeetingNameParams {
     urlPassword: string;
     customPassword: string;
@@ -58,16 +79,11 @@ export const decryptMeetingName = async ({
     encryptedMeetingName,
     salt,
 }: DecryptMeetingNameParams) => {
-    const sessionKeyPassphrase = await computeBcryptHash(getCombinedPassword(urlPassword, customPassword), salt);
-
-    const encryptedSessionKeyData = base64StringToUint8Array(encryptedSessionKey);
-
-    const result = await CryptoProxy.decryptSessionKey({
-        binaryMessage: encryptedSessionKeyData,
-        passwords: [sessionKeyPassphrase],
+    const sessionKey = await decryptSessionKey({
+        encryptedSessionKey,
+        password: getCombinedPassword(urlPassword, customPassword),
+        salt,
     });
-
-    const sessionKey = result?.data;
 
     if (!sessionKey) {
         throw new Error(c('l10n_nightly Error').t`Failed to decrypt session key`);
@@ -79,6 +95,79 @@ export const decryptMeetingName = async ({
 
     return decryptedMeetingName;
 };
+
+export const encryptMeetingName = async (meetingName: string, sessionKey: Uint8Array) => {
+    const meetingNameEncryptionKey = await deriveEncryptionKeyFromSessionKey(sessionKey);
+
+    const encryptedMeetingName = await encryptMetadataWithKey(meetingNameEncryptionKey, meetingName);
+
+    return encryptedMeetingName;
+};
+
+export const encryptMeetingPassword = async (password: string, primaryUserKey: PrivateKeyReference) => {
+    const result = await CryptoProxy.encryptMessage({
+        textData: password,
+        encryptionKeys: [primaryUserKey as PrivateKeyReference],
+        format: 'armored',
+        signingKeys: [primaryUserKey as PrivateKeyReference],
+        signatureContext: {
+            value: 'pw.link.meet.proton',
+            critical: true,
+        },
+    });
+
+    return result.message;
+};
+
+export const decryptMeetingPassword = async (encryptedPassword: string, primaryUserKey: PrivateKeyReference) => {
+    const result = await CryptoProxy.decryptMessage({
+        armoredMessage: encryptedPassword,
+        decryptionKeys: [primaryUserKey as PrivateKeyReference],
+        verificationKeys: [primaryUserKey as PrivateKeyReference],
+        signatureContext: {
+            value: 'pw.link.meet.proton',
+            requiredAfter: new Date(0),
+        },
+    });
+
+    return result.data;
+};
+
+export const encryptSessionKey = async (sessionKey: Uint8Array, passwordHash: string) => {
+    const result = await CryptoProxy.encryptSessionKey({
+        data: sessionKey,
+        algorithm: 'aes256',
+        passwords: [passwordHash],
+        format: 'binary',
+    });
+
+    return uint8ArrayToBase64String(result);
+};
+
+export const hashPasswordWithSalt = async (password: string) => {
+    const salt = generateBcryptSalt();
+
+    const passwordHash = await computeBcryptHash(password, salt);
+
+    return { salt, passwordHash };
+};
+
+export const getPassphraseFromEncryptedPassword = async ({
+    encryptedPassword,
+    basePassword,
+    privateKey,
+}: {
+    encryptedPassword: string;
+    basePassword: string;
+    privateKey: PrivateKeyReference;
+}) => {
+    const password = await decryptMeetingPassword(encryptedPassword, privateKey);
+
+    const passphrase = password.slice(basePassword.length);
+
+    return passphrase;
+};
+
 interface PrepareMeetingCryptoDataParams {
     customPassword: string;
     primaryUserKey?: PrivateKeyReference;
@@ -95,45 +184,24 @@ export const prepareMeetingCryptoData = async ({
     noEncryptedPasswordReturn = false,
 }: PrepareMeetingCryptoDataParams) => {
     const passwordBase = getRandomString(12);
-    const salt = generateBcryptSalt();
 
     const password = getCombinedPassword(passwordBase, customPassword);
 
-    const passwordHash = await computeBcryptHash(password, salt);
+    const { passwordHash, salt } = await hashPasswordWithSalt(password);
 
     const sessionKey = await CryptoProxy.generateSessionKeyForAlgorithm('aes256');
 
-    const encryptedSessionKey = uint8ArrayToBase64String(
-        await CryptoProxy.encryptSessionKey({
-            data: sessionKey,
-            algorithm: 'aes256',
-            passwords: [passwordHash],
-            format: 'binary',
-        })
-    );
+    const encryptedSessionKey = await encryptSessionKey(sessionKey, passwordHash);
 
     const encryptedPassword = noEncryptedPasswordReturn
         ? null
-        : (
-              await CryptoProxy.encryptMessage({
-                  textData: password,
-                  encryptionKeys: [primaryUserKey as PrivateKeyReference],
-                  format: 'armored',
-                  signingKeys: [primaryUserKey as PrivateKeyReference],
-                  signatureContext: {
-                      value: 'pw.link.meet.proton',
-                      critical: true,
-                  },
-              })
-          ).message;
+        : await encryptMeetingPassword(password, primaryUserKey as PrivateKeyReference);
 
     const {
         Auth: { Salt: urlPasswordSalt, Verifier: srpVerifier, ModulusID: srpModulusID },
     } = await srpGetVerify({ api, credentials: { password: password } });
 
-    const meetingNameEncryptionKey = await deriveEncryptionKeyFromSessionKey(sessionKey);
-
-    const encryptedMeetingName = await encryptMetadataWithKey(meetingNameEncryptionKey, meetingName);
+    const encryptedMeetingName = await encryptMeetingName(meetingName, sessionKey);
 
     return {
         encryptedMeetingName,

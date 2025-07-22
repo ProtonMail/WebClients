@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 
-import { MeetingType } from '../../response-types';
-import type { CreateMeetingParams } from '../../types';
-import { useSaveMeeting } from '../useSaveMeeting';
+import type { CreateMeetingParams } from '../types/response-types';
+import { MeetingType } from '../types/response-types';
 import { useGetMeetingDependencies } from './useGetMeetingDependencies';
+import { useSaveMeeting } from './useSaveMeeting';
 
 export const useCreateInstantMeeting = () => {
     const saveMeeting = useSaveMeeting();

@@ -1,8 +1,12 @@
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import type { MeetChatMessage, MeetingRoomUpdate, ParticipantEventRecord } from '../../types';
-import { ParticipantEvent } from '../../types';
+import {
+    type MeetChatMessage,
+    type MeetingRoomUpdate,
+    ParticipantEvent,
+    type ParticipantEventRecord,
+} from '../../types';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 
 import './ChatItem.scss';

@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { decryptMeetingName, getCombinedPassword } from '../../utils/cryptoUtils';
-import type { SRPHandshakeInfo } from './useMeetSrp';
-import { useMeetSrp } from './useMeetSrp';
+import { decryptMeetingName, getCombinedPassword } from '@proton/meet/utils/cryptoUtils';
+
+import { type SRPHandshakeInfo, useMeetSrp } from './useMeetSrp';
 
 export const useMeetingAuthentication = () => {
     const { initHandshake: initHandshakeFromSrp, getSessionToken, getMeetingInfo, getAccessToken } = useMeetSrp();

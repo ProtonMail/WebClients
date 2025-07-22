@@ -7,15 +7,14 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { InputFieldTwo, Option, PasswordInputTwo, SelectTwo } from '@proton/components';
 import { IcArrowsRotate, IcKey, IcTextAlignLeft } from '@proton/icons';
+import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
+import { MeetingType } from '@proton/meet/types/response-types';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
 import noop from '@proton/utils/noop';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { MeetingCreatedModal } from '../../components/MeetingCreatedModal/MeetingCreatedModal';
 import { TimeInputBlock } from '../../components/TimeInputBlock';
-import { useCreateMeeting } from '../../hooks/admin/useCreateMeeting';
-import { MeetingType } from '../../response-types';
-import type { CreateMeetingParams, MeetingDetails } from '../../types';
 import { combineDateAndTime, getInitialValues, validate } from './utils';
 
 import './CreateContainer.scss';
@@ -41,11 +40,10 @@ const timeOptions = [...Array(24).keys()]
     .flat();
 
 interface CreateContainerProps {
-    onMeetingCreated: (meetingDetails: MeetingDetails) => void;
-    meetingDetails: CreateMeetingParams;
+    isEdit?: boolean;
 }
 
-export const CreateContainer = ({ meetingDetails }: CreateContainerProps) => {
+export const CreateContainer = ({ isEdit = false }: CreateContainerProps) => {
     const [user] = useUser();
 
     const timeZoneSelectOptions = useMemo(
@@ -54,8 +52,6 @@ export const CreateContainer = ({ meetingDetails }: CreateContainerProps) => {
     );
 
     const userTimeZone = getTimezone();
-
-    const isEdit = !!meetingDetails;
 
     const history = useHistory();
 

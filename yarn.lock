@@ -5864,12 +5864,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@livekit/protocol@npm:1.36.1":
-  version: 1.36.1
-  resolution: "@livekit/protocol@npm:1.36.1"
+"@livekit/protocol@npm:1.39.3":
+  version: 1.39.3
+  resolution: "@livekit/protocol@npm:1.39.3"
   dependencies:
     "@bufbuild/protobuf": "npm:^1.10.0"
-  checksum: 10c0/bb2e56785c542446bef3e2f2fd20b33d01db43b786be87ccb834feee8a664fd32c8231e249b4e1915d7a8eda13af0d59eea479fa710327079a1a370daf05c42e
+  checksum: 10c0/192ce7283db4505232aa487e71d08670783a1045a8935926f95ff4b9d3d310db706c2ad4af2ebdb0bd735c2e9042c1ee3b1f62e44a9d01bd41fd58cf8dc272b9
   languageName: node
   linkType: hard
 
@@ -9011,6 +9011,31 @@ __metadata:
     ts-jest: "npm:^29.4.1"
     turndown: "npm:^7.2.1"
     typescript: "npm:^5.9.2"
+  languageName: unknown
+  linkType: soft
+
+"@proton/meet@workspace:packages/meet":
+  version: 0.0.0-use.local
+  resolution: "@proton/meet@workspace:packages/meet"
+  dependencies:
+    "@proton/crypto": "workspace:packages/crypto"
+    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/i18n": "workspace:packages/i18n"
+    "@proton/shared": "workspace:packages/shared"
+    "@testing-library/jest-dom": "npm:^6.6.3"
+    "@testing-library/react": "npm:^15.0.7"
+    "@types/react": "npm:^18.3.20"
+    "@vitejs/plugin-react-swc": "npm:^3.9.0"
+    "@vitest/coverage-v8": "npm:3.1.3"
+    "@vitest/ui": "npm:3.1.2"
+    cross-env: "npm:^7.0.3"
+    eslint: "npm:^8.57.1"
+    happy-dom: "npm:^17.4.6"
+    prettier: "npm:^3.5.3"
+    react: "npm:^18.3.1"
+    ttag: "npm:^1.8.7"
+    typescript: "npm:^5.8.3"
+    vitest: "npm:^3.1.2"
   languageName: unknown
   linkType: soft
 
@@ -31035,12 +31060,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"livekit-client@npm:^2.11.4":
-  version: 2.11.4
-  resolution: "livekit-client@npm:2.11.4"
+"livekit-client@npm:^2.15.3":
+  version: 2.15.3
+  resolution: "livekit-client@npm:2.15.3"
   dependencies:
     "@livekit/mutex": "npm:1.1.1"
-    "@livekit/protocol": "npm:1.36.1"
+    "@livekit/protocol": "npm:1.39.3"
     events: "npm:^3.3.0"
     loglevel: "npm:^1.9.2"
     sdp-transform: "npm:^2.15.0"
@@ -31048,7 +31073,9 @@ __metadata:
     tslib: "npm:2.8.1"
     typed-emitter: "npm:^2.1.0"
     webrtc-adapter: "npm:^9.0.1"
-  checksum: 10c0/e674c75ff2c9cd2115c11e40e009a6ca85b41ab20740a5df3b7fafb67ebe683d5214be49532a5aedd81cb85768df393caf4571c83b17584cd168118bce24d315
+  peerDependencies:
+    "@types/dom-mediacapture-record": ^1
+  checksum: 10c0/89733eeb6a97fd8d76da3398c590438ab6c463784b9f05050709fe15615171433a16ecc3851e37826d4264a201dc41399462ca80dcc041f53c74a71b45ac8062
   languageName: node
   linkType: hard
 
@@ -37624,6 +37651,7 @@ __metadata:
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
+    "@proton/meet": "workspace:packages/meet"
     "@proton/pack": "workspace:packages/pack"
     "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/redux-shared-store-types": "workspace:^"
@@ -37643,7 +37671,7 @@ __metadata:
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.1"
     happy-dom: "npm:^17.4.6"
-    livekit-client: "npm:^2.11.4"
+    livekit-client: "npm:^2.15.3"
     prettier: "npm:^3.5.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"

@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { useMeetContext } from '../contexts/MeetContext';
-import { type MeetChatMessage, type ParticipantEventRecord } from '../types';
+import type { MeetChatMessage, ParticipantEventRecord } from '../types';
 
 export const useMeetingRoomUpdates = (): (MeetChatMessage | ParticipantEventRecord)[] => {
     const { participantEvents, chatMessages } = useMeetContext();

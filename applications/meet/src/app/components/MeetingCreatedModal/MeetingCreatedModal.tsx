@@ -2,12 +2,12 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import type { CreateMeetingParams } from '@proton/meet';
 import { BRAND_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { CopyButton } from '../../atoms/CopyButton/CopyButton';
-import type { CreateMeetingParams } from '../../types';
 
 import './MeetingCreatedModal.scss';
 

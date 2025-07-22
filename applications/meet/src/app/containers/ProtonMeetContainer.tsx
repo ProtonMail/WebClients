@@ -4,22 +4,22 @@ import { useHistory } from 'react-router-dom';
 import { RoomContext } from '@livekit/components-react';
 import type { Room } from 'livekit-client';
 
+import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
+import { CustomPasswordState } from '@proton/meet/types/response-types';
+import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import useFlag from '@proton/unleash/useFlag';
 
 import { GuestMeetingSchedulingBlocked } from '../components/GuestMeetingSchedulingBlocked';
 import { PasswordPrompt } from '../components/PasswordPrompt/PasswordPrompt';
 import { JOIN_TITLE_TIMEOUT } from '../constants';
 import { DevicePermissionsContext } from '../contexts/DevicePermissionsContext';
-import { useCreateInstantMeeting } from '../hooks/admin/useCreateInstantMeeting';
 import type { SRPHandshakeInfo } from '../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../hooks/srp/useMeetingSetup';
 import { useDevicePermissionChangeListener } from '../hooks/useDevicePermissionChangeListener';
 import { useMeetingJoin } from '../hooks/useMeetingJoin';
 import { useParticipantNameMap } from '../hooks/useParticipantNameMap';
 import { useWakeLock } from '../hooks/useWakeLock';
-import { CustomPasswordState } from '../response-types';
 import { LoadingState, type ParticipantSettings } from '../types';
-import { getMeetingLink } from '../utils/getMeetingLink';
 import { MeetContainer } from './MeetContainer';
 import { PrejoinContainer } from './PrejoinContainer/PrejoinContainer';
 

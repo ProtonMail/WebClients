@@ -19,10 +19,8 @@ describe('MeetingDetails', () => {
                         roomName: mockMeetingName,
                     }}
                 >
-                    <UIStateContext.Provider
-                        // @ts-expect-error - mock data
-                        value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: false } }}
-                    >
+                    {/* @ts-expect-error - mock data */}
+                    <UIStateContext.Provider value={{ sideBarState: { [MeetingSideBars.MeetingDetails]: false } }}>
                         {children}
                     </UIStateContext.Provider>
                 </MeetContext.Provider>
