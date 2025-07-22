@@ -52,7 +52,10 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
             void withLoading(
                 applyLocation({
                     elements: [element || ({} as Element)],
-                    labelChanges: { [MAILBOX_LABEL_IDS.STARRED]: !isStarred },
+                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    removeLabel: isStarred,
+                    showSuccessNotification: false,
+                    createFilters: false,
                 })
             );
         } else {
