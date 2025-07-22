@@ -283,6 +283,14 @@ const ThemeProvider = ({ children, appName }: Props) => {
         syncClassNameToEl(htmlEl, classNames.animations, information.features.animations);
     }, [information.features.animations, information.features.scrollbars]);
 
+    useLayoutEffect(() => {
+        const htmlElement = document.querySelector('html');
+        if (htmlElement) {
+            htmlElement.setAttribute('data-theme-mode', information.dark ? 'dark' : 'light');
+            htmlElement.setAttribute('data-theme-name', information.label);
+        }
+    }, [information.dark, information.label]);
+
     useEffect(() => {
         const syncToMeta = () => {
             const themeMeta = document.querySelector("meta[name='theme-color']");
