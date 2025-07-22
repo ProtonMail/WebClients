@@ -1030,6 +1030,12 @@
       "Publish changes": [
         "Publica els canvis"
       ],
+      "Purge all": [
+        "Purga-ho tot"
+      ],
+      "Purge deleted": [
+        "Purga esborrada"
+      ],
       "Quit": [
         "Surt"
       ],
@@ -1793,7 +1799,7 @@
         "200 GB d'emmagatzematge"
       ],
       "500 GB encrypted storage": [
-        "500 GB emmagatzematge xifrat"
+        "500 GB d'emmagatzematge xifrat"
       ],
       "Add unlimited credit cards": [
         "Afegiu-hi un nombre il·limitat de targetes de crèdit"
@@ -1838,13 +1844,13 @@
         "Recupereu versions anteriors dels fitxers"
       ],
       "Save big on premium Drive features with a limited-time discount.": [
-        "Estalviiareu molt amb les funcions premium de Drive amb un descompte per temps limitat"
+        "Aprofiteu els grans estalvis en les funcions prèmium de Drive amb un descompte per temps limitat."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
         "Estalviiareu molt amb les característiques prèmium de Mail amb un descompte per temps limitat."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
-        "Estalviiareu molt amb les característiques prèmium de Pass amb un descompte per temps limitat."
+        "Aprofiteu els grans estalvis en les funcions prèmium de Pass amb un descompte per temps limitat."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
         "Estalviiareu molt amb les funcions prèmium de VPN amb un descompte per temps limitat."
@@ -1871,7 +1877,7 @@
         "gràcies a vós"
       ],
       "Triple your encrypted storage – get 3 TB for all your data": [
-        "Tripliqueu el vostre emmagatzematge xifrat – obtingueu 3 TB per totes les vostres dades"
+        "Tripliqueu el vostre emmagatzematge xifrat – obteniu 3 TB per a totes les vostres dades"
       ],
       "Unlimited folders, labels and filters": [
         "Nombre il·limitat de carpetes, etiquetes i filtres"
@@ -5465,7 +5471,7 @@
         "Els pagaments actualment no estan disponibles, proveu-ho més tard"
       ],
       "Permissions request failed.": [
-        "Error amb la sol·licitud de permisos"
+        "La sol·licitud de permisos ha fallat."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configureu un domini personalitzat abans d'afegir adreces."
@@ -9524,6 +9530,15 @@
       "Restore": [
         "Restaura"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "S'ha actualitzat la regla de conservació «${ formData.name }»."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "S'ha creat la regla de conservació «${ payload.Name }»."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "S'ha eliminat la regla de conservació «${ retentionRule.Name }»."
+      ],
       "Revoke certificate ${ name }": [
         "Revoca el certificat ${ name }"
       ],
@@ -10661,7 +10676,7 @@
         "La vostra contrasenya de ${ BRAND_NAME }"
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "La vostra subscripció ${ plan } se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant s'afegirà al vostre compte. L'oferta de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir a ${ PASS_SHORT_APP_NAME }.de per vida."
+        "La vostra subscripció ${ plan } se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant s'afegirà al vostre compte. L'oferta de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir a ${ PASS_SHORT_APP_NAME } de per vida."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Els vostres comptes ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } estan enllaçats. Per eliminar-los, inicieu la sessió a ${ loginLink } i elimineu-hi el compte."
@@ -14528,8 +14543,8 @@
         "Requereix 2FA"
       ],
       "Support for ${ n } custom email domain": [
-        "Suport per a ${ n } domini de correu personalitzat",
-        "Suport per a ${ n } dominis de correu personalitzat"
+        "Suport per a ${ n } domini de correu electrònic personalitzat",
+        "Suport per a ${ n } dominis de correu electrònic personalitzats"
       ]
     },
     "news": {
@@ -15083,6 +15098,9 @@
       "Free server configs": [
         "Configuracions de servidor gratuït"
       ],
+      "Group": [
+        "Grup"
+      ],
       "I found another service that I like better": [
         "He trobat un altre servei que m'agrada mes"
       ],
@@ -15190,6 +15208,9 @@
       ],
       "Trash": [
         "Paperera"
+      ],
+      "User": [
+        "Usuari"
       ]
     },
     "option": {
@@ -16495,6 +16516,64 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "A causa d'un canvi de contrasenya, els privilegis d'administrador de la seva organització han estat restringits. Les següents accions ja no estan permeses:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Creeu una instrucció de retenció"
+      ],
+      "Delete": [
+        "Elimina"
+      ],
+      "Delete rule": [
+        "Eliminar aquesta regla"
+      ],
+      "Edit": [
+        "Edita"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } més"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } dia",
+        "${ rule.Lifetime } dies"
+      ],
+      "Forever": [
+        "Per sempre"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Cercar per regla, usuaris, període, acció"
+      ],
+      "Search policies": [
+        "Cerca polítiques"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Acció"
+      ],
+      "Applies to": [
+        "S'aplica a:"
+      ],
+      "Retention period": [
+        "Període de retenció"
+      ],
+      "Retention Rule": [
+        "Regla de retenció"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "No s'han trobat polítiques de retenció"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Creeu regles de conservació d'acord amb la política de la vostra organització pel que fa al període de retenció de les dades. Això també permetrà la purga automàtica de les dades caducades."
       ]
     },
     "Role": {
@@ -19791,6 +19870,9 @@
       "Data recovery": [
         "Recuperació de dades"
       ],
+      "Data retention": [
+        "Conservació de dades"
+      ],
       "Date": [
         "Data"
       ],
@@ -20644,7 +20726,7 @@
         "Subscripció"
       ],
       "Subscription canceled": [
-        "La subscripció s'ha cancel·lat"
+        "S'ha cancel·lat la subscripció"
       ],
       "Success": [
         "Operació reeixida"
