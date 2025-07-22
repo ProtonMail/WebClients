@@ -24,7 +24,6 @@ import { BRAND_NAME, LUMO_APP_NAME, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/s
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 import clamp from '@proton/utils/clamp';
 
 import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
@@ -37,6 +36,8 @@ interface Props extends ModalStateProps {
     allowAIAssistantConfiguration: boolean;
     allowAIAssistantUpdate: boolean;
     aiSeatsRemaining: boolean;
+    allowLumoConfiguration: boolean;
+    allowLumoUpdate: boolean;
     lumoSeatsRemaining: boolean;
     allowStorageConfiguration?: boolean;
 }
@@ -48,6 +49,8 @@ const UserInviteOrEditModal = ({
     allowAIAssistantConfiguration,
     allowAIAssistantUpdate,
     aiSeatsRemaining,
+    allowLumoConfiguration,
+    allowLumoUpdate,
     lumoSeatsRemaining,
     ...modalState
 }: Props) => {
@@ -60,8 +63,6 @@ const UserInviteOrEditModal = ({
     const storageRange = getStorageRange(member ?? {}, organization);
     const storageSizeUnit = sizeUnits.GB;
     const isEditing = !!member?.ID;
-
-    const lumoAddonAvailable = useFlag('LumoAddonAvailable');
 
     const [subscription] = useSubscription();
     const isVisionary = hasVisionary(subscription);
@@ -76,7 +77,7 @@ const UserInviteOrEditModal = ({
                 : clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
             vpn: !!member?.MaxVPN,
             numAI: aiSeatsRemaining && (isVisionary || isDuo || isFamily), // Visionary, Duo and Family users should have the toggle set to true by default
-            lumo: lumoSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
+            lumo: member ? !!member.NumLumo : lumoSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
             admin: member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
         }),
         [member]
@@ -98,13 +99,30 @@ const UserInviteOrEditModal = ({
     };
 
     const sendInvitation = async () => {
-        const res = await api(
-            inviteMember(model.address, model.storage, allowAIAssistantUpdate && model.numAI ? 1 : 0)
-        );
+        const maxAI = (() => {
+            if (!allowAIAssistantUpdate) {
+                return;
+            }
 
-        if (lumoAddonAvailable && lumoHasChanged) {
-            await api(updateLumo(res.Member.ID, model.lumo ? 1 : 0));
-        }
+            return model.numAI ? 1 : 0;
+        })();
+
+        const maxLumo = (() => {
+            if (!allowLumoUpdate) {
+                return;
+            }
+
+            return model.lumo ? 1 : 0;
+        })();
+
+        await api(
+            inviteMember({
+                email: model.address,
+                maxSpace: model.storage,
+                maxAI,
+                maxLumo,
+            })
+        );
 
         createNotification({ text: c('Success').t`Invitation sent` });
     };
@@ -117,7 +135,7 @@ const UserInviteOrEditModal = ({
             await api(updateAI(member!.ID, model.numAI ? 1 : 0));
         }
 
-        if (lumoAddonAvailable && lumoHasChanged) {
+        if (allowLumoUpdate && lumoHasChanged) {
             await api(updateLumo(member!.ID, model.lumo ? 1 : 0));
         }
 
@@ -215,14 +233,14 @@ const UserInviteOrEditModal = ({
                     </div>
                 )}
 
-                {lumoAddonAvailable && (
+                {allowLumoConfiguration && (
                     <div className="mb-4">
                         <MemberToggleContainer
                             toggle={
                                 <Toggle
                                     id="lumo-toggle"
                                     checked={model.lumo}
-                                    disabled={!lumoSeatsRemaining}
+                                    disabled={!model.lumo && !lumoSeatsRemaining}
                                     onChange={({ target }) => handleChange('lumo')(target.checked)}
                                 />
                             }
