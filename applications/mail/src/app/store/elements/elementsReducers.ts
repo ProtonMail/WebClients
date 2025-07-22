@@ -1,9 +1,18 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import {
+    isCategoryLabel,
+    isCustomFolder,
+    isCustomLabel,
+    isSystemFolder,
+    isSystemLabel,
+} from '@proton/mail/helpers/location';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
@@ -833,5 +842,101 @@ export const markNewsletterElementsAsReadPending = (
         if (testIsMessage(element) && element.NewsletterSubscriptionID === payload.subscription.ID) {
             element.Unread = 0;
         }
+    });
+};
+
+export const labelMessagesPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        { arg: { elements: Message[]; targetLabelID: string; labels: Label[]; folders: Folder[] } }
+    >
+) => {
+    const { elements, targetLabelID, labels, folders } = action.meta.arg;
+    const isFolder = isSystemFolder(targetLabelID) || isCustomFolder(targetLabelID, folders);
+    const isCategory = isCategoryLabel(targetLabelID);
+
+    elements.forEach((element) => {
+        const elementState = state.elements[element.ID] as Message;
+
+        if (!elementState) {
+            return;
+        }
+
+        let labelIDsCopy = [...elementState.LabelIDs];
+
+        if (isFolder) {
+            if (labelIDsCopy.includes(MAILBOX_LABEL_IDS.TRASH) || labelIDsCopy.includes(MAILBOX_LABEL_IDS.SPAM)) {
+                // TODO [P3-120]: Remove auto-delete spam and trash expiration days
+            }
+
+            labelIDsCopy = labelIDsCopy.filter(
+                (labelID) => isSystemFolder(labelID) || isCustomFolder(labelID, folders)
+            );
+
+            // Only for trash and spam, we need to remove almost all mail and starred labels
+            if (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
+                elementState.Unread = 0; // Mark message as read
+                labelIDsCopy = labelIDsCopy.filter(
+                    (labelID) =>
+                        labelID !== MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL && // Remove almost all mail
+                        labelID !== MAILBOX_LABEL_IDS.STARRED && // Remove starred
+                        !isCustomLabel(labelID, labels) // Remove custom labels
+                );
+            }
+        } else if (isCategory) {
+            labelIDsCopy = labelIDsCopy.filter((labelID) => isCategoryLabel(labelID));
+        }
+
+        elementState.LabelIDs = [...labelIDsCopy, targetLabelID];
+    });
+};
+
+export const unlabelMessagesPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        { arg: { elements: Message[]; targetLabelID: string; labels: Label[]; folders: Folder[] } }
+    >
+) => {
+    const { elements, targetLabelID, labels } = action.meta.arg;
+    const isLabel = isSystemLabel(targetLabelID) || isCustomLabel(targetLabelID, labels);
+
+    if (!isLabel) {
+        return;
+    }
+
+    elements.forEach((element) => {
+        const elementState = state.elements[element.ID] as Message;
+
+        if (!elementState) {
+            return;
+        }
+
+        elementState.LabelIDs = elementState.LabelIDs.filter((labelID) => labelID !== targetLabelID);
+    });
+};
+
+export const labelMessagesRejected = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        unknown,
+        string,
+        { arg: { elements: Message[]; targetLabelID: string; labels: Label[]; folders: Folder[] } }
+    >
+) => {
+    const { elements } = action.meta.arg;
+
+    elements.forEach((element) => {
+        const elementState = state.elements[element.ID] as Message;
+
+        if (!elementState) {
+            return;
+        }
+
+        elementState.LabelIDs = element.LabelIDs;
+        elementState.Unread = element.Unread;
     });
 };
