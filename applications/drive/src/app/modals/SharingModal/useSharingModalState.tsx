@@ -96,7 +96,7 @@ export const useSharingModalState = ({
             // TODO: Remove when implemented in SDK
             void events.pollEvents.volumes(volumeId);
         } catch (e) {
-            handleError(e, c('Error').t`Failed to unshare node`, { nodeUid });
+            handleError(e, { fallbackMessage: c('Error').t`Failed to unshare node`, extra: { nodeUid } });
         }
     };
 
@@ -110,7 +110,10 @@ export const useSharingModalState = ({
             // TODO: Remove when implemented in SDK
             void events.pollEvents.volumes(volumeId);
         } catch (e) {
-            handleError(e, c('Error').t`The link to your item failed to be deleted`, { nodeUid });
+            handleError(e, {
+                fallbackMessage: c('Error').t`The link to your item failed to be deleted`,
+                extra: { nodeUid },
+            });
         }
     };
 
@@ -125,7 +128,7 @@ export const useSharingModalState = ({
             // TODO: Remove when implemented in SDK
             void events.pollEvents.volumes(volumeId);
         } catch (e) {
-            handleError(e, c('Error').t`Failed to create public share node`, { nodeUid });
+            handleError(e, { fallbackMessage: c('Error').t`Failed to create public share node`, extra: { nodeUid } });
         }
     };
 
@@ -155,7 +158,7 @@ export const useSharingModalState = ({
             // TODO: Remove when implemented in SDK
             void events.pollEvents.volumes(volumeId);
         } catch (e) {
-            handleError(e, c('Error').t`Failed to update public share node`, { nodeUid });
+            handleError(e, { fallbackMessage: c('Error').t`Failed to update public share node`, extra: { nodeUid } });
         }
     };
 
@@ -168,7 +171,7 @@ export const useSharingModalState = ({
             // TODO: Remove when implemented in SDK
             void events.pollEvents.volumes(volumeId);
         } catch (e) {
-            handleError(e, c('Error').t`Failed to update direct share node`, { nodeUid });
+            handleError(e, { fallbackMessage: c('Error').t`Failed to update direct share node`, extra: { nodeUid } });
         }
     };
 
@@ -180,7 +183,10 @@ export const useSharingModalState = ({
             await events.pollEvents.volumes(volumeId);
             createNotification({ text: c('Notification').t`You stopped sharing this item` });
         } catch (e) {
-            handleError(e, c('Error').t`Stopping the sharing of this item has failed`, { nodeUid });
+            handleError(e, {
+                fallbackMessage: c('Error').t`Stopping the sharing of this item has failed`,
+                extra: { nodeUid },
+            });
         }
     };
 
@@ -189,7 +195,10 @@ export const useSharingModalState = ({
             await drive.resendInvitation(nodeUid, invitationUid);
             createNotification({ type: 'info', text: c('Notification').t`Invitation's email was sent again` });
         } catch (e) {
-            handleError(e, c('Error').t`Failed to resend invitation`, { nodeUid, invitationUid });
+            handleError(e, {
+                fallbackMessage: c('Error').t`Failed to resend invitation`,
+                extra: { nodeUid, invitationUid },
+            });
         }
     };
 
@@ -201,7 +210,7 @@ export const useSharingModalState = ({
                     setSharingInfo(sharingResult);
                 }
             } catch (e) {
-                handleError(e, c('Error').t`Failed to fetch sharing info`, { nodeUid });
+                handleError(e, { fallbackMessage: c('Error').t`Failed to fetch sharing info`, extra: { nodeUid } });
             }
         };
         const fetchNodeInfo = async () => {
@@ -223,7 +232,7 @@ export const useSharingModalState = ({
                     }
                 }
             } catch (e) {
-                handleError(e, c('Error').t`Failed to fetch node`, { nodeUid });
+                handleError(e, { fallbackMessage: c('Error').t`Failed to fetch node`, extra: { nodeUid } });
             }
         };
         void withLoading(Promise.all([fetchSharingInfo(), fetchNodeInfo()]));

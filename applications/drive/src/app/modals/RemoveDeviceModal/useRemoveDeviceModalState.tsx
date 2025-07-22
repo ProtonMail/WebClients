@@ -53,7 +53,7 @@ export const useRemoveDeviceModalState = ({
                 createNotification({ text: successNotificationText });
             })
             .catch((e) => {
-                handleError(e, unhandledErrorNotificationText, { deviceUid });
+                handleError(e, { fallbackMessage: unhandledErrorNotificationText, extra: { deviceUid } });
             });
 
         onClose?.();
