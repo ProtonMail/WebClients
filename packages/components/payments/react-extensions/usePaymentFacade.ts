@@ -301,6 +301,7 @@ export const usePaymentFacade = (
             subscription,
             canUseApplePay,
             enableApplePay,
+            isTrial,
         },
         {
             api,
