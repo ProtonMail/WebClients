@@ -45,14 +45,16 @@ const PlanCard = ({
     return (
         <div
             className={clsx(
-                'planCard w-full p-6 max-w-custom relative',
-                highlighted && 'planCard-highlighted',
-                highlighted && highlightVariant === PlanCardBorderVariant.Plain && 'planCard-highlighted--default'
+                'drive-signup-plan-card w-full p-6 max-w-custom relative',
+                highlighted && 'drive-signup-plan-card-highlighted',
+                highlighted &&
+                    highlightVariant === PlanCardBorderVariant.Plain &&
+                    'drive-signup-plan-card-highlighted--default'
             )}
             style={{ '--max-w-custom': '25rem' }}
         >
             {highlighted ? (
-                <span className="planCard-label p-2 text-center text-semibold">{highlightTitle}</span>
+                <span className="drive-signup-plan-card-label p-2 text-center text-semibold">{highlightTitle}</span>
             ) : undefined}
 
             <h3 className="text-bold text-xl mt-0 mb-2">{title}</h3>

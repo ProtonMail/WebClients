@@ -1,4 +1,4 @@
-.pricing-card {
+.drive-signup-pricing-card {
 	&-inner,
 	&-top {
 		border-radius: var(--border-radius-xl);
@@ -21,12 +21,12 @@
 		}
 	}
 
-	&:has(.pricing-card-top) &-inner {
+	&:has(.drive-signup-pricing-card-top) &-inner {
 		z-index: 2;
 		border-radius: var(--border-radius-sm) var(--border-radius-sm) var(--border-radius-xl) var(--border-radius-xl);
 	}
 
-	&:has(.pricing-card-top) &-top {
+	&:has(.drive-signup-pricing-card-top) &-top {
 		z-index: 1;
 		border-radius: var(--border-radius-xl) var(--border-radius-xl) var(--border-radius-sm) var(--border-radius-sm);
 	}
