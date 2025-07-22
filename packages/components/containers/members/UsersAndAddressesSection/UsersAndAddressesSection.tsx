@@ -156,6 +156,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     // Allow to display a toggle in the UI
     const allowLumoConfiguration = lumoAddonAvailable && !visionary;
+    // Allow to update seats (this should be done automatically for visionary)
+    const allowLumoUpdate = lumoAddonAvailable;
 
     const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
     const showAddressesSection = !hasExternalMemberCapableB2BPlan && hasMaxAddresses;
@@ -522,6 +524,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         allowAIAssistantUpdate={allowAIAssistantUpdate}
                         allowStorageConfiguration={allowStorageConfiguration}
                         allowLumoConfiguration={allowLumoConfiguration}
+                        allowLumoUpdate={allowLumoUpdate}
                         {...userInviteOrEditModalProps}
                     />
                 )}
