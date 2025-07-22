@@ -60,7 +60,7 @@ import {
     getPlanNameFromIDs,
     getPlansMap,
     hasDeprecatedVPN,
-    hasLumo,
+    hasLumoPlan,
     isCheckForbidden,
     isFreeSubscription,
     isManagedExternally,
@@ -200,7 +200,7 @@ export interface SubscriptionContainerProps {
 const canAddLumoAddon = (subscription: Subscription): boolean => {
     // Check if the current subscription or any of the secondary subscriptions has a mobile lumo subscription.
     return ![subscription, ...(subscription.SecondarySubscriptions ?? [])].some(
-        (sub) => hasLumo(sub) && isManagedExternally(sub)
+        (sub) => hasLumoPlan(sub) && isManagedExternally(sub)
     );
 };
 
