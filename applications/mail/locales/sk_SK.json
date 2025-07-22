@@ -6544,6 +6544,12 @@
         "${ trackersCount } sledovačov zablokovaných",
         "${ trackersCount } sledovačov zablokovaných"
       ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } newsletter",
+        "${ unreadCount } newslettery",
+        "${ unreadCount } newsletterov",
+        "${ unreadCount } newsletterov"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } naplánovaná správa",
         "${ unreadCount } naplánované správy",
@@ -7361,10 +7367,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7548,6 +7551,9 @@
       ],
       "New": [
         "Nový"
+      ],
+      "newsletter": [
+        "newsletter"
       ],
       "No action selected": [
         "Nie je vybratá žiadna akcia"
@@ -8235,6 +8241,9 @@
       ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "Toto sa vám zobrazilo, pretože predmet vášho emailu obsahuje kľúčové slová pre resetovanie hesla."
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Týmto odstránite položku newslettera z tohto zoznamu. Neodhlási vás z odberu newslettera. Objaví sa znova, keď dostanete nové správy."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
@@ -9392,6 +9401,9 @@
       "Folder location": [
         "Umiestnenie priečinka"
       ],
+      "Forums": [
+        "Diskusné fóra"
+      ],
       "Forwards to": [
         "Preposielať na"
       ],
@@ -9527,6 +9539,12 @@
       "New password": [
         "Nové heslo"
       ],
+      "Newsletter entry deleted": [
+        "Záznam z newslettera bol vymazaný"
+      ],
+      "Newsletters": [
+        "Newslettery"
+      ],
       "No label found": [
         "Nebol nájdený žiadny štítok"
       ],
@@ -9605,6 +9623,9 @@
       "Primary": [
         "Primárne"
       ],
+      "Promotions": [
+        "Propagačné akcie"
+      ],
       "Proration": [
         "Pomerná časť"
       ],
@@ -9646,6 +9667,9 @@
       ],
       "Size:": [
         "Veľkosť:"
+      ],
+      "Social": [
+        "Sociálne siete"
       ],
       "Starred": [
         "S hviezdičkou"
@@ -9701,6 +9725,9 @@
       "Toolbar": [
         "Panel nástrojov"
       ],
+      "Transactions": [
+        "Transakcie"
+      ],
       "Undisclosed Recipients": [
         "Skrytí príjemcovia"
       ],
@@ -9712,6 +9739,9 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Odber z ${ truncatedName } bol odhlásený."
+      ],
+      "Updates": [
+        "Aktualizácie"
       ],
       "Upload picture": [
         "Nahrať obrázok"
@@ -9836,6 +9866,17 @@
       ],
       "To: ${ to }": [
         "Komu: ${ to }"
+      ]
+    },
+    "Labels": {
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Tu sa zobrazia newslettery alebo mailingové zoznamy, z ktorých ste sa odhlásili."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Nemáte žiadne aktívne newslettery ani odbery v mailingových zoznamoch."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Neodoberáte žiadne newslettery alebo mailingové zoznamy."
       ]
     },
     "Landmarks": {
@@ -15010,6 +15051,12 @@
       "New message": [
         "Nová správa"
       ],
+      "Newsletters": [
+        "Newslettery"
+      ],
+      "Newsletters view": [
+        "Zobrazenie newslettrerov"
+      ],
       "Next conversation": [
         "Ďalšia konverzácia"
       ],
@@ -15018,6 +15065,9 @@
       ],
       "Night theme": [
         "Nočný motív"
+      ],
+      "No active newsletters": [
+        "Žiadne aktívne newslettery"
       ],
       "No attachment found": [
         "Nenájdená žiadna príloha"
@@ -15028,8 +15078,14 @@
       "No need to empty the trash": [
         "Kôš nie je potrebné vyprázdniť"
       ],
+      "No newsletters found": [
+        "Neboli nájdené žiadne newslettere"
+      ],
       "No trackers found": [
         "Neboli nájdené žiadne trackery."
+      ],
+      "No unsubscribed newsletters": [
+        "Žiadne odhlásené newslettery"
       ],
       "No-reply address detected": [
         "Bola identifikovaná adresa neprijímajúca odpovede"
