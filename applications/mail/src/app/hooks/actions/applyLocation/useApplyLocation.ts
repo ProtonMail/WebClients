@@ -18,13 +18,18 @@ export const useApplyLocation = () => {
     const enabled = useFlag('ApplyLabelsOptimisticRefactoring');
     const dispatch = useMailDispatch();
 
-    const applyLocation = ({ elements, removeLabel, targetLabelID, showSuccessNotification }: ApplyLocationParams) => {
+    const applyLocation = ({
+        elements,
+        removeLabel,
+        targetLabelID,
+        showSuccessNotification,
+    }: ApplyLocationParams): Promise<any> => {
         const [firstElement] = elements;
         const isMessage = testIsMessage(firstElement);
 
         if (isMessage) {
             if (removeLabel) {
-                void dispatch(
+                return dispatch(
                     unlabelMessages({
                         elements,
                         labelID: targetLabelID,
@@ -34,7 +39,7 @@ export const useApplyLocation = () => {
                     })
                 );
             } else {
-                void dispatch(
+                return dispatch(
                     labelMessages({
                         elements,
                         labelID: targetLabelID,
@@ -44,6 +49,8 @@ export const useApplyLocation = () => {
                     })
                 );
             }
+        } else {
+            throw new Error('Not implemented');
         }
     };
 
