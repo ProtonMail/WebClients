@@ -50,7 +50,7 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
         onClose: (_, options) => {
             const field = fieldRef.current;
             if (options.refocus) field?.focus();
-            else if (!isActiveElement(fieldRef.current?.element)) fieldRef.current?.detachIcon();
+            else if (!isActiveElement(field?.element)) field?.detachIcon();
         },
         backdropExclude: () => {
             if (!fieldRef.current) return [];
