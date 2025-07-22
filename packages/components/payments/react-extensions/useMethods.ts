@@ -53,6 +53,7 @@ export interface Props {
     subscription?: Subscription;
     canUseApplePay?: boolean;
     enableApplePay?: boolean;
+    isTrial?: boolean;
 }
 
 interface Dependencies {
@@ -183,6 +184,7 @@ export const useMethods = (
         subscription,
         canUseApplePay,
         enableApplePay,
+        isTrial,
     }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
@@ -205,6 +207,7 @@ export const useMethods = (
         pendingStatusExtended?: PaymentMethodStatusExtended;
         pendingCanUseApplePay?: boolean;
         pendingEnableApplePay?: boolean;
+        pendingIsTrial?: boolean;
     }>();
 
     const [loading, setLoading] = useState(true);
@@ -271,6 +274,7 @@ export const useMethods = (
                 subscription,
                 canUseApplePay,
                 enableApplePay,
+                isTrial,
             });
 
             // Initialization might take some time, so we need to check if there is any pending data
@@ -297,6 +301,7 @@ export const useMethods = (
                     pendingStatusExtended,
                     pendingCanUseApplePay,
                     pendingEnableApplePay,
+                    pendingIsTrial,
                 } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
 
@@ -370,6 +375,10 @@ export const useMethods = (
                 if (pendingEnableApplePay !== undefined) {
                     paymentMethodsRef.current.enableApplePay = pendingEnableApplePay;
                 }
+
+                if (pendingIsTrial !== undefined) {
+                    paymentMethodsRef.current.isTrial = pendingIsTrial;
+                }
             }
 
             setStatus(paymentMethodsRef.current.statusExtended);
@@ -382,7 +391,7 @@ export const useMethods = (
             setLoading(false);
         }
 
-        run();
+        void run();
     }, []);
 
     useEffect(() => {
@@ -405,6 +414,7 @@ export const useMethods = (
                 pendingStatusExtended: paymentMethodStatusExtended,
                 pendingCanUseApplePay: canUseApplePay,
                 pendingEnableApplePay: enableApplePay,
+                pendingIsTrial: isTrial,
             };
             return;
         }
@@ -425,6 +435,7 @@ export const useMethods = (
         paymentMethodsRef.current.subscription = subscription;
         paymentMethodsRef.current.canUseApplePay = !!canUseApplePay;
         paymentMethodsRef.current.enableApplePay = !!enableApplePay;
+        paymentMethodsRef.current.isTrial = !!isTrial;
         if (paymentMethodStatusExtended) {
             paymentMethodsRef.current.statusExtended = paymentMethodStatusExtended;
             setStatus(paymentMethodStatusExtended);
@@ -443,6 +454,7 @@ export const useMethods = (
         chargebeeUserExists,
         canUseApplePay,
         enableApplePay,
+        isTrial,
     ]);
 
     const { usedMethods, newMethods, allMethods, lastUsedMethod } = getComputedMethods();
