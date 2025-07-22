@@ -46,6 +46,7 @@ export const useTrashNodes = () => {
         async (abortSignal: AbortSignal) => {
             setLoading(true);
             let defaultShare = await getDefaultShare();
+            let shownErrorNotification = false;
             for await (const trashNode of drive.iterateTrashedNodes(abortSignal)) {
                 try {
                     const mappedNode = await mapNodeToLegacyItem(trashNode, defaultShare, drive);
@@ -53,12 +54,13 @@ export const useTrashNodes = () => {
                         [mappedNode.uid]: mappedNode,
                     });
                 } catch (e) {
-                    handleError(e);
+                    handleError(e, { showNotification: !shownErrorNotification });
+                    shownErrorNotification = true;
                 }
             }
             setLoading(false);
         },
-        //  getDefaultShare will cause infinite rerenders
+        // getDefaultShare will cause infinite rerenders
         // eslint-disable-next-line react-hooks/exhaustive-deps
         [drive, handleError, setLoading, setNodes]
     );
@@ -142,7 +144,7 @@ export const useTrashNodes = () => {
             clearAllNodes();
             createEmptyTrashNotificationSuccess();
         } catch (e) {
-            handleError(e, c('Notification').t`Trash failed to be emptied`);
+            handleError(e, { fallbackMessage: c('Notification').t`Trash failed to be emptied` });
         }
     };
 
