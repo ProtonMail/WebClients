@@ -1,9 +1,9 @@
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, serverTime, updateServerTime } from '@proton/crypto';
+import { type ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 import { getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
-import type { ConfigData } from '../../config';
 import { convertSafeError } from '../../utils/errorHandling/EnrichedError';
 import { RefreshError, getRefreshError } from '../../utils/errorHandling/RefreshError';
 import { HEARTBEAT_INTERVAL, HEARTBEAT_WAIT_TIME, WORKER_INIT_WAIT_TIME } from './constants';
@@ -61,7 +61,7 @@ type CloseMessage = {
 
 type ConfigMessage = {
     command: 'config';
-    data: ConfigData;
+    data: ProtonConfig;
 };
 
 /**
@@ -214,7 +214,7 @@ export class UploadWorker {
 
     heartbeatInterval?: NodeJS.Timeout;
 
-    config?: ConfigData;
+    config?: ProtonConfig;
 
     constructor(worker: Worker, { generateKeys, start, createdBlocks, pause, resume }: WorkerHandlers) {
         // Before the worker termination, we want to release securely crypto
