@@ -30,6 +30,7 @@ import {
 } from '@proton/shared/lib/constants';
 import type { OrganizationSettingsAllowedProduct } from '@proton/shared/lib/interfaces';
 import { serializeAllowedProducts } from '@proton/shared/lib/organization/accessControl/serialization';
+import useFlag from '@proton/unleash/useFlag';
 
 import MailCalendarIcon from './MailCalendarIcon';
 import useAllowedProducts from './useAllowedProducts';
@@ -148,6 +149,8 @@ const AccessControlSettingsSection = () => {
     const [samlSSO] = useSamlSSO();
     const hasSsoConfig = samlSSO && samlSSO.configs.length > 0;
 
+    const lumoInAccessControl = useFlag('LumoInAccessControl');
+
     return (
         <SettingsSectionWide>
             <SettingsParagraph className="mb-4">
@@ -198,13 +201,15 @@ const AccessControlSettingsSection = () => {
                     showSSOBadge={!appSupportsSSO(APPS.PROTONWALLET) && hasSsoConfig}
                 />
 
-                <AccessControlItem
-                    title={LUMO_APP_NAME}
-                    description=""
-                    logo={<Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={8} />}
-                    targetProducts={[Product.Lumo]}
-                    showSSOBadge={!appSupportsSSO(APPS.PROTONLUMO) && hasSsoConfig}
-                />
+                {lumoInAccessControl && (
+                    <AccessControlItem
+                        title={LUMO_APP_NAME}
+                        description=""
+                        logo={<Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={8} />}
+                        targetProducts={[Product.Lumo]}
+                        showSSOBadge={!appSupportsSSO(APPS.PROTONLUMO) && hasSsoConfig}
+                    />
+                )}
             </div>
         </SettingsSectionWide>
     );
