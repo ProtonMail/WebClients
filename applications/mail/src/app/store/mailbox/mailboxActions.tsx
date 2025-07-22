@@ -43,51 +43,57 @@ const runAction = async ({
     elements: Element[];
     action: (chunk: Element[]) => any;
 }) => {
-    let result: PromiseSettledResult<string | undefined>[] = [];
-    try {
-        extra.eventManager.stop();
+    return new Promise<PromiseSettledResult<string | undefined>[]>(async (resolve, reject) => {
+        let result: PromiseSettledResult<string | undefined>[] = [];
 
-        const promise = runParallelChunkedActions({
-            api: extra.api,
-            items: elements,
-            action,
-        });
+        try {
+            extra.eventManager.stop();
 
-        if (notificationText) {
-            extra.notificationManager.createNotification({
-                text: (
-                    <UndoActionNotification
-                        onUndo={() => {
-                            const undo = async () => {
-                                const tokens = await promise;
-                                const filteredTokens = getFilteredUndoTokens(tokens);
-                                await Promise.all(
-                                    filteredTokens.map((token) => extra.api({ ...undoActions(token), silence: true }))
-                                );
-                                await extra.eventManager.call();
-                            };
-                            void undo();
-                            // Throw an error to undo the action optimistically
-                            throw new Error('Undo action');
-                        }}
-                    >
-                        {notificationText}
-                    </UndoActionNotification>
-                ),
-                expiration: SUCCESS_NOTIFICATION_EXPIRATION,
+            const promise = runParallelChunkedActions({
+                api: extra.api,
+                items: elements,
+                action,
             });
+
+            if (notificationText) {
+                extra.notificationManager.createNotification({
+                    text: (
+                        <UndoActionNotification
+                            onUndo={() => {
+                                const undo = async () => {
+                                    const tokens = await promise;
+                                    const filteredTokens = getFilteredUndoTokens(tokens);
+                                    await Promise.all(
+                                        filteredTokens.map((token) =>
+                                            extra.api({ ...undoActions(token), silence: true })
+                                        )
+                                    );
+                                    await extra.eventManager.call();
+                                };
+                                void undo();
+                                // Reject the promise to undo the action optimistically (AsyncThunk: reject)
+                                reject(new Error('Undo action'));
+                            }}
+                        >
+                            {notificationText}
+                        </UndoActionNotification>
+                    ),
+                    expiration: SUCCESS_NOTIFICATION_EXPIRATION,
+                });
+            }
+
+            result = await promise;
+        } finally {
+            extra.eventManager.start();
+
+            // We force-fetch events after the action is completed to ensure the UI is updated in cases where the optimistic update cannot be reliably predicted
+            if (finallyFetchEvents) {
+                await extra.eventManager.call();
+            }
         }
 
-        result = await promise;
-    } finally {
-        extra.eventManager.start();
-
-        // We force-fetch events after the action is completed to ensure the UI is updated in cases where the optimistic update cannot be reliably predicted
-        if (finallyFetchEvents) {
-            await extra.eventManager.call();
-        }
-    }
-    return result;
+        resolve(result);
+    });
 };
 
 export const markMessagesAsRead = createAsyncThunk<
