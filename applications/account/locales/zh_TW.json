@@ -100,6 +100,9 @@
       "Add address or domain": [
         "加入位址或網域"
       ],
+      "Add another account": [
+        "新增其它帳號"
+      ],
       "Add calendar from URL": [
         "從 URL 加入行事曆"
       ],
@@ -439,6 +442,9 @@
       "Delete your account": [
         "刪除您的帳號"
       ],
+      "Deleting label": [
+        "刪除標籤"
+      ],
       "Deny access": [
         "拒絕存取"
       ],
@@ -709,8 +715,14 @@
       "Help and feedback": [
         "尋求協助與反映意見"
       ],
+      "Help and resources": [
+        "尋求協助與資源"
+      ],
       "Hide": [
         "隱藏"
+      ],
+      "Hide more benefits": [
+        "隱藏更多好處"
       ],
       "Hide plan features": [
         "隱藏方案功能"
@@ -1491,6 +1503,9 @@
       "${ price } per domain": [
         "每網域${ price }"
       ],
+      "${ price } per seat": [
+        "${ price } 每席"
+      ],
       "${ price } per user": [
         "每使用者${ price }"
       ],
@@ -1621,6 +1636,9 @@
       "15 GB storage": [
         "15 GB 儲存空間"
       ],
+      "200 GB storage": [
+        "200 GB 儲存空間"
+      ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "折扣價格依標準月繳費率計算。在本繳款單週期結束後，將為您以標準年繳費率續約。"
       ],
@@ -1714,6 +1732,9 @@
       ]
     },
     "b2b_trials_Action": {
+      "Cancel subscription": [
+        "取消訂購授權"
+      ],
       "Keep subscription": [
         "保留訂購授權"
       ]
@@ -4086,6 +4107,9 @@
       "All events in this series were updated.": [
         "該系列中的所有行程皆已更新。"
       ],
+      "Here's what changed:": [
+        "以下是變更內容："
+      ],
       "NOTE:": [
         "備注:"
       ],
@@ -4828,6 +4852,9 @@
       ],
       "Port is required": [
         "通訊埠為必填"
+      ],
+      "Postal code is required": [
+        "郵遞區號為必填"
       ],
       "Primary address key is not decrypted": [
         "主要位址金鑰並未被解密"
@@ -8212,6 +8239,9 @@
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
         "密碼至少為${ MIN_PASSWORD_LENGTH }字元或更多。"
+      ],
+      "Password must have:": [
+        "密碼必須包含："
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "支付受 TLS 加密及瑞士隱私法律保護。"
@@ -12607,6 +12637,9 @@
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "若要開始使用，請選擇一個顯示名稱。這是您傳送電子郵件、邀請別人參與事件，又或分享檔案時，對方會看見的名字。"
       ],
+      "Your ${ planTitleElement } subscription is now active.": [
+        "您的 ${ planTitleElement } 訂購授權現在已啟用。"
+      ],
       "Your selected plan: ${ planName }": [
         "您選擇的方案：${ planName }"
       ]
@@ -15451,6 +15484,9 @@
     "specialoffer: Link": {
       "Go to subscription plans": [
         "查看訂購授權"
+      ],
+      "Keep passwords safe": [
+        "保護密碼字元安全"
       ],
       "Unblock streaming content": [
         "解除封鎖影音串流內容"
