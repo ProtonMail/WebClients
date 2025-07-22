@@ -148,6 +148,9 @@
       "Add public holidays": [
         "Adăugare sărbători publice"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Adăugare legătură web de recomandare la semnătura ${ MAIL_APP_NAME }"
+      ],
       "Add sieve filter": [
         "Adăugare filtru Sieve"
       ],
@@ -216,6 +219,9 @@
       ],
       "Cancel subscription": [
         "Anulare abonament"
+      ],
+      "Cancel trial and pay": [
+        "Anulare perioadă de probă și plătire"
       ],
       "Change": [
         "Schimbare"
@@ -1458,6 +1464,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Modificați planul pentru a activa ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Professional": [
+        "Trecere la Professional"
       ],
       "Upgrade to view all": [
         "Schimbați planul pentru a le vedea pe toate"
@@ -4244,6 +4253,9 @@
       "To start, give your organization a name.": [
         "Pentru a începe, dați un nume organizației."
       ],
+      "Track the status and activity of your referrals": [
+        "Urmăriți starea și activitatea celor recomandați."
+      ],
       "Track the status and activity of your referrals.": [
         "Urmăriți starea și activitatea celor recomandați."
       ],
@@ -4261,6 +4273,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
+      ],
+      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
+        "Veți primi ${ referralReward } în credite ${ BRAND_NAME } atunci când persoana pe care o invitați se înscrie la un plan ${ BRAND_NAME } și aceasta va primi ${ referralReward } în credite pentru a începe."
       ]
     },
     "description": {
@@ -7548,6 +7563,9 @@
       ]
     },
     "Info": {
+      " and other security features.": [
+        " și alte funcții de securitate."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "Utilizatori care au acces la serverele partajate: ${ amountUsers }/${ totalUsers }",
         "Utilizatori care au acces la serverele partajate: ${ amountUsers }/${ totalUsers }",
@@ -7807,6 +7825,9 @@
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obțineți o adresă ${ BRAND_NAME }** pentru a utiliza toate serviciile ${ BRAND_NAME_TWO }, inclusiv ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Mai multe",
@@ -8724,6 +8745,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obțineți acces creând un cont ${ BRAND_NAME } și acceptând invitația."
       ],
+      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
+        "Acordați și obțineți **${ referralReward } în credite** pentru fiecare persoană care se abonează."
+      ],
       "Get it on Google Play": [
         "Descărcare din Magazin Play"
       ],
@@ -8732,6 +8756,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Primiți notificări dacă parola sau alte date personale v-au fost divulgate. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started with the referral link above.": [
+        "Începeți cu legătura web de recomandate de mai sus."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dați un nume descriptiv codului de acces, cum ar fi serviciul pe care urmați să-l folosiți și selectați una din adresele de domeniu personale active. Numai această adresă va putea trimite mesaje cu acest cod de acces."
@@ -8955,6 +8982,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Invitați-vă partenerul, un prieten sau cu cine partajați planul ${ protonDuoPlanName }."
+      ],
+      "Invited": [
+        "Invitat"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Se pare că unele date sunt criptate și blocate."
@@ -9363,6 +9393,9 @@
       ],
       "Paid for a monthly plan": [
         "Plătit pentru un plan lunar"
+      ],
+      "Paid for a plan": [
+        "Plătit pentru un plan"
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - e-mail personal confirmat"
@@ -10226,6 +10259,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Modernizați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME } al meu” sau „Mesaj privat mie”."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Treceți la planul Professional sau superior pentru a debloca"
+      ],
       "Upgrade to unlock": [
         "Treceți la alt tip de cont pentru deblocare."
       ],
@@ -10618,6 +10654,9 @@
       "You do not have permission to perform this action": [
         "Nu aveți permisiunea de a efectua această acțiune."
       ],
+      "You don't have any referrals.": [
+        "Nu aveți persoane recomandate."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
       ],
@@ -10786,6 +10825,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Probarea gratuită a fost convertită cu un abonament lunar. Data lui de reînnoire este ${ nextBillingDate }."
+      ],
+      "Your friends get **2 weeks for free** on their chosen plan.": [
+        "Cei recomandați vor primi **două săptămâni gratuite** pentru planul ales de ei."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Importarea din ${ accounts } este temporar întârziată.",
@@ -12295,6 +12337,9 @@
       "Reveal password": [
         "Afișare parolă"
       ],
+      "Reward": [
+        "Recompensă"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -12324,6 +12369,9 @@
       ],
       "Sequences": [
         "Secvențe"
+      ],
+      "Share your referral link": [
+        "Partajați-vă legătura web de recomandare"
       ],
       "Show ${ n } administrator": [
         "Afișare ${ n } administrator",
@@ -12896,6 +12944,9 @@
       ],
       "Terms": [
         "Termeni"
+      ],
+      "Terms and conditions": [
+        "Termeni și condiții"
       ],
       "Trouble signing in?": [
         "Aveți probleme la autentificare?"
@@ -14333,6 +14384,9 @@
       ],
       "Downgrade account?": [
         "Retrogradare cont?"
+      ],
+      "Review subscription": [
+        "Revizuire abonament"
       ],
       "Review subscription and pay": [
         "Revizuire abonament și plată"
@@ -20333,6 +20387,9 @@
       "Gift code": [
         "Cod cadou"
       ],
+      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
+        "Acordați ${ referralReward } în credite și două săptămâni gratuite. Obțineți ${ referralReward } în credite."
+      ],
       "Group": [
         "Grup"
       ],
@@ -20415,6 +20472,9 @@
       ],
       "Invitations": [
         "Invitații"
+      ],
+      "Invite friends. Get credits.": [
+        "Invitați prieteni. Obțineți credite."
       ],
       "Invoices": [
         "Facturi"
@@ -20991,6 +21051,9 @@
       "Video conferencing": [
         "Conferință video"
       ],
+      "View organization events by upgrading to Professional": [
+        "Vedeți evenimentele organizației trecând la planul Professional"
+      ],
       "VPN apps": [
         "Aplicații VPN"
       ],
@@ -21053,6 +21116,9 @@
       ],
       "Your recovery status": [
         "Starea actuală de recuperare"
+      ],
+      "Your referrals": [
+        "Persoane recomandate"
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
@@ -21281,6 +21347,12 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "Nu toate informațiile afișate aici au fost expuse pentru toți utilizatorii."
+      ],
+      "Origin Internet Service Provider (ISP)": [
+        "Origine furnizor de servicii de internet (ISP)"
+      ],
+      "Origin IP address": [
+        "Adresa IP de origine"
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Adresa IP de origine și furnizorul de servicii de internet (ISP)."
