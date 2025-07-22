@@ -67,6 +67,7 @@ enum AccountFlag {
     LumoAddonAvailable = 'LumoAddonAvailable',
     LumoSignupAvailable = 'LumoSignupAvailable',
     LumoInProductNewsletters = 'LumoInProductNewsletters',
+    LumoInAccessControl = 'LumoInAccessControl',
     PassB2BPasswordGenerator = 'PassB2BPasswordGenerator',
     SharedServerFeature = 'SharedServerFeature',
     PassB2BVaultCreation = 'PassB2BVaultCreation',
