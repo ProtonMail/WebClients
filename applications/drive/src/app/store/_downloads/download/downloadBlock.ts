@@ -6,7 +6,7 @@ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 
-import { APP_NAME, APP_VERSION } from '../../../config';
+import config from '../../../config';
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import { loadCreateReadableStreamWrapper } from '../../../utils/webStreamsPolyfill';
 import { MAX_TOO_MANY_REQUESTS_WAIT } from '../constants';
@@ -39,7 +39,7 @@ export default async function downloadBlock(
             credentials: 'omit',
             headers: {
                 'pm-storage-token': token,
-                ...getAppVersionHeaders(getClientID(APP_NAME), APP_VERSION),
+                ...getAppVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION),
             },
         })
             .then((result) => {
