@@ -159,8 +159,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
             if (applyLocationEnabled && !selectAll) {
                 await applyLocation({
                     elements: getElementsFromIDs(selectedIDs),
-                    labelChanges: { [newLabelID]: true, [labelID]: false },
-                    createFilters: false,
+                    targetLabelID: newLabelID,
                 });
             } else {
                 await moveToFolder({

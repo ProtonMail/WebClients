@@ -245,15 +245,25 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
 
         if (applyLocationEnabled && !selectAll) {
             promises.push(
-                applyLocation({
-                    elements,
-                    labelChanges: {
-                        ...changes,
-                        ...(alsoArchive ? { [MAILBOX_IDENTIFIERS.archive]: true, [labelID]: false } : {}),
-                    },
-                    createFilters: always,
+                Object.entries(changes).map(([labelID, removeLabel]) => {
+                    return applyLocation({
+                        elements,
+                        targetLabelID: labelID,
+                        removeLabel,
+                        createFilters: always,
+                    });
                 })
             );
+
+            if (alsoArchive) {
+                promises.push(
+                    applyLocation({
+                        elements,
+                        targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        createFilters: always,
+                    })
+                );
+            }
         } else {
             promises.push(
                 applyLabels({

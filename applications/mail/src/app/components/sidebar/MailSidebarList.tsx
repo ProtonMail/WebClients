@@ -300,7 +300,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                             applyLocationEnabled && !params.selectAll
                                 ? applyLocation({
                                       elements: params.elements,
-                                      labelChanges: params.changes,
+                                      targetLabelID: params.labelID, // TODO: Use the correct target label ID
                                   })
                                 : applyLabels(params)
                         }

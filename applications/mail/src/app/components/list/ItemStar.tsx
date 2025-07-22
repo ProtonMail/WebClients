@@ -55,7 +55,6 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
                     targetLabelID: MAILBOX_LABEL_IDS.STARRED,
                     removeLabel: isStarred,
                     showSuccessNotification: false,
-                    createFilters: false,
                 })
             );
         } else {

@@ -198,7 +198,9 @@ const HeaderMoreDropdown = ({
             void withLoading(
                 applyLocation({
                     elements: [message.data || ({} as Element)],
-                    labelChanges: { [MAILBOX_LABEL_IDS.STARRED]: !isStarred },
+                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    removeLabel: isStarred,
+                    showSuccessNotification: false,
                 })
             );
         } else {
