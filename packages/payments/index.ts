@@ -387,7 +387,7 @@ export {
     hasFifteen,
     hasFree,
     hasLifetimeCoupon,
-    hasLumo,
+    hasLumoPlan,
     hasMail,
     hasMailBusiness,
     hasMailPro,
