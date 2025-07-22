@@ -40,11 +40,20 @@
       "Add domain": [
         "加入網域"
       ],
+      "Add field": [
+        "新增欄位"
+      ],
+      "Add mailbox": [
+        "新增電郵信箱"
+      ],
       "Add more": [
         "加入更多"
       ],
       "Add new item": [
         "新增內容"
+      ],
+      "Add section": [
+        "加入區塊"
       ],
       "Admin panel": [
         "管理員面板"
@@ -61,6 +70,9 @@
       "Back": [
         "返回"
       ],
+      "Block contact": [
+        "封鎖聯絡人"
+      ],
       "Cancel": [
         "取消"
       ],
@@ -69,6 +81,12 @@
       ],
       "Change email": [
         "更換電子郵件"
+      ],
+      "Check DNS": [
+        "檢查 DNS"
+      ],
+      "Check settings": [
+        "檢查設定值"
       ],
       "Choose a file or drag it here": [
         "選擇檔案或拖曳到此處"
@@ -127,6 +145,9 @@
       "Create contact": [
         "創建聯絡人"
       ],
+      "Create identity": [
+        "創建新身份"
+      ],
       "Create item": [
         "新增"
       ],
@@ -145,6 +166,9 @@
       "Creating vault": [
         "新建保管庫"
       ],
+      "Custom section": [
+        "自訂區段"
+      ],
       "Delete": [
         "刪除"
       ],
@@ -156,6 +180,9 @@
       ],
       "Delete it, I will never need it": [
         "刪除，我將不再使用"
+      ],
+      "Delete mailbox": [
+        "刪除電郵信箱"
       ],
       "Delete password": [
         "刪除密碼"
@@ -250,6 +277,9 @@
       "Install extension": [
         "安裝擴充套件"
       ],
+      "Invite more...": [
+        "邀請更多…"
+      ],
       "Invite others": [
         "邀請他人"
       ],
@@ -279,6 +309,9 @@
       ],
       "Make editor": [
         "設為編輯者"
+      ],
+      "Make manager": [
+        "設為管理員"
       ],
       "Make viewer": [
         "設為檢視者"
@@ -346,6 +379,9 @@
       "Pause monitoring": [
         "暫停監控"
       ],
+      "Pay once": [
+        "一次性支付"
+      ],
       "Pin item": [
         "固定物品"
       ],
@@ -357,6 +393,9 @@
       ],
       "Previous month": [
         "上個月"
+      ],
+      "Re-verify": [
+        "重新驗證"
       ],
       "Reactivate now": [
         "現在重新啟用"
@@ -406,6 +445,9 @@
       "Reset": [
         "重設"
       ],
+      "Reset history": [
+        "重設歷史記錄"
+      ],
       "Restore": [
         "還原"
       ],
@@ -426,6 +468,9 @@
       ],
       "Saving": [
         "儲存中..."
+      ],
+      "Secure links": [
+        "安全加密連結"
       ],
       "See all": [
         "查看全部"
@@ -490,6 +535,9 @@
       "Sync aliases": [
         "同步別名"
       ],
+      "To mailbox": [
+        "至電郵信箱"
+      ],
       "Transfer ownership": [
         "轉移所有權"
       ],
@@ -501,6 +549,9 @@
       ],
       "Try for free": [
         "免費滿意體驗"
+      ],
+      "Unblock contact": [
+        "解除封鎖聯絡人"
       ],
       "Understood, I will never need it": [
         "了解，我將不再需要這些項目"
@@ -596,6 +647,9 @@
       "Create unique passwords": [
         "建立獨立的密碼"
       ],
+      "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
+        "DMARC ${ WIKIPEDIA_LINK_DMARC } 旨在保護網域免受未經授權的使用，這通常稱為電子郵件詐騙。DMARC 政策圍繞 SPF 和 DKIM 建構，它會告知接收的電郵伺服器，如果這些驗證方法都沒有通過時應採取的動作。"
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "透過導引及建議確保您的資料安全及隱私。"
       ],
@@ -604,6 +658,9 @@
       ],
       "Set up 2FA for more security": [
         "為更好安全設定雙重驗證"
+      ],
+      "SPF ${ WIKIPEDIA_LINK_SPF } is an email authentication method designed to detect forging sender addresses during the delivery of the email. Setting up SPF is highly recommended to reduce the chance your emails ending up in the recipient's Spam folder.": [
+        "SPF ${ WIKIPEDIA_LINK_SPF } 是一種電子郵件驗證方法，旨在偵測電子郵件遞送期間偽造的寄件者位址。強烈建議設定 SPF，以減少您的電子郵件最終進入收件者的垃圾郵件資料夾的機會。"
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "暗網是隱藏的網路充斥著個人資訊，如身分，可為買賣。"
@@ -727,6 +784,9 @@
       "Failed to verify email address": [
         "驗證電子郵件地址失敗"
       ],
+      "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
+        "更新 ${ PROTON_SENTINEL_NAME } 設定失敗"
+      ],
       "File could not be parsed": [
         "檔案無法剖析"
       ],
@@ -841,6 +901,9 @@
       "Wrong extra password": [
         "第二密碼錯誤"
       ],
+      "Wrong password": [
+        "錯誤的密碼字元"
+      ],
       "Wrong PIN code. Try again.": [
         "錯誤的個人識別數字代碼，請再嘗試。"
       ],
@@ -939,6 +1002,9 @@
       "${ n } item": [
         "${ n } 項目"
       ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } 將會遵循您的系統布景主題。"
+      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } 將需要您的 ${ BRAND_NAME } 密碼，以便離線存取資料。"
       ],
@@ -993,6 +1059,9 @@
       "Built in 2FA authenticator": [
         "內建雙重驗證機制"
       ],
+      "Can be viewed": [
+        "可檢視"
+      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "可取得及撤銷此保管庫，及刪除。"
       ],
@@ -1001,6 +1070,9 @@
       ],
       "Can view items in this vault.": [
         "可查看保管庫的項目。"
+      ],
+      "Can view this item.": [
+        "可查看此項目."
       ],
       "Change your password": [
         "變更您的密碼"
@@ -1070,6 +1142,9 @@
       ],
       "Enter your PIN code": [
         "輸入個人識別數字代碼"
+      ],
+      "Expires in": [
+        "於 到期"
       ],
       "Expires in ${ remainingTime }": [
         "將於${ remainingTime }過期"
@@ -1167,6 +1242,9 @@
       "Low Priority": [
         "較低優先順序"
       ],
+      "Manager": [
+        "管理員"
+      ],
       "me": [
         "我"
       ],
@@ -1178,6 +1256,9 @@
       ],
       "Monitoring settings successfully updated": [
         "監控設定已成功更新"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "超越密碼管理器，${ PASS_APP_NAME }保護密碼及私人的電子郵件位址及電子郵件別名。使用與${ MAIL_APP_NAME }相同技術，您的資料使用點到點加密，只有您能存取。"
       ],
       "Move ${ count } item": [
         "移動 ${ count } 個項目"
@@ -1257,6 +1338,9 @@
       "Please enter your current PIN code to continue": [
         "輸入 PIN 碼以繼續"
       ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "您的資料正在匯入中，請保持此視窗開啟。此程序可能需要幾分鐘。"
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "當信箱別名被刪除，將無法復原。可能您需要停用別名？"
       ],
@@ -1289,6 +1373,9 @@
       ],
       "Restoring trashed items...": [
         "還原刪除項目..."
+      ],
+      "Secure links": [
+        "安全加密連結"
       ],
       "Select destination vault": [
         "選取目標保管庫"
@@ -1356,14 +1443,23 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "此將拒絕嘗試於**${ date }**登入至${ BRAND_NAME }帳號的裝置**${ name }**。"
       ],
+      "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
+        "為了隱藏您的個人電郵位址，您可以建立一個別名聯絡人以遮罩您的位址。"
+      ],
       "Unable to copy to clipboard": [
         "無法複製到剪貼簿"
+      ],
+      "Unlock with biometrics": [
+        "使用生物特徵辨識解鎖"
       ],
       "Unpinning item...": [
         "取消訂選項目..."
       ],
       "Unverified": [
         "未驗證"
+      ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "升級付費方案以創建多重保管庫。"
       ],
       "User's access removed": [
         "使用者存取權已撤銷"
@@ -1421,6 +1517,9 @@
       ],
       "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
         "您的帳號受限，因為您的組織已強制雙重認證。請在您的帳號設定中啟用雙重認證，又或者聯絡您的管理員。"
+      ],
+      "your domain": [
+        "您的網域"
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
@@ -1511,8 +1610,20 @@
       "Account": [
         "帳號"
       ],
+      "Account Number": [
+        "帳號號碼"
+      ],
+      "Account Type": [
+        "帳號類型"
+      ],
+      "Add section": [
+        "加入區塊"
+      ],
       "Address": [
         "電郵位址"
+      ],
+      "Address details": [
+        "詳細地址"
       ],
       "Alias": [
         "別名"
@@ -1532,6 +1643,12 @@
       "Alphabetical": [
         "拼音字母"
       ],
+      "API Credential": [
+        "API 憑證"
+      ],
+      "API Key": [
+        "API 金鑰"
+      ],
       "Application logs": [
         "應用程式紀錄"
       ],
@@ -1541,6 +1658,15 @@
       "Backup password": [
         "備份密碼"
       ],
+      "Bank Account": [
+        "銀行帳號"
+      ],
+      "Bank Name": [
+        "銀行名"
+      ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "除了儲存您的登入之外，${ PASS_APP_NAME } 透過整合式電子郵件別名功能保護您的身分。每當您註冊新的已連線帳號時，${ PASS_APP_NAME } 都可以自動建立別名以保護您的實際電郵位址。 "
+      ],
       "Biometrics": [
         "生物特徵辨識"
       ],
@@ -1549,6 +1675,9 @@
       ],
       "Browse faster, smarter": [
         "更聰明、快速的瀏覽"
+      ],
+      "Built-in 2FA": [
+        "內建雙重驗證"
       ],
       "Capital letters (A-Z)": [
         "大寫字母(A~Z)"
@@ -1576,6 +1705,9 @@
       ],
       "City": [
         "縣市"
+      ],
+      "Class": [
+        "類別"
       ],
       "Clear clipboard after": [
         "自動清除剪貼簿"
@@ -1610,6 +1742,9 @@
       "Create a credit card": [
         "創建一張信用卡"
       ],
+      "Create a custom item": [
+        "新增自訂項目"
+      ],
       "Create a hide-my-email alias": [
         "創建 hide-my-email 別名"
       ],
@@ -1622,6 +1757,9 @@
       "Create an Identity": [
         "創建新身份"
       ],
+      "Create lock": [
+        "建立鎖定"
+      ],
       "Create new vault": [
         "新增保管庫"
       ],
@@ -1631,8 +1769,23 @@
       "Credit cards": [
         "信用卡"
       ],
+      "Crypto Wallet": [
+        "加密錢包"
+      ],
+      "Custom Items": [
+        "自訂項目"
+      ],
+      "Database": [
+        "資料庫"
+      ],
+      "Database Type": [
+        "資料庫類型"
+      ],
       "Date": [
         "日期"
+      ],
+      "Date of Birth": [
+        "出生日期"
       ],
       "Device": [
         "裝置"
@@ -1642,6 +1795,9 @@
       ],
       "Display name": [
         "顯示名稱"
+      ],
+      "Doctor": [
+        "醫生"
       ],
       "Domain": [
         "網域"
@@ -1657,6 +1813,9 @@
       ],
       "Download logs": [
         "下載記錄檔"
+      ],
+      "Driver License": [
+        "駕照"
       ],
       "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
         "輕鬆共享敏感資訊給任何人，即使不是 ${ PASS_APP_NAME } 的用戶。你可以共享單一密碼、筆記、信用或簽帳卡資訊、或資料夾下的多個項目。"
@@ -1684,6 +1843,9 @@
       ],
       "Expired": [
         "已失效"
+      ],
+      "Expiry Date": [
+        "到期日"
       ],
       "Export": [
         "匯出"
@@ -1754,8 +1916,17 @@
       "Highest": [
         "最高速"
       ],
+      "Holder Name": [
+        "持有人姓名"
+      ],
+      "Hospital": [
+        "醫院"
+      ],
       "Host": [
         "主機"
+      ],
+      "Hostname": [
+        "主機名稱"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "如何解鎖 ${ PASS_SHORT_APP_NAME }"
@@ -1808,6 +1979,9 @@
       "Invitations": [
         "邀請"
       ],
+      "IP Address": [
+        "IP 位址"
+      ],
       "Item ID": [
         "項目 ID"
       ],
@@ -1850,7 +2024,13 @@
       "License": [
         "授權條款"
       ],
+      "License Key": [
+        "許可證金鑰"
+      ],
       "License number": [
+        "許可證號碼"
+      ],
+      "License Number": [
         "許可證號碼"
       ],
       "Login": [
@@ -1865,8 +2045,23 @@
       "Make it your own.": [
         "讓它專屬於您."
       ],
+      "Medications": [
+        "藥物"
+      ],
+      "Member ID": [
+        "成員 ID"
+      ],
+      "Member Name": [
+        "成員名稱"
+      ],
       "Members": [
         "成員"
+      ],
+      "Membership": [
+        "會員資格"
+      ],
+      "Membership ID": [
+        "會員ID"
       ],
       "Middle name": [
         "中間名"
@@ -1882,6 +2077,9 @@
       ],
       "Name": [
         "名稱"
+      ],
+      "Name (SSID)": [
+        "名稱 (SSID)"
       ],
       "Name on card": [
         "持卡人姓名"
@@ -1916,8 +2114,14 @@
       "None": [
         "無"
       ],
+      "Not selected": [
+        "未選定"
+      ],
       "Note": [
         "備註"
+      ],
+      "Note • SimpleLogin": [
+        "記事・SimpleLogin"
       ],
       "Notes": [
         "備註"
@@ -1934,6 +2138,9 @@
       "Organization": [
         "組織機構"
       ],
+      "Organization Name": [
+        "組織名稱"
+      ],
       "Other": [
         "其他"
       ],
@@ -1949,6 +2156,9 @@
       "Passport": [
         "護照"
       ],
+      "Passport Number": [
+        "護照號碼"
+      ],
       "Passport number": [
         "護照號碼"
       ],
@@ -1957,6 +2167,12 @@
       ],
       "Password history": [
         "密碼歷史記錄"
+      ],
+      "Patient Name": [
+        "患者名稱"
+      ],
+      "Permissions": [
+        "權限"
       ],
       "Personal": [
         "個人"
@@ -1985,17 +2201,38 @@
       "Prefix": [
         "前綴"
       ],
+      "Premium domain": [
+        "頂級質子版網域"
+      ],
       "Priority:": [
         "優先順序:"
       ],
+      "Private key": [
+        "私有金鑰"
+      ],
+      "Private Key": [
+        "私有金鑰"
+      ],
       "Product": [
         "產品"
+      ],
+      "Program Name": [
+        "方案名稱"
+      ],
+      "Public domain": [
+        "公開網域"
+      ],
+      "Public key": [
+        "公開金鑰"
       ],
       "Rate us": [
         "評分我們"
       ],
       "Recent": [
         "最近"
+      ],
+      "Record Number": [
+        "病歷號碼"
       ],
       "Remove link": [
         "移除連結"
@@ -2011,6 +2248,9 @@
       ],
       "Second password": [
         "第二密碼"
+      ],
+      "Secret": [
+        "密碼"
       ],
       "Secure links": [
         "安全加密連結"
@@ -2029,6 +2269,9 @@
       ],
       "See member and permission overview": [
         "檢視共用對像及權限"
+      ],
+      "Seed Phrase": [
+        "種子短語"
       ],
       "Select an email address": [
         "選取電子郵件位址"
@@ -2054,6 +2297,9 @@
       "Share": [
         "共用"
       ],
+      "Share ID": [
+        "分享 ID"
+      ],
       "Shared": [
         "已分享"
       ],
@@ -2077,6 +2323,9 @@
       ],
       "Special characters (!&*)": [
         "特殊字元 (!&*)"
+      ],
+      "SSH key": [
+        "SSH 金鑰"
       ],
       "SSN": [
         "社會保險號碼（SSN）"
@@ -2102,6 +2351,9 @@
       "Support": [
         "支援"
       ],
+      "SWIFT/BIC": [
+        "SWIFT/BIC代碼"
+      ],
       "Target:": [
         "目標："
       ],
@@ -2116,6 +2368,12 @@
       ],
       "Theme": [
         "主題"
+      ],
+      "Tier/Level": [
+        "等級/級別"
+      ],
+      "Tier/Status": [
+        "等級/狀態"
       ],
       "Title": [
         "標題"
@@ -2162,6 +2420,9 @@
       "Unnamed note": [
         "未命名的項目"
       ],
+      "Unspecified": [
+        "未指定"
+      ],
       "Untitled": [
         "無標題"
       ],
@@ -2192,11 +2453,17 @@
       "View logs": [
         "檢視記錄檔"
       ],
+      "VPN Devices": [
+        "VPN 裝置"
+      ],
       "VPN Speed": [
         "VPN 速度"
       ],
       "Vulnerable": [
         "具有風險"
+      ],
+      "Wallet Name": [
+        "錢包名稱"
       ],
       "Weak": [
         "弱"
@@ -2207,8 +2474,20 @@
       "Websites": [
         "網頁"
       ],
+      "WiFi network": [
+        "無線網路"
+      ],
+      "Work details": [
+        "工作詳細資料"
+      ],
+      "Work email": [
+        "工作電子郵件"
+      ],
       "Work phone number": [
         "工作電話號碼"
+      ],
+      "X handle": [
+        "X 帳號"
       ],
       "You are about to create": [
         "您將要創建"
@@ -2216,11 +2495,17 @@
       "You can choose between PIN code, biometrics, or your account password to unlock.": [
         "你可以選擇個人識別數字代碼、生物識別或帳號密碼以解鎖"
       ],
+      "Your domain": [
+        "您的網域"
+      ],
       "Your passwords. Everywhere.": [
         "你的密碼，無所不在"
       ],
       "ZIP": [
         "ZIP檔案"
+      ],
+      "ZIP or Postal code": [
+        "郵遞區號"
       ]
     },
     "Link": {
@@ -2358,6 +2643,15 @@
       "Add note": [
         "新增備註"
       ],
+      "Add password": [
+        "新增密碼"
+      ],
+      "Add public key": [
+        "新增公鑰"
+      ],
+      "Add SSID": [
+        "新增 SSID"
+      ],
       "Add text": [
         "新增文字"
       ],
@@ -2467,6 +2761,9 @@
       "Sign-in requested on another device. Was it you?": [
         "在其他裝置上要求登入。是您嗎？"
       ],
+      "Sign-in requested on another device. Was it you? ": [
+        "在其他裝置上要求登入。是您嗎？ "
+      ],
       "Yes, it was me": [
         "對，就是我"
       ]
@@ -2521,11 +2818,20 @@
       "Activity": [
         "活動"
       ],
+      "Add mailbox": [
+        "新增電郵信箱"
+      ],
+      "Alias contacts": [
+        "別名聯絡人"
+      ],
       "Aliases": [
         "別名"
       ],
       "Auto-lock update": [
         "更新自動鎖定"
+      ],
+      "Blocked addresses": [
+        "已封鎖位址"
       ],
       "Breach detected": [
         "已偵測到外洩"
@@ -2535,6 +2841,12 @@
       ],
       "Breaches detected for": [
         "為已偵測到外洩"
+      ],
+      "Change mailbox email": [
+        "變更電郵信箱位址"
+      ],
+      "Confirm extra password": [
+        "確認第二密碼"
       ],
       "Confirm PIN code": [
         "確認個人識別數字代碼"
@@ -2580,6 +2892,9 @@
       ],
       "Delete domain": [
         "刪除網域"
+      ],
+      "Delete mailbox": [
+        "刪除電郵信箱"
       ],
       "Did you know?": [
         "您知道嗎？"
@@ -2689,6 +3004,9 @@
       "No reused passwords": [
         "無重複使用的密碼"
       ],
+      "No shared items": [
+        "無共享項目"
+      ],
       "Our welcome gift to you": [
         "我們為您準備的迎賓禮"
       ],
@@ -2718,6 +3036,9 @@
       ],
       "Remove email address?": [
         "移除電子郵件地址?"
+      ],
+      "Remove extra password": [
+        "移除第二密碼"
       ],
       "Resolved breaches": [
         "處理外洩"
@@ -2760,6 +3081,9 @@
       ],
       "Share with": [
         "與分享"
+      ],
+      "SPF (Optional)": [
+        "SPF (選擇性)"
       ],
       "Status": [
         "狀態"
@@ -2843,6 +3167,9 @@
       "OTP secret or URI is invalid": [
         "一次性安全碼或網址錯誤"
       ],
+      "URL already exists": [
+        "網址已存在"
+      ],
       "URL cannot be empty": [
         "網址不能為空"
       ],
@@ -2891,6 +3218,9 @@
       ],
       "Duplicate email addresses.": [
         "重複的電子郵件位址"
+      ],
+      "Email cannot be empty": [
+        "電子信箱不能空白"
       ],
       "Email is required": [
         "電子郵件為必填項"
@@ -2973,6 +3303,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "別名不能超過40個字元"
       ],
+      "This item is currently shared. Moving it to another vault will remove access for all other users.": [
+        "此項目目前為共享狀態。將其移至另一個保管庫，將會移除所有其他使用者的存取權限。"
+      ],
       "Title is required": [
         "需要標題"
       ],
@@ -2981,6 +3314,9 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "無法登入至${ PASS_APP_NAME }。${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "保管庫「${ vaultName }」及其所有項目將被永久刪除。無法復原此動作。"
       ],
       "Vault name is required": [
         "保管庫需要名字"
