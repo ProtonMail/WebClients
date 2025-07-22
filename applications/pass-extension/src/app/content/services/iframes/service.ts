@@ -152,7 +152,7 @@ export const createIFrameService = (elements: PassElementsConfig) => {
             service.ensureInteractive(anchor, usePopover);
 
             if (state.apps.dropdown === null) {
-                logger.info(`[ContentScript::${ctx.scriptId}] attaching dropdown iframe`);
+                logger.debug(`[ContentScript::${ctx.scriptId}] attaching dropdown iframe`);
                 state.apps.dropdown = createDropdown({
                     popover: createPopoverController(service, usePopover),
                     onDestroy: () => (state.apps.dropdown = null),
@@ -171,7 +171,7 @@ export const createIFrameService = (elements: PassElementsConfig) => {
             service.ensureInteractive(null, usePopover);
 
             if (state.apps.notification === null) {
-                logger.info(`[ContentScript::${ctx.scriptId}] attaching notification iframe`);
+                logger.debug(`[ContentScript::${ctx.scriptId}] attaching notification iframe`);
 
                 state.apps.notification = createNotification({
                     popover: createPopoverController(service, usePopover),

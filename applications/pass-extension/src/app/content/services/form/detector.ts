@@ -144,7 +144,6 @@ const createDetectionRunner =
                 maxTime: MIN_MAX_DETECTION_TIME,
                 onMaxTime: (detectionTime) => {
                     const { hostname } = window.location;
-                    logger.info(`[Detector] Slow down detected on ${hostname} (took ${detectionTime}ms)`);
 
                     if (detectionTime >= MAX_MAX_DETECTION_TIME) {
                         onBottleneck({ detectionTime, hostname });
