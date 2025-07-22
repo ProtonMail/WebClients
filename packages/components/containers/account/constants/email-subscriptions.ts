@@ -4,6 +4,7 @@ import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
     DRIVE_APP_NAME,
+    LUMO_APP_NAME,
     MAIL_APP_NAME,
     PASS_APP_NAME,
     VPN_APP_NAME,
@@ -15,6 +16,7 @@ import {
 } from '@proton/shared/lib/helpers/newsletter';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
 export interface EmailSubscription {
     id: string;
@@ -39,7 +41,8 @@ const getProductUpdatesString = (app: string, additionalApp?: string) => {
 };
 
 export const getEmailSubscriptions = (
-    filter: (data: EmailSubscription) => boolean
+    filter: (data: EmailSubscription) => boolean,
+    lumoInProductNewsletters: boolean
 ): {
     general: EmailSubscriptionData;
     product: EmailSubscriptionData;
@@ -127,7 +130,15 @@ export const getEmailSubscriptions = (
             title: getProductUpdatesString(VPN_APP_NAME),
             frequency: c('news').t`4-6 emails per year`,
         },
-    ].filter(filter);
+        lumoInProductNewsletters && {
+            id: 'news_product_lumo',
+            flag: NEWSLETTER_SUBSCRIPTIONS_BITS.LUMO_NEWS,
+            title: getProductUpdatesString(LUMO_APP_NAME),
+            frequency: c('news').t`4-6 emails per year`,
+        },
+    ]
+        .filter(isTruthy)
+        .filter(filter);
 
     const notifications = [
         {
@@ -147,8 +158,8 @@ export const getEmailSubscriptions = (
     };
 };
 
-export const getEmailSubscriptionsMap = () => {
-    const result = getEmailSubscriptions(() => true);
+export const getEmailSubscriptionsMap = (lumoInProductNewsletters: boolean) => {
+    const result = getEmailSubscriptions(() => true, lumoInProductNewsletters);
     return toMap([...result.general.toggles, ...result.product.toggles, ...result.notifications.toggles], 'flag');
 };
 
