@@ -10,7 +10,7 @@ import { randomHexString4 } from '@proton/shared/lib/helpers/uid';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import * as config from '../config';
+import config from '../config';
 import { sendErrorReport } from './errorHandling';
 import { EnrichedError } from './errorHandling/EnrichedError';
 import { getLastActivePersistedUserSession } from './lastActivePersistedUserSession';
