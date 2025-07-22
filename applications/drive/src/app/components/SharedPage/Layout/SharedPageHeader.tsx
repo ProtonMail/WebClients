@@ -9,7 +9,7 @@ import { APPS, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import useFlag from '@proton/unleash/useFlag';
 
-import { APP_NAME } from '../../../config';
+import config from '../../../config';
 import { useDriveFreePromo } from '../../../hooks/payments/useDriveFreePromo';
 import { usePublicSessionUser } from '../../../store';
 import HeaderSecureLabel from './HeaderSecureLabel';
@@ -58,7 +58,7 @@ export const SharedPageHeader = () => {
 
     return (
         <Header className="h-auto lg:justify-space-between items-center">
-            <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
+            <h1 className="sr-only">{getAppName(config.APP_NAME)}</h1>
             <div className="logo-container flex justify-space-between items-center w-auto h-auto">
                 <MainLogo to="/" reloadDocument variant={viewportWidth['<=medium'] ? 'glyph-only' : 'with-wordmark'} />
                 <div className="hidden md:block md:ml-2">
