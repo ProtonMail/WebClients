@@ -56,6 +56,12 @@
       "Speech": [
         "語音"
       ],
+      "Stop Speaking": [
+        "停止說話"
+      ],
+      "Toggle Full Screen": [
+        "切換全螢幕"
+      ],
       "Undo": [
         "復原"
       ],
@@ -86,6 +92,9 @@
       ],
       "Speech": [
         "語音"
+      ],
+      "Stop Speaking": [
+        "停止說話"
       ]
     },
     "Context Menu": {
@@ -94,6 +103,9 @@
       ],
       "Cut": [
         "剪下"
+      ],
+      "Look Up “${ text }”": [
+        "查詢「${ text }」"
       ],
       "Paste": [
         "貼上"
@@ -116,6 +128,11 @@
     "error screen": {
       "Try again": [
         "重試"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "正在載入 ${ title }…"
       ]
     },
     "Menu": {
