@@ -8,8 +8,8 @@ import { CryptoProxy } from '@proton/crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 
-import { CustomPasswordState } from '../../response-types';
-import { useCreateMeeting } from './useCreateMeeting';
+import { CustomPasswordState, MeetingType } from '../types/response-types';
+import { useCreateInstantMeeting } from './useCreateInstantMeeting';
 
 vi.mock('@proton/shared/lib/srp', () => ({
     srpGetVerify: vi.fn().mockResolvedValue({
@@ -73,16 +73,11 @@ describe('useCreateMeeting', () => {
 
         const meetingData = {
             meetingName: 'test meeting',
-            startTime: '2025-06-23T00:00:00Z',
-            endTime: '2025-06-23T01:00:00Z',
-            recurrence: null,
-            timeZone: 'UTC',
-            customPassword: '',
         };
 
-        const { result } = renderHook(() => useCreateMeeting());
+        const { result } = renderHook(() => useCreateInstantMeeting());
 
-        const meeting = await result.current.createMeeting(meetingData);
+        const meeting = await result.current({ params: meetingData, isGuest: false });
 
         expect(mockApi).toHaveBeenCalledWith(
             expect.objectContaining({
@@ -90,18 +85,20 @@ describe('useCreateMeeting', () => {
                 url: 'meet/v1/meetings',
                 silence: true,
                 data: expect.objectContaining({
-                    StartTime: meetingData.startTime,
-                    EndTime: meetingData.endTime,
-                    RRule: meetingData.recurrence,
-                    Timezone: meetingData.timeZone,
+                    StartTime: null,
+                    EndTime: null,
+                    RRule: null,
+                    Timezone: null,
                     CustomPassword: CustomPasswordState.NO_PASSWORD,
                     AddressID: 'test-address-id',
+                    Type: MeetingType.INSTANT,
                 }),
             })
         );
 
         expect(meeting).toEqual({
-            meetingLink: `/join/id-${meetingLinkName}#pwd-mockpassword`,
+            passwordBase: 'mockpassword',
+            meetingLink: `/join/${meetingLinkName}#mockpassword`,
             id: meetingLinkName,
         });
     });

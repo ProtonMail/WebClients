@@ -42,6 +42,7 @@ export const useMeetingJoin = () => {
 
                 return room;
             } catch (error) {
+                console.error(error);
                 throw new Error(c('l10n_nightly Error').t`Failed to join meeting`);
             }
         },

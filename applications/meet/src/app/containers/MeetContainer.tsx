@@ -7,8 +7,7 @@ import { PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
 import { UIStateProvider } from '../contexts/UIStateContext';
 import { useFaceTrackingSetup } from '../hooks/useFaceTrackingSetup';
-import type { MeetChatMessage, ParticipantEventRecord } from '../types';
-import { type ParticipantSettings } from '../types';
+import type { MeetChatMessage, ParticipantEventRecord, ParticipantSettings } from '../types';
 
 interface MeetContainerProps {
     setParticipantSettings: React.Dispatch<React.SetStateAction<ParticipantSettings | null>>;

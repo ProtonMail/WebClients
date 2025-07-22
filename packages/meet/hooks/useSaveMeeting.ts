@@ -3,8 +3,8 @@ import { useCallback } from 'react';
 import { useApi } from '@proton/components';
 import type { PrivateKeyReference } from '@proton/crypto';
 
-import { type CreateMeetingResponse, CustomPasswordState } from '../response-types';
-import type { CreateMeetingParams } from '../types';
+import type { CreateMeetingParams, CreateMeetingResponse } from '../types/response-types';
+import { CustomPasswordState } from '../types/response-types';
 import { prepareMeetingCryptoData } from '../utils/cryptoUtils';
 
 export const createMeetingCall = () => {

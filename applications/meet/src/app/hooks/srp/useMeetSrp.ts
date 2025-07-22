@@ -3,11 +3,11 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useApi, useAuthentication } from '@proton/components';
+import type { AccessTokenResponse, MeetingInfoResponse } from '@proton/meet/types/response-types';
 import { getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { srpAuth } from '@proton/shared/lib/srp';
 import type { AuthVersion } from '@proton/srp/lib/interface';
 
-import type { AccessTokenResponse, MeetingInfoResponse } from '../../response-types';
 import { removeTrailingSlash } from '../../utils/remove-trailing-slash';
 
 export const queryInitSRPHandshake = (meetingLinkName: string) => {

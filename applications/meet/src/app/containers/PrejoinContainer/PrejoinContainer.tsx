@@ -15,8 +15,7 @@ import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
 import { UserInfo } from '../../components/UserInfo';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDevices } from '../../hooks/useDevices';
-import type { ParticipantSettings } from '../../types';
-import { LoadingState } from '../../types';
+import { LoadingState, type ParticipantSettings } from '../../types';
 
 import './PrejoinContainer.scss';
 

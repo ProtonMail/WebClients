@@ -17,7 +17,7 @@ export const useGetMeetingDependencies = () => {
 
         const privateKey = userKeys[0].privateKey;
 
-        const addressId = activeAddresses[0].ID;
+        const addressId = activeAddresses[0]?.ID;
 
         return { privateKey, addressId };
     }, [getAddresses, getUserKeys]);

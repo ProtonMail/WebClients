@@ -1,7 +1,8 @@
 import { renderHook } from '@testing-library/react';
 
 import { MeetContext } from '../contexts/MeetContext';
-import { type MeetChatMessage, ParticipantEvent, type ParticipantEventRecord } from '../types';
+import type { MeetChatMessage, ParticipantEventRecord } from '../types';
+import { ParticipantEvent } from '../types';
 import { useMeetingRoomUpdates } from './useMeetingRoomUpdates';
 
 const mockParticipantEvents: ParticipantEventRecord[] = [

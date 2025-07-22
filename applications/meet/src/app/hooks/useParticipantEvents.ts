@@ -4,8 +4,7 @@ import { useRoomContext } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
-import type { ParticipantEventRecord } from '../types';
-import { ParticipantEvent } from '../types';
+import { ParticipantEvent, type ParticipantEventRecord } from '../types';
 
 export const useParticipantEvents = () => {
     const room = useRoomContext();

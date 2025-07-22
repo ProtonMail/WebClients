@@ -1,7 +1,5 @@
 import type { ChatMessage } from 'livekit-client';
 
-import type { MeetingType } from './response-types';
-
 export interface ParticipantSettings {
     displayName: string;
     audioDeviceId: string | null;
@@ -92,14 +90,4 @@ export enum PermissionPromptStatus {
     CAMERA = 'CAMERA',
     MICROPHONE = 'MICROPHONE',
     CLOSED = 'CLOSED',
-}
-
-export interface CreateMeetingParams {
-    meetingName: string;
-    startTime: string | null;
-    endTime: string | null;
-    recurrence: string | null;
-    timeZone?: string | null;
-    customPassword?: string;
-    type?: MeetingType;
 }

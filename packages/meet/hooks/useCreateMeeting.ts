@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
-import { MeetingType } from '../../response-types';
-import type { CreateMeetingParams } from '../../types';
-import { getMeetingLink } from '../../utils/getMeetingLink';
-import { useSaveMeeting } from '../useSaveMeeting';
+import type { CreateMeetingParams } from '@proton/meet/types/response-types';
+import { MeetingType } from '@proton/meet/types/response-types';
+
+import { getMeetingLink } from '../utils/getMeetingLink';
 import { useGetMeetingDependencies } from './useGetMeetingDependencies';
+import { useSaveMeeting } from './useSaveMeeting';
 
 export const createMeetingCall = () => {
     return {
@@ -21,10 +22,10 @@ export const useCreateMeeting = () => {
 
     const createMeeting = async ({
         meetingName,
-        startTime,
-        endTime,
-        recurrence,
-        timeZone,
+        startTime = null,
+        endTime = null,
+        recurrence = null,
+        timeZone = null,
         customPassword = '',
         type = MeetingType.INSTANT,
     }: CreateMeetingParams) => {
@@ -40,6 +41,7 @@ export const useCreateMeeting = () => {
             return {
                 meetingLink: getMeetingLink(response.Meeting.MeetingLinkName, passwordBase),
                 id: response.Meeting.MeetingLinkName,
+                meeting: response.Meeting,
             };
         } catch (error) {
             throw new Error(c('l10n_nightly Error').t`Failed to create meeting`);
