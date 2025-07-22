@@ -1,7 +1,8 @@
+import { useFolders, useLabels } from '@proton/mail/index';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import useFlag from '@proton/unleash/useFlag';
 
 import { isMessage as testIsMessage } from 'proton-mail/helpers/elements';
-import { getLabelName } from 'proton-mail/helpers/labels';
 import type { Element } from 'proton-mail/models/element';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
@@ -17,6 +18,8 @@ export interface ApplyLocationParams {
 export const useApplyLocation = () => {
     const enabled = useFlag('ApplyLabelsOptimisticRefactoring');
     const dispatch = useMailDispatch();
+    const [labels = []] = useLabels();
+    const [folders = []] = useFolders();
 
     const applyLocation = ({
         elements,
@@ -31,21 +34,23 @@ export const useApplyLocation = () => {
             if (removeLabel) {
                 return dispatch(
                     unlabelMessages({
-                        elements,
-                        labelID: targetLabelID,
-                        labelName: getLabelName(targetLabelID),
+                        elements: elements as Message[],
+                        targetLabelID,
                         isEncryptedSearch: false,
                         showSuccessNotification,
+                        labels,
+                        folders,
                     })
                 );
             } else {
                 return dispatch(
                     labelMessages({
-                        elements,
-                        labelID: targetLabelID,
-                        labelName: getLabelName(targetLabelID),
+                        elements: elements as Message[],
+                        targetLabelID,
                         isEncryptedSearch: false,
                         showSuccessNotification,
+                        labels,
+                        folders,
                     })
                 );
             }
