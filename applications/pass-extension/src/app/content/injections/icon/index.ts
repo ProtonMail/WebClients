@@ -8,7 +8,6 @@ import { type ProtonPassControl } from 'proton-pass-extension/app/content/inject
 import ProtonPassControlStyles from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassControl.raw.scss';
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
-import { shadowPiercingContains } from '@proton/pass/fathom';
 import {
     type BoundComputeStyles,
     createStyleCompute,
@@ -52,6 +51,12 @@ const getOverlayShift = (options: {
         const maxShift = maxWidth * 0.5; /* Maximum allowed shift */
 
         if (Number.isNaN(x) || Number.isNaN(y)) return 0;
+
+        /** Ideally we could also recursively get all shadowRoot elements at point if
+         * `https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/elementsFromPoint`
+         * becomes standard. Right now, some browsers return only the shadow root elements
+         * present at that location. Other browsers include elements outside of the shadow DOM,
+         * from the shadow DOM element in the topmost layer to the document root node. */
         const overlays = document.elementsFromPoint(x, y);
 
         let maxDx: number = 0;
@@ -60,7 +65,7 @@ const getOverlayShift = (options: {
             if (el === input || el === inputBox) break; /* Stop at target elements */
             if (!isHTMLElement(el)) continue; /* Skip non-HTMLElements */
             if (el.tagName.startsWith('PROTONPASS')) continue; /* Skip injected pass elements */
-            if (!shadowPiercingContains(form, el)) continue; /* Skip elements outside form */
+            if (!form.contains(el)) continue; /* Skip elements outside form */
             if (el.matches('svg *')) continue; /* Skip SVG subtrees */
 
             /** Skip large text elements. NOTE: The `isHTMLElement` check is loose in order to

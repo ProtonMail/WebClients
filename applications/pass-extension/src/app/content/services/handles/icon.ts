@@ -59,10 +59,11 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
 
     const reposition = (reflow: boolean = false) => {
         cancelReposition();
-        const inputBox = field.getBoxElement({ reflow });
-        const form = field.getFormHandle().element;
 
         repositioning.request = requestAnimationFrame(() => {
+            const inputBox = field.getBoxElement({ reflow });
+            const form = field.getFormHandle().element;
+
             animatePositionChange({
                 onAnimate: (request) => (repositioning.animate = request),
                 get: () => field.element.getBoundingClientRect(),
@@ -135,9 +136,9 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
      * repositioning during interaction could generate unintended clicks */
     listeners.addListener(icon, 'pointerdown', onPointerDown);
     listeners.addListener(icon, 'pointerup', onPointerUp);
-
     listeners.addListener(window, 'resize', () => reposition(false));
     listeners.addResizeObserver(target, () => reposition(false));
+
     listeners.addObserver(
         target,
         () => {
