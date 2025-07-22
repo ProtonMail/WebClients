@@ -8953,6 +8953,30 @@
         "${ count } položiek sa nepodarilo dešifrovať",
         "${ count } položiek sa nepodarilo dešifrovať"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } fotografia nemôže byť odstráná z \"${ albumLink.name }\"",
+        "${ nbFailures } fotografie nemôžu byť odstráné z \"${ albumLink.name }\"",
+        "${ nbFailures } fotografií nemôže byť odstránených z \"${ albumLink.name }\"",
+        "${ nbFailures } fotografií nemôže byť odstránených z \"${ albumLink.name }\""
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } fotografiu nebolo možné pridať do \"${ albumName }\"",
+        "${ nbMainPhotosError } fotografie nebolo možné pridať do \"${ albumName }\"",
+        "${ nbMainPhotosError } fotografií nebolo možné pridať do \"${ albumName }\"",
+        "${ nbMainPhotosError } fotografií nebolo možné pridať do \"${ albumName }\""
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } fotografia bola pridaná do \"${ albumName }\"",
+        "${ nbMainPhotosSuccess } fotografie boli pridané do \"${ albumName }\"",
+        "${ nbMainPhotosSuccess } fotografií bolo pridaných do \"${ albumName }\"",
+        "${ nbMainPhotosSuccess } fotografií bolo pridaných do \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } fotografia bola odstránená z \"${ albumLink.name }\"",
+        "${ nbSuccesses } fotografie boli odstránené z \"${ albumLink.name }\"",
+        "${ nbSuccesses } fotografií bolo odstránených z \"${ albumLink.name }\"",
+        "${ nbSuccesses } fotografií bolo odstránených z \"${ albumLink.name }\""
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } položka vymazaná",
         "${ numberOfItems } položky vymazané",
@@ -12019,6 +12043,9 @@
       ],
       "Network error": [
         "Chyba siete"
+      ],
+      "Newsletters view": [
+        "Zobrazenie newslettrerov"
       ],
       "Night theme": [
         "Nočný motív"
