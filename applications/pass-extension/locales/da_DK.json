@@ -785,6 +785,9 @@
       "Alias options could not be resolved": [
         "Alias-indstillinger kunne ikke hentes"
       ],
+      "An error occured during the import process": [
+        "Der opstod en fejl under importprocessen"
+      ],
       "Authentication error": [
         "Godkendelsesfejl"
       ],
@@ -796,6 +799,9 @@
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
         "Godkendelse mislykkedes. Bekræft din ekstra adgangskode for at fortsætte med eksporten."
+      ],
+      "Authentication failed. Confirm your second password in order to proceed with the export": [
+        "Godkendelse mislykkedes. Bekræft din anden adgangskode for at fortsætte med eksporten"
       ],
       "Authentication failure: ${ message }": [
         "Autentificeringsfejl: ${ message }"
@@ -848,6 +854,9 @@
       ],
       "Deleting item failed": [
         "Sletning af element mislykkedes"
+      ],
+      "Deleting item history failed": [
+        "Sletning af elementhistorik mislykkedes"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Sletning af boksen \"${ payload.content.name }\" mislykkedes"
@@ -1011,6 +1020,9 @@
       ],
       "File does not match expected format": [
         "Fil svarer ikke til det forventede format"
+      ],
+      "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
+        "Import mislykkedes for boks \"${ vaultData.name }\": ${ errorMessage }"
       ],
       "Importing items failed": [
         "Import af elementer mislykkedes"
@@ -1369,6 +1381,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importeret dine data, kan du slette CSV-filen med dine adgangskoder for en sikkerheds skyld."
       ],
+      "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias er blevet deaktiveret. Du vil ikke længere modtage mails sendt til ${ item.aliasEmail }"
+      ],
       "Alias successfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "Alias er blevet aktiveret. Du kan nu modtage mails sendt til ${ item.aliasEmail }"
       ],
@@ -1416,6 +1431,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Autolås er blevet deaktiveret."
+      ],
+      "Autofill HTTP basic auth dialogs with saved credentials.": [
+        "Udfyld automatisk HTTP basic auth-dialoger med gemte legitimationsoplysninger."
       ],
       "automatically": [
         "automatisk"
@@ -1716,6 +1734,9 @@
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Elementet \"${ payload.item.data.metadata.name }\" opdateret"
       ],
+      "Item history permanently deleted": [
+        "Elementhistorik permanent slettet"
+      ],
       "Item moved to trash": [
         "Element flyttet til papirkurv"
       ],
@@ -1929,6 +1950,24 @@
       "Please confirm your PIN code to edit this setting.": [
         "Bekræft din pinkode for at ændre denne indstilling."
       ],
+      "Please confirm your second password": [
+        "Bekræft din anden adgangskode"
+      ],
+      "Please confirm your second password in order to auto-lock with biometrics.": [
+        "Bekræft din anden adgangskode for at få automatisk låsning med biometri."
+      ],
+      "Please confirm your second password in order to auto-lock with your password.": [
+        "Bekræft din anden adgangskode for at autolåse med din adgangskode."
+      ],
+      "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
+        "Bekræft dit andet adgangskode for at eksportere dine ${ PASS_APP_NAME }-data"
+      ],
+      "Please confirm your second password in order to unregister your current lock.": [
+        "Bekræft din anden adgangskode for at afregistrere din nuværende lås."
+      ],
+      "Please confirm your second password in order to update the auto-lock time.": [
+        "Bekræft din anden adgangskode for at opdatere den automatiske låsetid."
+      ],
       "Please consider leaving a review.": [
         "Skriv gerne en anmeldelse."
       ],
@@ -1946,6 +1985,9 @@
       ],
       "Please follow the steps below to set up your domain.": [
         "Følg nedenstående trin for at oprette dit domæne."
+      ],
+      "Please keep this window open while your data is being imported. This process may take a few minutes.": [
+        "Hold dette vindue åbent, mens dine data importeres. Denne proces kan tage et par minutter."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Bemærk, at aliasset ikke kan gendannes, når først det er slettet. Måske vil du hellere deaktivere aliasset?"
@@ -1994,6 +2036,9 @@
       ],
       "Removing secure link...": [
         "Fjerner sikkert link..."
+      ],
+      "Resetting history will permanently delete all past item versions and cannot be undone.": [
+        "Nulstilling af historik sletter alle tidligere elementversioner permanent og kan ikke fortrydes."
       ],
       "Restoring items from trash": [
         "Gendanner elementer fra papirkurven"
@@ -2537,6 +2582,9 @@
       "Bank Name": [
         "Banknavn"
       ],
+      "Basic Auth autofill": [
+        "Basic Auth autofyld"
+      ],
       "Biometrics": [
         "Biometri"
       ],
@@ -2915,6 +2963,9 @@
       "Make all editors": [
         "Gør alle til redaktører"
       ],
+      "Make all managers": [
+        "Gør alle til administratorer"
+      ],
       "Make all viewers": [
         "Gør alle til seere"
       ],
@@ -3134,6 +3185,9 @@
       "Recent": [
         "Seneste"
       ],
+      "Record Number": [
+        "Optegnelsesnummer"
+      ],
       "Reddit handle": [
         "Reddit-brugernavn"
       ],
@@ -3344,6 +3398,9 @@
       "Unnamed SSH key": [
         "Unavngivet SSH-nøgle"
       ],
+      "Unnamed WiFi item": [
+        "Unavngivet WiFi-element"
+      ],
       "Unspecified": [
         "Uspecificeret"
       ],
@@ -3485,6 +3542,9 @@
       "\"${ filename }\" could not be imported.": [
         "\"${ filename }\" kunne ikke importeres."
       ],
+      "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "\"${ filename }\" er for stor til upload. Den maksimale tilladte størrelse er (${ maxFileSizeInMB })"
+      ],
       "${ filesCount } file": [
         "${ filesCount } fil",
         "${ filesCount } filer"
@@ -3513,6 +3573,12 @@
       "Download file": [
         "Download fil"
       ],
+      "Due to a limitation on Firefox, ${ PASS_APP_NAME } needs to be re-opened in a new window before you can upload files.": [
+        "På grund af en begrænsning i Firefox skal ${ PASS_APP_NAME } genåbnes i et nyt vindue, før du kan uploade filer."
+      ],
+      "Exporting files": [
+        "Eksport af filer"
+      ],
       "Failed linking files to item": [
         "Kunne ikke linke filer til element"
       ],
@@ -3522,14 +3588,26 @@
       "File attachments": [
         "Filvedhæftninger"
       ],
+      "If enabled, all your files will be downloaded when exporting. This may take some time depending on your internet connection.": [
+        "Hvis aktiveret, vil alle dine filer blive downloadet ved eksport. Dette kan tage noget tid afhængigt af din internetforbindelse."
+      ],
+      "If your data contains file attachments, they will not be imported.": [
+        "Hvis dine data indeholder vedhæftede filer, vil de ikke blive importeret."
+      ],
       "Include file attachments": [
         "Medtag filvedhæftninger"
       ],
       "Not enough available storage space for the selected files.": [
         "Ikke nok tilgængelig lagerplads til de valgte filer."
       ],
+      "Once deleted, this file can still be recovered from the item's history.": [
+        "Når filen er slettet, kan den stadig gendannes fra elementets historik."
+      ],
       "Open new window to upload files": [
         "Åbn nyt vindue for at uploade filer"
+      ],
+      "Please be patient while your files are being downloaded.": [
+        "Hav tålmodighed, mens dine filer downloades."
       ],
       "Remove all files": [
         "Fjern alle filer"
@@ -3540,11 +3618,17 @@
       "Restore": [
         "Gendan"
       ],
+      "Some files are too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
+        "Nogle filer er for store til upload. Den maksimale tilladte størrelse er (${ maxFileSizeInMB })"
+      ],
       "The exported file attachments will not be encrypted.": [
         "De eksporterede filvedhæftninger vil ikke blive krypteret."
       ],
       "The file you are trying to import is empty": [
         "Filen du prøver at importere er tom"
+      ],
+      "Total files: ": [
+        "Filer i alt: "
       ],
       "Total imported files: ": [
         "Samlet antal importerede filer: "
@@ -3557,6 +3641,9 @@
       ],
       "You can attach files to items for a better organization": [
         "Du kan vedhæfte filer til elementer for at få en bedre organisering"
+      ],
+      "You may close this window after saving the file.": [
+        "Du kan lukke dette vindue, når du har gemt filen."
       ]
     },
     "Placeholder": {
@@ -3622,6 +3709,9 @@
       ],
       "my-domain.com": [
         "my-domain.com"
+      ],
+      "Name displayed in emails": [
+        "Navn vist i e-mails"
       ],
       "Note from SimpleLogin": [
         "Note fra SimpleLogin"
@@ -3806,6 +3896,9 @@
       ]
     },
     "Title": {
+      "${ PASS_APP_NAME } Logs": [
+        "${ PASS_APP_NAME }-logs"
+      ],
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-indstillinger"
       ],
@@ -3933,6 +4026,9 @@
       "Enter coupon code": [
         "Indtast kuponkode"
       ],
+      "Enter your ${ BRAND_NAME } password": [
+        "Indtast din ${ BRAND_NAME }-adgangskode"
+      ],
       "Enter your backup password": [
         "Indtast din sikkerhedskopi-adgangskode"
       ],
@@ -3941,6 +4037,9 @@
       ],
       "Enter your PIN": [
         "Indtast din pinkode"
+      ],
+      "Enter your second password": [
+        "Indtast din anden adgangskode"
       ],
       "Fill & copy password": [
         "Udfyld og kopiér adgangskode"
@@ -4269,6 +4368,9 @@
       "At least one email address is required": [
         "Mindst én e-mailadresse er påkrævet"
       ],
+      "Cannot contain a dot at the beginning": [
+        "Kan ikke indeholde et punktum i begyndelsen"
+      ],
       "Cannot contain a dot at the end": [
         "Kan ikke indeholde et punktum til sidst"
       ],
@@ -4372,6 +4474,9 @@
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Når de er synkroniseret, vil sletning af aliasser i ${ PASS_SHORT_APP_NAME } også slette dem i SimpleLogin."
       ],
+      "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
+        "Kun alfanumeriske små bogstaver, punktummer, bindestreger og understregningstegn er tilladt."
+      ],
       "Passphrase is required": [
         "Adgangssætning er påkrævet"
       ],
@@ -4461,6 +4566,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke længere have adgang til denne boks. Hvis du vil være med igen, skal du have en ny invitation."
+      ],
+      "Your administrator needs to create a vault for you before you can create items": [
+        "Din administrator skal oprette en boks til dig, før du kan oprette elementer."
       ],
       "Your organization does not allow creating a vault": [
         "Din organisation tillader ikke oprettelse af en boks"

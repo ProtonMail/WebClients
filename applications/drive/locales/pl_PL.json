@@ -1267,7 +1267,7 @@
         "Edytor dokumentów online"
       ],
       "Online privacy for up to 2 people": [
-        "Prywatność w sieci dla maksymalnie 2 użytkowników"
+        "Prywatność w sieci dla 2 użytkowników"
       ],
       "Online privacy for your whole family (up to 6 users)": [
         "Prywatność online dla całej rodziny (do 6 użytkowników)"
@@ -9040,6 +9040,30 @@
         "Odszyfrowanie ${ count } elementów nie powiodło się",
         "Odszyfrowanie ${ count } elementów nie powiodło się",
         "Odszyfrowanie ${ count } elementów nie powiodło się"
+      ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "Nie można usunąć ${ nbFailures } zdjęcia z albumu \"${ albumLink.name }\"",
+        "Nie można usunąć ${ nbFailures } zdjęć z albumu \"${ albumLink.name }\"",
+        "Nie można usunąć ${ nbFailures } zdjęć z albumu \"${ albumLink.name }\"",
+        "Nie można usunąć ${ nbFailures } zdjęć z albumu \"${ albumLink.name }\""
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "Nie można dodać ${ nbMainPhotosError } zdjęcia do albumu \"${ albumName }\"",
+        "Nie można dodać ${ nbMainPhotosError } zdjęć do albumu \"${ albumName }\"",
+        "Nie można dodać ${ nbMainPhotosError } zdjęć do albumu \"${ albumName }\"",
+        "Nie można dodać ${ nbMainPhotosError } zdjęcia do albumu \"${ albumName }\""
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "Dodano ${ nbMainPhotosSuccess } zdjęcie do albumu \"${ albumName }\"",
+        "Dodano ${ nbMainPhotosSuccess } zdjęcia do albumu \"${ albumName }\"",
+        "Dodano ${ nbMainPhotosSuccess } zdjęć do albumu \"${ albumName }\"",
+        "Dodano ${ nbMainPhotosSuccess } zdjęcia do albumu \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "Usunięto ${ nbSuccesses } zdjęcie z albumu \"${ albumLink.name }\"",
+        "Usunięto ${ nbSuccesses } zdjęcia z albumu \"${ albumLink.name }\"",
+        "Usunięto ${ nbSuccesses } zdjęć z albumu \"${ albumLink.name }\"",
+        "Usunięto ${ nbSuccesses } zdjęcia z albumu \"${ albumLink.name }\""
       ],
       "${ numberOfItems } item deleted": [
         "Usunięto ${ numberOfItems } element",
