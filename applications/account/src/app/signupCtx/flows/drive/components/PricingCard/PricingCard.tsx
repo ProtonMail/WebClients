@@ -250,8 +250,8 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
 
     const showCouponBanner = hasFullCheckoutDetails && checkout.couponDiscount !== 0;
     const couponBanner = showCouponBanner && (
-        <div className="pricing-card-top w-full shadow-raised bg-norm mb-1">
-            <div className="pricing-card-top-content">
+        <div className="drive-signup-pricing-card-top w-full shadow-raised bg-norm mb-1">
+            <div className="drive-signup-pricing-card-top-content">
                 <div className="flex items-center gap-2 px-8 py-4 fade-in">
                     <IcBagPercentFilled className="shrink-0 color-primary" />
                     <span className="text-semibold" data-testid="discountBanner">{c('Signup')
@@ -262,9 +262,9 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
     );
 
     return (
-        <section className={clsx('pricing-card w-full flex flex-column')}>
+        <section className={clsx('drive-signup-pricing-card w-full flex flex-column')}>
             {couponBanner}
-            <div className="pricing-card-inner fade-in w-full flex flex-column shadow-raised gap-8 py-8 bg-norm">
+            <div className="drive-signup-pricing-card-inner fade-in w-full flex flex-column shadow-raised gap-8 py-8 bg-norm">
                 <PricingHeader />
                 <PricingFeatures />
                 <PricingFooter step={step} />
