@@ -5,7 +5,7 @@ import type {
     ServiceWorkerResponse,
     WithOrigin,
 } from 'proton-pass-web/app/ServiceWorker/types';
-import { COMMIT } from 'proton-pass-web/app/config';
+import config from 'proton-pass-web/app/config';
 
 import { logger } from '@proton/pass/utils/logger';
 
@@ -60,7 +60,7 @@ export const createServiceWorkerClient = (clientID: string): ServiceWorkerClient
                 sw.send({ type: 'connect' });
 
                 sw.on('check', ({ hash }) => {
-                    if (hash !== COMMIT) {
+                    if (hash !== config.COMMIT) {
                         logger.warn(`[ServiceWorkerClient] Update detected [${hash}]`);
                         onUpdateAvailable();
                     }
