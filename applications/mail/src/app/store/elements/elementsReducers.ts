@@ -1,15 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
-import {
-    isCategoryLabel,
-    isCustomFolder,
-    isCustomLabel,
-    isSystemFolder,
-    isSystemLabel,
-} from '@proton/mail/helpers/location';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
@@ -23,6 +15,7 @@ import unique from '@proton/utils/unique';
 import { getElementContextIdentifier, parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
+import { applyLabelToMessage, removeLabelFromMessage } from '../mailbox/locationHelpers';
 import type { filterSubscriptionList } from '../newsletterSubscriptions/newsletterSubscriptionsActions';
 import { newElementsState } from './elementsSlice';
 import type {
@@ -854,8 +847,6 @@ export const labelMessagesPending = (
     >
 ) => {
     const { elements, targetLabelID, labels, folders } = action.meta.arg;
-    const isFolder = isSystemFolder(targetLabelID) || isCustomFolder(targetLabelID, folders);
-    const isCategory = isCategoryLabel(targetLabelID);
 
     elements.forEach((element) => {
         const elementState = state.elements[element.ID] as Message;
@@ -864,32 +855,7 @@ export const labelMessagesPending = (
             return;
         }
 
-        let labelIDsCopy = [...elementState.LabelIDs];
-
-        if (isFolder) {
-            if (labelIDsCopy.includes(MAILBOX_LABEL_IDS.TRASH) || labelIDsCopy.includes(MAILBOX_LABEL_IDS.SPAM)) {
-                // TODO [P3-120]: Remove auto-delete spam and trash expiration days
-            }
-
-            labelIDsCopy = labelIDsCopy.filter(
-                (labelID) => !isSystemFolder(labelID) && !isCustomFolder(labelID, folders)
-            );
-
-            // Only for trash and spam, we need to remove almost all mail and starred labels
-            if (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
-                elementState.Unread = 0; // Mark message as read
-                labelIDsCopy = labelIDsCopy.filter(
-                    (labelID) =>
-                        labelID !== MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL && // Remove almost all mail
-                        labelID !== MAILBOX_LABEL_IDS.STARRED && // Remove starred
-                        !isCustomLabel(labelID, labels) // Remove custom labels
-                );
-            }
-        } else if (isCategory) {
-            labelIDsCopy = labelIDsCopy.filter((labelID) => isCategoryLabel(labelID));
-        }
-
-        elementState.LabelIDs = [...labelIDsCopy, targetLabelID];
+        applyLabelToMessage(elementState, targetLabelID, folders, labels);
     });
 };
 
@@ -902,11 +868,6 @@ export const unlabelMessagesPending = (
     >
 ) => {
     const { elements, targetLabelID, labels } = action.meta.arg;
-    const isLabel = isSystemLabel(targetLabelID) || isCustomLabel(targetLabelID, labels);
-
-    if (!isLabel) {
-        return;
-    }
 
     elements.forEach((element) => {
         const elementState = state.elements[element.ID] as Message;
@@ -915,7 +876,7 @@ export const unlabelMessagesPending = (
             return;
         }
 
-        elementState.LabelIDs = elementState.LabelIDs.filter((labelID) => labelID !== targetLabelID);
+        removeLabelFromMessage(elementState, targetLabelID, labels);
     });
 };
 
