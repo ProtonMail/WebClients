@@ -70,3 +70,10 @@ export interface WebpackOptions {
     buildData: BuildData;
     defineWebpackConfig: ProtonConfig;
 }
+
+export interface AppConfigV2 {
+    sentry?: string;
+    sentryDesktop?: string;
+    clientType?: number;
+    clientSecret?: string;
+}
