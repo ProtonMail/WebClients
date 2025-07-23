@@ -179,7 +179,7 @@ export const getLumoConfiguration = ({ defaultPlan }: { defaultPlan?: string }):
             }
 
             return {
-                plan: PLANS.FREE,
+                plan: PLANS.LUMO,
                 cycle: CYCLE.YEARLY,
             };
         })(),
