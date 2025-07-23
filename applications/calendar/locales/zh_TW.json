@@ -853,6 +853,15 @@
       ],
       "Reconnect to Zoom": [
         "重新連接 Zoom"
+      ],
+      "Add another account": [
+        "新增其它帳號"
+      ],
+      "Help and resources": [
+        "尋求協助與資源"
+      ],
+      "Hide more benefits": [
+        "隱藏更多好處"
       ]
     },
     "action": {
@@ -914,6 +923,9 @@
       ],
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席"
       ]
     },
     "Alarm notification": {
@@ -2872,6 +2884,9 @@
       ],
       "This event was updated.": [
         "該行程已更新。"
+      ],
+      "Here's what changed:": [
+        "以下是變更內容："
       ]
     },
     "Email body for invitation (date part)": {
@@ -5505,6 +5520,9 @@
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。"
+      ],
+      "Password must have:": [
+        "密碼必須包含："
       ]
     },
     "info": {
@@ -8709,6 +8727,9 @@
       ],
       "Unblock streaming content": [
         "解除封鎖影音串流內容"
+      ],
+      "Keep passwords safe": [
+        "保護密碼字元安全"
       ]
     },
     "specialoffer: Offers": {
@@ -10176,6 +10197,9 @@
       ],
       "Your plan": [
         "您的方案"
+      ],
+      "Newsletters view": [
+        "電子報檢視"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10719,16 +10743,34 @@
       ],
       "Share passwords easily": [
         "輕鬆分享密碼"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "200 GB storage": [
+        "200 GB 儲存空間"
       ]
     },
     "anniversary_2025: Offers": {
       "${ n } month": [
         "${ n } 個月"
+      ],
+      "12 months": [
+        "12 個月"
+      ],
+      "24 months": [
+        "24 個月"
+      ],
+      "30 months": [
+        "30個月"
       ]
     },
     "b2b_trials_Action": {
       "Keep subscription": [
         "保留訂購授權"
+      ],
+      "Cancel subscription": [
+        "取消訂購授權"
       ]
     },
     "Email body for comment (comment part)": {
@@ -10767,6 +10809,16 @@
       ],
       "${ seconds } second": [
         "${ seconds } 秒"
+      ]
+    },
+    "Commander action": {
+      "Week view": [
+        "週檢視"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "加入Teams會議"
       ]
     }
   }
