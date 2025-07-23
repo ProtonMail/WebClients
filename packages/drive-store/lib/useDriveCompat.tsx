@@ -156,6 +156,9 @@ export const useDriveCompat = (): DriveCompat => {
     const getKeysForLocalStorageEncryption: () => CacheConfig | undefined = useCallback(() => {
         const key = authentication.getClientKey();
         const localId = authentication.getLocalID();
+        if (!key) {
+            throw new Error('Invalid client key');
+        }
         return { encryptionKey: key, namespace: localId };
     }, [authentication]);
 
