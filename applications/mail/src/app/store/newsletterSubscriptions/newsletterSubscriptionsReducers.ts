@@ -181,10 +181,14 @@ export const filterSubscriptionListPending = (
     const MarkAsRead = !!action.meta.arg.data.MarkAsRead && action.meta.arg.data.ApplyTo === 'All';
     const MoveToFolder = action.meta.arg.data.DestinationFolder ?? null;
 
+    // We create a fake filter ID when we apply to future emails as this action will result in a new filter
+    const FilterID = action.meta.arg.data.ApplyTo === 'All' ? 'temporaryFilterID' : undefined;
+
     updateSubscriptionState(stateValue.byId, subscriptionId, {
         UnreadMessageCount: MarkAsRead ? 0 : stateValue.byId[subscriptionId].UnreadMessageCount,
         MarkAsRead,
         MoveToFolder,
+        FilterID,
     });
 };
 
