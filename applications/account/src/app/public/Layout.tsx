@@ -73,10 +73,6 @@ const Layout = ({
 
     const theme = useTheme();
 
-    if (toApp === APPS.PROTONLUMO) {
-        toApp = undefined;
-    }
-
     const protonLogo = (
         <ProtonLogo
             color={isElectronApp && theme.information.dark ? 'invert' : undefined}
@@ -84,16 +80,31 @@ const Layout = ({
         />
     );
 
-    const protonLogoBrand = toApp ? (
-        <Logo
-            appName={toApp}
-            color={isElectronApp && theme.information.dark ? 'invert' : undefined}
-            className={clsx(onBack && 'ml-4 md:ml-0')}
-            fallback={protonLogo}
-        />
-    ) : (
-        protonLogo
-    );
+    const protonLogoBrand = (() => {
+        if (toApp === APPS.PROTONLUMO) {
+            return (
+                <Logo
+                    appName={toApp}
+                    variant="wordmark-only"
+                    className={clsx(onBack && 'ml-4 md:ml-0')}
+                    fallback={protonLogo}
+                />
+            );
+        }
+
+        if (toApp) {
+            return (
+                <Logo
+                    appName={toApp}
+                    color={isElectronApp && theme.information.dark ? 'invert' : undefined}
+                    className={clsx(onBack && 'ml-4 md:ml-0')}
+                    fallback={protonLogo}
+                />
+            );
+        }
+
+        return protonLogo;
+    })();
 
     return (
         <div

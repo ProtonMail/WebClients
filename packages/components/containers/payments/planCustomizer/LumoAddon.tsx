@@ -1,27 +1,33 @@
 import { type ReactElement, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import { type Plan } from '@proton/payments';
-import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_APP_NAME } from '@proton/shared/lib/constants';
 
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 
-const LumoAddonBanner = ({ onClick }: { onClick: () => void; price: ReactElement }) => (
+const LumoAddonBanner = ({ onClick, price }: { onClick: () => void; price: ReactElement }) => (
     <div
         className="border p-4 flex flex-column lg:flex-row gap-2 flex-nowrap items-start lg:items-center rounded-lg"
         style={{ background: 'linear-gradient(85deg, rgb(112 76 255 / 0.15) 0%, rgb(70 26 255 / 0.04) 100%)' }}
         data-testid="lumo-addon-banner"
     >
         <div className="w-full">
-            <p className="m-0 mb-1 text-lg"></p>
-            <p className="m-0 text-sm color-weak"></p>
+            <p className="m-0 mb-1 text-lg">
+                <strong className="block lg:inline">{c('collider_2025: Info').t`Add ${LUMO_APP_NAME}`}</strong>{' '}
+                {c('mail_signup_2024: Info').jt`for ${price}`}
+            </p>
+            <p className="m-0 text-sm color-weak">
+                {c('collider_2025: Info')
+                    .t`${LUMO_APP_NAME} is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.`}
+            </p>
         </div>
         <Button color="norm" shape="outline" className="shrink-0 flex items-center gap-1" pill onClick={onClick}>
             <Icon name="plus" className="shrink-0" />
-            <span data-testid="lumo-addon-banner-add-button">Add</span>
-            {/* When it's time then simply uncomment the below code and remove the add button above; */}
-            {/* <span data-testid="lumo-addon-banner-add-button">{c('Action').t`Add`}</span> */}
+            <span data-testid="lumo-addon-banner-add-button">{c('Action').t`Add`}</span>
         </Button>
     </div>
 );
@@ -53,8 +59,7 @@ const LumoAddon = ({ price, onAddLumo, value, ...rest }: LumoAddonProps) => {
         <NumberCustomiser
             label={LUMO_APP_NAME}
             value={value}
-            // tooltip={c('Info').t`${LUMO_APP_NAME} includes ${BRAND_NAME} Scribe writing assistant`}
-            tooltip={''} // when it's time then simply uncomment the above code and remove the return '';
+            tooltip={c('Info').t`${LUMO_APP_NAME} includes ${BRAND_NAME} Scribe writing assistant`}
             {...rest}
         />
     );

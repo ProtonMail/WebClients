@@ -26,7 +26,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CLIENT_TYPES, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -127,6 +127,13 @@ const getMailOptions = (): OptionItem[] => {
             title: c('wallet_signup_2024:Bug category').t`Wallet problem`,
             clientType: CLIENT_TYPES.WALLET,
             app: APPS.PROTONWALLET,
+        },
+        {
+            type: optionType,
+            value: 'Lumo problem',
+            title: c('Bug category').t`${LUMO_SHORT_APP_NAME} problem`,
+            clientType: CLIENT_TYPES.LUMO,
+            app: APPS.PROTONLUMO,
         },
         { type: labelType, value: c('Group').t`Other category` },
         { type: optionType, value: 'Feature request', title: c('Bug category').t`Feature request` },

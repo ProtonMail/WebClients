@@ -77,7 +77,9 @@ export const getExploreApps = ({
         {
             name: APPS.PROTONLUMO,
             bit: PRODUCT_BIT.LUMO,
-            description: () => '',
+            description: () => {
+                return c('collider_2025: app-switcher').t`Chat with a private AI assistant`;
+            },
         },
     ]
         .sort((a, b) => {
