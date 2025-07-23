@@ -6,7 +6,7 @@ import type {
     PrivateKeyReference,
     PublicKeyReference,
 } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS, canKeyEncryptAndDecrypt, serverTime } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
@@ -340,6 +340,10 @@ export const generateAddressKey = async <C extends KeyGenConfig | KeyGenConfigV6
         userIDs: [{ name, email }],
         ...keyGenConfig,
     });
+
+    if (!(await canKeyEncryptAndDecrypt(privateKey))) {
+        throw new Error('Unexpected key generation issue');
+    }
 
     const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase });
 
