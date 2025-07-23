@@ -6,7 +6,7 @@ import isURL from 'is-url';
 import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/features';
 import noop from '@proton/utils/noop';
 
-import * as config from './app/config';
+import config from './app/config';
 import { ARCH } from './lib/env';
 import { userAgent } from './lib/user-agent';
 import { store } from './store';
