@@ -872,7 +872,7 @@ export const labelMessagesPending = (
             }
 
             labelIDsCopy = labelIDsCopy.filter(
-                (labelID) => isSystemFolder(labelID) || isCustomFolder(labelID, folders)
+                (labelID) => !isSystemFolder(labelID) && !isCustomFolder(labelID, folders)
             );
 
             // Only for trash and spam, we need to remove almost all mail and starred labels
