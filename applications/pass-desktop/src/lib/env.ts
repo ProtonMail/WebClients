@@ -2,7 +2,7 @@ import { type PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 
-import * as config from '../app/config';
+import config from '../app/config';
 
 export const PASS_CONFIG = { ...config, APP_NAME: 'proton-pass' } as PassConfig;
 
