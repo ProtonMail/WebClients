@@ -63,7 +63,7 @@ const BreachAlertsSecurityCenter = () => {
     const api = useApi();
     const [selectedBreachID, setSelectedBreachID] = useState<string | null>(null);
     const { call } = useEventManager();
-
+    const hasAlertsEnabled = userSettings.BreachAlerts.Value === 1;
     const [sample, setSample] = useState<SampleBreach | null>(null);
     // upsellCount is the Count returned from reponse that represents the number of breaches a free user has
     const [upsellCount, setUpsellCount] = useState<number | null>(null);
@@ -84,9 +84,7 @@ const BreachAlertsSecurityCenter = () => {
         });
 
     const count = breaches.length;
-    const campaignForDWMFreeUsers = useFlag('DwmTrialFree2025');
-    const isCampaignUser = !user.isPaid && campaignForDWMFreeUsers && count > 0;
-    const hasAlertsEnabled = userSettings.BreachAlerts.Value === 1 || isCampaignUser;
+
     const fetchLeakData = async () => {
         try {
             const { Breaches, Samples, IsEligible, Count } = await api(getBreaches(true));
@@ -158,47 +156,6 @@ const BreachAlertsSecurityCenter = () => {
         return breaches.find((breach) => breach.id === selectedBreachID);
     };
 
-    const renderBreachList = () => {
-        return (
-            <>
-                <h3 className="text-rg text-bold mt-1 mb-2">
-                    {DARK_WEB_MONITORING_NAME}
-                    {canDisplayBreachNotifications && <>{unreadBreachesCount ? ` (${unreadBreachesCount})` : ''}</>}
-                </h3>
-                {count === 0 ? (
-                    <div className="drawerAppSection shadow-norm px-4 py-3 rounded-lg w-full flex flex-nowrap gap-2">
-                        <Icon name="checkmark-circle-filled" className="color-success shrink-0" alt="" />
-                        <p className="m-0 color-weak text-left flex-1 text-sm">{c('Title').t`No breaches detected`}</p>
-                    </div>
-                ) : (
-                    <div className="flex flex-column flex-nowrap gap-2 w-full">
-                        {breaches.map((breach) => {
-                            return (
-                                <BreachCard
-                                    name={breach.name}
-                                    email={breach.email}
-                                    password={breach.passwordLastChars}
-                                    key={breach.id}
-                                    onClick={() => {
-                                        if (isUnread(breach.resolvedState)) {
-                                            markAsOpened(breach);
-                                            dispatch(decreaseUnreadBreachCount());
-                                        }
-                                        setSelectedBreachID(breach.id);
-                                        openBreachModal();
-                                    }}
-                                    style={getStyle(breach.severity)}
-                                    severity={breach.severity}
-                                    unread={isUnread(breach.resolvedState)}
-                                />
-                            );
-                        })}
-                    </div>
-                )}
-            </>
-        );
-    };
-
     // translator: this learn more link is at the end of several sentences (all the same structure), like: Get notified if your password or other data was leaked from a third-party service. <Learn more>
     const learnMoreLink = (
         <Href href={getKnowledgeBaseUrl('/dark-web-monitoring')} className="inline-block">{c('Link')
@@ -221,10 +178,6 @@ const BreachAlertsSecurityCenter = () => {
                             <GenericError className="text-center">{c('Info')
                                 .t`Please try again in a few moments`}</GenericError>
                         );
-                    }
-
-                    if (isCampaignUser && count > 0) {
-                        return renderBreachList();
                     }
 
                     if (!user.isPaid && !user.hasPaidPass) {
@@ -267,7 +220,47 @@ const BreachAlertsSecurityCenter = () => {
                         );
                     }
 
-                    return renderBreachList();
+                    return (
+                        <>
+                            <h3 className="text-rg text-bold mt-1 mb-2">
+                                {DARK_WEB_MONITORING_NAME}
+                                {canDisplayBreachNotifications && (
+                                    <>{unreadBreachesCount ? ` (${unreadBreachesCount})` : ''}</>
+                                )}
+                            </h3>
+                            {count === 0 ? (
+                                <div className="drawerAppSection shadow-norm px-4 py-3 rounded-lg w-full flex flex-nowrap gap-2">
+                                    <Icon name="checkmark-circle-filled" className="color-success shrink-0" alt="" />
+                                    <p className="m-0 color-weak text-left flex-1 text-sm">{c('Title')
+                                        .t`No breaches detected`}</p>
+                                </div>
+                            ) : (
+                                <div className="flex flex-column flex-nowrap gap-2 w-full">
+                                    {breaches.map((breach) => {
+                                        return (
+                                            <BreachCard
+                                                name={breach.name}
+                                                email={breach.email}
+                                                password={breach.passwordLastChars}
+                                                key={breach.id}
+                                                onClick={() => {
+                                                    if (isUnread(breach.resolvedState)) {
+                                                        markAsOpened(breach);
+                                                        dispatch(decreaseUnreadBreachCount());
+                                                    }
+                                                    setSelectedBreachID(breach.id);
+                                                    openBreachModal();
+                                                }}
+                                                style={getStyle(breach.severity)}
+                                                severity={breach.severity}
+                                                unread={isUnread(breach.resolvedState)}
+                                            />
+                                        );
+                                    })}
+                                </div>
+                            )}
+                        </>
+                    );
                 })()}
             </div>
             {breachAlertModal.render && (
