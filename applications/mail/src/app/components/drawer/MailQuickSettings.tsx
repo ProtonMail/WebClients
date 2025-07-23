@@ -53,7 +53,9 @@ import {
     type MailSettings,
     type UserSettings,
 } from '@proton/shared/lib/interfaces';
+import { loggerManager } from '@proton/shared/lib/logger';
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
+import { useFlag } from '@proton/unleash/index';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useCanReplayOnboarding } from 'proton-mail/hooks/useCanReplayOnboarding';
@@ -94,11 +96,24 @@ const MailQuickSettings = () => {
     const [loadingViewLayout, withLoadingViewLayout] = useLoading();
     const [loadingDensity, withLoadingDensity] = useLoading();
     const [loadingComposerSize, withLoadingComposerSize] = useLoading();
-
+    const [loadingDownloadLogs, withLoadingDownloadLogs] = useLoading();
+    const collectLogs = useFlag('CollectLogs');
     const [clearBrowserDataProps, setClearBrowserDataModalOpen] = useModalState();
     const [mailDefaultHandlerProps, setDefaultHandlerModalOpen] = useModalState();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
     const [keyTransparencyDetailsModalProps, setKeyTransparencyDetailsModalOpen] = useModalState();
+
+    const handleClearBrowserData = async () => {
+        if (collectLogs) {
+            await loggerManager.clearAllLogs();
+        }
+
+        if (isElectronMail && hasInboxDesktopFeature('ClearAppModal')) {
+            void invokeInboxDesktopIPC({ type: 'clearAppData' });
+        } else {
+            setClearBrowserDataModalOpen(true);
+        }
+    };
 
     const viewLayoutOptions: QuickSettingsSelectOption[] = [
         {
@@ -420,16 +435,24 @@ const MailQuickSettings = () => {
                     }
                 >
                     <QuickSettingsButton
-                        onClick={() =>
-                            isElectronMail && hasInboxDesktopFeature('ClearAppModal')
-                                ? invokeInboxDesktopIPC({ type: 'clearAppData' })
-                                : setClearBrowserDataModalOpen(true)
-                        }
+                        onClick={handleClearBrowserData}
                         data-testid="mail-quick-settings:clear-cache-button"
                     >
                         {isElectronMail ? c('Action').t`Clear application data` : c('Action').t`Clear browser data`}
                     </QuickSettingsButton>
                 </Tooltip>
+
+                {collectLogs && (
+                    <Tooltip title={c('Info').t`Download application logs for troubleshooting`}>
+                        <QuickSettingsButton
+                            onClick={() => withLoadingDownloadLogs(loggerManager.downloadAllLogs())}
+                            data-testid="mail-quick-settings:download-logs-button"
+                            loading={loadingDownloadLogs}
+                        >
+                            {c('Action').t`Download application logs`}
+                        </QuickSettingsButton>
+                    </Tooltip>
+                )}
             </QuickSettingsButtonSection>
 
             {ElectronDefaultAppPrompt}
