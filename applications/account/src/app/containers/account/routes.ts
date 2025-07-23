@@ -83,7 +83,11 @@ export const getAccountAppRoutes = ({
 
     const isPassConsumerOrPassFamilyOrg = getIsConsumerPassPlan(organization?.PlanName);
 
-    const showStorageSection = !(isPassConsumerOrPassFamilyOrg || (isFree && app === APPS.PROTONPASS));
+    const showStorageSection = !(
+        isPassConsumerOrPassFamilyOrg ||
+        (isFree && app === APPS.PROTONPASS) ||
+        (isFree && app === APPS.PROTONLUMO)
+    );
 
     //Used to determine if a user is on a visionary plan (works for both old and new visionary plans)
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
