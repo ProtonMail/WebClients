@@ -106,11 +106,15 @@ export const createAuthService = ({
 
             const activeLocalID = authStore.getLocalID();
             const pathLocalID = getLocalIDFromPathname(history.location.pathname);
+            const validLocalID = activeLocalID === pathLocalID;
+            const validActiveSession = authStore.validSession(authStore.getSession());
 
-            /** if we have mismatch between the path localID and the in-memory
-             * one, wipe the auth store. This can happen if a user manually
-             * mutates the local path in the URL */
-            if (pathLocalID && activeLocalID !== pathLocalID) authStore.clear();
+            /** Clear auth store if URL `localID` was tampered with */
+            if (!validLocalID) authStore.clear();
+
+            /** Force lock unless: matching localID + valid session + online.
+             * Allows bypassing locks on page refresh when localID is preserved */
+            options.forceLock = !(validLocalID && validActiveSession && getOnline());
 
             const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID(sessions);
             const error = getRouteError(history.location.search);
