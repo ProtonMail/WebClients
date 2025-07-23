@@ -1,8 +1,10 @@
 import { useFolders, useLabels } from '@proton/mail/index';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import useFlag from '@proton/unleash/useFlag';
 
 import { isMessage as testIsMessage } from 'proton-mail/helpers/elements';
+import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Element } from 'proton-mail/models/element';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
@@ -16,7 +18,8 @@ export interface ApplyLocationParams {
 }
 
 export const useApplyLocation = () => {
-    const enabled = useFlag('ApplyLabelsOptimisticRefactoring');
+    const mailSettings = useMailModel('MailSettings');
+    const enabled = useFlag('ApplyLabelsOptimisticRefactoring') && mailSettings.ViewMode === VIEW_MODE.SINGLE;
     const dispatch = useMailDispatch();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
