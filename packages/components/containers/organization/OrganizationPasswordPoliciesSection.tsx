@@ -68,7 +68,6 @@ interface RadioSetting {
 }
 
 const SettingsField = ({
-    key,
     label,
     tooltip,
     name,
@@ -76,7 +75,6 @@ const SettingsField = ({
     options,
     onChange,
 }: {
-    key: string;
     label: string;
     tooltip: ReactNode;
     name: string;
@@ -84,16 +82,16 @@ const SettingsField = ({
     options: RadioSetting['options'];
     onChange: (v: PasswordPolicyState) => void;
 }) => (
-    <SettingsLayout key={key}>
+    <SettingsLayout>
         <SettingsLayoutLeft>
-            <label className="text-semibold flex items-center" id={`${key}-label`}>
+            <label className="text-semibold flex items-center" id={`${name}-label`}>
                 <span className="mr-0.5">{label}</span>
                 {tooltip && <Info title={tooltip} />}
             </label>
         </SettingsLayoutLeft>
         <SettingsLayoutRight>
             <RadioGroup
-                aria-labelledby={`${key}-label`}
+                aria-labelledby={`${name}-label`}
                 name={name}
                 onChange={onChange}
                 value={value}
