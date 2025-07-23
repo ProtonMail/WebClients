@@ -9,7 +9,9 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "lodash": "^4.17.21"
+        "idb": "^8.0.3",
+        "lodash": "^4.17.21",
+        "loglevel": "^1.9.2"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
