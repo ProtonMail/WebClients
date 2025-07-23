@@ -2,12 +2,25 @@ import type { Address } from '@proton/shared/lib/interfaces';
 
 import {
     decryptAddressKeyToken,
+    generateAddressKey,
     generateAddressKeyTokens,
     generateUserKey,
     getNewAddressKeyToken,
 } from '../../lib/keys';
 
 describe('address keys', () => {
+    it('should throw if generated key cannot decrypt', async () => {
+        await expectAsync(
+            generateAddressKey({
+                passphrase: '123',
+                keyGenConfig: {
+                    // @ts-expect-error option not declared, only needed for this test
+                    subkeys: [],
+                },
+            })
+        ).toBeRejectedWithError(/Unexpected key generation issue/);
+    });
+
     it('should generate address key tokens', async () => {
         const { privateKey } = await generateUserKey({
             passphrase: '123',
