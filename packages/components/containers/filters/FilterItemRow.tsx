@@ -76,8 +76,8 @@ function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props
         onClick: handleEdit(),
     };
     const editSieveAction: DropdownActionProps = {
-        text: c('Action').t`Edit sieve`,
-        label: c('Action').t`Edit sieve filter “${Name}”`,
+        text: c('Action').t`Edit Sieve`,
+        label: c('Action').t`Edit Sieve filter “${Name}”`,
         onClick: handleEdit('sieve'),
     };
     const applyFilterAction: DropdownActionProps = {
