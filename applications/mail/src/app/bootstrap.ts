@@ -129,19 +129,23 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const preloadPromise = loadPreload();
         loadPreloadButIgnored();
 
-        const { key: loggerKey, ID: loggerID } = await generateLoggerKey(authentication);
-        void logger.initialize({
-            encryptionKey: loggerKey,
-            appName,
-            loggerID,
-            loggerName: 'main',
-        });
         const [MainContainer, userData] = await Promise.all([
             appContainerPromise,
             userPromise,
             bootstrap.loadCrypto({ appName, unleashClient }),
             unleashPromise,
         ]);
+
+        // Initialize logger if the feature flag is enabled
+        if (unleashClient.isEnabled('CollectLogs')) {
+            const { key: loggerKey, ID: loggerID } = await generateLoggerKey(authentication);
+            void logger.initialize({
+                encryptionKey: loggerKey,
+                appName,
+                loggerID,
+                loggerName: 'main',
+            });
+        }
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
