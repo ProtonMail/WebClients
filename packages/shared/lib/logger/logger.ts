@@ -26,6 +26,11 @@ export interface LoggerOptions {
     loggerID: string;
     forceMemoryStorage?: boolean; // For testing - bypasses IndexedDB
 }
+export interface GlobalErrorHandler {
+    enable(): void;
+    disable(): void;
+    isEnabled(): boolean;
+}
 
 /**
  * The Logger class is a singleton that provides a global logging interface for the application.
@@ -58,6 +63,8 @@ export class Logger {
 
     private hasShownAuthWarning: boolean = false;
 
+    public globalErrorHandler: GlobalErrorHandler | null = null;
+
     // Direct logging methods - will be assigned after plugin setup
     debug: typeof log.debug = this.createStubMethod('debug');
 
@@ -86,6 +93,114 @@ export class Logger {
         this.loggerName = name;
         this.maxEntries = options?.maxEntries ?? DEFAULT_MAX_ENTRIES;
         this.retentionDays = options?.retentionDays ?? DEFAULT_RETENTION_DAYS;
+        // Create and enable global error handler immediately to capture errors before initialization
+        this.globalErrorHandler = this.createGlobalErrorHandler();
+        this.globalErrorHandler.enable();
+    }
+
+    private queuePendingLog(level: string, message: string, args: any[], timestamp?: number): void {
+        this.pendingLogs.push({
+            level,
+            message,
+            args,
+            timestamp: timestamp ?? Date.now(),
+        });
+        // Limit pending logs to prevent memory issues
+        if (this.pendingLogs.length > MAX_PENDING_LOGS) {
+            this.pendingLogs = this.pendingLogs.slice(-PENDING_LOGS_TRIM_SIZE);
+        }
+    }
+
+    private logOrQueue(level: string, message: string, ...args: any[]): void {
+        if (this.initialized) {
+            this.error(message, ...args);
+        } else {
+            this.queuePendingLog(level, message, args);
+        }
+    }
+
+    private extractErrorDetails(error: any): { message: string; stack?: string } {
+        if (error instanceof Error) {
+            return {
+                message: error.message,
+                stack: error.stack,
+            };
+        }
+        return {
+            message: String(error),
+            stack: undefined,
+        };
+    }
+
+    private createGlobalErrorHandler(): GlobalErrorHandler {
+        const logger = this;
+        let isEnabled = false;
+        let originalOnError: OnErrorEventHandler | null = null;
+        let originalOnUnhandledRejection: ((this: WindowEventHandlers, ev: PromiseRejectionEvent) => any) | null = null;
+
+        const isWindowAvailable = () => {
+            return typeof window !== 'undefined' && window !== null && window !== (undefined as any);
+        };
+
+        const handleError = (
+            message: string | Event,
+            source?: string,
+            lineno?: number,
+            colno?: number,
+            error?: Error
+        ) => {
+            try {
+                const errorMessage = typeof message === 'string' ? message : message.type;
+                logger.logOrQueue('error', 'Global Error Caught', errorMessage, source, lineno, colno, error?.stack);
+            } catch {
+                // Silent fail to prevent infinite loops
+            }
+            // Call original handler if it existed
+            if (originalOnError) {
+                return originalOnError.call(window, message, source, lineno, colno, error);
+            }
+            return false;
+        };
+
+        const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+            try {
+                const errorDetails = logger.extractErrorDetails(event.reason);
+                logger.logOrQueue('error', 'Unhandled Promise Rejection', errorDetails.message, errorDetails.stack);
+            } catch {
+                // Silent fail to prevent infinite loops
+            }
+            // Call original handler if it existed
+            if (originalOnUnhandledRejection) {
+                return originalOnUnhandledRejection.call(window, event);
+            }
+        };
+
+        return {
+            enable() {
+                if (isEnabled || !isWindowAvailable()) {
+                    return;
+                }
+                isEnabled = true;
+                originalOnError = window.onerror;
+                originalOnUnhandledRejection = window.onunhandledrejection;
+
+                window.onerror = handleError;
+                window.onunhandledrejection = handleUnhandledRejection;
+            },
+            disable() {
+                if (!isEnabled || !isWindowAvailable()) {
+                    return;
+                }
+                isEnabled = false;
+                window.onerror = originalOnError;
+                window.onunhandledrejection = originalOnUnhandledRejection;
+                originalOnError = null;
+                originalOnUnhandledRejection = null;
+            },
+            isEnabled() {
+                return isEnabled && isWindowAvailable();
+            },
+        };
     }
 
     private setupPersistencePlugin(): void {
@@ -138,11 +253,28 @@ export class Logger {
         const logsToProcess = [...this.pendingLogs];
         this.pendingLogs = [];
 
-        await Promise.all(
-            logsToProcess.map(({ level, message, args, timestamp }) =>
-                this.persistLogWithTimestamp(level, message, args, timestamp)
-            )
-        );
+        // Process pending logs through the proper logging methods to ensure correct console output
+        for (const { level, message, args } of logsToProcess) {
+            switch (level) {
+                case 'error':
+                    this.error(message, ...args);
+                    break;
+                case 'warn':
+                    this.warn(message, ...args);
+                    break;
+                case 'info':
+                    this.info(message, ...args);
+                    break;
+                case 'debug':
+                    this.debug(message, ...args);
+                    break;
+                case 'trace':
+                    this.trace(message, ...args);
+                    break;
+                default:
+                    this.log(message, ...args);
+            }
+        }
     }
 
     private async initializeStorage(): Promise<void> {
@@ -186,11 +318,7 @@ export class Logger {
 
         if (!this.initialized || !this.encryptionKey) {
             // Queue the log for later processing
-            this.pendingLogs.push({ level, message, args, timestamp });
-            // Limit pending logs to prevent memory issues
-            if (this.pendingLogs.length > MAX_PENDING_LOGS) {
-                this.pendingLogs = this.pendingLogs.slice(-PENDING_LOGS_TRIM_SIZE);
-            }
+            this.queuePendingLog(level, message, args, timestamp);
             return;
         }
 
@@ -225,7 +353,10 @@ export class Logger {
 
             await this.storage.store(entry);
             await this.enforceMaxEntries();
-        } catch {}
+        } catch (e) {
+            // eslint-disable-next-line no-console
+            console.warn('Error persisting log:', e);
+        }
     }
 
     private async processArgs(args: any[]): Promise<string[]> {
@@ -340,8 +471,10 @@ export class Logger {
 
             // Also clean up old logs from all other logger databases
             await this.removeOldLogsFromAllDatabases();
-        } catch {
-            // Silent fail
+        } catch (error) {
+            // Log the error for debugging purposes
+            // eslint-disable-next-line no-console
+            console.warn('Error removing old logs:', error);
         }
     }
 
@@ -385,9 +518,19 @@ export class Logger {
             return serializedLogs.join('\n');
         } catch (error) {
             // Check if this is a decryption error
-            if (error instanceof Error && (error.message.includes('decrypt') || error.name === 'OperationError')) {
+            // WebCrypto API throws DOMException for crypto operations
+            const isDecryptionError =
+                error instanceof DOMException ||
+                (error instanceof Error &&
+                    (error.name === 'OperationError' ||
+                        error.name === 'InvalidAccessError' ||
+                        error.name === 'DataError' ||
+                        // Some browsers might still include 'decrypt' in the message
+                        error.message.toLowerCase().includes('decrypt')));
+
+            if (isDecryptionError) {
                 // eslint-disable-next-line no-console
-                console.warn('Failed to decrypt logs, clearing database');
+                console.warn('Failed to decrypt logs, clearing database:', error.name);
                 await this.clearLogs(); // Delete the entire database
                 return '';
             }
@@ -427,7 +570,7 @@ export class Logger {
         try {
             const a = document.createElement('a');
             a.href = url;
-            a.download = filename || `logs-${this.loggerName}-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
+            a.download = filename || `${this.loggerName}-logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
             a.style.display = 'none';
             document.body.appendChild(a);
             a.click();
@@ -453,14 +596,14 @@ export class Logger {
     }
 
     /**
-     * Get the underlying loglevel instance for advanced usage
+     * Get the underlying loglevel instance (for advanced usage)
      */
     getLoglevelInstance(): LogLevelLogger | null {
         return this.loglevelInstance;
     }
 
     /**
-     * Get the encryption context string used as the loglevel logger name
+     * Get the encryption context as a string for debugging
      */
     getEncryptionContextString(): string | null {
         if (!this.encryptionContext) {
@@ -488,6 +631,7 @@ export class Logger {
         }
 
         this.initialized = false;
+        this.storage = null;
         this.encryptionKey = null;
         this.encryptionContext = null;
         this.pendingLogs = [];
@@ -535,24 +679,25 @@ export class Logger {
         // Store logger ID for database naming
         this.loggerID = options.loggerID;
 
+        // Use provided encryption key
+        this.encryptionKey = options.encryptionKey;
+
+        // Create encryption context
+        const loggerName = options.loggerName || this.loggerName;
+        const contextString = `${options.appName}#${loggerName}`;
+        this.encryptionContext = stringToUtf8Array(contextString);
+
+        // Create loglevel instance with unique name
+        this.loglevelInstance = log.getLogger(contextString);
+
         // Initialize storage now that we have all required parameters including loggerID
         this.storageInitialized = this.initializeStorage();
 
         // Start cleanup after storage is ready
         void this.storageInitialized.then(() => this.startCleanup());
 
-        // Use provided encryption key
-        this.encryptionKey = options.encryptionKey;
-        this.encryptionContext = stringToUtf8Array(`${options.appName}#${options.loggerName ?? this.loggerName}`);
-
-        // Use the encryptionContext (converted to string) as the loglevel logger name
-        const loglevelLoggerName = `${options.appName}#${options.loggerName ?? this.loggerName}`;
-        this.loglevelInstance = log.getLogger(loglevelLoggerName);
-
-        // Set up persistence plugin FIRST
+        // Set up persistence plugin and assign logging methods
         this.setupPersistencePlugin();
-
-        // THEN assign logging methods after plugin is set up
         this.assignLoggingMethods();
 
         this.initialized = true;
