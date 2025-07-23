@@ -63,6 +63,7 @@ export interface SubscriptionPlan
     extends Omit<Plan, 'ParentMetaPlanID' | 'PeriodEnd' | 'Pricing' | 'DefaultPricing' | 'Offers'> {
     // TODO: improve
     Offer?: 'default' | string;
+    External?: number;
 }
 
 export type BasePlansMap<T extends Plan> = {
