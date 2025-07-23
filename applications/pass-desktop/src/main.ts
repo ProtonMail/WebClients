@@ -7,7 +7,7 @@ import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { getAppUrlFromApiUrl, getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
-import * as config from './app/config';
+import config from './app/config';
 import { WINDOWS_APP_ID } from './constants';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
