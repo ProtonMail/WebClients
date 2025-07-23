@@ -232,7 +232,7 @@ export const DrawerProvider = ({
                                     keyPassword: authentication.getPassword(),
                                     persistent: authentication.getPersistent(),
                                     trusted: authentication.getTrusted(),
-                                    clientKey: authentication.getClientKey(),
+                                    clientKey: authentication.getClientKey() || '',
                                     offlineKey: authentication.getOfflineKey(),
                                     persistedSession,
                                     User: user,
