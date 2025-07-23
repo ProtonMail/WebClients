@@ -8559,6 +8559,7 @@ __metadata:
     "@sentry/browser": "npm:^7.120.3"
     "@types/jasmine": "npm:^5.1.8"
     "@types/karma-junit-reporter": "npm:^2.0.4"
+    "@types/loglevel": "npm:^1.6.3"
     "@types/node": "npm:^22.16.4"
     "@types/papaparse": "npm:^5.3.16"
     "@types/ua-parser-js": "npm:^0.7.39"
@@ -8570,6 +8571,7 @@ __metadata:
     eslint-plugin-jasmine: "npm:^4.2.2"
     file-saver: "npm:^2.0.5"
     ical.js: "npm:^1.5.0"
+    idb: "npm:^8.0.3"
     is-valid-domain: "npm:0.1.6"
     jasmine: "npm:^5.8.0"
     jasmine-core: "npm:^5.8.0"
@@ -8580,6 +8582,7 @@ __metadata:
     karma-spec-reporter: "npm:^0.0.36"
     karma-webpack: "npm:^5.0.1"
     lodash: "npm:^4.17.21"
+    loglevel: "npm:^1.9.2"
     papaparse: "npm:^5.5.3"
     playwright: "npm:^1.54.1"
     prettier: "npm:^3.6.2"
@@ -8718,8 +8721,10 @@ __metadata:
     "@proton/jest-env": "workspace:^"
     "@types/jest": "npm:^29.5.14"
     eslint: "npm:^8.57.1"
+    idb: "npm:^8.0.3"
     jest: "npm:^29.7.0"
     lodash: "npm:^4.17.21"
+    loglevel: "npm:^1.9.2"
     ts-jest: "npm:^29.4.0"
     typescript: "npm:^5.8.3"
   languageName: unknown
@@ -12976,6 +12981,15 @@ __metadata:
   version: 4.17.20
   resolution: "@types/lodash@npm:4.17.20"
   checksum: 10c0/98cdd0faae22cbb8079a01a3bb65aa8f8c41143367486c1cbf5adc83f16c9272a2a5d2c1f541f61d0d73da543c16ee1d21cf2ef86cb93cd0cc0ac3bced6dd88f
+  languageName: node
+  linkType: hard
+
+"@types/loglevel@npm:^1.6.3":
+  version: 1.6.3
+  resolution: "@types/loglevel@npm:1.6.3"
+  dependencies:
+    loglevel: "npm:*"
+  checksum: 10c0/2394d3ec67dc264fb62362ed4e03ad542947aac88b23e4ef03dd134a4598b369417ee07bede367efc806b6a52f514fe73cd8ed492d7df171bf07d1dab2846251
   languageName: node
   linkType: hard
 
@@ -29770,7 +29784,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loglevel@npm:^1.9.2":
+"loglevel@npm:*, loglevel@npm:^1.9.2":
   version: 1.9.2
   resolution: "loglevel@npm:1.9.2"
   checksum: 10c0/1e317fa4648fe0b4a4cffef6de037340592cee8547b07d4ce97a487abe9153e704b98451100c799b032c72bb89c9366d71c9fb8192ada8703269263ae77acdc7
