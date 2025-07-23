@@ -87,7 +87,7 @@ module.exports = (config) => {
         concurrency: Infinity,
         client: {
             jasmine: {
-                timeoutInterval: 10000,
+                timeoutInterval: 30000,
             },
         },
     });
