@@ -8,6 +8,7 @@ import type { EditorControllerInterface } from '@proton/docs-core'
 import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import clsx from '@proton/utils/clsx'
+import { ConnectionCloseReason } from '@proton/docs-proto'
 
 export function useDebug() {
   const [debug] = useLocalState(false, DOCS_DEBUG_KEY)
@@ -44,7 +45,8 @@ export function DebugMenu({ docController, editorController, documentState, docu
   const closeConnection = async () => {
     const { nodeMeta } = documentState.getProperty('entitlements')
     if (nodeMeta) {
-      void application.websocketService.closeConnection(nodeMeta)
+      const code = parseInt(prompt('Close code (optional)') || ConnectionCloseReason.CODES.NORMAL_CLOSURE.toString())
+      void application.websocketService.closeConnection(nodeMeta, code)
     }
   }
 
