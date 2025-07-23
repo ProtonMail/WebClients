@@ -18,7 +18,7 @@ import { telemetry } from '@proton/shared/lib/telemetry';
 
 import PrivateApp from './PrivateApp';
 import PublicApp, { publicRoutes } from './PublicApp';
-import * as config from './config';
+import config from './config';
 import locales from './locales';
 import { extendStore, setupStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
