@@ -20,10 +20,12 @@ config.ts
 !applications/calendar/src/app/config.ts
 !applications/docs/src/app/config.ts
 !applications/docs-editor/src/app/config.ts
-!applications/mail/src/app/config.ts
 !applications/drive/app/config.ts
+!applications/mail/src/app/config.ts
+!applications/pass/src/app/config.ts
 !applications/storybook/src/app/config.ts
 !packages/drive-store/config.ts
+!applications/pass/src/app/config.ts
 tsconfig.tsbuildinfo
 .yarn/*
 !.yarn/patches
