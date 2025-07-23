@@ -17,6 +17,7 @@ import { categoriesThunk, contactEmailsThunk, mailSettingsThunk } from '@proton/
 import createApi from '@proton/shared/lib/api/createApi';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { generateLoggerKey } from '@proton/shared/lib/authentication/loggerKey';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { handleInboxDesktopIPCPostMessages } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -25,6 +26,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import logger from '@proton/shared/lib/logger';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
@@ -127,6 +129,13 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const preloadPromise = loadPreload();
         loadPreloadButIgnored();
 
+        const { key: loggerKey, ID: loggerID } = await generateLoggerKey(authentication);
+        void logger.initialize({
+            encryptionKey: loggerKey,
+            appName,
+            loggerID,
+            loggerName: 'main',
+        });
         const [MainContainer, userData] = await Promise.all([
             appContainerPromise,
             userPromise,
