@@ -116,10 +116,6 @@ const getLumoPlusFeatures = () => {
             text: c('collider_2025: Info').t`Access to advanced AI models`,
             included: true,
         },
-        {
-            text: c('collider_2025: Info').t`Priority user support`,
-            included: true,
-        },
     ];
 };
 
