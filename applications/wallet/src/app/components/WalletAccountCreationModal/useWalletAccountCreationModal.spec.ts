@@ -93,12 +93,12 @@ describe('useWalletAccountCreationModal', () => {
             WasmScriptType.Taproot
         );
 
-        const derivationPath: WasmDerivationPath = mockCreateWalletAccount.mock.lastCall[1];
+        const derivationPath: WasmDerivationPath = mockCreateWalletAccount.mock.lastCall?.[1];
         // 86 for taproot script type, 1 for network, 2 for index
         expect(derivationPath.toString()).toBe("86'/1'/2'");
 
         // decrypted label
-        const decrypted = await decryptWalletData([mockCreateWalletAccount.mock.lastCall[2]], key);
+        const decrypted = await decryptWalletData([mockCreateWalletAccount.mock.lastCall?.[2]], key);
         expect(decrypted).toStrictEqual(['My test wallet account']);
 
         expect(mockCreateNotification).toHaveBeenCalledTimes(1);

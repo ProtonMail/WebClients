@@ -5,21 +5,24 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
     plugins: [react(), wasm()],
-    css: {
-        preprocessorOptions: {
-            scss: {
-                api: 'modern',
-            },
-        },
-    },
     test: {
         globals: true,
         environment: 'happy-dom',
-        poolOptions: {
-            threads: { singleThread: true },
-        },
-        reporters: ['basic'],
+        reporters: [
+            [
+                'default',
+                {
+                    summary: false,
+                },
+            ],
+        ],
         setupFiles: './vitest.setup.ts',
+        coverage: {
+            provider: 'v8',
+            reporter: ['text-summary', 'json', 'clover', 'html', 'cobertura'],
+            include: ['src/**/*.{js,jsx,ts,tsx}'],
+            exclude: ['**/*.d.ts', '**/*.test.ts', '**/*.test.tsx'],
+        },
         maxWorkers: 1,
     },
     resolve: {

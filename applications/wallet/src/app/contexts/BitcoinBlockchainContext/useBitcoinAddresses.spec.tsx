@@ -215,7 +215,10 @@ describe('useBitcoinAddresses', () => {
             );
 
             expect(mockAddBitcoinAddresses).toHaveBeenCalledTimes(1);
-            const addressPayload = mockAddBitcoinAddresses.mock.lastCall[2][0];
+            const addressPayload = mockAddBitcoinAddresses.mock.lastCall?.[2]?.[0];
+            expect(addressPayload).toBeDefined();
+            expect(addressPayload).toHaveLength(3);
+
             expect(addressPayload[0].Data.BitcoinAddressIndex).toBe(1);
             expect(addressPayload[0].Data.BitcoinAddress).toBe('tb1qm3qzhvwfj3lycdxjyrd9ll8u5v0m8yd20xfmld');
 
