@@ -175,9 +175,17 @@ export const createFieldHandles = ({
             field.autofilled = options?.type ?? field.fieldType;
         },
 
-        /* if an icon is already attached recycle it */
+        /** Attaches icon to field with safeguard to detach from other fields.
+         * Note: Ideally handled by dropdown/field event lifecycle. */
         attachIcon: withContext((ctx, { count }) => {
             if (!ctx) return;
+
+            if (!field.icon) {
+                ctx.service.formManager
+                    .getTrackedForms()
+                    .forEach((form) => form.getFields().forEach((field) => field.detachIcon()));
+            }
+
             field.icon = field.icon ?? createFieldIconHandle({ field, elements: ctx.elements });
             field.icon.setCount(count);
 
