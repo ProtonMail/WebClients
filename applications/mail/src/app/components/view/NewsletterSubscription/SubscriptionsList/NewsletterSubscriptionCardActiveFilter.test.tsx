@@ -39,10 +39,23 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
         expect(markAsReadFilter).toHaveTextContent('Active filter: Mark all messages as read');
     });
 
-    it('should show the MoveToFolder filter when the subscription is moved to trash', async () => {
+    it('should not show the MoveToFolder filter when only current messages are moved to trash', async () => {
         const subscription = {
             ...activeSubscription,
             MoveToFolder: MAILBOX_LABEL_IDS.TRASH,
+        };
+
+        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+
+        const moveToFolderFilter = screen.queryByTestId('subscription-filter-wrapper');
+        expect(moveToFolderFilter).not.toBeInTheDocument();
+    });
+
+    it('should not show the MoveToFolder filter when future messages are moved to trash', async () => {
+        const subscription = {
+            ...activeSubscription,
+            MoveToFolder: MAILBOX_LABEL_IDS.TRASH,
+            FilterID: 'temporaryFilterID',
         };
 
         await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
@@ -52,10 +65,23 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
         expect(moveToFolderFilter).toHaveTextContent('Active filter: Move all messages to Trash');
     });
 
-    it('should show the MoveToFolder filter when the subscription is moved to archive', async () => {
+    it('should not show the MoveToFolder filter when only current messages are moved to archive', async () => {
         const subscription = {
             ...activeSubscription,
             MoveToFolder: MAILBOX_LABEL_IDS.ARCHIVE,
+        };
+
+        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+
+        const moveToFolderFilter = screen.queryByTestId('subscription-filter-wrapper');
+        expect(moveToFolderFilter).not.toBeInTheDocument();
+    });
+
+    it('should not show the MoveToFolder filter when future messages are moved to archive', async () => {
+        const subscription = {
+            ...activeSubscription,
+            MoveToFolder: MAILBOX_LABEL_IDS.ARCHIVE,
+            FilterID: 'temporaryFilterID',
         };
 
         await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
@@ -65,10 +91,23 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
         expect(moveToFolderFilter).toHaveTextContent('Active filter: Move all messages to Archive');
     });
 
-    it('should show the MoveToFolder filter when the subscription is moved to a custom folder', async () => {
+    it('should not show the MoveToFolder filter when the current messages are moved to a custom folder', async () => {
         const subscription = {
             ...activeSubscription,
             MoveToFolder: 'custom-folder-1',
+        };
+
+        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+
+        const moveToFolderFilter = screen.queryByTestId('subscription-filter-wrapper');
+        expect(moveToFolderFilter).not.toBeInTheDocument();
+    });
+
+    it('should show the MoveToFolder filter when the future messages are moved to a custom folder', async () => {
+        const subscription = {
+            ...activeSubscription,
+            MoveToFolder: 'custom-folder-1',
+            FilterID: 'temporaryFilterID',
         };
 
         await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
