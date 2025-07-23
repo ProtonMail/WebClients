@@ -196,6 +196,16 @@ const AccessControlSettingsSection = () => {
                     targetProducts={[Product.Wallet]}
                     showSSOBadge={!appSupportsSSO(APPS.PROTONWALLET) && hasSsoConfig}
                 />
+
+                {lumoInAccessControl && (
+                    <AccessControlItem
+                        title={LUMO_APP_NAME}
+                        description={c('Info').t`Private AI assistant`}
+                        logo={<Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={8} />}
+                        targetProducts={[Product.Lumo]}
+                        showSSOBadge={!appSupportsSSO(APPS.PROTONLUMO) && hasSsoConfig}
+                    />
+                )}
             </div>
         </SettingsSectionWide>
     );
