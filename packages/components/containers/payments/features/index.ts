@@ -8,6 +8,7 @@ import { getCalendarFeatures } from './calendar';
 import { getDriveFeatures } from './drive';
 import { getHighlightFeatures } from './highlights';
 import type { PlanCardFeature } from './interface';
+import { getLumoFeatures } from './lumo';
 import { getMailFeatures } from './mail';
 import { getPassFeatures } from './pass';
 import { getVPNFeatures } from './vpn';
@@ -30,6 +31,7 @@ export const getAllFeatures = ({
         pass: getPassFeatures(),
         vpn: getVPNFeatures(serversCount),
         wallet: getWalletFeatures(),
+        lumo: getLumoFeatures(),
         team: getTeamManagementFeatures(),
         support: getSupportFeatures(),
     } as const;
