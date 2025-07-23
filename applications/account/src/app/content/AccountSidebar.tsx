@@ -13,7 +13,7 @@ import {
     useAccountSpotlights,
 } from '@proton/components';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
@@ -36,7 +36,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONPASS]: c('Navigation').t`Pass vaults`,
         [APPS.PROTONDOCS]: c('Navigation').t`Documents`,
         [APPS.PROTONWALLET]: c('wallet_signup_2024:Navigation').t`Wallet`,
-        [APPS.PROTONLUMO]: LUMO_SHORT_APP_NAME,
+        [APPS.PROTONLUMO]: c('collider_2025: Navigation').t`Conversations`,
     };
     const backButtonCopyTitle = {
         [APPS.PROTONMAIL]: c('Navigation').t`Back to inbox`,
@@ -45,7 +45,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONPASS]: c('Navigation').t`Back to vaults`,
         [APPS.PROTONDOCS]: c('Navigation').t`Back to documents`,
         [APPS.PROTONWALLET]: c('wallet_signup_2024:Navigation').t`Back to wallet`,
-        [APPS.PROTONLUMO]: c('collider_2025: Navigation').t`Back to ${LUMO_SHORT_APP_NAME}`,
+        [APPS.PROTONLUMO]: c('collider_2025: Navigation').t`Back to conversations`,
     };
 
     const backButtonText = backButtonCopy[app as keyof typeof backButtonCopy];

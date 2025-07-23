@@ -7,6 +7,7 @@ import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import LumoLogo from '@proton/components/components/logo/LumoLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
@@ -270,6 +271,14 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.wallet, audience)} />
         </div>
     );
+    const lumoFeatures = (
+        <div data-testid={`${planName}-lumo`}>
+            <h3>
+                <LumoLogo />
+            </h3>
+            <PlanCardFeatureList features={getFeatureDefinitions(planName, features.lumo, audience)} />
+        </div>
+    );
     const teamFeatures = audience === Audience.B2B && planName !== PLANS.FREE && (
         <div>
             <h3 className="h4 text-bold">{c('new_plans: heading').t`Team management`}</h3>
@@ -293,6 +302,7 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
                 {driveFeatures}
                 {vpnFeatures}
                 {walletFeatures}
+                {lumoFeatures}
                 {teamFeatures}
                 {supportFeatures}
             </>
@@ -309,6 +319,7 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
                 {driveFeatures}
                 {passFeatures}
                 {walletFeatures}
+                {lumoFeatures}
                 {teamFeatures}
                 {supportFeatures}
             </>
@@ -325,6 +336,7 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
                 {vpnFeatures}
                 {passFeatures}
                 {walletFeatures}
+                {lumoFeatures}
                 {teamFeatures}
                 {supportFeatures}
             </>
@@ -335,6 +347,24 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
         return (
             <>
                 {highlightFeatures}
+                {walletFeatures}
+                {mailFeatures}
+                {calendarFeatures}
+                {driveFeatures}
+                {vpnFeatures}
+                {passFeatures}
+                {lumoFeatures}
+                {teamFeatures}
+                {supportFeatures}
+            </>
+        );
+    }
+
+    if (app === APPS.PROTONLUMO) {
+        return (
+            <>
+                {highlightFeatures}
+                {lumoFeatures}
                 {walletFeatures}
                 {mailFeatures}
                 {calendarFeatures}
@@ -356,6 +386,8 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
             {vpnFeatures}
             {passFeatures}
             {walletFeatures}
+
+            {lumoFeatures}
             {teamFeatures}
             {supportFeatures}
         </>

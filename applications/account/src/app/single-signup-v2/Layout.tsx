@@ -47,7 +47,6 @@ const Layout = ({
                 'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative signup-v2-wrapper',
                 theme.background === 'bf' && 'signup-v2-bg--bf2023',
                 theme.background === 'b2b' && 'signup-v2-bg--b2b',
-                theme.background === 'lumo' && 'signup-v2-bg--lumo',
                 theme.layout.className,
                 !theme.background && 'signup-v2-bg',
                 theme.intent && `signup-v2-bg--${theme.intent.replace('proton-', '')}`,
