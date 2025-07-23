@@ -92,7 +92,7 @@ export const NewsletterSubscriptionCardActiveFilter = ({ subscription }: PropsWi
 
     const boldActive = <b className="text-semibold" key="active-filter">{c('Label').t`Active filter:`}</b>;
 
-    if (subscription.MoveToFolder) {
+    if (subscription.MoveToFolder && subscription.FilterID) {
         const folderName = getSubscriptionMoveToFolderName(folders, subscription.MoveToFolder);
         if (folderName) {
             const boldFolderName = (
