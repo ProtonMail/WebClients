@@ -1487,6 +1487,24 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Add another account": [
+        "新增其它帳號"
+      ],
+      "Deleting label": [
+        "刪除標籤"
+      ],
+      "Help and resources": [
+        "尋求協助與資源"
+      ],
+      "Hide more benefits": [
+        "隱藏更多好處"
+      ],
+      "Move to Archive": [
+        "移至「封存」"
+      ],
+      "Stop marking as read": [
+        "停止標記為已讀"
       ]
     },
     "action": {
@@ -1548,6 +1566,9 @@
       ],
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席"
       ]
     },
     "Alert": {
@@ -1624,6 +1645,9 @@
       ],
       "Share passwords easily": [
         "輕鬆分享密碼"
+      ],
+      "200 GB storage": [
+        "200 GB 儲存空間"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1712,6 +1736,9 @@
     "b2b_trials_Action": {
       "Keep subscription": [
         "保留訂購授權"
+      ],
+      "Cancel subscription": [
+        "取消訂購授權"
       ]
     },
     "bf2023: Deal details": {
@@ -3890,6 +3917,9 @@
       ],
       "This event was updated.": [
         "該行程已更新。"
+      ],
+      "Here's what changed:": [
+        "以下是變更內容："
       ]
     },
     "Email body for invitation (date part)": {
@@ -4556,6 +4586,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "Wrong password": [
+        "錯誤的密碼字元"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7855,6 +7888,21 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "您的訂購授權將於 ${ renewalTime } 自動更新。"
+      ],
+      "Mark all as read": [
+        "全部標記為已讀"
+      ],
+      "No messages to show": [
+        "沒有訊息可供顯示"
+      ],
+      "Password must have:": [
+        "密碼必須包含："
+      ],
+      "Preferences updated": [
+        "偏好設定已更新"
+      ],
+      "Selection pane": [
+        "選擇窗格"
       ]
     },
     "info": {
@@ -8741,6 +8789,18 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "Active filter:": [
+        "作用中篩選器:"
+      ],
+      "Marked as read": [
+        "標記為已讀取"
+      ],
+      "Moved to Archive": [
+        "已移至「封存」"
+      ],
+      "Moved to Trash": [
+        "已丟進垃圾桶"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11654,6 +11714,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升級至${ pricingTitle }"
+      ],
+      "Keep passwords safe": [
+        "保護密碼字元安全"
       ]
     },
     "specialoffer: Offers": {
@@ -13588,6 +13651,12 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Newsletters view": [
+        "電子報檢視"
+      ],
+      "Trash all messages?": [
+        "將所有訊息移至垃圾桶？"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14109,6 +14178,11 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "Teams": {
+      "Join Teams meeting": [
+        "加入Teams會議"
       ]
     }
   }
