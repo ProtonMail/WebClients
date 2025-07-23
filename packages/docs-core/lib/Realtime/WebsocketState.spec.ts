@@ -45,52 +45,56 @@ describe('WebsocketState', () => {
     })
   })
 
-  describe('exponential backoff', () => {
+  describe('reconnection delay', () => {
+    it('should be 0 if explicitly skipping delay', () => {
+      expect(state.getReconnectDelayWithoutJitter(true)).toBe(0)
+    })
+
     it('should have minimum 2 second backoff if no attempts', () => {
-      expect(state.getBackoffWithoutJitter()).toBe(2000)
+      expect(state.getReconnectDelayWithoutJitter(false)).toBe(2000)
     })
 
     it('should return backoff time and limit to max backoff time', () => {
       state.didClose()
-      expect(state.getBackoffWithoutJitter()).toBe(2000)
+      expect(state.getReconnectDelayWithoutJitter(false)).toBe(2000)
 
       state.didClose()
-      expect(state.getBackoffWithoutJitter()).toBe(4000)
+      expect(state.getReconnectDelayWithoutJitter(false)).toBe(4000)
 
       state.didClose()
-      expect(state.getBackoffWithoutJitter()).toBe(8000)
+      expect(state.getReconnectDelayWithoutJitter(false)).toBe(8000)
 
       state.didClose()
-      expect(state.getBackoffWithoutJitter()).toBe(16000)
+      expect(state.getReconnectDelayWithoutJitter(false)).toBe(16000)
 
       state.didClose()
-      expect(state.getBackoffWithoutJitter()).toBe(32000)
+      expect(state.getReconnectDelayWithoutJitter(false)).toBe(32000)
 
       state.didClose()
-      expect(state.getBackoffWithoutJitter()).toBe(32000)
+      expect(state.getReconnectDelayWithoutJitter(false)).toBe(32000)
     })
 
     it('should reset attempts', () => {
       state.didClose()
-      expect(state.getBackoffWithoutJitter()).toBe(2000)
+      expect(state.getReconnectDelayWithoutJitter(false)).toBe(2000)
 
       state.didClose()
-      expect(state.getBackoffWithoutJitter()).toBe(4000)
+      expect(state.getReconnectDelayWithoutJitter(false)).toBe(4000)
 
       state.resetAttempts()
-      expect(state.getBackoffWithoutJitter()).toBe(2000)
+      expect(state.getReconnectDelayWithoutJitter(false)).toBe(2000)
     })
 
     it('should get backoff with jitter', () => {
       state.getJitterFactor = jest.fn().mockReturnValue(1)
 
       state.didClose()
-      expect(state.getBackoff()).toBe(2000)
+      expect(state.getReconnectDelay()).toBe(2000)
 
       state.getJitterFactor = jest.fn().mockReturnValue(1.5)
 
       state.didClose()
-      expect(state.getBackoff()).toBe(6000)
+      expect(state.getReconnectDelay()).toBe(6000)
     })
   })
 })
