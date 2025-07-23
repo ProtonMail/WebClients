@@ -188,7 +188,7 @@ const SidebarItem = ({
                 to={link}
                 isActive={(match, location) => {
                     if (link === '/inbox') {
-                        return CATEGORY_LABELS_TO_ROUTE_SET.has(location.pathname);
+                        return CATEGORY_LABELS_TO_ROUTE_SET.has(location.pathname) || location.pathname === '/inbox';
                     }
                     return !!match;
                 }}
