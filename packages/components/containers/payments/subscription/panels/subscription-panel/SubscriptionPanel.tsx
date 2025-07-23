@@ -43,6 +43,7 @@ import percentage from '@proton/utils/percentage';
 
 import { getBasicFeatures, getVersionHistory } from '../../../features/drive';
 import { getSentinel, getSupport } from '../../../features/highlights';
+import { getLumoFreeFeatures, getLumoPlusFeatures } from '../../../features/lumo';
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
@@ -169,6 +170,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         serverText,
         maxVPNDevicesText,
         writingAssistantText,
+        lumoText,
     } = getSubscriptionPanelText(user, organization, addresses, subscription);
 
     const getVpnPlusItems = (): Item[] => {
@@ -302,13 +304,20 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         );
     };
 
-    const getLumo = () => {
-        const items: Item[] = [];
-
+    const getLumoFree = () => {
         return (
             <StripedList alternate={alternate}>
                 {storageItem}
-                <SubscriptionItems user={user} items={items} />
+                <SubscriptionItems user={user} items={getLumoFreeFeatures()} />
+            </StripedList>
+        );
+    };
+
+    const getLumoPlus = () => {
+        return (
+            <StripedList alternate={alternate}>
+                {storageItem}
+                <SubscriptionItems user={user} items={getLumoPlusFeatures()} />
             </StripedList>
         );
     };
@@ -408,6 +417,15 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                     actionElement,
                 };
             })(),
+            (() => {
+                if (!lumoText) {
+                    return false;
+                }
+                return {
+                    icon: 'speech-bubble',
+                    text: lumoText,
+                };
+            })(),
         ];
 
         return (
@@ -502,7 +520,10 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                         return getWalletAppWalletPlus();
                     }
                     if (hasLumo(subscription)) {
-                        return getLumo();
+                        return getLumoPlus();
+                    }
+                    if (user.isFree && app === APPS.PROTONLUMO) {
+                        return getLumoFree();
                     }
                     if (hasDriveBusiness(subscription)) {
                         return getDriveAppB2B();
