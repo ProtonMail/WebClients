@@ -65,6 +65,12 @@ export class Logger {
 
     public globalErrorHandler: GlobalErrorHandler | null = null;
 
+    private cachedLogs: string | null = null;
+
+    private cacheInvalidated: boolean = true;
+
+    private preCachingPromise: Promise<void> | null = null;
+
     // Direct logging methods - will be assigned after plugin setup
     debug: typeof log.debug = this.createStubMethod('debug');
 
@@ -353,6 +359,9 @@ export class Logger {
 
             await this.storage.store(entry);
             await this.enforceMaxEntries();
+
+            // Invalidate cache since new log was added
+            this.cacheInvalidated = true;
         } catch (e) {
             // eslint-disable-next-line no-console
             console.warn('Error persisting log:', e);
@@ -541,6 +550,48 @@ export class Logger {
         }
     }
 
+    async preCacheLogs(): Promise<void> {
+        if (!this.initialized || this.preCachingPromise) {
+            return;
+        }
+
+        this.preCachingPromise = this.performPreCaching();
+        await this.preCachingPromise;
+        this.preCachingPromise = null;
+    }
+
+    private async performPreCaching(): Promise<void> {
+        try {
+            const logs = await this.getLogs();
+            this.cachedLogs = logs;
+            this.cacheInvalidated = false;
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.warn(`[${this.loggerName}] Error pre-caching logs:`, error);
+            this.cachedLogs = null;
+        }
+    }
+
+    async getCachedLogs(): Promise<string> {
+        if (!this.initialized) {
+            return '';
+        }
+
+        // If cache is invalid or null, we need to refresh it
+        if (this.cacheInvalidated || this.cachedLogs === null) {
+            // If pre-caching is already in progress, wait for it to complete
+            if (this.preCachingPromise) {
+                await this.preCachingPromise;
+            } else {
+                // Otherwise, just get logs directly (no separate pre-caching)
+                this.cachedLogs = await this.getLogs();
+                this.cacheInvalidated = false;
+            }
+        }
+
+        return this.cachedLogs || '';
+    }
+
     async clearLogs(): Promise<void> {
         if (!this.storageInitialized) {
             return;
@@ -556,6 +607,10 @@ export class Logger {
             this.storage = null;
             this.storageInitialized = this.initializeStorage();
             await this.storageInitialized;
+
+            // Clear cache since logs were deleted
+            this.cachedLogs = null;
+            this.cacheInvalidated = true;
         } catch (error) {
             // eslint-disable-next-line no-console
             console.warn(`Failed to clear logs for logger ${this.loggerName}:`, error);
@@ -563,7 +618,8 @@ export class Logger {
     }
 
     async downloadLogs(filename?: string): Promise<void> {
-        const logs = await this.getLogs();
+        const logs = await this.getCachedLogs();
+
         const blob = new Blob([logs], { type: 'text/plain' });
         const url = URL.createObjectURL(blob);
 
@@ -637,6 +693,9 @@ export class Logger {
         this.pendingLogs = [];
         this.storageInitialized = null;
         this.loglevelInstance = null;
+        this.cachedLogs = null;
+        this.cacheInvalidated = true;
+        this.preCachingPromise = null;
     }
 
     private createStubMethod(level: string) {
@@ -773,6 +832,37 @@ class LoggerManager {
     }
 
     /**
+     * Pre-cache logs from all logger instances
+     */
+    public async preCacheAllLogs(): Promise<void> {
+        const precachePromises = Array.from(this.loggers.values())
+            .filter((logger) => logger.isInitialized())
+            .map((logger) => logger.preCacheLogs());
+
+        await Promise.all(precachePromises);
+    }
+
+    /**
+     * Get cached logs from all logger instances combined
+     */
+    public async getAllCachedLogs(): Promise<string> {
+        const allLogs: string[] = [];
+
+        for (const logger of Array.from(this.loggers.values())) {
+            if (logger.isInitialized()) {
+                const logs = await logger.getCachedLogs();
+                if (logs.trim()) {
+                    allLogs.push(
+                        `=== Logger: ${logger.getName()} (${logger.getEncryptionContextString()}) ===\n${logs}`
+                    );
+                }
+            }
+        }
+
+        return allLogs.join('\n\n');
+    }
+
+    /**
      * Clear logs from all logger instances
      */
     public async clearAllLogs(): Promise<void> {
@@ -786,7 +876,9 @@ class LoggerManager {
      * Download combined logs from all instances
      */
     public async downloadAllLogs(filename?: string): Promise<void> {
-        const logs = await this.getAllLogs();
+        // Simply get cached logs - this will handle waiting for any ongoing pre-caching
+        const logs = await this.getAllCachedLogs();
+
         const blob = new Blob([logs], { type: 'text/plain' });
         const url = URL.createObjectURL(blob);
 
