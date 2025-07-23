@@ -50,7 +50,7 @@ describe('useTransactionNoteModal', () => {
         expect(mockedUpdateWalletTransactionLabel).toHaveBeenCalledTimes(1);
         expect(mockedUpdateWalletTransactionLabel).toHaveBeenCalledWith('9', '99', '999', expect.any(String));
 
-        const label = await decryptWalletData([mockedUpdateWalletTransactionLabel.mock.lastCall[3]], key);
+        const label = await decryptWalletData([mockedUpdateWalletTransactionLabel.mock.lastCall?.[3]], key);
         expect(label).toStrictEqual(['My updated test label']);
     });
 });
