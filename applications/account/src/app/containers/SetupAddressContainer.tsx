@@ -198,9 +198,8 @@ const SetupAddressContainer = () => {
             }
 
             const hash = location.hash.slice(1);
-            const blob = hash
-                ? await getDecryptedSetupBlob(authentication.getClientKey(), hash).catch(noop)
-                : undefined;
+            const clientKey = authentication.getClientKey();
+            const blob = hash && clientKey ? await getDecryptedSetupBlob(clientKey, hash).catch(noop) : undefined;
 
             if (hash) {
                 history.replace({ ...location, hash: '' });
