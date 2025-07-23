@@ -251,6 +251,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
                         targetLabelID: labelID,
                         removeLabel,
                         createFilters: always,
+                        showSuccessNotification: false,
                     });
                 })
             );
@@ -261,9 +262,12 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
                         elements,
                         targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         createFilters: always,
+                        showSuccessNotification: false,
                     })
                 );
             }
+
+            // TODO: Show success notification
         } else {
             promises.push(
                 applyLabels({
