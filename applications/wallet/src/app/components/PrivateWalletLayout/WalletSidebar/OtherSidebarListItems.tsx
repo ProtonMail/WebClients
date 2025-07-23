@@ -27,7 +27,7 @@ import { hasBundle, hasBundlePro, hasBundlePro2024, hasDuo, hasFamily } from '@p
 import { useDispatch } from '@proton/redux-shared-store';
 import clsx from '@proton/utils/clsx';
 
-import { APP_NAME } from '../../../config';
+import config from '../../../config';
 
 interface Props {
     label: string;
@@ -182,7 +182,7 @@ export const OtherSidebarListItems = () => {
                                 data-testid="wallet-sidebar:security"
                                 label={securityLabel}
                             >
-                                <SettingsLink path="/" app={APP_NAME} />
+                                <SettingsLink path="/" app={config.APP_NAME} />
                             </SidebarItemContent>
                         </SidebarListItem>
                     </ul>
