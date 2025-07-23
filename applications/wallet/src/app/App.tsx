@@ -42,7 +42,7 @@ import { isWasmSupported } from '@proton/wallet/utils/wasm';
 
 import { type bootstrapApp } from './bootstrap';
 import { WalletThemeProvider } from './components/Layout/Theme/WalletThemeProvider';
-import * as config from './config';
+import config from './config';
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, Title, Filler);
 
