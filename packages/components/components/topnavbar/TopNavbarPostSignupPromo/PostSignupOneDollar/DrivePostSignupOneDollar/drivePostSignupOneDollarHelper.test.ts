@@ -9,11 +9,11 @@ const protonConfig = { APP_NAME: 'proton-drive' } as unknown as ProtonConfig;
 
 describe('Drive post signup one dollar eligibility', () => {
     describe('Account created after the release', () => {
-        it('should be eligible, account 7 days old', () => {
+        it('should be eligible, account 3 days old', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
                 ProductUsedSpace: { Drive: 0 },
             } as unknown as UserModel;
 
@@ -29,11 +29,11 @@ describe('Drive post signup one dollar eligibility', () => {
             ).toBeTruthy();
         });
 
-        it('should not be be eligible, account 7 days old but no file uploaded', () => {
+        it('should not be be eligible, account 3 days old but no file uploaded', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
                 ProductUsedSpace: { Drive: 0 },
             } as unknown as UserModel;
 
@@ -49,11 +49,11 @@ describe('Drive post signup one dollar eligibility', () => {
             ).toBeFalsy();
         });
 
-        it('should not be eligible, account 6 days old', () => {
+        it('should not be eligible, account 2 days old', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 6).getTime() / 1000,
+                CreateTime: subDays(today, 2).getTime() / 1000,
                 ProductUsedSpace: { Drive: 0 },
             } as unknown as UserModel;
 
@@ -115,7 +115,7 @@ describe('Drive post signup one dollar eligibility', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
                 ProductUsedSpace: { Drive: 0 },
             } as unknown as UserModel;
 
@@ -139,7 +139,7 @@ describe('Drive post signup one dollar eligibility', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
                 ProductUsedSpace: { Drive: 0 },
             } as unknown as UserModel;
 
@@ -163,7 +163,7 @@ describe('Drive post signup one dollar eligibility', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
                 ProductUsedSpace: { Drive: 0 },
             } as unknown as UserModel;
 
@@ -187,7 +187,7 @@ describe('Drive post signup one dollar eligibility', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
                 ProductUsedSpace: { Drive: 0 },
             } as unknown as UserModel;
 
@@ -335,7 +335,7 @@ describe('Drive post signup one dollar eligibility', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
                 ProductUsedSpace: { Drive: 0 },
             } as unknown as UserModel;
 
