@@ -17,7 +17,7 @@ import { getAllMembers, updateQuota, updateVPN } from '@proton/shared/lib/api/me
 import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import { queryCheckEmailAvailability, queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
+import { queryCheckEmailAvailability, queryCheckUsernameAvailability, queryUnlock } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
@@ -215,6 +215,9 @@ export const handleSetPassword = async ({
         throw new Error('Missing user');
     }
 
+    // In VPN signup, keys are setup with a user action and if users wait more than 10 minutes
+    // they lose locked scope. This ensures that locked scope is added before continuing. Even if it's not needed.
+    await srpAuth({ api, credentials: { password: accountData.password }, config: queryUnlock() });
     const { keySetupData, user, addresses } = await handleSetupKeysHelper({
         api,
         ktActivation,
