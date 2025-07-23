@@ -103,7 +103,7 @@ describe('useAccountPreferences', () => {
         );
 
         // decrypted label
-        const decrypted = await decryptWalletData([mockUpdateWalletAccountLabel.mock.lastCall[2]], key);
+        const decrypted = await decryptWalletData([mockUpdateWalletAccountLabel.mock.lastCall?.[2]], key);
         expect(decrypted).toStrictEqual(['My brand new label']);
 
         expect(mockCreateNotification).toHaveBeenCalledTimes(1);

@@ -6,7 +6,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { mockUseAddresses, mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vitest';
-import type { DecryptedApiWalletKey, IWasmApiWalletData} from '@proton/wallet';
+import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet';
 import { decryptWalletData } from '@proton/wallet';
 import {
     apiWalletsData,
@@ -72,7 +72,9 @@ describe('useWalletPreferences', () => {
 
         await waitFor(() => expect(mockUpdateWalletName).toHaveBeenCalledTimes(1));
         expect(mockUpdateWalletName).toHaveBeenCalledWith(wallet.Wallet.ID, expect.any(String));
-        expect(await decryptWalletData([mockUpdateWalletName.mock.lastCall[1]], key)).toStrictEqual(['My test wallet']);
+        expect(await decryptWalletData([mockUpdateWalletName.mock.lastCall?.[1]], key)).toStrictEqual([
+            'My test wallet',
+        ]);
 
         expect(mockCreateNotification).toHaveBeenCalledWith({ text: 'Wallet name changed' });
 
