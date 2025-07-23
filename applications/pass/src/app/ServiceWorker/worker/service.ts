@@ -1,5 +1,5 @@
 import { type ServiceWorkerMessage } from 'proton-pass-web/app/ServiceWorker/types';
-import { COMMIT } from 'proton-pass-web/app/config';
+import config from 'proton-pass-web/app/config';
 
 import { cleanCache, clearCache } from '@proton/pass/lib/api/cache';
 import { fileStorage, fileStorageReady } from '@proton/pass/lib/file-storage/fs';
@@ -29,7 +29,7 @@ declare let self: ServiceWorkerGlobalScope;
 const onClaim = async () => {
     await self.clients.claim();
     const clients = await self.clients.matchAll({ includeUncontrolled: true });
-    const message = { type: 'check', hash: COMMIT } satisfies ServiceWorkerMessage;
+    const message = { type: 'check', hash: config.COMMIT } satisfies ServiceWorkerMessage;
     clients.forEach((client) => client.postMessage(message));
 };
 
