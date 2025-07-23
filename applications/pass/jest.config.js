@@ -23,5 +23,6 @@ module.exports = {
         ENV: 'test',
         EXTENSION_BUILD: false,
         DESKTOP_BUILD: false,
+        OFFLINE_SUPPORTED: true,
     },
 };
