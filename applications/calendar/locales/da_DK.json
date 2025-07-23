@@ -896,6 +896,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Show more benefits": [
+        "Vis flere fordele"
       ]
     },
     "action": {
@@ -1059,6 +1062,24 @@
       ],
       "years": [
         "år"
+      ],
+      "Add unlimited credit cards": [
+        "Tilføj ubegrænset antal betalingskort"
+      ],
+      "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
+        "Alle premiumfunktioner i ${ BRAND_NAME } Mail, Pass, VPN, Drive og Calendar"
+      ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "Spar stort på premium Drive-funktioner med en tidsbegrænset rabat."
+      ],
+      "Save big on premium VPN features with a limited-time discount.": [
+        "Spar stort på premium VPN-funktioner med en tidsbegrænset rabat."
+      ],
+      "Save time with built-in 2FA": [
+        "Spar tid med indbygget 2FA"
+      ],
+      "thanks to you": [
+        "takket være dig"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1240,6 +1261,9 @@
     "BF2024: Offers": {
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornys automatisk efter 1 måned til ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Faktureret med ${ amount } én gang"
       ]
     },
     "BF2024: Tooltip": {
@@ -3612,6 +3636,12 @@
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
+      ],
+      "Please enter a valid postal code": [
+        "Indtast et gyldigt postnummer"
+      ],
+      "Please enter a valid ZIP code": [
+        "Indtast et gyldigt postnummer."
       ]
     },
     "Error accepting calendar invitation": {
@@ -5793,6 +5823,33 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszone ser ud til at være ændret til ${ timezone }. Vil du opdatere din tidszone præferencer?"
+      ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Ved udgangen af din prøveversion ${ boldCancelDate }, vil du blive nedgraderet til ${ boldProtonFree }. Alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
+        "Hvis du ombestemmer dig, kan du abonnere igen når som helst. Ked af at miste dig!"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dit ${ plan }-abonnement vil blive erstattet af ${ PASS_SHORT_APP_NAME } Lifetime. Den resterende del af dit abonnement vil blive tilføjet til din konto. ${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Din gratis prøveperiode blev konverteret til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
+      ],
+      "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
+        "Din gratis prøveperiode blev konverteret til et månedligt abonnement. Din fornyelsesdato er ${ nextBillingDate }."
+      ],
+      "Your trial will end in ${ timeRemaining }.": [
+        "Din prøveversion slutter om ${ timeRemaining }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Du vil også miste adgang til ${ boldPlanTitle }-funktioner:"
+      ],
+      "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
+        "Du vil miste adgangen til ${ boldPlanTitle } ${ boldEndDate }."
+      ],
+      "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
+        "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
       ]
     },
     "info": {
@@ -7561,6 +7618,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB lagring i skyen, der giver dig mulighed for nemt at gemme, synkronisere og dele filer. Sikret med end-to-end kryptering."
       ]
     },
     "new_plans: Subtext": {
@@ -7583,6 +7643,9 @@
       ],
       "Switch plans?": [
         "Skift abonnement?"
+      ],
+      "Review subscription": [
+        "Gennemgå abonnement"
       ]
     },
     "new_plans: tooltip": {
@@ -7790,6 +7853,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan have mere end én administrator. Alle administratorer kan tilføje og administrere brugere, men kun den primære administrator har kontrol over fakturering."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Brugerdefinerede domæner til aliasser, ekstra postkasser, mulighed for at sende e-mails fra aliasser og meget mere"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Livstidsadgang til ${ PASS_APP_NAME } + SimpleLogin premium funktioner."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8103,6 +8172,9 @@
       ],
       "Your subscription renews soon": [
         "Dit abonnement fornyes snart"
+      ],
+      "${ pricingTitle } offer expires today!": [
+        "${ pricingTitle } tilbud udløber i dag!"
       ]
     },
     "Offer fearue": {
@@ -8137,6 +8209,9 @@
       ],
       "Storage": [
         "Lagerplads"
+      ],
+      "Advanced threat protection": [
+        "Avanceret trusselsbeskyttelse"
       ]
     },
     "Onboarding": {
@@ -8184,6 +8259,27 @@
       ],
       "help center": [
         "hjælp-center"
+      ],
+      "Cancel anytime before then.": [
+        "Annullér til enhver tid inden da."
+      ],
+      "contact our support team": [
+        "kontakt vores supportteam"
+      ],
+      "Once your full subscription starts...": [
+        "Når dit fulde abonnement starter..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Du kan stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "Du kan stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Du kan bruge ${ planTitle } indtil prøveversionen udløber, og du vil ikke får en opkrævning."
+      ],
+      "Your free trial has started": [
+        "Din gratis prøveperiode er startet"
       ]
     },
     "Option": {
@@ -8324,6 +8420,15 @@
       ],
       "Introducing ${ passFamilyPlanName }": [
         "Vi præsenterer ${ passFamilyPlanName }"
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Faktureres årligt til ${ yearlyPrice }. Spar ${ yearlySavedPrice } med ${ passFamilyPlanName } (fremfor 6 individuelle ${ passPlusPlanName }-abonnementer)."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Eksklusivt tilbud kun tilgængeligt for tidlige støtter af ${ PASS_APP_NAME }."
+      ],
+      "Limited-time deal.": [
+        "Tidsbegrænset tilbud."
       ]
     },
     "passwordless": {
@@ -8432,6 +8537,15 @@
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Fornyelsespriser kan ændres i henhold til ${ termsAndConditionsLink }."
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Denne betalingsmetode bliver din nye standard for alle fremtidige fornyelser."
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Din valuta er blevet ændret til euro (€), fordi SEPA-bankoverførsler kun understøtter betalinger i euro."
       ]
     },
     "Payments.Error": {
@@ -8462,16 +8576,25 @@
     "Payments.Saved payment method details": {
       "Bank transfer - ${ details }": [
         "Bankoverførsel - ${ details }"
+      ],
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kort, der slutter på ${ paymentMethod.Details.Last4 }"
       ]
     },
     "Payments.Sepa": {
       "Street address, postal code, and city": [
         "Adresse, postnummer og by"
+      ],
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ved at bekræfte denne betaling autoriserer du ${ BRAND_NAME } og Stripe, vores betalingstjenesteudbyder, til at instruere din bank om at debitere din konto tilsvarende. Du kan få en tilbagebetaling inden for 8 uger fra debiteringsdatoen, under betingelserne i din aftale med din bank."
       ]
     },
     "Payments.VAT number name": {
       "VAT number": [
         "Momsnummer"
+      ],
+      "Business Number": [
+        "Forretningsnummer"
       ]
     },
     "PGP key encryption warning": {
@@ -8629,6 +8752,12 @@
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "Opgradér til ${ upsellPlanTitle }"
+      ],
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Alle ${ protonPlus }-tjenester.${ br }Ét nemt abonnement."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Som **${ currentPlanTitle }**-abonnent kan du låse op for **${ unlockPlanTitle }** og alle premium ${ BRAND_NAME }-tjenester ved at opgradere til **${ upsellPlanTitle }**."
       ]
     },
     "Price": {
@@ -9174,6 +9303,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Opgrader for ${ pricingTitle }"
+      ],
+      "Guard against threats": [
+        "Beskyt mod trusler"
       ]
     },
     "specialoffer: Offers": {
@@ -9251,6 +9383,15 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Opgradér og spar mere med 2 års ${ planName }"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "Få ét abonnement, der indeholder det hele, få ${ BRAND_NAME } Unlimited"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "Opbevar dine adgangskoder sikkert og organiseret i flere bokse "
+      ],
+      "Protect your account from threats with Sentinel": [
+        "Beskyt din konto mod trusler med Sentinel"
       ]
     },
     "specialoffer: Tooltip": {
@@ -9400,6 +9541,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Du mister adgang til ubegrænsede logins og noter, ubegrænset hide-my-email aliaser, 20 bokse samt prioriteret support."
+      ],
+      "To continue using ${ BRAND_NAME } products, free up space or ${ upgrade }": [
+        "For at fortsætte med at bruge ${ BRAND_NAME }-produkter, frigør plads eller ${ upgrade }"
       ]
     },
     "Subscribe to calendar modal": {
@@ -9745,6 +9889,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Dit eget korte @pm.me e-mail-alias"
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } hjælper dig med at sikre, at alle dine familiemedlemmer - og deres data - er beskyttet, hver gang de er online."
       ]
     },
     "subscription reminder": {
@@ -10888,6 +11035,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ],
+      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
+        "Medmindre de dechifreres, forbliver krypterede adgangskoder sikre, selv hvis de eksponeres."
       ]
     },
     "tooltip": {
@@ -10987,6 +11137,9 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "Dit abonnement vil automatisk forny i ${ cycle } måned.",
         "Dit abonnement vil automatisk forny i ${ cycle } måneder."
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "Dit planlagte abonnement starter ${ renewalTime }."
       ]
     },
     "vpn_2step: feature": {
@@ -11371,6 +11524,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "anniversary_2025: offer": {
+      "Anniversary offer": [
+        "Jubilæumstilbud"
       ]
     }
   }

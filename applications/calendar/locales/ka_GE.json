@@ -893,6 +893,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add Zoom meeting": [
+        "Zoom-ის შეხვედრის დამატება"
       ]
     },
     "action": {
@@ -3694,6 +3697,9 @@
       ],
       "Your import will not be processed.": [
         "თქვენი შემოტანა არ დამუშავდება."
+      ],
+      "Invalid ZIP code": [
+        "არასწორი ZIP კოდი"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6557,6 +6563,9 @@
     "Label, credit card": {
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Postal code": [
+        "საფოსტო კოდი"
       ]
     },
     "Label/folder modal": {
@@ -8780,6 +8789,12 @@
       ],
       "Your organization name": [
         "თქვენი ორგანიზაციის სახელი"
+      ],
+      "Postal code": [
+        "საფოსტო კოდი"
+      ],
+      "ZIP code": [
+        "საფოსტო კოდი"
       ]
     },
     "Placeholder for contact group name": {
@@ -11582,6 +11597,20 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "ბიზნესის ნომერი"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "დღგ ნომერი"
       ]
     }
   }

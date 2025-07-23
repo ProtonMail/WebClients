@@ -889,6 +889,21 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Add Zoom meeting": [
+        "Zoomミーティングを追加"
+      ],
+      "Adding conferencing details": [
+        "会議の詳細を追加しています"
+      ],
+      "Cancel trial and pay": [
+        "トライアルをキャンセルして支払う"
+      ],
+      "Loading Zoom configuration": [
+        "Zoomの設定を読み込んでいます"
+      ],
+      "Reconnect to Zoom": [
+        "Zoomに再接続する"
       ]
     },
     "action": {
@@ -1296,6 +1311,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan }と${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -3694,6 +3712,33 @@
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
+      ],
+      "Invalid ZIP code": [
+        "郵便番号が正しくありません"
+      ],
+      "Please enter a valid postal code": [
+        "有効な郵便番号を入力してください"
+      ],
+      "Please enter a valid ZIP code": [
+        "有効な郵便番号を入力してください"
+      ],
+      "Please enter postal code": [
+        "郵便番号を入力してください"
+      ],
+      "Please enter ZIP code": [
+        "郵便番号を入力してください"
+      ],
+      "Please select billing country": [
+        "請求先の国を選択してください"
+      ],
+      "Please select billing state": [
+        "請求先の州を選択してください"
+      ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Zoomに再接続されました。今予定を保存することができます。"
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Zoomの接続が期限切れになりました。続けるには再接続してください。"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5916,6 +5961,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ plan } サブスクリプションは ${ PASS_SHORT_APP_NAME } Lifetime に置き換えられます。サブスクリプションの残高は、お客様のアカウントに追加されます。${ PASS_SHORT_APP_NAME } Lifetime ディールには更新価格はなく、${ PASS_SHORT_APP_NAME } への生涯アクセスに対する1回限りの支払いです。"
       ]
     },
     "info": {
@@ -6564,6 +6612,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "郵便番号"
+      ],
+      "Postal code": [
         "郵便番号"
       ]
     },
@@ -7669,6 +7720,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "家族を守るために、6 人のユーザー向けに${ plusTitle } のすべてのプレミアム機能をご利用ください。"
       ]
     },
     "new_plans: Subtext": {
@@ -7694,6 +7748,9 @@
       ],
       "Switch plans?": [
         "プランを変更しますか?"
+      ],
+      "Review subscription": [
+        "サブスクリプションを再検討"
       ]
     },
     "new_plans: tooltip": {
@@ -8208,6 +8265,9 @@
       ],
       "Your subscription renews soon": [
         "サブスクリプションはまもなく更新されます"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "最初の月の${ plan }が80%割引になる最後のチャンスです。"
       ]
     },
     "Offer fearue": {
@@ -8594,6 +8654,12 @@
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
+      ],
+      "I'm purchasing as a business": [
+        "法人として購入します"
+      ],
+      "This number will be shown on all future invoices": [
+        "この番号は、今後すべての請求書に表示されます"
       ]
     },
     "Payments.Error": {
@@ -8766,6 +8832,12 @@
       ],
       "Your organization name": [
         "あなたの組織の名前"
+      ],
+      "Postal code": [
+        "郵便番号"
+      ],
+      "ZIP code": [
+        "郵便番号"
       ]
     },
     "Placeholder for contact group name": {
@@ -11476,6 +11548,34 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "法人番号"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "VAT 番号"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "すべての ${ protonPlus } サービス。${ br }1 つの簡単なサブスクリプション。"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }**の登録者として、**${ upsellPlanTitle }**にアップグレードすることで、**${ unlockPlanTitle }**とすべてのプレミアム${ BRAND_NAME }サービスがアンロックできます"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle }のままでいる"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "${ upsellPlanTitle }にアップグレード"
       ]
     }
   }
