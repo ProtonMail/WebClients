@@ -1,7 +1,6 @@
 import type { LoggerInterface } from '@proton/utils/logs'
 import { ConnectionCloseReason, SERVER_HEARTBEAT_INTERVAL } from '@proton/docs-proto'
 import { ApiResult, type WebsocketConnectionInterface, type WebsocketCallbacks } from '@proton/docs-shared'
-import type { WebsocketStateInterface } from './WebsocketState'
 import { WebsocketState } from './WebsocketState'
 import metrics from '@proton/metrics'
 import { isLocalEnvironment } from '@proton/docs-shared'
@@ -12,6 +11,7 @@ import type { PublicDocumentState } from '../State/DocumentState'
 import type { DocumentState } from '../State/DocumentState'
 import type { FetchRealtimeToken } from '../UseCase/FetchRealtimeToken'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import { hours_to_ms, minutes_to_ms, seconds_to_ms } from '../Util/time-utils'
 
 /**
  * The heartbeat mechanism is temporarily disabled due to the fact that we cannot renew our heartbeat when receiving
@@ -24,7 +24,7 @@ const HeartbeatEnabled: false = false
 /**
  * We will automatically close the connection if the document's visibility state goes to hidden and this amount of time elapses.
  */
-export const TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES = 60_000 * 60
+export const TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES = hours_to_ms(1)
 
 export const DebugConnection = {
   enabled: isLocalEnvironment() && false,
@@ -33,10 +33,12 @@ export const DebugConnection = {
 
 export class WebsocketConnection implements WebsocketConnectionInterface {
   socket?: WebSocket
-  readonly state: WebsocketStateInterface = new WebsocketState()
+  readonly state = new WebsocketState()
   private pingTimeout: ReturnType<typeof setTimeout> | undefined = undefined
   reconnectTimeout: ReturnType<typeof setTimeout> | undefined = undefined
   private destroyed = false
+
+  isWaitingBeforeQueuingReconnection = false
 
   private didReceiveReadyMessageFromRTS = false
   closeConnectionDueToGoingAwayTimer: ReturnType<typeof setTimeout> | undefined = undefined
@@ -88,7 +90,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
    */
   getCachedToken(): string | undefined {
     /** If we retrieve a token, we'll treat it as valid for this long. When the commit id changes, we'll invalidate the cached token */
-    const TokenCacheValidityPeriodMS = 60_000
+    const TokenCacheValidityPeriodMS = seconds_to_ms(60)
 
     if (!this.realtimeToken) {
       return undefined
@@ -146,10 +148,13 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     clearTimeout(this.pingTimeout)
 
-    this.pingTimeout = setTimeout(() => {
-      this.logger.info('Closing connection due to heartbeat timeout')
-      this.socket?.close(ConnectionCloseReason.CODES.NORMAL_CLOSURE)
-    }, SERVER_HEARTBEAT_INTERVAL + 2_500)
+    this.pingTimeout = setTimeout(
+      () => {
+        this.logger.info('Closing connection due to heartbeat timeout')
+        this.socket?.close(ConnectionCloseReason.CODES.NORMAL_CLOSURE)
+      },
+      SERVER_HEARTBEAT_INTERVAL + seconds_to_ms(2.5),
+    )
   }
 
   destroy(): void {
@@ -325,9 +330,23 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     this.logDisconnectMetric(reason)
 
-    if (reason.props.code !== ConnectionCloseReason.CODES.UNAUTHORIZED && !this.destroyed) {
-      this.queueReconnection()
+    if (reason.props.code === ConnectionCloseReason.CODES.UNAUTHORIZED || this.destroyed) {
+      this.logger.info('Not queueing reconnection due to unauthorized or destroyed state')
+      return
     }
+
+    if (reason.props.code === ConnectionCloseReason.CODES.DOCUMENT_TIMEOUT) {
+      this.logger.info('Connection closed due to document timeout, waiting for 1 minute before reconnecting')
+      this.isWaitingBeforeQueuingReconnection = true
+      this.state.resetAttempts()
+      setTimeout(() => {
+        this.isWaitingBeforeQueuingReconnection = false
+        this.queueReconnection()
+      }, minutes_to_ms(1))
+      return
+    }
+
+    this.queueReconnection()
   }
 
   queueReconnection(options: { skipDelay: boolean } = { skipDelay: false }): void {
@@ -336,7 +355,12 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       return
     }
 
-    const reconnectDelay = options.skipDelay ? 0 : this.state.getBackoff()
+    if (this.isWaitingBeforeQueuingReconnection) {
+      this.logger.info('Not queueing reconnection because we are waiting before queuing reconnection')
+      return
+    }
+
+    const reconnectDelay = this.state.getReconnectDelay(options.skipDelay)
     this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
     clearTimeout(this.reconnectTimeout)
 
