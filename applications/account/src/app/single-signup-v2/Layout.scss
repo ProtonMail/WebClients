@@ -74,24 +74,6 @@
 		}
 	}
 
-	&-bg--lumo {
-		.right-summary {
-			--summary-gradient-border-color: 74 66 108;
-		}
-
-		.right-summary-logo {
-			background: var(--primary-contrast);
-		}
-
-		.right-summary--gradient {
-			background: linear-gradient(180deg, #2a2247 0%, rgb(42 34 71 / 0.3) 100%);
-		}
-
-		@include media('>xsmall') {
-			background: linear-gradient(180deg, #392982 0%, transparent 40%);
-		}
-	}
-
 	&-bg--wallet {
 		.card-plan {
 			--card-box-shadow-color1: rgb(205 79 232 / 0.3);
