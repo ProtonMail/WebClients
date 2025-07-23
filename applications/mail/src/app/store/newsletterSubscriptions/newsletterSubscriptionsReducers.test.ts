@@ -584,6 +584,43 @@ describe('Newsletter subscription reducers', () => {
             expect(state.value?.byId[activeSubscription.ID].MoveToFolder).toEqual('folder-1');
         });
 
+        it('should create a temporary filter ID when applying to future emails', () => {
+            state.value!.byId = {
+                [activeSubscription.ID]: activeSubscription,
+            };
+
+            filterSubscriptionListPending(state, {
+                type: 'newsletterSubscriptions/filterSubscriptionList',
+                payload: undefined,
+                meta,
+            });
+
+            expect(state.value?.byId[activeSubscription.ID].FilterID).toEqual('temporaryFilterID');
+        });
+
+        it('should not create a temporary filter ID when applying to existing emails', () => {
+            state.value!.byId = {
+                [activeSubscription.ID]: activeSubscription,
+            };
+
+            filterSubscriptionListPending(state, {
+                type: 'newsletterSubscriptions/filterSubscriptionList',
+                payload: undefined,
+                meta: {
+                    ...meta,
+                    arg: {
+                        ...meta.arg,
+                        data: {
+                            ...meta.arg.data,
+                            ApplyTo: 'Existing',
+                        },
+                    },
+                },
+            });
+
+            expect(state.value?.byId[activeSubscription.ID].FilterID).toBeUndefined();
+        });
+
         it('should return undefined if the state is not initialized', () => {
             filterSubscriptionListPending(undefinedValueState, {
                 type: 'newsletterSubscriptions/filterSubscriptionList',
