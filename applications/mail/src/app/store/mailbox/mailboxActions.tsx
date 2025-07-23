@@ -43,7 +43,7 @@ const runAction = async ({
     elements: Element[];
     action: (chunk: Element[]) => any;
 }) => {
-    return new Promise<PromiseSettledResult<string | undefined>[]>(async (resolve, reject) => {
+    const promise = new Promise<PromiseSettledResult<string | undefined>[]>(async (resolve, reject) => {
         let result: PromiseSettledResult<string | undefined>[] = [];
 
         try {
@@ -83,16 +83,20 @@ const runAction = async ({
             }
 
             result = await promise;
-        } finally {
-            extra.eventManager.start();
 
-            // We force-fetch events after the action is completed to ensure the UI is updated in cases where the optimistic update cannot be reliably predicted
-            if (finallyFetchEvents) {
-                await extra.eventManager.call();
-            }
+            resolve(result);
+        } catch (error) {
+            reject(error);
         }
+    });
 
-        resolve(result);
+    return promise.finally(async () => {
+        extra.eventManager.start();
+
+        // We force-fetch events after the action is completed to ensure the UI is updated in cases where the optimistic update cannot be reliably predicted
+        if (finallyFetchEvents) {
+            await extra.eventManager.call();
+        }
     });
 };
 
