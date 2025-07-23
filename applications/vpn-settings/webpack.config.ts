@@ -8,8 +8,11 @@ import type { Parameters } from 'proton-account/src/pages/interface';
 import type { Configuration } from 'webpack';
 import 'webpack-dev-server';
 
-import getConfig from '@proton/pack/webpack.config';
+import { type WebpackEnvArgumentsV2, getWebpackOptions } from '@proton/pack/lib/configV2';
+import { getConfigV2 } from '@proton/pack/webpack.config';
 import CopyIndexHtmlWebpackPlugin from '@proton/pack/webpack/copy-index-html-webpack-plugin';
+
+import appConfig from './appConfig';
 
 const getTemplateParameters = (
     originalTemplateParameters: any,
@@ -35,9 +38,10 @@ const getTemplateParameters = (
     };
 };
 
-const result = async (env: any): Promise<Configuration> => {
+const result = async (opts: WebpackEnvArgumentsV2): Promise<Configuration> => {
+    const webpackOptions = getWebpackOptions(opts, { appConfig });
+    const config = getConfigV2(webpackOptions);
     const pagesPromise = getPages();
-    const config = getConfig(env);
     const plugins = config.plugins || [];
     config.plugins = plugins;
 
