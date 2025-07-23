@@ -9,11 +9,11 @@ const protonConfig = { APP_NAME: 'proton-mail' } as unknown as ProtonConfig;
 
 describe('Mail post signup one dollar eligibility', () => {
     describe('Account created after the release', () => {
-        it('should be eligible, account 7 days old', () => {
+        it('should be eligible, account 3 days old', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -28,11 +28,11 @@ describe('Mail post signup one dollar eligibility', () => {
             ).toBeTruthy();
         });
 
-        it('should not be eligible, account 7 days old but 5 messages', () => {
+        it('should not be eligible, account 3 days old but 4 messages', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -42,16 +42,16 @@ describe('Mail post signup one dollar eligibility', () => {
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: true,
                     lastSubscriptionEnd: 0,
-                    nbrEmailsInAllMail: 5,
+                    nbrEmailsInAllMail: 4,
                 })
             ).toBeFalsy();
         });
 
-        it('should not be eligible, account 6 days old', () => {
+        it('should not be eligible, account 2 days old', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 6).getTime() / 1000,
+                CreateTime: subDays(today, 2).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -110,7 +110,7 @@ describe('Mail post signup one dollar eligibility', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -133,7 +133,7 @@ describe('Mail post signup one dollar eligibility', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -156,7 +156,7 @@ describe('Mail post signup one dollar eligibility', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(
@@ -297,7 +297,7 @@ describe('Mail post signup one dollar eligibility', () => {
             const user = {
                 isFree: true,
                 isDelinquent: false,
-                CreateTime: subDays(today, 7).getTime() / 1000,
+                CreateTime: subDays(today, 3).getTime() / 1000,
             } as unknown as UserModel;
 
             expect(

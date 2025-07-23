@@ -3,7 +3,7 @@ import { type ReactNode } from 'react';
 export const LAST_REMINDER_DAY = 29;
 export const EXTENDED_REMINDER_DAY = 25;
 
-export const POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE = 7;
+export const POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE = 3;
 export const POST_SIGNUP_ONE_DOLLAR_DURATION = 30;
 
 export type SUPPORTED_PRODUCTS = 'mail' | 'drive';
