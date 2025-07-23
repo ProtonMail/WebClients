@@ -3,14 +3,14 @@ import type { ComponentPropsWithRef } from 'react';
 import { c } from 'ttag';
 
 import { Button, Step, Stepper, StepperPositionEnum } from '@proton/atoms';
-import { AppLink, Icon } from '@proton/components'
 import { Tooltip } from '@proton/atoms';
+import { AppLink, Icon } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import protonWalletLogoDark from '@proton/styles/assets/img/illustrations/proton-wallet-logo-dark.svg';
 import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wallet-logo.svg';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { APP_NAME } from '../../config';
+import config from '../../config';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
 export type Steps<T extends string> = { key: T; label: string }[];
@@ -34,7 +34,7 @@ export const ModalHeaderWithStepper = <T extends string>({
         <div className="modal-two-header">
             <AppLink
                 to="/"
-                toApp={APP_NAME}
+                toApp={config.APP_NAME}
                 target="_self"
                 className="relative interactive-pseudo-protrude interactive--no-background flex justify-center modal-logo"
             >
