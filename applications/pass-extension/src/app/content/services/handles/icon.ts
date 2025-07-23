@@ -59,10 +59,11 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
 
     const reposition = (reflow: boolean = false) => {
         cancelReposition();
-        const inputBox = field.getBoxElement({ reflow });
-        const form = field.getFormHandle().element;
 
         repositioning.request = requestAnimationFrame(() => {
+            const inputBox = field.getBoxElement({ reflow });
+            const form = field.getFormHandle().element;
+
             animatePositionChange({
                 onAnimate: (request) => (repositioning.animate = request),
                 get: () => field.element.getBoundingClientRect(),
@@ -85,7 +86,16 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
 
         /** If the dropdown is currently visible then close it */
         const visible = iframe.dropdown?.getState().visible;
-        if (visible) return iframe.dropdown?.close();
+        const attachedTo = iframe.dropdown?.getCurrentField();
+
+        if (visible) {
+            if (field === attachedTo) {
+                actionTrap(field.element);
+                field.element.focus();
+            }
+
+            return iframe.dropdown?.close();
+        }
 
         /** If the session is locked: trigger auto-focus in the injected dropdown
          * for PIN unlock. Force blur the field to prevent aggressive website focus
@@ -126,9 +136,9 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
      * repositioning during interaction could generate unintended clicks */
     listeners.addListener(icon, 'pointerdown', onPointerDown);
     listeners.addListener(icon, 'pointerup', onPointerUp);
-
     listeners.addListener(window, 'resize', () => reposition(false));
     listeners.addResizeObserver(target, () => reposition(false));
+
     listeners.addObserver(
         target,
         () => {
