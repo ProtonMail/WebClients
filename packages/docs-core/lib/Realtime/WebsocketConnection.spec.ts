@@ -150,6 +150,22 @@ describe('WebsocketConnection', () => {
 
       expect(connection.reconnectTimeout).toBeUndefined()
     })
+
+    it('should wait for 1 minute before queuing reconnection if last disconnect reason is document timeout', async () => {
+      jest.useFakeTimers()
+
+      connection.queueReconnection = jest.fn()
+      connection.callbacks.onFailToConnect = jest.fn()
+      connection.handleSocketClose(3005, 'Document timeout')
+
+      expect(connection.isWaitingBeforeQueuingReconnection).toBe(true)
+      expect(connection.queueReconnection).not.toHaveBeenCalled()
+
+      jest.advanceTimersByTime(60000)
+
+      expect(connection.isWaitingBeforeQueuingReconnection).toBe(false)
+      expect(connection.queueReconnection).toHaveBeenCalled()
+    })
   })
 
   describe('handleWindowCameOnlineEvent', () => {
@@ -193,7 +209,7 @@ describe('WebsocketConnection', () => {
 
       const connect = (connection.connect = jest.fn())
 
-      connection.state.getBackoff = jest.fn().mockReturnValue(1000)
+      connection.state.getReconnectDelay = jest.fn().mockReturnValue(1000)
 
       connection.queueReconnection()
 
@@ -250,7 +266,7 @@ describe('WebsocketConnection', () => {
   it('should connect websocket when online browser event is triggered', async () => {
     const fn = (connection.connect = jest.fn())
 
-    connection.state.getBackoff = jest.fn().mockReturnValue(0)
+    connection.state.getReconnectDelay = jest.fn().mockReturnValue(0)
 
     window.dispatchEvent(new Event('online'))
 

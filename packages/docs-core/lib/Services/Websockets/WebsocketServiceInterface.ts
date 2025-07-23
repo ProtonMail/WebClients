@@ -32,6 +32,6 @@ export interface WebsocketServiceInterface {
   retryAllFailedDocumentUpdates(): void
 
   debugSendCommitCommandToRTS(nodeMeta: NodeMeta | PublicNodeMeta, keys: DocumentKeys): Promise<void>
-  closeConnection(nodeMeta: NodeMeta | PublicNodeMeta): void
+  closeConnection(nodeMeta: NodeMeta | PublicNodeMeta, code?: number): void
   destroy(): void
 }

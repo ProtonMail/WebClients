@@ -666,7 +666,10 @@ export class WebsocketService implements WebsocketServiceInterface {
     )
   }
 
-  public closeConnection(document: { linkId: string }): void {
+  public closeConnection(
+    document: { linkId: string },
+    code: number = ConnectionCloseReason.CODES.NORMAL_CLOSURE,
+  ): void {
     this.logger.info('Closing connection')
 
     const record = this.getConnectionRecord(document.linkId)
@@ -674,6 +677,6 @@ export class WebsocketService implements WebsocketServiceInterface {
       throw new Error('Connection not found')
     }
 
-    void record.connection.disconnect(ConnectionCloseReason.CODES.NORMAL_CLOSURE)
+    void record.connection.disconnect(code)
   }
 }
