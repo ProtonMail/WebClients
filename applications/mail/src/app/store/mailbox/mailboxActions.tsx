@@ -247,22 +247,29 @@ export const labelMessages = createAsyncThunk<
     'mailbox/labelMessages',
     async (
         { elements, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
-        { extra }
+        { extra, dispatch }
     ) => {
-        return runAction({
-            extra,
-            finallyFetchEvents: isEncryptedSearch,
-            notificationText: showSuccessNotification
-                ? getNotificationTextLabelAdded(true, elements.length, targetLabelID, labels, folders)
-                : undefined,
-            elements,
-            action: (chunk) =>
-                labelMessagesApi({
-                    IDs: chunk.map((element: Element) => element.ID),
-                    LabelID: targetLabelID,
-                    // SpamAction
-                }),
-        });
+        try {
+            dispatch(messageCountsActions.labelMessagesPending({ elements, targetLabelID, labels, folders }));
+            const result = await runAction({
+                extra,
+                finallyFetchEvents: isEncryptedSearch,
+                notificationText: showSuccessNotification
+                    ? getNotificationTextLabelAdded(true, elements.length, targetLabelID, labels, folders)
+                    : undefined,
+                elements,
+                action: (chunk) =>
+                    labelMessagesApi({
+                        IDs: chunk.map((element: Element) => element.ID),
+                        LabelID: targetLabelID,
+                        // SpamAction
+                    }),
+            });
+            return result;
+        } catch (error) {
+            // TODO: handle rejection
+            throw error;
+        }
     }
 );
 
@@ -281,21 +288,28 @@ export const unlabelMessages = createAsyncThunk<
     'mailbox/unlabelMessages',
     async (
         { elements, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
-        { extra }
+        { extra, dispatch }
     ) => {
-        return runAction({
-            extra,
-            finallyFetchEvents: isEncryptedSearch,
-            notificationText: showSuccessNotification
-                ? getNotificationTextLabelRemoved(true, elements.length, targetLabelID, labels, folders)
-                : undefined,
-            elements,
-            action: (chunk) =>
-                unlabelMessagesApi({
-                    IDs: chunk.map((element: Element) => element.ID),
-                    LabelID: targetLabelID,
-                }),
-        });
+        try {
+            dispatch(messageCountsActions.unlabelMessagesPending({ elements, targetLabelID, labels, folders }));
+            const result = await runAction({
+                extra,
+                finallyFetchEvents: isEncryptedSearch,
+                notificationText: showSuccessNotification
+                    ? getNotificationTextLabelRemoved(true, elements.length, targetLabelID, labels, folders)
+                    : undefined,
+                elements,
+                action: (chunk) =>
+                    unlabelMessagesApi({
+                        IDs: chunk.map((element: Element) => element.ID),
+                        LabelID: targetLabelID,
+                    }),
+            });
+            return result;
+        } catch (error) {
+            // TODO: handle rejection
+            throw error;
+        }
     }
 );
 
@@ -350,18 +364,23 @@ export const unlabelConversations = createAsyncThunk<
         { conversations, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
         { extra }
     ) => {
-        return runAction({
-            extra,
-            finallyFetchEvents: isEncryptedSearch,
-            notificationText: showSuccessNotification
-                ? getNotificationTextLabelRemoved(false, conversations.length, targetLabelID, labels, folders)
-                : undefined,
-            elements: conversations,
-            action: (chunk) =>
-                unlabelConversationsApi({
-                    IDs: chunk.map((conversation: Conversation) => conversation.ID),
-                    LabelID: targetLabelID,
-                }),
-        });
+        try {
+            const result = await runAction({
+                extra,
+                finallyFetchEvents: isEncryptedSearch,
+                notificationText: showSuccessNotification
+                    ? getNotificationTextLabelRemoved(false, conversations.length, targetLabelID, labels, folders)
+                    : undefined,
+                elements: conversations,
+                action: (chunk) =>
+                    unlabelConversationsApi({
+                        IDs: chunk.map((conversation: Conversation) => conversation.ID),
+                        LabelID: targetLabelID,
+                    }),
+            });
+            return result;
+        } catch (error) {
+            throw error;
+        }
     }
 );
