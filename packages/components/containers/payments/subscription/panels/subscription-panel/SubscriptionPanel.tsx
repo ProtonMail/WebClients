@@ -19,7 +19,7 @@ import {
     getSubscriptionPlanTitleAndName,
     hasDeprecatedVPN,
     hasDriveBusiness,
-    hasLumo,
+    hasLumoPlan,
     hasPass,
     hasPassFamily,
     hasVPNPassBundle,
@@ -519,7 +519,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                     if (hasWallet(subscription)) {
                         return getWalletAppWalletPlus();
                     }
-                    if (hasLumo(subscription)) {
+                    if (hasLumoPlan(subscription)) {
                         return getLumoPlus();
                     }
                     if (user.isFree && app === APPS.PROTONLUMO) {

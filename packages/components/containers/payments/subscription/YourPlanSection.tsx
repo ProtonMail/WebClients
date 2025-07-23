@@ -13,7 +13,7 @@ import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { FREE_PLAN } from '@proton/payments';
-import { getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, hasLumo, isTrial } from '@proton/payments';
+import { getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, hasLumoPlan, isTrial } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -79,7 +79,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const shouldRenderSubscription = user.canPay || (subscription && !isTrial(subscription));
     const shouldRenderPendingInvitation = !!invites.length;
     // Upsell panel if the user has a subscription and is not vpn or wallet
-    const shouldRenderUpsells = !isVpnB2b && !isWalletEA && shouldRenderSubscription && !hasLumo(subscription);
+    const shouldRenderUpsells = !isVpnB2b && !isWalletEA && shouldRenderSubscription && !hasLumoPlan(subscription);
     // Usage panel is displayed for members of B2B plans except VPN B2B
     const shouldRenderUsagePanel =
         (organization?.UsedMembers || 0) > 1 && !isVpnB2b && organization?.State === ORGANIZATION_STATE.ACTIVE;
