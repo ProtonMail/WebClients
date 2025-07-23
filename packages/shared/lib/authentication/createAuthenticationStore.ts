@@ -96,7 +96,7 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
     const getPersistent = () => get(PERSIST_SESSION_KEY) ?? true;
 
     const setClientKey = (clientKey: string | undefined) => set(CLIENT_KEY_KEY, clientKey);
-    const getClientKey = () => get(CLIENT_KEY_KEY) ?? undefined;
+    const getClientKey = (): string | undefined => get(CLIENT_KEY_KEY) ?? undefined;
 
     const setOfflineKey = (offlineKey: OfflineKey | undefined) => set(OFFLINE_KEY_KEY, offlineKey);
     const getOfflineKey = (): OfflineKey | undefined => get(OFFLINE_KEY_KEY) ?? undefined;

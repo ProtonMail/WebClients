@@ -11,6 +11,7 @@ import CollapsibleHeaderIconButton from '@proton/components/components/collapsib
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -30,6 +31,8 @@ import { APPS, BRAND_NAME, CLIENT_TYPES, LUMO_SHORT_APP_NAME } from '@proton/sha
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { loggerManager } from '@proton/shared/lib/logger';
+import { useFlag } from '@proton/unleash/index';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -158,6 +161,11 @@ const getVPNOptions = (): OptionItem[] => {
     ];
 };
 
+const APPS_FOR_LOG_COLLECTION: Partial<Record<APP_NAMES, boolean>> = {
+    [APPS.PROTONMAIL]: true,
+    [APPS.PROTONCALENDAR]: true,
+};
+
 const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit, app: maybeApp }: Props) => {
     const api = useApi();
     const location = useLocation();
@@ -193,8 +201,8 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
         return <Option title={title} value={option} key={value} />;
     });
 
+    const app = maybeApp || APP_NAME;
     const [model, setModel] = useState<Model>(() => {
-        const app = maybeApp || APP_NAME;
         const defaultCategory = options.find(
             (option): option is OptionOptionItem => option.type === 'option' && option.app === app
         );
@@ -208,7 +216,16 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
     });
     const [screenshots, setScreenshots] = useState<Screenshot[]>([]);
     const [uploadingScreenshots, setUploadingScreenshots] = useState(false);
+    const collectLogs = useFlag('CollectLogs') && Boolean(APPS_FOR_LOG_COLLECTION[app]);
+    const [includeLogs, setIncludeLogs] = useState<boolean>(collectLogs);
     const link = <Href key="linkClearCache" href={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
+
+    // Pre-cache logs for better performance when downloading
+    useEffect(() => {
+        if (collectLogs) {
+            void loggerManager.preCacheAllLogs();
+        }
+    }, [collectLogs]);
 
     const { validator, onFormSubmit } = useFormErrors();
 
@@ -229,18 +246,30 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
 
         setLoading(true);
 
-        const getParameters = () => {
-            const screenshotBlobs = screenshots.reduce((acc: { [key: string]: Blob }, { name, blob }) => {
-                acc[name] = blob;
-                return acc;
-            }, {});
+        const getParameters = async () => {
+            const attachments: { [key: string]: Blob } = screenshots.reduce(
+                (acc: { [key: string]: Blob }, { name, blob }) => {
+                    acc[name] = blob;
+                    return acc;
+                },
+                {}
+            );
+
+            // Get logs from all logger instances if user opted in
+            if (includeLogs) {
+                const logs = await loggerManager.getAllCachedLogs();
+                if (logs && logs.trim()) {
+                    const filename = `logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
+                    attachments[filename] = new Blob([logs], { type: 'text/plain' });
+                }
+            }
 
             const Title = [!isVpn && '[V5]', `[${Client}] Bug [${location.pathname}]`, categoryTitle]
                 .filter(Boolean)
                 .join(' ');
 
             return {
-                ...screenshotBlobs,
+                ...attachments,
                 ...omit(model, ['OSArtificial', 'Category']),
                 Trigger: mode || '',
                 Client,
@@ -251,7 +280,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
         };
 
         try {
-            await api(reportBug(getParameters(), 'form'));
+            await api(reportBug(await getParameters(), 'form'));
             onClose?.();
             createNotification({ text: c('Success').t`Problem reported` });
         } catch (error) {
@@ -378,6 +407,27 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
                     setUploading={setUploadingScreenshots}
                     disabled={loading}
                 />
+                {collectLogs && (
+                    <div className="mb-4">
+                        <div className="flex items-center justify-space-between">
+                            <Checkbox
+                                id="includeLogs"
+                                checked={includeLogs}
+                                onChange={({ target: { checked } }) => setIncludeLogs(checked)}
+                            >
+                                {c('Label').t`Include application logs in bug report`}
+                            </Checkbox>
+                            <Button
+                                className="ml-2"
+                                shape="underline"
+                                onClick={() => loggerManager.downloadAllLogs()}
+                                title={c('Info').t`Download current logs`}
+                            >
+                                {c('Action').t`Download logs`}
+                            </Button>
+                        </div>
+                    </div>
+                )}
                 {model.OSArtificial && OSAndOSVersionFields}
 
                 <Collapsible className="mt-4">
