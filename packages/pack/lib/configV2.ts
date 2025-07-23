@@ -2,7 +2,7 @@ import { join } from 'path';
 
 // @ts-ignore TODO: these methods will be moved to this file at the end of the migration
 import { getGitBranch, getGitCommitHash, getGitTagVersion, getVersionNumberFromTag } from './config';
-import type { ProtonPackOptions, WebpackOptions } from './interface';
+import type { AppConfigV2, ProtonPackOptions, WebpackOptions } from './interface';
 
 const LOCALES = (() => {
     try {
@@ -21,12 +21,7 @@ export interface WebpackEnvArgumentsV2 {
 }
 
 export interface ExtraWebpackOptions {
-    appConfig: {
-        sentry?: string;
-        sentryDesktop?: string;
-        clientType?: number;
-        clientSecret?: string;
-    };
+    appConfig: AppConfigV2;
 }
 
 export const getWebpackOptions = (envArguments: WebpackEnvArgumentsV2, extra: ExtraWebpackOptions): WebpackOptions => {
