@@ -68,6 +68,14 @@ export const encryptAddressKeyToken = async ({
         encryptionKeys: organizationKey ? [userKey, organizationKey] : [userKey],
     });
 
+    // as a sanity check to detect rare issues like WebCrypto bugs, ensure the token can be decrypted
+    await CryptoProxy.decryptMessage({
+        armoredMessage: encryptedToken,
+        decryptionKeys: userKey,
+    }).catch(() => {
+        throw new Error('Unexpected key token encryption issue');
+    });
+
     return {
         token,
         encryptedToken,
@@ -102,6 +110,14 @@ export const encryptAddressKeyUsingOrgKeyToken = async ({
         textData,
         date,
         encryptionKeys: [organizationKey],
+    });
+
+    // as a sanity check to detect rare issues like WebCrypto bugs, ensure the token can be decrypted
+    await CryptoProxy.decryptMessage({
+        armoredMessage: encryptedToken,
+        decryptionKeys: organizationKey,
+    }).catch(() => {
+        throw new Error('Unexpected key token encryption issue');
     });
 
     return {
