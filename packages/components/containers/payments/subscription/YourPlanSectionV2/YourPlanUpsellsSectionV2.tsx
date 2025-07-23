@@ -13,7 +13,7 @@ import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import type { FreeSubscription, FullPlansMap } from '@proton/payments';
-import { CYCLE, type FreePlanDefault, type Subscription } from '@proton/payments';
+import { CYCLE, type FreePlanDefault, type Subscription, hasLumoPlan } from '@proton/payments';
 import { FREE_PLAN } from '@proton/payments';
 import { hasBundle, hasDeprecatedVPN, hasDuo, hasFamily, hasVPN2024 } from '@proton/payments';
 import { PaymentsContextProvider, usePaymentsPreloaded } from '@proton/payments/ui';
@@ -87,6 +87,7 @@ const useUpsellSection = ({
     const hasDriveFree = isFree && app === APPS.PROTONDRIVE;
     const hasPassFree = isFree && app === APPS.PROTONPASS && !user.hasPassLifetime;
     const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
+    const hasLumo = hasLumoPlan(subscription);
 
     const userCanHave24MonthPlan = user.isFree && user.canPay && !user.isDelinquent && !subscriptionEnd;
 
@@ -109,7 +110,13 @@ const useUpsellSection = ({
 
     const upsellSections = [
         {
-            enabled: hasMailFree || hasPassFree || hasVPNFree || hasDriveFree,
+            enabled:
+                hasMailFree ||
+                hasPassFree ||
+                hasVPNFree ||
+                hasDriveFree ||
+                // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
+                hasLumo,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
                 <>
