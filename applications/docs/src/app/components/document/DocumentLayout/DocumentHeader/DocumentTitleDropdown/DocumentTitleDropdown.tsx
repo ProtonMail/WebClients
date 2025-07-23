@@ -335,7 +335,7 @@ export function DocumentTitleDropdown({
           {isSpreadsheet && (
             <DropdownMenuButton
               className="flex items-center text-left"
-              data-testid="sheet-import"
+              data-testid="dropdown-sheet-import"
               onClick={() => {
                 openSheetImportModal({
                   handleImport: handleSheetImportData,
