@@ -19,7 +19,7 @@ import createApi from '@proton/shared/lib/api/createApi';
 
 import Verify from './Verify';
 import broadcast, { MessageType } from './broadcast';
-import * as config from './config';
+import config from './config';
 import { setupStore } from './store/store';
 
 const api = createApi({ config, noErrorState: true });
