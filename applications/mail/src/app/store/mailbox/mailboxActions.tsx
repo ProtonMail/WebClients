@@ -2,8 +2,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { conversationCountsActions, messageCountsActions } from '@proton/mail';
 import {
+    labelConversations as labelConversationsApi,
     markConversationsAsRead as markConversationsAsReadApi,
     markConversationsAsUnread as markConversationsAsUnreadApi,
+    unlabelConversations as unlabelConversationsApi,
 } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import {
@@ -291,6 +293,73 @@ export const unlabelMessages = createAsyncThunk<
             action: (chunk) =>
                 unlabelMessagesApi({
                     IDs: chunk.map((element: Element) => element.ID),
+                    LabelID: targetLabelID,
+                }),
+        });
+    }
+);
+
+export const labelConversations = createAsyncThunk<
+    PromiseSettledResult<string | undefined>[],
+    {
+        conversations: Conversation[];
+        targetLabelID: string;
+        isEncryptedSearch: boolean;
+        showSuccessNotification?: boolean;
+        labels: Label[];
+        folders: Folder[];
+    },
+    MailThunkExtra
+>(
+    'mailbox/labelConversations',
+    async (
+        { conversations, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
+        { extra }
+    ) => {
+        return runAction({
+            extra,
+            finallyFetchEvents: isEncryptedSearch,
+            notificationText: showSuccessNotification
+                ? getNotificationTextLabelAdded(false, conversations.length, targetLabelID, labels, folders)
+                : undefined,
+            elements: conversations,
+            action: (chunk) =>
+                labelConversationsApi({
+                    IDs: chunk.map((conversation: Conversation) => conversation.ID),
+                    LabelID: targetLabelID,
+                    // SpamAction
+                }),
+        });
+    }
+);
+
+export const unlabelConversations = createAsyncThunk<
+    PromiseSettledResult<string | undefined>[],
+    {
+        conversations: Conversation[];
+        targetLabelID: string;
+        isEncryptedSearch: boolean;
+        showSuccessNotification?: boolean;
+        labels: Label[];
+        folders: Folder[];
+    },
+    MailThunkExtra
+>(
+    'mailbox/unlabelConversations',
+    async (
+        { conversations, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
+        { extra }
+    ) => {
+        return runAction({
+            extra,
+            finallyFetchEvents: isEncryptedSearch,
+            notificationText: showSuccessNotification
+                ? getNotificationTextLabelRemoved(false, conversations.length, targetLabelID, labels, folders)
+                : undefined,
+            elements: conversations,
+            action: (chunk) =>
+                unlabelConversationsApi({
+                    IDs: chunk.map((conversation: Conversation) => conversation.ID),
                     LabelID: targetLabelID,
                 }),
         });
