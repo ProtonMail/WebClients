@@ -8826,6 +8826,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } newsletter",
+        "${ unreadCount } newslettery",
+        "${ unreadCount } newsletterov",
+        "${ unreadCount } newsletterov"
+      ],
+      "newsletter": [
+        "newsletter"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Týmto odstránite položku newslettera z tohto zoznamu. Neodhlási vás z odberu newslettera. Objaví sa znova, keď dostanete nové správy."
       ]
     },
     "info": {
@@ -9763,6 +9775,27 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
+      ],
+      "Forums": [
+        "Diskusné fóra"
+      ],
+      "Newsletter entry deleted": [
+        "Záznam z newslettera bol vymazaný"
+      ],
+      "Newsletters": [
+        "Newslettery"
+      ],
+      "Promotions": [
+        "Propagačné akcie"
+      ],
+      "Social": [
+        "Sociálne siete"
+      ],
+      "Transactions": [
+        "Transakcie"
+      ],
+      "Updates": [
+        "Aktualizácie"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15390,6 +15423,21 @@
       ],
       "Your subscriptions in one place": [
         "Vaše emailové odbery na jednom mieste"
+      ],
+      "Newsletters": [
+        "Newslettery"
+      ],
+      "Newsletters view": [
+        "Zobrazenie newslettrerov"
+      ],
+      "No active newsletters": [
+        "Žiadne aktívne newslettery"
+      ],
+      "No newsletters found": [
+        "Neboli nájdené žiadne newslettere"
+      ],
+      "No unsubscribed newsletters": [
+        "Žiadne odhlásené newslettery"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16074,6 +16122,17 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "Labels": {
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "Tu sa zobrazia newslettery alebo mailingové zoznamy, z ktorých ste sa odhlásili."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Nemáte žiadne aktívne newslettery ani odbery v mailingových zoznamoch."
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "Neodoberáte žiadne newslettery alebo mailingové zoznamy."
       ]
     }
   }
