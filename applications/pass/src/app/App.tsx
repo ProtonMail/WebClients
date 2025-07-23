@@ -1,6 +1,6 @@
 import { Router, matchPath } from 'react-router-dom';
 
-import * as config from 'proton-pass-web/app/config';
+import config from 'proton-pass-web/app/config';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { PASS_WEB_COMPAT } from 'proton-pass-web/lib/compatibility';
 import { core } from 'proton-pass-web/lib/core';
