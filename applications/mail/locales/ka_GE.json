@@ -1600,6 +1600,9 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Remove from list": [
+        "სიიდან წაშლა"
       ]
     },
     "action": {
@@ -4848,6 +4851,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "თქვენმა ძებნამ მეტისმეტად ბევრი შედეგი მოიტანა. დაადეთ უფრო მეტი ლიმიტი და თავიდან სცადეთ."
+      ],
+      "Invalid ZIP code": [
+        "არასწორი ZIP კოდი"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -9359,6 +9365,21 @@
       ],
       "Unknown": [
         "უცნობი"
+      ],
+      "Forums": [
+        "ფორუმები"
+      ],
+      "Promotions": [
+        "რეკლამა"
+      ],
+      "Social": [
+        "სოციალური"
+      ],
+      "Transactions": [
+        "ტრანზაქციები"
+      ],
+      "Updates": [
+        "განახლებები"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9401,6 +9422,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "საფოსტო კოდი"
+      ],
+      "Postal code": [
         "საფოსტო კოდი"
       ]
     },
@@ -11772,6 +11796,12 @@
       ],
       "Your organization name": [
         "თქვენი ორგანიზაციის სახელი"
+      ],
+      "Postal code": [
+        "საფოსტო კოდი"
+      ],
+      "ZIP code": [
+        "საფოსტო კოდი"
       ]
     },
     "Placeholder for contact group name": {
@@ -14656,6 +14686,9 @@
       ],
       "Your plan": [
         "თქვენი გეგმა"
+      ],
+      "Remove from list?": [
+        "წავშალო სიიდან?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15251,6 +15284,20 @@
     "pass_signup_2023: Title": {
       "${ upsellPlanTitle } plan": [
         "გეგმა ${ upsellPlanTitle }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "ბიზნესის ნომერი"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "დღგ ნომერი"
       ]
     }
   }
