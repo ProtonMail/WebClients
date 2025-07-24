@@ -12,11 +12,17 @@ import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider } from '../../context/SignupContext';
 import { FlowProvider, Step, useFlow } from './contexts/FlowContext';
 import { AccountDetailsStep } from './steps/AccountDetailsStep';
+import { RecoveryKitStep } from './steps/RecoveryKitStep';
 
 const PassSignup = () => {
     const { step } = useFlow();
 
-    return <main className="pass-signup">{step === Step.Signup && <AccountDetailsStep />}</main>;
+    return (
+        <main className="pass-signup">
+            {step === Step.Signup && <AccountDetailsStep />}
+            {step === Step.RecoveryKit && <RecoveryKitStep />}
+        </main>
+    );
 };
 
 const PassSignupPage = (props: BaseSignupContextProps) => {

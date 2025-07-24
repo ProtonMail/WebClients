@@ -31,7 +31,7 @@ export const AccountDetailsAside = memo(() => (
             {PLATFORM_LOGOS.map((logo, i) => (
                 <div
                     key={`platform-logo-${i}`}
-                    className="flex justify-center items-center rounded-lg bg-white w-custom h-custom"
+                    className="flex justify-center items-center rounded-lg bg-invert w-custom h-custom"
                     style={{ '--w-custom': '3.5rem', '--h-custom': '3.5rem' }}
                 >
                     <img src={logo} alt="Logo Icon" />
