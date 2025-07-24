@@ -1,4 +1,4 @@
-import * as config from 'proton-pass-extension/app/config';
+import config from 'proton-pass-extension/app/config';
 import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
