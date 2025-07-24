@@ -456,6 +456,12 @@
       "Download all attachments": [
         "Pobierz wszystkie załączniki"
       ],
+      "Download application logs": [
+        "Pobierz logi aplikacji"
+      ],
+      "Download logs": [
+        "Pobierz logi"
+      ],
       "Download now": [
         "Pobierz"
       ],
@@ -1429,7 +1435,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufaj kluczowi",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1677,6 +1686,12 @@
       ],
       "${ price } per user": [
         "${ price } za użytkownika"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licencja",
+        "${ seats } ${ LUMO_APP_NAME } licencje",
+        "${ seats } ${ LUMO_APP_NAME } licencji",
+        "${ seats } ${ LUMO_APP_NAME } licencji"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencja asystenta pisania",
@@ -2174,6 +2189,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problem z ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problem z aplikacją"
       ],
@@ -6443,6 +6461,9 @@
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } zawiera asystenta pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } może chronić również Twój biznes."
       ],
@@ -7090,6 +7111,12 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
+      ],
+      "Download application logs for troubleshooting": [
+        "Pobierz logi aplikacji do rozwiązywania problemów"
+      ],
+      "Download current logs": [
+        "Pobierz logi"
       ],
       "Download on the App Store": [
         "Pobierz z App Store"
@@ -9482,6 +9509,9 @@
       ],
       "Import to:": [
         "Importuj do:"
+      ],
+      "Include application logs in bug report": [
+        "Dołącz logi aplikacji do raportu błędu"
       ],
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"

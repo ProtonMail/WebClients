@@ -115,7 +115,7 @@
         "Rata kanan"
       ],
       "Alignment": [
-        "Penjajaran"
+        "Penjajaran teks"
       ],
       "All Read": [
         "Semua yang Telah Dibaca"
@@ -186,6 +186,9 @@
       "Cancel subscription": [
         "Batalkan langganan"
       ],
+      "Cancel trial and pay": [
+        "Batalkan uji coba dan bayar"
+      ],
       "Carbon Copy": [
         "Tembusan"
       ],
@@ -211,7 +214,7 @@
         "Bersihkan"
       ],
       "Clear all formatting": [
-        "Hapus seluruh format"
+        "Hapus seluruh pemformatan"
       ],
       "Clear application data": [
         "Bersihkan data aplilkasi"
@@ -444,6 +447,9 @@
       "Download all attachments": [
         "Unduh seluruh lampiran"
       ],
+      "Download logs": [
+        "Unduh log"
+      ],
       "Download now": [
         "Unduh sekarang"
       ],
@@ -538,7 +544,7 @@
         "Ekspor pilihan sebagai .vcf"
       ],
       "External encryption": [
-        "Enkripsi eksternal"
+        "Enkripsi secara eksternal"
       ],
       "Fewer search options": [
         "Tutup opsi tambahan"
@@ -550,7 +556,7 @@
         "Sesuaikan dengan jendela"
       ],
       "Font": [
-        "Fon"
+        "Jenis huruf"
       ],
       "Forgot password?": [
         "Lupa kata sandi?"
@@ -976,7 +982,7 @@
         "Buka navigasi"
       ],
       "Ordered list": [
-        "Daftar berurut"
+        "Daftar numerik"
       ],
       "Page ${ pageNumber }": [
         "Halaman ${ pageNumber }"
@@ -1237,7 +1243,7 @@
         "Atur sebagai bawaan"
       ],
       "Set encryption": [
-        "Tentukan enkripsi"
+        "Atur enkripsi"
       ],
       "Set expiration time": [
         "Tentukan waktu kedaluwarsa"
@@ -1413,6 +1419,9 @@
       "Trust": [
         "Percayai"
       ],
+      "Trust key": [
+        "Percayai kunci"
+      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -1444,7 +1453,7 @@
         "Batal tandai untuk menghapus"
       ],
       "Unordered list": [
-        "Daftar tak berurut"
+        "Daftar per poin"
       ],
       "Unsnooze": [
         "Buka kembali"
@@ -4499,6 +4508,9 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
+      "Invalid ZIP code": [
+        "Kode pos tidak valid"
+      ],
       "Item content cannot exceed 40KB": [
         "Konten item tidak boleh melebihi 40KB"
       ],
@@ -4592,6 +4604,12 @@
       "Please activate your search again": [
         "Silakan aktifkan pencarian Anda kembali"
       ],
+      "Please enter a valid ZIP code": [
+        "Silakan masukkan kode pos yang valid"
+      ],
+      "Please enter ZIP code": [
+        "Silakan masukkan kode pos"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Silakan selesaikan permasalahan yang disorot untuk melanjutkan."
       ],
@@ -4606,6 +4624,9 @@
       ],
       "Please select a state": [
         "Silakan pilih negara bagian/provinsi"
+      ],
+      "Please select billing country": [
+        "Silakan pilih negara penagihan"
       ],
       "Please try again or refresh the page.": [
         "Silakan coba lagi atau muat ulang halaman ini."
@@ -6866,7 +6887,7 @@
         "Folder"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "Untuk informasi lebih lanjut dan untuk menghapus batasan yang ada, silakan masuk pada ${ mailLink }."
+        "Untuk informasi lebih lanjut dan untuk menghapus batasan yang berlaku, silakan masuk pada ${ mailLink }."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Untuk akses kapan saja dan pengalaman mobile yang lebih optimal, unduh aplikasi ${ androidAppLink } atau ${ iosAppLink } kami."
@@ -8222,7 +8243,7 @@
         "Anda memiliki **${ count } pesan** yang ditandai dengan label ini"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
+        "Anda memiliki langganan ${ planTitle } versi uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
@@ -9209,6 +9230,9 @@
       "Size:": [
         "Ukuran:"
       ],
+      "Social": [
+        "KTP"
+      ],
       "Starred": [
         "Dibintangi"
       ],
@@ -9263,6 +9287,9 @@
       "Toolbar": [
         "Bilah Alat"
       ],
+      "Transactions": [
+        "Transaksi"
+      ],
       "Undisclosed Recipients": [
         "Penerima yang Dirahasiakan"
       ],
@@ -9274,6 +9301,9 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "Langganan ${ truncatedName } dihentikan."
+      ],
+      "Updates": [
+        "Pembaruan"
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -9366,6 +9396,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Kode pos"
+      ],
       "ZIP code": [
         "Kode pos"
       ]
@@ -11484,6 +11517,9 @@
       "Got it": [
         "Mengerti"
       ],
+      "I'm purchasing as a business": [
+        "Saya membeli produk ini selaku pihak bisnis"
+      ],
       "MM/YY": [
         "BB/TT"
       ],
@@ -11518,7 +11554,7 @@
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "This payment method will become your new default for all future renewals.": [
-        "Metode pembayaran ini akan menjadi bawaan baru Anda untuk semua perpanjangan mendatang."
+        "Metode pembayaran ini akan menjadi metode bawaan baru Anda untuk segala perpanjangan yang dilakukan ke depannya."
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
@@ -11569,6 +11605,17 @@
       ],
       "Street address, postal code, and city": [
         "Alamat, kode pos, dan kota"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Nomor Bisnis"
+      ],
+      "EIN": [
+        "NPWP"
       ]
     },
     "PGP key encryption warning": {
@@ -11745,6 +11792,9 @@
       ],
       "Your organization name": [
         "Nama organisasi Anda"
+      ],
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "Placeholder for contact group name": {
@@ -12851,7 +12901,7 @@
         "Ruang penyimpanan total ${ planMaxSpace }"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } memberikan Anda akses ke seluruh aplikasi dan fitur premium. Privasi terkandung secara bawaan dalam paket ini, sehingga Anda dapat beraktivitas dengan tenang mengetahui bahwa data dan identitas Anda tersimpan dengan aman."
+        "${ planName } memberikan Anda akses ke seluruh aplikasi dan fitur premium yang tersedia. Paket ini mengusung privasi secara bawaan, sehingga Anda dapat beraktivitas dengan tenang mengetahui bahwa data dan identitas Anda tersimpan dengan aman."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
@@ -13718,7 +13768,7 @@
         "Apakah Anda yakin?"
       ],
       "Attachments": [
-        "Lampiran"
+        "Sisipkan lampiran"
       ],
       "Auto-deletion is active": [
         "Penghapusan otomatis aktif"
