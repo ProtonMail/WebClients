@@ -1,7 +1,7 @@
 import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
-import { CryptoProxy, getMatchingSigningKey } from '../../lib';
+import { CryptoProxy, canKeyEncryptAndDecrypt, getMatchingSigningKey } from '../../lib';
 import { Api as CryptoApi } from '../../lib/worker/api';
 
 chaiUse(chaiAsPromised);
@@ -119,5 +119,10 @@ B8rlCKMa0LAwjScEdLOntdgoYTrLJknRI+Y5byS70CAWAGoFYHIDQGevwX6G
                 preferV6Key: true,
             })
         ).to.deep.equal(v6Key);
+    });
+
+    it('canKeyEncryptAndDecrypt - it detects that a key cannot encrypt', async () => {
+        const signOnlyKey = await CryptoProxy.generateKey({ userIDs: { email: 'test@test' }, subkeys: [] });
+        expect(await canKeyEncryptAndDecrypt(signOnlyKey)).to.equal(false);
     });
 });
