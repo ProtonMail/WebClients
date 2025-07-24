@@ -144,7 +144,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
     const [alsoArchive, updateAlsoArchive] = useState(false);
     const [always, setAlways] = useState(false);
     const getElementsFromIDs = useGetElementsFromIDs();
-    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { applyLabels, applyLabelsToAllModal } = useApplyLabels(setContainFocus);
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
@@ -243,7 +243,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
 
         const promises = [];
 
-        if (applyLocationEnabled && !selectAll) {
+        if (applyOptimisticLocationEnabled && !selectAll) {
             promises.push(
                 Object.entries(changes).map(([labelID, removeLabel]) => {
                     return applyLocation({

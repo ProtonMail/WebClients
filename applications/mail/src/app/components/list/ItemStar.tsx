@@ -25,7 +25,7 @@ interface Props {
 
 const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
     const [loading, withLoading] = useLoading();
-    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const star = useStar();
     const { Shortcuts } = useMailModel('MailSettings');
 
@@ -48,7 +48,7 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
             return;
         }
 
-        if (applyLocationEnabled) {
+        if (applyOptimisticLocationEnabled) {
             void withLoading(
                 applyLocation({
                     elements: [element || ({} as Element)],
