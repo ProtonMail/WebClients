@@ -17,7 +17,7 @@ import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wal
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { APP_NAME } from '../../../config';
+import config from '../../../config';
 import { clearWalletAccountMetricsData, clearWalletData } from '../../../utils/cache';
 import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 import { OtherSidebarListItems } from './OtherSidebarListItems';
@@ -74,7 +74,7 @@ const WalletSidebar = ({
             logo={
                 <AppLink
                     to="/"
-                    toApp={APP_NAME}
+                    toApp={config.APP_NAME}
                     target="_self"
                     className="wallet-logo p-1 relative interactive-pseudo-protrude interactive--no-background"
                 >
