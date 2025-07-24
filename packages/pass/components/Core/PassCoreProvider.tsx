@@ -87,7 +87,7 @@ export type PassCoreContextValue = {
     /** Sets the current tab's url - only relevant for extension */
     setExtensionClientState?: (current: ExtensionClientState) => void;
     /** Writes text to the clipboard */
-    writeToClipboard: (text: string) => Promise<void>;
+    writeToClipboard: (text: string, clipboardTTL: Maybe<number>) => Promise<void>;
     /** Checks whether biometrics functionalities can be used */
     supportsBiometrics?: () => Promise<boolean>;
     /** Gets the unlock key via biometrics */

@@ -8,7 +8,7 @@ import { API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtim
 import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
-import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
+import { hasPermissions, promptForPermissions, requestPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { createPopupController } from 'proton-pass-extension/lib/utils/popup';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -175,16 +175,22 @@ const getPassCoreProviderProps = (
                 .then((res) => res.type === 'success')
                 .catch(() => false),
 
-        writeToClipboard: async (content) => {
+        writeToClipboard: async (content, clipboardTTL) => {
             // First clipboard write can be done directly in the view
             // But the clipboard clear has to be delayed out of the view which may be closed by then
             await navigator.clipboard.writeText(content);
-            const { clipboard } = await settings.read();
-            if (clipboard && clipboard.timeoutMs > 0) {
+
+            // Check and ask for clipboard permissions
+            let permissionGranted = await hasPermissions(['clipboardRead', 'clipboardWrite']);
+            if (!permissionGranted) {
+                permissionGranted = await requestPermissions(['clipboardRead', 'clipboardWrite']);
+            }
+
+            if (clipboardTTL && clipboardTTL > 0 && permissionGranted) {
                 await sendMessage(
                     messageFactory({
                         type: WorkerMessageType.CLIPBOARD_START_CLEAR_TIMEOUT,
-                        payload: { timeoutMs: clipboard.timeoutMs, content },
+                        payload: { timeoutMs: clipboardTTL, content },
                     })
                 );
             }
