@@ -104,7 +104,7 @@ export const useMailboxHotkeys = (
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
     const elementIDForList = checkedIDs.length ? undefined : elementID;
     const elementRef = useRef<HTMLDivElement>(null);
-    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
     const star = useStar();
@@ -135,7 +135,7 @@ export const useMailboxHotkeys = (
 
         const folderName = getFolderName(LabelID, folders);
 
-        if (applyLocationEnabled && !selectAll) {
+        if (applyOptimisticLocationEnabled && !selectAll) {
             await applyLocation({
                 elements,
                 targetLabelID: LabelID,
@@ -391,7 +391,7 @@ export const useMailboxHotkeys = (
                     e.stopPropagation();
                     const isAllStarred = elements.filter((element) => isStarred(element)).length === elements.length;
 
-                    if (applyLocationEnabled) {
+                    if (applyOptimisticLocationEnabled) {
                         await applyLocation({
                             elements,
                             targetLabelID: MAILBOX_LABEL_IDS.STARRED,

@@ -19,10 +19,10 @@ export const applyLabelToMessage = (
     labels: Label[]
 ): Message => {
     let labelIDsCopy = [...message.LabelIDs];
-    const isFolder = isSystemFolder(targetLabelID) || isCustomFolder(targetLabelID, folders);
-    const isCategory = isCategoryLabel(targetLabelID);
+    const isTargetAFolder = isSystemFolder(targetLabelID) || isCustomFolder(targetLabelID, folders);
+    const isTargetACategory = isCategoryLabel(targetLabelID);
 
-    if (isFolder) {
+    if (isTargetAFolder) {
         if (labelIDsCopy.includes(MAILBOX_LABEL_IDS.TRASH) || labelIDsCopy.includes(MAILBOX_LABEL_IDS.SPAM)) {
             // TODO [P3-120]: Remove auto-delete spam and trash expiration days
         }
@@ -39,7 +39,7 @@ export const applyLabelToMessage = (
                     !isCustomLabel(labelID, labels) // Remove custom labels
             );
         }
-    } else if (isCategory) {
+    } else if (isTargetACategory) {
         labelIDsCopy = labelIDsCopy.filter((labelID) => isCategoryLabel(labelID));
     }
 
@@ -49,9 +49,9 @@ export const applyLabelToMessage = (
 };
 
 export const removeLabelFromMessage = (message: Message, targetLabelID: string, labels: Label[]): Message => {
-    const isLabel = isSystemLabel(targetLabelID) || isCustomLabel(targetLabelID, labels);
+    const isTargetALabel = isSystemLabel(targetLabelID) || isCustomLabel(targetLabelID, labels);
 
-    if (!isLabel) {
+    if (!isTargetALabel) {
         return message;
     }
 
@@ -69,11 +69,11 @@ export const applyLabelToConversation = (
     labels: Label[]
 ): Conversation => {
     let labelsCopy = [...(conversation.Labels || [])]; // Not a deep copy
-    const isFolder = isSystemFolder(targetLabelID) || isCustomFolder(targetLabelID, folders);
-    const isCategory = isCategoryLabel(targetLabelID);
+    const isTargetAFolder = isSystemFolder(targetLabelID) || isCustomFolder(targetLabelID, folders);
+    const isTargetACategory = isCategoryLabel(targetLabelID);
     const allMessagesLoaded = messages.length === conversation.NumMessages;
 
-    if (isFolder) {
+    if (isTargetAFolder) {
         const isTrashOrSpam = labelsCopy.some(
             (label) => label.ID === MAILBOX_LABEL_IDS.TRASH || label.ID === MAILBOX_LABEL_IDS.SPAM
         );
@@ -100,7 +100,7 @@ export const applyLabelToConversation = (
                     !isCustomLabel(label.ID, labels) // Remove custom labels
             );
         }
-    } else if (isCategory) {
+    } else if (isTargetACategory) {
         conversation.Labels = conversation.Labels?.filter((label) => isCategoryLabel(label.ID));
     }
 

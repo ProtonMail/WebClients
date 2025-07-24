@@ -4,7 +4,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { getLabelName } from 'proton-mail/helpers/labels';
+import { getLabelName } from '../../helpers/labels';
 
 export const getNotificationTextMarked = (isMessage: boolean, elementsCount: number, status: MARK_AS_STATUS) => {
     if (isMessage) {

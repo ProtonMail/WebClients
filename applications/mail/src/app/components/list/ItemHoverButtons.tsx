@@ -48,7 +48,7 @@ const ItemHoverButtons = ({
 }: Props) => {
     const { markAs } = useMarkAs();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal } = useMoveToFolder();
-    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { handleDelete: permanentDelete, deleteSelectionModal } = usePermanentDelete(labelID);
     const star = useStar();
     const snoozedElement = useMailSelector(selectSnoozeElement);
@@ -84,7 +84,7 @@ const ItemHoverButtons = ({
     const handleArchive = (event: MouseEvent) => {
         event.stopPropagation();
 
-        if (applyLocationEnabled) {
+        if (applyOptimisticLocationEnabled) {
             void applyLocation({
                 elements: [element],
                 targetLabelID: ARCHIVE,
@@ -104,7 +104,7 @@ const ItemHoverButtons = ({
     const handleTrash = (event: MouseEvent) => {
         event.stopPropagation();
 
-        if (applyLocationEnabled) {
+        if (applyOptimisticLocationEnabled) {
             void applyLocation({
                 elements: [element],
                 targetLabelID: TRASH,
@@ -136,7 +136,7 @@ const ItemHoverButtons = ({
             return;
         }
 
-        if (applyLocationEnabled) {
+        if (applyOptimisticLocationEnabled) {
             void withLoadingStar(
                 applyLocation({
                     elements: [element],

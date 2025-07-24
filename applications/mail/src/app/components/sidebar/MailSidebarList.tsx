@@ -68,7 +68,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
     const foldersTreeview = useMemo(() => buildTreeview(foldersUI), [foldersUI]);
     const { applyLabels, applyLabelsToAllModal } = useApplyLabels();
-    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
     const mailboxCount = mailSettings.ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
@@ -297,7 +297,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                         onToggleMoreItems={toggleDisplayMoreItems}
                         collapsed={collapsed}
                         applyLabels={(params) =>
-                            applyLocationEnabled && !params.selectAll
+                            applyOptimisticLocationEnabled && !params.selectAll
                                 ? applyLocation({
                                       elements: params.elements,
                                       targetLabelID: params.targetLabelID!, // TODO: Improve this when removing old apply labels function
