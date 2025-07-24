@@ -104,10 +104,6 @@ export const AccountDetailsForm: FC<AccountDetailsFormProps> = ({ onSuccess }) =
             <div className="fade-in-up">{passwordInputs}</div>
 
             <Button
-                {...(() => {
-                    if (loading) return { loading: true };
-                    if (loadingChallenge) return { disabled: true, noDisabledStyles: true };
-                })()}
                 loading={loading}
                 disabled={loadingChallenge}
                 noDisabledStyles={loadingChallenge}
