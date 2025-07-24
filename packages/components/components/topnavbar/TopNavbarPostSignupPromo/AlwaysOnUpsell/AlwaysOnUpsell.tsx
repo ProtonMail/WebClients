@@ -4,12 +4,14 @@ import useSettingsLink from '@proton/components/components/link/useSettingsLink'
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { TelemetryAlwaysOnUpsellEvents } from '@proton/shared/lib/api/telemetry';
 import { SECOND, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
 import { SpotlightWithPromo } from '../common/SpotlightWithPromo';
 import { AlwaysOnUpsellContent } from './AlwaysOnUpsellContent';
 import { useAlwaysOnUpsell } from './useAlwaysOnUpsell';
+import { useAlwaysOnUpsellTelemetry } from './useAlwaysOnUpsellTelemetry';
 import { type SUPPORTED_APPS, useProductSpecifics } from './useProductSpecifics';
 
 interface Props {
@@ -18,6 +20,7 @@ interface Props {
 
 export const AlwaysOnUpsell = ({ app }: Props) => {
     const { openSpotlight } = useAlwaysOnUpsell();
+    const sendTelemetryEvent = useAlwaysOnUpsellTelemetry();
     const { plan, planName, features, upgradeText, title } = useProductSpecifics(app);
     const goToSettings = useSettingsLink();
 
@@ -31,17 +34,22 @@ export const AlwaysOnUpsell = ({ app }: Props) => {
         upsellRef,
         step: SUBSCRIPTION_STEPS.CHECKOUT,
         plan,
+        onSubscribed: () => {
+            void sendTelemetryEvent(TelemetryAlwaysOnUpsellEvents.userSubscribed, { plan });
+        },
     });
 
     const [spotlightState, setSpotlightState] = useState(openSpotlight);
     const show = useSpotlightShow(spotlightState, 3 * SECOND);
 
     const handleClose = () => {
+        void sendTelemetryEvent(TelemetryAlwaysOnUpsellEvents.closeOffer, {});
         setSpotlightState(false);
     };
 
     const handleUpsellClick = () => {
         handleClose();
+        void sendTelemetryEvent(TelemetryAlwaysOnUpsellEvents.clickUpsellButton, {});
 
         /**
          * Some products (like Drive) don't support in-app subscriptions,
@@ -56,7 +64,13 @@ export const AlwaysOnUpsell = ({ app }: Props) => {
 
     return (
         <SpotlightWithPromo
-            promoOnClick={() => setSpotlightState(!spotlightState)}
+            promoOnClick={() => {
+                if (!spotlightState) {
+                    void sendTelemetryEvent(TelemetryAlwaysOnUpsellEvents.clickTopNavbar, {});
+                }
+
+                setSpotlightState(!spotlightState);
+            }}
             promoIconName="upgrade"
             promoChildren={upgradeText}
             promoColor="outline-gradient"
