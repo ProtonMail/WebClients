@@ -450,6 +450,9 @@
       "Download all attachments": [
         "Last ned alle vedlegg"
       ],
+      "Download logs": [
+        "Last ned logger"
+      ],
       "Download now": [
         "Last ned nå"
       ],
@@ -1420,6 +1423,10 @@
       "Trust": [
         "Klarér"
       ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -1660,6 +1667,10 @@
       ],
       "${ price } per user": [
         "${ price } per bruker"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } lisens",
+        "${ seats } ${ LUMO_APP_NAME } lisenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skriveassistentlisens",
@@ -2121,6 +2132,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
+      ],
       "Application problem": [
         "Applikasjonsproblem"
       ],
@@ -6262,6 +6276,9 @@
         "${ groupCounts } gruppe funnet",
         "${ groupCounts } grupper funnet"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan også beskytte virksomheten din."
       ],
@@ -6841,6 +6858,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
+      ],
+      "Download current logs": [
+        "Last ned logg"
       ],
       "Download on the App Store": [
         "Last ned på App Store"

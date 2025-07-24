@@ -450,6 +450,12 @@
       "Download all attachments": [
         "Descarregueu tots els adjunts"
       ],
+      "Download application logs": [
+        "Descarregueu els registres de l'aplicació"
+      ],
+      "Download logs": [
+        "Descarrega els registres"
+      ],
       "Download now": [
         "Descarrega"
       ],
@@ -1420,6 +1426,10 @@
       "Trust": [
         "De confiança"
       ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
+      ],
       "Trust public key": [
         "Confia en la clau pública"
       ],
@@ -1660,6 +1670,10 @@
       ],
       "${ price } per user": [
         "${ price } per usuari"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } llicència ${ LUMO_APP_NAME }",
+        "${ seats } llicències ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } llicència de l'assistent d'escriptura",
@@ -2121,6 +2135,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Hi ha hagut un problema amb ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema d’aplicació"
       ],
@@ -6262,6 +6279,9 @@
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME }."
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } pot protegir també la vostra empresa."
       ],
@@ -6841,6 +6861,12 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
+      ],
+      "Download application logs for troubleshooting": [
+        "Descarregueu els registres de l'aplicació per la resolució de problemes"
+      ],
+      "Download current logs": [
+        "Descarregar els registres actuals"
       ],
       "Download on the App Store": [
         "Descarregueu-la a l'App Store"
@@ -9162,6 +9188,9 @@
       ],
       "Import to:": [
         "Importar a:"
+      ],
+      "Include application logs in bug report": [
+        "Incloeu els registres de l'aplicació a l'informe d'errors"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"

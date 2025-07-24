@@ -450,6 +450,12 @@
       "Download all attachments": [
         "Télécharger toutes les pièces jointes"
       ],
+      "Download application logs": [
+        "Télécharger les journaux d'application"
+      ],
+      "Download logs": [
+        "Télécharger les journaux"
+      ],
       "Download now": [
         "Télécharger"
       ],
@@ -1420,6 +1426,10 @@
       "Trust": [
         "Faire confiance"
       ],
+      "Trust key": [
+        "Approuver la clé",
+        "Approuver les clés"
+      ],
       "Trust public key": [
         "Approuver la clé publique"
       ],
@@ -1660,6 +1670,10 @@
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } accès ${ LUMO_APP_NAME }",
+        "${ seats } accès ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
@@ -2147,6 +2161,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problème"
+      ],
       "Application problem": [
         "Problème d'application"
       ],
@@ -6296,6 +6313,9 @@
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } peut également protéger votre entreprise."
       ],
@@ -6875,6 +6895,12 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passer à un abonnement inférieur mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
+      ],
+      "Download application logs for troubleshooting": [
+        "Télécharger les journaux d'application pour le dépannage"
+      ],
+      "Download current logs": [
+        "Télécharger les journaux actuels"
       ],
       "Download on the App Store": [
         "Télécharger sur l'App Store"
@@ -9196,6 +9222,9 @@
       ],
       "Import to:": [
         "Importer dans :"
+      ],
+      "Include application logs in bug report": [
+        "Inclure les journaux d'application dans le rapport de bogue"
       ],
       "Integrated 2FA authenticator": [
         "Authentification à deux facteurs (A2F) intégrée"
