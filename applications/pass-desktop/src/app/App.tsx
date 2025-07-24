@@ -117,11 +117,10 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
             hash: page,
         }),
 
-    writeToClipboard: async (content) => {
+    writeToClipboard: async (content, clipboardTTL) => {
         await window.ctxBridge?.writeToClipboard(content);
-        const { clipboard: clipboardSettings } = await settings.read(authStore.getLocalID());
-        if (clipboardSettings && clipboardSettings.timeoutMs) {
-            clipboard.startClearTimeout(clipboardSettings.timeoutMs, content);
+        if (clipboardTTL && clipboardTTL > 0) {
+            clipboard.startClearTimeout(clipboardTTL, content);
         }
     },
 
