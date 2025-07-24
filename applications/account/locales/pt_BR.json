@@ -556,6 +556,9 @@
       "Download ICS": [
         "Baixar ICS"
       ],
+      "Download logs": [
+        "Registros de downloads"
+      ],
       "Download our CSV template": [
         "Baixar nosso modelo CSV"
       ],
@@ -616,10 +619,10 @@
       "Edit servers": [
         "Editar servidores"
       ],
-      "Edit sieve": [
+      "Edit Sieve": [
         "Editar Sieve"
       ],
-      "Edit sieve filter “${ Name }”": [
+      "Edit Sieve filter “${ Name }”": [
         "Editar o filtro Sieve «${ Name }»"
       ],
       "Edit sign-in details": [
@@ -1029,6 +1032,12 @@
       ],
       "Publish changes": [
         "Publicar alterações"
+      ],
+      "Purge all": [
+        "Purgar tudo"
+      ],
+      "Purge deleted": [
+        "Purgar os elementos excluídos"
       ],
       "Quit": [
         "Sair"
@@ -1636,6 +1645,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuário"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licença do ${ LUMO_APP_NAME }",
+        "${ seats } licenças do ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -2408,6 +2421,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema no ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema no aplicativo"
       ],
@@ -2812,9 +2828,12 @@
         "Expandir"
       ]
     },
-    "collider_2025: Navigation": {
-      "Back to ${ LUMO_SHORT_APP_NAME }": [
-        "Voltar para ${ LUMO_SHORT_APP_NAME }"
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adicionar ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -7657,6 +7676,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quer compartilhar dados com você em ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
@@ -8456,6 +8478,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "O downgrade irá encerrar qualquer conexão com servidores pagos do ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Baixar os registros atuais"
       ],
       "Download on the App Store": [
         "Baixe na App Store"
@@ -9501,6 +9526,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
+      ],
+      "Private AI assistant": [
+        "Assistente de IA privado"
       ],
       "Promotion expired": [
         "Promoção expirada"
@@ -10839,9 +10867,6 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Seu ticket de suporte foi fechado. Agradecemos o contato com o suporte da ${ BRAND_NAME }."
       ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Sua avaliação termina em 25 de junho. Faça upgrade para receber relatórios de violações futuras."
-      ],
       "Your trial will end in ${ timeRemaining }.": [
         "Seu período de avaliação termina em ${ timeRemaining }."
       ],
@@ -11960,6 +11985,9 @@
       ],
       "Inbox": [
         "Caixa de entrada"
+      ],
+      "Include application logs in bug report": [
+        "Incluir os registros do aplicativo no relatório de erro"
       ],
       "Inherit color from parent folder": [
         "Cor herdada da pasta pai"
@@ -16602,6 +16630,9 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Criar uma regra de retenção"
+      ],
       "Delete": [
         "Excluir"
       ],
@@ -16625,6 +16656,9 @@
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Pesquisar por regra, usuários, período, ação"
+      ],
       "Search policies": [
         "Pesquisar diretrizes"
       ]
@@ -16641,6 +16675,11 @@
       ],
       "Retention Rule": [
         "Regra de retenção"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Nenhuma política de retenção foi encontrada."
       ]
     },
     "RetentionPoliciesSettings": {
@@ -21793,6 +21832,9 @@
       ],
       "It's you": [
         "É você"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Acesso administrador pendente"
