@@ -8,6 +8,7 @@ import { type BaseSignupContextProps } from './context/SignupContext';
 import DrivePricing from './flows/drive/DrivePricing';
 import DriveSignup from './flows/drive/DriveSignup';
 import GenericStartSignup from './flows/genericStart/GenericStartSignup';
+import ReferralSignup from './flows/referral/ReferralSignup';
 
 const DriveSignupController = (props: BaseSignupContextProps) => {
     return (
@@ -20,6 +21,10 @@ const DriveSignupController = (props: BaseSignupContextProps) => {
             </Route>
         </Switch>
     );
+};
+
+const ReferralSignupController = (props: BaseSignupContextProps) => {
+    return <ReferralSignup {...props} />;
 };
 
 const GenericSignupController = (props: BaseSignupContextProps) => {
@@ -47,6 +52,9 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
             <Switch>
                 <Route path={SSO_PATHS.DRIVE_SIGNUP}>
                     <DriveSignupController {...props} />
+                </Route>
+                <Route path={SSO_PATHS.REFERAL_PLAN_SELECTION}>
+                    <ReferralSignupController {...props} />
                 </Route>
                 <Route>
                     <GenericSignupController {...props} />
