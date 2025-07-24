@@ -13,8 +13,8 @@ export const ComingSoon = () => {
             >
                 <img src={logo} alt="" />
             </div>
-            <h2 className="h2 font-semibold">{c('l10n_nightly Title').t`'Talk confidentially'`}</h2>
-            <div className="coming-soon-subtitle text-lg font-semibold">{c('l10n_nightly Info').t`'Coming soon'`}</div>
+            <h2 className="h2 font-semibold">{c('l10n_nightly Title').t`Talk confidentially`}</h2>
+            <div className="coming-soon-subtitle text-lg font-semibold">{c('l10n_nightly Info').t`Coming soon`}</div>
         </div>
     );
 };
