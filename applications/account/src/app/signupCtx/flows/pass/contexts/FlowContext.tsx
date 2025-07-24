@@ -1,5 +1,7 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useState } from 'react';
 
+import { Maybe } from '@proton/pass/types';
+
 export enum Step {
     Signup = 'signup',
     RecoveryKit = 'recovery-kit',
@@ -8,12 +10,11 @@ export enum Step {
 
 type FlowContextType = { step: string; setStep: (step: Step) => void };
 
-const FlowContext = createContext<FlowContextType | undefined>(undefined);
+const FlowContext = createContext<Maybe<FlowContextType>>(undefined);
 
-type FlowProviderProps = { initialStep?: Step };
+export const FlowProvider: FC<PropsWithChildren> = ({ children }) => {
+    const [step, setStep] = useState<Step>(Step.Signup);
 
-export const FlowProvider: FC<PropsWithChildren<FlowProviderProps>> = ({ children, initialStep = Step.Signup }) => {
-    const [step, setStep] = useState<Step>(initialStep);
     return <FlowContext.Provider value={{ step, setStep }}>{children}</FlowContext.Provider>;
 };
 
