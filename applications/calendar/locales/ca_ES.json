@@ -305,6 +305,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarrega les aplicacions del ${ DRIVE_APP_NAME }"
       ],
+      "Download logs": [
+        "Descarrega els registres"
+      ],
       "Download now": [
         "Descarrega"
       ],
@@ -969,6 +972,10 @@
       "${ price } per user": [
         "${ price } per usuari"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } llicència ${ LUMO_APP_NAME }",
+        "${ seats } llicències ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } llicència de l'assistent d'escriptura",
         "${ seats } llicències de l'assistent d'escriptura"
@@ -1393,6 +1400,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Hi ha hagut un problema amb ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema d’aplicació"
       ],
@@ -4754,6 +4764,9 @@
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME }."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació; és un pagament únic per a l'accés de per vida a ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5104,6 +5117,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Descarregar els registres actuals"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
@@ -6445,6 +6461,9 @@
       ],
       "Import to:": [
         "Importar a:"
+      ],
+      "Include application logs in bug report": [
+        "Incloeu els registres de l'aplicació a l'informe d'errors"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"
