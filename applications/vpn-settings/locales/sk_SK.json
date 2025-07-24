@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Stiahnuť ukážku CSV"
       ],
+      "Download logs": [
+        "Záznamy sťahovania"
+      ],
       "Download our CSV template": [
         "Stiahnuť šablónu CSV"
       ],
@@ -10000,6 +10003,12 @@
     "retention_policy_2025_Info": {
       "${ remainingCount } more": [
         "${ remainingCount } ďalšie"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } deň",
+        "${ rule.Lifetime } dni",
+        "${ rule.Lifetime } dní",
+        "${ rule.Lifetime } dní"
       ],
       "Forever": [
         "Navždy"
