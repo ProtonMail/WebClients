@@ -13,20 +13,22 @@ interface Props {
 }
 
 export const PostSignupOneDollarTitle = ({ product, expanded }: Props) => {
-    const { pricingTitle } = usePostSignupOneDollarPromotionPrice({
-        offerProduct: 'mail',
+    const { pricingTitle, planName } = usePostSignupOneDollarPromotionPrice({
+        offerProduct: product,
         priceWithGradient: true,
     });
 
     const title =
         product === 'mail'
-            ? c('Offer').jt`Get Mail Plus for only ${pricingTitle}`
-            : c('Offer').jt`Get Drive Plus for only ${pricingTitle}`;
+            ? c('Offer').jt`Upgrade your productivity for just ${pricingTitle} with ${planName}`
+            : c('Offer').jt`Upgrade your storage for just ${pricingTitle} with ${planName}`;
+
+    const subtitle = c('Offer').t`Limited-time offer, valid for your first month`;
 
     return (
-        <header className="text-center mb-2">
-            <h2 className="text-xl text-bold mb-2">{title}</h2>
-            <p className={clsx('m-0 color-weak', expanded && 'mb-4')}>{c('Offer').t`Limited-time offer`}</p>
+        <header className="text-center mb-4">
+            <h2 className="text-xl text-bold mb-2 text-wrap-balance">{title}</h2>
+            <p className={clsx('m-0 color-weak', expanded && 'mb-4')}>{subtitle}</p>
         </header>
     );
 };
