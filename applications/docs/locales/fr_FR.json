@@ -938,6 +938,10 @@
       "${ price } per user": [
         "${ price } par utilisateur"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } accès ${ LUMO_APP_NAME }",
+        "${ seats } accès ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
         "${ seats } accès à l'assistant d'écriture"
@@ -1334,6 +1338,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problème"
+      ],
       "Application problem": [
         "Problème d'application"
       ],
@@ -4221,6 +4228,9 @@
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'offre à vie de ${ PASS_SHORT_APP_NAME } n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4577,6 +4587,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passer à un abonnement inférieur mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Télécharger les journaux actuels"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Le téléchargement de ${ downloadFileName } sera annulé."
@@ -6038,6 +6051,9 @@
       ],
       "Import to:": [
         "Importer dans :"
+      ],
+      "Include application logs in bug report": [
+        "Inclure les journaux d'application dans le rapport de bogue"
       ],
       "Include document name in notification": [
         "Inclure le nom du document dans les notifications"
@@ -9575,6 +9591,9 @@
       ],
       "Folders, labels, and custom filters": [
         "Dossiers, labels et filtres personnalisés"
+      ],
+      "Priority support": [
+        "Assistance prioritaire"
       ]
     },
     "Subscription renewal state": {

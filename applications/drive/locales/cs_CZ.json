@@ -1200,6 +1200,12 @@
       "${ price } per user": [
         "${ price } za uživatele"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licence asistenta psaní",
         "${ seats } licence asistenta psaní",
@@ -4746,6 +4752,9 @@
         "${ invitations.length } čekajících pozvánek",
         "${ invitations.length } čekajících pozvánek"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5216,6 +5225,9 @@
       ],
       "Download ${ name } app": [
         "Stáhnout aplikaci pro ${ name }"
+      ],
+      "Download current logs": [
+        "Stáhnout aktuální logy"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Stahování ${ downloadFileName } bude zrušeno"
@@ -7092,6 +7104,9 @@
       ],
       "Import to:": [
         "Importovat do:"
+      ],
+      "Include application logs in bug report": [
+        "Zahrnout logy aplikace do chybového hlášení"
       ],
       "Include message and file name in invite email": [
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"

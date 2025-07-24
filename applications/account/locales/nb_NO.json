@@ -556,6 +556,9 @@
       "Download ICS": [
         "Last ned ICS"
       ],
+      "Download logs": [
+        "Last ned logger"
+      ],
       "Download our CSV template": [
         "Last ned vår CSV-mal"
       ],
@@ -615,12 +618,6 @@
       ],
       "Edit servers": [
         "Rediger tjenere"
-      ],
-      "Edit sieve": [
-        "Rediger sieve"
-      ],
-      "Edit sieve filter “${ Name }”": [
-        "Rediger sieve-filter “${ Name }”"
       ],
       "Edit sign-in details": [
         "Rediger påloggingsinformasjon"
@@ -1029,6 +1026,12 @@
       ],
       "Publish changes": [
         "Publiser endringer"
+      ],
+      "Purge all": [
+        "Fjern alt"
+      ],
+      "Purge deleted": [
+        "Fjern slettede"
       ],
       "Quit": [
         "Avslutt"
@@ -1636,6 +1639,10 @@
       ],
       "${ price } per user": [
         "${ price } per bruker"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } lisens",
+        "${ seats } ${ LUMO_APP_NAME } lisenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skriveassistentlisens",
@@ -2354,6 +2361,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
+      ],
       "Application problem": [
         "Applikasjonsproblem"
       ],
@@ -7595,6 +7605,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ønsker å dele data med deg i ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
       ],
@@ -8394,6 +8407,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
+      ],
+      "Download current logs": [
+        "Last ned logg"
       ],
       "Download on the App Store": [
         "Last ned på App Store"
@@ -9440,6 +9456,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gjeldende syklus-baserte rabatter og ikke-utløpte kuponger lagret på kontoen din."
       ],
+      "Private AI assistant": [
+        "Privat KI-assistent"
+      ],
       "Promotion expired": [
         "Kampanje utløpt"
       ],
@@ -9526,6 +9545,15 @@
       ],
       "Restore": [
         "Gjenopprett"
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Oppbevaringsregel \"${ formData.name }\" ble oppdatert"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Oppbevaringsregel \"${ payload.Name }\" ble opprettet"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Oppbevaringsregel \"${ retentionRule.Name }\" ble slettet"
       ],
       "Revoke certificate ${ name }": [
         "Tilbakekall sertifikat ${ name }"
@@ -10767,9 +10795,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Støttesaken din er stengt. Takk for at du kontaktet kundestøtte for ${ BRAND_NAME }."
-      ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Din prøveversjon avsluttes 25. juni. Oppgrader for å motta fremtidige rapporter om brudd."
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Prøveversjonen avsluttes om ${ timeRemaining }."
@@ -15095,6 +15120,9 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
+      "Group": [
+        "Gruppe"
+      ],
       "I found another service that I like better": [
         "Jeg fant en annen tjeneste som jeg liker bedre"
       ],
@@ -15214,6 +15242,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "User": [
+        "Bruker"
       ],
       "Windows": [
         "Windows"
@@ -16522,6 +16553,64 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "På grunn av en endring av passord har administratorrettighetene til organisasjonen blitt begrenset. Følgende handlinger er ikke lenger tillatt:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Opprett oppbevaringsregel"
+      ],
+      "Delete": [
+        "Slett"
+      ],
+      "Delete rule": [
+        "Slett regel"
+      ],
+      "Edit": [
+        "Rediger"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } flere"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } dag",
+        "${ rule.Lifetime } dager"
+      ],
+      "Forever": [
+        "For alltid"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Søk etter regel, brukere, periode, handling"
+      ],
+      "Search policies": [
+        "Søk retningslinjer"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Handling"
+      ],
+      "Applies to": [
+        "Anvendes på"
+      ],
+      "Retention period": [
+        "Oppbevaringsperiode"
+      ],
+      "Retention Rule": [
+        "Oppbevaringsregel"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Ingen retningslinjer for oppbevaring funnet"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Opprett oppbevaringsregler for hvor lenge data skal beholdes i tråd med organisasjonens retningslinje for dataoppbevaring. Aktiverer også automatisk fjerning av utløpte data."
       ]
     },
     "Role": {
@@ -19815,6 +19904,9 @@
       "Data recovery": [
         "Datagjenoppretting"
       ],
+      "Data retention": [
+        "Dataoppbevaring"
+      ],
       "Date": [
         "Dato"
       ],
@@ -21649,6 +21741,9 @@
       ],
       "It's you": [
         "Det er deg"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Venter på administratortilgang"
