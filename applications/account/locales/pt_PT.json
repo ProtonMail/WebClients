@@ -556,6 +556,9 @@
       "Download ICS": [
         "Transferir ICS"
       ],
+      "Download logs": [
+        "Transferir os registos"
+      ],
       "Download our CSV template": [
         "Transfere o nosso modelo CSV"
       ],
@@ -616,10 +619,10 @@
       "Edit servers": [
         "Editar servidores"
       ],
-      "Edit sieve": [
+      "Edit Sieve": [
         "Editar Sieve"
       ],
-      "Edit sieve filter “${ Name }”": [
+      "Edit Sieve filter “${ Name }”": [
         "Editar o filtro Sieve «${ Name }»"
       ],
       "Edit sign-in details": [
@@ -1029,6 +1032,12 @@
       ],
       "Publish changes": [
         "Publicar as alterações"
+      ],
+      "Purge all": [
+        "Purgar tudo"
+      ],
+      "Purge deleted": [
+        "Purgar os elementos eliminados"
       ],
       "Quit": [
         "Sair"
@@ -1636,6 +1645,10 @@
       ],
       "${ price } per user": [
         "${ price } por utilizador"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licença do ${ LUMO_APP_NAME }",
+        "${ seats } licenças do ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -2354,6 +2367,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema com o ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema de aplicação"
       ],
@@ -7595,6 +7611,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quer partilhar dados consigo em ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "O ${ LUMO_APP_NAME } inclui o assistente de escrita ${ BRAND_NAME } Scribe."
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
@@ -8394,6 +8413,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A regressão terminará todas as ligações a servidores pagos do ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Transferir os registos atuais"
       ],
       "Download on the App Store": [
         "Descarregue-a na App Store"
@@ -9439,6 +9461,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos aplicáveis com base no ciclo e cupões não expirados guardados na sua conta."
+      ],
+      "Private AI assistant": [
+        "Assistente de IA privado"
       ],
       "Promotion expired": [
         "Promoção expirada"
@@ -10777,9 +10802,6 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "O seu pedido de assistência foi encerrado. Obrigado por contactar o suporte da ${ BRAND_NAME }."
       ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "A sua avaliação termina a 25 de junho. Melhore o seu plano para receber futuros relatórios de violações."
-      ],
       "Your trial will end in ${ timeRemaining }.": [
         "A sua avaliação terminará em ${ timeRemaining }."
       ],
@@ -11898,6 +11920,9 @@
       ],
       "Inbox": [
         "Caixa de entrada"
+      ],
+      "Include application logs in bug report": [
+        "Incluir os registos de aplicação no relatório de erro"
       ],
       "Inherit color from parent folder": [
         "Herdar cor da pasta principal"
@@ -15095,6 +15120,9 @@
       "Free server configs": [
         "Definições do servidor Free"
       ],
+      "Group": [
+        "Grupo"
+      ],
       "I found another service that I like better": [
         "Encontrei outro serviço de que gosto mais"
       ],
@@ -15211,6 +15239,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "User": [
+        "Utilizador"
       ]
     },
     "option": {
@@ -16516,6 +16547,59 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Devido a uma alteração de palavra-passe, os privilégios de administrador da sua organização foram restringidos. As seguintes ações já não são permitidas:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Criar uma regra de retenção"
+      ],
+      "Delete": [
+        "Eliminar"
+      ],
+      "Delete rule": [
+        "Eliminar a regra"
+      ],
+      "Edit": [
+        "Editar"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } mais"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } dia",
+        "${ rule.Lifetime } dias"
+      ],
+      "Forever": [
+        "Para sempre"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Pesquisar por regra, utilizadores, período, ação"
+      ],
+      "Search policies": [
+        "Pesquisar políticas"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Ação"
+      ],
+      "Applies to": [
+        "Aplica-se a"
+      ],
+      "Retention period": [
+        "Período de retenção"
+      ],
+      "Retention Rule": [
+        "Regra de retenção"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Não foram encontradas políticas de retenção."
       ]
     },
     "RetentionPoliciesSettings": {
@@ -21648,6 +21732,9 @@
       ],
       "It's you": [
         "É você"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Acesso de administrador pendente"

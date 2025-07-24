@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Descargar modelo CSV"
       ],
+      "Download logs": [
+        "Descargar los registros"
+      ],
       "Download our CSV template": [
         "Descargar nuestra plantilla CSV"
       ],
@@ -578,6 +581,12 @@
       ],
       "Publish changes": [
         "Publicar los cambios"
+      ],
+      "Purge all": [
+        "Purgar todo"
+      ],
+      "Purge deleted": [
+        "Purgar los elementos eliminados"
       ],
       "Recover data": [
         "Recuperar datos"
@@ -980,6 +989,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licencia de ${ LUMO_APP_NAME }",
+        "${ seats } licencias de ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia del asistente de escritura",
@@ -1603,6 +1616,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema con ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema con la aplicación"
       ],
@@ -4411,6 +4427,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de tus miembros que no son de SSO usa la autenticación de dos factores para iniciar sesión en tu organización.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de tus miembros que no son de SSO usan la autenticación de dos factores para iniciar sesión en tu organización."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
@@ -4912,6 +4931,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al cambiar por un plan con menos funciones se terminarán las conexiones a los servidores de pago de ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Descargar los registros actuales"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Descarga nuestra plantilla CSV, rellena los detalles de los usuarios, y luego carga tu archivo CSV completo para crear cuentas para estos usuarios."
@@ -5567,6 +5589,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
+      ],
+      "Private AI assistant": [
+        "Asistente de IA privado"
       ],
       "Protected by Swiss privacy laws": [
         "Protegido por la legislación suiza sobre privacidad"
@@ -6866,6 +6891,9 @@
       ],
       "Import all messages": [
         "Importar todos los mensajes"
+      ],
+      "Include application logs in bug report": [
+        "Incluir los registros de la aplicación en el informe de errores"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -8995,6 +9023,9 @@
       "Free server configs": [
         "Configuraciones del servidor gratuito"
       ],
+      "Group": [
+        "Grupo"
+      ],
       "I found another service that I like better": [
         "He encontrado otro servicio que me gusta mejor."
       ],
@@ -9054,6 +9085,9 @@
       ],
       "The whole organization": [
         "Toda la organización"
+      ],
+      "User": [
+        "Usuario"
       ]
     },
     "option": {
@@ -9807,6 +9841,59 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Debido a un cambio de contraseña, tus privilegios de administrador en la organización se han limitado. Ya no se permiten las siguientes acciones:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Crear una regla de conservación"
+      ],
+      "Delete": [
+        "Eliminar"
+      ],
+      "Delete rule": [
+        "Eliminar la regla"
+      ],
+      "Edit": [
+        "Editar"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } más"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } día",
+        "${ rule.Lifetime } días"
+      ],
+      "Forever": [
+        "Para siempre"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Buscar regla, usuarios, período, acción"
+      ],
+      "Search policies": [
+        "Buscar políticas"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Acción"
+      ],
+      "Applies to": [
+        "Se aplica a"
+      ],
+      "Retention period": [
+        "Periodo de conservación"
+      ],
+      "Retention Rule": [
+        "Regla de conservación"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "No se han encontrado políticas de conservación."
       ]
     },
     "RetentionPoliciesSettings": {
@@ -13083,6 +13170,9 @@
       ],
       "It's you": [
         "Eres tú"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Acceso de administrador pendiente"

@@ -450,6 +450,12 @@
       "Download all attachments": [
         "Baixar todos os anexos"
       ],
+      "Download application logs": [
+        "Baixar os registros do aplicativo"
+      ],
+      "Download logs": [
+        "Registros de downloads"
+      ],
       "Download now": [
         "Baixar agora"
       ],
@@ -1421,7 +1427,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1663,6 +1670,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuário"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licença do ${ LUMO_APP_NAME }",
+        "${ seats } licenças do ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -2150,6 +2161,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema no ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema no aplicativo"
       ],
@@ -6299,6 +6313,9 @@
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } tambem pode proteger seus negócios."
       ],
@@ -6878,6 +6895,12 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "O downgrade irá encerrar qualquer conexão com servidores pagos do ${ VPN_APP_NAME }."
+      ],
+      "Download application logs for troubleshooting": [
+        "Baixar os registros do aplicativo para a resolução de problemas"
+      ],
+      "Download current logs": [
+        "Baixar os registros atuais"
       ],
       "Download on the App Store": [
         "Baixe na App Store"
@@ -9199,6 +9222,9 @@
       ],
       "Import to:": [
         "Importar para:"
+      ],
+      "Include application logs in bug report": [
+        "Incluir os registros do aplicativo no relatório de erro"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrado"

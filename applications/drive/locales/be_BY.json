@@ -1039,7 +1039,7 @@
         "Паспрабуйце цяпер"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю па прычыне: ${ saveError }"
+        "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю з прычыны: ${ saveError }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключыць ${ DARK_WEB_MONITORING_NAME }"
@@ -1199,6 +1199,12 @@
       ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
@@ -1585,6 +1591,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Праблема ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Праблема з праграмай"
       ],
@@ -3292,7 +3301,7 @@
         "Не ўдалося абнавіць публічны вузел абагульвання"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Файл \"${ item.name }\" немагчыма запампаваць па прычыне памылкі \"${ error }\""
+        "Файл \"${ item.name }\" немагчыма запампаваць з прычыны памылкі \"${ error }\""
       ],
       "File \"${ name }\" is already downloading": [
         "Файл \"${ name }\" ужо спампоўваецца"
@@ -4712,6 +4721,9 @@
         "${ invitations.length } у чаканні запрашэнняў",
         "${ invitations.length } у чаканні запрашэнняў"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4860,7 +4872,7 @@
         "VPN - гэта бяспечны тунэль паміж вашай прыладай і інтэрнэтам. Ён хавае ваша месцазнаходжанне і актыўнасць ад вашага пастаўшчыка паслуг інтэрнэту (ISP) і вэб-сайтаў, якія вы наведваеце."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
+        "Доступ да ўліковага запісу абмежаваны з прычыны неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
@@ -5182,6 +5194,9 @@
       ],
       "Download ${ name } app": [
         "Спампаваць праграму ${ name }"
+      ],
+      "Download current logs": [
+        "Спампоўванне бягучых журналаў"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Спампоўванне файла ${ downloadFileName } было перарвана"
@@ -5664,7 +5679,7 @@
         "У грамадскіх сетках Wi-Fi"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "Адзін з вашых зашыфраваных дыскаў заблакіраваны. Верагодна па прычыне таго, што нядаўна было скіданне пароля."
+        "Адзін з вашых зашыфраваных дыскаў заблакіраваны. Верагодна з прычыны таго, што нядаўна было скіданне пароля."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
@@ -5976,7 +5991,7 @@
         "Абагулена з вамі"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
-        "Немагчыма выканаць праверку подпісу па прычыне памылкі сеткі. Паспрабуйце яшчэ раз пазней."
+        "Немагчыма выканаць праверку подпісу з прычыны памылкі сеткі. Паспрабуйце яшчэ раз пазней."
       ],
       "Signature check will be ignored": [
         "Праверка подпісу была праігнаравана"
@@ -6075,7 +6090,7 @@
         "Колькасць спампоўванняў уключае як фактычныя спампоўванні, так і папярэдні прагляд файлаў."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
-        "Зашыфраваныя даныя крыху большыя па прычыне службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
+        "Зашыфраваныя даныя крыху большыя з прычыны службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
@@ -6567,7 +6582,7 @@
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны. Далейшая неаплата прывядзе да блакіроўкі лістоў і абагуленых спасылак.${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Ваш бягучы браўзер не падтрымлівае спампоўванне вялікіх файлаў па прычыне недаступнасці службы Service Workers. Гэта можа прывесці да завісання браўзера. Скарыстайцеся апошняй версіяй ${ recommendedBrowser } і паспрабуйце яшчэ раз."
+        "Ваш бягучы браўзер не падтрымлівае спампоўванне вялікіх файлаў з прычыны недаступнасці службы Service Workers. Гэта можа прывесці да завісання браўзера. Скарыстайцеся апошняй версіяй ${ recommendedBrowser } і паспрабуйце яшчэ раз."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
@@ -6585,7 +6600,7 @@
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Вашы файлы больш недаступны па прычыне скідання пароля. Для аднаўлення доступу, паўторна запампуйце стары ключ шыфравання. ${ KeyReactivationButton }"
+        "Вашы файлы больш недаступны з прычыны скідання пароля. Для аднаўлення доступу, паўторна запампуйце стары ключ шыфравання. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
@@ -7058,6 +7073,9 @@
       ],
       "Import to:": [
         "Імпартаваць у:"
+      ],
+      "Include application logs in bug report": [
+        "Уключыць журналы праграмы ў справаздачу аб памылцы"
       ],
       "Include message and file name in invite email": [
         "Уключаць паведамленне і назву файла ў запрашальны ліст"
@@ -9313,7 +9331,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Некаторыя відарысы не былі запампаваны па прычыне дубліравання імён файлаў у бягучым выбары."
+        "Некаторыя відарысы не былі запампаваны з прычыны дубліравання імён файлаў у бягучым выбары."
       ]
     },
     "Oauth instructions": {

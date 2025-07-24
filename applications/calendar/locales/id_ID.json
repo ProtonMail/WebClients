@@ -116,6 +116,9 @@
       "Cancel subscription": [
         "Batalkan langganan"
       ],
+      "Cancel trial and pay": [
+        "Batalkan uji coba dan bayar"
+      ],
       "Chat with us": [
         "Mengobrol dengan kami"
       ],
@@ -292,6 +295,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
+      ],
+      "Download logs": [
+        "Unduh log"
       ],
       "Download now": [
         "Unduh sekarang"
@@ -3434,6 +3440,9 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
+      "Invalid ZIP code": [
+        "Kode pos tidak valid"
+      ],
       "Invitation failed to be sent": [
         "Undangan gagal dikirim"
       ],
@@ -3524,6 +3533,12 @@
       "Please create an address first.": [
         "Silakan buat alamat terlebih dahulu."
       ],
+      "Please enter a valid ZIP code": [
+        "Silakan masukkan kode pos yang valid"
+      ],
+      "Please enter ZIP code": [
+        "Silakan masukkan kode pos"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Silakan selesaikan permasalahan yang disorot untuk melanjutkan."
       ],
@@ -3535,6 +3550,9 @@
       ],
       "Please select a state": [
         "Silakan pilih negara bagian/provinsi"
+      ],
+      "Please select billing country": [
+        "Silakan pilih negara penagihan"
       ],
       "Port is required": [
         "Nomor port diperlukan"
@@ -5762,7 +5780,7 @@
         "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
+        "Anda memiliki langganan ${ planTitle } versi uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
@@ -6569,6 +6587,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Kode pos"
+      ],
       "ZIP code": [
         "Kode pos"
       ]
@@ -8562,6 +8583,9 @@
       "Got it": [
         "Mengerti"
       ],
+      "I'm purchasing as a business": [
+        "Saya membeli produk ini selaku pihak bisnis"
+      ],
       "MM/YY": [
         "BB/TT"
       ],
@@ -8596,7 +8620,7 @@
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "This payment method will become your new default for all future renewals.": [
-        "Metode pembayaran ini akan menjadi bawaan baru Anda untuk semua perpanjangan mendatang."
+        "Metode pembayaran ini akan menjadi metode bawaan baru Anda untuk segala perpanjangan yang dilakukan ke depannya."
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
@@ -8647,6 +8671,17 @@
       ],
       "Street address, postal code, and city": [
         "Alamat, kode pos, dan kota"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Nomor Bisnis"
+      ],
+      "EIN": [
+        "NPWP"
       ]
     },
     "PGP key encryption warning": {
@@ -8778,6 +8813,9 @@
       ],
       "Your organization name": [
         "Nama organisasi Anda"
+      ],
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "Placeholder for contact group name": {
@@ -9693,7 +9731,7 @@
         "Ruang penyimpanan total ${ planMaxSpace }"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } memberikan Anda akses ke seluruh aplikasi dan fitur premium. Privasi terkandung secara bawaan dalam paket ini, sehingga Anda dapat beraktivitas dengan tenang mengetahui bahwa data dan identitas Anda tersimpan dengan aman."
+        "${ planName } memberikan Anda akses ke seluruh aplikasi dan fitur premium yang tersedia. Paket ini mengusung privasi secara bawaan, sehingga Anda dapat beraktivitas dengan tenang mengetahui bahwa data dan identitas Anda tersimpan dengan aman."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."

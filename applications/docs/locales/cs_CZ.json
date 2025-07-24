@@ -949,6 +949,12 @@
       "${ price } per user": [
         "${ price } za uživatele"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licence asistenta psaní",
         "${ seats } licence asistenta psaní",
@@ -4308,6 +4314,9 @@
         "${ groupCounts } skupin nalezeno",
         "${ groupCounts } skupin nalezeno"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4694,6 +4703,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
+      ],
+      "Download current logs": [
+        "Stáhnout aktuální logy"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Stahování ${ downloadFileName } bude zrušeno"
@@ -6174,6 +6186,9 @@
       ],
       "Import to:": [
         "Importovat do:"
+      ],
+      "Include application logs in bug report": [
+        "Zahrnout logy aplikace do chybového hlášení"
       ],
       "Include document name in notification": [
         "Zahrnout název dokumentu do upozornění"
@@ -9818,6 +9833,9 @@
       ],
       "Folders, labels, and custom filters": [
         "Složky, štítky a vlastní filtry"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
       ]
     },
     "Subscription renewal state": {

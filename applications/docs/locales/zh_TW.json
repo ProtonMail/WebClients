@@ -660,6 +660,9 @@
       "Show more": [
         "顯示更多"
       ],
+      "Show more benefits": [
+        "顯示更多好處"
+      ],
       "Show options": [
         "顯示選項"
       ],
@@ -823,6 +826,9 @@
       "${ price } per user": [
         "每使用者${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }撰寫幫手就位"
       ],
@@ -851,6 +857,9 @@
       "Online document editor": [
         "線上文件編輯器"
       ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
       "Save time with built-in 2FA": [
         "利用內建雙重驗證（2FA）以節省時間"
       ],
@@ -870,6 +879,9 @@
       ],
       "30 months": [
         "30個月"
+      ],
+      "for ${ durationDeal }": [
+        "為期 ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -910,6 +922,11 @@
         "保留訂購授權"
       ]
     },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "您的免費滿意體驗將於 ${ timeRemaining } 結束"
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 位使用者"
@@ -937,6 +954,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 且 ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
@@ -1080,6 +1100,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 疑難問題"
+      ],
       "Application problem": [
         "應用程式問題"
       ],
@@ -3759,8 +3782,17 @@
       "Import from ${ provider }": [
         "從 ${ provider } 匯入"
       ],
+      "Import from Google": [
+        "從 Google 匯入"
+      ],
+      "Import from other": [
+        "從其他匯入"
+      ],
       "Import from Outlook": [
         "從 Outlook 匯入"
+      ],
+      "Import from Yahoo": [
+        "從 Yahoo 匯入"
       ]
     },
     "Import warning": {
@@ -3822,6 +3854,9 @@
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME }終身方案無續約費，他是單次付費終身存取${ PASS_SHORT_APP_NAME }。"
@@ -4113,6 +4148,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
+      ],
+      "Download current logs": [
+        "下載最近的日誌"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 將會中止下載"
@@ -5353,6 +5391,9 @@
       ],
       "Import to:": [
         "匯入到："
+      ],
+      "Include application logs in bug report": [
+        "在錯誤報告中納入應用程式日誌"
       ],
       "Include message and file name in invite email": [
         "在邀請電子郵件中包含訊息與檔案名稱"
@@ -7130,6 +7171,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }優惠今日過期!"
       ],
+      "Don’t show this again": [
+        "不再顯示此內容"
+      ],
       "Don’t show this offer again": [
         "不再顯示此優惠"
       ],
@@ -7185,6 +7229,9 @@
     "Offer feature": {
       "+10 more premium features": [
         "+10多項的頂級功能"
+      ],
+      "500 GB secure storage": [
+        "500 GB 安全儲存"
       ],
       "Custom email domain": [
         "自訂電子郵件網域名稱電郵網域名稱"
@@ -8042,8 +8089,14 @@
       ]
     },
     "specialoffer: Link": {
+      "Get unlimited aliases": [
+        "取得無限別名"
+      ],
       "Go to subscription plans": [
         "查看訂購授權"
+      ],
+      "Increase your storage": [
+        "增加您的儲存"
       ],
       "Keep passwords safe": [
         "保護密碼字元安全"
@@ -8247,6 +8300,9 @@
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
         "您已使用 ${ percentage }% 的 ${ productString }。${ cta }。"
       ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "您的${ productString }已滿${ cta }。"
+      ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "你的儲存量已達 ${ percentage }% 滿. ${ cta }."
       ],
@@ -8391,6 +8447,9 @@
       ],
       "Folders, labels, and custom filters": [
         "資料夾，標籤和自訂過濾規則"
+      ],
+      "Priority support": [
+        "優先支援"
       ]
     },
     "Subscription renewal state": {
@@ -8906,6 +8965,9 @@
       ],
       "Groups": [
         "群組"
+      ],
+      "Help and feedback": [
+        "尋求協助與反映意見"
       ],
       "Help center": [
         "說明中心"

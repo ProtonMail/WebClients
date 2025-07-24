@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Λήψη δείγματος CSV"
       ],
+      "Download logs": [
+        "Λήψη αρχείων καταγραφής"
+      ],
       "Download our CSV template": [
         "Λήψη του προτύπου CSV αρχείου μας"
       ],
@@ -987,6 +990,10 @@
       "${ price } per user": [
         "${ price } ανά χρήστη"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } θέση",
+        "${ seats } ${ LUMO_APP_NAME } θέσεις"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } άδεια βοηθού γραφής",
         "${ seats } άδειες βοηθού γραφής"
@@ -1563,6 +1570,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } πρόβλημα"
+      ],
       "Application problem": [
         "Πρόβλημα εφαρμογής"
       ],
@@ -4363,6 +4373,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } των μη SSO μελών σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων για να πραγματοποιήσουν είσοδο στον οργανισμό σας."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
       ],
@@ -4864,6 +4877,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ${ VPN_APP_NAME } επί πληρωμή."
+      ],
+      "Download current logs": [
+        "Λήψη τρεχόντων αρχείων καταγραφής"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Κατεβάστε το πρότυπο CSV, συμπληρώστε τα στοιχεία χρήστη και, στη συνέχεια, ανεβάστε το ολοκληρωμένο αρχείο CSV για να δημιουργήσετε λογαριασμούς για αυτούς τους χρήστες."
@@ -5519,6 +5535,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Η τιμή περιλαμβάνει όλες τις ισχύουσες εκπτώσεις βάσει κύκλου καθώς και τα κουπόνια που δεν έχουν λήξει και είναι αποθηκευμένα στον λογαριασμό σας."
+      ],
+      "Private AI assistant": [
+        "Ιδιωτικός βοηθός AI"
       ],
       "Protected by Swiss privacy laws": [
         "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
@@ -6818,6 +6837,9 @@
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
+      ],
+      "Include application logs in bug report": [
+        "Περιλάβετε τα αρχεία καταγραφής εφαρμογής στην αναφορά σφάλματος"
       ],
       "Integrated 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής 2FA"
@@ -13076,6 +13098,9 @@
       ],
       "It's you": [
         "Είστε εσείς"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Πρόσβαση διαχειριστή σε εκκρεμότητα"

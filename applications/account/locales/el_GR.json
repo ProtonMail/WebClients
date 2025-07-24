@@ -556,6 +556,9 @@
       "Download ICS": [
         "Λήψη ICS"
       ],
+      "Download logs": [
+        "Λήψη αρχείων καταγραφής"
+      ],
       "Download our CSV template": [
         "Λήψη του προτύπου CSV αρχείου μας"
       ],
@@ -616,10 +619,10 @@
       "Edit servers": [
         "Επεξεργασία διακομιστών"
       ],
-      "Edit sieve": [
-        "Επεξεργασία sieve"
+      "Edit Sieve": [
+        "Επεξεργασία Sieve"
       ],
-      "Edit sieve filter “${ Name }”": [
+      "Edit Sieve filter “${ Name }”": [
         "Επεξεργασία φίλτρου Sieve “${ Name }”"
       ],
       "Edit sign-in details": [
@@ -1643,6 +1646,10 @@
       "${ price } per user": [
         "${ price } ανά χρήστη"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } θέση",
+        "${ seats } ${ LUMO_APP_NAME } θέσεις"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } άδεια βοηθού γραφής",
         "${ seats } άδειες βοηθού γραφής"
@@ -2360,6 +2367,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } πρόβλημα"
+      ],
       "Application problem": [
         "Πρόβλημα εφαρμογής"
       ],
@@ -7601,6 +7611,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "Ο ${ inviterEmailJSX } θέλει να μοιραστεί δεδομένα μαζί σας στο ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
       ],
@@ -8400,6 +8413,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ${ VPN_APP_NAME } επί πληρωμή."
+      ],
+      "Download current logs": [
+        "Λήψη τρεχόντων αρχείων καταγραφής"
       ],
       "Download on the App Store": [
         "Λήψη στο App Store"
@@ -9442,6 +9458,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Η τιμή περιλαμβάνει όλες τις ισχύουσες εκπτώσεις βάσει κύκλου καθώς και τα κουπόνια που δεν έχουν λήξει και είναι αποθηκευμένα στον λογαριασμό σας."
+      ],
+      "Private AI assistant": [
+        "Ιδιωτικός βοηθός AI"
       ],
       "Promotion expired": [
         "Η προσφορά έληξε"
@@ -10780,9 +10799,6 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Το εισιτήριο υποστήριξής σας έχει κλείσει. Σας ευχαριστούμε που επικοινωνήσατε με την υποστήριξη ${ BRAND_NAME }."
       ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Η δοκιμή σας λήγει στις 25 Ιουνίου. Αναβαθμίστε για να λαμβάνετε μελλοντικές αναφορές παραβιάσεων."
-      ],
       "Your trial will end in ${ timeRemaining }.": [
         "Η δοκιμή σας θα τελειώσει σε ${ timeRemaining }."
       ],
@@ -11901,6 +11917,9 @@
       ],
       "Inbox": [
         "Εισερχόμενα"
+      ],
+      "Include application logs in bug report": [
+        "Περιλάβετε τα αρχεία καταγραφής εφαρμογής στην αναφορά σφάλματος"
       ],
       "Inherit color from parent folder": [
         "Κληρονόμηση χρώματος από το γονικό φάκελο"
@@ -21701,6 +21720,9 @@
       ],
       "It's you": [
         "Είστε εσείς"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Πρόσβαση διαχειριστή σε εκκρεμότητα"
