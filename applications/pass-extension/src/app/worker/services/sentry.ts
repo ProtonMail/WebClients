@@ -1,4 +1,4 @@
-import * as config from 'proton-pass-extension/app/config';
+import config from 'proton-pass-extension/app/config';
 import 'proton-pass-extension/lib/utils/polyfills';
 
 import { logger } from '@proton/pass/utils/logger';
