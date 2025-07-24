@@ -1546,6 +1546,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 문제"
+      ],
       "Application problem": [
         "앱 문제"
       ],
@@ -4538,6 +4541,9 @@
       "${ invitations.length } pending invitation": [
         "${ invitations.length }개 대기 중인 초대"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 평생 이용권 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME } 평생 이용권의 일회성 결제입니다."
       ],
@@ -4948,6 +4954,9 @@
       ],
       "Download ${ name } app": [
         "${ name }앱 설치"
+      ],
+      "Download current logs": [
+        "현재 로그 다운로드"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }의 다운로드가 중단됩니다"
@@ -6767,6 +6776,9 @@
       ],
       "Import to:": [
         "가져오기:"
+      ],
+      "Include application logs in bug report": [
+        "버그 신고에 애플리케이션 로그 포함"
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
