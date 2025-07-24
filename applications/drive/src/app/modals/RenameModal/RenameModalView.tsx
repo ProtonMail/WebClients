@@ -65,7 +65,7 @@ export const RenameModalView = ({
         e.preventDefault();
         const formattedName = tempName.trim();
         setTempName(formattedName);
-        onClose?.();
+
         return handleSubmit(formattedName);
     };
 
