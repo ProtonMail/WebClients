@@ -556,6 +556,9 @@
       "Download ICS": [
         "Pobierz plik ICS"
       ],
+      "Download logs": [
+        "Pobierz logi"
+      ],
       "Download our CSV template": [
         "Pobierz szablon pliku CSV"
       ],
@@ -616,10 +619,10 @@
       "Edit servers": [
         "Edytuj serwery"
       ],
-      "Edit sieve": [
+      "Edit Sieve": [
         "Edytuj filtr Sieve"
       ],
-      "Edit sieve filter “${ Name }”": [
+      "Edit Sieve filter “${ Name }”": [
         "Edytuj filtr Sieve “${ Name }”"
       ],
       "Edit sign-in details": [
@@ -1647,6 +1650,12 @@
       "${ price } per user": [
         "${ price } za użytkownika"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licencja",
+        "${ seats } ${ LUMO_APP_NAME } licencje",
+        "${ seats } ${ LUMO_APP_NAME } licencji",
+        "${ seats } ${ LUMO_APP_NAME } licencji"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencja asystenta pisania",
         "${ seats } licencje asystenta pisania",
@@ -2432,6 +2441,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problem z ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problem z aplikacją"
       ],
@@ -2842,9 +2854,12 @@
         "Rozwiń"
       ]
     },
-    "collider_2025: Navigation": {
-      "Back to ${ LUMO_SHORT_APP_NAME }": [
-        "Powrót do ${ LUMO_SHORT_APP_NAME }"
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } to sztuczna inteligencja stawiająca na prywatność, która pomaga Ci osiągać więcej, dbając jednocześnie o bezpieczeństwo Twoich danych. Odblokuj jej pełny potencjał i ciesz się wczesnym dostępem do nowych funkcji, gdy tylko zostaną wprowadzone."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Dodaj ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -7774,6 +7789,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "Użytkownik ${ inviterEmailJSX } zaprasza Cię do ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } zawiera asystenta pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
@@ -8637,6 +8655,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Pobierz logi"
       ],
       "Download on the App Store": [
         "Pobierz z App Store"
@@ -9693,6 +9714,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena obejmuje wszystkie mające zastosowanie zniżki i kupony zapisane na Twoim koncie."
+      ],
+      "Private AI assistant": [
+        "Prywatny asystent AI"
       ],
       "Promotion expired": [
         "Promocja wygasła"
@@ -11071,9 +11095,6 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Zgłoszenie zostało zamknięte. Dziękujemy za kontakt ze wsparciem technicznym ${ BRAND_NAME }."
       ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Twoja wersja próbna kończy się 25 czerwca. Ulepsz konto, aby otrzymywać przyszłe raporty o naruszeniach."
-      ],
       "Your trial will end in ${ timeRemaining }.": [
         "Wersja próbna zakończy się za ${ timeRemaining }."
       ],
@@ -12206,6 +12227,9 @@
       ],
       "Inbox": [
         "Skrzynka pocztowa"
+      ],
+      "Include application logs in bug report": [
+        "Dołącz logi aplikacji do raportu błędu"
       ],
       "Inherit color from parent folder": [
         "Zastosuj kolor folderu nadrzędnego"
@@ -22270,6 +22294,9 @@
       ],
       "It's you": [
         "Ty"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Oczekiwanie na dostęp administratora"

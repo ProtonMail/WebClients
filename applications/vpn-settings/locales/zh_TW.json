@@ -291,6 +291,9 @@
       "Download CSV sample": [
         "下載 CSV 範本"
       ],
+      "Download logs": [
+        "下載日誌"
+      ],
       "Download our CSV template": [
         "下載我們的CSV模板"
       ],
@@ -546,6 +549,12 @@
       "Previous page": [
         "上一頁"
       ],
+      "Purge all": [
+        "全部清除"
+      ],
+      "Purge deleted": [
+        "清除已刪除的"
+      ],
       "Recover data": [
         "恢復資料"
       ],
@@ -732,6 +741,9 @@
       "Show more": [
         "顯示更多"
       ],
+      "Show more benefits": [
+        "顯示更多好處"
+      ],
       "Show preview": [
         "顯示預覽"
       ],
@@ -916,6 +928,9 @@
       "${ price } per user": [
         "每使用者${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }撰寫幫手就位"
       ],
@@ -1030,6 +1045,9 @@
       "Online document editor": [
         "線上文件編輯器"
       ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
       "Save time with built-in 2FA": [
         "利用內建雙重驗證（2FA）以節省時間"
       ],
@@ -1049,6 +1067,9 @@
       ],
       "30 months": [
         "30個月"
+      ],
+      "for ${ durationDeal }": [
+        "為期 ${ durationDeal }"
       ]
     },
     "Assistant toggle": {
@@ -1062,6 +1083,11 @@
       ],
       "Keep subscription": [
         "保留訂購授權"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "您的免費滿意體驗將於 ${ timeRemaining } 結束"
       ]
     },
     "Badge for domain": {
@@ -1143,6 +1169,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 且 ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
@@ -1302,6 +1331,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 疑難問題"
+      ],
       "Application problem": [
         "應用程式問題"
       ],
@@ -3841,6 +3873,9 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }：低解析度預覽"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和第二個密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
       ],
@@ -4257,6 +4292,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
+      ],
+      "Download current logs": [
+        "下載最近的日誌"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "下載我們的 CSV 範本，依序填入使用者相關詳細資料，接著上傳您完成的 CSV 檔案，即可創建這些使用者的帳號。"
@@ -4851,6 +4889,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
+      ],
+      "Private AI assistant": [
+        "私人 AI 助理"
       ],
       "Protected by Swiss privacy laws": [
         "由瑞士隱私權相關法律保障"
@@ -6009,6 +6050,9 @@
       ],
       "Import all messages": [
         "匯入全部郵件"
+      ],
+      "Include application logs in bug report": [
+        "在錯誤報告中納入應用程式日誌"
       ],
       "Integrated 2FA authenticator": [
         "整合雙重驗證"
@@ -7716,6 +7760,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }優惠今日過期!"
       ],
+      "Don’t show this again": [
+        "不再顯示此內容"
+      ],
       "Don’t show this offer again": [
         "不再顯示此優惠"
       ],
@@ -7772,6 +7819,9 @@
       "+10 more premium features": [
         "+10多項的頂級功能"
       ],
+      "500 GB secure storage": [
+        "500 GB 安全儲存"
+      ],
       "Custom email domain": [
         "自訂電子郵件網域名稱電郵網域名稱"
       ],
@@ -7813,6 +7863,9 @@
       ],
       "Free server configs": [
         "免費伺服器組態設定"
+      ],
+      "Group": [
+        "群組"
       ],
       "I found another service that I like better": [
         "我找到了另一個我更喜歡的服務"
@@ -7867,6 +7920,9 @@
       ],
       "The whole organization": [
         "整個組織"
+      ],
+      "User": [
+        "使用者"
       ]
     },
     "option": {
@@ -8462,6 +8518,58 @@
         "由於密碼變更，您的組織系統管理員權限受到限制。下列動作已不再允許："
       ]
     },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "建立保留規則"
+      ],
+      "Delete": [
+        "刪除"
+      ],
+      "Delete rule": [
+        "刪除規則"
+      ],
+      "Edit": [
+        "編輯"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "還有 ${ remainingCount }"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } 天"
+      ],
+      "Forever": [
+        "永久"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "搜尋規則、使用者、期間及動作"
+      ],
+      "Search policies": [
+        "搜尋政策"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "動作"
+      ],
+      "Applies to": [
+        "套用到"
+      ],
+      "Retention period": [
+        "保留期間"
+      ],
+      "Retention Rule": [
+        "保留規則"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "找不到保留政策"
+      ]
+    },
     "Role": {
       "Admin": [
         "管理員"
@@ -8953,8 +9061,14 @@
       ]
     },
     "specialoffer: Link": {
+      "Get unlimited aliases": [
+        "取得無限別名"
+      ],
       "Go to subscription plans": [
         "查看訂購授權"
+      ],
+      "Increase your storage": [
+        "增加您的儲存"
       ],
       "Keep passwords safe": [
         "保護密碼字元安全"
@@ -9328,6 +9442,9 @@
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
         "您已使用 ${ percentage }% 的 ${ productString }。${ cta }。"
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "您的${ productString }已滿${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "你的儲存量已達 ${ percentage }% 滿. ${ cta }."
@@ -10557,6 +10674,9 @@
       "Groups": [
         "群組"
       ],
+      "Help and feedback": [
+        "尋求協助與反映意見"
+      ],
       "Help center": [
         "說明中心"
       ],
@@ -11187,6 +11307,9 @@
       ],
       "Invite sent": [
         "已傳送邀請"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "審理管理員存取權"

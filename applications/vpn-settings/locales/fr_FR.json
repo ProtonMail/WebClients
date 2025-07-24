@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Télécharger un modèle CSV"
       ],
+      "Download logs": [
+        "Télécharger les journaux"
+      ],
       "Download our CSV template": [
         "Télécharger notre modèle CSV"
       ],
@@ -578,6 +581,12 @@
       ],
       "Publish changes": [
         "Publier les modifications"
+      ],
+      "Purge all": [
+        "Tout purger"
+      ],
+      "Purge deleted": [
+        "Purger les éléments supprimés"
       ],
       "Recover data": [
         "Récupérer les données"
@@ -980,6 +989,10 @@
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } accès ${ LUMO_APP_NAME }",
+        "${ seats } accès ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
@@ -1609,6 +1622,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problème"
+      ],
       "Application problem": [
         "Problème d'application"
       ],
@@ -4417,6 +4433,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de vos membres sans authentification unique utilise une authentification à deux facteurs pour se connecter à votre organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de vos membres sans authentification unique utilisent une authentification à deux facteurs pour se connecter à votre organisation."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }"
       ],
@@ -4918,6 +4937,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passer à un abonnement inférieur mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Télécharger les journaux actuels"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Téléchargez notre modèle CSV, renseignez les informations sur l'utilisateur, puis téléchargez votre fichier CSV complété pour créer des comptes pour ces utilisateurs."
@@ -5573,6 +5595,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
+      ],
+      "Private AI assistant": [
+        "Assistant IA privé"
       ],
       "Protected by Swiss privacy laws": [
         "Protégé par les lois suisses sur la vie privée"
@@ -6872,6 +6897,9 @@
       ],
       "Import all messages": [
         "Importer tous les messages"
+      ],
+      "Include application logs in bug report": [
+        "Inclure les journaux d'application dans le rapport de bogue"
       ],
       "Integrated 2FA authenticator": [
         "Authentification à deux facteurs (A2F) intégrée"
@@ -9836,12 +9864,23 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } de plus"
+      ],
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime } jour",
         "${ rule.Lifetime } jours"
       ],
       "Forever": [
         "Pour toujours"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Rechercher une règle, des utilisateurs, une période ou une action"
+      ],
+      "Search policies": [
+        "Rechercher des politiques"
       ]
     },
     "retention_policy_2025_TableHeader": {
@@ -9856,6 +9895,11 @@
       ],
       "Retention Rule": [
         "Règle de conservation"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Aucune politique de conservation n'a été trouvée."
       ]
     },
     "RetentionPoliciesSettings": {
@@ -13132,6 +13176,9 @@
       ],
       "It's you": [
         "C'est vous"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Accès administrateur en attente"

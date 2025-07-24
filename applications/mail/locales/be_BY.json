@@ -456,6 +456,12 @@
       "Download all attachments": [
         "Спампаваць усе далучэнні"
       ],
+      "Download application logs": [
+        "Спампаваць журналы праграмы"
+      ],
+      "Download logs": [
+        "Спампаваць журналы"
+      ],
       "Download now": [
         "Спампаваць"
       ],
@@ -1428,6 +1434,12 @@
       "Trust": [
         "Давяраць"
       ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
+      ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
       ],
@@ -1438,7 +1450,7 @@
         "Паспрабуйце іншы спосаб"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю па прычыне: ${ saveError }"
+        "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю з прычыны: ${ saveError }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключыць ${ DARK_WEB_MONITORING_NAME }"
@@ -1674,6 +1686,12 @@
       ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
@@ -2145,6 +2163,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Праблема ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Праблема з праграмай"
       ],
@@ -4479,7 +4500,7 @@
         "Не ўдалося захаваць чарнавік. Паспрабуйце яшчэ раз."
       ],
       "Due to an error, text generation couldn't be canceled": [
-        "Па прычыне памылкі немагчыма скасаваць генерацыю тэксту"
+        "З прычыны памылкі немагчыма скасаваць генерацыю тэксту"
       ],
       "Email address disabled": [
         "Адрас электроннай пошты адключаны"
@@ -4953,7 +4974,7 @@
         "Вы дасягнулі максімальнай колькасці сімвалаў. Скараціце сваё паведамленне."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        "Немагчыма расшыфраваць вашы лісты па прычыне нядаўняга скідання пароля. Калі вы памятаеце ваш папярэдні пароль, то можна ${ reActivateKeyLink } для атрымання доступу да сваіх паведамленняў. ${ learnMoreLink }"
+        "Немагчыма расшыфраваць вашы лісты з прычыны нядаўняга скідання пароля. Калі вы памятаеце ваш папярэдні пароль, то можна ${ reActivateKeyLink } для атрымання доступу да сваіх паведамленняў. ${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
         "Немагчыма расшыфраваць вашы лісты. Прычынай гэтаму можа быць нядаўняе скіданне пароля. ${ learnMoreLink }"
@@ -6406,6 +6427,9 @@
         "Знойдзена ${ groupCounts } груп",
         "Знойдзена ${ groupCounts } груп"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } таксама можа абараніць ваш бізнес."
       ],
@@ -6632,7 +6656,7 @@
         "Атрымайце доступ да больш чым 6500 высакахуткасных сервераў з магчымасцю падключэння да 10 прылад, каб захаваць свае даныя прыгляду ў бяспецы. Праграмы даступны для ${ ios }, ${ android }, ${ appleTV } і ${ desktop }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
+        "Доступ да ўліковага запісу абмежаваны з прычыны неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
@@ -7054,6 +7078,12 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
+      "Download application logs for troubleshooting": [
+        "Спампаваць журналы праграмы для выпраўлення непаладак"
+      ],
+      "Download current logs": [
+        "Спампоўванне бягучых журналаў"
+      ],
       "Download on the App Store": [
         "Спампававаць у App Store"
       ],
@@ -7085,10 +7115,10 @@
         "Перацягніце, каб імпартаваць"
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date to ${ firstRecipients }.": [
-        "Па прычыне канфігурацыі атрымальніка гэта паведамленне з тэрмінам дзеяння не можа быць адпраўлена ${ firstRecipients }."
+        "З прычыны канфігурацыі атрымальніка гэта паведамленне з тэрмінам дзеяння не можа быць адпраўлена ${ firstRecipients }."
       ],
       "Due to your recipient's configuration, this message can't be sent with an expiration date.": [
-        "Па прычыне канфігурацыі атрымальніка гэта паведамленне з тэрмінам дзеяння не можа быць адпраўлена."
+        "З прычыны канфігурацыі атрымальніка гэта паведамленне з тэрмінам дзеяння не можа быць адпраўлена."
       ],
       "Duplicate key updated": [
         "Дублікат ключа абноўлены"
@@ -8066,7 +8096,7 @@
         "Здаецца, што адрас электроннай пошты ${ boldNoReplyEmail } не прызначаны для атрымання адказаў. Вы сапраўды хочаце адправіць паведамленне?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
-        "Зашыфраваныя даныя крыху большыя па прычыне службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
+        "Зашыфраваныя даныя крыху большыя з прычыны службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
@@ -9446,6 +9476,9 @@
       "Import to:": [
         "Імпартаваць у:"
       ],
+      "Include application logs in bug report": [
+        "Уключыць журналы праграмы ў справаздачу аб памылцы"
+      ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
       ],
@@ -9941,7 +9974,7 @@
         "Уключыце адрас электроннай пошты, які звязаны з адключаным календаром, каб скасаваць гэту падзею."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Уключыце адрас электроннай пошты, які звязаны з адключаным календаром, каб змяніць ваш адказ."
+        "Уключыце адрас электроннай пошты, які звязаны з адключаным календаром для змянення вашага адказу."
       ],
       "Enable your address again to modify your answer.": [
         "Уключыце ваш адрас яшчэ раз, каб змяніць свой адказ."
@@ -11515,7 +11548,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Некаторыя відарысы не былі запампаваны па прычыне дубліравання імён файлаў у бягучым выбары."
+        "Некаторыя відарысы не былі запампаваны з прычыны дубліравання імён файлаў у бягучым выбары."
       ]
     },
     "Oauth instructions": {
@@ -12659,13 +12692,13 @@
         "Вы ўсё роўна хочаце адправіць ліст?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на ўведзены адрас электроннай пошты па наступнай прычыне:",
-        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты па наступнай прычыне:",
-        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты па наступнай прычыне:",
-        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты па наступнай прычыне:"
+        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на ўведзены адрас электроннай пошты з прычыны:",
+        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:",
+        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:",
+        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Мы выявілі некаторыя памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты па наступнай прычыне:"
+        "Мы выявілі некаторыя памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:"
       ]
     },
     "Send email with warnings": {

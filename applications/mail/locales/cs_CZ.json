@@ -456,6 +456,12 @@
       "Download all attachments": [
         "Stáhnout všechny přílohy"
       ],
+      "Download application logs": [
+        "Stáhnout logy aplikace"
+      ],
+      "Download logs": [
+        "Stáhnout logy"
+      ],
       "Download now": [
         "Stáhnout nyní"
       ],
@@ -1428,6 +1434,12 @@
       "Trust": [
         "Důvěřovat"
       ],
+      "Trust key": [
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
+      ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
       ],
@@ -1674,6 +1686,12 @@
       ],
       "${ price } per user": [
         "${ price } za uživatele"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licence asistenta psaní",
@@ -6440,6 +6458,9 @@
         "${ groupCounts } skupin nalezeno",
         "${ groupCounts } skupin nalezeno"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } může chránit i vaši firmu."
       ],
@@ -7087,6 +7108,12 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
+      ],
+      "Download application logs for troubleshooting": [
+        "Stáhnout logy aplikace pro řešení problémů"
+      ],
+      "Download current logs": [
+        "Stáhnout aktuální logy"
       ],
       "Download on the App Store": [
         "Stáhnout z App Store"
@@ -9479,6 +9506,9 @@
       ],
       "Import to:": [
         "Importovat do:"
+      ],
+      "Include application logs in bug report": [
+        "Zahrnout logy aplikace do chybového hlášení"
       ],
       "Integrated 2FA authenticator": [
         "Integrované ověřování 2FA"

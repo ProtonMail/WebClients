@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Descargar muestra CSV"
       ],
+      "Download logs": [
+        "Descargar los registros"
+      ],
       "Download our CSV template": [
         "Descargar nuestra plantilla CSV"
       ],
@@ -583,7 +586,7 @@
         "Purgar todo"
       ],
       "Purge deleted": [
-        "Purgar eliminados"
+        "Purgar los elementos eliminados"
       ],
       "Recover data": [
         "Recuperar datos"
@@ -986,6 +989,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licencia de ${ LUMO_APP_NAME }",
+        "${ seats } licencias de ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia del asistente de escritura",
@@ -1609,6 +1616,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema con ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema con la aplicación"
       ],
@@ -4417,6 +4427,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros que no son de SSO usa autenticación de dos factores para iniciar sesión en su organización.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de sus miembros que no son de SSO usan autenticación de dos factores para iniciar sesión en su organización."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
@@ -4918,6 +4931,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al darse de baja finalizará cualquier conexión a servidores de pago de ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Descargar registros actuales"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Descargue nuestra plantilla CSV, complete los datos de usuario y luego cargue el archivo CSV completo para crear cuentas para estos usuarios."
@@ -5573,6 +5589,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables basados en ciclos y los cupones vigentes guardados en la cuenta."
+      ],
+      "Private AI assistant": [
+        "Asistente de IA privado"
       ],
       "Protected by Swiss privacy laws": [
         "Protegido por las leyes de privacidad de Suiza"
@@ -6872,6 +6891,9 @@
       ],
       "Import all messages": [
         "Importar todos los mensajes"
+      ],
+      "Include application logs in bug report": [
+        "Incluir registros de la aplicación en el informe de errores"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -9823,13 +9845,13 @@
     },
     "retention_policy_2025_Action": {
       "Create retention rule": [
-        "Crear regla de retención"
+        "Crear una regla de conservación"
       ],
       "Delete": [
         "Eliminar"
       ],
       "Delete rule": [
-        "Eliminar regla"
+        "Eliminar la regla"
       ],
       "Edit": [
         "Editar"
@@ -9863,15 +9885,15 @@
         "Se aplica a"
       ],
       "Retention period": [
-        "Período de retención"
+        "Período de conservación"
       ],
       "Retention Rule": [
-        "Regla de retención"
+        "Regla de conservación"
       ]
     },
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
-        "No se encontraron políticas de retención"
+        "No se encontraron políticas de conservación"
       ]
     },
     "RetentionPoliciesSettings": {
@@ -13148,6 +13170,9 @@
       ],
       "It's you": [
         "Es usted"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Acceso de administrador pendiente"

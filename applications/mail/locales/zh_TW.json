@@ -420,6 +420,12 @@
       "Download ${ attachmentName }": [
         "下載 ${ attachmentName }"
       ],
+      "Download application logs": [
+        "下載應用程式日誌"
+      ],
+      "Download logs": [
+        "下載日誌"
+      ],
       "Download now": [
         "现在下载"
       ],
@@ -1023,6 +1029,9 @@
       "Remove from favorites": [
         "從我的最愛移除"
       ],
+      "Remove from list": [
+        "從清單中移除"
+      ],
       "Remove gift code": [
         "移除禮品代碼"
       ],
@@ -1236,6 +1245,9 @@
       "Show more": [
         "顯示更多"
       ],
+      "Show more benefits": [
+        "顯示更多好處"
+      ],
       "Show more search options": [
         "顯示更多搜尋選項"
       ],
@@ -1334,6 +1346,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -1564,6 +1579,9 @@
       "${ price } per user": [
         "每使用者${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }撰寫幫手就位"
       ],
@@ -1643,6 +1661,9 @@
       "Online document editor": [
         "線上文件編輯器"
       ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
       "Save time with built-in 2FA": [
         "利用內建雙重驗證（2FA）以節省時間"
       ],
@@ -1662,6 +1683,9 @@
       ],
       "30 months": [
         "30個月"
+      ],
+      "for ${ durationDeal }": [
+        "為期 ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1741,6 +1765,11 @@
         "保留訂購授權"
       ]
     },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "您的免費滿意體驗將於 ${ timeRemaining } 結束"
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 位使用者"
@@ -1768,6 +1797,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 且 ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
@@ -1911,6 +1943,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 疑難問題"
+      ],
       "Application problem": [
         "應用程式問題"
       ],
@@ -5782,8 +5817,17 @@
       "Import from ${ provider }": [
         "從 ${ provider } 匯入"
       ],
+      "Import from Google": [
+        "從 Google 匯入"
+      ],
+      "Import from other": [
+        "從其他匯入"
+      ],
       "Import from Outlook": [
         "從 Outlook 匯入"
+      ],
+      "Import from Yahoo": [
+        "從 Yahoo 匯入"
       ]
     },
     "Import warning": {
@@ -5890,6 +5934,9 @@
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } 亦可防護您的企業商號。"
@@ -6367,6 +6414,12 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
+      ],
+      "Download application logs for troubleshooting": [
+        "下載應用程式日誌以供疑難排解"
+      ],
+      "Download current logs": [
+        "下載最近的日誌"
       ],
       "Download on the App Store": [
         "於 App Store 下載"
@@ -7508,6 +7561,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
+      "Upgrade to ${ plan } to unlock": [
+        "升級到 ${ plan } 以解鎖"
+      ],
       "Upgrade to add more addresses to your account.": [
         "升級以加入更多電郵位址到您的帳號。"
       ],
@@ -8474,6 +8530,9 @@
       ],
       "Import to:": [
         "匯入到："
+      ],
+      "Include application logs in bug report": [
+        "在錯誤報告中納入應用程式日誌"
       ],
       "Integrated 2FA authenticator": [
         "整合雙重驗證"
@@ -10353,6 +10412,9 @@
       "${ pricingTitle } offer expires today!": [
         "${ pricingTitle }優惠今日過期!"
       ],
+      "Don’t show this again": [
+        "不再顯示此內容"
+      ],
       "Don’t show this offer again": [
         "不再顯示此優惠"
       ],
@@ -10408,6 +10470,9 @@
     "Offer feature": {
       "+10 more premium features": [
         "+10多項的頂級功能"
+      ],
+      "500 GB secure storage": [
+        "500 GB 安全儲存"
       ],
       "Custom email domain": [
         "自訂電子郵件網域名稱電郵網域名稱"
@@ -11591,6 +11656,11 @@
         "顯示名稱"
       ]
     },
+    "Slack": {
+      "Join Slack huddle": [
+        "加入 Slack 討論"
+      ]
+    },
     "SmartBanner": {
       "Faster on the app": [
         "在應用程式比較快"
@@ -11703,8 +11773,14 @@
       ]
     },
     "specialoffer: Link": {
+      "Get unlimited aliases": [
+        "取得無限別名"
+      ],
       "Go to subscription plans": [
         "查看訂購授權"
+      ],
+      "Increase your storage": [
+        "增加您的儲存"
       ],
       "Keep passwords safe": [
         "保護密碼字元安全"
@@ -11968,6 +12044,9 @@
       ],
       "Your ${ productString } is ${ percentage }% full. ${ cta }.": [
         "您已使用 ${ percentage }% 的 ${ productString }。${ cta }。"
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "您的${ productString }已滿${ cta }。"
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "你的儲存量已達 ${ percentage }% 滿. ${ cta }."
@@ -13177,6 +13256,9 @@
       "Groups": [
         "群組"
       ],
+      "Help and feedback": [
+        "尋求協助與反映意見"
+      ],
       "Help center": [
         "說明中心"
       ],
@@ -13440,6 +13522,9 @@
       ],
       "Recover data": [
         "恢復資料"
+      ],
+      "Remove from list?": [
+        "從清單中移除?"
       ],
       "Reply": [
         "回覆"
