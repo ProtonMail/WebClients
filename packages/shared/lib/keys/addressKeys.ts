@@ -6,7 +6,7 @@ import type {
     PrivateKeyReference,
     PublicKeyReference,
 } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS, canKeyEncryptAndDecrypt, serverTime } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
@@ -68,6 +68,14 @@ export const encryptAddressKeyToken = async ({
         encryptionKeys: organizationKey ? [userKey, organizationKey] : [userKey],
     });
 
+    // as a sanity check to detect rare issues like WebCrypto bugs, ensure the token can be decrypted
+    await CryptoProxy.decryptMessage({
+        armoredMessage: encryptedToken,
+        decryptionKeys: userKey,
+    }).catch(() => {
+        throw new Error('Unexpected key token encryption issue');
+    });
+
     return {
         token,
         encryptedToken,
@@ -102,6 +110,14 @@ export const encryptAddressKeyUsingOrgKeyToken = async ({
         textData,
         date,
         encryptionKeys: [organizationKey],
+    });
+
+    // as a sanity check to detect rare issues like WebCrypto bugs, ensure the token can be decrypted
+    await CryptoProxy.decryptMessage({
+        armoredMessage: encryptedToken,
+        decryptionKeys: organizationKey,
+    }).catch(() => {
+        throw new Error('Unexpected key token encryption issue');
     });
 
     return {
@@ -324,6 +340,10 @@ export const generateAddressKey = async <C extends KeyGenConfig | KeyGenConfigV6
         userIDs: [{ name, email }],
         ...keyGenConfig,
     });
+
+    if (!(await canKeyEncryptAndDecrypt(privateKey))) {
+        throw new Error('Unexpected key generation issue');
+    }
 
     const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase });
 
