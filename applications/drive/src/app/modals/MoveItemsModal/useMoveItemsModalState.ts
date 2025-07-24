@@ -1,17 +1,16 @@
 import { useState } from 'react';
 
-import { c } from 'ttag';
-
 import { type ModalStateProps, useModalTwoStatic } from '@proton/components';
 import { generateNodeUid, splitNodeUid, useDrive } from '@proton/drive';
 
 import { type DecryptedLink, useDriveEventManager, useTreeForModals } from '../../store';
-import useListNotifications from '../../store/_actions/useListNotifications';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { CreateFolderModal } from '../CreateFolderModal';
+import { useMovedItemsNotification } from './useMovedItemsNotification';
 
 export type UseMoveItemsModalStateProps = ModalStateProps & {
     shareId: string;
+    // TODO: convert to NodeEntity when the old Modal is deleted
     selectedItems: DecryptedLink[];
 };
 
@@ -29,7 +28,7 @@ export const useMoveItemsModalState = ({
     } = useTreeForModals(shareId, { rootExpanded: true, foldersOnly: true });
     const { drive } = useDrive();
     const events = useDriveEventManager();
-    const { createMovedItemsNotifications } = useListNotifications();
+    const { createMovedItemsNotifications } = useMovedItemsNotification();
     const [createFolderModal, showCreateFolderModal] = useModalTwoStatic(CreateFolderModal);
     const { handleError } = useSdkErrorHandler();
     const [targetFolderUid, setTargetFolderUid] = useState<string>();
@@ -39,12 +38,13 @@ export const useMoveItemsModalState = ({
         treeSelectedFolder = splitNodeUid(targetFolderUid).nodeId;
     }
 
-    const undoMove = async (itemsUId: string[], parentMap: Map<string, string>) => {
+    const undoMove = async (itemMap: Record<string, DecryptedLink>, parentMap: Map<string, string>) => {
         const successIds = [];
         const failedIds = [];
         const volumeIdSet = new Set<string>();
+        const uids = Object.keys(itemMap);
 
-        for (const itemId of itemsUId) {
+        for (const itemId of uids) {
             const targetId = parentMap.get(itemId);
             if (!targetId) {
                 continue;
@@ -52,21 +52,20 @@ export const useMoveItemsModalState = ({
 
             try {
                 for await (const result of drive.moveNodes([itemId], targetId)) {
-                    const { nodeId } = splitNodeUid(result.uid);
-                    if (result.ok) {
-                        successIds.push(nodeId);
+                    const { uid, ok } = result;
+                    if (ok) {
+                        successIds.push({ uid: result.uid, name: itemMap[uid].name });
                         const { volumeId } = splitNodeUid(targetId);
                         volumeIdSet.add(volumeId);
                     } else {
-                        failedIds.push(nodeId);
+                        failedIds.push({ uid: result.uid, error: result.error });
                     }
                 }
             } catch (e) {
-                handleError(e, { fallbackMessage: c('Error').t`Failed to move items`, extra: { itemsUId, targetId } });
+                handleError(e, { extra: { itemsUId: uids, targetId } });
             }
         }
-
-        createMovedItemsNotifications(selectedItems, successIds, failedIds);
+        createMovedItemsNotifications(successIds, failedIds);
         volumeIdSet.forEach(async (volumeId) => {
             await events.pollEvents.volumes(volumeId);
         });
@@ -79,36 +78,34 @@ export const useMoveItemsModalState = ({
         if (!targetFolderUid) {
             return;
         }
-        const itemsUId = selectedItems.map((item) => {
+        const itemMap: Record<string, DecryptedLink> = selectedItems.reduce((acc, item) => {
             const uid = generateNodeUid(item.volumeId, item.linkId);
             parentMap.set(uid, generateNodeUid(item.volumeId, item.parentLinkId));
-            return uid;
-        });
+            return { ...acc, [uid]: item };
+        }, {});
+        const uids = Object.keys(itemMap);
 
         try {
-            for await (const result of drive.moveNodes(itemsUId, targetFolderUid)) {
-                const { nodeId } = splitNodeUid(result.uid);
-                if (result.ok) {
-                    successIds.push(nodeId);
+            for await (const result of drive.moveNodes(uids, targetFolderUid)) {
+                const { uid, ok } = result;
+                if (ok) {
+                    successIds.push({ uid: result.uid, name: itemMap[uid].name });
                 } else {
-                    failedIds.push(nodeId);
+                    failedIds.push({ uid: result.uid, error: result.error });
                 }
             }
 
-            const undoFunc = () => undoMove(itemsUId, parentMap);
-            createMovedItemsNotifications(selectedItems, successIds, failedIds, undoFunc);
+            const undoFunc = () => undoMove(itemMap, parentMap);
+            createMovedItemsNotifications(successIds, failedIds, undoFunc);
             const { volumeId } = splitNodeUid(targetFolderUid);
             await events.pollEvents.volumes(volumeId);
         } catch (e) {
-            handleError(e, {
-                fallbackMessage: c('Error').t`Failed to move items`,
-                extra: { itemsUId, targetFolderUid },
-            });
+            handleError(e, { extra: { itemsUId: uids, targetFolderUid } });
         }
     };
 
     const onTreeSelect = async (link: DecryptedLink) => {
-        // TODO: change on FolderTree sdk migration
+        // TODO:FOLDERTREE change on FolderTree sdk migration
         const folderNodeUid = generateNodeUid(link.volumeId, link.linkId);
         setTargetFolderUid(folderNodeUid);
     };
