@@ -1,4 +1,5 @@
-import type { AlgorithmInfo } from '@proton/crypto';
+import type { KeyMetadata } from '@proton/account/addressKeys/getKeyMetadata';
+import type { Key } from '@proton/shared/lib/interfaces';
 
 export interface KeyPermissions {
     canExportPublicKey: boolean;
@@ -40,16 +41,13 @@ export interface KeyStatus {
     isForwarding: boolean;
 }
 
-export interface KeyDisplay {
+export interface KeyDisplay
+    extends Pick<KeyMetadata<Key>, 'invalidKeyError' | 'creationDate' | 'fingerprint' | 'version' | 'algorithmInfos'> {
     type: KeyType;
     ID: string;
-    creationDate: Date;
-    fingerprint: string;
     flags: number;
     primary: 0 | 1;
-    version: number;
     algorithm: string;
-    algorithmInfos: AlgorithmInfo[];
     status: KeyStatus;
     permissions: KeyPermissions;
 }
