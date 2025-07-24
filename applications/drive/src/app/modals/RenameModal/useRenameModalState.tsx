@@ -10,6 +10,7 @@ import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/li
 
 import { useDriveEventManager } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 export type UseRenameModalProps = ModalStateProps & {
     onClose?: () => void;
@@ -56,12 +57,13 @@ export const useRenameModalState = ({
     const { handleError } = useSdkErrorHandler();
     useEffect(() => {
         const fetchNode = async () => {
-            const tmpNode = await drive.getNode(generateNodeUid(volumeId, linkId));
-            if (tmpNode?.ok) {
-                setNode(tmpNode.value);
-            } else {
-                // TODO: handle the DegradedNode case, we might still have the data we need to rename
-                createNotification({ type: 'error', text: c('Notification').jt`Cannot load file or folder info` });
+            try {
+                const maybeNode = await drive.getNode(generateNodeUid(volumeId, linkId));
+                const { node } = getNodeEntity(maybeNode);
+                setNode(node);
+            } catch (e) {
+                handleError(e);
+                onClose();
             }
         };
         void fetchNode();
@@ -74,13 +76,14 @@ export const useRenameModalState = ({
 
         await drive
             .renameNode(nodeUid, newName)
-            .then(() => {
+            .then(async () => {
                 createNotification({ text: successNotificationText, preWrap: true });
+                await events.pollEvents.volumes(volumeId);
+                onClose();
             })
             .catch((e) => {
                 handleError(e, { fallbackMessage: unhandledErrorNotificationText, extra: { nodeUid } });
             });
-        await events.pollEvents.volumes(volumeId);
     };
 
     return {
