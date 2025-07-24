@@ -1,0 +1,39 @@
+<svg
+    fill="none"
+    height="276"
+    viewBox="0 0 276 276"
+    width="276"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+    <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="276" x2="147.14" y1="324.13" y2="-14.0015">
+        <stop offset="0" stop-color="#96e1e8" />
+        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="206.19" x2="97.6614" y1="205.047" y2="17.8873">
+        <stop offset=".0660125" stop-color="#8effee" />
+        <stop offset=".4499" stop-color="#c9c7ff" />
+        <stop offset="1" stop-color="#7341ff" />
+    </linearGradient>
+    <radialGradient
+        id="c"
+        cx="0"
+        cy="0"
+        gradientTransform="matrix(-11.27870659 171.83625116 -221.6021673 -14.54516034 125.394 39.808)"
+        gradientUnits="userSpaceOnUse"
+        r="1"
+    >
+        <stop offset=".403126" stop-color="#6d4aff" />
+        <stop offset=".9944" stop-color="#00f0c3" />
+    </radialGradient>
+    <path d="m276 276h-276v-276h276z" fill="#fff" />
+    <path d="m276 276h-276v-276h276z" fill="url(#a)" fill-opacity=".25" />
+    <path
+        d="m121.416 205.055c6.41 11.523 22.872 12.147 30.15 1.143l67.86-102.614c7.196-10.8814.311-25.4709-12.721-26.9536l-133.3811-15.1764c-14.2204-1.618-24.3454 13.3765-17.4287 25.811l.5424.9701 59.5154 40.7809-.723 64.877z"
+        fill="url(#b)"
+    />
+    <path
+        d="m125.238 194.306 6.022-8.983 45.747-69.102c3.999-6.041.182-14.146-7.055-14.977l-113.5301-13.034 58.8121 105.729c2.146 3.784 7.573 3.992 10.004.367z"
+        fill="url(#c)"
+    />
+</svg>

@@ -23,6 +23,10 @@
 	overflow-x: hidden;
 }
 
+.scroll-smooth {
+	scroll-behavior: smooth;
+}
+
 .scrollbar-gutter-stable {
 	scrollbar-gutter: stable;
 }

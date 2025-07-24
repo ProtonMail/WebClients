@@ -624,7 +624,7 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                                                     path={[
                                                         SSO_PATHS.SIGNUP,
                                                         SSO_PATHS.START,
-                                                        SSO_PATHS.REFER,
+                                                        SSO_PATHS.REFERAL_PLAN_SELECTION,
                                                         SSO_PATHS.BUSINESS_SIGNUP,
                                                         SSO_PATHS.CALENDAR_SIGNUP,
                                                         SSO_PATHS.CALENDAR_SIGNUP_B2B,
@@ -655,7 +655,7 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                                                         toApp={maybePreAppIntent}
                                                         toAppName={toAppName}
                                                         searchParams={searchParams}
-                                                        onLogin={handleLogin}
+                                                        handleLogin={handleLogin}
                                                         fork={!!forkState}
                                                         onBack={
                                                             hasBackToSwitch
