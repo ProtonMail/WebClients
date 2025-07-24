@@ -1293,6 +1293,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 문제"
+      ],
       "Application problem": [
         "앱 문제"
       ],
@@ -4139,6 +4142,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 평생 이용권 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME } 평생 이용권의 일회성 결제입니다."
       ],
@@ -4480,6 +4486,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
+      ],
+      "Download current logs": [
+        "현재 로그 다운로드"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }의 다운로드가 중단됩니다"
@@ -5927,6 +5936,9 @@
       ],
       "Import to:": [
         "가져오기:"
+      ],
+      "Include application logs in bug report": [
+        "버그 신고에 애플리케이션 로그 포함"
       ],
       "Include document name in notification": [
         "알림에 문서 이름 포함"
@@ -9269,6 +9281,9 @@
       ],
       "Folders, labels, and custom filters": [
         "폴더, 라벨, 커스텀 필터"
+      ],
+      "Priority support": [
+        "우선 지원"
       ]
     },
     "Subscription renewal state": {
