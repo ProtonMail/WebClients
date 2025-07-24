@@ -5,9 +5,7 @@ import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { CYCLE, type Cycle, PLANS, type PlanIDs, getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { hasFreePlanIDs } from '@proton/shared/lib/helpers/planIDs';
 
 import { SignupType } from '../../../signup/interfaces';
@@ -82,9 +80,16 @@ const DriveSignupInner = () => {
 
     const signup = useSignup();
 
-    const { options } = usePaymentOptimistic();
+    const { options, initializationStatus } = usePaymentOptimistic();
 
     const notifyError = useNotifyErrorHandler();
+
+    /**
+     * Prevent content flashes where selected plan is initially the default before initialization occurs
+     */
+    if (!initializationStatus.triggered) {
+        return null;
+    }
 
     return (
         <>
@@ -172,8 +177,7 @@ const DriveSignup = (props: BaseSignupContextProps) => {
             app={APPS.PROTONDRIVE}
             flowId="drive-generic"
             onLogin={(session) => {
-                const url = new URL(getAppHref('/', APPS.PROTONDRIVE, session.localID));
-                replaceUrl(url.toString());
+                return props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONDRIVE } });
             }}
             paymentsDataConfig={{
                 availablePlans,
