@@ -556,6 +556,9 @@
       "Download ICS": [
         "Descargar el archivo ICS"
       ],
+      "Download logs": [
+        "Descargar los registros"
+      ],
       "Download our CSV template": [
         "Descargar nuestra plantilla CSV"
       ],
@@ -616,10 +619,10 @@
       "Edit servers": [
         "Editar servidores"
       ],
-      "Edit sieve": [
-        "Editar el filtro Sieve"
+      "Edit Sieve": [
+        "Editar Sieve"
       ],
-      "Edit sieve filter “${ Name }”": [
+      "Edit Sieve filter “${ Name }”": [
         "Editar el filtro Sieve «${ Name }»"
       ],
       "Edit sign-in details": [
@@ -1029,6 +1032,12 @@
       ],
       "Publish changes": [
         "Publicar los cambios"
+      ],
+      "Purge all": [
+        "Purgar todo"
+      ],
+      "Purge deleted": [
+        "Purgar los elementos eliminados"
       ],
       "Quit": [
         "Salir"
@@ -1636,6 +1645,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuario"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licencia de ${ LUMO_APP_NAME }",
+        "${ seats } licencias de ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia del asistente de escritura",
@@ -2408,6 +2421,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema con ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema con la aplicación"
       ],
@@ -2812,9 +2828,12 @@
         "Expandir"
       ]
     },
-    "collider_2025: Navigation": {
-      "Back to ${ LUMO_SHORT_APP_NAME }": [
-        "Volver a ${ LUMO_SHORT_APP_NAME }"
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Añadir ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -7657,6 +7676,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quiere compartir información contigo en ${ PASS_APP_NAME }."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
@@ -8456,6 +8478,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al cambiar por un plan con menos funciones se terminarán las conexiones a los servidores de pago de ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Descargar los registros actuales"
       ],
       "Download on the App Store": [
         "Descárgala en la App Store"
@@ -9498,6 +9523,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
+      ],
+      "Private AI assistant": [
+        "Asistente de IA privado"
       ],
       "Promotion expired": [
         "La promoción ha expirado."
@@ -10836,9 +10864,6 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tu tiquete de soporte se ha cerrado. Gracias por contactar al soporte de ${ BRAND_NAME }."
       ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Tu periodo de prueba terminará el 25 de junio. Mejórala para recibir futuros informes de vulneraciones."
-      ],
       "Your trial will end in ${ timeRemaining }.": [
         "Tu prueba acaba en ${ timeRemaining }."
       ],
@@ -11957,6 +11982,9 @@
       ],
       "Inbox": [
         "Bandeja de entrada"
+      ],
+      "Include application logs in bug report": [
+        "Incluir los registros de la aplicación en el informe de errores"
       ],
       "Inherit color from parent folder": [
         "Heredar el color de la carpeta principal"
@@ -15154,6 +15182,9 @@
       "Free server configs": [
         "Configuraciones del servidor gratuito"
       ],
+      "Group": [
+        "Grupo"
+      ],
       "I found another service that I like better": [
         "He encontrado otro servicio que me gusta más"
       ],
@@ -15261,6 +15292,9 @@
       ],
       "Trash": [
         "Enviar a la papelera"
+      ],
+      "User": [
+        "Usuario"
       ]
     },
     "option": {
@@ -16566,6 +16600,59 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Debido a un cambio de contraseña, tus privilegios de administrador en la organización se han limitado. Ya no se permiten las siguientes acciones:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Crear una regla de conservación"
+      ],
+      "Delete": [
+        "Eliminar"
+      ],
+      "Delete rule": [
+        "Eliminar la regla"
+      ],
+      "Edit": [
+        "Editar"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } más"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } día",
+        "${ rule.Lifetime } días"
+      ],
+      "Forever": [
+        "Para siempre"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Buscar regla, usuarios, período, acción"
+      ],
+      "Search policies": [
+        "Buscar políticas"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Acción"
+      ],
+      "Applies to": [
+        "Se aplica a"
+      ],
+      "Retention period": [
+        "Periodo de conservación"
+      ],
+      "Retention Rule": [
+        "Regla de conservación"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "No se han encontrado políticas de conservación."
       ]
     },
     "RetentionPoliciesSettings": {
@@ -21709,6 +21796,9 @@
       ],
       "It's you": [
         "Eres tú"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Acceso de administrador pendiente"

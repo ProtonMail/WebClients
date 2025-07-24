@@ -148,6 +148,9 @@
       "Add public holidays": [
         "Tambahkan hari libur umum"
       ],
+      "Add referral link to ${ MAIL_APP_NAME } signature": [
+        "Tambah tautan rujukan ke tanda tangan ${ MAIL_APP_NAME }"
+      ],
       "Add sieve filter": [
         "Tambah filter sieve"
       ],
@@ -164,7 +167,7 @@
         "Rata kanan"
       ],
       "Alignment": [
-        "Penjajaran"
+        "Penjajaran teks"
       ],
       "Allow": [
         "Izinkan"
@@ -217,6 +220,9 @@
       "Cancel subscription": [
         "Batalkan langganan"
       ],
+      "Cancel trial and pay": [
+        "Batalkan uji coba dan bayar"
+      ],
       "Change": [
         "Ubah"
       ],
@@ -248,7 +254,7 @@
         "Klaim"
       ],
       "Clear all formatting": [
-        "Hapus seluruh format"
+        "Hapus seluruh pemformatan"
       ],
       "Close": [
         "Tutup"
@@ -544,6 +550,9 @@
       "Download ICS": [
         "Unduh ICS"
       ],
+      "Download logs": [
+        "Unduh log"
+      ],
       "Download our CSV template": [
         "Unduh template CSV kami"
       ],
@@ -603,12 +612,6 @@
       ],
       "Edit servers": [
         "Sunting server"
-      ],
-      "Edit sieve": [
-        "Sunting sieve"
-      ],
-      "Edit sieve filter “${ Name }”": [
-        "Sunting filter Sieve “${ Name }”"
       ],
       "Edit sign-in details": [
         "Sunting rincian masuk"
@@ -674,7 +677,7 @@
         "Sesuaikan dengan jendela"
       ],
       "Font": [
-        "Fon"
+        "Jenis huruf"
       ],
       "Forgot password?": [
         "Lupa kata sandi?"
@@ -989,7 +992,7 @@
         "Atau"
       ],
       "Ordered list": [
-        "Daftar berurut"
+        "Daftar numerik"
       ],
       "Organization": [
         "Organisasi"
@@ -1427,7 +1430,7 @@
         "Buka kunci data"
       ],
       "Unordered list": [
-        "Daftar tak berurut"
+        "Daftar per poin"
       ],
       "Unsubscribe": [
         "Berhenti berlangganan"
@@ -1452,6 +1455,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Tingkatkan untuk mengaktifkan ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Professional": [
+        "Tingkatkan ke Professional"
       ],
       "Upgrade to view all": [
         "Tingkatkan paket untuk melihat semua"
@@ -2954,7 +2960,7 @@
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "Apakah Anda yakin untuk menghapus metode pembayaran ini?"
+        "Apakah Anda yakin ingin menghapus metode pembayaran ini?"
       ]
     },
     "Confirmation title": {
@@ -5338,6 +5344,9 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
+      "Invalid ZIP code": [
+        "Kode pos tidak valid"
+      ],
       "Item content cannot exceed 40KB": [
         "Konten item tidak boleh melebihi 40KB"
       ],
@@ -5431,6 +5440,12 @@
       "Please enter a valid Entity ID URL": [
         "Silakan masukkan URL ID Entitas yang valid"
       ],
+      "Please enter a valid ZIP code": [
+        "Silakan masukkan kode pos yang valid"
+      ],
+      "Please enter ZIP code": [
+        "Silakan masukkan kode pos"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Silakan selesaikan permasalahan yang disorot untuk melanjutkan."
       ],
@@ -5448,6 +5463,9 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Silakan pilih setidaknya satu pengguna atau grup sebelum melanjutkan."
+      ],
+      "Please select billing country": [
+        "Silakan pilih negara penagihan"
       ],
       "Please set a recovery email first": [
         "Harap tentukan alamat email pemulihan terlebih dahulu"
@@ -7628,6 +7646,9 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Dapatkan alamat ${ BRAND_NAME }** untuk menggunakan seluruh layanan ${ BRAND_NAME_TWO } yang meliputi ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_SHORT_APP_NAME }."
       ],
+      "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
+        "**Undang teman Anda** ke ${ BRAND_NAME } dengan tautan rujukan Anda."
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Lainnya"
       ],
@@ -8516,6 +8537,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Dapatkan akses dengan membuat akun ${ BRAND_NAME } dan menerima undangan ini."
       ],
+      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
+        "Dapatkan dan hadiahkan saldo senilai **${ referralReward }** untuk setiap teman yang mendaftar."
+      ],
       "Get it on Google Play": [
         "Dapatkan di Google Play"
       ],
@@ -9365,6 +9389,12 @@
       "Restore": [
         "Pulihkan"
       ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Peraturan penyimpanan data \"${ payload.Name }\" berhasil dibuat"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Peraturan penyimpanan data \"${ retentionRule.Name }\" berhasil dihapus"
+      ],
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
       ],
@@ -9989,6 +10019,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Tingkatkan akun Anda untuk menggunakan alamat @pm.me yang lebih pendek dan lebih mudah untuk dibagikan. Alamat ini merupakan kependekan dari “${ MAIL_APP_NAME } me” atau \"Private Message me\"."
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Tingkatkan ke Professional atau paket yang lebih tinggi untuk membuka fitur ini"
+      ],
       "Upgrade to unlock": [
         "Tingkatkan untuk membuka"
       ],
@@ -10377,7 +10410,7 @@
         "Anda memiliki ${ unassignedAvailableCount } server yang baru-baru ini digunakan yang tersedia. Untuk mengalokasikan server ini ke negara lain, Anda perlu untuk menunggu hingga proses penonaktifan selesai."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
+        "Anda memiliki langganan ${ planTitle } versi uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
@@ -10577,9 +10610,6 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Tiket layanan dukungan Anda telah ditutup. Terima kasih telah menghubungi layanan dukungan ${ BRAND_NAME }."
       ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Masa uji coba Anda akan berakhir pada tanggal 25 Juni. Tingkatkan untuk terus menerima laporan kebocoran ke depannya."
-      ],
       "Your trial will end in ${ timeRemaining }.": [
         "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
       ],
@@ -10642,7 +10672,7 @@
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
-        "Anda dapat menambahkan metode pembayaran agar langganan Anda dapat diperpanjang secara otomatis. Kami juga menerima metode pembayaran di samping kartu kredit/debit dan PayPal."
+        "Anda dapat menambahkan metode pembayaran tertentu agar langganan Anda dapat diperpanjang secara otomatis. Kami juga menerima metode pembayaran di samping kartu kredit/debit dan PayPal."
       ]
     },
     "Info message for custom invoice modal": {
@@ -12013,6 +12043,9 @@
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
+      "Reward": [
+        "Imbalan"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -12376,6 +12409,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Kode pos"
+      ],
       "ZIP code": [
         "Kode pos"
       ]
@@ -15655,6 +15691,9 @@
       "Got it": [
         "Mengerti"
       ],
+      "I'm purchasing as a business": [
+        "Saya membeli produk ini selaku pihak bisnis"
+      ],
       "MM/YY": [
         "BB/TT"
       ],
@@ -15695,7 +15734,7 @@
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "This payment method will become your new default for all future renewals.": [
-        "Metode pembayaran ini akan menjadi bawaan baru Anda untuk semua perpanjangan mendatang."
+        "Metode pembayaran ini akan menjadi metode bawaan baru Anda untuk segala perpanjangan yang dilakukan ke depannya."
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
@@ -15749,6 +15788,17 @@
       ],
       "Street address, postal code, and city": [
         "Alamat, kode pos, dan kota"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Nomor Bisnis"
+      ],
+      "EIN": [
+        "NPWP"
       ]
     },
     "Permission": {
@@ -15928,6 +15978,9 @@
       ],
       "yourdomain.com": [
         "domainanda.com"
+      ],
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "placeholder": {
@@ -16198,6 +16251,32 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Karena adanya perubahan kata sandi, hak istimewa administrator organisasi Anda telah dibatasi. Tindakan berikut tidak lagi diizinkan:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Buat peraturan penyimpanan data"
+      ],
+      "Delete rule": [
+        "Hapus aturan"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "Forever": [
+        "Selamanya"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Applies to": [
+        "Berlaku kepada"
+      ],
+      "Retention period": [
+        "Masa penyimpanan"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Buat aturan penyimpanan untuk mengatur seberapa lama data yang ada akan disimpan sebagaimana dengan kebijakan penyimpanan data organisasi Anda. Aturan ini juga akan mengaktifkan pembersihan otomatis untuk data yang telah kedaluwarsa."
       ]
     },
     "Role": {
@@ -18178,7 +18257,7 @@
         "Ruang penyimpanan total ${ planMaxSpace }"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } memberikan Anda akses ke seluruh aplikasi dan fitur premium. Privasi terkandung secara bawaan dalam paket ini, sehingga Anda dapat beraktivitas dengan tenang mengetahui bahwa data dan identitas Anda tersimpan dengan aman."
+        "${ planName } memberikan Anda akses ke seluruh aplikasi dan fitur premium yang tersedia. Paket ini mengusung privasi secara bawaan, sehingga Anda dapat beraktivitas dengan tenang mengetahui bahwa data dan identitas Anda tersimpan dengan aman."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
@@ -19740,6 +19819,9 @@
       "Gift code": [
         "Kode hadiah"
       ],
+      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
+        "Hadiahkan ${ referralReward } dan 2 minggu berlangganan secara cuma-cuma. Dapatkan saldo senilai ${ referralReward } sebagai imbalannya."
+      ],
       "Group": [
         "Grup"
       ],
@@ -20394,6 +20476,9 @@
       "Video conferencing": [
         "Konferensi video"
       ],
+      "View organization events by upgrading to Professional": [
+        "Tinjau rekaman peristiwa organisasi dengan meningkatkan ke Professional"
+      ],
       "VPN apps": [
         "Aplikasi VPN"
       ],
@@ -20456,6 +20541,9 @@
       ],
       "Your recovery status": [
         "Status pemulihan Anda"
+      ],
+      "Your referrals": [
+        "Rujukan Anda"
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
@@ -20684,6 +20772,12 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "Tidak semua informasi yang tercantum di sini terpapar untuk seluruh pengguna."
+      ],
+      "Origin Internet Service Provider (ISP)": [
+        "Internet Service Provider (ISP) asal"
+      ],
+      "Origin IP address": [
+        "Alamat IP asal"
       ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "Alamat IP dan penyedia layanan internet (ISP) sumber"

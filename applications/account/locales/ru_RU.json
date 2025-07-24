@@ -532,6 +532,9 @@
       "Download ICS": [
         "Скачать ICS"
       ],
+      "Download logs": [
+        "Скачать журналы"
+      ],
       "Download our CSV template": [
         "Скачайте наш шаблон CSV"
       ],
@@ -588,9 +591,6 @@
       ],
       "Edit servers": [
         "Изменить серверы"
-      ],
-      "Edit sieve": [
-        "Изменить Sieve-фильтр"
       ],
       "Edit sign-in details": [
         "Изменить информацию о входе в систему"
@@ -2694,9 +2694,12 @@
         "Развернуть"
       ]
     },
-    "collider_2025: Navigation": {
-      "Back to ${ LUMO_SHORT_APP_NAME }": [
-        "Обратно к ${ LUMO_SHORT_APP_NAME }"
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } — это искусственный интеллект, ориентированный на конфиденциальность, который помогает вам выполнять больше задач, сохраняя ваши данные в безопасности. Раскройте его полный потенциал и наслаждайтесь ранним доступом к новым функциям по мере их появления."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Добавить приложение ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -10735,9 +10738,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ваша заявка в службу поддержки была закрыта. Благодарим вас за обращение в службу поддержки ${ BRAND_NAME }."
-      ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Ваша пробная версия закончится 25 июня. Улучшите подписку, чтобы получать будущие отчеты об утечках."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Вы сможете сразу добавить эти серверы на другой шлюз."
