@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Ladda ner CSV-exempel"
       ],
+      "Download logs": [
+        "Ladda ner loggar"
+      ],
       "Download our CSV template": [
         "Ladda ner vår CSV-mall"
       ],
@@ -983,6 +986,10 @@
       ],
       "${ price } per user": [
         "${ price } per användare"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-licens",
+        "${ seats } ${ LUMO_APP_NAME }-licenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skrivassistentplats",
@@ -4354,6 +4361,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } av dina icke SSO-medlemmar använder tvåfaktorsautentisering för att logga in på din organisation.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } av dina icke SSO-medlemmar använder tvåfaktorsautentisering för att logga in på din organisation."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
       ],
@@ -5510,6 +5520,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Pris inkluderar alla tillämpbara återkommande rabatter och icke-utgångna kuponger som finns lagrat på ditt konto."
+      ],
+      "Private AI assistant": [
+        "Privat AI-assistent"
       ],
       "Protected by Swiss privacy laws": [
         "Skyddad av schweiziska integritetslagar"
@@ -13026,6 +13039,9 @@
       ],
       "It's you": [
         "Det är du"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Väntande administratörsåtkomst"

@@ -556,6 +556,9 @@
       "Download ICS": [
         "Stáhnout ICS"
       ],
+      "Download logs": [
+        "Stáhnout logy"
+      ],
       "Download our CSV template": [
         "Stáhnout naši šablonu CSV"
       ],
@@ -616,11 +619,8 @@
       "Edit servers": [
         "Upravit servery"
       ],
-      "Edit sieve": [
+      "Edit Sieve": [
         "Upravit Sieve"
-      ],
-      "Edit sieve filter “${ Name }”": [
-        "Upravit Sieve filtr “${ Name }”"
       ],
       "Edit sign-in details": [
         "Upravit přihlašovací údaje"
@@ -1640,6 +1640,12 @@
       ],
       "${ price } per user": [
         "${ price } za uživatele"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licence asistenta psaní",
@@ -2836,9 +2842,12 @@
         "Rozbalit"
       ]
     },
-    "collider_2025: Navigation": {
-      "Back to ${ LUMO_SHORT_APP_NAME }": [
-        "Zpět na ${ LUMO_SHORT_APP_NAME }"
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } je umělá inteligence s prioritou ochrany soukromí, která vám pomáhá zvládnout více a zároveň chrání vaše data. Využijte její plný potenciál a získejte přístup k novým funkcím ihned po jejich představení."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Přidat ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -7765,6 +7774,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } chce s vámi sdílet data v ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
@@ -8628,6 +8640,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
+      ],
+      "Download current logs": [
+        "Stáhnout aktuální logy"
       ],
       "Download on the App Store": [
         "Stáhnout z App Store"
@@ -9684,6 +9699,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahrnuje všechny příslušné slevy na základě cyklu a kupóny, které nevypršely a jsou uložené na vašem účtu."
+      ],
+      "Private AI assistant": [
+        "Soukromý AI asistent"
       ],
       "Promotion expired": [
         "Propagační akce skončila"
@@ -11056,9 +11074,6 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaše žádost na podporu byla uzavřena. Děkujeme za kontaktování podpory ${ BRAND_NAME }."
       ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Zkušební období končí 25. června. Chcete-li v budoucnu dostávat hlášení o únicích informací, přejděte na vyšší tarif."
-      ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše zkušební verze skončí za ${ timeRemaining }."
       ],
@@ -12191,6 +12206,9 @@
       ],
       "Inbox": [
         "Doručená pošta"
+      ],
+      "Include application logs in bug report": [
+        "Zahrnout logy aplikace do chybového hlášení"
       ],
       "Inherit color from parent folder": [
         "Zdědit barvu z nadřazené složky"
@@ -16957,6 +16975,9 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } další"
+      ],
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime } den",
         "${ rule.Lifetime } dny",

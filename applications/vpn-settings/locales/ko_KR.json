@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "CSV 샘플 다운로드받기"
       ],
+      "Download logs": [
+        "다운로드 로그"
+      ],
       "Download our CSV template": [
         "CSV 양식 다운로드"
       ],
@@ -1548,6 +1551,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 문제"
+      ],
       "Application problem": [
         "앱 문제"
       ],
@@ -4322,6 +4328,9 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "SSO를 사용하지 않는 ${ canHaveTwoFAMembersLength }명 중 ${ hasTwoFAMembersLength }명이 조직에 로그인하기 위해 2단계 인증을 사용합니다."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME }"
       ],
@@ -4801,6 +4810,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
+      ],
+      "Download current logs": [
+        "현재 로그 다운로드"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "CSV 예제를 다운로드하려면, 사용자 세부 정보를 입력한 다음, 완성된 CSV 파일을 업로드하여 사용자를 위한 계정을 만드세요."
@@ -5455,6 +5467,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "가격에는 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
+      ],
+      "Private AI assistant": [
+        "프라이빗 AI 어시스턴트"
       ],
       "Protected by Swiss privacy laws": [
         "스위스 개인정보법에 의해 보호됨"
@@ -6732,6 +6747,9 @@
       ],
       "Import all messages": [
         "모든 메시지 가져오기"
+      ],
+      "Include application logs in bug report": [
+        "버그 신고에 애플리케이션 로그 포함"
       ],
       "Integrated 2FA authenticator": [
         "2단계 인증기 내장"
@@ -9674,6 +9692,9 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount }개 이상"
+      ],
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime }일"
       ],
@@ -12918,6 +12939,9 @@
       ],
       "It's you": [
         "나"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "관리자 접근 권한 대기 중"

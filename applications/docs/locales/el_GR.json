@@ -935,6 +935,10 @@
       "${ price } per user": [
         "${ price } ανά χρήστη"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } θέση",
+        "${ seats } ${ LUMO_APP_NAME } θέσεις"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } άδεια βοηθού γραφής",
         "${ seats } άδειες βοηθού γραφής"
@@ -1305,6 +1309,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } πρόβλημα"
+      ],
       "Application problem": [
         "Πρόβλημα εφαρμογής"
       ],
@@ -4184,6 +4191,9 @@
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Η προσφορά εφ' όρου ζωής για το ${ PASS_SHORT_APP_NAME } δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4540,6 +4550,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ${ VPN_APP_NAME } επί πληρωμή."
+      ],
+      "Download current logs": [
+        "Λήψη τρεχόντων αρχείων καταγραφής"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Η λήψη του ${ downloadFileName } θα ματαιωθεί"
@@ -5998,6 +6011,9 @@
       ],
       "Import to:": [
         "Εισαγωγή σε:"
+      ],
+      "Include application logs in bug report": [
+        "Περιλάβετε τα αρχεία καταγραφής εφαρμογής στην αναφορά σφάλματος"
       ],
       "Include document name in notification": [
         "Συμπερίληψη ονόματος εγγράφου στην ειδοποίηση"
@@ -9419,6 +9435,9 @@
       ],
       "Folders, labels, and custom filters": [
         "Φάκελοι, ετικέτες, και προσαρμοσμένα φίλτρα"
+      ],
+      "Priority support": [
+        "Υποστήριξη με προτεραιότητα"
       ]
     },
     "Subscription renewal state": {

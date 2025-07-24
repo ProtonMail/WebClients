@@ -311,6 +311,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Pobierz aplikacje ${ DRIVE_APP_NAME }"
       ],
+      "Download logs": [
+        "Pobierz logi"
+      ],
       "Download now": [
         "Pobierz"
       ],
@@ -981,6 +984,12 @@
       "${ price } per user": [
         "${ price } za użytkownika"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licencja",
+        "${ seats } ${ LUMO_APP_NAME } licencje",
+        "${ seats } ${ LUMO_APP_NAME } licencji",
+        "${ seats } ${ LUMO_APP_NAME } licencji"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencja asystenta pisania",
         "${ seats } licencje asystenta pisania",
@@ -1441,6 +1450,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problem z ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problem z aplikacją"
       ],
@@ -4904,6 +4916,9 @@
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } zawiera asystenta pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5284,6 +5299,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Pobierz logi"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
@@ -6650,6 +6668,9 @@
       ],
       "Import to:": [
         "Importuj do:"
+      ],
+      "Include application logs in bug report": [
+        "Dołącz logi aplikacji do raportu błędu"
       ],
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"

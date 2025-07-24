@@ -556,6 +556,9 @@
       "Download ICS": [
         "ICS herunterladen"
       ],
+      "Download logs": [
+        "Protokolle herunterladen"
+      ],
       "Download our CSV template": [
         "Lade unsere CSV-Vorlage herunter"
       ],
@@ -616,11 +619,11 @@
       "Edit servers": [
         "Server bearbeiten"
       ],
-      "Edit sieve": [
+      "Edit Sieve": [
         "Sieve bearbeiten"
       ],
-      "Edit sieve filter “${ Name }”": [
-        "Sieve-Filter “${ Name }” bearbeiten"
+      "Edit Sieve filter “${ Name }”": [
+        "Sieve-Filter \":${ Name }:\" bearbeiten"
       ],
       "Edit sign-in details": [
         "Anmeldeinformationen bearbeiten"
@@ -1643,6 +1646,10 @@
       "${ price } per user": [
         "${ price } pro Benutzer"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } Benutzerlizenz",
+        "${ seats } ${ LUMO_APP_NAME } Benutzerlizenzen"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } Lizenz für den Schreibassistenten",
         "${ seats } Lizenzen für den Schreibassistenten"
@@ -2414,6 +2421,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } Problem"
+      ],
       "Application problem": [
         "Anwendungsproblem"
       ],
@@ -2818,9 +2828,12 @@
         "Erweitern"
       ]
     },
-    "collider_2025: Navigation": {
-      "Back to ${ LUMO_SHORT_APP_NAME }": [
-        "Zurück zu ${ LUMO_SHORT_APP_NAME }"
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } hinzufügen"
       ]
     },
     "color": {
@@ -7660,6 +7673,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } möchte Daten in ${ PASS_APP_NAME } mit dir teilen."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } beinhaltet ${ BRAND_NAME } Scribe Schreibassistent"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME }"
       ],
@@ -8459,6 +8475,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Das Downgraden beendet alle Verbindungen zu kostenpflichtigen ${ VPN_APP_NAME }-Servern."
+      ],
+      "Download current logs": [
+        "Aktuelle Protokolle herunterladen"
       ],
       "Download on the App Store": [
         "Aus dem App Store herunterladen"
@@ -9501,6 +9520,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
+      ],
+      "Private AI assistant": [
+        "Privater KI-Assistent"
       ],
       "Promotion expired": [
         "Werbeaktion abgelaufen"
@@ -10839,9 +10861,6 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Dein Support-Ticket wurde geschlossen. Vielen Dank, dass du den Support von ${ BRAND_NAME } kontaktiert hast."
       ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Deine Testversion endet am 25. Juni. Upgrade, um zukünftige Berichte über Datenlecks zu erhalten."
-      ],
       "Your trial will end in ${ timeRemaining }.": [
         "Deine Testversion endet in ${ timeRemaining }."
       ],
@@ -11960,6 +11979,9 @@
       ],
       "Inbox": [
         "Posteingang"
+      ],
+      "Include application logs in bug report": [
+        "Anwendungsprotokolle im Fehlerbericht einschließen"
       ],
       "Inherit color from parent folder": [
         "Farbe vom übergeordneten Ordner übernehmen"
@@ -21768,6 +21790,9 @@
       ],
       "It's you": [
         "Das bist du"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Ausstehender Admin-Zugriff"
