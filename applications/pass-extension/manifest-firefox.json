@@ -49,11 +49,9 @@
         "storage",
         "unlimitedStorage",
         "webRequest",
-        "webRequestBlocking",
-        "clipboardRead",
-        "clipboardWrite"
+        "webRequestBlocking"
     ],
-    "optional_permissions": ["privacy", "webRequestAuthProvider"],
+    "optional_permissions": ["privacy", "webRequestAuthProvider", "clipboardRead", "clipboardWrite"],
     "host_permissions": ["https://*/*", "http://*/*"],
     "action": {
         "default_popup": "popup.html",

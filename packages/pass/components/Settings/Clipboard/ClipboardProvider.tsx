@@ -32,16 +32,18 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const { writeToClipboard } = usePassCore();
-    const clipboardTTL = useSelector(selectClipboardTTL);
+    const settingsClipboardTTL = useSelector(selectClipboardTTL);
 
     const [cachedCopy, setCachedCopy] = useState<MaybeNull<string>>(null);
     const [modal, setModal] = useState<MaybeNull<ClipboardAction>>(null);
 
-    const handleActualCopy = async (value: string) => {
-        console.warn('[DEBUG] handleActualCopy', { value });
-
+    const handleActualCopy = async (value: string, overrideClipboardTTL?: number) => {
         try {
-            await writeToClipboard(value);
+            const clipboardTTL = overrideClipboardTTL ?? settingsClipboardTTL;
+
+            console.warn('[DEBUG] handleActualCopy', { value, clipboardTTL });
+
+            await writeToClipboard(value, clipboardTTL);
 
             const timeoutDurationHumanReadable = getClipboardTTLOptions().find(
                 ([value]) => value === clipboardTTL
@@ -61,9 +63,9 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     };
 
     const onCopyToClipboard = async (value: string) => {
-        console.warn('[DEBUG] onCopyToClipboard', { clipboardTTL });
+        console.warn('[DEBUG] onCopyToClipboard', { settingsClipboardTTL });
 
-        if (BUILD_TARGET !== 'web' && clipboardTTL === undefined) {
+        if (BUILD_TARGET !== 'web' && settingsClipboardTTL === undefined) {
             setCachedCopy(value);
             setModal('settings');
             return;
@@ -78,12 +80,12 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
         dispatch(settingsEditIntent('behaviors', { clipboard: { timeoutMs } }, silent));
     };
 
-    const onClose = async () => {
+    const onClose = async (overrideClipboardTTL: number) => {
         setModal(null);
 
         if (cachedCopy !== null) {
             setCachedCopy(null);
-            await handleActualCopy(cachedCopy);
+            await handleActualCopy(cachedCopy, overrideClipboardTTL);
         }
     };
 
@@ -94,7 +96,7 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
             onCopyToClipboard,
             onSettingsChange,
         };
-    }, [modal, clipboardTTL]);
+    }, [modal, settingsClipboardTTL]);
 
     return (
         <ClipboardContext.Provider value={contextValue}>
