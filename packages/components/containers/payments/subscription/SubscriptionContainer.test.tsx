@@ -100,12 +100,6 @@ async function waitUntilChecked() {
 }
 
 async function selectPaymentMethod(paymentMethodTypes: PAYMENT_METHOD_TYPES) {
-    await waitFor(() => {
-        expect(screen.getByTestId('payment-method-selector')).toBeEnabled();
-    });
-
-    fireEvent.click(screen.getByTestId('payment-method-selector'));
-
     fireEvent.click(screen.getByTestId(`payment-method-${paymentMethodTypes}`));
 }
 
