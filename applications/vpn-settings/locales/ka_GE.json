@@ -297,6 +297,9 @@
       "Download CSV sample": [
         "CSV მაგალითის გადმოწერა"
       ],
+      "Download logs": [
+        "ჟურნალის გადმოწერა"
+      ],
       "Download our CSV template": [
         "გადმოწერეთ ჩვენი CSV ნიმუში"
       ],
@@ -575,6 +578,12 @@
       ],
       "Publish changes": [
         "ცვლილებების გამოცემა"
+      ],
+      "Purge all": [
+        "ყველას გასუფთავება"
+      ],
+      "Purge deleted": [
+        "წაშლილების გასუფთავება"
       ],
       "Recover data": [
         "მონაცემების აღდგენა"
@@ -3198,6 +3207,9 @@
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
+      ],
+      "Invalid ZIP code": [
+        "არასწორი ZIP კოდი"
       ],
       "Name does not match": [
         "სახელი არ ემთხვევა"
@@ -8694,6 +8706,9 @@
       "Free server configs": [
         "უფასო სერვერების კონფიგურაციები"
       ],
+      "Group": [
+        "ჯგუფი"
+      ],
       "I found another service that I like better": [
         "სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
       ],
@@ -8753,6 +8768,9 @@
       ],
       "The whole organization": [
         "მთელი ორგანიზაცია"
+      ],
+      "User": [
+        "მომხმარებელი"
       ]
     },
     "option": {
@@ -9470,6 +9488,41 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "პაროლის შეცვლის გამო თქვენი ორგანიზაციის ადმინისტრირების პრივილეგიები შეზღუდულია. აიკრძალა შემდეგი ქმედებები:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Delete": [
+        "წაშლა"
+      ],
+      "Delete rule": [
+        "წესის წაშლა"
+      ],
+      "Edit": [
+        "ჩასწორება"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "Forever": [
+        "სამუდამოდ"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search policies": [
+        "პოლიტიკების ძებნა"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "ქმედება"
+      ],
+      "Applies to": [
+        "ვრცელდება"
+      ],
+      "Retention period": [
+        "შენარჩუნების პერიოდი"
+      ],
+      "Retention Rule": [
+        "შენარჩუნების წესი"
       ]
     },
     "Role": {
@@ -11676,6 +11729,9 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "თქვენს ტარიფში IP მისამართების რაოდენობის ხელით მითითება"
+      ],
+      "Data retention": [
+        "მონაცემების შენარჩუნება"
       ],
       "Date": [
         "თარიღი"

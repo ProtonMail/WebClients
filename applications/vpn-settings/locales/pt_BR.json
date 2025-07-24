@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Baixar amostra em CSV"
       ],
+      "Download logs": [
+        "Registros de downloads"
+      ],
       "Download our CSV template": [
         "Baixar nosso modelo CSV"
       ],
@@ -578,6 +581,12 @@
       ],
       "Publish changes": [
         "Publicar alterações"
+      ],
+      "Purge all": [
+        "Purgar tudo"
+      ],
+      "Purge deleted": [
+        "Purgar os elementos excluídos"
       ],
       "Recover data": [
         "Recuperar dados"
@@ -980,6 +989,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuário"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licença do ${ LUMO_APP_NAME }",
+        "${ seats } licenças do ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -1603,6 +1616,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema no ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema no aplicativo"
       ],
@@ -4411,6 +4427,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros não SSO usam a autenticação de dois fatores para fazer login na sua organização.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dos seus membros não SSO usam a autenticação de dois fatores para fazer login na sua organização."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
@@ -4912,6 +4931,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "O downgrade irá encerrar qualquer conexão com servidores pagos do ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Baixar os registros atuais"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Baixe nosso modelo CSV, preencha os detalhes do usuário e, em seguida, carregue seu arquivo CSV completo para criar as contas para esses usuários."
@@ -5570,6 +5592,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
+      ],
+      "Private AI assistant": [
+        "Assistente de IA privado"
       ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
@@ -6869,6 +6894,9 @@
       ],
       "Import all messages": [
         "Importar todas as mensagens"
+      ],
+      "Include application logs in bug report": [
+        "Incluir os registros do aplicativo no relatório de erro"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrado"
@@ -9831,6 +9859,9 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Criar uma regra de retenção"
+      ],
       "Delete": [
         "Excluir"
       ],
@@ -9854,6 +9885,9 @@
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Pesquisar por regra, usuários, período, ação"
+      ],
       "Search policies": [
         "Pesquisar diretrizes"
       ]
@@ -9870,6 +9904,11 @@
       ],
       "Retention Rule": [
         "Regra de retenção"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Nenhuma política de retenção foi encontrada."
       ]
     },
     "RetentionPoliciesSettings": {
@@ -13146,6 +13185,9 @@
       ],
       "It's you": [
         "É você"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Acesso administrador pendente"

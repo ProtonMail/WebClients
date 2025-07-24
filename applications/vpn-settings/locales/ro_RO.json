@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Descărcare exemplu de CSV"
       ],
+      "Download logs": [
+        "Jurnal descărcare"
+      ],
       "Download our CSV template": [
         "Descărcare șablon CSV"
       ],
@@ -578,6 +581,12 @@
       ],
       "Publish changes": [
         "Publicare modificări"
+      ],
+      "Purge all": [
+        "Eliminare toate"
+      ],
+      "Purge deleted": [
+        "Eliminare șterse"
       ],
       "Recover data": [
         "Recuperare date"
@@ -5614,6 +5623,15 @@
       "Restore": [
         "Restaurare"
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Regula de păstrare „${ formData.name }” a fost actualizată."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Regula de păstrare „${ payload.Name }” a fost creată."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Regula de păstrare „${ retentionRule.Name }” a fost ștearsă."
+      ],
       "Revoke certificate ${ name }": [
         "Anulare certificat ${ name }"
       ],
@@ -9028,6 +9046,9 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
+      "Group": [
+        "Grup"
+      ],
       "I found another service that I like better": [
         "Am găsit un alt serviciu care îmi place mai mult"
       ],
@@ -9099,6 +9120,9 @@
       ],
       "UDP": [
         "UDP"
+      ],
+      "User": [
+        "Utilizator"
       ],
       "Windows": [
         "Windows"
@@ -9863,6 +9887,65 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Datorită modificării parolei, drepturile de administrare a organizației v-au fost restricționate. Următoarele acțiuni nu mai sunt permise:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Creare regulă de păstrare"
+      ],
+      "Delete": [
+        "Ștergere"
+      ],
+      "Delete rule": [
+        "Ștergere regulă"
+      ],
+      "Edit": [
+        "Editare"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "încă ${ remainingCount }"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } zi",
+        "${ rule.Lifetime } zile",
+        "${ rule.Lifetime } de zile"
+      ],
+      "Forever": [
+        "Pentru totdeauna"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Căutare după regulă, utilizatori, perioadă, acțiune"
+      ],
+      "Search policies": [
+        "Căutare politici"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Acțiune"
+      ],
+      "Applies to": [
+        "Aplicat la"
+      ],
+      "Retention period": [
+        "Perioadă de păstrare"
+      ],
+      "Retention Rule": [
+        "Regulă de păstrare"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Nu au fost găsite politici de păstrare"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Creați reguli de păstrare pentru cât timp să păstrați datele în conformitate cu politica de păstrare a datelor organizației. De asemenea, activează eliminarea automată a datelor expirate."
       ]
     },
     "Role": {
@@ -12135,6 +12218,9 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Personalizați-vă numărul adreselor IP din plan"
+      ],
+      "Data retention": [
+        "Păstrare date"
       ],
       "Date": [
         "Data"
