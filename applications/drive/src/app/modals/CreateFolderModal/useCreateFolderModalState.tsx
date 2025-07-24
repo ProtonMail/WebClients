@@ -9,6 +9,7 @@ import { splitNodeUid, useDrive } from '@proton/drive';
 
 import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 export type UseCreateFolderModalStateProps = ModalStateProps & {
     parentFolderUid?: string;
@@ -59,30 +60,20 @@ export const useCreateFolderModalState = ({
             return;
         }
 
-        const newFolder = await drive.createFolder(parentFolderUid, name).catch((error: Error) => {
-            handleError(error, { fallbackMessage: c('Error').t`Failed to create folder`, extra: { parentFolderUid } });
-        });
-        const { volumeId } = splitNodeUid(parentFolderUid);
-        await events.pollEvents.volumes(volumeId);
-
-        if (newFolder?.ok) {
+        try {
+            const newFolder = await drive.createFolder(parentFolderUid, name);
+            const { volumeId } = splitNodeUid(parentFolderUid);
+            const { node } = getNodeEntity(newFolder!);
+            await events.pollEvents.volumes(volumeId);
             createNotification({
                 type: 'success',
                 text: c('Notification').jt`"${name}" created successfully`,
             });
-
-            onCreateDone?.(newFolder.value.uid);
-        } else {
-            // TODO: handle the DegradedNode case, we might still have the data we need to rename
-            // In theory we want to show error.message to the user but the .catch case will not always fire if !newFolder?.ok
-            createNotification({
-                preWrap: true,
-                type: 'error',
-                text: c('Notification').jt`"${name}" failed to be created`,
-            });
+            onCreateDone?.(node.uid);
+            onClose();
+        } catch (error) {
+            handleError(error, { fallbackMessage: c('Error').t`Failed to create folder`, extra: { parentFolderUid } });
         }
-
-        onClose?.();
     };
 
     return {
