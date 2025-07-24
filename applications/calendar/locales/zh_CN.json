@@ -92,6 +92,12 @@
       "Add to group": [
         "添加至群组"
       ],
+      "Add Zoom meeting": [
+        "添加 Zoom 会议"
+      ],
+      "Adding conferencing details": [
+        "添加会议详情"
+      ],
       "Apply": [
         "应用"
       ],
@@ -293,6 +299,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "下载 ${ DRIVE_APP_NAME } 应用"
       ],
+      "Download logs": [
+        "下载日志"
+      ],
       "Download now": [
         "立即下载"
       ],
@@ -464,6 +473,9 @@
       "Load image": [
         "加载图片"
       ],
+      "Loading Zoom configuration": [
+        "正在加载 Zoom 配置"
+      ],
       "Make this participant optional": [
         "将此参与者标为非必须出席"
       ],
@@ -601,6 +613,9 @@
       ],
       "Reconnect": [
         "重新连接"
+      ],
+      "Reconnect to Zoom": [
+        "重新连接 Zoom"
       ],
       "Recover data": [
         "恢复数据"
@@ -1781,6 +1796,32 @@
       ],
       "strawberry": [
         "草莓红"
+      ]
+    },
+    "Commander action": {
+      "Day view": [
+        "日视图"
+      ],
+      "Month view": [
+        "月视图"
+      ],
+      "New event": [
+        "新事件"
+      ],
+      "Next period": [
+        "下个周期"
+      ],
+      "Previous period": [
+        "上个周期"
+      ],
+      "Search events": [
+        "搜索事件"
+      ],
+      "Today": [
+        "今天"
+      ],
+      "Week view": [
+        "周视图"
       ]
     },
     "Confirm modal title": {
@@ -3649,6 +3690,9 @@
       "You already added this holidays calendar": [
         "您已添加此假期日历"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "您已重新连接到 Zoom，现在您可以保存您的活动啦。"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "邮件收件人不能超过 ${ maxContacts } 位"
       ],
@@ -3663,6 +3707,9 @@
       ],
       "Your import will not be processed.": [
         "此次导入将不会进行。"
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "您的 Zoom 连接已过期，请重新连接以继续。"
       ]
     },
     "Error accepting calendar invitation": {

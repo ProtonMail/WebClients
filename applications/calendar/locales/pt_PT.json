@@ -305,6 +305,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Transferir as aplicações do ${ DRIVE_APP_NAME }"
       ],
+      "Download logs": [
+        "Transferir os registos"
+      ],
       "Download now": [
         "Transferir agora"
       ],
@@ -969,6 +972,10 @@
       "${ price } per user": [
         "${ price } por utilizador"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licença do ${ LUMO_APP_NAME }",
+        "${ seats } licenças do ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
         "${ seats } licenças de assistente de escrita"
@@ -1393,6 +1400,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema com o ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema de aplicação"
       ],
@@ -4754,6 +4764,9 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "O ${ LUMO_APP_NAME } inclui o assistente de escrita ${ BRAND_NAME } Scribe."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação. É um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5104,6 +5117,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "A regressão terminará todas as ligações a servidores pagos do ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Transferir os registos atuais"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
@@ -6442,6 +6458,9 @@
       ],
       "Import to:": [
         "Importar para:"
+      ],
+      "Include application logs in bug report": [
+        "Incluir os registos de aplicação no relatório de erro"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrado"
