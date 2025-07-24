@@ -1,5 +1,6 @@
 import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, canKeyEncryptAndDecrypt } from '@proton/crypto';
+import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import type {
@@ -60,7 +61,22 @@ export const getReactivatedAddressKeys = async ({
     if (oldDecryptedAddressKeys.length === address.Keys.length) {
         return empty;
     }
-    const newDecryptedAddressKeys = await getDecryptedAddressKeysHelper(address.Keys, user, newUserKeys, keyPassword);
+    const newDecryptedAddressKeysMaybeCorrupted = await getDecryptedAddressKeysHelper(
+        address.Keys,
+        user,
+        newUserKeys,
+        keyPassword
+    );
+
+    // sanity check to avoid re-activating keys that were generated in some corrupted state
+    // e.g. due to rare WebCrypto bugs
+    const newDecryptedAddressKeys = (
+        await Promise.all(
+            newDecryptedAddressKeysMaybeCorrupted.map(async (decryptedKey) =>
+                (await canKeyEncryptAndDecrypt(decryptedKey.privateKey)) ? decryptedKey : null
+            )
+        )
+    ).filter(isTruthy);
 
     // No difference in how many keys were able to get decrypted
     if (oldDecryptedAddressKeys.length === newDecryptedAddressKeys.length) {

@@ -59,3 +59,21 @@ export async function toPublicKeyReference(privateKey: PrivateKeyReference) {
         binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
     });
 }
+
+/**
+ * Ensure that the key can encrypt and successfully decrypt data.
+ * This is meant as a sanity check to catch rare issues such as WebCrypto bugs in some browsers.
+ */
+export async function canKeyEncryptAndDecrypt(privateKey: PrivateKeyReference) {
+    try {
+        const armoredMessage = await CryptoProxy.encryptSessionKey({
+            data: crypto.getRandomValues(new Uint8Array(16)),
+            algorithm: 'aes128',
+            encryptionKeys: privateKey,
+        });
+        await CryptoProxy.decryptSessionKey({ armoredMessage, decryptionKeys: privateKey });
+        return true;
+    } catch {
+        return false;
+    }
+}
