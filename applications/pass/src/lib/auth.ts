@@ -114,7 +114,7 @@ export const createAuthService = ({
 
             /** Force lock unless: matching localID + valid session + online.
              * Allows bypassing locks on page refresh when localID is preserved */
-            options.forceLock = !(validLocalID && validActiveSession && getOnline());
+            options.forceLock = options.forceLock ?? !(validLocalID && validActiveSession && getOnline());
 
             const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID(sessions);
             const error = getRouteError(history.location.search);
