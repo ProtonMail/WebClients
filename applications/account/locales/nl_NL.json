@@ -544,6 +544,9 @@
       "Download ICS": [
         "ICS downloaden"
       ],
+      "Download logs": [
+        "Logboeken downloaden"
+      ],
       "Download our CSV template": [
         "Ons CSV-sjabloon downloaden"
       ],
@@ -603,12 +606,6 @@
       ],
       "Edit servers": [
         "Servers bewerken"
-      ],
-      "Edit sieve": [
-        "Regel bewerken"
-      ],
-      "Edit sieve filter “${ Name }”": [
-        "Bewerk zeef-filter “${ Name }”"
       ],
       "Edit sign-in details": [
         "Bewerk aanmeldgegevens"
@@ -2794,9 +2791,12 @@
         "Uitvouwen"
       ]
     },
-    "collider_2025: Navigation": {
-      "Back to ${ LUMO_SHORT_APP_NAME }": [
-        "Terug naar ${ LUMO_SHORT_APP_NAME }"
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } toevoegen"
       ]
     },
     "color": {
@@ -10729,9 +10729,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Uw supportticket werd afgesloten. Bedankt om contact op te nemen met ${ BRAND_NAME }-ondersteuning."
-      ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Uw proefversie eindigt op 25 juni. Upgrade om toekomstige inbreuk rapporten te ontvangen."
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Uw proefperiode eindigt over ${ timeRemaining }."

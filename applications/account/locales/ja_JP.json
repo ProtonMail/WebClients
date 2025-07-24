@@ -556,6 +556,9 @@
       "Download ICS": [
         "ICSをダウンロード"
       ],
+      "Download logs": [
+        "ログをダウンロードする"
+      ],
       "Download our CSV template": [
         "CSVテンプレートのダウンロード"
       ],
@@ -615,12 +618,6 @@
       ],
       "Edit servers": [
         "サーバーの編集"
-      ],
-      "Edit sieve": [
-        "ふるいの編集"
-      ],
-      "Edit sieve filter “${ Name }”": [
-        "Sieve フィルター「${ Name }」を編集"
       ],
       "Edit sign-in details": [
         "サインイン詳細を編集"
@@ -10648,9 +10645,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "サポート チケットは終了しました。 ${ BRAND_NAME } サポートにお問い合わせいただきありがとうございます。"
-      ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "トライアルは6月25日に終了します。今後の侵害レポートを受け取るためにはアップグレードしてください。"
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "トライアルは${ timeRemaining }に終了します。"

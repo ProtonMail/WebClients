@@ -544,6 +544,9 @@
       "Download ICS": [
         "ICS-ის გადმოწერა"
       ],
+      "Download logs": [
+        "ჟურნალის გადმოწერა"
+      ],
       "Download our CSV template": [
         "გადმოწერეთ ჩვენი CSV ნიმუში"
       ],
@@ -603,12 +606,6 @@
       ],
       "Edit servers": [
         "სერვერების ჩასწორება"
-      ],
-      "Edit sieve": [
-        "Sieve-ის ჩასწორება"
-      ],
-      "Edit sieve filter “${ Name }”": [
-        "Sieve-ის ფილტრის \"${ Name }\" ჩასწორება"
       ],
       "Edit sign-in details": [
         "შესვლის დეტალების ჩასწორება"
@@ -1017,6 +1014,12 @@
       ],
       "Publish changes": [
         "ცვლილებების გამოცემა"
+      ],
+      "Purge all": [
+        "ყველას გასუფთავება"
+      ],
+      "Purge deleted": [
+        "წაშლილების გასუფთავება"
       ],
       "Quit": [
         "გასვლა"
@@ -5256,6 +5259,9 @@
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
       ],
+      "Invalid ZIP code": [
+        "არასწორი ZIP კოდი"
+      ],
       "Item content cannot exceed 40KB": [
         "ელემენტის შემცველობა 40კბ-ზე მეტი ვერ იქნება"
       ],
@@ -9071,6 +9077,9 @@
       ],
       "Paid for a monthly plan": [
         "თვიური გადახდის გეგმა"
+      ],
+      "Paid for a plan": [
+        "გადახდილია სატარიფო გეგმისთვის"
       ],
       "Pass Monitor - custom email confirmed": [
         "Pass Monitor - მორგებული ელფოსტა დადასტურებულია"
@@ -14729,6 +14738,9 @@
       "Free server configs": [
         "უფასო სერვერების კონფიგურაციები"
       ],
+      "Group": [
+        "ჯგუფი"
+      ],
       "I found another service that I like better": [
         "მე სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
       ],
@@ -14836,6 +14848,9 @@
       ],
       "Trash": [
         "ნაგვის ყუთი"
+      ],
+      "User": [
+        "მომხმარებელი"
       ]
     },
     "option": {
@@ -16094,6 +16109,41 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "პაროლის შეცვლის გამო თქვენი ორგანიზაციის ადმინისტრირების პრივილეგიები შეზღუდულია. აიკრძალა შემდეგი ქმედებები:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Delete": [
+        "წაშლა"
+      ],
+      "Delete rule": [
+        "წესის წაშლა"
+      ],
+      "Edit": [
+        "ჩასწორება"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "Forever": [
+        "სამუდამოდ"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search policies": [
+        "პოლიტიკების ძებნა"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "ქმედება"
+      ],
+      "Applies to": [
+        "ვრცელდება"
+      ],
+      "Retention period": [
+        "შენარჩუნების პერიოდი"
+      ],
+      "Retention Rule": [
+        "შენარჩუნების წესი"
       ]
     },
     "Role": {
@@ -19348,6 +19398,9 @@
       ],
       "Data recovery": [
         "მონაცემების აღდგენა"
+      ],
+      "Data retention": [
+        "მონაცემების შენარჩუნება"
       ],
       "Date": [
         "თარიღი"
