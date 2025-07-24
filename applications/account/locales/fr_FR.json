@@ -556,6 +556,9 @@
       "Download ICS": [
         "Télécharger un fichier ICS"
       ],
+      "Download logs": [
+        "Télécharger les journaux"
+      ],
       "Download our CSV template": [
         "Télécharger notre modèle CSV"
       ],
@@ -616,10 +619,10 @@
       "Edit servers": [
         "Modifier les serveurs"
       ],
-      "Edit sieve": [
+      "Edit Sieve": [
         "Modifier le filtre Sieve"
       ],
-      "Edit sieve filter “${ Name }”": [
+      "Edit Sieve filter “${ Name }”": [
         "Modifier le filtre Sieve « ${ Name } »"
       ],
       "Edit sign-in details": [
@@ -1029,6 +1032,12 @@
       ],
       "Publish changes": [
         "Publier les modifications"
+      ],
+      "Purge all": [
+        "Tout purger"
+      ],
+      "Purge deleted": [
+        "Purger les éléments supprimés"
       ],
       "Quit": [
         "Quitter"
@@ -1636,6 +1645,10 @@
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } accès ${ LUMO_APP_NAME }",
+        "${ seats } accès ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
@@ -2414,6 +2427,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problème"
+      ],
       "Application problem": [
         "Problème d'application"
       ],
@@ -2818,9 +2834,12 @@
         "Développer"
       ]
     },
-    "collider_2025: Navigation": {
-      "Back to ${ LUMO_SHORT_APP_NAME }": [
-        "Revenir à ${ LUMO_SHORT_APP_NAME }"
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Ajouter ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -7663,6 +7682,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } veut partager des données avec vous dans ${ PASS_APP_NAME }."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }"
       ],
@@ -8462,6 +8484,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passer à un abonnement inférieur mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Télécharger les journaux actuels"
       ],
       "Download on the App Store": [
         "Télécharger sur l'App Store"
@@ -9504,6 +9529,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
+      ],
+      "Private AI assistant": [
+        "Assistant IA privé"
       ],
       "Promotion expired": [
         "La promotion a expiré."
@@ -10842,9 +10870,6 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Votre ticket de support a été fermé. Merci d'avoir contacté le support de ${ BRAND_NAME }."
       ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Votre version d'essai se termine le 25 juin. Changez d'abonnement pour recevoir les futurs rapports de fuites de données."
-      ],
       "Your trial will end in ${ timeRemaining }.": [
         "Votre version d'essai se terminera dans ${ timeRemaining }."
       ],
@@ -11963,6 +11988,9 @@
       ],
       "Inbox": [
         "Boite de réception"
+      ],
+      "Include application logs in bug report": [
+        "Inclure les journaux d'application dans le rapport de bogue"
       ],
       "Inherit color from parent folder": [
         "Appliquer la couleur du dossier principal"
@@ -16595,12 +16623,23 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } de plus"
+      ],
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime } jour",
         "${ rule.Lifetime } jours"
       ],
       "Forever": [
         "Pour toujours"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "Rechercher une règle, des utilisateurs, une période ou une action"
+      ],
+      "Search policies": [
+        "Rechercher des politiques"
       ]
     },
     "retention_policy_2025_TableHeader": {
@@ -16615,6 +16654,11 @@
       ],
       "Retention Rule": [
         "Règle de conservation"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Aucune politique de conservation n'a été trouvée."
       ]
     },
     "RetentionPoliciesSettings": {
@@ -21758,6 +21802,9 @@
       ],
       "It's you": [
         "C'est vous"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Accès administrateur en attente"

@@ -556,6 +556,9 @@
       "Download ICS": [
         "ICS dosyasını indir"
       ],
+      "Download logs": [
+        "Günlüğü indir"
+      ],
       "Download our CSV template": [
         "CSV kalıbımızı indirin"
       ],
@@ -615,12 +618,6 @@
       ],
       "Edit servers": [
         "Sunucuları düzenle"
-      ],
-      "Edit sieve": [
-        "Sieve kodunu düzenle"
-      ],
-      "Edit sieve filter “${ Name }”": [
-        "${ Name } Sieve süzgecini düzenle"
       ],
       "Edit sign-in details": [
         "Oturum açma bilgilerini düzenle"
@@ -2812,9 +2809,12 @@
         "Genişlet"
       ]
     },
-    "collider_2025: Navigation": {
-      "Back to ${ LUMO_SHORT_APP_NAME }": [
-        "${ LUMO_SHORT_APP_NAME }'ya dön"
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } ?": [
+        "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } uygulamasını ekle"
       ]
     },
     "color": {
@@ -10823,9 +10823,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Destek kaydınız kapatıldı. ${ BRAND_NAME } destek ekibiyle görüştüğünüz için teşekkür ederiz."
-      ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Deneme süreniz 25 Haziran tarihinde sona erecek. Gelecekteki veri sızıntısı bildirimlerini almak için tarifenizi yükseltin."
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Deneme süreniz ${ timeRemaining } sonra sona erecek."
