@@ -935,6 +935,10 @@
       "${ price } per user": [
         "${ price } per utente"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licenza ${ LUMO_APP_NAME }",
+        "${ seats } licenze ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } posto dell'assistente alla scrittura",
         "${ seats } posti dell'assistente alla scrittura"
@@ -1331,6 +1335,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema con ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema con l'applicazione"
       ],
@@ -4218,6 +4225,9 @@
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include l'assistente di scrittura ${ BRAND_NAME } Scribe."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4574,6 +4584,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Il downgrading terminerà qualsiasi connessione ai server ${ VPN_APP_NAME } a pagamento."
+      ],
+      "Download current logs": [
+        "Scarica i log correnti"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Il download del file ${ downloadFileName } verrà interrotto"
@@ -6035,6 +6048,9 @@
       ],
       "Import to:": [
         "Importa in:"
+      ],
+      "Include application logs in bug report": [
+        "Includi i log dell'applicazione nella segnalazione di bug"
       ],
       "Include document name in notification": [
         "Includi il nome del documento nella notifica"
@@ -9568,6 +9584,9 @@
       ],
       "Folders, labels, and custom filters": [
         "Cartelle, etichette, e filtri personalizzati"
+      ],
+      "Priority support": [
+        "Supporto prioritario"
       ]
     },
     "Subscription renewal state": {
