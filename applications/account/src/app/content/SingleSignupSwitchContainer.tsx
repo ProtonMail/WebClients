@@ -7,7 +7,7 @@ import type { ActiveSession } from '@proton/shared/lib/authentication/persistedS
 import { type APP_NAMES, type CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 
 import SignupContainer from '../signup/SignupContainer';
-import { isMailReferAFriendSignup } from '../signup/helper';
+import { isReferralSignup } from '../signup/helper';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import SignupCtxRouter from '../signupCtx/SignupCtxRouter';
 import SingleSignupContainerV2 from '../single-signup-v2/SingleSignupContainerV2';
@@ -19,7 +19,7 @@ interface Props {
     maybePreAppIntent: APP_NAMES | undefined;
     searchParams: URLSearchParams;
     initialSearchParams?: URLSearchParams;
-    onLogin: OnLoginCallback;
+    handleLogin: OnLoginCallback;
     productParam: ProductParam;
     toApp?: APP_NAMES;
     toAppName?: string;
@@ -38,7 +38,7 @@ interface Props {
 const SingleSignupSwitchContainer = ({
     maybePreAppIntent,
     initialSearchParams,
-    onLogin,
+    handleLogin,
     productParam,
     toAppName,
     clientType,
@@ -54,9 +54,8 @@ const SingleSignupSwitchContainer = ({
     initialSessionsLength,
 }: Props) => {
     const location = useLocation();
-    const isMailRefer = isMailReferAFriendSignup(location);
 
-    // Ignore mail refer until we're sure it's been tested on sps
+    const isReferral = isReferralSignup(location);
 
     const renderContextSignup = searchParams.get('mode') === 'ctx' || location.pathname === SSO_PATHS.START;
 
@@ -66,7 +65,7 @@ const SingleSignupSwitchContainer = ({
                 <SignupCtxRouter
                     onPreSubmit={onPreSubmit}
                     onStartAuth={onStartAuth}
-                    onLogin={onLogin}
+                    handleLogin={handleLogin}
                     loginUrl={paths.login}
                     productParam={productParam}
                 />
@@ -74,7 +73,7 @@ const SingleSignupSwitchContainer = ({
         );
     }
 
-    if (isMailRefer) {
+    if (isReferral) {
         return (
             <UnAuthenticated>
                 <SignupContainer
@@ -85,7 +84,7 @@ const SingleSignupSwitchContainer = ({
                     clientType={clientType}
                     toApp={maybePreAppIntent}
                     toAppName={toAppName}
-                    onLogin={onLogin}
+                    onLogin={handleLogin}
                     onBack={onBack}
                     onPreSubmit={onPreSubmit}
                     onStartAuth={onStartAuth}
@@ -105,7 +104,7 @@ const SingleSignupSwitchContainer = ({
             clientType={clientType}
             toApp={maybePreAppIntent}
             toAppName={toAppName}
-            onLogin={onLogin}
+            onLogin={handleLogin}
             fork={fork}
             onBack={onBack}
             onPreSubmit={onPreSubmit}

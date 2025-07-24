@@ -11,11 +11,11 @@ import noop from '@proton/utils/noop';
 import { SignupType } from '../../../../../signup/interfaces';
 import { usePasswordInputInline } from '../../../../accountDetailsInputs/password/usePasswordInput';
 import useEmailInput from '../../../../accountDetailsInputs/username/useEmailInput';
+import Terms from '../../../../components/Terms';
 import { useSignup } from '../../../../context/SignupContext';
 import digitaltrends from '../../assets/images/digitaltrends.svg';
 import pcmag from '../../assets/images/pcmag.svg';
 import techradar from '../../assets/images/techradar.svg';
-import Terms from '../../components/Terms';
 
 type Step = 'email' | 'password';
 
@@ -181,7 +181,7 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
             )}
 
             <footer className={clsx('mt-8', step === 'email' && 'visibility-hidden')}>
-                <Terms />
+                <Terms className="mt-4" />
             </footer>
         </form>
     );

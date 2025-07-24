@@ -1,0 +1,39 @@
+@import '~@proton/styles/scss/lib';
+
+.ToggleSelector {
+	--background-norm: #efebff;
+	--button-default-background-color: #efebff;
+	--button-hover-background-color: white;
+	--button-active-background-color: white;
+	--button-default-text-color: var(--color-norm);
+	--button-selected-text-color: #6d4aff;
+	--button-hover-text-color: #6d4aff;
+	--button-active-text-color: #6d4aff;
+
+	background-color: var(--background-norm);
+	border-radius: var(--border-radius-full);
+	gap: var(--space-1);
+
+	button {
+		padding-block: #{rem(5)};
+		padding-inline: #{rem(10)};
+		color: var(--button-default-text-color, inherit);
+		transition:
+			background-color 0.3s easing(ease-out-quad),
+			box-shadow 0.3s easing(ease-out-quad);
+
+		&.is-selected {
+			color: var(--button-selected-text-color, inherit);
+			background-color: var(--button-active-background-color, transparent);
+			box-shadow: var(--shadow-lifted-offset)
+				rgb(var(--shadow-primary-color, var(--shadow-default-color)) / var(--shadow-lifted-opacity));
+		}
+
+		&:hover {
+			border-color: var(--button-hover-border-color, transparent);
+			background-color: var(--button-hover-background-color, transparent);
+			color: var(--button-hover-text-color, inherit);
+			opacity: 1; // In case the button is invisible as default
+		}
+	}
+}

@@ -51,3 +51,33 @@ export const getCoupon = (searchParams: URLSearchParams, key: string = 'coupon')
 
     return undefined;
 };
+
+export const getReferralIdentifier = (searchParams: URLSearchParams, key: string = 'referrer') => {
+    const referrer = searchParams.get(key) || '';
+
+    if (referrer) {
+        return referrer;
+    }
+
+    return undefined;
+};
+
+export const getReferralID = (searchParams: URLSearchParams, key: string = 'invite') => {
+    const invite = searchParams.get(key) || '';
+
+    if (invite) {
+        return invite;
+    }
+
+    return undefined;
+};
+
+export const getReferrerName = (searchParams: URLSearchParams, key: string = 'referrerName') => {
+    const referrerName = searchParams.get(key) || '';
+
+    if (referrerName) {
+        return referrerName;
+    }
+
+    return undefined;
+};
