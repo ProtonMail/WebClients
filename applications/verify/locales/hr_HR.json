@@ -56,6 +56,9 @@
       "Try another method": [
         "Isprobajte drugu metodu"
       ],
+      "Use authentication code": [
+        "Upotrijebite autentifikacijski kôd"
+      ],
       "Use recovery code": [
         "Koristi kȏd za oporavak"
       ],
@@ -1038,6 +1041,9 @@
       "You can now return to the application to continue": [
         "Sada se možete vratiti u aplikaciju i nastaviti"
       ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "Vaš ${ BRAND_NAME } korisnički račun je trenutno suspendiran. E-pošta se više ne isporučuje u vašu pristiglu poštu. Vaše poveznice za dijeljenje pogona više nisu aktivne i ne možete učitavati nove datoteke. Kako biste nastavili koristiti svoj korisnički račun, molimo vas da platite sve zakašnjele račune."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
       ],
@@ -1138,6 +1144,9 @@
       "15 GB storage": [
         "15 GB pohrane"
       ],
+      "Auto-delete Spam and Trash": [
+        "Automatsko brisanje neželjene pošte i otpada"
+      ],
       "Auto-reply": [
         "Automatski odgovor"
       ],
@@ -1158,6 +1167,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Podrška email klijenta (putem IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupe e-pošte"
       ],
       "Encrypted contact details": [
         "Šifrirani podaci o kontaktu"
@@ -1200,6 +1212,12 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Stvorite do ${ n } adresa e-pošte/pseudonima koje možete dodijeliti članovima obitelji. Koristite ih za mrežne identitete, npr. IvanKupovina@${ domain } za korisničke račune za kupnju."
       ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Brzo prenesite svoje e-pošte, kalendare ili kontakte od bilo kojeg davatelja usluga"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Osigurajte svoje datoteke sa šifriranom pohranom u oblaku. Uključuje automatsku sinkronizaciju, šifrirano dijeljenje datoteka i još puno toga."
+      ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Podijelite svoje datoteke ili mape s bilo kim pomoću sigurnih, djeljivih poveznica"
       ],
@@ -1208,6 +1226,12 @@
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
         "Prostor za pohranu dijeli se između ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } o ${ PASS_APP_NAME }"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Koristite vlastite adrese e-pošte s prilagođenom domenom, npr. vi@vaseime.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Pri slanju drugim ${ MAIL_APP_NAME } korisnicima, šifriranje je automatsko. Slanje korisnicima koji nisu ${ MAIL_APP_NAME_TWO } zahtijeva postavljanje lozinke prije slanja."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -1216,6 +1240,9 @@
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Povećajte svoj prostor za pohranu na ${ bundleStorage } po korisniku"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Povećajte svoj prostor za pohranu na ukupno ${ bundleStorage }"
       ]
     },
     "Placeholder": {
