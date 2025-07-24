@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { getKeyStatusBadgeTitles } from './KeysStatus';
 import type { KeyActions } from './shared/interface';
 
 interface Props extends Partial<KeyActions> {
@@ -21,6 +22,7 @@ const KeysActions = ({
     onSetObsolete,
     onSetNotObsolete,
 }: Props) => {
+    const keyStatusBadgeTitles = getKeyStatusBadgeTitles();
     const list = [
         onExportPublicKey && {
             text: c('Keys actions').t`Export public key`,
@@ -31,7 +33,9 @@ const KeysActions = ({
             onClick: () => onExportPrivateKey(ID),
         },
         onSetPrimary && {
-            text: c('Keys actions').t`Make primary`,
+            text: c('Keys actions').t`Use for encryption and signing`,
+            tooltip: c('Keys actions')
+                .t`Makes this the ${keyStatusBadgeTitles.primary} or ${keyStatusBadgeTitles.fallback} key for encryption and signing.`,
             onClick: () => onSetPrimary(ID),
         },
         onSetObsolete && {
