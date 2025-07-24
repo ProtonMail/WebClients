@@ -3,6 +3,7 @@ import { type ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import driveOfferSpotlight from '@proton/styles/assets/img/permanent-offer/drive_offer_spotlight.svg';
 
 import { OfferContent } from '../components/OfferContent';
@@ -36,14 +37,20 @@ export const DrivePostSignupDollarContent = ({ pricingTitle, daysSinceOffer, onC
             plus: '200 GB',
         },
         {
-            id: 'document',
-            title: c('Offer feature').t`Online document editor`,
+            id: 'edit',
+            title: c('Offer feature').t`Edit docs online`,
             free: PostSignupOneDollarCheck,
             plus: PostSignupOneDollarCheck,
         },
         {
+            id: 'collaborate',
+            title: c('Offer feature').t`Collaborate with non-${BRAND_NAME} users`,
+            free: '–',
+            plus: PostSignupOneDollarCheck,
+        },
+        {
             id: 'file_recovery',
-            title: c('Offer feature').t`Recover previous file versions`,
+            title: c('Offer feature').t`File version history (over 1 week)`,
             free: '–',
             plus: PostSignupOneDollarCheck,
         },
