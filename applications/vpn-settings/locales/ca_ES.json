@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Descarrega una mostra de CSV"
       ],
+      "Download logs": [
+        "Descarrega els registres"
+      ],
       "Download our CSV template": [
         "Descarregueu la nostra plantilla CSV"
       ],
@@ -583,7 +586,7 @@
         "Purga-ho tot"
       ],
       "Purge deleted": [
-        "Purga esborrada"
+        "Purga els elements eliminats"
       ],
       "Recover data": [
         "Recuperar dades"
@@ -986,6 +989,10 @@
       ],
       "${ price } per user": [
         "${ price } per usuari"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } llicència ${ LUMO_APP_NAME }",
+        "${ seats } llicències ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } llicència de l'assistent d'escriptura",
@@ -1563,6 +1570,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Hi ha hagut un problema amb ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema d’aplicació"
       ],
@@ -4363,6 +4373,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres d'inici de sessió d'un sol cop utilitza autenticació de factor doble.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres d'inici de sessió d'un sol cop utilitza autenticació de factor doble."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME }."
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
@@ -4864,6 +4877,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Descarregar els registres actuals"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Descarregueu la nostra plantilla CSV, empleneu els detalls dels usuaris i després carregueu el fitxer CSV complet per a crear comptes per a aquests usuaris."
@@ -5519,6 +5535,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El preu inclou tots els descomptes basats en cicles aplicables i els cupons no caducats desats al vostre compte."
+      ],
+      "Private AI assistant": [
+        "Assistent d'IA personal"
       ],
       "Protected by Swiss privacy laws": [
         "Protegit per les lleis de privacitat suïsses"
@@ -6818,6 +6837,9 @@
       ],
       "Import all messages": [
         "Importar tots els missatges"
+      ],
+      "Include application logs in bug report": [
+        "Incloeu els registres de l'aplicació a l'informe d'errors"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"
@@ -9769,7 +9791,7 @@
     },
     "retention_policy_2025_Action": {
       "Create retention rule": [
-        "Creeu una instrucció de retenció"
+        "Creeu una instrucció de conservació"
       ],
       "Delete": [
         "Elimina"
@@ -9795,7 +9817,7 @@
     },
     "retention_policy_2025_Placeholder": {
       "Search for rule, users, period, action": [
-        "Cercar per regla, usuaris, període, acció"
+        "Cerca per regla, usuaris, període, acció"
       ],
       "Search policies": [
         "Cerca polítiques"
@@ -9809,20 +9831,20 @@
         "S'aplica a:"
       ],
       "Retention period": [
-        "Període de retenció"
+        "Període de conservació"
       ],
       "Retention Rule": [
-        "Regla de retenció"
+        "Regla de conservació"
       ]
     },
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
-        "No s'han trobat polítiques de retenció"
+        "No s'han trobat polítiques de conservació"
       ]
     },
     "RetentionPoliciesSettings": {
       "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Creeu regles de conservació d'acord amb la política de la vostra organització pel que fa al període de retenció de les dades. Això també permetrà la purga automàtica de les dades caducades."
+        "Creeu regles de conservació d'acord amb la política de la vostra organització pel que fa al període de conservació de les dades. Això també permetrà la purga automàtica de les dades caducades."
       ]
     },
     "Role": {
@@ -13089,6 +13111,9 @@
       ],
       "It's you": [
         "Sou vós"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Accés com a administrador pendent"
