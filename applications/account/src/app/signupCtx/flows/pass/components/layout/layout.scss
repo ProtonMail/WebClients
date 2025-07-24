@@ -1,0 +1,43 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-signup {
+	scroll-behavior: smooth;
+
+	.signup-bg-gradient {
+		background: #1d1738;
+	}
+
+	.signup-layout-gap {
+		gap: var(--space-4);
+
+		@include media('>medium') {
+			gap: 6rem;
+		}
+
+		@include media('>large') {
+			gap: 10rem;
+		}
+	}
+
+	&-card-glass {
+		background: rgba(248, 250, 252, 0.10);
+		box-shadow: 0px -133px 37px 0px rgba(55, 37, 128, 0.00), 0px -85px 34px 0px rgba(55, 37, 128, 0.01), 0px -48px 29px 0px rgba(55, 37, 128, 0.05), 0px -21px 21px 0px rgba(55, 37, 128, 0.09), 0px -5px 12px 0px rgba(55, 37, 128, 0.10);
+		backdrop-filter: blur(8px);
+
+		/* Provided svg has whitespaces that can't be cropped because of the shadow effect.
+		 * This css, applies a negative margin to each star sibling, so it match the design. */
+		.star + .star {
+			margin-left: -2rem;
+		}
+	}
+
+	.bg-white {
+		background-color: var(--background-invert);
+	}
+}
+
+.input, .input:hover {
+	--field-background-color: transparent!important;
+	--field-focus-background-color: transparent!important;
+	--field-hover-background-color: transparent!important;
+}
