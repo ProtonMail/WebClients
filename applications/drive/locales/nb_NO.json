@@ -1184,6 +1184,10 @@
       "${ price } per user": [
         "${ price } per bruker"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } lisens",
+        "${ seats } ${ LUMO_APP_NAME } lisenser"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } skriveassistentlisens",
         "${ seats } skriveassistentlisenser"
@@ -1559,6 +1563,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
+      ],
       "Application problem": [
         "Applikasjonsproblem"
       ],
@@ -4596,6 +4603,9 @@
         "${ invitations.length } ventende invitasjon",
         "${ invitations.length } ventende invitasjoner"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Livsvarig avtale for ${ PASS_SHORT_APP_NAME } har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5026,6 +5036,9 @@
       ],
       "Download ${ name } app": [
         "Last ned ${ name }-appen"
+      ],
+      "Download current logs": [
+        "Last ned logg"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Nedlasting av ${ downloadFileName } vil bli avbrutt"
