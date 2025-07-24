@@ -447,6 +447,12 @@
       "Download all attachments": [
         "모든 첨부파일 다운로드"
       ],
+      "Download application logs": [
+        "애플리케이션 로그 다운로드"
+      ],
+      "Download logs": [
+        "다운로드 로그"
+      ],
       "Download now": [
         "지금 다운로드"
       ],
@@ -1416,6 +1422,9 @@
       "Trust": [
         "신뢰"
       ],
+      "Trust key": [
+        "키 신뢰하기"
+      ],
       "Trust public key": [
         "공개 키 신뢰하기"
       ],
@@ -2109,6 +2118,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 문제"
+      ],
       "Application problem": [
         "앱 문제"
       ],
@@ -6190,6 +6202,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME }이 회원님의 비즈니스를 더욱 완벽히 보호합니다."
       ],
@@ -6735,6 +6750,12 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
+      ],
+      "Download application logs for troubleshooting": [
+        "문제 해결을 위해 애플리케이션 로그 다운로드"
+      ],
+      "Download current logs": [
+        "현재 로그 다운로드"
       ],
       "Download on the App Store": [
         "App Store에서 다운로드"
@@ -9016,6 +9037,9 @@
       ],
       "Import to:": [
         "가져오기:"
+      ],
+      "Include application logs in bug report": [
+        "버그 신고에 애플리케이션 로그 포함"
       ],
       "Integrated 2FA authenticator": [
         "2단계 인증기 내장"

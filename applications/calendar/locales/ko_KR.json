@@ -302,6 +302,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } 앱 다운로드"
       ],
+      "Download logs": [
+        "다운로드 로그"
+      ],
       "Download now": [
         "지금 다운로드"
       ],
@@ -1382,6 +1385,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 문제"
+      ],
       "Application problem": [
         "앱 문제"
       ],
@@ -4696,6 +4702,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 평생 이용권 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME } 평생 이용권의 일회성 결제입니다."
       ],
@@ -5031,6 +5040,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
+      ],
+      "Download current logs": [
+        "현재 로그 다운로드"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "오늘 회원님이 선호하는 앱을 다운로드하여 언제 어디서나 프라이버시를 유지해 보세요."
@@ -6355,6 +6367,9 @@
       ],
       "Import to:": [
         "가져오기:"
+      ],
+      "Include application logs in bug report": [
+        "버그 신고에 애플리케이션 로그 포함"
       ],
       "Integrated 2FA authenticator": [
         "2단계 인증기 내장"
