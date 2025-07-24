@@ -556,6 +556,9 @@
       "Download ICS": [
         "Stiahnuť ICS"
       ],
+      "Download logs": [
+        "Záznamy sťahovania"
+      ],
       "Download our CSV template": [
         "Stiahnuť šablónu CSV"
       ],
@@ -615,12 +618,6 @@
       ],
       "Edit servers": [
         "Upraviť servery"
-      ],
-      "Edit sieve": [
-        "Upraviť Sieve filter"
-      ],
-      "Edit sieve filter “${ Name }”": [
-        "Upraviť Sieve filter „${ Name }”"
       ],
       "Edit sign-in details": [
         "Upraviť prihlasovacie údaje"
@@ -11012,9 +11009,6 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Vaša požiadavka na podporu bola uzavretá. Ďakujeme, že ste kontaktovali ${ BRAND_NAME } podporu."
       ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Vaše skúšobné obdobie sa končí 25. júna. Zvýšte úroveň, aby ste dostávali budúce hlásenia o únikoch."
-      ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše skúšobné obdobie končí ${ timeRemaining }."
       ],
@@ -16891,6 +16885,12 @@
     "retention_policy_2025_Info": {
       "${ remainingCount } more": [
         "${ remainingCount } ďalšie"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } deň",
+        "${ rule.Lifetime } dni",
+        "${ rule.Lifetime } dní",
+        "${ rule.Lifetime } dní"
       ],
       "Forever": [
         "Navždy"
