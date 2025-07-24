@@ -556,6 +556,9 @@
       "Download ICS": [
         "ICS 다운로드"
       ],
+      "Download logs": [
+        "다운로드 로그"
+      ],
       "Download our CSV template": [
         "CSV 양식 다운로드"
       ],
@@ -616,10 +619,10 @@
       "Edit servers": [
         "서버 편집"
       ],
-      "Edit sieve": [
+      "Edit Sieve": [
         "Sieve 편집"
       ],
-      "Edit sieve filter “${ Name }”": [
+      "Edit Sieve filter “${ Name }”": [
         "Sieve 필터 \"${ Name }\" 편집"
       ],
       "Edit sign-in details": [
@@ -2345,6 +2348,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 문제"
+      ],
       "Application problem": [
         "앱 문제"
       ],
@@ -7538,6 +7544,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }이(가) ${ PASS_APP_NAME }에서 사용자와 데이터 공유를 요청했습니다."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME }"
       ],
@@ -8305,6 +8314,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
+      ],
+      "Download current logs": [
+        "현재 로그 다운로드"
       ],
       "Download on the App Store": [
         "App Store에서 다운로드"
@@ -9343,6 +9355,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "가격에는 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
+      ],
+      "Private AI assistant": [
+        "프라이빗 AI 어시스턴트"
       ],
       "Promotion expired": [
         "프로모션이 만료되었습니다"
@@ -10661,9 +10676,6 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "고객님의 지원 티켓이 종료되었습니다. ${ BRAND_NAME } 지원을 이용해주셔서 감사합니다."
       ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "무료 체험이 6월 25일에 종료됩니다. 향후 침해 보고서를 받으려면 업그레이드하세요."
-      ],
       "Your trial will end in ${ timeRemaining }.": [
         "무료 체험이 ${ timeRemaining }에 종료됩니다."
       ],
@@ -11775,6 +11787,9 @@
       ],
       "Inbox": [
         "받은 메일함"
+      ],
+      "Include application logs in bug report": [
+        "버그 신고에 애플리케이션 로그 포함"
       ],
       "Inherit color from parent folder": [
         "상위폴더의 색상 따르기"
@@ -16376,6 +16391,9 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount }개 이상"
+      ],
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime }일"
       ],
@@ -21468,6 +21486,9 @@
       ],
       "It's you": [
         "나"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "관리자 접근 권한 대기 중"
