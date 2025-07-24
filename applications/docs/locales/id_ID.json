@@ -126,6 +126,9 @@
       "Cancel subscription": [
         "Batalkan langganan"
       ],
+      "Cancel trial and pay": [
+        "Batalkan uji coba dan bayar"
+      ],
       "Change sort order": [
         "Ubah kriteria penyortiran"
       ],
@@ -2995,6 +2998,9 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
+      "Invalid ZIP code": [
+        "Kode pos tidak valid"
+      ],
       "Item content cannot exceed 40KB": [
         "Konten item tidak boleh melebihi 40KB"
       ],
@@ -3061,6 +3067,12 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Unggahan foto untuk sementara dinonaktifkan. Silakan coba lagi nanti"
       ],
+      "Please enter a valid ZIP code": [
+        "Silakan masukkan kode pos yang valid"
+      ],
+      "Please enter ZIP code": [
+        "Silakan masukkan kode pos"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Silakan selesaikan permasalahan yang disorot untuk melanjutkan."
       ],
@@ -3072,6 +3084,9 @@
       ],
       "Please select a state": [
         "Silakan pilih negara bagian/provinsi"
+      ],
+      "Please select billing country": [
+        "Silakan pilih negara penagihan"
       ],
       "Port is required": [
         "Nomor port diperlukan"
@@ -5427,7 +5442,7 @@
         "Anda akan diberi tahu apabila kata sandi atau data lainnya yang Anda miliki terbocorkan dari layanan pihak ketiga."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
+        "Anda memiliki langganan ${ planTitle } versi uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
@@ -6159,6 +6174,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Kode pos"
+      ],
       "ZIP code": [
         "Kode pos"
       ]
@@ -8157,6 +8175,9 @@
       "Got it": [
         "Mengerti"
       ],
+      "I'm purchasing as a business": [
+        "Saya membeli produk ini selaku pihak bisnis"
+      ],
       "MM/YY": [
         "BB/TT"
       ],
@@ -8191,7 +8212,7 @@
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "This payment method will become your new default for all future renewals.": [
-        "Metode pembayaran ini akan menjadi bawaan baru Anda untuk semua perpanjangan mendatang."
+        "Metode pembayaran ini akan menjadi metode bawaan baru Anda untuk segala perpanjangan yang dilakukan ke depannya."
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
@@ -8242,6 +8263,17 @@
       ],
       "Street address, postal code, and city": [
         "Alamat, kode pos, dan kota"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Nomor Bisnis"
+      ],
+      "EIN": [
+        "NPWP"
       ]
     },
     "PGP key encryption warning": {
@@ -8355,6 +8387,9 @@
       ],
       "Your organization name": [
         "Nama organisasi Anda"
+      ],
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "Placeholder for contact group name": {
@@ -9270,6 +9305,9 @@
       ],
       "Folders, labels, and custom filters": [
         "Folder, label, dan filter khusus"
+      ],
+      "Priority support": [
+        "Dukungan prioritas"
       ]
     },
     "Subscription renewal state": {

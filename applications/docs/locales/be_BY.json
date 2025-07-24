@@ -952,6 +952,12 @@
       "${ price } per user": [
         "${ price } за карыстальніка"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
         "${ seats } ліцэнзіі памочніка ў напісанні",
@@ -1332,6 +1338,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Праблема ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Праблема з праграмай"
       ],
@@ -4277,6 +4286,9 @@
         "Знойдзена ${ groupCounts } груп",
         "Знойдзена ${ groupCounts } груп"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4401,7 +4413,7 @@
         "Прыняць/адхіліць"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
+        "Доступ да ўліковага запісу абмежаваны з прычыны неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
@@ -4663,6 +4675,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Спампоўванне бягучых журналаў"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Спампоўванне файла ${ downloadFileName } было перарвана"
@@ -5253,7 +5268,7 @@
         "Абагулена са мной"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
-        "Немагчыма выканаць праверку подпісу па прычыне памылкі сеткі. Паспрабуйце яшчэ раз пазней."
+        "Немагчыма выканаць праверку подпісу з прычыны памылкі сеткі. Паспрабуйце яшчэ раз пазней."
       ],
       "Signature check will be ignored": [
         "Праверка подпісу была праігнаравана"
@@ -5727,7 +5742,7 @@
         "Не ўдалося сінхранізаваць вашы змяненні. Drive паспрабуе аўтаматычна захаваць змяненні. Не закрывайце вэб-старонку."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Ваш бягучы браўзер не падтрымлівае спампоўванне вялікіх файлаў па прычыне недаступнасці службы Service Workers. Гэта можа прывесці да завісання браўзера. Скарыстайцеся апошняй версіяй ${ recommendedBrowser } і паспрабуйце яшчэ раз."
+        "Ваш бягучы браўзер не падтрымлівае спампоўванне вялікіх файлаў з прычыны недаступнасці службы Service Workers. Гэта можа прывесці да завісання браўзера. Скарыстайцеся апошняй версіяй ${ recommendedBrowser } і паспрабуйце яшчэ раз."
       ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Ваш бягучы дакумент будзе заменены гэтай версіяй. Каментарыі і прапановы будуць выдалены з дакумента, але застануцца даступнымі ў гісторыі каментарыяў."
@@ -6143,6 +6158,9 @@
       ],
       "Import to:": [
         "Імпартаваць у:"
+      ],
+      "Include application logs in bug report": [
+        "Уключыць журналы праграмы ў справаздачу аб памылцы"
       ],
       "Include document name in notification": [
         "Уключыць назву дакумента ў апавяшчэнне"
@@ -8192,7 +8210,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Некаторыя відарысы не былі запампаваны па прычыне дубліравання імён файлаў у бягучым выбары."
+        "Некаторыя відарысы не былі запампаваны з прычыны дубліравання імён файлаў у бягучым выбары."
       ]
     },
     "Oauth instructions": {
@@ -9782,6 +9800,9 @@
       ],
       "Folders, labels, and custom filters": [
         "Папкі, меткі і карыстальніцкія фільтры"
+      ],
+      "Priority support": [
+        "Прыярытэтная падтрымка"
       ]
     },
     "Subscription renewal state": {
