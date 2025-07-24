@@ -14,7 +14,6 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from '@proton/components/hooks/useDeviceRecovery';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
-import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
@@ -22,7 +21,7 @@ import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import { getKeyByID } from './shared/helper';
-import useDisplayKeys from './shared/useDisplayKeys';
+import { useKeysMetadata } from './shared/useKeysMetadata';
 
 const UserKeysSections = () => {
     const { createModal } = useModals();
@@ -32,15 +31,16 @@ const UserKeysSections = () => {
     const authentication = useAuthentication();
     const [userKeys, loadingUserKeys] = useUserKeys();
     const getOrganizationKey = useGetOrganizationKey();
-    const userKeysDisplay = useDisplayKeys({ keys: userKeys, User });
     const [isDeviceRecoveryAvailable, loadingDeviceRecovery] = useIsDeviceRecoveryAvailable();
     const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
     const getAddresses = useGetAddresses();
 
-    const existingAlgorithms = userKeysDisplay.reduce<AlgorithmInfo[]>(
-        (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
-        []
-    );
+    const {
+        user: { displayKeys: userKeysDisplay, existingAlgorithms },
+    } = useKeysMetadata({
+        user: User,
+        userKeys,
+    });
 
     const [addKeyProps, setAddKeyModalOpen, renderAddKey] = useModalState();
 
