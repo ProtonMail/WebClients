@@ -22,6 +22,11 @@ import {
 } from './PaymentContext';
 
 interface InitializationStatus {
+    /**
+     * Has initialization been triggered?
+     * ie has the correct default plan been set, and can we start rendering with a preselected plan
+     */
+    triggered: boolean;
     cacheInitialized: boolean;
     pricingInitialized: boolean;
     vpnServersInitialized: boolean;
@@ -63,6 +68,7 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
     const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
     const [vpnServersCountData, setVpnServersCountData] = useState<VPNServersCountData>(defaultVPNServersCountData);
     const [initializationStatus, setInitializationStatus] = useState<InitializationStatus>({
+        triggered: false,
         cacheInitialized: false,
         pricingInitialized: false,
         vpnServersInitialized: false,
@@ -75,6 +81,12 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         availablePlans,
         paymentFlow,
     }) => {
+        /**
+         * Track this initialization to prevent race conditions with user actions
+         */
+        const latest = {};
+        latestOptimisticRef.current = latest;
+
         /**
          * Optimistic check result initialization
          */
@@ -90,6 +102,8 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         };
         const checkResult = paymentsContext.getOptimisticCheckResult(optimistic);
         setOptimistic({ ...optimistic, checkResult });
+
+        setInitializationStatus((prev) => ({ ...prev, triggered: true }));
         setLoadingPaymentDetails(true);
 
         // Fetch VPN servers count data in parallel with payments initialization
@@ -112,16 +126,20 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
             fetchVpnServersCount,
         ]);
 
-        setOptimistic({});
-        setLoadingPaymentDetails(false);
+        // Only clear optimistic state if this initialization is still the latest operation
+        // This prevents race conditions where user actions during initialization would be overridden
+        if (latestOptimisticRef.current === latest) {
+            setOptimistic({});
+            setLoadingPaymentDetails(false);
+        }
 
         cacheRef.current = { availablePlans };
 
-        setInitializationStatus({
+        setInitializationStatus((prev) => ({
+            ...prev,
             cacheInitialized: true,
             pricingInitialized: true,
-            vpnServersInitialized: true,
-        });
+        }));
     };
 
     const handleOptimisticCheck = async (
