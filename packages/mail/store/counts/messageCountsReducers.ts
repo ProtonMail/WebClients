@@ -73,13 +73,13 @@ export const labelMessages = (
     }>
 ) => {
     const { elements, targetLabelID, folders, labels } = action.payload;
-    const isFolder = isSystemFolder(targetLabelID) || isCustomFolder(targetLabelID, folders);
-    const isCategory = isCategoryLabel(targetLabelID);
+    const isTargetAFolder = isSystemFolder(targetLabelID) || isCustomFolder(targetLabelID, folders);
+    const isTargetACategory = isCategoryLabel(targetLabelID);
 
     elements.forEach((element) => {
         const selectedMessage = element as Message;
 
-        if (isFolder) {
+        if (isTargetAFolder) {
             selectedMessage.LabelIDs.forEach((selectedLabelID) => {
                 if (isSystemFolder(selectedLabelID) || isCustomFolder(selectedLabelID, folders)) {
                     const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === selectedLabelID);
@@ -113,7 +113,7 @@ export const labelMessages = (
                     }
                 }
             });
-        } else if (isCategory) {
+        } else if (isTargetACategory) {
             selectedMessage.LabelIDs.forEach((selectedLabelID) => {
                 const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === selectedLabelID);
 

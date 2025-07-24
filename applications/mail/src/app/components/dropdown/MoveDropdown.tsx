@@ -80,7 +80,7 @@ const MoveDropdown = ({
     const getMessagesOrElements = useGetMessagesOrElementsFromIDs();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder(setContainFocus);
-    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { getSendersToFilter } = useCreateFilters();
 
     const breakpoints = useActiveBreakpoint();
@@ -147,7 +147,7 @@ const MoveDropdown = ({
         // We only need to ignore the value in that scenario
         const canApplyAlways = selectedFolderID !== SPAM;
 
-        if (applyLocationEnabled && !selectAll) {
+        if (applyOptimisticLocationEnabled && !selectAll) {
             await applyLocation({
                 elements,
                 targetLabelID: selectedFolderID,

@@ -112,7 +112,7 @@ const HeaderMoreDropdown = ({
     const dispatch = useMailDispatch();
     const [loading, withLoading] = useLoading();
     const star = useStar();
-    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const [user] = useUser();
     const { feature } = useFeature(FeatureCode.SetExpiration);
     const closeDropdown = useRef<() => void>();
@@ -194,7 +194,7 @@ const HeaderMoreDropdown = ({
             return;
         }
 
-        if (applyLocationEnabled) {
+        if (applyOptimisticLocationEnabled) {
             void withLoading(
                 applyLocation({
                     elements: [message.data || ({} as Element)],

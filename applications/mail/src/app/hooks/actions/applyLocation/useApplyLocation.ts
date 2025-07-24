@@ -19,7 +19,7 @@ export interface ApplyLocationParams {
 
 export const useApplyLocation = () => {
     const mailSettings = useMailModel('MailSettings');
-    const enabled = useFlag('ApplyLabelsOptimisticRefactoring') && mailSettings.ViewMode === VIEW_MODE.SINGLE;
+    const flagState = useFlag('ApplyLabelsOptimisticRefactoring');
     const dispatch = useMailDispatch();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
@@ -62,5 +62,5 @@ export const useApplyLocation = () => {
         }
     };
 
-    return { enabled, applyLocation };
+    return { applyOptimisticLocationEnabled: flagState && mailSettings.ViewMode === VIEW_MODE.SINGLE, applyLocation };
 };

@@ -50,7 +50,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
 
     const { markAs, selectAllMarkModal } = useMarkAs();
     const getElementsFromIDs = useGetElementsFromIDs();
-    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveToSpamModal, moveSnoozedModal, moveScheduledModal, selectAllMoveModal } =
         useMoveToFolder();
     const onCompose = useOnCompose();
@@ -156,7 +156,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
 
     const handleMove = useCallback(
         async (newLabelID: string, sourceAction: SOURCE_ACTION): Promise<void> => {
-            if (applyLocationEnabled && !selectAll) {
+            if (applyOptimisticLocationEnabled && !selectAll) {
                 await applyLocation({
                     elements: getElementsFromIDs(selectedIDs),
                     targetLabelID: newLabelID,
