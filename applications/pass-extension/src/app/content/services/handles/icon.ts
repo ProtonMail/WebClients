@@ -60,10 +60,10 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
     const reposition = (reflow: boolean = false) => {
         cancelReposition();
 
-        repositioning.request = requestAnimationFrame(() => {
-            const inputBox = field.getBoxElement({ reflow });
-            const form = field.getFormHandle().element;
+        const inputBox = field.getBoxElement({ reflow });
+        const form = field.getFormHandle().element;
 
+        repositioning.request = requestAnimationFrame(() => {
             animatePositionChange({
                 onAnimate: (request) => (repositioning.animate = request),
                 get: () => field.element.getBoundingClientRect(),
