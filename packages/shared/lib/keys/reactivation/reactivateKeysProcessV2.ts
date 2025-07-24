@@ -1,5 +1,5 @@
 import type { PrivateKeyReference, PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, canKeyEncryptAndDecrypt } from '@proton/crypto';
 import { USER_KEY_USERID, getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { getApiError } from '../../api/helpers/apiErrorHelper';
@@ -79,6 +79,12 @@ export const reactivateUserKeys = async ({
         try {
             if (!reactivatedKeyWithMaybeInvalidUserIDs) {
                 throw new Error('Missing key');
+            }
+
+            // sanity check to avoid re-activating keys that were generated in some corrupted state
+            // e.g. due to rare WebCrypto bugs
+            if (!(await canKeyEncryptAndDecrypt(reactivatedKeyWithMaybeInvalidUserIDs))) {
+                continue;
             }
 
             const { key: reactivatedKey, replaced } = await resetOrReplaceUserId(
