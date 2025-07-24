@@ -93,7 +93,7 @@ export const useMessageHotkeys = (
     const filterDropdownToggleRef = useRef<() => void>(noop);
 
     const { markAs } = useMarkAs();
-    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder();
     const star = useStar();
 
@@ -112,7 +112,7 @@ export const useMessageHotkeys = (
 
         const folderName = getFolderName(LabelID, folders);
 
-        if (applyLocationEnabled) {
+        if (applyOptimisticLocationEnabled) {
             await applyLocation({
                 elements: [message.data],
                 targetLabelID: LabelID,
@@ -304,7 +304,7 @@ export const useMessageHotkeys = (
                 if (hotkeysEnabledAndMessageReady && message.data) {
                     e.stopPropagation();
 
-                    if (applyLocationEnabled) {
+                    if (applyOptimisticLocationEnabled) {
                         await applyLocation({
                             elements: [message.data as Element],
                             targetLabelID: MAILBOX_LABEL_IDS.STARRED,

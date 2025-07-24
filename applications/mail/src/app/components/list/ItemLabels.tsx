@@ -34,7 +34,7 @@ const ItemLabels = ({
     showDropdown = true,
 }: Props) => {
     const history = useHistory();
-    const { enabled: applyLocationEnabled, applyLocation } = useApplyLocation();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { applyLabels } = useApplyLabels();
 
     const labelsSorted = useMemo<Label[]>(() => {
@@ -51,7 +51,7 @@ const ItemLabels = ({
     const handleGo = (label: Label) => () => history.push(`/${label.ID}`);
 
     const handleUnlabel = (labelID: string) => () => {
-        if (applyLocationEnabled) {
+        if (applyOptimisticLocationEnabled) {
             return applyLocation({
                 elements: [element || ({} as Element)],
                 targetLabelID: labelID,
