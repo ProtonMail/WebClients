@@ -1,3 +1,4 @@
+import { canKeyEncryptAndDecrypt } from '@proton/crypto';
 import type { AddressKey, KeyPair, KeysPair } from '@proton/shared/lib/interfaces';
 import { getAddressKeyPassword, getDecryptedAddressKey } from '@proton/shared/lib/keys';
 
@@ -55,11 +56,19 @@ export const getAddressKeyInvalidError = async ({
         };
     }
     try {
-        await getDecryptedAddressKey(addressKey, password);
-        return {
-            errorMessage: 'Address key decrypted unexpectedly',
-            errorType: InvalidKeyErrorEnum.AddressKeySuccessError,
-        };
+        const decryptedKey = await getDecryptedAddressKey(addressKey, password);
+        return (await canKeyEncryptAndDecrypt(decryptedKey.privateKey))
+            ? {
+                  errorMessage: 'Address key decrypted unexpectedly',
+                  errorType: InvalidKeyErrorEnum.AddressKeySuccessError,
+              }
+            : {
+                  // error details for a specific edge cases, where the key can be decrypted but was e.g. generated
+                  // with corrupted key material due a WebCrypto bug on WebKit Linux, and was marked as inactive through a password reset;
+                  // such key will not be able to be reactivated due to an encrypt-decrypt test done as part of the reactivation process.
+                  errorMessage: 'Address key cannot be used for encryption or decryption',
+                  errorType: InvalidKeyErrorEnum.AddressKeyError,
+              };
     } catch (e: any) {
         return {
             errorMessage: e.message || 'Address key failed to decrypt',
