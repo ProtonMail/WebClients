@@ -52,6 +52,7 @@ enum CommonFeatureFlag {
     LumoDeactivateGuestModeFrontend = 'LumoDeactivateGuestModeFrontend',
     ScheduleInAdvance = 'ScheduleInAdvance',
     AllowGuestInit = 'AllowGuestInit',
+    PMVCAvailable = 'PMVCAvailable',
 }
 
 enum AccountFlag {
