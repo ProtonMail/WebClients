@@ -1184,6 +1184,10 @@
       "${ price } per user": [
         "${ price } per användare"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-licens",
+        "${ seats } ${ LUMO_APP_NAME }-licenser"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } skrivassistentplats",
         "${ seats } skrivassistentplatser"
@@ -4592,6 +4596,9 @@
       "${ invitations.length } pending invitation": [
         "${ invitations.length } väntande inbjudan",
         "${ invitations.length } väntande inbjudningar"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."

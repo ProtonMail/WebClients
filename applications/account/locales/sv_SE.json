@@ -556,6 +556,9 @@
       "Download ICS": [
         "Ladda ner ICS"
       ],
+      "Download logs": [
+        "Ladda ner loggar"
+      ],
       "Download our CSV template": [
         "Ladda ner vår CSV-mall"
       ],
@@ -615,12 +618,6 @@
       ],
       "Edit servers": [
         "Redigera servrar"
-      ],
-      "Edit sieve": [
-        "Redigera Sieve"
-      ],
-      "Edit sieve filter “${ Name }”": [
-        "Redigera Sieve-filter “${ Name }“"
       ],
       "Edit sign-in details": [
         "Redigera inloggningsdetaljer"
@@ -1639,6 +1636,10 @@
       ],
       "${ price } per user": [
         "${ price } per användare"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-licens",
+        "${ seats } ${ LUMO_APP_NAME }-licenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skrivassistentplats",
@@ -7586,6 +7587,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vill dela data med dig i ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
       ],
@@ -9425,6 +9429,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Pris inkluderar alla tillämpbara återkommande rabatter och icke-utgångna kuponger som finns lagrat på ditt konto."
       ],
+      "Private AI assistant": [
+        "Privat AI-assistent"
+      ],
       "Promotion expired": [
         "Kampanj löpt ut"
       ],
@@ -10739,9 +10746,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ditt supportärende har stängts. Tack för att du kontaktade supporten för ${ BRAND_NAME }."
-      ],
-      "Your trial ends on June 25. Upgrade to receive future breach reports.": [
-        "Din provperiod slutar den 25 juni. Uppgradera för att få framtida intrångsrapporter."
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Din provperiod slutar om ${ timeRemaining }."
@@ -21649,6 +21653,9 @@
       ],
       "It's you": [
         "Det är du"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Väntande administratörsåtkomst"

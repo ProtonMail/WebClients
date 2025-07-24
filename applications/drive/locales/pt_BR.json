@@ -1184,6 +1184,10 @@
       "${ price } per user": [
         "${ price } por usuário"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licença do ${ LUMO_APP_NAME }",
+        "${ seats } licenças do ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
         "${ seats } licenças de assistente de escrita"
@@ -1585,6 +1589,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema no ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problema no aplicativo"
       ],
@@ -4630,6 +4637,9 @@
         "${ invitations.length } convite pendente",
         "${ invitations.length } convites pendentes"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5060,6 +5070,9 @@
       ],
       "Download ${ name } app": [
         "Baixe o aplicativo ${ name }"
+      ],
+      "Download current logs": [
+        "Baixar os registros atuais"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Download de ${ downloadFileName } será abortado"
@@ -6904,6 +6917,9 @@
       ],
       "Import to:": [
         "Importar para:"
+      ],
+      "Include application logs in bug report": [
+        "Incluir os registros do aplicativo no relatório de erro"
       ],
       "Include message and file name in invite email": [
         "Incluir mensagem e nome do arquivo no e-mail de convite."

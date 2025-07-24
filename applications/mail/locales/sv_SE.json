@@ -450,6 +450,9 @@
       "Download all attachments": [
         "Ladda ner alla bilagor"
       ],
+      "Download logs": [
+        "Ladda ner loggar"
+      ],
       "Download now": [
         "Ladda ner nu"
       ],
@@ -1420,6 +1423,10 @@
       "Trust": [
         "Lita på"
       ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
+      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -1660,6 +1667,10 @@
       ],
       "${ price } per user": [
         "${ price } per användare"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-licens",
+        "${ seats } ${ LUMO_APP_NAME }-licenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skrivassistentplats",
@@ -6258,6 +6269,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grupp hittades",
         "${ groupCounts } grupper hittades"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan också skydda ditt företag."
@@ -14531,6 +14545,9 @@
       ],
       "No trackers found": [
         "Inga spårare hittades"
+      ],
+      "No unsubscribed newsletters": [
+        "Inga avslutade prenumerationer på nyhetsbrev"
       ],
       "No-reply address detected": [
         "Ingen svarsadress upptäcktes"
