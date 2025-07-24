@@ -105,7 +105,7 @@ export const mapNodeToLegacyItem = async (
         fileModifyTime: getLegacyModifiedTime(node),
         size: getLegacySize(node),
         trashed: getLegacyTrashedTime(node),
-        parentLinkId: splitNodeUid(node.parentUid!).nodeId,
+        parentLinkId: node.parentUid ? splitNodeUid(node.parentUid).nodeId : '',
         linkId: splitNodeUid(node.uid).nodeId,
         volumeId: splitNodeUid(node.uid).volumeId,
         metaDataModifyTime: getLegacyModifiedTime(node),
