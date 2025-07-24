@@ -311,6 +311,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
       ],
+      "Download logs": [
+        "Спампаваць журналы"
+      ],
       "Download now": [
         "Спампаваць"
       ],
@@ -981,6 +984,12 @@
       "${ price } per user": [
         "${ price } за карыстальніка"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
         "${ seats } ліцэнзіі памочніка ў напісанні",
@@ -1415,6 +1424,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Праблема ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Праблема з праграмай"
       ],
@@ -4870,6 +4882,9 @@
         "Знойдзена ${ groupCounts } груп",
         "Знойдзена ${ groupCounts } груп"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4985,7 +5000,7 @@
         "VPN - гэта бяспечны тунэль паміж вашай прыладай і інтэрнэтам. Ён хавае ваша месцазнаходжанне і актыўнасць ад вашага пастаўшчыка паслуг інтэрнэту (ISP) і вэб-сайтаў, якія вы наведваеце."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
+        "Доступ да ўліковага запісу абмежаваны з прычыны неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
@@ -5250,6 +5265,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Спампоўванне бягучых журналаў"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
@@ -6616,6 +6634,9 @@
       ],
       "Import to:": [
         "Імпартаваць у:"
+      ],
+      "Include application logs in bug report": [
+        "Уключыць журналы праграмы ў справаздачу аб памылцы"
       ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
@@ -8429,7 +8450,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Некаторыя відарысы не былі запампаваны па прычыне дубліравання імён файлаў у бягучым выбары."
+        "Некаторыя відарысы не былі запампаваны з прычыны дубліравання імён файлаў у бягучым выбары."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -9784,7 +9805,7 @@
         "Памылка праверкі подпісу"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "Вы ўключылі праверку адраса для ${ boldSenderEmail }. Мы не можам праверыць сапраўднасць гэтага запрашэння календара. Магчыма, што гэта здарылася па прычыне змянення ключоў шыфравання гэтага кантакту. Праверце яго пашыраныя налады PGP або папрасіце ${ boldSenderEmail } адправіць новае запрашэнне."
+        "Вы ўключылі праверку адраса для ${ boldSenderEmail }. Мы не можам праверыць сапраўднасць гэтага запрашэння календара. Магчыма, што гэта здарылася з прычыны змянення ключоў шыфравання гэтага кантакту. Праверце яго пашыраныя налады PGP або папрасіце ${ boldSenderEmail } адправіць новае запрашэнне."
       ]
     },
     "Signing preference for emails": {
