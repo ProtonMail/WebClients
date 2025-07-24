@@ -6,6 +6,7 @@ export enum TelemetryMeasurementGroups {
     accountOrgLogoUpload = 'account.web.org_logo_upload',
     accountSecurityCheckup = 'account.web.security_checkup',
     accountDashboard = 'account.web.dashboard',
+    alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
@@ -327,6 +328,13 @@ export enum TelemetryMailDrivePostSignupOneDollarEvents {
     userSubscribed = 'user_subscribed',
 }
 
+export enum TelemetryAlwaysOnUpsellEvents {
+    clickUpsellButton = 'click_upsell_button',
+    clickTopNavbar = 'click_top_navbar',
+    closeOffer = 'close_offer',
+    userSubscribed = 'user_subscribed',
+}
+
 export enum TelemetryPaidUsersNudge {
     clickUpsellButton = 'click_upsell_button',
     clickTopNavbar = 'click_top_navbar',
@@ -388,7 +396,8 @@ export type TelemetryEvents =
     | TelemetryPaidUsersNudge
     | TelemetryPassNudgeEvents
     | TelemetryMailNewsletterSubscriptions
-    | TelemetryUnlimitedOffer2025;
+    | TelemetryUnlimitedOffer2025
+    | TelemetryAlwaysOnUpsellEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
