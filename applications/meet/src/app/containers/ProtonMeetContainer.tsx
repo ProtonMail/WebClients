@@ -9,6 +9,7 @@ import { CustomPasswordState } from '@proton/meet/types/response-types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import useFlag from '@proton/unleash/useFlag';
 
+import { ComingSoon } from '../components/ComingSoon/ComingSoon';
 import { GuestMeetingSchedulingBlocked } from '../components/GuestMeetingSchedulingBlocked';
 import { PasswordPrompt } from '../components/PasswordPrompt/PasswordPrompt';
 import { JOIN_TITLE_TIMEOUT } from '../constants';
@@ -327,4 +328,14 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             </div>
         </DevicePermissionsContext.Provider>
     );
+};
+
+export const ProtonMeetContainerWrapper = (props: ProtonMeetContainerProps) => {
+    const isProtonMeetAvailable = useFlag('PMVCAvailable');
+
+    if (!isProtonMeetAvailable) {
+        return <ComingSoon />;
+    }
+
+    return <ProtonMeetContainer {...props} />;
 };

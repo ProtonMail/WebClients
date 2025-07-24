@@ -7,7 +7,7 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import * as config from './config';
 import { AdminContainer } from './containers/AdminContainer';
 import { GuestContainer } from './containers/GuestContainer';
-import { ProtonMeetContainer } from './containers/ProtonMeetContainer';
+import { ProtonMeetContainerWrapper } from './containers/ProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
 
 // @ts-ignore
@@ -39,11 +39,11 @@ export const App = () => {
 
             {isGuest ? (
                 <GuestContainer>
-                    <Route path="/join" render={() => <ProtonMeetContainer guestMode={true} />} />
+                    <Route path="/join" render={() => <ProtonMeetContainerWrapper guestMode={true} />} />
                 </GuestContainer>
             ) : (
                 <ProviderContainer>
-                    <Route path="/join" render={() => <ProtonMeetContainer />} />
+                    <Route path="/join" render={() => <ProtonMeetContainerWrapper />} />
                     <Route path="/admin" component={AdminContainer} />
                 </ProviderContainer>
             )}
