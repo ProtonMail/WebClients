@@ -13,13 +13,13 @@
         "test:ci": "echo No tests yet"
     },
     "dependencies": {
-        "docx-preview": "^0.3.5"
+        "docx-preview": "^0.3.6"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
         "browserslist-to-esbuild": "^2.1.1",
         "cross-env": "^7.0.3",
-        "esbuild": "^0.25.6",
+        "esbuild": "^0.25.8",
         "eslint": "^8.57.1",
         "prettier": "^3.6.2",
         "typescript": "^5.8.3"
