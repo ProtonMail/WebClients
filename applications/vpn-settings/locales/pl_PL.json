@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Pobierz przykładowy plik CSV"
       ],
+      "Download logs": [
+        "Pobierz logi"
+      ],
       "Download our CSV template": [
         "Pobierz szablon pliku CSV"
       ],
@@ -991,6 +994,12 @@
       "${ price } per user": [
         "${ price } za użytkownika"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licencja",
+        "${ seats } ${ LUMO_APP_NAME } licencje",
+        "${ seats } ${ LUMO_APP_NAME } licencji",
+        "${ seats } ${ LUMO_APP_NAME } licencji"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencja asystenta pisania",
         "${ seats } licencje asystenta pisania",
@@ -1627,6 +1636,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problem z ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problem z aplikacją"
       ],
@@ -4487,6 +4499,9 @@
         "${ hasTwoFAMembersLength } / ${ canHaveTwoFAMembersLength } użytkowników niekorzystających z logowania SSO używa uwierzytelniania dwustopniowego, aby zalogować się do organizacji.",
         "${ hasTwoFAMembersLength } / ${ canHaveTwoFAMembersLength } użytkowników niekorzystających z logowania SSO używa uwierzytelniania dwustopniowego, aby zalogować się do organizacji."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } zawiera asystenta pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
@@ -5032,6 +5047,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Pobierz logi"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Pobierz szablon CSV, wpisz szczegóły użytkownika i prześlij plik CSV, aby utworzyć konta użytkowników."
@@ -5695,6 +5713,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena obejmuje wszystkie mające zastosowanie zniżki i kupony zapisane na Twoim koncie."
+      ],
+      "Private AI assistant": [
+        "Prywatny asystent AI"
       ],
       "Protected by Swiss privacy laws": [
         "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
@@ -7038,6 +7059,9 @@
       ],
       "Import all messages": [
         "Importuj wszystkie wiadomości"
+      ],
+      "Include application logs in bug report": [
+        "Dołącz logi aplikacji do raportu błędu"
       ],
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
@@ -13466,6 +13490,9 @@
       ],
       "It's you": [
         "Ty"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Oczekiwanie na dostęp administratora"
