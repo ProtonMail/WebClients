@@ -20,7 +20,7 @@ export type BadgeType = keyof typeof CLASSNAMES;
 export interface Props {
     children: ReactNode;
     className?: string;
-    tooltip?: string;
+    tooltip?: ReactNode;
     tooltipOpenDelay?: number;
     url?: string;
     type?: BadgeType;
