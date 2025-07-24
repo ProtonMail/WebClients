@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Спампаваць узор CSV"
       ],
+      "Download logs": [
+        "Спампаваць журналы"
+      ],
       "Download our CSV template": [
         "Спампаваць наш шаблон CSV"
       ],
@@ -859,7 +862,7 @@
         "Паспрабуйце бясплатна"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю па прычыне: ${ saveError }"
+        "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю з прычыны: ${ saveError }"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключыць ${ DARK_WEB_MONITORING_NAME }"
@@ -990,6 +993,12 @@
       ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
@@ -1581,6 +1590,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Праблема ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Праблема з праграмай"
       ],
@@ -4433,6 +4445,9 @@
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю.",
         "${ hasTwoFAMembersLength } удзельнікаў з ${ canHaveTwoFAMembersLength }, якія не належаць да SSO выкарыстоўваюць двухфактарную аўтэнтыфікацыю для ўваходу ў вашу арганізацыю."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
@@ -4605,7 +4620,7 @@
         "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
+        "Доступ да ўліковага запісу абмежаваны з прычыны неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
@@ -4978,6 +4993,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Спампоўванне бягучых журналаў"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Спампуйце наш шаблон CSV, запоўніце падрабязнасці пра карыстальніка і запампуйце ваш запоўнены файл CSV для стварэння ўліковага запісу для гэтых карыстальнікаў."
@@ -5642,6 +5660,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
       ],
+      "Private AI assistant": [
+        "Прыватны памочнік ШІ"
+      ],
       "Protected by Swiss privacy laws": [
         "Абаронены швейцарскімі законамі аб прыватнасці"
       ],
@@ -5865,7 +5886,7 @@
         "Колькасць спампоўванняў уключае як фактычныя спампоўванні, так і папярэдні прагляд файлаў."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
-        "Зашыфраваныя даныя крыху большыя па прычыне службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
+        "Зашыфраваныя даныя крыху большыя з прычыны службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
       ],
       "The following address is invalid.": [
         "Наступны адрас з'яўляецца памылковым.",
@@ -6978,6 +6999,9 @@
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
+      ],
+      "Include application logs in bug report": [
+        "Уключыць журналы праграмы ў справаздачу аб памылцы"
       ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
@@ -8971,7 +8995,7 @@
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
-        "Некаторыя відарысы не былі запампаваны па прычыне дубліравання імён файлаў у бягучым выбары."
+        "Некаторыя відарысы не былі запампаваны з прычыны дубліравання імён файлаў у бягучым выбары."
       ]
     },
     "Offer": {
@@ -13428,6 +13452,9 @@
       ],
       "It's you": [
         "Гэта вы"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Чаканне правоў доступу адміністратара"

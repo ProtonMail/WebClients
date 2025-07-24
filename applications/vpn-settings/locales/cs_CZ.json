@@ -300,6 +300,9 @@
       "Download CSV sample": [
         "Stáhnout ukázku CSV"
       ],
+      "Download logs": [
+        "Stáhnout logy"
+      ],
       "Download our CSV template": [
         "Stáhnout naši šablonu CSV"
       ],
@@ -984,6 +987,12 @@
       ],
       "${ price } per user": [
         "${ price } za uživatele"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licence asistenta psaní",
@@ -4481,6 +4490,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
@@ -5026,6 +5038,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
+      ],
+      "Download current logs": [
+        "Stáhnout aktuální logy"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Stáhněte si naši šablonu CSV, vyplňte údaje o uživateli a poté nahrajte vyplněný soubor CSV a vytvořte účty pro tyto uživatele."
@@ -5692,6 +5707,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahrnuje všechny příslušné slevy na základě cyklu a kupóny, které nevypršely a jsou uložené na vašem účtu."
+      ],
+      "Private AI assistant": [
+        "Soukromý AI asistent"
       ],
       "Protected by Swiss privacy laws": [
         "Chráněno švýcarskými zákony o ochraně soukromí"
@@ -7029,6 +7047,9 @@
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
+      ],
+      "Include application logs in bug report": [
+        "Zahrnout logy aplikace do chybového hlášení"
       ],
       "Integrated 2FA authenticator": [
         "Integrované ověřování 2FA"
@@ -10064,6 +10085,9 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } další"
+      ],
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime } den",
         "${ rule.Lifetime } dny",

@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "Batalkan langganan"
       ],
+      "Cancel trial and pay": [
+        "Batalkan uji coba dan bayar"
+      ],
       "Change": [
         "Ubah"
       ],
@@ -296,6 +299,9 @@
       ],
       "Download CSV sample": [
         "Unduh sampel CSV"
+      ],
+      "Download logs": [
+        "Unduh log"
       ],
       "Download our CSV template": [
         "Unduh template CSV kami"
@@ -866,6 +872,9 @@
       ],
       "Upgrade to Business": [
         "Tingkatkan ke Business"
+      ],
+      "Upgrade to Professional": [
+        "Tingkatkan ke Professional"
       ],
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
@@ -3259,6 +3268,9 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
+      "Invalid ZIP code": [
+        "Kode pos tidak valid"
+      ],
       "Name does not match": [
         "Nama tidak cocok"
       ],
@@ -3319,6 +3331,12 @@
       "Please enter a valid Entity ID URL": [
         "Silakan masukkan URL ID Entitas yang valid"
       ],
+      "Please enter a valid ZIP code": [
+        "Silakan masukkan kode pos yang valid"
+      ],
+      "Please enter ZIP code": [
+        "Silakan masukkan kode pos"
+      ],
       "Please generate keys before you try to change your password": [
         "Silakan buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
       ],
@@ -3333,6 +3351,9 @@
       ],
       "Please select at least one user or group before continuing.": [
         "Silakan pilih setidaknya satu pengguna atau grup sebelum melanjutkan."
+      ],
+      "Please select billing country": [
+        "Silakan pilih negara penagihan"
       ],
       "Please set a recovery email first": [
         "Harap tentukan alamat email pemulihan terlebih dahulu"
@@ -5456,6 +5477,12 @@
       "Restore": [
         "Pulihkan"
       ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Peraturan penyimpanan data \"${ payload.Name }\" berhasil dibuat"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Peraturan penyimpanan data \"${ retentionRule.Name }\" berhasil dihapus"
+      ],
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
       ],
@@ -5846,6 +5873,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "Tingkatkan ke Professional atau paket yang lebih tinggi untuk membuka fitur ini"
+      ],
       "Upload your completed CSV file to create accounts": [
         "Unggah berkas CSV yang telah Anda lengkapi untuk membuat pengguna"
       ],
@@ -6102,7 +6132,7 @@
         "Anda memiliki ${ unassignedAvailableCount } server yang baru-baru ini digunakan yang tersedia. Untuk mengalokasikan server ini ke negara lain, Anda perlu untuk menunggu hingga proses penonaktifan selesai."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
+        "Anda memiliki langganan ${ planTitle } versi uji coba. Apabila Anda ingin melanjutkan langganan Anda setelah masa uji coba ini berakhir, silakan tambahkan metode pembayaran."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
@@ -7081,6 +7111,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Kode pos"
+      ],
       "ZIP code": [
         "Kode pos"
       ]
@@ -9152,6 +9185,9 @@
       "Got it": [
         "Mengerti"
       ],
+      "I'm purchasing as a business": [
+        "Saya membeli produk ini selaku pihak bisnis"
+      ],
       "MM/YY": [
         "BB/TT"
       ],
@@ -9192,7 +9228,7 @@
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
       "This payment method will become your new default for all future renewals.": [
-        "Metode pembayaran ini akan menjadi bawaan baru Anda untuk semua perpanjangan mendatang."
+        "Metode pembayaran ini akan menjadi metode bawaan baru Anda untuk segala perpanjangan yang dilakukan ke depannya."
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
@@ -9246,6 +9282,17 @@
       ],
       "Street address, postal code, and city": [
         "Alamat, kode pos, dan kota"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Nomor Bisnis"
+      ],
+      "EIN": [
+        "NPWP"
       ]
     },
     "Permission": {
@@ -9382,6 +9429,9 @@
       ],
       "yourdomain.com": [
         "domainanda.com"
+      ],
+      "ZIP code": [
+        "Kode pos"
       ]
     },
     "placeholder": {
@@ -9550,6 +9600,32 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Karena adanya perubahan kata sandi, hak istimewa administrator organisasi Anda telah dibatasi. Tindakan berikut tidak lagi diizinkan:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "Buat peraturan penyimpanan data"
+      ],
+      "Delete rule": [
+        "Hapus aturan"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "Forever": [
+        "Selamanya"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Applies to": [
+        "Berlaku kepada"
+      ],
+      "Retention period": [
+        "Masa penyimpanan"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Buat aturan penyimpanan untuk mengatur seberapa lama data yang ada akan disimpan sebagaimana dengan kebijakan penyimpanan data organisasi Anda. Aturan ini juga akan mengaktifkan pembersihan otomatis untuk data yang telah kedaluwarsa."
       ]
     },
     "Role": {
@@ -12250,6 +12326,9 @@
       ],
       "Video conferencing": [
         "Konferensi video"
+      ],
+      "View organization events by upgrading to Professional": [
+        "Tinjau rekaman peristiwa organisasi dengan meningkatkan ke Professional"
       ],
       "Warning": [
         "Peringatan"
