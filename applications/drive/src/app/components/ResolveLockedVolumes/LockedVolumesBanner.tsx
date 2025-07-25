@@ -40,7 +40,7 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
         if (isReadyForPreparation) {
             withLoading(prepareVolumesForRestore(new AbortController().signal)).catch(console.error);
         }
-    }, [isReadyForPreparation, prepareVolumesForRestore]);
+    }, [isReadyForPreparation, prepareVolumesForRestore, withLoading]);
 
     const StartRecoveryButton = (
         <InlineLinkButton

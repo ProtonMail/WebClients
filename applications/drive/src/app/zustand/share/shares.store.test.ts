@@ -87,8 +87,8 @@ describe('useSharesStore', () => {
         });
     });
 
-    describe('getLockedShares', () => {
-        it('should return locked default shares with their associated devices and photos', () => {
+    describe('getLockedSharesByVolume', () => {
+        it('should return locked shares grouped by volume with their associated devices and photos', () => {
             const defaultShare = createTestShare({
                 shareId: 'default1',
                 volumeId: 'vol1',
@@ -110,14 +110,14 @@ describe('useSharesStore', () => {
 
             useSharesStore.getState().setShares([defaultShare, deviceShare, photosShare]);
 
-            const result = useSharesStore.getState().getLockedShares();
-            expect(result).toEqual([
-                {
-                    defaultShares: [defaultShare],
-                    devices: [deviceShare],
-                    photos: [photosShare],
-                },
-            ]);
+            const result = useSharesStore.getState().getLockedSharesByVolume();
+            const expectedMap = new Map();
+            expectedMap.set('vol1', {
+                defaultShares: [defaultShare],
+                devices: [deviceShare],
+                photos: [photosShare],
+            });
+            expect(result).toEqual(expectedMap);
         });
     });
 
