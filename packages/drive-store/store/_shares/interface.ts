@@ -40,8 +40,6 @@ export interface Share {
     linkType: LinkType;
     state: ShareState;
     createTime: number;
-    // Will tell us if the locked share is for auto-restore process
-    forASV?: boolean;
     volumeType?: VolumeType;
 }
 
