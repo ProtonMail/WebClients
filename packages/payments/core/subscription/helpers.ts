@@ -18,6 +18,7 @@ import {
     ADDON_NAMES,
     COUPON_CODES,
     CYCLE,
+    DEFAULT_CURRENCY,
     PLANS,
     PLAN_NAMES,
     PLAN_SERVICES,
@@ -31,7 +32,7 @@ import {
 import { isRegionalCurrency } from '../helpers';
 import type { Currency, FreeSubscription, MaxKeys, PlanIDs, Pricing } from '../interface';
 import { getSupportedAddons, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from '../plan/addons';
-import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '../plan/helpers';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from '../plan/helpers';
 import type { Plan, PlansMap, SubscriptionPlan } from '../plan/interface';
 import { getPricePerCycle, getPricePerMember, isMultiUserPersonalPlan } from '../price-helpers';
 import { isFreeSubscription } from '../type-guards';
@@ -39,6 +40,7 @@ import { isSplittedUser, onSessionMigrationChargebeeStatus } from '../utils';
 import { SubscriptionPlatform } from './constants';
 import { FREE_PLAN } from './freePlans';
 import { type Subscription } from './interface';
+import { SelectedPlan } from './selected-plan';
 
 export const getScribeAddonNameByPlan = (planName: PLANS) => {
     switch (planName) {
@@ -1115,6 +1117,46 @@ export function isSubscriptionUnchanged(
     return planIdsUnchanged && cycleUnchanged;
 }
 
+export function isForbiddenLumoPlus({
+    subscription,
+    newPlanName,
+    plansMap,
+}: {
+    subscription: Subscription | FreeSubscription | null | undefined;
+    user: UserModel;
+    newPlanName: PLANS | undefined;
+    plansMap: PlansMap;
+}) {
+    if (!subscription || newPlanName !== PLANS.LUMO) {
+        return false;
+    }
+    const currentPlanIDs = getPlanIDs(subscription);
+    const currentPlanSupportedAddons = getSupportedAddons(currentPlanIDs);
+
+    const currentPlanKey = getPlanNameFromIDs(currentPlanIDs);
+    const currentPlan = currentPlanKey ? plansMap[currentPlanKey] : undefined;
+    const lumoAddonForCurrentPlan = Object.keys(currentPlanSupportedAddons).find((key) => isLumoAddon(key as any));
+    const lumoAddon = lumoAddonForCurrentPlan ? plansMap[lumoAddonForCurrentPlan as keyof typeof plansMap] : undefined;
+    if (currentPlan && lumoAddon) {
+        const newPlanIDs = {
+            ...currentPlanIDs,
+            [lumoAddon.Name]: currentPlanIDs[lumoAddon.Name] || 1, // Keep current addons or add at least one.
+        };
+        const currentPlanSelected = SelectedPlan.createNormalized(
+            newPlanIDs,
+            plansMap,
+            subscription.Cycle || CYCLE.MONTHLY,
+            subscription.Currency || DEFAULT_CURRENCY
+        );
+
+        return {
+            planName: currentPlanSelected.getPlanName(),
+            planIDs: currentPlanSelected.planIDs,
+        };
+    }
+    return false;
+}
+
 export function isForbiddenPlusToPlus({
     subscription,
     newPlanName,
@@ -1187,9 +1229,16 @@ export function getIsPlanTransitionForbidden({
 }) {
     const newPlan = getPlanFromPlanIDs(plansMap, planIDs);
     const newPlanName = newPlan?.Name;
+
     if (isForbiddenPlusToPlus({ subscription, user, newPlanName })) {
-        return { type: 'plus-to-plus', newPlanName };
+        return { type: 'plus-to-plus', newPlanName } as const;
     }
+
+    const lumoForbidden = isForbiddenLumoPlus({ plansMap, subscription, user, newPlanName });
+    if (lumoForbidden) {
+        return { type: 'lumo-plus', newPlanIDs: lumoForbidden.planIDs, newPlanName: lumoForbidden.planName } as const;
+    }
+
     return null;
 }
 

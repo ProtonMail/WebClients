@@ -383,6 +383,10 @@ const AccountStepPayment = ({
                             onChangePlanIDs={(planIDs) => handleOptimistic({ planIDs })}
                             audience={isB2BPlan ? Audience.B2B : Audience.B2C}
                             scribeAddonEnabled
+                            lumoAddonEnabled={
+                                /* TODO: Should this always be on? */
+                                app === APPS.PROTONLUMO
+                            }
                             showUsersTooltip
                             isTrialMode={signupParameters.trial}
                         />

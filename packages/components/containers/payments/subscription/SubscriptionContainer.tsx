@@ -709,6 +709,11 @@ const SubscriptionContainerInner = ({
             planIDs: copyNewModel.planIDs,
             cycle: copyNewModel.cycle,
         });
+
+        if (planTransitionForbidden?.type === 'lumo-plus') {
+            copyNewModel.planIDs = planTransitionForbidden.newPlanIDs;
+        }
+
         if (planTransitionForbidden?.type === 'plus-to-plus') {
             setPlusToPlusUpsell({
                 unlockPlan: planTransitionForbidden.newPlanName
