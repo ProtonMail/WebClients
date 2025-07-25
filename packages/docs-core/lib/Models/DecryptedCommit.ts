@@ -1,30 +1,41 @@
 import type { DecryptedMessage } from '@proton/docs-shared'
 import { GetCommitDULimit } from '../Types/SquashingConstants'
 import { mergeUpdates } from 'yjs'
+import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'
 
 export class DecryptedCommit {
   public readonly byteSize: number
 
   constructor(
     public commitId: string,
-    public updates: DecryptedMessage[],
+    public messages: DecryptedMessage[],
   ) {
-    this.byteSize = updates.reduce((acc, update) => acc + update.byteSize(), 0)
+    this.byteSize = messages.reduce((acc, update) => acc + update.byteSize(), 0)
 
     Object.freeze(this)
   }
 
-  numberOfUpdates(): number {
-    return this.updates.length
+  numberOfMessages(): number {
+    return this.messages.length
   }
 
   needsSquash(): boolean {
-    return this.numberOfUpdates() > GetCommitDULimit()
+    return this.numberOfMessages() > GetCommitDULimit()
   }
 
-  squashedRepresentation(): Uint8Array {
+  async squashedRepresentation(): Promise<Uint8Array> {
     try {
-      const merged = mergeUpdates(this.updates.map((update) => update.content))
+      const updates: Uint8Array[] = []
+      for (const message of this.messages) {
+        const content = message.content
+        if (isCompressedDocumentUpdate(content)) {
+          const decompressed = decompressDocumentUpdate(content)
+          updates.push(decompressed)
+        } else {
+          updates.push(content)
+        }
+      }
+      const merged = mergeUpdates(updates)
       return merged
     } catch (error) {
       throw new Error(`Failed to merge updates: ${error}`)
