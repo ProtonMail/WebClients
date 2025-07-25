@@ -33,6 +33,8 @@ import type { SquashDocument } from '../../UseCase/SquashDocument'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { PrivateRenameController, type RenameControllerInterface } from '../../RenameController/RenameController'
 import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
+import type { UnleashClient } from '@proton/unleash'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export class DocLoader implements DocLoaderInterface<DocumentState> {
   private docController?: AuthenticatedDocControllerInterface
@@ -44,7 +46,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
   private readonly statusObservers: DocLoaderStatusObserver<DocumentState>[] = []
 
   constructor(
-    private websocketSerivce: WebsocketServiceInterface,
+    private websocketService: WebsocketServiceInterface,
     private driveCompat: DriveCompat,
     private metricService: MetricService,
     private docsApi: DocsApi,
@@ -64,13 +66,14 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     private getNode: GetNode,
     private eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
+    private unleashClient: UnleashClient,
   ) {}
 
   destroy(): void {
     this.docController?.destroy()
   }
 
-  public async initialize(nodeMeta: NodeMeta): Promise<void> {
+  public async initialize(nodeMeta: NodeMeta, documentType: DocumentType): Promise<void> {
     if (this.docController) {
       throw new Error('[DocLoader] docController already initialized')
     }
@@ -116,18 +119,20 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     this.docController = controller
 
     const realtime = new RealtimeController(
-      this.websocketSerivce,
+      this.websocketService,
       this.eventBus,
       documentState,
       this.loadCommit,
       this.getDocumentMeta,
       this.logger,
+      this.unleashClient,
+      documentType,
     )
     realtime.initializeConnection()
 
     this.commentsController = new CommentController(
       documentState,
-      this.websocketSerivce,
+      this.websocketService,
       this.metricService,
       this.docsApi,
       this.encryptComment,
@@ -167,7 +172,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     const timeToLoadInSeconds = (endTime - startTime) / 1000
     metrics.docs_time_load_document_histogram.observe({
       Labels: {
-        updates: metricsBucketNumberForUpdateCount(documentState.getProperty('baseCommit')?.numberOfUpdates() ?? 0),
+        updates: metricsBucketNumberForUpdateCount(documentState.getProperty('baseCommit')?.numberOfMessages() ?? 0),
       },
       Value: timeToLoadInSeconds,
     })

@@ -361,11 +361,11 @@ export function DocumentViewer({
     if (!initializing) {
       setInitializing(true)
 
-      void application.getDocLoader().initialize(nodeMeta)
+      void application.getDocLoader().initialize(nodeMeta, tmpConvertNewDocTypeToOld(documentType))
     }
 
     return disposer
-  }, [application, docOrchestrator, getLocalID, initializing, nodeMeta, removeLocalIDFromUrl])
+  }, [application, docOrchestrator, documentType, getLocalID, initializing, nodeMeta, removeLocalIDFromUrl])
 
   useEffect(() => {
     if (docOrchestrator && editorFrame && editorController && !bridge) {

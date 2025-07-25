@@ -48,7 +48,7 @@ describe('SquashDocument', () => {
     decryptCommit = {
       execute: jest.fn().mockReturnValue(
         Result.ok({
-          updates: [],
+          messages: [],
         }),
       ),
     } as unknown as DecryptCommit
@@ -162,7 +162,7 @@ describe('SquashDocument', () => {
 
   describe('squashTheCommit', () => {
     it('should encrypt the result', async () => {
-      decryptCommit.execute = jest.fn().mockResolvedValue(Result.ok({ updates: [{}] }))
+      decryptCommit.execute = jest.fn().mockResolvedValue(Result.ok({ messages: [{}] }))
 
       const encryptSpy = jest.spyOn(usecase, 'encryptSquashResult')
 
