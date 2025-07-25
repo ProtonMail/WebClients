@@ -1,9 +1,9 @@
-import type { FreeSubscription, Subscription } from '@proton/payments';
 import {
     ADDON_NAMES,
     type AggregatedPricing,
     CYCLE,
     DEFAULT_CURRENCY,
+    type FreeSubscription,
     PLANS,
     PLAN_TYPES,
     type Plan,
@@ -11,6 +11,7 @@ import {
     type PlansMap,
     type PricingForCycles,
     SelectedPlan,
+    type Subscription,
     allCycles,
     getMaxValue,
     getPlanIDs,
@@ -46,11 +47,11 @@ const getLumoWithEnoughSeats = ({
 }: {
     planIDs: PlanIDs;
     lumoAddon: Plan;
-    organization: Organization;
+    organization: Organization | undefined;
     toPlan: Plan;
     plans: Plan[];
 }) => {
-    const diffAddons = (organization.MaxLumo || 0) - getMaxValue(toPlan, 'MaxLumo');
+    const diffAddons = (organization?.MaxLumo || 0) - getMaxValue(toPlan, 'MaxLumo');
 
     const lumoAddonsWithEnoughSeats =
         diffAddons > 0 && getMaxValue(lumoAddon, 'MaxLumo')
@@ -158,6 +159,7 @@ export const switchPlan = ({
     const newPlanIDs = { [newPlan]: 1 };
     const supportedAddons = getSupportedAddons(newPlanIDs);
 
+    const plan = plans.find(({ Name }) => Name === newPlan);
     const supportedAddonNames = Object.keys(supportedAddons) as ADDON_NAMES[];
     // Transfer addons
     supportedAddonNames.forEach((addon) => {
@@ -166,8 +168,6 @@ export const switchPlan = ({
         if (quantity) {
             newPlanIDs[addon] = quantity;
         }
-
-        const plan = plans.find(({ Name }) => Name === newPlan);
 
         // Transfer member addons
         if (isMemberAddon(addon) && plan && organization && !dontTransferAddons.has('member')) {
