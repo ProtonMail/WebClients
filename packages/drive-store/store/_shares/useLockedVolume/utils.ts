@@ -9,8 +9,6 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { sendErrorReport } from '../../../utils/errorHandling';
-import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import type {
     LockedDeviceForRestore,
     LockedShareForRestore,
@@ -177,14 +175,6 @@ async function prepareShareForRestore(
             linkDecryptedPassphrase: result.linkDecryptedPassphrase,
         };
     } catch (e: unknown) {
-        if (share.forASV) {
-            const errorMessage = e instanceof Error ? e.message : 'Failed to prepare lockedShare for restore';
-            sendErrorReport(
-                new EnrichedError(errorMessage, {
-                    tags: { shareId: share.shareId, volumeId: share.volumeId, isLocked: true, forASV: share.forASV },
-                })
-            );
-        }
         return undefined;
     }
 }
