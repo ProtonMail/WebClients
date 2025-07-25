@@ -21,6 +21,7 @@ import { MetricService } from '../Metrics/MetricService'
 import type { DocumentStateValues } from '../../State/DocumentState'
 import { DocumentState } from '../../State/DocumentState'
 import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
+import type UnleashClient from '@proton/unleash/UnleashClient'
 
 const mockOnReadyContentPayload = new TextEncoder().encode(
   JSON.stringify({ connectionId: '12345678', clientUpgradeRecommended: true, clientUpgradeRequired: true }),
@@ -85,12 +86,20 @@ describe('WebsocketService', () => {
       {} as jest.Mocked<FetchRealtimeToken>,
       encryptMessage,
       {
-        execute: jest.fn().mockReturnValue(Result.ok(stringToUtf8Array('123'))),
+        execute: jest.fn().mockReturnValue(
+          Result.ok({
+            content: new Uint8Array(),
+          }),
+        ),
       } as unknown as jest.Mocked<DecryptMessage>,
       logger,
       eventBus,
       metricService,
       '0.0.0.0',
+      {
+        isReady: jest.fn().mockReturnValue(true),
+        isEnabled: jest.fn().mockReturnValue(true),
+      } as unknown as jest.Mocked<UnleashClient>,
     )
 
     service.createConnection(documentState)
@@ -143,7 +152,7 @@ describe('WebsocketService', () => {
 
   describe('handleDocumentUpdateBufferFlush', () => {
     it('should encrypt updates', async () => {
-      const encryptMock = (service.encryptMessage = jest.fn())
+      const encryptMock = (service.encryptMessage = jest.fn().mockResolvedValueOnce(new Uint8Array()))
 
       await service.handleDocumentUpdateDebouncerFlush(document, new Uint8Array())
 
@@ -367,6 +376,7 @@ describe('WebsocketService', () => {
         updates: {
           documentUpdates: [
             {
+              encryptedContent: new Uint8Array(),
               authorAddress: 'bar',
             },
           ],
@@ -383,6 +393,7 @@ describe('WebsocketService', () => {
         updates: {
           documentUpdates: [
             {
+              encryptedContent: new Uint8Array(),
               authorAddress: 'foo',
             },
           ],
