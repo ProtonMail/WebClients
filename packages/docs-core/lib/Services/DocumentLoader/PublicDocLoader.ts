@@ -28,6 +28,7 @@ import { PublicRenameController } from '../../RenameController/RenameController'
 import type { GetNode } from '../../UseCase/GetNode'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> {
   private editorController?: EditorControllerInterface
@@ -71,7 +72,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
     return this.unleashClient.isEnabled(docsFlag)
   }
 
-  public async initialize(nodeMeta: PublicNodeMeta): Promise<void> {
+  public async initialize(nodeMeta: PublicNodeMeta, documentType: DocumentType): Promise<void> {
     const publicEditingEnabled = this.publicEditingEnabled()
 
     const loadResult = await this.loadDocument.executePublic(nodeMeta, publicEditingEnabled)
@@ -129,6 +130,8 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
         this.loadCommit,
         this.getDocumentMeta,
         this.logger,
+        this.unleashClient,
+        documentType,
       )
 
       realtime.initializeConnection()
