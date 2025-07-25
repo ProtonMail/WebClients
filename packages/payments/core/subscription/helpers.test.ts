@@ -607,4 +607,43 @@ describe('forbidden plan transitions', () => {
         const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
         expect(result).toEqual(null);
     });
+
+    it('should be forbidden going from vpn plus to lumo plus', () => {
+        const subscription = buildSubscription(PLANS.VPN2024);
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.LUMO]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual({
+            type: 'lumo-plus',
+            newPlanName: PLANS.VPN2024,
+            newPlanIDs: { [PLANS.VPN2024]: 1, [ADDON_NAMES.LUMO_VPN2024]: 1 },
+        });
+    });
+
+    it('should be forbidden going from bundle pro to lumo plus', () => {
+        const subscription = buildSubscription({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 2,
+            [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+        });
+        const user = buildUser({ isPaid: true });
+        const planIDs: PlanIDs = { [PLANS.LUMO]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, user, planIDs, cycle, plansMap });
+        expect(result).toEqual({
+            type: 'lumo-plus',
+            newPlanName: PLANS.BUNDLE_PRO_2024,
+            newPlanIDs: {
+                [PLANS.BUNDLE_PRO_2024]: 1,
+                [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 2,
+                [ADDON_NAMES.LUMO_BUNDLE_PRO_2024]: 2,
+            },
+        });
+    });
+
+    it('should be allowed going from free to lumo plus', () => {
+        const user = buildUser({ isPaid: false });
+        const planIDs: PlanIDs = { [PLANS.LUMO]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription: undefined, user, planIDs, cycle, plansMap });
+        expect(result).toEqual(null);
+    });
 });
