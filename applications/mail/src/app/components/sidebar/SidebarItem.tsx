@@ -16,7 +16,7 @@ import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { CATEGORY_LABELS_TO_ROUTE_SET, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
+import { CATEGORY_LABELS_TO_ROUTE_SET, CUSTOM_VIEWS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -132,8 +132,12 @@ const SidebarItem = ({
         void withRefreshing(Promise.all([call(), wait(1000)]));
     };
 
+    // Excludes current label and all custom views as drop targets.
     const dragFilter = useCallback(() => {
-        return !(labelID === currentLabelID) && !NO_DROP_SET.has(labelID);
+        const customViewLabelIDs = Object.entries(CUSTOM_VIEWS).map(([, view]) => {
+            return view.label.toString();
+        });
+        return !(labelID === currentLabelID) && !NO_DROP_SET.has(labelID) && !customViewLabelIDs.includes(labelID);
     }, [currentLabelID, labelID]);
 
     const dropCallback = useCallback(
