@@ -15,6 +15,7 @@ import type {
   ServerMessageWithMessageAcks,
   ConnectionReadyPayload,
 } from '@proton/docs-proto'
+import { DocumentUpdate } from '@proton/docs-proto'
 import {
   ClientMessage,
   ServerMessage,
@@ -45,12 +46,35 @@ import { PostApplicationError } from '../../Application/ApplicationEvent'
 import type { MetricService } from '../Metrics/MetricService'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'
 import { doKeysBelongToAuthenticatedUser } from '../../Types/DocumentEntitlements'
+import { MAX_UPDATE_CHUNKS, MAX_UPDATE_SIZE } from '../../Models/Constants'
+import {
+  compressDocumentUpdate,
+  decompressDocumentUpdate,
+  isCompressedDocumentUpdate,
+  isDocumentUpdateCompressionEnabled,
+} from '../../utils/document-update-compression'
+import {
+  canDocumentUpdateBeSplit,
+  createDocumentUpdateChunkState,
+  isDocumentUpdateChunk,
+  isDocumentUpdateChunkingEnabled,
+  MAX_CHUNK_CONTENT_SIZE,
+  processDocumentUpdateChunk,
+  splitDocumentUpdateIntoChunks,
+} from '../../utils/document-update-chunking'
+import type { UnleashClient } from '@proton/unleash'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 type LinkID = string
 
 export class WebsocketService implements WebsocketServiceInterface {
   private connections: Record<LinkID, DocumentConnectionRecord> = {}
   readonly ledger: AckLedgerInterface = new AckLedger(this.logger, this.handleLedgerStatusChangeCallback.bind(this))
+
+  documentType: DocumentType = 'doc'
+  setDocumentType(type: DocumentType): void {
+    this.documentType = type
+  }
 
   constructor(
     private _createRealtimeValetToken: FetchRealtimeToken,
@@ -60,6 +84,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     private eventBus: InternalEventBusInterface,
     private metricService: MetricService,
     private appVersion: string,
+    private unleashClient: UnleashClient,
   ) {
     window.addEventListener('beforeunload', this.handleWindowUnload)
   }
@@ -320,35 +345,20 @@ export class WebsocketService implements WebsocketServiceInterface {
     await record.connection.connect(undefined, options)
   }
 
-  async handleDocumentUpdateDebouncerFlush(
+  async handleDocumentUpdateDebouncerFlushMsgSend(
     nodeMeta: NodeMeta | PublicNodeMeta,
-    mergedUpdate: Uint8Array,
+    content: Uint8Array,
+    metadata: EncryptionMetadata | AnonymousEncryptionMetadata,
   ): Promise<void> {
     const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
       throw new Error('Connection not found')
     }
 
-    const { keys, connection } = record
-
-    const metadata: EncryptionMetadata | AnonymousEncryptionMetadata = {
-      authorAddress: keys.userOwnAddress,
-      timestamp: Date.now(),
-      version: DocumentUpdateVersion.V1,
-    }
-
-    const encryptedContent = await this.encryptMessage(
-      mergedUpdate,
-      metadata,
-      nodeMeta,
-      keys,
-      BroadcastSource.DocumentBufferFlush,
-    )
-
     const uuid = GenerateUUID()
 
     const message = CreateDocumentUpdateMessage({
-      content: encryptedContent,
+      content,
       uuid: uuid,
       ...metadata,
     })
@@ -360,7 +370,67 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     this.ledger.messagePosted(message)
 
-    void connection.broadcastMessage(binary, BroadcastSource.DocumentBufferFlush)
+    void record.connection.broadcastMessage(binary, BroadcastSource.DocumentBufferFlush)
+  }
+
+  async handleDocumentUpdateDebouncerFlush(
+    nodeMeta: NodeMeta | PublicNodeMeta,
+    mergedUpdate: Uint8Array,
+  ): Promise<void> {
+    let update = mergedUpdate
+    if (isDocumentUpdateCompressionEnabled(this.unleashClient, this.documentType)) {
+      update = compressDocumentUpdate(mergedUpdate)
+      this.logger.info(`Compressed merged update from ${mergedUpdate.byteLength} bytes to ${update.byteLength} bytes`)
+    }
+
+    const record = this.getConnectionRecord(nodeMeta.linkId)
+    if (!record) {
+      throw new Error('Connection not found')
+    }
+
+    const { keys } = record
+
+    const metadata: EncryptionMetadata | AnonymousEncryptionMetadata = {
+      authorAddress: keys.userOwnAddress,
+      timestamp: Date.now(),
+      version: DocumentUpdateVersion.V1,
+    }
+
+    const encryptedContent = await this.encryptMessage(
+      update,
+      metadata,
+      nodeMeta,
+      keys,
+      BroadcastSource.DocumentBufferFlush,
+    )
+
+    const shouldSplitIntoChunks = isDocumentUpdateChunkingEnabled(this.unleashClient, this.documentType)
+      ? encryptedContent.byteLength > MAX_UPDATE_SIZE
+      : false
+    if (shouldSplitIntoChunks) {
+      this.logger.info(`Splitting merged update of size ${encryptedContent.byteLength} bytes into multiple chunks`)
+      const canBeSplit = canDocumentUpdateBeSplit(encryptedContent, {
+        maxChunkSize: MAX_CHUNK_CONTENT_SIZE,
+        maxChunks: MAX_UPDATE_CHUNKS,
+      })
+      if (!canBeSplit) {
+        PostApplicationError(this.eventBus, {
+          translatedErrorTitle: c('Error').t`Update Too Large`,
+          translatedError: c('Error')
+            .t`The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.`,
+        })
+        return
+      }
+      const chunks = splitDocumentUpdateIntoChunks(encryptedContent, {
+        maxChunkSize: MAX_CHUNK_CONTENT_SIZE,
+      })
+      this.logger.info(`Created ${chunks.length} chunks from update`)
+      for (const chunk of chunks) {
+        await this.handleDocumentUpdateDebouncerFlushMsgSend(nodeMeta, chunk, metadata)
+      }
+    } else {
+      await this.handleDocumentUpdateDebouncerFlushMsgSend(nodeMeta, encryptedContent, metadata)
+    }
 
     metrics.docs_document_updates_total.increment({})
   }
@@ -504,6 +574,42 @@ export class WebsocketService implements WebsocketServiceInterface {
     })
   }
 
+  private documentUpdateChunkState = createDocumentUpdateChunkState()
+
+  async decryptAndPublishDocumentUpdate(
+    update: DocumentUpdate,
+    keys: DocumentKeys | PublicDocumentKeys,
+    document: NodeMeta | PublicNodeMeta,
+  ) {
+    const decryptionResult = await this._decryptMessage.execute({
+      message: update,
+      documentContentKey: keys.documentContentKey,
+      verify: false,
+    })
+    if (decryptionResult.isFailed()) {
+      metrics.docs_document_updates_decryption_error_total.increment({
+        source: 'realtime',
+      })
+      throw new Error(`Failed to decrypt document update: ${decryptionResult.getError()}`)
+    }
+
+    const decrypted = decryptionResult.getValue()
+
+    if (isCompressedDocumentUpdate(decrypted.content)) {
+      this.logger.info('Decompressing document update')
+      const decompressedContent = decompressDocumentUpdate(decrypted.content)
+      decrypted.content = decompressedContent
+    }
+
+    this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.DocumentUpdateMessage]>({
+      type: WebsocketConnectionEvent.DocumentUpdateMessage,
+      payload: {
+        document,
+        message: decrypted,
+      },
+    })
+  }
+
   async handleIncomingDocumentUpdatesMessage(
     record: DocumentConnectionRecord,
     message: ServerMessageWithDocumentUpdates,
@@ -526,27 +632,24 @@ export class WebsocketService implements WebsocketServiceInterface {
         this.switchToRealtimeMode(debouncer, 'receiving DU from other user')
       }
 
-      const decryptionResult = await this._decryptMessage.execute({
-        message: update,
-        documentContentKey: keys.documentContentKey,
-        verify: false,
-      })
-      if (decryptionResult.isFailed()) {
-        metrics.docs_document_updates_decryption_error_total.increment({
-          source: 'realtime',
+      const content = update.encryptedContent
+      if (isDocumentUpdateChunk(content)) {
+        await processDocumentUpdateChunk(content, {
+          state: this.documentUpdateChunkState,
+          onDocumentUpdateResolved: async ({ documentUpdate: updateContent }) => {
+            const documentUpdate = new DocumentUpdate({
+              encryptedContent: updateContent,
+              version: update.version,
+              timestamp: update.timestamp,
+              authorAddress: update.authorAddress,
+              uuid: update.uuid,
+            })
+            await this.decryptAndPublishDocumentUpdate(documentUpdate, keys, document)
+          },
         })
-        throw new Error(`Failed to decrypt document update: ${decryptionResult.getError()}`)
+      } else {
+        await this.decryptAndPublishDocumentUpdate(update, keys, document)
       }
-
-      const decrypted = decryptionResult.getValue()
-
-      this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.DocumentUpdateMessage]>({
-        type: WebsocketConnectionEvent.DocumentUpdateMessage,
-        payload: {
-          document,
-          message: decrypted,
-        },
-      })
     }
   }
 

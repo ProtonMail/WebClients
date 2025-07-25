@@ -264,7 +264,7 @@ export class LoadDocument {
         }
 
         decryptedCommit = decryptResult.getValue()
-        this.logger.info(`Downloaded and decrypted commit with ${decryptedCommit?.numberOfUpdates()} updates`)
+        this.logger.info(`Downloaded and decrypted commit with ${decryptedCommit?.numberOfMessages()} updates`)
       }
 
       const decryptedNode = nodeResult.getValue().node

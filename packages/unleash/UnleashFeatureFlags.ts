@@ -157,6 +157,11 @@ enum DocsFeatureFlag {
     DocsSuggestionsDisabled = 'DocsSuggestionsDisabled',
     // Sheets,
     DocsSheetsEnabled = 'DocsSheetsEnabled',
+    // Update compression and chunking
+    DocsUpdateCompressionEnabled = 'DocsUpdateCompressionEnabled',
+    DocsUpdateChunkingEnabled = 'DocsUpdateChunkingEnabled',
+    SheetsUpdateCompressionEnabled = 'SheetsUpdateCompressionEnabled',
+    SheetsUpdateChunkingEnabled = 'SheetsUpdateChunkingEnabled',
 }
 
 enum MailFeatureFlag {
