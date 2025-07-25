@@ -38,7 +38,7 @@ describe('DecryptedCommit', () => {
         timestamp: 123456,
       }),
     ])
-    expect(decryptedCommit.numberOfUpdates()).toBe(1)
+    expect(decryptedCommit.numberOfMessages()).toBe(1)
   })
 
   it('should return needs squash', () => {
