@@ -352,11 +352,14 @@ describe('EditorController', () => {
       expect(editorInvoker.showEditor).toHaveBeenCalled()
     })
 
-    it('should send base commit to editor when baseCommit changes', () => {
+    it('should send base commit to editor when baseCommit changes', async () => {
       const mockContent = new Uint8Array([1, 2, 3])
       sharedState.setProperty('baseCommit', {
         squashedRepresentation: () => mockContent,
       } as unknown as DecryptedCommit)
+
+      // sendBaseCommitToEditor is an async method, so we need to wait for it to complete
+      await new Promise(process.nextTick)
 
       expect(editorInvoker.receiveMessage).toHaveBeenCalledWith({
         type: { wrapper: 'du' },
@@ -375,9 +378,9 @@ describe('EditorController', () => {
   })
 
   describe('sendBaseCommitToEditor', () => {
-    it('should do nothing if baseCommit is not set', () => {
+    it('should do nothing if baseCommit is not set', async () => {
       sharedState.setProperty('baseCommit', undefined)
-      controller.sendBaseCommitToEditor()
+      await controller.sendBaseCommitToEditor()
       expect(editorInvoker.receiveMessage).not.toHaveBeenCalled()
     })
   })
