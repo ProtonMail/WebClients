@@ -34,6 +34,7 @@ import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketCo
 import { DocControllerEvent } from '../AuthenticatedDocController/AuthenticatedDocControllerEvent'
 import type { GetDocumentMeta } from '../UseCase/GetDocumentMeta'
 import type { FetchDecryptedCommit } from '../UseCase/FetchDecryptedCommit'
+import type { UnleashClient } from '@proton/unleash'
 
 describe('RealtimeController', () => {
   let controller: RealtimeController
@@ -63,6 +64,7 @@ describe('RealtimeController', () => {
       sendEventMessage: jest.fn(),
       debugSendCommitCommandToRTS: jest.fn(),
       isConnected: jest.fn(),
+      setDocumentType: jest.fn(),
     } as unknown as jest.Mocked<WebsocketServiceInterface>
 
     logger = {
@@ -99,6 +101,11 @@ describe('RealtimeController', () => {
         ),
       } as unknown as jest.Mocked<GetDocumentMeta>,
       logger,
+      {
+        isReady: jest.fn().mockReturnValue(true),
+        isEnabled: jest.fn().mockReturnValue(false),
+      } as unknown as jest.Mocked<UnleashClient>,
+      'doc',
     )
 
     documentState.setProperty('editorReady', true)
@@ -1090,7 +1097,7 @@ describe('RealtimeController', () => {
     it('should re-set the initial commit if commit is successfully resolved', async () => {
       controller._fetchDecryptedCommit.execute = jest.fn().mockReturnValue(
         Result.ok({
-          numberOfUpdates: jest.fn().mockReturnValue(0),
+          numberOfMessages: jest.fn().mockReturnValue(0),
           needsSquash: jest.fn().mockReturnValue(false),
           squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
         }),

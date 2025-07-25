@@ -91,7 +91,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
   }
 
   public getVersionHistory(): NativeVersionHistory | undefined {
-    const updates = [...(this.documentState.getProperty('baseCommit')?.updates ?? []), ...this.receivedOrSentDUs]
+    const updates = [...(this.documentState.getProperty('baseCommit')?.messages ?? []), ...this.receivedOrSentDUs]
 
     return updates.length > 0 ? new NativeVersionHistory(updates) : undefined
   }
