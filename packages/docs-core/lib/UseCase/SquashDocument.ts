@@ -102,7 +102,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
 
     metrics.docs_squashes_latency_histogram.observe({
       Labels: {
-        updates: metricsBucketNumberForUpdateCount(decryptedCommit.updates.length),
+        updates: metricsBucketNumberForUpdateCount(decryptedCommit.messages.length),
       },
       Value: timeToSquashInSeconds,
     })
@@ -117,7 +117,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     squashLock: SquashLock,
     keys: DocumentKeys,
   ): Promise<Result<SquashCommit>> {
-    const updatePairs: UpdatePair[] = decryptedCommit.updates.map((update, index) => ({
+    const updatePairs: UpdatePair[] = decryptedCommit.messages.map((update, index) => ({
       encrypted: squashLock.commit.updates.documentUpdates[index],
       decrypted: update,
     }))

@@ -8,6 +8,15 @@ import '@proton/testing/lib/mockUnleash'
 global.TextEncoder = TextEncoder
 global.TextDecoder = TextDecoder
 
+// Fixes blob.stream() is not a method
+import { Blob as BlobPolyfill } from 'node:buffer'
+global.Blob = BlobPolyfill
+
+// fixes ReferenceError: (De)compressionStream is not defined
+import { CompressionStream, DecompressionStream } from 'node:stream/web'
+global.CompressionStream = CompressionStream
+global.DecompressionStream = DecompressionStream
+
 // JSDom does not include a full implementation of webcrypto
 const crypto = require('crypto').webcrypto
 global.crypto.subtle = crypto.subtle
