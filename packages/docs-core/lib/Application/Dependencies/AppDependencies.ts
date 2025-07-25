@@ -345,6 +345,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<GetNode>(App_TYPES.GetNode),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<LoggerInterface>(App_TYPES.Logger),
+        unleashClient,
       )
     })
 
@@ -357,6 +358,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
         this.get<MetricService>(App_TYPES.MetricService),
         appVersion,
+        unleashClient,
       )
     })
 

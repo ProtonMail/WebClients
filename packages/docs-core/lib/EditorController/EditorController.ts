@@ -71,7 +71,7 @@ export class EditorController implements EditorControllerInterface {
     })
 
     documentState.subscribeToProperty('baseCommit', (_value) => {
-      this.sendBaseCommitToEditor()
+      this.sendBaseCommitToEditor().catch(console.error)
     })
 
     this.documentState.subscribeToEvent('RealtimeReceivedOtherClientPresenceState', (payload) => {
@@ -124,14 +124,15 @@ export class EditorController implements EditorControllerInterface {
     })
   }
 
-  sendBaseCommitToEditor(): void {
+  async sendBaseCommitToEditor() {
     const baseCommit = this.documentState.getProperty('baseCommit')
     if (!baseCommit) {
       return
     }
 
     try {
-      const squashedContent = baseCommit.squashedRepresentation()
+      const squashedContent = await baseCommit.squashedRepresentation()
+      this.logger.info('Sending base commit to editor')
       void this.editorInvoker?.receiveMessage({
         type: { wrapper: 'du' },
         content: squashedContent,
@@ -173,7 +174,7 @@ export class EditorController implements EditorControllerInterface {
 
     this.documentState.setProperty('editorReady', true)
 
-    this.sendBaseCommitToEditor()
+    void this.sendBaseCommitToEditor()
 
     this.showEditorForTheFirstTime()
   }
