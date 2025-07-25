@@ -1,8 +1,6 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
-
 import type { Share, ShareWithKey } from '../../store/_shares';
 import { ShareState, ShareType } from '../../store/_shares';
 import type { SharesState } from './types';
@@ -32,32 +30,43 @@ export const useSharesStore = create<SharesState>()(
                 ),
             })),
         getShare: (shareId) => get().shares[shareId],
-        getLockedShares: () => {
+        getLockedSharesByVolume: () => {
             const { shares } = get();
-            const shareValues = Object.values(shares);
-            const lockedDefaultShares = shareValues.filter(
-                (share) =>
-                    share.isLocked && (share.isDefault || share.volumeType === VolumeType.Photos) && !share.forASV
-            );
+            const lockedShares = Object.values(shares).filter((share) => share.isLocked);
 
-            // Group by volume ID
-            const volumeGroups = new Map<string, typeof lockedDefaultShares>();
-            lockedDefaultShares.forEach((share) => {
-                if (!volumeGroups.has(share.volumeId)) {
-                    volumeGroups.set(share.volumeId, []);
+            const lockedSharesByVolume = new Map<
+                string,
+                {
+                    defaultShares: (Share | ShareWithKey)[];
+                    devices: (Share | ShareWithKey)[];
+                    photos: (Share | ShareWithKey)[];
                 }
-                volumeGroups.get(share.volumeId)!.push(share);
+            >();
+            lockedShares.forEach((share) => {
+                const currentShares = lockedSharesByVolume.get(share.volumeId) || {
+                    defaultShares: [],
+                    devices: [],
+                    photos: [],
+                };
+                if (share.type === ShareType.default) {
+                    lockedSharesByVolume.set(share.volumeId, {
+                        ...currentShares,
+                        defaultShares: [...currentShares.defaultShares, share],
+                    });
+                } else if (share.type === ShareType.device) {
+                    lockedSharesByVolume.set(share.volumeId, {
+                        ...currentShares,
+                        devices: [...currentShares.devices, share],
+                    });
+                } else if (share.type === ShareType.photos) {
+                    lockedSharesByVolume.set(share.volumeId, {
+                        ...currentShares,
+                        photos: [...currentShares.photos, share],
+                    });
+                }
             });
 
-            return Array.from(volumeGroups.entries()).map(([volumeId, defaultShares]) => ({
-                defaultShares,
-                devices: shareValues.filter(
-                    (share) => share.isLocked && share.type === ShareType.device && share.volumeId === volumeId
-                ),
-                photos: shareValues.filter(
-                    (share) => share.isLocked && share.type === ShareType.photos && share.volumeId === volumeId
-                ),
-            }));
+            return lockedSharesByVolume;
         },
         getDefaultShareId: () => {
             const { shares } = get();
