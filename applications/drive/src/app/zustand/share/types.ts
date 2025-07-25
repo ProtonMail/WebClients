@@ -37,11 +37,14 @@ export interface SharesState {
     setShares: (shares: (Share | ShareWithKey)[]) => void;
     removeShares: (shareIds: string[]) => void;
     getShare: (shareId: string) => Share | ShareWithKey | undefined;
-    getLockedShares: () => {
-        defaultShares: (Share | ShareWithKey)[];
-        devices: (Share | ShareWithKey)[];
-        photos: (Share | ShareWithKey)[];
-    }[];
+    getLockedSharesByVolume: () => Map<
+        string,
+        {
+            defaultShares: (Share | ShareWithKey)[];
+            devices: (Share | ShareWithKey)[];
+            photos: (Share | ShareWithKey)[];
+        }
+    >;
     haveLockedOrRestoredOldPhotosShare: () => boolean;
     getDefaultShareId: () => string | undefined;
     getDefaultPhotosShareId: () => string | undefined;
