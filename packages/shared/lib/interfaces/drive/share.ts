@@ -54,6 +54,4 @@ export interface ShareMeta extends ShareMetaShort {
     AddressID: string;
     RootLinkRecoveryPassphrase?: string;
     Memberships: ShareMembershipPayload[];
-    // Will tell us if the locked share is for auto-restore process
-    ForASV: boolean;
 }
