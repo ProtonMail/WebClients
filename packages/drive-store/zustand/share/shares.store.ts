@@ -36,8 +36,7 @@ export const useSharesStore = create<SharesState>()(
             const { shares } = get();
             const shareValues = Object.values(shares);
             const lockedDefaultShares = shareValues.filter(
-                (share) =>
-                    share.isLocked && (share.isDefault || share.volumeType === VolumeType.Photos) && !share.forASV
+                (share) => share.isLocked && (share.isDefault || share.volumeType === VolumeType.Photos)
             );
 
             // Group by volume ID
