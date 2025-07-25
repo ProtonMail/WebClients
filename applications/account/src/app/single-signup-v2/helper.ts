@@ -195,13 +195,13 @@ const getDefaultUpsellData = ({
 };
 
 const getUpsellDataHelper = (
-    plan: PLANS | ADDON_NAMES,
+    plan: PLANS | ADDON_NAMES | undefined,
     plansMap: PlansMap,
     defaultUpsellData: ReturnType<typeof getDefaultUpsellData>
 ) => {
     return {
         ...defaultUpsellData,
-        plan: plansMap[plan],
+        plan: plan ? plansMap[plan] : undefined,
         mode: UpsellTypes.UPSELL,
     };
 };
@@ -478,6 +478,23 @@ export const getUpdatedPlanIDs = ({
         planIDs: options.planIDs,
         cycle: options.cycle,
     });
+
+    if (planTransitionForbidden?.type === 'lumo-plus') {
+        const upsell = getUpsellDataHelper(
+            undefined,
+            plansMap,
+            getDefaultUpsellData({
+                plansMap,
+                currentPlan,
+                toApp,
+            })
+        );
+        return {
+            upsell,
+            planIDs: planTransitionForbidden.newPlanIDs,
+        };
+    }
+
     if (planTransitionForbidden?.type === 'plus-to-plus') {
         const upsell = getUpsellDataHelper(
             PLANS.BUNDLE,
@@ -649,6 +666,8 @@ export const getUserInfo = async ({
     });
     if (result?.upsell) {
         upsell = result.upsell;
+    }
+    if (result?.planIDs) {
         optionsWithSubscriptionDefaults.planIDs = result.planIDs;
     }
 
