@@ -9,7 +9,7 @@ export class VerifyCommit implements UseCaseInterface<VerificationUsecaseResult>
 
   async execute(dto: { commit: DecryptedCommit }): Promise<Result<VerificationUsecaseResult>> {
     const result = await this.verifyMessages.execute({
-      messages: dto.commit.updates,
+      messages: dto.commit.messages,
     })
 
     return result

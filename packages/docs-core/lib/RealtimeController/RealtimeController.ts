@@ -27,6 +27,9 @@ import type { DocControllerEventPayloads } from '../AuthenticatedDocController/A
 import { DocControllerEvent } from '../AuthenticatedDocController/AuthenticatedDocControllerEvent'
 import type { GetDocumentMeta } from '../UseCase/GetDocumentMeta'
 import type { FetchDecryptedCommit } from '../UseCase/FetchDecryptedCommit'
+import { isDocumentUpdateChunkingEnabled } from '../utils/document-update-chunking'
+import type { UnleashClient } from '@proton/unleash'
+import type { DocumentType } from '@proton/drive-store/store/_documents'
 
 /**
  * @TODO DRVDOC-802
@@ -55,6 +58,8 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     readonly _fetchDecryptedCommit: FetchDecryptedCommit,
     readonly _getDocumentMeta: GetDocumentMeta,
     readonly logger: LoggerInterface,
+    readonly unleashClient: UnleashClient,
+    readonly documentType: DocumentType,
   ) {
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connecting)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToConnect)
@@ -121,6 +126,8 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
         void this.reconnect({ invalidateTokenCache: false })
       }
     })
+
+    websocketService.setDocumentType(documentType)
   }
 
   destroy(): void {
@@ -229,7 +236,10 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
 
     this.sizeTracker.incrementSize(message.byteSize())
 
-    this.documentState.emitEvent({ name: 'RealtimeReceivedDocumentUpdate', payload: message })
+    this.documentState.emitEvent({
+      name: 'RealtimeReceivedDocumentUpdate',
+      payload: message,
+    })
   }
 
   beginInitialConnectionTimer(): void {
@@ -335,7 +345,10 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
 
   public propagateUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): void {
     if (message.type.wrapper === 'du') {
-      if (!this.sizeTracker.canPostUpdateOfSize(message.content.byteLength)) {
+      if (
+        !isDocumentUpdateChunkingEnabled(this.unleashClient, this.documentType) &&
+        !this.sizeTracker.canPostUpdateOfSize(message.content.byteLength)
+      ) {
         this.handleAttemptingToBroadcastUpdateThatIsTooLarge()
       } else {
         this.sizeTracker.incrementSize(message.content.byteLength)
@@ -489,7 +502,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     const decryptedCommit = decryptResult.getValue()
 
     this.logger.info(
-      `Reownloaded and decrypted commit id ${decryptedCommit.commitId} with ${decryptedCommit?.numberOfUpdates()} updates`,
+      `Reownloaded and decrypted commit id ${decryptedCommit.commitId} with ${decryptedCommit?.numberOfMessages()} updates`,
     )
 
     this.documentState.setProperty('baseCommit', decryptedCommit)
