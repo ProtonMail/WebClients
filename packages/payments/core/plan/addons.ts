@@ -104,6 +104,7 @@ const {
     // B2C
     MAIL,
     DRIVE,
+    DRIVE_1TB,
     PASS,
     PASS_FAMILY,
     VPN,
@@ -136,6 +137,10 @@ export function getSupportedB2CAddons(planIDs: PlanIDs): SupportedAddons {
 
     if (planIDs[DRIVE]) {
         supported[ADDON_NAMES.LUMO_DRIVE] = true;
+    }
+
+    if (planIDs[DRIVE_1TB]) {
+        supported[ADDON_NAMES.LUMO_DRIVE_1TB] = true;
     }
 
     if (planIDs[PASS]) {
