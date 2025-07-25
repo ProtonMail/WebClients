@@ -20,7 +20,6 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { type GetDriveVolumeResult, VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import { encryptPassphrase, generateLookupHash, sign } from '@proton/shared/lib/keys/driveKeys';
-import isTruthy from '@proton/utils/isTruthy';
 
 import { useCreatePhotosWithAlbums } from '../../../photos/PhotosStore/useCreatePhotosWithAlbums';
 import { useSharesStore } from '../../../zustand/share/shares.store';
@@ -29,22 +28,25 @@ import { useDriveCrypto } from '../../_crypto';
 import { useLink } from '../../_links';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../_links/link';
 import { useDebouncedFunction } from '../../_utils';
-import type {
-    LockedDeviceForRestore,
-    LockedPhotosForRestore,
-    LockedShareForRestore,
-    LockedVolumeForRestore,
-    ShareWithKey,
+import {
+    type LockedDeviceForRestore,
+    type LockedPhotosForRestore,
+    type LockedShareForRestore,
+    type LockedVolumeForRestore,
+    type ShareWithKey,
 } from './../interface';
 import useDefaultShare from './../useDefaultShare';
 import useShare from './../useShare';
 import { getPossibleAddressPrivateKeys, prepareVolumeForRestore } from './utils';
 
-type LockedShares = {
-    defaultShares: ShareWithKey[];
-    devices: ShareWithKey[];
-    photos: ShareWithKey[];
-}[];
+type LockedSharesPerVolume = Map<
+    string,
+    {
+        defaultShares: ShareWithKey[];
+        devices: ShareWithKey[];
+        photos: ShareWithKey[];
+    }
+>;
 
 export type AddressesKeysResult = { address: Address; keys: DecryptedAddressKey[] }[] | undefined;
 /**
@@ -114,93 +116,123 @@ export function useLockedVolumeInner({
     const { preventLeave } = usePreventLeave();
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
-    const { getLockedShares, lockedVolumesForRestore, setLockedVolumesForRestore, removeShares } = useSharesStore(
-        useShallow((state) => ({
-            getLockedShares: state.getLockedShares,
-            lockedVolumesForRestore: state.lockedVolumesForRestore,
-            setLockedVolumesForRestore: state.setLockedVolumesForRestore,
-            removeShares: state.removeShares,
-        }))
-    );
+
+    const { getLockedSharesByVolume, lockedVolumesForRestore, setLockedVolumesForRestore, removeShares } =
+        useSharesStore(
+            useShallow((state) => ({
+                getLockedSharesByVolume: state.getLockedSharesByVolume,
+                lockedVolumesForRestore: state.lockedVolumesForRestore,
+                setLockedVolumesForRestore: state.setLockedVolumesForRestore,
+                removeShares: state.removeShares,
+            }))
+        );
 
     const getLoadedLockedShares = useCallback(
-        async (abortSignal: AbortSignal): Promise<LockedShares> => {
-            return Promise.all(
-                getLockedShares().map(async ({ defaultShares, devices, photos }) => {
-                    return {
-                        defaultShares: await Promise.all(
-                            defaultShares.map((defaultShare) => getShareWithKey(abortSignal, defaultShare.shareId))
-                        ),
-                        devices: await Promise.all(
-                            devices.map((device) => getShareWithKey(abortSignal, device.shareId))
-                        ),
-                        photos: await Promise.all(photos.map((photo) => getShareWithKey(abortSignal, photo.shareId))),
-                    };
-                })
-            );
+        async (abortSignal: AbortSignal): Promise<LockedSharesPerVolume> => {
+            let loadedLockedShares = new Map();
+            const currentLockedSharesByVolume = getLockedSharesByVolume();
+            for (let [volumeId, lockedShares] of currentLockedSharesByVolume) {
+                loadedLockedShares.set(volumeId, {
+                    defaultShares: await Promise.all(
+                        lockedShares.defaultShares.map((defaultShare) =>
+                            getShareWithKey(abortSignal, defaultShare.shareId)
+                        )
+                    ),
+                    devices: await Promise.all(
+                        lockedShares.devices.map((defaultShare) => getShareWithKey(abortSignal, defaultShare.shareId))
+                    ),
+
+                    photos: await Promise.all(
+                        lockedShares.photos.map((defaultShare) => getShareWithKey(abortSignal, defaultShare.shareId))
+                    ),
+                });
+            }
+            return loadedLockedShares;
         },
-        [getLockedShares]
+        [getLockedSharesByVolume]
     );
 
-    const getLockedUnpreparedShares = useCallback(
-        async (lockedShares: LockedShares) => {
-            return lockedShares.filter(
-                ({ defaultShares }) =>
-                    !defaultShares.some(({ volumeId }) =>
-                        lockedVolumesForRestore.some(({ lockedVolumeId }) => volumeId === lockedVolumeId)
-                    )
+    const getLockedUnpreparedShares = useCallback(async (lockedShares: LockedSharesPerVolume) => {
+        const currentLockedVolumesForRestore = useSharesStore.getState().lockedVolumesForRestore;
+        const lockedUnpreparedShares = new Map();
+
+        const existingDefaultShareIds = new Set(
+            currentLockedVolumesForRestore.flatMap(({ defaultShares }) => defaultShares.map((share) => share.shareId))
+        );
+        const existingDeviceShareIds = new Set(
+            currentLockedVolumesForRestore.flatMap(({ devices }) => devices.map((share) => share.shareId))
+        );
+        const existingPhotoShareIds = new Set(
+            currentLockedVolumesForRestore.flatMap(({ photos }) => photos.map((share) => share.shareId))
+        );
+
+        for (const [volumeId, { defaultShares, devices, photos }] of lockedShares) {
+            const unpreparedDefaultShares = defaultShares.filter(
+                ({ shareId }) => !existingDefaultShareIds.has(shareId)
             );
-        },
-        [lockedVolumesForRestore]
-    );
+            const unpreparedDevices = devices.filter(({ shareId }) => !existingDeviceShareIds.has(shareId));
+            const unpreparedPhotos = photos.filter(({ shareId }) => !existingPhotoShareIds.has(shareId));
+
+            if (unpreparedDefaultShares.length || unpreparedDevices.length || unpreparedPhotos.length) {
+                lockedUnpreparedShares.set(volumeId, {
+                    defaultShares: unpreparedDefaultShares,
+                    devices: unpreparedDevices,
+                    photos: unpreparedPhotos,
+                });
+            }
+        }
+
+        return lockedUnpreparedShares;
+    }, []);
 
     const getPreparedVolumes = useCallback(
-        async (lockedUnpreparedShares: LockedShares, addressPrivateKeys: PrivateKeyReference[]) => {
-            const preparedVolumes = await Promise.all(
-                lockedUnpreparedShares.map(({ defaultShares, devices, photos }) => {
-                    return debouncedFunction(
-                        async () => prepareVolumeForRestore(defaultShares, devices, photos, addressPrivateKeys),
-                        ['prepareVolumeForRestore', defaultShares.map((share) => share.volumeId).join(',')]
-                    );
-                })
-            );
-
-            return preparedVolumes.filter(isTruthy);
+        async (lockedUnpreparedShares: LockedSharesPerVolume, addressPrivateKeys: PrivateKeyReference[]) => {
+            let preparedVolumes = [];
+            for (let [volumeId, { defaultShares, devices, photos }] of lockedUnpreparedShares) {
+                const cacheKey = defaultShares
+                    .concat(devices)
+                    .concat(photos)
+                    .map((share) => share.shareId)
+                    .join(',');
+                const preparedVolume = await debouncedFunction(
+                    async () => prepareVolumeForRestore(volumeId, defaultShares, devices, photos, addressPrivateKeys),
+                    ['prepareVolumeForRestore', cacheKey]
+                );
+                if (
+                    preparedVolume?.defaultShares.length ||
+                    preparedVolume?.devices.length ||
+                    preparedVolume?.photos.length
+                ) {
+                    preparedVolumes.push(preparedVolume);
+                }
+            }
+            return preparedVolumes;
         },
-        []
+        [prepareVolumeForRestore]
     );
 
     const prepareVolumesForRestore = useCallback(
-        async (
-            abortSignal: AbortSignal,
-            autoRestore?: {
-                preloadedLockedShares: LockedShares;
-                preloadedAddressesKeys: AddressesKeysResult;
-            }
-        ): Promise<LockedVolumeForRestore[]> => {
-            const addressPrivateKeys = getPossibleAddressPrivateKeys(
-                autoRestore?.preloadedAddressesKeys || addressesKeys
-            );
+        async (abortSignal: AbortSignal): Promise<LockedVolumeForRestore[]> => {
+            const currentLockedVolumesForRestore = useSharesStore.getState().lockedVolumesForRestore;
+            const addressPrivateKeys = getPossibleAddressPrivateKeys(addressesKeys);
             if (!addressPrivateKeys?.length) {
-                return lockedVolumesForRestore;
+                return currentLockedVolumesForRestore;
             }
 
-            const lockedShares = autoRestore?.preloadedLockedShares || (await getLoadedLockedShares(abortSignal));
+            const lockedShares = await getLoadedLockedShares(abortSignal);
             const lockedUnpreparedShares = await getLockedUnpreparedShares(lockedShares);
-            if (!lockedUnpreparedShares.length) {
-                return lockedVolumesForRestore;
+            if (!lockedUnpreparedShares.size) {
+                return currentLockedVolumesForRestore;
             }
 
             const newPreparedVolumes = await getPreparedVolumes(lockedUnpreparedShares, addressPrivateKeys);
             if (!newPreparedVolumes.length) {
-                return lockedVolumesForRestore;
+                return currentLockedVolumesForRestore;
             }
 
-            const volumes = [...lockedVolumesForRestore, ...newPreparedVolumes];
-            // We don't want to show those locked volumes in UI if they are for auto-restore
-            if (!autoRestore) {
-                setLockedVolumesForRestore(volumes);
-            }
+            const volumes = [...currentLockedVolumesForRestore, ...newPreparedVolumes];
+
+            setLockedVolumesForRestore(volumes);
             return volumes;
         },
         [
@@ -209,47 +241,8 @@ export function useLockedVolumeInner({
             getPreparedVolumes,
             getLoadedLockedShares,
             setLockedVolumesForRestore,
-            lockedVolumesForRestore,
         ]
     );
-
-    const restorePhotosVolume = async (
-        parentVolumeID: string,
-        addressKey: PrivateKeyReference,
-        address: Address,
-        lockedVolumeId: string,
-        lockedPhotos: LockedPhotosForRestore[],
-        addressKeyID: string
-    ) => {
-        const photosPassphrases = await Promise.all(
-            lockedPhotos.map(async (photo) => {
-                const [sharePassphraseSignature, shareKeyPacket] = await Promise.all([
-                    sign(photo.shareDecryptedPassphrase, addressKey),
-                    getEncryptedSessionKey(photo.shareSessionKey, addressKey).then(uint8ArrayToBase64String),
-                ]);
-                return {
-                    sharePassphraseSignature,
-                    shareKeyPacket,
-                };
-            })
-        );
-        const photosPayload = lockedPhotos.map(({ shareId }, idx) => {
-            const { shareKeyPacket, sharePassphraseSignature } = photosPassphrases[idx];
-            return {
-                LockedShareID: shareId,
-                ShareKeyPacket: shareKeyPacket,
-                PassphraseSignature: sharePassphraseSignature,
-            };
-        });
-
-        await debouncedRequest(
-            queryRestoreDriveVolume(lockedVolumeId, {
-                SignatureAddress: address.Email,
-                AddressKeyID: addressKeyID,
-                PhotoShares: photosPayload,
-            })
-        );
-    };
 
     const restoreVolume = async (
         privateKey: PrivateKeyReference,
@@ -260,9 +253,7 @@ export function useLockedVolumeInner({
         lockedDefaultShares: LockedShareForRestore[],
         lockedDevices: LockedDeviceForRestore[],
         lockedPhotos: LockedPhotosForRestore[],
-        addressKeyID: string,
-        // For auto-restore
-        forASV: boolean = false
+        addressKeyID: string
     ) => {
         if (!hashKey) {
             throw new Error('Missing hash key on folder link');
@@ -276,9 +267,7 @@ export function useLockedVolumeInner({
                         ' '
                     );
                     // translator: The date is in locale of user's preference. It's used for folder name and translating the beginning of the string is enough.
-                    let restoreFolderName = forASV
-                        ? c('Info').t`Automated Recovery ${formattedDate}`
-                        : c('Info').t`Restored files ${formattedDate}`;
+                    let restoreFolderName = c('Info').t`Restored files ${formattedDate}`;
                     if (index > 0) {
                         restoreFolderName = `${restoreFolderName} (${index + 1})`;
                     }
@@ -359,20 +348,17 @@ export function useLockedVolumeInner({
         );
     };
 
-    const restoreVolumes = async (
-        abortSignal: AbortSignal,
-        autoRestore?: { preloadedLockedShares: LockedShares; preloadedAddressesKeys: AddressesKeysResult }
-    ) => {
-        const lockedVolumesForRestore = await prepareVolumesForRestore(abortSignal, autoRestore);
-        if (lockedVolumesForRestore.length === 0) {
+    const restoreVolumes = async (abortSignal: AbortSignal) => {
+        const preparedVolumesForRestore = await prepareVolumesForRestore(abortSignal);
+        if (preparedVolumesForRestore.length === 0) {
             return false;
         }
 
-        for (let lockedVolume of lockedVolumesForRestore) {
+        for (let preparedVolume of preparedVolumesForRestore) {
             // TODO: Not optimal as it's double the call that what we have in useDefaultShare.getDefaultPhotosShare,
             // but it prevent changing too many things
             const { Volume } = await debouncedRequest<GetDriveVolumeResult>(
-                queryGetDriveVolume(lockedVolume.lockedVolumeId)
+                queryGetDriveVolume(preparedVolume.lockedVolumeId)
             );
             const isPhotosVolume = Volume.Type === VolumeType.Photos;
             let defaultShare:
@@ -409,71 +395,64 @@ export function useLockedVolumeInner({
                 addressKeyID,
             } = await getOwnAddressAndPrimaryKeys(defaultShare.addressId);
 
-            if (isPhotosVolume) {
-                await restorePhotosVolume(
-                    defaultShare.volumeId,
-                    addressKey,
-                    address,
-                    lockedVolume.lockedVolumeId,
-                    lockedVolume.photos,
-                    addressKeyID
-                );
-            } else {
-                const [privateKey, hashKey] = await Promise.all([
-                    getLinkPrivateKey(abortSignal, defaultShare.shareId, defaultShare.rootLinkId),
-                    getLinkHashKey(abortSignal, defaultShare.shareId, defaultShare.rootLinkId),
-                ]);
+            const [privateKey, hashKey] = await Promise.all([
+                getLinkPrivateKey(abortSignal, defaultShare.shareId, defaultShare.rootLinkId),
+                getLinkHashKey(abortSignal, defaultShare.shareId, defaultShare.rootLinkId),
+            ]);
 
-                await restoreVolume(
-                    privateKey,
-                    hashKey,
-                    addressKey,
-                    address,
-                    lockedVolume.lockedVolumeId,
-                    lockedVolume.defaultShares,
-                    lockedVolume.devices,
-                    lockedVolume.photos,
-                    addressKeyID,
-                    !!autoRestore
-                );
-            }
+            await restoreVolume(
+                privateKey,
+                hashKey,
+                addressKey,
+                address,
+                preparedVolume.lockedVolumeId,
+                preparedVolume.defaultShares,
+                preparedVolume.devices,
+                preparedVolume.photos,
+                addressKeyID
+            );
 
             // This is fine to not inclued lockedVolume.photos as only lockedVolume.defaultShares is used to check if restore is needed
             // This prevent locked albums to be removed and then we can't detect if we can show migration page or not
             removeShares([
-                ...lockedVolume.defaultShares.map(({ shareId }) => shareId),
-                ...lockedVolume.devices.map(({ shareId }) => shareId),
+                ...preparedVolume.defaultShares.map(({ shareId }) => shareId),
+                ...preparedVolume.devices.map(({ shareId }) => shareId),
+                ...preparedVolume.photos.map(({ shareId }) => shareId),
             ]);
         }
 
-        if (!autoRestore) {
-            setLockedVolumesForRestore([]);
-        }
+        setLockedVolumesForRestore([]);
 
         return true;
     };
 
     const deleteLockedVolumes = async () => {
-        const lockedShares = getLockedShares();
+        const lockedShares = getLockedSharesByVolume();
 
-        const lockedVolumeIds = lockedShares.flatMap(({ defaultShares }) =>
-            defaultShares.map(({ volumeId }) => volumeId)
-        );
+        const lockedShareIds: string[] = [];
+
+        for (const { defaultShares, devices, photos } of lockedShares.values()) {
+            lockedShareIds.push(...defaultShares.map((share) => share.shareId));
+            lockedShareIds.push(...devices.map((device) => device.shareId));
+            lockedShareIds.push(...photos.map((photo) => photo.shareId));
+        }
+
         await preventLeave(
-            Promise.all(lockedVolumeIds.map((volumeId) => debouncedRequest(queryDeleteLockedVolumes(volumeId))))
+            Promise.all(
+                Array.from(lockedShares.keys()).map((volumeId) => debouncedRequest(queryDeleteLockedVolumes(volumeId)))
+            )
         );
 
-        const lockedShareIds = lockedShares.flatMap(({ defaultShares }) => defaultShares.map(({ shareId }) => shareId));
         removeShares(lockedShareIds);
     };
 
-    const lockedSharesCount = getLockedShares().length;
+    const lockedVolumesCount = getLockedSharesByVolume().size;
 
     return {
-        isReadyForPreparation: !!lockedSharesCount && !!addressesKeys?.length,
-        lockedVolumesCount: lockedSharesCount,
-        hasLockedVolumes: lockedSharesCount,
-        hasVolumesForRestore: !!lockedVolumesForRestore?.length,
+        isReadyForPreparation: !!lockedVolumesCount && !!addressesKeys?.length,
+        lockedVolumesCount: lockedVolumesCount,
+        hasLockedVolumes: !!lockedVolumesCount,
+        hasVolumesForRestore: !!lockedVolumesForRestore.length,
         deleteLockedVolumes,
         prepareVolumesForRestore,
         restoreVolumes,

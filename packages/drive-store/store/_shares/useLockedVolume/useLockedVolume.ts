@@ -171,21 +171,13 @@ export function useLockedVolumeInner({
     );
 
     const prepareVolumesForRestore = useCallback(
-        async (
-            abortSignal: AbortSignal,
-            autoRestore?: {
-                preloadedLockedShares: LockedShares;
-                preloadedAddressesKeys: AddressesKeysResult;
-            }
-        ): Promise<LockedVolumeForRestore[]> => {
-            const addressPrivateKeys = getPossibleAddressPrivateKeys(
-                autoRestore?.preloadedAddressesKeys || addressesKeys
-            );
+        async (abortSignal: AbortSignal): Promise<LockedVolumeForRestore[]> => {
+            const addressPrivateKeys = getPossibleAddressPrivateKeys(addressesKeys);
             if (!addressPrivateKeys?.length) {
                 return lockedVolumesForRestore;
             }
 
-            const lockedShares = autoRestore?.preloadedLockedShares || (await getLoadedLockedShares(abortSignal));
+            const lockedShares = await getLoadedLockedShares(abortSignal);
             const lockedUnpreparedShares = await getLockedUnpreparedShares(lockedShares);
             if (!lockedUnpreparedShares.length) {
                 return lockedVolumesForRestore;
@@ -197,10 +189,9 @@ export function useLockedVolumeInner({
             }
 
             const volumes = [...lockedVolumesForRestore, ...newPreparedVolumes];
-            // We don't want to show those locked volumes in UI if they are for auto-restore
-            if (!autoRestore) {
-                setLockedVolumesForRestore(volumes);
-            }
+
+            setLockedVolumesForRestore(volumes);
+
             return volumes;
         },
         [
@@ -260,9 +251,7 @@ export function useLockedVolumeInner({
         lockedDefaultShares: LockedShareForRestore[],
         lockedDevices: LockedDeviceForRestore[],
         lockedPhotos: LockedPhotosForRestore[],
-        addressKeyID: string,
-        // For auto-restore
-        forASV: boolean = false
+        addressKeyID: string
     ) => {
         if (!hashKey) {
             throw new Error('Missing hash key on folder link');
@@ -276,9 +265,7 @@ export function useLockedVolumeInner({
                         ' '
                     );
                     // translator: The date is in locale of user's preference. It's used for folder name and translating the beginning of the string is enough.
-                    let restoreFolderName = forASV
-                        ? c('Info').t`Automated Recovery ${formattedDate}`
-                        : c('Info').t`Restored files ${formattedDate}`;
+                    let restoreFolderName = c('Info').t`Restored files ${formattedDate}`;
                     if (index > 0) {
                         restoreFolderName = `${restoreFolderName} (${index + 1})`;
                     }
@@ -359,11 +346,8 @@ export function useLockedVolumeInner({
         );
     };
 
-    const restoreVolumes = async (
-        abortSignal: AbortSignal,
-        autoRestore?: { preloadedLockedShares: LockedShares; preloadedAddressesKeys: AddressesKeysResult }
-    ) => {
-        const lockedVolumesForRestore = await prepareVolumesForRestore(abortSignal, autoRestore);
+    const restoreVolumes = async (abortSignal: AbortSignal) => {
+        const lockedVolumesForRestore = await prepareVolumesForRestore(abortSignal);
         if (lockedVolumesForRestore.length === 0) {
             return false;
         }
@@ -433,8 +417,7 @@ export function useLockedVolumeInner({
                     lockedVolume.defaultShares,
                     lockedVolume.devices,
                     lockedVolume.photos,
-                    addressKeyID,
-                    !!autoRestore
+                    addressKeyID
                 );
             }
 
@@ -446,9 +429,7 @@ export function useLockedVolumeInner({
             ]);
         }
 
-        if (!autoRestore) {
-            setLockedVolumesForRestore([]);
-        }
+        setLockedVolumesForRestore([]);
 
         return true;
     };
