@@ -1,20 +1,21 @@
-const { AutoUnpackNativesPlugin } = require('@electron-forge/plugin-auto-unpack-natives');
-const { FusesPlugin } = require('@electron-forge/plugin-fuses');
-const { WebpackPlugin } = require('@electron-forge/plugin-webpack');
-const { MakerSquirrel } = require('@electron-forge/maker-squirrel');
-const { MakerZIP } = require('@electron-forge/maker-zip');
-const { MakerDMG } = require('@electron-forge/maker-dmg');
-const { MakerDeb } = require('@electron-forge/maker-deb');
-const { MakerRpm } = require('@electron-forge/maker-rpm');
-const { FuseV1Options, FuseVersion } = require('@electron/fuses');
-const mainConfig = require('./webpack.main.config');
-const rendererConfig = require('./webpack.renderer.config');
-const path = require('path');
-const pkg = require('./package.json');
-const getExtraResource = require('./src/utils/extra-resource');
+import { MakerDeb } from '@electron-forge/maker-deb';
+import { MakerDMG } from '@electron-forge/maker-dmg';
+import { MakerRpm } from '@electron-forge/maker-rpm';
+import { MakerSquirrel } from '@electron-forge/maker-squirrel';
+import { MakerZIP } from '@electron-forge/maker-zip';
+import { AutoUnpackNativesPlugin } from '@electron-forge/plugin-auto-unpack-natives';
+import { FusesPlugin } from '@electron-forge/plugin-fuses';
+import { WebpackPlugin } from '@electron-forge/plugin-webpack';
+import { type ForgeConfig } from '@electron-forge/shared-types';
+import { FuseV1Options, FuseVersion } from '@electron/fuses';
+import path from 'path';
 
-/** @type {import('@electron-forge/shared-types').ForgeConfig} */
-const config = {
+import pkg from './package.json';
+import getExtraResource from './src/utils/extra-resource';
+import mainConfig from './webpack.main.config';
+import rendererConfig from './webpack.renderer.config';
+
+const config: ForgeConfig = {
     packagerConfig: {
         asar: true,
         icon: 'assets/logo',
@@ -28,9 +29,9 @@ const config = {
         osxNotarize:
             process.env.CI || process.env.PASS_DESKTOP_NOTARIZE
                 ? {
-                      appleId: process.env.PASS_DESKTOP_APPLE_ID,
-                      appleIdPassword: process.env.PASS_DESKTOP_APPLE_ID_PASSWORD,
-                      teamId: process.env.PASS_DESKTOP_APPLE_TEAM_ID,
+                      appleId: process.env.PASS_DESKTOP_APPLE_ID!,
+                      appleIdPassword: process.env.PASS_DESKTOP_APPLE_ID_PASSWORD!,
+                      teamId: process.env.PASS_DESKTOP_APPLE_TEAM_ID!,
                   }
                 : undefined,
     },
@@ -48,6 +49,7 @@ const config = {
         }),
         // macOS
         new MakerDMG((arch) => ({
+            appPath: '',
             name: `ProtonPass_${pkg.version}`,
             background: path.join(__dirname, 'assets', 'dmg-background.png'),
             icon: path.join(__dirname, 'assets', 'volume-icon.icns'),
@@ -78,26 +80,30 @@ const config = {
         ),
         // Linux Debian
         new MakerDeb({
-            name: 'proton-pass',
-            categories: ['Utility'],
-            productName: 'Proton Pass',
-            bin: 'Proton Pass',
-            genericName: 'Password Manager',
-            productDescription: 'Open-source and secure identity manager.',
-            homepage: 'https://proton.me/pass',
-            icon: path.join(__dirname, 'assets', 'logo.svg'),
-            maintainer: 'Proton',
+            options: {
+                name: 'proton-pass',
+                categories: ['Utility'],
+                productName: 'Proton Pass',
+                bin: 'Proton Pass',
+                genericName: 'Password Manager',
+                productDescription: 'Open-source and secure identity manager.',
+                homepage: 'https://proton.me/pass',
+                icon: path.join(__dirname, 'assets', 'logo.svg'),
+                maintainer: 'Proton',
+            },
         }),
         // Linux Fedora
         new MakerRpm({
-            name: 'proton-pass',
-            categories: ['Utility'],
-            productName: 'Proton Pass',
-            bin: 'Proton Pass',
-            genericName: 'Password Manager',
-            productDescription: 'Open-source and secure identity manager.',
-            homepage: 'https://proton.me/pass',
-            icon: path.join(__dirname, 'assets', 'logo.svg'),
+            options: {
+                name: 'proton-pass',
+                categories: ['Utility'],
+                productName: 'Proton Pass',
+                bin: 'Proton Pass',
+                genericName: 'Password Manager',
+                productDescription: 'Open-source and secure identity manager.',
+                homepage: 'https://proton.me/pass',
+                icon: path.join(__dirname, 'assets', 'logo.svg'),
+            },
         }),
     ],
     plugins: [
@@ -144,4 +150,4 @@ const config = {
     ],
 };
 
-module.exports = config;
+export default config;
