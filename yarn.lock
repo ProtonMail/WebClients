@@ -7816,16 +7816,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/config@workspace:packages/config":
-  version: 0.0.0-use.local
-  resolution: "@proton/config@workspace:packages/config"
-  dependencies:
-    "@manypkg/find-root": "npm:^2.2.3"
-    "@manypkg/get-packages": "npm:^2.2.2"
-    execa: "npm:^5.1.1"
-  languageName: unknown
-  linkType: soft
-
 "@proton/cross-storage@workspace:^, @proton/cross-storage@workspace:packages/cross-storage":
   version: 0.0.0-use.local
   resolution: "@proton/cross-storage@workspace:packages/cross-storage"
