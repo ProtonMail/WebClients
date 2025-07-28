@@ -182,12 +182,12 @@ enum MailFeatureFlag {
     NewsletterSubscriptionView = 'NewsletterSubscriptionView',
     RemoveReplyStyles = 'RemoveReplyStyles',
     MailboxOptimisticRefactoring = 'MailboxOptimisticRefactoring',
-
     // Category view flags
     // Used to control the whole category view
     CategoryView = 'CategoryView',
     // Used for the alpha experiment of the category view will be deleted
     ShowMessageCategory = 'ShowMessageCategory',
+    ApplyLabelsOptimisticRefactoring = 'ApplyLabelsOptimisticRefactoring',
 }
 
 enum AdminFeatureFlag {

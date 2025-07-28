@@ -4,6 +4,7 @@ import type { Draft } from 'immer';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
@@ -14,6 +15,7 @@ import unique from '@proton/utils/unique';
 import { getElementContextIdentifier, parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
+import { applyLabelToMessage, removeLabelFromMessage } from '../mailbox/locationHelpers';
 import type { filterSubscriptionList } from '../newsletterSubscriptions/newsletterSubscriptionsActions';
 import { newElementsState } from './elementsSlice';
 import type {
@@ -833,5 +835,69 @@ export const markNewsletterElementsAsReadPending = (
         if (testIsMessage(element) && element.NewsletterSubscriptionID === payload.subscription.ID) {
             element.Unread = 0;
         }
+    });
+};
+
+export const labelMessagesPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        { arg: { elements: Message[]; targetLabelID: string; labels: Label[]; folders: Folder[] } }
+    >
+) => {
+    const { elements, targetLabelID, labels, folders } = action.meta.arg;
+
+    elements.forEach((element) => {
+        const elementState = state.elements[element.ID] as Message;
+
+        if (!elementState) {
+            return;
+        }
+
+        applyLabelToMessage(elementState, targetLabelID, folders, labels);
+    });
+};
+
+export const unlabelMessagesPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        { arg: { elements: Message[]; targetLabelID: string; labels: Label[]; folders: Folder[] } }
+    >
+) => {
+    const { elements, targetLabelID, labels } = action.meta.arg;
+
+    elements.forEach((element) => {
+        const elementState = state.elements[element.ID] as Message;
+
+        if (!elementState) {
+            return;
+        }
+
+        removeLabelFromMessage(elementState, targetLabelID, labels);
+    });
+};
+
+export const labelMessagesRejected = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        unknown,
+        string,
+        { arg: { elements: Message[]; targetLabelID: string; labels: Label[]; folders: Folder[] } }
+    >
+) => {
+    const { elements } = action.meta.arg;
+
+    elements.forEach((element) => {
+        const elementState = state.elements[element.ID] as Message;
+
+        if (!elementState) {
+            return;
+        }
+
+        elementState.LabelIDs = element.LabelIDs;
+        elementState.Unread = element.Unread;
     });
 };

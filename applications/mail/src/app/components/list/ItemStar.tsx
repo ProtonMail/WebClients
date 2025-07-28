@@ -5,8 +5,10 @@ import { c } from 'ttag';
 import { Kbd, Tooltip } from '@proton/atoms';
 import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';
@@ -23,6 +25,7 @@ interface Props {
 
 const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
     const [loading, withLoading] = useLoading();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const star = useStar();
     const { Shortcuts } = useMailModel('MailSettings');
 
@@ -40,9 +43,21 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
 
     const handleClick = async (event: MouseEvent) => {
         event.stopPropagation();
-        // Programmatically block the action instead of disabling the action
-        // Perhaps a bit less accessible but prevent to collapse a message on a second click
-        if (!loading) {
+
+        if (loading) {
+            return;
+        }
+
+        if (applyOptimisticLocationEnabled) {
+            void withLoading(
+                applyLocation({
+                    elements: [element || ({} as Element)],
+                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    removeLabel: isStarred,
+                    showSuccessNotification: false,
+                })
+            );
+        } else {
             void withLoading(star([element || ({} as Element)], !isStarred, labelID, sourceAction));
         }
     };

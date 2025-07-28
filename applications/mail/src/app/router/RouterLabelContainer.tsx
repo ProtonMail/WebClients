@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { Commander, useActiveBreakpoint, useModalState } from '@proton/components';
 import { useFolders } from '@proton/mail/index';
-import { getFolderName } from '@proton/mail/store/labels/helpers';
 import clsx from '@proton/utils/clsx';
 
 import MailboxList from 'proton-mail/components/list/MailboxList';
@@ -24,6 +23,7 @@ import { selectComposersCount } from 'proton-mail/store/composers/composerSelect
 import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
+import { getFolderName } from '../helpers/labels';
 import { RouterElementContainer } from './RouterElementContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 import { MailboxToolbar } from './components/MailboxToolbar';

@@ -13,7 +13,7 @@ import { DateInput, Label, Option, SelectTwo, useActiveBreakpoint } from '@proto
 import type { ESIndexingState } from '@proton/encrypted-search';
 import { contentIndexingProgress } from '@proton/encrypted-search';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
-import { getHumanLabelID } from '@proton/mail/store/labels/helpers';
+import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';

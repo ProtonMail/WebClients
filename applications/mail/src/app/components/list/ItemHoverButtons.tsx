@@ -10,6 +10,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { isMessage, isStarred as testIsStarred, isUnread as testIsUnread } from '../../helpers/elements';
@@ -47,6 +48,7 @@ const ItemHoverButtons = ({
 }: Props) => {
     const { markAs } = useMarkAs();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal } = useMoveToFolder();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { handleDelete: permanentDelete, deleteSelectionModal } = usePermanentDelete(labelID);
     const star = useStar();
     const snoozedElement = useMailSelector(selectSnoozeElement);
@@ -81,27 +83,43 @@ const ItemHoverButtons = ({
 
     const handleArchive = (event: MouseEvent) => {
         event.stopPropagation();
-        void moveToFolder({
-            elements: [element],
-            sourceLabelID: labelID,
-            destinationLabelID: ARCHIVE,
-            folderName: c('Title').t`Archive`,
-            sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
-            percentUnread: 1,
-        });
+
+        if (applyOptimisticLocationEnabled) {
+            void applyLocation({
+                elements: [element],
+                targetLabelID: ARCHIVE,
+            });
+        } else {
+            void moveToFolder({
+                elements: [element],
+                sourceLabelID: labelID,
+                destinationLabelID: ARCHIVE,
+                folderName: c('Title').t`Archive`,
+                sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
+                percentUnread: 1,
+            });
+        }
     };
 
     const handleTrash = (event: MouseEvent) => {
         event.stopPropagation();
-        void moveToFolder({
-            elements: [element],
-            sourceLabelID: labelID,
-            destinationLabelID: TRASH,
-            folderName: c('Title').t`Trash`,
-            sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
-            currentFolder: displayedFolder,
-            percentUnread: 1,
-        });
+
+        if (applyOptimisticLocationEnabled) {
+            void applyLocation({
+                elements: [element],
+                targetLabelID: TRASH,
+            });
+        } else {
+            void moveToFolder({
+                elements: [element],
+                sourceLabelID: labelID,
+                destinationLabelID: TRASH,
+                folderName: c('Title').t`Trash`,
+                sourceAction: SOURCE_ACTION.HOVER_BUTTONS,
+                currentFolder: displayedFolder,
+                percentUnread: 1,
+            });
+        }
     };
 
     const handlePermanentDelete = (event: MouseEvent) => {
@@ -114,7 +132,20 @@ const ItemHoverButtons = ({
     const handleStar = (event: MouseEvent) => {
         event.stopPropagation();
 
-        if (!loadingStar) {
+        if (loadingStar) {
+            return;
+        }
+
+        if (applyOptimisticLocationEnabled) {
+            void withLoadingStar(
+                applyLocation({
+                    elements: [element],
+                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    removeLabel: isStarred,
+                    showSuccessNotification: false,
+                })
+            );
+        } else {
             void withLoadingStar(star([element], !isStarred, labelID, SOURCE_ACTION.HOVER_BUTTONS));
         }
     };

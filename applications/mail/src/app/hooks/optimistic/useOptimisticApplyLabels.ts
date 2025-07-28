@@ -7,7 +7,7 @@ import {
     useFolders,
     useLabels,
 } from '@proton/mail';
-import { isCustomLabel } from '@proton/mail/store/labels/helpers';
+import { isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

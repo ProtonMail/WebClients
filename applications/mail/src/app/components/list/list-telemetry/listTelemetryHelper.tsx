@@ -1,9 +1,4 @@
-import {
-    isCustomFolder,
-    isCustomLabel,
-    isHumalLabelIDKey,
-    isHumanCustomViewKey,
-} from '@proton/mail/store/labels/helpers';
+import { isCustomFolder, isCustomLabel, isHumalLabelIDKey, isHumanCustomViewKey } from '@proton/mail/helpers/location';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_TO_HUMAN, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
