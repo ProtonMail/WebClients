@@ -137,7 +137,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
                     className={clsx(
                         'pass-value-control--value m-0 p-0',
                         !disabled && 'cursor-pointer',
-                        ellipsis && 'text-ellipsis',
+                        ellipsis ? 'text-ellipsis' : 'text-break text-pre-wrap',
                         hide && 'text-nowrap overflow-hidden',
                         valueClassName
                     )}
