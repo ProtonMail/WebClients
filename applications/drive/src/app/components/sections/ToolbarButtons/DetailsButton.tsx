@@ -7,7 +7,13 @@ import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { noSelection } from './utils';
 
 interface Props {
-    selectedBrowserItems: { rootShareId: string; linkId: string; isBookmark?: boolean; isInvitation?: boolean }[];
+    selectedBrowserItems: {
+        volumeId: string;
+        rootShareId: string;
+        linkId: string;
+        isBookmark?: boolean;
+        isInvitation?: boolean;
+    }[];
 }
 
 const DetailsButton = ({ selectedBrowserItems }: Props) => {
@@ -26,6 +32,7 @@ const DetailsButton = ({ selectedBrowserItems }: Props) => {
                 onClick={() => {
                     if (selectedBrowserItems.length === 1) {
                         void showDetailsModal({
+                            volumeId: selectedBrowserItems[0].volumeId,
                             shareId: selectedBrowserItems[0].rootShareId,
                             linkId: selectedBrowserItems[0].linkId,
                         });

@@ -87,7 +87,7 @@ const ActionsDropdown = ({ volumeId, shareId, selectedLinks, permissions, trashL
             name: c('Action').t`Details`,
             icon: 'info-circle',
             testId: 'actions-dropdown-details',
-            action: () => showDetailsModal({ shareId, linkId: selectedLinkIds[0] }),
+            action: () => showDetailsModal({ volumeId, shareId, linkId: selectedLinkIds[0] }),
         },
         {
             hidden: !isMultiSelect || hasFoldersSelected,

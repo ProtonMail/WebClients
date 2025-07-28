@@ -20,11 +20,12 @@ import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumVie
 import './AlbumsCard.scss';
 
 interface SharedAlbumDropdownButtonProps {
+    volumeId: string;
     linkId: string;
     shareId: string;
 }
 
-export const SharedAlbumDropdownButton = ({ linkId, shareId }: SharedAlbumDropdownButtonProps) => {
+export const SharedAlbumDropdownButton = ({ volumeId, linkId, shareId }: SharedAlbumDropdownButtonProps) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
@@ -33,6 +34,7 @@ export const SharedAlbumDropdownButton = ({ linkId, shareId }: SharedAlbumDropdo
             return;
         }
         showDetailsModal({
+            volumeId: volumeId,
             shareId: shareId,
             linkId: linkId,
         });
