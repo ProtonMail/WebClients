@@ -121,7 +121,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getDailyChats('limited'),
                 [PLANS.VPN_BUSINESS]: getDailyChats('limited'),
                 [PLANS.LUMO]: getDailyChats('unlimited'),
-                [PLANS.VISIONARY]: getDailyChats('limited'),
+                [PLANS.VISIONARY]: getDailyChats('unlimited'),
             },
         },
         {
@@ -177,7 +177,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getChatHistory('basic'),
                 [PLANS.VPN_BUSINESS]: getChatHistory('basic'),
                 [PLANS.LUMO]: getChatHistory('full'),
-                [PLANS.VISIONARY]: getChatHistory('basic'),
+                [PLANS.VISIONARY]: getChatHistory('full'),
             },
         },
         {
@@ -205,7 +205,7 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_PRO]: getFavourites('limited'),
                 [PLANS.VPN_BUSINESS]: getFavourites('limited'),
                 [PLANS.LUMO]: getFavourites('unlimited'),
-                [PLANS.VISIONARY]: getFavourites('limited'),
+                [PLANS.VISIONARY]: getFavourites('unlimited'),
             },
         },
         {
