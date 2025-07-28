@@ -31,7 +31,9 @@ export const applyLabelToMessage = (
 
         // Only for trash and spam, we need to remove almost all mail and starred labels
         if (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
-            message.Unread = 0; // Mark message as read
+            if (targetLabelID === MAILBOX_LABEL_IDS.TRASH) {
+                message.Unread = 0; // Mark message as read when moving to trash
+            }
             labelIDsCopy = labelIDsCopy.filter(
                 (labelID) =>
                     labelID !== MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL && // Remove almost all mail
@@ -91,7 +93,9 @@ export const applyLabelToConversation = (
 
         // Only for trash and spam, we need to remove almost all mail and starred labels
         if (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
-            conversation.NumUnread = 0;
+            if (targetLabelID === MAILBOX_LABEL_IDS.TRASH) {
+                conversation.NumUnread = 0;
+            }
 
             labelsCopy = labelsCopy.filter(
                 (label) =>
