@@ -26,10 +26,9 @@ import type { ShareItem } from '../reducers';
 import type { State } from '../types';
 import { SelectorError } from './errors';
 
-// import { selectAllItems, selectItems } from './items';
-
 export const selectShares = ({ shares }: State) => shares;
 export const selectAllShares = createSelector(selectShares, (s) => Object.values(s));
+
 export const selectVisibleShares = createSelector(
     selectAllShares,
     (shares) => new Set(shares.filter(isShareVisible).map(prop('shareId')))
