@@ -31,6 +31,7 @@ export const parseShareResponse = async <T extends ShareType = ShareType>(
             targetMaxMembers: share.targetMaxMembers,
             targetType: share.targetType,
             vaultId: share.vaultId,
+            flags: share.flags,
         };
     }
 };
