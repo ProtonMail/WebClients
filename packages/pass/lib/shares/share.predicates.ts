@@ -16,8 +16,7 @@ export function isItemShare(share: Share): share is Share<ShareType.Item> {
 export const isShareManageable = <T extends Share>(share: T) => share.owner || share.shareRoleId === ShareRole.MANAGER;
 export const isShareWritable = <T extends Share>({ shareRoleId }: T) => shareRoleId !== ShareRole.READ;
 export const isShareReadOnly = <T extends Share>({ shareRoleId }: T) => shareRoleId === ShareRole.READ;
-export const isShareVisible = <T extends Share>(share: T) =>
-    !hasBit(share.flags === null ? undefined : share.flags, ShareFlags.HIDDEN);
+export const isShareVisible = <T extends Share>(share: T) => !hasBit(share.flags, ShareFlags.HIDDEN);
 
 /** If the `canAutofill` flag isis not present on the share item, fallback to client
  * side downgrade detection : only allow autofilling from writable shares. */
