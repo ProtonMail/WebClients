@@ -25,15 +25,12 @@ const useAvailableApps = () => {
 
     const [organization] = useOrganization();
 
-    const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
 
     const availableApps = getAvailableApps({
         user,
         context: 'app',
         organization,
-
-        isLumoAvailable,
         isDocsHomepageAvailable,
     });
 

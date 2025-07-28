@@ -26,7 +26,6 @@ interface Props {
 const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
     const { APP_NAME } = useConfig();
 
-    const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
 
     useEffect(() => {
@@ -48,7 +47,6 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
                         subscribed,
                         user,
                         organization,
-                        isLumoAvailable,
                         isDocsHomepageAvailable,
                     })}
                     onExplore={onExplore}

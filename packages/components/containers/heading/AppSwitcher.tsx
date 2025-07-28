@@ -16,7 +16,6 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
     const { viewportWidth } = useActiveBreakpoint();
     const [organization] = useOrganization();
 
-    const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
 
     if (viewportWidth['<=small']) {
@@ -24,7 +23,6 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
             user,
             context: 'dropdown',
             organization,
-            isLumoAvailable,
             isDocsHomepageAvailable,
         });
         if (availableApps.length <= 1) {

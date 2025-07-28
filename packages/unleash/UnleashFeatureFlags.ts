@@ -63,7 +63,6 @@ enum AccountFlag {
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
     EduGainSSO = 'EduGainSSO',
-    LumoInProductSwitcher = 'LumoInProductSwitcher',
     LumoAddonAvailable = 'LumoAddonAvailable',
     LumoSignupAvailable = 'LumoSignupAvailable',
     LumoInProductNewsletters = 'LumoInProductNewsletters',

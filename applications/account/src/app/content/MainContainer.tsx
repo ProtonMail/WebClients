@@ -158,7 +158,6 @@ const MainContainer = () => {
     const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const canDisplayPassReports = useFlag('PassB2BReports');
-    const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
@@ -371,7 +370,6 @@ const MainContainer = () => {
         user,
         context: 'app',
         organization,
-        isLumoAvailable,
         isDocsHomepageAvailable,
     });
 
