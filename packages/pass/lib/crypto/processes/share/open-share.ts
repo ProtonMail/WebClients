@@ -40,6 +40,7 @@ export const openShare = async ({ encryptedShare, ...options }: OpenShareProcess
                 contentKeyRotation: encryptedShare.ContentKeyRotation!,
                 contentFormatVersion: encryptedShare.ContentFormatVersion!,
                 content,
+                flags: encryptedShare.Flags,
             };
         }
         case ShareType.Item: {
@@ -48,6 +49,7 @@ export const openShare = async ({ encryptedShare, ...options }: OpenShareProcess
                 content: null,
                 contentFormatVersion: null,
                 contentKeyRotation: null,
+                flags: null,
             };
         }
     }

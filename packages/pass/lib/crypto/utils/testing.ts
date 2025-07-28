@@ -99,6 +99,7 @@ export const createRandomShareResponses = async (
             TargetType: ShareType.Vault,
             VaultID: `vaultId-${Math.random()}`,
             CanAutoFill: true,
+            Flags: 0,
         },
         {
             Key: vault.EncryptedVaultKey,

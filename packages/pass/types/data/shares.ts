@@ -1,4 +1,5 @@
-import type { Maybe } from '@proton/pass/types/utils';
+import type { ShareId } from '@proton/pass/types/crypto';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import type { VaultColor, VaultIcon } from '../protobuf/vault-v1.static';
 
 export enum ShareType {
@@ -10,6 +11,10 @@ export enum ShareRole {
     MANAGER = '1',
     WRITE = '2',
     READ = '3',
+}
+
+export enum ShareFlags {
+    HIDDEN = 1 << 0,
 }
 
 export type VaultShareContent = {
@@ -39,6 +44,7 @@ export type ShareBase<T extends ShareType = ShareType> = {
     targetMembers: number;
     targetType: T;
     vaultId: string;
+    flags: MaybeNull<number>;
 };
 
 export type WithEventId<T> = T & { eventId: string };
@@ -53,3 +59,5 @@ export type ShareSyncKeys =
     | 'shareRoleId'
     | 'targetMaxMembers'
     | 'targetMembers';
+
+export type ShareHiddenMap = Record<ShareId, boolean>;
