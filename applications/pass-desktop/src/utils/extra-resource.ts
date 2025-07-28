@@ -1,4 +1,4 @@
-const { type } = require('os');
+import { type } from 'os';
 
 const getExtraResource = () => {
     switch (type()) {
@@ -11,4 +11,4 @@ const getExtraResource = () => {
     }
 };
 
-module.exports = getExtraResource;
+export default getExtraResource;
