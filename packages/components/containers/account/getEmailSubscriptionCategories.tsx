@@ -5,11 +5,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getEmailSubscriptionsMap } from './constants/email-subscriptions';
 
-export const getEmailSubscriptionCategories = (
-    news: NEWSLETTER_SUBSCRIPTIONS_BITS[],
-    lumoInProductNewsletters: boolean
-) => {
-    const emailSubscriptionMap = getEmailSubscriptionsMap(lumoInProductNewsletters);
+export const getEmailSubscriptionCategories = (news: NEWSLETTER_SUBSCRIPTIONS_BITS[]) => {
+    const emailSubscriptionMap = getEmailSubscriptionsMap();
     const categoryTitles = news
         .map((newsKind) => emailSubscriptionMap[newsKind]?.title)
         .filter((title) => isTruthy(title));
