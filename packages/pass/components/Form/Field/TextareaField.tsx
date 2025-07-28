@@ -5,13 +5,13 @@ import { type FieldProps } from 'formik';
 
 import { InputFieldTwo, TextAreaTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
+import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
+import { useMaxLengthLimiter } from '@proton/pass/hooks/useMaxLengthLimiter';
+import { usePasteLengthLimiter } from '@proton/pass/hooks/usePasteLengthLimiter';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
-import { useFieldControl } from '../../../hooks/useFieldControl';
-import { useMaxLengthLimiter } from '../../../hooks/useMaxLengthLimiter';
-import { usePasteLengthLimiter } from '../../../hooks/usePasteLengthLimiter';
 import { FieldBox, type FieldBoxProps } from './Layout/FieldBox';
 
 import './TextareaField.scss';
@@ -95,9 +95,19 @@ export const TextAreaField: FC<TextAreaFieldProps> = ({
     actionsContainerClassName,
     className,
     icon,
+    hidden,
     ...props
-}) => (
-    <FieldBox actions={actions} actionsContainerClassName={actionsContainerClassName} className={className} icon={icon}>
-        <BaseTextAreaField {...props} />
-    </FieldBox>
-);
+}) => {
+    const TextAreaComponent = hidden ? BaseMaskedTextAreaField : BaseTextAreaField;
+
+    return (
+        <FieldBox
+            actions={actions}
+            actionsContainerClassName={actionsContainerClassName}
+            className={className}
+            icon={icon}
+        >
+            <TextAreaComponent {...props} />
+        </FieldBox>
+    );
+};
