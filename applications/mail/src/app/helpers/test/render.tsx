@@ -112,9 +112,9 @@ const TestProvider = ({ children, history }: Props) => {
                                                 <MailContentRefProvider mailContentRef={contentRef}>
                                                     <ChecklistsProvider>
                                                         <MailboxContainerContextProvider
-                                                            isResizing={false}
                                                             containerRef={contentRef}
                                                             elementID={undefined}
+                                                            isResizing={false}
                                                         >
                                                             <ComposeProvider onCompose={onCompose}>
                                                                 <ComposerAssistantProvider>
