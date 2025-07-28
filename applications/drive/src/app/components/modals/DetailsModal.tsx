@@ -21,7 +21,9 @@ import { VERIFICATION_STATUS } from '@proton/crypto';
 import type { Revision } from '@proton/drive';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
+import useFlag from '@proton/unleash/useFlag';
 
+import { FileDetailsModal } from '../../modals/DetailsModal';
 import { type SignatureIssues, useLinkPath } from '../../store';
 import { useLinkDetailsView } from '../../store';
 import { usePublicSession } from '../../store/_api';
@@ -422,7 +424,7 @@ export function BaseDetailsModal({
     );
 }
 
-export function DetailsModal(props: DetailsModalProps & ModalStateProps) {
+export function DetailsModalDeprecated(props: DetailsModalProps & ModalStateProps) {
     const { loadChildren, getCachedChildren } = useLinksListing();
     const { checkFirstBlockSignature } = useDownload({
         loadChildren,
@@ -464,7 +466,8 @@ function DetailsRow({ label, title, children, dataTestId }: RowProps) {
 }
 
 export const useDetailsModal = () => {
-    return useModalTwoStatic(DetailsModal);
+    const useSDKModal = useFlag('DriveWebSDKFileDetailsModal');
+    return useModalTwoStatic(useSDKModal ? FileDetailsModal : DetailsModalDeprecated);
 };
 
 export const usePublicDetailsModal = () => {

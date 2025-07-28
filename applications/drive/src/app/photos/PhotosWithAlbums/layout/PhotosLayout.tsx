@@ -231,10 +231,11 @@ export const PhotosLayout = () => {
 
     const onShowDetails = useCallback(() => {
         const linkId = previewItem ? previewItem.linkId : albumLinkId;
-        if (!previewShareId || !linkId) {
+        if (!previewShareId || !linkId || !volumeId) {
             return;
         }
         showDetailsModal({
+            volumeId: volumeId,
             shareId: previewShareId,
             linkId: linkId,
         });

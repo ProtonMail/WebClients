@@ -275,7 +275,11 @@ export const AlbumsCard: FC<Props> = ({
                         )}
                         {album.sharedBy && album.shareId && (
                             <div className="shrink-0 mb-2">
-                                <SharedAlbumDropdownButton shareId={album.shareId} linkId={album.linkId} />
+                                <SharedAlbumDropdownButton
+                                    volumeId={album.volumeId}
+                                    shareId={album.shareId}
+                                    linkId={album.linkId}
+                                />
                             </div>
                         )}
                     </div>
