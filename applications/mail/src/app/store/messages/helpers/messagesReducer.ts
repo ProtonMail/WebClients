@@ -2,11 +2,13 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
+import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
+import { applyLabelToMessage, removeLabelFromMessage } from 'proton-mail/store/mailbox/locationHelpers';
 
 import { isMessage } from '../../../helpers/elements';
 import type { QueryParams, QueryResults, TaskRunningInfo } from '../../elements/elementsTypes';
@@ -183,5 +185,43 @@ export const markConversationsAsUnreadPending = (
         if (lastMessageState?.data) {
             lastMessageState.data.Unread = 1;
         }
+    });
+};
+
+export const labelMessagesPending = (
+    state: Draft<MessagesState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        { arg: { elements: Message[]; targetLabelID: string; labels: Label[]; folders: Folder[] } }
+    >
+) => {
+    const { elements, targetLabelID, labels, folders } = action.meta.arg;
+
+    elements.forEach((element) => {
+        const messageState = getMessage(state, element.ID);
+
+        if (!messageState || !messageState.data) {
+            return;
+        }
+
+        applyLabelToMessage(messageState.data as Message, targetLabelID, folders, labels);
+    });
+};
+
+export const unlabelMessagesPending = (
+    state: Draft<MessagesState>,
+    action: PayloadAction<undefined, string, { arg: { elements: Message[]; targetLabelID: string; labels: Label[] } }>
+) => {
+    const { elements, targetLabelID, labels } = action.meta.arg;
+
+    elements.forEach((element) => {
+        const messageState = getMessage(state, element.ID);
+
+        if (!messageState || !messageState.data) {
+            return;
+        }
+
+        removeLabelFromMessage(messageState.data as Message, targetLabelID, labels);
     });
 };

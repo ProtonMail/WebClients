@@ -6,7 +6,6 @@ import type { HotkeyTuple } from '@proton/components';
 import { useEventManager, useHotkeys } from '@proton/components';
 import { useFolders } from '@proton/mail';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import { getFolderName } from '@proton/mail/store/labels/helpers';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isVisibleOnScreen } from '@proton/shared/lib/helpers/dom';
@@ -25,8 +24,10 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { isStarred } from '../../helpers/elements';
+import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import type { Element } from '../../models/element';
+import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../actions/move/useMoveToFolder';
 import { useStar } from '../actions/useStar';
@@ -92,6 +93,7 @@ export const useMessageHotkeys = (
     const filterDropdownToggleRef = useRef<() => void>(noop);
 
     const { markAs } = useMarkAs();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder();
     const star = useStar();
 
@@ -110,13 +112,20 @@ export const useMessageHotkeys = (
 
         const folderName = getFolderName(LabelID, folders);
 
-        await moveToFolder({
-            elements: [message.data],
-            sourceLabelID: labelID,
-            destinationLabelID: LabelID,
-            folderName,
-            sourceAction: SOURCE_ACTION.SHORTCUTS,
-        });
+        if (applyOptimisticLocationEnabled) {
+            await applyLocation({
+                elements: [message.data],
+                targetLabelID: LabelID,
+            });
+        } else {
+            await moveToFolder({
+                elements: [message.data],
+                sourceLabelID: labelID,
+                destinationLabelID: LabelID,
+                folderName,
+                sourceAction: SOURCE_ACTION.SHORTCUTS,
+            });
+        }
     };
 
     const shouldStopPropagation = (e: KeyboardEvent, direction: ARROW_SCROLL_DIRECTIONS) => {
@@ -294,7 +303,22 @@ export const useMessageHotkeys = (
             async (e) => {
                 if (hotkeysEnabledAndMessageReady && message.data) {
                     e.stopPropagation();
-                    await star([message.data as Element], !isStarred(message.data), labelID, SOURCE_ACTION.SHORTCUTS);
+
+                    if (applyOptimisticLocationEnabled) {
+                        await applyLocation({
+                            elements: [message.data as Element],
+                            targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                            removeLabel: isStarred(message.data),
+                            showSuccessNotification: false,
+                        });
+                    } else {
+                        await star(
+                            [message.data as Element],
+                            !isStarred(message.data),
+                            labelID,
+                            SOURCE_ACTION.SHORTCUTS
+                        );
+                    }
                 }
             },
         ],

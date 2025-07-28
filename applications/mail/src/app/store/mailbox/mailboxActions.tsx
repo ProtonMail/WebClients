@@ -2,11 +2,20 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { conversationCountsActions, messageCountsActions } from '@proton/mail';
 import {
+    labelConversations as labelConversationsApi,
     markConversationsAsRead as markConversationsAsReadApi,
     markConversationsAsUnread as markConversationsAsUnreadApi,
+    unlabelConversations as unlabelConversationsApi,
 } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
-import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
+import {
+    labelMessages as labelMessagesApi,
+    markMessageAsRead,
+    markMessageAsUnread,
+    unlabelMessages as unlabelMessagesApi,
+} from '@proton/shared/lib/api/messages';
+import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import UndoActionNotification from 'proton-mail/components/notifications/UndoActionNotification';
@@ -17,7 +26,11 @@ import type { Element } from 'proton-mail/models/element';
 
 import type { MailThunkExtra } from '../store';
 import type { MailThunkArguments } from '../thunk';
-import { getNotificationTextMarked } from './mailboxHelpers';
+import {
+    getNotificationTextLabelAdded,
+    getNotificationTextLabelRemoved,
+    getNotificationTextMarked,
+} from './mailboxHelpers';
 
 const runAction = async ({
     extra,
@@ -32,51 +45,61 @@ const runAction = async ({
     elements: Element[];
     action: (chunk: Element[]) => any;
 }) => {
-    let result: PromiseSettledResult<string | undefined>[] = [];
-    try {
-        extra.eventManager.stop();
+    const promise = new Promise<PromiseSettledResult<string | undefined>[]>(async (resolve, reject) => {
+        let result: PromiseSettledResult<string | undefined>[] = [];
 
-        const promise = runParallelChunkedActions({
-            api: extra.api,
-            items: elements,
-            action,
-        });
+        try {
+            extra.eventManager.stop();
 
-        if (notificationText) {
-            extra.notificationManager.createNotification({
-                text: (
-                    <UndoActionNotification
-                        onUndo={() => {
-                            const undo = async () => {
-                                const tokens = await promise;
-                                const filteredTokens = getFilteredUndoTokens(tokens);
-                                await Promise.all(
-                                    filteredTokens.map((token) => extra.api({ ...undoActions(token), silence: true }))
-                                );
-                                await extra.eventManager.call();
-                            };
-                            void undo();
-                            // Throw an error to undo the action optimistically
-                            throw new Error('Undo action');
-                        }}
-                    >
-                        {notificationText}
-                    </UndoActionNotification>
-                ),
-                expiration: SUCCESS_NOTIFICATION_EXPIRATION,
+            const promise = runParallelChunkedActions({
+                api: extra.api,
+                items: elements,
+                action,
             });
-        }
 
-        result = await promise;
-    } finally {
+            if (notificationText) {
+                extra.notificationManager.createNotification({
+                    text: (
+                        <UndoActionNotification
+                            onUndo={() => {
+                                const undo = async () => {
+                                    const tokens = await promise;
+                                    const filteredTokens = getFilteredUndoTokens(tokens);
+                                    await Promise.all(
+                                        filteredTokens.map((token) =>
+                                            extra.api({ ...undoActions(token), silence: true })
+                                        )
+                                    );
+                                    await extra.eventManager.call();
+                                };
+                                void undo();
+                                // Reject the promise to undo the action optimistically (AsyncThunk: reject)
+                                reject(new Error('Undo action'));
+                            }}
+                        >
+                            {notificationText}
+                        </UndoActionNotification>
+                    ),
+                    expiration: SUCCESS_NOTIFICATION_EXPIRATION,
+                });
+            }
+
+            result = await promise;
+
+            resolve(result);
+        } catch (error) {
+            reject(error);
+        }
+    });
+
+    return promise.finally(async () => {
         extra.eventManager.start();
 
         // We force-fetch events after the action is completed to ensure the UI is updated in cases where the optimistic update cannot be reliably predicted
         if (finallyFetchEvents) {
             await extra.eventManager.call();
         }
-    }
-    return result;
+    });
 };
 
 export const markMessagesAsRead = createAsyncThunk<
@@ -209,8 +232,155 @@ export const markConversationsAsUnread = createAsyncThunk<
     }
 );
 
-// export const applyLabelsToMessages = createAction('mailbox/applyLabelsToMessages');
-// export const applyLabelsToConversations = createAction('mailbox/applyLabelsToConversations');
-// export const permanentlyDeleteMessages = createAction('mailbox/permanentlyDeleteMessages');
-// export const permanentlyDeleteConversations = createAction('mailbox/permanentlyDeleteConversations');
-// export const emptyLabel = createAction('mailbox/emptyLabel');
+export const labelMessages = createAsyncThunk<
+    PromiseSettledResult<string | undefined>[],
+    {
+        elements: Message[];
+        targetLabelID: string;
+        isEncryptedSearch: boolean;
+        showSuccessNotification?: boolean;
+        labels: Label[];
+        folders: Folder[];
+    },
+    MailThunkExtra
+>(
+    'mailbox/labelMessages',
+    async (
+        { elements, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
+        { extra, dispatch }
+    ) => {
+        try {
+            dispatch(messageCountsActions.labelMessagesPending({ elements, targetLabelID, labels, folders }));
+            const result = await runAction({
+                extra,
+                finallyFetchEvents: isEncryptedSearch,
+                notificationText: showSuccessNotification
+                    ? getNotificationTextLabelAdded(true, elements.length, targetLabelID, labels, folders)
+                    : undefined,
+                elements,
+                action: (chunk) =>
+                    labelMessagesApi({
+                        IDs: chunk.map((element: Element) => element.ID),
+                        LabelID: targetLabelID,
+                        // SpamAction
+                    }),
+            });
+            return result;
+        } catch (error) {
+            // TODO: handle rejection
+            throw error;
+        }
+    }
+);
+
+export const unlabelMessages = createAsyncThunk<
+    PromiseSettledResult<string | undefined>[],
+    {
+        elements: Message[];
+        targetLabelID: string;
+        isEncryptedSearch: boolean;
+        showSuccessNotification?: boolean;
+        labels: Label[];
+        folders: Folder[];
+    },
+    MailThunkExtra
+>(
+    'mailbox/unlabelMessages',
+    async (
+        { elements, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
+        { extra, dispatch }
+    ) => {
+        try {
+            dispatch(messageCountsActions.unlabelMessagesPending({ elements, targetLabelID, labels, folders }));
+            const result = await runAction({
+                extra,
+                finallyFetchEvents: isEncryptedSearch,
+                notificationText: showSuccessNotification
+                    ? getNotificationTextLabelRemoved(true, elements.length, targetLabelID, labels, folders)
+                    : undefined,
+                elements,
+                action: (chunk) =>
+                    unlabelMessagesApi({
+                        IDs: chunk.map((element: Element) => element.ID),
+                        LabelID: targetLabelID,
+                    }),
+            });
+            return result;
+        } catch (error) {
+            // TODO: handle rejection
+            throw error;
+        }
+    }
+);
+
+export const labelConversations = createAsyncThunk<
+    PromiseSettledResult<string | undefined>[],
+    {
+        conversations: Conversation[];
+        targetLabelID: string;
+        isEncryptedSearch: boolean;
+        showSuccessNotification?: boolean;
+        labels: Label[];
+        folders: Folder[];
+    },
+    MailThunkExtra
+>(
+    'mailbox/labelConversations',
+    async (
+        { conversations, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
+        { extra }
+    ) => {
+        return runAction({
+            extra,
+            finallyFetchEvents: isEncryptedSearch,
+            notificationText: showSuccessNotification
+                ? getNotificationTextLabelAdded(false, conversations.length, targetLabelID, labels, folders)
+                : undefined,
+            elements: conversations,
+            action: (chunk) =>
+                labelConversationsApi({
+                    IDs: chunk.map((conversation: Conversation) => conversation.ID),
+                    LabelID: targetLabelID,
+                    // SpamAction
+                }),
+        });
+    }
+);
+
+export const unlabelConversations = createAsyncThunk<
+    PromiseSettledResult<string | undefined>[],
+    {
+        conversations: Conversation[];
+        targetLabelID: string;
+        isEncryptedSearch: boolean;
+        showSuccessNotification?: boolean;
+        labels: Label[];
+        folders: Folder[];
+    },
+    MailThunkExtra
+>(
+    'mailbox/unlabelConversations',
+    async (
+        { conversations, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
+        { extra }
+    ) => {
+        try {
+            const result = await runAction({
+                extra,
+                finallyFetchEvents: isEncryptedSearch,
+                notificationText: showSuccessNotification
+                    ? getNotificationTextLabelRemoved(false, conversations.length, targetLabelID, labels, folders)
+                    : undefined,
+                elements: conversations,
+                action: (chunk) =>
+                    unlabelConversationsApi({
+                        IDs: chunk.map((conversation: Conversation) => conversation.ID),
+                        LabelID: targetLabelID,
+                    }),
+            });
+            return result;
+        } catch (error) {
+            throw error;
+        }
+    }
+);
