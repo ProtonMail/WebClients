@@ -1,25 +1,23 @@
-export type ItemIDRevision = ItemIDRevision2;
+export type ItemMoveIndividualToShareRequest = {
+  /* Encrypted ID of the source item to move */
+  ItemID: string;
+  /* Data to create the new item in the destination vault */
+  Item?: ItemCreateRequest | null;
+  /* Previous revisions of this item */
+  History?: ItemHistoryRequest[];
+  /* Item keys encrypted with the target vault key */
+  ItemKeys: EncodedItemKeyRotation[];
+};
 
 export type ItemMoveSingleToShareRequest = {
   /* Encrypted ID of the destination share */
   ShareID: string;
   /* Data to create the new item */
-  Item: ItemCreateRequest;
+  Item?: ItemCreateRequest | null;
   /* Previous revisions of this item */
-  History: ItemHistoryRequest[];
+  History?: ItemHistoryRequest[];
   /* Item keys encrypted with the target vault key */
-  ItemKeys?: EncodedItemKeyRotation[];
-};
-
-export type ItemMoveIndividualToShareRequest = {
-  /* Encrypted ID of the source item to move */
-  ItemID: string;
-  /* Data to create the new item in the destination vault */
-  Item: ItemCreateRequest;
-  /* Previous revisions of this item */
-  History: ItemHistoryRequest[];
-  /* Item keys encrypted with the target vault key */
-  ItemKeys?: EncodedItemKeyRotation[];
+  ItemKeys: EncodedItemKeyRotation[];
 };
 
 export type PublicLinkCreateRequest = {
@@ -27,7 +25,7 @@ export type PublicLinkCreateRequest = {
   Revision: number;
   /* Expiration time for the link in seconds. Minimum 3600 (1h), at maximum 30 days in the future */
   ExpirationTime: number;
-  /* Maximum amount of times that the item can be read. Unlimited reads if omitted */
+  /* Maximum amount of times that the item can be read. Unlimited reads if null */
   MaxReadCount?: number;
   /* Encrypted item key encoded in base64 */
   EncryptedItemKey: string;
@@ -35,15 +33,50 @@ export type PublicLinkCreateRequest = {
   EncryptedLinkKey: string;
   /* ShareKey rotation used for encrypting the encryptedLinkKey */
   LinkKeyShareKeyRotation: number;
+  /* If the link key is being encrypted with the item key */
+  LinkKeyEncryptedWithItemKey?: boolean;
 };
 
-export type BreachAction = {
-  /* Unique identifier of the action. Possible values are: <ul><li>stay_alert: No special action required</li><li>password_exposed: Plaintext password leaked. User needs to change the password</li><li>password_source: hashed password exposed. User would better change the password</li><li>passwords_all: all hashed passwords leaked for a site. Recommendation for a paranoid person would be to change all passwords everywhere</li><li>2fa: Recommended to enable 2fa</li><li>aliases: Use an alias instead of your email address</li></ul> */
-  Code: string;
-  /* Translated name of the action to take */
-  Name: string;
-  /* Further information about how to take the action */
-  Desc: string;
-  /* List of URLs used to build clickable links in the description. */
-  Urls?: string[];
+export type PublicLinkGetContentResponse = {
+  /* Base64 encoded item contents encrypted with the itemKey */
+  Contents: string;
+  /* Base64 encrypted item key */
+  ItemKey: string;
+  /* Token to use in order to fetch the files for the item. If null, the item does not have files */
+  FilesToken?: string | null;
+  /* ContentFormatVersion of the item contents */
+  ContentFormatVersion: number;
+  /* How many times the link has been read */
+  ReadCount: number;
+  /* If not null, the maximum amount of times the link can be read */
+  MaxReadCount: number;
+  /* Timestamp in seconds of the expiration time for the link */
+  ExpirationTime: number;
+  /* If the link key is being encrypted with the item key */
+  LinkKeyEncryptedWithItemKey?: boolean;
+};
+
+export type PublicLinkGetResponse = {
+  /* ID of the public link */
+  LinkID: string;
+  /* Number of times the item has been read */
+  ReadCount: number;
+  /* If not null, maximum number of times the item can be read */
+  MaxReadCount: number;
+  /* Link expiration timestamp */
+  ExpirationTime: number;
+  /* ShareID of the item that the link points at */
+  ShareID: string;
+  /* itemID of the item that the link points at */
+  ItemID: string;
+  /* URL to the link */
+  LinkURL: string;
+  /* LinkKey encrypted with the ShareKey in B64 */
+  EncryptedLinkKey: string;
+  /* KeyRotation for the ShareKey used to encrypt the LinkKey */
+  LinkKeyShareKeyRotation: number;
+  /* Whether the link is active or already expired/beyond read count */
+  Active: boolean;
+  /* If the link key is being encrypted with the item key */
+  LinkKeyEncryptedWithItemKey?: boolean;
 };
