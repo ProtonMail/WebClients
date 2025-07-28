@@ -64,6 +64,10 @@ interface ResizableWrapperProps extends ResizableOptions {
      */
     onWidthChange?: (width: number) => void;
     /**
+     * Callback when resizing state changes
+     */
+    onResizingChange?: (isResizing: boolean) => void;
+    /**
      * Optional external ref for the resize handle
      * Useful when integrating with existing context providers
      */
@@ -101,6 +105,7 @@ export const ResizableWrapper = ({
     defaultRatio = DEFAULT_RATIO_OF_MAILBOX_LIST,
     resizingDisabled = false,
     containerRef,
+    onResizingChange,
 }: ResizableWrapperProps) => {
     const resizableWrapperRef = useRef<HTMLDivElement>(null);
     const innerContentRef = useRef<HTMLDivElement>(null);
@@ -135,6 +140,10 @@ export const ResizableWrapper = ({
     useEffect(() => {
         onWidthChange?.(width);
     }, [width]);
+
+    useEffect(() => {
+        onResizingChange?.(isResizing);
+    }, [isResizing]);
 
     if (resizingDisabled) {
         return children;
