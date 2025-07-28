@@ -4,7 +4,7 @@ import metrics from '@proton/metrics';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import useFlag from '@proton/unleash/useFlag';
 
-import { converViewToString } from './calendarMetricsHelper';
+import { convertViewToString } from './calendarMetricsHelper';
 
 type TransitionType = 'day-view' | 'week-view' | 'month-view' | 'search-view' | 'custom';
 
@@ -28,7 +28,7 @@ export const useCalendarPTTMetric = () => {
 
         metricRef.current = {
             startTime: startTime,
-            transitionType: converViewToString(transition_type),
+            transitionType: convertViewToString(transition_type),
             prevPageClicked: !!prevClicked,
             nextPageClicked: !!nextClicked,
         };
