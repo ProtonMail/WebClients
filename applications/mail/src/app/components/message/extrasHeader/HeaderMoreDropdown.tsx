@@ -21,7 +21,7 @@ import {
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { useFolders } from '@proton/mail';
-import { getFolderName } from '@proton/mail/store/labels/helpers';
+import { getCurrentFolderID } from '@proton/mail/helpers/location';
 import type {
     MessageState,
     MessageStateWithData,
@@ -34,6 +34,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
@@ -41,7 +42,7 @@ import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubs
 import { formatFileNameDate } from '../../../helpers/date';
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
 import { canSetExpiration, getExpirationTime } from '../../../helpers/expiration';
-import { getCurrentFolderID } from '../../../helpers/labels';
+import { getFolderName } from '../../../helpers/labels';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import type { MessageViewIcons } from '../../../helpers/message/icon';
 import { exportBlob } from '../../../helpers/message/messageExport';
@@ -111,6 +112,7 @@ const HeaderMoreDropdown = ({
     const dispatch = useMailDispatch();
     const [loading, withLoading] = useLoading();
     const star = useStar();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const [user] = useUser();
     const { feature } = useFeature(FeatureCode.SetExpiration);
     const closeDropdown = useRef<() => void>();
@@ -188,7 +190,20 @@ const HeaderMoreDropdown = ({
     };
 
     const handleStar = async () => {
-        if (!loading) {
+        if (loading) {
+            return;
+        }
+
+        if (applyOptimisticLocationEnabled) {
+            void withLoading(
+                applyLocation({
+                    elements: [message.data || ({} as Element)],
+                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    removeLabel: isStarred,
+                    showSuccessNotification: false,
+                })
+            );
+        } else {
             void withLoading(star([message.data || ({} as Element)], !isStarred, labelID, SOURCE_ACTION.MORE_DROPDOWN));
         }
     };

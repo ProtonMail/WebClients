@@ -6,7 +6,7 @@ import type { Location } from 'history';
 import type { HotkeyTuple } from '@proton/components';
 import { useHotkeys } from '@proton/components';
 import { useFolders } from '@proton/mail';
-import { getFolderName, labelIncludes } from '@proton/mail/store/labels/helpers';
+import { labelIncludes } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -19,9 +19,11 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { isStarred } from '../../helpers/elements';
+import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import type { Element } from '../../models/element';
+import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from '../actions/delete/usePermanentDelete';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../actions/move/useMoveToFolder';
@@ -102,7 +104,7 @@ export const useMailboxHotkeys = (
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
     const elementIDForList = checkedIDs.length ? undefined : elementID;
     const elementRef = useRef<HTMLDivElement>(null);
-
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
     const star = useStar();
@@ -133,15 +135,23 @@ export const useMailboxHotkeys = (
 
         const folderName = getFolderName(LabelID, folders);
 
-        await moveToFolder({
-            elements,
-            sourceLabelID: labelID,
-            destinationLabelID: LabelID,
-            folderName,
-            selectAll,
-            onCheckAll: handleCheckAll,
-            sourceAction: SOURCE_ACTION.SHORTCUTS,
-        });
+        if (applyOptimisticLocationEnabled && !selectAll) {
+            await applyLocation({
+                elements,
+                targetLabelID: LabelID,
+            });
+        } else {
+            await moveToFolder({
+                elements,
+                sourceLabelID: labelID,
+                destinationLabelID: LabelID,
+                folderName,
+                selectAll,
+                onCheckAll: handleCheckAll,
+                sourceAction: SOURCE_ACTION.SHORTCUTS,
+            });
+        }
+
         if (elementIDForList) {
             handleBack();
         }
@@ -380,7 +390,17 @@ export const useMailboxHotkeys = (
                     }
                     e.stopPropagation();
                     const isAllStarred = elements.filter((element) => isStarred(element)).length === elements.length;
-                    await star(elements, !isAllStarred, labelID, SOURCE_ACTION.SHORTCUTS);
+
+                    if (applyOptimisticLocationEnabled) {
+                        await applyLocation({
+                            elements,
+                            targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                            removeLabel: isAllStarred,
+                            showSuccessNotification: false,
+                        });
+                    } else {
+                        await star(elements, !isAllStarred, labelID, SOURCE_ACTION.SHORTCUTS);
+                    }
                 }
             },
         ],

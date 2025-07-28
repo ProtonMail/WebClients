@@ -3,7 +3,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCounts';
 import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCounts';
-import { getCustomViewFromRoute, isValidCustomViewLabel } from '@proton/mail/store/labels/helpers';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -23,6 +22,7 @@ import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/stor
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
+import { getCustomViewFromRoute, isValidCustomViewLabel } from '../../helpers/labels';
 import { pageCount } from '../../helpers/paging';
 import type { Element } from '../../models/element';
 import { conversationByID } from '../../store/conversations/conversationsSelectors';

@@ -4,7 +4,7 @@ import type { IndexingMetrics } from '@proton/encrypted-search/lib/esHelpers';
 import type { ESCalendarSearchParams } from '@proton/encrypted-search/lib/models/calendar';
 import type { ESDriveSearchParams } from '@proton/encrypted-search/lib/models/drive';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
-import { getLabelNameAnonymised } from '@proton/mail/store/labels/helpers';
+import { getLabelNameAnonymised } from '@proton/mail/helpers/location';
 import { TelemetryEncryptedSearchEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
-import { getStandardFolders } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
@@ -11,6 +10,7 @@ import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
+import { getStandardFolders } from '../../../../helpers/labels';
 import useScheduleSendFeature from '../../../composer/actions/scheduleSend/useScheduleSendFeature';
 
 interface ItemBase {

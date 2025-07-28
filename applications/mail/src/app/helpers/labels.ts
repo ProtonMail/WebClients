@@ -1,36 +1,104 @@
-import type { FolderInfo } from '@proton/mail/store/labels/helpers';
-import { getStandardFolders, labelIncludes } from '@proton/mail/store/labels/helpers';
+import type { IconName } from 'packages/icons';
+import { c } from 'ttag';
+
+import { isCategoryLabel, labelIncludes } from '@proton/mail/helpers/location';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
 import { getLabelIDs } from './elements';
 
-const {
-    INBOX,
-    TRASH,
-    SPAM,
-    ARCHIVE,
-    SENT,
-    DRAFTS,
-    ALL_SENT,
-    ALL_DRAFTS,
-    SCHEDULED,
-    OUTBOX,
-    STARRED,
-    ALL_MAIL,
-    SNOOZED,
-    ALMOST_ALL_MAIL,
-} = MAILBOX_LABEL_IDS;
-const DEFAULT_FOLDERS = [INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, SCHEDULED, OUTBOX];
+const { SENT, DRAFTS, ALL_SENT, ALL_DRAFTS, SCHEDULED, STARRED, ALL_MAIL, SNOOZED, ALMOST_ALL_MAIL } =
+    MAILBOX_LABEL_IDS;
 
 export type LabelChanges = { [labelID: string]: boolean };
+
+export interface FolderInfo {
+    icon: IconName;
+    name: string;
+    to: string;
+    color?: string;
+    parentID?: string | number;
+}
+
+interface FolderMap {
+    [id: string]: FolderInfo;
+}
+
+export const getStandardFolders = (): FolderMap => ({
+    [MAILBOX_LABEL_IDS.INBOX]: {
+        icon: 'inbox',
+        name: c('Link').t`Inbox`,
+        to: '/inbox',
+    },
+    [MAILBOX_LABEL_IDS.TRASH]: {
+        icon: 'trash',
+        name: c('Link').t`Trash`,
+        to: '/trash',
+    },
+    [MAILBOX_LABEL_IDS.SPAM]: {
+        icon: 'fire',
+        name: c('Link').t`Spam`,
+        to: '/spam',
+    },
+    [MAILBOX_LABEL_IDS.ARCHIVE]: {
+        icon: 'archive-box',
+        name: c('Link').t`Archive`,
+        to: '/archive',
+    },
+    [MAILBOX_LABEL_IDS.SENT]: {
+        icon: 'paper-plane',
+        name: c('Link').t`Sent`,
+        to: `/${LABEL_IDS_TO_HUMAN[SENT]}`,
+    },
+    [MAILBOX_LABEL_IDS.ALL_SENT]: {
+        icon: 'paper-plane',
+        name: c('Link').t`Sent`,
+        to: `/${LABEL_IDS_TO_HUMAN[ALL_SENT]}`,
+    },
+    [MAILBOX_LABEL_IDS.DRAFTS]: {
+        icon: 'file-lines',
+        name: c('Link').t`Drafts`,
+        to: `/${LABEL_IDS_TO_HUMAN[DRAFTS]}`,
+    },
+    [MAILBOX_LABEL_IDS.ALL_DRAFTS]: {
+        icon: 'file-lines',
+        name: c('Link').t`Drafts`,
+        to: `/${LABEL_IDS_TO_HUMAN[ALL_DRAFTS]}`,
+    },
+    [MAILBOX_LABEL_IDS.SCHEDULED]: {
+        icon: 'paper-plane-clock',
+        name: c('Link').t`Scheduled`,
+        to: `/${LABEL_IDS_TO_HUMAN[SCHEDULED]}`,
+    },
+    [MAILBOX_LABEL_IDS.STARRED]: {
+        icon: 'star',
+        name: c('Link').t`Starred`,
+        to: `/${LABEL_IDS_TO_HUMAN[STARRED]}`,
+    },
+    [MAILBOX_LABEL_IDS.SNOOZED]: {
+        icon: 'clock',
+        name: c('Link').t`Snooze`,
+        to: `/${LABEL_IDS_TO_HUMAN[SNOOZED]}`,
+    },
+    [MAILBOX_LABEL_IDS.ALL_MAIL]: {
+        icon: 'envelopes',
+        name: c('Link').t`All mail`,
+        to: `/${LABEL_IDS_TO_HUMAN[ALL_MAIL]}`,
+    },
+    [MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]: {
+        icon: 'envelopes',
+        name: c('Link').t`All mail`,
+        to: `/${LABEL_IDS_TO_HUMAN[ALMOST_ALL_MAIL]}`,
+    },
+});
 
 export const getCurrentFolders = (
     element: Element | undefined,
@@ -76,11 +144,6 @@ export const getCurrentFolders = (
                 parentID: folder?.ParentID,
             };
         });
-};
-
-export const getCurrentFolderID = (labelIDs: string[] = [], customFoldersList: Folder[] = []): string => {
-    const allFolderIDs = [...DEFAULT_FOLDERS, ...customFoldersList.map(({ ID }) => ID)];
-    return labelIDs.find((labelID) => allFolderIDs.includes(labelID)) || '';
 };
 
 export interface UnreadStatus {
@@ -242,4 +305,78 @@ export const getSortedChanges = (changes: {
         },
         { toLabel: [], toUnlabel: [] }
     );
+};
+
+export const getViewTitleFromLabel = (label: string) => {
+    switch (label) {
+        case CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS:
+            return c('Title').t`Newsletters view`;
+        default:
+            return label;
+    }
+};
+
+export const isValidCustomViewLabel = (label: string): boolean => {
+    return Object.keys(CUSTOM_VIEWS).includes(label);
+};
+
+export const isLabelIDNewsletterSubscription = (labelID: string): boolean => {
+    return labelID === CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].label;
+};
+
+export const convertCustomViewLabelsToAlmostAllMail = (labelID: string) => {
+    if (isLabelIDNewsletterSubscription(labelID)) {
+        return MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL;
+    }
+
+    return labelID;
+};
+
+export const getCustomViewFromRoute = (route: string) => {
+    return Object.values(CUSTOM_VIEWS).find(({ route: customRoute }) => customRoute === route);
+};
+
+export const getCustomViewFromLabel = (label: string) => {
+    return Object.values(CUSTOM_VIEWS).find(({ label: customLabel }) => customLabel === label);
+};
+
+export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
+    if (labelID in LABEL_IDS_TO_HUMAN) {
+        const folders = getStandardFolders();
+        const labelIDToUse = isCategoryLabel(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
+        return folders[labelIDToUse]?.name || folders[MAILBOX_LABEL_IDS.INBOX].name;
+    }
+
+    const labelsMap = toMap(labels, 'ID');
+    if (labelID in labelsMap) {
+        return labelsMap[labelID]?.Name || labelID;
+    }
+
+    const foldersMap = toMap(folders, 'ID');
+    if (labelID in foldersMap) {
+        return foldersMap[labelID]?.Name || labelID;
+    }
+
+    if (isValidCustomViewLabel(labelID)) {
+        return getViewTitleFromLabel(labelID);
+    }
+
+    return labelID;
+};
+
+export const getLabelNames = (changes: string[], labels: Label[], folders: Folder[]) => {
+    if (!changes || changes.length === 0) {
+        return;
+    }
+
+    return changes.map((ID) => getLabelName(ID, labels, folders));
+};
+
+export const getFolderName = (labelID: string, customFoldersList: Folder[] = []): string => {
+    const standardFolders = getStandardFolders();
+    if (standardFolders[labelID]) {
+        return standardFolders[labelID].name;
+    }
+    const { Name = '' } = customFoldersList.find(({ ID }) => ID === labelID) || {};
+    return Name;
 };

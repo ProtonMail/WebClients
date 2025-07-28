@@ -18,7 +18,6 @@ import {
 } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import { getFolderName } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
@@ -45,6 +44,7 @@ import MessageOnlyView from '../../components/message/MessageOnlyView';
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
 import Toolbar from '../../components/toolbar/Toolbar';
 import { isMessage, isSearch as testIsSearch } from '../../helpers/elements';
+import { getFolderName } from '../../helpers/labels';
 import { isColumnMode, isConversationMode } from '../../helpers/mailSettings';
 import {
     extractSearchParameters,

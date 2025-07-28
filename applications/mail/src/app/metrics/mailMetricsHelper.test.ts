@@ -1,4 +1,4 @@
-import { getLabelNameAnonymised } from '@proton/mail/store/labels/helpers';
+import { getLabelNameAnonymised } from '@proton/mail/helpers/location';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 

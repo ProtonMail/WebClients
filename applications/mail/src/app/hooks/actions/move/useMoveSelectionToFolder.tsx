@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useApi, useEventManager, useModalTwo, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useGetFolders, useGetLabels } from '@proton/mail';
-import { isCustomLabel } from '@proton/mail/store/labels/helpers';
+import { isCustomLabel } from '@proton/mail/helpers/location';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';

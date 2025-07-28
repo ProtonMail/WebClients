@@ -1,6 +1,5 @@
 import { useLocation } from 'react-router-dom';
 
-import { convertCustomViewLabelsToAlmostAllMail } from '@proton/mail/store/labels/helpers';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import { type SearchParameters } from '@proton/shared/lib/mail/search';
@@ -9,6 +8,7 @@ import { extractSearchParameters, pageFromUrl } from 'proton-mail/helpers/mailbo
 import { useDeepMemo } from 'proton-mail/hooks/useDeepMemo';
 import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 
+import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
 import type { RouterNavigation } from '../interface';
 
 interface Props {

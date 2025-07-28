@@ -5,10 +5,12 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { globalReset } from '../actions';
 import {
+    labelMessages,
     markConversationsAsRead,
     markConversationsAsUnread,
     markMessagesAsRead,
     markMessagesAsUnread,
+    unlabelMessages,
 } from '../mailbox/mailboxActions';
 import { deleteDraft } from '../messages/draft/messagesDraftActions';
 import { expireMessages } from '../messages/expire/messagesExpireActions';
@@ -51,6 +53,8 @@ import {
     expireElementsRejected,
     globalReset as globalResetReducer,
     invalidate as invalidateReducer,
+    labelMessagesPending,
+    labelMessagesRejected,
     loadFulfilled,
     loadPending,
     manualFulfilled as manualFulfilledReducer,
@@ -75,6 +79,7 @@ import {
     selectAllFulfilled,
     setParams as setParamsReducer,
     showSerializedElements as showSerializedElementsReducer,
+    unlabelMessagesPending,
     updatePage as updatePageReducer,
 } from './elementsReducers';
 import type { ElementsState, ElementsStateParams, NewStateParams, TaskRunningInfo } from './elementsTypes';
@@ -177,6 +182,11 @@ const elementsSlice = createSlice({
         builder.addCase(markConversationsAsUnread.rejected, markConversationsAsUnreadRejected);
 
         builder.addCase(filterSubscriptionList.pending, markNewsletterElementsAsReadPending);
+
+        builder.addCase(labelMessages.pending, labelMessagesPending);
+        builder.addCase(labelMessages.rejected, labelMessagesRejected);
+        builder.addCase(unlabelMessages.pending, unlabelMessagesPending);
+        builder.addCase(unlabelMessages.rejected, labelMessagesRejected);
     },
 });
 

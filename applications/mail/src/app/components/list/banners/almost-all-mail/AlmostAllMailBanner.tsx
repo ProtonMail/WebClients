@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { getHumanLabelID } from '@proton/mail/store/labels/helpers';
+import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';

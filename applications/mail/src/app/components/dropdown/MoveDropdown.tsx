@@ -30,6 +30,7 @@ import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';
 
@@ -79,6 +80,7 @@ const MoveDropdown = ({
     const getMessagesOrElements = useGetMessagesOrElementsFromIDs();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder(setContainFocus);
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { getSendersToFilter } = useCreateFilters();
 
     const breakpoints = useActiveBreakpoint();
@@ -145,17 +147,25 @@ const MoveDropdown = ({
         // We only need to ignore the value in that scenario
         const canApplyAlways = selectedFolderID !== SPAM;
 
-        await moveToFolder({
-            elements,
-            sourceLabelID: labelID,
-            destinationLabelID: selectedFolderID,
-            folderName: selectedFolderName,
-            createFilters: canApplyAlways ? always : false,
-            selectAll,
-            onCheckAll,
-            sourceAction: SOURCE_ACTION.TOOLBAR,
-            currentFolder: displayedFolder,
-        });
+        if (applyOptimisticLocationEnabled && !selectAll) {
+            await applyLocation({
+                elements,
+                targetLabelID: selectedFolderID,
+                createFilters: canApplyAlways ? always : false,
+            });
+        } else {
+            await moveToFolder({
+                elements,
+                sourceLabelID: labelID,
+                destinationLabelID: selectedFolderID,
+                folderName: selectedFolderName,
+                createFilters: canApplyAlways ? always : false,
+                selectAll,
+                onCheckAll,
+                sourceAction: SOURCE_ACTION.TOOLBAR,
+                currentFolder: displayedFolder,
+            });
+        }
         onClose();
     };
 

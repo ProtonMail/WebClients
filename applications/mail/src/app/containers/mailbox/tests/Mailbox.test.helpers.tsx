@@ -5,7 +5,7 @@ import loudRejection from 'loud-rejection';
 
 import { serverEvent } from '@proton/account';
 import { getModelState } from '@proton/account/test';
-import { getHumanLabelID } from '@proton/mail/store/labels/helpers';
+import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';

@@ -1,12 +1,11 @@
 import { Tooltip } from '@proton/atoms';
 import { useFolders } from '@proton/mail';
-import { getStandardFolders } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { getCurrentFolders } from '../../helpers/labels';
+import { getCurrentFolders, getStandardFolders } from '../../helpers/labels';
 import type { Element } from '../../models/element';
 import ItemIcon from './ItemIcon';
 

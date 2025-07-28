@@ -1,6 +1,6 @@
 import type { Location } from 'history';
 
-import { isAlwaysMessageLabels } from '@proton/mail/store/labels/helpers';
+import { isAlwaysMessageLabels } from '@proton/mail/helpers/location';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
