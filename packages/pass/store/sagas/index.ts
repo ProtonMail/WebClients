@@ -63,9 +63,9 @@ import trashRestore from './vaults/trash-restore.saga';
 import vaultCreation from './vaults/vault-creation.saga';
 import vaultDelete from './vaults/vault-delete.saga';
 import vaultEdit from './vaults/vault-edit.saga';
-import vaultHide from './vaults/vault-hide.saga';
 import vaultMoveAllItems from './vaults/vault-move-all-items.saga';
 import vaultTransferOwner from './vaults/vault-transfer-owner.saga';
+import vaultHide from './vaults/vault-visibility.saga';
 
 const COMMON_SAGAS = [
     ...aliasContactSagas,

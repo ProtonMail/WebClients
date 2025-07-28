@@ -9,34 +9,39 @@ import { Checkbox, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@prot
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
-import { selectAllVaults } from '@proton/pass/store/selectors';
-import type { ShareHiddenMap, ShareId } from '@proton/pass/types';
+import { intoShareVisibilityMap } from '@proton/pass/lib/shares/share.utils';
+import { sharesVisibilityEdit } from '@proton/pass/store/actions';
+import { selectAllVaults, selectRequestInFlight } from '@proton/pass/store/selectors';
+import type { ShareId, ShareVisibilityMap } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 const FORM_ID = 'organize-vaults';
-type Props = { onClose: () => void; onConfirm: (hideMap: ShareHiddenMap) => void };
+type Props = { onClose: () => void; onConfirm: (visibilityMap: ShareVisibilityMap) => void };
 
 export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
     const vaults = useSelector(selectAllVaults);
-    const [hideMap, setHideMap] = useState<ShareHiddenMap>(
-        Object.fromEntries(vaults.map((vault) => [vault.shareId, !isShareVisible(vault)]))
-    );
+    const [visibilityMap, setVisibilityMap] = useState<ShareVisibilityMap>(() => intoShareVisibilityMap(vaults));
 
-    const handleChange = (shareId: ShareId) => () => setHideMap((prev) => ({ ...prev, [shareId]: !prev[shareId] }));
+    const loading = useSelector(selectRequestInFlight(sharesVisibilityEdit.requestID()));
+
+    const handleChange = (shareId: ShareId) => () =>
+        setVisibilityMap((prev) => ({ ...prev, [shareId]: !prev[shareId] }));
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        // Only send what changed
-        const changeMap = vaults.reduce<ShareHiddenMap>((acc, vault) => {
-            if (!isShareVisible(vault) !== hideMap[vault.shareId]) {
-                acc[vault.shareId] = hideMap[vault.shareId];
+
+        /** Only include shares with changed visibility states. This prevents
+         * issues when the initial visibility map becomes stale due to background
+         * share updates while the modal is open. */
+        const changeMap = vaults.reduce<ShareVisibilityMap>((acc, vault) => {
+            if (isShareVisible(vault) !== visibilityMap[vault.shareId]) {
+                acc[vault.shareId] = visibilityMap[vault.shareId];
             }
             return acc;
         }, {});
+
         onConfirm(changeMap);
     };
-
-    console.warn('[DEBUG] OrganizeVaultsModal', { vaults, hideMap });
 
     return (
         <PassModal open onClose={onClose} enableCloseWhenClickOutside>
@@ -48,7 +53,7 @@ export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
                     {vaults.map((vault, index) => (
                         <Checkbox
                             key={vault.shareId}
-                            checked={!hideMap[vault.shareId]}
+                            checked={visibilityMap[vault.shareId]}
                             onChange={handleChange(vault.shareId)}
                             className={clsx(
                                 'w-full px-4 py-2 pl-2 pr-2 items-center',
@@ -74,11 +79,13 @@ export const OrganizeVaultsModal: FC<Props> = ({ onClose, onConfirm }) => {
                     shape="solid"
                     color="norm"
                     pill
-                    // loading={loading}
-                    // disabled={!form.isValid}
                     type="submit"
                     form={FORM_ID}
                     className="w-full"
+                    /** Prevent concurrent requests when multiple
+                     * extension clients are open simultaneously and
+                     * a visibility update is already in progress */
+                    disabled={loading}
                 >
                     {c('Action').t`Save`}
                 </Button>

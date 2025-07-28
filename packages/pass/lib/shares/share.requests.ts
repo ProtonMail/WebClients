@@ -80,16 +80,17 @@ export const editMemberAccess = async ({ shareId, userShareId, shareRoleId }: Sh
         data: { ShareRoleID: shareRoleId, ExpireTime: null },
     });
 
-export const editHide = async (shareId: string, hide: boolean) => {
+export const toggleVisibility = async (shareId: string, visible: boolean) => {
     const encryptedShare = (
         await api({
-            url: `pass/v1/share/${shareId}/${hide ? 'hide' : 'unhide'}`,
+            url: `pass/v1/share/${shareId}/${visible ? 'unhide' : 'hide'}`,
             method: 'put',
         })
-    ).Share!;
+    ).Share;
 
     const shareKeys = await getAllShareKeys(shareId);
     const share = await parseShareResponse<ShareType.Vault>(encryptedShare, { shareKeys });
+
     if (!share) throw new Error(c('Error').t`Could not open updated vault`);
 
     return share;

@@ -60,4 +60,4 @@ export type ShareSyncKeys =
     | 'targetMaxMembers'
     | 'targetMembers';
 
-export type ShareHiddenMap = Record<ShareId, boolean>;
+export type ShareVisibilityMap = Record<ShareId, boolean>;
