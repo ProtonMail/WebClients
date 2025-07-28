@@ -21,3 +21,4 @@ export * from './settings';
 export * from './shared';
 export * from './shares';
 export * from './user';
+export * from './vaults';

@@ -7,6 +7,7 @@ import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/trans
 import type { ItemsByShareId } from '@proton/pass/store/reducers/items';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
 import { SelectorError } from '@proton/pass/store/selectors/errors';
+import { selectVisibleShares } from '@proton/pass/store/selectors/shares';
 import type { State } from '@proton/pass/store/types';
 import type {
     ItemRevision,
@@ -31,6 +32,9 @@ export const selectNonFailedItems = createSelector(selectItemsState, asIfNotFail
 export const selectNonOptimisticItems = createSelector(selectItemsState, asIfNotOptimistic);
 export const selectItems = createSelector(selectItemsState, unwrapOptimisticState);
 export const selectAllItems = createSelector(selectItems, flattenItemsByShareId);
+export const selectAllVisibleItems = createSelector([selectAllItems, selectVisibleShares], (items, shares) =>
+    items.filter(({ shareId }) => shares.has(shareId))
+);
 export const selectTrashedItems = createSelector(selectAllItems, (items) => items.filter(isTrashed));
 export const selectPinnedItems = createSelector(selectAllItems, (items) => items.filter(and(isActive, isPinned)));
 export const selectLatestDraft = createSelector(selectItemDrafts, (drafts) => first(drafts));
