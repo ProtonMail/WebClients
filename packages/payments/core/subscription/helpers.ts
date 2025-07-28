@@ -457,7 +457,19 @@ const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.BUNDLE_PRO,
     PLANS.BUNDLE_PRO_2024,
 ]);
+
+export const hasLumoMobileSubscription = (subscription?: MaybeFreeSubscription) =>
+    isManagedExternally(subscription) && hasLumoPlan(subscription);
+
+export const getCanAccessFamilyPlans = (subscription?: MaybeFreeSubscription) => {
+    return !hasLumoMobileSubscription(subscription);
+};
+
 export const getCanSubscriptionAccessDuoPlan = (subscription?: MaybeFreeSubscription) => {
+    if (hasLumoMobileSubscription(subscription)) {
+        return false;
+    }
+
     return hasFree(subscription) || subscription?.Plans?.some(({ Name }) => getCanAccessDuoPlanCondition.has(Name));
 };
 
