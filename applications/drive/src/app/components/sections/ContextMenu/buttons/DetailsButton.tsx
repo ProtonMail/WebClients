@@ -5,7 +5,7 @@ import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
-    selectedBrowserItems: { rootShareId: string; linkId: string }[];
+    selectedBrowserItems: { volumeId: string; rootShareId: string; linkId: string }[];
     showDetailsModal: ReturnType<typeof useDetailsModal>[1];
     showFilesDetailsModal: ReturnType<typeof useFilesDetailsModal>[1];
     close: () => void;
@@ -20,6 +20,7 @@ const DetailsButton = ({ selectedBrowserItems, showDetailsModal, showFilesDetail
             action={() => {
                 if (selectedBrowserItems.length === 1) {
                     void showDetailsModal({
+                        volumeId: selectedBrowserItems[0].volumeId,
                         shareId: selectedBrowserItems[0].rootShareId,
                         linkId: selectedBrowserItems[0].linkId,
                     });

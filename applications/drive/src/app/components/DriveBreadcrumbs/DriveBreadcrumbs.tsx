@@ -49,7 +49,12 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                     let onClick;
                     if (linkId === activeFolder.linkId) {
                         onClick = link.signatureIssues
-                            ? () => showDetailsModal({ shareId: activeFolder.shareId, linkId })
+                            ? () =>
+                                  showDetailsModal({
+                                      volumeId: activeFolder.volumeId,
+                                      shareId: activeFolder.shareId,
+                                      linkId,
+                                  })
                             : undefined;
                     } else {
                         onClick = () => navigateToLink(activeFolder.shareId, linkId, false);

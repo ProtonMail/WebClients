@@ -194,7 +194,7 @@ export default function PreviewContainer() {
                 onDownload={downloadFile}
                 videoStreaming={videoStreaming}
                 onSave={isEditEnabled ? handleSaveFile : undefined}
-                onDetails={() => showDetailsModal({ shareId, linkId })}
+                onDetails={!link ? undefined : () => showDetailsModal({ volumeId: link.volumeId, shareId, linkId })}
                 onShare={
                     !isAdmin || isLinkLoading || !link || !!link?.trashed
                         ? undefined

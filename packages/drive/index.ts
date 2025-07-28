@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import { MemoryCache, ProtonDriveClient } from '@protontech/drive-sdk';
+import { MemoryCache, ProtonDriveClient, VERSION } from '@protontech/drive-sdk';
 import type { MemoryLogHandler } from '@protontech/drive-sdk/dist/telemetry';
 // TODO: Remove that when sdk will be transpile with bun
 import 'core-js/actual/array/from-async';
@@ -97,7 +97,7 @@ export function useDrive() {
     const init = useCallback(
         (options: { appName: APP_NAMES; appVersion: string; userPlan?: UserPlan }) => {
             // eslint-disable-next-line no-console
-            console.debug('[drive] Configuring ProtonDriveClient', options);
+            console.debug(`[drive] Configuring ProtonDriveClient ${VERSION}`, options);
 
             if (driveSingleton) {
                 throw new Error('ProtonDriveClient is already configured. You can only configure it once.');
