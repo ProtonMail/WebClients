@@ -3,9 +3,9 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { useElementBreakpoints } from '@proton/components';
-import { isLabelIDNewsletterSubscription } from '@proton/mail/store/labels/helpers';
 import clsx from '@proton/utils/clsx';
 
+import { isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import type { Props as ListSettingsProps } from '../list/ListSettings';
 import ListSettings from '../list/ListSettings';
 

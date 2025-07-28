@@ -56,6 +56,31 @@ When a user marks a read conversation as unread, the following should happen:
 - The last message of the current location attached to the conversation should be marked as unread.
 - The unread conversation counts should be incremented by 1 in the location where the conversation was marked as read. Other locations are for now inpredictable with the partial data the client has today.
 
-## Move message to trash
+## Label a message
 
-## Move conversation to trash
+When a user is applying a label to a message, the new label should be applied to the message. Additionally, depending on the target destination type, extra rules needs to be applied.
+
+### Target destination is a system folder or a custom folder
+
+On top of adding the new label to the message labels, extra rules should be applied:
+
+- When the message will be moved out from TRASH or SPAM, the auto-delete expiration should be removed.
+- If the target destination is TRASH or SPAM:
+    - The message should be removed from STARRED.
+    - The message should be removed from ALMOST_ALL_MAIL.
+    - The message should be removed from all custom labels.
+    - If the destination is TRASH, the message should be marked as read.
+
+### Target destination is a category
+
+The previous category should be replaced by the new one.
+
+### Target destination is a system label or a custom label
+
+No additional rules. The new label should simply be added to the message.
+
+## Unlabel a message
+
+When a user is removing a label from a message, performing the action should be only possible with custom labels, so we are simply removing the label from the message labels.
+
+## Move conversation

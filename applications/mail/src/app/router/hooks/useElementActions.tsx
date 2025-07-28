@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 
 import { useItemsSelection } from '@proton/components';
 import { useFolders } from '@proton/mail';
-import { convertCustomViewLabelsToAlmostAllMail, getFolderName } from '@proton/mail/store/labels/helpers';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
@@ -11,6 +10,7 @@ import { type SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/u
 import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
 import { isMessage } from 'proton-mail/helpers/elements';
 import { setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from 'proton-mail/hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from 'proton-mail/hooks/actions/markAs/useMarkAs';
 import { useMoveToFolder } from 'proton-mail/hooks/actions/move/useMoveToFolder';
@@ -21,6 +21,7 @@ import { useMailECRTMetric } from 'proton-mail/metrics/useMailECRTMetric';
 import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
+import { convertCustomViewLabelsToAlmostAllMail, getFolderName } from '../../helpers/labels';
 import { useMailboxLayoutProvider } from '../components/MailboxLayoutContext';
 import type { RouterNavigation } from '../interface';
 
@@ -49,6 +50,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
 
     const { markAs, selectAllMarkModal } = useMarkAs();
     const getElementsFromIDs = useGetElementsFromIDs();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveToSpamModal, moveSnoozedModal, moveScheduledModal, selectAllMoveModal } =
         useMoveToFolder();
     const onCompose = useOnCompose();
@@ -154,14 +156,22 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
 
     const handleMove = useCallback(
         async (newLabelID: string, sourceAction: SOURCE_ACTION): Promise<void> => {
-            await moveToFolder({
-                elements: getElementsFromIDs(selectedIDs),
-                sourceLabelID: labelID,
-                destinationLabelID: newLabelID,
-                folderName: getFolderName(newLabelID, folders),
-                selectAll,
-                sourceAction: sourceAction,
-            });
+            if (applyOptimisticLocationEnabled && !selectAll) {
+                await applyLocation({
+                    elements: getElementsFromIDs(selectedIDs),
+                    targetLabelID: newLabelID,
+                });
+            } else {
+                await moveToFolder({
+                    elements: getElementsFromIDs(selectedIDs),
+                    sourceLabelID: labelID,
+                    destinationLabelID: newLabelID,
+                    folderName: getFolderName(newLabelID, folders),
+                    selectAll,
+                    sourceAction: sourceAction,
+                });
+            }
+
             if (selectedIDs.includes(elementID || '')) {
                 handleBack();
             }

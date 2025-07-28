@@ -8,9 +8,9 @@ import { useUser } from '@proton/account/user/hooks';
 import type { HotkeyTuple } from '@proton/components';
 import { SidebarList, SimpleSidebarListItemHeader, useHotkeys, useLocalState } from '@proton/components';
 import { useFolders, useLabels, useSystemFolders } from '@proton/mail';
+import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
-import { isCustomFolder, isCustomLabel } from '@proton/mail/store/labels/helpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { SOURCE_EVENT } from '@proton/shared/lib/helpers/collapsibleSidebar';
@@ -22,6 +22,7 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getCounterMap } from '../../helpers/elements';
@@ -67,6 +68,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
     const foldersTreeview = useMemo(() => buildTreeview(foldersUI), [foldersUI]);
     const { applyLabels, applyLabelsToAllModal } = useApplyLabels();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
     const mailboxCount = mailSettings.ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
@@ -294,7 +296,14 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                         showSnoozed={showSnoozed}
                         onToggleMoreItems={toggleDisplayMoreItems}
                         collapsed={collapsed}
-                        applyLabels={applyLabels}
+                        applyLabels={(params) =>
+                            applyOptimisticLocationEnabled && !params.selectAll
+                                ? applyLocation({
+                                      elements: params.elements,
+                                      targetLabelID: params.targetLabelID!, // TODO: Improve this when removing old apply labels function
+                                  })
+                                : applyLabels(params)
+                        }
                         moveToFolder={moveToFolder}
                     />
 

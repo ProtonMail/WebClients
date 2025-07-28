@@ -5,20 +5,24 @@ import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
 import { globalReset } from '../actions';
 import { load as loadElements } from '../elements/elementsActions';
 import {
+    labelMessages,
     markConversationsAsRead,
     markConversationsAsUnread,
     markMessagesAsRead,
     markMessagesAsUnread,
+    unlabelMessages,
 } from '../mailbox/mailboxActions';
 import * as draftAction from './draft/messagesDraftActions';
 import * as draftReducer from './draft/messagesDraftReducers';
 import * as expireAction from './expire/messagesExpireActions';
 import * as expireReducer from './expire/messagesExpireReducers';
 import {
+    labelMessagesPending,
     markConversationsAsReadPending,
     markConversationsAsUnreadPending,
     markMessagesAsReadPending,
     markMessagesAsUnreadPending,
+    unlabelMessagesPending,
     updateFromElements,
 } from './helpers/messagesReducer';
 import * as msgImageAction from './images/messagesImagesActions';
@@ -96,6 +100,11 @@ export const messagesSlice = createSlice({
         builder.addCase(markMessagesAsUnread.pending, markMessagesAsUnreadPending);
         builder.addCase(markConversationsAsRead.pending, markConversationsAsReadPending);
         builder.addCase(markConversationsAsUnread.pending, markConversationsAsUnreadPending);
+
+        builder.addCase(labelMessages.pending, labelMessagesPending);
+        // builder.addCase(labelMessages.rejected, labelMessagesRejected);
+        builder.addCase(unlabelMessages.pending, unlabelMessagesPending);
+        // builder.addCase(unlabelMessages.rejected, labelMessagesRejected);
     },
 });
 
