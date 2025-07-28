@@ -99,7 +99,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const error = state.error;
     const { User, Organization, persistedSession } = session.data;
 
-    const isLumoAvailable = useFlag('LumoInProductSwitcher');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
 
     const subscribed = User.Subscribed;
@@ -144,7 +143,6 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                             subscribed,
                             user: User,
                             organization: Organization,
-                            isLumoAvailable,
                             isDocsHomepageAvailable,
                             oauth: persistedSession.source === SessionSource.Oauth,
                         })}
