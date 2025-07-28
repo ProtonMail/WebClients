@@ -1129,6 +1129,12 @@ export function isSubscriptionUnchanged(
     return planIdsUnchanged && cycleUnchanged;
 }
 
+export const hasLumoAddon = (subscription: MaybeFreeSubscription) => {
+    const currentPlanIDs = getPlanIDs(subscription);
+
+    return Object.keys(currentPlanIDs).some((key) => isLumoAddon(key as any));
+};
+
 export function isForbiddenLumoPlus({
     subscription,
     newPlanName,

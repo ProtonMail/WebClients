@@ -41,6 +41,7 @@ import {
     getMaximumCycleForApp,
     getPlan,
     getPlansMap,
+    hasLumoAddon,
     hasMaximumCycle,
     hasPass,
     hasPassFamily,
@@ -275,11 +276,19 @@ export function useAccessiblePlans({
     } else if (isWalletIndividualPlans) {
         IndividualPlans = walletIndividualPlans;
     } else {
+        const plusPlan =
+            enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
+            enabledProductB2CPlans[0] ??
+            plansMap[PLANS.MAIL];
+
+        const showPlusPlan = !(
+            // Hide lumo plus plan if user has lumo as an addon, and the plus plan to display is LUMO
+            (hasLumoAddon(subscription) && plusPlan.Name === PLANS.LUMO)
+        );
+
         IndividualPlans = filterPlans([
             hasFreePlan ? FREE_PLAN : null,
-            enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
-                enabledProductB2CPlans[0] ??
-                plansMap[PLANS.MAIL],
+            showPlusPlan ? plusPlan : null,
             plansMap[PLANS.BUNDLE],
             canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
         ]);
