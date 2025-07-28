@@ -78,7 +78,6 @@ import {
     getOrganizationKeyInfo,
     validateOrganizationKey,
 } from '@proton/shared/lib/organization/helper';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
@@ -151,7 +150,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     // Allow to update seats (this should be done automatically for visionary, family and duo plans)
     const allowAIAssistantUpdate = accessToAssistant.enabled;
 
-    const lumoAddonAvailable = useFlag('LumoAddonAvailable');
+    const lumoAddonAvailable = true;
     const visionary = hasVisionary(subscription);
 
     // Allow to display a toggle in the UI

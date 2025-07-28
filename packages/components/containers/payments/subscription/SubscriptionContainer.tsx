@@ -81,7 +81,6 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Organization, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { Audience, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
-import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -237,7 +236,7 @@ const SubscriptionContainerInner = ({
     allowedAddonTypes,
     paymentsStatus,
 }: SubscriptionContainerProps) => {
-    const isLumoAddonAvailable = useFlag('LumoAddonAvailable') && canAddLumoAddon(subscription);
+    const lumoAddonEnabled = canAddLumoAddon(subscription);
 
     const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
@@ -312,7 +311,6 @@ const SubscriptionContainerInner = ({
 
         if (newPlan) {
             return switchPlan({
-                isLumoAddonAvailable,
                 subscription: latestSubscription,
                 newPlan,
                 organization,
@@ -1201,7 +1199,7 @@ const SubscriptionContainerInner = ({
                                         {hasPlanCustomizer && currentPlan && (
                                             <ProtonPlanCustomizer
                                                 scribeAddonEnabled={scribeEnabled.paymentsEnabled}
-                                                lumoAddonEnabled={isLumoAddonAvailable}
+                                                lumoAddonEnabled={lumoAddonEnabled}
                                                 loading={blockAccountSizeSelector}
                                                 currency={model.currency}
                                                 cycle={model.cycle}
@@ -1333,7 +1331,6 @@ const SubscriptionContainerInner = ({
                         check({
                             ...model,
                             planIDs: switchPlan({
-                                isLumoAddonAvailable,
                                 subscription: latestSubscription,
                                 newPlan: PLANS.BUNDLE,
                                 organization,

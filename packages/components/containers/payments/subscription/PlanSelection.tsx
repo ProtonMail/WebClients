@@ -59,7 +59,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { Audience, type Organization, type UserModel, type VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -451,7 +450,6 @@ const PlanSelection = (props: Props) => {
     // strict plans map doens't have plan fallback if currency is missing. If there is no plan for specified currency,
     // then it will be exluded from the plans map. This way we display only plans with the selected currency.
     const plansMap = getPlansMap(plans, currency, false);
-    const isLumoAddonAvailable = useFlag('LumoAddonAvailable');
 
     const [user] = useUser();
 
@@ -656,7 +654,6 @@ const PlanSelection = (props: Props) => {
 
                     onChangePlanIDs(
                         switchPlan({
-                            isLumoAddonAvailable,
                             subscription,
                             newPlan: isFree ? undefined : planName,
                             organization,
