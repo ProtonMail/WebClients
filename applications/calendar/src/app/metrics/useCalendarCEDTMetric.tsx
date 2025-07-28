@@ -4,7 +4,7 @@ import metrics from '@proton/metrics';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import useFlag from '@proton/unleash/useFlag';
 
-import { converViewToString } from './calendarMetricsHelper';
+import { convertViewToString } from './calendarMetricsHelper';
 
 export const useCalendarCEDTMetric = () => {
     const hasReportedCEDT = useRef<boolean>(false);
@@ -19,7 +19,7 @@ export const useCalendarCEDTMetric = () => {
         void metrics.calendar_calendar_event_display_time_histogram.observe({
             Value: end / 1000,
             Labels: {
-                view: converViewToString(view),
+                view: convertViewToString(view),
             },
         });
 
