@@ -31,8 +31,14 @@ const SSHKeyContent: FC<{ revision: ItemRevision<'sshKey'> }> = ({ revision }) =
 
     return (
         <FieldsetCluster mode="read" as="div">
-            <ValueControl label={c('Label').t`Public key`} value={content.publicKey} clickToCopy />
-            <ValueControl label={c('Label').t`Private key`} value={content.privateKey} clickToCopy hidden />
+            <ValueControl label={c('Label').t`Public key`} value={content.publicKey} clickToCopy ellipsis={false} />
+            <ValueControl
+                label={c('Label').t`Private key`}
+                value={content.privateKey}
+                clickToCopy
+                ellipsis={false}
+                hidden
+            />
         </FieldsetCluster>
     );
 };
