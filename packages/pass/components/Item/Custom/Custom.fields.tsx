@@ -7,6 +7,7 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
+import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 
 import { WifiSecurities, wifiSecurityLabel } from './Custom.utils';
 
@@ -19,13 +20,13 @@ export const CustomTypeFields: FC<{ type: 'sshKey' | 'wifi' | 'custom' }> = ({ t
                         label={c('Label').t`Public key`}
                         name="publicKey"
                         placeholder={c('Placeholder').t`Add public key`}
-                        component={TextField}
+                        component={TextAreaField}
                     />
                     <Field
                         label={c('Label').t`Private key`}
                         name="privateKey"
                         placeholder={c('Placeholder').t`Add private key`}
-                        component={TextField}
+                        component={TextAreaField}
                         hidden
                     />
                 </FieldsetCluster>
