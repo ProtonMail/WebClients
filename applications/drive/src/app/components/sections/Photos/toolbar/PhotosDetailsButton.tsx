@@ -28,6 +28,7 @@ const PhotosDetailsButton = ({ selectedLinks }: Props) => {
                 onClick={() => {
                     if (selectedLinks.length === 1) {
                         void showDetailsModal({
+                            volumeId: selectedLinks[0].volumeId,
                             shareId: selectedLinks[0].rootShareId,
                             linkId: selectedLinks[0].linkId,
                         });
