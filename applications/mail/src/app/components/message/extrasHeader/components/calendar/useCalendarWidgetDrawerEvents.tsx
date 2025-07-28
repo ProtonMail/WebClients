@@ -56,7 +56,7 @@ const useCalendarWidgetDrawerEvents = ({ messageID, calendarEvent, refresh }: Pr
         window.addEventListener('message', handleSideCalendarEvents);
 
         return () => {
-            window.addEventListener('message', handleSideCalendarEvents);
+            window.removeEventListener('message', handleSideCalendarEvents);
 
             // On unmount, tell potential calendar drawer app that the events in the widget are no longer in view
             postMessageToIframe(
