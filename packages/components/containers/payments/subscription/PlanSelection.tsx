@@ -46,6 +46,7 @@ import {
     hasPass,
     hasPassFamily,
     hasSomeAddonOrPlan,
+    hasVisionary,
     isAnyManagedExternally,
     isCheckForbidden,
     isFreeSubscription,
@@ -281,10 +282,8 @@ export function useAccessiblePlans({
             enabledProductB2CPlans[0] ??
             plansMap[PLANS.MAIL];
 
-        const showPlusPlan = !(
-            // Hide lumo plus plan if user has lumo as an addon, and the plus plan to display is LUMO
-            (hasLumoAddon(subscription) && plusPlan.Name === PLANS.LUMO)
-        );
+        const canChangeToLumoPlus = !hasLumoAddon(subscription) && !hasVisionary(subscription);
+        const showPlusPlan = plusPlan.Name !== PLANS.LUMO || canChangeToLumoPlus;
 
         IndividualPlans = filterPlans([
             hasFreePlan ? FREE_PLAN : null,
