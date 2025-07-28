@@ -7,7 +7,6 @@ import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
 import type { OnLoginCallback } from '@proton/components';
 import {
-    LoaderPage,
     StandardLoadErrorPage,
     UnAuthenticated,
     useActiveBreakpoint,
@@ -48,7 +47,6 @@ import { appendReturnUrlParams } from '@proton/shared/lib/authentication/returnU
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
-import { redirectTo } from '@proton/shared/lib/helpers/browser';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -195,7 +193,6 @@ const SingleSignupContainerV2 = ({
     const getKtActivation = useGetAccountKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
-    const lumoSignupEnabled = useFlag('LumoSignupAvailable');
     const isB2BTrialEnabled = useFlag('ManualTrialsFE');
     const hasZipCodeValidation = useFlag('PaymentsZipCodeValidation');
 
@@ -346,12 +343,6 @@ const SingleSignupContainerV2 = ({
         generateMnemonic,
         CustomStep,
     } = signupConfiguration;
-
-    useEffect(() => {
-        if (toApp === APPS.PROTONLUMO && flagsReady && !lumoSignupEnabled) {
-            redirectTo(`${SSO_PATHS.SIGNUP}${location.search}`);
-        }
-    }, [toApp, flagsReady, lumoSignupEnabled]);
 
     useEffect(() => {
         if (flagsReady && !isB2BTrialEnabled && signupParameters.trial) {
@@ -1226,14 +1217,6 @@ const SingleSignupContainerV2 = ({
 
         return result.cache;
     };
-
-    if (toApp === APPS.PROTONLUMO && flagsReady && !lumoSignupEnabled) {
-        return null;
-    }
-
-    if (toApp === APPS.PROTONLUMO && !flagsReady) {
-        return <LoaderPage />;
-    }
 
     const loginModalDefaultUsername = isPorkbun ? '' : tmpLoginEmail;
 
