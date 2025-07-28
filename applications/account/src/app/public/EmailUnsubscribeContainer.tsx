@@ -23,7 +23,6 @@ import {
     getUpdatedNewsBitmap,
 } from '@proton/shared/lib/helpers/newsletter';
 import type { Api } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 
 import EmailSubscriptionManagement from '../components/EmailSubscriptionManagement';
 import { EmailUnsubscribedContainer } from '../components/EmailUnsubscribed';
@@ -63,8 +62,6 @@ const EmailUnsubscribeContainer = () => {
     const location = useLocation();
     const handleError = useErrorHandler();
     const { subscriptions: subscriptionsParam } = useParams<{ subscriptions: string | undefined }>();
-
-    const lumoInProductNewsletters = useFlag('LumoInProductNewsletters');
 
     const subscriptions = Number(subscriptionsParam);
     const subscriptionBits = getBits(subscriptions);
@@ -131,7 +128,7 @@ const EmailUnsubscribeContainer = () => {
         return update(data);
     };
 
-    const categoriesValue = getEmailSubscriptionCategories(subscriptionBits, lumoInProductNewsletters);
+    const categoriesValue = getEmailSubscriptionCategories(subscriptionBits);
     const categoriesJsx = (
         <span className="text-bold" key="subscription-categories">
             {categoriesValue}
