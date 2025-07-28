@@ -2,7 +2,7 @@ import { platform } from 'node:os';
 
 import { truthy } from '@proton/pass/utils/fp/predicates';
 
-import * as config from '../app/config';
+import config from '../app/config';
 
 /**
  * Desktop clients should use a custom user agent for all requests as specified
