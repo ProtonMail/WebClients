@@ -12,9 +12,14 @@ import { ConfirmTrashEmpty } from '@proton/pass/components/Vault/Actions/Confirm
 import { OrganizeVaultsModal } from '@proton/pass/components/Vault/OrganizeVaultsModal';
 import { VaultDelete } from '@proton/pass/components/Vault/Vault.delete';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent, sharesHide } from '@proton/pass/store/actions';
+import {
+    emptyTrashIntent,
+    restoreTrashIntent,
+    shareLeaveIntent,
+    sharesVisibilityEdit,
+} from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import type { ShareHiddenMap } from '@proton/pass/types';
+import type { ShareVisibilityMap } from '@proton/pass/types';
 import { type MaybeNull, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -88,7 +93,10 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         dispatch(shareLeaveIntent({ shareId, targetType: ShareType.Vault }));
     };
 
-    const onVaultOrganize = useCallback((hideMap: ShareHiddenMap) => dispatch(sharesHide.intent({ hideMap })), []);
+    const onVaultOrganize = useCallback(
+        (visibilityMap: ShareVisibilityMap) => dispatch(sharesVisibilityEdit.intent({ visibilityMap })),
+        []
+    );
 
     const actions = useMemo<VaultActionsContextValue>(
         () => ({

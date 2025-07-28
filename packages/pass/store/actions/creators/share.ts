@@ -6,7 +6,7 @@ import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
-import type { ShareHiddenMap, ShareId, ShareType } from '@proton/pass/types';
+import type { ShareId, ShareType, ShareVisibilityMap } from '@proton/pass/types';
 import { type Share, type ShareSyncKeys } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -31,12 +31,20 @@ export const sharesEventSync = createAction('shares::event::sync', (payload: Pic
     withCache({ payload })
 );
 
-export const sharesHide = requestActionsFactory<
-    { hideMap: ShareHiddenMap },
+export const sharesVisibilityEdit = requestActionsFactory<
+    { visibilityMap: ShareVisibilityMap },
     { shares: Record<ShareId, Share<ShareType.Vault>> }
->('shares::hide')({
+>('shares::visibility')({
+    intent: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Updating vault organization...`,
+                loading: true,
+            })({ payload }),
+    },
     success: {
-        prepare: (payload: { shares: Record<ShareId, Share<ShareType.Vault>> }) =>
+        prepare: (payload) =>
             pipe(
                 withCache,
                 withNotification({
@@ -46,11 +54,10 @@ export const sharesHide = requestActionsFactory<
             )({ payload }),
     },
     failure: {
-        prepare: (error: unknown, payload) =>
+        prepare: (error, payload) =>
             withNotification({
                 type: 'error',
-                // FIXME (@ecandon): we could pass the number of failures here
-                text: c('Error').t`Could not resolve share members`,
+                text: c('Info').t`Failed updating your vault organization`,
                 error,
             })({ payload, error }),
     },
