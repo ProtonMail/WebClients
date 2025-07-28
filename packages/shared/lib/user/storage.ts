@@ -88,7 +88,7 @@ export const getAppSpace = (options: ReturnType<typeof getSpace>, app: APP_NAMES
     if (!options.splitStorage) {
         return { usedSpace: options.usedSpace, maxSpace: options.maxSpace };
     }
-    if (app === APPS.PROTONDRIVE) {
+    if (app === APPS.PROTONDRIVE || app === APPS.PROTONDOCS) {
         return { usedSpace: options.usedDriveSpace, maxSpace: options.maxDriveSpace };
     }
     return { usedSpace: options.usedBaseSpace, maxSpace: options.maxBaseSpace };
