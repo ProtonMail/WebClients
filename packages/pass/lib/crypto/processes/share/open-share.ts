@@ -14,6 +14,7 @@ export const openShare = async ({ encryptedShare, ...options }: OpenShareProcess
         canAutofill: encryptedShare.CanAutoFill,
         createTime: encryptedShare.CreateTime,
         expireTime: encryptedShare.ExpireTime,
+        flags: encryptedShare.Flags,
         newUserInvitesReady: encryptedShare.NewUserInvitesReady,
         owner: encryptedShare.Owner,
         permission: encryptedShare.Permission,
@@ -40,7 +41,6 @@ export const openShare = async ({ encryptedShare, ...options }: OpenShareProcess
                 contentKeyRotation: encryptedShare.ContentKeyRotation!,
                 contentFormatVersion: encryptedShare.ContentFormatVersion!,
                 content,
-                flags: encryptedShare.Flags,
             };
         }
         case ShareType.Item: {
@@ -49,7 +49,6 @@ export const openShare = async ({ encryptedShare, ...options }: OpenShareProcess
                 content: null,
                 contentFormatVersion: null,
                 contentKeyRotation: null,
-                flags: null,
             };
         }
     }
