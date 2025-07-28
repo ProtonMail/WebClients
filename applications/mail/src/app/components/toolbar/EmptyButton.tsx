@@ -4,7 +4,7 @@ import { Kbd, Vr } from '@proton/atoms';
 import { Icon, ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useLabels } from '@proton/mail';
-import { isCustomLabel, labelIncludes } from '@proton/mail/store/labels/helpers';
+import { isCustomLabel, labelIncludes } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 

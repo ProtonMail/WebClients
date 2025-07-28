@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { useActiveBreakpoint, useElementBreakpoints } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
-import { getLabelName } from '@proton/mail/store/labels/helpers';
 import clsx from '@proton/utils/clsx';
 
+import { getLabelName } from '../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelName from './LabelName';
