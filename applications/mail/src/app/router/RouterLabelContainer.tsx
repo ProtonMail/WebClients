@@ -35,9 +35,17 @@ interface Props {
     elementsData: ElementsStructure;
     actions: MailboxActions;
     hasRowMode?: boolean;
+    onResizingChange?: (isResizing: boolean) => void;
 }
 
-export const RouterLabelContainer = ({ params, navigation, elementsData, actions, hasRowMode = false }: Props) => {
+export const RouterLabelContainer = ({
+    params,
+    navigation,
+    elementsData,
+    actions,
+    hasRowMode = false,
+    onResizingChange,
+}: Props) => {
     const { sort, filter, labelID, elementID, messageID } = params;
     const { handleBack, page, handleFilter } = navigation;
     const { elements, elementIDs, loading, placeholderCount } = elementsData;
@@ -64,6 +72,7 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
 
     const { columnMode, columnLayout, labelDropdownToggleRef, resizeAreaRef, moveDropdownToggleRef } =
         useMailboxLayoutProvider();
+
     const composersCount = useMailSelector(selectComposersCount);
     const breakpoints = useActiveBreakpoint();
 
@@ -175,6 +184,7 @@ export const RouterLabelContainer = ({ params, navigation, elementsData, actions
                 resizeHandleRef={resizeAreaRef}
                 persistKey="messageListRatio"
                 resizingDisabled={hasRowMode || !showContentPanel}
+                onResizingChange={onResizingChange}
             >
                 <MailboxList
                     actions={actions}
