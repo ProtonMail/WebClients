@@ -5,7 +5,6 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';
-import { useResizeMessageView } from 'proton-mail/hooks/useResizeMessageView';
 
 export interface MailboxProviderProps {
     labelDropdownToggleRef: RefObject<() => void>;
@@ -18,12 +17,6 @@ export interface MailboxProviderProps {
     columnMode: boolean;
     columnLayout: boolean;
     isConversationContentView: boolean;
-    resize: {
-        isResizing: boolean;
-        enableResize: () => void;
-        resetWidth: () => void;
-        scrollBarWidth: number;
-    };
 }
 
 const MailboxLayoutContext = createContext<MailboxProviderProps | undefined>(undefined);
@@ -45,8 +38,6 @@ export const MailboxLayoutProvider = ({ children }: PropsWithChildren) => {
     const resizeAreaRef = useRef<HTMLButtonElement>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
 
-    const resizeData = useResizeMessageView(mainAreaRef, resizeAreaRef, listContainerRef);
-
     const [mailSettings] = useMailSettings();
     const breakpoints = useActiveBreakpoint();
 
@@ -67,12 +58,6 @@ export const MailboxLayoutProvider = ({ children }: PropsWithChildren) => {
                 columnMode: columnModeSetting && !forceRowMode,
                 columnLayout: columnModeSetting || forceRowMode,
                 isConversationContentView: mailSettings?.ViewMode === VIEW_MODE.GROUP,
-                resize: {
-                    isResizing: resizeData.isResizing,
-                    enableResize: resizeData.enableResize,
-                    resetWidth: resizeData.resetWidth,
-                    scrollBarWidth: resizeData.scrollBarWidth,
-                },
             }}
         >
             {children}
