@@ -10,7 +10,7 @@ export const getNESTData = (temporaryEvent: CalendarViewEventTemporaryEvent) => 
     };
 };
 
-export const converViewToString = (view: VIEWS) => {
+export const convertViewToString = (view: VIEWS) => {
     switch (view) {
         case VIEWS.DAY:
             return 'day-view';
