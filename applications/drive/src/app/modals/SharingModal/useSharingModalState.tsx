@@ -139,12 +139,21 @@ export const useSharingModalState = ({
     }) => {
         try {
             // For safety if one of the value is not passed, we used the actual one
-            // Otherwise not passing it will either remove it or set as default
+            // If it is passed but explicitely as "undefined" we assume that it's to disable it
+            const updatedRole = 'role' in publicLinkSettings ? publicLinkSettings.role : sharingInfo.publicLink?.role;
+            const updatedExpiration =
+                'expiration' in publicLinkSettings
+                    ? publicLinkSettings.expiration
+                    : sharingInfo.publicLink?.expirationTime;
+            const updatedCustomPassword =
+                'customPassword' in publicLinkSettings
+                    ? publicLinkSettings.customPassword
+                    : sharingInfo.publicLink?.customPassword;
             const updatedShareResult = await drive.shareNode(nodeUid, {
                 publicLink: {
-                    role: publicLinkSettings.role || sharingInfo.publicLink?.role || MemberRole.Viewer,
-                    expiration: publicLinkSettings.expiration || sharingInfo.publicLink?.expirationTime,
-                    customPassword: publicLinkSettings.customPassword || sharingInfo.publicLink?.customPassword,
+                    role: updatedRole || MemberRole.Viewer,
+                    expiration: updatedExpiration,
+                    customPassword: updatedCustomPassword,
                 },
             });
 

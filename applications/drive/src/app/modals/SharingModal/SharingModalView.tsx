@@ -143,34 +143,20 @@ export const SharingModalView = ({
         });
     };
 
-    const handleUpdatePublicLink = ({
-        role,
-        customPassword,
-        expiration,
-    }: {
+    const handleUpdatePublicLink = (publicLinkSettings: {
         role?: MemberRole;
         customPassword?: string;
         expiration?: Date;
     }) => {
-        return withPublicLinkUpdating(async () => {
-            await actions.updateSharePublic({
-                role,
-                customPassword,
-                expiration,
-            });
-        });
+        return withPublicLinkUpdating(actions.updateSharePublic(publicLinkSettings));
     };
 
-    const handleCreatePublicLink = async () => {
-        return withPublicLinkStateChanging(async () => {
-            await actions.createSharePublic();
-        });
+    const handleCreatePublicLink = () => {
+        return withPublicLinkStateChanging(actions.createSharePublic());
     };
 
-    const handleDeletePublicLink = async () => {
-        return withPublicLinkStateChanging(async () => {
-            await actions.unsharePublic();
-        });
+    const handleDeletePublicLink = () => {
+        return withPublicLinkStateChanging(actions.unsharePublic());
     };
 
     const handleCancel = () => {
