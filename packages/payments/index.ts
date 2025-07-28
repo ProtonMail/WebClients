@@ -432,6 +432,7 @@ export {
     willTrialExpire,
     hasLumoMobileSubscription,
     getCanAccessFamilyPlans,
+    hasLumoAddon,
     type AggregatedPricing,
     type PricingForCycles,
 } from './core/subscription/helpers';
