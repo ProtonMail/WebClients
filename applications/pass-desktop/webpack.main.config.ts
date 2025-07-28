@@ -1,10 +1,10 @@
-const rules = require('./webpack.rules');
-const plugins = require('./webpack.plugins');
+import plugins from './webpack.plugins';
+import rules from './webpack.rules';
 
 /**
  * @type {import('webpack').Configuration}
  */
-module.exports = {
+export default {
     /**
      * This is the main entry point for your application, it's the first file
      * that runs in the main process.
