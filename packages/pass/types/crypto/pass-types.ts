@@ -47,6 +47,7 @@ type OpenedShareBase = {
     canAutofill: Maybe<boolean>;
     createTime: number;
     expireTime?: MaybeNull<number>;
+    flags: number;
     newUserInvitesReady: number;
     owner: boolean;
     permission: number;
@@ -65,14 +66,12 @@ export type OpenedShare = OpenedShareBase &
               content: Uint8Array<ArrayBuffer>;
               contentFormatVersion: number;
               contentKeyRotation: Rotation;
-              flags: number;
               targetType: ShareType.Vault;
           }
         | {
               content: null;
               contentFormatVersion: null;
               contentKeyRotation: null;
-              flags: null;
               targetType: ShareType.Item;
           }
     );
