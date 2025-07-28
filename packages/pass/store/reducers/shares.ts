@@ -9,7 +9,7 @@ import {
     shareLeaveSuccess,
     sharesEventNew,
     sharesEventSync,
-    sharesHide,
+    sharesVisibilityEdit,
     syncSuccess,
     vaultCreationSuccess,
     vaultDeleteSuccess,
@@ -51,7 +51,7 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         return partialMerge(state, { [share.shareId]: share });
     }
 
-    if (sharesHide.success.match(action)) {
+    if (sharesVisibilityEdit.success.match(action)) {
         const { shares } = action.payload;
         return fullMerge(state, shares);
     }
