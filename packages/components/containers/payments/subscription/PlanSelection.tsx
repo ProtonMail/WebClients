@@ -33,6 +33,7 @@ import {
     Renew,
     type Subscription,
     type SubscriptionPlan,
+    getCanAccessFamilyPlans,
     getCanSubscriptionAccessDuoPlan,
     getIpPricePerMonth,
     getIsB2BAudienceFromPlan,
@@ -286,12 +287,16 @@ export function useAccessiblePlans({
 
     const canAccessPassFamilyPlan =
         (isFree(user) && app === APPS.PROTONPASS) || hasPass(subscription) || hasPassFamily(subscription);
-    const FamilyPlans = filterPlans([
-        hasFreePlan ? FREE_PLAN : null,
-        canAccessDuoPlan && !canAccessPassFamilyPlan ? plansMap[PLANS.DUO] : null,
-        canAccessPassFamilyPlan ? plansMap[PLANS.PASS_FAMILY] : null,
-        plansMap[PLANS.FAMILY],
-    ]);
+
+    let FamilyPlans: Plan[] = [];
+    if (getCanAccessFamilyPlans(subscription)) {
+        FamilyPlans = filterPlans([
+            hasFreePlan ? FREE_PLAN : null,
+            canAccessDuoPlan && !canAccessPassFamilyPlan ? plansMap[PLANS.DUO] : null,
+            canAccessPassFamilyPlan ? plansMap[PLANS.PASS_FAMILY] : null,
+            plansMap[PLANS.FAMILY],
+        ]);
+    }
 
     // some new regional currencies might support VPN enterprise too
     const hasVpnEnterprise = mainCurrencies.includes(currency);
