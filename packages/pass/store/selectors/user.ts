@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import { getPassPlan } from '@proton/pass/lib/user/user.plan';
 import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
+import { selectDefaultVault } from '@proton/pass/store/selectors/vaults';
 import type { State } from '@proton/pass/store/types';
 import { type Maybe, type MaybeNull } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
@@ -15,8 +16,6 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import { type Address, SETTINGS_PASSWORD_MODE, UserType } from '@proton/shared/lib/interfaces';
 import { AuthDeviceState } from '@proton/shared/lib/keys/device';
-
-import { selectDefaultVault } from './shares';
 
 export const selectUserState = ({ user }: State) => user;
 export const selectUser = ({ user: { user } }: State) => user;
