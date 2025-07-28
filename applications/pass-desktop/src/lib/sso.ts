@@ -1,6 +1,6 @@
 import { type OnHeadersReceivedListenerDetails } from 'electron';
 
-import * as config from '../app/config';
+import config from '../app/config';
 import logger from '../utils/logger';
 
 // Fix SSO callback URL

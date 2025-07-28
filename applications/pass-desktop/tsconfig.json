@@ -3,5 +3,16 @@
     "compilerOptions": {
         "lib": ["WebWorker", "DOM", "DOM.Iterable", "ESNext", "DOM.AsyncIterable"],
         "types": ["webpack-env", "jest", "chrome", "./globals.d.ts"]
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "allowJs": true,
+            "esModuleInterop": true,
+            "module": "commonjs",
+            "moduleResolution": "node",
+            "resolveJsonModule": true,
+            "skipLibCheck": true,
+            "target": "ES6"
+        }
     }
 }
