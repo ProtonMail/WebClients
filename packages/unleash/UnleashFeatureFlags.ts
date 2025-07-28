@@ -42,7 +42,6 @@ enum CommonFeatureFlag {
     B2BOnboarding = 'B2BOnboarding',
     InboxBringYourOwnEmail = 'InboxBringYourOwnEmail',
     InboxBringYourOwnEmailSignup = 'InboxBringYourOwnEmailSignup',
-    LumoPlusFrontend = 'LumoPlusFrontend',
     CryptoEnforceOpenpgpGrammar = 'CryptoEnforceOpenpgpGrammar',
     ReferralExpansion = 'ReferralExpansion',
 }
