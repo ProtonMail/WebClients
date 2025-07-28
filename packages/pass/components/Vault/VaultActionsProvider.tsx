@@ -9,10 +9,12 @@ import { useNavigate } from '@proton/pass/components/Navigation/NavigationAction
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { getLocalPath, getTrashRoute } from '@proton/pass/components/Navigation/routing';
 import { ConfirmTrashEmpty } from '@proton/pass/components/Vault/Actions/ConfirmTrashEmpty';
+import { OrganizeVaultsModal } from '@proton/pass/components/Vault/OrganizeVaultsModal';
 import { VaultDelete } from '@proton/pass/components/Vault/Vault.delete';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent } from '@proton/pass/store/actions';
+import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent, sharesHide } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
+import type { ShareHiddenMap } from '@proton/pass/types';
 import { type MaybeNull, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -29,10 +31,11 @@ type VaultActionsContextValue = {
     select: (selected: string) => void;
     trashEmpty: () => void;
     trashRestore: () => void;
+    organize: () => void;
 };
 
 type VaultActionState =
-    | { view: 'create' | 'trash-empty' }
+    | { view: 'create' | 'trash-empty' | 'organize' }
     | { view: 'edit' | 'delete' | 'move' | 'leave'; vault: VaultShareItem };
 
 export const VaultActionsContext = createContext<MaybeNull<VaultActionsContextValue>>(null);
@@ -85,6 +88,8 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         dispatch(shareLeaveIntent({ shareId, targetType: ShareType.Vault }));
     };
 
+    const onVaultOrganize = useCallback((hideMap: ShareHiddenMap) => dispatch(sharesHide.intent({ hideMap })), []);
+
     const actions = useMemo<VaultActionsContextValue>(
         () => ({
             create: () => setState({ view: 'create' }),
@@ -95,6 +100,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             select: (selected) => handleSelect(navigate, selected),
             trashEmpty: () => setState({ view: 'trash-empty' }),
             trashRestore: () => dispatch(restoreTrashIntent()),
+            organize: () => setState({ view: 'organize' }),
         }),
         []
     );
@@ -129,6 +135,8 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                         );
                     case 'trash-empty':
                         return <ConfirmTrashEmpty onCancel={reset} onConfirm={pipe(onTrashEmpty, reset)} />;
+                    case 'organize':
+                        return <OrganizeVaultsModal onConfirm={pipe(onVaultOrganize, reset)} onClose={reset} />;
                 }
             })()}
         </VaultActionsContext.Provider>
