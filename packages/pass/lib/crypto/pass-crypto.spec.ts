@@ -212,6 +212,7 @@ describe('PassCrypto', () => {
                 TargetType: ShareType.Vault,
                 VaultID: `vaultId-${Math.random()}`,
                 CanAutoFill: true,
+                Flags: 0,
             };
 
             /* register the share */
@@ -274,6 +275,7 @@ describe('PassCrypto', () => {
                 TargetType: ShareType.Vault,
                 VaultID: `vaultId-${Math.random()}`,
                 CanAutoFill: true,
+                Flags: 0,
             };
 
             const share = await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
@@ -336,6 +338,7 @@ describe('PassCrypto', () => {
                 TargetType: ShareType.Vault,
                 VaultID: `vaultId-${Math.random()}`,
                 CanAutoFill: true,
+                Flags: 0,
             };
 
             await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [] })).rejects.toThrow(
@@ -377,6 +380,7 @@ describe('PassCrypto', () => {
                 TargetType: ShareType.Vault,
                 VaultID: `vaultId-${Math.random()}`,
                 CanAutoFill: true,
+                Flags: 0,
             };
 
             await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).rejects.toThrow(
@@ -417,6 +421,7 @@ describe('PassCrypto', () => {
                 TargetType: ShareType.Vault,
                 VaultID: `vaultId-${Math.random()}`,
                 CanAutoFill: true,
+                Flags: 0,
             };
 
             expect(await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).toEqual(null);
