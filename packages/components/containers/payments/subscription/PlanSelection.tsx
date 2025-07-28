@@ -219,8 +219,6 @@ export function useAccessiblePlans({
     currency,
     audience,
 }: AccessiblePlansHookProps) {
-    const lumoPlusEnabled = useFlag('LumoPlusFrontend');
-
     const isVpnSettingsApp = app === APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app === APPS.PROTONPASS;
     const isDriveSettingsApp = app === APPS.PROTONDRIVE || app === APPS.PROTONDOCS;
@@ -236,7 +234,7 @@ export function useAccessiblePlans({
         getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
         PLANS.DRIVE,
         !user.hasPassLifetime && PLANS.PASS,
-        lumoPlusEnabled && PLANS.LUMO,
+        PLANS.LUMO,
     ]
         .filter(isTruthy)
         .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap));
