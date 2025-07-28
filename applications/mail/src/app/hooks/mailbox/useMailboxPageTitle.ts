@@ -5,12 +5,12 @@ import { useUser } from '@proton/account/user/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCounts';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCounts';
-import { getLabelName } from '@proton/mail/store/labels/helpers';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { getCountersByLabelId } from '../../helpers/counter';
+import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 
 export const useMailboxPageTitle = (labelID: string) => {

@@ -2,7 +2,7 @@ import type { ChangeEvent, DragEvent, MouseEvent } from 'react';
 import { memo, useMemo, useRef } from 'react';
 
 import { ItemCheckbox } from '@proton/components';
-import { isCustomLabel } from '@proton/mail/store/labels/helpers';
+import { isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import type { Label, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
