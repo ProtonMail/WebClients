@@ -15,6 +15,8 @@ export const FreeFeatures = () => {
     const totalDriveStorageSize = humanSize({ bytes: freePlan.MaxDriveRewardSpace, fraction: 0 });
     const maxAddresses = freePlan.MaxAddresses || 1;
     const maxCalendars = freePlan.MaxCalendars || MAX_CALENDARS_FREE;
+    const vpnServersCountData = payments.vpnServersCountData;
+    const vpnServersCountLoading = !payments.initializationStatus.vpnServersInitialized;
 
     return (
         <>
@@ -26,7 +28,15 @@ export const FreeFeatures = () => {
                 ].join(', ')}
                 highlighted
             />
-            <FeatureItem text={c('Signup').t`VPN with servers in 5 countries`} highlighted />
+            <FeatureItem
+                text={c('Signup').ngettext(
+                    msgid`VPN with servers in ${vpnServersCountData.free.countries} country`,
+                    `VPN with servers in ${vpnServersCountData.free.countries} countries`,
+                    vpnServersCountData.free.countries
+                )}
+                highlighted
+                loading={vpnServersCountLoading}
+            />
             <FeatureItem
                 text={c('Signup').t`${totalDriveStorageSize} cloud storage for files and photos`}
                 highlighted
