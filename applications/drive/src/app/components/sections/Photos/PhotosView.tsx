@@ -132,6 +132,7 @@ export const PhotosView: FC = () => {
                     }
                     onDetails={() =>
                         showDetailsModal({
+                            volumeId,
                             shareId,
                             linkId: previewItem.linkId,
                         })
