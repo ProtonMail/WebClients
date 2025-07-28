@@ -430,6 +430,8 @@ export {
     shouldPassIsTrial,
     upsellPlanSSO,
     willTrialExpire,
+    hasLumoMobileSubscription,
+    getCanAccessFamilyPlans,
     type AggregatedPricing,
     type PricingForCycles,
 } from './core/subscription/helpers';
