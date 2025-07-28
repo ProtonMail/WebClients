@@ -32,8 +32,22 @@ export const BundleFeatures = () => {
             />
             <FeatureItem text={c('Signup').t`Unlimited hide-my-email aliases`} highlighted />
             <FeatureItem text={c('Signup').t`Encrypted file sharing and document editor`} highlighted />
-            <FeatureItem text={c('Signup').t`${VPN_CONNECTIONS} high-speed VPN connections`} highlighted />
-            <FeatureItem text={c('Signup').t`${PASS_PLUS_VAULTS} vaults for your passwords`} highlighted />
+            <FeatureItem
+                text={c('Signup').ngettext(
+                    msgid`${VPN_CONNECTIONS} high-speed VPN connection`,
+                    `${VPN_CONNECTIONS} high-speed VPN connections`,
+                    VPN_CONNECTIONS
+                )}
+                highlighted
+            />
+            <FeatureItem
+                text={c('Signup').ngettext(
+                    msgid`${PASS_PLUS_VAULTS} vault for your passwords`,
+                    `${PASS_PLUS_VAULTS} vaults for your passwords`,
+                    PASS_PLUS_VAULTS
+                )}
+                highlighted
+            />
         </>
     );
 };
