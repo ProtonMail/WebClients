@@ -1,4 +1,4 @@
-import { type RefObject, useMemo } from 'react';
+import { type RefObject, useMemo, useState } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import {
@@ -40,16 +40,16 @@ export const RouterMailboxContainer = () => {
     const elementsData = useElements(elementsParams);
     const actions = useElementActions({ params, navigation, elementsData });
 
-    const { messageContainerRef, mainAreaRef, resize, listContainerRef } = useMailboxLayoutProvider();
+    const { columnMode, messageContainerRef, mainAreaRef, listContainerRef } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
     const { selectedIDs } = actions;
-
-    const { columnMode } = useMailboxLayoutProvider();
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
     const hasRowMode = !columnMode;
+
+    const [isResizing, setIsResizing] = useState(false);
 
     /**
      * Temporary: Router mailbox side effects
@@ -79,9 +79,9 @@ export const RouterMailboxContainer = () => {
 
     return (
         <MailboxContainerContextProvider
-            isResizing={resize.isResizing}
             containerRef={messageContainerRef}
             elementID={elementID}
+            isResizing={isResizing}
         >
             <MailHeader
                 elementID={elementID}
@@ -135,6 +135,7 @@ export const RouterMailboxContainer = () => {
                                 elementsData={elementsData}
                                 actions={actions}
                                 hasRowMode={hasRowMode}
+                                onResizingChange={setIsResizing}
                             />
                         )}
                     />
