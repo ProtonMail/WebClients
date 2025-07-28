@@ -28,7 +28,7 @@ export type NewUserInviteCreateRequest = {
     Email: string;
     /* Invite target type. 1 = Vault, 2 = Item */
     TargetType: number;
-    /* Base64 signature of "inviteemail|base64(vaultKey)" signed with the admin's address key */
+    /* Base64 signature of "inviteemail|base64(vaultKey)" signed with the manager's address key */
     Signature: string;
     /* ShareRoleID for this invite. The values are in the top level Pass docs. */
     ShareRoleID: string;
@@ -143,20 +143,20 @@ export type CreatePendingFileRequest = {
     Metadata: string;
     /* Number of chunks this file will have */
     ChunkCount: number;
-    /* File version (OPTIONAL UNTIL BE MIGRATES) */
+    /* File encryption version. 1 for old, 2 for separate tags. */
     EncryptionVersion?: number;
 };
 export type UpdatePendingFileRequest = {
     /* File metadata encrypted with an attachmentKey and encoded in Base64 */
     Metadata: string;
 };
-export type ImportItemBatchRequest = {
-    /* Items to be imported. At most 100 */
-    Items: ImportItemRequest[];
-};
 export type InviteAcceptRequest = {
     /* Invite keys encrypted and signed with the User Key */
     Keys: KeyRotationKeyPair[];
+};
+export type ImportItemBatchRequest = {
+    /* Items to be imported. At most 100 */
+    Items: ImportItemRequest[];
 };
 export type AliasAndItemCreateRequest = { Alias: CustomAliasCreateRequest; Item: ItemCreateRequest };
 export type ItemsToTrashRequest = {
@@ -291,6 +291,23 @@ export type UserMonitorReportInput = {
     /* Number of weak passwords */
     WeakPasswords: number;
 };
+export type OrganizationUrlPauseEntryCreateRequest = {
+    /* Url of the entry */
+    Url: string;
+    Values: OrganizationUrlPauseEntryValues;
+};
+export type OrganizationUrlPauseEntryValues = {
+    /* Whether Autofill is enabled or not */
+    AutofillEnabled: boolean;
+    /* Whether 2FA Autofill is enabled or not */
+    Autofill2faEnabled: boolean;
+    /* Whether Autofill autosuggestion is enabled or not */
+    AutofillAutosuggestEnabled: boolean;
+    /* Whether Autosave is enabled or not */
+    AutosaveEnabled: boolean;
+    /* Whether Passkeys are enabled or not */
+    PasskeysEnabled: boolean;
+};
 export type PublicLinkCreateRequest = {
     /* Last revision of the item */
     Revision: number;
@@ -305,7 +322,7 @@ export type PublicLinkCreateRequest = {
     /* ShareKey rotation used for encrypting the encryptedLinkKey */
     LinkKeyShareKeyRotation: number;
     /* If the link key is being encrypted with the item key */
-    LinkKeyEncryptedWithItemKey?: unknown;
+    LinkKeyEncryptedWithItemKey?: boolean;
 };
 export type UserSessionLockRequest = {
     /* Lock code to attach to this session */
@@ -414,7 +431,7 @@ export type VaultUpdateRequest = {
     KeyRotation: number;
 };
 export type VaultTransferOwnershipRequest = {
-    /* ShareID to move the ownership to. It has to have admin privileges */
+    /* ShareID to move the ownership to. It has to have manager privileges */
     NewOwnerShareID: string;
 };
 export type ItemMoveMultipleResponse = { Items: ItemRevisionContentsResponse[] };
@@ -645,6 +662,14 @@ export type CustomDomainSettingsOutput = {
     RandomPrefixGeneration: boolean;
 };
 export type CreatePendingFileOutput = { FileID: Id };
+export type GroupInvitesListResponse = {
+    /* UserInvites */
+    Invites: GroupInviteListItemResponse[];
+    /* Total amount of GroupInvites pending */
+    Total: number;
+    /* LastID of the list. Used for pagination */
+    LastID?: Id | null;
+};
 export type InvitesGetResponse = {
     /* UserInvites */
     Invites: InviteDataForUser[];
@@ -670,7 +695,7 @@ export type ShareGetResponse = {
     Shared: boolean;
     /* How many invites are pending of acceptance */
     PendingInvites: number;
-    /* How many new user invites are waiting for an admin to create the proper invite */
+    /* How many new user invites are waiting for a manager to create the proper invite */
     NewUserInvitesReady: number;
     /* Permissions for this share */
     Permission: number;
@@ -684,10 +709,14 @@ export type ShareGetResponse = {
     ContentKeyRotation?: number | null;
     /* Content format version */
     ContentFormatVersion?: number | null;
+    /* ID of the group that grants access to this resource. If it is null then it is a normal user share */
+    GroupID?: Id | null;
     /* If the share will expire, when it will expire */
     ExpireTime?: number | null;
     /* Share creation time */
     CreateTime: number;
+    /* Share flags. Currently:<br><ul><li>1 -> hidden share</li></ul> */
+    Flags: number;
 };
 export type AliasAndItemResponse = { Alias: ItemRevisionContentsResponse; Item: ItemRevisionContentsResponse };
 export type ItemTrashResponse = { Items: ItemRevisionResponse[] };
@@ -723,8 +752,8 @@ export type ItemFileOutput = {
     ItemKeyRotation: number;
     /* Chunks that contain the contents of the file */
     Chunks: ItemFileChunkOutput[];
-    /* Encryption version of the file (OPTIONAL UNTIL BE MIGRATES) */
-    EncryptionVersion?: number;
+    /* Encryption version of the file */
+    EncryptionVersion: number;
     /* Item revision when the file was added */
     RevisionAdded: number;
     /* Item revision when the file was removed. If null, the file is still present */
@@ -781,6 +810,22 @@ export type MemberMonitorReportList = {
     /* Last ID for getting the next batch */
     TotalMemberCount: number;
 };
+export type OrganizationUrlPauseListResponse = {
+    /* Entries for this org */
+    Entries: OrganizationUrlPauseEntryDto[];
+    /* Total number of entries for this org */
+    Total: number;
+    /* ID of the last entry. Used for pagination */
+    LastID?: Id | null;
+};
+export type OrganizationUrlPauseEntryDto = {
+    EntryID: Id;
+    /* URL of the entry */
+    Url: string;
+    Values: OrganizationUrlPauseEntryValues;
+    /* Creation time of the entry in seconds */
+    CreateTime: number;
+};
 export type EventIDGetResponse = { EventID: Id };
 export type PassEventListResponse = {
     UpdatedShare: ShareGetResponse;
@@ -788,6 +833,8 @@ export type PassEventListResponse = {
     UpdatedItems: ItemRevisionContentsResponse[];
     /* Deleted items */
     DeletedItemIDs: string[];
+    /* Items that had the alias note changed in SL */
+    AliasNoteChangedItemsIDs: string[];
     /* Items that have the last use time updated */
     LastUseItems: ItemIDLastUseTime[];
     /* New key rotation value if there has been a key rotation */
@@ -823,7 +870,7 @@ export type PublicLinkGetContentResponse = {
     /* Timestamp in seconds of the expiration time for the link */
     ExpirationTime: number;
     /* If the link key is being encrypted with the item key */
-    LinkKeyEncryptedWithItemKey?: unknown;
+    LinkKeyEncryptedWithItemKey?: boolean;
 };
 export type PublicLinkGetResponse = {
     /* ID of the public link */
@@ -862,6 +909,12 @@ export type SessionLockCheckExistsResponse = {
 export type SharesGetResponse = {
     /* List of shares */
     Shares: ShareGetResponse[];
+};
+export type ShareHideUnhideBatchRequest = {
+    /* List of share IDs to hide */
+    SharesToHide?: string[];
+    /* List of share IDs to unhide */
+    SharesToUnhide?: string[];
 };
 export type InvitesForVaultGetResponse = {
     /* Invites for this share */
@@ -910,6 +963,8 @@ export type ActiveShareGetResponse = {
     ExpireTime?: number | null;
     /* Creation time of this share */
     CreateTime: number;
+    /* Whether the share is a group share */
+    IsGroupShare: boolean;
 };
 export type GetMissingAliasResponse = {
     /* MissingAlias */
@@ -952,7 +1007,7 @@ export type UserAccessGetResponse = {
     Monitor: UserMonitorStatusResponse;
     /* Pending invites for this user */
     PendingInvites: number;
-    /* Number of new user invites ready for an admin to accept */
+    /* Number of new user invites ready for a manager to accept */
     WaitingNewUserInvites: number;
     /* Request display upgrade to version */
     MinVersionUpgrade?: string | null;
@@ -980,14 +1035,25 @@ export type SRPGetOutput = {
 };
 export type SyncEventListOutput = {
     LastEventID: Id;
+    /* Item IDs with ShareIDs that have been updated */
     ItemsUpdated?: SyncEventShareItemOutput[];
+    /* Item IDs with ShareIDs that have been deleted */
     ItemsDeleted?: SyncEventShareItemOutput[];
+    /* Item IDs with ShareIDs that have the alias note changed */
+    AliasNoteChanged?: SyncEventShareItemOutput[];
+    /* Share IDs that have been updated. It can be vault name, permissions, state... */
     SharesUpdated?: SyncEventShareOutput[];
+    /* Share IDs that have been deleted */
     SharesDeleted?: SyncEventShareOutput[];
-    SharesToGetInvites?: SyncEventShareOutput[];
+    /* If not null, there changes in the invites waiting to be accepted by this user */
+    InvitesChanged?: SyncEventInvitesChangedOutput | null;
+    /* Share IDs that have invites that have to be created due to a user having registered with a pending new user invite */
     SharesWithInvitesToCreate?: SyncEventShareOutput[];
+    /* If the user plan has changed */
     PlanChanged?: boolean;
+    /* If there are more events pending to be processed. In that case call this endpoint again using the new LastEventID */
     EventsPending?: boolean;
+    /* If true this user needs a full sync. Perform the same procedure as if the user just logged in. */
     FullRefresh?: boolean;
 };
 export type ItemMoveIndividualToShareRequest = {
@@ -1167,6 +1233,28 @@ export type CustomDomainMailboxOutput = {
     ID: number;
     /* Email address of the mailbox */
     Email: string;
+};
+export type GroupInviteListItemResponse = {
+    InviteID: Id;
+    InviterUserID: Id;
+    /* Email address of the inviter user */
+    InviterEmail: string;
+    InvitedGroupID: Id;
+    /* Email address of the invited group */
+    InvitedEmail: string;
+    /* Type of target for this invite */
+    TargetType: number;
+    /* Number of reminders sent */
+    RemindersSent: number;
+    /* InviteToken */
+    InviteToken: string;
+    InvitedAddressID: Id;
+    /* Share keys encrypted for the address key of the invited group and signed with the address keys of the inviter */
+    Keys: KeyRotationKeyPair[];
+    /* Base64 encrypted invite data */
+    Data?: string | null;
+    /* Creation time for the invite */
+    CreateTime: number;
 };
 export type InviteDataForUser = {
     /* InviteToken */
@@ -1380,8 +1468,21 @@ export type UserDataResponse = {
     /* How many alias are waiting to be synced */
     PendingAliasToSync: number;
 };
-export type SyncEventShareItemOutput = { ShareID: Id; ItemID: Id; EventToken: Id };
-export type SyncEventShareOutput = { ShareID: Id; EventToken: Id };
+export type SyncEventShareItemOutput = {
+    /* ItemID */
+    ShareID: string;
+    /* ShareID */
+    ItemID: string;
+    /* EventToken used in the request to get the share info */
+    EventToken: string;
+};
+export type SyncEventShareOutput = {
+    /* ShareID */
+    ShareID: string;
+    /* EventToken used in the request to get the share info */
+    EventToken: string;
+};
+export type SyncEventInvitesChangedOutput = { EventToken: Id };
 export enum BreachAlertState {
     UNREAD = 1,
     READ = 2,
@@ -1854,6 +1955,14 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `delete` ?
             { Code: ResponseCodeSuccess }
         :   never
+    : Path extends `pass/v1/invite/group/${string}` ?
+        Method extends `post` ?
+            { Code: ResponseCodeSuccess }
+        :   never
+    : Path extends `pass/v1/organization/urlpause/${string}` ?
+        Method extends `put` ? { Code: ResponseCodeSuccess }
+        : Method extends `delete` ? { Code: ResponseCodeSuccess }
+        : never
     : Path extends `pass/v1/public_link/content/${string}` ?
         Method extends `get` ?
             { Code: ResponseCodeSuccess; PublicLinkContent: PublicLinkGetContentResponse }
@@ -1886,6 +1995,10 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `get` ?
             EventIDGetResponse & { Code: ResponseCodeSuccess }
         :   never
+    : Path extends `pass/v1/share/${string}/hide` ?
+        Method extends `put` ?
+            { Code: ResponseCodeSuccess; Share: ShareGetResponse }
+        :   never
     : Path extends `pass/v1/share/${string}/invite` ?
         Method extends `get` ? InvitesForVaultGetResponse & { Code: ResponseCodeSuccess }
         : Method extends `post` ? { Code: ResponseCodeSuccess }
@@ -1899,6 +2012,10 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `get` ? { Code: ResponseCodeSuccess; ShareKeys: ShareKeysResponse }
         : Method extends `post` ? { Code: ResponseCodeSuccess; ShareKey: ShareKeyResponse }
         : never
+    : Path extends `pass/v1/share/${string}/unhide` ?
+        Method extends `put` ?
+            { Code: ResponseCodeSuccess; Share: ShareGetResponse }
+        :   never
     : Path extends `pass/v1/share/${string}/user` ?
         Method extends `get` ?
             ActiveSharesInVaultGetResponse & { Code: ResponseCodeSuccess }
@@ -1927,6 +2044,10 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `get` ? { Code: ResponseCodeSuccess; Emails: BreachCustomEmailListResponse }
         : Method extends `post` ? { Code: ResponseCodeSuccess; Email: BreachCustomEmailGetResponse }
         : never
+    : Path extends `pass/v1/invite/group` ?
+        Method extends `get` ?
+            { Code: ResponseCodeSuccess; Invites: GroupInvitesListResponse }
+        :   never
     : Path extends `pass/v1/organization/report` ?
         Method extends `get` ?
             { Code: ResponseCodeSuccess; Report: MemberMonitorReportList }
@@ -1935,9 +2056,17 @@ export type ApiResponse<Path extends string, Method extends string> =
         Method extends `put` ?
             { Code: ResponseCodeSuccess; Organization?: OrganizationGetResponse | null }
         :   never
+    : Path extends `pass/v1/organization/urlpause` ?
+        Method extends `get` ? { Code: ResponseCodeSuccess; Entries: OrganizationUrlPauseListResponse }
+        : Method extends `post` ? { Code: ResponseCodeSuccess; Entry: OrganizationUrlPauseEntryDto }
+        : never
     : Path extends `pass/v1/public_link/inactive` ?
         Method extends `delete` ?
             { Code: ResponseCodeSuccess }
+        :   never
+    : Path extends `pass/v1/share/hide` ?
+        Method extends `put` ?
+            SharesGetResponse & { Code: ResponseCodeSuccess }
         :   never
     : Path extends `pass/v1/user/access` ?
         Method extends `get` ? { Code: ResponseCodeSuccess; Access: UserAccessGetResponse }
@@ -2217,6 +2346,14 @@ export type ApiRequestBody<Path extends string, Method extends string> =
         Method extends `post` ?
             SRPAuthRequest
         :   never
+    : Path extends `pass/v1/invite/group/${string}` ?
+        Method extends `post` ?
+            InviteAcceptRequest
+        :   never
+    : Path extends `pass/v1/organization/urlpause/${string}` ?
+        Method extends `put` ?
+            OrganizationUrlPauseEntryValues
+        :   never
     : Path extends `pass/v1/file/${string}/metadata` ?
         Method extends `put` ?
             UpdatePendingFileRequest
@@ -2248,6 +2385,14 @@ export type ApiRequestBody<Path extends string, Method extends string> =
     : Path extends `pass/v1/organization/settings` ?
         Method extends `put` ?
             OrganizationUpdateSettingsRequest
+        :   never
+    : Path extends `pass/v1/organization/urlpause` ?
+        Method extends `post` ?
+            OrganizationUrlPauseEntryCreateRequest
+        :   never
+    : Path extends `pass/v1/share/hide` ?
+        Method extends `put` ?
+            ShareHideUnhideBatchRequest
         :   never
     : Path extends `pass/v1/user/inapp_notifications_disabled` ?
         Method extends `put` ?
