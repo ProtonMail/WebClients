@@ -9,7 +9,7 @@ import {
 import type { PasskeyQueryPayload, SelectedPasskey } from '@proton/pass/lib/passkeys/types';
 import type { SelectAutofillCandidatesOptions, SelectOTPAutofillCandidateOptions } from '@proton/pass/lib/search/types';
 import { isAutofillableShare } from '@proton/pass/lib/shares/share.predicates';
-import { selectAllItems, selectItemsByType } from '@proton/pass/store/selectors/items';
+import { selectAllVisibleItems, selectItemsByType } from '@proton/pass/store/selectors/items';
 import { selectVaultLimits } from '@proton/pass/store/selectors/limits';
 import { createMatchDomainItemsSelector } from '@proton/pass/store/selectors/match';
 import { selectAllShares } from '@proton/pass/store/selectors/shares';
@@ -86,7 +86,7 @@ export const selectOTPCandidate = ({ submission, ...options }: SelectOTPAutofill
     });
 
 export const selectPasskeys = (payload: PasskeyQueryPayload) =>
-    createUncachedSelector(selectAllItems, (items): SelectedPasskey[] => {
+    createUncachedSelector(selectAllVisibleItems, (items): SelectedPasskey[] => {
         const { credentialIds } = payload;
         const { domain } = parseUrl(payload.domain);
 

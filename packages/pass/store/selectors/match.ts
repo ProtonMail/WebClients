@@ -5,7 +5,7 @@ import { filterItemsByShareId, filterItemsByType, sortItems } from '@proton/pass
 import { searchItems } from '@proton/pass/lib/search/match-items';
 import { ItemUrlMatch, getItemPriorityForUrl } from '@proton/pass/lib/search/match-url';
 import type { SelectItemsByDomainOptions, SelectItemsOptions } from '@proton/pass/lib/search/types';
-import { itemsFromSelection, selectAllItems, selectItems } from '@proton/pass/store/selectors/items';
+import { itemsFromSelection, selectAllVisibleItems, selectItems } from '@proton/pass/store/selectors/items';
 import { selectSecureLinks } from '@proton/pass/store/selectors/secure-links';
 import { selectSharedByMe, selectSharedWithMe } from '@proton/pass/store/selectors/shared';
 import { NOOP_LIST_SELECTOR, createUncachedSelector } from '@proton/pass/store/selectors/utils';
@@ -32,7 +32,7 @@ const selectTypeFilter = (_: State, { type }: SelectItemsOptions) => type;
  * is expected to change more frequently than the shareId / sortOption */
 export const createMatchItemsSelector = () => {
     const selectSortedItemsByShareId = createSelector(
-        [selectAllItems, selectTrashedFilter, selectShareIdFilter, selectSortFilter],
+        [selectAllVisibleItems, selectTrashedFilter, selectShareIdFilter, selectSortFilter],
         (items, trashed, shareId, sort) =>
             pipe(filterItemsByShareId(shareId), sortItems(sort))(items.filter(trashed ? isTrashed : isActive))
     );
@@ -92,7 +92,7 @@ export const createMatchDomainItemsSelector = (domain: MaybeNull<string>, option
         ? NOOP_LIST_SELECTOR<ItemRevision<'login'>>
         : createUncachedSelector(
               [
-                  selectAllItems,
+                  selectAllVisibleItems,
                   () => domain,
                   () => options.protocol,
                   () => options.port,

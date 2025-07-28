@@ -66,6 +66,11 @@ describe('Autofill selectors', () => {
             expect(candidates.length).toEqual(1);
             expect(candidates[0]).toEqual(state.items.byShareId.share1.item4);
         });
+
+        test('should not suggest an item from a hidden share', () => {
+            const candidates = selectAutofillLoginCandidates(parseUrl('https://domain-of-hidden-share.com'))(state);
+            expect(candidates.length).toEqual(0);
+        });
     });
 
     describe('selectOTPCandidate', () => {
