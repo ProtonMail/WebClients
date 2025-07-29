@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { Draft } from '@proton/pass/store/reducers';
@@ -219,3 +220,25 @@ export const getBulkSelectionCount = (selected: BulkSelectionDTO) =>
 export const formatDisplayNameWithEmail = (name: string, email: string) => `${name} <${email}>`;
 
 export const formatItemsCount = (n: number) => c('Info').ngettext(msgid`${n} item`, `${n} items`, n);
+
+export const cloneItemName = (itemName: string): string => {
+    const copiedText = c('Title_cloned_item').t`copy`;
+
+    const { name, count } = (() => {
+        const re = new RegExp(`^(.+)(\\s?\\(${copiedText}\\s?(\\d+)?\\))$`);
+        const match = itemName.match(re);
+
+        if (!match) return { name: itemName.trim(), count: 1 };
+
+        const name = match[1].trim();
+        const count = match[3] ? parseInt(match[3], 10) : 1;
+        return { name, count: isFinite(count) ? count + 1 : 1 };
+    })();
+
+    const copyCount = count > 1 ? ` ${count}` : '';
+    const suffix = ` (${copiedText}${copyCount})`;
+    const maxNameLength = MAX_ITEM_NAME_LENGTH - suffix.length;
+    const truncatedName = name.length > maxNameLength ? name.substring(0, maxNameLength) : name;
+
+    return `${truncatedName}${suffix}`;
+};
