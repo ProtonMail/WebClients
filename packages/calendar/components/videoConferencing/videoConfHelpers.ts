@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+
 import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from './constants';
 
 export const isVideoConfOnlyLink = (data: BaseMeetingUrls) => {
@@ -7,19 +9,13 @@ export const isVideoConfOnlyLink = (data: BaseMeetingUrls) => {
 };
 
 export const getVideoConfCopy = (service: VIDEO_CONF_SERVICES) => {
-    if (service === VIDEO_CONF_SERVICES.GOOGLE_MEET) {
-        return c('Google Meet').t`Join Google Meet`;
-    }
+    const labels = {
+        [VIDEO_CONF_SERVICES.GOOGLE_MEET]: c('Google Meet').t`Join Google Meet`,
+        [VIDEO_CONF_SERVICES.ZOOM]: c('Zoom').t`Join Zoom meeting`,
+        [VIDEO_CONF_SERVICES.SLACK]: c('Slack').t`Join Slack huddle`,
+        [VIDEO_CONF_SERVICES.TEAMS]: c('Teams').t`Join Teams meeting`,
+        [VIDEO_CONF_SERVICES.PROTON_MEET]: c('l10n_nightly Action').t`Join with ${MEET_APP_NAME}`,
+    };
 
-    if (service === VIDEO_CONF_SERVICES.ZOOM) {
-        return c('Zoom').t`Join Zoom meeting`;
-    }
-
-    if (service === VIDEO_CONF_SERVICES.SLACK) {
-        return c('Slack').t`Join Slack huddle`;
-    }
-
-    if (service === VIDEO_CONF_SERVICES.TEAMS) {
-        return c('Teams').t`Join Teams meeting`;
-    }
+    return labels[service];
 };

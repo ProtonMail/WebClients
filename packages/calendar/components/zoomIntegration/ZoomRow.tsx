@@ -11,7 +11,11 @@ import { IcVideoCamera } from '@proton/icons';
 import { createZoomMeeting } from '@proton/shared/lib/api/calendars';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { EventModel, VideoConferenceMeetingCreation } from '@proton/shared/lib/interfaces/calendar';
+import {
+    type EventModel,
+    VIDEO_CONFERENCE_PROVIDER,
+    type VideoConferenceMeetingCreation,
+} from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { VideoConferencingWidget } from '../videoConferencing/VideoConferencingWidget';
@@ -106,6 +110,7 @@ export const ZoomRow = ({ model, setModel, accessLevel, onRowClick, hasZoomError
                 conferenceUrl: data?.VideoConference?.URL,
                 conferencePassword: data?.VideoConference?.Password,
                 conferenceHost: user.Email,
+                conferenceProvider: VIDEO_CONFERENCE_PROVIDER.ZOOM,
             });
 
             if (currentProcessState !== 'zoom-reconnection-error') {

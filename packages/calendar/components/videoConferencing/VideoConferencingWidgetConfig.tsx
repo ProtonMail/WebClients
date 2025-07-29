@@ -8,6 +8,7 @@ import { VideoConferencingWidget } from './VideoConferencingWidget';
 import { SEPARATOR_GOOGLE_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 import { getGoogleMeetDataFromDescription, getGoogleMeetDataFromLocation } from './googleMeet/googleMeetHelpers';
 import { getVideoConferencingData } from './modelHelpers';
+import { PROTON_MEET_REGEX, getProtonMeetData } from './protonMeet/protonMeetHelpers';
 import { getSlackDataFromString } from './slack/slackHelpers';
 import { getTeamsDataFromDescription, getTeamsDataFromLocation } from './teams/teamsHelpers';
 import { VideoConferenceSource, useVideoConfTelemetry } from './useVideoConfTelemetry';
@@ -41,8 +42,11 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
 
     const data = getVideoConferencingData(model);
 
+    const isProtonMeet = !!data.meetingUrl && !!data.meetingUrl.match(PROTON_MEET_REGEX);
+    const isZoom = !!data.meetingUrl?.includes('zoom.us');
+
     // Native Zoom integration
-    if (data.meetingId && data.meetingUrl) {
+    if (data.meetingId && isZoom) {
         sendTelemetryReport(VideoConferenceSource.int_zoom);
         return (
             <VideoConferencingWidget
@@ -51,6 +55,17 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
                     ...data,
                     service: VIDEO_CONF_SERVICES.ZOOM, // The only supported provider is Zoom for the moment
                 }}
+            />
+        );
+    }
+
+    // Proton Meet integration
+    if (isProtonMeet) {
+        sendTelemetryReport(VideoConferenceSource.int_proton_meet);
+        return (
+            <VideoConferencingWidget
+                location={widgetLocation}
+                data={{ ...data, service: VIDEO_CONF_SERVICES.PROTON_MEET }}
             />
         );
     }
@@ -74,6 +89,12 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
     // Event containing a description field with a supported video conferencing link
     // We first parse the description as it contains more information than the location field
     if (data.description) {
+        if (data.description.match(PROTON_MEET_REGEX)) {
+            const protonMeetData = getProtonMeetData(data.description);
+            sendTelemetryReport(VideoConferenceSource.proton_meet_desc);
+            return <VideoConferencingWidget location={widgetLocation} data={protonMeetData} />;
+        }
+
         if (data.description.includes('zoom.us')) {
             const zoomData = getZoomFromDescription(data.description);
             sendTelemetryReport(VideoConferenceSource.zoom_desc);
@@ -101,6 +122,12 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
 
     // Event containing a location field with a supported video conferencing link
     if (data.location) {
+        if (data.location.match(PROTON_MEET_REGEX)) {
+            const protonMeetData = getProtonMeetData(data.location);
+            sendTelemetryReport(VideoConferenceSource.proton_meet_loc);
+            return <VideoConferencingWidget location={widgetLocation} data={protonMeetData} />;
+        }
+
         if (data.location.includes('zoom.us')) {
             const zoomData = getZoomDataFromLocation(data.location);
             sendTelemetryReport(VideoConferenceSource.zoom_loc);

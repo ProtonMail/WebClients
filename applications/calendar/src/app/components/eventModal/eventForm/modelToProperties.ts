@@ -15,7 +15,7 @@ import {
 } from '@proton/shared/lib/calendar/vcalConverter';
 import { withRequiredProperties } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
-import type { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { type DateTimeModel, type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import modelToFrequencyProperties from './modelToFrequencyProperties';
@@ -120,6 +120,7 @@ const modelToVideoConferenceProperties = ({
     conferencePassword,
     conferenceUrl,
     conferenceHost,
+    conferenceProvider,
 }: Partial<EventModel>) => {
     if (!conferenceId || !conferenceUrl) {
         return;
@@ -129,7 +130,7 @@ const modelToVideoConferenceProperties = ({
         'x-pm-conference-id': {
             value: conferenceId,
             parameters: {
-                'x-pm-provider': '1',
+                'x-pm-provider': String(conferenceProvider),
             },
         },
         'x-pm-conference-url': {
@@ -148,8 +149,14 @@ const modelToDescriptionProperties = ({
     conferencePassword,
     conferenceUrl,
     conferenceHost,
+    conferenceProvider,
 }: Partial<EventModel>) => {
-    const hasZoom = !!(conferenceUrl && conferenceId);
+    const hasZoom = !!(
+        conferenceUrl &&
+        conferenceId &&
+        ((conferenceProvider as VIDEO_CONFERENCE_PROVIDER) === VIDEO_CONFERENCE_PROVIDER.ZOOM ||
+            conferenceUrl.includes('zoom.us'))
+    );
 
     // Return an empty object if there is no description and no Zoom meeting
     if (!description && !hasZoom) {

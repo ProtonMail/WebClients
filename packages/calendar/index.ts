@@ -24,6 +24,7 @@ export { useZoomOAuth } from './components/zoomIntegration/useZoomOAuth';
 export { VideoConferenceOrganizationSection } from './components/zoomIntegration/VideoConferenceOrganizationSection';
 export { VideoConferenceToggle } from './components/zoomIntegration/VideoConferenceToggle';
 export { ZoomRow } from './components/zoomIntegration/ZoomRow';
+export { ProtonMeetRow } from './components/protonMeetIntegration/ProtonMeetRow';
 export { holidaysDirectoryReducer, holidaysDirectoryThunk, selectHolidaysDirectory } from './holidaysDirectory';
 export type { HolidaysDirectoryState } from './holidaysDirectory';
 export { startHolidaysDirectoryListener } from './holidaysDirectory/listener';

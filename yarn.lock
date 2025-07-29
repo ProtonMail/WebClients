@@ -8395,6 +8395,7 @@ __metadata:
   resolution: "@proton/calendar@workspace:packages/calendar"
   dependencies:
     "@proton/account": "workspace:^"
+    "@proton/meet": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.8.2"
     "@testing-library/jest-dom": "npm:^6.8.0"
@@ -9014,7 +9015,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/meet@workspace:packages/meet":
+"@proton/meet@workspace:^, @proton/meet@workspace:packages/meet":
   version: 0.0.0-use.local
   resolution: "@proton/meet@workspace:packages/meet"
   dependencies:
@@ -37091,6 +37092,7 @@ __metadata:
     "@proton/hooks": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/jest-env": "workspace:^"
+    "@proton/meet": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/polyfill": "workspace:^"

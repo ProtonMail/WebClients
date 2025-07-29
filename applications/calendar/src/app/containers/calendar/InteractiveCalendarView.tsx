@@ -1680,6 +1680,13 @@ const InteractiveCalendarView = ({
         let isSingleEventUpdate = true;
         let notificationId = 0; // 0 is an invalid notification ID
 
+        // The Zoom integration needs to do a round trip with API to update Zoom events
+        // If a Zoom meeting is present, we do the sync before any Redux update
+        const hasZoomMeeting =
+            !!temporaryEvent.tmpData.conferenceId &&
+            !!temporaryEvent.tmpData.conferenceUrl &&
+            temporaryEvent.tmpData.conferenceUrl.includes('zoom.us');
+
         try {
             isSavingEvent.current = true;
             if (isChangePartstat && selfEmail && inviteActions.partstat) {
@@ -1735,9 +1742,6 @@ const InteractiveCalendarView = ({
                 isEditSingleOccurrenceEnabled,
             });
 
-            // The Zoom integration needs to do a round trip with API to update Zoom events
-            // If a Zoom meeting is present, we do the sync before any Redux update
-            const hasZoomMeeting = !!temporaryEvent.tmpData.conferenceId && !!temporaryEvent.tmpData.conferenceUrl;
             let syncRes: SyncMultipleApiResponse[] | undefined = undefined;
             if (hasZoomMeeting) {
                 try {

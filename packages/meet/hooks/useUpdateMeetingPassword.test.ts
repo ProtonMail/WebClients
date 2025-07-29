@@ -7,6 +7,7 @@ import { useApi } from '@proton/components';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 
+import { CustomPasswordState } from '../types/response-types';
 import { encryptMeetingPassword, encryptSessionKey, hashPasswordWithSalt } from '../utils/cryptoUtils';
 import { useUpdateMeetingPassword } from './useUpdateMeetingPassword';
 
@@ -81,7 +82,12 @@ describe('useUpdateMeetingPassword', () => {
 
         const { result } = renderHook(() => useUpdateMeetingPassword());
 
-        const meeting = await result.current.updateMeetingPassword(meetingId, password, sessionKey);
+        const meeting = await result.current.updateMeetingPassword({
+            meetingId,
+            password,
+            sessionKey,
+            customPassword: CustomPasswordState.NO_PASSWORD,
+        });
 
         expect(srpGetVerify).toHaveBeenCalledWith({
             api: mockApi,
@@ -96,10 +102,10 @@ describe('useUpdateMeetingPassword', () => {
                 data: expect.objectContaining({
                     Password: encryptedPassword,
                     SessionKey: encryptedSessionKey,
-                    Salt: salt,
                     SRPSalt: srpSalt,
                     SRPVerifier: srpVerifier,
                     SRPModulusID: srpModulusID,
+                    CustomPassword: CustomPasswordState.NO_PASSWORD,
                 }),
             })
         );
