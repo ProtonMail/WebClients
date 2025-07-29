@@ -3,18 +3,42 @@ import { Route } from 'react-router-dom';
 
 import { ProtonApp } from '@proton/components';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
 
+import { ComingSoon } from './components/ComingSoon/ComingSoon';
 import * as config from './config';
 import { AdminContainer } from './containers/AdminContainer';
 import { DashboardContainer } from './containers/DashboardContainer';
 import { GuestContainer } from './containers/GuestContainer';
-import { ProtonMeetContainerWrapper } from './containers/ProtonMeetContainer';
+import { ProtonMeetContainer } from './containers/ProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
+import usePublicToken from './hooks/srp/usePublicToken';
 
 // @ts-ignore
 import meetTheme from './styles/meet.theme.css';
 
 const routes = ['join', 'admin/create', 'dashboard'];
+
+const ComingSoonWrapper = ({ children, isGuest }: { children: React.ReactNode; isGuest: boolean }) => {
+    const isJoin = window.location.pathname.includes('join');
+
+    const { token } = usePublicToken();
+
+    const isEarlyAccess = useFlag('MeetEarlyAccess');
+    const isEarlyAccessPublic = useFlag('MeetEarlyAccessPublic');
+
+    const shouldDisplayComingSoonPage =
+        (isGuest && !isJoin) ||
+        (!isEarlyAccessPublic && isGuest) ||
+        (isEarlyAccessPublic && isGuest && !token) ||
+        !isEarlyAccess;
+
+    if (shouldDisplayComingSoonPage) {
+        return <ComingSoon />;
+    }
+
+    return children;
+};
 
 export const App = () => {
     const isGuest = window.location.pathname.includes('guest');
@@ -42,13 +66,17 @@ export const App = () => {
 
             {isGuest ? (
                 <GuestContainer>
-                    <Route path="/join" render={() => <ProtonMeetContainerWrapper guestMode={true} />} />
+                    <ComingSoonWrapper isGuest={true}>
+                        <Route path="/join" render={() => <ProtonMeetContainer guestMode={true} />} />
+                    </ComingSoonWrapper>
                 </GuestContainer>
             ) : (
                 <ProviderContainer>
-                    <Route path="/join" render={() => <ProtonMeetContainerWrapper />} />
-                    <Route path="/admin" component={AdminContainer} />
-                    <Route path="/dashboard" component={DashboardContainer} />
+                    <ComingSoonWrapper isGuest={false}>
+                        <Route path="/join" render={() => <ProtonMeetContainer />} />
+                        <Route path="/admin" component={AdminContainer} />
+                        <Route path="/dashboard" component={DashboardContainer} />
+                    </ComingSoonWrapper>
                 </ProviderContainer>
             )}
         </ProtonApp>
