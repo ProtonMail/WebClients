@@ -107,6 +107,10 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const transformedGroupMembers: GroupMember[] | undefined =
         groupMembers !== undefined ? Object.values(groupMembers) : [];
 
+    const hasDuplicateNameValidator = (name: string): string => {
+        return !!groups?.some(({ Name }) => Name === name) ? c('Error').t`Name already exists` : '';
+    };
+
     const form = useFormik({
         initialValues: INITIAL_FORM_VALUES,
         onSubmit: () => {},
@@ -114,10 +118,14 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         validateOnMount: false,
         validate: ({ name, address }) => {
             const errors: FormikErrors<GroupFormData> = {};
-            const nameError = requiredValidator(name);
+            const nameRequiredError = requiredValidator(name);
+            const nameDuplicateError = hasDuplicateNameValidator(name);
             const addressError = emailValidator(`${address}@${selectedDomain}`);
-            if (requiredValidator(name)) {
-                errors.name = nameError;
+            if (nameRequiredError) {
+                errors.name = nameRequiredError;
+            }
+            if (nameDuplicateError) {
+                errors.name = nameDuplicateError;
             }
             if (uiState === 'new' && addressError) {
                 errors.address = addressError;
