@@ -1426,10 +1426,6 @@
       "Trust": [
         "Αξιόπιστο"
       ],
-      "Trust key": [
-        "Εμπιστοσύνη στο κλειδί",
-        "Εμπιστοσύνη στα κλειδιά"
-      ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
       ],
@@ -11835,6 +11831,9 @@
       ]
     },
     "Payments.VAT number name": {
+      "ABN": [
+        "ΑΦΜ"
+      ],
       "Business Number": [
         "Αριθμός Επιχείρησης"
       ],
@@ -13525,6 +13524,10 @@
         "${ elementsCount } συνομιλία αφαιρέθηκε από ${ labelName }.",
         "${ elementsCount } συνομιλίες αφαιρέθηκαν από ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } συνομιλία αφαιρέθηκε από τις Σημασμένες.",
+        "${ elementsCount } συνομιλίες αφαιρέθηκαν από τις Σημασμένες."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } συνομιλία αναβλήθηκε",
         "${ elementsCount } συνομιλίες αναβλήθηκαν"
@@ -13564,6 +13567,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } μήνυμα αφαιρέθηκε από ${ labelName }.",
         "${ elementsCount } μηνύματα αφαιρέθηκαν από ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } μήνυμα αφαιρέθηκε από τα Σημασμένα.",
+        "${ elementsCount } μηνύματα αφαιρέθηκαν από τα Σημασμένα."
       ],
       "Address copied to clipboard": [
         "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
@@ -13626,6 +13633,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Η συνομιλία αφαιρέθηκε από ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Η συνομιλία αφαιρέθηκε από τις Σημασμένες."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Ο συνομιλίες από ${ sendersList } θα επισημαίνονται ως ${ labelsList }"
@@ -13698,6 +13708,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Το μήνυμα αφαιρέθηκε από ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Το μήνυμα αφαιρέθηκε από τα Σημασμένα."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Τα μηνύματα από ${ sendersList } θα επισημαίνονται ως ${ labelsList }"

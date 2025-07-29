@@ -582,6 +582,12 @@
       "Publish changes": [
         "Terbitkan perubahan"
       ],
+      "Purge all": [
+        "Bersihkan semua"
+      ],
+      "Purge deleted": [
+        "Pembersihan dihapus"
+      ],
       "Recover data": [
         "Pulihkan data"
       ],
@@ -981,6 +987,9 @@
       ],
       "${ price } per user": [
         "${ price } per pengguna"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } kuota ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } kuota asisten penulisan"
@@ -1551,6 +1560,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Masalah ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Masalah aplikasi"
       ],
@@ -3331,8 +3343,14 @@
       "Please enter a valid Entity ID URL": [
         "Silakan masukkan URL ID Entitas yang valid"
       ],
+      "Please enter a valid postal code": [
+        "Silakan masukkan kode pos yang valid"
+      ],
       "Please enter a valid ZIP code": [
         "Silakan masukkan kode pos yang valid"
+      ],
+      "Please enter postal code": [
+        "Silakan masukkan kode pos"
       ],
       "Please enter ZIP code": [
         "Silakan masukkan kode pos"
@@ -3354,6 +3372,9 @@
       ],
       "Please select billing country": [
         "Silakan pilih negara penagihan"
+      ],
+      "Please select billing state": [
+        "Silakan pilih negara bagian penagihan"
       ],
       "Please set a recovery email first": [
         "Harap tentukan alamat email pemulihan terlebih dahulu"
@@ -3378,6 +3399,9 @@
       ],
       "Please upload only 1 file": [
         "Mohon hanya unggah 1 berkas"
+      ],
+      "Postal code is required": [
+        "Kode pos dibutuhkan"
       ],
       "Process aborted": [
         "Proses dibatalkan"
@@ -4274,6 +4298,9 @@
       ]
     },
     "Info": {
+      " and other security features.": [
+        " dan berbagai fitur keamanan lainnya."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers }/${ totalUsers } pengguna saat ini memiliki akses ke server bersama."
       ],
@@ -4309,6 +4336,9 @@
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dari anggota non-SSO menggunakan autentikasi dua faktor untuk masuk ke organisasi Anda."
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
@@ -4789,6 +4819,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Menurunkan akun akan memutus seluruh koneksi ke server ${ VPN_APP_NAME } berbayar."
+      ],
+      "Download current logs": [
+        "Unduh log saat ini"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Unduh template CSV kami, lengkapi rincian pengguna yang terkait, lalu unggah berkas CSV yang telah diisi untuk membuat akun bagi para pengguna ini."
@@ -5441,6 +5474,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
       ],
+      "Private AI assistant": [
+        "Asisten AI pribadi"
+      ],
       "Protected by Swiss privacy laws": [
         "Dilindungi oleh undang-undang privasi Swiss"
       ],
@@ -5476,6 +5512,9 @@
       ],
       "Restore": [
         "Pulihkan"
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Peraturan penyimpanan data \"${ formData.name }\" berhasil diperbarui"
       ],
       "Retention rule \"${ payload.Name }\" created successfully": [
         "Peraturan penyimpanan data \"${ payload.Name }\" berhasil dibuat"
@@ -6714,6 +6753,9 @@
       ],
       "Import all messages": [
         "Impor seluruh pesan"
+      ],
+      "Include application logs in bug report": [
+        "Sertakan log aplikasi dalam laporan bug"
       ],
       "Integrated 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
@@ -8200,6 +8242,9 @@
       "Downgrade account?": [
         "Turunkan jenis akun?"
       ],
+      "Review subscription": [
+        "Tinjau langganan"
+      ],
       "Review subscription and pay": [
         "Peninjauan dan pembayaran langganan"
       ],
@@ -8808,6 +8853,9 @@
       "Free server configs": [
         "Konfigurasi server gratis"
       ],
+      "Group": [
+        "Grup"
+      ],
       "I found another service that I like better": [
         "Saya menemukan layanan lain yang saya lebih suka"
       ],
@@ -9227,6 +9275,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
+      "This number will be shown on all future invoices": [
+        "Nomor ini akan ditampilkan pada seluruh faktur yang akan datang"
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Metode pembayaran ini akan menjadi metode bawaan baru Anda untuk segala perpanjangan yang dilakukan ke depannya."
       ],
@@ -9293,6 +9344,9 @@
       ],
       "EIN": [
         "NPWP"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ]
     },
     "Permission": {
@@ -9387,6 +9441,9 @@
       ],
       "Please select the main reason": [
         "Silakan pilih alasan utama"
+      ],
+      "Postal code": [
+        "Kode pos"
       ],
       "Search": [
         "Pencarian"
@@ -9606,11 +9663,17 @@
       "Create retention rule": [
         "Buat peraturan penyimpanan data"
       ],
+      "Delete": [
+        "Hapus"
+      ],
       "Delete rule": [
         "Hapus aturan"
       ]
     },
     "retention_policy_2025_Info": {
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } hari"
+      ],
       "Forever": [
         "Selamanya"
       ]
@@ -12830,6 +12893,9 @@
       ],
       "It's you": [
         "Ini Anda"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Menunggu akses admin"

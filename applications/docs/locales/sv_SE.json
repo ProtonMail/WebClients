@@ -1306,6 +1306,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
+      ],
       "Application problem": [
         "Problem med applikation"
       ],
@@ -4542,6 +4545,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
       ],
+      "Download current logs": [
+        "Ladda ner nuvarande loggar"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Nedladdning av ${ downloadFileName } kommer att avbrytas"
       ],
@@ -5990,6 +5996,9 @@
       ],
       "Import to:": [
         "Importera till:"
+      ],
+      "Include application logs in bug report": [
+        "Inkludera applikationsloggar i felrapport"
       ],
       "Include document name in notification": [
         "Inkludera dokumentnamn i avisering"

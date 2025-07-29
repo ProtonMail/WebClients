@@ -450,6 +450,9 @@
       "Forward as attachment": [
         "Přeposlat jako přílohu"
       ],
+      "Full data": [
+        "Úplná data"
+      ],
       "Generate password": [
         "Generovat heslo"
       ],
@@ -695,6 +698,9 @@
       ],
       "Next page": [
         "Další stránka"
+      ],
+      "No sensitive data": [
+        "Žádná citlivá data"
       ],
       "Not now": [
         "Nyní ne"
@@ -1617,6 +1623,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problém"
+      ],
       "Application problem": [
         "Problém s aplikací"
       ],
@@ -3308,13 +3317,13 @@
         "Nepodařilo se stáhnout uzel"
       ],
       "Failed to fetch sharing info": [
-        "Nepodařilo se stáhnout informace o sdílení"
+        "Nepodařilo se získat informace o sdílení"
+      ],
+      "Failed to get details, please try again later": [
+        "Nepodařilo se získat detaily. Zkuste to prosím později"
       ],
       "Failed to load the STL preview": [
         "Načtení náhledu STL selhalo"
-      ],
-      "Failed to move items": [
-        "Přesun položek selhal"
       ],
       "Failed to resend invitation": [
         "Pozvánku se nepodařilo znovu odeslat"
@@ -3670,6 +3679,9 @@
       "Unknown error": [
         "Neznámá chyba"
       ],
+      "Unknown location": [
+        "Neznámé umístění"
+      ],
       "Unknown payment token status": [
         "Neznámý stav platebního tokenu"
       ],
@@ -3705,6 +3717,9 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nerozšifrovatelný název"
       ]
     },
     "Error importing calendar": {
@@ -5027,9 +5042,6 @@
       ],
       "Aug": [
         "Srp"
-      ],
-      "Automated Recovery ${ formattedDate }": [
-        "Automatizované obnovení ${ formattedDate }"
       ],
       "Available": [
         "K dispozici"
@@ -7492,17 +7504,8 @@
       "Albums": [
         "Alba"
       ],
-      "All mail": [
-        "Všechna pošta"
-      ],
-      "Archive": [
-        "Archiv"
-      ],
       "clearing your browser cache": [
         "vyprazdňuji cache ve vašem prohlížeči"
-      ],
-      "Drafts": [
-        "Koncepty"
       ],
       "Enforcing 2FA for organizations": [
         "Vynucení 2FA pro organizace"
@@ -7555,9 +7558,6 @@
       "if your data is leaked": [
         "když dojde k úniku vašich dat"
       ],
-      "Inbox": [
-        "Doručená pošta"
-      ],
       "Learn more": [
         "Zjistit více"
       ],
@@ -7573,12 +7573,6 @@
       "Request an invite": [
         "Požádat o pozvánku"
       ],
-      "Scheduled": [
-        "Naplánováno"
-      ],
-      "Sent": [
-        "Odeslané"
-      ],
       "settings": [
         "nastavení"
       ],
@@ -7587,15 +7581,6 @@
       ],
       "Shared with me": [
         "Sdíleno se mnou"
-      ],
-      "Snooze": [
-        "Odložit"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "S hvězdičkou"
       ],
       "Trash": [
         "Koš"
@@ -9115,9 +9100,6 @@
       ],
       "An invitation has been sent": [
         "Pozvánka byla odeslána"
-      ],
-      "Cannot load file or folder info": [
-        "Nelze načíst informace o souboru nebo složce"
       ],
       "Cannot load link": [
         "Odkaz se nepodařilo načíst"
@@ -11699,6 +11681,9 @@
       "Addresses": [
         "Adresy"
       ],
+      "Advanced details": [
+        "Pokročilé detaily"
+      ],
       "Album": [
         "Album"
       ],
@@ -11716,6 +11701,12 @@
       ],
       "Amount due": [
         "Částka k zaplacení"
+      ],
+      "an anonymous user": [
+        "anonymní uživatel"
+      ],
+      "Anonymous user": [
+        "Anonymní uživatel"
       ],
       "Apply gift code": [
         "Použít dárkový kód"
@@ -11825,6 +11816,9 @@
       "Create new group": [
         "Vytvořit novou skupinu"
       ],
+      "Created by": [
+        "Vytvořil(a)"
+      ],
       "Credits": [
         "Kredity"
       ],
@@ -11888,6 +11882,33 @@
       "Desktop": [
         "Desktop"
       ],
+      "Devices": [
+        "Zařízení"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitální podpis byl částečně ověřen. Tento soubor byl vytvořen pomocí veřejně přístupného odkazu ke sdílení uživatelem bez účtu ${ BRAND_NAME }, takže jeho totožnost nelze ověřit."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitální podpis byl částečně ověřen. Tento soubor byl nahrán pomocí veřejně přístupného odkazu ke sdílení uživatelem bez účtu ${ BRAND_NAME }, takže jeho totožnost nelze ověřit."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitální podpis byl částečně ověřen. Tato složka byla vytvořena pomocí veřejně přístupného odkazu ke sdílení uživatelem bez účtu ${ BRAND_NAME }, takže jeho totožnost nelze ověřit."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitální podpis byl částečně ověřen. Tato složka byla nahrána pomocí veřejně přístupného odkazu ke sdílení uživatelem bez účtu ${ BRAND_NAME }, takže jeho totožnost nelze ověřit."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Digitální podpis ověřen. Tento soubor byl bezpečně vytvořen uživatelem <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Digitální podpis ověřen. Tento soubor byl bezpečně nahrán uživatelem <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Digitální podpis ověřen. Tato složka byla bezpečně vytvořena uživatelem <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Digitální podpis ověřen. Tato složka byla bezpečně nahrána uživatelem <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Zahodit"
       ],
@@ -11905,6 +11926,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stáhnout aplikace ${ DRIVE_APP_NAME }"
+      ],
+      "Download details": [
+        "Stáhnout detaily"
       ],
       "Download the app": [
         "Stáhněte si aplikaci"
@@ -11984,6 +12008,9 @@
       "File recovery process": [
         "Proces obnovy souboru"
       ],
+      "Folder": [
+        "Složka"
+      ],
       "Folder details": [
         "Podrobnosti složky"
       ],
@@ -12056,6 +12083,9 @@
       "Last edited by": [
         "Naposledy upravil(a)"
       ],
+      "Last uploaded by": [
+        "Naposledy nahrál(a)"
+      ],
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
       ],
@@ -12067,6 +12097,9 @@
       ],
       "Manage secure link": [
         "Spravovat zabezpečený odkaz"
+      ],
+      "Media type": [
+        "Typ média"
       ],
       "Merge contacts": [
         "Sloučit kontakty"
@@ -12100,9 +12133,6 @@
       ],
       "Network error": [
         "Chyba sítě"
-      ],
-      "Newsletters view": [
-        "Zobrazení e-mailových zpravodajů"
       ],
       "Night theme": [
         "Noční motiv"
@@ -12169,6 +12199,9 @@
       ],
       "Original size": [
         "Původní velikost"
+      ],
+      "Original size in bytes": [
+        "Původní velikost v bajtech"
       ],
       "Other information": [
         "Další informace"
@@ -12299,6 +12332,9 @@
       "Settings": [
         "Nastavení"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "Sdílet ${ name }"
       ],
@@ -12328,6 +12364,9 @@
       ],
       "Size": [
         "Velikost"
+      ],
+      "Size in bytes": [
+        "Velikost v bajtech"
       ],
       "Sort files/folders": [
         "Seřadit soubory/složky"
@@ -12359,6 +12398,15 @@
       "The link expired": [
         "Platnost odkazu vypršela"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Ověření podpisu šifrovacích klíčů původním tvůrcem (${ claimedKeyAuthor }), který vytvořil uzel, selhalo. Důvodem je: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Ověření podpisu obsahu souboru nahrávajícím (${ claimedContentAuthor }), který nahrál poslední revizi, selhalo. Důvodem je: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Ověření podpisu názvu autorem (${ claimedNameAuthor }), který název nastavil naposledy selhalo. Důvodem je: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tento soubor má chybějící nebo neplatný podpis. Běžte do Menu (⋮) → Detaily pro info."
       ],
@@ -12379,6 +12427,12 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Neznámý uživatel"
       ],
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"
@@ -12427,6 +12481,30 @@
       ],
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Nepodařilo se nám ověřit, že uživatel <strong>${ emailAddress }</strong> vytvořil tento soubor."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Nepodařilo se nám ověřit, že uživatel <strong>${ emailAddress }</strong> vytvořil tuto složku."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Nepodařilo se nám ověřit, že uživatel <strong>${ emailAddress }</strong> nahrál tento soubor."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Nepodařilo se nám ověřit, že uživatel <strong>${ emailAddress }</strong> nahrál tuto složku."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Nepodařilo se nám ověřit, že anonymní uživatel vytvořil tento soubor."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Nepodařilo se nám ověřit, že anonymní uživatel vytvořil tuto složku."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Nepodařilo se nám ověřit, že anonymní uživatel nahrál tento soubor."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Nepodařilo se nám ověřit, že anonymní uživatel nahrál tuto složku."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vítejte v ${ BRAND_NAME } for Business"
