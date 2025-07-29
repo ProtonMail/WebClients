@@ -5,12 +5,11 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import useFlag from '@proton/unleash/useFlag';
 
 import { isMessage as testIsMessage } from 'proton-mail/helpers/elements';
+import { useMessageMoveEngine } from 'proton-mail/helpers/location/MoveEngine/useMessageMoveEngine';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Element } from 'proton-mail/models/element';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
-
-import { useMessageMoveEngine } from '../location/useMessageMoveEngine';
 
 export interface ApplyLocationParams {
     elements: Element[];
