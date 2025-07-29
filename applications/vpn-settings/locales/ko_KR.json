@@ -582,6 +582,12 @@
       "Publish changes": [
         "변경 사항 게시"
       ],
+      "Purge all": [
+        "모두 지우기"
+      ],
+      "Purge deleted": [
+        "삭제된 항목 지우기"
+      ],
       "Recover data": [
         "데이터 복구"
       ],
@@ -981,6 +987,9 @@
       ],
       "${ price } per user": [
         "사용자당 ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ],
       "${ seats } writing assistant seat": [
         "${ seats }명 글쓰기 도우미 이용 권한"
@@ -5469,7 +5478,7 @@
         "가격에는 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
       ],
       "Private AI assistant": [
-        "프라이빗 AI 어시스턴트"
+        "개인정보가 보호되는 AI 어시스턴트"
       ],
       "Protected by Swiss privacy laws": [
         "스위스 개인정보법에 의해 보호됨"
