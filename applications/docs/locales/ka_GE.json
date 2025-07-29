@@ -127,6 +127,9 @@
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
+      "Cancel trial and pay": [
+        "გამოსაცდელი პერიოდის გაუქმება და გადახდა"
+      ],
       "Change sort order": [
         "დალაგების მიმდევრობის შეცვლა"
       ],
@@ -932,6 +935,10 @@
       "${ price } per user": [
         "${ price }/მომხმარებელი"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } წერის დამხმარის ლიცენზია",
         "${ seats } წერის დამხმარის ლიცენზია"
@@ -1284,6 +1291,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME }-ის პრობლემა"
+      ],
       "Application problem": [
         "აპლიკაციის პრობლემა"
       ],
@@ -3047,6 +3057,18 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "სურათების ატვირთვა დროებით გათიშულია. მოგვიანებით სცადეთ"
       ],
+      "Please enter a valid postal code": [
+        "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
+      ],
+      "Please enter a valid ZIP code": [
+        "შეიყვანეთ სწორი ZIP კოდი"
+      ],
+      "Please enter postal code": [
+        "შეყვანეთ საფოსტო კოდი"
+      ],
+      "Please enter ZIP code": [
+        "შეიყვანეთ ZIP კოდი"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
@@ -3059,6 +3081,12 @@
       ],
       "Please select a state": [
         "აირჩიეთ შტატი"
+      ],
+      "Please select billing country": [
+        "აირჩიეთ გადახდის ქვეყანა"
+      ],
+      "Please select billing state": [
+        "აირჩიეთ გადახდის მდგომარეობა"
       ],
       "Port is required": [
         "პორტი აუცილებელია"
@@ -4456,6 +4484,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "გეგმის ჩამოწევა შეწყვეტს შეერთებას ფასიან ${ VPN_APP_NAME } სერვერებთან."
+      ],
+      "Download current logs": [
+        "მიმდინარე ჟურნალის გადმოწერა"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }-ის გადმოწერა გაუქმდება"
@@ -5855,6 +5886,9 @@
       "Import to:": [
         "შემოტანა:"
       ],
+      "Include application logs in bug report": [
+        "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
+      ],
       "Include document name in notification": [
         "დოკუმენტის სახელის ჩასმა გაფრთხილებებში"
       ],
@@ -7212,6 +7246,9 @@
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
       ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
+      ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
       ],
@@ -8064,6 +8101,9 @@
       "Got it": [
         "გავიგე"
       ],
+      "I'm purchasing as a business": [
+        "ვაპირებ შევიძინო ბიზნესისთვის"
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -8283,6 +8323,14 @@
     "plan customizer, users": {
       "contact": [
         "კონტაქტი"
+      ]
+    },
+    "plus_block": {
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle }-ზე დარჩენა"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
       ]
     },
     "Price": {
