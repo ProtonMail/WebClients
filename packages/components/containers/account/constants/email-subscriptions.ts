@@ -41,8 +41,7 @@ const getProductUpdatesString = (app: string, additionalApp?: string) => {
 };
 
 export const getEmailSubscriptions = (
-    filter: (data: EmailSubscription) => boolean,
-    lumoInProductNewsletters: boolean
+    filter: (data: EmailSubscription) => boolean
 ): {
     general: EmailSubscriptionData;
     product: EmailSubscriptionData;
@@ -130,7 +129,7 @@ export const getEmailSubscriptions = (
             title: getProductUpdatesString(VPN_APP_NAME),
             frequency: c('news').t`4-6 emails per year`,
         },
-        lumoInProductNewsletters && {
+        {
             id: 'news_product_lumo',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.LUMO_NEWS,
             title: getProductUpdatesString(LUMO_APP_NAME),
@@ -158,8 +157,8 @@ export const getEmailSubscriptions = (
     };
 };
 
-export const getEmailSubscriptionsMap = (lumoInProductNewsletters: boolean) => {
-    const result = getEmailSubscriptions(() => true, lumoInProductNewsletters);
+export const getEmailSubscriptionsMap = () => {
+    const result = getEmailSubscriptions(() => true);
     return toMap([...result.general.toggles, ...result.product.toggles, ...result.notifications.toggles], 'flag');
 };
 

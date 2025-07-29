@@ -15,7 +15,6 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import { type NewsletterSubscriptionUpdateData, getUpdatedNewsBitmap } from '@proton/shared/lib/helpers/newsletter';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 
 import { EmailSubscriptionToggleWithHeader } from './EmailSubscriptionToggles';
 
@@ -26,8 +25,6 @@ const EditEmailSubscription = () => {
     const dispatch = useDispatch();
     const api = useApi();
     const [loadingMap, setLoadingMap] = useState<{ [key: string]: boolean }>({});
-
-    const lumoInProductNewsletters = useFlag('LumoInProductNewsletters');
 
     const run = async (data: NewsletterSubscriptionUpdateData) => {
         dispatch(userSettingsActions.update({ UserSettings: { News: getUpdatedNewsBitmap(userSettings.News, data) } }));
@@ -56,7 +53,7 @@ const EditEmailSubscription = () => {
             userSettings,
         });
 
-    const { general, product, notifications } = getEmailSubscriptions(filter, lumoInProductNewsletters);
+    const { general, product, notifications } = getEmailSubscriptions(filter);
 
     const sharedProps = {
         onChange: handleChange,

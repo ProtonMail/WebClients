@@ -71,6 +71,7 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.LUMO, 'USD', undefined, false),
             ],
             IndividualPlans: [
                 getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
@@ -138,6 +139,7 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.LUMO, 'USD', undefined, false),
             ],
             IndividualPlans: [
                 getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
@@ -254,6 +256,7 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.LUMO, 'USD', undefined, false),
             ],
             IndividualPlans: [
                 getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
@@ -320,6 +323,7 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.LUMO, 'USD', undefined, false),
             ],
             IndividualPlans: [
                 getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
@@ -392,6 +396,7 @@ describe('useAccessiblePlans', () => {
                 // vpn2024 USD should not be rendered either because all /check calls are forbidden in this case.
                 getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.LUMO, 'USD', undefined, false),
             ],
             IndividualPlans: [
                 getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
@@ -461,6 +466,7 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.LUMO, 'USD', undefined, false),
             ],
             IndividualPlans: [
                 getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
@@ -530,6 +536,7 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.LUMO, 'USD', undefined, false),
             ],
             IndividualPlans: [
                 getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
@@ -593,6 +600,7 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.DRIVE, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.PASS, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.LUMO, 'USD', undefined, false),
             ],
             IndividualPlans: [
                 getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
