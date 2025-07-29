@@ -435,6 +435,9 @@
       "Forward as attachment": [
         "첨부 파일로 전달"
       ],
+      "Full data": [
+        "전체 데이터"
+      ],
       "Generate password": [
         "비밀번호 생성"
       ],
@@ -1175,6 +1178,9 @@
       ],
       "${ price } per user": [
         "사용자당 ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ],
       "${ seats } writing assistant seat": [
         "${ seats }명 글쓰기 도우미 이용 권한"
@@ -3222,11 +3228,11 @@
       "Failed to fetch sharing info": [
         "공유 정보 가져오기 실패"
       ],
+      "Failed to get details, please try again later": [
+        "세부사항을 가져오지 못했습니다. 나중에 다시 시도하십시오."
+      ],
       "Failed to load the STL preview": [
         "STL 미리보기 불러오기 실패"
-      ],
-      "Failed to move items": [
-        "항목 이동 실패"
       ],
       "Failed to resend invitation": [
         "초대장 재전송 실패"
@@ -3567,6 +3573,9 @@
       "Unknown error": [
         "알 수 없는 오류"
       ],
+      "Unknown location": [
+        "알 수 없는 위치"
+      ],
       "Unknown payment token status": [
         "알 수 없는 결제 토큰 상태"
       ],
@@ -3599,6 +3608,9 @@
       ],
       "Your import will not be processed.": [
         "가져오기가 처리되지 않았습니다."
+      ],
+      "⚠️ Undecryptable name": [
+        "복호화할 수 없는 이름"
       ]
     },
     "Error importing calendar": {
@@ -4765,9 +4777,6 @@
       ],
       "Aug": [
         "8월"
-      ],
-      "Automated Recovery ${ formattedDate }": [
-        "자동 복구 ${ formattedDate }"
       ],
       "Available": [
         "사용 가능"
@@ -7164,17 +7173,8 @@
       "Albums": [
         "앨범"
       ],
-      "All mail": [
-        "모든 메일"
-      ],
-      "Archive": [
-        "보관 편지함"
-      ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
-      ],
-      "Drafts": [
-        "임시 보관함"
       ],
       "Enforcing 2FA for organizations": [
         "조직 전체에 2단계 인증 강제화"
@@ -7227,9 +7227,6 @@
       "if your data is leaked": [
         "사용자의 데이터가 유출된 경우"
       ],
-      "Inbox": [
-        "받은 편지함"
-      ],
       "Learn more": [
         "더 알아보기"
       ],
@@ -7245,12 +7242,6 @@
       "Request an invite": [
         "가입 요청하기"
       ],
-      "Scheduled": [
-        "시간대 설정됨"
-      ],
-      "Sent": [
-        "보낸 편지함"
-      ],
       "settings": [
         "설정"
       ],
@@ -7259,15 +7250,6 @@
       ],
       "Shared with me": [
         "나와 공유됨"
-      ],
-      "Snooze": [
-        "방해 금지"
-      ],
-      "Spam": [
-        "스팸함"
-      ],
-      "Starred": [
-        "별표 표시됨"
       ],
       "Trash": [
         "휴지통"
@@ -8646,9 +8628,6 @@
       ],
       "An invitation has been sent": [
         "초대를 전송했습니다."
-      ],
-      "Cannot load file or folder info": [
-        "파일 또는 폴더 정보를 불러오는데 실패했습니다"
       ],
       "Cannot load link": [
         "링크를 불러오는 중 문제 발생"
@@ -11030,6 +11009,9 @@
       "Addresses": [
         "주소"
       ],
+      "Advanced details": [
+        "고급 세부사항"
+      ],
       "Album": [
         "앨범"
       ],
@@ -11047,6 +11029,12 @@
       ],
       "Amount due": [
         "지불할 금액"
+      ],
+      "an anonymous user": [
+        "익명의 사용자"
+      ],
+      "Anonymous user": [
+        "익명의 사용자"
       ],
       "Apply gift code": [
         "기프트 코드 적용"
@@ -11153,6 +11141,9 @@
       "Create new group": [
         "새 그룹 만들기"
       ],
+      "Created by": [
+        "만든이"
+      ],
       "Credits": [
         "크레딧"
       ],
@@ -11207,6 +11198,33 @@
       "Desktop": [
         "데스크톱"
       ],
+      "Devices": [
+        "기기"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "디지털 서명이 부분적으로 인증되었습니다. 이 폴더는 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 생성했기 때문에 신원을 확인할 수 없습니다."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "디지털 서명이 부분적으로 인증되었습니다. 이 파일은 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 업로드했기 때문에 신원을 확인할 수 없습니다."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "디지털 서명이 부분적으로 인증되었습니다. 이 폴더는 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 생성했기 때문에 신원을 확인할 수 없습니다."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "디지털 서명이 부분적으로 인증되었습니다. 이 폴더는 ${ BRAND_NAME } 계정이 없는 사용자가 공개적으로 접근할 수 있는 공유 링크를 사용하여 업로드했기 때문에 신원을 확인할 수 없습니다."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "디지털 서명이 인증되었습니다. 이 파일은 <strong>${ emailAddress }</strong>에 의해 안전하게 생성되었습니다."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "디지털 서명이 인증되었습니다. 이 파일은 <strong>${ emailAddress }</strong>에 의해 안전하게 업로드되었습니다."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "디지털 서명이 인증되었습니다. 이 폴더는 <strong>${ emailAddress }</strong>에 의해 안전하게 생성되었습니다."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "디지털 서명이 인증되었습니다. 이 폴더는 <strong>${ emailAddress }</strong>에 의해 안전하게 업로드 되었습니다."
+      ],
       "Discard": [
         "취소"
       ],
@@ -11224,6 +11242,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } 앱 다운로드"
+      ],
+      "Download details": [
+        "다운로드 세부사항"
       ],
       "Download the app": [
         "앱 다운로드"
@@ -11303,6 +11324,9 @@
       "File recovery process": [
         "파일 복구 진행도"
       ],
+      "Folder": [
+        "폴더"
+      ],
       "Folder details": [
         "폴더 세부 정보"
       ],
@@ -11369,6 +11393,9 @@
       "Last edited by": [
         "마지막으로 편집한 사용자"
       ],
+      "Last uploaded by": [
+        "마지막으로 업로드한 사람"
+      ],
       "Link confirmation": [
         "링크 확인"
       ],
@@ -11380,6 +11407,9 @@
       ],
       "Manage secure link": [
         "보안 링크 관리"
+      ],
+      "Media type": [
+        "미디어 유형"
       ],
       "Merge contacts": [
         "연락처 병합"
@@ -11413,9 +11443,6 @@
       ],
       "Network error": [
         "네트워크 오류"
-      ],
-      "Newsletters view": [
-        "뉴스레터 보기"
       ],
       "Night theme": [
         "야간 테마"
@@ -11482,6 +11509,9 @@
       ],
       "Original size": [
         "원본 크기"
+      ],
+      "Original size in bytes": [
+        "원본 크기(바이트)"
       ],
       "Other information": [
         "다른 정보"
@@ -11609,6 +11639,9 @@
       "Settings": [
         "설정"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "${ name } 공유"
       ],
@@ -11638,6 +11671,9 @@
       ],
       "Size": [
         "크기"
+      ],
+      "Size in bytes": [
+        "크기(바이트)"
       ],
       "Sort files/folders": [
         "파일/폴더 분류"
@@ -11669,6 +11705,15 @@
       "The link expired": [
         "링크 만료됨"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "노드를 생성한 원본 작성자(${ claimedKeyAuthor })에 의한 암호화 키의 서명 확인에 실패했습니다. 이유는 다음과 같습니다: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "최근 수정사항을 업로드한 사람(${ claimedContentAuthor })에 의한 파일 내용물 서명 확인에 실패했습니다. 이유는 다음과 같습니다: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "마지막으로 이름을 지정한 사람(${ claimedNameAuthor })에 의한 이름의 서명 확인에 실패했습니다. 이유는 다음과 같습니다: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "이 파일이 유효하지 않거나 서명이 존재하지 않습니다. 매뉴(⋮) → 상세 정보에서 자세한 정보를 확인하세요"
       ],
@@ -11689,6 +11734,12 @@
       ],
       "Type": [
         "유형"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "알 수 없는 사용자"
       ],
       "Untitled document ${ date }": [
         "무제 문서 ${ date }"
@@ -11737,6 +11788,30 @@
       ],
       "Warning: suspected fake website": [
         "경고: 가짜 웹 사이트일 수 있음"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "<strong>${ emailAddress }</strong>가 해당 파일을 생성했는지 확인할 수 없었습니다."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "<strong>${ emailAddress }</strong>가 해당 폴더를 생성했는지 확인할 수 없었습니다."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "<strong>${ emailAddress }</strong>가 이 파일을 업로드했는지 확인할 수 없었습니다."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "<strong>${ emailAddress }</strong>가 이 폴더를 업로드했는지 확인할 수 없었습니다."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "익명의 사용자가 이 파일을 생성했는지 확인할 수 없습니다."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "익명의 사용자가 이 폴더를 생성했는지 확인할 수 없습니다."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "익명의 사용자가 이 파일을 업로드했는지 확인할 수 없습니다."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "익명의 사용자가 이 폴더를 업로드했는지 확인할 수 없습니다."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business에 오신 것을 환영합니다"

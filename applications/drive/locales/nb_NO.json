@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "Videresend som vedlegg"
       ],
+      "Full data": [
+        "Alle data"
+      ],
       "Generate password": [
         "Generer passord"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "Neste side"
+      ],
+      "No sensitive data": [
+        "Ingen sensitive data"
       ],
       "Not now": [
         "Ikke nå"
@@ -3243,11 +3249,11 @@
       "Failed to fetch sharing info": [
         "Kunne ikke hente delingsinfo"
       ],
+      "Failed to get details, please try again later": [
+        "Kunne ikke hente detaljer. Prøv igjen senere."
+      ],
       "Failed to load the STL preview": [
         "Kan ikke laste inn STL-forhåndsvisningen"
-      ],
-      "Failed to move items": [
-        "Kunne ikke flytte elementer"
       ],
       "Failed to resend invitation": [
         "Kunne ikke sende invitasjonen på nytt"
@@ -3593,6 +3599,9 @@
       "Unknown error": [
         "Ukjent feil"
       ],
+      "Unknown location": [
+        "Ukjent plassering"
+      ],
       "Unknown payment token status": [
         "Ukjent status for betalingstoken"
       ],
@@ -3626,6 +3635,9 @@
       ],
       "Your import will not be processed.": [
         "Importen din blir ikke behandlet."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Navn som ikke kan dekrypteres"
       ]
     },
     "Error importing calendar": {
@@ -4845,9 +4857,6 @@
       "Aug": [
         "Aug"
       ],
-      "Automated Recovery ${ formattedDate }": [
-        "Automatisert gjenoppretting ${ formattedDate }"
-      ],
       "Available": [
         "Tilgjengelig"
       ],
@@ -5038,7 +5047,7 @@
         "Last ned ${ name }-appen"
       ],
       "Download current logs": [
-        "Last ned logg"
+        "Last ned gjeldende logger"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Nedlasting av ${ downloadFileName } vil bli avbrutt"
@@ -6427,10 +6436,10 @@
         "Filene dine vil bli kryptert og deretter lagret."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Din gratis prøveversjon ble vellykket konvertert til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
+        "Din gratis prøveperiode ble vellykket konvertert til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Din gratis prøveversjon ble vellykket konvertert til et månedlig abonnement. Fornyelsesdatoen din er ${ nextBillingDate }."
+        "Din gratis prøveperiode ble vellykket konvertert til et månedlig abonnement. Fornyelsesdatoen din er ${ nextBillingDate }."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
@@ -6485,7 +6494,7 @@
         "Abonnementet ditt fornyes automatisk ${ renewalTime }."
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Prøveversjonen avsluttes om ${ timeRemaining }."
+        "Prøveperioden avsluttes om ${ timeRemaining }."
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
@@ -6878,6 +6887,9 @@
       "Import to:": [
         "Importer til:"
       ],
+      "Include application logs in bug report": [
+        "Inkluder applikasjonslogger i feilrapport"
+      ],
       "Include message and file name in invite email": [
         "Inkluder melding og filnavn i invitasjons-e-post"
       ],
@@ -7262,17 +7274,8 @@
       "Albums": [
         "Album"
       ],
-      "All mail": [
-        "All e-post"
-      ],
-      "Archive": [
-        "Arkiv"
-      ],
       "clearing your browser cache": [
         "tømmer hurtigbufferen til nettleseren"
-      ],
-      "Drafts": [
-        "Utkast"
       ],
       "Enforcing 2FA for organizations": [
         "Anvendelse av A2F for organisasjoner"
@@ -7325,9 +7328,6 @@
       "if your data is leaked": [
         "hvis dataene dine er lekket"
       ],
-      "Inbox": [
-        "Innboks"
-      ],
       "Learn more": [
         "Lær mer"
       ],
@@ -7343,12 +7343,6 @@
       "Request an invite": [
         "Be om en invitasjon"
       ],
-      "Scheduled": [
-        "Planlagt"
-      ],
-      "Sent": [
-        "Sendt"
-      ],
       "settings": [
         "innstillinger"
       ],
@@ -7357,15 +7351,6 @@
       ],
       "Shared with me": [
         "Delt med meg"
-      ],
-      "Snooze": [
-        "Slumre"
-      ],
-      "Spam": [
-        "Søppelpost"
-      ],
-      "Starred": [
-        "Stjernemerket"
       ],
       "Trash": [
         "Papirkurv"
@@ -8849,9 +8834,6 @@
       "An invitation has been sent": [
         "En invitasjon er sendt"
       ],
-      "Cannot load file or folder info": [
-        "Kan ikke laste inn informasjon om fil eller mappe"
-      ],
       "Cannot load link": [
         "Kan ikke laste kobling"
       ],
@@ -9347,7 +9329,7 @@
         "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
-        "Du kan bruke ${ planTitle } til prøveversjonen avsluttes, og du blir ikke belastet."
+        "Du kan bruke ${ planTitle } til prøveperioden avsluttes, og du blir ikke belastet."
       ],
       "Your free trial has started": [
         "Din gratis prøveperiode har startet"
@@ -9356,7 +9338,7 @@
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du vil kunne bruke ${ planTitle } til prøveversjonen avsluttes, gratis."
+        "Du vil kunne bruke ${ planTitle } til prøveperioden avsluttes, gratis."
       ]
     },
     "Option": {
@@ -11296,6 +11278,9 @@
       "Addresses": [
         "Adresser"
       ],
+      "Advanced details": [
+        "Avanserte detaljer"
+      ],
       "Album": [
         "Album"
       ],
@@ -11313,6 +11298,12 @@
       ],
       "Amount due": [
         "Skyldig beløp"
+      ],
+      "an anonymous user": [
+        "en anonym bruker"
+      ],
+      "Anonymous user": [
+        "Anonym bruker"
       ],
       "Apply gift code": [
         "Legg til gavekode"
@@ -11420,6 +11411,9 @@
       "Create new group": [
         "Opprett ny gruppe"
       ],
+      "Created by": [
+        "Opprettet av"
+      ],
       "Credits": [
         "Kreditter"
       ],
@@ -11477,6 +11471,33 @@
       "Desktop": [
         "Skrivebord"
       ],
+      "Devices": [
+        "Enheter"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digital signatur delvis verifisert. Denne filen ble opprettet ved hjelp av en offentlig tilgjengelig delingskobling av en bruker uten en ${ BRAND_NAME }-konto, dermed kan identiteten deres ikke bekreftes."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digital signatur delvis verifisert. Denne filen ble lastet opp ved hjelp av en offentlig tilgjengelig delingskobling av en bruker uten en ${ BRAND_NAME }-konto, dermed kan identiteten deres ikke bekreftes."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digital signatur delvis verifisert. Denne mappen ble opprettet ved hjelp av en offentlig tilgjengelig delingskobling av en bruker uten en ${ BRAND_NAME }-konto, dermed kan identiteten deres ikke bekreftes."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digital signatur delvis verifisert. Denne mappen ble lastet opp ved hjelp av en offentlig tilgjengelig delingskobling av en bruker uten en ${ BRAND_NAME }-konto, dermed kan identiteten deres ikke bekreftes."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Digital signatur verifisert. Denne filen ble sikkert opprettet av <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Digital signatur verifisert. Denne filen ble sikkert lastet opp av <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Digital signatur verifisert. Denne mappen ble sikkert opprettet av <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Digital signatur verifisert. Denne mappen ble sikkert lastet opp av <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Forkast"
       ],
@@ -11494,6 +11515,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
+      ],
+      "Download details": [
+        "Last ned detaljer"
       ],
       "Download the app": [
         "Last ned appen"
@@ -11573,6 +11597,9 @@
       "File recovery process": [
         "Filgjenopprettingsprosess"
       ],
+      "Folder": [
+        "Mappe"
+      ],
       "Folder details": [
         "Mappedetaljer"
       ],
@@ -11641,6 +11668,9 @@
       "Last edited by": [
         "Sist redigert av"
       ],
+      "Last uploaded by": [
+        "Sist lastet opp av"
+      ],
       "Link confirmation": [
         "Bekreftelse av kobling"
       ],
@@ -11652,6 +11682,9 @@
       ],
       "Manage secure link": [
         "Administrer sikker kobling"
+      ],
+      "Media type": [
+        "Medietype"
       ],
       "Merge contacts": [
         "Slå sammen kontakter"
@@ -11685,9 +11718,6 @@
       ],
       "Network error": [
         "Nettverksfeil"
-      ],
-      "Newsletters view": [
-        "Nyhetsbrevvisning"
       ],
       "Night theme": [
         "Natt-tema"
@@ -11754,6 +11784,9 @@
       ],
       "Original size": [
         "Opprinnelig størrelse"
+      ],
+      "Original size in bytes": [
+        "Opprinnelig størrelse i byte"
       ],
       "Other information": [
         "Annen informasjon"
@@ -11882,6 +11915,9 @@
       "Settings": [
         "Innstillinger"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "Delt ressurs ${ name }"
       ],
@@ -11911,6 +11947,9 @@
       ],
       "Size": [
         "Størrelse"
+      ],
+      "Size in bytes": [
+        "Størrelse i byte"
       ],
       "Sort files/folders": [
         "Sorter filer/mapper"
@@ -11942,6 +11981,15 @@
       "The link expired": [
         "Koblingen er utløpt"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Verifiseringen av krypteringsnøklenes signatur av den opprinnelige skaperen (${ claimedKeyAuthor }) som opprettet noden, mislyktes. Årsaken er:${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Verifiseringen av filens innholdssignatur av opplasteren (${ claimedContentAuthor }) som lastet opp den siste revisjonen, mislyktes. Årsaken er: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Verifiseringen av navnets signatur av forfatteren (${ claimedNameAuthor }) som satte navnet sist, mislyktes. Årsaken er: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Denne filen har en manglende eller ugyldig signatur. Gå til meny (⋮) → detaljer for info."
       ],
@@ -11962,6 +12010,12 @@
       ],
       "Type": [
         "Type"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Ukjent bruker"
       ],
       "Untitled document ${ date }": [
         "Dokument uten tittel ${ date }"
@@ -12011,6 +12065,30 @@
       "Warning: suspected fake website": [
         "Advarsel: mistenkt falskt nettsted"
       ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Vi kan ikke bekrefte at <strong>${ emailAddress }</strong> opprettet denne filen."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Vi kan ikke bekrefte at <strong>${ emailAddress }</strong> opprettet denne mappen."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Vi kunne ikke bekrefte at <strong>${ emailAddress }</strong> lastet opp denne filen."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Vi kunne ikke bekrefte at <strong>${ emailAddress }</strong> lastet opp denne mappen."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Vi kunne ikke bekrefte at en anonym bruker opprettet denne filen."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Vi kunne ikke bekrefte at en anonym bruker opprettet denne mappen."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Vi kunne ikke bekrefte at en anonym bruker lastet opp denne filen."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Vi kunne ikke bekrefte at en anonym bruker lastet opp denne mappen."
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
@@ -12039,7 +12117,7 @@
         "Du har ingen mapper enda"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
-        "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
+        "Din gratis prøveperiode av ${ planName } slutter den ${ textDate }."
       ],
       "Your ${ planName } subscription has started": [
         "${ planName }-abonnementet ditt er startet"

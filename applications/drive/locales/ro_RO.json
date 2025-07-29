@@ -1192,6 +1192,11 @@
       "${ price } per user": [
         "${ price } per utilizator"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licență ${ LUMO_APP_NAME }",
+        "${ seats } licențe ${ LUMO_APP_NAME }",
+        "${ seats } de licențe ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licență asistent de scriere",
         "${ seats } licențe asistent de scriere",
@@ -1572,6 +1577,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problemă ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problemă aplicație"
       ],
@@ -3256,9 +3264,6 @@
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
       ],
-      "Failed to move items": [
-        "Mutarea articolelor a eșuat."
-      ],
       "Failed to resend invitation": [
         "Eșuare retrimitere invitație."
       ],
@@ -4654,6 +4659,9 @@
         "${ invitations.length } invitații în așteptare",
         "${ invitations.length } de invitații în așteptare"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4910,9 +4918,6 @@
       "Aug": [
         "Aug"
       ],
-      "Automated Recovery ${ formattedDate }": [
-        "Recuperare automată ${ formattedDate }"
-      ],
       "Available": [
         "Disponibil"
       ],
@@ -5104,6 +5109,9 @@
       ],
       "Download ${ name } app": [
         "Descărcați aplicația ${ name }"
+      ],
+      "Download current logs": [
+        "Descărcare jurnale actuale"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Descărcarea fișierului ${ downloadFileName } va fi întreruptă."
@@ -6962,6 +6970,9 @@
       "Import to:": [
         "Importare în:"
       ],
+      "Include application logs in bug report": [
+        "Includere jurnale aplicație în raportul de eroare"
+      ],
       "Include message and file name in invite email": [
         "Includere mesaj și nume fișier în e-mailul de invitație"
       ],
@@ -7346,17 +7357,8 @@
       "Albums": [
         "Albume"
       ],
-      "All mail": [
-        "Toate mesajele"
-      ],
-      "Archive": [
-        "Arhivă"
-      ],
       "clearing your browser cache": [
         "golind bufferul navigatorului web"
-      ],
-      "Drafts": [
-        "Ciorne"
       ],
       "Enforcing 2FA for organizations": [
         "Impunere A2F pentru organizații"
@@ -7409,9 +7411,6 @@
       "if your data is leaked": [
         "dacă datele v-au fost divulgate"
       ],
-      "Inbox": [
-        "Primite"
-      ],
       "Learn more": [
         "Detalii"
       ],
@@ -7427,12 +7426,6 @@
       "Request an invite": [
         "Solicitați o invitație"
       ],
-      "Scheduled": [
-        "Programate"
-      ],
-      "Sent": [
-        "Trimise"
-      ],
       "settings": [
         "setări"
       ],
@@ -7441,15 +7434,6 @@
       ],
       "Shared with me": [
         "Partajate cu mine"
-      ],
-      "Snooze": [
-        "Amânare"
-      ],
-      "Spam": [
-        "Nedorite"
-      ],
-      "Starred": [
-        "Cu stea"
       ],
       "Trash": [
         "Gunoi"
@@ -8922,9 +8906,6 @@
       ],
       "An invitation has been sent": [
         "A fost trimisă o invitație."
-      ],
-      "Cannot load file or folder info": [
-        "Nu se pot încărca informațiile despre fișier sau folder."
       ],
       "Cannot load link": [
         "Legătura nu s-a putut încărca."
@@ -11829,9 +11810,6 @@
       ],
       "Network error": [
         "Eroare de rețea"
-      ],
-      "Newsletters view": [
-        "Afișare buletine informative"
       ],
       "Night theme": [
         "Temă noapte"
