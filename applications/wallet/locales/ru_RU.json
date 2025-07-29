@@ -4,6 +4,14 @@
     "language": "ru_RU"
   },
   "contexts": {
+    "Account statement": {
+      "Download": [
+        "Скачать"
+      ],
+      "Download transactions": [
+        "Скачать транзакции"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
@@ -104,6 +112,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Скачать приложения ${ DRIVE_APP_NAME }"
       ],
+      "Download logs": [
+        "Скачать журналы"
+      ],
       "Edit": [
         "Изменить"
       ],
@@ -146,6 +157,9 @@
       "Help and resources": [
         "Помощь и информация"
       ],
+      "Hide": [
+        "Скрыть"
+      ],
       "Import emails, calendars, contacts": [
         "Импорт электронных писем, календарей и контактов"
       ],
@@ -166,9 +180,6 @@
       ],
       "Let's talk": [
         "Свяжитесь с нами"
-      ],
-      "Loading verification": [
-        "Загружается проверка"
       ],
       "Manage advanced account protections": [
         "Управление расширенной защитой аккаунта"
@@ -248,9 +259,6 @@
       "Resend code": [
         "Повторно отправить код"
       ],
-      "Retry": [
-        "Повторить"
-      ],
       "Save": [
         "Сохранить"
       ],
@@ -267,7 +275,7 @@
         "Выбрать платежный цикл ${ billingText }"
       ],
       "Select country": [
-        "Выберите страну"
+        "Выбрать страну"
       ],
       "Set recovery methods": [
         "Установить методы восстановления"
@@ -468,7 +476,7 @@
         "12 месяцев"
       ],
       "15 months": [
-        "15 месяцев"
+        "15 месяца"
       ],
       "24 months": [
         "24 месяца"
@@ -485,6 +493,40 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем."
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается раз в ${ cycle } мес. ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_DEDICATED_IPS } выделенных серверов в течение пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_LUMO_SEATS } мест Lumo в течение пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_SCRIBE_SEATS } мест Scribe в течение пробного периода."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Вам доступно до ${ TRIAL_MAX_USERS } пользователей в течение пробного периода."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Вы не можете добавлять пользовательские домены в течение пробного периода."
+      ],
+      "You have reached the trial limit.": [
+        "Вы достигли лимита пробного периода."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
+      "Keep subscription": [
+        "Продолжить подписку"
       ]
     },
     "Balance": {
@@ -515,8 +557,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus и ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } и ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
@@ -1608,9 +1650,6 @@
       "Macao": [
         "Макао"
       ],
-      "Macedonia": [
-        "Македония"
-      ],
       "Madagascar": [
         "Мадагаскар"
       ],
@@ -2030,6 +2069,11 @@
         "/за пользователя в месяц"
       ]
     },
+    "Date": {
+      "Date": [
+        "Дата"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Неизвестный"
@@ -2319,9 +2363,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Минимальный платеж, который мы принимаем, составляет ${ price }"
       ],
       "The passphrases do not match": [
         "Кодовые фразы не совпадают"
@@ -2734,6 +2775,9 @@
       "Dedicated servers": [
         "Выделенные серверы"
       ],
+      "Dedicated VPN servers": [
+        "Выделенные VPN-серверы"
+      ],
       "default email address": [
         "адрес эл. почты по умолчанию"
       ],
@@ -2758,8 +2802,11 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и конфиденциальность будет с вами, куда бы вы ни пошли."
       ],
+      "Each code can only be used once": [
+        "Каждый код может быть использован только один раз"
+      ],
       "Edit email address": [
-        "Изменить адрес эл. почты"
+        "Изменить адрес электронной почты"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через ${ BRAND_NAME } в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
@@ -2775,6 +2822,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Введите код подтверждения. Цифра ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Введите свой пароль как администратора организации."
@@ -2874,12 +2924,6 @@
       ],
       "Please fill in all required fields.": [
         "Заполните все обязательные поля."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредит.",
-        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету.",
-        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов.",
-        "Пожалуйста, учтите, что после нажатия кнопки \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредита."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Пожалуйста, попробуйте другой способ оплаты или свяжитесь с вашим банком."
@@ -3073,9 +3117,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Вы должны отключить или удалить всех дополнительных пользователей ${ MAIL_APP_NAME }, адреса и свои доменты перед переходом на более дешевую версию."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Вам необходимо связать кредитную карту или банковский счет с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "В этот день вы потеряете доступ к возможностям ${ planTitle }."
       ],
@@ -3094,8 +3135,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. Письма больше не доставляются в ваш почтовый ящик. Ссылки на общий доступ к дискам больше не активны, и вы не можете загружать новые файлы. Чтобы продолжить пользоваться аккаунтом, пожалуйста, оплатите все просроченные счета."
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Ваша подписка ${ PASS_SHORT_APP_NAME } Plus будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша подписка ${ plan } будет заменена на пожизненный ${ PASS_SHORT_APP_NAME } . Остаток средств вашей подписки будет добавлен в вашу учетную запись. ${ PASS_SHORT_APP_NAME } действует без платы за продление, это единократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
@@ -3123,6 +3164,9 @@
       ]
     },
     "info": {
+      "Optional": [
+        "Необязательно"
+      ],
       "Selected color:": [
         "Выбранный цвет"
       ]
@@ -3309,9 +3353,6 @@
       "Start date": [
         "Дата начала"
       ],
-      "State": [
-        "Состояние"
-      ],
       "Subscription options": [
         "Параметры подписки"
       ],
@@ -3367,9 +3408,6 @@
       ],
       "clearing your browser cache": [
         "очистка кеша браузера"
-      ],
-      "click here": [
-        "нажмите здесь"
       ],
       "Enforcing 2FA for organizations": [
         "Обеспечение двухфакторной аутентификации для организаций"
@@ -3540,7 +3578,7 @@
       "${ n } calendar per user": [
         "${ n } календарь на пользователя",
         "${ n } календаря на пользователя",
-        "${ n } календаря на пользователя",
+        "${ n } календарей на пользователя",
         "${ n } календарей на пользователя"
       ],
       "${ n } custom email domain": [
@@ -3978,10 +4016,10 @@
     },
     "new_plans: feature highlight": {
       "${ admins } admin": [
-        "${ admins }администратор",
-        "${ admins }администратора",
-        "${ admins }администраторов",
-        "${ admins }администраторов"
+        "${ admins } администратор",
+        "${ admins } администратора",
+        "${ admins } администраторов",
+        "${ admins } администраторов"
       ],
       "${ users } user": [
         "${ users } пользователь",
@@ -4053,17 +4091,14 @@
       "Protect sensitive business information and collaborate securely.": [
         "Защитите конфиденциальную деловую информацию и сотрудничайте безопасно."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Защитите свою семью, используя все платные функции ${ PASS_SHORT_APP_NAME } Plus для 6 пользователей."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Защитите свою семью, используя все платные функции ${ plusTitle } для 6 пользователей."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Защитите конфиденциальность вашей семьи с помощью комплекса услуг ${ BRAND_NAME }."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Получите безопасный доступ в Интернет из любой точки мира, проводя необходимый мониторинг сети"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Защищенное облачное хранилище, позволяющее легко и безопасно хранить, синхронизировать и обмениваться файлами."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Защищенная электронная почта с дополнительными возможностями для повседневного общения."
@@ -4354,7 +4389,7 @@
         "Центральная панель управления"
       ],
       "Create up to ${ n } calendar": [
-        "Создайте до ${ n } календарей",
+        "Создать до ${ n } календаря",
         "Создать до ${ n } календарей",
         "Создать до ${ n } календарей",
         "Создать до ${ n } календарей"
@@ -4376,14 +4411,22 @@
       ],
       "Require 2FA": [
         "Требуется двухфакторная аутентификация"
-      ],
-      "Support for ${ n } custom email domains": [
-        "Поддержка ${ n } пользовательских доменов электронной почты"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Некоторые изображения не были загружены из-за дублирования имен файлов в текущей выборке."
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "Продолжить"
+      ],
+      "help center": [
+        "справочный центр"
+      ],
+      "If you need help,": [
+        "Если вам нужна помощь,"
       ]
     },
     "Option": {
@@ -4392,6 +4435,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Доступ ко всем приложениям ${ BRAND_NAME } и платным функциям"
+      ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
       ],
@@ -4400,6 +4446,11 @@
       ],
       "Unlimited logins, notes, credit cards and more": [
         "Неограниченное количество имен пользователей, заметок, кредитных карт и многое другое"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "тариф ${ upsellPlanTitle }"
       ]
     },
     "pass_signup_2024: Info": {
@@ -4452,6 +4503,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Банковский перевод"
       ],
@@ -4498,26 +4552,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
-      "Please select billing country": [
-        "Пожалуйста, выберите страну выставления счета"
-      ],
-      "Please select billing state": [
-        "Пожалуйста, выберите государство выставления счета"
-      ],
-      "Please select your billing country first.": [
-        "Сначала выберите страну для выставления счета."
-      ],
-      "Please select your billing state first.": [
-        "Сначала выберите государство для выставления счета."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Цены продления могут быть изменены в соответствии с ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Продлевается по цене ${ renewPriceStr }, можно отменить в любое время."
-      ],
-      "Select billing country to pay": [
-        "Для оплаты, пожалуйста выберите страну"
       ],
       "terms & conditions": [
         "правила и условия"
@@ -4644,6 +4683,11 @@
         "свяжитесь"
       ]
     },
+    "plus_block": {
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Улучшить до ${ upsellPlanTitle }"
+      ]
+    },
     "Price": {
       "Free": [
         "Бесплатно"
@@ -4740,7 +4784,7 @@
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Сбросить пароль"
+        "Сброс пароля"
       ]
     },
     "session_recovery:sign_out:title": {
@@ -5060,12 +5104,6 @@
         "${ n } подключения к VPN на пользователя",
         "${ n } подключений к VPN на пользователя",
         "${ n } подключений к VPN на пользователя"
-      ],
-      "VPN connection for ${ n } devices per user": [
-        "Подключение к VPN для ${ n } устройства на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя",
-        "Подключение к VPN для ${ n } устройств на одного пользователя"
       ]
     },
     "Subscription change warning": {
@@ -5127,6 +5165,9 @@
       ],
       "Folders, labels, and custom filters": [
         "Папки, ярлыки и пользовательские фильтры"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
       ]
     },
     "Subscription renewal state": {
@@ -5226,9 +5267,6 @@
       "Cancel": [
         "Отменить"
       ],
-      "Cannot use QRCode scanner. Please check browser compatibility": [
-        "Невозможно использовать сканер QR-кода. Проверьте совместимость браузера"
-      ],
       "Confirm and import": [
         "Подтвердить и импортировать"
       ],
@@ -5246,9 +5284,6 @@
       ],
       "Paper wallet funds was successfully imported": [
         "Средства с бумажного кошелька были успешно импортированы"
-      ],
-      "Please grant camera permission to use QRCode scanner": [
-        "Предоставьте камере разрешение на использование сканера QR-када"
       ],
       "You receive": [
         "Вы получаете"
@@ -5423,7 +5458,7 @@
         "Настройка организации"
       ],
       "Share your calendar with your team": [
-        "Делитесь вашим календарем со своей командой"
+        "Делитесь своим календарём с командой"
       ],
       "Sign out": [
         "Выйти"
@@ -5466,6 +5501,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "Теперь вы можете создавать неограниченное количество папок и ярлыков."
+      ],
+      "Your plan": [
+        "Ваш тариф"
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
@@ -5569,8 +5607,8 @@
         "${ n } подключений к VPN"
       ],
       "${ numberOfCountries } country": [
+        "${ numberOfCountries } страна",
         "${ numberOfCountries } страны",
-        "${ numberOfCountries } стран",
         "${ numberOfCountries } стран",
         "${ numberOfCountries } стран"
       ],
@@ -5613,7 +5651,7 @@
         "Ваш запланированный тариф начинается с ${ renewalTime }."
       ],
       "Your subscription will automatically renew in ${ cycle } month.": [
-        "Ваша подписка будет автоматически обновлена через ${ cycle } месяц.",
+        "Ваша подписка будет автоматически продлена через ${ cycle } месяц.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяца.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев.",
         "Ваша подписка будет автоматически продлена через ${ cycle } месяцев."
@@ -5727,6 +5765,11 @@
         "Отсутствует котировка. Обновите и попробуйте снова или свяжитесь со службой поддержки"
       ]
     },
+    "wallet dashboard": {
+      "You need to have a positive bitcoin balance with sufficient funds to transact": [
+        "У вас должен быть положительный баланс биткойна с достаточными средствами для проведения транзакций"
+      ]
+    },
     "Wallet dashboard": {
       "24h change": [
         "Изменение (24 ч.)"
@@ -5745,11 +5788,6 @@
       ],
       "Send": [
         "Отправить"
-      ]
-    },
-    "wallet dashboard": {
-      "You need to have a positive bitcoin balance with sufficient funds to transact": [
-        "У вас должен быть положительный баланс биткойна с достаточными средствами для проведения транзакций"
       ]
     },
     "Wallet deletion": {
@@ -6190,8 +6228,11 @@
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
         "Транзакция передана в сеть Bitcoin. Для её подтверждения сетью может потребоваться около часа."
       ],
-      "~${ minutes } minutes": [
-        "~${ minutes } мин"
+      "~${ minutes } minute": [
+        "~${ minutes } минута",
+        "~${ minutes } минуты",
+        "~${ minutes } минут",
+        "~${ minutes } минут"
       ]
     },
     "Wallet Send": {
@@ -6433,11 +6474,6 @@
         "Ваш закрытый ключ"
       ]
     },
-    "Wallet sidebar": {
-      "Add account": [
-        "Добавить аккаунт"
-      ]
-    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Связаться с поддержкой"
@@ -6473,12 +6509,9 @@
         "Кошельки"
       ]
     },
-    "Wallet terms and conditions": {
-      "Error with Terms and Conditions acceptance. Please try again.": [
-        "Ошибка с принятием Условий и положений. Попробуйте снова."
-      ],
-      "Terms and conditions were accepted": [
-        "Условия были приняты"
+    "Wallet sidebar": {
+      "Add account": [
+        "Добавить аккаунт"
       ]
     },
     "Wallet Terms and Conditions": {
@@ -6490,6 +6523,14 @@
       ],
       "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
         "Мы создали два BTC аккаунта для вас. Один основной аккаунт и второй аккаунт для получения Bitcoin через электронную почту (на ${ emailEl }) от других пользователей ${ WALLET_APP_NAME }. "
+      ]
+    },
+    "Wallet terms and conditions": {
+      "Error with Terms and Conditions acceptance. Please try again.": [
+        "Ошибка с принятием Условий и положений. Попробуйте снова."
+      ],
+      "Terms and conditions were accepted": [
+        "Условия были приняты"
       ]
     },
     "Wallet transaction": {

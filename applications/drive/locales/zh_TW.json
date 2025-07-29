@@ -2961,9 +2961,6 @@
       "External invitations are temporarily disabled. Please try again later": [
         "外部邀請函暫時關閉。請稍後再試。"
       ],
-      "Failed to move items": [
-        "移動項目失敗"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由於“${ error }”錯誤，檔案“${ item.name }”無法上載"
       ],
@@ -4426,9 +4423,6 @@
       ],
       "Aug": [
         "八月"
-      ],
-      "Automated Recovery ${ formattedDate }": [
-        "自動復原${ formattedDate }"
       ],
       "Available": [
         "可用"
@@ -6633,26 +6627,14 @@
       "Albums": [
         "專輯"
       ],
-      "All mail": [
-        "所有郵件"
-      ],
-      "Archive": [
-        "封存"
-      ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
-      ],
-      "Drafts": [
-        "草稿"
       ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
       ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "如何使用${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Inbox": [
-        "收件匣"
       ],
       "Learn more": [
         "瞭解詳情"
@@ -6669,12 +6651,6 @@
       "Request an invite": [
         "需求邀請"
       ],
-      "Scheduled": [
-        "已排程"
-      ],
-      "Sent": [
-        "寄件備份"
-      ],
       "settings": [
         "設定"
       ],
@@ -6683,15 +6659,6 @@
       ],
       "Shared with me": [
         "與我共用"
-      ],
-      "Snooze": [
-        "延後"
-      ],
-      "Spam": [
-        "垃圾郵件"
-      ],
-      "Starred": [
-        "已加星號"
       ],
       "Trash": [
         "垃圾桶"
@@ -10504,20 +10471,26 @@
       "Network error": [
         "網路錯誤"
       ],
-      "Newsletters view": [
-        "電子報檢視"
-      ],
       "Night theme": [
         "夜間布景主題"
       ],
       "No breaches detected": [
         "無偵測到外洩"
       ],
+      "No bursts": [
+        "沒有連拍"
+      ],
+      "No photos": [
+        "沒有照片"
+      ],
       "No RAW": [
         "沒有 RAW"
       ],
       "No results found": [
         "查無結果"
+      ],
+      "No screenshots": [
+        "無螢幕截圖"
       ],
       "Notes": [
         "備註"
@@ -10899,6 +10872,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/個月"
       ]
     },
     "Validation": {

@@ -3280,9 +3280,6 @@
       "Failed to load the STL preview": [
         "Impossibile caricare l'anteprima STL"
       ],
-      "Failed to move items": [
-        "Impossibile spostare gli elementi"
-      ],
       "Failed to resend invitation": [
         "Impossibile rinviare l'invito"
       ],
@@ -3660,6 +3657,9 @@
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nome indecifrabile"
       ]
     },
     "Error importing calendar": {
@@ -4878,9 +4878,6 @@
       ],
       "Aug": [
         "Ago."
-      ],
-      "Automated Recovery ${ formattedDate }": [
-        "Recupero automatico ${ formattedDate }"
       ],
       "Available": [
         "Disponibile"
@@ -7302,17 +7299,8 @@
       "Albums": [
         "Album"
       ],
-      "All mail": [
-        "Tutta la posta"
-      ],
-      "Archive": [
-        "Archivio"
-      ],
       "clearing your browser cache": [
         "cancellare la cache del browser"
-      ],
-      "Drafts": [
-        "Bozze"
       ],
       "Enforcing 2FA for organizations": [
         "Imporre l'autenticazione a 2 fattori (2FA) per le organizzazioni"
@@ -7365,9 +7353,6 @@
       "if your data is leaked": [
         "se i tuoi dati vengono divulgati"
       ],
-      "Inbox": [
-        "Posta in arrivo"
-      ],
       "Learn more": [
         "Scopri di più"
       ],
@@ -7383,12 +7368,6 @@
       "Request an invite": [
         "Richiedi un invito"
       ],
-      "Scheduled": [
-        "Programmata"
-      ],
-      "Sent": [
-        "Inviata"
-      ],
       "settings": [
         "impostazioni"
       ],
@@ -7397,15 +7376,6 @@
       ],
       "Shared with me": [
         "Condiviso con me"
-      ],
-      "Snooze": [
-        "Posticipa"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Importante"
       ],
       "Trash": [
         "Cestino"
@@ -8884,9 +8854,6 @@
       ],
       "An invitation has been sent": [
         "È stato spedito un invito"
-      ],
-      "Cannot load file or folder info": [
-        "Impossibile caricare informazioni su file o cartella"
       ],
       "Cannot load link": [
         "Impossibile caricare il link"
@@ -11521,6 +11488,21 @@
       "Desktop": [
         "Desktop"
       ],
+      "Devices": [
+        "Dispositivi"
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digitale parzialmente verificata. Questo file è stato caricato utilizzando un link di condivisione accessibile pubblicamente da un utente senza un account ${ BRAND_NAME }, quindi la loro identità non può essere verificata."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digitale parzialmente verificata. Questa cartella è stata creata utilizzando un link di condivisione accessibile pubblicamente da un utente senza un account ${ BRAND_NAME }, quindi la loro identità non può essere verificata."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Firma digitale verificata. Questo file è stato creato in modo sicuro da <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Firma digitale verificata. Questa cartella è stata creata in modo sicuro da <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Scarta"
       ],
@@ -11538,6 +11520,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Scarica le app di ${ DRIVE_APP_NAME }"
+      ],
+      "Download details": [
+        "Dettagli del download"
       ],
       "Download the app": [
         "Scarica l'app"
@@ -11617,6 +11602,9 @@
       "File recovery process": [
         "Processo di recupero file"
       ],
+      "Folder": [
+        "Cartella"
+      ],
       "Folder details": [
         "Dettagli cartella"
       ],
@@ -11685,6 +11673,9 @@
       "Last edited by": [
         "Ultima modifica di"
       ],
+      "Last uploaded by": [
+        "Ultimo caricamento effettuato da"
+      ],
       "Link confirmation": [
         "Conferma il link"
       ],
@@ -11729,9 +11720,6 @@
       ],
       "Network error": [
         "Errore di rete"
-      ],
-      "Newsletters view": [
-        "Vista Newsletters"
       ],
       "Night theme": [
         "Tema notte"
@@ -11798,6 +11786,9 @@
       ],
       "Original size": [
         "Dimensione originale"
+      ],
+      "Original size in bytes": [
+        "Dimensione originale in byte"
       ],
       "Other information": [
         "Altre informazioni"
@@ -11986,6 +11977,12 @@
       "The link expired": [
         "Il link è scaduto"
       ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "La verifica della firma del contenuto del file da parte dell'uploader (${ claimedContentAuthor }), che ha caricato l'ultima revisione, non è riuscita. Il motivo è: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "La verifica della firma del nome da parte dell'autore (${ claimedNameAuthor }), che ha impostato il nome l'ultima volta, non è riuscita. Il motivo è: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Questo file ha una firma mancante o non valida. Vai a Menu (⋮) → Dettagli per info."
       ],
@@ -12006,6 +12003,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Unknown user": [
+        "Utente sconosciuto"
       ],
       "Untitled document ${ date }": [
         "Documento senza titolo ${ date }"
@@ -12054,6 +12054,21 @@
       ],
       "Warning: suspected fake website": [
         "Attenzione: sospetto sito web falso"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Non abbiamo potuto verificare che <strong>${ emailAddress }</strong> abbia creato questo file"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Non abbiamo potuto verificare che <strong>${ emailAddress }</strong> abbia caricato questa cartella."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Non abbiamo potuto verificare che un utente anonimo abbia creato questo file."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Non abbiamo potuto verificare che un utente anonimo abbia creato questa cartella."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Non abbiamo potuto verificare che un utente anonimo abbia creato questa cartella."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Benvenuto in ${ BRAND_NAME } for Business"

@@ -954,6 +954,9 @@
       "${ price } per user": [
         "${ price } per pengguna"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } kuota ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } kuota asisten penulisan"
       ],
@@ -1373,6 +1376,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Masalah ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Masalah aplikasi"
       ],
@@ -3533,8 +3539,14 @@
       "Please create an address first.": [
         "Silakan buat alamat terlebih dahulu."
       ],
+      "Please enter a valid postal code": [
+        "Silakan masukkan kode pos yang valid"
+      ],
       "Please enter a valid ZIP code": [
         "Silakan masukkan kode pos yang valid"
+      ],
+      "Please enter postal code": [
+        "Silakan masukkan kode pos"
       ],
       "Please enter ZIP code": [
         "Silakan masukkan kode pos"
@@ -3553,6 +3565,9 @@
       ],
       "Please select billing country": [
         "Silakan pilih negara penagihan"
+      ],
+      "Please select billing state": [
+        "Silakan pilih negara bagian penagihan"
       ],
       "Port is required": [
         "Nomor port diperlukan"
@@ -4672,6 +4687,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Penawaran ${ PASS_SHORT_APP_NAME } seumur hidup tidak memiliki harga perpanjangan, ini merupakan pembayaran sekali untuk akses seumur hidup ke ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5007,6 +5025,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Menurunkan akun akan memutus seluruh koneksi ke server ${ VPN_APP_NAME } berbayar."
+      ],
+      "Download current logs": [
+        "Unduh log saat ini"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
@@ -6332,6 +6353,9 @@
       "Import to:": [
         "Impor ke:"
       ],
+      "Include application logs in bug report": [
+        "Sertakan log aplikasi dalam laporan bug"
+      ],
       "Integrated 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
       ],
@@ -6641,20 +6665,11 @@
       "Add a gift code": [
         "Tambah kode hadiah"
       ],
-      "All mail": [
-        "Semua surat"
-      ],
-      "Archive": [
-        "Arsip"
-      ],
       "Calendars": [
         "Kalender"
       ],
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
-      ],
-      "Drafts": [
-        "Draf"
       ],
       "Enforcing 2FA for organizations": [
         "Mewajibkan 2FA untuk organisasi"
@@ -6707,9 +6722,6 @@
       "if your data is leaked": [
         "apabila data Anda sampai dibocorkan"
       ],
-      "Inbox": [
-        "Kotak masuk"
-      ],
       "Learn more": [
         "Lebih lanjut"
       ],
@@ -6728,26 +6740,8 @@
       "Request an invite": [
         "Minta undangan"
       ],
-      "Scheduled": [
-        "Dijadwalkan"
-      ],
-      "Sent": [
-        "Terkirim"
-      ],
       "settings": [
         "pengaturan"
-      ],
-      "Snooze": [
-        "Tunda"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Dibintangi"
-      ],
-      "Trash": [
-        "Sampah"
       ],
       "Types of recovery methods": [
         "Berbagai jenis metode pemulihan"
@@ -7719,6 +7713,9 @@
       "Downgrade account?": [
         "Turunkan jenis akun?"
       ],
+      "Review subscription": [
+        "Tinjau langganan"
+      ],
       "Review subscription and pay": [
         "Peninjauan dan pembayaran langganan"
       ],
@@ -8619,6 +8616,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
+      "This number will be shown on all future invoices": [
+        "Nomor ini akan ditampilkan pada seluruh faktur yang akan datang"
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Metode pembayaran ini akan menjadi metode bawaan baru Anda untuk segala perpanjangan yang dilakukan ke depannya."
       ],
@@ -8682,6 +8682,9 @@
       ],
       "EIN": [
         "NPWP"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ]
     },
     "PGP key encryption warning": {
@@ -8783,6 +8786,9 @@
       ],
       "Please select a country": [
         "Silakan pilih negara"
+      ],
+      "Postal code": [
+        "Kode pos"
       ],
       "Search events": [
         "Cari acara"
@@ -10718,9 +10724,6 @@
       ],
       "Network error": [
         "Kesalahan jaringan"
-      ],
-      "Newsletters view": [
-        "Tampilan buletin"
       ],
       "Night theme": [
         "Tema malam"

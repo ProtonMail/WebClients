@@ -138,6 +138,9 @@
       "Cancel subscription": [
         "取消订阅"
       ],
+      "Cancel trial and pay": [
+        "取消试用并支付"
+      ],
       "Cancel upload": [
         "取消上传"
       ],
@@ -666,6 +669,9 @@
       "New shared album": [
         "新建共享相册"
       ],
+      "New spreadsheet": [
+        "新建电子表格"
+      ],
       "Next": [
         "继续"
       ],
@@ -1170,6 +1176,9 @@
       "${ price } per user": [
         "${ price } 每位用户"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } 席位"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } 个写作助手许可证"
       ],
@@ -1354,6 +1363,11 @@
         "继续订阅"
       ]
     },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "您的免费体验期将于 ${ timeRemaining } 结束。"
+      ]
+    },
     "Badge": {
       "Invited": [
         "已被邀请"
@@ -1386,6 +1400,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 与 ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
@@ -1532,6 +1549,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 问题"
+      ],
       "Application problem": [
         "应用程序问题"
       ],
@@ -3193,14 +3213,35 @@
       "Failed to copy photo to album": [
         "无法将照片复制到相册"
       ],
+      "Failed to create folder": [
+        "创建文件夹失败"
+      ],
+      "Failed to create public share node": [
+        "未能创建公开共享节点"
+      ],
+      "Failed to fetch node": [
+        "获取节点失败"
+      ],
+      "Failed to fetch sharing info": [
+        "无法获取共享信息"
+      ],
       "Failed to load the STL preview": [
         "加载 STL 预览失败"
       ],
-      "Failed to move items": [
-        "移动项目失败"
+      "Failed to resend invitation": [
+        "重新发送邀请失败"
       ],
       "Failed to save some photos to your Drive": [
         "未能将某些照片保存至 Proton Drive"
+      ],
+      "Failed to unshare node": [
+        "无法取消共享节点"
+      ],
+      "Failed to update direct share node": [
+        "无法更新本地共享节点"
+      ],
+      "Failed to update public share node": [
+        "更新公开共享节点失败"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由于“${ error }”错误，文件“${ item.name }”无法上传"
@@ -3267,6 +3308,9 @@
       ],
       "Invalid verification code": [
         "验证码无效"
+      ],
+      "Invalid ZIP code": [
+        "无效的邮政编码"
       ],
       "Item content cannot exceed 40KB": [
         "项目内容不能超过 40KB"
@@ -3337,6 +3381,18 @@
       "Please activate your search again": [
         "请重新开启全文搜索"
       ],
+      "Please enter a valid postal code": [
+        "请输入有效的邮政编码"
+      ],
+      "Please enter a valid ZIP code": [
+        "请输入有效的邮政编码"
+      ],
+      "Please enter postal code": [
+        "请输入邮政编码"
+      ],
+      "Please enter ZIP code": [
+        "请输入邮政编码"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
@@ -3348,6 +3404,12 @@
       ],
       "Please select a state": [
         "请选择州"
+      ],
+      "Please select billing country": [
+        "请选择您的计费国家/地区"
+      ],
+      "Please select billing state": [
+        "请选择账单省（州）"
       ],
       "Port is required": [
         "端口号必须填写"
@@ -3409,6 +3471,9 @@
       "status page": [
         "运行状态网页"
       ],
+      "Stopping the sharing of this item has failed": [
+        "停止共享此项目失败"
+      ],
       "Tab closed": [
         "标签页已关闭"
       ],
@@ -3438,6 +3503,9 @@
       ],
       "The label name is too long. Please choose a different name.": [
         "标签名称过长，请重新填写。"
+      ],
+      "The link to your item failed to be deleted": [
+        "共享链接删除失败"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
@@ -4473,6 +4541,9 @@
       "${ invitations.length } pending invitation": [
         "${ invitations.length } 待定邀请"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ],
@@ -4695,9 +4766,6 @@
       "Aug": [
         "八月"
       ],
-      "Automated Recovery ${ formattedDate }": [
-        "自动恢复 ${ formattedDate }"
-      ],
       "Available": [
         "可用"
       ],
@@ -4883,6 +4951,9 @@
       ],
       "Download ${ name } app": [
         "下载 ${ name } 应用"
+      ],
+      "Download current logs": [
+        "下载当前日志"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 的下载进程将被中止"
@@ -5072,6 +5143,9 @@
       ],
       "How does encrypted search work?": [
         "加密搜索如何工作？"
+      ],
+      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
+        "如果这些文件未在 ${ deviceName } 本地完全下载，您将无法访问它们。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
@@ -6066,6 +6140,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "当您连接 VPN 时，它会通过加密技术隐藏您的 IP 地址（即分配给您设备的唯一识别代码）。"
       ],
+      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
+        "当您将 ${ deviceName } 从同步设备中移除时，从该设备添加到“我的电脑”中的所有文件夹都将从 ${ DRIVE_APP_NAME } 中永久删除。"
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "当您设置双因素身份验证时，我们会提供恢复代码，当您无法访问身份验证应用时，可以使用这些代码登录。"
       ],
@@ -6212,6 +6289,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "您的 ${ BRAND_NAME } 账户已被停用，无法继续收取新邮件，并且网盘分享链接已全部失效，新文件也无法上传。如需恢复账户正常功能，请付清逾期账单。"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "您的 ${ plan } 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
@@ -6694,6 +6774,9 @@
       "Import to:": [
         "导入到："
       ],
+      "Include application logs in bug report": [
+        "在问题反馈中包含应用日志"
+      ],
       "Include message and file name in invite email": [
         "在邀请电子邮件中包含邮件和文件名"
       ],
@@ -7021,6 +7104,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "邮政编码"
+      ],
       "ZIP code": [
         "邮编"
       ]
@@ -7075,17 +7161,8 @@
       "Albums": [
         "相册"
       ],
-      "All mail": [
-        "所有邮件"
-      ],
-      "Archive": [
-        "归档"
-      ],
       "clearing your browser cache": [
         "清除浏览器缓存"
-      ],
-      "Drafts": [
-        "草稿"
       ],
       "Enforcing 2FA for organizations": [
         "强制组织启用 2FA"
@@ -7138,9 +7215,6 @@
       "if your data is leaked": [
         "如果您的数据遭到泄露"
       ],
-      "Inbox": [
-        "收件箱"
-      ],
       "Learn more": [
         "了解详情"
       ],
@@ -7156,12 +7230,6 @@
       "Request an invite": [
         "申请注册"
       ],
-      "Scheduled": [
-        "定时发送"
-      ],
-      "Sent": [
-        "已发送"
-      ],
       "settings": [
         "设置"
       ],
@@ -7170,15 +7238,6 @@
       ],
       "Shared with me": [
         "与我共享"
-      ],
-      "Snooze": [
-        "延迟通知"
-      ],
-      "Spam": [
-        "垃圾邮件"
-      ],
-      "Starred": [
-        "星标邮件"
       ],
       "Trash": [
         "回收站"
@@ -8101,6 +8160,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "保护敏感的商业信息并进行安全合作。"
       ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "为 6 位用户提供 ${ plusTitle } 的所有高级功能，保护您的家人。"
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 全系服务协同保障您的家庭隐私。"
       ],
@@ -8146,6 +8208,9 @@
       ],
       "Downgrade account?": [
         "降级账户？"
+      ],
+      "Review subscription": [
+        "查看订阅"
       ],
       "Review subscription and pay": [
         "确认订单并支付"
@@ -8480,6 +8545,18 @@
       "${ count } item failed to be decrypted": [
         "${ count } 个项目解密失败"
       ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } 张照片无法从 \"${ albumLink.name }\" 相册中移除"
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } 张照片未能添加到 \"${ albumName }\" 相册中"
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } 张照片已添加到 \"${ albumName }\" 相册中"
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } 张照片已从 \"${ albumLink.name }\" 移除"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } 项目已删除"
       ],
@@ -8540,9 +8617,6 @@
       "An invitation has been sent": [
         "邀请已发送"
       ],
-      "Cannot load file or folder info": [
-        "无法加载文件或文件夹信息"
-      ],
       "Cannot load link": [
         "无法加载链接"
       ],
@@ -8569,6 +8643,9 @@
       ],
       "Encrypted search activated": [
         "加密搜索已激活"
+      ],
+      "Error while listing devices": [
+        "列出设备时出错"
       ],
       "External invitation removed from the share": [
         "外部邀请已从共享中删除"
@@ -8597,8 +8674,14 @@
       "Failed to reject share invitation": [
         "拒绝分享邀请失败"
       ],
+      "Failed to remove device": [
+        "无法删除设备"
+      ],
       "Failed to remove the file": [
         "无法删除文件"
+      ],
+      "Failed to rename device": [
+        "无法重命名设备"
       ],
       "Failed to upload files: ${ err }": [
         "上传文件失败：${ err }"
@@ -8678,6 +8761,9 @@
       "The link to your item was deleted": [
         "共享链接已删除"
       ],
+      "The spreadsheet failed to be created": [
+        "电子表格创建失败"
+      ],
       "This item was not removed from your list": [
         "一些项目未能从您的列表中删除"
       ],
@@ -8747,6 +8833,9 @@
       ],
       "Get the deal": [
         "获取优惠"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "最后机会！首月享受 ${ plan } 80% 折扣。"
       ],
       "Last day to save": [
         "保存的最后日期"
@@ -8826,6 +8915,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "遍布 110 多个国家/地区的超快 VPN 服务器"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "无限别名，保护您的身份"
       ]
     },
     "Onboarding": {
@@ -9181,6 +9273,9 @@
       "Got it": [
         "好"
       ],
+      "I'm purchasing as a business": [
+        "以企业身份购买"
+      ],
       "MM/YY": [
         "月/年"
       ],
@@ -9213,6 +9308,9 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
+      ],
+      "This number will be shown on all future invoices": [
+        "此编号将显示在所有未来的发票上。"
       ],
       "This payment method will become your new default for all future renewals.": [
         "此付款方式将成为您未来所有续订的新默认方式。"
@@ -9252,12 +9350,34 @@
         "Free"
       ]
     },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - 卡号尾数为 ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "银行转账 - ${ details }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "确认付款后，您即授权 ${ BRAND_NAME } 和我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣除相应款项。根据您与银行签订的协议，您可以在扣款日起 8 周内获得退款。"
       ],
       "Street address, postal code, and city": [
         "街道地址、邮政编码和城市"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "澳大利亚商业编号 (ABN)"
+      ],
+      "Business Number": [
+        "商业编号"
+      ],
+      "EIN": [
+        "雇主识别号码 (EIN)"
+      ],
+      "VAT number": [
+        "增值税号 (VAT)"
       ]
     },
     "PGP key encryption warning": {
@@ -9354,6 +9474,9 @@
       "Please describe the problem and include any error messages": [
         "请说明您的问题，并附上看到的所有错误提示"
       ],
+      "Postal code": [
+        "邮政编码"
+      ],
       "Search for group name": [
         "搜索群组名称"
       ],
@@ -9383,6 +9506,9 @@
       ],
       "Your organization name": [
         "您的组织名称"
+      ],
+      "ZIP code": [
+        "邮政编码"
       ]
     },
     "Placeholder for contact group name": {
@@ -9393,6 +9519,20 @@
     "plan customizer, users": {
       "contact": [
         "联系人"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "所有 ${ protonPlus } 服务。${ br }轻松订阅。"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "作为 **${ currentPlanTitle }** 订阅者，您可以通过升级到 **${ upsellPlanTitle }** 来解锁 **${ unlockPlanTitle }** 和所有高级 ${ BRAND_NAME } 服务。"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "继续使用 ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "升级至 ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -9832,11 +9972,20 @@
       "Browse securely": [
         "安全浏览"
       ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 做您想做的"
+      ],
       "Get unlimited aliases": [
         "获取无限量邮箱别名"
       ],
       "Go to subscription plans": [
         "查看账户等级"
+      ],
+      "Guard against threats": [
+        "防范威胁"
+      ],
+      "Increase your storage": [
+        "提升您的存储空间"
       ],
       "Keep passwords safe": [
         "确保密码安全"
@@ -9925,6 +10074,18 @@
       ],
       "Get 500 GB to securely store all your files and photos": [
         "获得 500 GB 以安全地存储您的所有文件和照片"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "获取遍布 110 多个国家/地区的超快 VPN 服务器"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "获得包含所有功能的套餐，开通 ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "获取无限数量的别名，以保护您的身份并减少垃圾邮件。"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "将您的密码安全地存储并分类管理在多个保险库中"
       ],
       "Protect your account from threats with Sentinel": [
         "使用 Sentinel 保护您的账户免受威胁"
@@ -10998,6 +11159,9 @@
       "Delete ${ name }?": [
         "刪除 ${ name }？"
       ],
+      "Delete ${ total } item?": [
+        "删除 ${ total } 项吗？"
+      ],
       "Delete ${ value }": [
         "删除 ${ value }"
       ],
@@ -11216,9 +11380,6 @@
       ],
       "Network error": [
         "网络错误"
-      ],
-      "Newsletters view": [
-        "时事通讯视图"
       ],
       "Night theme": [
         "夜间模式"
@@ -11496,6 +11657,9 @@
       "Untitled document ${ date }": [
         "无标题文档 ${ date }"
       ],
+      "Untitled spreadsheet ${ date }": [
+        "无标题电子表格 ${ date }"
+      ],
       "Upgrade complete!": [
         "升级完成！"
       ],
@@ -11725,6 +11889,9 @@
       ],
       "Name must not be empty": [
         "名称不能为空"
+      ],
+      "Name must not contain slashes (/)": [
+        "名称不能包含斜杠 (/)"
       ]
     },
     "Video control": {

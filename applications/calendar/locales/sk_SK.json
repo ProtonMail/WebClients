@@ -984,6 +984,12 @@
       "${ price } per user": [
         "${ price } za používateľa"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
         "${ seats } licencie asistentov písania",
@@ -1418,6 +1424,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problém"
+      ],
       "Application problem": [
         "Problém aplikácie"
       ],
@@ -4873,6 +4882,9 @@
         "${ groupCounts } nájdených skupín",
         "${ groupCounts } nájdených skupín"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotná služba ${ PASS_SHORT_APP_NAME } nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }"
       ],
@@ -5253,6 +5265,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Prechod na nižšiu verziu ukončí všetky pripojenia k plateným serverom ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Stiahnuť aktuálne záznamy"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stiahnite si svoju obľúbenú aplikáciu ešte dnes a vezmite súkromie do svojich rúk, nech ste kdekoľvek."
@@ -6620,6 +6635,9 @@
       "Import to:": [
         "Importovať do:"
       ],
+      "Include application logs in bug report": [
+        "Vrátane záznamov aplikácie v chybovom hlásení"
+      ],
       "Integrated 2FA authenticator": [
         "Integrovaný 2FA autentifikátor"
       ],
@@ -6932,20 +6950,11 @@
       "Add a gift code": [
         "Vložiť darčekový kód"
       ],
-      "All mail": [
-        "Všetky správy"
-      ],
-      "Archive": [
-        "Archív"
-      ],
       "Calendars": [
         "Kalendáre"
       ],
       "clearing your browser cache": [
         "vymazanie medzipamäte prehliadača"
-      ],
-      "Drafts": [
-        "Koncepty"
       ],
       "Enforcing 2FA for organizations": [
         "Vynútenie 2FA pre organizácie"
@@ -6998,9 +7007,6 @@
       "if your data is leaked": [
         "ak dôjde k úniku vašich údajov"
       ],
-      "Inbox": [
-        "Doručená pošta"
-      ],
       "Learn more": [
         "Zistiť viac"
       ],
@@ -7019,26 +7025,8 @@
       "Request an invite": [
         "Požiadať o pozvánku"
       ],
-      "Scheduled": [
-        "Naplánované"
-      ],
-      "Sent": [
-        "Odoslané"
-      ],
       "settings": [
         "nastavenia"
-      ],
-      "Snooze": [
-        "Odložiť"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "S hviezdičkou"
-      ],
-      "Trash": [
-        "Kôš"
       ],
       "Types of recovery methods": [
         "Typy spôsobov obnovenia"
@@ -11372,9 +11360,6 @@
       ],
       "Network error": [
         "Chyba siete"
-      ],
-      "Newsletters view": [
-        "Zobrazenie newslettrerov"
       ],
       "Night theme": [
         "Nočný motív"
