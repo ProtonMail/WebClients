@@ -1,8 +1,9 @@
-import { type FC, useMemo } from 'react';
+import { type FC } from 'react';
 
 import { useFormik } from 'formik';
 
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
+import { useInitialValues } from '@proton/pass/hooks/items/useInitialValues';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
@@ -14,17 +15,18 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { IdentityForm } from './Identity.form';
 
 export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmit, onCancel }) => {
-    const initialValues: IdentityItemFormValues = useMemo(
-        () => ({
-            extraFields: [],
+    const initialValues = useInitialValues<IdentityItemFormValues>((options) => {
+        const clone = options?.clone.type === 'identity' ? options.clone : null;
+
+        return {
+            extraFields: clone?.extraFields ?? [],
             files: filesFormInitializer(),
-            name: '',
-            note: '',
-            shareId,
-            ...itemBuilder('identity').data.content,
-        }),
-        []
-    );
+            name: clone?.metadata.name ?? '',
+            note: clone?.metadata.note ?? '',
+            shareId: options?.shareId ?? shareId,
+            ...(clone?.content ?? itemBuilder('identity').data.content),
+        };
+    });
 
     const form = useFormik<IdentityItemFormValues>({
         initialValues,
