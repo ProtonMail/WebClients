@@ -1,7 +1,7 @@
 import type { Draft, EditDraft, NewDraft } from '@proton/pass/store/reducers';
 import type { Item, ItemExtraField, ItemRevision, ItemType, LoginItem, UniqueItem } from '@proton/pass/types';
 import { ItemFlag, ItemState } from '@proton/pass/types';
-import { and, not, or } from '@proton/pass/utils/fp/predicates';
+import { and, not, oneOf, or } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import type { URLComponents } from '@proton/pass/utils/url/types';
@@ -16,6 +16,17 @@ export const isItemType =
     <T extends ItemType>(type: T) =>
     <R extends ItemRevision>(item: R): item is R & ItemRevision<T> =>
         item.data.type === type;
+
+export const matchItemTypes =
+    (types: ItemType[]) =>
+    <R extends ItemRevision>(item: R) =>
+        oneOf(...types)(item.data.type);
+
+const NON_CLONABLE_ITEMS: ItemType[] = ['alias'];
+const NON_CLONABLE_FREE_ITEMS: ItemType[] = ['alias', 'creditCard', 'custom', 'sshKey', 'wifi'];
+
+export const isClonableItem = (free: boolean) =>
+    not(matchItemTypes(free ? NON_CLONABLE_FREE_ITEMS : NON_CLONABLE_ITEMS));
 
 export const isPasskeyItem = (item: Item): item is Item<'login'> =>
     isLoginItem(item) && (item.content.passkeys ?? []).length > 0;
