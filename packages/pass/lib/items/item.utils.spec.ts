@@ -1,3 +1,4 @@
+import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
 import type { Draft } from '@proton/pass/store/reducers';
@@ -6,6 +7,7 @@ import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constan
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import {
+    cloneItemName,
     filterItemsByShareId,
     filterItemsByType,
     filterItemsByUserIdentifier,
@@ -468,6 +470,31 @@ describe('Item utils', () => {
         ])('should handle %s correctly', async (_, input, expected) => {
             const result = await getSanitizedUserIdentifiers(input);
             expect(result).toEqual(expected);
+        });
+    });
+
+    describe('`cloneItemName`', () => {
+        test('Should append "copy" suffix', () => {
+            expect(cloneItemName('Test item')).toEqual('Test item (copy)');
+            expect(cloneItemName('Тест элемент')).toEqual('Тест элемент (copy)');
+            expect(cloneItemName('テストアイテム')).toEqual('テストアイテム (copy)');
+            expect(cloneItemName('🔍 Test 🧪 Item 📝')).toEqual('🔍 Test 🧪 Item 📝 (copy)');
+            expect(cloneItemName('')).toEqual(' (copy)');
+            expect(cloneItemName('   ')).toEqual(' (copy)');
+        });
+
+        test('Should preserve `MAX_ITEM_NAME_LENGTH`', () => {
+            const name = '0'.repeat(MAX_ITEM_NAME_LENGTH);
+            expect(cloneItemName(name)).toEqual(`${name.slice(0, -7)} (copy)`);
+        });
+
+        test('Should count copies correctly', () => {
+            expect(cloneItemName('Test item (copy)')).toEqual('Test item (copy 2)');
+            expect(cloneItemName('Test item (copy 2)')).toEqual('Test item (copy 3)');
+            expect(cloneItemName('Test item (copy 2874)')).toEqual('Test item (copy 2875)');
+            expect(cloneItemName('test(copy)')).toEqual('test (copy 2)');
+            expect(cloneItemName('Test (copy 999999999999999999)')).toEqual('Test (copy 1000000000000000000)');
+            expect(cloneItemName('Test item (copy) (copy)')).toEqual('Test item (copy) (copy 2)');
         });
     });
 });
