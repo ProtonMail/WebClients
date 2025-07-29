@@ -1,0 +1,40 @@
+.personal-meeting-modal {
+	background: #0009;
+
+	.modal-two-dialog-container,
+	.modal-two-dialog {
+		inline-size: 24.5rem;
+		block-size: 27.5rem;
+		box-shadow: none !important;
+	}
+
+	.modal-two-content {
+		padding: 1rem !important;
+		padding-block-start: 0 !important;
+	}
+
+	.modal-two-header {
+		margin: 1rem;
+		margin-block-end: 0;
+	}
+
+	.join-button {
+		background-color: var(--interaction-norm);
+		color: var(--text-invert);
+
+		&:hover {
+			background-color: var(--interaction-norm-minor-1);
+			color: var(--text-invert);
+		}
+	}
+
+	.copy-button {
+		background-color: var(--interaction-weak);
+		color: var(--text-norm);
+
+		&:hover {
+			background-color: var(--interaction-weak-major-1);
+			color: var(--text-norm) !important;
+		}
+	}
+}

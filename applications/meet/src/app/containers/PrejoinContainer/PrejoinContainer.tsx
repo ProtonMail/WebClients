@@ -1,18 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
-import { c } from 'ttag';
-
-import { Button } from '@proton/atoms';
-import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
-import { APPS } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
-import logo from '../../../assets/meet-logo.svg';
 import { DeviceSettings } from '../../components/DeviceSettings/DeviceSettings';
 import { JoiningRoomLoader } from '../../components/JoiningRoomLoader';
+import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
-import { UserInfo } from '../../components/UserInfo';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDevices } from '../../hooks/useDevices';
 import { LoadingState, type ParticipantSettings } from '../../types';
@@ -63,8 +56,6 @@ export const PrejoinContainer = ({
 
     const [displayName, setDisplayName] = useState(defaultDisplayName);
 
-    const history = useHistory();
-
     const participantColorIndex = useRef(Math.ceil(6 * Math.random()));
 
     useEffect(() => {
@@ -85,58 +76,13 @@ export const PrejoinContainer = ({
         });
     };
 
-    const handleSignIn = (returnUrl: string) =>
-        requestFork({
-            fromApp: APPS.PROTONMEET,
-            forkType: ForkType.LOGIN,
-            extra: {
-                returnUrl,
-            },
-        });
-
     return (
         <>
             {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
+            <div className="absolute w-full">
+                <PageHeader isScheduleInAdvanceEnabled={isScheduleInAdvanceEnabled} guestMode={guestMode} />
+            </div>
             <div className="flex flex-nowrap w-full h-full items-center justify-center">
-                <div
-                    className="absolute top-custom left-custom"
-                    style={{ '--top-custom': '0.75rem', '--left-custom': '2rem' }}
-                >
-                    <img src={logo} alt="" />
-                </div>
-                <div
-                    className="absolute top-custom right-custom flex items-center gap-2"
-                    style={{ '--top-custom': '0.75rem', '--right-custom': '2rem' }}
-                >
-                    {isScheduleInAdvanceEnabled && (
-                        <Button
-                            className="action-button rounded-full border-none"
-                            onClick={() =>
-                                guestMode ? handleSignIn('admin/create') : history.replace('/admin/create')
-                            }
-                            size="large"
-                        >
-                            {c('l10n_nightly Action').t`Schedule meeting`}
-                        </Button>
-                    )}
-                    {guestMode ? (
-                        <Button
-                            className="action-button rounded-full border-none"
-                            onClick={() =>
-                                handleSignIn(
-                                    window.location.pathname.replace('/guest', '') +
-                                        window.location.search +
-                                        window.location.hash
-                                )
-                            }
-                            size="large"
-                        >
-                            {c('l10n_nightly Action').t`Sign in`}
-                        </Button>
-                    ) : (
-                        <UserInfo colorIndex={participantColorIndex.current} />
-                    )}
-                </div>
                 <div className="w-custom flex items-center" style={{ '--w-custom': '71rem' }}>
                     <DeviceSettings
                         isCameraEnabled={isCameraEnabled}
