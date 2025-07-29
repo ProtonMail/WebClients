@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "取消订阅"
       ],
+      "Cancel trial and pay": [
+        "取消试用并支付"
+      ],
       "Change": [
         "更改"
       ],
@@ -579,6 +582,12 @@
       "Publish changes": [
         "发布更改"
       ],
+      "Purge all": [
+        "全部清除"
+      ],
+      "Purge deleted": [
+        "清除已删除项"
+      ],
       "Recover data": [
         "恢复数据"
       ],
@@ -870,6 +879,9 @@
       "Upgrade to Business": [
         "升级到 Business 套餐"
       ],
+      "Upgrade to Professional": [
+        "升级至专业版"
+      ],
       "Upgrade your plan": [
         "升级您的计划"
       ],
@@ -975,6 +987,9 @@
       ],
       "${ price } per user": [
         "${ price } 每位用户"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } 席位"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } 个写作助手许可证"
@@ -1239,6 +1254,11 @@
         "继续订阅"
       ]
     },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "您的免费体验期将于 ${ timeRemaining } 结束。"
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         "关闭"
@@ -1324,6 +1344,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 与 ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
@@ -1537,6 +1560,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 问题"
+      ],
       "Application problem": [
         "应用程序问题"
       ],
@@ -3020,6 +3046,9 @@
       ]
     },
     "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "要转发来自最多 ${ MAX_SYNC_PAID_USER } 个账户的邮件，请升级至 ${ planName } 计划。"
+      ],
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
         "您正在将来自${ MAX_SYNC_FREE_USER }个外部账户的电子邮件转发至${ MAIL_APP_NAME }。"
       ]
@@ -3251,6 +3280,9 @@
       "Invalid verification code": [
         "验证码无效"
       ],
+      "Invalid ZIP code": [
+        "无效的邮政编码"
+      ],
       "Name does not match": [
         "名称不正确"
       ],
@@ -3311,6 +3343,18 @@
       "Please enter a valid Entity ID URL": [
         "请输入有效的实体 ID 网址"
       ],
+      "Please enter a valid postal code": [
+        "请输入有效的邮政编码"
+      ],
+      "Please enter a valid ZIP code": [
+        "请输入有效的邮政编码"
+      ],
+      "Please enter postal code": [
+        "请输入邮政编码"
+      ],
+      "Please enter ZIP code": [
+        "请输入邮政编码"
+      ],
       "Please generate keys before you try to change your password": [
         "更改密码前请先生成密钥"
       ],
@@ -3325,6 +3369,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "请至少选择一个用户或组，然后再继续。"
+      ],
+      "Please select billing country": [
+        "请选择您的计费国家/地区"
+      ],
+      "Please select billing state": [
+        "请选择账单省（州）"
       ],
       "Please set a recovery email first": [
         "请先设置密保邮箱"
@@ -3349,6 +3399,9 @@
       ],
       "Please upload only 1 file": [
         "请只上传 1 个文件"
+      ],
+      "Postal code is required": [
+        "邮政编码为必填项"
       ],
       "Process aborted": [
         "操作已中止"
@@ -3844,6 +3897,9 @@
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere": [
         "随时随地访问流媒体服务内容，包括 Netflix、Disney+、Prime Video 等"
       ],
+      "Protects you from ads, trackers, and malware on websites and apps": [
+        "保护您免受网站和应用程序中的广告、跟踪器和恶意软件的侵害。"
+      ],
       "Secure Core servers route your traffic through 2 VPN servers for extra security": [
         "Secure Core 服务器通过 2 个 VPN 服务器路由您的流量，以提供额外安全。"
       ]
@@ -4242,6 +4298,9 @@
       ]
     },
     "Info": {
+      " and other security features.": [
+        "以及其他安全功能。"
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "${ amountUsers } / ${ totalUsers } 的用户目前可以访问共享服务器。"
       ],
@@ -4277,6 +4336,9 @@
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的非 SSO 成员使用双因素身份验证登录贵组织。"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
@@ -4757,6 +4819,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
+      ],
+      "Download current logs": [
+        "下载当前日志"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "下载我们的 csv 模板，填写用户信息，之后上传填写完成的 csv 文件即可创建对应账户。"
@@ -5409,6 +5474,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "价格已经考虑各种能用得上的周期计费优惠，以及账户中未过期的优惠券。"
       ],
+      "Private AI assistant": [
+        "私人 AI 助手"
+      ],
       "Protected by Swiss privacy laws": [
         "由瑞士隐私法律保护"
       ],
@@ -5444,6 +5512,15 @@
       ],
       "Restore": [
         "还原"
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "保留规则 \"${ formData.name }\" 更新成功"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "保留规则 \"${ payload.Name }\" 创建成功"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "保留规则 \"${ retentionRule.Name }\" 已成功删除"
       ],
       "Revoke certificate ${ name }": [
         "吊销证书 ${ name }"
@@ -5835,6 +5912,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
       ],
+      "Upgrade to Professional or a higher plan to unlock": [
+        "升级至专业版或更高版本以解锁"
+      ],
       "Upload your completed CSV file to create accounts": [
         "上传完成的 CSV 文件以创建账户"
       ],
@@ -6164,6 +6244,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "您的 ${ BRAND_NAME } 密码"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "您的 ${ plan } 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 账户已关联。要删除它们，请登录 ${ loginLink } 并在那里删除您的账户。"
@@ -6671,6 +6754,9 @@
       "Import all messages": [
         "导入所有邮件"
       ],
+      "Include application logs in bug report": [
+        "在问题反馈中包含应用日志"
+      ],
       "Integrated 2FA authenticator": [
         "内置 2FA 验证器"
       ],
@@ -7067,6 +7153,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "邮政编码"
+      ],
       "ZIP code": [
         "邮政编码"
       ]
@@ -7338,6 +7427,9 @@
       ],
       "Sign in success (awaiting second factor)": [
         "登录成功（等待 2FA）"
+      ],
+      "Sign in success (awaiting verification)": [
+        "登录成功（等待验证）"
       ],
       "Sign out": [
         "登出"
@@ -8075,6 +8167,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "保护敏感的商业信息并进行安全合作。"
       ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "为 6 位用户提供 ${ plusTitle } 的所有高级功能，保护您的家人。"
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 全系服务协同保障您的家庭隐私。"
       ],
@@ -8149,6 +8244,9 @@
       ],
       "Downgrade account?": [
         "降级账户？"
+      ],
+      "Review subscription": [
+        "查看订阅"
       ],
       "Review subscription and pay": [
         "确认订单并支付"
@@ -8607,6 +8705,9 @@
       "Get the deal": [
         "获取优惠"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "最后机会！首月享受 ${ plan } 80% 折扣。"
+      ],
       "Last day to save": [
         "保存的最后日期"
       ],
@@ -8685,6 +8786,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "遍布 110 多个国家/地区的超快 VPN 服务器"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "无限别名，保护您的身份"
       ]
     },
     "Onboarding": {
@@ -8749,6 +8853,9 @@
       "Free server configs": [
         "免费服务器配置"
       ],
+      "Group": [
+        "群组"
+      ],
       "I found another service that I like better": [
         "不如别的产品好用"
       ],
@@ -8808,6 +8915,9 @@
       ],
       "The whole organization": [
         "整个团体"
+      ],
+      "User": [
+        "用户"
       ]
     },
     "option": {
@@ -9123,6 +9233,9 @@
       "Got it": [
         "好"
       ],
+      "I'm purchasing as a business": [
+        "以企业身份购买"
+      ],
       "MM/YY": [
         "月/年"
       ],
@@ -9161,6 +9274,9 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
+      ],
+      "This number will be shown on all future invoices": [
+        "此编号将显示在所有未来的发票上。"
       ],
       "This payment method will become your new default for all future renewals.": [
         "此付款方式将成为您未来所有续订的新默认方式。"
@@ -9203,12 +9319,34 @@
         "Free"
       ]
     },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - 卡号尾数为 ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "银行转账 - ${ details }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "确认付款后，您即授权 ${ BRAND_NAME } 和我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣除相应款项。根据您与银行签订的协议，您可以在扣款日起 8 周内获得退款。"
       ],
       "Street address, postal code, and city": [
         "街道地址、邮政编码和城市"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "澳大利亚商业编号 (ABN)"
+      ],
+      "Business Number": [
+        "商业编号"
+      ],
+      "EIN": [
+        "雇主识别号码 (EIN)"
+      ],
+      "VAT number": [
+        "增值税号 (VAT)"
       ]
     },
     "Permission": {
@@ -9304,6 +9442,9 @@
       "Please select the main reason": [
         "请选择主要原因"
       ],
+      "Postal code": [
+        "邮政编码"
+      ],
       "Search": [
         "搜索"
       ],
@@ -9345,6 +9486,9 @@
       ],
       "yourdomain.com": [
         "你的域名.com"
+      ],
+      "ZIP code": [
+        "邮政编码"
       ]
     },
     "placeholder": {
@@ -9389,6 +9533,20 @@
       ],
       "Enjoying ${ planName }?": [
         "喜欢 ${ planName } 吗？"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "所有 ${ protonPlus } 服务。${ br }轻松订阅。"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "作为 **${ currentPlanTitle }** 订阅者，您可以通过升级到 **${ upsellPlanTitle }** 来解锁 **${ unlockPlanTitle }** 和所有高级 ${ BRAND_NAME } 服务。"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "继续使用 ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "升级至 ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -9499,6 +9657,63 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "由于密码更改，您的组织管理员权限已被限制。下列操作暂不可用："
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "创建保留规则"
+      ],
+      "Delete": [
+        "刪除"
+      ],
+      "Delete rule": [
+        "删除规则"
+      ],
+      "Edit": [
+        "编辑"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "剩余 ${ remainingCount }"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } 天"
+      ],
+      "Forever": [
+        "永久"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "搜索规则、用户、时间段、操作"
+      ],
+      "Search policies": [
+        "搜索策略"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "操作"
+      ],
+      "Applies to": [
+        "适用于"
+      ],
+      "Retention period": [
+        "保存期限"
+      ],
+      "Retention Rule": [
+        "保留规则"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "未找到任何保留策略"
+      ]
+    },
+    "RetentionPoliciesSettings": {
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "根据贵组织的数据保留策略，设置数据保留规则以确定数据的保留时长。此外，还同时支持自动清除过期数据。"
       ]
     },
     "Role": {
@@ -10099,11 +10314,20 @@
       "Browse securely": [
         "安全浏览"
       ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 做您想做的"
+      ],
       "Get unlimited aliases": [
         "获取无限量邮箱别名"
       ],
       "Go to subscription plans": [
         "查看账户等级"
+      ],
+      "Guard against threats": [
+        "防范威胁"
+      ],
+      "Increase your storage": [
+        "提升您的存储空间"
       ],
       "Keep passwords safe": [
         "确保密码安全"
@@ -10192,6 +10416,18 @@
       ],
       "Get 500 GB to securely store all your files and photos": [
         "获得 500 GB 以安全地存储您的所有文件和照片"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "获取遍布 110 多个国家/地区的超快 VPN 服务器"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "获得包含所有功能的套餐，开通 ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "获取无限数量的别名，以保护您的身份并减少垃圾邮件。"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "将您的密码安全地存储并分类管理在多个保险库中"
       ],
       "Protect your account from threats with Sentinel": [
         "使用 Sentinel 保护您的账户免受威胁"
@@ -11585,6 +11821,9 @@
       "Connect apps and devices": [
         "连接应用和设备"
       ],
+      "Connect more Gmail addresses with ${ planName }": [
+        "通过 ${ planName } 连接更多 Gmail 地址"
+      ],
       "Connect organization": [
         "联系群组"
       ],
@@ -11647,6 +11886,9 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "自定义计划中的 IP 地址数量"
+      ],
+      "Data retention": [
+        "数据保留"
       ],
       "Date": [
         "日期"
@@ -11884,6 +12126,9 @@
       ],
       "Multi-user support": [
         "多用户功能"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "多个账户，1 个私密收件箱"
       ],
       "Network error": [
         "网络错误"
@@ -12172,6 +12417,9 @@
       ],
       "Video conferencing": [
         "视频会议"
+      ],
+      "View organization events by upgrading to Professional": [
+        "升级至专业版以查看组织事件"
       ],
       "Warning": [
         "警告"
@@ -12673,6 +12921,9 @@
       ],
       "It's you": [
         "这是您"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "等待管理员访问"
