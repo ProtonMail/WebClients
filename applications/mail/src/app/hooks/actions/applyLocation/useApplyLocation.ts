@@ -1,3 +1,4 @@
+import { useNotifications } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail/index';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
@@ -8,6 +9,8 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Element } from 'proton-mail/models/element';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
+
+import { useMessageMoveEngine } from '../location/useMessageMoveEngine';
 
 export interface ApplyLocationParams {
     elements: Element[];
@@ -24,6 +27,10 @@ export const useApplyLocation = () => {
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
 
+    const { createNotification } = useNotifications();
+
+    const moveEngine = useMessageMoveEngine();
+
     const applyLocation = ({
         elements,
         removeLabel = false,
@@ -34,10 +41,26 @@ export const useApplyLocation = () => {
         const isMessage = testIsMessage(firstElement);
 
         if (isMessage) {
+            const result = moveEngine.validateMove(targetLabelID, elements as Message[]);
+
+            if (result.deniedElements.length > 0 && result.allowedElements.length === 0) {
+                createNotification({
+                    text: 'This action cannot be performed',
+                    type: 'error',
+                });
+
+                return Promise.resolve();
+            }
+
+            // The actions would result in no change, so we can return
+            if (result.notApplicableElements.length === elements.length || result.allowedElements.length === 0) {
+                return Promise.resolve();
+            }
+
             if (removeLabel) {
                 return dispatch(
                     unlabelMessages({
-                        elements: elements as Message[],
+                        elements: result.allowedElements as Message[],
                         targetLabelID,
                         isEncryptedSearch: false,
                         showSuccessNotification,
@@ -48,7 +71,7 @@ export const useApplyLocation = () => {
             } else {
                 return dispatch(
                     labelMessages({
-                        elements: elements as Message[],
+                        elements: result.allowedElements as Message[],
                         targetLabelID,
                         isEncryptedSearch: false,
                         showSuccessNotification,

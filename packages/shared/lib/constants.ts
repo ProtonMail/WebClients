@@ -913,14 +913,13 @@ export enum MAILBOX_LABEL_IDS {
     SCHEDULED = '12',
     ALMOST_ALL_MAIL = '15',
     SNOOZED = '16',
-    // The order is based on the order of the categories in the UI not the labelIDs
-    CATEGORY_DEFAULT = '24',
     CATEGORY_SOCIAL = '20',
     CATEGORY_PROMOTIONS = '21',
-    CATEGORY_NEWSLETTERS = '25',
-    CATEGORY_TRANSACTIONS = '26',
     CATEGORY_UPDATES = '22',
     CATEGORY_FORUMS = '23',
+    CATEGORY_DEFAULT = '24',
+    CATEGORY_NEWSLETTERS = '25',
+    CATEGORY_TRANSACTIONS = '26',
 }
 
 export const CATEGORY_LABEL_IDS: MAILBOX_LABEL_IDS[] = [
