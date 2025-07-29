@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Form, FormikProvider } from 'formik';
+import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
 import { Button, CircleLoader, Panel, PanelHeader } from '@proton/atoms';
@@ -81,6 +82,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
     const canOnlyDelete = false;
 
     const { dirty, values: formValues, setFieldValue, isValid, errors } = form;
+    const hasErrors = !isEmpty(errors);
     const { loadingCustomDomains, selectedDomain, setSelectedDomain, customDomains } = domainData;
 
     const [willDisableE2eeModalProps, setWillDisableE2eeModal, renderWillDisableE2eeModal] = useModalState();
@@ -209,7 +211,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                 <Button
                                     color="norm"
                                     key="button-save"
-                                    disabled={!changeDetected}
+                                    disabled={!changeDetected || hasErrors}
                                     loading={loading}
                                     onClick={() => {
                                         if (isValid) {
