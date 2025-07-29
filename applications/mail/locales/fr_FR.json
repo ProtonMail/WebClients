@@ -1426,10 +1426,6 @@
       "Trust": [
         "Faire confiance"
       ],
-      "Trust key": [
-        "Approuver la clé",
-        "Approuver les clés"
-      ],
       "Trust public key": [
         "Approuver la clé publique"
       ],
@@ -2162,7 +2158,7 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "${ LUMO_SHORT_APP_NAME } problème"
+        "Problème avec ${ LUMO_SHORT_APP_NAME }"
       ],
       "Application problem": [
         "Problème d'application"
@@ -9224,7 +9220,7 @@
         "Importer dans :"
       ],
       "Include application logs in bug report": [
-        "Inclure les journaux d'application dans le rapport de bogue"
+        "Inclure les journaux d'application dans le rapport de bug"
       ],
       "Integrated 2FA authenticator": [
         "Authentification à deux facteurs (A2F) intégrée"
@@ -13576,6 +13572,10 @@
         "${ elementsCount } conversation retirée de ${ labelName }.",
         "${ elementsCount } conversations retirées de ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } conversation a été retirée des favoris.",
+        "${ elementsCount } conversations ont été retirées des favoris."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversation est en attente.",
         "${ elementsCount } conversations sont en attente."
@@ -13615,6 +13615,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } message retiré de ${ labelName }.",
         "${ elementsCount } messages retirés de ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } message a été retiré des favoris.",
+        "${ elementsCount } messages ont été retirés des favoris."
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
@@ -13677,6 +13681,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "La conversation a été retirée de ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "La conversation a été retirée des favoris."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Les conversations de ${ sendersList } seront labellisées comme ${ labelsList }"
@@ -13749,6 +13756,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Le message a été retiré de ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Le message a été retiré des favoris."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Les messages de ${ sendersList } seront labellisés comme ${ labelsList }"
