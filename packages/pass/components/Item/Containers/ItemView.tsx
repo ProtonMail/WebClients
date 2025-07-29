@@ -71,6 +71,7 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
         return <Redirect to={to} push={false} />;
     }
 
+    const handleClone = () => itemActions.clone(item);
     const handleDelete = () => itemActions.delete(item);
     const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', scope });
     const handleHistory = () => selectItem(shareId, itemId, { view: 'history', scope });
@@ -111,6 +112,7 @@ export const ItemView = memo(({ shareId, itemId }: SelectedItem) => {
                 key={item.itemId}
                 share={share}
                 revision={item}
+                handleCloneClick={handleClone}
                 handleDeleteClick={handleDelete}
                 handleDismissClick={handleDismiss}
                 handleEditClick={handleEdit}

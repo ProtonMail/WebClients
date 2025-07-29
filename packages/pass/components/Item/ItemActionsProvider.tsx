@@ -15,6 +15,8 @@ import {
     ConfirmLeaveItem,
     ConfirmMoveItem,
 } from '@proton/pass/components/Item/Actions/ConfirmItemActions';
+import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
+import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { isAliasItem, isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
@@ -37,23 +39,25 @@ import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } f
 
 /** Ongoing: move every item action definition to this
  * context object. This context should be loosely connected */
-type ItemActionsContextType = {
+interface ItemActionsContextType {
+    clone: (item: ItemRevision) => void;
     delete: (item: ItemRevision) => void;
     deleteMany: (items: BulkSelectionDTO) => void;
+    leave: (item: ItemRevision) => void;
     move: (item: ItemRevision, mode: VaultSelectMode) => void;
     moveMany: (items: BulkSelectionDTO, shareId?: string) => void;
     restore: (item: ItemRevision) => void;
     restoreMany: (items: BulkSelectionDTO) => void;
     trash: (item: ItemRevision) => void;
     trashMany: (items: BulkSelectionDTO) => void;
-    leave: (item: ItemRevision) => void;
-};
+}
 
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
 
 export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     const bulk = useBulkActions();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const store = useStore<State>();
 
     const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
@@ -161,6 +165,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             leave: leaveItem.prompt,
+
+            clone: (clone: ItemRevision) => navigate(getNewItemRoute(clone.data.type), { state: { clone } }),
         };
     }, []);
 
