@@ -210,6 +210,11 @@ enum WalletFlag {
     WalletExportTransaction = 'WalletExportTransaction',
 }
 
+enum MeetFeatureFlag {
+    MeetEarlyAccess = 'MeetEarlyAccess',
+    MeetEarlyAccessPublic = 'MeetEarlyAccessPublic',
+}
+
 export type FeatureFlag =
     | `${CommonFeatureFlag}`
     | `${AccountFlag}`
@@ -219,4 +224,5 @@ export type FeatureFlag =
     | `${DocsFeatureFlag}`
     | `${MailFeatureFlag}`
     | `${AdminFeatureFlag}`
-    | `${WalletFlag}`;
+    | `${WalletFlag}`
+    | `${MeetFeatureFlag}`;

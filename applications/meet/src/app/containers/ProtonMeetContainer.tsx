@@ -7,10 +7,7 @@ import type { Room } from 'livekit-client';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { CustomPasswordState } from '@proton/meet/types/response-types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
-import useFlag from '@proton/unleash/useFlag';
 
-import { ComingSoon } from '../components/ComingSoon/ComingSoon';
-import { GuestMeetingSchedulingBlocked } from '../components/GuestMeetingSchedulingBlocked';
 import { PasswordPrompt } from '../components/PasswordPrompt/PasswordPrompt';
 import { JOIN_TITLE_TIMEOUT } from '../constants';
 import { DevicePermissionsContext } from '../contexts/DevicePermissionsContext';
@@ -37,8 +34,6 @@ interface ProtonMeetContainerProps {
 
 export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerProps) => {
     useWakeLock();
-
-    const isGuestMeetingSchedulingAllowed = useFlag('AllowGuestInit');
 
     const history = useHistory();
     const createInstantMeeting = useCreateInstantMeeting();
@@ -268,10 +263,6 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         setJoinedRoom(false);
     }, [resetParticipantNameMap]);
 
-    if (!isGuestMeetingSchedulingAllowed && guestMode && instantMeetingRef.current) {
-        return <GuestMeetingSchedulingBlocked />;
-    }
-
     if (decryptionReadinessStatus === MeetingDecryptionReadinessStatus.UNINITIALIZED) {
         return null;
     }
@@ -328,14 +319,4 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             </div>
         </DevicePermissionsContext.Provider>
     );
-};
-
-export const ProtonMeetContainerWrapper = (props: ProtonMeetContainerProps) => {
-    const isProtonMeetAvailable = useFlag('PMVCAvailable');
-
-    if (!isProtonMeetAvailable) {
-        return <ComingSoon />;
-    }
-
-    return <ProtonMeetContainer {...props} />;
 };
