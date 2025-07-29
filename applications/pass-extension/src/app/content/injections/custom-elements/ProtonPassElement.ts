@@ -6,7 +6,14 @@ export const PASS_ELEMENT_THEME = 'data-protonpass-theme';
 const ALLOWED_ATTRS = [PASS_ELEMENT_ROLE, PASS_ELEMENT_THEME, 'aria-hidden', 'popover'];
 const MAX_ATTR_REMOVAL_ATTEMPTS = 25;
 
-export class ProtonPassElement extends HTMLElement {
+/** Get safe `HTMLElement` reference. Polymer.js patches `window.HTMLElement`,
+ * so we use the original constructor from the prototype when shimmed. */
+const SafeHTMLElement =
+    'es5Shimmed' in HTMLElement && HTMLElement.es5Shimmed
+        ? (HTMLElement.prototype.constructor as typeof HTMLElement)
+        : HTMLElement;
+
+export class ProtonPassElement extends SafeHTMLElement {
     private mutationObs: MaybeNull<MutationObserver> = null;
 
     private attrsMutationCount: Map<string, number> = new Map();
