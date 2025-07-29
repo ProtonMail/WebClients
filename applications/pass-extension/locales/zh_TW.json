@@ -452,6 +452,9 @@
       "Saving passkey...": [
         "儲存Passkey..."
       ],
+      "Section name": [
+        "區塊名稱"
+      ],
       "Secure links": [
         "安全加密連結"
       ],
@@ -1457,6 +1460,9 @@
       "Unable to copy to clipboard": [
         "無法複製到剪貼簿"
       ],
+      "Unconfigured": [
+        "未設定"
+      ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
         "使用個人識別數字代碼解鎖${ PASS_APP_NAME }以存取通行密鑰。"
       ],
@@ -1846,6 +1852,9 @@
       "Email": [
         "電郵"
       ],
+      "Email (alias)": [
+        "電子郵件 (別名)"
+      ],
       "Email aliases": [
         "電子郵件別名"
       ],
@@ -1869,6 +1878,9 @@
       ],
       "Export": [
         "匯出"
+      ],
+      "Extra fields": [
+        "額外欄位"
       ],
       "Extra password": [
         "第二密碼"
@@ -2455,6 +2467,9 @@
       "X handle": [
         "X 帳號"
       ],
+      "Yahoo account": [
+        "Yahoo 帳號"
+      ],
       "You are about to create": [
         "您將要創建"
       ],
@@ -2690,6 +2705,14 @@
       ],
       "Unknown": [
         "未知"
+      ]
+    },
+    "Success": {
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "項目不能包含超過 ${ share.targetMaxMembers } 位使用者。"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "保管庫不能包含超過 ${ targetMaxMembers } 位使用者。"
       ]
     },
     "Theme": {
