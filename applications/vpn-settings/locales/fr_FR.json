@@ -1623,7 +1623,7 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "${ LUMO_SHORT_APP_NAME } problème"
+        "Problème avec ${ LUMO_SHORT_APP_NAME }"
       ],
       "Application problem": [
         "Problème d'application"
@@ -6899,7 +6899,7 @@
         "Importer tous les messages"
       ],
       "Include application logs in bug report": [
-        "Inclure les journaux d'application dans le rapport de bogue"
+        "Inclure les journaux d'application dans le rapport de bug"
       ],
       "Integrated 2FA authenticator": [
         "Authentification à deux facteurs (A2F) intégrée"

@@ -992,6 +992,11 @@
       "${ price } per user": [
         "${ price } per utilizator"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licență ${ LUMO_APP_NAME }",
+        "${ seats } licențe ${ LUMO_APP_NAME }",
+        "${ seats } de licențe ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licență asistent de scriere",
         "${ seats } licențe asistent de scriere",
@@ -1575,6 +1580,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problemă ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problemă aplicație"
       ],
@@ -4401,6 +4409,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } de membri fără autentificare unică folosesc autentificarea cu doi factori pentru a se conecta la organizație."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
@@ -4924,6 +4935,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
+      ],
+      "Download current logs": [
+        "Descărcare jurnale actuale"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Descărcați șablonul CSV, completați datele utilizatorului și apoi încărcați fișierul CSV completat pentru a crea conturi pentru acești utilizatori."
@@ -5586,6 +5600,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
+      ],
+      "Private AI assistant": [
+        "Asistent AI privat"
       ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
@@ -6907,6 +6924,9 @@
       ],
       "Import all messages": [
         "Importare toate mesajele"
+      ],
+      "Include application logs in bug report": [
+        "Includere jurnale aplicație în raportul de eroare"
       ],
       "Integrated 2FA authenticator": [
         "Autentificator A2F integrat"
@@ -13261,6 +13281,9 @@
       ],
       "It's you": [
         "Sunt eu"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Acces de administrare în așteptare"
