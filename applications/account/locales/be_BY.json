@@ -101,7 +101,7 @@
         "Дадаць адрас або дамен"
       ],
       "Add another account": [
-        "Дадайце іншы ўліковы запіс"
+        "Дадаць іншы ўліковы запіс"
       ],
       "Add calendar from URL": [
         "Дадаць каляндар з URL-адраса"
@@ -656,10 +656,10 @@
         "Зашыфраваць і экспартаваць"
       ],
       "Explore ${ target }": [
-        "Даследуйце ${ target }"
+        "Даследаваць ${ target }"
       ],
       "Explore group plans": [
-        "Даследуйце групавыя тарыфныя планы"
+        "Даследаваць групавыя тарыфныя планы"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Даследаваць іншыя тарыфныя планы ${ BRAND_NAME }"
@@ -1280,7 +1280,7 @@
         "Задаць у якасці вокладкі альбома"
       ],
       "Set as default": [
-        "Зрабіць прадвызначанай"
+        "Задаць як прадвызначаны"
       ],
       "Set as default mail application": [
         "Задаць у якасці прадвызначанай паштовай праграмы"
@@ -5360,7 +5360,7 @@
         "Не ўдалося апрацаваць лагатып"
       ],
       "Failed to update detailed monitoring.": [
-        "Не ўдалося абнавіць падрабязны маніторынг."
+        "Не ўдалося абнавіць падрабязнае назіранне."
       ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Занадта вялікі файл. Ваш лагатып павінен быць 30 КБ або менш."
@@ -7797,7 +7797,7 @@
         "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вас ад зламыснікаў і пагроз бяспекі."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага маніторынгу падазронай актыўнасці."
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага назірання падазронай актыўнасці."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
@@ -8307,7 +8307,7 @@
         "Ствараючы ўліковы запіс ${ PASS_APP_NAME } з дапамогай вашай электроннай пошты SimpleLogin, вы можаце кіраваць сваімі псеўданімамі наўпрост з ${ PASS_APP_NAME }."
       ],
       "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Адключыўшы маніторынг падзей бяспекі, вы таксама ачысціце ўсю сваю гісторыю. Вы сапраўды хочаце яго адключыць?"
+        "Адключыўшы назіранне за падзеямі бяспекі, вы таксама ачысціце ўсю сваю гісторыю. Вы сапраўды хочаце яго адключыць?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні зноў пяройдзеце на яго."
@@ -11277,6 +11277,9 @@
       "Inactive": [
         "Неактыўны"
       ],
+      "Invalid": [
+        "Памылковы"
+      ],
       "Obsolete": [
         "Састарэлы"
       ],
@@ -11316,7 +11319,7 @@
         "Адхіліць чарнавік"
       ],
       "Expand / contract composer": [
-        "Разгарнуць / сціснуць рэдактар"
+        "Разгарнуць або сціснуць рэдактар"
       ],
       "Filter": [
         "Фільтр"
@@ -12059,7 +12062,7 @@
         "Час завяршэння"
       ],
       "End weekday": [
-        "Апошні дзень тыдня"
+        "Апошні будні дзень"
       ],
       "Enter password": [
         "Увядзіце пароль"
@@ -12998,7 +13001,7 @@
         "тут"
       ],
       "How does monitoring work?": [
-        "Як працуе маніторынг?"
+        "Як працуе назіранне?"
       ],
       "How to add users": [
         "Як дадаць карыстальнікаў"
@@ -13490,9 +13493,6 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забылі сваё імя карыстальніка ўліковага запісу ${ BRAND_NAME }? Знайдзіце яго выкарыстоўваючы пошту або нумар тэлефона і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
       ],
-      "Private and secure email, no bank card required": [
-        "Прыватная і бяспечная электронная пошта, якая не патрабуе банкаўскую картку"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Скінуць пароль свайго ўліковага запісу ${ BRAND_NAME }"
       ],
@@ -13502,8 +13502,11 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Увайдзіце ў свой уліковы запіс ${ BRAND_NAME }, каб атрымаць доступ да ўсіх зашыфраваных сэрвісаў ${ BRAND_NAME }, такіх як ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых. Не маеце ўліковага запісу? Стварыце яго БЯСПЛАТНА."
       ],
-      "Try ${ planName } for free with this link": [
-        "Паспрабуйце тарыфны план ${ planName } бясплатна па гэтай спасылцы"
+      "Take control of your data with end-to-end encryption. No bank card required.": [
+        "Вазьміце пад кантроль свае даныя з дапамогай скразнога шыфравання. Банкаўская картка не патрабуецца."
+      ],
+      "Try ${ BRAND_NAME } for free with this link": [
+        "Паспрабуйце тарыфны план ${ BRAND_NAME } бясплатна па гэтай спасылцы"
       ]
     },
     "Modal title": {
@@ -14440,7 +14443,7 @@
         "Палепшаная бяспека і прэміяльныя функцыі для каманд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "Неабходная абарона і бяспечная супрацоўніцтва для неабмежаванай колькасці карыстальнікаў."
+        "Неабходная абарона і бяспечнае супрацоўніцтва для неабмежаванай колькасці карыстальнікаў."
       ],
       "For next-level password management and identity protection.": [
         "Для больш высокага ўзроўню кіравання паролямі і абароны ідэнтычнасці."
@@ -15917,7 +15920,7 @@
         "Увядзіце бачнае імя для **${ username }**. Гэту назву будуць бачыць вашы карыстальнікі, калі вы зменіце іх дазволы або абагуліце даныя з імі."
       ],
       "Essential protection and secure collaboration for unlimited users": [
-        "Неабходная абарона і бяспечная супрацоўніцтва для неабмежаванай колькасці карыстальнікаў"
+        "Неабходная абарона і бяспечнае супрацоўніцтва для неабмежаванай колькасці карыстальнікаў"
       ],
       "Everything from ${ planTitle }, plus...": [
         "Усе функцыі тарыфнага плана ${ planTitle }, а яшчэ..."
@@ -16130,7 +16133,7 @@
         "Пашыраныя функцыі псеўданіма (на платформе SimpleLogin)"
       ],
       "File attachments (coming soon)": [
-        "Далучэнні файлаў (неўзабаве з'явіцца)"
+        "Далучаныя файлы (неўзабаве з'явіцца)"
       ],
       "One-time payment, lifetime deal": [
         "Аднаразовая аплата, пажыццёвы доступ"
@@ -16150,7 +16153,7 @@
         "Аплачваецца штогод у памеры ${ yearlyPrice }. Эканомія складае ${ yearlySavedPrice } з тарыфным планам ${ passFamilyPlanName } (у параўнанні з 6 асобнымі падпіскамі тарыфнага плана ${ passPlusPlanName })"
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
-        "Эксклюзіўная прапанова даступная толькі для першых прыхільнікаў ${ PASS_APP_NAME }"
+        "Эксклюзіўная прапанова даступна толькі для ранніх прыхільнікаў ${ PASS_APP_NAME }"
       ],
       "Get it for ${ monthlyPrice }": [
         "Атрымайце яго за ${ monthlyPrice }"
@@ -16650,11 +16653,23 @@
       ]
     },
     "Plan description": {
+      "A VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "Рашэнне VPN, якое забяспечвае бяспечны, неабмежаваны, высакахуткасны доступ у інтэрнэт."
+      ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Усе прэміяльныя прадукты ${ BRAND_NAME }, які ўключае тарыфны план Duo."
       ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Найбольш пасуе, калі вам патрэбна сховішча ў памеры ${ maxSpace } і для двух удзельнікаў."
+      ],
+      "Cloud storage and file sharing, secured by end-to-end encryption.": [
+        "Воблачнае сховішча і абагульванне файлаў, якое абаронена скразным шыфраваннем."
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Комплексная прыватнасць і бяспека ў спалучэнні з усімі сэрвісамі ${ BRAND_NAME }."
+      ],
+      "For next-level password management and identity protection.": [
+        "Для больш высокага ўзроўню кіравання паролямі і абароны ідэнтычнасці."
       ],
       "Great for everyday use and photo backups.": [
         "Ідэальна пасуе для штодзённага выкарыстання і рэзервавання вашых фатаграфій."
@@ -16664,6 +16679,9 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Бяспечнае воблачнае сховішча і супрацоўніцтва для каманд."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Бяспечная электронная пошта з дадатковымі функцыямі для штодзённых камунікацый."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Ідэальны тарыфны план для дасведчаных карыстальнікаў, якія клапоцяцца аб прыватнасці."
@@ -17893,17 +17911,47 @@
         "${ FREE_PASS_ALIASES } псеўданімаў hide-my-email для барацьбы са спамам",
         "${ FREE_PASS_ALIASES } псеўданімаў hide-my-email для барацьбы са спамам"
       ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } адрас",
         "${ maxAddresses } адрасы",
         "${ maxAddresses } адрасоў",
         "${ maxAddresses } адрасоў"
       ],
+      "${ maxAddresses } email address": [
+        "${ maxAddresses } адрас электроннай пошты",
+        "${ maxAddresses } адрасы электроннай пошты",
+        "${ maxAddresses } адрасоў электроннай пошты",
+        "${ maxAddresses } адрасоў электроннай пошты"
+      ],
+      "${ maxAddresses } extra email address": [
+        "${ maxAddresses } дадатковы адрас электроннай пошты",
+        "${ maxAddresses } дадатковыя адрасы электроннай пошты",
+        "${ maxAddresses } дадатковых адрасоў электроннай пошты",
+        "${ maxAddresses } дадатковых адрасоў электроннай пошты"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } каляндар",
         "${ maxCalendars } календары",
         "${ maxCalendars } календароў",
         "${ maxCalendars } календароў"
+      ],
+      "${ maxDomains } email domain": [
+        "${ maxDomains } дамен электроннай пошты",
+        "${ maxDomains } дамены электроннай пошты",
+        "${ maxDomains } даменаў электроннай пошты",
+        "${ maxDomains } даменаў электроннай пошты"
+      ],
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "${ PASS_PLUS_VAULTS } сховішча для вашых пароляў",
+        "${ PASS_PLUS_VAULTS } сховішчы для вашых пароляў",
+        "${ PASS_PLUS_VAULTS } сховішчаў для вашых пароляў",
+        "${ PASS_PLUS_VAULTS } сховішчаў для вашых пароляў"
+      ],
+      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
+        "${ referrerName } запрашае вас паспрабаваць ${ BRAND_NAME }."
       ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } воблачнае сховішча для файлаў і фатаграфій"
@@ -17914,6 +17962,27 @@
       "${ value } of secure storage per user": [
         "${ value } бяспечнага сховішча на карыстальніка"
       ],
+      "${ value } total storage": [
+        "Агульны аб'ём сховішча: ${ value }"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } высакахуткаснае падключэнне па VPN",
+        "${ VPN_CONNECTIONS } высакахуткасныя падключэнні па VPN",
+        "${ VPN_CONNECTIONS } высакахуткасных падключэнняў па VPN",
+        "${ VPN_CONNECTIONS } высакахуткасных падключэнняў па VPN"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "Больш чым у ${ vpnServersCountData.paid.countries } краіне",
+        "Больш чым у ${ vpnServersCountData.paid.countries } краінах",
+        "Больш чым у ${ vpnServersCountData.paid.countries } краінах",
+        "Больш чым у ${ vpnServersCountData.paid.countries } краінах"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "Больш за ${ vpnServersCountData.paid.servers } сервер у больш чым",
+        "Больш за ${ vpnServersCountData.paid.servers } серверы ў больш чым",
+        "Больш за ${ vpnServersCountData.paid.servers } сервераў у больш чым",
+        "Больш за ${ vpnServersCountData.paid.servers } сервераў у больш чым"
+      ],
       "/user": [
         "/карыстальніка"
       ],
@@ -17923,8 +17992,23 @@
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "And get ${ referralReward } in credits, if you subscribe.": [
+        "І атрымайце ${ referralReward } у крэдытах, калі падпішацеся."
+      ],
       "Billing Cycle": [
         "Перыяд аплаты"
+      ],
+      "Block ads, trackers, and malware": [
+        "Блакіроўка рэкламы, праграм сачэння і шкодных праграм"
+      ],
+      "Built-in 2FA authenticator": [
+        "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Bundle": [
+        "Камплект"
       ],
       "Collaborative document editing": [
         "Сумеснае рэдагаванне дакументаў"
@@ -17941,8 +18025,23 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Працягнуць з тарыфным планам ${ PLAN_NAMES[plan] }"
       ],
+      "Continue with the free plan": [
+        "Працягнуць карыстацца бясплатным тарыфным планам"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Стварыць уліковы запіс ${ BRAND_NAME }"
+      ],
+      "Custom fields and file attachment": [
+        "Карыстальніцкія палі і далучэнне файлаў"
+      ],
+      "Encrypted cloud storage": [
+        "Зашыфраванае воблачнае сховішча"
+      ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Зашыфраваная электронная пошта з ${ totalMailStorageSize } сховішча"
+      ],
+      "Encrypted file sharing and document editor": [
+        "Зашыфраванае абагуленне файлаў і рэдактар дакументаў"
       ],
       "Encrypted password manager": [
         "Зашыфраваны менеджар пароляў"
@@ -17950,11 +18049,23 @@
       "End-to-end encryption": [
         "Скразное шыфраванне"
       ],
+      "Enjoy secure, easy-to-use ${ BRAND_NAME } apps.": [
+        "Атрымлівайце асалоду ад бяспечных і лёгкіх у выкарыстанні праграм ${ BRAND_NAME }."
+      ],
       "Every free account comes with:": [
         "Кожны бясплатны ўліковы запіс уключае:"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Хуткія спампоўкі ў P2P/BitTorrent"
+      ],
       "Free": [
         "Free"
+      ],
+      "Free for 14 days": [
+        "Бясплатна на працягу 14 дзён"
+      ],
+      "Get ${ referralReward } in credits": [
+        "Атрымайце ${ referralReward } у крэдыты"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Атрымайце бяспечны адрас ${ MAIL_APP_NAME } або ${ internalButton }"
@@ -17964,6 +18075,15 @@
       ],
       "Get a secure one from us, or ${ internalButton }": [
         "Атрымайце бяспечны код ад нас або ${ internalButton }"
+      ],
+      "Gifted by **${ referrerName }**": [
+        "Падаравана **${ referrerName }**"
+      ],
+      "Highest VPN speed": [
+        "Найвышэйшая хуткасць VPN"
+      ],
+      "Mailboxes and custom domains for aliases": [
+        "Паштовыя скрыні і карыстальніцкія дамены для псеўданімаў"
       ],
       "Manage user access": [
         "Кіраванне доступам карыстальнікаў"
@@ -17980,8 +18100,17 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Неабходна больш месца ў сховішчы? Вы ў любы час можаце палепшыць свой тарыфны план і атрымаць сховішча ў памеры ад 200 ГБ да 3 ТБ. 5 ГБ сховішча дастаткова для захоўвання 2500 фатаграфій, які робіць сучасны тэлефон (1 фатаграфія=2 МБ даных)."
       ],
+      "No credit card required:": [
+        "Крэдытная картка не патрабуецца:"
+      ],
+      "Online document editor": [
+        "Воблачны рэдактар дакументаў"
+      ],
       "Online documents": [
         "Дакументы ў сетцы"
+      ],
+      "Password manager": [
+        "Менеджар пароляў"
       ],
       "Password manager for all your devices": [
         "Менеджар пароляў для ўсіх вашых прылад"
@@ -18001,8 +18130,26 @@
       "Save ${ priceDifferenceString }": [
         "Эканомія ${ priceDifferenceString }"
       ],
+      "Secure ${ VPN_CONNECTIONS } device at a time": [
+        "Абараняе ${ VPN_CONNECTIONS } прыладу адначасова",
+        "Абараняе ${ VPN_CONNECTIONS } прылады адначасова",
+        "Абараняе ${ VPN_CONNECTIONS } прылад адначасова",
+        "Абараняе ${ VPN_CONNECTIONS } прылад адначасова"
+      ],
       "Secure file sharing": [
         "Бяспечнае абагульванне файлаў"
+      ],
+      "Secure vault sharing and link sharing": [
+        "Абагульванне бяспечнага сховішча і спасылак"
+      ],
+      "Securely share files, photos and documents": [
+        "Бяспечна абагульвайце файлы, фатаграфіі і дакументы"
+      ],
+      "Select ${ title }": [
+        "Выберыце ${ title }"
+      ],
+      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
+        "Выберыце сэрвіс і атрымлівайце асалоду ад прэміяльнай версіі на працягу 14 дзён бясплатна. Крэдытная картка не патрабуецца."
       ],
       "Selected": [
         "Выбрана"
@@ -18025,17 +18172,47 @@
       "Sign up, protect your files": [
         "Зарэгіструйцеся і абараніце свае файлы"
       ],
+      "Start free trial": [
+        "Пачаць бясплатны пробны перыяд"
+      ],
+      "Storage": [
+        "Сховішча"
+      ],
+      "Stream your favorite TV shows and movies": [
+        "Глядзіце свае абраныя тэлеперадачы і фільмы"
+      ],
       "Sync files across devices and users": [
         "Сінхранізаваць файлы паміж прыладамі і карыстальнікамі"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Назва арганізацыі будзе бачна вашым карыстальнікам, калі яны ўвойдуць у сістэму."
       ],
+      "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
+        "Пасля вашай падпіскі кошт складзе ${ priceWithDiscountPerMonth } у месяц."
+      ],
+      "To reedeem on your next paid subscription.": [
+        "Для пагашэння вашай наступнай платнай падпіскі."
+      ],
       "Total": [
         "Агулам"
       ],
+      "Try ${ BRAND_NAME } for 14 days free": [
+        "Паспрабуйце ${ BRAND_NAME } на 14 дзён бясплатна"
+      ],
+      "Try ${ planName } for free": [
+        "Паспрабуйце ${ planName } бясплатна"
+      ],
       "Ultra fast and private VPN": [
         "Звышхуткі і прыватны VPN"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ],
+      "Up to -${ percentage }%": [
+        "Да ${ percentage }%"
       ],
       "Up to 2 users": [
         "Да 2 карыстальнікаў"
@@ -18052,6 +18229,9 @@
       "Use your email, or ${ externalButton }": [
         "Выкарыстоўвайце сваю электронную пошту або ${ externalButton }"
       ],
+      "Use your own email domain": [
+        "Выкарыстоўвайце ўласны дамен электроннай пошты"
+      ],
       "use your own email.": [
         "выкарыстоўвайце ўласную электронную пошту."
       ],
@@ -18061,11 +18241,17 @@
         "VPN з серверамі ў ${ vpnServersCountData.free.countries } краінах",
         "VPN з серверамі ў ${ vpnServersCountData.free.countries } краінах"
       ],
+      "We’ll email you before your trial ends.": [
+        "Мы адправім вам ліст перад завяршэннем вашага пробнага перыяду."
+      ],
       "Yearly": [
         "Штогод"
       ],
       "Your plan": [
         "Ваш тарыфны план"
+      ],
+      "Your trial": [
+        "Ваш пробны перыяд"
       ]
     },
     "Signup label": {
@@ -18584,7 +18770,7 @@
         "Увядзіце код пацвярджэння адпраўлены на вашу іншую прыладу."
       ],
       "Enter the confirmation code we sent to this user.": [
-        "Увядзіце код пацвярджэння адпраўлены гэтаму карыстальніку."
+        "Увядзіце код пацвярджэння, які адпраўлены гэтаму карыстальніку."
       ],
       "Enter your backup password": [
         "Увядзіце свой рэзервовы пароль"
@@ -21642,7 +21828,7 @@
         "Выключэнне карыстальнікаў з адзіным уваходам у якіх 2ФА апрацоўваецца на баку пастаўшчыка пасведчанняў."
       ],
       "Feature in early access": [
-        "Функцыю можна паспрабаваць у раннім доступе"
+        "Функцыя ў раннім доступе"
       ],
       "For example, **12345, abcde**, etc.": [
         "Напрыклад, **12345, abcde** і г.д."
@@ -22682,10 +22868,10 @@
         "Кожныя ${ interval } тыдні ў панядзелак"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у панядзелак; час: ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак; час: ${ timesString }",
-        "Кожных ${ interval } тыдняў у панядзелак; час: ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак; час: ${ timesString }"
+        "Кожны ${ interval } тыдзень у панядзелак, ${ timesString }",
+        "Кожны ${ interval } тыдні ў панядзелак, ${ timesString }",
+        "Кожных ${ interval } тыдняў у панядзелак, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Кожны ${ interval } тыдзень у суботу",
@@ -22700,10 +22886,10 @@
         "Кожныя ${ interval } тыдні ў нядзелю"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у нядзелю ў ${ timesString }",
-        "Кожныя ${ interval } тыдні ў нядзелю ў ${ timesString }",
-        "Кожных ${ interval } тыдняў у нядзелю ў ${ timesString }",
-        "Кожных ${ interval } тыдняў у нядзелю ў ${ timesString }"
+        "Кожны ${ interval } тыдзень у нядзелю, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў нядзелю, ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю, ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday": [
         "Кожны ${ interval } тыдзень у чацвер",
@@ -22718,10 +22904,10 @@
         "Кожныя ${ interval } тыдні ў аўторак"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у аўторак; час: ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак; час: ${ timesString }",
-        "Кожных ${ interval } тыдняў у аўторак; час: ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак; час: ${ timesString }"
+        "Кожны ${ interval } тыдзень у аўторак, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак, ${ timesString }",
+        "Кожных ${ interval } тыдняў у аўторак, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Кожны ${ interval } тыдзень у сераду",

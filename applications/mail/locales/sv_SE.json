@@ -450,6 +450,9 @@
       "Download all attachments": [
         "Ladda ner alla bilagor"
       ],
+      "Download application logs": [
+        "Ladda ner applikationsloggar"
+      ],
       "Download logs": [
         "Ladda ner loggar"
       ],
@@ -1423,10 +1426,6 @@
       "Trust": [
         "Lita på"
       ],
-      "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
-      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -2129,6 +2128,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
+      ],
       "Application problem": [
         "Problem med applikation"
       ],
@@ -6850,6 +6852,12 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
       ],
+      "Download application logs for troubleshooting": [
+        "Ladda ner applikationsloggar för felsökning"
+      ],
+      "Download current logs": [
+        "Ladda ner nuvarande loggar"
+      ],
       "Download on the App Store": [
         "Ladda ner på App Store"
       ],
@@ -9165,6 +9173,9 @@
       "Import to:": [
         "Importera till:"
       ],
+      "Include application logs in bug report": [
+        "Inkludera applikationsloggar i felrapport"
+      ],
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
       ],
@@ -9257,6 +9268,9 @@
       ],
       "New password": [
         "Nytt lösenord"
+      ],
+      "Newsletter entry deleted": [
+        "Nyhetsbrevspost borttagen"
       ],
       "Newsletters": [
         "Nyhetsbrev"
@@ -13497,6 +13511,10 @@
         "${ elementsCount } konversation borttaget från ${ labelName }.",
         "${ elementsCount } konversationer borttagna från ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } konversation borttagen från stjärnmärkt.",
+        "${ elementsCount } konversationer borttagna från stjärnmärkt."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } konversation snoozad",
         "${ elementsCount } konversationer snoozade"
@@ -13536,6 +13554,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } meddelande borttaget från ${ labelName }.",
         "${ elementsCount } meddelanden borttagna från ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } meddelande borttaget från stjärnmärkt.",
+        "${ elementsCount } meddelanden borttagna från stjärnmärkt."
       ],
       "Address copied to clipboard": [
         "Adress kopierad till urklipp"
@@ -13598,6 +13620,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Konversation borttagen från ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Konversation borttagen från stjärnmärkt."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Konversationer från ${ sendersList } kommer att märkas som ${ labelsList }"
@@ -13670,6 +13695,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Meddelande borttaget från ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Meddelande borttaget från stjärnmärkt."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Meddelanden från ${ sendersList } kommer att märkas som ${ labelsList }"

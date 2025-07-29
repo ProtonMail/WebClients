@@ -966,6 +966,9 @@
       "${ price } per user": [
         "사용자당 ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } 시트 ${ seats }개"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }명 글쓰기 도우미 이용 권한"
       ],
@@ -6680,20 +6683,11 @@
       "Add a gift code": [
         "기프트 코드 추가"
       ],
-      "All mail": [
-        "모든 메일"
-      ],
-      "Archive": [
-        "보관 편지함"
-      ],
       "Calendars": [
         "캘린더"
       ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
-      ],
-      "Drafts": [
-        "임시 보관함"
       ],
       "Enforcing 2FA for organizations": [
         "조직 전체에 2단계 인증 강제화"
@@ -6746,9 +6740,6 @@
       "if your data is leaked": [
         "사용자의 데이터가 유출된 경우"
       ],
-      "Inbox": [
-        "받은 편지함"
-      ],
       "Learn more": [
         "더 알아보기"
       ],
@@ -6767,26 +6758,8 @@
       "Request an invite": [
         "가입 요청하기"
       ],
-      "Scheduled": [
-        "시간대 설정됨"
-      ],
-      "Sent": [
-        "보낸 편지함"
-      ],
       "settings": [
         "설정"
-      ],
-      "Snooze": [
-        "방해 금지"
-      ],
-      "Spam": [
-        "스팸함"
-      ],
-      "Starred": [
-        "별표 표시됨"
-      ],
-      "Trash": [
-        "휴지통"
       ],
       "Types of recovery methods": [
         "복구 방법 유형"
@@ -10769,9 +10742,6 @@
       ],
       "Network error": [
         "네트워크 오류"
-      ],
-      "Newsletters view": [
-        "뉴스레터 보기"
       ],
       "Night theme": [
         "야간 테마"

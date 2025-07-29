@@ -1,0 +1,5253 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n > 1);",
+    "language": "zh_TW"
+  },
+  "contexts": {
+    "Account statement": {
+      "Download": [
+        "下載"
+      ]
+    },
+    "Action": {
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } 商店"
+      ],
+      "Activate recovery": [
+        "啟動還原"
+      ],
+      "Add": [
+        "加入"
+      ],
+      "Add account": [
+        "加入帳號"
+      ],
+      "Add another account": [
+        "新增其它帳號"
+      ],
+      "Add credit / debit card": [
+        "加入信用卡 / 簽帳金融卡"
+      ],
+      "Apply": [
+        "套用"
+      ],
+      "Attach screenshot(s)": [
+        "貼附螢幕截圖"
+      ],
+      "Authenticate": [
+        "驗證"
+      ],
+      "Back": [
+        "返回"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Cancel subscription": [
+        "取消訂購授權"
+      ],
+      "Cancel trial and pay": [
+        "取消試用並付款"
+      ],
+      "Chat with us": [
+        "與我們往來對話"
+      ],
+      "Close": [
+        "關閉"
+      ],
+      "Close navigation": [
+        "關閉導覽"
+      ],
+      "Close this banner": [
+        "關閉此橫幅"
+      ],
+      "Collaborate on documents": [
+        "於文件上合作"
+      ],
+      "Collapse wallets": [
+        "收起 wallets"
+      ],
+      "Confirm": [
+        "確認"
+      ],
+      "Continue": [
+        "繼續"
+      ],
+      "Copy address": [
+        "複製郵件位址"
+      ],
+      "Copy version number to clipboard": [
+        "複製版本號碼至剪貼簿"
+      ],
+      "Create folder": [
+        "創建資料夾"
+      ],
+      "Current plan": [
+        "現行方案"
+      ],
+      "Decrease": [
+        "減"
+      ],
+      "Delete": [
+        "刪除"
+      ],
+      "Dismiss": [
+        "忽略"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "Downgrade": [
+        "降級"
+      ],
+      "Download logs": [
+        "下載日誌"
+      ],
+      "Edit": [
+        "編輯"
+      ],
+      "Edit email address": [
+        "編輯電郵位址"
+      ],
+      "Edit phone number": [
+        "編輯手機號碼"
+      ],
+      "Edit sign-in details": [
+        "編輯登入詳細資訊"
+      ],
+      "Edit subscription": [
+        "更換授權約期"
+      ],
+      "Expand wallets": [
+        "展開 wallets"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
+      "Get in touch": [
+        "保持聯絡"
+      ],
+      "Get the apps": [
+        "取得應用程式"
+      ],
+      "Get verification code": [
+        "取得驗證碼"
+      ],
+      "Go to settings": [
+        "前往設定"
+      ],
+      "Got it": [
+        "了解"
+      ],
+      "Help and feedback": [
+        "尋求協助與反映意見"
+      ],
+      "Help and resources": [
+        "尋求協助與資源"
+      ],
+      "Hide": [
+        "隱藏"
+      ],
+      "Hide more benefits": [
+        "隱藏更多好處"
+      ],
+      "Increase": [
+        "加"
+      ],
+      "Keep my subscription": [
+        "保持訂閱"
+      ],
+      "Learn more": [
+        "瞭解詳情"
+      ],
+      "Learn more about Bitcoin via Email": [
+        "透過電子郵件了解有關 Bitcoin 的更多資訊"
+      ],
+      "Let's talk": [
+        "我們一起聊聊！"
+      ],
+      "Manage groups": [
+        "管理群組"
+      ],
+      "More benefits": [
+        "更多好處"
+      ],
+      "More info: ${ safeTitle }": [
+        "更多資訊：${ safeTitle }"
+      ],
+      "More options": [
+        "更多選項"
+      ],
+      "Need help?": [
+        "需要說明嗎？"
+      ],
+      "Next": [
+        "下一個"
+      ],
+      "Next month": [
+        "下個月"
+      ],
+      "OK": [
+        "好"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "開啟 ${ CALENDAR_APP_NAME } 設定"
+      ],
+      "Open navigation": [
+        "開啟導覽"
+      ],
+      "Open recipient": [
+        "開啟收件者"
+      ],
+      "Pay": [
+        "付款"
+      ],
+      "Pay ${ price } now": [
+        "繳款金額 ${ price }"
+      ],
+      "Previous": [
+        "上一步"
+      ],
+      "Previous month": [
+        "上個月"
+      ],
+      "Refer a friend": [
+        "推薦好友"
+      ],
+      "Refresh the page": [
+        "重新整理此頁面"
+      ],
+      "Remove bonuses": [
+        "移除贈品"
+      ],
+      "Remove gift code": [
+        "移除禮品代碼"
+      ],
+      "Report a problem": [
+        "回報問題"
+      ],
+      "Request a call": [
+        "請求呼叫"
+      ],
+      "Request a feature": [
+        "提出新功能建議"
+      ],
+      "Request new code": [
+        "重新傳送驗證碼"
+      ],
+      "Resend code": [
+        "重新傳送驗證碼"
+      ],
+      "Save": [
+        "儲存"
+      ],
+      "Search countries": [
+        "搜尋國家與地區"
+      ],
+      "Secure your wallet": [
+        "確保您的 wallet 安全"
+      ],
+      "Select ${ planTitle }": [
+        "選擇方案 ${ planTitle }"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "選取繳款週期${ billingText }"
+      ],
+      "Select country": [
+        "選擇國家"
+      ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
+      "Set recovery phrase": [
+        "設定還原短語"
+      ],
+      "Set up 2FA": [
+        "設定兩步驟驗證"
+      ],
+      "Set up email forwarding": [
+        "設定電子郵件轉發"
+      ],
+      "Settings": [
+        "設定"
+      ],
+      "Show balance": [
+        "顯示餘額"
+      ],
+      "Show more": [
+        "顯示更多"
+      ],
+      "Show more benefits": [
+        "顯示更多好處"
+      ],
+      "Sign message": [
+        "簽署訊息"
+      ],
+      "Sign out": [
+        "登出"
+      ],
+      "Sign out of all accounts": [
+        "登出所有帳號"
+      ],
+      "Submit": [
+        "送出"
+      ],
+      "Switch or add account": [
+        "切換或是添加帳號"
+      ],
+      "Take a tour": [
+        "瀏覽"
+      ],
+      "Try again": [
+        "再試一次"
+      ],
+      "Try another method": [
+        "嘗試其它驗證方式"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Unlock data": [
+        "解鎖資料"
+      ],
+      "Update recovery file": [
+        "更新還原檔案"
+      ],
+      "Update recovery phrase": [
+        "更新還原短語"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Use ${ address.Email }": [
+        "使用：${ address.Email }"
+      ],
+      "Use a different card": [
+        "改用另一張卡"
+      ],
+      "Use a different payment method": [
+        "改用另一個繳款方式"
+      ],
+      "Use authentication code": [
+        "使用驗證代碼"
+      ],
+      "Use recovery code": [
+        "使用復原碼"
+      ],
+      "Verify": [
+        "驗證"
+      ],
+      "Verify account": [
+        "驗證帳號"
+      ],
+      "View invoice": [
+        "查看帳單"
+      ],
+      "Visit knowledge base": [
+        "前往知識庫"
+      ],
+      "What do I get?": [
+        "我的專屬服務方案："
+      ]
+    },
+    "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains }額外自訂網域"
+      ],
+      "${ ips } server": [
+        "${ ips } 台伺服器"
+      ],
+      "${ price } per dedicated server": [
+        "每專用伺服器${ price }"
+      ],
+      "${ price } per domain": [
+        "每網域${ price }"
+      ],
+      "${ price } per seat": [
+        "${ price } 每席"
+      ],
+      "${ price } per user": [
+        "每使用者${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats }撰寫幫手就位"
+      ],
+      "${ users } user": [
+        "${ users } 位使用者"
+      ]
+    },
+    "Address list": {
+      "Page ${ pageNumber }": [
+        "第 ${ pageNumber } 頁"
+      ],
+      "Search exact address": [
+        "搜尋精確地址"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "Used": [
+        "已使用"
+      ],
+      "Value": [
+        "值"
+      ]
+    },
+    "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } 個月"
+      ],
+      "12 months": [
+        "12 個月"
+      ],
+      "24 months": [
+        "24 個月"
+      ],
+      "30 months": [
+        "30個月"
+      ]
+    },
+    "Apps dropdown": {
+      "${ BRAND_NAME } applications": [
+        "${ BRAND_NAME } 應用程式"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "使電子郵件生產力至新的等級。讓${ BRAND_NAME }以幫助書寫，回覆至，和校閱您的電子郵件。"
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "取消訂購授權"
+      ],
+      "Keep subscription": [
+        "保留訂購授權"
+      ]
+    },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 位使用者"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 個使用者"
+      ],
+      "Premium Password Manager": [
+        "進階版密碼管理器"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 且 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } 儲存空間"
+      ],
+      "1 TB total": [
+        "1 TB 總計"
+      ],
+      "1 user": [
+        "1 位使用者"
+      ],
+      "1 user account": [
+        "1 位使用者帳號"
+      ],
+      "10 email addresses": [
+        "10 個電子信箱"
+      ],
+      "2 users": [
+        "2 位使用者"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 位使用者帳號"
+      ],
+      "6 users": [
+        "6 位使用者"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ 伺服器遍布於 110+ 個國家"
+      ],
+      "Ad-blocker and malware protection": [
+        "廣告攔截與惡意程式保護"
+      ],
+      "Admin panel to manage your family": [
+        "管理您的家庭的管理員面板"
+      ],
+      "Advanced account protection": [
+        "高端的帳號保護"
+      ],
+      "Easily add or remove users": [
+        "輕鬆添加或移除使用者"
+      ],
+      "High speed streaming": [
+        "高速串流"
+      ],
+      "One-time payment, lifetime deal": [
+        "一次付款，終身方案"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Password health alerts": [
+        "密碼堅固性警示"
+      ],
+      "Private photo backup": [
+        "私有照片備份"
+      ],
+      "Protect 10 devices at a time": [
+        "同時保護 10 台裝置"
+      ],
+      "Secure file storage & sharing": [
+        "安全檔案儲存與共享"
+      ],
+      "Unlimited folders, labels and filters": [
+        "無上限資料夾、標籤與篩選器"
+      ],
+      "Use your own email domain": [
+        "使用您自己的電子郵件網域"
+      ],
+      "Version history": [
+        "版本歷史紀錄"
+      ],
+      "VPN Accelerator": [
+        "VPN 加速器"
+      ]
+    },
+    "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "單次收費 ${ amount }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "1個月之後續訂 ${ regularAmount }。"
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "暢遊網路，保護隱私。提供 110 多個國家 8,500 多台伺服器、10 個裝置、高速串流、廣告阻擋和惡意軟體防護、VPN 加速器等功能。"
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "在世界各地暢享串流服務的影音內容，包含Netflix、Disney+、Prime Video等平台。"
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "於全部裝置安全登入。包和無限hide-my-email別名，共享，整合雙重驗證，${ DARK_WEB_MONITORING_NAME }及更多。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護您的電子郵件。包含 ${ addresses } 電子郵件位址、支援自訂電子郵件網域、${ BRAND_NAME } Scribe 寫作助手、無限的 hide-my-email 別名等更多功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護電子郵件及行事曆。包含${ addresses }電子郵件地址,支援自訂電子郵件網域,無限hide-my-email別名及更多"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護電子郵件及行事曆。包含15個電子郵件地址,支援自訂電子郵件網域,${ BRAND_NAME }Scribe 撰寫工具，無限hide-my-email別名及更多"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含線上文件編輯器、照片備份、版本歷史紀錄、加密的檔案共享等功能。"
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的NetShield保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "儲存空間於 ${ BRAND_NAME } 所有服務中共享。"
+      ]
+    },
+    "Billing cycle option": {
+      "1 month": [
+        "1 個月"
+      ],
+      "12 months": [
+        "12 個月"
+      ],
+      "Annually": [
+        "每年"
+      ],
+      "Lifetime": [
+        "終身"
+      ],
+      "Monthly": [
+        "每月"
+      ],
+      "Two-year": [
+        "兩年"
+      ]
+    },
+    "bitcoin buy": {
+      "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
+        "${ WALLET_APP_NAME } 與 ${ rampLink }、${ banxaLink } 和 ${ moonpayLink } 這三間註冊的加密資產服務機構合作，以方便購買 BTC。請輸入您所在的地區以查看可用的服務商和繳款方式。"
+      ],
+      "Amount": [
+        "金額"
+      ],
+      "Bank transfer": [
+        "銀行轉帳"
+      ],
+      "Banxa": [
+        "Banxa"
+      ],
+      "Binance": [
+        "Binance"
+      ],
+      "BTC network fee": [
+        "BTC 網路費用"
+      ],
+      "Buy": [
+        "購買"
+      ],
+      "Choose a country": [
+        "選擇國家"
+      ],
+      "Coinbase": [
+        "Coinbase"
+      ],
+      "Confirm": [
+        "確認"
+      ],
+      "Continue": [
+        "下一步"
+      ],
+      "Continue with ${ providerName }": [
+        "繼續使用 ${ providerName } 支付"
+      ],
+      "Credit card": [
+        "信用卡"
+      ],
+      "Finally, you will complete the Buy process on the provider’s site and any purchased BTC will be sent to a BTC address generated from your wallet account.": [
+        "最後，您將在服務商的網站上完成購買流程，購買的 BTC 將被傳送到您的 wallet 帳戶產生的 BTC 位址裡。"
+      ],
+      "Instant payment": [
+        "即時支付"
+      ],
+      "Kraken": [
+        "Kraken"
+      ],
+      "Location": [
+        "位置"
+      ],
+      "MoonPay": [
+        "MoonPay"
+      ],
+      "Pay with": [
+        "付款方式為"
+      ],
+      "Payment details": [
+        "繳款詳細資訊"
+      ],
+      "Ramp Network": [
+        "Ramp 網路"
+      ],
+      "Recipients": [
+        "接收者"
+      ],
+      "Review": [
+        "檢閱"
+      ],
+      "See details": [
+        "顯示詳細資料"
+      ],
+      "Send": [
+        "送出"
+      ],
+      "You can also buy BTC on exchanges like ${ binanceLink }, ${ coinbaseLink }, or ${ krakenLink } and then send the BTC to your Receive address.": [
+        "您也可以在 ${ binanceLink }、${ coinbaseLink } 或 ${ krakenLink } 等交易所購買 BTC，然後將 BTC 傳送到您的接收地址。"
+      ],
+      "You pay": [
+        "您支付"
+      ],
+      "You receive": [
+        "您收到"
+      ],
+      "Your location": [
+        "您的位置"
+      ]
+    },
+    "Bitcoin buy": {
+      "${ quote.provider } checkout": [
+        "${ quote.provider } 結帳"
+      ]
+    },
+    "Bitcoin Script Type": {
+      "Taproot": [
+        "Taproot"
+      ]
+    },
+    "Bitcoin Script Type Description": {
+      "Original format. Most widely supported but higher fees. Address starts with \"1\".": [
+        "原始格式。支援最廣泛，但手續費較高。地址以「1」開頭。"
+      ]
+    },
+    "Bitcoin send": {
+      "Invitation sent": [
+        "邀請函已寄送"
+      ],
+      "To": [
+        "收件者"
+      ]
+    },
+    "Bitcoin Signing Type": {
+      "BIP 137": [
+        "BIP 137"
+      ],
+      "Electrum": [
+        "Electrum"
+      ]
+    },
+    "Bitcoin Unit": {
+      "BTC": [
+        "BTC"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }桌面應用程式"
+      ]
+    },
+    "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 疑難問題"
+      ],
+      "Application problem": [
+        "應用程式問題"
+      ],
+      "Bridge problem": [
+        "Bridge 問題"
+      ],
+      "Calendar problem": [
+        "行事曆問題"
+      ],
+      "Connection problem": [
+        "連線問題"
+      ],
+      "Contacts problem": [
+        "通訊錄問題"
+      ],
+      "Custom domain problem": [
+        "自訂網域問題"
+      ],
+      "Docs problem": [
+        "Docs 問題"
+      ],
+      "Drive problem": [
+        "雲端硬碟問題"
+      ],
+      "Feature request": [
+        "提出新功能建議"
+      ],
+      "Import / export problem": [
+        "匯入/匯出問題"
+      ],
+      "Installation problem": [
+        "安裝問題"
+      ],
+      "Mail problem": [
+        "郵件問題"
+      ],
+      "Manual setup problem": [
+        "手動設置問題"
+      ],
+      "Other": [
+        "其它"
+      ],
+      "Pass problem": [
+        "Pass 問題"
+      ],
+      "Payments problem": [
+        "付款問題"
+      ],
+      "Sign in problem": [
+        "登入問題"
+      ],
+      "Sign up problem": [
+        "註冊問題"
+      ],
+      "Signup problem": [
+        "註冊問題"
+      ],
+      "Slow speed problem": [
+        "速度缓慢"
+      ],
+      "Speed problem": [
+        "速度問題"
+      ],
+      "Streaming problem": [
+        "串流問題"
+      ],
+      "Update problem": [
+        "更新問題"
+      ],
+      "VPN problem": [
+        "VPN 問題"
+      ],
+      "Website access problem": [
+        "網站存取問題"
+      ]
+    },
+    "Button": {
+      "Close": [
+        "關閉"
+      ],
+      "Create label": [
+        "創建標籤"
+      ],
+      "Discover and set up features": [
+        "探索及設定功能"
+      ],
+      "Remind me later": [
+        "稍後提醒我"
+      ],
+      "Set up other features": [
+        "設置其他功能"
+      ],
+      "Take a tour": [
+        "瀏覽"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB }儲存"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace }電子郵件儲存"
+      ],
+      "Advanced account protection": [
+        "高端的帳號保護"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "所有${ BRAND_NAME }應用程式和頂級質子版功能"
+      ],
+      "Cancel and downgrade": [
+        "取消並且降級"
+      ],
+      "Cloud storage and sharing for large files": [
+        "大型文件雲端儲存與共享"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "加密雲端儲存給予照片和文件"
+      ],
+      "Encrypted password manager": [
+        "加密密碼管理"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "我們的基本免費方案包含端對端加密電子郵件和儲存空間。不包含頂級功能。"
+      ],
+      "Save ${ upsellSavings }": [
+        "省下${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "透過${ upsellPlanName }省錢"
+      ],
+      "Secure personal and shared calendar": [
+        "安全保護個人及共享行事曆"
+      ],
+      "Try ${ planName }": [
+        "嘗試${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "嘗試${ upsellPlanName }及保持頂級電子郵件和行事曆功能的權限。"
+      ],
+      "Ultra fast and private VPN": [
+        "超快與私有的VPN"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } 位使用者"
+      ],
+      "Total": [
+        "總共"
+      ],
+      "Total for ${ n } month": [
+        " ${ n } 個月總計"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "收合"
+      ],
+      "Expand": [
+        "展開"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "胡蘿蔔"
+      ],
+      "cerise": [
+        "櫻桃"
+      ],
+      "cobalt": [
+        "鈷"
+      ],
+      "copper": [
+        "銅"
+      ],
+      "enzian": [
+        "龍膽"
+      ],
+      "fern": [
+        "蕨類"
+      ],
+      "forest": [
+        "森林"
+      ],
+      "ocean": [
+        "海洋"
+      ],
+      "olive": [
+        "橄欖"
+      ],
+      "pacific": [
+        "太平洋"
+      ],
+      "pickle": [
+        "泡菜"
+      ],
+      "pine": [
+        "松樹"
+      ],
+      "pink": [
+        "粉紅色"
+      ],
+      "plum": [
+        "梅子"
+      ],
+      "purple": [
+        "紫色"
+      ],
+      "reef": [
+        "礁石"
+      ],
+      "sahara": [
+        "撒哈拉"
+      ],
+      "slateblue": [
+        "板岩藍"
+      ],
+      "soil": [
+        "土壤"
+      ],
+      "strawberry": [
+        "草莓"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "阿布哈茲"
+      ],
+      "Afghanistan": [
+        "阿富汗"
+      ],
+      "Albania": [
+        "阿爾巴尼亞"
+      ],
+      "Algeria": [
+        "阿爾及利亞"
+      ],
+      "American Samoa": [
+        "美屬薩摩亞"
+      ],
+      "Andorra": [
+        "安道爾"
+      ],
+      "Angola": [
+        "安哥拉"
+      ],
+      "Anguilla": [
+        "安圭拉"
+      ],
+      "Antarctica": [
+        "南極洲"
+      ],
+      "Antigua and Barbuda": [
+        "安提瓜和巴布達"
+      ],
+      "Argentina": [
+        "阿根廷"
+      ],
+      "Armenia": [
+        "亞美尼亞"
+      ],
+      "Aruba": [
+        "阿魯巴"
+      ],
+      "Ascension Island": [
+        "亞森欣島"
+      ],
+      "Australia": [
+        "澳洲"
+      ],
+      "Austria": [
+        "奧地利"
+      ],
+      "Azerbaijan": [
+        "亞塞拜然"
+      ],
+      "Bahamas": [
+        "巴哈馬"
+      ],
+      "Bahrain": [
+        "巴林"
+      ],
+      "Bangladesh": [
+        "孟加拉"
+      ],
+      "Barbados": [
+        "巴貝多"
+      ],
+      "Belarus": [
+        "白俄羅斯"
+      ],
+      "Belgium": [
+        "比利時"
+      ],
+      "Belize": [
+        "貝里斯"
+      ],
+      "Benin": [
+        "貝南"
+      ],
+      "Bermuda": [
+        "百慕達"
+      ],
+      "Bhutan": [
+        "不丹"
+      ],
+      "Bolivia": [
+        "玻利維亞"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "博奈爾、聖尤斯特歇斯和薩巴"
+      ],
+      "Bosnia and Herzegovina": [
+        "波士尼亞與赫塞哥維納"
+      ],
+      "Botswana": [
+        "波札那"
+      ],
+      "Bouvet Island": [
+        "布威島"
+      ],
+      "Brazil": [
+        "巴西"
+      ],
+      "British Indian Ocean Territory": [
+        "英屬印度洋領地"
+      ],
+      "British Virgin Islands": [
+        "英屬維京群島"
+      ],
+      "Brunei Darussalam": [
+        "汶萊"
+      ],
+      "Bulgaria": [
+        "保加利亞"
+      ],
+      "Burkina Faso": [
+        "布吉納法索"
+      ],
+      "Burundi": [
+        "蒲隆地"
+      ],
+      "Cambodia": [
+        "柬埔寨"
+      ],
+      "Cameroon": [
+        "喀麥隆"
+      ],
+      "Canada": [
+        "加拿大"
+      ],
+      "Cape Verde": [
+        "維德角"
+      ],
+      "Cayman Islands": [
+        "開曼群島"
+      ],
+      "Central African Republic": [
+        "中非共和國"
+      ],
+      "Chad": [
+        "查德"
+      ],
+      "Chile": [
+        "智利"
+      ],
+      "China": [
+        "中國"
+      ],
+      "Christmas Island": [
+        "聖誕島"
+      ],
+      "Cocos (Keeling) Islands": [
+        "可可斯群島"
+      ],
+      "Colombia": [
+        "哥倫比亞"
+      ],
+      "Comoros": [
+        "葛摩"
+      ],
+      "Congo": [
+        "剛果"
+      ],
+      "Congo (The Democratic Republic of the)": [
+        "剛果(民主共和國)"
+      ],
+      "Congo, Democratic Republic of the": [
+        "剛果民主共和國"
+      ],
+      "Cook Islands": [
+        "庫克群島"
+      ],
+      "Costa Rica": [
+        "哥斯大黎加"
+      ],
+      "Croatia": [
+        "克羅埃西亞"
+      ],
+      "Cuba": [
+        "古巴"
+      ],
+      "Curaçao": [
+        "庫拉索"
+      ],
+      "Cyprus": [
+        "賽普勒斯"
+      ],
+      "Czech Republic": [
+        "捷克"
+      ],
+      "Côte d'Ivoire": [
+        "象牙海岸"
+      ],
+      "Denmark": [
+        "丹麥"
+      ],
+      "Djibouti": [
+        "吉布地"
+      ],
+      "Dominica": [
+        "多米尼克"
+      ],
+      "Dominican Republic": [
+        "多明尼加"
+      ],
+      "East Timor": [
+        "東帝汶"
+      ],
+      "Ecuador": [
+        "厄瓜多"
+      ],
+      "Egypt": [
+        "埃及"
+      ],
+      "El Salvador": [
+        "薩爾瓦多"
+      ],
+      "Equatorial Guinea": [
+        "赤道幾內亞"
+      ],
+      "Eritrea": [
+        "厄利垂亞"
+      ],
+      "Estonia": [
+        "愛沙尼亞"
+      ],
+      "Eswatini": [
+        "史瓦帝尼"
+      ],
+      "Ethiopia": [
+        "衣索比亞"
+      ],
+      "Falkland Islands": [
+        "福克蘭群島 (馬維納斯群島)"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "福克蘭群島 (馬維納斯群島)"
+      ],
+      "Faroe Islands": [
+        "法羅群島"
+      ],
+      "Federated States of Micronesia": [
+        "密克羅尼西亞"
+      ],
+      "Fiji": [
+        "斐濟"
+      ],
+      "Finland": [
+        "芬蘭"
+      ],
+      "France": [
+        "法國"
+      ],
+      "French Guiana": [
+        "法屬圭亞那"
+      ],
+      "French Polynesia": [
+        "法屬玻里尼西亞"
+      ],
+      "French Southern Territories": [
+        "法屬南部屬地"
+      ],
+      "Gabon": [
+        "加彭"
+      ],
+      "Gambia": [
+        "甘比亞"
+      ],
+      "Georgia": [
+        "喬治亞"
+      ],
+      "Germany": [
+        "德國"
+      ],
+      "Ghana": [
+        "迦納"
+      ],
+      "Gibraltar": [
+        "直布羅陀"
+      ],
+      "Greece": [
+        "希臘"
+      ],
+      "Greenland": [
+        "格陵蘭"
+      ],
+      "Grenada": [
+        "格瑞那達"
+      ],
+      "Guadeloupe": [
+        "瓜地洛普"
+      ],
+      "Guam": [
+        "關島"
+      ],
+      "Guatemala": [
+        "瓜地馬拉"
+      ],
+      "Guernsey": [
+        "根息"
+      ],
+      "Guinea": [
+        "幾內亞"
+      ],
+      "Guinea-Bissau": [
+        "幾內亞比索"
+      ],
+      "Guyana": [
+        "蓋亞那"
+      ],
+      "Haiti": [
+        "海地"
+      ],
+      "Heard Island and McDonald Islands": [
+        "赫德島及麥唐納群島"
+      ],
+      "Holy See (Vatican City State)": [
+        "梵蒂岡"
+      ],
+      "Honduras": [
+        "宏都拉斯"
+      ],
+      "Hong Kong": [
+        "香港"
+      ],
+      "Hungary": [
+        "匈牙利"
+      ],
+      "Iceland": [
+        "冰島"
+      ],
+      "India": [
+        "印度"
+      ],
+      "Indonesia": [
+        "印尼"
+      ],
+      "International": [
+        "國際"
+      ],
+      "Iran": [
+        "伊朗"
+      ],
+      "Iraq": [
+        "伊拉克"
+      ],
+      "Ireland": [
+        "愛爾蘭"
+      ],
+      "Islamic Republic of Iran": [
+        "伊朗伊斯蘭共和國"
+      ],
+      "Isle of Man": [
+        "曼島"
+      ],
+      "Israel": [
+        "以色列"
+      ],
+      "Italy": [
+        "義大利"
+      ],
+      "Jamaica": [
+        "牙買加"
+      ],
+      "Japan": [
+        "日本"
+      ],
+      "Jersey": [
+        "澤西島"
+      ],
+      "Jordan": [
+        "約旦"
+      ],
+      "Kazakhstan": [
+        "哈薩克"
+      ],
+      "Kenya": [
+        "肯亞"
+      ],
+      "Kiribati": [
+        "吉里巴斯"
+      ],
+      "Korea (Democratic People's Republic of)": [
+        "北韓(朝鮮民主主義人民共和國)"
+      ],
+      "Korea (Republic of)": [
+        "南韓(大韓民國)"
+      ],
+      "Kosovo": [
+        "科索沃"
+      ],
+      "Kuwait": [
+        "科威特"
+      ],
+      "Kyrgyzstan": [
+        "吉爾吉斯"
+      ],
+      "Lao People's Democratic Republic": [
+        "寮國"
+      ],
+      "Laos": [
+        "寮國"
+      ],
+      "Latvia": [
+        "拉脫維亞"
+      ],
+      "Lebanon": [
+        "黎巴嫩"
+      ],
+      "Lesotho": [
+        "賴索托"
+      ],
+      "Liberia": [
+        "賴比瑞亞"
+      ],
+      "Libya": [
+        "利比亞"
+      ],
+      "Libyan Arab Jamahiriya": [
+        "阿拉伯利比亞民眾國"
+      ],
+      "Liechtenstein": [
+        "列支敦斯登"
+      ],
+      "Lithuania": [
+        "立陶宛"
+      ],
+      "Luxembourg": [
+        "盧森堡"
+      ],
+      "Macao": [
+        "澳門"
+      ],
+      "Madagascar": [
+        "馬達加斯加"
+      ],
+      "Malawi": [
+        "馬拉威"
+      ],
+      "Malaysia": [
+        "馬來西亞"
+      ],
+      "Maldives": [
+        "馬爾地夫"
+      ],
+      "Mali": [
+        "馬利"
+      ],
+      "Malta": [
+        "馬爾他"
+      ],
+      "Marshall Islands": [
+        "馬紹爾群島"
+      ],
+      "Martinique": [
+        "馬丁尼克"
+      ],
+      "Mauritania": [
+        "茅利塔尼亞"
+      ],
+      "Mauritius": [
+        "模里西斯"
+      ],
+      "Mayotte": [
+        "馬約特島"
+      ],
+      "Mexico": [
+        "墨西哥"
+      ],
+      "Moldova": [
+        "摩爾多瓦"
+      ],
+      "Monaco": [
+        "摩納哥"
+      ],
+      "Mongolia": [
+        "蒙古"
+      ],
+      "Montenegro": [
+        "蒙特內哥羅"
+      ],
+      "Montserrat": [
+        "蒙哲臘"
+      ],
+      "Morocco": [
+        "摩洛哥"
+      ],
+      "Mozambique": [
+        "莫三比克"
+      ],
+      "Myanmar": [
+        "緬甸"
+      ],
+      "Namibia": [
+        "納米比亞"
+      ],
+      "Nauru": [
+        "諾魯"
+      ],
+      "Nepal": [
+        "尼泊爾"
+      ],
+      "Netherlands": [
+        "荷蘭"
+      ],
+      "New Caledonia": [
+        "新喀里多尼亞"
+      ],
+      "New Zealand": [
+        "紐西蘭"
+      ],
+      "Nicaragua": [
+        "尼加拉瓜"
+      ],
+      "Niger": [
+        "尼日"
+      ],
+      "Nigeria": [
+        "奈及利亞"
+      ],
+      "Niue": [
+        "紐埃島"
+      ],
+      "Norfolk Island": [
+        "諾福克島"
+      ],
+      "North Korea": [
+        "北韓"
+      ],
+      "North Macedonia": [
+        "北馬其頓"
+      ],
+      "Northern Mariana Islands": [
+        "北馬利安納群島"
+      ],
+      "Norway": [
+        "挪威"
+      ],
+      "Oman": [
+        "阿曼"
+      ],
+      "Pakistan": [
+        "巴基斯坦"
+      ],
+      "Palau": [
+        "帛琉"
+      ],
+      "Palestine": [
+        "巴勒斯坦"
+      ],
+      "Panama": [
+        "巴拿馬"
+      ],
+      "Papua New Guinea": [
+        "巴布亞紐幾內亞"
+      ],
+      "Paraguay": [
+        "巴拉圭"
+      ],
+      "Peru": [
+        "秘魯"
+      ],
+      "Philippines": [
+        "菲律賓"
+      ],
+      "Pitcairn": [
+        "皮特肯群島"
+      ],
+      "Poland": [
+        "波蘭"
+      ],
+      "Portugal": [
+        "葡萄牙"
+      ],
+      "Puerto Rico": [
+        "波多黎各"
+      ],
+      "Qatar": [
+        "卡達"
+      ],
+      "Reunion": [
+        "留尼旺"
+      ],
+      "Romania": [
+        "羅馬尼亞"
+      ],
+      "Russia": [
+        "俄羅斯"
+      ],
+      "Rwanda": [
+        "盧安達"
+      ],
+      "Saint Barthélemy": [
+        "聖巴瑟米"
+      ],
+      "Saint Helena": [
+        "聖赫勒拿"
+      ],
+      "Saint Kitts and Nevis": [
+        "聖克里斯多福及尼維斯"
+      ],
+      "Saint Lucia": [
+        "聖露西亞"
+      ],
+      "Saint Martin (French Part)": [
+        "法屬聖馬丁"
+      ],
+      "Saint Pierre and Miquelon": [
+        "聖皮埃與密克隆群島"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "聖文森及格瑞那丁"
+      ],
+      "Samoa": [
+        "薩摩亞"
+      ],
+      "San Marino": [
+        "聖馬利諾"
+      ],
+      "Sao Tome and Principe": [
+        "聖多美普林西比"
+      ],
+      "Saudi Arabia": [
+        "沙烏地阿拉伯"
+      ],
+      "Senegal": [
+        "塞內加爾"
+      ],
+      "Serbia": [
+        "塞爾維亞"
+      ],
+      "Seychelles": [
+        "塞席爾"
+      ],
+      "Sierra Leone": [
+        "獅子山"
+      ],
+      "Singapore": [
+        "新加坡"
+      ],
+      "Sint Maarten": [
+        "荷屬聖馬丁"
+      ],
+      "Slovakia": [
+        "斯洛伐克"
+      ],
+      "Slovenia": [
+        "斯洛維尼亞"
+      ],
+      "Solomon Islands": [
+        "索羅門群島"
+      ],
+      "Somalia": [
+        "索馬利亞"
+      ],
+      "South Africa": [
+        "南非"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "南喬治亞與南三明治群島"
+      ],
+      "South Korea": [
+        "南韓"
+      ],
+      "South Ossetia": [
+        "南奧塞提亞"
+      ],
+      "South Sudan": [
+        "南蘇丹"
+      ],
+      "Spain": [
+        "西班牙"
+      ],
+      "Sri Lanka": [
+        "斯里蘭卡"
+      ],
+      "Sudan": [
+        "蘇丹"
+      ],
+      "Suriname": [
+        "蘇利南"
+      ],
+      "Svalbard and Jan Mayen": [
+        "挪威屬斯瓦巴及尖棉"
+      ],
+      "Swaziland": [
+        "史瓦帝尼"
+      ],
+      "Sweden": [
+        "瑞典"
+      ],
+      "Switzerland": [
+        "瑞士"
+      ],
+      "Syria": [
+        "敘利亞"
+      ],
+      "Syrian Arab Republic": [
+        "敘利亞"
+      ],
+      "Taiwan": [
+        "台灣"
+      ],
+      "Tajikistan": [
+        "塔吉克"
+      ],
+      "Tanzania": [
+        "坦尚尼亞"
+      ],
+      "Tanzania, United Republic of": [
+        "坦尚尼亞"
+      ],
+      "Thailand": [
+        "泰國"
+      ],
+      "Timor-Leste": [
+        "東帝汶"
+      ],
+      "Togo": [
+        "多哥"
+      ],
+      "Tokelau": [
+        "托克勞群島"
+      ],
+      "Tonga": [
+        "東加"
+      ],
+      "Trinidad and Tobago": [
+        "千里達及托巴哥"
+      ],
+      "Tristan da Cunha": [
+        "特里斯坦達庫尼亞"
+      ],
+      "Tunisia": [
+        "突尼西亞"
+      ],
+      "Turkey": [
+        "土耳其"
+      ],
+      "Turkmenistan": [
+        "土庫曼"
+      ],
+      "Turks and Caicos Islands": [
+        "土克斯及開科斯群島"
+      ],
+      "Tuvalu": [
+        "吐瓦魯"
+      ],
+      "Uganda": [
+        "烏干達"
+      ],
+      "Ukraine": [
+        "烏克蘭"
+      ],
+      "United Arab Emirates": [
+        "阿拉伯聯合大公國"
+      ],
+      "United Kingdom": [
+        "英國"
+      ],
+      "United States": [
+        "美國"
+      ],
+      "United States Minor Outlying Islands": [
+        "美國本土外小島嶼"
+      ],
+      "Uruguay": [
+        "烏拉圭"
+      ],
+      "Uzbekistan": [
+        "烏茲別克"
+      ],
+      "Vanuatu": [
+        "萬那杜"
+      ],
+      "Venezuela": [
+        "委內瑞拉"
+      ],
+      "Vietnam": [
+        "越南"
+      ],
+      "Virgin Islands, British": [
+        "英屬維京群島"
+      ],
+      "Virgin Islands, U.S.": [
+        "美屬維京群島"
+      ],
+      "Wallis and Futuna": [
+        "瓦利斯群島和富圖那群島"
+      ],
+      "Western Sahara": [
+        "西撒哈拉"
+      ],
+      "Yemen": [
+        "葉門"
+      ],
+      "Zambia": [
+        "尚比亞"
+      ],
+      "Zimbabwe": [
+        "辛巴威"
+      ],
+      "Åland Islands": [
+        "奧蘭群島"
+      ]
+    },
+    "Country select label": {
+      "Based on your time zone": [
+        "依據您的時區"
+      ]
+    },
+    "Currency select": {
+      "Others": [
+        "其他"
+      ],
+      "Popular": [
+        "熱門"
+      ]
+    },
+    "customer_support.feature.all": {
+      "For all ${ BRAND_NAME } services": [
+        "所有 ${ BRAND_NAME } 服務"
+      ]
+    },
+    "customer_support.feature.drive": {
+      "For ${ DRIVE_APP_NAME }": [
+        "為期 ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.mail": {
+      "For ${ MAIL_APP_NAME }": [
+        "為期 ${ MAIL_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.pass": {
+      "For ${ PASS_APP_NAME }": [
+        "為期 ${ PASS_APP_NAME }"
+      ]
+    },
+    "customer_support.feature.vpn": {
+      "For ${ VPN_APP_NAME }": [
+        "為期 ${ VPN_APP_NAME }"
+      ]
+    },
+    "Cycle": {
+      "/month": [
+        "/月"
+      ],
+      "/user per month": [
+        "/ 每使用者每月"
+      ]
+    },
+    "Date": {
+      "Date": [
+        "日期"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "未知"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "逾期帳單"
+      ]
+    },
+    "Description": {
+      "Get notified if your password or other data was leaked from a third-party service.": [
+        "取得通知當您的密碼或其他資料在第三方服務中洩漏。"
+      ]
+    },
+    "Discover": {
+      "${ WALLET_APP_NAME } security model": [
+        "${ WALLET_APP_NAME } 安全模型"
+      ],
+      "Bitcoin via Email": [
+        "透過電子郵件的比特幣"
+      ]
+    },
+    "Downgrade account reason": {
+      "Bugs or quality issue": [
+        "臭蟲或品質問題"
+      ],
+      "I do not wish to share": [
+        "我不想要共享"
+      ],
+      "I found a cheaper VPN": [
+        "我找到較便宜的VPN"
+      ],
+      "I found a VPN with better features": [
+        "我找到VPN有更好的功能"
+      ],
+      "I have not managed to connect": [
+        "我還沒打算進行連接"
+      ],
+      "I only needed a VPN short-term": [
+        "我只有短時間需要VPN"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "我使用不同的 ${ BRAND_NAME } 帳號"
+      ],
+      "It doesn't do what I need": [
+        "它沒有達到我的要求"
+      ],
+      "Missing feature(s)": [
+        "缺少功能"
+      ],
+      "Other reason (please comment)": [
+        "其它原因（如果可以，請告訴我們）"
+      ],
+      "Subscription is too expensive": [
+        "訂購授權太貴了"
+      ],
+      "Switching to a different provider": [
+        "切換到不同的提供者"
+      ],
+      "Temporary need, may come back in the future": [
+        "暫時需要，以後可能會回來"
+      ],
+      "The VPN is too slow": [
+        "此VPN太慢了"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "幫助我們改善"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "確認失去${ PASS_APP_NAME }的特別折扣"
+      ],
+      "Remove discount": [
+        "移除折扣"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "您的${ PLAN_NAMES[PLANS.PASS] }訂閱為特殊價格${ price }每年。若降級為免費方案，您將永久失去此折扣，就算未來再次升級。"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "展開版本紀錄"
+      ],
+      "Priority support": [
+        "優先支援"
+      ]
+    },
+    "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
+        "您的帳號名稱是 ${ user.Name }。如果要建立 ${ emailAddress } 這個電子郵件地址，請到「設定」>「身分 \n及地址」>「短網域名稱 (pm.me)」裡面去設定。"
+      ],
+      "Amount above the maximum.": [
+        "金額高於上限。"
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "金額不得低於 (${ minimumAmount })。"
+      ],
+      "Bitcoin via Email to self is not supported": [
+        "不支援透過電子郵件向自己發送 Bitcoin"
+      ],
+      "Checkout expired, please try again": [
+        "結帳已逾時，請重試"
+      ],
+      "Contact could not be saved": [
+        "無法儲存聯絡人"
+      ],
+      "Domain not available, try again later": [
+        "網域無法使用，請稍後再試"
+      ],
+      "Email is not valid": [
+        "電郵無效"
+      ],
+      "Enter 6 digits": [
+        "請輸入 6 位驗證碼"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "連線到比特幣 API 時發生錯誤。"
+      ],
+      "Incorrect username": [
+        "錯誤的使用者名稱"
+      ],
+      "Input isn't a valid email or bitcoin address": [
+        "輸入的電子郵件或比特幣地址無效"
+      ],
+      "Invalid ${ name } code": [
+        "${ name } 代碼無效"
+      ],
+      "Invalid card number": [
+        "卡號無效"
+      ],
+      "Invalid code": [
+        "代碼無效"
+      ],
+      "Invalid expiration date": [
+        "到期日無效"
+      ],
+      "Invalid IBAN": [
+        "國際銀行帳號不正確"
+      ],
+      "Invalid postal code": [
+        "郵遞區號無效"
+      ],
+      "Invalid verification code": [
+        "驗證碼無效"
+      ],
+      "Invalid ZIP code": [
+        "無效的郵遞區號"
+      ],
+      "Not a valid number": [
+        "號碼無效"
+      ],
+      "Organization key is not decrypted": [
+        "組織金鑰未解密"
+      ],
+      "Passwords do not match": [
+        "密碼不一致"
+      ],
+      "Payment process canceled": [
+        "付款過程已取消"
+      ],
+      "Payment process consumed": [
+        "已進行付款"
+      ],
+      "Payment process failed": [
+        "付款程序失敗"
+      ],
+      "Payment process not supported": [
+        "不支援此付款程序"
+      ],
+      "Please enter a valid postal code": [
+        "請輸入有效的郵遞區號"
+      ],
+      "Please enter a valid ZIP code": [
+        "請輸入有效的郵遞區號"
+      ],
+      "Please enter postal code": [
+        "請輸入郵遞區號"
+      ],
+      "Please enter ZIP code": [
+        "請輸入郵遞區號"
+      ],
+      "Please select a country": [
+        "請選擇一個國家"
+      ],
+      "Please select a state": [
+        "請選擇一個州"
+      ],
+      "Please select billing country": [
+        "請選擇您的付款國家"
+      ],
+      "Please select billing state": [
+        "請選擇您的付款州名"
+      ],
+      "Process aborted": [
+        "處理已中止"
+      ],
+      "Request timed out": [
+        "需求逾時"
+      ],
+      "Signature verification failed": [
+        "簽名驗證失敗"
+      ],
+      "Something went wrong. Please try again.": [
+        "發生錯誤，請稍後再試。"
+      ],
+      "Tab closed": [
+        "分頁已關閉"
+      ],
+      "The amount due has changed. Please try again.": [
+        "應付金額已變更。請再試一次。"
+      ],
+      "The email addresses do not match": [
+        "電子郵件位址不相符"
+      ],
+      "The minimum amount of credit that can be added is ${ price }": [
+        "每次儲值的最低金額為 ${ price }"
+      ],
+      "The passphrases do not match": [
+        "密碼片語不符"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "此欄位還剩下 ${ maximumLength } 個字元。"
+      ],
+      "This field is required": [
+        "此欄位必填"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "此欄位至少須有 ${ minimumLength } 個字元。"
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "嘗試僅使用字母、數字與 _.-"
+      ],
+      "Unknown error": [
+        "未知錯誤"
+      ],
+      "Unknown payment token status": [
+        "未知的付款權仗狀態"
+      ],
+      "Username must begin with a letter or digit": [
+        "使用者名稱的開頭必須為字母或數字"
+      ],
+      "Username must end with a letter or digit": [
+        "使用者名稱的結尾必須為字母或數字"
+      ]
+    },
+    "Error message": {
+      "App currently unavailable": [
+        "App 目前無法使用"
+      ],
+      "Error: ${ errorMessage }": [
+        "錯誤：${ errorMessage }"
+      ],
+      "Oops, something went wrong": [
+        "糟糕，出了一點問題"
+      ],
+      "Open in browser": [
+        "在瀏覽器中開啟"
+      ],
+      "Please refresh the page or try again later.": [
+        "請重新整理頁面或稍後再試。"
+      ],
+      "Something went wrong": [
+        "發生錯誤"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "切換至網頁版，以使用${ MAIL_APP_NAME }或${ CALENDAR_APP_NAME }。"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
+      ]
+    },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "沒有選擇圖像"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB 的總儲存空間"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "儲存空間由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 的家庭成員共享。"
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "多達 6 位使用者"
+      ]
+    },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "家庭群組未能識別。請再試一次。"
+      ],
+      "Organization not recognized. Try again.": [
+        "組織未能識別。請再試一次。"
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "請輸入家庭群組名稱以作確認"
+      ],
+      "Enter organization name to confirm": [
+        "請輸入組織名稱以作確認"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "這將會永久刪除與您的組織關聯的所有子使用者、帳號與資料。"
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "這將會為每一家庭成員移除所有 ${ BRAND_NAME } 尊享功能。"
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Delete family group?": [
+        "要刪除家庭群組嗎？"
+      ],
+      "Delete organization?": [
+        "要刪除組織嗎？"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包含在 65 個以上的國家的 2700 臺伺服器，可連結多達 10 個裝置，存取世界各地的串流服務，惡意程式防護與廣告攔截器，還有更多功能。"
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "包含對 3 組自訂電子郵件網域、90 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
+      ]
+    },
+    "Feature": {
+      "Unlimited hide-my-email aliases": [
+        "無限制的 hide-my-email 別名"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用您的安全金鑰進行身份驗證時出現問題。請再試一次。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
+      ],
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "位元組"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "位元組"
+      ],
+      "Gigabyte": [
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "千位元組"
+      ],
+      "Megabyte": [
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabytes"
+      ]
+    },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } 已更新"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "系統預設值"
+      ],
+      "Theme font": [
+        "選擇布景主題字體"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中（建議）"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "非常大"
+      ],
+      "Very small": [
+        "非常小"
+      ]
+    },
+    "Gateway disclaimer": {
+      "Confirm": [
+        "確認"
+      ],
+      "Disclaimer": [
+        "免責聲明"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "I have read and agree to the disclaimer": [
+        "我已閱讀並同意免責聲明"
+      ],
+      "Not now": [
+        "現在不要"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "帳號"
+      ],
+      "Apps": [
+        "應用程式"
+      ],
+      "Network": [
+        "網路"
+      ],
+      "Other category": [
+        "其它類別"
+      ],
+      "Services": [
+        "服務"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA 驗證碼"
+      ],
+      "Email": [
+        "電郵"
+      ],
+      "Manual": [
+        "手動"
+      ],
+      "No verification method available": [
+        "沒有可用的驗證方法"
+      ],
+      "SMS": [
+        "簡訊"
+      ]
+    },
+    "Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }訂閱撰寫扳手"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME }終身方案無續約費，他是單次付費終身存取${ PASS_SHORT_APP_NAME }。"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME }終身方案無續約費,他是單次付款終身存取${ PASS_SHORT_APP_NAME }。您${ planTitle }訂閱價格及日期保持不便。"
+      ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
+        "${ PROTON_SENTINEL_NAME }透過監控可疑活動以保護您的帳戶。"
+      ],
+      "${ storage } storage": [
+        "${ storage } 儲存空間"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 位成員)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /月)"
+      ],
+      "+${ bonusSpace } bonus storage": [
+        "+${ bonusSpace } 附贈的儲存空間"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } 紅利加碼連線數至 ${ VPN_APP_NAME } (您即可享受多設備同時連上 VPN)"
+      ],
+      "30-day money-back guarantee.": [
+        "30天退款保證。"
+      ],
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "電話號碼僅能用於驗證一組 ${ BRAND_NAME } 帳號"
+      ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
+      ],
+      "Account successfully updated": [
+        "帳號已成功更新"
+      ],
+      "Address copied to clipboard": [
+        "地址已複製到剪貼簿"
+      ],
+      "Admin account allocation": [
+        "管理員帳號指派"
+      ],
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI驅動撰寫功能以創建更好電子郵件，快速地和有效地。"
+      ],
+      "Allocated": [
+        "已分配"
+      ],
+      "Already allocated": [
+        "已分配"
+      ],
+      "Already used": [
+        "已使用"
+      ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey 標誌"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "金額不得高於 (${ amount })。"
+      ],
+      "Amount below minimum (${ amount }).": [
+        "金額不得低於 (${ amount })。"
+      ],
+      "Attention required": [
+        "需要您的處理"
+      ],
+      "Awaiting transaction": [
+        "等待交易"
+      ],
+      "Balance from your previous subscription": [
+        "您先前訂購授權的餘額"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
+      ],
+      "Billing cycle: ${ text }": [
+        "繳款單週期：${ text }"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
+      ],
+      "Country code": [
+        "國家代碼"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "替成員創建一個安全${ value }雲端"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "您之前訂購授權方案裡未使用部分的餘額"
+      ],
+      "Current plan": [
+        "當前方案"
+      ],
+      "Custom email domains": [
+        "自訂電郵網域"
+      ],
+      "Dedicated servers": [
+        "專用伺服器"
+      ],
+      "default email address": [
+        "預設電子信箱地址"
+      ],
+      "Discover new features unlocked and start using them right away!": [
+        "探索解鎖的新功能並立即使用!"
+      ],
+      "Discover new features unlocked with ${ planTitle } and start using them right away!": [
+        "探索${ planTitle }解鎖的新功能並立即使用!"
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy 商標"
+      ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "什麼都看不到嗎？記得關閉彈出視窗攔截程式。"
+      ],
+      "Downgrade": [
+        "降級"
+      ],
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
+      ],
+      "Download current logs": [
+        "下載最近的日誌"
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        "現在就下載您最愛的應用程式，隱私隨身帶著走。"
+      ],
+      "Each code can only be used once": [
+        "每組驗證代碼只能使用一次"
+      ],
+      "Edit email address": [
+        "編輯電子郵件位址"
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。 ${ BRAND_NAME } 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
+      ],
+      "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
+        "電子郵件移至垃圾桶和垃圾郵件將於30天後自動刪除。"
+      ],
+      "Enabling auto-deletion…": [
+        "啟用自動刪除…"
+      ],
+      "Enter the code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "輸入驗證代碼。正在按下 ${ digit } 。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
+      ],
+      "Expired": [
+        "已過期"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
+      ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "如果您還是決定取消，現有 ${ planTitle } 授權將不再自動續購，到期日為 ${ expiryDate }"
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "若您仍然選擇降級，你將會失去 ${ MAIL_APP_NAME } 與 ${ VPN_APP_NAME } 的付費功能。"
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "若您仍然選擇降級，你將會失去 ${ MAIL_APP_NAME } 的付費功能，包含額外的儲存空間與郵件篩選器。"
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "若您仍然選擇降級，你將會失去 ${ VPN_APP_NAME } 的付費功能。"
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
+      "Inherited from parent folder": [
+        "繼承自上層資料夾"
+      ],
+      "Internet connection lost": [
+        "網際網路連線中斷"
+      ],
+      "JCB logo": [
+        "JCB 符號"
+      ],
+      "Keys created": [
+        "金鑰已更新"
+      ],
+      "Learn more": [
+        "瞭解詳情"
+      ],
+      "Loading": [
+        "正在載入"
+      ],
+      "Loading ${ appName }": [
+        "正在載入 ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "正在加載行事曆，請稍後。你將會在新的瀏覽視窗中連接到我們的行程平臺。"
+      ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode 標誌"
+      ],
+      "Member": [
+        "成員"
+      ],
+      "Messages to all your email addresses will go to your inbox.": [
+        "送至您全部電子郵件地址的訊息將傳至您的收件匣。"
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾創建。"
+      ],
+      "New": [
+        "加入"
+      ],
+      "No payment is required at this time.": [
+        "此時毋須付款。"
+      ],
+      "No results found": [
+        "找不到相符的結果"
+      ],
+      "Number of dedicated servers in the organization": [
+        "團隊專用的伺服器數量"
+      ],
+      "or discover other features:": [
+        "或探索其他功能:"
+      ],
+      "Organization size": [
+        "組織規模"
+      ],
+      "Other accounts": [
+        "其他帳號"
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        "支付受 TLS 加密及瑞士隱私法律保護。"
+      ],
+      "Please authenticate your card in the verification tab.": [
+        "請在驗證索引標籤中認證您的信用卡。"
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "請在驗證索引標籤中認證您的付款。"
+      ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "諘換另一個繳款方式再試一次，或聯絡您的銀行尋求協助。"
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "諘再試一次，您也可換另一個繳款方式，或聯絡 PayPal 尋求協助。"
+      ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "除非您選擇並刪除，否則復原的資料仍留在本裝置內。"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "重新整理此頁面或${ link }將自動解決大部分問題。"
+      ],
+      "Registering your subscription…": [
+        "正在註冊您的訂閱…"
+      ],
+      "SEPA payments are not available at the moment. Please try again later.": [
+        "SEPA 付款目前不可用。請稍後再試。"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "無法連線至伺服器。請過幾分鐘後再試"
+      ],
+      "Session timed out": [
+        "工作階段已逾時"
+      ],
+      "Setting up ${ feature }…": [
+        "設定${ feature }…"
+      ],
+      "Setting up your new address…": [
+        "正在設定您的新地址…"
+      ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "為答謝您的長期支援，您的帳號已啟用額外的功能。"
+      ],
+      "Start sharing it with contacts and use it for online services.": [
+        "開始共享此內容和使用於線上服務。"
+      ],
+      "Storage allocated to other users in this organisation": [
+        "儲存空間已分配給這個組織中的其他使用者"
+      ],
+      "Storage allocated to this user": [
+        "此位使用者分配的儲存空間"
+      ],
+      "Storage for users": [
+        "使用者的儲存空間"
+      ],
+      "Storage used by this user": [
+        "此位使用者已用的儲存空間"
+      ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "每${ cycle }個月自動續訂。"
+      ],
+      "Subscription auto-renews every month.": [
+        "每月自動續購授權"
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "驗證過程將開新瀏覽器索引標籤。請停用任何使用中的彈出視窗攔截程式。"
+      ],
+      "This is now your ${ defaultEmailAddress } for sending new messages.": [
+        "此為您新傳送新電子郵件的${ defaultEmailAddress }"
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "這麼做會把您所有已登入的帳號登出。"
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "欲完成您的繳款，請傳送 ${ btcAmountBold } 至以下位址。"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "為防止垃圾郵件及濫用行為，請驗證您是真人。"
+      ],
+      "Total email addresses": [
+        "可使用的電郵位址總數"
+      ],
+      "Total storage": [
+        "總儲存量"
+      ],
+      "Total supported domains": [
+        "可支援的網域總數"
+      ],
+      "Total VPN connections": [
+        "總 VPN 連線數量"
+      ],
+      "User activated": [
+        "使用者已啟用"
+      ],
+      "Users": [
+        "使用者"
+      ],
+      "Verification may take a few minutes.": [
+        "驗證或需時數分鐘。"
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "驗證將開新索引標籤，請停用任何彈出式視窗攔截程式。您不會被收費。任何用於驗證信用卡的金額都會馬上退還。"
+      ],
+      "Version number successfully copied to clipboard": [
+        "成功地將版本號碼複製到剪貼簿"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure 標誌"
+      ],
+      "We couldn’t process your payment.": [
+        "我們未能處理您的付款。"
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "我們需要與您的銀行認證您的繳款方式。"
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "我們需要與您的銀行認證您的付款。"
+      ],
+      "We use 3-D Secure to protect your payments": [
+        "我們使用 3D 驗證來保護您的交易安全"
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "我們將在瀏覽器的新索引標籤中重新導向到 PayPal 以完成此交易。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "我們將會向 ${ strong } 傳送新的驗證碼"
+      ],
+      "Week": [
+        "週"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "設定兩步驟驗證後提供一組復原代碼，無法使用驗證器應用程式時可用復原代碼登入。"
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "您想要接收新的驗證碼，還是更換驗證方式？"
+      ],
+      "Would you like to receive a new verification code?": [
+        "您想要收到新的驗證碼嗎？"
+      ],
+      "Writing assistant": [
+        "撰寫幫手"
+      ],
+      "You already have a free account": [
+        "您已有一個免費帳號"
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "您已使用超出 ${ downgradedPlanName } 方案的空間，請刪除一些檔案來釋放空間方可降級。"
+      ],
+      "You can change this anytime in ${ settingsLink }.": [
+        "您隨時都可以在${ settingsLink }中變更。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結以及任何與其分享行事曆的 ${ BRAND_NAME } 使用者，然後才取消您的 ${ MAIL_SHORT_APP_NAME } 訂閱。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結以及任何與其分享行事曆的 ${ BRAND_NAME } 使用者，然後才取消您的訂閱。"
+      ],
+      "You can now return to the application to continue": [
+        "您現在可以返回應用程式並繼續"
+      ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
+      ],
+      "You get notified if your password or other data was leaked from a third-party service.": [
+        "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。如果您希望在試用期完結後繼續您的訂購授權，請增加一個繳款方式。"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "您有一個試用期 ${ planTitle } 訂購授權。您暫時無需付費。你的訂購授權將會在試用期結束時自動繳付。"
+      ],
+      "You may be redirected to your bank’s website.": [
+        "您或會重新導向至您的銀行網站。"
+      ],
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "您必須先停用或移除任何額外的 ${ MAIL_APP_NAME } 使用者、電郵位址及自訂網域，方可降級。"
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "您將於此日失去存取${ planTitle }功能"
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "即將重新導向到 PayPal 驗證您的付款。"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期繳款單。"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "已凍結您的 ${ BRAND_NAME } 帳號 。 收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲正常使用服務，請支付所有逾期繳款單。"
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "您的電郵只會用於此一次性驗證。"
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "您的下一個結算日期為${ renewalTime }。"
+      ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "您下一個收費日為${ renewalTime }。若您需要立即變更方案請聯繫客服。"
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "您的手機號碼只會用於此一次性驗證。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "您的方案開始於${ renewalTime }及於${ cycle }月重新開始。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "您的方案開始於${ renewalTime }及於每月重新開始。"
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "您的訂購授權將於 ${ renewalTime } 自動更新。"
+      ]
+    },
+    "info": {
+      "Optional": [
+        "可選"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "如何傳送現金付款?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "請參見此文章的指示:${ howToSendCashArticleUrl }"
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "僅能檢視"
+      ]
+    },
+    "Label": {
+      "${ BRAND_NAME } username": [
+        "${ BRAND_NAME } 使用者名稱"
+      ],
+      "${ n } month": [
+        "${ n } 月"
+      ],
+      "Account holder": [
+        "帳戶持有人"
+      ],
+      "Account storage": [
+        "帳號儲存空間"
+      ],
+      "Address": [
+        "電郵位址"
+      ],
+      "Anderson": [
+        "安德松"
+      ],
+      "Attach screenshot(s)": [
+        "附加螢幕截圖"
+      ],
+      "Authenticator app": [
+        "驗證 app"
+      ],
+      "Billing cycle": [
+        "繳款單週期"
+      ],
+      "Browser": [
+        "瀏覽器"
+      ],
+      "Browser version": [
+        "瀏覽器版本"
+      ],
+      "BTC address": [
+        "比特幣位址 (數位錢包)"
+      ],
+      "BTC amount": [
+        "比特幣金額"
+      ],
+      "Card details": [
+        "信用卡資訊"
+      ],
+      "Card holder": [
+        "持卡人"
+      ],
+      "Card number": [
+        "卡號"
+      ],
+      "Cash": [
+        "現金"
+      ],
+      "Category": [
+        "類別"
+      ],
+      "Code is 6 digits without spaces": [
+        "驗證碼為六位數且無空格"
+      ],
+      "Colors": [
+        "色彩"
+      ],
+      "Company name": [
+        "公司名字"
+      ],
+      "Copy": [
+        "複製"
+      ],
+      "Could you please let us know which provider?": [
+        "您能告訴我們是哪個提供者嗎？"
+      ],
+      "Could you please specify which streaming service?": [
+        "您要指定串流服務嗎？"
+      ],
+      "Could you please specify?": [
+        "您可以具體說明嗎？"
+      ],
+      "Country": [
+        "國家"
+      ],
+      "Currency": [
+        "幣別"
+      ],
+      "Delete": [
+        "刪除"
+      ],
+      "Delete recovery-related information.": [
+        "刪除復原相關的資料。"
+      ],
+      "Do you have any suggestions for our team?": [
+        "您對我們的團隊有什麼建議嗎？"
+      ],
+      "Email address": [
+        "電郵位址"
+      ],
+      "Expires": [
+        "有效期限"
+      ],
+      "First name": [
+        "名"
+      ],
+      "Folder location": [
+        "資料夾位置"
+      ],
+      "Hide password": [
+        "隱藏密碼"
+      ],
+      "IBAN": [
+        "國際銀行帳號"
+      ],
+      "Include application logs in bug report": [
+        "在錯誤報告中納入應用程式日誌"
+      ],
+      "Integrated 2FA authenticator": [
+        "整合雙重驗證"
+      ],
+      "Last name": [
+        "姓"
+      ],
+      "Main": [
+        "主要"
+      ],
+      "Navigation": [
+        "巡覽"
+      ],
+      "Notification": [
+        "通知"
+      ],
+      "Operating system": [
+        "作業系統"
+      ],
+      "Operating system version": [
+        "作業系統版本"
+      ],
+      "Optional": [
+        "自由列席"
+      ],
+      "Password": [
+        "密碼"
+      ],
+      "Payer": [
+        "付款人"
+      ],
+      "Payment details": [
+        "付款細節"
+      ],
+      "Payment method": [
+        "付款方式"
+      ],
+      "Phone number": [
+        "手機號碼"
+      ],
+      "Proration": [
+        "按比例分配後"
+      ],
+      "Reveal password": [
+        "顯示密碼"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Sign message": [
+        "簽署訊息"
+      ],
+      "Start date": [
+        "開始日期"
+      ],
+      "Subscription options": [
+        "訂購授權選項"
+      ],
+      "System information": [
+        "系統資訊"
+      ],
+      "Thomas": [
+        "湯姆斯"
+      ],
+      "VAT": [
+        "增值稅"
+      ],
+      "Verification code": [
+        "驗證碼"
+      ],
+      "What happened?": [
+        "發生了甚麼問題？"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "請問退訂或降級的主要理由?"
+      ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
+      ]
+    },
+    "Label, credit card": {
+      "Postal code": [
+        "郵遞區號"
+      ],
+      "ZIP code": [
+        "郵遞區號"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "創建資料夾"
+      ],
+      "Create label": [
+        "創建標籤"
+      ],
+      "Edit folder": [
+        "編輯資料夾"
+      ],
+      "Edit label": [
+        "編輯標籤"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } 已創建"
+      ]
+    },
+    "Link": {
+      "Add a gift code": [
+        "加入禮品代碼"
+      ],
+      "clearing your browser cache": [
+        "清除瀏覽器快取"
+      ],
+      "How to pay with Bitcoin?": [
+        "如何以比特幣繳款？"
+      ],
+      "How to use ${ DARK_WEB_MONITORING_NAME }": [
+        "如何使用${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Learn more": [
+        "瞭解詳情"
+      ],
+      "Request an invite": [
+        "需求邀請"
+      ],
+      "settings": [
+        "設定"
+      ],
+      "View on blockchain": [
+        "在區塊鏈上查看"
+      ],
+      "What’s this?": [
+        "這是什麼？"
+      ]
+    },
+    "Loader": {
+      "Loading": [
+        "載入中"
+      ],
+      "Loading message": [
+        "正在載入郵件"
+      ]
+    },
+    "Loading": {
+      "Amount": [
+        "金額"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }Scribe撰寫幫手"
+      ],
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "添加${ BRAND_NAME }訂閱撰寫扳手"
+      ],
+      "Add-on with free trial": [
+        "可免費試用的擴充功能"
+      ],
+      "for ${ price }": [
+        "${ price } 版"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "顏色"
+      ],
+      "Folder name": [
+        "資料夾名稱"
+      ],
+      "Label name": [
+        "標籤名稱"
+      ]
+    },
+    "new_plans": {
+      "Highest VPN speed": [
+        "頂尖 VPN 速度"
+      ],
+      "Keep your inbox organized with folders": [
+        "用資料夾讓信箱井然有序"
+      ],
+      "Medium VPN speed": [
+        "一般 VPN 速度"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "刪除帳號"
+      ],
+      "Downgrade account": [
+        "降級帳號"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "取得免費的 ${ BRAND_NAME }"
+      ],
+      "Get ${ planName }": [
+        "取得 ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "保留 ${ plan }"
+      ],
+      "Keep account": [
+        "保留帳號"
+      ],
+      "Switch plan": [
+        "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }Scribe撰寫幫手"
+      ],
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }和${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ n } calendar": [
+        "${ n } 個行事曆"
+      ],
+      "${ n } calendar per user": [
+        "${ n } 個行事曆分配給每位使用者"
+      ],
+      "${ n } custom email domain": [
+        "${ n } 個自訂電郵網域"
+      ],
+      "${ n } email address": [
+        "${ n } 組電郵位址/別名"
+      ],
+      "${ n } email address per user": [
+        "${ n } 組電郵位址/每位使用者"
+      ],
+      "${ n } filter": [
+        "${ n } 個篩選器"
+      ],
+      "${ n } folder": [
+        "${ n } 個資料夾"
+      ],
+      "${ n } folder and label": [
+        "${ n } 個資料夾和標籤"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email 組別名"
+      ],
+      "${ n } label": [
+        "${ n } 個標籤"
+      ],
+      "${ n } message per day": [
+        "${ n } 封郵件 / 每天"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "每位使用者${ n }個共享${ PASS_SHORT_APP_NAME }保管庫"
+      ],
+      "${ n } vault": [
+        "${ n } 個保險櫃"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 個 VPN 連線"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers }個用戶"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-天的檔案版本紀錄"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 終身"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "包含無限數量 hide-my-email 別名的 ${ PASS_APP_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 方案"
+      ],
+      "${ size } attachment size": [
+        "${ size } 的附件大小"
+      ],
+      "${ size } of secure storage per user": [
+        "每位使用者${ size }安全空間"
+      ],
+      "${ size } storage": [
+        "${ size } 儲存空間"
+      ],
+      "${ size } storage per user": [
+        "${ size } 可用空間 / 每位使用者"
+      ],
+      "1 user": [
+        "1 位使用者"
+      ],
+      "10-year file version history": [
+        "10年的檔案版本紀錄"
+      ],
+      "24/7 account management support": [
+        "24/7 帳戶管理支援"
+      ],
+      "99.95% SLA": [
+        "99.95% 服務層級協議"
+      ],
+      "Ad-blocker and malware protection": [
+        "廣告攔截器及惡意軟體防護"
+      ],
+      "Admin console": [
+        "管理員主控台"
+      ],
+      "Administration Panel": [
+        "管理介面"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "進階別功能(由SimpleLogin驅動)"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "全部頂級版${ BRAND_NAME }服務。一個簡單的訂購授權。"
+      ],
+      "Auto-delete Spam and Trash": [
+        "自動清理垃圾郵件及垃圾桶"
+      ],
+      "Auto-reply": [
+        "自動回覆"
+      ],
+      "Autofill credit cards (coming soon)": [
+        "自動填入信用卡(近期將到)"
+      ],
+      "Automatic email forwarding": [
+        "自動郵件轉寄"
+      ],
+      "Available on all platforms": [
+        "所有平台皆可使用"
+      ],
+      "Calendar sharing": [
+        "行事曆分享"
+      ],
+      "Catch-all": [
+        "全部擷取"
+      ],
+      "Centralized billing": [
+        "集中式計費"
+      ],
+      "Collaborate and share large files": [
+        "合作和共享大型檔案"
+      ],
+      "Contact groups": [
+        "聯絡人群組"
+      ],
+      "Contact groups management": [
+        "聯絡人群組管理"
+      ],
+      "Custom and secure business email": [
+        "自訂和自訂商用電子郵件"
+      ],
+      "Custom domains for email aliases": [
+        "電子郵件別名的自訂網域"
+      ],
+      "Custom email domains": [
+        "自訂電郵網域"
+      ],
+      "Custom fields": [
+        "自訂欄位"
+      ],
+      "Custom workspace branding": [
+        "自訂工作空間的品牌"
+      ],
+      "Data breach monitoring": [
+        "資料外洩監測"
+      ],
+      "Dedicated servers optimized for streaming": [
+        "針對影音串流優化的獨立伺服器"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
+      ],
+      "DNS leak prevention": [
+        "DNS 外洩預防"
+      ],
+      "Double hop": [
+        "Double hop"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch 匯入小幫手"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "電子郵件客戶端支援（透過 IMAP/SMTP）"
+      ],
+      "Email groups": [
+        "電子郵件群組"
+      ],
+      "Enables HIPAA compliance": [
+        "啟用符合 HIPAA 條例"
+      ],
+      "Encrypted contact details": [
+        "經加密的聯絡人詳細資訊"
+      ],
+      "Encrypted VPN servers": [
+        "加密的 VPN 伺服器"
+      ],
+      "End-to-end encryption": [
+        "端對端加密"
+      ],
+      "Fast P2P/BitTorrent downloads": [
+        "迅速的 P2P/BitTorrent 下載"
+      ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 和 ${ DRIVE_SHORT_APP_NAME } 的免費功能"
+      ],
+      "Free VPN on a single device": [
+        "單一裝置的免費 VPN"
+      ],
+      "Fully refundable for 30 days": [
+        "30 天體驗不滿意退款服務"
+      ],
+      "GDPR data processing agreement": [
+        "GDRP資料處理協議"
+      ],
+      "Group management (coming soon)": [
+        "群組管理(即將推出)"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "極速 VPN 裝載多達 ${ n } 臺裝置"
+      ],
+      "HTML signatures": [
+        "HTML簽名"
+      ],
+      "Kill switch/always-on VPN": [
+        "緊急開關 / 永久連線的 VPN"
+      ],
+      "Limited support": [
+        "有限度支援"
+      ],
+      "Multiple admin roles": [
+        "多重管理員角色"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Organize items with multiple vaults": [
+        "組織項目與多重保管庫"
+      ],
+      "Passkeys supported": [
+        "支援密碼金鑰"
+      ],
+      "Password health": [
+        "密碼穩固性"
+      ],
+      "Password manager": [
+        "密碼管理員"
+      ],
+      "Password manager to secure credentials": [
+        "密碼管理器以確保身分安全"
+      ],
+      "Password-protected Emails": [
+        "密碼 - 安全防護的電子郵件"
+      ],
+      "Phone support (20+ users)": [
+        "電話支援 (20+ 使用者)"
+      ],
+      "Priority email support": [
+        "優先電子郵件支援"
+      ],
+      "Priority support": [
+        "優先支援"
+      ],
+      "Priority support & live chat": [
+        "優先處理您的客服單與線上聊天客服"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "請定期檢查你的帳戶安全。我們會通知你是否有任何需要更改的弱密碼或重複使用的密碼。"
+      ],
+      "Require 2FA for organization": [
+        "要求組織雙重驗證"
+      ],
+      "Router support": [
+        "路由器支援"
+      ],
+      "Schedule and snooze emails for any time": [
+        "隨時計畫和延後電子郵件"
+      ],
+      "Secure Core servers": [
+        "Secure Core 伺服器"
+      ],
+      "Secure link sharing": [
+        "安全連結分享"
+      ],
+      "See team's availability": [
+        "查看團隊可用程度"
+      ],
+      "Send & receive invitations": [
+        "傳送並接收邀請"
+      ],
+      "Share files with no size limit": [
+        "分享檔案無大小限制"
+      ],
+      "Sign in as user": [
+        "登入為使用者"
+      ],
+      "SMTP submission": [
+        "SMTP 傳送"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "分隔通道(Android 與 Windows)"
+      ],
+      "SSO integration": [
+        "SSO 整合"
+      ],
+      "Strict no-logs policy": [
+        "嚴格的無日誌政策"
+      ],
+      "Sync and backup all your files across devices": [
+        "於裝置同步及備份您全部的檔案"
+      ],
+      "Tor over VPN": [
+        "經由 VPN 使用 Tor"
+      ],
+      "Two-factor authentication": [
+        "兩步驟驗證"
+      ],
+      "Unlimited devices": [
+        "無限裝置數量"
+      ],
+      "Unlimited devices and aliases": [
+        "無限裝置和別名"
+      ],
+      "Unlimited filters": [
+        "無限制篩選器"
+      ],
+      "Unlimited folders": [
+        "無限制資料夾"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤和篩選器無上限"
+      ],
+      "Unlimited labels": [
+        "無限制標籤"
+      ],
+      "Unlimited logins and notes": [
+        "無限登入資訊與筆記"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "無限登入，筆記和信用卡"
+      ],
+      "Unlimited messages per day": [
+        "每日郵件無上限"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "每位使用者無限共享${ PASS_SHORT_APP_NAME }保管庫"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "無限共享保管庫與存取權限"
+      ],
+      "Unlimited vault sharing": [
+        "無上限分享保管庫"
+      ],
+      "Unlimited vaults": [
+        "無限保管庫"
+      ],
+      "Unlimited volume/bandwidth": [
+        "無限流量/頻寬"
+      ],
+      "Up to ${ n } user": [
+        "多達 ${ n } 位使用者"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "至多${ n }位使用者(${ adminsText }, ${ usersText })"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "最多至 ${ totalStorageSize } 儲存空間"
+      ],
+      "Use on up to ${ n } device at once": [
+        "最多同一時間於 ${ n } 裝置"
+      ],
+      "User credential management": [
+        "使用者憑證管理"
+      ],
+      "User session management": [
+        "使用者作業階段管理"
+      ],
+      "User storage management": [
+        "使用者儲存管理"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "保管庫共享 (至多 ${ n } 人)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins }位管理員"
+      ],
+      "${ users } user": [
+        "${ users }位使用者"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "支援"
+      ],
+      "Team management": [
+        "團隊管理"
+      ]
+    },
+    "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        "${ brand } 後四碼 ${ last4 }"
+      ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "具有專用安全閘道器的進階網路安全與存取管理"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "所有 ${ BRAND_NAME } 應用程式與其進階功能"
+      ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "全部${ BRAND_NAME }企業應用程式和頂級功能以保護整個企業。"
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "結合所有 ${ BRAND_NAME } 服務的全面隱私與安全性。"
+      ],
+      "Early access to new apps and features": [
+        "搶先體驗新應用程式與功能"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "開始使用安全加密電郵和行事曆。"
+      ],
+      "Enhanced security and premium features for teams.": [
+        "為團隊增強安全及頂級功能"
+      ],
+      "For next-level password management and identity protection.": [
+        "用於下一個層級的密碼管理與身份保護。"
+      ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "若你將帳號刪除，你將失去所有 ${ visionary } 帶來的福利，且即使你決定重新創建帳號，也不能再次選擇該方案。"
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "若你將帳號降級，你將失去所有 ${ visionary } 帶來的福利，且在你決定重新訂購授權時，該方案不再可用。"
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "如果你切換到不同的方案，你將失去所有 ${ visionary } 方案的福利，且無法切換回 ${ visionary } 。"
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "我們的 ${ visionary } 方案不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
+      ],
+      "Popular": [
+        "熱門"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "保持敏感資料安全及安全地合作。"
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "結合所有 ${ BRAND_NAME } 服務保護您家庭的隱私。"
+      ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "透過必要的網路監控，您可以從任何地方安全地上網"
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "為您的日常通訊提供進階功能的安全電子郵件。"
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "為具有特定安全需求的大型組織量身訂作的解決方案"
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "專屬的 VPN 解決方案，提供安全、不設限、高速的網際網路存取。"
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "完全免費的新手版帳號，旨在提供所有人以隱私權為首要使命的服務。"
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "無限隱私與更多儲存空間，最多提供給至多 2 人使用。"
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "你正在當前的方案中享受促銷價格。若你刪除你的帳號，你將會永遠失去此促銷價，即使你決定創建一個新帳號也是。"
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ]
+    },
+    "new_plans: title": {
+      "Delete account?": [
+        "要刪除帳號？"
+      ],
+      "Downgrade account?": [
+        "確定要換成精簡功能的帳號？"
+      ],
+      "Review subscription": [
+        "檢閱訂購授權"
+      ],
+      "Review subscription and pay": [
+        "檢視訂購授權與繳款"
+      ],
+      "Switch plans?": [
+        "切換方案？"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }：透過端對端加密保護您的行程安排。包括對自訂行事曆、行事曆共用等的支援。"
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }：透過加密的雲端儲存保護檔案。包含自動同步、加密的檔案共享、及更多。"
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }：透過端對端加密保護您的電子郵件。包含對自訂電子郵件網域、15 個電子郵件位址、無限的 hide-my-email 別名等的支援。"
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }：存取被封鎖的內容並祕密瀏覽。包含 ${ serversAndCountries }、最高 VPN 速度、存取全球串流服務、惡意軟體與廣告攔截程式、快速 BitTorrent 下載等等。"
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "從桌面方便地存取${ MAIL_APP_NAME }和${ CALENDAR_APP_NAME }"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "在世界各地輕鬆存取影音串流內容，包括 Netflix、Disney+、Prime Video 等"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "電郵位址具有完整的傳送和接收能力。單一使用者可有多組指派的位址；但是一組電郵位址不能指派給多位使用者。"
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "允許您同時存取多個網路，例如：影音串流服務傳輸來自另一個國家的電影，同時仍可獲得當地搜尋結果"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "可讓您設定收到電子郵件的自動化回應 (自動回覆)"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "自動清除於垃圾桶及垃圾郵件超過30天的訊息"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "目前並不支援大量推廣或程式化電子郵件傳送。我們建議使用專屬的電子郵件服務提供者作此用途。"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "為您的線上身分創建多個電子郵件位址，例如 JohnShopper@${ domain } 作購物帳號、JohnNews@${ domain } 作新聞訂閱"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "創建多達 ${ n } 個行事曆或新增好友、家人、同事和組織的行事曆"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "創建${ n }個電子郵件位址/別名分配至家庭成員。包含線上身分，如，JohnShopper@${ domain }給購物帳號。"
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "別名自訂網域,額外電子郵件信箱,從別名傳送電子郵件的功能,即其他"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "具有專用多組 IP 位址的專用伺服器可以新增至私有閘道器，以啟用可微調的存取控制"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "透過將您的網際網路流量傳遞給多個伺服器來對抗針對 VPN 隱私的威脅"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "透過將您的網際網路流量傳遞給多個伺服器來對抗針對 VPN 隱私的威脅。"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "輕鬆與您的家人、好友或同事分享您的行事曆"
+      ],
+      "Email everyone in a group with a single email address": [
+        "使用一個電子郵件地址給群組中的每位使用者"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "確保您接收所有傳送至您的網域的電子郵件，即使電子郵件位址並不存在、不復存在，或是拼寫有誤"
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "當使用者認證相信已遭洩露時，強制登出使用者的工作階段"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP 支援僅限透過 ${ MAIL_APP_NAME } Bridge 使用桌面應用程式 (例如 Outlook、Apple Mail、Thunderbird)。目前不支援雲端型 IMAP 整合。"
+      ],
+      "Increase or reallocate storage for a user": [
+        "替位使用者增加或重新配置儲存空間"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "使用加密日曆讓您的方案對您和您的家人保密"
+      ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "當您意外從我們的 VPN 伺服器斷線時，攔截所有網路連線以保持安全。"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "標籤是簡單的標記，讓您加到郵件上，好以更容易找到或者套用篩選器"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "終身存取${ PASS_APP_NAME }+SimpleLogin頂級功能。"
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "關閉公共網路，改為只能透過私有閘道器取用公司資源"
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        "管理您的訂購授權，包括自訂化您的方案。接受的繳款方式包括信用卡、PayPal、加密貨幣及電匯。"
+      ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "凡工作天，於提出需求後 24 小時內取得 ${ BRAND_NAME } 客戶服務團隊的支援"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "單個 VPN 連線允許您在同一時間將單個裝置連線到 ${ VPN_APP_NAME } 。舉例來說，為了將手機與筆電同時連線至 ${ VPN_APP_NAME } ，您需要兩個 VPN 連線。"
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "此選項可視作使用者般檢視非私人使用者的收件匣，包括完整郵件和聯絡人詳細資料"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "組織管理工具可讓管理員新增使用者、管理他們存取${ BRAND_NAME }服務，以及進行其他工作"
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "我們穩固的基礎架構用在一時，確保您在需要時均能存取到您的帳號"
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "我們以多層密碼完整加密伺服器上的硬碟，即使硬碟被整顆拔走，您的資料仍具備防護力"
+      ],
+      "Password management and identity protection": [
+        "使用密碼管理及身分保護"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "${ BRAND_NAME } 客戶服務團隊於歐洲辦公時間內，為 20 位或以上使用者的客戶提供電話支援"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "保護所有連接至 WiFi 的裝置，這對於不能直接設定 VPN 的裝置非常有效"
+      ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "保護您的家人免受有害網站的侵害並存取我們的高速 VPN 伺服器以串流觀看您喜愛的內容"
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "透過別名(轉寄至您的收件匣的隨機生成的電子郵件地址)保護您真的電子郵件地址免於洩漏"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "提供最高等級的帳號安全保護與專家支援"
+      ],
+      "Quickly set up out-of-office messages": [
+        "快速設立容後再覆訊息"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "自任何提供者快速轉移您的電子郵件、行事曆或聯絡人"
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        "要求輸入發送至行動電話的代碼才可登入。這確保萬一密碼洩露，帳號仍確保安全。"
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        "重設使用者密碼以及使用者的兩步驟認證"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "一按即可把您的網際網路流量繞經 Tor 網路"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "與任何人安全地共享單獨項目(就算他們沒有使用${ PASS_APP_NAME })"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "安全地儲存您的聯絡人詳細資訊，例如電話號碼、位址、生日以及個人備忘。零存取加密，確保即使 ${ BRAND_NAME } 也無法存取。"
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "查看可參與會議的人員並儲存會議計畫"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "創建通訊群組 (每個群組最多100名聯絡人) 可以簡單迅速的將信件寄送給一大群人。"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "設立篩選器，以便為您的電子郵件自動回覆、排序及/或加上標籤"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "以安全、可分享的連結與任何人分享您的檔案或資料夾"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP 允許第三方服務或裝置透過 ${ MAIL_APP_NAME } 傳送郵件。"
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "NetShield 保護您的裝置並透過攔截廣告、追蹤程式與惡意軟體來加快您的瀏覽速度"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "帳戶空間將在 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME }與 ${ PASS_APP_NAME } 之間共用。"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }。管理員可分配不同儲存空間大小予組織中的使用者"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "帳戶空間將在每位使用者的 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME }與 ${ PASS_APP_NAME } 之間共用。"
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        "支援檔案分享協定，例如 BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "上傳企業標誌以於${ BRAND_NAME }網頁自訂團隊體驗"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "使用您擁有的自訂電子郵件網域位址，例如 you@yourname.com"
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "我們不保存您的連線階段，且不紀錄任可能危害隱私的中繼資料。"
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "我們致力幫助受 HIPAA/HITECH 法規規範的客戶保障受保護的健康資訊 (PHI)。所有 ${ BRAND_NAME } 企業版客戶均可獲取經簽署的商業夥伴協定 (BAA)。"
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "當您連線到我們的 VPN，您的 DNS 查詢將經由我們的加密通道處理，增強您的線上隱私與安全性。"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "傳送至其他 ${ MAIL_APP_NAME } 使用者時，將自動加密。傳送至非 ${ MAIL_APP_NAME_TWO } 使用者則需要於傳送前先設定一組密碼。"
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "您可有多於一位管理員。所有管理員可新增並管理使用者，惟僅限主要管理員可控制繳款單管理。"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24/7 全天支援"
+      ],
+      "Access advanced VPN features": [
+        "存取進階 VPN 功能"
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "可使用多達 15 組電子郵件位址，支援 3 個自訂電子郵件網域，個性化由您定義"
+      ],
+      "AES 256-bit VPN encryption": [
+        "AES 256-bit VPN 加密"
+      ],
+      "Auto-connect": [
+        "自動連線"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "將現有儲存空間加大至 ${ bundleStorage } 予每位使用者"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "將現有儲存空間加大至 ${ bundleStorage }為總可用量"
+      ],
+      "Browser extension": [
+        "瀏覽器擴充套件"
+      ],
+      "Censorship circumvention": [
+        "繞過審查制度"
+      ],
+      "Central control panel": [
+        "中控面板"
+      ],
+      "Create up to ${ n } calendar": [
+        "創建多達 ${ n } 個行事曆"
+      ],
+      "Dedicated Account manager": [
+        "專屬客戶經理"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "專用伺服器位於${ numberOfCountries }+個國家"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "專用伺服器位於北美或歐洲"
+      ],
+      "Multi-platform support": [
+        "多平台支援"
+      ],
+      "Private gateways": [
+        "私有閘道器"
+      ],
+      "Require 2FA": [
+        "要求兩階段認證"
+      ],
+      "Support for ${ n } custom email domain": [
+        "支援 ${ n } 組自訂電子郵件網域"
+      ]
+    },
+    "Notification for duplicate filenames in the current upload": {
+      "Some images were not uploaded due to duplicate filenames in the current selection.": [
+        "因為檔案名稱重複，上傳列表中的一些圖片未被上傳"
+      ]
+    },
+    "Onboarding Trial": {
+      "Continue": [
+        "繼續"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "免費享有商業級安全保護功能直到 ${ trialEndsOnFormatted } 止。"
+      ]
+    },
+    "Option": {
+      "No parent folder": [
+        "無上層資料夾"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "使用全部 ${ BRAND_NAME } 應用程式與進階功能"
+      ],
+      "Secure vault sharing": [
+        "安全分享保管庫"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }方案"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n }使用者帳號"
+      ],
+      "Activity log": [
+        "活動記錄"
+      ],
+      "Admin panel to manage users and subscription": [
+        "管理員面板以管理使用者及訂閱"
+      ],
+      "Advanced account protection": [
+        "進階的帳號保護"
+      ],
+      "Team policies": [
+        "團隊政策"
+      ]
+    },
+    "passwordless": {
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "如取有設定金鑰, 非私人用戶便可以提升至管理員"
+      ],
+      "Organization key does not exist.": [
+        "組織金鑰不存在。"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "權限被拒，系統管理員權限受限。"
+      ],
+      "The organization key must be activated first.": [
+        "必須先啟用組織金鑰。"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "在產生新的組織金鑰前，用戶必須將所有使用者私有化"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "您要先存取至組織金鑰以完成此操作"
+      ]
+    },
+    "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
+      "Bank transfer": [
+        "銀行轉帳"
+      ],
+      "Credit/debit card": [
+        "信用卡/簽帳金融卡"
+      ],
+      "New credit/debit card": [
+        "加入信用卡/扣帳卡"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "使用公司名字"
+      ],
+      "Use personal name": [
+        "使用個人名字"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "計費國家"
+      ],
+      "Card number": [
+        "卡號"
+      ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "目前自動續訂為關閉。若現在變更訂閱，自動續訂將重新啟用。"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
+        "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
+      ],
+      "Got it": [
+        "瞭解"
+      ],
+      "I'm purchasing as a business": [
+        "我以公司名義購買"
+      ],
+      "MM/YY": [
+        "MM/YY"
+      ],
+      "More plans are available in other currencies": [
+        "其他貨幣有更多的方案"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "請先重新啟用訂閱以減少添加數量。"
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
+      "terms & conditions": [
+        "條款及細則"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "此折價券可適用續約訂購 ${ couponRedemptions } 次。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "前 ${ subscriptionLength } 個月，可享優惠價格 ${ priceWithDiscount }。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "首月限定優惠價為 ${ priceWithDiscount }。折價券可使用 ${ couponRedemptions } 次，之後將以一個月 ${ renewPriceStr } 的價格自動續約。您可以隨時取消。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "${ priceWithDiscount } 特殊折扣將套用於第一個月。其後將於每月自動以 ${ renewPriceStr } 續約。您可以在任何時候取消。"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "到期後將自動以 ${ renewPriceStr } 的價格續約 ${ renewalLength } 個月。您可以隨時取消。"
+      ],
+      "This number will be shown on all future invoices": [
+        "未來所有的帳單將會顯示此統一編號"
+      ],
+      "Timeout exceeded": [
+        "已經逾時"
+      ],
+      "Your payment is still being processed": [
+        "您的付款仍在處理中"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "卡號無效"
+      ],
+      "Invalid expiration date": [
+        "到期日無效"
+      ],
+      "Invalid security code": [
+        "無效安全碼"
+      ],
+      "Something went wrong. Please try again later.": [
+        "發生錯誤。請稍後再試。"
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "我們無法驗證您的繳款方式. 請選擇別種繳款方式或者再試一次."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "免費"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "透過確認此付款，您授權 ${ BRAND_NAME } 和我們的支付服務提供者 Stripe 指示您的銀行從您的帳戶中扣款。根據您與銀行達成的協議條件，您可以在扣款日起 8 週內獲得退款。"
+      ],
+      "Street address, postal code, and city": [
+        "地址，郵政區碼，及城市"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "商業號碼（ABN）"
+      ],
+      "Business Number": [
+        "營業人統一編號"
+      ],
+      "EIN": [
+        "僱主身份識別號碼（EIN）"
+      ],
+      "VAT number": [
+        "增值稅編號（VAT）"
+      ]
+    },
+    "Placeholder": {
+      "A way to contact you": [
+        "您的聯絡方式"
+      ],
+      "Confirm passphrase or leave empty": [
+        "確認密碼片語或留空"
+      ],
+      "E.g., ": [
+        "例如： "
+      ],
+      "Enter a passphrase or leave empty": [
+        "輸入密碼片語或留空"
+      ],
+      "Gift code": [
+        "禮品代碼"
+      ],
+      "Organization name": [
+        "組織名稱"
+      ],
+      "Password": [
+        "密碼"
+      ],
+      "Please describe the problem and include any error messages": [
+        "請描述問題並附上相關的錯誤訊息 (如有)"
+      ],
+      "Please select a country": [
+        "請選擇一個國家"
+      ],
+      "Postal code": [
+        "郵遞區號"
+      ],
+      "Search": [
+        "搜尋"
+      ],
+      "Search parent folder": [
+        "搜尋資料夾主目錄"
+      ],
+      "Select": [
+        "選取"
+      ],
+      "Select a reason": [
+        "選取理由"
+      ],
+      "Select state": [
+        "請選州"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "分享您認為可以讓 ${ BRAND_NAME } 更好的方法"
+      ],
+      "ZIP code": [
+        "郵遞區號"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "業務聯繫"
+      ]
+    },
+    "Price": {
+      "Free": [
+        "免費"
+      ]
+    },
+    "Recipient details": {
+      "BTC address": [
+        "比特幣位址"
+      ],
+      "Public key (XPUB)": [
+        "公開金鑰 (XPUB)"
+      ]
+    },
+    "Safety review": {
+      "Review account safety": [
+        "查看帳號安全"
+      ]
+    },
+    "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "請檢查拼字，或從清單中選擇一個國家。"
+      ],
+      "No results found": [
+        "查無結果"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "登出"
+      ],
+      "Stay signed in": [
+        "保存登錄"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining }小時"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } 現在可用。"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "若您在重設密碼前登出，您可能會遺失對您帳號的存取權。"
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "若您並未重設密碼而登出，您可能會遺失對您帳號的存取權。"
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "您將可以在${ boldTimeLeft }重設您的密碼。"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "密碼重設"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "登出而不重設密碼？"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "由 ${ ownerName } 分享"
+      ]
+    },
+    "Sign message": {
+      "Advanced settings": [
+        "進階設定"
+      ],
+      "Message": [
+        "訊息"
+      ],
+      "Signature": [
+        "簽名檔"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n }個月免費"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "1 user": [
+        "1 位使用者"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 個使用者"
+      ],
+      "All paid Mail and Calendar features": [
+        "所有付費郵件與行事曆功能"
+      ],
+      "High speed VPN": [
+        "高速 VPN"
+      ],
+      "Highest VPN speed": [
+        "業界最高 VPN 速率"
+      ],
+      "Premium ${ appName1 }": [
+        "進階版 ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "進階版 ${ appName1 } 與 ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "進階 ${ appName1 }、${ appName2 } 與 ${ appName3 }"
+      ],
+      "Premium early access": [
+        "進階版搶先體驗"
+      ],
+      "Secure cloud storage": [
+        "安全的雲端儲存空間"
+      ],
+      "Secure streaming": [
+        "安全的串流"
+      ],
+      "Support online privacy": [
+        "支援線上隱私"
+      ]
+    },
+    "specialoffer: Link": {
+      "Go to subscription plans": [
+        "查看訂購授權"
+      ],
+      "Upgrade": [
+        "升級"
+      ]
+    },
+    "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n }個月"
+      ],
+      "1 year": [
+        "1 年"
+      ],
+      "15 months": [
+        "15個月"
+      ],
+      "2 years": [
+        "2年"
+      ],
+      "30 months": [
+        "30個月"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "為期 1 個月收費 ${ amount } "
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "12 個月的費用為${ amount }"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "為期 15 個月收費 ${ amount }"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "為期 24 個月收費 ${ amount }"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30 個月的費用為${ amount }"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "一年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }（${ discount }% 折扣）續訂"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "2年後以折扣價 ${ discountedAmount } 而非 ${ regularAmount }(${ discount }% 折扣)續訂"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "長達 1 個月的標準價 ${ amount }"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "長達 12 個月的標準價 ${ amount }"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "15 個月的原價 ${ amount }"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "長達 24 個月的標準價 ${ amount }"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "30 個月的原價 ${ amount }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "存取被攔截的內容並進行私密瀏覽。包含 60 多個國家的 1700 台伺服器、最高的 VPN 速度、每個使用者 10 個 VPN 連線、全球影音串流服務、惡意軟體與廣告攔截器等。"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "存取攔截的內容並進行私密瀏覽。包含 60 多個國家的 1700 臺伺服器、最高的 VPN 速度、10 個 VPN 連線、全球串流影音服務以及惡意軟體與廣告攔截器等。"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "我們所有具有最高限制的進階版服務：100 組電子郵件位址、支援 10 組自訂網域、無限制的隱藏 hide-my-email 別名、行事曆分享、加密雲端儲存與檔案分享等。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 3 個自訂電子郵件網域、15 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "非常適合家庭或小型團隊，每個人都可以擁有自己的收件匣與別名。需要自訂網域。"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "免費取得我們未來釋出的所有新隱私服務的付費版本，以及對所有未來功能和產品的搶先體驗。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
+      ]
+    },
+    "Spotlight": {
+      "Get up to ${ credits } in credits.": [
+        "取得多達 ${ credits } 的積點。"
+      ],
+      "Invite friends to ${ BRAND_NAME }": [
+        "揪親朋好友一起用 ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "登入"
+      ],
+      "Sign in to your organization": [
+        "登入您的組織"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您將被重新導向至您的第三方單一登入提供者。"
+      ]
+    },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "正將您的訂購授權取消，請稍候"
+      ]
+    },
+    "Storage": {
+      "Upgrade storage": [
+        "升級儲存空間"
+      ],
+      "Your current storage:": [
+        "您目前的儲存空間："
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "保留 ${ currentPlanName }"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "儲存${ BRAND_NAME }${ MAIL_SHORT_APP_NAME },${ CALENDAR_SHORT_APP_NAME },${ CONTACTS_SHORT_APP_NAME }及${ PASS_SHORT_APP_NAME }生成的資料"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "最多至 ${ totalStorageSize } 儲存空間"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "最多至 ${ totalStorageSize } 郵件儲存空間"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } 儲存空間"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage }${ percentage }% 滿"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "若降級，您將失去以下好處。您確定您想要繼續嗎？"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "所有 ${ BRAND_NAME } 服務"
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "您的**${ currentPlanName }** 方案尚餘 **${ daysRemaining }** 天。"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "您的 ${ appStorage } 快滿了"
+      ],
+      "Your ${ appStorage } is full": [
+        "您的${ appStorage }已滿"
+      ],
+      "Your storage is full": [
+        "您的儲存空間已滿"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "您將失去存取${ gb }儲存和優先支援。"
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "您將喪失以下功能：儲存空間、電子郵件地址、別名、行事曆與我們的全力支援。"
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "您將失去存取至最高速的VPN，保護10台裝置，高速串流，廣告攔截和惡意軟體防護及優先支援。"
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "您將不能使用我們的無限密碼記錄、無限的 hide-my-email 別名、高達20個密碼保險箱與我們的全力支援。"
+      ]
+    },
+    "Subscription": {
+      "Billed every 2 years": [
+        "雙年繳制"
+      ],
+      "Billed monthly": [
+        "月繳"
+      ],
+      "Billed yearly": [
+        "年繳"
+      ]
+    },
+    "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "每一位用戶${ n }個免費VPN連線"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } 個極飆速 VPN 連線"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } 組極飆速 VPN 連線 / 每一位使用者"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 個 VPN 連線"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } 個 VPN 連線 / 每一位使用者"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "每位使用者可以在 ${ n } 台裝置上連接 VPN"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "明白"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "請登入您的 Apple App Store 帳號，然後選取「${ subscriptions }」。"
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "請登入您的 Play 商店帳號，然後按一下「${ subscriptions }」。"
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "在 ${ subscriptionManager } 中管理您的訂購授權"
+      ],
+      "Subscriptions": [
+        "訂購授權"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "您的方案乃購自 Android 應用程式。若要更改您的方案或更新您的付款詳情，請移至 Google Play 商店。"
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "您的方案乃購自 iOS 應用程式。若要更改您的方案或更新您的付款詳情，請移至 Apple App Store。"
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "此訂閱將於繳款單週期末被降級"
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "終身"
+      ]
+    },
+    "Subscription price": {
+      "For ${ totalPrice }": [
+        "${ totalPrice } 版"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } 可用空間 / 每位使用者"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }個電郵網域名稱"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }個電郵位址"
+      ],
+      "Folders, labels, and custom filters": [
+        "資料夾，標籤和自訂過濾規則"
+      ],
+      "Priority support": [
+        "優先支援"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "您確定嗎？"
+      ],
+      "Auto-pay is disabled": [
+        "自動付款已停用"
+      ],
+      "Auto-pay is enabled": [
+        "自動付款已啟用"
+      ],
+      "Disable": [
+        "停用"
+      ],
+      "Enable auto-pay support": [
+        "啟用自動付款支援"
+      ],
+      "Keep auto-pay": [
+        "保留自動付款"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。再者，若您忘記手動進行付款，且所有付款方法的自動付款都已停用，我們可能會降級您的帳號，將導致失去許多功能。"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "我們的系統將不再以此付款方法自動向您收費，惟您的訂購授權仍會在繳款單週期屆滿時續約。若您想降級或更改您的訂購授權，您仍需於繳款單週期完結前自行辦妥。我們無法自動為您降級，因為若您已超過免費方案的儲存空間配額，或是在使用其它付款功能，我們無法為您自動刪除檔案、電子郵件或其它資料。若您停用自動付款，請記得在到期日之前繳付您下一張訂購授權帳單，以免帳號被暫停。"
+      ]
+    },
+    "Subscription saving": {
+      "Save ${ priceString }": [
+        "降價 ${ priceString }"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "驗證碼已發送至 ${ methodTo }"
+      ],
+      "Copied to clipboard": [
+        "已複製到剪貼簿"
+      ],
+      "Email address copied to clipboard": [
+        "電郵位址已複製到剪貼簿"
+      ],
+      "Payment method added": [
+        "付款方式已加入"
+      ],
+      "Payment method updated": [
+        "付款方式已更新"
+      ],
+      "Problem reported": [
+        "以回報問題"
+      ],
+      "Verification successful": [
+        "驗證成功"
+      ],
+      "You have successfully canceled your subscription.": [
+        "您已完成取消訂購授權。"
+      ],
+      "You have successfully unsubscribed": [
+        "您已成功取消訂購"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/月"
+      ],
+      "/user per month": [
+        "/ 每使用者每月"
+      ]
+    },
+    "Suffix for price": {
+      "per month": [
+        "每月"
+      ],
+      "per user per month": [
+        "每月每位用戶"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "於您全部的裝置創建安全登入的詳細資料。包含無限別名、20個保管庫、組合雙重驗證、信用卡自動填入及更多。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包含於65+國家的2950+伺服器，連接最多10臺裝置，存取全球影音串流服務和惡意軟體、廣告攔截程式，及更多。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ]
+    },
+    "Sweep paper wallet": {
+      "Cancel": [
+        "取消"
+      ],
+      "Continue": [
+        "下一步"
+      ],
+      "Invalid private key": [
+        "無效的私鑰"
+      ],
+      "You receive": [
+        "您收到"
+      ]
+    },
+    "Tab subscription modal": {
+      "For businesses": [
+        "商業使用"
+      ],
+      "For families": [
+        "家庭用"
+      ],
+      "For individuals": [
+        "個人使用"
+      ]
+    },
+    "Title": {
+      "${ feature } is now active": [
+        "${ feature }現在為起用狀態"
+      ],
+      "Add credit/debit card": [
+        "加入信用卡/扣帳卡"
+      ],
+      "Add user": [
+        "加入使用者"
+      ],
+      "Amount due": [
+        "應付金額"
+      ],
+      "Apply gift code": [
+        "套用禮品代碼"
+      ],
+      "Are you sure?": [
+        "您確定嗎？"
+      ],
+      "Auto-deletion is active": [
+        "自動刪除為起用狀態"
+      ],
+      "Billing cycle": [
+        "繳款單週期"
+      ],
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "取消 ${ MAIL_SHORT_APP_NAME } 訂購授權"
+      ],
+      "Cancel subscription?": [
+        "取消訂購授權?"
+      ],
+      "Card verification": [
+        "信用卡驗證"
+      ],
+      "Collaborate on documents": [
+        "於文件上合作"
+      ],
+      "Confirm downgrade": [
+        "確認降級"
+      ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "確認失去 ${ BRAND_NAME } 獎勵"
+      ],
+      "Coupon": [
+        "優惠券"
+      ],
+      "Credits": [
+        "儲值"
+      ],
+      "Currency": [
+        "貨幣"
+      ],
+      "Downgrade account": [
+        "降級帳號"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "降級後的方案為 ${ downgradedPlanName }?"
+      ],
+      "Edit credit/debit card": [
+        "編輯信用卡/扣帳卡"
+      ],
+      "Enter 2FA code": [
+        "輸入雙重驗證碼"
+      ],
+      "Enter your password": [
+        "輸入您的密碼"
+      ],
+      "Error": [
+        "錯誤"
+      ],
+      "Get the apps": [
+        "取得應用程式"
+      ],
+      "Gift": [
+        "禮物"
+      ],
+      "Help and feedback": [
+        "尋求協助與反映意見"
+      ],
+      "Help center": [
+        "說明中心"
+      ],
+      "Human verification": [
+        "真人身分驗證"
+      ],
+      "Invalid verification code": [
+        "驗證碼無效"
+      ],
+      "Minicalendar": [
+        "小型行事曆"
+      ],
+      "Network error": [
+        "網路錯誤"
+      ],
+      "Payment failed": [
+        "付款失敗"
+      ],
+      "Payment verification": [
+        "付款驗證"
+      ],
+      "PayPal verification failed": [
+        "PayPal 驗證失敗"
+      ],
+      "Processing...": [
+        "處理中..."
+      ],
+      "Recommended": [
+        "推薦"
+      ],
+      "Report a problem": [
+        "回報問題"
+      ],
+      "Request new code": [
+        "重新傳送驗證碼"
+      ],
+      "Select a plan": [
+        "請選擇一個方案"
+      ],
+      "Set recovery methods": [
+        "設定復原方式"
+      ],
+      "Set up email forwarding": [
+        "設定電子郵件轉發"
+      ],
+      "Set up your organization": [
+        "設定您的組織"
+      ],
+      "Sign out": [
+        "登出"
+      ],
+      "Summary": [
+        "總結"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME }": [
+        "啟用${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Upgrade complete!": [
+        "升級完成！"
+      ],
+      "Verification failed": [
+        "驗證失敗"
+      ],
+      "Verifying your card...": [
+        "正在驗證您的信用卡..."
+      ],
+      "Verifying your payment...": [
+        "正在驗證您的付款..."
+      ],
+      "Wallet": [
+        "我的錢包"
+      ],
+      "You can now create unlimited folders and labels": [
+        "您現在可創建無上限標籤和資料夾"
+      ],
+      "Your plan": [
+        "您的方案"
+      ],
+      "Your shorter address is now ready": [
+        "您的短地址已完成"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "今天"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ]
+    },
+    "Tooltip": {
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "若您已購買或從我們的支援團隊收到禮品代碼，您可在此輸入。"
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "新的訂購授權週期開始在${ formattedTime }"
+      ]
+    },
+    "Unknown sender": {
+      "Add a name so you can remember who it was from.": [
+        "新增名稱，以便您記住款項來源。"
+      ],
+      "Email address": [
+        "電子郵件位址"
+      ],
+      "Email address is invalid": [
+        "電子郵件位址無效"
+      ],
+      "Name": [
+        "名稱"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "請輸入一個更短的使用者名稱 (${ n } characters max)"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } 臺裝置"
+      ],
+      "${ n } server": [
+        "${ n } 臺伺服器"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 條VPN連線"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } 個國家"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } 臺伺服器，橫跨 ${ numberOfCountries }+ 個國家"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "分布於 ${ numberOfCountries } 國家的 ${ numberOfServers } 台伺服器"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "從 ${ numberOfCountries } 國家自動選擇"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "伺服器遍布 ${ numberOfCountries }+ 國家"
+      ]
+    },
+    "vpn_2024: renew": {
+      "Your new subscription will automatically renew in ${ cycle } month.": [
+        "您的新訂閱將以每 ${ cycle }月自動更新。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime }.": [
+        "您的計劃的行程將於${ renewalTime }開始"
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "您的訂閱將每 ${ cycle }月自動更新。"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "進階 VPN 客製化"
+      ],
+      "No ads": [
+        "零廣告"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "直達 Secure Core 伺服器、極速 P2P/BitTorrent 下載、匿名連接 VPN、Tor路由以及其它更多功能。"
+      ]
+    },
+    "Wallet": {
+      "Close": [
+        "關閉"
+      ],
+      "Continue": [
+        "下一步"
+      ]
+    },
+    "Wallet Account": {
+      "Address type": [
+        "位址類型"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Name": [
+        "名稱"
+      ]
+    },
+    "Wallet account": {
+      "Account Index": [
+        "帳號索引"
+      ],
+      "Address Type": [
+        "位址類型"
+      ],
+      "Advanced settings": [
+        "進階設定"
+      ]
+    },
+    "Wallet buy": {
+      "Missing bitcoin address. Please refresh and try again or contact support": [
+        "比特幣地址遺失。請重新整理後再試一次，或聯繫支援服務。"
+      ]
+    },
+    "Wallet dashboard": {
+      "Buy": [
+        "購買"
+      ],
+      "Receive": [
+        "接收"
+      ],
+      "Send": [
+        "傳送"
+      ]
+    },
+    "Wallet discover": {
+      "Secure your wallet": [
+        "確保您的 wallet 安全"
+      ]
+    },
+    "Wallet header": {
+      "Secure your wallet": [
+        "確保您的 wallet 安全"
+      ],
+      "Upgrade": [
+        "升級"
+      ]
+    },
+    "Wallet invite": {
+      "Close": [
+        "關閉"
+      ],
+      "Email address": [
+        "電子郵件位址"
+      ],
+      "Email address is not valid": [
+        "電郵位址無效"
+      ],
+      "Email address is required": [
+        "電郵位址為必填"
+      ],
+      "Invitation sent to ${ email }": [
+        "邀請函以發送至 ${ email }"
+      ],
+      "Not now": [
+        "現在不要"
+      ],
+      "Please let them know to check their email and follow the instruction to set up their ${ WALLET_APP_NAME } with Bitcoin via Email.": [
+        "請通知他們檢查電子郵件，並按照指示透過電子郵件設定他們的 ${ WALLET_APP_NAME } 與 Bitcon。"
+      ],
+      "Thank you for supporting ${ WALLET_APP_NAME }!": [
+        "感謝支持 ${ WALLET_APP_NAME }！"
+      ]
+    },
+    "Wallet preference": {
+      "Account name": [
+        "帳號名稱"
+      ],
+      "Accounts": [
+        "帳號"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Create email": [
+        "建立電子郵件"
+      ],
+      "Delete account": [
+        "刪除帳號"
+      ],
+      "Email": [
+        "電子信箱"
+      ],
+      "Email address": [
+        "電子郵件位址"
+      ],
+      "Email address is invalid": [
+        "電子郵件位址無效"
+      ],
+      "Name": [
+        "名稱"
+      ],
+      "Not now": [
+        "現在不要"
+      ],
+      "When you receive Bitcoin via Email, the sender knows one of your Bitcoin addresses as well as your email. Due to Bitcoin's public blockchain, it is theoretically possible for a malicious sender to discover the existence of other BTC that you have if you send BTC from this account.": [
+        "當您透過電子郵件接收 Bitcoin 時，發送者不僅會知道您的電子郵件地址，也會知道您的 Bitcoin 地址。由於 Bitcoin 的區塊鏈是公開透明的，理論上，如果您從這個帳戶發送比特幣，惡意的發送者將有可能追查到您擁有的其他 Bitcoin。"
+      ]
+    },
+    "Wallet preferences": {
+      "Learn more": [
+        "了解更多"
+      ]
+    },
+    "Wallet Receive": {
+      "For better privacy, generate a new address for each transaction.": [
+        "為了獲得更好的隱私，請為每筆交易產生一個新地址。"
+      ],
+      "More options": [
+        "更多選項"
+      ]
+    },
+    "Wallet send": {
+      "Add a message": [
+        "新增訊息"
+      ],
+      "Add a note": [
+        "新增備註"
+      ],
+      "Anonymous sender": [
+        "匿名發送者"
+      ],
+      "Confirm": [
+        "確認"
+      ],
+      "Confirm and send": [
+        "確認並發送"
+      ],
+      "Edit": [
+        "編輯"
+      ],
+      "High priority": [
+        "首要優先順序"
+      ],
+      "Low": [
+        "低"
+      ],
+      "Low priority": [
+        "較低優先順序"
+      ],
+      "Median priority": [
+        "中等優先順序"
+      ],
+      "Normal": [
+        "標準"
+      ],
+      "Please setup an email address in your account settings in order to send messages": [
+        "請在您的帳戶設定中設定電子郵件地址，以便傳送訊息。"
+      ],
+      "Recipient": [
+        "收件者"
+      ],
+      "Recipients": [
+        "接收者"
+      ],
+      "Remove email": [
+        "移除電子郵件"
+      ],
+      "Review": [
+        "檢閱"
+      ],
+      "~${ minutes } minute": [
+        "~${ minutes } 分鐘"
+      ]
+    },
+    "Wallet Settings": {
+      "Bitcoin via Email": [
+        "透過電子郵件的比特幣"
+      ],
+      "Create new email address": [
+        "創建新的電子郵件地址"
+      ],
+      "Preferred bitcoin unit was changed": [
+        "偏好的比特幣單位已變更"
+      ]
+    },
+    "Wallet setup": {
+      "Add a passphrase": [
+        "新增密碼片語"
+      ],
+      "Bitcoin via Email": [
+        "透過電子郵件的比特幣"
+      ],
+      "Confirm": [
+        "確認"
+      ],
+      "Done": [
+        "完成"
+      ],
+      "Import": [
+        "匯入"
+      ],
+      "Import wallet": [
+        "匯入錢包"
+      ],
+      "Learn more": [
+        "了解更多"
+      ],
+      "Name": [
+        "名稱"
+      ],
+      "Not now": [
+        "現在不要"
+      ],
+      "Passphrase": [
+        "驗證驗密語"
+      ],
+      "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
+        "這 12 個單詞只應在萬不得已的情況下（例如您無法存取您的 ${ BRAND_NAME } 帳戶時），才用於恢復此錢包的資產。"
+      ],
+      "Transfer your paper wallet funds to your account. Paste your private key or scan your QR code.": [
+        "將您的紙錢包資金轉移到您的帳戶。請貼上您的私鑰或掃描您的 QR 碼。"
+      ]
+    },
+    "Wallet Sidebar": {
+      "Contact Support": [
+        "聯絡客服支援團隊"
+      ],
+      "Import wallet": [
+        "匯入錢包"
+      ],
+      "Recovery": [
+        "復原"
+      ],
+      "Security": [
+        "安全保護"
+      ],
+      "Sign out": [
+        "退出"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Wallets": [
+        "錢包"
+      ]
+    },
+    "Wallet sidebar": {
+      "Add account": [
+        "加入帳號"
+      ]
+    },
+    "Wallet transaction": {
+      "+ Add": [
+        "+ 新增"
+      ],
+      "Add note": [
+        "新增備註"
+      ],
+      "Amount": [
+        "金額"
+      ],
+      "Bitcoin via Email": [
+        "透過電子郵件的比特幣"
+      ],
+      "Buy": [
+        "購買"
+      ],
+      "Date": [
+        "日期"
+      ],
+      "From": [
+        "寄件者"
+      ],
+      "From: ${ senderOrRecipientName }": [
+        "寄件者：${ senderOrRecipientName }"
+      ],
+      "In progress": [
+        "進行中"
+      ],
+      "Loading": [
+        "載入中..."
+      ],
+      "Note": [
+        "備注"
+      ],
+      "Receive": [
+        "接收"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "To": [
+        "收件者"
+      ],
+      "To: ${ senderOrRecipientName }": [
+        "收件人：${ senderOrRecipientName }"
+      ],
+      "Unknown": [
+        "未知"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ pageNumber }": [
+        "第 ${ pageNumber } 頁"
+      ]
+    },
+    "Wallet transactions": {
+      "Addresses": [
+        "聯絡位址"
+      ]
+    },
+    "Wallet transactions list": {
+      "Sync": [
+        "同步"
+      ]
+    },
+    "Wallet Upgrade": {
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "繼續代表您同意我們的${ termsAndConditionsLink }"
+      ],
+      "Upgrade your privacy": [
+        "升級您的隱私"
+      ]
+    },
+    "Wallet Welcome": {
+      "Welcome to ${ WALLET_APP_NAME }": [
+        "歡迎使用 ${ WALLET_APP_NAME }"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n }${ BRAND_NAME }電子郵件地址"
+      ],
+      "${ n } account per wallet": [
+        "${ n }錢包每個帳號"
+      ],
+      "${ n } wallet": [
+        "${ n } 錢包"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "更安全的方法持有Bitcoin"
+      ],
+      "Bitcoin via Email": [
+        "透過電子郵件的比特幣"
+      ],
+      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
+        "加密及安全的${ MAIL_APP_NAME }電子郵件地址。您可輕鬆地傳送Bitcoin給任何人只需${ BRAND_NAME }名子。"
+      ],
+      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
+        "安全地透過電子郵件取代易造成問題的26字元的Bitcoin地址交易Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer way to hold Bitcoin": [
+        "更安全持有Bitcoin的方法"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "錢包問題"
+      ]
+    },
+    "wallet_signup_2024:Wallet setup": {
+      "Account ${ indexStr }": [
+        "帳號${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "我匯入的錢包${ indexStr }"
+      ],
+      "My wallet${ indexStr }": [
+        "我的錢包${ indexStr }"
+      ]
+    },
+    "Warning": {
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "回報未使用端到端加密，請不要傳送任何敏感資訊。"
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"
+      ]
+    }
+  }
+}

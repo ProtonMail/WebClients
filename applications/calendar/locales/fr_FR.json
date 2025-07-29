@@ -1427,7 +1427,7 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "${ LUMO_SHORT_APP_NAME } problème"
+        "Problème avec ${ LUMO_SHORT_APP_NAME }"
       ],
       "Application problem": [
         "Problème d'application"
@@ -6497,7 +6497,7 @@
         "Importer dans :"
       ],
       "Include application logs in bug report": [
-        "Inclure les journaux d'application dans le rapport de bogue"
+        "Inclure les journaux d'application dans le rapport de bug"
       ],
       "Integrated 2FA authenticator": [
         "Authentification à deux facteurs (A2F) intégrée"
@@ -6809,20 +6809,11 @@
       "Add a gift code": [
         "Ajouter un code-cadeau"
       ],
-      "All mail": [
-        "Tous les messages"
-      ],
-      "Archive": [
-        "Archives"
-      ],
       "Calendars": [
         "Calendriers"
       ],
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
-      ],
-      "Drafts": [
-        "Brouillons"
       ],
       "Enforcing 2FA for organizations": [
         "Application de l’A2F pour les organisations"
@@ -6875,9 +6866,6 @@
       "if your data is leaked": [
         "si vos données sont divulguées"
       ],
-      "Inbox": [
-        "Boite de réception"
-      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -6896,26 +6884,8 @@
       "Request an invite": [
         "Demander une invitation"
       ],
-      "Scheduled": [
-        "Programmé"
-      ],
-      "Sent": [
-        "Envoyés"
-      ],
       "settings": [
         "paramètres"
-      ],
-      "Snooze": [
-        "Mettre en attente"
-      ],
-      "Spam": [
-        "Indésirables/spam"
-      ],
-      "Starred": [
-        "Favoris"
-      ],
-      "Trash": [
-        "Corbeille"
       ],
       "Types of recovery methods": [
         "Types de méthodes de récupération"
@@ -11015,9 +10985,6 @@
       ],
       "Network error": [
         "Erreur réseau"
-      ],
-      "Newsletters view": [
-        "Vue Newsletters"
       ],
       "Night theme": [
         "Thème nuit"

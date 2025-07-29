@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "Encaminhar como anexo"
       ],
+      "Full data": [
+        "Dados completos"
+      ],
       "Generate password": [
         "Gerar senha"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "Próxima página"
+      ],
+      "No sensitive data": [
+        "Sem dados confidenciais"
       ],
       "Not now": [
         "Agora não"
@@ -3280,9 +3286,6 @@
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
       ],
-      "Failed to move items": [
-        "Falha ao mover os itens"
-      ],
       "Failed to resend invitation": [
         "Erro ao reenviar o convite"
       ],
@@ -3626,6 +3629,9 @@
       ],
       "Unknown error": [
         "Erro desconhecido"
+      ],
+      "Unknown location": [
+        "Localização desconhecida"
       ],
       "Unknown payment token status": [
         "Status da token de pagamento desconhecido"
@@ -4878,9 +4884,6 @@
       ],
       "Aug": [
         "Ago."
-      ],
-      "Automated Recovery ${ formattedDate }": [
-        "Recuperação automática ${ formattedDate }"
       ],
       "Available": [
         "Disponível"
@@ -7305,17 +7308,8 @@
       "Albums": [
         "Álbuns"
       ],
-      "All mail": [
-        "Todos os e-mails"
-      ],
-      "Archive": [
-        "Arquivo"
-      ],
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
-      ],
-      "Drafts": [
-        "Rascunhos"
       ],
       "Enforcing 2FA for organizations": [
         "Impondo a autenticação em dois fatores (2FA) para organizações"
@@ -7368,9 +7362,6 @@
       "if your data is leaked": [
         "se seus dados vazarem"
       ],
-      "Inbox": [
-        "Caixa de entrada"
-      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -7386,12 +7377,6 @@
       "Request an invite": [
         "Solicitar um convite"
       ],
-      "Scheduled": [
-        "Agendado"
-      ],
-      "Sent": [
-        "Enviados"
-      ],
       "settings": [
         "configurações"
       ],
@@ -7400,15 +7385,6 @@
       ],
       "Shared with me": [
         "Compartilhado comigo"
-      ],
-      "Snooze": [
-        "Adiar"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Com estrela"
       ],
       "Trash": [
         "Lixeira"
@@ -8890,9 +8866,6 @@
       ],
       "An invitation has been sent": [
         "Um convite foi enviado"
-      ],
-      "Cannot load file or folder info": [
-        "Não é possível carregar as informações sobre o arquivo ou a pasta."
       ],
       "Cannot load link": [
         "Não foi possível carregar o link"
@@ -11352,6 +11325,9 @@
       "Addresses": [
         "Endereços"
       ],
+      "Advanced details": [
+        "Detalhes avançados"
+      ],
       "Album": [
         "Álbum"
       ],
@@ -11369,6 +11345,12 @@
       ],
       "Amount due": [
         "Valor a pagar"
+      ],
+      "an anonymous user": [
+        "um usuário anônimo"
+      ],
+      "Anonymous user": [
+        "Usuário anônimo"
       ],
       "Apply gift code": [
         "Adicionar código de vale-presente"
@@ -11476,6 +11458,9 @@
       "Create new group": [
         "Criar um grupo"
       ],
+      "Created by": [
+        "Criado por"
+      ],
       "Credits": [
         "Créditos"
       ],
@@ -11532,6 +11517,9 @@
       ],
       "Desktop": [
         "Área de trabalho"
+      ],
+      "Devices": [
+        "Dispositivos"
       ],
       "Discard": [
         "Descartar"
@@ -11629,6 +11617,9 @@
       "File recovery process": [
         "Processo de recuperação de arquivo"
       ],
+      "Folder": [
+        "Pasta"
+      ],
       "Folder details": [
         "Detalhes da pasta"
       ],
@@ -11709,6 +11700,9 @@
       "Manage secure link": [
         "Gerenciar link seguro"
       ],
+      "Media type": [
+        "Tipo de mídia"
+      ],
       "Merge contacts": [
         "Mesclar contatos"
       ],
@@ -11741,9 +11735,6 @@
       ],
       "Network error": [
         "Erro de rede"
-      ],
-      "Newsletters view": [
-        "Visualização de boletins informativos"
       ],
       "Night theme": [
         "Tema noturno"
@@ -11938,6 +11929,9 @@
       "Settings": [
         "Configurações"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "Compartilhar ${ name }"
       ],
@@ -11967,6 +11961,9 @@
       ],
       "Size": [
         "Tamanho"
+      ],
+      "Size in bytes": [
+        "Tamanho em bytes"
       ],
       "Sort files/folders": [
         "Ordenar arquivos/pastas"
@@ -12018,6 +12015,12 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Usuário desconhecido"
       ],
       "Untitled document ${ date }": [
         "Documento sem título ${ date }"

@@ -11101,6 +11101,9 @@
       "Inactive": [
         "Inaktiv"
       ],
+      "Invalid": [
+        "Ungültig"
+      ],
       "Obsolete": [
         "Veraltet"
       ],
@@ -13288,9 +13291,6 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Du hast deinen ${ BRAND_NAME }-Benutzernamen vergessen? Finde ihn mit deiner Wiederherstellungs-E-Mail oder -Telefonnummer und erhalte wieder Zugang zu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
       ],
-      "Private and secure email, no bank card required": [
-        "Private und sichere E-Mail, keine Bankkarte erforderlich"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME }-Kontopasswort zurücksetzen"
       ],
@@ -13300,8 +13300,11 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Melde dich bei deinem ${ BRAND_NAME }-Konto an, um auf alle verschlüsselten ${ BRAND_NAME }-Dienste wie ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr zuzugreifen. Du hast kein Konto? Erstelle KOSTENLOS eines."
       ],
-      "Try ${ planName } for free with this link": [
-        "Probiere ${ planName } über diesen Link kostenlos aus"
+      "Take control of your data with end-to-end encryption. No bank card required.": [
+        "Übernehme die Kontrolle über deine Daten mit Ende-zu-Ende-Verschlüsselung. Keine Bankkarte erforderlich."
+      ],
+      "Try ${ BRAND_NAME } for free with this link": [
+        "Probiere ${ BRAND_NAME } über diesen Link kostenlos aus"
       ]
     },
     "Modal title": {
@@ -16360,11 +16363,23 @@
       ]
     },
     "Plan description": {
+      "A VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "Eine VPN-Lösung, die einen sicheren und uneingeschränkten Zugriff auf ein Hochgeschwindigkeitsinternet bietet."
+      ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Alle Premium-Produkte von ${ BRAND_NAME } sind in Duo enthalten."
       ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Ideal, wenn du ${ maxSpace } Speicherplatz brauchst und für Paare."
+      ],
+      "Cloud storage and file sharing, secured by end-to-end encryption.": [
+        "Cloud-Speicher und Dateifreigabe, gesichert durch Ende-zu-Ende-Verschlüsselung."
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Umfassender Schutz der Privatsphäre und Sicherheit mit allen ${ BRAND_NAME }-Diensten."
+      ],
+      "For next-level password management and identity protection.": [
+        "Für die nächste Stufe der Passwortverwaltung und des Identitätsschutzes."
       ],
       "Great for everyday use and photo backups.": [
         "Ideal für den täglichen Gebrauch und Fotosicherungen."
@@ -16374,6 +16389,9 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Sicherer Cloud-Speicher und Zusammenarbeit für Teams."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Das ideale Abonnement für datenschutzbewusste Power-Benutzer."
@@ -17570,13 +17588,35 @@
         "${ FREE_PASS_ALIASES } Hide-my-email-Alias, um Spam zu bekämpfen",
         "${ FREE_PASS_ALIASES } Hide-my-email-Aliasse, um Spam zu bekämpfen"
       ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-Desktop-App"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } Adresse",
         "${ maxAddresses } Adressen"
       ],
+      "${ maxAddresses } email address": [
+        "${ maxAddresses } E-Mail-Adresse",
+        "${ maxAddresses } E-Mail-Adressen"
+      ],
+      "${ maxAddresses } extra email address": [
+        "${ maxAddresses } zusätzliche E-Mail-Adresse",
+        "${ maxAddresses } zusätzliche E-Mail-Adressen"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } Kalender",
         "${ maxCalendars } Kalender"
+      ],
+      "${ maxDomains } email domain": [
+        "${ maxDomains } E-Mail-Domain",
+        "${ maxDomains } E-Mail-Domains"
+      ],
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "${ PASS_PLUS_VAULTS } Tresor für deine Passwörter",
+        "${ PASS_PLUS_VAULTS } Tresore für deine Passwörter"
+      ],
+      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
+        "${ referrerName } lädt dich ein, ${ BRAND_NAME } auszuprobieren."
       ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } Cloud-Speicherplatz für Dateien und Fotos"
@@ -17587,6 +17627,21 @@
       "${ value } of secure storage per user": [
         "${ value } sicherer Speicherplatz pro Benutzer"
       ],
+      "${ value } total storage": [
+        "${ value } Speicherplatz insgesamt"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } Hochgeschwindigkeits-VPN-Verbindung",
+        "${ VPN_CONNECTIONS } Hochgeschwindigkeits-VPN-Verbindungen"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "In über ${ vpnServersCountData.paid.countries } Land",
+        "In über ${ vpnServersCountData.paid.countries } Ländern"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "Mehr als ${ vpnServersCountData.paid.servers } Server über",
+        "Mehr als ${ vpnServersCountData.paid.servers } Server über"
+      ],
       "/user": [
         "/Benutzer"
       ],
@@ -17596,8 +17651,23 @@
       "Advanced account protection": [
         "Erweiterter Kontoschutz"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle ${ BRAND_NAME } Standarddienste (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "And get ${ referralReward } in credits, if you subscribe.": [
+        "Und erhalte ${ referralReward } als Guthaben, wenn du abonnierst."
+      ],
       "Billing Cycle": [
         "Abrechnungszeitraum"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockiere Werbung, Tracker und Malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Integrierter 2FA-Authenticator"
+      ],
+      "Bundle": [
+        "Paket"
       ],
       "Collaborative document editing": [
         "Gemeinsame Dokumentbearbeitung"
@@ -17614,8 +17684,23 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Mit ${ PLAN_NAMES[plan] } fortfahren"
       ],
+      "Continue with the free plan": [
+        "Mit dem kostenlosen Abonnement fortfahren"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME }-Konto erstellen"
+      ],
+      "Custom fields and file attachment": [
+        "Benutzerdefinierte Felder und Dateianhang"
+      ],
+      "Encrypted cloud storage": [
+        "Verschlüsselter Cloud-Speicher"
+      ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Verschlüsselte E-Mail mit ${ totalMailStorageSize } Speicherplatz"
+      ],
+      "Encrypted file sharing and document editor": [
+        "Verschlüsselte Dateifreigabe und Dokumenteneditor"
       ],
       "Encrypted password manager": [
         "Verschlüsselter Passwortmanager"
@@ -17623,11 +17708,23 @@
       "End-to-end encryption": [
         "Ende-zu-Ende-Verschlüsselung"
       ],
+      "Enjoy secure, easy-to-use ${ BRAND_NAME } apps.": [
+        "Genieße sichere, einfach zu bedienende ${ BRAND_NAME }-Apps."
+      ],
       "Every free account comes with:": [
         "Jedes kostenlose Konto beinhaltet:"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Schnelle P2P/BitTorrent-Downloads"
+      ],
       "Free": [
         "Free"
+      ],
+      "Free for 14 days": [
+        "Für 14 Tage kostenlos"
+      ],
+      "Get ${ referralReward } in credits": [
+        "Erhalte ${ referralReward } als Guthaben"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Eine sichere ${ MAIL_APP_NAME }-Adresse erhalten, oder ${ internalButton }"
@@ -17637,6 +17734,15 @@
       ],
       "Get a secure one from us, or ${ internalButton }": [
         "Hol dir Sicherheit von uns, oder ${ internalButton }"
+      ],
+      "Gifted by **${ referrerName }**": [
+        "Geschenkt von **${ referrerName }**"
+      ],
+      "Highest VPN speed": [
+        "Höchste VPN-Geschwindigkeit"
+      ],
+      "Mailboxes and custom domains for aliases": [
+        "Postfächer und eigene Domains für Aliasse"
       ],
       "Manage user access": [
         "Benutzerzugriff verwalten"
@@ -17653,8 +17759,17 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Benötigst du mehr Speicherplatz? Du kannst jederzeit upgraden mit Abonnements von 200 GB bis 3 TB. 5 GB reichen für 2'500 Fotos von einem modernen Handy (ca. 2 MB pro Foto)."
       ],
+      "No credit card required:": [
+        "Keine Kreditkarte erforderlich:"
+      ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
       "Online documents": [
         "Online-Dokumente"
+      ],
+      "Password manager": [
+        "Passwortmanager"
       ],
       "Password manager for all your devices": [
         "Passwortmanager für alle deine Geräte"
@@ -17674,8 +17789,24 @@
       "Save ${ priceDifferenceString }": [
         "Spare ${ priceDifferenceString }"
       ],
+      "Secure ${ VPN_CONNECTIONS } device at a time": [
+        "Schütze ${ VPN_CONNECTIONS } Gerät gleichzeitig",
+        "Schütze ${ VPN_CONNECTIONS } Geräte gleichzeitig"
+      ],
       "Secure file sharing": [
         "Sicherer Dateiaustausch"
+      ],
+      "Secure vault sharing and link sharing": [
+        "Gemeinsame Nutzung von sicherem Tresor und Links"
+      ],
+      "Securely share files, photos and documents": [
+        "Dateien, Fotos und Dokumente sicher teilen"
+      ],
+      "Select ${ title }": [
+        "${ title } auswählen"
+      ],
+      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
+        "Wähle einen Dienst und genieße die Premium-Version 14 Tage lang kostenlos. Keine Kreditkarte erforderlich."
       ],
       "Selected": [
         "Ausgewählt"
@@ -17698,17 +17829,47 @@
       "Sign up, protect your files": [
         "Registrieren, schütze deine Dateien"
       ],
+      "Start free trial": [
+        "Jetzt kostenlos ausprobieren"
+      ],
+      "Storage": [
+        "Speicherplatz"
+      ],
+      "Stream your favorite TV shows and movies": [
+        "Streame deine Lieblings-TV-Sendungen und Filme"
+      ],
       "Sync files across devices and users": [
         "Synchronisiere Dateien zwischen Geräten und Benutzern"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Der Name der Organisation wird für deine Benutzer sichtbar sein, während sie angemeldet sind."
       ],
+      "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
+        "Anschließend ${ priceWithDiscountPerMonth } pro Monat, wenn du abonnierst."
+      ],
+      "To reedeem on your next paid subscription.": [
+        "Zum Einlösen bei deinem nächsten kostenpflichtigen Abonnement."
+      ],
       "Total": [
         "Insgesamt"
       ],
+      "Try ${ BRAND_NAME } for 14 days free": [
+        "Probiere ${ BRAND_NAME } 14 Tage kostenlos aus"
+      ],
+      "Try ${ planName } for free": [
+        "Probiere ${ planName } kostenlos aus"
+      ],
       "Ultra fast and private VPN": [
         "Ultraschnelles und privates VPN"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Unbegrenzte Anzahl an Ordnern, Kategorien und Filtern"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Unbegrenzte hide-my-email-Aliasse"
+      ],
+      "Up to -${ percentage }%": [
+        "Bis zu -${ percentage } %"
       ],
       "Up to 2 users": [
         "Bis zu 2 Benutzer"
@@ -17725,6 +17886,9 @@
       "Use your email, or ${ externalButton }": [
         "Nutze deine E-Mail-Adresse, oder ${ externalButton }"
       ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ],
       "use your own email.": [
         "Nutze deine eigene E-Mail-Adresse."
       ],
@@ -17732,11 +17896,17 @@
         "VPN mit Servern in ${ vpnServersCountData.free.countries } Land",
         "VPN mit Servern in ${ vpnServersCountData.free.countries } Ländern"
       ],
+      "We’ll email you before your trial ends.": [
+        "Wir senden dir eine E-Mail, bevor deine Testversion endet."
+      ],
       "Yearly": [
         "Jährlich"
       ],
       "Your plan": [
         "Dein Abonnement"
+      ],
+      "Your trial": [
+        "Deine Testversion"
       ]
     },
     "Signup label": {

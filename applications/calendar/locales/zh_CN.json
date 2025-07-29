@@ -122,6 +122,9 @@
       "Cancel subscription": [
         "取消订阅"
       ],
+      "Cancel trial and pay": [
+        "取消试用并支付"
+      ],
       "Chat with us": [
         "与我们实时对话"
       ],
@@ -963,6 +966,9 @@
       "${ price } per user": [
         "${ price } 每位用户"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } 席位"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } 个写作助手许可证"
       ],
@@ -1196,6 +1202,11 @@
         "继续订阅"
       ]
     },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "您的免费体验期将于 ${ timeRemaining } 结束。"
+      ]
+    },
     "Badge": {
       "New!": [
         "新！"
@@ -1228,6 +1239,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 与 ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
@@ -1374,6 +1388,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 问题"
+      ],
       "Application problem": [
         "应用程序问题"
       ],
@@ -3441,6 +3458,9 @@
       "Invalid verification code": [
         "验证码无效"
       ],
+      "Invalid ZIP code": [
+        "无效的邮政编码"
+      ],
       "Invitation failed to be sent": [
         "邀请发送失败"
       ],
@@ -3531,6 +3551,18 @@
       "Please create an address first.": [
         "请先创建地址。"
       ],
+      "Please enter a valid postal code": [
+        "请输入有效的邮政编码"
+      ],
+      "Please enter a valid ZIP code": [
+        "请输入有效的邮政编码"
+      ],
+      "Please enter postal code": [
+        "请输入邮政编码"
+      ],
+      "Please enter ZIP code": [
+        "请输入邮政编码"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
@@ -3542,6 +3574,12 @@
       ],
       "Please select a state": [
         "请选择州"
+      ],
+      "Please select billing country": [
+        "请选择您的计费国家/地区"
+      ],
+      "Please select billing state": [
+        "请选择账单省（州）"
       ],
       "Port is required": [
         "端口号必须填写"
@@ -4667,6 +4705,9 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ],
@@ -5002,6 +5043,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
+      ],
+      "Download current logs": [
+        "下载当前日志"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "即刻下载您所需的应用，随时随地保护隐私。"
@@ -5837,6 +5881,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "您的 ${ BRAND_NAME } 账户已被停用，无法继续收取新邮件，并且网盘分享链接已全部失效，新文件也无法上传。如需恢复账户正常功能，请付清逾期账单。"
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "您的 ${ plan } 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
       ],
@@ -6324,6 +6371,9 @@
       "Import to:": [
         "导入到："
       ],
+      "Include application logs in bug report": [
+        "在问题反馈中包含应用日志"
+      ],
       "Integrated 2FA authenticator": [
         "内置 2FA 验证器"
       ],
@@ -6579,6 +6629,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "邮政编码"
+      ],
       "ZIP code": [
         "邮编"
       ]
@@ -6630,20 +6683,11 @@
       "Add a gift code": [
         "使用礼品码"
       ],
-      "All mail": [
-        "所有邮件"
-      ],
-      "Archive": [
-        "归档"
-      ],
       "Calendars": [
         "日历"
       ],
       "clearing your browser cache": [
         "清除浏览器缓存"
-      ],
-      "Drafts": [
-        "草稿"
       ],
       "Enforcing 2FA for organizations": [
         "强制组织启用 2FA"
@@ -6696,9 +6740,6 @@
       "if your data is leaked": [
         "如果您的数据遭到泄露"
       ],
-      "Inbox": [
-        "收件箱"
-      ],
       "Learn more": [
         "了解详情"
       ],
@@ -6717,26 +6758,8 @@
       "Request an invite": [
         "申请注册"
       ],
-      "Scheduled": [
-        "定时发送"
-      ],
-      "Sent": [
-        "已发送"
-      ],
       "settings": [
         "设置"
-      ],
-      "Snooze": [
-        "延迟通知"
-      ],
-      "Spam": [
-        "垃圾邮件"
-      ],
-      "Starred": [
-        "星标邮件"
-      ],
-      "Trash": [
-        "回收站"
       ],
       "Types of recovery methods": [
         "恢复方法类型"
@@ -7659,6 +7682,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "保护敏感的商业信息并进行安全合作。"
       ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "为 6 位用户提供 ${ plusTitle } 的所有高级功能，保护您的家人。"
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 全系服务协同保障您的家庭隐私。"
       ],
@@ -7704,6 +7730,9 @@
       ],
       "Downgrade account?": [
         "降级账户？"
+      ],
+      "Review subscription": [
+        "查看订阅"
       ],
       "Review subscription and pay": [
         "确认订单并支付"
@@ -8186,6 +8215,9 @@
       "Get the deal": [
         "获取优惠"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "最后机会！首月享受 ${ plan } 80% 折扣。"
+      ],
       "Last day to save": [
         "保存的最后日期"
       ],
@@ -8264,6 +8296,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "遍布 110 多个国家/地区的超快 VPN 服务器"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "无限别名，保护您的身份"
       ]
     },
     "Onboarding": {
@@ -8563,6 +8598,9 @@
       "Got it": [
         "好"
       ],
+      "I'm purchasing as a business": [
+        "以企业身份购买"
+      ],
       "MM/YY": [
         "月/年"
       ],
@@ -8595,6 +8633,9 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
+      ],
+      "This number will be shown on all future invoices": [
+        "此编号将显示在所有未来的发票上。"
       ],
       "This payment method will become your new default for all future renewals.": [
         "此付款方式将成为您未来所有续订的新默认方式。"
@@ -8634,12 +8675,34 @@
         "Free"
       ]
     },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - 卡号尾数为 ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "银行转账 - ${ details }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "确认付款后，您即授权 ${ BRAND_NAME } 和我们的支付服务提供商 Stripe 指示您的银行从您的账户中扣除相应款项。根据您与银行签订的协议，您可以在扣款日起 8 周内获得退款。"
       ],
       "Street address, postal code, and city": [
         "街道地址、邮政编码和城市"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "澳大利亚商业编号 (ABN)"
+      ],
+      "Business Number": [
+        "商业编号"
+      ],
+      "EIN": [
+        "雇主识别号码 (EIN)"
+      ],
+      "VAT number": [
+        "增值税号 (VAT)"
       ]
     },
     "PGP key encryption warning": {
@@ -8742,6 +8805,9 @@
       "Please select a country": [
         "请选择国家/地区"
       ],
+      "Postal code": [
+        "邮政编码"
+      ],
       "Search events": [
         "搜索事件"
       ],
@@ -8771,6 +8837,9 @@
       ],
       "Your organization name": [
         "您的组织名称"
+      ],
+      "ZIP code": [
+        "邮政编码"
       ]
     },
     "Placeholder for contact group name": {
@@ -8786,6 +8855,20 @@
     "plan customizer, users": {
       "contact": [
         "联系人"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "所有 ${ protonPlus } 服务。${ br }轻松订阅。"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "作为 **${ currentPlanTitle }** 订阅者，您可以通过升级到 **${ upsellPlanTitle }** 来解锁 **${ unlockPlanTitle }** 和所有高级 ${ BRAND_NAME } 服务。"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "继续使用 ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "升级至 ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -9297,11 +9380,20 @@
       "Browse securely": [
         "安全浏览"
       ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 做您想做的"
+      ],
       "Get unlimited aliases": [
         "获取无限量邮箱别名"
       ],
       "Go to subscription plans": [
         "查看账户等级"
+      ],
+      "Guard against threats": [
+        "防范威胁"
+      ],
+      "Increase your storage": [
+        "提升您的存储空间"
       ],
       "Keep passwords safe": [
         "确保密码安全"
@@ -9390,6 +9482,18 @@
       ],
       "Get 500 GB to securely store all your files and photos": [
         "获得 500 GB 以安全地存储您的所有文件和照片"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "获取遍布 110 多个国家/地区的超快 VPN 服务器"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "获得包含所有功能的套餐，开通 ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "获取无限数量的别名，以保护您的身份并减少垃圾邮件。"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "将您的密码安全地存储并分类管理在多个保险库中"
       ],
       "Protect your account from threats with Sentinel": [
         "使用 Sentinel 保护您的账户免受威胁"
@@ -10638,9 +10742,6 @@
       ],
       "Network error": [
         "网络错误"
-      ],
-      "Newsletters view": [
-        "时事通讯视图"
       ],
       "Night theme": [
         "夜间模式"

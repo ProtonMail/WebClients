@@ -9357,6 +9357,11 @@
         "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
       ]
     },
+    "Unlimited offer": {
+      "/month": [
+        "/個月"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "密碼至少必須包含 ${ MIN_PASSWORD_LENGTH } 個字元"
