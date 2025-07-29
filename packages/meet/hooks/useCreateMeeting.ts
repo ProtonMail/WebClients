@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import type { CreateMeetingParams } from '@proton/meet/types/response-types';
-import { MeetingType } from '@proton/meet/types/response-types';
-
+import type { CreateMeetingParams } from '../types/response-types';
+import { MeetingType } from '../types/response-types';
 import { getMeetingLink } from '../utils/getMeetingLink';
 import { useGetMeetingDependencies } from './useGetMeetingDependencies';
 import { useSaveMeeting } from './useSaveMeeting';

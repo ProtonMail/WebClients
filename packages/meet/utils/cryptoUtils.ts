@@ -146,12 +146,12 @@ export const encryptSessionKey = async (sessionKey: Uint8Array, passwordHash: st
     return uint8ArrayToBase64String(result);
 };
 
-export const hashPasswordWithSalt = async (password: string) => {
-    const salt = generateBcryptSalt();
+export const hashPasswordWithSalt = async (password: string, salt?: string) => {
+    const saltForHash = salt || generateBcryptSalt();
 
-    const passwordHash = await computeBcryptHash(password, salt);
+    const passwordHash = await computeBcryptHash(password, saltForHash);
 
-    return { salt, passwordHash };
+    return { salt: saltForHash, passwordHash };
 };
 
 export const getPassphraseFromEncryptedPassword = async ({
@@ -167,7 +167,11 @@ export const getPassphraseFromEncryptedPassword = async ({
 
     const passphrase = password.slice(basePassword.length);
 
-    return passphrase;
+    if (!passphrase) {
+        return passphrase;
+    }
+
+    return passphrase.slice(1);
 };
 
 interface PrepareMeetingCryptoDataParams {

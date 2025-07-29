@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useApi } from '@proton/components';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 
-import type { CreateMeetingResponse } from '../types/response-types';
+import type { CreateMeetingResponse, CustomPasswordState } from '../types/response-types';
 import { encryptMeetingPassword, encryptSessionKey, hashPasswordWithSalt } from '../utils/cryptoUtils';
 import { useGetMeetingDependencies } from './useGetMeetingDependencies';
 
@@ -23,13 +23,25 @@ export const useUpdateMeetingPassword = () => {
     const getMeetingDependencies = useGetMeetingDependencies();
 
     const updateMeetingPassword = useCallback(
-        async (meetingId: string, password: string, sessionKey: Uint8Array) => {
+        async ({
+            meetingId,
+            password,
+            sessionKey,
+            customPassword,
+            salt,
+        }: {
+            meetingId: string;
+            password: string;
+            sessionKey: Uint8Array;
+            customPassword: CustomPasswordState;
+            salt?: string;
+        }) => {
             try {
                 const { privateKey } = await getMeetingDependencies();
 
                 const encryptedPassword = await encryptMeetingPassword(password, privateKey);
 
-                const { passwordHash, salt } = await hashPasswordWithSalt(password);
+                const { passwordHash } = await hashPasswordWithSalt(password, salt);
 
                 const encryptedSessionKey = await encryptSessionKey(sessionKey, passwordHash);
 
@@ -42,10 +54,10 @@ export const useUpdateMeetingPassword = () => {
                     data: {
                         Password: encryptedPassword,
                         SessionKey: encryptedSessionKey,
-                        Salt: salt,
                         SRPSalt: srpSalt,
                         SRPVerifier: srpVerifier,
                         SRPModulusID: srpModulusID,
+                        CustomPassword: customPassword,
                     },
                 });
 

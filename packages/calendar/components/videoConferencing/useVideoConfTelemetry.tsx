@@ -20,6 +20,9 @@ export enum VideoConferenceSource {
     teams_desc = 'teams_desc',
     teams_loc = 'teams_loc',
     int_zoom = 'int_zoom',
+    int_proton_meet = 'int_proton_meet',
+    proton_meet_desc = 'proton_meet_desc',
+    proton_meet_loc = 'proton_meet_loc',
 }
 
 export enum VideoConferenceZoomIntegration {

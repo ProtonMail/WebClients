@@ -291,4 +291,5 @@ export interface JoinHolidayCalendarResponse extends ApiResponse {
 
 export enum VIDEO_CONFERENCE_PROVIDER {
     ZOOM = 1,
+    PROTON_MEET = 2,
 }
