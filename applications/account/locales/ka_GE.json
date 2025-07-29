@@ -217,6 +217,9 @@
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
+      "Cancel trial and pay": [
+        "გამოსაცდელი პერიოდის გაუქმება და გადახდა"
+      ],
       "Change": [
         "შეცვლა"
       ],
@@ -541,6 +544,12 @@
       "Download CSV sample": [
         "CSV მაგალითის გადმოწერა"
       ],
+      "Download for macOS": [
+        "გადმოწერა macOS-სთვის"
+      ],
+      "Download for Windows": [
+        "გადმოწერა Windows-სთვის"
+      ],
       "Download ICS": [
         "ICS-ის გადმოწერა"
       ],
@@ -606,6 +615,12 @@
       ],
       "Edit servers": [
         "სერვერების ჩასწორება"
+      ],
+      "Edit Sieve": [
+        "Sieve-ის ჩასწორება"
+      ],
+      "Edit Sieve filter “${ Name }”": [
+        "Sieve-ის ფილტრის \"${ Name }\" ჩასწორება"
       ],
       "Edit sign-in details": [
         "შესვლის დეტალების ჩასწორება"
@@ -1456,6 +1471,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME }-ის ჩასართავად ტრაფიკი ასწიეთ"
       ],
+      "Upgrade to Professional": [
+        "აწევა Professional-ზე"
+      ],
       "Upgrade to view all": [
         "ასწიეთ სატარიფო გეგმა ყველას სანახავად"
       ],
@@ -1624,6 +1642,10 @@
       ],
       "${ price } per user": [
         "${ price }/მომხმარებელი"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } წერის დამხმარის ლიცენზია",
@@ -2315,6 +2337,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME }-ის პრობლემა"
+      ],
       "Application problem": [
         "აპლიკაციის პრობლემა"
       ],
@@ -4080,6 +4105,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "თქვენი შემომავალი შეტყობინებების ავტომატური დალაგება მანამდე, სანამ ის თქვენს საფოსტო ყუთამდე მოაღწევს."
       ],
+      "Available with ${ title }": [
+        "ხელმისაწვდომია ${ title }-თან ერთად"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "მოირგეთ ეს ჯერ, რომ გაააქტიუროთ თქვენი ორგანიზაცია და მოირგოთ თქვენი ელფოსტის მისამართი."
       ],
@@ -4431,6 +4459,14 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 ან Windows 32-bit (ARM64)"
+      ]
+    },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb Debian/Ubuntu-სთვის"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm Fedora / Red Hat-სთვის"
       ]
     },
     "drive_signup_2023: Title": {
@@ -5356,6 +5392,18 @@
       "Please enter a valid Entity ID URL": [
         "შეიყვანეთ სწორი ობიექტის ID-ის ბმული"
       ],
+      "Please enter a valid postal code": [
+        "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
+      ],
+      "Please enter a valid ZIP code": [
+        "შეიყვანეთ სწორი ZIP კოდი"
+      ],
+      "Please enter postal code": [
+        "შეყვანეთ საფოსტო კოდი"
+      ],
+      "Please enter ZIP code": [
+        "შეიყვანეთ ZIP კოდი"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
@@ -5374,6 +5422,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "გაგრძელებამდე, სულ ცოტა, ერთი მომხმარებელი, ან ჯგუფი უნდა აირჩიოთ."
+      ],
+      "Please select billing country": [
+        "აირჩიეთ გადახდის ქვეყანა"
+      ],
+      "Please select billing state": [
+        "აირჩიეთ გადახდის მდგომარეობა"
       ],
       "Please set a recovery email first": [
         "ჯერ დააყენეთ აღდგენის ელფოსტა"
@@ -5404,6 +5458,9 @@
       ],
       "Port is required": [
         "პორტი აუცილებელია"
+      ],
+      "Postal code is required": [
+        "საფოსტო კოდი აუცილებელია"
       ],
       "Primary address key is not decrypted": [
         "ძირითადი მისამართის გასაღები გაშიფრული არაა"
@@ -6653,6 +6710,14 @@
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია დასრულდა"
       ]
     },
+    "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName }-ი App Store-ში"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName }-ი Play Store-ში"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "ავტომატური გადაგზავნა"
@@ -7350,6 +7415,9 @@
       ]
     },
     "Info": {
+      " and other security features.": [
+        " და სხვა უსაფრთხოების ფუნქციები."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "ამჟამად ${ amountUsers }/${ totalUsers } მომხმარებელს აქვს წვდომა გაზიარებულ სერვერებთნ.",
         "ამჟამად ${ amountUsers }/${ totalUsers } მომხმარებელს აქვს წვდომა გაზიარებულ სერვერებთნ."
@@ -8199,6 +8267,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "გეგმის ჩამოწევა შეწყვეტს შეერთებას ფასიან ${ VPN_APP_NAME } სერვერებთან."
+      ],
+      "Download current logs": [
+        "მიმდინარე ჟურნალის გადმოწერა"
       ],
       "Download on the App Store": [
         "ჩამოთვირთეთ App Store-დან"
@@ -9217,6 +9288,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "ფასი შეიცავს ყველა შესაბამის ციკლზე-ბაზირებულ ფასდაკლებებს და ვადაგაუსვლელ კუპონებს, რომლებიც თქვენს ანგარიშზე გაქვთ შენახული."
+      ],
+      "Private AI assistant": [
+        "პირადი ხი დამხმარე"
       ],
       "Promotion expired": [
         "საჩუქარი ვადაგასულია"
@@ -10289,6 +10363,9 @@
       ],
       "You do not have permission to perform this action": [
         "ამ ქმედების შესრულების წვდომა არ გაგაჩნიათ"
+      ],
+      "You don't have any referrals.": [
+        "მიმართვები არ გაქვთ."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "თქვენ მიიღებთ გაფრთხილებას, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან."
@@ -11593,6 +11670,9 @@
       "Inbox": [
         "შემომავალი"
       ],
+      "Include application logs in bug report": [
+        "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
+      ],
       "Inherit color from parent folder": [
         "მემკვიდრეობითი ფერი მშობელი საქაღალდისგან"
       ],
@@ -11932,6 +12012,9 @@
       "Second password": [
         "მეორე პაროლი"
       ],
+      "Select Linux package format": [
+        "აირჩიეთ Linux-ის პაკეტის ფორმატი"
+      ],
       "Select Linux platform": [
         "აირჩიეთ Linux-ის პლატფორმა"
       ],
@@ -11946,6 +12029,9 @@
       ],
       "Sequences": [
         "მიმდევრობები"
+      ],
+      "Share your referral link": [
+        "თქვენი მიმართვის ბმულის გაზიარება"
       ],
       "Show ${ n } administrator": [
         "${ n } ადმინისტრატორის ჩვენება",
@@ -12515,6 +12601,9 @@
       "Terms": [
         "წესები"
       ],
+      "Terms and conditions": [
+        "წესები და პირობები"
+      ],
       "Trouble signing in?": [
         "შესვლის პრობლემები გაქვთ?"
       ],
@@ -12883,9 +12972,6 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "დაგავიწყდათ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი? იპოვეთ ის თქვენი აღდგენის ელფოსტის ან ტელეფონის ნომრის საშუალებით და დაიბრუნეთ წვდომა ${ MAIL_APP_NAME }-სთან, ${ DRIVE_SHORT_APP_NAME }-სთან, ${ CALENDAR_SHORT_APP_NAME }-სთან და სხვ."
       ],
-      "Private and secure email, no bank card required": [
-        "კოფიდენციალური და უსაფრთხო ელფოსტა. საბანკო ბარათი საჭირო არაა"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "შეცვალეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის პაროლი"
       ],
@@ -12894,9 +12980,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "შედით თქვენს ${ BRAND_NAME }-ის კალენდარში და იქონიეთ წვდომა ყველა დაშიფრულ ${ BRAND_NAME }-ის სერვისთან, როგორებიცაა ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } და სხვ. არ გაქვთ ანგარიში? შექმენით ის უფასოდ."
-      ],
-      "Try ${ planName } for free with this link": [
-        "სცადეთ ${ planName } უფასოდ ამ ბმულით"
       ]
     },
     "Modal title": {
@@ -13898,6 +13981,9 @@
       ],
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
+      ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
       ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
@@ -15334,6 +15420,9 @@
       "Verifying your payment": [
         "თქვენი გადახდის შემოწმება"
       ],
+      "Welcome to ${ plan }": [
+        "კეთილი იყოს თქვენი მობრძანება ${ plan }-ში"
+      ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "${ appName }-ის ფასიან ფუნქციებთან წვდომა უკვე გაქვთ - თავიდან ყიდვა საჭირო არაა."
       ],
@@ -15565,6 +15654,9 @@
       ],
       "Got it": [
         "გავიგე"
+      ],
+      "I'm purchasing as a business": [
+        "ვაპირებ შევიძინო ბიზნესისთვის"
       ],
       "MM/YY": [
         "თთ/წწ"
@@ -15918,6 +16010,14 @@
         "მოგწონთ${ planName }?"
       ]
     },
+    "plus_block": {
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle }-ზე დარჩენა"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
+      ]
+    },
     "Price": {
       "Free": [
         "უფასო"
@@ -16112,6 +16212,9 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "შენარჩუნების წესის შექმნა"
+      ],
       "Delete": [
         "წაშლა"
       ],
@@ -16123,11 +16226,21 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "კიდევ ${ remainingCount }"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } დღე",
+        "${ rule.Lifetime } დღე"
+      ],
       "Forever": [
         "სამუდამოდ"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "წესების, მომხმარებლების, პერიოდის, ან ქმედების ძებნა"
+      ],
       "Search policies": [
         "პოლიტიკების ძებნა"
       ]
@@ -16144,6 +16257,11 @@
       ],
       "Retention Rule": [
         "შენარჩუნების წესი"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "შენარჩუნების პოლიტიკები აღმოჩენილი არაა"
       ]
     },
     "Role": {
@@ -19810,6 +19928,9 @@
       "Invitations": [
         "მოწვევები"
       ],
+      "Invite friends. Get credits.": [
+        "მოიწვიეთ მეგობრები და მიიღეთ კრედიტები."
+      ],
       "Invoices": [
         "ინვოისები"
       ],
@@ -20675,6 +20796,12 @@
       "Not all information listed here was exposed for all users.": [
         "აქ ჩამოთვლილი ინფორმაცია ყველა მომხმარებლისთვის ხელმისაწვდომი არ იქნება."
       ],
+      "Origin Internet Service Provider (ISP)": [
+        "წყარო ინტერნეტპროვაიდერი (ISP)"
+      ],
+      "Origin IP address": [
+        "წყარო IP მისამართი"
+      ],
       "Origin IP address and Internet Service Provider (ISP)": [
         "წყარო IP მისამართი და ინტერნეტ პროვაიდერი (ISP)"
       ],
@@ -21212,6 +21339,9 @@
       ],
       "It's you": [
         "თქვენ"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "ველოდები ადმინისტრატორის წვდომას"

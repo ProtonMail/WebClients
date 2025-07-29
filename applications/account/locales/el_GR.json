@@ -11039,6 +11039,9 @@
       "Inactive": [
         "Ανενεργό"
       ],
+      "Invalid": [
+        "Άκυρο"
+      ],
       "Obsolete": [
         "Ξεπερασμένο"
       ],
@@ -13226,9 +13229,6 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Ξεχάσατε τον όνομα χρήστη του ${ BRAND_NAME } λογαριασμού σας; Βρείτε το χρησιμοποιώντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τον αριθμό τηλεφώνου ανάκτησης και αποκτήστε ξανά πρόσβαση στα ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } σας, και παραπάνω."
       ],
-      "Private and secure email, no bank card required": [
-        "Ιδιωτικό και ασφαλές email, δίχως την απαίτηση τραπεζικής κάρτας"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Επαναφορά κωδικού πρόσβασης του ${ BRAND_NAME } λογαριασμού σας"
       ],
@@ -13238,8 +13238,11 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Συνδεθείτε στον λογαριασμό σας ${ BRAND_NAME } για να αποκτήσετε πρόσβαση σε όλες τις κρυπτογραφημένες υπηρεσίες του ${ BRAND_NAME }, όπως ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και περισσότερα. Δεν έχετε λογαριασμό; Δημιουργήστε ένα ΔΩΡΕΑΝ."
       ],
-      "Try ${ planName } for free with this link": [
-        "Δοκιμάστε το ${ planName } δωρεάν με αυτόν τον σύνδεσμο"
+      "Take control of your data with end-to-end encryption. No bank card required.": [
+        "Πάρτε τον έλεγχο των δεδομένων σας με διατερματική κρυπτογράφηση. Δεν απαιτείται τραπεζική κάρτα."
+      ],
+      "Try ${ BRAND_NAME } for free with this link": [
+        "Δοκιμάστε το ${ BRAND_NAME } δωρεάν με αυτόν τον σύνδεσμο"
       ]
     },
     "Modal title": {
@@ -16066,6 +16069,9 @@
       ]
     },
     "Payments.VAT number name": {
+      "ABN": [
+        "ΑΦΜ"
+      ],
       "Business Number": [
         "Αριθμός Επιχείρησης"
       ],
@@ -16295,11 +16301,23 @@
       ]
     },
     "Plan description": {
+      "A VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "Μια λύση VPN που παρέχει ασφαλή, χωρίς περιορισμούς, γρήγορη πρόσβαση στο διαδίκτυο."
+      ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Όλα τα ${ BRAND_NAME } premium προϊόντα περιλαμβάνονται στο Duo."
       ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Είναι ιδανικό αν χρειάζεστε ${ maxSpace } αποθηκευτικού χώρου και για ζευγάρια."
+      ],
+      "Cloud storage and file sharing, secured by end-to-end encryption.": [
+        "Αποθήκευση στο νέφος και κοινή χρήση αρχείων, με ασφάλεια μέσω διατερματικής κρυπτογράφησης."
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Ολοκληρωμένη ιδιωτικότητα και ασφάλεια με όλες τις συνδιασμένες υπηρεσίες ${ BRAND_NAME }."
+      ],
+      "For next-level password management and identity protection.": [
+        "Για διαχείριση κωδικών πρόσβασης και προστασία ταυτότητας επόμενου επιπέδου."
       ],
       "Great for everyday use and photo backups.": [
         "Εξαιρετικό για καθημερινή χρήση και αντίγραφα ασφαλείας φωτογραφιών."
@@ -16309,6 +16327,9 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Ασφαλής αποθηκευτικός χώρος στο cloud και συνεργασία για ομάδες."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Ασφαλές ηλεκτρονικό ταχυδρομείο με προηγμένες δυνατότητες για τις καθημερινές σας επικοινωνίες."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Το ιδανικό πλάνο για προχωρημένους χρήστες που δίνουν έμφαση στην ιδιωτικότητα."
@@ -17500,13 +17521,35 @@
         "${ FREE_PASS_ALIASES } hide-my-email ψευδώνυμο για την καταπολέμηση των ενοχλητικών μηνυμάτων",
         "${ FREE_PASS_ALIASES } hide-my-email ψευδώνυμα για την καταπολέμηση των ενοχλητικών μηνυμάτων"
       ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } διεύθυνση",
         "${ maxAddresses } διευθύνσεις"
       ],
+      "${ maxAddresses } email address": [
+        "${ maxAddresses } διεύθυνση email",
+        "${ maxAddresses } διευθύνσεις email"
+      ],
+      "${ maxAddresses } extra email address": [
+        "${ maxAddresses } επιπλέον διεύθυνση email",
+        "${ maxAddresses } επιπλέον διευθύνσεις email"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } ημερολόγιο",
         "${ maxCalendars } ημερολόγια"
+      ],
+      "${ maxDomains } email domain": [
+        "${ maxDomains } τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ maxDomains } τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "${ PASS_PLUS_VAULTS } κρύπτη για τους κωδικούς σας",
+        "${ PASS_PLUS_VAULTS } κρύπτες για τους κωδικούς σας"
+      ],
+      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
+        "${ referrerName } σας προσκαλεί να δοκιμάσετε το ${ BRAND_NAME }."
       ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } αποθηκευτικός χώρος στο cloud για αρχεία και φωτογραφίες"
@@ -17517,6 +17560,17 @@
       "${ value } of secure storage per user": [
         "${ value } ασφαλούς αποθηκευτικού χώρου ανά χρήστη"
       ],
+      "${ value } total storage": [
+        "${ value } συνολικός αποθηκευτικός χώρος"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } σύνδεση υψηλής ταχύτητας",
+        "${ VPN_CONNECTIONS } συνδέσεις υψηλής ταχύτητας"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries }+ χώρα",
+        "${ vpnServersCountData.paid.countries }+ χώρες"
+      ],
       "/user": [
         "/χρήστη"
       ],
@@ -17526,8 +17580,23 @@
       "Advanced account protection": [
         "Προηγμένη προστασία λογαριασμού"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "And get ${ referralReward } in credits, if you subscribe.": [
+        "Και λάβετε ${ referralReward } σε πιστώσεις, αν εγγραφείτε."
+      ],
       "Billing Cycle": [
         "Κύκλος Χρέωσης"
+      ],
+      "Block ads, trackers, and malware": [
+        "Αποκλείστε διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
+      ],
+      "Bundle": [
+        "Συλλογή"
       ],
       "Collaborative document editing": [
         "Συνεργατική επεξεργασία εγγράφων"
@@ -17544,8 +17613,23 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Συνεχίστε με ${ PLAN_NAMES[plan] }"
       ],
+      "Continue with the free plan": [
+        "Συνέχεια με το δωρεάν πλάνο"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
+      ],
+      "Custom fields and file attachment": [
+        "Προσαρμοσμένα πεδία και συνημμένο αρχείου"
+      ],
+      "Encrypted cloud storage": [
+        "Κρυπτογραφημένη αποθήκευση cloud"
+      ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Κρυπτογραφημένο ηλεκτρονικό ταχυδρομείο με ${ totalMailStorageSize } αποθηκευτικό χώρο"
+      ],
+      "Encrypted file sharing and document editor": [
+        "Κρυπτογραφημένη κοινή χρήση αρχείων και πρόγραμμα επεξεργασίας εγγράφων"
       ],
       "Encrypted password manager": [
         "Κρυπτογραφημένος διαχειριστής κωδικών πρόσβασης"
@@ -17553,11 +17637,23 @@
       "End-to-end encryption": [
         "Διατερματική κρυπτογράφηση"
       ],
+      "Enjoy secure, easy-to-use ${ BRAND_NAME } apps.": [
+        "Απολαύστε ασφαλείς, εύχρηστες εφαρμογές ${ BRAND_NAME }."
+      ],
       "Every free account comes with:": [
         "Κάθε δωρεάν λογαριασμός περιλαμβάνει:"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Γρήγορες λήψεις P2P/BitTorrent"
+      ],
       "Free": [
         "Δωρεάν"
+      ],
+      "Free for 14 days": [
+        "Δωρεάν για 14 ημέρες"
+      ],
+      "Get ${ referralReward } in credits": [
+        "Λάβετε ${ referralReward } σε πιστώσεις"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Αποκτήστε μια ασφαλή διεύθυνση ${ MAIL_APP_NAME }, ή ${ internalButton }"
@@ -17567,6 +17663,15 @@
       ],
       "Get a secure one from us, or ${ internalButton }": [
         "Λάβετε έναν ασφαλή από εμάς, ή ${ internalButton }"
+      ],
+      "Gifted by **${ referrerName }**": [
+        "Δωρίστηκε από **${ referrerName }**"
+      ],
+      "Highest VPN speed": [
+        "Ύψιστη ταχύτητα VPN"
+      ],
+      "Mailboxes and custom domains for aliases": [
+        "Θυρίδες και προσαρμοσμένοι τομείς για ψευδώνυμα"
       ],
       "Manage user access": [
         "Διαχείριση προσβασιμότητας χρηστών"
@@ -17583,8 +17688,17 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Χρειάζεστε περισσότερο αποθηκευτικό χώρο; Μπορείτε να αναβαθμίσετε οποιαδήποτε στιγμή με πλάνα από 200GB έως 3TB. 5GB είναι αρκετά για 2.500 φωτογραφίες από ένα σύγχρονο τηλέφωνο (περίπου 2MB η καθεμία)."
       ],
+      "No credit card required:": [
+        "Δεν απαιτείται πιστωτική κάρτα:"
+      ],
+      "Online document editor": [
+        "Online επεξεργαστής εγγράφου"
+      ],
       "Online documents": [
         "Διαδικτυακά έγγραφα"
+      ],
+      "Password manager": [
+        "Διαχειριστής κωδικών πρόσβασης"
       ],
       "Password manager for all your devices": [
         "Διαχειριστής κωδικών πρόσβασης για όλες τις συσκευές σας"
@@ -17604,8 +17718,24 @@
       "Save ${ priceDifferenceString }": [
         "Εξοικονομήστε ${ priceDifferenceString }"
       ],
+      "Secure ${ VPN_CONNECTIONS } device at a time": [
+        "Προστατέψτε ${ VPN_CONNECTIONS } συσκευή τη φορά",
+        "Προστατέψτε ${ VPN_CONNECTIONS } συσκευές τη φορά"
+      ],
       "Secure file sharing": [
         "Ασφαλής διαμοιρασμός αρχείων"
+      ],
+      "Secure vault sharing and link sharing": [
+        "Κοινοποίηση ασφαλούς κρύπτης και κοινοποίηση συνδέσμων"
+      ],
+      "Securely share files, photos and documents": [
+        "Μοιραστείτε με ασφάλεια αρχεία, φωτογραφίες και έγγραφα"
+      ],
+      "Select ${ title }": [
+        "Επιλογή ${ title }"
+      ],
+      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
+        "Επιλέξτε μια υπηρεσία και απολαύστε την premium έκδοση δωρεάν για 14 ημέρες. Δεν απαιτείται πιστωτική κάρτα."
       ],
       "Selected": [
         "Επιλεγμένο"
@@ -17628,17 +17758,47 @@
       "Sign up, protect your files": [
         "Εγγραφείτε, προστατέψτε τα αρχεία σας"
       ],
+      "Start free trial": [
+        "Εκκίνηση δωρεάν δοκιμής"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
+      ],
+      "Stream your favorite TV shows and movies": [
+        "Μεταδώστε τις αγαπημένες σας τηλεοπτικές σειρές και ταινίες"
+      ],
       "Sync files across devices and users": [
         "Συγχρονισμός αρχείων σε όλες τις συσκευές και τους χρήστες"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Το όνομα του οργανισμού θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
       ],
+      "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
+        "Τότε ${ priceWithDiscountPerMonth } ανά μήνα, εάν εγγραφείτε."
+      ],
+      "To reedeem on your next paid subscription.": [
+        "Για να εξαργυρώσετε στην επόμενη επί πληρωμή συνδρομή σας."
+      ],
       "Total": [
         "Σύνολο"
       ],
+      "Try ${ BRAND_NAME } for 14 days free": [
+        "Δοκιμάστε το ${ BRAND_NAME } δωρεάν για 14 ημέρες"
+      ],
+      "Try ${ planName } for free": [
+        "Δοκιμάστε το ${ planName } δωρεάν"
+      ],
       "Ultra fast and private VPN": [
         "Εξαιρετικά γρήγορο και ιδιωτικό VPN"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Απεριόριστα hide-my-email ψευδώνυμα"
+      ],
+      "Up to -${ percentage }%": [
+        "Έως -${ percentage }%"
       ],
       "Up to 2 users": [
         "Μέχρι και 2 χρήστες"
@@ -17655,6 +17815,9 @@
       "Use your email, or ${ externalButton }": [
         "Χρησιμοποιήστε την ηλεκτρονική σας διεύθυνση, ή ${ externalButton }"
       ],
+      "Use your own email domain": [
+        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
+      ],
       "use your own email.": [
         "χρησιμοποιήστε το δικό σας email."
       ],
@@ -17662,11 +17825,17 @@
         "VPN με διακομιστές σε ${ vpnServersCountData.free.countries } χώρα",
         "VPN με διακομιστές σε ${ vpnServersCountData.free.countries } χώρες"
       ],
+      "We’ll email you before your trial ends.": [
+        "Θα σας στείλουμε email πριν λήξει η δοκιμαστική σας περίοδος."
+      ],
       "Yearly": [
         "Ετησίως"
       ],
       "Your plan": [
         "Το πλάνο σας"
+      ],
+      "Your trial": [
+        "Η δοκιμαστική σας περίοδος"
       ]
     },
     "Signup label": {

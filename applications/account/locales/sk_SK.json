@@ -619,6 +619,12 @@
       "Edit servers": [
         "Upraviť servery"
       ],
+      "Edit Sieve": [
+        "Upraviť Sieve"
+      ],
+      "Edit Sieve filter “${ Name }”": [
+        "Upraviť Sieve filter „${ Name }”"
+      ],
       "Edit sign-in details": [
         "Upraviť prihlasovacie údaje"
       ],
@@ -1644,6 +1650,12 @@
       "${ price } per user": [
         "${ price } za používateľa"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
         "${ seats } licencie asistentov písania",
@@ -2375,6 +2387,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problém"
+      ],
       "Application problem": [
         "Problém aplikácie"
       ],
@@ -7712,6 +7727,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } s vami chce zdieľať údaje v ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
@@ -8575,6 +8593,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Prechod na nižšiu verziu ukončí všetky pripojenia k plateným serverom ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Stiahnuť aktuálne záznamy"
       ],
       "Download on the App Store": [
         "Stiahnuť z App Store"
@@ -9631,6 +9652,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
+      ],
+      "Private AI assistant": [
+        "Súkromný AI asistent"
       ],
       "Promotion expired": [
         "Akciová ponuka skončila"
@@ -11253,6 +11277,9 @@
       "Inactive": [
         "Neaktívny"
       ],
+      "Invalid": [
+        "Neplatný"
+      ],
       "Obsolete": [
         "Zastarané"
       ],
@@ -12141,6 +12168,9 @@
       ],
       "Inbox": [
         "Doručená pošta"
+      ],
+      "Include application logs in bug report": [
+        "Vrátane záznamov aplikácie v chybovom hlásení"
       ],
       "Inherit color from parent folder": [
         "Zdediť farbu nadradeného priečinka"
@@ -13463,9 +13493,6 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zabudli ste používateľské meno vášho ${ BRAND_NAME } účtu? Nájdite ho pomocou obnovovacieho emailu alebo telefónneho čísla a získajte opätovný prístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalším."
       ],
-      "Private and secure email, no bank card required": [
-        "Súkromný a zabezpečený email, bez nutnosti platobnej karty"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetujte heslo k vášmu účtu ${ BRAND_NAME }"
       ],
@@ -13475,8 +13502,11 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Prihláste sa do svojho účtu ${ BRAND_NAME } a získajte prístup ku všetkým šifrovaným službám ${ BRAND_NAME }, ako sú ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalšie. Nemáte účet? Vytvorte si ho ZADARMO."
       ],
-      "Try ${ planName } for free with this link": [
-        "Vyskúšajte ${ planName } zdarma s týmto odkazom"
+      "Take control of your data with end-to-end encryption. No bank card required.": [
+        "Prevezmite kontrolu nad svojimi dátami pomocou end-to-end šifrovania. Nevyžaduje sa žiadna platobná karta."
+      ],
+      "Try ${ BRAND_NAME } for free with this link": [
+        "Vyskúšajte ${ BRAND_NAME } zdarma s týmto odkazom"
       ]
     },
     "Modal title": {
@@ -16623,11 +16653,23 @@
       ]
     },
     "Plan description": {
+      "A VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "VPN riešenie, ktoré poskytuje bezpečný, neobmedzený a vysokorýchlostný prístup k internetu."
+      ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Všetky ${ BRAND_NAME } prémiové produkty zahrnuté v Duo."
       ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Najlepšie, ak potrebujete ${ maxSpace } úložiska a pre páry."
+      ],
+      "Cloud storage and file sharing, secured by end-to-end encryption.": [
+        "Cloudové úložisko a zdieľanie súborov zabezpečené end-to-end šifrovaním."
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Komplexné súkromie a bezpečnosť so všetkými službami ${ BRAND_NAME } dohromady."
+      ],
+      "For next-level password management and identity protection.": [
+        "Na novú úroveň správy hesiel a ochrany identity."
       ],
       "Great for everyday use and photo backups.": [
         "Skvelé na každodenné použitie a zálohy fotografií."
@@ -16637,6 +16679,9 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Bezpečné cloud úložisko a spolupráca pre tímy."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Ideálny plán pre náročných používateľov dbajúcich na súkromie."
@@ -17866,17 +17911,41 @@
         "${ FREE_PASS_ALIASES } hide-my-email aliasov na boj proti spamu",
         "${ FREE_PASS_ALIASES } hide-my-email aliasov na boj proti spamu"
       ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Desktopová aplikácia ${ MAIL_APP_NAME }"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adresa",
         "${ maxAddresses } adresy",
         "${ maxAddresses } adries",
         "${ maxAddresses } adries"
       ],
+      "${ maxAddresses } email address": [
+        "${ maxAddresses } emailová adresa",
+        "${ maxAddresses } emailové adresy",
+        "${ maxAddresses } emailových adries",
+        "${ maxAddresses } emailových adries"
+      ],
+      "${ maxAddresses } extra email address": [
+        "${ maxAddresses } ďalšia emailová adresa",
+        "${ maxAddresses } ďalšie emailové adresy",
+        "${ maxAddresses } ďalších emailových adries",
+        "${ maxAddresses } ďalších emailových adries"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } kalendár",
         "${ maxCalendars } kalendáre",
         "${ maxCalendars } kalendárov",
         "${ maxCalendars } kalendárov"
+      ],
+      "${ maxDomains } email domain": [
+        "${ maxDomains } emailová doména",
+        "${ maxDomains } emailové domény",
+        "${ maxDomains } emailových domén",
+        "${ maxDomains } emailových domén"
+      ],
+      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
+        "${ referrerName } Vás pozýva vyskúšať ${ BRAND_NAME }."
       ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } cloudového úložiska na súbory a fotografie"
@@ -17887,6 +17956,9 @@
       "${ value } of secure storage per user": [
         "${ value } bezpečného úložiska na používateľa"
       ],
+      "${ value } total storage": [
+        "${ value } úložného priestoru"
+      ],
       "/user": [
         "/používateľ"
       ],
@@ -17896,8 +17968,23 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "And get ${ referralReward } in credits, if you subscribe.": [
+        "A získajte ${ referralReward } v kreditoch, ak si predplatíte."
+      ],
       "Billing Cycle": [
         "Fakturačné obdobie"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokujte reklamy, sledovače a malvér"
+      ],
+      "Built-in 2FA authenticator": [
+        "Zabudovaný 2FA autentifikátor"
+      ],
+      "Bundle": [
+        "Balík"
       ],
       "Collaborative document editing": [
         "Spoločné úpravy dokumentov"
@@ -17914,8 +18001,23 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Pokračujte s ${ PLAN_NAMES[plan] }"
       ],
+      "Continue with the free plan": [
+        "Pokračovať s Free planom"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvoriť ${ BRAND_NAME } účet"
+      ],
+      "Custom fields and file attachment": [
+        "Vlastné polia a súbory s prílohami"
+      ],
+      "Encrypted cloud storage": [
+        "Šifrované cloudové úložisko"
+      ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Šifrovaný email s ${ totalMailStorageSize } úložiskom"
+      ],
+      "Encrypted file sharing and document editor": [
+        "Šifrované zdieľanie súborov a editor dokumentov"
       ],
       "Encrypted password manager": [
         "Šifrovaný správca hesiel"
@@ -17923,11 +18025,23 @@
       "End-to-end encryption": [
         "End-to-end šifrovanie"
       ],
+      "Enjoy secure, easy-to-use ${ BRAND_NAME } apps.": [
+        "Užívajte si bezpečné, jednoducho použiteľné ${ BRAND_NAME } aplikácie."
+      ],
       "Every free account comes with:": [
         "Každý bezplatný účet obsahuje:"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Rýchle sťahovanie P2P/BitTorrent"
+      ],
       "Free": [
         "Free"
+      ],
+      "Free for 14 days": [
+        "Zadarmo na 14 dní"
+      ],
+      "Get ${ referralReward } in credits": [
+        "Získajte ${ referralReward } v kreditoch"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Získajte bezpečnú ${ MAIL_APP_NAME } adresu, alebo ${ internalButton }"
@@ -17937,6 +18051,15 @@
       ],
       "Get a secure one from us, or ${ internalButton }": [
         "Získajte si od nás bezpečnú, alebo ${ internalButton }"
+      ],
+      "Gifted by **${ referrerName }**": [
+        "Daroval/a **${ referrerName }**"
+      ],
+      "Highest VPN speed": [
+        "Najvyššia rýchlosť VPN"
+      ],
+      "Mailboxes and custom domains for aliases": [
+        "Poštové schránky a vlastné domény pre aliasy"
       ],
       "Manage user access": [
         "Správa prístupov používateľov"
@@ -17953,8 +18076,17 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Potrebujete viac úložiska? Úroveň môžete kedykoľvek zvýšiť pomocou plánov od 200 GB do 3 TB. 5 GB stačí na 2 500 fotografií z moderného telefónu (približne 2 MB každá)."
       ],
+      "No credit card required:": [
+        "Platobná karta nie je potrebná:"
+      ],
+      "Online document editor": [
+        "Online editor dokumentov"
+      ],
       "Online documents": [
         "Online dokumenty"
+      ],
+      "Password manager": [
+        "Správca hesiel"
       ],
       "Password manager for all your devices": [
         "Správca hesiel pre všetky vaše zariadenia"
@@ -17977,6 +18109,18 @@
       "Secure file sharing": [
         "Bezpečné zdieľanie súborov"
       ],
+      "Secure vault sharing and link sharing": [
+        "Zabezpečené zdieľanie trezoru a odkazov"
+      ],
+      "Securely share files, photos and documents": [
+        "Bezpečne zdieľajte súbory, fotografie a dokumenty"
+      ],
+      "Select ${ title }": [
+        "Vybrať ${ title }"
+      ],
+      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
+        "Vyberte si službu a užite si prémiovú verziu na 14 dní zadarmo. Nevyžaduje sa platobná karta."
+      ],
       "Selected": [
         "Vybrané"
       ],
@@ -17998,17 +18142,47 @@
       "Sign up, protect your files": [
         "Zaregistrujte sa, chráňte si svoje súbory"
       ],
+      "Start free trial": [
+        "Začať bezplatnú skúšobnú verziu"
+      ],
+      "Storage": [
+        "Úložisko"
+      ],
+      "Stream your favorite TV shows and movies": [
+        "Streamujte svoje obľúbené seriály a filmy"
+      ],
       "Sync files across devices and users": [
         "Synchronizácia súborov medzi zariadeniami a používateľmi"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Názov organizácie bude viditeľný pre vašich používateľov, kým sú prihlásení."
       ],
+      "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
+        "Potom ${ priceWithDiscountPerMonth } mesačne s predplatným."
+      ],
+      "To reedeem on your next paid subscription.": [
+        "Na uplatnenie pri vašom ďalšom platenom predplatnom."
+      ],
       "Total": [
         "Celkom"
       ],
+      "Try ${ BRAND_NAME } for 14 days free": [
+        "Vyskúšajte ${ BRAND_NAME } na 14 dní zadarmo"
+      ],
+      "Try ${ planName } for free": [
+        "Vyskúšať ${ planName } zadarmo"
+      ],
       "Ultra fast and private VPN": [
         "Ultra rýchla a súkromná VPN"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neobmedzený počet hide-my-email aliasov"
+      ],
+      "Up to -${ percentage }%": [
+        "Až do -${ percentage }%"
       ],
       "Up to 2 users": [
         "Až 2 používatelia"
@@ -18025,6 +18199,9 @@
       "Use your email, or ${ externalButton }": [
         "Použite svoju emailovú adresu, alebo ${ externalButton }"
       ],
+      "Use your own email domain": [
+        "Používajte vlastnú emailovú doménu"
+      ],
       "use your own email.": [
         "používajte svoj vlastný email."
       ],
@@ -18034,11 +18211,17 @@
         "VPN so servermi v ${ vpnServersCountData.free.countries } krajinách",
         "VPN so servermi v ${ vpnServersCountData.free.countries } krajinách"
       ],
+      "We’ll email you before your trial ends.": [
+        "Pošleme vám email predtým, než sa vaše skúšobné obdobie skončí."
+      ],
       "Yearly": [
         "Ročne"
       ],
       "Your plan": [
         "Váš plán"
+      ],
+      "Your trial": [
+        "Váš skúšobné obdobie"
       ]
     },
     "Signup label": {
@@ -22200,6 +22383,9 @@
       ],
       "It's you": [
         "Ste to vy"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Čaká sa na prístup správcu"

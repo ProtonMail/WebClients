@@ -7502,7 +7502,7 @@
         "每組驗證代碼只能使用一次"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
-        "每個網域僅能有一條 SPF (TXT)紀錄，若您想要保留目前的設置，您可以將 ${ spf } 添加到目前記錄  (${ spfValue }) 的後面。"
+        "每個網域僅能有一項SPF (TXT)紀錄。若您想要保留目前的設置，您可以將 ${ spf } 添加到目前記錄 (${ spfValue }) 的後面。"
       ],
       "Early access": [
         "搶鮮體驗"
@@ -11745,9 +11745,6 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "忘記您的 ${ BRAND_NAME } 帳號使用者名稱？使用您的復原電子郵件或手機號碼找到它，並恢復存取 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } ，以及其它相應處。"
       ],
-      "Private and secure email, no bank card required": [
-        "私有且安全的電子郵件，無需銀行卡"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "重設您的 ${ BRAND_NAME } 帳號密碼"
       ],
@@ -11756,9 +11753,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "登入您的 ${ BRAND_NAME } 帳號以存取所有加密的 ${ BRAND_NAME } 服務，如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與更多。還沒有帳號？免費創建一個吧。"
-      ],
-      "Try ${ planName } for free with this link": [
-        "免費 ${ planName } 滿意體驗連結請點擊這裡"
       ]
     },
     "Modal title": {
@@ -12673,7 +12667,7 @@
         "點擊 \"付款\" 按鈕即代表您同意我們的 ${ termsAndConditions }."
       ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
-        "創建 ${ BRAND_NAME } 帳號，即表示您同意我們的${ terms }"
+        "建立 ${ BRAND_NAME } 帳號即表示您同意我們的${ terms }"
       ],
       "Payment details": [
         "付款細節"
@@ -13729,6 +13723,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Contact us": [
+        "聯絡我們"
+      ],
       "Continue": [
         "繼續"
       ],
@@ -15342,8 +15339,20 @@
       ]
     },
     "Signup": {
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "提供 ${ PASS_PLUS_VAULTS } 個保管庫來管理密碼"
+      ],
       "${ value } of secure storage per user": [
         "每位使用者${ value }安全空間"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } 個高速 VPN 連線"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "超過 ${ vpnServersCountData.paid.countries } 個國家"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "含跨 ${ vpnServersCountData.paid.servers }+ 伺服器"
       ],
       "/user": [
         "/位使用者"
@@ -15380,6 +15389,9 @@
       ],
       "Save ${ priceDifferenceString }": [
         "降價 ${ priceDifferenceString }"
+      ],
+      "Secure ${ VPN_CONNECTIONS } device at a time": [
+        "同時保護 ${ VPN_CONNECTIONS } 台裝置"
       ],
       "Selected": [
         "選取"
@@ -15450,6 +15462,9 @@
       ]
     },
     "signup: Action": {
+      "Contact us": [
+        "聯絡我們"
+      ],
       "Request trial": [
         "要求試用"
       ]
@@ -18775,6 +18790,11 @@
       ],
       "Refund": [
         "退款"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/個月"
       ]
     },
     "unprivatization": {
