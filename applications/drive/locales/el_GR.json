@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "Προώθηση ως συνημμένο"
       ],
+      "Full data": [
+        "Όλα τα δεδομένα"
+      ],
       "Generate password": [
         "Παραγωγή τυχαίου κωδικού πρόσβασης"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "Επόμενη σελίδα"
+      ],
+      "No sensitive data": [
+        "Χωρίς ευαίσθητα δεδομένα"
       ],
       "Not now": [
         "Όχι τώρα"
@@ -3243,11 +3249,11 @@
       "Failed to fetch sharing info": [
         "Αποτυχία ανάκτησης πληροφοριών κοινοποίησης"
       ],
+      "Failed to get details, please try again later": [
+        "Αποτυχία λήψης λεπτομερειών, παρακαλούμε δοκιμάστε ξανά αργότερα"
+      ],
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
-      ],
-      "Failed to move items": [
-        "Αποτυχία μετακίνησης στοιχείων"
       ],
       "Failed to resend invitation": [
         "Αποτυχία επαναποστολής πρόσκλησης"
@@ -3593,6 +3599,9 @@
       "Unknown error": [
         "Άγνωστο σφάλμα"
       ],
+      "Unknown location": [
+        "Άγνωστη τοποθεσία"
+      ],
       "Unknown payment token status": [
         "Άγνωστη κατάσταση πληρωμής"
       ],
@@ -3626,6 +3635,9 @@
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
       ]
     },
     "Error importing calendar": {
@@ -4844,9 +4856,6 @@
       ],
       "Aug": [
         "Αυγ"
-      ],
-      "Automated Recovery ${ formattedDate }": [
-        "Αυτοματοποιημένη Ανάκτηση ${ formattedDate }"
       ],
       "Available": [
         "Διαθέσιμο"
@@ -7265,17 +7274,8 @@
       "Albums": [
         "Άλμπουμ"
       ],
-      "All mail": [
-        "Όλα τα μηνύματα"
-      ],
-      "Archive": [
-        "Αρχειοθετημένα"
-      ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
-      ],
-      "Drafts": [
-        "Πρόχειρα"
       ],
       "Enforcing 2FA for organizations": [
         "Επιβολή πιστοποίησης δύο παραγόντων (2FA) για οργανισμούς"
@@ -7328,9 +7328,6 @@
       "if your data is leaked": [
         "εάν τα δεδομένα σας υποστούν διαρρεύσει"
       ],
-      "Inbox": [
-        "Εισερχόμενα"
-      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -7346,12 +7343,6 @@
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
       ],
-      "Scheduled": [
-        "Προγραμματισμένο"
-      ],
-      "Sent": [
-        "Απεσταλμένα"
-      ],
       "settings": [
         "ρυθμίσεις"
       ],
@@ -7360,15 +7351,6 @@
       ],
       "Shared with me": [
         "Κοινοποιημένα σε εμένα"
-      ],
-      "Snooze": [
-        "Αναβολή"
-      ],
-      "Spam": [
-        "Ενοχλητικά"
-      ],
-      "Starred": [
-        "Με αστέρι"
       ],
       "Trash": [
         "Διαγραμμένα"
@@ -8795,9 +8777,6 @@
       "An invitation has been sent": [
         "Έχει σταλεί μία πρόσκληση"
       ],
-      "Cannot load file or folder info": [
-        "Δεν είναι δυνατή η φόρτωση πληροφοριών αρχείου ή φακέλου"
-      ],
       "Cannot load link": [
         "Αποτυχία φόρτωσης συνδέσμου"
       ],
@@ -9560,6 +9539,9 @@
       ]
     },
     "Payments.VAT number name": {
+      "ABN": [
+        "ΑΦΜ"
+      ],
       "Business Number": [
         "Αριθμός Επιχείρησης"
       ],
@@ -11239,6 +11221,9 @@
       "Addresses": [
         "Διευθύνσεις"
       ],
+      "Advanced details": [
+        "Περισσότερες λεπτομέρειες"
+      ],
       "Album": [
         "Άλμπουμ"
       ],
@@ -11256,6 +11241,12 @@
       ],
       "Amount due": [
         "Οφειλόμενο ποσό"
+      ],
+      "an anonymous user": [
+        "ένας ανώνυμος χρήστης"
+      ],
+      "Anonymous user": [
+        "Ανώνυμος χρήστης"
       ],
       "Apply gift code": [
         "Εφαρμογή κωδικού δώρου"
@@ -11363,6 +11354,9 @@
       "Create new group": [
         "Δημιουργία νέας ομάδας"
       ],
+      "Created by": [
+        "Δημιουργήθηκε από"
+      ],
       "Credits": [
         "Μονάδες"
       ],
@@ -11420,6 +11414,33 @@
       "Desktop": [
         "Υπολογιστής"
       ],
+      "Devices": [
+        "Συσκευές"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε εν μέρει. Αυτό το αρχείο δημιουργήθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε εν μέρει. Αυτός ο φάκελος μεταφορτώθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε εν μέρει. Αυτός ο φάκελος δημιουργήθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε εν μέρει. Αυτός ο φάκελος μεταφορτώθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο δημιουργήθηκε διασφαλισμένα από <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο μεταφορτώθηκε διασφαλισμένα από <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος δημιουργήθηκε διασφαλισμένα από <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Η ψηφιακή υπογραφή επαληθεύτηκε. Αυτός ο φάκελος μεταφορτώθηκε διασφαλισμένα από <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Απόρριψη"
       ],
@@ -11437,6 +11458,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
+      ],
+      "Download details": [
+        "Λήψη λεπτομερειών"
       ],
       "Download the app": [
         "Λήψη της εφαρμογής"
@@ -11516,6 +11540,9 @@
       "File recovery process": [
         "Διαδικασία ανάκτησης αρχείων"
       ],
+      "Folder": [
+        "Φάκελος"
+      ],
       "Folder details": [
         "Λεπτομέρειες φακέλου"
       ],
@@ -11584,6 +11611,9 @@
       "Last edited by": [
         "Τελευταία επεξεργασία από τον χρήστη"
       ],
+      "Last uploaded by": [
+        "Τελευταία μεταφόρτωση από"
+      ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
       ],
@@ -11595,6 +11625,9 @@
       ],
       "Manage secure link": [
         "Διαχείριση ασφαλούς συνδέσμου"
+      ],
+      "Media type": [
+        "Τύπος μέσου"
       ],
       "Merge contacts": [
         "Συγχώνευση Επαφών"
@@ -11628,9 +11661,6 @@
       ],
       "Network error": [
         "Σφάλμα δικτύου"
-      ],
-      "Newsletters view": [
-        "Προβολή ενημερωτικών δελτίων"
       ],
       "Night theme": [
         "Σκούρο θέμα"
@@ -11697,6 +11727,9 @@
       ],
       "Original size": [
         "Αρχικό μέγεθος"
+      ],
+      "Original size in bytes": [
+        "Αρχικό μέγεθος σε bytes"
       ],
       "Other information": [
         "Άλλες πληροφορίες"
@@ -11825,6 +11858,9 @@
       "Settings": [
         "Ρυθμίσεις"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "Κοινοποίηση ${ name }"
       ],
@@ -11854,6 +11890,9 @@
       ],
       "Size": [
         "Μέγεθος"
+      ],
+      "Size in bytes": [
+        "Μέγεθος σε bytes"
       ],
       "Sort files/folders": [
         "Ταξινόμηση αρχείων/φάκελων"
@@ -11885,6 +11924,15 @@
       "The link expired": [
         "Ο σύνδεσμος έληξε"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Η επαλήθευση της υπογραφής των κλειδιών κρυπτογράφησης από τον αρχικό δημιουργό (${ claimedKeyAuthor }) ο οποίος δημιούργησε τον κόμβο, απέτυχε. Ο λόγος είναι: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Η επαλήθευση της υπογραφής περιεχομένου αυτού του αρχείου από τον χρήστη (${ claimedContentAuthor }) που μεταφόρτωσε την τελευταία έκδοση, απέτυχε. Ο λόγος είναι: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Η επαλήθευση της υπογραφής του ονόματος από τον συντάκτη (${ claimedNameAuthor }) που όρισε το όνομα την τελευταία φορά απέτυχε. Ο λόγος είναι: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Αυτό το αρχείο έχει απούσα ή μη έγκυρη υπογραφή. Για πληροφορίες, μεταβείτε στο Μενού (⋮) → Λεπτομέρειες."
       ],
@@ -11905,6 +11953,12 @@
       ],
       "Type": [
         "Τύπος"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Άγνωστος χρήστης"
       ],
       "Untitled document ${ date }": [
         "Έγγραφο χωρίς τίτλο ${ date }"
@@ -11953,6 +12007,30 @@
       ],
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης <strong>${ emailAddress }</strong> δημιούργησε αυτό το αρχείο."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης <strong>${ emailAddress }</strong> δημιούργησε αυτόν τον φάκελο."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης <strong>${ emailAddress }</strong> μεταφόρτωσε αυτό το αρχείο."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης <strong>${ emailAddress }</strong> μεταφόρτωσε αυτόν τον φάκελο."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι κάποιος ανώνυμος χρήστης δημιούργησε αυτό το αρχείο."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι κάποιος ανώνυμος χρήστης δημιούργησε αυτόν τον φάκελο."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι κάποιος ανώνυμος χρήστης μεταφόρτωσε αυτό το αρχείο."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε ότι κάποιος ανώνυμος χρήστης μεταφόρτωσε αυτόν τον φάκελο."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"

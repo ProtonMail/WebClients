@@ -447,6 +447,9 @@
       "Download all attachments": [
         "Unduh seluruh lampiran"
       ],
+      "Download application logs": [
+        "Unduh log aplikasi"
+      ],
       "Download logs": [
         "Unduh log"
       ],
@@ -1419,9 +1422,6 @@
       "Trust": [
         "Percayai"
       ],
-      "Trust key": [
-        "Percayai kunci"
-      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -1659,6 +1659,9 @@
       ],
       "${ price } per user": [
         "${ price } per pengguna"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } kuota ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } kuota asisten penulisan"
@@ -2115,6 +2118,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Masalah ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Masalah aplikasi"
       ],
@@ -4604,8 +4610,14 @@
       "Please activate your search again": [
         "Silakan aktifkan pencarian Anda kembali"
       ],
+      "Please enter a valid postal code": [
+        "Silakan masukkan kode pos yang valid"
+      ],
       "Please enter a valid ZIP code": [
         "Silakan masukkan kode pos yang valid"
+      ],
+      "Please enter postal code": [
+        "Silakan masukkan kode pos"
       ],
       "Please enter ZIP code": [
         "Silakan masukkan kode pos"
@@ -4627,6 +4639,9 @@
       ],
       "Please select billing country": [
         "Silakan pilih negara penagihan"
+      ],
+      "Please select billing state": [
+        "Silakan pilih negara bagian penagihan"
       ],
       "Please try again or refresh the page.": [
         "Silakan coba lagi atau muat ulang halaman ini."
@@ -6187,6 +6202,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } juga dapat digunakan untuk melindungi bisnis Anda."
       ],
@@ -6732,6 +6750,12 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Menurunkan akun akan memutus seluruh koneksi ke server ${ VPN_APP_NAME } berbayar."
+      ],
+      "Download application logs for troubleshooting": [
+        "Unduh log aplikasi untuk penyelesaian masalah"
+      ],
+      "Download current logs": [
+        "Unduh log saat ini"
       ],
       "Download on the App Store": [
         "Unduh di App Store"
@@ -8969,6 +8993,9 @@
       "Folder location": [
         "Lokasi folder"
       ],
+      "Forums": [
+        "Forum"
+      ],
       "Forwards to": [
         "Teruskan ke"
       ],
@@ -9010,6 +9037,9 @@
       ],
       "Import to:": [
         "Impor ke:"
+      ],
+      "Include application logs in bug report": [
+        "Sertakan log aplikasi dalam laporan bug"
       ],
       "Integrated 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
@@ -9187,6 +9217,9 @@
       ],
       "Primary": [
         "Utama"
+      ],
+      "Promotions": [
+        "Penawaran"
       ],
       "Proration": [
         "Prorasi"
@@ -10639,6 +10672,9 @@
       "Downgrade account?": [
         "Turunkan jenis akun?"
       ],
+      "Review subscription": [
+        "Tinjau langganan"
+      ],
       "Review subscription and pay": [
         "Peninjauan dan pembayaran langganan"
       ],
@@ -11553,6 +11589,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Setelahnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } setiap ${ renewalLength } bulan. Anda dapat membatalkan langganan Anda kapan saja."
       ],
+      "This number will be shown on all future invoices": [
+        "Nomor ini akan ditampilkan pada seluruh faktur yang akan datang"
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Metode pembayaran ini akan menjadi metode bawaan baru Anda untuk segala perpanjangan yang dilakukan ke depannya."
       ],
@@ -11616,6 +11655,9 @@
       ],
       "EIN": [
         "NPWP"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ]
     },
     "PGP key encryption warning": {
@@ -11723,6 +11765,9 @@
       ],
       "Please share what you expected": [
         "Silakan bagikan hal seperti apa yang Anda harapkan"
+      ],
+      "Postal code": [
+        "Kode pos"
       ],
       "Search date, name, email address, or subject line": [
         "Cari tanggal, nama, alamat email, atau baris subjek"

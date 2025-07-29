@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "Vidarebefordra som bilaga"
       ],
+      "Full data": [
+        "Fullständig data"
+      ],
       "Generate password": [
         "Generera lösenord"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "Nästa sida"
+      ],
+      "No sensitive data": [
+        "Ingen känslig data"
       ],
       "Not now": [
         "Inte nu"
@@ -1560,6 +1566,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
+      ],
       "Application problem": [
         "Problem med applikation"
       ],
@@ -3237,11 +3246,11 @@
       "Failed to fetch sharing info": [
         "Misslyckades att hämta delningsinformation"
       ],
+      "Failed to get details, please try again later": [
+        "Misslyckades att hämta detaljer, försök igen senare"
+      ],
       "Failed to load the STL preview": [
         "Misslyckades att ladda STL-förhandsgranskningen"
-      ],
-      "Failed to move items": [
-        "Misslyckades att flytta objekt"
       ],
       "Failed to resend invitation": [
         "Misslyckades att skicka inbjudan igen"
@@ -3586,6 +3595,9 @@
       ],
       "Unknown error": [
         "Okänt fel"
+      ],
+      "Unknown location": [
+        "Okänd plats"
       ],
       "Unknown payment token status": [
         "Okänd status för betalningstoken"
@@ -4839,9 +4851,6 @@
       "Aug": [
         "Aug"
       ],
-      "Automated Recovery ${ formattedDate }": [
-        "Automatiserad återställning ${ formattedDate }"
-      ],
       "Available": [
         "Tillgänglig"
       ],
@@ -5030,6 +5039,9 @@
       ],
       "Download ${ name } app": [
         "Ladda ner ${ name }-appen"
+      ],
+      "Download current logs": [
+        "Ladda ner nuvarande loggar"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Nedladdning av ${ downloadFileName } kommer att avbrytas"
@@ -6222,6 +6234,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "När du ansluter till VPN används krypteringsteknik för att dölja din IP-adress (en unik kod som tilldelas din enhet)."
       ],
+      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
+        "När du tar bort ${ deviceName } som en synkroniserad enhet kommer alla mappar som lagts till i \"Mina datorer\" från denna enhet att tas bort permanent från ${ DRIVE_APP_NAME }."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
       ],
@@ -6857,6 +6872,9 @@
       "Import to:": [
         "Importera till:"
       ],
+      "Include application logs in bug report": [
+        "Inkludera applikationsloggar i felrapport"
+      ],
       "Include message and file name in invite email": [
         "Inkludera meddelande och filnamn i e-postinbjudan"
       ],
@@ -7241,17 +7259,8 @@
       "Albums": [
         "Album"
       ],
-      "All mail": [
-        "All e-post"
-      ],
-      "Archive": [
-        "Arkiv"
-      ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
-      ],
-      "Drafts": [
-        "Utkast"
       ],
       "Enforcing 2FA for organizations": [
         "Kräver 2FA för organisationer"
@@ -7304,9 +7313,6 @@
       "if your data is leaked": [
         "om dina uppgifter läcker ut"
       ],
-      "Inbox": [
-        "Inkorg"
-      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -7322,12 +7328,6 @@
       "Request an invite": [
         "Begär en inbjudan"
       ],
-      "Scheduled": [
-        "Schemalagd"
-      ],
-      "Sent": [
-        "Skickat"
-      ],
       "settings": [
         "inställningar"
       ],
@@ -7336,15 +7336,6 @@
       ],
       "Shared with me": [
         "Delat med mig"
-      ],
-      "Snooze": [
-        "Snooza"
-      ],
-      "Spam": [
-        "Skräppost"
-      ],
-      "Starred": [
-        "Stjärnmärkt"
       ],
       "Trash": [
         "Papperskorg"
@@ -8830,9 +8821,6 @@
       "An invitation has been sent": [
         "En inbjudan har skickats"
       ],
-      "Cannot load file or folder info": [
-        "Kan inte ladda in information om fil eller mapp"
-      ],
       "Cannot load link": [
         "Kan inte ladda länk"
       ],
@@ -8859,6 +8847,9 @@
       ],
       "Encrypted search activated": [
         "Krypterad sökning aktiverad"
+      ],
+      "Error while listing devices": [
+        "Fel vid listning av enheter"
       ],
       "External invitation removed from the share": [
         "Extern inbjudan borttagen från delningen"
@@ -11268,6 +11259,9 @@
       "Addresses": [
         "Adresser"
       ],
+      "Advanced details": [
+        "Avancerade detaljer"
+      ],
       "Album": [
         "Album"
       ],
@@ -11285,6 +11279,12 @@
       ],
       "Amount due": [
         "Att betala"
+      ],
+      "an anonymous user": [
+        "en anonym användare"
+      ],
+      "Anonymous user": [
+        "Anonym användare"
       ],
       "Apply gift code": [
         "Tillämpa presentkod"
@@ -11392,6 +11392,9 @@
       "Create new group": [
         "Skapa ny grupp"
       ],
+      "Created by": [
+        "Skapad av"
+      ],
       "Credits": [
         "Krediter"
       ],
@@ -11449,6 +11452,33 @@
       "Desktop": [
         "Stationär dator"
       ],
+      "Devices": [
+        "Enheter"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digital signatur delvis verifierad. Denna fil skapades med en offentligt åtkomlig delningslänk av en användare utan ett ${ BRAND_NAME }-konto, så deras identitet kan inte verifieras."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digital signatur delvis verifierad. Denna fil laddades upp med en offentligt åtkomlig delningslänk av en användare utan ett ${ BRAND_NAME }-konto, så deras identitet kan inte verifieras."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digital signatur delvis verifierad. Denna mapp skapades med en offentligt åtkomlig delningslänk av en användare utan ett ${ BRAND_NAME }-konto, så deras identitet kan inte verifieras."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digital signatur delvis verifierad. Denna mapp laddades upp med en offentligt åtkomlig delningslänk av en användare utan ett ${ BRAND_NAME }-konto, så deras identitet kan inte verifieras."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Digital signatur verifierad. Denna fil skapades säkert av <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Digital signatur verifierad. Denna fil laddades säkert upp av <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Digital signatur verifierad. Denna mapp skapades säkert av <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Digital signatur verifierad. Denna mapp laddades upp säkert av <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Förkasta"
       ],
@@ -11466,6 +11496,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appar"
+      ],
+      "Download details": [
+        "Ladda ner detaljer"
       ],
       "Download the app": [
         "Ladda ner appen"
@@ -11545,6 +11578,9 @@
       "File recovery process": [
         "Filåterställningsprocess"
       ],
+      "Folder": [
+        "Mapp"
+      ],
       "Folder details": [
         "Mappdetaljer"
       ],
@@ -11613,6 +11649,9 @@
       "Last edited by": [
         "Senast redigerad av"
       ],
+      "Last uploaded by": [
+        "Senast uppladdad av"
+      ],
       "Link confirmation": [
         "Länkbekräftelse"
       ],
@@ -11624,6 +11663,9 @@
       ],
       "Manage secure link": [
         "Hantera säker länk"
+      ],
+      "Media type": [
+        "Mediatyp"
       ],
       "Merge contacts": [
         "Slå ihop kontakter"
@@ -11657,9 +11699,6 @@
       ],
       "Network error": [
         "Nätverksfel"
-      ],
-      "Newsletters view": [
-        "Nyhetsbrevsvy"
       ],
       "Night theme": [
         "Nattema"
@@ -11726,6 +11765,9 @@
       ],
       "Original size": [
         "Originalstorlek"
+      ],
+      "Original size in bytes": [
+        "Ursprunglig storlek i byte"
       ],
       "Other information": [
         "Övrig information"
@@ -11854,6 +11896,9 @@
       "Settings": [
         "Inställningar"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "Dela ${ name }"
       ],
@@ -11883,6 +11928,9 @@
       ],
       "Size": [
         "Storlek"
+      ],
+      "Size in bytes": [
+        "Storlek i byte"
       ],
       "Sort files/folders": [
         "Sortera filer/mappar"
@@ -11935,6 +11983,12 @@
       "Type": [
         "Typ"
       ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Okänd användare"
+      ],
       "Untitled document ${ date }": [
         "Dokument utan rubrik ${ date }"
       ],
@@ -11982,6 +12036,30 @@
       ],
       "Warning: suspected fake website": [
         "Varning: misstänkt falsk webbplats"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Vi kunde inte verifiera att <strong>${ emailAddress }</strong> skapade denna fil."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Vi kunde inte verifiera att <strong>${ emailAddress }</strong> skapade denna mapp."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Vi kunde inte verifiera att <strong>${ emailAddress }</strong> laddade upp denna fil."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Vi kunde inte verifiera att <strong>${ emailAddress }</strong> laddade upp denna mapp."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Vi kunde inte verifiera att en anonym användare skapade denna fil."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Vi kunde inte verifiera att en anonym användare skapade denna mapp."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Vi kunde inte verifiera att en anonym användare laddade upp denna fil."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Vi kunde inte verifiera att en anonym användare laddade upp denna mapp."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
