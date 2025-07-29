@@ -58,7 +58,7 @@
         "Дадаць адрас"
       ],
       "Add another account": [
-        "Дадайце іншы ўліковы запіс"
+        "Дадаць іншы ўліковы запіс"
       ],
       "Add Bcc recipients": [
         "Дадаць атрымальнікаў схаванай копіі"
@@ -544,7 +544,7 @@
         "Тэрмін дзеяння"
       ],
       "Explore ${ VPN_APP_NAME }": [
-        "Даследуйце ${ VPN_APP_NAME }"
+        "Даследаваць ${ VPN_APP_NAME }"
       ],
       "Export": [
         "Экспартаваць"
@@ -1255,7 +1255,7 @@
         "Задаць у якасці вокладкі альбома"
       ],
       "Set as default": [
-        "Зрабіць прадвызначанай"
+        "Задаць як прадвызначаны"
       ],
       "Set encryption": [
         "Задаць шыфраванне"
@@ -1433,12 +1433,6 @@
       ],
       "Trust": [
         "Давяраць"
-      ],
-      "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -6485,7 +6479,7 @@
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага маніторынгу падазронай актыўнасці."
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага назірання падазронай актыўнасці."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
@@ -6644,7 +6638,7 @@
         "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPN шыфруе ваша падключэнне і хавае ваш IP-адрас. Гэта вельмі ўскладняе адсочванне або маніторынг прагляду вэб-старонак для любых зацікаўленых структур."
+        "VPN шыфруе ваша падключэнне і хавае ваш IP-адрас. Гэта вельмі ўскладняе адсочванне або назеранне прагляду вэб-старонак для любых зацікаўленых структур."
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
         "VPN хавае ваш IP-адрас і шыфруе вашу актыўнасць у браўзеры. Гэта вельмі ўскладняе ўскладняе вэб-сайтам, рэкламадаўцам і пастаўшчыкам паслуг інтэрнэту адсочваць вас з цягам часу."
@@ -8987,7 +8981,7 @@
         "Адхіліць чарнавік"
       ],
       "Expand / contract composer": [
-        "Разгарнуць / сціснуць рэдактар"
+        "Разгарнуць або сціснуць рэдактар"
       ],
       "Filter": [
         "Фільтр"
@@ -11131,7 +11125,7 @@
         "Палепшаная бяспека і прэміяльныя функцыі для каманд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "Неабходная абарона і бяспечная супрацоўніцтва для неабмежаванай колькасці карыстальнікаў."
+        "Неабходная абарона і бяспечнае супрацоўніцтва для неабмежаванай колькасці карыстальнікаў."
       ],
       "For next-level password management and identity protection.": [
         "Для больш высокага ўзроўню кіравання паролямі і абароны ідэнтычнасці."
@@ -12017,7 +12011,7 @@
         "Аплачваецца штогод у памеры ${ yearlyPrice }. Эканомія складае ${ yearlySavedPrice } з тарыфным планам ${ passFamilyPlanName } (у параўнанні з 6 асобнымі падпіскамі тарыфнага плана ${ passPlusPlanName })"
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
-        "Эксклюзіўная прапанова даступная толькі для першых прыхільнікаў ${ PASS_APP_NAME }"
+        "Эксклюзіўная прапанова даступна толькі для ранніх прыхільнікаў ${ PASS_APP_NAME }"
       ],
       "Get it for ${ monthlyPrice }": [
         "Атрымайце яго за ${ monthlyPrice }"
@@ -14000,6 +13994,12 @@
         "${ elementsCount } размоў выдалены з ${ labelName }.",
         "${ elementsCount } размоў выдалены з ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "З пазначаных зорачкай выдалена ${ elementsCount } размова.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } размовы.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } размоў.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } размова."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } размова адкладзена",
         "${ elementsCount } размовы адкладзены",
@@ -14059,6 +14059,12 @@
         "${ elementsCount } паведамленні выдалены з ${ labelName }.",
         "${ elementsCount } паведамленняў выдалены з ${ labelName }.",
         "${ elementsCount } паведамленняў выдалены з ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "З пазначаных зорачкай выдалена ${ elementsCount } паведамленне.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } паведамленні.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } паведамленняў.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } паведамленняў."
       ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
@@ -14125,6 +14131,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Размова выдалена з ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "З пазначаных зорачкай выдалена размова."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Размовы ад ${ sendersList } будуць пазначаны як ${ labelsList }"
@@ -14197,6 +14206,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Паведамленне выдалена з ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "З пазначаных зорачкай выдалена паведамленне."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Паведамленні ад ${ sendersList } будуць пазначаны як ${ labelsList }"
@@ -15873,10 +15885,10 @@
         "Кожныя ${ interval } тыдні ў панядзелак"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у панядзелак; час: ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак; час: ${ timesString }",
-        "Кожных ${ interval } тыдняў у панядзелак; час: ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак; час: ${ timesString }"
+        "Кожны ${ interval } тыдзень у панядзелак, ${ timesString }",
+        "Кожны ${ interval } тыдні ў панядзелак, ${ timesString }",
+        "Кожных ${ interval } тыдняў у панядзелак, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Кожны ${ interval } тыдзень у суботу",
@@ -15891,10 +15903,10 @@
         "Кожныя ${ interval } тыдні ў нядзелю"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у нядзелю ў ${ timesString }",
-        "Кожныя ${ interval } тыдні ў нядзелю ў ${ timesString }",
-        "Кожных ${ interval } тыдняў у нядзелю ў ${ timesString }",
-        "Кожных ${ interval } тыдняў у нядзелю ў ${ timesString }"
+        "Кожны ${ interval } тыдзень у нядзелю, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў нядзелю, ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю, ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday": [
         "Кожны ${ interval } тыдзень у чацвер",
@@ -15909,10 +15921,10 @@
         "Кожныя ${ interval } тыдні ў аўторак"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Кожны ${ interval } тыдзень у аўторак; час: ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак; час: ${ timesString }",
-        "Кожных ${ interval } тыдняў у аўторак; час: ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак; час: ${ timesString }"
+        "Кожны ${ interval } тыдзень у аўторак, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак, ${ timesString }",
+        "Кожных ${ interval } тыдняў у аўторак, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Кожны ${ interval } тыдзень у сераду",
