@@ -13,7 +13,6 @@ type AppContext = 'dropdown' | 'app';
 export interface GetAvailableAppsByUserTypeArguments {
     user?: User;
     context: AppContext;
-    isLumoAvailable: boolean;
     isDocsHomepageAvailable: boolean;
     oauth?: boolean;
 }
@@ -86,9 +85,7 @@ export const getAvailableApps = (
     options: GetAvailableAppsByUserTypeArguments & GetOrganizationAllowedProductsArguments
 ) => {
     const removeApps: AppSet = new Set();
-    if (!options.isLumoAvailable) {
-        removeApps.add(APPS.PROTONLUMO);
-    }
+
     if (options.context === 'dropdown' && !options.isDocsHomepageAvailable) {
         removeApps.add(APPS.PROTONDOCS);
     }

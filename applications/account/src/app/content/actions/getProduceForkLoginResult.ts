@@ -42,9 +42,6 @@ const getIsAppAvailable = (app: APP_NAMES, session: AuthSession) => {
         getAvailableApps({
             user: session.data.User,
             context: 'app',
-            // The *lumo available* and *docs homepage* feature flag can always be true because we don't limit
-            // access to them from the Account FE when forking a session
-            isLumoAvailable: true,
             isDocsHomepageAvailable: true,
         }).some((availableApp) => product === getProduct(availableApp))
     );

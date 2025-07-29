@@ -11,7 +11,6 @@ import {
 } from '@proton/components/containers/account/constants/email-subscriptions';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import type { NewsletterSubscriptionUpdateData } from '@proton/shared/lib/helpers/newsletter';
-import useFlag from '@proton/unleash/useFlag';
 
 import PublicFooter from './PublicFooter';
 import PublicLayout from './PublicLayout';
@@ -23,8 +22,6 @@ interface EmailSubscriptionManagementProps {
 
 const EmailSubscriptionManagement = ({ News, onChange }: EmailSubscriptionManagementProps) => {
     const [loadingMap, setLoadingMap] = useState<{ [key: string]: boolean }>({});
-
-    const lumoInProductNewsletters = useFlag('LumoInProductNewsletters');
 
     const setLoadingMapDiff = (data: NewsletterSubscriptionUpdateData, value: boolean) => {
         setLoadingMap((oldValue) => ({
@@ -49,7 +46,7 @@ const EmailSubscriptionManagement = ({ News, onChange }: EmailSubscriptionManage
             userSettings: undefined,
         });
 
-    const { general, product } = getEmailSubscriptions(filter, lumoInProductNewsletters);
+    const { general, product } = getEmailSubscriptions(filter);
 
     return (
         <PublicLayout
