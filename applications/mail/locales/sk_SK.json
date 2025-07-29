@@ -456,6 +456,9 @@
       "Download all attachments": [
         "Stiahnuť všetky prílohy"
       ],
+      "Download application logs": [
+        "Stiahnuť záznamy aplikácie"
+      ],
       "Download logs": [
         "Záznamy sťahovania"
       ],
@@ -1431,12 +1434,6 @@
       "Trust": [
         "Dôverovať"
       ],
-      "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodný kľúč",
-        "Dôverovať kľúčom",
-        "Dôverovať novým kľúčom"
-      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -1683,6 +1680,12 @@
       ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
@@ -2154,6 +2157,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problém"
+      ],
       "Application problem": [
         "Problém aplikácie"
       ],
@@ -6415,6 +6421,9 @@
         "${ groupCounts } nájdených skupín",
         "${ groupCounts } nájdených skupín"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } môže chrániť aj vašu spoločnosť."
       ],
@@ -7062,6 +7071,12 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Prechod na nižšiu verziu ukončí všetky pripojenia k plateným serverom ${ VPN_APP_NAME }."
+      ],
+      "Download application logs for troubleshooting": [
+        "Stiahnuť záznamy aplikácie pre riešenie problémov"
+      ],
+      "Download current logs": [
+        "Stiahnuť aktuálne záznamy"
       ],
       "Download on the App Store": [
         "Stiahnuť z App Store"
@@ -9454,6 +9469,9 @@
       ],
       "Import to:": [
         "Importovať do:"
+      ],
+      "Include application logs in bug report": [
+        "Vrátane záznamov aplikácie v chybovom hlásení"
       ],
       "Integrated 2FA authenticator": [
         "Integrovaný 2FA autentifikátor"
