@@ -20,6 +20,7 @@ import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreate
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
+import { useInitialValues } from '@proton/pass/hooks/items/useInitialValues';
 import { useAliasForLogin } from '@proton/pass/hooks/useAliasForLogin';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
@@ -50,7 +51,8 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
     const searchParams = useMemo(() => new URLSearchParams(history.location.search), []);
     const showUsernameField = useSelector(selectShowUsernameField);
 
-    const initialValues: LoginItemFormValues = useMemo(() => {
+    const initialValues = useInitialValues<LoginItemFormValues>((options) => {
+        const clone = options?.clone.type === 'login' ? options.clone : null;
         const domain = currentUrl ? resolveDomain(currentUrl) : '';
         const domainWithPort = currentUrl ? (intoDomainWithPort({ ...currentUrl, domain }) ?? '') : '';
         const { url, valid } = sanitizeURL(domainWithPort);
@@ -58,23 +60,23 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
         return {
             aliasPrefix: '',
             aliasSuffix: undefined,
-            extraFields: [],
+            extraFields: clone?.extraFields ?? [],
             files: filesFormInitializer(),
-            itemEmail: searchParams.get('email') ?? '',
-            itemUsername: '',
+            itemEmail: clone?.content.itemEmail ?? searchParams.get('email') ?? '',
+            itemUsername: clone?.content.itemUsername ?? '',
             mailboxes: [],
-            name: domain ?? '',
-            note: '',
+            name: clone?.metadata.name ?? domain ?? '',
+            note: clone?.metadata.note ?? '',
             passkeys: [],
-            password: '',
-            shareId,
-            totpUri: '',
-            url: valid ? createNewUrl(url).url : '',
-            urls: [],
+            password: clone?.content.password ?? '',
+            shareId: options?.shareId ?? shareId,
+            totpUri: clone?.content.totpUri ?? '',
+            url: !clone && valid ? createNewUrl(url).url : '',
+            urls: clone?.content.urls.map(createNewUrl) ?? [],
             withAlias: false,
-            withUsername: showUsernameField,
+            withUsername: Boolean(clone?.content.itemUsername) || showUsernameField,
         };
-    }, []);
+    });
 
     const form = useFormik<LoginItemFormValues>({
         initialValues,

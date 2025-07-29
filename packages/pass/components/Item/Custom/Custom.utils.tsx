@@ -2,7 +2,14 @@ import { c } from 'ttag';
 
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
-import type { DeobfuscatedItem, ItemCreateIntent, ItemCustomType, ItemEditIntent, ShareId } from '@proton/pass/types';
+import type {
+    DeobfuscatedItem,
+    ItemCreateIntent,
+    ItemCustomType,
+    ItemEditIntent,
+    MaybeNull,
+    ShareId,
+} from '@proton/pass/types';
 import { type CustomItemFormValues } from '@proton/pass/types';
 import { WifiSecurity } from '@proton/pass/types/protobuf/item-v1.static';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -10,16 +17,25 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { type CustomTemplate, customTemplateToFormFields } from './Custom.templates';
 
-export const getNewCustomInitialValues = <T extends ItemCustomType>(
-    type: ItemCustomType,
-    shareId: ShareId
-): CustomItemFormValues<T> => {
+type GetNewCustomItemValuesOptions = {
+    clone?: MaybeNull<DeobfuscatedItem<ItemCustomType>>;
+    shareId: ShareId;
+    template?: CustomTemplate;
+    type: ItemCustomType;
+};
+
+export const getNewCustomInitialValues = <T extends ItemCustomType>({
+    clone,
+    shareId,
+    template,
+    type,
+}: GetNewCustomItemValuesOptions): CustomItemFormValues<T> => {
     const base = {
-        name: '',
-        note: '',
+        name: clone?.metadata.name ?? '',
+        note: clone?.metadata.note ?? '',
         shareId,
-        sections: [],
-        extraFields: [],
+        sections: clone?.content.sections || [],
+        extraFields: template ? customTemplateToFormFields(template) : (clone?.extraFields ?? []),
         files: filesFormInitializer(),
     };
 
@@ -28,9 +44,22 @@ export const getNewCustomInitialValues = <T extends ItemCustomType>(
             case 'custom':
                 return { ...base, type };
             case 'sshKey':
-                return { ...base, type, privateKey: '', publicKey: '' };
+                const sshKeyClone = clone?.type === 'sshKey' ? clone : null;
+                return {
+                    ...base,
+                    type,
+                    privateKey: sshKeyClone?.content.privateKey ?? '',
+                    publicKey: sshKeyClone?.content.publicKey ?? '',
+                };
             case 'wifi':
-                return { ...base, type, password: '', security: WifiSecurity.UnspecifiedWifiSecurity, ssid: '' };
+                const wifiClone = clone?.type === 'wifi' ? clone : null;
+                return {
+                    ...base,
+                    type,
+                    password: wifiClone?.content.password ?? '',
+                    security: wifiClone?.content.security ?? WifiSecurity.UnspecifiedWifiSecurity,
+                    ssid: wifiClone?.content.ssid ?? '',
+                };
         }
     })();
 
@@ -134,33 +163,6 @@ export const getCreateIntent = <T extends ItemCustomType>(values: CustomItemForm
     })();
 
     return create as ItemCreateIntent<T>;
-};
-
-export const extraTypeFieldValues = (template: CustomTemplate, values: CustomItemFormValues): CustomItemFormValues => {
-    const base = { ...values, extraFields: customTemplateToFormFields(template) };
-    const { type } = template;
-
-    switch (type) {
-        case 'custom':
-            return { ...base, type } satisfies CustomItemFormValues<'custom'>;
-
-        case 'wifi':
-            return {
-                ...base,
-                type,
-                ssid: '',
-                password: '',
-                security: WifiSecurity.UnspecifiedWifiSecurity,
-            } satisfies CustomItemFormValues<'wifi'>;
-
-        case 'sshKey':
-            return {
-                ...base,
-                type,
-                publicKey: '',
-                privateKey: '',
-            } satisfies CustomItemFormValues<'sshKey'>;
-    }
 };
 
 export const wifiSecurityLabel: Record<WifiSecurity, () => string> = {
