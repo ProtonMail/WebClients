@@ -81,7 +81,6 @@ const getAllowedProducts = (products: OrganizationSettingsAllowedProduct[]) => {
 const defaultOptions: Parameters<typeof getAvailableApps>[0] = {
     user: getProtonUser(),
     isDocsHomepageAvailable: true,
-    isLumoAvailable: true,
     context: 'app',
 };
 
@@ -124,24 +123,6 @@ describe('available apps', () => {
                     isDocsHomepageAvailable: false,
                 }),
                 new Set(allApps).difference(new Set([APPS.PROTONDOCS]))
-            );
-        });
-
-        it('should filter apps for proton users with lumo disabled', () => {
-            assertEquals(
-                getAvailableApps({
-                    ...defaultOptions,
-                    context: 'dropdown',
-                    isLumoAvailable: false,
-                }),
-                new Set(allApps).difference(new Set([APPS.PROTONLUMO]))
-            );
-            assertEquals(
-                getAvailableApps({
-                    ...defaultOptions,
-                    isLumoAvailable: false,
-                }),
-                new Set(allApps).difference(new Set([APPS.PROTONLUMO]))
             );
         });
 
