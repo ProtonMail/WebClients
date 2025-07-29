@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
+      "Cancel trial and pay": [
+        "გამოსაცდელი პერიოდის გაუქმება და გადახდა"
+      ],
       "Change": [
         "შეცვლა"
       ],
@@ -876,6 +879,9 @@
       "Upgrade to Business": [
         "Business-მდე აწევა"
       ],
+      "Upgrade to Professional": [
+        "აწევა Professional-ზე"
+      ],
       "Upgrade your plan": [
         "გააუმჯობესეთ თქვენი ტარიფი"
       ],
@@ -983,6 +989,10 @@
       ],
       "${ price } per user": [
         "${ price }/მომხმარებელი"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } წერის დამხმარის ლიცენზია",
@@ -1533,6 +1543,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME }-ის პრობლემა"
+      ],
       "Application problem": [
         "აპლიკაციის პრობლემა"
       ],
@@ -3271,6 +3284,18 @@
       "Please enter a valid Entity ID URL": [
         "შეიყვანეთ სწორი ობიექტის ID-ის ბმული"
       ],
+      "Please enter a valid postal code": [
+        "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
+      ],
+      "Please enter a valid ZIP code": [
+        "შეიყვანეთ სწორი ZIP კოდი"
+      ],
+      "Please enter postal code": [
+        "შეყვანეთ საფოსტო კოდი"
+      ],
+      "Please enter ZIP code": [
+        "შეიყვანეთ ZIP კოდი"
+      ],
       "Please generate keys before you try to change your password": [
         "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ],
@@ -3285,6 +3310,12 @@
       ],
       "Please select at least one user or group before continuing.": [
         "გაგრძელებამდე, სულ ცოტა, ერთი მომხმარებელი, ან ჯგუფი უნდა აირჩიოთ."
+      ],
+      "Please select billing country": [
+        "აირჩიეთ გადახდის ქვეყანა"
+      ],
+      "Please select billing state": [
+        "აირჩიეთ გადახდის მდგომარეობა"
       ],
       "Please set a recovery email first": [
         "ჯერ დააყენეთ აღდგენის ელფოსტა"
@@ -3309,6 +3340,9 @@
       ],
       "Please upload only 1 file": [
         "ატვირთეთ, მხოლოდ, ერთი ფაილი"
+      ],
+      "Postal code is required": [
+        "საფოსტო კოდი აუცილებელია"
       ],
       "Process aborted": [
         "პროცესი გაჩერდა"
@@ -4209,6 +4243,9 @@
       ]
     },
     "Info": {
+      " and other security features.": [
+        " და სხვა უსაფრთხოების ფუნქციები."
+      ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
         "ამჟამად ${ amountUsers }/${ totalUsers } მომხმარებელს აქვს წვდომა გაზიარებულ სერვერებთნ.",
         "ამჟამად ${ amountUsers }/${ totalUsers } მომხმარებელს აქვს წვდომა გაზიარებულ სერვერებთნ."
@@ -4737,6 +4774,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "გეგმის ჩამოწევა შეწყვეტს შეერთებას ფასიან ${ VPN_APP_NAME } სერვერებთან."
+      ],
+      "Download current logs": [
+        "მიმდინარე ჟურნალის გადმოწერა"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "მითითებული მომხმარებლების შესაქმნელად გადმოწერეთ ჩვენი CSV შაბლონი, შეავსეთ მომხმარებლის დეტალები და ატვირთეთ შევსებული CSV ფაილი."
@@ -5383,6 +5423,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "ფასი შეიცავს ყველა შესაბამის ციკლზე-ბაზირებულ ფასდაკლებებს და ვადაგაუსვლელ კუპონებს, რომლებიც თქვენს ანგარიშზე გაქვთ შენახული."
+      ],
+      "Private AI assistant": [
+        "პირადი ხი დამხმარე"
       ],
       "Protected by Swiss privacy laws": [
         "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
@@ -6628,6 +6671,9 @@
       ],
       "Import all messages": [
         "ყველა შეტყობინების შემოტანა"
+      ],
+      "Include application logs in bug report": [
+        "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
       ],
       "Integrated 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
@@ -8116,6 +8162,9 @@
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
       ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
+      ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
       ],
@@ -9090,6 +9139,9 @@
       "Got it": [
         "გავიგე"
       ],
+      "I'm purchasing as a business": [
+        "ვაპირებ შევიძინო ბიზნესისთვის"
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -9379,6 +9431,14 @@
         "მოგწონთ${ planName }?"
       ]
     },
+    "plus_block": {
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle }-ზე დარჩენა"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
+      ]
+    },
     "Price": {
       "Free": [
         "Free"
@@ -9491,6 +9551,9 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Create retention rule": [
+        "შენარჩუნების წესის შექმნა"
+      ],
       "Delete": [
         "წაშლა"
       ],
@@ -9502,11 +9565,21 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "კიდევ ${ remainingCount }"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } დღე",
+        "${ rule.Lifetime } დღე"
+      ],
       "Forever": [
         "სამუდამოდ"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "Search for rule, users, period, action": [
+        "წესების, მომხმარებლების, პერიოდის, ან ქმედების ძებნა"
+      ],
       "Search policies": [
         "პოლიტიკების ძებნა"
       ]
@@ -9523,6 +9596,11 @@
       ],
       "Retention Rule": [
         "შენარჩუნების წესი"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "შენარჩუნების პოლიტიკები აღმოჩენილი არაა"
       ]
     },
     "Role": {
@@ -12756,6 +12834,9 @@
       ],
       "It's you": [
         "თქვენ"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "ველოდები ადმინისტრატორის წვდომას"
