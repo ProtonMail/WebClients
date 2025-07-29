@@ -994,6 +994,12 @@
       "${ price } per user": [
         "${ price } za používateľa"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
         "${ seats } licencie asistentov písania",
@@ -1584,6 +1590,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problém"
+      ],
       "Application problem": [
         "Problém aplikácie"
       ],
@@ -4436,6 +4445,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členov, ktorí nemajú SSO používa dvojstupňové overenie na prihlasovanie do vašej organizácie."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
@@ -4981,6 +4993,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Prechod na nižšiu verziu ukončí všetky pripojenia k plateným serverom ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Stiahnuť aktuálne záznamy"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Stiahnite si našu CSV šablónu, vyplňte podrobnosti o používateľoch a potom nahrajte vyplnený CSV súbor, aby sa pre týchto používateľov vytvorili účty."
@@ -5644,6 +5659,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
+      ],
+      "Private AI assistant": [
+        "Súkromný AI asistent"
       ],
       "Protected by Swiss privacy laws": [
         "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
@@ -6987,6 +7005,9 @@
       ],
       "Import all messages": [
         "Importovať všetky správy"
+      ],
+      "Include application logs in bug report": [
+        "Vrátane záznamov aplikácie v chybovom hlásení"
       ],
       "Integrated 2FA authenticator": [
         "Integrovaný 2FA autentifikátor"
@@ -13428,6 +13449,9 @@
       ],
       "It's you": [
         "Ste to vy"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Čaká sa na prístup správcu"
