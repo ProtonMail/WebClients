@@ -142,7 +142,7 @@
         "Cancel·la la subscripció"
       ],
       "Cancel trial and pay": [
-        "Cancel·leu la prova i procediu a pagar"
+        "Cancel·leu la prova i pagueu"
       ],
       "Cancel upload": [
         "Cancel·lar càrrega"
@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "Reenvia com a adjunt"
       ],
+      "Full data": [
+        "Dades completes"
+      ],
       "Generate password": [
         "Genera la contrasenya"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "Pàgina següent"
+      ],
+      "No sensitive data": [
+        "Sense dades sensibles"
       ],
       "Not now": [
         "Ara no"
@@ -1233,7 +1239,7 @@
         "Els descomptes es basen en els preus mensuals estàndard. Al final del cicle de facturació, la subscripció es renovarà a la tarifa anual estàndard."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Dupliqueu el vostre emmagatzematge xifrat – obtingueu 1 TB per totes les vostres dades"
+        "Dupliqueu el vostre emmagatzematge xifrat: obteniu 1 TB per a totes les vostres dades."
       ],
       "Encrypted password manager": [
         "Gestor de contrasenyes xifrat"
@@ -1242,7 +1248,7 @@
         "Heus aquí un regal exclusiu per celebrar el nostre camí plegats."
       ],
       "High speed streaming with VPN": [
-        "Reproducció en continu (Streaming) d'alta velocitat amb VPN"
+        "Estríming d'alta velocitat amb VPN"
       ],
       "of privacy": [
         "de privacitat"
@@ -1266,13 +1272,13 @@
         "Aprofiteu els grans estalvis en les funcions prèmium de Drive amb un descompte per temps limitat."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Estalviiareu molt amb les característiques prèmium de Mail amb un descompte per temps limitat."
+        "Aprofiteu els grans estalvis en les funcions prèmium de Mail amb un descompte per temps limitat."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
         "Aprofiteu els grans estalvis en les funcions prèmium de Pass amb un descompte per temps limitat."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
-        "Estalviiareu molt amb les funcions prèmium de VPN amb un descompte per temps limitat."
+        "Aprofiteu els grans estalvis en les funcions prèmium de VPN amb un descompte per temps limitat."
       ],
       "Save time with built-in 2FA": [
         "Estalvieu temps amb 2FA integrat"
@@ -1377,7 +1383,7 @@
     },
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
-        "La prova gratuïta se us acaba en ${ timeRemaining }"
+        "La prova gratuïta acaba en ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -1564,7 +1570,7 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "Hi ha hagut un problema amb ${ LUMO_SHORT_APP_NAME }"
+        "Problema amb ${ LUMO_SHORT_APP_NAME }"
       ],
       "Application problem": [
         "Problema d’aplicació"
@@ -3243,11 +3249,11 @@
       "Failed to fetch sharing info": [
         "No s'ha pogut obtenir la informació de compartició"
       ],
+      "Failed to get details, please try again later": [
+        "No se n'han pogut obtenir els detalls, torneu-ho a provar més tard"
+      ],
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
-      ],
-      "Failed to move items": [
-        "No s'ha pogut moure els elements."
       ],
       "Failed to resend invitation": [
         "No s'ha pogut tornar a enviar la invitació"
@@ -3593,6 +3599,9 @@
       "Unknown error": [
         "Error desconegut"
       ],
+      "Unknown location": [
+        "Ubicació desconeguda"
+      ],
       "Unknown payment token status": [
         "Estat del token de pagament desconegut"
       ],
@@ -3626,6 +3635,9 @@
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ No es pot desxifrar aquest nom"
       ]
     },
     "Error importing calendar": {
@@ -4604,7 +4616,7 @@
         "${ invitations.length } invitacions pendents"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME }."
+        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació; és un pagament únic per a l'accés de per vida a ${ PASS_SHORT_APP_NAME }."
@@ -4845,9 +4857,6 @@
       "Aug": [
         "Ago."
       ],
-      "Automated Recovery ${ formattedDate }": [
-        "Recuperació automàtica ${ formattedDate }"
-      ],
       "Available": [
         "Disponible"
       ],
@@ -5038,7 +5047,7 @@
         "Descarrega l'aplicació ${ name }"
       ],
       "Download current logs": [
-        "Descarregar els registres actuals"
+        "Descarrega els registres actuals"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "La descàrrega de ${ downloadFileName } serà cancel·lada"
@@ -6885,7 +6894,7 @@
         "Importar a:"
       ],
       "Include application logs in bug report": [
-        "Incloeu els registres de l'aplicació a l'informe d'errors"
+        "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
       "Include message and file name in invite email": [
         "Inclou el missatge i el nom del fitxer al correu electrònic d'invitació"
@@ -7271,17 +7280,8 @@
       "Albums": [
         "Àlbums"
       ],
-      "All mail": [
-        "Tot el correu"
-      ],
-      "Archive": [
-        "Arxiu"
-      ],
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
-      ],
-      "Drafts": [
-        "Esborranys"
       ],
       "Enforcing 2FA for organizations": [
         "Aplicació obligatòria de l'autenticació de doble factor (A2F) per a organitzacions"
@@ -7334,9 +7334,6 @@
       "if your data is leaked": [
         "si es filtren les vostres dades"
       ],
-      "Inbox": [
-        "Safata d'entrada"
-      ],
       "Learn more": [
         "Més informació"
       ],
@@ -7352,12 +7349,6 @@
       "Request an invite": [
         "Demana una invitació"
       ],
-      "Scheduled": [
-        "Programats"
-      ],
-      "Sent": [
-        "Enviats"
-      ],
       "settings": [
         "preferències"
       ],
@@ -7366,15 +7357,6 @@
       ],
       "Shared with me": [
         "Compartit amb mi"
-      ],
-      "Snooze": [
-        "Ajorna"
-      ],
-      "Spam": [
-        "Correu brossa"
-      ],
-      "Starred": [
-        "Destacats"
       ],
       "Trash": [
         "Paperera"
@@ -8433,7 +8415,7 @@
         "Voleu passar a un pla inferior?"
       ],
       "Review subscription": [
-        "Reviseu la subscripció"
+        "Revisa la subscripció"
       ],
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"
@@ -8857,9 +8839,6 @@
       ],
       "An invitation has been sent": [
         "S'ha enviat una invitació."
-      ],
-      "Cannot load file or folder info": [
-        "No es pot carregar la informació del fitxer o de la carpeta"
       ],
       "Cannot load link": [
         "No s'ha pogut carregar l'enllaç."
@@ -9409,7 +9388,7 @@
         "Compartició segura de caixes fortes, elements i enllaços"
       ],
       "Unlimited logins, notes, credit cards and more": [
-        "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit i més"
+        "Nombre il·limitat d'inicis de sessió, notes, targetes de crèdit i més"
       ]
     },
     "pass_signup_2023: Title": {
@@ -9578,7 +9557,7 @@
         "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
       "Your payment is still being processed": [
-        "El vostre pagament encara s'està processant."
+        "Encara s'està processant el vostre pagament."
       ]
     },
     "Payments.Error": {
@@ -9633,7 +9612,7 @@
         "Número d’identificació fiscal (EIN)"
       ],
       "VAT number": [
-        "Número d'IVA"
+        "NIF"
       ]
     },
     "PGP key encryption warning": {
@@ -10248,7 +10227,7 @@
         "Navegueu amb seguretat"
       ],
       "Do more with ${ BRAND_NAME }": [
-        "Supereu els vostres límits amb ${ BRAND_NAME }"
+        "Feu més amb ${ BRAND_NAME }"
       ],
       "Get unlimited aliases": [
         "Obtingueu un nombre il·limitat d'àlies"
@@ -10355,7 +10334,7 @@
         "Obtingueu accés a servidors VPN ultraràpids en més de 110 països"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
-        "Obtingueu un pla que ho inclou tot: ${ BRAND_NAME } sense límits"
+        "Obteniu un pla que ho inclou tot: ${ BRAND_NAME } Unlimited"
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Obtingueu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
@@ -10512,7 +10491,7 @@
         "El vostre ${ productString } està ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "El vostre ${ productString } està ple. ${ cta }."
+        "El vostre ${ productString } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "El vostre emmagatzematge és ple al ${ percentage }%. ${ cta }."
@@ -11305,6 +11284,9 @@
       "Addresses": [
         "Adreces"
       ],
+      "Advanced details": [
+        "Detalls avançats"
+      ],
       "Album": [
         "Àlbum"
       ],
@@ -11322,6 +11304,12 @@
       ],
       "Amount due": [
         "Import a deure"
+      ],
+      "an anonymous user": [
+        "un usuari anònim"
+      ],
+      "Anonymous user": [
+        "Usuari anònim"
       ],
       "Apply gift code": [
         "Aplicar el codi regal"
@@ -11429,6 +11417,9 @@
       "Create new group": [
         "Crea un grup nou"
       ],
+      "Created by": [
+        "Creat per"
+      ],
       "Credits": [
         "Crèdits"
       ],
@@ -11486,6 +11477,33 @@
       "Desktop": [
         "Escriptori"
       ],
+      "Devices": [
+        "Dispositius"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La signatura digital s'ha verificat parcialment. Aquest fitxer va ser creat mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La signatura digital s'ha verificat parcialment. Aquest fitxer va ser carregat mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La signatura digital s'ha verificat parcialment. Aquesta carpeta va ser creada mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La signatura digital s\"ha verificat parcialment. Aquesta carpeta va ser carregada mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "S'ha validat la signatura digital. Aquest fitxer va ser creat de manera segura per <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "S'ha validat la signatura digital. Aquest fitxer es va carregar de manera segura per <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "S'ha validat la signatura digital. Aquesta carpeta va ser creada de manera segura per <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "S'ha validat la signatura digital. Aquesta carpeta es va carregar de manera segura per <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Descarta"
       ],
@@ -11503,6 +11521,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarregueu aplicacions de ${ DRIVE_APP_NAME }"
+      ],
+      "Download details": [
+        "Detalls de la descàrrega"
       ],
       "Download the app": [
         "Descarrega l'aplicació"
@@ -11582,6 +11603,9 @@
       "File recovery process": [
         "Procés de recuperació de fitxers"
       ],
+      "Folder": [
+        "Carpeta"
+      ],
       "Folder details": [
         "Detalls de la carpeta"
       ],
@@ -11650,6 +11674,9 @@
       "Last edited by": [
         "Última edició per"
       ],
+      "Last uploaded by": [
+        "L'última càrrega la va fer"
+      ],
       "Link confirmation": [
         "Confirmació d'enllaç"
       ],
@@ -11661,6 +11688,9 @@
       ],
       "Manage secure link": [
         "Gestiona l'enllaç segur"
+      ],
+      "Media type": [
+        "Tipus de mitjà"
       ],
       "Merge contacts": [
         "Combinar contactes"
@@ -11694,9 +11724,6 @@
       ],
       "Network error": [
         "Error de xarxa"
-      ],
-      "Newsletters view": [
-        "Vista de butlletins"
       ],
       "Night theme": [
         "Tema de nit"
@@ -11763,6 +11790,9 @@
       ],
       "Original size": [
         "Mida original"
+      ],
+      "Original size in bytes": [
+        "La mesura original és en bits"
       ],
       "Other information": [
         "Altres dades"
@@ -11921,6 +11951,9 @@
       "Size": [
         "Mida"
       ],
+      "Size in bytes": [
+        "Mida en bits"
+      ],
       "Sort files/folders": [
         "Ordenar fitxers/carpetes"
       ],
@@ -11951,6 +11984,15 @@
       "The link expired": [
         "L'enllaç ha caducat"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Ha fallat la verificació de la signatura de les claus de xifratge per part del creador original (${ claimedKeyAuthor }) que va crear el node. El motiu és: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Ha fallat la verificació de la signatura del contingut del fitxer per part de la persona que el va carregar (${ claimedContentAuthor }), responsable de l'última revisió. El motiu és: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Ha fallat la verificació de la signatura del nom per part de l'autor (${ claimedNameAuthor }) que va establir el nom l'última vegada. El motiu és: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A aquest fitxer li manca signatura o té una signatura no valida. Ves a (⋮) → Detalls per a més informació."
       ],
@@ -11971,6 +12013,9 @@
       ],
       "Type": [
         "Tipus"
+      ],
+      "Unknown user": [
+        "Aquest usuari és desconegut"
       ],
       "Untitled document ${ date }": [
         "Document sense títol ${ date }"
@@ -12019,6 +12064,30 @@
       ],
       "Warning: suspected fake website": [
         "Avís: presumpte lloc web fals"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "No hem pogut verificar que <strong>${ emailAddress }</strong> hagi creat aquest fitxer."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "No hem pogut verificar que <strong>${ emailAddress }</strong> hagi creat aquesta carpeta."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "No hem pogut verificar que <strong>${ emailAddress }</strong> hagi carregat aquest fitxer."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "No hem pogut verificar que <strong>${ emailAddress }</strong> hagi carregat aquesta carpeta."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "No hem pogut verificar que un usuari anònim hagi creat aquest fitxer."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "No hem pogut verificar que un usuari anònim hagi creat aquesta carpeta."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "No hem pogut verificar que un usuari anònim hagi carregat aquest fitxer."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "No hem pogut verificar que un usuari anònim hagi carregat aquesta carpeta."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Us donem la benvinguda a ${ BRAND_NAME } for Business"

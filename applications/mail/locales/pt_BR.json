@@ -1427,8 +1427,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -13587,6 +13586,10 @@
         "${ elementsCount } mensagem removida de ${ labelName }.",
         "${ elementsCount } mensagens removidas de ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } mensagem removida com estrela.",
+        "${ elementsCount } mensagens removidas com estrela."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversa adiada",
         "${ elementsCount } conversas adiadas"
@@ -13626,6 +13629,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
         "${ elementsCount } mensagens removidas de ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } mensagem removida com estrela.",
+        "${ elementsCount } mensagens removidas com estrela."
       ],
       "Address copied to clipboard": [
         "O endereço foi copiado para a área de transferência"
@@ -13688,6 +13695,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversa removida de ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Conversa removida com estrela."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "As conversas de ${ sendersList } serão marcadas como ${ labelsList }"
@@ -13760,6 +13770,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Mensagem removida de ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Mensagem removida com estrela."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "As mensagens de ${ sendersList } serão marcadas como ${ labelsList }"

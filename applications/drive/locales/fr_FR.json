@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "Transférer en tant que pièce jointe"
       ],
+      "Full data": [
+        "Toutes les données"
+      ],
       "Generate password": [
         "Générer un mot de passe"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "Page suivante"
+      ],
+      "No sensitive data": [
+        "Aucune donnée sensible"
       ],
       "Not now": [
         "Plus tard"
@@ -1590,7 +1596,7 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "${ LUMO_SHORT_APP_NAME } problème"
+        "Problème avec ${ LUMO_SHORT_APP_NAME }"
       ],
       "Application problem": [
         "Problème d'application"
@@ -3277,11 +3283,11 @@
       "Failed to fetch sharing info": [
         "La récupération des informations de partage n'a pas abouti."
       ],
+      "Failed to get details, please try again later": [
+        "Les informations n'ont pas pu être récupérées. Veuillez réessayer plus tard."
+      ],
       "Failed to load the STL preview": [
         "Le chargement de l’aperçu STL n'a pas abouti."
-      ],
-      "Failed to move items": [
-        "Les éléments n'ont pas été déplacés."
       ],
       "Failed to resend invitation": [
         "Le renvoi de l'invitation n'a pas abouti."
@@ -3627,6 +3633,9 @@
       "Unknown error": [
         "Erreur inconnue"
       ],
+      "Unknown location": [
+        "Emplacement inconnu"
+      ],
       "Unknown payment token status": [
         "Le statut du jeton de paiement est inconnu."
       ],
@@ -3660,6 +3669,9 @@
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nom indéchiffrable"
       ]
     },
     "Error importing calendar": {
@@ -4878,9 +4890,6 @@
       ],
       "Aug": [
         "Août"
-      ],
-      "Automated Recovery ${ formattedDate }": [
-        "Récupération automatique ${ formattedDate }"
       ],
       "Available": [
         "Disponible"
@@ -6919,7 +6928,7 @@
         "Importer dans :"
       ],
       "Include application logs in bug report": [
-        "Inclure les journaux d'application dans le rapport de bogue"
+        "Inclure les journaux d'application dans le rapport de bug"
       ],
       "Include message and file name in invite email": [
         "Inclure le message et le nom du fichier dans l'e-mail d'invitation"
@@ -7305,17 +7314,8 @@
       "Albums": [
         "Albums"
       ],
-      "All mail": [
-        "Tous les messages"
-      ],
-      "Archive": [
-        "Archives"
-      ],
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
-      ],
-      "Drafts": [
-        "Brouillons"
       ],
       "Enforcing 2FA for organizations": [
         "Application de l’A2F pour les organisations"
@@ -7368,9 +7368,6 @@
       "if your data is leaked": [
         "si vos données sont divulguées"
       ],
-      "Inbox": [
-        "Boite de réception"
-      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -7386,12 +7383,6 @@
       "Request an invite": [
         "Demander une invitation"
       ],
-      "Scheduled": [
-        "Programmé"
-      ],
-      "Sent": [
-        "Envoyés"
-      ],
       "settings": [
         "paramètres"
       ],
@@ -7400,15 +7391,6 @@
       ],
       "Shared with me": [
         "Partagé avec moi"
-      ],
-      "Snooze": [
-        "Mettre en attente"
-      ],
-      "Spam": [
-        "Indésirables/spam"
-      ],
-      "Starred": [
-        "Favoris"
       ],
       "Trash": [
         "Corbeille"
@@ -8891,9 +8873,6 @@
       ],
       "An invitation has been sent": [
         "Une invitation a été envoyée."
-      ],
-      "Cannot load file or folder info": [
-        "Le chargement des informations du fichier ou du dossier n'a pas abouti."
       ],
       "Cannot load link": [
         "Impossible de charger le lien"
@@ -11347,6 +11326,9 @@
       "Addresses": [
         "Adresses"
       ],
+      "Advanced details": [
+        "Détails avancés"
+      ],
       "Album": [
         "Album"
       ],
@@ -11364,6 +11346,12 @@
       ],
       "Amount due": [
         "Montant à payer"
+      ],
+      "an anonymous user": [
+        "un utilisateur anonyme"
+      ],
+      "Anonymous user": [
+        "Utilisateur anonyme"
       ],
       "Apply gift code": [
         "Appliquer un code-cadeau"
@@ -11471,6 +11459,9 @@
       "Create new group": [
         "Créer un nouveau groupe"
       ],
+      "Created by": [
+        "Créé par"
+      ],
       "Credits": [
         "Crédits"
       ],
@@ -11528,6 +11519,33 @@
       "Desktop": [
         "Bureau"
       ],
+      "Devices": [
+        "Appareils"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La signature numérique a été partiellement vérifiée. Ce fichier a été créé à l'aide d'un lien de partage mis à disposition publiquement par un utilisateur ne disposant pas d'un compte ${ BRAND_NAME }. Son identité ne peut pas être vérifiée."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La signature numérique a été partiellement vérifiée. Ce fichier a été importé à l\"aide d\"un lien de partage mis à disposition publiquement par un utilisateur ne disposant pas d\"un compte ${ BRAND_NAME }. Son identité ne peut pas être vérifiée."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La signature numérique a été partiellement vérifiée. Ce dossier a été créé à l'aide d'un lien de partage mis à disposition publiquement par un utilisateur ne disposant pas d'un compte ${ BRAND_NAME }. Son identité ne peut pas être vérifiée."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "La signature numérique a été partiellement vérifiée. Le dossier a été importé à l'aide d'un lien de partage mis à disposition publiquement par un utilisateur ne disposant pas d'un compte ${ BRAND_NAME }. Son identité ne peut pas être vérifiée."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "La signature numérique a été vérifiée. Ce fichier a été créé de manière sécurisée par <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "La signature numérique a été vérifiée. Ce fichier a été importé de manière sécurisée par <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "La signature numérique a été vérifiée. Ce dossier a été créé de manière sécurisée par <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "La signature numérique a été vérifiée. Ce dossier a été importé de manière sécurisée par <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Abandonner"
       ],
@@ -11545,6 +11563,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Télécharger les applications ${ DRIVE_APP_NAME }"
+      ],
+      "Download details": [
+        "Détails du téléchargement"
       ],
       "Download the app": [
         "Télécharger l'application"
@@ -11624,6 +11645,9 @@
       "File recovery process": [
         "Processus de récupération des fichiers"
       ],
+      "Folder": [
+        "Dossier"
+      ],
       "Folder details": [
         "Informations sur le dossier"
       ],
@@ -11692,6 +11716,9 @@
       "Last edited by": [
         "Dernière modification par"
       ],
+      "Last uploaded by": [
+        "Dernière importation par"
+      ],
       "Link confirmation": [
         "Confirmation du lien"
       ],
@@ -11703,6 +11730,9 @@
       ],
       "Manage secure link": [
         "Gérer les liens sécurisés"
+      ],
+      "Media type": [
+        "Type de média"
       ],
       "Merge contacts": [
         "Fusionner les contacts"
@@ -11736,9 +11766,6 @@
       ],
       "Network error": [
         "Erreur réseau"
-      ],
-      "Newsletters view": [
-        "Vue Newsletters"
       ],
       "Night theme": [
         "Thème nuit"
@@ -11805,6 +11832,9 @@
       ],
       "Original size": [
         "Taille d'origine"
+      ],
+      "Original size in bytes": [
+        "Taille d'origine en octets"
       ],
       "Other information": [
         "Autres informations"
@@ -11933,6 +11963,9 @@
       "Settings": [
         "Paramètres"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "Partager ${ name }"
       ],
@@ -11962,6 +11995,9 @@
       ],
       "Size": [
         "Taille"
+      ],
+      "Size in bytes": [
+        "Taille en octets"
       ],
       "Sort files/folders": [
         "Trier les fichiers/dossiers"
@@ -11993,6 +12029,15 @@
       "The link expired": [
         "Le lien a expiré."
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "La vérification de la signature des clés de chiffrement par le créateur original (${ claimedKeyAuthor }) qui a créé le nœud n'a pas abouti. La raison est : ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "La vérification de la signature du contenu du fichier par la personne qui a importé (${ claimedContentAuthor }) la dernière révision n'a pas abouti. La raison est : ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "La vérification de la signature du nom par l'auteur (${ claimedNameAuthor }) qui a défini le nom la dernière fois n'a pas abouti. La raison est : ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Il manque une signature pour ce fichier, ou bien elle n'est pas valide. Allez à Menu (⋮) → Détails pour plus d'informations."
       ],
@@ -12013,6 +12058,12 @@
       ],
       "Type": [
         "Type"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Utilisateur inconnu"
       ],
       "Untitled document ${ date }": [
         "Document sans titre ${ date }"
@@ -12061,6 +12112,30 @@
       ],
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Nous n'avons pas pu vérifier que <strong>${ emailAddress }</strong> a créé ce fichier."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Nous n'avons pas pu vérifier que <strong>${ emailAddress }</strong> a créé ce dossier."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Nous n'avons pas pu vérifier que <strong>${ emailAddress }</strong> a importé ce fichier."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Nous n'avons pas pu vérifier que <strong>${ emailAddress }</strong> a importé ce dossier."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Nous n'avons pas pu vérifier qu'un utilisateur anonyme a créé ce fichier."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Nous n'avons pas pu vérifier qu'un utilisateur anonyme a créé ce dossier."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Nous n'avons pas pu vérifier qu'un utilisateur anonyme a importé ce fichier."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Nous n'avons pas pu vérifier qu'un utilisateur anonyme a importé ce dossier."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bienvenue dans ${ BRAND_NAME } for Business"

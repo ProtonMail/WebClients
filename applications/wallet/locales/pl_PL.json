@@ -58,6 +58,9 @@
       "Cancel subscription": [
         "Anuluj subskrypcję"
       ],
+      "Cancel trial and pay": [
+        "Anuluj wersję próbną i zapłać"
+      ],
       "Chat with us": [
         "Czat z nami"
       ],
@@ -121,6 +124,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Pobierz aplikacje ${ DRIVE_APP_NAME }"
       ],
+      "Download logs": [
+        "Pobierz logi"
+      ],
       "Edit": [
         "Edytuj"
       ],
@@ -163,6 +169,12 @@
       "Help and resources": [
         "Pomoc i zasoby"
       ],
+      "Hide": [
+        "Ukryj"
+      ],
+      "Hide more benefits": [
+        "Ukryj więcej bonusów"
+      ],
       "Import emails, calendars, contacts": [
         "Importuj wiadomości, kalendarze i kontakty"
       ],
@@ -184,9 +196,6 @@
       "Let's talk": [
         "Porozmawiajmy"
       ],
-      "Loading verification": [
-        "Ładowanie weryfikacji"
-      ],
       "Manage advanced account protections": [
         "Zarządzaj zaawansowanymi zabezpieczeniami konta"
       ],
@@ -195,6 +204,9 @@
       ],
       "Manage users/addresses": [
         "Zarządzaj użytkownikami / adresami"
+      ],
+      "More benefits": [
+        "Więcej bonusów"
       ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
@@ -265,9 +277,6 @@
       "Resend code": [
         "Wyślij ponownie kod"
       ],
-      "Retry": [
-        "Spróbuj ponownie"
-      ],
       "Save": [
         "Zapisz"
       ],
@@ -312,6 +321,9 @@
       ],
       "Show more": [
         "Pokaż więcej"
+      ],
+      "Show more benefits": [
+        "Pokaż więcej bonusów"
       ],
       "Show QRCode": [
         "Pokaż kod QR"
@@ -423,6 +435,12 @@
       "${ price } per user": [
         "${ price } za użytkownika"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licencja",
+        "${ seats } ${ LUMO_APP_NAME } licencje",
+        "${ seats } ${ LUMO_APP_NAME } licencji",
+        "${ seats } ${ LUMO_APP_NAME } licencji"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencja asystenta pisania",
         "${ seats } licencje asystenta pisania",
@@ -504,6 +522,40 @@
         "Wznieś produktywność poczty na nowy poziom. ${ BRAND_NAME } Scribe pomoże Ci pisać, odpowiadać i sprawdzać wiadomości."
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } mies. w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_LUMO_SEATS } miejsc Lumo w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_SCRIBE_SEATS } miejsc Scribe w okresie próbnym."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Możesz mieć do ${ TRIAL_MAX_USERS } użytkowników w okresie próbnym."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nie możesz dodać niestandardowych domen w okresie próbnym."
+      ],
+      "You have reached the trial limit.": [
+        "Osiągnięto limit okresu próbnego."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Anuluj subskrypcję"
+      ],
+      "Keep subscription": [
+        "Zachowaj subskrypcję"
+      ]
+    },
     "Balance": {
       "Loading balance": [
         "Ładowanie salda"
@@ -532,8 +584,8 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikacja desktopowa ${ MAIL_APP_NAME }"
       ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus i ${ CALENDAR_SHORT_APP_NAME }"
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } przestrzeni dyskowej"
@@ -920,6 +972,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problem z ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problem z aplikacją"
       ],
@@ -1625,9 +1680,6 @@
       "Macao": [
         "Makau"
       ],
-      "Macedonia": [
-        "Macedonia"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2291,6 +2343,9 @@
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
+      "Invalid ZIP code": [
+        "Kod pocztowy jest nieprawidłowy"
+      ],
       "Not a valid number": [
         "Numer telefonu nie jest prawidłowy"
       ],
@@ -2312,11 +2367,29 @@
       "Payment process not supported": [
         "Przetwarzanie płatności nie jest obsługiwane"
       ],
+      "Please enter a valid postal code": [
+        "Wpisz prawidłowy kod pocztowy"
+      ],
+      "Please enter a valid ZIP code": [
+        "Wpisz prawidłowy kod pocztowy"
+      ],
+      "Please enter postal code": [
+        "Wpisz prawidłowy kod pocztowy"
+      ],
+      "Please enter ZIP code": [
+        "Wpisz kod pocztowy"
+      ],
       "Please select a country": [
         "Wybierz kraj"
       ],
       "Please select a state": [
         "Wybierz stan"
+      ],
+      "Please select billing country": [
+        "Wybierz kraj rozliczeniowy"
+      ],
+      "Please select billing state": [
+        "Wybierz stan rozliczeniowy"
       ],
       "Process aborted": [
         "Proces został przerwany"
@@ -2341,9 +2414,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
-      ],
-      "The minimum payment we accept is ${ price }": [
-        "Minimalna kwota akceptowanej płatności wynosi ${ price }"
       ],
       "The passphrases do not match": [
         "Frazy zabezpieczające nie pasują do siebie"
@@ -2639,6 +2709,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asystent pisania ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } zawiera asystenta pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
       ],
@@ -2711,6 +2784,9 @@
       "Amount below minimum (${ amount }).": [
         "Kwota poniżej minimum (${ amount })."
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Po zakończeniu wersji próbnej plan ${ boldCancelDate } zostaniesz obniżony do wersji ${ boldProtonFree }. Wszystkie konta użytkowników zostaną usunięte z organizacji."
+      ],
       "Attention required": [
         "Wymagana uwaga"
       ],
@@ -2756,6 +2832,9 @@
       "Dedicated servers": [
         "Dedykowane serwery"
       ],
+      "Dedicated VPN servers": [
+        "Dedykowane serwery VPN"
+      ],
       "default email address": [
         "domyślny adres e-mail"
       ],
@@ -2776,6 +2855,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
+      ],
+      "Download current logs": [
+        "Pobierz logi"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
@@ -2882,6 +2964,9 @@
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
       ],
+      "Number of dedicated VPN servers in the organization": [
+        "Liczba dedykowanych serwerów VPN organizacji"
+      ],
       "or discover other features:": [
         "lub poznaj inne funkcje:"
       ],
@@ -2902,12 +2987,6 @@
       ],
       "Please fill in all required fields.": [
         "Uzupełnij wszystkie wymagane pola."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Po kliknięciu przycisku Potwierdź, na koncie pozostanie ${ creditsRemaining } środek.",
-        "Po kliknięciu przycisku Potwierdź na koncie pozostaną ${ creditsRemaining } środki.",
-        "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków.",
-        "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Użyj innej metody płatności lub skontaktuj się ze swoim bankiem."
@@ -3101,9 +3180,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Przed obniżeniem planu musisz wyłączyć lub usunąć dodatkowych użytkowników ${ MAIL_APP_NAME }, adresy i niestandardowe domeny."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Twoje konto PayPal musi być powiązane z kartą płatniczą lub kontem bankowym. Jeśli nie posiada tej funkcji, kliknij przycisk poniżej."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "W tym dniu stracisz dostęp do funkcji planu ${ planTitle }."
       ],
@@ -3122,8 +3198,8 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
       ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Subskrypcja ${ PASS_SHORT_APP_NAME } Plus zostanie zastąpiona subskrypcją ${ PASS_SHORT_APP_NAME } Lifetime. Pozostałe saldo subskrypcji zostanie dodane do konta. Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Subskrypcja ${ plan } zostanie zastąpiona subskrypcją ${ PASS_SHORT_APP_NAME } Lifetime. Pozostałe saldo subskrypcji zostanie dodane do konta. Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
@@ -3148,9 +3224,15 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Stracisz również dostęp do funkcji planu ${ boldPlanTitle }:"
       ]
     },
     "info": {
+      "Optional": [
+        "Opcjonalnie"
+      ],
       "Selected color:": [
         "Wybrany kolor:"
       ]
@@ -3280,6 +3362,9 @@
       "IBAN": [
         "Numer IBAN"
       ],
+      "Include application logs in bug report": [
+        "Dołącz logi aplikacji do raportu błędu"
+      ],
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
       ],
@@ -3337,9 +3422,6 @@
       "Start date": [
         "Data rozpoczęcia"
       ],
-      "State": [
-        "Stan"
-      ],
       "Subscription options": [
         "Opcje subskrypcji"
       ],
@@ -3366,6 +3448,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Kod pocztowy"
+      ],
       "ZIP code": [
         "Kod pocztowy"
       ]
@@ -3395,9 +3480,6 @@
       ],
       "clearing your browser cache": [
         "wyczyszczenie pamięci podręcznej przeglądarki"
-      ],
-      "click here": [
-        "kliknij tutaj"
       ],
       "Enforcing 2FA for organizations": [
         "Wymuszenie uwierzytelniania dwustopniowego w organizacjach"
@@ -4030,6 +4112,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB przestrzeni dyskowej w chmurze, która umożliwia łatwe przechowywanie, synchronizowanie i udostępnianie plików. Zabezpieczone za pomocą szyfrowania end-to-end."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Zaawansowane bezpieczeństwo sieci i zarządzanie dostępem za pomocą dedykowanych bram"
       ],
@@ -4081,17 +4169,14 @@
       "Protect sensitive business information and collaborate securely.": [
         "Ochrona poufnych informacji biznesowych i bezpieczna współpraca."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Chroń swoją rodzinę dzięki wszystkim funkcjom premium planu ${ PASS_SHORT_APP_NAME } Plus dla 6 użytkowników."
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Chroń swoją rodzinę dzięki wszystkim funkcjom premium planu ${ plusTitle } dla 6 użytkowników."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chroń prywatność rodziny za pomocą usług ${ BRAND_NAME }."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Bezpieczny dostęp do Internetu, gdziekolwiek jesteś dzięki monitoringowi sieci"
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Bezpieczna przestrzeń dyskowa w chmurze, w której możesz przechowywać, synchronizować i udostępniać pliki w łatwy sposób."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Bezpieczna poczta e-mail z zaawansowanymi funkcjami do codziennej komunikacji."
@@ -4121,6 +4206,9 @@
       ],
       "Downgrade account?": [
         "Obniżyć plan?"
+      ],
+      "Review subscription": [
+        "Podsumowanie subskrypcji"
       ],
       "Review subscription and pay": [
         "Przejrzyj subskrypcję i zapłać"
@@ -4405,7 +4493,10 @@
       "Require 2FA": [
         "Wymaganie uwierzytelniania dwustopniowego"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "Wsparcie dla ${ n } niestandardowej domeny",
+        "Wsparcie dla ${ n } niestandardowych domen",
+        "Wsparcie dla ${ n } niestandardowych domen",
         "Wsparcie dla ${ n } niestandardowych domen"
       ]
     },
@@ -4414,12 +4505,50 @@
         "Niektóre obrazy nie zostały przesłane z powodu powtarzających się nazw zaznaczonych plików."
       ]
     },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " odwiedź nasze ${ helpCenterLink } lub ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Możesz anulować w dowolnym momencie przed ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "skontaktuj się z naszym zespołem wsparcia"
+      ],
+      "Continue": [
+        "Kontynuuj"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Korzystaj z darmowych funkcji bezpieczeństwa dla firm do ${ trialEndsOnFormatted }."
+      ],
+      "help center": [
+        "centrum pomocy"
+      ],
+      "If you need help,": [
+        "Jeśli potrzebujesz pomocy,"
+      ],
+      "Once your full subscription starts...": [
+        "Po rozpoczęciu subskrypcji..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Możesz anulować subskrypcję w ciągu 30 dni i otrzymać proporcjonalny zwrot kosztów."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "Możesz korzystać z planu ${ planTitle } do końca wersji próbnej. Opłata nie zostanie naliczona."
+      ],
+      "Your free trial has started": [
+        "Darmowa wersja próbna rozpoczęła się"
+      ]
+    },
     "Option": {
       "No parent folder": [
         "Brak folderu nadrzędnego"
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Dostęp do wszystkich aplikacji ${ BRAND_NAME } i funkcji premium"
+      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
       ],
@@ -4428,6 +4557,11 @@
       ],
       "Unlimited logins, notes, credit cards and more": [
         "Nieograniczona liczba danych logowania, notatek, kart płatniczych i nie tylko"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Plan ${ upsellPlanTitle }"
       ]
     },
     "pass_signup_2024: Info": {
@@ -4480,6 +4614,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Przelew bankowy"
       ],
@@ -4517,6 +4654,9 @@
       "Got it": [
         "Ok"
       ],
+      "I'm purchasing as a business": [
+        "Kupuję jako firma"
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -4526,26 +4666,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
       ],
-      "Please select billing country": [
-        "Wybierz kraj rozliczeniowy"
-      ],
-      "Please select billing state": [
-        "Wybierz stan rozliczeniowy"
-      ],
-      "Please select your billing country first.": [
-        "Najpierw wybierz kraj rozliczeniowy"
-      ],
-      "Please select your billing state first.": [
-        "Najpierw wybierz stan rozliczeniowy"
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Cena odnowienia może ulec zmianie zgodnie z ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
-      ],
-      "Select billing country to pay": [
-        "Wybierz kraj"
       ],
       "terms & conditions": [
         "regulaminem"
@@ -4577,8 +4702,17 @@
         "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesięcy. Możesz anulować w dowolnym momencie.",
         "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesiąca. Możesz anulować w dowolnym momencie."
       ],
+      "This number will be shown on all future invoices": [
+        "Numer będzie pojawiać się na wszystkich fakturach"
+      ],
+      "This payment method will become your new default for all future renewals.": [
+        "Metoda płatności stanie się domyślna dla przyszłych odnowień."
+      ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Twoja waluta została zmieniona na euro (€), ponieważ przelewy bankowe SEPA obsługują tylko płatności w euro."
       ],
       "Your payment is still being processed": [
         "Twoja płatność jest wciąż przetwarzana"
@@ -4609,12 +4743,34 @@
         "Free"
       ]
     },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Przelew bankowy — ${ details }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcy usług płatniczych) do obciążenia konta. Otrzymasz zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem banku."
       ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "NIP"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "Numer VAT"
       ]
     },
     "Placeholder": {
@@ -4645,6 +4801,9 @@
       "Please select a country": [
         "Wybierz kraj"
       ],
+      "Postal code": [
+        "Kod pocztowy"
+      ],
       "Search": [
         "Szukaj"
       ],
@@ -4665,11 +4824,28 @@
       ],
       "Your organization name": [
         "Twoja nazwa organizacji"
+      ],
+      "ZIP code": [
+        "Kod pocztowy"
       ]
     },
     "plan customizer, users": {
       "contact": [
         "skontaktuj się"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "Wszystkie usługi ${ protonPlus }.${ br }Jedna prosta subskrypcja."
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Jako subskrybent planu **${ currentPlanTitle }** możesz odblokować **${ unlockPlanTitle }** i wszystkie usługi ${ BRAND_NAME } w wersji premium, przechodząc do planu **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Zachowaj plan ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "Ulepsz do planu ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -5089,7 +5265,7 @@
         "${ n } połączeń VPN na użytkownika",
         "${ n } połączeń VPN na użytkownika"
       ],
-      "VPN connection for ${ n } devices per user": [
+      "VPN connection for ${ n } device per user": [
         "Połączenie VPN na ${ n } urządzenie na użytkownika",
         "Połączenie VPN na ${ n } urządzenia na użytkownika",
         "Połączenie VPN na ${ n } urządzeń na użytkownika",
@@ -5155,6 +5331,9 @@
       ],
       "Folders, labels, and custom filters": [
         "Foldery, etykiety i filtry niestandardowe"
+      ],
+      "Priority support": [
+        "Priorytetowe wsparcie"
       ]
     },
     "Subscription renewal state": {
@@ -5254,7 +5433,7 @@
       "Cancel": [
         "Anuluj"
       ],
-      "Cannot use QRCode scanner. Please check browser compatibility": [
+      "Cannot use QR Code scanner. Please check browser compatibility": [
         "Nie można użyć skanera kodów QR. Sprawdź kompatybilność przeglądarki"
       ],
       "Confirm and import": [
@@ -5275,7 +5454,7 @@
       "Paper wallet funds was successfully imported": [
         "Papier portfel został zaimportowany"
       ],
-      "Please grant camera permission to use QRCode scanner": [
+      "Please grant camera permission to use QR Code scanner": [
         "Przyznaj uprawnienia aplikacji aparatu, aby zeskanować kod QR"
       ],
       "You receive": [
@@ -5495,6 +5674,9 @@
       "You can now create unlimited folders and labels": [
         "Możesz utworzyć nieograniczoną liczbę folderów i etykiet"
       ],
+      "Your plan": [
+        "Twój plan"
+      ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
       ]
@@ -5595,12 +5777,6 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } kraju",
-        "${ numberOfCountries } krajach",
-        "${ numberOfCountries } krajach",
-        "${ numberOfCountries } krajach"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "${ numberOfServers } w ${ numberOfCountries } kraju",
@@ -5755,6 +5931,11 @@
         "Brak wyceny. Proszę odświeżyć stronę i spróbować ponownie lub skontaktować się z wsparciem"
       ]
     },
+    "wallet dashboard": {
+      "You need to have a positive bitcoin balance with sufficient funds to transact": [
+        "Aby wykonać transakcje, musisz mieć dodatnie saldo Bitcoin z wystarczającymi środkami"
+      ]
+    },
     "Wallet dashboard": {
       "24h change": [
         "Ostatnie 24h"
@@ -5773,11 +5954,6 @@
       ],
       "Send": [
         "Wyślij"
-      ]
-    },
-    "wallet dashboard": {
-      "You need to have a positive bitcoin balance with sufficient funds to transact": [
-        "Aby wykonać transakcje, musisz mieć dodatnie saldo Bitcoin z wystarczającymi środkami"
       ]
     },
     "Wallet deletion": {
@@ -5890,7 +6066,7 @@
         "Odbiorca może odebrać środki za pomocą funkcji Bitcoin na adres e-mail"
       ],
       "Warning: the recipient will not be able to send Bitcoin via Email to this email.": [
-        "Ostrzeżenie: Odbiorca nie będzie mógł odebrać środki za pomocą funkcji Bitcoin na adres e-mail."
+        "Ostrzeżenie: Odbiorca nie będzie mógł odebrać środków za pomocą funkcji Bitcoin na adres e-mail."
       ],
       "You need to select an email to send from": [
         "Wybierz adres e-mail nadawcy"
@@ -6218,8 +6394,11 @@
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
         "Transakcja została nadana do sieci Bitcoin. Potwierdzenie transakcji przez sieć może zająć około godziny."
       ],
-      "~${ minutes } minutes": [
-        "~${ minutes } min"
+      "~${ minutes } minute": [
+        "~${ minutes } minuta",
+        "~${ minutes } minuty",
+        "~${ minutes } minut",
+        "~${ minutes } minuty"
       ]
     },
     "Wallet Send": {
@@ -6461,11 +6640,6 @@
         "Twój klucz prywatny"
       ]
     },
-    "Wallet sidebar": {
-      "Add account": [
-        "Dodaj konto"
-      ]
-    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Skontaktuj się ze wsparciem technicznym"
@@ -6501,12 +6675,9 @@
         "Portfele"
       ]
     },
-    "Wallet terms and conditions": {
-      "Error with Terms and Conditions acceptance. Please try again.": [
-        "Wystąpił błąd podczas akceptowania regulaminu. Spróbuj ponownie."
-      ],
-      "Terms and conditions were accepted": [
-        "Regulamin został zaakceptowany"
+    "Wallet sidebar": {
+      "Add account": [
+        "Dodaj konto"
       ]
     },
     "Wallet Terms and Conditions": {
@@ -6518,6 +6689,14 @@
       ],
       "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
         "Utworzyliśmy dla Ciebie 2 konta BTC: konto główne oraz drugie konto do odbierania środków za pomocą funkcji Bitcoin na adres e-mail (${ emailEl }) od innych użytkowników ${ WALLET_APP_NAME }."
+      ]
+    },
+    "Wallet terms and conditions": {
+      "Error with Terms and Conditions acceptance. Please try again.": [
+        "Wystąpił błąd podczas akceptowania regulaminu. Spróbuj ponownie."
+      ],
+      "Terms and conditions were accepted": [
+        "Regulamin został zaakceptowany"
       ]
     },
     "Wallet transaction": {

@@ -127,6 +127,9 @@
       "Cancel subscription": [
         "Opsig abonnement"
       ],
+      "Cancel trial and pay": [
+        "Annullér prøveversion og betal"
+      ],
       "Change sort order": [
         "Skift sorteringsrækkefølge"
       ],
@@ -407,6 +410,9 @@
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
+      ],
+      "Hide more benefits": [
+        "Skjul flere fordele"
       ],
       "Image could not be loaded with tracker protection.": [
         "Billede kunne ikke indlæses med sporingsbeskyttelse."
@@ -955,23 +961,41 @@
       "200 GB storage": [
         "200 GB lagerplads"
       ],
+      "500 GB encrypted storage": [
+        "500 GB krypteret lagerplads"
+      ],
       "Add unlimited credit cards": [
         "Tilføj ubegrænset antal betalingskort"
       ],
       "All premium features of ${ BRAND_NAME } Mail, Pass, VPN, Drive, and Calendar": [
         "Alle premiumfunktioner i ${ BRAND_NAME } Mail, Pass, VPN, Drive og Calendar"
       ],
+      "Block ads, trackers, and malware": [
+        "Bloker annoncer, trackere og malware"
+      ],
       "Discounts are based on standard monthly pricing. At the end of the billing cycle, your subscription will renew at the standard annual rate.": [
         "Rabatter er baserede på en standard månedlig pris. Ved slutningen af faktureringsperioden fornys dit abonnement efter den standard årlige pris."
       ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Fordobl din krypterede lagerplads – få 1 TB til alle dine data"
+      ],
       "Encrypted password manager": [
         "Krypteret adgangskodehåndtering"
+      ],
+      "High speed streaming with VPN": [
+        "Streaming ved høj hastighed med VPN"
+      ],
+      "of privacy": [
+        "af privatliv"
       ],
       "Online document editor": [
         "Online dokumenteditor"
       ],
       "Online privacy for up to 2 people": [
         "Online privatliv til op til 2 personer"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online privatliv for hele familien (op til 6 brugere)"
       ],
       "Protect up to 10 devices": [
         "Beskyt op til 10 enheder"
@@ -982,17 +1006,38 @@
       "Save big on premium Drive features with a limited-time discount.": [
         "Spar stort på premium Drive-funktioner med en tidsbegrænset rabat."
       ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Spar stort på premium Mail-funktioner med en tidsbegrænset rabat."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Spar stort på premium Pass-funktioner med en tidsbegrænset rabat."
+      ],
       "Save big on premium VPN features with a limited-time discount.": [
         "Spar stort på premium VPN-funktioner med en tidsbegrænset rabat."
       ],
       "Save time with built-in 2FA": [
         "Spar tid med indbygget 2FA"
       ],
+      "Secure email with unlimited aliases": [
+        "Sikker e-mail med ubegrænsede aliasser"
+      ],
+      "Select any server": [
+        "Vælg en hvilken som helst server"
+      ],
       "Share passwords easily": [
         "Del let kodeord"
       ],
+      "Short @pm.me address": [
+        "Kort @pm.me-adresse"
+      ],
+      "Stream your favorite content": [
+        "Stream dit yndlingsindhold"
+      ],
       "thanks to you": [
         "takket være dig"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Tredobl din krypterede lagerplads – få 3 TB til alle dine data"
       ],
       "Unlimited folders, labels and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
@@ -1071,6 +1116,11 @@
         "Behold abonnement"
       ]
     },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Din gratis prøveperiode udløber om ${ timeRemaining }"
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 bruger"
@@ -1144,6 +1194,9 @@
       "High speed streaming": [
         "Streaming ved høj hastighed"
       ],
+      "One-time payment, lifetime deal": [
+        "Engangsbetaling, livstidsaftale"
+      ],
       "Online document editor": [
         "Online dokumentredigering"
       ],
@@ -1189,6 +1242,9 @@
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+, Prime Video og mere, hvor som helst."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede hide-my-email-aliasser, deling, integreret 2FA, ${ DARK_WEB_MONITORING_NAME } og mere."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer ${ addresses } e-mailadresse, understøttelse af bruger-e-mail-domæner, ${ BRAND_NAME } Scribe skriveassistent, ubegrænsede hide-my-email-aliasser og mere.",
@@ -1240,6 +1296,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME }-problem"
+      ],
       "Application problem": [
         "Applikationsproblem"
       ],
@@ -2979,6 +3038,12 @@
       "Please enter a valid ZIP code": [
         "Indtast et gyldigt postnummer."
       ],
+      "Please enter postal code": [
+        "Indtast postnummer"
+      ],
+      "Please enter ZIP code": [
+        "Indtast postnummer"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs den fremhævede konflikt for at fortsætte.",
         "Løs de fremhævede konflikter for at fortsætte."
@@ -4059,6 +4124,9 @@
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe skriveassistent"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4385,6 +4453,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
+      ],
+      "Download current logs": [
+        "Download aktuelle logs"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Hentning af ${ downloadFileName } vil blive afbrudt"
@@ -4729,6 +4800,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerede VPN-servere i organisationen"
       ],
       "Numbers": [
         "Tal"
@@ -5462,6 +5536,11 @@
         "Valgte farve:"
       ]
     },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Hvordan sender man en kontant betaling?"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Klik for detaljer"
@@ -5775,6 +5854,9 @@
       ],
       "Import to:": [
         "Importer til:"
+      ],
+      "Include application logs in bug report": [
+        "Inkluder applikationslogfiler i fejlrapporten"
       ],
       "Include document name in notification": [
         "Inkluder dokumentnavn i notifikation"
@@ -6621,6 +6703,9 @@
         "${ options }-dags filversionshistorik",
         "${ options }-dags filversionshistorik"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin livstid"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-aliasser"
@@ -7030,6 +7115,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB lagerplads i skyen, som giver dig mulighed for nemt at gemme, synkronisere og dele filer. Sikret med end-to-end kryptering."
+      ],
       "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "200 GB lagring i skyen, der giver dig mulighed for nemt at gemme, synkronisere og dele filer. Sikret med end-to-end kryptering."
       ],
@@ -7084,6 +7172,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "Beskyt følsomme erhvervsoplysninger, og samarbejd sikkert."
       ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Beskyt din familie med alle premium funktioner i ${ plusTitle } for 6 brugere."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskyt din families privatliv med alle ${ BRAND_NAME } tjenester kombineret."
       ],
@@ -7118,6 +7209,9 @@
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Den rabatpris på ${ priceCoupon } er gyldig i den første måned. Derefter fornys den automatisk til ${ priceLine }. Du kan annullere når som helst."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Lås op for alle ${ BRAND_NAME } premium produkter og funktioner for kun ${ priceLine }. Annullér når som helst."
       ]
     },
     "new_plans: title": {
@@ -7247,6 +7341,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisationsstyringsværktøj, der lader administratorer tilføje og fjerne brugere, administrere deres adgang til ${ BRAND_NAME }-tjenester og udføre andre opgaver."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vores robuste infrastruktur sikrer, at du kan få adgang til din konto, når du har brug for det"
       ],
@@ -7294,6 +7391,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Del sikkert individuelle elementer med alle (selv hvis de ikke bruger ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Opbevar dine kontakters oplysninger sikkert, f.eks. telefonnummer, adresse, fødselsdag og personlige noter. Nuladgangskryptering sikrer, at selv ${ BRAND_NAME } ikke kan få adgang til dem."
@@ -7693,6 +7793,9 @@
       "Get the deal": [
         "Tag imod tilbuddet"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Sidste chance for at få 80 % rabat på din første måned med ${ plan }."
+      ],
       "Last day to save": [
         "Sidste dag til at gemme"
       ],
@@ -7713,6 +7816,9 @@
       ],
       "Save 80% on your first month.": [
         "Spar 80% på den første måned."
+      ],
+      "Save big when you pay annually": [
+        "Få stor besparelse ved at betale årligt"
       ],
       "Special offer": [
         "Specialtilbud"
@@ -7765,9 +7871,18 @@
       ],
       "Storage": [
         "Lagerplads"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Lynhurtige VPN-servere i 110+ lande"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Ubegrænsede aliasser til at beskytte din identitet"
       ]
     },
     "Onboarding Trial": {
+      "Cancel anytime before ${ cancelDate }.": [
+        "Annullér til enhver tid inden ${ cancelDate }."
+      ],
       "Cancel anytime before then.": [
         "Annullér til enhver tid inden da."
       ],
@@ -7783,6 +7898,9 @@
       "help center": [
         "hjælp-center"
       ],
+      "If you need help,": [
+        "Hvis du har brug for hjælp,"
+      ],
       "Once your full subscription starts...": [
         "Når dit fulde abonnement starter..."
       ],
@@ -7797,6 +7915,12 @@
       ],
       "Your free trial has started": [
         "Din gratis prøveperiode er startet"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Dit fulde ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Du vil kunne bruge ${ planTitle } indtil prøveversionen udløber, uden beregning."
       ]
     },
     "Option": {
@@ -7967,6 +8091,9 @@
       "Got it": [
         "Forstået"
       ],
+      "I'm purchasing as a business": [
+        "Jeg køber som virksomhed"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
@@ -8003,6 +8130,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måned. Du kan annullere det når som helst.",
         "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måneder. Du kan annullere det når som helst."
+      ],
+      "This number will be shown on all future invoices": [
+        "Dette nummer vil blive vist på alle fremtidige fakturaer."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmetode bliver din nye standard for alle fremtidige fornyelser."
@@ -8059,6 +8189,9 @@
       ]
     },
     "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
       "Business Number": [
         "Forretningsnummer"
       ],
@@ -8201,6 +8334,9 @@
       ],
       "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Som **${ currentPlanTitle }**-abonnent kan du låse op for **${ unlockPlanTitle }** og alle premium ${ BRAND_NAME }-tjenester ved at opgradere til **${ upsellPlanTitle }**."
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Bliv på ${ currentPlanTitle }"
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Opgradér til ${ upsellPlanTitle }"
@@ -8708,6 +8844,12 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Browse sikkert"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Gør mere med ${ BRAND_NAME }"
+      ],
       "Get unlimited aliases": [
         "Få ubegrænsede aliasser"
       ],
@@ -8716,6 +8858,9 @@
       ],
       "Guard against threats": [
         "Beskyt mod trusler"
+      ],
+      "Increase your storage": [
+        "Forøg din lagerplads"
       ],
       "Keep passwords safe": [
         "Hold adgangskoder sikre"
@@ -8803,8 +8948,17 @@
       "Access content on streaming services worldwide": [
         "Få adgang til indhold på streamingtjenester verden rundt"
       ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Få 500 GB til sikkert at lagre alle dine filer og fotos."
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Få adgang til lynhurtige VPN-servere i 110+ lande"
+      ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "Få ét abonnement, der indeholder det hele, få ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Få ubegrænsede aliasser for at beskytte din identitet og reducere spam"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
         "Opbevar dine adgangskoder sikkert og organiseret i flere bokse "

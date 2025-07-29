@@ -1426,10 +1426,6 @@
       "Trust": [
         "Vertrauen"
       ],
-      "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüssel vertrauen"
-      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -13567,6 +13563,10 @@
         "${ elementsCount } Unterhaltung aus „${ labelName }“ entfernt.",
         "${ elementsCount } Unterhaltungen aus „${ labelName }“ entfernt."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } Unterhaltung aus „Markiert“ entfernt.",
+        "${ elementsCount } Unterhaltungen aus „Markiert“ entfernt."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } Unterhaltung stumm geschaltet",
         "${ elementsCount } Unterhaltungen stumm geschaltet"
@@ -13606,6 +13606,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } Nachricht aus „${ labelName }“ entfernt.",
         "${ elementsCount } Nachrichten aus „${ labelName }“ entfernt."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } Nachricht aus \"Markiert\" entfernt.",
+        "${ elementsCount } Nachrichten aus „Markiert“ entfernt."
       ],
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"
@@ -13668,6 +13672,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Unterhaltung aus „${ labelName }“ entfernt."
+      ],
+      "Conversation removed from Starred.": [
+        "Unterhaltung aus „Markiert“ entfernt."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Unterhaltungen von ${ sendersList } werden als ${ labelsList } kategorisiert"
@@ -13740,6 +13747,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Nachricht aus „${ labelName }“ entfernt."
+      ],
+      "Message removed from Starred.": [
+        "Nachricht aus \"Markiert\" entfernt."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Die Nachrichten von ${ sendersList } werden als ${ labelsList } gekennzeichnet"

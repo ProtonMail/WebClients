@@ -1339,7 +1339,7 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "${ LUMO_SHORT_APP_NAME } problème"
+        "Problème avec ${ LUMO_SHORT_APP_NAME }"
       ],
       "Application problem": [
         "Problème d'application"
@@ -6053,7 +6053,7 @@
         "Importer dans :"
       ],
       "Include application logs in bug report": [
-        "Inclure les journaux d'application dans le rapport de bogue"
+        "Inclure les journaux d'application dans le rapport de bug"
       ],
       "Include document name in notification": [
         "Inclure le nom du document dans les notifications"

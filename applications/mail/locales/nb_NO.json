@@ -450,6 +450,9 @@
       "Download all attachments": [
         "Last ned alle vedlegg"
       ],
+      "Download application logs": [
+        "Last ned applikasjonslogger"
+      ],
       "Download logs": [
         "Last ned logger"
       ],
@@ -1422,10 +1425,6 @@
       ],
       "Trust": [
         "Klarér"
-      ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -5566,7 +5565,7 @@
         "${ MAIL_APP_NAME }-skrivebordsapp"
       ],
       "14-day desktop app trial.": [
-        "14-dagers prøveversjon av skrivebords-appen."
+        "14-dagers prøveversjon av skrivebordsappen."
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Gled deg over rask, sikker og distraksjonsfri tilgang til innboksen og kalenderen din."
@@ -6859,8 +6858,11 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
       ],
+      "Download application logs for troubleshooting": [
+        "Last ned applikasjonslogger for feilsøking"
+      ],
       "Download current logs": [
-        "Last ned logg"
+        "Last ned gjeldende logger"
       ],
       "Download on the App Store": [
         "Last ned på App Store"
@@ -8503,10 +8505,10 @@
         "Filene dine vil bli kryptert og deretter lagret"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Din gratis prøveversjon ble vellykket konvertert til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
+        "Din gratis prøveperiode ble vellykket konvertert til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Din gratis prøveversjon ble vellykket konvertert til et månedlig abonnement. Fornyelsesdatoen din er ${ nextBillingDate }."
+        "Din gratis prøveperiode ble vellykket konvertert til et månedlig abonnement. Fornyelsesdatoen din er ${ nextBillingDate }."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Maskinvaren din støtter ikke kjøring av skriveassistenten lokalt. Prøv å kjøre den på tjenere."
@@ -8568,7 +8570,7 @@
         "Abonnementet ditt fornyes automatisk ${ renewalTime }."
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Prøveversjonen avsluttes om ${ timeRemaining }."
+        "Prøveperioden avsluttes om ${ timeRemaining }."
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
@@ -9179,6 +9181,9 @@
       ],
       "Import to:": [
         "Importer til:"
+      ],
+      "Include application logs in bug report": [
+        "Inkluder applikasjonslogger i feilrapport"
       ],
       "Integrated 2FA authenticator": [
         "Integrert 2FA-autentisering"
@@ -11174,7 +11179,7 @@
         "Skriveassistenten er klar til bruk"
       ],
       "Trial started": [
-        "Prøvetid startet"
+        "Prøveperiode startet"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11511,7 +11516,7 @@
         "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
-        "Du kan bruke ${ planTitle } til prøveversjonen avsluttes, og du blir ikke belastet."
+        "Du kan bruke ${ planTitle } til prøveperioden avsluttes, og du blir ikke belastet."
       ],
       "Your free trial has started": [
         "Din gratis prøveperiode har startet"
@@ -11520,7 +11525,7 @@
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du vil kunne bruke ${ planTitle } til prøveversjonen avsluttes, gratis."
+        "Du vil kunne bruke ${ planTitle } til prøveperioden avsluttes, gratis."
       ]
     },
     "Online accounts": {
@@ -13519,6 +13524,10 @@
         "${ elementsCount } samtale fjernet fra ${ labelName }.",
         "${ elementsCount } samtaler fjernet fra ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } samtale er fjernet fra favorittene.",
+        "${ elementsCount } samtaler er fjernet fra favorittene."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } samtale slumret",
         "${ elementsCount } samtaler slumret"
@@ -13558,6 +13567,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } melding fjernet fra ${ labelName }.",
         "${ elementsCount } meldinger fjernet fra ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } melding er fjernet fra favorittene.",
+        "${ elementsCount } meldinger er fjernet fra favorittene."
       ],
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
@@ -13620,6 +13633,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Samtale fjernet fra ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Samtale fjernet fra stjernemerket."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Samtaler fra ${ sendersList } merkes som ${ labelsList }"
@@ -13692,6 +13708,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Melding fjernet fra ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Melding fjernet fra stjernemerket."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Meldinger fra ${ sendersList } merkes som ${ labelsList }"
@@ -14901,7 +14920,7 @@
         "Du kan nå opprette ubegrenset antall mapper og etiketter"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
-        "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
+        "Din gratis prøveperiode av ${ planName } slutter den ${ textDate }."
       ],
       "Your ${ planName } subscription has started": [
         "${ planName }-abonnementet ditt er startet"

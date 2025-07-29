@@ -4879,7 +4879,7 @@
         "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
       ],
       "Download current logs": [
-        "Last ned logg"
+        "Last ned gjeldende logger"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Last ned vår CSV-mal, fyll ut brukerinformasjonen og deretter last opp den fullførte CSV-filen for å kunne opprette kontoer for disse brukerne."
@@ -6386,7 +6386,7 @@
         "Abonnementet ditt fornyes automatisk ${ renewalTime }."
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Prøveversjonen avsluttes om ${ timeRemaining }."
+        "Prøveperioden avsluttes om ${ timeRemaining }."
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
@@ -6840,6 +6840,9 @@
       ],
       "Import all messages": [
         "Importer alle meldinger"
+      ],
+      "Include application logs in bug report": [
+        "Inkluder applikasjonslogger i feilrapport"
       ],
       "Integrated 2FA authenticator": [
         "Integrert 2FA-autentisering"
@@ -8935,7 +8938,7 @@
         "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
-        "Du kan bruke ${ planTitle } til prøveversjonen avsluttes, og du blir ikke belastet."
+        "Du kan bruke ${ planTitle } til prøveperioden avsluttes, og du blir ikke belastet."
       ],
       "Your free trial has started": [
         "Din gratis prøveperiode har startet"
@@ -8944,7 +8947,7 @@
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du vil kunne bruke ${ planTitle } til prøveversjonen avsluttes, gratis."
+        "Du vil kunne bruke ${ planTitle } til prøveperioden avsluttes, gratis."
       ]
     },
     "Option": {
@@ -11444,7 +11447,7 @@
         "Utløper"
       ],
       "Free Trial": [
-        "Gratis prøveversjon"
+        "Gratis prøveperiode"
       ]
     },
     "Subtitle": {
@@ -12631,7 +12634,7 @@
         "Du kan nå opprette ubegrenset antall mapper og etiketter"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
-        "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
+        "Din gratis prøveperiode av ${ planName } slutter den ${ textDate }."
       ],
       "Your changes are not synced yet": [
         "Endringene dine er ikke synkronisert enda"

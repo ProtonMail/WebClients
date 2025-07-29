@@ -928,6 +928,9 @@
       "${ price } per user": [
         "사용자당 ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } 시트 ${ seats }개"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }명 글쓰기 도우미 이용 권한"
       ],

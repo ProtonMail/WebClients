@@ -585,6 +585,9 @@
       "Purge all": [
         "Töm allt"
       ],
+      "Purge deleted": [
+        "Tömning borttagen"
+      ],
       "Recover data": [
         "Återställ data"
       ],
@@ -1564,6 +1567,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
+      ],
       "Application problem": [
         "Problem med applikation"
       ],
@@ -4866,6 +4872,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
       ],
+      "Download current logs": [
+        "Ladda ner nuvarande loggar"
+      ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Ladda ner vår CSV-mall, fyll i användaruppgifterna och ladda sedan upp din färdiga CSV-fil för att skapa konton för dessa användare."
       ],
@@ -6804,6 +6813,9 @@
       "Import all messages": [
         "Importera alla meddelanden"
       ],
+      "Include application logs in bug report": [
+        "Inkludera applikationsloggar i felrapport"
+      ],
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
       ],
@@ -7472,6 +7484,9 @@
       ],
       "Sign in success (awaiting second factor)": [
         "Inloggning lyckades (inväntar andra faktor)"
+      ],
+      "Sign in success (awaiting verification)": [
+        "Inloggning lyckades (väntar på verifiering)"
       ],
       "Sign out": [
         "Logga ut"
@@ -9760,6 +9775,9 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } till"
+      ],
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime } dag",
         "${ rule.Lifetime } dagar"

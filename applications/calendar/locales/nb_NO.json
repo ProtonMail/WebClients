@@ -5119,7 +5119,7 @@
         "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
       ],
       "Download current logs": [
-        "Last ned logg"
+        "Last ned gjeldende logger"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Last ned favorittappen din i dag og ta personvern med deg hvor hen du går."
@@ -6000,10 +6000,10 @@
         "Filene dine vil bli kryptert og deretter lagret"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Din gratis prøveversjon ble vellykket konvertert til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
+        "Din gratis prøveperiode ble vellykket konvertert til et ${ cycle }-måneders abonnement. Din fornyelsesdato er ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
-        "Din gratis prøveversjon ble vellykket konvertert til et månedlig abonnement. Fornyelsesdatoen din er ${ nextBillingDate }."
+        "Din gratis prøveperiode ble vellykket konvertert til et månedlig abonnement. Fornyelsesdatoen din er ${ nextBillingDate }."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
@@ -6052,7 +6052,7 @@
         "Systemets tidssone ser ut til å ha endret seg til ${ timezone }. Vil du oppdatere preferansen for tidssone?"
       ],
       "Your trial will end in ${ timeRemaining }.": [
-        "Prøveversjonen avsluttes om ${ timeRemaining }."
+        "Prøveperioden avsluttes om ${ timeRemaining }."
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
@@ -6459,6 +6459,9 @@
       "Import to:": [
         "Importer til:"
       ],
+      "Include application logs in bug report": [
+        "Inkluder applikasjonslogger i feilrapport"
+      ],
       "Integrated 2FA authenticator": [
         "Integrert 2FA-autentisering"
       ],
@@ -6769,20 +6772,11 @@
       "Add a gift code": [
         "Legg til gavekode"
       ],
-      "All mail": [
-        "All e-post"
-      ],
-      "Archive": [
-        "Arkiv"
-      ],
       "Calendars": [
         "Kalendere"
       ],
       "clearing your browser cache": [
         "tømmer hurtigbufferen til nettleseren"
-      ],
-      "Drafts": [
-        "Utkast"
       ],
       "Enforcing 2FA for organizations": [
         "Anvendelse av A2F for organisasjoner"
@@ -6835,9 +6829,6 @@
       "if your data is leaked": [
         "hvis dataene dine er lekket"
       ],
-      "Inbox": [
-        "Innboks"
-      ],
       "Learn more": [
         "Lær mer"
       ],
@@ -6856,26 +6847,8 @@
       "Request an invite": [
         "Be om en invitasjon"
       ],
-      "Scheduled": [
-        "Planlagt"
-      ],
-      "Sent": [
-        "Sendt"
-      ],
       "settings": [
         "innstillinger"
-      ],
-      "Snooze": [
-        "Slumre"
-      ],
-      "Spam": [
-        "Søppelpost"
-      ],
-      "Starred": [
-        "Stjernemerket"
-      ],
-      "Trash": [
-        "Papirkurv"
       ],
       "Types of recovery methods": [
         "Typer av gjenopprettingsmetoder"
@@ -8544,7 +8517,7 @@
         "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
       ],
       "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
-        "Du kan bruke ${ planTitle } til prøveversjonen avsluttes, og du blir ikke belastet."
+        "Du kan bruke ${ planTitle } til prøveperioden avsluttes, og du blir ikke belastet."
       ],
       "Your free trial has started": [
         "Din gratis prøveperiode har startet"
@@ -8553,7 +8526,7 @@
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Du vil kunne bruke ${ planTitle } til prøveversjonen avsluttes, gratis."
+        "Du vil kunne bruke ${ planTitle } til prøveperioden avsluttes, gratis."
       ]
     },
     "Option": {
@@ -10976,9 +10949,6 @@
       "Network error": [
         "Nettverksfeil"
       ],
-      "Newsletters view": [
-        "Nyhetsbrevvisning"
-      ],
       "Night theme": [
         "Natt-tema"
       ],
@@ -11238,7 +11208,7 @@
         "Du har invitert deltakere med tilsvarende e-poster"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
-        "Din gratis prøveversjon av ${ planName } slutter den ${ textDate }."
+        "Din gratis prøveperiode av ${ planName } slutter den ${ textDate }."
       ],
       "Your ${ planName } subscription has started": [
         "${ planName }-abonnementet ditt er startet"

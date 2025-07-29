@@ -104,6 +104,9 @@
       "Compare all plans": [
         "Usporedite sve planove"
       ],
+      "Compare plans": [
+        "Usporedi planove"
+      ],
       "Confirm": [
         "Potvrdi"
       ],
@@ -127,6 +130,9 @@
       ],
       "Copy key to the clipboard": [
         "Kopiraj ključ u međuspremnik"
+      ],
+      "Copy password": [
+        "Kopiraj lozinku"
       ],
       "Create": [
         "Stvori"
@@ -164,11 +170,17 @@
       "Delete member": [
         "Izbriši člana"
       ],
+      "Delete policy": [
+        "Izbriši pravilo"
+      ],
       "Delete user": [
         "Izbriši korisnika"
       ],
       "Delete your account": [
         "Izbrišite vaš račun"
+      ],
+      "Deny access": [
+        "Odbij pristup"
       ],
       "Details": [
         "Pojedinosti"
@@ -183,6 +195,9 @@
         "Odbaci"
       ],
       "Discard changes": [
+        "Odbaci promjene"
+      ],
+      "Discard Changes": [
         "Odbaci promjene"
       ],
       "Dismiss": [
@@ -313,6 +328,9 @@
       ],
       "Keep editing": [
         "Nastavite uređivati"
+      ],
+      "Keep logo": [
+        "Zadrži logo"
       ],
       "Learn more": [
         "Saznajte više"
@@ -640,6 +658,9 @@
       ],
       "Verify code again": [
         "Ponovno potvrdite kôd"
+      ],
+      "Verify domain": [
+        "Potvrdi domenu"
       ],
       "View": [
         "Pregled"
@@ -2154,6 +2175,9 @@
       "Desktop": [
         "Radna površina"
       ],
+      "Download for Linux": [
+        "Učitaj za Linux"
+      ],
       "Download on the Apple App Store": [
         "Preuzmite na Apple App Storeu"
       ],
@@ -3185,6 +3209,9 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Izbrišite sve ostale MX zapise ili se pobrinite da prioritet ${ MAIL_APP_NAME } bude najniži broj."
       ],
+      "Did you know?": [
+        "Jeste li znali?"
+      ],
       "Disabled on ${ formattedDateAndTime }": [
         "Onemogućeno ${ formattedDateAndTime }"
       ],
@@ -3409,6 +3436,9 @@
       "Link copied to clipboard": [
         "Poveznica kopirana u međuspremnik"
       ],
+      "Live chat": [
+        "Chat uživo"
+      ],
       "Loading": [
         "Učitavanje"
       ],
@@ -3618,6 +3648,9 @@
       "Swiss based": [
         "Bazirano u Švicarskoj"
       ],
+      "Symbols (#$&)": [
+        "Simboli (#$&)"
+      ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "TechRadar Pro dao je preporuku s ocjenom 4.2 od 5 zvjezdica"
       ],
@@ -3711,6 +3744,9 @@
       "Tor": [
         "Tor"
       ],
+      "Total storage": [
+        "Ukupna pohrana"
+      ],
       "Total supported domains": [
         "Ukupno podržanih domena"
       ],
@@ -3761,6 +3797,9 @@
       ],
       "Users": [
         "Korisnika"
+      ],
+      "Vault deleted": [
+        "Trezor izbrisan"
       ],
       "Vault updated": [
         "Ažuriran trezor"
@@ -4215,6 +4254,9 @@
       ],
       "Enter your password": [
         "Unesite lozinku"
+      ],
+      "Entity ID": [
+        "ID entiteta"
       ],
       "Entity ID URL": [
         "URL ID-a entiteta"
@@ -4799,11 +4841,17 @@
       "British pound": [
         "Britanska funta"
       ],
+      "Canadian dollar": [
+        "Kanadski dolar"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Švicarski franak"
+      ],
+      "US Dollar": [
+        "Američki dolar"
       ]
     },
     "Navigation": {
@@ -4947,6 +4995,9 @@
       ],
       "Auto-reply": [
         "Automatski odgovor"
+      ],
+      "Calendar sharing": [
+        "Dijeljenje kalendara"
       ],
       "Contact groups": [
         "Grupa kontakata"
@@ -5664,6 +5715,9 @@
       ],
       "Send to all": [
         "Pošalji svima"
+      ],
+      "Setup incomplete": [
+        "Postavljanje nije dovršeno"
       ]
     },
     "Placeholder": {
@@ -5853,6 +5907,9 @@
     "Recovery Phone": {
       "Cancel": [
         "Odustani"
+      ],
+      "Verify by SMS": [
+        "Potvrdi s SMS-om"
       ],
       "Verify now": [
         "Potvrdi sada"
@@ -6393,6 +6450,9 @@
       "Tried to sign in at": [
         "Pokušaj prijave na"
       ],
+      "User details:": [
+        "Detalji korisnika:"
+      ],
       "Welcome": [
         "Dobro došli"
       ],
@@ -6593,6 +6653,9 @@
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
         "Kako je naš tim korisničke podrške dostavio našu VPN aplikaciju izravno u ruke ljudi."
+      ],
+      "Keep subscription": [
+        "Zadrži pretplatu"
       ],
       "Learn more": [
         "Više informacija"
@@ -6858,8 +6921,14 @@
       "Event": [
         "Događaj"
       ],
+      "Invitation email": [
+        "E-poruka s pozivnicom"
+      ],
       "List": [
         "Lista"
+      ],
+      "Marked as": [
+        "Označeno kao"
       ],
       "Name": [
         "Naziv"
@@ -6872,6 +6941,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Total storage": [
+        "Ukupna pohrana"
       ]
     },
     "Themes": {
@@ -6939,6 +7011,9 @@
       ],
       "Add user": [
         "Dodaj korisnika"
+      ],
+      "Add user accounts": [
+        "Dodaj korisničke račune"
       ],
       "Allocate storage": [
         "Dodijelite prostor za pohranu"
@@ -7050,6 +7125,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Customization": [
+        "Prilagodba"
       ],
       "Data retention": [
         "Zadržavanje podataka"
@@ -7180,6 +7258,9 @@
       "Get the apps": [
         "Preuzmite aplikacije"
       ],
+      "Gift": [
+        "Poklon"
+      ],
       "Gift code": [
         "Darovni kôd"
       ],
@@ -7242,6 +7323,9 @@
       ],
       "Org setup": [
         "Postavljanje organizacije"
+      ],
+      "Organization key": [
+        "Organizacijski ključ"
       ],
       "Organization name": [
         "Naziv organizacije"
@@ -7571,6 +7655,9 @@
       "Currency conversion": [
         "Konverzija valuta"
       ],
+      "Gift card": [
+        "Poklon kartica"
+      ],
       "Migration": [
         "Migracija"
       ],
@@ -7610,6 +7697,9 @@
       ],
       "Request to manage account sent, awaiting user approval": [
         "Zahtjev za upravljanje korisničkim računom poslan, čeka se odobrenje korisnika"
+      ],
+      "Revoke access": [
+        "Opozovi pristup"
       ],
       "Revoke administrator access?": [
         "Opozvati administratorski pristup?"
@@ -7675,6 +7765,9 @@
       ],
       "Confirm password": [
         "Potvrdi lozinku"
+      ],
+      "Create password": [
+        "Stvorite lozinku"
       ],
       "Create user": [
         "Stvori korisnika"

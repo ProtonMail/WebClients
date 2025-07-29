@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "Als Anhang weiterleiten"
       ],
+      "Full data": [
+        "Vollständige Daten"
+      ],
       "Generate password": [
         "Passwort generieren"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "Nächste Seite"
+      ],
+      "No sensitive data": [
+        "Keine sensiblen Daten"
       ],
       "Not now": [
         "Nicht jetzt"
@@ -3277,11 +3283,11 @@
       "Failed to fetch sharing info": [
         "Fehler beim Abrufen der Freigabeinformationen"
       ],
+      "Failed to get details, please try again later": [
+        "Fehler beim Abrufen der Details, bitte versuche es später erneut"
+      ],
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
-      ],
-      "Failed to move items": [
-        "Fehler beim Verschieben der Einträge."
       ],
       "Failed to resend invitation": [
         "Fehler beim erneuten Senden der Einladung"
@@ -3627,6 +3633,9 @@
       "Unknown error": [
         "Unbekannter Fehler"
       ],
+      "Unknown location": [
+        "Unbekannter Ort"
+      ],
       "Unknown payment token status": [
         "Unbekannter Status des Zahlungstoken"
       ],
@@ -3660,6 +3669,9 @@
       ],
       "Your import will not be processed.": [
         "Dein Import wird nicht verarbeitet."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nicht entschlüsselbarer Name"
       ]
     },
     "Error importing calendar": {
@@ -4878,9 +4890,6 @@
       ],
       "Aug": [
         "Aug"
-      ],
-      "Automated Recovery ${ formattedDate }": [
-        "Automatisierte Wiederherstellung ${ formattedDate }"
       ],
       "Available": [
         "Verfügbar"
@@ -7299,17 +7308,8 @@
       "Albums": [
         "Alben"
       ],
-      "All mail": [
-        "Alle E-Mails"
-      ],
-      "Archive": [
-        "Archiv"
-      ],
       "clearing your browser cache": [
         "Leeren des Browser-Cache"
-      ],
-      "Drafts": [
-        "Entwürfe"
       ],
       "Enforcing 2FA for organizations": [
         "2FA für Organisationen erzwingen"
@@ -7362,9 +7362,6 @@
       "if your data is leaked": [
         "wenn deine Daten offengelegt wurden"
       ],
-      "Inbox": [
-        "Posteingang"
-      ],
       "Learn more": [
         "Mehr erfahren"
       ],
@@ -7380,12 +7377,6 @@
       "Request an invite": [
         "Einladung anfordern"
       ],
-      "Scheduled": [
-        "Geplant"
-      ],
-      "Sent": [
-        "Gesendet"
-      ],
       "settings": [
         "Einstellungen"
       ],
@@ -7394,15 +7385,6 @@
       ],
       "Shared with me": [
         "Mit mir geteilt"
-      ],
-      "Snooze": [
-        "Zurückstellen"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Markiert"
       ],
       "Trash": [
         "Papierkorb"
@@ -8885,9 +8867,6 @@
       ],
       "An invitation has been sent": [
         "Eine Einladung wurde versendet."
-      ],
-      "Cannot load file or folder info": [
-        "Information zur Datei oder zum Ordner kann nicht geladen werden"
       ],
       "Cannot load link": [
         "Link kann nicht geladen werden"
@@ -11341,6 +11320,9 @@
       "Addresses": [
         "Adressen"
       ],
+      "Advanced details": [
+        "Erweiterte Details"
+      ],
       "Album": [
         "Album"
       ],
@@ -11358,6 +11340,12 @@
       ],
       "Amount due": [
         "Fälliger Betrag"
+      ],
+      "an anonymous user": [
+        "anonymer Benutzer"
+      ],
+      "Anonymous user": [
+        "Anonymer Benutzer"
       ],
       "Apply gift code": [
         "Geschenkcode anwenden"
@@ -11465,6 +11453,9 @@
       "Create new group": [
         "Neue Gruppe erstellen"
       ],
+      "Created by": [
+        "Erstellt von"
+      ],
       "Credits": [
         "Guthaben"
       ],
@@ -11522,6 +11513,33 @@
       "Desktop": [
         "Desktop"
       ],
+      "Devices": [
+        "Geräte"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitale Signatur teilweise verifiziert. Diese Datei wurde über einen öffentlich zugänglichen Teilen-Link von einem Benutzer ohne ${ BRAND_NAME }-Konto erstellt, weshalb dessen Identität nicht verifiziert werden kann."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitale Signatur teilweise verifiziert. Diese Datei wurde über einen öffentlich zugänglichen Teilen-Link von einem Benutzer ohne ein ${ BRAND_NAME }-Konto hochgeladen, weshalb dessen Identität nicht verifiziert werden kann."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitale Signatur teilweise verifiziert. Dieser Ordner wurde über einen öffentlich zugänglichen Teilen-Link von einem Benutzer ohne ${ BRAND_NAME }-Konto erstellt, weshalb dessen Identität nicht verifiziert werden kann."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitale Signatur teilweise verifiziert. Dieser Ordner wurde über einen öffentlich zugänglichen Teilen-Link von einem Benutzer ohne ein ${ BRAND_NAME }-Konto hochgeladen, weshalb dessen Identität nicht verifiziert werden kann."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Digitale Signatur verifiziert. Diese Datei wurde von <strong>${ emailAddress }</strong> sicher erstellt."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Digitale Signatur verifiziert. Diese Datei wurde von <strong>${ emailAddress }</strong> sicher hochgeladen."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Digitale Signatur verifiziert. Dieser Ordner wurde von <strong>${ emailAddress }</strong> sicher erstellt."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Digitale Signatur verifiziert. Dieser Ordner wurde von <strong>${ emailAddress }</strong> sicher hochgeladen."
+      ],
       "Discard": [
         "Verwerfen"
       ],
@@ -11539,6 +11557,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-Apps herunterladen"
+      ],
+      "Download details": [
+        "Download-Details"
       ],
       "Download the app": [
         "Lade die App herunter"
@@ -11618,6 +11639,9 @@
       "File recovery process": [
         "Dateiwiederherstellungsprozess"
       ],
+      "Folder": [
+        "Ordner"
+      ],
       "Folder details": [
         "Ordnerdetails"
       ],
@@ -11686,6 +11710,9 @@
       "Last edited by": [
         "Zuletzt bearbeitet von"
       ],
+      "Last uploaded by": [
+        "Zuletzt hochgeladen von"
+      ],
       "Link confirmation": [
         "Linkbestätigung"
       ],
@@ -11697,6 +11724,9 @@
       ],
       "Manage secure link": [
         "Sicheren Link verwalten"
+      ],
+      "Media type": [
+        "Medientyp"
       ],
       "Merge contacts": [
         "Kontakte zusammenführen"
@@ -11730,9 +11760,6 @@
       ],
       "Network error": [
         "Netzwerkfehler"
-      ],
-      "Newsletters view": [
-        "Newsletter-Ansicht"
       ],
       "Night theme": [
         "Dunkles Design"
@@ -11799,6 +11826,9 @@
       ],
       "Original size": [
         "Originalgröße"
+      ],
+      "Original size in bytes": [
+        "Originalgröße in Bytes"
       ],
       "Other information": [
         "Weitere Informationen"
@@ -11927,6 +11957,9 @@
       "Settings": [
         "Einstellungen"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "${ name } teilen"
       ],
@@ -11956,6 +11989,9 @@
       ],
       "Size": [
         "Größe"
+      ],
+      "Size in bytes": [
+        "Größe in Bytes"
       ],
       "Sort files/folders": [
         "Dateien/Ordner sortieren"
@@ -11987,6 +12023,15 @@
       "The link expired": [
         "Der Link ist abgelaufen"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Die Überprüfung der Signatur der Verschlüsselungsschlüssel durch den ursprünglichen Ersteller (${ claimedKeyAuthor }), der den Knoten erstellt hat, ist fehlgeschlagen. Der Grund ist: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Die Überprüfung der Inhaltssignatur der Datei durch den Uploader (${ claimedContentAuthor }), der die letzte Revision hochgeladen hat, ist fehlgeschlagen. Der Grund ist: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Die Überprüfung der Signatur des Namens durch den Autor (${ claimedNameAuthor }), der den Namen zuletzt festgelegt hat, ist fehlgeschlagen. Der Grund ist: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Diese Datei hat eine fehlende oder ungültige Signatur. Gehe zu Menü (⋮) → Details für weitere Informationen."
       ],
@@ -12007,6 +12052,12 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Unbekannter Benutzer"
       ],
       "Untitled document ${ date }": [
         "Unbenanntes Dokument ${ date }"
@@ -12055,6 +12106,30 @@
       ],
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Wir konnten nicht verifizieren, dass <strong>${ emailAddress }</strong> diese Datei erstellt hat."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Wir konnten nicht verifizieren, dass <strong>${ emailAddress }</strong> diesen Ordner erstellt hat."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Wir konnten nicht verifizieren, dass <strong>${ emailAddress }</strong> diese Datei hochgeladen hat."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Wir konnten nicht verifizieren, dass <strong>${ emailAddress }</strong> diesen Ordner hochgeladen hat."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Wir konnten nicht verifizieren, dass ein anonymer Benutzer diese Datei erstellt hat."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Wir konnten nicht verifizieren, dass ein anonymer Benutzer diesen Ordner erstellt hat."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Wir konnten nicht verifizieren, dass ein anonymer Benutzer diese Datei hochgeladen hat."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Wir konnten nicht verifizieren, dass ein anonymer Benutzer diesen Ordner hochgeladen hat."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Willkommen bei ${ BRAND_NAME } for Business"

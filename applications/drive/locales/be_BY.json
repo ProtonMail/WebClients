@@ -58,7 +58,7 @@
         "Дадаць адрас"
       ],
       "Add another account": [
-        "Дадайце іншы ўліковы запіс"
+        "Дадаць іншы ўліковы запіс"
       ],
       "Add birthday": [
         "Дадаць дзень нараджэння"
@@ -450,6 +450,9 @@
       "Forward as attachment": [
         "Пераслаць як далучэнне"
       ],
+      "Full data": [
+        "Поўныя даныя"
+      ],
       "Generate password": [
         "Згенерыраваць пароль"
       ],
@@ -695,6 +698,9 @@
       ],
       "Next page": [
         "Наступная старонка"
+      ],
+      "No sensitive data": [
+        "Няма канфідэнцыяльных даных"
       ],
       "Not now": [
         "Не зараз"
@@ -3279,11 +3285,11 @@
       "Failed to fetch sharing info": [
         "Не ўдалося атрымаць зветкі абагульвання"
       ],
+      "Failed to get details, please try again later": [
+        "Не ўдалося атрымаць падрабязнасці. Паспрабуйце яшчэ раз пазней"
+      ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
-      ],
-      "Failed to move items": [
-        "Не ўдалося перамясціць элементы"
       ],
       "Failed to resend invitation": [
         "Не ўдалося паўторна адправіць запрашэнне"
@@ -3292,7 +3298,7 @@
         "Не ўдалося захаваць некаторыя фатаграфіі ў ваш Drive"
       ],
       "Failed to unshare node": [
-        "Не ўдалося скасаваць абаагульванне да вузла"
+        "Не ўдалося скасаваць абаагульванне вузла"
       ],
       "Failed to update direct share node": [
         "Не ўдалося абнавіць прамы вузел абагульвання"
@@ -3639,6 +3645,9 @@
       "Unknown error": [
         "Невядомая памылка"
       ],
+      "Unknown location": [
+        "Невядомае размяшчэнне"
+      ],
       "Unknown payment token status": [
         "Невядомы статус плацежнага токена"
       ],
@@ -3674,6 +3683,9 @@
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Назва не паддаецца расшыфроўцы"
       ]
     },
     "Error importing calendar": {
@@ -4746,7 +4758,7 @@
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
-        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага маніторынгу падазронай актыўнасці."
+        "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс па сродках адмысловага назірання падазронай актыўнасці."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
@@ -4863,7 +4875,7 @@
         "Карыстальнік - гэта ўліковы запіс, звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPN шыфруе ваша падключэнне і хавае ваш IP-адрас. Гэта вельмі ўскладняе адсочванне або маніторынг прагляду вэб-старонак для любых зацікаўленых структур."
+        "VPN шыфруе ваша падключэнне і хавае ваш IP-адрас. Гэта вельмі ўскладняе адсочванне або назеранне прагляду вэб-старонак для любых зацікаўленых структур."
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
         "VPN хавае ваш IP-адрас і шыфруе вашу актыўнасць у браўзеры. Гэта вельмі ўскладняе ўскладняе вэб-сайтам, рэкламадаўцам і пастаўшчыкам паслуг інтэрнэту адсочваць вас з цягам часу."
@@ -4996,9 +5008,6 @@
       ],
       "Aug": [
         "Жні"
-      ],
-      "Automated Recovery ${ formattedDate }": [
-        "Аўтамааднаўленне ${ formattedDate }"
       ],
       "Available": [
         "Даступна"
@@ -7461,17 +7470,8 @@
       "Albums": [
         "Альбомы"
       ],
-      "All mail": [
-        "Уся пошта"
-      ],
-      "Archive": [
-        "Архіў"
-      ],
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
-      ],
-      "Drafts": [
-        "Чарнавікі"
       ],
       "Enforcing 2FA for organizations": [
         "Прымусовае ўключэнне 2ФА для арганізацый"
@@ -7524,9 +7524,6 @@
       "if your data is leaked": [
         "пры ўцечцы вашых даных"
       ],
-      "Inbox": [
-        "Уваходныя"
-      ],
       "Learn more": [
         "Даведацца больш"
       ],
@@ -7542,12 +7539,6 @@
       "Request an invite": [
         "Запытаць запрашэнне"
       ],
-      "Scheduled": [
-        "Запланавана"
-      ],
-      "Sent": [
-        "Адпраўленыя"
-      ],
       "settings": [
         "налады"
       ],
@@ -7556,15 +7547,6 @@
       ],
       "Shared with me": [
         "Абагулена са мной"
-      ],
-      "Snooze": [
-        "Адкласці"
-      ],
-      "Spam": [
-        "Спам"
-      ],
-      "Starred": [
-        "З зорачкай"
       ],
       "Trash": [
         "Сметніца"
@@ -8599,7 +8581,7 @@
         "Палепшаная бяспека і прэміяльныя функцыі для каманд."
       ],
       "Essential protection and secure collaboration for unlimited users.": [
-        "Неабходная абарона і бяспечная супрацоўніцтва для неабмежаванай колькасці карыстальнікаў."
+        "Неабходная абарона і бяспечнае супрацоўніцтва для неабмежаванай колькасці карыстальнікаў."
       ],
       "For next-level password management and identity protection.": [
         "Для больш высокага ўзроўню кіравання паролямі і абароны ідэнтычнасці."
@@ -9136,9 +9118,6 @@
       "An invitation has been sent": [
         "Запрашэнне было адпраўлена"
       ],
-      "Cannot load file or folder info": [
-        "Немагчыма загрузіць звесткі аб файле або папцы"
-      ],
       "Cannot load link": [
         "Немагчыма загрузіць спасылку"
       ],
@@ -9209,10 +9188,10 @@
         "Не ўдалося запампаваць файлы: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Файл або папка \"${ filename }\" і ${ count } іншы ўжо запампаваны",
-        "Файл або папка \"${ filename }\" і ${ count } іншых ужо запампаваны",
-        "Файл або папка \"${ filename }\" і ${ count } іншых ужо запампаваны",
-        "Файл або папка \"${ filename }\" і ${ count } іншых ужо запампаваны"
+        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампаваны",
+        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампаваны",
+        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампаваны",
+        "Файл або папка \"${ filename }\" і яшчэ ${ count } ужо запампаваны"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "Файл або папка \"${ filename }\" ужо запампаваны"
@@ -9737,7 +9716,7 @@
         "Аплачваецца штогод у памеры ${ yearlyPrice }. Эканомія складае ${ yearlySavedPrice } з тарыфным планам ${ passFamilyPlanName } (у параўнанні з 6 асобнымі падпіскамі тарыфнага плана ${ passPlusPlanName })"
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
-        "Эксклюзіўная прапанова даступная толькі для першых прыхільнікаў ${ PASS_APP_NAME }"
+        "Эксклюзіўная прапанова даступна толькі для ранніх прыхільнікаў ${ PASS_APP_NAME }"
       ],
       "Get it for ${ monthlyPrice }": [
         "Атрымайце яго за ${ monthlyPrice }"
@@ -11711,6 +11690,9 @@
       "Addresses": [
         "Адрасы"
       ],
+      "Advanced details": [
+        "Пашыраныя падрабязнасці"
+      ],
       "Album": [
         "Альбом"
       ],
@@ -11728,6 +11710,12 @@
       ],
       "Amount due": [
         "Да аплаты"
+      ],
+      "an anonymous user": [
+        "ананімны карыстальнік"
+      ],
+      "Anonymous user": [
+        "Ананімны карыстальнік"
       ],
       "Apply gift code": [
         "Ужыць падарункавы код"
@@ -11837,6 +11825,9 @@
       "Create new group": [
         "Стварэнне новай групы"
       ],
+      "Created by": [
+        "Створана"
+      ],
       "Credits": [
         "Крэдыты"
       ],
@@ -11900,6 +11891,33 @@
       "Desktop": [
         "Для камп'ютара"
       ],
+      "Devices": [
+        "Прылады"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Лічбавы подпіс часткова правераны. Гэты файл быў створаны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Лічбавы подпіс часткова правераны. Гэты файл быў запампаваны з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Лічбавы подпіс часткова правераны. Гэта папка была створана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Лічбавы подпіс часткова правераны. Гэта папка была запампавана з выкарыстаннем агульнадаступнай абагуленай спасылкі карыстальнікам без уліковага запісу ${ BRAND_NAME }, таму немагчыма праверыць яго ідэнтычнасць."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Лічбавы подпіс правераны. Гэты файл быў бяспечна створаны <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Лічбавы подпіс правераны. Гэты файл быў бяспечна запампаваны <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Лічбавы подпіс правераны. Гэта папка была бяспечна створана <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Лічбавы подпіс правераны. Гэта папка была бяспечна запампавана <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Адхіліць"
       ],
@@ -11917,6 +11935,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
+      ],
+      "Download details": [
+        "Спампаваць падрабязнасці"
       ],
       "Download the app": [
         "Спампаваць праграму"
@@ -11996,6 +12017,9 @@
       "File recovery process": [
         "Працэс аднаўлення файлаў"
       ],
+      "Folder": [
+        "Папка"
+      ],
       "Folder details": [
         "Падрабязнасці папкі"
       ],
@@ -12068,6 +12092,9 @@
       "Last edited by": [
         "Апошняе рэдагаванне"
       ],
+      "Last uploaded by": [
+        "Апошняе запампоўванне"
+      ],
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
       ],
@@ -12079,6 +12106,9 @@
       ],
       "Manage secure link": [
         "Кіраванне бяспечнай спасылкай"
+      ],
+      "Media type": [
+        "Тып медыя"
       ],
       "Merge contacts": [
         "Аб'яднанне кантактаў"
@@ -12112,9 +12142,6 @@
       ],
       "Network error": [
         "Памылка сеткі"
-      ],
-      "Newsletters view": [
-        "Прагляд рассылкі"
       ],
       "Night theme": [
         "Начная тэма"
@@ -12181,6 +12208,9 @@
       ],
       "Original size": [
         "Арыгінальны памер"
+      ],
+      "Original size in bytes": [
+        "Арыгінальны памер у байтах"
       ],
       "Other information": [
         "Іншая інфармацыя"
@@ -12311,6 +12341,9 @@
       "Settings": [
         "Налады"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "Абагуліць ${ name }"
       ],
@@ -12340,6 +12373,9 @@
       ],
       "Size": [
         "Памер"
+      ],
+      "Size in bytes": [
+        "Памер у байтах"
       ],
       "Sort files/folders": [
         "Сартаванне файлаў/папак"
@@ -12371,6 +12407,15 @@
       "The link expired": [
         "Спасылка пратэрмінавана"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Збой праверкі подпісу ключоў шыфравання арыгінальным стваральнікам (${ claimedKeyAuthor }), які стварыў вузел. Прычына: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Збой праверкі подпісу змесціва файла запампавальнікам (${ claimedContentAuthor }), які запампаваны апошняй рэдакцыяй. Прычына: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Збой праверкі подпісу імя аўтарам (${ claimedNameAuthor }), які задаў імя апошні раз. Прычына: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Для гэтага файла адсутнічае подпіс або ён з'яўляецца памылковым. Перайдзіце ў Меню (⋮) → Падрабязнасці для атрымання інфармацыі."
       ],
@@ -12391,6 +12436,12 @@
       ],
       "Type": [
         "Тып"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Невядомы карыстальнік"
       ],
       "Untitled document ${ date }": [
         "Дакумент без назвы ад ${ date }"
@@ -12439,6 +12490,30 @@
       ],
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Немагчыма праверыць, што <strong>${ emailAddress }</strong> стварыў гэты файл."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Немагчыма праверыць, што <strong>${ emailAddress }</strong> стварыў гэту папку."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Немагчыма праверыць, што <strong>${ emailAddress }</strong> запампаваў гэты файл."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Немагчыма праверыць, што <strong>${ emailAddress }</strong> запампаваў гэту папку."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Немагчыма праверыць, што ананімны карыстальнік стварыў гэты файл."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Немагчыма праверыць, што ананімны карыстальнік стварыў гэту папку."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Немагчыма праверыць, што ананімны карыстальнік запампаваў гэты файл."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Немагчыма праверыць, што ананімны карыстальнік запампаваў гэту папку."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"

@@ -1200,6 +1200,12 @@
       "${ price } per user": [
         "${ price } za používateľa"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
         "${ seats } licencie asistentov písania",
@@ -1585,6 +1591,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problém"
+      ],
       "Application problem": [
         "Problém aplikácie"
       ],
@@ -3273,9 +3282,6 @@
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
       ],
-      "Failed to move items": [
-        "Nepodarilo sa presunúť položky"
-      ],
       "Failed to resend invitation": [
         "Opätovné odoslanie pozvánky zlyhalo"
       ],
@@ -4712,6 +4718,9 @@
         "${ invitations.length } čakajúcich pozvánok",
         "${ invitations.length } čakajúcich pozvánok"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotná služba ${ PASS_SHORT_APP_NAME } nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }"
       ],
@@ -4985,9 +4994,6 @@
       "Aug": [
         "Aug"
       ],
-      "Automated Recovery ${ formattedDate }": [
-        "Automatická obnova ${ formattedDate }"
-      ],
       "Available": [
         "Dostupné"
       ],
@@ -5182,6 +5188,9 @@
       ],
       "Download ${ name } app": [
         "Prevziať aplikáciu ${ name }"
+      ],
+      "Download current logs": [
+        "Stiahnuť aktuálne záznamy"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Preberanie súboru ${ downloadFileName } bude prerušené"
@@ -7059,6 +7068,9 @@
       "Import to:": [
         "Importovať do:"
       ],
+      "Include application logs in bug report": [
+        "Vrátane záznamov aplikácie v chybovom hlásení"
+      ],
       "Include message and file name in invite email": [
         "Zahrnúť správu a názov súboru do emailovej pozvánky"
       ],
@@ -7443,17 +7455,8 @@
       "Albums": [
         "Albumy"
       ],
-      "All mail": [
-        "Všetky správy"
-      ],
-      "Archive": [
-        "Archív"
-      ],
       "clearing your browser cache": [
         "vymazanie medzipamäte prehliadača"
-      ],
-      "Drafts": [
-        "Koncepty"
       ],
       "Enforcing 2FA for organizations": [
         "Vynútenie 2FA pre organizácie"
@@ -7506,9 +7509,6 @@
       "if your data is leaked": [
         "ak dôjde k úniku vašich údajov"
       ],
-      "Inbox": [
-        "Doručená pošta"
-      ],
       "Learn more": [
         "Zistiť viac"
       ],
@@ -7524,12 +7524,6 @@
       "Request an invite": [
         "Požiadať o pozvánku"
       ],
-      "Scheduled": [
-        "Naplánované"
-      ],
-      "Sent": [
-        "Odoslané"
-      ],
       "settings": [
         "nastavenia"
       ],
@@ -7538,15 +7532,6 @@
       ],
       "Shared with me": [
         "Zdieľané so mnou"
-      ],
-      "Snooze": [
-        "Odložiť"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "S hviezdičkou"
       ],
       "Trash": [
         "Kôš"
@@ -9066,9 +9051,6 @@
       ],
       "An invitation has been sent": [
         "Pozvánka bola odoslaná"
-      ],
-      "Cannot load file or folder info": [
-        "Nepodarilo sa načítať informácie o súbore alebo priečinku"
       ],
       "Cannot load link": [
         "Odkaz sa nepodarilo načítať"
@@ -12043,9 +12025,6 @@
       ],
       "Network error": [
         "Chyba siete"
-      ],
-      "Newsletters view": [
-        "Zobrazenie newslettrerov"
       ],
       "Night theme": [
         "Nočný motív"
