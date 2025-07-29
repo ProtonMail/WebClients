@@ -445,7 +445,6 @@ const hasAccess = ({
 };
 
 export const getUpdatedPlanIDs = ({
-    isLumoAddonAvailable,
     options,
     subscription,
     user,
@@ -455,7 +454,6 @@ export const getUpdatedPlanIDs = ({
     plans,
     organization,
 }: {
-    isLumoAddonAvailable: boolean;
     options: {
         planIDs: PlanIDs | undefined;
         cycle: CYCLE;
@@ -506,7 +504,6 @@ export const getUpdatedPlanIDs = ({
             })
         );
         const planIDs = switchPlan({
-            isLumoAddonAvailable,
             subscription,
             newPlan: PLANS.BUNDLE,
             organization,
@@ -518,7 +515,6 @@ export const getUpdatedPlanIDs = ({
 };
 
 export const getUserInfo = async ({
-    isLumoAddonAvailable,
     api,
     audience,
     paymentsApi,
@@ -532,7 +528,6 @@ export const getUserInfo = async ({
     toApp,
     availableCycles,
 }: {
-    isLumoAddonAvailable: boolean;
     api: Api;
     paymentsApi: PaymentsApi;
     user?: User | undefined;
@@ -643,7 +638,6 @@ export const getUserInfo = async ({
             ...optionsWithSubscriptionDefaults,
             ...upsell.subscriptionOptions,
             planIDs: switchPlan({
-                isLumoAddonAvailable,
                 subscription,
                 newPlan: upsell.plan.Name,
                 organization,
@@ -654,7 +648,6 @@ export const getUserInfo = async ({
     }
 
     const result = getUpdatedPlanIDs({
-        isLumoAddonAvailable,
         user,
         subscription,
         organization,
