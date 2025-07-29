@@ -1426,10 +1426,6 @@
       "Trust": [
         "Considera attendibile"
       ],
-      "Trust key": [
-        "Considera attendibile la chiave",
-        "Considera attendibili le chiavi"
-      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -13575,6 +13571,10 @@
         "${ elementsCount } conversazione rimossa da ${ labelName }.",
         "${ elementsCount } conversazioni rimosse da ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } conversazione rimossa dai Preferiti.",
+        "${ elementsCount } conversazioni rimosse dai Preferiti."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversazione posticipata",
         "${ elementsCount } conversazioni posticipate"
@@ -13614,6 +13614,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } messaggio rimosso da ${ labelName }.",
         "${ elementsCount } messaggi rimossi da ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } messaggio rimosso dai Preferiti.",
+        "${ elementsCount } messaggi rimossi dai Preferiti."
       ],
       "Address copied to clipboard": [
         "Indirizzo copiato negli appunti"
@@ -13676,6 +13680,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversazione rimossa da ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Conversazione rimossa dai Preferiti."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Le conversazioni da ${ sendersList } saranno etichettate come ${ labelsList }"
@@ -13748,6 +13755,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Messaggio rimosso da ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Messaggio rimosso dai Preferiti."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "I messaggi da ${ sendersList } saranno etichettati come ${ labelsList }"

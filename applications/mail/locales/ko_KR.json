@@ -1422,9 +1422,6 @@
       "Trust": [
         "신뢰"
       ],
-      "Trust key": [
-        "키 신뢰하기"
-      ],
       "Trust public key": [
         "공개 키 신뢰하기"
       ],
@@ -1662,6 +1659,9 @@
       ],
       "${ price } per user": [
         "사용자당 ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ],
       "${ seats } writing assistant seat": [
         "${ seats }명 글쓰기 도우미 이용 권한"

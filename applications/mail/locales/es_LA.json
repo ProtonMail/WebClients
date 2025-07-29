@@ -1427,8 +1427,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Clave de confianza"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -13576,6 +13575,10 @@
         "${ elementsCount } conversación eliminada de ${ labelName }.",
         "${ elementsCount } conversaciones eliminadas de ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } conversación borrada de Destacados.",
+        "${ elementsCount } conversaciones borradas de Destacados."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversación pausada",
         "${ elementsCount } conversaciones pausadas"
@@ -13615,6 +13618,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensaje eliminado de ${ labelName }.",
         "${ elementsCount } mensajes eliminados de ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } mensaje borrado de Destacados.",
+        "${ elementsCount } mensajes borrados de Destacados."
       ],
       "Address copied to clipboard": [
         "Dirección copiada al portapapeles"
@@ -13677,6 +13684,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversación eliminada de ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Conversación borrada de Destacados."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Las conversaciones desde ${ sendersList } serán etiquetadas como ${ labelsList }"
@@ -13749,6 +13759,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Mensaje eliminado de ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Mensaje borrado de Destacados."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Los mensajes desde ${ sendersList } serán etiquetados como ${ labelsList }"
