@@ -978,6 +978,11 @@
       "${ price } per user": [
         "${ price } per utilizator"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licență ${ LUMO_APP_NAME }",
+        "${ seats } licențe ${ LUMO_APP_NAME }",
+        "${ seats } de licențe ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licență asistent de scriere",
         "${ seats } licențe asistent de scriere",
@@ -1407,6 +1412,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problemă ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problemă aplicație"
       ],
@@ -4815,6 +4823,9 @@
         "Grupuri găsite: ${ groupCounts }",
         "Grupuri găsite: ${ groupCounts }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5180,6 +5191,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
+      ],
+      "Download current logs": [
+        "Descărcare jurnale actuale"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
@@ -6533,6 +6547,9 @@
       "Import to:": [
         "Importare în:"
       ],
+      "Include application logs in bug report": [
+        "Includere jurnale aplicație în raportul de eroare"
+      ],
       "Integrated 2FA authenticator": [
         "Autentificator A2F integrat"
       ],
@@ -6844,20 +6861,11 @@
       "Add a gift code": [
         "Adăugare cod cadou"
       ],
-      "All mail": [
-        "Toate mesajele"
-      ],
-      "Archive": [
-        "Arhivă"
-      ],
       "Calendars": [
         "Calendare"
       ],
       "clearing your browser cache": [
         "golind bufferul navigatorului web"
-      ],
-      "Drafts": [
-        "Ciorne"
       ],
       "Enforcing 2FA for organizations": [
         "Impunere A2F pentru organizații"
@@ -6910,9 +6918,6 @@
       "if your data is leaked": [
         "dacă datele v-au fost divulgate"
       ],
-      "Inbox": [
-        "Primite"
-      ],
       "Learn more": [
         "Detalii"
       ],
@@ -6931,26 +6936,8 @@
       "Request an invite": [
         "Solicitați o invitație"
       ],
-      "Scheduled": [
-        "Programate"
-      ],
-      "Sent": [
-        "Trimise"
-      ],
       "settings": [
         "setări"
-      ],
-      "Snooze": [
-        "Amânare"
-      ],
-      "Spam": [
-        "Nedorite"
-      ],
-      "Starred": [
-        "Cu stea"
-      ],
-      "Trash": [
-        "Gunoi"
       ],
       "Types of recovery methods": [
         "Tipuri de metode de recuperare"
@@ -11167,9 +11154,6 @@
       ],
       "Network error": [
         "Eroare de rețea"
-      ],
-      "Newsletters view": [
-        "Afișare buletine informative"
       ],
       "Night theme": [
         "Temă noapte"
