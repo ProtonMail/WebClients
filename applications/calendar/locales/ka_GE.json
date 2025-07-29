@@ -95,6 +95,9 @@
       "Add Zoom meeting": [
         "Zoom-ის შეხვედრის დამატება"
       ],
+      "Adding conferencing details": [
+        "კონფერენციის დეტალების დამატება"
+      ],
       "Apply": [
         "გადატარება"
       ],
@@ -119,6 +122,9 @@
       ],
       "Cancel subscription": [
         "გამოწერის გაუქმება"
+      ],
+      "Cancel trial and pay": [
+        "გამოსაცდელი პერიოდის გაუქმება და გადახდა"
       ],
       "Chat with us": [
         "დაგველაპარაკეთ"
@@ -473,6 +479,9 @@
       "Load image": [
         "გამოსახულების ჩატვირთვა"
       ],
+      "Loading Zoom configuration": [
+        "Zoom-ის კონფიგურაციის ჩატვირთვა"
+      ],
       "Make this participant optional": [
         "ამ მონაწილის არასავალდებულოდ მონიშვნა"
       ],
@@ -610,6 +619,9 @@
       ],
       "Reconnect": [
         "თავიდან დაკავშირება"
+      ],
+      "Reconnect to Zoom": [
+        "თავიდან დაკავშირება Zoom-თან"
       ],
       "Recover data": [
         "მონაცემების აღდგენა"
@@ -959,6 +971,10 @@
       ],
       "${ price } per user": [
         "${ price }/მომხმარებელი"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } წერის დამხმარის ლიცენზია",
@@ -1366,6 +1382,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME }-ის პრობლემა"
+      ],
       "Application problem": [
         "აპლიკაციის პრობლემა"
       ],
@@ -3527,6 +3546,18 @@
       "Please create an address first.": [
         "ჯერ საჭიროა მისამართის შექნა."
       ],
+      "Please enter a valid postal code": [
+        "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
+      ],
+      "Please enter a valid ZIP code": [
+        "შეიყვანეთ სწორი ZIP კოდი"
+      ],
+      "Please enter postal code": [
+        "შეყვანეთ საფოსტო კოდი"
+      ],
+      "Please enter ZIP code": [
+        "შეიყვანეთ ZIP კოდი"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
@@ -3539,6 +3570,12 @@
       ],
       "Please select a state": [
         "აირჩიეთ შტატი"
+      ],
+      "Please select billing country": [
+        "აირჩიეთ გადახდის ქვეყანა"
+      ],
+      "Please select billing state": [
+        "აირჩიეთ გადახდის მდგომარეობა"
       ],
       "Port is required": [
         "პორტი აუცილებელია"
@@ -5015,6 +5052,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "გეგმის ჩამოწევა შეწყვეტს შეერთებას ფასიან ${ VPN_APP_NAME } სერვერებთან."
       ],
+      "Download current logs": [
+        "მიმდინარე ჟურნალის გადმოწერა"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "გადმოწერეთ თქვენი რჩეული აპლიკაცია დღეს და გქონდეთ თქვენი კონფიდენციალობა თან, სადაც უნდა წახვიდეთ."
       ],
@@ -6308,6 +6348,9 @@
       "Import to:": [
         "შემოტანა:"
       ],
+      "Include application logs in bug report": [
+        "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
+      ],
       "Integrated 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
       ],
@@ -6618,20 +6661,11 @@
       "Add a gift code": [
         "ჩასვით სასაჩუქრე კოდი"
       ],
-      "All mail": [
-        "ყველა ელფოსტა"
-      ],
-      "Archive": [
-        "არქივი"
-      ],
       "Calendars": [
         "კალენდრები"
       ],
       "clearing your browser cache": [
         "ბრაუზერის ქეშის გასუფთავება"
-      ],
-      "Drafts": [
-        "მონახაზები"
       ],
       "Enforcing 2FA for organizations": [
         "2FA-ის მოთხოვნა ორგანიზაციებისთვის"
@@ -6684,9 +6718,6 @@
       "if your data is leaked": [
         "თუ თქვენი მონაცემები გაიჟონება"
       ],
-      "Inbox": [
-        "შემომავალი"
-      ],
       "Learn more": [
         "გაიგეთ მეტი"
       ],
@@ -6705,26 +6736,8 @@
       "Request an invite": [
         "მოსაწვევის მოთხოვნა"
       ],
-      "Scheduled": [
-        "დაგეგმილია"
-      ],
-      "Sent": [
-        "გაგზავნილები"
-      ],
       "settings": [
         "მორგება"
-      ],
-      "Snooze": [
-        "დროებით დადუმება"
-      ],
-      "Spam": [
-        "სპამი"
-      ],
-      "Starred": [
-        "ვარსკვლავიანები"
-      ],
-      "Trash": [
-        "ნაგვის ყუთი"
       ],
       "Types of recovery methods": [
         "აღდგენის მეთოდის ტიპები"
@@ -7716,6 +7729,9 @@
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
       ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
+      ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
       ],
@@ -8585,6 +8601,9 @@
       "Got it": [
         "გავიგე"
       ],
+      "I'm purchasing as a business": [
+        "ვაპირებ შევიძინო ბიზნესისთვის"
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -8827,6 +8846,14 @@
     "plan customizer, users": {
       "contact": [
         "კონტაქტი"
+      ]
+    },
+    "plus_block": {
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle }-ზე დარჩენა"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -10746,9 +10773,6 @@
       ],
       "Network error": [
         "ქსელის შეცდომა"
-      ],
-      "Newsletters view": [
-        "სიახლეების ხედი"
       ],
       "Night theme": [
         "ღამის თემა"
