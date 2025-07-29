@@ -1397,6 +1397,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
+      ],
       "Application problem": [
         "Problem med applikation"
       ],
@@ -5112,6 +5115,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
       ],
+      "Download current logs": [
+        "Ladda ner nuvarande loggar"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Ladda ner din favoritapp idag och ta integritet med dig var du än går."
       ],
@@ -6450,6 +6456,9 @@
       "Import to:": [
         "Importera till:"
       ],
+      "Include application logs in bug report": [
+        "Inkludera applikationsloggar i felrapport"
+      ],
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
       ],
@@ -6760,20 +6769,11 @@
       "Add a gift code": [
         "Lägg till en presentkod"
       ],
-      "All mail": [
-        "All e-post"
-      ],
-      "Archive": [
-        "Arkiv"
-      ],
       "Calendars": [
         "Kalendrar"
       ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
-      ],
-      "Drafts": [
-        "Utkast"
       ],
       "Enforcing 2FA for organizations": [
         "Kräver 2FA för organisationer"
@@ -6826,9 +6826,6 @@
       "if your data is leaked": [
         "om dina uppgifter läcker ut"
       ],
-      "Inbox": [
-        "Inkorg"
-      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -6847,26 +6844,8 @@
       "Request an invite": [
         "Begär en inbjudan"
       ],
-      "Scheduled": [
-        "Schemalagd"
-      ],
-      "Sent": [
-        "Skickat"
-      ],
       "settings": [
         "inställningar"
-      ],
-      "Snooze": [
-        "Snooza"
-      ],
-      "Spam": [
-        "Skräppost"
-      ],
-      "Starred": [
-        "Stjärnmärkt"
-      ],
-      "Trash": [
-        "Papperskorg"
       ],
       "Types of recovery methods": [
         "Typer av återställningsmetoder"
@@ -10965,9 +10944,6 @@
       ],
       "Network error": [
         "Nätverksfel"
-      ],
-      "Newsletters view": [
-        "Nyhetsbrevsvy"
       ],
       "Night theme": [
         "Nattema"
