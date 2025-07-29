@@ -619,6 +619,12 @@
       "Edit servers": [
         "Editare servere"
       ],
+      "Edit Sieve": [
+        "Editare script Sieve"
+      ],
+      "Edit Sieve filter “${ Name }”": [
+        "Editare filtru Sieve „${ Name }”"
+      ],
       "Edit sign-in details": [
         "Editare detalii de conectare"
       ],
@@ -1642,6 +1648,11 @@
       "${ price } per user": [
         "${ price } per utilizator"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licență ${ LUMO_APP_NAME }",
+        "${ seats } licențe ${ LUMO_APP_NAME }",
+        "${ seats } de licențe ${ LUMO_APP_NAME }"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licență asistent de scriere",
         "${ seats } licențe asistent de scriere",
@@ -2366,6 +2377,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problemă ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Application problem": [
         "Problemă aplicație"
       ],
@@ -7655,6 +7669,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } dorește să vă partajeze date în ${ PASS_APP_NAME }"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
@@ -8486,6 +8503,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
+      ],
+      "Download current logs": [
+        "Descărcare jurnale actuale"
       ],
       "Download on the App Store": [
         "Descărcare din App Store"
@@ -9538,6 +9558,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
+      ],
+      "Private AI assistant": [
+        "Asistent AI privat"
       ],
       "Promotion expired": [
         "Promoția a expirat"
@@ -11138,6 +11161,9 @@
       "Inactive": [
         "Inactivă"
       ],
+      "Invalid": [
+        "Nevalid"
+      ],
       "Obsolete": [
         "Nevalabilă"
       ],
@@ -12021,6 +12047,9 @@
       ],
       "Inbox": [
         "Primite"
+      ],
+      "Include application logs in bug report": [
+        "Includere jurnale aplicație în raportul de eroare"
       ],
       "Inherit color from parent folder": [
         "Moștenire culoare de la folderul părinte"
@@ -13338,9 +13367,6 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "V-ați uitat numele de utilizator al contului ${ BRAND_NAME }? Aflați-l folosind adresa de e-mail de recuperare sau numărul de telefon și redobândiți accesul la ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și multe altele."
       ],
-      "Private and secure email, no bank card required": [
-        "E-mail privat și securizat, nu este necesar un card de plată"
-      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetare parolă cont ${ BRAND_NAME }"
       ],
@@ -13350,8 +13376,11 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Conectați-vă la contul ${ BRAND_NAME } pentru a accesa toate serviciile ${ BRAND_NAME } criptate, cum ar fi ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și altele. NU aveți un cont? Creați unul GRATUIT."
       ],
-      "Try ${ planName } for free with this link": [
-        "Încercați ${ planName } gratuit cu această legătură web"
+      "Take control of your data with end-to-end encryption. No bank card required.": [
+        "Preluați controlul asupra datelor cu criptare bilaterală. Nu este necesar un card bancar."
+      ],
+      "Try ${ BRAND_NAME } for free with this link": [
+        "Încercați ${ BRAND_NAME } gratuit cu această legătură web"
       ]
     },
     "Modal title": {
@@ -16475,11 +16504,23 @@
       ]
     },
     "Plan description": {
+      "A VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "O soluție VPN care oferă acces sigur, fără restricții, de mare viteză la Internet."
+      ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Toate produsele speciale ${ BRAND_NAME } incluse în Duo."
       ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Cel mai bun dacă aveți nevoie de ${ maxSpace } de stocare și pentru cupluri."
+      ],
+      "Cloud storage and file sharing, secured by end-to-end encryption.": [
+        "Stocare în cloud și partajare fișier, securizată prin criptare bilaterală."
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Confidențialitate și securitate cuprinzătoare cu toate serviciile ${ BRAND_NAME } combinate."
+      ],
+      "For next-level password management and identity protection.": [
+        "Pentru gestionarea parolelor la un nivel superior și protecția identității."
       ],
       "Great for everyday use and photo backups.": [
         "Excelent pentru utilizarea de zi cu zi și pentru conservarea fotografiilor."
@@ -16489,6 +16530,9 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Stocare în cloud și colaborare sigură pentru echipe."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Planul ideal pentru utilizatorii avansați preocupați de confidențialitate."
@@ -17699,15 +17743,36 @@
         "${ FREE_PASS_ALIASES } aliasuri hide-my-email pentru a combate mesajele nedorite",
         "${ FREE_PASS_ALIASES } de aliasuri hide-my-email pentru a combate mesajele nedorite"
       ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adresă",
         "${ maxAddresses } adrese",
         "${ maxAddresses } de adrese"
       ],
+      "${ maxAddresses } email address": [
+        "Adrese de e-mail: ${ maxAddresses }",
+        "Adrese de e-mail: ${ maxAddresses }",
+        "Adrese de e-mail: ${ maxAddresses }"
+      ],
+      "${ maxAddresses } extra email address": [
+        "Adrese de e-mail extra: ${ maxAddresses }",
+        "Adrese de e-mail extra: ${ maxAddresses }",
+        "Adrese de e-mail extra: ${ maxAddresses }"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } calendar",
         "${ maxCalendars } calendare",
         "${ maxCalendars } de calendare"
+      ],
+      "${ maxDomains } email domain": [
+        "Domenii de e-mail: ${ maxDomains }",
+        "Domenii de e-mail: ${ maxDomains }",
+        "Domenii de e-mail: ${ maxDomains }"
+      ],
+      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
+        "${ referrerName } vă invită să încercați ${ BRAND_NAME }."
       ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } stocare în cloud pentru fișiere și fotografii"
@@ -17718,6 +17783,9 @@
       "${ value } of secure storage per user": [
         "${ value } de spațiu securizat per utilizator"
       ],
+      "${ value } total storage": [
+        "${ value } spațiu total"
+      ],
       "/user": [
         "/utilizator"
       ],
@@ -17727,8 +17795,23 @@
       "Advanced account protection": [
         "Protecție avansată a contului"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "And get ${ referralReward } in credits, if you subscribe.": [
+        "Și primiți ${ referralReward } în credite, dacă vă abonați."
+      ],
       "Billing Cycle": [
         "Ciclu de facturare"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocare reclame, urmăritori și programe malițioase"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentificator A2F încorporat"
+      ],
+      "Bundle": [
+        "Pachet"
       ],
       "Collaborative document editing": [
         "Editare colaborativă de documente"
@@ -17745,8 +17828,23 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Continuare cu ${ PLAN_NAMES[plan] }"
       ],
+      "Continue with the free plan": [
+        "Continuare cu planul gratuit"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Creați un cont ${ BRAND_NAME }"
+      ],
+      "Custom fields and file attachment": [
+        "Câmpuri personale și atașamente de fișiere"
+      ],
+      "Encrypted cloud storage": [
+        "Stocare în cloud criptată"
+      ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "E-mail criptat cu ${ totalMailStorageSize } spațiu de stocare"
+      ],
+      "Encrypted file sharing and document editor": [
+        "Partajare criptată fișiere și editor de documente"
       ],
       "Encrypted password manager": [
         "Manager de parole criptat"
@@ -17754,11 +17852,23 @@
       "End-to-end encryption": [
         "Criptare bilaterală"
       ],
+      "Enjoy secure, easy-to-use ${ BRAND_NAME } apps.": [
+        "Bucurați-vă de aplicațiile ${ BRAND_NAME } sigure și ușor de utilizat."
+      ],
       "Every free account comes with:": [
         "Fiecare cont gratuit include:"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Descărcări rapide P2P/BitTorrent"
+      ],
       "Free": [
         "Free"
+      ],
+      "Free for 14 days": [
+        "Gratuit timp de 14 zile"
+      ],
+      "Get ${ referralReward } in credits": [
+        "Obțineți ${ referralReward } în credite"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Obțineți o adresă ${ MAIL_APP_NAME } securizată sau ${ internalButton }"
@@ -17768,6 +17878,15 @@
       ],
       "Get a secure one from us, or ${ internalButton }": [
         "Obțineți unul securizat de la noi sau ${ internalButton }"
+      ],
+      "Gifted by **${ referrerName }**": [
+        "Oferit de **${ referrerName }**"
+      ],
+      "Highest VPN speed": [
+        "Viteză VPN maximă"
+      ],
+      "Mailboxes and custom domains for aliases": [
+        "Mesaje și domenii personale pentru aliasuri"
       ],
       "Manage user access": [
         "Gestionare acces utilizatori"
@@ -17784,8 +17903,17 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Aveți nevoie de mai mult spațiu? Puteți trece la alt plan oricând cu planuri de la 200 GiB la 3 TiB. 5 GiB ajung pentru 2.500 de fotografii dintr-un telefon modern (la ~2 MiB fiecare)."
       ],
+      "No credit card required:": [
+        "Nu trebuie card de credit:"
+      ],
+      "Online document editor": [
+        "Editor de documente online"
+      ],
       "Online documents": [
         "Documente online"
+      ],
+      "Password manager": [
+        "Manager de parole"
       ],
       "Password manager for all your devices": [
         "Manager de parole pentru toate dispozitivele deținute"
@@ -17808,6 +17936,18 @@
       "Secure file sharing": [
         "Partajare securizată fișiere"
       ],
+      "Secure vault sharing and link sharing": [
+        "Partajare sigură seifuri și legături web"
+      ],
+      "Securely share files, photos and documents": [
+        "Partajați securizat fișiere, fotografii și documente"
+      ],
+      "Select ${ title }": [
+        "Selectare ${ title }"
+      ],
+      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
+        "Selectați un serviciu și bucurați-vă de versiunea specială gratuit timp de 14 zile. Nu este necesar cardul de plată."
+      ],
       "Selected": [
         "Selectat"
       ],
@@ -17829,17 +17969,47 @@
       "Sign up, protect your files": [
         "Înscrieți-vă, protejați-vă fișierele"
       ],
+      "Start free trial": [
+        "Începeți probarea gratuită"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
+      ],
+      "Stream your favorite TV shows and movies": [
+        "Vizionați emisiunile TV și filme favorite"
+      ],
       "Sync files across devices and users": [
         "Sincronizare fișiere între dispozitive și utilizatori"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Numele organizației va fi vizibil pentru utilizatorii acesteia în timp ce aceștia sunt conectați."
       ],
+      "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
+        "Apoi ${ priceWithDiscountPerMonth } pe lună, dacă vă abonați."
+      ],
+      "To reedeem on your next paid subscription.": [
+        "Pentru a-l valorifica la următorul abonament plătit."
+      ],
       "Total": [
         "Total"
       ],
+      "Try ${ BRAND_NAME } for 14 days free": [
+        "Încercați ${ BRAND_NAME } gratuit timp de 14 zile"
+      ],
+      "Try ${ planName } for free": [
+        "Încercați ${ planName } gratuit"
+      ],
       "Ultra fast and private VPN": [
         "VPN rapid și privat"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliasuri hide-my-email nelimitate"
+      ],
+      "Up to -${ percentage }%": [
+        "Până la -${ percentage }%"
       ],
       "Up to 2 users": [
         "Maxim 2 utilizatori"
@@ -17856,6 +18026,9 @@
       "Use your email, or ${ externalButton }": [
         "Folosiți adresa de e-mail sau ${ externalButton }"
       ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ],
       "use your own email.": [
         "utilizați propriul e-mail."
       ],
@@ -17864,11 +18037,17 @@
         "VPN cu servere în ${ vpnServersCountData.free.countries } țări",
         "VPN cu servere în ${ vpnServersCountData.free.countries } de țări"
       ],
+      "We’ll email you before your trial ends.": [
+        "Veți primi un mesaj pe e-mail înainte de expirarea perioadei de probare."
+      ],
       "Yearly": [
         "Anual"
       ],
       "Your plan": [
         "Planul actual"
+      ],
+      "Your trial": [
+        "Probare"
       ]
     },
     "Signup label": {
@@ -21976,6 +22155,9 @@
       ],
       "It's you": [
         "Sunt eu"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Acces de administrare în așteptare"
