@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "Reenviar como adjunto"
       ],
+      "Full data": [
+        "Datos completos"
+      ],
       "Generate password": [
         "Generar contraseña"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "Página siguiente"
+      ],
+      "No sensitive data": [
+        "Sin datos sensibles"
       ],
       "Not now": [
         "Ahora no"
@@ -3277,11 +3283,11 @@
       "Failed to fetch sharing info": [
         "Error al obtener información para compartir"
       ],
+      "Failed to get details, please try again later": [
+        "Error al obtener los detalles, intente más tarde"
+      ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
-      ],
-      "Failed to move items": [
-        "Error al mover los elementos"
       ],
       "Failed to resend invitation": [
         "Error al reenviar la invitación"
@@ -3627,6 +3633,9 @@
       "Unknown error": [
         "Error desconocido"
       ],
+      "Unknown location": [
+        "Ubicación desconocida"
+      ],
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
       ],
@@ -3660,6 +3669,9 @@
       ],
       "Your import will not be processed.": [
         "No se procesará la importación."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nombre indescifrable"
       ]
     },
     "Error importing calendar": {
@@ -4878,9 +4890,6 @@
       ],
       "Aug": [
         "Ago."
-      ],
-      "Automated Recovery ${ formattedDate }": [
-        "Recuperación Automática ${ formattedDate }"
       ],
       "Available": [
         "Disponible"
@@ -7305,17 +7314,8 @@
       "Albums": [
         "Álbumes"
       ],
-      "All mail": [
-        "Todos"
-      ],
-      "Archive": [
-        "Archivo"
-      ],
       "clearing your browser cache": [
         "vaciar la caché del navegador"
-      ],
-      "Drafts": [
-        "Borradores"
       ],
       "Enforcing 2FA for organizations": [
         "Implementar 2FA para organizaciones"
@@ -7368,9 +7368,6 @@
       "if your data is leaked": [
         "si sus datos son filtrados"
       ],
-      "Inbox": [
-        "Buzón"
-      ],
       "Learn more": [
         "Más información"
       ],
@@ -7386,12 +7383,6 @@
       "Request an invite": [
         "Solicitar una invitación"
       ],
-      "Scheduled": [
-        "Programado"
-      ],
-      "Sent": [
-        "Enviados"
-      ],
       "settings": [
         "ajustes"
       ],
@@ -7400,15 +7391,6 @@
       ],
       "Shared with me": [
         "Compartido conmigo"
-      ],
-      "Snooze": [
-        "Pausar"
-      ],
-      "Spam": [
-        "Spam"
-      ],
-      "Starred": [
-        "Destacados"
       ],
       "Trash": [
         "Papelera"
@@ -8891,9 +8873,6 @@
       ],
       "An invitation has been sent": [
         "Se ha enviado una invitación"
-      ],
-      "Cannot load file or folder info": [
-        "No se puede cargar la información del archivo o de la carpeta."
       ],
       "Cannot load link": [
         "Error al cargar el enlace"
@@ -11347,6 +11326,9 @@
       "Addresses": [
         "Direcciones"
       ],
+      "Advanced details": [
+        "Detalles avanzados"
+      ],
       "Album": [
         "Álbum"
       ],
@@ -11364,6 +11346,12 @@
       ],
       "Amount due": [
         "Monto adeudado"
+      ],
+      "an anonymous user": [
+        "un usuario anónimo"
+      ],
+      "Anonymous user": [
+        "Usuario anónimo"
       ],
       "Apply gift code": [
         "Aplicar código de regalo"
@@ -11471,6 +11459,9 @@
       "Create new group": [
         "Crear grupo nuevo"
       ],
+      "Created by": [
+        "Creado por"
+      ],
       "Credits": [
         "Créditos"
       ],
@@ -11528,6 +11519,33 @@
       "Desktop": [
         "Escritorio"
       ],
+      "Devices": [
+        "Dispositivos"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digital parcialmente verificada. Este archivo fue cargado usando un enlace para compartir de acceso público por un usuario sin una cuenta de ${ BRAND_NAME }, por lo que su identidad no puede ser verificada."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digital parcialmente verificada. Este archivo fue cargado usando un enlace para compartir de acceso público por un usuario sin una cuenta de ${ BRAND_NAME }, por lo que su identidad no puede ser verificada."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digital parcialmente verificada. Esta carpeta fue creada usando un vínculo para compartir de acceso público por un usuario sin ${ BRAND_NAME } cuenta, por lo que su identidad no puede ser verificada."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digital parcialmente verificada. Esta carpeta fue cargada usando un enlace para compartir de acceso público por un usuario sin una cuenta de ${ BRAND_NAME }, por lo que su identidad no puede ser verificada."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Firma digital verificada. Este archivo fue creado de forma segura por <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Firma digital verificada. Este archivo fue cargado de forma segura por <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Firma digital verificada. Esta carpeta fue cargada de forma segura por <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Firma digital verificada. Esta carpeta fue cargada de forma segura por <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -11545,6 +11563,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descargue las aplicaciones de ${ DRIVE_APP_NAME }"
+      ],
+      "Download details": [
+        "Detalles de descarga"
       ],
       "Download the app": [
         "Descargar la aplicación"
@@ -11624,6 +11645,9 @@
       "File recovery process": [
         "Proceso de recuperación de archivos"
       ],
+      "Folder": [
+        "Carpeta"
+      ],
       "Folder details": [
         "Detalles de la carpeta"
       ],
@@ -11692,6 +11716,9 @@
       "Last edited by": [
         "Última edición por"
       ],
+      "Last uploaded by": [
+        "Cargado por última vez por"
+      ],
       "Link confirmation": [
         "Confirmación de enlace"
       ],
@@ -11703,6 +11730,9 @@
       ],
       "Manage secure link": [
         "Gestionar enlace seguro"
+      ],
+      "Media type": [
+        "Tipo de medio"
       ],
       "Merge contacts": [
         "Combinar contactos"
@@ -11736,9 +11766,6 @@
       ],
       "Network error": [
         "Error de red"
-      ],
-      "Newsletters view": [
-        "Vista de boletines"
       ],
       "Night theme": [
         "Tema de noche"
@@ -11805,6 +11832,9 @@
       ],
       "Original size": [
         "Tamaño original"
+      ],
+      "Original size in bytes": [
+        "Tamaño original en bytes."
       ],
       "Other information": [
         "Otra información"
@@ -11933,6 +11963,9 @@
       "Settings": [
         "Ajustes"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "Compartir ${ name }"
       ],
@@ -11962,6 +11995,9 @@
       ],
       "Size": [
         "Tamaño"
+      ],
+      "Size in bytes": [
+        "Tamaño en bytes"
       ],
       "Sort files/folders": [
         "Ordenar archivos/carpetas"
@@ -11993,6 +12029,15 @@
       "The link expired": [
         "El enlace expiró"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Error al verificar la firma de las claves de cifrado por el creador original (${ claimedKeyAuthor }) quien creó el nodo. La razón es: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Error al verificar la firma del contenido del archivo por el usuario (${ claimedContentAuthor }), quien cargó la última revisión. La razón es: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Error al verificar la firma del nombre por el autor (${ claimedNameAuthor }) quien estableció el nombre la última vez. La razón es: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Falta la clave del achivo o la firma no es válida. Vaya a Menú (⋮) → Detalles para más información."
       ],
@@ -12013,6 +12058,12 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Usuario desconocido."
       ],
       "Untitled document ${ date }": [
         "Documento sin título ${ date }"
@@ -12061,6 +12112,30 @@
       ],
       "Warning: suspected fake website": [
         "Advertencia: presunto sitio web falso"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "No pudimos verificar que <strong>${ emailAddress }</strong> creó este archivo."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "No pudimos verificar que <strong>${ emailAddress }</strong> creó esta carpeta."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "No pudimos verificar que <strong>${ emailAddress }</strong> cargó este archivo."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "No pudimos verificar que <strong>${ emailAddress }</strong> cargó esta carpeta."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "No pudimos verificar que un usuario anónimo creó este archivo."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "No pudimos verificar que un usuario anónimo creó esta carpeta."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "No pudimos verificar que un usuario anónimo subió este archivo."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "No pudimos verificar que un usuario anónimo subió esta carpeta."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Le damos la bienvenida a ${ BRAND_NAME } for Business"

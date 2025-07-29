@@ -141,6 +141,9 @@
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
+      "Cancel trial and pay": [
+        "გამოსაცდელი პერიოდის გაუქმება და გადახდა"
+      ],
       "Cancel upload": [
         "ატვირთვის გაუქმება"
       ],
@@ -1181,6 +1184,10 @@
       "${ price } per user": [
         "${ price }/მომხმარებელი"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } წერის დამხმარის ლიცენზია",
         "${ seats } წერის დამხმარის ლიცენზია"
@@ -1538,6 +1545,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME }-ის პრობლემა"
+      ],
       "Application problem": [
         "აპლიკაციის პრობლემა"
       ],
@@ -3200,9 +3210,6 @@
       "Failed to load the STL preview": [
         "STL მინიატურის ჩატვირთვა ჩავარდა"
       ],
-      "Failed to move items": [
-        "ელემენტების გადატანა ჩავარდა"
-      ],
       "Failed to resend invitation": [
         "მოსაწვევის თავიდან გაგზავნის შეცდომა"
       ],
@@ -3211,6 +3218,9 @@
       ],
       "Failed to unshare node": [
         "კვანძის გაზიარების გაუქმების შეცდომა"
+      ],
+      "Failed to update direct share node": [
+        "პირდაპირი გაზიარების კვანძის განახლება ჩავარდა"
       ],
       "Failed to update public share node": [
         "საჯარო ზიარის კვანძის განახლება ჩავარდა"
@@ -3356,6 +3366,18 @@
       "Please activate your search again": [
         "თავიდან ჩართეთ შემცველობაში ძებნის ფუნქცია"
       ],
+      "Please enter a valid postal code": [
+        "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
+      ],
+      "Please enter a valid ZIP code": [
+        "შეიყვანეთ სწორი ZIP კოდი"
+      ],
+      "Please enter postal code": [
+        "შეყვანეთ საფოსტო კოდი"
+      ],
+      "Please enter ZIP code": [
+        "შეიყვანეთ ZIP კოდი"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
@@ -3368,6 +3390,12 @@
       ],
       "Please select a state": [
         "აირჩიეთ შტატი"
+      ],
+      "Please select billing country": [
+        "აირჩიეთ გადახდის ქვეყანა"
+      ],
+      "Please select billing state": [
+        "აირჩიეთ გადახდის მდგომარეობა"
       ],
       "Port is required": [
         "პორტი აუცილებელია"
@@ -4745,9 +4773,6 @@
       "Aug": [
         "აგვ"
       ],
-      "Automated Recovery ${ formattedDate }": [
-        "ავტომატური აღდგენა ${ formattedDate }"
-      ],
       "Available": [
         "ხელმისაწვდომია"
       ],
@@ -4936,6 +4961,9 @@
       ],
       "Download ${ name } app": [
         "გადმოწერეთ აპი ${ name }"
+      ],
+      "Download current logs": [
+        "მიმდინარე ჟურნალის გადმოწერა"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }-ის გადმოწერა გაუქმდება"
@@ -6696,6 +6724,9 @@
       "Import to:": [
         "შემოტანა:"
       ],
+      "Include application logs in bug report": [
+        "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
+      ],
       "Include message and file name in invite email": [
         "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"
       ],
@@ -7080,17 +7111,8 @@
       "Albums": [
         "ალბომები"
       ],
-      "All mail": [
-        "ყველა ელფოსტა"
-      ],
-      "Archive": [
-        "არქივი"
-      ],
       "clearing your browser cache": [
         "ბრაუზერის ქეშის გასუფთავება"
-      ],
-      "Drafts": [
-        "მონახაზები"
       ],
       "Enforcing 2FA for organizations": [
         "2FA-ის მოთხოვნა ორგანიზაციებისთვის"
@@ -7143,9 +7165,6 @@
       "if your data is leaked": [
         "თუ თქვენი მონაცემები გაიჟონება"
       ],
-      "Inbox": [
-        "შემომავალი"
-      ],
       "Learn more": [
         "გაიგეთ მეტი"
       ],
@@ -7161,12 +7180,6 @@
       "Request an invite": [
         "მოსაწვევის მოთხოვნა"
       ],
-      "Scheduled": [
-        "დაგეგმილია"
-      ],
-      "Sent": [
-        "გაგზავნილები"
-      ],
       "settings": [
         "მორგება"
       ],
@@ -7175,15 +7188,6 @@
       ],
       "Shared with me": [
         "ჩემთვის გაზიარებული"
-      ],
-      "Snooze": [
-        "დროებით დადუმება"
-      ],
-      "Spam": [
-        "სპამი"
-      ],
-      "Starred": [
-        "ვარსკვლავიანები"
       ],
       "Trash": [
         "ნაგვის ყუთი"
@@ -8172,6 +8176,9 @@
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
       ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
+      ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
       ],
@@ -8575,9 +8582,6 @@
       ],
       "An invitation has been sent": [
         "მოსაწვევი გაიგზავნა"
-      ],
-      "Cannot load file or folder info": [
-        "ფაილის ან საქაღალდის ინფორმაციის ჩატვირთვა შეუძლებელია"
       ],
       "Cannot load link": [
         "ბმულის ჩატვირთვის შეცდომა"
@@ -9219,6 +9223,9 @@
       "Got it": [
         "გავიგე"
       ],
+      "I'm purchasing as a business": [
+        "ვაპირებ შევიძინო ბიზნესისთვის"
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -9450,6 +9457,14 @@
     "plan customizer, users": {
       "contact": [
         "კონტაქტი"
+      ]
+    },
+    "plus_block": {
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle }-ზე დარჩენა"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
       ]
     },
     "Price": {
@@ -11122,6 +11137,10 @@
       "Delete ${ name }?": [
         "წავშალო ${ name }?"
       ],
+      "Delete ${ total } item?": [
+        "წავშალო ${ total } ელემენტი?",
+        "წავშალო ${ total } ელემენტი?"
+      ],
       "Delete ${ value }": [
         "${ value }-ის წაშლა"
       ],
@@ -11342,9 +11361,6 @@
       ],
       "Network error": [
         "ქსელის შეცდომა"
-      ],
-      "Newsletters view": [
-        "სიახლეების ხედი"
       ],
       "Night theme": [
         "ღამის თემა"
