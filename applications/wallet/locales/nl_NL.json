@@ -121,6 +121,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
       ],
+      "Download logs": [
+        "Logboeken downloaden"
+      ],
       "Edit": [
         "Bewerken"
       ],
@@ -163,6 +166,12 @@
       "Help and resources": [
         "Hulp en bronnen"
       ],
+      "Hide": [
+        "Verbergen"
+      ],
+      "Hide more benefits": [
+        "Toon minder voordelen"
+      ],
       "Import emails, calendars, contacts": [
         "Importeer e-mails, agenda's, contacten"
       ],
@@ -184,9 +193,6 @@
       "Let's talk": [
         "Laten we praten!"
       ],
-      "Loading verification": [
-        "Verificatie laden"
-      ],
       "Manage advanced account protections": [
         "Geavanceerde accountbeveiligingen beheren"
       ],
@@ -195,6 +201,9 @@
       ],
       "Manage users/addresses": [
         "Gebruikers/adressen beheren"
+      ],
+      "More benefits": [
+        "Meer voordelen"
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
@@ -265,9 +274,6 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
-      "Retry": [
-        "Opnieuw proberen"
-      ],
       "Save": [
         "Opslaan"
       ],
@@ -312,6 +318,9 @@
       ],
       "Show more": [
         "Meer weergeven"
+      ],
+      "Show more benefits": [
+        "Toon meer voordelen"
       ],
       "Show QRCode": [
         "Toon QR-code"
@@ -494,6 +503,40 @@
         "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ cycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } Lumo-plaatsen hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_USERS } gebruikers hebben tijdens de proefperiode."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "U kunt geen aangepaste domeinen toevoegen tijdens de proefperiode."
+      ],
+      "You have reached the trial limit.": [
+        "U hebt de proeflimiet bereikt."
+      ]
+    },
+    "b2b_trials_Action": {
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
+      "Keep subscription": [
+        "Abonnement behouden"
+      ]
+    },
     "Balance": {
       "Loading balance": [
         "Saldo laden"
@@ -521,9 +564,6 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
-      ],
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus en ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } opslagruimte"
@@ -1607,9 +1647,6 @@
       "Macao": [
         "Macau"
       ],
-      "Macedonia": [
-        "Noord-Macedonië"
-      ],
       "Madagascar": [
         "Madagaskar"
       ],
@@ -2324,9 +2361,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
       ],
-      "The minimum payment we accept is ${ price }": [
-        "De minimale betaling die we accepteren is ${ price }"
-      ],
       "The passphrases do not match": [
         "De wachtwoordzinnen komen niet overeen"
       ],
@@ -2677,6 +2711,9 @@
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
+      "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
+        "Aan het einde van uw proefversie ${ boldCancelDate } wordt u gedowngraded naar ${ boldProtonFree }. Alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
       "Attention required": [
         "Aandacht vereist"
       ],
@@ -2719,6 +2756,9 @@
       ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "Dedicated VPN servers": [
+        "Dedicated VPN-servers"
       ],
       "default email address": [
         "standaard e-mailadres"
@@ -2846,6 +2886,9 @@
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
+      "Number of dedicated VPN servers in the organization": [
+        "Aantal dedicated VPN-servers in uw organisatie"
+      ],
       "or discover other features:": [
         "of andere functies ontdekken:"
       ],
@@ -2866,10 +2909,6 @@
       ],
       "Please fill in all required fields.": [
         "Vul alle verplichte velden in."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
-        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credit over.",
-        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
@@ -3057,9 +3096,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "U verliest toegang tot ${ planTitle } functies op deze datum."
       ],
@@ -3075,9 +3111,6 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
-      ],
-      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Uw ${ PASS_SHORT_APP_NAME } Plus-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -3100,9 +3133,15 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Uw abonnement wordt automatisch verlengd op ${ renewalTime }."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "U verliest ook toegang tot ${ boldPlanTitle } functies:"
       ]
     },
     "info": {
+      "Optional": [
+        "Optioneel"
+      ],
       "Selected color:": [
         "Geselecteerde kleur:"
       ]
@@ -3287,9 +3326,6 @@
       "Start date": [
         "Begindatum"
       ],
-      "State": [
-        "Staat"
-      ],
       "Subscription options": [
         "Abonnementsopties"
       ],
@@ -3345,9 +3381,6 @@
       ],
       "clearing your browser cache": [
         "browsercache legen"
-      ],
-      "click here": [
-        "klik hier"
       ],
       "Enforcing 2FA for organizations": [
         "2FA forceren voor organisaties"
@@ -3932,6 +3965,12 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd met end-to-end versleuteling."
+      ],
+      "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "200 GB cloudopslag die u makkelijk bestanden laat opslaan, synchroniseren en delen. Beveiligd door end-to-end versleuteling."
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
       ],
@@ -3983,17 +4022,11 @@
       "Protect sensitive business information and collaborate securely.": [
         "Bescherm gevoelige bedrijfsinformatie en werk veilig samen."
       ],
-      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Bescherm uw familie met alle premium-functies van ${ PASS_SHORT_APP_NAME } Plus voor 6 gebruikers."
-      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
         "Veilig toegang krijgen tot internet vanaf elke locatie met essentiële netwerkmonitoring."
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
@@ -4303,7 +4336,8 @@
       "Require 2FA": [
         "2FA vereist"
       ],
-      "Support for ${ n } custom email domains": [
+      "Support for ${ n } custom email domain": [
+        "Ondersteuning voor ${ n } aangepast e-maildomein",
         "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
@@ -4312,12 +4346,50 @@
         "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
       ]
     },
+    "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " bezoek ons ${ helpCenterLink } of ${ contactSupportLink }."
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "U kunt op elk moment annuleren vóór ${ cancelDate }."
+      ],
+      "contact our support team": [
+        "neem contact op met ons support team"
+      ],
+      "Continue": [
+        "Ga verder"
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Profiteer tot ${ trialEndsOnFormatted } van gratis beveiligingsfuncties voor bedrijven."
+      ],
+      "help center": [
+        "helpcentrum"
+      ],
+      "If you need help,": [
+        "Als u hulp nodig heeft,"
+      ],
+      "Once your full subscription starts...": [
+        "Zodra uw volledige abonnement ingaat..."
+      ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "Kunt u nog steeds annuleren binnen 30 dagen en evenredig terugbetaald krijgen."
+      ],
+      "You can use ${ planTitle } until the trial ends, and you won’t be charged.": [
+        "U kunt ${ planTitle } gebruiken totdat de proefversie eindigt en u wordt niets in rekening gebracht."
+      ],
+      "Your free trial has started": [
+        "Uw gratis proefversie is gestart"
+      ]
+    },
     "Option": {
       "No parent folder": [
         "Geen bovenliggende map"
       ]
     },
     "pass_signup_2023: Info": {
+      "Access to all ${ BRAND_NAME } apps and premium features": [
+        "Toegang tot alle ${ BRAND_NAME }-apps en premium functies"
+      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
       ],
@@ -4326,6 +4398,11 @@
       ],
       "Unlimited logins, notes, credit cards and more": [
         "Onbeperkt aantal logins, notities, creditcards, en meer"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "${ upsellPlanTitle }-abonnement"
       ]
     },
     "pass_signup_2024: Info": {
@@ -4376,6 +4453,9 @@
       ]
     },
     "Payment method option": {
+      "Apple Pay": [
+        "Apple Pay"
+      ],
       "Bank transfer": [
         "Bankoverschrijving"
       ],
@@ -4422,26 +4502,11 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
-      "Please select billing country": [
-        "Selecteer factureringsland"
-      ],
-      "Please select billing state": [
-        "Selecteer factureringsstaat"
-      ],
-      "Please select your billing country first.": [
-        "Selecteer eerst uw factureringsland."
-      ],
-      "Please select your billing state first.": [
-        "Selecteer eerst uw factureringsstaat."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
-      ],
-      "Select billing country to pay": [
-        "Selecteer factureringsland om te betalen"
       ],
       "terms & conditions": [
         "algemene voorwaarden"
@@ -4465,8 +4530,14 @@
         "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
         "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
       ],
+      "This payment method will become your new default for all future renewals.": [
+        "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
+      ],
       "Timeout exceeded": [
         "Time-out overschreden"
+      ],
+      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
+        "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
       "Your payment is still being processed": [
         "Uw betaling wordt nog verwerkt"
@@ -4495,6 +4566,14 @@
     "Payments.plan_name": {
       "Free": [
         "Gratis"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kaart eindigend op ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "Bankoverschrijving - ${ details }"
       ]
     },
     "Payments.Sepa": {
@@ -4959,9 +5038,9 @@
         "${ n } VPN-verbinding per gebruiker",
         "${ n } VPN-verbindingen per gebruiker"
       ],
-      "VPN connection for ${ n } devices per user": [
-        "VPN-verbinding voor ${ n } apparaat per gebruiker",
-        "VPN-verbinding voor ${ n } apparaten per gebruiker"
+      "VPN connection for ${ n } device per user": [
+        "VPN verbinding voor ${ n } apparaat per gebruiker",
+        "VPN verbinding voor ${ n } apparaten per gebruiker"
       ]
     },
     "Subscription change warning": {
@@ -5019,6 +5098,9 @@
       ],
       "Folders, labels, and custom filters": [
         "Mappen, labels en aangepaste filters"
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
       ]
     },
     "Subscription renewal state": {
@@ -5118,8 +5200,8 @@
       "Cancel": [
         "Annuleren"
       ],
-      "Cannot use QRCode scanner. Please check browser compatibility": [
-        "QR-code scanner kan niet worden gebruikt. Controleer de browser compatibiliteit"
+      "Cannot use QR Code scanner. Please check browser compatibility": [
+        "QR-codescanner kan niet worden gebruikt. Controleer de browsercompatibiliteit"
       ],
       "Confirm and import": [
         "Bevestigen en importeren"
@@ -5139,8 +5221,8 @@
       "Paper wallet funds was successfully imported": [
         "Papieren portemonnee saldo is succesvol geïmporteerd"
       ],
-      "Please grant camera permission to use QRCode scanner": [
-        "Geef toestemming voor de camera om de QR-code scanner te gebruiken"
+      "Please grant camera permission to use QR Code scanner": [
+        "Geef toestemming voor de camera om de QR-codescanner te gebruiken"
       ],
       "You receive": [
         "U ontvangt"
@@ -5358,6 +5440,9 @@
       ],
       "You can now create unlimited folders and labels": [
         "U kunt nu onbeperkt mappen en labels maken"
+      ],
+      "Your plan": [
+        "Uw abonnement"
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
@@ -5595,6 +5680,11 @@
         "Ontbrekende offerte. Vernieuw en probeer het opnieuw of neem contact op met ondersteuning"
       ]
     },
+    "wallet dashboard": {
+      "You need to have a positive bitcoin balance with sufficient funds to transact": [
+        "U moet een positief bitcoin-saldo hebben met voldoende middelen voor transacties"
+      ]
+    },
     "Wallet dashboard": {
       "24h change": [
         "24u wijziging"
@@ -5613,11 +5703,6 @@
       ],
       "Send": [
         "Verzenden"
-      ]
-    },
-    "wallet dashboard": {
-      "You need to have a positive bitcoin balance with sufficient funds to transact": [
-        "U moet een positief bitcoin-saldo hebben met voldoende middelen voor transacties"
       ]
     },
     "Wallet deletion": {
@@ -6058,7 +6143,8 @@
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
         "Uw transactie is verzonden naar het Bitcoin-netwerk. Het kan ongeveer een uur duren voordat het netwerk de transactie bevestigt."
       ],
-      "~${ minutes } minutes": [
+      "~${ minutes } minute": [
+        "~${ minutes } minuut",
         "~${ minutes } minuten"
       ]
     },
@@ -6301,11 +6387,6 @@
         "Uw privé-sleutel"
       ]
     },
-    "Wallet sidebar": {
-      "Add account": [
-        "Account toevoegen"
-      ]
-    },
     "Wallet Sidebar": {
       "Contact Support": [
         "Neem contact op met ondersteuning"
@@ -6341,12 +6422,9 @@
         "Portemonnees"
       ]
     },
-    "Wallet terms and conditions": {
-      "Error with Terms and Conditions acceptance. Please try again.": [
-        "Fout bij het accepteren van de algemene voorwaarden. Probeer het opnieuw."
-      ],
-      "Terms and conditions were accepted": [
-        "Algemene voorwaarden zijn geaccepteerd"
+    "Wallet sidebar": {
+      "Add account": [
+        "Account toevoegen"
       ]
     },
     "Wallet Terms and Conditions": {
@@ -6358,6 +6436,14 @@
       ],
       "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
         "We hebben twee BTC-accounts voor u aangemaakt. Een primair account en een tweede account voor het ontvangen van Bitcoin via e-mail (op ${ emailEl }) van andere ${ WALLET_APP_NAME }-gebruikers."
+      ]
+    },
+    "Wallet terms and conditions": {
+      "Error with Terms and Conditions acceptance. Please try again.": [
+        "Fout bij het accepteren van de algemene voorwaarden. Probeer het opnieuw."
+      ],
+      "Terms and conditions were accepted": [
+        "Algemene voorwaarden zijn geaccepteerd"
       ]
     },
     "Wallet transaction": {
