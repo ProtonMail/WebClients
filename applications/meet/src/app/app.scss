@@ -117,3 +117,11 @@ $profile-colors:
 		max-inline-size: 50vw !important;
 	}
 }
+
+.notification--info {
+	background-color: var(--interaction-norm-minor-3);
+	color: var(--text-norm);
+	white-space: nowrap;
+	max-inline-size: 30rem !important;
+	box-shadow: none !important;
+}

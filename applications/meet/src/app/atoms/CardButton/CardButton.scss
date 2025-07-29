@@ -1,0 +1,9 @@
+.card-button {
+	background-color: var(--background-card) !important;
+	border-radius: 2rem;
+	border-color: var(--border-card);
+
+	&:hover {
+		background-color: var(--border-norm) !important;
+	}
+}

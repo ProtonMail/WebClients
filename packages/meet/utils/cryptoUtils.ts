@@ -65,11 +65,12 @@ export const decryptSessionKey = async ({ encryptedSessionKey, password, salt }:
 };
 
 interface DecryptMeetingNameParams {
-    urlPassword: string;
-    customPassword: string;
+    urlPassword?: string;
+    customPassword?: string;
     encryptedSessionKey: string;
     encryptedMeetingName: string;
     salt: string;
+    decryptedPassword?: string;
 }
 
 export const decryptMeetingName = async ({
@@ -78,10 +79,11 @@ export const decryptMeetingName = async ({
     encryptedSessionKey,
     encryptedMeetingName,
     salt,
+    decryptedPassword,
 }: DecryptMeetingNameParams) => {
     const sessionKey = await decryptSessionKey({
         encryptedSessionKey,
-        password: getCombinedPassword(urlPassword, customPassword),
+        password: decryptedPassword ?? getCombinedPassword(urlPassword as string, customPassword as string),
         salt,
     });
 
