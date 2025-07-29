@@ -15,6 +15,7 @@ import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPicker
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
+import { useInitialValues } from '@proton/pass/hooks/items/useInitialValues';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
@@ -30,13 +31,17 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 const FORM_ID = 'new-note';
 
 export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCancel }) => {
-    const initialValues: NoteFormValues = {
-        name: '',
-        note: '',
-        shareId,
-        extraFields: [],
-        files: filesFormInitializer(),
-    };
+    const initialValues = useInitialValues<NoteFormValues>((options) => {
+        const clone = options?.clone.type === 'note' ? options.clone : null;
+        return {
+            name: clone?.metadata.name ?? '',
+            note: clone?.metadata.note ?? '',
+            shareId: options?.shareId ?? shareId,
+            extraFields: clone?.extraFields ?? [],
+            files: filesFormInitializer(),
+        };
+    });
+
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { ParentPortal, openPortal } = usePortal();
 
