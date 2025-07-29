@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, type ReactElement, useEffect, useMemo, useState } from 'react';
+import { type FC, type ReactElement, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -20,7 +20,7 @@ import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useItemLoading } from '@proton/pass/hooks/useItemLoading';
-import { isItemShared, isMonitored, isPinned, isTrashed, matchItemTypes } from '@proton/pass/lib/items/item.predicates';
+import { isClonableItem, isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
@@ -99,7 +99,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
     const canTogglePinned = !(pinInFlight || unpinInFlight);
-
     const accessCount = targetMembers + (revision.shareCount ?? 0);
 
     const canManage = isShareManageable(share);
@@ -109,12 +108,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const canManageAccess = shared && !readOnly;
     const canLeave = !isVault && !owner;
     const canMonitor = !EXTENSION_BUILD && !trashed && data.type === 'login' && !readOnly;
-
-    const clonableTypes = useMemo<ItemType[]>(
-        () => (free ? ['alias', 'creditCard', 'custom', 'sshKey', 'wifi'] : ['alias']),
-        [free]
-    );
-    const canClone = canManage && !matchItemTypes(clonableTypes);
+    const canClone = canManage && isClonableItem(free)(revision);
 
     const [signal, setSignalItemSharing] = useState(false);
     const signalItemSharing = signal && !itemShared && canItemShare;

@@ -18,9 +18,10 @@ import {
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
+import type { ItemCloneLocationState } from '@proton/pass/hooks/items/useInitialValues';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { isAliasItem, isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
-import { getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
+import { cloneItemName, getBulkSelectionCount } from '@proton/pass/lib/items/item.utils';
 import {
     itemBulkDeleteIntent,
     itemBulkMoveIntent,
@@ -36,6 +37,7 @@ import { selectAliasTrashAcknowledged, selectItemsByEmail } from '@proton/pass/s
 import type { State } from '@proton/pass/store/types';
 import type { ItemMoveIntent } from '@proton/pass/types';
 import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } from '@proton/pass/types';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 
 /** Ongoing: move every item action definition to this
  * context object. This context should be loosely connected */
@@ -166,7 +168,14 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
             leave: leaveItem.prompt,
 
-            clone: (clone: ItemRevision) => navigate(getNewItemRoute(clone.data.type), { state: { clone } }),
+            clone: (item: ItemRevision) =>
+                navigate<ItemCloneLocationState>(getNewItemRoute(item.data.type), {
+                    state: {
+                        clone: partialMerge(item, {
+                            data: { metadata: { name: cloneItemName(item.data.metadata.name) } },
+                        }),
+                    },
+                }),
         };
     }, []);
 
