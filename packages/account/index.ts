@@ -59,3 +59,4 @@ export * from './plans';
 export * from './passwordPolicies';
 export * from './retentionPolicies';
 export * from './previousSubscription';
+export * from './delegatedAccess';

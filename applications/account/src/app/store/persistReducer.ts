@@ -1,3 +1,4 @@
+import { selectDelegatedAccessPersist } from '@proton/account/delegatedAccess/persist';
 import { sharedPersistReducer } from '@proton/redux-shared-store';
 import { getPersistedState } from '@proton/redux-shared-store/persist';
 import { selectPersistModel } from '@proton/redux-utilities';
@@ -16,6 +17,7 @@ const persistReducer: Partial<{ [key in keyof AccountState]: any }> = {
     holidaysDirectory: selectPersistModel,
     sso: selectPersistModel,
     sessions: selectPersistModel,
+    delegatedAccess: selectDelegatedAccessPersist,
 };
 
 export const getAccountPersistedState = (state: AccountState) => getPersistedState(state, persistReducer);

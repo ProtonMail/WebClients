@@ -1,5 +1,9 @@
 import { c } from 'ttag';
 
+import {
+    getIsIncomingDelegatedAccessAvailable,
+    getIsOutgoingDelegatedAccessAvailable,
+} from '@proton/account/delegatedAccess/available';
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
@@ -55,6 +59,7 @@ export const getAccountAppRoutes = ({
     memberships,
     isZoomIntegrationEnabled,
     isB2BTrial,
+    isEmergencyAccessAvailable: isEmergencyAccessFeatureAvailable,
     isReferralExpansionEnabled,
 }: {
     app: APP_NAMES;
@@ -75,6 +80,7 @@ export const getAccountAppRoutes = ({
     memberships: GroupMembershipReturn[] | undefined;
     isZoomIntegrationEnabled: boolean;
     isB2BTrial: boolean;
+    isEmergencyAccessAvailable: boolean;
     isReferralExpansionEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
@@ -118,6 +124,9 @@ export const getAccountAppRoutes = ({
         (organization?.Settings.VideoConferencingEnabled || !hasPaidMail);
 
     const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
+    const isEmergencyAccessAvailable = isEmergencyAccessFeatureAvailable && getIsOutgoingDelegatedAccessAvailable(user);
+    const isNonPrivateEmergencyAccessAvailable =
+        isEmergencyAccessFeatureAvailable && !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user);
 
     const paymentsSectionAvailable =
         user.isSelf &&
@@ -360,6 +369,11 @@ export const getAccountAppRoutes = ({
                         available: isDataRecoveryAvailable,
                     },
                     {
+                        text: c('emergency_access').t`Emergency access`,
+                        id: recoveryIds.emergencyAccess,
+                        available: isEmergencyAccessAvailable,
+                    },
+                    {
                         text: c('Title').t`Password reset settings`,
                         id: 'password-reset',
                         available: isSessionRecoveryAvailable,
@@ -386,6 +400,12 @@ export const getAccountAppRoutes = ({
                         id: 'account-recovery',
                         // This is a special section for non-private users that only contains the QR code sign in
                         available: !user.isPrivate && !isAccountRecoveryAvailable,
+                    },
+                    {
+                        text: c('Title').t`Emergency access`,
+                        id: 'emergency-access',
+                        // This is a special section for non-private users that only contains incoming delegated access
+                        available: isNonPrivateEmergencyAccessAvailable,
                     },
                     {
                         text: isFamilyOrg
