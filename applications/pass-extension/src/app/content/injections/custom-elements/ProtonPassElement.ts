@@ -7,11 +7,12 @@ const ALLOWED_ATTRS = [PASS_ELEMENT_ROLE, PASS_ELEMENT_THEME, 'aria-hidden', 'po
 const MAX_ATTR_REMOVAL_ATTEMPTS = 25;
 
 /** Get safe `HTMLElement` reference. Polymer.js patches `window.HTMLElement`,
- * so we use the original constructor from the prototype when shimmed. */
+ * so we check if the global HTMLElement has been modified and use the original
+ * constructor from the prototype if this is the case. */
 const SafeHTMLElement =
-    'es5Shimmed' in HTMLElement && HTMLElement.es5Shimmed
-        ? (HTMLElement.prototype.constructor as typeof HTMLElement)
-        : HTMLElement;
+    HTMLElement === HTMLElement.prototype.constructor
+        ? HTMLElement
+        : (HTMLElement.prototype.constructor as typeof HTMLElement);
 
 export class ProtonPassElement extends SafeHTMLElement {
     private mutationObs: MaybeNull<MutationObserver> = null;
