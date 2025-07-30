@@ -904,6 +904,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Download logs": [
+        "다운로드 로그"
       ]
     },
     "action": {
@@ -968,6 +971,9 @@
       ],
       "${ users } user": [
         "${ users }명 사용자"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ]
     },
     "Alarm notification": {
@@ -1456,6 +1462,9 @@
       ],
       "Website access problem": [
         "웹사이트 접근 문제"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 문제"
       ]
     },
     "Button": {
@@ -5964,6 +5973,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
+      ],
+      "Download current logs": [
+        "현재 로그 다운로드"
       ]
     },
     "info": {
@@ -6598,6 +6613,9 @@
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
+      ],
+      "Include application logs in bug report": [
+        "버그 신고에 애플리케이션 로그 포함"
       ]
     },
     "Label for contact group color": {
