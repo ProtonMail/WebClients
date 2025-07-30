@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AppsDropdown, UserDropdown } from '@proton/components';
+import { AppsDropdown, UnAuthenticatedAppsDropdown, UserDropdown } from '@proton/components';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -39,7 +39,11 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
                     onClick={() => history.push('/dashboard')}
                 />
 
-                <AppsDropdown app={APPS.PROTONMEET} />
+                {guestMode ? (
+                    <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} />
+                ) : (
+                    <AppsDropdown app={APPS.PROTONMEET} />
+                )}
             </div>
 
             <div className="flex gap-4 items-center">
