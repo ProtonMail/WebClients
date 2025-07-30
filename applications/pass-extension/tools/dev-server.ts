@@ -78,6 +78,9 @@ const sanitizeWebpackConfig = (config: Configuration) => {
 
 const devConfig = sanitizeWebpackConfig(config);
 const compiler = webpack(devConfig);
+if (!compiler) {
+    throw new Error('webpack compiler is missing');
+}
 
 const server = new WebpackDevServer(
     {
