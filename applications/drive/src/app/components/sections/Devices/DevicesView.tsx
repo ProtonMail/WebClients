@@ -14,15 +14,15 @@ export function DevicesViewDeprecated() {
     const sectionTitle = getDevicesSectionName();
     useAppTitle(sectionTitle);
 
-    const driveView = useDevicesView();
+    const devicesView = useDevicesView();
 
     return (
-        <FileBrowserStateProvider itemIds={driveView.items.map(({ id }) => id)}>
+        <FileBrowserStateProvider itemIds={devicesView.items.map(({ id }) => id)}>
             <ToolbarRow
                 titleArea={<span className="text-strong pl-1">{sectionTitle}</span>}
-                toolbar={<DevicesToolbar items={driveView.items} />}
+                toolbar={<DevicesToolbar items={devicesView.items} />}
             />
-            <Devices view={driveView} />
+            <Devices view={devicesView} />
         </FileBrowserStateProvider>
     );
 }

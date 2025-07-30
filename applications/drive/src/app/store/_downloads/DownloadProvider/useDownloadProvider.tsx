@@ -33,6 +33,15 @@ import useDownloadQueue from './useDownloadQueue';
 import useDownloadScanIssue from './useDownloadScanIssue';
 import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 
+type Item = {
+    isFile: boolean;
+    shareId: string;
+    linkId: string;
+    name: string;
+    mimeType: string;
+    size: number;
+};
+
 export default function useDownloadProvider(user: UserModel | undefined, initDownload: InitDownloadCallback) {
     const onlineStatus = useOnline();
     const { createNotification } = useNotifications();
@@ -61,10 +70,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
      * same files are not currently already downloading, and it adds transfer
      * to the queue.
      */
-    const download = async (
-        links: LinkDownload[],
-        options?: { virusScan?: boolean; zipName?: string }
-    ): Promise<void> => {
+    const download = async (links: Item[], options?: { virusScan?: boolean; zipName?: string }): Promise<void> => {
         await queue.add(links, options).catch((err: any) => {
             if ((err as Error).name === 'DownloadUserError') {
                 createNotification({

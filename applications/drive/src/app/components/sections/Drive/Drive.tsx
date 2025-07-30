@@ -111,7 +111,7 @@ function Drive({ activeFolder, folderView }: Props) {
         ...item,
         id: item.linkId,
         // TODO: Improve this, we should not pass showLinkSharingModal here
-        showLinkSharingModal: item.isShared ? showLinkSharingModal : undefined,
+        onShareClick: item.isShared ? showLinkSharingModal : undefined,
         isAdmin,
     }));
     const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, selectionControls!.clearSelections);

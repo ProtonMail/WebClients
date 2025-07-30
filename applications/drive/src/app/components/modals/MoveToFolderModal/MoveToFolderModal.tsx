@@ -7,6 +7,7 @@ import { useLoading } from '@proton/hooks';
 import useFlag from '@proton/unleash/useFlag';
 
 import { MoveItemsModal } from '../../../modals/MoveItemsModal';
+import type { MoveItemsModalStateItem } from '../../../modals/MoveItemsModal/useMoveItemsModalState';
 import type { DecryptedLink } from '../../../store';
 import { useActions, useTreeForModals } from '../../../store';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
@@ -16,18 +17,9 @@ import { useCreateFolderModal } from '../CreateFolderModal';
 import ModalContentLoader from '../ModalContentLoader';
 import { ModalContent } from './ModalContent';
 
-type Item = {
-    parentLinkId: string;
-    linkId: string;
-    rootShareId: string;
-    volumeId: string;
-    name?: string;
-    isFile: boolean;
-};
-
 interface Props {
     shareId: string;
-    selectedItems: Item[];
+    selectedItems: MoveItemsModalStateItem[];
     onClose?: () => void;
 }
 

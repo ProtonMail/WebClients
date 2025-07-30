@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import type { DecryptedLink } from '../../../../store';
 import { useDocumentActions } from '../../../../store/_documents';
 import type { useRevisionsModal } from '../../../modals/RevisionsModal/RevisionsModal';
+import type { RevisionItem } from '../../../revisions';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
-    selectedLink: DecryptedLink;
+    selectedLink: RevisionItem;
     showRevisionsModal: ReturnType<typeof useRevisionsModal>[1];
     close: () => void;
 }
