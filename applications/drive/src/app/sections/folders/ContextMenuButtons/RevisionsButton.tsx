@@ -2,18 +2,18 @@ import { c } from 'ttag';
 
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { useDocumentActions } from '../../../../store/_documents';
-import type { useRevisionsModal } from '../../../modals/RevisionsModal/RevisionsModal';
-import type { RevisionItem } from '../../../revisions';
-import ContextMenuButton from '../ContextMenuButton';
+import type { useRevisionsModal } from '../../../components/modals/RevisionsModal/RevisionsModal';
+import type { RevisionItem } from '../../../components/revisions';
+import { ContextMenuButton } from '../../../components/sections/ContextMenu';
+import { useDocumentActions } from '../../../store';
 
 interface Props {
-    selectedLink: RevisionItem;
+    selectedItem: RevisionItem;
     showRevisionsModal: ReturnType<typeof useRevisionsModal>[1];
     close: () => void;
 }
 
-const RevisionsButton = ({ selectedLink, showRevisionsModal, close }: Props) => {
+export const RevisionsButton = ({ selectedItem, showRevisionsModal, close }: Props) => {
     const { openDocumentHistory } = useDocumentActions();
 
     return (
@@ -22,19 +22,17 @@ const RevisionsButton = ({ selectedLink, showRevisionsModal, close }: Props) => 
             icon="clock-rotate-left"
             testId="context-menu-revisions"
             action={() => {
-                if (isProtonDocsDocument(selectedLink.mimeType)) {
+                if (isProtonDocsDocument(selectedItem.mimeType)) {
                     void openDocumentHistory({
                         type: 'doc',
-                        shareId: selectedLink.rootShareId,
-                        linkId: selectedLink.linkId,
+                        shareId: selectedItem.rootShareId,
+                        linkId: selectedItem.linkId,
                     });
                 } else {
-                    showRevisionsModal({ link: selectedLink });
+                    showRevisionsModal({ link: selectedItem });
                 }
             }}
             close={close}
         />
     );
 };
-
-export default RevisionsButton;
