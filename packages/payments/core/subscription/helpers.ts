@@ -547,6 +547,7 @@ export const getHasPlusPlan = (planName?: PLANS | ADDON_NAMES) => {
             PLANS.VPN_PASS_BUNDLE,
             PLANS.WALLET,
             PLANS.PASS_LIFETIME,
+            PLANS.LUMO,
         ].some((otherPlanName) => otherPlanName === planName)
     );
 };
@@ -1248,13 +1249,13 @@ export function getIsPlanTransitionForbidden({
     const newPlan = getPlanFromPlanIDs(plansMap, planIDs);
     const newPlanName = newPlan?.Name;
 
-    if (isForbiddenPlusToPlus({ subscription, user, newPlanName })) {
-        return { type: 'plus-to-plus', newPlanName } as const;
-    }
-
     const lumoForbidden = isForbiddenLumoPlus({ plansMap, subscription, user, newPlanName });
     if (lumoForbidden) {
         return { type: 'lumo-plus', newPlanIDs: lumoForbidden.planIDs, newPlanName: lumoForbidden.planName } as const;
+    }
+
+    if (isForbiddenPlusToPlus({ subscription, user, newPlanName })) {
+        return { type: 'plus-to-plus', newPlanName } as const;
     }
 
     return null;
