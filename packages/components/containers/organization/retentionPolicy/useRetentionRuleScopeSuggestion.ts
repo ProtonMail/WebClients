@@ -44,9 +44,9 @@ export const useRetentionRuleScopeSuggestion = () => {
 
     const getScopeFieldLabel = (scopeType: RetentionRuleScopeType) => {
         if (scopeType === RetentionRuleScopeType.User) {
-            return c('Option').t`User`;
+            return c('retention_policy_2025_Option').t`User`;
         }
-        return c('Option').t`Group`;
+        return c('retention_policy_2025_Option').t`Group`;
     };
 
     const getFullScopeLabel = (scope: RetentionRuleScope): string => {
