@@ -63,7 +63,7 @@ export const useCreateFolderModalState = ({
         try {
             const newFolder = await drive.createFolder(parentFolderUid, name);
             const { volumeId } = splitNodeUid(parentFolderUid);
-            const { node } = getNodeEntity(newFolder!);
+            const { node } = getNodeEntity(newFolder);
             await events.pollEvents.volumes(volumeId);
             createNotification({
                 type: 'success',
