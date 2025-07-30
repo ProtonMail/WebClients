@@ -45,7 +45,7 @@ export const useRetentionPoliciesManagement = (
             dispatch(deleteRetentionRule(retentionRule.ID));
             createNotification({
                 type: 'success',
-                text: c('Info').t`Retention rule "${retentionRule.Name}" deleted successfully`,
+                text: c('retention_policy_2025_Info').t`Retention rule "${retentionRule.Name}" deleted successfully`,
             });
         } catch (error) {
             handleError(error);
@@ -76,7 +76,7 @@ export const useRetentionPoliciesManagement = (
             dispatch(updateRetentionRule(RetentionRule));
             createNotification({
                 type: 'success',
-                text: c('Info').t`Retention rule "${formData.name}" updated successfully`,
+                text: c('retention_policy_2025_Info').t`Retention rule "${formData.name}" updated successfully`,
             });
         } catch (error) {
             handleError(error);
@@ -101,7 +101,7 @@ export const useRetentionPoliciesManagement = (
             dispatch(addRetentionRule(RetentionRule));
             createNotification({
                 type: 'success',
-                text: c('Info').t`Retention rule "${payload.Name}" created successfully`,
+                text: c('retention_policy_2025_Info').t`Retention rule "${payload.Name}" created successfully`,
             });
         } catch (error) {
             handleError(error);
