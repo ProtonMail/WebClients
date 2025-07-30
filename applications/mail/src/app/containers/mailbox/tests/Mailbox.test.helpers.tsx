@@ -25,7 +25,7 @@ import { addApiMock, minimalCache, render, triggerEvent } from '../../../helpers
 import type { ConversationLabel } from '../../../models/conversation';
 import type { Element } from '../../../models/element';
 import type { Event } from '../../../models/event';
-import MailboxContainer from '../MailboxContainer';
+import { RouterMailboxContainer } from '../../../router/RouterMailboxContainer';
 
 loudRejection();
 
@@ -48,7 +48,7 @@ export interface SetupArgs extends PropsArgs {
     totalConversations?: number;
     mockMessages?: boolean;
     mockConversations?: boolean;
-    Component?: typeof MailboxContainer;
+    Component?: typeof RouterMailboxContainer;
     mailSettings?: MailSettings;
     preloadedState?: Partial<MailState>;
 }
@@ -118,12 +118,16 @@ export const getProps = ({
     }
 
     const readableLabelID = getHumanLabelID(labelID);
+    let path = labelID ? readableLabelID : '';
+    if (elementID) {
+        path += `/${elementID}`;
+    }
     return {
         ...props,
         labelID,
         elementID,
         mailSettings,
-        initialPath: `${labelID ? readableLabelID : ''}#${urlSearchParams.toString()}`,
+        initialPath: `${path}#${urlSearchParams.toString()}`,
     };
 };
 
@@ -141,7 +145,7 @@ export const setup = async ({
     totalConversations = conversations.length,
     mockMessages = true,
     mockConversations = true,
-    Component = MailboxContainer,
+    Component = RouterMailboxContainer,
     preloadedState = {},
     ...propsArgs
 }: SetupArgs = {}) => {
@@ -156,7 +160,7 @@ export const setup = async ({
         addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     }
 
-    const result = await render(<Component {...props} />, {
+    const result = await render(<Component />, {
         preloadedState: {
             userSettings: getModelState({
                 News: setBit(0, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS),
@@ -185,18 +189,42 @@ export const setup = async ({
                     Unread: 0,
                 },
             ]),
+            elements: {
+                params: {
+                    labelID: props.labelID,
+                    elementID: props.elementID,
+                    messageID: undefined,
+                    conversationMode: false,
+                    sort: defaultSort,
+                    filter: defaultFilter,
+                    search: defaultSearch,
+                    esEnabled: false,
+                    isSearching: false,
+                },
+                beforeFirstLoad: false,
+                invalidated: false,
+                pendingRequest: false,
+                pendingActions: 0,
+                page: 0,
+                total: {},
+                elements: {},
+                bypassFilter: [],
+                pages: {},
+                retry: { payload: null, count: 0, error: undefined },
+                taskRunning: { labelIDs: [], timeoutID: undefined },
+            },
             ...preloadedState, // TODO merge object instead of overwriting, if needed for new test-cases
         },
         initialPath,
     });
     const rerender = (propsArgs: PropsArgs) => {
-        const { initialPath, ...props } = getProps(propsArgs);
+        const { initialPath } = getProps(propsArgs);
 
         act(() => {
             result.history.push(initialPath);
         });
 
-        return result.rerender(<Component {...props} />);
+        return result.rerender(<Component />);
     };
     const getItems = () => result.getAllByTestId('message-item', { exact: false });
     return { ...result, rerender, getItems };

@@ -173,7 +173,6 @@ enum MailFeatureFlag {
     MailWebListTelemetry = 'MailWebListTelemetry',
     MailPostSignupOneDollarPromo = 'MailPostSignupOneDollarPromo',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
-    MailboxRefactoring = 'MailboxRefactoring',
     NewsletterSubscriptionView = 'NewsletterSubscriptionView',
     RemoveReplyStyles = 'RemoveReplyStyles',
     MailboxOptimisticRefactoring = 'MailboxOptimisticRefactoring',
