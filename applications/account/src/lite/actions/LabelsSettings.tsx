@@ -10,8 +10,8 @@ const LabelsSettings = ({ layout }: { layout: (children: ReactNode, props?: any)
     return layout(
         <div className="mobile-settings">
             <MobileSection>
-                <FoldersSection />
-                <LabelsSection />
+                <FoldersSection showPromptOnAction />
+                <LabelsSection showPromptOnAction />
             </MobileSection>
         </div>,
         { className: 'overflow-auto' }
