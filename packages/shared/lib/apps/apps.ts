@@ -14,6 +14,7 @@ export interface GetAvailableAppsByUserTypeArguments {
     user?: User;
     context: AppContext;
     isDocsHomepageAvailable: boolean;
+    isMeetAvailable: boolean;
     oauth?: boolean;
 }
 
@@ -91,6 +92,9 @@ export const getAvailableApps = (
 
     if (options.context === 'dropdown' && !options.isDocsHomepageAvailable) {
         removeApps.add(APPS.PROTONDOCS);
+    }
+    if (options.context === 'dropdown' && !options.isMeetAvailable) {
+        removeApps.add(APPS.PROTONMEET);
     }
     const availableAppsByUser = getAvailableAppsByUser(options);
     const availableAppsByOrganization = getAvailableAppsByOrganization(options);
