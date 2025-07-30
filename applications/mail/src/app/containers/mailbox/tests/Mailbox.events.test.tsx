@@ -8,7 +8,7 @@ import { DEFAULT_PLACEHOLDERS_COUNT } from '../../../constants';
 import { addApiResolver, api, clearAll, render } from '../../../helpers/test/helper';
 import type { Conversation } from '../../../models/conversation';
 import type { MessageEvent } from '../../../models/event';
-import MailboxContainer from '../MailboxContainer';
+import { RouterMailboxContainer } from '../../../router/RouterMailboxContainer';
 import {
     baseApiMocks,
     expectElements,
@@ -210,10 +210,34 @@ describe('Mailbox elements list reacting to events', () => {
 
         const { initialPath, ...props } = getProps({ search, labelID });
 
-        const view = await render(<MailboxContainer {...props} />, {
+        const view = await render(<RouterMailboxContainer />, {
             preloadedState: {
                 messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
                 categories: getModelState([...labels, ...folders]),
+                elements: {
+                    params: {
+                        labelID: props.labelID,
+                        elementID: props.elementID,
+                        messageID: undefined,
+                        conversationMode: false,
+                        sort: { sort: 'Time', desc: true },
+                        filter: {},
+                        search: {},
+                        esEnabled: false,
+                        isSearching: false,
+                    },
+                    beforeFirstLoad: false,
+                    invalidated: false,
+                    pendingRequest: false,
+                    pendingActions: 0,
+                    page: 0,
+                    total: {},
+                    elements: {},
+                    bypassFilter: [],
+                    pages: {},
+                    retry: { payload: null, count: 0, error: undefined },
+                    taskRunning: { labelIDs: [], timeoutID: undefined },
+                },
             },
             initialPath,
         });
@@ -261,11 +285,35 @@ describe('Mailbox elements list reacting to events', () => {
         let { resolve } = addApiResolver('mail/v4/messages');
 
         const { initialPath, ...props } = getProps({ search, labelID });
-        const { rerender, history } = await render(<MailboxContainer {...props} />, {
+        const { rerender, history } = await render(<RouterMailboxContainer />, {
             preloadedState: {
                 conversationCounts: getModelState([]),
                 messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
                 categories: getModelState([...labels, ...folders]),
+                elements: {
+                    params: {
+                        labelID: props.labelID,
+                        elementID: props.elementID,
+                        messageID: undefined,
+                        conversationMode: false,
+                        sort: { sort: 'Time', desc: true },
+                        filter: {},
+                        search: {},
+                        esEnabled: false,
+                        isSearching: false,
+                    },
+                    beforeFirstLoad: false,
+                    invalidated: false,
+                    pendingRequest: false,
+                    pendingActions: 0,
+                    page: 0,
+                    total: {},
+                    elements: {},
+                    bypassFilter: [],
+                    pages: {},
+                    retry: { payload: null, count: 0, error: undefined },
+                    taskRunning: { labelIDs: [], timeoutID: undefined },
+                },
             },
             initialPath,
         });
@@ -282,12 +330,12 @@ describe('Mailbox elements list reacting to events', () => {
         expectElements(getItems, total, false);
 
         resolve = addApiResolver('mail/v4/messages').resolve;
-        const { initialPath: rerenderInitialPath, ...rerenderProps } = getProps({ search: { keyword: 'changed' } });
+        const { initialPath: rerenderInitialPath } = getProps({ search: { keyword: 'changed' } });
         act(() => {
             history.push(rerenderInitialPath);
         });
 
-        await rerender(<MailboxContainer {...rerenderProps} />);
+        await rerender(<RouterMailboxContainer />);
 
         // Params has changed, cache is reset
         expectElements(getItems, DEFAULT_PLACEHOLDERS_COUNT, true);

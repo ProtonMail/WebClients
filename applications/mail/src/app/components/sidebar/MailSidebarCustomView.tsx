@@ -64,13 +64,12 @@ export const MailSidebarCustomView = ({ collapsed }: Props) => {
     const activeBreakpoint = useActiveBreakpoint();
 
     const newsletterSubscriptionsView = useFlag('NewsletterSubscriptionView');
-    const mailboxRefactoring = useFlag('MailboxRefactoring');
 
     const [user] = useUser();
     const [displayView, toggleView] = useLocalState(newsletterSubscriptionsView, `${user.ID || 'item'}-display-views`);
 
     // We return null if the subscription view is disabled because it's the only view at the moment
-    if (!newsletterSubscriptionsView || !mailboxRefactoring) {
+    if (!newsletterSubscriptionsView) {
         return null;
     }
 
