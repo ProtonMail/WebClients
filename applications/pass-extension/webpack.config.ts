@@ -1,17 +1,22 @@
-const path = require('path');
-const webpack = require('webpack');
-const ESLintPlugin = require('eslint-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CircularDependencyPlugin = require('circular-dependency-plugin');
-const { sideEffectsRule, zipJSRule } = require('@proton/pass/utils/webpack/rules');
-const getCssLoaders = require('@proton/pack/webpack/css.loader');
-const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
-const getOptimizations = require('@proton/pack/webpack/optimization');
-const ProtonIconsTreeShakePlugin = require('@proton/pass/utils/webpack/icons/plugin');
-const { excludeNodeModulesExcept, excludeFiles, createRegex } = require('@proton/pack/webpack/helpers/regex');
-const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('@proton/pack/webpack/constants');
-const fs = require('fs');
+import CircularDependencyPlugin from 'circular-dependency-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import fs from 'fs';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'path';
+import type { Configuration } from 'webpack';
+import webpack from 'webpack';
+
+import getAssetsLoaders from '@proton/pack/webpack/assets.loader';
+import { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } from '@proton/pack/webpack/constants';
+import getCssLoaders from '@proton/pack/webpack/css.loader';
+import { createRegex, excludeFiles, excludeNodeModulesExcept } from '@proton/pack/webpack/helpers/regex';
+import getOptimizations from '@proton/pack/webpack/optimization';
+import ProtonIconsTreeShakePlugin from '@proton/pass/utils/webpack/icons/plugin';
+import { sideEffectsRule, zipJSRule } from '@proton/pass/utils/webpack/rules';
+
+import envVars from './tools/env';
+import { MANIFEST_PATH, getAppVersion, webpackOptions } from './webpack.options';
 
 const {
     BETA,
@@ -30,59 +35,68 @@ const {
     RUNTIME_RELOAD,
     WEBPACK_CIRCULAR_DEPS,
     WEBPACK_DEV_PORT,
-} = require('./tools/env');
+} = envVars;
 
-const SUPPORTED_TARGETS = ['chrome', 'firefox', 'safari'];
-
-if (!SUPPORTED_TARGETS.includes(BUILD_TARGET)) {
+if (!['chrome', 'firefox', 'safari'].includes(BUILD_TARGET)) {
     throw new Error(`Build target "${BUILD_TARGET}" is not supported`);
 }
 
-const CONFIG = fs.readFileSync('./src/app/config.ts', 'utf-8').replaceAll(/(export const |;)/gm, '');
 const MANIFEST_KEYS = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'manifest-keys.json'), 'utf8'));
 const PUBLIC_KEY = BUILD_TARGET === 'chrome' ? MANIFEST_KEYS?.[MANIFEST_KEY] : null;
 const ARGON2_CHUNK_NAME = 'node_modules_openpgp_dist_lightweight_argon2id_min_mjs';
 
-console.log(`ENV = ${ENV}`);
-console.log(`RELEASE = ${RELEASE}`);
-console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
-console.log(`BUILD_STORE_TARGET = ${BUILD_STORE_TARGET}`);
-console.log(`BETA = ${BETA}`);
-console.log(`MANIFEST_KEY = ${MANIFEST_KEY || 'none'}`);
-console.log(`PUBLIC_KEY = ${PUBLIC_KEY || 'none'}`);
-console.log(`CLEAN_MANIFEST = ${CLEAN_MANIFEST}`);
-console.log(`HTTP_DEBUGGER = ${HTTP_DEBUGGER}`);
+const section = (title: string, content: () => void) => {
+    const width = process.stdout.columns || 80;
+    const sep = '-'.repeat(width);
+    console.log(`${sep}\n ${title}\n${sep}`);
+    content();
+    console.log(`${sep}\n`);
+};
 
-if (HTTP_DEBUGGER) console.log(`HTTP_DEBUGGER_PORT = ${HTTP_DEBUGGER_PORT}`);
+section('Build configuration', () => {
+    console.log(` ENV = ${ENV}`);
+    console.log(` RELEASE = ${RELEASE}`);
+    console.log(` BUILD_TARGET = ${BUILD_TARGET}`);
+    console.log(` BUILD_STORE_TARGET = ${BUILD_STORE_TARGET}`);
+    console.log(` BETA = ${BETA}`);
+    console.log(` MANIFEST_KEY = ${MANIFEST_KEY || 'none'}`);
+    console.log(` MANIFEST_VERSION = ${JSON.parse(getAppVersion())}`);
+    console.log(` PUBLIC_KEY = ${PUBLIC_KEY || 'none'}`);
+    console.log(` CLEAN_MANIFEST = ${CLEAN_MANIFEST}`);
+    console.log(` HTTP_DEBUGGER = ${HTTP_DEBUGGER}`);
 
-if (ENV !== 'production') {
-    console.log(`HOT_MANIFEST_UPDATE = ${HOT_MANIFEST_UPDATE}`);
-    console.log(`REDUX_DEVTOOLS_PORT = ${REDUX_DEVTOOLS_PORT}`);
-    console.log(`RESUME_FALLBACK = ${RESUME_FALLBACK}`);
-    console.log(`RUNTIME_RELOAD = ${RUNTIME_RELOAD}`);
-    console.log(`RUNTIME_RELOAD_PORT = ${RUNTIME_RELOAD_PORT}`);
-    console.log(`WEBPACK_DEV_PORT = ${WEBPACK_DEV_PORT}`);
-}
+    if (HTTP_DEBUGGER) console.log(` HTTP_DEBUGGER_PORT = ${HTTP_DEBUGGER_PORT}`);
 
-console.log(CONFIG);
+    if (ENV !== 'production') {
+        console.log(` HOT_MANIFEST_UPDATE = ${HOT_MANIFEST_UPDATE}`);
+        console.log(` REDUX_DEVTOOLS_PORT = ${REDUX_DEVTOOLS_PORT}`);
+        console.log(` RESUME_FALLBACK = ${RESUME_FALLBACK}`);
+        console.log(` RUNTIME_RELOAD = ${RUNTIME_RELOAD}`);
+        console.log(` RUNTIME_RELOAD_PORT = ${RUNTIME_RELOAD_PORT}`);
+        console.log(` WEBPACK_DEV_PORT = ${WEBPACK_DEV_PORT}`);
+    }
+});
 
-const production = ENV === 'production';
-const importScripts = BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari';
-const manifest = `manifest-${BUILD_TARGET}.json`;
-const manifestPath = path.resolve(__dirname, manifest);
+section('Proton Configuration', () => {
+    Object.entries(webpackOptions.defineWebpackConfig).forEach(([key, value]) => {
+        if (typeof value === 'object') console.log(` ${key} = ${Object.values(value)}`);
+        else console.log(` ${key} = ${value}`);
+    });
+});
 
-const nonAccessibleWebResource = (entry) => [entry, './src/lib/utils/web-accessible-resource.ts'];
-const disableBrowserTrap = (entry) => [entry, './src/lib/utils/disable-browser-trap.ts'];
-const safariPatch = (entry) => (BUILD_TARGET === 'safari' ? [entry, './src/lib/utils/safari-patch.ts'] : entry);
-const getManifestVersion = () => JSON.stringify(JSON.parse(fs.readFileSync(manifestPath, 'utf8')).version);
+const USE_IMPORT_SCRIPTS = BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari';
 
 const JS_EXCLUDES = createRegex(
     excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
     excludeFiles([...BABEL_EXCLUDE_FILES, 'pre.ts', 'unsupported.ts'])
 );
 
-module.exports = {
-    ...(production
+const nonAccessibleWebResource = (entry: string) => [entry, './src/lib/utils/web-accessible-resource.ts'];
+const disableBrowserTrap = (entry: string) => [entry, './src/lib/utils/disable-browser-trap.ts'];
+const safariPatch = (entry: string) => (BUILD_TARGET === 'safari' ? [entry, './src/lib/utils/safari-patch.ts'] : entry);
+
+const config: Configuration = {
+    ...(webpackOptions.isProduction
         ? { mode: 'production', devtool: 'source-map' }
         : { mode: 'development', devtool: 'inline-source-map' }),
     entry: {
@@ -96,7 +110,7 @@ module.exports = {
              * a service-worker is that you have to register any imported script
              * during the service worker's oninstall phase (`/worker/index.ts`)
              * https://bugs.chromium.org/p/chromium/issues/detail?id=1198822#c10  */
-            chunkLoading: importScripts ? 'import-scripts' : 'jsonp',
+            chunkLoading: USE_IMPORT_SCRIPTS ? 'import-scripts' : 'jsonp',
         },
         client: {
             import: './src/app/content/client.ts',
@@ -171,12 +185,12 @@ module.exports = {
                 ],
             },
 
-            ...getCssLoaders({ browserslist: undefined, logical: false }),
+            ...getCssLoaders({ browserslist: undefined, logical: false, webpackOnCaffeine: false }),
             ...getAssetsLoaders({ inlineIcons: true }),
         ],
     },
     optimization: {
-        ...getOptimizations({ isProduction: production }),
+        ...getOptimizations(webpackOptions),
         runtimeChunk: false,
         splitChunks: false,
         usedExports: true,
@@ -218,9 +232,9 @@ module.exports = {
         /** Some chunks need to be predictable in order for
          * importScripts to work properly in the context of
          * chromium builds (eg crypto lazy loaded modules) */
-        chunkFilename: ({ chunk: { name, id } }) => {
-            if (name === null) {
-                if (id === ARGON2_CHUNK_NAME) return 'chunk.crypto-argon2.js';
+        chunkFilename: ({ chunk }) => {
+            if (!chunk?.name) {
+                if (chunk?.id === ARGON2_CHUNK_NAME) return 'chunk.crypto-argon2.js';
                 return 'chunk.[contenthash:8].js';
             }
 
@@ -234,6 +248,13 @@ module.exports = {
     plugins: [
         new webpack.EnvironmentPlugin({ NODE_ENV: ENV }),
         new webpack.DefinePlugin({
+            /** ProtonConfigV2 (see `packages/pack/webpack/plugins.js`) */
+            ...Object.fromEntries(
+                Object.entries(webpackOptions.defineWebpackConfig).map(([key, value]) => [
+                    `process.env.${key}`,
+                    JSON.stringify(value),
+                ])
+            ),
             BETA: JSON.stringify(BETA),
             BUILD_TARGET: JSON.stringify(BUILD_TARGET),
             BUILD_STORE_TARGET: JSON.stringify(BUILD_STORE_TARGET),
@@ -247,10 +268,9 @@ module.exports = {
             RESUME_FALLBACK,
             RUNTIME_RELOAD_PORT,
             RUNTIME_RELOAD,
-            VERSION:
-                ENV === 'production'
-                    ? getManifestVersion()
-                    : webpack.DefinePlugin.runtimeValue(getManifestVersion, true),
+            VERSION: webpackOptions.isProduction
+                ? getAppVersion()
+                : webpack.DefinePlugin.runtimeValue(getAppVersion, true),
         }),
         new ESLintPlugin({
             extensions: ['js', 'ts'],
@@ -263,7 +283,7 @@ module.exports = {
             patterns: [
                 { from: 'public' },
                 {
-                    from: manifest,
+                    from: MANIFEST_PATH,
                     to: 'manifest.json',
                     transform(content) {
                         const data = content.toString('utf-8');
@@ -332,7 +352,7 @@ module.exports = {
                   }),
               ]
             : []),
-        ...(production
+        ...(webpackOptions.isProduction
             ? [
                   new ProtonIconsTreeShakePlugin({
                       entries: ['dropdown', 'notification', 'onboarding', 'popup', 'settings', 'internal'],
@@ -346,3 +366,5 @@ module.exports = {
         layers: true,
     },
 };
+
+export default config;
