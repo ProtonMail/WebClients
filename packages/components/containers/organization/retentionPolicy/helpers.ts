@@ -1,19 +1,33 @@
 import { c } from 'ttag';
 
-import { APPS } from '@proton/shared/lib/constants';
-import { RetentionRuleAction, RetentionRuleProduct } from '@proton/shared/lib/interfaces/RetentionRule';
+import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    type RetentionRule,
+    RetentionRuleAction,
+    RetentionRuleProduct,
+} from '@proton/shared/lib/interfaces/RetentionRule';
+
+import type { RetentionRuleFormData } from './types';
 
 const CLIENT_ID_PREFIX = 'RetentionPolicyClientID:';
 
 export const getActionLabel = (action: RetentionRuleAction) => {
     if (action === RetentionRuleAction.RetainPurgeAll) {
-        return c('Action').t`Purge all`;
+        return c('retention_policy_2025_Action').t`Purge all`;
     }
     if (action === RetentionRuleAction.RetainPurgeDeleted) {
-        return c('Action').t`Purge deleted`;
+        return c('retention_policy_2025_Action').t`Purge deleted`;
     }
 
     return action.toString();
+};
+
+export const getProductLabel = (product: RetentionRuleProduct) => {
+    if (product === RetentionRuleProduct.Mail) {
+        return MAIL_APP_NAME;
+    }
+
+    return `Unknown`;
 };
 
 export const getLogoProductLabel = (product: RetentionRuleProduct) => {
@@ -21,6 +35,21 @@ export const getLogoProductLabel = (product: RetentionRuleProduct) => {
         return APPS.PROTONMAIL;
     }
     return APPS.PROTONMAIL;
+};
+
+export const convertToRetentionRuleFormData = (retentionRule: RetentionRule): RetentionRuleFormData => {
+    return {
+        id: retentionRule.ID,
+        name: retentionRule.Name,
+        products: retentionRule.Products,
+        lifetime: retentionRule.Lifetime,
+        action: retentionRule.Action,
+        scopes: retentionRule.Scopes.map((scope) => ({
+            id: scope.ID,
+            entityType: scope.EntityType,
+            entityID: scope.EntityID,
+        })),
+    };
 };
 
 export const generateClientIDForRuleScope = () => {
