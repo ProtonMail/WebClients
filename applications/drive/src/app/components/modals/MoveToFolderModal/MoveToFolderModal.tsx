@@ -16,9 +16,18 @@ import { useCreateFolderModal } from '../CreateFolderModal';
 import ModalContentLoader from '../ModalContentLoader';
 import { ModalContent } from './ModalContent';
 
+type Item = {
+    parentLinkId: string;
+    linkId: string;
+    rootShareId: string;
+    volumeId: string;
+    name?: string;
+    isFile: boolean;
+};
+
 interface Props {
     shareId: string;
-    selectedItems: DecryptedLink[];
+    selectedItems: Item[];
     onClose?: () => void;
 }
 
@@ -67,7 +76,7 @@ const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modal
             return;
         }
 
-        showCreateFolderModal({
+        void showCreateFolderModal({
             folder: { shareId: shareId, linkId: targetLinkId },
             onCreateDone: async (newFolderId: string) => {
                 expand(targetLinkId);
