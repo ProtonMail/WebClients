@@ -9,7 +9,7 @@ import {
 } from '@proton/drive';
 
 import { type FileBrowserBaseItem } from '../../components/FileBrowser';
-import type { EncryptedLink, LinkShareUrl, ShareWithKey, SignatureIssues } from '../../store';
+import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../store';
 import { getNodeEntity } from './getNodeEntity';
 import { dateToLegacyTimestamp, getLegacyModifiedTime, getLegacyTrashedTime } from './legacyTime';
 
@@ -38,6 +38,7 @@ export type LegacyItem = FileBrowserBaseItem &
         metaDataModifyTime: number;
         isLocked?: boolean;
         thumbnailId: string;
+        isShared?: boolean;
         /**
          * FILEBROWSER TODO:
          * @todo rootShareId is only needed here until we migrate to the new File Browser
@@ -75,11 +76,17 @@ const getRootShareId = async (node: NodeWithParent, drive: ProtonDriveClient): P
 };
 
 export const mapNodeToLegacyItem = async (
-    maybeNode: MaybeNode,
-    defaultShare: ShareWithKey,
+    maybeNode: MaybeNode | NodeEntity,
+    defaultShareId: string,
     drive: ProtonDriveClient
 ): Promise<LegacyItem> => {
-    let { node } = getNodeEntity(maybeNode);
+    let node: NodeEntity;
+    if ('ok' in maybeNode) {
+        const nodeEntity = getNodeEntity(maybeNode);
+        node = nodeEntity.node;
+    } else {
+        node = maybeNode;
+    }
 
     let activeRevision;
     const nodeRevision = node.activeRevision;
@@ -115,7 +122,8 @@ export const mapNodeToLegacyItem = async (
         thumbnailId: activeRevision?.id || node.uid,
         parentUid: node.parentUid,
         deprecatedShareId: node.deprecatedShareId,
-        shareId: node.deprecatedShareId || defaultShare.shareId,
-        rootShareId: (await getRootShareId(node, drive)) || defaultShare.shareId,
+        shareId: node.deprecatedShareId || defaultShareId,
+        rootShareId: (await getRootShareId(node, drive)) || defaultShareId,
+        isShared: node.isShared,
     };
 };

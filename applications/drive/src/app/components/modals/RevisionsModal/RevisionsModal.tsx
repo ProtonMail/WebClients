@@ -18,14 +18,14 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getIsOwner } from '@proton/shared/lib/drive/permissions';
 import type { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import type { DecryptedLink } from '../../../store';
 import { useUserSettings } from '../../../store';
+import type { RevisionItem } from '../../revisions';
 import { RevisionList, RevisionsProvider, useRevisionsProvider } from '../../revisions';
 
 import './RevisionsModal.scss';
 
 interface Props {
-    link: DecryptedLink;
+    link: RevisionItem;
 }
 
 const RevisionsSettingsBanner = ({
