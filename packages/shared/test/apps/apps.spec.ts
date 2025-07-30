@@ -83,6 +83,7 @@ const getAllowedProducts = (products: OrganizationSettingsAllowedProduct[]) => {
 const defaultOptions: Parameters<typeof getAvailableApps>[0] = {
     user: getProtonUser(),
     isDocsHomepageAvailable: true,
+    isMeetAvailable: true,
     context: 'app',
 };
 

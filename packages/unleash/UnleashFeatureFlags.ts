@@ -54,6 +54,7 @@ enum CommonFeatureFlag {
     AllowGuestInit = 'AllowGuestInit',
     PMVCAvailable = 'PMVCAvailable',
     NewScheduleOption = 'NewScheduleOption',
+    PMVC2025 = 'PMVC2025',
 }
 
 enum AccountFlag {

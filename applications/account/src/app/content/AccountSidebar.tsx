@@ -37,7 +37,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONPASS]: c('Navigation').t`Pass vaults`,
         [APPS.PROTONDOCS]: c('Navigation').t`Documents`,
         [APPS.PROTONWALLET]: c('wallet_signup_2024:Navigation').t`Wallet`,
-        [APPS.PROTONMEET]: c('meet_2025:Navigation').t`${MEET_SHORT_APP_NAME}`,
+        [APPS.PROTONMEET]: MEET_SHORT_APP_NAME,
         [APPS.PROTONLUMO]: LUMO_SHORT_APP_NAME,
     };
     const backButtonCopyTitle = {
@@ -48,7 +48,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONDOCS]: c('Navigation').t`Back to documents`,
         [APPS.PROTONWALLET]: c('wallet_signup_2024:Navigation').t`Back to wallet`,
         [APPS.PROTONLUMO]: c('collider_2025: Navigation').t`Back to ${LUMO_SHORT_APP_NAME}`,
-        [APPS.PROTONMEET]: c('meet_2025:Navigation').t`Back to ${MEET_SHORT_APP_NAME}`,
+        [APPS.PROTONMEET]: c('meet_2025 Navigation').t`Back to ${MEET_SHORT_APP_NAME}`,
     };
 
     const backButtonText = backButtonCopy[app as keyof typeof backButtonCopy];
