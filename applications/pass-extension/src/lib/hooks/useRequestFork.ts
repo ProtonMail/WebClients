@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { SSO_URL } from 'proton-pass-extension/app/config';
+import config from 'proton-pass-extension/app/config';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { c } from 'ttag';
 
@@ -22,12 +22,12 @@ type UseRequestForkWithPermissionsOptions = Partial<{ autoClose: boolean; replac
  * very limited support for the tabs API */
 export const useRequestFork = () =>
     useCallback(async ({ data, replace, ...options }: UseRequestForkOptions) => {
-        const { url, state } = requestFork({ 
-            ...options, 
-            host: SSO_URL, 
+        const { url, state } = requestFork({
+            ...options,
+            host: config.SSO_URL,
             app: APPS.PROTONPASSBROWSEREXTENSION,
-            plan: BUILD_TARGET === 'safari' && options.forkType === ForkType.SIGNUP ? 'free' : undefined
-         });
+            plan: BUILD_TARGET === 'safari' && options.forkType === ForkType.SIGNUP ? 'free' : undefined,
+        });
 
         if (data) await browser.storage.session.set({ [getStateKey(state)]: JSON.stringify(data) }).catch(noop);
         if (replace) return window.location.replace(url);
