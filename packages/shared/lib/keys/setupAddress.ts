@@ -7,11 +7,17 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getRequiresAddress, getRequiresProtonAddress } from '@proton/shared/lib/authentication/apps';
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
-import { ADDRESS_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES, PRODUCT_BIT } from '@proton/shared/lib/constants';
+import {
+    ADDRESS_TYPE,
+    APPS,
+    type APP_NAMES,
+    KEYGEN_CONFIGS,
+    KEYGEN_TYPES,
+    PRODUCT_BIT,
+} from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getEmailParts, removePlusAliasLocalPart } from '@proton/shared/lib/helpers/email';
-import { isPrivate } from '@proton/shared/lib/user/helpers';
+import { isAdmin, isPrivate, isSelf } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import { getAllAddresses } from '../api/addresses';
@@ -53,17 +59,22 @@ export const getClaimableAddress = async ({
     domains: string[];
 }): Promise<ClaimableAddress> => {
     const domain = domains[0];
-    // Username is already set, can't be changed.
+    // Username is already set (and not a email address), can't be changed.
     if (user.Name) {
-        return {
-            username: user.Name,
-            domain,
-            type: ClaimableAddressType.Fixed,
-        };
+        // SSO users get set a user.Name with the SSO address, like `user@sso-domain.org`. This ensures that the
+        // username is without a domain.
+        const [, domain] = getEmailParts(user.Name);
+        if (!domain) {
+            return {
+                username: user.Name,
+                domain,
+                type: ClaimableAddressType.Fixed,
+            };
+        }
     }
-    const username = getLocalPart(email).trim();
-    await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
-    return { username, domain, type: ClaimableAddressType.Any };
+    const localEmailPart = getLocalPart(email).trim();
+    await api(queryCheckUsernameAvailability(`${localEmailPart}@${domain}`, true));
+    return { username: localEmailPart, domain, type: ClaimableAddressType.Any };
 };
 
 export type AddressGenerationSetup =
@@ -297,10 +308,6 @@ export const getIsGlobalSSOAccount = (user: tsUser | undefined) => {
     return getIsSSOAccount(user) && user.Keys.length > 0;
 };
 
-export const getIsPublicUserWithoutProtonAddress = (user: tsUser | undefined) => {
-    return user && user.Flags['no-proton-address'] && !user.Private;
-};
-
 export const getIsVPNOnlyAccount = (user: tsUser | undefined) => {
     if (!user) {
         return false;
@@ -320,6 +327,25 @@ export const getIsExternalAccount = (user: tsUser) => {
         return false;
     }
     return user.Type === UserType.EXTERNAL || user.Flags['no-proton-address'];
+};
+
+export const getCanSetupProtonAddress = (user: tsUser | undefined): boolean => {
+    return Boolean(
+        user &&
+            // Is currently external
+            getIsExternalAccount(user) &&
+            // Managed users cannot create a Proton address.
+            // The API checks for $user->isSubUser() -> `Proton Mail domain address creation is not allowed for this user`
+            user.Type !== UserType.MANAGED &&
+            // Impersonation not allowed
+            isSelf(user) &&
+            // This is a key setup check. Admins can create keys for non-private and private users. If not admin, it needs to be a private user to setup keys.
+            (isAdmin(user) || isPrivate(user))
+    );
+};
+
+export const getIsExternalUserWithoutProtonAddressCreation = (user: tsUser | undefined) => {
+    return Boolean(user && getIsExternalAccount(user) && !getCanSetupProtonAddress(user));
 };
 
 export const getIsBYOEAccount = (user: tsUser) => {
