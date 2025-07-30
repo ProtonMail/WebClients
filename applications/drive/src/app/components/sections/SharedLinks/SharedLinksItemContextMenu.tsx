@@ -70,6 +70,7 @@ export function SharedLinksItemContextMenu({
                         shareId={selectedLink.rootShareId}
                         showLinkSharingModal={showLinkSharingModal}
                         linkId={selectedLink.linkId}
+                        isAlbum={selectedLink.type === LinkType.ALBUM}
                         close={close}
                     />
                 )}

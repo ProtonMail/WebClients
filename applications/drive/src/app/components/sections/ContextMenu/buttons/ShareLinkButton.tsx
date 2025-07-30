@@ -9,16 +9,25 @@ interface Props {
     linkId: string;
     showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
     isSharedWithMe?: boolean;
+    isAlbum?: boolean;
     close: () => void;
 }
 
-const ShareLinkButton = ({ volumeId, shareId, linkId, showLinkSharingModal, isSharedWithMe, close }: Props) => {
+const ShareLinkButton = ({
+    volumeId,
+    shareId,
+    linkId,
+    showLinkSharingModal,
+    isSharedWithMe,
+    isAlbum,
+    close,
+}: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Share`}
             icon={isSharedWithMe ? 'users' : 'user-plus'}
             testId="context-menu-share-link"
-            action={() => showLinkSharingModal({ shareId, linkId, volumeId })}
+            action={() => showLinkSharingModal({ shareId, linkId, volumeId, isAlbum })}
             close={close}
         />
     );
