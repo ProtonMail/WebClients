@@ -12,7 +12,6 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import type { DecryptedLink } from '../../store';
 import { useDownload } from '../../store';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import PortalPreview from '../PortalPreview';
@@ -21,6 +20,16 @@ import type { CategorizedRevisions } from './getCategorizedRevisions';
 import { getCategorizedRevisions } from './getCategorizedRevisions';
 
 import './RevisionPreview.scss';
+
+export type RevisionItem = {
+    mimeType: string;
+    size: number;
+    volumeId: string;
+    linkId: string;
+    rootShareId: string;
+    name: string;
+    isFile: boolean;
+};
 
 export interface RevisionsProviderState {
     hasPreviewAvailable: boolean;
@@ -41,7 +50,7 @@ export const RevisionsProvider = ({
     link,
     children,
 }: PropsWithChildren<{
-    link: DecryptedLink;
+    link: RevisionItem;
 }>) => {
     const { createNotification } = useNotifications();
     const ref = useRef(null);
@@ -74,7 +83,7 @@ export const RevisionsProvider = ({
     }, [link.linkId]);
 
     useEffect(() => {
-        getSharePermissions(new AbortController().signal, link.rootShareId).then(setPermissions);
+        void getSharePermissions(new AbortController().signal, link.rootShareId).then(setPermissions);
     }, [link.rootShareId]);
 
     const categorizedRevisions = useMemo(() => getCategorizedRevisions(olderRevisions), [olderRevisions]);

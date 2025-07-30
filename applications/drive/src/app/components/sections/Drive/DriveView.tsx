@@ -18,7 +18,10 @@ import DriveToolbar from './DriveToolbar';
 
 export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
 
-function DriveView() {
+/**
+ * @deprecated
+ */
+export function DriveViewDeprecated() {
     const { activeFolder } = useActiveShare();
     const { navigateToRoot, navigateToLink } = useDriveNavigation();
     const [renderAlbumOnboardingModal] = useAlbumOnboardingModal();
@@ -79,5 +82,3 @@ function DriveView() {
         </FileBrowserStateProvider>
     );
 }
-
-export default DriveView;
