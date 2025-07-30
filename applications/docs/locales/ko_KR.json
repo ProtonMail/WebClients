@@ -933,6 +933,9 @@
       ],
       "${ users } user": [
         "${ users }명 사용자"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ]
     },
     "Alert": {

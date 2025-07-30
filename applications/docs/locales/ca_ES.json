@@ -128,7 +128,7 @@
         "Cancel·la la subscripció"
       ],
       "Cancel trial and pay": [
-        "Cancel·leu la prova i procediu a pagar"
+        "Cancel·leu la prova i pagueu"
       ],
       "Change sort order": [
         "Canvia l'ordenació"
@@ -721,7 +721,7 @@
         "Estableix la frase de recuperació"
       ],
       "Set up 2FA": [
-        "Configuració de l'A2F"
+        "Configuració 2FA"
       ],
       "Set up a custom domain": [
         "Configura un domini personalitzat"
@@ -987,7 +987,7 @@
         "Els descomptes es basen en els preus mensuals estàndard. Al final del cicle de facturació, la subscripció es renovarà a la tarifa anual estàndard."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Dupliqueu el vostre emmagatzematge xifrat – obtingueu 1 TB per totes les vostres dades"
+        "Dupliqueu el vostre emmagatzematge xifrat: obteniu 1 TB per a totes les vostres dades."
       ],
       "Encrypted password manager": [
         "Gestor de contrasenyes xifrat"
@@ -996,7 +996,7 @@
         "Heus aquí un regal exclusiu per celebrar el nostre camí plegats."
       ],
       "High speed streaming with VPN": [
-        "Reproducció en continu (Streaming) d'alta velocitat amb VPN"
+        "Estríming d'alta velocitat amb VPN"
       ],
       "of privacy": [
         "de privacitat"
@@ -1020,13 +1020,13 @@
         "Aprofiteu els grans estalvis en les funcions prèmium de Drive amb un descompte per temps limitat."
       ],
       "Save big on premium Mail features with a limited-time discount.": [
-        "Estalviiareu molt amb les característiques prèmium de Mail amb un descompte per temps limitat."
+        "Aprofiteu els grans estalvis en les funcions prèmium de Mail amb un descompte per temps limitat."
       ],
       "Save big on premium Pass features with a limited-time discount.": [
         "Aprofiteu els grans estalvis en les funcions prèmium de Pass amb un descompte per temps limitat."
       ],
       "Save big on premium VPN features with a limited-time discount.": [
-        "Estalviiareu molt amb les funcions prèmium de VPN amb un descompte per temps limitat."
+        "Aprofiteu els grans estalvis en les funcions prèmium de VPN amb un descompte per temps limitat."
       ],
       "Save time with built-in 2FA": [
         "Estalvieu temps amb 2FA integrat"
@@ -1131,7 +1131,7 @@
     },
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
-        "La prova gratuïta se us acaba en ${ timeRemaining }"
+        "La prova gratuïta acaba en ${ timeRemaining }"
       ]
     },
     "bf2023: Deal details": {
@@ -1313,7 +1313,7 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "Hi ha hagut un problema amb ${ LUMO_SHORT_APP_NAME }"
+        "Problema amb ${ LUMO_SHORT_APP_NAME }"
       ],
       "Application problem": [
         "Problema d’aplicació"
@@ -2578,7 +2578,7 @@
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Us permet afegir instantàniament enllaços de reunions a les invitacions d'esdeveniments."
+        "Us permet afegir instantàniament enllaços de reunió a les invitacions d'esdeveniments."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
@@ -4195,7 +4195,7 @@
         "${ groupCounts } grups trobats"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME }."
+        "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació; és un pagament únic per a l'accés de per vida a ${ PASS_SHORT_APP_NAME }."
@@ -4555,7 +4555,7 @@
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
       ],
       "Download current logs": [
-        "Descarregar els registres actuals"
+        "Descarrega els registres actuals"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "La descàrrega de ${ downloadFileName } serà cancel·lada"
@@ -5564,7 +5564,7 @@
         "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
+        "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Segur que voleu continuar?"
       ],
       "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Esteu a punt de rebutjar la invitació per unir-vos a la carpeta ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
@@ -6019,7 +6019,7 @@
         "Importar a:"
       ],
       "Include application logs in bug report": [
-        "Incloeu els registres de l'aplicació a l'informe d'errors"
+        "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
       "Include document name in notification": [
         "Incloeu el nom del document a les notificacions"
@@ -7448,7 +7448,7 @@
         "Voleu passar a un pla inferior?"
       ],
       "Review subscription": [
-        "Reviseu la subscripció"
+        "Revisa la subscripció"
       ],
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"
@@ -8213,7 +8213,7 @@
         "Compartició segura de caixes fortes, elements i enllaços"
       ],
       "Unlimited logins, notes, credit cards and more": [
-        "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit i més"
+        "Nombre il·limitat d'inicis de sessió, notes, targetes de crèdit i més"
       ]
     },
     "pass_signup_2023: Title": {
@@ -8382,7 +8382,7 @@
         "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
       "Your payment is still being processed": [
-        "El vostre pagament encara s'està processant."
+        "Encara s'està processant el vostre pagament."
       ]
     },
     "Payments.Error": {
@@ -8437,7 +8437,7 @@
         "Número d’identificació fiscal (EIN)"
       ],
       "VAT number": [
-        "Número d'IVA"
+        "NIF"
       ]
     },
     "PGP key encryption warning": {
@@ -9092,7 +9092,7 @@
         "Navegueu amb seguretat"
       ],
       "Do more with ${ BRAND_NAME }": [
-        "Supereu els vostres límits amb ${ BRAND_NAME }"
+        "Feu més amb ${ BRAND_NAME }"
       ],
       "Get unlimited aliases": [
         "Obtingueu un nombre il·limitat d'àlies"
@@ -9199,7 +9199,7 @@
         "Obtingueu accés a servidors VPN ultraràpids en més de 110 països"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
-        "Obtingueu un pla que ho inclou tot: ${ BRAND_NAME } sense límits"
+        "Obteniu un pla que ho inclou tot: ${ BRAND_NAME } Unlimited"
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "Obtingueu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
@@ -9344,7 +9344,7 @@
         "El vostre ${ productString } està ple al ${ percentage }%. ${ cta }."
       ],
       "Your ${ productString } is full. ${ cta }.": [
-        "El vostre ${ productString } està ple. ${ cta }."
+        "El vostre ${ productString } és ple. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
         "El vostre emmagatzematge és ple al ${ percentage }%. ${ cta }."
@@ -9853,7 +9853,7 @@
         "Netejant dades"
       ],
       "Collaborate on documents": [
-        "Col·laboreu en documents"
+        "Col·laboració en documents"
       ],
       "Confirm downgrade": [
         "Confirma el pas a un pla inferior"
@@ -10017,7 +10017,7 @@
         "Activa l'autenticació 2FA"
       ],
       "Enable advanced account protection": [
-        "Activeu la protecció avançada del compte"
+        "Activació de la protecció avançada del compte"
       ],
       "End-to-end encrypted": [
         "Xifrat d'extrem a extrem"
@@ -10261,13 +10261,13 @@
         "Selecciona el temps de caducitat de l'enllaç"
       ],
       "Set recovery methods": [
-        "Configureu els mètodes de recuperació"
+        "Configuració dels mètodes de recuperació"
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
       ],
       "Set up email forwarding": [
-        "Configureu el reenviament de correu"
+        "Configuració del reenviament de correu"
       ],
       "Set up your organization": [
         "Configureu la vostra organització"
@@ -10291,7 +10291,7 @@
         "Tanca la sessió"
       ],
       "Simplify email distribution": [
-        "Simplifiqueu la distribució de correu"
+        "Simplifiqueu la distribució de correu electrònic"
       ],
       "Simplify password management": [
         "Simplifiqueu la gestió de contrasenyes"
