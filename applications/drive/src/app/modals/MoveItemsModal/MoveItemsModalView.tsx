@@ -20,10 +20,11 @@ import { selectMessageForItemList } from '../../components/sections/helpers';
 import type { TreeItem } from '../../store';
 import { type DecryptedLink } from '../../store';
 import { getMovedFiles } from '../../utils/moveTexts';
-import EmptyFileTreePlaceholder from './EmptyFileTreePlaceholder';
+import { EmptyFileTreePlaceholder } from './EmptyFileTreePlaceholder';
+import type { MoveItemsModalStateItem } from './useMoveItemsModalState';
 
 export type MoveItemsModalViewProps = {
-    selectedItems: DecryptedLink[];
+    selectedItems: MoveItemsModalStateItem[];
     handleSubmit: () => Promise<void>;
     rootItems: TreeItem[];
     createFolder: (parentFolderLinkId?: string) => void;
@@ -53,15 +54,6 @@ export const MoveItemsModalView = ({
     const [loading, withLoading] = useLoading();
     const { viewportWidth } = useActiveBreakpoint();
     const isSmallViewport = viewportWidth['<=small'];
-
-    if (isTreeLoaded && rootItems.length === 0) {
-        return (
-            <>
-                <ModalTwoHeader closeButtonProps={{ disabled: loading }} />
-                <EmptyFileTreePlaceholder onCreate={() => createFolder(targetFolderUid)} />
-            </>
-        );
-    }
 
     const itemsToMove = selectedItems.map((item) => item.linkId);
     const itemsToMoveCount = itemsToMove.length;
@@ -98,55 +90,65 @@ export const MoveItemsModalView = ({
             >
                 {isTreeLoaded ? (
                     <>
-                        <ModalTwoHeader title={title} closeButtonProps={{ disabled: loading }} />
-                        <ModalTwoContent>
-                            <Alert className="mb-4">{c('Info').t`Select a folder to move to.`}</Alert>
-                            {/* TODO: migrate FolderTree to SDK */}
-                            <FolderTree
-                                treeItems={rootItems}
-                                isLoaded={true}
-                                selectedItemId={treeSelectedFolder}
-                                onSelect={onTreeSelect}
-                                toggleExpand={toggleExpand}
-                            />
-                        </ModalTwoContent>
-                        <ModalTwoFooter>
-                            <div className="flex justify-space-between w-full flex-nowrap">
-                                {isSmallViewport ? (
-                                    <Button
-                                        icon
-                                        disabled={loading || !targetFolderUid}
-                                        onClick={() => createFolder(targetFolderUid)}
-                                        title={c('Action').t`Create new folder`}
-                                    >
-                                        <Icon name="folder-plus" />
-                                    </Button>
-                                ) : (
-                                    <Button
-                                        shape="underline"
-                                        color="norm"
-                                        disabled={loading || !targetFolderUid}
-                                        onClick={() => createFolder(targetFolderUid)}
-                                    >
-                                        {c('Action').t`Create new folder`}
-                                    </Button>
-                                )}
-                                <div>
-                                    <Button type="reset" disabled={loading} autoFocus>
-                                        {c('Action').t`Close`}
-                                    </Button>
-                                    <Button
-                                        color="norm"
-                                        className="ml-4"
-                                        loading={loading}
-                                        type="submit"
-                                        disabled={isMoveDisabled}
-                                    >
-                                        {c('Action').t`Move`}
-                                    </Button>
-                                </div>
-                            </div>
-                        </ModalTwoFooter>
+                        {rootItems.length === 0 && (
+                            <>
+                                <ModalTwoHeader closeButtonProps={{ disabled: loading }} />
+                                <EmptyFileTreePlaceholder onCreate={() => createFolder(targetFolderUid)} />
+                            </>
+                        )}
+                        {rootItems.length > 0 && (
+                            <>
+                                <ModalTwoHeader title={title} closeButtonProps={{ disabled: loading }} />
+                                <ModalTwoContent>
+                                    <Alert className="mb-4">{c('Info').t`Select a folder to move to.`}</Alert>
+                                    {/* TODO: migrate FolderTree to SDK */}
+                                    <FolderTree
+                                        treeItems={rootItems}
+                                        isLoaded={true}
+                                        selectedItemId={treeSelectedFolder}
+                                        onSelect={onTreeSelect}
+                                        toggleExpand={toggleExpand}
+                                    />
+                                </ModalTwoContent>
+                                <ModalTwoFooter>
+                                    <div className="flex justify-space-between w-full flex-nowrap">
+                                        {isSmallViewport ? (
+                                            <Button
+                                                icon
+                                                disabled={loading || !targetFolderUid}
+                                                onClick={() => createFolder(targetFolderUid)}
+                                                title={c('Action').t`Create new folder`}
+                                            >
+                                                <Icon name="folder-plus" />
+                                            </Button>
+                                        ) : (
+                                            <Button
+                                                shape="underline"
+                                                color="norm"
+                                                disabled={loading || !targetFolderUid}
+                                                onClick={() => createFolder(targetFolderUid)}
+                                            >
+                                                {c('Action').t`Create new folder`}
+                                            </Button>
+                                        )}
+                                        <div>
+                                            <Button type="reset" disabled={loading} autoFocus>
+                                                {c('Action').t`Close`}
+                                            </Button>
+                                            <Button
+                                                color="norm"
+                                                className="ml-4"
+                                                loading={loading}
+                                                type="submit"
+                                                disabled={isMoveDisabled}
+                                            >
+                                                {c('Action').t`Move`}
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </ModalTwoFooter>
+                            </>
+                        )}
                     </>
                 ) : (
                     <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
