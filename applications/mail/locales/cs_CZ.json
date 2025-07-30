@@ -2263,6 +2263,9 @@
       ],
       "Website access problem": [
         "Problém s přístupem k webové stránce"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problém s ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -14311,6 +14314,24 @@
       ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } konverzaci odebrána hvězdička.",
+        "${ elementsCount } konverzacím odebrána hvězdička.",
+        "${ elementsCount } konverzacím odebrána hvězdička.",
+        "${ elementsCount } konverzacím odebrána hvězdička."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } zprávě odebrána hvězdička.",
+        "${ elementsCount } zprávám odebrána hvězdička.",
+        "${ elementsCount } zprávám odebrána hvězdička.",
+        "${ elementsCount } zprávám odebrána hvězdička."
+      ],
+      "Conversation removed from Starred.": [
+        "Konverzaci byla odebrána hvězdička."
+      ],
+      "Message removed from Starred.": [
+        "Zprávě byla odebrána hvězdička."
       ]
     },
     "Success notification": {

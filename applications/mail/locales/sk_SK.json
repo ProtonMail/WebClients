@@ -1619,6 +1619,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Download application logs": [
+        "Stiahnuť záznamy aplikácie"
       ]
     },
     "action": {
@@ -1695,6 +1698,12 @@
         "${ users } používatelia",
         "${ users } používateľov",
         "${ users } používateľov"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
       ]
     },
     "Alert": {
@@ -2228,6 +2237,9 @@
       ],
       "Website access problem": [
         "Problém s prístupom k stránke"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problém"
       ]
     },
     "Button": {
@@ -8844,6 +8856,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
+      ],
+      "Download application logs for troubleshooting": [
+        "Stiahnuť záznamy aplikácie pre riešenie problémov"
+      ],
+      "Download current logs": [
+        "Stiahnuť aktuálne záznamy"
       ]
     },
     "info": {
@@ -9802,6 +9823,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
+      ],
+      "Include application logs in bug report": [
+        "Vrátane záznamov aplikácie v chybovom hlásení"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14251,6 +14275,24 @@
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } konverzácia bola odstránená z obľúbených.",
+        "${ elementsCount } konverzácie boli odstránené z obľúbených.",
+        "${ elementsCount } konverzácií bolo odstránených z obľúbených.",
+        "${ elementsCount } konverzácií bolo odstránených z obľúbených."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } správa bola odstránená z obľúbených.",
+        "${ elementsCount } správy boli odstránené z obľúbených.",
+        "${ elementsCount } správ bolo odstránených z obľúbených.",
+        "${ elementsCount } správ bolo odstránených z obľúbených."
+      ],
+      "Conversation removed from Starred.": [
+        "Konverzácia bola odstránená z obľúbených."
+      ],
+      "Message removed from Starred.": [
+        "Správa bola odstránená z obľúbených."
       ]
     },
     "Success notification": {
