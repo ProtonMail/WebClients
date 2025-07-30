@@ -1595,6 +1595,21 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Cancel trial and pay": [
+        "Annullér prøveversion og betal"
+      ],
+      "Deleting label": [
+        "Sletter etiket"
+      ],
+      "Download all attachments": [
+        "Download alle vedhæftninger"
+      ],
+      "Download application logs": [
+        "Download applikationslogs"
+      ],
+      "Hide more benefits": [
+        "Skjul flere fordele"
       ]
     },
     "action": {
@@ -1783,6 +1798,45 @@
       ],
       "years": [
         "år"
+      ],
+      "500 GB encrypted storage": [
+        "500 GB krypteret lagerplads"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloker annoncer, trackere og malware"
+      ],
+      "Double your encrypted storage – get 1 TB for all your data": [
+        "Fordobl din krypterede lagerplads – få 1 TB til alle dine data"
+      ],
+      "High speed streaming with VPN": [
+        "Streaming ved høj hastighed med VPN"
+      ],
+      "of privacy": [
+        "af privatliv"
+      ],
+      "Online privacy for your whole family (up to 6 users)": [
+        "Online privatliv for hele familien (op til 6 brugere)"
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "Spar stort på premium Mail-funktioner med en tidsbegrænset rabat."
+      ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "Spar stort på premium Pass-funktioner med en tidsbegrænset rabat."
+      ],
+      "Secure email with unlimited aliases": [
+        "Sikker e-mail med ubegrænsede aliasser"
+      ],
+      "Select any server": [
+        "Vælg en hvilken som helst server"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me-adresse"
+      ],
+      "Stream your favorite content": [
+        "Stream dit yndlingsindhold"
+      ],
+      "Triple your encrypted storage – get 3 TB for all your data": [
+        "Tredobl din krypterede lagerplads – få 3 TB til alle dine data"
       ]
     },
     "anniversary_2025: offer": {
@@ -1993,6 +2047,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "One-time payment, lifetime deal": [
+        "Engangsbetaling, livstidsaftale"
       ]
     },
     "BF2024: Offers": {
@@ -2032,6 +2089,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagerplads er delt mellem alle ${ BRAND_NAME }-tjenester."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
+        "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede hide-my-email-aliasser, deling, integreret 2FA, ${ DARK_WEB_MONITORING_NAME } og mere."
       ]
     },
     "Billing cycle option": {
@@ -2134,6 +2194,9 @@
       ],
       "Website access problem": [
         "Adgangsproblem på websted"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME }-problem"
       ]
     },
     "Button": {
@@ -4775,6 +4838,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
+      ],
+      "No address with sending permissions": [
+        "Ingen adresse med tilladelser til afsendelse"
+      ],
+      "Permissions request failed.": [
+        "Tilladelsesanmodning mislykkedes."
+      ],
+      "Please enter postal code": [
+        "Indtast postnummer"
+      ],
+      "Please enter ZIP code": [
+        "Indtast postnummer"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5562,6 +5637,12 @@
       ],
       "You've unlocked 1 GB": [
         "Du har låst op for 1 GB"
+      ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Fuldfør denne tjekliste indenfor ${ daysCount } for at fordoble din lagerplads gratis."
+      ],
+      "Tasks to complete count": [
+        "Antal opgaver, der skal udføres"
       ]
     },
     "Gmail forwarding": {
@@ -8359,6 +8440,27 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe skriveassistent"
+      ],
+      "Download application logs for troubleshooting": [
+        "Download applikationslogfiler til fejlfinding"
+      ],
+      "Download current logs": [
+        "Download aktuelle logs"
+      ],
+      "Number of dedicated VPN servers in the organization": [
+        "Antal dedikerede VPN-servere i organisationen"
+      ],
+      "Selection pane": [
+        "Valgpanel"
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Tak, fordi du valgte ${ BRAND_NAME } til at sikre din organisation."
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Opgrader til ${ plan } for at få adgang"
       ]
     },
     "info": {
@@ -9294,6 +9396,12 @@
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Inkluder applikationslogfiler i fejlrapporten"
+      ],
+      "Social": [
+        "Social"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10460,6 +10568,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin livstid"
       ]
     },
     "new_plans: feature highlight": {
@@ -10575,6 +10686,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB lagerplads i skyen, som giver dig mulighed for nemt at gemme, synkronisere og dele filer. Sikret med end-to-end kryptering."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Beskyt din familie med alle premium funktioner i ${ plusTitle } for 6 brugere."
       ]
     },
     "new_plans: Subtext": {
@@ -10583,6 +10700,9 @@
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "Den rabatpris på ${ priceCoupon } er gyldig i den første måned. Derefter fornys den automatisk til ${ priceLine }. Du kan annullere når som helst."
+      ],
+      "Unlock all ${ BRAND_NAME } premium products and features for just ${ priceLine }. Cancel anytime.": [
+        "Lås op for alle ${ BRAND_NAME } premium produkter og funktioner for kun ${ priceLine }. Annullér når som helst."
       ]
     },
     "new_plans: title": {
@@ -10813,6 +10933,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan have mere end én administrator. Alle administratorer kan tilføje og administrere brugere, men kun den primære administrator har kontrol over fakturering."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisationsstyringsværktøj, der lader administratorer tilføje og fjerne brugere, administrere deres adgang til ${ BRAND_NAME }-tjenester og udføre andre opgaver."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Del sikkert individuelle elementer med alle (selv hvis de ikke bruger ${ PASS_APP_NAME })"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11003,6 +11129,12 @@
       ],
       "Your subscription renews soon": [
         "Dit abonnement fornyes snart"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "Sidste chance for at få 80 % rabat på din første måned med ${ plan }."
+      ],
+      "Save big when you pay annually": [
+        "Få stor besparelse ved at betale årligt"
       ]
     },
     "Offer fearue": {
@@ -11040,6 +11172,12 @@
       ],
       "Storage": [
         "Lagerplads"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Lynhurtige VPN-servere i 110+ lande"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "Ubegrænsede aliasser til at beskytte din identitet"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11057,6 +11195,9 @@
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
         "Brug din ${ MAIL_APP_NAME }-adresse til at logge ind på onlinetjenester for at undgå at blive sporet og profileret. Skift din e-mailadresse i populære tjenester nu. ${ learnMoreLink }"
+      ],
+      "Privacy for all your online accounts": [
+        "Privatliv for alle dine online konti"
       ]
     },
     "Onboarding modal": {
@@ -11164,6 +11305,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Dit domæne og abonnement er klar til brug."
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } betyder, at du aldrig vil se sponsorerede annoncer i vores apps."
+      ],
+      "Ad-free promise": [
+        "Løfte om reklamefrihed"
       ]
     },
     "Onboarding Proton": {
@@ -11225,6 +11372,18 @@
       ],
       "Your free trial has started": [
         "Din gratis prøveperiode er startet"
+      ],
+      "Cancel anytime before ${ cancelDate }.": [
+        "Annullér til enhver tid inden ${ cancelDate }."
+      ],
+      "If you need help,": [
+        "Hvis du har brug for hjælp,"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "Dit fulde ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "Du vil kunne bruge ${ planTitle } indtil prøveversionen udløber, uden beregning."
       ]
     },
     "Online accounts": {
@@ -11477,6 +11636,12 @@
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
+      ],
+      "I'm purchasing as a business": [
+        "Jeg køber som virksomhed"
+      ],
+      "This number will be shown on all future invoices": [
+        "Dette nummer vil blive vist på alle fremtidige fakturaer."
       ]
     },
     "Payments.Error": {
@@ -11526,6 +11691,9 @@
       ],
       "VAT number": [
         "Momsnummer"
+      ],
+      "ABN": [
+        "ABN"
       ]
     },
     "PGP key encryption warning": {
@@ -11729,6 +11897,9 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Opgradér til ${ upsellPlanTitle }"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "Bliv på ${ currentPlanTitle }"
       ]
     },
     "Price": {
@@ -12431,6 +12602,15 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Opgrader for ${ pricingTitle }"
+      ],
+      "Browse securely": [
+        "Browse sikkert"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Gør mere med ${ BRAND_NAME }"
+      ],
+      "Increase your storage": [
+        "Forøg din lagerplads"
       ]
     },
     "specialoffer: Offers": {
@@ -12517,6 +12697,15 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Opgradér og spar mere med 2 års ${ planName }"
+      ],
+      "Get 500 GB to securely store all your files and photos": [
+        "Få 500 GB til sikkert at lagre alle dine filer og fotos."
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "Få adgang til lynhurtige VPN-servere i 110+ lande"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Få ubegrænsede aliasser for at beskytte din identitet og reducere spam"
       ]
     },
     "specialoffer: Tooltip": {
@@ -13448,6 +13637,9 @@
       ],
       "The filter is active again": [
         "Filteret er aktivt igen"
+      ],
+      "The filter has been enabled": [
+        "Filtret er aktiveret"
       ]
     },
     "Suffix": {
@@ -14579,6 +14771,12 @@
       ],
       "Your subscriptions in one place": [
         "Dine abonnementer ét sted"
+      ],
+      "No newsletters found": [
+        "Ingen nyhedsbreve fundet"
+      ],
+      "Your ${ planName } subscription has started": [
+        "Dit ${ planName } abonnement er startet"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14670,6 +14868,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
+      ],
+      "This ensures no one can see location, device, and other information that could be used to identify or track you.": [
+        "Dette sikrer, at ingen kan se placering, enhed og andre oplysninger, der kunne bruges til at identificere eller spore dig."
       ]
     },
     "tooltip": {
@@ -15166,6 +15367,16 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Din gratis prøveperiode udløber om ${ timeRemaining }"
+      ]
+    },
+    "Info for cash payment method": {
+      "How to send a cash payment?": [
+        "Hvordan sender man en kontant betaling?"
       ]
     }
   }
