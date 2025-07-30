@@ -9,6 +9,7 @@
 - Improve 2FA autofill UI
 - Improve default browser password manager setting toggling
 - Improve vault selector in autosave UI
+- Fix polymer.js interferences in content-script
 
 ### Version 1.32.2
 

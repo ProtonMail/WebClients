@@ -13,10 +13,26 @@ import { ProtonPassRoot } from './injections/custom-elements/ProtonPassRoot';
  * `PassElementsConfig` to this script operating in the MAIN world */
 exporter(
     (hash: string) => {
+        /** Handle Polymer.js interference: since we inject at `document_end`,
+         * Polymer may have already patched customElements. Get original references
+         * through CustomElementRegistry.prototype to bypass interference. */
+        const registry = {
+            define: (customElements.define === CustomElementRegistry.prototype.define
+                ? customElements.define
+                : CustomElementRegistry.prototype.define
+            ).bind(customElements),
+
+            get: (customElements.get === CustomElementRegistry.prototype.get
+                ? customElements.get
+                : CustomElementRegistry.prototype.get
+            ).bind(customElements),
+        };
+
         const root = ProtonPassRoot.getTagName(hash);
         const control = ProtonPassControl.getTagName(hash);
-        if (!customElements.get(root)) customElements.define(root, ProtonPassRoot);
-        if (!customElements.get(control)) customElements.define(control, ProtonPassControl);
+        if (!registry.get(root)) registry.define(root, ProtonPassRoot);
+        if (!registry.get(control)) registry.define(control, ProtonPassControl);
+
         delete window.registerPassElements;
     },
     window,
