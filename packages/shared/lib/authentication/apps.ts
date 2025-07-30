@@ -1,11 +1,6 @@
 import { DEFAULT_APP } from '@proton/shared/lib/apps/slugHelper';
 import type { User } from '@proton/shared/lib/interfaces';
-import {
-    getIsExternalAccount,
-    getIsPublicUserWithoutProtonAddress,
-    getIsSSOVPNOnlyAccount,
-    getIsVPNOnlyAccount,
-} from '@proton/shared/lib/keys';
+import { getIsExternalAccount, getIsSSOVPNOnlyAccount, getIsVPNOnlyAccount } from '@proton/shared/lib/keys';
 
 import type { APP_NAMES } from '../constants';
 import { APPS, APPS_CONFIGURATION, CLIENT_TYPES, PRODUCT_BIT } from '../constants';
@@ -78,9 +73,6 @@ export const getToApp = (toApp: APP_NAMES | undefined, user: User) => {
     }
     if (getIsSSOVPNOnlyAccount(user) || getIsVPNOnlyAccount(user)) {
         return APPS.PROTONVPN_SETTINGS;
-    }
-    if (getIsPublicUserWithoutProtonAddress(user)) {
-        return APPS.PROTONPASS;
     }
     if (getIsExternalAccount(user)) {
         const { Subscribed } = user;
