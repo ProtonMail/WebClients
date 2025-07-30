@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { type DecryptedLink, useActions } from '../../../store';
 import { useSelection } from '../../FileBrowser';
@@ -62,6 +63,7 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
                             volumeId={selectedItem.volumeId}
                             shareId={selectedItem.rootShareId}
                             linkId={selectedItem.linkId}
+                            isAlbum={selectedItem.type === LinkType.ALBUM}
                         />
                     </>
                 )}
