@@ -1607,6 +1607,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Download application logs": [
+        "Ladda ner applikationsloggar"
       ]
     },
     "action": {
@@ -2203,6 +2206,9 @@
       ],
       "Website access problem": [
         "Problem med åtkomst till webbplats"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
       ]
     },
     "Button": {
@@ -8563,6 +8569,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Download application logs for troubleshooting": [
+        "Ladda ner applikationsloggar för felsökning"
+      ],
+      "Download current logs": [
+        "Ladda ner nuvarande loggar"
       ]
     },
     "info": {
@@ -9509,6 +9521,12 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Inkludera applikationsloggar i felrapport"
+      ],
+      "Newsletter entry deleted": [
+        "Nyhetsbrevspost borttagen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13744,6 +13762,20 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } konversation borttagen från stjärnmärkt.",
+        "${ elementsCount } konversationer borttagna från stjärnmärkt."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } meddelande borttaget från stjärnmärkt.",
+        "${ elementsCount } meddelanden borttagna från stjärnmärkt."
+      ],
+      "Conversation removed from Starred.": [
+        "Konversation borttagen från stjärnmärkt."
+      ],
+      "Message removed from Starred.": [
+        "Meddelande borttaget från stjärnmärkt."
       ]
     },
     "Success notification": {

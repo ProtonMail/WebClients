@@ -1592,6 +1592,18 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Cancel trial and pay": [
+        "取消试用并支付"
+      ],
+      "Create folder ${ boldFolderName }": [
+        "创建文件夹 \"${ boldFolderName }\""
+      ],
+      "Download application logs": [
+        "下载应用日志"
+      ],
+      "Remove from list": [
+        "从列表中移除"
       ]
     },
     "action": {
@@ -1656,6 +1668,9 @@
       ],
       "${ users } user": [
         "${ users } 位用户"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } 席位"
       ]
     },
     "Alert": {
@@ -2030,6 +2045,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 与 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -2172,6 +2190,9 @@
       ],
       "Website access problem": [
         "网站连接问题"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 问题"
       ]
     },
     "Button": {
@@ -4832,6 +4853,30 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜索结果过多，请缩小搜索范围后再试。"
+      ],
+      "Invalid ZIP code": [
+        "无效的邮政编码"
+      ],
+      "No address with sending permissions": [
+        "没有具有发送权限的地址"
+      ],
+      "Please enter a valid postal code": [
+        "请输入有效的邮政编码"
+      ],
+      "Please enter a valid ZIP code": [
+        "请输入有效的邮政编码"
+      ],
+      "Please enter postal code": [
+        "请输入邮政编码"
+      ],
+      "Please enter ZIP code": [
+        "请输入邮政编码"
+      ],
+      "Please select billing country": [
+        "请选择您的计费国家/地区"
+      ],
+      "Please select billing state": [
+        "请选择账单省（州）"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8374,6 +8419,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需点击几下，您的收件箱就不会杂乱无章了"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
+      ],
+      "Download application logs for troubleshooting": [
+        "下载应用日志以进行故障排除"
+      ],
+      "Download current logs": [
+        "下载当前日志"
+      ],
+      "No messages to show": [
+        "没有邮件需要查看"
+      ],
+      "There are no messages from this sender in your inbox.": [
+        "您的收件箱中没有来自此发件人的邮件。"
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "这将从列表中移除该时事通讯。此操作不会取消您对时事通讯的订阅。若您收到新消息，时事通讯将重新显示。"
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "升级到 ${ plan } 以解锁"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "您的 ${ plan } 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ]
     },
     "info": {
@@ -9290,6 +9359,33 @@
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
+      ],
+      "Failed to create folder ${ newFolderName }": [
+        "文件夹 \"${ newFolderName }\" 创建失败"
+      ],
+      "Forums": [
+        "论坛"
+      ],
+      "Include application logs in bug report": [
+        "在问题反馈中包含应用日志"
+      ],
+      "Moved to ${ labelName }": [
+        "已移动到 ${ labelName }"
+      ],
+      "Newsletter entry deleted": [
+        "时事通讯已删除"
+      ],
+      "Promotions": [
+        "优惠促销"
+      ],
+      "Social": [
+        "社交媒体"
+      ],
+      "Transactions": [
+        "交易记录"
+      ],
+      "Updates": [
+        "更新"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9333,6 +9429,9 @@
     "Label, credit card": {
       "ZIP code": [
         "邮编"
+      ],
+      "Postal code": [
+        "邮政编码"
       ]
     },
     "Label/folder modal": {
@@ -9365,6 +9464,12 @@
     "Labels": {
       "You don't have any active newsletters or mailing list subscriptions.": [
         "您没有任何活跃的时事通讯或邮件列表订阅。"
+      ],
+      "Newsletters or mailing lists you unsubscribe from will show up here.": [
+        "您取消订阅的时事通讯或邮件列表将显示在此处。"
+      ],
+      "You don't have any newsletters or mailing list subscriptions.": [
+        "您没有任何时事通讯或邮件列表订阅。"
       ]
     },
     "Landmarks": {
@@ -10542,6 +10647,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "为 6 位用户提供 ${ plusTitle } 的所有高级功能，保护您的家人。"
       ]
     },
     "new_plans: Subtext": {
@@ -10567,6 +10675,9 @@
       ],
       "Switch plans?": [
         "切换计划？"
+      ],
+      "Review subscription": [
+        "查看订阅"
       ]
     },
     "new_plans: tooltip": {
@@ -10976,6 +11087,9 @@
       ],
       "Your subscription renews soon": [
         "您的订阅即将续订"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "最后机会！首月享受 ${ plan } 80% 折扣。"
       ]
     },
     "Offer fearue": {
@@ -11016,6 +11130,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "遍布 110 多个国家/地区的超快 VPN 服务器"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "无限别名，保护您的身份"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11149,6 +11266,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "您的域名和订阅已准备就绪。"
+      ],
+      "${ addFreePromiseTitle } means you'll never see sponsored ads in our apps.": [
+        "${ addFreePromiseTitle } 意味着您在我们的应用中将永远不会看到赞助广告。"
       ]
     },
     "Onboarding Proton": {
@@ -11475,6 +11595,12 @@
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "I'm purchasing as a business": [
+        "以企业身份购买"
+      ],
+      "This number will be shown on all future invoices": [
+        "此编号将显示在所有未来的发票上。"
       ]
     },
     "Payments.Error": {
@@ -11684,6 +11810,12 @@
       ],
       "Your organization name": [
         "您的组织名称"
+      ],
+      "Postal code": [
+        "邮政编码"
+      ],
+      "ZIP code": [
+        "邮政编码"
       ]
     },
     "Placeholder for contact group name": {
@@ -12371,6 +12503,15 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升级至 ${ pricingTitle }"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 做您想做的"
+      ],
+      "Guard against threats": [
+        "防范威胁"
+      ],
+      "Increase your storage": [
+        "提升您的存储空间"
       ]
     },
     "specialoffer: Offers": {
@@ -12453,6 +12594,18 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "一次性开通两年 ${ planName } 更加优惠"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "获取遍布 110 多个国家/地区的超快 VPN 服务器"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "获得包含所有功能的套餐，开通 ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "获取无限数量的别名，以保护您的身份并减少垃圾邮件。"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "将您的密码安全地存储并分类管理在多个保险库中"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14460,6 +14613,15 @@
       ],
       "Your subscriptions in one place": [
         "一站式订阅服务"
+      ],
+      "No newsletters found": [
+        "未找到任何时事通讯"
+      ],
+      "Remove from list?": [
+        "从列表中移除？"
+      ],
+      "Unsubscribe not available for this sender": [
+        "无法取消订阅此发件人"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15003,6 +15165,47 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "您的免费体验期将于 ${ timeRemaining } 结束。"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - 卡号尾数为 ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "银行转账 - ${ details }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "澳大利亚商业编号 (ABN)"
+      ],
+      "Business Number": [
+        "商业编号"
+      ],
+      "EIN": [
+        "雇主识别号码 (EIN)"
+      ],
+      "VAT number": [
+        "增值税号 (VAT)"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "所有 ${ protonPlus } 服务。${ br }轻松订阅。"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "作为 **${ currentPlanTitle }** 订阅者，您可以通过升级到 **${ upsellPlanTitle }** 来解锁 **${ unlockPlanTitle }** 和所有高级 ${ BRAND_NAME } 服务。"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "继续使用 ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "升级至 ${ upsellPlanTitle }"
       ]
     }
   }

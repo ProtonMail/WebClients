@@ -1601,6 +1601,9 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Download application logs": [
+        "Unduh log aplikasi"
       ]
     },
     "action": {
@@ -1665,6 +1668,9 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } kuota ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -2189,6 +2195,9 @@
       ],
       "Website access problem": [
         "Masalah akses situs"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Masalah ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -4864,6 +4873,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Pencarian Anda membuahkan terlalu banyak hasil. Silakan persempit kriteria pencarian Anda dan coba lagi."
+      ],
+      "Please enter a valid postal code": [
+        "Silakan masukkan kode pos yang valid"
+      ],
+      "Please enter postal code": [
+        "Silakan masukkan kode pos"
+      ],
+      "Please select billing state": [
+        "Silakan pilih negara bagian penagihan"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8421,6 +8439,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya perlu beberapa klik lagi untuk memperoleh kotak masuk yang rapi"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
+      "Download application logs for troubleshooting": [
+        "Unduh log aplikasi untuk penyelesaian masalah"
+      ],
+      "Download current logs": [
+        "Unduh log saat ini"
       ]
     },
     "info": {
@@ -9355,6 +9382,15 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
+      ],
+      "Forums": [
+        "Forum"
+      ],
+      "Include application logs in bug report": [
+        "Sertakan log aplikasi dalam laporan bug"
+      ],
+      "Promotions": [
+        "Penawaran"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10644,6 +10680,9 @@
       ],
       "Switch plans?": [
         "Ubah paket?"
+      ],
+      "Review subscription": [
+        "Tinjau langganan"
       ]
     },
     "new_plans: tooltip": {
@@ -11564,6 +11603,9 @@
       ],
       "Your payment is still being processed": [
         "Pembayaran Anda masih diproses"
+      ],
+      "This number will be shown on all future invoices": [
+        "Nomor ini akan ditampilkan pada seluruh faktur yang akan datang"
       ]
     },
     "Payments.Error": {
@@ -11616,6 +11658,9 @@
       ],
       "EIN": [
         "NPWP"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ]
     },
     "PGP key encryption warning": {
@@ -11794,6 +11839,9 @@
         "Nama organisasi Anda"
       ],
       "ZIP code": [
+        "Kode pos"
+      ],
+      "Postal code": [
         "Kode pos"
       ]
     },
@@ -13477,6 +13525,18 @@
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } percakapan dihapus dari Dibintangi."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } dihapus dari Dibintangi."
+      ],
+      "Conversation removed from Starred.": [
+        "Percakapan dihapus dari Dibintangi."
+      ],
+      "Message removed from Starred.": [
+        "Pesan dihapus dari Dibintangi."
       ]
     },
     "Success notification": {
