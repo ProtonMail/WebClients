@@ -11,16 +11,20 @@ import {
     useApi,
     useNotifications,
 } from '@proton/components';
+import ViewModeToggle from '@proton/components/containers/layouts/ViewModeToggle';
 import useLoading from '@proton/hooks/useLoading';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
     updateAutoDelete,
     updateNextMessageOnMove,
+    updateStickyLabels,
     updateSwipeLeft,
     updateSwipeRight,
+    updateViewMode,
 } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
+import { STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import type {
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,
     NEXT_MESSAGE_ON_MOVE,
@@ -49,11 +53,19 @@ const EmailSettings = ({
     const [loadingSwipeLeft, withLoadingSwipeLeft] = useLoading();
     const [loadingSwipeRight, withLoadingSwipeRight] = useLoading();
     const [loadingNextMessageOnMoveToggle, withLoadingNextMessageOnMoveToggle] = useLoading();
+    const [loadingViewMode, withLoadingViewMode] = useLoading();
 
     const [user, loadingUser] = useUser();
     const [mailSettings = DEFAULT_MAILSETTINGS, loadingMailSettings] = useMailSettings();
-    const { AutoDeleteSpamAndTrashDays, AlmostAllMail, DelaySendSeconds, SwipeLeft, SwipeRight, NextMessageOnMove } =
-        mailSettings;
+    const {
+        AutoDeleteSpamAndTrashDays,
+        AlmostAllMail,
+        DelaySendSeconds,
+        SwipeLeft,
+        SwipeRight,
+        NextMessageOnMove,
+        ViewMode,
+    } = mailSettings;
     const loading = loadingMailSettings || loadingUser;
 
     const { createNotification } = useNotifications();
@@ -84,6 +96,15 @@ const EmailSettings = ({
         notifyPreferenceSaved();
     };
 
+    const handleChangeViewMode = async (mode: VIEW_MODE) => {
+        if (mode === VIEW_MODE.SINGLE) {
+            await api(updateStickyLabels(STICKY_LABELS.DISABLED));
+        }
+        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateViewMode(mode));
+        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
+        notifyPreferenceSaved();
+    };
+
     if (loading) {
         return loader;
     }
@@ -91,6 +112,22 @@ const EmailSettings = ({
     return layout(
         <div className="mobile-settings">
             <MobileSection>
+                <MobileSectionRow>
+                    <MobileSectionLabel
+                        htmlFor="telemetry"
+                        description={c('Info')
+                            .t`Group emails in the same conversation together in your Inbox or display them separately.`}
+                    >
+                        {c('Label').t`Conversation grouping`}
+                    </MobileSectionLabel>
+                    <ViewModeToggle
+                        id="viewMode"
+                        viewMode={ViewMode}
+                        loading={loadingViewMode}
+                        onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
+                        data-testid="appearance:conversation-group-toggle"
+                    />
+                </MobileSectionRow>
                 <MobileSectionRow>
                     <MobileSectionLabel
                         htmlFor="delaySendSecondsSelect"
@@ -102,7 +139,11 @@ const EmailSettings = ({
                     </div>
                 </MobileSectionRow>
                 <MobileSectionRow>
-                    <MobileSectionLabel htmlFor="auto-advance">{c('Label').t`Auto-advance`}</MobileSectionLabel>
+                    <MobileSectionLabel
+                        htmlFor="auto-advance"
+                        description={c('Info')
+                            .t`Automatically show the next email when an open email is deleted, archived or moved.`}
+                    >{c('Label').t`Auto-advance`}</MobileSectionLabel>
                     <NextMessageOnMoveToggle
                         id="auto-advance"
                         loading={loadingNextMessageOnMoveToggle}
@@ -148,14 +189,20 @@ const EmailSettings = ({
                     <ShowMovedToggle id="showMovedToggle" />
                 </MobileSectionRow>
                 <MobileSectionRow>
-                    <MobileSectionLabel htmlFor="almostAllMail">{c('Label')
-                        .t`Exclude Spam/Trash from All mail`}</MobileSectionLabel>
+                    <MobileSectionLabel
+                        htmlFor="almostAllMail"
+                        description={c('Info')
+                            .t`Messages in the Spam or Trash folder will be excluded from the All mail location.`}
+                    >{c('Label').t`Exclude Spam/Trash from All mail`}</MobileSectionLabel>
                     <AlmostAllMailToggle id="almostAllMail" showAlmostAllMail={AlmostAllMail} />
                 </MobileSectionRow>
                 {user.hasPaidMail ? (
                     <MobileSectionRow>
-                        <MobileSectionLabel htmlFor="autoDelete">{c('Label')
-                            .t`Auto-delete unwanted messages`}</MobileSectionLabel>
+                        <MobileSectionLabel
+                            htmlFor="autoDelete"
+                            description={c('Info')
+                                .t`Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.`}
+                        >{c('Label').t`Auto-delete unwanted messages`}</MobileSectionLabel>
                         <AutoDeleteSpamAndTrashDaysToggle
                             id="autoDelete"
                             loading={loadingAutoDeleteSpamAndTrashDays}

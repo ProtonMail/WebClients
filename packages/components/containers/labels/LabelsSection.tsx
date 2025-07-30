@@ -8,9 +8,11 @@ import { Button } from '@proton/atoms';
 import useDebounceInput from '@proton/components/components/input/useDebounceInput';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import ConfirmSortModal from '@proton/components/containers/labels/modals/ConfirmSortModal';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -29,7 +31,11 @@ const DEBOUNCE_VALUE = 1600;
 
 const toLabelIDs = (labels: Label[]) => labels.map(({ ID }) => ID).join(',');
 
-function LabelsSection() {
+interface Props {
+    showPromptOnAction?: boolean;
+}
+
+function LabelsSection({ showPromptOnAction }: Props) {
     const [user] = useUser();
     const [labels = [], loadingLabels] = useLabels();
     const { call } = useEventManager();
@@ -47,6 +53,7 @@ function LabelsSection() {
 
     const [editLabelProps, setEditLabelModalOpen, renderEditLabelModal] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
+    const [confirmModal, showConfirmModal] = useModalTwoPromise();
 
     /**
      * Refresh the list + update API and call event, it can be slow.
@@ -60,6 +67,9 @@ function LabelsSection() {
     };
 
     const handleSortLabel = async () => {
+        if (showPromptOnAction) {
+            await showConfirmModal();
+        }
         const newLabels = [...localLabels].sort((a, b) => a.Name.localeCompare(b.Name, undefined, { numeric: true }));
         setLocalLabels(newLabels);
         createNotification({ text: c('Success message after sorting labels').t`Labels sorted` });
@@ -126,6 +136,15 @@ function LabelsSection() {
                     )}
                 </>
             )}
+
+            {confirmModal((props) => (
+                <ConfirmSortModal
+                    modalProps={props}
+                    onReject={props.onReject}
+                    onResolve={props.onResolve}
+                    type="label"
+                />
+            ))}
         </SettingsSection>
     );
 }
