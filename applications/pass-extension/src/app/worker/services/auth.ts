@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-throw-literal */
-import { SSO_URL } from 'proton-pass-extension/app/config';
+import config from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
@@ -67,7 +67,9 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
 
-            if (BUILD_TARGET === 'safari') void sendSafariMessage({ environment: getSecondLevelDomain(SSO_URL) });
+            if (BUILD_TARGET === 'safari') {
+                void sendSafariMessage({ environment: getSecondLevelDomain(config.SSO_URL) });
+            }
 
             /* if worker is logged out (unauthorized or locked) during an init call,
              * this means the login or resumeSession calls failed - we can safely early
@@ -282,7 +284,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
                 const result = await authService.consumeFork(
                     { mode: 'extension', tabId: tab?.id!, localState, ...payload },
-                    `${SSO_URL}/api`
+                    `${config.SSO_URL}/api`
                 );
 
                 if (result.reauth) {
