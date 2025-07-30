@@ -169,7 +169,7 @@ export const getLumoConfiguration = ({ defaultPlan }: { defaultPlan?: string }):
         planCards,
         audience: Audience.B2C,
         signupTypes: [SignupType.External, SignupType.Proton],
-        generateMnemonic: false,
+        generateMnemonic: true,
         defaults: (() => {
             if (defaultPlan && [PLANS.FREE, PLANS.LUMO].includes(defaultPlan as PLANS)) {
                 return {
