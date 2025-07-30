@@ -1,37 +1,34 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 
 import { Toolbar } from '@proton/components';
+import { MemberRole, generateNodeUid } from '@proton/drive/index';
 import type { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
-import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 
-import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import useDriveNavigation from '../../../hooks/drive/useNavigate';
-import { useFolderView } from '../../../store';
-import DriveBreadcrumbs from '../../DriveBreadcrumbs';
-import { FileBrowserStateProvider } from '../../FileBrowser';
-import { useAlbumOnboardingModal } from '../../modals/AlbumOnboardingModal';
-import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
-import ToolbarRow from '../ToolbarRow/ToolbarRow';
-import Drive from './Drive';
-import DriveToolbar from './DriveToolbar';
+import DriveBreadcrumbs from '../../components/DriveBreadcrumbs';
+import { FileBrowserStateProvider } from '../../components/FileBrowser';
+import { useAlbumOnboardingModal } from '../../components/modals/AlbumOnboardingModal';
+import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
+import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDrop';
+import { useActiveShare } from '../../hooks/drive/useActiveShare';
+import useDriveNavigation from '../../hooks/drive/useNavigate';
+import { FolderBrowser } from './FolderBrowser/FolderBrowser';
+import { FolderToolbar } from './FolderBrowser/FolderToolbar';
+import { useFolder } from './useFolder';
 
 export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
 
-/**
- * @deprecated
- */
-export function DriveViewDeprecated() {
-    const { activeFolder } = useActiveShare();
+export function FolderView() {
     const { navigateToRoot, navigateToLink } = useDriveNavigation();
     const [renderAlbumOnboardingModal] = useAlbumOnboardingModal();
-
-    const folderView = useFolderView(activeFolder);
-    const isEditor = useMemo(() => getCanWrite(folderView.permissions), [folderView.permissions]);
-
+    const { activeFolder } = useActiveShare();
+    const parentUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
+    const folderView = useFolder(parentUid, activeFolder.shareId);
+    const isEditor = folderView.role === MemberRole.Editor;
     useEffect(() => {
         if (folderView.error) {
-            const code = folderView.error.data?.Code;
+            // TODO:WIP maybe move it inside the hook
+            const code = RESPONSE_CODE.INVALID_LINK_TYPE; //folderView.error.data?.Code;
             if (code === RESPONSE_CODE.INVALID_LINK_TYPE) {
                 navigateToLink(activeFolder.shareId, activeFolder.linkId, true);
             } else if (code === RESPONSE_CODE.NOT_FOUND || code === RESPONSE_CODE.INVALID_ID) {
@@ -45,22 +42,22 @@ export function DriveViewDeprecated() {
     const breadcrumbs = activeFolder && <DriveBreadcrumbs activeFolder={activeFolder} />;
 
     const toolbar = activeFolder ? (
-        <DriveToolbar
-            permissions={folderView.permissions}
+        <FolderToolbar
+            role={folderView.role}
             isLinkReadOnly={folderView.isActiveLinkReadOnly}
             isLinkRoot={folderView.isActiveLinkRoot}
             isLinkInDeviceShare={folderView.isActiveLinkInDeviceShare}
             volumeId={activeFolder.volumeId}
             shareId={activeFolder.shareId}
             linkId={activeFolder.linkId}
-            items={folderView.items}
+            items={folderView.legacyItems}
         />
     ) : (
         <Toolbar className="toolbar--in-container" />
     );
 
     return (
-        <FileBrowserStateProvider itemIds={folderView.items.map(({ linkId }) => linkId)}>
+        <FileBrowserStateProvider itemIds={folderView.legacyItems.map(({ uid }) => uid)}>
             {renderAlbumOnboardingModal}
             {isEditor ? (
                 <UploadDragDrop
@@ -71,12 +68,12 @@ export function DriveViewDeprecated() {
                 >
                     <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
 
-                    {activeFolder && <Drive activeFolder={activeFolder} folderView={folderView} />}
+                    {activeFolder && <FolderBrowser activeFolder={activeFolder} folderView={folderView} />}
                 </UploadDragDrop>
             ) : (
                 <>
                     <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
-                    {activeFolder && <Drive activeFolder={activeFolder} folderView={folderView} />}
+                    {activeFolder && <FolderBrowser activeFolder={activeFolder} folderView={folderView} />}
                 </>
             )}
         </FileBrowserStateProvider>
