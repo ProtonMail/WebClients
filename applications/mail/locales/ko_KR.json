@@ -1668,6 +1668,9 @@
       ],
       "${ users } user": [
         "${ users }명 사용자"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ]
     },
     "Alert": {
@@ -13522,6 +13525,18 @@
       ],
       "You have successfully unsubscribed": [
         "성공적으로 구독 취소했습니다."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "별표 표시됨에서 대화 ${ elementsCount }개를 삭제했습니다."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount }개 메시지가 별표 표시됨에서 제거되었습니다."
+      ],
+      "Conversation removed from Starred.": [
+        "대화가 별표 표시됨에서 삭제되었습니다."
+      ],
+      "Message removed from Starred.": [
+        "메시지가 별표 표시됨에서 삭제되었습니다."
       ]
     },
     "Success notification": {
