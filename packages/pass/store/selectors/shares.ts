@@ -27,15 +27,18 @@ import type { State } from '../types';
 import { SelectorError } from './errors';
 
 export const selectShares = ({ shares }: State) => shares;
-export const selectAllShares = createSelector(selectShares, (s) => Object.values(s));
-
-export const selectVisibleShares = createSelector(
-    selectAllShares,
-    (shares) => new Set(shares.filter(isShareVisible).map(prop('shareId')))
+// Intentionally boring name to push for using visibility filter by default
+export const selectAllIncludingHiddenShares = createSelector(selectShares, (s) => Object.values(s));
+export const selectAllShares = createSelector(selectAllIncludingHiddenShares, (shares) =>
+    shares.filter(isShareVisible)
 );
+export const selectAllShareIds = createSelector(selectAllShares, (shares) => new Set(shares.map(prop('shareId'))));
+
 export const selectItemShares = createSelector([selectAllShares], (s) => s.filter(isItemShare));
 export const selectAllVaults = createSelector([selectAllShares], (s) => s.filter(isVaultShare).sort(sortVaults));
-export const selectVisibleVaults = createSelector([selectAllVaults], (v) => v.filter(isShareVisible));
+export const selectAllIncludingHiddenVaults = createSelector([selectAllIncludingHiddenShares], (s) =>
+    s.filter(isVaultShare).sort(sortVaults)
+);
 export const selectWritableShares = createSelector([selectAllShares], (v) => v.filter(isShareWritable));
 export const selectWritableVaults = createSelector([selectAllVaults], (v) => v.filter(isWritableVault));
 export const selectOwnedVaults = createSelector([selectAllVaults], (v) => v.filter(isOwnVault));
