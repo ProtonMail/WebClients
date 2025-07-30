@@ -960,6 +960,12 @@
         "${ users } používatelia",
         "${ users } používateľov",
         "${ users } používateľov"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
       ]
     },
     "Alert": {
@@ -1403,6 +1409,9 @@
       ],
       "Website access problem": [
         "Problém s prístupom k stránke"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problém"
       ]
     },
     "Button": {
@@ -5803,6 +5812,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
+      ],
+      "Download current logs": [
+        "Stiahnuť aktuálne záznamy"
       ]
     },
     "info": {
@@ -6383,6 +6398,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Vrátane záznamov aplikácie v chybovom hlásení"
       ]
     },
     "Label for contact group color": {

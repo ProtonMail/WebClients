@@ -951,6 +951,11 @@
         "${ users } utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licență ${ LUMO_APP_NAME }",
+        "${ seats } licențe ${ LUMO_APP_NAME }",
+        "${ seats } de licențe ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -1391,6 +1396,9 @@
       ],
       "Website access problem": [
         "Problemă accesare site web"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problemă ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -5735,6 +5743,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "Download current logs": [
+        "Descărcare jurnale actuale"
       ]
     },
     "info": {
@@ -6312,6 +6326,9 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Include application logs in bug report": [
+        "Includere jurnale aplicație în raportul de eroare"
       ]
     },
     "Label for contact group color": {
