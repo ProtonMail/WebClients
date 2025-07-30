@@ -31,6 +31,7 @@ describe('getNodeRole', () => {
         totalStorageSize: 0,
         activeRevision: undefined,
         folder: undefined,
+        treeEventScopeId: 'treeEventScopeId',
     });
 
     describe('when has no parent node', () => {
