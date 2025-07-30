@@ -5,7 +5,6 @@ import { FileIcon, Icon, TableCell, useActiveBreakpoint, useConfirmActionModal }
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useInvitationsActions, useLinkPath } from '../../../store';
 import { formatAccessCount } from '../../../utils/formatters';
 import { Cells } from '../../FileBrowser';
@@ -15,7 +14,7 @@ import type { DriveItem } from '../Drive/Drive';
 import type { SharedLinkItem } from '../SharedLinks/SharedLinks';
 import type { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
 import type { TrashItem } from '../Trash/Trash';
-import ShareIcon from './ShareIcon';
+import { ShareIcon } from './ShareIcon';
 import { getDeviceIconText, getLinkIconText } from './utils';
 
 const { LocationCell: LocationCellBase, SizeCell: SizeCellBase, NameCell: NameCellBase, TimeCell } = Cells;
@@ -73,7 +72,7 @@ export const DeviceNameCell = ({ item }: { item: DeviceItem }) => {
     );
 };
 
-export const ModifiedCell = ({ item }: { item: DriveItem }) => {
+export const ModifiedCell = ({ item }: { item: { fileModifyTime: number } }) => {
     return (
         <TableCell className="flex items-center m-0 w-1/6" data-testid="column-modified">
             <TimeCell time={item.fileModifyTime} />
@@ -169,23 +168,22 @@ export const ExpirationCell = ({ item }: { item: TrashItem }) => {
     );
 };
 
-export const ShareOptionsCell = ({ item }: { item: DriveItem }) => {
-    const { activeShareId } = useActiveShare();
-
+export type ShareOptionsCellType = {
+    volumeId: string;
+    isShared?: boolean;
+    linkId: string;
+    trashed: number | null;
+    isAdmin: boolean;
+    onShareClick?: () => void;
+};
+export const ShareOptionsCell = ({ item }: { item: ShareOptionsCellType }) => {
     return (
         <TableCell
             className="m-0 file-browser-list--icon-column file-browser-list--context-menu-column flex items-center"
             data-testid="column-share-options"
         >
-            {item.isShared && item.showLinkSharingModal && (
-                <ShareIcon
-                    volumeId={item.volumeId}
-                    shareId={activeShareId}
-                    linkId={item.linkId}
-                    trashed={item.trashed}
-                    showLinkSharingModal={item.showLinkSharingModal}
-                    isAdmin={item.isAdmin}
-                />
+            {item.isShared && item.onShareClick && (
+                <ShareIcon trashed={item.trashed} onClick={item.onShareClick} isAdmin={item.isAdmin} />
             )}
         </TableCell>
     );

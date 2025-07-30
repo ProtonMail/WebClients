@@ -5,17 +5,20 @@ import { Loader } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import DriveStartupModals from '../components/modals/DriveStartupModals';
 import type { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
-import DriveView from '../components/sections/Drive/DriveView';
+import { DriveViewDeprecated } from '../components/sections/Drive/DriveView';
 import type { DriveFolder } from '../hooks/drive/useActiveShare';
 import { useActiveShare } from '../hooks/drive/useActiveShare';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
 import useDriveNavigation from '../hooks/drive/useNavigate';
+import { FolderView } from '../sections/folders/FolderView';
 import { useContextShareHandler, useDefaultShare, useDriveEventManager } from '../store';
 import { VolumeTypeForEvents, useVolumesState } from '../store/_volumes';
+import { getIsPublicContext } from '../utils/getIsPublicContext';
 import PreviewContainer from './PreviewContainer';
 
 const hasValidLinkType = (type: string) => {
@@ -32,6 +35,10 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
     const [, setError] = useState();
     const { getDefaultShare, isShareAvailable } = useDefaultShare();
     const driveEventManager = useDriveEventManager();
+    const useSDK = useFlag('DriveWebSDKFolders');
+    const isPublic = getIsPublicContext();
+    // TODO:WIP `&& false` needed if we want to merge this code before the work is ready, the FF needs to be enabled locally so we can work on it
+    const DriveViewComponent = useSDK && !isPublic && false ? FolderView : DriveViewDeprecated;
 
     useFolderContainerTitle(
         useMemo(
@@ -127,7 +134,7 @@ export default function FolderContainer({ type }: { type: LinkURLType }) {
 
     return (
         <>
-            {shouldRenderDriveView ? <DriveView /> : null}
+            {shouldRenderDriveView ? <DriveViewComponent /> : null}
             <DriveStartupModals />
             {shareId && linkId && <>{type === LinkURLType.FILE && <PreviewContainer />}</>}
         </>
