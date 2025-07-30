@@ -22,7 +22,7 @@ const useMailOnboardingModal: () => StartupModal = () => {
     const onboardingOpen = !welcomeFlags.isDone || welcomeFlags.isReplay;
 
     return {
-        showModal: onboardingOpen,
+        showModal: onboardingOpen && !isElectronMail,
         activateModal: () => setModal(true),
         component: renderModal ? (
             <EasySwitchProvider>
