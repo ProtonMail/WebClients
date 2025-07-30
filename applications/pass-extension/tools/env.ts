@@ -3,7 +3,7 @@
  * false positives when parsing env
  * variables.
  */
-const parseEnvVar = (envVar, fallback, mapTo = (x) => x) => {
+const parseEnvVar = <T extends unknown = string>(envVar: string, fallback: T, mapTo = (x: string): T => x as T) => {
     try {
         return mapTo(JSON.parse(JSON.stringify(process.env[envVar])));
     } catch (e) {
@@ -11,7 +11,7 @@ const parseEnvVar = (envVar, fallback, mapTo = (x) => x) => {
     }
 };
 
-const parseBool = (x) => x === 'true' || x === '1' || x === 1;
+const parseBool = (x: unknown) => x === 'true' || x === '1' || x === 1;
 
 const BETA = parseEnvVar('BETA', false, Boolean);
 const BUILD_TARGET = parseEnvVar('BUILD_TARGET', 'chrome', String);
@@ -31,7 +31,7 @@ const WEBPACK_DEV_PORT = parseEnvVar('WEBPACK_DEV_PORT', 8090, Number);
 
 const HOT_MANIFEST_UPDATE = RUNTIME_RELOAD && parseEnvVar('HOT_MANIFEST_UPDATE', false, parseBool);
 
-module.exports = {
+export default {
     BETA,
     BUILD_TARGET,
     BUILD_STORE_TARGET,
