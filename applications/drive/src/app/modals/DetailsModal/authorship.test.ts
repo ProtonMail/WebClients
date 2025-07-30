@@ -1,4 +1,4 @@
-import type { Result} from '@protontech/drive-sdk';
+import type { Result } from '@protontech/drive-sdk';
 import { RevisionState } from '@protontech/drive-sdk';
 
 import type { Author, MaybeNode, Revision } from '@proton/drive';
@@ -42,6 +42,7 @@ function createOkNode(
             directMemberRole: MemberRole.Admin,
             isShared: false,
             creationTime: new Date(),
+            treeEventScopeId: 'treeEventScopeId',
         },
     };
 }
@@ -84,6 +85,7 @@ function createDegradedNode(
             directMemberRole: MemberRole.Admin,
             isShared: false,
             creationTime: new Date(),
+            treeEventScopeId: 'treeEventScopeId',
         },
     };
 }

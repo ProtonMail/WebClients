@@ -26,6 +26,7 @@ export const mockNode = (overrides: Partial<NodeEntity> = {}): NodeEntity => ({
     folder: {
         claimedModificationTime: new Date('2024-01-01T00:00:00Z'),
     },
+    treeEventScopeId: 'treeEventScopeId',
     ...overrides,
 });
 

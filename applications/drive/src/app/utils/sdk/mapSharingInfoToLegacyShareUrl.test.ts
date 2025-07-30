@@ -22,7 +22,9 @@ describe('mapSharingInfoToLegacyShareUrl', () => {
         url: 'https://example.com/share/token123',
         customPassword: undefined,
         expirationTime: mockExpirationTime,
+        numberOfInitializedDownloads: 0,
     };
+
     const mockShareResult = {
         members: [],
         protonInvitations: [],
