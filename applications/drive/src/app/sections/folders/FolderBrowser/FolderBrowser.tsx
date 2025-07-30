@@ -1,36 +1,47 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
+import { MemberRole, ThumbnailType, splitNodeUid, useDrive } from '@proton/drive/index';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
+import FileBrowser, {
+    type BrowserItemId,
+    Cells,
+    type FileBrowserBaseItem,
+    GridHeader,
+    type ListViewHeaderItem,
+    useContextMenuControls,
+    useItemContextMenu,
+    useSelection,
+} from '../../../components/FileBrowser';
+import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
+import { GridViewItem } from '../../../components/sections/FileBrowser/GridViewItemLink';
+import {
+    ModifiedCell,
+    NameCell,
+    ShareOptionsCell,
+    SizeCell,
+} from '../../../components/sections/FileBrowser/contentCells';
+import headerItems from '../../../components/sections/FileBrowser/headerCells';
+import { translateSortField } from '../../../components/sections/SortDropdown';
+import useOpenPreview from '../../../components/useOpenPreview';
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
-import type { EncryptedLink, LinkShareUrl, SignatureIssues, useFolderView } from '../../../store';
-import { useThumbnailsDownload } from '../../../store';
-import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
+import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../../store';
+import { useDocumentActions } from '../../../store';
+import { useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
-import FileBrowser, {
-    Cells,
-    GridHeader,
-    useContextMenuControls,
-    useItemContextMenu,
-    useSelection,
-} from '../../FileBrowser';
-import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
-import useOpenPreview from '../../useOpenPreview';
-import { GridViewItem } from '../FileBrowser/GridViewItemLink';
-import { ModifiedCell, NameCell, ShareOptionsCell, SizeCell } from '../FileBrowser/contentCells';
-import headerItems from '../FileBrowser/headerCells';
-import { translateSortField } from '../SortDropdown';
-import { getSelectedItems } from '../helpers';
-import { DriveItemContextMenu } from './DriveContextMenu';
-import EmptyDeviceRoot from './EmptyDeviceRoot';
-import EmptyFolder from './EmptyFolder';
+import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
+import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
+import { EmptyDeviceRoot } from '../EmptyFolder/EmptyDeviceRoot';
+import { EmptyFolder } from '../EmptyFolder/EmptyFolder';
+import { getSelectedItems } from '../getSelectedItems';
+import type { useFolder } from '../useFolder';
 import { FolderContextMenu } from './FolderContextMenu';
+import { FolderItemContextMenu } from './FolderItemContextMenu';
 
 export interface DriveItem extends FileBrowserBaseItem {
     activeRevision?: EncryptedLink['activeRevision'];
@@ -54,19 +65,19 @@ export interface DriveItem extends FileBrowserBaseItem {
 
 interface Props {
     activeFolder: DriveFolder;
-    folderView: ReturnType<typeof useFolderView>;
+    folderView: ReturnType<typeof useFolder>;
 }
+
+type ItemWithAdditionalProps = LegacyItem & {
+    onShareClick?: () => void;
+    isAdmin: boolean;
+};
 
 const { CheckboxCell, ContextMenuCell } = Cells;
 
-const myFilesLargeScreenCells: React.FC<{ item: DriveItem }>[] = [
-    CheckboxCell,
-    NameCell,
-    ModifiedCell,
-    SizeCell,
-    ShareOptionsCell,
-    ContextMenuCell,
-];
+const myFilesLargeScreenCells: React.FC<{
+    item: ItemWithAdditionalProps;
+}>[] = [CheckboxCell, NameCell, ModifiedCell, SizeCell, ShareOptionsCell, ContextMenuCell];
 const myFilesSmallScreenCells = [CheckboxCell, NameCell, ContextMenuCell];
 
 const headerItemsLargeScreen: ListViewHeaderItem[] = [
@@ -83,13 +94,14 @@ const headerItemsSmallScreen: ListViewHeaderItem[] = [headerItems.checkbox, head
 type DriveSortFields = Extract<SortField, SortField.name | SortField.fileModifyTime | SortField.size>;
 const SORT_FIELDS: DriveSortFields[] = [SortField.name, SortField.fileModifyTime, SortField.size];
 
-function Drive({ activeFolder, folderView }: Props) {
+export function FolderBrowser({ activeFolder, folderView }: Props) {
     const { shareId, linkId } = activeFolder;
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
     const browserContextMenu = useContextMenuControls();
     const browserItemContextMenu = useItemContextMenu();
-    const thumbnails = useThumbnailsDownload();
+    const { drive } = useDrive();
+    const { handleError } = useSdkErrorHandler();
     const { navigateToLink } = useDriveNavigation();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
@@ -97,23 +109,22 @@ function Drive({ activeFolder, folderView }: Props) {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(folderView.layout, folderView.isLoading);
-    const { permissions, layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
-
-    const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
-
-    const selectedItems = useMemo(
-        () => getSelectedItems(items, selectionControls!.selectedItemIds),
-        [items, selectionControls!.selectedItemIds]
-    );
-
+    const { role, layout, folderName, legacyItems: items, sortParams, setSorting, isLoading } = folderView;
+    const isAdmin = role === MemberRole.Admin;
+    const { thumbnails, setThumbnail } = useThumbnailStore();
     const openPreview = useOpenPreview();
-    const browserItems: DriveItem[] = items.map((item) => ({
-        ...item,
-        id: item.linkId,
-        // TODO: Improve this, we should not pass showLinkSharingModal here
-        onShareClick: item.isShared ? showLinkSharingModal : undefined,
+
+    const browserItems: ItemWithAdditionalProps[] = items.map((node) => ({
+        ...node,
         isAdmin,
+        cachedThumbnailUrl: thumbnails[node.thumbnailId]?.sdUrl,
+        // TODO:FILEBROWSER Not super ideal but to avoid passing onShareClick inside the item we need to modify FB
+        onShareClick: node.isShared
+            ? () => showLinkSharingModal({ volumeId: node.volumeId, shareId: shareId, linkId: node.linkId })
+            : undefined,
     }));
+
+    const selectedItems = getSelectedItems(browserItems, selectionControls!.selectedItemIds);
     const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, selectionControls!.clearSelections);
 
     /* eslint-disable react/display-name */
@@ -137,31 +148,43 @@ function Drive({ activeFolder, folderView }: Props) {
         [sortParams.sortField, sortParams.sortOrder, isLoading]
     );
 
-    const handleItemRender = useCallback(
-        (item: DriveItem) => {
-            incrementItemRenderedCounter();
-
-            if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-                thumbnails.addToDownloadQueue(shareId, item.linkId, item.activeRevision.id);
+    const handleItemRender = async (item: ItemWithAdditionalProps) => {
+        incrementItemRenderedCounter();
+        // TODO:WIP integrate with useBatchThumbnailLoader when available
+        if (!item.hasThumbnail || item.cachedThumbnailUrl || thumbnails[item.thumbnailId] !== undefined) {
+            return;
+        }
+        try {
+            for await (const thumbResult of drive.iterateThumbnails([item.uid], ThumbnailType.Type1)) {
+                if (thumbResult.ok) {
+                    const url = URL.createObjectURL(new Blob([thumbResult.thumbnail], { type: 'image/jpeg' }));
+                    setThumbnail(item.thumbnailId, { sdUrl: url });
+                } else {
+                    setThumbnail(item.thumbnailId, {});
+                }
             }
-        },
-        [thumbnails, shareId, incrementItemRenderedCounter]
-    );
+        } catch (e) {
+            handleError(e);
+        }
+    };
 
     const handleClick = useCallback(
-        (id: BrowserItemId) => {
-            const item = browserItems.find((item) => item.id === id);
+        (uid: BrowserItemId) => {
+            const item = browserItems.find((item) => item.uid === uid);
+            const { nodeId } = splitNodeUid(uid);
 
             if (!item) {
                 return;
             }
             document.getSelection()?.removeAllRanges();
 
+            // TODO:WIP Use helper to open files when avalable
+            // applications/drive/src/app/hooks/docs/useDocumentActions.ts
             if (isProtonDocsDocument(item.mimeType)) {
                 if (isDocsEnabled) {
                     return openDocument({
                         type: 'doc',
-                        linkId: item.linkId,
+                        linkId: nodeId,
                         shareId,
                         openBehavior: 'tab',
                     });
@@ -171,7 +194,7 @@ function Drive({ activeFolder, folderView }: Props) {
                 if (isDocsEnabled) {
                     return openDocument({
                         type: 'sheet',
-                        linkId: item.linkId,
+                        linkId: nodeId,
                         shareId,
                         openBehavior: 'tab',
                     });
@@ -180,10 +203,10 @@ function Drive({ activeFolder, folderView }: Props) {
             }
 
             if (item.isFile) {
-                openPreview(shareId, id);
+                openPreview(shareId, nodeId);
                 return;
             }
-            navigateToLink(shareId, id, item.isFile);
+            navigateToLink(shareId, nodeId, item.isFile);
         },
         [navigateToLink, shareId, browserItems, isDocsEnabled, openDocument]
     );
@@ -203,7 +226,7 @@ function Drive({ activeFolder, folderView }: Props) {
             return <EmptyDeviceRoot />;
         }
 
-        return <EmptyFolder shareId={shareId} permissions={permissions} />;
+        return <EmptyFolder shareId={shareId} role={role} />;
     }
 
     const Cells = viewportWidth['>=large'] ? myFilesLargeScreenCells : myFilesSmallScreenCells;
@@ -212,7 +235,7 @@ function Drive({ activeFolder, folderView }: Props) {
     return (
         <>
             <FolderContextMenu
-                permissions={permissions}
+                role={role}
                 isActiveLinkReadOnly={folderView.isActiveLinkReadOnly}
                 isActiveLinkRoot={folderView.isActiveLinkRoot}
                 isActiveLinkInDeviceShare={folderView.isActiveLinkInDeviceShare}
@@ -223,11 +246,11 @@ function Drive({ activeFolder, folderView }: Props) {
                 open={browserContextMenu.open}
                 position={browserContextMenu.position}
             />
-            <DriveItemContextMenu
-                permissions={permissions}
+            <FolderItemContextMenu
+                role={role}
                 isActiveLinkReadOnly={folderView.isActiveLinkReadOnly}
                 shareId={shareId}
-                selectedLinks={selectedItems}
+                selectedItems={selectedItems}
                 anchorRef={contextMenuAnchorRef}
                 close={browserItemContextMenu.close}
                 isOpen={browserItemContextMenu.isOpen}
@@ -260,5 +283,3 @@ function Drive({ activeFolder, folderView }: Props) {
         </>
     );
 }
-
-export default Drive;
