@@ -384,11 +384,22 @@ describe('available apps', () => {
             );
         });
 
-        it('should not care about access control, but respect user type', () => {
+        it('should not care about access control, but respect admin role', () => {
             assertEquals(
                 getAvailableApps({
                     ...defaultOptions,
                     user: merge(getAdminUser(), getNonPrivateExternalUser()),
+                    organization: getAllowedProducts([]),
+                }),
+                allApps
+            );
+        });
+
+        it('should not care about access control, but respect managed user type', () => {
+            assertEquals(
+                getAvailableApps({
+                    ...defaultOptions,
+                    user: merge(getAdminUser(), getNonPrivateExternalUser(), { Type: UserType.MANAGED }),
                     organization: getAllowedProducts([]),
                 }),
                 [

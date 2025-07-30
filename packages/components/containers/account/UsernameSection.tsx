@@ -37,7 +37,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { AddressConfirmationState, SessionRecoveryState, UserType } from '@proton/shared/lib/interfaces';
-import { getIsExternalAccount } from '@proton/shared/lib/keys';
+import { getCanSetupProtonAddress, getIsExternalAccount } from '@proton/shared/lib/keys';
 import clsx from '@proton/utils/clsx';
 
 import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
@@ -106,7 +106,7 @@ const UsernameSection = ({ app }: Props) => {
 
     const canEditExternalAddress = canVerifyExternalAddress && (user.isPrivate || user.isAdmin);
 
-    const canSetupProtonAddress = isExternalUser && user.isPrivate && APP_NAME === APPS.PROTONACCOUNT;
+    const canSetupProtonAddress = getCanSetupProtonAddress(user) && APP_NAME === APPS.PROTONACCOUNT;
 
     useSearchParamsEffect(
         (params) => {
