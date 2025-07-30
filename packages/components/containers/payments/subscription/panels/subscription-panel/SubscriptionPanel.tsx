@@ -107,6 +107,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         MaxSpace = space.maxSpace,
         MaxMembers = 1,
         MaxAI = 0,
+        MaxLumo = 0,
     } = organization || {};
 
     if (!user.canPay) {
@@ -418,12 +419,16 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                 };
             })(),
             (() => {
-                if (!lumoText) {
+                if (MaxLumo <= 0 || !lumoText) {
                     return false;
                 }
+                const showGetMoreButton = MaxLumo !== MaxMembers;
+                const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
+
                 return {
                     icon: 'speech-bubble',
                     text: lumoText,
+                    actionElement,
                 };
             })(),
         ];
