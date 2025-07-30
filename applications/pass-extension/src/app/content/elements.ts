@@ -16,13 +16,22 @@ exporter(
         /** Handle Polymer.js interference: since we inject at `document_end`,
          * Polymer may have already patched customElements. Get original references
          * through CustomElementRegistry.prototype to bypass interference. */
-        const define = CustomElementRegistry.prototype.define.bind(customElements);
-        const get = CustomElementRegistry.prototype.get.bind(customElements);
+        const registry = {
+            define: (customElements.define === CustomElementRegistry.prototype.define
+                ? customElements.define
+                : CustomElementRegistry.prototype.define
+            ).bind(customElements),
+
+            get: (customElements.get === CustomElementRegistry.prototype.get
+                ? customElements.get
+                : CustomElementRegistry.prototype.get
+            ).bind(customElements),
+        };
 
         const root = ProtonPassRoot.getTagName(hash);
         const control = ProtonPassControl.getTagName(hash);
-        if (!get(root)) define(root, ProtonPassRoot);
-        if (!get(control)) define(control, ProtonPassControl);
+        if (!registry.get(root)) registry.define(root, ProtonPassRoot);
+        if (!registry.get(control)) registry.define(control, ProtonPassControl);
 
         delete window.registerPassElements;
     },
