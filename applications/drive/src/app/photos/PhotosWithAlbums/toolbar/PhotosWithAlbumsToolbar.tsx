@@ -347,6 +347,7 @@ const ToolbarRightActionsAlbumGallery = ({
                             volumeId: album.volumeId,
                             shareId: album.rootShareId,
                             linkId: album.linkId,
+                            isAlbum: true,
                         });
                     }}
                 />
