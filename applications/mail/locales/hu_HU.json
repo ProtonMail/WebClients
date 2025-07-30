@@ -1409,7 +1409,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Megbízható kulcs",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1591,6 +1592,9 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Download logs": [
+        "Naplók letöltése"
       ]
     },
     "action": {
@@ -7080,7 +7084,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [

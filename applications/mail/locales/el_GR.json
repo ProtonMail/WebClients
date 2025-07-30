@@ -1600,6 +1600,16 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Download application logs": [
+        "Λήψη αρχείων καταγραφής εφαρμογής"
+      ],
+      "Download logs": [
+        "Λήψη αρχείων καταγραφής"
+      ],
+      "Trust key": [
+        "Εμπιστοσύνη στο κλειδί",
+        "Εμπιστοσύνη στα κλειδιά"
       ]
     },
     "action": {
@@ -1668,6 +1678,10 @@
       "${ users } user": [
         "${ users } χρήστης",
         "${ users } χρήστες"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } θέση",
+        "${ seats } ${ LUMO_APP_NAME } θέσεις"
       ]
     },
     "Alert": {
@@ -2195,6 +2209,9 @@
       ],
       "Website access problem": [
         "Πρόβλημα πρόσβασης ιστοσελίδας"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } πρόβλημα"
       ]
     },
     "Button": {
@@ -7139,8 +7156,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8562,6 +8578,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
+      "Download application logs for troubleshooting": [
+        "Λήψη αρχείων καταγραφής εφαρμογής για αντιμετώπιση προβλημάτων"
+      ],
+      "Download current logs": [
+        "Λήψη τρεχόντων αρχείων καταγραφής"
       ]
     },
     "info": {
@@ -9508,6 +9533,9 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Include application logs in bug report": [
+        "Περιλάβετε τα αρχεία καταγραφής εφαρμογής στην αναφορά σφάλματος"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11815,6 +11843,9 @@
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
+      ],
+      "ABN": [
+        "ΑΦΜ"
       ]
     },
     "PGP key encryption warning": {
@@ -13744,6 +13775,20 @@
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } συνομιλία αφαιρέθηκε από τις Σημασμένες.",
+        "${ elementsCount } συνομιλίες αφαιρέθηκαν από τις Σημασμένες."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } μήνυμα αφαιρέθηκε από τα Σημασμένα.",
+        "${ elementsCount } μηνύματα αφαιρέθηκαν από τα Σημασμένα."
+      ],
+      "Conversation removed from Starred.": [
+        "Η συνομιλία αφαιρέθηκε από τις Σημασμένες."
+      ],
+      "Message removed from Starred.": [
+        "Το μήνυμα αφαιρέθηκε από τα Σημασμένα."
       ]
     },
     "Success notification": {

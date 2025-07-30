@@ -1421,7 +1421,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1603,6 +1604,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Download application logs": [
+        "Descargar registros de la aplicación"
+      ],
+      "Download logs": [
+        "Descargar los registros"
       ]
     },
     "action": {
@@ -1671,6 +1678,10 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licencia de ${ LUMO_APP_NAME }",
+        "${ seats } licencias de ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -2224,6 +2235,9 @@
       ],
       "Website access problem": [
         "Problema de acceso web"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema con ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -7176,8 +7190,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8599,6 +8612,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "Download application logs for troubleshooting": [
+        "Descargar registros de aplicación para resolución de problemas"
+      ],
+      "Download current logs": [
+        "Descargar registros actuales"
       ]
     },
     "info": {
@@ -9548,6 +9570,9 @@
       ],
       "Your password (admin)": [
         "Su contraseña (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Incluir registros de la aplicación en el informe de errores"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13798,6 +13823,20 @@
       ],
       "You have successfully unsubscribed": [
         "Se ha desuscrito satisfactoriamente"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } conversación borrada de Destacados.",
+        "${ elementsCount } conversaciones borradas de Destacados."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } mensaje borrado de Destacados.",
+        "${ elementsCount } mensajes borrados de Destacados."
+      ],
+      "Conversation removed from Starred.": [
+        "Conversación borrada de Destacados."
+      ],
+      "Message removed from Starred.": [
+        "Mensaje borrado de Destacados."
       ]
     },
     "Success notification": {

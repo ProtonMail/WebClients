@@ -1600,6 +1600,16 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ],
+      "Download application logs": [
+        "Transferir os registos da aplicação"
+      ],
+      "Download logs": [
+        "Transferir os registos"
+      ],
+      "Trust key": [
+        "Confiar na chave",
+        "Confiar nas chaves"
       ]
     },
     "action": {
@@ -1668,6 +1678,10 @@
       "${ users } user": [
         "${ users } utilizador",
         "${ users } utilizadores"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licença do ${ LUMO_APP_NAME }",
+        "${ seats } licenças do ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -2195,6 +2209,9 @@
       ],
       "Website access problem": [
         "Problema de acesso à página web"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema com o ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -7139,8 +7156,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -8562,6 +8578,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a alguns cliques de ter uma caixa de entrada organizada"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "O ${ LUMO_APP_NAME } inclui o assistente de escrita ${ BRAND_NAME } Scribe."
+      ],
+      "Download application logs for troubleshooting": [
+        "Transferir os registos da aplicação para a resolução de problemas"
+      ],
+      "Download current logs": [
+        "Transferir os registos atuais"
       ]
     },
     "info": {
@@ -9508,6 +9533,9 @@
       ],
       "Your password (admin)": [
         "A sua palavra-passe (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Incluir os registos de aplicação no relatório de erro"
       ]
     },
     "Label (begin date/advanced search)": {

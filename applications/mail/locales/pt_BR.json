@@ -1421,7 +1421,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1603,6 +1604,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Download application logs": [
+        "Baixar os registros do aplicativo"
+      ],
+      "Download logs": [
+        "Registros de downloads"
       ]
     },
     "action": {
@@ -1671,6 +1678,10 @@
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licença do ${ LUMO_APP_NAME }",
+        "${ seats } licenças do ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -2224,6 +2235,9 @@
       ],
       "Website access problem": [
         "Problema de acesso ao site"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema no ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -7176,8 +7190,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -8599,6 +8612,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
+      ],
+      "Download application logs for troubleshooting": [
+        "Baixar os registros do aplicativo para a resolução de problemas"
+      ],
+      "Download current logs": [
+        "Baixar os registros atuais"
       ]
     },
     "info": {
@@ -9548,6 +9570,9 @@
       ],
       "Your password (admin)": [
         "Sua senha (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Incluir os registros do aplicativo no relatório de erro"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13809,6 +13834,20 @@
       ],
       "You have successfully unsubscribed": [
         "Você cancelou a inscrição"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } mensagem removida com estrela.",
+        "${ elementsCount } mensagens removidas com estrela."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } mensagem removida com estrela.",
+        "${ elementsCount } mensagens removidas com estrela."
+      ],
+      "Conversation removed from Starred.": [
+        "Conversa removida com estrela."
+      ],
+      "Message removed from Starred.": [
+        "Mensagem removida com estrela."
       ]
     },
     "Success notification": {

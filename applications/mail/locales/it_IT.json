@@ -1600,6 +1600,16 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Download application logs": [
+        "Scarica i log dell'applicazione"
+      ],
+      "Download logs": [
+        "Scarica i log"
+      ],
+      "Trust key": [
+        "Considera attendibile la chiave",
+        "Considera attendibili le chiavi"
       ]
     },
     "action": {
@@ -1668,6 +1678,10 @@
       "${ users } user": [
         "${ users } utente",
         "${ users } utenti"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licenza ${ LUMO_APP_NAME }",
+        "${ seats } licenze ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -2221,6 +2235,9 @@
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema con ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -7173,8 +7190,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8596,6 +8612,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include l'assistente di scrittura ${ BRAND_NAME } Scribe."
+      ],
+      "Download application logs for troubleshooting": [
+        "Scarica i log dell'applicazione per la risoluzione dei problemi"
+      ],
+      "Download current logs": [
+        "Scarica i log correnti"
       ]
     },
     "info": {
@@ -9545,6 +9570,9 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Includi i log dell'applicazione nella segnalazione di bug"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13794,6 +13822,20 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } conversazione rimossa dai Preferiti.",
+        "${ elementsCount } conversazioni rimosse dai Preferiti."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } messaggio rimosso dai Preferiti.",
+        "${ elementsCount } messaggi rimossi dai Preferiti."
+      ],
+      "Conversation removed from Starred.": [
+        "Conversazione rimossa dai Preferiti."
+      ],
+      "Message removed from Starred.": [
+        "Messaggio rimosso dai Preferiti."
       ]
     },
     "Success notification": {

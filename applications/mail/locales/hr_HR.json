@@ -1144,6 +1144,14 @@
       ],
       "Write for me": [
         "Napiši za mene"
+      ],
+      "Copy password": [
+        "Kopiraj lozinku"
+      ],
+      "Trust key": [
+        "Ključ povjerenja",
+        "Ključevi povjerenja",
+        "Ključevi povjerenja"
       ]
     },
     "action": {
@@ -2865,6 +2873,9 @@
     "Cycle": {
       "/month": [
         "/mjesec"
+      ],
+      "/user per month": [
+        "/korisnik mjesečno"
       ]
     },
     "Daily recurring event, frequency": {
@@ -4456,9 +4467,7 @@
         "Nasljedno iz roditeljske mape"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -5018,6 +5027,33 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaša ${ plan } pretplata bit će zamijenjena s ${ PASS_SHORT_APP_NAME } Lifetime. Preostali iznos vaše pretplate bit će dodan na vaš korisnički račun. ${ PASS_SHORT_APP_NAME } doživotna ponuda nema cijenu obnove, to je jednokratno plaćanje za doživotni pristup ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe pomoćnik za pisanje"
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }ova tehnologija šifriranja omogućuje da nitko ne može pristupiti Vašoj lozinki - čak ni mi."
+      ],
+      "Already used": [
+        "Već iskorišteno"
+      ],
+      "High Priority": [
+        "Visoki prioritet"
+      ],
+      "Storage for users": [
+        "Pohrana za korisnike"
+      ],
+      "Symbols (#$&)": [
+        "Simboli (#$&)"
+      ],
+      "Total storage": [
+        "Ukupna pohrana"
+      ],
+      "Total supported domains": [
+        "Ukupno podržanih domena"
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Koristite više pohrane nego što je uključeno u ${ downgradedPlanName } plan. Molimo izbrišite ili uklonite podatke kako biste se unazadili."
       ]
     },
     "info": {
@@ -5792,6 +5828,9 @@
       ],
       "Your alias": [
         "Vaš pseudonim"
+      ],
+      "Payment method": [
+        "Način plaćanja"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -6268,6 +6307,12 @@
       ],
       "Keep account": [
         "Zadržite račun"
+      ],
+      "Keep ${ plan }": [
+        "Zadrži ${ plan }"
+      ],
+      "Switch plan": [
+        "Promijeniti plan"
       ]
     },
     "new_plans: Action": {
@@ -6465,6 +6510,21 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neograničen kapacitet/promet"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Automatsko brisanje neželjene pošte i otpada"
+      ],
+      "Calendar sharing": [
+        "Dijeljenje kalendara"
+      ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "Besplatne značajke od ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Priority support & live chat": [
+        "Prioritetna podrška i chat uživo"
+      ],
+      "Router support": [
+        "Podrška za router"
       ]
     },
     "new_plans: feature highlight": {
@@ -6512,6 +6572,12 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Uživate u promotivnoj cijeni na Vašem trenutnom planu. Ako obrišete svoj račun, izgubit ćete svoju promotivnu cijenu i ona neće biti dostupna ako stvorite novi račun."
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Sveobuhvatna privatnost i sigurnost povezivanjem svih ${ BRAND_NAME } usluga."
+      ],
+      "Early access to new apps and features": [
+        "Rani pristup novim aplikacijama i značajkama"
       ]
     },
     "new_plans: title": {
@@ -6594,6 +6660,21 @@
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Kada ste spojeni na naš VPN, Vaši DNS upiti prolaze kroz šifrirani VPN tunel, što doprinosi Vašoj online privatnosti i sigurnosti."
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "Zaštitite svaki uređaj povezan na vašu WiFi mrežu. Također je korisno ako imate uređaje koji ne podržavaju izravno VPN postavke."
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Brzo prenesite svoje e-pošte, kalendare ili kontakte od bilo kojeg davatelja usluga"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Koristite vlastite adrese e-pošte s prilagođenom domenom, npr. vi@vaseime.com"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Pri slanju drugim ${ MAIL_APP_NAME } korisnicima, šifriranje je automatsko. Slanje korisnicima koji nisu ${ MAIL_APP_NAME_TWO } zahtijeva postavljanje lozinke prije slanja."
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "Možete imati više od jednog administratora. Svi administratori mogu dodavati i upravljati korisnicima, ali samo glavni administrator ima kontrolu nad naplatom."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -6620,6 +6701,9 @@
       ],
       "Dedicated server locations in North America and Europe": [
         "Namjenske lokacije poslužitelja u Sjevernoj Americi i Europi"
+      ],
+      "Browser extension": [
+        "Proširenje preglednika"
       ]
     },
     "Notification": {
@@ -6814,6 +6898,12 @@
       ],
       "Organization key must be activated to give admin privileges": [
         "Ključ organizacije mora biti aktiviran kako bi se dodijelile administratorske ovlasti"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Neprivatni korisnici mogu biti promovirani u administratora kada imaju postavljene ključeve"
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privatni korisnici mogu biti promovirani u administratore kada se prijave prvi put"
       ]
     },
     "Payment method option": {
@@ -7517,6 +7607,9 @@
     "storage_split: info": {
       "Your storage is full": [
         "Pohrana je puna"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Unazađivanjem ćete izgubiti sljedeće pogodnosti. Jeste li sigurni da želite nastaviti?"
       ]
     },
     "Subscription": {
@@ -7525,6 +7618,9 @@
       ],
       "Billed monthly": [
         "Mjesečni račun"
+      ],
+      "Billed yearly": [
+        "Godišnji račun"
       ]
     },
     "Subscription attribute": {
@@ -7640,6 +7736,12 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš vlastiti kratki e-poštanski pseudonim @pm.me"
+      ],
+      "Early access to new apps and features": [
+        "Rani pristup novim aplikacijama i značajkama"
+      ],
+      "Read the story": [
+        "Pročitajte priču"
       ]
     },
     "subscription reminder": {
@@ -8558,6 +8660,9 @@
       ],
       "Verifying your payment...": [
         "Vaša uplata se provjerava..."
+      ],
+      "Gift": [
+        "Poklon"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9029,6 +9134,9 @@
       ],
       "Temporary need, may come back in the future": [
         "Privremena potreba, može se vratiti u budućnosti"
+      ],
+      "Subscription is too expensive": [
+        "Pretplata je preskupa"
       ]
     },
     "Downgrade warning": {
