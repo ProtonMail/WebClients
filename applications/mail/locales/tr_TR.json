@@ -1607,6 +1607,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Download application logs": [
+        "Uygulama günlüklerini indir"
       ]
     },
     "action": {
@@ -1675,6 +1678,10 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } koltuk",
+        "${ seats } ${ LUMO_APP_NAME } koltuk"
       ]
     },
     "Alert": {
@@ -2228,6 +2235,9 @@
       ],
       "Website access problem": [
         "Site erişim sorunu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } sorunu"
       ]
     },
     "Button": {
@@ -8602,6 +8612,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusuna yalnızca birkaç tık uzaktasınız."
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
+      ],
+      "Download application logs for troubleshooting": [
+        "Sorun gidermede kullanılması için uygulama günlüklerini indirin."
+      ],
+      "Download current logs": [
+        "Güncel günlükleri indir"
       ]
     },
     "info": {
@@ -9548,6 +9567,9 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ],
+      "Include application logs in bug report": [
+        "Uygulama günlüklerini sorun bildirimine eklensin"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13792,6 +13814,20 @@
       ],
       "You have successfully unsubscribed": [
         "Abonelikten ayrıldınız"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } yazışmanın yıldızı kaldırıldı.",
+        "${ elementsCount } yazışmanın yıldızı kaldırıldı."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } iletinin yıldızı kaldırıldı.",
+        "${ elementsCount } iletinin yıldızı kaldırıldı."
+      ],
+      "Conversation removed from Starred.": [
+        "Yazışmanın yıldızı kaldırıldı."
+      ],
+      "Message removed from Starred.": [
+        "İletinin yıldızı kaldırıldı."
       ]
     },
     "Success notification": {

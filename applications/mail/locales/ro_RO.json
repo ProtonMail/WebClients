@@ -1613,6 +1613,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Download application logs": [
+        "Descărcare jurnale aplicație"
       ]
     },
     "action": {
@@ -1685,6 +1688,11 @@
         "${ users } utilizator",
         "${ users } utilizatori",
         "${ users } de utilizatori"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licență ${ LUMO_APP_NAME }",
+        "${ seats } licențe ${ LUMO_APP_NAME }",
+        "${ seats } de licențe ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -2215,6 +2223,9 @@
       ],
       "Website access problem": [
         "Problemă accesare site web"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problemă ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -8706,6 +8717,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "Download application logs for troubleshooting": [
+        "Descărcare jurnale aplicație pentru depanare"
+      ],
+      "Download current logs": [
+        "Descărcare jurnale actuale"
       ]
     },
     "info": {
@@ -9658,6 +9678,9 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Include application logs in bug report": [
+        "Includere jurnale aplicație în raportul de eroare"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14002,6 +14025,22 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "Conversații eliminate din favorite: ${ elementsCount }",
+        "Conversații eliminate din favorite: ${ elementsCount }",
+        "Conversații eliminate din favorite: ${ elementsCount }"
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "Mesaje eliminate din favorite: ${ elementsCount }",
+        "Mesaje eliminate din favorite: ${ elementsCount }",
+        "Mesaje eliminate din favorite: ${ elementsCount }"
+      ],
+      "Conversation removed from Starred.": [
+        "Conversația a fost eliminată din favorite."
+      ],
+      "Message removed from Starred.": [
+        "Mesajul a fost eliminat din favorite."
       ]
     },
     "Success notification": {
