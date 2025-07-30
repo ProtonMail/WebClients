@@ -49,7 +49,7 @@ export const useTrashNodes = () => {
             let shownErrorNotification = false;
             for await (const trashNode of drive.iterateTrashedNodes(abortSignal)) {
                 try {
-                    const mappedNode = await mapNodeToLegacyItem(trashNode, defaultShare, drive);
+                    const mappedNode = await mapNodeToLegacyItem(trashNode, defaultShare.shareId, drive);
                     setNodes({
                         [mappedNode.uid]: mappedNode,
                     });
