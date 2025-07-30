@@ -20,7 +20,6 @@ export const useGetActiveMeetings = () => {
             return response.Meetings;
         } catch (error) {
             console.error(error);
-            return [];
         }
     };
 

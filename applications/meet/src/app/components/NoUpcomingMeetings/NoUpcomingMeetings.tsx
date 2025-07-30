@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useFlag from '@proton/unleash/useFlag';
 
 import callIcon from '../../../assets/call-icon.svg';
 
@@ -12,6 +13,8 @@ interface NoUpcomingMeetingsProps {
 }
 
 export const NoUpcomingMeetings = ({ onSchedule, onStart }: NoUpcomingMeetingsProps) => {
+    const isScheduleEnabled = useFlag('NewScheduleOption');
+
     return (
         <div
             className="w-custom mx-auto flex flex-column items-center justify-center gap-4"
@@ -33,6 +36,7 @@ export const NoUpcomingMeetings = ({ onSchedule, onStart }: NoUpcomingMeetingsPr
                     style={{ '--w-custom': '8.6525rem' }}
                     size="large"
                     onClick={onSchedule}
+                    disabled={!isScheduleEnabled}
                 >
                     {c('meet_2025 Action').t`Schedule`}
                 </Button>
