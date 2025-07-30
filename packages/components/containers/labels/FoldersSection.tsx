@@ -5,12 +5,14 @@ import { Button, Scroll } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import ConfirmSortModal from '@proton/components/containers/labels/modals/ConfirmSortModal';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -36,7 +38,11 @@ function ScrollWrapper({ children, scroll }: { children: JSX.Element; scroll?: b
     );
 }
 
-export default function FoldersSection() {
+interface Props {
+    showPromptOnAction?: boolean;
+}
+
+export default function FoldersSection({ showPromptOnAction = false }: Props) {
     const [user] = useUser();
     const [folders = [], loadingFolders] = useFolders();
     const [mailSettings] = useMailSettings();
@@ -47,8 +53,12 @@ export default function FoldersSection() {
     const canCreateFolder = !hasReachedFolderLimit(user, folders);
     const [editLabelModalProps, setEditLabelModalOpen, renderEditLabelModal] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
+    const [confirmModal, showConfirmModal] = useModalTwoPromise();
 
     const handleSortAllFolders = async () => {
+        if (showPromptOnAction) {
+            await showConfirmModal();
+        }
         await api(orderAllFolders());
         await call();
         createNotification({ text: c('Success message after sorting folders').t`Folders sorted` });
@@ -129,6 +139,15 @@ export default function FoldersSection() {
                     )}
                 </>
             )}
+
+            {confirmModal((props) => (
+                <ConfirmSortModal
+                    modalProps={props}
+                    onReject={props.onReject}
+                    onResolve={props.onResolve}
+                    type="folder"
+                />
+            ))}
         </SettingsSection>
     );
 }
