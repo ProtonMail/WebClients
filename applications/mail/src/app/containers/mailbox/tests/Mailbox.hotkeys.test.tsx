@@ -4,7 +4,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { addApiMock, assertCheck, assertFocus, clearAll, tick } from '../../../helpers/test/helper';
-import MailboxContainer from '../MailboxContainer';
+import { RouterMailboxContainer } from '../../../router/RouterMailboxContainer';
 import type { SetupArgs } from './Mailbox.test.helpers';
 import { setup as generalSetup, getElements, props } from './Mailbox.test.helpers';
 
@@ -66,13 +66,13 @@ describe('Mailbox hotkeys', () => {
     });
 
     it('should navigate left and right', async () => {
-        const TestComponent = (props: any) => {
+        const TestComponent = () => {
             return (
                 <>
                     <div data-shortcut-target="navigation-link" aria-current="page" tabIndex={-1}>
                         nav test
                     </div>
-                    <MailboxContainer {...props} />
+                    <RouterMailboxContainer />
                     <div data-shortcut-target="message-container" tabIndex={-1}>
                         message test
                     </div>
