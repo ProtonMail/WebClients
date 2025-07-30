@@ -3,15 +3,23 @@ import { useState } from 'react';
 import { type ModalStateProps, useModalTwoStatic } from '@proton/components';
 import { generateNodeUid, splitNodeUid, useDrive } from '@proton/drive';
 
+import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { type DecryptedLink, useDriveEventManager, useTreeForModals } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { CreateFolderModal } from '../CreateFolderModal';
 import { useMovedItemsNotification } from './useMovedItemsNotification';
 
+export type MoveItemsModalStateItem = {
+    volumeId: string;
+    linkId: string;
+    parentLinkId: string;
+    rootShareId: string;
+    isFile: boolean;
+};
+
 export type UseMoveItemsModalStateProps = ModalStateProps & {
     shareId: string;
-    // TODO: convert to NodeEntity when the old Modal is deleted
-    selectedItems: DecryptedLink[];
+    selectedItems: MoveItemsModalStateItem[];
 };
 
 export const useMoveItemsModalState = ({
@@ -32,13 +40,14 @@ export const useMoveItemsModalState = ({
     const [createFolderModal, showCreateFolderModal] = useModalTwoStatic(CreateFolderModal);
     const { handleError } = useSdkErrorHandler();
     const [targetFolderUid, setTargetFolderUid] = useState<string>();
+    const { activeFolder } = useActiveShare();
 
     let treeSelectedFolder;
     if (targetFolderUid) {
         treeSelectedFolder = splitNodeUid(targetFolderUid).nodeId;
     }
 
-    const undoMove = async (itemMap: Record<string, DecryptedLink>, parentMap: Map<string, string>) => {
+    const undoMove = async (itemMap: Record<string, { name: string }>, parentMap: Map<string, string>) => {
         const successIds = [];
         const failedIds = [];
         const volumeIdSet = new Set<string>();
@@ -126,13 +135,18 @@ export const useMoveItemsModalState = ({
             return;
         }
 
+        const targetVolumeId = selectedItemParentLinkId
+            ? activeFolder.volumeId
+            : rootItems[0]?.link.volumeId || selectedItems[0]?.volumeId;
+        const parentFolderUid = generateNodeUid(targetVolumeId, targetLinkId);
+
         showCreateFolderModal({
-            parentFolderUid: targetLinkId,
+            parentFolderUid,
             onCreateDone: async (newFolderUid: string) => {
                 setTargetFolderUid(newFolderUid);
 
                 // After creating the folder we want to expand its parent so it shows in the tree
-                const { nodeId } = splitNodeUid(targetLinkId);
+                const { nodeId } = splitNodeUid(parentFolderUid);
                 expand(nodeId);
             },
         });
