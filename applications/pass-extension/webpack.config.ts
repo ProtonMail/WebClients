@@ -78,6 +78,15 @@ section('Build configuration', () => {
 });
 
 section('Proton Configuration', () => {
+    const configLock = fs.existsSync('./config.lock.json')
+        ? fs.readFileSync('./config.lock.json', { encoding: 'utf-8' })
+        : null;
+
+    if (configLock) {
+        console.log(' ⚠️ Using `config.lock.json` override\n');
+        webpackOptions.defineWebpackConfig = JSON.parse(configLock);
+    }
+
     Object.entries(webpackOptions.defineWebpackConfig).forEach(([key, value]) => {
         if (typeof value === 'object') console.log(` ${key} = ${Object.values(value)}`);
         else console.log(` ${key} = ${value}`);
