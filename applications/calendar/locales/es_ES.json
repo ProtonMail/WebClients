@@ -908,6 +908,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Download logs": [
+        "Descargar los registros"
       ]
     },
     "action": {
@@ -976,6 +979,10 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licencia de ${ LUMO_APP_NAME }",
+        "${ seats } licencias de ${ LUMO_APP_NAME }"
       ]
     },
     "Alarm notification": {
@@ -1493,6 +1500,9 @@
       ],
       "Website access problem": [
         "Problema de acceso al sitio web"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problema con ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -6080,6 +6090,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrás seguir viendo los datos de tu propia cuenta, pero todas las cuentas de usuario serán eliminadas de tu organización."
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
+      ],
+      "Download current logs": [
+        "Descargar los registros actuales"
       ]
     },
     "info": {
@@ -6723,6 +6739,9 @@
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Incluir los registros de la aplicación en el informe de errores"
       ]
     },
     "Label for contact group color": {

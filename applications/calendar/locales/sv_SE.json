@@ -908,6 +908,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av skrivbordsappen slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Download logs": [
+        "Ladda ner loggar"
       ]
     },
     "action": {
@@ -976,6 +979,10 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-licens",
+        "${ seats } ${ LUMO_APP_NAME }-licenser"
       ]
     },
     "Alarm notification": {
@@ -1464,6 +1471,9 @@
       ],
       "Website access problem": [
         "Problem med åtkomst till webbplats"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
       ]
     },
     "Button": {
@@ -6040,6 +6050,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
+      ],
+      "Download current logs": [
+        "Ladda ner nuvarande loggar"
       ]
     },
     "info": {
@@ -6683,6 +6699,9 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Inkludera applikationsloggar i felrapport"
       ]
     },
     "Label for contact group color": {

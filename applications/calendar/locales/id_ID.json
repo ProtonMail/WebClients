@@ -892,6 +892,21 @@
       ],
       "Cancel trial and pay": [
         "Batalkan uji coba dan bayar"
+      ],
+      "Add Zoom meeting": [
+        "Tambah pertemuan Zoom"
+      ],
+      "Adding conferencing details": [
+        "Menambahkan rincian konferensi"
+      ],
+      "Download logs": [
+        "Unduh log"
+      ],
+      "Loading Zoom configuration": [
+        "Memuat pengaturan Zoom"
+      ],
+      "Reconnect to Zoom": [
+        "Hubungkan ulang ke Zoom"
       ]
     },
     "action": {
@@ -956,6 +971,9 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } kuota ${ LUMO_APP_NAME }"
       ]
     },
     "Alarm notification": {
@@ -1444,6 +1462,9 @@
       ],
       "Website access problem": [
         "Masalah akses situs"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Masalah ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -3712,6 +3733,21 @@
       ],
       "Please select billing country": [
         "Silakan pilih negara penagihan"
+      ],
+      "Please enter a valid postal code": [
+        "Silakan masukkan kode pos yang valid"
+      ],
+      "Please enter postal code": [
+        "Silakan masukkan kode pos"
+      ],
+      "Please select billing state": [
+        "Silakan pilih negara bagian penagihan"
+      ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Anda telah terhubung ulang ke Zoom. Anda kini dapat menyimpan acara Anda."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Koneksi Zoom Anda telah kedaluwarsa. Silakan hubungkan ulang untuk melanjutkan."
       ]
     },
     "Error accepting calendar invitation": {
@@ -5937,6 +5973,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } meliputi asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
+      "Download current logs": [
+        "Unduh log saat ini"
       ]
     },
     "info": {
@@ -6571,6 +6613,9 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Sertakan log aplikasi dalam laporan bug"
       ]
     },
     "Label for contact group color": {
@@ -7721,6 +7766,9 @@
       ],
       "Switch plans?": [
         "Ubah paket?"
+      ],
+      "Review subscription": [
+        "Tinjau langganan"
       ]
     },
     "new_plans: tooltip": {
@@ -8627,6 +8675,9 @@
       ],
       "I'm purchasing as a business": [
         "Saya membeli produk ini selaku pihak bisnis"
+      ],
+      "This number will be shown on all future invoices": [
+        "Nomor ini akan ditampilkan pada seluruh faktur yang akan datang"
       ]
     },
     "Payments.Error": {
@@ -8801,6 +8852,9 @@
         "Nama organisasi Anda"
       ],
       "ZIP code": [
+        "Kode pos"
+      ],
+      "Postal code": [
         "Kode pos"
       ]
     },
@@ -11537,6 +11591,9 @@
       ],
       "EIN": [
         "NPWP"
+      ],
+      "VAT number": [
+        "Nomor PPN"
       ]
     }
   }
