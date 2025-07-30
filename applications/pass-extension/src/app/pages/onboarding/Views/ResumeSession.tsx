@@ -1,6 +1,6 @@
 import { type FC, useEffect } from 'react';
 
-import { SSO_URL } from 'proton-pass-extension/app/config';
+import config from 'proton-pass-extension/app/config';
 import { pageMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -21,7 +21,7 @@ const bypass = async () => {
 
     try {
         await wait(500);
-        await fetch(SSO_URL);
+        await fetch(config.SSO_URL);
         await sendMessage(
             pageMessage({
                 type: WorkerMessageType.AUTH_INIT,
