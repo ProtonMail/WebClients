@@ -1600,6 +1600,16 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Download application logs": [
+        "Ladda ner applikationsloggar"
+      ],
+      "Download logs": [
+        "Ladda ner loggar"
+      ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
       ]
     },
     "action": {
@@ -1668,6 +1678,10 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-licens",
+        "${ seats } ${ LUMO_APP_NAME }-licenser"
       ]
     },
     "Alert": {
@@ -2192,6 +2206,9 @@
       ],
       "Website access problem": [
         "Problem med åtkomst till webbplats"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } problem"
       ]
     },
     "Button": {
@@ -7133,8 +7150,7 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8550,6 +8566,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
+      ],
+      "Download application logs for troubleshooting": [
+        "Ladda ner applikationsloggar för felsökning"
+      ],
+      "Download current logs": [
+        "Ladda ner nuvarande loggar"
       ]
     },
     "info": {
@@ -9496,6 +9521,12 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Inkludera applikationsloggar i felrapport"
+      ],
+      "Newsletter entry deleted": [
+        "Nyhetsbrevspost borttagen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13731,6 +13762,20 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avslutat din prenumeration"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } konversation borttagen från stjärnmärkt.",
+        "${ elementsCount } konversationer borttagna från stjärnmärkt."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } meddelande borttaget från stjärnmärkt.",
+        "${ elementsCount } meddelanden borttagna från stjärnmärkt."
+      ],
+      "Conversation removed from Starred.": [
+        "Konversation borttagen från stjärnmärkt."
+      ],
+      "Message removed from Starred.": [
+        "Meddelande borttaget från stjärnmärkt."
       ]
     },
     "Success notification": {
@@ -14885,6 +14930,9 @@
       ],
       "Your subscriptions in one place": [
         "Dina prenumerationer på ett ställe"
+      ],
+      "No unsubscribed newsletters": [
+        "Inga avslutade prenumerationer på nyhetsbrev"
       ]
     },
     "Today icon tooltip in mini calendar": {

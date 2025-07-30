@@ -1429,7 +1429,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufaj kluczowi",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1613,6 +1616,12 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Download application logs": [
+        "Pobierz logi aplikacji"
+      ],
+      "Download logs": [
+        "Pobierz logi"
       ]
     },
     "action": {
@@ -1689,6 +1698,12 @@
         "${ users } użytkowników",
         "${ users } użytkowników",
         "${ users } użytkowników"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licencja",
+        "${ seats } ${ LUMO_APP_NAME } licencje",
+        "${ seats } ${ LUMO_APP_NAME } licencji",
+        "${ seats } ${ LUMO_APP_NAME } licencji"
       ]
     },
     "Alert": {
@@ -2248,6 +2263,9 @@
       ],
       "Website access problem": [
         "Problem z dostępem do strony"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problem z ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -7404,10 +7422,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8875,6 +8890,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } zawiera asystenta pisania ${ BRAND_NAME } Scribe"
+      ],
+      "Download application logs for troubleshooting": [
+        "Pobierz logi aplikacji do rozwiązywania problemów"
+      ],
+      "Download current logs": [
+        "Pobierz logi"
       ]
     },
     "info": {
@@ -9833,6 +9857,9 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ],
+      "Include application logs in bug report": [
+        "Dołącz logi aplikacji do raportu błędu"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14287,6 +14314,24 @@
       ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } wątek został usunięty z wyróżnionych.",
+        "${ elementsCount } wątki zostały usunięte z wyróżnionych.",
+        "${ elementsCount } wątków zostało usuniętych z wyróżnionych.",
+        "${ elementsCount } wątków zostało usuniętych z wyróżnionych."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } wiadomość została usunięta z wyróżnionych.",
+        "${ elementsCount } wiadomości zostały usunięte z wyróżnionych.",
+        "${ elementsCount } wiadomości zostało usuniętych z wyróżnionych.",
+        "${ elementsCount } wiadomości zostało usuniętych z wyróżnionych."
+      ],
+      "Conversation removed from Starred.": [
+        "Wątek został usunięty z wyróżnionych."
+      ],
+      "Message removed from Starred.": [
+        "Wiadomość została usunięta z wyróżnionych."
       ]
     },
     "Success notification": {

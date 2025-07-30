@@ -1505,6 +1505,18 @@
       ],
       "Stop marking as read": [
         "停止標記為已讀"
+      ],
+      "Download application logs": [
+        "下載應用程式日誌"
+      ],
+      "Download logs": [
+        "下載日誌"
+      ],
+      "Remove from list": [
+        "從清單中移除"
+      ],
+      "Show more benefits": [
+        "顯示更多好處"
       ]
     },
     "action": {
@@ -1569,6 +1581,9 @@
       ],
       "${ price } per seat": [
         "${ price } 每席"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
       ]
     },
     "Alert": {
@@ -1648,6 +1663,9 @@
       ],
       "200 GB storage": [
         "200 GB 儲存空間"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
       ]
     },
     "anniversary_2025: Offers": {
@@ -1662,6 +1680,9 @@
       ],
       "30 months": [
         "30個月"
+      ],
+      "for ${ durationDeal }": [
+        "為期 ${ durationDeal }"
       ]
     },
     "Apps dropdown": {
@@ -1843,6 +1864,9 @@
       ],
       "VPN Accelerator": [
         "VPN 加速器"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 且 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -1985,6 +2009,9 @@
       ],
       "Website access problem": [
         "網站存取問題"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 疑難問題"
       ]
     },
     "Button": {
@@ -5784,6 +5811,15 @@
       ],
       "Import from Outlook": [
         "從 Outlook 匯入"
+      ],
+      "Import from Google": [
+        "從 Google 匯入"
+      ],
+      "Import from other": [
+        "從其他匯入"
+      ],
+      "Import from Yahoo": [
+        "從 Yahoo 匯入"
       ]
     },
     "Import warning": {
@@ -6639,7 +6675,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7903,6 +7939,18 @@
       ],
       "Selection pane": [
         "選擇窗格"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
+      ],
+      "Download application logs for troubleshooting": [
+        "下載應用程式日誌以供疑難排解"
+      ],
+      "Download current logs": [
+        "下載最近的日誌"
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "升級到 ${ plan } 以解鎖"
       ]
     },
     "info": {
@@ -8801,6 +8849,9 @@
       ],
       "Moved to Trash": [
         "已丟進垃圾桶"
+      ],
+      "Include application logs in bug report": [
+        "在錯誤報告中納入應用程式日誌"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10403,6 +10454,9 @@
       ],
       "Your subscription renews soon": [
         "您的訂閱即將重新續約"
+      ],
+      "Don’t show this again": [
+        "不再顯示此內容"
       ]
     },
     "Offer feature": {
@@ -10429,6 +10483,9 @@
       ],
       "Storage": [
         "雲端儲存"
+      ],
+      "500 GB secure storage": [
+        "500 GB 安全儲存"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11717,6 +11774,12 @@
       ],
       "Keep passwords safe": [
         "保護密碼字元安全"
+      ],
+      "Get unlimited aliases": [
+        "取得無限別名"
+      ],
+      "Increase your storage": [
+        "增加您的儲存"
       ]
     },
     "specialoffer: Offers": {
@@ -11989,6 +12052,9 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "您將不能使用我們的無限密碼記錄、無限的 hide-my-email 別名、高達20個密碼保險箱與我們的全力支援。"
+      ],
+      "Your ${ productString } is full. ${ cta }.": [
+        "您的${ productString }已滿${ cta }。"
       ]
     },
     "Subscription": {
@@ -13657,6 +13723,12 @@
       ],
       "Trash all messages?": [
         "將所有訊息移至垃圾桶？"
+      ],
+      "Help and feedback": [
+        "尋求協助與反映意見"
+      ],
+      "Remove from list?": [
+        "從清單中移除?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14183,6 +14255,21 @@
     "Teams": {
       "Join Teams meeting": [
         "加入Teams會議"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "您的免費滿意體驗將於 ${ timeRemaining } 結束"
+      ]
+    },
+    "Slack": {
+      "Join Slack huddle": [
+        "加入 Slack 討論"
+      ]
+    },
+    "Unlimited offer": {
+      "/month": [
+        "/個月"
       ]
     }
   }

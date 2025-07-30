@@ -1600,6 +1600,16 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Download application logs": [
+        "Télécharger les journaux d'application"
+      ],
+      "Download logs": [
+        "Télécharger les journaux"
+      ],
+      "Trust key": [
+        "Approuver la clé",
+        "Approuver les clés"
       ]
     },
     "action": {
@@ -1668,6 +1678,10 @@
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } accès ${ LUMO_APP_NAME }",
+        "${ seats } accès à ${ LUMO_APP_NAME }"
       ]
     },
     "Alert": {
@@ -2221,6 +2235,9 @@
       ],
       "Website access problem": [
         "Problème d'accès au site web"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problème avec ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -7173,8 +7190,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8596,6 +8612,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
+      ],
+      "Download application logs for troubleshooting": [
+        "Télécharger les journaux d'application pour le dépannage"
+      ],
+      "Download current logs": [
+        "Télécharger les journaux actuels"
       ]
     },
     "info": {
@@ -9545,6 +9570,9 @@
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
+      ],
+      "Include application logs in bug report": [
+        "Inclure les journaux d'application dans le rapport de bug"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13795,6 +13823,20 @@
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } conversation a été retirée des favoris.",
+        "${ elementsCount } conversations ont été retirées des favoris."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } message a été retiré des favoris.",
+        "${ elementsCount } messages ont été retirés des favoris."
+      ],
+      "Conversation removed from Starred.": [
+        "La conversation a été retirée des favoris."
+      ],
+      "Message removed from Starred.": [
+        "Le message a été retiré des favoris."
       ]
     },
     "Success notification": {

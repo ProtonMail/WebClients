@@ -1610,6 +1610,18 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Download application logs": [
+        "Stáhnout logy aplikace"
+      ],
+      "Download logs": [
+        "Stáhnout logy"
+      ],
+      "Trust key": [
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ]
     },
     "action": {
@@ -1686,6 +1698,12 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
       ]
     },
     "Alert": {
@@ -2245,6 +2263,9 @@
       ],
       "Website access problem": [
         "Problém s přístupem k webové stránce"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "Problém s ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Button": {
@@ -7401,10 +7422,7 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8872,6 +8890,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
+      ],
+      "Download application logs for troubleshooting": [
+        "Stáhnout logy aplikace pro řešení problémů"
+      ],
+      "Download current logs": [
+        "Stáhnout aktuální logy"
       ]
     },
     "info": {
@@ -9830,6 +9857,9 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
+      ],
+      "Include application logs in bug report": [
+        "Zahrnout logy aplikace do chybového hlášení"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14284,6 +14314,24 @@
       ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } konverzaci odebrána hvězdička.",
+        "${ elementsCount } konverzacím odebrána hvězdička.",
+        "${ elementsCount } konverzacím odebrána hvězdička.",
+        "${ elementsCount } konverzacím odebrána hvězdička."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } zprávě odebrána hvězdička.",
+        "${ elementsCount } zprávám odebrána hvězdička.",
+        "${ elementsCount } zprávám odebrána hvězdička.",
+        "${ elementsCount } zprávám odebrána hvězdička."
+      ],
+      "Conversation removed from Starred.": [
+        "Konverzaci byla odebrána hvězdička."
+      ],
+      "Message removed from Starred.": [
+        "Zprávě byla odebrána hvězdička."
       ]
     },
     "Success notification": {

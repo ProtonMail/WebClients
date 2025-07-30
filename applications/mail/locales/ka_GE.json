@@ -1597,6 +1597,19 @@
       ],
       "Remove from list": [
         "სიიდან წაშლა"
+      ],
+      "Cancel trial and pay": [
+        "გამოსაცდელი პერიოდის გაუქმება და გადახდა"
+      ],
+      "Download application logs": [
+        "აპლიკაციის ჟურნალის გადმოწერა"
+      ],
+      "Download logs": [
+        "ჟურნალის გადმოწერა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ]
     },
     "action": {
@@ -1665,6 +1678,10 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია"
       ]
     },
     "Alert": {
@@ -2174,6 +2191,9 @@
       ],
       "Website access problem": [
         "ვებგვერდთან წვდომის პრობლემა"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME }-ის პრობლემა"
       ]
     },
     "Button": {
@@ -4842,6 +4862,24 @@
       ],
       "Invalid ZIP code": [
         "არასწორი ZIP კოდი"
+      ],
+      "Please enter a valid postal code": [
+        "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
+      ],
+      "Please enter a valid ZIP code": [
+        "შეიყვანეთ სწორი ZIP კოდი"
+      ],
+      "Please enter postal code": [
+        "შეყვანეთ საფოსტო კოდი"
+      ],
+      "Please enter ZIP code": [
+        "შეიყვანეთ ZIP კოდი"
+      ],
+      "Please select billing country": [
+        "აირჩიეთ გადახდის ქვეყანა"
+      ],
+      "Please select billing state": [
+        "აირჩიეთ გადახდის მდგომარეობა"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7043,7 +7081,6 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -8412,6 +8449,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "Download current logs": [
+        "მიმდინარე ჟურნალის გადმოწერა"
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "განბლოკვისთვის ასწიეთ ტარიფი ${ plan }-მდე"
       ]
     },
     "info": {
@@ -9352,6 +9395,12 @@
       ],
       "Updates": [
         "განახლებები"
+      ],
+      "Include application logs in bug report": [
+        "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
+      ],
+      "Newsletter entry deleted": [
+        "სიახლეების ჩანაწერი წაიშალა"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10650,6 +10699,9 @@
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
+      ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
       ]
     },
     "new_plans: tooltip": {
@@ -11535,6 +11587,9 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "I'm purchasing as a business": [
+        "ვაპირებ შევიძინო ბიზნესისთვის"
       ]
     },
     "Payments.Error": {
@@ -15246,6 +15301,14 @@
       ],
       "VAT number": [
         "დღგ ნომერი"
+      ]
+    },
+    "plus_block": {
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle }-ზე დარჩენა"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
       ]
     }
   }
