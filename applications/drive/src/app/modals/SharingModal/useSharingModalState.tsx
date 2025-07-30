@@ -7,7 +7,6 @@ import type { ModalStateProps } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import {
     MemberRole,
-    NodeType,
     type ShareNodeSettings,
     type ShareResult,
     generateNodeUid,
@@ -32,6 +31,7 @@ export type UseSharingModalProps = ModalStateProps & {
     shareId: string;
     linkId: string;
     onPublicLinkToggle?: (enabled: boolean) => void;
+    isAlbum?: boolean;
 };
 
 const defaultSharingInfo = {
@@ -46,6 +46,7 @@ export const useSharingModalState = ({
     linkId,
     onClose,
     onPublicLinkToggle,
+    isAlbum,
     open,
     onExit,
 }: UseSharingModalProps): SharingModalViewProps => {
@@ -71,7 +72,7 @@ export const useSharingModalState = ({
 
     const [name, setName] = useState('');
 
-    const [isPublicLinkEnabled, setIsPublicLinkEnabled] = useState(true);
+    const [isPublicLinkEnabled, setIsPublicLinkEnabled] = useState(!isAlbum);
 
     const isDirectShared =
         sharingInfo.protonInvitations.length > 0 ||
@@ -230,14 +231,8 @@ export const useSharingModalState = ({
                 }
                 if (nodeInfo.ok) {
                     setName(nodeInfo.value.name);
-                    if (
-                        nodeInfo.value.mediaType &&
-                        isProtonDocsDocument(nodeInfo.value.mediaType) &&
-                        nodeInfo.value.type !== NodeType.Album
-                    ) {
+                    if (nodeInfo.value.mediaType && isProtonDocsDocument(nodeInfo.value.mediaType)) {
                         setIsPublicLinkEnabled(isDocsPublicSharingEnabled);
-                    } else {
-                        setIsPublicLinkEnabled(true);
                     }
                 }
             } catch (e) {
