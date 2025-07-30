@@ -93,9 +93,9 @@ function bundle_extension_from_sources {
     local build_target="$1"
 
     on_enter "$1 (sources)"
-    BUILD_TARGET=$1 NODE_ENV=production yarn run config >/dev/null
-    # Preserve config.ts because the `yarn` postinstall script will overwrite it
-    cp src/app/config.ts src/app/config.ff-release.ts
+
+    # Lock `ProtonConfigV2` for reproducibility
+    BUILD_TARGET=$1 NODE_ENV=production yarn run config:lock >/dev/null
     cd ../../
 
     zip -rqX "$OUTDIR/$BUILD_ID-FF-sources.zip" \
