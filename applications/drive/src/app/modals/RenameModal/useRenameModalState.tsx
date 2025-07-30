@@ -14,11 +14,11 @@ import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 export type UseRenameModalProps = ModalStateProps & {
     onClose?: () => void;
-    onSubmit: (newName: string) => Promise<void>;
     volumeId: string;
     linkId: string;
     name: string;
-    // Delete isFile & isDoc once the OLD RenameModal is removed
+    // Delete below props once the OLD RenameModal is removed
+    onSubmit: (newName: string) => Promise<void>;
     isFile: boolean;
     isDoc: boolean;
 };
