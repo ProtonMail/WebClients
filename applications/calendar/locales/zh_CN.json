@@ -904,6 +904,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Cancel trial and pay": [
+        "取消试用并支付"
       ]
     },
     "action": {
@@ -968,6 +971,9 @@
       ],
       "${ users } user": [
         "${ users } 位用户"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } 席位"
       ]
     },
     "Alarm notification": {
@@ -1306,6 +1312,9 @@
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } 与 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2024: Offers": {
@@ -1448,6 +1457,9 @@
       ],
       "Website access problem": [
         "网站连接问题"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } 问题"
       ]
     },
     "Button": {
@@ -3710,6 +3722,27 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您的 Zoom 连接已过期，请重新连接以继续。"
+      ],
+      "Invalid ZIP code": [
+        "无效的邮政编码"
+      ],
+      "Please enter a valid postal code": [
+        "请输入有效的邮政编码"
+      ],
+      "Please enter a valid ZIP code": [
+        "请输入有效的邮政编码"
+      ],
+      "Please enter postal code": [
+        "请输入邮政编码"
+      ],
+      "Please enter ZIP code": [
+        "请输入邮政编码"
+      ],
+      "Please select billing country": [
+        "请选择您的计费国家/地区"
+      ],
+      "Please select billing state": [
+        "请选择账单省（州）"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5932,6 +5965,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
+      ],
+      "Download current logs": [
+        "下载当前日志"
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "您的 ${ plan } 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
       ]
     },
     "info": {
@@ -6566,6 +6608,9 @@
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
+      ],
+      "Include application logs in bug report": [
+        "在问题反馈中包含应用日志"
       ]
     },
     "Label for contact group color": {
@@ -6581,6 +6626,9 @@
     "Label, credit card": {
       "ZIP code": [
         "邮编"
+      ],
+      "Postal code": [
+        "邮政编码"
       ]
     },
     "Label/folder modal": {
@@ -7685,6 +7733,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "为 6 位用户提供 ${ plusTitle } 的所有高级功能，保护您的家人。"
       ]
     },
     "new_plans: Subtext": {
@@ -7710,6 +7761,9 @@
       ],
       "Switch plans?": [
         "切换计划？"
+      ],
+      "Review subscription": [
+        "查看订阅"
       ]
     },
     "new_plans: tooltip": {
@@ -8224,6 +8278,9 @@
       ],
       "Your subscription renews soon": [
         "您的订阅即将续订"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "最后机会！首月享受 ${ plan } 80% 折扣。"
       ]
     },
     "Offer fearue": {
@@ -8264,6 +8321,9 @@
       ],
       "Ultrafast VPN servers in 110+ countries": [
         "遍布 110 多个国家/地区的超快 VPN 服务器"
+      ],
+      "Unlimited aliases to protect your identity": [
+        "无限别名，保护您的身份"
       ]
     },
     "Onboarding": {
@@ -8607,6 +8667,12 @@
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
+      ],
+      "I'm purchasing as a business": [
+        "以企业身份购买"
+      ],
+      "This number will be shown on all future invoices": [
+        "此编号将显示在所有未来的发票上。"
       ]
     },
     "Payments.Error": {
@@ -8771,6 +8837,12 @@
       ],
       "Your organization name": [
         "您的组织名称"
+      ],
+      "Postal code": [
+        "邮政编码"
+      ],
+      "ZIP code": [
+        "邮政编码"
       ]
     },
     "Placeholder for contact group name": {
@@ -9314,6 +9386,15 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "升级至 ${ pricingTitle }"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "使用 ${ BRAND_NAME } 做您想做的"
+      ],
+      "Guard against threats": [
+        "防范威胁"
+      ],
+      "Increase your storage": [
+        "提升您的存储空间"
       ]
     },
     "specialoffer: Offers": {
@@ -9396,6 +9477,18 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "一次性开通两年 ${ planName } 更加优惠"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "获取遍布 110 多个国家/地区的超快 VPN 服务器"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "获得包含所有功能的套餐，开通 ${ BRAND_NAME } Unlimited"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "获取无限数量的别名，以保护您的身份并减少垃圾邮件。"
+      ],
+      "Keep your passwords safe and organized in multiple vaults ": [
+        "将您的密码安全地存储并分类管理在多个保险库中"
       ]
     },
     "specialoffer: Tooltip": {
@@ -11460,6 +11553,47 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "您的免费体验期将于 ${ timeRemaining } 结束。"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - 卡号尾数为 ${ paymentMethod.Details.Last4 }"
+      ],
+      "Bank transfer - ${ details }": [
+        "银行转账 - ${ details }"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "澳大利亚商业编号 (ABN)"
+      ],
+      "Business Number": [
+        "商业编号"
+      ],
+      "EIN": [
+        "雇主识别号码 (EIN)"
+      ],
+      "VAT number": [
+        "增值税号 (VAT)"
+      ]
+    },
+    "plus_block": {
+      "All ${ protonPlus } services.${ br }One easy subscription.": [
+        "所有 ${ protonPlus } 服务。${ br }轻松订阅。"
+      ],
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "作为 **${ currentPlanTitle }** 订阅者，您可以通过升级到 **${ upsellPlanTitle }** 来解锁 **${ unlockPlanTitle }** 和所有高级 ${ BRAND_NAME } 服务。"
+      ],
+      "Stay on ${ currentPlanTitle }": [
+        "继续使用 ${ currentPlanTitle }"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "升级至 ${ upsellPlanTitle }"
       ]
     }
   }
