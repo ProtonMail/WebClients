@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, useCallback, useRef } from 'react';
 
-import * as config from 'proton-pass-extension/app/config';
+import config from 'proton-pass-extension/app/config';
 import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
 import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtime';
