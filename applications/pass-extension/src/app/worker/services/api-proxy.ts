@@ -1,4 +1,4 @@
-import { API_URL } from 'proton-pass-extension/app/config';
+import config from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { API_PROXY_IMAGE_ENDPOINT, API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtime';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -35,7 +35,7 @@ export const createApiProxyService = () => {
             (event, signal) => {
                 if (event.request.url.startsWith(API_PROXY_URL)) {
                     const remotePath = event.request.url.replace(API_PROXY_URL, '');
-                    const url = `${API_URL}${remotePath}`;
+                    const url = `${config.API_URL}${remotePath}`;
 
                     if (remotePath.startsWith(API_PROXY_IMAGE_ENDPOINT)) return imageProxy(url, signal);
 
@@ -59,14 +59,14 @@ export const createApiProxyService = () => {
                 const UID = authStore.getUID();
                 const AccessToken = authStore.getAccessToken();
 
-                if (UID && AccessToken && details.url.startsWith(`${API_URL}${API_PROXY_IMAGE_ENDPOINT}`)) {
+                if (UID && AccessToken && details.url.startsWith(`${config.API_URL}${API_PROXY_IMAGE_ENDPOINT}`)) {
                     details.requestHeaders?.push({ name: 'x-pm-uid', value: UID });
                     details.requestHeaders?.push({ name: 'Authorization', value: `Bearer ${AccessToken}` });
                 }
 
                 return { requestHeaders: details.requestHeaders };
             },
-            { urls: [`${API_URL}/*/*`] },
+            { urls: [`${config.API_URL}/*/*`] },
             ['blocking', 'requestHeaders']
         );
     }

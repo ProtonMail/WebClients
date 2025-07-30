@@ -1,17 +1,19 @@
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import path from 'path';
+import type { Configuration, EntryObject } from 'webpack';
+import webpack from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
+
+import config from '../webpack.config';
+import createDebuggerServer from './debugger-server';
+import envVars from './env';
+import createReduxDevTools from './redux-tools';
+import createReloadRuntimeServer from './reload-runtime';
+
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
 process.env.ASSET_PATH = '/';
 
-const WebpackDevServer = require('webpack-dev-server');
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const webpack = require('webpack');
-
-const path = require('path');
-const createReloadRuntimeServer = require('./reload-runtime');
-const createReduxDevTools = require('./redux-tools');
-const createDebuggerServer = require('./debugger-server');
-
-const config = require('../webpack.config');
 const {
     WEBPACK_DEV_PORT,
     REDUX_DEVTOOLS_PORT,
@@ -19,7 +21,7 @@ const {
     RUNTIME_RELOAD,
     RUNTIME_RELOAD_PORT,
     HTTP_DEBUGGER,
-} = require('./env');
+} = envVars;
 
 const EXCLUDED_WEBPACK_ENTRIES = [
     'account',
@@ -32,35 +34,53 @@ const EXCLUDED_WEBPACK_ENTRIES = [
     'webauthn',
 ];
 
-const sanitizeWebpackConfig = (config) => {
+const sanitizeWebpackConfig = (config: Configuration) => {
+    const alias = config.resolve!.alias as Record<string, string>;
     /** In `@pmmmwh/react-refresh-webpack-plugin/client/ReactRefreshEntry.js`, the import of
      * `core-js-pure` introduces corejs polyfills which we aim to exclude when injecting into
      * content-scripts. Therefore, we are aliasing the import to prevent this behavior. */
-    config.resolve.alias['core-js-pure/features/global-this'] = path.resolve(__dirname, './global-this.js');
+    alias['core-js-pure/features/global-this'] = path.resolve(__dirname, './global-this.js');
 
     /* Only allow hot reloading capabilities for the pop-up
      * app while maintaining a "stale watch mode" for other
      * parts of the extension. */
-    Object.keys(config.entry).forEach((entryName) => {
+    Object.keys(config.entry!).forEach((entryName) => {
         if (!EXCLUDED_WEBPACK_ENTRIES.includes(entryName)) {
-            const entries = [config.entry[entryName]].flat();
-            if (typeof config.entry[entryName] === 'string') {
-                config.entry[entryName] = [
+            const entryObj = config.entry! as EntryObject;
+            const entry = entryObj[entryName];
+
+            if (typeof entry === 'string' || Array.isArray(entry)) {
+                entryObj[entryName] = [
                     /* runtime code for hotmodule replacement */
                     'webpack/hot/dev-server',
                     /* dev-server client for web socket transport */
                     `webpack-dev-server/client?hot=true&hostname=localhost&port=${WEBPACK_DEV_PORT}&protocol=ws:`,
-                    ...entries,
-                ];
+                    entry,
+                ].flat();
+            } else {
+                const entryImport = entry.import;
+                if (typeof entryImport === 'string' || Array.isArray(entryImport)) {
+                    entry.import = [
+                        /* runtime code for hotmodule replacement */
+                        'webpack/hot/dev-server',
+                        /* dev-server client for web socket transport */
+                        `webpack-dev-server/client?hot=true&hostname=localhost&port=${WEBPACK_DEV_PORT}&protocol=ws:`,
+                        entryImport,
+                    ].flat();
+                }
             }
         }
     });
 
-    config.plugins = [new ReactRefreshWebpackPlugin({ overlay: false }), ...config.plugins];
+    config.plugins = [new ReactRefreshWebpackPlugin({ overlay: false }), ...(config.plugins ?? [])];
     return config;
 };
 
-const compiler = webpack(sanitizeWebpackConfig(config));
+const devConfig = sanitizeWebpackConfig(config);
+const compiler = webpack(devConfig);
+if (!compiler) {
+    throw new Error('webpack compiler is missing');
+}
 
 const server = new WebpackDevServer(
     {

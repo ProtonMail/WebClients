@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 
-import * as config from 'proton-pass-extension/app/config';
+import config from 'proton-pass-extension/app/config';
 import { ExtensionRoot } from 'proton-pass-extension/lib/components/Extension/ExtensionRoot';
 import { ExtensionSetup } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 

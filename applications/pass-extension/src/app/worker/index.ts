@@ -4,7 +4,7 @@
  * browser APIs from the top-level scope of this file. "Top-level" refers to
  * any bundled code that runs immediately when the file is loaded. This includes
  * side-effects such as directly executed statements and exported constants. */
-import * as config from 'proton-pass-extension/app/config';
+import config from 'proton-pass-extension/app/config';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { checkChromeRuntimeError } from 'proton-pass-extension/lib/utils/chrome';
 import 'proton-pass-extension/lib/utils/polyfills';

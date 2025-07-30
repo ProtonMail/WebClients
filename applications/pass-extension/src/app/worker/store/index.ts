@@ -1,6 +1,6 @@
 import { devToolsEnhancer } from '@redux-devtools/remote';
 import { configureStore } from '@reduxjs/toolkit';
-import * as CONFIG from 'proton-pass-extension/app/config';
+import config from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
@@ -102,7 +102,7 @@ export const options: RootSagaOptions = {
     getSettings: withContext((ctx) => ctx.service.settings.resolve()),
     getStorage: withContext((ctx) => ctx.service.storage.local),
     getTelemetry: withContext((ctx) => ctx.service.telemetry),
-    getConfig: () => CONFIG,
+    getConfig: () => config,
     getAppState: withContext((ctx) => ctx.getState()),
     setAppStatus: withContext((ctx, status) => ctx.setStatus(status)),
 

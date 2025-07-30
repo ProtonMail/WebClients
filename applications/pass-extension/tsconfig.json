@@ -5,5 +5,16 @@
         "target": "esnext",
         "lib": ["dom", "dom.iterable", "esnext", "WebWorker", "DOM.AsyncIterable"],
         "types": ["webpack-env", "jest", "chrome", "webextension-polyfill", "./globals.d.ts"]
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "allowJs": true,
+            "esModuleInterop": true,
+            "module": "commonjs",
+            "moduleResolution": "node",
+            "resolveJsonModule": true,
+            "skipLibCheck": true,
+            "target": "ES6"
+        }
     }
 }
