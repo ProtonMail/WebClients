@@ -124,7 +124,11 @@ const getLumoText = (organization?: Organization) => {
         return null;
     }
 
-    return LUMO_APP_NAME;
+    return c('Subscription attribute').ngettext(
+        msgid`${LUMO_APP_NAME} for ${maxLumo} user`,
+        `${LUMO_APP_NAME} for ${maxLumo} users`,
+        maxLumo
+    );
 };
 
 /**
