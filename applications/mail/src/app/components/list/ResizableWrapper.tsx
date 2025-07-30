@@ -146,7 +146,7 @@ export const ResizableWrapper = ({
     }, [isResizing]);
 
     if (resizingDisabled) {
-        return children;
+        return <>{children}</>;
     }
 
     return (

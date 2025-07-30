@@ -71,7 +71,6 @@ export const NewsletterSubscriptionView = ({
     navigation,
     params,
 }: NewsletterSubscriptionViewProps) => {
-    const mailboxRefactoring = useFlag('MailboxRefactoring');
     const newsletterSubscriptionsView = useFlag('NewsletterSubscriptionView');
     const { feature } = useFeature(FeatureCode.NewsletterSubscriptionViewOnboarding);
 
@@ -128,7 +127,7 @@ export const NewsletterSubscriptionView = ({
     }, [activeSubscription?.ID, params.newsletterSubscriptionID]);
 
     // The view is not available on mobile, we want to make sure to avoid showing it to users
-    if (!newsletterSubscriptionsView || !mailboxRefactoring || breakpoints.viewportWidth['<=small']) {
+    if (!newsletterSubscriptionsView || breakpoints.viewportWidth['<=small']) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
