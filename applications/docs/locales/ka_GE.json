@@ -892,6 +892,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
         "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
+      ],
+      "Cancel trial and pay": [
+        "გამოსაცდელი პერიოდის გაუქმება და გადახდა"
       ]
     },
     "Actions message": {
@@ -939,6 +942,10 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია"
       ]
     },
     "Alert": {
@@ -1358,6 +1365,9 @@
       ],
       "Website access problem": [
         "ვებგვერდთან წვდომის პრობლემა"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME }-ის პრობლემა"
       ]
     },
     "Button": {
@@ -3244,6 +3254,24 @@
       ],
       "Your import will not be processed.": [
         "თქვენი შემოტანა არ დამუშავდება."
+      ],
+      "Please enter a valid postal code": [
+        "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
+      ],
+      "Please enter a valid ZIP code": [
+        "შეიყვანეთ სწორი ZIP კოდი"
+      ],
+      "Please enter postal code": [
+        "შეყვანეთ საფოსტო კოდი"
+      ],
+      "Please enter ZIP code": [
+        "შეიყვანეთ ZIP კოდი"
+      ],
+      "Please select billing country": [
+        "აირჩიეთ გადახდის ქვეყანა"
+      ],
+      "Please select billing state": [
+        "აირჩიეთ გადახდის მდგომარეობა"
       ]
     },
     "Error importing calendar": {
@@ -5523,6 +5551,9 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "Download current logs": [
+        "მიმდინარე ჟურნალის გადმოწერა"
       ]
     },
     "info": {
@@ -6097,6 +6128,9 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ],
+      "Include application logs in bug report": [
+        "აპლიკაციის ჟურნალის ჩასმა შეცდომის ანგარიშში"
       ]
     },
     "Label for contact group color": {
@@ -7217,6 +7251,9 @@
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
+      ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
       ]
     },
     "new_plans: tooltip": {
@@ -8102,6 +8139,9 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "I'm purchasing as a business": [
+        "ვაპირებ შევიძინო ბიზნესისთვის"
       ]
     },
     "Payments.Error": {
@@ -10421,6 +10461,14 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
+      ]
+    },
+    "plus_block": {
+      "Stay on ${ currentPlanTitle }": [
+        "${ currentPlanTitle }-ზე დარჩენა"
+      ],
+      "Upgrade to ${ upsellPlanTitle }": [
+        "სატარიფო გეგმის განახლება: ${ upsellPlanTitle }"
       ]
     }
   }
