@@ -1,0 +1,27 @@
+@import '~@proton/styles/scss/lib';
+
+.retention-policy-product-selection .select.field {
+	min-block-size: var(--space-14);
+	padding-inline-start: var(--space-3);
+}
+
+.retention-policy-dropdown .dropdown-item-button.dropdown-item--is-selected {
+	background-color: var(--background-weak);
+	color: var(--text-norm);
+
+	&:hover {
+		background-color: var(--background-weak-hover);
+		color: var(--text-norm);
+	}
+
+	&:focus {
+		background-color: var(--background-weak);
+		color: var(--text-norm);
+		outline: none;
+	}
+
+	&:active {
+		background-color: var(--background-weak-active);
+		color: var(--text-norm);
+	}
+}
