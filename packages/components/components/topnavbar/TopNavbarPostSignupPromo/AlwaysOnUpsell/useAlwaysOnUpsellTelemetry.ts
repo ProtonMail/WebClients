@@ -2,8 +2,10 @@ import { useUserSettings } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import type { PLANS } from '@proton/payments';
 import { type TelemetryAlwaysOnUpsellEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { normalizeProduct } from '@proton/shared/lib/apps/product';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
 
 type TelemetryDimensions<T extends TelemetryAlwaysOnUpsellEvents> =
@@ -14,6 +16,7 @@ export const useAlwaysOnUpsellTelemetry = () => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [userSettings] = useUserSettings();
+    const { APP_NAME } = useConfig();
 
     return <T extends TelemetryAlwaysOnUpsellEvents>(event: T, dimensions: TelemetryDimensions<T>) =>
         sendTelemetryReportWithBaseDimensions({
@@ -23,7 +26,10 @@ export const useAlwaysOnUpsellTelemetry = () => {
             userSettings,
             measurementGroup: TelemetryMeasurementGroups.alwaysOnUpsell,
             event,
-            dimensions,
+            dimensions: {
+                ...dimensions,
+                product: normalizeProduct(APP_NAME),
+            },
             delay: false,
         });
 };
