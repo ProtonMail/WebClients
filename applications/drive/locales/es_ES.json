@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "Reenviar como adjunto"
       ],
+      "Full data": [
+        "Todos los datos"
+      ],
       "Generate password": [
         "Generar contraseña"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "Página siguiente"
+      ],
+      "No sensitive data": [
+        "Sin datos sensibles"
       ],
       "Not now": [
         "Ahora no"
@@ -3277,6 +3283,9 @@
       "Failed to fetch sharing info": [
         "Error al obtener información para compartir"
       ],
+      "Failed to get details, please try again later": [
+        "Error al obtener los detalles, por favor intente de nuevo más tarde"
+      ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa STL"
       ],
@@ -3624,6 +3633,9 @@
       "Unknown error": [
         "Error desconocido"
       ],
+      "Unknown location": [
+        "Ubicación desconocida"
+      ],
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
       ],
@@ -3657,6 +3669,9 @@
       ],
       "Your import will not be processed.": [
         "No se procesará tu importación."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nombre indescifrable"
       ]
     },
     "Error importing calendar": {
@@ -11311,6 +11326,9 @@
       "Addresses": [
         "Direcciones"
       ],
+      "Advanced details": [
+        "Detalles avanzados"
+      ],
       "Album": [
         "Álbum"
       ],
@@ -11328,6 +11346,12 @@
       ],
       "Amount due": [
         "Importe a pagar"
+      ],
+      "an anonymous user": [
+        "un usuario anónimo"
+      ],
+      "Anonymous user": [
+        "Usuario anónimo"
       ],
       "Apply gift code": [
         "Aplicar código de regalo"
@@ -11435,6 +11459,9 @@
       "Create new group": [
         "Crear grupo"
       ],
+      "Created by": [
+        "Creado por"
+      ],
       "Credits": [
         "Créditos"
       ],
@@ -11492,6 +11519,33 @@
       "Desktop": [
         "Escritorio"
       ],
+      "Devices": [
+        "Dispositivos"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digital parcialmente verificada. Este archivo fue creado usando un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que su identidad no puede ser verificada."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digital parcialmente verificada. Este archivo fue subido usando un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que su identidad no puede ser verificada."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digital parcialmente verificada. Esta carpeta fue creada usando un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que su identidad no puede ser verificada."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digital parcialmente verificada. Esta carpeta fue subida usando un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que su identidad no puede ser verificada."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Firma digital verificada. Este archivo fue creado de forma segura por <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Firma digital verificada. Este archivo fue subido de forma segura por <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Firma digital verificada. Esta carpeta fue creada de forma segura por <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Firma digital verificada. Esta carpeta fue cargada de forma segura por <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -11509,6 +11563,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarga las aplicaciones de ${ DRIVE_APP_NAME }"
+      ],
+      "Download details": [
+        "Detalles de la descarga"
       ],
       "Download the app": [
         "Descargar la aplicación"
@@ -11588,6 +11645,9 @@
       "File recovery process": [
         "Proceso de recuperación de archivos"
       ],
+      "Folder": [
+        "Carpeta"
+      ],
       "Folder details": [
         "Detalles de la carpeta"
       ],
@@ -11656,6 +11716,9 @@
       "Last edited by": [
         "Última edición por"
       ],
+      "Last uploaded by": [
+        "Subido por última vez por"
+      ],
       "Link confirmation": [
         "Confirmación de enlace"
       ],
@@ -11667,6 +11730,9 @@
       ],
       "Manage secure link": [
         "Administrar enlace seguro"
+      ],
+      "Media type": [
+        "Tipo de medio"
       ],
       "Merge contacts": [
         "Combinar contactos"
@@ -11766,6 +11832,9 @@
       ],
       "Original size": [
         "Tamaño original"
+      ],
+      "Original size in bytes": [
+        "Tamaño original en bytes"
       ],
       "Other information": [
         "Otra información"
@@ -11894,6 +11963,9 @@
       "Settings": [
         "Configuración"
       ],
+      "SHA1": [
+        "SHA-1"
+      ],
       "Share ${ name }": [
         "Compartir ${ name }"
       ],
@@ -11923,6 +11995,9 @@
       ],
       "Size": [
         "Tamaño"
+      ],
+      "Size in bytes": [
+        "Tamaño en bytes"
       ],
       "Sort files/folders": [
         "Ordenar archivos/carpetas"
@@ -11954,6 +12029,12 @@
       "The link expired": [
         "El enlace ha expirado."
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "La verificación de la firma de las claves de cifrado por el creador original (${ claimedKeyAuthor }) quien creó el nodo, falló. La razón es: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "La verificación de la firma del nombre por parte del autor (${ claimedNameAuthor }), quien lo estableció la última vez, falló. La razón es: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Este archivo no tiene firma o no es válida. Ve a Menú (⋮) → Detalles para obtener información."
       ],
@@ -11974,6 +12055,12 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Usuario desconocido"
       ],
       "Untitled document ${ date }": [
         "Documento sin título ${ date }"
@@ -12022,6 +12109,30 @@
       ],
       "Warning: suspected fake website": [
         "Advertencia: sospecha de sitio web falso"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "No pudimos verificar que <strong>${ emailAddress }</strong> creó este archivo."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "No pudimos verificar que <strong>${ emailAddress }</strong> creó esta carpeta."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "No pudimos verificar que <strong>${ emailAddress }</strong> subió este archivo."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "No pudimos verificar que <strong>${ emailAddress }</strong> subió esta carpeta."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "No pudimos verificar que un usuario anónimo creó este archivo."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "No pudimos verificar que un usuario anónimo creó esta carpeta."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "No pudimos verificar que un usuario anónimo subió este archivo."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "No pudimos verificar que un usuario anónimo subió esta carpeta."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Te damos la bienvenida a ${ BRAND_NAME } for Business"

@@ -459,7 +459,7 @@
         "Obtén l'enllaç"
       ],
       "Get secure storage for ${ simplePriceString }": [
-        "Obtingueu emmagatzematge segur per ${ simplePriceString }"
+        "Obteniu emmagatzematge segur per ${ simplePriceString }"
       ],
       "Get Started": [
         "Comença"
@@ -918,7 +918,7 @@
         "Estableix la frase de recuperació"
       ],
       "Set up 2FA": [
-        "Configuració de l'A2F"
+        "Configuració 2FA"
       ],
       "Set up a custom domain": [
         "Configura un domini personalitzat"
@@ -1083,7 +1083,7 @@
         "Puja una carpeta"
       ],
       "Upload from computer": [
-        "Carregar des de l'ordinador"
+        "Carrega des de l'ordinador"
       ],
       "Upload photos": [
         "Carrega fotos"
@@ -2846,7 +2846,7 @@
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Us permet afegir instantàniament enllaços de reunions a les invitacions d'esdeveniments."
+        "Us permet afegir instantàniament enllaços de reunió a les invitacions d'esdeveniments."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
@@ -3250,7 +3250,7 @@
         "No s'ha pogut obtenir la informació de compartició"
       ],
       "Failed to get details, please try again later": [
-        "No se n'han pogut obtenir els detalls, torneu-ho a provar més tard"
+        "No se n'han pogut obtenir els detalls. Torneu-ho a provar més tard."
       ],
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
@@ -4822,7 +4822,7 @@
         "Qualsevol que tingui aquest enllaç pot accedir a la carpeta."
       ],
       "Apr": [
-        "Abr."
+        "abr."
       ],
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
@@ -4855,7 +4855,7 @@
         "Es requereix la vostra atenció"
       ],
       "Aug": [
-        "Ago."
+        "ag."
       ],
       "Available": [
         "Disponible"
@@ -5162,7 +5162,7 @@
         "Error obrint un enllaç segur. La raó és: ${ error }"
       ],
       "Feb": [
-        "Febr."
+        "febr."
       ],
       "File \"${ name }\" was deleted during download": [
         "El fitxer «${ name }» s'ha eliminat durant la descarregada"
@@ -6376,7 +6376,7 @@
         "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
+        "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Segur que voleu continuar?"
       ],
       "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Esteu a punt de rebutjar la invitació per unir-vos a la carpeta ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
@@ -8868,7 +8868,7 @@
         "S'ha activat la cerca xifrada"
       ],
       "Error while listing devices": [
-        "Error en la llista de dispositius"
+        "S'ha produït un error en mostrar la llista de dispositius"
       ],
       "External invitation removed from the share": [
         "S'ha esborrat la invitació externa de la compartició"
@@ -10945,7 +10945,7 @@
         "Les vostres ràfegues de fotos apareixeran aquí."
       ],
       "Your portraits photos will appear here": [
-        "Les vostres fotos de retrats apareixeran aquí."
+        "Els vostres retrats apareixeran aquí."
       ],
       "Your RAW photos will appear here": [
         "Les vostres fotos RAW apareixeran aquí."
@@ -10954,7 +10954,7 @@
         "Les vostres captures de pantalla apareixeran aquí."
       ],
       "Your selfies photos will appear here": [
-        "Les vostres fotos de selfies apareixeran aquí."
+        "Les vostres autofotos apareixeran aquí."
       ],
       "Your tagged photos will appear here": [
         "Les vostres fotos etiquetades apareixeran aquí."
@@ -11364,7 +11364,7 @@
         "Netejant dades"
       ],
       "Collaborate on documents": [
-        "Col·laboreu en documents"
+        "Col·laboració en documents"
       ],
       "Completed": [
         "Completat"
@@ -11490,7 +11490,7 @@
         "La signatura digital s'ha verificat parcialment. Aquesta carpeta va ser creada mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
       ],
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "La signatura digital s\"ha verificat parcialment. Aquesta carpeta va ser carregada mitjançant un enllaç compartit accessible públicament per un usuari sense un compte ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
+        "La signatura digital s'ha verificat parcialment. Aquesta carpeta va ser carregada mitjançant un enllaç compartit accessible públicament per un usuari sense un compte de ${ BRAND_NAME }, de manera que no es pot verificar la seva identitat."
       ],
       "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
         "S'ha validat la signatura digital. Aquest fitxer va ser creat de manera segura per <strong>${ emailAddress }</strong>."
@@ -11574,7 +11574,7 @@
         "Activa l'autenticació 2FA"
       ],
       "Enable advanced account protection": [
-        "Activeu la protecció avançada del compte"
+        "Activació de la protecció avançada del compte"
       ],
       "Enable drive search": [
         "Activa la cerca de la unitat"
@@ -11744,7 +11744,7 @@
         "Sense fotos en directe"
       ],
       "No panorama": [
-        "Sense panoramas"
+        "Sense fotografies panoràmiques"
       ],
       "No photos": [
         "Sense fotos"
@@ -11855,8 +11855,8 @@
         "Voleu esborrar el dispositiu?"
       ],
       "Remove item?": [
-        "Esborra l'element?",
-        "Esborra els elements?"
+        "Voleu esborrar l'element?",
+        "Voleu esborrar els elements?"
       ],
       "Rename a file": [
         "Canvia el nom"
@@ -11904,13 +11904,13 @@
         "Selecciona el temps de caducitat de l'enllaç"
       ],
       "Set recovery methods": [
-        "Configureu els mètodes de recuperació"
+        "Configuració dels mètodes de recuperació"
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
       ],
       "Set up email forwarding": [
-        "Configureu el reenviament de correu"
+        "Configuració del reenviament de correu"
       ],
       "Set up your organization": [
         "Configureu la vostra organització"
@@ -11943,7 +11943,7 @@
         "Tanca la sessió"
       ],
       "Simplify email distribution": [
-        "Simplifiqueu la distribució de correu"
+        "Simplifiqueu la distribució de correu electrònic"
       ],
       "Simplify password management": [
         "Simplifiqueu la gestió de contrasenyes"
@@ -12015,7 +12015,7 @@
         "Tipus"
       ],
       "Unknown user": [
-        "Aquest usuari és desconegut"
+        "Usuari desconegut"
       ],
       "Untitled document ${ date }": [
         "Document sense títol ${ date }"
