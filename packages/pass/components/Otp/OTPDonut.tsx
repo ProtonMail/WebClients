@@ -7,39 +7,50 @@ import './OTPDonut.scss';
 
 type CSSVarColor = `--${string}`;
 
+export type OTPDonutColorConfig<T> = { empty: T; filled: T; warning: T; danger: T };
+
 type Props = {
-    colorEmpty?: CSSVarColor;
-    colorFilled?: CSSVarColor;
+    colors?: OTPDonutColorConfig<CSSVarColor>;
     enabled: boolean;
     thickness?: number;
 };
 
-type OTPDonutColors = [empty: string, filled: string];
+const DEFAULT_OTP_COLORS: OTPDonutColorConfig<CSSVarColor> = {
+    empty: '--text-hint',
+    filled: '--signal-success',
+    warning: '--signal-warning',
+    danger: '--signal-danger',
+};
 
 export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
-    ({ colorEmpty = '--text-hint', colorFilled = '--signal-success', enabled, thickness = 3 }, ref) => {
+    ({ colors = DEFAULT_OTP_COLORS, enabled, thickness = 3 }, ref) => {
         const wrapperRef = useRef<HTMLDivElement>(null);
         const canvasRef = useRef<HTMLCanvasElement>(null);
-        const colorsRef = useRef<OTPDonutColors>();
+        const colorsRef = useRef<OTPDonutColorConfig<string>>();
 
         const getColors = useCallback(
-            (canvas: HTMLCanvasElement): OTPDonutColors => {
+            (canvas: HTMLCanvasElement): OTPDonutColorConfig<string> => {
                 if (colorsRef.current) return colorsRef.current;
-
                 const computedStyle = window.getComputedStyle(canvas);
-                const filled = computedStyle.getPropertyValue(colorFilled);
-                const empty = computedStyle.getPropertyValue(colorEmpty);
 
-                return [empty, filled];
+                colorsRef.current = {
+                    empty: computedStyle.getPropertyValue(colors.empty),
+                    filled: computedStyle.getPropertyValue(colors.filled),
+                    warning: computedStyle.getPropertyValue(colors.warning),
+                    danger: computedStyle.getPropertyValue(colors.danger),
+                };
+
+                return colorsRef.current;
             },
-            [colorEmpty, colorFilled]
+            [colors]
         );
 
         useImperativeHandle<OTPRendererHandles, OTPRendererHandles>(
             ref,
             () => ({
                 draw: (percent, period) => {
-                    wrapperRef.current?.style.setProperty('--countdown-value', `"${Math.round(percent * period)}"`);
+                    const countDown = Math.round(percent * period);
+                    wrapperRef.current?.style.setProperty('--countdown-value', `"${countDown}"`);
 
                     const canvas = canvasRef.current;
                     const ctx = canvas?.getContext('2d');
@@ -47,7 +58,14 @@ export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
 
                     const size = 36;
                     const dpr = window.devicePixelRatio || 1;
-                    const [empty, filled] = getColors(canvas);
+                    const computedColors = getColors(canvas);
+
+                    const emptyColor = computedColors.empty;
+                    const fillColor = (() => {
+                        if (countDown <= 5) return computedColors.danger;
+                        if (countDown <= 10) return computedColors.warning;
+                        return computedColors.filled;
+                    })();
 
                     canvas.width = size * dpr;
                     canvas.height = size * dpr;
@@ -60,13 +78,13 @@ export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
 
                     ctx.clearRect(0, 0, size, size);
 
-                    ctx.strokeStyle = empty;
+                    ctx.strokeStyle = fillColor;
                     ctx.lineWidth = thickness;
                     ctx.beginPath();
-                    ctx.arc(center, center, radius, 0, 2 * Math.PI);
+                    ctx.arc(center, center, radius, endAngle, startAngle);
                     ctx.stroke();
 
-                    ctx.strokeStyle = filled;
+                    ctx.strokeStyle = emptyColor;
                     ctx.lineWidth = thickness;
                     ctx.beginPath();
                     ctx.arc(center, center, radius, startAngle, endAngle);
@@ -76,9 +94,7 @@ export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
             [getColors]
         );
 
-        useEffect(() => {
-            colorsRef.current = undefined;
-        }, [colorFilled, colorEmpty]);
+        useEffect(() => (colorsRef.current = undefined), [colors]);
 
         return (
             <div ref={wrapperRef} className={clsx('pass-otp--donut pointer-events-none anime-fade-in')}>
