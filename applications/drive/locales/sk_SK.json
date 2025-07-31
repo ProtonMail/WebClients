@@ -450,6 +450,9 @@
       "Forward as attachment": [
         "Preposlať ako prílohu"
       ],
+      "Full data": [
+        "Úplné údaje"
+      ],
       "Generate password": [
         "Vygenerovať heslo"
       ],
@@ -695,6 +698,9 @@
       ],
       "Next page": [
         "Ďalšia strana"
+      ],
+      "No sensitive data": [
+        "Žiadne citlivé údaje"
       ],
       "Not now": [
         "Teraz nie"
@@ -3279,6 +3285,9 @@
       "Failed to fetch sharing info": [
         "Načítanie informácií o zdieľaní zlyhalo"
       ],
+      "Failed to get details, please try again later": [
+        "Nepodarilo sa načítať podrobnosti, skúste to neskôr, prosím."
+      ],
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
       ],
@@ -3636,6 +3645,9 @@
       "Unknown error": [
         "Neznáma chyba"
       ],
+      "Unknown location": [
+        "Neznáma poloha"
+      ],
       "Unknown payment token status": [
         "Neznámy stav platobného tokenu"
       ],
@@ -3671,6 +3683,9 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude spracovaný."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nerozšifrovateľný názov"
       ]
     },
     "Error importing calendar": {
@@ -11624,6 +11639,9 @@
       "Addresses": [
         "Adresy"
       ],
+      "Advanced details": [
+        "Podrobné informácie"
+      ],
       "Album": [
         "Album"
       ],
@@ -11641,6 +11659,12 @@
       ],
       "Amount due": [
         "Čiastka k zaplateniu"
+      ],
+      "an anonymous user": [
+        "anonymný používateľ"
+      ],
+      "Anonymous user": [
+        "Anonymný používateľ"
       ],
       "Apply gift code": [
         "Použiť darčekový kód"
@@ -11750,6 +11774,9 @@
       "Create new group": [
         "Vytvoriť novú skupinu"
       ],
+      "Created by": [
+        "Vytvoril"
+      ],
       "Credits": [
         "Kredity"
       ],
@@ -11813,6 +11840,33 @@
       "Desktop": [
         "Počítač"
       ],
+      "Devices": [
+        "Zariadenia"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Elektronický podpis bol čiastočne overený. Tento súbor bol vytvorený pomocou verejne prístupného zdieľaného odkazu používateľom bez účtu ${ BRAND_NAME }, takže jeho identita nemôže byť overená."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Elektronický podpis bol čiastočne overený. Tento súbor bol nahratý pomocou verejne prístupného zdieľaného odkazu používateľom bez ${ BRAND_NAME } účtu, takže jeho identita nemôže byť overená."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Elektronický podpis bol čiastočne overený. Táto zložka bola vytvorená pomocou verejne prístupného zdieľaného odkazu používateľom bez ${ BRAND_NAME } účtu, takže jeho identita nemôže byť overená."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Elektronický podpis bol čiastočne overený. Tento priečinok bol nahratý pomocou verejne prístupného zdieľaného odkazu používateľom bez ${ BRAND_NAME } účtu, takže jeho identita nemôže byť overená."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Elektronický podpis overený. Tento súbor bol bezpečne vytvorený používateľom s adresou <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Elektronický podpis overený. Tento súbor bol bezpečne nahraný používateľom <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Elektronický podpis overený. Tento priečinok bol bezpečne vytvorený používateľom s adresou <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Elektronický podpis overený. Táto zložka bola bezpečne nahraná používateľom <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Zahodiť"
       ],
@@ -11830,6 +11884,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
+      ],
+      "Download details": [
+        "Podrobnosti sťahovania"
       ],
       "Download the app": [
         "Stiahnuť aplikáciu"
@@ -11909,6 +11966,9 @@
       "File recovery process": [
         "Proces obnovy súboru"
       ],
+      "Folder": [
+        "Priečinok"
+      ],
       "Folder details": [
         "Podrobnosti priečinka"
       ],
@@ -11981,6 +12041,9 @@
       "Last edited by": [
         "Naposledy upravené používateľom"
       ],
+      "Last uploaded by": [
+        "Naposledy nahrané používateľom"
+      ],
       "Link confirmation": [
         "Potvrdenie pred otvorením odkazu"
       ],
@@ -11992,6 +12055,9 @@
       ],
       "Manage secure link": [
         "Spravovať zabezpečený odkaz"
+      ],
+      "Media type": [
+        "Typ média"
       ],
       "Merge contacts": [
         "Zlúčiť kontakty"
@@ -12091,6 +12157,9 @@
       ],
       "Original size": [
         "Pôvodná veľkosť"
+      ],
+      "Original size in bytes": [
+        "Pôvodná veľkosť v bajtoch"
       ],
       "Other information": [
         "Ďalšie informácie"
@@ -12221,6 +12290,9 @@
       "Settings": [
         "Nastavenia"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "Zdieľa ${ name }"
       ],
@@ -12250,6 +12322,9 @@
       ],
       "Size": [
         "Veľkosť"
+      ],
+      "Size in bytes": [
+        "Veľkosť v bajtoch"
       ],
       "Sort files/folders": [
         "Zoradiť súbory/priečinky"
@@ -12281,6 +12356,15 @@
       "The link expired": [
         "Platnosť odkazu vypršala"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Overenie podpisu šifrovacích kľúčov pôvodným tvorcom (${ claimedKeyAuthor }), ktorý vytvoril uzol zlyhalo. Dôvodom je: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Overenie podpisu obsahu súboru nahraného používateľom (${ claimedContentAuthor }), ktorý nahral poslednú revíziu zlyhalo. Dôvod: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Overenie podpisu mena autorom (${ claimedNameAuthor }), ktorý meno naposledy nastavil zlyhalo. Dôvod: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tento súbor má chýbajúci alebo neplatný podpis. Pre informácie prejdite do Menu (⋮) → Podrobnosti."
       ],
@@ -12301,6 +12385,12 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Neznámy používateľ"
       ],
       "Untitled document ${ date }": [
         "Dokument bez názvu ${ date }"
@@ -12349,6 +12439,30 @@
       ],
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Nemohli sme overiť, že tento súbor vytvoril používateľ s adresou <strong>${ emailAddress }</strong>."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Nemohli sme overiť, že tento priečinok vytvoril používateľ s adresou <strong>${ emailAddress }</strong>."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Nemohli sme overiť, že tento súbor nahral používateľ s adresou <strong>${ emailAddress }</strong>."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Nemohli sme overiť, že tento priečinok nahral používateľ s adresou <strong>${ emailAddress }</strong>."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Nemohli sme overiť, že tento súbor vytvoril anonymný používateľ."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Nemohli sme overiť, že tento priečinok vytvoril anonymný používateľ."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Nemohli sme overiť, že anonymný používateľ nahral tento súbor."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Nemohli sme overiť, že anonymný používateľ nahral tento priečinok."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vitajte v službe ${ BRAND_NAME } pre Business"
