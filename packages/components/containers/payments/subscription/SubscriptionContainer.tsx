@@ -600,7 +600,11 @@ const SubscriptionContainerInner = ({
     const [initialLoading, setInitialLoading] = useState(!paymentFacade.initialized);
 
     const isFreePlanSelected = !hasPlanIDs(model.planIDs);
-    const disableCycleSelector = isFreePlanSelected || maybeDisableCycleSelector || getIsCustomCycle(model.cycle);
+    const disableCycleSelector =
+        isFreePlanSelected ||
+        maybeDisableCycleSelector ||
+        getIsCustomCycle(model.cycle) ||
+        selectedPlanName === PLANS.PASS_LIFETIME;
 
     const computeAllowedCycles = (planIDs: PlanIDs) =>
         getAllowedCycles({
