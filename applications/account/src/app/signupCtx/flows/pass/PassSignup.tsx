@@ -12,6 +12,7 @@ import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider } from '../../context/SignupContext';
 import { FlowProvider, Step, useFlow } from './contexts/FlowContext';
 import { AccountDetailsStep } from './steps/AccountDetailsStep';
+import { InstallExtensionStep } from './steps/InstallExtensionStep';
 import { RecoveryKitStep } from './steps/RecoveryKitStep';
 import { UpgradePlanStep } from './steps/UpgradePlanStep';
 
@@ -23,6 +24,7 @@ const PassSignup = () => {
             {step === Step.Signup && <AccountDetailsStep />}
             {step === Step.RecoveryKit && <RecoveryKitStep />}
             {step === Step.UpgradePlan && <UpgradePlanStep />}
+            {step === Step.InstallExtension && <InstallExtensionStep />}
         </main>
     );
 };

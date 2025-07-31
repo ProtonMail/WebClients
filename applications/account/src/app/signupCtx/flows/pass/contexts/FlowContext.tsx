@@ -28,7 +28,7 @@ type FlowContextType = StepState & {
 const FlowContext = createContext<Maybe<FlowContextType>>(undefined);
 
 export const FlowProvider: FC<PropsWithChildren> = ({ children }) => {
-    const [state, setState] = useState<StepState>({ step: Step.UpgradePlan });
+    const [state, setState] = useState<StepState>({ step: Step.InstallExtension });
 
     const setStep = <T extends Step>(
         step: T,
