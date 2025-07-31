@@ -45,9 +45,9 @@ export interface KeyGenConfig {
     config?: { v6Keys?: false };
 }
 
+/** v6 keys are not compatible with all clients */
 export interface KeyGenConfigV6 {
-    // TODO test only, not compatible with all clients
-    type?: 'curve25519'; // TODO 'pqc' once available
+    type?: 'pqc';
     config: { v6Keys: true };
 }
 
