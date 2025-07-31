@@ -912,6 +912,9 @@
       ],
       "Wrong second password": [
         "第二密碼錯誤"
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "您目前處於離線狀態。請重新連線以解鎖 ${ PASS_SHORT_APP_NAME }。"
       ]
     },
     "Error message": {
@@ -1500,6 +1503,9 @@
       "You are about to create:": [
         "您將要創建:"
       ],
+      "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
+        "您也可以設定PIN碼以解鎖 ${ PASS_APP_NAME }"
+      ],
       "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
         "你有 ${ aliasCount } 個別名存在於 SimpleLogin ，但未同步到 ${ PASS_APP_NAME } 。是否需要進行同步？"
       ],
@@ -1864,6 +1870,9 @@
       ],
       "Extra password": [
         "第二密碼"
+      ],
+      "Facebook account": [
+        "Facebook 帳戶"
       ],
       "Feedback": [
         "意見回饋"
@@ -2288,6 +2297,9 @@
       "Seed Phrase": [
         "種子短語"
       ],
+      "Select a domain": [
+        "選擇網域"
+      ],
       "Select an email address": [
         "選取電子郵件位址"
       ],
@@ -2380,6 +2392,9 @@
       ],
       "Text": [
         "文字"
+      ],
+      "The URL has been copied to the clipboard": [
+        "網址已複製到剪貼簿。"
       ],
       "Theme": [
         "主題"
@@ -2810,6 +2825,9 @@
       ]
     },
     "Success": {
+      "Contact successfully unblocked": [
+        "已解除封鎖聯絡人"
+      ],
       "Items can’t contain more than ${ share.targetMaxMembers } user.": [
         "項目不能包含超過 ${ share.targetMaxMembers } 位使用者。"
       ],
