@@ -38035,6 +38035,7 @@ __metadata:
   resolution: "proton-authenticator@workspace:applications/authenticator"
   dependencies:
     "@dnd-kit/core": "npm:^6.3.1"
+    "@iarna/toml": "npm:^2.2.5"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.1"
     "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
