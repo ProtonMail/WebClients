@@ -46,7 +46,13 @@ export const ToggleButton = ({
 
     return (
         <div className="relative">
-            <Tooltip title={tooltipTitle} isOpen={!tooltipTitle ? false : undefined}>
+            <Tooltip
+                title={tooltipTitle}
+                isOpen={!tooltipTitle ? false : undefined}
+                tooltipClassName="toggle-button-tooltip bg-strong color-norm"
+                openDelay={750}
+                closeDelay={0}
+            >
                 <button
                     ref={buttonRef}
                     className={clsx(

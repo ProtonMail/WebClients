@@ -25,7 +25,7 @@ export const LeaveModal = () => {
             {render && (
                 <ModalTwo {...modalProps} rootClassName="bg-transparent leave-modal" className="meet-radius">
                     <ModalTwoContent className="flex flex-column justify-space-between p-4 mx-4 pb-0">
-                        <div className="text-center text-3xl">{c('l10n_nightly Action').t`Leave Meeting`}</div>
+                        <div className="text-center text-3xl">{c('l10n_nightly Action').t`Leave meeting`}</div>
 
                         <div className="w-full text-center color-weak">
                             {c('l10n_nightly Info').t`Are you sure you want to leave the meeting?`}
@@ -37,7 +37,7 @@ export const LeaveModal = () => {
                                 onClick={handleLeave}
                                 size="large"
                             >
-                                {c('l10n_nightly Action').t`Leave Meeting`}
+                                {c('l10n_nightly Action').t`Leave meeting`}
                             </Button>
                             <Button
                                 className="border-none rounded-full w-full close-button"

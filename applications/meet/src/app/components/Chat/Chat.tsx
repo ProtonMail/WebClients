@@ -155,7 +155,8 @@ export const Chat = () => {
                             style={{ '--w-custom': '3rem', '--h-custom': '3rem' }}
                         />
                         <div className="text-center color-disabled">
-                            {c('l10n_nightly Info').t`Only people in this call can read what you send.`}
+                            {c('l10n_nightly Info')
+                                .t`This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.`}
                         </div>
                     </div>
                 )}

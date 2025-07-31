@@ -76,6 +76,9 @@ export const ParticipantControls = () => {
         prevDevicePermissionsRef.current = { camera, microphone };
     }, [camera, microphone]);
 
+    const microphoneActionStatus = isMicrophoneEnabled ? 'off' : 'on';
+    const cameraActionStatus = isCameraEnabled ? 'off' : 'on';
+
     return (
         <div className="flex flex-nowrap justify-center items-center gap-2 h-custom" style={{ '--h-custom': '5.5rem' }}>
             <div className="flex flex-1 justify-start h3">{roomName}</div>
@@ -98,7 +101,11 @@ export const ParticipantControls = () => {
                     ariaLabel={c('l10n_nightly Alt').t`Toggle microphone`}
                     secondaryAriaLabel={c('l10n_nightly Alt').t`Audio settings`}
                     hasWarning={!hasMicrophonePermission}
-                    tooltipTitle={!hasMicrophonePermission ? c('l10n_nightly Info').t`Permission denied` : undefined}
+                    tooltipTitle={
+                        !hasMicrophonePermission
+                            ? c('l10n_nightly Info').t`Permission denied`
+                            : c('l10n_nightly Info').t`Turn ${microphoneActionStatus} microphone`
+                    }
                     isOpen={popupState[PopUpControls.Microphone]}
                     onPopupButtonClick={() => {
                         if (!hasMicrophonePermission) {
@@ -127,7 +134,11 @@ export const ParticipantControls = () => {
                     ariaLabel={c('l10n_nightly Alt').t`Toggle camera`}
                     secondaryAriaLabel={c('l10n_nightly Alt').t`Video settings`}
                     hasWarning={!hasCameraPermission}
-                    tooltipTitle={!hasCameraPermission ? c('l10n_nightly Info').t`Permission denied` : undefined}
+                    tooltipTitle={
+                        !hasCameraPermission
+                            ? c('l10n_nightly Info').t`Permission denied`
+                            : c('l10n_nightly Info').t`Turn ${cameraActionStatus} camera`
+                    }
                     isOpen={popupState[PopUpControls.Camera]}
                     onPopupButtonClick={() => {
                         if (!hasCameraPermission) {
@@ -147,6 +158,7 @@ export const ParticipantControls = () => {
                     indicatorContent={participants.length.toString()}
                     indicatorStatus={sideBarState[MeetingSideBars.Participants] ? 'success' : 'default'}
                     ariaLabel={c('l10n_nightly Alt').t`Toggle participants`}
+                    tooltipTitle={c('l10n_nightly Info').t`Participants`}
                 />
                 <ChatButton />
                 <CircleButton
@@ -156,12 +168,14 @@ export const ParticipantControls = () => {
                         toggleSideBarState(MeetingSideBars.Settings);
                     }}
                     ariaLabel={c('l10n_nightly Alt').t`Toggle settings`}
+                    tooltipTitle={c('l10n_nightly Info').t`Settings`}
                 />
                 <CircleButton
                     IconComponent={IcInfoCircle}
                     onClick={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
                     variant={sideBarState[MeetingSideBars.MeetingDetails] ? 'active' : 'default'}
                     ariaLabel={c('l10n_nightly Alt').t`Toggle meeting details`}
+                    tooltipTitle={c('l10n_nightly Info').t`Meeting details`}
                 />
                 <LeaveModal />
             </div>

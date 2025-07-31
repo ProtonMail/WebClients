@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms';
+import { Button, Tooltip } from '@proton/atoms';
 import type { IconProps } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
@@ -17,6 +17,7 @@ interface CircleButtonProps {
     variant?: CircleButtonVariant;
     ariaLabel?: string;
     noBorder?: boolean;
+    tooltipTitle?: string;
 }
 
 export const CircleButton = ({
@@ -29,37 +30,46 @@ export const CircleButton = ({
     variant = 'default',
     ariaLabel,
     noBorder = true,
+    tooltipTitle,
 }: CircleButtonProps) => {
     return (
-        <Button
-            className={clsx(
-                'circle-button',
-                `circle-button-${variant}`,
-                'user-select-none color-norm rounded-full gap-2 relative',
-                noBorder && 'border-none',
-                className
-            )}
-            onClick={onClick}
-            aria-label={ariaLabel}
+        <Tooltip
+            title={tooltipTitle}
+            tooltipClassName="circle-button-tooltip bg-strong color-norm"
+            isOpen={!tooltipTitle ? false : undefined}
+            openDelay={750}
+            closeDelay={0}
         >
-            <IconComponent viewBox={iconViewPort} size={6} />
-            {indicatorContent && (
-                <div
-                    className={clsx(
-                        'indicator rounded-full flex justify-center items-center absolute top-custom right-custom w-custom h-custom',
-                        `indicator-${indicatorStatus}`,
-                        Number(indicatorContent) > 9 && 'text-xs'
-                    )}
-                    style={{
-                        '--w-custom': '1.25rem',
-                        '--h-custom': '1.25rem',
-                        '--top-custom': '-0.15rem',
-                        '--right-custom': '-0.15rem',
-                    }}
-                >
-                    {indicatorContent}
-                </div>
-            )}
-        </Button>
+            <Button
+                className={clsx(
+                    'circle-button',
+                    `circle-button-${variant}`,
+                    'user-select-none color-norm rounded-full gap-2 relative',
+                    noBorder && 'border-none',
+                    className
+                )}
+                onClick={onClick}
+                aria-label={ariaLabel}
+            >
+                <IconComponent viewBox={iconViewPort} size={6} />
+                {indicatorContent && (
+                    <div
+                        className={clsx(
+                            'indicator rounded-full flex justify-center items-center absolute top-custom right-custom w-custom h-custom',
+                            `indicator-${indicatorStatus}`,
+                            Number(indicatorContent) > 9 && 'text-xs'
+                        )}
+                        style={{
+                            '--w-custom': '1.25rem',
+                            '--h-custom': '1.25rem',
+                            '--top-custom': '-0.15rem',
+                            '--right-custom': '-0.15rem',
+                        }}
+                    >
+                        {indicatorContent}
+                    </div>
+                )}
+            </Button>
+        </Tooltip>
     );
 };
