@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsDrawerPostMessage, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
+import { getMessageEventType } from '@proton/shared/lib/helpers/messageEvent';
 import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {
@@ -28,6 +29,12 @@ const useCalendarWidgetDrawerEvents = ({ messageID, calendarEvent, refresh }: Pr
 
         const handleSideCalendarEvents = (event: MessageEvent) => {
             if (!getIsDrawerPostMessage(event)) {
+                return;
+            }
+
+            // Defensive code to prevent the "Permission denied to access property 'type'" error
+            const eventType = getMessageEventType(event);
+            if (!eventType) {
                 return;
             }
 
