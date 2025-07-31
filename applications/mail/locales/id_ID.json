@@ -13289,6 +13289,9 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } percakapan dihapus dari ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } percakapan dihapus dari Dibintangi."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } percakapan ditunda"
       ],
@@ -13318,6 +13321,9 @@
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } pesan dihapus dari ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } dihapus dari Dibintangi."
       ],
       "Address copied to clipboard": [
         "Alamat disalin ke clipboard"
@@ -13378,6 +13384,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Percakapan dihapus dari ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Percakapan dihapus dari Dibintangi."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Percakapan yang berasal dari ${ sendersList } akan dilabeli sebagai ${ labelsList }"
@@ -13450,6 +13459,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Pesan dihapus dari ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Pesan dihapus dari Dibintangi."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Pesan yang berasal dari ${ sendersList } akan dilabeli sebagai ${ labelsList }"
