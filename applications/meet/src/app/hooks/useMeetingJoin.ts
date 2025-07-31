@@ -14,7 +14,7 @@ const ROOM_KEY = process.env.LIVEKIT_ROOM_KEY as string;
 export const useMeetingJoin = () => {
     const defaultQuality = useQualityLevel();
 
-    const defaultResolution = qualityConstants[QualityScenarios.Default][defaultQuality];
+    const defaultResolution = qualityConstants[QualityScenarios.SmallView][defaultQuality];
 
     const { getAcccessDetails } = useMeetingSetup();
 

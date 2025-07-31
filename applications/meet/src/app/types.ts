@@ -51,8 +51,9 @@ export enum PopUpControls {
 
 export enum QualityScenarios {
     ScreenShare = 'ScreenShare',
-    LargeGrid = 'LargeGrid',
-    Default = 'Default',
+    PortraitView = 'PortraitView',
+    MediumView = 'MediumView',
+    SmallView = 'SmallView',
 }
 
 export enum Quality {

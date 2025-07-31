@@ -2,33 +2,39 @@ import { VideoPreset, VideoPresets } from 'livekit-client';
 
 import { Quality, QualityScenarios } from './types';
 
-const h90 = new VideoPreset(VideoPresets.h90.width, VideoPresets.h90.height, 80_000, 30);
-const h180 = new VideoPreset(VideoPresets.h180.width, VideoPresets.h180.height, 100_000, 30);
-const h360 = new VideoPreset(VideoPresets.h360.width, VideoPresets.h360.height, 250_000, 30);
-const h720 = new VideoPreset(VideoPresets.h720.width, VideoPresets.h720.height, 1000_000, 30);
+const h180mb100 = new VideoPreset(VideoPresets.h180.width, VideoPresets.h180.height, 100_000, 30);
+const h180mb125 = new VideoPreset(VideoPresets.h180.width, VideoPresets.h180.height, 125_000, 30);
+const h540 = new VideoPreset(VideoPresets.h540.width, VideoPresets.h540.height, 250_000, 30);
+const h1080portrait = new VideoPreset(VideoPresets.h1080.width, VideoPresets.h1080.height, 1_000_000, 30);
+const h1080screenshare = new VideoPreset(VideoPresets.h1080.width, VideoPresets.h1080.height, 1_700_000, 30);
 
 export const qualityConstants = {
     [QualityScenarios.ScreenShare]: {
-        [Quality.Decreased]: h90,
-        [Quality.Default]: h90,
-        [Quality.Increased]: h180,
+        [Quality.Decreased]: h180mb100,
+        [Quality.Default]: h180mb100,
+        [Quality.Increased]: h180mb100,
     },
-    [QualityScenarios.LargeGrid]: {
-        [Quality.Decreased]: h90,
-        [Quality.Default]: h180,
-        [Quality.Increased]: h360,
+    [QualityScenarios.PortraitView]: {
+        [Quality.Decreased]: h1080portrait,
+        [Quality.Default]: h1080portrait,
+        [Quality.Increased]: h1080portrait,
     },
-    [QualityScenarios.Default]: {
-        [Quality.Decreased]: h180,
-        [Quality.Default]: h360,
-        [Quality.Increased]: h360,
+    [QualityScenarios.MediumView]: {
+        [Quality.Decreased]: h540,
+        [Quality.Default]: h540,
+        [Quality.Increased]: h540,
+    },
+    [QualityScenarios.SmallView]: {
+        [Quality.Decreased]: h180mb125,
+        [Quality.Default]: h180mb125,
+        [Quality.Increased]: h180mb125,
     },
 };
 
 export const screenShareQualityDetails = {
-    [Quality.Decreased]: h360,
-    [Quality.Default]: h720,
-    [Quality.Increased]: VideoPresets.h1080,
+    [Quality.Decreased]: h1080screenshare,
+    [Quality.Default]: h1080screenshare,
+    [Quality.Increased]: h1080screenshare,
 };
 
 export const audioQualityDetails = {

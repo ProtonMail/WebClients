@@ -18,9 +18,13 @@ export const useParticipantResolution = () => {
         return qualityConstants[QualityScenarios.ScreenShare][quality];
     }
 
-    if (participants.length > 4) {
-        return qualityConstants[QualityScenarios.LargeGrid][quality];
+    if (participants.length <= 3) {
+        return qualityConstants[QualityScenarios.PortraitView][quality];
     }
 
-    return qualityConstants[QualityScenarios.Default][quality];
+    if (participants.length > 8) {
+        return qualityConstants[QualityScenarios.SmallView][quality];
+    }
+
+    return qualityConstants[QualityScenarios.MediumView][quality];
 };
