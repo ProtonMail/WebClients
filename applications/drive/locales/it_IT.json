@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "Inoltra come allegato"
       ],
+      "Full data": [
+        "Dati completi"
+      ],
       "Generate password": [
         "Genera password"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "Pagina successiva"
+      ],
+      "No sensitive data": [
+        "Nessun dato sensibile"
       ],
       "Not now": [
         "Non ora"
@@ -3277,6 +3283,9 @@
       "Failed to fetch sharing info": [
         "Impossibile recuperare le informazioni di condivisione"
       ],
+      "Failed to get details, please try again later": [
+        "Impossibile ottenere i dettagli, per favore riprova più tardi"
+      ],
       "Failed to load the STL preview": [
         "Impossibile caricare l'anteprima STL"
       ],
@@ -3623,6 +3632,9 @@
       ],
       "Unknown error": [
         "Errore sconosciuto"
+      ],
+      "Unknown location": [
+        "Posizione sconosciuta"
       ],
       "Unknown payment token status": [
         "Stato del token di pagamento sconosciuto"
@@ -11307,6 +11319,9 @@
       "Addresses": [
         "Indirizzi"
       ],
+      "Advanced details": [
+        "Dettagli avanzati"
+      ],
       "Album": [
         "Album"
       ],
@@ -11324,6 +11339,12 @@
       ],
       "Amount due": [
         "Importo da pagare"
+      ],
+      "an anonymous user": [
+        "un utente anonimo"
+      ],
+      "Anonymous user": [
+        "Utente anonimo"
       ],
       "Apply gift code": [
         "Applica codice regalo"
@@ -11431,6 +11452,9 @@
       "Create new group": [
         "Crea nuovo gruppo"
       ],
+      "Created by": [
+        "Creato da"
+      ],
       "Credits": [
         "Crediti"
       ],
@@ -11491,17 +11515,29 @@
       "Devices": [
         "Dispositivi"
       ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digitale parzialmente verificata. Questo file è stato creato utilizzando un link di condivisione accessibile pubblicamente da un utente senza un account ${ BRAND_NAME }, quindi la sua identità non può essere verificata."
+      ],
       "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Firma digitale parzialmente verificata. Questo file è stato caricato utilizzando un link di condivisione accessibile pubblicamente da un utente senza un account ${ BRAND_NAME }, quindi la loro identità non può essere verificata."
       ],
       "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Firma digitale parzialmente verificata. Questa cartella è stata creata utilizzando un link di condivisione accessibile pubblicamente da un utente senza un account ${ BRAND_NAME }, quindi la loro identità non può essere verificata."
       ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Firma digitale parzialmente verificata. Questa cartella è stata caricata utilizzando un link di condivisione accessibile pubblicamente da un utente senza un account ${ BRAND_NAME }, quindi la sua identità non può essere verificata."
+      ],
       "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
         "Firma digitale verificata. Questo file è stato creato in modo sicuro da <strong>${ emailAddress }</strong>."
       ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Firma digitale verificata. Questo file è stato caricato in modo sicuro da <strong>${ emailAddress }</strong>."
+      ],
       "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
         "Firma digitale verificata. Questa cartella è stata creata in modo sicuro da <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Firma digitale verificata. Questa cartella è stata caricata in modo sicuro da <strong>${ emailAddress }</strong>."
       ],
       "Discard": [
         "Scarta"
@@ -11687,6 +11723,9 @@
       ],
       "Manage secure link": [
         "Gestisci link sicuri"
+      ],
+      "Media type": [
+        "Tipo di media"
       ],
       "Merge contacts": [
         "Unisci contatti"
@@ -11917,6 +11956,9 @@
       "Settings": [
         "Impostazioni"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "Condividi ${ name }"
       ],
@@ -11946,6 +11988,9 @@
       ],
       "Size": [
         "Dimensione"
+      ],
+      "Size in bytes": [
+        "Dimensione in byte"
       ],
       "Sort files/folders": [
         "Ordina file/cartelle"
@@ -11977,6 +12022,9 @@
       "The link expired": [
         "Il link è scaduto"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "La verifica della firma delle chiavi crittografiche da parte del creatore originale (${ claimedKeyAuthor }) che ha creato il nodo non è riuscita. Il motivo è: ${ nodeEntity.keyAuthor.error.error }"
+      ],
       "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
         "La verifica della firma del contenuto del file da parte dell'uploader (${ claimedContentAuthor }), che ha caricato l'ultima revisione, non è riuscita. Il motivo è: ${ activeRevision.contentAuthor.error.error }"
       ],
@@ -12003,6 +12051,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "UID": [
+        "UID"
       ],
       "Unknown user": [
         "Utente sconosciuto"
@@ -12058,6 +12109,12 @@
       "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
         "Non abbiamo potuto verificare che <strong>${ emailAddress }</strong> abbia creato questo file"
       ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Non abbiamo potuto verificare che <strong>${ emailAddress }</strong> abbia creato questa cartella."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Non abbiamo potuto verificare che <strong>${ emailAddress }</strong> abbia caricato questo file."
+      ],
       "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
         "Non abbiamo potuto verificare che <strong>${ emailAddress }</strong> abbia caricato questa cartella."
       ],
@@ -12066,6 +12123,9 @@
       ],
       "We couldn’t verify that an anonymous user created this folder.": [
         "Non abbiamo potuto verificare che un utente anonimo abbia creato questa cartella."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Non abbiamo potuto verificare che un utente anonimo abbia caricato questo file."
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Non abbiamo potuto verificare che un utente anonimo abbia creato questa cartella."
