@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "Publicera ändringar"
       ],
-      "Purge all": [
-        "Töm allt"
-      ],
-      "Purge deleted": [
-        "Tömning borttagen"
-      ],
       "Quit": [
         "Avsluta"
       ],
@@ -5405,6 +5399,9 @@
       "Missing signature": [
         "Signatur saknas"
       ],
+      "Name already exists": [
+        "Namn finns redan"
+      ],
       "Name does not match": [
         "Namn matchar inte"
       ],
@@ -7011,6 +7008,9 @@
       "Servers": [
         "Servrar"
       ],
+      "Sort labels": [
+        "Sortera etiketter"
+      ],
       "Status": [
         "Status"
       ],
@@ -8034,6 +8034,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Är det säker på att du vill ta bort domänen ${ boldDomain }?"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "Är du säker på att du vill sortera dina mappar alfabetiskt?"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "Är du säker på att du vill sortera dina etiketter alfabetiskt?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Be din organisationsadministratör att ställa in gateways."
       ],
@@ -8066,6 +8072,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Rensa automatiskt bort e-postmeddelanden flyttade till papperskorgen och skräppost för mer än 30 dagar sedan."
+      ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "Visa automatiskt nästa e-postmeddelande när ett öppet e-postmeddelande tas bort, arkiveras eller flyttas."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Tillgänglig på macOS, Windows och Linux."
@@ -15092,9 +15101,6 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
-      "Group": [
-        "Grupp"
-      ],
       "I found another service that I like better": [
         "Jag hittade en annan tjänst som jag gillar bättre"
       ],
@@ -15214,9 +15220,6 @@
       ],
       "UDP": [
         "UDP"
-      ],
-      "User": [
-        "Användare"
       ],
       "Windows": [
         "Windows"
@@ -16301,6 +16304,9 @@
       "For next-level password management and identity protection.": [
         "För nästa nivå av lösenordshantering och identitetsskydd."
       ],
+      "Great for everyday use and photo backups.": [
+        "Utmärkt för dagligt bruk och säkerhetskopiering av foton."
+      ],
       "Perfect for getting started with secure cloud storage.": [
         "Perfekt för att komma igång med säkert molnlagringsutrymme."
       ],
@@ -16529,14 +16535,61 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Lägg till användare eller grupper"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Confirm": [
+        "Bekräfta"
+      ],
+      "Create rule": [
+        "Skapa regel"
+      ],
       "Delete": [
         "Ta bort"
       ],
       "Delete rule": [
         "Ta bort regel"
       ],
+      "Delete this scope": [
+        "Ta bort detta omfång"
+      ],
       "Edit": [
         "Redigera"
+      ],
+      "Purge all": [
+        "Töm allt"
+      ],
+      "Purge deleted": [
+        "Tömning borttagen"
+      ],
+      "Save changes": [
+        "Spara ändringar"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "After ${ lifetime } day all messages will be deleted": [
+        "Efter ${ lifetime } dag kommer alla meddelanden att tas bort",
+        "Efter ${ lifetime } dagar kommer alla meddelanden att tas bort"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "Livstid måste vara längre än ${ MIN_LIFETIME } dagar"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "Livslängd får inte ställas in för åtgärden “Behåll alla“"
+      ],
+      "Scope value is not valid": [
+        "Omfångsvärde är inte giltigt"
+      ],
+      "Scope value is required": [
+        "Omfångsvärde är obligatoriskt"
+      ],
+      "Scopes cannot have the same value": [
+        "Omfång kan inte ha samma värde"
       ]
     },
     "retention_policy_2025_Info": {
@@ -16549,9 +16602,61 @@
       ],
       "Forever": [
         "För alltid"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Inkluderar alla meddelanden i inkorg, skickat och alla andra platser. Tömda meddelanden kan inte återställas."
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "Applies to": [
+        "Tillämpas på"
+      ],
+      "days": [
+        "dagar"
+      ],
+      "Keep items forever": [
+        "Behåll objekt för alltid"
+      ],
+      "Keep messages forever": [
+        "Behåll meddelanden för alltid"
+      ],
+      "Select product": [
+        "Välj produkt"
+      ],
+      "Set a duration": [
+        "Ställ in en varaktighet"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Alla i organisationen"
+      ],
+      "Group": [
+        "Grupp"
+      ],
+      "Purge all messages": [
+        "Töm alla meddelanden"
+      ],
+      "Purge deleted messages only": [
+        "Töm endast borttagna meddelanden"
+      ],
+      "Specific users or groups": [
+        "Specifika användare eller grupper"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "T.ex. rensa oanvända brevlådor"
+      ],
+      "Enter duration": [
+        "Ange varaktighet"
+      ],
+      "Enter value": [
+        "Ange värde"
+      ],
       "Search for rule, users, period, action": [
         "Sök efter regel, användare, period, åtgärd"
       ],
