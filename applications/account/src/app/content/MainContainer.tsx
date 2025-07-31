@@ -157,6 +157,8 @@ const MainContainer = () => {
     const isCalendarHotkeysEnabled = useFlag('CalendarHotkeys');
     const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
+    const isCryptoPostQuantumOptInEnabled =
+        (useFlag('CryptoPostQuantumOptIn') && user.isPrivate) || !!userSettings.Flags.SupportPgpV6Keys;
     const canDisplayPassReports = useFlag('PassB2BReports');
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
@@ -215,6 +217,7 @@ const MainContainer = () => {
         isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
         isZoomIntegrationEnabled,
         isSharedServerFeatureEnabled,
+        isCryptoPostQuantumOptInEnabled,
         isCalendarHotkeysEnabled,
         isPasswordPolicyEnabled,
         isB2BTrial,

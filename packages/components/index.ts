@@ -601,6 +601,7 @@ export { default as useItemsDraggable } from './containers/items/useItemsDraggab
 export { default as useItemsDroppable } from './containers/items/useItemsDroppable';
 export { default as useItemsSelection } from './containers/items/useItemsSelection';
 export { default as AddressKeysSection } from './containers/keys/AddressKeysSection';
+export { default as PostQuantumKeysOptInSection } from './containers/keys/PostQuantumKeysOptInSection/PostQuantumKeysOptInSection';
 export { default as SelectKeyFiles } from './containers/keys/shared/SelectKeyFiles';
 export { default as UserKeysSection } from './containers/keys/UserKeysSection';
 export { default as KeyTransparencyManager } from './containers/keyTransparency/KeyTransparencyManager';

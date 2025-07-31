@@ -4,7 +4,7 @@ describe('getKeyFunction', () => {
     const defaultStatus = {
         isAddressDisabled: false,
         isPrimary: false,
-        isPrimaryCompatibility: false,
+        isPrimaryFallback: false,
         isDecrypted: true,
         isCompromised: false,
         isObsolete: false,
@@ -17,7 +17,7 @@ describe('getKeyFunction', () => {
         const keyFunction = getKeyFunction({
             ...defaultStatus,
             isPrimary: true,
-            isPrimaryCompatibility: false,
+            isPrimaryFallback: false,
         });
 
         expect(keyFunction.label).toEqual('Encryption, decryption, signing, verification');
@@ -27,7 +27,7 @@ describe('getKeyFunction', () => {
         const keyFunction = getKeyFunction({
             ...defaultStatus,
             isPrimary: true,
-            isPrimaryCompatibility: true,
+            isPrimaryFallback: true,
         });
 
         expect(keyFunction.label).toEqual('Encryption, decryption, signing, verification');

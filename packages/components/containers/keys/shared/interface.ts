@@ -31,8 +31,8 @@ export enum KeyType {
 export interface KeyStatus {
     isAddressDisabled: boolean;
     isPrimary: boolean;
-    /** if a v6 primary key is present, the v4 primary key is marked as "compatibility" */
-    isPrimaryCompatibility: boolean;
+    /** if a v6 primary key is present, the v4 primary key is marked as "fallback" */
+    isPrimaryFallback: boolean;
     isDecrypted: boolean;
     isCompromised: boolean;
     isObsolete: boolean;

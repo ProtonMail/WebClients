@@ -6,6 +6,7 @@ export * from './addresses';
 export * from './addressKeys';
 export * from './addressKeys/listener';
 export * from './addressKeys/keyBackgroundListener';
+export * from './addressKeys/pqcActions';
 export * from './user';
 export * from './userKeys';
 export * from './userKeys/listener';
