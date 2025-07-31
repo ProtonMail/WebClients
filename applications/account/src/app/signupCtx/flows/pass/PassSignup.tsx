@@ -13,6 +13,7 @@ import { type BaseSignupContextProps, SignupContextProvider } from '../../contex
 import { FlowProvider, Step, useFlow } from './contexts/FlowContext';
 import { AccountDetailsStep } from './steps/AccountDetailsStep';
 import { RecoveryKitStep } from './steps/RecoveryKitStep';
+import { UpgradePlanStep } from './steps/UpgradePlanStep';
 
 const PassSignup = () => {
     const { step } = useFlow();
@@ -21,6 +22,7 @@ const PassSignup = () => {
         <main className="pass-signup">
             {step === Step.Signup && <AccountDetailsStep />}
             {step === Step.RecoveryKit && <RecoveryKitStep />}
+            {step === Step.UpgradePlan && <UpgradePlanStep />}
         </main>
     );
 };

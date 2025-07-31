@@ -3,8 +3,8 @@ import { type FC } from 'react';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 
 import { useSignup } from '../../../context/SignupContext';
-import { AccountDetailsForm } from '../components/forms/AccountDetailsForm';
-import { Layout } from '../components/layout/Layout';
+import { AccountDetailsForm } from '../components/Forms/AccountDetailsForm';
+import { Layout } from '../components/Layout/Layout';
 import { Step, useFlow } from '../contexts/FlowContext';
 import { AccountDetailsAside } from './AccountDetailsAside';
 

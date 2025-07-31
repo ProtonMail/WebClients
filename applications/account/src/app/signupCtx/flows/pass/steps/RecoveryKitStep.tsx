@@ -3,11 +3,11 @@ import { type FC, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/src';
-import { Checkbox, Icon, Label } from '@proton/components/index';
+import { Checkbox, Icon, Label } from '@proton/components';
 import { RECOVERY_KIT_FILE_NAME } from '@proton/shared/lib/constants';
 
 import recoveryKitPDFImage from '../assets/images/recovery_kit_pdf.svg';
-import { Layout } from '../components/layout/Layout';
+import { Layout } from '../components/Layout/Layout';
 import { Step, useFlow } from '../contexts/FlowContext';
 import { RecoveryKitAside } from './RecoveryKitAside';
 
@@ -29,17 +29,17 @@ export const RecoveryKitStep: FC = () => {
             <div className="w-full mt-2">{c('Subtitle')
                 .t`It’s the only way to recover everything—store it safely.`}</div>
             <div className="mt-10 rounded-lg pass-signup-promotion-bg w-full">
-                <div className="flex items-center justify-space-between">
+                <div className="flex items-center justify-space-between gap-2 p-4 sm:p-0">
                     <div className="flex items-center gap-4">
-                        <img src={recoveryKitPDFImage} alt="Icon PDF" />
+                        <img src={recoveryKitPDFImage} alt="Icon PDF" className="hidden sm:block" />
                         <div>
                             <h4 className="text-lg">{c('Title').t`Download PDF`}</h4>
-                            <div className="color-weak">{RECOVERY_KIT_FILE_NAME}</div>
-                            <div className="color-weak">78 KB</div>
+                            <div className="color-weak text-ellipsis">{RECOVERY_KIT_FILE_NAME}</div>
+                            <div className="color-weak text-ellipsis">78 KB</div>
                         </div>
                     </div>
                     <Button
-                        className="mr-8 rounded-full pass-signup-button-border"
+                        className="pass-signup-button-border rounded-full mr-8"
                         onClick={handleDownload}
                         color="weak"
                         shape="ghost"

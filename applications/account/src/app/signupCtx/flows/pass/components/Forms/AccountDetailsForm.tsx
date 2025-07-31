@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms/src';
-import { MailLogo } from '@proton/components/index';
+import { MailLogo } from '@proton/components';
 import { IcShield2CheckFilled } from '@proton/icons';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
