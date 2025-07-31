@@ -1024,12 +1024,6 @@
       "Publish changes": [
         "Terbitkan perubahan"
       ],
-      "Purge all": [
-        "Bersihkan semua"
-      ],
-      "Purge deleted": [
-        "Pembersihan dihapus"
-      ],
       "Quit": [
         "Keluar"
       ],
@@ -4241,6 +4235,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
+      ],
+      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
+        "Anda akan menerima ${ referralReward } dalam saldo ${ BRAND_NAME } pada saat pengguna yang Anda undang mendaftarkan diri mereka ke paket ${ BRAND_NAME }, dan mereka juga akan memperoleh saldo senilai ${ referralReward } sebagai imbalannya."
       ]
     },
     "description": {
@@ -5379,6 +5376,9 @@
       ],
       "Missing signature": [
         "Tanda tangan hilang"
+      ],
+      "Name already exists": [
+        "Nama sudah ada"
       ],
       "Name does not match": [
         "Nama tidak cocok"
@@ -9433,15 +9433,6 @@
       ],
       "Restore": [
         "Pulihkan"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Peraturan penyimpanan data \"${ formData.name }\" berhasil diperbarui"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Peraturan penyimpanan data \"${ payload.Name }\" berhasil dibuat"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Peraturan penyimpanan data \"${ retentionRule.Name }\" berhasil dihapus"
       ],
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
@@ -14925,9 +14916,6 @@
       "Free server configs": [
         "Konfigurasi server gratis"
       ],
-      "Group": [
-        "Grup"
-      ],
       "I found another service that I like better": [
         "Saya menemukan layanan lain yang lebih baik"
       ],
@@ -16355,6 +16343,9 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } lainnya"
+      ],
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime } hari"
       ],
@@ -16363,16 +16354,22 @@
       ]
     },
     "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Tindakan"
+      ],
       "Applies to": [
         "Berlaku kepada"
       ],
       "Retention period": [
         "Masa penyimpanan"
+      ],
+      "Retention Rule": [
+        "Pengaturan Penyimpanan Data"
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Buat aturan penyimpanan untuk mengatur seberapa lama data yang ada akan disimpan sebagaimana dengan kebijakan penyimpanan data organisasi Anda. Aturan ini juga akan mengaktifkan pembersihan otomatis untuk data yang telah kedaluwarsa."
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Tidak ada kebijakan penyimpanan data yang ditemukan"
       ]
     },
     "Role": {
@@ -17316,6 +17313,12 @@
       "Billing Cycle": [
         "Siklus Tagihan"
       ],
+      "Block ads, trackers, and malware": [
+        "Blokir iklan, pelacak, dan malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
       "Bundle": [
         "Bundel"
       ],
@@ -17360,6 +17363,9 @@
       ],
       "Every free account comes with:": [
         "Setiap akun gratis dilengkapi dengan:"
+      ],
+      "Fast P2P/BitTorrent downloads": [
+        "Unduhan P2P/BitTorrent kilat"
       ],
       "Free": [
         "Gratis"
@@ -17439,6 +17445,9 @@
       "Select ${ title }": [
         "Pilih ${ title }"
       ],
+      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
+        "Pilih salah satu layanan dan dapatkan versi premiumnya selama 14 hari secara cuma-cuma. Tanpa perlu kartu kredit."
+      ],
       "Selected": [
         "Terpilih"
       ],
@@ -17481,6 +17490,9 @@
       "Total": [
         "Total"
       ],
+      "Try ${ planName } for free": [
+        "Coba ${ planName } secara cuma-cuma"
+      ],
       "Ultra fast and private VPN": [
         "VPN ultra cepat dan privat"
       ],
@@ -17504,6 +17516,9 @@
       ],
       "Use your email, or ${ externalButton }": [
         "gunakan alamat email Anda, atau ${ externalButton }"
+      ],
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
       ],
       "use your own email.": [
         "gunakan alamat email Anda sendiri."
@@ -19689,6 +19704,9 @@
       ],
       "Data recovery": [
         "Pemulihan data"
+      ],
+      "Data retention": [
+        "Penyimpanan data"
       ],
       "Date": [
         "Tanggal"
