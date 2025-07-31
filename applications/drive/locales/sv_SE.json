@@ -11962,6 +11962,9 @@
       "The link expired": [
         "Länken har löpt ut"
       ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Verifieringen av filens innehållssignatur av uppladdaren (${ claimedContentAuthor }) som laddade upp den senaste versionen misslyckades. Orsaken är: ${ activeRevision.contentAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Denna fil har en saknad eller ogiltig signatur. Gå till Meny (⋮) → Detaljer för info."
       ],

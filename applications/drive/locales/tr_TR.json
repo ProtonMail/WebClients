@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "Ek dosya olarak ilet"
       ],
+      "Full data": [
+        "Tüm veriler"
+      ],
       "Generate password": [
         "Parola üret"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "Sonraki sayfa"
+      ],
+      "No sensitive data": [
+        "Önemli bir veri yok"
       ],
       "Not now": [
         "Şimdi değil"
@@ -1184,6 +1190,10 @@
       "${ price } per user": [
         "her kullanıcı için ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } koltuk",
+        "${ seats } ${ LUMO_APP_NAME } koltuk"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } yazma yardımcısı koltuğu",
         "${ seats } yazma yardımcısı koltuğu"
@@ -1585,6 +1595,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } sorunu"
+      ],
       "Application problem": [
         "Uygulama sorunu"
       ],
@@ -3270,6 +3283,9 @@
       "Failed to fetch sharing info": [
         "Paylaşım bilgileri alınamadı"
       ],
+      "Failed to get details, please try again later": [
+        "Ayrıntılar alınamadı. Lütfen bir süre sonra yeniden deneyin"
+      ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
       ],
@@ -3617,6 +3633,9 @@
       "Unknown error": [
         "Bilinmeyen sorun"
       ],
+      "Unknown location": [
+        "Konum bilinmiyor"
+      ],
       "Unknown payment token status": [
         "Ödeme kodu durumu bilinmiyor"
       ],
@@ -3650,6 +3669,9 @@
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Şifresi çözülemeyen ad"
       ]
     },
     "Error importing calendar": {
@@ -4627,6 +4649,9 @@
         "${ invitations.length } davet bekliyor",
         "${ invitations.length } davet bekliyor"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
       ],
@@ -5054,6 +5079,9 @@
       ],
       "Download ${ name } app": [
         "${ name } uygulamasını indir"
+      ],
+      "Download current logs": [
+        "Güncel günlükleri indir"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } dosyasının indirilmesinden vazgeçilecek"
@@ -6893,6 +6921,9 @@
       "Import to:": [
         "Şunun içine aktar:"
       ],
+      "Include application logs in bug report": [
+        "Uygulama günlüklerini sorun bildirimine eklensin"
+      ],
       "Include message and file name in invite email": [
         "Davet e-postasına bir ileti ve dosya adı eklensin"
       ],
@@ -8695,8 +8726,8 @@
         "${ count } ögenin şifresi çözülemedi"
       ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } fotoğraf ${ albumLink.name } albümünden silinemedi",
-        "${ nbFailures } fotoğraf ${ albumLink.name } albümünden silinemedi"
+        "${ nbFailures } fotoğraf ${ albumLink.name } albümünden kaldırılamadı",
+        "${ nbFailures } fotoğraf ${ albumLink.name } albümünden kaldırılamadı"
       ],
       "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
         "${ nbMainPhotosError } fotoğraf ${ albumName } albümüne eklenemedi",
@@ -11232,6 +11263,9 @@
       "Addresses": [
         "Adresler"
       ],
+      "Advanced details": [
+        "İleri düzey ayrıntılar"
+      ],
       "Album": [
         "Albüm"
       ],
@@ -11249,6 +11283,12 @@
       ],
       "Amount due": [
         "Ödenecek tutar"
+      ],
+      "an anonymous user": [
+        "bir anonim kullanıcı"
+      ],
+      "Anonymous user": [
+        "Anonim kullanıcı"
       ],
       "Apply gift code": [
         "Hediye kodunu uygula"
@@ -11356,6 +11396,9 @@
       "Create new group": [
         "Yeni grup ekle"
       ],
+      "Created by": [
+        "Oluşturan"
+      ],
       "Credits": [
         "Kredi"
       ],
@@ -11413,6 +11456,33 @@
       "Desktop": [
         "Bilgisayar"
       ],
+      "Devices": [
+        "Aygıtlar"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Sayısal imzanın bir bölümü doğrulandı. Bu dosya, ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı ile oluşturulmuş. Bu nedenle kimliği doğrulanamadı."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Sayısal imzanın bir bölümü doğrulandı. Bu dosya, ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı ile yüklenmiş. Bu nedenle kimliği doğrulanamadı."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Sayısal imzanın bir bölümü doğrulandı. Bu klasör, ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı ile oluşturulmuş. Bu nedenle kimliği doğrulanamadı."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Sayısal imzanın bir bölümü doğrulandı. Bu klasör, bir ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı ile yüklenmiş. Bu nedenle kimliği doğrulanamadı."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Sayısal imza doğrulandı. Bu güvenli dosyayı <strong>${ emailAddress }</strong> kullanıcısı oluşturmuş."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Sayısal imza doğrulandı. Bu güvenli dosyayı <strong>${ emailAddress }</strong> kullanıcısı yüklemiş."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Sayısal imza doğrulandı. Bu güvenli klasörü <strong>${ emailAddress }</strong> kullanıcısı oluşturmuş."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Sayısal imza doğrulandı. Bu güvenli klasörü <strong>${ emailAddress }</strong> kullanıcısı yüklemiş."
+      ],
       "Discard": [
         "Yok say"
       ],
@@ -11430,6 +11500,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
+      ],
+      "Download details": [
+        "İndirme ayrıntıları"
       ],
       "Download the app": [
         "Uygulamayı indirin"
@@ -11509,6 +11582,9 @@
       "File recovery process": [
         "Dosya kurtarma işlemi sürüyor"
       ],
+      "Folder": [
+        "Klasör"
+      ],
       "Folder details": [
         "Klasör bilgileri"
       ],
@@ -11577,6 +11653,9 @@
       "Last edited by": [
         "Son düzenleyen"
       ],
+      "Last uploaded by": [
+        "Son yükleyen"
+      ],
       "Link confirmation": [
         "Bağlantı onayı"
       ],
@@ -11588,6 +11667,9 @@
       ],
       "Manage secure link": [
         "Güvenli bağlantıyı yönet"
+      ],
+      "Media type": [
+        "Ortam türü"
       ],
       "Merge contacts": [
         "Kişileri birleştir"
@@ -11687,6 +11769,9 @@
       ],
       "Original size": [
         "Özgün boyut"
+      ],
+      "Original size in bytes": [
+        "Bayt olarak özgün boyut"
       ],
       "Other information": [
         "Diğer bilgiler"
@@ -11815,6 +11900,9 @@
       "Settings": [
         "Ayarlar"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "${ name } paylaş"
       ],
@@ -11844,6 +11932,9 @@
       ],
       "Size": [
         "Boyut"
+      ],
+      "Size in bytes": [
+        "Bayt olarak boyut"
       ],
       "Sort files/folders": [
         "Dosyaları/klasörleri sırala"
@@ -11875,6 +11966,15 @@
       "The link expired": [
         "Bağlantının geçerlilik süresi dolmuş"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Düğümü oluşturan özgün içerik oluşturucunun (${ claimedKeyAuthor }) şifreleme anahtarlarının imzası doğrulanamadı. Nedeni: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Dosyanın son sürümünü yükleyen kullanıcının (${ claimedContentAuthor }) içerik imzası doğrulanamadı. Nedeni: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Adı son ayarlayan yazar (${ claimedNameAuthor }) tarafından ad imzası doğrulanamadı. Nedeni: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Bu dosyanın imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Bilgiler bölümüne gidin."
       ],
@@ -11895,6 +11995,12 @@
       ],
       "Type": [
         "Tür"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Kullanıcı bilinmiyor"
       ],
       "Untitled document ${ date }": [
         "Adlandırılmamış belge ${ date }"
@@ -11943,6 +12049,30 @@
       ],
       "Warning: suspected fake website": [
         "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Bu dosyanın <strong>${ emailAddress }</strong> tarafından oluşturulduğu doğrulanamadı."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Bu klasörü <strong>${ emailAddress }</strong> kullanıcısının oluşturduğu doğrulanamadı."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Bu dosyayı <strong>${ emailAddress }</strong> kullanıcısının yüklediği doğrulanamadı."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Bu klasörü <strong>${ emailAddress }</strong> kullanıcısının yüklediği doğrulanamadı."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Bu dosyayı anonim bir kullanıcının oluşturduğu doğrulanamadı."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Bu klasörü anonim bir kullanıcının oluşturduğu doğrulanamadı."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Bu dosyayı anonim bir kullanıcının yüklediği doğrulanamadı."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Bu klasörü anonim bir kullanıcının yüklediği doğrulanamadı."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business uygulamasına hoş geldiniz"
