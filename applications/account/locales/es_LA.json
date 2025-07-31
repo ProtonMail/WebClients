@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "Publicar cambios"
       ],
-      "Purge all": [
-        "Purgar todo"
-      ],
-      "Purge deleted": [
-        "Purgar los elementos eliminados"
-      ],
       "Quit": [
         "Salir"
       ],
@@ -5479,6 +5473,9 @@
       "Missing signature": [
         "Falta la firma"
       ],
+      "Name already exists": [
+        "El nombre ya existe"
+      ],
       "Name does not match": [
         "El nombre no coincide"
       ],
@@ -7085,6 +7082,12 @@
       "Servers": [
         "Servidores"
       ],
+      "Sort folders": [
+        "Ordenar carpetas"
+      ],
+      "Sort labels": [
+        "Ordenar etiquetas"
+      ],
       "Status": [
         "Estado"
       ],
@@ -8111,6 +8114,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "¿Está seguro de que quiere eliminar el dominio ${ boldDomain }?"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "¿En realidad desea ordenar sus carpetas alfabéticamente?"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "¿En realidad desea ordenar sus etiquetas alfabéticamente?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Pregunte al administrador de la organización para configurar puertas de enlace."
       ],
@@ -8143,6 +8152,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Elimine automáticamente los correos electrónicos movidos a la papelera y spam de hace más de 30 días."
+      ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "Muestra automáticamente el correo electrónico siguiente cuando un correo electrónico abierto se elimina, archiva o mueve."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Disponible en macOS, Windows y Linux."
@@ -8392,6 +8404,9 @@
       ],
       "Delete link?": [
         "¿Eliminar el enlace?"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Elimine la papelera y el spam después de 30 días. Al activar esta opción, los mensajes que ya están en la papelera y spam tienen una fecha de eliminación según la fecha en que se movieron allí."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Eliminando ${ deletedServerCount } servidor de puerta de enlace",
@@ -8772,6 +8787,9 @@
       ],
       "Group deleted": [
         "Grupo eliminado"
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Agrupa los correos electrónicos en la misma conversación juntos en su bandeja de entrada o los muestra por separado."
       ],
       "Groups": [
         "Grupos"
@@ -9182,6 +9200,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Los mensajes en la carpeta enviados o borradores continuarán apareciendo en esa carpeta, incluso si los mueve a otra carpeta."
+      ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "Los mensajes en la carpeta de Spam o Papelera serán excluidos de la ubicación de Todos los mensajes."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas sus direcciones de correo se enviarán a su bandeja de entrada."
@@ -9613,15 +9634,6 @@
       ],
       "Restore": [
         "Restaurar"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Se actualizó la regla de conservación «${ formData.name }»."
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Se creó la regla de conservación «${ payload.Name }»."
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Se eliminó la regla de conservación «${ retentionRule.Name }»."
       ],
       "Revoke certificate ${ name }": [
         "Revocar certificado ${ name }"
@@ -15185,9 +15197,6 @@
       "Free server configs": [
         "Ajustes del servidor gratuito"
       ],
-      "Group": [
-        "Grupo"
-      ],
       "I found another service that I like better": [
         "Encontré otro servicio que me gusta mejor"
       ],
@@ -15295,9 +15304,6 @@
       ],
       "Trash": [
         "Enviar a papelera"
-      ],
-      "User": [
-        "Usuario"
       ]
     },
     "option": {
@@ -16621,8 +16627,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Agregar usuarios o grupos"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Confirm": [
+        "Confirmar"
+      ],
       "Create retention rule": [
         "Crear una regla de conservación"
+      ],
+      "Create rule": [
+        "Crear regla"
       ],
       "Delete": [
         "Eliminar"
@@ -16632,6 +16650,35 @@
       ],
       "Edit": [
         "Editar"
+      ],
+      "Purge all": [
+        "Purgar todo"
+      ],
+      "Purge deleted": [
+        "Purgar elementos eliminados"
+      ],
+      "Save changes": [
+        "Guardar cambios"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, incluyendo los de la bandeja de entrada, Enviados y Borradores. Esto podría purgar mensajes que los usuarios esperan conservar. No es posible recuperar estos mensajes posteriormente."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "Después de ${ lifetime } día, todos los mensajes serán eliminados",
+        "Después de ${ lifetime } días, todos los mensajes serán eliminados"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "La vida útil debe ser superior a ${ MIN_LIFETIME } días"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "No se debe establecer una duración por siempre para la acción \"Retener todo\""
+      ],
+      "Scope value is not valid": [
+        "El valor del campo no es válido"
       ]
     },
     "retention_policy_2025_Info": {
@@ -16642,11 +16689,87 @@
         "${ rule.Lifetime } día",
         "${ rule.Lifetime } días"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Crea reglas de conservación para el tiempo que se deben conservar los datos de acuerdo con la política de conservación de datos de su organización. También activa la purga automática de datos expirados."
+      ],
       "Forever": [
         "Para siempre"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Incluye todos los mensajes en la bandeja de entrada, Enviados y todas las demás ubicaciones. Los mensajes eliminados no se pueden recuperar."
+      ],
+      "Removes messages already deleted by users.": [
+        "Borra los mensajes ya eliminados por los usuarios."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Se actualizó la regla de retención «${ formData.name }»."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Se creó la regla de retención «${ payload.Name }»."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Se eliminó la regla de retención «${ retentionRule.Name }»."
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Después de que expire el período de retención"
+      ],
+      "Applies to": [
+        "Se aplica a"
+      ],
+      "days": [
+        "días"
+      ],
+      "Keep items forever": [
+        "Mantener elementos para siempre"
+      ],
+      "Keep messages forever": [
+        "Conservar mensajes para siempre"
+      ],
+      "Retention period": [
+        "Período de retención"
+      ],
+      "Retention rule": [
+        "Regla de conservación"
+      ],
+      "Select product": [
+        "Seleccionar producto"
+      ],
+      "Set a duration": [
+        "Establecer una duración"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Todos en la organización"
+      ],
+      "Group": [
+        "Grupo"
+      ],
+      "Purge all messages": [
+        "Purgar todos los mensajes"
+      ],
+      "Purge deleted messages only": [
+        "Purgar solo mensajes eliminados"
+      ],
+      "Specific users or groups": [
+        "Usuarios o grupos específicos"
+      ],
+      "User": [
+        "Usuario"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "Ej.: Limpiar buzones sin usar"
+      ],
+      "Enter duration": [
+        "Ingresar duración"
+      ],
+      "Enter value": [
+        "Ingresar valor"
+      ],
       "Search for rule, users, period, action": [
         "Buscar regla, usuarios, periodo, acción"
       ],
@@ -16673,9 +16796,15 @@
         "No se encontraron políticas de conservación"
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Cree reglas de conservación para el tiempo que se deben conservar los datos de acuerdo con la política de conservación de datos de su organización. También activa la purga automática de datos expirados."
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "¿Confirmar regla de retención?"
+      ],
+      "Create retention rule": [
+        "Crear una regla de retención"
+      ],
+      "Edit retention rule": [
+        "Editar regla de retención"
       ]
     },
     "Role": {
@@ -18734,6 +18863,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } para ${ maxLumo } usuario",
+        "${ LUMO_APP_NAME } para ${ maxLumo } usuarios"
       ],
       "${ n } calendar per user": [
         "${ n } calendario por usuario",

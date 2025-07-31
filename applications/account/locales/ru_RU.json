@@ -601,6 +601,9 @@
       "Edit users": [
         "Изменить пользователей"
       ],
+      "Edit “${ label.Name }”": [
+        "Изменить “${ label.Name }”"
+      ],
       "Emoji": [
         "Смайлики"
       ],
@@ -16420,6 +16423,25 @@
         "По причине смены пароля ваши полномочия администратора организации были ограничены. Указанные действия более не разрешены:"
       ]
     },
+    "retention_policy_2025_Action": {
+      "Delete": [
+        "Удалить"
+      ],
+      "Delete rule": [
+        "Удалить правило"
+      ],
+      "Edit": [
+        "Изменить"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } день",
+        "${ rule.Lifetime } дня",
+        "${ rule.Lifetime } дней",
+        "${ rule.Lifetime } дней"
+      ]
+    },
     "Role": {
       "Admin": [
         "Администратор"
@@ -17363,6 +17385,12 @@
         "${ maxAddresses } адресов",
         "${ maxAddresses } адресов"
       ],
+      "${ maxAddresses } email address": [
+        "${ maxAddresses } адрес электронной почты",
+        "${ maxAddresses } адреса электронной почты",
+        "${ maxAddresses } адресов электронной почты",
+        "${ maxAddresses } адресов электронной почты"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } календарь",
         "${ maxCalendars } календаря",
@@ -17452,6 +17480,9 @@
       ],
       "Secure file sharing": [
         "Безопасный обмен файлами"
+      ],
+      "Select ${ title }": [
+        "Выбрать ${ title }"
       ],
       "Selected": [
         "Выбрано"
