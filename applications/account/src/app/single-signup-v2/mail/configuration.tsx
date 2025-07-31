@@ -533,7 +533,7 @@ export const getMailConfiguration = ({
                       user: false,
                       signup: true,
                   },
-        generateMnemonic: false,
+        generateMnemonic: true,
         defaults: {
             plan: (() => {
                 if (invite?.type === 'porkbun') {
