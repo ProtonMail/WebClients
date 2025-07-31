@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "Publiser endringer"
       ],
-      "Purge all": [
-        "Fjern alt"
-      ],
-      "Purge deleted": [
-        "Fjern slettede"
-      ],
       "Quit": [
         "Avslutt"
       ],
@@ -5417,6 +5411,9 @@
       "Missing signature": [
         "Mangler signatur"
       ],
+      "Name already exists": [
+        "Navnet finnes allerede"
+      ],
       "Name does not match": [
         "Navn samsvarer ikke"
       ],
@@ -7020,6 +7017,9 @@
       "Servers": [
         "Tjenere"
       ],
+      "Sort labels": [
+        "Sorter etiketter"
+      ],
       "Status": [
         "Status"
       ],
@@ -8046,6 +8046,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Er du sikker på at du ønsker å fjerne domenet ${ boldDomain }?"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "Er du sikker på at du ønsker å sortere mappene dine alfabetisk?"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "Er du sikker på at du vil sortere etikettene dine alfabetisk?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Be organisasjonsadministratoren om å konfigurere porttjenere."
       ],
@@ -8708,6 +8714,9 @@
       "Group deleted": [
         "Gruppe slettet"
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Grupper e-poster fra den samme samtalen i innboksen eller vis dem enkeltvis."
+      ],
       "Groups": [
         "Grupper"
       ],
@@ -9117,6 +9126,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meldinger i Sendt- eller Utkast-mappe vil fortsette å vises i den mappen, selv om du flytter dem til en annen mappe."
+      ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "Meldinger i søppelpost- eller papirkurv-mappen vil bli ekskludert fra \"All e-post\"."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Meldinger til alle e-postadressene dine vil gå til innboksen din."
@@ -9551,15 +9563,6 @@
       ],
       "Restore": [
         "Gjenopprett"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Oppbevaringsregel \"${ formData.name }\" ble oppdatert"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Oppbevaringsregel \"${ payload.Name }\" ble opprettet"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Oppbevaringsregel \"${ retentionRule.Name }\" ble slettet"
       ],
       "Revoke certificate ${ name }": [
         "Tilbakekall sertifikat ${ name }"
@@ -15132,9 +15135,6 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
-      "Group": [
-        "Gruppe"
-      ],
       "I found another service that I like better": [
         "Jeg fant en annen tjeneste som jeg liker bedre"
       ],
@@ -15254,9 +15254,6 @@
       ],
       "UDP": [
         "UDP"
-      ],
-      "User": [
-        "Bruker"
       ],
       "Windows": [
         "Windows"
@@ -16583,6 +16580,15 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Legg til brukere eller grupper"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Confirm": [
+        "Bekreft"
+      ],
       "Create retention rule": [
         "Opprett oppbevaringsregel"
       ],
@@ -16592,8 +16598,37 @@
       "Delete rule": [
         "Slett regel"
       ],
+      "Delete this scope": [
+        "Slett dette omfanget"
+      ],
       "Edit": [
         "Rediger"
+      ],
+      "Purge all": [
+        "Fjern alt"
+      ],
+      "Purge deleted": [
+        "Fjern slettede"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "After ${ lifetime } day all messages will be deleted": [
+        "Etter ${ lifetime } dag blir alle meldinger slettet",
+        "Etter ${ lifetime } dager blir alle meldinger slettet"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "Levetiden må være lengre enn ${ MIN_LIFETIME } dager"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "Levetid kan ikke settes for handlingen \"Behold alle\""
+      ],
+      "Scope value is not valid": [
+        "Omfangsverdien er ikke gyldig"
+      ],
+      "Scope value is required": [
+        "Omfangsverdi kreves"
       ]
     },
     "retention_policy_2025_Info": {
@@ -16604,11 +16639,63 @@
         "${ rule.Lifetime } dag",
         "${ rule.Lifetime } dager"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Opprett bevaringsregler for hvor lenge data skal beholdes i tråd med organisasjonens retningslinje for databevaring. Aktiverer også automatisk fjerning av utløpte data."
+      ],
       "Forever": [
         "For alltid"
+      ],
+      "Removes messages already deleted by users.": [
+        "Fjerner meldinger allerede slettet av brukere."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Bevaringsregel \"${ payload.Name }\" ble opprettet"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Etter bevaringsperioden utløper"
+      ],
+      "Applies to": [
+        "Gjelder for"
+      ],
+      "Keep items forever": [
+        "Behold elementer for alltid"
+      ],
+      "Keep messages forever": [
+        "Behold meldinger for alltid"
+      ],
+      "Retention rule": [
+        "Bevaringsregel"
+      ],
+      "Select product": [
+        "Velg produkt"
+      ],
+      "Set a duration": [
+        "Angi varighet"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Alle i organisasjonen"
+      ],
+      "Purge all messages": [
+        "Slett alle meldinger"
+      ],
+      "Specific users or groups": [
+        "Spesifikke brukere eller grupper"
+      ],
+      "User": [
+        "Bruker"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "F.eks. Opprydding av ubrukte postbokser"
+      ],
+      "Enter duration": [
+        "Angi varighet"
+      ],
       "Search for rule, users, period, action": [
         "Søk etter regel, brukere, periode, handling"
       ],
@@ -16635,9 +16722,15 @@
         "Ingen retningslinjer for oppbevaring funnet"
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Opprett oppbevaringsregler for hvor lenge data skal beholdes i tråd med organisasjonens retningslinje for dataoppbevaring. Aktiverer også automatisk fjerning av utløpte data."
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Bekreft bevaringsregel?"
+      ],
+      "Create retention rule": [
+        "Opprett bevaringsregel"
+      ],
+      "Edit retention rule": [
+        "Rediger bevaringsregel"
       ]
     },
     "Role": {
@@ -18691,6 +18784,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikert tjener",
         "${ ipAddresses } dedikerte tjenere"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } for ${ maxLumo } bruker",
+        "${ LUMO_APP_NAME } for ${ maxLumo } brukere"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per bruker",

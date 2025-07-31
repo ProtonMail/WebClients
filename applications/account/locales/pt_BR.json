@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "Publicar alterações"
       ],
-      "Purge all": [
-        "Purgar tudo"
-      ],
-      "Purge deleted": [
-        "Purgar os elementos excluídos"
-      ],
       "Quit": [
         "Sair"
       ],
@@ -5479,6 +5473,9 @@
       "Missing signature": [
         "Assinatura ausente"
       ],
+      "Name already exists": [
+        "Nome já existe"
+      ],
       "Name does not match": [
         "Nome não corresponde"
       ],
@@ -9616,15 +9613,6 @@
       ],
       "Restore": [
         "Restaurar"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "A regra de retenção «${ formData.name }» foi atualizada."
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "A regra de retenção «${ payload.Name }» foi criada."
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "A regra de retenção «${ retentionRule.Name }» foi excluída."
       ],
       "Revoke certificate ${ name }": [
         "Revogar certificado ${ name }"
@@ -15197,9 +15185,6 @@
       "Free server configs": [
         "Configurações do servidor gratuito"
       ],
-      "Group": [
-        "Grupo"
-      ],
       "I found another service that I like better": [
         "Encontrei outro serviço que considero melhor"
       ],
@@ -15316,9 +15301,6 @@
       ],
       "UDP": [
         "UDP"
-      ],
-      "User": [
-        "Usuário"
       ]
     },
     "option": {
@@ -16648,8 +16630,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Adicionar usuários ou grupos"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Confirm": [
+        "Confirmar"
+      ],
       "Create retention rule": [
         "Criar uma regra de retenção"
+      ],
+      "Create rule": [
+        "Criar regra"
       ],
       "Delete": [
         "Excluir"
@@ -16657,8 +16651,14 @@
       "Delete rule": [
         "Excluir regra"
       ],
+      "Delete this scope": [
+        "Excluir esse escopo"
+      ],
       "Edit": [
         "Editar"
+      ],
+      "Save changes": [
+        "Salvar alterações"
       ]
     },
     "retention_policy_2025_Info": {
@@ -16669,11 +16669,63 @@
         "${ rule.Lifetime } dia",
         "${ rule.Lifetime } dias"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Crie regras de retenção para quanto tempo manter os dados conforme a política de retenção de dados da sua organização. Também ativa a limpeza automática de dados expirados."
+      ],
       "Forever": [
         "Para sempre"
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "A regra de retenção \"${ formData.name }\" foi atualizada."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "A regra de retenção \"${ retentionRule.Name }\" foi excluída."
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "Applies to": [
+        "Aplicar para"
+      ],
+      "days": [
+        "dias"
+      ],
+      "Keep items forever": [
+        "Manter itens para sempre"
+      ],
+      "Keep messages forever": [
+        "Manter mensagens para sempre"
+      ],
+      "Retention period": [
+        "Período de retenção"
+      ],
+      "Retention rule": [
+        "Regra de retenção"
+      ],
+      "Select product": [
+        "Selecionar produto"
+      ],
+      "Set a duration": [
+        "Definir uma duração"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Todos na organização"
+      ],
+      "Group": [
+        "Grupo"
+      ],
+      "User": [
+        "Usuário"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "Enter duration": [
+        "Inserir duração"
+      ],
+      "Enter value": [
+        "Inserir valor"
+      ],
       "Search for rule, users, period, action": [
         "Pesquisar por regra, usuários, período, ação"
       ],
@@ -16700,9 +16752,15 @@
         "Nenhuma política de retenção foi encontrada."
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Crie regras de retenção para quanto tempo manter os dados conforme a política de retenção de dados da sua organização. Também ativa a limpeza automática de dados expirados."
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Confirmar regra de retenção?"
+      ],
+      "Create retention rule": [
+        "Criar regra de retenção"
+      ],
+      "Edit retention rule": [
+        "Editar regra de retenção"
       ]
     },
     "Role": {
@@ -17667,6 +17725,10 @@
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ país",
         "${ vpnServersCountData.paid.countries }+ países"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "${ vpnServersCountData.paid.servers }+ servidor em",
+        "${ vpnServersCountData.paid.servers }+ servidores em"
       ],
       "/user": [
         "/usuário"

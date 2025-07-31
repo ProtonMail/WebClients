@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "변경 사항 게시"
       ],
-      "Purge all": [
-        "모두 지우기"
-      ],
-      "Purge deleted": [
-        "삭제된 항목 지우기"
-      ],
       "Quit": [
         "나가기"
       ],
@@ -5392,6 +5386,9 @@
       "Missing signature": [
         "서명 없음"
       ],
+      "Name already exists": [
+        "이름이 이미 존재합니다."
+      ],
       "Name does not match": [
         "이름이 일치하기 않습니다"
       ],
@@ -6977,6 +6974,12 @@
       "Servers": [
         "서버"
       ],
+      "Sort folders": [
+        "폴더 정렬"
+      ],
+      "Sort labels": [
+        "라벨 정렬"
+      ],
       "Status": [
         "상태"
       ],
@@ -7961,6 +7964,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "이 도메인 ${ boldDomain }을(를) 정말 제거하시겠습니까?"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "정말 폴더를 가나다순으로 정렬하시겠습니까?"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "정말 라벨을 가나다순으로 정렬하시겠습니까?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "게이트웨이를 설정하려면 조직 관리자에 문의하십시오."
       ],
@@ -7993,6 +8002,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30일 이상 전에 휴지통 및 스팸으로 이동한 이메일을 자동으로 삭제합니다."
+      ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "현재 이메일이 삭제, 보관 또는 이동되었을 때 다음 이메일로 이동합니다."
       ],
       "Available on macOS, Windows, and Linux.": [
         "macOS, Windows 및 Linux에서 사용할 수 있습니다."
@@ -8239,6 +8251,9 @@
       ],
       "Delete link?": [
         "링크를 삭제할까요?"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "휴지통 및 스팸함의 메시지를 30일 뒤 지웁니다. 자동 삭제를 활성화 하면 이미 휴지통/스팸에 있는 메시지가 이동된 날짜를 기준으로 삭제될 날짜를 알 수 있습니다."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount }개 게이트웨이 서버 삭제 중"
@@ -8617,6 +8632,9 @@
       ],
       "Group deleted": [
         "그룹이 삭제됨"
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "받은 편지함에서 동일한 대화에 속한 이메일을 함께 그룹화하거나 별도로 표시합니다."
       ],
       "Groups": [
         "그룹"
@@ -9025,6 +9043,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "전송 및 초안 폴더의 메시지가 다른 폴더로 이동하여도 표시됩니다."
+      ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "스팸함 또는 휴지통의 메시지가 모든 메일 항목에서 제외됩니다."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "내 모든 이메일 주소로 오는 메시지는 받은 편지함으로 이동됩니다."
@@ -9454,15 +9475,6 @@
       ],
       "Restore": [
         "복원"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "데이터 보존 규칙 \"${ formData.name }\"이(가) 성공적으로 업로드되었습니다"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "데이터 보존 규칙 \"${ payload.Name }\"이(가) 성공적으로 생성되었습니다"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "데이터 보존 규칙 \"${ retentionRule.Name }\"이(가) 성공적으로 삭제되었습니다"
       ],
       "Revoke certificate ${ name }": [
         "${ name } 인증서 취소"
@@ -14964,9 +14976,6 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
-      "Group": [
-        "그룹"
-      ],
       "I found another service that I like better": [
         "더 낫다고 생각되는 서비스를 찾았습니다"
       ],
@@ -15086,9 +15095,6 @@
       ],
       "UDP": [
         "UDP"
-      ],
-      "User": [
-        "사용자"
       ],
       "Windows": [
         "Windows"
@@ -16404,8 +16410,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "사용자 및 그룹 추가"
+      ],
+      "Cancel": [
+        "취소"
+      ],
+      "Confirm": [
+        "확인"
+      ],
       "Create retention rule": [
         "데이터 보존 규칙 생성"
+      ],
+      "Create rule": [
+        "규칙 생성"
       ],
       "Delete": [
         "삭제"
@@ -16413,8 +16431,45 @@
       "Delete rule": [
         "규칙 삭제"
       ],
+      "Delete this scope": [
+        "이 범위 삭제"
+      ],
       "Edit": [
         "편집"
+      ],
+      "Purge all": [
+        "모두 지우기"
+      ],
+      "Purge deleted": [
+        "삭제된 항목 제거됨"
+      ],
+      "Save changes": [
+        "변경 사항 저장"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "받은 편지함, 보낸 편지함과 임시 보관함의 메시지를 포함해 ${ strongText }. 이는 사용자들이 보관하려던 메시지들을 삭제할 수 도 있습니다. 이후 삭제된 메시지들은 복구할 수 없습니다."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "${ lifetime }일 이후 모든 메시지가 삭제됩니다."
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "수명이 ${ MIN_LIFETIME }일보다 길어야 합니다."
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "\"모두 유지\"작업에 대한 수명은 설정할 수 없습니다."
+      ],
+      "Scope value is not valid": [
+        "범위 값이 유효하지 않습니다"
+      ],
+      "Scope value is required": [
+        "범위 값이 필요합니다"
+      ],
+      "Scopes cannot have the same value": [
+        "범위는 동일한 값을 가질 수 없습니다."
       ]
     },
     "retention_policy_2025_Info": {
@@ -16424,11 +16479,87 @@
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime }일"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "조직 데이터 보존 정책에 따라 데이터를 보관할 기간에 대한 보존 규칙을 생성하세요. 이 기능은 또한 만료된 데이터의 자동 삭제를 활성화합니다."
+      ],
       "Forever": [
         "영구"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "받은 편지함, 보낸 편지함 및 다른 모든 위치에 있는 모든 메시지가 포함됩니다. 제거된 메시지는 복구할 수 없습니다."
+      ],
+      "Removes messages already deleted by users.": [
+        "사용자가 이미 삭제한 메시지를 영구 삭제합니다."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "데이터 보존 규칙 \"${ formData.name }\"이(가) 성공적으로 업로드되었습니다"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "데이터 보존 규칙 \"${ payload.Name }\"이(가) 성공적으로 생성되었습니다"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "데이터 보존 규칙 \"${ retentionRule.Name }\"이(가) 성공적으로 삭제되었습니다"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "데이터 보존 기간 만료 후"
+      ],
+      "Applies to": [
+        "적용 대상"
+      ],
+      "days": [
+        "일"
+      ],
+      "Keep items forever": [
+        "항목 영구 보존"
+      ],
+      "Keep messages forever": [
+        "메시지 영구 보존"
+      ],
+      "Retention period": [
+        "보존 기간"
+      ],
+      "Retention rule": [
+        "데이터 보존 규칙"
+      ],
+      "Select product": [
+        "제품 선택"
+      ],
+      "Set a duration": [
+        "기간 설정"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "조직 내 모든 구성원"
+      ],
+      "Group": [
+        "그룹"
+      ],
+      "Purge all messages": [
+        "모든 메시지 제거"
+      ],
+      "Purge deleted messages only": [
+        "삭제된 메시지만 제거"
+      ],
+      "Specific users or groups": [
+        "특정 사용자 또는 그룹"
+      ],
+      "User": [
+        "사용자"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "예시: 사용하지 않는 메일함 정리"
+      ],
+      "Enter duration": [
+        "기간 입력"
+      ],
+      "Enter value": [
+        "값 입력"
+      ],
       "Search for rule, users, period, action": [
         "규칙, 사용자, 기간, 동작 검색"
       ],
@@ -16455,9 +16586,15 @@
         "데이터 보존 규칙을 찾을 수 없음"
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "조직 데이터 보존 정책에 따라 데이터를 보관할 기간에 대한 보존 규칙을 생성하세요. 이 기능은 또한 만료된 데이터의 자동 삭제를 활성화합니다."
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "데이터 보존 규칙을 생성하시겠습니까?"
+      ],
+      "Create retention rule": [
+        "데이터 보존 규칙 생성"
+      ],
+      "Edit retention rule": [
+        "데이터 보존 규칙 수정"
       ]
     },
     "Role": {
@@ -17371,6 +17508,9 @@
       "${ maxDomains } email domain": [
         "${ maxDomains }개 이메일 도매인"
       ],
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "나의 비밀번호를 위한 ${ PASS_PLUS_VAULTS }개 금고"
+      ],
       "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
         "${ referrerName }님이 사용자를 ${ BRAND_NAME }에 초대했습니다."
       ],
@@ -17385,6 +17525,15 @@
       ],
       "${ value } total storage": [
         "${ value }개 총 저장공간"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS }개 기기에서의 고속 VPN 연결"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries }개 이상의 국가"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "${ vpnServersCountData.paid.servers }개 이상의 서버"
       ],
       "/user": [
         "/사용자 당"
@@ -17532,6 +17681,9 @@
       ],
       "Save ${ priceDifferenceString }": [
         "${ priceDifferenceString } 절약"
+      ],
+      "Secure ${ VPN_CONNECTIONS } device at a time": [
+        "동시에 최대 ${ VPN_CONNECTIONS }개까지 장치 보호"
       ],
       "Secure file sharing": [
         "안전한 파일 공유"
@@ -18450,6 +18602,9 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses }개 전용 서버"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ maxLumo }명의 사용자를 위한 ${ LUMO_APP_NAME }"
       ],
       "${ n } calendar per user": [
         "사용자 당 ${ n }개 캘린더"
