@@ -8,7 +8,7 @@ import { Wrapper } from './Wrapper';
 
 import './layout.scss';
 
-type LayoutProps = { aside: ReactNode };
+type LayoutProps = { aside?: ReactNode };
 
 export const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children, aside }) => (
     <div className="min-h-screen w-screen h-screen flex flex-column lg:flex-row signup-bg-gradient">
@@ -17,7 +17,7 @@ export const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children, aside }) 
         >
             <Header />
             <Wrapper minHeight="calc(100vh - 4.25rem - 3.85rem)">
-                <Main>{children}</Main>
+                <Main fullWidth={!aside}>{children}</Main>
             </Wrapper>
             <Footer />
         </div>
