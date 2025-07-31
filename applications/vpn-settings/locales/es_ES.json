@@ -582,12 +582,6 @@
       "Publish changes": [
         "Publicar los cambios"
       ],
-      "Purge all": [
-        "Purgar todo"
-      ],
-      "Purge deleted": [
-        "Purgar los elementos eliminados"
-      ],
       "Recover data": [
         "Recuperar datos"
       ],
@@ -3353,6 +3347,9 @@
       "Invalid ZIP code": [
         "Código postal inválido"
       ],
+      "Name already exists": [
+        "El nombre ya existe"
+      ],
       "Name does not match": [
         "El nombre no coincide."
       ],
@@ -5628,15 +5625,6 @@
       ],
       "Restore": [
         "Restaurar"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Se ha actualizado la regla de conservación «${ formData.name }»."
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Se ha creado la regla de conservación «${ payload.Name }»."
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Se ha eliminado la regla de conservación «${ retentionRule.Name }»."
       ],
       "Revoke certificate ${ name }": [
         "Revocar certificado ${ name }"
@@ -9023,9 +9011,6 @@
       "Free server configs": [
         "Configuraciones del servidor gratuito"
       ],
-      "Group": [
-        "Grupo"
-      ],
       "I found another service that I like better": [
         "He encontrado otro servicio que me gusta mejor."
       ],
@@ -9085,9 +9070,6 @@
       ],
       "The whole organization": [
         "Toda la organización"
-      ],
-      "User": [
-        "Usuario"
       ]
     },
     "option": {
@@ -9894,11 +9876,6 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "No se han encontrado políticas de conservación."
-      ]
-    },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Crea reglas de conservación para el tiempo que se deben conservar los datos de acuerdo con la política de conservación de datos de tu organización. También activa la purga automática de datos expirados."
       ]
     },
     "Role": {

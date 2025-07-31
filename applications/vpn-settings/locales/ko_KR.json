@@ -582,12 +582,6 @@
       "Publish changes": [
         "변경 사항 게시"
       ],
-      "Purge all": [
-        "모두 지우기"
-      ],
-      "Purge deleted": [
-        "삭제된 항목 지우기"
-      ],
       "Recover data": [
         "데이터 복구"
       ],
@@ -3283,6 +3277,9 @@
       "Invalid ZIP code": [
         "유효하지 않은 우편 번호"
       ],
+      "Name already exists": [
+        "이름이 이미 존재합니다."
+      ],
       "Name does not match": [
         "이름이 일치하기 않습니다"
       ],
@@ -5515,15 +5512,6 @@
       ],
       "Restore": [
         "복원"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "데이터 보존 규칙 \"${ formData.name }\"이(가) 성공적으로 업로드되었습니다"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "데이터 보존 규칙 \"${ payload.Name }\"이(가) 성공적으로 생성되었습니다"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "데이터 보존 규칙 \"${ retentionRule.Name }\"이(가) 성공적으로 삭제되었습니다"
       ],
       "Revoke certificate ${ name }": [
         "${ name } 인증서 취소"
@@ -8865,9 +8853,6 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
-      "Group": [
-        "그룹"
-      ],
       "I found another service that I like better": [
         "더 낫다고 생각되는 서비스를 찾았습니다"
       ],
@@ -8939,9 +8924,6 @@
       ],
       "UDP": [
         "UDP"
-      ],
-      "User": [
-        "사용자"
       ],
       "Windows": [
         "Windows"
@@ -9687,8 +9669,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "사용자 및 그룹 추가"
+      ],
+      "Cancel": [
+        "취소"
+      ],
+      "Confirm": [
+        "확인"
+      ],
       "Create retention rule": [
         "데이터 보존 규칙 생성"
+      ],
+      "Create rule": [
+        "규칙 생성"
       ],
       "Delete": [
         "삭제"
@@ -9696,8 +9690,45 @@
       "Delete rule": [
         "규칙 삭제"
       ],
+      "Delete this scope": [
+        "이 범위 삭제"
+      ],
       "Edit": [
         "편집"
+      ],
+      "Purge all": [
+        "모두 지우기"
+      ],
+      "Purge deleted": [
+        "삭제된 항목 제거됨"
+      ],
+      "Save changes": [
+        "변경 사항 저장"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "받은 편지함, 보낸 편지함과 임시 보관함의 메시지를 포함해 ${ strongText }. 이는 사용자들이 보관하려던 메시지들을 삭제할 수 도 있습니다. 이후 삭제된 메시지들은 복구할 수 없습니다."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "${ lifetime }일 이후 모든 메시지가 삭제됩니다."
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "수명이 ${ MIN_LIFETIME }일보다 길어야 합니다."
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "\"모두 유지\"작업에 대한 수명은 설정할 수 없습니다."
+      ],
+      "Scope value is not valid": [
+        "범위 값이 유효하지 않습니다"
+      ],
+      "Scope value is required": [
+        "범위 값이 필요합니다"
+      ],
+      "Scopes cannot have the same value": [
+        "범위는 동일한 값을 가질 수 없습니다."
       ]
     },
     "retention_policy_2025_Info": {
@@ -9707,11 +9738,87 @@
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime }일"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "조직 데이터 보존 정책에 따라 데이터를 보관할 기간에 대한 보존 규칙을 생성하세요. 이 기능은 또한 만료된 데이터의 자동 삭제를 활성화합니다."
+      ],
       "Forever": [
         "영구"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "받은 편지함, 보낸 편지함 및 다른 모든 위치에 있는 모든 메시지가 포함됩니다. 제거된 메시지는 복구할 수 없습니다."
+      ],
+      "Removes messages already deleted by users.": [
+        "사용자가 이미 삭제한 메시지를 영구 삭제합니다."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "데이터 보존 규칙 \"${ formData.name }\"이(가) 성공적으로 업로드되었습니다"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "데이터 보존 규칙 \"${ payload.Name }\"이(가) 성공적으로 생성되었습니다"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "데이터 보존 규칙 \"${ retentionRule.Name }\"이(가) 성공적으로 삭제되었습니다"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "데이터 보존 기간 만료 후"
+      ],
+      "Applies to": [
+        "적용 대상"
+      ],
+      "days": [
+        "일"
+      ],
+      "Keep items forever": [
+        "항목 영구 보존"
+      ],
+      "Keep messages forever": [
+        "메시지 영구 보존"
+      ],
+      "Retention period": [
+        "보존 기간"
+      ],
+      "Retention rule": [
+        "데이터 보존 규칙"
+      ],
+      "Select product": [
+        "제품 선택"
+      ],
+      "Set a duration": [
+        "기간 설정"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "조직 내 모든 구성원"
+      ],
+      "Group": [
+        "그룹"
+      ],
+      "Purge all messages": [
+        "모든 메시지 제거"
+      ],
+      "Purge deleted messages only": [
+        "삭제된 메시지만 제거"
+      ],
+      "Specific users or groups": [
+        "특정 사용자 또는 그룹"
+      ],
+      "User": [
+        "사용자"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "예시: 사용하지 않는 메일함 정리"
+      ],
+      "Enter duration": [
+        "기간 입력"
+      ],
+      "Enter value": [
+        "값 입력"
+      ],
       "Search for rule, users, period, action": [
         "규칙, 사용자, 기간, 동작 검색"
       ],
@@ -9738,9 +9845,15 @@
         "데이터 보존 규칙을 찾을 수 없음"
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "조직 데이터 보존 정책에 따라 데이터를 보관할 기간에 대한 보존 규칙을 생성하세요. 이 기능은 또한 만료된 데이터의 자동 삭제를 활성화합니다."
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "데이터 보존 규칙을 생성하시겠습니까?"
+      ],
+      "Create retention rule": [
+        "데이터 보존 규칙 생성"
+      ],
+      "Edit retention rule": [
+        "데이터 보존 규칙 수정"
       ]
     },
     "Role": {
@@ -10831,6 +10944,9 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses }개 전용 서버"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ maxLumo }명의 사용자를 위한 ${ LUMO_APP_NAME }"
       ],
       "${ n } calendar per user": [
         "사용자 당 ${ n }개 캘린더"

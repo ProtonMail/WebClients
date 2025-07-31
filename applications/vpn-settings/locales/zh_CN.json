@@ -582,12 +582,6 @@
       "Publish changes": [
         "发布更改"
       ],
-      "Purge all": [
-        "全部清除"
-      ],
-      "Purge deleted": [
-        "清除已删除项"
-      ],
       "Recover data": [
         "恢复数据"
       ],
@@ -5513,15 +5507,6 @@
       "Restore": [
         "还原"
       ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "保留规则 \"${ formData.name }\" 更新成功"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "保留规则 \"${ payload.Name }\" 创建成功"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "保留规则 \"${ retentionRule.Name }\" 已成功删除"
-      ],
       "Revoke certificate ${ name }": [
         "吊销证书 ${ name }"
       ],
@@ -8853,9 +8838,6 @@
       "Free server configs": [
         "免费服务器配置"
       ],
-      "Group": [
-        "群组"
-      ],
       "I found another service that I like better": [
         "不如别的产品好用"
       ],
@@ -8915,9 +8897,6 @@
       ],
       "The whole organization": [
         "整个团体"
-      ],
-      "User": [
-        "用户"
       ]
     },
     "option": {
@@ -9709,11 +9688,6 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "未找到任何保留策略"
-      ]
-    },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "根据贵组织的数据保留策略，设置数据保留规则以确定数据的保留时长。此外，还同时支持自动清除过期数据。"
       ]
     },
     "Role": {

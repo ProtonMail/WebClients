@@ -582,12 +582,6 @@
       "Publish changes": [
         "Publier les modifications"
       ],
-      "Purge all": [
-        "Tout purger"
-      ],
-      "Purge deleted": [
-        "Purger les éléments supprimés"
-      ],
       "Recover data": [
         "Récupérer les données"
       ],
@@ -992,7 +986,7 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
-        "${ seats } accès ${ LUMO_APP_NAME }"
+        "${ seats } accès à ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
@@ -3359,6 +3353,9 @@
       "Invalid ZIP code": [
         "Le code postal n'est pas valide."
       ],
+      "Name already exists": [
+        "Le nom existe déjà"
+      ],
       "Name does not match": [
         "Les noms ne correspondent pas."
       ],
@@ -5634,15 +5631,6 @@
       ],
       "Restore": [
         "Restauration"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "La règle de conservation « ${ formData.name } » a été mise à jour."
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "La règle de conservation « ${ payload.Name } » a été créée."
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "La règle de conservation « ${ retentionRule.Name } » a été supprimée."
       ],
       "Revoke certificate ${ name }": [
         "Révoquer le certificat ${ name }"
@@ -9029,9 +9017,6 @@
       "Free server configs": [
         "Configurations des serveurs Free"
       ],
-      "Group": [
-        "Groupe"
-      ],
       "I found another service that I like better": [
         "J'ai trouvé un autre service que je préfère."
       ],
@@ -9091,9 +9076,6 @@
       ],
       "The whole organization": [
         "Toute l'organisation"
-      ],
-      "User": [
-        "Utilisateur "
       ]
     },
     "option": {
@@ -9850,8 +9832,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Ajouter des utilisateurs ou des groupes."
+      ],
+      "Cancel": [
+        "Annuler"
+      ],
+      "Confirm": [
+        "Confirmer"
+      ],
       "Create retention rule": [
         "Créer une règle de conservation"
+      ],
+      "Create rule": [
+        "Créer une règle"
       ],
       "Delete": [
         "Supprimer"
@@ -9859,8 +9853,46 @@
       "Delete rule": [
         "Supprimer la règle"
       ],
+      "Delete this scope": [
+        "Supprimer cette zone"
+      ],
       "Edit": [
         "Modifier"
+      ],
+      "Purge all": [
+        "Tout purger"
+      ],
+      "Purge deleted": [
+        "Purger les éléments supprimés"
+      ],
+      "Save changes": [
+        "Enregistrer les modifications"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, y compris ceux de la boîte de réception, des éléments envoyés et des brouillons. Cette opération peut supprimer les messages que les utilisateurs veulent conserver. Il est impossible de les récupérer après."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "Après ${ lifetime } jour, tous les messages seront supprimés.",
+        "Après ${ lifetime } jours, tous les messages seront supprimés"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "La durée doit être supérieure à ${ MIN_LIFETIME } jours."
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "La durée ne doit pas être définie pour l'action « Conserver tout »"
+      ],
+      "Scope value is not valid": [
+        "Cette valeur de zone n'est pas valide."
+      ],
+      "Scope value is required": [
+        "La valeur de la zone est requise."
+      ],
+      "Scopes cannot have the same value": [
+        "Les zones ne peuvent avoir une valeur identique."
       ]
     },
     "retention_policy_2025_Info": {
@@ -9871,11 +9903,87 @@
         "${ rule.Lifetime } jour",
         "${ rule.Lifetime } jours"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Créez des règles de conservation conformément à la politique de votre organisation en matière de durée de conservation des données. Cela permet également la purge automatique des données expirées."
+      ],
       "Forever": [
         "Pour toujours"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Inclut tous les messages de la boîte de réception, des éléments envoyés et de tous les autres emplacements. Les messages supprimés ne peuvent pas être récupérés."
+      ],
+      "Removes messages already deleted by users.": [
+        "Retirer les messages déjà supprimés."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "La règle de conservation « ${ formData.name } » a été mise à jour."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "La règle de conservation « ${ payload.Name } » a été créée."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "La règle de conservation « ${ retentionRule.Name } » a été supprimée."
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Après l'échéance de la période de conservation."
+      ],
+      "Applies to": [
+        "S'applique à"
+      ],
+      "days": [
+        "jours"
+      ],
+      "Keep items forever": [
+        "Toujours garder ces éléments."
+      ],
+      "Keep messages forever": [
+        "Garder ces messages indéfiniment."
+      ],
+      "Retention period": [
+        "Durée de conservation"
+      ],
+      "Retention rule": [
+        "Règle de conservation."
+      ],
+      "Select product": [
+        "Sélectionner un produit"
+      ],
+      "Set a duration": [
+        "Définir la durée."
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Tous dans l'organisation."
+      ],
+      "Group": [
+        "Groupe"
+      ],
+      "Purge all messages": [
+        "Supprimer tous les messages."
+      ],
+      "Purge deleted messages only": [
+        "Seulement supprimer les messages dans la corbeille."
+      ],
+      "Specific users or groups": [
+        "Utilisateurs ou groupes spécifiques."
+      ],
+      "User": [
+        "Utilisateur"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "Par exemple, nettoyer les boîtes aux lettres inutilisées."
+      ],
+      "Enter duration": [
+        "Saisir la durée"
+      ],
+      "Enter value": [
+        "Saisissez une valeur"
+      ],
       "Search for rule, users, period, action": [
         "Rechercher une règle, des utilisateurs, une période ou une action"
       ],
@@ -9902,9 +10010,15 @@
         "Aucune politique de conservation n'a été trouvée."
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Créez des règles de conservation conformément à la politique de votre organisation en matière de durée de conservation des données. Cela permet également la purge automatique des données expirées."
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Confirmez la règle de conservation ?"
+      ],
+      "Create retention rule": [
+        "Créer une règle de conservation."
+      ],
+      "Edit retention rule": [
+        "Modifier la règle de conservation"
       ]
     },
     "Role": {
@@ -11030,6 +11144,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } serveur dédié",
         "${ ipAddresses } serveurs dédiés"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } pour ${ maxLumo } utilisateur.",
+        "${ LUMO_APP_NAME } pour ${ maxLumo } utilisateurs."
       ],
       "${ n } calendar per user": [
         "${ n } calendrier par utilisateur",
