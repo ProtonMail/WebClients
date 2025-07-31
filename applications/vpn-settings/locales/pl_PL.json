@@ -582,12 +582,6 @@
       "Publish changes": [
         "Opublikuj zmiany"
       ],
-      "Purge all": [
-        "Usuń wszytsko"
-      ],
-      "Purge deleted": [
-        "Usunięto"
-      ],
       "Recover data": [
         "Odzyskaj dane"
       ],
@@ -3385,6 +3379,9 @@
       "Invalid ZIP code": [
         "Kod pocztowy jest nieprawidłowy"
       ],
+      "Name already exists": [
+        "Nazwa już istnieje"
+      ],
       "Name does not match": [
         "Nazwy nie pasują do siebie"
       ],
@@ -5752,15 +5749,6 @@
       ],
       "Restore": [
         "Przywróć"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Reguła przechowywania \"${ formData.name }\" została zaktualizowana"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Reguła przechowywania \"${ payload.Name }\" została utworzona"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Reguła przechowywania \"${ retentionRule.Name }\" została usunięta"
       ],
       "Revoke certificate ${ name }": [
         "Unieważnij certyfikat ${ name }"
@@ -9204,9 +9192,6 @@
       "Free server configs": [
         "Konfiguracje darmowego serwera"
       ],
-      "Group": [
-        "Grupa"
-      ],
       "I found another service that I like better": [
         "Mam inną, lepszą usługę"
       ],
@@ -9266,9 +9251,6 @@
       ],
       "The whole organization": [
         "Cała organizacja"
-      ],
-      "User": [
-        "Użytkownik"
       ]
     },
     "option": {
@@ -10096,11 +10078,6 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "Nie znaleziono zasady przechowywania"
-      ]
-    },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Utwórz reguły przechowywania danych zgodne z polityką organizacji. Umożliwia również automatyczne usuwanie wygasłych danych."
       ]
     },
     "Role": {
