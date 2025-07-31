@@ -88,9 +88,9 @@ export const ItemsListItem = memo(
                         e.preventDefault();
                         onSelect(item, e.ctrlKey || e.metaKey);
                     }}
-                    onDragStart={(evt: DragEvent) => canDrag && onDragStart?.(evt, { ID: id })}
+                    onDragStart={(evt) => canDrag && onDragStart?.(evt, { ID: id })}
                     onDragEnd={onDragEnd}
-                    onContextMenu={(evt: MouseEvent) => onContextMenu?.(evt, item)}
+                    onContextMenu={(evt) => onContextMenu?.(evt, item)}
                 >
                     <div className={clsx('flex-nowrap flex w-full items-center', bulk ? 'px-2 py-1.5' : 'px-3 py-2')}>
                         <SafeItemIcon
