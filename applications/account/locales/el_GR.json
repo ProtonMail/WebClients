@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "Δημοσιεύστε τις αλλαγές"
       ],
-      "Purge all": [
-        "Εκκαθάριση όλων"
-      ],
-      "Purge deleted": [
-        "Εκκαθάριση διαγραμμένων"
-      ],
       "Quit": [
         "Έξοδος"
       ],
@@ -5417,6 +5411,9 @@
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
+      "Name already exists": [
+        "Το όνομα υπάρχει ήδη"
+      ],
       "Name does not match": [
         "Το όνομα δεν ταιριάζει"
       ],
@@ -7020,6 +7017,12 @@
       "Servers": [
         "Διακομιστές"
       ],
+      "Sort folders": [
+        "Ταξινόμηση φακέλων"
+      ],
+      "Sort labels": [
+        "Ταξινόμηση ετικετών"
+      ],
       "Status": [
         "Κατάσταση"
       ],
@@ -8046,6 +8049,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Θέλετε σίγουρα να καταργήσετε τον τομέα ${ boldDomain };"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "Είστε σίγουροι ότι θέλετε να ταξινομήσετε τους φακέλους σας αλφαβητικά;"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "Είστε σίγουροι ότι θέλετε να ταξινομήσετε τις ετικέτες σας αλφαβητικά;"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
       ],
@@ -8078,6 +8087,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Αυτόματη εκκαθάριση μηνυμάτων ηλεκτρονικού ταχυδρομείου που μετακινήθηκαν στον Κάδο απορριμμάτων και στα Ανεπιθύμητα πριν από περισσότερες από 30 ημέρες."
+      ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "Αυτόματη εμφάνιση του επόμενου μηνύματος όταν το τρέχον μήνυμα διαγράφεται, αρχειοθετείται ή μετακινείται."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Διαθέσιμο σε macOS, Windows και Linux."
@@ -8327,6 +8339,9 @@
       ],
       "Delete link?": [
         "Διαγραφή συνδέσμου;"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Εξαλείψτε οριστικά τα μηνύματα στα Διαγραμμένα και τα Ενοχλητικά μετά από 30 ημέρες. Η ενεργοποίηση της αυτόματης διαγραφής, εφαρμόζει στα διαγραμμένα/ενοχλητικά μηνύματα ημερομηνία αυτόματης εξάλειψης βάσει της ημερομηνίας μετακίνησής τους εκεί."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Διαγραφή ${ deletedServerCount } διακομιστή πύλης",
@@ -8707,6 +8722,9 @@
       ],
       "Group deleted": [
         "Η ομάδα διαγράφηκε"
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Ομαδοποιήστε τα μηνύματα της ίδιας συνομιλίας στα Εισερχόμενά σας ή εμφανίστε τα ξεχωριστά."
       ],
       "Groups": [
         "Ομάδες"
@@ -9117,6 +9135,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Τα μηνύματα στον φάκελο Απεσταλμένα ή Πρόχειρα θα συνεχίσουν να εμφανίζονται σε αυτόν τον φάκελο, ακόμη και αν τα μετακινήσετε σε άλλο φάκελο."
+      ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "Μηνύματα στους φακέλους Ανεπιθύμητα ή Κάδος Απορριμμάτων θα εξαιρεθούν από την τοποθεσία Όλα τα μηνύματα."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Τα μηνύματα σε όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου σας θα μεταφερθούν στα εισερχόμενά σας."
@@ -9548,15 +9569,6 @@
       ],
       "Restore": [
         "Επαναφορά"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Ο κανόνας διατήρησης \"${ formData.name }\" ενημερώθηκε επιτυχώς"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Ο κανόνας διατήρησης \"${ payload.Name }\" δημιουργήθηκε επιτυχώς"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Ο κανόνας διατήρησης \"${ retentionRule.Name }\" διαγράφηκε επιτυχώς."
       ],
       "Revoke certificate ${ name }": [
         "Ανάκληση πιστοποιητικού ${ name }"
@@ -15120,9 +15132,6 @@
       "Free server configs": [
         "Ρυθμίσεις δωρεάν διακομιστή"
       ],
-      "Group": [
-        "Ομάδα"
-      ],
       "I found another service that I like better": [
         "Βρήκα μια άλλη υπηρεσία που μου αρέσει περισσότερο"
       ],
@@ -15230,9 +15239,6 @@
       ],
       "Trash": [
         "Διαγραμμένα"
-      ],
-      "User": [
-        "Χρήστης"
       ]
     },
     "option": {
@@ -16556,8 +16562,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Προσθέστε χρήστες ή ομάδες"
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Confirm": [
+        "Επιβεβαίωση"
+      ],
       "Create retention rule": [
         "Δημιουργία κανόνα διατήρησης"
+      ],
+      "Create rule": [
+        "Δημιουργία κανόνα"
       ],
       "Delete": [
         "Διαγραφή"
@@ -16565,8 +16583,46 @@
       "Delete rule": [
         "Διαγραφή κανόνα"
       ],
+      "Delete this scope": [
+        "Διαγραφή αυτής της εμβέλειας"
+      ],
       "Edit": [
         "Επεξεργασία"
+      ],
+      "Purge all": [
+        "Εκκαθάριση όλων"
+      ],
+      "Purge deleted": [
+        "Εκκαθάριση διαγραμμένων"
+      ],
+      "Save changes": [
+        "Αποθήκευση αλλαγών"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, συμπεριλαμβανομένων αυτών στα Εισερχόμενα, τα Απεσταλμένα και τα Πρόχειρα. Αυτό ενδέχεται να διαγράψει μηνύματα που οι χρήστες αναμένουν να διατηρήσουν. Δεν είναι δυνατή η ανάκτηση αυτών των μηνυμάτων αργότερα."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "Μετά από ${ lifetime } ημέρα όλα τα μηνύματα θα διαγραφούν",
+        "Μετά από ${ lifetime } ημέρες όλα τα μηνύματα θα διαγραφούν"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "Η διάρκεια ζωής πρέπει να είναι μεγαλύτερη από ${ MIN_LIFETIME } ημέρες"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "Η διάρκεια ζωής δεν πρέπει να οριστεί για την ενέργεια \"Διατήρηση Όλων\""
+      ],
+      "Scope value is not valid": [
+        "Η τιμή εμβέλειας δεν είναι έγκυρη"
+      ],
+      "Scope value is required": [
+        "Απαιτείται τιμή εμβέλειας"
+      ],
+      "Scopes cannot have the same value": [
+        "Οι εμβέλειες δεν μπορούν να έχουν την ίδια τιμή"
       ]
     },
     "retention_policy_2025_Info": {
@@ -16577,11 +16633,87 @@
         "${ rule.Lifetime } ημέρα",
         "${ rule.Lifetime } ημέρες"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Δημιουργήστε κανόνες διατήρησης για το πόσο καιρό θα διατηρούνται τα δεδομένα σύμφωνα με την πολιτική διατήρησης δεδομένων του οργανισμού σας. Επίσης, ενεργοποιεί την αυτόματη εκκαθάριση των ληγμένων δεδομένων."
+      ],
       "Forever": [
         "Για πάντα"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Περιλαμβάνει όλα τα μηνύματα στα Εισερχόμενα, τα Απεσταλμένα, και όλες τις άλλες τοποθεσίες. Τα διαγραμμένα μηνύματα δεν μπορούν να ανακτηθούν."
+      ],
+      "Removes messages already deleted by users.": [
+        "Αφαιρεί μηνύματα που έχουν ήδη διαγραφεί από χρήστες."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Ο κανόνας διατήρησης \"${ formData.name }\" ενημερώθηκε επιτυχώς"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Ο κανόνας διατήρησης \"${ payload.Name }\" δημιουργήθηκε επιτυχώς"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Ο κανόνας διατήρησης \"${ retentionRule.Name }\" διαγράφηκε επιτυχώς."
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Μετά τη λήξη της περιόδου διατήρησης"
+      ],
+      "Applies to": [
+        "Ισχύει για"
+      ],
+      "days": [
+        "ημέρες"
+      ],
+      "Keep items forever": [
+        "Διατηρήστε αντικείμενα για πάντα"
+      ],
+      "Keep messages forever": [
+        "Διατηρήστε μηνύματα για πάντα"
+      ],
+      "Retention period": [
+        "Περίοδος διατήρησης"
+      ],
+      "Retention rule": [
+        "Κανόνας Διατήρησης"
+      ],
+      "Select product": [
+        "Επιλογή προϊόντος"
+      ],
+      "Set a duration": [
+        "Ορισμός διάρκειας"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Όλοι στον οργανισμό"
+      ],
+      "Group": [
+        "Ομάδα"
+      ],
+      "Purge all messages": [
+        "Εκκαθάριση όλων των μηνυμάτων"
+      ],
+      "Purge deleted messages only": [
+        "Εκκαθάριση μόνο διαγραμμένων μηνυμάτων"
+      ],
+      "Specific users or groups": [
+        "Συγκεκριμένοι χρήστες ή ομάδες"
+      ],
+      "User": [
+        "Χρήστης"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "Π.χ. Εκκαθάριση αχρησιμοποίητων θυρίδων"
+      ],
+      "Enter duration": [
+        "Εισαγάγετε διάρκεια"
+      ],
+      "Enter value": [
+        "Εισάγετε τιμή"
+      ],
       "Search for rule, users, period, action": [
         "Αναζήτηση για κανόνα, χρήστες, περίοδο, ενέργεια"
       ],
@@ -16608,9 +16740,15 @@
         "Δεν βρέθηκαν πολιτικές διατήρησης"
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Δημιουργήστε κανόνες διατήρησης για το πόσο καιρό θα διατηρούνται τα δεδομένα σύμφωνα με την πολιτική διατήρησης δεδομένων του οργανισμού σας. Επίσης, ενεργοποιεί την αυτόματη εκκαθάριση των ληγμένων δεδομένων."
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Επιβεβαίωση κανόνα διατήρησης;"
+      ],
+      "Create retention rule": [
+        "Δημιουργία κανόνα διατήρησης"
+      ],
+      "Edit retention rule": [
+        "Επεξεργασία κανόνα διατήρησης"
       ]
     },
     "Role": {
@@ -17570,6 +17708,10 @@
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ χώρα",
         "${ vpnServersCountData.paid.countries }+ χώρες"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "${ vpnServersCountData.paid.servers }+ διακομιστής σε",
+        "${ vpnServersCountData.paid.servers }+ διακομιστες σε"
       ],
       "/user": [
         "/χρήστη"
@@ -18660,6 +18802,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } αποκλειστικός διακομιστής",
         "${ ipAddresses } αποκλειστικοί διακομιστές"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } για ${ maxLumo } χρήστη",
+        "${ LUMO_APP_NAME } για ${ maxLumo } χρήστες"
       ],
       "${ n } calendar per user": [
         "${ n } ημερολόγιο ανά χρήστη",

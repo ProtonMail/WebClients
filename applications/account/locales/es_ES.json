@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "Publicar los cambios"
       ],
-      "Purge all": [
-        "Purgar todo"
-      ],
-      "Purge deleted": [
-        "Purgar los elementos eliminados"
-      ],
       "Quit": [
         "Salir"
       ],
@@ -5479,6 +5473,9 @@
       "Missing signature": [
         "Falta la firma."
       ],
+      "Name already exists": [
+        "El nombre ya existe"
+      ],
       "Name does not match": [
         "El nombre no coincide."
       ],
@@ -9613,15 +9610,6 @@
       ],
       "Restore": [
         "Restaurar"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Se ha actualizado la regla de conservación «${ formData.name }»."
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Se ha creado la regla de conservación «${ payload.Name }»."
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Se ha eliminado la regla de conservación «${ retentionRule.Name }»."
       ],
       "Revoke certificate ${ name }": [
         "Revocar certificado ${ name }"
@@ -15185,9 +15173,6 @@
       "Free server configs": [
         "Configuraciones del servidor gratuito"
       ],
-      "Group": [
-        "Grupo"
-      ],
       "I found another service that I like better": [
         "He encontrado otro servicio que me gusta más"
       ],
@@ -15295,9 +15280,6 @@
       ],
       "Trash": [
         "Enviar a la papelera"
-      ],
-      "User": [
-        "Usuario"
       ]
     },
     "option": {
@@ -16673,11 +16655,6 @@
         "No se han encontrado políticas de conservación."
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Crea reglas de conservación para el tiempo que se deben conservar los datos de acuerdo con la política de conservación de datos de tu organización. También activa la purga automática de datos expirados."
-      ]
-    },
     "Role": {
       "Admin": [
         "Administrador"
@@ -17617,6 +17594,10 @@
         "${ maxDomains } dominio de correo electrónico",
         "${ maxDomains } dominios de correo electrónico"
       ],
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "${ PASS_PLUS_VAULTS } bóveda para tus contraseñas",
+        "${ PASS_PLUS_VAULTS } bóvedas para tus contraseñas"
+      ],
       "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
         "${ referrerName } te invita a probar ${ BRAND_NAME }."
       ],
@@ -17631,6 +17612,18 @@
       ],
       "${ value } total storage": [
         "${ value } de almacenamiento total"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } conexión VPN de alta velocidad",
+        "${ VPN_CONNECTIONS } conexiones VPN de alta velocidad"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries }+ país",
+        "${ vpnServersCountData.paid.countries }+ países"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "${ vpnServersCountData.paid.servers }+ servidor en",
+        "${ vpnServersCountData.paid.servers }+ servidores en"
       ],
       "/user": [
         "/usuario"
@@ -17778,6 +17771,10 @@
       ],
       "Save ${ priceDifferenceString }": [
         "Ahorra un ${ priceDifferenceString }"
+      ],
+      "Secure ${ VPN_CONNECTIONS } device at a time": [
+        "Protege ${ VPN_CONNECTIONS } dispositivo a la vez",
+        "Protege ${ VPN_CONNECTIONS } dispositivos a la vez"
       ],
       "Secure file sharing": [
         "Intercambio de archivos seguro"
