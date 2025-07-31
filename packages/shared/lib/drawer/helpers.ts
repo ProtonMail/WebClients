@@ -1,4 +1,5 @@
 import { LOCALSTORAGE_DRAWER_KEY } from '@proton/shared/lib/drawer/constants';
+import { getMessageEventType } from '@proton/shared/lib/helpers/messageEvent';
 import { isURLProtonInternal } from '@proton/shared/lib/helpers/url';
 
 import { getAppHref } from '../apps/helper';
@@ -69,15 +70,22 @@ export const getIsDrawerPostMessage = (
         return false;
     }
 
+    // Defensive code to prevent the "Permission denied to access property 'type'" error
+    const eventType = getMessageEventType(event);
+    if (!eventType) {
+        return false;
+    }
+
     /**
      * The message is a "valid" side app message if
      * - The message is coming from an authorized app
      * - event.data is defined
      * - event.data.type is part of the SIDE_APP_EVENT enum
      */
-    return (
-        isAuthorizedDrawerUrl(origin, hostname) && event.data && Object.values(DRAWER_EVENTS).includes(event.data.type)
-    );
+    const isAuthorized = isAuthorizedDrawerUrl(origin, hostname);
+    const isValidType = Object.values(DRAWER_EVENTS).includes(eventType as DRAWER_EVENTS);
+
+    return isAuthorized && isValidType;
 };
 
 export const postMessageFromIframe = (message: DRAWER_ACTION, parentApp: APP_NAMES, location = window.location) => {
