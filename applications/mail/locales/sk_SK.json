@@ -7391,7 +7391,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -13994,6 +13997,12 @@
         "${ elementsCount } konverzácií bolo odstránených z ${ labelName }.",
         "${ elementsCount } konverzácií bolo odstránených z ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } konverzácia bola odstránená z obľúbených.",
+        "${ elementsCount } konverzácie boli odstránené z obľúbených.",
+        "${ elementsCount } konverzácií bolo odstránených z obľúbených.",
+        "${ elementsCount } konverzácií bolo odstránených z obľúbených."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } konverzácia odložená",
         "${ elementsCount } konverzácie odložené",
@@ -14053,6 +14062,12 @@
         "${ elementsCount } správy boli odstránené z ${ labelName }.",
         "${ elementsCount } správ bolo odstránených z ${ labelName }.",
         "${ elementsCount } správ bolo odstránených z ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } správa bola odstránená z obľúbených.",
+        "${ elementsCount } správy boli odstránené z obľúbených.",
+        "${ elementsCount } správ bolo odstránených z obľúbených.",
+        "${ elementsCount } správ bolo odstránených z obľúbených."
       ],
       "Address copied to clipboard": [
         "Adresa bola skopírovaná do schránky"
@@ -14119,6 +14134,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Konverzácia odstránená z ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Konverzácia bola odstránená z obľúbených."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Konverzácia od ${ sendersList } budú označené ako ${ labelsList }"
@@ -14191,6 +14209,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Správa odstránená z ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Správa bola odstránená z obľúbených."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Správy od ${ sendersList } budú označené ako ${ labelsList }"
