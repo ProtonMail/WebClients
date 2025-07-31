@@ -27,7 +27,7 @@ export type MoveItemsModalViewProps = {
     selectedItems: MoveItemsModalStateItem[];
     handleSubmit: () => Promise<void>;
     rootItems: TreeItem[];
-    createFolder: (parentFolderLinkId?: string) => void;
+    createFolder: () => void;
     onTreeSelect: (link: DecryptedLink) => void;
     toggleExpand: (linkId: string) => void;
     createFolderModal: React.ReactNode;
@@ -93,7 +93,7 @@ export const MoveItemsModalView = ({
                         {rootItems.length === 0 && (
                             <>
                                 <ModalTwoHeader closeButtonProps={{ disabled: loading }} />
-                                <EmptyFileTreePlaceholder onCreate={() => createFolder(targetFolderUid)} />
+                                <EmptyFileTreePlaceholder onCreate={createFolder} />
                             </>
                         )}
                         {rootItems.length > 0 && (
@@ -116,7 +116,7 @@ export const MoveItemsModalView = ({
                                             <Button
                                                 icon
                                                 disabled={loading || !targetFolderUid}
-                                                onClick={() => createFolder(targetFolderUid)}
+                                                onClick={createFolder}
                                                 title={c('Action').t`Create new folder`}
                                             >
                                                 <Icon name="folder-plus" />
@@ -126,7 +126,7 @@ export const MoveItemsModalView = ({
                                                 shape="underline"
                                                 color="norm"
                                                 disabled={loading || !targetFolderUid}
-                                                onClick={() => createFolder(targetFolderUid)}
+                                                onClick={createFolder}
                                             >
                                                 {c('Action').t`Create new folder`}
                                             </Button>
