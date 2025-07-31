@@ -3,6 +3,8 @@ import { type ComponentType } from 'react';
 import { PLANS } from '@proton/payments';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
 
+import { AlwaysOnUpsell } from './AlwaysOnUpsell/AlwaysOnUpsell';
+import { useAlwaysOnUpsell } from './AlwaysOnUpsell/useAlwaysOnUpsell';
 import { GoUnlimited2025 } from './GoUnlimitedOffer/GoUnlimited2025';
 import { useGoUnlimited2025 } from './GoUnlimitedOffer/hooks/useGoUnlimited2025';
 import { MailSubscriptionReminder } from './MailSubscriptionReminder/MailSubscriptionReminder';
@@ -27,6 +29,7 @@ interface Offer extends Pick<OfferHookReturnValue, 'isLoading' | 'isEligible'> {
 export const usePostSignupOffers = ({ app }: Props) => {
     const mailPostSignup = useMailPostSignupOneDollar();
     const drivePostSignup = useDrivePostSignupOneDollar();
+    const alwaysOnUpsell = useAlwaysOnUpsell();
 
     const mailSubscription = useMailSubscriptionReminder();
 
@@ -52,6 +55,12 @@ export const usePostSignupOffers = ({ app }: Props) => {
             isEligible: mailSubscription.isEligible,
             isLoading: mailSubscription.isLoading,
             Component: MailSubscriptionReminder,
+            props: { app },
+        },
+        {
+            isEligible: alwaysOnUpsell.isEligible,
+            isLoading: alwaysOnUpsell.isLoading,
+            Component: AlwaysOnUpsell,
             props: { app },
         },
         {

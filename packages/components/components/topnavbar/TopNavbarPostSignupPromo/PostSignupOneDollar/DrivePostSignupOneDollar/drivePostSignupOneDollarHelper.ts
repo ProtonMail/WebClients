@@ -48,7 +48,7 @@ export const getIsUserEligibleForOneDollar = ({
     const accountCreationDate = fromUnixTime(user.CreateTime);
     const offerExpirationDate = fromUnixTime(postSignupTimestamp);
 
-    // Account must be created 7 days ago to be eligible
+    // Account must be created 3 days ago to be eligible
     const isAccountOldEnough = differenceInDays(today, accountCreationDate) >= POST_SIGNUP_ONE_DOLLAR_ACCOUNT_AGE;
 
     // The offer is valid for 30 days after the first time it was shown to the user
