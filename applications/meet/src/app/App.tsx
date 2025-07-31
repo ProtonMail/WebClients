@@ -19,19 +19,17 @@ import meetTheme from './styles/meet.theme.css';
 
 const routes = ['join', 'admin/create', 'dashboard'];
 
-const ComingSoonWrapper = ({ children, isGuest }: { children: React.ReactNode; isGuest: boolean }) => {
-    const isJoin = window.location.pathname.includes('join');
+const ComingSoonWrapper = ({ children }: { children: React.ReactNode }) => {
+    const isJoin = window.location.pathname.includes('join'); // The /join path is both for instant meeting and joining a meeting
 
     const { token } = usePublicToken();
 
     const isEarlyAccess = useFlag('MeetEarlyAccess');
     const isEarlyAccessPublic = useFlag('MeetEarlyAccessPublic');
 
-    const shouldDisplayComingSoonPage =
-        (isGuest && !isJoin) ||
-        (!isEarlyAccessPublic && isGuest) ||
-        (isEarlyAccessPublic && isGuest && !token) ||
-        !isEarlyAccess;
+    const isOnJoinMeetingPageAndHasAccess = isJoin && token && isEarlyAccessPublic; // We have the meeting link id token if we are joining a meeting
+
+    const shouldDisplayComingSoonPage = !isEarlyAccess && !isOnJoinMeetingPageAndHasAccess;
 
     if (shouldDisplayComingSoonPage) {
         return <ComingSoon />;
@@ -66,13 +64,13 @@ export const App = () => {
 
             {isGuest ? (
                 <GuestContainer>
-                    <ComingSoonWrapper isGuest={true}>
+                    <ComingSoonWrapper>
                         <Route path="/join" render={() => <ProtonMeetContainer guestMode={true} />} />
                     </ComingSoonWrapper>
                 </GuestContainer>
             ) : (
                 <ProviderContainer>
-                    <ComingSoonWrapper isGuest={false}>
+                    <ComingSoonWrapper>
                         <Route path="/join" render={() => <ProtonMeetContainer />} />
                         <Route path="/admin" component={AdminContainer} />
                         <Route path="/dashboard" component={DashboardContainer} />
