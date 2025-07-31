@@ -16,6 +16,10 @@ const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
             titleBarStyle: "hidden",
             vibrancy: "sidebar",
             trafficLightPosition: { x: 12, y: 18 },
+            transparent: true,
+            webPreferences: {
+                transparent: true,
+            },
         };
     } else if (isWindows) {
         return {};
@@ -51,6 +55,7 @@ export const getWindowConfig = (): BrowserWindowConstructorOptions => {
             contextIsolation: true,
             disableBlinkFeatures: "Auxclick",
             sandbox: true,
+            ...(getOSSpecificConfig().webPreferences || {}),
         },
     };
 };
