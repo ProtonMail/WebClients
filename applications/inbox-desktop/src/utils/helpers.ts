@@ -1,4 +1,4 @@
-import { app, dialog } from "electron";
+import { app, dialog, WebContentsView } from "electron";
 import { getCalendarView, getMailView } from "./view/viewManagement";
 import { clearLogs, mainLogger } from "./log";
 import { DESKTOP_PLATFORMS, MAIL_APP_NAME } from "@proton/shared/lib/constants";
@@ -20,7 +20,7 @@ export const getPlatform = (): DESKTOP_PLATFORMS => {
     throw new Error(`Platform "${process.platform}" not supported.`);
 };
 
-const clear = (view: Electron.BrowserView) => {
+const clear = (view: WebContentsView) => {
     view.webContents.session.flushStorageData();
     view.webContents.session.clearStorageData();
     view.webContents.session.clearAuthCache();
