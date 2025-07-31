@@ -113,7 +113,7 @@ export const useMoveItemsModalState = ({
         }
     };
 
-    const onTreeSelect = async (link: DecryptedLink) => {
+    const onTreeSelect = async (link: { volumeId: string; linkId: string }) => {
         // TODO:FOLDERTREE change on FolderTree sdk migration
         const folderNodeUid = generateNodeUid(link.volumeId, link.linkId);
         setTargetFolderUid(folderNodeUid);
@@ -124,29 +124,27 @@ export const useMoveItemsModalState = ({
         onClose?.();
     };
 
-    const createNewFolder = async (selectedItemParentLinkId?: string) => {
-        if (rootItems.length > 1 && selectedItemParentLinkId === undefined) {
+    const createNewFolder = async () => {
+        if (rootItems.length > 1 && targetFolderUid === undefined) {
             return;
         }
 
-        const targetLinkId = selectedItemParentLinkId || rootItems[0]?.link.linkId || selectedItems[0]?.parentLinkId;
-
-        if (!targetLinkId) {
-            return;
+        let targetUid;
+        if (!targetFolderUid) {
+            const targetLinkId = activeFolder.linkId || rootItems[0]?.link.linkId || selectedItems[0]?.parentLinkId;
+            const targetVolumeId = activeFolder.volumeId || rootItems[0]?.link.volumeId || selectedItems[0]?.volumeId;
+            targetUid = generateNodeUid(targetVolumeId, targetLinkId) as string;
+        } else {
+            targetUid = targetFolderUid;
         }
-
-        const targetVolumeId = selectedItemParentLinkId
-            ? activeFolder.volumeId
-            : rootItems[0]?.link.volumeId || selectedItems[0]?.volumeId;
-        const parentFolderUid = generateNodeUid(targetVolumeId, targetLinkId);
 
         showCreateFolderModal({
-            parentFolderUid,
+            parentFolderUid: targetUid,
             onCreateDone: async (newFolderUid: string) => {
                 setTargetFolderUid(newFolderUid);
 
                 // After creating the folder we want to expand its parent so it shows in the tree
-                const { nodeId } = splitNodeUid(parentFolderUid);
+                const { nodeId } = splitNodeUid(targetUid);
                 expand(nodeId);
             },
         });
