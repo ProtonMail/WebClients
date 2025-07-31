@@ -20,6 +20,7 @@ import { isRefineActionType } from '@proton/llm/lib/types';
 import { AssistantEvent } from '@proton/llm/lib/types';
 import { GENERATION_TYPE, checkHardwareForAssistant } from '@proton/shared/lib/assistant';
 import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
+import { getMessageEventType } from '@proton/shared/lib/helpers/messageEvent';
 import { getApiSubdomainUrl, isURLProtonInternal } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces';
 import window from '@proton/shared/lib/window';
@@ -344,10 +345,16 @@ export const isAssistantPostMessage = (event: MessageEvent, hostname = window.lo
     const isAssistantAppURL = isAuthorizedAssistantAppURL(origin, hostname);
     const isValidURL = isIframeURL || isAssistantAppURL;
 
+    // Defensive code to prevent the "Permission denied to access property 'type'" error
+    const eventType = getMessageEventType(event);
+    if (!eventType || !isValidURL) {
+        return false;
+    }
+
     // Check that the assistant event is a valid event based on
     // - The url of the event origin, is it an authorized url?
     // - Does the event contain a valid `ASSISTANT_EVENTS`
-    return isValidURL && event.data && Object.values(AssistantEvent).includes(event.data.type);
+    return Object.values(AssistantEvent).includes(eventType as AssistantEvent);
 };
 
 // Function used to post messages to the assistant iframe
