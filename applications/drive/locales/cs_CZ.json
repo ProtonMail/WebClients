@@ -1624,7 +1624,7 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "${ LUMO_SHORT_APP_NAME } problém"
+        "Problém s ${ LUMO_SHORT_APP_NAME }"
       ],
       "Application problem": [
         "Problém s aplikací"
@@ -11928,7 +11928,7 @@
         "Stáhnout aplikace ${ DRIVE_APP_NAME }"
       ],
       "Download details": [
-        "Stáhnout detaily"
+        "Detaily stahování"
       ],
       "Download the app": [
         "Stáhněte si aplikaci"
@@ -12405,7 +12405,7 @@
         "Ověření podpisu obsahu souboru nahrávajícím (${ claimedContentAuthor }), který nahrál poslední revizi, selhalo. Důvodem je: ${ activeRevision.contentAuthor.error.error }"
       ],
       "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
-        "Ověření podpisu názvu autorem (${ claimedNameAuthor }), který název nastavil naposledy selhalo. Důvodem je: ${ nodeEntity.nameAuthor.error.error }"
+        "Ověření podpisu názvu autorem (${ claimedNameAuthor }), který název nastavil naposledy, selhalo. Důvodem je: ${ nodeEntity.nameAuthor.error.error }"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tento soubor má chybějící nebo neplatný podpis. Běžte do Menu (⋮) → Detaily pro info."
