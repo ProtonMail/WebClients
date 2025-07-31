@@ -7198,7 +7198,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -13575,6 +13576,10 @@
         "${ elementsCount } conversación eliminada de ${ labelName }.",
         "${ elementsCount } conversaciones eliminadas de ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } conversación removida de Destacados.",
+        "${ elementsCount } conversaciones removidas de Destacados."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversación pausada",
         "${ elementsCount } conversaciones pausadas"
@@ -13614,6 +13619,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensaje eliminado de ${ labelName }.",
         "${ elementsCount } mensajes eliminados de ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } mensaje removido de Destacados.",
+        "${ elementsCount } mensajes removidos de Destacados."
       ],
       "Address copied to clipboard": [
         "Dirección copiada al portapapeles"
@@ -13676,6 +13685,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversación eliminada de ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Conversación removida de Destacados."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Las conversaciones de ${ sendersList } serán etiquetadas como ${ labelsList }"
@@ -13748,6 +13760,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Mensaje eliminado de ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Mensaje removido de Destacados"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Los mensajes de ${ sendersList } serán etiquetados como ${ labelsList }"
