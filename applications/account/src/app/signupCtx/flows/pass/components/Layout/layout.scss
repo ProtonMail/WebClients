@@ -91,6 +91,11 @@ body {
 		}
 	}
 
+	.divider-gradient {
+		opacity: 0.2;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 24.06%, #FFF 50.09%, rgba(255, 255, 255, 0.00) 75.94%);
+	}
+
 	.banner-gradient-bg {
 		max-width: 80%;
 		background: linear-gradient(30deg, #F6C592 50%, #D397BE 90%), #191927;
