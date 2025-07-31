@@ -1,10 +1,16 @@
 @import '~@proton/styles/scss/lib';
 
+body {
+	overflow-y: auto;
+}
+
 .pass-signup {
+	--pass-signup-bg: #1d1738;
+
 	scroll-behavior: smooth;
 
 	.signup-bg-gradient {
-		background: #1d1738;
+		background: var(--pass-signup-bg);
 	}
 
 	.signup-layout-gap {
@@ -37,17 +43,75 @@
 		}
 	}
 
+	.pass-plan-card-grid {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 2rem 0;
+
+		@include media('>small') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media('>large') {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
 	&-button-border {
 		border: 2px solid var(--text-norm);
+		transition: all 0.2s linear;
+
+		&:hover {
+			border: 2px solid var(--text-norm);
+			box-shadow: 0 0 8px 0 var(--text-norm);
+		}
 	}
 
 	.bg-invert {
 		background-color: var(--background-invert);
 	}
+
+	.border-gradient {
+		border: 3px solid #8a6eff;
+
+		@supports (background: conic-gradient(white, black)) {
+			border: 3px solid transparent;
+			background: linear-gradient(var(--pass-signup-bg), var(--pass-signup-bg)) padding-box,
+			conic-gradient(from 0deg at 50% 50%,
+					#8a6eff 0deg,
+					#8a6eff 45deg,
+					#C486CB 90deg,
+					#C486CB 135deg,
+					#FFC977 180deg,
+					#FFC977 225deg,
+					#F6C592 270deg,
+					#8a6eff 315deg,
+					#8a6eff 360deg
+			) border-box;
+		}
+	}
+
+	.banner-gradient-bg {
+		max-width: 80%;
+		background: linear-gradient(30deg, #F6C592 50%, #D397BE 90%), #191927;
+	}
+
+	.text-40 {
+		font-size: 40px;
+	}
+
+	.text-md {
+		font-size: 14px;
+	}
 }
 
+/* Overrides */
 .input, .input:hover {
 	--field-background-color: transparent!important;
 	--field-focus-background-color: transparent!important;
 	--field-hover-background-color: transparent!important;
+}
+
+.button-outline-norm {
+	background-color: transparent;
 }
