@@ -44,6 +44,7 @@ enum CommonFeatureFlag {
     InboxBringYourOwnEmailSignup = 'InboxBringYourOwnEmailSignup',
     CryptoEnforceOpenpgpGrammar = 'CryptoEnforceOpenpgpGrammar',
     ReferralExpansion = 'ReferralExpansion',
+    AlwaysOnUpsell = 'AlwaysOnUpsell',
 }
 
 enum AccountFlag {
