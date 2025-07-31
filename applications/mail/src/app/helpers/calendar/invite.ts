@@ -475,6 +475,7 @@ export const processEventInvitation = <T>(
         organizer,
         attendees,
         addresses: ownAddresses,
+        emailTo: originalTo,
     });
     let isAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
     let isAddressDisabled = selfAddress ? getIsAddressDisabled(selfAddress) : false;
