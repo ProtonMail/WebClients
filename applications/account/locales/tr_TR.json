@@ -619,6 +619,12 @@
       "Edit servers": [
         "Sunucuları düzenle"
       ],
+      "Edit Sieve": [
+        "Sieve süzgecini düzenle"
+      ],
+      "Edit Sieve filter “${ Name }”": [
+        "${ Name } Sieve süzgecini düzenle"
+      ],
       "Edit sign-in details": [
         "Oturum açma bilgilerini düzenle"
       ],
@@ -1634,6 +1640,10 @@
       "${ price } per user": [
         "her kullanıcı için ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } koltuk",
+        "${ seats } ${ LUMO_APP_NAME } koltuk"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } yazma yardımcısı koltuğu",
         "${ seats } yazma yardımcısı koltuğu"
@@ -2405,6 +2415,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } sorunu"
+      ],
       "Application problem": [
         "Uygulama sorunu"
       ],
@@ -5460,6 +5473,9 @@
       "Missing signature": [
         "İmza eksik"
       ],
+      "Name already exists": [
+        "Ad zaten var"
+      ],
       "Name does not match": [
         "Ad eşleşmiyor"
       ],
@@ -7654,6 +7670,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } sizinle ${ PASS_APP_NAME } verilerini paylaşmak istiyor"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME }"
       ],
@@ -8453,6 +8472,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
+      ],
+      "Download current logs": [
+        "Güncel günlükleri indir"
       ],
       "Download on the App Store": [
         "App Store üzerinden indirin"
@@ -9495,6 +9517,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
+      ],
+      "Private AI assistant": [
+        "Kişisel Yapay Zeka yardımcısı"
       ],
       "Promotion expired": [
         "Fırsatın süresi dolmuş"
@@ -11064,6 +11089,9 @@
       "Inactive": [
         "Etkin değil"
       ],
+      "Invalid": [
+        "Geçersiz"
+      ],
       "Obsolete": [
         "Eskimiş"
       ],
@@ -11942,6 +11970,9 @@
       ],
       "Inbox": [
         "Gelen kutusu"
+      ],
+      "Include application logs in bug report": [
+        "Uygulama günlüklerini sorun bildirimine eklensin"
       ],
       "Inherit color from parent folder": [
         "Üst klasörün rengi devralınsın"
@@ -13256,6 +13287,12 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } hesabınızda oturum açarak, ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi şifrelenmiş tüm ${ BRAND_NAME } hizmetlerine erişin. Hesabınız yok mu? Ücretsiz bir hesap açın."
+      ],
+      "Take control of your data with end-to-end encryption. No bank card required.": [
+        "Verilerinizin kontrolunu uçtan uca şifrelemeyle elinizde tutun. Kredi kartı gerekmez."
+      ],
+      "Try ${ BRAND_NAME } for free with this link": [
+        "Bu bağlantı ile ${ BRAND_NAME } tarifesini ücretsiz olarak deneyin"
       ]
     },
     "Modal title": {
@@ -16308,11 +16345,23 @@
       ]
     },
     "Plan description": {
+      "A VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan bir VPN çözümü."
+      ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Duo tarifesinde tüm ücretli ${ BRAND_NAME } ürünleri bulunur."
       ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Çiftler ve ${ maxSpace } depolama alanına gerek duyanlar için en iyisi."
+      ],
+      "Cloud storage and file sharing, secured by end-to-end encryption.": [
+        "Uçtan uca şifreleme ile korunan bulut depolama alanı ve dosya paylaşımı."
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
+      ],
+      "For next-level password management and identity protection.": [
+        "Üst düzey parola yönetimi ve kimlik koruması için."
       ],
       "Great for everyday use and photo backups.": [
         "Günlük kullanım ve fotoğraf yedekleri için harika"
@@ -16322,6 +16371,9 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Ekipler için güvenli bulut depolama alanı ve iş birliği."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Gizliliğe önem veren ileri düzey kullanıcılara uygun tarife."
@@ -16545,6 +16597,196 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Parola değişikliği nedeniyle kuruluş yöneticinizin yetkileri kısıtlandı. Artık aşağıdaki işlemlere izin verilmiyor:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Kullanıcılar ya da gruplar ekleyin"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Confirm": [
+        "Onayla"
+      ],
+      "Create retention rule": [
+        "Verileri tutma kuralı"
+      ],
+      "Create rule": [
+        "Kural oluştur"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Delete rule": [
+        "Kuralı sil"
+      ],
+      "Delete this scope": [
+        "Bu kapsamı sil"
+      ],
+      "Edit": [
+        "Düzenle"
+      ],
+      "Purge all": [
+        "Tümünü temizle"
+      ],
+      "Purge deleted": [
+        "Silinmişleri temizle"
+      ],
+      "Save changes": [
+        "Değişiklikleri kaydet"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText } ile, Gelen kutusu, Gönderilmiş ve Taslaklar klasörlerindeki iletileri kapsar. Bu uygulama, kullanıcıların tutulacağını düşündüğü iletileri temizleyebilir. Bu iletiler daha sonra kurtarılamaz."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "${ lifetime } gün sonra tüm iletiler silinecek",
+        "${ lifetime } gün sonra tüm iletiler silinecek"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "Tutma süresi ${ MIN_LIFETIME } günden fazla olmalıdır"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "\"Tümü tutulsun\" işlemi için tutma süresi ayarlanmamalıdır"
+      ],
+      "Scope value is not valid": [
+        "Kapsam değeri geçersiz"
+      ],
+      "Scope value is required": [
+        "Kapsam değeri zorunludur"
+      ],
+      "Scopes cannot have the same value": [
+        "Kapsamlar aynı değerde olamaz"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } diğer"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } gün",
+        "${ rule.Lifetime } gün"
+      ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Kuruluşunuzun veri saklama ilkesine uygun olarak verileri ne kadar süreyle tutacağınızı belirleyen kurallar oluşturun. Süresi geçmiş verileri otomatik olarak temizleyin."
+      ],
+      "Forever": [
+        "Sonsuza dek"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Gelen kutusu, Gönderilmiş ve diğer tüm konumlardaki tüm iletileri kapsar. Temizlenen iletiler kurtarılamaz."
+      ],
+      "Removes messages already deleted by users.": [
+        "Kullanıcılar tarafından zaten silinmiş iletileri siler."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "\"${ formData.name }\" verileri tutma kuralı güncellendi"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "\"${ payload.Name }\" verileri tutma kuralı oluşturuldu"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "\"${ retentionRule.Name }\" verileri tutma kuralı silindi"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Verileri tutma süresi dolduktan sonra"
+      ],
+      "Applies to": [
+        "Şunlar için geçerlidir"
+      ],
+      "days": [
+        "gün"
+      ],
+      "Keep items forever": [
+        "Ögeler sonsuza dek tutulsun"
+      ],
+      "Keep messages forever": [
+        "İletileri sonsuza dek tutulsun"
+      ],
+      "Retention period": [
+        "Verileri tutma süresi"
+      ],
+      "Retention rule": [
+        "Verileri tutma kuralı"
+      ],
+      "Select product": [
+        "Ürün seçin"
+      ],
+      "Set a duration": [
+        "Bir süre ayarlayın"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Kuruluştaki herkes"
+      ],
+      "Group": [
+        "Grup"
+      ],
+      "Purge all messages": [
+        "Tüm iletileri temizle"
+      ],
+      "Purge deleted messages only": [
+        "Yalnızca silinmiş iletiler temizlensin"
+      ],
+      "Specific users or groups": [
+        "Belirli kullanıcılar veya gruplar"
+      ],
+      "User": [
+        "Kullanıcı"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "Örnek: Kullanılmayan e-posta kutularını temizleme"
+      ],
+      "Enter duration": [
+        "Süreyi yazın"
+      ],
+      "Enter value": [
+        "Değeri yazın"
+      ],
+      "Search for rule, users, period, action": [
+        "Kural, kullanıcı, dönem, işlem ara"
+      ],
+      "Search policies": [
+        "İlke ara"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "İşlem"
+      ],
+      "Applies to": [
+        "Şunlar için geçerlidir"
+      ],
+      "Retention period": [
+        "Verileri tutma süresi"
+      ],
+      "Retention Rule": [
+        "Verileri tutma kuralı"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Herhangi bir verileri tutma ilkesi bulunamadı"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Verileri tutma kuralını onaylıyor musunuz?"
+      ],
+      "Create retention rule": [
+        "Verileri tutma kuralı oluştur"
+      ],
+      "Edit retention rule": [
+        "Verileri tutma kuralını düzenle"
       ]
     },
     "Role": {
@@ -17460,13 +17702,35 @@
         "İstenmeyen e-postalardan korunmak için ${ FREE_PASS_ALIASES } hide-my-email takma adı",
         "İstenmeyen e-postalardan korunmak için ${ FREE_PASS_ALIASES } hide-my-email takma adı"
       ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adres",
         "${ maxAddresses } adres"
       ],
+      "${ maxAddresses } email address": [
+        "${ maxAddresses } e-posta adresi",
+        "${ maxAddresses } e-posta adresi"
+      ],
+      "${ maxAddresses } extra email address": [
+        "${ maxAddresses } ek e-posta adresi",
+        "${ maxAddresses } ek e-posta adresi"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } takvim",
         "${ maxCalendars } takvim"
+      ],
+      "${ maxDomains } email domain": [
+        "${ maxDomains } e-posta etki alanı",
+        "${ maxDomains } e-posta etki alanı"
+      ],
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "Parolalarınız için ${ PASS_PLUS_VAULTS } kasa",
+        "Parolalarınız için ${ PASS_PLUS_VAULTS } kasa"
+      ],
+      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
+        "${ referrerName } sizi ${ BRAND_NAME } hizmetini denemeye davet ediyor."
       ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "Dosyalar ve fotoğraflar için ${ totalDriveStorageSize } bulut depolama alanı"
@@ -17477,6 +17741,21 @@
       "${ value } of secure storage per user": [
         "Her kullanıcı için ${ value } güvenli depolama alanı"
       ],
+      "${ value } total storage": [
+        "${ value } toplam depolama alanı"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } yüksek hızlı VPN bağlantısı",
+        "${ VPN_CONNECTIONS } yüksek hızlı VPN bağlantısı"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries } üzerinde ülkede",
+        "${ vpnServersCountData.paid.countries } üzerinde ülkede"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "${ vpnServersCountData.paid.servers } üzerinde sunucu",
+        "${ vpnServersCountData.paid.servers } üzerinde sunucu"
+      ],
       "/user": [
         "/kullanıcı"
       ],
@@ -17486,8 +17765,23 @@
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "And get ${ referralReward } in credits, if you subscribe.": [
+        "Ve abone olursanız, ${ referralReward } kredi kazanırsınız."
+      ],
       "Billing Cycle": [
         "Fatura dönemi"
+      ],
+      "Block ads, trackers, and malware": [
+        "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
+      ],
+      "Built-in 2FA authenticator": [
+        "Hazır iki adımlı kimlik doğrulayıcı"
+      ],
+      "Bundle": [
+        "Paket"
       ],
       "Collaborative document editing": [
         "İş birliği ile belge düzenleme"
@@ -17504,8 +17798,23 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "${ PLAN_NAMES[plan] } tarifesinde kalın"
       ],
+      "Continue with the free plan": [
+        "Free tarifesini kullanmayı sürdür"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Bir ${ BRAND_NAME } hesabı açın"
+      ],
+      "Custom fields and file attachment": [
+        "Özel alanlar ve ek dosya"
+      ],
+      "Encrypted cloud storage": [
+        "Şifrelenmiş bulut depolama alanı"
+      ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "${ totalMailStorageSize } depolama alanı ile şifrelenmiş e-posta"
+      ],
+      "Encrypted file sharing and document editor": [
+        "Şifrelenmiş dosya paylaşımı ve belge düzenleyici"
       ],
       "Encrypted password manager": [
         "Şifrelenmiş parola yöneticisi"
@@ -17513,11 +17822,23 @@
       "End-to-end encryption": [
         "Uçtan uca şifreleme"
       ],
+      "Enjoy secure, easy-to-use ${ BRAND_NAME } apps.": [
+        "Güvenli ve kolay kullanılan ${ BRAND_NAME } uygulamalarının tadını çıkarın."
+      ],
       "Every free account comes with:": [
         "Her ücretsiz hesap ile şunlar sunulur:"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "Hızlı P2P/BitTorrent indirmeleri"
+      ],
       "Free": [
         "Ücretsiz"
+      ],
+      "Free for 14 days": [
+        "14 gün ücretsiz"
+      ],
+      "Get ${ referralReward } in credits": [
+        "${ referralReward } kredi kazanın"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Güvenli bir ${ MAIL_APP_NAME } adresi edinin ya da ${ internalButton }"
@@ -17527,6 +17848,15 @@
       ],
       "Get a secure one from us, or ${ internalButton }": [
         "Bizden güvenli bir adres edinin ya da ${ internalButton }"
+      ],
+      "Gifted by **${ referrerName }**": [
+        "Hediye eden: **${ referrerName }**"
+      ],
+      "Highest VPN speed": [
+        "En yüksek VPN hızı"
+      ],
+      "Mailboxes and custom domains for aliases": [
+        "Takma adlar için e-posta kutuları ve özel etki alanları"
       ],
       "Manage user access": [
         "Kullanıcı erişimini yönetin"
@@ -17543,8 +17873,17 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Daha fazla depolama alanı mı gerekiyor? İstediğiniz zaman 200 GB ile 3 TB arasında değişen tarifelere yükseltebilirsiniz. 5 GB, modern bir telefondan çekilmiş (her biri yaklaşık 2 MB olan) 2.500 fotoğraf için yeterlidir."
       ],
+      "No credit card required:": [
+        "Kredi kartı gerekmez:"
+      ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
       "Online documents": [
         "Çevrim içi belgeler"
+      ],
+      "Password manager": [
+        "Parola yöneticisi"
       ],
       "Password manager for all your devices": [
         "Tüm aygıtlarınız için parola yöneticisi"
@@ -17564,8 +17903,24 @@
       "Save ${ priceDifferenceString }": [
         "${ priceDifferenceString } indirim alın"
       ],
+      "Secure ${ VPN_CONNECTIONS } device at a time": [
+        "Aynı anda ${ VPN_CONNECTIONS } aygıt için koruma",
+        "Aynı anda ${ VPN_CONNECTIONS } aygıt için koruma"
+      ],
       "Secure file sharing": [
         "Güvenli dosya paylaşımı"
+      ],
+      "Secure vault sharing and link sharing": [
+        "Güvenli kasa paylaşımı ve bağlantı paylaşımı"
+      ],
+      "Securely share files, photos and documents": [
+        "Dosyaları, fotoğrafları ve belgeleri güvenle paylaşın"
+      ],
+      "Select ${ title }": [
+        "${ title } tarifesini seç"
+      ],
+      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
+        "Bir hizmet seçin ve ücretli sürümü 14 gün süreyle ücretsiz kullanın. Kredi kartı gerekmez."
       ],
       "Selected": [
         "Seçilmiş"
@@ -17588,17 +17943,47 @@
       "Sign up, protect your files": [
         "Hesap açın ve dosyalarınızı koruyun"
       ],
+      "Start free trial": [
+        "Ücretsiz deneme süresini başlat"
+      ],
+      "Storage": [
+        "Depolama alanı"
+      ],
+      "Stream your favorite TV shows and movies": [
+        "Sevdiğiniz TV dizilerini ve filmlerini izleyin"
+      ],
       "Sync files across devices and users": [
         "Dosyaları aygıtlar ve kullanıcılar arasında eşitleyin"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Oturum açan kullanıcılarınızın göreceği kuruluş adı."
       ],
+      "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
+        "Abone olursanız, aylık ${ priceWithDiscountPerMonth }."
+      ],
+      "To reedeem on your next paid subscription.": [
+        "Bir sonraki ücretli aboneliğinizde kullanmak için."
+      ],
       "Total": [
         "Toplam"
       ],
+      "Try ${ BRAND_NAME } for 14 days free": [
+        "${ BRAND_NAME } hizmetini 14 gün ücretsiz deneyin"
+      ],
+      "Try ${ planName } for free": [
+        "${ planName } tarifesini ücretsiz deneyin"
+      ],
       "Ultra fast and private VPN": [
         "Çok hızlı ve güvenli VPN"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız sayıda klasör, etiket ve süzgeç"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "Up to -${ percentage }%": [
+        "%${ percentage } oranına varan"
       ],
       "Up to 2 users": [
         "2 kullanıcıya kadar"
@@ -17615,6 +18000,9 @@
       "Use your email, or ${ externalButton }": [
         "E-posta adresinizi kullanın ya da ${ externalButton }"
       ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ],
       "use your own email.": [
         "kendi e-posta adresinizi kullanın."
       ],
@@ -17622,11 +18010,17 @@
         "${ vpnServersCountData.free.countries } ülkede sunucular",
         "${ vpnServersCountData.free.countries } ülkede sunucular"
       ],
+      "We’ll email you before your trial ends.": [
+        "Deneme süreniz bitmeden önce size bir e-posta göndereceğiz."
+      ],
       "Yearly": [
         "Yıllık"
       ],
       "Your plan": [
         "Tarifeniz"
+      ],
+      "Your trial": [
+        "Deneme süreniz"
       ]
     },
     "Signup label": {
@@ -19843,6 +20237,9 @@
       "Data recovery": [
         "Veri kurtarma"
       ],
+      "Data retention": [
+        "Verileri tutma"
+      ],
       "Date": [
         "Tarih"
       ],
@@ -21677,6 +22074,9 @@
       ],
       "It's you": [
         "Bu sizsiniz"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Yönetici erişimi bekleniyor"

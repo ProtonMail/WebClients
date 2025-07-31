@@ -3283,6 +3283,9 @@
       "Failed to fetch sharing info": [
         "Erro ao obter as informações para compartilhar"
       ],
+      "Failed to get details, please try again later": [
+        "Falha ao obter detalhes, tente novamente mais tarde"
+      ],
       "Failed to load the STL preview": [
         "Erro ao carregar a pré-visualização STL"
       ],
@@ -3666,6 +3669,9 @@
       ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nome indecifrável"
       ]
     },
     "Error importing calendar": {
@@ -11521,6 +11527,30 @@
       "Devices": [
         "Dispositivos"
       ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Assinatura digital parcialmente verificada. Este arquivo foi criado usando um link de compartilhamento publicamente acessível por um usuário sem uma conta ${ BRAND_NAME }, então a identidade dele não pode ser verificada."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Assinatura digital parcialmente verificada. Este arquivo foi carregado usando um link de compartilhamento acessível publicamente por um usuário sem uma conta da ${ BRAND_NAME }, então sua identidade não pode ser verificada."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Assinatura digital parcialmente verificada. Esta pasta foi criada usando um link de compartilhamento publicamente acessível por um usuário sem uma conta ${ BRAND_NAME }, então sua identidade não pode ser verificada."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Assinatura digital parcialmente verificada. Esta pasta foi enviada usando um link de compartilhamento acessível publicamente por um usuário sem uma conta da ${ BRAND_NAME }, então sua identidade não pode ser verificada."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Assinatura digital verificada. Esse arquivo foi criado seguramente por <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Assinatura digital verificada. Este arquivo foi enviado com segurança por <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Assinatura digital verificada. Esta pasta foi criada com segurança por <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Assinatura digital verificada. Esta pasta foi enviada com segurança por <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -11538,6 +11568,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Baixar os aplicativos do ${ DRIVE_APP_NAME }"
+      ],
+      "Download details": [
+        "Detalhes do download"
       ],
       "Download the app": [
         "Baixar aplicativo"
@@ -11688,6 +11721,9 @@
       "Last edited by": [
         "Última edição por"
       ],
+      "Last uploaded by": [
+        "Último envio por"
+      ],
       "Link confirmation": [
         "Confirmar redirecionamento"
       ],
@@ -11801,6 +11837,9 @@
       ],
       "Original size": [
         "Tamanho original"
+      ],
+      "Original size in bytes": [
+        "Tamanho original em bytes"
       ],
       "Other information": [
         "Outra informação"
@@ -11995,6 +12034,15 @@
       "The link expired": [
         "O link expirou"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "A verificação da assinatura das chaves de criptografia pelo criador original (${ claimedKeyAuthor }) que criou o nó falhou. O motivo é: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "A verificação da assinatura do conteúdo do arquivo pelo usuário (${ claimedContentAuthor }) que enviou a última revisão falhou. O motivo é: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "A verificação da assinatura do nome pelo autor (${ claimedNameAuthor }) que definiu o nome pela última vez falhou. A razão é: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "O arquivo tem uma assinatura ausente ou incorreta. Vá em Menu (⋮) → Detalhes para informações."
       ],
@@ -12069,6 +12117,30 @@
       ],
       "Warning: suspected fake website": [
         "Aviso: Site suspeito de ser falso"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Não pudemos verificar que <strong>${ emailAddress }</strong> criou este arquivo."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Não pudemos verificar que <strong>${ emailAddress }</strong> criou esta pasta."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Não pudemos verificar que <strong>${ emailAddress }</strong> enviou este arquivo."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Não pudemos verificar que <strong>${ emailAddress }</strong> enviou esta pasta."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Não pudemos verificar que um usuário anônimo criou este arquivo."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Não pudemos verificar que um usuário anônimo criou esta pasta."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Não pudemos verificar que um usuário anônimo enviou este arquivo."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Não pudemos verificar que um usuário anônimo enviou essa pasta."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"

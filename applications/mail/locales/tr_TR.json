@@ -450,6 +450,9 @@
       "Download all attachments": [
         "Tüm ek dosyaları indir"
       ],
+      "Download application logs": [
+        "Uygulama günlüklerini indir"
+      ],
       "Download logs": [
         "Günlüğü indir"
       ],
@@ -1667,6 +1670,10 @@
       "${ price } per user": [
         "her kullanıcı için ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } koltuk",
+        "${ seats } ${ LUMO_APP_NAME } koltuk"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } yazma yardımcısı koltuğu",
         "${ seats } yazma yardımcısı koltuğu"
@@ -2153,6 +2160,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } sorunu"
+      ],
       "Application problem": [
         "Uygulama sorunu"
       ],
@@ -6302,6 +6312,9 @@
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME }, kuruluşunuzu da koruyabilir."
       ],
@@ -6882,6 +6895,12 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
       ],
+      "Download application logs for troubleshooting": [
+        "Sorun gidermede kullanılması için uygulama günlüklerini indirin."
+      ],
+      "Download current logs": [
+        "Güncel günlükleri indir"
+      ],
       "Download on the App Store": [
         "App Store üzerinden indirin"
       ],
@@ -7179,7 +7198,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9199,6 +9219,9 @@
       ],
       "Import to:": [
         "Şunun içine aktar:"
+      ],
+      "Include application logs in bug report": [
+        "Uygulama günlüklerini sorun bildirimine eklensin"
       ],
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
@@ -13544,6 +13567,10 @@
         "${ labelName } etiketi ${ elementsCount } yazışmadan kaldırıldı.",
         "${ labelName } etiketi ${ elementsCount } yazışmadan kaldırıldı."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } yazışmanın yıldızı kaldırıldı.",
+        "${ elementsCount } yazışmanın yıldızı kaldırıldı."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } yazışma ertelendi",
         "${ elementsCount } yazışma ertelendi"
@@ -13583,6 +13610,10 @@
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } iletiden kaldırıldı.",
         "${ labelName } etiketi ${ elementsCount } iletiden kaldırıldı."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } iletinin yıldızı kaldırıldı.",
+        "${ elementsCount } iletinin yıldızı kaldırıldı."
       ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
@@ -13645,6 +13676,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Yazışmadan ${ labelName } etiketi kaldırıldı."
+      ],
+      "Conversation removed from Starred.": [
+        "Yazışmanın yıldızı kaldırıldı."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } tarafından gönderilen yazışmalar ${ labelsList } olarak etiketlenecek"
@@ -13717,6 +13751,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "İletiden ${ labelName } etiketi kaldırıldı."
+      ],
+      "Message removed from Starred.": [
+        "İletinin yıldızı kaldırıldı."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } tarafından gönderilen iletiler ${ labelsList } olarak etiketlenecek"

@@ -582,12 +582,6 @@
       "Publish changes": [
         "Pubblica le modifiche"
       ],
-      "Purge all": [
-        "Elimina tutto"
-      ],
-      "Purge deleted": [
-        "Eliminazione annullata"
-      ],
       "Recover data": [
         "Recupera dati"
       ],
@@ -3353,6 +3347,9 @@
       "Invalid ZIP code": [
         "CAP non valido"
       ],
+      "Name already exists": [
+        "Nome già esistente"
+      ],
       "Name does not match": [
         "Il nome non corrisponde"
       ],
@@ -5631,15 +5628,6 @@
       ],
       "Restore": [
         "Ripristina"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Regola di conservazione \"${ formData.name }\" aggiornata con successo"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Regola di conservazione \"${ payload.Name }\" creata con successo"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Regola di conservazione \"${ retentionRule.Name }\" eliminata con successo"
       ],
       "Revoke certificate ${ name }": [
         "Revoca il certificato ${ name }"
@@ -9035,9 +9023,6 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
-      "Group": [
-        "Gruppo"
-      ],
       "I found another service that I like better": [
         "Ho trovato un altro servizio che mi piace di più"
       ],
@@ -9109,9 +9094,6 @@
       ],
       "UDP": [
         "UDP"
-      ],
-      "User": [
-        "Utente"
       ],
       "Windows": [
         "Windows"
@@ -9921,11 +9903,6 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "Nessun criterio di conservazione trovato"
-      ]
-    },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Crea regole di conservazione per quanto tempo conservare i dati in linea con la politica di conservazione dei dati della tua organizzazione. Inoltre, attiva la cancellazione automatica dei dati scaduti."
       ]
     },
     "Role": {

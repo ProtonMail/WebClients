@@ -582,12 +582,6 @@
       "Publish changes": [
         "Publicera ändringar"
       ],
-      "Purge all": [
-        "Töm allt"
-      ],
-      "Purge deleted": [
-        "Tömning borttagen"
-      ],
       "Recover data": [
         "Återställ data"
       ],
@@ -3295,6 +3289,9 @@
       ],
       "Invalid ZIP code": [
         "Ogiltigt postnummer"
+      ],
+      "Name already exists": [
+        "Namn finns redan"
       ],
       "Name does not match": [
         "Namn matchar inte"
@@ -8940,9 +8937,6 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
-      "Group": [
-        "Grupp"
-      ],
       "I found another service that I like better": [
         "Jag hittade en annan tjänst som jag gillar bättre"
       ],
@@ -9014,9 +9008,6 @@
       ],
       "UDP": [
         "UDP"
-      ],
-      "User": [
-        "Användare"
       ],
       "Windows": [
         "Windows"
@@ -9764,14 +9755,61 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Lägg till användare eller grupper"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Confirm": [
+        "Bekräfta"
+      ],
+      "Create rule": [
+        "Skapa regel"
+      ],
       "Delete": [
         "Ta bort"
       ],
       "Delete rule": [
         "Ta bort regel"
       ],
+      "Delete this scope": [
+        "Ta bort detta omfång"
+      ],
       "Edit": [
         "Redigera"
+      ],
+      "Purge all": [
+        "Töm allt"
+      ],
+      "Purge deleted": [
+        "Tömning borttagen"
+      ],
+      "Save changes": [
+        "Spara ändringar"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "After ${ lifetime } day all messages will be deleted": [
+        "Efter ${ lifetime } dag kommer alla meddelanden att tas bort",
+        "Efter ${ lifetime } dagar kommer alla meddelanden att tas bort"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "Livstid måste vara längre än ${ MIN_LIFETIME } dagar"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "Livslängd får inte ställas in för åtgärden “Behåll alla“"
+      ],
+      "Scope value is not valid": [
+        "Omfångsvärde är inte giltigt"
+      ],
+      "Scope value is required": [
+        "Omfångsvärde är obligatoriskt"
+      ],
+      "Scopes cannot have the same value": [
+        "Omfång kan inte ha samma värde"
       ]
     },
     "retention_policy_2025_Info": {
@@ -9784,9 +9822,61 @@
       ],
       "Forever": [
         "För alltid"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Inkluderar alla meddelanden i inkorg, skickat och alla andra platser. Tömda meddelanden kan inte återställas."
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "Applies to": [
+        "Tillämpas på"
+      ],
+      "days": [
+        "dagar"
+      ],
+      "Keep items forever": [
+        "Behåll objekt för alltid"
+      ],
+      "Keep messages forever": [
+        "Behåll meddelanden för alltid"
+      ],
+      "Select product": [
+        "Välj produkt"
+      ],
+      "Set a duration": [
+        "Ställ in en varaktighet"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Alla i organisationen"
+      ],
+      "Group": [
+        "Grupp"
+      ],
+      "Purge all messages": [
+        "Töm alla meddelanden"
+      ],
+      "Purge deleted messages only": [
+        "Töm endast borttagna meddelanden"
+      ],
+      "Specific users or groups": [
+        "Specifika användare eller grupper"
+      ],
+      "User": [
+        "Användare"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "T.ex. rensa oanvända brevlådor"
+      ],
+      "Enter duration": [
+        "Ange varaktighet"
+      ],
+      "Enter value": [
+        "Ange värde"
+      ],
       "Search for rule, users, period, action": [
         "Sök efter regel, användare, period, åtgärd"
       ],

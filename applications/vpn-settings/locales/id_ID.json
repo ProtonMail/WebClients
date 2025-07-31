@@ -582,12 +582,6 @@
       "Publish changes": [
         "Terbitkan perubahan"
       ],
-      "Purge all": [
-        "Bersihkan semua"
-      ],
-      "Purge deleted": [
-        "Pembersihan dihapus"
-      ],
       "Recover data": [
         "Pulihkan data"
       ],
@@ -3283,6 +3277,9 @@
       "Invalid ZIP code": [
         "Kode pos tidak valid"
       ],
+      "Name already exists": [
+        "Nama sudah ada"
+      ],
       "Name does not match": [
         "Nama tidak cocok"
       ],
@@ -5512,15 +5509,6 @@
       ],
       "Restore": [
         "Pulihkan"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Peraturan penyimpanan data \"${ formData.name }\" berhasil diperbarui"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Peraturan penyimpanan data \"${ payload.Name }\" berhasil dibuat"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Peraturan penyimpanan data \"${ retentionRule.Name }\" berhasil dihapus"
       ],
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
@@ -8853,9 +8841,6 @@
       "Free server configs": [
         "Konfigurasi server gratis"
       ],
-      "Group": [
-        "Grup"
-      ],
       "I found another service that I like better": [
         "Saya menemukan layanan lain yang saya lebih suka"
       ],
@@ -9671,6 +9656,9 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } lainnya"
+      ],
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime } hari"
       ],
@@ -9679,16 +9667,22 @@
       ]
     },
     "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Tindakan"
+      ],
       "Applies to": [
         "Berlaku kepada"
       ],
       "Retention period": [
         "Masa penyimpanan"
+      ],
+      "Retention Rule": [
+        "Pengaturan Penyimpanan Data"
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Buat aturan penyimpanan untuk mengatur seberapa lama data yang ada akan disimpan sebagaimana dengan kebijakan penyimpanan data organisasi Anda. Aturan ini juga akan mengaktifkan pembersihan otomatis untuk data yang telah kedaluwarsa."
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Tidak ada kebijakan penyimpanan data yang ditemukan"
       ]
     },
     "Role": {
@@ -11861,6 +11855,9 @@
       ],
       "Customize the number of IP addresses in your plan": [
         "Sesuaikan jumlah alamat IP dalam paket Anda"
+      ],
+      "Data retention": [
+        "Penyimpanan data"
       ],
       "Date": [
         "Tanggal"

@@ -2184,7 +2184,7 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "${ LUMO_SHORT_APP_NAME } problém"
+        "Problém s ${ LUMO_SHORT_APP_NAME }"
       ],
       "Application problem": [
         "Problém s aplikací"
@@ -7425,7 +7425,10 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -14034,10 +14037,10 @@
         "${ elementsCount } konverzací odstraněno z ${ labelName }."
       ],
       "${ elementsCount } conversation removed from Starred.": [
-        "${ elementsCount } konverzace odebrána z označených.",
-        "${ elementsCount } konverzace odebrány z označených.",
-        "${ elementsCount } konverzací odebráno z označených.",
-        "${ elementsCount } konverzací odebráno z označených."
+        "${ elementsCount } konverzaci odebrána hvězdička.",
+        "${ elementsCount } konverzacím odebrána hvězdička.",
+        "${ elementsCount } konverzacím odebrána hvězdička.",
+        "${ elementsCount } konverzacím odebrána hvězdička."
       ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } konverzace odložena",
@@ -14100,10 +14103,10 @@
         "${ elementsCount } zpráv odstraněno z ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
-        "${ elementsCount } zpráva odebrána z označených.",
-        "${ elementsCount } zprávy odebrány z označených.",
-        "${ elementsCount } zpráv odebráno z označených.",
-        "${ elementsCount } zpráv odebráno z označených."
+        "${ elementsCount } zprávě odebrána hvězdička.",
+        "${ elementsCount } zprávám odebrána hvězdička.",
+        "${ elementsCount } zprávám odebrána hvězdička.",
+        "${ elementsCount } zprávám odebrána hvězdička."
       ],
       "Address copied to clipboard": [
         "Adresa byla zkopírována do schránky"
@@ -14172,7 +14175,7 @@
         "Konverzace odstraněna z ${ labelName }."
       ],
       "Conversation removed from Starred.": [
-        "Konverzace odebrána z označených."
+        "Konverzaci byla odebrána hvězdička."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Konverzace od ${ sendersList } budou označeny jako ${ labelsList }"
@@ -14247,7 +14250,7 @@
         "Zpráva odstraněna z ${ labelName }."
       ],
       "Message removed from Starred.": [
-        "Zpráva odebrána z označených."
+        "Zprávě byla odebrána hvězdička."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Zprávy od ${ sendersList } budou označeny jako ${ labelsList }"

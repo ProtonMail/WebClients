@@ -13289,6 +13289,9 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ labelName }에서 대화 ${ elementsCount }개를 삭제했습니다."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "별표 표시됨에서 대화 ${ elementsCount }개를 삭제했습니다."
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount }개 항목을 음소거 했습니다."
       ],
@@ -13318,6 +13321,9 @@
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName }에서 메시지 ${ elementsCount }개를 삭제했습니다."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount }개 메시지가 별표 표시됨에서 제거되었습니다."
       ],
       "Address copied to clipboard": [
         "주소가 클립보드에 복사되었습니다"
@@ -13378,6 +13384,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "대화가 ${ labelName } 에서 삭제되었습니다."
+      ],
+      "Conversation removed from Starred.": [
+        "대화가 별표 표시됨에서 삭제되었습니다."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } 로 부터 전송된 대화가 ${ labelsList } 로 라벨 표시됩니다"
@@ -13450,6 +13459,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "메시지가 ${ labelName }(에)서 삭제되었습니다."
+      ],
+      "Message removed from Starred.": [
+        "메시지가 별표 표시됨에서 삭제되었습니다."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } 로 부터 전송된 메시지가 ${ labelsList } 로 라벨됩니다."

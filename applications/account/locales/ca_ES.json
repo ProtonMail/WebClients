@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "Publica els canvis"
       ],
-      "Purge all": [
-        "Purga-ho tot"
-      ],
-      "Purge deleted": [
-        "Purga els elements eliminats"
-      ],
       "Quit": [
         "Surt"
       ],
@@ -1298,7 +1292,7 @@
         "Estableix la frase de recuperació"
       ],
       "Set up 2FA": [
-        "Configuració de l'A2F"
+        "Configuració 2FA"
       ],
       "Set up a custom domain": [
         "Configura un domini personalitzat"
@@ -4221,7 +4215,7 @@
         "Més informació sobre problemes comuns"
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Us permet afegir instantàniament enllaços de reunions a les invitacions d'esdeveniments."
+        "Us permet afegir instantàniament enllaços de reunió a les invitacions d'esdeveniments."
       ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Feu que el peu de pàgina del vostre correu electrònic sigui un reflex distintiu de la vostra marca, no de la nostra."
@@ -4598,8 +4592,8 @@
         "Per reenviar correus electrònics des de fins a ${ MAX_SYNC_PAID_USER } comptes, milloreu a ${ planName }."
       ],
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Esteu reenviant correus electrònics des de ${ MAX_SYNC_FREE_USER } compte extern a ${ MAIL_APP_NAME }.",
-        "Esteu reenviant correus electrònics de ${ MAX_SYNC_FREE_USER } comptes externs a ${ MAIL_APP_NAME }."
+        "Esteu reenviant correus electrònics des d'${ MAX_SYNC_FREE_USER } compte extern a ${ MAIL_APP_NAME }.",
+        "Esteu reenviant correus electrònics des de ${ MAX_SYNC_FREE_USER } comptes externs a ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5416,6 +5410,9 @@
       ],
       "Missing signature": [
         "Signatura no trobada"
+      ],
+      "Name already exists": [
+        "Aquest nom ja existeix"
       ],
       "Name does not match": [
         "El nom no coincideix."
@@ -7533,7 +7530,7 @@
         " i altres característiques de seguretat."
       ],
       "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } usuari ten actualment accés als servidors compartits.",
+        "${ amountUsers }/${ totalUsers } usuaris tenen actualment accés als servidors compartits.",
         "${ amountUsers }/${ totalUsers } usuaris tenen actualment accés als servidors compartits."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
@@ -7597,16 +7594,16 @@
         "${ fileName }: vista prèvia de baixa resolució"
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres de la vostra família utilitza autenticació de factor doble.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres de la vostra família utilitza autenticació de factor doble."
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres de la vostra família utilitza autenticació de doble factor.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres de la vostra família utilitza autenticació de doble factor."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres utilitza autenticació de factor doble per a iniciar la sessió a la vostra organització.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres utilitza autenticació de factor doble per a iniciar la sessió a la vostra organització."
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres utilitza autenticació de doble factor per a iniciar la sessió a la vostra organització.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres utilitza autenticació de doble factor per a iniciar la sessió a la vostra organització."
       ],
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres d'inici de sessió d'un sol cop utilitza autenticació de factor doble.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres d'inici de sessió d'un sol cop utilitza autenticació de factor doble."
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } dels membres que no utilitzen l'inici de sessió únic (SSO) inicien la sessió a la vostra organització amb l'autenticació de doble factor."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vol compartir dades amb vós a ${ PASS_APP_NAME }"
@@ -8046,6 +8043,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Segur que voleu esborrar el domini «${ boldDomain }»?"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "Esteu segur que voleu ordenar les vostres carpetes alfabèticament?"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "Esteu segur que voleu ordenar les vostres etiquetes alfabèticament?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Demaneu a l'administrador de l'organització que configuri passarel·les."
       ],
@@ -8078,6 +8081,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Esborreu automàticament els correus electrònics moguts a la paperera i al correu brossa si tenen més de 30 dies."
+      ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "Quan se suprimeixi, s'arxivi o es mogui un correu obert, es mostrarà automàticament el correu següent."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Disponible per a macOS, Windows i Linux."
@@ -8327,6 +8333,9 @@
       ],
       "Delete link?": [
         "Voleu eliminar l'enllaç?"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Elimina els missatges de la paperera i el correu brossa passats 30 dies. Activant l'eliminació automàtica es donarà als missatges que ja estan a la paperera o al correu brossa una data d'eliminació basada en la data en què s'hi hagin mogut."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "S'està eliminant ${ deletedServerCount } servidor de passarel·la",
@@ -8707,6 +8716,9 @@
       ],
       "Group deleted": [
         "S'ha eliminat el grup."
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Agrupeu correus electrònics de la mateixa conversa a la vostra safata d'entrada o mostreu-los separadament."
       ],
       "Groups": [
         "Grups"
@@ -9117,6 +9129,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Els missatges a la carpeta d'Enviats o Esborranys continuaran apareixent a aquestes carpetes, fins i tot si els moveu a una altra carpeta."
+      ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "Els missatges de la carpeta de correu Brossa o de la Paperera s'exclouran de la ubicació Tot el correu."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Els missatges a totes les vostres adreces de correu electrònic aniran a la vostra safata d'entrada."
@@ -9548,15 +9563,6 @@
       ],
       "Restore": [
         "Restaura"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "S'ha actualitzat la regla de conservació «${ formData.name }»."
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "S'ha creat la regla de conservació «${ payload.Name }»."
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "S'ha eliminat la regla de conservació «${ retentionRule.Name }»."
       ],
       "Revoke certificate ${ name }": [
         "Revoca el certificat ${ name }"
@@ -10734,8 +10740,8 @@
         "Es xifraran els fitxers i després es desaran."
       ],
       "Your free trial includes ${ ownedCount } dedicated server.": [
-        "La prova gratuïta inclou el servidor dedicat ${ ownedCount }.",
-        "La prova gratuïta inclou els servidors dedicats ${ ownedCount }."
+        "La prova gratuïta inclou ${ ownedCount } servidor dedicat.",
+        "La prova gratuïta inclou ${ ownedCount } servidors dedicats."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "La prova gratuïta s'ha convertit correctament en una subscripció de ${ cycle } mesos. La data de renovació és ${ nextBillingDate }."
@@ -15120,9 +15126,6 @@
       "Free server configs": [
         "Configuracions de servidor gratuït"
       ],
-      "Group": [
-        "Grup"
-      ],
       "I found another service that I like better": [
         "He trobat un altre servei que m'agrada mes"
       ],
@@ -15230,9 +15233,6 @@
       ],
       "Trash": [
         "Paperera"
-      ],
-      "User": [
-        "Usuari"
       ]
     },
     "option": {
@@ -16556,8 +16556,17 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Afegiu usuaris o grups"
+      ],
+      "Confirm": [
+        "Confirmeu-ho"
+      ],
       "Create retention rule": [
         "Creeu una instrucció de conservació"
+      ],
+      "Create rule": [
+        "Creeu una regla"
       ],
       "Delete": [
         "Elimina"
@@ -16567,6 +16576,32 @@
       ],
       "Edit": [
         "Edita"
+      ],
+      "Purge all": [
+        "Elimineu-ho tot"
+      ],
+      "Purge deleted": [
+        "Elimineu els elements esborrats"
+      ],
+      "Save changes": [
+        "Deseu els canvis"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, inclosos els de la Safata d'Entrada, d'Enviats i d'Esborranys. Això podria eliminar missatges que els usuaris esperen conservar. No serà possible recuperar aquests missatges més endavant."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "S'eliminaran tots els missatges al cap d'${ lifetime } dia",
+        "S'eliminaran tots els missatges al cap de ${ lifetime } dies"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "La vida útil ha de ser superior a ${ MIN_LIFETIME } dies"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "No s'ha de definir un termini per l'acció \"Conservar-ho tot\""
       ]
     },
     "retention_policy_2025_Info": {
@@ -16577,11 +16612,87 @@
         "${ rule.Lifetime } dia",
         "${ rule.Lifetime } dies"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Establiu regles de retenció d'acord amb la política de la vostra organització pel que fa al període de conservació de les dades. Això també permetrà l'eliminació automàtica de les dades caducades."
+      ],
       "Forever": [
         "Per sempre"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Inclou tots els missatges de la Safata d'Entrada, d'Enviats i de totes les altres ubicacions. Els missatges eliminats no es podran recuperar."
+      ],
+      "Removes messages already deleted by users.": [
+        "Elimina els missatges ja esborrats pels usuaris."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "La regla de conservació «${ formData.name }» s'ha actualitzat correctament."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "La regla de conservació «${ payload.Name }» s'ha creat correctament."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "La regla de conservació «${ retentionRule.Name }» s'ha eliminat correctament."
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Un cop hagi passat el període de conservació"
+      ],
+      "Applies to": [
+        "S'aplica a:"
+      ],
+      "days": [
+        "dies"
+      ],
+      "Keep items forever": [
+        "Conserveu els elements per sempre"
+      ],
+      "Keep messages forever": [
+        "Conserveu els missatges per sempre"
+      ],
+      "Retention period": [
+        "Període de conservació"
+      ],
+      "Retention rule": [
+        "Regla de conservació"
+      ],
+      "Select product": [
+        "Seleccioneu un producte"
+      ],
+      "Set a duration": [
+        "Establiu una durada"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Tothom a l'organització"
+      ],
+      "Group": [
+        "Grup"
+      ],
+      "Purge all messages": [
+        "Elimineu tots els missatges"
+      ],
+      "Purge deleted messages only": [
+        "Elimineu només els missatges esborrats"
+      ],
+      "Specific users or groups": [
+        "Usuaris o grups específics"
+      ],
+      "User": [
+        "Usuari"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "P. ex. Netejar les bústies de correu no utilitzades"
+      ],
+      "Enter duration": [
+        "Introduïu la durada"
+      ],
+      "Enter value": [
+        "Introduïu un valor"
+      ],
       "Search for rule, users, period, action": [
         "Cerca per regla, usuaris, període, acció"
       ],
@@ -16608,9 +16719,15 @@
         "No s'han trobat polítiques de conservació"
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Creeu regles de conservació d'acord amb la política de la vostra organització pel que fa al període de conservació de les dades. Això també permetrà la purga automàtica de les dades caducades."
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Confirmeu aquesta instrucció de conservació?"
+      ],
+      "Create retention rule": [
+        "Creeu una instrucció de conservació"
+      ],
+      "Edit retention rule": [
+        "Editeu aquesta instrucció de conservació"
       ]
     },
     "Role": {
@@ -17521,15 +17638,15 @@
         "${ DRIVE_APP_NAME } for Business"
       ],
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
-        "${ FREE_PASS_ALIASES } hide-my-email àlies per combatre el correu brossa",
-        "${ FREE_PASS_ALIASES } hide-my-email àlies per combatre el correu brossa"
+        "${ FREE_PASS_ALIASES } àlies de hide-my-email per a combatre el correu brossa",
+        "${ FREE_PASS_ALIASES } àlies de hide-my-email per a combatre el correu brossa"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ],
       "${ maxAddresses } address": [
-        "Adreça de ${ maxAddresses }",
-        "Adreces de ${ maxAddresses }"
+        "${ maxAddresses } adreça",
+        "${ maxAddresses } adreces"
       ],
       "${ maxAddresses } email address": [
         "${ maxAddresses } adreça de correu electrònic",
@@ -18655,6 +18772,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicat",
         "${ ipAddresses } servidors dedicats"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } per a ${ maxLumo } usuari",
+        "${ LUMO_APP_NAME } per a ${ maxLumo } usuaris"
       ],
       "${ n } calendar per user": [
         "${ n } calendari per usuari",
@@ -19909,7 +20030,7 @@
         "Tanca"
       ],
       "Collaborate on documents": [
-        "Col·laboreu en documents"
+        "Col·laboració en documents"
       ],
       "Composing": [
         "Redacció"
@@ -20235,7 +20356,7 @@
         "Privacitat del correu"
       ],
       "Enable advanced account protection": [
-        "Activeu la protecció avançada del compte"
+        "Activació de la protecció avançada del compte"
       ],
       "Enable for all users": [
         "Activa per a tots els usuaris"
@@ -20804,7 +20925,7 @@
         "Estableix el nom de l’organització"
       ],
       "Set recovery methods": [
-        "Configureu els mètodes de recuperació"
+        "Configuració dels mètodes de recuperació"
       ],
       "Set up ${ protonDuoPlanName }": [
         "Configureu ${ protonDuoPlanName }"
@@ -20813,7 +20934,7 @@
         "Configura un mètode de recuperació"
       ],
       "Set up email forwarding": [
-        "Configureu el reenviament de correu"
+        "Configuració del reenviament de correu"
       ],
       "Set up two-factor authentication": [
         "Configura l'autenticació de doble factor"
@@ -20861,7 +20982,7 @@
         "S'ha iniciat la sessió al compte de membre"
       ],
       "Simplify email distribution": [
-        "Simplifiqueu la distribució de correu"
+        "Simplifiqueu la distribució de correu electrònic"
       ],
       "Simplify password management": [
         "Simplifiqueu la gestió de contrasenyes"
