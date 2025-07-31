@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "Publicar as alterações"
       ],
-      "Purge all": [
-        "Purgar tudo"
-      ],
-      "Purge deleted": [
-        "Purgar os elementos eliminados"
-      ],
       "Quit": [
         "Sair"
       ],
@@ -9552,15 +9546,6 @@
       "Restore": [
         "Restaurar"
       ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "A regra de retenção «${ formData.name }» foi actualizada."
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "A regra de retenção «${ payload.Name }» foi criada."
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "A regra de retenção «${ retentionRule.Name }» foi eliminada."
-      ],
       "Revoke certificate ${ name }": [
         "Revogar o certificado ${ name }"
       ],
@@ -15123,9 +15108,6 @@
       "Free server configs": [
         "Definições do servidor Free"
       ],
-      "Group": [
-        "Grupo"
-      ],
       "I found another service that I like better": [
         "Encontrei outro serviço de que gosto mais"
       ],
@@ -15242,9 +15224,6 @@
       ],
       "UDP": [
         "UDP"
-      ],
-      "User": [
-        "Utilizador"
       ]
     },
     "option": {
@@ -16618,11 +16597,6 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "Não foram encontradas políticas de retenção."
-      ]
-    },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Crie regras de retenção para quanto tempo manter os dados conforme a política de retenção de dados da sua organização. Também ativa a limpeza automática de dados expirados."
       ]
     },
     "Role": {
