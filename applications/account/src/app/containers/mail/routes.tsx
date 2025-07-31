@@ -31,11 +31,13 @@ export const getMailAppRoutes = ({
     user,
     addresses,
     organization,
+    isCryptoPostQuantumOptInEnabled,
 }: {
     app: APP_NAMES;
     user: UserModel;
     addresses?: Address[];
     organization?: Organization;
+    isCryptoPostQuantumOptInEnabled?: boolean;
 }): SidebarConfig => {
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const learnMoreLink = (
@@ -178,6 +180,11 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`External PGP settings`,
                         id: 'pgp-settings',
+                    },
+                    {
+                        text: c('Title').t`Post-quantum protection`,
+                        id: 'pqc-optin',
+                        available: isCryptoPostQuantumOptInEnabled,
                     },
                     {
                         text: c('Title').t`Email encryption keys`,

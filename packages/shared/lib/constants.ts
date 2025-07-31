@@ -800,7 +800,7 @@ export const KEYGEN_CONFIGS /*: { [key: string]: KeyGenConfig | KeyGenConfigV6 }
         curve: 'ed25519Legacy' as enums.curve,
     } as KeyGenConfig,
     [KEYGEN_TYPES.PQC]: {
-        type: 'curve25519', // TODO waiting for pqc integration
+        type: 'pqc',
         config: { v6Keys: true },
     } as KeyGenConfigV6,
 };
