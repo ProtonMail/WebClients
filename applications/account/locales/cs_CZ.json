@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "Zveřejnit změny"
       ],
-      "Purge all": [
-        "Vyčistit vše"
-      ],
-      "Purge deleted": [
-        "Vymazáno"
-      ],
       "Quit": [
         "Odejít"
       ],
@@ -2442,7 +2436,7 @@
     },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
-        "${ LUMO_SHORT_APP_NAME } problém"
+        "Problém s ${ LUMO_SHORT_APP_NAME }"
       ],
       "Application problem": [
         "Problém s aplikací"
@@ -4374,7 +4368,7 @@
         "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
       ],
       "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Obdržíte ${ referralReward } v kreditu ${ BRAND_NAME }, když se osoba, kterou pozvete, zaregistruje k tarifu ${ BRAND_NAME }, a také dostanou ${ referralReward } vkreditech do začátku."
+        "Obdržíte ${ referralReward } kreditů ${ BRAND_NAME }, když se osoba, kterou pozvete, zaregistruje k tarifu ${ BRAND_NAME }, a oni sami také obdrží ${ referralReward } kreditů do začátku."
       ]
     },
     "description": {
@@ -5528,6 +5522,9 @@
       ],
       "Missing signature": [
         "Chybí podpis"
+      ],
+      "Name already exists": [
+        "Jméno již existuje"
       ],
       "Name does not match": [
         "Název se neshoduje"
@@ -9161,7 +9158,7 @@
         "Pozvěte svého partnera, přítele nebo kohokoli, s kým sdílíte svůj tarif ${ protonDuoPlanName }."
       ],
       "Invited": [
-        "Pozván/a"
+        "Pozván(a)"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Zdá se, že některá z vašich dat jsou zašifrována a uzamčena."
@@ -9807,15 +9804,6 @@
       ],
       "Restore": [
         "Obnovit"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Pravidlo retence \"${ formData.name }\" úspěšně aktualizováno"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Pravidlo retence \"${ payload.Name }\" úspěšně vytvořeno"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Pravidlo retence \"${ retentionRule.Name }\" bylo úspěšně smazáno"
       ],
       "Revoke certificate ${ name }": [
         "Zrušit certifikát ${ name }"
@@ -10862,7 +10850,7 @@
         "K provedení této akce nemáte oprávnění"
       ],
       "You don't have any referrals.": [
-        "Nemáte žádná doporučení."
+        "Nikomu jste nedoporučili."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
@@ -15530,9 +15518,6 @@
       "GNU/Linux": [
         "GNU/Linux"
       ],
-      "Group": [
-        "Skupina"
-      ],
       "I found another service that I like better": [
         "Našel jsem jinou službu, která se mi líbí více"
       ],
@@ -15652,9 +15637,6 @@
       ],
       "UDP": [
         "UDP"
-      ],
-      "User": [
-        "Uživatel"
       ],
       "Windows": [
         "Windows"
@@ -17003,8 +16985,11 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Cancel": [
+        "Zpět"
+      ],
       "Create retention rule": [
-        "Vytvořit pravidlo retence"
+        "Vytvořit pravidlo uchovávání"
       ],
       "Delete": [
         "Smazat"
@@ -17055,11 +17040,6 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "Nebyly nalezeny žádné zásady uchování"
-      ]
-    },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Vytvořte pravidla uchovávání, která určí, jak dlouho se mají data uchovávat v souladu se zásadami uchovávání dat vaší organizace. Také umožňuje automatické vyčištění vypršelých dat."
       ]
     },
     "Role": {
@@ -18045,7 +18025,7 @@
         "${ PASS_PLUS_VAULTS } trezorů pro vaše hesla"
       ],
       "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
-        "${ referrerName } Vás zve k vyzkoušení ${ BRAND_NAME }."
+        "${ referrerName } vás zve k vyzkoušení ${ BRAND_NAME }."
       ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } cloudového úložiště pro soubory a fotky"
@@ -18070,6 +18050,12 @@
         "${ vpnServersCountData.paid.countries }+ země",
         "${ vpnServersCountData.paid.countries }+ zemí",
         "${ vpnServersCountData.paid.countries }+ zemí"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "${ vpnServersCountData.paid.servers }+ server napříč",
+        "${ vpnServersCountData.paid.servers }+ servery napříč",
+        "${ vpnServersCountData.paid.servers }+ serverů napříč",
+        "${ vpnServersCountData.paid.servers }+ serverů napříč"
       ],
       "/user": [
         "/uživatel"
@@ -18165,7 +18151,7 @@
         "Získejte od nás bezpečnou adresu, nebo ${ internalButton }"
       ],
       "Gifted by **${ referrerName }**": [
-        "Darováno od **${ referrerName }**"
+        "Daroval(a) **${ referrerName }**"
       ],
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
@@ -18219,10 +18205,10 @@
         "Ušetřete ${ priceDifferenceString }"
       ],
       "Secure ${ VPN_CONNECTIONS } device at a time": [
-        "Chránit ${ VPN_CONNECTIONS } zařízení zároveň",
-        "Chránit ${ VPN_CONNECTIONS } zařízení zároveň",
-        "Chránit ${ VPN_CONNECTIONS } zařízení zároveň",
-        "Chránit ${ VPN_CONNECTIONS } zařízení zároveň"
+        "Ochrana ${ VPN_CONNECTIONS } zařízení",
+        "Ochrana ${ VPN_CONNECTIONS } zařízení zároveň",
+        "Ochrana ${ VPN_CONNECTIONS } zařízení zároveň",
+        "Ochrana ${ VPN_CONNECTIONS } zařízení zároveň"
       ],
       "Secure file sharing": [
         "Zabezpečené sdílení souborů"
@@ -18231,7 +18217,7 @@
         "Bezpečné sdílení trezoru a sdílení odkazu"
       ],
       "Securely share files, photos and documents": [
-        "Bezpečné sdílení souborů, fotografií a dokumentů"
+        "Bezpečně sdílejte soubory, fotky a dokumenty"
       ],
       "Select ${ title }": [
         "Vybrat ${ title }"
@@ -18279,7 +18265,7 @@
         "Poté ${ priceWithDiscountPerMonth } měsíčně, pokud se přihlásíte k odběru."
       ],
       "To reedeem on your next paid subscription.": [
-        "Uplatnit na vaše další placené předplatné."
+        "Uplatnit na vaši další platbu předplatného."
       ],
       "Total": [
         "Celkem"

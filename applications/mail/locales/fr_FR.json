@@ -1669,7 +1669,7 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
-        "${ seats } accès ${ LUMO_APP_NAME }"
+        "${ seats } accès à ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
@@ -7195,7 +7195,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -13618,7 +13619,7 @@
       ],
       "${ elementsCount } message removed from Starred.": [
         "${ elementsCount } message a été retiré des favoris.",
-        "${ elementsCount } messages ont été retirés des favoris."
+        "${ elementsCount } messages supprimés de la liste des favoris."
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."

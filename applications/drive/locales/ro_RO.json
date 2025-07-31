@@ -445,6 +445,9 @@
       "Forward as attachment": [
         "Redirecționare ca atașament"
       ],
+      "Full data": [
+        "Date complete"
+      ],
       "Generate password": [
         "Generare parolă"
       ],
@@ -690,6 +693,9 @@
       ],
       "Next page": [
         "Pagina următoare"
+      ],
+      "No sensitive data": [
+        "Fără date confidențiale"
       ],
       "Not now": [
         "Nu acum"
@@ -3261,6 +3267,9 @@
       "Failed to fetch sharing info": [
         "Eșuare preluare informații de partajare."
       ],
+      "Failed to get details, please try again later": [
+        "Nu s-au putut obține detalii. Reîncercați mai târziu."
+      ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
       ],
@@ -3613,6 +3622,9 @@
       "Unknown error": [
         "Eroare necunoscută"
       ],
+      "Unknown location": [
+        "Loc necunoscut"
+      ],
       "Unknown payment token status": [
         "Stare necunoscută cod plată generat."
       ],
@@ -3647,6 +3659,9 @@
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nume nedecriptabil."
       ]
     },
     "Error importing calendar": {
@@ -11415,6 +11430,9 @@
       "Addresses": [
         "Adrese"
       ],
+      "Advanced details": [
+        "Detalii avansate"
+      ],
       "Album": [
         "Album"
       ],
@@ -11432,6 +11450,12 @@
       ],
       "Amount due": [
         "Suma datorată"
+      ],
+      "an anonymous user": [
+        "un utilizator anonim"
+      ],
+      "Anonymous user": [
+        "Utilizator anonim"
       ],
       "Apply gift code": [
         "Aplicare cod cadou"
@@ -11540,6 +11564,9 @@
       "Create new group": [
         "Creare grup"
       ],
+      "Created by": [
+        "Creat de"
+      ],
       "Credits": [
         "Credite"
       ],
@@ -11600,6 +11627,33 @@
       "Desktop": [
         "Desktop"
       ],
+      "Devices": [
+        "Dispozitive"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Semnătura digitală parțial verificată. Acest fișier a fost creat folosind o legătură web de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Semnătura digitală parțial verificată. Acest fișier a fost încărcat folosind o legătură web de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Semnătura digitală parțial verificată. Acest folder a fost creat folosind o legătură web de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Semnătura digitală parțial verificată. Acest folder a fost încărcat folosind o legătură de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Semnătură digitală verificată. Acest fișier a fost creat în siguranță de către <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Semnătură digitală verificată. Acest folder a fost creat în siguranță de către <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Semnătură digitală verificată. Acest folder a fost încărcat în siguranță de către <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Anulare"
       ],
@@ -11617,6 +11671,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
+      ],
+      "Download details": [
+        "Detalii descărcare"
       ],
       "Download the app": [
         "Descărcați aplicația"
@@ -11696,6 +11753,9 @@
       "File recovery process": [
         "Proces de recuperare a fișierelor"
       ],
+      "Folder": [
+        "Folder"
+      ],
       "Folder details": [
         "Detalii folder"
       ],
@@ -11766,6 +11826,9 @@
       "Last edited by": [
         "Editat de către"
       ],
+      "Last uploaded by": [
+        "Încărcat ultima dată de către"
+      ],
       "Link confirmation": [
         "legătură web de confirmare"
       ],
@@ -11777,6 +11840,9 @@
       ],
       "Manage secure link": [
         "Gestionare legătură web securizată"
+      ],
+      "Media type": [
+        "Tip media"
       ],
       "Merge contacts": [
         "Îmbinare contacte"
@@ -11876,6 +11942,9 @@
       ],
       "Original size": [
         "Dimensiune originală"
+      ],
+      "Original size in bytes": [
+        "Mărime originală în baiți"
       ],
       "Other information": [
         "Alte informații"
@@ -12005,6 +12074,9 @@
       "Settings": [
         "Setări"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "Partajare ${ name }"
       ],
@@ -12034,6 +12106,9 @@
       ],
       "Size": [
         "Mărime"
+      ],
+      "Size in bytes": [
+        "Mărime în baiți"
       ],
       "Sort files/folders": [
         "Sortare fișiere/foldere"
@@ -12065,6 +12140,15 @@
       "The link expired": [
         "Legătura a expirat"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Verificarea semnăturii cheilor de criptare de către creatorul original (${ claimedKeyAuthor }) care a creat nodul a eșuat. Motivul este: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Verificarea semnăturii conținutului fișierului de către cel care a încărcat (${ claimedContentAuthor }), care a încărcat ultima revizie, a eșuat. Motivul este: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Verificarea semnăturii numelui de către autorul (${ claimedNameAuthor }) care a stabilit numele ultima dată a eșuat. Motivul este: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Acest fișier are o semnătură lipsă sau nevalidă. Accesați Meniu (⋮) → Detalii pentru informații."
       ],
@@ -12085,6 +12169,12 @@
       ],
       "Type": [
         "Tip"
+      ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "Utilizator necunoscut"
       ],
       "Untitled document ${ date }": [
         "Document nedenumit ${ date }"
@@ -12133,6 +12223,30 @@
       ],
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Nu am putut verifica dacă <strong>${ emailAddress }</strong> a creat acest fișier."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Nu s-a putut verifica dacă <strong>${ emailAddress }</strong> a creat acest folder."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Nu s-a putut verifica dacă <strong>${ emailAddress }</strong> a încărcat acest fișier."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Nu s-a putut verifica dacă <strong>${ emailAddress }</strong> a încărcat acest folder."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Nu s-a putut verifica dacă un utilizator anonim a creat acest fișier."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Nu s-a putut verifica dacă un utilizator anonim a creat acest folder."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Nu s-a putut verifica dacă un utilizator anonim a încărcat acest fișier."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Nu s-a putut verifica dacă un utilizator anonim a încărcat acest folder."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bun venit la ${ BRAND_NAME } for Business"

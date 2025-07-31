@@ -7428,7 +7428,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -14036,6 +14039,12 @@
         "Usunięto ${ elementsCount } wątków z etykiety ${ labelName }.",
         "Usunięto ${ elementsCount } wątków z etykiety ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } wątek został usunięty z wyróżnionych.",
+        "${ elementsCount } wątki zostały usunięte z wyróżnionych.",
+        "${ elementsCount } wątków zostało usuniętych z wyróżnionych.",
+        "${ elementsCount } wątków zostało usuniętych z wyróżnionych."
+      ],
       "${ elementsCount } conversation snoozed": [
         "Odłożono ${ elementsCount } wątek",
         "Odłożono ${ elementsCount } wątki",
@@ -14095,6 +14104,12 @@
         "Usunięto ${ elementsCount } wiadomości z etykiety ${ labelName }.",
         "Usunięto ${ elementsCount } wiadomości z etykiety ${ labelName }.",
         "Usunięto ${ elementsCount } wiadomości z etykiety ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } wiadomość została usunięta z wyróżnionych.",
+        "${ elementsCount } wiadomości zostały usunięte z wyróżnionych.",
+        "${ elementsCount } wiadomości zostało usuniętych z wyróżnionych.",
+        "${ elementsCount } wiadomości zostało usuniętych z wyróżnionych."
       ],
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"
@@ -14161,6 +14176,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Wątek został usunięty z etykiety ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Wątek został usunięty z wyróżnionych."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Wątki od ${ sendersList } zostaną oznaczone jako ${ labelsList }"
@@ -14233,6 +14251,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Wiadomość została usunięta z etykiety ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Wiadomość została usunięta z wyróżnionych."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Wiadomości od ${ sendersList } zostaną oznaczone jako ${ labelsList }"

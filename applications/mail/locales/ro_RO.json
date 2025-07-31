@@ -7276,7 +7276,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -13759,6 +13761,11 @@
         "S-au șters ${ elementsCount } conversații din ${ labelName }.",
         "S-au șters ${ elementsCount } de conversații din ${ labelName }."
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "Conversații eliminate din favorite: ${ elementsCount }",
+        "Conversații eliminate din favorite: ${ elementsCount }",
+        "Conversații eliminate din favorite: ${ elementsCount }"
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } conversație este amânată.",
         "${ elementsCount } conversații sunt amânate.",
@@ -13808,6 +13815,11 @@
         "S-a eliminat un mesaj din ${ labelName }.",
         "S-au eliminat ${ elementsCount } mesaje eliminate din ${ labelName }.",
         "S-au eliminat ${ elementsCount } de mesaje eliminate din ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "Mesaje eliminate din favorite: ${ elementsCount }",
+        "Mesaje eliminate din favorite: ${ elementsCount }",
+        "Mesaje eliminate din favorite: ${ elementsCount }"
       ],
       "Address copied to clipboard": [
         "Adresa a fost copiată în memorie"
@@ -13872,6 +13884,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversație ștearsă din ${ labelName }."
+      ],
+      "Conversation removed from Starred.": [
+        "Conversația a fost eliminată din favorite."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Conversațiile din ${ sendersList } vor fi etichetate ca ${ labelsList }."
@@ -13944,6 +13959,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "Mesaj eliminat din ${ labelName }."
+      ],
+      "Message removed from Starred.": [
+        "Mesajul a fost eliminat din favorite."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Mesajele de la ${ sendersList } vor fi etichetate ca ${ labelsList }."

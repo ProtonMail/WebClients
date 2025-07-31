@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "Апублікаваць змяненні"
       ],
-      "Purge all": [
-        "Ачысціць усе"
-      ],
-      "Purge deleted": [
-        "Ачыстка выдалена"
-      ],
       "Quit": [
         "Выйсці"
       ],
@@ -5467,6 +5461,9 @@
       "Missing signature": [
         "Адсутнічае подпіс"
       ],
+      "Name already exists": [
+        "Такая назва ўжо існуе."
+      ],
       "Name does not match": [
         "Назва не супадае"
       ],
@@ -8811,7 +8808,7 @@
         "Запоўніце даныя карыстальніка"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Фільтры працуюць для ўсёй пошты, уключаючы ўваходныя і выходныя лісты. Кожны фільтр павінен змяшчаць прынамсі назву, умову і дзеянне."
+        "Фільтры працуюць для ўсіх лістоў, уключаючы ўваходныя і выходныя лісты. Кожны фільтр павінен змяшчаць прынамсі назву, умову і дзеянне."
       ],
       "finance": [
         "фінансы"
@@ -8820,7 +8817,7 @@
         "Звярніцеся ў нашу каманду па продажам, калі вам неабходна падтрымка гісторыі версій за 10 гадоў."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
-        "Для доступу да электроннай пошты ў любы час і аптымізацыі мабільных прылад, спампуйце ${ androidAppLink } або ${ iosAppLink }."
+        "Для доступу да электроннай пошты ў любы час і аптымізацыі працы, спампуйце ${ androidAppLink } або ${ iosAppLink }."
       ],
       "for choosing ${ product }": [
         "за выбар ${ product }"
@@ -9742,15 +9739,6 @@
       ],
       "Restore": [
         "Аднавіць"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Правіла захоўвання \"${ formData.name }\" паспяхова абноўлена."
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Правіла захоўвання \"${ payload.Name }\" паспяхова створана."
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Правіла захоўвання \"${ retentionRule.Name }\" паспяхова выдалена."
       ],
       "Revoke certificate ${ name }": [
         "Адклікаць сертыфікат ${ name }"
@@ -11090,7 +11078,7 @@
         "Дадайце новага карыстальніка ў вашу арганізацыю і стварыце для яго адрас."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "У мэтах бяспекі нам трэба праверыць, што вы з'яўляецеся ўладальнікам ${ domainName }. Калі ласка, дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад ${ kbLink }."
+        "У мэтах бяспекі нам трэба праверыць, што вы з'яўляецеся ўладальнікам ${ domainName }. Калі ласка, дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Вы можаце знайсці прыклад і некалькі карысных парад вось ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -15456,9 +15444,6 @@
       "Free server configs": [
         "Канфігурацыі бясплатнага сервера"
       ],
-      "Group": [
-        "Група"
-      ],
       "I found another service that I like better": [
         "Я знайшоў больш прывабны сэрвіс"
       ],
@@ -15566,9 +15551,6 @@
       ],
       "Trash": [
         "Сметніца"
-      ],
-      "User": [
-        "Карыстальнік"
       ]
     },
     "option": {
@@ -16914,8 +16896,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Дадаць карыстальнікаў або групы"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Confirm": [
+        "Пацвердзіць"
+      ],
       "Create retention rule": [
         "Стварыць правіла захоўвання"
+      ],
+      "Create rule": [
+        "Стварыць правіла"
       ],
       "Delete": [
         "Выдаліць"
@@ -16923,8 +16917,48 @@
       "Delete rule": [
         "Выдаліць правіла"
       ],
+      "Delete this scope": [
+        "Выдаліць гэтую вобласць"
+      ],
       "Edit": [
         "Рэдагаваць"
+      ],
+      "Purge all": [
+        "Ачысціць усе"
+      ],
+      "Purge deleted": [
+        "Ачысціць выдаленае"
+      ],
+      "Save changes": [
+        "Захаваць змены"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, уключаючы тое, што знаходзіцца ў паштовай скрыні, а таксама ў папках \"Адпраўленыя\" і \"Чарнавікі\". Гэта можа прывесці да ачысткі паведамленняў, якія карыстальнікі разлічвалі пакінуць. Пазней гэтыя паведамленні немагчыма будзе аднавіць."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "Праз ${ lifetime } дзень усе паведамленні будуць выдалены",
+        "Праз ${ lifetime } дні ўсе паведамленні будуць выдалены",
+        "Праз ${ lifetime } дзён усе паведамленні будуць выдалены",
+        "Праз ${ lifetime } дзён усе паведамленні будуць выдалены"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "Тэрмін службы павінен быць больш за ${ MIN_LIFETIME } дзён"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "Тэрмін дзеяння нельга задаваць для дзеяння \"Захаваць усе\""
+      ],
+      "Scope value is not valid": [
+        "Несапраўднае значэнне вобласці"
+      ],
+      "Scope value is required": [
+        "Патрабуецца значэнне вобласці"
+      ],
+      "Scopes cannot have the same value": [
+        "Вобласці не могуць мець аднолькавыя значэнні"
       ]
     },
     "retention_policy_2025_Info": {
@@ -16937,11 +16971,87 @@
         "${ rule.Lifetime } дзён",
         "${ rule.Lifetime } дзён"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Стварыце правілы захоўвання ў адпаведнасці з палітыкай захоўвання даных вашай арганізацыі. Гэта таксама дазволіць аўтаматычна выдаляць пратэрмінаваныя даныя."
+      ],
       "Forever": [
         "Назаўсёды"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Уключаючы ўсе паведамленні, які знаходзяцца ў паштовай скрыні, у папках \"Адпраўленыя\" і \"Чарнавікі\", а таксама ва ўсіх іншых размяшчэннях."
+      ],
+      "Removes messages already deleted by users.": [
+        "Выдаляе паведамленні, які ўжо былі выдалены карыстальнікамі."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Правіла захоўвання \"${ formData.name }\" паспяхова абноўлена."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Правіла захоўвання \"${ payload.Name }\" паспяхова створана."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Правіла захоўвання \"${ retentionRule.Name }\" паспяхова выдалена."
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Пасля таго, як перыяд захоўвання міне"
+      ],
+      "Applies to": [
+        "Ужыць да"
+      ],
+      "days": [
+        "дзён"
+      ],
+      "Keep items forever": [
+        "Заўсёды захоўваць элементы"
+      ],
+      "Keep messages forever": [
+        "Заўсёды пакідаць паведамленні"
+      ],
+      "Retention period": [
+        "Перыяд захоўвання"
+      ],
+      "Retention rule": [
+        "Правіла захоўвання"
+      ],
+      "Select product": [
+        "Выберыце прадукт"
+      ],
+      "Set a duration": [
+        "Задаць працягласць"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Кожны ў арганізацыі"
+      ],
+      "Group": [
+        "Група"
+      ],
+      "Purge all messages": [
+        "Ачысціць усе паведамленні"
+      ],
+      "Purge deleted messages only": [
+        "Ачысціць толькі выдаленыя паведамленні"
+      ],
+      "Specific users or groups": [
+        "Канкрэтныя карыстальнікі або групы"
+      ],
+      "User": [
+        "Карыстальнік"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "Напрыклад, ачыстка нявыкарыстаных паштовых скрынь"
+      ],
+      "Enter duration": [
+        "Увядзіце працягласць"
+      ],
+      "Enter value": [
+        "Увядзіце значэнне"
+      ],
       "Search for rule, users, period, action": [
         "Пошук правіла, карыстальнікаў, перыяду, дзеяння"
       ],
@@ -16968,9 +17078,15 @@
         "Палітыкі захоўвання не знойдзены"
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Стварыце правілы захоўвання ў адпаведнасці з палітыкай захоўвання даных вашай арганізацыі. Гэта таксама дазволіць аўтаматычна выдаляць састарэлыя даныя."
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Пацвердзіць правіла захоўвання?"
+      ],
+      "Create retention rule": [
+        "Стварыць правіла захоўвання"
+      ],
+      "Edit retention rule": [
+        "Рэдагаванне правіла захоўвання"
       ]
     },
     "Role": {

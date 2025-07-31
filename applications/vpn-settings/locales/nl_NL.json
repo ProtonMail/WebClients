@@ -5571,15 +5571,6 @@
       "Restore": [
         "Herstel"
       ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Bewaarregel \"${ formData.name }\" is succesvol bijgewerkt"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Bewaarbeleid \"${ payload.Name }\" succesvol aangemaakt"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Bewaarregel \"${ retentionRule.Name }\" succesvol verwijderd"
-      ],
       "Revoke certificate ${ name }": [
         "Certificaat ${ name } intrekken"
       ],
@@ -9687,11 +9678,6 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Als gevolg van het wijzigen van een wachtwoord zijn uw beheerdersbevoegdheden beperkt. De volgende acties zijn niet langer toegestaan:"
-      ]
-    },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Maak bewaarregels aan om te bepalen hoe lang u de data wilt bewaren in lijn met bewaarregels van uw organisatie. Schakelt ook het automatisch wissen van verlopen gegevens in."
       ]
     },
     "Role": {

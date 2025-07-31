@@ -1033,12 +1033,6 @@
       "Publish changes": [
         "Zverejniť zmeny"
       ],
-      "Purge all": [
-        "Vymazať všetko"
-      ],
-      "Purge deleted": [
-        "Čistenie vymazané"
-      ],
       "Quit": [
         "Ukončiť"
       ],
@@ -5467,6 +5461,9 @@
       "Missing signature": [
         "Chýbajúci podpis"
       ],
+      "Name already exists": [
+        "Názov už existuje"
+      ],
       "Name does not match": [
         "Meno sa nezhoduje"
       ],
@@ -9742,15 +9739,6 @@
       ],
       "Restore": [
         "Obnoviť"
-      ],
-      "Retention rule \"${ formData.name }\" updated successfully": [
-        "Pravidlo uchovávania \"${ formData.name }\" bolo úspešne aktualizované"
-      ],
-      "Retention rule \"${ payload.Name }\" created successfully": [
-        "Pravidlo uchovávania \"${ payload.Name }\" bolo úspešne vytvorené"
-      ],
-      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
-        "Pravidlo uchovávania \"${ retentionRule.Name }\" bolo úspešne vymazané."
       ],
       "Revoke certificate ${ name }": [
         "Zrušiť certifikát ${ name }"
@@ -15456,9 +15444,6 @@
       "Free server configs": [
         "Konfigurácia bezplatného servera"
       ],
-      "Group": [
-        "Skupina"
-      ],
       "I found another service that I like better": [
         "Našiel som inú službu, ktorá sa mi páči viac"
       ],
@@ -15566,9 +15551,6 @@
       ],
       "Trash": [
         "Kôš"
-      ],
-      "User": [
-        "Používateľ"
       ]
     },
     "option": {
@@ -16968,11 +16950,6 @@
         "Nenašli sa žiadne politiky uchovávania"
       ]
     },
-    "RetentionPoliciesSettings": {
-      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Vytvorte pravidlá uchovávania pre to, ako dlho uchovávať dáta v súlade s pravidlami uchovávania dát vašej organizácie. Taktiež povolí automatické vymazávanie expirovaných dát."
-      ]
-    },
     "Role": {
       "Admin": [
         "Administrátor"
@@ -17944,6 +17921,12 @@
         "${ maxDomains } emailových domén",
         "${ maxDomains } emailových domén"
       ],
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "${ PASS_PLUS_VAULTS } trezor pre vaše heslá",
+        "${ PASS_PLUS_VAULTS } trezory na vaše heslá",
+        "${ PASS_PLUS_VAULTS } trezorov na vaše heslá",
+        "${ PASS_PLUS_VAULTS } trezorov na vaše heslá"
+      ],
       "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
         "${ referrerName } Vás pozýva vyskúšať ${ BRAND_NAME }."
       ],
@@ -17958,6 +17941,24 @@
       ],
       "${ value } total storage": [
         "${ value } úložného priestoru"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } vysokorýchlostné VPN pripojenie",
+        "${ VPN_CONNECTIONS } vysokorýchlostné VPN pripojenia",
+        "${ VPN_CONNECTIONS } vysokorýchlostných VPN pripojení",
+        "${ VPN_CONNECTIONS } vysokorýchlostných VPN pripojení"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries } krajina",
+        "${ vpnServersCountData.paid.countries }+ krajiny",
+        "${ vpnServersCountData.paid.countries }+ krajín",
+        "${ vpnServersCountData.paid.countries }+ krajín"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "Viac ako ${ vpnServersCountData.paid.servers } server po celom svete",
+        "Viac ako ${ vpnServersCountData.paid.servers } servery po celom svete",
+        "Viac ako ${ vpnServersCountData.paid.servers } serverov po celom svete",
+        "Viac ako ${ vpnServersCountData.paid.servers } serverov po celom svete"
       ],
       "/user": [
         "/používateľ"
@@ -18105,6 +18106,12 @@
       ],
       "Save ${ priceDifferenceString }": [
         "Ušetríte ${ priceDifferenceString }"
+      ],
+      "Secure ${ VPN_CONNECTIONS } device at a time": [
+        "Chráňte ${ VPN_CONNECTIONS } zariadenie",
+        "Chráňte súčasne ${ VPN_CONNECTIONS } zariadenia",
+        "Chráňte súčasne ${ VPN_CONNECTIONS } zariadení",
+        "Chráňte súčasne ${ VPN_CONNECTIONS } zariadení"
       ],
       "Secure file sharing": [
         "Bezpečné zdieľanie súborov"

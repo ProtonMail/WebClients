@@ -984,6 +984,10 @@
       "${ price } per user": [
         "her kullanıcı için ${ price }"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } koltuk",
+        "${ seats } ${ LUMO_APP_NAME } koltuk"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } yazma yardımcısı koltuğu",
         "${ seats } yazma yardımcısı koltuğu"
@@ -1606,6 +1610,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } sorunu"
+      ],
       "Application problem": [
         "Uygulama sorunu"
       ],
@@ -3340,6 +3347,9 @@
       "Invalid ZIP code": [
         "Posta kodu geçersiz"
       ],
+      "Name already exists": [
+        "Ad zaten var"
+      ],
       "Name does not match": [
         "Ad eşleşmiyor"
       ],
@@ -4414,6 +4424,9 @@
         "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
         "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME }"
       ],
@@ -4915,6 +4928,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
+      ],
+      "Download current logs": [
+        "Güncel günlükleri indir"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "CSV dosyası kalıbımızı indirin, kullanıcı bilgilerini yazın ve bu kullanıcı hesaplarını eklemek için CSV dosyasını yükleyin."
@@ -5570,6 +5586,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
+      ],
+      "Private AI assistant": [
+        "Kişisel Yapay Zeka yardımcısı"
       ],
       "Protected by Swiss privacy laws": [
         "İsviçre gizlilik yasaları tarafından korunmaktadır"
@@ -6856,6 +6875,9 @@
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
+      ],
+      "Include application logs in bug report": [
+        "Uygulama günlüklerini sorun bildirimine eklensin"
       ],
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
@@ -9777,6 +9799,196 @@
         "Parola değişikliği nedeniyle kuruluş yöneticinizin yetkileri kısıtlandı. Artık aşağıdaki işlemlere izin verilmiyor:"
       ]
     },
+    "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Kullanıcılar ya da gruplar ekleyin"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Confirm": [
+        "Onayla"
+      ],
+      "Create retention rule": [
+        "Verileri tutma kuralı"
+      ],
+      "Create rule": [
+        "Kural oluştur"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Delete rule": [
+        "Kuralı sil"
+      ],
+      "Delete this scope": [
+        "Bu kapsamı sil"
+      ],
+      "Edit": [
+        "Düzenle"
+      ],
+      "Purge all": [
+        "Tümünü temizle"
+      ],
+      "Purge deleted": [
+        "Silinmişleri temizle"
+      ],
+      "Save changes": [
+        "Değişiklikleri kaydet"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText } ile, Gelen kutusu, Gönderilmiş ve Taslaklar klasörlerindeki iletileri kapsar. Bu uygulama, kullanıcıların tutulacağını düşündüğü iletileri temizleyebilir. Bu iletiler daha sonra kurtarılamaz."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "${ lifetime } gün sonra tüm iletiler silinecek",
+        "${ lifetime } gün sonra tüm iletiler silinecek"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "Tutma süresi ${ MIN_LIFETIME } günden fazla olmalıdır"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "\"Tümü tutulsun\" işlemi için tutma süresi ayarlanmamalıdır"
+      ],
+      "Scope value is not valid": [
+        "Kapsam değeri geçersiz"
+      ],
+      "Scope value is required": [
+        "Kapsam değeri zorunludur"
+      ],
+      "Scopes cannot have the same value": [
+        "Kapsamlar aynı değerde olamaz"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } diğer"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime } gün",
+        "${ rule.Lifetime } gün"
+      ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Kuruluşunuzun veri saklama ilkesine uygun olarak verileri ne kadar süreyle tutacağınızı belirleyen kurallar oluşturun. Süresi geçmiş verileri otomatik olarak temizleyin."
+      ],
+      "Forever": [
+        "Sonsuza dek"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Gelen kutusu, Gönderilmiş ve diğer tüm konumlardaki tüm iletileri kapsar. Temizlenen iletiler kurtarılamaz."
+      ],
+      "Removes messages already deleted by users.": [
+        "Kullanıcılar tarafından zaten silinmiş iletileri siler."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "\"${ formData.name }\" verileri tutma kuralı güncellendi"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "\"${ payload.Name }\" verileri tutma kuralı oluşturuldu"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "\"${ retentionRule.Name }\" verileri tutma kuralı silindi"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Verileri tutma süresi dolduktan sonra"
+      ],
+      "Applies to": [
+        "Şunlar için geçerlidir"
+      ],
+      "days": [
+        "gün"
+      ],
+      "Keep items forever": [
+        "Ögeler sonsuza dek tutulsun"
+      ],
+      "Keep messages forever": [
+        "İletileri sonsuza dek tutulsun"
+      ],
+      "Retention period": [
+        "Verileri tutma süresi"
+      ],
+      "Retention rule": [
+        "Verileri tutma kuralı"
+      ],
+      "Select product": [
+        "Ürün seçin"
+      ],
+      "Set a duration": [
+        "Bir süre ayarlayın"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Kuruluştaki herkes"
+      ],
+      "Group": [
+        "Grup"
+      ],
+      "Purge all messages": [
+        "Tüm iletileri temizle"
+      ],
+      "Purge deleted messages only": [
+        "Yalnızca silinmiş iletiler temizlensin"
+      ],
+      "Specific users or groups": [
+        "Belirli kullanıcılar veya gruplar"
+      ],
+      "User": [
+        "Kullanıcı"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "Örnek: Kullanılmayan e-posta kutularını temizleme"
+      ],
+      "Enter duration": [
+        "Süreyi yazın"
+      ],
+      "Enter value": [
+        "Değeri yazın"
+      ],
+      "Search for rule, users, period, action": [
+        "Kural, kullanıcı, dönem, işlem ara"
+      ],
+      "Search policies": [
+        "İlke ara"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "İşlem"
+      ],
+      "Applies to": [
+        "Şunlar için geçerlidir"
+      ],
+      "Retention period": [
+        "Verileri tutma süresi"
+      ],
+      "Retention Rule": [
+        "Verileri tutma kuralı"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "Herhangi bir verileri tutma ilkesi bulunamadı"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Verileri tutma kuralını onaylıyor musunuz?"
+      ],
+      "Create retention rule": [
+        "Verileri tutma kuralı oluştur"
+      ],
+      "Edit retention rule": [
+        "Verileri tutma kuralını düzenle"
+      ]
+    },
     "Role": {
       "Admin": [
         "Yönetici"
@@ -11996,6 +12208,9 @@
       "Customize the number of IP addresses in your plan": [
         "Tarifenizdeki IP adreslerinin sayısını özelleştirin"
       ],
+      "Data retention": [
+        "Verileri tutma"
+      ],
       "Date": [
         "Tarih"
       ],
@@ -13031,6 +13246,9 @@
       ],
       "It's you": [
         "Bu sizsiniz"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Yönetici erişimi bekleniyor"
