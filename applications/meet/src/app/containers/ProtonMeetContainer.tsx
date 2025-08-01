@@ -77,6 +77,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const [initialisedParticipantNameMap, setInitialisedParticipantNameMap] = useState(false);
 
+    const joinBlockedRef = useRef(false);
+
     const handleDevicePermissionChange = useCallback(
         (permissions: { camera?: PermissionState; microphone?: PermissionState }) => {
             setDevicePermissions((prevPermissions) => ({ ...prevPermissions, ...permissions }));
@@ -135,12 +137,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const handleJoin = useCallback(
         async (participantSettings: ParticipantSettings, meetingToken: string = token) => {
-            if (joiningInProgress) {
-                return;
-            }
-
             setParticipantSettings(participantSettings);
-            setJoiningInProgress(true);
 
             try {
                 try {
@@ -168,6 +165,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                     () => {
                         setJoinedRoom(true);
                         setJoiningInProgress(false);
+                        joinBlockedRef.current = false;
                     },
                     Math.max(2 * JOIN_TITLE_TIMEOUT - timeSinceStart, JOIN_TITLE_TIMEOUT - timeSinceJoinStarted, 0)
                 );
@@ -179,6 +177,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 }
 
                 setJoiningInProgress(false);
+                joinBlockedRef.current = false;
             }
         },
         [joiningInProgress, setJoiningInProgress, participantSettings, join]
@@ -186,9 +185,14 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const joinInstantMeeting = useCallback(
         async (participantSettings: ParticipantSettings) => {
-            loadingStartTimeRef.current = Date.now();
-
+            if (joinBlockedRef.current) {
+                return;
+            }
             setJoiningInProgress(true);
+
+            joinBlockedRef.current = true;
+
+            loadingStartTimeRef.current = Date.now();
 
             const { id, passwordBase } = await createInstantMeeting({
                 params: {},
@@ -213,12 +217,22 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             await handleJoin(participantSettings, id);
 
             history.push(getMeetingLink(id, passwordBase));
+
+            joinBlockedRef.current = false;
         },
         [createInstantMeeting, handleJoin, getRoomName, guestMode]
     );
 
     const joinMeeting = useCallback(
         async (participantSettings: ParticipantSettings, meetingToken: string = token) => {
+            if (joinBlockedRef.current) {
+                return;
+            }
+
+            setJoiningInProgress(true);
+
+            joinBlockedRef.current = true;
+
             loadingStartTimeRef.current = Date.now();
 
             const handshakeInfo = await getHandshakeInfo(meetingToken);
@@ -236,6 +250,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             }));
 
             await handleJoin(participantSettings, meetingToken);
+
+            joinBlockedRef.current = false;
         },
         [handleJoin, getRoomName, getHandshakeInfo, urlPassword, password]
     );
