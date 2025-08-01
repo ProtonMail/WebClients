@@ -12,13 +12,11 @@ import './OfferModal.scss';
 
 const OFFER_DISCOUNT_PERCENTAGE = 80;
 
-export type OfferContinueAction = { upgradeTo: MaybeNull<PLANS> };
-
 type OfferModalProps = {
     rawPrice: number;
     getPrice: (price: number) => string;
     onClose: () => void;
-    onContinue: (params: OfferContinueAction) => void;
+    onContinue: (upgradeTo: MaybeNull<PLANS>) => void;
 };
 
 export const OfferModal: FC<OfferModalProps> = ({ rawPrice, getPrice, onClose, onContinue }) => {
@@ -68,7 +66,7 @@ export const OfferModal: FC<OfferModalProps> = ({ rawPrice, getPrice, onClose, o
                         color="norm"
                         fullWidth
                         pill
-                        onClick={() => onContinue({ upgradeTo: PLANS.PASS })}
+                        onClick={() => onContinue(PLANS.PASS)}
                     >
                         {c('Action').t`Get limited-time offer`}
                     </Button>
@@ -83,7 +81,7 @@ export const OfferModal: FC<OfferModalProps> = ({ rawPrice, getPrice, onClose, o
                     </div>
                     <div className="color-weak my-6 text-center text-sm">{c('Label')
                         .t`Renews at ${price}, cancel anytime.`}</div>
-                    <Button shape="ghost" color="norm" fullWidth pill onClick={() => onContinue({ upgradeTo: null })}>
+                    <Button shape="ghost" color="norm" fullWidth pill onClick={() => onContinue(null)}>
                         {c('Action').t`No thanks`}
                     </Button>
                 </div>
