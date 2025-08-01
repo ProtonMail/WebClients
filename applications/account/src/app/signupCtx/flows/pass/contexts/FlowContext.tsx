@@ -1,7 +1,6 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useState } from 'react';
 
-import { Maybe } from '@proton/pass/types';
-import { PLANS } from '@proton/payments/core/constants';
+import type { Maybe } from '@proton/pass/types';
 
 export enum Step {
     Signup = 'signup',
@@ -11,31 +10,14 @@ export enum Step {
     InstallExtension = 'install-extension',
 }
 
-type StepState =
-    | { step: Step.Signup }
-    | { step: Step.RecoveryKit }
-    | { step: Step.UpgradePlan }
-    | { step: Step.Payment; data: { plan: PLANS } }
-    | { step: Step.InstallExtension };
-
-type FlowContextType = StepState & {
-    setStep: <T extends Step>(
-        step: T,
-        data?: Extract<StepState, { step: T }> extends { data: infer D } ? D : undefined
-    ) => void;
-};
+type FlowContextType = { step: Step; setStep: <T extends Step>(step: T) => void };
 
 const FlowContext = createContext<Maybe<FlowContextType>>(undefined);
 
 export const FlowProvider: FC<PropsWithChildren> = ({ children }) => {
-    const [state, setState] = useState<StepState>({ step: Step.InstallExtension });
+    const [step, setStep] = useState<Step>(Step.UpgradePlan);
 
-    const setStep = <T extends Step>(
-        step: T,
-        data?: Extract<StepState, { step: T }> extends { data: infer D } ? D : undefined
-    ) => setState({ step, data } as StepState);
-
-    return <FlowContext.Provider value={{ ...state, setStep }}>{children}</FlowContext.Provider>;
+    return <FlowContext.Provider value={{ step, setStep }}>{children}</FlowContext.Provider>;
 };
 
 export const useFlow = () => {

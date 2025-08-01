@@ -12,25 +12,42 @@ import {
     PROTON_UNLIMITED_PRICE,
 } from '@proton/pass/constants';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import { PLANS } from '@proton/payments/core/constants';
+import { MaybeNull } from '@proton/pass/types';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { usePaymentOptimistic } from '@proton/payments/ui';
 
+import { useSignup } from '../../../context/SignupContext';
 import { Layout } from '../components/Layout/Layout';
-import { type OfferContinueAction, OfferModal } from '../components/OfferModal/OfferModal';
+import { OfferModal } from '../components/OfferModal/OfferModal';
 import { PlanCard, type PlanCardProps } from '../components/PlansTable/PlanCard';
 import { Step, useFlow } from '../contexts/FlowContext';
 
-// TODO: Retrieve the user currency if possible
-const getPrice = (price: number) => getSimplePriceString('USD', price);
-
 export const UpgradePlanStep: FC = () => {
+    const payments = usePaymentOptimistic();
+    const signup = useSignup();
     const { setStep } = useFlow();
-    const offerModal = useAsyncModalHandles<void, object>({ getInitialModalState: () => ({}) });
+    const offerModal = useAsyncModalHandles<MaybeNull<PLANS>, object>({ getInitialModalState: () => ({}) });
+
+    const getPrice = (price: number) => getSimplePriceString(payments.currency, price);
 
     const plusLifetimePrice = getPrice(PASS_PLUS_LIFETIME_PRICE);
 
-    const handlePayPlan = (plan: PLANS) => setStep(Step.Payment, { plan });
+    const handlePayPlan = (plan: PLANS, coupon?: string) => {
+        payments.selectPlan({ planIDs: { [plan]: 1 }, cycle: CYCLE.YEARLY, currency: payments.currency, coupon });
+        setStep(Step.Payment);
+    };
 
-    const openOfferModal = () => offerModal.handler({ onSubmit: () => {} });
+    const openOfferModal = () =>
+        offerModal.handler({
+            onSubmit: async (upgradeTo) => {
+                // TODO: Ask for real coupon discount to use at this point
+                if (upgradeTo) return handlePayPlan(upgradeTo, 'COUPON-DISCOUNT-80%');
+
+                await signup.createUser();
+                await signup.setupUser();
+                setStep(Step.InstallExtension);
+            },
+        });
 
     const plans: PlanCardProps[] = [
         {
@@ -128,9 +145,7 @@ export const UpgradePlanStep: FC = () => {
                     rawPrice={PASS_FAMILY_PRICE}
                     getPrice={getPrice}
                     onClose={offerModal.abort}
-                    onContinue={({ upgradeTo }: OfferContinueAction) =>
-                        upgradeTo ? handlePayPlan(upgradeTo) : setStep(Step.InstallExtension)
-                    }
+                    onContinue={offerModal.resolver}
                 />
             )}
         </Layout>
