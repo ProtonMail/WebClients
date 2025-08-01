@@ -28,7 +28,19 @@ export const DashboardContainer = () => {
 
     const goToApp = useAppLink();
 
+    const isScheduleEnabled = useFlag('NewScheduleOption');
+
     const handleScheduleMeeting = () => {
+        if (!isScheduleEnabled) {
+            notifications.createNotification({
+                key: 'schedule-meeting-disabled',
+                text: c('meet_2025 Notification').t`Coming soon`,
+                type: 'info',
+            });
+
+            return;
+        }
+
         goToApp('/?action=create&videoConferenceProvider=2', APPS.PROTONCALENDAR, true);
     };
 
@@ -59,8 +71,6 @@ export const DashboardContainer = () => {
     );
 
     const personalMeetingLink = personalMeeting ? `${window.location.origin}${personalMeetingLinkPath}` : null;
-
-    const isScheduleEnabled = useFlag('NewScheduleOption');
 
     return (
         <div className="w-full h-full flex flex-column">
@@ -95,7 +105,6 @@ export const DashboardContainer = () => {
                         circleColor="var(--ui-blue-interaction-minor-3)"
                         iconColor="var(--ui-blue-interaction-minor-1)"
                         onClick={handleScheduleMeeting}
-                        disabled={!isScheduleEnabled}
                     />
                     <CardButton
                         className="w-1/3"
