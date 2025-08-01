@@ -15,7 +15,7 @@ type Props = {
     thickness?: number;
 };
 
-const DEFAULT_OTP_COLORS: OTPDonutColorConfig<CSSVarColor> = {
+export const DEFAULT_OTP_COLORS: OTPDonutColorConfig<CSSVarColor> = {
     empty: '--text-hint',
     filled: '--signal-success',
     warning: '--signal-warning',
