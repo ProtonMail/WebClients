@@ -42,7 +42,7 @@ function createOkNode(
             directMemberRole: MemberRole.Admin,
             isShared: false,
             creationTime: new Date(),
-            treeEventScopeId: 'treeEventScopeId',
+            treeEventScopeId: 'tree-event-scope-id',
         },
     };
 }
@@ -85,7 +85,7 @@ function createDegradedNode(
             directMemberRole: MemberRole.Admin,
             isShared: false,
             creationTime: new Date(),
-            treeEventScopeId: 'treeEventScopeId',
+            treeEventScopeId: 'tree-event-scope-id',
         },
     };
 }

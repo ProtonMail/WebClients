@@ -5,10 +5,10 @@ import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
     selectedLink: DecryptedLink;
+    //TODO: Migrate to sdk stopSharing
     stopSharing: ReturnType<typeof useActions>['stopSharing'];
     close: () => void;
 }
-
 const StopSharingButton = ({ selectedLink, stopSharing, close }: Props) => {
     const shareId = selectedLink?.sharingDetails?.shareId;
     if (!shareId) {
