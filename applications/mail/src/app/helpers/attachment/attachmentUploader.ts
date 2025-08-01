@@ -5,6 +5,7 @@ import type { MessageState, MessageStateWithData, PublicPrivateKey } from '@prot
 import { uploadAttachment } from '@proton/shared/lib/api/attachments';
 import removeExifMetadata from '@proton/shared/lib/helpers/exif';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
+import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { Packets } from '@proton/shared/lib/interfaces/mail/crypto';
@@ -232,9 +233,10 @@ export const checkSizeAndLength = ({
     }
 
     if (sizeExcedeed) {
+        const readableAttachmentMaxSize = shortHumanSize(ATTACHMENT_MAX_SIZE);
         createNotification({
             type: 'error',
-            text: c('Error').t`Attachments are limited to 25 MB`,
+            text: c('Error').t`Attachments are limited to ${readableAttachmentMaxSize}`,
         });
     }
 
