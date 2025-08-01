@@ -3,12 +3,19 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import type { DecryptedLink, useActions } from '../../../store';
+import type { useActions } from '../../../store';
 import { useRenameModal } from '../../modals/RenameModal';
 import { isMultiSelect, noSelection } from './utils';
 
 interface RenameButtonProps {
-    selectedLinks: DecryptedLink[];
+    selectedLinks: {
+        isFile: boolean;
+        name: string;
+        mimeType: string;
+        volumeId: string;
+        linkId: string;
+        rootShareId: string;
+    }[];
     renameLink: ReturnType<typeof useActions>['renameLink'];
 }
 
