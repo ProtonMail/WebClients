@@ -86,7 +86,7 @@ export const getCompatibilityList = (compatibilities: CompatibilityItem[] = []):
         {
             name: 'isFirefoxWithBrokenX25519Support',
             valid: !isFirefoxWithBrokenX25519Support(),
-            text: 'This version of Firefox is no longer supported due to a bug in the  WebCrypto API. Plese update to a newer version.',
+            text: 'This version of Firefox is no longer supported due to a bug in the  WebCrypto API. Please update to a newer version.',
         },
         ...compatibilities,
     ];
