@@ -1,0 +1,68 @@
+import { Vr } from '@proton/atoms';
+import { Toolbar } from '@proton/components';
+
+import { useSelection } from '../../components/FileBrowser';
+import {
+    DetailsButton,
+    DownloadButton,
+    LayoutButton,
+    OpenInDocsButton,
+    PreviewButton,
+    RenameButton,
+    ShareButton,
+    ShareLinkButton,
+} from '../../components/sections/ToolbarButtons';
+import { useActions } from '../../store';
+import { type LegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
+import { getSelectedItems } from './SharedByMe';
+import { StopSharingButton } from './ToolbarButtons';
+
+interface Props {
+    shareId: string;
+    items: LegacyItem[];
+}
+
+export const SharedByMeToolbar = ({ shareId, items }: Props) => {
+    const selectionControls = useSelection()!;
+    const { renameLink } = useActions();
+    const selectedItems = getSelectedItems(items, selectionControls.selectedItemIds);
+    const selectedItem = selectedItems.length === 1 ? selectedItems[0] : undefined;
+    const renderSelectionActions = () => {
+        if (!selectedItems.length) {
+            return <ShareButton shareId={shareId} />;
+        }
+
+        return (
+            <>
+                <PreviewButton selectedBrowserItems={selectedItems} />
+                <OpenInDocsButton selectedBrowserItems={selectedItems} />
+                <DownloadButton selectedBrowserItems={selectedItems} />
+                <Vr />
+                <RenameButton selectedLinks={selectedItems} renameLink={renameLink} />
+                <DetailsButton selectedBrowserItems={selectedItems} />
+                {selectedItem && (
+                    <>
+                        <Vr />
+                        <ShareLinkButton
+                            volumeId={selectedItem.volumeId}
+                            shareId={selectedItem.rootShareId}
+                            linkId={selectedItem.linkId}
+                        />
+                    </>
+                )}
+
+                {selectedItem && <StopSharingButton shareId={shareId} />}
+            </>
+        );
+    };
+
+    return (
+        <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
+            <div className="gap-2 flex flex-nowrap shrink-0">{renderSelectionActions()}</div>
+            <span className="ml-auto flex flex-nowrap shrink-0">
+                <Vr className="hidden lg:flex mx-2" />
+                <LayoutButton />
+            </span>
+        </Toolbar>
+    );
+};
