@@ -2,12 +2,19 @@ import { c } from 'ttag';
 
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { type DecryptedLink, useActions } from '../../../../store';
+import { useActions } from '../../../../store';
 import type { useRenameModal } from '../../../modals/RenameModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
-    link: DecryptedLink;
+    link: {
+        isFile: boolean;
+        mimeType: string;
+        name: string;
+        volumeId: string;
+        linkId: string;
+        rootShareId: string;
+    };
     showRenameModal: ReturnType<typeof useRenameModal>[1];
     close: () => void;
 }
