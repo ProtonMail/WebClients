@@ -64,7 +64,7 @@ export const PlanCard: FC<PlanCardProps> = ({
             </div>
             {recommended && (
                 <div
-                    className="pass-plan-card-recommended-banner absolute flex items-center justify-center py-2 bg-primary top-custom left-custom"
+                    className="pass-plan-card-recommended-banner absolute flex items-center justify-center text-bold py-2 bg-primary top-custom left-custom"
                     style={{ '--top-custom': '-2rem', '--left-custom': '-4px' }}
                 >{c('Label').t`Recommended`}</div>
             )}
