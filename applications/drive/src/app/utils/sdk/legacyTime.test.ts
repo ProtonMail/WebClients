@@ -29,7 +29,7 @@ describe('legacyTime utilities', () => {
         totalStorageSize: 1024,
         activeRevision: undefined,
         folder: undefined,
-        treeEventScopeId: '',
+        treeEventScopeId: 'tree-event-scope-id',
         ...overrides,
     });
 

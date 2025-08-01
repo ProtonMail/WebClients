@@ -38,7 +38,7 @@ describe('getNodeEntity', () => {
         totalStorageSize: 1024,
         activeRevision: mockRevision,
         folder: undefined,
-        treeEventScopeId: '',
+        treeEventScopeId: 'tree-event-scope-id',
     };
 
     describe('when maybeNode is successful', () => {

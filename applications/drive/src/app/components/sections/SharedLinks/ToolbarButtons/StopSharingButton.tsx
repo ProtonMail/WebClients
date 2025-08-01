@@ -11,6 +11,7 @@ interface Props {
 }
 
 const StopSharingButton = ({ selectedLinks }: Props) => {
+    //TODO: Migrate to sdk stopSharing
     const { stopSharing, confirmModal } = useActions();
 
     if (noSelection(selectedLinks) || isMultiSelect(selectedLinks)) {
