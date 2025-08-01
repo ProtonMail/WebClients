@@ -1,0 +1,206 @@
+import type { FC } from 'react';
+
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/src';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
+import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
+import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
+import { Alert3ds, Icon } from '@proton/components/index';
+import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import useLoading from '@proton/hooks/useLoading';
+import { IcShield } from '@proton/icons';
+import { getPaymentsVersion } from '@proton/payments/core/api';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
+import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
+import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { Audience } from '@proton/shared/lib/interfaces';
+import { getSentryError } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
+
+import { useSignup } from '../../../context/SignupContext';
+import { Layout } from '../components/Layout/Layout';
+import { Step, useFlow } from '../contexts/FlowContext';
+
+export const PaymentStep: FC = () => {
+    const { setStep } = useFlow();
+    const signup = useSignup();
+    const payments = usePaymentOptimistic();
+    const [submitting, withSubmitting] = useLoading();
+    const { options } = payments;
+    const yearlyPlanValue = getSimplePriceString(payments.currency, payments.selectedPlan.getPlan().Amount * 12);
+    const monthlyPlanValue = getSimplePriceString(payments.currency, payments.selectedPlan.getPlan().Amount);
+
+    const paymentFacade = usePaymentFacade({
+        checkResult: options.checkResult,
+        amount: options.checkResult.AmountDue,
+        currency: options.currency,
+        selectedPlanName: getPlanFromPlanIDs(payments.plansMap, options.planIDs)?.Name,
+        billingAddress: options.billingAddress,
+        onChargeable: async (operations, data) => {
+            signup.submitPaymentData(options, data);
+            await signup.createUser();
+            await signup.setupUser();
+            setStep(Step.InstallExtension);
+        },
+        paymentMethodStatusExtended: payments.paymentsStatus,
+        flow: 'signup',
+    });
+
+    const validatePayment = () => {
+        if (submitting || !payments.initializationStatus.pricingInitialized || payments.loadingPaymentDetails) {
+            return false;
+        }
+        return true;
+    };
+
+    const taxCountry = useTaxCountry({
+        onBillingAddressChange: payments.selectBillingAddress,
+        statusExtended: payments.paymentsStatus,
+        zipCodeBackendValid: payments.zipCodeValid,
+        previosValidZipCode: payments.options.billingAddress.ZipCode,
+        paymentFacade,
+    });
+
+    const vatNumber = useVatNumber({
+        selectedPlanName: payments.selectedPlan.getPlanName(),
+        onChange: payments.setVatNumber,
+        taxCountry,
+    });
+
+    const process = (processor: PaymentProcessorHook | undefined) => {
+        if (!validatePayment()) {
+            return;
+        }
+
+        async function run() {
+            if (!processor) {
+                return;
+            }
+            try {
+                await processor.processPaymentToken();
+            } catch (error) {
+                const sentryError = getSentryError(error);
+                if (sentryError) {
+                    const context = {
+                        currency: payments.options.currency,
+                        amount: payments.checkResult.AmountDue,
+                        processorType: processor.meta.type,
+                        paymentMethod: paymentFacade.selectedMethodType,
+                        paymentMethodValue: paymentFacade.selectedMethodValue,
+                        cycle: payments.options.cycle,
+                        plan: payments.selectedPlan,
+                        planName: payments.selectedPlan.getPlanName(),
+                        paymentsVersion: getPaymentsVersion(),
+                    };
+
+                    captureMessage(`Payments: Failed to handle ${signup.flowId}`, {
+                        level: 'error',
+                        extra: { error: sentryError, context },
+                    });
+                }
+            }
+        }
+
+        withSubmitting(run()).catch(noop);
+    };
+
+    const handleProcess = () => {
+        return process(paymentFacade.selectedProcessor);
+    };
+
+    const methodsAllowed: string[] = [PAYMENT_METHOD_TYPES.CARD, PAYMENT_METHOD_TYPES.CHARGEBEE_CARD];
+    const showAlert3ds = methodsAllowed.includes(paymentFacade.selectedMethodType ?? '');
+
+    return (
+        <Layout>
+            <section className="max-w-custom" style={{ '--max-w-custom': '25rem' }}>
+                <div className="flex items-center justify-space-between mb-12">
+                    <Button shape="ghost" icon pill onClick={() => setStep(Step.UpgradePlan)}>
+                        <Icon name="arrow-left" size={6} />
+                    </Button>
+                    <div className="text-center">
+                        <span className="text-sm color-weak">{payments.selectedPlan.getPlan().Title}</span>
+                        <h3 className="text-5xl text-bold my-1">{yearlyPlanValue}</h3>
+                        <h4 className="text-sm color-weak">
+                            {monthlyPlanValue}
+                            {c('Label').t`/month x 12 months`}
+                        </h4>
+                    </div>
+                    <span />
+                </div>
+                <form
+                    name="payment-form"
+                    onSubmit={(event) => {
+                        event.preventDefault();
+                        handleProcess();
+                    }}
+                    method="post"
+                >
+                    {(() => {
+                        const planIDs = payments.options.planIDs;
+                        const { hasPlanCustomizer, currentPlan } = getHasPlanCustomizer({
+                            plansMap: payments.plansMap,
+                            planIDs,
+                        });
+
+                        if (!hasPlanCustomizer || !currentPlan) {
+                            return null;
+                        }
+                        return (
+                            <ProtonPlanCustomizer
+                                separator
+                                mode="signup"
+                                loading={false}
+                                currentPlan={currentPlan}
+                                currency={payments.options.currency}
+                                cycle={payments.options.cycle}
+                                plansMap={payments.plansMap}
+                                planIDs={planIDs}
+                                onChangePlanIDs={(planIDs) => payments.selectPlanIDs(planIDs)}
+                                audience={Audience.B2C}
+                                scribeAddonEnabled
+                                showUsersTooltip
+                            />
+                        );
+                    })()}
+
+                    <PaymentWrapper
+                        {...paymentFacade}
+                        noMaxWidth
+                        hideFirstLabel
+                        onCurrencyChange={payments.selectCurrency}
+                        taxCountry={taxCountry}
+                        vatNumber={vatNumber}
+                    />
+
+                    <PayButton
+                        size="large"
+                        color="norm"
+                        fullWidth
+                        pill
+                        taxCountry={taxCountry}
+                        paymentFacade={paymentFacade}
+                        loading={submitting}
+                        data-testid="pay"
+                        className="py-4 text-semibold"
+                        suffix={
+                            <div className="text-center mt-8">
+                                <span className="color-success">
+                                    <IcShield className="align-text-bottom mr-1" />
+                                    <span>{c('Info').t`30-day money-back guarantee`}</span>
+                                </span>
+                            </div>
+                        }
+                    >
+                        {c('Action').t`Start using ${PASS_APP_NAME} now`}
+                    </PayButton>
+                    {showAlert3ds && <Alert3ds />}
+                </form>
+            </section>
+        </Layout>
+    );
+};
