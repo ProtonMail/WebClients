@@ -9,6 +9,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { type ModalStateProps, useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -185,7 +186,9 @@ const RetentionPolicyModal = ({
                         />
                         <InputFieldTwo
                             id="policy-name"
-                            label={c('retention_policy_2025_Label').t`Retention rule`}
+                            as={TextAreaTwo}
+                            rows={2}
+                            label={c('retention_policy_2025_Label').t`Rule title`}
                             placeholder={getRuleNamePlaceholder(values.products)}
                             value={values.name}
                             disabled={loading}
