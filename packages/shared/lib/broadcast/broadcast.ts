@@ -51,7 +51,8 @@ const broadcast = <T>(message: T) => {
         }
 
         case 'web': {
-            window.parent.postMessage(serialized, '*');
+            // TODO: Replace with the actual trusted parent origin if different.
+            window.parent.postMessage(serialized, 'https://account.proton.me');
             break;
         }
 
