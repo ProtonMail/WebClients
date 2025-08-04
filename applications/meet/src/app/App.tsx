@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Route, useHistory } from 'react-router-dom';
 
 import { ProtonApp } from '@proton/components';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -38,25 +38,29 @@ const ComingSoonWrapper = ({ children }: { children: React.ReactNode }) => {
     return children;
 };
 
-export const App = () => {
+const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
     const isGuest = window.location.pathname.includes('guest');
 
-    const [initialised, setInitialised] = useState(false);
+    const history = useHistory();
 
     useEffect(() => {
-        if (!routes.some((route) => window.location.pathname.includes(route))) {
-            const middleCharacter = window.location.href.at(-1) === '/' ? '' : '/';
-            window.location.href = isGuest
-                ? window.location.href + middleCharacter + 'join'
-                : window.location.href + middleCharacter + 'dashboard';
+        if (window.location.pathname.includes('dashboard') && isGuest) {
+            history.push('/join');
         }
 
-        setInitialised(true);
-    }, []);
+        if (
+            !routes.some((route) => window.location.pathname.includes(route)) ||
+            window.location.pathname.includes('login')
+        ) {
+            history.push(isGuest ? '/join' : '/dashboard');
+        }
+    });
 
-    if (!initialised) {
-        return null;
-    }
+    return children;
+};
+
+export const App = () => {
+    const isGuest = window.location.pathname.includes('guest');
 
     return (
         <ProtonApp config={config as ProtonConfig}>
@@ -64,17 +68,21 @@ export const App = () => {
 
             {isGuest ? (
                 <GuestContainer>
-                    <ComingSoonWrapper>
-                        <Route path="/join" render={() => <ProtonMeetContainer guestMode={true} />} />
-                    </ComingSoonWrapper>
+                    <RedirectWrapper>
+                        <ComingSoonWrapper>
+                            <Route path="/join" render={() => <ProtonMeetContainer guestMode={true} />} />
+                        </ComingSoonWrapper>
+                    </RedirectWrapper>
                 </GuestContainer>
             ) : (
                 <ProviderContainer>
-                    <ComingSoonWrapper>
-                        <Route path="/join" render={() => <ProtonMeetContainer />} />
-                        <Route path="/admin" component={AdminContainer} />
-                        <Route path="/dashboard" component={DashboardContainer} />
-                    </ComingSoonWrapper>
+                    <RedirectWrapper>
+                        <ComingSoonWrapper>
+                            <Route path="/join" render={() => <ProtonMeetContainer />} />
+                            <Route path="/admin" component={AdminContainer} />
+                            <Route path="/dashboard" component={DashboardContainer} />
+                        </ComingSoonWrapper>
+                    </RedirectWrapper>
                 </ProviderContainer>
             )}
         </ProtonApp>
