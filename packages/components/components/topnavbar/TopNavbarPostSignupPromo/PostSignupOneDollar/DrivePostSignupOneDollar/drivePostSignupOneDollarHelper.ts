@@ -15,7 +15,7 @@ interface Props {
     protonConfig: ProtonConfig;
     offerStartDateTimestamp: number;
     driveOneDollarPostSignupFlag: boolean;
-    lastSubscriptionEnd: number;
+    previousSubscriptionEndTime: number;
     mailOfferStartDateTimestamp?: PostSubscriptionOneDollarOfferState;
     hasUploadedFile: boolean;
 }
@@ -25,7 +25,7 @@ export const getIsUserEligibleForOneDollar = ({
     protonConfig,
     offerStartDateTimestamp: postSignupTimestamp,
     driveOneDollarPostSignupFlag,
-    lastSubscriptionEnd,
+    previousSubscriptionEndTime,
     mailOfferStartDateTimestamp: mailOfferState,
     hasUploadedFile,
 }: Props) => {
@@ -56,7 +56,7 @@ export const getIsUserEligibleForOneDollar = ({
         !postSignupTimestamp || differenceInDays(today, offerExpirationDate) <= POST_SIGNUP_ONE_DOLLAR_DURATION;
 
     const basicEligibility =
-        user.isFree && !user.isDelinquent && hasValidApp && !lastSubscriptionEnd && !hasPassLifetime(user);
+        user.isFree && !user.isDelinquent && hasValidApp && !previousSubscriptionEndTime && !hasPassLifetime(user);
 
     return basicEligibility && hasUploadedFile && isOfferStillValid && isAccountOldEnough;
 };

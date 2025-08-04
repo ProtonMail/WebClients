@@ -23,7 +23,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     hasUploadedFile: true,
                 })
             ).toBeTruthy();
@@ -43,7 +43,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     hasUploadedFile: false,
                 })
             ).toBeFalsy();
@@ -63,7 +63,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -83,7 +83,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: subDays(today, 30).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     hasUploadedFile: true,
                 })
             ).toBeTruthy();
@@ -103,7 +103,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: subDays(today, 31).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -125,7 +125,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: 0,
@@ -149,7 +149,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 14).getTime() / 1000,
@@ -173,7 +173,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 30).getTime() / 1000,
@@ -197,7 +197,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     mailOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 31).getTime() / 1000,
@@ -224,7 +224,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: subDays(today, 30).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     hasUploadedFile: true,
                 })
             ).toBeTruthy();
@@ -245,7 +245,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: subDays(today, 30).getTime() / 1000,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -265,7 +265,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: false,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -285,7 +285,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: false,
-                    lastSubscriptionEnd: 999,
+                    previousSubscriptionEndTime: 999,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -305,7 +305,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -325,7 +325,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
@@ -345,7 +345,7 @@ describe('Drive post signup one dollar eligibility', () => {
                     protonConfig: { APP_NAME: 'proton-calendar' } as unknown as ProtonConfig,
                     offerStartDateTimestamp: 0,
                     driveOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     hasUploadedFile: true,
                 })
             ).toBeFalsy();
