@@ -7,6 +7,7 @@ import {
     IcInfoCircle,
     IcMeetCamera,
     IcMeetCameraOff,
+    IcMeetMicrophone,
     IcMeetMicrophoneOff,
     IcMeetParticipants,
     IcMeetSettings,
@@ -18,6 +19,7 @@ import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsCon
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useAudioToggle } from '../../hooks/useAudioToggle';
+import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useVideoToggle } from '../../hooks/useVideoToggle';
 import { MeetingSideBars, PermissionPromptStatus, PopUpControls } from '../../types';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
@@ -27,10 +29,15 @@ import { MicrophoneWithVolumeWithMicrophoneState } from '../MicrophoneWithVolume
 import { ScreenShareButton } from '../ScreenShareButton';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
 import { VideoSettings } from '../VideoSettings/VideoSettings';
+import { MenuButton } from './MenuButton';
+
+import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const { audioDeviceId, videoDeviceId, roomName, page, setPage, pageSize } = useMeetContext();
+
+    const isLargerThanMd = useIsLargerThanMd();
 
     const { sideBarState, toggleSideBarState, togglePopupState, setPermissionPromptStatus, popupState } =
         useUIStateContext();
@@ -80,107 +87,160 @@ export const ParticipantControls = () => {
     const cameraActionStatus = isCameraEnabled ? 'off' : 'on';
 
     return (
-        <div className="flex flex-nowrap justify-center items-center gap-2 h-custom" style={{ '--h-custom': '5.5rem' }}>
-            <div className="flex flex-1 justify-start h3">{roomName}</div>
-            <div className="flex flex-nowrap gap-2">
-                <ToggleButton
-                    buttonRef={anchorRef}
-                    OnIconComponent={MicrophoneWithVolumeWithMicrophoneState}
-                    OffIconComponent={IcMeetMicrophoneOff}
-                    isOn={isMicrophoneEnabled}
-                    onClick={() => {
-                        if (!hasMicrophonePermission) {
-                            setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE);
-                            return;
-                        }
+        <div className="w-full flex flex-nowrap flex-column">
+            {!isLargerThanMd && pageCount > 1 && (
+                <div className="w-full flex justify-center">
+                    <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />
+                </div>
+            )}
+            <div
+                className="flex flex-nowrap justify-center items-center gap-2 h-custom w-full"
+                style={{ '--h-custom': '5.5rem' }}
+            >
+                <div className="hidden lg:flex flex-1 justify-start h3">{roomName}</div>
+                <div className="participant-controls-buttons flex flex-nowrap gap-2">
+                    {isLargerThanMd ? (
+                        <>
+                            <ToggleButton
+                                buttonRef={anchorRef}
+                                OnIconComponent={MicrophoneWithVolumeWithMicrophoneState}
+                                OffIconComponent={IcMeetMicrophoneOff}
+                                isOn={isMicrophoneEnabled}
+                                onClick={() => {
+                                    if (!hasMicrophonePermission) {
+                                        setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE);
+                                        return;
+                                    }
 
-                        void toggleAudio({ isEnabled: !isMicrophoneEnabled, audioDeviceId });
-                    }}
-                    Content={AudioSettings}
-                    popUp={PopUpControls.Microphone}
-                    ariaLabel={c('l10n_nightly Alt').t`Toggle microphone`}
-                    secondaryAriaLabel={c('l10n_nightly Alt').t`Audio settings`}
-                    hasWarning={!hasMicrophonePermission}
-                    tooltipTitle={
-                        !hasMicrophonePermission
-                            ? c('l10n_nightly Info').t`Permission denied`
-                            : c('l10n_nightly Info').t`Turn ${microphoneActionStatus} microphone`
-                    }
-                    isOpen={popupState[PopUpControls.Microphone]}
-                    onPopupButtonClick={() => {
-                        if (!hasMicrophonePermission) {
-                            return;
-                        }
+                                    void toggleAudio({ isEnabled: !isMicrophoneEnabled, audioDeviceId });
+                                }}
+                                Content={AudioSettings}
+                                popUp={PopUpControls.Microphone}
+                                ariaLabel={c('l10n_nightly Alt').t`Toggle microphone`}
+                                secondaryAriaLabel={c('l10n_nightly Alt').t`Audio settings`}
+                                hasWarning={!hasMicrophonePermission}
+                                tooltipTitle={
+                                    !hasMicrophonePermission
+                                        ? c('l10n_nightly Info').t`Permission denied`
+                                        : c('l10n_nightly Info').t`Turn ${microphoneActionStatus} microphone`
+                                }
+                                isOpen={popupState[PopUpControls.Microphone]}
+                                onPopupButtonClick={() => {
+                                    if (!hasMicrophonePermission) {
+                                        return;
+                                    }
 
-                        togglePopupState(PopUpControls.Microphone);
-                    }}
-                />
-                <ToggleButton
-                    OnIconComponent={IcMeetCamera}
-                    OffIconComponent={IcMeetCameraOff}
-                    isOn={isCameraEnabled}
-                    onClick={() => {
-                        if (!hasCameraPermission) {
-                            setPermissionPromptStatus(PermissionPromptStatus.CAMERA);
-                            return;
-                        }
+                                    togglePopupState(PopUpControls.Microphone);
+                                }}
+                            />
+                            <ToggleButton
+                                OnIconComponent={IcMeetCamera}
+                                OffIconComponent={IcMeetCameraOff}
+                                isOn={isCameraEnabled}
+                                onClick={() => {
+                                    if (!hasCameraPermission) {
+                                        setPermissionPromptStatus(PermissionPromptStatus.CAMERA);
+                                        return;
+                                    }
 
-                        if (videoDeviceId) {
-                            void toggleVideo({ isEnabled: !isCameraEnabled, videoDeviceId });
-                        }
-                    }}
-                    Content={VideoSettings}
-                    popUp={PopUpControls.Camera}
-                    ariaLabel={c('l10n_nightly Alt').t`Toggle camera`}
-                    secondaryAriaLabel={c('l10n_nightly Alt').t`Video settings`}
-                    hasWarning={!hasCameraPermission}
-                    tooltipTitle={
-                        !hasCameraPermission
-                            ? c('l10n_nightly Info').t`Permission denied`
-                            : c('l10n_nightly Info').t`Turn ${cameraActionStatus} camera`
-                    }
-                    isOpen={popupState[PopUpControls.Camera]}
-                    onPopupButtonClick={() => {
-                        if (!hasCameraPermission) {
-                            return;
-                        }
+                                    if (videoDeviceId) {
+                                        void toggleVideo({ isEnabled: !isCameraEnabled, videoDeviceId });
+                                    }
+                                }}
+                                Content={VideoSettings}
+                                popUp={PopUpControls.Camera}
+                                ariaLabel={c('l10n_nightly Alt').t`Toggle camera`}
+                                secondaryAriaLabel={c('l10n_nightly Alt').t`Video settings`}
+                                hasWarning={!hasCameraPermission}
+                                tooltipTitle={
+                                    !hasCameraPermission
+                                        ? c('l10n_nightly Info').t`Permission denied`
+                                        : c('l10n_nightly Info').t`Turn ${cameraActionStatus} camera`
+                                }
+                                isOpen={popupState[PopUpControls.Camera]}
+                                onPopupButtonClick={() => {
+                                    if (!hasCameraPermission) {
+                                        return;
+                                    }
 
-                        togglePopupState(PopUpControls.Camera);
-                    }}
-                />
-                <ScreenShareButton />
-                <CircleButton
-                    IconComponent={IcMeetParticipants}
-                    variant={sideBarState[MeetingSideBars.Participants] ? 'active' : 'default'}
-                    onClick={() => {
-                        toggleSideBarState(MeetingSideBars.Participants);
-                    }}
-                    indicatorContent={participants.length.toString()}
-                    indicatorStatus={sideBarState[MeetingSideBars.Participants] ? 'success' : 'default'}
-                    ariaLabel={c('l10n_nightly Alt').t`Toggle participants`}
-                    tooltipTitle={c('l10n_nightly Info').t`Participants`}
-                />
-                <ChatButton />
-                <CircleButton
-                    IconComponent={IcMeetSettings}
-                    variant={sideBarState[MeetingSideBars.Settings] ? 'active' : 'default'}
-                    onClick={() => {
-                        toggleSideBarState(MeetingSideBars.Settings);
-                    }}
-                    ariaLabel={c('l10n_nightly Alt').t`Toggle settings`}
-                    tooltipTitle={c('l10n_nightly Info').t`Settings`}
-                />
-                <CircleButton
-                    IconComponent={IcInfoCircle}
-                    onClick={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
-                    variant={sideBarState[MeetingSideBars.MeetingDetails] ? 'active' : 'default'}
-                    ariaLabel={c('l10n_nightly Alt').t`Toggle meeting details`}
-                    tooltipTitle={c('l10n_nightly Info').t`Meeting details`}
-                />
-                <LeaveModal />
-            </div>
-            <div className="flex flex-1 justify-end">
-                {pageCount > 1 && <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />}
+                                    togglePopupState(PopUpControls.Camera);
+                                }}
+                            />
+                        </>
+                    ) : (
+                        <>
+                            <CircleButton
+                                IconComponent={isMicrophoneEnabled ? IcMeetMicrophone : IcMeetMicrophoneOff}
+                                variant={isMicrophoneEnabled ? 'default' : 'danger'}
+                                onClick={() => {
+                                    if (!hasMicrophonePermission) {
+                                        setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE);
+                                        return;
+                                    }
+
+                                    void toggleAudio({ isEnabled: !isMicrophoneEnabled, audioDeviceId });
+                                }}
+                                indicatorContent={hasMicrophonePermission ? undefined : '!'}
+                                indicatorStatus={hasMicrophonePermission ? 'success' : 'warning'}
+                                ariaLabel={c('l10n_nightly Alt').t`Toggle microphone`}
+                            />
+                            <CircleButton
+                                IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
+                                variant={isCameraEnabled ? 'default' : 'danger'}
+                                onClick={() => {
+                                    if (!hasCameraPermission) {
+                                        setPermissionPromptStatus(PermissionPromptStatus.CAMERA);
+                                        return;
+                                    }
+
+                                    if (videoDeviceId) {
+                                        void toggleVideo({ isEnabled: !isCameraEnabled, videoDeviceId });
+                                    }
+                                }}
+                                indicatorContent={hasCameraPermission ? undefined : '!'}
+                                indicatorStatus={hasCameraPermission ? 'success' : 'warning'}
+                            />
+                        </>
+                    )}
+
+                    <div className="flex-nowrap gap-2 hidden lg:flex">
+                        <ScreenShareButton />
+                        <CircleButton
+                            IconComponent={IcMeetParticipants}
+                            variant={sideBarState[MeetingSideBars.Participants] ? 'active' : 'default'}
+                            onClick={() => {
+                                toggleSideBarState(MeetingSideBars.Participants);
+                            }}
+                            indicatorContent={participants.length.toString()}
+                            indicatorStatus={sideBarState[MeetingSideBars.Participants] ? 'success' : 'default'}
+                            ariaLabel={c('l10n_nightly Alt').t`Toggle participants`}
+                        />
+                        <ChatButton />
+                        <CircleButton
+                            IconComponent={IcMeetSettings}
+                            variant={sideBarState[MeetingSideBars.Settings] ? 'active' : 'default'}
+                            onClick={() => {
+                                toggleSideBarState(MeetingSideBars.Settings);
+                            }}
+                            ariaLabel={c('l10n_nightly Alt').t`Toggle settings`}
+                        />
+                        <CircleButton
+                            IconComponent={IcInfoCircle}
+                            onClick={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
+                            variant={sideBarState[MeetingSideBars.MeetingDetails] ? 'active' : 'default'}
+                            ariaLabel={c('l10n_nightly Alt').t`Toggle meeting details`}
+                        />
+                    </div>
+                    <div className="flex lg:hidden gap-2 flex-nowrap">
+                        <ScreenShareButton />
+                        <MenuButton />
+                    </div>
+
+                    <LeaveModal />
+                </div>
+                <div className="hidden md:flex flex-1 justify-end">
+                    {pageCount > 1 && <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />}
+                </div>
             </div>
         </div>
     );

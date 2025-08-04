@@ -29,27 +29,23 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
         });
 
     return (
-        <div className="meet-page-header w-full p-4 flex items-center justify-space-between">
+        <div className="meet-page-header w-full px-4 py-2 md:py-4 flex items-center justify-space-between shrink-0">
             <div className="flex gap-4 items-center">
-                <img
-                    className="h-custom cursor-pointer"
-                    style={{ '--h-custom': '3rem' }}
-                    src={logo}
-                    alt=""
-                    onClick={() => history.push('/dashboard')}
-                />
+                <img className="logo cursor-pointer" src={logo} alt="" onClick={() => history.push('/dashboard')} />
 
-                {guestMode ? (
-                    <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} />
-                ) : (
-                    <AppsDropdown app={APPS.PROTONMEET} />
-                )}
+                <div className="hidden md:block">
+                    {guestMode ? (
+                        <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} />
+                    ) : (
+                        <AppsDropdown app={APPS.PROTONMEET} />
+                    )}
+                </div>
             </div>
 
             <div className="flex gap-4 items-center">
                 {isScheduleInAdvanceEnabled && (
                     <Button
-                        className="action-button rounded-full border-none"
+                        className="action-button rounded-full border-none hidden md:block"
                         onClick={() => (guestMode ? handleSignIn('admin/create') : history.replace('/admin/create'))}
                         size="large"
                     >

@@ -90,10 +90,10 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
 
     return (
         <div
-            className="meeting-row border w-full flex flex-nowrap items-center justify-space-between gap-6 min-h-custom p-8"
+            className="meeting-row border w-full flex flex-column md:flex-row flex-nowrap items-center justify-space-between gap-6 min-h-custom p-4 md:p-8 h-fit-content shrink-0"
             style={{ '--min-h-custom': '8.25rem' }}
         >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 shrink-0">
                 <div
                     className={clsx(
                         'flex flex-column items-center justify-center w-custom h-custom meet-radius',
@@ -115,7 +115,7 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
                 </div>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 shrink-0">
                 <Button
                     className="border-none rounded-full copy-link-button min-w-custom"
                     style={{ '--min-w-custom': '7.125rem' }}

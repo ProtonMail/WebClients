@@ -3,10 +3,11 @@ import { useCallback, useState } from 'react';
 import { VideoQuality } from 'livekit-client';
 
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
-import { PAGE_SIZE } from '../constants';
+import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
 import { UIStateProvider } from '../contexts/UIStateContext';
 import { useFaceTrackingSetup } from '../hooks/useFaceTrackingSetup';
+import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import type { MeetChatMessage, ParticipantEventRecord, ParticipantSettings } from '../types';
 
 interface MeetContainerProps {
@@ -46,7 +47,10 @@ export const MeetContainer = ({
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
-    const [pageSize, setPageSize] = useState(PAGE_SIZE);
+
+    const isLargerThanMd = useIsLargerThanMd();
+
+    const [pageSize, setPageSize] = useState(isLargerThanMd ? PAGE_SIZE : SMALL_SCREEN_PAGE_SIZE);
     const [resolution, setResolution] = useState<string | null>(null);
 
     const [chatMessages, setChatMessages] = useState<MeetChatMessage[]>([]);

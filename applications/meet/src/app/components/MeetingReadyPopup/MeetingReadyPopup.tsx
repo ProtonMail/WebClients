@@ -39,14 +39,14 @@ export const MeetingReadyPopup = ({ meetingLink }: MeetingReadyPopupProps) => {
 
     return (
         <div
-            className="absolute bottom-custom left-custom"
-            style={{ '--bottom-custom': '7.25rem', '--left-custom': '1.75rem' }}
+            className="meeting-ready-popup-container absolute bottom-custom px-4 md:px-0"
+            style={{ '--bottom-custom': '7.25rem' }}
         >
             <div
-                className="meeting-ready-popup meet-radius bg-norm rounded-lg p-6 relative flex flex-column items-center w-custom h-custom p-4"
+                className="meeting-ready-popup meet-radius bg-norm rounded-lg p-8 md:p-6 relative flex flex-column items-center w-full md:w-custom md:h-custom"
                 style={{
-                    '--w-custom': '24.5rem',
-                    '--h-custom': '20.1875rem',
+                    '--md-w-custom': '24.5rem',
+                    '--md-h-custom': '20.1875rem',
                 }}
             >
                 <CloseButton

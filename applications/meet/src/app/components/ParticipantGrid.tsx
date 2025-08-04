@@ -1,10 +1,23 @@
+import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 
 export const ParticipantGrid = () => {
     const { pagedParticipants } = useSortedParticipants();
 
+    const isLargerThanMd = useIsLargerThanMd();
+
     const gridTemplateColumns = (participantCount: number) => {
+        if (!isLargerThanMd) {
+            if (participantCount === 1 || participantCount === 2) {
+                return '1fr';
+            }
+
+            if (participantCount > 2) {
+                return 'repeat(2, 1fr)';
+            }
+        }
+
         if (participantCount < 4) {
             return `repeat(${participantCount}, 1fr)`;
         }
@@ -25,6 +38,20 @@ export const ParticipantGrid = () => {
     };
 
     const gridTemplateRows = (participantCount: number) => {
+        if (!isLargerThanMd) {
+            if (participantCount === 1) {
+                return '1fr';
+            }
+
+            if (participantCount === 2) {
+                return 'repeat(2, 1fr)';
+            }
+
+            if (participantCount > 2) {
+                return 'repeat(3, 1fr)';
+            }
+        }
+
         if (participantCount < 4) {
             return '1fr';
         }

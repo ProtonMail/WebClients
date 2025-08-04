@@ -32,7 +32,11 @@ export const useVideoToggle = () => {
         }) => {
             toggleQueue.current = toggleQueue.current.then(async () => {
                 const videoInfo = isEnabled
-                    ? { deviceId: { exact: videoDeviceId }, resolution: participantResolution.resolution }
+                    ? {
+                          deviceId: { exact: videoDeviceId },
+                          resolution: participantResolution.resolution,
+                          facingMode: 'user' as const,
+                      }
                     : false;
                 const videoPublishInfo = {
                     simulcast: increasedVideoQuality,

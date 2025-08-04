@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-import { PAGE_SIZE, SCREEN_SHARE_PAGE_SIZE } from '../constants';
+import { PAGE_SIZE, SCREEN_SHARE_PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../constants';
 import { useMeetContext } from '../contexts/MeetContext';
 import { useUIStateContext } from '../contexts/UIStateContext';
 import { useCurrentScreenShare } from './useCurrentScreenShare';
+import { useIsLargerThanMd } from './useIsLargerThanMd';
 import { useSortedParticipants } from './useSortedParticipants';
 
 export const usePaginationSizeUpdates = () => {
@@ -23,6 +24,8 @@ export const usePaginationSizeUpdates = () => {
 
     const pageCount = Math.ceil(sortedParticipants.length / pageSize);
 
+    const isLargerThanMd = useIsLargerThanMd();
+
     useEffect(() => {
         if (pageCount - 1 < page) {
             setPage(() => pageCount - 1);
@@ -30,7 +33,9 @@ export const usePaginationSizeUpdates = () => {
     }, [pageCount, page, setPage]);
 
     useEffect(() => {
-        const newPageSize = hasScreenShare ? SCREEN_SHARE_PAGE_SIZE : PAGE_SIZE;
+        const sizeBasedPageSize = isLargerThanMd ? PAGE_SIZE : SMALL_SCREEN_PAGE_SIZE;
+
+        const newPageSize = hasScreenShare ? SCREEN_SHARE_PAGE_SIZE : sizeBasedPageSize;
 
         if (previousPageSizeRef.current !== newPageSize) {
             setPageSize(newPageSize);
@@ -43,5 +48,5 @@ export const usePaginationSizeUpdates = () => {
         previousPageSizeRef.current = newPageSize;
         previousHasScreenShareRef.current = hasScreenShare;
         previousIsSideBarOpenRef.current = isSideBarOpen;
-    }, [hasScreenShare, isSideBarOpen, setPageSize, setPage, sortedParticipants.length]);
+    }, [hasScreenShare, isSideBarOpen, setPageSize, setPage, sortedParticipants.length, isLargerThanMd]);
 };

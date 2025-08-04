@@ -1,3 +1,5 @@
+import type { RefObject } from 'react';
+
 import { Button, Tooltip } from '@proton/atoms';
 import type { IconProps } from '@proton/components';
 import clsx from '@proton/utils/clsx';
@@ -18,6 +20,7 @@ interface CircleButtonProps {
     ariaLabel?: string;
     noBorder?: boolean;
     tooltipTitle?: string;
+    anchorRef?: RefObject<HTMLButtonElement>;
 }
 
 export const CircleButton = ({
@@ -31,6 +34,7 @@ export const CircleButton = ({
     ariaLabel,
     noBorder = true,
     tooltipTitle,
+    anchorRef,
 }: CircleButtonProps) => {
     return (
         <Tooltip
@@ -50,6 +54,7 @@ export const CircleButton = ({
                 )}
                 onClick={onClick}
                 aria-label={ariaLabel}
+                ref={anchorRef}
             >
                 <IconComponent viewBox={iconViewPort} size={6} />
                 {indicatorContent && (

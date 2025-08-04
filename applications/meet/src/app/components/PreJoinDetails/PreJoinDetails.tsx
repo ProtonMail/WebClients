@@ -47,12 +47,15 @@ export const PreJoinDetails = ({
     const subtitle = getSubtitle();
 
     return (
-        <div className="flex flex-nowrap flex-column gap-4 w-custom" style={{ '--w-custom': '22.625rem' }}>
-            <h1 className="h2 text-center">{title}</h1>
-            <div className="text-center color-weak">{subtitle}</div>
-            <InputFieldStackedGroup classname="mb-4 w-full">
+        <div
+            className="flex flex-nowrap flex-column mt-4 lg:mt-0 gap-2 lg:gap-4 w-full md:w-custom"
+            style={{ '--md-w-custom': '22.625rem' }}
+        >
+            <h1 className="h2 text-center hidden md:block">{title}</h1>
+            <div className="text-center color-weak hidden md:block">{subtitle}</div>
+            <InputFieldStackedGroup classname="md:mt-0 lg:mb-4 w-full">
                 {!instantMeeting && (
-                    <InputFieldStacked classname="meeting-id-field" isGroupElement>
+                    <InputFieldStacked classname="meeting-id-field hidden md:block" isGroupElement>
                         <InputFieldTwo
                             label={c('l10n_nightly Label').t`Meeting ID`}
                             type="text"
@@ -87,7 +90,7 @@ export const PreJoinDetails = ({
                     </InputFieldStacked>
                 )}
 
-                <InputFieldStacked isGroupElement>
+                <InputFieldStacked isGroupElement classname="pre-join-details-name-input-field">
                     <InputFieldTwo
                         label={c('l10n_nightly Label').t`Your name`}
                         type="text"

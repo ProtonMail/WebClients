@@ -2,8 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, useModalState } from '@proton/components';
+import { IcPhone } from '@proton/icons';
 
 import { useMeetContext } from '../../contexts/MeetContext';
+import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 
 import './LeaveModal.scss';
 
@@ -11,16 +13,22 @@ export const LeaveModal = () => {
     const [modalProps, handleSetOpen, render] = useModalState();
     const { handleLeave } = useMeetContext();
 
+    const isLargerThanMd = useIsLargerThanMd();
+
     return (
         <div className="text-center">
             <Button
-                className="px-8 py-4 leave-button border-none"
+                className="px-8 py-4 leave-button border-none shrink-0"
                 pill={true}
                 size="large"
                 onClick={() => handleSetOpen(true)}
                 aria-label={c('l10n_nightly Alt').t`Leave Meeting`}
             >
-                {c('l10n_nightly Alt').t`Leave`}
+                {isLargerThanMd ? (
+                    c('l10n_nightly Alt').t`Leave`
+                ) : (
+                    <IcPhone className="shrink-0" size={5} style={{ transform: 'rotate(135deg)' }} />
+                )}
             </Button>
             {render && (
                 <ModalTwo {...modalProps} rootClassName="bg-transparent leave-modal" className="meet-radius">

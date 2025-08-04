@@ -7,6 +7,7 @@ import { IcCross } from '@proton/icons';
 
 import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
+import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { PermissionPromptStatus } from '../../types';
 
 export const NoPermissionInfo = () => {
@@ -17,6 +18,12 @@ export const NoPermissionInfo = () => {
     const {
         devicePermissions: { camera, microphone },
     } = useDevicePermissionsContext();
+
+    const isLargerThanMd = useIsLargerThanMd();
+
+    if (!isLargerThanMd) {
+        return null;
+    }
 
     const hasCameraPermission = camera === 'granted';
     const hasMicrophonePermission = microphone === 'granted';
