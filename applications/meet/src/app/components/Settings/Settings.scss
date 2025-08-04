@@ -4,6 +4,28 @@
 
 .settings-toggle {
 	.toggle-container-img {
-		color: var(--text-invert);
+		visibility: hidden;
+	}
+
+	.toggle-container--checked {
+		&::after {
+			border: 1px solid var(--interaction-norm) !important;
+		}
+	}
+}
+
+.setting-container {
+	container-type: inline-size;
+}
+
+.setting-label {
+	font-size: 1rem;
+	display: block;
+	inline-size: 100%;
+}
+
+@container (max-width: 279px) {
+	.setting-label {
+		font-size: 0.875rem;
 	}
 }

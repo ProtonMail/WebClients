@@ -10,7 +10,6 @@ import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
-import { ConnectionIndicator } from '../ConnectionIndicator/ConnectionIndicator';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 
 import './ParticipantTile.scss';
@@ -28,8 +27,7 @@ const getCameraVideoPublication = (participant: Participant) => {
 
 export const ParticipantTile = ({ participant, smallView = false }: ParticipantTileProps) => {
     const { localParticipant } = useLocalParticipant();
-    const { shouldShowConnectionIndicator, participantNameMap, disableVideos, participantsWithDisabledVideos } =
-        useMeetContext();
+    const { participantNameMap, disableVideos, participantsWithDisabledVideos } = useMeetContext();
     const cameraVideoPublication = getCameraVideoPublication(participant);
     const audioPublication = Array.from(participant.trackPublications.values()).find(
         (pub) => pub.kind === Track.Kind.Audio && pub.track
@@ -51,9 +49,6 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
 
     const isLocalParticipant = participant.identity === localParticipant.identity;
 
-    // @ts-ignore
-    const connectionQuality = participant._connectionQuality;
-
     const participantName = participantNameMap[participant.identity] ?? c('l10n_nightly Info').t`Loading...`;
 
     return (
@@ -71,7 +66,6 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                     '--right-custom': smallView ? '0.5rem' : '1rem',
                 }}
             >
-                {shouldShowConnectionIndicator && <ConnectionIndicator connectionQuality={connectionQuality} />}
                 {isSpeaking && audioIsOn && <SpeakingIndicator size={32} participant={participant} />}
                 {!audioIsOn && (
                     <div

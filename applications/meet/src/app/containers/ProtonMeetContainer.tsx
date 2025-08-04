@@ -43,6 +43,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     );
 
     const [password, setPassword] = useState('');
+    const [invalidPassphrase, setInvalidPassphrase] = useState(false);
 
     const { getRoomName, getHandshakeInfo, token, urlPassword } = useMeetingSetup();
 
@@ -106,8 +107,11 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 meetingName: roomName,
             }));
 
+            setInvalidPassphrase(false);
+
             return true;
         } catch (error) {
+            setInvalidPassphrase(true);
             return false;
         }
     };
@@ -294,7 +298,12 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         >
             <div className="h-full w-full">
                 {decryptionReadinessStatus === MeetingDecryptionReadinessStatus.INITIALIZED && (
-                    <PasswordPrompt password={password} setPassword={setPassword} onPasswordSubmit={submitPassword} />
+                    <PasswordPrompt
+                        password={password}
+                        setPassword={setPassword}
+                        onPasswordSubmit={submitPassword}
+                        invalidPassphrase={invalidPassphrase}
+                    />
                 )}
                 {joinedRoom && roomRef.current && participantSettings ? (
                     <RoomContext.Provider value={roomRef.current}>

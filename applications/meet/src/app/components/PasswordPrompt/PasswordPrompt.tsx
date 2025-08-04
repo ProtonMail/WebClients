@@ -18,9 +18,10 @@ interface PasswordPromptProps {
     password: string;
     setPassword: (password: string) => void;
     onPasswordSubmit: () => Promise<boolean>;
+    invalidPassphrase: boolean;
 }
 
-export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit }: PasswordPromptProps) => {
+export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invalidPassphrase }: PasswordPromptProps) => {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
@@ -36,7 +37,7 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit }: Pass
                         <div className="text-3xl text-semibold text-center mb-4 mt-4">{c('l10n_nightly Info')
                             .t`This meeting is password protected`}</div>
                         <div className="my-4 color-weak text-center">{c('l10n_nightly Info')
-                            .t`Please enter the password to decrypt and view this meeting`}</div>
+                            .t`Please enter the passphrase to decrypt and view this meeting`}</div>
 
                         <div className="relative w-full my-4">
                             <InputFieldStackedGroup classname="w-full relative">
@@ -44,11 +45,11 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit }: Pass
                                     <InputFieldTwo
                                         id="password-prompt-password-input"
                                         name="password p-4"
-                                        label={c('l10n_nightly Label').t`Password`}
+                                        label={c('l10n_nightly Label').t`Passphrase`}
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                         unstyled={true}
-                                        placeholder={c('l10n_nightly Placeholder').t`Enter password`}
+                                        placeholder={c('l10n_nightly Placeholder').t`Enter passphrase`}
                                         type={showPassword ? 'text' : 'password'}
                                         autoComplete="off"
                                     />
@@ -60,7 +61,7 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit }: Pass
                                 size="small"
                                 onClick={() => setShowPassword(!showPassword)}
                                 aria-pressed={showPassword}
-                                aria-label={c('l10n_nightly Alt').t`Show password`}
+                                aria-label={c('l10n_nightly Alt').t`Show passphrase`}
                                 style={{
                                     '--top-custom': '50%',
                                     '--right-custom': '1rem',
@@ -71,6 +72,10 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit }: Pass
                             >
                                 {showPassword ? <IcEye size={4} /> : <IcEyeSlash size={4} />}
                             </Button>
+                            {invalidPassphrase && (
+                                <div className="color-danger w-full text-center">{c('l10n_nightly Error')
+                                    .t`Invalid passphrase`}</div>
+                            )}
                         </div>
 
                         <div

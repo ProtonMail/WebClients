@@ -8,6 +8,7 @@ import {
     type ParticipantEventRecord,
 } from '../../types';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
+import { ChatMessageContent } from '../ChatMessageContent';
 
 import './ChatItem.scss';
 
@@ -69,7 +70,7 @@ export const ChatItem = ({ roomName, item, colors, displayDate = true, shouldGro
                 </div>
                 {isMeetChatMessage(item) && (
                     <div className={clsx('flex justify-start items-start color-weak text-semibold', 'chat-message')}>
-                        {item.message}
+                        <ChatMessageContent message={item.message} />
                     </div>
                 )}
                 {isParticipantEventRecord(item) && (
