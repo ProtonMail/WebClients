@@ -59,11 +59,10 @@ export const createDrawerApi = ({
         };
 
         if (parentApp && getIsAuthorizedApp(parentApp)) {
-            const hasAbortController = 'signal' in arg;
-
+            let hasAbortController = false;
             const newArg: any = { ...arg };
-            if (hasAbortController) {
-                delete newArg.signal;
+            if (arg?.signal) {
+                hasAbortController = true;
                 (arg.signal as AbortSignal).onabort = () => {
                     postMessageFromIframe(
                         {
@@ -73,6 +72,7 @@ export const createDrawerApi = ({
                         parentApp as APP_NAMES
                     );
                 };
+                delete newArg.signal;
             }
             postMessageFromIframe(
                 {
