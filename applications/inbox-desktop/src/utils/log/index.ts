@@ -181,13 +181,6 @@ function filterSearchParams(params: URLSearchParams) {
 }
 
 export function initializeLog() {
-    // Prevent stdout/stderr from writting if not launched via terminal
-    if (!process.stdout.isTTY) {
-        const noop = ((_) => {}) as typeof process.stdout.write;
-        process.stdout.write = noop;
-        process.stderr.write = noop;
-    }
-
     Logger.initialize({ preload: true });
     Logger.transports.file.maxSize = 5 * 1024 * 1024; // 3MB
     Logger.hooks.push(filterSensitiveLogMessage);
