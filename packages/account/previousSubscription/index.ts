@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { type LatestSubscription, getLastCancelledSubscription } from '@proton/payments';
+import { type LatestSubscription, getLatestCancelledSubscription } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
@@ -27,7 +27,7 @@ const modelThunk = createAsyncModelThunk<Model, PreviousSubscriptionState, Proto
             return { hasHadSubscription: true, previousSubscriptionEndTime: 0 };
         }
 
-        const response = await extraArgument.api<LatestSubscription>(getLastCancelledSubscription());
+        const response = await extraArgument.api<LatestSubscription>(getLatestCancelledSubscription());
         const lastSubscriptionEnd = response.LastSubscriptionEnd || 0;
 
         return { hasHadSubscription: lastSubscriptionEnd > 0, previousSubscriptionEndTime: lastSubscriptionEnd };
