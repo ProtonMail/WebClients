@@ -73,7 +73,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'storeAppVersion'; payload: AppVersion }
     | { type: 'triggerCrash'; payload?: undefined }
     | { type: 'reportTestingError'; payload?: undefined }
-    | { type: 'metricsListenerChanged'; payload: 'ready' | 'removed' };
+    | { type: 'metricsListenerChanged'; payload: 'ready' | 'removed' }
+    | { type: 'toggleAppCache'; payload: boolean };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
 export const IPCInboxHostUpdateMessageSchema = z.discriminatedUnion('type', [
