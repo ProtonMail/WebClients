@@ -9,10 +9,10 @@ const FREE_DOWNGRADER_LIMIT = new Date(Date.UTC(2024, 2, 19, 0, 0, 0)); // 2024-
 interface Props {
     user: UserModel;
     protonConfig: ProtonConfig;
-    lastSubscriptionEnd?: number;
+    previousSubscriptionEndTime?: number;
 }
 
-export const getIsEligible = ({ user, protonConfig, lastSubscriptionEnd = 0 }: Props) => {
+export const getIsEligible = ({ user, protonConfig, previousSubscriptionEndTime = 0 }: Props) => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const hasValidApp =
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONMAIL) ||
@@ -27,6 +27,6 @@ export const getIsEligible = ({ user, protonConfig, lastSubscriptionEnd = 0 }: P
         canPay &&
         notDelinquent &&
         isFree &&
-        isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT)
+        isBefore(fromUnixTime(previousSubscriptionEndTime), FREE_DOWNGRADER_LIMIT)
     );
 };

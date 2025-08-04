@@ -22,7 +22,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeTruthy();
@@ -41,7 +41,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     nbrEmailsInAllMail: 4,
                 })
             ).toBeFalsy();
@@ -60,7 +60,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -79,7 +79,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeTruthy();
@@ -98,7 +98,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: subDays(today, 31).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -119,7 +119,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 14).getTime() / 1000,
@@ -142,7 +142,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 30).getTime() / 1000,
@@ -165,7 +165,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     driveOfferStartDateTimestamp: {
                         automaticOfferReminders: 0,
                         offerStartDate: subDays(today.getTime(), 31).getTime() / 1000,
@@ -191,7 +191,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeTruthy();
@@ -211,7 +211,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: subDays(today, 30).getTime() / 1000,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -230,7 +230,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: false,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -249,7 +249,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: false,
-                    lastSubscriptionEnd: 10000000000,
+                    previousSubscriptionEndTime: 10000000000,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -268,7 +268,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -287,7 +287,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig,
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
@@ -306,7 +306,7 @@ describe('Mail post signup one dollar eligibility', () => {
                     protonConfig: { APP_NAME: 'proton-calendar' } as unknown as ProtonConfig,
                     offerStartDateTimeStamp: 0,
                     mailOneDollarPostSignupFlag: true,
-                    lastSubscriptionEnd: 0,
+                    previousSubscriptionEndTime: 0,
                     nbrEmailsInAllMail: 10,
                 })
             ).toBeFalsy();
