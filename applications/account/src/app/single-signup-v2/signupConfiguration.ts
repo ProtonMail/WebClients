@@ -115,6 +115,7 @@ export const getSignupConfiguration = ({
     }
 
     return getGenericConfiguration({
+        toApp,
         theme,
         audience,
         signupParameters,
