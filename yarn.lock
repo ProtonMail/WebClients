@@ -12272,17 +12272,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tpe/quark-client@npm:0.3.4":
-  version: 0.3.4
-  resolution: "@tpe/quark-client@npm:0.3.4::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fquark-client%2F-%2F%40tpe%2Fquark-client-0.3.4.tgz"
+"@tpe/quark-client@npm:0.3.5":
+  version: 0.3.5
+  resolution: "@tpe/quark-client@npm:0.3.5::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fquark-client%2F-%2F%40tpe%2Fquark-client-0.3.5.tgz"
   dependencies:
     "@tpe/quark-types": "npm:0.2.2"
-    "@tpe/user-builder": "npm:0.2.4"
+    "@tpe/user-builder": "npm:0.2.5"
     chance: "npm:^1.1.13"
     date-fns: "npm:^4.1.0"
   peerDependencies:
     "@playwright/test": ">=1.52.0"
-  checksum: 10c0/63e64135ba0197213d2b478fc0a1676e1d65835a19bfd60ebe399949b5ea52e8adef2de2c5d60d05971c3e7461b00eef90702110d11816959587d62ff6d8594e
+  checksum: 10c0/de2137d06cd7a70317fa226c57c29e8e930f68ff24339398fb1209be6af8b7f750d8ac2ec1d966dee54c487616ef7de05eb76667bc53668c0d8e2f14fb29a4ad
   languageName: node
   linkType: hard
 
@@ -12293,9 +12293,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tpe/user-builder@npm:0.2.4":
-  version: 0.2.4
-  resolution: "@tpe/user-builder@npm:0.2.4::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fuser-builder%2F-%2F%40tpe%2Fuser-builder-0.2.4.tgz"
+"@tpe/user-builder@npm:0.2.5":
+  version: 0.2.5
+  resolution: "@tpe/user-builder@npm:0.2.5::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fuser-builder%2F-%2F%40tpe%2Fuser-builder-0.2.5.tgz"
   dependencies:
     "@tpe/quark-types": "npm:0.2.2"
     chance: "npm:^1.1.13"
@@ -12305,7 +12305,7 @@ __metadata:
     vcf: "npm:^2.1.2"
   peerDependencies:
     "@playwright/test": ">=1.52.0"
-  checksum: 10c0/e8a9e472c45a1e5b66fe5fdb97cdec37cb847a8e3dcb2b5beaaac1ba5f0c33b6b129fd9833dd38555860ec53f9a06a50c263b9ca908694a9f89979e6cb6a9d37
+  checksum: 10c0/4c8a2ad2eee53e3db6e39a7fe4aec842f1e58d0aee0f249f8d9c67fcb295a6471fda718da8a9b272b201a4b5b31220dbc4048a86d80d52d48037dac32b6afb53
   languageName: node
   linkType: hard
 
@@ -34934,9 +34934,9 @@ __metadata:
     "@tpe/loki-client": "npm:0.2.1"
     "@tpe/measurement-sdk": "npm:0.2.2"
     "@tpe/mock-proxy-web-client": "npm:1.0.2"
-    "@tpe/quark-client": "npm:0.3.4"
+    "@tpe/quark-client": "npm:0.3.5"
     "@tpe/quark-types": "npm:0.2.2"
-    "@tpe/user-builder": "npm:0.2.4"
+    "@tpe/user-builder": "npm:0.2.5"
     "@types/chance": "npm:^1.1.7"
     "@types/fs-extra": "npm:^11.0.4"
     "@types/nodemailer": "npm:^6.4.17"
