@@ -353,24 +353,20 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     }
 }
 
-export const openMail = (labelID?: string, elementID?: string, messageID?: string) => {
+export const openMail = (labelID: string | undefined, elementID: string | undefined) => {
     if (!mainWindow || mainWindow.isDestroyed()) {
         viewLogger("mail").warn("Ignoring openMail action, mainWindow is not available");
         return;
     }
 
     const currentUrl = viewMap.mail!.webContents.getURL();
-    const hasValidLabelAndElement = labelID && elementID;
-    const url = hasValidLabelAndElement
-        ? addHashToCurrentURL(
-              currentUrl,
-              `#${new URLSearchParams({
-                  labelID,
-                  elementID,
-                  ...(messageID ? { messageID } : {}),
-              }).toString()}`,
-          )
-        : getAppURL().mail + "/u/0/all-mail"; // localID will be fixed by showView
+    const url =
+        labelID !== undefined && labelID !== "" && elementID !== undefined && elementID !== ""
+            ? addHashToCurrentURL(
+                  currentUrl,
+                  `#labelID=${encodeURIComponent(labelID)}&elementID=${encodeURIComponent(elementID)}`,
+              )
+            : getAppURL().mail + "/u/0/all-mail"; // localID will be fixed by showView
 
     showView("mail", url);
 
