@@ -418,7 +418,7 @@ export const getTokenStatus = (paymentToken: string, version: PaymentsVersion) =
 export const getTokenStatusV4 = (paymentToken: string) => getTokenStatus(paymentToken, 'v4');
 export const getTokenStatusV5 = (paymentToken: string) => getTokenStatus(paymentToken, 'v5');
 
-export const getLastCancelledSubscription = () => ({
+export const getLatestCancelledSubscription = () => ({
     url: `payments/${paymentsVersion}/subscription/latest`,
     method: 'get',
 });
