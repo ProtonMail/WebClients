@@ -4,8 +4,13 @@ import { isHostAllowed } from "./urls/urlTests";
 import { ALLOWED_PERMISSIONS } from "../constants";
 import { mainLogger } from "./log";
 import { getMailView } from "./view/viewManagement";
+import { getSettings } from "../store/settingsStore";
 
-export const appSession = () => session.fromPartition("persist:app", { cache: false });
+export const appSession = () => {
+    const cache = getSettings().appCacheEnabled || false;
+    return session.fromPartition("persist:app", { cache });
+};
+
 export const updateSession = () => session.fromPartition("persist:update", { cache: false });
 
 export const setRequestPermission = () => {
