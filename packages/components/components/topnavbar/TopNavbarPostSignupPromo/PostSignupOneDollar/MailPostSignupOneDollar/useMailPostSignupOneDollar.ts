@@ -1,8 +1,8 @@
 import { useLocation } from 'react-router';
 
+import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
-import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscriptionEnd';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useMessageCounts } from '@proton/mail/store/counts';
 import { domIsBusy } from '@proton/shared/lib/busy';
@@ -19,7 +19,7 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
     const protonConfig = useConfig();
     const [user, userLoading] = useUser();
 
-    const [subscriptionEnd, loadingSubscriptionEnd] = useLastSubscriptionEnd();
+    const [{ previousSubscriptionEndTime }, loadingPreviousSubscription] = usePreviousSubscription();
 
     // The offer should not be opened if the user has selected a conversation / message.
     // Only when in the root of a folder, regardless of the folder
@@ -48,10 +48,10 @@ export const useMailPostSignupOneDollar = (): OfferHookReturnValue => {
             offerStartDateTimeStamp: mailOfferState?.Value?.offerStartDate ?? 0,
             mailOneDollarPostSignupFlag,
             nbrEmailsInAllMail: totalMessage,
-            lastSubscriptionEnd: subscriptionEnd,
+            previousSubscriptionEndTime,
             driveOfferStartDateTimestamp: driveOfferState?.Value,
         }),
-        isLoading: !!(userLoading || mailOfferStateLoading || driveOfferStateLoading || loadingSubscriptionEnd),
+        isLoading: !!(userLoading || mailOfferStateLoading || driveOfferStateLoading || loadingPreviousSubscription),
         openSpotlight: isNotInFolder && shouldOpenPostSignupOffer(mailOfferState?.Value) && !isDomBusy,
     };
 };
