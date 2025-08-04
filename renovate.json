@@ -29,6 +29,10 @@
             "matchPackageNames": ["/playwright/"]
         },
         {
+            "groupName": "Typescript",
+            "matchPackageNames": ["typescript"]
+        },
+        {
             "groupName": "lexical",
             "matchPackageNames": ["@lexical/*", "lexical", "yjs", "y-protocols"]
         },
