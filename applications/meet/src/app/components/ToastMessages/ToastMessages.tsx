@@ -5,6 +5,7 @@ import { Toast } from '../../atoms/Toast/Toast';
 import { NOTIFICATION_PARTICIPANT_LIMIT } from '../../constants';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
+import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useToastMessages } from '../../hooks/useToastMessages';
 import type { ParticipantEventRecord } from '../../types';
 import { MeetingSideBars, ParticipantEvent } from '../../types';
@@ -17,6 +18,12 @@ export const ToastMessages = () => {
     const { sideBarState } = useUIStateContext();
 
     const participants = useParticipants();
+
+    const isLargerThanMd = useIsLargerThanMd();
+
+    if (!isLargerThanMd) {
+        return null;
+    }
 
     if (sideBarState[MeetingSideBars.Chat] || participants.length > NOTIFICATION_PARTICIPANT_LIMIT) {
         return null;

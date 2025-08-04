@@ -82,8 +82,11 @@ export const PrejoinContainer = ({
             <div className="absolute w-full">
                 <PageHeader isScheduleInAdvanceEnabled={isScheduleInAdvanceEnabled} guestMode={guestMode} />
             </div>
-            <div className="flex flex-nowrap w-full h-full items-center justify-center">
-                <div className="w-custom flex items-center" style={{ '--w-custom': '71rem' }}>
+            <div className="prejoin-container flex flex-column md:flex-row flex-nowrap w-full md:items-center md:justify-center">
+                <div
+                    className="prejoin-container-content w-full md:w-custom flex flex-column lg:flex-row gap-2 lg:gap-0 md:items-center"
+                    style={{ '--md-w-custom': '71rem' }}
+                >
                     <DeviceSettings
                         isCameraEnabled={isCameraEnabled}
                         isMicrophoneEnabled={isMicrophoneEnabled}
@@ -100,6 +103,7 @@ export const PrejoinContainer = ({
                         onAudioOutputDeviceChange={setSelectedAudioOutputDevice}
                         displayName={displayName}
                         colorIndex={participantColorIndex.current}
+                        isLoading={isLoading}
                     />
                     {isLoading ? (
                         <>

@@ -39,20 +39,6 @@
 }
 
 .continue-button {
-	&:hover,
-	&:focus {
-		color: var(--text-invert) !important;
-	}
-}
-
-.meeting-id-field {
-	&:focus-within::after {
-		box-shadow: none !important;
-		border: none !important;
-	}
-}
-
-.continue-button {
 	&:hover {
 		color: var(--text-invert) !important;
 	}
@@ -62,5 +48,13 @@
 	&:focus-within::after {
 		box-shadow: none !important;
 		border: none !important;
+	}
+}
+
+.pre-join-details-name-input-field {
+	border-radius: 1rem;
+
+	@include media('>medium') {
+		border-radius: initial;
 	}
 }

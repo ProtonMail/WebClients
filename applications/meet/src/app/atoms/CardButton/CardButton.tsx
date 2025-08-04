@@ -27,7 +27,7 @@ export const CardButton = ({
 }: CardButtonProps) => {
     return (
         <Button
-            className={clsx('card-button border flex flex-nowrap items-center gap-6 p-8', className)}
+            className={clsx('card-button border flex flex-nowrap items-center gap-6 p-4 lg:p-8', className)}
             onClick={onClick}
             disabled={disabled}
         >

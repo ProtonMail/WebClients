@@ -1,3 +1,5 @@
+@import '~@proton/styles/scss/lib';
+
 .apps-dropdown-button,
 .settings-button {
 	background-color: #2b2e42 !important;
@@ -9,6 +11,21 @@
 .meet-page-header {
 	.user-dropdown-button {
 		font-size: 0.875rem !important;
+		border-width: 0 !important;
+
+		& > svg:first-child,
+		.user-dropdown-text {
+			display: none !important;
+		}
+
+		// Show them back on medium screens and up
+		@include media('>small') {
+			border-width: 1px !important;
+
+			.user-dropdown-text {
+				display: block !important;
+			}
+		}
 
 		.user-initials-active,
 		.user-initials {
@@ -25,6 +42,14 @@
 		.user-dropdown-displayName,
 		.user-dropdown-email {
 			font-size: 0.875rem !important;
+		}
+	}
+
+	.logo {
+		block-size: 2.5rem;
+
+		@include media('>small') {
+			block-size: 3rem;
 		}
 	}
 }

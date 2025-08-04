@@ -16,7 +16,7 @@ export const VideoPreview = ({ selectedCameraId }: VideoPreviewProps) => {
 
         try {
             const stream = await navigator.mediaDevices.getUserMedia({
-                video: selectedCameraId ? { deviceId: { exact: selectedCameraId } } : true,
+                video: selectedCameraId ? { deviceId: { exact: selectedCameraId }, facingMode: 'user' } : true,
             });
             if (videoRef.current) {
                 videoRef.current.srcObject = stream;
@@ -40,13 +40,19 @@ export const VideoPreview = ({ selectedCameraId }: VideoPreviewProps) => {
     return (
         <>
             <div className="gradient-overlay absolute top-0 left-0 w-full h-full" />
-            <video
-                className="w-full"
-                ref={videoRef}
-                autoPlay
-                playsInline
-                style={{ objectFit: 'contain', background: '#000', transform: 'scaleX(-1)' }}
-            />
+            <div className="h-full w-full relative overflow-hidden">
+                <video
+                    className="absolute h-full w-full lg:h-auto lg:w-full"
+                    ref={videoRef}
+                    autoPlay
+                    playsInline
+                    style={{
+                        objectFit: 'cover',
+                        background: '#000',
+                        transform: 'scaleX(-1)',
+                    }}
+                />
+            </div>
         </>
     );
 };

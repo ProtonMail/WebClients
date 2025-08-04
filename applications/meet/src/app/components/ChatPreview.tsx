@@ -5,6 +5,7 @@ import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { CloseButton } from '../atoms/CloseButton/CloseButton';
 import { useMeetContext } from '../contexts/MeetContext';
 import { useUIStateContext } from '../contexts/UIStateContext';
+import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import type { MeetChatMessage } from '../types';
 import { MeetingSideBars } from '../types';
@@ -27,6 +28,8 @@ export const ChatPreview = () => {
     }, [chatMessages]);
 
     const { sortedParticipants } = useSortedParticipants();
+
+    const isLargerThanMd = useIsLargerThanMd();
 
     const toggleChatPreview = () => {
         setChatMessages(
@@ -69,7 +72,7 @@ export const ChatPreview = () => {
         };
     }, [chatMessages, latestChatMessage]);
 
-    if (shouldNotDisplayLastMessage) {
+    if (shouldNotDisplayLastMessage || !isLargerThanMd) {
         return null;
     }
 

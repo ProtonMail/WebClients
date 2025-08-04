@@ -10,6 +10,7 @@ import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useCurrentScreenShare } from '../../hooks/useCurrentScreenShare';
+import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails } from '../MeetingDetails/MeetingDetails';
@@ -36,9 +37,11 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
 
     const { videoTrack, participant, isLocal, stopScreenShare, screenShareVideoRef } = useCurrentScreenShare();
 
+    const isLargerThanMd = useIsLargerThanMd();
+
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
 
-    const { participantNameMap, meetingLink } = useMeetContext();
+    const { participantNameMap, meetingLink, roomName } = useMeetContext();
 
     const { sideBarState } = useUIStateContext();
 
@@ -48,11 +51,16 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
         return participantSideBarOpen ? '1fr' : '0px';
     };
 
-    const defaultColumns = `8fr${isSideBarOpen ? ' minmax(0, 3fr)' : ''}`;
-    const screenShareColumns = `${isSideBarOpen ? 6 : 8}fr ${getParticipantSideBarColumns()}${isSideBarOpen ? ' minmax(0, 2fr)' : ''}`;
+    const defaultColumns = isLargerThanMd ? `8fr${isSideBarOpen ? ' minmax(0, 3fr)' : ''}` : '1fr';
+    const screenShareColumns = isLargerThanMd
+        ? `${isSideBarOpen ? 6 : 8}fr ${getParticipantSideBarColumns()}${isSideBarOpen ? ' minmax(0, 2fr)' : ''}`
+        : '1fr';
 
     return (
         <div className={clsx('w-full h-full flex flex-column flex-nowrap gap-4 overflow-hidden pl-4 pr-4 pb-0 pt-4')}>
+            <div className="flex lg:hidden flex-nowrap gap-2">
+                <div className="flex-1 justify-start h3 text-ellipsis overflow-hidden">{roomName}</div>
+            </div>
             {videoTrack && (
                 <ScreenShareHeading
                     name={participantNameMap[participant?.identity ?? ''] ?? ''}
@@ -92,18 +100,22 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
                         />
                     </div>
                 )}
-                {videoTrack ? (
+                {videoTrack && isLargerThanMd ? (
                     <ParticipantSidebar
                         participantSideBarOpen={participantSideBarOpen}
                         setParticipantSideBarOpen={setParticipantSideBarOpen}
                     />
                 ) : (
-                    <ParticipantGrid />
+                    <>{(isLargerThanMd || !isSideBarOpen) && !videoTrack && <ParticipantGrid />}</>
                 )}
-                <Participants />
-                <Settings />
-                <Chat />
-                <MeetingDetails />
+                {(isLargerThanMd || isSideBarOpen) && (
+                    <>
+                        <Participants />
+                        <Settings />
+                        <Chat />
+                        <MeetingDetails />
+                    </>
+                )}
             </div>
             <ParticipantControls />
             <RoomAudioRenderer />

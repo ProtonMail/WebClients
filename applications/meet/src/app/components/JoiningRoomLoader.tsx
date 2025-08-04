@@ -61,8 +61,8 @@ export const JoiningRoomLoader = ({ participantCount, participantsLoaded }: Join
 
     return (
         <div
-            className="flex flex-column flex-nowrap items-center justify-start h-custom w-custom pt-6"
-            style={{ '--w-custom': '22.625rem', '--h-custom': '24rem' }}
+            className="flex flex-column flex-nowrap items-center justify-center md:justify-start  md:h-custom md:w-custom pt-6"
+            style={{ '--md-w-custom': '22.625rem', '--md-h-custom': '24rem' }}
         >
             <div className="text-4xl mt-6 mb-4 text-center">
                 {joingingRoomTitles[titleIndex].heading(participantCountRef.current)}

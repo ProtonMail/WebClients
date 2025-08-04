@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import type { IconSize } from '@proton/icons';
 import { IcMeetCamera, IcMeetCameraOff, IcMeetMicrophoneOff } from '@proton/icons';
+import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
@@ -32,6 +33,7 @@ interface DeviceSettingsProps {
     onAudioOutputDeviceChange: (speaker: MediaDeviceInfo) => void;
     displayName: string;
     colorIndex: number;
+    isLoading: boolean;
 }
 
 export const DeviceSettings = ({
@@ -50,6 +52,7 @@ export const DeviceSettings = ({
     onAudioOutputDeviceChange,
     displayName,
     colorIndex,
+    isLoading,
 }: DeviceSettingsProps) => {
     const {
         devicePermissions: { camera, microphone },
@@ -83,14 +86,16 @@ export const DeviceSettings = ({
     );
 
     return (
-        <div className="flex flex-nowrap flex-column w-custom gap-2 mr-auto" style={{ '--w-custom': '41.6875rem' }}>
-            <div
-                className="device-settings w-custom h-custom relative overflow-hidden"
-                style={{ '--w-custom': '41.6875rem', '--h-custom': '23.25rem' }}
-            >
+        <div
+            className={clsx(
+                'device-settings-container flex flex-1 md:flex-0 flex-nowrap flex-column gap-2 mr-auto',
+                isLoading && 'device-settings-container-loading'
+            )}
+        >
+            <div className="device-settings relative overflow-hidden">
                 {displayName && (
                     <div
-                        className="absolute left-custom bottom-custom z-up text-ellipsis max-w-custom"
+                        className="absolute left-custom bottom-custom z-up text-ellipsis max-w-custom hidden md:block"
                         style={{ '--left-custom': '1.5rem', '--bottom-custom': '1rem', '--max-w-custom': '12rem' }}
                         title={displayName}
                     >
@@ -141,7 +146,7 @@ export const DeviceSettings = ({
                     />
                 </div>
             </div>
-            <div className="flex flex-nowrap gap-2 mt-2">
+            <div className="device-selectors hidden md:flex flex-nowrap gap-2 mt-2">
                 <DeviceSelect
                     label={
                         noMicrophonePermission

@@ -73,7 +73,7 @@ export const DashboardContainer = () => {
     const personalMeetingLink = personalMeeting ? `${window.location.origin}${personalMeetingLinkPath}` : null;
 
     return (
-        <div className="w-full h-full flex flex-column">
+        <div className="w-full h-full overflow-y-auto lg:overflow-y-hidden flex flex-column flex-nowrap">
             {isPersonalMeetingModalOpen && personalMeetingLink && (
                 <PersonalMeetingModal
                     onClose={() => setIsPersonalMeetingModalOpen(false)}
@@ -94,10 +94,10 @@ export const DashboardContainer = () => {
                 />
             )}
             <PageHeader isScheduleInAdvanceEnabled={false} guestMode={false} />
-            <div className="flex flex-column gap-4 p-4 flex-nowrap w-full">
-                <div className="flex flex-nowrap gap-4">
+            <div className="flex gap-4 p-4 flex-nowrap w-full shrink-0">
+                <div className="flex flex-column md:flex-row flex-nowrap gap-4">
                     <CardButton
-                        className="w-1/3"
+                        className="w-full md:w-1/3"
                         title={c('meet_2025 Title').t`Schedule meeting`}
                         description={c('meet_2025 Description')
                             .t`Use ${CALENDAR_APP_NAME} to organize meetings and send invites.`}
@@ -107,7 +107,7 @@ export const DashboardContainer = () => {
                         onClick={handleScheduleMeeting}
                     />
                     <CardButton
-                        className="w-1/3"
+                        className="w-full md:w-1/3"
                         title={c('meet_2025 Title').t`Personal meeting link`}
                         description={c('meet_2025 Description')
                             .t`An always available meeting room for people you trust`}
@@ -117,7 +117,7 @@ export const DashboardContainer = () => {
                         onClick={() => setIsPersonalMeetingModalOpen(true)}
                     />
                     <CardButton
-                        className="w-1/3"
+                        className="w-full md:w-1/3"
                         title={c('meet_2025 Title').t`Start secure meeting`}
                         description={c('meet_2025 Description')
                             .t`Start a call immediately then share the link with others.`}
@@ -128,7 +128,7 @@ export const DashboardContainer = () => {
                     />
                 </div>
             </div>
-            <div className="flex flex-column gap-4 p-4 flex-nowrap w-full">
+            <div className="flex flex-column gap-4 p-4 flex-nowrap w-full shrink-0">
                 <div className="flex justify-start items-center w-full">
                     <div className="text-xl color-norm text-semibold">{c('meet_2025 Title').t`Upcoming meetings`}</div>
                     <div
@@ -139,7 +139,7 @@ export const DashboardContainer = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-column flex-1 w-full p-4">
+            <div className="flex flex-column shrink-0 lg:flex-1 w-full p-4">
                 <div className="flex flex-column gap-4 flex-nowrap w-full h-full overflow-y-auto">
                     {meetings === null && (
                         <CircleLoader
