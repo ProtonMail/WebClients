@@ -102,6 +102,15 @@ const checkDefaultMailClient = () => {
     }
 };
 
+// We want to have app cache enabled by default
+const enableAppCache = () => {
+    const { appCacheEnabled } = getSettings();
+
+    if (appCacheEnabled === undefined) {
+        updateSettings({ appCacheEnabled: true });
+    }
+};
+
 export const performStoreMigrations = () => {
     deleteWindowStore(); // Introduced in v0.9.4
     deleteURLStore(); // Introduced in v1.0.0
@@ -109,4 +118,5 @@ export const performStoreMigrations = () => {
     deleteSerializedThemeMode(); // Introduced in v1.2.4
     forceLightAndDarkThemes(); // Introduced in v1.6.0
     checkDefaultMailClient(); // Introduced in v1.6.2
+    enableAppCache(); // Introduced in v1.9.0
 };
