@@ -1,18 +1,25 @@
 {
     "name": "Proton Pass: Free Password Manager",
     "description": "Free and fully encrypted password manager to keep your logins and passwords safe.",
-    "version": "1.32.3",
+    "version": "1.32.5",
     "manifest_version": 3,
     "background": {
-        "scripts": ["background.js"]
+        "scripts": [
+            "background.js"
+        ]
     },
     "content_security_policy": {
         "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
     },
     "content_scripts": [
         {
-            "matches": ["https://*/*", "http://*/*"],
-            "js": ["orchestrator.js"],
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "js": [
+                "orchestrator.js"
+            ],
             "all_frames": false,
             "run_at": "document_end"
         },
@@ -24,12 +31,17 @@
                 "https://*.proton.dev/*",
                 "https://*.protontech.ch/*"
             ],
-            "js": ["external.js"],
+            "js": [
+                "external.js"
+            ],
             "all_frames": false,
             "run_at": "document_end"
         },
         {
-            "matches": ["https://*/*", "http://*/*"],
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
             "exclude_matches": [
                 "https://pass.proton.me/*",
                 "https://pass.proton.dev/*",
@@ -37,7 +49,9 @@
                 "https://pass.proton.pink/*",
                 "https://pass.protontech.ch/*"
             ],
-            "js": ["webauthn.js"],
+            "js": [
+                "webauthn.js"
+            ],
             "all_frames": false,
             "run_at": "document_start"
         }
@@ -51,8 +65,14 @@
         "webRequest",
         "webRequestBlocking"
     ],
-    "optional_permissions": ["privacy", "webRequestAuthProvider"],
-    "host_permissions": ["https://*/*", "http://*/*"],
+    "optional_permissions": [
+        "privacy",
+        "webRequestAuthProvider"
+    ],
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
@@ -80,11 +100,18 @@
                 "assets/*.woff",
                 "assets/*.woff2"
             ],
-            "matches": ["https://*/*", "http://*/*"]
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ]
         },
         {
-            "resources": ["*.wasm"],
-            "matches": ["<all_urls>"]
+            "resources": [
+                "*.wasm"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
         }
     ],
     "browser_specific_settings": {
