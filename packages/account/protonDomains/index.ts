@@ -3,10 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryAvailableDomains, queryPremiumDomains } from '@proton/shared/lib/api/domains';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getInitialModelState } from '../initialModelState';
-import { ModelState } from '../interface';
+import { type ModelState } from '../interface';
 
 const name = 'protonDomains' as const;
 
