@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 
+import { isChrome } from '@proton/shared/lib/helpers/browser';
+
 import './VideoPreview.scss';
 
 interface VideoPreviewProps {
@@ -16,8 +18,17 @@ export const VideoPreview = ({ selectedCameraId }: VideoPreviewProps) => {
 
         try {
             const stream = await navigator.mediaDevices.getUserMedia({
-                video: selectedCameraId ? { deviceId: { exact: selectedCameraId }, facingMode: 'user' } : true,
+                video: selectedCameraId
+                    ? {
+                          deviceId: { exact: selectedCameraId },
+                          facingMode: 'user',
+                          ...(isChrome()
+                              ? { width: { ideal: 3840 }, height: { ideal: 2160 }, aspectRatio: { ideal: 16 / 9 } }
+                              : {}),
+                      }
+                    : true,
             });
+
             if (videoRef.current) {
                 videoRef.current.srcObject = stream;
             }

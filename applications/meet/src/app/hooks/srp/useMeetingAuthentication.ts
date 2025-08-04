@@ -53,7 +53,7 @@ export const useMeetingAuthentication = () => {
                     salt: meetingInfo.MeetingInfo.Salt,
                 });
             } catch (error) {
-                console.log(error);
+                throw new Error(c('l10n_nightly Error').t`Failed to get room name`);
             }
 
             return meetingName;

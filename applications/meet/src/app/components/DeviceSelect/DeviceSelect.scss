@@ -8,8 +8,7 @@
 		outline: none;
 		box-shadow: none !important;
 
-		&:hover,
-		&:focus-within {
+		&:hover {
 			background-color: var(--background-strong);
 		}
 	}

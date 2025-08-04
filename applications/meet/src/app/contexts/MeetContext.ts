@@ -26,8 +26,6 @@ export interface MeetContextValues {
     setParticipantEvents: React.Dispatch<React.SetStateAction<ParticipantEventRecord[]>>;
     selfView: boolean;
     setSelfView: (selfView: boolean) => void;
-    shouldShowConnectionIndicator: boolean;
-    setShouldShowConnectionIndicator: (shouldShowConnectionIndicator: boolean) => void;
     pageSize: number;
     setPageSize: (pageSize: number) => void;
     handleLeave: () => void;
@@ -65,8 +63,6 @@ export const MeetContext = createContext<MeetContextValues>({
     setParticipantEvents: () => {},
     selfView: true,
     setSelfView: () => {},
-    shouldShowConnectionIndicator: false,
-    setShouldShowConnectionIndicator: () => {},
     pageSize: PAGE_SIZE,
     setPageSize: () => {},
     handleLeave: () => {},

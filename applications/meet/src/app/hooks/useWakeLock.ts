@@ -5,10 +5,14 @@ import noop from '@proton/utils/noop';
 export const useWakeLock = () => {
     const turnOnWakeLock = useCallback(async () => {
         if ('wakeLock' in navigator) {
-            const wakeLock = await navigator.wakeLock.request('screen');
-            return () => {
-                void wakeLock.release();
-            };
+            try {
+                const wakeLock = await navigator.wakeLock.request('screen');
+                return () => {
+                    void wakeLock.release();
+                };
+            } catch (error) {
+                return noop;
+            }
         }
 
         return noop;

@@ -57,7 +57,6 @@ export const MeetContainer = ({
     const [participantEvents, setParticipantEvents] = useState<ParticipantEventRecord[]>([]);
 
     const [selfView, setSelfView] = useState(true);
-    const [shouldShowConnectionIndicator, setShouldShowConnectionIndicator] = useState(false);
     const [disableVideos, setDisableVideos] = useState(false);
 
     const faceTrack = useFaceTrackingSetup({ isFaceTrackingEnabled, videoDeviceId });
@@ -98,8 +97,6 @@ export const MeetContainer = ({
                     setParticipantEvents,
                     selfView,
                     setSelfView,
-                    shouldShowConnectionIndicator,
-                    setShouldShowConnectionIndicator,
                     pageSize,
                     setPageSize,
                     handleLeave,

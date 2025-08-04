@@ -19,6 +19,7 @@ import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsCon
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useAudioToggle } from '../../hooks/useAudioToggle';
+import { useDevices } from '../../hooks/useDevices';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useVideoToggle } from '../../hooks/useVideoToggle';
 import { MeetingSideBars, PermissionPromptStatus, PopUpControls } from '../../types';
@@ -63,6 +64,8 @@ export const ParticipantControls = () => {
     const hasCameraPermission = camera === 'granted';
     const hasMicrophonePermission = microphone === 'granted';
 
+    const { microphones, cameras } = useDevices();
+
     useEffect(() => {
         if (
             camera !== 'granted' &&
@@ -105,8 +108,12 @@ export const ParticipantControls = () => {
                                 buttonRef={anchorRef}
                                 OnIconComponent={MicrophoneWithVolumeWithMicrophoneState}
                                 OffIconComponent={IcMeetMicrophoneOff}
-                                isOn={isMicrophoneEnabled}
+                                isOn={microphones.length === 0 ? false : isMicrophoneEnabled}
                                 onClick={() => {
+                                    if (microphones.length === 0) {
+                                        return;
+                                    }
+
                                     if (!hasMicrophonePermission) {
                                         setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE);
                                         return;
@@ -136,8 +143,11 @@ export const ParticipantControls = () => {
                             <ToggleButton
                                 OnIconComponent={IcMeetCamera}
                                 OffIconComponent={IcMeetCameraOff}
-                                isOn={isCameraEnabled}
+                                isOn={cameras.length === 0 ? false : isCameraEnabled}
                                 onClick={() => {
+                                    if (cameras.length === 0) {
+                                        return;
+                                    }
                                     if (!hasCameraPermission) {
                                         setPermissionPromptStatus(PermissionPromptStatus.CAMERA);
                                         return;

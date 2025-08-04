@@ -18,8 +18,6 @@ vi.mock('../../hooks/useLocalParticipantResolution', () => ({
 const mockContextValues = {
     selfView: true,
     setSelfView: vi.fn(),
-    shouldShowConnectionIndicator: false,
-    setShouldShowConnectionIndicator: vi.fn(),
 };
 
 const mockUIStateContextValues = {
@@ -70,7 +68,6 @@ describe('Settings', () => {
         expect(screen.getByText('Dark Mode')).toBeInTheDocument();
         expect(screen.getByText('Hide self view')).toBeInTheDocument();
         expect(screen.getByText('Show meeting timer')).toBeInTheDocument();
-        expect(screen.getByText('Show connection indicator')).toBeInTheDocument();
         expect(screen.getByText('Desktop notifications')).toBeInTheDocument();
     });
 
@@ -89,22 +86,5 @@ describe('Settings', () => {
         await user.click(hideSelfViewCheckbox);
 
         expect(setSelfView).toHaveBeenCalledWith(!mockContextValues.selfView);
-    });
-
-    it('should allow for toggling the connection indicator', async () => {
-        const setShouldShowConnectionIndicator = vi.fn();
-
-        render(
-            <Wrapper contextValue={{ setShouldShowConnectionIndicator }}>
-                <Settings />
-            </Wrapper>
-        );
-
-        const user = userEvent.setup();
-
-        const showConnectionIndicatorCheckbox = screen.getByRole('checkbox', { name: 'Show connection indicator' });
-        await user.click(showConnectionIndicatorCheckbox);
-
-        expect(setShouldShowConnectionIndicator).toHaveBeenCalledWith(!mockContextValues.shouldShowConnectionIndicator);
     });
 });
