@@ -63,8 +63,8 @@ export const getClaimableAddress = async ({
     if (user.Name) {
         // SSO users get set a user.Name with the SSO address, like `user@sso-domain.org`. This ensures that the
         // username is without a domain.
-        const [, domain] = getEmailParts(user.Name);
-        if (!domain) {
+        const [, emailDomain] = getEmailParts(user.Name);
+        if (!emailDomain) {
             return {
                 username: user.Name,
                 domain,
