@@ -15,7 +15,6 @@ export type ElectronNotification = {
     body: string;
     app: CHANGE_VIEW_TARGET;
     elementID?: string;
-    messageID?: string;
     labelID?: string;
 };
 
