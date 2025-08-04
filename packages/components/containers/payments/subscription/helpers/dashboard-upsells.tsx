@@ -340,27 +340,6 @@ const getDriveUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPl
     });
 };
 
-const getDrive1TBUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
-    return getUpsell({
-        plan: PLANS.DRIVE_1TB,
-        plansMap,
-        app,
-        upsellPath: DASHBOARD_UPSELL_PATHS.DRIVE,
-        onUpgrade: () =>
-            openSubscriptionModal({
-                cycle: defaultUpsellCycleB2C,
-                plan: PLANS.DRIVE_1TB,
-                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                disablePlanSelection: true,
-                metrics: {
-                    source: 'upsells',
-                },
-                telemetryFlow: rest.telemetryFlow,
-            }),
-        ...rest,
-    });
-};
-
 const getVPNUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     const plan = PLANS.VPN2024;
 
@@ -816,7 +795,7 @@ export const resolveUpsellsToDisplay = ({
                     getBundleUpsell({ ...upsellsPayload, isRecommended: true }),
                 ];
             case Boolean(hasDriveFree):
-                return [getDriveUpsell(upsellsPayload), getDrive1TBUpsell({ ...upsellsPayload, isRecommended: true })];
+                return [getDriveUpsell(upsellsPayload), getBundleUpsell({ ...upsellsPayload, isRecommended: true })];
             case Boolean(hasPassFree):
                 return [getPassUpsell(upsellsPayload), getPassFamilyUpsell(upsellsPayload)];
             case Boolean(hasVPNFree):
@@ -830,7 +809,7 @@ export const resolveUpsellsToDisplay = ({
                 ];
             case hasDrive(subscription):
                 return [
-                    getDrive1TBUpsell({ ...upsellsPayload, isRecommended: true }),
+                    getBundleUpsell({ ...upsellsPayload, isRecommended: true }),
                     canAccessDuoPlan ? getDuoUpsell(upsellsPayload) : getFamilyUpsell(upsellsPayload),
                 ];
             case hasDrive1TB(subscription):
