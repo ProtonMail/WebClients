@@ -4,15 +4,36 @@ import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, getSpellCheckStatus, resetZoom, toggleSpellCheck, updateZoom } from "../view/viewManagement";
 import { isProdEnv } from "../isProdEnv";
-import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
 interface MenuProps extends MenuItemConstructorOptions {
     key: MenuKey;
 }
 
+interface MenuInsertProps {
+    menu: MenuProps[];
+    key: MenuKey;
+    otherOsEntries?: MenuItemConstructorOptions[];
+    macEntries?: MenuItemConstructorOptions[];
+    allOSEntries?: MenuItemConstructorOptions[];
+}
+
+const insertInMenu = ({ menu, key, otherOsEntries, macEntries, allOSEntries }: MenuInsertProps) => {
+    const editIndex = menu.findIndex((item) => item.key === key);
+    if (!editIndex) return;
+
+    const submenu = menu[editIndex].submenu as MenuItemConstructorOptions[];
+    if (isMac && macEntries) {
+        menu[editIndex].submenu = [...submenu, ...macEntries];
+    } else if (!isMac && otherOsEntries) {
+        menu[editIndex].submenu = [...submenu, ...otherOsEntries];
+    }
+
+    menu[editIndex].submenu = [...submenu, ...(allOSEntries ?? [])];
+};
+
 export const setApplicationMenu = () => {
-    const quitMenuProps: MenuProps["submenu"] = isMac ? [] : [{ role: "quit", label: c("App menu").t`Quit` }];
+    const quitMenuProps: MenuProps["submenu"] = isMac ? [] : [{ role: "quit" }];
 
     const temp: MenuProps[] = [
         {
@@ -36,20 +57,14 @@ export const setApplicationMenu = () => {
             label: c("Menu").t`Edit`,
             key: "edit",
             submenu: [
-                { role: "undo", label: c("App menu").t`Undo` },
-                { role: "redo", label: c("App menu").t`Redo` },
+                { role: "undo" },
+                { role: "redo" },
                 { type: "separator" },
-                { role: "cut", label: c("App menu").t`Cut` },
-                { role: "copy", label: c("App menu").t`Copy` },
-                { role: "paste", label: c("App menu").t`Paste` },
-                {
-                    role: "pasteAndMatchStyle",
-                    accelerator: "CmdOrCtrl+Shift+V",
-                    label: c("App menu").t`Paste and Match Style`,
-                },
-                { role: "delete", label: c("App menu").t`Delete` },
-                { role: "selectAll", label: c("App menu").t`Select All` },
-                { type: "separator" },
+                { role: "cut" },
+                { role: "copy" },
+                { role: "paste" },
+                { role: "pasteAndMatchStyle", accelerator: "CmdOrCtrl+Shift+V" },
+                { role: "selectAll" },
                 {
                     label: c("App menu").t`Check spelling while typing`,
                     type: "checkbox",
@@ -101,46 +116,29 @@ export const setApplicationMenu = () => {
                 { label: c("App menu").t`Zoom In`, accelerator: "CmdOrCtrl+Plus", click: () => updateZoom("in") },
                 { label: c("App menu").t`Zoom Out`, accelerator: "CmdOrCtrl+-", click: () => updateZoom("out") },
                 { type: "separator" },
-                { role: "togglefullscreen", label: c("App menu").t`Toggle Full Screen` },
+                { role: "togglefullscreen" },
             ],
         },
         {
             label: c("Menu").t`Window`,
             key: "window",
-            submenu: [
-                { role: "minimize", label: c("App menu").t`Minimize` },
-                { role: "close", label: c("App menu").t`Close Window` },
-                { role: "zoom", label: c("App menu").t`Zoom` },
-            ],
+            submenu: [{ role: "minimize" }, { role: "close" }, { role: "zoom" }],
         },
     ];
 
     if (isMac) {
-        const editIndex = temp.findIndex((item) => item.key === "edit");
-        if (editIndex !== -1) {
-            const submenus = temp[editIndex].submenu as Electron.MenuItemConstructorOptions[];
-            submenus.push({
-                label: c("App menu").t`Speech`,
-                submenu: [
-                    { role: "startSpeaking", label: c("App menu").t`Start Speaking` },
-                    { role: "stopSpeaking", label: c("App menu").t`Stop Speaking` },
-                ],
-            });
-            temp[editIndex].submenu = submenus;
-        }
-
         temp.unshift({
             label: app.name,
             key: "app",
             submenu: [
-                { role: "about", label: c("App menu").t`About ${MAIL_APP_NAME}` },
+                { role: "about" },
                 { type: "separator" },
-                { role: "hide", label: c("App menu").t`Hide ${MAIL_APP_NAME}` },
-                { role: "hideOthers", label: c("App menu").t`Hide Others` },
-                { role: "unhide", label: c("App menu").t`Show All` },
+                { role: "hide" },
+                { role: "hideOthers" },
+                { role: "unhide" },
                 { type: "separator" },
                 {
-                    label: c("App menu").t`Start ${MAIL_APP_NAME} at login`,
+                    label: c("App menu").t`Start Proton Mail at login`,
                     type: "checkbox",
                     checked: app.getLoginItemSettings().openAtLogin,
                     click: () => {
@@ -150,24 +148,36 @@ export const setApplicationMenu = () => {
                     },
                 },
                 {
-                    label: c("App menu").t`Uninstall ${MAIL_APP_NAME}`,
+                    label: c("App menu").t`Uninstall Proton Mail`,
                     type: "normal",
                     click: () => uninstallProton(),
                 },
                 { type: "separator" },
-                { role: "quit", label: c("App menu").t`Quit ${MAIL_APP_NAME}l` },
+                { role: "quit" },
             ],
         });
 
         if (!isProdEnv()) {
             const submenu = temp[0].submenu as MenuItemConstructorOptions[];
-            temp[0].submenu = [
-                ...submenu,
-                { type: "separator" },
-                { role: "services", label: c("App Menu").t`Services` },
-            ];
+            temp[0].submenu = [...submenu, { type: "separator" }, { role: "services" }];
         }
     }
+
+    insertInMenu({
+        menu: temp,
+        key: "edit",
+        otherOsEntries: [{ role: "delete" }, { type: "separator" }, { role: "selectAll" }],
+        macEntries: [
+            { role: "pasteAndMatchStyle" },
+            { role: "delete" },
+            { role: "selectAll" },
+            { type: "separator" },
+            {
+                label: c("App menu").t`Speech`,
+                submenu: [{ role: "startSpeaking" }, { role: "stopSpeaking" }],
+            },
+        ],
+    });
 
     const menu = Menu.buildFromTemplate(temp);
     Menu.setApplicationMenu(menu);
