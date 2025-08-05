@@ -2,9 +2,9 @@ import { type FC, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/src';
+import { Button } from '@proton/atoms';
 import { Checkbox, Icon, Label } from '@proton/components';
-import { RECOVERY_KIT_FILE_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, RECOVERY_KIT_FILE_NAME } from '@proton/shared/lib/constants';
 
 import recoveryKitPDFImage from '../assets/images/recovery_kit_pdf.svg';
 import { Layout } from '../components/Layout/Layout';
@@ -25,7 +25,7 @@ export const RecoveryKitStep: FC = () => {
         <Layout aside={<RecoveryKitAside />}>
             <h1 className="text-5xl text-bold text-center">{c('Title').t`Save your Recovery Kit`}</h1>
             <div className="mt-10">{c('Subtitle')
-                .jt`Your ${boldRecoveryKitText} lets you restore your Proton Account if you’re locked out.`}</div>
+                .jt`Your ${boldRecoveryKitText} lets you restore your ${BRAND_NAME} Account if you’re locked out.`}</div>
             <div className="w-full mt-2">{c('Subtitle')
                 .t`It’s the only way to recover everything—store it safely.`}</div>
             <div className="mt-10 rounded-lg pass-signup-promotion-bg w-full">

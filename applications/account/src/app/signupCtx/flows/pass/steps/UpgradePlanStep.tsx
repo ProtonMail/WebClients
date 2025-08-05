@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/src';
+import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import {
@@ -12,9 +12,10 @@ import {
     PROTON_UNLIMITED_PRICE,
 } from '@proton/pass/constants';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import { MaybeNull } from '@proton/pass/types';
-import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { MaybeNull } from '@proton/pass/types';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
+import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useSignup } from '../../../context/SignupContext';
 import { Layout } from '../components/Layout/Layout';
@@ -41,7 +42,9 @@ export const UpgradePlanStep: FC = () => {
         offerModal.handler({
             onSubmit: async (upgradeTo) => {
                 // TODO: Ask for real coupon discount to use at this point
-                if (upgradeTo) return handlePayPlan(upgradeTo, 'COUPON-DISCOUNT-80%');
+                if (upgradeTo) {
+                    return handlePayPlan(upgradeTo, 'COUPON-DISCOUNT-80%');
+                }
 
                 await signup.createUser();
                 await signup.setupUser();
@@ -54,7 +57,7 @@ export const UpgradePlanStep: FC = () => {
             title: c('Title').t`Free`,
             price: getPrice(0),
             priceSubtitle: c('Subtitle').t`Free forever`,
-            buttonText: c('Action').t`Continue to Proton Pass`,
+            buttonText: c('Action').t`Continue to ${PASS_APP_NAME}`,
             buttonAction: openOfferModal,
             features: [
                 c('Label').t`Secure password generator`,
@@ -74,7 +77,7 @@ export const UpgradePlanStep: FC = () => {
                 c('Label').t`Built-in 2FA authenticator`,
                 c('Label').t`Vault, item & secure link sharing`,
                 c('Label').t`Credit cards`,
-                c('Label').t`Dark Web Monitoring`,
+                DARK_WEB_MONITORING_NAME,
                 c('Label').t`File attachments`,
             ],
         },
@@ -90,7 +93,7 @@ export const UpgradePlanStep: FC = () => {
         {
             title: (
                 <div className="flex items-center gap-2">
-                    {c('Title').t`Proton Unlimited`}
+                    {PLAN_NAMES[PLANS.BUNDLE]}
                     <Icon name="checkmark-circle-filled" size={5} color="var(--optional-promotion-text-weak)" />
                 </div>
             ),
@@ -101,7 +104,7 @@ export const UpgradePlanStep: FC = () => {
             buttonAction: () => handlePayPlan(PLANS.BUNDLE),
             showProducts: true,
             recommended: true,
-            featuresTitle: c('Label').t`The best of Proton with one subscription`,
+            featuresTitle: c('Label').t`The best of ${BRAND_NAME} with one subscription`,
             features: [
                 c('Label').t`500 GB Storage`,
                 c('Label').t`15 Extra email addresses`,

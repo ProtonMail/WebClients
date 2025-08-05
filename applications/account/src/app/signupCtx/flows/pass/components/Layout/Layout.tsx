@@ -11,7 +11,7 @@ import './layout.scss';
 type LayoutProps = { aside?: ReactNode };
 
 export const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children, aside }) => (
-    <div className="min-h-screen w-screen h-screen flex flex-column lg:flex-row signup-bg-gradient">
+    <div className="min-h-full w-full h-full flex flex-column lg:flex-row signup-bg-gradient">
         <div
             className={`flex flex-column flex-nowrap h-full overflow-auto relative signup w-full ${aside && 'lg:w-1/2'}`}
         >

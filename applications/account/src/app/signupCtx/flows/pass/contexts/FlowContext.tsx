@@ -15,13 +15,15 @@ type FlowContextType = { step: Step; setStep: <T extends Step>(step: T) => void 
 const FlowContext = createContext<Maybe<FlowContextType>>(undefined);
 
 export const FlowProvider: FC<PropsWithChildren> = ({ children }) => {
-    const [step, setStep] = useState<Step>(Step.UpgradePlan);
+    const [step, setStep] = useState<Step>(Step.Signup);
 
     return <FlowContext.Provider value={{ step, setStep }}>{children}</FlowContext.Provider>;
 };
 
 export const useFlow = () => {
     const context = useContext(FlowContext);
-    if (!context) throw new Error('useFlow must be used within a FlowProvider');
+    if (!context) {
+        throw new Error('useFlow must be used within a FlowProvider');
+    }
     return context;
 };
