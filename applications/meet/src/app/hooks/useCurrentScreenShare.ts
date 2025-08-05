@@ -2,6 +2,10 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
 import { type Track as LiveKitTrack, LocalVideoTrack, Track } from 'livekit-client';
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/components';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useScreenshareResolution } from './useScreenshareResolution';
 
@@ -11,6 +15,8 @@ export function useCurrentScreenShare() {
     const participants = useParticipants();
     const { localParticipant } = useLocalParticipant();
     const screenshareResolution = useScreenshareResolution();
+
+    const notifications = useNotifications();
 
     const screenShareVideoRef = useRef<HTMLVideoElement>(null);
 
@@ -45,6 +51,17 @@ export function useCurrentScreenShare() {
 
     const startScreenShare = async () => {
         try {
+            const isOnMobile = isMobile();
+
+            if (isOnMobile) {
+                notifications.createNotification({
+                    type: 'info',
+                    text: c('meet_2025 Error').t`Screen share is not supported on mobile browsers`,
+                });
+
+                return;
+            }
+
             const stream = await navigator.mediaDevices.getDisplayMedia({
                 video: {
                     width: { max: screenshareResolution.resolution.width },
@@ -52,6 +69,7 @@ export function useCurrentScreenShare() {
                     frameRate: screenshareResolution.encoding.maxFramerate,
                 },
             });
+
             const [mediaStreamTrack] = stream.getVideoTracks();
 
             const localTrack = new LocalVideoTrack(mediaStreamTrack);
@@ -70,6 +88,11 @@ export function useCurrentScreenShare() {
             };
         } catch (err) {
             console.error(err);
+
+            notifications.createNotification({
+                type: 'error',
+                text: c('meet_2025 Error').t`Failed to start screen share`,
+            });
         }
     };
 
