@@ -1061,6 +1061,9 @@
       "Upgrade": [
         "Wechseln"
       ],
+      "Upgrade for 200GB": [
+        "Upgrade auf 200 GB"
+      ],
       "Upgrade now": [
         "Jetzt upgraden"
       ],
@@ -1692,6 +1695,9 @@
       ],
       "Discover and set up features": [
         "Entdecken und Funktionen einrichten"
+      ],
+      "Maybe later": [
+        "Vielleicht später"
       ],
       "Remind me later": [
         "Später erneut fragen"
@@ -3650,6 +3656,12 @@
       ],
       "Validation error": [
         "Überprüfungsfehler"
+      ],
+      "We were not able to load some of your shared items": [
+        "Wir konnten einige deiner geteilten Einträge nicht laden."
+      ],
+      "We were not able to load some of your shared items details": [
+        "Wir konnten einige Details deiner geteilten Einträge nicht laden."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden.",
@@ -9083,12 +9095,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Hol dir ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Hol dir Drive Plus für nur ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Hol dir Mail Plus für nur ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Jetzt zugreifen"
       ],
@@ -9100,6 +9106,9 @@
       ],
       "Limited-time offer": [
         "Zeitlich begrenztes Angebot"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Zeitlich begrenztes Angebot, gültig für deinen ersten Monat"
       ],
       "Maybe later": [
         "Vielleicht später"
@@ -9113,9 +9122,6 @@
       "Save": [
         "Spare"
       ],
-      "Save 80% on your first month.": [
-        "Spare 80 % im ersten Monat."
-      ],
       "Save big when you pay annually": [
         "Spare kräftig, wenn du jährlich bezahlst"
       ],
@@ -9124,6 +9130,12 @@
       ],
       "This offer won't be shown again.": [
         "Dieses Angebot wird nicht wieder angezeigt."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Upgrade deine Produktivität für nur ${ pricingTitle } mit ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Upgrade deinen Speicherplatz für nur ${ pricingTitle } mit ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Beim Wechsel von einem Monats- zu einem Jahresabonnement."
@@ -9150,23 +9162,26 @@
       "Advanced threat protection": [
         "Erweiterter Bedrohungsschutz"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Mit Nicht-${ BRAND_NAME }-Benutzern zusammenarbeiten"
+      ],
       "Custom email domain": [
         "Eigene E-Mail-Domain"
+      ],
+      "Edit docs online": [
+        "Bearbeite Dokumente online"
       ],
       "Email addresses": [
         "E‐Mail‐Adressen"
       ],
+      "File version history (over 1 week)": [
+        "Dateiversionsverlauf (über 1 Woche)"
+      ],
       "Free": [
         "Kostenlos"
       ],
-      "Online document editor": [
-        "Editor für Onlinedokumente"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
       ],
       "Storage": [
         "Speicherplatz"
@@ -12067,6 +12082,15 @@
       ],
       "Upgrade complete!": [
         "Upgrade abgeschlossen!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Auf ${ planName } upgraden"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Upgrade deine Produktivität für ${ formattedPrice } mit ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Upgrade deinen Speicherplatz für ${ formattedPrice } mit ${ planName }"
       ],
       "Upload and share files": [
         "Dateien hochladen und teilen"

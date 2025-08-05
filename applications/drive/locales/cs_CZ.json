@@ -1071,6 +1071,9 @@
       "Upgrade": [
         "Přejít na placený tarif"
       ],
+      "Upgrade for 200GB": [
+        "Navýšit na 200 GB"
+      ],
       "Upgrade now": [
         "Navýšit nyní"
       ],
@@ -1720,6 +1723,9 @@
       ],
       "Discover and set up features": [
         "Objevit a nastavit funkce"
+      ],
+      "Maybe later": [
+        "Možná později"
       ],
       "Remind me later": [
         "Připomenout později"
@@ -3696,6 +3702,12 @@
       ],
       "Validation error": [
         "Chyba ověření"
+      ],
+      "We were not able to load some of your shared items": [
+        "Některé z vašich sdílených položek se nám nepodařilo načíst"
+      ],
+      "We were not able to load some of your shared items details": [
+        "Některé detaily o vašich sdílených položkách se nám nepodařilo načíst"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
@@ -9330,12 +9342,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Získejte ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Získejte Drive Plus za pouhých ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Získejte Mail Plus za pouhých ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Získejte nabídku"
       ],
@@ -9347,6 +9353,9 @@
       ],
       "Limited-time offer": [
         "Časově omezená nabídka"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Časově omezená nabídka, platná pro první měsíc"
       ],
       "Maybe later": [
         "Možná později"
@@ -9360,9 +9369,6 @@
       "Save": [
         "Ušetřete"
       ],
-      "Save 80% on your first month.": [
-        "Ušetřete 80 % za první měsíc."
-      ],
       "Save big when you pay annually": [
         "Při roční platbě můžete výrazně ušetřit"
       ],
@@ -9371,6 +9377,12 @@
       ],
       "This offer won't be shown again.": [
         "Tato nabídka se již nezobrazí."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Vylepšete svou produktivitu jen za ${ pricingTitle } s ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Navyšte své úložiště jen za ${ pricingTitle } s ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Při přechodu z měsíčního na roční předplatné."
@@ -9397,23 +9409,26 @@
       "Advanced threat protection": [
         "Pokročilá ochrana před hrozbami"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Sdílet s uživateli, kteří nemají ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Vlastní e-mailová doména"
+      ],
+      "Edit docs online": [
+        "Úprava dokumentů online"
       ],
       "Email addresses": [
         "E-mailové adresy"
       ],
+      "File version history (over 1 week)": [
+        "Historie verzí souboru (více než 1 týden)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Online editor dokumentů"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Obnova předchozích verzí souborů"
       ],
       "Storage": [
         "Úložiště"
@@ -12442,6 +12457,15 @@
       ],
       "Upgrade complete!": [
         "Navýšení dokončeno!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Vylepšete svou produktivitu jen za ${ formattedPrice } s ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Navyšte své úložiště za ${ formattedPrice } s ${ planName }"
       ],
       "Upload and share files": [
         "Nahrát a sdílet soubory"
