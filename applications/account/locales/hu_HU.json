@@ -7737,9 +7737,6 @@
       "Add a recovery phone number": [
         "Helyreállítási telefonszám hozzáadása"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Adjon a fiókjához egy további biztonsági réteget. Így kétlépcsős hitelesítéssel is azonosítania kell magát, minden egyes belépéskor."
-      ],
       "Add domain": [
         "Domain hozzáadása"
       ],
@@ -10548,9 +10545,6 @@
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Az Ön meglévő végpontok közt titkosított továbbításai más felhasználók felé felfüggesztésre kerülnek. Manuálisan újraengedélyezheti őket a „${ autoReplySettingsTitle }” beállítások alatt."
-      ],
       "Your files will be encrypted and then saved": [
         "A fájlok titkosításra majd pedig mentésre kerülnek"
       ],
@@ -10816,29 +10810,11 @@
       "Generate key": [
         "Kulcs generálása"
       ],
-      "Generating key failed. Please try again later.": [
-        "A kulcs létrehozása sikertelen. Kérjük, próbálja újra később."
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Ha új kulcsot generál, mert úgy véli, hogy a meglévő kulcsa kompromittálódott, kérjük, a kulcs generálása után jelölje meg azt kompromittáltként."
-      ],
       "Key successfully generated.": [
         "Kulcs sikeresen létrehozva."
-      ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Figyelem: már van egy kulcsa ezzel az azonos algoritmussal ehhez a címhez. Hacsak ez a kulcs nem lett kompromittálva, valószínűleg nem szükséges új kulcsot létrehoznia, és ez lassíthatja a fiókját."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Megjegyzés: Önnek már van egy ugyanilyen algoritmusú kulcsa ehhez a felhasználóhoz. Hacsak ez a kulcs nem került veszélybe, lehet, hogy nem szükséges új kulcsot generálni, és ez lassíthatja a fiókját."
-      ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Ez egy új kulcsot fog generálni, amelyet a jövőbeni e-mailek titkosítására használnak majd, többek között egyéb adatokhoz."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Kompatibilitás"
-      ],
       "Compromised": [
         "Kompromittált"
       ],
@@ -11093,9 +11069,6 @@
       ],
       "Export public key": [
         "Nyilvános kulcs exportálása"
-      ],
-      "Make primary": [
-        "Legyen elsődleges"
       ],
       "Mark compromised": [
         "Megjelölés kompromittáltként"
@@ -14605,12 +14578,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Előfizetés ${ BRAND_NAME } Unlimitedre"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Szerezze be a Drive Plus csomagot ${ pricingTitle } áron"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Szerezze meg a Mail Plus szolgáltatást mindössze ${ pricingTitle } áron"
-      ],
       "Get the deal": [
         "Ajánlat elfogadása"
       ],
@@ -14631,9 +14598,6 @@
       ],
       "Save": [
         "Mentés"
-      ],
-      "Save 80% on your first month.": [
-        "Spóroljon 80%-ot az első hónapban."
       ],
       "Save big when you pay annually": [
         "Spóroljon sokat, ha éves fizetést választ"
@@ -14678,14 +14642,8 @@
       "Free": [
         "Ingyenes"
       ],
-      "Online document editor": [
-        "Online dokumentumszerkesztő"
-      ],
       "Plus": [
         "Plusz"
-      ],
-      "Recover previous file versions": [
-        "Régebbi fájlverziók helyreállítása"
       ],
       "Storage": [
         "Tároló"
