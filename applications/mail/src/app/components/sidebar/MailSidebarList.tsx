@@ -304,7 +304,14 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                   })
                                 : applyLabels(params)
                         }
-                        moveToFolder={moveToFolder}
+                        moveToFolder={(params) =>
+                            applyOptimisticLocationEnabled && !params.selectAll
+                                ? applyLocation({
+                                      elements: params.elements,
+                                      targetLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                  })
+                                : moveToFolder(params)
+                        }
                     />
 
                     <MailSidebarCustomView collapsed={collapsed} />
@@ -337,8 +344,22 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                     updateFocusItem={updateFocusItem}
                                     handleToggleFolder={handleToggleFolder}
                                     foldersTreeview={foldersTreeview}
-                                    applyLabels={applyLabels}
-                                    moveToFolder={moveToFolder}
+                                    applyLabels={(params) =>
+                                        applyOptimisticLocationEnabled && !params.selectAll
+                                            ? applyLocation({
+                                                  elements: params.elements,
+                                                  targetLabelID: params.targetLabelID!, // TODO: Improve this when removing old apply labels function
+                                              })
+                                            : applyLabels(params)
+                                    }
+                                    moveToFolder={(params) =>
+                                        applyOptimisticLocationEnabled && !params.selectAll
+                                            ? applyLocation({
+                                                  elements: params.elements,
+                                                  targetLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                              })
+                                            : moveToFolder(params)
+                                    }
                                 />
                             )}
                         </>
@@ -369,8 +390,22 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                     counterMap={counterMap}
                                     labels={labels || []}
                                     updateFocusItem={updateFocusItem}
-                                    applyLabels={applyLabels}
-                                    moveToFolder={moveToFolder}
+                                    applyLabels={(params) =>
+                                        applyOptimisticLocationEnabled && !params.selectAll
+                                            ? applyLocation({
+                                                  elements: params.elements,
+                                                  targetLabelID: params.targetLabelID!, // TODO: Improve this when removing old apply labels function
+                                              })
+                                            : applyLabels(params)
+                                    }
+                                    moveToFolder={(params) =>
+                                        applyOptimisticLocationEnabled && !params.selectAll
+                                            ? applyLocation({
+                                                  elements: params.elements,
+                                                  targetLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                              })
+                                            : moveToFolder(params)
+                                    }
                                 />
                             )}
                         </>
