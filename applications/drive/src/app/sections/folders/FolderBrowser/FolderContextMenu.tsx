@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import * as React from 'react';
 
+import { useShallow } from 'zustand/react/shallow';
+
 import { ContextMenu, ContextSeparator } from '@proton/components';
-import { MemberRole } from '@proton/drive/index';
 
 import type { ContextMenuProps } from '../../../components/FileBrowser';
 import { useCreateFileModal } from '../../../components/modals/CreateFileModal';
@@ -13,7 +14,6 @@ import { ShareFileButton, ShareLinkButton } from '../../../components/sections/C
 import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useActions, useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
-import { useDriveDocsFeatureFlag, useDriveDocsSheetsFF } from '../../../store/_documents';
 import {
     CreateNewFileButton,
     CreateNewFolderButton,
@@ -22,6 +22,7 @@ import {
 } from '../ContextMenuButtons';
 import CreateNewDocumentButton from '../ContextMenuButtons/CreateNewDocumentButton';
 import CreateNewSheetButton from '../ContextMenuButtons/CreateNewSheetButton';
+import { useFolderStore } from '../useFolder.store';
 
 export function FolderContextMenu({
     shareId,
@@ -30,16 +31,8 @@ export function FolderContextMenu({
     position,
     open,
     close,
-    role,
-    isActiveLinkReadOnly,
-    isActiveLinkRoot,
-    isActiveLinkInDeviceShare,
 }: ContextMenuProps & {
     shareId: string;
-    role: MemberRole;
-    isActiveLinkReadOnly?: boolean;
-    isActiveLinkRoot?: boolean;
-    isActiveLinkInDeviceShare?: boolean;
 }) {
     useEffect(() => {
         if (position) {
@@ -65,21 +58,21 @@ export function FolderContextMenu({
     const [createFileModal, showCreateFileModal] = useCreateFileModal();
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-
-    const isEditor = role === MemberRole.Editor;
-    const isAdmin = role === MemberRole.Admin;
+    const { permissions } = useFolderStore(
+        useShallow((state) => ({
+            permissions: state.permissions,
+        }))
+    );
 
     const { createDocument } = useDocumentActions();
-    const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const { isSheetsEnabled } = useDriveDocsSheetsFF();
 
     // All actions in this context menu needs editor permissions
-    if (!isEditor) {
+    if (!permissions.canEdit) {
         return null;
     }
 
-    const shouldShowShareButton = isAdmin && (isActiveLinkReadOnly || isActiveLinkRoot);
-    const shouldShowShareLinkButton = isAdmin && !isActiveLinkReadOnly && !isActiveLinkRoot;
+    const shouldShowShareButton = permissions.canShare;
+    const shouldShowShareLinkButton = permissions.canShareNode;
 
     // ContextMenu is removed from DOM when any action is executed but inputs
     // need to stay rendered so onChange handler can work.
@@ -92,13 +85,13 @@ export function FolderContextMenu({
             {fileSharingModal}
             {linkSharingModal}
             <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
-                {!isActiveLinkReadOnly && (
+                {permissions.canCreateNode && (
                     <CreateNewFolderButton
                         close={close}
                         action={() => showCreateFolderModal({ folder: activeFolder, createFolder })}
                     />
                 )}
-                {isDocsEnabled && !isActiveLinkReadOnly && !isActiveLinkInDeviceShare && (
+                {permissions.canCreateDocs && (
                     <CreateNewDocumentButton
                         close={close}
                         action={() => {
@@ -110,7 +103,7 @@ export function FolderContextMenu({
                         }}
                     />
                 )}
-                {isSheetsEnabled && !isActiveLinkReadOnly && !isActiveLinkInDeviceShare && (
+                {permissions.canCreateSheets && (
                     <CreateNewSheetButton
                         close={close}
                         action={() => {
@@ -122,11 +115,11 @@ export function FolderContextMenu({
                         }}
                     />
                 )}
-                {isEditEnabled && !isActiveLinkReadOnly && (
+                {isEditEnabled && permissions.canCreateNode && (
                     <CreateNewFileButton close={close} action={() => showCreateFileModal({})} />
                 )}
-                {!isActiveLinkReadOnly && <ContextSeparator />}
-                {!isActiveLinkReadOnly ? (
+                {permissions.canCreateNode && <ContextSeparator />}
+                {permissions.canCreateNode ? (
                     <>
                         <UploadFileButton close={close} onClick={fileClick} />
                         <UploadFolderButton close={close} onClick={folderClick} />
@@ -135,7 +128,7 @@ export function FolderContextMenu({
                 {shouldShowShareButton && (
                     <>
                         {/* // Device only have one entry in context menu */}
-                        {!isActiveLinkReadOnly && <ContextSeparator />}
+                        {permissions.canCreateNode && <ContextSeparator />}
                         <ShareFileButton
                             close={close}
                             shareId={shareId}
