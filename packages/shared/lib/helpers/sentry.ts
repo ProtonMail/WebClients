@@ -299,6 +299,14 @@ function main({
     });
 }
 
+export const setSentryTags = (tags: Record<string, any>) => {
+    configureScope((scope) => {
+        for (const [tagName, value] of Object.entries(tags)) {
+            scope.setTag(tagName, value);
+        }
+    });
+};
+
 export const traceError = (...args: Parameters<typeof captureException>) => {
     if (!isLocalhost(window.location.host)) {
         captureException(...args);
