@@ -16,7 +16,7 @@ import {
     addApiMock,
     clearAll,
     generateKeys,
-    render,
+    mailTestRender,
     waitForEventManagerCall,
     waitForNotification,
 } from '../../../../helpers/test/helper';
@@ -92,7 +92,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, {
+        await mailTestRender(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
             },
@@ -143,7 +143,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, {
+        await mailTestRender(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([address]),
                 addressKeys: getAddressKeyCache(address, [keys]),
@@ -187,7 +187,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, {
+        await mailTestRender(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
             },
@@ -230,7 +230,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, {
+        await mailTestRender(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
             },
@@ -273,7 +273,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, {
+        await mailTestRender(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
             },
@@ -315,7 +315,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, {
+        await mailTestRender(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
                 elements: newElementsState({ params: { labelID: CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS } }),

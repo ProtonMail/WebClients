@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { render } from 'proton-mail/helpers/test/helper';
+import { mailTestRender } from 'proton-mail/helpers/test/helper';
 
 import { CategoriesTabs } from './CategoriesTabs';
 
@@ -16,7 +16,7 @@ describe('CategoriesTabs', () => {
         { label: MAILBOX_LABEL_IDS.CATEGORY_UPDATES, borderClass: 'border-purple-500' },
         { label: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, borderClass: 'border-amber-500' },
     ])('should render the categories with the proper border class', async ({ label, borderClass }) => {
-        await render(<CategoriesTabs labelID={label} />);
+        await mailTestRender(<CategoriesTabs labelID={label} />);
         const categoryTab = screen.getByTestId(`category-tab-${label}`);
         expect(categoryTab).toHaveClass(borderClass);
     });

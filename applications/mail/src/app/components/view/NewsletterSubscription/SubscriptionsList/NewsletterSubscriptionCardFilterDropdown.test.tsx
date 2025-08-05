@@ -3,7 +3,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { render } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from 'proton-mail/helpers/test/render';
 
 import { activeSubscription } from '../testData';
 import { NewsletterSubscriptionCardFilterDropdown } from './NewsletterSubscriptionCardFilterDropdown';
@@ -19,7 +19,7 @@ describe('NewsletterSubscriptionCardFilterDropdown', () => {
     });
 
     it('should call the handleSubscriptionFilter when the mark as read item is clicked', async () => {
-        await render(
+        await mailTestRender(
             <NewsletterSubscriptionCardFilterDropdown
                 subscription={activeSubscription}
                 handleSubscriptionFilter={handleSubscriptionFilter}
@@ -38,7 +38,7 @@ describe('NewsletterSubscriptionCardFilterDropdown', () => {
     });
 
     it('should call the handleSubscriptionFilter when the move to archive item is clicked', async () => {
-        await render(
+        await mailTestRender(
             <NewsletterSubscriptionCardFilterDropdown
                 subscription={activeSubscription}
                 handleSubscriptionFilter={handleSubscriptionFilter}
@@ -76,7 +76,7 @@ describe('NewsletterSubscriptionCardFilterDropdown', () => {
                 MarkAsRead: true,
             };
 
-            await render(
+            await mailTestRender(
                 <NewsletterSubscriptionCardFilterDropdown
                     subscription={subscription}
                     handleSubscriptionFilter={handleSubscriptionFilter}
@@ -99,7 +99,7 @@ describe('NewsletterSubscriptionCardFilterDropdown', () => {
                 MoveToFolder: MAILBOX_LABEL_IDS.ARCHIVE,
             };
 
-            await render(
+            await mailTestRender(
                 <NewsletterSubscriptionCardFilterDropdown
                     subscription={subscription}
                     handleSubscriptionFilter={handleSubscriptionFilter}
@@ -122,7 +122,7 @@ describe('NewsletterSubscriptionCardFilterDropdown', () => {
                 MoveToFolder: MAILBOX_LABEL_IDS.TRASH,
             };
 
-            await render(
+            await mailTestRender(
                 <NewsletterSubscriptionCardFilterDropdown
                     subscription={subscription}
                     handleSubscriptionFilter={handleSubscriptionFilter}

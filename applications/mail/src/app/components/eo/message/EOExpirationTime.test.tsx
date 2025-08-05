@@ -2,7 +2,7 @@ import { add, addHours, addMinutes, addSeconds, getUnixTime } from 'date-fns';
 
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { clearAll, render, tick } from '../../../helpers/test/helper';
+import { clearAll, mailTestRender, tick } from '../../../helpers/test/helper';
 import EOExpirationTime from './EOExpirationTime';
 
 describe('EOExpirationTime', () => {
@@ -28,7 +28,7 @@ describe('EOExpirationTime', () => {
     });
 
     const setup = async (ExpirationTime: number) => {
-        const result = await render(
+        const result = await mailTestRender(
             <EOExpirationTime message={{ localID: 'localID', data: { ExpirationTime } as Message }} />
         );
         const rerender = async (ExpirationTime: number) => {

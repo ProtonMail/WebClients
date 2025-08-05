@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { clearAll, render } from '../../../../../helpers/test/helper';
+import { clearAll, mailTestRender } from '../../../../../helpers/test/helper';
 import ExtraExpirationTime from './ExtraExpirationTime';
 
 const getExpirationTime = (numberOfSeconds: number) => {
@@ -13,7 +13,7 @@ describe('ExtraExpirationTime', () => {
     const seconds = 50;
 
     const setup = async (ExpirationTime: number) => {
-        const view = await render(
+        const view = await mailTestRender(
             <ExtraExpirationTime message={{ localID: 'localID', data: { ExpirationTime } as Message }} />
         );
         const rerender = async (ExpirationTime: number) => {

@@ -24,7 +24,7 @@ import {
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from 'proton-mail/helpers/test/helper';
-import { render } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from 'proton-mail/helpers/test/render';
 import type { Conversation } from 'proton-mail/models/conversation';
 import { addAttachment } from 'proton-mail/store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
@@ -68,7 +68,7 @@ const setup = async (
     } as Conversation;
 
     const address = getCompleteAddress({ ID: AddressID, Email: fromAddress });
-    return render(
+    return mailTestRender(
         <ItemColumnLayout
             labelID={MAILBOX_LABEL_IDS.INBOX}
             element={element}

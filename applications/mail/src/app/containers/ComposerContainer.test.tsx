@@ -11,7 +11,7 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
 import { formatFullDate } from '../helpers/date';
-import { clearAll, getCompleteAddress, minimalCache, render, tick } from '../helpers/test/helper';
+import { clearAll, getCompleteAddress, mailTestRender, minimalCache, tick } from '../helpers/test/helper';
 import type { OnCompose } from '../hooks/composer/useCompose';
 import { ComposeTypes } from '../hooks/composer/useCompose';
 import { useOnCompose } from './ComposeProvider';
@@ -61,7 +61,7 @@ with a link -> https://protonmail.com/`;
             return null;
         };
 
-        const { unmount } = await render(
+        const { unmount } = await mailTestRender(
             <ComposerContainer>
                 <Inside />
             </ComposerContainer>,
@@ -140,7 +140,7 @@ with a link -> https://protonmail.com/`;
             return null;
         };
 
-        const { unmount } = await render(
+        const { unmount } = await mailTestRender(
             <ComposerContainer>
                 <Inside />
             </ComposerContainer>,

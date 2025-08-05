@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { render } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from 'proton-mail/helpers/test/render';
 import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
 import * as mailboxSelectors from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 
@@ -23,7 +23,7 @@ describe('SubscriptionCardButtons', () => {
     it('should call handleFilterClick with the correct filter type when the unsubscribe button is clicked', async () => {
         mockedSelectedTab.mockReturnValue(SubscriptionTabs.Unsubscribe);
 
-        await render(
+        await mailTestRender(
             <SubscriptionCardButtons subscription={unsubscribedSubscription} handleFilterClick={handleFilterClick} />
         );
 
