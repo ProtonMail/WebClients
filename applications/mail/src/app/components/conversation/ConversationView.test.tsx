@@ -15,8 +15,8 @@ import {
     addApiMock,
     assertFocus,
     clearAll,
+    mailTestRender,
     mockConsole,
-    render,
     waitForSpyCall,
 } from '../../helpers/test/helper';
 import type { Conversation } from '../../models/conversation';
@@ -77,7 +77,7 @@ describe('ConversationView', () => {
         conversationStates?: ConversationState[];
         messageState?: MessageState;
     }) => {
-        const result = await render(<></>);
+        const result = await mailTestRender(<></>);
         const rerender = (newProps: Partial<typeof props> = {}) =>
             result.rerender(<ConversationView {...props} {...newProps} />);
 
@@ -323,7 +323,7 @@ describe('ConversationView', () => {
                 );
             };
 
-            const { store, rerender, container } = await render(<></>);
+            const { store, rerender, container } = await mailTestRender(<></>);
             store.dispatch(initializeConversation(conversationState));
             await rerender(<TestComponent {...props} />);
 

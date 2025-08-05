@@ -21,7 +21,7 @@ import range from '@proton/utils/range';
 import type { MailState } from 'proton-mail/store/rootReducer';
 
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
-import { addApiMock, minimalCache, render, triggerEvent } from '../../../helpers/test/helper';
+import { addApiMock, mailTestRender, minimalCache, triggerEvent } from '../../../helpers/test/helper';
 import type { ConversationLabel } from '../../../models/conversation';
 import type { Element } from '../../../models/element';
 import type { Event } from '../../../models/event';
@@ -160,7 +160,7 @@ export const setup = async ({
         addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     }
 
-    const result = await render(<Component />, {
+    const result = await mailTestRender(<Component />, {
         preloadedState: {
             userSettings: getModelState({
                 News: setBit(0, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS),

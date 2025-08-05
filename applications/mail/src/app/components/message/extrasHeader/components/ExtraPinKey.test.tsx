@@ -14,8 +14,8 @@ import {
     clearAll,
     generateKeys,
     getCompleteAddress,
+    mailTestRender,
     minimalCache,
-    render,
     tick,
 } from '../../../../helpers/test/helper';
 import { message } from '../../../../helpers/test/pinKeys';
@@ -31,7 +31,7 @@ const setup = async (
 ) => {
     minimalCache();
 
-    await render(<ExtraPinKey message={message} messageVerification={messageVerification} />, {
+    await mailTestRender(<ExtraPinKey message={message} messageVerification={messageVerification} />, {
         preloadedState: {
             addresses: getModelState(isOwnAddress ? [getCompleteAddress({ Email: 'sender@protonmail.com' })] : []),
             mailSettings: getModelState({

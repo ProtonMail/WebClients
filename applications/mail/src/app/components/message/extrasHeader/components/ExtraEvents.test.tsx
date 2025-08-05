@@ -39,8 +39,8 @@ import {
     generateKeys as generateAddressKeys,
     generateCalendarKeysAndPassphrase,
     getCompleteAddress,
+    mailTestRender,
     minimalCache,
-    render,
 } from '../../../../helpers/test/helper';
 import ExtraEvents from './ExtraEvents';
 
@@ -372,7 +372,7 @@ END:VCALENDAR`;
             veventsApi: [],
             eventCalendarID: dummyCalendarID,
         });
-        await render(<ExtraEvents message={message} />, { preloadedState });
+        await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
         // test single banner
         expect(await screen.findAllByText('Time zone not supported')).toHaveLength(1);
@@ -408,7 +408,7 @@ END:VCALENDAR`;
                 senderEmailAddress: dummyUserEmailAddress,
             });
 
-            await render(<ExtraEvents message={message} />, { preloadedState });
+            await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
             expect(await screen.findByText(/This response is out of date. You have no calendars./)).toBeInTheDocument();
         });
@@ -478,7 +478,7 @@ END:VCALENDAR`;
                 alternativeCalendarKeysAndPassphrasePromise,
             });
 
-            await render(<ExtraEvents message={message} />, { preloadedState });
+            await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
             expect(
                 await screen.findByText(
@@ -517,7 +517,7 @@ END:VCALENDAR`;
                 senderEmailAddress: dummyUserEmailAddress,
             });
 
-            await render(<ExtraEvents message={message} />, { preloadedState });
+            await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
             expect(
                 await screen.findByText(
@@ -585,7 +585,7 @@ END:VCALENDAR`;
                 eventCalendarID: dummyCalendarID,
             });
 
-            await render(<ExtraEvents message={message} />, { preloadedState });
+            await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
             expect(
                 await screen.findByText(
@@ -653,7 +653,7 @@ END:VCALENDAR`;
                 eventCalendarID: dummyCalendarID,
             });
 
-            await render(<ExtraEvents message={message} />, { preloadedState });
+            await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
             expect(
                 await screen.findByText(`${dummySenderEmailAddress} had previously accepted your invitation.`)
@@ -715,7 +715,7 @@ END:VCALENDAR`;
                 methodInMimeType: ICAL_METHOD.REQUEST,
                 userCalendarSettings: dummyCalendarUserSettings,
             });
-            await render(<ExtraEvents message={message} />, { preloadedState });
+            await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
             // test event title
             await screen.findByText('Walk on the moon');
@@ -823,7 +823,7 @@ END:VCALENDAR`;
                 veventsApi: [eventComponent],
                 eventCalendarID: dummyCalendarID,
             });
-            await render(<ExtraEvents message={message} />, { preloadedState });
+            await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
             // test event title
             await screen.findByText('Walk on Mars');
@@ -922,7 +922,7 @@ END:VCALENDAR`;
                 eventCalendarID: dummyCalendarID,
             });
 
-            await render(<ExtraEvents message={message} />, { preloadedState });
+            await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
             expect(
                 await screen.findByText(/This invitation is out of date. The event has been updated./)
@@ -1050,7 +1050,7 @@ END:VCALENDAR`;
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
             });
 
-            await render(<ExtraEvents message={message} />, { preloadedState });
+            await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
             await userEvent.click(await waitFor(() => screen.findByTitle(`Yes, I'll attend`)));
 
@@ -1085,7 +1085,7 @@ END:VCALENDAR`;
                 veventsApi: [],
                 eventCalendarID: dummyCalendarID,
             });
-            await render(<ExtraEvents message={message} />, { preloadedState });
+            await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
             await screen.findByText('Time zone not supported');
             expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
@@ -1119,7 +1119,7 @@ END:VCALENDAR`;
                 eventCalendarID: dummyCalendarID,
             });
 
-            await render(<ExtraEvents message={message} />, { preloadedState });
+            await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
             expect(await screen.findByText(/Add to Proton Calendar/)).toBeInTheDocument();
             expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
@@ -1174,7 +1174,7 @@ END:VCALENDAR`;
                         userCalendarSettings: dummyCalendarUserSettings,
                         senderEmailAddress: dummyRecipientExternalEmailAddress,
                     });
-                    await render(<ExtraEvents message={message} />, { preloadedState });
+                    await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
                     // Alert is displayed
                     expect(
                         await screen.findByText(
@@ -1239,7 +1239,7 @@ END:VCALENDAR`;
                         userCalendarSettings: dummyCalendarUserSettings,
                         senderEmailAddress: dummyRecipientExternalEmailAddress,
                     });
-                    await render(<ExtraEvents message={message} />, { preloadedState });
+                    await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
                     // Alert is displayed
                     expect(
                         await screen.findByText('Your email address is not in the original participants list.')
@@ -1323,7 +1323,7 @@ END:VCALENDAR`;
                         senderEmailAddress: dummyRecipientExternalEmailAddress,
                         veventsApi: [eventComponent],
                     });
-                    await render(<ExtraEvents message={message} />, { preloadedState });
+                    await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
 
                     await screen.findByText('Walk on the moon');
 
@@ -1350,7 +1350,7 @@ END:VCALENDAR`;
                         senderEmailAddress: dummyRecipientExternalEmailAddress,
                         userAddressEnabled: false,
                     });
-                    await render(<ExtraEvents message={message} />, { preloadedState });
+                    await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
                     // Alert is displayed
                     expect(await screen.findByText('You cannot reply from the invited address.')).toBeInTheDocument();
 
@@ -1375,7 +1375,7 @@ END:VCALENDAR`;
                         defaultCalendarID: 'calendar-key-id-0',
                         userCalendars: generateCalendars(2, true),
                     });
-                    await render(<ExtraEvents message={message} />, { preloadedState });
+                    await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
                     // Alert is displayed
                     expect(await screen.findByText('All your calendars are disabled.')).toBeInTheDocument();
                     expect(
@@ -1403,7 +1403,7 @@ END:VCALENDAR`;
                         defaultCalendarID: 'calendar-key-id-0',
                         userCalendars: generateCalendars(25, true),
                     });
-                    await render(<ExtraEvents message={message} />, { preloadedState });
+                    await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
                     // Alert is displayed
                     expect(await screen.findByText('All your calendars are disabled.')).toBeInTheDocument();
                     expect(
@@ -1432,7 +1432,7 @@ END:VCALENDAR`;
                         senderEmailAddress: dummyRecipientExternalEmailAddress,
                         isSimpleLogin: true,
                     });
-                    await render(<ExtraEvents message={message} />, { preloadedState });
+                    await mailTestRender(<ExtraEvents message={message} />, { preloadedState });
                     // Alert is displayed
                     expect(
                         await screen.findByText('Your email address is not in the original participants list.')

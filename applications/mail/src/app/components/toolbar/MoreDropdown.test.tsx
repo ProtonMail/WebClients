@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { render } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from 'proton-mail/helpers/test/render';
 
 import useSnooze from '../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../hooks/useLabelActions';
@@ -59,7 +59,7 @@ describe('MoreDropdown', () => {
     });
 
     it('should contain all option in more when screen is tiny', async () => {
-        await render(<MoreDropdown {...isTinyProps} />);
+        await mailTestRender(<MoreDropdown {...isTinyProps} />);
         const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
@@ -69,7 +69,7 @@ describe('MoreDropdown', () => {
     });
 
     it('should contain no option in more when all breakpoints are false', async () => {
-        await render(<MoreDropdown {...props} />);
+        await mailTestRender(<MoreDropdown {...props} />);
         const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
@@ -79,7 +79,7 @@ describe('MoreDropdown', () => {
     });
 
     it('should contain no option in more when screen narrow', async () => {
-        await render(<MoreDropdown {...isNarrowProps} />);
+        await mailTestRender(<MoreDropdown {...isNarrowProps} />);
         const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
@@ -89,7 +89,7 @@ describe('MoreDropdown', () => {
     });
 
     it('should contain no option in more when screen is extra tiny', async () => {
-        await render(<MoreDropdown {...isExtraTinyProps} />);
+        await mailTestRender(<MoreDropdown {...isExtraTinyProps} />);
         const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
@@ -101,7 +101,7 @@ describe('MoreDropdown', () => {
     it('should have all move actions returned by useLabelAction hook', async () => {
         useLabelActionMock.mockReturnValue([['inbox', 'trash', 'archive', 'spam', 'nospam', 'delete'], ['']]);
 
-        await render(<MoreDropdown {...isExtraTinyProps} />);
+        await mailTestRender(<MoreDropdown {...isExtraTinyProps} />);
         const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
@@ -116,7 +116,7 @@ describe('MoreDropdown', () => {
     it('should have only move actions returned by useLabelAction hook', async () => {
         useLabelActionMock.mockReturnValue([['inbox', 'trash', 'error'], ['not real']]);
 
-        await render(<MoreDropdown {...isExtraTinyProps} />);
+        await mailTestRender(<MoreDropdown {...isExtraTinyProps} />);
         const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
@@ -127,7 +127,7 @@ describe('MoreDropdown', () => {
     it('should have no move actions when screen is not extra tiny', async () => {
         useLabelActionMock.mockReturnValue([['inbox', 'trash', 'archive', 'spam', 'nospam', 'delete'], ['']]);
 
-        await render(<MoreDropdown {...isTinyProps} />);
+        await mailTestRender(<MoreDropdown {...isTinyProps} />);
         const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 

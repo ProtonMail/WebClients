@@ -7,7 +7,7 @@ import { addDays } from '@proton/shared/lib/date-fns-utc';
 
 import { formatDateToHuman } from '../../../../helpers/date';
 import { clearAll } from '../../../../helpers/test/helper';
-import { render } from '../../../../helpers/test/render';
+import { mailTestRender } from '../../../../helpers/test/render';
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import ExtraSnoozedMessage from './ExtraSnoozedMessage';
 
@@ -62,7 +62,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = new Date();
         const message = getMessage(sendingDate);
 
-        await render(<ExtraSnoozedMessage message={message} />);
+        await mailTestRender(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -75,7 +75,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addHours(new Date(), 1);
         const message = getMessage(sendingDate);
 
-        await render(<ExtraSnoozedMessage message={message} />);
+        await mailTestRender(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -89,7 +89,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addDays(new Date(), 1);
         const message = getMessage(sendingDate);
 
-        await render(<ExtraSnoozedMessage message={message} />);
+        await mailTestRender(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -102,7 +102,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addDays(new Date(), 100);
         const message = getMessage(sendingDate);
 
-        await render(<ExtraSnoozedMessage message={message} />);
+        await mailTestRender(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime, dateString } = formatDateToHuman(sendingDate);
 
@@ -122,7 +122,7 @@ describe('Scheduled messages banner', () => {
             canUnsnooze: true,
         });
 
-        await render(<ExtraSnoozedMessage message={message} />);
+        await mailTestRender(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -149,7 +149,7 @@ describe('Scheduled messages banner', () => {
             canUnsnooze: true,
         });
 
-        await render(<ExtraSnoozedMessage message={message} />);
+        await mailTestRender(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -174,7 +174,7 @@ describe('Scheduled messages banner', () => {
             canUnsnooze: false,
         });
 
-        await render(<ExtraSnoozedMessage message={message} />);
+        await mailTestRender(<ExtraSnoozedMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 

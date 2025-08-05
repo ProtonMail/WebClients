@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { render } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from 'proton-mail/helpers/test/render';
 
 import { activeSubscription, unsubscribedSubscription } from '../testData';
 import { NewsletterSubscriptionCardActiveFilter } from './NewsletterSubscriptionCardActiveFilter';
@@ -21,7 +21,7 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
     });
 
     it('should return null if the subscription has no filter', async () => {
-        await render(<NewsletterSubscriptionCardActiveFilter subscription={activeSubscription} />);
+        await mailTestRender(<NewsletterSubscriptionCardActiveFilter subscription={activeSubscription} />);
         const filter = screen.queryByTestId('subscription-filter-wrapper');
         expect(filter).not.toBeInTheDocument();
     });
@@ -32,7 +32,7 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
             MarkAsRead: true,
         };
 
-        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+        await mailTestRender(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
 
         const markAsReadFilter = screen.getByTestId('subscription-filter-wrapper');
         expect(markAsReadFilter).toBeInTheDocument();
@@ -45,7 +45,7 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
             MoveToFolder: MAILBOX_LABEL_IDS.TRASH,
         };
 
-        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+        await mailTestRender(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
 
         const moveToFolderFilter = screen.queryByTestId('subscription-filter-wrapper');
         expect(moveToFolderFilter).not.toBeInTheDocument();
@@ -58,7 +58,7 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
             FilterID: 'temporaryFilterID',
         };
 
-        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+        await mailTestRender(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
 
         const moveToFolderFilter = screen.getByTestId('subscription-filter-wrapper');
         expect(moveToFolderFilter).toBeInTheDocument();
@@ -71,7 +71,7 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
             MoveToFolder: MAILBOX_LABEL_IDS.ARCHIVE,
         };
 
-        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+        await mailTestRender(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
 
         const moveToFolderFilter = screen.queryByTestId('subscription-filter-wrapper');
         expect(moveToFolderFilter).not.toBeInTheDocument();
@@ -84,7 +84,7 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
             FilterID: 'temporaryFilterID',
         };
 
-        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+        await mailTestRender(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
 
         const moveToFolderFilter = screen.getByTestId('subscription-filter-wrapper');
         expect(moveToFolderFilter).toBeInTheDocument();
@@ -97,7 +97,7 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
             MoveToFolder: 'custom-folder-1',
         };
 
-        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+        await mailTestRender(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
 
         const moveToFolderFilter = screen.queryByTestId('subscription-filter-wrapper');
         expect(moveToFolderFilter).not.toBeInTheDocument();
@@ -110,7 +110,7 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
             FilterID: 'temporaryFilterID',
         };
 
-        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+        await mailTestRender(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
 
         const moveToFolderFilter = screen.getByTestId('subscription-filter-wrapper');
         expect(moveToFolderFilter).toBeInTheDocument();
@@ -133,7 +133,7 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
             FilterID: 'filter-1',
         };
 
-        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+        await mailTestRender(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
 
         const filterStatus = screen.getByTestId('subscription-filter-wrapper');
         expect(filterStatus).toHaveTextContent('The filter is disabled.');
@@ -145,7 +145,7 @@ describe('NewsletterSubscriptionCardActiveFilter', () => {
             MarkAsRead: true,
         };
 
-        await render(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
+        await mailTestRender(<NewsletterSubscriptionCardActiveFilter subscription={subscription} />);
 
         const markAsReadFilter = screen.getByTestId('subscription-filter-wrapper');
         expect(markAsReadFilter).toBeInTheDocument();

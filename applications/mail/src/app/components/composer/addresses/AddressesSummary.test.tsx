@@ -5,7 +5,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
 
 import { getRecipientLabel } from '../../../helpers/message/messageRecipients';
-import { clearAll, render } from '../../../helpers/test/helper';
+import { clearAll, mailTestRender } from '../../../helpers/test/helper';
 import type { RecipientType } from '../../../models/address';
 import { refresh } from '../../../store/contacts/contactsActions';
 import { prepareMessage } from '../tests/Composer.test.helpers';
@@ -33,7 +33,7 @@ describe('AddressesSummary', () => {
     const composerID = 'composer-test-id';
 
     it('should render a recipient', async () => {
-        await render(<AddressesSummary {...props} composerID={composerID} />, {
+        await mailTestRender(<AddressesSummary {...props} composerID={composerID} />, {
             onStore: (store) => {
                 prepareMessage(
                     store,
@@ -51,7 +51,7 @@ describe('AddressesSummary', () => {
     });
 
     it('should render a group', async () => {
-        await render(<AddressesSummary {...props} composerID={composerID} />, {
+        await mailTestRender(<AddressesSummary {...props} composerID={composerID} />, {
             onStore: (store) => {
                 prepareMessage(
                     store,
@@ -70,7 +70,7 @@ describe('AddressesSummary', () => {
     });
 
     it('should render a recipient and a group', async () => {
-        await render(<AddressesSummary {...props} composerID={composerID} />, {
+        await mailTestRender(<AddressesSummary {...props} composerID={composerID} />, {
             onStore: (store) => {
                 prepareMessage(
                     store,

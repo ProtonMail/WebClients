@@ -8,7 +8,7 @@ import type { Address, AddressKey, Recipient, UserModel } from '@proton/shared/l
 import { minimalCache } from '../../../helpers/test/cache';
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import type { GeneratedKey } from '../../../helpers/test/helper';
-import { addApiKeys, addApiMock, clearAll, generateKeys, render } from '../../../helpers/test/helper';
+import { addApiKeys, addApiMock, clearAll, generateKeys, mailTestRender } from '../../../helpers/test/helper';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import Composer from '../Composer';
 import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
@@ -81,7 +81,7 @@ describe('Composer verify sender', () => {
         addApiKeys(false, sender.Address, []);
 
         const composerID = 'composer-test-id';
-        const { store, ...rest } = await render(<></>, {
+        const { store, ...rest } = await mailTestRender(<></>, {
             preloadedState: {
                 user: getModelState(user),
                 addresses: getModelState(addresses),

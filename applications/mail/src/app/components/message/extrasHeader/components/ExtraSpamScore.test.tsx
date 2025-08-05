@@ -3,7 +3,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import { render } from 'proton-mail/helpers/test/helper';
+import { mailTestRender } from 'proton-mail/helpers/test/helper';
 
 import ExtraSpamScore from './ExtraSpamScore';
 
@@ -15,7 +15,7 @@ describe('ExtraSpamScore', () => {
             },
         } as unknown as MessageStateWithData;
 
-        await render(<ExtraSpamScore message={message} />);
+        await mailTestRender(<ExtraSpamScore message={message} />);
         expect(screen.getByTestId('spam-banner:dmarc-validation-failure')).toBeInTheDocument();
     });
 
@@ -26,7 +26,7 @@ describe('ExtraSpamScore', () => {
             },
         } as unknown as MessageStateWithData;
 
-        await render(<ExtraSpamScore message={message} />);
+        await mailTestRender(<ExtraSpamScore message={message} />);
         expect(screen.getByTestId('spam-banner:phishing-banner')).toBeInTheDocument();
     });
 
@@ -37,7 +37,7 @@ describe('ExtraSpamScore', () => {
             },
         } as unknown as MessageStateWithData;
 
-        await render(<ExtraSpamScore message={message} />);
+        await mailTestRender(<ExtraSpamScore message={message} />);
 
         fireEvent.click(screen.getByTestId('spam-banner:mark-legitimate'));
         expect(screen.getByTestId('spam-banner:mark-legitimate-prompt')).toBeInTheDocument();
@@ -51,7 +51,7 @@ describe('ExtraSpamScore', () => {
                 },
             } as unknown as MessageStateWithData;
 
-            await render(<ExtraSpamScore message={message} />);
+            await mailTestRender(<ExtraSpamScore message={message} />);
             expect(screen.getByTestId('spam-banner:phishing-banner')).toBeInTheDocument();
 
             const banner = screen.getByText(
@@ -68,7 +68,7 @@ describe('ExtraSpamScore', () => {
                 },
             } as unknown as MessageStateWithData;
 
-            await render(<ExtraSpamScore message={message} />);
+            await mailTestRender(<ExtraSpamScore message={message} />);
             const banner = screen.getByTestId('spam-banner:phishing-banner');
             expect(banner).toBeInTheDocument();
 

@@ -4,7 +4,7 @@ import { getModelState } from '@proton/account/test';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 
-import { clearAll, minimalCache, render } from '../../helpers/test/helper';
+import { clearAll, mailTestRender, minimalCache } from '../../helpers/test/helper';
 import MoveButtons from './MoveButtons';
 
 const labelID = 'labelID';
@@ -40,7 +40,7 @@ describe('MoveButtons', () => {
         const props = getProps(labelID);
         minimalCache();
 
-        await render(<MoveButtons {...props} />, {
+        await mailTestRender(<MoveButtons {...props} />, {
             preloadedState: {
                 categories: getModelState(labels),
             },
@@ -65,7 +65,7 @@ describe('MoveButtons', () => {
         ${MAILBOX_LABEL_IDS.ALL_SENT}   | ${'All Sent'}
     `(`should display trash, archive and delete actions in $label`, async ({ labelID }) => {
         const props = getProps(labelID);
-        await render(<MoveButtons {...props} />);
+        await mailTestRender(<MoveButtons {...props} />);
 
         // Actions displayed
         screen.getByText('Move to trash');
@@ -80,7 +80,7 @@ describe('MoveButtons', () => {
 
     it('should display trash and archive actions in Scheduled', async () => {
         const props = getProps(MAILBOX_LABEL_IDS.SCHEDULED);
-        await render(<MoveButtons {...props} />);
+        await mailTestRender(<MoveButtons {...props} />);
 
         // Actions displayed
         screen.getByText('Move to trash');
@@ -95,7 +95,7 @@ describe('MoveButtons', () => {
 
     it('should display trash, inbox and spam actions in Archive', async () => {
         const props = getProps(MAILBOX_LABEL_IDS.ARCHIVE);
-        await render(<MoveButtons {...props} />);
+        await mailTestRender(<MoveButtons {...props} />);
 
         // Actions displayed
         screen.getByText('Move to trash');
@@ -110,7 +110,7 @@ describe('MoveButtons', () => {
 
     it('should display trash, nospam and delete actions in Spam', async () => {
         const props = getProps(MAILBOX_LABEL_IDS.SPAM);
-        await render(<MoveButtons {...props} />);
+        await mailTestRender(<MoveButtons {...props} />);
 
         // Actions displayed
         screen.getByText('Move to trash');
@@ -125,7 +125,7 @@ describe('MoveButtons', () => {
 
     it('should display inbox, archive and delete actions in Trash', async () => {
         const props = getProps(MAILBOX_LABEL_IDS.TRASH);
-        await render(<MoveButtons {...props} />);
+        await mailTestRender(<MoveButtons {...props} />);
 
         // Actions displayed
         screen.getByText('Move to inbox');
