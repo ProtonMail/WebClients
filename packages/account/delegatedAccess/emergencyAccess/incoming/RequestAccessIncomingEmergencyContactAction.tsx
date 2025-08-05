@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
 import { requestDelegatedAccessThunk } from '../../incomingActions';
+import { useDispatch } from '../../useDispatch';
 import { useIncomingController } from './IncomingController';
 import { RequestAccessIncomingEmergencyContactModal } from './RequestAccessIncomingEmergencyContactModal';
 import type { EnrichedIncomingDelegatedAccess } from './interface';

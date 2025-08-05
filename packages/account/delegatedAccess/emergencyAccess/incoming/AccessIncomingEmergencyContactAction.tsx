@@ -2,11 +2,11 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { accessDelegatedAccessThunk } from '../../incomingActions';
+import { useDispatch } from '../../useDispatch';
 import AccessIncomingEmergencyContactModal from './AccessIncomingEmergencyContactModal';
 import { useIncomingController } from './IncomingController';
 import type { EnrichedIncomingDelegatedAccess } from './interface';
