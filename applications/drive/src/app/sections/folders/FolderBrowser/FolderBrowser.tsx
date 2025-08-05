@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
+import { useShallow } from 'zustand/react/shallow';
+
 import { useActiveBreakpoint } from '@proton/components';
 import { MemberRole, ThumbnailType, splitNodeUid, useDrive } from '@proton/drive/index';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
@@ -30,8 +32,9 @@ import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../../store';
-import { useDocumentActions } from '../../../store';
+import { useDocumentActions, useUserSettings } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
+import { useControlledSorting } from '../../../store/_views/utils';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
@@ -39,7 +42,7 @@ import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store'
 import { EmptyDeviceRoot } from '../EmptyFolder/EmptyDeviceRoot';
 import { EmptyFolder } from '../EmptyFolder/EmptyFolder';
 import { getSelectedItems } from '../getSelectedItems';
-import type { useFolder } from '../useFolder';
+import { useFolderStore } from '../useFolder.store';
 import { FolderContextMenu } from './FolderContextMenu';
 import { FolderItemContextMenu } from './FolderItemContextMenu';
 
@@ -65,7 +68,6 @@ export interface DriveItem extends FileBrowserBaseItem {
 
 interface Props {
     activeFolder: DriveFolder;
-    folderView: ReturnType<typeof useFolder>;
 }
 
 type ItemWithAdditionalProps = LegacyItem & {
@@ -94,7 +96,7 @@ const headerItemsSmallScreen: ListViewHeaderItem[] = [headerItems.checkbox, head
 type DriveSortFields = Extract<SortField, SortField.name | SortField.fileModifyTime | SortField.size>;
 const SORT_FIELDS: DriveSortFields[] = [SortField.name, SortField.fileModifyTime, SortField.size];
 
-export function FolderBrowser({ activeFolder, folderView }: Props) {
+export function FolderBrowser({ activeFolder }: Props) {
     const { shareId, linkId } = activeFolder;
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
@@ -108,13 +110,31 @@ export function FolderBrowser({ activeFolder, folderView }: Props) {
     const { openDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(folderView.layout, folderView.isLoading);
-    const { role, layout, folderName, legacyItems: items, sortParams, setSorting, isLoading } = folderView;
-    const isAdmin = role === MemberRole.Admin;
     const { thumbnails, setThumbnail } = useThumbnailStore();
     const openPreview = useOpenPreview();
+    const {
+        items: folderItems,
+        permissions,
+        isLoading,
+        role,
+        folder,
+    } = useFolderStore(
+        useShallow((state) => ({
+            isLoading: state.isLoading,
+            role: state.role,
+            items: state.getFolderItems(),
+            permissions: state.permissions,
+            folder: state.folder,
+        }))
+    );
 
-    const browserItems: ItemWithAdditionalProps[] = items.map((node) => ({
+    const { layout, sort, changeSort } = useUserSettings();
+    const { sortedList, sortParams, setSorting } = useControlledSorting(folderItems, sort, changeSort);
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
+    const isAdmin = role === MemberRole.Admin;
+
+    // ItemWithAdditionalProps[]
+    const browserItems = sortedList.map((node) => ({
         ...node,
         isAdmin,
         cachedThumbnailUrl: thumbnails[node.thumbnailId]?.sdUrl,
@@ -221,12 +241,12 @@ export function FolderBrowser({ activeFolder, folderView }: Props) {
         browserItemContextMenu.close();
     }, [shareId, linkId]);
 
-    if (!items.length && !isLoading) {
-        if (folderView.isActiveLinkReadOnly) {
+    if (!browserItems.length && !isLoading) {
+        if (!permissions.canEdit) {
             return <EmptyDeviceRoot />;
         }
 
-        return <EmptyFolder shareId={shareId} role={role} />;
+        return <EmptyFolder shareId={shareId} />;
     }
 
     const Cells = viewportWidth['>=large'] ? myFilesLargeScreenCells : myFilesSmallScreenCells;
@@ -235,10 +255,6 @@ export function FolderBrowser({ activeFolder, folderView }: Props) {
     return (
         <>
             <FolderContextMenu
-                role={role}
-                isActiveLinkReadOnly={folderView.isActiveLinkReadOnly}
-                isActiveLinkRoot={folderView.isActiveLinkRoot}
-                isActiveLinkInDeviceShare={folderView.isActiveLinkInDeviceShare}
                 shareId={shareId}
                 anchorRef={contextMenuAnchorRef}
                 close={browserContextMenu.close}
@@ -247,8 +263,6 @@ export function FolderBrowser({ activeFolder, folderView }: Props) {
                 position={browserContextMenu.position}
             />
             <FolderItemContextMenu
-                role={role}
-                isActiveLinkReadOnly={folderView.isActiveLinkReadOnly}
                 shareId={shareId}
                 selectedItems={selectedItems}
                 anchorRef={contextMenuAnchorRef}
@@ -259,7 +273,7 @@ export function FolderBrowser({ activeFolder, folderView }: Props) {
             />
             <FileBrowser
                 // data
-                caption={folderName}
+                caption={folder?.name}
                 headerItems={headerItems}
                 items={browserItems}
                 layout={layout}
@@ -277,7 +291,7 @@ export function FolderBrowser({ activeFolder, folderView }: Props) {
                 onSort={setSorting}
                 onScroll={handleScroll}
                 onViewContextMenu={browserContextMenu.handleContextMenu}
-                getDragMoveControls={folderView.isActiveLinkReadOnly ? undefined : getDragMoveControls}
+                getDragMoveControls={permissions.canEdit ? getDragMoveControls : undefined}
             />
             {linkSharingModal}
         </>
