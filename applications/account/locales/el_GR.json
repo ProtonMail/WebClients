@@ -652,6 +652,9 @@
       "Enable multi-user support": [
         "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
       ],
+      "Enable post-quantum protection": [
+        "Ενεργοποίηση μετά-κβαντικής προστασίας"
+      ],
       "Encrypt and export": [
         "Κρυπτογράφηση και εξαγωγή"
       ],
@@ -1458,6 +1461,9 @@
       ],
       "Upgrade": [
         "Αναβάθμιση"
+      ],
+      "Upgrade for 200GB": [
+        "Αναβάθμιση για 200GB"
       ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
@@ -6799,6 +6805,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Καταλαβαίνω ότι δε θα μπορώ να συνδεθώ από παλαιότερες εκδόσεις των κινητών εφαρμογών ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "εφαρμογή ιστού"
@@ -7871,8 +7882,8 @@
       "Add a recovery phone number": [
         "Προσθήκη ενός τηλεφωνικού αριθμού ανάκτησης"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Προσθέστε άλλο ένα επίπεδο ασφάλειας στον λογαριασμό σας. Θα πρέπει να επαληθεύετε τον εαυτό σας με έλεγχο ταυτότητας δύο παραγόντων κάθε φορά που συνδέεστε."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Προσθέστε ένα επιπλέον επίπεδο ασφαλείας στον λογαριασμό σας. Θα χρειαστεί να επαληθεύετε τον εαυτό σας με 2FA κάθε φορά που συνδέεστε. Συνιστούμε να χρησιμοποιείτε το ${ protonAuthenticatorDownloadLink } για την αποθήκευση των κωδικών 2FA."
       ],
       "Add domain": [
         "Προσθήκη τομέα"
@@ -8153,6 +8164,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "Με την ενεργοποίηση της μετα-κβαντικής προστασίας, θα δημιουργηθούν κλειδιά ανθεκτικά σε κβαντικούς υπολογιστές για τον λογαριασμό σας."
       ],
       "By leaving now, changes may not be saved": [
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
@@ -8611,6 +8625,9 @@
       ],
       "Example: ${ spfExample }": [
         "Παράδειγμα: ${ spfExample }"
+      ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "Οι υπάρχουσες προωθήσεις ηλεκτρονικού ταχυδρομείου που είναι κρυπτογραφημένες από άκρο σε άκρο θα πρέπει να ενεργοποιηθούν ξανά χειροκίνητα κάτω από **${ autoReplySettingsTitle }** στις ρυθμίσεις."
       ],
       "Expired": [
         "Ληγμένο"
@@ -9792,6 +9809,9 @@
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Η υποστήριξη για την παρακολούθηση προσαρμοσμένων τομέων και μη ${ BRAND_NAME } διευθύνσεων ηλεκτρονικού ταχυδρομείου θα είναι σύντομα διαθέσιμη."
       ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "Η υποστήριξη για μετα-κβαντικά κλειδιά έχει ενεργοποιηθεί για τον λογαριασμό σας."
+      ],
       "support team": [
         "ομάδα υποστήριξης"
       ],
@@ -10739,9 +10759,6 @@
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Οι υπάρχουσες προωθήσεις σας με διατερματική κρυπτογράφηση προς άλλους χρήστες θα τεθούν σε παύση. Μπορείτε να τις ενεργοποιήσετε ξανά μη αυτόματα στις ρυθμίσεις «${ autoReplySettingsTitle }»."
-      ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
       ],
@@ -11013,37 +11030,37 @@
       "Generate key": [
         "Δημιουργία κλειδιού"
       ],
-      "Generating key failed. Please try again later.": [
-        "Η δημιουργία κλειδιού απέτυχε. Προσπαθήστε ξανά αργότερα."
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Εάν δημιουργήσατε αυτό το κλειδί επειδή υποψιάζεστε ότι το προηγούμενο κλειδί σας παραβιάστηκε, παρακαλούμε επισημάνετέ το ως παραβιασμένο στις ρυθμίσεις σας."
       ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Εάν δημιουργείτε ένα νέο κλειδί επειδή πιστεύετε ότι το υπάρχον κλειδί σας έχει παραβιαστεί, επισημάνετέ το ως παραβιασμένο μετά τη δημιουργία αυτού του κλειδιού."
+      "Key generation failed, please try again later.": [
+        "Η δημιουργία κλειδιού απέτυχε, παρακαλούμε προσπαθήστε ξανά αργότερα."
       ],
       "Key successfully generated.": [
         "Το κλειδί δημιουργήθηκε με επιτυχία."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Σημείωση: έχετε ήδη ένα κλειδί με τον ίδιο αλγόριθμο για αυτή τη διεύθυνση. Εκτός εάν αυτό το κλειδί έχει παραβιαστεί, ενδέχεται να μην είναι απαραίτητο να δημιουργήσετε ένα νέο κλειδί και κάτι τέτοιο μπορεί να επιβραδύνει τον λογαριασμό σας."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Σημείωση: έχετε ήδη ένα κλειδί με τον ίδιο αλγόριθμο για αυτόν τον χρήστη. Εκτός εάν αυτό το κλειδί έχει παραβιαστεί, ενδέχεται να μην είναι απαραίτητο να δημιουργήσετε ένα νέο κλειδί και κάτι τέτοιο μπορεί να επιβραδύνει τον λογαριασμό σας."
+      "New key generated": [
+        "Δημιουργήθηκε νέο κλειδί"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Αυτό θα δημιουργήσει ένα νέο κλειδί, το οποίο θα χρησιμοποιηθεί για την κρυπτογράφηση μελλοντικών στοιχείων επικοινωνίας, κλειδιών κρυπτογράφησης μηνυμάτων και άλλων δεδομένων."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Αυτό θα δημιουργήσει ένα νέο κλειδί, το οποίο θα χρησιμοποιηθεί για την κρυπτογράφηση μελλοντικών μηνυμάτων ηλεκτρονικού ταχυδρομείου, μεταξύ άλλων δεδομένων."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Αυτό θα δημιουργήσει ένα νέο κλειδί, το οποίο θα χρησιμοποιηθεί για την κρυπτογράφηση μελλοντικών μηνυμάτων ηλεκτρονικού ταχυδρομείου και άλλων δεδομένων, για τη **${ emailAddress }**."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "Έχετε ήδη αυτόν τον τύπο κλειδιού. Εκτός αν αυτό το κλειδί έχει παραβιαστεί, η δημιουργία **ενός νέου κλειδιού μπορεί να επιβραδύνει τον λογαριασμό σας**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Συμβατότητα"
-      ],
       "Compromised": [
         "Εκτεθειμένο"
       ],
       "Disabled": [
         "Απενεργοποιημένο"
+      ],
+      "Fallback": [
+        "Εφεδρικό"
       ],
       "Forwarding": [
         "Προώθηση"
@@ -11059,6 +11076,27 @@
       ],
       "Primary": [
         "Κύριο"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Γρηγορώτερα"
+      ],
+      "Slower, but stronger long-term security": [
+        "Πιο αργός, αλλά ισχυρότερη μακροπρόθεσμη ασφάλεια"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Επιλέξτε τύπο κλειδιού"
       ]
     },
     "Keyboard shortcut name": {
@@ -11297,8 +11335,8 @@
       "Export public key": [
         "Εξαγωγή δημόσιου κλειδιού"
       ],
-      "Make primary": [
-        "Ορισμός ως κύριου"
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "Κάνει αυτό το ${ keyStatusBadgeTitles.primary } ή ${ keyStatusBadgeTitles.fallback } κλειδί για την κρυπτογράφηση και την υπογραφή."
       ],
       "Mark compromised": [
         "Επισήμανση ως πιθανώς επικίνδυνο"
@@ -11311,6 +11349,9 @@
       ],
       "Mark obsolete": [
         "Επισήμανση ως ξεπερασμένο"
+      ],
+      "Use for encryption and signing": [
+        "Χρησιμοποιήστε για κρυπτογράφηση και υπογραφή"
       ]
     },
     "Knowledge base link label": {
@@ -11962,6 +12003,9 @@
       ],
       "Key": [
         "Κλειδί"
+      ],
+      "Key strength": [
+        "Ισχύς κλειδιού"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Συντόμευση πληκτρολογίου: ${ shortcut }"
@@ -14847,12 +14891,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Αποκτήστε ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Αποκτήστε το Drive Plus για μόνο ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Αποκτήστε το Mail Plus για μόνο ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
       ],
@@ -14864,6 +14902,9 @@
       ],
       "Limited-time offer": [
         "Προσφορά περιορισμένου χρόνου"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Προσφορά περιορισμένου χρόνου, ισχύει για τον πρώτο σας μήνα"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
@@ -14877,9 +14918,6 @@
       "Save": [
         "Εξοικονομήστε"
       ],
-      "Save 80% on your first month.": [
-        "Εξοικονομήστε 80% τον πρώτο μήνα σας."
-      ],
       "Save big when you pay annually": [
         "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
       ],
@@ -14888,6 +14926,12 @@
       ],
       "This offer won't be shown again.": [
         "Αυτή η προσφορά δε θα εμφανιστεί ξανά."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Αναβαθμίστε την παραγωγικότητά σας μόνο για ${ pricingTitle } με ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Αναβαθμίστε τον αποθηκευτικό σας χώρο για μόλις ${ pricingTitle } με ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Όταν αλλάζετε από μηνιαία σε ετήσια συνδρομή."
@@ -14914,23 +14958,26 @@
       "Advanced threat protection": [
         "Προηγμένη προστασία απειλών"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Συνεργαστείτε με μη-${ BRAND_NAME } χρήστες"
+      ],
       "Custom email domain": [
         "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Edit docs online": [
+        "Επεξεργασία εγγράφων online"
       ],
       "Email addresses": [
         "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
+      "File version history (over 1 week)": [
+        "Ιστορικό εκδόσεων αρχείου (πάνω από 1 εβδομάδα)"
+      ],
       "Free": [
         "Δωρεάν"
       ],
-      "Online document editor": [
-        "Online επεξεργαστής εγγράφου"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
       ],
       "Storage": [
         "Αποθηκευτικός χώρος"
@@ -16368,6 +16415,61 @@
         "Αναβάθμιση σε ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Η μετα-κβαντική προστασία έχει ενεργοποιηθεί στον λογαριασμό σας, αλλά ορισμένες ενέργειες δεν ήταν επιτυχείς: η μετα-κβαντική δημιουργία κλειδιών λογαριασμού και διεύθυνσης απέτυχε. Μπορείτε να δημιουργήσετε αυτά τα κλειδιά χειροκίνητα στις ρυθμίσεις ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Μετα-κβαντική προστασία έχει ενεργοποιηθεί στον λογαριασμό σας, αλλά ορισμένες ενέργειες δεν ήταν επιτυχείς: η δημιουργία μετα-κβαντικών κλειδιών διευθύνσεων για μία ή περισσότερες διευθύνσεις απέτυχε. Μπορείτε να δημιουργήσετε αυτά τα κλειδιά χειροκίνητα υπό τις ρυθμίσεις ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Παρακαλώ ενημερώστε **όλες τις εφαρμογές σας για κινητά ${ BRAND_NAME }** στην τελευταία έκδοση."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "Αυτό θα δημιουργήσει ένα νέο κλειδί λογαριασμού και ένα νέο κλειδί κρυπτογράφησης ηλεκτρονικής διεύθυνσης για κάθε διεύθυνση· αυτά θα χρησιμοποιηθούν για κρυπτογράφηση και αποκρυπτογράφηση μελλοντικών ηλεκτρονικών διευθύνσεων και άλλων δεδομένων."
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "Ενεργοποίηση και δημιουργία κλειδιών"
+      ],
+      "Enable post-quantum protection": [
+        "Ενεργοποίηση μετά-κβαντικής προστασίας"
+      ],
+      "Enable post-quantum protection?": [
+        "Ενεργοποίηση μετά-κβαντικής προστασίας;"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "Η ενεργοποίηση της μετα-κβαντικής προστασίας απέτυχε. Δοκιμάστε ξανά αργότερα."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Το κατάλαβα"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "Η μετα-κβαντική προστασία έχει ενεργοποιηθεί στον λογαριασμό σας!"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Δημιουργία μετα-κβαντικού κλειδιού λογαριασμού"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "Δημιουργία μετα-κβαντικών κλειδιών διεύθυνσης για κάθε διεύθυνση"
+      ],
+      "Opting into post-quantum protection": [
+        "Ενεργοποίηση μετά-κβαντικής προστασίας"
+      ]
+    },
     "Price": {
       "Free": [
         "Δωρεάν"
@@ -16506,6 +16608,14 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Η επαλήθευση του αριθμού τηλεφώνου σας αυξάνει την ασφάλεια του λογαριασμού σας και επιτρέπει πρόσθετες επιλογές ανάκτησης."
+      ]
+    },
+    "Remark about a key type option": {
+      "Classic": [
+        "Κλασικός"
+      ],
+      "Post-quantum": [
+        "Μετα-κβαντικός"
       ]
     },
     "Remove calendar section description": {
@@ -16674,8 +16784,8 @@
       "Retention period": [
         "Περίοδος διατήρησης"
       ],
-      "Retention rule": [
-        "Κανόνας Διατήρησης"
+      "Rule title": [
+        "Τίτλος κανόνα"
       ],
       "Select product": [
         "Επιλογή προϊόντος"
@@ -20789,6 +20899,9 @@
       "Policies": [
         "Πολιτικές"
       ],
+      "Post-quantum protection": [
+        "Μετα-κβαντική προστασία"
+      ],
       "Preview": [
         "Προεπισκόπηση"
       ],
@@ -21132,8 +21245,17 @@
       "Upgrade plan": [
         "Αναβάθμιση προγράμματος"
       ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
+      ],
       "Upgrade your privacy": [
         "Αναβαθμίστε το απόρρητό σας"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Αναβαθμίστε την παραγωγικότητά σας για ${ formattedPrice } με ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Αναβαθμίστε τον αποθηκευτικό σας χώρο για ${ formattedPrice } με ${ planName }"
       ],
       "Upload and share files": [
         "Μεταφορτώστε και μοιραστείτε αρχεία"

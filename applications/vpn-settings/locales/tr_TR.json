@@ -867,6 +867,9 @@
       "Upgrade": [
         "Yükselt"
       ],
+      "Upgrade for 200GB": [
+        "200GB boyutuna artırın"
+      ],
       "Upgrade now": [
         "Şimdi yükselt"
       ],
@@ -1707,6 +1710,9 @@
       ],
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
+      ],
+      "Maybe later": [
+        "Belki daha sonra"
       ],
       "Remind me later": [
         "Daha sonra hatırlat"
@@ -4588,8 +4594,8 @@
       "add a recovery method": [
         "bir kurtarma yöntemi ekleyin"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açtığınızda iki adımlı doğrulama ile kimliğinizi doğrulamanız gerekir."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açışınızda iki adımlı yapmanız gerekecektir. İki adımlı doğrulama kodlarınızı kaydetmek için ${ protonAuthenticatorDownloadLink } kullanmanızı öneririz."
       ],
       "Add domain": [
         "Etki alanı ekle"
@@ -8831,12 +8837,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited tarifesini alın"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Yalnızca ${ pricingTitle } ile Mail Plus aboneliği edinin."
-      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ],
@@ -8848,6 +8848,9 @@
       ],
       "Limited-time offer": [
         "Sınırlı süreli teklif"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Sınırlı süreli teklif, ilk ayınız için geçerlidir"
       ],
       "Maybe later": [
         "Belki daha sonra"
@@ -8861,9 +8864,6 @@
       "Save": [
         "İndirim"
       ],
-      "Save 80% on your first month.": [
-        "İlk ayınızda % 80 indirim kazanın."
-      ],
       "Save big when you pay annually": [
         "Yıllık ödeme yaparak büyük indirim kazanın"
       ],
@@ -8872,6 +8872,12 @@
       ],
       "This offer won't be shown again.": [
         "Bu teklif bir daha görüntülenmeyecek."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName } ile yalnızca ${ pricingTitle } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Depolama alanınızı yalnızca ${ pricingTitle } ödeyerek ${ planName } ile artırın"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Aylık abonelikten yıllık aboneliğe geçtiğinizde."
@@ -8898,23 +8904,26 @@
       "Advanced threat protection": [
         "Gelişmiş tehdit koruması"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "${ BRAND_NAME } dışı kullanıcılarla işbirliği yapın"
+      ],
       "Custom email domain": [
         "Özel e-posta etki alanı"
+      ],
+      "Edit docs online": [
+        "Belgeleri çevrim içi düzenleyin"
       ],
       "Email addresses": [
         "E-posta adresleri"
       ],
+      "File version history (over 1 week)": [
+        "Dosya sürümü geçmişi (1 haftadan eski)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükle"
       ],
       "Storage": [
         "Depolama alanı"
@@ -9839,7 +9848,7 @@
     },
     "retention_policy_2025_Confirmation": {
       "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
-        "${ strongText } ile, Gelen kutusu, Gönderilmiş ve Taslaklar klasörlerindeki iletileri kapsar. Bu uygulama, kullanıcıların tutulacağını düşündüğü iletileri temizleyebilir. Bu iletiler daha sonra kurtarılamaz."
+        "${ strongText }, Gelen, Gönderilmiş ve Taslaklar kutularındaki iletileri kapsar. Bu uygulama, kullanıcıların tutulacağını düşündüğü iletileri temizleyebilir. Bu iletiler daha sonra kurtarılamaz."
       ],
       "After ${ lifetime } day all messages will be deleted": [
         "${ lifetime } gün sonra tüm iletiler silinecek",
@@ -9878,7 +9887,7 @@
         "Sonsuza dek"
       ],
       "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
-        "Gelen kutusu, Gönderilmiş ve diğer tüm konumlardaki tüm iletileri kapsar. Temizlenen iletiler kurtarılamaz."
+        "Gelen ve Gönderilmiş kutuları ile diğer tüm konumlardaki tüm iletileri kapsar. Temizlenen iletiler kurtarılamaz."
       ],
       "Removes messages already deleted by users.": [
         "Kullanıcılar tarafından zaten silinmiş iletileri siler."
@@ -9912,8 +9921,8 @@
       "Retention period": [
         "Verileri tutma süresi"
       ],
-      "Retention rule": [
-        "Verileri tutma kuralı"
+      "Rule title": [
+        "Kural başlığı"
       ],
       "Select product": [
         "Ürün seçin"
@@ -9944,7 +9953,7 @@
     },
     "retention_policy_2025_Placeholder": {
       "E.g. Cleanup unused mailboxes": [
-        "Örnek: Kullanılmayan e-posta kutularını temizleme"
+        "Örnek: Kullanılmayan e-posta kutularını temizlemek"
       ],
       "Enter duration": [
         "Süreyi yazın"
@@ -11108,6 +11117,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } size ayrılmış sunucu",
         "${ ipAddresses } size ayrılmış sunucu"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "En fazla ${ maxLumo } kullanıcı için ${ LUMO_APP_NAME }",
+        "En fazla ${ maxLumo } kullanıcı için ${ LUMO_APP_NAME }"
       ],
       "${ n } calendar per user": [
         "Her kullanıcı için ${ n } takvim",
@@ -12700,11 +12713,20 @@
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
       ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükseltin"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Size ayrılmış sunucular ile ağ korumanızı yükseltin"
       ],
       "Upgrade your privacy": [
         "Gizlilik düzeyinizi yükseltin"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName } ile ${ formattedPrice } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Depolama alanınızı ${ formattedPrice } ödeyerek ${ planName } ile artırın"
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"

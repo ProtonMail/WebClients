@@ -652,6 +652,9 @@
       "Enable multi-user support": [
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
       ],
+      "Enable post-quantum protection": [
+        "Уключыць постквантавую абарону"
+      ],
       "Encrypt and export": [
         "Зашыфраваць і экспартаваць"
       ],
@@ -1459,6 +1462,9 @@
       "Upgrade": [
         "Палепшыць"
       ],
+      "Upgrade for 200GB": [
+        "Палепшыць за 200 ГБ"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
       ],
@@ -1799,7 +1805,7 @@
     },
     "anniversary_2025": {
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ]
     },
     "anniversary_2025: Offer": {
@@ -4234,7 +4240,7 @@
         "Для бясшвовага пераходу ў ${ BRAND_NAME } імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
-        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
+        "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Атрымайце да ${ credits } у крэдытах запрасіўшы сябра ў ${ BRAND_NAME }."
@@ -4447,7 +4453,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Дапамажыце нам палепшыць наш сэрвіс"
+        "Дапамажыце палепшыць наш сэрвіс"
       ]
     },
     "Downgrade warning": {
@@ -4984,7 +4990,7 @@
         "Пераслана ад"
       ],
       "Forward to": [
-        "Перасылаць на"
+        "Перасылка на"
       ],
       "From": [
         "Ад"
@@ -5030,7 +5036,7 @@
         "Для сумяшчальнасці постквантавае шыфраванне будзе адключана, а новыя ключы шыфравання будуць згенерыраваны для ${ boldForwarderEmail }."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
-        "Атрымальнік перасылкі запрошаны і неабходна прыняць/адхіліць запрашэнне або абнавіць"
+        "Атрымальнік перасылкі запрошаны і неабходна прыняць, адхіліць або абнавіць запрашэнне"
       ],
       "Forwarding is active": [
         "Перасылка актыўная"
@@ -5039,7 +5045,7 @@
         "Перасылка на ${ boldForwardeeEmail } стане актыўнай пасля таго, як атрымальнік прыме запыт."
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "Перасылка на адрас без скразнога шыфравання прывядзе да адключэння скразнога шыфравання для вашага адраса ${ boldForwarderEmail }, але шыфраванне нулявога доступу застанецца ўключаным.${ learnMoreLink }"
+        "Перасылка на адрас без скразнога шыфравання прывядзе да адключэння скразнога шыфравання для вашага адраса ${ boldForwarderEmail }, але шыфраванне нулявога доступу застанецца ўключаным. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
         "Перасылка на гэты адрас стане актыўнай пасля таго, як атрымальнік прыме перасылку."
@@ -5126,7 +5132,7 @@
         "Скразное шыфраванне будзе паўторна ўключана для адраса адпраўніка."
       ],
       "Forwarding to the destination address will end.": [
-        "Перасылка на адрас прызначэння будзе скасавана."
+        "Перасылка на адрас прызначэння будзе завершана."
       ]
     },
     "email_forwarding_2023: Status": {
@@ -6883,6 +6889,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Я разумею, што я больш не змагу ўвайсці са старых версій мабільных праграм ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "вэб-праграма"
@@ -7103,6 +7114,12 @@
       "Servers": [
         "Серверы"
       ],
+      "Sort folders": [
+        "Сартаваць папкі"
+      ],
+      "Sort labels": [
+        "Сартаваць меткі"
+      ],
       "Status": [
         "Статус"
       ],
@@ -7201,9 +7218,9 @@
       ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Знойдзена ${ itemsCount } прапанова. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
+        "Знойдзена ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Выкарыстоўвайце клавішы Уверх і Уніз, каб атрымаць доступ і прагледзець прапановы пасля ўводу. Націсніце Enter, каб пацвердзіць свой выбар або Escape, каб закрыць акно прапаноў."
@@ -7279,9 +7296,9 @@
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартавана.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Падчас шыфравання і дадавання вашай падзеі адбылася памылка. Ніводная падзея не была імпартавана."
@@ -7846,9 +7863,9 @@
       ],
       "${ selectedEntities.length } selected": [
         "${ selectedEntities.length } выбраны",
-        "${ selectedEntities.length } выбраны",
-        "${ selectedEntities.length } выбраны",
-        "${ selectedEntities.length } выбраны"
+        "${ selectedEntities.length } выбрана",
+        "${ selectedEntities.length } выбрана",
+        "${ selectedEntities.length } выбрана"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Выбрана ${ selectedFoldersCountLocalized } папка",
@@ -8021,8 +8038,8 @@
       "Add a recovery phone number": [
         "Дадаць нумар тэлефона для аднаўлення"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Дадайце яшчэ адзін слой абароны ў свой уліковы запіс. Вам неабходна будзе пацвярджаць сваю асобу з дапамогай 2ФА пры кожным уваходзе."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Дадайце яшчэ адзін узровень бяспекі да вашага ўліковага запісу. Вам трэба будзе пацвярджаць сябе з дапамогай 2ФА кожны раз, калі вы ўваходзіце. Мы рэкамендуем выкарыстоўваць ${ protonAuthenticatorDownloadLink } для захавання вашых 2ФА кодаў."
       ],
       "Add domain": [
         "Дадаць дамен"
@@ -8213,6 +8230,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Вы сапраўды хочаце выдаліць дамен ${ boldDomain }?"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "Вы сапраўды хочаце сартаваць вашыя папкі па алфавіце?"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "Вы сапраўды хочаце сартаваць свае меткі па алфавіце?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Папрасіце адміністратара сваёй арганізацыі наладзіць шлюзы."
       ],
@@ -8245,6 +8268,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
+      ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "Аўтаматычна паказваць наступны ліст, калі адкрыты ліст выдалены, заархіваваны або перамешчаны."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Даступна на macOS, Windows і Linux."
@@ -8308,6 +8334,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні зноў пяройдзеце на яго."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "Для вашага ўліковага запісу будуць згенераваныя ключы, якія ўстойлівыя да квантавых камп'ютараў пры ўключэнні постквантавай абароны."
       ],
       "By leaving now, changes may not be saved": [
         "Калі выйсці цяпер, змяненні могуць не захавацца"
@@ -8500,6 +8529,9 @@
       ],
       "Delete link?": [
         "Выдаліць спасылку?"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Выдаляць смецце і спам праз 30 дзён. Пры ўключэнні аўтаматычнага выдалення паведамленняў, якія ўжо знаходзяцца ў сметніцы/спаме, атрымаюць дату выдалення на аснове даты іх перамяшчэння туды."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Выдаленне ${ deletedServerCount } сервера шлюза",
@@ -8774,6 +8806,9 @@
       "Example: ${ spfExample }": [
         "Прыклад: ${ spfExample }"
       ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "Існуючую перасылку пошты са скразным шыфраваннем неабходна будзе паўторна ўключыць у наладах **${ autoReplySettingsTitle }**."
+      ],
       "Expired": [
         "Пратэрмінавана"
       ],
@@ -8850,10 +8885,10 @@
         "Генерацыя новай фразы аднаўлення прывядзе да дэактывацыі папярэдняй."
       ],
       "Get ${ upsellPlanName }": [
-        "Атрымаць тарыфны план ${ upsellPlanName }"
+        "Атрымайце ${ upsellPlanName }"
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
-        "Атрымаць доступ стварыўшы ўліковы запіс ${ BRAND_NAME } і прыняць запрашэнне."
+        "Атрымайце доступ стварыўшы ўліковы запіс ${ BRAND_NAME } і прыміце запрашэнне."
       ],
       "Get and give **${ referralReward } credits** for every friend that subscribes.": [
         "Вы і ваш сябар атрымаеце па **${ referralReward } крэдытаў** за кожную платную падпіску."
@@ -8862,10 +8897,10 @@
         "Спампаваць у Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
-        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
+        "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
-        "Атрымлівайце апавяшчэнне, калі адбываецца ўцечка вашага пароля або іншых асабістых даных. ${ learnMoreLinkNoBreach }"
+        "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых асабістых даных. ${ learnMoreLinkNoBreach }"
       ],
       "Get started with the referral link above.": [
         "Пачніце па рэферальнай спасылцы вышэй."
@@ -8884,6 +8919,9 @@
       ],
       "Group deleted": [
         "Група выдалена"
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Групуйце лісты ў адну размову ў папцы з уваходнымі лістамі або адлюстроўвайце іх асобна."
       ],
       "Groups": [
         "Групы"
@@ -9298,6 +9336,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Паведамленні ў папцы Адпраўленыя або Чарнавікі і далей будуць з'яўляцца ў гэтай папцы, нават калі вы перамясціце іх у іншую папку."
+      ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "Паведамленні ў папцы \"Спам\" або \"Сметніца\" будуць выключаны з месцазнаходжання \"Уся пошта\"."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Паведамленні для ўсіх вашых адрасоў электроннай пошты будуць трапляць у вашу паштовую скрыню."
@@ -9968,6 +10009,9 @@
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Неўзабаве з'явіцца падтрымка назірання карыстальніцкіх даменаў і адрасоў электроннай пошты, якія не належаць да ${ BRAND_NAME }."
       ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "Падтрымка постквантавых ключоў уключана для вашага ўліковага запісу."
+      ],
       "support team": [
         "каманда падтрымкі"
       ],
@@ -10557,13 +10601,13 @@
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
       "We'll email you once import is complete.": [
-        "Мы адправім вам ліст, калі імпартаванне завершыцца."
+        "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана."
       ],
       "We'll get back to you shortly.": [
         "Мы звяжамся з вамі ў самы бліжэйшы час."
       ],
       "We'll notify you when the import is done.": [
-        "Мы апавясцім вас пра завяршэнне імпартавання."
+        "Вы атрымаеце апавяшчэнне, калі імпартаванне будзе завершана."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы адправім новы праверачны код на ${ strong }"
@@ -10943,9 +10987,6 @@
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Ваша існуючая пераадрасацыя іншым карыстальнікам са скразным шыфраваннем будзе прыпынена. Вы можаце ўручную паўторна ўключыць яе ў наладах '${ autoReplySettingsTitle }'."
-      ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
@@ -11156,7 +11197,7 @@
     },
     "Invoice state display as badge": {
       "Gifted": [
-        "Падораны"
+        "Падаравана"
       ],
       "Paid": [
         "Аплачана"
@@ -11227,37 +11268,37 @@
       "Generate key": [
         "Згенерыраваць ключ"
       ],
-      "Generating key failed. Please try again later.": [
-        "Збой генерацыі ключа. Паспрабуйце яшчэ раз пазней."
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Пазначце гэты ключ як скампраметаваны ў сваіх наладах, калі вы згенерыравалі новы і падазраеце, што ваш бягучы ключ быў скампраментаваны."
       ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Калі вы генерыруеце новы ключ па прычыне таго, што лічыце ваш існуючы ключ быў скампраметаваны, пазначце яго як скампраметаваны пасля генерацыі гэтага ключ."
+      "Key generation failed, please try again later.": [
+        "Збой генерацыі ключа. Паспрабуйце яшчэ раз пазней."
       ],
       "Key successfully generated.": [
         "Ключ паспяхова згенерыраваны."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Заўвага: у вас ужо ёсць ключ з такім жа алгарытмам шыфравання для гэтага адраса. Калі гэты ключ не быў скампраметаваны, то магчыма няма неабходнасці ствараць новы ключ, які можа запаволіць ваш уліковы запіс."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Заўвага: у вас ужо ёсць ключ з такім жа алгарытмам шыфравання для гэтага карыстальніка. Калі гэты ключ не быў скампраметаваны, то магчыма няма неабходнасці ствараць новы ключ, які можа запаволіць ваш уліковы запіс."
+      "New key generated": [
+        "Згенерыраваны новы ключ"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Гэта згенерыруе новы ключ, які будзе выкарыстоўвацца для шыфравання будучых кантактных звестак, ключоў шыфравання электроннай пошты і іншых даных."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Гэта згенерыруе новы ключ, які акрамя іншых даных будзе выкарыстоўвацца для шыфравання будучых лістоў."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Гэта дзеянне прывядзе да генерацыі новага ключа, які будзе выкарыстоўвацца для шыфравання будучых лістоў і іншых даных для **${ emailAddress }**."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "У вас ужо ёсць гэты тып ключа. Калі гэты ключ не быў скампраметаваны, то генерацыя **новага ключа можа запаволіць ваш уліковы запіс**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Сумяшчальнасць"
-      ],
       "Compromised": [
         "Скампраметаваны"
       ],
       "Disabled": [
         "Адключаны"
+      ],
+      "Fallback": [
+        "Запасны варыянт"
       ],
       "Forwarding": [
         "Перасылка"
@@ -11273,6 +11314,27 @@
       ],
       "Primary": [
         "Асноўны"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Хутчэй"
+      ],
+      "Slower, but stronger long-term security": [
+        "Больш павольны, але мае больш надзейную доўгатэрміновую бяспеку"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Выбраць тып ключа"
       ]
     },
     "Keyboard shortcut name": {
@@ -11511,8 +11573,8 @@
       "Export public key": [
         "Экспартаваць публічны ключ"
       ],
-      "Make primary": [
-        "Зрабіць асноўным"
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "Зрабіць гэты ${ keyStatusBadgeTitles.primary } або ${ keyStatusBadgeTitles.fallback } ключом для шыфравання і падпісання."
       ],
       "Mark compromised": [
         "Пазначыць скампраметаваным"
@@ -11525,6 +11587,9 @@
       ],
       "Mark obsolete": [
         "Пазначыць састарэлым"
+      ],
+      "Use for encryption and signing": [
+        "Выкарыстоўваць для шыфравання і подпісу"
       ]
     },
     "Knowledge base link label": {
@@ -12186,6 +12251,9 @@
       ],
       "Key": [
         "Ключ"
+      ],
+      "Key strength": [
+        "Надзейнасць ключа"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Спалучэнні клавіш: ${ shortcut }"
@@ -13369,7 +13437,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Атрымаць тарыфны план ${ planName } усяго за ${ planPrice }"
+        "Атрымайце ${ planName } усяго за ${ planPrice }"
       ]
     },
     "Maintenance mode": {
@@ -13520,7 +13588,7 @@
         "Як імпартаваць кантакты з Yahoo"
       ],
       "How to import emails from another service": [
-        "Як імпартаваць электронныя лісты з іншага сэрвісу"
+        "Як імпартаваць лісты з іншага сэрвісу"
       ],
       "How to import emails from Yahoo": [
         "Як імпартаваць лісты з Yahoo"
@@ -14108,7 +14176,7 @@
         "Пагадненне аб апрацоўцы даных GDPR"
       ],
       "Generate emails with a prompt": [
-        "Генерыраваць лісты з запытам"
+        "Генерацыя лістоў з запытам"
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
@@ -14342,7 +14410,7 @@
         "Абагуленае сховішча (да ${ n } асоб)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Мы сканіруем цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+        "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
       ]
     },
     "new_plans: feature highlight": {
@@ -14485,7 +14553,7 @@
         "Бясплатны стартавы ўліковы запіс прызначаны для ўсіх, хто лічыць прыватнасць абавязковым параметрам."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Неабмежаваная прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікаў."
+        "Неабмежаваная прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікі."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы выдаліце свой уліковы запіс, то згубіце гэту перавагу і пры гэтым паўторна вярнуцца на яго вы больш не зможаце, калі паспрабуеце стварыць новы ўліковы запіс."
@@ -15157,16 +15225,10 @@
         "Больш не паказваць гэту прапанову"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
-        "Атрымайце ${ BRAND_NAME } Unlimited"
-      ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Атрымайце Drive Plus усяго за ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Атрымайце Mail Plus усяго за ${ pricingTitle }"
+        "Атрымаць ${ BRAND_NAME } Unlimited"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
@@ -15176,6 +15238,9 @@
       ],
       "Limited-time offer": [
         "Часовая прапанова"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Прапанова абмежавана па часе і дзейнічае за ваш першы месяц"
       ],
       "Maybe later": [
         "Магчыма пазней"
@@ -15189,9 +15254,6 @@
       "Save": [
         "Эканомія"
       ],
-      "Save 80% on your first month.": [
-        "Зэканомце 80% у першы месяц."
-      ],
       "Save big when you pay annually": [
         "Эканомце больш пры гадавой аплаце"
       ],
@@ -15200,6 +15262,12 @@
       ],
       "This offer won't be shown again.": [
         "Гэта прапанова больш не будзе паказвацца."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Пры пераходзе з памесячнай на гадавую падпіску."
@@ -15226,23 +15294,26 @@
       "Advanced threat protection": [
         "Пашыраная абарона ад пагроз"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Супрацоўніцтва з карыстальнікамі, якія не належаць да ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Карыстальніцкі дамен электроннай пошты"
+      ],
+      "Edit docs online": [
+        "Рэдагуйце дакументы ў інтэрнэце"
       ],
       "Email addresses": [
         "Адрасы электроннай пошты"
       ],
+      "File version history (over 1 week)": [
+        "Гісторыя версій файла (больш за 1 тыдзень)"
+      ],
       "Free": [
         "Бясплатна"
       ],
-      "Online document editor": [
-        "Воблачны рэдактар дакументаў"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Аднаўленне папярэдніх версій файла"
       ],
       "Storage": [
         "Сховішча"
@@ -16700,6 +16771,61 @@
         "Палепшыць да ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Постквантавая абарона была ўключана ў вашым уліковым запісе, але некаторыя аперацыі не былі паспяхова выкананы: адбыўся збой пры генерацыі постквантавых ключоў уліковага запісу. Вы можаце ўручную згенераваць гэтыя ключы ў наладах ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Постквантавая абарона была ўключана ў вашым уліковым запісе, але некаторыя аперацыі не былі паспяхова выкананы: адбыўся збой пры генерацыі постквантавых ключоў адраса для аднаго ці некалькіх адрасоў. Вы можаце ўручную згенераваць гэтыя ключы ў наладах ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Абнавіце **усе свае мабільныя праграмы ${ BRAND_NAME }** да апошняй версіі."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "Гэта створыць новы ключ уліковага запісу і новы ключ шыфравання электроннай пошты для кожнага адраса; яны будуць выкарыстоўвацца для шыфравання і расшыфравання будучых электронных лістоў і іншых даных."
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "Уключыць і згенерыраваць ключы"
+      ],
+      "Enable post-quantum protection": [
+        "Уключыць постквантавую абарону"
+      ],
+      "Enable post-quantum protection?": [
+        "Уключыць постквантавую абарону?"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "Уключэнне постквантавай абароны не атрымалася. Паспрабуйце яшчэ раз пазней."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Зразумела"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "Постквантавая абарона ўключана ў вашым уліковым запісе!"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Генерацыя посткавантавага ключа ўліковага запісу"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "Генерацыя постквантавых адрасных ключоў для кожнага адраса"
+      ],
+      "Opting into post-quantum protection": [
+        "Уключэнне постквантавай абароны"
+      ]
+    },
     "Price": {
       "Free": [
         "Бясплатна"
@@ -16838,6 +16964,14 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Праверка вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
+      ]
+    },
+    "Remark about a key type option": {
+      "Classic": [
+        "Класічная"
+      ],
+      "Post-quantum": [
+        "Постквантавы"
       ]
     },
     "Remove calendar section description": {
@@ -17012,8 +17146,8 @@
       "Retention period": [
         "Перыяд захоўвання"
       ],
-      "Retention rule": [
-        "Правіла захоўвання"
+      "Rule title": [
+        "Загаловак правіла"
       ],
       "Select product": [
         "Выберыце прадукт"
@@ -18175,13 +18309,13 @@
         "Хуткія спампоўкі ў P2P/BitTorrent"
       ],
       "Free": [
-        "Free"
+        "Бясплатна"
       ],
       "Free for 14 days": [
         "Бясплатна на працягу 14 дзён"
       ],
       "Get ${ referralReward } in credits": [
-        "Атрымайце ${ referralReward } у крэдыты"
+        "Атрымайце ${ referralReward } у крэдытах"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Атрымайце бяспечны адрас ${ MAIL_APP_NAME } або ${ internalButton }"
@@ -18755,7 +18889,7 @@
     },
     "Spotlight": {
       "Get up to ${ credits } in credits.": [
-        "Атрымайце да ${ credits } у крэдыты."
+        "Атрымайце да ${ credits } у крэдытах."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запрасіць сяброў у ${ BRAND_NAME }"
@@ -19227,6 +19361,12 @@
         "${ ipAddresses } вылучаных сервераў",
         "${ ipAddresses } вылучаных сервераў"
       ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальніка",
+        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальнікаў",
+        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальнікаў",
+        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальнікаў"
+      ],
       "${ n } calendar per user": [
         "${ n } каляндар на карыстальніка",
         "${ n } календары на карыстальніка",
@@ -19652,7 +19792,7 @@
         "Вы можаце працягваць атрымліваць асалоду ад усіх пераваг свайго тарыфнага плана да ${ boldedDate }."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
+        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Будуць дададзены крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых патрабаванняў, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
@@ -20972,10 +21112,10 @@
         "Назіранне за шлюзом"
       ],
       "Gateway monitor disabled": [
-        "Назіранне за шлюзамі выключана"
+        "Назіранне за шлюзом уключаны"
       ],
       "Gateway monitor enabled": [
-        "Назіранне за шлюзамі ўключана"
+        "Назіранне за шлюзом выключана"
       ],
       "Gateways": [
         "Шлюзы"
@@ -21002,7 +21142,7 @@
         "Атрымайце больш ад свайго VPN"
       ],
       "Get the app on all your devices and protect up to ${ VPN_CONNECTIONS } at one time.": [
-        "Атрымайце праграму на ўсе вашы прылады і абараняйце да ${ VPN_CONNECTIONS } адначасова."
+        "Атрымайце праграму на ўсе вашы прылады і абараняйце да ${ VPN_CONNECTIONS } прылад адначасова."
       ],
       "Get the apps": [
         "Атрымаць праграмы"
@@ -21276,6 +21416,9 @@
       ],
       "Policies": [
         "Палітыкі"
+      ],
+      "Post-quantum protection": [
+        "Постквантавая абарона"
       ],
       "Preview": [
         "Папярэдні прагляд"
@@ -21622,8 +21765,17 @@
       "Upgrade plan": [
         "Палепшыць тарыфны план"
       ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
+      ],
       "Upgrade your privacy": [
         "Палепшыце сваю прыватнасць"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Палепшыць вашу прадукцыйнасць за ${ formattedPrice } з ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Палепшыць ваша сховішча за ${ formattedPrice } з ${ planName }"
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
@@ -22129,7 +22281,7 @@
         "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы і зашыфраваныя рэсурсы не будуць абагулены з гэтым карыстальнікам."
       ],
       "Group membership paused": [
-        "Знаходжанне ў групе прыпынена"
+        "Праналежнасць да групы прыпынена"
       ],
       "Sending member invitation": [
         "Адпраўка запрашэння ўдзельніку"
@@ -22590,7 +22742,7 @@
         "Зносіны і планаванне з дапамогай скразнога шыфравання."
       ],
       "Get more from your ${ planTitle } subscription.": [
-        "Атрымайце больш з падпіскай ${ planTitle }."
+        "Атрымайце больш ад падпіскі ${ planTitle }."
       ],
       "Keep your files, photos, and documents safe with ${ maxDriveSpace } free cloud storage.": [
         "Захоўвайце свае файлы, фатаграфіі і дакументы ў бяспецы з ${ maxDriveSpace } бясплатнага воблачнага сховішча."
@@ -22705,7 +22857,7 @@
         "30 месяцаў"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
-        "Атрымайце скідку ў памеры ${ discount } з падпіскай на ${ billingCycle }"
+        "Атрымаць скідку ў памеры ${ discount } з падпіскай на ${ billingCycle }"
       ],
       "Get a first year of ${ plan } for free!": [
         "Атрымайце першы год ${ plan } бясплатна!"
@@ -22987,7 +23139,7 @@
         "Кожны ${ interval } тыдзень у панядзелак, ${ timesString }",
         "Кожны ${ interval } тыдні ў панядзелак, ${ timesString }",
         "Кожных ${ interval } тыдняў у панядзелак, ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак, ${ timesString }"
+        "Кожных ${ interval } тыдняў у панядзелак, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Кожны ${ interval } тыдзень у суботу",
@@ -23023,7 +23175,7 @@
         "Кожны ${ interval } тыдзень у аўторак, ${ timesString }",
         "Кожныя ${ interval } тыдні ў аўторак, ${ timesString }",
         "Кожных ${ interval } тыдняў у аўторак, ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак, ${ timesString }"
+        "Кожных ${ interval } тыдняў у аўторак, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Кожны ${ interval } тыдзень у сераду",

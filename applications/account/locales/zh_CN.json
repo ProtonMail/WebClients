@@ -7784,9 +7784,6 @@
       "Add a recovery phone number": [
         "添加密保手机"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "登录时要求输入 2FA 验证码，为您的账户安全再增设一道防线。"
-      ],
       "Add domain": [
         "添加域名"
       ],
@@ -10598,9 +10595,6 @@
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "您对其他用户的现有端到端加密转发将暂停。您可以在“${ autoReplySettingsTitle }”设置下手动重新启用它们。"
-      ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
       ],
@@ -10867,32 +10861,14 @@
       "Generate key": [
         "生成密钥"
       ],
-      "Generating key failed. Please try again later.": [
-        "生成密钥失败。请稍后再试。"
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "如果您生成新密钥是因为您认为现有密钥已被破解，请在生成此密钥后将其标记为已破解。"
-      ],
       "Key successfully generated.": [
         "密钥已成功生成。"
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "注意：您已经有一个与该用户算法相同的密钥。除非该密钥已被破解，否则可能没有必要生成新密钥，而且这样做可能会降低账户运行速度。"
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "注意：您已经有一个与该用户算法相同的密钥。除非该密钥已被破解，否则可能没有必要生成新密钥，而且这样做可能会降低账户运行速度。"
-      ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "这将生成一个新密钥，用于加密未来的联系方式、电子邮件加密密钥和其他数据。"
-      ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "这将生成一个新密钥，用于加密未来的电子邮件和其他数据。"
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "兼容性"
-      ],
       "Compromised": [
         "已泄露"
       ],
@@ -11150,9 +11126,6 @@
       ],
       "Export public key": [
         "导出公钥"
-      ],
-      "Make primary": [
-        "设为主密钥"
       ],
       "Mark compromised": [
         "标为已泄露"
@@ -14652,12 +14625,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "开通 ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "仅需 ${ pricingTitle } 即可获得 Drive Plus"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "仅需 ${ pricingTitle } 即可获得 Mail Plus"
-      ],
       "Get the deal": [
         "获取优惠"
       ],
@@ -14681,9 +14648,6 @@
       ],
       "Save": [
         "节省"
-      ],
-      "Save 80% on your first month.": [
-        "第一个月可节省 80% 的费用。"
       ],
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
@@ -14728,14 +14692,8 @@
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "在线文档编辑器"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "恢复先前的文件版本"
       ],
       "Storage": [
         "存储"
@@ -17332,6 +17290,12 @@
       ],
       "${ value } total storage": [
         "${ value } 总存储空间"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } 高速的VPN连接"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "${ vpnServersCountData.paid.servers }+ 跨区域服务器"
       ],
       "/user": [
         "/用户"

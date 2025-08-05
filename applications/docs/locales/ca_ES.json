@@ -825,6 +825,9 @@
       "Upgrade": [
         "Millora"
       ],
+      "Upgrade for 200GB": [
+        "Milloreu el pla per a 200 GB"
+      ],
       "Upgrade now": [
         "Millora ara"
       ],
@@ -1254,7 +1257,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 8.500 servidors en més de 110 països, 10 dispositius, estríming d'alta velocitat, bloquejador d'anuncis i protecció contra programari maliciós, VPN Accelerator i més."
+        "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 8.500 servidors en més de 110 països, 10 dispositius, estríming d'alta velocitat, bloquejador d'anuncis i protecció contra programari maliciós, VPN Accelerator, etc."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
@@ -1409,6 +1412,9 @@
       ],
       "Discover and set up features": [
         "Descobriu i configureu les característiques"
+      ],
+      "Maybe later": [
+        "Potser després"
       ],
       "Remind me later": [
         "Recorda-m'ho més tard"
@@ -5567,10 +5573,10 @@
         "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Segur que voleu continuar?"
       ],
       "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Esteu a punt de rebutjar la invitació per unir-vos a la carpeta ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
+        "Esteu a punt de rebutjar la invitació per unir-vos a la carpeta ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Segur que voleu continuar?"
       ],
       "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
-        "Esteu a punt de rebutjar la invitació per unir-vos a l'element ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Esteu segur que voleu continuar?"
+        "Esteu a punt de rebutjar la invitació per unir-vos a l'element ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Segur que voleu continuar?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Heu assolit el nombre màxim d'adreces en el grup o els grups de contactes:"
@@ -8016,12 +8022,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obteniu ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Obteniu Drive Plus per només ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Obteniu Mail Plus per només ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Aconseguiu l'oferta"
       ],
@@ -8033,6 +8033,9 @@
       ],
       "Limited-time offer": [
         "Oferta per temps limitat"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta per temps limitat, vàlida per al vostre primer mes"
       ],
       "Maybe later": [
         "Potser després"
@@ -8046,9 +8049,6 @@
       "Save": [
         "Estalvieu"
       ],
-      "Save 80% on your first month.": [
-        "Estalvieu un 80% en el vostre primer mes."
-      ],
       "Save big when you pay annually": [
         "Estalvieu de debò pagant anualment!"
       ],
@@ -8057,6 +8057,12 @@
       ],
       "This offer won't be shown again.": [
         "Aquesta oferta no es tornarà a mostrar."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Milloreu la vostra productivitat per només ${ pricingTitle } amb ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Milloreu el vostre emmagatzematge per només ${ pricingTitle } amb ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Quan canvieu d'una subscripció mensual a una anual."
@@ -8083,23 +8089,26 @@
       "Advanced threat protection": [
         "Protecció avançada contra amenaces"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Col·laboreu amb usuaris que no ho siguin de ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domini de correu electrònic personalitzat"
+      ],
+      "Edit docs online": [
+        "Editeu documents en línia"
       ],
       "Email addresses": [
         "Adreces de correu electrònic"
       ],
+      "File version history (over 1 week)": [
+        "Historial de versions del fitxer (més d\"1 setmana)"
+      ],
       "Free": [
         "Gratuït"
       ],
-      "Online document editor": [
-        "Editor de documents en línia"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recupera versions anteriors del fitxer"
       ],
       "Storage": [
         "Emmagatzematge"
@@ -8155,7 +8164,7 @@
         "La subscripció completa a ${ planTitle } comença el ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Podreu utilitzar el ${ planTitle } de manera gratuita fins que finalitzi el període de prova."
+        "Podreu utilitzar ${ planTitle } de manera gratuïta fins que finalitzi el període de prova."
       ]
     },
     "Option": {
@@ -8213,7 +8222,7 @@
         "Compartició segura de caixes fortes, elements i enllaços"
       ],
       "Unlimited logins, notes, credit cards and more": [
-        "Nombre il·limitat d'inicis de sessió, notes, targetes de crèdit i més"
+        "Nombre il·limitat d'inicis de sessió, notes, targetes de crèdit, etc."
       ]
     },
     "pass_signup_2023: Title": {
@@ -9095,7 +9104,7 @@
         "Feu més amb ${ BRAND_NAME }"
       ],
       "Get unlimited aliases": [
-        "Obtingueu un nombre il·limitat d'àlies"
+        "Obteniu un nombre il·limitat d'àlies"
       ],
       "Go to subscription plans": [
         "Ves als plans de subscripció"
@@ -9107,7 +9116,7 @@
         "Augmenteu el vostre emmagatzematge"
       ],
       "Keep passwords safe": [
-        "Mantingueu les vostres contrasenyes segures"
+        "Manteniu les vostres contrasenyes segures"
       ],
       "Unblock streaming content": [
         "Tingueu accés al contingut en estríming."
@@ -9196,13 +9205,13 @@
         "Obtingueu 500 GB per emmagatzemar de manera segura tots els vostres fitxers i fotos"
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
-        "Obtingueu accés a servidors VPN ultraràpids en més de 110 països"
+        "Obteniu accés a servidors VPN ultraràpids en més de 110 països"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "Obteniu un pla que ho inclou tot: ${ BRAND_NAME } Unlimited"
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
-        "Obtingueu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
+        "Obteniu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
         "Guardeu les vostres contrasenyes de manera segura i organitzada en diverses caixes fortes. "
@@ -10270,7 +10279,7 @@
         "Configuració del reenviament de correu"
       ],
       "Set up your organization": [
-        "Configureu la vostra organització"
+        "Configuració de la vostra organització"
       ],
       "Settings": [
         "Preferències"
@@ -10343,6 +10352,15 @@
       ],
       "Upgrade complete!": [
         "S'ha millorat el pla."
+      ],
+      "Upgrade to ${ planName }": [
+        "Milloreu el pla a ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Milloreu la vostra productivitat per ${ formattedPrice } amb ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Milloreu el vostre emmagatzematge per ${ formattedPrice } amb ${ planName }"
       ],
       "Upload and share files": [
         "Carregueu i compartiu fitxers"

@@ -7862,9 +7862,6 @@
       "Add a recovery phone number": [
         "Adicionar um número de telefone de recuperação"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Adicione outro nível de segurança à sua conta. Terá de se verificar com uma autenticação A2F cada vez que entrar na sua conta."
-      ],
       "Add domain": [
         "Adicionar um domínio"
       ],
@@ -10715,9 +10712,6 @@
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail só será utilizado para esta verificação única."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Os seus encaminhamentos encriptados de ponta a ponta existentes para outros utilizadores serão pausados. Pode reativá-los manualmente nas definições '${ autoReplySettingsTitle }'."
-      ],
       "Your files will be encrypted and then saved": [
         "Os seus ficheiros serão encriptados e depois guardados."
       ],
@@ -10989,32 +10983,14 @@
       "Generate key": [
         "Gerar a chave"
       ],
-      "Generating key failed. Please try again later.": [
-        "Erro na geração da chave. Tente novamente mais tarde."
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Se estiver a gerar uma nova chave porque acredita que foi comprometida, marque-a como comprometida após gerar esta nova chave."
-      ],
       "Key successfully generated.": [
         "A chave foi gerada."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Nota: Já existe uma chave com o mesmo algoritmo associada a este endereço. A menos que essa chave tenha sido comprometida, pode não ser necessário gerar uma nova. Fazer isso poderá atrasar a sua conta."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Nota: Já existe uma chave com o mesmo algoritmo associada a este utilizador. A menos que essa chave tenha sido comprometida, pode não ser necessário gerar uma nova. Fazer isso poderá atrasar a sua conta."
-      ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Isso gerará uma nova chave que será usada para encriptar os futuros detalhes dos contactos, as chaves de encriptação de e-mail e outros dados."
-      ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Isto irá gerar uma nova chave, que será usada para encriptar e-mails futuros e outros dados."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Compatibilidade"
-      ],
       "Compromised": [
         "Comprometida"
       ],
@@ -11272,9 +11248,6 @@
       ],
       "Export public key": [
         "Exportar a chave pública"
-      ],
-      "Make primary": [
-        "Tornar primária"
       ],
       "Mark compromised": [
         "Marcar como comprometida"
@@ -14823,12 +14796,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtenha o ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Obtenha o Drive Plus por apenas ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Obtenha o Mail Plus por apenas ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Aproveite a promoção"
       ],
@@ -14852,9 +14819,6 @@
       ],
       "Save": [
         "Poupe"
-      ],
-      "Save 80% on your first month.": [
-        "Poupe 80% no seu primeiro mês."
       ],
       "Save big when you pay annually": [
         "Poupe em grande ao pagar anualmente!"
@@ -14899,14 +14863,8 @@
       "Free": [
         "Gratuito"
       ],
-      "Online document editor": [
-        "Editor de documentos online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recuperar as versões anteriores do ficheiro"
       ],
       "Storage": [
         "Armazenamento"

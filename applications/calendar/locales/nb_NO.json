@@ -836,6 +836,9 @@
       "Upgrade": [
         "Oppgrader"
       ],
+      "Upgrade for 200GB": [
+        "Oppgrader for 200 GB"
+      ],
       "Upgrade Now": [
         "Oppgrader nå"
       ],
@@ -1497,6 +1500,9 @@
       ],
       "Discover and set up features": [
         "Oppdag og konfigurer funksjoner"
+      ],
+      "Maybe later": [
+        "Kanskje senere"
       ],
       "Remind me later": [
         "Påminn meg senere"
@@ -8351,12 +8357,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Skaff deg ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Skaff deg Drive Plus for kun ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Skaff deg Mail Plus for kun ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Skaff deg avtalen"
       ],
@@ -8368,6 +8368,9 @@
       ],
       "Limited-time offer": [
         "Tidsbegrenset tilbud"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Begrenset tidstilbud, gyldig den første måneden"
       ],
       "Maybe later": [
         "Kanskje senere"
@@ -8381,9 +8384,6 @@
       "Save": [
         "Spar"
       ],
-      "Save 80% on your first month.": [
-        "Spar 80% på den første måneden."
-      ],
       "Save big when you pay annually": [
         "Spar mye når du betaler årlig"
       ],
@@ -8392,6 +8392,12 @@
       ],
       "This offer won't be shown again.": [
         "Dette tilbudet vises ikke igjen."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Oppgrader produktiviteten din for bare ${ pricingTitle } med ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Oppgrader lagringsplassen din for bare ${ pricingTitle } med ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Når du bytter fra et månedlig til et årlig abonnement."
@@ -8418,23 +8424,26 @@
       "Advanced threat protection": [
         "Avansert trusselbeskyttelse"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Samarbeid med ikke-${ BRAND_NAME }-brukere"
+      ],
       "Custom email domain": [
         "Egendefinert e-postdomene"
+      ],
+      "Edit docs online": [
+        "Rediger dokumenter på nettet"
       ],
       "Email addresses": [
         "E-postadresser"
       ],
+      "File version history (over 1 week)": [
+        "Filversjonshistorikk (over 1 uke)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Dokumentredigering på nett"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Gjenopprett tidligere filversjoner"
       ],
       "Storage": [
         "Lagringsplass"
@@ -11152,6 +11161,15 @@
       ],
       "Upgrade complete!": [
         "Oppgradering fullført!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Oppgrader produktiviteten din for ${ formattedPrice } med ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Oppgrader lagringsplassen din for ${ formattedPrice } med ${ planName }"
       ],
       "Upload and share files": [
         "Last opp og del filer"

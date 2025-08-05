@@ -1053,6 +1053,9 @@
       "Upgrade": [
         "Tingkatkan"
       ],
+      "Upgrade for 200GB": [
+        "Tingkatkan untuk 200GB"
+      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
       ],
@@ -1225,7 +1228,7 @@
         "Diskon didasarkan pada harga bulanan standar. Pada akhir siklus tagihan, langganan Anda akan diperpanjang dengan tarif tahunan standar."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Lipat gandakan penyimpanan terenkripsi Anda – dapatkan 1 TB untuk semua data Anda"
+        "Gandakan ruang penyimpanan terenkripsi Anda – dapatkan 1 TB untuk seluruh data Anda"
       ],
       "Encrypted password manager": [
         "Pengelola kata sandi terenkripsi"
@@ -1649,6 +1652,9 @@
       ],
       "Discover and set up features": [
         "Telusuri dan siapkan berbagai fitur"
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
       ],
       "Remind me later": [
         "Ingatkan saya nanti"
@@ -3602,6 +3608,9 @@
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Nama tidak dapat didekripsi"
       ]
     },
     "Error importing calendar": {
@@ -8873,12 +8882,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Dapatkan ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Dapatkan Mail Plus hanya seharga ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Dapatkan penawaran ini"
       ],
@@ -8890,6 +8893,9 @@
       ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Penawaran terbatas, valid untuk bulan pertama Anda"
       ],
       "Maybe later": [
         "Mungkin nanti"
@@ -8903,9 +8909,6 @@
       "Save": [
         "Simpan"
       ],
-      "Save 80% on your first month.": [
-        "Hemat 80% pada bulan pertama Anda."
-      ],
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
       ],
@@ -8914,6 +8917,12 @@
       ],
       "This offer won't be shown again.": [
         "Penawaran ini tidak akan lagi ditampilkan."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Tingkatkan produktivitas Anda dengan ${ planName }, hanya seharga ${ pricingTitle }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName }, hanya seharga ${ pricingTitle }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Pada saat Anda beralih dari langganan bulanan ke langganan tahunan."
@@ -8940,23 +8949,26 @@
       "Advanced threat protection": [
         "Perlindungan ancaman tingkat lanjut"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Kolaborasi dengan pengguna non-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domain email khusus"
+      ],
+      "Edit docs online": [
+        "Sunting dokumen secara online"
       ],
       "Email addresses": [
         "Alamat email"
       ],
+      "File version history (over 1 week)": [
+        "Riwayat versi berkas (hingga lebih dari 1 minggu)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Penyunting dokumen online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Pulihkan versi berkas sebelumnya"
       ],
       "Storage": [
         "Ruang penyimpanan"
@@ -11246,6 +11258,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
       ],
+      "Download details": [
+        "Rincian unduhan"
+      ],
       "Download the app": [
         "Unduh aplikasinya"
       ],
@@ -11501,6 +11516,9 @@
       "Original size": [
         "Ukuran asli"
       ],
+      "Original size in bytes": [
+        "Ukuran asli dalam byte"
+      ],
       "Other information": [
         "Informasi lainnya"
       ],
@@ -11660,6 +11678,9 @@
       "Size": [
         "Ukuran"
       ],
+      "Size in bytes": [
+        "Ukuran dalam byte"
+      ],
       "Sort files/folders": [
         "Urutkan berkas/folder"
       ],
@@ -11723,6 +11744,15 @@
       "Upgrade complete!": [
         "Peningkatan selesai!"
       ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
+      ],
       "Upload and share files": [
         "Unggah dan bagikan berkas"
       ],
@@ -11761,6 +11791,9 @@
       ],
       "Warning: suspected fake website": [
         "Peringatan: situs web ini terindikasi palsu"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Kami tidak dapat memverifikasi bahwa berkas ini dibuat oleh <strong>${ emailAddress }</strong>."
       ],
       "We couldn’t verify that an anonymous user uploaded this file.": [
         "Kami tidak dapat memverifikasi bahwa berkas ini diunggah oleh pengguna anonim."

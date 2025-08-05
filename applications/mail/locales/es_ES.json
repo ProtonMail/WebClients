@@ -1427,7 +1427,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -1491,6 +1492,9 @@
       ],
       "Upgrade": [
         "Cambiar de plan"
+      ],
+      "Upgrade for 200GB": [
+        "Mejora por 200GB"
       ],
       "Upgrade Now": [
         "Mejorar ahora"
@@ -4408,8 +4412,8 @@
       "An error occurred while saving your alias": [
         "Ha ocurrido un error al guardar tu alias."
       ],
-      "Attachments are limited to 25 MB": [
-        "Los archivos adjuntos están limitados a 25 MB."
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Los archivos adjuntos están limitados a ${ readableAttachmentMaxSize }"
       ],
       "Authentication canceled.": [
         "Autenticación cancelada."
@@ -7198,8 +7202,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -11262,12 +11265,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtén ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Obtén Drive Plus por solo ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Obtén Mail Plus por solo ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Aprovéchate de la oferta"
       ],
@@ -11279,6 +11276,9 @@
       ],
       "Limited-time offer": [
         "Oferta por tiempo limitado"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tiempo limitado, válida para tu primer mes"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -11292,9 +11292,6 @@
       "Save": [
         "Ahorra"
       ],
-      "Save 80% on your first month.": [
-        "Ahorra un 80 % en tu primer mes."
-      ],
       "Save big when you pay annually": [
         "¡Ahorra a lo grande pagando anualmente!"
       ],
@@ -11303,6 +11300,12 @@
       ],
       "This offer won't be shown again.": [
         "Esta oferta no se volverá a mostrar."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Mejora tu productividad por solo ${ pricingTitle } con ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Mejora tu almacenamiento por solo ${ pricingTitle } con ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Cuando cambias de una suscripción mensual a una anual."
@@ -11329,23 +11332,26 @@
       "Advanced threat protection": [
         "Protección avanzada contra amenazas"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colaborar con usuarios ajenos a ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Dominio de correo electrónico personalizado"
+      ],
+      "Edit docs online": [
+        "Edita documentos online"
       ],
       "Email addresses": [
         "Direcciones de correo electrónico"
       ],
+      "File version history (over 1 week)": [
+        "Historial de versiones del archivo (más de 1 semana)"
+      ],
       "Free": [
         "Gratuito"
       ],
-      "Online document editor": [
-        "Editor de documentos online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recuperar las versiones previas de los archivos"
       ],
       "Storage": [
         "Almacenamiento"
@@ -14915,6 +14921,15 @@
       ],
       "Upgrade complete!": [
         "Se ha mejorado tu plan."
+      ],
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Mejora tu productividad por ${ formattedPrice } con ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Mejora tu almacenamiento por ${ formattedPrice } con ${ planName }"
       ],
       "Upload and share files": [
         "Cargar y compartir archivos"
