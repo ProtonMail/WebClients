@@ -1061,6 +1061,9 @@
       "Upgrade": [
         "Fazer upgrade"
       ],
+      "Upgrade for 200GB": [
+        "Faça upgrade para 200GB"
+      ],
       "Upgrade now": [
         "Atualizar agora"
       ],
@@ -1692,6 +1695,9 @@
       ],
       "Discover and set up features": [
         "Descubra e configure os recursos"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
       ],
       "Remind me later": [
         "Lembre-me mais tarde"
@@ -3650,6 +3656,12 @@
       ],
       "Validation error": [
         "Erro de validação"
+      ],
+      "We were not able to load some of your shared items": [
+        "Não foi possível carregar alguns dos seus itens compartilhados"
+      ],
+      "We were not able to load some of your shared items details": [
+        "Não foi possível carregar alguns detalhes dos seus itens compartilhados."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Você não pode enviar um e-mail para mais de ${ maxContacts } destinatário",
@@ -9088,12 +9100,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtenha o ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Obtenha o Drive Plus por apenas ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Obtenha o Mail Plus por apenas ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Obtenha a oferta"
       ],
@@ -9105,6 +9111,9 @@
       ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tempo limitado, válida para o seu primeiro mês"
       ],
       "Maybe later": [
         "Talvez mais tarde"
@@ -9118,9 +9127,6 @@
       "Save": [
         "Economize"
       ],
-      "Save 80% on your first month.": [
-        "Economize 80% no seu primeiro mês"
-      ],
       "Save big when you pay annually": [
         "Aproveite descontos incríveis ao pagar anualmente!"
       ],
@@ -9129,6 +9135,12 @@
       ],
       "This offer won't be shown again.": [
         "Esta oferta não será exibida novamente."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Faça upgrade da sua produtividade por apenas ${ pricingTitle } com ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Faça upgrade do seu armazenamento por ${ pricingTitle } com ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Quando você muda de uma assinatura mensal para anual."
@@ -9155,23 +9167,26 @@
       "Advanced threat protection": [
         "Proteção avançada contra ameaças"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colaborar com usuários não-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domínio de e-mail personalizado"
+      ],
+      "Edit docs online": [
+        "Editar documentos on-line"
       ],
       "Email addresses": [
         "Endereços de e-mail"
       ],
+      "File version history (over 1 week)": [
+        "Histórico de versões do arquivo (mais de 1 semana)"
+      ],
       "Free": [
         "Gratuito"
       ],
-      "Online document editor": [
-        "Editor de documentos on-line"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recuperar versões anteriores de arquivos"
       ],
       "Storage": [
         "Armazenamento"
@@ -12078,6 +12093,15 @@
       ],
       "Upgrade complete!": [
         "Upgrade concluído!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Faça upgrade para ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Faça upgrade da sua produtividade por ${ formattedPrice } com ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Faça upgrade do seu armazenamento por ${ formattedPrice } com ${ planName }"
       ],
       "Upload and share files": [
         "Enviar e compartilhar arquivo"

@@ -1061,6 +1061,9 @@
       "Upgrade": [
         "Yükselt"
       ],
+      "Upgrade for 200GB": [
+        "200GB boyutuna artırın"
+      ],
       "Upgrade now": [
         "Şimdi yükselt"
       ],
@@ -1692,6 +1695,9 @@
       ],
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
+      ],
+      "Maybe later": [
+        "Belki daha sonra"
       ],
       "Remind me later": [
         "Daha sonra hatırlat"
@@ -3651,6 +3657,12 @@
       "Validation error": [
         "Doğrulama sorunu"
       ],
+      "We were not able to load some of your shared items": [
+        "Paylaşılan ögelerinizden bazıları yüklenemedi"
+      ],
+      "We were not able to load some of your shared items details": [
+        "Paylaşılan ögelerinizden bazılarının ayrıntıları yüklenemedi"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz",
         "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz"
@@ -5314,7 +5326,7 @@
         "İçe aktarılıyor"
       ],
       "Import mailbox": [
-        "Posta kutusunu içe aktar"
+        "E-posta kutusunu içe aktar"
       ],
       "Important note": [
         "Önemli not"
@@ -5959,7 +5971,7 @@
         "Sayısal imza kısmen doğrulandı. Bu klasör ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı kullanılarak yüklendi. Bu nedenle kullanıcının kimliği doğrulanamıyor."
       ],
       "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Sayısal imza kısmen doğrulandı. Bu klasör ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı kullanılarak yüklendi. Bu nedenle kimliği doğrulanamıyor."
+        "Sayısal imzanın bir bölümöü doğrulandı. Bu klasör ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı kullanılarak yüklendi. Bu nedenle kimliği doğrulanamıyor."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "İndirme sayısına hem güncel indirmeler hem de dosya ön izlemeleri katılır."
@@ -7054,7 +7066,7 @@
         "Bağlantı noktası"
       ],
       "Post office box": [
-        "Fiziksel posta kutusu"
+        "Fiziksel e-posta kutusu"
       ],
       "Postal code": [
         "Posta kodu"
@@ -7126,7 +7138,7 @@
         "Dosyayı atla"
       ],
       "Skip folder": [
-        "Klasörü atla"
+        "Klasör atlansın"
       ],
       "Spam": [
         "İstenmeyen e-posta"
@@ -9026,12 +9038,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited tarifesini alın"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Yalnızca ${ pricingTitle } ile Mail Plus aboneliği edinin."
-      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ],
@@ -9043,6 +9049,9 @@
       ],
       "Limited-time offer": [
         "Sınırlı süreli teklif"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Sınırlı süreli teklif, ilk ayınız için geçerlidir"
       ],
       "Maybe later": [
         "Belki daha sonra"
@@ -9056,9 +9065,6 @@
       "Save": [
         "İndirim"
       ],
-      "Save 80% on your first month.": [
-        "İlk ayınızda % 80 indirim kazanın."
-      ],
       "Save big when you pay annually": [
         "Yıllık ödeme yaparak büyük indirim kazanın"
       ],
@@ -9067,6 +9073,12 @@
       ],
       "This offer won't be shown again.": [
         "Bu teklif bir daha görüntülenmeyecek."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName } ile yalnızca ${ pricingTitle } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Depolama alanınızı yalnızca ${ pricingTitle } ödeyerek ${ planName } ile artırın"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Aylık abonelikten yıllık aboneliğe geçtiğinizde."
@@ -9093,23 +9105,26 @@
       "Advanced threat protection": [
         "Gelişmiş tehdit koruması"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "${ BRAND_NAME } dışı kullanıcılarla işbirliği yapın"
+      ],
       "Custom email domain": [
         "Özel e-posta etki alanı"
+      ],
+      "Edit docs online": [
+        "Belgeleri çevrim içi düzenleyin"
       ],
       "Email addresses": [
         "E-posta adresleri"
       ],
+      "File version history (over 1 week)": [
+        "Dosya sürümü geçmişi (1 haftadan eski)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükle"
       ],
       "Storage": [
         "Depolama alanı"
@@ -12010,6 +12025,15 @@
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükseltin"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName } ile ${ formattedPrice } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Depolama alanınızı ${ formattedPrice } ödeyerek ${ planName } ile artırın"
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"

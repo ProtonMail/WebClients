@@ -1056,6 +1056,9 @@
       "Upgrade": [
         "업그레이드"
       ],
+      "Upgrade for 200GB": [
+        "200GB로 업그레이드"
+      ],
       "Upgrade now": [
         "지금 업그레이드"
       ],
@@ -1652,6 +1655,9 @@
       ],
       "Discover and set up features": [
         "기능 알아보고 설정하기"
+      ],
+      "Maybe later": [
+        "나중에"
       ],
       "Remind me later": [
         "나중에 확인하기"
@@ -3593,6 +3599,12 @@
       ],
       "Validation error": [
         "검증 오류"
+      ],
+      "We were not able to load some of your shared items": [
+        "공유된 항목 중 일부를 가져올 수 없습니다"
+      ],
+      "We were not able to load some of your shared items details": [
+        "공유된 항목들 중 일부의 세부사항을 불러올 수 없습니다."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
@@ -8840,12 +8852,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited 구매"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "단 ${ pricingTitle }(으)로 Drive Plus 구매"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "단 ${ pricingTitle }(으)로 Mail Plus 구매"
-      ],
       "Get the deal": [
         "특가 받기"
       ],
@@ -8857,6 +8863,9 @@
       ],
       "Limited-time offer": [
         "기간 한정 할인"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "기간 한정 특가, 첫 달 동안 유효"
       ],
       "Maybe later": [
         "나중에"
@@ -8870,9 +8879,6 @@
       "Save": [
         "절약되는 가격:"
       ],
-      "Save 80% on your first month.": [
-        "첫 달에 80% 할인 받기"
-      ],
       "Save big when you pay annually": [
         "매년 결제로 더 크게 절약하세요"
       ],
@@ -8881,6 +8887,12 @@
       ],
       "This offer won't be shown again.": [
         "이 제안은 다시 표시되지 않습니다."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }으로 생산성을 ${ pricingTitle }만으로 업그레이드하기"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }으로 저장공간을 ${ pricingTitle }에 업그레이드하기"
       ],
       "When you switch from a monthly to annual subscription.": [
         "절약할 수 있는 마지막 날."
@@ -8907,23 +8919,26 @@
       "Advanced threat protection": [
         "향상된 위협 보호 기능"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "비 ${ BRAND_NAME } 사용자와 협업"
+      ],
       "Custom email domain": [
         "사용자 지정 이메일 도메인"
+      ],
+      "Edit docs online": [
+        "온라인 문서 편집"
       ],
       "Email addresses": [
         "이메일 주소"
       ],
+      "File version history (over 1 week)": [
+        "파일 버전 기록 (1주 이상)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "온라인 문서 편집기"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "파일 이전 버전 복원"
       ],
       "Storage": [
         "저장 공간"
@@ -11752,6 +11767,15 @@
       ],
       "Upgrade complete!": [
         "업그레이드 완료!"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName }으로 업그레이드"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName }으로 생산성을 ${ formattedPrice }에 업그레이드하기"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "${ planName }으로 저장공간을 ${ formattedPrice }에 업그레이드하기"
       ],
       "Upload and share files": [
         "파일 업로드 및 공유하기"
