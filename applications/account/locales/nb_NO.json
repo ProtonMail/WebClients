@@ -652,6 +652,9 @@
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
       ],
+      "Enable post-quantum protection": [
+        "Aktiver postkvantebeskyttelse"
+      ],
       "Encrypt and export": [
         "Krypter og eksporter"
       ],
@@ -1458,6 +1461,9 @@
       ],
       "Upgrade": [
         "Oppgrader"
+      ],
+      "Upgrade for 200GB": [
+        "Oppgrader for 200 GB"
       ],
       "Upgrade now": [
         "Oppgrader nå"
@@ -6799,6 +6805,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Jeg forstår at jeg ikke lenger vil kunne logge på fra eldre versjoner av mobilappene til ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "nettapp"
@@ -7016,6 +7027,9 @@
       ],
       "Servers": [
         "Tjenere"
+      ],
+      "Sort folders": [
+        "Sorter mapper"
       ],
       "Sort labels": [
         "Sorter etiketter"
@@ -7868,8 +7882,8 @@
       "Add a recovery phone number": [
         "Legg til et gjenopprettingstelefonnummer"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Legg til enda et lag av sikkerhet til din konto. Du vil behøve å verifisere deg selv hver gang du logger på med 2FA."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Legg til et nytt sikkerhetslag for kontoen din. Du må verifisere deg med 2FA hver gang du logger på. Vi anbefaler å bruke ${ protonAuthenticatorDownloadLink } for lagring av 2FA-kodene dine."
       ],
       "Add domain": [
         "Legg til domene"
@@ -8085,6 +8099,9 @@
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Fjern automatisk e-poster som ble flyttet til papirkurven og søppelpost for mer enn 30 dager siden."
       ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "Vis automatisk neste e-post når gjeldende e-post slettes, arkiveres eller flyttes."
+      ],
       "Available on macOS, Windows, and Linux.": [
         "Tilgjengelig på macOS, Windows og Linux."
       ],
@@ -8147,6 +8164,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "Ved å aktivere postkvantebeskyttelse, vil nøkler som er motstandsdyktige mot kvantedatamaskiner bli generert for din konto."
       ],
       "By leaving now, changes may not be saved": [
         "Ved å forlate nå, kan det hende at endringer ikke lagres"
@@ -8333,6 +8353,9 @@
       ],
       "Delete link?": [
         "Slett kobling?"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Sletter papirkurvinnhold og søppelpostmeldinger etter 30 dager. Hvis du slår på automatisk sletting, får meldinger som allerede er i papirkurven/søppelposten, en slettedato basert på datoen de ble flyttet dit."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } porttjener",
@@ -8602,6 +8625,9 @@
       ],
       "Example: ${ spfExample }": [
         "Eksempel: ${ spfExample }"
+      ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "Eksisterende ende-til-ende-krypterte e-postvideresendinger må aktiveres manuelt på nytt under **${ autoReplySettingsTitle }** i innstillingene."
       ],
       "Expired": [
         "Utløpt"
@@ -9128,7 +9154,7 @@
         "Meldinger i Sendt- eller Utkast-mappe vil fortsette å vises i den mappen, selv om du flytter dem til en annen mappe."
       ],
       "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
-        "Meldinger i søppelpost- eller papirkurv-mappen vil bli ekskludert fra \"All e-post\"."
+        "Meldinger i søppelpost- eller papirkurvmappen vil bli ekskludert fra \"All e-post\"."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Meldinger til alle e-postadressene dine vil gå til innboksen din."
@@ -9785,6 +9811,9 @@
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Støtte for overvåking av egendefinerte domener og ikke-${ BRAND_NAME }-e-postadresser kommer snart."
+      ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "Støtte for postkvantenøkler er aktivert for din konto."
       ],
       "support team": [
         "støtteapparat"
@@ -10733,9 +10762,6 @@
       "Your email will only be used for this one-time verification.": [
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Dine eksisterende ende-til-ende-krypterte videresendinger til andre brukere vil bli satt på pause. Du kan aktivere dem manuelt igjen under '${ autoReplySettingsTitle }'-innstillingene."
-      ],
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
@@ -11007,37 +11033,37 @@
       "Generate key": [
         "Generer nøkkel"
       ],
-      "Generating key failed. Please try again later.": [
-        "Generering av nøkkel mislyktes. Prøv igjen senere."
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Hvis du genererte denne nøkkelen fordi du mistenker at den forrige nøkkelen din ble utsatt, merk den som utsatt i innstillingene dine."
       ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Hvis du genererer en ny nøkkel fordi du tror at den eksisterende nøkkelen din har blitt kompromittert, merker du den som kompromittert etter at du har generert denne nøkkelen."
+      "Key generation failed, please try again later.": [
+        "Nøkkelgenerering mislyktes, prøv igjen senere."
       ],
       "Key successfully generated.": [
         "Nøkkel generert."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Merk: du har allerede en nøkkel med samme algoritme for denne adressen. Med mindre denne nøkkelen har blitt kompromittert, kan det være unødvendig å generere en ny nøkkel, og dette kan gjøre kontoen din tregere."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Merk: du har allerede en nøkkel med samme algoritme for denne brukeren. Med mindre denne nøkkelen har blitt kompromittert, kan det være unødvendig å generere en ny nøkkel, og dette kan gjøre kontoen din tregere."
+      "New key generated": [
+        "Ny nøkkel generert"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Dette vil generere en ny nøkkel, som vil bli brukt til å kryptere fremtidige kontaktdetaljer, e-postkrypteringsnøkler og andre data."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Dette vil generere en ny nøkkel, som vil bli brukt til å kryptere fremtidige e-poster, blant andre data."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Dette vil generere en ny nøkkel, som vil bli brukt til å kryptere fremtidige e-poster og andre data, for **${ emailAddress }**."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "Du har allerede denne nøkkeltypen. Med mindre den nøkkelen har blitt utsatt, kan generering av **en ny nøkkel gjøre kontoen tregere**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Kompatibilitet"
-      ],
       "Compromised": [
         "Kompromittert"
       ],
       "Disabled": [
         "Deaktivert"
+      ],
+      "Fallback": [
+        "Reserve"
       ],
       "Forwarding": [
         "Videresender"
@@ -11053,6 +11079,27 @@
       ],
       "Primary": [
         "Primær"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Raskere"
+      ],
+      "Slower, but stronger long-term security": [
+        "Saktere, men sterkere langsiktig sikkerhet"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Velg nøkkeltype"
       ]
     },
     "Keyboard shortcut name": {
@@ -11291,8 +11338,8 @@
       "Export public key": [
         "Eksporter offentlig nøkkel"
       ],
-      "Make primary": [
-        "Gjør til primær"
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "Gjør dette til ${ keyStatusBadgeTitles.primary } eller ${ keyStatusBadgeTitles.fallback } nøkkelen for kryptering og signering."
       ],
       "Mark compromised": [
         "Merk kompromittert"
@@ -11305,6 +11352,9 @@
       ],
       "Mark obsolete": [
         "Merk foreldet"
+      ],
+      "Use for encryption and signing": [
+        "Bruk til kryptering og signering"
       ]
     },
     "Knowledge base link label": {
@@ -11956,6 +12006,9 @@
       ],
       "Key": [
         "Nøkkel"
+      ],
+      "Key strength": [
+        "Nøkkelstyrke"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastatursnarvei: ${ shortcut }"
@@ -14844,12 +14897,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Skaff deg ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Skaff deg Drive Plus for kun ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Skaff deg Mail Plus for kun ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Skaff deg avtalen"
       ],
@@ -14861,6 +14908,9 @@
       ],
       "Limited-time offer": [
         "Tidsbegrenset tilbud"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Begrenset tidstilbud, gyldig den første måneden"
       ],
       "Maybe later": [
         "Kanskje senere"
@@ -14874,9 +14924,6 @@
       "Save": [
         "Spar"
       ],
-      "Save 80% on your first month.": [
-        "Spar 80% på den første måneden."
-      ],
       "Save big when you pay annually": [
         "Spar mye når du betaler årlig"
       ],
@@ -14885,6 +14932,12 @@
       ],
       "This offer won't be shown again.": [
         "Dette tilbudet vises ikke igjen."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Oppgrader produktiviteten din for bare ${ pricingTitle } med ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Oppgrader lagringsplassen din for bare ${ pricingTitle } med ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Når du bytter fra et månedlig til et årlig abonnement."
@@ -14911,23 +14964,26 @@
       "Advanced threat protection": [
         "Avansert trusselbeskyttelse"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Samarbeid med ikke-${ BRAND_NAME }-brukere"
+      ],
       "Custom email domain": [
         "Egendefinert e-postdomene"
+      ],
+      "Edit docs online": [
+        "Rediger dokumenter på nettet"
       ],
       "Email addresses": [
         "E-postadresser"
       ],
+      "File version history (over 1 week)": [
+        "Filversjonshistorikk (over 1 uke)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Dokumentredigering på nett"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Gjenopprett tidligere filversjoner"
       ],
       "Storage": [
         "Lagringsplass"
@@ -16386,6 +16442,61 @@
         "Oppgrader til ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Postkvantebeskyttelse er aktivert på kontoen din, men noen operasjoner var mislykkede: generering av postkvantekonto- og adressenøkler mislyktes. Du kan generere disse nøklene manuelt under innstillingene ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Postkvantebeskyttelse er aktivert på kontoen din, men noen operasjoner var mislykkede: generering av postkvanteadressenøkler for en eller flere adresser mislyktes. Du kan generere disse nøklene manuelt under innstillingene ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Oppdater **alle dine ${ BRAND_NAME }-mobilapper** til den nyeste versjonen."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "Dette vil generere en ny kontonøkkel og en ny e-postkrypteringsnøkkel for hver adresse; disse vil bli brukt til å kryptere og dekryptere fremtidige e-poster og andre data."
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "Aktiver og generer nøkler"
+      ],
+      "Enable post-quantum protection": [
+        "Aktiver postkvantebeskyttelse"
+      ],
+      "Enable post-quantum protection?": [
+        "Aktivere postkvantebeskyttelse?"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "Aktivering av postkvantebeskyttelse mislyktes. Prøv igjen senere."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Skjønner"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "Postkvantebeskyttelse er aktivert på kontoen din!"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Genererer postkvantekontonøkkel"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "Genererer postkvanteadressenøkler for hver adresse"
+      ],
+      "Opting into post-quantum protection": [
+        "Aktivering av postkvantebeskyttelse"
+      ]
+    },
     "Price": {
       "Free": [
         "Gratis"
@@ -16526,6 +16637,14 @@
         "Bekreftelse av telefonnummeret ditt øker kontosikkerheten og gir flere alternativer for gjenoppretting."
       ]
     },
+    "Remark about a key type option": {
+      "Classic": [
+        "Klassisk"
+      ],
+      "Post-quantum": [
+        "Postkvante"
+      ]
+    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Ved å avslutte abonnementet vil du ikke lenger ha tilgang til denne kalenderen. Alle aktiviteter i denne kalenderen slettes fra kontoen din, men de forblir i den opprinnelige offentlige koblingen."
@@ -16592,6 +16711,9 @@
       "Create retention rule": [
         "Opprett oppbevaringsregel"
       ],
+      "Create rule": [
+        "Opprett regel"
+      ],
       "Delete": [
         "Slett"
       ],
@@ -16609,9 +16731,15 @@
       ],
       "Purge deleted": [
         "Fjern slettede"
+      ],
+      "Save changes": [
+        "Lagre endringer"
       ]
     },
     "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, inkludert de i innboks, sendt og utkast. Dette kan slette meldinger som brukere forventer å beholde. Det er ikke mulig å gjenopprette disse meldingene senere."
+      ],
       "After ${ lifetime } day all messages will be deleted": [
         "Etter ${ lifetime } dag blir alle meldinger slettet",
         "Etter ${ lifetime } dager blir alle meldinger slettet"
@@ -16619,16 +16747,19 @@
     },
     "retention_policy_2025_Error": {
       "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "Levetiden må være lengre enn ${ MIN_LIFETIME } dager"
+        "Livstid må være lengre enn ${ MIN_LIFETIME } dager"
       ],
       "Lifetime must not be set for \"Retain All\" action": [
-        "Levetid kan ikke settes for handlingen \"Behold alle\""
+        "Livstid kan ikke settes for handlingen \"Behold alle\""
       ],
       "Scope value is not valid": [
         "Omfangsverdien er ikke gyldig"
       ],
       "Scope value is required": [
         "Omfangsverdi kreves"
+      ],
+      "Scopes cannot have the same value": [
+        "Omfang kan ikke ha samme verdi"
       ]
     },
     "retention_policy_2025_Info": {
@@ -16640,24 +16771,36 @@
         "${ rule.Lifetime } dager"
       ],
       "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Opprett bevaringsregler for hvor lenge data skal beholdes i tråd med organisasjonens retningslinje for databevaring. Aktiverer også automatisk fjerning av utløpte data."
+        "Opprett oppbevaringsregler for hvor lenge data skal beholdes i tråd med organisasjonens retningslinje for databevaring. Aktiverer også automatisk fjerning av utløpte data."
       ],
       "Forever": [
         "For alltid"
       ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Inkluderer alle meldinger i innboks, sendt og alle andre plasseringer. Fjernede meldinger kan ikke gjenopprettes."
+      ],
       "Removes messages already deleted by users.": [
         "Fjerner meldinger allerede slettet av brukere."
       ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Oppbevaringsregel \"${ formData.name }\" ble oppdatert"
+      ],
       "Retention rule \"${ payload.Name }\" created successfully": [
-        "Bevaringsregel \"${ payload.Name }\" ble opprettet"
+        "Oppbevaringsregel \"${ payload.Name }\" ble opprettet"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Oppbevaringsregel \"${ retentionRule.Name }\" ble slettet"
       ]
     },
     "retention_policy_2025_Label": {
       "After retention period expires": [
-        "Etter bevaringsperioden utløper"
+        "Etter utløpet av oppbevaringsperioden"
       ],
       "Applies to": [
         "Gjelder for"
+      ],
+      "days": [
+        "dager"
       ],
       "Keep items forever": [
         "Behold elementer for alltid"
@@ -16665,8 +16808,11 @@
       "Keep messages forever": [
         "Behold meldinger for alltid"
       ],
-      "Retention rule": [
-        "Bevaringsregel"
+      "Retention period": [
+        "Oppbevaringsperiode"
+      ],
+      "Rule title": [
+        "Regeltittel"
       ],
       "Select product": [
         "Velg produkt"
@@ -16679,8 +16825,14 @@
       "Everyone in organization": [
         "Alle i organisasjonen"
       ],
+      "Group": [
+        "Gruppe"
+      ],
       "Purge all messages": [
         "Slett alle meldinger"
+      ],
+      "Purge deleted messages only": [
+        "Fjern kun slettede meldinger"
       ],
       "Specific users or groups": [
         "Spesifikke brukere eller grupper"
@@ -16695,6 +16847,9 @@
       ],
       "Enter duration": [
         "Angi varighet"
+      ],
+      "Enter value": [
+        "Skriv inn verdi"
       ],
       "Search for rule, users, period, action": [
         "Søk etter regel, brukere, periode, handling"
@@ -16724,13 +16879,13 @@
     },
     "retention_policy_2025_Title": {
       "Confirm retention rule?": [
-        "Bekreft bevaringsregel?"
+        "Bekrefte oppbevaringsregel?"
       ],
       "Create retention rule": [
-        "Opprett bevaringsregel"
+        "Opprett oppbevaringsregel"
       ],
       "Edit retention rule": [
-        "Rediger bevaringsregel"
+        "Rediger oppbevaringsregel"
       ]
     },
     "Role": {
@@ -20771,6 +20926,9 @@
       "Policies": [
         "Retningslinjer"
       ],
+      "Post-quantum protection": [
+        "Postkvantebeskyttelse"
+      ],
       "Preview": [
         "Forhåndsvis"
       ],
@@ -21114,8 +21272,17 @@
       "Upgrade plan": [
         "Oppgrader plan"
       ],
+      "Upgrade to ${ planName }": [
+        "Oppgrader til ${ planName }"
+      ],
       "Upgrade your privacy": [
         "Oppgrader personvernet"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Oppgrader produktiviteten din for ${ formattedPrice } med ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Oppgrader lagringsplassen din for ${ formattedPrice } med ${ planName }"
       ],
       "Upload and share files": [
         "Last opp og del filer"

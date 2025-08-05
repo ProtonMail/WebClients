@@ -652,6 +652,9 @@
       "Enable multi-user support": [
         "Activar soporte multi usuario"
       ],
+      "Enable post-quantum protection": [
+        "Activar protección postcuántica"
+      ],
       "Encrypt and export": [
         "Cifrar y exportar"
       ],
@@ -1458,6 +1461,9 @@
       ],
       "Upgrade": [
         "Actualizar"
+      ],
+      "Upgrade for 200GB": [
+        "Actualizar por 200GB"
       ],
       "Upgrade now": [
         "Actualizar ahora"
@@ -6864,6 +6870,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Entiendo que ya no podré iniciar sesión desde versiones anteriores de las aplicaciones móviles de ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "aplicación web"
@@ -7936,8 +7947,8 @@
       "Add a recovery phone number": [
         "Agregar un número telefónico de recuperación"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Agregue una capa adicional de seguridad a la cuenta. Necesitará verificarse con una autenticación de dos factores cada vez que inicia sesión."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Añada otra capa de seguridad a su cuenta. Deberá verificarse con 2FA cada vez que inicie sesión. Recomendamos usar ${ protonAuthenticatorDownloadLink } para almacenar sus códigos 2FA."
       ],
       "Add domain": [
         "Agregar dominio"
@@ -8218,6 +8229,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo el plan en el futuro."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "Al activar la protección post-cuántica, se generarán claves resistentes a computadoras cuánticas para su cuenta."
       ],
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
@@ -8676,6 +8690,9 @@
       ],
       "Example: ${ spfExample }": [
         "Ejemplo: ${ spfExample }"
+      ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "Los reenvíos de correo cifrados de extremo a extremo existentes deberán habilitarse manualmente en **${ autoReplySettingsTitle }** en los ajustes."
       ],
       "Expired": [
         "Expirado"
@@ -9857,6 +9874,9 @@
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "El soporte del monitoreo para dominios personalizados y direcciones de correo externas a ${ BRAND_NAME } estará disponible próximamente."
       ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "El soporte para claves postcuánticas está activado para su cuenta."
+      ],
       "support team": [
         "equipo de soporte"
       ],
@@ -10804,9 +10824,6 @@
       "Your email will only be used for this one-time verification.": [
         "El correo electrónico sólo se usará para esta verificación única."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Sus redireccionamientos cifrados de extremo a extremo existentes hacia otros usuarios se pausarán. Puede volver a habilitarlos manualmente en los ajustes de '${ autoReplySettingsTitle }'."
-      ],
       "Your files will be encrypted and then saved": [
         "Los archivos serán cifrados y luego guardados."
       ],
@@ -11078,37 +11095,37 @@
       "Generate key": [
         "Generar una clave"
       ],
-      "Generating key failed. Please try again later.": [
-        "Error al generar la clave. Inténtelo más tarde."
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Si generó esta clave porque sospecha que su clave anterior fue comprometida, por favor, márquela como comprometida en sus ajustes."
       ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Si está generando una clave nueva porque cree que la clave existente ha sido comprometida, márquela como comprometida después de generar esta clave."
+      "Key generation failed, please try again later.": [
+        "Error al generar la clave. Inténtelo de nuevo más tarde."
       ],
       "Key successfully generated.": [
         "Se ha generado la clave."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Nota: ya tiene una clave con el mismo algoritmo para esta dirección. A menos que esa clave haya sido comprometida, puede que no sea necesario generar una clave nueva y eso puede ralentizar la cuenta."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Nota: ya tiene una clave con el mismo algoritmo para este usuario. A menos que esa clave haya sido comprometida, puede que no sea necesario generar una clave nueva y eso puede ralentizar la cuenta."
+      "New key generated": [
+        "Nueva clave generada"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Esto generará una clave nueva, la cual se usará para cifrar futuros datos de contacto, claves de cifrado de correo y otros datos."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Esto generará una clave nueva la cual se usará para cifrar futuros correos electrónicos, entre otros datos."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Esto generará una clave nueva, la cual se usará para cifrar futuros correos electrónicos y otros datos, para **${ emailAddress }**."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "Usted ya tiene este tipo de clave. A menos que esa clave haya sido comprometida, generar **una nueva clave podría ralentizar su cuenta**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Compatibilidad"
-      ],
       "Compromised": [
         "Comprometida"
       ],
       "Disabled": [
         "Desactivada"
+      ],
+      "Fallback": [
+        "Alternativa"
       ],
       "Forwarding": [
         "Reenvío"
@@ -11124,6 +11141,27 @@
       ],
       "Primary": [
         "Principal"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Más rápido"
+      ],
+      "Slower, but stronger long-term security": [
+        "Más lenta, pero con mayor seguridad a largo plazo"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Seleccione tipo de clave"
       ]
     },
     "Keyboard shortcut name": {
@@ -11362,8 +11400,8 @@
       "Export public key": [
         "Exportar la clave pública"
       ],
-      "Make primary": [
-        "Marcar como principal"
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "Convierte esta en la ${ keyStatusBadgeTitles.primary } o ${ keyStatusBadgeTitles.fallback } clave para cifrado y firma."
       ],
       "Mark compromised": [
         "Marcarla comprometida"
@@ -11376,6 +11414,9 @@
       ],
       "Mark obsolete": [
         "Marcar como obsoleta"
+      ],
+      "Use for encryption and signing": [
+        "Utilizar para cifrado y firma"
       ]
     },
     "Knowledge base link label": {
@@ -12027,6 +12068,9 @@
       ],
       "Key": [
         "Clave"
+      ],
+      "Key strength": [
+        "Fortaleza de la clave"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atajo de teclado: ${ shortcut }"
@@ -14912,12 +14956,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtenga ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Obtenga Drive Plus por solo ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Obtenga Mail Plus por solo ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Obtener la oferta"
       ],
@@ -14929,6 +14967,9 @@
       ],
       "Limited-time offer": [
         "Oferta por tiempo limitado"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tiempo limitado, válida para su primer mes"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -14942,9 +14983,6 @@
       "Save": [
         "Ahorre"
       ],
-      "Save 80% on your first month.": [
-        "Ahorre un 80 % en su primer mes."
-      ],
       "Save big when you pay annually": [
         "Ahorre mucho más al pagar anualmente"
       ],
@@ -14953,6 +14991,12 @@
       ],
       "This offer won't be shown again.": [
         "Esta oferta no se mostrará nuevamente."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Mejore su productividad por solo ${ pricingTitle } con ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Mejore su almacenamiento por solo ${ pricingTitle } con ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Al cambiarse de una suscripción mensual a una anual"
@@ -14979,23 +15023,26 @@
       "Advanced threat protection": [
         "Protección avanzada contra amenazas"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colabore con usuarios que no son de ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Dominio de correo electrónico personalizado"
+      ],
+      "Edit docs online": [
+        "Edite documentos en línea"
       ],
       "Email addresses": [
         "Direcciones de correo electrónico"
       ],
+      "File version history (over 1 week)": [
+        "Historial de versiones del archivo (más de 1 semana)"
+      ],
       "Free": [
         "Gratuito"
       ],
-      "Online document editor": [
-        "Editor de documentos online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recuperar las versiones previas de los archivos"
       ],
       "Storage": [
         "Almacenamiento"
@@ -16433,6 +16480,61 @@
         "Actualizar a ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "La protección postcuántica ha sido activada en su cuenta, pero algunas operaciones no se realizaron correctamente: la generación de claves de cuenta y dirección postcuánticas falló. Puede generar estas claves manualmente en los ajustes de ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "La protección postcuántica ha sido activada en su cuenta, pero algunas operaciones no se realizaron correctamente: la generación de claves de dirección postcuánticas para una o más direcciones falló. Puede generar estas claves manualmente en los ajustes de ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Actualice **todas sus aplicaciones móviles de ${ BRAND_NAME } **a la última versión."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "Esto generará una nueva clave de cuenta y una nueva clave de cifrado de correo electrónico para cada dirección; estas se usarán para cifrar y descifrar correos electrónicos futuros y otros datos."
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "Activar y generar claves"
+      ],
+      "Enable post-quantum protection": [
+        "Activar protección postcuántica"
+      ],
+      "Enable post-quantum protection?": [
+        "¿Activar protección postcuántica?"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "No se pudo activar la protección postcuántica. Intente de nuevo más tarde."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Entendido"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "¡La protección postcuántica ha sido activada en su cuenta!"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Generando clave de cuenta post-cuántica"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "Generando claves de dirección postcuánticas para cada dirección"
+      ],
+      "Opting into post-quantum protection": [
+        "Activando la protección postcuántica"
+      ]
+    },
     "Price": {
       "Free": [
         "Gratis"
@@ -16573,6 +16675,14 @@
         "Verificar el número de teléfono aumenta la seguridad de la cuenta y permite opciones de recuperación adicionales."
       ]
     },
+    "Remark about a key type option": {
+      "Classic": [
+        "Clásico"
+      ],
+      "Post-quantum": [
+        "Postcuántico"
+      ]
+    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Al cancelar la suscripción, ya no tendrá acceso a este calendario. Todos los eventos en este calendario se eliminarán de la cuenta pero se mantendrán en el enlace público original."
@@ -16648,6 +16758,9 @@
       "Delete rule": [
         "Eliminar la regla"
       ],
+      "Delete this scope": [
+        "Eliminar este ámbito"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -16655,7 +16768,7 @@
         "Purgar todo"
       ],
       "Purge deleted": [
-        "Purgar elementos eliminados"
+        "Purgar eliminados"
       ],
       "Save changes": [
         "Guardar cambios"
@@ -16663,7 +16776,7 @@
     },
     "retention_policy_2025_Confirmation": {
       "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
-        "${ strongText }, incluyendo los de la bandeja de entrada, Enviados y Borradores. Esto podría purgar mensajes que los usuarios esperan conservar. No es posible recuperar estos mensajes posteriormente."
+        "${ strongText }, incluyendo los de la Bandeja de Entrada, Enviados y Borradores. Esto podría purgar mensajes que los usuarios esperan conservar. No es posible recuperar estos mensajes posteriormente."
       ],
       "After ${ lifetime } day all messages will be deleted": [
         "Después de ${ lifetime } día, todos los mensajes serán eliminados",
@@ -16675,10 +16788,16 @@
         "La vida útil debe ser superior a ${ MIN_LIFETIME } días"
       ],
       "Lifetime must not be set for \"Retain All\" action": [
-        "No se debe establecer una duración por siempre para la acción \"Retener todo\""
+        "No se debe establecer una duración por siempre para la acción \"Retener Todo\""
       ],
       "Scope value is not valid": [
         "El valor del campo no es válido"
+      ],
+      "Scope value is required": [
+        "Se requiere el valor del ámbito"
+      ],
+      "Scopes cannot have the same value": [
+        "Los ámbitos no pueden tener el mismo valor"
       ]
     },
     "retention_policy_2025_Info": {
@@ -16690,13 +16809,13 @@
         "${ rule.Lifetime } días"
       ],
       "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Crea reglas de conservación para el tiempo que se deben conservar los datos de acuerdo con la política de conservación de datos de su organización. También activa la purga automática de datos expirados."
+        "Crea reglas de retención para el tiempo que se deben conservar los datos de acuerdo con la política de retención de datos de su organización. También activa la purga automática de datos expirados."
       ],
       "Forever": [
         "Para siempre"
       ],
       "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
-        "Incluye todos los mensajes en la bandeja de entrada, Enviados y todas las demás ubicaciones. Los mensajes eliminados no se pueden recuperar."
+        "Incluye todos los mensajes en la Bandeja de Entrada, Enviados y todas las demás ubicaciones. Los mensajes purgados no se pueden recuperar."
       ],
       "Removes messages already deleted by users.": [
         "Borra los mensajes ya eliminados por los usuarios."
@@ -16730,8 +16849,8 @@
       "Retention period": [
         "Período de retención"
       ],
-      "Retention rule": [
-        "Regla de conservación"
+      "Rule title": [
+        "Título de la regla"
       ],
       "Select product": [
         "Seleccionar producto"
@@ -20850,6 +20969,9 @@
       "Policies": [
         "Políticas"
       ],
+      "Post-quantum protection": [
+        "Protección post-cuántica"
+      ],
       "Preview": [
         "Vista previa"
       ],
@@ -21193,8 +21315,17 @@
       "Upgrade plan": [
         "Actualizar plan"
       ],
+      "Upgrade to ${ planName }": [
+        "Actualizar a ${ planName }"
+      ],
       "Upgrade your privacy": [
         "Mejore su privacidad"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Mejore su productividad por ${ formattedPrice } con ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Mejore su almacenamiento por ${ formattedPrice } con ${ planName }"
       ],
       "Upload and share files": [
         "Cargue y comparta archivos"

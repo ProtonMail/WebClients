@@ -867,6 +867,9 @@
       "Upgrade": [
         "Tingkatkan"
       ],
+      "Upgrade for 200GB": [
+        "Tingkatkan untuk 200GB"
+      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
       ],
@@ -1132,7 +1135,7 @@
         "Diskon didasarkan pada harga bulanan standar. Pada akhir siklus tagihan, langganan Anda akan diperpanjang dengan tarif tahunan standar."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Lipat gandakan penyimpanan terenkripsi Anda – dapatkan 1 TB untuk semua data Anda"
+        "Gandakan ruang penyimpanan terenkripsi Anda – dapatkan 1 TB untuk seluruh data Anda"
       ],
       "Encrypted password manager": [
         "Pengelola kata sandi terenkripsi"
@@ -1651,6 +1654,9 @@
       ],
       "Discover and set up features": [
         "Telusuri dan siapkan berbagai fitur"
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
       ],
       "Remind me later": [
         "Ingatkan saya nanti"
@@ -4483,9 +4489,6 @@
       ],
       "add a recovery method": [
         "tambah metode pemulihan"
-      ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Berikan akun Anda lapisan keamanan tambahan. Anda akan perlu untuk memverifikasi diri Anda dengan 2FA setiap kali Anda masuk."
       ],
       "Add domain": [
         "Tambah domain"
@@ -8684,12 +8687,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Dapatkan ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Dapatkan Mail Plus hanya seharga ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Dapatkan penawaran ini"
       ],
@@ -8701,6 +8698,9 @@
       ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Penawaran terbatas, valid untuk bulan pertama Anda"
       ],
       "Maybe later": [
         "Mungkin nanti"
@@ -8714,9 +8714,6 @@
       "Save": [
         "Simpan"
       ],
-      "Save 80% on your first month.": [
-        "Hemat 80% pada bulan pertama Anda."
-      ],
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
       ],
@@ -8725,6 +8722,12 @@
       ],
       "This offer won't be shown again.": [
         "Penawaran ini tidak akan lagi ditampilkan."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Tingkatkan produktivitas Anda dengan ${ planName }, hanya seharga ${ pricingTitle }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName }, hanya seharga ${ pricingTitle }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Pada saat Anda beralih dari langganan bulanan ke langganan tahunan."
@@ -8751,23 +8754,26 @@
       "Advanced threat protection": [
         "Perlindungan ancaman tingkat lanjut"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Kolaborasi dengan pengguna non-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domain email khusus"
+      ],
+      "Edit docs online": [
+        "Sunting dokumen secara online"
       ],
       "Email addresses": [
         "Alamat email"
       ],
+      "File version history (over 1 week)": [
+        "Riwayat versi berkas (hingga lebih dari 1 minggu)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Penyunting dokumen online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Pulihkan versi berkas sebelumnya"
       ],
       "Storage": [
         "Ruang penyimpanan"
@@ -9645,6 +9651,12 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Tambah pengguna atau grup"
+      ],
+      "Cancel": [
+        "Batal"
+      ],
       "Create retention rule": [
         "Buat peraturan penyimpanan data"
       ],
@@ -9653,6 +9665,16 @@
       ],
       "Delete rule": [
         "Hapus aturan"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "After ${ lifetime } day all messages will be deleted": [
+        "Setelah ${ lifetime } hari, seluruh pesan akan dihapus"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "Durasi Lifetime harus lebih dari ${ MIN_LIFETIME } hari"
       ]
     },
     "retention_policy_2025_Info": {
@@ -9664,6 +9686,33 @@
       ],
       "Forever": [
         "Selamanya"
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Peraturan penyimpanan data \"${ formData.name }\" berhasil diperbarui"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Peraturan penyimpanan data \"${ retentionRule.Name }\" berhasil dihapus"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "Retention period": [
+        "Masa penyimpanan"
+      ],
+      "Set a duration": [
+        "Tentukan durasi"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Purge deleted messages only": [
+        "Hanya bersihkan pesan yang telah dihapus"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Enter duration": [
+        "Masukkan durasi"
+      ],
+      "Enter value": [
+        "Masukkan nilai"
       ]
     },
     "retention_policy_2025_TableHeader": {
@@ -9683,6 +9732,14 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "Tidak ada kebijakan penyimpanan data yang ditemukan"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Konfirmasi peraturan penyimpanan data?"
+      ],
+      "Edit retention rule": [
+        "Sunting peraturan penyimpanan data"
       ]
     },
     "Role": {
@@ -10773,6 +10830,9 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } server khusus"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } untuk ${ maxLumo } pengguna"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per pengguna"
@@ -12345,11 +12405,20 @@
       "Upgrade complete!": [
         "Peningkatan selesai!"
       ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Tingkatkan perlindungan jaringan Anda dengan server khusus"
       ],
       "Upgrade your privacy": [
         "Tingkatkan privasi Anda"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
       ],
       "Upload and share files": [
         "Unggah dan bagikan berkas"

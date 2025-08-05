@@ -435,6 +435,9 @@
       "Forward as attachment": [
         "添付ファイルとして転送"
       ],
+      "Full data": [
+        "全データ"
+      ],
       "Generate password": [
         "パスワードを生成"
       ],
@@ -680,6 +683,9 @@
       ],
       "Next page": [
         "次のページ"
+      ],
+      "No sensitive data": [
+        "機密データなし"
       ],
       "Not now": [
         "後で"
@@ -1050,6 +1056,9 @@
       "Upgrade": [
         "アップグレード"
       ],
+      "Upgrade for 200GB": [
+        "200GBへアップグレード"
+      ],
       "Upgrade now": [
         "今すぐアップグレード"
       ],
@@ -1175,6 +1184,9 @@
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } の ${ seats } シート"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ライティングアシスタントのシート"
@@ -1546,6 +1558,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } の不具合"
+      ],
       "Application problem": [
         "アプリケーションに関する問題"
       ],
@@ -1640,6 +1655,9 @@
       ],
       "Discover and set up features": [
         "機能の発見と設定"
+      ],
+      "Maybe later": [
+        "またあとで"
       ],
       "Remind me later": [
         "後で通知する"
@@ -3219,6 +3237,9 @@
       "Failed to fetch sharing info": [
         "共有情報の取得に失敗しました"
       ],
+      "Failed to get details, please try again later": [
+        "詳細の取得に失敗しました。後ほど再度お試しください。"
+      ],
       "Failed to load the STL preview": [
         "STLプレビューの読み込みに失敗しました"
       ],
@@ -3561,6 +3582,9 @@
       "Unknown error": [
         "原因不明なエラーが発生しました"
       ],
+      "Unknown location": [
+        "不明な場所"
+      ],
       "Unknown payment token status": [
         "支払いトークンの状態が不明です。"
       ],
@@ -3575,6 +3599,12 @@
       ],
       "Validation error": [
         "検証エラー"
+      ],
+      "We were not able to load some of your shared items": [
+        "共有アイテムの一部を読み込むことができませんでした"
+      ],
+      "We were not able to load some of your shared items details": [
+        "共有アイテムの一部の詳細を読み込むことができませんでした。"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }件以上の宛先へメールを送信することはできません"
@@ -3593,6 +3623,9 @@
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ 復号できない名前"
       ]
     },
     "Error importing calendar": {
@@ -4535,6 +4568,9 @@
       "${ invitations.length } pending invitation": [
         "保留中の招待が${ invitations.length }件"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME }のLifetimeディールには更新料金はなく、一度の支払いで${ PASS_SHORT_APP_NAME }への生涯アクセスが可能です。"
       ],
@@ -4942,6 +4978,9 @@
       ],
       "Download ${ name } app": [
         "${ name } アプリをダウンロード"
+      ],
+      "Download current logs": [
+        "現在のログをダウンロード"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName }のダウンロードは中断されます"
@@ -6761,6 +6800,9 @@
       ],
       "Import to:": [
         "インポート先："
+      ],
+      "Include application logs in bug report": [
+        "バグレポートにアプリのログを含める"
       ],
       "Include message and file name in invite email": [
         "招待メールにメッセージとファイル名を含める"
@@ -8810,12 +8852,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimitedを入手"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "たった${ pricingTitle }でDrive Plusを入手"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "たった${ pricingTitle }でMail Plusを入手"
-      ],
       "Get the deal": [
         "割引を入手"
       ],
@@ -8827,6 +8863,9 @@
       ],
       "Limited-time offer": [
         "期間限定オファー"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "期間限定オファー、最初の月のみ有効です"
       ],
       "Maybe later": [
         "またあとで"
@@ -8840,9 +8879,6 @@
       "Save": [
         "節約"
       ],
-      "Save 80% on your first month.": [
-        "最初の月は 80 %割引。"
-      ],
       "Save big when you pay annually": [
         "年払いで大幅に節約"
       ],
@@ -8851,6 +8887,12 @@
       ],
       "This offer won't be shown again.": [
         "このオファーは二度と表示されません。"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }で生産性をアップグレードできます。"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }でストレージをアップグレードできます。"
       ],
       "When you switch from a monthly to annual subscription.": [
         "月額プランから年間プランに切り替える場合。"
@@ -8877,23 +8919,26 @@
       "Advanced threat protection": [
         "高度な脅威保護"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "非${ BRAND_NAME } ユーザーとコラボレーション"
+      ],
       "Custom email domain": [
         "独自メールドメイン"
+      ],
+      "Edit docs online": [
+        "オンラインでドキュメントを編集"
       ],
       "Email addresses": [
         "メールアドレス"
       ],
+      "File version history (over 1 week)": [
+        "ファイルバージョン履歴(1週間以上)"
+      ],
       "Free": [
         "無料"
       ],
-      "Online document editor": [
-        "オンライン文書エディタ"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "以前のファイルを復元"
       ],
       "Storage": [
         "ストレージ"
@@ -10982,6 +11027,9 @@
       "Addresses": [
         "メールアドレス"
       ],
+      "Advanced details": [
+        "高度な詳細"
+      ],
       "Album": [
         "アルバム"
       ],
@@ -10999,6 +11047,12 @@
       ],
       "Amount due": [
         "支払い総額"
+      ],
+      "an anonymous user": [
+        "匿名ユーザー"
+      ],
+      "Anonymous user": [
+        "匿名ユーザー"
       ],
       "Apply gift code": [
         "ギフトコードを使用"
@@ -11105,6 +11159,9 @@
       "Create new group": [
         "新しいグループを作成"
       ],
+      "Created by": [
+        "作成者"
+      ],
       "Credits": [
         "クレジット"
       ],
@@ -11159,6 +11216,33 @@
       "Desktop": [
         "デスクトップ"
       ],
+      "Devices": [
+        "デバイス"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "デジタル署名が部分的に検証されました。このファイルは、${ BRAND_NAME } アカウントを持たないユーザーによる公開共有リンクを使用して作成されたため、本人確認はできません。"
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "デジタル署名が部分的に検証されました。このファイルは、${ BRAND_NAME } アカウントを持たないユーザーによる公開共有リンクを使用してアップロードされたため、本人確認はできません。"
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "デジタル署名が部分的に検証されました。このフォルダーは、${ BRAND_NAME } アカウントを持たないユーザーによる公開共有リンクを使用して作成されたため、本人確認はできません。"
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "デジタル署名が部分的に検証されました。このフォルダは、${ BRAND_NAME } アカウントを持たないユーザーによる公開共有リンクを使用してアップロードされたため、本人確認はできません。"
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "デジタル署名が検証されました。このファイルは<strong>${ emailAddress }</strong>によって安全に作成されました。"
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "デジタル署名が検証されました。このファイルは<strong>${ emailAddress }</strong>によって安全にアップロードされました。"
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "デジタル署名が検証されました。このフォルダーは<strong>${ emailAddress }</strong>によって安全に作成されました。"
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "デジタル署名が検証されました。このフォルダーは<strong>${ emailAddress }</strong>によって安全にアップロードされました。"
+      ],
       "Discard": [
         "破棄"
       ],
@@ -11176,6 +11260,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } アプリをダウンロード"
+      ],
+      "Download details": [
+        "ダウンロード詳細"
       ],
       "Download the app": [
         "アプリをダウンロード"
@@ -11255,6 +11342,9 @@
       "File recovery process": [
         "ファイルの復旧状況"
       ],
+      "Folder": [
+        "フォルダ"
+      ],
       "Folder details": [
         "フォルダーの詳細"
       ],
@@ -11321,6 +11411,9 @@
       "Last edited by": [
         "による最終編集"
       ],
+      "Last uploaded by": [
+        "最終アップロード元"
+      ],
       "Link confirmation": [
         "リンクの確認"
       ],
@@ -11332,6 +11425,9 @@
       ],
       "Manage secure link": [
         "セキュアリンクの管理"
+      ],
+      "Media type": [
+        "メディア種類"
       ],
       "Merge contacts": [
         "連絡先の統合"
@@ -11431,6 +11527,9 @@
       ],
       "Original size": [
         "元のサイズ"
+      ],
+      "Original size in bytes": [
+        "元のサイズ（バイト）"
       ],
       "Other information": [
         "その他の情報"
@@ -11558,6 +11657,9 @@
       "Settings": [
         "設定"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "${ name } の共有"
       ],
@@ -11587,6 +11689,9 @@
       ],
       "Size": [
         "サイズ"
+      ],
+      "Size in bytes": [
+        "バイト単位のサイズ"
       ],
       "Sort files/folders": [
         "ファイル・フォルダーの並べ替え"
@@ -11618,6 +11723,15 @@
       "The link expired": [
         "リンクは期限切れです"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "ノードを作成した元の作成者 (${ claimedKeyAuthor }) による暗号鍵の署名の検証に失敗しました。理由は次のとおりです: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "最終リビジョンをアップロードしたアップローダー (${ claimedContentAuthor }) によるファイルのコンテンツ署名の検証に失敗しました。理由は次のとおりです: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "最後にその名前を設定した著者 (${ claimedNameAuthor }) による名前の署名の検証に失敗しました。理由は次のとおりです: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "このファイルには、署名が存在しないか無効です。メニュー (⋮) → 詳細で、情報を確認できます。"
       ],
@@ -11639,6 +11753,12 @@
       "Type": [
         "種類"
       ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "不明なユーザー"
+      ],
       "Untitled document ${ date }": [
         "無題のドキュメント ${ date }"
       ],
@@ -11647,6 +11767,15 @@
       ],
       "Upgrade complete!": [
         "アップグレード完了!"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName }で${ formattedPrice }にて、お客様の生産性をアップグレードしましょう。"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "${ planName }をご利用いただくと、${ formattedPrice }でストレージをアップグレードできます。"
       ],
       "Upload and share files": [
         "ファイルのアップロードと共有"
@@ -11686,6 +11815,30 @@
       ],
       "Warning: suspected fake website": [
         "警告: 偽のウェブサイトの疑いがあります"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "<strong>${ emailAddress }</strong> がこのファイルを作成したことを検証できませんでした。"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "<strong>${ emailAddress }</strong> がこのフォルダを作成したことを検証できませんでした。"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "<strong>${ emailAddress }</strong> がこのファイルをアップロードしたことを検証できませんでした。"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "<strong>${ emailAddress }</strong> がこのフォルダーをアップロードしたことを検証できませんでした。"
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "匿名ユーザーがこのファイルを作成したことを検証できませんでした。"
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "匿名ユーザーがこのフォルダーを作成したことを検証できませんでした。"
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "匿名ユーザーがこのファイルをアップロードしたことを検証できませんでした。"
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "匿名ユーザーがこのフォルダーをアップロードしたことを検証できませんでした。"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Businessへようこそ"

@@ -431,7 +431,7 @@
         "Brisanje mape"
       ],
       "Deleting label": [
-        "Izbriši oznako"
+        "Brisanje oznake"
       ],
       "Deny access": [
         "Zavrni dostop"
@@ -2394,7 +2394,7 @@
         "Vse aplikacije ${ BRAND_NAME } in premijske funkcije"
       ],
       "Cancel and downgrade": [
-        "Prekliči vse prenose"
+        "Prekliči in zmanjšaj"
       ],
       "Cloud storage and sharing for large files": [
         "Shramba v oblaku in skupna raba velikih datotek"
@@ -7131,9 +7131,6 @@
       "Add a recovery phone number": [
         "Dodajte telefonsko številko za obnovitev."
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Dodajte dodatno stopnjo varnosti na svoj račun. Za vsako prijavo boste morali preveriti svojo identiteto z uporabo dvojnega preverjanja pristnosti (2FA)."
-      ],
       "Add domain": [
         "Dodaj domeno"
       ],
@@ -9721,32 +9718,14 @@
       "Generate key": [
         "Ustvari ključ"
       ],
-      "Generating key failed. Please try again later.": [
-        "Ustvarjanje ključa ni uspelo, poskusite znova pozneje."
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Če ustvarjate nov ključ, ker menite, da je bil vaš obstoječi ključ ogrožen, ga po ustvarjanju tega ključa označite kot ogroženega."
-      ],
       "Key successfully generated.": [
         "Ključ uspešno ustvarjen."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Opomba: za ta naslov že imate ključ z istim algoritmom. Razen če ta ključ ni bil ogrožen, morda ne bi bilo treba ustvariti novega ključa, kar to lahko upočasni vaš račun."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Opomba: za tega uporabnika že imate ključ z enakim algoritmom. Razen če ta ključ ni bil ogrožen, morda ni bilo treba ustvariti novega ključa, kar to lahko upočasni vaš račun."
-      ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "To bo ustvarilo nov ključ, ki bo uporabljen za prihodnje šifriranje e-pošte, kontaktnih in drugih podatkov."
-      ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "To bo ustvarilo nov ključ, ki bo uporabljen tudi za šifriranje prihodnjih e-poštnih sporočil."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Združljivost"
-      ],
       "Compromised": [
         "Ogroženo"
       ],
@@ -10001,9 +9980,6 @@
       ],
       "Export public key": [
         "Izvozi javni ključ"
-      ],
-      "Make primary": [
-        "Označi kot primarno"
       ],
       "Mark compromised": [
         "Označite kot ogroženo"
@@ -12572,7 +12548,7 @@
         "Do ${ totalStorageSize } prostora za shranjevanje"
       ],
       "Up to 10 Gbps": [
-        "Do 10 Gbp/s"
+        "Do 10 Gb/s"
       ],
       "User credential management": [
         "Upravljanje uporabniških poverilnic"
@@ -12709,7 +12685,7 @@
         "Zaščitite občutljive poslovne informacije in varno sodelujte."
       ],
       "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
-        "Zaščitite svojo družino z vsemi premium funkcijami programa ${ plusTitle } za 6 uporabnikov."
+        "Zaščitite svojo družino z vsemi premijskimi funkcijami paketa ${ plusTitle } za 6 uporabnikov."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Zaščitite zasebnost vaše družine s kombinacijo vseh storitev ${ BRAND_NAME }."
@@ -13368,12 +13344,6 @@
       "Don’t show this offer again": [
         "Te ponudbe ne prikazuj več"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Pridobite Drive Plus za samo ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Pridobite Mail Plus za samo ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
       ],
@@ -13397,9 +13367,6 @@
       ],
       "Save": [
         "Prihranite"
-      ],
-      "Save 80% on your first month.": [
-        "Prihranite 80 % pri vašem prvem mesecu."
       ],
       "Save big when you pay annually": [
         "Prihranite čim več z izbiro letnega plačila!"
@@ -13444,14 +13411,8 @@
       "Free": [
         "Brezplačno"
       ],
-      "Online document editor": [
-        "Spletni urejevalnik dokumentov"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Obnovi prejšnje različice datoteke"
       ],
       "Storage": [
         "Shramba"
@@ -13493,7 +13454,7 @@
         "Če potrebujete pomoč,"
       ],
       "Once your full subscription starts...": [
-        "Ko se začne vaša polna naročnina..."
+        "Ko se začne vaša polna naročnina ..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Še vedno lahko prekličete v 30 dneh in prejmete sorazmerno vračilo denarja."
@@ -14543,7 +14504,7 @@
         "Novak"
       ],
       "Anytown": [
-        "Brezodolje"
+        "Mesto"
       ],
       "Choose a name": [
         "Izberite ime"
@@ -15866,7 +15827,7 @@
         "Varno brskajte"
       ],
       "Do more with ${ BRAND_NAME }": [
-        "Prijava z ${ BRAND_NAME }."
+        "Naredite več z ${ BRAND_NAME }."
       ],
       "Go to subscription plans": [
         "Ogled naročniških paketov"
@@ -15951,7 +15912,7 @@
     },
     "specialoffer: Title": {
       "Keep your passwords safe and organized in multiple vaults ": [
-        "Imejte svoja gesla varna in organizirana v več trezorjih"
+        "Imejte svoja gesla varna in organizirana v več trezorjih "
       ],
       "Protect your account from threats with Sentinel": [
         "Zaščitite svoj račun pred grožnjami s Sentinelom"

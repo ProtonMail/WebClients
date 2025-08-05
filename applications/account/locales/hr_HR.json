@@ -179,6 +179,9 @@
       "Choose a file or drag it here": [
         "Odaberite datoteku ili je dovucite ovdje"
       ],
+      "Choose my own password": [
+        "Odaberite vlastitu lozinku"
+      ],
       "Clear all formatting": [
         "Očisti sva oblikovanja"
       ],
@@ -3332,6 +3335,9 @@
       "Get another device that’s signed in to your ${ BRAND_NAME } Account": [
         "Nabavite drugi uređaj koji je prijavljen na Vaš ${ BRAND_NAME } korisnički račun"
       ],
+      "QR code expired": [
+        "QR kôd je istekao"
+      ],
       "QR code sign-in enabled": [
         "Prijava QR kôdom omogućena"
       ],
@@ -3514,6 +3520,9 @@
       "Automatically forward emails to another email address.": [
         "Automatski prosljeđuje e-poštu na druge adrese e-pošte."
       ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Za vašu adresu ${ boldForwarderEmail } end-to-end šifriranje je onemogućeno, ali šifriranje nultog pristupa i dalje je omogućeno. ${ learnMoreLink }"
+      ],
       "For compatibility, post-quantum encryption has been be disabled, and a new encryption key has been generated for ${ boldForwarderEmail }.": [
         "Radi kompatibilnosti, postkvantno šifriranje je onemogućeno, i novi ključ za šifriranje je generiran za ${ boldForwarderEmail }."
       ],
@@ -3594,6 +3603,9 @@
       ],
       "Declined": [
         "Odbijeno"
+      ],
+      "Outdated": [
+        "Zastarjelo"
       ],
       "Paused": [
         "Pauzirano"
@@ -4179,6 +4191,9 @@
       "Loading events": [
         "Učitavanje događaja"
       ],
+      "None of the events could be exported.": [
+        "Nije bilo moguće izvesti nijedan događaj."
+      ],
       "Password reset - multiple events cannot be decrypted": [
         "Lozinka resetirana - više događaja ne može se dešifrirati"
       ],
@@ -4222,6 +4237,9 @@
       ]
     },
     "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Obiteljska grupa nije prepoznata. Pokušajte ponovno."
+      ],
       "Organization not recognized. Try again.": [
         "Organizacija nije prepoznata. Pokušajte ponovno."
       ]
@@ -4261,6 +4279,9 @@
     "familyOffer_2023:Info": {
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Nakon napuštanja Vašeg plana, ovaj korisnik bit će premješten na besplatni ${ BRAND_NAME } plan."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Kreirajte i upravljajte članovima obitelji te im dodijelite prostor za pohranu koji se dijeli između ${ DRIVE_APP_NAME } i ${ MAIL_APP_NAME }."
       ],
       "Create and manage family members.": [
         "Stvorite i upravljajte članovima obitelji."
@@ -4431,6 +4452,9 @@
     "fido2: Title": {
       "Name your security key": [
         "Dajte naziv svojem sigurnosnom ključu"
+      ],
+      "Security key registered": [
+        "Sigurnosni ključ je registriran"
       ],
       "Security keys": [
         "Sigurnosni ključevi"
@@ -5313,6 +5337,9 @@
       ],
       "Align right": [
         "Poravnaj desno"
+      ],
+      "All members have been added.": [
+        "Svi članovi su dodani."
       ],
       "All users": [
         "Svi korisnici"
@@ -6222,6 +6249,9 @@
       "Storage for users": [
         "Pohrana za korisnike"
       ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Spremite ovu lozinku i datoteku na sigurno mjesto. Trebat će Vam ponovno za uvoz Vašeg ključa."
+      ],
       "Subscription auto-renews every month.": [
         "Pretplata se automatski obnavlja svaki mjesec."
       ],
@@ -6308,6 +6338,9 @@
       ],
       "This invitation link is already used. Please sign in directly instead.": [
         "Pozivna poveznica već je iskorištena. Umjesto toga, molimo, prijavite se izravno."
+      ],
+      "This is an encryption key you may have previously saved.": [
+        "Ovo je ključ za šifriranje koji ste možda prethodno spremili."
       ],
       "This is the password you used before the password reset.": [
         "Ovo je lozinka koju ste koristili prije resetiranja lozinke."
@@ -6513,6 +6546,9 @@
       "We need to authenticate your payment with your bank.": [
         "Moramo potvrditi Vašu uplatu s Vašom bankom."
       ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Preporučujemo da obavijestite članove obitelji i zamolite ih da postave 2FA na svojim računima prije nego što uvedete obaveznu upotrebu 2FA."
+      ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Sigurno pohranjujemo informacije za oporavak na Vašem pouzdanom uređaju kako bismo spriječili gubitak Vaših podataka."
       ],
@@ -6662,9 +6698,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Vaša postojeća end-to-end šifrirana prosljeđivanja prema drugim korisnicima bit će pauzirana. Možete ih ponovno omogućiti ručno u postavkama '${ autoReplySettingsTitle }'."
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke će biti šifrirane i spremljene"
@@ -6848,21 +6881,9 @@
     "Key generation": {
       "Generate key": [
         "Stvori ključ"
-      ],
-      "Generating key failed. Please try again later.": [
-        "Generiranje ključa nije uspjelo. Pokušajte ponovo kasnije."
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Ako generirate novi ključ jer vjerujete da je Vaš postojeći ključ ugrožen, molimo Vas da ga označite kao ugroženog nakon generiranja novog ključa."
-      ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Ovo će generirati novi ključ koji će se koristiti za šifriranje budućih poruka e-pošte, kao i drugih podataka."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Kompatibilnost"
-      ],
       "Compromised": [
         "Ugroženo"
       ],
@@ -7111,9 +7132,6 @@
       ],
       "Export public key": [
         "Izvoz javnog ključa"
-      ],
-      "Make primary": [
-        "Označi kao glavni"
       ],
       "Mark compromised": [
         "Označi kao ugroženo"
@@ -9254,6 +9272,9 @@
       "${ app } and ${ additionalApp } product updates": [
         "Ažuriranja proizvoda ${ app } i ${ additionalApp }"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Važne obavijesti tvrtke ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } user survey": [
         "${ BRAND_NAME } korisnička anketa"
       ],
@@ -10456,6 +10477,9 @@
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "Enter duration": [
+        "Unesite trajanje"
+      ],
       "Search policies": [
         "Pravila pretraživanja"
       ]
@@ -10608,6 +10632,9 @@
       ],
       "Your recovery phone": [
         "Vaš broj telefona za oporavak"
+      ],
+      "Your recovery phone is set": [
+        "Vaš broj za oporavak je postavljen"
       ]
     },
     "saml: Action": {
@@ -10746,6 +10773,9 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Ako niste zatražili resetiranje svoje lozinke, poništite zahtjev odmah."
+      ],
+      "You can now reset your password": [
+        "Sada možete ponovno postaviti svoju lozinku."
       ]
     },
     "session_recovery:available:link": {
@@ -10975,6 +11005,9 @@
       "Billing Cycle": [
         "Ciklus naplate"
       ],
+      "Block ads, trackers, and malware": [
+        "Blokirajte oglase, pratitelje i zlonamjerne programe"
+      ],
       "Collaborative document editing": [
         "Zajedničko uređivanje dokumenata"
       ],
@@ -11002,6 +11035,9 @@
       "Most popular": [
         "Najpopularnije"
       ],
+      "Need more space?": [
+        "Trebate više prostora?"
+      ],
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "Trebate više pohrane? Možete nadograditi bilo kada s planovima od 200 GB do 3 TB. 5 GB je dovoljno za 2500 fotografija s modernog telefona (svaka otprilike 2 MB)."
       ],
@@ -11022,6 +11058,9 @@
       ],
       "Set your password": [
         "Postavite svoju lozinku"
+      ],
+      "Sign up, protect your files": [
+        "Registrirajte se, zaštitite svoje datoteke"
       ],
       "Sync files across devices and users": [
         "Sinkronizirajte datoteke između uređaja i korisnika"
@@ -11247,6 +11286,9 @@
       ]
     },
     "sso": {
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO korisnici bit će odvojeni od Vašeg pružatelja identiteta** i pretvoreni u ne-SSO korisnike."
+      ],
       "Access denied": [
         "Pristup odbijen"
       ],
@@ -11315,6 +11357,9 @@
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
         "Obavezno spremite ovu lozinku na sigurno mjesto kako biste mogli ponovno pristupiti svom računu u slučaju da izgubite pristup vjerodajnicama svog davatelja identiteta."
+      ],
+      "New backup password": [
+        "Nova sigurnosna lozinka za oporavak"
       ],
       "No, it wasn’t me": [
         "Ne, to nisam ja"
@@ -11442,6 +11487,9 @@
       ],
       "Your storage is full": [
         "Pohrana je puna"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Izgubit ćete pristup ${ gb } prostora za pohranu i prioritetnu podršku."
       ]
     },
     "Subscribe to calendar modal": {
@@ -11726,6 +11774,9 @@
       ],
       "Catch-all address updated": [
         "Dohvati-sve adresa je ažurirana"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Promjene su objavljene. Vaše će promjene biti vidljive svim korisnicima u sljedećih nekoliko sati."
       ],
       "Code sent to ${ methodTo }": [
         "Kôd je poslan na ${ methodTo }"
@@ -12103,6 +12154,9 @@
       ],
       "Add to allow list": [
         "Dodaj na popis dopuštenih adresa"
+      ],
+      "Add to spam list": [
+        "Dodaj na popis neželjene pošte"
       ],
       "Add user": [
         "Dodaj korisnika"

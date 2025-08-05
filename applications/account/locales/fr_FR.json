@@ -652,6 +652,9 @@
       "Enable multi-user support": [
         "Activer la prise en charge multi-utilisateur"
       ],
+      "Enable post-quantum protection": [
+        "Activer la protection post-quantique"
+      ],
       "Encrypt and export": [
         "Chiffrer et exporter"
       ],
@@ -1459,6 +1462,9 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
+      "Upgrade for 200GB": [
+        "Mise à niveau pour 200 Go"
+      ],
       "Upgrade now": [
         "Changer d'abonnement"
       ],
@@ -1642,7 +1648,7 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
-        "${ seats } accès à ${ LUMO_APP_NAME }"
+        "${ seats } accès ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
@@ -6870,6 +6876,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Je comprends que je ne pourrai plus me connecter à partir d'anciennes versions des applications mobiles ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "application web"
@@ -7942,8 +7953,8 @@
       "Add a recovery phone number": [
         "Ajouter un numéro de téléphone de récupération"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Ajoutez une sécurité supplémentaire à votre compte avec une A2F chaque fois que vous vous connecterez."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Ajoutez un niveau de sécurité supplémentaire à votre compte. Vous devrez vous authentifier avec l'authentification à deux facteurs à chaque connexion. Nous vous recommandons d'utiliser ${ protonAuthenticatorDownloadLink } pour stocker vos codes d'authentification à deux facteurs."
       ],
       "Add domain": [
         "Ajouter un domaine"
@@ -8225,6 +8236,9 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
       ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "En activant la protection post-quantique, des clés résistantes aux ordinateurs quantiques seront générées pour votre compte."
+      ],
       "By leaving now, changes may not be saved": [
         "En quittant maintenant, les modifications ne seront peut-être pas sauvegardées."
       ],
@@ -8412,7 +8426,7 @@
         "Supprimer le lien ?"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Supprimez les pourriels et la corbeille après 30 jours. L'activation de la suppression automatique attribue aux messages déjà présents dans la corbeille ou les pourriels une date de suppression en fonction de leur date d'arrivée."
+        "Supprimez les indésirables/spam et la corbeille après 30 jours. L'activation de la suppression automatique attribue aux messages déjà présents dans la corbeille ou les indésirables/spam une date de suppression en fonction de leur date d'arrivée."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Suppression de ${ deletedServerCount } serveur de passerelle",
@@ -8682,6 +8696,9 @@
       ],
       "Example: ${ spfExample }": [
         "Exemple : ${ spfExample }"
+      ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "Les transferts de courriels chiffrés de bout en bout existants devront être réactivés manuellement sous **${ autoReplySettingsTitle }** dans les paramètres."
       ],
       "Expired": [
         "Expiré"
@@ -9863,6 +9880,9 @@
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "La surveillance des adresses e-mail autres que ${ BRAND_NAME } et provenant de domaines personnalisés sera bientôt disponible."
       ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "La prise en charge des clés post-quantiques est activée pour votre compte."
+      ],
       "support team": [
         "équipe support"
       ],
@@ -10810,9 +10830,6 @@
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Vos transferts chiffrés de bout en bout existants vers d'autres utilisateurs seront suspendus. Vous pouvez les réactiver manuellement dans les paramètres « ${ autoReplySettingsTitle } »."
-      ],
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
@@ -11084,37 +11101,37 @@
       "Generate key": [
         "Générer une clé"
       ],
-      "Generating key failed. Please try again later.": [
-        "La génération de la clé n'a pas abouti. Nous vous invitons à réessayer plus tard."
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Si vous avez généré(e) cette clé parce que vous croyez que votre clé précédente a été compromise, veuillez la marquer comme compromise dans vos paramètres."
       ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Si vous générez une nouvelle clé parce que vous pensez que votre clé existante a été compromise, veuillez la marquer comme compromise après avoir généré cette clé."
+      "Key generation failed, please try again later.": [
+        "La génération de la clé a échoué, veuillez réessayer plus tard."
       ],
       "Key successfully generated.": [
         "La clé a été générée."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Remarque : vous disposez déjà d'une clé avec le même algorithme pour cette adresse. À moins que cette clé n'ait été compromise, il n'est peut-être pas nécessaire de générer une nouvelle clé et cela peut ralentir votre compte."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Remarque : vous disposez déjà d'une clé avec le même algorithme pour cet utilisateur. À moins que cette clé n'ait été compromise, il n'est peut-être pas nécessaire de générer une nouvelle clé et cela peut ralentir votre compte."
+      "New key generated": [
+        "La nouvelle clé est générée"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Ceci générera une nouvelle clé que vous pourrez utiliser pour chiffrer les futures informations des contacts, les clés de chiffrement des e-mails et d'autres données."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Ceci générera une nouvelle clé que vous pourrez utiliser pour chiffrer vos futurs e-mails et d'autres données."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Cela générera une nouvelle clé, qui sera utilisée pour crypter les futurs courriels et autres données, pour **${ emailAddress }**."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "Vous avez déjà ce genre de clé. À moins que cette clé ait été compromise, **la génération d'une nouvelle clé pourrait ralentir votre compte**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Compatibilité"
-      ],
       "Compromised": [
         "Compromise"
       ],
       "Disabled": [
         "Désactivée"
+      ],
+      "Fallback": [
+        "Solution de secours"
       ],
       "Forwarding": [
         "Transfert"
@@ -11130,6 +11147,27 @@
       ],
       "Primary": [
         "Principale"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Plus rapide"
+      ],
+      "Slower, but stronger long-term security": [
+        "Une sécurité à long terme plus lente, mais plus forte."
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + Courbe ECC25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Sélectionnez le type de clé"
       ]
     },
     "Keyboard shortcut name": {
@@ -11368,8 +11406,8 @@
       "Export public key": [
         "Exporter la clé publique"
       ],
-      "Make primary": [
-        "Marquer comme principale"
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "Faites de cela la clé ${ keyStatusBadgeTitles.primary } ou ${ keyStatusBadgeTitles.fallback } pour le chiffrement et la signature."
       ],
       "Mark compromised": [
         "Marquer comme compromise"
@@ -11382,6 +11420,9 @@
       ],
       "Mark obsolete": [
         "Marquer comme obsolète"
+      ],
+      "Use for encryption and signing": [
+        "Utiliser pour le chiffrement et la signature"
       ]
     },
     "Knowledge base link label": {
@@ -12033,6 +12074,9 @@
       ],
       "Key": [
         "Clé"
+      ],
+      "Key strength": [
+        "Force de la clé"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Raccourci clavier : ${ shortcut }"
@@ -14918,12 +14962,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Profitez de ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Profitez de Drive Plus pour seulement ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Profitez de Mail Plus pour seulement ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Je profite de l'offre"
       ],
@@ -14935,6 +14973,9 @@
       ],
       "Limited-time offer": [
         "Offre à durée limitée"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Offre d'une durée limitée, valide pour votre premier mois"
       ],
       "Maybe later": [
         "Peut-être plus tard"
@@ -14948,9 +14989,6 @@
       "Save": [
         "Économisez"
       ],
-      "Save 80% on your first month.": [
-        "Économisez 80 % sur votre premier mois"
-      ],
       "Save big when you pay annually": [
         "Économisez un maximum en optant pour le paiement annuel !"
       ],
@@ -14959,6 +14997,12 @@
       ],
       "This offer won't be shown again.": [
         "Cette offre ne sera plus affichée."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Améliorez votre productivité pour seulement ${ pricingTitle } avec ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Mettez à niveau votre stockage pour seulement ${ pricingTitle } avec ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Lorsque vous passez d'un abonnement mensuel à un abonnement annuel."
@@ -14985,23 +15029,26 @@
       "Advanced threat protection": [
         "Protection avancée contre les menaces"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Collaborer avec des utilisateurs non-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domaine de messagerie personnalisé"
+      ],
+      "Edit docs online": [
+        "Modifier des documents en ligne"
       ],
       "Email addresses": [
         "Adresses e-mail"
       ],
+      "File version history (over 1 week)": [
+        "Historique des versions du fichier (plus d'une semaine)"
+      ],
       "Free": [
         "Gratuit"
       ],
-      "Online document editor": [
-        "Éditeur de documents en ligne"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Récupérer les versions précédentes des fichiers"
       ],
       "Storage": [
         "Espace de stockage"
@@ -16439,6 +16486,61 @@
         "Passez à ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "La protection post-quantique a été activée sur votre compte, mais certaines opérations ont échoué : la génération des clés de compte et d'adresse post-quantiques a échoué. Vous pouvez générer ces clés manuellement dans les paramètres ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "La protection post-quantique a été activée sur votre compte, mais certaines opérations ont échoué : la génération de clés d'adresse post-quantique pour une ou plusieurs adresses a échoué. Vous pouvez générer ces clés manuellement dans les paramètres ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Veuillez mettre à jour **toutes vos applications mobiles ${ BRAND_NAME }** vers la dernière version."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "Cela générera une nouvelle clé de compte et une nouvelle clé de cryptage de messages pour chaque adresse ; celles-ci serviront à crypter et décrypter les futurs courriels et autres données."
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "Activer et générer des clés"
+      ],
+      "Enable post-quantum protection": [
+        "Activer la protection post-quantique"
+      ],
+      "Enable post-quantum protection?": [
+        "Activer la protection post-quantique ?"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "Échec de l'activation de la protection post-quantique. Réessayez plus tard."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Compris"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "La protection post-quantique a été activée sur votre compte !"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Création d'une clé de compte post-quantique"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "Génération de clés d'adresse post-quantiques pour chaque adresse"
+      ],
+      "Opting into post-quantum protection": [
+        "Opter pour la protection post-quantique"
+      ]
+    },
     "Price": {
       "Free": [
         "Gratuit"
@@ -16577,6 +16679,14 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Vérifier votre numéro de téléphone améliore la sécurité de votre compte et offre des options de récupération supplémentaires."
+      ]
+    },
+    "Remark about a key type option": {
+      "Classic": [
+        "Classique"
+      ],
+      "Post-quantum": [
+        "Post-quantique"
       ]
     },
     "Remove calendar section description": {
@@ -16728,7 +16838,7 @@
     },
     "retention_policy_2025_Label": {
       "After retention period expires": [
-        "Après l'échéance de la période de conservation."
+        "Après l'expiration de la période de conservation."
       ],
       "Applies to": [
         "S'applique à"
@@ -16745,8 +16855,8 @@
       "Retention period": [
         "Durée de conservation"
       ],
-      "Retention rule": [
-        "Règle de conservation."
+      "Rule title": [
+        "Nom de la règle"
       ],
       "Select product": [
         "Sélectionner un produit"
@@ -20868,6 +20978,9 @@
       "Policies": [
         "Politiques"
       ],
+      "Post-quantum protection": [
+        "Protection post-quantique"
+      ],
       "Preview": [
         "Aperçu"
       ],
@@ -21211,8 +21324,17 @@
       "Upgrade plan": [
         "Changer d'abonnement"
       ],
+      "Upgrade to ${ planName }": [
+        "Mise à niveau vers ${ planName }"
+      ],
       "Upgrade your privacy": [
         "Faites passer le respect de votre vie privée au niveau supérieur"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Améliorez votre productivité pour ${ formattedPrice } avec ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Mettez à niveau votre stockage pour ${ formattedPrice } avec ${ planName }"
       ],
       "Upload and share files": [
         "Importer et partager des fichiers"

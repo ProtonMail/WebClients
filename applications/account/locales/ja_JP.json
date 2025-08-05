@@ -619,6 +619,12 @@
       "Edit servers": [
         "サーバーの編集"
       ],
+      "Edit Sieve": [
+        "Sieve を編集"
+      ],
+      "Edit Sieve filter “${ Name }”": [
+        "Sieve フィルター「${ Name }」を編集"
+      ],
       "Edit sign-in details": [
         "サインイン詳細を編集"
       ],
@@ -645,6 +651,9 @@
       ],
       "Enable multi-user support": [
         "複数ユーザー対応を有効にする"
+      ],
+      "Enable post-quantum protection": [
+        "ポスト量子保護を有効にする"
       ],
       "Encrypt and export": [
         "暗号化してエクスポートする"
@@ -1453,6 +1462,9 @@
       "Upgrade": [
         "アップグレード"
       ],
+      "Upgrade for 200GB": [
+        "200GBへアップグレード"
+      ],
       "Upgrade now": [
         "今すぐアップグレード"
       ],
@@ -1631,6 +1643,9 @@
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } の ${ seats } シート"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ライティングアシスタントのシート"
@@ -2342,6 +2357,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } の不具合"
+      ],
       "Application problem": [
         "アプリケーションに関する問題"
       ],
@@ -5374,6 +5392,9 @@
       "Missing signature": [
         "署名がありません"
       ],
+      "Name already exists": [
+        "名前は既に存在します"
+      ],
       "Name does not match": [
         "名前が一致しません"
       ],
@@ -6742,6 +6763,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "旧バージョンの${ BRAND_NAME }モバイルアプリからはサインインできなくなることを理解しました。"
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "ウェブアプリ"
@@ -6958,6 +6984,12 @@
       ],
       "Servers": [
         "サーバー"
+      ],
+      "Sort folders": [
+        "フォルダを並べ替え"
+      ],
+      "Sort labels": [
+        "ラベルの並べ替え"
       ],
       "Status": [
         "状態"
@@ -7535,6 +7567,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } は ${ PASS_APP_NAME } であなたとデータを共有したいと考えています"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME }"
       ],
@@ -7769,8 +7804,8 @@
       "Add a recovery phone number": [
         "回復用電話番号を追加"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "アカウントに追加のセキュリティ層を追加します。サインインするたびに 2要素認証を行う必要があります。"
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "アカウントにセキュリティのレイヤーをもう1つ追加します。サインインするたびに、2要素認証でご自身を認証していただく必要があります。2要素認証コードを保存するには、${ protonAuthenticatorDownloadLink }をご利用いただくことをお勧めします。"
       ],
       "Add domain": [
         "ドメインを追加"
@@ -7940,6 +7975,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "ドメイン ${ boldDomain } を削除してもよろしいですか?"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "本当に、フォルダをアルファベット順に並べ替えますか？"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "本当に、ラベルをアルファベット順に並べ替えますか？"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "ゲートウェイをセットアップするよう、組織の管理者に依頼してください。"
       ],
@@ -7972,6 +8013,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30 日以上前にゴミ箱やスパムに移動されたメールを自動的に削除します。"
+      ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "開いているメールが削除、アーカイブ、または移動されたときに自動的に次のメールを表示します。"
       ],
       "Available on macOS, Windows, and Linux.": [
         "macOS、Windows、Linux で利用できます。"
@@ -8035,6 +8079,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "無料プランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "ポスト量子保護を有効にすることで、量子コンピューターに耐性を持つ鍵がお客様のアカウントに生成されます。"
       ],
       "By leaving now, changes may not be saved": [
         "今すぐ退出すると、変更が保存されない場合があります"
@@ -8219,6 +8266,9 @@
       "Delete link?": [
         "リンクを削除しますか?"
       ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "30 日後にごみ箱とスパム メッセージを削除します。 自動削除をオンにすると、すでにごみ箱やスパムに入っているメッセージには、そこに移動された日付に基づいて削除日が設定されます。"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ゲートウェイ サーバーを削除しています"
       ],
@@ -8302,6 +8352,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "ダウングレードすると、有料の ${ VPN_APP_NAME } サーバーとの接続が終了します。"
+      ],
+      "Download current logs": [
+        "現在のログをダウンロード"
       ],
       "Download on the App Store": [
         "App Storeでダウンロード"
@@ -8483,6 +8536,9 @@
       "Example: ${ spfExample }": [
         "例: ${ spfExample }"
       ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "既存のエンドツーエンド暗号化されたメール転送は、設定の**${ autoReplySettingsTitle }**で手動で再度有効にする必要があります。"
+      ],
       "Expired": [
         "有効期限切れ"
       ],
@@ -8593,6 +8649,9 @@
       ],
       "Group deleted": [
         "グループは削除されました"
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "同じ会話内のメールを受信トレイにグループ化するか、個別に表示します。"
       ],
       "Groups": [
         "グループ"
@@ -9002,6 +9061,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "[送信済み] フォルダーまたは [下書き] フォルダー内のメッセージは、別のフォルダーに移動した場合でも、引き続きそのフォルダーに表示されます。"
       ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "迷惑メールまたはごみ箱フォルダー内のメッセージは、すべてのメールの場所から除外されます。"
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "すべてのメールアドレスへのメッセージは受信トレイに移動します。"
       ],
@@ -9338,6 +9400,9 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "価格には、適用されるすべてのサイクルベースの割引と、お客様のアカウントに保存されている有効期限内のクーポンが含まれています。"
       ],
+      "Private AI assistant": [
+        "プライベート AI アシスタント"
+      ],
       "Promotion expired": [
         "プロモーションの有効期限が切れました"
       ],
@@ -9643,6 +9708,9 @@
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "カスタムドメインと非 ${ BRAND_NAME } メールアドレスのモニタリング対応は、近日公開予定です。"
+      ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "あなたのアカウントでポスト量子鍵のサポートが有効になっています。"
       ],
       "support team": [
         "サポートチーム"
@@ -10577,9 +10645,6 @@
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "他のユーザーへの既存のエンドツーエンド暗号化された転送は一時停止されます。これらは「${ autoReplySettingsTitle }」の設定で手動で再度有効にできます。"
-      ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
@@ -10846,37 +10911,37 @@
       "Generate key": [
         "キーの生成"
       ],
-      "Generating key failed. Please try again later.": [
-        "キーの生成に失敗しました。後でもう一度試してください。"
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "以前のキーが侵害された疑いがあるため、このキーを生成した場合は、設定で侵害済みとしてマークしてください。"
       ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "既存のキーが侵害されたと思われるために新しいキーを生成する場合は、このキーを生成した後に侵害済みとしてマークしてください。"
+      "Key generation failed, please try again later.": [
+        "キーの生成に失敗しました。後でもう一度お試しください。"
       ],
       "Key successfully generated.": [
         "キーが正常に生成されました。"
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "注: このアドレスには同じアルゴリズムを持つキーがすでにあります。そのキーが漏洩していない限り、新しいキーを生成する必要はなく、生成するとアカウントの速度が低下する可能性があります。"
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "注: このユーザーには同じアルゴリズムのキーがすでにあります。そのキーが漏洩していない限り、新しいキーを生成する必要はなく、生成するとアカウントの速度が低下する可能性があります。"
+      "New key generated": [
+        "新しいキーが生成されました"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "これにより、新しいキーが生成され、今後の連絡先詳細、メール暗号化キー、その他のデータの暗号化に使用されます。"
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "これにより、新しいキーが生成され、今後のメールやその他のデータの暗号化に使用されます。"
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "これにより、新しいキーが生成され、**${ emailAddress }** の将来のメールやその他のデータを暗号化するために使用されます。"
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "このキータイプはすでにお持ちです。そのキーが侵害されていない限り、**新しいキーを生成すると、お客様のアカウントの速度が低下する可能性があります**。"
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "互換性"
-      ],
       "Compromised": [
         "侵害された"
       ],
       "Disabled": [
         "無効"
+      ],
+      "Fallback": [
+        "フォールバック"
       ],
       "Forwarding": [
         "転送"
@@ -10884,11 +10949,35 @@
       "Inactive": [
         "非アクティブ"
       ],
+      "Invalid": [
+        "無効"
+      ],
       "Obsolete": [
         "廃止"
       ],
       "Primary": [
         "プライマリー"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "高速"
+      ],
+      "Slower, but stronger long-term security": [
+        "遅いが、長期的なセキュリティはより強力"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "キータイプを選択"
       ]
     },
     "Keyboard shortcut name": {
@@ -11127,8 +11216,8 @@
       "Export public key": [
         "公開鍵をエクスポート"
       ],
-      "Make primary": [
-        "メインにする"
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "これを、暗号化および署名用の${ keyStatusBadgeTitles.primary }または${ keyStatusBadgeTitles.fallback }キーにします。"
       ],
       "Mark compromised": [
         "侵害されたとマーク"
@@ -11141,6 +11230,9 @@
       ],
       "Mark obsolete": [
         "廃止とマークする"
+      ],
+      "Use for encryption and signing": [
+        "暗号化と署名に使用する"
       ]
     },
     "Knowledge base link label": {
@@ -11758,6 +11850,9 @@
       "Inbox": [
         "受信トレイ"
       ],
+      "Include application logs in bug report": [
+        "バグレポートにアプリのログを含める"
+      ],
       "Inherit color from parent folder": [
         "親フォルダーの色を継承"
       ],
@@ -11784,6 +11879,9 @@
       ],
       "Key": [
         "鍵"
+      ],
+      "Key strength": [
+        "鍵の強度"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "キーボードショートカット: ${ shortcut }"
@@ -13063,6 +13161,9 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } アカウントにログインすると、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } など、暗号化された ${ BRAND_NAME } サービスのすべてにアクセスできます。 アカウントをお持ちでない場合は、 無料で作成してください。"
+      ],
+      "Try ${ BRAND_NAME } for free with this link": [
+        "このリンクから ${ BRAND_NAME } を無料でお試しください"
       ]
     },
     "Modal title": {
@@ -14619,12 +14720,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimitedを入手"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "たった${ pricingTitle }でDrive Plusを入手"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "たった${ pricingTitle }でMail Plusを入手"
-      ],
       "Get the deal": [
         "割引を入手"
       ],
@@ -14636,6 +14731,9 @@
       ],
       "Limited-time offer": [
         "期間限定オファー"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "期間限定オファー、最初の月のみ有効です"
       ],
       "Maybe later": [
         "またあとで"
@@ -14649,9 +14747,6 @@
       "Save": [
         "節約"
       ],
-      "Save 80% on your first month.": [
-        "最初の月は 80 %割引。"
-      ],
       "Save big when you pay annually": [
         "年払いで大幅に節約"
       ],
@@ -14660,6 +14755,12 @@
       ],
       "This offer won't be shown again.": [
         "このオファーは二度と表示されません。"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }で生産性をアップグレードできます。"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }でストレージをアップグレードできます。"
       ],
       "When you switch from a monthly to annual subscription.": [
         "月額プランから年間プランに切り替える場合。"
@@ -14686,23 +14787,26 @@
       "Advanced threat protection": [
         "高度な脅威保護"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "非${ BRAND_NAME } ユーザーとコラボレーション"
+      ],
       "Custom email domain": [
         "独自メールドメイン"
+      ],
+      "Edit docs online": [
+        "オンラインでドキュメントを編集"
       ],
       "Email addresses": [
         "メールアドレス"
       ],
+      "File version history (over 1 week)": [
+        "ファイルバージョン履歴(1週間以上)"
+      ],
       "Free": [
         "無料"
       ],
-      "Online document editor": [
-        "オンライン文書エディタ"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "以前のファイルを復元"
       ],
       "Storage": [
         "ストレージ"
@@ -16071,11 +16175,23 @@
       ]
     },
     "Plan description": {
+      "A VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "インターネットへの安全で、無制限の、高速アクセスを提供する VPN ソリューションです。"
+      ],
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Duoにはすべての${ BRAND_NAME }プレアム製品が含まれています。"
       ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "${ maxSpace }のストレージが必要な場合やカップルにおすすめ"
+      ],
+      "Cloud storage and file sharing, secured by end-to-end encryption.": [
+        "クラウドストレージとファイル共有は、エンドツーエンド暗号化によって保護されています。"
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "包括的なプライバシーとセキュリティを提供する、すべての ${ BRAND_NAME } サービスが利用できるプランです。"
+      ],
+      "For next-level password management and identity protection.": [
+        "次のレベルのパスワード管理とアイデンティティ保護のために。"
       ],
       "Great for everyday use and photo backups.": [
         "日常使いや写真のバックアップに最適"
@@ -16085,6 +16201,9 @@
       ],
       "Secure cloud storage and collaboration for teams.": [
         "安全なクラウドストレージとチームでのコラボレーション機能"
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "毎日の会話のための、高度な機能を備えた安全なメール"
       ],
       "The ideal plan for privacy-conscious power users.": [
         "プライバシーを重視するパワーユーザーにとって理想的なプラン"
@@ -16113,6 +16232,61 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle }にアップグレード"
+      ]
+    },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "お客様のアカウントでポスト量子保護が有効になりましたが、一部の操作が成功しませんでした。ポスト量子アカウントキーとアドレスキーの生成に失敗しました。これらのキーは、${ encryptionAndKeysSettingsTitle } 設定から手動で生成することができます。"
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "お客様のアカウントでポスト量子保護が有効になりましたが、一部の操作が成功しませんでした。具体的には、1つ以上のアドレスに対するポスト量子アドレスキーの生成に失敗しました。これらのキーは、${ encryptionAndKeysSettingsTitle } 設定から手動で生成することができます。"
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "お客様の**すべての${ BRAND_NAME }モバイルアプリ**を最新バージョンに更新してください。"
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "これにより、各メールアドレスに対して新しいアカウントキーと新しいメール暗号鍵が生成されます。これらは、今後のメールやその他のデータの暗号化および復号化に用いられます。"
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "キーを生成・有効化する"
+      ],
+      "Enable post-quantum protection": [
+        "ポスト量子保護を有効にする"
+      ],
+      "Enable post-quantum protection?": [
+        "ポスト量子保護を有効にしますか？"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "ポスト量子保護の有効化に失敗しました。後でもう一度お試しください。"
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "分かりました"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "ポスト量子保護がお客様のアカウントで有効になりました！"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "ポスト量子アカウントキーを生成中"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "ポスト量子アドレスキーを各アドレス用に生成しています"
+      ],
+      "Opting into post-quantum protection": [
+        "ポスト量子保護を有効にしています"
       ]
     },
     "Price": {
@@ -16255,6 +16429,14 @@
         "電話番号を確認することでアカウントのセキュリティを向上させ、回復の追加設定のために利用できます。"
       ]
     },
+    "Remark about a key type option": {
+      "Classic": [
+        "クラシック"
+      ],
+      "Post-quantum": [
+        "ポスト量子"
+      ]
+    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "購読を解除すると、このカレンダーにアクセスできなくなります。 このカレンダー内のすべてのイベントはアカウントから削除されますが、元の公開リンクには残ります。"
@@ -16305,6 +16487,194 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "パスワードの変更のために、組織の管理権限が制限されています。次の操作は許可されなくなりました。"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "ユーザーまたはグループを追加"
+      ],
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Confirm": [
+        "確認"
+      ],
+      "Create retention rule": [
+        "保持ルールを作成"
+      ],
+      "Create rule": [
+        "ルールを作成"
+      ],
+      "Delete": [
+        "削除"
+      ],
+      "Delete rule": [
+        "ルールを削除"
+      ],
+      "Delete this scope": [
+        "このスコープを削除"
+      ],
+      "Edit": [
+        "編集"
+      ],
+      "Purge all": [
+        "すべて消去"
+      ],
+      "Purge deleted": [
+        "削除済みを消去"
+      ],
+      "Save changes": [
+        "変更を保存"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }には、受信トレイ、送信済み、および下書き内のメッセージも含まれます。これにより、お客様が保持を期待するメッセージが削除される可能性があります。これらのメッセージは後で回復することはできません。"
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "${ lifetime }日後にすべてのメッセージが削除されます"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "期間は${ MIN_LIFETIME }日よりも長く設定してください。"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "「すべて保持」アクションには、期間を設定できません。"
+      ],
+      "Scope value is not valid": [
+        "スコープ値が無効です"
+      ],
+      "Scope value is required": [
+        "スコープ値は必須です"
+      ],
+      "Scopes cannot have the same value": [
+        "スコープは同じ値を持つことはできません"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } 以上"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime }日"
+      ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "お客様の組織のデータ保持ポリシーに従い、データの保持期間に関するルールを作成します。これにより、有効期限切れデータの自動パージも可能になります。"
+      ],
+      "Forever": [
+        "永久"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "受信トレイ、送信済み、およびその他すべての場所のメッセージが含まれます。削除されたメッセージは回復できません。"
+      ],
+      "Removes messages already deleted by users.": [
+        "ユーザーによってすでに削除されたメッセージを削除します。"
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "保持ルール「${ formData.name }」が正常に更新されました"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "保持ルール「${ payload.Name }」が正常に作成されました"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "保持ルール「${ retentionRule.Name }」が正常に削除されました"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "保持期間の期限切れ後"
+      ],
+      "Applies to": [
+        "適用先"
+      ],
+      "days": [
+        "日"
+      ],
+      "Keep items forever": [
+        "アイテムを永久に保持する"
+      ],
+      "Keep messages forever": [
+        "メッセージを永久に保持する"
+      ],
+      "Retention period": [
+        "保持期間"
+      ],
+      "Rule title": [
+        "ルールのタイトル"
+      ],
+      "Select product": [
+        "製品を選択"
+      ],
+      "Set a duration": [
+        "期間を設定"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "組織の全員"
+      ],
+      "Group": [
+        "グループ"
+      ],
+      "Purge all messages": [
+        "すべてのメッセージを抹消"
+      ],
+      "Purge deleted messages only": [
+        "削除済みメッセージのみを削除"
+      ],
+      "Specific users or groups": [
+        "特定のユーザーまたはグループ"
+      ],
+      "User": [
+        "ユーザー"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "例：未使用のメールボックスを整理"
+      ],
+      "Enter duration": [
+        "期間を入力"
+      ],
+      "Enter value": [
+        "値を入力してください"
+      ],
+      "Search for rule, users, period, action": [
+        "ルール、ユーザー、期間、アクションを検索"
+      ],
+      "Search policies": [
+        "ポリシーを検索"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "操作"
+      ],
+      "Applies to": [
+        "適用先"
+      ],
+      "Retention period": [
+        "保持期間"
+      ],
+      "Retention Rule": [
+        "保持ルール"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "保持ポリシーは見つかりませんでした"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "保持ルールを確認しますか？"
+      ],
+      "Create retention rule": [
+        "保持ルールを作成"
+      ],
+      "Edit retention rule": [
+        "保持ルールを編集"
       ]
     },
     "Role": {
@@ -17200,11 +17570,29 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "迷惑メールをなくすために${ FREE_PASS_ALIASES }件のHide-my-email別名"
       ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } 件のアドレス"
       ],
+      "${ maxAddresses } email address": [
+        "${ maxAddresses } 個のメールアドレス"
+      ],
+      "${ maxAddresses } extra email address": [
+        "${ maxAddresses } 個の追加メールアドレス"
+      ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } 個のカレンダー"
+      ],
+      "${ maxDomains } email domain": [
+        "${ maxDomains }個のメールドメイン"
+      ],
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "${ PASS_PLUS_VAULTS }個のパスワード用保管庫"
+      ],
+      "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
+        "${ referrerName }様より、${ BRAND_NAME }をお試しいただくためにお客様をご招待しています。"
       ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "ファイルと写真用の${ totalDriveStorageSize }クラウドストレージ"
@@ -17215,6 +17603,18 @@
       "${ value } of secure storage per user": [
         "ユーザーごとの${ value }の安全なストレージ"
       ],
+      "${ value } total storage": [
+        "合計 ${ value } のストレージ"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } 件の高速VPN接続"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries }ヶ国以上"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "${ vpnServersCountData.paid.servers } 台以上のサーバーが利用可能"
+      ],
       "/user": [
         "/ユーザー"
       ],
@@ -17224,8 +17624,23 @@
       "Advanced account protection": [
         "高度なアカウント保護"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "すべての基本的な${ BRAND_NAME }サービス(${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
+      ],
+      "And get ${ referralReward } in credits, if you subscribe.": [
+        "ご登録いただくと、${ referralReward }分のクレジットを獲得できます。"
+      ],
       "Billing Cycle": [
         "支払間隔"
+      ],
+      "Block ads, trackers, and malware": [
+        "広告、トラッカー、マルウェアをブロック"
+      ],
+      "Built-in 2FA authenticator": [
+        "2要素認証システム内蔵"
+      ],
+      "Bundle": [
+        "バンドル"
       ],
       "Collaborative document editing": [
         "共同ドキュメント編集"
@@ -17242,8 +17657,23 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "${ PLAN_NAMES[plan] }で続行"
       ],
+      "Continue with the free plan": [
+        "無料プランで続行"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを作成する"
+      ],
+      "Custom fields and file attachment": [
+        "カスタムフィールドとファイル添付"
+      ],
+      "Encrypted cloud storage": [
+        "暗号化済みクラウドストレージ"
+      ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "${ totalMailStorageSize } ストレージを備えた暗号化済みメール"
+      ],
+      "Encrypted file sharing and document editor": [
+        "暗号化済みファイル共有とドキュメントエディター"
       ],
       "Encrypted password manager": [
         "暗号化されたパスワードマネージャー"
@@ -17251,11 +17681,23 @@
       "End-to-end encryption": [
         "エンドツーエンド暗号化"
       ],
+      "Enjoy secure, easy-to-use ${ BRAND_NAME } apps.": [
+        "安全で使いやすい${ BRAND_NAME }アプリをぜひご利用ください。"
+      ],
       "Every free account comes with:": [
         "すべての無料アカウントには以下が含まれます:"
       ],
+      "Fast P2P/BitTorrent downloads": [
+        "高速な P2P/BitTorrent ダウンロード"
+      ],
       "Free": [
         "無料"
+      ],
+      "Free for 14 days": [
+        "14日間無料"
+      ],
+      "Get ${ referralReward } in credits": [
+        "${ referralReward }分のクレジットを獲得"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "安全な${ MAIL_APP_NAME }メールアドレスを入手するか${ internalButton }"
@@ -17265,6 +17707,15 @@
       ],
       "Get a secure one from us, or ${ internalButton }": [
         "私たちから安全なものを入手するか、または${ internalButton }"
+      ],
+      "Gifted by **${ referrerName }**": [
+        "**${ referrerName }**からのギフト"
+      ],
+      "Highest VPN speed": [
+        "最高速 VPN"
+      ],
+      "Mailboxes and custom domains for aliases": [
+        "メールボックスおよびエイリアスのカスタムドメイン"
       ],
       "Manage user access": [
         "ユーザーアクセスを管理"
@@ -17281,8 +17732,17 @@
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
         "もっとストレージが必要ですか？ いつでも200GBから3TBまでのプランにアップグレードできます。5GBあれば、最新のスマートフォンで撮影した写真（1枚あたり約2MB）約2,500枚を保存するのに十分です。"
       ],
+      "No credit card required:": [
+        "クレジットカード不要:"
+      ],
+      "Online document editor": [
+        "オンライン文書エディタ"
+      ],
       "Online documents": [
         "オンライン文書"
+      ],
+      "Password manager": [
+        "パスワードマネージャー"
       ],
       "Password manager for all your devices": [
         "あなたのすべてのデバイスのためのパスワードマネージャー"
@@ -17302,8 +17762,23 @@
       "Save ${ priceDifferenceString }": [
         "${ priceDifferenceString }を節約"
       ],
+      "Secure ${ VPN_CONNECTIONS } device at a time": [
+        "${ VPN_CONNECTIONS }台のデバイスを同時に保護"
+      ],
       "Secure file sharing": [
         "安全なファイル共有"
+      ],
+      "Secure vault sharing and link sharing": [
+        "安全な保管庫共有とリンク共有"
+      ],
+      "Securely share files, photos and documents": [
+        "ファイル、写真、文書を安全に共有"
+      ],
+      "Select ${ title }": [
+        "${ title } を選択"
+      ],
+      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
+        "サービスを選んでプレミアムバージョンを14日間無料でお楽しみください。クレジットカードは不要です。"
       ],
       "Selected": [
         "選択済"
@@ -17326,17 +17801,44 @@
       "Sign up, protect your files": [
         "サインアップしてファイルを保護"
       ],
+      "Start free trial": [
+        "無料トライアルを開始"
+      ],
+      "Storage": [
+        "ストレージ"
+      ],
+      "Stream your favorite TV shows and movies": [
+        "お気に入りのテレビ番組や映画をストリーミングする"
+      ],
       "Sync files across devices and users": [
         "デバイスやユーザー間でファイルを同期"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "組織名はサインインしているユーザーに表示されます。"
       ],
+      "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
+        "ご登録いただくと、その後、月額 ${ priceWithDiscountPerMonth } となります。"
+      ],
+      "To reedeem on your next paid subscription.": [
+        "次回の有料サブスクリプションでご利用いただけます。"
+      ],
       "Total": [
         "合計"
       ],
+      "Try ${ BRAND_NAME } for 14 days free": [
+        "${ BRAND_NAME }を14日間無料でお試し"
+      ],
+      "Try ${ planName } for free": [
+        "無料で ${ planName } をお試しください"
+      ],
       "Ultra fast and private VPN": [
         "超高速でプライベートなVPN"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "無制限のフォルダー、ラベル、フィルター"
+      ],
+      "Up to -${ percentage }%": [
+        "- ${ percentage }%まで"
       ],
       "Up to 2 users": [
         "最大2人のユーザー"
@@ -17353,17 +17855,26 @@
       "Use your email, or ${ externalButton }": [
         "メールを使用するか${ externalButton }"
       ],
+      "Use your own email domain": [
+        "独自メールドメインを使用する"
+      ],
       "use your own email.": [
         "独自のメールアドレスを使用。"
       ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "${ vpnServersCountData.free.countries }ヶ国にサーバーがあるVPN"
       ],
+      "We’ll email you before your trial ends.": [
+        "トライアル終了前にメールを送ります。"
+      ],
       "Yearly": [
         "毎年"
       ],
       "Your plan": [
         "現在のプラン"
+      ],
+      "Your trial": [
+        "あなたのトライアル"
       ]
     },
     "Signup label": {
@@ -18171,6 +18682,9 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } の専用サーバー"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } は ${ maxLumo } ユーザーに対応"
       ],
       "${ n } calendar per user": [
         "1 ユーザーあたり ${ n } 件のカレンダー"
@@ -19532,6 +20046,9 @@
       "Data recovery": [
         "データの回復"
       ],
+      "Data retention": [
+        "データ保持"
+      ],
       "Date": [
         "日付"
       ],
@@ -20117,6 +20634,9 @@
       "Policies": [
         "ポリシー"
       ],
+      "Post-quantum protection": [
+        "ポスト量子保護"
+      ],
       "Preview": [
         "プレビュー"
       ],
@@ -20459,8 +20979,17 @@
       "Upgrade plan": [
         "プランをアップグレード"
       ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ],
       "Upgrade your privacy": [
         "あなたのプライバシーをアップグレード"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName }で${ formattedPrice }にて、お客様の生産性をアップグレードしましょう。"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "${ planName }をご利用いただくと、${ formattedPrice }でストレージをアップグレードできます。"
       ],
       "Upload and share files": [
         "ファイルのアップロードと共有"
@@ -21360,6 +21889,9 @@
       ],
       "It's you": [
         "あなたです"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "管理者のアクセスが保留中"

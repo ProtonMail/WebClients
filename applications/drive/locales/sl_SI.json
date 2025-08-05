@@ -1529,6 +1529,9 @@
       "Discover and set up features": [
         "Odkrijte in nastavite funkcije"
       ],
+      "Maybe later": [
+        "Morda kasneje"
+      ],
       "Remind me later": [
         "Opomni me kasneje"
       ],
@@ -1564,7 +1567,7 @@
         "Vse aplikacije ${ BRAND_NAME } in premijske funkcije"
       ],
       "Cancel and downgrade": [
-        "Prekliči vse prenose"
+        "Prekliči in zmanjšaj"
       ],
       "Cloud storage and sharing for large files": [
         "Shramba v oblaku in skupna raba velikih datotek"
@@ -3898,13 +3901,13 @@
         "Stiki"
       ],
       "Create new album": [
-        "Ustvari album"
+        "Ustvari nov album"
       ],
       "Create new shared album": [
         "Ustvari nov album v skupni rabi"
       ],
       "Drawer": [
-        "Predal"
+        "Obrobni stolpec"
       ],
       "Rename album": [
         "Preimenuj album"
@@ -5009,7 +5012,7 @@
         "Geoblokiranje"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
-        "Prenesite si applikacijo za varnostno kopiranje fotografij iz telefona ali pa jih naložite sem."
+        "Prenesite si aplikacijo za varnostno kopiranje fotografij iz telefona ali pa jih naložite sem."
       ],
       "Get the app to backup photos from your phone.": [
         "Prenesite aplikacijo za varnostno kopiranje fotografij iz telefona."
@@ -5363,7 +5366,7 @@
         "Fotografija ni shranjena v vašo knjižnico"
       ],
       "Photo(s) saved to your Drive": [
-        "Fotografije so shranjena v vaš Drive"
+        "Fotografije so shranjene v vaš Drive."
       ],
       "Photos": [
         "Fotografije"
@@ -5744,7 +5747,7 @@
         "To edinstveno kodo lahko spletne strani in ponudniki internetnih storitev (ISP) uporabijo za povezavo vaše lokacije in zgodovine brskanja z vašo napravo"
       ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
-        "To bo izbrisalo samo album. Vaše fotografije bodo ostale v vašem časovnem traku. Tega dejanja ni mogoče razveljaviti. Vprašaj ChatGPT"
+        "To bo izbrisalo samo album. Vaše fotografije bodo ostale v vašem časovnem traku. Tega dejanja ni mogoče razveljaviti."
       ],
       "This will replace the existing file with the folder": [
         "To bo zamenjalo obstoječo datoteko z mapo"
@@ -8013,7 +8016,7 @@
         "Zaščitite občutljive poslovne informacije in varno sodelujte."
       ],
       "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
-        "Zaščitite svojo družino z vsemi premium funkcijami programa ${ plusTitle } za 6 uporabnikov."
+        "Zaščitite svojo družino z vsemi premijskimi funkcijami paketa ${ plusTitle } za 6 uporabnikov."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Zaščitite zasebnost vaše družine s kombinacijo vseh storitev ${ BRAND_NAME }."
@@ -8677,12 +8680,6 @@
       "Don’t show this offer again": [
         "Te ponudbe ne prikazuj več"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Pridobite Drive Plus za samo ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Pridobite Mail Plus za samo ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
       ],
@@ -8706,9 +8703,6 @@
       ],
       "Save": [
         "Prihranite"
-      ],
-      "Save 80% on your first month.": [
-        "Prihranite 80 % pri vašem prvem mesecu."
       ],
       "Save big when you pay annually": [
         "Prihranite čim več z izbiro letnega plačila!"
@@ -8753,14 +8747,8 @@
       "Free": [
         "Brezplačno"
       ],
-      "Online document editor": [
-        "Spletni urejevalnik dokumentov"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Obnovi prejšnje različice datoteke"
       ],
       "Storage": [
         "Shramba"
@@ -8882,7 +8870,7 @@
         "Če potrebujete pomoč,"
       ],
       "Once your full subscription starts...": [
-        "Ko se začne vaša polna naročnina..."
+        "Ko se začne vaša polna naročnina ..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Še vedno lahko prekličete v 30 dneh in prejmete sorazmerno vračilo denarja."
@@ -9748,7 +9736,7 @@
         "Varno brskajte"
       ],
       "Do more with ${ BRAND_NAME }": [
-        "Prijava z ${ BRAND_NAME }."
+        "Naredite več z ${ BRAND_NAME }."
       ],
       "Go to subscription plans": [
         "Ogled naročniških paketov"
@@ -9833,7 +9821,7 @@
     },
     "specialoffer: Title": {
       "Keep your passwords safe and organized in multiple vaults ": [
-        "Imejte svoja gesla varna in organizirana v več trezorjih"
+        "Imejte svoja gesla varna in organizirana v več trezorjih "
       ],
       "Protect your account from threats with Sentinel": [
         "Zaščitite svoj račun pred grožnjami s Sentinelom"
@@ -10395,7 +10383,7 @@
     },
     "Subtitle": {
       "Albums you've shared will appear here": [
-        "Albumi, ki ste jih dali v deli, bodo prikazani tukaj"
+        "Albumi, ki ste jih dali v skupno rabo, bodo prikazani tukaj"
       ],
       "Your panorama photos will appear here": [
         "Tukaj bodo prikazane vaše panoramske fotografije"
