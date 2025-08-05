@@ -836,6 +836,9 @@
       "Upgrade": [
         "Actualizar"
       ],
+      "Upgrade for 200GB": [
+        "Actualizar por 200GB"
+      ],
       "Upgrade Now": [
         "Mejorar ahora"
       ],
@@ -1523,6 +1526,9 @@
       ],
       "Discover and set up features": [
         "Descubra y configure las funcionalidades"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
       ],
       "Remind me later": [
         "Recordarme más tarde"
@@ -8388,12 +8394,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtenga ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Obtenga Drive Plus por solo ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Obtenga Mail Plus por solo ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Obtener la oferta"
       ],
@@ -8405,6 +8405,9 @@
       ],
       "Limited-time offer": [
         "Oferta por tiempo limitado"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tiempo limitado, válida para su primer mes"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -8418,9 +8421,6 @@
       "Save": [
         "Ahorre"
       ],
-      "Save 80% on your first month.": [
-        "Ahorre un 80 % en su primer mes."
-      ],
       "Save big when you pay annually": [
         "Ahorre mucho más al pagar anualmente"
       ],
@@ -8429,6 +8429,12 @@
       ],
       "This offer won't be shown again.": [
         "Esta oferta no se mostrará nuevamente."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Mejore su productividad por solo ${ pricingTitle } con ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Mejore su almacenamiento por solo ${ pricingTitle } con ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Al cambiarse de una suscripción mensual a una anual"
@@ -8455,23 +8461,26 @@
       "Advanced threat protection": [
         "Protección avanzada contra amenazas"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colabore con usuarios que no son de ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Dominio de correo electrónico personalizado"
+      ],
+      "Edit docs online": [
+        "Edite documentos en línea"
       ],
       "Email addresses": [
         "Direcciones de correo electrónico"
       ],
+      "File version history (over 1 week)": [
+        "Historial de versiones del archivo (más de 1 semana)"
+      ],
       "Free": [
         "Gratuito"
       ],
-      "Online document editor": [
-        "Editor de documentos online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recuperar las versiones previas de los archivos"
       ],
       "Storage": [
         "Almacenamiento"
@@ -11189,6 +11198,15 @@
       ],
       "Upgrade complete!": [
         "Se ha mejorado su plan."
+      ],
+      "Upgrade to ${ planName }": [
+        "Actualizar a ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Mejore su productividad por ${ formattedPrice } con ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Mejore su almacenamiento por ${ formattedPrice } con ${ planName }"
       ],
       "Upload and share files": [
         "Cargue y comparta archivos"
