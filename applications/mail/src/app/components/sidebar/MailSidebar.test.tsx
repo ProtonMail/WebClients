@@ -236,7 +236,7 @@ describe('MailSidebar', () => {
     it('should navigate to the inbox folder and set it as active', async () => {
         setupTest();
 
-        const { history } = await mailTestRender(<MailSidebar {...props} />, {
+        const { history } = await render(<MailSidebar {...props} />, {
             preloadedState: {
                 categories: getModelState([...systemFolders]),
             },
