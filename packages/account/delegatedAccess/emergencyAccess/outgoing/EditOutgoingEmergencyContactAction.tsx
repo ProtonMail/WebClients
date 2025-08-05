@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 import { editDelegatedAccessThunk } from '../../outgoingActions';
+import { useDispatch } from '../../useDispatch';
 import {
     EditOutgoingEmergencyContactModal,
     type EditOutgoingEmergencyContactModalProps,
