@@ -1,14 +1,14 @@
+import type { FormEvent } from 'react';
 import { type FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, InlineLinkButton } from '@proton/atoms/src';
+import { Button, InlineLinkButton } from '@proton/atoms';
+import { MailLogo } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
-import { MailLogo } from '@proton/components/index';
 import { IcShield2CheckFilled } from '@proton/icons';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 
 import { SignupType } from '../../../../signup/interfaces';
 import { usePasswordInputInline } from '../../../accountDetailsInputs/password/usePasswordInput';
@@ -23,7 +23,9 @@ const SwitchSignupType = () => {
 
     const { availableSignupTypes, selectedSignupType, focusEmail } = signup.accountForm;
 
-    if (availableSignupTypes.size <= 1) return null;
+    if (availableSignupTypes.size <= 1) {
+        return null;
+    }
 
     const handleSwitchType = (signupType: SignupType) => {
         signup.accountForm.setSignupType(signupType);
@@ -68,8 +70,12 @@ export const AccountDetailsStep: FC = () => {
     const { emailInput, loadingChallenge } = useEmailInput({ autoFocus: true, onSubmit: handleRequestSubmit, loading });
     const { passwordInputs } = usePasswordInputInline({ loading });
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         try {
+            event.preventDefault();
+            if (loading) {
+                return;
+            }
             setLoading(true);
             const accountData = await signup.accountForm.getValidAccountData({ passwords: true });
             signup.submitAccountData(accountData);
@@ -92,11 +98,7 @@ export const AccountDetailsStep: FC = () => {
             <form
                 ref={signup.accountForm.refs.form}
                 name="accountForm"
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    if (loading) return;
-                    handleSubmit().catch(noop);
-                }}
+                onSubmit={handleSubmit}
                 method="post"
                 autoComplete="off"
                 noValidate

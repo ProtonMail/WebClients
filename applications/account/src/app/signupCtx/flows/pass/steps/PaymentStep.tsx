@@ -2,18 +2,16 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/src';
+import { Button } from '@proton/atoms';
+import { Alert3ds, Icon } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import { Alert3ds, Icon } from '@proton/components/index';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { IcShield } from '@proton/icons';
-import { getPaymentsVersion } from '@proton/payments/core/api';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
+import { PAYMENT_METHOD_TYPES, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
+import type { PaymentProcessorHook } from '@proton/payments';
 import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

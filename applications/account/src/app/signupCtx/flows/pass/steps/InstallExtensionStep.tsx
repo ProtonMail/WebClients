@@ -20,7 +20,9 @@ export const InstallExtensionStep: FC = () => {
         const supportedBrowser = getExtensionSupportedBrowser();
         const browser = supportedBrowser ? clients[supportedBrowser] : null;
 
-        if (browser) return browser;
+        if (browser) {
+            return browser;
+        }
 
         return isSafari() ? clients[Clients.Safari] : null;
     }, []);
