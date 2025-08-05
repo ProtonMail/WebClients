@@ -1,19 +1,23 @@
 import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { usePopperAnchor } from '@proton/components';
-import { MemberRole } from '@proton/drive/index';
 import emptySvg from '@proton/styles/assets/img/illustrations/empty-my-files.svg';
 
 import { DriveEmptyView } from '../../../components/layout/DriveEmptyView';
 import { FolderContextMenu } from '../FolderBrowser/FolderContextMenu';
+import { useFolderStore } from '../useFolder.store';
 
-export const EmptyFolder = ({ shareId, role }: { shareId: string; role: MemberRole }) => {
+export const EmptyFolder = ({ shareId }: { shareId: string }) => {
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
-
-    const isEditor = role === MemberRole.Editor;
+    const { permissions } = useFolderStore(
+        useShallow((state) => ({
+            permissions: state.permissions,
+        }))
+    );
 
     useEffect(() => {
         if (!anchorRef.current) {
@@ -45,13 +49,13 @@ export const EmptyFolder = ({ shareId, role }: { shareId: string; role: MemberRo
             <DriveEmptyView
                 image={emptySvg}
                 title={
-                    isEditor
+                    permissions.canEdit
                         ? // translator: Shown as a call to action when there are no files in a folder
                           c('Info').t`Drop files here`
                         : c('Info').t`Empty folder`
                 }
                 subtitle={
-                    isEditor
+                    permissions.canEdit
                         ? // translator: Shown as a call to action when there are no files in a folder
                           c('Info').t`Or use the "+ New" button`
                         : c('Info').t`There is nothing to see here`
@@ -61,7 +65,6 @@ export const EmptyFolder = ({ shareId, role }: { shareId: string; role: MemberRo
                 dataTestId="my-files-empty-placeholder"
             />
             <FolderContextMenu
-                role={role}
                 shareId={shareId}
                 isOpen={isOpen}
                 open={open}
