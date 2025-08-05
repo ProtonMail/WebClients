@@ -867,6 +867,9 @@
       "Upgrade": [
         "Modificare"
       ],
+      "Upgrade for 200GB": [
+        "Treceți la 200 GiB"
+      ],
       "Upgrade now": [
         "Modificare"
       ],
@@ -1671,6 +1674,9 @@
       ],
       "Discover and set up features": [
         "Descoperiți și setați funcțiile"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
       ],
       "Remind me later": [
         "Amintește-mi mai târziu"
@@ -4584,8 +4590,8 @@
       "add a recovery method": [
         "adăugat o metodă de recuperare"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Aceasta adaugă un nivel suplimentar de protecție a contului. Va trebui să folosiți autentificarea cu doi factori de fiecare dată când vă conectați."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Adăugați un alt nivel de securitate contului. Va trebui să vă autentificați cu A2F de fiecare dată când vă conectați. Vă recomandăm să utilizați ${ protonAuthenticatorDownloadLink } pentru stocarea codurilor pentru A2F."
       ],
       "Add domain": [
         "Adăugare domeniu"
@@ -8891,12 +8897,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obțineți ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Luați Drive Plus cu doar ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Luați Mail Plus cu doar ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Luați oferta"
       ],
@@ -8908,6 +8908,9 @@
       ],
       "Limited-time offer": [
         "Ofertă limitată"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Ofertă pe perioadă limitată, valabilă pentru prima lună"
       ],
       "Maybe later": [
         "Poate mai târziu"
@@ -8921,9 +8924,6 @@
       "Save": [
         "Economisiți"
       ],
-      "Save 80% on your first month.": [
-        "Economisiți 80% în prima lună."
-      ],
       "Save big when you pay annually": [
         "Economisiți mult dacă plătiți anual"
       ],
@@ -8932,6 +8932,12 @@
       ],
       "This offer won't be shown again.": [
         "Această ofertă nu va mai fi afișată."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Modernizați-vă productivitatea cu doar ${ pricingTitle } cu ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Modernizați-vă stocarea cu doar ${ pricingTitle } cu ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Când comutați de la un abonament lunar la unul anual."
@@ -8958,23 +8964,26 @@
       "Advanced threat protection": [
         "Protecție avansată împotriva amenințărilor"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colaborați cu utilizatorii non-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domeniu personal de e-mail"
+      ],
+      "Edit docs online": [
+        "Editați documente online"
       ],
       "Email addresses": [
         "Adrese de e-mail"
       ],
+      "File version history (over 1 week)": [
+        "Istoric versiuni fișiere (mai vechi de o săptămână)"
+      ],
       "Free": [
         "Gratuit"
       ],
-      "Online document editor": [
-        "Editor online de documente"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierului"
       ],
       "Storage": [
         "Spațiu de stocare"
@@ -9892,8 +9901,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Adăugare utilizatori sau grupuri"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Confirm": [
+        "Confirmare"
+      ],
       "Create retention rule": [
         "Creare regulă de păstrare"
+      ],
+      "Create rule": [
+        "Creare regulă"
       ],
       "Delete": [
         "Ștergere"
@@ -9901,8 +9922,47 @@
       "Delete rule": [
         "Ștergere regulă"
       ],
+      "Delete this scope": [
+        "Ștergere acest domeniu de aplicare"
+      ],
       "Edit": [
         "Editare"
+      ],
+      "Purge all": [
+        "Eliminare toate"
+      ],
+      "Purge deleted": [
+        "Eliminare șterse"
+      ],
+      "Save changes": [
+        "Salvare modificări"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, inclusiv cele din folderele «Primite», «Trimise» și «Ciorne». Aceasta ar putea șterge mesaje pe care utilizatorii se așteaptă să le păstreze. Nu este posibilă recuperarea ulterioară a acestor mesaje."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "Zile după care mesajele vor fi șterse: ${ lifetime }",
+        "Zile după care mesajele vor fi șterse: ${ lifetime }",
+        "Zile după care mesajele vor fi șterse: ${ lifetime }"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "Perioada de retenție trebuie să fie mai mare de ${ MIN_LIFETIME } zile."
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "Durata de viață nu trebuie setată pentru acțiunea „Păstrare toate”"
+      ],
+      "Scope value is not valid": [
+        "Valoarea domeniului de aplicare nu este validă."
+      ],
+      "Scope value is required": [
+        "Valoarea domeniului de aplicare este obligatorie"
+      ],
+      "Scopes cannot have the same value": [
+        "Domeniile de aplicare nu pot avea aceeași valoare."
       ]
     },
     "retention_policy_2025_Info": {
@@ -9914,11 +9974,87 @@
         "${ rule.Lifetime } zile",
         "${ rule.Lifetime } de zile"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Creați reguli de păstrare pentru cât timp să fie păstrate datele în conformitate cu politica de păstrare a datelor organizației. De asemenea, activează eliminarea automată a datelor expirate."
+      ],
       "Forever": [
         "Pentru totdeauna"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Include toate mesajele din «Primite», «Trimise» și din toate celelalte locuri. Mesajele șterse definitiv nu pot fi recuperate."
+      ],
+      "Removes messages already deleted by users.": [
+        "Eliminare mesaje deja șterse de utilizatori."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Regula de păstrare „${ formData.name }” a fost actualizată."
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Regula de păstrare „${ payload.Name }” a fost creată."
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Regula de păstrare „${ retentionRule.Name }” a fost ștearsă."
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "După expirarea perioadei de păstrare"
+      ],
+      "Applies to": [
+        "Aplicat la"
+      ],
+      "days": [
+        "zile"
+      ],
+      "Keep items forever": [
+        "Păstrare permanentă articole"
+      ],
+      "Keep messages forever": [
+        "Păstrare permanentă mesaje"
+      ],
+      "Retention period": [
+        "Perioadă de păstrare"
+      ],
+      "Rule title": [
+        "Titlu regulă"
+      ],
+      "Select product": [
+        "Selectare produs"
+      ],
+      "Set a duration": [
+        "Stabiliți o durată"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Toți din organizație"
+      ],
+      "Group": [
+        "Grup"
+      ],
+      "Purge all messages": [
+        "Șterge definitivă toate mesajele"
+      ],
+      "Purge deleted messages only": [
+        "Eliminare doar mesaje șterse"
+      ],
+      "Specific users or groups": [
+        "Grupuri sau utilizatori specifici"
+      ],
+      "User": [
+        "Utilizator"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "De ex. Eliminare mesaje neutilizate"
+      ],
+      "Enter duration": [
+        "Introduceți durata"
+      ],
+      "Enter value": [
+        "Introduceți valoarea"
+      ],
       "Search for rule, users, period, action": [
         "Căutare după regulă, utilizatori, perioadă, acțiune"
       ],
@@ -9943,6 +10079,17 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "Nu au fost găsite politici de păstrare"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Confirmați regula de păstrare?"
+      ],
+      "Create retention rule": [
+        "Creare regulă de păstrare"
+      ],
+      "Edit retention rule": [
+        "Editare regulă de păstrare"
       ]
     },
     "Role": {
@@ -11093,6 +11240,11 @@
         "${ ipAddresses } server dedicat",
         "${ ipAddresses } servere dedicate",
         "${ ipAddresses } de servere dedicate"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "Utilizatori ${ LUMO_APP_NAME }: ${ maxLumo }",
+        "Utilizatori ${ LUMO_APP_NAME }: ${ maxLumo }",
+        "Utilizatori ${ LUMO_APP_NAME }: ${ maxLumo }"
       ],
       "${ n } calendar per user": [
         "Un calendar per utilizator",
@@ -12711,11 +12863,20 @@
       "Upgrade complete!": [
         "Modificare finalizată!"
       ],
+      "Upgrade to ${ planName }": [
+        "Treceți la ${ planName }"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Îmbunătățiți-vă protecția rețelei cu servere dedicate"
       ],
       "Upgrade your privacy": [
         "Îmbunătățiți-vă confidențialitatea"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Modernizați-vă productivitatea cu ${ formattedPrice } cu ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Măriți-vă spațiul de stocare cu ${ formattedPrice } cu ${ planName }"
       ],
       "Upload and share files": [
         "Încărcați și partajați fișiere"
