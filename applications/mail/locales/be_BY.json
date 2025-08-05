@@ -1434,6 +1434,12 @@
       "Trust": [
         "Давяраць"
       ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
+      ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
       ],
@@ -1496,6 +1502,9 @@
       ],
       "Upgrade": [
         "Палепшыць"
+      ],
+      "Upgrade for 200GB": [
+        "Палепшыць за 200 ГБ"
       ],
       "Upgrade Now": [
         "Палепшыць"
@@ -1761,7 +1770,7 @@
     },
     "anniversary_2025": {
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ]
     },
     "anniversary_2025: Offer": {
@@ -4017,7 +4026,7 @@
         "Палепшыце да ${ BRAND_NAME } Duo, каб атрымаць безлімітны доступ да памочніка ў напісанні і іншыя функцыі."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
-        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
+        "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
@@ -4197,7 +4206,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Дапамажыце нам палепшыць наш сэрвіс"
+        "Дапамажыце палепшыць наш сэрвіс"
       ]
     },
     "Downgrade warning": {
@@ -4415,8 +4424,8 @@
       "An error occurred while saving your alias": [
         "Падчас захавання вашага псеўданіма адбылася памылка"
       ],
-      "Attachments are limited to 25 MB": [
-        "Максімальны памер далучэнняў складае 25 МБ"
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Далучэнні абмежаваныя да ${ readableAttachmentMaxSize }"
       ],
       "Authentication canceled.": [
         "Аўтэнтыфікацыя скасавана."
@@ -5653,7 +5662,7 @@
         "Атрымлівайце асалоду ад хуткага і бяспечнага доступу без рэкламы да паштовай скрыні і календара."
       ],
       "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
-        "Атрымлівайце неабмежаваны доступ з любым тарыфным планам ${ MAIL_APP_NAME }."
+        "Атрымайце неабмежаваны доступ з любым тарыфным планам ${ MAIL_APP_NAME }."
       ],
       "No credit card required.": [
         "Крэдытная картка не патрабуецца."
@@ -5882,9 +5891,9 @@
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Знойдзена ${ itemsCount } прапанова. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
+        "Знойдзена ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Выкарыстоўвайце клавішы Уверх і Уніз, каб атрымаць доступ і прагледзець прапановы пасля ўводу. Націсніце Enter, каб пацвердзіць свой выбар або Escape, каб закрыць акно прапаноў."
@@ -5971,9 +5980,9 @@
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
-        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны."
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартавана.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Падчас шыфравання і дадавання вашай падзеі адбылася памылка. Ніводная падзея не была імпартавана."
@@ -7268,7 +7277,7 @@
         "Ад"
       ],
       "Generate text": [
-        "Генерыраваць тэкст"
+        "Згенерыраваць тэкст"
       ],
       "Geoblocking": [
         "Геаблакіроўка"
@@ -7277,19 +7286,19 @@
         "Спампаваць у Google Play"
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
-        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
+        "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
-        "Давайце сваім уваходным рахункам маркіраваныя колерам меткі такія, як “${ suggestedLabelName }“. Змяніце метку на “${ suggestedPaidLabelName }“ пасля правядзення аплаты."
+        "Давайце сваім уваходным рахункам маркіраваныя колерам меткі такія як “${ suggestedLabelName }“. Змяніце метку на “${ suggestedPaidLabelName }“ пасля правядзення аплаты."
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
-        "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адрас і шыфраванню."
+        "Урады і пастаўшчыкі паслуг інтэрнэту могуць сачыць за тым, якія сайты вы наведваеце. Ваш прагляд вэб-старонак у інтэрнэце становіцца прыватным дзякуючы хаванню вашага рэальнага IP-адраса і шыфраванню."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
-        "Мае ${ numAttachments } далучэнне (${ numAttachmentsSize })",
-        "Мае ${ numAttachments } далучэнні (${ numAttachmentsSize })",
-        "Мае ${ numAttachments } далучэнняў (${ numAttachmentsSize })",
-        "Мае ${ numAttachments } далучэнні (${ numAttachmentsSize })"
+        "Змяшчае ${ numAttachments } далучэнне (${ numAttachmentsSize })",
+        "Змяшчае ${ numAttachments } далучэнні (${ numAttachmentsSize })",
+        "Змяшчае ${ numAttachments } далучэнняў (${ numAttachmentsSize })",
+        "Змяшчае ${ numAttachments } далучэнні (${ numAttachmentsSize })"
       ],
       "here": [
         "тут"
@@ -7391,10 +7400,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -8465,7 +8471,7 @@
         "Прыносім прабачэнні. Магчыма, гэта была памылка з нашага боку. Ці можаце вы пацвердзіць, што хочаце пазначыць гэты ліст як надзейны?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
-        "Мы заблакіравалі наступным рэкламадаўцам і арганізацыям магчымасць бачыць, калі вы адкрывалі гэты ліст, якой прыладай вы карысталіся, а таксама дзе вы знаходзіцеся."
+        "Сістэма заблакіравала наступным рэкламадаўцам і арганізацыям магчымасць бачыць, калі вы адкрывалі гэты ліст, якой прыладай вы карысталіся, а таксама дзе вы знаходзіцеся."
       ],
       "We cannot enable message content search in this browser.": [
         "Немагчыма ўключыць пошук па змесціве паведамленняў у гэтым браўзеры."
@@ -8486,7 +8492,7 @@
         "Нам неабходна аўтэнтыфікаваць плацеж з дапамогай вашага банка."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "Мы выдалілі звесткі сачэння з наступных спасылак, каб дапамагчы абараніць вас ад рэкламадаўцаў і іншых асоб, якія спрабуюць адсачыць вашу актыўнасць у інтэрнэце."
+        "Выдалены звесткі сачэння з наступных спасылак, каб дапамагчы абараніць вас ад рэкламадаўцаў і іншых асоб, якія спрабуюць адсачыць вашу актыўнасць у інтэрнэце."
       ],
       "We use 3-D Secure to protect your payments": [
         "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў"
@@ -8495,10 +8501,10 @@
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
       "We'll email you once import is complete.": [
-        "Мы адправім вам ліст, калі імпартаванне завершыцца."
+        "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана."
       ],
       "We'll notify you when the import is done.": [
-        "Мы апавясцім вас пра завяршэнне імпартавання."
+        "Вы атрымаеце апавяшчэнне, калі імпартаванне будзе завершана."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы адправім новы праверачны код на ${ strong }"
@@ -10298,7 +10304,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Атрымаць тарыфны план ${ planName } усяго за ${ planPrice }"
+        "Атрымайце ${ planName } усяго за ${ planPrice }"
       ]
     },
     "Message": {
@@ -10364,7 +10370,7 @@
         "Як імпартаваць кантакты з Yahoo"
       ],
       "How to import emails from another service": [
-        "Як імпартаваць электронныя лісты з іншага сэрвісу"
+        "Як імпартаваць лісты з іншага сэрвісу"
       ],
       "How to import emails from Yahoo": [
         "Як імпартаваць лісты з Yahoo"
@@ -10563,7 +10569,7 @@
         "Панізіць да ${ downgradedPlanName }"
       ],
       "Get ${ planTitle }": [
-        "Атрымаць тарыфны план ${ planTitle }"
+        "Атрымаць ${ planTitle }"
       ]
     },
     "new_plans: feature": {
@@ -10847,7 +10853,7 @@
         "Пагадненне аб апрацоўцы даных GDPR"
       ],
       "Generate emails with a prompt": [
-        "Генерыраваць лісты з запытам"
+        "Генерацыя лістоў з запытам"
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
@@ -11057,7 +11063,7 @@
         "Абагуленае сховішча (да ${ n } асоб)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Мы сканіруем цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+        "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
       ]
     },
     "new_plans: feature highlight": {
@@ -11176,7 +11182,7 @@
         "Бясплатны стартавы ўліковы запіс прызначаны для ўсіх, хто лічыць прыватнасць абавязковым параметрам."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Неабмежаваная прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікаў."
+        "Неабмежаваная прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікі."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы выдаліце свой уліковы запіс, то згубіце гэту перавагу і пры гэтым паўторна вярнуцца на яго вы больш не зможаце, калі паспрабуеце стварыць новы ўліковы запіс."
@@ -11580,16 +11586,10 @@
         "Больш не паказваць гэту прапанову"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
-        "Атрымайце ${ BRAND_NAME } Unlimited"
-      ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Атрымайце Drive Plus усяго за ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Атрымайце Mail Plus усяго за ${ pricingTitle }"
+        "Атрымаць ${ BRAND_NAME } Unlimited"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
@@ -11599,6 +11599,9 @@
       ],
       "Limited-time offer": [
         "Часовая прапанова"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Прапанова абмежавана па часе і дзейнічае за ваш першы месяц"
       ],
       "Maybe later": [
         "Магчыма пазней"
@@ -11612,9 +11615,6 @@
       "Save": [
         "Эканомія"
       ],
-      "Save 80% on your first month.": [
-        "Зэканомце 80% у першы месяц."
-      ],
       "Save big when you pay annually": [
         "Эканомце больш пры гадавой аплаце"
       ],
@@ -11623,6 +11623,12 @@
       ],
       "This offer won't be shown again.": [
         "Гэта прапанова больш не будзе паказвацца."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Пры пераходзе з памесячнай на гадавую падпіску."
@@ -11649,23 +11655,26 @@
       "Advanced threat protection": [
         "Пашыраная абарона ад пагроз"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Супрацоўніцтва з карыстальнікамі, якія не належаць да ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Карыстальніцкі дамен электроннай пошты"
+      ],
+      "Edit docs online": [
+        "Рэдагуйце дакументы ў інтэрнэце"
       ],
       "Email addresses": [
         "Адрасы электроннай пошты"
       ],
+      "File version history (over 1 week)": [
+        "Гісторыя версій файла (больш за 1 тыдзень)"
+      ],
       "Free": [
         "Бясплатна"
       ],
-      "Online document editor": [
-        "Воблачны рэдактар дакументаў"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Аднаўленне папярэдніх версій файла"
       ],
       "Storage": [
         "Сховішча"
@@ -12652,7 +12661,7 @@
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
-        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу. ${ learnMoreLink }"
+        "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту распрацавана для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў. ${ learnMoreLink }"
@@ -12689,13 +12698,13 @@
         "Вы ўсё роўна хочаце адправіць ліст?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на ўведзены адрас электроннай пошты з прычыны:",
-        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:",
-        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:",
-        "Мы выявілі памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:"
+        "Выяўлены памылкі. Ваш ліст немагчыма адправіць на ўведзены адрас электроннай пошты з прычыны:",
+        "Выяўлены памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:",
+        "Выяўлены памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:",
+        "Выяўлены памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Мы выявілі некаторыя памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:"
+        "Выяўлены некаторыя памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:"
       ]
     },
     "Send email with warnings": {
@@ -12709,10 +12718,10 @@
         "Наступныя адрасы з'яўляюцца несапраўднымі: ${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        "Мы выявілі некаторыя папярэджанні. Атрымальнік з наступным адрасам можа не атрымаць ваш ліст:",
-        "Мы выявілі некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:",
-        "Мы выявілі некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:",
-        "Мы выявілі некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:"
+        "Выяўлены некаторыя папярэджанні. Атрымальнік з наступным адрасам можа не атрымаць ваш ліст:",
+        "Выяўлены некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:",
+        "Выяўлены некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:",
+        "Выяўлены некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:"
       ]
     },
     "Sender verification details": {
@@ -13313,7 +13322,7 @@
         "Абарона ад праграм сачэння электроннай пошты"
       ],
       "Get up to ${ credits } in credits.": [
-        "Атрымайце да ${ credits } у крэдыты."
+        "Атрымайце да ${ credits } у крэдытах."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запрасіць сяброў у ${ BRAND_NAME }"
@@ -13843,7 +13852,7 @@
         "Штогадовы бонус бясплатнага сховішча"
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
+        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Будуць дададзены крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых патрабаванняў, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
@@ -15411,6 +15420,15 @@
       "Upgrade complete!": [
         "Абнаўленне завершана!"
       ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Палепшыць вашу прадукцыйнасць за ${ formattedPrice } з ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Палепшыць ваша сховішча за ${ formattedPrice } з ${ planName }"
+      ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
       ],
@@ -15891,7 +15909,7 @@
         "Кожны ${ interval } тыдзень у панядзелак, ${ timesString }",
         "Кожны ${ interval } тыдні ў панядзелак, ${ timesString }",
         "Кожных ${ interval } тыдняў у панядзелак, ${ timesString }",
-        "Кожныя ${ interval } тыдні ў панядзелак, ${ timesString }"
+        "Кожных ${ interval } тыдняў у панядзелак, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Кожны ${ interval } тыдзень у суботу",
@@ -15927,7 +15945,7 @@
         "Кожны ${ interval } тыдзень у аўторак, ${ timesString }",
         "Кожныя ${ interval } тыдні ў аўторак, ${ timesString }",
         "Кожных ${ interval } тыдняў у аўторак, ${ timesString }",
-        "Кожныя ${ interval } тыдні ў аўторак, ${ timesString }"
+        "Кожных ${ interval } тыдняў у аўторак, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Кожны ${ interval } тыдзень у сераду",

@@ -447,6 +447,9 @@
       "Download all attachments": [
         "すべての添付ファイルをダウンロード"
       ],
+      "Download application logs": [
+        "アプリのログをダウンロード"
+      ],
       "Download logs": [
         "ログをダウンロードする"
       ],
@@ -1419,6 +1422,9 @@
       "Trust": [
         "信頼する"
       ],
+      "Trust key": [
+        "鍵を信頼する"
+      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -1481,6 +1487,9 @@
       ],
       "Upgrade": [
         "アップグレード"
+      ],
+      "Upgrade for 200GB": [
+        "200GBへアップグレード"
       ],
       "Upgrade Now": [
         "今すぐアップグレード"
@@ -1656,6 +1665,9 @@
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } の ${ seats } シート"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ライティングアシスタントのシート"
@@ -2112,6 +2124,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } の不具合"
+      ],
       "Application problem": [
         "アプリケーションに関する問題"
       ],
@@ -4340,8 +4355,8 @@
       "An error occurred while saving your alias": [
         "エイリアスの保存中にエラーが発生しました"
       ],
-      "Attachments are limited to 25 MB": [
-        "添付ファイルの上限は 25 MB です"
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "添付ファイルは${ readableAttachmentMaxSize }に制限されています"
       ],
       "Authentication canceled.": [
         "認証がキャンセルされました。"
@@ -6193,6 +6208,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } はあなたのビジネスも保護します。"
       ],
@@ -6739,6 +6757,12 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "ダウングレードすると、有料の ${ VPN_APP_NAME } サーバーとの接続が終了します。"
       ],
+      "Download application logs for troubleshooting": [
+        "トラブルシューティングのためにアプリのログをダウンロード"
+      ],
+      "Download current logs": [
+        "現在のログをダウンロード"
+      ],
       "Download on the App Store": [
         "App Storeでダウンロード"
       ],
@@ -7028,7 +7052,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -9019,6 +9043,9 @@
       ],
       "Import to:": [
         "インポート先："
+      ],
+      "Include application logs in bug report": [
+        "バグレポートにアプリのログを含める"
       ],
       "Integrated 2FA authenticator": [
         "2要素認証システムの統合"
@@ -11021,12 +11048,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimitedを入手"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "たった${ pricingTitle }でDrive Plusを入手"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "たった${ pricingTitle }でMail Plusを入手"
-      ],
       "Get the deal": [
         "割引を入手"
       ],
@@ -11038,6 +11059,9 @@
       ],
       "Limited-time offer": [
         "期間限定オファー"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "期間限定オファー、最初の月のみ有効です"
       ],
       "Maybe later": [
         "またあとで"
@@ -11051,9 +11075,6 @@
       "Save": [
         "節約"
       ],
-      "Save 80% on your first month.": [
-        "最初の月は 80 %割引。"
-      ],
       "Save big when you pay annually": [
         "年払いで大幅に節約"
       ],
@@ -11062,6 +11083,12 @@
       ],
       "This offer won't be shown again.": [
         "このオファーは二度と表示されません。"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }で生産性をアップグレードできます。"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }でストレージをアップグレードできます。"
       ],
       "When you switch from a monthly to annual subscription.": [
         "月額プランから年間プランに切り替える場合。"
@@ -11088,23 +11115,26 @@
       "Advanced threat protection": [
         "高度な脅威保護"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "非${ BRAND_NAME } ユーザーとコラボレーション"
+      ],
       "Custom email domain": [
         "独自メールドメイン"
+      ],
+      "Edit docs online": [
+        "オンラインでドキュメントを編集"
       ],
       "Email addresses": [
         "メールアドレス"
       ],
+      "File version history (over 1 week)": [
+        "ファイルバージョン履歴(1週間以上)"
+      ],
       "Free": [
         "無料"
       ],
-      "Online document editor": [
-        "オンライン文書エディタ"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "以前のファイルを復元"
       ],
       "Storage": [
         "ストレージ"
@@ -13268,6 +13298,9 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 件の会話から ${ labelName } のラベルを外しました。"
       ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } 件の会話がスター付きから削除されました"
+      ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } 件の会話をスヌーズしました"
       ],
@@ -13297,6 +13330,9 @@
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } 件のメッセージが ${ labelName } から削除されました。"
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } 件のメッセージがスター付きから削除されました。"
       ],
       "Address copied to clipboard": [
         "アドレスをコピーしました"
@@ -13357,6 +13393,9 @@
       ],
       "Conversation removed from ${ labelName }.": [
         "会話から${ labelName }のラベルを外しました。"
+      ],
+      "Conversation removed from Starred.": [
+        "会話がスター付きから削除されました。"
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList }との会話に${ labelsList }のラベルを付けます"
@@ -13429,6 +13468,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "メッセージを ${ labelName } から削除しました。"
+      ],
+      "Message removed from Starred.": [
+        "メッセージがスター付きから削除されました。"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } からのメッセージに ${ labelsList } ラベルをつけます"
@@ -14558,6 +14600,15 @@
       ],
       "Upgrade complete!": [
         "アップグレード完了!"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName }で${ formattedPrice }にて、お客様の生産性をアップグレードしましょう。"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "${ planName }をご利用いただくと、${ formattedPrice }でストレージをアップグレードできます。"
       ],
       "Upload and share files": [
         "ファイルのアップロードと共有"
