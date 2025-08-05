@@ -433,6 +433,7 @@ export {
     hasLumoMobileSubscription,
     getCanAccessFamilyPlans,
     hasLumoAddon,
+    hasLumoAddonFromPlanIDs,
     type AggregatedPricing,
     type PricingForCycles,
 } from './core/subscription/helpers';
