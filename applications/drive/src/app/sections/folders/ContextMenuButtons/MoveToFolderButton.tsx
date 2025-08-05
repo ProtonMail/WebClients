@@ -1,18 +1,17 @@
 import { c } from 'ttag';
 
-import { useMoveToFolderModal } from '../../../components/modals/MoveToFolderModal/MoveToFolderModal';
+import type { useMoveToFolderModal } from '../../../components/modals/MoveToFolderModal/MoveToFolderModal';
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import type { MoveItemsModalStateItem } from '../../../modals/MoveItemsModal/useMoveItemsModalState';
 
 interface Props {
     shareId: string;
     selectedItems: MoveItemsModalStateItem[];
+    showMoveToFolderModal: ReturnType<typeof useMoveToFolderModal>[1];
     close: () => void;
 }
 
-export const MoveToFolderButton = ({ shareId, selectedItems, close }: Props) => {
-    const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
-
+export const MoveToFolderButton = ({ shareId, selectedItems, close, showMoveToFolderModal }: Props) => {
     return (
         <>
             <ContextMenuButton
@@ -22,7 +21,6 @@ export const MoveToFolderButton = ({ shareId, selectedItems, close }: Props) => 
                 action={() => showMoveToFolderModal({ shareId, selectedItems })}
                 close={close}
             />
-            {moveToFolderModal}
         </>
     );
 };

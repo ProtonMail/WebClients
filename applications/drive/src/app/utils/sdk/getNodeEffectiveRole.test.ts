@@ -1,9 +1,9 @@
 import type { NodeEntity, ProtonDriveClient } from '@proton/drive/index';
 import { MemberRole, NodeType } from '@proton/drive/index';
 
-import { getNodeRole } from './getNodeRole';
+import { getNodeEffectiveRole } from './getNodeEffectiveRole';
 
-describe('getNodeRole', () => {
+describe('getNodeEffectiveRole', () => {
     let mockDrive: jest.Mocked<ProtonDriveClient>;
 
     beforeEach(() => {
@@ -37,7 +37,7 @@ describe('getNodeRole', () => {
     describe('when has no parent node', () => {
         it('should return the provided role', async () => {
             const node = createMockNode('root-node', MemberRole.Editor);
-            const result = await getNodeRole(node, mockDrive);
+            const result = await getNodeEffectiveRole(node, mockDrive);
 
             expect(result).toBe(MemberRole.Editor);
             expect(mockDrive.getNode).not.toHaveBeenCalled();
@@ -45,7 +45,15 @@ describe('getNodeRole', () => {
 
         it('should default on Viewer role when no role provided and no parent', async () => {
             const node = createMockNode('root-node');
-            const result = await getNodeRole(node, mockDrive);
+            const result = await getNodeEffectiveRole(node, mockDrive);
+
+            expect(result).toBe(MemberRole.Viewer);
+            expect(mockDrive.getNode).not.toHaveBeenCalled();
+        });
+
+        it('should return Viewer role when node has Inherited role and no parent', async () => {
+            const node = createMockNode('root-node', MemberRole.Inherited);
+            const result = await getNodeEffectiveRole(node, mockDrive);
 
             expect(result).toBe(MemberRole.Viewer);
             expect(mockDrive.getNode).not.toHaveBeenCalled();
@@ -58,7 +66,7 @@ describe('getNodeRole', () => {
             const childNode = createMockNode('child-node', MemberRole.Inherited, 'parent-node');
 
             mockDrive.getNode.mockResolvedValue({ ok: true, value: parentNode });
-            const result = await getNodeRole(childNode, mockDrive);
+            const result = await getNodeEffectiveRole(childNode, mockDrive);
 
             expect(mockDrive.getNode).toHaveBeenCalledWith('parent-node');
             expect(result).toBe(MemberRole.Editor);
@@ -73,7 +81,7 @@ describe('getNodeRole', () => {
                 .mockResolvedValueOnce({ ok: true, value: parentNode })
                 .mockResolvedValueOnce({ ok: true, value: grandparentNode });
 
-            const result = await getNodeRole(childNode, mockDrive);
+            const result = await getNodeEffectiveRole(childNode, mockDrive);
 
             expect(mockDrive.getNode).toHaveBeenCalledTimes(2);
             expect(mockDrive.getNode).toHaveBeenCalledWith('parent-node');
@@ -90,7 +98,7 @@ describe('getNodeRole', () => {
                 .mockResolvedValueOnce({ ok: true, value: parentNode })
                 .mockResolvedValueOnce({ ok: true, value: grandparentNode });
 
-            const result = await getNodeRole(childNode, mockDrive);
+            const result = await getNodeEffectiveRole(childNode, mockDrive);
 
             expect(mockDrive.getNode).toHaveBeenCalledTimes(1);
             expect(mockDrive.getNode).toHaveBeenCalledWith('parent-node');

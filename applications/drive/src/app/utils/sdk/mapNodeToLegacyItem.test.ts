@@ -110,6 +110,7 @@ describe('mapNodeToLegacyItem', () => {
             volumeId: volumeId,
             isAnonymous: false,
             thumbnailId: 'nodeRevId',
+            rootUid: 'root-uid',
             activeRevision: {
                 id: revId,
                 createTime: revisionTime / 1000,

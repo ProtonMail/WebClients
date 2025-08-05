@@ -1,3 +1,5 @@
+import { useShallow } from 'zustand/react/shallow';
+
 import { ContextSeparator } from '@proton/components';
 import { MemberRole } from '@proton/drive/index';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
@@ -5,6 +7,8 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import type { ContextMenuProps } from '../../../components/FileBrowser';
 import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
+import { useMoveToFolderModal } from '../../../components/modals/MoveToFolderModal/MoveToFolderModal';
+import { useRenameModal } from '../../../components/modals/RenameModal';
 import { useRevisionsModal } from '../../../components/modals/RevisionsModal/RevisionsModal';
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import {
@@ -21,9 +25,9 @@ import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { MoveToFolderButton, MoveToTrashButton } from '../ContextMenuButtons';
 import { RenameButton } from '../ContextMenuButtons/RenameButton';
 import { RevisionsButton } from '../ContextMenuButtons/RevisionsButton';
+import { useFolderStore } from '../useFolder.store';
 
 export function FolderItemContextMenu({
-    role,
     shareId,
     selectedItems,
     anchorRef,
@@ -32,18 +36,20 @@ export function FolderItemContextMenu({
     open,
     close,
     children,
-    isActiveLinkReadOnly,
 }: ContextMenuProps & {
-    role: MemberRole;
     shareId: string;
     selectedItems: LegacyItem[];
-    isActiveLinkReadOnly?: boolean;
 }) {
     const selectedItem = selectedItems.length > 0 ? selectedItems[0] : undefined;
     const isOnlyOneItem = selectedItems.length === 1 && !!selectedItem;
     const isOnlyOneFileItem = isOnlyOneItem && selectedItem.isFile;
+    const { permissions, role } = useFolderStore(
+        useShallow((state) => ({
+            role: state.role,
+            permissions: state.permissions,
+        }))
+    );
 
-    const isEditor = role === MemberRole.Editor;
     const isAdmin = role === MemberRole.Admin;
 
     const hasPreviewAvailable =
@@ -53,6 +59,8 @@ export function FolderItemContextMenu({
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const [revisionsModal, showRevisionsModal] = useRevisionsModal();
+    const [renameModal, showRenameModal] = useRenameModal();
+    const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
 
     const openInDocs = useOpenInDocs(selectedItem);
 
@@ -78,11 +86,16 @@ export function FolderItemContextMenu({
                     />
                 )}
                 <ContextSeparator />
-                {isEditor && !isActiveLinkReadOnly ? (
-                    <MoveToFolderButton shareId={shareId} selectedItems={selectedItems} close={close} />
+                {permissions.canMove ? (
+                    <MoveToFolderButton
+                        shareId={shareId}
+                        selectedItems={selectedItems}
+                        close={close}
+                        showMoveToFolderModal={showMoveToFolderModal}
+                    />
                 ) : null}
-                {isEditor && isOnlyOneItem && !isActiveLinkReadOnly && (
-                    <RenameButton item={selectedItem} close={close} />
+                {permissions.canRename && isOnlyOneItem && (
+                    <RenameButton item={selectedItem} close={close} showRenameModal={showRenameModal} />
                 )}
                 <DetailsButton
                     selectedBrowserItems={selectedItems}
@@ -90,8 +103,8 @@ export function FolderItemContextMenu({
                     showFilesDetailsModal={showFilesDetailsModal}
                     close={close}
                 />
-                {isEditor && <ContextSeparator />}
-                {isEditor && isOnlyOneFileItem && (
+                {permissions.canEdit && <ContextSeparator />}
+                {permissions.canEdit && isOnlyOneFileItem && (
                     <>
                         <RevisionsButton
                             selectedItem={selectedItem}
@@ -101,13 +114,15 @@ export function FolderItemContextMenu({
                         <ContextSeparator />
                     </>
                 )}
-                {isEditor && <MoveToTrashButton selectedItems={selectedItems} close={close} />}
+                {permissions.canEdit && <MoveToTrashButton selectedItems={selectedItems} close={close} />}
                 {children}
             </ItemContextMenu>
             {filesDetailsModal}
             {detailsModal}
             {linkSharingModal}
             {revisionsModal}
+            {renameModal}
+            {moveToFolderModal}
         </>
     );
 }

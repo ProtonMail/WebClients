@@ -13,44 +13,44 @@ import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../store';
 import { getNodeEntity } from './getNodeEntity';
 import { dateToLegacyTimestamp, getLegacyModifiedTime, getLegacyTrashedTime } from './legacyTime';
 
-type NodeWithParent = { parentUid?: string; deprecatedShareId?: string };
-
-export type LegacyItem = FileBrowserBaseItem &
-    NodeWithParent & {
-        uid: string;
-        name: string;
-        shareId?: string;
-        volumeId: string;
-        activeRevision?: EncryptedLink['activeRevision'];
-        cachedThumbnailUrl?: string;
-        hasThumbnail: boolean;
-        isFile: boolean;
-        mimeType: string;
-        fileModifyTime: number;
-        shareUrl?: LinkShareUrl;
-        signatureIssues?: SignatureIssues;
-        signatureEmail?: string;
-        size: number;
-        trashed: number | null;
-        parentLinkId: string;
-        sharedOn?: number;
-        isLegacy?: boolean;
-        metaDataModifyTime: number;
-        isLocked?: boolean;
-        thumbnailId: string;
-        isShared?: boolean;
-        /**
-         * FILEBROWSER TODO:
-         * @todo rootShareId is only needed here until we migrate to the new File Browser
-         * After that, we can simply call getRootShareId when needed (like for preview/navigation)
-         */
-        rootShareId: string;
-        /**
-         * FILEBROWSER TODO:
-         * @todo id is only ever needed for FileBrowser, specifically item selection that has the `id` property hardcoded
-         */
-        id: string;
-    };
+export type LegacyItem = FileBrowserBaseItem & {
+    uid: string;
+    name: string;
+    shareId?: string;
+    volumeId: string;
+    activeRevision?: EncryptedLink['activeRevision'];
+    cachedThumbnailUrl?: string;
+    hasThumbnail: boolean;
+    isFile: boolean;
+    mimeType: string;
+    fileModifyTime: number;
+    shareUrl?: LinkShareUrl;
+    signatureIssues?: SignatureIssues;
+    signatureEmail?: string;
+    size: number;
+    trashed: number | null;
+    parentLinkId: string;
+    sharedOn?: number;
+    isLegacy?: boolean;
+    metaDataModifyTime: number;
+    isLocked?: boolean;
+    thumbnailId: string;
+    isShared?: boolean;
+    parentUid?: string;
+    deprecatedShareId?: string;
+    rootUid?: string;
+    /**
+     * FILEBROWSER TODO:
+     * @todo rootShareId is only needed here until we migrate to the new File Browser
+     * After that, we can simply call getRootShareId when needed (like for preview/navigation)
+     */
+    rootShareId: string;
+    /**
+     * FILEBROWSER TODO:
+     * @todo id is only ever needed for FileBrowser, specifically item selection that has the `id` property hardcoded
+     */
+    id: string;
+};
 
 const getLegacyIsAnonymous = (node: NodeEntity) => {
     if (node.type === NodeType.Folder) {
@@ -65,14 +65,14 @@ const getLegacyIsAnonymous = (node: NodeEntity) => {
 const getLegacySize = (node: NodeEntity) =>
     node.activeRevision?.claimedSize || node.activeRevision?.storageSize || node.totalStorageSize || 0;
 
-const getRootShareId = async (node: NodeWithParent, drive: ProtonDriveClient): Promise<string | undefined> => {
+const getRootNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<NodeEntity> => {
     if (node.parentUid) {
         const parent = await drive.getNode(node.parentUid);
         const { node: parentNode } = getNodeEntity(parent);
-        return getRootShareId(parentNode, drive);
+        return getRootNode(parentNode, drive);
     }
 
-    return node.deprecatedShareId;
+    return node;
 };
 
 export const mapNodeToLegacyItem = async (
@@ -90,6 +90,7 @@ export const mapNodeToLegacyItem = async (
 
     let activeRevision;
     const nodeRevision = node.activeRevision;
+    const rootNode = await getRootNode(node, drive);
     if (nodeRevision) {
         activeRevision = {
             id: splitNodeRevisionUid(nodeRevision.uid).revisionId,
@@ -123,7 +124,8 @@ export const mapNodeToLegacyItem = async (
         parentUid: node.parentUid,
         deprecatedShareId: node.deprecatedShareId,
         shareId: node.deprecatedShareId || defaultShareId,
-        rootShareId: (await getRootShareId(node, drive)) || defaultShareId,
+        rootShareId: rootNode.deprecatedShareId || defaultShareId,
+        rootUid: rootNode.uid,
         isShared: node.isShared,
     };
 };
