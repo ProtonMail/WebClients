@@ -8,7 +8,7 @@ import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTracker
 
 import { minimalCache } from '../../../helpers/test/cache';
 import { clearAll } from '../../../helpers/test/helper';
-import { render } from '../../../helpers/test/render';
+import { mailTestRender } from '../../../helpers/test/render';
 import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
 
 jest.mock('@proton/components/hooks/useProgressiveRollout', () => {
@@ -94,7 +94,7 @@ describe('ItemSpyTrackerIcon', () => {
         async ({ imageProxy, message, isIconDisplayed, isNumberDisplayed }) => {
             minimalCache();
 
-            const { queryByTestId } = await render(<ItemSpyTrackerIcon message={message} />, {
+            const { queryByTestId } = await mailTestRender(<ItemSpyTrackerIcon message={message} />, {
                 preloadedState: {
                     mailSettings: getModelState({
                         ImageProxy: imageProxy,
@@ -126,7 +126,7 @@ describe('ItemSpyTrackerIcon', () => {
     it('should open the privacy dropdown with trackers info', async () => {
         minimalCache();
 
-        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, {
+        await mailTestRender(<ItemSpyTrackerIcon message={messageWithTrackers} />, {
             preloadedState: {
                 mailSettings: getModelState({
                     ImageProxy: IMAGE_PROXY_FLAGS.ALL,
@@ -151,7 +151,7 @@ describe('ItemSpyTrackerIcon', () => {
     it('should open the privacy dropdown with no trackers found', async () => {
         minimalCache();
 
-        await render(<ItemSpyTrackerIcon message={messageWithoutTrackers} />, {
+        await mailTestRender(<ItemSpyTrackerIcon message={messageWithoutTrackers} />, {
             preloadedState: {
                 mailSettings: getModelState({
                     ImageProxy: IMAGE_PROXY_FLAGS.ALL,
@@ -173,7 +173,7 @@ describe('ItemSpyTrackerIcon', () => {
     it('should open the privacy dropdown with no protection', async () => {
         minimalCache();
 
-        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, {
+        await mailTestRender(<ItemSpyTrackerIcon message={messageWithTrackers} />, {
             preloadedState: {
                 mailSettings: getModelState({
                     ImageProxy: IMAGE_PROXY_FLAGS.NONE,
@@ -198,7 +198,7 @@ describe('ItemSpyTrackerIcon', () => {
     it('should open the image tracker modal and list expected info', async () => {
         minimalCache();
 
-        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, {
+        await mailTestRender(<ItemSpyTrackerIcon message={messageWithTrackers} />, {
             preloadedState: {
                 mailSettings: getModelState({
                     ImageProxy: IMAGE_PROXY_FLAGS.ALL,
@@ -229,7 +229,7 @@ describe('ItemSpyTrackerIcon', () => {
     it('should open the utm tracker modal and list expected info', async () => {
         minimalCache();
 
-        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, {
+        await mailTestRender(<ItemSpyTrackerIcon message={messageWithTrackers} />, {
             preloadedState: {
                 mailSettings: getModelState({
                     ImageProxy: IMAGE_PROXY_FLAGS.ALL,

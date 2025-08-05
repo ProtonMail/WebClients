@@ -12,7 +12,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { addComposerAction } from 'proton-mail/store/composers/composerActions';
 
 import { mergeMessages } from '../../../helpers/message/messages';
-import { addApiMock, clearAll, minimalCache, render } from '../../../helpers/test/helper';
+import { addApiMock, clearAll, mailTestRender, minimalCache } from '../../../helpers/test/helper';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import Addresses from './Addresses';
 
@@ -113,12 +113,12 @@ const setup = async ({
     renderOptions,
 }: {
     messageProp?: Partial<MessageState>;
-    renderOptions?: Parameters<typeof render>[1];
+    renderOptions?: Parameters<typeof mailTestRender>[1];
 } = {}) => {
     const nextMessage = mergeMessages(DEFAULT_PROPS.message, messageProp || {});
 
     const composerID = 'composer-test-id';
-    const result = await render(<Addresses {...DEFAULT_PROPS} composerID={composerID} />, {
+    const result = await mailTestRender(<Addresses {...DEFAULT_PROPS} composerID={composerID} />, {
         onStore: (store) => {
             store.dispatch(
                 addComposerAction({

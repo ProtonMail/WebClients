@@ -2,7 +2,7 @@ import { fireEvent, screen } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { render } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from 'proton-mail/helpers/test/render';
 
 import { activeSubscription } from '../../testData';
 import { ModalMoveToFolder } from './ModalMoveToFolder';
@@ -20,7 +20,7 @@ describe('ModalBlockSender', () => {
     });
 
     it('should render the modal', async () => {
-        await render(
+        await mailTestRender(
             <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
         );
 
@@ -29,7 +29,7 @@ describe('ModalBlockSender', () => {
     });
 
     it('should contain a button to create custom folder from the modal', async () => {
-        await render(
+        await mailTestRender(
             <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
         );
 
@@ -39,7 +39,7 @@ describe('ModalBlockSender', () => {
     });
 
     it('should disable the move button if no folder is selected', async () => {
-        await render(
+        await mailTestRender(
             <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
         );
 
@@ -48,7 +48,7 @@ describe('ModalBlockSender', () => {
     });
 
     it('should enable the button after selecting a folder', async () => {
-        await render(
+        await mailTestRender(
             <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
         );
 
@@ -62,7 +62,7 @@ describe('ModalBlockSender', () => {
     });
 
     it('should filter the list of folders when the search input is used', async () => {
-        await render(
+        await mailTestRender(
             <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
         );
 
@@ -93,7 +93,7 @@ describe('ModalBlockSender', () => {
             false,
         ]);
 
-        await render(
+        await mailTestRender(
             <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
         );
 

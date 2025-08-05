@@ -3,10 +3,9 @@ import { fireEvent, screen } from '@testing-library/react';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
 import type { GeneratedKey } from '../../../../helpers/test/crypto';
-import { generateKeys } from '../../../../helpers/test/crypto';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
+import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
 import { clearAll } from '../../../../helpers/test/helper';
-import { render, tick } from '../../../../helpers/test/render';
+import { mailTestRender, tick } from '../../../../helpers/test/render';
 import MailRecipientItemSingle from '../MailRecipientItemSingle';
 
 const senderAddress = 'sender@outside.com';
@@ -46,7 +45,7 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
     };
 
     it('should not contain the trust key action in the dropdown', async () => {
-        await render(<MailRecipientItemSingle recipient={sender} {...modalsHandlers} />);
+        await mailTestRender(<MailRecipientItemSingle recipient={sender} {...modalsHandlers} />);
 
         await openDropdown();
 
@@ -56,7 +55,7 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
     });
 
     it('should contain the trust key action in the dropdown if signing key', async () => {
-        await render(
+        await mailTestRender(
             <MailRecipientItemSingle
                 recipient={sender}
                 signingPublicKey={senderKeys.publicKeys[0]}
@@ -71,7 +70,7 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
     });
 
     it('should contain the trust key action in the dropdown if attached key', async () => {
-        await render(
+        await mailTestRender(
             <MailRecipientItemSingle
                 recipient={sender}
                 attachedPublicKey={senderKeys.publicKeys[0]}

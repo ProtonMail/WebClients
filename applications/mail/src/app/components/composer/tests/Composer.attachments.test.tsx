@@ -20,10 +20,10 @@ import {
     generateKeys,
     getCompleteAddress,
     getDropdown,
+    mailTestRender,
     minimalCache,
     parseDOMStringToBodyElement,
     parseFormData,
-    render,
     tick,
     waitForNoNotification,
     waitForNotification,
@@ -90,7 +90,7 @@ const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
         messageDocument: { plainText: 'test', document: parseDOMStringToBodyElement('hello') },
     });
 
-    const { container, unmount } = await render(<Composer {...props} composerID={composerID} />, {
+    const { container, unmount } = await mailTestRender(<Composer {...props} composerID={composerID} />, {
         onStore: (store) => {
             prepareMessage(store, message, composerID);
         },

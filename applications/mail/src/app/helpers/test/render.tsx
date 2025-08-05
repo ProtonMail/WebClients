@@ -229,7 +229,7 @@ export const getStoreWrapper = ({
     return { Wrapper, store };
 };
 
-export const render = async (
+export const mailTestRender = async (
     ui: ReactElement,
     { preloadedState, initialEntries = ['/inbox'], initialPath, onStore, ...renderOptions }: ExtendedRenderOptions = {}
 ): Promise<RenderResult> => {
