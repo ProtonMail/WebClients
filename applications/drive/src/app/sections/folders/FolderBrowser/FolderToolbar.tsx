@@ -1,3 +1,5 @@
+import { useShallow } from 'zustand/react/shallow';
+
 import { Vr } from '@proton/atoms';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
 import { MemberRole } from '@proton/drive/index';
@@ -15,8 +17,6 @@ import {
 } from '../../../components/sections/ToolbarButtons';
 import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
 import { useDocumentActions } from '../../../store';
-import { useDriveDocsFeatureFlag, useDriveDocsSheetsFF } from '../../../store/_documents';
-import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 import {
     ActionsDropdown,
     CreateNewFileButton,
@@ -30,46 +30,36 @@ import {
 import { CreateNewDocumentButton } from '../ToolbarButtons/CreateNewDocumentButton';
 import { CreateNewSheetButton } from '../ToolbarButtons/CreateNewSheetButton';
 import { getSelectedItems } from '../getSelectedItems';
+import { useFolderStore } from '../useFolder.store';
 
 interface Props {
     volumeId: string;
     shareId: string;
     linkId: string;
-    items: LegacyItem[];
-    role: MemberRole;
     showOptionsForNoSelection?: boolean;
-    isLinkReadOnly?: boolean;
-    isLinkRoot?: boolean;
-    isLinkInDeviceShare?: boolean;
 }
 
-export const FolderToolbar = ({
-    volumeId,
-    shareId,
-    linkId,
-    items,
-    showOptionsForNoSelection = true,
-    isLinkReadOnly,
-    isLinkRoot,
-    isLinkInDeviceShare,
-    role,
-}: Props) => {
+export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelection = true }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection();
     const isEditEnabled = useIsEditEnabled();
     const { createDocument } = useDocumentActions();
-    const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const { isSheetsEnabled } = useDriveDocsSheetsFF();
+    const { items, permissions, role } = useFolderStore(
+        useShallow((state) => ({
+            folder: state.folder,
+            permissions: state.permissions,
+            items: state.getFolderItems(),
+            role: state.role,
+        }))
+    );
 
-    const isEditor = role === MemberRole.Editor;
     const isAdmin = role === MemberRole.Admin;
 
     const selectedItems = getSelectedItems(items, selectionControls?.selectedItemIds || []);
 
-    const shouldShowShareButton =
-        isAdmin && (isLinkReadOnly || isLinkRoot) && selectedItems.length === 0 && items.length > 0;
-    const shouldShowShareLinkButton = isAdmin && (selectedItems.length > 0 || (!isLinkReadOnly && !isLinkRoot));
+    const shouldShowShareButton = permissions.canShare && selectedItems.length === 0 && items.length > 0;
+    const shouldShowShareLinkButton = isAdmin && (selectedItems.length > 0 || permissions.canShareNode);
 
     const selectedItem = selectedItems.length === 1 ? selectedItems[0] : undefined;
 
@@ -80,16 +70,16 @@ export const FolderToolbar = ({
             }
             return (
                 <>
-                    {isEditor && !isLinkReadOnly ? (
+                    {permissions.canCreateNode ? (
                         <>
                             <CreateNewFolderButton activeFolder={{ volumeId, shareId, linkId }} />
                             {isEditEnabled && <CreateNewFileButton />}
-                            {isDocsEnabled && !isLinkReadOnly && !isLinkInDeviceShare && (
+                            {permissions.canCreateDocs && (
                                 <CreateNewDocumentButton
                                     onClick={() => createDocument({ type: 'doc', shareId, parentLinkId: linkId })}
                                 />
                             )}
-                            {isSheetsEnabled && !isLinkReadOnly && !isLinkInDeviceShare && (
+                            {permissions.canCreateSheets && (
                                 <CreateNewSheetButton
                                     onClick={() => createDocument({ type: 'sheet', shareId, parentLinkId: linkId })}
                                 />
@@ -128,15 +118,12 @@ export const FolderToolbar = ({
                                 <Vr />
                             </>
                         )}
-                        {isEditor && !isLinkReadOnly ? (
-                            <>
-                                <MoveToFolderButton shareId={shareId} selectedItems={selectedItems} />
-                                <RenameButton selectedItems={selectedItems} />
-                            </>
-                        ) : null}
+
+                        {permissions.canMove && <MoveToFolderButton shareId={shareId} selectedItems={selectedItems} />}
+                        {permissions.canRename && <RenameButton selectedItems={selectedItems} />}
                         <DetailsButton selectedBrowserItems={selectedItems} />
 
-                        {isEditor && (
+                        {permissions.canEdit && (
                             <>
                                 <Vr />
                                 <MoveToTrashButton selectedItems={selectedItems} />
