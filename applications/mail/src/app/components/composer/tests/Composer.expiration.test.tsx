@@ -1,5 +1,9 @@
-import { fireEvent, screen } from '@testing-library/react';
-import { getByTestId as getByTestIdDefault, getByText as getByTextDefault } from '@testing-library/react';
+import {
+    fireEvent,
+    getByTestId as getByTestIdDefault,
+    getByText as getByTextDefault,
+    screen,
+} from '@testing-library/react';
 import { format } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
@@ -15,7 +19,7 @@ import {
     generateKeys,
     getCompleteAddress,
     getDropdown,
-    render,
+    mailTestRender,
 } from '../../../helpers/test/helper';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, toAddress } from './Composer.test.helpers';
@@ -42,7 +46,7 @@ describe('Composer expiration', () => {
         const fromKeys = await generateKeys('me', fromAddress);
         addApiKeys(false, toAddress, []);
 
-        const view = await render(<Composer {...props} composerID={composerID} />, {
+        const view = await mailTestRender(<Composer {...props} composerID={composerID} />, {
             preloadedState: {
                 addressKeys: getAddressKeyCache(getCompleteAddress({ ID: AddressID }), [fromKeys]),
             },
