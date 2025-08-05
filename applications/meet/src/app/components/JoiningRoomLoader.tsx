@@ -5,8 +5,6 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
 
-import { JOIN_TITLE_TIMEOUT } from '../constants';
-
 interface JoiningRoomLoaderProps {
     participantCount?: number;
     participantsLoaded: boolean;
@@ -26,38 +24,23 @@ export const JoiningRoomLoader = ({ participantCount, participantsLoaded }: Join
                     ? c('l10n_nightly Title').t`Starting MLS as the first participant...`
                     : c('l10n_nightly Title')
                           .t`Negotiating new MLS key with ${participantCount} other participant(s)....`,
-            description: c('l10n_nightly Description').t`Making sure no one else has the new key`,
+            description: !participantCount
+                ? c('l10n_nightly Description').t`Generating new encryption key`
+                : c('l10n_nightly Description').t`Rotating encryption key`,
         },
     ];
-
-    const initialisedTimeRef = useRef(Date.now());
 
     const [titleIndex, setTitleIndex] = useState(0);
 
     useEffect(() => {
-        if (!participantsLoaded) {
+        if (!participantsLoaded || titleIndex === 1) {
             return;
         }
 
-        const now = Date.now();
+        participantCountRef.current = participantCount ?? 0;
 
-        const timeDiff = now - initialisedTimeRef.current;
-
-        if (timeDiff >= JOIN_TITLE_TIMEOUT) {
-            setTitleIndex(1);
-            participantCountRef.current = participantCount ?? 0;
-            return;
-        }
-
-        const timeout = setTimeout(() => {
-            setTitleIndex(1);
-            participantCountRef.current = participantCount ?? 0;
-        }, JOIN_TITLE_TIMEOUT - timeDiff);
-
-        return () => {
-            clearTimeout(timeout);
-        };
-    }, [participantsLoaded]);
+        setTitleIndex(1);
+    }, [participantsLoaded, titleIndex]);
 
     return (
         <div

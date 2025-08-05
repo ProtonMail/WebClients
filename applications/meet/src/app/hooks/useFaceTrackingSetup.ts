@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import type { LocalVideoTrack } from 'livekit-client';
-import { createLocalTracks } from 'livekit-client';
+import type { LocalVideoTrack } from '@proton-meet/livekit-client';
+import { createLocalTracks } from '@proton-meet/livekit-client';
 
 import { FaceTrackingProcessor } from '../utils/custom-processors/FaceTrackingProcessor';
 

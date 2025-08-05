@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import { VideoQuality } from 'livekit-client';
+import { VideoQuality } from '@proton-meet/livekit-client';
 
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../constants';
@@ -8,7 +8,7 @@ import { MeetContext } from '../contexts/MeetContext';
 import { UIStateProvider } from '../contexts/UIStateContext';
 import { useFaceTrackingSetup } from '../hooks/useFaceTrackingSetup';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
-import type { MeetChatMessage, ParticipantEventRecord, ParticipantSettings } from '../types';
+import type { MeetChatMessage, ParticipantEntity, ParticipantEventRecord, ParticipantSettings } from '../types';
 
 interface MeetContainerProps {
     setParticipantSettings: React.Dispatch<React.SetStateAction<ParticipantSettings | null>>;
@@ -17,8 +17,10 @@ interface MeetContainerProps {
     setAudioOutputDeviceId: (deviceId: string | null) => void;
     setVideoDeviceId: (deviceId: string | null) => void;
     handleLeave: () => void;
+    handleEndMeeting: () => void;
     shareLink: string;
     roomName: string;
+    participantsMap: Record<string, ParticipantEntity>;
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
     instantMeeting: boolean;
@@ -39,8 +41,10 @@ export const MeetContainer = ({
     setAudioOutputDeviceId,
     setVideoDeviceId,
     handleLeave,
+    handleEndMeeting,
     shareLink,
     roomName,
+    participantsMap,
     participantNameMap,
     getParticipants,
     instantMeeting,
@@ -100,10 +104,12 @@ export const MeetContainer = ({
                     pageSize,
                     setPageSize,
                     handleLeave,
+                    handleEndMeeting,
                     isAudioEnabled,
                     isVideoEnabled,
                     isFaceTrackingEnabled,
                     setIsVideoEnabled,
+                    participantsMap,
                     participantNameMap,
                     getParticipants,
                     disableVideos,

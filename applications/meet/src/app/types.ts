@@ -1,4 +1,4 @@
-import type { ChatMessage } from 'livekit-client';
+import type { ChatMessage } from '@proton-meet/livekit-client';
 
 export interface ParticipantSettings {
     displayName: string;
@@ -68,14 +68,13 @@ export enum ParticipantCapabilityPermission {
 }
 
 export interface ParticipantEntity {
-    ParticipantUUID?: string;
-    ParticipantUuid?: string;
+    ParticipantUUID: string;
     DisplayName: string;
-    CanSubscribe: ParticipantCapabilityPermission;
-    CanPublish: ParticipantCapabilityPermission;
-    CanPublishData: ParticipantCapabilityPermission;
-    IsAdmin: ParticipantCapabilityPermission;
-    IsHost: ParticipantCapabilityPermission;
+    CanSubscribe?: ParticipantCapabilityPermission;
+    CanPublish?: ParticipantCapabilityPermission;
+    CanPublishData?: ParticipantCapabilityPermission;
+    IsAdmin?: ParticipantCapabilityPermission;
+    IsHost?: ParticipantCapabilityPermission;
 }
 
 export interface MeetingDetails {

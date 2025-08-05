@@ -8234,6 +8234,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@proton-meet/livekit-client@npm:2.15.4, livekit-client@npm:@proton-meet/livekit-client@2.15.4":
+  version: 2.15.4
+  resolution: "@proton-meet/livekit-client@npm:2.15.4"
+  dependencies:
+    "@livekit/mutex": "npm:1.1.1"
+    "@livekit/protocol": "npm:1.39.3"
+    events: "npm:^3.3.0"
+    loglevel: "npm:^1.9.2"
+    sdp-transform: "npm:^2.15.0"
+    ts-debounce: "npm:^4.0.0"
+    tslib: "npm:2.8.1"
+    typed-emitter: "npm:^2.1.0"
+    webrtc-adapter: "npm:^9.0.1"
+  peerDependencies:
+    "@types/dom-mediacapture-record": ^1
+  checksum: 10c0/3bb73cd82b24a1c94ae106dba326a5523c2162f5d58681e98f5ac2e07738760acfca08b6dca8ff4fd15dbdd0dda604b63d203e9c0ae75ed4d049de6c985ffd86
+  languageName: node
+  linkType: hard
+
+"@proton-meet/proton-meet-core@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@proton-meet/proton-meet-core@npm:0.1.3"
+  checksum: 10c0/e5b8f2a293f776f523f682b119da990788effbb157476d8638d0a4dc04fe7a0835c6081a55ea0bcc5ab42efbd86fc4fb841b703fbdd06b34422dc9acc9ae2074
+  languageName: node
+  linkType: hard
+
 "@proton/account@workspace:^, @proton/account@workspace:packages/account":
   version: 0.0.0-use.local
   resolution: "@proton/account@workspace:packages/account"
@@ -31061,25 +31087,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"livekit-client@npm:^2.15.3":
-  version: 2.15.3
-  resolution: "livekit-client@npm:2.15.3"
-  dependencies:
-    "@livekit/mutex": "npm:1.1.1"
-    "@livekit/protocol": "npm:1.39.3"
-    events: "npm:^3.3.0"
-    loglevel: "npm:^1.9.2"
-    sdp-transform: "npm:^2.15.0"
-    ts-debounce: "npm:^4.0.0"
-    tslib: "npm:2.8.1"
-    typed-emitter: "npm:^2.1.0"
-    webrtc-adapter: "npm:^9.0.1"
-  peerDependencies:
-    "@types/dom-mediacapture-record": ^1
-  checksum: 10c0/89733eeb6a97fd8d76da3398c590438ab6c463784b9f05050709fe15615171433a16ecc3851e37826d4264a201dc41399462ca80dcc041f53c74a71b45ac8062
-  languageName: node
-  linkType: hard
-
 "load-json-file@npm:^2.0.0":
   version: 2.0.0
   resolution: "load-json-file@npm:2.0.0"
@@ -37648,6 +37655,8 @@ __metadata:
   resolution: "proton-meet@workspace:applications/meet"
   dependencies:
     "@livekit/components-react": "npm:^2.9.3"
+    "@proton-meet/livekit-client": "npm:2.15.4"
+    "@proton-meet/proton-meet-core": "npm:0.1.3"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/crypto": "workspace:packages/crypto"
@@ -37673,7 +37682,7 @@ __metadata:
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.1"
     happy-dom: "npm:^17.4.6"
-    livekit-client: "npm:^2.15.3"
+    livekit-client: "npm:@proton-meet/livekit-client@2.15.4"
     prettier: "npm:^3.5.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"

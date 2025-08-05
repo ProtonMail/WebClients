@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
-import { type Track as LiveKitTrack, LocalVideoTrack, Track } from 'livekit-client';
+import { type Track as LiveKitTrack, LocalVideoTrack, Track } from '@proton-meet/livekit-client';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';

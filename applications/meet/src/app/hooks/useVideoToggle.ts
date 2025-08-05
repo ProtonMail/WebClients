@@ -1,8 +1,8 @@
 import { useCallback, useRef } from 'react';
 
 import { useLocalParticipant } from '@livekit/components-react';
-import type { LocalTrack } from 'livekit-client';
-import { Track } from 'livekit-client';
+import type { LocalTrack } from '@proton-meet/livekit-client';
+import { Track } from '@proton-meet/livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
 import { useParticipantResolution } from './useParticipantResolution';

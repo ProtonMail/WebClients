@@ -3,15 +3,20 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, useModalState } from '@proton/components';
 import { IcPhone } from '@proton/icons';
+import clsx from '@proton/utils/clsx';
 
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 
 import './LeaveModal.scss';
 
-export const LeaveModal = () => {
+interface LeaveModalProps {
+    hasAdminPermission: boolean;
+}
+
+export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
     const [modalProps, handleSetOpen, render] = useModalState();
-    const { handleLeave } = useMeetContext();
+    const { handleLeave, handleEndMeeting } = useMeetContext();
 
     const isLargerThanMd = useIsLargerThanMd();
 
@@ -40,8 +45,20 @@ export const LeaveModal = () => {
                         </div>
 
                         <div className="flex flex-column justify-end gap-2">
+                            {hasAdminPermission && (
+                                <Button
+                                    className="border-none rounded-full w-full leave-meeting-button"
+                                    onClick={handleEndMeeting}
+                                    size="large"
+                                >
+                                    {c('l10n_nightly Action').t`End meeting for all`}
+                                </Button>
+                            )}
                             <Button
-                                className="border-none rounded-full w-full leave-meeting-button"
+                                className={clsx(
+                                    'border-none rounded-full w-full leave-meeting-button',
+                                    hasAdminPermission ? 'leave-meeting-button-admin' : 'leave-meeting-button'
+                                )}
                                 onClick={handleLeave}
                                 size="large"
                             >

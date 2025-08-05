@@ -1,6 +1,6 @@
 import { useLocalParticipant } from '@livekit/components-react';
-import type { LocalTrack } from 'livekit-client';
-import { Track } from 'livekit-client';
+import type { LocalTrack } from '@proton-meet/livekit-client';
+import { Track } from '@proton-meet/livekit-client';
 
 import { audioQualityDetails } from '../qualityConstants';
 import { useQualityLevel } from './useQualityLevel';

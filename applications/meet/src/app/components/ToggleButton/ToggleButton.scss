@@ -1,7 +1,8 @@
 .toggle-button-body-on {
 	background-color: var(--interaction-weak-minor-1);
 
-	&:hover {
+	&:hover,
+	&:focus-within {
 		background-color: var(--interaction-weak);
 	}
 }
@@ -27,7 +28,8 @@
 .toggle-button-circle-on {
 	background-color: var(--interaction-weak-minor-2);
 
-	&:hover {
+	&:hover,
+	&:focus-within {
 		background-color: var(--interaction-weak);
 	}
 }

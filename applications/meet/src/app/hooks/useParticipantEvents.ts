@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import type { Participant } from 'livekit-client';
+import type { Participant } from '@proton-meet/livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
 import { ParticipantEvent, type ParticipantEventRecord } from '../types';

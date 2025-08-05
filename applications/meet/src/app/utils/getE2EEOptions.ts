@@ -1,12 +1,12 @@
-import type { RoomOptions } from 'livekit-client';
-import { ExternalE2EEKeyProvider } from 'livekit-client';
+import type { RoomOptions } from '@proton-meet/livekit-client';
+import { ExternalE2EEKeyProvider } from '@proton-meet/livekit-client';
 
 const keyProvider = new ExternalE2EEKeyProvider();
 
-const worker = new Worker(new URL('livekit-client/e2ee-worker', import.meta.url));
+const worker = new Worker(new URL('@proton-meet/livekit-client/e2ee-worker', import.meta.url));
 
-export const getE2EEOptions = async (roomKey: string): Promise<RoomOptions> => {
-    await keyProvider.setKey(roomKey);
+export const getE2EEOptions = async (roomKey: string, epoch?: bigint): Promise<RoomOptions> => {
+    await keyProvider.setKey(roomKey, epoch);
 
     return {
         e2ee: {

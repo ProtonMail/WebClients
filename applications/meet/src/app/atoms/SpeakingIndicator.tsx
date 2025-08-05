@@ -1,4 +1,4 @@
-import type { Participant } from 'livekit-client';
+import type { Participant } from '@proton-meet/livekit-client';
 
 import { SpeakerIndicator } from '../components/SpeakerIndicator/SpeakerIndicator';
 

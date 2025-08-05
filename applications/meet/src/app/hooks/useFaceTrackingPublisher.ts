@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import { type LocalVideoTrack, Track } from 'livekit-client';
+import { type LocalVideoTrack, Track } from '@proton-meet/livekit-client';
 
 import noop from '@proton/utils/noop';
 

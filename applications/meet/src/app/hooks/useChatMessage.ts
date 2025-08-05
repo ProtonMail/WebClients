@@ -3,6 +3,10 @@ import { useCallback } from 'react';
 import type { ChatMessage } from '@livekit/components-react';
 import { useRoomContext } from '@livekit/components-react';
 
+import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
+
+import { useMLSContext } from '../contexts/MLSContext';
 import { useMeetContext } from '../contexts/MeetContext';
 import { trimMessage } from '../utils/trim-message';
 
@@ -12,18 +16,23 @@ export const useChatMessage = () => {
 
     const { displayName } = useMeetContext();
 
+    const mls = useMLSContext();
+
     const sendMessage = useCallback(
         async (content: string) => {
             const trimmedContent = trimMessage(content);
+            const sanitizedContent = sanitizeMessage(trimmedContent);
 
-            if (!room || !trimmedContent) {
+            if (!room || !sanitizedContent) {
                 return;
             }
 
             try {
+                const encryptedMessage = await mls?.encryptMessage(sanitizedContent);
+
                 const message: ChatMessage = {
                     id: `${room.localParticipant.identity}-${Date.now()}`,
-                    message: trimmedContent,
+                    message: uint8ArrayToString(encryptedMessage as Uint8Array),
                     timestamp: Date.now(),
                 };
 
@@ -35,6 +44,7 @@ export const useChatMessage = () => {
                     ...prev,
                     {
                         ...message,
+                        message: trimmedContent,
                         identity: room.localParticipant.identity,
                         name: displayName,
                         seen: true,
