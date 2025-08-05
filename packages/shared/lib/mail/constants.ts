@@ -139,11 +139,11 @@ export const SYSTEM_LABELS = [
     MAILBOX_LABEL_IDS.SNOOZED,
 ];
 
-export const CATEGORY_LABELS_TO_ROUTE_SET = new Set(
-    [...CATEGORY_LABEL_IDS_SET].map((id) => {
-        return `/${LABEL_IDS_TO_HUMAN[id]}`;
-    })
-);
+export const CATEGORY_LABELS_TO_ROUTE_ARRAY = [...CATEGORY_LABEL_IDS_SET].map((id) => {
+    return `/${LABEL_IDS_TO_HUMAN[id]}`;
+});
+
+export const CATEGORY_LABELS_TO_ROUTE_SET = new Set(CATEGORY_LABELS_TO_ROUTE_ARRAY);
 
 // List of location where messages are marked automatically as read after moving by the API
 export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];
