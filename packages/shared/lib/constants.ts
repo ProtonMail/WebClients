@@ -920,6 +920,7 @@ export enum CLIENT_TYPES {
     WALLET = 6,
     LUMO = 9,
     AUTHENTICATOR = 10,
+    MEET = 11,
 }
 
 export enum TOKEN_TYPES {
