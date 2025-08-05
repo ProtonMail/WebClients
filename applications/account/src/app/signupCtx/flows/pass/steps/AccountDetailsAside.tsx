@@ -44,3 +44,5 @@ export const AccountDetailsAside = memo(() => (
         </div>
     </section>
 ));
+
+AccountDetailsAside.displayName = 'AccountDetailsAside';

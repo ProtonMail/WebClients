@@ -21,7 +21,7 @@ const PassSignup = () => {
     const { step } = useFlow();
 
     return (
-        <main className="pass-signup">
+        <main className="pass-signup h-full">
             {step === Step.Signup && <AccountDetailsStep />}
             {step === Step.RecoveryKit && <RecoveryKitStep />}
             {step === Step.UpgradePlan && <UpgradePlanStep />}

@@ -21,3 +21,5 @@ export const RecoveryKitAside = memo(() => (
         </section>
     </div>
 ));
+
+RecoveryKitAside.displayName = 'RecoveryKitAside';
