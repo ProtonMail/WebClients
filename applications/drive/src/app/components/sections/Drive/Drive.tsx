@@ -4,7 +4,7 @@ import { useActiveBreakpoint } from '@proton/components';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
-import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
+import { type DriveFolder, useActiveShare } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
@@ -98,7 +98,7 @@ function Drive({ activeFolder, folderView }: Props) {
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(folderView.layout, folderView.isLoading);
     const { permissions, layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
-
+    const { activeShareId } = useActiveShare();
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
     const selectedItems = useMemo(
@@ -107,11 +107,19 @@ function Drive({ activeFolder, folderView }: Props) {
     );
 
     const openPreview = useOpenPreview();
+
     const browserItems: DriveItem[] = items.map((item) => ({
         ...item,
         id: item.linkId,
         // TODO: Improve this, we should not pass showLinkSharingModal here
-        onShareClick: item.isShared ? showLinkSharingModal : undefined,
+        onShareClick: item.isShared
+            ? () =>
+                  showLinkSharingModal({
+                      volumeId: item.volumeId,
+                      linkId: item.linkId,
+                      shareId: activeShareId,
+                  })
+            : undefined,
         isAdmin,
     }));
     const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, selectionControls!.clearSelections);
