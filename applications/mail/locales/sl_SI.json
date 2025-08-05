@@ -37,7 +37,7 @@
         "Trgovina ${ BRAND_NAME }"
       ],
       "A to Z": [
-        "A do Z"
+        "A do Ž"
       ],
       "Activate": [
         "Aktiviraj"
@@ -397,7 +397,7 @@
         "Brisanje mape"
       ],
       "Deleting label": [
-        "Izbriši oznako"
+        "Brisanje oznake"
       ],
       "Deselect all": [
         "Odznači vse"
@@ -439,7 +439,7 @@
         "Prenesite aplikacije ${ DRIVE_APP_NAME }"
       ],
       "Download all attachments": [
-        "Prenašanje priponke"
+        "Prenesi vse priponke"
       ],
       "Download logs": [
         "Prenesite dnevnike"
@@ -1397,6 +1397,12 @@
       ],
       "Trust": [
         "Zaupaj"
+      ],
+      "Trust key": [
+        "Zaupaj ključu",
+        "Zaupaj ključema",
+        "Zaupaj ključem",
+        "Zaupaj ključem"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -2413,7 +2419,7 @@
         "Vse aplikacije ${ BRAND_NAME } in premijske funkcije"
       ],
       "Cancel and downgrade": [
-        "Prekliči vse prenose"
+        "Prekliči in zmanjšaj"
       ],
       "Cloud storage and sharing for large files": [
         "Shramba v oblaku in skupna raba velikih datotek"
@@ -4219,9 +4225,6 @@
       "An error occurred while saving your alias": [
         "Pri shranjevanju vzdevka je prišlo do napake"
       ],
-      "Attachments are limited to 25 MB": [
-        "Priponke so omejene na 25 MB"
-      ],
       "Authentication canceled.": [
         "Preverjanje pristnosti preklicano."
       ],
@@ -5605,7 +5608,7 @@
         "Stiki"
       ],
       "Drawer": [
-        "Predal"
+        "Obrobni stolpec"
       ],
       "Hardware not compatible": [
         "Strojna oprema ni združljiva"
@@ -7060,10 +7063,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -7204,7 +7204,7 @@
         "Sporočilo poslano."
       ],
       "Message view": [
-        "Pogled sporočila"
+        "Ogled sporočila"
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
         "Sporočilo bo poslano zjutraj ob ${ formattedTime }"
@@ -7243,7 +7243,7 @@
         "Novo"
       ],
       "newsletter": [
-        "e-novice"
+        "glasilo"
       ],
       "No action selected": [
         "Izbrano ni nobeno dejanje"
@@ -7471,7 +7471,7 @@
         "Preveri besedilo"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
-        "Preprečite, da bi vaš e-poštni naslov izvedeli poštni seznami ali pošiljatelji neželene pošte, s ${ hideMyEmailAliasesLink }."
+        "Preprečite, da bi se vaš e-poštni naslov znašel na poštnih seznamih neželene pošte, s ${ hideMyEmailAliasesLink }."
       ],
       "Quickly spot": [
         "Hitro opazite"
@@ -10663,7 +10663,7 @@
         "Zaščitite občutljive poslovne informacije in varno sodelujte."
       ],
       "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
-        "Zaščitite svojo družino z vsemi premium funkcijami programa ${ plusTitle } za 6 uporabnikov."
+        "Zaščitite svojo družino z vsemi premijskimi funkcijami paketa ${ plusTitle } za 6 uporabnikov."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Zaščitite zasebnost vaše družine s kombinacijo vseh storitev ${ BRAND_NAME }."
@@ -11075,12 +11075,6 @@
       "Don’t show this offer again": [
         "Te ponudbe ne prikazuj več"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Pridobite Drive Plus za samo ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Pridobite Mail Plus za samo ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
       ],
@@ -11104,9 +11098,6 @@
       ],
       "Save": [
         "Prihranite"
-      ],
-      "Save 80% on your first month.": [
-        "Prihranite 80 % pri vašem prvem mesecu."
       ],
       "Save big when you pay annually": [
         "Prihranite čim več z izbiro letnega plačila!"
@@ -11151,14 +11142,8 @@
       "Free": [
         "Brezplačno"
       ],
-      "Online document editor": [
-        "Spletni urejevalnik dokumentov"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Obnovi prejšnje različice datoteke"
       ],
       "Storage": [
         "Shramba"
@@ -11334,7 +11319,7 @@
         "Če potrebujete pomoč,"
       ],
       "Once your full subscription starts...": [
-        "Ko se začne vaša polna naročnina..."
+        "Ko se začne vaša polna naročnina ..."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Še vedno lahko prekličete v 30 dneh in prejmete sorazmerno vračilo denarja."
@@ -12538,7 +12523,7 @@
         "Varno brskajte"
       ],
       "Do more with ${ BRAND_NAME }": [
-        "Prijava z ${ BRAND_NAME }."
+        "Naredite več z ${ BRAND_NAME }."
       ],
       "Go to subscription plans": [
         "Ogled naročniških paketov"
@@ -12623,7 +12608,7 @@
     },
     "specialoffer: Title": {
       "Keep your passwords safe and organized in multiple vaults ": [
-        "Imejte svoja gesla varna in organizirana v več trezorjih"
+        "Imejte svoja gesla varna in organizirana v več trezorjih "
       ],
       "Protect your account from threats with Sentinel": [
         "Zaščitite svoj račun pred grožnjami s Sentinelom"
@@ -12657,7 +12642,7 @@
     },
     "Spotlight": {
       "Check out what's included with your subscription and start enjoying the benefits.": [
-        "Oglejte si, kaj je vključeno v vašo naročnino, in začnite uživati ugodnosti."
+        "Oglejte si, kaj je vključeno v vašo naročnino, in to začnite uporabljati."
       ],
       "Discover your subscription benefits": [
         "Odkrijte ugodnosti vaše naročnine"
