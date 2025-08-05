@@ -1427,7 +1427,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1491,6 +1492,9 @@
       ],
       "Upgrade": [
         "Yükselt"
+      ],
+      "Upgrade for 200GB": [
+        "200GB boyutuna artırın"
       ],
       "Upgrade Now": [
         "Şimdi yükselt"
@@ -3959,7 +3963,7 @@
         "Ayrıca şunlar da bulunur"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Çöp ve İstenmeyen klasörlerine konmuş 30 günden eski e-postaları otomatik olarak temizleyin."
+        "Çöp ve İstenmeyen kutularındaki 30 günden eski e-postaları otomatik olarak temizleyin."
       ],
       "Automatically forward incoming email to another email address.": [
         "Gelen e-postaları otomatik olarak başka bir e-posta adresine iletin."
@@ -4408,8 +4412,8 @@
       "An error occurred while saving your alias": [
         "Takma adınız kaydedilirken bir sorun çıktı"
       ],
-      "Attachments are limited to 25 MB": [
-        "Ek dosyaların boyutu 25 MB ile sınırlıdır"
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Ek dosyaların boyutu ${ readableAttachmentMaxSize } ile sınırlıdır"
       ],
       "Authentication canceled.": [
         "Kimlik doğrulaması iptal edildi."
@@ -6541,7 +6545,7 @@
         "Bu e-posta listesinden gelen tüm iletiler okunmuş olarak işaretlenecek."
       ],
       "All messages from this mailing list will be moved to Archive.": [
-        "Bu e-posta listesinden gelen tüm iletiler Arşiv klasörüne taşınacak."
+        "Bu e-posta listesinden gelen tüm iletiler Arşiv kutusuna taşınacak."
       ],
       "All messages from this mailing list will be moved to Trash.": [
         "Bu e-posta listesinden gelen tüm iletiler çöpe atılacak."
@@ -6668,7 +6672,7 @@
         "İlgilenmeniz gerekiyor"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Çöp ve İstenmeyen klasörlerine konmuş 30 günden eski e-postaları otomatik olarak temizleyin."
+        "Çöp ve İstenmeyen kutularındaki 30 günden eski e-postaları otomatik olarak temizleyin."
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Çöp ve istenmeyen kutularında 30 günden uzun süredir duran iletileri otomatik olarak silebilirsiniz."
@@ -6884,7 +6888,7 @@
         "Parolayı alıcı ile paylaşmayı unutmayın"
       ],
       "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
-        "Şu anda önemli bir e-postayla ilgilenmeye vaktiniz yok ama onu unutmak da istemiyor musunuz? Gelen kutunuzda yeniden görüneceği daha iyi bir zaman belirleyin."
+        "Şu anda önemli bir e-postayla ilgilenmeye vaktiniz yok ama onu unutmak da istemiyor musunuz? Gelen kutunuzda daha uygun bir zamanda yeniden görüntülenmesi için ayarlayın."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Bir şey görmüyor musunuz? Açılır pencere engelleyicilerini kapatmayı unutmayın."
@@ -7165,7 +7169,7 @@
         "İçe aktarılıyor"
       ],
       "Import mailbox": [
-        "Posta kutusunu içe aktar"
+        "E-posta kutusunu içe aktar"
       ],
       "Important note": [
         "Önemli not"
@@ -7180,7 +7184,7 @@
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
       ],
       "Include Spam/Trash.": [
-        "İstenmeyen postaları ve Çöp Kutusunu dahil et."
+        "İstenmeyen ve Çöp kutularındaki iletiler katılsın."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Doğruluğu artırmamıza yardımcı olmak için isteğinizi ve yanıtını ekleyin."
@@ -7198,8 +7202,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7358,7 +7361,7 @@
         "Bu ileti yarın ${ formattedTime } saatinde gönderilecek"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
-        "Çöp ve istenmeyen kutularında 30 günden uzun süredir duran iletiler otomatik olarak silinir."
+        "Çöp ve istenmeyen kutularında 30 günden uzun süredir bulunan iletiler otomatik olarak silinir."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
@@ -8303,7 +8306,7 @@
         "Hafta"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
-        "İletiniz ne zaman alıcının gelen kutusundan ve gönderilmiş klasörünüzden otomatik olarak silinsin?"
+        "İletiniz ne zaman alıcının gelen kutusundan ve gönderilmiş kutunuzdan otomatik olarak silinsin?"
       ],
       "When do you want your message to self-destruct?": [
         "İletinizin ne zaman kendini yok etmesini istersiniz?"
@@ -9392,7 +9395,7 @@
         "Bağlantı noktası"
       ],
       "Post office box": [
-        "Fiziksel posta kutusu"
+        "Fiziksel e-posta kutusu"
       ],
       "Postal code": [
         "Posta kodu"
@@ -11259,12 +11262,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited tarifesini alın"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Yalnızca ${ pricingTitle } ile Mail Plus aboneliği edinin."
-      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ],
@@ -11276,6 +11273,9 @@
       ],
       "Limited-time offer": [
         "Sınırlı süreli teklif"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Sınırlı süreli teklif, ilk ayınız için geçerlidir"
       ],
       "Maybe later": [
         "Belki daha sonra"
@@ -11289,9 +11289,6 @@
       "Save": [
         "İndirim"
       ],
-      "Save 80% on your first month.": [
-        "İlk ayınızda % 80 indirim kazanın."
-      ],
       "Save big when you pay annually": [
         "Yıllık ödeme yaparak büyük indirim kazanın"
       ],
@@ -11300,6 +11297,12 @@
       ],
       "This offer won't be shown again.": [
         "Bu teklif bir daha görüntülenmeyecek."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName } ile yalnızca ${ pricingTitle } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Depolama alanınızı yalnızca ${ pricingTitle } ödeyerek ${ planName } ile artırın"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Aylık abonelikten yıllık aboneliğe geçtiğinizde."
@@ -11326,23 +11329,26 @@
       "Advanced threat protection": [
         "Gelişmiş tehdit koruması"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "${ BRAND_NAME } dışı kullanıcılarla işbirliği yapın"
+      ],
       "Custom email domain": [
         "Özel e-posta etki alanı"
+      ],
+      "Edit docs online": [
+        "Belgeleri çevrim içi düzenleyin"
       ],
       "Email addresses": [
         "E-posta adresleri"
       ],
+      "File version history (over 1 week)": [
+        "Dosya sürümü geçmişi (1 haftadan eski)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükle"
       ],
       "Storage": [
         "Depolama alanı"
@@ -13560,8 +13566,8 @@
         "${ elementsCount } yazışma ${ folderName } klasörüne taşındı."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi.",
-        "${ elementsCount } istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi."
+        "${ elementsCount } istenmeyen kutusuna taşındı ve gönderici istenmeyenler listesine eklendi.",
+        "${ elementsCount } istenmeyen kutusuna taşındı ve gönderici istenmeyenler listesine eklendi."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } yazışmadan kaldırıldı.",
@@ -13604,8 +13610,8 @@
         "${ elementsCount } ileti ${ folderName } klasörüne taşındı."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } ileti istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi.",
-        "${ elementsCount } ileti istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi."
+        "${ elementsCount } ileti istenmeyen kutusuna taşındı ve gönderici istenmeyenler listesine eklendi.",
+        "${ elementsCount } ileti istenmeyen kutusuna taşındı ve gönderici istenmeyenler listesine eklendi."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } iletiden kaldırıldı.",
@@ -13672,7 +13678,7 @@
         "Yazışma ${ folderName } klasörüne taşındı."
       ],
       "Conversation moved to spam and sender added to your spam list.": [
-        "Yazışma İstenmeyen klasörüne taşındı ve gönderici istenmeyenler listenize eklendi."
+        "Yazışma İstenmeyen kutusuna taşındı ve gönderici istenmeyenler listenize eklendi."
       ],
       "Conversation removed from ${ labelName }.": [
         "Yazışmadan ${ labelName } etiketi kaldırıldı."
@@ -14906,6 +14912,15 @@
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükseltin"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName } ile ${ formattedPrice } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Depolama alanınızı ${ formattedPrice } ödeyerek ${ planName } ile artırın"
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"

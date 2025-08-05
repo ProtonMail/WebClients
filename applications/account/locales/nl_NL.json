@@ -1441,6 +1441,9 @@
       "Upgrade": [
         "Upgraden"
       ],
+      "Upgrade for 200GB": [
+        "Upgraden voor 200GB"
+      ],
       "Upgrade now": [
         "Nu upgraden"
       ],
@@ -7835,9 +7838,6 @@
       "Add a recovery phone number": [
         "Een telefoonnummer voor herstel toevoegen"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Voeg extra beveiliging toe aan uw account. U moet uzelf verifiëren met 2FA elke keer dat u zich aanmeldt."
-      ],
       "Add domain": [
         "Domein toevoegen"
       ],
@@ -10652,9 +10652,6 @@
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Uw bestaande end-to-end versleutelde doorschakelingen naar andere gebruikers worden onderbroken. U kunt ze handmatig opnieuw inschakelen in de '${ autoReplySettingsTitle }' instellingen."
-      ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ],
@@ -10923,32 +10920,14 @@
       "Generate key": [
         "Genereer sleutel"
       ],
-      "Generating key failed. Please try again later.": [
-        "Sleutel genereren is mislukt. Probeer het later opnieuw."
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Als u een nieuwe sleutel genereert omdat u denkt dat uw bestaande sleutel in gevaar is gebracht, markeer deze als gecompromitteerd na het genereren van deze sleutel."
-      ],
       "Key successfully generated.": [
         "Sleutel succesvol gegenereerd."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Opmerking: u heeft al een sleutel met hetzelfde algoritme voor dit adres. Tenzij die sleutel in gevaar is gebracht, kan het onnodig zijn om een nieuwe sleutel te genereren, en dit kan uw account vertragen."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Opmerking: u heeft al een sleutel met hetzelfde algoritme voor deze gebruiker. Tenzij die sleutel in gevaar is gebracht, kan het onnodig zijn om een nieuwe sleutel te genereren, en dit kan uw account vertragen."
-      ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Dit zal een nieuwe sleutel genereren, die zal worden gebruikt om toekomstige contactgegevens, e-mailsleutels en andere data te versleutelen."
-      ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Dit zal een nieuwe sleutel genereren, die zal worden gebruikt om onder andere toekomstige e-mails te versleutelen."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Compatibiliteit"
-      ],
       "Compromised": [
         "Uitgelekt"
       ],
@@ -11203,9 +11182,6 @@
       ],
       "Export public key": [
         "Openbare sleutel exporteren"
-      ],
-      "Make primary": [
-        "Primair"
       ],
       "Mark compromised": [
         "Markeren als gecompromitteerd"
@@ -14715,12 +14691,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Krijg ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Krijg Drive Plus voor slechts ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Krijg Mail Plus voor slechts ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Kies deze deal"
       ],
@@ -14729,6 +14699,9 @@
       ],
       "Limited-time offer": [
         "Tijdelijke aanbieding"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Tijdelijke aanbieding, geldig voor uw eerste maand"
       ],
       "Maybe later": [
         "Misschien later"
@@ -14742,9 +14715,6 @@
       "Save": [
         "Bespaar"
       ],
-      "Save 80% on your first month.": [
-        "Bespaar 80% op uw eerste maand."
-      ],
       "Save big when you pay annually": [
         "Bespaar veel wanneer u jaarlijks betaalt"
       ],
@@ -14753,6 +14723,12 @@
       ],
       "This offer won't be shown again.": [
         "Deze aanbieding wordt niet meer getoond."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Upgrade uw productiviteit voor slechts ${ pricingTitle } met ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Upgrade uw opslag voor slechts ${ pricingTitle } met ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Wanneer u overschakelt van een maandelijks naar jaarabonnement."
@@ -14779,23 +14755,26 @@
       "Advanced threat protection": [
         "Geavanceerde bedreigingsbeveiliging"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Samenwerken met niet-${ BRAND_NAME }-gebruikers"
+      ],
       "Custom email domain": [
         "Aangepast e-maildomein"
+      ],
+      "Edit docs online": [
+        "Bewerk documenten online"
       ],
       "Email addresses": [
         "E-mailadressen"
       ],
+      "File version history (over 1 week)": [
+        "Versiegeschiedenis (meer dan 1 week)"
+      ],
       "Free": [
         "Gratis"
       ],
-      "Online document editor": [
-        "Online document editor"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Herstel vorige bestandsversies"
       ],
       "Storage": [
         "Opslagruimte"
@@ -20580,8 +20559,17 @@
       "Upgrade plan": [
         "Abonnement upgraden"
       ],
+      "Upgrade to ${ planName }": [
+        "Upgraden naar ${ planName }"
+      ],
       "Upgrade your privacy": [
         "Upgrade uw privacy"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Upgrade uw productiviteit voor ${ formattedPrice } met ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Upgrade uw opslag voor ${ formattedPrice } met ${ planName }"
       ],
       "Upload and share files": [
         "Bestanden uploaden en delen"

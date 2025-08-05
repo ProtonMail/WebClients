@@ -867,6 +867,9 @@
       "Upgrade": [
         "Uppgradera"
       ],
+      "Upgrade for 200GB": [
+        "Uppgradera för 200 GB"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
       ],
@@ -1658,6 +1661,9 @@
       ],
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
+      ],
+      "Maybe later": [
+        "Kanske senare"
       ],
       "Remind me later": [
         "Påminn mig senare"
@@ -4527,9 +4533,6 @@
       ],
       "add a recovery method": [
         "lägg till en återställningsmetod"
-      ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Lägg till ytterligare ett lager av säkerhet till ditt konto. Du måste verifiera dig själv med 2FA varje gång du loggar in."
       ],
       "Add domain": [
         "Lägg till domän"
@@ -8777,12 +8780,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Skaffa ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Skaffa Drive Plus för endast ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Skaffa Mail Plus för endast ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
@@ -8794,6 +8791,9 @@
       ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Tidsbegränsat erbjudande, giltigt för din första månad"
       ],
       "Maybe later": [
         "Kanske senare"
@@ -8807,9 +8807,6 @@
       "Save": [
         "Spara"
       ],
-      "Save 80% on your first month.": [
-        "Spara 80 % på din första månad."
-      ],
       "Save big when you pay annually": [
         "Spara stort när du betalar årligen"
       ],
@@ -8818,6 +8815,12 @@
       ],
       "This offer won't be shown again.": [
         "Detta erbjudande kommer inte att visas igen."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Uppgradera din produktivitet för bara ${ pricingTitle } med ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Uppgradera ditt lagringsutrymme för bara ${ pricingTitle } med ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "När du byter från en månads till årlig prenumeration."
@@ -8847,20 +8850,17 @@
       "Custom email domain": [
         "Anpassad e-postdomän"
       ],
+      "Edit docs online": [
+        "Redigera dokument online"
+      ],
       "Email addresses": [
         "E-postadresser"
       ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Dokumentredigerare online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Återställ tidigare filversioner"
       ],
       "Storage": [
         "Lagringsutrymme"
@@ -9839,6 +9839,9 @@
       ],
       "Keep messages forever": [
         "Behåll meddelanden för alltid"
+      ],
+      "Rule title": [
+        "Rubrikregel"
       ],
       "Select product": [
         "Välj produkt"
@@ -11010,6 +11013,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikerad server",
         "${ ipAddresses } dedikerade servrar"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } för ${ maxLumo } användare",
+        "${ LUMO_APP_NAME } för ${ maxLumo } användare"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per användare",
@@ -12607,11 +12614,20 @@
       "Upgrade complete!": [
         "Uppgradering slutförd!"
       ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Uppgradera ditt nätverksskydd med dedikerade servrar"
       ],
       "Upgrade your privacy": [
         "Uppgradera din integritet"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Uppgradera din produktivitet för ${ formattedPrice } med ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Uppgradera ditt lagringsutrymme för ${ formattedPrice } med ${ planName }"
       ],
       "Upload and share files": [
         "Ladda upp och dela filer"

@@ -8,6 +8,9 @@
       "About ${ MAIL_APP_NAME }": [
         "Om ${ MAIL_APP_NAME }"
       ],
+      "Actual Size": [
+        "Faktisk størrelse"
+      ],
       "Check spelling while typing": [
         "Stavekontrol mens du skriver"
       ],
@@ -131,6 +134,9 @@
       "Cut": [
         "Klip"
       ],
+      "Look Up “${ text }”": [
+        "Slå \"${ text }\" op"
+      ],
       "Paste": [
         "Indsæt"
       ],
@@ -148,6 +154,9 @@
       ]
     },
     "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Appen lukker på grund af en fejl. Prøv at køre den igen, og kontakt os, hvis problemet fortsætter. Oplysninger om fejlen kan findes i applikationsloggen."
+      ],
       "Unexpected error": [
         "Uventet fejl"
       ]
@@ -155,6 +164,9 @@
     "error screen": {
       "Cannot establish connection": [
         "Kan ikke oprette forbindelse"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "Tjek din internetforbindelse eller netværksindstillinger. Hvis problemet fortsætter, bedes du kontakte kundesupport."
       ],
       "Try again": [
         "Prøv igen"

@@ -7035,9 +7035,6 @@
       "Add a recovery phone number": [
         "पुनर्प्राप्ति फ़ोन नंबर जोड़ें"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "अपने खाते पे सुरक्षा की एक और परत डालें। आपको हर बार साइनइन करते वक्त 2-एफए से खुद को सत्यापित करना पड़ेगा।"
-      ],
       "Add domain": [
         "डोमेन जोड़ें"
       ],
@@ -9858,26 +9855,11 @@
       "Generate key": [
         "कुंजी उत्पन्न करें"
       ],
-      "Generating key failed. Please try again later.": [
-        "कुंजी उत्पन्न करना विफल रहे। कृपया बाद में पुनःप्रयास करें।"
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "यदि आप नई कुंजी इसलिए बना रहे हैं क्योंकि आपको लगता है कि आपकी मौजूदा कुंजी के साथ छेड़छाड़ की गई है, तो कृपया इस कुंजी को बनाने के बाद उसे छेड़छाड़ की गई कुंजी के रूप में चिह्नित करें।"
-      ],
       "Key successfully generated.": [
         "कुंजी सफलतापूर्वक उत्पन्न हुई।"
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "ध्यान दें: इस पते के लिए आपके पास पहले से ही एक ऐसी ही एल्गोरिदम की कुंजी है। यदि उस कुंजी का दुरुपयोग नहीं हुआ है, तो एक नई कुंजी उत्पन्न करना अनावश्यक हो सकता है, और ऐसा करने से आपके खाते की गति में धीमापन आ सकता है।"
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "ध्यान दें: आपके पास इस उपयोगकर्ता के लिए समान एल्गोरिदम वाली कुंजी पहले से ही है। जब तक कि उस कुंजी के साथ छेड़छाड़ न की गई हो, तब तक नई कुंजी बनाना अनावश्यक हो सकता है, और ऐसा करने से आपका खाता धीमा हो सकता है।"
-      ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "यह एक नई कुंजी उत्पन्न करेगा, जिसका उपयोग भविष्य के संपर्क विवरण, ईमेल एन्क्रिप्शन कुंजी, और अन्य डेटा को एन्क्रिप्ट करने के लिए किया जाएगा।"
-      ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "यह एक नई कुंजी उत्पन्न करेगा, जिसका उपयोग अन्य डेटा के साथ-साथ भविष्य के ईमेल को एन्क्रिप्ट करने के लिए किया जाएगा।"
       ]
     },
     "Key state badge": {
@@ -10135,9 +10117,6 @@
       ],
       "Export public key": [
         "सार्वजनिक चाबी निर्यात करें"
-      ],
-      "Make primary": [
-        "प्राथमिक बनाए"
       ],
       "Mark compromised": [
         "मार्क समझौता"
@@ -13418,12 +13397,6 @@
       "Don’t show this offer again": [
         "ये ऑफर वापस ना दिखाएं"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "केवल ${ pricingTitle } में Drive Plus पाएं"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "केवल ${ pricingTitle } में Mail Plus पाएं"
-      ],
       "Get the deal": [
         "सौदा पाएं"
       ],
@@ -13444,9 +13417,6 @@
       ],
       "Save": [
         "सहेजें"
-      ],
-      "Save 80% on your first month.": [
-        "अपने पहले महीने पर 80% की बचत करें।"
       ],
       "Save big when you pay annually": [
         "जब आप वार्षिक भुगतान करें तो बड़ी बचत करें"
@@ -13480,14 +13450,8 @@
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "ऑनलाइन दस्तावेज संपादक"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "पिछले फाइल संस्करण रिकवर करें"
       ],
       "Storage": [
         "स्टोरेज"

@@ -652,6 +652,9 @@
       "Enable multi-user support": [
         "Zapnout podporu pro více uživatelů"
       ],
+      "Enable post-quantum protection": [
+        "Povolit postkvantovou ochranu"
+      ],
       "Encrypt and export": [
         "Zašifrovat a exportovat"
       ],
@@ -1458,6 +1461,9 @@
       ],
       "Upgrade": [
         "Přejít na placený tarif"
+      ],
+      "Upgrade for 200GB": [
+        "Navýšit na 200 GB"
       ],
       "Upgrade now": [
         "Navýšit nyní"
@@ -4347,7 +4353,7 @@
         "Nejprve pojmenujte vaši organizaci."
       ],
       "Track the status and activity of your referrals": [
-        "Sledujte stav a aktivitu svých doporučení"
+        "Sledujte stav a aktivitu vámi doporučených"
       ],
       "Track the status and activity of your referrals.": [
         "Sledujte stav a aktivitu svých doporučení."
@@ -6945,6 +6951,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Chápu, že se již nebudu moci přihlásit ze starších verzí mobilních aplikací ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "webová aplikace"
@@ -7164,6 +7175,12 @@
       ],
       "Servers": [
         "Servery"
+      ],
+      "Sort folders": [
+        "Seřadit složky"
+      ],
+      "Sort labels": [
+        "Seřadit štítky"
       ],
       "Status": [
         "Stav"
@@ -8083,8 +8100,8 @@
       "Add a recovery phone number": [
         "Přidat telefonní číslo pro obnovení"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Přidejte ke svému účtu další úroveň zabezpečení. Při každém přihlášení se musíte ověřit pomocí 2FA."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Přidejte další vrstvu zabezpečení ke svému účtu. Při každém přihlášení se budete muset ověřit pomocí 2FA. K ukládání kódů 2FA doporučujeme použít ${ protonAuthenticatorDownloadLink }."
       ],
       "Add domain": [
         "Přidat doménu"
@@ -8275,6 +8292,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Opravdu chcete odebrat doménu ${ boldDomain }?"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "Opravdu chcete své složky řadit podle abecedy?"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "Opravdu chcete své štítky řadit podle abecedy?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Požádejte správce organizace o nastavení brány."
       ],
@@ -8307,6 +8330,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Automatické mazání e-mailů přesunutých do koše a spamu před více než 30 dny."
+      ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "Automatické zobrazení dalšího e-mailu, pokud je otevřený e-mail smazán, archivován nebo přesunut."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Dostupné na macOS, Windows a Linuxu."
@@ -8370,6 +8396,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "Povolením postkvantové ochrany budou pro váš účet generovány klíče, které jsou odolné proti kvantovým počítačům."
       ],
       "By leaving now, changes may not be saved": [
         "Pokud nyní opustíte stránku, změny nemusí být uloženy"
@@ -8562,6 +8591,9 @@
       ],
       "Delete link?": [
         "Smazat odkaz?"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Po 30 dnech smaže zprávy v koši a spamu. Zapnutím automatického mazání se zprávám, které jsou již v koši/spamu, nastaví datum automatického smazání podle data, kdy tam byly přesunuty."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Mazání ${ deletedServerCount } serveru brány",
@@ -8836,6 +8868,9 @@
       "Example: ${ spfExample }": [
         "Příklad: ${ spfExample }"
       ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "Stávající koncově šifrované přeposílání e-mailů bude třeba ručně znovu povolit v nastavení **${ autoReplySettingsTitle }**."
+      ],
       "Expired": [
         "Platnost vypršela"
       ],
@@ -8946,6 +8981,9 @@
       ],
       "Group deleted": [
         "Skupina byla smazána"
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Ve vaší doručené poště můžete e-maily stejné konverzace seskupit a nebo je zobrazit samostatně."
       ],
       "Groups": [
         "Skupiny"
@@ -9360,6 +9398,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Zprávy ve složce Odeslané nebo Koncepty se budou nadále zobrazovat v těchto složkách, i když požádáte o jejich přesun."
+      ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "Zprávy ve složce Spam nebo Koš budou vyloučeny z umístění Všechna pošta."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Zprávy na všechny vaše e-mailové adresy budou chodit do vaší doručené pošty."
@@ -10032,6 +10073,9 @@
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Podpora sledování vlastních domén a e-mailových adres, které nejsou od ${ BRAND_NAME }, bude brzy k dispozici."
+      ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "Podpora postkvantových klíčů je pro váš účet povolena."
       ],
       "support team": [
         "tým podpory"
@@ -11008,9 +11052,6 @@
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Vaše stávající koncově šifrovaná přeposílání budou ostatním uživatelům pozastavena. Můžete je znovu ručně zapnout v nastavení '${ autoReplySettingsTitle }'."
-      ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
       ],
@@ -11292,37 +11333,37 @@
       "Generate key": [
         "Vygenerovat klíč"
       ],
-      "Generating key failed. Please try again later.": [
-        "Generování klíče selhalo. Zkuste to prosím později."
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Pokud jste tento klíč vygenerovali, protože máte podezření, že váš předchozí klíč byl kompromitován, označte jej v nastavení jako kompromitovaný."
       ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Pokud generujete nový klíč protože věříte, že aktuální klíč byl kompromitován, prosím označte po vygenerování nového klíče starý klíč jako kompromitovaný."
+      "Key generation failed, please try again later.": [
+        "Generování klíče selhalo. Zkuste to prosím později."
       ],
       "Key successfully generated.": [
         "Klíč byl úspěšně vygenerován."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Poznámka: pro tuto adresu již máte klíč se stejným algoritmem. V případě, že tento klíč nebyl kompromitován, nemusí být nutné generovat nový klíč, a pokud to uděláte, může dojít ke zpomalení vašeho účtu."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Poznámka: pro tohoto uživatele již máte klíč se stejným algoritmem. Pokud tento klíč nebyl kompromitován, nemusí být nutné generovat nový klíč, což by mohlo zpomalit váš účet."
+      "New key generated": [
+        "Vygenerován nový klíč"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Tím se vygeneruje nový klíč, který se bude používat k šifrování budoucích kontaktních údajů, šifrovacích klíčů e-mailů a dalších dat."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Toto vygeneruje nový klíč, který bude použit mimo jiné k šifrování budoucích e-mailů."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Toto vygeneruje nový klíč, který bude použit mimo jiné k šifrování budoucích e-mailů a dalších dat pro **${ emailAddress }**."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "Tento typ klíče již máte. Pokud nebyl tento klíč kompromitován, generování **nového klíče může zpomalit váš účet**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Kompatibilita"
-      ],
       "Compromised": [
         "Kompromitovaný"
       ],
       "Disabled": [
         "Deaktivovaný"
+      ],
+      "Fallback": [
+        "Záložní"
       ],
       "Forwarding": [
         "Přeposílání"
@@ -11338,6 +11379,27 @@
       ],
       "Primary": [
         "Primární"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Rychlejší"
+      ],
+      "Slower, but stronger long-term security": [
+        "Pomalejší, ale silnější dlouhodobé zabezpečení"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Vyberte typ klíče"
       ]
     },
     "Keyboard shortcut name": {
@@ -11576,8 +11638,8 @@
       "Export public key": [
         "Exportovat veřejný klíč"
       ],
-      "Make primary": [
-        "Nastavit jako výchozí"
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "Vytvoří klíč ${ keyStatusBadgeTitles.primary } nebo ${ keyStatusBadgeTitles.fallback } jako klíč pro šifrování a podepisování."
       ],
       "Mark compromised": [
         "Označit jako kompromitovaný/prolomený"
@@ -11590,6 +11652,9 @@
       ],
       "Mark obsolete": [
         "Označit jako zastaralý"
+      ],
+      "Use for encryption and signing": [
+        "Použít pro šifrování a podepisování"
       ]
     },
     "Knowledge base link label": {
@@ -12251,6 +12316,9 @@
       ],
       "Key": [
         "Klíč"
+      ],
+      "Key strength": [
+        "Síla klíče"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová zkratka: ${ shortcut }"
@@ -15227,12 +15295,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Získejte ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Získejte Drive Plus za pouhých ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Získejte Mail Plus za pouhých ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Získejte nabídku"
       ],
@@ -15244,6 +15306,9 @@
       ],
       "Limited-time offer": [
         "Časově omezená nabídka"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Časově omezená nabídka, platná pro první měsíc"
       ],
       "Maybe later": [
         "Možná později"
@@ -15257,9 +15322,6 @@
       "Save": [
         "Ušetřete"
       ],
-      "Save 80% on your first month.": [
-        "Ušetřete 80 % za první měsíc."
-      ],
       "Save big when you pay annually": [
         "Při roční platbě můžete výrazně ušetřit"
       ],
@@ -15268,6 +15330,12 @@
       ],
       "This offer won't be shown again.": [
         "Tato nabídka se již nezobrazí."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Vylepšete svou produktivitu jen za ${ pricingTitle } s ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Navyšte své úložiště jen za ${ pricingTitle } s ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Při přechodu z měsíčního na roční předplatné."
@@ -15294,23 +15362,26 @@
       "Advanced threat protection": [
         "Pokročilá ochrana před hrozbami"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Sdílet s uživateli, kteří nemají ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Vlastní e-mailová doména"
+      ],
+      "Edit docs online": [
+        "Úprava dokumentů online"
       ],
       "Email addresses": [
         "E-mailové adresy"
       ],
+      "File version history (over 1 week)": [
+        "Historie verzí souboru (více než 1 týden)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Online editor dokumentů"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Obnova předchozích verzí souborů"
       ],
       "Storage": [
         "Úložiště"
@@ -16789,6 +16860,61 @@
         "Navýšit na ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Na vašem účtu byla povolena postkvantová ochrana, ale některé operace nebyly úspěšné: generování postkvantového klíče účtu a adresy selhalo. Tyto klíče můžete vygenerovat ručně v nastavení ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Na vašem účtu byla povolena postkvantová ochrana, ale některé operace nebyly úspěšné: generování postkvantového klíče adresy pro jednu nebo více adres selhalo. Tyto klíče můžete vygenerovat ručně v nastavení ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Aktualizujte prosím **všechny své mobilní aplikace ${ BRAND_NAME }** na nejnovější verzi."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "Tím se pro každou adresu vygeneruje nový klíč účtu a nový klíč pro šifrování e-mailů, které budou použity k šifrování a dešifrování budoucích e-mailů a dalších dat."
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "Povolit a generovat klíče"
+      ],
+      "Enable post-quantum protection": [
+        "Povolit postkvantovou ochranu"
+      ],
+      "Enable post-quantum protection?": [
+        "Povolit postkvantovou ochranu?"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "Povolení postkvantové ochrany selhalo. Zkuste to později."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Rozumím"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "Na vašem účtu byla aktivována postkvantová ochrana!"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Generování postkvantového klíče účtu"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "Generování postkvantových klíčů adresy pro každou adresu"
+      ],
+      "Opting into post-quantum protection": [
+        "Přihlášení se k postkvantové ochraně"
+      ]
+    },
     "Price": {
       "Free": [
         "Zdarma"
@@ -16929,6 +17055,14 @@
         "Ověřením telefonního čísla zvyšujete bezpečnost účtu a umožňujete další možnosti obnovení."
       ]
     },
+    "Remark about a key type option": {
+      "Classic": [
+        "Klasická"
+      ],
+      "Post-quantum": [
+        "Postkvantový"
+      ]
+    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Odhlášením odběru již nebudete mít přístup k tomuto kalendáři. Všechny události tohoto kalendáře budou z vašeho účtu smazány, ale i nadále budou k dispozici pod původním veřejným odkazem."
@@ -16985,11 +17119,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Přidat uživatele nebo skupiny"
+      ],
       "Cancel": [
         "Zpět"
       ],
+      "Confirm": [
+        "Potvrdit"
+      ],
       "Create retention rule": [
         "Vytvořit pravidlo uchovávání"
+      ],
+      "Create rule": [
+        "Vytvořit pravidlo"
       ],
       "Delete": [
         "Smazat"
@@ -16997,8 +17140,45 @@
       "Delete rule": [
         "Smazat pravidlo"
       ],
+      "Delete this scope": [
+        "Smazat tento rozsah"
+      ],
       "Edit": [
         "Upravit"
+      ],
+      "Purge all": [
+        "Odebrat vše"
+      ],
+      "Purge deleted": [
+        "Odebrat smazané"
+      ],
+      "Save changes": [
+        "Uložit změny"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, včetně těch v doručené poště, odeslané poště a konceptu. Tímto způsobem mohou být odebrány zprávy, které uživatelé chtějí uchovat. Tyto zprávy již nebude možné obnovit."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "Po ${ lifetime } dni budou všechny zprávy smazány",
+        "Po ${ lifetime } dnech budou všechny zprávy smazány",
+        "Po ${ lifetime } dnech budou všechny zprávy smazány",
+        "Po ${ lifetime } dnech budou všechny zprávy smazány"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must not be set for \"Retain All\" action": [
+        "Pro akci \"Uchovat vše\" nesmí být nastavena doživotní doba platnosti"
+      ],
+      "Scope value is not valid": [
+        "Hodnota rozsahu není platná"
+      ],
+      "Scope value is required": [
+        "Hodnota rozsahu je povinná"
+      ],
+      "Scopes cannot have the same value": [
+        "Rozsahy nemohou mít stejnou hodnotu"
       ]
     },
     "retention_policy_2025_Info": {
@@ -17011,11 +17191,87 @@
         "${ rule.Lifetime } dnů",
         "${ rule.Lifetime } dnů"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Vytvořte pravidla uchovávání, která určí, jak dlouho se mají data uchovávat v souladu se zásadami uchovávání dat vaší organizace. Také umožňuje automatické vyčištění vypršelých dat."
+      ],
       "Forever": [
         "Navždy"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Zahrnuje všechny zprávy v doručené poště, odeslané poště a všech ostatních umístěních. Odebrané zprávy nelze obnovit."
+      ],
+      "Removes messages already deleted by users.": [
+        "Odebere zprávy, které již byly uživateli smazány."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Pravidlo uchovávání \"${ formData.name }\" úspěšně aktualizováno"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Pravidlo uchovávání \"${ payload.Name }\" úspěšně vytvořeno"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Pravidlo uchovávání \"${ retentionRule.Name }\" úspěšně smazáno"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Po uplynutí doby uchovávání"
+      ],
+      "Applies to": [
+        "Použito na"
+      ],
+      "days": [
+        "dny"
+      ],
+      "Keep items forever": [
+        "Uchovávejte položky navždy"
+      ],
+      "Keep messages forever": [
+        "Uchovávejte zprávy navždy"
+      ],
+      "Retention period": [
+        "Doba uchovávání"
+      ],
+      "Rule title": [
+        "Název pravidla"
+      ],
+      "Select product": [
+        "Vyberte produkt"
+      ],
+      "Set a duration": [
+        "Nastavte dobu trvání"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Všichni v organizaci"
+      ],
+      "Group": [
+        "Skupina"
+      ],
+      "Purge all messages": [
+        "Odebrat všechny zprávy"
+      ],
+      "Purge deleted messages only": [
+        "Odebrat pouze smazané zprávy"
+      ],
+      "Specific users or groups": [
+        "Konkrétní uživatelé nebo skupiny"
+      ],
+      "User": [
+        "Uživatel"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "Např. vyčištění nepoužívaných e-mailových schránek"
+      ],
+      "Enter duration": [
+        "Zadejte dobu trvání"
+      ],
+      "Enter value": [
+        "Zadejte hodnotu"
+      ],
       "Search for rule, users, period, action": [
         "Hledat pravidlo, uživatele, období, akci"
       ],
@@ -17028,10 +17284,10 @@
         "Akce"
       ],
       "Applies to": [
-        "Aplikované pro"
+        "Použito na"
       ],
       "Retention period": [
-        "Lhůta uchovávání"
+        "Doba uchovávání"
       ],
       "Retention Rule": [
         "Pravidlo uchovávání"
@@ -17040,6 +17296,17 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "Nebyly nalezeny žádné zásady uchování"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Potvrdit pravidlo uchovávání?"
+      ],
+      "Create retention rule": [
+        "Vytvořit pravidlo uchovávání"
+      ],
+      "Edit retention rule": [
+        "Upravit pravidlo uchovávání"
       ]
     },
     "Role": {
@@ -19185,6 +19452,12 @@
         "${ ipAddresses } dedikovaných serverů",
         "${ ipAddresses } dedikovaných serverů"
       ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatele",
+        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatele",
+        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatelů",
+        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatelů"
+      ],
       "${ n } calendar per user": [
         "${ n } kalendář na uživatele",
         "${ n } kalendáře na uživatele",
@@ -21235,6 +21508,9 @@
       "Policies": [
         "Zásady"
       ],
+      "Post-quantum protection": [
+        "Postkvantová ochrana"
+      ],
       "Preview": [
         "Náhled"
       ],
@@ -21580,8 +21856,17 @@
       "Upgrade plan": [
         "Navýšit tarif"
       ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
+      ],
       "Upgrade your privacy": [
         "Zvyšte své soukromí"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Vylepšete svou produktivitu jen za ${ formattedPrice } s ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Navyšte své úložiště za ${ formattedPrice } s ${ planName }"
       ],
       "Upload and share files": [
         "Nahrát a sdílet soubory"
@@ -21704,7 +21989,7 @@
         "Stav obnovy"
       ],
       "Your referrals": [
-        "Vaše doporučení"
+        "Vámi doporučení"
       ],
       "Your shorter address is now ready": [
         "Vaše kratší adresa je nyní připravena"
