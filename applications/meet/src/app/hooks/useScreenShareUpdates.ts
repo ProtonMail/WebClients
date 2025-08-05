@@ -1,8 +1,8 @@
 import { useCallback, useEffect } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
-import type { RemoteParticipant, RemoteTrackPublication } from 'livekit-client';
-import { Track } from 'livekit-client';
+import type { RemoteParticipant, RemoteTrackPublication } from '@proton-meet/livekit-client';
+import { Track } from '@proton-meet/livekit-client';
 
 import { useCurrentScreenShare } from './useCurrentScreenShare';
 

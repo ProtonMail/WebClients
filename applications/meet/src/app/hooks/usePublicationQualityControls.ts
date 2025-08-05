@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
 import { useLocalParticipant } from '@livekit/components-react';
-import type { RemoteParticipant, RemoteTrackPublication } from 'livekit-client';
-import { Track, VideoQuality } from 'livekit-client';
+import type { RemoteParticipant, RemoteTrackPublication } from '@proton-meet/livekit-client';
+import { Track, VideoQuality } from '@proton-meet/livekit-client';
 
 import { useMeetContext } from '../contexts/MeetContext';
 import { useSortedParticipants } from './useSortedParticipants';

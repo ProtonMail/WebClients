@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { useLocalParticipant, useParticipants } from '@livekit/components-react';
 import { c } from 'ttag';
@@ -35,8 +35,8 @@ import { MenuButton } from './MenuButton';
 import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
-    const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
-    const { audioDeviceId, videoDeviceId, roomName, page, setPage, pageSize } = useMeetContext();
+    const { isMicrophoneEnabled, isCameraEnabled, localParticipant } = useLocalParticipant();
+    const { audioDeviceId, videoDeviceId, roomName, page, setPage, pageSize, participantsMap } = useMeetContext();
 
     const isLargerThanMd = useIsLargerThanMd();
 
@@ -44,6 +44,11 @@ export const ParticipantControls = () => {
         useUIStateContext();
 
     const participants = useParticipants();
+
+    const hasAdminPermission = useMemo(() => {
+        const participant = participantsMap[localParticipant.identity];
+        return participant !== undefined ? !!participant.IsAdmin || !!participant.IsHost : false;
+    }, [participantsMap]);
 
     const prevDevicePermissionsRef = useRef<{ camera: PermissionState; microphone: PermissionState }>({
         camera: 'prompt',
@@ -246,7 +251,7 @@ export const ParticipantControls = () => {
                         <MenuButton />
                     </div>
 
-                    <LeaveModal />
+                    <LeaveModal hasAdminPermission={hasAdminPermission} />
                 </div>
                 <div className="hidden md:flex flex-1 justify-end">
                     {pageCount > 1 && <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />}

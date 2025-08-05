@@ -86,13 +86,13 @@ export const Settings = () => {
                 </div>
                 <div className="flex items-center justify-space-between gap-2 setting-container w-full flex-nowrap">
                     <span className="setting-label color-weak text-ellipsis">{c('l10n_nightly Action')
-                        .t`Hide participant videos on join`}</span>
+                        .t`Hide participant videos`}</span>
                     <Toggle
                         id="disable-videos"
                         checked={disableVideos}
                         onChange={() => setDisableVideos(!disableVideos)}
                         className={clsx('settings-toggle', disableVideos ? '' : 'settings-toggle-inactive')}
-                        aria-label={c('l10n_nightly Alt').t`Hide participant videos on join`}
+                        aria-label={c('l10n_nightly Alt').t`Hide participant videos`}
                     />
                 </div>
             </div>

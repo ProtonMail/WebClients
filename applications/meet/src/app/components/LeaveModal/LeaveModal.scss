@@ -42,4 +42,12 @@
 			background-color: var(--signal-danger-minor-1);
 		}
 	}
+
+	.leave-meeting-button-admin {
+		background-color: var(--interaction-weak-major-1);
+
+		&:hover {
+			background-color: var(--interaction-weak);
+		}
+	}
 }

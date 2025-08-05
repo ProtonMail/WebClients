@@ -17,6 +17,7 @@ const PARTICIPANT_COUNT_THRESHOLD = 10;
 
 export const useParticipantNameMap = () => {
     const [participantNameMap, setParticipantNameMap] = useState<Record<string, string>>({});
+    const [participantsMap, setParticipantsMap] = useState<Record<string, ParticipantEntity>>({});
 
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -35,13 +36,16 @@ export const useParticipantNameMap = () => {
             const participants = response.Participants;
 
             const updatedParticipantNameMap = Object.fromEntries(
-                participants.map((participant) => [
-                    participant.ParticipantUUID ?? participant.ParticipantUuid,
-                    participant.DisplayName,
-                ])
+                participants.map((participant) => [participant.ParticipantUUID, participant.DisplayName])
             );
 
             setParticipantNameMap(updatedParticipantNameMap);
+
+            const updatedParticipantsMap = Object.fromEntries(
+                participants.map((participant) => [participant.ParticipantUUID, participant])
+            );
+
+            setParticipantsMap(updatedParticipantsMap);
 
             countRef.current = participants.length;
 
@@ -81,6 +85,7 @@ export const useParticipantNameMap = () => {
 
     const resetParticipantNameMap = useCallback(() => {
         setParticipantNameMap({});
+        setParticipantsMap({});
     }, []);
 
     useEffect(() => {
@@ -91,5 +96,5 @@ export const useParticipantNameMap = () => {
         };
     }, []);
 
-    return { participantNameMap, getParticipants, resetParticipantNameMap };
+    return { participantNameMap, getParticipants, participantsMap, resetParticipantNameMap };
 };

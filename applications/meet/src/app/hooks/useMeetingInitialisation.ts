@@ -1,4 +1,4 @@
-import type { LocalVideoTrack } from 'livekit-client';
+import type { LocalVideoTrack } from '@proton-meet/livekit-client';
 
 import { useChat } from './useChat';
 import { useE2EE } from './useE2EE';

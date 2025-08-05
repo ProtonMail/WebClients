@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { RoomAudioRenderer } from '@livekit/components-react';
-import type { LocalVideoTrack } from 'livekit-client';
+import type { LocalVideoTrack } from '@proton-meet/livekit-client';
 import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';

@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
 
 import { useParticipants } from '@livekit/components-react';
-import type { Participant } from 'livekit-client';
-import { Track } from 'livekit-client';
+import type { Participant } from '@proton-meet/livekit-client';
+import { Track } from '@proton-meet/livekit-client';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
@@ -16,6 +16,7 @@ import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';
 import { MeetingSideBars } from '../../types';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
+import { ParticipantHostControls } from '../ParticipantHostControls/ParticipantHostControls';
 import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
 
 import './Participants.scss';
@@ -115,18 +116,16 @@ export const Participants = () => {
                                     )}
                                 </div>
                             </div>
-                            <div
-                                className="min-w-custom text-ellipsis my-auto flex-1"
-                                style={{ '--min-w-custom': '12rem' }}
-                                title={name}
-                            >
+                            <div className="text-ellipsis my-auto flex-1" title={name}>
                                 {name}
                             </div>
-                            <div className="flex flex-nowrap items-center ml-auto gap-4 pr-4 shrink-0">
+                            <div className="flex flex-nowrap items-center ml-auto gap-2 shrink-0">
                                 {!!activeSpeakers.find((p) => p.identity === participant.identity) ? (
                                     <SpeakingIndicator participant={participant} size={32} />
                                 ) : (
-                                    <>{isMuted ? <IcMeetMicrophoneOff /> : <IcMeetMicrophone />}</>
+                                    <div className="p-2 flex items-center justify-center">
+                                        {isMuted ? <IcMeetMicrophoneOff /> : <IcMeetMicrophone />}
+                                    </div>
                                 )}
 
                                 <Button
@@ -162,6 +161,11 @@ export const Participants = () => {
                                         <IcMeetCameraOff />
                                     )}
                                 </Button>
+                                <ParticipantHostControls
+                                    participant={participant}
+                                    isVideoEnabled={!!videoPub}
+                                    isAudioEnabled={!isMuted}
+                                />
                             </div>
                         </div>
                     );

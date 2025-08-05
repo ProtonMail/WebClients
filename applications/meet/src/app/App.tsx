@@ -6,6 +6,7 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 
 import { ComingSoon } from './components/ComingSoon/ComingSoon';
+import { WasmUnsupportedError } from './components/WasmUnsupportedError';
 import * as config from './config';
 import { AdminContainer } from './containers/AdminContainer';
 import { DashboardContainer } from './containers/DashboardContainer';
@@ -13,6 +14,7 @@ import { GuestContainer } from './containers/GuestContainer';
 import { ProtonMeetContainer } from './containers/ProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
 import usePublicToken from './hooks/srp/usePublicToken';
+import { isWasmSupported } from './utils/wasmUtils';
 
 // @ts-ignore
 import meetTheme from './styles/meet.theme.css';
@@ -61,6 +63,10 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
 
 export const App = () => {
     const isGuest = window.location.pathname.includes('guest');
+
+    if (!isWasmSupported()) {
+        return <WasmUnsupportedError />;
+    }
 
     return (
         <ProtonApp config={config as ProtonConfig}>

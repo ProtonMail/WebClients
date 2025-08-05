@@ -1,9 +1,9 @@
 import { createContext, useContext } from 'react';
 
-import { VideoQuality } from 'livekit-client';
+import { VideoQuality } from '@proton-meet/livekit-client';
 
 import { PAGE_SIZE } from '../constants';
-import type { MeetChatMessage, ParticipantEventRecord } from '../types';
+import type { MeetChatMessage, ParticipantEntity, ParticipantEventRecord } from '../types';
 
 export interface MeetContextValues {
     page: number;
@@ -29,10 +29,12 @@ export interface MeetContextValues {
     pageSize: number;
     setPageSize: (pageSize: number) => void;
     handleLeave: () => void;
+    handleEndMeeting: () => void;
     isVideoEnabled: boolean;
     setIsVideoEnabled: (isVideoEnabled: boolean) => void;
     isAudioEnabled: boolean;
     isFaceTrackingEnabled: boolean;
+    participantsMap: Record<string, ParticipantEntity>;
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
     disableVideos: boolean;
@@ -66,10 +68,12 @@ export const MeetContext = createContext<MeetContextValues>({
     pageSize: PAGE_SIZE,
     setPageSize: () => {},
     handleLeave: () => {},
+    handleEndMeeting: () => {},
     isVideoEnabled: false,
     setIsVideoEnabled: () => {},
     isAudioEnabled: false,
     isFaceTrackingEnabled: false,
+    participantsMap: {},
     participantNameMap: {},
     getParticipants: () => Promise.resolve(),
     disableVideos: false,

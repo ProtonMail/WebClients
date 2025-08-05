@@ -1,5 +1,5 @@
 import { useLocalParticipant } from '@livekit/components-react';
-import { type Participant, Track } from 'livekit-client';
+import { type Participant, Track } from '@proton-meet/livekit-client';
 import { c } from 'ttag';
 
 import { IcMeetMicrophoneOff } from '@proton/icons';

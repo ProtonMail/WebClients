@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useSpeakingParticipants } from '@livekit/components-react';
-import type { Participant } from 'livekit-client';
+import type { Participant } from '@proton-meet/livekit-client';
 
 export const useDebouncedSpeakingStatus = (participant: Participant) => {
     const speakingParticipants = useSpeakingParticipants();

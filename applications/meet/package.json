@@ -20,8 +20,16 @@
         "test:ui": "yarn test --ui",
         "test:watch": "yarn test --watch"
     },
+    "resolutions": {
+        "livekit-client": "workspace:packages/livekit-client"
+    },
+    "overrides": {
+        "livekit-client": "workspace:packages/livekit-client"
+    },
     "dependencies": {
         "@livekit/components-react": "^2.9.3",
+        "@proton-meet/livekit-client": "2.15.4",
+        "@proton-meet/proton-meet-core": "0.1.3",
         "@proton/components": "workspace:packages/components",
         "@proton/cross-storage": "workspace:packages/cross-storage",
         "@proton/crypto": "workspace:packages/crypto",
@@ -38,7 +46,7 @@
         "@types/react-dom": "^18.3.6",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^7.0.3",
-        "livekit-client": "^2.15.3",
+        "livekit-client": "npm:@proton-meet/livekit-client@2.15.4",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-redux": "^9.2.0",

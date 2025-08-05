@@ -1,4 +1,4 @@
-import type { Track, TrackProcessor, VideoProcessorOptions } from 'livekit-client';
+import type { Track, TrackProcessor, VideoProcessorOptions } from '@proton-meet/livekit-client';
 
 const FRAME_RATE = 30;
 const DETECTION_INTERVAL_IN_MILLISECONDS = 50;
