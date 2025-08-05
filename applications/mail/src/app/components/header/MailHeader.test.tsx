@@ -6,7 +6,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
-import { addApiMock, clearAll, getDropdown, minimalCache, render, tick } from '../../helpers/test/helper';
+import { addApiMock, clearAll, getDropdown, mailTestRender, minimalCache, tick } from '../../helpers/test/helper';
 import MailHeader from './MailHeader';
 
 loudRejection();
@@ -49,7 +49,7 @@ describe('MailHeader', () => {
 
         props = getProps();
 
-        const view = await render(<MailHeader {...props} />, {
+        const view = await mailTestRender(<MailHeader {...props} />, {
             preloadedState: {
                 user: getModelState(user),
             },

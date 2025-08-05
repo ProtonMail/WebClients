@@ -1,13 +1,13 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { render } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from 'proton-mail/helpers/test/render';
 
 import { activeSubscription } from '../../testData';
 import { ModalBlockSender } from './ModalBlockSender';
 
 describe('ModalBlockSender', () => {
     it('should render the modal', async () => {
-        await render(<ModalBlockSender subscription={activeSubscription} open={true} />);
+        await mailTestRender(<ModalBlockSender subscription={activeSubscription} open={true} />);
 
         const title = screen.getByText('Unsubscribe not available for this sender');
         expect(title).toBeInTheDocument();
@@ -17,7 +17,7 @@ describe('ModalBlockSender', () => {
     });
 
     it('should not check both trash and archive at the same time', async () => {
-        await render(<ModalBlockSender subscription={activeSubscription} open={true} />);
+        await mailTestRender(<ModalBlockSender subscription={activeSubscription} open={true} />);
 
         const trashCheckbox = screen.getByTestId('trash-checkbox');
         const archiveCheckbox = screen.getByTestId('archive-checkbox');
@@ -33,7 +33,7 @@ describe('ModalBlockSender', () => {
 
     it('should close the modal when the cancel button is clicked', async () => {
         const onClose = jest.fn();
-        await render(<ModalBlockSender subscription={activeSubscription} open={true} onClose={onClose} />);
+        await mailTestRender(<ModalBlockSender subscription={activeSubscription} open={true} onClose={onClose} />);
 
         const cancelButton = screen.getByText('Cancel');
         fireEvent.click(cancelButton);

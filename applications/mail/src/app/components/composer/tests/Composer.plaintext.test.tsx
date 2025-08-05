@@ -3,7 +3,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
 import { clearAll, parseDOMStringToBodyElement, waitForSpyCall } from '../../../helpers/test/helper';
-import { render } from '../../../helpers/test/render';
+import { mailTestRender } from '../../../helpers/test/render';
 import * as useSaveDraft from '../../../hooks/message/useSaveDraft';
 import Composer from '../Composer';
 import { ID, prepareMessage, props } from './Composer.test.helpers';
@@ -62,7 +62,7 @@ describe('Composer switch plaintext <-> html', () => {
     it('should switch from plaintext to html content without loosing content', async () => {
         const content = 'content';
 
-        await render(<Composer {...props} composerID={composerID} />, {
+        await mailTestRender(<Composer {...props} composerID={composerID} />, {
             onStore: (store) => {
                 prepareMessage(
                     store,
@@ -105,7 +105,7 @@ describe('Composer switch plaintext <-> html', () => {
           <div>content line 2<br><div>
         `;
 
-        await render(<Composer {...props} composerID={composerID} />, {
+        await mailTestRender(<Composer {...props} composerID={composerID} />, {
             onStore: (store) => {
                 prepareMessage(
                     store,

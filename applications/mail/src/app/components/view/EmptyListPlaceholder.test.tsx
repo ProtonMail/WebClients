@@ -5,7 +5,7 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import type { OnboardingChecklistContext } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { render } from '../../helpers/test/helper';
+import { mailTestRender } from '../../helpers/test/helper';
 import EmptyListPlaceholder from './EmptyListPlaceholder';
 
 jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
@@ -28,7 +28,7 @@ describe('EmptyListPlaceholder', () => {
             canDisplayChecklist: true,
         } as OnboardingChecklistContext);
 
-        await render(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
+        await mailTestRender(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
         screen.getByTestId('onboarding-accounts-switcher');
     });
 
@@ -38,7 +38,7 @@ describe('EmptyListPlaceholder', () => {
             items: new Set(),
         } as OnboardingChecklistContext);
 
-        await render(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
+        await mailTestRender(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
         screen.getByTestId('empty-view-placeholder--empty-title');
     });
 
@@ -48,7 +48,7 @@ describe('EmptyListPlaceholder', () => {
             items: new Set(),
         } as OnboardingChecklistContext);
 
-        await render(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
+        await mailTestRender(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
         screen.getByTestId('empty-view-placeholder--empty-title');
     });
 });
