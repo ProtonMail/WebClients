@@ -1434,6 +1434,12 @@
       "Trust": [
         "Důvěřovat"
       ],
+      "Trust key": [
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
+      ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
       ],
@@ -1496,6 +1502,9 @@
       ],
       "Upgrade": [
         "Přejít na placený tarif"
+      ],
+      "Upgrade for 200GB": [
+        "Navýšit na 200 GB"
       ],
       "Upgrade Now": [
         "Navýšit nyní"
@@ -4449,8 +4458,8 @@
       "An error occurred while saving your alias": [
         "Při ukládání vašeho aliasu došlo k chybě"
       ],
-      "Attachments are limited to 25 MB": [
-        "Přílohy jsou omezeny na 25 MB"
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Velikost příloh je omezena na ${ readableAttachmentMaxSize }"
       ],
       "Authentication canceled.": [
         "Ověření zrušeno."
@@ -7425,10 +7434,7 @@
         "Inicializuji..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -11616,12 +11622,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Získejte ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Získejte Drive Plus za pouhých ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Získejte Mail Plus za pouhých ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Získejte nabídku"
       ],
@@ -11633,6 +11633,9 @@
       ],
       "Limited-time offer": [
         "Časově omezená nabídka"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Časově omezená nabídka, platná pro první měsíc"
       ],
       "Maybe later": [
         "Možná později"
@@ -11646,9 +11649,6 @@
       "Save": [
         "Ušetřete"
       ],
-      "Save 80% on your first month.": [
-        "Ušetřete 80 % za první měsíc."
-      ],
       "Save big when you pay annually": [
         "Při roční platbě můžete výrazně ušetřit"
       ],
@@ -11657,6 +11657,12 @@
       ],
       "This offer won't be shown again.": [
         "Tato nabídka se již nezobrazí."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Vylepšete svou produktivitu jen za ${ pricingTitle } s ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Navyšte své úložiště jen za ${ pricingTitle } s ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Při přechodu z měsíčního na roční předplatné."
@@ -11683,23 +11689,26 @@
       "Advanced threat protection": [
         "Pokročilá ochrana před hrozbami"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Sdílet s uživateli, kteří nemají ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Vlastní e-mailová doména"
+      ],
+      "Edit docs online": [
+        "Úprava dokumentů online"
       ],
       "Email addresses": [
         "E-mailové adresy"
       ],
+      "File version history (over 1 week)": [
+        "Historie verzí souboru (více než 1 týden)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Online editor dokumentů"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Obnova předchozích verzí souborů"
       ],
       "Storage": [
         "Úložiště"
@@ -15449,6 +15458,15 @@
       ],
       "Upgrade complete!": [
         "Navýšení dokončeno!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Vylepšete svou produktivitu jen za ${ formattedPrice } s ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Navyšte své úložiště za ${ formattedPrice } s ${ planName }"
       ],
       "Upload and share files": [
         "Nahrát a sdílet soubory"

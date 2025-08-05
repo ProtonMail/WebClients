@@ -1426,6 +1426,10 @@
       "Trust": [
         "Αξιόπιστο"
       ],
+      "Trust key": [
+        "Εμπιστοσύνη στο κλειδί",
+        "Εμπιστοσύνη στα κλειδιά"
+      ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
       ],
@@ -1488,6 +1492,9 @@
       ],
       "Upgrade": [
         "Αναβάθμιση"
+      ],
+      "Upgrade for 200GB": [
+        "Αναβάθμιση για 200GB"
       ],
       "Upgrade Now": [
         "Αναβαθμίστε Τώρα"
@@ -4371,8 +4378,8 @@
       "An error occurred while saving your alias": [
         "Παρουσιάστηκε σφάλμα κατά την αποθήκευση του ψευδώνυμου σας."
       ],
-      "Attachments are limited to 25 MB": [
-        "Τα συνημμένα περιορίζονται στα 25 MB"
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Τα συνημμένα περιορίζονται σε ${ readableAttachmentMaxSize }"
       ],
       "Authentication canceled.": [
         "Ο έλεγχος ταυτότητας ακυρώθηκε."
@@ -7161,8 +7168,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -11222,12 +11228,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Αποκτήστε ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Αποκτήστε το Drive Plus για μόνο ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Αποκτήστε το Mail Plus για μόνο ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
       ],
@@ -11239,6 +11239,9 @@
       ],
       "Limited-time offer": [
         "Προσφορά περιορισμένου χρόνου"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Προσφορά περιορισμένου χρόνου, ισχύει για τον πρώτο σας μήνα"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
@@ -11252,9 +11255,6 @@
       "Save": [
         "Εξοικονομήστε"
       ],
-      "Save 80% on your first month.": [
-        "Εξοικονομήστε 80% τον πρώτο μήνα σας."
-      ],
       "Save big when you pay annually": [
         "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
       ],
@@ -11263,6 +11263,12 @@
       ],
       "This offer won't be shown again.": [
         "Αυτή η προσφορά δε θα εμφανιστεί ξανά."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Αναβαθμίστε την παραγωγικότητά σας μόνο για ${ pricingTitle } με ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Αναβαθμίστε τον αποθηκευτικό σας χώρο για μόλις ${ pricingTitle } με ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Όταν αλλάζετε από μηνιαία σε ετήσια συνδρομή."
@@ -11289,23 +11295,26 @@
       "Advanced threat protection": [
         "Προηγμένη προστασία απειλών"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Συνεργαστείτε με μη-${ BRAND_NAME } χρήστες"
+      ],
       "Custom email domain": [
         "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Edit docs online": [
+        "Επεξεργασία εγγράφων online"
       ],
       "Email addresses": [
         "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
+      "File version history (over 1 week)": [
+        "Ιστορικό εκδόσεων αρχείου (πάνω από 1 εβδομάδα)"
+      ],
       "Free": [
         "Δωρεάν"
       ],
-      "Online document editor": [
-        "Online επεξεργαστής εγγράφου"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
       ],
       "Storage": [
         "Αποθηκευτικός χώρος"
@@ -14864,6 +14873,15 @@
       ],
       "Upgrade complete!": [
         "Η αναβάθμιση ολοκληρώθηκε!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Αναβαθμίστε την παραγωγικότητά σας για ${ formattedPrice } με ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Αναβαθμίστε τον αποθηκευτικό σας χώρο για ${ formattedPrice } με ${ planName }"
       ],
       "Upload and share files": [
         "Μεταφορτώστε και μοιραστείτε αρχεία"
