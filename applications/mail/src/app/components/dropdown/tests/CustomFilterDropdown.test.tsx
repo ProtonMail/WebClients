@@ -3,7 +3,7 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import { ConditionType } from '@proton/components';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { render, tick } from '../../../helpers/test/render';
+import { mailTestRender, tick } from '../../../helpers/test/render';
 import CustomFilterDropdown from '../CustomFilterDropdown';
 
 const subject = 'Message subject';
@@ -24,7 +24,7 @@ const props = {
 
 describe('CustomFilterDropdown', () => {
     it('should create a filter based on all options', async () => {
-        await render(<CustomFilterDropdown {...props} />);
+        await mailTestRender(<CustomFilterDropdown {...props} />);
 
         const subjectCheckbox = screen.getByTestId(
             `custom-filter-checkbox:${ConditionType.SUBJECT}`
