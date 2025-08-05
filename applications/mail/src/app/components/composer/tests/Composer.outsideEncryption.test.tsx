@@ -14,7 +14,7 @@ import {
     generateKeys,
     getCompleteAddress,
     getDropdown,
-    render,
+    mailTestRender,
     tick,
     waitForNotification,
 } from '../../../helpers/test/helper';
@@ -46,7 +46,7 @@ describe('Composer outside encryption', () => {
         addApiKeys(false, toAddress, []);
 
         const address = getCompleteAddress({ ID: AddressID, Email: fromAddress });
-        const view = await render(<Composer {...props} composerID={composerID} />, {
+        const view = await mailTestRender(<Composer {...props} composerID={composerID} />, {
             preloadedState: {
                 addressKeys: getAddressKeyCache(address, [fromKeys]),
                 addresses: getModelState([address]),
