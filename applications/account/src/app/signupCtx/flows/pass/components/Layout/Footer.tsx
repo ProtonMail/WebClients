@@ -11,7 +11,7 @@ import SignupSupportDropdown from '../../../../../signup/SignupSupportDropdown';
 
 export const Footer = () => (
     <footer
-        className="flex justify-center items-center p-4 gap-8"
+        className="flex justify-center items-center p-4 gap-x-8"
         style={{
             '--link-norm': 'var(--text-weak)',
             '--primary': 'var(--text-weak)',

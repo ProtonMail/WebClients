@@ -2,8 +2,9 @@ import { type FC, type ReactNode, useId } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, type ButtonLikeShape } from '@proton/atoms/src';
+import { Button, type ButtonLikeShape } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { PlanProducts } from './PlanProducts';
 
@@ -37,7 +38,9 @@ export const PlanCard: FC<PlanCardProps> = ({
     const id = useId();
 
     return (
-        <div className={`pass-plan-card ${recommended && 'pass-plan-card-recommended border-gradient'} relative p-6`}>
+        <div
+            className={clsx('pass-plan-card relative p-6', recommended && 'pass-plan-card-recommended border-gradient')}
+        >
             <h2 className="text-2xl text-bold">{title}</h2>
             <h1 className="text-40 text-bold">{price}</h1>
             <h4 className="text-sm color-weak">{priceSubtitle}</h4>
