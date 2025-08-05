@@ -1019,6 +1019,11 @@
       "Trust": [
         "Vjeruj"
       ],
+      "Trust key": [
+        "Ključ povjerenja",
+        "Ključevi povjerenja",
+        "Ključevi povjerenja"
+      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -3081,9 +3086,6 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Iznos ispod minimuma (${ minimumAmount })."
       ],
-      "Attachments are limited to 25 MB": [
-        "Privitci su ograničeni na 25 MB."
-      ],
       "Authentication canceled.": [
         "Otkazana autentikacija."
       ],
@@ -3546,6 +3548,9 @@
       ]
     },
     "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Obiteljska grupa nije prepoznata. Pokušajte ponovno."
+      ],
       "Organization not recognized. Try again.": [
         "Organizacija nije prepoznata. Pokušajte ponovno."
       ]
@@ -4577,9 +4582,7 @@
         "Nasljedno iz roditeljske mape"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -7735,6 +7738,9 @@
       ],
       "Your storage is full": [
         "Pohrana je puna"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Izgubit ćete pristup ${ gb } prostora za pohranu i prioritetnu podršku."
       ]
     },
     "Subscription": {
