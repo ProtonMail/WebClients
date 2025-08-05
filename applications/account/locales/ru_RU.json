@@ -7838,9 +7838,6 @@
       "Add a recovery phone number": [
         "Добавить номер телефона для восстановления"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Добавьте дополнительный слой безопасности к вашему аккаунту. Вам надо будет удостоверять себя с помощью 2FA при каждом входе."
-      ],
       "Add domain": [
         "Добавить домен"
       ],
@@ -10679,9 +10676,6 @@
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Существующие зашифрованные сквозным методам пересылки другим пользователям будут приостановлены. Вы можете вручную включить их снова в настройках '${ autoReplySettingsTitle }'."
-      ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
       ],
@@ -10936,32 +10930,14 @@
       "Generate key": [
         "Сгенерировать ключ"
       ],
-      "Generating key failed. Please try again later.": [
-        "Не удалось сгенерировать ключ. Повторите попытку позже."
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Если вы генерируете новый ключ, потому что считаете, что ваш существующий ключ был раскрыт, пометьте его как раскрытый после генерации этого ключа."
-      ],
       "Key successfully generated.": [
         "Ключ успешно сгенерирован."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Обратите внимание: у вас уже есть ключ с тем же алгоритмом для этого адреса. Если этот ключ не был раскрыт, возможно, нет необходимости генерировать новый ключ, поскольку это может замедлить работу вашего аккаунта."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Примечание: у вас уже есть ключ с тем же алгоритмом для этого пользователя. Если этот ключ не был раскрыт, возможно, нет необходимости генерировать новый ключ, поскольку это может замедлить работу вашего аккаунта."
-      ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "В ходе этого будет сгенерирован новый ключ, который будет использоваться для шифрования будущей информации о контактах, ключей шифрования электронной почты и других данных."
-      ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "В результате будет сгенерирован новый ключ, который будет использоваться для шифрования будущих электронных писем, а также других данных."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Совместимость"
-      ],
       "Compromised": [
         "Скомпрометирован"
       ],
@@ -11216,9 +11192,6 @@
       ],
       "Export public key": [
         "Экспорт открытого ключа"
-      ],
-      "Make primary": [
-        "Сделать основным"
       ],
       "Mark compromised": [
         "Пометить как скомпроментированный"
@@ -14805,12 +14778,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Получить ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Попробуйте Drive Plus всего за ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Попробуйте Mail Plus всего за ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Получить скидку"
       ],
@@ -14831,9 +14798,6 @@
       ],
       "Save": [
         "Сохранить"
-      ],
-      "Save 80% on your first month.": [
-        "Сэкономьте 80% в первый месяц."
       ],
       "Save big when you pay annually": [
         "Экономьте больше, когда платите ежегодно"
@@ -14875,14 +14839,8 @@
       "Free": [
         "Бесплатно"
       ],
-      "Online document editor": [
-        "Онлайн-редактор документов"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Восстановить предыдущие версии файла"
       ],
       "Storage": [
         "Хранилище"

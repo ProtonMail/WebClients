@@ -643,6 +643,9 @@
       "Enable multi-user support": [
         "Aktifkan dukungan multi-pengguna"
       ],
+      "Enable post-quantum protection": [
+        "Aktifkan perlindungan post-quantum"
+      ],
       "Encrypt and export": [
         "Enkripsi dan ekspor"
       ],
@@ -1450,6 +1453,9 @@
       "Upgrade": [
         "Tingkatkan"
       ],
+      "Upgrade for 200GB": [
+        "Tingkatkan untuk 200GB"
+      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
       ],
@@ -1801,7 +1807,7 @@
         "Diskon didasarkan pada harga bulanan standar. Pada akhir siklus tagihan, langganan Anda akan diperpanjang dengan tarif tahunan standar."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Lipat gandakan penyimpanan terenkripsi Anda – dapatkan 1 TB untuk semua data Anda"
+        "Gandakan ruang penyimpanan terenkripsi Anda – dapatkan 1 TB untuk seluruh data Anda"
       ],
       "Encrypted password manager": [
         "Pengelola kata sandi terenkripsi"
@@ -6748,6 +6754,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Saya mengerti bahwa saya tidak akan lagi dapat masuk dari aplikasi ${ BRAND_NAME } seluler versi lawas."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "aplikasi web"
@@ -6964,6 +6975,9 @@
       ],
       "Servers": [
         "Server"
+      ],
+      "Sort labels": [
+        "Sortir label"
       ],
       "Status": [
         "Status"
@@ -7778,9 +7792,6 @@
       "Add a recovery phone number": [
         "Tambahkan nomor telepon pemulihan"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Berikan akun Anda lapisan keamanan tambahan. Anda akan perlu untuk memverifikasi diri Anda dengan 2FA setiap kali Anda masuk."
-      ],
       "Add domain": [
         "Tambah domain"
       ],
@@ -8044,6 +8055,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "Dengan mengaktifkan perlindungan post-quantum, kunci yang tahan terhadap komputer kuantum akan dihasilkan untuk akun Anda."
       ],
       "By leaving now, changes may not be saved": [
         "Dengan keluar sekarang, perubahan mungkin tidak tersimpan"
@@ -8495,6 +8509,9 @@
       "Example: ${ spfExample }": [
         "Contoh: ${ spfExample }"
       ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "Penerusan email end-to-end yang telah ada akan perlu untuk diaktifkan kembali secara manual pada **${ autoReplySettingsTitle }** di Pengaturan."
+      ],
       "Expired": [
         "Kedaluwarsa"
       ],
@@ -8806,6 +8823,9 @@
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "Undang pasangan, sahabat, atau siapa pun itu yang ingin Anda ajak untuk berbagi paket ${ protonDuoPlanName } bersama Anda."
+      ],
+      "Invited": [
+        "Diundang"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Sepertinya sebagian data Anda terenkripsi dan terkunci."
@@ -10586,9 +10606,6 @@
       "Your email will only be used for this one-time verification.": [
         "Email Anda hanya akan digunakan satu kali ini untuk keperluan verifikasi."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Penerusan terenkripsi secara end-to-end kepada pengguna lain yang Anda miliki saat ini akan dijeda. Anda dapat mengaktifkan penerusan ini kembali pada pengaturan '${ autoReplySettingsTitle }'."
-      ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
       ],
@@ -10855,32 +10872,23 @@
       "Generate key": [
         "Hasilkan kunci"
       ],
-      "Generating key failed. Please try again later.": [
-        "Kunci gagal dihasilkan. Silakan coba lagi nanti."
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Apabila Anda menghasilkan kunci baru karena Anda memercayai bahwa kunci Anda yang terdahulu telah bocor, silakan tandai kunci lama Anda sebagai kunci yang telah bocor setelah Anda menghasilkan kunci ini."
-      ],
       "Key successfully generated.": [
         "Kunci berhasil dihasilkan."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Catatan: Anda telah memiliki kunci dengan algoritma yang sama untuk alamat ini. Kecuali kunci ini telah dibocorkan, Anda mungkin tidak perlu untuk menghasilkan kunci baru, berhubung hal ini dapat memperlambat akun Anda."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Catatan: Anda telah memiliki kunci dengan algoritma yang sama untuk pengguna ini. Kecuali kunci ini telah dibocorkan, Anda mungkin tidak perlu untuk menghasilkan kunci baru, berhubung hal ini dapat memperlambat akun Anda."
+      "New key generated": [
+        "Kunci baru dihasilkan"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Tindakan ini akan menghasilkan kunci baru, yang ke depannya akan digunakan untuk mengenkripsi rincian kontak, kunci enkripsi email, dan berbagai data lainnya."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Tindakan ini akan menghasilkan kunci baru, yang ke depannya akan digunakan untuk mengenkripsi email dan berbagai data lainnya."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Tindakan ini akan menghasilkan kunci baru, yang ke depannya akan digunakan untuk mengenkripsi email dan berbagai data lainnya bagi **${ emailAddress }**."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "Anda telah memiliki jenis kunci ini. Kecuali apabila kunci ini telah bocor, **menghasilkan kunci baru dapat memperlambat akun Anda**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Kompatibilitas"
-      ],
       "Compromised": [
         "Bocor"
       ],
@@ -10898,6 +10906,11 @@
       ],
       "Primary": [
         "Utama"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
       ]
     },
     "Keyboard shortcut name": {
@@ -11136,9 +11149,6 @@
       "Export public key": [
         "Ekspor kunci publik"
       ],
-      "Make primary": [
-        "Jadikan yang utama"
-      ],
       "Mark compromised": [
         "Tandai telah bocor"
       ],
@@ -11150,6 +11160,9 @@
       ],
       "Mark obsolete": [
         "Tandai usang"
+      ],
+      "Use for encryption and signing": [
+        "Gunakan untuk enkripsi dan penandatanganan"
       ]
     },
     "Knowledge base link label": {
@@ -11793,6 +11806,9 @@
       ],
       "Key": [
         "Kunci"
+      ],
+      "Key strength": [
+        "Kekuatan kunci"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pintasan keyboard: ${ shortcut }"
@@ -14631,12 +14647,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Dapatkan ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Dapatkan Drive Plus hanya seharga ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Dapatkan Mail Plus hanya seharga ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Dapatkan penawaran ini"
       ],
@@ -14648,6 +14658,9 @@
       ],
       "Limited-time offer": [
         "Penawaran waktu terbatas"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Penawaran terbatas, valid untuk bulan pertama Anda"
       ],
       "Maybe later": [
         "Mungkin nanti"
@@ -14661,9 +14674,6 @@
       "Save": [
         "Simpan"
       ],
-      "Save 80% on your first month.": [
-        "Hemat 80% pada bulan pertama Anda."
-      ],
       "Save big when you pay annually": [
         "Hemat besar-besaran pada saat Anda membayar secara tahunan"
       ],
@@ -14672,6 +14682,12 @@
       ],
       "This offer won't be shown again.": [
         "Penawaran ini tidak akan lagi ditampilkan."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Tingkatkan produktivitas Anda dengan ${ planName }, hanya seharga ${ pricingTitle }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName }, hanya seharga ${ pricingTitle }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Pada saat Anda beralih dari langganan bulanan ke langganan tahunan."
@@ -14698,23 +14714,26 @@
       "Advanced threat protection": [
         "Perlindungan ancaman tingkat lanjut"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Kolaborasi dengan pengguna non-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domain email khusus"
+      ],
+      "Edit docs online": [
+        "Sunting dokumen secara online"
       ],
       "Email addresses": [
         "Alamat email"
       ],
+      "File version history (over 1 week)": [
+        "Riwayat versi berkas (hingga lebih dari 1 minggu)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Penyunting dokumen online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Pulihkan versi berkas sebelumnya"
       ],
       "Storage": [
         "Ruang penyimpanan"
@@ -16139,6 +16158,39 @@
         "Tingkatkan ke ${ upsellPlanTitle }"
       ]
     },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Perlindungan post-quantum telah diaktifkan pada akun Anda, namun sebagian tindakan tidak berhasil: akun dan kunci alamat post-quantum gagal dihasilkan. Anda dapat menghasilkan kunci ini secara manual pada pengaturan ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Perlindungan post-quantum telah diaktifkan pada akun Anda, namun sebagian tindakan tidak berhasil: kunci alamat post-quantum untuk satu atau lebih alamat gagal dihasilkan. Anda dapat menghasilkan kunci ini secara manual pada pengaturan ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Silakan perbarui **seluruh aplikasi ${ BRAND_NAME } seluler Anda** ke versi terbaru."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Mengerti"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "Perlindungan post-quantum telah diaktifkan pada akun Anda!"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Menghasilkan kunci akun post-quantum"
+      ],
+      "Opting into post-quantum protection": [
+        "Menerapkan perlindungan post-quantum"
+      ]
+    },
     "Price": {
       "Free": [
         "Gratis"
@@ -16279,6 +16331,11 @@
         "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
       ]
     },
+    "Remark about a key type option": {
+      "Classic": [
+        "Klasik"
+      ]
+    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Dengan berhenti berlangganan, Anda tidak akan lagi memiliki akses ke kalender ini. Seluruh acara pada kalender ini akan dihapus dari akun Anda, namun masih akan tersedia pada tautan publik yang asli."
@@ -16332,6 +16389,12 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Tambah pengguna atau grup"
+      ],
+      "Cancel": [
+        "Batal"
+      ],
       "Create retention rule": [
         "Buat peraturan penyimpanan data"
       ],
@@ -16340,6 +16403,16 @@
       ],
       "Delete rule": [
         "Hapus aturan"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "After ${ lifetime } day all messages will be deleted": [
+        "Setelah ${ lifetime } hari, seluruh pesan akan dihapus"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "Durasi Lifetime harus lebih dari ${ MIN_LIFETIME } hari"
       ]
     },
     "retention_policy_2025_Info": {
@@ -16351,6 +16424,33 @@
       ],
       "Forever": [
         "Selamanya"
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Peraturan penyimpanan data \"${ formData.name }\" berhasil diperbarui"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Peraturan penyimpanan data \"${ retentionRule.Name }\" berhasil dihapus"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "Retention period": [
+        "Masa penyimpanan"
+      ],
+      "Set a duration": [
+        "Tentukan durasi"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Purge deleted messages only": [
+        "Hanya bersihkan pesan yang telah dihapus"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "Enter duration": [
+        "Masukkan durasi"
+      ],
+      "Enter value": [
+        "Masukkan nilai"
       ]
     },
     "retention_policy_2025_TableHeader": {
@@ -16370,6 +16470,14 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "Tidak ada kebijakan penyimpanan data yang ditemukan"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Konfirmasi peraturan penyimpanan data?"
+      ],
+      "Edit retention rule": [
+        "Sunting peraturan penyimpanan data"
       ]
     },
     "Role": {
@@ -17283,6 +17391,9 @@
       "${ maxDomains } email domain": [
         "${ maxDomains } domain email"
       ],
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "${ PASS_PLUS_VAULTS } brankas untuk kata sandi Anda"
+      ],
       "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
         "${ referrerName } mengundang Anda untuk mencoba ${ BRAND_NAME }"
       ],
@@ -17433,6 +17544,9 @@
       "Save ${ priceDifferenceString }": [
         "Hemat ${ priceDifferenceString }"
       ],
+      "Secure ${ VPN_CONNECTIONS } device at a time": [
+        "Lindungi ${ VPN_CONNECTIONS } perangkat secara bersamaan"
+      ],
       "Secure file sharing": [
         "Pembagian berkas yang aman"
       ],
@@ -17489,6 +17603,9 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Try ${ BRAND_NAME } for 14 days free": [
+        "Coba ${ BRAND_NAME } gratis selama 14 hari"
       ],
       "Try ${ planName } for free": [
         "Coba ${ planName } secara cuma-cuma"
@@ -18344,6 +18461,9 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } server khusus"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } untuk ${ maxLumo } pengguna"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per pengguna"
@@ -20284,6 +20404,9 @@
       "Policies": [
         "Kebijakan"
       ],
+      "Post-quantum protection": [
+        "Perlindungan post-quantum"
+      ],
       "Preview": [
         "Pratinjau"
       ],
@@ -20626,8 +20749,17 @@
       "Upgrade plan": [
         "Tingkatkan akun"
       ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
+      ],
       "Upgrade your privacy": [
         "Tingkatkan privasi Anda"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
       ],
       "Upload and share files": [
         "Unggah dan bagikan berkas"

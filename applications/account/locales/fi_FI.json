@@ -7564,9 +7564,6 @@
       "Add a recovery phone number": [
         "Lisää palautusnumero"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Lisää tilillesi yksi suojauskerros. Sinun on suoritettava kaksivaiheinen tunnistautuminen jokaisen kirjautumisen yhteydessä."
-      ],
       "Add domain": [
         "Lisää verkkotunnus"
       ],
@@ -10544,32 +10541,14 @@
       "Generate key": [
         "Luo avain"
       ],
-      "Generating key failed. Please try again later.": [
-        "Avaimen luonti epäonnistui. Yritä myöhemmin uudelleen."
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Jos luot uuden avaimen, koska uskot, että nykyinen avaimesi on vaarantunut, merkitse nykyinen avaimesi vaarantuneeksi uuden avaimen luomisen jälkeen."
-      ],
       "Key successfully generated.": [
         "Avain luotiin."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Huomioi: Sinulla on jo samaa algoritmia käyttävä avain tälle osoitteelle. Jos se avain ei ole vaarantunut, voi uuden avaimen luonti olla tarpeetonta ja saattaa vain hidastaa tilisi toimintaa."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Huomioi: Sinulla on jo samaa algoritmia käyttävä avain tälle käyttäjälle. Jos se avain ei ole vaarantunut, voi uuden avaimen luonti olla tarpeetonta ja saattaa vain hidastaa tilisi toimintaa."
-      ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Tämä luo uuden avaimen, jota käytetään jatkossa yhteystietojen, sähköpostin salausavainten ja muiden tietojen salaukseen."
-      ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Tämä luo uuden avaimen, jota käytetään muun muassa tulevien sähköpostien salaamiseen."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Yhteensopivuus"
-      ],
       "Compromised": [
         "Vaarantunut"
       ],
@@ -10824,9 +10803,6 @@
       ],
       "Export public key": [
         "Vie julkinen avain"
-      ],
-      "Make primary": [
-        "Aseta ensisijaiseksi"
       ],
       "Mark compromised": [
         "Merkitse vaarantuneeksi"
@@ -14309,12 +14285,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Hanki ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Hanki Drive Plus hintaan ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Hanki Mail Plus hintaan ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Hyödynnä tarjous"
       ],
@@ -14335,9 +14305,6 @@
       ],
       "Save": [
         "Säästä"
-      ],
-      "Save 80% on your first month.": [
-        "Säästä 80 % ensimmäisestä kuukaudestasi."
       ],
       "Save big when you pay annually": [
         "Säästä enemmän, kun maksat vuosittain"
@@ -14379,14 +14346,8 @@
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Verkkodokumenttieditori"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Palauta aiempia tiedostoversioita"
       ],
       "Storage": [
         "Tallennustila"

@@ -6987,9 +6987,6 @@
       "Add a recovery phone number": [
         "Додати номер телефону для відновлення"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Розширте рівень захисту свого облікового запису. Необхідно проходити двоетапну перевірку щоразу під час входу в систему."
-      ],
       "Add domain": [
         "Додати домен"
       ],
@@ -9737,26 +9734,11 @@
       "Generate key": [
         "Генерувати ключ"
       ],
-      "Generating key failed. Please try again later.": [
-        "Не вдалося згенерувати ключ. Повторіть спробу пізніше."
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Якщо ви генеруєте новий ключ, оскільки вважаєте, що ваш чинний ключ було скомпрометовано, позначте його як скомпрометований після генерування цього ключа."
-      ],
       "Key successfully generated.": [
         "Ключ успішно згенеровано."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Примітка: у вас вже є ключ з таким самим алгоритмом для цієї адреси. Якщо цей ключ не був скомпрометований, генерувати новий не обов'язково, оскільки це може сповільнити роботу вашого облікового запису."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Примітка: у вас вже є ключ з таким самим алгоритмом для цього користувача. Якщо цей ключ не був скомпрометований, генерувати новий не обов'язково, оскільки це може сповільнити роботу вашого облікового запису."
-      ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Буде згенеровано новий ключ, який використовуватиметься для шифрування нових контактів, електронної пошти й інших даних."
-      ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Буде згенеровано новий ключ, який використовуватиметься для шифрування нових електронних листів разом з іншими даними."
       ]
     },
     "Key state badge": {
@@ -9990,9 +9972,6 @@
       ],
       "Export public key": [
         "Експортувати відкритий ключ"
-      ],
-      "Make primary": [
-        "Зробити основним"
       ],
       "Mark compromised": [
         "Позначити скомпрометованим"
@@ -13320,12 +13299,6 @@
       ],
       "Free": [
         "Free"
-      ],
-      "Online document editor": [
-        "Онлайн редактор документів"
-      ],
-      "Recover previous file versions": [
-        "Відновити попередні версії файлів"
       ],
       "Storage": [
         "Сховище"

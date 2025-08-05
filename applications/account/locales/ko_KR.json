@@ -652,6 +652,9 @@
       "Enable multi-user support": [
         "다중 사용자 지원 활성화"
       ],
+      "Enable post-quantum protection": [
+        "양자 내성 암호화 켜기"
+      ],
       "Encrypt and export": [
         "암호화 및 내보내기"
       ],
@@ -1458,6 +1461,9 @@
       ],
       "Upgrade": [
         "업그레이드"
+      ],
+      "Upgrade for 200GB": [
+        "200GB로 업그레이드"
       ],
       "Upgrade now": [
         "지금 업그레이드"
@@ -6757,6 +6763,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "${ BRAND_NAME } 모바일 앱의 구식 버전에서는 더 이상 로그인할 수 없음을 확인했습니다."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "웹 앱"
@@ -7793,8 +7804,8 @@
       "Add a recovery phone number": [
         "복구 전화번호 추가"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "계정에 또 다른 보안 계층을 추가하세요. 로그인할 때마다 2단계 인증으로 본인 확인해야 합니다."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "계정에 또 다른 보안 계층을 추가하세요. 로그인할 때마다 2단계 인증으로 본인 여부를 확인해야 합니다. 2단계 인증 코드를 저장하기 위해 ${ protonAuthenticatorDownloadLink }을(를) 사용하는 것을 권장합니다."
       ],
       "Add domain": [
         "도메인 추가"
@@ -8068,6 +8079,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "양자 내성 암호화를 활성화하면 양자 컴퓨터에 대한 저항력이 있는 키가 사용자의 계정에 생성됩니다."
       ],
       "By leaving now, changes may not be saved": [
         "지금 나갈 경우 변경사항이 저장되지 않을 수도 있습니다"
@@ -8521,6 +8535,9 @@
       ],
       "Example: ${ spfExample }": [
         "예시: ${ spfExample }"
+      ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "기존 종단 간 암호화된 이메일 전달은 설정의 **${ autoReplySettingsTitle }**에서 수동으로 다시 활성화해야 합니다."
       ],
       "Expired": [
         "만료됨"
@@ -9695,6 +9712,9 @@
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "커스텀 도메인 및 비 ${ BRAND_NAME } 주소에 대한 모니터링 지원도 곧 찾아옵니다."
       ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "양자 내성 키 지원이 사용자의 계정에 활성화되었습니다."
+      ],
       "support team": [
         "지원 팀"
       ],
@@ -10628,9 +10648,6 @@
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "다른 사용자의 기존 종단 간 암호화 전달이 일시 중지됩니다. '${ autoReplySettingsTitle }' 설정에서 수동으로 다시 활성화할 수 있습니다."
-      ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
       ],
@@ -10897,37 +10914,37 @@
       "Generate key": [
         "키 생성"
       ],
-      "Generating key failed. Please try again later.": [
-        "키 생성에 실패했습니다. 나중에 다시 시도해 주십시오."
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "이전 키가 손상되었다고 의심되어 새로운 키를 생성했다면, 설정에서 의심되는 키를 손상됨으로 표시하십시오."
       ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "기존의 키가 손상된 것이라 생각하여 새로운 키를 생성하는 것이라면, 이 키를 생성한 뒤 해당 키를 손상된 것으로 표시해주십시오."
+      "Key generation failed, please try again later.": [
+        "키 생성에 실패했습니다. 나중에 다시 시도해 주십시오."
       ],
       "Key successfully generated.": [
         "키 생성에 성공했습니다."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "참고: 이 주소를 위한 같은 알고리즘의 키가 이미 존재합니다. 해당 키가 손상된 것이 아니라면, 새로운 키를 생성할 필요가 없으며 오히려 계정의 속도를 늦출 수도 있습니다."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "참고: 이 사용자를 위한 같은 알고리즘의 키가 이미 존재합니다. 해당 키가 손상된 것이 아니라면, 새로운 키를 생성할 필요가 없으며 오히려 계정의 속도를 늦출 수도 있습니다."
+      "New key generated": [
+        "신규 키 생성됨"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "이로써 앞으로의 이메일과 다른 데이터의 암호화, 그리고 이메일 암호화 키에 사용될 새 키를 생성하게 됩니다."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "이로써 앞으로의 이메일과 다른 데이터의 암호화에 사용될 새 키를 생성하게 됩니다."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "이 작업은 **${ emailAddress }**에 대한 향후 이메일 및 기타 데이터를 암호화하는 데 사용되는 새 키가 생성됩니다."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "이미 해당 키 유형이 존재합니다. 해당 키가 손상되지 않았다면, 새 키를 임의 생성시 **계정의 속도가 느려질 수 있습니다**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "호환성"
-      ],
       "Compromised": [
         "유출됨"
       ],
       "Disabled": [
         "비활성화됨"
+      ],
+      "Fallback": [
+        "대체"
       ],
       "Forwarding": [
         "전달"
@@ -10943,6 +10960,27 @@
       ],
       "Primary": [
         "우선 순위"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "매우 빠름"
+      ],
+      "Slower, but stronger long-term security": [
+        "속도가 느리지만 강력한 장기적 보안"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "키 유형 선택"
       ]
     },
     "Keyboard shortcut name": {
@@ -11181,8 +11219,8 @@
       "Export public key": [
         "공개 키 내보내기"
       ],
-      "Make primary": [
-        "기본으로 지정"
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "이것을 ${ keyStatusBadgeTitles.primary } 또는 ${ keyStatusBadgeTitles.fallback } 암호화 및 서명 키로 지정합니다."
       ],
       "Mark compromised": [
         "유출된 것으로 표시"
@@ -11195,6 +11233,9 @@
       ],
       "Mark obsolete": [
         "만료 된 것으로 표시"
+      ],
+      "Use for encryption and signing": [
+        "암호화 및 로그인에 사용"
       ]
     },
     "Knowledge base link label": {
@@ -11841,6 +11882,9 @@
       ],
       "Key": [
         "키"
+      ],
+      "Key strength": [
+        "키 강도"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "키보드 단축키: ${ shortcut }"
@@ -14685,12 +14729,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited 구매"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "단 ${ pricingTitle }(으)로 Drive Plus 구매"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "단 ${ pricingTitle }(으)로 Mail Plus 구매"
-      ],
       "Get the deal": [
         "특가 받기"
       ],
@@ -14702,6 +14740,9 @@
       ],
       "Limited-time offer": [
         "기간 한정 할인"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "기간 한정 특가, 첫 달 동안 유효"
       ],
       "Maybe later": [
         "나중에"
@@ -14715,9 +14756,6 @@
       "Save": [
         "절약되는 가격:"
       ],
-      "Save 80% on your first month.": [
-        "첫 달에 80% 할인 받기"
-      ],
       "Save big when you pay annually": [
         "매년 결제로 더 크게 절약하세요"
       ],
@@ -14726,6 +14764,12 @@
       ],
       "This offer won't be shown again.": [
         "이 제안은 다시 표시되지 않습니다."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }으로 생산성을 ${ pricingTitle }만으로 업그레이드하기"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }으로 저장공간을 ${ pricingTitle }에 업그레이드하기"
       ],
       "When you switch from a monthly to annual subscription.": [
         "절약할 수 있는 마지막 날."
@@ -14752,23 +14796,26 @@
       "Advanced threat protection": [
         "향상된 위협 보호 기능"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "비 ${ BRAND_NAME } 사용자와 협업"
+      ],
       "Custom email domain": [
         "사용자 지정 이메일 도메인"
+      ],
+      "Edit docs online": [
+        "온라인 문서 편집"
       ],
       "Email addresses": [
         "이메일 주소"
       ],
+      "File version history (over 1 week)": [
+        "파일 버전 기록 (1주 이상)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "온라인 문서 편집기"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "파일 이전 버전 복원"
       ],
       "Storage": [
         "저장 공간"
@@ -16217,6 +16264,61 @@
         "${ upsellPlanTitle }(으)로 업그레이드"
       ]
     },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "사용자의 계정에 양자 내성 암호화가 활성화되었습니다. 하지만 일부 작업이 성공하지 못했습니다: 양자 내성 계정 및 주소 키 생성에 실패했습니다. 이 키들을 ${ encryptionAndKeysSettingsTitle } 설정에서 수동으로 생성할 수 있습니다."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "사용자의 계정에 양자 내성 암호화가 활성화되었습니다. 하지만 일부 작업이 성공하지 못했습니다: 하나 이상의 주소에 대한 양자 내성 주소 키 생성에 실패했습니다. 이 키들을 ${ encryptionAndKeysSettingsTitle } 설정에서 수동으로 생성할 수 있습니다."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "**회원님의 설치된 모든 ${ BRAND_NAME } 모바일 앱**을 최신 버전으로 업데이트해 주세요."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "이는 각 주소에 대해 새로운 계정 키와 새로운 이메일 암호화 키를 생성합니다. 이 키는 향후 이메일 및 기타 데이터를 암호화하고 복호화하는 데 사용됩니다."
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "활성화 및 키 생성"
+      ],
+      "Enable post-quantum protection": [
+        "양자 내성 암호화 켜기"
+      ],
+      "Enable post-quantum protection?": [
+        "양자 내성 암호화를 활성화하시겠습니까?"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "양자 내성 암호화를 활성화할 수 없습니다. 나중에 다시 시도해주세요."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "확인"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "양자 내성 암호화가 사용자의 계정에 활성화되었습니다!"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "양자내성 계정 키 생성 중"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "각 주소에 대한 양자 내성 주소 키를 생성하는 중"
+      ],
+      "Opting into post-quantum protection": [
+        "양자 내성 암호화 설정 중"
+      ]
+    },
     "Price": {
       "Free": [
         "무료"
@@ -16357,6 +16459,14 @@
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
       ]
     },
+    "Remark about a key type option": {
+      "Classic": [
+        "클래식"
+      ],
+      "Post-quantum": [
+        "양자 내성"
+      ]
+    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "구독 취소하면, 더 이상 이 캘린더에 접근할 수 없습니다. 이 캘린더의 모든 이벤트가 사용자의 계정에서 삭제되나, 원본 공개 링크가 유지됩니다."
@@ -16457,10 +16567,10 @@
     },
     "retention_policy_2025_Error": {
       "Lifetime must be greater than ${ MIN_LIFETIME } days": [
-        "수명이 ${ MIN_LIFETIME }일보다 길어야 합니다."
+        "수명이 ${ MIN_LIFETIME }일보다 길어야합니다"
       ],
       "Lifetime must not be set for \"Retain All\" action": [
-        "\"모두 유지\"작업에 대한 수명은 설정할 수 없습니다."
+        "\"모두 유지\" 작업에 대한 수명은 설정할 수 없습니다."
       ],
       "Scope value is not valid": [
         "범위 값이 유효하지 않습니다"
@@ -16520,8 +16630,8 @@
       "Retention period": [
         "보존 기간"
       ],
-      "Retention rule": [
-        "데이터 보존 규칙"
+      "Rule title": [
+        "규칙 제목"
       ],
       "Select product": [
         "제품 선택"
@@ -20554,6 +20664,9 @@
       "Policies": [
         "정책"
       ],
+      "Post-quantum protection": [
+        "양자 내성 암호화"
+      ],
       "Preview": [
         "미리 보기"
       ],
@@ -20896,8 +21009,17 @@
       "Upgrade plan": [
         "플랜 업그레이드"
       ],
+      "Upgrade to ${ planName }": [
+        "${ planName }으로 업그레이드"
+      ],
       "Upgrade your privacy": [
         "개인정보 보호를 업그레이드하세요"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName }으로 생산성을 ${ formattedPrice }에 업그레이드하기"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "${ planName }으로 저장공간을 ${ formattedPrice }에 업그레이드하기"
       ],
       "Upload and share files": [
         "파일 업로드 및 공유하기"
