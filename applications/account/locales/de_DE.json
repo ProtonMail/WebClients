@@ -652,6 +652,9 @@
       "Enable multi-user support": [
         "Mehrbenutzerunterstützung aktivieren"
       ],
+      "Enable post-quantum protection": [
+        "Post-Quantum-Schutz aktivieren"
+      ],
       "Encrypt and export": [
         "Verschlüsseln und exportieren"
       ],
@@ -1458,6 +1461,9 @@
       ],
       "Upgrade": [
         "Wechseln"
+      ],
+      "Upgrade for 200GB": [
+        "Upgrade auf 200 GB"
       ],
       "Upgrade now": [
         "Jetzt upgraden"
@@ -6861,6 +6867,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Mir ist klar, dass ich mich auf älteren Versionen der mobilen ${ BRAND_NAME }-Apps nicht mehr anmelden kann."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "Web-App"
@@ -7933,8 +7944,8 @@
       "Add a recovery phone number": [
         "Telefonnummer für die Wiederherstellung hinzufügen"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Füge deinem Konto eine weitere Sicherheitsebene hinzu. Du musst dich jedes Mal mit Zwei-Faktor-Authentifizierung verifizieren, wenn du dich anmeldest."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Füge deinem Konto eine weitere Sicherheitsebene hinzu. Du musst dich jedes Mal mit 2FA verifizieren, wenn du dich anmeldest. Wir empfehlen die Verwendung von ${ protonAuthenticatorDownloadLink } zum Speichern deiner 2FA-Codes."
       ],
       "Add domain": [
         "Domain hinzufügen"
@@ -8215,6 +8226,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "Durch das Aktivieren des Post-Quantum-Schutzes werden für dein Konto Schlüssel generiert, die gegen Quantencomputer resistent sind."
       ],
       "By leaving now, changes may not be saved": [
         "Beim Verlassen werden Änderungen möglicherweise nicht gespeichert"
@@ -8673,6 +8687,9 @@
       ],
       "Example: ${ spfExample }": [
         "Beispiel: ${ spfExample }"
+      ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "Bestehende Ende-zu-Ende-verschlüsselte E-Mail-Weiterleitungen müssen unter **${ autoReplySettingsTitle }** in den Einstellungen manuell wieder aktiviert werden."
       ],
       "Expired": [
         "Abgelaufen"
@@ -9854,6 +9871,9 @@
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Unterstützung für die Überwachung von benutzerdefinierten Domains und nicht-${ BRAND_NAME }-E-Mail-Adressen ist in Kürze verfügbar."
       ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "Unterstützung der Post-Quantum-Schlüssel ist für dein Konto aktiviert."
+      ],
       "support team": [
         "Support-Team"
       ],
@@ -10801,9 +10821,6 @@
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Deine bestehenden Ende-zu-Ende-verschlüsselten Weiterleitungen an andere Benutzer werden pausiert. Du kannst sie manuell unter den „${ autoReplySettingsTitle }“-Einstellungen wieder aktivieren."
-      ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
@@ -11075,37 +11092,37 @@
       "Generate key": [
         "Schlüssel generieren"
       ],
-      "Generating key failed. Please try again later.": [
-        "Fehler beim Generieren des Schlüssels. Bitte versuche es später erneut."
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Wenn du diesen Schlüssel generiert hast, weil du vermutest, dass dein vorheriger Schlüssel kompromittiert wurde, markiere ihn bitte in deinen Einstellungen als kompromittiert."
       ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Wenn du einen neuen Schlüssel generierst, weil du glaubst, dass dein bestehender Schlüssel kompromittiert wurde, markiere ihn bitte als kompromittiert, nachdem du diesen Schlüssel generierst haben."
+      "Key generation failed, please try again later.": [
+        "Schlüsselgenerierung fehlgeschlagen, bitte versuche es später erneut."
       ],
       "Key successfully generated.": [
         "Schlüssel erfolgreich generiert."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Hinweis: Du hast bereits einen Schlüssel mit demselben Algorithmus für diese Adresse. Sofern dieser Schlüssel nicht kompromittiert wurde, ist es möglicherweise unnötig, einen neuen Schlüssel zu generieren, was dein Konto verlangsamen kann."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Hinweis: Du hast bereits einen Schlüssel mit demselben Algorithmus für diesen Benutzer. Sofern dieser Schlüssel nicht kompromittiert wurde, ist es möglicherweise unnötig, einen neuen Schlüssel zu generieren, was dein Konto verlangsamen kann."
+      "New key generated": [
+        "Neuer Schlüssel generiert"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Dadurch wird ein neuer Schlüssel generiert, der für die Verschlüsselung zukünftiger Kontaktinformationen, E-Mail-Verschlüsselungsschlüssel und anderer Daten verwendet wird."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Dadurch wird ein neuer Schlüssel generiert, der unter anderem zur Verschlüsselung künftiger E-Mails verwendet wird."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Dadurch wird ein neuer Schlüssel generiert, der zur Verschlüsselung zukünftiger E-Mails und anderer Daten für **${ emailAddress }** verwendet wird."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "Du hast diesen Schlüsseltyp bereits. Solange dieser Schlüssel nicht gefährdet wurde, kann das Generieren **eines neuen Schlüssels dein Konto verlangsamen**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Kompatibilität"
-      ],
       "Compromised": [
         "Kompromittiert"
       ],
       "Disabled": [
         "Deaktiviert"
+      ],
+      "Fallback": [
+        "Zurückstellen"
       ],
       "Forwarding": [
         "Weiterleitung"
@@ -11121,6 +11138,27 @@
       ],
       "Primary": [
         "Primär"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Schneller"
+      ],
+      "Slower, but stronger long-term security": [
+        "Langsamer, aber langfristig sicherer"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Schlüsseltyp auswählen"
       ]
     },
     "Keyboard shortcut name": {
@@ -11359,8 +11397,8 @@
       "Export public key": [
         "Öffentlichen Schlüssel exportieren"
       ],
-      "Make primary": [
-        "Als primär festlegen"
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "Macht dies zum ${ keyStatusBadgeTitles.primary } oder ${ keyStatusBadgeTitles.fallback }-Schlüssel für Verschlüsselung und Signierung."
       ],
       "Mark compromised": [
         "Als „Gefährdet“ markieren"
@@ -11373,6 +11411,9 @@
       ],
       "Mark obsolete": [
         "Als „Veraltet“ markieren"
+      ],
+      "Use for encryption and signing": [
+        "Für Verschlüsselung und Signierung verwenden"
       ]
     },
     "Knowledge base link label": {
@@ -12024,6 +12065,9 @@
       ],
       "Key": [
         "Schlüssel"
+      ],
+      "Key strength": [
+        "Schlüsselstärke"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastaturkürzel: ${ shortcut }"
@@ -14909,12 +14953,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Hol dir ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Hol dir Drive Plus für nur ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Hol dir Mail Plus für nur ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Jetzt zugreifen"
       ],
@@ -14926,6 +14964,9 @@
       ],
       "Limited-time offer": [
         "Zeitlich begrenztes Angebot"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Zeitlich begrenztes Angebot, gültig für deinen ersten Monat"
       ],
       "Maybe later": [
         "Vielleicht später"
@@ -14939,9 +14980,6 @@
       "Save": [
         "Spare"
       ],
-      "Save 80% on your first month.": [
-        "Spare 80 % im ersten Monat."
-      ],
       "Save big when you pay annually": [
         "Spare kräftig, wenn du jährlich bezahlst"
       ],
@@ -14950,6 +14988,12 @@
       ],
       "This offer won't be shown again.": [
         "Dieses Angebot wird nicht wieder angezeigt."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Upgrade deine Produktivität für nur ${ pricingTitle } mit ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Upgrade deinen Speicherplatz für nur ${ pricingTitle } mit ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Beim Wechsel von einem Monats- zu einem Jahresabonnement."
@@ -14976,23 +15020,26 @@
       "Advanced threat protection": [
         "Erweiterter Bedrohungsschutz"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Mit Nicht-${ BRAND_NAME }-Benutzern zusammenarbeiten"
+      ],
       "Custom email domain": [
         "Eigene E-Mail-Domain"
+      ],
+      "Edit docs online": [
+        "Bearbeite Dokumente online"
       ],
       "Email addresses": [
         "E‐Mail‐Adressen"
       ],
+      "File version history (over 1 week)": [
+        "Dateiversionsverlauf (über 1 Woche)"
+      ],
       "Free": [
         "Kostenlos"
       ],
-      "Online document editor": [
-        "Editor für Onlinedokumente"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
       ],
       "Storage": [
         "Speicherplatz"
@@ -16430,6 +16477,61 @@
         "Auf ${ upsellPlanTitle } upgraden"
       ]
     },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Post-Quantum-Schutz wurde auf deinem Konto aktiviert, aber einige Vorgänge waren nicht erfolgreich: Das Generieren von Post-Quantum-Konto- und Adressschlüsseln ist fehlgeschlagen. Du kannst diese Schlüssel manuell unter den ${ encryptionAndKeysSettingsTitle }-Einstellungen generieren."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Post-Quantum-Schutz wurde auf deinem Konto aktiviert, aber einige Vorgänge waren nicht erfolgreich: Das Generieren von Post-Quantum-Adressschlüsseln für eine oder mehrere Adressen ist fehlgeschlagen. Du kannst diese Schlüssel manuell unter den ${ encryptionAndKeysSettingsTitle }-Einstellungen generieren."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Bitte aktualisiere **all deine mobilen ${ BRAND_NAME }-Apps** auf die neueste Version."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "Dadurch wird ein neuer Kontoschlüssel und ein neuer E-Mail-Verschlüsselungsschlüssel für jede Adresse generiert; diese werden verwendet, um zukünftige E-Mails und andere Daten zu verschlüsseln und zu entschlüsseln."
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "Schlüssel aktivieren und generieren"
+      ],
+      "Enable post-quantum protection": [
+        "Post-Quantum-Schutz aktivieren"
+      ],
+      "Enable post-quantum protection?": [
+        "Post-Quantum-Schutz aktivieren?"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "Aktivierung des Post-Quantum-Schutzes fehlgeschlagen. Versuche es später erneut."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Verstanden"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "Post-Quantum-Schutz wurde auf deinem Konto aktiviert."
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Generierung eines Post-Quantum-Kontoschlüssels"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "Generierung von Post-Quantum-Adressschlüsseln für jede Adresse"
+      ],
+      "Opting into post-quantum protection": [
+        "Aktivierung des Post-Quantum-Schutzes"
+      ]
+    },
     "Price": {
       "Free": [
         "Kostenlos"
@@ -16568,6 +16670,14 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Das Verifizieren deiner Telefonnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
+      ]
+    },
+    "Remark about a key type option": {
+      "Classic": [
+        "Klassisch"
+      ],
+      "Post-quantum": [
+        "Post-Quantum"
       ]
     },
     "Remove calendar section description": {
@@ -16736,8 +16846,8 @@
       "Retention period": [
         "Aufbewahrungsfrist"
       ],
-      "Retention rule": [
-        "Aufbewahrungsregel"
+      "Rule title": [
+        "Regeltitel"
       ],
       "Select product": [
         "Produkt auswählen"
@@ -20856,6 +20966,9 @@
       "Policies": [
         "Richtlinien"
       ],
+      "Post-quantum protection": [
+        "Post-Quantum-Schutz"
+      ],
       "Preview": [
         "Vorschau"
       ],
@@ -21199,8 +21312,17 @@
       "Upgrade plan": [
         "Abonnement upgraden"
       ],
+      "Upgrade to ${ planName }": [
+        "Auf ${ planName } upgraden"
+      ],
       "Upgrade your privacy": [
         "Verbessere deine Privatsphäre"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Upgrade deine Produktivität für ${ formattedPrice } mit ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Upgrade deinen Speicherplatz für ${ formattedPrice } mit ${ planName }"
       ],
       "Upload and share files": [
         "Dateien hochladen und teilen"

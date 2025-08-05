@@ -858,6 +858,9 @@
       "Upgrade": [
         "Opgradér"
       ],
+      "Upgrade for 200GB": [
+        "Opgradering til 200 GB"
+      ],
       "Upgrade now": [
         "Opgradér nu"
       ],
@@ -1117,6 +1120,9 @@
       "Encrypted password manager": [
         "Krypteret adgangskodehåndtering"
       ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Her er en eksklusiv gave for at fejre vores fælles rejse."
+      ],
       "High speed streaming with VPN": [
         "Streaming ved høj hastighed med VPN"
       ],
@@ -1317,6 +1323,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop app"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
@@ -1594,6 +1603,9 @@
       ],
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
+      ],
+      "Maybe later": [
+        "Måske senere"
       ],
       "Remind me later": [
         "Påmind mig senere"
@@ -2690,23 +2702,68 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } giver dig mulighed for at samarbejde med andre i et sikkert, krypteret miljø."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Tilføj mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til at se eller redigere."
+      ],
       "Automatically forward incoming email to another email address.": [
         "Videresend automatisk indkommende e-mails til en anden e-mailadresse."
+      ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Konfigurer dette først for at aktivere din organisation og tilpasse din e-mailadresse."
       ],
       "Connect your CRM, website, printers, and more.": [
         "Forbind din CRM, dit websted, dine printere og mere."
       ],
+      "Create groups you can email with a single address.": [
+        "Opret grupper, som du kan sende e-mails til med én enkelt adresse."
+      ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Tilgå nemt din e-mail og kalender på desktop og mobil."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synkroniser nemt filer til skyen fra din computer og få adgang til dem fra din mobilenhed."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Tilskynd til brug af to-faktor-godkendelse i din organisation for ekstra sikkerhed."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Sikr sikker adgang til organisationens data, selv hvis jeres team er fjernbaseret eller bruger offentligt WiFi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Sørg for førsteklasses sikkerhed for din konto med ${ PROTON_SENTINEL_NAME }-programmet."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Sørg for, at du stadig kan få adgang til din konto og data, selv hvis du mister din ${ BRAND_NAME }-adgangskode."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "For en smidig overgang til ${ BRAND_NAME }, importér dine data fra Google, Outlook og andre."
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Hjælp dit team med sikkert at lagre adgangskoder til følsomme forretnings- og klientoplysninger."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Giver dig mulighed for øjeblikkeligt at tilføje mødelinks til dine begivenhedsinvitationer."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Ingen i din organisation kan forbinde til delte servere."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Konfigurer konti for alle brugere, og inviter dem til at tilmelde sig ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkl synkronisering og planlægning med delte kalendere."
       ],
       "To start, give your organization a name.": [
         "Start med at give deres organisation et navn."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Brug denne vejledning for hurtigt at lade din organisation drage fordel af ${ BRAND_NAME }'s branchens førende kryptering og privatlivsøkosystem."
       ]
     },
     "Disable address prompt": {
@@ -4292,9 +4349,6 @@
       "add a recovery method": [
         "tilføj en gendannelsesmetode"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Tilføj endnu et lag af sikkerhed til din konto. Du skal bekræfte dig selv med 2FA, hver gang du logger på."
-      ],
       "Add domain": [
         "Tilføj domæne"
       ],
@@ -5456,6 +5510,9 @@
       "This file is too large to preview": [
         "Denne fil er for stor til forhåndsvisning"
       ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Dette er et navn eller kaldenavn for din organisation, som dine brugere vil se. Du kan ændre det når som helst."
+      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
       ],
@@ -5881,6 +5938,10 @@
         "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }.",
         "Du vil så blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }"
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Du har aktiveret videresendelse på ${ MAX_SYNC_PAID_USER } Gmail-adresse. For at tilføje endnu en skal du først deaktivere en af dem.",
+        "Du har aktiveret videresendelse på ${ MAX_SYNC_PAID_USER } Gmail-adresser. For at tilføje endnu en skal du først deaktivere en af dem."
+      ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Din ${ boldDiscountPercent } til ${ boldPlanTitle } er blevet anvendt"
       ],
@@ -5978,6 +6039,9 @@
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Hvordan sender man en kontant betaling?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Du kan finde instruktionerne i artiklen: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info for domain modal": {
@@ -6836,6 +6900,9 @@
       "Don't have access to your 2FA?": [
         "Har du ikke adgang til din 2FA?"
       ],
+      "Enforcing 2FA for organizations": [
+        "Gennemtvingelse af 2FA for organisationer"
+      ],
       "Forgot email?": [
         "Glemt e-mail?"
       ],
@@ -6898,6 +6965,9 @@
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
         "Sådan bruges ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Sådan bruges videresendelse af e-mail"
       ],
       "How to use Groups": [
         "Sådan bruger du grupper"
@@ -8313,12 +8383,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Få ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Få Drive Plus for kun ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Få Mail Plus for kun ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Tag imod tilbuddet"
       ],
@@ -8330,6 +8394,9 @@
       ],
       "Limited-time offer": [
         "Tidsbegrænset tilbud"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Tidsbegrænset tilbud, gælder din første måned"
       ],
       "Maybe later": [
         "Måske senere"
@@ -8343,9 +8410,6 @@
       "Save": [
         "Gem"
       ],
-      "Save 80% on your first month.": [
-        "Spar 80% på den første måned."
-      ],
       "Save big when you pay annually": [
         "Få stor besparelse ved at betale årligt"
       ],
@@ -8354,6 +8418,12 @@
       ],
       "This offer won't be shown again.": [
         "Dette tilbud vil ikke blive vist igen."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Opgradér din produktivitet for kun ${ pricingTitle } med ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Opgradér din lagerplads for kun ${ pricingTitle } med ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Når du skifter fra et måndeligt til et årligt abonnement."
@@ -8380,23 +8450,26 @@
       "Advanced threat protection": [
         "Avanceret trusselsbeskyttelse"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Samarbejd med ikke-${ BRAND_NAME }-brugere"
+      ],
       "Custom email domain": [
         "Tilpasset e-maildomæne"
+      ],
+      "Edit docs online": [
+        "Redigér dokumenter online"
       ],
       "Email addresses": [
         "E-mailadresser"
       ],
+      "File version history (over 1 week)": [
+        "Filversionshistorik (over 1 uge)"
+      ],
       "Free": [
         "Gratis"
       ],
-      "Online document editor": [
-        "Online tekstbehandler"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Gendan tidligere filversioner"
       ],
       "Storage": [
         "Lagerplads"
@@ -8414,6 +8487,9 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " besøg vores ${ helpCenterLink } eller ${ contactSupportLink }."
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Annullér til enhver tid inden ${ cancelDate }."
       ],
@@ -8945,6 +9021,9 @@
       ],
       "Business Number": [
         "Forretningsnummer"
+      ],
+      "EIN": [
+        "Momsnummer"
       ],
       "VAT number": [
         "Momsnummer"
@@ -11833,11 +11912,20 @@
       "Upgrade complete!": [
         "Opgradering udført!"
       ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Opgradér din netværksbeskyttelse med dedikerede servere"
       ],
       "Upgrade your privacy": [
         "Opgradér dit privatlivs fred"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Opgrader din produktivitet for ${ formattedPrice } med ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Opgradér din lagerplads for ${ formattedPrice } med ${ planName }"
       ],
       "Upload and share files": [
         "Upload og del filer"

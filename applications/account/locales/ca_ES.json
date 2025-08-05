@@ -275,7 +275,7 @@
         "Color"
       ],
       "Compare all plans": [
-        "Compareu tots els plans"
+        "Compara tots els plans"
       ],
       "Compare plans": [
         "Compareu els plans"
@@ -479,7 +479,7 @@
         "Elimineu el vostre compte"
       ],
       "Delete “${ label.Name }”": [
-        "Suprimeix «${ label.Name }»"
+        "Elimina «${ label.Name }»"
       ],
       "Deleting folder": [
         "S'està eliminant la carpeta"
@@ -651,6 +651,9 @@
       ],
       "Enable multi-user support": [
         "Activar suport multiusuari"
+      ],
+      "Enable post-quantum protection": [
+        "Habiliteu la protecció postquàntica"
       ],
       "Encrypt and export": [
         "Xifra i exporta"
@@ -1459,6 +1462,9 @@
       "Upgrade": [
         "Millora"
       ],
+      "Upgrade for 200GB": [
+        "Milloreu el pla per a 200 GB"
+      ],
       "Upgrade now": [
         "Millora ara"
       ],
@@ -2222,7 +2228,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 8.500 servidors en més de 110 països, 10 dispositius, estríming d'alta velocitat, bloquejador d'anuncis i protecció contra programari maliciós, VPN Accelerator i més."
+        "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 8.500 servidors en més de 110 països, 10 dispositius, estríming d'alta velocitat, bloquejador d'anuncis i protecció contra programari maliciós, VPN Accelerator, etc."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
@@ -2288,7 +2294,7 @@
     },
     "Blog": {
       "${ VPN_APP_NAME }'s no-logs policy confirmed by an external audit": [
-        "Política de no registres de ${ VPN_APP_NAME } VPN confirmada per una auditoria externa."
+        "Política de no registres de ${ VPN_APP_NAME } confirmada per una auditoria externa."
       ],
       "**Streaming** is included in your subscription.": [
         "L'**estríming** està inclòs a la vostra subscripció."
@@ -2327,7 +2333,7 @@
         "Protegiu tota la vostra casa amb 1 dispositiu"
       ],
       "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN] }.": [
-        "Aprofiteu totes les principals plataformes d'estríming amb ${ PLAN_NAMES[PLANS.VPN] }."
+        "Feu estríming de les principals plataformes amb ${ PLAN_NAMES[PLANS.VPN] }."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Aquest article s'ha actualitzat per incloure els protocols VPN WireGuard i Stealth."
@@ -6799,6 +6805,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Entenc que ja no podré iniciar la sessió des de versions anteriors de les aplicacions mòbils de ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "aplicació web"
@@ -7865,8 +7876,8 @@
       "Add a recovery phone number": [
         "Afegeix un número de telèfon de recuperació"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Afegiu una capa de seguretat addicional al vostre compte. Haureu de verificar-vos amb l'autenticació de doble factor (2FA) cada vegada que inicieu la sessió."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Afegiu una altra capa de seguretat al compte. Haureu de verificar-vos amb 2FA cada vegada que inicieu la sessió. Recomanem utilitzar ${ protonAuthenticatorDownloadLink } per emmagatzemar els vostres codis de 2FA."
       ],
       "Add domain": [
         "Afegeix un domini"
@@ -8147,6 +8158,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "En habilitar la protecció postquàntica, es generaran claus resistents als ordinadors quàntics per al vostre compte."
       ],
       "By leaving now, changes may not be saved": [
         "Si surt ara, és possible que els canvis no es desin"
@@ -8606,6 +8620,9 @@
       "Example: ${ spfExample }": [
         "Exemple: ${ spfExample }"
       ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "Els reenviaments de correus electrònics xifrats d'extrem a extrem existents s'hauran de tornar a activar manualment a les preferències a **${ autoReplySettingsTitle }**."
+      ],
       "Expired": [
         "Caducat"
       ],
@@ -8718,7 +8735,7 @@
         "S'ha eliminat el grup."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Agrupeu correus electrònics de la mateixa conversa a la vostra safata d'entrada o mostreu-los separadament."
+        "Agrupeu correus electrònics en la mateixa conversa a la safata d'entrada o mostreu-los separadament."
       ],
       "Groups": [
         "Grups"
@@ -9786,6 +9803,9 @@
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Aviat estarà disponible el suport per al monitoratge de dominis personalitzats i d'adreces electròniques que no siguin de ${ BRAND_NAME }."
       ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "S'ha habilitat el suport de claus postquàntiques per al vostre compte."
+      ],
       "support team": [
         "equip de suport"
       ],
@@ -10021,7 +10041,7 @@
         "Això esborrarà l'inici de sessió únic (SSO) per a ${ boldDomainName }."
       ],
       "This will remove your access to all connected services and delete all of your data, including contacts, attachments, events, passwords, and files.": [
-        "Això suprimirà el vostre accés a tots els serveis connectats i totes les dades, incloent-hi contactes, adjunts, esdeveniments, contrasenyes i fitxers."
+        "Això suprimirà el vostre accés a tots els serveis connectats i eliminarà totes les dades, incloent-hi contactes, adjunts, esdeveniments, contrasenyes i fitxers."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Això reemplaçarà la vostra contrasenya temporal. Ho utilitzareu per accedir al vostre compte ${ BRAND_NAME } en el futur."
@@ -10733,9 +10753,6 @@
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Els reenviaments xifrats d'extrem a extrem existents cap a altres usuaris es posaran en pausa. Els podeu tornar a activar manualment a la configuració de «${ autoReplySettingsTitle }»."
-      ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
       ],
@@ -11007,32 +11024,29 @@
       "Generate key": [
         "Genera una clau"
       ],
-      "Generating key failed. Please try again later.": [
-        "No s'ha pogut generar la clau. Torneu-ho a provar més tard."
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Si heu generat aquesta clau perquè sospiteu que l'anterior s'ha vist compromesa, marqueu-la com a compromesa a les preferències."
       ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Si esteu generant una clau nova perquè creieu que la clau existent s'ha vist compromesa, marqueu-la com a compromesa després de generar aquesta."
+      "Key generation failed, please try again later.": [
+        "Ha fallat la generació de la clau, torneu-ho a provar més tard."
       ],
       "Key successfully generated.": [
         "S'ha generat la clau."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Nota: ja teniu una clau amb el mateix algorisme per a aquesta adreça. A menys que aquesta clau s'hagi compromès, pot ser que no sigui necessari generar-ne una de nova i fer-ho pot alentir el vostre compte."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Nota: ja teniu una clau amb el mateix algorisme per a aquest usuari. A menys que aquesta clau s'hagi compromès, pot ser que no sigui necessari generar-ne una nova i fer-ho pot alentir el vostre compte."
+      "New key generated": [
+        "S'ha generat una nova clau"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Això generarà una nova clau, que s'utilitzarà per xifrar futures dades de contacte, claus de xifratge de correu electrònic i altres dades."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Això generarà una clau nova que servirà per xifrar futurs correus electrònics, entre altres dades."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Això generarà una nova clau que servirà per xifrar futurs correus electrònics i altres dades, per a **${ emailAddress }**."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "Ja disposeu d'una clau d'aquest tipus. Llevat que la clau hagi estat compromesa, generar **una nova clau podria alentir el compte**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Compatibilitat"
-      ],
       "Compromised": [
         "Compromesa"
       ],
@@ -11053,6 +11067,19 @@
       ],
       "Primary": [
         "Principal"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Més ràpid"
+      ],
+      "Slower, but stronger long-term security": [
+        "Més lent, però amb una seguretat a llarg termini més sòlida."
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Seleccioneu el tipus de clau"
       ]
     },
     "Keyboard shortcut name": {
@@ -11291,9 +11318,6 @@
       "Export public key": [
         "Exporta la clau pública"
       ],
-      "Make primary": [
-        "Marca com a principal"
-      ],
       "Mark compromised": [
         "Marca com a compromès"
       ],
@@ -11305,6 +11329,9 @@
       ],
       "Mark obsolete": [
         "Marca com a obsolet"
+      ],
+      "Use for encryption and signing": [
+        "Utilitzeu-la per xifratge i signatura"
       ]
     },
     "Knowledge base link label": {
@@ -11898,7 +11925,7 @@
         "Amaga la contrasenya"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
-        "Entenc que haig d'associar aquesta adreça de correu-e a un altre compte immediatament, per a evitar la pèrdua de l'adreça de forma permanent."
+        "Entenc que he d'afegir aquesta adreça de correu electrònic a l'altre compte immediatament per a evitar perdre-la de manera permanent."
       ],
       "I understand the risk": [
         "Entenc el risc"
@@ -11956,6 +11983,9 @@
       ],
       "Key": [
         "Clau"
+      ],
+      "Key strength": [
+        "Fortalesa de la clau"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Drecera de teclat: ${ shortcut }"
@@ -14841,12 +14871,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obteniu ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Obteniu Drive Plus per només ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Obteniu Mail Plus per només ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Aconseguiu l'oferta"
       ],
@@ -14858,6 +14882,9 @@
       ],
       "Limited-time offer": [
         "Oferta per temps limitat"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta per temps limitat, vàlida per al vostre primer mes"
       ],
       "Maybe later": [
         "Potser després"
@@ -14871,9 +14898,6 @@
       "Save": [
         "Estalvieu"
       ],
-      "Save 80% on your first month.": [
-        "Estalvieu un 80% en el vostre primer mes."
-      ],
       "Save big when you pay annually": [
         "Estalvieu de debò pagant anualment!"
       ],
@@ -14882,6 +14906,12 @@
       ],
       "This offer won't be shown again.": [
         "Aquesta oferta no es tornarà a mostrar."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Milloreu la vostra productivitat per només ${ pricingTitle } amb ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Milloreu el vostre emmagatzematge per només ${ pricingTitle } amb ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Quan canvieu d'una subscripció mensual a una anual."
@@ -14908,23 +14938,26 @@
       "Advanced threat protection": [
         "Protecció avançada contra amenaces"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Col·laboreu amb usuaris que no ho siguin de ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domini de correu electrònic personalitzat"
+      ],
+      "Edit docs online": [
+        "Editeu documents en línia"
       ],
       "Email addresses": [
         "Adreces de correu electrònic"
       ],
+      "File version history (over 1 week)": [
+        "Historial de versions del fitxer (més d\"1 setmana)"
+      ],
       "Free": [
         "Gratuït"
       ],
-      "Online document editor": [
-        "Editor de documents en línia"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recupera versions anteriors del fitxer"
       ],
       "Storage": [
         "Emmagatzematge"
@@ -14996,7 +15029,7 @@
         "La subscripció completa a ${ planTitle } comença el ${ boldEndDate }."
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "Podreu utilitzar el ${ planTitle } de manera gratuita fins que finalitzi el període de prova."
+        "Podreu utilitzar ${ planTitle } de manera gratuïta fins que finalitzi el període de prova."
       ]
     },
     "Option": {
@@ -15716,7 +15749,7 @@
         "per començar a utilitzar ${ PASS_APP_NAME } al vostre telèfon."
       ],
       "Unlimited logins, notes, credit cards and more": [
-        "Nombre il·limitat d'inicis de sessió, notes, targetes de crèdit i més"
+        "Nombre il·limitat d'inicis de sessió, notes, targetes de crèdit, etc."
       ],
       "Updating your account": [
         "S'està actualitzant el compte"
@@ -16308,7 +16341,7 @@
         "Tots els productes prèmium de ${ BRAND_NAME } s'inclouen a Duo."
       ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
-        "Ideal si necessiteu ${ maxSpace } d'emmagatzematge i per les parelles."
+        "El millor si necessiteu ${ maxSpace } d'emmagatzematge i per a les parelles."
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Emmagatzematge al núvol i compartició de fitxers, tot amb la seguretat del xifratge d'extrem a extrem."
@@ -16360,6 +16393,61 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Milloreu el vostre pla a ${ upsellPlanTitle }"
+      ]
+    },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "S'ha habilitat la protecció postquàntica al vostre compte, però algunes operacions no han reeixit: la generació de claus postquàntiques de compte i adreça ha fallat. Podeu generar manualment aquestes claus a les preferències de ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "S'ha habilitat la protecció postquàntica al vostre compte, però algunes operacions no han reeixit: la generació de claus postquàntiques d'adreça per a una o més adreces ha fallat. Podeu generar manualment aquestes claus a les preferències de ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Si us plau, actualitzeu **totes les vostres aplicacions mòbils de ${ BRAND_NAME }** a la darrera versió."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "Això generarà una nova clau de compte i una nova clau de xifratge de correu electrònic per a cada adreça; les quals s'utilitzaran per a xifrar i desxifrar futurs correus electrònics i altres dades."
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "Habiliteu i genereu claus"
+      ],
+      "Enable post-quantum protection": [
+        "Habiliteu la protecció postquàntica"
+      ],
+      "Enable post-quantum protection?": [
+        "Voleu habilitar la protecció postquàntica?"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "L'habilitació de la protecció postquàntica ha fallat. Torneu-ho a provar més tard."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Entesos"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "S'ha habilitat la protecció postquàntica al vostre compte!"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "S'està generant una clau de compte postquàntica"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "S'estan generant claus d'adreça postquàntiques per a cada adreça"
+      ],
+      "Opting into post-quantum protection": [
+        "Opteu per la protecció postquàntica"
       ]
     },
     "Price": {
@@ -16502,6 +16590,14 @@
         "Verificar el vostre número de telèfon augmenta la seguretat del compte i permet opcions addicionals per a la recuperació."
       ]
     },
+    "Remark about a key type option": {
+      "Classic": [
+        "Clàssic"
+      ],
+      "Post-quantum": [
+        "Postquàntic"
+      ]
+    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "En anul·lar la subscripció, ja no tindreu accés a aquest calendari. Tots els esdeveniments d'aquest calendari s'eliminaran del vostre compte, però romandran a l'enllaç públic original."
@@ -16581,7 +16677,7 @@
         "Elimineu-ho tot"
       ],
       "Purge deleted": [
-        "Elimineu els elements esborrats"
+        "Purga els elements eliminats"
       ],
       "Save changes": [
         "Deseu els canvis"
@@ -16653,8 +16749,8 @@
       "Retention period": [
         "Període de conservació"
       ],
-      "Retention rule": [
-        "Regla de conservació"
+      "Rule title": [
+        "Títol de la norma"
       ],
       "Select product": [
         "Seleccioneu un producte"
@@ -17684,7 +17780,7 @@
         "${ VPN_CONNECTIONS } connexions VPN d'alta velocitat"
       ],
       "/user": [
-        "per usuari"
+        "/usuari"
       ],
       "30 custom email addresses": [
         "30 adreces de correu electrònic personalitzades"
@@ -17726,7 +17822,7 @@
         "Continua amb ${ PLAN_NAMES[plan] }"
       ],
       "Continue with the free plan": [
-        "Continueu amb el pla gratuït"
+        "Continua amb el pla gratuït"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Creeu un compte de ${ BRAND_NAME }"
@@ -17844,7 +17940,7 @@
         "Compartiu fitxers, fotos i documents de manera segura"
       ],
       "Select ${ title }": [
-        "Seleccioneu ${ title }"
+        "Selecciona ${ title }"
       ],
       "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
         "Seleccioneu un servei i gaudiu de la versió prèmium de franc durant 14 dies. No cal targeta de crèdit."
@@ -18179,7 +18275,7 @@
         "Feu més amb ${ BRAND_NAME }"
       ],
       "Get unlimited aliases": [
-        "Obtingueu un nombre il·limitat d'àlies"
+        "Obteniu un nombre il·limitat d'àlies"
       ],
       "Go to subscription plans": [
         "Ves als plans de subscripció"
@@ -18191,7 +18287,7 @@
         "Augmenteu el vostre emmagatzematge"
       ],
       "Keep passwords safe": [
-        "Mantingueu les vostres contrasenyes segures"
+        "Manteniu les vostres contrasenyes segures"
       ],
       "Unblock streaming content": [
         "Tingueu accés al contingut en estríming."
@@ -18280,13 +18376,13 @@
         "Obtingueu 500 GB per emmagatzemar de manera segura tots els vostres fitxers i fotos"
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
-        "Obtingueu accés a servidors VPN ultraràpids en més de 110 països"
+        "Obteniu accés a servidors VPN ultraràpids en més de 110 països"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "Obteniu un pla que ho inclou tot: ${ BRAND_NAME } Unlimited"
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
-        "Obtingueu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
+        "Obteniu un nombre il·limitat d'àlies per protegir la vostra identitat i reduir el correu brossa"
       ],
       "Keep your passwords safe and organized in multiple vaults ": [
         "Guardeu les vostres contrasenyes de manera segura i organitzada en diverses caixes fortes. "
@@ -20438,7 +20534,7 @@
         "Per Windows"
       ],
       "Forgot password": [
-        "Heu oblidat la contrasenya."
+        "Contrasenya oblidada"
       ],
       "Forgot recovery method": [
         "Oblideu el mètode de recuperació"
@@ -20759,6 +20855,9 @@
       "Policies": [
         "Polítiques"
       ],
+      "Post-quantum protection": [
+        "Protecció postquàntica"
+      ],
       "Preview": [
         "Vista prèvia"
       ],
@@ -20943,7 +21042,7 @@
         "Configureu el vostre compte familiar"
       ],
       "Set up your organization": [
-        "Configureu la vostra organització"
+        "Configuració de la vostra organització"
       ],
       "Set your password": [
         "Establiu la vostra contrasenya"
@@ -21102,8 +21201,17 @@
       "Upgrade plan": [
         "Millora el pla"
       ],
+      "Upgrade to ${ planName }": [
+        "Milloreu el pla a ${ planName }"
+      ],
       "Upgrade your privacy": [
         "Milloreu la vostra privacitat"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Milloreu la vostra productivitat per ${ formattedPrice } amb ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Milloreu el vostre emmagatzematge per ${ formattedPrice } amb ${ planName }"
       ],
       "Upload and share files": [
         "Carregueu i compartiu fitxers"
@@ -21208,7 +21316,7 @@
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"
       ],
       "Your ${ planName } subscription has started": [
-        "La vostra subscripció a ${ planName } ja està activa."
+        "La subscripció a ${ planName } ha començat"
       ],
       "Your calendar link": [
         "Enllaç del vostre calendari"
@@ -21448,7 +21556,7 @@
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
-        "Els membres que no utilitzin l'autenticació 2FA rebran un correu-e demanant que ho habilitin com més aviat millor. Això exclou als usuaris amb inici d'un sol cop."
+        "Els membres que no utilitzin l'autenticació 2FA rebran un correu electrònic per demanar-los que l'habilitin com més aviat millor. Els usuaris de l'inici de sessió únic no rebran el recordatori."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Els missatges a la carpeta d'Enviats o Esborranys continuaran apareixent a aquestes carpetes, fins i tot si els moveu a una altra carpeta."
