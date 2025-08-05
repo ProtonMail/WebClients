@@ -13,7 +13,7 @@ import type { MailStore } from 'proton-mail/store/store';
 
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
 import { mergeMessages } from '../../../helpers/message/messages';
-import { render, tick } from '../../../helpers/test/render';
+import { mailTestRender, tick } from '../../../helpers/test/render';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import type { MessageViewRef } from '../MessageView';
 import MessageView from '../MessageView';
@@ -64,7 +64,7 @@ export const getMessage = (inputMessage: PartialMessageState = {}) => {
 export const setup = async (
     message: PartialMessageState | undefined,
     specificProps: Partial<MessageViewProps> = {},
-    renderOptions?: Parameters<typeof render>[1]
+    renderOptions?: Parameters<typeof mailTestRender>[1]
 ) => {
     const props = { ...defaultProps, ...specificProps };
 
@@ -73,7 +73,7 @@ export const setup = async (
         ref.current = refValue;
     };
 
-    const renderResult = await render(<MessageView ref={refCallback} {...props} />, {
+    const renderResult = await mailTestRender(<MessageView ref={refCallback} {...props} />, {
         ...renderOptions,
         onStore: (store) => {
             if (message) {

@@ -19,7 +19,7 @@ import {
     setupCryptoProxyForTesting,
 } from '../../../helpers/test/crypto';
 import { encryptMessage } from '../../../helpers/test/message';
-import { render } from '../../../helpers/test/render';
+import { mailTestRender } from '../../../helpers/test/render';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import MessageView from '../MessageView';
 import { addressID, labelID, messageID } from './Message.test.helpers';
@@ -98,7 +98,7 @@ describe('message trackers', () => {
             currentFolder: 'INBOX',
         };
 
-        await render(<MessageView {...props} />, {
+        await mailTestRender(<MessageView {...props} />, {
             preloadedState: {
                 mailSettings: getModelState(mailSettings),
                 addressKeys: getAddressKeyCache(getCompleteAddress({ ID: addressID }), [toKeys]),
