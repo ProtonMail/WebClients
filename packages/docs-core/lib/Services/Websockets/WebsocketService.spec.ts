@@ -154,13 +154,13 @@ describe('WebsocketService', () => {
     it('should encrypt updates', async () => {
       const encryptMock = (service.encryptMessage = jest.fn().mockResolvedValueOnce(new Uint8Array()))
 
-      await service.handleDocumentUpdateDebouncerFlush(document, new Uint8Array())
+      await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array())
 
       expect(encryptMock).toHaveBeenCalled()
     })
 
     it('should broadcast message', async () => {
-      await service.handleDocumentUpdateDebouncerFlush(document, new Uint8Array())
+      await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array())
 
       expect(connection.broadcastMessage).toHaveBeenCalled()
     })
@@ -168,7 +168,7 @@ describe('WebsocketService', () => {
     it('should add message to ack ledger', async () => {
       service.ledger.messagePosted = jest.fn()
 
-      await service.handleDocumentUpdateDebouncerFlush(document, new Uint8Array())
+      await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array())
 
       expect(service.ledger.messagePosted).toHaveBeenCalled()
     })
