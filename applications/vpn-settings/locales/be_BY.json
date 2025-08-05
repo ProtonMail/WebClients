@@ -867,6 +867,9 @@
       "Upgrade": [
         "Палепшыць"
       ],
+      "Upgrade for 200GB": [
+        "Палепшыць за 200 ГБ"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
       ],
@@ -1121,7 +1124,7 @@
     },
     "anniversary_2025": {
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ]
     },
     "anniversary_2025: Offer": {
@@ -1681,6 +1684,9 @@
       ],
       "Discover and set up features": [
         "Пазнаёміцца і наладзіць функцыі"
+      ],
+      "Maybe later": [
+        "Магчыма пазней"
       ],
       "Remind me later": [
         "Нагадаць мне пазней"
@@ -2838,7 +2844,7 @@
         "Для бясшвовага пераходу ў ${ BRAND_NAME } імпартуйце свае даныя з Google, Outlook і іншых сэрвісаў."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
-        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
+        "Атрымлівайце апавяшчэнні, калі адбываецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
@@ -2967,7 +2973,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Дапамажыце нам палепшыць наш сэрвіс"
+        "Дапамажыце палепшыць наш сэрвіс"
       ]
     },
     "Downgrade warning": {
@@ -4362,9 +4368,9 @@
       ],
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Знойдзена ${ itemsCount } прапанова. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
-        "Знойдзены ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
+        "Знойдзена ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Выкарыстоўвайце клавішы Уверх і Уніз, каб атрымаць доступ і прагледзець прапановы пасля ўводу. Націсніце Enter, каб пацвердзіць свой выбар або Escape, каб закрыць акно прапаноў."
@@ -4634,8 +4640,8 @@
       "add a recovery method": [
         "дададзены спосаб аднаўлення"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Дадайце яшчэ адзін слой абароны ў ваш уліковы запіс. Вам неабходна будзе пацвярджаць сваю асобу з дапамогай 2ФА пры кожным уваходзе."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Дадайце яшчэ адзін узровень бяспекі да вашага ўліковага запісу. Вам трэба будзе пацвярджаць сябе з дапамогай 2ФА кожны раз, калі вы ўваходзіце. Мы рэкамендуем выкарыстоўваць ${ protonAuthenticatorDownloadLink } для захавання вашых 2ФА кодаў."
       ],
       "Add domain": [
         "Дадаць дамен"
@@ -7726,7 +7732,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Атрымаць тарыфны план ${ planName } усяго за ${ planPrice }"
+        "Атрымайце ${ planName } усяго за ${ planPrice }"
       ]
     },
     "Member action": {
@@ -8378,7 +8384,7 @@
         "Абагуленае сховішча (да ${ n } асоб)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Мы сканіруем цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+        "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
       ]
     },
     "new_plans: feature highlight": {
@@ -8489,7 +8495,7 @@
         "Бясплатны стартавы ўліковы запіс распрацаваны для кожнага хто лічыць, што прыватнасць з'яўляецца неад'емнай часткай яго жыцця."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
-        "Неабмежаваная прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікаў."
+        "Неабмежаваная прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікі."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы выдаліце свой уліковы запіс, то згубіце гэту перавагу і пры гэтым паўторна вярнуцца на яго вы больш не зможаце, калі паспрабуеце стварыць новы ўліковы запіс."
@@ -9003,16 +9009,10 @@
         "Больш не паказваць гэту прапанову"
       ],
       "Get ${ BRAND_NAME } Unlimited": [
-        "Атрымайце ${ BRAND_NAME } Unlimited"
-      ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Атрымайце Drive Plus усяго за ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Атрымайце Mail Plus усяго за ${ pricingTitle }"
+        "Атрымаць ${ BRAND_NAME } Unlimited"
       ],
       "Get the deal": [
-        "Атрымаць прапанову"
+        "Скарыстацца прапановай"
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Апошняя магчымасць атрымаць скідку 80% на першы месяц падпіскі ${ plan }."
@@ -9022,6 +9022,9 @@
       ],
       "Limited-time offer": [
         "Часовая прапанова"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Прапанова абмежавана па часе і дзейнічае за ваш першы месяц"
       ],
       "Maybe later": [
         "Магчыма пазней"
@@ -9035,9 +9038,6 @@
       "Save": [
         "Эканомія"
       ],
-      "Save 80% on your first month.": [
-        "Зэканомце 80% у першы месяц."
-      ],
       "Save big when you pay annually": [
         "Эканомце больш пры гадавой аплаце"
       ],
@@ -9046,6 +9046,12 @@
       ],
       "This offer won't be shown again.": [
         "Гэта прапанова больш не будзе паказвацца."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Палепшыць вашу прадукцыйнасць усяго за ${ pricingTitle } з ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Палепшыць ваша сховішча ўсяго за ${ pricingTitle } з ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Пры пераходзе з памесячнай на гадавую падпіску."
@@ -9072,23 +9078,26 @@
       "Advanced threat protection": [
         "Пашыраная абарона ад пагроз"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Супрацоўніцтва з карыстальнікамі, якія не належаць да ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Карыстальніцкі дамен электроннай пошты"
+      ],
+      "Edit docs online": [
+        "Рэдагуйце дакументы ў інтэрнэце"
       ],
       "Email addresses": [
         "Адрасы электроннай пошты"
       ],
+      "File version history (over 1 week)": [
+        "Гісторыя версій файла (больш за 1 тыдзень)"
+      ],
       "Free": [
         "Бясплатна"
       ],
-      "Online document editor": [
-        "Воблачны рэдактар дакументаў"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Аднаўленне папярэдніх версій файла"
       ],
       "Storage": [
         "Сховішча"
@@ -10115,8 +10124,8 @@
       "Retention period": [
         "Перыяд захоўвання"
       ],
-      "Retention rule": [
-        "Правіла захоўвання"
+      "Rule title": [
+        "Загаловак правіла"
       ],
       "Select product": [
         "Выберыце прадукт"
@@ -10994,7 +11003,7 @@
     },
     "Spotlight": {
       "Get up to ${ credits } in credits.": [
-        "Атрымайце да ${ credits } у крэдыты."
+        "Атрымайце да ${ credits } у крэдытах."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запрасіць сяброў у ${ BRAND_NAME }"
@@ -11370,6 +11379,12 @@
         "${ ipAddresses } вылучаныя серверы",
         "${ ipAddresses } вылучаных сервераў",
         "${ ipAddresses } вылучаных сервераў"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальніка",
+        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальнікаў",
+        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальнікаў",
+        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальнікаў"
       ],
       "${ n } calendar per user": [
         "${ n } каляндар на карыстальніка",
@@ -11790,7 +11805,7 @@
         "Вы можаце працягваць атрымліваць асалоду ад усіх пераваг свайго тарыфнага плана да ${ boldedDate }."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
+        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Будуць дададзены крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых патрабаванняў, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
@@ -13020,11 +13035,20 @@
       "Upgrade complete!": [
         "Абнаўленне завершана!"
       ],
+      "Upgrade to ${ planName }": [
+        "Палепшыць да ${ planName }"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Палепшыце сваю сеткавую абарону з вылучанымі серверамі"
       ],
       "Upgrade your privacy": [
         "Палепшыце сваю прыватнасць"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Палепшыць вашу прадукцыйнасць за ${ formattedPrice } з ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Палепшыць ваша сховішча за ${ formattedPrice } з ${ planName }"
       ],
       "Upload and share files": [
         "Запампаваць і абагуліць файлы"
