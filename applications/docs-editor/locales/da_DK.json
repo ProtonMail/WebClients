@@ -215,6 +215,9 @@
       "Submit": [
         "Indsend"
       ],
+      "Table of contents": [
+        "Indholdsfortegnelse"
+      ],
       "Table options": [
         "Tilvalg i tabel"
       ],
@@ -439,6 +442,12 @@
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Der opstod en fejl ved behandlingen af opdateringer til dokumentet. Venligst siden og prøv igen."
+      ],
+      "Tried to import Sheet data into Lexical": [
+        "Forsøgte at importér regnearksdata i Lexical."
+      ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Ikke muligt at konvertere Word-dokument. Er det adgangskodebeskyttet? Hvis ja, så fjern adgangskoden og prøv igen."
       ]
@@ -484,6 +493,9 @@
         "${ usersTranslation } skriver...",
         "${ usersTranslation } skriver..."
       ],
+      "Alpha only experimental feature": [
+        "Eksperimentel funktion forbeholdt Alfa"
+      ],
       "Are you sure you want to delete this comment?": [
         "Er du sikker på, at du vil slette denne kommentar?"
       ],
@@ -504,6 +516,9 @@
       ],
       "Font size": [
         "Skriftstørrelse"
+      ],
+      "Headings you add to the document will appear here.": [
+        "Overskrifter, som du tilføjer dokumentet, vises her."
       ],
       "Highlight": [
         "Fremhæv"
@@ -549,8 +564,14 @@
       ]
     },
     "Label": {
+      "${ name } background color and white text color": [
+        "${ name } baggrundsfarve og hvid tekstfarve"
+      ],
       "${ name } text color and highlight": [
         "${ name } tekstfarve og fremhævning"
+      ],
+      "${ name } text color with no background": [
+        "${ name } tekstfarve uden baggrund"
       ],
       "Add link": [
         "Tilføj link"
@@ -638,6 +659,9 @@
       ],
       "Replace link": [
         "Erstat link"
+      ],
+      "Text and highlight color": [
+        "Tekst og fremhævelsesfarve"
       ],
       "with \"${ replaceWith }\"": [
         "med \"${ replaceWith }\""
