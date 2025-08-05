@@ -867,6 +867,9 @@
       "Upgrade": [
         "Actualizar"
       ],
+      "Upgrade for 200GB": [
+        "Actualizar por 200GB"
+      ],
       "Upgrade now": [
         "Actualizar ahora"
       ],
@@ -1707,6 +1710,9 @@
       ],
       "Discover and set up features": [
         "Descubra y configure las funcionalidades"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
       ],
       "Remind me later": [
         "Recordarme más tarde"
@@ -4588,8 +4594,8 @@
       "add a recovery method": [
         "agregar un método de recuperación"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Agregue una capa adicional de seguridad a la cuenta. Necesitará verificarse con una autenticación de dos factores cada vez que inicia sesión."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Añada otra capa de seguridad a su cuenta. Deberá verificarse con 2FA cada vez que inicie sesión. Recomendamos usar ${ protonAuthenticatorDownloadLink } para almacenar sus códigos 2FA."
       ],
       "Add domain": [
         "Agregar dominio"
@@ -8854,12 +8860,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtenga ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Obtenga Drive Plus por solo ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Obtenga Mail Plus por solo ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Obtener la oferta"
       ],
@@ -8871,6 +8871,9 @@
       ],
       "Limited-time offer": [
         "Oferta por tiempo limitado"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tiempo limitado, válida para su primer mes"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -8884,9 +8887,6 @@
       "Save": [
         "Ahorre"
       ],
-      "Save 80% on your first month.": [
-        "Ahorre un 80 % en su primer mes."
-      ],
       "Save big when you pay annually": [
         "Ahorre mucho más al pagar anualmente"
       ],
@@ -8895,6 +8895,12 @@
       ],
       "This offer won't be shown again.": [
         "Esta oferta no se mostrará nuevamente."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Mejore su productividad por solo ${ pricingTitle } con ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Mejore su almacenamiento por solo ${ pricingTitle } con ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Al cambiarse de una suscripción mensual a una anual"
@@ -8921,23 +8927,26 @@
       "Advanced threat protection": [
         "Protección avanzada contra amenazas"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colabore con usuarios que no son de ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Dominio de correo electrónico personalizado"
+      ],
+      "Edit docs online": [
+        "Edite documentos en línea"
       ],
       "Email addresses": [
         "Direcciones de correo electrónico"
       ],
+      "File version history (over 1 week)": [
+        "Historial de versiones del archivo (más de 1 semana)"
+      ],
       "Free": [
         "Gratuito"
       ],
-      "Online document editor": [
-        "Editor de documentos online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recuperar las versiones previas de los archivos"
       ],
       "Storage": [
         "Almacenamiento"
@@ -9847,6 +9856,9 @@
       "Delete rule": [
         "Eliminar la regla"
       ],
+      "Delete this scope": [
+        "Eliminar este ámbito"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -9854,7 +9866,7 @@
         "Purgar todo"
       ],
       "Purge deleted": [
-        "Purgar elementos eliminados"
+        "Purgar eliminados"
       ],
       "Save changes": [
         "Guardar cambios"
@@ -9862,7 +9874,7 @@
     },
     "retention_policy_2025_Confirmation": {
       "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
-        "${ strongText }, incluyendo los de la bandeja de entrada, Enviados y Borradores. Esto podría purgar mensajes que los usuarios esperan conservar. No es posible recuperar estos mensajes posteriormente."
+        "${ strongText }, incluyendo los de la Bandeja de Entrada, Enviados y Borradores. Esto podría purgar mensajes que los usuarios esperan conservar. No es posible recuperar estos mensajes posteriormente."
       ],
       "After ${ lifetime } day all messages will be deleted": [
         "Después de ${ lifetime } día, todos los mensajes serán eliminados",
@@ -9874,10 +9886,16 @@
         "La vida útil debe ser superior a ${ MIN_LIFETIME } días"
       ],
       "Lifetime must not be set for \"Retain All\" action": [
-        "No se debe establecer una duración por siempre para la acción \"Retener todo\""
+        "No se debe establecer una duración por siempre para la acción \"Retener Todo\""
       ],
       "Scope value is not valid": [
         "El valor del campo no es válido"
+      ],
+      "Scope value is required": [
+        "Se requiere el valor del ámbito"
+      ],
+      "Scopes cannot have the same value": [
+        "Los ámbitos no pueden tener el mismo valor"
       ]
     },
     "retention_policy_2025_Info": {
@@ -9889,13 +9907,13 @@
         "${ rule.Lifetime } días"
       ],
       "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
-        "Crea reglas de conservación para el tiempo que se deben conservar los datos de acuerdo con la política de conservación de datos de su organización. También activa la purga automática de datos expirados."
+        "Crea reglas de retención para el tiempo que se deben conservar los datos de acuerdo con la política de retención de datos de su organización. También activa la purga automática de datos expirados."
       ],
       "Forever": [
         "Para siempre"
       ],
       "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
-        "Incluye todos los mensajes en la bandeja de entrada, Enviados y todas las demás ubicaciones. Los mensajes eliminados no se pueden recuperar."
+        "Incluye todos los mensajes en la Bandeja de Entrada, Enviados y todas las demás ubicaciones. Los mensajes purgados no se pueden recuperar."
       ],
       "Removes messages already deleted by users.": [
         "Borra los mensajes ya eliminados por los usuarios."
@@ -9929,8 +9947,8 @@
       "Retention period": [
         "Período de retención"
       ],
-      "Retention rule": [
-        "Regla de conservación"
+      "Rule title": [
+        "Título de la regla"
       ],
       "Select product": [
         "Seleccionar producto"
@@ -12733,11 +12751,20 @@
       "Upgrade complete!": [
         "Se ha mejorado su plan."
       ],
+      "Upgrade to ${ planName }": [
+        "Actualizar a ${ planName }"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Mejore la protección de la red con servidores dedicados"
       ],
       "Upgrade your privacy": [
         "Mejore su privacidad"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Mejore su productividad por ${ formattedPrice } con ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Mejore su almacenamiento por ${ formattedPrice } con ${ planName }"
       ],
       "Upload and share files": [
         "Cargue y comparta archivos"

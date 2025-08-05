@@ -867,6 +867,9 @@
       "Upgrade": [
         "アップグレード"
       ],
+      "Upgrade for 200GB": [
+        "200GBへアップグレード"
+      ],
       "Upgrade now": [
         "今すぐアップグレード"
       ],
@@ -981,6 +984,9 @@
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } の ${ seats } シート"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ライティングアシスタントのシート"
@@ -1551,6 +1557,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } の不具合"
+      ],
       "Application problem": [
         "アプリケーションに関する問題"
       ],
@@ -1645,6 +1654,9 @@
       ],
       "Discover and set up features": [
         "機能の発見と設定"
+      ],
+      "Maybe later": [
+        "またあとで"
       ],
       "Remind me later": [
         "後で通知する"
@@ -3271,6 +3283,9 @@
       "Invalid ZIP code": [
         "郵便番号が正しくありません"
       ],
+      "Name already exists": [
+        "名前は既に存在します"
+      ],
       "Name does not match": [
         "名前が一致しません"
       ],
@@ -4325,6 +4340,9 @@
       "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
         "SSO以外のメンバーの${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } は、あなたの組織にサインインするために2要素認証を使用します。"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME }"
       ],
@@ -4472,8 +4490,8 @@
       "add a recovery method": [
         "回復手段の追加"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "アカウントに追加のセキュリティ層を追加します。サインインするたびに 2要素認証を行う必要があります。"
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "アカウントにセキュリティのレイヤーをもう1つ追加します。サインインするたびに、2要素認証でご自身を認証していただく必要があります。2要素認証コードを保存するには、${ protonAuthenticatorDownloadLink }をご利用いただくことをお勧めします。"
       ],
       "Add domain": [
         "ドメインを追加"
@@ -4804,6 +4822,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "ダウングレードすると、有料の ${ VPN_APP_NAME } サーバーとの接続が終了します。"
+      ],
+      "Download current logs": [
+        "現在のログをダウンロード"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "CSVテンプレートをダウンロードし、ユーザー情報を入力し、完成したCSVファイルをアップロードすると、そのユーザーのアカウントが作成されます。"
@@ -5455,6 +5476,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "価格には、適用されるすべてのサイクルベースの割引と、お客様のアカウントに保存されている有効期限内のクーポンが含まれています。"
+      ],
+      "Private AI assistant": [
+        "プライベート AI アシスタント"
       ],
       "Protected by Swiss privacy laws": [
         "スイスの個人情報保護法により保護されています。"
@@ -6723,6 +6747,9 @@
       ],
       "Import all messages": [
         "すべてのメッセージをインポート"
+      ],
+      "Include application logs in bug report": [
+        "バグレポートにアプリのログを含める"
       ],
       "Integrated 2FA authenticator": [
         "2要素認証システムの統合"
@@ -8663,12 +8690,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimitedを入手"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "たった${ pricingTitle }でDrive Plusを入手"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "たった${ pricingTitle }でMail Plusを入手"
-      ],
       "Get the deal": [
         "割引を入手"
       ],
@@ -8680,6 +8701,9 @@
       ],
       "Limited-time offer": [
         "期間限定オファー"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "期間限定オファー、最初の月のみ有効です"
       ],
       "Maybe later": [
         "またあとで"
@@ -8693,9 +8717,6 @@
       "Save": [
         "節約"
       ],
-      "Save 80% on your first month.": [
-        "最初の月は 80 %割引。"
-      ],
       "Save big when you pay annually": [
         "年払いで大幅に節約"
       ],
@@ -8704,6 +8725,12 @@
       ],
       "This offer won't be shown again.": [
         "このオファーは二度と表示されません。"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }で生産性をアップグレードできます。"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }でストレージをアップグレードできます。"
       ],
       "When you switch from a monthly to annual subscription.": [
         "月額プランから年間プランに切り替える場合。"
@@ -8730,23 +8757,26 @@
       "Advanced threat protection": [
         "高度な脅威保護"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "非${ BRAND_NAME } ユーザーとコラボレーション"
+      ],
       "Custom email domain": [
         "独自メールドメイン"
+      ],
+      "Edit docs online": [
+        "オンラインでドキュメントを編集"
       ],
       "Email addresses": [
         "メールアドレス"
       ],
+      "File version history (over 1 week)": [
+        "ファイルバージョン履歴(1週間以上)"
+      ],
       "Free": [
         "無料"
       ],
-      "Online document editor": [
-        "オンライン文書エディタ"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "以前のファイルを復元"
       ],
       "Storage": [
         "ストレージ"
@@ -9618,6 +9648,194 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "パスワードの変更のために、組織の管理権限が制限されています。次の操作は許可されなくなりました。"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "ユーザーまたはグループを追加"
+      ],
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Confirm": [
+        "確認"
+      ],
+      "Create retention rule": [
+        "保持ルールを作成"
+      ],
+      "Create rule": [
+        "ルールを作成"
+      ],
+      "Delete": [
+        "削除"
+      ],
+      "Delete rule": [
+        "ルールを削除"
+      ],
+      "Delete this scope": [
+        "このスコープを削除"
+      ],
+      "Edit": [
+        "編集"
+      ],
+      "Purge all": [
+        "すべて消去"
+      ],
+      "Purge deleted": [
+        "削除済みを消去"
+      ],
+      "Save changes": [
+        "変更を保存"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }には、受信トレイ、送信済み、および下書き内のメッセージも含まれます。これにより、お客様が保持を期待するメッセージが削除される可能性があります。これらのメッセージは後で回復することはできません。"
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "${ lifetime }日後にすべてのメッセージが削除されます"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "期間は${ MIN_LIFETIME }日よりも長く設定してください。"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "「すべて保持」アクションには、期間を設定できません。"
+      ],
+      "Scope value is not valid": [
+        "スコープ値が無効です"
+      ],
+      "Scope value is required": [
+        "スコープ値は必須です"
+      ],
+      "Scopes cannot have the same value": [
+        "スコープは同じ値を持つことはできません"
+      ]
+    },
+    "retention_policy_2025_Info": {
+      "${ remainingCount } more": [
+        "${ remainingCount } 以上"
+      ],
+      "${ rule.Lifetime } day": [
+        "${ rule.Lifetime }日"
+      ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "お客様の組織のデータ保持ポリシーに従い、データの保持期間に関するルールを作成します。これにより、有効期限切れデータの自動パージも可能になります。"
+      ],
+      "Forever": [
+        "永久"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "受信トレイ、送信済み、およびその他すべての場所のメッセージが含まれます。削除されたメッセージは回復できません。"
+      ],
+      "Removes messages already deleted by users.": [
+        "ユーザーによってすでに削除されたメッセージを削除します。"
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "保持ルール「${ formData.name }」が正常に更新されました"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "保持ルール「${ payload.Name }」が正常に作成されました"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "保持ルール「${ retentionRule.Name }」が正常に削除されました"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "保持期間の期限切れ後"
+      ],
+      "Applies to": [
+        "適用先"
+      ],
+      "days": [
+        "日"
+      ],
+      "Keep items forever": [
+        "アイテムを永久に保持する"
+      ],
+      "Keep messages forever": [
+        "メッセージを永久に保持する"
+      ],
+      "Retention period": [
+        "保持期間"
+      ],
+      "Rule title": [
+        "ルールのタイトル"
+      ],
+      "Select product": [
+        "製品を選択"
+      ],
+      "Set a duration": [
+        "期間を設定"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "組織の全員"
+      ],
+      "Group": [
+        "グループ"
+      ],
+      "Purge all messages": [
+        "すべてのメッセージを抹消"
+      ],
+      "Purge deleted messages only": [
+        "削除済みメッセージのみを削除"
+      ],
+      "Specific users or groups": [
+        "特定のユーザーまたはグループ"
+      ],
+      "User": [
+        "ユーザー"
+      ]
+    },
+    "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "例：未使用のメールボックスを整理"
+      ],
+      "Enter duration": [
+        "期間を入力"
+      ],
+      "Enter value": [
+        "値を入力してください"
+      ],
+      "Search for rule, users, period, action": [
+        "ルール、ユーザー、期間、アクションを検索"
+      ],
+      "Search policies": [
+        "ポリシーを検索"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "操作"
+      ],
+      "Applies to": [
+        "適用先"
+      ],
+      "Retention period": [
+        "保持期間"
+      ],
+      "Retention Rule": [
+        "保持ルール"
+      ]
+    },
+    "retention_policy_2025_TableRow": {
+      "No retention policies found": [
+        "保持ポリシーは見つかりませんでした"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "保持ルールを確認しますか？"
+      ],
+      "Create retention rule": [
+        "保持ルールを作成"
+      ],
+      "Edit retention rule": [
+        "保持ルールを編集"
       ]
     },
     "Role": {
@@ -10709,6 +10927,9 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } の専用サーバー"
       ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } は ${ maxLumo } ユーザーに対応"
+      ],
       "${ n } calendar per user": [
         "1 ユーザーあたり ${ n } 件のカレンダー"
       ],
@@ -11791,6 +12012,9 @@
       "Customize the number of IP addresses in your plan": [
         "プランのIPアドレス数のカスタマイズ"
       ],
+      "Data retention": [
+        "データ保持"
+      ],
       "Date": [
         "日付"
       ],
@@ -12277,11 +12501,20 @@
       "Upgrade complete!": [
         "アップグレード完了!"
       ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "専用サーバーでネットワークの保護を強化する"
       ],
       "Upgrade your privacy": [
         "あなたのプライバシーをアップグレード"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName }で${ formattedPrice }にて、お客様の生産性をアップグレードしましょう。"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "${ planName }をご利用いただくと、${ formattedPrice }でストレージをアップグレードできます。"
       ],
       "Upload and share files": [
         "ファイルのアップロードと共有"
@@ -12822,6 +13055,9 @@
       ],
       "It's you": [
         "あなたです"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "管理者のアクセスが保留中"
