@@ -220,7 +220,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const debouncer = new UpdateDebouncer(nodeMeta, this.logger, (event) => {
       if (event.type === UpdateDebouncerEventType.DidFlush) {
-        void this.handleDocumentUpdateDebouncerFlush(nodeMeta, event.mergedUpdate)
+        void this.prepareAndBroadcastDocumentUpdate(nodeMeta, event.mergedUpdate)
       } else if (event.type === UpdateDebouncerEventType.WillFlush) {
         this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Saving]>({
           type: WebsocketConnectionEvent.Saving,
@@ -345,7 +345,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     await record.connection.connect(undefined, options)
   }
 
-  async handleDocumentUpdateDebouncerFlushMsgSend(
+  async createAndBroadcastDocumentUpdateMessage(
     nodeMeta: NodeMeta | PublicNodeMeta,
     content: Uint8Array,
     metadata: EncryptionMetadata | AnonymousEncryptionMetadata,
@@ -373,7 +373,14 @@ export class WebsocketService implements WebsocketServiceInterface {
     void record.connection.broadcastMessage(binary, BroadcastSource.DocumentBufferFlush)
   }
 
-  async handleDocumentUpdateDebouncerFlush(
+  /**
+   * Prepares and broadcasts a document update message.
+   * 1. Compresses the update, if compression is enabled.
+   * 2. Encrypts the update
+   * 3. Splits the update into chunks if it exceeds the maximum size, if chunking is enabled.
+   * 4. Broadcasts the update message to the document's connection.
+   */
+  async prepareAndBroadcastDocumentUpdate(
     nodeMeta: NodeMeta | PublicNodeMeta,
     mergedUpdate: Uint8Array,
   ): Promise<void> {
@@ -426,29 +433,29 @@ export class WebsocketService implements WebsocketServiceInterface {
       })
       this.logger.info(`Created ${chunks.length} chunks from update`)
       for (const chunk of chunks) {
-        await this.handleDocumentUpdateDebouncerFlushMsgSend(nodeMeta, chunk, metadata)
+        await this.createAndBroadcastDocumentUpdateMessage(nodeMeta, chunk, metadata)
       }
     } else {
-      await this.handleDocumentUpdateDebouncerFlushMsgSend(nodeMeta, encryptedContent, metadata)
+      await this.createAndBroadcastDocumentUpdateMessage(nodeMeta, encryptedContent, metadata)
     }
 
     metrics.docs_document_updates_total.increment({})
   }
 
-  async sendDocumentUpdateMessage(
-    nodeMeta: NodeMeta | PublicNodeMeta,
-    rawContent: Uint8Array | Uint8Array[],
-  ): Promise<void> {
+  async sendDocumentUpdateMessage(nodeMeta: NodeMeta | PublicNodeMeta, rawContent: Uint8Array): Promise<void> {
     const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
       throw new Error('Connection not found')
     }
 
-    const { debouncer } = record
+    // In Sheets, debouncing and merging updates before sending causes issues
+    // with recalculating formulas, so we send updates immediately.
+    if (this.documentType === 'sheet') {
+      void this.prepareAndBroadcastDocumentUpdate(nodeMeta, rawContent)
+      return
+    }
 
-    debouncer.addUpdates(
-      Array.isArray(rawContent) ? rawContent.map((c) => new DecryptedValue(c)) : [new DecryptedValue(rawContent)],
-    )
+    record.debouncer.addUpdates([new DecryptedValue(rawContent)])
   }
 
   async sendEventMessage(
