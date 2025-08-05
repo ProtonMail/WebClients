@@ -17,6 +17,8 @@ export interface PreviousSubscriptionState extends UserState {
 type SliceState = PreviousSubscriptionState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
+export const defaultPreviousSubscriptionValue = { hasHadSubscription: false, previousSubscriptionEndTime: 0 };
+
 export const selectPreviousSubscription = (state: PreviousSubscriptionState) => state[name];
 
 const modelThunk = createAsyncModelThunk<Model, PreviousSubscriptionState, ProtonThunkArguments>(`${name}/fetch`, {
@@ -27,10 +29,15 @@ const modelThunk = createAsyncModelThunk<Model, PreviousSubscriptionState, Proto
             return { hasHadSubscription: true, previousSubscriptionEndTime: 0 };
         }
 
-        const response = await extraArgument.api<LatestSubscription>(getLatestCancelledSubscription());
-        const lastSubscriptionEnd = response.LastSubscriptionEnd || 0;
+        try {
+            const response = await extraArgument.api<LatestSubscription>(getLatestCancelledSubscription());
+            const previousSubscriptionEndTime = response.LastSubscriptionEnd || 0;
+            const hasHadSubscription = previousSubscriptionEndTime > 0;
 
-        return { hasHadSubscription: lastSubscriptionEnd > 0, previousSubscriptionEndTime: lastSubscriptionEnd };
+            return { hasHadSubscription, previousSubscriptionEndTime };
+        } catch (error) {
+            return defaultPreviousSubscriptionValue;
+        }
     },
     previous: previousSelector(selectPreviousSubscription),
 });
