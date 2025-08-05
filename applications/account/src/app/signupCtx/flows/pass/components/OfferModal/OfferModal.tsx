@@ -2,11 +2,11 @@ import { type FC, useId } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/src';
+import { Button } from '@proton/atoms';
 import { Icon, PassLogo } from '@proton/components';
-import { MaybeNull } from '@proton/pass/types';
-import { PLANS } from '@proton/payments/core/constants';
-import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import type { MaybeNull } from '@proton/pass/types';
+import { PLANS } from '@proton/payments';
+import { DARK_WEB_MONITORING_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import './OfferModal.scss';
 
@@ -27,7 +27,7 @@ export const OfferModal: FC<OfferModalProps> = ({ rawPrice, getPrice, onClose, o
     const features = [
         c('Label').t`Unlimited Hide-my-email aliases`,
         c('Label').t`Vault, item & secure link sharing`,
-        c('Label').t`Dark Web Monitoring`,
+        DARK_WEB_MONITORING_NAME,
     ];
 
     return (
