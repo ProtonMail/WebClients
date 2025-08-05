@@ -1061,6 +1061,9 @@
       "Upgrade": [
         "Cambiar de plan"
       ],
+      "Upgrade for 200GB": [
+        "Mejora por 200GB"
+      ],
       "Upgrade now": [
         "Cambiar de plan"
       ],
@@ -1692,6 +1695,9 @@
       ],
       "Discover and set up features": [
         "Descubre y configura las funcionalidades"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
       ],
       "Remind me later": [
         "Recordarme más tarde"
@@ -3650,6 +3656,12 @@
       ],
       "Validation error": [
         "Error de validación"
+      ],
+      "We were not able to load some of your shared items": [
+        "No pudimos cargar algunos de tus elementos compartidos"
+      ],
+      "We were not able to load some of your shared items details": [
+        "No pudimos cargar algunos de los detalles de tus elementos compartidos"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No puedes enviar un correo a más de ${ maxContacts } destinatario.",
@@ -9089,12 +9101,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtén ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Obtén Drive Plus por solo ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Obtén Mail Plus por solo ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Aprovéchate de la oferta"
       ],
@@ -9106,6 +9112,9 @@
       ],
       "Limited-time offer": [
         "Oferta por tiempo limitado"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tiempo limitado, válida para tu primer mes"
       ],
       "Maybe later": [
         "Quizás más tarde"
@@ -9119,9 +9128,6 @@
       "Save": [
         "Ahorra"
       ],
-      "Save 80% on your first month.": [
-        "Ahorra un 80 % en tu primer mes."
-      ],
       "Save big when you pay annually": [
         "¡Ahorra a lo grande pagando anualmente!"
       ],
@@ -9130,6 +9136,12 @@
       ],
       "This offer won't be shown again.": [
         "Esta oferta no se volverá a mostrar."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Mejora tu productividad por solo ${ pricingTitle } con ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Mejora tu almacenamiento por solo ${ pricingTitle } con ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Cuando cambias de una suscripción mensual a una anual."
@@ -9156,23 +9168,26 @@
       "Advanced threat protection": [
         "Protección avanzada contra amenazas"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colaborar con usuarios ajenos a ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Dominio de correo electrónico personalizado"
+      ],
+      "Edit docs online": [
+        "Edita documentos online"
       ],
       "Email addresses": [
         "Direcciones de correo electrónico"
       ],
+      "File version history (over 1 week)": [
+        "Historial de versiones del archivo (más de 1 semana)"
+      ],
       "Free": [
         "Gratuito"
       ],
-      "Online document editor": [
-        "Editor de documentos online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recuperar las versiones previas de los archivos"
       ],
       "Storage": [
         "Almacenamiento"
@@ -12032,6 +12047,9 @@
       "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
         "La verificación de la firma de las claves de cifrado por el creador original (${ claimedKeyAuthor }) quien creó el nodo, falló. La razón es: ${ nodeEntity.keyAuthor.error.error }"
       ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "La verificación de la firma del contenido del archivo por parte del usuario ${ claimedContentAuthor } que subió la última revisión falló. El motivo es: ${ activeRevision.contentAuthor.error.error }"
+      ],
       "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
         "La verificación de la firma del nombre por parte del autor (${ claimedNameAuthor }), quien lo estableció la última vez, falló. La razón es: ${ nodeEntity.nameAuthor.error.error }"
       ],
@@ -12070,6 +12088,15 @@
       ],
       "Upgrade complete!": [
         "Se ha mejorado tu plan."
+      ],
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Mejora tu productividad por ${ formattedPrice } con ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Mejora tu almacenamiento por ${ formattedPrice } con ${ planName }"
       ],
       "Upload and share files": [
         "Cargar y compartir archivos"
