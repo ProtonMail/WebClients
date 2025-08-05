@@ -1,3 +1,4 @@
+import { findAssignedSlot } from '@proton/pass/utils/dom/custom-elements';
 import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 import { eq } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
@@ -72,7 +73,12 @@ export const showPopover = safeCall((target: HTMLElement) => target.showPopover(
 export const hidePopover = safeCall((target: HTMLElement) => target.hidePopover());
 
 /** Finds the closest ancestor element that creates a modal context and captures focus */
-export const getClosestModal = (target: HTMLElement) => target.closest<HTMLElement>(':modal');
+export const getClosestModal = (target: HTMLElement) =>
+    target.closest<HTMLElement>(':modal') ??
+    (() => {
+        const slot = findAssignedSlot(target);
+        return slot?.closest<HTMLElement>(':modal');
+    })();
 
 /** Returns the topmost modal element that's currently active in the document */
 export const getActiveModal = () => lastItem(TopLayerManager.elements.filter((el) => el.matches(':modal'))) ?? null;
