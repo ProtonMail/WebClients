@@ -233,6 +233,31 @@ describe('MailSidebar', () => {
         expect(history.location.pathname).toBe(`/${folder.ID}`);
     });
 
+    it('should navigate to the inbox folder and set it as active', async () => {
+        setupTest();
+
+        const { history } = await mailTestRender(<MailSidebar {...props} />, {
+            preloadedState: {
+                categories: getModelState([...systemFolders]),
+            },
+        });
+
+        const folderElement = screen.getByTestId(`navigation-link:drafts`);
+        const inboxFolderElement = screen.getByTestId(`navigation-link:inbox`);
+
+        expect(history.location.pathname).toBe('/inbox');
+
+        fireEvent.click(folderElement);
+
+        expect(history.location.pathname).toBe(`/drafts`);
+
+        fireEvent.click(inboxFolderElement);
+
+        expect(inboxFolderElement).toHaveClass('navigation-link active');
+
+        expect(history.location.pathname).toBe('/inbox');
+    });
+
     it('should call event manager on click if already on label', async () => {
         setupTest();
 

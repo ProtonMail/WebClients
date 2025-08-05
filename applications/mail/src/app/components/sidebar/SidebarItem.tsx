@@ -16,7 +16,7 @@ import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { CATEGORY_LABELS_TO_ROUTE_SET, CUSTOM_VIEWS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
+import { CATEGORY_LABELS_TO_ROUTE_ARRAY, CUSTOM_VIEWS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -192,8 +192,12 @@ const SidebarItem = ({
                 title={tooltipText}
                 to={link}
                 isActive={(match, location) => {
-                    if (link === '/inbox') {
-                        return CATEGORY_LABELS_TO_ROUTE_SET.has(location.pathname) || location.pathname === '/inbox';
+                    // The inbox button should be active if the location starts with /inbox or starts with a category from the array
+                    if (labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
+                        return (
+                            location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`) ||
+                            CATEGORY_LABELS_TO_ROUTE_ARRAY.some((route) => location.pathname.startsWith(route))
+                        );
                     }
                     return !!match;
                 }}
