@@ -147,13 +147,20 @@ const HeaderMoreDropdown = ({
             dispatch(newsletterSubscriptionsActions.setSelectedElementId(undefined));
         }
 
-        await moveToFolder({
-            elements: [message.data || ({} as Element)],
-            sourceLabelID: fromFolderID,
-            destinationLabelID: folderID,
-            folderName,
-            sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
-        });
+        if (applyOptimisticLocationEnabled) {
+            await applyLocation({
+                elements: [message.data || ({} as Element)],
+                targetLabelID: folderID,
+            });
+        } else {
+            await moveToFolder({
+                elements: [message.data || ({} as Element)],
+                sourceLabelID: fromFolderID,
+                destinationLabelID: folderID,
+                folderName,
+                sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+            });
+        }
     };
 
     // TODO it is possible that this action triggers a move back in some cases.
