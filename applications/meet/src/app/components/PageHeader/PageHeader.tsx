@@ -53,7 +53,7 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
 
             <div className="flex gap-4 items-center">
                 <Button
-                    className="action-button rounded-full border-none"
+                    className="action-button rounded-full border-none hidden lg:block"
                     onClick={() => setBugReportModal(true)}
                     size="large"
                 >
