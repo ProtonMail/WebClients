@@ -11,6 +11,7 @@ import { serverEvent } from '../eventLoop';
 import type { InactiveKeysState } from '../inactiveKeys';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
+import type { KtState } from '../kt';
 import type { UserState } from '../user';
 import type { UserKeysState } from '../userKeys';
 import type { IncomingDelegatedAccessOutput, OutgoingDelegatedAccessOutput } from './interface';
@@ -22,7 +23,8 @@ export interface DelegatedAccessState
         AddressesState,
         UserKeysState,
         AddressKeysState,
-        InactiveKeysState {
+        InactiveKeysState,
+        KtState {
     [name]: {
         incomingDelegatedAccess: ModelState<IncomingDelegatedAccessOutput[]> & {
             ephemeral?: { [key: string]: boolean | undefined };

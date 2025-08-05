@@ -7,15 +7,14 @@ import { type CacheType, cacheHelper, createPromiseStore, previousSelector } fro
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
-import type { Address, DecryptedKey, User } from '@proton/shared/lib/interfaces';
+import type { Address, Api, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 import { isPrivate, isSelf } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
-import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
-import { type AddressesState, addressesThunk } from '../addresses';
-import type { KtState } from '../kt';
+import { addressKeysThunk } from '../addressKeys';
+import { addressesThunk } from '../addresses';
 import { getKTUserContext } from '../kt/actions';
-import { type UserState, userThunk } from '../user';
+import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import ValidationError from './ValidationError';
 import { generateDelegatedAccessToken, getEncryptedDelegatedAccessToken } from './crypto';
@@ -114,29 +113,18 @@ const getAddDelegatedAccessPayload = async ({
     };
 };
 
-const addDelegatedAccess = (data: AddDelegatedAccessPayload) => ({
-    url: 'account/v1/access',
-    method: 'post',
-    data,
-});
-
-export const addDelegatedAccessThunk = ({
+export const getAddDelegatedAccessPayloadThunk = ({
+    api,
     targetEmail,
     triggerDelay,
     types,
 }: {
+    api: Api;
     targetEmail: string;
     triggerDelay: number;
     types: DelegatedAccessTypeEnum;
-}): ThunkAction<
-    Promise<OutgoingDelegatedAccessOutput>,
-    KtState & UserState & AddressesState & AddressKeysState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
-    return async (dispatch, _, extra) => {
-        const api = getSilentApi(extra.api);
-
+}): ThunkAction<Promise<AddDelegatedAccessPayload>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
         const ktUserContext = await dispatch(getKTUserContext());
         const verifiedApiKeys = await getAndVerifyApiKeys({
             api,
@@ -163,14 +151,34 @@ export const addDelegatedAccessThunk = ({
             throw new Error('Missing primary address key');
         }
 
-        const payload = await getAddDelegatedAccessPayload({
+        return getAddDelegatedAccessPayload({
             source: { address: primaryAddress, key: primaryAddressKey },
             target: { email: targetEmail, key: targetEncryptionKey },
             triggerDelay,
             userKeys,
             types,
         });
+    };
+};
 
+const addDelegatedAccess = (data: AddDelegatedAccessPayload) => ({
+    url: 'account/v1/access',
+    method: 'post',
+    data,
+});
+
+export const addDelegatedAccessThunk = ({
+    targetEmail,
+    triggerDelay,
+    types,
+}: {
+    targetEmail: string;
+    triggerDelay: number;
+    types: DelegatedAccessTypeEnum;
+}): ThunkAction<Promise<OutgoingDelegatedAccessOutput>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        const api = getSilentApi(extra.api);
+        const payload = await dispatch(getAddDelegatedAccessPayloadThunk({ api, targetEmail, triggerDelay, types }));
         const { DelegatedAccess } = await api<{
             DelegatedAccess: OutgoingDelegatedAccessOutput;
         }>(addDelegatedAccess(payload));
@@ -179,6 +187,11 @@ export const addDelegatedAccessThunk = ({
     };
 };
 
+const editDelegatedAccess = (id: string, data: AddDelegatedAccessPayload) => ({
+    url: `account/v1/access/${id}`,
+    method: 'put',
+    data,
+});
 export const editDelegatedAccessThunk = ({
     outgoingDelegatedAccess,
     triggerDelay,
@@ -187,17 +200,22 @@ export const editDelegatedAccessThunk = ({
     outgoingDelegatedAccess: OutgoingDelegatedAccessOutput;
     triggerDelay: number;
     types: DelegatedAccessTypeEnum;
-}): ThunkAction<
-    Promise<OutgoingDelegatedAccessOutput>,
-    KtState & UserState & AddressesState & AddressKeysState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
-    return async (dispatch) => {
-        // Currently edit is the same operation as creation.
-        return dispatch(
-            addDelegatedAccessThunk({ targetEmail: outgoingDelegatedAccess.TargetEmail, triggerDelay, types })
+}): ThunkAction<Promise<OutgoingDelegatedAccessOutput>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        const api = getSilentApi(extra.api);
+        const payload = await dispatch(
+            getAddDelegatedAccessPayloadThunk({
+                api,
+                targetEmail: outgoingDelegatedAccess.TargetEmail,
+                triggerDelay,
+                types,
+            })
         );
+        const { DelegatedAccess } = await api<{
+            DelegatedAccess: OutgoingDelegatedAccessOutput;
+        }>(editDelegatedAccess(outgoingDelegatedAccess.DelegatedAccessID, payload));
+        dispatch(delegatedAccessActions.upsertOutgoingItem(DelegatedAccess));
+        return DelegatedAccess;
     };
 };
 
@@ -210,12 +228,7 @@ export const deleteDelegatedAccessThunk = ({
     id,
 }: {
     id: string;
-}): ThunkAction<
-    Promise<void>,
-    KtState & UserState & AddressesState & AddressKeysState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
+}): ThunkAction<Promise<void>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const api = getSilentApi(extra.api);
         await api(deleteDelegatedAccess(id));

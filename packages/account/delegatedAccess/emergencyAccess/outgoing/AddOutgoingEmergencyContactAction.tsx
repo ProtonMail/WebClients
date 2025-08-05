@@ -6,12 +6,12 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 import { useAddresses } from '../../../addresses/hooks';
 import ValidationError from '../../../delegatedAccess/ValidationError';
 import { useProtonDomains } from '../../../protonDomains/hooks';
 import { addDelegatedAccessThunk } from '../../outgoingActions';
+import { useDispatch } from '../../useDispatch';
 import {
     AddOutgoingEmergencyContactModal,
     type AddOutgoingEmergencyContactModalProps,
