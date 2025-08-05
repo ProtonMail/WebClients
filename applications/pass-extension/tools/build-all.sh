@@ -137,6 +137,11 @@ function bundle_extension_from_sources {
     RELEASE=true yarn run build:extension:ff >/dev/null
     cd dist
     zip -rqX "$ARTEFACTSDIR/release/$BUILD_ID-FF.zip" "."
+
+    # Remove config lock to not affect chromium builds
+    cd ..
+    yarn run config:clean >/dev/null
+
     on_leave "release/$BUILD_ID-FF.zip"
 }
 
