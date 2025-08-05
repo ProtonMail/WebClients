@@ -2,13 +2,13 @@ import { screen } from '@testing-library/react';
 
 import type { MessageErrors, MessageState } from '@proton/mail/store/messages/messagesTypes';
 
-import { render } from '../../../../helpers/test/helper';
+import { mailTestRender } from '../../../../helpers/test/helper';
 import ExtraErrors from './ExtraErrors';
 
 describe('Errors banner', () => {
     const setup = async (errors: MessageErrors) => {
         const message = { localID: 'localID', errors } as MessageState;
-        await render(<ExtraErrors message={message} />);
+        await mailTestRender(<ExtraErrors message={message} />);
         return screen.getByTestId('errors-banner');
     };
 

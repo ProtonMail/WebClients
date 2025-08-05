@@ -14,8 +14,8 @@ import {
     addApiKeys,
     addApiMock,
     apiKeys,
+    mailTestRender,
     parseFormData,
-    render,
     waitForNoNotification,
     waitForNotification,
 } from '../../../helpers/test/helper';
@@ -92,13 +92,13 @@ export const prepareMessage = (store: MailStore, messageProp: PartialMessageStat
 };
 
 export const renderComposer = async (
-    renderOptions: Parameters<typeof render>[1] & {
+    renderOptions: Parameters<typeof mailTestRender>[1] & {
         message: PartialMessageState;
     }
 ) => {
     const composerID = 'composer-test-id';
 
-    const renderResult = await render(<Composer {...props} composerID={composerID} />, {
+    const renderResult = await mailTestRender(<Composer {...props} composerID={composerID} />, {
         ...renderOptions,
         onStore: (store) => {
             prepareMessage(store, renderOptions.message, composerID);

@@ -6,7 +6,7 @@ import type { PublicKeyReference } from '@proton/crypto';
 import type { MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
-import { addApiMock, clearAll, generateKeys, render, tick } from '../../../../helpers/test/helper';
+import { addApiMock, clearAll, generateKeys, mailTestRender, tick } from '../../../../helpers/test/helper';
 import { contactEmails, message, setupContactsForPinKeys } from '../../../../helpers/test/pinKeys';
 import { refresh } from '../../../../store/contacts/contactsActions';
 import ExtraAskResign from './ExtraAskResign';
@@ -21,7 +21,7 @@ const getMessageVerification = (pinnedKeysVerified: boolean, pinnedKeys?: Public
 const setup = async (messageVerification: MessageVerification) => {
     const onResignContact = jest.fn();
 
-    const view = await render(
+    const view = await mailTestRender(
         <ExtraAskResign message={message} messageVerification={messageVerification} onResignContact={onResignContact} />
     );
 

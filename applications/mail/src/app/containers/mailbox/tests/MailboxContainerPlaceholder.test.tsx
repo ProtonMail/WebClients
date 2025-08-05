@@ -5,7 +5,7 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import type { OnboardingChecklistContext } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { render } from '../../../helpers/test/helper';
+import { mailTestRender } from '../../../helpers/test/helper';
 import MailboxContainerPlaceholder from '../MailboxContainerPlaceholder';
 
 jest.mock('../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
@@ -31,7 +31,7 @@ describe('MailboxContainerPlaceholder', () => {
             canDisplayChecklist: true,
         } as OnboardingChecklistContext);
 
-        await render(
+        await mailTestRender(
             <MailboxContainerPlaceholder
                 showPlaceholder={true}
                 welcomeFlag={false}
@@ -51,7 +51,7 @@ describe('MailboxContainerPlaceholder', () => {
             canDisplayChecklist: true,
         } as OnboardingChecklistContext);
 
-        await render(
+        await mailTestRender(
             <MailboxContainerPlaceholder
                 showPlaceholder={true}
                 welcomeFlag={false}
@@ -71,7 +71,7 @@ describe('MailboxContainerPlaceholder', () => {
             canDisplayChecklist: true,
         } as OnboardingChecklistContext);
 
-        await render(
+        await mailTestRender(
             <MailboxContainerPlaceholder
                 showPlaceholder={true}
                 welcomeFlag={false}
