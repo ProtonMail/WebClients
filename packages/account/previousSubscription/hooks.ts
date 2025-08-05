@@ -1,8 +1,6 @@
 import { createHooks } from '@proton/redux-utilities';
 
-import { previousSubscriptionThunk, selectPreviousSubscription } from './index';
-
-const defaultValue = { hasHadSubscription: false, previousSubscriptionEndTime: 0 };
+import { defaultPreviousSubscriptionValue, previousSubscriptionThunk, selectPreviousSubscription } from './index';
 
 const hooks = createHooks(previousSubscriptionThunk, selectPreviousSubscription);
 
@@ -13,7 +11,7 @@ const hooks = createHooks(previousSubscriptionThunk, selectPreviousSubscription)
  */
 export const usePreviousSubscription = () => {
     const [value, loading] = hooks.useValue();
-    return [value || defaultValue, loading] as const;
+    return [value || defaultPreviousSubscriptionValue, loading] as const;
 };
 
 export const useGetPreviousSubscriptionEnd = hooks.useGet;
