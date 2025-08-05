@@ -1,73 +1,102 @@
-import { useEffect, useState } from 'react';
+import { useCallback } from 'react';
 
-import type { NodeEntity } from '@proton/drive/index';
 import { MemberRole } from '@proton/drive/index';
 import { useDrive } from '@proton/drive/index';
 
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
-import { useUserSettings } from '../../store';
-import { useControlledSorting, useIsActiveLinkReadOnly } from '../../store/_views/utils';
+import { useDriveDocsFeatureFlag, useDriveDocsSheetsFF } from '../../store/_documents';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
+import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
-import { getNodeRole } from '../../utils/sdk/getNodeRole';
-import type { LegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
+import { useDeviceStore } from '../devices/devices.store';
+import { useFolderStore } from './useFolder.store';
 
-/**
- * useFolder provides data for folder view (file browser of folder).
- */
-export function useFolder(folderNodeUid: string, folderShareId: string) {
-    const [isLoading, setIsLoading] = useState(true);
-    const [nodes, setNodes] = useState<NodeEntity[]>([]);
-    const [folder, setFolder] = useState<NodeEntity>();
-    const [unsortedLegacyItems, setUnsortedLegacyItems] = useState<LegacyItem[]>([]);
+export function useFolder() {
+    const { setIsLoading, setError, reset, setItem, setFolder, setRole, setPermissions } = useFolderStore((state) => ({
+        setIsLoading: state.setIsLoading,
+        setError: state.setError,
+        reset: state.reset,
+        setItem: state.setItem,
+        setFolder: state.setFolder,
+        setRole: state.setRole,
+        setPermissions: state.setPermissions,
+    }));
     const { drive } = useDrive();
     const { handleError } = useSdkErrorHandler();
     const { activeFolder } = useActiveShare();
-    const [error, setError] = useState<EnrichedError | null>(null);
-    const [role, setRole] = useState<MemberRole>(MemberRole.Viewer);
+    const { isDocsEnabled } = useDriveDocsFeatureFlag();
+    const { isSheetsEnabled } = useDriveDocsSheetsFF();
+    const { devices } = useDeviceStore();
+    // const { navigateToRoot, navigateToLink } = useDriveNavigation();
 
-    /**
-     * TODO:WIP do i get these data from the sdk already?
-     * isReadOnly: Role === Viewer
-     * isRoot: !hasParent
-     * consider adding "canShare", "canEdit", "canUpload" instead
-     */
-    const {
-        isReadOnly: isActiveLinkReadOnly,
-        isRoot: isActiveLinkRoot,
-        isInDeviceShare: isActiveLinkInDeviceShare,
-        isLoading: isActiveLinkTypeLoading,
-    } = useIsActiveLinkReadOnly();
+    const handleNodeError = useCallback(
+        (error?: Error) => {
+            if (!error) {
+                return;
+            }
 
-    const { layout, sort, changeSort } = useUserSettings();
-    const {
-        sortedList: sortedLegacyItems,
-        sortParams,
-        setSorting,
-    } = useControlledSorting(unsortedLegacyItems, sort, changeSort);
+            const errorMessage = error
+                ? ('message' in error ? error.message : error) || 'Unknown node error'
+                : 'Unknown node error';
 
-    useEffect(() => {
-        const ac = new AbortController();
-        const fetch = async () => {
+            const enrichedError = new EnrichedError(errorMessage, {
+                tags: { component: 'drive-sdk' },
+                extra: { originalError: error },
+            });
+
+            setError(enrichedError);
+
+            if (error) {
+                // TODO:WIP check if the error codes are the same
+                // if (error.name === RESPONSE_CODE.INVALID_LINK_TYPE) {
+                //     navigateToLink(activeFolder.shareId, activeFolder.linkId, true);
+                // } else if (code === RESPONSE_CODE.NOT_FOUND || code === RESPONSE_CODE.INVALID_ID) {
+                //     navigateToRoot();
+                // } else {
+                //     handleError(error);
+                // }
+            }
+        },
+        [setError]
+    );
+    const load = useCallback(
+        async (folderNodeUid: string, folderShareId: string, ac: AbortController) => {
+            reset();
             setIsLoading(true);
-            try {
-                const { node } = getNodeEntity(await drive.getNode(folderNodeUid));
 
-                // TODO:WIP maybe use a reducer instead?
-                setRole(await getNodeRole(node, drive));
-                setFolder(node);
-                setUnsortedLegacyItems([]);
-                setNodes([]);
-                setError(null);
+            try {
+                const { node, errors } = getNodeEntity(await drive.getNode(folderNodeUid));
+                const error = Array.from(errors.values()).at(0);
+                handleNodeError(error as Error);
+                const legacyNode = await mapNodeToLegacyItem(node, activeFolder.shareId, drive);
+                const isDeviceRoot = !node.parentUid && devices.has(folderNodeUid);
+                const isDeviceFolder = isDeviceRoot || (legacyNode.rootUid && devices.has(legacyNode.rootUid));
+                const role = await getNodeEffectiveRole(node, drive);
+                const canEdit = role !== MemberRole.Viewer && !isDeviceRoot;
+
+                setFolder({
+                    ...legacyNode,
+                    isRoot: !node.parentUid,
+                });
+                setRole(role);
+                setPermissions({
+                    canEdit: canEdit,
+                    canShare: role === MemberRole.Admin,
+                    canCreateNode: canEdit,
+                    canCreateDocs: isDocsEnabled && canEdit && !isDeviceFolder,
+                    canCreateSheets: isSheetsEnabled && canEdit && !isDeviceFolder,
+                    canShareNode: role === MemberRole.Admin,
+                    canMove: canEdit,
+                    canRename: canEdit,
+                });
 
                 for await (const maybeNode of drive.iterateFolderChildren(folderNodeUid, ac.signal)) {
                     const { node } = getNodeEntity(maybeNode);
                     if (node) {
                         const legacyItem = await mapNodeToLegacyItem(maybeNode, folderShareId, drive);
-                        setUnsortedLegacyItems((rest) => [...rest, legacyItem]);
-                        setNodes((rest) => [...rest, node]);
+                        setItem(legacyItem);
                     }
                     if (!maybeNode.ok) {
                         /**
@@ -79,31 +108,28 @@ export function useFolder(folderNodeUid: string, folderShareId: string) {
                 }
             } catch (e) {
                 handleError(e);
-                const message = typeof e === 'string' ? e : (e as Error)?.message || 'Unknown error';
-                setError(new EnrichedError(message, { tags: { component: 'drive-sdk' }, extra: { e } }));
+                handleNodeError(e as Error);
             }
             setIsLoading(false);
-        };
-        void fetch();
-        return () => {
-            ac.abort();
-        };
-    }, [folderNodeUid]);
+        },
+        [
+            drive,
+            handleError,
+            handleNodeError,
+            isDocsEnabled,
+            isSheetsEnabled,
+            reset,
+            setFolder,
+            setIsLoading,
+            setItem,
+            setPermissions,
+            setRole,
+            activeFolder.shareId,
+            devices,
+        ]
+    );
 
     return {
-        isLoading: isLoading || isActiveLinkTypeLoading,
-        nodes,
-        // TODO:WIP consider renaming
-        legacyItems: sortedLegacyItems,
-        activeFolder,
-        layout,
-        sortParams,
-        setSorting,
-        folderName: folder?.name,
-        error,
-        role,
-        isActiveLinkReadOnly,
-        isActiveLinkRoot,
-        isActiveLinkInDeviceShare,
+        load,
     };
 }
