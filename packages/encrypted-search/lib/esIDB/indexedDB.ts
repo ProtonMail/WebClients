@@ -179,12 +179,6 @@ export const safelyWriteToIDBConditionally = async (
 
         return inputStoringOutcome ?? STORING_OUTCOME.SUCCESS;
     } catch (error: any) {
-        esSentryReport('[ES Debug] IDB Write Error:', {
-            error: error.message,
-            storeName,
-            itemId: value.ID,
-            errorName: error.name,
-        });
         if (error.name === 'QuotaExceededError') {
             // We check wheter the present item is newer than the oldest one,
             // in which case we remove the latter to make space for the former

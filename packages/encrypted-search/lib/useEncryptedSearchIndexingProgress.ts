@@ -6,7 +6,7 @@ import { contentIndexingProgress } from '@proton/encrypted-search/lib/esIDB';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { defaultESIndexingState as defaultESIndexingProgressState } from './constants';
-import { esSentryReport, estimateIndexingDuration, estimateIndexingProgress } from './esHelpers';
+import { estimateIndexingDuration, estimateIndexingProgress } from './esHelpers';
 import type { ESIndexingState, RecordProgress } from './models';
 
 /**
@@ -42,12 +42,6 @@ const useEncryptedSearchIndexingProgress = () => {
 
     const recordProgress: RecordProgress = async (newProgress, indexedDbRow, userID, isResumingIndexing) => {
         const currentRecordTimestamp = performance.now();
-
-        esSentryReport('[ES Debug] Recording progress:', {
-            newProgress,
-            indexedDbRow,
-            currentTimestamp: currentRecordTimestamp,
-        });
 
         /*
          * When the indexing starts automatically after a reload
