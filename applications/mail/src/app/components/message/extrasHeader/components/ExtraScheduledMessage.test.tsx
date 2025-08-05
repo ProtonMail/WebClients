@@ -7,7 +7,7 @@ import { addDays } from '@proton/shared/lib/date-fns-utc';
 
 import { formatDateToHuman } from '../../../../helpers/date';
 import { addApiMock, clearAll } from '../../../../helpers/test/helper';
-import { render } from '../../../../helpers/test/render';
+import { mailTestRender } from '../../../../helpers/test/render';
 import ExtraScheduledMessage from './ExtraScheduledMessage';
 
 const getMessage = (sendingDate: Date) => {
@@ -29,7 +29,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addDays(new Date(), 3);
         const message = getMessage(sendingDate);
 
-        await render(<ExtraScheduledMessage message={message} />);
+        await mailTestRender(<ExtraScheduledMessage message={message} />);
 
         const { dateString, formattedTime } = formatDateToHuman(sendingDate);
 
@@ -42,7 +42,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addDays(new Date(), 1);
         const message = getMessage(sendingDate);
 
-        await render(<ExtraScheduledMessage message={message} />);
+        await mailTestRender(<ExtraScheduledMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -59,7 +59,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addHours(aDayInTheMorningDate, 3);
         const message = getMessage(sendingDate);
 
-        await render(<ExtraScheduledMessage message={message} />);
+        await mailTestRender(<ExtraScheduledMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -77,7 +77,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addHours(new Date(Date.now()), 3);
         const message = getMessage(sendingDate);
 
-        await render(<ExtraScheduledMessage message={message} />);
+        await mailTestRender(<ExtraScheduledMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 
@@ -93,7 +93,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addSeconds(new Date(), 29);
         const message = getMessage(sendingDate);
 
-        await render(<ExtraScheduledMessage message={message} />);
+        await mailTestRender(<ExtraScheduledMessage message={message} />);
 
         screen.getByTestId('message:schedule-banner');
         screen.getByText(`This message will be sent shortly`);
@@ -107,7 +107,7 @@ describe('Scheduled messages banner', () => {
         const unscheduleCall = jest.fn();
         addApiMock(`mail/v4/messages/${message.data?.ID}/cancel_send`, unscheduleCall);
 
-        await render(<ExtraScheduledMessage message={message} />);
+        await mailTestRender(<ExtraScheduledMessage message={message} />);
 
         const { formattedTime } = formatDateToHuman(sendingDate);
 

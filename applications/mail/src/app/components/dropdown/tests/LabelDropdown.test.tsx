@@ -1,5 +1,4 @@
-import { fireEvent } from '@testing-library/react';
-import { act, getByTestId as getByTestIdDefault, screen } from '@testing-library/react';
+import { act, fireEvent, getByTestId as getByTestIdDefault, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
@@ -13,7 +12,7 @@ import type { Element } from 'proton-mail/models/element';
 
 import { addApiMock } from '../../../helpers/test/api';
 import { minimalCache } from '../../../helpers/test/cache';
-import { render } from '../../../helpers/test/render';
+import { mailTestRender } from '../../../helpers/test/render';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import LabelDropdown, { getInitialState } from '../LabelDropdown';
@@ -58,7 +57,7 @@ describe('LabelDropdown', () => {
 
         const props = getProps(currentLabelID, selectAll);
 
-        const result = await render(<></>, {
+        const result = await mailTestRender(<></>, {
             preloadedState: {
                 categories: getModelState(
                     [

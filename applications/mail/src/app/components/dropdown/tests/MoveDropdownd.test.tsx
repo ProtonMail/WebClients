@@ -9,7 +9,7 @@ import type { Label } from '@proton/shared/lib/interfaces';
 
 import { addApiMock } from '../../../helpers/test/api';
 import { minimalCache } from '../../../helpers/test/cache';
-import { render } from '../../../helpers/test/render';
+import { mailTestRender } from '../../../helpers/test/render';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import MoveDropdown from '../MoveDropdown';
@@ -45,7 +45,7 @@ describe('MoveDropdown', () => {
 
         const message = getMessage(labelIDs);
 
-        const view = await render(<MoveDropdown {...props} />, {
+        const view = await mailTestRender(<MoveDropdown {...props} />, {
             preloadedState: {
                 categories: getModelState([
                     {

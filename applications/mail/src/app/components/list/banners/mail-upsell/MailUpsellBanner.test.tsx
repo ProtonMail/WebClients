@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import range from '@proton/utils/range';
 
-import { render } from '../../../../helpers/test/render';
+import { mailTestRender } from '../../../../helpers/test/render';
 import MailUpsellBanner from './MailUpsellBanner';
 
 const props = {
@@ -18,7 +18,7 @@ describe('Mail upsell banner', () => {
     });
 
     it('should display a banner', async () => {
-        await render(<MailUpsellBanner {...props} />);
+        await mailTestRender(<MailUpsellBanner {...props} />);
 
         screen.getByTestId('promotion-banner');
     });
@@ -29,7 +29,7 @@ describe('Mail upsell banner', () => {
         // Here we expect to see the banner with the id "2"
         setItem('WelcomePaneEncounteredMessages', JSON.stringify([0, 1, ...range(3, 100)]));
 
-        await render(<MailUpsellBanner {...props} />);
+        await mailTestRender(<MailUpsellBanner {...props} />);
 
         screen.getByText('Upgrade to send email from @pm.me addresses.');
     });

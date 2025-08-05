@@ -1,5 +1,5 @@
-import { act, fireEvent, screen } from '@testing-library/react';
 import type { RenderResult } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
@@ -13,8 +13,8 @@ import {
     clearAll,
     getCompleteAddress,
     getDropdown,
+    mailTestRender,
     minimalCache,
-    render,
     waitForNotification,
 } from '../../../../helpers/test/helper';
 import { loadIncomingDefaults } from '../../../../store/incomingDefaults/incomingDefaultsActions';
@@ -83,7 +83,7 @@ const setup = async (sender: Recipient, isRecipient = false, hasBlockSenderConfi
     });
     const message = getTestMessageToBlock(sender);
 
-    const view = await render(
+    const view = await mailTestRender(
         <MailRecipientItemSingle message={message} recipient={sender} isRecipient={isRecipient} {...modalsHandlers} />,
         {
             preloadedState: {

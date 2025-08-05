@@ -8,7 +8,7 @@ import { addApiMock, clearApiMocks } from '../../../helpers/test/api';
 import { getCompleteAddress } from '../../../helpers/test/cache';
 import { getStoredUserKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { contactID, receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
-import { render, tick } from '../../../helpers/test/render';
+import { mailTestRender, tick } from '../../../helpers/test/render';
 import ContactResignModal from './ContactResignModal';
 
 const contacts = [{ contactID: contactID }];
@@ -42,7 +42,7 @@ describe('Contact resign modal', () => {
 
         const onResignSpy = jest.fn();
 
-        await render(
+        await mailTestRender(
             <ContactResignModal
                 title={title}
                 contacts={contacts}

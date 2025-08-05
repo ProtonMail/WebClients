@@ -6,11 +6,15 @@ import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces
 
 import { addApiMock } from '../../../helpers/test/api';
 import type { GeneratedKey } from '../../../helpers/test/crypto';
-import { generateKeys, getStoredUserKey } from '../../../helpers/test/crypto';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import {
+    generateKeys,
+    getStoredUserKey,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../helpers/test/crypto';
 import { clearAll, waitForNotification } from '../../../helpers/test/helper';
 import { receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
-import { render } from '../../../helpers/test/render';
+import { mailTestRender } from '../../../helpers/test/render';
 import TrustPublicKeyModal from './TrustPublicKeyModal';
 
 const senderAddress = 'sender@outside.com';
@@ -36,9 +40,13 @@ describe('Trust public key modal', () => {
 
     afterEach(clearAll);
 
-    const setup = async (senderKeys: GeneratedKey, isContact: boolean, options?: Parameters<typeof render>[1]) => {
+    const setup = async (
+        senderKeys: GeneratedKey,
+        isContact: boolean,
+        options?: Parameters<typeof mailTestRender>[1]
+    ) => {
         const contact = getContact(senderKeys.publicKeys[0], isContact);
-        await render(<TrustPublicKeyModal contact={contact} open />, options);
+        await mailTestRender(<TrustPublicKeyModal contact={contact} open />, options);
     };
 
     it('should update contact when trusting key if contact already exists', async () => {

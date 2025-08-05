@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 
-import { render } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from 'proton-mail/helpers/test/render';
 
 import AccountsLoginModal from './AccountsLoginModal';
 import { getOnlineServices } from './getOnlineServices';
@@ -13,7 +13,7 @@ const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
 describe('AccountsLoginModal', () => {
     it('Should render all services for US user', async () => {
         mockedUserSettings.mockReturnValue([{ Locale: 'en_US' }]);
-        await render(<AccountsLoginModal open onClose={jest.fn} onExit={jest.fn} key="us" />);
+        await mailTestRender(<AccountsLoginModal open onClose={jest.fn} onExit={jest.fn} key="us" />);
         const links = getOnlineServices();
         const allLinks = links.map((item) => item.services).flat();
 
@@ -23,7 +23,7 @@ describe('AccountsLoginModal', () => {
     it('Should render part of services for non US users', async () => {
         mockedUserSettings.mockReturnValue([{ Locale: 'fr_CH' }]);
 
-        await render(<AccountsLoginModal open onClose={jest.fn} onExit={jest.fn} key="non_us" />);
+        await mailTestRender(<AccountsLoginModal open onClose={jest.fn} onExit={jest.fn} key="non_us" />);
         const links = getOnlineServices();
         const allLinks = links
             .map((item) => item.services)

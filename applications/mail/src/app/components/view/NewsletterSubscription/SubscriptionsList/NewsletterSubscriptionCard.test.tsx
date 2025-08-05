@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { render } from 'proton-mail/helpers/test/render';
+import { mailTestRender } from 'proton-mail/helpers/test/render';
 import { SubscriptionTabs } from 'proton-mail/store/newsletterSubscriptions/interface';
 import * as mailboxSelectors from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
@@ -25,7 +25,7 @@ describe('NewsletterSubscriptionCard', () => {
     });
 
     it('should show the active subscription data', async () => {
-        await render(<NewsletterSubscriptionCard subscription={activeSubscription} />);
+        await mailTestRender(<NewsletterSubscriptionCard subscription={activeSubscription} />);
 
         const title = screen.getByTestId('subscription-card-title');
         expect(title).toHaveTextContent(activeSubscription.Name);
@@ -49,7 +49,7 @@ describe('NewsletterSubscriptionCard', () => {
 
     it('should hide the stats when in the unsubscribed tab', async () => {
         mockedSelectedTab.mockReturnValue(SubscriptionTabs.Unsubscribe);
-        await render(<NewsletterSubscriptionCard subscription={unsubscribedSubscription} />);
+        await mailTestRender(<NewsletterSubscriptionCard subscription={unsubscribedSubscription} />);
 
         const stats = screen.queryByTestId('subscription-card-stats');
         expect(stats).not.toBeInTheDocument();
@@ -57,14 +57,14 @@ describe('NewsletterSubscriptionCard', () => {
 
     it('should show the trash button when in the unsubscribed tab', async () => {
         mockedSelectedTab.mockReturnValue(SubscriptionTabs.Unsubscribe);
-        await render(<NewsletterSubscriptionCard subscription={unsubscribedSubscription} />);
+        await mailTestRender(<NewsletterSubscriptionCard subscription={unsubscribedSubscription} />);
 
         const trashButton = screen.getByRole('button', { name: 'Move to Trash' });
         expect(trashButton).toBeInTheDocument();
     });
 
     it('should call setSelectedSubscription with the correct data when isDeleting is false', async () => {
-        await render(<NewsletterSubscriptionCard subscription={activeSubscription} />);
+        await mailTestRender(<NewsletterSubscriptionCard subscription={activeSubscription} />);
 
         const card = screen.getByTestId('subscription-card');
         fireEvent.click(card);
@@ -73,7 +73,7 @@ describe('NewsletterSubscriptionCard', () => {
     });
 
     it('should not call setSelectedSubscription when isDeleting is true', async () => {
-        await render(<NewsletterSubscriptionCard subscription={activeSubscription} isDeleting />);
+        await mailTestRender(<NewsletterSubscriptionCard subscription={activeSubscription} isDeleting />);
 
         const card = screen.getByTestId('subscription-card');
         fireEvent.click(card);

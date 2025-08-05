@@ -8,7 +8,7 @@ import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 import { minimalCache } from '../../../helpers/test/cache';
-import { render } from '../../../helpers/test/render';
+import { mailTestRender } from '../../../helpers/test/render';
 import type { Element } from '../../../models/element';
 import ItemExpiration from './ItemExpiration';
 
@@ -29,14 +29,14 @@ const getElement = (type: 'message' | 'conversation' = 'conversation', elementPr
 
 describe('ItemExpiration', () => {
     it('should not render if expirationTime is not provided', async () => {
-        await render(<ItemExpiration labelID={defaultLabelID} element={getElement()} />);
+        await mailTestRender(<ItemExpiration labelID={defaultLabelID} element={getElement()} />);
         expect(screen.queryByTestId('item-expiration')).not.toBeInTheDocument();
     });
 
     it('should have color-danger class if it is expiring in less than a day', async () => {
         const date = addHours(new Date(), 1);
         const expirationTime = getUnixTime(date);
-        await render(
+        await mailTestRender(
             <ItemExpiration labelID={defaultLabelID} element={getElement()} expirationTime={expirationTime} />
         );
         expect(screen.getByTestId('item-expiration')).toHaveClass('color-danger');
@@ -45,7 +45,7 @@ describe('ItemExpiration', () => {
     it('should not have color-danger class if it is expiring in more than a day', async () => {
         const date = addHours(new Date(), 25);
         const expirationTime = getUnixTime(date);
-        await render(
+        await mailTestRender(
             <ItemExpiration labelID={defaultLabelID} element={getElement()} expirationTime={expirationTime} />
         );
         expect(screen.getByTestId('item-expiration')).not.toHaveClass('color-danger');
@@ -54,7 +54,7 @@ describe('ItemExpiration', () => {
     it('should show a short remaining time', async () => {
         const date = addMinutes(new Date(), 10);
         const expirationTime = getUnixTime(date);
-        await render(
+        await mailTestRender(
             <ItemExpiration labelID={defaultLabelID} element={getElement()} expirationTime={expirationTime} />
         );
         expect(screen.getByText('<1 d')).toBeInTheDocument();
@@ -63,7 +63,7 @@ describe('ItemExpiration', () => {
     it('should diplay 30 days', async () => {
         const date = addDays(new Date(), 30);
         const expirationTime = getUnixTime(date);
-        await render(
+        await mailTestRender(
             <ItemExpiration labelID={defaultLabelID} element={getElement()} expirationTime={expirationTime} />
         );
         expect(screen.getByText('30 d')).toBeInTheDocument();
@@ -76,7 +76,7 @@ describe('ItemExpiration', () => {
             const expirationTime = getUnixTime(addDays(new Date(), 30));
             minimalCache();
 
-            await render(
+            await mailTestRender(
                 <ItemExpiration
                     element={getElement()}
                     expirationTime={expirationTime}
@@ -98,7 +98,7 @@ describe('ItemExpiration', () => {
             const expirationTime = getUnixTime(addDays(new Date(), 30));
             minimalCache();
 
-            await render(
+            await mailTestRender(
                 <ItemExpiration
                     labelID={MAILBOX_LABEL_IDS.INBOX}
                     element={getElement()}
@@ -120,7 +120,7 @@ describe('ItemExpiration', () => {
             const expirationTime = getUnixTime(addDays(new Date(), 30));
             minimalCache();
 
-            await render(
+            await mailTestRender(
                 <ItemExpiration
                     labelID={MAILBOX_LABEL_IDS.TRASH}
                     element={getElement()}
@@ -147,7 +147,7 @@ describe('ItemExpiration', () => {
             const expirationTime = getUnixTime(addDays(new Date(), 30));
             minimalCache();
 
-            await render(
+            await mailTestRender(
                 <ItemExpiration
                     labelID={MAILBOX_LABEL_IDS.TRASH}
                     element={getElement('message')}
