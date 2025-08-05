@@ -42,7 +42,7 @@ import type { FetchConfig } from '@proton/shared/lib/fetch/interface';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
-import sentry, { setSentryEnabled, setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
+import sentry, { setSentryEnabled, setSentryTags, setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
@@ -126,6 +126,9 @@ export const init = ({
     sentry({ config, UID: authentication.UID });
     setVcalProdId(getProdId(config));
     removeLoaderClassName();
+
+    const appTag = getCookie('Tag') ?? 'default';
+    setSentryTags({ appTag });
 };
 
 export interface SessionPayloadData {
