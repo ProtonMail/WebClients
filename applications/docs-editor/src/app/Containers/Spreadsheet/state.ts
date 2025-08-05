@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo } from 'react'
 
 import type { SheetData, UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import { useSearch, useSpreadsheetState as useSpreadsheetStateOriginal } from '@rowsncolumns/spreadsheet-state'
@@ -20,52 +20,77 @@ import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
 import type { DocStateInterface } from '@proton/docs-shared'
 import { DocProvider } from '@proton/docs-shared'
 import { useSyncedState } from '../../Hooks/useSyncedState'
+import { create } from 'zustand'
 
 // local state
 // -----------
 
-function useLocalState() {
-  const [sheets, onChangeSheets] = useState<Sheet[]>([])
-  const [sheetData, onChangeSheetData] = useState<SheetData<CellData>>({})
-  const [theme, onChangeTheme] = useState<SpreadsheetTheme>(defaultSpreadsheetTheme)
-  const [tables, onChangeTables] = useState<TableView[]>([])
-  const [namedRanges, onChangeNamedRanges] = useState<NamedRange[]>([])
-  const [conditionalFormats, onChangeConditionalFormats] = useState<ConditionalFormatRule[]>([])
-  const [embeds, onChangeEmbeds] = useState<EmbeddedObject[]>([])
-  const [dataValidations, onChangeDataValidations] = useState<DataValidationRuleRecord[]>([])
-  const [charts, onChangeCharts] = useState<EmbeddedChart[]>([])
-  const [protectedRanges, onChangeProtectedRanges] = useState<ProtectedRange[]>([])
-  const [scale, onChangeScale] = useState(1)
+type UpdateAction<T> = T | ((state: T) => T)
+type SetState<T> = (state: UpdateAction<T>) => void
+type LocalState = {
+  sheets: Sheet[]
+  sheetData: SheetData<CellData>
+  theme: SpreadsheetTheme
+  tables: TableView[]
+  namedRanges: NamedRange[]
+  conditionalFormats: ConditionalFormatRule[]
+  embeds: EmbeddedObject[]
+  dataValidations: DataValidationRuleRecord[]
+  charts: EmbeddedChart[]
+  protectedRanges: ProtectedRange[]
+  scale: number
 
-  return {
-    // values
-    sheets,
-    sheetData,
-    theme,
-    tables,
-    namedRanges,
-    conditionalFormats,
-    embeds,
-    dataValidations,
-    charts,
-    protectedRanges,
-    scale,
-    // setters
-    onChangeSheets,
-    onChangeSheetData,
-    onChangeTheme,
-    onChangeTables,
-    onChangeNamedRanges,
-    onChangeConditionalFormats,
-    onChangeEmbeds,
-    onChangeDataValidations,
-    onChangeCharts,
-    onChangeProtectedRanges,
-    onChangeScale,
-  }
+  onChangeSheets: SetState<Sheet[]>
+  onChangeSheetData: SetState<SheetData<CellData>>
+  onChangeTheme: SetState<SpreadsheetTheme>
+  onChangeTables: SetState<TableView[]>
+  onChangeNamedRanges: SetState<NamedRange[]>
+  onChangeConditionalFormats: SetState<ConditionalFormatRule[]>
+  onChangeEmbeds: SetState<EmbeddedObject[]>
+  onChangeDataValidations: SetState<DataValidationRuleRecord[]>
+  onChangeCharts: SetState<EmbeddedChart[]>
+  onChangeProtectedRanges: SetState<ProtectedRange[]>
+  onChangeScale: SetState<number>
 }
+function getValueFromUpdateAction<T>(updateAction: UpdateAction<T>, prevValue: T): T {
+  return typeof updateAction === 'function' ? (updateAction as (state: T) => T)(prevValue) : updateAction
+}
+const useLocalSpreadsheetState = create<LocalState>()((set) => ({
+  sheets: [],
+  sheetData: {},
+  theme: defaultSpreadsheetTheme,
+  tables: [],
+  namedRanges: [],
+  conditionalFormats: [],
+  embeds: [],
+  dataValidations: [],
+  charts: [],
+  protectedRanges: [],
+  scale: 1,
 
-type LocalState = ReturnType<typeof useLocalState>
+  onChangeSheets: (sheets) => set((state) => ({ sheets: getValueFromUpdateAction(sheets, state.sheets) })),
+  onChangeSheetData: (sheetData) =>
+    set((state) => ({ sheetData: getValueFromUpdateAction(sheetData, state.sheetData) })),
+  onChangeTheme: (theme) => set((state) => ({ theme: getValueFromUpdateAction(theme, state.theme) })),
+  onChangeTables: (tables) => set((state) => ({ tables: getValueFromUpdateAction(tables, state.tables) })),
+  onChangeNamedRanges: (namedRanges) =>
+    set((state) => ({ namedRanges: getValueFromUpdateAction(namedRanges, state.namedRanges) })),
+  onChangeConditionalFormats: (conditionalFormats) =>
+    set((state) => ({
+      conditionalFormats: getValueFromUpdateAction(conditionalFormats, state.conditionalFormats),
+    })),
+  onChangeEmbeds: (embeds) => set((state) => ({ embeds: getValueFromUpdateAction(embeds, state.embeds) })),
+  onChangeDataValidations: (dataValidations) =>
+    set((state) => ({
+      dataValidations: getValueFromUpdateAction(dataValidations, state.dataValidations),
+    })),
+  onChangeCharts: (charts) => set((state) => ({ charts: getValueFromUpdateAction(charts, state.charts) })),
+  onChangeProtectedRanges: (protectedRanges) =>
+    set((state) => ({
+      protectedRanges: getValueFromUpdateAction(protectedRanges, state.protectedRanges),
+    })),
+  onChangeScale: (scale) => set((state) => ({ scale: getValueFromUpdateAction(scale, state.scale) })),
+}))
 
 // spreadsheet state
 // -----------------
@@ -134,6 +159,8 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
     ...localState,
     ...spreadsheetState,
 
+    enqueueCalculation: spreadsheetState.enqueueGraphOperation,
+
     provider,
     doc: yDoc,
     sheetId: spreadsheetState.activeSheetId,
@@ -159,7 +186,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     yjsState.onBroadcastPatch(patches)
 
-  const localState = useLocalState()
+  const localState = useLocalSpreadsheetState()
   const depsWithLocalState = { localState, onChangeHistory, ...deps }
   const spreadsheetState = useSpreadsheetState(depsWithLocalState)
 
