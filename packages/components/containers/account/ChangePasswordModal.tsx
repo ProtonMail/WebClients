@@ -2,13 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { signoutAction } from '@proton/account';
-import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { changeLoginPassword, changePassword } from '@proton/account/password/actions';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, Scroll } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -23,16 +19,12 @@ import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInp
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store';
-import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
-import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
-import { disable2FA as disable2FAConfig } from '@proton/shared/lib/api/settings';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
@@ -40,10 +32,6 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
-import type { Address } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase, getIsPasswordless } from '@proton/shared/lib/keys';
-import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
-import { srpVerify } from '@proton/shared/lib/srp';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -51,7 +39,6 @@ import PasswordStrengthIndicator, {
     useLoadPasswordStrengthIndicatorWasm,
 } from '../../components/passwordStrengthIndicator/PasswordStrengthIndicator';
 import GenericError from '../error/GenericError';
-import { handleChangeLoginPassword } from './changePasswordHelper';
 
 export enum MODES {
     CHANGE_ONE_PASSWORD_MODE = 1,
@@ -65,17 +52,14 @@ interface Inputs {
     oldPassword: string;
     newPassword: string;
     confirmPassword: string;
-    totp: string;
 }
 
 interface Errors {
-    loginError: string;
     fatalError: boolean;
     persistError?: boolean;
 }
 
 const DEFAULT_ERRORS: Errors = {
-    loginError: '',
     fatalError: false,
 };
 
@@ -112,22 +96,18 @@ const ChangePasswordModal = ({
     ...rest
 }: Props) => {
     const dispatch = useDispatch();
-    const api = useApi();
-    const { call, stop, start } = useEventManager();
-    const authentication = useAuthentication();
+    const normalApi = useApi();
+    const api = getSilentApi(normalApi);
     const { createNotification } = useNotifications();
-    const getOrganizationKey = useGetOrganizationKey();
-    const getUserKeys = useGetUserKeys();
-    const getAddressKeys = useGetAddressKeys();
-    const getAddresses = useGetAddresses();
     const passwordStrengthIndicator = useLoadPasswordStrengthIndicatorWasm();
     const { validator, onFormSubmit, reset } = useFormErrors();
+    const handleError = useErrorHandler();
 
     const disable2FA = signedInRecoveryFlow;
     const authCheck = !signedInRecoveryFlow;
 
     const lockAndClose = () => {
-        void api(lockSensitiveSettings());
+        api(lockSensitiveSettings()).catch(noop);
         onClose?.();
     };
 
@@ -137,7 +117,6 @@ const ChangePasswordModal = ({
         oldPassword: '',
         newPassword: '',
         confirmPassword: '',
-        totp: '',
     });
     const [loading, setLoading] = useState<boolean>(false);
     const [errors, setErrors] = useState<Errors>(DEFAULT_ERRORS);
@@ -155,51 +134,12 @@ const ChangePasswordModal = ({
     const passwordPolicyError = !passwordPolicyValidation.valid;
 
     const validateNewPasswords = () => {
-        if (newPasswordError || confirmPasswordError || passwordPolicyError) {
-            throw new Error('Password error');
-        }
-    };
-
-    const checkLoginError = ({ data: { Code, Error } = { Code: 0, Error: '' } }) => {
-        if (Code === PASSWORD_WRONG_ERROR) {
-            setPartialError({
-                ...DEFAULT_ERRORS,
-                loginError: Error,
-            });
-        }
-    };
-
-    const checkFatalError = (e: Error) => {
-        if (e.name === 'NoDecryptedKeys') {
-            setPartialError({ fatalError: true });
-        }
+        return !(newPasswordError || confirmPasswordError || passwordPolicyError);
     };
 
     const notifySuccess = () => {
         createNotification({ text: c('Success').t`Password updated` });
         onSuccess?.();
-    };
-
-    const mutatePassword = async ({
-        keyPassword,
-        clearKeyPassword,
-    }: {
-        keyPassword: string;
-        clearKeyPassword: string;
-    }) => {
-        try {
-            await innerMutatePassword({
-                api,
-                authentication,
-                keyPassword,
-                clearKeyPassword,
-                User: user,
-            });
-        } catch (e: any) {
-            // If persisting the password fails for some reason.
-            setPartialError({ fatalError: true, persistError: true });
-            throw e;
-        }
     };
 
     const getModalProperties = (mode: MODES): ModalProperties => {
@@ -244,6 +184,74 @@ const ChangePasswordModal = ({
         throw new Error('mode not supported');
     };
 
+    const handleSubmitLoginPassword = async () => {
+        if (!onFormSubmit() || !validateNewPasswords()) {
+            return;
+        }
+        try {
+            resetErrors();
+            setLoading(true);
+
+            await dispatch(
+                changeLoginPassword({
+                    api,
+                    newPassword: inputs.newPassword,
+                    persistPasswordScope: mode === MODES.SWITCH_TWO_PASSWORD,
+                })
+            );
+
+            if (mode === MODES.SWITCH_TWO_PASSWORD) {
+                setInputs({
+                    newPassword: '',
+                    confirmPassword: '',
+                    oldPassword: '',
+                });
+                reset();
+                setSecondPhase(true);
+            } else {
+                notifySuccess();
+                lockAndClose();
+            }
+        } catch (e: any) {
+            handleError(e);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleSubmitPassword = async () => {
+        if (!onFormSubmit() || !validateNewPasswords()) {
+            return;
+        }
+
+        try {
+            resetErrors();
+            setLoading(true);
+
+            await dispatch(
+                changePassword({
+                    api,
+                    newPassword: inputs.newPassword,
+                    mode:
+                        mode === MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE || mode === MODES.SWITCH_TWO_PASSWORD
+                            ? 'two-password-mode'
+                            : 'one-password-mode',
+                    disable2FA,
+                })
+            );
+
+            notifySuccess();
+            lockAndClose();
+        } catch (e: any) {
+            if (e?.name === 'NoDecryptedKeys') {
+                setPartialError({ fatalError: true });
+            }
+            handleError(e);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     const {
         labels,
         description = null,
@@ -255,24 +263,7 @@ const ChangePasswordModal = ({
         if (mode === MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE) {
             return {
                 ...getModalProperties(mode),
-                async onSubmit() {
-                    if (!onFormSubmit()) {
-                        return;
-                    }
-                    try {
-                        validateNewPasswords();
-                        resetErrors();
-                        setLoading(true);
-
-                        await handleChangeLoginPassword({ api, newPassword: inputs.newPassword });
-
-                        notifySuccess();
-                        lockAndClose();
-                    } catch (e: any) {
-                        setLoading(false);
-                        checkLoginError(e);
-                    }
-                },
+                onSubmit: handleSubmitLoginPassword,
             };
         }
 
@@ -289,49 +280,9 @@ const ChangePasswordModal = ({
                     newPassword: c('Label').t`New login password`,
                     confirmPassword: c('Label').t`Confirm login password`,
                 },
-                async onSubmit() {
-                    if (!onFormSubmit()) {
-                        return;
-                    }
-
-                    try {
-                        validateNewPasswords();
-                        resetErrors();
-                        setLoading(true);
-
-                        await handleChangeLoginPassword({
-                            api,
-                            newPassword: inputs.newPassword,
-                            persistPasswordScope: true,
-                        });
-
-                        setSecondPhase(true);
-                        setInputs({
-                            newPassword: '',
-                            confirmPassword: '',
-                            totp: '',
-                            oldPassword: '',
-                        });
-                        reset();
-                        setLoading(false);
-                    } catch (e: any) {
-                        setLoading(false);
-                        checkLoginError(e);
-                    }
-                },
+                onSubmit: handleSubmitLoginPassword,
             };
         }
-
-        const getAddressesWithKeysList = (addresses: Address[]) => {
-            return Promise.all(
-                addresses.map(async (address) => {
-                    return {
-                        address,
-                        keys: await getAddressKeys(address.ID),
-                    };
-                })
-            );
-        };
 
         if (mode === MODES.SWITCH_TWO_PASSWORD && isSecondPhase) {
             return {
@@ -340,133 +291,9 @@ const ChangePasswordModal = ({
                     newPassword: c('Label').t`New second password`,
                     confirmPassword: c('Label').t`Confirm second password`,
                 },
-                async onSubmit() {
-                    if (!onFormSubmit()) {
-                        return;
-                    }
-
-                    try {
-                        // Stop the event manager to prevent race conditions
-                        stop();
-
-                        const [addresses, userKeysList, organizationKey] = await Promise.all([
-                            getAddresses(),
-                            getUserKeys(),
-                            getOrganizationKey(),
-                        ]);
-
-                        validateNewPasswords();
-                        resetErrors();
-                        setLoading(true);
-
-                        const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(
-                            inputs.newPassword
-                        );
-                        const addressesKeys = await getAddressesWithKeysList(addresses);
-                        const updateKeysPayload = await getUpdateKeysPayload({
-                            addressesKeys,
-                            userKeys: userKeysList,
-                            organizationKey: getIsPasswordless(organizationKey?.Key)
-                                ? undefined
-                                : organizationKey?.privateKey,
-                            keyPassword,
-                            keySalt,
-                        });
-
-                        await api(updatePrivateKeyRoute(updateKeysPayload));
-
-                        await mutatePassword({ keyPassword, clearKeyPassword: inputs.newPassword });
-                        await call();
-
-                        notifySuccess();
-                        lockAndClose();
-                    } catch (e: any) {
-                        setLoading(false);
-                        checkFatalError(e);
-                    } finally {
-                        start();
-                    }
-                },
+                onSubmit: handleSubmitPassword,
             };
         }
-
-        const onSubmit = async () => {
-            if (!onFormSubmit()) {
-                return;
-            }
-
-            try {
-                stop();
-
-                const [addresses, userKeysList, organizationKey] = await Promise.all([
-                    getAddresses(),
-                    getUserKeys(),
-                    getOrganizationKey(),
-                ]);
-
-                /**
-                 * This is the case for a user who does not have any keys set-up.
-                 * They will be in 2-password mode, but not have any keys.
-                 * Changing to one-password mode or mailbox password is not allowed.
-                 * It's not handled better because it's a rare case.
-                 */
-                if (userKeysList.length === 0) {
-                    createNotification({
-                        type: 'error',
-                        text: c('Error').t`Please generate keys before you try to change your password`,
-                    });
-                    return;
-                }
-                validateNewPasswords();
-                resetErrors();
-                setLoading(true);
-
-                const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(
-                    inputs.newPassword
-                );
-
-                const addressesWithKeys = await getAddressesWithKeysList(addresses);
-                const updateKeysPayload = await getUpdateKeysPayload({
-                    addressesKeys: addressesWithKeys,
-                    userKeys: userKeysList,
-                    organizationKey: getIsPasswordless(organizationKey?.Key) ? undefined : organizationKey?.privateKey,
-                    keyPassword,
-                    keySalt,
-                });
-
-                if (disable2FA) {
-                    await api(disable2FAConfig({ PersistPasswordScope: true }));
-                }
-
-                const routeConfig = updatePrivateKeyRoute(updateKeysPayload);
-                const credentials = {
-                    password: inputs.newPassword,
-                    totp: inputs.totp,
-                };
-
-                if (mode === MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE) {
-                    await api(routeConfig);
-                } else {
-                    await srpVerify({
-                        api,
-                        credentials,
-                        config: routeConfig,
-                    });
-                }
-                await mutatePassword({ keyPassword, clearKeyPassword: inputs.newPassword });
-
-                await call();
-
-                notifySuccess();
-                lockAndClose();
-            } catch (e: any) {
-                setLoading(false);
-                checkFatalError(e);
-                checkLoginError(e);
-            } finally {
-                start();
-            }
-        };
 
         if (mode === MODES.SWITCH_ONE_PASSWORD) {
             return {
@@ -481,14 +308,14 @@ const ChangePasswordModal = ({
                             .t`${MAIL_APP_NAME} can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.`}
                     </div>
                 ),
-                onSubmit,
+                onSubmit: handleSubmitPassword,
             };
         }
 
         if (mode === MODES.CHANGE_ONE_PASSWORD_MODE) {
             return {
                 ...getModalProperties(mode),
-                onSubmit,
+                onSubmit: handleSubmitPassword,
             };
         }
 
@@ -499,7 +326,7 @@ const ChangePasswordModal = ({
                     newPassword: c('Label').t`New second password`,
                     confirmPassword: c('Label').t`Confirm second password`,
                 },
-                onSubmit,
+                onSubmit: handleSubmitPassword,
             };
         }
 
@@ -532,10 +359,6 @@ const ChangePasswordModal = ({
 
     if (errors.fatalError) {
         const handleFatalErrorClose = () => {
-            if (errors.persistError) {
-                // If there was an error persisting the session, we have no choice but to logout
-                dispatch(signoutAction({ clearDeviceRecovery: true }));
-            }
             lockAndClose();
         };
 
