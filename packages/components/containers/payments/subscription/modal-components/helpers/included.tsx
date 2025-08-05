@@ -19,6 +19,7 @@ import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 
 import { getNUsersText } from '../../../features/highlights';
+import { getAccessToAdvancedAIText, getFullChatHistoryText, getUnlimitedChatsText } from '../../../features/lumo';
 import {
     get2FAAuthenticatorText,
     getAdvancedAliasFeaturesText,
@@ -299,6 +300,28 @@ export const getWhatsIncluded = ({
             {
                 type: 'text',
                 text: c('Info').t`${BRAND_NAME} Scribe writing assistant`,
+            },
+        ];
+    }
+
+    const lumo = planIDs[PLANS.LUMO];
+    if (lumo !== undefined && lumo > 0) {
+        return [
+            {
+                type: 'text',
+                text: getAccessToAdvancedAIText(),
+            },
+            {
+                type: 'text',
+                text: getUnlimitedChatsText(),
+            },
+            {
+                type: 'text',
+                text: getFullChatHistoryText(),
+            },
+            {
+                type: 'text',
+                text: c('collider_2025: feature').t`Large file upload support`,
             },
         ];
     }

@@ -4,12 +4,13 @@ import { PLANS } from '@proton/payments';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
+export const getUnlimitedChatsText = () => {
+    return c('collider_2025: feature').t`Unlimited daily chats`;
+};
+
 const getDailyChats = (type: 'limited' | 'unlimited'): PlanCardFeatureDefinition => {
     return {
-        text:
-            type === 'limited'
-                ? c('collider_2025: feature').t`Limited daily chats`
-                : c('collider_2025: feature').t`Unlimited daily chats`,
+        text: type === 'limited' ? c('collider_2025: feature').t`Limited daily chats` : getUnlimitedChatsText(),
         included: true,
         icon: 'speech-bubble',
     };
@@ -23,12 +24,13 @@ const getWebSearchAccess = (): PlanCardFeatureDefinition => {
     };
 };
 
+export const getFullChatHistoryText = () => {
+    return c('collider_2025: feature').t`Full chat history with search`;
+};
+
 const getChatHistory = (type: 'basic' | 'full'): PlanCardFeatureDefinition => {
     return {
-        text:
-            type === 'basic'
-                ? c('collider_2025: feature').t`Basic chat history`
-                : c('collider_2025: feature').t`Full chat history with search`,
+        text: type === 'basic' ? c('collider_2025: feature').t`Basic chat history` : getFullChatHistoryText(),
         included: true,
         icon: 'clock-rotate-left',
     };
@@ -56,9 +58,13 @@ const getUploadAndQuery = (type: 'small' | 'large'): PlanCardFeatureDefinition =
     };
 };
 
+export const getAccessToAdvancedAIText = () => {
+    return c('collider_2025: feature').t`Access to advanced AI models`;
+};
+
 const getAccessToAdvancedAI = (included: boolean): PlanCardFeatureDefinition => {
     return {
-        text: c('collider_2025: feature').t`Access to advanced AI models`,
+        text: getAccessToAdvancedAIText(),
         included,
         icon: 'bolt',
     };
