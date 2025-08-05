@@ -3,7 +3,14 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AppsDropdown, UnAuthenticatedAppsDropdown, UserDropdown } from '@proton/components';
+import {
+    AppsDropdown,
+    AuthenticatedBugModal,
+    BugModal,
+    UnAuthenticatedAppsDropdown,
+    UserDropdown,
+    useModalState,
+} from '@proton/components';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -18,6 +25,8 @@ interface PageHeaderProps {
 
 export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeaderProps) => {
     const history = useHistory();
+
+    const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
 
     const handleSignIn = (returnUrl: string) =>
         requestFork({
@@ -43,6 +52,13 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
             </div>
 
             <div className="flex gap-4 items-center">
+                <Button
+                    className="action-button rounded-full border-none"
+                    onClick={() => setBugReportModal(true)}
+                    size="large"
+                >
+                    {c('meet_2025 Action').t`Contact support`}
+                </Button>
                 {isScheduleInAdvanceEnabled && (
                     <Button
                         className="action-button rounded-full border-none hidden md:block"
@@ -70,6 +86,15 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
                     <UserDropdown app={APPS.PROTONMEET} />
                 )}
             </div>
+            {renderBugReportModal && (
+                <>
+                    {guestMode ? (
+                        <BugModal app={APPS.PROTONMEET} {...bugReportModal} />
+                    ) : (
+                        <AuthenticatedBugModal app={APPS.PROTONMEET} {...bugReportModal} />
+                    )}
+                </>
+            )}
         </div>
     );
 };

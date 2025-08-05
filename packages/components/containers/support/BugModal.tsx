@@ -27,7 +27,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, CLIENT_TYPES, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CLIENT_TYPES, LUMO_SHORT_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -137,6 +137,12 @@ const getMailOptions = (): OptionItem[] => {
             title: c('Bug category').t`${LUMO_SHORT_APP_NAME} problem`,
             clientType: CLIENT_TYPES.LUMO,
             app: APPS.PROTONLUMO,
+        },
+        {
+            type: optionType,
+            value: 'Meet problem',
+            title: c('meet_2025 Bug category').t`${MEET_SHORT_APP_NAME} problem`,
+            app: APPS.PROTONMEET,
         },
         { type: labelType, value: c('Group').t`Other category` },
         { type: optionType, value: 'Feature request', title: c('Bug category').t`Feature request` },
