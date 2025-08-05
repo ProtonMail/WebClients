@@ -1875,7 +1875,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -3410,7 +3413,7 @@
         "Vyberte trezor, do kterého budou importovány aliasy SimpleLogin"
       ],
       "Select theme": [
-        "Vyberte motiv"
+        "Vybrat motiv"
       ],
       "Select your password manager": [
         "Zvolte si svého správce hesel"
