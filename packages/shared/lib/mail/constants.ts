@@ -117,11 +117,33 @@ export const LABELS_UNMODIFIABLE_BY_USER = [
     MAILBOX_LABEL_IDS.SNOOZED,
 ];
 
-export const CATEGORY_LABELS_TO_ROUTE_SET = new Set(
-    [...CATEGORY_LABEL_IDS_SET].map((id) => {
-        return `/${LABEL_IDS_TO_HUMAN[id]}`;
-    })
-);
+// Built-in system folders
+export const SYSTEM_FOLDERS = [
+    MAILBOX_LABEL_IDS.INBOX,
+    MAILBOX_LABEL_IDS.TRASH,
+    MAILBOX_LABEL_IDS.SPAM,
+    MAILBOX_LABEL_IDS.ARCHIVE,
+    MAILBOX_LABEL_IDS.SENT,
+    MAILBOX_LABEL_IDS.DRAFTS,
+];
+
+// Built-in system labels
+export const SYSTEM_LABELS = [
+    MAILBOX_LABEL_IDS.STARRED,
+    MAILBOX_LABEL_IDS.ALL_DRAFTS,
+    MAILBOX_LABEL_IDS.ALL_SENT,
+    MAILBOX_LABEL_IDS.ALL_MAIL,
+    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+    MAILBOX_LABEL_IDS.OUTBOX,
+    MAILBOX_LABEL_IDS.SCHEDULED,
+    MAILBOX_LABEL_IDS.SNOOZED,
+];
+
+export const CATEGORY_LABELS_TO_ROUTE_ARRAY = [...CATEGORY_LABEL_IDS_SET].map((id) => {
+    return `/${LABEL_IDS_TO_HUMAN[id]}`;
+});
+
+export const CATEGORY_LABELS_TO_ROUTE_SET = new Set(CATEGORY_LABELS_TO_ROUTE_ARRAY);
 
 // List of location where messages are marked automatically as read after moving by the API
 export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];
