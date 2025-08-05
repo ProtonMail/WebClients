@@ -620,6 +620,9 @@
       "Reconnect": [
         "Tilslut igen"
       ],
+      "Reconnect to Zoom": [
+        "Genskab forbindelse til Zoom"
+      ],
       "Recover data": [
         "Gendan data"
       ],
@@ -832,6 +835,9 @@
       ],
       "Upgrade": [
         "Opgradér"
+      ],
+      "Upgrade for 200GB": [
+        "Opgradering til 200 GB"
       ],
       "Upgrade Now": [
         "Opgradere nu"
@@ -1063,6 +1069,9 @@
       "Encrypted password manager": [
         "Krypteret adgangskodehåndtering"
       ],
+      "Here's an exclusive gift to celebrate our journey together.": [
+        "Her er en eksklusiv gave for at fejre vores fælles rejse."
+      ],
       "High speed streaming with VPN": [
         "Streaming ved høj hastighed med VPN"
       ],
@@ -1239,6 +1248,9 @@
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop app"
+      ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
@@ -1484,6 +1496,9 @@
       ],
       "Discover and set up features": [
         "Udforsk og konfigurer funktioner"
+      ],
+      "Maybe later": [
+        "Måske senere"
       ],
       "Remind me later": [
         "Påmind mig senere"
@@ -2888,11 +2903,17 @@
       ]
     },
     "Description": {
+      "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
+        "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } giver dig mulighed for at samarbejde med andre i et sikkert, krypteret miljø."
+      ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
+      ],
+      "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
+        "Tilføj mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til at se eller redigere."
       ],
       "Also included": [
         "Også inkluderet"
@@ -2906,11 +2927,17 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Farvekod begivenheder for at gøre det lettere at organisere din dag, holde styr på din tid og prioritere opgaver."
       ],
+      "Configure this first to activate your organization and customize your email address.": [
+        "Konfigurer dette først for at aktivere din organisation og tilpasse din e-mailadresse."
+      ],
       "Connect your CRM, website, printers, and more.": [
         "Forbind din CRM, dit websted, dine printere og mere."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Opret et Zoom-møde, og tilføj deltageroplysninger til din begivenhed med et enkelt klik."
+      ],
+      "Create groups you can email with a single address.": [
+        "Opret grupper, som du kan sende e-mails til med én enkelt adresse."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du downloade filen med alle dine eksporterede kontakter."
@@ -2918,14 +2945,41 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
+      "Easily access your email and calendar on desktop and mobile.": [
+        "Tilgå nemt din e-mail og kalender på desktop og mobil."
+      ],
+      "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
+        "Synkroniser nemt filer til skyen fra din computer og få adgang til dem fra din mobilenhed."
+      ],
+      "Encourage the use of two-factor authentication in your organization for extra security.": [
+        "Tilskynd til brug af to-faktor-godkendelse i din organisation for ekstra sikkerhed."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
+      ],
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "Sikr sikker adgang til organisationens data, selv hvis jeres team er fjernbaseret eller bruger offentligt WiFi."
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "Sørg for førsteklasses sikkerhed for din konto med ${ PROTON_SENTINEL_NAME }-programmet."
+      ],
+      "Ensure you can still access your account and data even if you lose your ${ BRAND_NAME } password.": [
+        "Sørg for, at du stadig kan få adgang til din konto og data, selv hvis du mister din ${ BRAND_NAME }-adgangskode."
+      ],
+      "For a seamless transition to ${ BRAND_NAME }, import your data from Google, Outlook, and others.": [
+        "For en smidig overgang til ${ BRAND_NAME }, importér dine data fra Google, Outlook og andre."
       ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "Få besked, hvis din adgangskode eller andre data er blevet lækket fra en tredjepartstjeneste."
       ],
+      "Help your team securely store passwords to sensitive business and client information.": [
+        "Hjælp dit team med sikkert at lagre adgangskoder til følsomme forretnings- og klientoplysninger."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "Giver dig mulighed for øjeblikkeligt at tilføje mødelinks til dine begivenhedsinvitationer."
       ],
       "Loading availability": [
         "Indlæser tilgængelighed"
@@ -2938,6 +2992,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Indstil en gendannelsesmetode for at forhindre, at du mister adgang til din konto."
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "Konfigurer konti for alle brugere, og inviter dem til at tilmelde sig ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkl synkronisering og planlægning med delte kalendere."
@@ -2959,6 +3016,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Brug denne vejledning for hurtigt at lade din organisation drage fordel af ${ BRAND_NAME }'s branchens førende kryptering og privatlivsøkosystem."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du sende e-mails til alle i gruppen med et enkelt klik."
@@ -3679,6 +3739,9 @@
       "Try using only letters, numerals, and _.-": [
         "Prøv kun at bruge bogstaver, tal og _.-"
       ],
+      "Unable to load VPN dashboard. Please check your connection and try again.": [
+        "Kunne ikke indlæse VPN-kontrolpanel. Kontrollér din forbindelse, og forsøg igen."
+      ],
       "Unexpected error, we can't import the contacts": [
         "Uventet fejl, vi kan ikke importere kontakterne"
       ],
@@ -3700,6 +3763,9 @@
       "You already added this holidays calendar": [
         "Du har allerede tilføjet denne helligdagskalender"
       ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Du har fået forbindelse til Zoom igen. Du kan gemme din begivenhed nu."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtagere"
@@ -3715,6 +3781,9 @@
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
+      ],
+      "Your Zoom connection has expired. Please reconnect to continue.": [
+        "Din Zoom-forbindelse er udløbet. Tilslut igen for at fortsætte."
       ]
     },
     "Error accepting calendar invitation": {
@@ -4743,12 +4812,21 @@
         "${ updated } kontakt blev opdateret.",
         "${ updated } kontakter blev opdateret."
       ],
+      "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
+        "${ VPN_APP_NAME } maskerer din IP-adresse, så websteder ikke kan identificere dig."
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/måned)"
+      ],
+      "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
+        "**Auto-forbindelse**: Åbner og forbinder til VPN, så snart du tænder din enhed."
+      ],
+      "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
+        "**Kill switch**: Stopper datalækager ved at blokere din internetadgang, hvis VPN-forbindelsen afbrydes uventet."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus lagerplads"
@@ -4772,8 +4850,20 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
       ],
+      "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
+        "En sikker forbindelse er afgørende, når der arbejdes eksternt. En VPN beskytter virksomhedsdata mod cybertrusler og holder dit arbejde privat."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
+      ],
+      "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
+        "En VPN krypterer din forbindelse og skjuler din IP-adresse, hvilket gør det meget sværere for nogen at spore eller overvåge din browsing."
+      ],
+      "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
+        "En VPN skjuler din IP-adresse og krypterer din browseraktivitet, hvilket gør det sværere for websteder, annoncører og ISPs at spore dig over tid."
+      ],
+      "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
+        "En VPN er en sikker tunnel mellem din enhed og internettet. Den skjuler din placering og aktivitet for din internetudbyder (ISP) og de websteder, du besøger."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
@@ -4798,6 +4888,9 @@
       ],
       "Admin account allocation": [
         "Admin-konto tildeling"
+      ],
+      "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
+        "Annoncører sporer din browsing for at vise målrettede annoncer. ${ VPN_APP_NAME } blokerer trackere og annoncer, hvilket gør din forbindelse hurtigere og forbedrer din onlineoplevelse."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
@@ -4927,6 +5020,9 @@
       ],
       "Close this screen to exit.": [
         "Luk denne skærm for at afslutte."
+      ],
+      "Connect to ${ VPN_APP_NAME } to browse privately": [
+        "Forbind til ${ VPN_APP_NAME } for at browse privat"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilføjet til gruppen ${ contactGroupName }"
@@ -5106,6 +5202,9 @@
       "Geoblocking": [
         "Geoblokering"
       ],
+      "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
+        "Regeringer og internetudbydere kan overvåge din online aktivitet. Ved at skjule din rigtige IP og kryptere din aktivitet bliver din browsing privat."
+      ],
       "here": [
         "her"
       ],
@@ -5154,6 +5253,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
+      ],
+      "In restrictive countries": [
+        "I restriktive lande"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
@@ -5259,6 +5361,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
+      ],
+      "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
+        "De fleste offentlige WiFi-netværk er sikre, men nogle mangler sikkerhed, hvilket udsætter dig for cybertrusler. En VPN krypterer din trafik og holder dig beskyttet."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
@@ -5414,6 +5519,9 @@
       "Primary": [
         "Primær"
       ],
+      "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
+        "Privat browsing (eller \"inkognito\"-tilstand) er kun nyttig til at holde din aktivitet skjult på din enhed. Den forhindrer din browser i at gemme historik og cookies, men den gør dig ikke usynlig. Din internetudbyder, netværksadministrator og de websteder, du besøger, kan stadig se, hvad du foretager dig online."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
       ],
@@ -5471,6 +5579,9 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Nogle af dine svar på forekomster, som arrangøren tidligere har opdateret, vil gå tabt."
+      ],
+      "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
+        "Nogle websteder og streamingservices blokerer indhold efter region. En VPN giver dig mulighed for at omgå disse begrænsninger og få fri adgang til internettet."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
@@ -5569,6 +5680,9 @@
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Denne begivenhed er blevet opdateret. Arrangøren vil ikke blive underrettet om at du afslår invitationen, da du ikke kan sende e-mails fra den inviterede adresse. Vil du alligevel slette denne begivenhed?"
       ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "Dette er et navn eller kaldenavn for din organisation, som dine brugere vil se. Du kan ændre det når som helst."
+      ],
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Dette er nu din ${ defaultEmailAddress } til afsendelse af nye beskeder."
       ],
@@ -5577,6 +5691,12 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
+      ],
+      "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
+        "Det betyder, at din internetudbyder og de websteder, du besøger, ikke kan forbinde dine personlige oplysninger med din online-aktivitet."
+      ],
+      "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
+        "Denne unikke kode kan bruges af websteder og ISPs (internetudbydere) til at forbinde din placering og browserhistorik til din enhed."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
@@ -5682,6 +5802,9 @@
       ],
       "When working remotely": [
         "Når du arbejder eksternt"
+      ],
+      "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
+        "Når du forbinder til VPN, bruges krypteringsteknologi til at skjule din IP-adresse (en unik kode tildelt din enhed)."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
@@ -5887,8 +6010,14 @@
       "Your information was found on ${ displayedDate }": [
         "Dine oplysninger blev fundet ${ displayedDate }"
       ],
+      "Your internet service provider can monitor and sometimes sell your data, or even restrict what websites you can access.": [
+        "Din internetudbyder kan overvåge og sommetider sælge dine data, eller endda begrænse hvilke websteder du kan få adgang til."
+      ],
       "Your IP": [
         "Din IP"
+      ],
+      "Your IP address is visible and can be used to track your online activity.": [
+        "Din IP-adresse er synlig og kan bruges til at spore din online aktivitet."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
@@ -5957,6 +6086,9 @@
     "Info for cash payment method": {
       "How to send a cash payment?": [
         "Hvordan sender man en kontant betaling?"
+      ],
+      "Please find the instructions in the article: ${ howToSendCashArticleUrl }": [
+        "Du kan finde instruktionerne i artiklen: ${ howToSendCashArticleUrl }"
       ]
     },
     "Info message": {
@@ -6359,6 +6491,9 @@
       "Last name": [
         "Efternavn"
       ],
+      "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
+        "Giv andre besked, hvis du har en konflikt, bliver forsinket eller ikke kan vente på begivenheden."
+      ],
       "Location": [
         "Placering"
       ],
@@ -6645,6 +6780,9 @@
       "clearing your browser cache": [
         "rydder din browser-cache"
       ],
+      "Enforcing 2FA for organizations": [
+        "Gennemtvingelse af 2FA for organisationer"
+      ],
       "How to add users": [
         "Sådan tilføjes brugere"
       ],
@@ -6683,6 +6821,9 @@
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
         "Sådan bruges ${ PASS_APP_NAME } for Business"
+      ],
+      "How to use email forwarding": [
+        "Sådan bruges videresendelse af e-mail"
       ],
       "How to use Groups": [
         "Sådan bruger du grupper"
@@ -8212,12 +8353,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Få ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Få Drive Plus for kun ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Få Mail Plus for kun ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Tag imod tilbuddet"
       ],
@@ -8229,6 +8364,9 @@
       ],
       "Limited-time offer": [
         "Tidsbegrænset tilbud"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Tidsbegrænset tilbud, gælder din første måned"
       ],
       "Maybe later": [
         "Måske senere"
@@ -8242,9 +8380,6 @@
       "Save": [
         "Gem"
       ],
-      "Save 80% on your first month.": [
-        "Spar 80% på den første måned."
-      ],
       "Save big when you pay annually": [
         "Få stor besparelse ved at betale årligt"
       ],
@@ -8253,6 +8388,12 @@
       ],
       "This offer won't be shown again.": [
         "Dette tilbud vil ikke blive vist igen."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Opgradér din produktivitet for kun ${ pricingTitle } med ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Opgradér din lagerplads for kun ${ pricingTitle } med ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Når du skifter fra et måndeligt til et årligt abonnement."
@@ -8279,23 +8420,26 @@
       "Advanced threat protection": [
         "Avanceret trusselsbeskyttelse"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Samarbejd med ikke-${ BRAND_NAME }-brugere"
+      ],
       "Custom email domain": [
         "Tilpasset e-maildomæne"
+      ],
+      "Edit docs online": [
+        "Redigér dokumenter online"
       ],
       "Email addresses": [
         "E-mailadresser"
       ],
+      "File version history (over 1 week)": [
+        "Filversionshistorik (over 1 uge)"
+      ],
       "Free": [
         "Gratis"
       ],
-      "Online document editor": [
-        "Online tekstbehandler"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Gendan tidligere filversioner"
       ],
       "Storage": [
         "Lagerplads"
@@ -8344,6 +8488,9 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " besøg vores ${ helpCenterLink } eller ${ contactSupportLink }."
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Annullér til enhver tid inden ${ cancelDate }."
       ],
@@ -8706,6 +8853,9 @@
       ],
       "Business Number": [
         "Forretningsnummer"
+      ],
+      "EIN": [
+        "Momsnummer"
       ],
       "VAT number": [
         "Momsnummer"
@@ -10780,6 +10930,9 @@
       "Link confirmation": [
         "Linkbekræftelse"
       ],
+      "Make a secure connection your default": [
+        "Gør en sikker forbindelse til din standard"
+      ],
       "Merge contacts": [
         "Flet kontakter"
       ],
@@ -10842,6 +10995,9 @@
       ],
       "Phone numbers": [
         "Telefonnumre"
+      ],
+      "Private browsing vs VPN": [
+        "Privat browsing vs. VPN"
       ],
       "Processing...": [
         "Behandler..."
@@ -10998,6 +11154,15 @@
       ],
       "Upgrade complete!": [
         "Opgradering udført!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgradér til ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Opgrader din produktivitet for ${ formattedPrice } med ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Opgradér din lagerplads for ${ formattedPrice } med ${ planName }"
       ],
       "Upload and share files": [
         "Upload og del filer"
