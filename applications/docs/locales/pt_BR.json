@@ -825,6 +825,9 @@
       "Upgrade": [
         "Fazer upgrade"
       ],
+      "Upgrade for 200GB": [
+        "Faça upgrade para 200GB"
+      ],
       "Upgrade now": [
         "Atualizar agora"
       ],
@@ -1435,6 +1438,9 @@
       ],
       "Discover and set up features": [
         "Descubra e configure os recursos"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
       ],
       "Remind me later": [
         "Lembre-me mais tarde"
@@ -3277,7 +3283,7 @@
         "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
       "There was an error processing updates to the document. Please reload the page and try again.": [
-        "Houve um erro ao processar as atualizações do documento. Por favor, recarregue a página e tente novamente."
+        "Houve um erro ao processar as atualizações do documento. Recarregue a página e tente novamente."
       ],
       "There was an error when exporting the contacts vCards": [
         "Houve um erro ao exportar os vCards dos contatos"
@@ -5280,7 +5286,7 @@
         "Este documento tem muitas atividades. Alguns recursos podem estar temporariamente indisponíveis."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
-        "Este documento pode não existir ou estamos enfrentando problemas para carregá-lo. Por favor, recarregue a página e tente novamente."
+        "Este documento pode não existir ou estamos enfrentando problemas para carregá-lo. Recarregue a página e tente novamente."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.": [
         "É possível que esse documento não exista ou que você não tenha permissão para visualizá-lo. Você pode tentar recarregar a página para ver se o problema persiste ou entre em contato com o proprietário para ter acesso."
@@ -8049,12 +8055,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obtenha o ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Obtenha o Drive Plus por apenas ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Obtenha o Mail Plus por apenas ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Obtenha a oferta"
       ],
@@ -8066,6 +8066,9 @@
       ],
       "Limited-time offer": [
         "Oferta por tempo limitado"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tempo limitado, válida para o seu primeiro mês"
       ],
       "Maybe later": [
         "Talvez mais tarde"
@@ -8079,9 +8082,6 @@
       "Save": [
         "Economize"
       ],
-      "Save 80% on your first month.": [
-        "Economize 80% no seu primeiro mês"
-      ],
       "Save big when you pay annually": [
         "Aproveite descontos incríveis ao pagar anualmente!"
       ],
@@ -8090,6 +8090,12 @@
       ],
       "This offer won't be shown again.": [
         "Esta oferta não será exibida novamente."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Faça upgrade da sua produtividade por apenas ${ pricingTitle } com ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Faça upgrade do seu armazenamento por ${ pricingTitle } com ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Quando você muda de uma assinatura mensal para anual."
@@ -8116,23 +8122,26 @@
       "Advanced threat protection": [
         "Proteção avançada contra ameaças"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colaborar com usuários não-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domínio de e-mail personalizado"
+      ],
+      "Edit docs online": [
+        "Editar documentos on-line"
       ],
       "Email addresses": [
         "Endereços de e-mail"
       ],
+      "File version history (over 1 week)": [
+        "Histórico de versões do arquivo (mais de 1 semana)"
+      ],
       "Free": [
         "Gratuito"
       ],
-      "Online document editor": [
-        "Editor de documentos on-line"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recuperar versões anteriores de arquivos"
       ],
       "Storage": [
         "Armazenamento"
@@ -10438,6 +10447,15 @@
       ],
       "Upgrade complete!": [
         "Upgrade concluído!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Faça upgrade para ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Faça upgrade da sua produtividade por ${ formattedPrice } com ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Faça upgrade do seu armazenamento por ${ formattedPrice } com ${ planName }"
       ],
       "Upload and share files": [
         "Enviar e compartilhar arquivo"
