@@ -867,6 +867,9 @@
       "Upgrade": [
         "Prejsť na platený plán"
       ],
+      "Upgrade for 200GB": [
+        "Navýšte na 200GB"
+      ],
       "Upgrade now": [
         "Aktualizovať teraz"
       ],
@@ -1681,6 +1684,9 @@
       ],
       "Discover and set up features": [
         "Objaviť a nastaviť funkcie"
+      ],
+      "Maybe later": [
+        "Možno neskôr"
       ],
       "Remind me later": [
         "Pripomenúť neskôr"
@@ -4634,8 +4640,8 @@
       "add a recovery method": [
         "pridali spôsob obnovenia"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Pridajte do svojho účtu ďalšiu úroveň zabezpečenia. Pri každom prihlásení sa budete musieť overiť pomocou 2FA."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Pridajte ďalšiu vrstvu zabezpečenia do svojho účtu. Pri každom prihlásení sa budete musieť overiť pomocou 2FA. Odporúčame používať ${ protonAuthenticatorDownloadLink } na ukladanie vašich 2FA kódov."
       ],
       "Add domain": [
         "Pridať doménu"
@@ -8999,12 +9005,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Získajte ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Získajte Drive Plus len za ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Získajte Mail Plus len za ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Využiť ponuku"
       ],
@@ -9016,6 +9016,9 @@
       ],
       "Limited-time offer": [
         "Časovo obmedzená ponuka"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Časovo obmedzená ponuka, platí pre váš prvý mesiac"
       ],
       "Maybe later": [
         "Možno neskôr"
@@ -9029,9 +9032,6 @@
       "Save": [
         "Ušetrite"
       ],
-      "Save 80% on your first month.": [
-        "Ušetrite 80 % v prvom mesiaci."
-      ],
       "Save big when you pay annually": [
         "Pri ročnej platbe ušetríte viac"
       ],
@@ -9040,6 +9040,12 @@
       ],
       "This offer won't be shown again.": [
         "Táto ponuka sa už nezobrazí."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Zvýšte úroveň svojej produktivity len za ${ pricingTitle } s ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Navýšte svoje úložisko len za ${ pricingTitle } s ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Keď prejdete z mesačného na ročné predplatné."
@@ -9066,23 +9072,26 @@
       "Advanced threat protection": [
         "Pokročilá ochrana pred hrozbami"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Spolupracujte s používateľmi mimo ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Vlastná emailová doména"
+      ],
+      "Edit docs online": [
+        "Upravujte dokumenty online"
       ],
       "Email addresses": [
         "Emailové adresy"
       ],
+      "File version history (over 1 week)": [
+        "História verzií súboru (viac ako 1 týždeň)"
+      ],
       "Free": [
         "Zdarma"
       ],
-      "Online document editor": [
-        "Online editor dokumentov"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Obnova predchádzajúcich verzií súborov"
       ],
       "Storage": [
         "Úložisko"
@@ -9990,8 +9999,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Pridať používateľov alebo skupiny"
+      ],
+      "Cancel": [
+        "Zrušiť"
+      ],
+      "Confirm": [
+        "Potvrdiť"
+      ],
       "Create retention rule": [
         "Vytvoriť pravidlo uchovávania"
+      ],
+      "Create rule": [
+        "Vytvoriť pravidlo"
       ],
       "Delete": [
         "Odstrániť"
@@ -9999,8 +10020,48 @@
       "Delete rule": [
         "Vymazať pravidlo"
       ],
+      "Delete this scope": [
+        "Vymazať tento rozsah"
+      ],
       "Edit": [
         "Upraviť"
+      ],
+      "Purge all": [
+        "Vymazať všetko"
+      ],
+      "Purge deleted": [
+        "Vyčistiť vymazané"
+      ],
+      "Save changes": [
+        "Uložiť zmeny"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, vrátane tých v priečinkoch Doručená pošta, Odoslaná pošta a Koncepty. Týmto sa môžu vymazať správy, ktoré používatelia chcú uchovať. Tieto správy nie je možné neskôr obnoviť."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "Po ${ lifetime } dni budú všetky správy vymazané",
+        "Po ${ lifetime } dňoch budú všetky správy vymazané",
+        "Po ${ lifetime } dňoch budú všetky správy vymazané",
+        "Po ${ lifetime } dňoch budú všetky správy vymazané"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "Životnosť musí byť väčšia ako ${ MIN_LIFETIME } dní"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "Pre akciu „Uchovať všetko“ nesmie byť nastavená životnosť."
+      ],
+      "Scope value is not valid": [
+        "Hodnota rozsahu nie je platná"
+      ],
+      "Scope value is required": [
+        "Vyžaduje sa hodnota rozsahu"
+      ],
+      "Scopes cannot have the same value": [
+        "Rozsahy nemôžu mať rovnakú hodnotu"
       ]
     },
     "retention_policy_2025_Info": {
@@ -10013,11 +10074,87 @@
         "${ rule.Lifetime } dní",
         "${ rule.Lifetime } dní"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Vytvorte pravidlá uchovávania údajov, ktoré určujú, ako dlho sa majú údaje uchovávať v súlade s politikou uchovávania údajov vašej organizácie. Umožňuje tiež automatické vymazanie údajov, ktorých platnosť vypršala."
+      ],
       "Forever": [
         "Navždy"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Obsahuje všetky správy v Doručenej pošte, Odoslaných a vo všetkých ostatných umiestneniach. Vyčistené správy nemožno obnoviť."
+      ],
+      "Removes messages already deleted by users.": [
+        "Odstráni správy, ktoré už boli odstránené používateľmi."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Pravidlo uchovávania \"${ formData.name }\" bolo úspešne aktualizované"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Pravidlo uchovávania \"${ payload.Name }\" bolo úspešne vytvorené"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Pravidlo uchovávania \"${ retentionRule.Name }\" bolo úspešne vymazané."
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Po uplynutí doby uchovávania"
+      ],
+      "Applies to": [
+        "Platí pre"
+      ],
+      "days": [
+        "dní"
+      ],
+      "Keep items forever": [
+        "Uchovať položky navždy"
+      ],
+      "Keep messages forever": [
+        "Uchovať správy navždy"
+      ],
+      "Retention period": [
+        "Doba uchovávania"
+      ],
+      "Rule title": [
+        "Názov pravidla"
+      ],
+      "Select product": [
+        "Vyberte produkt"
+      ],
+      "Set a duration": [
+        "Nastavte trvanie"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Všetci v organizácii"
+      ],
+      "Group": [
+        "Skupina"
+      ],
+      "Purge all messages": [
+        "Vymazať všetky správy"
+      ],
+      "Purge deleted messages only": [
+        "Vyčistiť iba vymazané správy"
+      ],
+      "Specific users or groups": [
+        "Konkrétni používatelia alebo skupiny"
+      ],
+      "User": [
+        "Používateľ"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "Napr. Vyčistenie nepoužívaných poštových schránok"
+      ],
+      "Enter duration": [
+        "Zdajte trvanie"
+      ],
+      "Enter value": [
+        "Zadajte hodnotu"
+      ],
       "Search for rule, users, period, action": [
         "Hľadať pravidlo, používateľov, obdobie, akciu"
       ],
@@ -10042,6 +10179,17 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "Nenašli sa žiadne politiky uchovávania"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Potvrdiť pravidlo uchovávania?"
+      ],
+      "Create retention rule": [
+        "Vytvoriť pravidlo uchovávania"
+      ],
+      "Edit retention rule": [
+        "Upraviť pravidlo uchovávania"
       ]
     },
     "Role": {
@@ -11222,6 +11370,12 @@
         "${ ipAddresses } dedikované servery",
         "${ ipAddresses } dedikovaných serverov",
         "${ ipAddresses } dedikovaných serverov"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľa",
+        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľov",
+        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľov",
+        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľov"
       ],
       "${ n } calendar per user": [
         "${ n } kalendár na používateľa",
@@ -12878,11 +13032,20 @@
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
       ],
+      "Upgrade to ${ planName }": [
+        "Navýšiť na ${ planName }"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Vylepšite ochranu vašej siete pomocou dedikovaných serverov"
       ],
       "Upgrade your privacy": [
         "Zvýšte svoje súkromie"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Zvýšte úroveň svojej produktivity za ${ formattedPrice } s ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Navýšte svoje úložisko za ${ formattedPrice } s ${ planName }"
       ],
       "Upload and share files": [
         "Nahrávanie a zdieľanie súborov"
