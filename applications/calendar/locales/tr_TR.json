@@ -836,6 +836,9 @@
       "Upgrade": [
         "Yükselt"
       ],
+      "Upgrade for 200GB": [
+        "200GB boyutuna artırın"
+      ],
       "Upgrade Now": [
         "Şimdi yükselt"
       ],
@@ -1523,6 +1526,9 @@
       ],
       "Discover and set up features": [
         "Özellikleri keşfedin ve ayarlayın"
+      ],
+      "Maybe later": [
+        "Belki daha sonra"
       ],
       "Remind me later": [
         "Daha sonra hatırlat"
@@ -5278,7 +5284,7 @@
         "İçe aktarılıyor"
       ],
       "Import mailbox": [
-        "Posta kutusunu içe aktar"
+        "E-posta kutusunu içe aktar"
       ],
       "Important note": [
         "Önemli not"
@@ -6615,7 +6621,7 @@
         "Bağlantı noktası"
       ],
       "Post office box": [
-        "Fiziksel posta kutusu"
+        "Fiziksel e-posta kutusu"
       ],
       "Postal code": [
         "Posta kodu"
@@ -8385,12 +8391,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited tarifesini alın"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Yalnızca ${ pricingTitle } ile Mail Plus aboneliği edinin."
-      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ],
@@ -8402,6 +8402,9 @@
       ],
       "Limited-time offer": [
         "Sınırlı süreli teklif"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Sınırlı süreli teklif, ilk ayınız için geçerlidir"
       ],
       "Maybe later": [
         "Belki daha sonra"
@@ -8415,9 +8418,6 @@
       "Save": [
         "İndirim"
       ],
-      "Save 80% on your first month.": [
-        "İlk ayınızda % 80 indirim kazanın."
-      ],
       "Save big when you pay annually": [
         "Yıllık ödeme yaparak büyük indirim kazanın"
       ],
@@ -8426,6 +8426,12 @@
       ],
       "This offer won't be shown again.": [
         "Bu teklif bir daha görüntülenmeyecek."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName } ile yalnızca ${ pricingTitle } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Depolama alanınızı yalnızca ${ pricingTitle } ödeyerek ${ planName } ile artırın"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Aylık abonelikten yıllık aboneliğe geçtiğinizde."
@@ -8452,23 +8458,26 @@
       "Advanced threat protection": [
         "Gelişmiş tehdit koruması"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "${ BRAND_NAME } dışı kullanıcılarla işbirliği yapın"
+      ],
       "Custom email domain": [
         "Özel e-posta etki alanı"
+      ],
+      "Edit docs online": [
+        "Belgeleri çevrim içi düzenleyin"
       ],
       "Email addresses": [
         "E-posta adresleri"
       ],
+      "File version history (over 1 week)": [
+        "Dosya sürümü geçmişi (1 haftadan eski)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükle"
       ],
       "Storage": [
         "Depolama alanı"
@@ -11186,6 +11195,15 @@
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükseltin"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName } ile ${ formattedPrice } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Depolama alanınızı ${ formattedPrice } ödeyerek ${ planName } ile artırın"
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"

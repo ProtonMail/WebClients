@@ -833,6 +833,9 @@
       "Upgrade": [
         "アップグレード"
       ],
+      "Upgrade for 200GB": [
+        "200GBへアップグレード"
+      ],
       "Upgrade Now": [
         "今すぐアップグレード"
       ],
@@ -965,6 +968,9 @@
       ],
       "${ price } per user": [
         "ユーザーあたり ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } の ${ seats } シート"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ライティングアシスタントのシート"
@@ -1385,6 +1391,9 @@
       ]
     },
     "Bug category": {
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } の不具合"
+      ],
       "Application problem": [
         "アプリケーションに関する問題"
       ],
@@ -1479,6 +1488,9 @@
       ],
       "Discover and set up features": [
         "機能の発見と設定"
+      ],
+      "Maybe later": [
+        "またあとで"
       ],
       "Remind me later": [
         "後で通知する"
@@ -4699,6 +4711,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME }のLifetimeディールには更新料金はなく、一度の支払いで${ PASS_SHORT_APP_NAME }への生涯アクセスが可能です。"
       ],
@@ -5034,6 +5049,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "ダウングレードすると、有料の ${ VPN_APP_NAME } サーバーとの接続が終了します。"
+      ],
+      "Download current logs": [
+        "現在のログをダウンロード"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
@@ -6358,6 +6376,9 @@
       ],
       "Import to:": [
         "インポート先："
+      ],
+      "Include application logs in bug report": [
+        "バグレポートにアプリのログを含める"
       ],
       "Integrated 2FA authenticator": [
         "2要素認証システムの統合"
@@ -8191,12 +8212,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimitedを入手"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "たった${ pricingTitle }でDrive Plusを入手"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "たった${ pricingTitle }でMail Plusを入手"
-      ],
       "Get the deal": [
         "割引を入手"
       ],
@@ -8208,6 +8223,9 @@
       ],
       "Limited-time offer": [
         "期間限定オファー"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "期間限定オファー、最初の月のみ有効です"
       ],
       "Maybe later": [
         "またあとで"
@@ -8221,9 +8239,6 @@
       "Save": [
         "節約"
       ],
-      "Save 80% on your first month.": [
-        "最初の月は 80 %割引。"
-      ],
       "Save big when you pay annually": [
         "年払いで大幅に節約"
       ],
@@ -8232,6 +8247,12 @@
       ],
       "This offer won't be shown again.": [
         "このオファーは二度と表示されません。"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }で生産性をアップグレードできます。"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }でストレージをアップグレードできます。"
       ],
       "When you switch from a monthly to annual subscription.": [
         "月額プランから年間プランに切り替える場合。"
@@ -8258,23 +8279,26 @@
       "Advanced threat protection": [
         "高度な脅威保護"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "非${ BRAND_NAME } ユーザーとコラボレーション"
+      ],
       "Custom email domain": [
         "独自メールドメイン"
+      ],
+      "Edit docs online": [
+        "オンラインでドキュメントを編集"
       ],
       "Email addresses": [
         "メールアドレス"
       ],
+      "File version history (over 1 week)": [
+        "ファイルバージョン履歴(1週間以上)"
+      ],
       "Free": [
         "無料"
       ],
-      "Online document editor": [
-        "オンライン文書エディタ"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "以前のファイルを復元"
       ],
       "Storage": [
         "ストレージ"
@@ -10931,6 +10955,15 @@
       ],
       "Upgrade complete!": [
         "アップグレード完了!"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName }で${ formattedPrice }にて、お客様の生産性をアップグレードしましょう。"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "${ planName }をご利用いただくと、${ formattedPrice }でストレージをアップグレードできます。"
       ],
       "Upload and share files": [
         "ファイルのアップロードと共有"
