@@ -142,6 +142,7 @@ const getMailOptions = (): OptionItem[] => {
             type: optionType,
             value: 'Meet problem',
             title: c('meet_2025 Bug category').t`${MEET_SHORT_APP_NAME} problem`,
+            clientType: CLIENT_TYPES.MEET,
             app: APPS.PROTONMEET,
         },
         { type: labelType, value: c('Group').t`Other category` },
