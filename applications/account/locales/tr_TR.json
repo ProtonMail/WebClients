@@ -652,6 +652,9 @@
       "Enable multi-user support": [
         "Çok kullanıcı desteğini aç"
       ],
+      "Enable post-quantum protection": [
+        "Kuantum sonrası korumasını aç"
+      ],
       "Encrypt and export": [
         "Şifrele ve dışa aktar"
       ],
@@ -1458,6 +1461,9 @@
       ],
       "Upgrade": [
         "Yükselt"
+      ],
+      "Upgrade for 200GB": [
+        "200GB boyutuna artırın"
       ],
       "Upgrade now": [
         "Şimdi yükselt"
@@ -4186,7 +4192,7 @@
         "Ayrıca şunlar da bulunur"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Çöp ve İstenmeyen klasörlerine konmuş 30 günden eski e-postaları otomatik olarak temizleyin."
+        "Çöp ve İstenmeyen kutularındaki 30 günden eski e-postaları otomatik olarak temizleyin."
       ],
       "Automatically forward incoming email to another email address.": [
         "Gelen e-postaları otomatik olarak başka bir e-posta adresine iletin."
@@ -6861,6 +6867,11 @@
         "${ BRAND_NAME }. Gizlilik odaklı."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Artık ${ BRAND_NAME } mobil uygulamalarının eski sürümlerinden oturum açamayacağımı anladım."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "İnternet uygulaması"
@@ -7078,6 +7089,12 @@
       ],
       "Servers": [
         "Sunucular"
+      ],
+      "Sort folders": [
+        "Klasörleri sırala"
+      ],
+      "Sort labels": [
+        "Etiketleri sırala"
       ],
       "Status": [
         "Durum"
@@ -7927,8 +7944,8 @@
       "Add a recovery phone number": [
         "Bir kurtarma telefonu numarası ekle"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açtığınızda iki adımlı doğrulama ile kimliğinizi doğrulamanız gerekir."
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açışınızda iki adımlı yapmanız gerekecektir. İki adımlı doğrulama kodlarınızı kaydetmek için ${ protonAuthenticatorDownloadLink } kullanmanızı öneririz."
       ],
       "Add domain": [
         "Etki alanı ekle"
@@ -8105,6 +8122,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "${ boldDomain } etki alanını kaldırmak istediğinize emin misiniz?"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "Klasörlerinizi alfabetik olarak sıralamak istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "Etiketlerinizi alfabetik olarak sıralamak istediğinize emin misiniz?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Kuruluş yöneticinizden ağ geçitlerini kurmasını isteyin."
       ],
@@ -8136,7 +8159,10 @@
         "Otomatik yanıt, haftanın seçilmiş günlerinde seçilmiş saatler arasında açılır."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Çöp ve İstenmeyen klasörlerine konmuş 30 günden eski e-postaları otomatik olarak temizleyin."
+        "Çöp ve İstenmeyen kutularındaki 30 günden eski e-postaları otomatik olarak temizleyin."
+      ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "Açık bir e-posta silindiğinde, arşivlendiğinde ya da taşındığında otomatik olarak sonraki e-posta görüntülenir."
       ],
       "Available on macOS, Windows, and Linux.": [
         "macOS, Windows ve Linux üzerinde kullanılabilir."
@@ -8200,6 +8226,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "Kuantum sonrası korumasını açtığınızda, hesabınız için kuantum bilgisayarların çözmekte zorlanacağı anahtarlar oluşturulur."
       ],
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
@@ -8386,6 +8415,9 @@
       ],
       "Delete link?": [
         "Bağlantı silinsin mi?"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri silebilirsiniz. Otomatik silme özelliğini açtığınızda, çöp ya da istenmeyen klasörlerindeki iletilere, o kutuya kondukları tarihe göre bir silinme tarihi belirlenir."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
@@ -8656,6 +8688,9 @@
       "Example: ${ spfExample }": [
         "Örnek: ${ spfExample }"
       ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "Var olan uçtan uca şifrelenmiş e-posta ileticilerinizi, ayarlar altındaki **${ autoReplySettingsTitle }** bölümünden el ile yeniden kullanıma almalısınız."
+      ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
@@ -8766,6 +8801,9 @@
       ],
       "Group deleted": [
         "Grup silindi"
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Gelen kutunuzda aynı yazışmanın e-postalarının gruplanmış ya da ayrı ayrı görüntülenmesini ayarlayın."
       ],
       "Groups": [
         "Gruplar"
@@ -8883,7 +8921,7 @@
         "İçe aktarılıyor"
       ],
       "Import mailbox": [
-        "Posta kutusunu içe aktar"
+        "E-posta kutusunu içe aktar"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "ÖNEMLİ: DNS panonuz CNAME değerlerinin noktayla bitmesine izin vermiyorsa CNAME değerlerindeki son noktayı kaldırabilirsiniz."
@@ -9176,6 +9214,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
+      ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "İstenmeyen veya Çöp klasörlerindeki iletiler, Tüm e-postalar klasöründe görüntülenmeyecek."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
@@ -9829,6 +9870,9 @@
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Özel etki alanlarının ve ${ BRAND_NAME } olmayan e-posta adreslerinin izlenmesi desteği yakında sunulacak."
+      ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "Hesabınızda kuantum sonrası anahtarlar desteği açıldı."
       ],
       "support team": [
         "destek ekibi"
@@ -10777,9 +10821,6 @@
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Diğer kullanıcılara yönelik, var olan uçtan uca şifrelenmiş ileticileriniz duraklatılacak. '${ autoReplySettingsTitle }' ayarlarından bunları el ile yeniden açabilirsiniz."
-      ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
       ],
@@ -11051,37 +11092,37 @@
       "Generate key": [
         "Anahtar oluştur"
       ],
-      "Generating key failed. Please try again later.": [
-        "Anahtar oluşturulamadı. Lütfen bir süre sonra yeniden deneyin."
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Önceki anahtarınızın ele geçirildiğinden şüphelenerek bu anahtarı oluşturduysanız, lütfen ayarlarınızdan eski anahtarınızı ele geçirilmiş olarak işaretleyin."
       ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Var olan anahtarınızın ele geçirildiğini düşündüğünüz için yeni bir anahtar oluşturuyorsanız, lütfen yeni anahtarı oluşturduktan sonra bunu ele geçirilmiş olarak işaretleyin."
+      "Key generation failed, please try again later.": [
+        "Anahtar oluşturulamadı. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Key successfully generated.": [
         "Anahtar oluşturuldu."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Not: Bu adres için aynı algoritmayı kullanan bir anahtarınız zaten var. Bu anahtar ele geçirilmediği sürece, yeni bir anahtar oluşturmak gereksiz olabilir ve bunu yapmak hesabınızı yavaşlatabilir."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Not: Bu kullanıcı için aynı algoritmayı kullanan bir anahtarınız zaten var. Bu anahtar ele geçirilmediği sürece, yeni bir anahtar oluşturmak gereksiz olabilir ve bunu yapmak hesabınızı yavaşlatabilir."
+      "New key generated": [
+        "Yeni anahtar oluşturuldu"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Bu işlem, gelecekteki iletişim bilgilerini, e-posta şifreleme anahtarlarını ve diğer verileri şifrelemek için kullanılacak yeni bir anahtar oluşturacak."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Bu işlem, diğer verilerin yanı sıra gelecekteki e-postaları şifrelemek için kullanılacak yeni bir anahtar oluşturacak."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Bu işlem, **${ emailAddress }** için gelecekteki e-postaları ve diğer verileri şifrelemek amacıyla kullanılacak yeni bir anahtar oluşturacak."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "Bu türde bir anahtarınız zaten var. Bu anahtar ele geçirilmediği sürece, **yeni bir anahtar oluşturmak hesabınızı yavaşlatabilir**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Uyumluluk"
-      ],
       "Compromised": [
         "Ele geçirilmiş"
       ],
       "Disabled": [
         "Kullanım dışı"
+      ],
+      "Fallback": [
+        "Yedek"
       ],
       "Forwarding": [
         "İletme"
@@ -11097,6 +11138,27 @@
       ],
       "Primary": [
         "Birincil"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Daha hızlı"
+      ],
+      "Slower, but stronger long-term security": [
+        "Daha yavaş, ancak uzun vadede daha güçlü güvenlik"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Anahtar türünü seçin"
       ]
     },
     "Keyboard shortcut name": {
@@ -11335,8 +11397,8 @@
       "Export public key": [
         "Herkese açık anahtarı indir"
       ],
-      "Make primary": [
-        "Birincil yap"
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "Bu işlem, şifreleme ve imzalama için ${ keyStatusBadgeTitles.primary } ve ${ keyStatusBadgeTitles.fallback } anahtarlarını yapar."
       ],
       "Mark compromised": [
         "Ele geçirilmiş olarak işaretle"
@@ -11349,6 +11411,9 @@
       ],
       "Mark obsolete": [
         "Eskimiş olarak işaretle"
+      ],
+      "Use for encryption and signing": [
+        "Şifreleme ve imzalama için kullanılsın"
       ]
     },
     "Knowledge base link label": {
@@ -12000,6 +12065,9 @@
       ],
       "Key": [
         "Anahtar"
+      ],
+      "Key strength": [
+        "Anahtar karmaşıklığı"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
@@ -14885,12 +14953,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited tarifesini alın"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Yalnızca ${ pricingTitle } ile Drive Plus aboneliği edinin."
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Yalnızca ${ pricingTitle } ile Mail Plus aboneliği edinin."
-      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ],
@@ -14902,6 +14964,9 @@
       ],
       "Limited-time offer": [
         "Sınırlı süreli teklif"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Sınırlı süreli teklif, ilk ayınız için geçerlidir"
       ],
       "Maybe later": [
         "Belki daha sonra"
@@ -14915,9 +14980,6 @@
       "Save": [
         "İndirim"
       ],
-      "Save 80% on your first month.": [
-        "İlk ayınızda % 80 indirim kazanın."
-      ],
       "Save big when you pay annually": [
         "Yıllık ödeme yaparak büyük indirim kazanın"
       ],
@@ -14926,6 +14988,12 @@
       ],
       "This offer won't be shown again.": [
         "Bu teklif bir daha görüntülenmeyecek."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName } ile yalnızca ${ pricingTitle } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Depolama alanınızı yalnızca ${ pricingTitle } ödeyerek ${ planName } ile artırın"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Aylık abonelikten yıllık aboneliğe geçtiğinizde."
@@ -14952,23 +15020,26 @@
       "Advanced threat protection": [
         "Gelişmiş tehdit koruması"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "${ BRAND_NAME } dışı kullanıcılarla işbirliği yapın"
+      ],
       "Custom email domain": [
         "Özel e-posta etki alanı"
+      ],
+      "Edit docs online": [
+        "Belgeleri çevrim içi düzenleyin"
       ],
       "Email addresses": [
         "E-posta adresleri"
       ],
+      "File version history (over 1 week)": [
+        "Dosya sürümü geçmişi (1 haftadan eski)"
+      ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Çevrim içi belge düzenleyici"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükle"
       ],
       "Storage": [
         "Depolama alanı"
@@ -16406,6 +16477,61 @@
         "${ upsellPlanTitle } tarifesine yükselt"
       ]
     },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Hesabınızda kuantum sonrası koruması açıldı. Ancak bazı işlemler tamamlanamadı: Kuantum sonrası hesabı ve adres anahtarları oluşturulamadı. Bu anahtarları ${ encryptionAndKeysSettingsTitle } ayarları altından el ile oluşturabilirsiniz."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "Hesabınızda kuantum sonrası koruması açıldı, ancak bazı işlemler tamamlanamadı: Bir veya daha fazla adres için kuantum sonrası adres anahtarları oluşturulamadı. Bu anahtarları ${ encryptionAndKeysSettingsTitle } ayarları altından el ile oluşturabilirsiniz."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Lütfen **tüm ${ BRAND_NAME } mobil uygulamalarınızı** son sürüme güncelleyin."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "Bu işlem, her adres için yeni bir hesap anahtarı ve yeni bir e-posta şifreleme anahtarı oluşturur. Bunlar, gelecekteki e-postaları ve diğer verileri şifrelemek ve şifresini çözmek için kullanılır."
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "Anahtarları kullanıma al ve oluştur"
+      ],
+      "Enable post-quantum protection": [
+        "Kuantum sonrası korumasını aç"
+      ],
+      "Enable post-quantum protection?": [
+        "Kuantum sonrası koruması açılsın mı?"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "Kuantum sonrası koruması açılamadı. Lütfen bir süre sonra yeniden deneyin."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Anladım"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "Hesabınızda kuantum sonrası koruması açıldı!"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Kuantum sonrası hesap anahtarı oluşturuluyor"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "Her adres için kuantum sonrası adres anahtarları oluşturuluyor"
+      ],
+      "Opting into post-quantum protection": [
+        "Kuantum sonrası korumasına geçiliyor"
+      ]
+    },
     "Price": {
       "Free": [
         "Ücretsiz"
@@ -16546,6 +16672,14 @@
         "Telefon numaranızı doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
       ]
     },
+    "Remark about a key type option": {
+      "Classic": [
+        "Klasik"
+      ],
+      "Post-quantum": [
+        "Kuantum sonrası"
+      ]
+    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Aboneliğinden çıktığınızda bu takvime erişemeyeceksiniz. Bu takvimdeki tüm etkinlikler hesabınızdan silinecek. Ancak özgün herkese açık bağlantı ile erişilebilir kalacaklar."
@@ -16639,7 +16773,7 @@
     },
     "retention_policy_2025_Confirmation": {
       "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
-        "${ strongText } ile, Gelen kutusu, Gönderilmiş ve Taslaklar klasörlerindeki iletileri kapsar. Bu uygulama, kullanıcıların tutulacağını düşündüğü iletileri temizleyebilir. Bu iletiler daha sonra kurtarılamaz."
+        "${ strongText }, Gelen, Gönderilmiş ve Taslaklar kutularındaki iletileri kapsar. Bu uygulama, kullanıcıların tutulacağını düşündüğü iletileri temizleyebilir. Bu iletiler daha sonra kurtarılamaz."
       ],
       "After ${ lifetime } day all messages will be deleted": [
         "${ lifetime } gün sonra tüm iletiler silinecek",
@@ -16678,7 +16812,7 @@
         "Sonsuza dek"
       ],
       "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
-        "Gelen kutusu, Gönderilmiş ve diğer tüm konumlardaki tüm iletileri kapsar. Temizlenen iletiler kurtarılamaz."
+        "Gelen ve Gönderilmiş kutuları ile diğer tüm konumlardaki tüm iletileri kapsar. Temizlenen iletiler kurtarılamaz."
       ],
       "Removes messages already deleted by users.": [
         "Kullanıcılar tarafından zaten silinmiş iletileri siler."
@@ -16712,8 +16846,8 @@
       "Retention period": [
         "Verileri tutma süresi"
       ],
-      "Retention rule": [
-        "Verileri tutma kuralı"
+      "Rule title": [
+        "Kural başlığı"
       ],
       "Select product": [
         "Ürün seçin"
@@ -16744,7 +16878,7 @@
     },
     "retention_policy_2025_Placeholder": {
       "E.g. Cleanup unused mailboxes": [
-        "Örnek: Kullanılmayan e-posta kutularını temizleme"
+        "Örnek: Kullanılmayan e-posta kutularını temizlemek"
       ],
       "Enter duration": [
         "Süreyi yazın"
@@ -17597,7 +17731,7 @@
     },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
-        "Klasör ve etiketleri kullanarak gelen kutunuzu düzenli tutun. ${ learnMoreLink }"
+        "Klasörleri ve etiketleri kullanarak gelen kutunuzu düzenli tutun. ${ learnMoreLink }"
       ]
     },
     "Settings section title": {
@@ -18845,6 +18979,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } size ayrılmış sunucu",
         "${ ipAddresses } size ayrılmış sunucu"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "En fazla ${ maxLumo } kullanıcı için ${ LUMO_APP_NAME }",
+        "En fazla ${ maxLumo } kullanıcı için ${ LUMO_APP_NAME }"
       ],
       "${ n } calendar per user": [
         "Her kullanıcı için ${ n } takvim",
@@ -20828,6 +20966,9 @@
       "Policies": [
         "İlkeler"
       ],
+      "Post-quantum protection": [
+        "Kuantum sonrası koruması"
+      ],
       "Preview": [
         "Ön izleme"
       ],
@@ -21171,8 +21312,17 @@
       "Upgrade plan": [
         "Tarifeyi yükselt"
       ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükseltin"
+      ],
       "Upgrade your privacy": [
         "Gizlilik düzeyinizi yükseltin"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName } ile ${ formattedPrice } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Depolama alanınızı ${ formattedPrice } ödeyerek ${ planName } ile artırın"
       ],
       "Upload and share files": [
         "Dosyaları yükleyin ve paylaşın"
@@ -21460,7 +21610,7 @@
         "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Çöp ve istenmeyen kutularındaki iletileri 30 gün durduktan sonra silebilirsiniz. Otomatik silmeyi açtığınızda, çöp ya da istenmeyen kutusundaki iletiler için, o kutuya kondukları tarihe göre bir silme tarihi belirlenir."
+        "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri silebilirsiniz. Otomatik silmeyi açtığınızda, çöp ya da istenmeyen kutusundaki iletiler için, o kutuya kondukları tarihe göre bir silme tarihi belirlenir."
       ],
       "Device name and app version": [
         "Aygıt adı ve uygulama sürümü"
@@ -21520,7 +21670,7 @@
         "İki adımlı doğrulama kullanmayan üyelere, bunu en kısa sürede açmaları için bir e-posta gönderilecek. Bu bildirim e-postası, tek oturum açma kullanıcılarına gönderilmeyecek."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
+        "Gönderilmiş veya Taslaklar kutularındaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
       ],
       "Not all information listed here was exposed for all users.": [
         "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmemiştir."
