@@ -169,9 +169,7 @@ export const ExpirationCell = ({ item }: { item: TrashItem }) => {
 };
 
 export type ShareOptionsCellType = {
-    volumeId: string;
     isShared?: boolean;
-    linkId: string;
     trashed: number | null;
     isAdmin: boolean;
     onShareClick?: () => void;
