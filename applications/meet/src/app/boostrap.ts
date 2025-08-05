@@ -99,8 +99,9 @@ export const initAppDependencies = async (
     const { api, silentApi } = getApis(config);
 
     const unleashClient = bootstrap.createUnleash({ api: silentApi });
-    const eventManager = bootstrap.eventManager({ api: silentApi });
     const sessionResult = await getSession({ authentication, api });
+
+    const eventManager = bootstrap.eventManager({ api: silentApi });
 
     const history = bootstrap.createHistory({ sessionResult, pathname: window.location.pathname });
 
