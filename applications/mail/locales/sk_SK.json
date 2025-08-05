@@ -1434,6 +1434,12 @@
       "Trust": [
         "Dôverovať"
       ],
+      "Trust key": [
+        "Dôveryhodný kľúč",
+        "Dôveryhodný kľúč",
+        "Dôverovať kľúčom",
+        "Dôverovať novým kľúčom"
+      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -1496,6 +1502,9 @@
       ],
       "Upgrade": [
         "Prejsť na platený plán"
+      ],
+      "Upgrade for 200GB": [
+        "Navýšte na 200GB"
       ],
       "Upgrade Now": [
         "Inovovať teraz"
@@ -4414,9 +4423,6 @@
       ],
       "An error occurred while saving your alias": [
         "Pri ukladaní vášho aliasu došlo k chybe."
-      ],
-      "Attachments are limited to 25 MB": [
-        "Prílohy sú obmedzené na 25 MB"
       ],
       "Authentication canceled.": [
         "Prihlásenie zrušené."
@@ -7391,10 +7397,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -11582,12 +11585,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Získajte ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Získajte Drive Plus len za ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Získajte Mail Plus len za ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Využiť ponuku"
       ],
@@ -11599,6 +11596,9 @@
       ],
       "Limited-time offer": [
         "Časovo obmedzená ponuka"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Časovo obmedzená ponuka, platí pre váš prvý mesiac"
       ],
       "Maybe later": [
         "Možno neskôr"
@@ -11612,9 +11612,6 @@
       "Save": [
         "Ušetrite"
       ],
-      "Save 80% on your first month.": [
-        "Ušetrite 80 % v prvom mesiaci."
-      ],
       "Save big when you pay annually": [
         "Pri ročnej platbe ušetríte viac"
       ],
@@ -11623,6 +11620,12 @@
       ],
       "This offer won't be shown again.": [
         "Táto ponuka sa už nezobrazí."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Zvýšte úroveň svojej produktivity len za ${ pricingTitle } s ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Navýšte svoje úložisko len za ${ pricingTitle } s ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Keď prejdete z mesačného na ročné predplatné."
@@ -11649,23 +11652,26 @@
       "Advanced threat protection": [
         "Pokročilá ochrana pred hrozbami"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Spolupracujte s používateľmi mimo ${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Vlastná emailová doména"
+      ],
+      "Edit docs online": [
+        "Upravujte dokumenty online"
       ],
       "Email addresses": [
         "Emailové adresy"
       ],
+      "File version history (over 1 week)": [
+        "História verzií súboru (viac ako 1 týždeň)"
+      ],
       "Free": [
         "Zdarma"
       ],
-      "Online document editor": [
-        "Online editor dokumentov"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Obnova predchádzajúcich verzií súborov"
       ],
       "Storage": [
         "Úložisko"
@@ -15410,6 +15416,15 @@
       ],
       "Upgrade complete!": [
         "Aktualizácia dokončená!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšiť na ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Zvýšte úroveň svojej produktivity za ${ formattedPrice } s ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Navýšte svoje úložisko za ${ formattedPrice } s ${ planName }"
       ],
       "Upload and share files": [
         "Nahrávanie a zdieľanie súborov"

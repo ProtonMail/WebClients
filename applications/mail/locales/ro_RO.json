@@ -1430,6 +1430,11 @@
       "Trust": [
         "Aprobare"
       ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Chei de încredere",
+        "Chei de încredere"
+      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -1492,6 +1497,9 @@
       ],
       "Upgrade": [
         "Modificare"
+      ],
+      "Upgrade for 200GB": [
+        "Treceți la 200 GiB"
       ],
       "Upgrade Now": [
         "Modificare"
@@ -4393,8 +4401,8 @@
       "An error occurred while saving your alias": [
         "A apărut o eroare în timpul salvării aliasului."
       ],
-      "Attachments are limited to 25 MB": [
-        "Atașamentele sunt limitate la 25 MiB."
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Atașamentele sunt limitate la ${ readableAttachmentMaxSize }"
       ],
       "Authentication canceled.": [
         "Autentificare anulată."
@@ -7276,9 +7284,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -11402,12 +11408,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Obțineți ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Luați Drive Plus cu doar ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Luați Mail Plus cu doar ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Luați oferta"
       ],
@@ -11419,6 +11419,9 @@
       ],
       "Limited-time offer": [
         "Ofertă limitată"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Ofertă pe perioadă limitată, valabilă pentru prima lună"
       ],
       "Maybe later": [
         "Poate mai târziu"
@@ -11432,9 +11435,6 @@
       "Save": [
         "Economisiți"
       ],
-      "Save 80% on your first month.": [
-        "Economisiți 80% în prima lună."
-      ],
       "Save big when you pay annually": [
         "Economisiți mult dacă plătiți anual"
       ],
@@ -11443,6 +11443,12 @@
       ],
       "This offer won't be shown again.": [
         "Această ofertă nu va mai fi afișată."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Modernizați-vă productivitatea cu doar ${ pricingTitle } cu ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Modernizați-vă stocarea cu doar ${ pricingTitle } cu ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Când comutați de la un abonament lunar la unul anual."
@@ -11469,23 +11475,26 @@
       "Advanced threat protection": [
         "Protecție avansată împotriva amenințărilor"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colaborați cu utilizatorii non-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domeniu personal de e-mail"
+      ],
+      "Edit docs online": [
+        "Editați documente online"
       ],
       "Email addresses": [
         "Adrese de e-mail"
       ],
+      "File version history (over 1 week)": [
+        "Istoric versiuni fișiere (mai vechi de o săptămână)"
+      ],
       "Free": [
         "Gratuit"
       ],
-      "Online document editor": [
-        "Editor online de documente"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierului"
       ],
       "Storage": [
         "Spațiu de stocare"
@@ -15137,6 +15146,15 @@
       ],
       "Upgrade complete!": [
         "Modificare finalizată!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Treceți la ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Modernizați-vă productivitatea cu ${ formattedPrice } cu ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Măriți-vă spațiul de stocare cu ${ formattedPrice } cu ${ planName }"
       ],
       "Upload and share files": [
         "Încărcați și partajați fișiere"
