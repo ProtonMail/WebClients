@@ -1426,6 +1426,10 @@
       "Trust": [
         "Faire confiance"
       ],
+      "Trust key": [
+        "Approuver la clé",
+        "Approuver les clés"
+      ],
       "Trust public key": [
         "Approuver la clé publique"
       ],
@@ -1488,6 +1492,9 @@
       ],
       "Upgrade": [
         "Changer d'abonnement"
+      ],
+      "Upgrade for 200GB": [
+        "Mise à niveau pour 200 Go"
       ],
       "Upgrade Now": [
         "Passer à l'abonnement supérieur"
@@ -1669,7 +1676,7 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
-        "${ seats } accès à ${ LUMO_APP_NAME }"
+        "${ seats } accès ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
@@ -4405,8 +4412,8 @@
       "An error occurred while saving your alias": [
         "Une erreur s'est produite lors de l'enregistrement de votre alias."
       ],
-      "Attachments are limited to 25 MB": [
-        "La taille des pièces jointes est limitée à 25 Mo."
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Les pièces jointes sont limitées à ${ readableAttachmentMaxSize }"
       ],
       "Authentication canceled.": [
         "L'authentification a été annulée."
@@ -7195,8 +7202,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -11259,12 +11265,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Profitez de ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Profitez de Drive Plus pour seulement ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Profitez de Mail Plus pour seulement ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Je profite de l'offre"
       ],
@@ -11276,6 +11276,9 @@
       ],
       "Limited-time offer": [
         "Offre à durée limitée"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Offre d'une durée limitée, valide pour votre premier mois"
       ],
       "Maybe later": [
         "Peut-être plus tard"
@@ -11289,9 +11292,6 @@
       "Save": [
         "Économisez"
       ],
-      "Save 80% on your first month.": [
-        "Économisez 80 % sur votre premier mois"
-      ],
       "Save big when you pay annually": [
         "Économisez un maximum en optant pour le paiement annuel !"
       ],
@@ -11300,6 +11300,12 @@
       ],
       "This offer won't be shown again.": [
         "Cette offre ne sera plus affichée."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Améliorez votre productivité pour seulement ${ pricingTitle } avec ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Mettez à niveau votre stockage pour seulement ${ pricingTitle } avec ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Lorsque vous passez d'un abonnement mensuel à un abonnement annuel."
@@ -11326,23 +11332,26 @@
       "Advanced threat protection": [
         "Protection avancée contre les menaces"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Collaborer avec des utilisateurs non-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Domaine de messagerie personnalisé"
+      ],
+      "Edit docs online": [
+        "Modifier des documents en ligne"
       ],
       "Email addresses": [
         "Adresses e-mail"
       ],
+      "File version history (over 1 week)": [
+        "Historique des versions du fichier (plus d'une semaine)"
+      ],
       "Free": [
         "Gratuit"
       ],
-      "Online document editor": [
-        "Éditeur de documents en ligne"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Récupérer les versions précédentes des fichiers"
       ],
       "Storage": [
         "Espace de stockage"
@@ -14912,6 +14921,15 @@
       ],
       "Upgrade complete!": [
         "L'abonnement a été mis à jour."
+      ],
+      "Upgrade to ${ planName }": [
+        "Mise à niveau vers ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Améliorez votre productivité pour ${ formattedPrice } avec ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Mettez à niveau votre stockage pour ${ formattedPrice } avec ${ planName }"
       ],
       "Upload and share files": [
         "Importer et partager des fichiers"

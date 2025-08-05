@@ -1459,6 +1459,9 @@
       "Upgrade": [
         "Uppgradera"
       ],
+      "Upgrade for 200GB": [
+        "Uppgradera för 200 GB"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
       ],
@@ -6790,6 +6793,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Jag förstår att jag inte längre kommer att kunna logga in från äldre versioner av mobilappar för ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "webbapp"
@@ -7007,6 +7015,9 @@
       ],
       "Servers": [
         "Servrar"
+      ],
+      "Sort folders": [
+        "Sortera mappar"
       ],
       "Sort labels": [
         "Sortera etiketter"
@@ -7856,9 +7867,6 @@
       "Add a recovery phone number": [
         "Lägg till ett telefonnummer för återställning"
       ],
-      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Lägg till ytterligare ett lager av säkerhet till ditt konto. Du måste verifiera dig själv med 2FA varje gång du loggar in."
-      ],
       "Add domain": [
         "Lägg till domän"
       ],
@@ -8701,6 +8709,9 @@
       ],
       "Group deleted": [
         "Grupp borttagen"
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Gruppera e-post i samma konversation tillsammans i din inkorg eller visa dem separat."
       ],
       "Groups": [
         "Grupper"
@@ -10702,9 +10713,6 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
       ],
-      "Your existing end-to-end encrypted forwardings towards other users will be paused. You can manually re-enable them under the '${ autoReplySettingsTitle }' settings.": [
-        "Dina befintliga end-to-end-krypterade vidarebefordringar till andra användare kommer att pausas. Du kan manuellt återaktivera dem under '${ autoReplySettingsTitle }'-inställningarna."
-      ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
@@ -10976,37 +10984,31 @@
       "Generate key": [
         "Generera nyckel"
       ],
-      "Generating key failed. Please try again later.": [
-        "Generering av nyckel misslyckades. Försök igen senare."
-      ],
-      "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Om du genererar en ny nyckel för att du tror att din befintliga nyckel har blivit komprometterad, markera den som komprometterad efter att ha genererat denna nyckel."
+      "Key generation failed, please try again later.": [
+        "Nyckelgenerering misslyckades, försök igen senare."
       ],
       "Key successfully generated.": [
         "Nyckel genererad."
       ],
-      "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Obs: du har redan en nyckel med samma algoritm för denna adress. Om inte den nyckeln har komprometterats kan det vara onödigt att generera en ny nyckel, och att göra det kan sakta ner ditt konto."
-      ],
-      "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Obs: du har redan en nyckel med samma algoritm för denna användare. Om inte den nyckeln har komprometterats kan det vara onödigt att generera en ny nyckel, och att göra det kan sakta ner ditt konto."
+      "New key generated": [
+        "Ny nyckel genererad"
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Detta kommer att generera en ny nyckel, som kommer att användas för att kryptera framtida kontaktuppgifter, e-postkrypteringsnycklar och annan data."
       ],
-      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Detta kommer att generera en ny nyckel som kommer att användas för att kryptera framtida e-post bland annat."
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Detta kommer generera en ny nyckel som kommer att användas för att kryptera framtida e-post och andra data för **${ emailAddress }**."
       ]
     },
     "Key state badge": {
-      "Compatibility": [
-        "Kompatibilitet"
-      ],
       "Compromised": [
         "Komprometterad"
       ],
       "Disabled": [
         "Inaktiverad"
+      ],
+      "Fallback": [
+        "Reserv"
       ],
       "Forwarding": [
         "Vidarebefordran"
@@ -11022,6 +11024,27 @@
       ],
       "Primary": [
         "Primär"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Snabbare"
+      ],
+      "Slower, but stronger long-term security": [
+        "Långsammare, men starkare långsiktig säkerhet"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Välj nyckeltyp"
       ]
     },
     "Keyboard shortcut name": {
@@ -11260,9 +11283,6 @@
       "Export public key": [
         "Exportera offentlig nyckel"
       ],
-      "Make primary": [
-        "Gör primär"
-      ],
       "Mark compromised": [
         "Markera komprometterad"
       ],
@@ -11274,6 +11294,9 @@
       ],
       "Mark obsolete": [
         "Markering föråldrad"
+      ],
+      "Use for encryption and signing": [
+        "Använd för kryptering och signering"
       ]
     },
     "Knowledge base link label": {
@@ -11925,6 +11948,9 @@
       ],
       "Key": [
         "Nyckel"
+      ],
+      "Key strength": [
+        "Nyckelstyrka"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tangentbordsgenväg: ${ shortcut }"
@@ -14813,12 +14839,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Skaffa ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Skaffa Drive Plus för endast ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Skaffa Mail Plus för endast ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
@@ -14830,6 +14850,9 @@
       ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Tidsbegränsat erbjudande, giltigt för din första månad"
       ],
       "Maybe later": [
         "Kanske senare"
@@ -14843,9 +14866,6 @@
       "Save": [
         "Spara"
       ],
-      "Save 80% on your first month.": [
-        "Spara 80 % på din första månad."
-      ],
       "Save big when you pay annually": [
         "Spara stort när du betalar årligen"
       ],
@@ -14854,6 +14874,12 @@
       ],
       "This offer won't be shown again.": [
         "Detta erbjudande kommer inte att visas igen."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Uppgradera din produktivitet för bara ${ pricingTitle } med ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Uppgradera ditt lagringsutrymme för bara ${ pricingTitle } med ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "När du byter från en månads till årlig prenumeration."
@@ -14883,20 +14909,17 @@
       "Custom email domain": [
         "Anpassad e-postdomän"
       ],
+      "Edit docs online": [
+        "Redigera dokument online"
+      ],
       "Email addresses": [
         "E-postadresser"
       ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Dokumentredigerare online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Återställ tidigare filversioner"
       ],
       "Storage": [
         "Lagringsutrymme"
@@ -16344,6 +16367,16 @@
         "Uppgradera till ${ upsellPlanTitle }"
       ]
     },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "Aktivera och generera nycklar"
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Jag förstår"
+      ]
+    },
     "Price": {
       "Free": [
         "Gratis"
@@ -16479,6 +16512,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verifiering av ditt telefonnummer ökar säkerheten för ditt konto och tillåter ytterligare alternativ för återställning."
+      ]
+    },
+    "Remark about a key type option": {
+      "Classic": [
+        "Klassisk"
       ]
     },
     "Remove calendar section description": {
@@ -16619,6 +16657,9 @@
       ],
       "Keep messages forever": [
         "Behåll meddelanden för alltid"
+      ],
+      "Rule title": [
+        "Rubrikregel"
       ],
       "Select product": [
         "Välj produkt"
@@ -18710,6 +18751,10 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikerad server",
         "${ ipAddresses } dedikerade servrar"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } för ${ maxLumo } användare",
+        "${ LUMO_APP_NAME } för ${ maxLumo } användare"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per användare",
@@ -21042,8 +21087,17 @@
       "Upgrade plan": [
         "Uppgradera paket"
       ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
+      ],
       "Upgrade your privacy": [
         "Uppgradera din integritet"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Uppgradera din produktivitet för ${ formattedPrice } med ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Uppgradera ditt lagringsutrymme för ${ formattedPrice } med ${ planName }"
       ],
       "Upload and share files": [
         "Ladda upp och dela filer"

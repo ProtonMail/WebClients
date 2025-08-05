@@ -92,6 +92,9 @@
       "Chat with us": [
         "Razgovarajte s nama"
       ],
+      "Choose my own password": [
+        "Odaberite vlastitu lozinku"
+      ],
       "Close": [
         "Zatvori"
       ],
@@ -1116,6 +1119,9 @@
       ],
       "Create label": [
         "Stvori oznaku"
+      ],
+      "Maybe later": [
+        "Možda kasnije"
       ],
       "Take a tour": [
         "Započnite obilazak"
@@ -2528,6 +2534,9 @@
       ]
     },
     "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Obiteljska grupa nije prepoznata. Pokušajte ponovno."
+      ],
       "Organization not recognized. Try again.": [
         "Organizacija nije prepoznata. Pokušajte ponovno."
       ]
@@ -2558,6 +2567,9 @@
     "familyOffer_2023:Info": {
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Nakon napuštanja Vašeg plana, ovaj korisnik bit će premješten na besplatni ${ BRAND_NAME } plan."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Kreirajte i upravljajte članovima obitelji te im dodijelite prostor za pohranu koji se dijeli između ${ DRIVE_APP_NAME } i ${ MAIL_APP_NAME }."
       ],
       "Create and manage family members.": [
         "Stvorite i upravljajte članovima obitelji."
@@ -2725,6 +2737,9 @@
     "fido2: Title": {
       "Name your security key": [
         "Dajte naziv svojem sigurnosnom ključu"
+      ],
+      "Security key registered": [
+        "Sigurnosni ključ je registriran"
       ],
       "Security keys": [
         "Sigurnosni ključevi"
@@ -3094,6 +3109,9 @@
       ],
       "Address copied to clipboard": [
         "Adresa je kopirana u međuspremnik"
+      ],
+      "All members have been added.": [
+        "Svi članovi su dodani."
       ],
       "All users": [
         "Svi korisnici"
@@ -3821,6 +3839,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "Moramo potvrditi Vašu uplatu s Vašom bankom."
+      ],
+      "We recommend notifying the family members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "Preporučujemo da obavijestite članove obitelji i zamolite ih da postave 2FA na svojim računima prije nego što uvedete obaveznu upotrebu 2FA."
       ],
       "We use 3-D Secure to protect your payments": [
         "Za zaštitu vaših plaćanja koristimo 3-D Secure"
@@ -5330,6 +5351,9 @@
       "${ app } and ${ additionalApp } product updates": [
         "Ažuriranja proizvoda ${ app } i ${ additionalApp }"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Važne obavijesti tvrtke ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } user survey": [
         "${ BRAND_NAME } korisnička anketa"
       ],
@@ -5931,6 +5955,9 @@
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "Enter duration": [
+        "Unesite trajanje"
+      ],
       "Search policies": [
         "Pravila pretraživanja"
       ]
@@ -6077,6 +6104,9 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Ako niste zatražili resetiranje svoje lozinke, poništite zahtjev odmah."
+      ],
+      "You can now reset your password": [
+        "Sada možete ponovno postaviti svoju lozinku."
       ]
     },
     "session_recovery:available:link": {
@@ -6351,6 +6381,9 @@
       ]
     },
     "sso": {
+      "**SSO users will be detached from your identity provider** and converted to non-SSO users.": [
+        "**SSO korisnici bit će odvojeni od Vašeg pružatelja identiteta** i pretvoreni u ne-SSO korisnike."
+      ],
       "Access denied": [
         "Pristup odbijen"
       ],
@@ -6404,6 +6437,9 @@
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
         "Obavezno spremite ovu lozinku na sigurno mjesto kako biste mogli ponovno pristupiti svom računu u slučaju da izgubite pristup vjerodajnicama svog davatelja identiteta."
+      ],
+      "New backup password": [
+        "Nova sigurnosna lozinka za oporavak"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Postavite lozinku za sigurnosnu kopiju za dodatan sloj zaštite. Omogućit će Vam prijavu ako Vam se onemogući pristup, stoga je obavezno čuvajte na sigurnom mjestu."
@@ -6487,6 +6523,9 @@
       ],
       "Your storage is full": [
         "Pohrana je puna"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Izgubit ćete pristup ${ gb } prostora za pohranu i prioritetnu podršku."
       ]
     },
     "Subscription": {
@@ -6735,6 +6774,9 @@
       ],
       "Catch-all address updated": [
         "Dohvati-sve adresa je ažurirana"
+      ],
+      "Changes published. Your changes will be visible to all users in the next few hours.": [
+        "Promjene su objavljene. Vaše će promjene biti vidljive svim korisnicima u sljedećih nekoliko sati."
       ],
       "Code sent to ${ methodTo }": [
         "Kôd je poslan na ${ methodTo }"
@@ -6993,6 +7035,9 @@
       ],
       "Add to allow list": [
         "Dodaj na popis dopuštenih adresa"
+      ],
+      "Add to spam list": [
+        "Dodaj na popis neželjene pošte"
       ],
       "Add user": [
         "Dodaj korisnika"
