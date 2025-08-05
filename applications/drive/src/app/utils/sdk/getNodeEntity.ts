@@ -1,8 +1,8 @@
 import type { InvalidNameError, MaybeNode, NodeEntity } from '@proton/drive/index';
 
-type GetNodeEntityType = {
+export type GetNodeEntityType = {
     node: NodeEntity;
-    errors: Map<'name' | 'activeRevision', Error | InvalidNameError>;
+    errors: Map<'name' | 'activeRevision' | 'unhandledError', Error | InvalidNameError>;
 };
 
 export const getNodeEntity = (maybeNode: MaybeNode): GetNodeEntityType => {
@@ -17,6 +17,9 @@ export const getNodeEntity = (maybeNode: MaybeNode): GetNodeEntityType => {
         }
         if (maybeNode.error.activeRevision !== undefined && !maybeNode.error.activeRevision.ok) {
             errors.set('activeRevision', maybeNode.error.activeRevision.error);
+        }
+        if (maybeNode.error.errors?.length) {
+            errors.set('unhandledError', maybeNode.error.errors?.at(0));
         }
         node = {
             ...maybeNode.error,

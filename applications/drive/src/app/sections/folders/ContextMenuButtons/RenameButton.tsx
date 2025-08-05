@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { useRenameModal } from '../../../components/modals/RenameModal';
+import type { useRenameModal } from '../../../components/modals/RenameModal';
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { useActions } from '../../../store';
 
@@ -18,11 +18,11 @@ type Item = {
 interface Props {
     item: Item;
     close: () => void;
+    showRenameModal: ReturnType<typeof useRenameModal>[1];
 }
 
-export const RenameButton = ({ item, close }: Props) => {
+export const RenameButton = ({ item, close, showRenameModal }: Props) => {
     const { renameLink } = useActions();
-    const [renameModal, showRenameModal] = useRenameModal();
 
     return (
         <>
@@ -43,7 +43,6 @@ export const RenameButton = ({ item, close }: Props) => {
                 }
                 close={close}
             />
-            {renameModal}
         </>
     );
 };
