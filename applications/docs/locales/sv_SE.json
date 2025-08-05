@@ -822,6 +822,9 @@
       "Upgrade": [
         "Uppgradera"
       ],
+      "Upgrade for 200GB": [
+        "Uppgradera för 200 GB"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
       ],
@@ -1403,6 +1406,9 @@
       ],
       "Discover and set up features": [
         "Upptäck och ställ in funktioner"
+      ],
+      "Maybe later": [
+        "Kanske senare"
       ],
       "Remind me later": [
         "Påminn mig senare"
@@ -7997,12 +8003,6 @@
       "Get ${ BRAND_NAME } Unlimited": [
         "Skaffa ${ BRAND_NAME } Unlimited"
       ],
-      "Get Drive Plus for only ${ pricingTitle }": [
-        "Skaffa Drive Plus för endast ${ pricingTitle }"
-      ],
-      "Get Mail Plus for only ${ pricingTitle }": [
-        "Skaffa Mail Plus för endast ${ pricingTitle }"
-      ],
       "Get the deal": [
         "Ta del av erbjudandet"
       ],
@@ -8014,6 +8014,9 @@
       ],
       "Limited-time offer": [
         "Tidsbegränsat erbjudande"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Tidsbegränsat erbjudande, giltigt för din första månad"
       ],
       "Maybe later": [
         "Kanske senare"
@@ -8027,9 +8030,6 @@
       "Save": [
         "Spara"
       ],
-      "Save 80% on your first month.": [
-        "Spara 80 % på din första månad."
-      ],
       "Save big when you pay annually": [
         "Spara stort när du betalar årligen"
       ],
@@ -8038,6 +8038,12 @@
       ],
       "This offer won't be shown again.": [
         "Detta erbjudande kommer inte att visas igen."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Uppgradera din produktivitet för bara ${ pricingTitle } med ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Uppgradera ditt lagringsutrymme för bara ${ pricingTitle } med ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "När du byter från en månads till årlig prenumeration."
@@ -8067,20 +8073,17 @@
       "Custom email domain": [
         "Anpassad e-postdomän"
       ],
+      "Edit docs online": [
+        "Redigera dokument online"
+      ],
       "Email addresses": [
         "E-postadresser"
       ],
       "Free": [
         "Free"
       ],
-      "Online document editor": [
-        "Dokumentredigerare online"
-      ],
       "Plus": [
         "Plus"
-      ],
-      "Recover previous file versions": [
-        "Återställ tidigare filversioner"
       ],
       "Storage": [
         "Lagringsutrymme"
@@ -10318,6 +10321,15 @@
       ],
       "Upgrade complete!": [
         "Uppgradering slutförd!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Uppgradera din produktivitet för ${ formattedPrice } med ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Uppgradera ditt lagringsutrymme för ${ formattedPrice } med ${ planName }"
       ],
       "Upload and share files": [
         "Ladda upp och dela filer"
