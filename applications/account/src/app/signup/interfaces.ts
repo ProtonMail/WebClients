@@ -163,7 +163,7 @@ export interface HumanVerificationData {
 }
 
 export interface MnemonicData {
-    mnemonic: string;
+    recoveryPhrase: string;
     blob: Blob;
 }
 
