@@ -1427,8 +1427,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Clave de confianza"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1610,6 +1609,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Upgrade for 200GB": [
+        "Actualizar por 200GB"
       ]
     },
     "action": {
@@ -4950,6 +4952,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Los archivos adjuntos están limitados a ${ readableAttachmentMaxSize }"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -11312,6 +11317,15 @@
       ],
       "Your subscription renews soon": [
         "Su suscripción se renueva pronto."
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tiempo limitado, válida para su primer mes"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Mejore su productividad por solo ${ pricingTitle } con ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Mejore su almacenamiento por solo ${ pricingTitle } con ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -11355,6 +11369,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Alias ilimitados para proteger su identidad"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colabore con usuarios que no son de ${ BRAND_NAME }"
+      ],
+      "Edit docs online": [
+        "Edite documentos en línea"
+      ],
+      "File version history (over 1 week)": [
+        "Historial de versiones del archivo (más de 1 semana)"
       ]
     },
     "Onboarding List Placeholder": {
@@ -14997,6 +15020,15 @@
       ],
       "Your subscriptions in one place": [
         "Sus suscripciones en un solo lugar"
+      ],
+      "Upgrade to ${ planName }": [
+        "Actualizar a ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Mejore su productividad por ${ formattedPrice } con ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Mejore su almacenamiento por ${ formattedPrice } con ${ planName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
