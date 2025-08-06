@@ -11,12 +11,18 @@ import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
 import { Checkbox, Icon, Label, useApi, useEventManager, useSecurityCheckup } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import { BRAND_NAME, RECOVERY_KIT_FILE_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    HTTP_STATUS_CODE,
+    RECOVERY_KIT_FILE_NAME,
+    SECURITY_CHECKUP_PATHS,
+} from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import type { MnemonicData } from '@proton/shared/lib/mnemonic';
+import type { GeneratedMnemonicData } from '@proton/shared/lib/mnemonic';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import noop from '@proton/utils/noop';
 
@@ -130,6 +136,11 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
 
             await downloadRecoveryKit();
         } catch (error: any) {
+            const { status } = getApiError(error);
+            if (status === HTTP_STATUS_CODE.FORBIDDEN) {
+                return;
+            }
+
             setStep(STEPS.ERROR);
         }
     };
@@ -243,7 +254,7 @@ const DownloadPhraseContainer = () => {
         return new Blob([pdf.buffer], { type: 'application/pdf' });
     };
 
-    const getPayload = async (data: MnemonicData) => {
+    const getPayload = async (data: GeneratedMnemonicData) => {
         const userKeys = await getUserKeys();
         const { randomBytes, salt } = data;
 
@@ -254,7 +265,7 @@ const DownloadPhraseContainer = () => {
         const generateMnemonicData = async () => {
             const data = await generateMnemonicWithSalt();
 
-            const [payload, blob] = await Promise.all([getPayload(data), generatePdfBlob(data.mnemonic)]);
+            const [payload, blob] = await Promise.all([getPayload(data), generatePdfBlob(data.recoveryPhrase)]);
 
             setPayload(payload);
             setBlob(blob);
