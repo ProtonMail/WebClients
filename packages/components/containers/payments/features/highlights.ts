@@ -3,14 +3,19 @@ import { c, msgid } from 'ttag';
 import { type FreePlanDefault, PLANS, type PlansMap } from '@proton/payments';
 import {
     BRAND_NAME,
+    CALENDAR_SHORT_APP_NAME,
     DRIVE_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     MAIL_APP_NAME,
+    MAIL_SHORT_APP_NAME,
     PASS_APP_NAME,
+    PASS_SHORT_APP_NAME,
     PROTON_SENTINEL_NAME,
     VISIONARY_MAX_USERS,
     VPN_APP_NAME,
+    VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
@@ -138,7 +143,8 @@ export const get24x7Support = (): PlanCardFeatureDefinition => ({
 
 export const getAllPremiumServices = (): PlanCardFeatureDefinition => ({
     included: true,
-    text: c('pass_signup_2023: Info').t`Access to all ${BRAND_NAME} apps and premium features`,
+    text: c('Plan description')
+        .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
 });
 
 export const getSentinel = (included: boolean = false): PlanCardFeatureDefinition => {

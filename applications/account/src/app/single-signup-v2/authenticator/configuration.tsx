@@ -3,7 +3,17 @@ import { c } from 'ttag';
 import { AppsLogos, Logo } from '@proton/components';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { CYCLE, PLANS } from '@proton/payments';
-import { APPS, AUTHENTICATOR_APP_NAME, AUTHENTICATOR_SHORT_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    AUTHENTICATOR_APP_NAME,
+    AUTHENTICATOR_SHORT_APP_NAME,
+    BRAND_NAME,
+    CALENDAR_SHORT_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
+    MAIL_SHORT_APP_NAME,
+    PASS_SHORT_APP_NAME,
+    VPN_SHORT_APP_NAME,
+} from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { SignupType } from '../../signup/interfaces';
@@ -45,9 +55,8 @@ export const getAuthenticatorConfiguration = ({ defaultPlan }: { defaultPlan?: s
                 subsection: (
                     <>
                         <div className="color-weak text-left text-sm mb-1">
-                            {c('pass_signup_2023: Info').t`All premium ${BRAND_NAME} services.`}
-                            <br />
-                            {c('pass_signup_2023: Info').t`One easy subscription.`}
+                            {c('Plan description')
+                                .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`}
                         </div>
                         <AppsLogos
                             fullWidth
