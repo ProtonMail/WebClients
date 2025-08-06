@@ -1,11 +1,7 @@
-import { getDefaultPostalCodeByStateCode } from '../postal-codes/default-postal-codes';
-import {
-    type BillingAddress,
-    DEFAULT_TAX_BILLING_ADDRESS,
-    getBillingAddressFromPaymentsStatus,
-    getBillingAddressStatus,
-} from './billing-address';
-import { countriesWithStates, getDefaultState, getStateList, isCountryWithStates } from './countries';
+import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
+import { countriesWithStates, getDefaultState, getStateList, isCountryWithStates } from '../countries';
+import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, getBillingAddressStatus } from './billing-address';
+import { getBillingAddressFromPaymentsStatus } from './billing-address-from-payments-status';
 
 describe('isBillingAddressValid', () => {
     it.each(['DE', 'FR', 'CH', 'GB'])(
@@ -265,6 +261,18 @@ describe('getBillingAddressFromPaymentsStatus', () => {
         // Use the actual expected postal code for ON
         const expectedPostalCode = getDefaultPostalCodeByStateCode('CA', stateCode);
         expect(result.ZipCode).toBe(expectedPostalCode);
+    });
+
+    it('should reconstruct partially missing postal code for CA', () => {
+        const stateCode = 'ON';
+        const billingAddress: BillingAddress = {
+            CountryCode: 'CA',
+            State: stateCode,
+            ZipCode: 'M5H',
+        };
+
+        const result = getBillingAddressFromPaymentsStatus(billingAddress);
+        expect(result.ZipCode).toBe('M5H 0A0');
     });
 
     it('should not assign postal code for countries other than US and CA', () => {
