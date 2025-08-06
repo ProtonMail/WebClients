@@ -10,21 +10,21 @@ import type { Address, Api, DecryptedKey, User } from '../interfaces';
 import { srpGetVerify } from '../srp';
 import { generateMnemonicBase64RandomBytes, generateMnemonicFromBase64RandomBytes } from './bip39Wrapper';
 
-export interface MnemonicData {
+export interface GeneratedMnemonicData {
     salt: string;
     randomBytes: string;
-    mnemonic: string;
+    recoveryPhrase: string;
 }
 
 export const generateMnemonicWithSalt = async () => {
     const salt = generateKeySalt();
     const randomBytes = generateMnemonicBase64RandomBytes();
-    const mnemonic = await generateMnemonicFromBase64RandomBytes(randomBytes);
+    const recoveryPhrase = await generateMnemonicFromBase64RandomBytes(randomBytes);
 
     return {
         salt,
         randomBytes,
-        mnemonic,
+        recoveryPhrase,
     };
 };
 
