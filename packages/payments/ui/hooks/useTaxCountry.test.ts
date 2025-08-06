@@ -4,7 +4,7 @@ import { renderHook } from '@testing-library/react';
 
 import { useFlag } from '@proton/unleash';
 
-import { DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address/billing-address';
 import { useTaxCountry } from './useTaxCountry';
 
 // Mock the feature flag to be enabled by default for all tests (to match existing test expectations)
