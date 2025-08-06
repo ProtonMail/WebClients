@@ -1,7 +1,17 @@
 import { c, msgid } from 'ttag';
 
 import { type FreePlanDefault, PLANS, PLAN_NAMES, type Plan, type PlansMap } from '@proton/payments';
-import { BRAND_NAME, DUO_MAX_USERS, FAMILY_MAX_USERS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    CALENDAR_SHORT_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
+    DUO_MAX_USERS,
+    FAMILY_MAX_USERS,
+    MAIL_SHORT_APP_NAME,
+    PASS_SHORT_APP_NAME,
+    VPN_CONNECTIONS,
+    VPN_SHORT_APP_NAME,
+} from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
@@ -163,8 +173,8 @@ export const getBundlePlan = ({
         plan: PLANS.BUNDLE,
         title: plan.Title,
         label: c('new_plans: info').t`Popular`,
-        description: c('new_plans: info')
-            .t`Comprehensive privacy and security with all ${BRAND_NAME} services combined.`,
+        description: c('Plan description')
+            .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${CALENDAR_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${PASS_SHORT_APP_NAME}.`,
         cta: getCTA(plan.Title),
         features: [
             getStorageFeature(plan.MaxSpace, { freePlan }),

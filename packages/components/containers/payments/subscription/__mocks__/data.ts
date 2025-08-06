@@ -82,7 +82,7 @@ export const unlimitedUpsell = {
     plan: PLANS.BUNDLE,
     planKey: PLANS.BUNDLE,
     title: 'Proton Unlimited',
-    description: 'Comprehensive privacy and security with all Proton services combined.',
+    description: 'All premium features from Proton Mail, Calendar, Drive, VPN, and Pass.',
     upsellRefLink: 'upsell_mail-button-unlimited-dashboard_settings',
     features: [
         {
