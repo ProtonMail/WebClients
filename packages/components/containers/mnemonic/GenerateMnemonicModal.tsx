@@ -19,7 +19,7 @@ import { useLoading } from '@proton/hooks';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import type { MnemonicData } from '@proton/shared/lib/mnemonic';
+import type { GeneratedMnemonicData } from '@proton/shared/lib/mnemonic';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import noop from '@proton/utils/noop';
 
@@ -56,16 +56,16 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
     const [generating, withGenerating] = useLoading();
     const [reactivating, withReactivating] = useLoading();
 
-    const [mnemonicData, setMnemonicData] = useState<MnemonicData>();
+    const [mnemonicData, setMnemonicData] = useState<GeneratedMnemonicData>();
 
-    const getPayload = async (data: MnemonicData) => {
+    const getPayload = async (data: GeneratedMnemonicData) => {
         const userKeys = await getUserKeys();
         const { randomBytes, salt } = data;
 
         return generateMnemonicPayload({ randomBytes, salt, userKeys, api, username: Name });
     };
 
-    const handleReactivate = async (data: MnemonicData) => {
+    const handleReactivate = async (data: GeneratedMnemonicData) => {
         try {
             const payload = await getPayload(data);
             await api(reactivateMnemonicPhrase(payload));
