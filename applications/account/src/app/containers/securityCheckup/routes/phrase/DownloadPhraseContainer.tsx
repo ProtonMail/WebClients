@@ -16,7 +16,7 @@ import { BRAND_NAME, RECOVERY_KIT_FILE_NAME, SECURITY_CHECKUP_PATHS } from '@pro
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import type { MnemonicData } from '@proton/shared/lib/mnemonic';
+import type { GeneratedMnemonicData } from '@proton/shared/lib/mnemonic';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import noop from '@proton/utils/noop';
 
@@ -243,7 +243,7 @@ const DownloadPhraseContainer = () => {
         return new Blob([pdf.buffer], { type: 'application/pdf' });
     };
 
-    const getPayload = async (data: MnemonicData) => {
+    const getPayload = async (data: GeneratedMnemonicData) => {
         const userKeys = await getUserKeys();
         const { randomBytes, salt } = data;
 
