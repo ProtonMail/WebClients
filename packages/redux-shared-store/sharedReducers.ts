@@ -17,6 +17,7 @@ import {
     organizationThemeSlice,
     paymentStatusReducer,
     plansReducer,
+    previousSubscriptionReducer,
     protonDomainsReducer,
     scheduleCallReducer,
     securityCheckupSlice,
@@ -50,6 +51,7 @@ export const sharedReducers = {
     ...userSettingsReducer,
     ...mailSettingsReducer,
     ...subscriptionReducer,
+    ...previousSubscriptionReducer,
     ...paymentStatusReducer,
     ...organizationReducer,
     ...organizationKeyReducer,
@@ -92,5 +94,6 @@ export const sharedPersistReducer: Partial<{ [key in keyof typeof sharedReducers
     vpnServersCount: selectPersistModel,
     protonDomains: selectPersistModel,
     domains: selectPersistModel,
+    ...previousSubscriptionReducer,
     features: (state: any) => state,
 };
