@@ -30,11 +30,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { type CheckSubscriptionData } from '../../core/api';
-import {
-    type BillingAddress,
-    DEFAULT_TAX_BILLING_ADDRESS,
-    getBillingAddressFromPaymentsStatus,
-} from '../../core/billing-address';
+import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address/billing-address';
+import { getBillingAddressFromPaymentsStatus } from '../../core/billing-address/billing-address-from-payments-status';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '../../core/constants';
 import { type getAvailableCurrencies, type getPreferredCurrency, mainCurrencies } from '../../core/helpers';
 import type {

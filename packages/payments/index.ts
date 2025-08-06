@@ -56,7 +56,6 @@ export {
     billingCountryValidator,
     billingStateValidator,
     DEFAULT_TAX_BILLING_ADDRESS,
-    getBillingAddressFromPaymentsStatus,
     getBillingAddressStatus,
     normalizeBillingAddress,
     paymentStatusToBillingAddress,
@@ -64,7 +63,8 @@ export {
     type BillingAddressProperty,
     type BillingAddressStatus,
     type FullBillingAddress,
-} from './core/billing-address';
+} from './core/billing-address/billing-address';
+export { getBillingAddressFromPaymentsStatus } from './core/billing-address/billing-address-from-payments-status';
 export { getErrors, isExpired, type CardModel } from './core/cardDetails';
 export { getCheckoutModifiers, type CheckoutModifiers } from './core/checkout-modifiers';
 export {
