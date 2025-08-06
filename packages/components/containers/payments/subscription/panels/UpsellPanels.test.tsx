@@ -35,7 +35,7 @@ describe('UpsellPanel', () => {
         //  description
         expect(
             within(unlimitedUpsellPanel).getByText(
-                'Comprehensive privacy and security with all Proton services combined.'
+                'All premium features from Proton Mail, Calendar, Drive, VPN, and Pass.'
             )
         );
         // features
