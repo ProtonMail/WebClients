@@ -1609,6 +1609,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Upgrade for 200GB": [
+        "200GB boyutuna artırın"
       ]
     },
     "action": {
@@ -3959,7 +3962,7 @@
         "Ayrıca şunlar da bulunur"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Çöp ve İstenmeyen klasörlerine konmuş 30 günden eski e-postaları otomatik olarak temizleyin."
+        "Çöp ve İstenmeyen kutularındaki 30 günden eski e-postaları otomatik olarak temizleyin."
       ],
       "Automatically forward incoming email to another email address.": [
         "Gelen e-postaları otomatik olarak başka bir e-posta adresine iletin."
@@ -4949,6 +4952,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Ek dosyaların boyutu ${ readableAttachmentMaxSize } ile sınırlıdır"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6541,7 +6547,7 @@
         "Bu e-posta listesinden gelen tüm iletiler okunmuş olarak işaretlenecek."
       ],
       "All messages from this mailing list will be moved to Archive.": [
-        "Bu e-posta listesinden gelen tüm iletiler Arşiv klasörüne taşınacak."
+        "Bu e-posta listesinden gelen tüm iletiler Arşiv kutusuna taşınacak."
       ],
       "All messages from this mailing list will be moved to Trash.": [
         "Bu e-posta listesinden gelen tüm iletiler çöpe atılacak."
@@ -6668,7 +6674,7 @@
         "İlgilenmeniz gerekiyor"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "Çöp ve İstenmeyen klasörlerine konmuş 30 günden eski e-postaları otomatik olarak temizleyin."
+        "Çöp ve İstenmeyen kutularındaki 30 günden eski e-postaları otomatik olarak temizleyin."
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Çöp ve istenmeyen kutularında 30 günden uzun süredir duran iletileri otomatik olarak silebilirsiniz."
@@ -6884,7 +6890,7 @@
         "Parolayı alıcı ile paylaşmayı unutmayın"
       ],
       "Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox.": [
-        "Şu anda önemli bir e-postayla ilgilenmeye vaktiniz yok ama onu unutmak da istemiyor musunuz? Gelen kutunuzda yeniden görüneceği daha iyi bir zaman belirleyin."
+        "Şu anda önemli bir e-postayla ilgilenmeye vaktiniz yok ama onu unutmak da istemiyor musunuz? Gelen kutunuzda daha uygun bir zamanda yeniden görüntülenmesi için ayarlayın."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Bir şey görmüyor musunuz? Açılır pencere engelleyicilerini kapatmayı unutmayın."
@@ -7165,7 +7171,7 @@
         "İçe aktarılıyor"
       ],
       "Import mailbox": [
-        "Posta kutusunu içe aktar"
+        "E-posta kutusunu içe aktar"
       ],
       "Important note": [
         "Önemli not"
@@ -7180,7 +7186,7 @@
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
       ],
       "Include Spam/Trash.": [
-        "İstenmeyen postaları ve Çöp Kutusunu dahil et."
+        "İstenmeyen ve Çöp kutularındaki iletiler katılsın."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Doğruluğu artırmamıza yardımcı olmak için isteğinizi ve yanıtını ekleyin."
@@ -7198,8 +7204,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7358,7 +7363,7 @@
         "Bu ileti yarın ${ formattedTime } saatinde gönderilecek"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
-        "Çöp ve istenmeyen kutularında 30 günden uzun süredir duran iletiler otomatik olarak silinir."
+        "Çöp ve istenmeyen kutularında 30 günden uzun süredir bulunan iletiler otomatik olarak silinir."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
@@ -8303,7 +8308,7 @@
         "Hafta"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
-        "İletiniz ne zaman alıcının gelen kutusundan ve gönderilmiş klasörünüzden otomatik olarak silinsin?"
+        "İletiniz ne zaman alıcının gelen kutusundan ve gönderilmiş kutunuzdan otomatik olarak silinsin?"
       ],
       "When do you want your message to self-destruct?": [
         "İletinizin ne zaman kendini yok etmesini istersiniz?"
@@ -9392,7 +9397,7 @@
         "Bağlantı noktası"
       ],
       "Post office box": [
-        "Fiziksel posta kutusu"
+        "Fiziksel e-posta kutusu"
       ],
       "Postal code": [
         "Posta kodu"
@@ -11309,6 +11314,15 @@
       ],
       "Your subscription renews soon": [
         "Aboneliğiniz yakında yenilenecek"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Sınırlı süreli teklif, ilk ayınız için geçerlidir"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName } ile yalnızca ${ pricingTitle } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Depolama alanınızı yalnızca ${ pricingTitle } ödeyerek ${ planName } ile artırın"
       ]
     },
     "Offer fearue": {
@@ -11352,6 +11366,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Kimliğinizi korumak için sınırsız sayıda takma ad"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "${ BRAND_NAME } dışı kullanıcılarla işbirliği yapın"
+      ],
+      "Edit docs online": [
+        "Belgeleri çevrim içi düzenleyin"
+      ],
+      "File version history (over 1 week)": [
+        "Dosya sürümü geçmişi (1 haftadan eski)"
       ]
     },
     "Onboarding List Placeholder": {
@@ -13560,8 +13583,8 @@
         "${ elementsCount } yazışma ${ folderName } klasörüne taşındı."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi.",
-        "${ elementsCount } istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi."
+        "${ elementsCount } istenmeyen kutusuna taşındı ve gönderici istenmeyenler listesine eklendi.",
+        "${ elementsCount } istenmeyen kutusuna taşındı ve gönderici istenmeyenler listesine eklendi."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } yazışmadan kaldırıldı.",
@@ -13604,8 +13627,8 @@
         "${ elementsCount } ileti ${ folderName } klasörüne taşındı."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } ileti istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi.",
-        "${ elementsCount } ileti istenmeyen klasörüne taşındı ve gönderici istenmeyenler listesine eklendi."
+        "${ elementsCount } ileti istenmeyen kutusuna taşındı ve gönderici istenmeyenler listesine eklendi.",
+        "${ elementsCount } ileti istenmeyen kutusuna taşındı ve gönderici istenmeyenler listesine eklendi."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } iletiden kaldırıldı.",
@@ -13672,7 +13695,7 @@
         "Yazışma ${ folderName } klasörüne taşındı."
       ],
       "Conversation moved to spam and sender added to your spam list.": [
-        "Yazışma İstenmeyen klasörüne taşındı ve gönderici istenmeyenler listenize eklendi."
+        "Yazışma İstenmeyen kutusuna taşındı ve gönderici istenmeyenler listenize eklendi."
       ],
       "Conversation removed from ${ labelName }.": [
         "Yazışmadan ${ labelName } etiketi kaldırıldı."
@@ -14988,6 +15011,15 @@
       ],
       "Your subscriptions in one place": [
         "Abonelikleriniz tek bir yerde"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükseltin"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName } ile ${ formattedPrice } ödeyerek üretkenliğinizi artırın"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Depolama alanınızı ${ formattedPrice } ödeyerek ${ planName } ile artırın"
       ]
     },
     "Today icon tooltip in mini calendar": {
