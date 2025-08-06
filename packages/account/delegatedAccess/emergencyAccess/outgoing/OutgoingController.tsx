@@ -14,6 +14,7 @@ import { listOutgoingDelegatedAccess } from '../../outgoingActions';
 import { AddOutgoingEmergencyContactAction } from './AddOutgoingEmergencyContactAction';
 import { DeleteOutgoingEmergencyContactAction } from './DeleteOutgoingEmergencyContactAction';
 import { EditOutgoingEmergencyContactAction } from './EditOutgoingEmergencyContactAction';
+import { GrantAccessOutgoingEmergencyContactAction } from './GrantAccessOutgoingEmergencyContactAction';
 import type { ActionListener, ActionPayload } from './interface';
 import { type EnrichedOutgoingDelegatedAccessReturnValue, selectEnrichedOutgoingDelegatedAccess } from './selector';
 
@@ -69,6 +70,7 @@ export const OutgoingControllerProvider = ({ children }: { children: ReactNode }
             <AddOutgoingEmergencyContactAction />
             <EditOutgoingEmergencyContactAction />
             <DeleteOutgoingEmergencyContactAction />
+            <GrantAccessOutgoingEmergencyContactAction />
             {children}
         </OutgoingControllerContext.Provider>
     );

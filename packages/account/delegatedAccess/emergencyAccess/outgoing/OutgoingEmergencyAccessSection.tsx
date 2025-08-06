@@ -80,7 +80,7 @@ const OutgoingItem = ({
         parsedOutgoingDelegatedAccess: { contact, createdAtDate, accessibleTriggerDelayMs },
     },
     meta,
-    meta: { canDelete, canChangeWaitTime },
+    meta: { canGrantAccess, canDelete, canChangeWaitTime },
 }: OutgoingItemProps) => {
     return (
         <TableRow labels={labels}>
@@ -102,6 +102,10 @@ const OutgoingItem = ({
                         canDelete && {
                             text: c('Action').t`Remove`,
                             onClick: () => notify({ type: 'delete', value }),
+                        },
+                        canGrantAccess && {
+                            text: c('emergency_access').t`Give access now`,
+                            onClick: () => notify({ type: 'grant-access', value }),
                         },
                         canChangeWaitTime && {
                             text: c('emergency_access').t`Change wait time`,

@@ -55,7 +55,7 @@ export const getMetaOutgoingDelegatedAccess = ({
         canRequestAccess,
         canDelete: true,
         canChangeWaitTime: true,
-        canGiveAccess: hasRequestedAccess,
+        canGrantAccess: hasRequestedAccess,
         canRejectAccess,
     };
 };
