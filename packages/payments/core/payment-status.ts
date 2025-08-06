@@ -1,4 +1,4 @@
-import { getBillingAddressFromPaymentsStatus } from './billing-address';
+import { getBillingAddressFromPaymentsStatus } from './billing-address/billing-address-from-payments-status';
 import { type PaymentMethodStatusExtended } from './interface';
 
 export function normalizePaymentMethodStatus(status: PaymentMethodStatusExtended): PaymentMethodStatusExtended {
