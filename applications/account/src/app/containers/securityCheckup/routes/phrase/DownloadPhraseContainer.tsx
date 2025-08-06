@@ -254,7 +254,7 @@ const DownloadPhraseContainer = () => {
         const generateMnemonicData = async () => {
             const data = await generateMnemonicWithSalt();
 
-            const [payload, blob] = await Promise.all([getPayload(data), generatePdfBlob(data.mnemonic)]);
+            const [payload, blob] = await Promise.all([getPayload(data), generatePdfBlob(data.recoveryPhrase)]);
 
             setPayload(payload);
             setBlob(blob);
