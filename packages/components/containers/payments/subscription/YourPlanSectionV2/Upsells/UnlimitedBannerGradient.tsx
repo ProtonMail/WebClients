@@ -34,7 +34,16 @@ import {
 import { getHasConsumerVpnPlan } from '@proton/payments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    BRAND_NAME,
+    CALENDAR_SHORT_APP_NAME,
+    DASHBOARD_UPSELL_PATHS,
+    DRIVE_SHORT_APP_NAME,
+    MAIL_SHORT_APP_NAME,
+    PASS_SHORT_APP_NAME,
+    VPN_SHORT_APP_NAME,
+} from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getStorageFeature, getSyncAndBackupFeature, getVersionHistory } from '../../../features/drive';
@@ -319,7 +328,8 @@ const UnlimitedBannerGradient = ({
         showUpsellHeader && headerUpsellCycle ? (
             <span className="color-weak">{getBillingCycleText(headerUpsellCycle)}</span>
         ) : (
-            c('Upsell').t`All premium ${BRAND_NAME} services, one easy subscription.`
+            c('Plan description')
+                .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`
         );
 
     const upsellHeader = () => {

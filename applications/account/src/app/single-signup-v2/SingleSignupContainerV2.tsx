@@ -1251,7 +1251,7 @@ const SingleSignupContainerV2 = ({
             {renderUnlockModal && (
                 <UnlockModal
                     {...unlockModalProps}
-                    title={c('pass_signup_2023: Title').jt`All ${BRAND_NAME} Plus services.${br}One easy subscription.`}
+                    title={c('pass_signup_2023: Title').jt`More ${BRAND_NAME} services.${br}One easy subscription.`}
                     dark={theme.dark}
                     currentPlan={model.upsell.currentPlan}
                     appName={shortProductAppName}
