@@ -93,7 +93,7 @@ describe('Proton Anniversary 2025 - Mail Plus offer eligibility', () => {
         const result = getIsEligible({
             user: mockUser as UserModel,
             protonConfig: mockProtonConfig as ProtonConfig,
-            lastSubscriptionEnd: recentDowngradeTime,
+            previousSubscriptionEndTime: recentDowngradeTime,
             subscription: mockSubscription as Subscription,
             offerConfig: mockOfferConfig as OfferConfig,
         });
@@ -122,7 +122,7 @@ describe('Proton Anniversary 2025 - Mail Plus offer eligibility', () => {
         const result = getIsEligible({
             user: paidUser as UserModel,
             protonConfig: mockProtonConfig as ProtonConfig,
-            lastSubscriptionEnd: 0,
+            previousSubscriptionEndTime: 0,
             subscription: monthlyMailSubscription as Subscription,
             offerConfig: mockOfferConfig as OfferConfig,
         });
@@ -148,7 +148,7 @@ describe('Proton Anniversary 2025 - Mail Plus offer eligibility', () => {
             const result = getIsEligible({
                 user: mockUser as UserModel,
                 protonConfig: { ...mockProtonConfig, APP_NAME: appName } as ProtonConfig,
-                lastSubscriptionEnd: 0,
+                previousSubscriptionEndTime: 0,
                 subscription: mockSubscription as Subscription,
                 offerConfig: mockOfferConfig as OfferConfig,
             });
@@ -166,7 +166,7 @@ describe('Proton Anniversary 2025 - Mail Plus offer eligibility', () => {
         const result = getIsEligible({
             user: delinquentUser as UserModel,
             protonConfig: mockProtonConfig as ProtonConfig,
-            lastSubscriptionEnd: 0,
+            previousSubscriptionEndTime: 0,
             subscription: mockSubscription as Subscription,
             offerConfig: mockOfferConfig as OfferConfig,
         });
@@ -183,7 +183,7 @@ describe('Proton Anniversary 2025 - Mail Plus offer eligibility', () => {
         const result = getIsEligible({
             user: nonPayingUser as UserModel,
             protonConfig: mockProtonConfig as ProtonConfig,
-            lastSubscriptionEnd: 0,
+            previousSubscriptionEndTime: 0,
             subscription: mockSubscription as Subscription,
             offerConfig: mockOfferConfig as OfferConfig,
         });

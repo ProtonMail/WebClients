@@ -13,12 +13,18 @@ import { type OfferConfig } from '../../interface';
 interface Props {
     protonConfig: ProtonConfig;
     user: UserModel;
-    lastSubscriptionEnd: number;
+    previousSubscriptionEndTime: number;
     subscription?: Subscription;
     offerConfig: OfferConfig;
 }
 
-export const getIsEligible = ({ user, protonConfig, lastSubscriptionEnd = 0, subscription, offerConfig }: Props) => {
+export const getIsEligible = ({
+    user,
+    protonConfig,
+    previousSubscriptionEndTime = 0,
+    subscription,
+    offerConfig,
+}: Props) => {
     if (!subscription) {
         return false;
     }
@@ -44,7 +50,7 @@ export const getIsEligible = ({ user, protonConfig, lastSubscriptionEnd = 0, sub
     return (
         hasValidApp &&
         checkAllowed &&
-        isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT) &&
+        isBefore(fromUnixTime(previousSubscriptionEndTime), FREE_DOWNGRADER_LIMIT) &&
         user.canPay &&
         !user.isDelinquent
     );

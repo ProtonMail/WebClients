@@ -1,6 +1,6 @@
+import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
-import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscriptionEnd';
 import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import useFlag from '@proton/unleash/useFlag';
@@ -14,7 +14,7 @@ export const useDrivePostSignupOneDollar = (): OfferHookReturnValue => {
     const protonConfig = useConfig();
     const [user, loadingUser] = useUser();
 
-    const [subscriptionEnd, loadingSubscriptionEnd] = useLastSubscriptionEnd();
+    const [{ previousSubscriptionEndTime }, loadingPreviousSubscription] = usePreviousSubscription();
 
     // One flag to control the feature, and another to manage the progressive rollout of existing users
     const driveOneDollarPostSignupFlag = useFlag('DrivePostSignupOneDollarPromo');
@@ -34,11 +34,11 @@ export const useDrivePostSignupOneDollar = (): OfferHookReturnValue => {
             protonConfig,
             offerStartDateTimestamp: driveOfferState?.Value?.offerStartDate ?? 0,
             driveOneDollarPostSignupFlag,
-            lastSubscriptionEnd: subscriptionEnd,
+            previousSubscriptionEndTime,
             mailOfferStartDateTimestamp: mailOfferState?.Value,
             hasUploadedFile: !!(user?.ProductUsedSpace?.Drive ?? 0 > 0),
         }),
-        isLoading: loadingUser || postSignupDateLoading || mailOfferLoading || loadingSubscriptionEnd,
+        isLoading: loadingUser || postSignupDateLoading || mailOfferLoading || loadingPreviousSubscription,
         openSpotlight: shouldOpenPostSignupOffer(driveOfferState?.Value) && !isDomBusy,
     };
 };
