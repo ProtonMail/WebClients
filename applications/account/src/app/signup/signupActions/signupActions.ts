@@ -420,7 +420,7 @@ export const handleSetupMnemonic = async ({
         return;
     }
 
-    const { randomBytes, salt, mnemonic } = await generateMnemonicWithSalt();
+    const { randomBytes, salt, recoveryPhrase } = await generateMnemonicWithSalt();
 
     const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
 
@@ -437,13 +437,13 @@ export const handleSetupMnemonic = async ({
         // Not translated because the PDF isn't translated
         date: `Created on ${format(new Date(), 'PPP')}`,
         emailAddress,
-        recoveryPhrase: mnemonic,
+        recoveryPhrase,
     });
 
     const blob = new Blob([pdf.buffer], { type: 'application/pdf' });
 
     return {
-        mnemonic,
+        recoveryPhrase,
         blob,
     };
 };

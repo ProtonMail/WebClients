@@ -156,13 +156,13 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
                     <ModalHeader title={c('Info').t`Your recovery phrase`} />
                     <ModalContent>
                         <MnemonicPhraseStepContent
-                            mnemonic={mnemonicData?.mnemonic}
+                            recoveryPhrase={mnemonicData?.recoveryPhrase}
                             loading={generating || authenticating}
                         />
                     </ModalContent>
                     <ModalFooter>
                         <MnemonicPhraseStepButtons
-                            mnemonic={mnemonicData?.mnemonic}
+                            recoveryPhrase={mnemonicData?.recoveryPhrase}
                             disabled={generating || authenticating}
                             onDone={onClose}
                         />

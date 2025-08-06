@@ -13,18 +13,18 @@ import { generateMnemonicBase64RandomBytes, generateMnemonicFromBase64RandomByte
 export interface GeneratedMnemonicData {
     salt: string;
     randomBytes: string;
-    mnemonic: string;
+    recoveryPhrase: string;
 }
 
 export const generateMnemonicWithSalt = async () => {
     const salt = generateKeySalt();
     const randomBytes = generateMnemonicBase64RandomBytes();
-    const mnemonic = await generateMnemonicFromBase64RandomBytes(randomBytes);
+    const recoveryPhrase = await generateMnemonicFromBase64RandomBytes(randomBytes);
 
     return {
         salt,
         randomBytes,
-        mnemonic,
+        recoveryPhrase,
     };
 };
 
