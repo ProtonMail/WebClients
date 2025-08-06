@@ -94,6 +94,6 @@ export const sharedPersistReducer: Partial<{ [key in keyof typeof sharedReducers
     vpnServersCount: selectPersistModel,
     protonDomains: selectPersistModel,
     domains: selectPersistModel,
-    ...previousSubscriptionReducer,
+    previousSubscription: selectPersistModel,
     features: (state: any) => state,
 };
