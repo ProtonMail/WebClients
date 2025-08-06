@@ -10,11 +10,11 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 export const MnemonicPhraseStepContent = ({
-    mnemonic,
+    recoveryPhrase,
     loading,
     children,
 }: {
-    mnemonic?: string;
+    recoveryPhrase?: string;
     loading?: boolean;
     children?: ReactNode;
 }) => {
@@ -44,16 +44,16 @@ export const MnemonicPhraseStepContent = ({
                 </>
             )}
 
-            {!mnemonic || loading ? (
+            {!recoveryPhrase || loading ? (
                 <Loader />
             ) : (
                 <>
                     <span className="text-semibold">{c('Label').t`Recovery phrase`}</span>
                     <Card className="mt-2 flex justify-space-between items-center flex-nowrap" bordered={false} rounded>
                         <span className="mr-2" data-testid="account:recovery:generatedRecoveryPhrase">
-                            {mnemonic}
+                            {recoveryPhrase}
                         </span>
-                        <Copy className="bg-norm shrink-0" value={mnemonic} onCopy={onCopy} />
+                        <Copy className="bg-norm shrink-0" value={recoveryPhrase} onCopy={onCopy} />
                     </Card>
                 </>
             )}
@@ -62,29 +62,29 @@ export const MnemonicPhraseStepContent = ({
 };
 
 interface MnemonicPhraseStepButtonsProps {
-    mnemonic?: string;
+    recoveryPhrase?: string;
     disabled?: boolean;
     onDone?: () => void;
 }
-export const MnemonicPhraseStepButtons = ({ mnemonic, disabled, onDone }: MnemonicPhraseStepButtonsProps) => {
+export const MnemonicPhraseStepButtons = ({ recoveryPhrase, disabled, onDone }: MnemonicPhraseStepButtonsProps) => {
     const { createNotification } = useNotifications();
 
     const handleDownload = async () => {
-        if (!mnemonic) {
+        if (!recoveryPhrase) {
             return;
         }
 
-        const blob = new Blob([mnemonic], { type: 'text/plain;charset=utf-8' });
+        const blob = new Blob([recoveryPhrase], { type: 'text/plain;charset=utf-8' });
         downloadFile(blob, `proton_recovery_phrase.txt`);
         createNotification({ text: c('Info').t`Recovery phrase downloaded` });
     };
 
     return (
         <>
-            <Button disabled={!mnemonic || disabled} onClick={onDone}>
+            <Button disabled={!recoveryPhrase || disabled} onClick={onDone}>
                 {c('Action').t`Done`}
             </Button>
-            <Button disabled={!mnemonic || disabled} onClick={handleDownload} color="norm">
+            <Button disabled={!recoveryPhrase || disabled} onClick={handleDownload} color="norm">
                 {c('Action').t`Download`}
             </Button>
         </>
