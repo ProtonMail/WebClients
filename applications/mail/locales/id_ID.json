@@ -1601,6 +1601,9 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Upgrade for 200GB": [
+        "Tingkatkan untuk 200GB"
       ]
     },
     "action": {
@@ -1757,7 +1760,7 @@
         "Diskon didasarkan pada harga bulanan standar. Pada akhir siklus tagihan, langganan Anda akan diperpanjang dengan tarif tahunan standar."
       ],
       "Double your encrypted storage – get 1 TB for all your data": [
-        "Lipat gandakan penyimpanan terenkripsi Anda – dapatkan 1 TB untuk semua data Anda"
+        "Gandakan ruang penyimpanan terenkripsi Anda – dapatkan 1 TB untuk seluruh data Anda"
       ],
       "Encrypted password manager": [
         "Pengelola kata sandi terenkripsi"
@@ -4879,6 +4882,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Pencarian Anda membuahkan terlalu banyak hasil. Silakan persempit kriteria pencarian Anda dan coba lagi."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Lampiran terbatas pada ${ readableAttachmentMaxSize }"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -11092,6 +11098,15 @@
       ],
       "Your subscription renews soon": [
         "Langganan Anda akan segera diperbarui"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Penawaran terbatas, valid untuk bulan pertama Anda"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Tingkatkan produktivitas Anda dengan ${ planName }, hanya seharga ${ pricingTitle }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName }, hanya seharga ${ pricingTitle }"
       ]
     },
     "Offer fearue": {
@@ -11135,6 +11150,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Alias tak terbatas untuk melindungi identitas Anda"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Kolaborasi dengan pengguna non-${ BRAND_NAME }"
+      ],
+      "Edit docs online": [
+        "Sunting dokumen secara online"
+      ],
+      "File version history (over 1 week)": [
+        "Riwayat versi berkas (hingga lebih dari 1 minggu)"
       ]
     },
     "Onboarding List Placeholder": {
@@ -14672,6 +14696,15 @@
       ],
       "Your subscriptions in one place": [
         "Langganan Anda di satu tempat"
+      ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Tingkatkan ruang penyimpanan Anda dengan ${ planName } seharga ${ formattedPrice }"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1598,6 +1598,12 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Download application logs": [
+        "アプリのログをダウンロード"
+      ],
+      "Upgrade for 200GB": [
+        "200GBへアップグレード"
       ]
     },
     "action": {
@@ -1662,6 +1668,9 @@
       ],
       "${ users } user": [
         "${ users } 人のユーザー"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } の ${ seats } シート"
       ]
     },
     "Alert": {
@@ -2186,6 +2195,9 @@
       ],
       "Website access problem": [
         "ウェブサイトへのアクセスに関する問題"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } の不具合"
       ]
     },
     "Button": {
@@ -4870,6 +4882,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "添付ファイルは${ readableAttachmentMaxSize }に制限されています"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7028,7 +7043,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8427,6 +8442,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
+      ],
+      "Download application logs for troubleshooting": [
+        "トラブルシューティングのためにアプリのログをダウンロード"
+      ],
+      "Download current logs": [
+        "現在のログをダウンロード"
       ]
     },
     "info": {
@@ -9367,6 +9391,9 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "Include application logs in bug report": [
+        "バグレポートにアプリのログを含める"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11071,6 +11098,15 @@
       ],
       "Your subscription renews soon": [
         "サブスクリプションはまもなく更新されます"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "期間限定オファー、最初の月のみ有効です"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }で生産性をアップグレードできます。"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }でストレージをアップグレードできます。"
       ]
     },
     "Offer fearue": {
@@ -11114,6 +11150,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "無制限のエイリアスでお客様のユーザー情報を保護"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "非${ BRAND_NAME } ユーザーとコラボレーション"
+      ],
+      "Edit docs online": [
+        "オンラインでドキュメントを編集"
+      ],
+      "File version history (over 1 week)": [
+        "ファイルバージョン履歴(1週間以上)"
       ]
     },
     "Onboarding List Placeholder": {
@@ -13501,6 +13546,18 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } 件の会話がスター付きから削除されました"
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } 件のメッセージがスター付きから削除されました。"
+      ],
+      "Conversation removed from Starred.": [
+        "会話がスター付きから削除されました。"
+      ],
+      "Message removed from Starred.": [
+        "メッセージがスター付きから削除されました。"
       ]
     },
     "Success notification": {
@@ -14639,6 +14696,15 @@
       ],
       "Your subscriptions in one place": [
         "サブスクリプションを一元管理"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName }で${ formattedPrice }にて、お客様の生産性をアップグレードしましょう。"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "${ planName }をご利用いただくと、${ formattedPrice }でストレージをアップグレードできます。"
       ]
     },
     "Today icon tooltip in mini calendar": {
