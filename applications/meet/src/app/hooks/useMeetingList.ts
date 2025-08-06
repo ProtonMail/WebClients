@@ -55,8 +55,12 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null] => {
                 return;
             }
 
+            const filteredMeetings = activeMeetings.filter((meeting) =>
+                [MeetingType.PERSONAL, MeetingType.RECURRING, MeetingType.SCHEDULED].includes(meeting.Type)
+            );
+
             const meetingsWithDecryptedPassword = await Promise.all(
-                activeMeetings.map(async (meeting) => {
+                filteredMeetings.map(async (meeting) => {
                     return getDecryptedMeeting(meeting);
                 })
             );
