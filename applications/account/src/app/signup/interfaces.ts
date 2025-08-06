@@ -17,6 +17,7 @@ import {
     type PlansMap,
     type Subscription,
 } from '@proton/payments';
+import type { SetMnemonicPhrasePayload } from '@proton/shared/lib/api/settingsMnemonic';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -167,12 +168,20 @@ export interface MnemonicData {
     blob: Blob;
 }
 
+export interface DeferredMnemonicData extends MnemonicData {
+    /**
+     * Payload to be sent to the BE.
+     * Handled by the sendMnemonicPayloadToBackend function
+     */
+    payload: SetMnemonicPhrasePayload;
+}
+
 export interface SetupData {
     user: User;
     addresses: Address[];
     authResponse: AuthResponse;
     api: Api;
-    mnemonicData?: MnemonicData;
+    mnemonicData?: DeferredMnemonicData;
     session: ResumedSessionResult;
 }
 
@@ -183,7 +192,7 @@ export interface UserData {
 export interface UserCacheResult {
     type: 'user';
     setupData?: {
-        mnemonicData?: MnemonicData;
+        mnemonicData?: DeferredMnemonicData;
     };
     subscriptionData: SubscriptionData;
     session: SessionData;
