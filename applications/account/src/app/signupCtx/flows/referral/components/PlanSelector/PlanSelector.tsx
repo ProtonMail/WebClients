@@ -7,6 +7,8 @@ import { usePaymentOptimistic } from '@proton/payments/ui';
 import {
     APPS,
     BRAND_NAME,
+    CALENDAR_SHORT_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
     VPN_SHORT_APP_NAME,
@@ -124,7 +126,7 @@ function BundlePlanCard({ isSelected, onCTAClick }: PlanCardProps) {
             title={PLAN_NAMES[plan]}
             headerTrailing={<Pricing plan={plan} />}
             description={c('Plan description')
-                .t`Comprehensive privacy and security with all ${BRAND_NAME} services combined.`}
+                .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${CALENDAR_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${PASS_SHORT_APP_NAME}.`}
             features={<BundleFeatures />}
             footer={
                 <AppsLogos

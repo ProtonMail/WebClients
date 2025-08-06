@@ -11,7 +11,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { PLANS, type Plan, type PlansMap, getPlan } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { getNormalizedPlanTitles, getPlusTitle } from './plusToPlusHelper';
+import { getNormalizedPlanTitles } from './plusToPlusHelper';
 
 interface Props extends Omit<ModalProps, 'title' | 'onClose'> {
     onUpgrade: () => void;
@@ -32,11 +32,11 @@ const PlusToPlusUpsell = ({ plansMap, unlockPlan, onUpgrade, ...rest }: Props) =
         unlockPlan,
         upsellPlan,
     });
-    const protonPlus = getPlusTitle(BRAND_NAME);
+
     return (
         <ModalTwo {...rest} size="small" data-testid="plus-block">
             <ModalTwoHeader
-                title={c('plus_block').jt`All ${protonPlus} services.${br}One easy subscription.`}
+                title={c('plus_block').jt`More ${BRAND_NAME} services.${br}One easy subscription.`}
                 className="text-center"
                 hasClose={false}
             />
@@ -44,7 +44,7 @@ const PlusToPlusUpsell = ({ plansMap, unlockPlan, onUpgrade, ...rest }: Props) =
                 <div className="mb-4 color-weak">
                     {getBoldFormattedText(
                         c('plus_block')
-                            .t`As a **${currentPlanTitle}** subscriber, you can unlock **${unlockPlanTitle}** and all premium ${BRAND_NAME} services by upgrading to **${upsellPlanTitle}**.`
+                            .t`As a **${currentPlanTitle}** subscriber, you can unlock **${unlockPlanTitle}** and more ${BRAND_NAME} services by upgrading to **${upsellPlanTitle}**.`
                     )}
                 </div>
                 <PlusUnlimitedComparison

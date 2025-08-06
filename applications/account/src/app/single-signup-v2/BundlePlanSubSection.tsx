@@ -11,10 +11,15 @@ import {
     APPS,
     BRAND_NAME,
     CALENDAR_APP_NAME,
+    CALENDAR_SHORT_APP_NAME,
     DRIVE_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
     MAIL_APP_NAME,
+    MAIL_SHORT_APP_NAME,
     PASS_APP_NAME,
+    PASS_SHORT_APP_NAME,
     VPN_APP_NAME,
+    VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -30,9 +35,8 @@ const BundlePlanSubSection = ({
     return (
         <div className={clsx(className, 'card-plan-premium bg-weak p-4 rounded-xl w-full')}>
             <div className="color-weak text-center text-sm mb-4">
-                {c('pass_signup_2023: Info').t`All premium ${BRAND_NAME} services.`}
-                <br />
-                {c('pass_signup_2023: Info').t`One easy subscription.`}
+                {c('Plan description')
+                    .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`}
             </div>
             <div className="flex justify-center flex-nowrap gap-2">
                 {[
