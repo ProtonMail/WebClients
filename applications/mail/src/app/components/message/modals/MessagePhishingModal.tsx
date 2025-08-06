@@ -8,6 +8,7 @@ import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 
 import { useMoveToFolder } from '../../../hooks/actions/move/useMoveToFolder';
 import type { Element } from '../../../models/element';
@@ -21,6 +22,7 @@ interface Props extends ModalProps {
 
 const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
     const api = useApi();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder } = useMoveToFolder();
     const { createNotification } = useNotifications();
 
@@ -37,16 +39,22 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
                 Body: message.decryption?.decryptedBody,
             })
         );
-
-        await moveToFolder({
-            elements: [message.data || ({} as Element)],
-            sourceLabelID: '',
-            destinationLabelID: SPAM,
-            folderName: '',
-            silent: true,
-            askUnsub: false,
-            sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
-        });
+        if (applyOptimisticLocationEnabled) {
+            await applyLocation({
+                elements: [message.data || ({} as Element)],
+                targetLabelID: SPAM,
+            });
+        } else {
+            await moveToFolder({
+                elements: [message.data || ({} as Element)],
+                sourceLabelID: '',
+                destinationLabelID: SPAM,
+                folderName: '',
+                silent: true,
+                askUnsub: false,
+                sourceAction: SOURCE_ACTION.MESSAGE_VIEW,
+            });
+        }
         createNotification({ text: c('Success').t`Phishing reported` });
         onBack();
     };
