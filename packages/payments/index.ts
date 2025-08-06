@@ -12,7 +12,7 @@ export {
     getChargebeeConfiguration,
     getFreePlan,
     getInvoicePDF,
-    getLastCancelledSubscription,
+    getLatestCancelledSubscription,
     getLifetimeProductType,
     getPaymentMethods,
     getPaymentMethodStatus,
