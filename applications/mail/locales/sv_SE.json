@@ -1606,6 +1606,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Upgrade for 200GB": [
+        "Uppgradera för 200 GB"
       ]
     },
     "action": {
@@ -4909,6 +4912,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Bilagor är begränsade till ${ readableAttachmentMaxSize }"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7155,8 +7161,7 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -11268,6 +11273,15 @@
       ],
       "Your subscription renews soon": [
         "Din prenumeration förnyas snart"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Tidsbegränsat erbjudande, giltigt för din första månad"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Uppgradera din produktivitet för bara ${ pricingTitle } med ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Uppgradera ditt lagringsutrymme för bara ${ pricingTitle } med ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -11311,6 +11325,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Obegränsat antal alias för att skydda din identitet"
+      ],
+      "Edit docs online": [
+        "Redigera dokument online"
       ]
     },
     "Onboarding List Placeholder": {
@@ -14930,6 +14947,15 @@
       ],
       "Your subscriptions in one place": [
         "Dina prenumerationer på ett ställe"
+      ],
+      "Upgrade to ${ planName }": [
+        "Uppgradera till ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Uppgradera din produktivitet för ${ formattedPrice } med ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Uppgradera ditt lagringsutrymme för ${ formattedPrice } med ${ planName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
