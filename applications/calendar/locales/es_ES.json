@@ -911,6 +911,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Upgrade for 200GB": [
+        "Mejora por 200GB"
       ]
     },
     "action": {
@@ -1532,6 +1535,9 @@
       ],
       "Take a tour": [
         "Explora ahora"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
       ]
     },
     "Calendar access select label": {
@@ -8438,6 +8444,15 @@
       ],
       "Your subscription renews soon": [
         "Tu suscripción se renueva pronto."
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Oferta por tiempo limitado, válida para tu primer mes"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Mejora tu productividad por solo ${ pricingTitle } con ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Mejora tu almacenamiento por solo ${ pricingTitle } con ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -8481,6 +8496,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Alias ilimitados para proteger tu identidad"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colaborar con usuarios ajenos a ${ BRAND_NAME }"
+      ],
+      "Edit docs online": [
+        "Edita documentos online"
+      ],
+      "File version history (over 1 week)": [
+        "Historial de versiones del archivo (más de 1 semana)"
       ]
     },
     "Onboarding": {
@@ -11264,6 +11288,15 @@
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
+      ],
+      "Upgrade to ${ planName }": [
+        "Mejorar a ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Mejora tu productividad por ${ formattedPrice } con ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Mejora tu almacenamiento por ${ formattedPrice } con ${ planName }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
