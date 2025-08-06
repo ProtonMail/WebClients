@@ -911,6 +911,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Upgrade for 200GB": [
+        "Αναβάθμιση για 200GB"
       ]
     },
     "action": {
@@ -1506,6 +1509,9 @@
       ],
       "Take a tour": [
         "Κάντε μια περιήγηση"
+      ],
+      "Maybe later": [
+        "Ίσως αργότερα"
       ]
     },
     "Calendar access select label": {
@@ -8401,6 +8407,15 @@
       ],
       "Your subscription renews soon": [
         "Η συνδρομή σας ανανεωθεί σύντομα"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Προσφορά περιορισμένου χρόνου, ισχύει για τον πρώτο σας μήνα"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Αναβαθμίστε την παραγωγικότητά σας μόνο για ${ pricingTitle } με ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Αναβαθμίστε τον αποθηκευτικό σας χώρο για μόλις ${ pricingTitle } με ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -8444,6 +8459,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Απεριόριστα ψευδώνυμα για να προστατεύσετε την ταυτότητά σας"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Συνεργαστείτε με μη-${ BRAND_NAME } χρήστες"
+      ],
+      "Edit docs online": [
+        "Επεξεργασία εγγράφων online"
+      ],
+      "File version history (over 1 week)": [
+        "Ιστορικό εκδόσεων αρχείου (πάνω από 1 εβδομάδα)"
       ]
     },
     "Onboarding": {
@@ -11227,6 +11251,15 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Αναβαθμίστε την παραγωγικότητά σας για ${ formattedPrice } με ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Αναβαθμίστε τον αποθηκευτικό σας χώρο για ${ formattedPrice } με ${ planName }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
