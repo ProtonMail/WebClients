@@ -15,7 +15,7 @@ export const useMeetingJoin = () => {
 
     const defaultResolution = qualityConstants[QualityScenarios.SmallView][defaultQuality];
 
-    const { getAcccessDetails } = useMeetingSetup();
+    const { getAccessDetails } = useMeetingSetup();
 
     const handleJoin = useCallback(
         async ({
@@ -32,7 +32,7 @@ export const useMeetingJoin = () => {
             const STATIC_ROOM_KEY = process.env.LIVEKIT_ROOM_KEY as string;
 
             try {
-                const { websocketUrl, accessToken } = await getAcccessDetails({
+                const { websocketUrl, accessToken } = await getAccessDetails({
                     displayName: participantName,
                     token: meetingId,
                 });
@@ -65,12 +65,14 @@ export const useMeetingJoin = () => {
                 await room.connect(websocketUrl, accessToken);
 
                 return room;
-            } catch (error) {
+            } catch (error: any) {
                 console.error(error);
-                throw new Error(c('l10n_nightly Error').t`Failed to join meeting`);
+                throw new Error(
+                    error.message ?? c('l10n_nightly Error').t`Failed to join meeting. Please try again later`
+                );
             }
         },
-        [defaultResolution, getAcccessDetails]
+        [defaultResolution, getAccessDetails]
     );
 
     return handleJoin;

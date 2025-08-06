@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { decryptMeetingName, getCombinedPassword } from '@proton/meet/utils/cryptoUtils';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { type SRPHandshakeInfo, useMeetSrp } from './useMeetSrp';
 
@@ -61,17 +62,18 @@ export const useMeetingAuthentication = () => {
         [getSessionToken, getMeetingInfo]
     );
 
-    const getAcccessDetails = useCallback(async ({ displayName, token }: { displayName: string; token: string }) => {
+    const getAccessDetails = useCallback(async ({ displayName, token }: { displayName: string; token: string }) => {
         try {
             const data = await getAccessToken(token, displayName);
             return {
                 accessToken: data.AccessToken,
                 websocketUrl: data.WebsocketUrl.replace('/rtc', ''),
             };
-        } catch (error) {
-            throw new Error(c('l10n_nightly Error').t`Failed to get access details`);
+        } catch (error: any) {
+            console.log('Failed to get access details');
+            throw new Error(getApiError(error)?.message ?? c('l10n_nightly Error').t`Failed to get access details`);
         }
     }, []);
 
-    return { getRoomName, getAcccessDetails, initHandshake, getHandshakeInfo: initHandshake };
+    return { getRoomName, getAccessDetails, initHandshake, getHandshakeInfo: initHandshake };
 };
