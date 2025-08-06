@@ -229,13 +229,9 @@ const SubUserEditModal = ({
 
     const isSelf = Boolean(member.Self);
 
-    const isSelfAndPrivate = Boolean(isSelf && member.Private === MEMBER_PRIVATE.UNREADABLE);
-
     const canTogglePrivate =
         // Organization must be keyful, so not family-style organization
         hasOrganizationSetupWithKeys(organization) &&
-        // Not yourself, to avoid requesting unprivatization for yourself
-        !isSelfAndPrivate &&
         // Cannot toggle private for SSO users
         !member.SSO &&
         // The user does not have an ongoing unprivatization request or an admin request is ongoing (to be able to remove it)
