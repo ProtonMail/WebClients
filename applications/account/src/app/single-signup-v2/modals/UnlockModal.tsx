@@ -88,12 +88,12 @@ const UnlockModal = ({
                                 if (relativePrice) {
                                     return getBoldFormattedText(
                                         c('pass_signup_2023: Info')
-                                            .t`But you can unlock **${unlockPlanTitle}** and all premium ${BRAND_NAME} services by upgrading to **${upsellPlanTitle}** — it’s just ${relativePrice} extra per month.`
+                                            .t`But you can unlock **${unlockPlanTitle}** and more ${BRAND_NAME} services by upgrading to **${upsellPlanTitle}** — it’s just ${relativePrice} extra per month.`
                                     );
                                 }
                                 return getBoldFormattedText(
                                     c('pass_signup_2023: Info')
-                                        .t`But you can unlock **${unlockPlanTitle}** and all premium ${BRAND_NAME} services by upgrading to **${upsellPlanTitle}**.`
+                                        .t`But you can unlock **${unlockPlanTitle}** and more ${BRAND_NAME} services by upgrading to **${upsellPlanTitle}**.`
                                 );
                             })()}
                         </div>

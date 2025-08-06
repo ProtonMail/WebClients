@@ -4,8 +4,11 @@ import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { hasCancellablePlan } from '@proton/payments';
 import {
     APPS,
+    BRAND_NAME,
     CALENDAR_APP_NAME,
+    CALENDAR_SHORT_APP_NAME,
     DRIVE_SHORT_APP_NAME,
+    MAIL_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
     PROTON_SENTINEL_NAME,
     VPN_SHORT_APP_NAME,
@@ -44,7 +47,7 @@ export const getBundleConfig = ({ app, plan, subscription, user }: ConfigProps):
     const features: PlanConfigFeatures = {
         title: c('Subscription reminder').t`Comprehensive privacy and security`,
         description: c('Subscription reminder')
-            .t`${planName} gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.`,
+            .t`${planName} gives you access to all premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}. Privacy is built-in so you can get on with it, knowing your data and identity are safe.`,
         features: [
             {
                 icon: 'storage',

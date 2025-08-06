@@ -184,7 +184,8 @@ export const getVersionHistory = (options?: 'generic' | 365 | '10y'): PlanCardFe
 
 export const getPremiumFeatures = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`All premium ${BRAND_NAME} services. One easy subscription`,
+        text: c('Plan description')
+            .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
         included: true,
     };
 };
