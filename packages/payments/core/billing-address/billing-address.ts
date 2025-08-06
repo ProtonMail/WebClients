@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
-import { getDefaultPostalCodeByStateCode } from '../postal-codes/default-postal-codes';
-import { normalizePostalCode } from '../postal-codes/format';
-import { getStateCodeByPostalCode, isPostalCodeValid } from '../postal-codes/postal-codes-validation';
-import { getDefaultState, isCountryWithRequiredPostalCode, isCountryWithStates } from './countries';
-import { type PaymentMethodStatusExtended } from './interface';
+import { normalizePostalCode } from '../../postal-codes/format';
+import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
+import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
+import { type PaymentMethodStatusExtended } from '../interface';
 
 export type BillingAddress = {
     CountryCode: string;
@@ -102,39 +101,6 @@ export function paymentStatusToBillingAddress(status: PaymentMethodStatusExtende
         State: status.State,
         ZipCode: status.ZipCode,
     };
-}
-
-/**
- * Implements a set of fallbacks in case the backend doesn't return the complete billing address.
- */
-export function getBillingAddressFromPaymentsStatus(billingAddress: BillingAddress): BillingAddress {
-    const normalized = { ...billingAddress };
-
-    if (!normalized.CountryCode) {
-        normalized.CountryCode = DEFAULT_TAX_BILLING_ADDRESS.CountryCode;
-        normalized.State = DEFAULT_TAX_BILLING_ADDRESS.State;
-        normalized.ZipCode = DEFAULT_TAX_BILLING_ADDRESS.ZipCode;
-    }
-
-    if (isCountryWithStates(normalized.CountryCode) && !normalized.State) {
-        if (normalized.ZipCode) {
-            const stateByZipCode = getStateCodeByPostalCode(normalized.CountryCode, normalized.ZipCode);
-            if (stateByZipCode) {
-                normalized.State = stateByZipCode;
-            } else {
-                normalized.State = getDefaultState(normalized.CountryCode);
-                normalized.ZipCode = null;
-            }
-        } else {
-            normalized.State = getDefaultState(normalized.CountryCode);
-        }
-    }
-
-    if (isCountryWithStates(normalized.CountryCode) && normalized.State && !normalized.ZipCode) {
-        normalized.ZipCode = getDefaultPostalCodeByStateCode(normalized.CountryCode, normalized.State);
-    }
-
-    return normalized;
 }
 
 /**

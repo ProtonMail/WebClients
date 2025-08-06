@@ -5,7 +5,7 @@ import { isDelinquent } from '@proton/shared/lib/user/helpers';
 import orderBy from '@proton/utils/orderBy';
 
 import { getPaymentMethods } from './api';
-import { type BillingAddress } from './billing-address';
+import { type BillingAddress } from './billing-address/billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
 import {
     type ADDON_NAMES,
@@ -24,6 +24,7 @@ import type {
     FreeSubscription,
     PaymentMethodApplePay,
     PaymentMethodFlow,
+    PaymentMethodSepa,
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
     PaymentsApi,
@@ -32,7 +33,6 @@ import type {
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
 } from './interface';
-import type { PaymentMethodSepa } from './interface';
 import { getIsB2BAudienceFromPlan } from './plan/helpers';
 import { type BillingPlatform } from './subscription/constants';
 import { getHas2024OfferCoupon } from './subscription/helpers';
