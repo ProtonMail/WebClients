@@ -1,4 +1,5 @@
 import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 
 import type { Element } from 'proton-mail/models/element';
@@ -32,7 +33,20 @@ export class MoveEngine {
         this.rules[targetLabelID] = rule;
     }
 
-    validateMove(targetLabelID: string, elements: Element[]): MoveEngineCanMoveResult {
+    validateMove(targetLabelID: string, elements: Element[], removeLabel: boolean): MoveEngineCanMoveResult {
+        if (removeLabel) {
+            if (isCustomLabel(targetLabelID, this.labels) || targetLabelID === MAILBOX_LABEL_IDS.STARRED) {
+                return {
+                    allowedElements: elements,
+                    deniedElements: [],
+                    notApplicableElements: [],
+                    errors: [],
+                };
+            }
+
+            throw new Error(`Cannot unlabel ${targetLabelID}`);
+        }
+
         const rule = this.rules[this.getRuleKey(targetLabelID)];
         if (!rule) {
             throw new Error(`No rule found for destination ${targetLabelID}`);
