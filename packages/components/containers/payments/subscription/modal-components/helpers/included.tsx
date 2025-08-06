@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { type FreePlanDefault, PLANS, type PlanIDs, type PlansMap } from '@proton/payments';
+import { type FreePlanDefault, PLANS, type PlanIDs, type PlansMap, hasLumoAddonFromPlanIDs } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
@@ -19,6 +19,7 @@ import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 
 import { getNUsersText } from '../../../features/highlights';
+import { getAccessToAdvancedAIText, getFullChatHistoryText, getUnlimitedChatsText } from '../../../features/lumo';
 import {
     get2FAAuthenticatorText,
     getAdvancedAliasFeaturesText,
@@ -48,9 +49,37 @@ export const getWhatsIncluded = ({
     vpnServers: VPNServersCountData;
     freePlan: FreePlanDefault;
 }): Included[] => {
+    const summary = Object.entries(planIDs).reduce(
+        (acc, [planNameValue, quantity]) => {
+            const planName = planNameValue as keyof PlansMap;
+            const plan = plansMap[planName];
+            if (!plan || !quantity || quantity <= 0) {
+                return acc;
+            }
+            acc.addresses += plan.MaxAddresses * quantity;
+            acc.domains += plan.MaxDomains * quantity;
+            acc.space += plan.MaxSpace * quantity;
+            acc.vpn += plan.MaxVPN * quantity;
+            return acc;
+        },
+        { space: 0, addresses: 0, domains: 0, vpn: 0 }
+    );
+
+    // Default included features
+    let included: Included[] = [
+        {
+            type: 'value',
+            text: c('Info').t`Total storage`,
+            value: humanSize({ bytes: summary.space || freePlan.MaxSpace, fraction: 0 }),
+        },
+        { type: 'value', text: c('Info').t`Total email addresses`, value: summary.addresses || freePlan.MaxAddresses },
+        { type: 'value', text: c('Info').t`Total supported domains`, value: summary.domains || freePlan.MaxDomains },
+        { type: 'value', text: c('Info').t`Total VPN connections`, value: summary.vpn || freePlan.MaxVPN },
+    ];
+
     const vpnPassBundle = planIDs[PLANS.VPN_PASS_BUNDLE];
     if (vpnPassBundle) {
-        return [
+        included = [
             {
                 type: 'text',
                 text: getPremium(VPN_SHORT_APP_NAME),
@@ -61,6 +90,7 @@ export const getWhatsIncluded = ({
             },
         ];
     }
+
     const unlimited = planIDs[PLANS.BUNDLE];
     const unlimitedPlan = plansMap[PLANS.BUNDLE];
     if (unlimited && unlimitedPlan) {
@@ -68,7 +98,7 @@ export const getWhatsIncluded = ({
             bytes: unlimitedPlan.MaxSpace,
             fraction: 0,
         });
-        return [
+        included = [
             {
                 type: 'text',
                 text: storage,
@@ -94,7 +124,7 @@ export const getWhatsIncluded = ({
 
     const vpn = planIDs[PLANS.VPN] || planIDs[PLANS.VPN2024];
     if (vpn !== undefined && vpn > 0) {
-        return [
+        included = [
             {
                 type: 'text',
                 text: getVpnServers(vpnServers.paid.servers),
@@ -139,12 +169,12 @@ export const getWhatsIncluded = ({
 
     const passPremium = planIDs[PLANS.PASS];
     if (passPremium !== undefined && passPremium > 0) {
-        return passFeatures;
+        included = passFeatures;
     }
 
     const passLifetime = planIDs[PLANS.PASS_LIFETIME];
     if (passLifetime !== undefined && passLifetime > 0) {
-        return [
+        included = [
             {
                 type: 'text',
                 text: getProtonPassFeatureTooltipText(),
@@ -155,7 +185,7 @@ export const getWhatsIncluded = ({
 
     const passFamily = planIDs[PLANS.PASS_FAMILY];
     if (passFamily !== undefined && passFamily > 0) {
-        return [
+        included = [
             {
                 type: 'text',
                 text: getPassUsersText(FAMILY_MAX_USERS),
@@ -189,7 +219,7 @@ export const getWhatsIncluded = ({
 
     const walletPremium = planIDs[PLANS.WALLET];
     if (walletPremium !== undefined && walletPremium > 0) {
-        return [
+        included = [
             {
                 type: 'text',
                 text: getWalletsText(WALLET_PLUS_WALLETS),
@@ -209,22 +239,6 @@ export const getWhatsIncluded = ({
         ];
     }
 
-    const summary = Object.entries(planIDs).reduce(
-        (acc, [planNameValue, quantity]) => {
-            const planName = planNameValue as keyof PlansMap;
-            const plan = plansMap[planName];
-            if (!plan || !quantity || quantity <= 0) {
-                return acc;
-            }
-            acc.addresses += plan.MaxAddresses * quantity;
-            acc.domains += plan.MaxDomains * quantity;
-            acc.space += plan.MaxSpace * quantity;
-            acc.vpn += plan.MaxVPN * quantity;
-            return acc;
-        },
-        { space: 0, addresses: 0, domains: 0, vpn: 0 }
-    );
-
     const family = planIDs[PLANS.FAMILY];
     if (family !== undefined && family > 0) {
         const storage = humanSize({
@@ -232,7 +246,7 @@ export const getWhatsIncluded = ({
             fraction: 0,
         });
 
-        return [
+        included = [
             {
                 type: 'text',
                 text: getNUsersText(FAMILY_MAX_USERS),
@@ -271,7 +285,7 @@ export const getWhatsIncluded = ({
             fraction: 0,
         });
 
-        return [
+        included = [
             {
                 type: 'text',
                 text: getNUsersText(DUO_MAX_USERS),
@@ -303,14 +317,32 @@ export const getWhatsIncluded = ({
         ];
     }
 
-    return [
+    const lumoPlan = planIDs[PLANS.LUMO];
+    const lumoAddon = hasLumoAddonFromPlanIDs(planIDs);
+    const lumoFeatures: Included[] = [
         {
-            type: 'value',
-            text: c('Info').t`Total storage`,
-            value: humanSize({ bytes: summary.space || freePlan.MaxSpace, fraction: 0 }),
+            type: 'text',
+            text: getAccessToAdvancedAIText(),
         },
-        { type: 'value', text: c('Info').t`Total email addresses`, value: summary.addresses || freePlan.MaxAddresses },
-        { type: 'value', text: c('Info').t`Total supported domains`, value: summary.domains || freePlan.MaxDomains },
-        { type: 'value', text: c('Info').t`Total VPN connections`, value: summary.vpn || freePlan.MaxVPN },
+        {
+            type: 'text',
+            text: getUnlimitedChatsText(),
+        },
+        {
+            type: 'text',
+            text: getFullChatHistoryText(),
+        },
+        {
+            type: 'text',
+            text: c('collider_2025: feature').t`Large file upload support`,
+        },
     ];
+
+    if (lumoPlan !== undefined && lumoPlan > 0) {
+        included = lumoFeatures;
+    } else if (lumoAddon) {
+        included = [...included, ...lumoFeatures];
+    }
+
+    return included;
 };
