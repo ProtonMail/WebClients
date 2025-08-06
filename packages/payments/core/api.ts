@@ -3,7 +3,11 @@ import { getProductHeaders } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
 
-import { type BillingAddress, type BillingAddressProperty, normalizeBillingAddress } from './billing-address';
+import {
+    type BillingAddress,
+    type BillingAddressProperty,
+    normalizeBillingAddress,
+} from './billing-address/billing-address';
 import type { Autopay, INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE, PAYMENT_TOKEN_STATUS } from './constants';
 import { PAYMENT_METHOD_TYPES, PLANS, PLAN_TYPES } from './constants';
 import type {

@@ -21,7 +21,7 @@ import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout'
 
 import type { PaymentsVersion } from './api';
 import { type CheckSubscriptionData } from './api';
-import { type BillingAddress, type FullBillingAddress } from './billing-address';
+import { type BillingAddress, type FullBillingAddress } from './billing-address/billing-address';
 import type {
     ADDON_NAMES,
     Autopay,

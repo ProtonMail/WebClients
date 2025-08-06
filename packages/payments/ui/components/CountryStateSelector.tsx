@@ -10,7 +10,11 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { type FormFieldValidator } from '@proton/components/components/v2/useFormErrors';
 import clsx from '@proton/utils/clsx';
 
-import { type BillingAddress, billingCountryValidator, billingStateValidator } from '../../core/billing-address';
+import {
+    type BillingAddress,
+    billingCountryValidator,
+    billingStateValidator,
+} from '../../core/billing-address/billing-address';
 import { getStateList, isCountryWithStates } from '../../core/countries';
 import { CountriesDropdown } from './CountriesDropdown';
 

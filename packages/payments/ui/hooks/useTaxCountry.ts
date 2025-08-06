@@ -10,7 +10,7 @@ import {
     type BillingAddressStatus,
     DEFAULT_TAX_BILLING_ADDRESS,
     getBillingAddressStatus,
-} from '../../core/billing-address';
+} from '../../core/billing-address/billing-address';
 import { getDefaultState, isCountryWithStates } from '../../core/countries';
 import { type PaymentMethodStatusExtended } from '../../core/interface';
 import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
