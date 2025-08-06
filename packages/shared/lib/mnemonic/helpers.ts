@@ -10,7 +10,7 @@ import type { Address, Api, DecryptedKey, User } from '../interfaces';
 import { srpGetVerify } from '../srp';
 import { generateMnemonicBase64RandomBytes, generateMnemonicFromBase64RandomBytes } from './bip39Wrapper';
 
-export interface MnemonicData {
+export interface GeneratedMnemonicData {
     salt: string;
     randomBytes: string;
     mnemonic: string;
