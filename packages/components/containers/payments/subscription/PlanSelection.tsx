@@ -259,8 +259,8 @@ export function useAccessiblePlans({
     const driveIndividualPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
         plansMap[PLANS.DRIVE],
-        plansMap[PLANS.DRIVE_1TB],
         plansMap[PLANS.BUNDLE],
+        plansMap[PLANS.DUO],
     ]);
 
     const walletIndividualPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.VISIONARY]]);
@@ -509,7 +509,6 @@ const PlanSelection = (props: Props) => {
 
     const b2cRecommendedPlans = [
         hasSomeAddonOrPlan(subscription, [PLANS.BUNDLE, PLANS.VISIONARY, PLANS.FAMILY]) ? undefined : PLANS.BUNDLE,
-        PLANS.DRIVE_1TB,
         PLANS.DUO,
         PLANS.FAMILY,
     ].filter(isTruthy);
