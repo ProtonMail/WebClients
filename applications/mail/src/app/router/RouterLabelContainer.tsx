@@ -13,6 +13,7 @@ import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
 import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { ROUTE_ELEMENT } from 'proton-mail/constants';
 import MailboxContainerPlaceholder from 'proton-mail/containers/mailbox/MailboxContainerPlaceholder';
+import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import { useMailCommander } from 'proton-mail/hooks/commander/useMailCommander';
 import { type ElementsStructure, useGetElementsFromIDs } from 'proton-mail/hooks/mailbox/useElements';
 import { useMailboxFocus } from 'proton-mail/hooks/mailbox/useMailboxFocus';
@@ -91,6 +92,7 @@ export const RouterLabelContainer = ({
         !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && columnMode));
 
     const { commanderList } = useMailCommander();
+    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
 
     const { focusID, setFocusID, focusLastID, focusFirstID, focusNextID, focusPreviousID } = useMailboxFocus({
         elementIDs,
@@ -151,14 +153,21 @@ export const RouterLabelContainer = ({
         async (newLabelID: string, sourceAction: SOURCE_ACTION): Promise<void> => {
             const folderName = getFolderName(newLabelID, folders);
             const elements = getElementsFromIDs(selectedIDs);
-            await moveToFolder({
-                elements,
-                sourceLabelID: labelID,
-                destinationLabelID: newLabelID,
-                folderName,
-                selectAll,
-                sourceAction: sourceAction,
-            });
+            if (applyOptimisticLocationEnabled && !selectAll) {
+                await applyLocation({
+                    elements,
+                    targetLabelID: newLabelID,
+                });
+            } else {
+                await moveToFolder({
+                    elements,
+                    sourceLabelID: labelID,
+                    destinationLabelID: newLabelID,
+                    folderName,
+                    selectAll,
+                    sourceAction: sourceAction,
+                });
+            }
             if (selectedIDs.includes(elementID || '')) {
                 handleBack();
             }
