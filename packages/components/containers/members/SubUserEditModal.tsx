@@ -13,8 +13,7 @@ import {
 } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
-import { Button, Card } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button, Card, Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -289,7 +288,7 @@ const SubUserEditModal = ({
                             loading={submitting}
                             onClick={() => {
                                 confirmUnprivatizationProps.onClose();
-                                void withLoadingUnprivatization(
+                                withLoadingUnprivatization(
                                     handleUpdateMember({ private: MEMBER_PRIVATE.READABLE })
                                 ).catch(errorHandler);
                             }}
@@ -322,7 +321,7 @@ const SubUserEditModal = ({
                             loading={submitting}
                             onClick={() => {
                                 confirmRemoveUnprivatizationProps.onClose();
-                                void withLoadingUnprivatization(
+                                withLoadingUnprivatization(
                                     handleUpdateMember({ private: MEMBER_PRIVATE.UNREADABLE })
                                 ).catch(errorHandler);
                             }}
@@ -350,7 +349,7 @@ const SubUserEditModal = ({
                             loading={submitting}
                             onClick={() => {
                                 confirmPrivatizationProps.onClose();
-                                void withLoadingUnprivatization(
+                                withLoadingUnprivatization(
                                     handleUpdateMember({ private: MEMBER_PRIVATE.UNREADABLE })
                                 ).catch(errorHandler);
                             }}
@@ -458,6 +457,18 @@ const SubUserEditModal = ({
                                             checked={hasToggledPrivate}
                                             loading={!isPendingAdminAccess && loadingUnprivatization}
                                             onChange={({ target }) => {
+                                                // If changing private for self, do it without confirmation
+                                                if (member.Self) {
+                                                    withLoadingUnprivatization(
+                                                        handleUpdateMember({
+                                                            private:
+                                                                hasToggledPrivate && !target.checked
+                                                                    ? MEMBER_PRIVATE.READABLE
+                                                                    : MEMBER_PRIVATE.UNREADABLE,
+                                                        })
+                                                    ).catch(errorHandler);
+                                                    return;
+                                                }
                                                 if (hasToggledPrivate && !target.checked) {
                                                     setConfirmUnprivatizationModal(true);
                                                     return;

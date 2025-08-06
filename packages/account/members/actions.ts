@@ -118,6 +118,9 @@ export const unprivatizeMember = ({
             options,
         });
         await api(unprivatizeMemberKeysRoute(member.ID, payload));
+        if (member.Self) {
+            await dispatch(userThunk({ cache: CacheType.None }));
+        }
     };
 };
 
@@ -333,8 +336,11 @@ export const privatizeMember = ({
     api: Api;
     member: Member;
 }): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
-    return async () => {
+    return async (dispatch) => {
         await api(privatizeMemberConfig(member.ID));
+        if (member.Self) {
+            await dispatch(userThunk({ cache: CacheType.None }));
+        }
     };
 };
 
