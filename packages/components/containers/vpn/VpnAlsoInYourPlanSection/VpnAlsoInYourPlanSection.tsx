@@ -306,7 +306,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
                                             {priceString &&
                                                 getBoldFormattedText(
                                                     c('Info')
-                                                        .t`You can get all of our premium privacy services in one bundle—and it’s just **${priceString}/month**.`
+                                                        .t`You can get our premium privacy services in one bundle—and it’s just **${priceString}/month**.`
                                                 )}
                                         </p>
                                     </div>

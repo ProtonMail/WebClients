@@ -2,7 +2,15 @@ import { c, msgid } from 'ttag';
 
 import type { IconName } from '@proton/components/components/icon/Icon';
 import { PLANS, type Plan } from '@proton/payments';
-import { BRAND_NAME, DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    CALENDAR_SHORT_APP_NAME,
+    DARK_WEB_MONITORING_NAME,
+    DRIVE_SHORT_APP_NAME,
+    MAIL_SHORT_APP_NAME,
+    PASS_SHORT_APP_NAME,
+    VPN_SHORT_APP_NAME,
+} from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 export type Feature = {
@@ -31,7 +39,8 @@ export const getPlanFeatures = (plan: PlanPlusBaseSpace) => {
 
     const appsAndFeatures: Feature = {
         icon: 'grid-2',
-        text: c('Cancellation upsell').t`All ${BRAND_NAME} apps and premium features`,
+        text: c('Cancellation upsell')
+            .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`,
     };
 
     const cloudStorage: Feature = {
