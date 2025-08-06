@@ -17,7 +17,7 @@ interface MeetContainerProps {
     setAudioOutputDeviceId: (deviceId: string | null) => void;
     setVideoDeviceId: (deviceId: string | null) => void;
     handleLeave: () => void;
-    handleEndMeeting: () => void;
+    handleEndMeeting: () => Promise<void>;
     shareLink: string;
     roomName: string;
     participantsMap: Record<string, ParticipantEntity>;

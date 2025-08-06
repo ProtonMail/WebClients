@@ -409,13 +409,18 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     }, [resetParticipantNameMap]);
 
     const handleEndMeeting = useCallback(async () => {
-        instantMeetingRef.current = false;
-        resetParticipantNameMap();
-        await wasmAppRef.current?.endMeeting();
-        mlsSetupDone.current = false; // need to set mls again after leave meeting
-
-        setInitialisedParticipantNameMap(false);
-        setJoinedRoom(false);
+        await wasmAppRef.current
+            ?.endMeeting()
+            .then(() => {
+                instantMeetingRef.current = false;
+                resetParticipantNameMap();
+                mlsSetupDone.current = false; // need to set mls again after leave meeting
+                setInitialisedParticipantNameMap(false);
+                setJoinedRoom(false);
+            })
+            .catch(() => {
+                throw new Error('Unable to end meeting for all');
+            });
     }, [resetParticipantNameMap]);
 
     useEffect(() => {
