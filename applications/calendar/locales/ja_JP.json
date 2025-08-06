@@ -907,6 +907,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Upgrade for 200GB": [
+        "200GBへアップグレード"
       ]
     },
     "action": {
@@ -971,6 +974,9 @@
       ],
       "${ users } user": [
         "${ users } 人のユーザー"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ LUMO_APP_NAME } の ${ seats } シート"
       ]
     },
     "Alarm notification": {
@@ -1459,6 +1465,9 @@
       ],
       "Website access problem": [
         "ウェブサイトへのアクセスに関する問題"
+      ],
+      "${ LUMO_SHORT_APP_NAME } problem": [
+        "${ LUMO_SHORT_APP_NAME } の不具合"
       ]
     },
     "Button": {
@@ -1488,6 +1497,9 @@
       ],
       "Take a tour": [
         "ツアーを開始"
+      ],
+      "Maybe later": [
+        "またあとで"
       ]
     },
     "Calendar access select label": {
@@ -5967,6 +5979,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
+        "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
+      ],
+      "Download current logs": [
+        "現在のログをダウンロード"
       ]
     },
     "info": {
@@ -6601,6 +6619,9 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "Include application logs in bug report": [
+        "バグレポートにアプリのログを含める"
       ]
     },
     "Label for contact group color": {
@@ -8271,6 +8292,15 @@
       ],
       "Your subscription renews soon": [
         "サブスクリプションはまもなく更新されます"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "期間限定オファー、最初の月のみ有効です"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }で生産性をアップグレードできます。"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "${ planName }をご利用いただくと、わずか${ pricingTitle }でストレージをアップグレードできます。"
       ]
     },
     "Offer fearue": {
@@ -8314,6 +8344,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "無制限のエイリアスでお客様のユーザー情報を保護"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "非${ BRAND_NAME } ユーザーとコラボレーション"
+      ],
+      "Edit docs online": [
+        "オンラインでドキュメントを編集"
+      ],
+      "File version history (over 1 week)": [
+        "ファイルバージョン履歴(1週間以上)"
       ]
     },
     "Onboarding": {
@@ -11039,6 +11078,15 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } へアップグレード"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "${ planName }で${ formattedPrice }にて、お客様の生産性をアップグレードしましょう。"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "${ planName }をご利用いただくと、${ formattedPrice }でストレージをアップグレードできます。"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
