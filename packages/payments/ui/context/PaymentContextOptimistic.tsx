@@ -7,7 +7,7 @@ import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shar
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import type { BillingAddress } from '../../core/billing-address';
+import type { BillingAddress } from '../../core/billing-address/billing-address';
 import { CYCLE, FREE_SUBSCRIPTION } from '../../core/constants';
 import type { Currency, Cycle, PlanIDs } from '../../core/interface';
 import type { Plan } from '../../core/plan/interface';
