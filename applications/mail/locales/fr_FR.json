@@ -1610,6 +1610,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Upgrade for 200GB": [
+        "Mise à niveau pour 200 Go"
       ]
     },
     "action": {
@@ -1673,7 +1676,7 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
-        "${ seats } accès à ${ LUMO_APP_NAME }"
+        "${ seats } accès ${ LUMO_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
@@ -4950,6 +4953,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Les pièces jointes sont limitées à ${ readableAttachmentMaxSize }"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -11312,6 +11318,15 @@
       ],
       "Your subscription renews soon": [
         "Votre abonnement se renouvelle bientôt."
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Offre d'une durée limitée, valide pour votre premier mois"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Améliorez votre productivité pour seulement ${ pricingTitle } avec ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Mettez à niveau votre stockage pour seulement ${ pricingTitle } avec ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -11355,6 +11370,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Un nombre illimité d'alias pour protéger votre identité"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Collaborer avec des utilisateurs non-${ BRAND_NAME }"
+      ],
+      "Edit docs online": [
+        "Modifier des documents en ligne"
+      ],
+      "File version history (over 1 week)": [
+        "Historique des versions du fichier (plus d'une semaine)"
       ]
     },
     "Onboarding List Placeholder": {
@@ -13830,7 +13854,7 @@
       ],
       "${ elementsCount } message removed from Starred.": [
         "${ elementsCount } message a été retiré des favoris.",
-        "${ elementsCount } messages ont été retirés des favoris."
+        "${ elementsCount } messages supprimés de la liste des favoris."
       ],
       "Conversation removed from Starred.": [
         "La conversation a été retirée des favoris."
@@ -14997,6 +15021,15 @@
       ],
       "Your subscriptions in one place": [
         "Vos abonnements au même endroit"
+      ],
+      "Upgrade to ${ planName }": [
+        "Mise à niveau vers ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Améliorez votre productivité pour ${ formattedPrice } avec ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Mettez à niveau votre stockage pour ${ formattedPrice } avec ${ planName }"
       ]
     },
     "Today icon tooltip in mini calendar": {

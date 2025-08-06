@@ -1610,6 +1610,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Upgrade for 200GB": [
+        "Αναβάθμιση για 200GB"
       ]
     },
     "action": {
@@ -4916,6 +4919,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Τα συνημμένα περιορίζονται σε ${ readableAttachmentMaxSize }"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -11275,6 +11281,15 @@
       ],
       "Your subscription renews soon": [
         "Η συνδρομή σας ανανεωθεί σύντομα"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Προσφορά περιορισμένου χρόνου, ισχύει για τον πρώτο σας μήνα"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Αναβαθμίστε την παραγωγικότητά σας μόνο για ${ pricingTitle } με ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Αναβαθμίστε τον αποθηκευτικό σας χώρο για μόλις ${ pricingTitle } με ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -11318,6 +11333,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Απεριόριστα ψευδώνυμα για να προστατεύσετε την ταυτότητά σας"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Συνεργαστείτε με μη-${ BRAND_NAME } χρήστες"
+      ],
+      "Edit docs online": [
+        "Επεξεργασία εγγράφων online"
+      ],
+      "File version history (over 1 week)": [
+        "Ιστορικό εκδόσεων αρχείου (πάνω από 1 εβδομάδα)"
       ]
     },
     "Onboarding List Placeholder": {
@@ -14949,6 +14973,15 @@
       ],
       "Your subscriptions in one place": [
         "Οι συνδρομές σας σε ένα μέρος"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Αναβαθμίστε την παραγωγικότητά σας για ${ formattedPrice } με ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Αναβαθμίστε τον αποθηκευτικό σας χώρο για ${ formattedPrice } με ${ planName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
