@@ -11,8 +11,14 @@ import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
 import { Checkbox, Icon, Label, useApi, useEventManager, useSecurityCheckup } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import { BRAND_NAME, RECOVERY_KIT_FILE_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    HTTP_STATUS_CODE,
+    RECOVERY_KIT_FILE_NAME,
+    SECURITY_CHECKUP_PATHS,
+} from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
@@ -130,6 +136,11 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
 
             await downloadRecoveryKit();
         } catch (error: any) {
+            const { status } = getApiError(error);
+            if (status === HTTP_STATUS_CODE.FORBIDDEN) {
+                return;
+            }
+
             setStep(STEPS.ERROR);
         }
     };
