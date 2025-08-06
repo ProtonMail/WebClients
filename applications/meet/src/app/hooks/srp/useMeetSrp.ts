@@ -132,6 +132,7 @@ export const useMeetSrp = () => {
                 result.WebsocketUrl = WebsocketUrl;
             } catch (error) {
                 console.error(error);
+                throw error;
             }
 
             return result;

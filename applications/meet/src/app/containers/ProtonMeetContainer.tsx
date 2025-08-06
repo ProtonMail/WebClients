@@ -46,6 +46,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     useDependencySetup(guestMode);
 
+    const { createNotification } = useNotifications();
+
     const history = useHistory();
     const createInstantMeeting = useCreateInstantMeeting();
 
@@ -268,12 +270,11 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
                 setJoinedRoom(true);
                 setJoiningInProgress(false);
-            } catch (error) {
-                if (error instanceof Error) {
-                    window.alert(error.message);
-                } else {
-                    window.alert('An unknown error occurred');
-                }
+            } catch (error: any) {
+                createNotification({
+                    type: 'error',
+                    text: error.message ?? c('l10n_nightly Error').t`Failed to join meeting. Please try again later`,
+                });
 
                 setJoiningInProgress(false);
                 joinBlockedRef.current = false;
