@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, useModalState } from '@proton/components';
+import useLoading from '@proton/hooks/useLoading';
 import { IcPhone } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
@@ -17,6 +18,7 @@ interface LeaveModalProps {
 export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
     const [modalProps, handleSetOpen, render] = useModalState();
     const { handleLeave, handleEndMeeting } = useMeetContext();
+    const [loadingEndMeeting, withLoadingEndMeeting] = useLoading();
 
     const isLargerThanMd = useIsLargerThanMd();
 
@@ -48,7 +50,9 @@ export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
                             {hasAdminPermission && (
                                 <Button
                                     className="border-none rounded-full w-full leave-meeting-button"
-                                    onClick={handleEndMeeting}
+                                    onClick={() => withLoadingEndMeeting(handleEndMeeting)}
+                                    disabled={loadingEndMeeting}
+                                    loading={loadingEndMeeting}
                                     size="large"
                                 >
                                     {c('l10n_nightly Action').t`End meeting for all`}
@@ -60,6 +64,7 @@ export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
                                     hasAdminPermission ? 'leave-meeting-button-admin' : 'leave-meeting-button'
                                 )}
                                 onClick={handleLeave}
+                                disabled={loadingEndMeeting}
                                 size="large"
                             >
                                 {c('l10n_nightly Action').t`Leave meeting`}
@@ -67,6 +72,7 @@ export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
                             <Button
                                 className="border-none rounded-full w-full close-button"
                                 onClick={() => handleSetOpen(false)}
+                                disabled={loadingEndMeeting}
                                 size="large"
                             >
                                 {c('l10n_nightly Action').t`Cancel`}

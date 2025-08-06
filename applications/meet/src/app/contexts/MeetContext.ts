@@ -29,7 +29,7 @@ export interface MeetContextValues {
     pageSize: number;
     setPageSize: (pageSize: number) => void;
     handleLeave: () => void;
-    handleEndMeeting: () => void;
+    handleEndMeeting: () => Promise<void>;
     isVideoEnabled: boolean;
     setIsVideoEnabled: (isVideoEnabled: boolean) => void;
     isAudioEnabled: boolean;
@@ -68,7 +68,7 @@ export const MeetContext = createContext<MeetContextValues>({
     pageSize: PAGE_SIZE,
     setPageSize: () => {},
     handleLeave: () => {},
-    handleEndMeeting: () => {},
+    handleEndMeeting: async () => {},
     isVideoEnabled: false,
     setIsVideoEnabled: () => {},
     isAudioEnabled: false,
