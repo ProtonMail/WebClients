@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
+import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
@@ -16,7 +17,6 @@ import type { OpenCallbackProps } from '@proton/components/containers/payments/s
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscriptionEnd';
 import useLoad from '@proton/components/hooks/useLoad';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
@@ -195,7 +195,7 @@ const AutomaticSubscriptionModal = () => {
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
-    const [, loadingLastSubscriptionEnd] = useLastSubscriptionEnd();
+    const [, loadingPreviousSubscription] = usePreviousSubscription();
     const [user] = useUser();
     const tmpProps = useRef<{ props: OpenCallbackProps; eligibility: Eligibility } | undefined>(undefined);
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
@@ -216,7 +216,7 @@ const AutomaticSubscriptionModal = () => {
             loadingPlans ||
             loadingSubscription ||
             loadingModal ||
-            loadingLastSubscriptionEnd ||
+            loadingPreviousSubscription ||
             loadingPaymentStatus ||
             loadingCurrency ||
             !paymentStatus
@@ -320,7 +320,7 @@ const AutomaticSubscriptionModal = () => {
 
             openSubscriptionModal(openProps);
         }
-    }, [loadingPlans, loadingSubscription, loadingModal, loadingLastSubscriptionEnd, location.search]);
+    }, [loadingPlans, loadingSubscription, loadingModal, loadingPreviousSubscription, location.search]);
 
     const tmp = tmpProps.current;
 

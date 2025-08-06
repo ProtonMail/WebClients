@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
+import { usePreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import Loader from '@proton/components/components/loader/Loader';
-import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscriptionEnd';
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
@@ -58,7 +58,7 @@ interface GetUpsellSectionProps {
     serversCount: VPNServersCountData;
     plansMap: FullPlansMap;
     freePlan: FreePlanDefault;
-    subscriptionEnd: number;
+    previousSubscriptionEndTime: number;
     variant: { name?: VPNDashboardVariant | 'disabled' | undefined };
 }
 
@@ -79,7 +79,7 @@ const useUpsellSection = ({
     serversCount,
     plansMap,
     freePlan,
-    subscriptionEnd,
+    previousSubscriptionEndTime,
 }: GetUpsellSectionProps) => {
     const isFree = user.isFree;
 
@@ -89,7 +89,7 @@ const useUpsellSection = ({
     const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
     const hasLumo = hasLumoPlan(subscription);
 
-    const userCanHave24MonthPlan = user.isFree && user.canPay && !user.isDelinquent && !subscriptionEnd;
+    const userCanHave24MonthPlan = user.isFree && user.canPay && !user.isDelinquent && !previousSubscriptionEndTime;
 
     const upsellParams = {
         subscription,
@@ -256,7 +256,7 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
     const [serversCount, serversCountLoading] = useVPNServersCount();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
-    const [subscriptionEnd, loadingSubscriptionEnd] = useLastSubscriptionEnd();
+    const [{ previousSubscriptionEndTime }, loadingPreviousSubscription] = usePreviousSubscription();
     const variant = useVariant('VPNDashboard');
 
     useLoad();
@@ -268,7 +268,7 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
         serversCount,
         freePlan,
         plansMap,
-        subscriptionEnd,
+        previousSubscriptionEndTime,
         variant,
     });
 
@@ -277,7 +277,7 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
         loadingPlans ||
         serversCountLoading ||
         plansMapLoading ||
-        loadingSubscriptionEnd ||
+        loadingPreviousSubscription ||
         upsellLoading;
 
     if (!subscription || !plans || loading) {
