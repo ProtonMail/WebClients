@@ -16,7 +16,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllMembers, updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
-import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
+import { type SetMnemonicPhrasePayload, reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { queryCheckEmailAvailability, queryCheckUsernameAvailability, queryUnlock } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
@@ -45,7 +45,7 @@ import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
 import type {
-    MnemonicData,
+    DeferredMnemonicData,
     SignupActionDoneResponse,
     SignupActionResponse,
     SignupCacheResult,
@@ -398,11 +398,11 @@ export const handleSubscribeUser = async (
     }
 };
 
-interface SetupMnemonic {
-    enabled: boolean;
-    generate?: typeof generatePDFKit;
-}
-
+/**
+ * Generates the recovery phrase and pdf blob.
+ * Defer's sending the payload to the BE so that generation can be done optimistically.
+ * Use sendMnemonicPayloadToBackend to complete the recovery phrase setup
+ */
 export const handleSetupMnemonic = async ({
     user,
     keyPassword,
@@ -415,8 +415,8 @@ export const handleSetupMnemonic = async ({
     emailAddress: string;
     user: User;
     keyPassword: string;
-}): Promise<MnemonicData | undefined> => {
-    if (!setupMnemonic?.enabled || !setupMnemonic.generate || !user.Keys.length) {
+}): Promise<DeferredMnemonicData | undefined> => {
+    if (!setupMnemonic?.enabled || !setupMnemonic?.generate || !user.Keys.length) {
         return;
     }
 
@@ -425,13 +425,6 @@ export const handleSetupMnemonic = async ({
     const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
 
     const payload = await generateMnemonicPayload({ randomBytes, salt, userKeys, api, username: user.Name });
-
-    try {
-        await api({ ...reactivateMnemonicPhrase(payload), ignoreHandler: [HTTP_ERROR_CODES.UNLOCK] });
-    } catch (e) {
-        // TODO: Improve this error handling. Just ignore any failures for now so that it doesn't get stuck
-        return;
-    }
 
     const pdf = await setupMnemonic.generate({
         // Not translated because the PDF isn't translated
@@ -445,8 +438,24 @@ export const handleSetupMnemonic = async ({
     return {
         recoveryPhrase,
         blob,
+        payload,
     };
 };
+
+export const sendMnemonicPayloadToBackend = async ({
+    api,
+    payload,
+}: {
+    api: Api;
+    payload: SetMnemonicPhrasePayload;
+}): Promise<void> => {
+    return api({ ...reactivateMnemonicPhrase(payload), ignoreHandler: [HTTP_ERROR_CODES.UNLOCK] });
+};
+
+interface SetupMnemonic {
+    enabled: boolean;
+    generate?: typeof generatePDFKit;
+}
 
 export const handleSetupUser = async ({
     cache,

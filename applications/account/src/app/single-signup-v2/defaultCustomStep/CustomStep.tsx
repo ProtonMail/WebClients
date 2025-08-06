@@ -135,8 +135,8 @@ const CustomStep = ({
                             dimensions: { click: type },
                         });
                     }}
-                    mnemonic={mnemonicData!}
-                    onContinue={async () => handleNextStep()}
+                    mnemonicData={mnemonicData!}
+                    onContinue={() => handleNextStep()}
                 />
             )}
             {step === Step.Congratulations && (
