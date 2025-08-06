@@ -57,6 +57,11 @@ export interface Meeting {
     CalendarID?: string;
 }
 
+export interface UserSettings {
+    MeetingID: string;
+    AddressID: string;
+}
+
 export interface CreateMeetingResponse {
     Meeting: Meeting;
     Code: 1000;
