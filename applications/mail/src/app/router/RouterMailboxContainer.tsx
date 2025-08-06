@@ -17,6 +17,7 @@ import MailHeader from 'proton-mail/components/header/MailHeader';
 import useScrollToTop from 'proton-mail/components/list/useScrollToTop';
 import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
 import { ROUTE_LABEL } from 'proton-mail/constants';
+import { GlobalModalProvider } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
 import { filterFromUrl, pageFromUrl, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
@@ -83,64 +84,66 @@ export const RouterMailboxContainer = () => {
             elementID={elementID}
             isResizing={isResizing}
         >
-            <MailHeader
-                elementID={elementID}
-                selectedIDs={selectedIDs}
-                labelID={labelID}
-                settingsButton={<InboxQuickSettingsAppButton />}
-                toolbar={
-                    // Show toolbar in header when in row layout and an email is selected
-                    (!columnMode && elementID) || viewPortIsNarrow ? (
-                        <MailboxToolbar
-                            inHeader
-                            params={params}
-                            navigation={navigation}
-                            elementsData={elementsData}
-                            actions={actions}
+            <GlobalModalProvider>
+                <MailHeader
+                    elementID={elementID}
+                    selectedIDs={selectedIDs}
+                    labelID={labelID}
+                    settingsButton={<InboxQuickSettingsAppButton />}
+                    toolbar={
+                        // Show toolbar in header when in row layout and an email is selected
+                        (!columnMode && elementID) || viewPortIsNarrow ? (
+                            <MailboxToolbar
+                                inHeader
+                                params={params}
+                                navigation={navigation}
+                                elementsData={elementsData}
+                                actions={actions}
+                            />
+                        ) : undefined
+                    }
+                />
+                <PrivateMainArea
+                    className={clsx([
+                        'flex',
+                        !columnMode && elementID && 'row-layout-email-view full-width-email',
+                        columnMode && 'column-layout-view',
+                    ])}
+                    hasToolbar
+                    hasRowMode={hasRowMode}
+                    ref={mainAreaRef}
+                    drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
+                    drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
+                    mainBordered={canShowDrawer && !!showDrawerSidebar}
+                >
+                    <Switch>
+                        <Route
+                            path={CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route}
+                            render={() => (
+                                <NewsletterSubscriptionView
+                                    elementsData={elementsData}
+                                    actions={actions}
+                                    navigation={navigation}
+                                    params={params}
+                                />
+                            )}
                         />
-                    ) : undefined
-                }
-            />
-            <PrivateMainArea
-                className={clsx([
-                    'flex',
-                    !columnMode && elementID && 'row-layout-email-view full-width-email',
-                    columnMode && 'column-layout-view',
-                ])}
-                hasToolbar
-                hasRowMode={hasRowMode}
-                ref={mainAreaRef}
-                drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
-                drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
-                mainBordered={canShowDrawer && !!showDrawerSidebar}
-            >
-                <Switch>
-                    <Route
-                        path={CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route}
-                        render={() => (
-                            <NewsletterSubscriptionView
-                                elementsData={elementsData}
-                                actions={actions}
-                                navigation={navigation}
-                                params={params}
-                            />
-                        )}
-                    />
-                    <Route
-                        path={ROUTE_LABEL}
-                        render={() => (
-                            <RouterLabelContainer
-                                params={params}
-                                navigation={navigation}
-                                elementsData={elementsData}
-                                actions={actions}
-                                hasRowMode={hasRowMode}
-                                onResizingChange={setIsResizing}
-                            />
-                        )}
-                    />
-                </Switch>
-            </PrivateMainArea>
+                        <Route
+                            path={ROUTE_LABEL}
+                            render={() => (
+                                <RouterLabelContainer
+                                    params={params}
+                                    navigation={navigation}
+                                    elementsData={elementsData}
+                                    actions={actions}
+                                    hasRowMode={hasRowMode}
+                                    onResizingChange={setIsResizing}
+                                />
+                            )}
+                        />
+                    </Switch>
+                </PrivateMainArea>
+            </GlobalModalProvider>
         </MailboxContainerContextProvider>
     );
 };
