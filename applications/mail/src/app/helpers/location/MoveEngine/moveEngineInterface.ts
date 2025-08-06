@@ -49,3 +49,4 @@ export const CUSTOM_FOLDER_KEY = 'customFolders';
 export const CUSTOM_LABEL_KEY = 'customLabels';
 
 export const ERROR_ELEMENT_NOT_MESSAGE = 'Element is not a message';
+export const ERROR_ELEMENT_NOT_CONVERSATION = 'Element is not a conversation';
