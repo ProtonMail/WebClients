@@ -1,11 +1,13 @@
+import { c } from 'ttag';
+
 import { useNotifications } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail/index';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import useFlag from '@proton/unleash/useFlag';
 
-import { isMessage as testIsMessage } from 'proton-mail/helpers/elements';
-import { useMessageMoveEngine } from 'proton-mail/helpers/location/MoveEngine/useMessageMoveEngine';
+import { isConversation as testIsConversation, isMessage as testIsMessage } from 'proton-mail/helpers/elements';
+import { useMoveEngine } from 'proton-mail/helpers/location/MoveEngine/useMoveEngine';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Element } from 'proton-mail/models/element';
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -28,7 +30,7 @@ export const useApplyLocation = () => {
 
     const { createNotification } = useNotifications();
 
-    const moveEngine = useMessageMoveEngine();
+    const { conversationMoveEngine, messageMoveEngine } = useMoveEngine();
 
     const applyLocation = ({
         elements,
@@ -38,13 +40,14 @@ export const useApplyLocation = () => {
     }: ApplyLocationParams): Promise<any> => {
         const [firstElement] = elements;
         const isMessage = testIsMessage(firstElement);
+        const isConversation = testIsConversation(firstElement);
 
-        if (isMessage) {
-            const result = moveEngine.validateMove(targetLabelID, elements as Message[]);
+        if (isConversation) {
+            const result = conversationMoveEngine.validateMove(targetLabelID, elements as Message[], removeLabel);
 
             if (result.deniedElements.length > 0 && result.allowedElements.length === 0) {
                 createNotification({
-                    text: 'This action cannot be performed',
+                    text: c('Error').t`This action cannot be performed`,
                     type: 'error',
                 });
 
@@ -53,6 +56,32 @@ export const useApplyLocation = () => {
 
             // The actions would result in no change, so we can return
             if (result.notApplicableElements.length === elements.length || result.allowedElements.length === 0) {
+                createNotification({
+                    text: c('Info').t`No change will be made to the selected emails`,
+                    type: 'info',
+                });
+                return Promise.resolve();
+            }
+
+            throw new Error('Not implemented');
+        } else if (isMessage) {
+            const result = messageMoveEngine.validateMove(targetLabelID, elements as Message[], removeLabel);
+
+            if (result.deniedElements.length > 0 && result.allowedElements.length === 0) {
+                createNotification({
+                    text: c('Error').t`This action cannot be performed`,
+                    type: 'error',
+                });
+
+                return Promise.resolve();
+            }
+
+            // The actions would result in no change, so we can return
+            if (result.notApplicableElements.length === elements.length || result.allowedElements.length === 0) {
+                createNotification({
+                    text: c('Info').t`No change will be made to the selected emails`,
+                    type: 'info',
+                });
                 return Promise.resolve();
             }
 
