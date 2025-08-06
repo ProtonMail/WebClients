@@ -1611,6 +1611,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Upgrade for 200GB": [
+        "Treceți la 200 GiB"
       ]
     },
     "action": {
@@ -4945,6 +4948,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Limitați căutarea și reîncercați."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Atașamentele sunt limitate la ${ readableAttachmentMaxSize }"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7276,9 +7282,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -11452,6 +11456,15 @@
       ],
       "Your subscription renews soon": [
         "Abonamentul se va reînnoi în curând"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Ofertă pe perioadă limitată, valabilă pentru prima lună"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Modernizați-vă productivitatea cu doar ${ pricingTitle } cu ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Modernizați-vă stocarea cu doar ${ pricingTitle } cu ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -11495,6 +11508,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Aliasuri nelimitate pentru a vă proteja identitatea"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Colaborați cu utilizatorii non-${ BRAND_NAME }"
+      ],
+      "Edit docs online": [
+        "Editați documente online"
+      ],
+      "File version history (over 1 week)": [
+        "Istoric versiuni fișiere (mai vechi de o săptămână)"
       ]
     },
     "Onboarding List Placeholder": {
@@ -15220,6 +15242,15 @@
       ],
       "Your subscriptions in one place": [
         "Abonamentele personale într-un singur loc"
+      ],
+      "Upgrade to ${ planName }": [
+        "Treceți la ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Modernizați-vă productivitatea cu ${ formattedPrice } cu ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Măriți-vă spațiul de stocare cu ${ formattedPrice } cu ${ planName }"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1573,6 +1573,12 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "More benefits": [
+        "Lisää etuja"
+      ],
+      "Remove from list": [
+        "Poista listalta"
       ]
     },
     "action": {
@@ -1641,6 +1647,10 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-lisenssi",
+        "${ seats } ${ LUMO_APP_NAME }-lisenssiä"
       ]
     },
     "Alert": {
@@ -4775,6 +4785,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ],
+      "Invalid ZIP code": [
+        "Virheellinen postinumero"
+      ],
+      "Please enter a valid ZIP code": [
+        "Syötä kelvollinen postinumero"
+      ],
+      "Please enter ZIP code": [
+        "Syötä postinumero"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6991,8 +7010,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -9285,6 +9303,12 @@
       ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
+      ],
+      "Forums": [
+        "Foorumit"
+      ],
+      "Updates": [
+        "Päivitykset"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9327,6 +9351,9 @@
     },
     "Label, credit card": {
       "ZIP code": [
+        "Postinumero"
+      ],
+      "Postal code": [
         "Postinumero"
       ]
     },
@@ -11651,6 +11678,12 @@
       ],
       "Your organization name": [
         "Organisaatiosi nimi"
+      ],
+      "Postal code": [
+        "Postinumero"
+      ],
+      "ZIP code": [
+        "Postinumero"
       ]
     },
     "Placeholder for contact group name": {
@@ -12354,6 +12387,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Päivitä hintaan ${ pricingTitle }"
+      ],
+      "Increase your storage": [
+        "Lisää tallennustilaasi"
       ]
     },
     "specialoffer: Offers": {
@@ -14481,6 +14517,9 @@
       ],
       "Your subscriptions in one place": [
         "Tilauksesi yhdessä paikassa"
+      ],
+      "Remove from list?": [
+        "Poistetaanko listalta?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15071,6 +15110,20 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Yritystunnus"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "ALV-numero"
       ]
     }
   }
