@@ -139,7 +139,7 @@ function bundle_extension_from_sources {
     zip -rqX "$ARTEFACTSDIR/release/$BUILD_ID-FF.zip" "."
 
     # Remove config lock to not affect chromium builds
-    cd ..
+    cd "$PASSDIR"
     yarn run config:clean >/dev/null
 
     on_leave "release/$BUILD_ID-FF.zip"
