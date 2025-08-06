@@ -10,7 +10,7 @@ export const getMnemonicUserKeys = () => ({
     method: 'get',
 });
 
-interface SetMnemonicPhrasePayload {
+export interface SetMnemonicPhrasePayload {
     MnemonicUserKeys: {
         ID: string;
         PrivateKey: string;

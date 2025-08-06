@@ -59,8 +59,8 @@ const CustomStepB2C = ({ measure, setupImg, productAppName, fork, onSetup, logo,
                             dimensions: { click: type },
                         });
                     }}
-                    mnemonic={mnemonicData!}
-                    onContinue={async () => setStep(getNextPassStep())}
+                    mnemonicData={mnemonicData!}
+                    onContinue={() => setStep(getNextPassStep())}
                 />
             )}
             {step === Step.Install && (
