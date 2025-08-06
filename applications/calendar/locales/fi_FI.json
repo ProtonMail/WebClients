@@ -890,6 +890,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "More benefits": [
+        "Lisää etuja"
       ]
     },
     "action": {
@@ -958,6 +961,10 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-lisenssi",
+        "${ seats } ${ LUMO_APP_NAME }-lisenssiä"
       ]
     },
     "Alarm notification": {
@@ -1420,6 +1427,9 @@
       ],
       "Take a tour": [
         "Katso esittely"
+      ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
       ]
     },
     "Calendar access select label": {
@@ -3654,6 +3664,15 @@
       ],
       "Your import will not be processed.": [
         "Tuontiasi ei käsitellä."
+      ],
+      "Invalid ZIP code": [
+        "Virheellinen postinumero"
+      ],
+      "Please enter a valid ZIP code": [
+        "Syötä kelvollinen postinumero"
+      ],
+      "Please enter ZIP code": [
+        "Syötä postinumero"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6532,6 +6551,9 @@
     "Label, credit card": {
       "ZIP code": [
         "Postinumero"
+      ],
+      "Postal code": [
+        "Postinumero"
       ]
     },
     "Label/folder modal": {
@@ -8727,6 +8749,12 @@
       ],
       "Your organization name": [
         "Organisaatiosi nimi"
+      ],
+      "Postal code": [
+        "Postinumero"
+      ],
+      "ZIP code": [
+        "Postinumero"
       ]
     },
     "Placeholder for contact group name": {
@@ -9281,6 +9309,9 @@
       ],
       "Upgrade for ${ pricingTitle }": [
         "Päivitä hintaan ${ pricingTitle }"
+      ],
+      "Increase your storage": [
+        "Lisää tallennustilaasi"
       ]
     },
     "specialoffer: Offers": {
@@ -11493,6 +11524,20 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Yritystunnus"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "ALV-numero"
       ]
     }
   }
