@@ -1622,6 +1622,9 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Upgrade for 200GB": [
+        "Navýšit na 200 GB"
       ]
     },
     "action": {
@@ -5018,6 +5021,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
+      ],
+      "Attachments are limited to ${ readableAttachmentMaxSize }": [
+        "Velikost příloh je omezena na ${ readableAttachmentMaxSize }"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -11669,6 +11675,15 @@
       ],
       "Your subscription renews soon": [
         "Vaše předplatné se brzy obnoví"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "Časově omezená nabídka, platná pro první měsíc"
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Vylepšete svou produktivitu jen za ${ pricingTitle } s ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Navyšte své úložiště jen za ${ pricingTitle } s ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -11712,6 +11727,15 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Neomezený počet aliasů pro ochranu vaší identity"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Spolupracujte s těmi, kdo nejsou uživateli ${ BRAND_NAME }"
+      ],
+      "Edit docs online": [
+        "Úprava dokumentů online"
+      ],
+      "File version history (over 1 week)": [
+        "Historie verzí souboru (více než 1 týden)"
       ]
     },
     "Onboarding List Placeholder": {
@@ -15536,6 +15560,15 @@
       ],
       "Your subscriptions in one place": [
         "Vaše e-mailové odběry na jednom místě"
+      ],
+      "Upgrade to ${ planName }": [
+        "Navýšit na ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Vylepšete svou produktivitu jen za ${ formattedPrice } s ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Navyšte své úložiště za ${ formattedPrice } s ${ planName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
