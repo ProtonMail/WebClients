@@ -16,7 +16,7 @@ import { MeetingRow } from '../components/MeetingRow/MeetingRow';
 import { NoUpcomingMeetings } from '../components/NoUpcomingMeetings/NoUpcomingMeetings';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 import { PersonalMeetingModal } from '../components/PersonalMeetingModal/PersonalMeetingModal';
-import { useMeetingList } from '../hooks/useMeetingList';
+import { useDependencySetup } from '../hooks/useDependencySetup';
 
 export const DashboardContainer = () => {
     const [isPersonalMeetingModalOpen, setIsPersonalMeetingModalOpen] = useState(false);
@@ -24,7 +24,7 @@ export const DashboardContainer = () => {
     const notifications = useNotifications();
     const history = useHistory();
 
-    const meetings = useMeetingList();
+    const { meetings, personalMeeting } = useDependencySetup(false);
 
     const goToApp = useAppLink();
 
@@ -62,8 +62,6 @@ export const DashboardContainer = () => {
                 }),
         [meetings]
     );
-
-    const personalMeeting = meetings?.find((meeting) => meeting.Type === MeetingType.PERSONAL);
 
     const personalMeetingLinkPath = getMeetingLink(
         personalMeeting?.MeetingLinkName as string,

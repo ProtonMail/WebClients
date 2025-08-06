@@ -20,6 +20,7 @@ import { DevicePermissionsContext } from '../contexts/DevicePermissionsContext';
 import { MLSContext } from '../contexts/MLSContext';
 import type { SRPHandshakeInfo } from '../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../hooks/srp/useMeetingSetup';
+import { useDependencySetup } from '../hooks/useDependencySetup';
 import { useDevicePermissionChangeListener } from '../hooks/useDevicePermissionChangeListener';
 import { useMeetingJoin } from '../hooks/useMeetingJoin';
 import { useParticipantNameMap } from '../hooks/useParticipantNameMap';
@@ -42,6 +43,8 @@ interface ProtonMeetContainerProps {
 
 export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerProps) => {
     useWakeLock();
+
+    useDependencySetup(guestMode);
 
     const history = useHistory();
     const createInstantMeeting = useCreateInstantMeeting();

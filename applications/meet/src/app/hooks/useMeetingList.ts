@@ -5,24 +5,26 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
 import { type Meeting, useCreateMeeting, useGetMeetingDependencies } from '@proton/meet';
-import { useGetActiveMeetings } from '@proton/meet/hooks/useGetActiveMeetings';
 import { MeetingType } from '@proton/meet/types/response-types';
 import { decryptMeetingName, decryptMeetingPassword } from '@proton/meet/utils/cryptoUtils';
 
-export const useMeetingList = () => {
+import { useMeetings } from '../store';
+
+export const useMeetingList = (): [Meeting[] | null, Meeting | null] => {
     const [user] = useUser();
 
     const [meetings, setMeetings] = useState<Meeting[] | null>(null);
+    const [personalMeeting, setPersonalMeeting] = useState<Meeting | null>(null);
 
     const notifications = useNotifications();
 
-    const { getActiveMeetings } = useGetActiveMeetings();
+    const [activeMeetings] = useMeetings();
 
     const { createMeeting } = useCreateMeeting();
 
     const getMeetingDependencies = useGetMeetingDependencies();
 
-    const getEncryptedMeeting = async (meeting: Meeting) => {
+    const getDecryptedMeeting = async (meeting: Meeting) => {
         const { privateKey } = await getMeetingDependencies();
 
         const password = await decryptMeetingPassword(meeting.Password, privateKey);
@@ -49,26 +51,35 @@ export const useMeetingList = () => {
 
     const handleFetch = async () => {
         try {
-            const meetings = await getActiveMeetings();
-
-            if (!meetings) {
+            if (!activeMeetings) {
                 return;
             }
 
             const meetingsWithDecryptedPassword = await Promise.all(
-                meetings.map(async (meeting) => {
-                    return getEncryptedMeeting(meeting);
+                activeMeetings.map(async (meeting) => {
+                    return getDecryptedMeeting(meeting);
                 })
             );
 
             setMeetings(meetingsWithDecryptedPassword ?? []);
+
+            const personalMeeting =
+                (meetingsWithDecryptedPassword ?? []).find((m) => m.Type === MeetingType.PERSONAL) || null;
+            setPersonalMeeting(personalMeeting);
         } catch (error) {
             console.error(error);
         }
     };
 
     const setupPersonalMeeting = async () => {
-        if (!!meetings?.find((meeting) => meeting.Type === MeetingType.PERSONAL)) {
+        if (!meetings) {
+            return;
+        }
+
+        const personalMeeting = meetings.find((meeting) => meeting.Type === MeetingType.PERSONAL);
+        if (personalMeeting) {
+            const decryptedPersonalMeeting = await getDecryptedMeeting(personalMeeting);
+            setPersonalMeeting(decryptedPersonalMeeting);
             return;
         }
 
@@ -78,9 +89,11 @@ export const useMeetingList = () => {
                 type: MeetingType.PERSONAL,
             });
 
-            const encryptedMeeting = await getEncryptedMeeting(meeting);
+            const decryptedPersonalMeeting = await getDecryptedMeeting(meeting);
 
-            setMeetings((prev) => [...(prev ?? []), encryptedMeeting]);
+            setPersonalMeeting(decryptedPersonalMeeting);
+
+            setMeetings((prev) => [...(prev ?? []), decryptedPersonalMeeting]);
         } catch (error) {
             notifications.createNotification({
                 type: 'error',
@@ -91,13 +104,11 @@ export const useMeetingList = () => {
 
     useEffect(() => {
         void handleFetch();
-    }, []);
+    }, [activeMeetings]);
 
     useEffect(() => {
-        if (meetings !== null && !meetings.find((meeting) => meeting.Type === MeetingType.PERSONAL)) {
-            void setupPersonalMeeting();
-        }
+        void setupPersonalMeeting();
     }, [meetings]);
 
-    return meetings;
+    return [meetings, personalMeeting] as const;
 };
