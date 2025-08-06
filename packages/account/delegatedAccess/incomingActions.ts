@@ -9,6 +9,7 @@ import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerify
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { isSelf } from '@proton/shared/lib/user/helpers';
@@ -197,8 +198,15 @@ export const accessDelegatedAccessThunk = ({
                 options: { source: [SessionSource.Proton, SessionSource.Saml] },
             });
             if (validatedSession) {
-                accessApi(revoke()).catch(noop);
-                return { localID: validatedSession.localID };
+                const decryptedKeys = await getDecryptedUserKeysHelper(accessUser, validatedSession?.keyPassword || '');
+                // If no keys were able to decrypt, it may be that the delegated access has gotten updated we can't resume the session.
+                // TODO: We might want to move this check into resumeSession.
+                if (!decryptedKeys.length) {
+                    await api(withUIDHeaders(validatedSession.UID, revoke())).catch(noop);
+                } else {
+                    await accessApi(revoke()).catch(noop);
+                    return { localID: validatedSession.localID };
+                }
             }
 
             const keyPassword = await getDecryptedDelegatedAccessToken({

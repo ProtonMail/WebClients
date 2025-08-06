@@ -17,5 +17,14 @@ export interface ChangeWaitTimeActionPayload {
     value: EnrichedOutgoingDelegatedAccess;
 }
 
-export type ActionPayload = AddActionPayload | DeleteActionPayload | ChangeWaitTimeActionPayload;
+export interface GrantAccessActionPayload {
+    type: 'grant-access';
+    value: EnrichedOutgoingDelegatedAccess;
+}
+
+export type ActionPayload =
+    | AddActionPayload
+    | DeleteActionPayload
+    | ChangeWaitTimeActionPayload
+    | GrantAccessActionPayload;
 export type ActionListener = (payload: ActionPayload) => undefined;
