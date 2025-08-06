@@ -10,7 +10,7 @@ export const getMnemonicUserKeys = () => ({
     method: 'get',
 });
 
-interface UpdateMnemonicPhrasePayload {
+interface SetMnemonicPhrasePayload {
     MnemonicUserKeys: {
         ID: string;
         PrivateKey: string;
@@ -24,13 +24,13 @@ interface UpdateMnemonicPhrasePayload {
     };
 }
 
-export const updateMnemonicPhrase = (data: UpdateMnemonicPhrasePayload & { PersistPasswordScope?: boolean }) => ({
+export const updateMnemonicPhrase = (data: SetMnemonicPhrasePayload & { PersistPasswordScope?: boolean }) => ({
     url: 'core/v4/settings/mnemonic',
     method: 'put',
     data,
 });
 
-export const reactivateMnemonicPhrase = (data: UpdateMnemonicPhrasePayload) => ({
+export const reactivateMnemonicPhrase = (data: SetMnemonicPhrasePayload) => ({
     url: 'core/v4/settings/mnemonic/reactivate',
     method: 'put',
     data,

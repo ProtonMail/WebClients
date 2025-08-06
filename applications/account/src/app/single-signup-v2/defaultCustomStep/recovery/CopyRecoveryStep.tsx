@@ -58,9 +58,9 @@ const CopyRecoveryStep = ({ onMeasureClick, onContinue, mnemonic }: Props) => {
                     </p>
                     <Card className="mt-2 flex justify-space-between items-center flex-nowrap" bordered={false} rounded>
                         <span className="mr-2 text-bold" data-testid="account:recovery:generatedRecoveryPhrase">
-                            {mnemonic.mnemonic}
+                            {mnemonic.recoveryPhrase}
                         </span>
-                        <Copy className="bg-norm shrink-0" value={mnemonic.mnemonic} onCopy={onCopy} />
+                        <Copy className="bg-norm shrink-0" value={mnemonic.recoveryPhrase} onCopy={onCopy} />
                     </Card>
 
                     <RecoveryStepUnderstoodCheckbox
