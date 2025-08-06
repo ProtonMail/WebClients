@@ -5,23 +5,25 @@ import { hasLabel, isMessage } from 'proton-mail/helpers/elements';
 
 import { ERROR_ELEMENT_NOT_MESSAGE, type MoveEngineRule, MoveEngineRuleResult } from './moveEngineInterface';
 
-export const inboxRules: MoveEngineRule = ({ element }) => {
+// Sent, drafts and scheduled messages cannot move to INBOX
+export const messageInboxRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
-    if (hasLabel(element, MAILBOX_LABEL_IDS.INBOX) || isScheduled(element)) {
+    if (hasLabel(element, MAILBOX_LABEL_IDS.INBOX)) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
-    if (isSent(element) || isDraft(element)) {
+    if (isSent(element) || isDraft(element) || isScheduled(element)) {
         return MoveEngineRuleResult.DENIED;
     }
 
     return MoveEngineRuleResult.ALLOWED;
 };
 
-export const allDraftRules: MoveEngineRule = ({ element }) => {
+// Sent and received messages cannot move to ALL_DRAFTS
+export const messageAllDraftRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
@@ -30,19 +32,20 @@ export const allDraftRules: MoveEngineRule = ({ element }) => {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
-    if (isSent(element) || isReceived(element)) {
+    if ((isSent(element) && !isScheduled(element)) || isReceived(element)) {
         return MoveEngineRuleResult.DENIED;
     }
 
     return MoveEngineRuleResult.ALLOWED;
 };
 
-export const allSentRules: MoveEngineRule = ({ element }) => {
+// Drafts and received messages cannot move to ALL_SENT
+export const messageAllSentRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
-    if (hasLabel(element, MAILBOX_LABEL_IDS.ALL_SENT) || isScheduled(element)) {
+    if (hasLabel(element, MAILBOX_LABEL_IDS.ALL_SENT)) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
@@ -53,9 +56,10 @@ export const allSentRules: MoveEngineRule = ({ element }) => {
     return MoveEngineRuleResult.ALLOWED;
 };
 
-export const trashRules: MoveEngineRule = ({ element }) => {
+// Any message can move to TRASH
+export const messageTrashRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
-        throw new Error('Element is not a message');
+        throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
     if (hasLabel(element, MAILBOX_LABEL_IDS.TRASH)) {
@@ -65,16 +69,17 @@ export const trashRules: MoveEngineRule = ({ element }) => {
     return MoveEngineRuleResult.ALLOWED;
 };
 
-export const spamRules: MoveEngineRule = ({ element }) => {
+// scheduled messages cannot move to SPAM
+export const messageSpamRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
-    if (hasLabel(element, MAILBOX_LABEL_IDS.SPAM) || isScheduled(element)) {
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SPAM)) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
-    if (isDraft(element) || isSent(element)) {
+    if (isScheduled(element)) {
         return MoveEngineRuleResult.DENIED;
     }
 
@@ -87,11 +92,12 @@ export const spamRules: MoveEngineRule = ({ element }) => {
  *
  * @returns NOT_APPLICABLE
  */
-export const allMailRules: MoveEngineRule = () => {
+export const messageAllMailRules: MoveEngineRule = () => {
     return MoveEngineRuleResult.NOT_APPLICABLE;
 };
 
-export const starredRules: MoveEngineRule = ({ element }) => {
+// Any message can move to STARRED
+export const messageStarredRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
@@ -103,24 +109,30 @@ export const starredRules: MoveEngineRule = ({ element }) => {
     return MoveEngineRuleResult.ALLOWED;
 };
 
-export const archiveRules: MoveEngineRule = ({ element }) => {
+// Except SCHEDULED messages, any message can move to ARCHIVE
+export const messageArchiveRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
-    if (hasLabel(element, MAILBOX_LABEL_IDS.ARCHIVE) || isScheduled(element)) {
+    if (hasLabel(element, MAILBOX_LABEL_IDS.ARCHIVE)) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
+    }
+
+    if (isScheduled(element)) {
+        return MoveEngineRuleResult.DENIED;
     }
 
     return MoveEngineRuleResult.ALLOWED;
 };
 
-export const sentRules: MoveEngineRule = ({ element }) => {
+// Draft and received messages cannot move to SENT
+export const messageSentRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
-    if (hasLabel(element, MAILBOX_LABEL_IDS.SENT) || isScheduled(element)) {
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SENT)) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
@@ -131,7 +143,8 @@ export const sentRules: MoveEngineRule = ({ element }) => {
     return MoveEngineRuleResult.ALLOWED;
 };
 
-export const draftRules: MoveEngineRule = ({ element }) => {
+// Sent and received messages cannot move to drafts
+export const messageDraftRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
@@ -140,7 +153,8 @@ export const draftRules: MoveEngineRule = ({ element }) => {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
-    if (isSent(element) || isReceived(element)) {
+    // Scheduled are sent messages, but we can move them to draft to get canceled
+    if ((isSent(element) && !isScheduled(element)) || isReceived(element)) {
         return MoveEngineRuleResult.DENIED;
     }
 
@@ -151,24 +165,24 @@ export const draftRules: MoveEngineRule = ({ element }) => {
  * No messages can be moved to the outbox label
  * It's part of `LABELS_UNMODIFIABLE_BY_USER`
  *
- * @returns NOT_APPLICABLE
+ * @returns DENIED
  */
-export const outboxRules: MoveEngineRule = ({}) => {
-    return MoveEngineRuleResult.NOT_APPLICABLE;
+export const messageOutboxRules: MoveEngineRule = ({}) => {
+    return MoveEngineRuleResult.DENIED;
 };
 
 /**
  * No messages can be moved to the schedule label
  * It's part of `LABELS_UNMODIFIABLE_BY_USER`
  *
- * @returns NOT_APPLICABLE
+ * @returns DENIED
  */
-export const scheduleRules: MoveEngineRule = ({ element }) => {
+export const messageScheduleRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
-    return MoveEngineRuleResult.NOT_APPLICABLE;
+    return MoveEngineRuleResult.DENIED;
 };
 
 /**
@@ -177,45 +191,55 @@ export const scheduleRules: MoveEngineRule = ({ element }) => {
  *
  * @returns NOT_APPLICABLE
  */
-export const almostAllMailRules: MoveEngineRule = () => {
+export const messageAlmostAllMailRules: MoveEngineRule = () => {
     return MoveEngineRuleResult.NOT_APPLICABLE;
 };
 
-// We can only snooze conversation so it's never applicable here
-export const snoozedRules: MoveEngineRule = ({ element }) => {
+/**
+ * No messages can be moved to the snoozed label
+ *
+ * @returns DENIED
+ */
+export const messageSnoozedRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
-    return MoveEngineRuleResult.NOT_APPLICABLE;
+    return MoveEngineRuleResult.DENIED;
 };
 
-export const categoryRules: MoveEngineRule = ({ element, targetLabelID }) => {
+// Sent, drafts and scheduled messages cannot move to a category (which should be a "children of INBOX)
+export const messageCategoryRules: MoveEngineRule = ({ element, targetLabelID }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
-    if (hasLabel(element, targetLabelID) || isScheduled(element)) {
+    if (hasLabel(element, targetLabelID)) {
+        return MoveEngineRuleResult.NOT_APPLICABLE;
+    }
+
+    if (isSent(element) || isDraft(element) || isScheduled(element)) {
+        return MoveEngineRuleResult.DENIED;
+    }
+
+    return MoveEngineRuleResult.ALLOWED;
+};
+
+// Any message can move to a custom folder
+export const messageCustomFolderRules: MoveEngineRule = ({ element, targetLabelID }) => {
+    if (!isMessage(element)) {
+        throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
+    }
+
+    if (hasLabel(element, targetLabelID)) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
     return MoveEngineRuleResult.ALLOWED;
 };
 
-export const customFolderRules: MoveEngineRule = ({ element, targetLabelID }) => {
-    if (!isMessage(element)) {
-        throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
-    }
-
-    if (hasLabel(element, targetLabelID) || isScheduled(element)) {
-        return MoveEngineRuleResult.NOT_APPLICABLE;
-    }
-
-    return MoveEngineRuleResult.ALLOWED;
-};
-
-// We can move to a custom label but it will be an unlabel
-export const customLabelRules: MoveEngineRule = ({ element, targetLabelID }) => {
+// Any message can move to a custom label
+export const messageCustomLabelRules: MoveEngineRule = ({ element, targetLabelID }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
