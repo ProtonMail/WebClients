@@ -12320,13 +12320,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tpe/quark-types@npm:0.2.2":
-  version: 0.2.2
-  resolution: "@tpe/quark-types@npm:0.2.2::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fquark-types%2F-%2F%40tpe%2Fquark-types-0.2.2.tgz"
-  checksum: 10c0/d5fed1ad679f4a984a0bd2902551125281abf2e25bc6f3c6c2334b5d03e0c695f04ed1ed6588ba1f08e0bb86ab8a87bb74a3fc52576803dc376eaf99a8a64abf
-  languageName: node
-  linkType: hard
-
 "@tpe/quark-types@npm:0.2.3":
   version: 0.2.3
   resolution: "@tpe/quark-types@npm:0.2.3::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fquark-types%2F-%2F%40tpe%2Fquark-types-0.2.3.tgz"
@@ -34976,7 +34969,7 @@ __metadata:
     "@tpe/measurement-sdk": "npm:0.2.2"
     "@tpe/mock-proxy-web-client": "npm:1.0.2"
     "@tpe/quark-client": "npm:0.3.9"
-    "@tpe/quark-types": "npm:0.2.2"
+    "@tpe/quark-types": "npm:0.2.3"
     "@tpe/user-builder": "npm:0.2.8"
     "@types/chance": "npm:^1.1.7"
     "@types/fs-extra": "npm:^11.0.4"
