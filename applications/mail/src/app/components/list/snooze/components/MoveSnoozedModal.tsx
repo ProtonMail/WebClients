@@ -36,7 +36,7 @@ const MoveSnoozedModal = ({ isMessage, onResolve, onReject, onCloseCustomAction,
         <Prompt
             title={c('Title').t`Moving a snoozed message`}
             buttons={[
-                <Button color="norm" onClick={handleConfirm} data-testid="moveSnoozedConversation">{c('Action')
+                <Button color="norm" onClick={handleConfirm} data-testid="moveSnoozedConvesation">{c('Action')
                     .t`OK`}</Button>,
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
             ]}
