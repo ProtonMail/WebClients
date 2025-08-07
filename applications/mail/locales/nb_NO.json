@@ -1426,10 +1426,6 @@
       "Trust": [
         "Klarér"
       ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
-      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -2547,8 +2543,8 @@
       "Advanced account protection": [
         "Avansert kontobeskyttelse"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Alle ${ BRAND_NAME }s apper og deres premium funksjoner"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premium funksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Avbryt og nedgrader"
@@ -4830,6 +4826,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Det oppsto en feil under eksport av kontaktenes vCards."
+      ],
+      "This action cannot be performed": [
+        "Denne handlingen kan ikke utføres"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
@@ -7168,7 +7167,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7358,6 +7358,9 @@
       ],
       "No action selected": [
         "Ingen handling valgt"
+      ],
+      "No change will be made to the selected emails": [
+        "Ingen endringer vil bli gjort i de valgte e-postene"
       ],
       "No contacts added yet": [
         "Ingen kontakter er lagt til enda"
@@ -10410,9 +10413,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Alle premium ${ BRAND_NAME }-tjenester. Ett enkelt abonnement"
-      ],
       "Auto-delete Spam and Trash": [
         "Slett automatisk elementer i søppelpost og papirkurv"
       ],
@@ -10766,9 +10766,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alle ${ BRAND_NAME } forretningsapper og premiumfunksjoner for å beskytte hele virksomheten din."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Omfattende personvern og sikkerhet med alle ${ BRAND_NAME }-tjenester kombinert."
       ],
       "Early access to new apps and features": [
         "Tidlig tilgang til nye apper og funksjoner"
@@ -11617,9 +11614,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Tilgang til alle ${ BRAND_NAME }s apper og premiumfunksjoner"
-      ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
       ],
@@ -12046,12 +12040,20 @@
         "kontakt"
       ]
     },
-    "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Alle ${ protonPlus }-tjenester.${ br }Ett enkelt abonnement."
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Som abonnent på **${ currentPlanTitle }** kan du låse opp **${ unlockPlanTitle }** og alle ${ BRAND_NAME }-premiumtjenester ved å oppgradere til **${ upsellPlanTitle }**."
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Som abonnent på **${ currentPlanTitle }** kan du låse opp **${ unlockPlanTitle }** og flere ${ BRAND_NAME }-tjenester ved å oppgradere til **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Flere ${ BRAND_NAME }-tjenester.${ br }Ett enkelt abonnement."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Behold ${ currentPlanTitle }"
@@ -13173,8 +13175,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } total lagringsplass"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } gir deg tilgang til alle apper og premiumfunksjoner. Personvern er innebygd, slik at du kan fortsette med det, vel vitende om at dataene og identiteten din er trygge."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } gir deg tilgang til alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }. Personvern er innebygd, slik at du kan fortsette å jobbe sikkert med dataene og identiteten din beskyttet."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } gir deg alle apper, alle funksjoner, tidlig tilgang til nye utgivelser og alt du trenger for å ha kontroll over dataene dine og sikkerheten."
