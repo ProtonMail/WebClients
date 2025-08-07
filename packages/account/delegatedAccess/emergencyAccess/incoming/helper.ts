@@ -1,6 +1,6 @@
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import type { IncomingDelegatedAccessOutput, IncomingEphemeral } from '../../interface';
+import { DelegatedAccessStateEnum, type IncomingDelegatedAccessOutput, type IncomingEphemeral } from '../../interface';
 import { getContact, getParsedAccessibleTime } from '../helper';
 
 export const getParsedIncomingDelegatedAccess = (
@@ -11,12 +11,14 @@ export const getParsedIncomingDelegatedAccess = (
     const accessibleAtDate = getParsedAccessibleTime(value.AccessibleTime);
     const accessibleTriggerDelayMs = (value.TriggerDelay || 0) * 1000;
     const createdAtMs = (value.CreateTime || 0) * 1000;
+    const isDisabled = value.State === DelegatedAccessStateEnum.Disabled;
 
     return {
         contact: getContact(email, contactEmail),
         createdAtDate: new Date(createdAtMs),
         accessibleAtDate,
         accessibleTriggerDelayMs,
+        isDisabled,
     };
 };
 
@@ -39,7 +41,7 @@ export const getEnrichedIncomingDelegatedAccess = (
 export const getMetaIncomingDelegatedAccess = ({
     now,
     value: {
-        parsedIncomingDelegatedAccess: { accessibleAtDate },
+        parsedIncomingDelegatedAccess: { isDisabled, accessibleAtDate },
     },
 }: {
     now: number;
@@ -55,8 +57,8 @@ export const getMetaIncomingDelegatedAccess = ({
     return {
         accessibleAtTimeDiff,
         hasRequestedAccess,
-        canLogin,
-        canRequestAccess,
+        canLogin: !isDisabled && canLogin,
+        canRequestAccess: !isDisabled && canRequestAccess,
         canDelete: true,
     };
 };
