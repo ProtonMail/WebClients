@@ -2699,8 +2699,8 @@
       "Advanced account protection": [
         "Avancerat kontoskydd"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Alla ${ BRAND_NAME }-appar och premiumfunktioner"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Avbryt och nedgradera"
@@ -9509,9 +9509,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
       ],
-      "Recovery kit copied to clipboard": [
-        "Återställningskit kopierat till urklipp"
-      ],
       "Recovery phrase copied to clipboard": [
         "Återställningsfras kopierad till urklipp"
       ],
@@ -13702,9 +13699,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Alla premiumtjänster för ${ BRAND_NAME }. En enkel prenumeration"
-      ],
       "Apps for": [
         "Appar för"
       ],
@@ -14110,9 +14104,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alla ${ BRAND_NAME } företagsappar och premiumfunktioner för att skydda hela ditt företag."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Omfattande integritet och säkerhet med alla ${ BRAND_NAME }-tjänster kombinerade."
       ],
       "Early access to new apps and features": [
         "Förhandstillgång till nya appar och funktioner"
@@ -15531,9 +15522,6 @@
       "/month /user, billed biennially": [
         "/månad/användare, faktureras vartannat år"
       ],
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Åtkomst till alla ${ BRAND_NAME }-appar och premiumfunktioner"
-      ],
       "Advanced protection that goes beyond industry standards": [
         "Avancerat skydd som går utöver branschstandarder"
       ],
@@ -15542,9 +15530,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Alias för e-postskydd mot intrång"
-      ],
-      "All premium ${ BRAND_NAME } services.": [
-        "Alla premiumtjänster för ${ BRAND_NAME }."
       ],
       "Based in Switzerland, GDPR compliant": [
         "Baserad i Schweiz, GDPR-kompatibel"
@@ -15555,11 +15540,11 @@
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
         "Men du kan få ${ discount } rabatt genom att uppgradera till **${ upsellPlanTitle }**."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Men du kan låsa upp **${ unlockPlanTitle }** och alla premiumtjänster för ${ BRAND_NAME } genom att uppgradera till **${ upsellPlanTitle }** – det kostar endast ${ relativePrice } extra per månad."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Men du kan låsa upp **${ unlockPlanTitle }** och fler ${ BRAND_NAME }-tjänster genom att uppgradera till **${ upsellPlanTitle }** – det kostar endast ${ relativePrice } extra per månad."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Men du kan låsa upp **${ unlockPlanTitle }** och alla premiumtjänster för ${ BRAND_NAME } genom att uppgradera till **${ upsellPlanTitle }**."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Men du kan låsa upp **${ unlockPlanTitle }** och fler ${ BRAND_NAME }-tjänster genom att uppgradera till **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Genom att fortsätta så godkänner du våra ${ termsAndConditionsLink } och ${ privacyPolicyLink }."
@@ -15650,9 +15635,6 @@
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Tidsbegränsat erbjudande: Få ${ title } för ${ price } per användare månadsvis!"
-      ],
-      "One easy subscription.": [
-        "En enkel prenumeration."
       ],
       "Open source and audited": [
         "Öppen källkod och granskad"
@@ -15752,14 +15734,14 @@
       "${ upsellPlanTitle } plan": [
         "${ upsellPlanTitle }-paket"
       ],
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Alla ${ BRAND_NAME } Plus-tjänster.${ br }En enkel prenumeration."
-      ],
       "Create a ${ appName } account": [
         "Skapa ett ${ appName }-konto"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Skapa ditt ${ BRAND_NAME }-konto"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Fler ${ BRAND_NAME }-tjänster.${ br }En enkel prenumeration."
       ],
       "Request your organization administrator to upgrade": [
         "Be din organisationsadministratör att uppgradera"
@@ -16315,14 +16297,17 @@
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Alla ${ BRAND_NAME } premiumprodukter inkluderat i Duo."
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Bäst om du behöver ${ maxSpace } lagringsutrymme och för par."
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Molnlagringsutrymme och fildelning, skyddat med end-to-end-kryptering."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Omfattande integritet och säkerhet med alla ${ BRAND_NAME }-tjänster kombinerade."
       ],
       "For next-level password management and identity protection.": [
         "För nästa nivå av lösenordshantering och identitetsskydd."
@@ -16357,9 +16342,6 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Alla ${ protonPlus }-tjänster.${ br }En enkel prenumeration."
-      ],
       "Stay on ${ currentPlanTitle }": [
         "Fortsätt med ${ currentPlanTitle }"
       ],
@@ -18881,9 +18863,6 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } totalt lagringsutrymme"
-      ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } ger dig åtkomst till alla appar och premiumfunktioner. Integritet är inbyggt så att du kan fortsätta med det med vetskap om att din data och din identitet är säker."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ger dig alla appar, alla funktioner, förhandstillgång till nya utgåvor och allt du behöver för att ha kontroll över din data och dess säkerhet."
@@ -21864,9 +21843,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Spara upp till ${ priceString }** med en längre prenumeration. Samma premiumfunktioner, lägre pris."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Alla premium ${ BRAND_NAME }-tjänster, en enkel prenumeration."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Alla premium ${ BRAND_NAME }-tjänster. Från endast ${ fallBackString } per månad"
