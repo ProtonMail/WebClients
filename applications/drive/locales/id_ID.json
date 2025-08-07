@@ -684,6 +684,9 @@
       "Next page": [
         "Halaman selanjutnya"
       ],
+      "No sensitive data": [
+        "Tidak ada data sensitif"
+      ],
       "Not now": [
         "Tidak sekarang"
       ],
@@ -1686,9 +1689,6 @@
       ],
       "Advanced account protection": [
         "Perlindungan akun tingkat lanjut"
-      ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Seluruh aplikasi dan fitur premium ${ BRAND_NAME }"
       ],
       "Cancel and downgrade": [
         "Batalkan dan turunkan"
@@ -3234,6 +3234,9 @@
       "Failed to fetch sharing info": [
         "Gagal mengambil info berbagi"
       ],
+      "Failed to get details, please try again later": [
+        "Rincian gagal diperoleh. Silakan coba lagi nanti"
+      ],
       "Failed to load the STL preview": [
         "Pratinjau STL gagal dimuat"
       ],
@@ -3576,6 +3579,9 @@
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
       ],
+      "Unknown location": [
+        "Lokasi yang tidak diketahui"
+      ],
       "Unknown payment token status": [
         "Status token pembayaran tidak dikenal"
       ],
@@ -3590,6 +3596,12 @@
       ],
       "Validation error": [
         "Kesalahan validasi"
+      ],
+      "We were not able to load some of your shared items": [
+        "Kami tidak dapat memuat sebagian item yang Anda bagikan"
+      ],
+      "We were not able to load some of your shared items details": [
+        "Kami tidak dapat memuat sebagian rincian item terbagi Anda"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Anda tidak dapat mengirim email ke lebih dari ${ maxContacts } penerima"
@@ -7840,9 +7852,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Seluruh layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Semua layanan ${ BRAND_NAME } premium. Satu langganan mudah"
-      ],
       "Auto-delete Spam and Trash": [
         "Kosongkan Spam dan Sampah secara otomatis"
       ],
@@ -8189,9 +8198,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Seluruh aplikasi bisnis dan fitur premium ${ BRAND_NAME } untuk melindungi seantero bisnis Anda."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Privasi dan keamanan yang komprehensif dengan dukungan gabungan dari seluruh layanan ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
         "Akses dini ke berbagai aplikasi dan fitur baru"
@@ -8613,6 +8619,18 @@
       ],
       "${ count } item failed to be decrypted": [
         "${ count } item gagal didekripsi"
+      ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } foto tidak dapat dihapus dari \"${ albumLink.name }\""
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } foto tidak dapat ditambahkan ke \"${ albumName }\""
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } telah ditambahkan ke \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } telah dihapus dari \"${ albumLink.name }\""
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item dihapus"
@@ -9208,9 +9226,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Akses ke Seluruh aplikasi dan fitur premium ${ BRAND_NAME }"
-      ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
       ],
@@ -9582,12 +9597,6 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Seluruh layanan ${ protonPlus }.${ br }Dalam satu langganan mudah."
-      ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Sebagai pelanggan **${ currentPlanTitle }**, Anda dapat membuka akses ke **${ unlockPlanTitle }** dan seluruh layanan premium ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }**."
-      ],
       "Stay on ${ currentPlanTitle }": [
         "Tetap di ${ currentPlanTitle }"
       ],
@@ -10407,9 +10416,6 @@
       "${ planMaxSpace } total storage": [
         "Ruang penyimpanan total ${ planMaxSpace }"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } memberikan Anda akses ke seluruh aplikasi dan fitur premium yang tersedia. Paket ini mengusung privasi secara bawaan, sehingga Anda dapat beraktivitas dengan tenang mengetahui bahwa data dan identitas Anda tersimpan dengan aman."
-      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
       ],
@@ -11057,6 +11063,9 @@
       "Addresses": [
         "Alamat"
       ],
+      "Advanced details": [
+        "Rincian lanjutan"
+      ],
       "Album": [
         "Album"
       ],
@@ -11074,6 +11083,9 @@
       ],
       "Amount due": [
         "Jumlah tagihan"
+      ],
+      "an anonymous user": [
+        "pengguna anonim"
       ],
       "Anonymous user": [
         "Pengguna anonim"
@@ -11240,6 +11252,33 @@
       "Desktop": [
         "Desktop"
       ],
+      "Devices": [
+        "Perangkat"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Tanda tangan digital terverifikasi secara parsial. Berkas ini dibuat dengan menggunakan tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas mereka tidak dapat diverifikasi."
+      ],
+      "Digital signature partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Tanda tangan digital terverifikasi secara parsial. Berkas ini diunggah melalui tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Tanda tangan digital terverifikasi secara parsial. Folder ini diunggah melalui tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Tanda tangan digital terverifikasi secara parsial. Folder ini diunggah melalui tautan berbagi yang tersedia secara publik oleh pengguna tanpa akun ${ BRAND_NAME }, sehingga identitas pengunggah ini tidak dapat diverifikasi."
+      ],
+      "Digital signature verified. This file was securely created by <strong>${ emailAddress }</strong>.": [
+        "Tanda tangan digital berhasil diverifikasi. Berkas ini dibuat secara aman oleh <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Tanda tangan digital berhasil diverifikasi. Berkas ini diunggah secara aman oleh <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Tanda tangan digital berhasil diverifikasi. Folder ini dibuat secara aman oleh <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Tanda tangan digital berhasil diverifikasi. Folder ini diunggah secara aman oleh <strong>${ emailAddress }</strong>."
+      ],
       "Discard": [
         "Batalkan"
       ],
@@ -11339,6 +11378,9 @@
       "File recovery process": [
         "Proses pemulihan berkas"
       ],
+      "Folder": [
+        "Folder"
+      ],
       "Folder details": [
         "Rincian folder"
       ],
@@ -11405,6 +11447,9 @@
       "Last edited by": [
         "Terakhir disunting oleh"
       ],
+      "Last uploaded by": [
+        "Terakhir diunggah oleh"
+      ],
       "Link confirmation": [
         "Konfirmasi tautan"
       ],
@@ -11416,6 +11461,9 @@
       ],
       "Manage secure link": [
         "Kelola tautan aman"
+      ],
+      "Media type": [
+        "Jenis media"
       ],
       "Merge contacts": [
         "Gabungkan kontak"
@@ -11711,6 +11759,15 @@
       "The link expired": [
         "Tautan telah kedaluwarsa"
       ],
+      "The verification of the encryption keys' signature by the original creator (${ claimedKeyAuthor }) who created the node failed. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Verifikasi tanda tangan kunci enkripsi oleh pembuat kunci asli (${ claimedKeyAuthor }) yang menghasilkan node gagal. Alasan kegagalan verifikasi: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "The verification of the file's content signature by the uploader (${ claimedContentAuthor }) who uploaded the last revision failed. The reason is: ${ activeRevision.contentAuthor.error.error }": [
+        "Verifikasi tanda tangan konten berkas oleh pengunggah (${ claimedContentAuthor }) yang mengunggah revisi terakhir gagal. Alasan kegagalan verifikasi: ${ activeRevision.contentAuthor.error.error }"
+      ],
+      "The verification of the name's signature by author (${ claimedNameAuthor }) who set the name the last time failed. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Verifikasi tanda tangan nama oleh pemilik (${ claimedNameAuthor }) yang terakhir mengatur nama pada item ini gagal. Alasan kegagalan verifikasi: ${ nodeEntity.nameAuthor.error.error }"
+      ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Berkas ini tidak ditandatangani atau memiliki tanda tangan yang tidak valid. Kunjungi Menu (⋮) → Details untuk informasi lebih lanjut."
       ],
@@ -11734,6 +11791,9 @@
       ],
       "UID": [
         "UID"
+      ],
+      "Unknown user": [
+        "Pengguna anonim"
       ],
       "Untitled document ${ date }": [
         "Dokumen tak berjudul ${ date }"
@@ -11795,8 +11855,26 @@
       "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
         "Kami tidak dapat memverifikasi bahwa berkas ini dibuat oleh <strong>${ emailAddress }</strong>."
       ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Kami tidak dapat memverifikasi bahwa folder ini dibuat oleh <strong>${ emailAddress }</strong>."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Kami tidak dapat memverifikasi bahwa berkas ini diunggah oleh <strong>${ emailAddress }</strong>."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Kami tidak dapat memverifikasi bahwa folder ini diunggah oleh <strong>${ emailAddress }</strong>."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Kami tidak dapat memverifikasi bahwa berkas ini dibuat oleh pengguna anonim."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Kami tidak dapat memverifikasi bahwa folder ini dibuat oleh pengguna anonim."
+      ],
       "We couldn’t verify that an anonymous user uploaded this file.": [
         "Kami tidak dapat memverifikasi bahwa berkas ini diunggah oleh pengguna anonim."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Kami tidak dapat memverifikasi bahwa folder ini diunggah oleh pengguna anonim."
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Selamat datang di ${ BRAND_NAME } for Business"
