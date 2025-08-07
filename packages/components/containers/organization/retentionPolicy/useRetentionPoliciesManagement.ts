@@ -26,6 +26,20 @@ export interface RetentionPoliciesManagementReturn {
     createRetentionRule: (formData: RetentionRuleFormData) => Promise<void>;
 }
 
+const convertToRetentionRulePayload = (formData: RetentionRuleFormData): RetentionRulePayload => {
+    return {
+        Name: formData.name,
+        Products: formData.products,
+        Lifetime: formData.lifetime !== null ? formData.lifetime * 24 * 60 * 60 : null,
+        Action: formData.action,
+        Scopes: formData.scopes.map((scope) => ({
+            ID: isClientIDRuleScope(scope.id) ? null : scope.id,
+            EntityType: scope.entityType,
+            EntityID: scope.entityID,
+        })),
+    };
+};
+
 export const useRetentionPoliciesManagement = (
     organization?: Organization
 ): RetentionPoliciesManagementReturn | undefined => {
@@ -57,17 +71,7 @@ export const useRetentionPoliciesManagement = (
             throw new Error('Retention rule ID is required');
         }
 
-        const payload: RetentionRulePayload = {
-            Name: formData.name,
-            Products: formData.products,
-            Lifetime: formData.lifetime,
-            Action: formData.action,
-            Scopes: formData.scopes.map((scope) => ({
-                ID: isClientIDRuleScope(scope.id) ? null : scope.id,
-                EntityType: scope.entityType,
-                EntityID: scope.entityID,
-            })),
-        };
+        const payload = convertToRetentionRulePayload(formData);
 
         try {
             const { RetentionRule } = await api<{ RetentionRule: RetentionRule }>(
@@ -84,17 +88,7 @@ export const useRetentionPoliciesManagement = (
     };
 
     const onCreateRetentionRule = async (formData: RetentionRuleFormData) => {
-        const payload: RetentionRulePayload = {
-            Name: formData.name,
-            Products: formData.products,
-            Lifetime: formData.lifetime,
-            Action: formData.action,
-            Scopes: formData.scopes.map((scope) => ({
-                ID: null,
-                EntityType: scope.entityType,
-                EntityID: scope.entityID,
-            })),
-        };
+        const payload = convertToRetentionRulePayload(formData);
 
         try {
             const { RetentionRule } = await api<{ RetentionRule: RetentionRule }>(createRetentionRuleApi(payload));
