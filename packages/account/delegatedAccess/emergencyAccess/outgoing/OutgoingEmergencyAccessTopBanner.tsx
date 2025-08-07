@@ -1,33 +1,38 @@
-import { useEffect } from 'react';
-
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
-import noop from '@proton/utils/noop';
 
-import { useOutgoingDelegatedAccess } from '../../hooks';
+import { getTrustedContactRoute } from '../../available';
+import { getMetaOutgoingDelegatedAccess } from './helper';
+import { useOutgoingItems } from './useOutgoingItems';
 
 const OutgoingEmergencyAccessTopBanner = () => {
-    const { getOutgoingDelegatedAccess } = useOutgoingDelegatedAccess();
+    const { items } = useOutgoingItems();
 
-    useEffect(() => {
-        getOutgoingDelegatedAccess().catch(noop);
-    }, []);
+    const now = Date.now();
+    const parsedItems = items.map((item) => {
+        return {
+            meta: getMetaOutgoingDelegatedAccess({ now, value: item }),
+            item,
+        };
+    });
 
-    const user = '';
+    const firstAccessRequested = parsedItems.find((value) => value.meta.hasRequestedAccess);
+
+    if (!firstAccessRequested) {
+        return;
+    }
+
+    const name = firstAccessRequested.item.parsedOutgoingDelegatedAccess.contact.formatted;
 
     return (
-        <>
-            {user && (
-                <TopBanner className="bg-info">
-                    {c('unprivatization').t`Your emergency contact ${user} is requesting access to your account.`}{' '}
-                    <InlineLinkButton data-testid="delegated-access:request-button" key="button">
-                        {c('unprivatization').t`View request`}
-                    </InlineLinkButton>
-                </TopBanner>
-            )}
-        </>
+        <TopBanner className="bg-warning">
+            {c('emergency_access').t`Your emergency contact ${name} is requesting access to your account.`}{' '}
+            <SettingsLink path={getTrustedContactRoute()} className="color-inherit">
+                {c('emergency_access').t`View request`}
+            </SettingsLink>
+        </TopBanner>
     );
 };
 

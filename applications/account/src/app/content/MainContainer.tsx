@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { getTrustedContactRoute } from '@proton/account/delegatedAccess/available';
+import OutgoingEmergencyAccessTopBanner from '@proton/account/delegatedAccess/emergencyAccess/outgoing/OutgoingEmergencyAccessTopBanner';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -281,6 +282,7 @@ const MainContainer = () => {
 
     const top = (
         <TopBanners app={app}>
+            <OutgoingEmergencyAccessTopBanner />
             <UnprivatizationRequestTopBanner />
             <SSODomainUnverifiedBanner app={app} />
             <AuthDevicesTopBanner />
