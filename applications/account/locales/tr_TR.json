@@ -2759,8 +2759,8 @@
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Tüm ${ BRAND_NAME } uygulamaları ve ücretli özellikleri"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
       ],
       "Cancel and downgrade": [
         "İptal edip tarifeyi düşür"
@@ -9601,9 +9601,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
       ],
-      "Recovery kit copied to clipboard": [
-        "Kurtarma paketi panoya kopyalandı"
-      ],
       "Recovery phrase copied to clipboard": [
         "Kurtarma ifadesi panoya kopyalandı"
       ],
@@ -10619,8 +10616,8 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Kuruluşunuzun üyeleri, ${ BRAND_NAME } hesaplarının parolasını oluştururken veya sıfırlarken uygulanacak zorunlu parola kuralları belirleyebilirsiniz."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Tüm ücretli gizlilik hizmetlerimizi tek bir pakette alabilirsiniz. Yalnızca **${ priceString }/ay**."
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Ücretli gizlilik hizmetlerimizi bir arada yalnızca **${ priceString }/ay** ile alabilirsiniz."
       ],
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
@@ -13819,9 +13816,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik"
-      ],
       "Apps for": [
         "Şunlar için uygulamalar"
       ],
@@ -14227,9 +14221,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tüm ${ BRAND_NAME } kurumsal uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
       ],
       "Early access to new apps and features": [
         "Yeni uygulama ve özelliklere erken erişim"
@@ -15638,9 +15629,6 @@
       "/month /user, billed biennially": [
         "/ay /kullanıcı, iki yılda bir faturalanır"
       ],
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Tüm ${ BRAND_NAME } uygulamalarına ve ücretli özelliklerine erişim"
-      ],
       "Advanced protection that goes beyond industry standards": [
         "Endüstri standartlarının ötesine geçen gelişmiş koruma"
       ],
@@ -15649,9 +15637,6 @@
       ],
       "Aliases for email protection from breaches": [
         "E-posta adreslerinin öğrenilmemesi için takma ad ile koruma"
-      ],
-      "All premium ${ BRAND_NAME } services.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri."
       ],
       "Based in Switzerland, GDPR compliant": [
         "İsviçre merkezli, GDPR uyumlu"
@@ -15662,11 +15647,11 @@
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
         "Ancak **${ upsellPlanTitle }** tarifesine yükselterek ${ discount } indirimden yararlanabilirsiniz."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Ancak ayda yalnızca ${ relativePrice } ek ödeme ile **${ unlockPlanTitle }** ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişmek için **${ upsellPlanTitle }** tarifesine yükseltebilirsiniz."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Ancak ayda yalnızca ${ relativePrice } ek ödeme ile **${ unlockPlanTitle }** ve diğer ${ BRAND_NAME } hizmetlerine erişmek için **${ upsellPlanTitle }** tarifesine yükseltebilirsiniz."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Ancak **${ upsellPlanTitle }** tarifesine yükselterek **${ unlockPlanTitle }** tarifesine geçebilir ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ancak **${ upsellPlanTitle }** tarifesine yükselterek **${ unlockPlanTitle }** tarifesine geçebilir ve diğer ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "İlerleyerek ${ termsAndConditionsLink } ve ${ privacyPolicyLink } metinlerini kabul etmiş olursunuz."
@@ -15757,9 +15742,6 @@
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Sınırlı süreli teklif: Kullanıcı başına aylık ${ price } karşılığında ${ title } alın!"
-      ],
-      "One easy subscription.": [
-        "Tek bir kolay abonelik."
       ],
       "Open source and audited": [
         "Açık kaynaklı ve denetlenmiş"
@@ -15859,14 +15841,14 @@
       "${ upsellPlanTitle } plan": [
         "${ upsellPlanTitle } tarifesi"
       ],
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Tüm ${ BRAND_NAME } Plus hizmetleri.${ br }Tek bir kolay abonelik."
-      ],
       "Create a ${ appName } account": [
         "Bir ${ appName } hesabı açın"
       ],
       "Create your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } hesabınızı açın"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Diğer ${ BRAND_NAME } hizmetleri.${ br }Tek ve kolay bir abonelik."
       ],
       "Request your organization administrator to upgrade": [
         "Kuruluş yöneticinizden tasrifeyi yükseltmesini isteyin"
@@ -16422,14 +16404,17 @@
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Duo tarifesinde tüm ücretli ${ BRAND_NAME } ürünleri bulunur."
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } özellikleri."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
+      ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Çiftler ve ${ maxSpace } depolama alanına gerek duyanlar için en iyisi."
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Uçtan uca şifreleme ile korunan bulut depolama alanı ve dosya paylaşımı."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
       ],
       "For next-level password management and identity protection.": [
         "Üst düzey parola yönetimi ve kimlik koruması için."
@@ -16464,11 +16449,11 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Tüm ${ protonPlus } hizmetleri.${ br }Tek bir kolay abonelik."
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }** abonesi olarak, **${ upsellPlanTitle }** tarifesine yükseltebilir **${ unlockPlanTitle }** ve ücretli diğer ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "**${ currentPlanTitle }** abonesi olarak, **${ upsellPlanTitle }** tarifesine yükseltebilir **${ unlockPlanTitle }** ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Diğer ${ BRAND_NAME } hizmetleri.${ br }Tek ve kolay bir abonelik."
       ],
       "Stay on ${ currentPlanTitle }": [
         "${ currentPlanTitle } tarifesinde kal"
@@ -16670,6 +16655,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Telefon numaranızı doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Reveal recovery phrase": [
+        "Kurtarma ifadesini görüntüle"
       ]
     },
     "Remark about a key type option": {
@@ -19110,8 +19100,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } toplam depolama alanı"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } tüm uygulamalara ve ücretli özelliklere erişmenizi sağlar. Gizlilik doğasındadır. Böylece verilerinizin ve kimliğinizin güvende olduğunu bilerek işinize bakabilirsiniz."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "Tüm ücretli ${ planName } size ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özelliklerine erişmenizi sağlar. Gizlilik odaklıdır. Böylece verilerinizin ve kimliğinizin güvende olduğunu bilerek işlemlerinizi sürdürebilirsiniz."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
@@ -22092,9 +22082,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Daha uzun süre abone olarak ${ priceString }** kadar kazanç sağlayın. Aynı ücretli özellikler, daha düşük fiyat."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir kolay abonelik."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Tüm ücretli ${ BRAND_NAME } hizmetleri. Aylık yalnızca ${ fallBackString } ile başlayarak"

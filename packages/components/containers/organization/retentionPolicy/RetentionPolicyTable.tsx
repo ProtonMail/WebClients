@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import SearchInput from '@proton/components/components/input/SearchInput';
@@ -14,7 +14,7 @@ import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule'
 import clsx from '@proton/utils/clsx';
 
 import RetentionPolicyTableRow from './RetentionPolicyTableRow';
-import { getActionLabel } from './helpers';
+import { getActionLabel, getDaysStringFromLifetime } from './helpers';
 import { useRetentionRuleScopeSuggestion } from './useRetentionRuleScopeSuggestion';
 
 interface RetentionPolicyTableProps {
@@ -51,11 +51,7 @@ const RetentionPolicyTable = ({ rules, loading, onEdit, onDelete, onCreateNew }:
             const lifetimeText =
                 rule.Lifetime === null
                     ? c('retention_policy_2025_Info').t`Forever`
-                    : c('retention_policy_2025_Info').ngettext(
-                          msgid`${rule.Lifetime} day`,
-                          `${rule.Lifetime} days`,
-                          rule.Lifetime
-                      );
+                    : getDaysStringFromLifetime(rule.Lifetime);
             if (normalize(lifetimeText, true).includes(normalizedWords)) {
                 return true;
             }

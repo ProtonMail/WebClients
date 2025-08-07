@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
@@ -58,4 +58,13 @@ export const generateClientIDForRuleScope = () => {
 
 export const isClientIDRuleScope = (id: string) => {
     return id.startsWith(CLIENT_ID_PREFIX);
+};
+
+export const getDaysString = (n: number) => {
+    return c('retention_policy_2025_Info').ngettext(msgid`${n} day`, `${n} days`, n);
+};
+
+export const getDaysStringFromLifetime = (lifetime: null | number) => {
+    const days = lifetime ? Math.round(lifetime / (24 * 60 * 60)) : 0;
+    return getDaysString(days);
 };

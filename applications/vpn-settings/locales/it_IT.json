@@ -867,6 +867,9 @@
       "Upgrade": [
         "Effettua l'upgrade"
       ],
+      "Upgrade for 200GB": [
+        "Effettua l'upgrade per 200GB"
+      ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
       ],
@@ -1731,8 +1734,8 @@
       "Advanced account protection": [
         "Protezione avanzata dell'account"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Tutte le app di ${ BRAND_NAME } e le funzionalità premium"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Annulla ed effettua il downgrade"
@@ -4591,6 +4594,9 @@
       "add a recovery method": [
         "aggiungere un metodo di recupero"
       ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Aggiungi un altro livello di sicurezza al tuo account. Dovrai verificarti con 2FA ogni volta che accedi. Ti consigliamo di usare ${ protonAuthenticatorDownloadLink } per archiviare i tuoi codici 2FA."
+      ],
       "Add domain": [
         "Aggiungi dominio"
       ],
@@ -6254,8 +6260,8 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Puoi imporre le regole della password che i membri della tua organizzazione utilizzeranno quando creano o reimpostano la password per il loro account ${ BRAND_NAME }."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Puoi ottenere tutti i nostri servizi premium per la privacy in un unico pacchetto, al costo di soli **${ priceString }/mese**."
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Puoi ottenere i nostri servizi premium per la privacy in un unico pacchetto, al costo di soli **${ priceString }/mese**."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }.",
@@ -7930,9 +7936,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tutti i servizi ${ BRAND_NAME } di base (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Tutti i servizi premium di ${ BRAND_NAME }. Un semplice abbonamento"
-      ],
       "Apps for": [
         "App per"
       ],
@@ -8285,9 +8288,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tutte le app aziendali e le funzionalità premium di ${ BRAND_NAME } per proteggere l'intera azienda."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Privacy e sicurezza complete con tutti i servizi ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
         "Accesso anticipato a nuove app e funzionalità"
@@ -8872,6 +8872,9 @@
       "Limited-time offer": [
         "Offerta a tempo limitato"
       ],
+      "Limited-time offer, valid for your first month": [
+        "Offerta a tempo limitato, valida per il tuo primo mese"
+      ],
       "Maybe later": [
         "Forse più tardi"
       ],
@@ -8892,6 +8895,12 @@
       ],
       "This offer won't be shown again.": [
         "Questa offerta non verrà più mostrata."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Effettua l\"upgrade per la tua produttività per soli ${ pricingTitle } con ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Effettua l\"upgrade della tua archiviazione a soli ${ pricingTitle } con ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Quando si passa da un abbonamento mensile a uno annuale."
@@ -8918,11 +8927,20 @@
       "Advanced threat protection": [
         "Protezione avanzata dalle minacce"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Collabora con utenti non-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Dominio email personalizzato"
       ],
+      "Edit docs online": [
+        "Modifica documenti online"
+      ],
       "Email addresses": [
         "Indirizzi email"
+      ],
+      "File version history (over 1 week)": [
+        "Cronologia delle versioni del file (oltre 1 settimana)"
       ],
       "Free": [
         "Gratuito"
@@ -9201,9 +9219,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Accesso a tutte le app di ${ BRAND_NAME } e alle funzionalità premium"
-      ],
       "Secure vault sharing": [
         "Condivisione sicura della cassaforte"
       ],
@@ -9699,6 +9714,14 @@
         "contatto"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } mese",
@@ -9713,11 +9736,11 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Tutti i servizi di ${ protonPlus }.${ br }Un semplice abbonamento."
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "In quanto abbonato a **${ currentPlanTitle }**, puoi sbloccare **${ unlockPlanTitle }** e più servizi ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "In quanto abbonato a **${ currentPlanTitle }**, puoi sbloccare **${ unlockPlanTitle }** e tutti i servizi premium di ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Altri servizi ${ BRAND_NAME }.${ br }Un abbonamento standard."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Rimani su ${ currentPlanTitle }"
@@ -9838,8 +9861,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Aggiungere utenti o gruppi"
+      ],
+      "Cancel": [
+        "Annulla"
+      ],
+      "Confirm": [
+        "Conferma"
+      ],
       "Create retention rule": [
         "Crea una regola di conservazione"
+      ],
+      "Create rule": [
+        "Crea regola"
       ],
       "Delete": [
         "Elimina"
@@ -9847,8 +9882,46 @@
       "Delete rule": [
         "Elimina regola"
       ],
+      "Delete this scope": [
+        "Elimina questo ambito"
+      ],
       "Edit": [
         "Modifica"
+      ],
+      "Purge all": [
+        "Elimina tutto"
+      ],
+      "Purge deleted": [
+        "Eliminazione annullata"
+      ],
+      "Save changes": [
+        "Salva le modifiche"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, inclusi quelli in Posta in arrivo, Inviata e Bozze. Questo potrebbe eliminare messaggi che gli utenti si aspettano di conservare. Non è possibile recuperare questi messaggi in seguito."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "Dopo ${ lifetime } giorno tutti i messaggi verranno eliminati",
+        "Dopo ${ lifetime } giorni tutti i messaggi saranno eliminati"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "La durata deve essere superiore a ${ MIN_LIFETIME } giorni"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "La durata non deve essere impostata per l'azione \"Conserva tutto\""
+      ],
+      "Scope value is not valid": [
+        "Il valore dell'ambito non è valido"
+      ],
+      "Scope value is required": [
+        "Il valore dell'ambito è richiesto"
+      ],
+      "Scopes cannot have the same value": [
+        "Gli ambiti non possono avere lo stesso valore"
       ]
     },
     "retention_policy_2025_Info": {
@@ -9859,11 +9932,87 @@
         "${ rule.Lifetime } giorno",
         "${ rule.Lifetime } giorni"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Crea regole di conservazione per quanto tempo conservare i dati in linea con la politica di conservazione dei dati della tua organizzazione. Inoltre, attiva la cancellazione automatica dei dati scaduti."
+      ],
       "Forever": [
         "Per sempre"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Include tutti i messaggi nella Posta in arrivo, Inviata e tutte le altre posizioni. I messaggi eliminati non possono essere recuperati."
+      ],
+      "Removes messages already deleted by users.": [
+        "Rimuove i messaggi già eliminati dagli utenti."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Regola di conservazione \"${ formData.name }\" aggiornata con successo"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Regola di conservazione \"${ payload.Name }\" creata con successo"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Regola di conservazione \"${ retentionRule.Name }\" eliminata con successo"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Dopo la scadenza del periodo di conservazione"
+      ],
+      "Applies to": [
+        "Si applica a"
+      ],
+      "days": [
+        "giorni"
+      ],
+      "Keep items forever": [
+        "Mantieni gli elementi per sempre"
+      ],
+      "Keep messages forever": [
+        "Mantieni i messaggi per sempre"
+      ],
+      "Retention period": [
+        "Periodo di conservazione"
+      ],
+      "Rule title": [
+        "Titolo della regola"
+      ],
+      "Select product": [
+        "Seleziona prodotto"
+      ],
+      "Set a duration": [
+        "Imposta una durata"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Tutti nell'organizzazione"
+      ],
+      "Group": [
+        "Gruppo"
+      ],
+      "Purge all messages": [
+        "Elimina tutti i messaggi"
+      ],
+      "Purge deleted messages only": [
+        "Elimina solo i messaggi eliminati"
+      ],
+      "Specific users or groups": [
+        "Utenti o gruppi specifici"
+      ],
+      "User": [
+        "Utente"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "Es. Pulizia delle caselle email inutilizzate"
+      ],
+      "Enter duration": [
+        "Inserisci durata"
+      ],
+      "Enter value": [
+        "Inserisci valore"
+      ],
       "Search for rule, users, period, action": [
         "Cerca per regola, utenti, periodo, azione"
       ],
@@ -9888,6 +10037,17 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "Nessun criterio di conservazione trovato"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Confermare regola di conservazione?"
+      ],
+      "Create retention rule": [
+        "Crea una regola di conservazione"
+      ],
+      "Edit retention rule": [
+        "Modifica la regola di conservazione"
       ]
     },
     "Role": {
@@ -11014,6 +11174,10 @@
         "${ ipAddresses } server dedicato",
         "${ ipAddresses } server dedicati"
       ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } per ${ maxLumo } utente",
+        "${ LUMO_APP_NAME } per ${ maxLumo } utenti"
+      ],
       "${ n } calendar per user": [
         "${ n } calendario per utente",
         "${ n } calendari per utente"
@@ -11140,8 +11304,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } di spazio di archiviazione totale"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } ti dà accesso a tutte le app e alle funzionalità premium. La privacy è integrata in modo che tu abbia la certezza che i tuoi dati e la tua identità sono al sicuro."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } ti dà accesso a tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }. La privacy è integrata, così puoi procedere sapendo che i tuoi dati e la tua identità sono al sicuro."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ti offre tutte le app, tutte le funzionalità, l'accesso anticipato alle nuove versioni e tutto ciò di cui hai bisogno per avere il controllo dei tuoi dati e della loro sicurezza."
@@ -12613,11 +12777,20 @@
       "Upgrade complete!": [
         "Aggiornamento completato!"
       ],
+      "Upgrade to ${ planName }": [
+        "Effettua l'upgrade a ${ planName }"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Aggiorna la protezione della tua rete con server dedicati"
       ],
       "Upgrade your privacy": [
         "Migliora la tua privacy"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Effettua l\"upgrade per la tua produttività per ${ formattedPrice } con ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Effettua l\"upgrade della tua archiviazione per ${ formattedPrice } con ${ planName }"
       ],
       "Upload and share files": [
         "Carica e condividi file"
@@ -13037,9 +13210,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Risparmia fino a ${ priceString }** con un abbonamento più lungo. Stesse funzionalità premium, prezzo più basso."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Tutti i servizi premium di ${ BRAND_NAME }, un semplice abbonamento."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Tutti i servizi premium ${ BRAND_NAME }. A partire da soli ${ fallBackString } al mese"

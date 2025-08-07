@@ -2727,8 +2727,8 @@
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Усе праграмы ${ BRAND_NAME } і прэміяльныя функцыі"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усе прэміяльныя функцыі з ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Скасаваць і панізіць"
@@ -4249,7 +4249,7 @@
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
       ],
       "If disabled, only admins will have access.": [
-        "Калі адключана, то толькі адміністратары будуць мець доступ."
+        "Толькі адміністратары будуць мець доступ, калі гэты параметр адключаны."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
@@ -7529,7 +7529,7 @@
         "поўнага выгляду календара"
       ],
       "ICS file": [
-        "файл ICS"
+        "Файл ICS"
       ],
       "Yahoo": [
         "Yahoo"
@@ -8942,13 +8942,13 @@
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
       ],
       "If disabled, new organization members will require an admin to manually create the first vault for them (via sharing) so they can start to create items.": [
-        "Новым удзельнікам спатрэбіцца, каб адміністратар уручную стварыў для іх першае сховішча (праз абагульванне) і толькі пасля гэтага яны змогуць пачаць ствараць элементы"
+        "Новым удзельнікам арганізацыі спатрэбіцца, каб адміністратар уручную стварыў для іх першае сховішча (праз абагульванне) і толькі пасля гэтага яны змогуць пачаць ствараць элементы"
       ],
       "If disabled, only administrators will be able to export data.": [
         "Толькі адміністратары будуць здольныя экспартаваць даныя, калі гэты параметр будзе адключаны."
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
-        "Удзельнікі арганізацыі змогуць абагульваць сховішчы або элементы толькі ў межах арганізацыі, калі гэты параметр будзе адключаны."
+        "Удзельнікі арганізацыі змогуць абагульваць сховішчы або элементы толькі ў межах арганізацыі, калі гэты параметр адключаны."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Удзельнікі арганізацыя акрамя сховішчаў будуць здольныя абагульваць індывідуальныя элементы, калі гэты параметр будзе ўключаны"
@@ -8957,7 +8957,7 @@
         "Калі ён вам не падыходзіць, то мы вернем ваш плацеж."
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
-        "Вы можаце выкарыстоўваць наступныя клавішы для хуткіх дзеянняў або пераходу ў іншыя прагляды, калі спалучэнні клавіш уключаны. Спалучэнне ${ metaKey } + K уключана заўсёды."
+        "Вы зможаце выкарыстоўваць наступныя клавішы для хуткіх дзеянняў або пераходу ў іншыя прагляды, калі спалучэнні клавіш уключаны. Спалучэнне ${ metaKey } + K уключана заўсёды."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Калі часавы пояс сістэмы не супадае з параметрамі бягучага часавага пояса, вам будзе прапанавана абнавіць яго (не часцей за адзін раз у дзень)."
@@ -9197,7 +9197,7 @@
         "гэта абавязкова"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Я выкарыстоўваю @ProtonMail і думаю, што ён спадабаецца вам таксама. Гэта бяспечны сэрвіс электроннай пошты, які абараняе вашу прыватнасць. Зарэгіструйцеся па маёй рэферальнай спасылцы і атрымайце 1 месяц бясплатных прэміяльных магчымасцяў: ${ referrerLink }"
+        "Я выкарыстоўваю @ProtonMail і думаю, што ён спадабаецца вам таксама. Гэта бяспечны сэрвіс электроннай пошты, які абараняе вашу прыватнасць. Зарэгіструйцеся па маёй рэферальнай спасылцы і атрымайце 1 месяц бясплатных прэміяльных функцый: ${ referrerLink }"
       ],
       "JCB logo": [
         "Лагатып JCB"
@@ -9732,9 +9732,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
-      ],
-      "Recovery kit copied to clipboard": [
-        "Камплект аднаўлення скапіяваны ў буфер абмену"
       ],
       "Recovery phrase copied to clipboard": [
         "Фраза аднаўлення скапіявана ў буфер абмену"
@@ -10771,8 +10768,8 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Вы можаце прымусова забяспечыць выкананне правіл для пароляў, якія будуць выкарыстоўваць удзельнікі вашай арганізацыі пры стварэнні або скіданні пароля да свайго ўліковага запісу ${ BRAND_NAME }."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Вы можаце атрымаць усе прэміяльны сэрвісы прыватнасці ўсяго за **${ priceString }/месяц** адным камплектам."
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Вы можаце атрымаць нашы прэміяльныя сэрвісы прыватнасці ўсяго за **${ priceString }/месяц** адным камплектам."
       ],
       "You can import one data type at a time.": [
         "Вы можаце імпартаваць адзін тып даных за раз."
@@ -14061,9 +14058,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Адна простая падпіска"
-      ],
       "Apps for": [
         "Праграмы для"
       ],
@@ -14485,9 +14479,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсяго вашага бізнесу."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Комплексная прыватнасць і бяспека ў спалучэнні з усімі сэрвісамі ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
         "Ранні доступ да новых праграм і функцый"
@@ -15918,9 +15909,6 @@
       "/month /user, billed biennially": [
         "/месяц /карыстальнік, аплата адзін раз у два гады"
       ],
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Доступ да ўсіх праграм ${ BRAND_NAME } і прэміяльных функцый"
-      ],
       "Advanced protection that goes beyond industry standards": [
         "Пашыраная бяспека, якая выходзіць за рамкі прамысловых стандартаў"
       ],
@@ -15929,9 +15917,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Псеўданімы для абароны электроннай пошты ад парушэнняў"
-      ],
-      "All premium ${ BRAND_NAME } services.": [
-        "Усе прэміяльныя сэрвісы ${ BRAND_NAME }."
       ],
       "Based in Switzerland, GDPR compliant": [
         "Знаходзіцца ў Швейцарыі і адпавядае патрабаванням GDPR"
@@ -15942,11 +15927,11 @@
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
         "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і атрымаць скідку ў памеры ${ discount }."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Але вы можаце разблакіраваць **${ unlockPlanTitle }** і ўсе прэміяльныя функцыі сэрвісаў ${ BRAND_NAME }, палепшыўшы да **${ upsellPlanTitle }**. Гэта ўсяго на ${ relativePrice } у месяц больш, чым вы плаціце цяпер."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і разблакіраваць **${ unlockPlanTitle }**, а таксама больш сэрвісаў ${ BRAND_NAME }. Гэта ўсяго на ${ relativePrice } у месяц больш, чым вы плаціце цяпер."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і разблакіраваць **${ unlockPlanTitle }**, а таксама ўсе прэміяльныя функцыі сэрвісаў ${ BRAND_NAME },"
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Але вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і разблакіраваць **${ unlockPlanTitle }**, а таксама больш сэрвісаў ${ BRAND_NAME }."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Працягваючы, вы пагаджаецеся з нашымі ${ termsAndConditionsLink } і ${ privacyPolicyLink }."
@@ -16037,9 +16022,6 @@
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Прапанова абмежаваная па часе. Атрымайце ${ title } за ${ price } штомесячнай платы за карыстальніка!"
-      ],
-      "One easy subscription.": [
-        "Адна нескладаная падпіска."
       ],
       "Open source and audited": [
         "Адкрыты зыходны код і аўдыт"
@@ -16139,14 +16121,14 @@
       "${ upsellPlanTitle } plan": [
         "Тарыфны план ${ upsellPlanTitle }"
       ],
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Усе сэрвісы ${ BRAND_NAME } Plus.${ br }Адна нескладаная падпіска."
-      ],
       "Create a ${ appName } account": [
         "Стварыць уліковы запіс ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Стварыце ўліковы запіс ${ BRAND_NAME }"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Больш сэрвісаў ${ BRAND_NAME }.${ br }Адна нескладаная падпіска."
       ],
       "Request your organization administrator to upgrade": [
         "Папрасіце адміністратара вашай арганізацыі палепшыць тарыфны план"
@@ -16712,14 +16694,17 @@
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Усе прэміяльныя прадукты ${ BRAND_NAME }, які ўключае тарыфны план Duo."
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Усе прэміяльныя функцыі з ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Усе прэміяльныя функцыі з ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Найбольш пасуе, калі вам патрэбна сховішча ў памеры ${ maxSpace } і для двух удзельнікаў."
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Воблачнае сховішча і абагульванне файлаў, якое абаронена скразным шыфраваннем."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Комплексная прыватнасць і бяспека ў спалучэнні з усімі сэрвісамі ${ BRAND_NAME }."
       ],
       "For next-level password management and identity protection.": [
         "Для больш высокага ўзроўню кіравання паролямі і абароны ідэнтычнасці."
@@ -16758,11 +16743,11 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Усе сэрвісы ${ protonPlus }.${ br }Адна нескладаная падпіска."
-      ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "Як падпісчык тарыфнага плана **${ currentPlanTitle }**, вы можаце разблакіраваць **${ unlockPlanTitle }** і ўсе прэміяльныя сэрвісы ${ BRAND_NAME }, палепшыўшы тарыфны план да **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Больш сэрвісаў ${ BRAND_NAME }.${ br }Адна нескладаная падпіска."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Застацца на ${ currentPlanTitle }"
@@ -16964,6 +16949,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Праверка вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Reveal recovery phrase": [
+        "Паказаць фразу аднаўлення"
       ]
     },
     "Remark about a key type option": {
@@ -19521,8 +19511,8 @@
       "${ planMaxSpace } total storage": [
         "Агульны аб'ём сховішча: ${ planMaxSpace }"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } дае вам доступ да ўсіх праграм і прэміяльных функцый. Прыватнасць уключана ў іх прадвызначана і такім чынам, вы атрымліваеце яе адразу ведаючы, што вашы даныя і ідэнтычнасць знаходзяцца ў бяспецы."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } дае вам доступ да ўсіх прэміяльных функцый з ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }. Прыватнасць уключана ў іх прадвызначана і такім чынам, вы атрымліваеце яе адразу ведаючы, што вашы даныя і ідэнтычнасць знаходзяцца ў бяспецы."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
@@ -22549,9 +22539,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Зэканомце да ${ priceString }** з працяглай падпіскай. Тыя ж самыя прэміяльныя функцыі за меншую плату."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Адна простая падпіска."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Усяго ад ${ fallBackString } у месяц"
