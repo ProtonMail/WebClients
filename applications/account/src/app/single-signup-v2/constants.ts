@@ -42,7 +42,7 @@ export const defaultSignupModel: SignupModelV2 = {
     subscriptionData: subscriptionDataCycleMapping[PLANS.FREE][CYCLE.YEARLY],
     subscriptionDataCycleMapping,
     subscriptionDataCycleMappingByCurrency: [],
-    paymentMethodStatusExtended: getOptimisticPaymentMethods(),
+    paymentStatus: getOptimisticPaymentMethods(),
     humanVerificationMethods: [],
     humanVerificationToken: '',
     selectedProductPlans: {
