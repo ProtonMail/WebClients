@@ -152,14 +152,14 @@ const searchForLabelInElement = (isMessage: boolean, elements: Element[], labelT
 const searchForLabelsAndOpenModal = async (
     forbiddenLabels: string[],
     labelToSearch: MAILBOX_LABEL_IDS,
-    destinationFolderID: string,
+    folderID: string,
     isMessage: boolean,
     elements: Element[],
     setCanUndo: (canUndo: boolean) => void,
     handleShowModal: (ownProps: MoveScheduledModalProps) => Promise<void>,
     setContainFocus?: (contains: boolean) => void
 ) => {
-    if (!forbiddenLabels.includes(destinationFolderID)) {
+    if (!forbiddenLabels.includes(folderID)) {
         return;
     }
 
@@ -203,7 +203,7 @@ export const searchForScheduled = async (
  * Unlike scheduled messages, snoozed messages cannot be moved to custom folders.
  */
 export const searchForSnoozed = async (
-    destinationFolderID: string,
+    folderID: string,
     isMessage: boolean,
     elements: Element[],
     setCanUndo: (canUndo: boolean) => void,
@@ -219,7 +219,7 @@ export const searchForSnoozed = async (
     await searchForLabelsAndOpenModal(
         [TRASH, ARCHIVE, INBOX],
         SNOOZED,
-        destinationFolderID,
+        folderID,
         isMessage,
         elements,
         setCanUndo,
@@ -228,7 +228,7 @@ export const searchForSnoozed = async (
     );
 
     const hasSnoozeLabel = searchForLabelInElement(isMessage, elements, SNOOZED).length;
-    if (hasSnoozeLabel && folders.map(({ ID }) => ID).includes(destinationFolderID)) {
+    if (hasSnoozeLabel && folders.map(({ ID }) => ID).includes(folderID)) {
         await handleShowModal({ isMessage, onCloseCustomAction: () => setContainFocus?.(true) });
     }
 };
