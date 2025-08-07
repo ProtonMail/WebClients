@@ -440,6 +440,9 @@
       "Forward as attachment": [
         "გადაგზავნა მიმაგრებული ფაილის სახით"
       ],
+      "Full data": [
+        "სრული მონაცემები"
+      ],
       "Generate password": [
         "პაროლის გენერირება"
       ],
@@ -685,6 +688,9 @@
       ],
       "Next page": [
         "შემდეგი გვერდი"
+      ],
+      "No sensitive data": [
+        "კონფიდენციალური მონაცემების გარეშე"
       ],
       "Not now": [
         "არა ახლა"
@@ -1055,6 +1061,9 @@
       "Upgrade": [
         "ტარიფის აწევა"
       ],
+      "Upgrade for 200GB": [
+        "აწევა 200გბ-მდე"
+      ],
       "Upgrade now": [
         "ტარიფის განახლება"
       ],
@@ -1398,6 +1407,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
+      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ plan } და ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } საცავი"
       ],
@@ -1676,9 +1688,6 @@
       ],
       "Advanced account protection": [
         "დამატებითი ანგარიშის დაცვა"
-      ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "${ BRAND_NAME }-ის ყველა აპი და ფასიანი ფუნქციები"
       ],
       "Cancel and downgrade": [
         "გაუქმება და ტარიფის ჩამოწევა"
@@ -3491,6 +3500,9 @@
       "The label name is too long. Please choose a different name.": [
         "ჭდის სახელი ძალიან გრძელია. აირჩიეთ სხვა სახელი."
       ],
+      "The link to your item failed to be deleted": [
+        "ბმული თქვენს ელემენტამდე არასწორი ან წაშლილია"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
       ],
@@ -3551,6 +3563,9 @@
       "Unknown error": [
         "უცნობი შეცდომა"
       ],
+      "Unknown location": [
+        "უცნობი მდებარეობა"
+      ],
       "Unknown payment token status": [
         "გადახდის სტატუსის არასწორი კოდი"
       ],
@@ -3584,6 +3599,9 @@
       ],
       "Your import will not be processed.": [
         "თქვენი შემოტანა არ დამუშავდება."
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ არგაშიფვრადი სახელი"
       ]
     },
     "Error importing calendar": {
@@ -7743,9 +7761,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "ყველა ${ BRAND_NAME }-ის სერვისი (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "ყველა ფასიანი ${ BRAND_NAME }-ის სერვისი. ერთი იოლი გამოწერა"
-      ],
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
       ],
@@ -8093,9 +8108,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "კომპლექსური კონფიდენციალობა და უსაფრთხოება ${ BRAND_NAME }-ის ყველა სერვისთან ერთად."
       ],
       "Early access to new apps and features": [
         "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
@@ -8856,11 +8868,20 @@
       "Advanced threat protection": [
         "დამატებითი დაცვა საშიშროებებისგან"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "კოლაბორაცია არა-${ BRAND_NAME }-ის მომხმარებლებთან"
+      ],
       "Custom email domain": [
         "თქვენი ელფოსტის დომენი"
       ],
+      "Edit docs online": [
+        "ჩაასწორეთ დოკუმენტები ინტერნეტში"
+      ],
       "Email addresses": [
         "ელფოსტის მისამართები"
+      ],
+      "File version history (over 1 week)": [
+        "ფაილის ვერსიის ისტორია (1 კვირაზე მეტი)"
       ],
       "Free": [
         "უფასო"
@@ -9088,9 +9109,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "წვდომა ყველა ${ BRAND_NAME }-ის აპთან და ფასიან ფუნქციასთან"
-      ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
       ],
@@ -10292,9 +10310,6 @@
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } გაძლევთ წვდომას ყველა აპთან და ფასიან ფუნქციებთან. კონფიდენციალობა ჩაშენებულია, ასე რომ, მას ნაგულისხმევად იღებთ და გეცოდინებათ, რომ თქვენი მონაცემები და იდენტიფიკაცია უსაფრთხოდაა."
-      ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } გაძლევთ ყველა აპს, ყველა ფუნქციას, ადრეულ წვდომას ახალ რელიზებთან და ყველაფერს, რაც გჭირდებათ, რომ მართოთ თქვენი მონაცემები და მისი უსაფრთხოება."
       ],
@@ -10960,6 +10975,9 @@
       "Addresses": [
         "მისამართები"
       ],
+      "Advanced details": [
+        "დამატებითი დეტალები"
+      ],
       "Album": [
         "ალბომი"
       ],
@@ -10977,6 +10995,12 @@
       ],
       "Amount due": [
         "გადასახდელი თანხა"
+      ],
+      "an anonymous user": [
+        "ანონიმური მომხმარებელი"
+      ],
+      "Anonymous user": [
+        "ანონიმური მომხმარებელი"
       ],
       "Apply gift code": [
         "სასაჩუქრე კოდის გადატარება"
@@ -11084,6 +11108,9 @@
       "Create new group": [
         "ახალი ჯგუფის შექმნა"
       ],
+      "Created by": [
+        "ავტორია"
+      ],
       "Credits": [
         "კრედიტები"
       ],
@@ -11141,6 +11168,9 @@
       "Desktop": [
         "სამუშაო მაგიდა"
       ],
+      "Devices": [
+        "მოწყობილობები"
+      ],
       "Discard": [
         "მოცილება"
       ],
@@ -11158,6 +11188,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME }-ის აპების გადმოწერა"
+      ],
+      "Download details": [
+        "გადმოწერის დეტალები"
       ],
       "Download the app": [
         "აპის გადმოწერა"
@@ -11237,6 +11270,9 @@
       "File recovery process": [
         "ფაილის აღდგენის პროცესი"
       ],
+      "Folder": [
+        "საქაღალდე"
+      ],
       "Folder details": [
         "საქაღალდის დეტალები"
       ],
@@ -11305,6 +11341,9 @@
       "Last edited by": [
         "ბოლო ჩასწორების ავტორი"
       ],
+      "Last uploaded by": [
+        "ბოლო ატვირთვის ავტორი"
+      ],
       "Link confirmation": [
         "ბმულის დადასტურება"
       ],
@@ -11316,6 +11355,9 @@
       ],
       "Manage secure link": [
         "დაცული ბმულის მორგება"
+      ],
+      "Media type": [
+        "მედიის ტიპი"
       ],
       "Merge contacts": [
         "კონტაქტების შერწყმა"
@@ -11415,6 +11457,9 @@
       ],
       "Original size": [
         "საწყისი ზომა"
+      ],
+      "Original size in bytes": [
+        "ორიგინალი ზომა ბაიტებში"
       ],
       "Other information": [
         "სხვა ინფორმაცია"
@@ -11543,6 +11588,9 @@
       "Settings": [
         "მორგება"
       ],
+      "SHA1": [
+        "SHA1"
+      ],
       "Share ${ name }": [
         "${ name }-ის გაზიარება"
       ],
@@ -11572,6 +11620,9 @@
       ],
       "Size": [
         "ზომა"
+      ],
+      "Size in bytes": [
+        "ზომა ბაიტებში"
       ],
       "Sort files/folders": [
         "ფაილების/საქაღალდეების დალაგება"
@@ -11624,6 +11675,12 @@
       "Type": [
         "ტიპი"
       ],
+      "UID": [
+        "UID"
+      ],
+      "Unknown user": [
+        "უცნობი მომხმარებელი"
+      ],
       "Untitled document ${ date }": [
         "უსათაურო დოკუმენტი ${ date }"
       ],
@@ -11632,6 +11689,9 @@
       ],
       "Upgrade complete!": [
         "განახლება დასრულებულია!"
+      ],
+      "Upgrade to ${ planName }": [
+        "სატარიფო გეგმის განახლება: ${ planName }"
       ],
       "Upload and share files": [
         "ფაილების ატვირთვა და გაზიარება"
