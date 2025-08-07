@@ -1739,8 +1739,8 @@
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Tüm ${ BRAND_NAME } uygulamaları ve ücretli özellikleri"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
       ],
       "Cancel and downgrade": [
         "İptal edip tarifeyi düşür"
@@ -7447,9 +7447,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik"
-      ],
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
@@ -7803,9 +7800,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tüm ${ BRAND_NAME } kurumsal uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
       ],
       "Early access to new apps and features": [
         "Yeni uygulama ve özelliklere erken erişim"
@@ -8665,9 +8659,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Tüm ${ BRAND_NAME } uygulamalarına ve ücretli özelliklerine erişim"
-      ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
       ],
@@ -9054,12 +9045,20 @@
         "görüşün"
       ]
     },
-    "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Tüm ${ protonPlus } hizmetleri.${ br }Tek bir kolay abonelik."
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } özellikleri."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "**${ currentPlanTitle }** abonesi olarak, **${ upsellPlanTitle }** tarifesine yükseltebilir **${ unlockPlanTitle }** ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
+      ]
+    },
+    "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }** abonesi olarak, **${ upsellPlanTitle }** tarifesine yükseltebilir **${ unlockPlanTitle }** ve ücretli diğer ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Diğer ${ BRAND_NAME } hizmetleri.${ br }Tek ve kolay bir abonelik."
       ],
       "Stay on ${ currentPlanTitle }": [
         "${ currentPlanTitle } tarifesinde kal"
@@ -9980,8 +9979,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } toplam depolama alanı"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } tüm uygulamalara ve ücretli özelliklere erişmenizi sağlar. Gizlilik doğasındadır. Böylece verilerinizin ve kimliğinizin güvende olduğunu bilerek işinize bakabilirsiniz."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "Tüm ücretli ${ planName } size ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özelliklerine erişmenizi sağlar. Gizlilik odaklıdır. Böylece verilerinizin ve kimliğinizin güvende olduğunu bilerek işlemlerinizi sürdürebilirsiniz."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
