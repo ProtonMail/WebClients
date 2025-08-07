@@ -326,27 +326,27 @@ export const getSupportContactURL = (params: { [key: string]: string | string[] 
 };
 
 export const getAppStaticUrl = (app: APP_NAMES) => {
-    if (app === 'proton-mail') {
+    if (app === APPS.PROTONMAIL) {
         return getStaticURL('/mail');
     }
 
-    if (app === 'proton-drive') {
+    if (app === APPS.PROTONDRIVE) {
         return getStaticURL('/drive');
     }
 
-    if (app === 'proton-calendar') {
+    if (app === APPS.PROTONCALENDAR) {
         return getStaticURL('/calendar');
     }
 
-    if (app === 'proton-pass') {
+    if (app === APPS.PROTONPASS) {
         return getStaticURL('/pass');
     }
 
-    if (app === 'proton-vpn-settings') {
+    if (app === APPS.PROTONVPN_SETTINGS) {
         return getStaticURL('/vpn');
     }
 
-    if (app === 'proton-wallet') {
+    if (app === APPS.PROTONWALLET) {
         return getStaticURL('/wallet');
     }
 
