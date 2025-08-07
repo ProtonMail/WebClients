@@ -16,7 +16,7 @@ export interface RetentionRuleFormData {
     id: string | null;
     name: string;
     products: RetentionRuleProduct;
-    lifetime: number | null;
+    lifetime: number | null; // in days
     action: RetentionRuleAction;
     scopes: RetentionRuleScopeFormData[];
 }
