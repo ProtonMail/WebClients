@@ -61,6 +61,8 @@ const RetentionPolicyTableRow = ({ rule, loading, onEdit, onDelete }: RetentionP
         );
     };
 
+    const days = rule.Lifetime ? Math.round(rule.Lifetime / (24 * 60 * 60)) : 0;
+
     return (
         <TableRow
             key={rule.ID}
@@ -73,11 +75,7 @@ const RetentionPolicyTableRow = ({ rule, loading, onEdit, onDelete }: RetentionP
                 <span>
                     {rule.Lifetime === null
                         ? c('retention_policy_2025_Info').t`Forever`
-                        : c('retention_policy_2025_Info').ngettext(
-                              msgid`${rule.Lifetime} day`,
-                              `${rule.Lifetime} days`,
-                              rule.Lifetime
-                          )}
+                        : c('retention_policy_2025_Info').ngettext(msgid`${days} day`, `${days} days`, days)}
                 </span>,
                 <span>{rule.Lifetime === null ? '-' : getActionLabel(rule.Action)}</span>,
                 <DropdownActions
