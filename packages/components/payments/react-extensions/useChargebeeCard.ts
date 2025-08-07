@@ -9,7 +9,7 @@ import {
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
     type ForceEnableChargebee,
-    type PaymentMethodStatusExtended,
+    type PaymentStatus,
     type PaymentVerificatorV5,
 } from '@proton/payments';
 import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
@@ -24,7 +24,7 @@ export interface Props {
     verifyOnly?: boolean;
     onProcessPaymentToken?: (paymentMethodType: PaymentProcessorType) => void;
     onProcessPaymentTokenFailed?: (paymentMethodType: PaymentProcessorType) => void;
-    paymentsStatus?: PaymentMethodStatusExtended;
+    paymentStatus?: PaymentStatus;
 }
 
 export interface Dependencies {
@@ -57,7 +57,7 @@ export const useChargebeeCard = (
         verifyOnly,
         onProcessPaymentToken,
         onProcessPaymentTokenFailed,
-        paymentsStatus,
+        paymentStatus,
     }: Props,
     { api, verifyPayment, handles, events, forceEnableChargebee }: Dependencies
 ): ChargebeeCardProcessorHook => {
@@ -81,7 +81,7 @@ export const useChargebeeCard = (
                 events,
                 !!verifyOnly,
                 forceEnableChargebee,
-                paymentsStatus,
+                paymentStatus,
                 onChargeable
             )
     );

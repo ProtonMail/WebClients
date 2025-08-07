@@ -1,10 +1,10 @@
-import { getBillingAddressFromPaymentsStatus } from './billing-address/billing-address-from-payments-status';
-import { type PaymentMethodStatusExtended } from './interface';
+import { getBillingAddressFromPaymentStatus } from './billing-address/billing-address-from-payments-status';
+import { type PaymentStatus } from './interface';
 
-export function normalizePaymentMethodStatus(status: PaymentMethodStatusExtended): PaymentMethodStatusExtended {
-    const normalized = getBillingAddressFromPaymentsStatus(status) as PaymentMethodStatusExtended;
+export function normalizePaymentMethodStatus(status: PaymentStatus): PaymentStatus {
+    const normalized = getBillingAddressFromPaymentStatus(status) as PaymentStatus;
 
-    const keys = Object.keys(normalized.VendorStates) as (keyof PaymentMethodStatusExtended['VendorStates'])[];
+    const keys = Object.keys(normalized.VendorStates) as (keyof PaymentStatus['VendorStates'])[];
 
     // Normalizing the boolean values, converting them from 0 or 1 to false or true
     for (const key of keys) {
