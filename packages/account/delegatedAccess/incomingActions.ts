@@ -1,6 +1,7 @@
 import { type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
+import { getOrganizationTokenThunk } from '@proton/account/organizationKey/actions';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { type CacheType, cacheHelper, createPromiseStore, previousSelector } from '@proton/redux-utilities';
 import { revoke } from '@proton/shared/lib/api/auth';
@@ -15,11 +16,10 @@ import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { isSelf } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
-import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
-import { type AddressesState, addressesThunk } from '../addresses';
-import type { KtState } from '../kt';
+import { addressKeysThunk } from '../addressKeys';
+import { addressesThunk } from '../addresses';
 import { getKTUserContext } from '../kt/actions';
-import { type UserState, userThunk } from '../user';
+import { userThunk } from '../user';
 import { getDecryptedDelegatedAccessToken } from './crypto';
 import { type DelegatedAccessState, delegatedAccessActions, selectIncomingDelegatedAccess } from './index';
 import type { IncomingDelegatedAccessOutput } from './interface';
@@ -81,12 +81,7 @@ export const deleteDelegatedAccessThunk = ({
     id,
 }: {
     id: string;
-}): ThunkAction<
-    Promise<void>,
-    KtState & UserState & AddressesState & AddressKeysState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
+}): ThunkAction<Promise<void>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const api = getSilentApi(extra.api);
         await api(deleteDelegatedAccess(id));
@@ -103,12 +98,7 @@ export const requestDelegatedAccessThunk = ({
     id,
 }: {
     id: string;
-}): ThunkAction<
-    Promise<IncomingDelegatedAccessOutput>,
-    KtState & UserState & AddressesState & AddressKeysState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
+}): ThunkAction<Promise<IncomingDelegatedAccessOutput>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const api = getSilentApi(extra.api);
         const { IncomingDelegatedAccess } = await api<{
@@ -139,12 +129,7 @@ export const accessDelegatedAccessThunk = ({
     incomingDelegatedAccess,
 }: {
     incomingDelegatedAccess: IncomingDelegatedAccessOutput;
-}): ThunkAction<
-    Promise<{ localID: number }>,
-    KtState & UserState & AddressesState & AddressKeysState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
+}): ThunkAction<Promise<{ localID: number }>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         try {
             dispatch(
@@ -209,11 +194,14 @@ export const accessDelegatedAccessThunk = ({
                 }
             }
 
-            const keyPassword = await getDecryptedDelegatedAccessToken({
-                armoredMessage: token,
-                decryptionKeys: addressKeys.map(({ privateKey }) => privateKey),
-                verificationKeys,
-            });
+            // Organization sign-in is preferred for non-private users when the emergency contact is the admin
+            const keyPassword = accessUser.OrganizationPrivateKey
+                ? await dispatch(getOrganizationTokenThunk())
+                : await getDecryptedDelegatedAccessToken({
+                      armoredMessage: token,
+                      decryptionKeys: addressKeys.map(({ privateKey }) => privateKey),
+                      verificationKeys,
+                  });
             const decryptedKeys = await getDecryptedUserKeysHelper(accessUser, keyPassword);
             if (!decryptedKeys.length) {
                 throw new Error('Unable to decrypt user keys with UserKeyToken');
