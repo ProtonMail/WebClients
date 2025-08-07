@@ -2017,60 +2017,6 @@
         "Jsem mimo kancelář s omezeným přístupem ke svému e-mailu."
       ]
     },
-    "b2b_trials_2025: Header": {
-      "Payment details": [
-        "Platební údaje"
-      ]
-    },
-    "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje každých ${ cycle } měsíců, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
-      ],
-      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
-        "Kliknutím na \"Vyzkoušet\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
-      ],
-      "During the trial period, you can have up to 10 users.": [
-        "Během zkušební doby můžete mít až 10 uživatelů."
-      ],
-      "on ${ formattedDate }": [
-        "dne ${ formattedDate }"
-      ],
-      "Try it free for 14 days": [
-        "Vyzkoušet na 14 dní zdarma"
-      ],
-      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Když zrušíte bezplatnou zkušební verzi, nebude převedena na placené předplatné, ale výhody tarifu můžete využívat až do konce zkušebního doby. Poté budete převedeni na tarif ${ BRAND_NAME } Free."
-      ],
-      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební verze."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_LUMO_SEATS } licencí Lumo během zkušební verze."
-      ],
-      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_SCRIBE_SEATS } licencí Scribe během zkušební verze."
-      ],
-      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_USERS } uživatelů během zkušební verze."
-      ],
-      "You cannot add custom domains during the trial period.": [
-        "Během zkušební doby nelze přidávat vlastní domény."
-      ],
-      "You have reached the trial limit.": [
-        "Dosáhli jste limitu zkušební verze."
-      ]
-    },
-    "b2b_trials_2025_Label": {
-      "Amount due after trial": [
-        "Částka splatná po zkušebním období"
-      ],
-      "Amount due now": [
-        "Částka splatná nyní"
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Zrušit předplatné"
@@ -2781,8 +2727,8 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Všechny ${ BRAND_NAME } aplikace a prémiové funkce"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Zrušit a snížit"
@@ -2852,14 +2798,6 @@
       ],
       "Expand": [
         "Rozbalit"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } je umělá inteligence s prioritou ochrany soukromí, která vám pomáhá zvládnout více a zároveň chrání vaše data. Využijte její plný potenciál a získejte přístup k novým funkcím ihned po jejich představení."
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Přidat ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -9798,9 +9736,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
       ],
-      "Recovery kit copied to clipboard": [
-        "Sada pro obnovu zkopírovaná do schránky"
-      ],
       "Recovery phrase copied to clipboard": [
         "Obnovovací fráze byla zkopírovaná do schránky"
       ],
@@ -10836,8 +10771,8 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Můžete zavést pravidla pro hesla, která budou členové vaší organizace muset splnit při vytváření nebo resetování hesla ke svému účtu ${ BRAND_NAME }."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Všechny naše prémiové služby ochrany soukromí můžete získat v jednom balíčku—a to za pouhých **${ priceString }/měsíc**."
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Naše prémiové služby ochrany soukromí můžete získat v jednom balíčku—a to za pouhých **${ priceString }/měsíc**."
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
@@ -11349,7 +11284,7 @@
         "Tím se vygeneruje nový klíč, který se bude používat k šifrování budoucích kontaktních údajů, šifrovacích klíčů e-mailů a dalších dat."
       ],
       "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
-        "Toto vygeneruje nový klíč, který bude použit mimo jiné k šifrování budoucích e-mailů a dalších dat pro **${ emailAddress }**."
+        "Toto vygeneruje nový klíč, který bude použit k šifrování budoucích e-mailů a dalších dat pro **${ emailAddress }**."
       ],
       "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
         "Tento typ klíče již máte. Pokud nebyl tento klíč kompromitován, generování **nového klíče může zpomalit váš účet**."
@@ -11639,7 +11574,7 @@
         "Exportovat veřejný klíč"
       ],
       "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
-        "Vytvoří klíč ${ keyStatusBadgeTitles.primary } nebo ${ keyStatusBadgeTitles.fallback } jako klíč pro šifrování a podepisování."
+        "Nastaví tento klíč jako ${ keyStatusBadgeTitles.primary } nebo ${ keyStatusBadgeTitles.fallback } pro šifrování a podepisování."
       ],
       "Mark compromised": [
         "Označit jako kompromitovaný/prolomený"
@@ -14129,9 +14064,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Všechny prémiové služby ${ BRAND_NAME }. Jedno snadné předplatné"
-      ],
       "Apps for": [
         "Aplikace pro"
       ],
@@ -14553,9 +14485,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Všechny firemní aplikace ${ BRAND_NAME } a prémiové funkce pro ochranu celé vaší firmy."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Komplexní ochrana soukromí a zabezpečení se všemi službami ${ BRAND_NAME } dohromady."
       ],
       "Early access to new apps and features": [
         "Předběžný přístup k novým aplikacím a funkcím"
@@ -15363,7 +15292,7 @@
         "Pokročilá ochrana před hrozbami"
       ],
       "Collaborate with non-${ BRAND_NAME } users": [
-        "Sdílet s uživateli, kteří nemají ${ BRAND_NAME }"
+        "Spolupracujte s těmi, kdo nejsou uživateli ${ BRAND_NAME }"
       ],
       "Custom email domain": [
         "Vlastní e-mailová doména"
@@ -16007,9 +15936,6 @@
       "/month /user, billed biennially": [
         "/měsíc /uživatel, účtováno jednou za dva roky"
       ],
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Přístup ke všem aplikacím ${ BRAND_NAME } a prémiovým funkcím"
-      ],
       "Advanced protection that goes beyond industry standards": [
         "Pokročilá ochrana, která překonává to, co je na trhu běžné"
       ],
@@ -16018,9 +15944,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Aliasy pro ochranu e-mailu před úniky informací"
-      ],
-      "All premium ${ BRAND_NAME } services.": [
-        "Všechny prémiové služby ${ BRAND_NAME }."
       ],
       "Based in Switzerland, GDPR compliant": [
         "Se sídlem ve Švýcarsku, v souladu s GDPR"
@@ -16031,11 +15954,11 @@
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
         "Ale můžete získat slevu ${ discount } navýšením na **${ upsellPlanTitle }**."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Ale můžete si odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }** - je to jen ${ relativePrice } měsíčně navíc."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Ale můžete si odemknout **${ unlockPlanTitle }** a další služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }** — je to jen ${ relativePrice } měsíčně navíc."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Můžete však odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Můžete však odemknout **${ unlockPlanTitle }** a další služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Pokračováním souhlasíte s našimi ${ termsAndConditionsLink } a ${ privacyPolicyLink }."
@@ -16126,9 +16049,6 @@
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Časově omezená nabídka: Získejte ${ title } za ${ price } na uživatele měsíčně!"
-      ],
-      "One easy subscription.": [
-        "Jedno snadné předplatné."
       ],
       "Open source and audited": [
         "Otevřený zdrojový kód a audity"
@@ -16228,14 +16148,14 @@
       "${ upsellPlanTitle } plan": [
         "Tarif ${ upsellPlanTitle }"
       ],
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Všechny služby ${ BRAND_NAME } Plus.${ br }Jedno jednoduché předplatné."
-      ],
       "Create a ${ appName } account": [
         "Vytvořit účet ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Vytvořit účet ${ BRAND_NAME }"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Více služeb ${ BRAND_NAME }.${ br }Jedno snadné předplatné."
       ],
       "Request your organization administrator to upgrade": [
         "Požádejte správce organizace o navýšení"
@@ -16801,14 +16721,17 @@
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Všechny prémiové produkty ${ BRAND_NAME } jsou součástí tarifu Duo."
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Nejlepší, pokud potřebujete ${ maxSpace } úložiště a pro páry."
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Cloudové úložiště a sdílení souborů zabezpečené koncovým šifrováním."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Komplexní ochrana soukromí a zabezpečení se všemi službami ${ BRAND_NAME } dohromady."
       ],
       "For next-level password management and identity protection.": [
         "Pro pokročilou správu hesel a ochranu identity."
@@ -16847,11 +16770,11 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Všechny služby ${ protonPlus }.${ br }Jedno jednoduché předplatné."
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Jako předplatitel **${ currentPlanTitle }** můžete odemknout **${ unlockPlanTitle }** a další prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Jako předplatitel **${ currentPlanTitle }** můžete odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Více služeb ${ BRAND_NAME }.${ br }Jedno snadné předplatné."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Zůstat na ${ currentPlanTitle }"
@@ -17057,7 +16980,7 @@
     },
     "Remark about a key type option": {
       "Classic": [
-        "Klasická"
+        "Klasický"
       ],
       "Post-quantum": [
         "Postkvantový"
@@ -17158,7 +17081,7 @@
     },
     "retention_policy_2025_Confirmation": {
       "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
-        "${ strongText }, včetně těch v doručené poště, odeslané poště a konceptu. Tímto způsobem mohou být odebrány zprávy, které uživatelé chtějí uchovat. Tyto zprávy již nebude možné obnovit."
+        "${ strongText }, včetně těch v doručené poště, odeslané poště a konceptech. Tímto způsobem mohou být odebrány zprávy, které uživatelé chtějí uchovat. Tyto zprávy již nebude možné obnovit."
       ],
       "After ${ lifetime } day all messages will be deleted": [
         "Po ${ lifetime } dni budou všechny zprávy smazány",
@@ -17221,13 +17144,13 @@
         "Použito na"
       ],
       "days": [
-        "dny"
+        "dnů"
       ],
       "Keep items forever": [
-        "Uchovávejte položky navždy"
+        "Uchovávat položky navždy"
       ],
       "Keep messages forever": [
-        "Uchovávejte zprávy navždy"
+        "Uchovávat zprávy navždy"
       ],
       "Retention period": [
         "Doba uchovávání"
@@ -18227,11 +18150,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Sdílel/a ${ ownerName }"
-      ]
-    },
-    "sheets_2025:Action": {
-      "Open in ${ appName }": [
-        "Otevřít v ${ appName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -19612,8 +19530,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } úložného prostoru"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } vám umožní přístup ke všem aplikacím a prémiovým funkcím. Je brán ohled na soukromí, takže můžete pokračovat v práci s vědomím, že vaše data a identita jsou v bezpečí."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } vám dává přístup ke všem prémiovým funkcím z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }. Soukromí je integrováno, abyste se mohli věnovat svým záležitostem s vědomím, že vaše data a identita jsou v bezpečí."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
@@ -22640,9 +22558,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Ušetřete až ${ priceString }** při předplatném na delší dobu. Stejné prémiové funkce, nižší cena."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Všechny prémiové služby ${ BRAND_NAME }, jedno snadné předplatné."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Všechny prémiové služby ${ BRAND_NAME }. Od pouhých ${ fallBackString } měsíčně"

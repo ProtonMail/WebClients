@@ -2624,9 +2624,6 @@
       "Advanced account protection": [
         "Расширенная защита аккаунта"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Все приложения ${ BRAND_NAME } и платные функции"
-      ],
       "Cancel and downgrade": [
         "Отменить и перейти на более дешевую версию"
       ],
@@ -9449,9 +9446,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
       ],
-      "Recovery kit copied to clipboard": [
-        "Набор для восстановления скопирован в буфер обмена."
-      ],
       "Recovery phrase copied to clipboard": [
         "Фраза для восстановления скопирована в буфер обмена"
       ],
@@ -10468,9 +10462,6 @@
       ],
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Вы можете установить правила для паролей, которые члены вашей организации будут использовать при создании или восстановлении пароля к своему аккаунту ${ BRAND_NAME }."
-      ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Вы можете получить все наши платные услуги приватности в одном комплекте — и это всего лишь за **${ priceString } в месяц**."
       ],
       "You can import one data type at a time.": [
         "Вы можете импортировать один тип данных за один раз."
@@ -11630,7 +11621,7 @@
         "Язык по умолчанию"
       ],
       "Default language (${ defaultLanguage })": [
-        "Язык по умолчанию: (${ defaultLanguage })"
+        "Язык по умолчанию (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Схема PGP по умолчанию"
@@ -13630,9 +13621,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Все основные сервисы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Все платные сервисы ${ BRAND_NAME }. В одной легкой подписке"
-      ],
       "Apps for": [
         "Приложения для"
       ],
@@ -14048,9 +14036,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Все бизнес-приложения ${ BRAND_NAME } и платные функции для защиты всего вашего бизнеса."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Комплексная конфиденциальность и безопасность со всеми услугами ${ BRAND_NAME } вместе взятыми."
       ],
       "Early access to new apps and features": [
         "Early access to new apps and features"
@@ -15403,9 +15388,6 @@
       "/month /user, billed biennially": [
         "в месяц за пользователя раз в два года"
       ],
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Доступ ко всем приложениям ${ BRAND_NAME } и платным функциям"
-      ],
       "Advanced protection that goes beyond industry standards": [
         "Передовая защита, выходящая за рамки отраслевых стандартов"
       ],
@@ -15415,9 +15397,6 @@
       "Aliases for email protection from breaches": [
         "Псевдонимы для адресов электронной почты для защиты от утечек."
       ],
-      "All premium ${ BRAND_NAME } services.": [
-        "Все премиальные сервисы ${ BRAND_NAME }."
-      ],
       "Based in Switzerland, GDPR compliant": [
         "Находится в Швейцарии, соответствует требованиям GDPR"
       ],
@@ -15426,12 +15405,6 @@
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
         "Но вы можете получить скидку ${ discount }, перейдя на **${ upsellPlanTitle }**."
-      ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Но вы можете разблокировать **${ unlockPlanTitle }** и все премиальные услуги ${ BRAND_NAME }, улучшив тариф до **${ upsellPlanTitle }** — это добавит лишь ${ relativePrice } в месяц."
-      ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Но вы можете разблокировать **${ unlockPlanTitle }** и все платные сервисы ${ BRAND_NAME } если улучшите до **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Продолжая, вы соглашаетесь с нашими ${ termsAndConditionsLink } и ${ privacyPolicyLink }."
@@ -15522,9 +15495,6 @@
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Акция: получите ${ title } за ${ price } за пользователя ежемесячно!"
-      ],
-      "One easy subscription.": [
-        "Одна лёгкая подписка"
       ],
       "Open source and audited": [
         "Открытый исходный код, проверенный на безопасность"
@@ -15623,9 +15593,6 @@
     "pass_signup_2023: Title": {
       "${ upsellPlanTitle } plan": [
         "тариф ${ upsellPlanTitle }"
-      ],
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Все сервисы ${ BRAND_NAME } Plus.${ br }Или одна лёгкая подписка."
       ],
       "Create a ${ appName } account": [
         "Создать аккаунт ${ appName }"
@@ -18459,9 +18426,6 @@
       ],
       "${ planMaxSpace } total storage": [
         "Хранилище объемом ${ planMaxSpace }"
-      ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } дает вам доступ ко всем приложениям и платным функциям. Конфиденциальность в него интегрирована, поэтому вы можете спокойно заниматься своими делами, зная, что ваши данные и личность в безопасности."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } предоставляет вам все приложения и функции, ранний доступ к новым версиям и все, что нужно для управления вашими данными и их безопасностью."
@@ -21413,9 +21377,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Сэкономьте до ${ priceString }** при оформлении более длительной подписки. Те же платные функции, но по более низкой цене."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Все платные службы ${ BRAND_NAME }, одна простая подписка."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Все платные услуги ${ BRAND_NAME }. Всего от ${ fallBackString } в месяц"
