@@ -76,14 +76,7 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null] => {
     };
 
     const setupPersonalMeeting = async () => {
-        if (!meetings) {
-            return;
-        }
-
-        const personalMeeting = meetings.find((meeting) => meeting.Type === MeetingType.PERSONAL);
-        if (personalMeeting) {
-            const decryptedPersonalMeeting = await getDecryptedMeeting(personalMeeting);
-            setPersonalMeeting(decryptedPersonalMeeting);
+        if (!meetings || meetings.find((meeting) => meeting.Type === MeetingType.PERSONAL)) {
             return;
         }
 
