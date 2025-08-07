@@ -13,33 +13,31 @@ import {
     PLANS,
     signupFlows,
 } from './constants';
-import {
-    type PaymentMethodFlow,
-    type PaymentMethodStatus,
-    type PaymentsApi,
-    type SavedPaymentMethod,
-} from './interface';
+import { type PaymentMethodFlow, type PaymentStatus, type PaymentsApi, type SavedPaymentMethod } from './interface';
 import { PaymentMethods, initializePaymentMethods } from './methods';
 import { BillingPlatform } from './subscription/constants';
 
 const TEST_CURRENCY = 'USD' as const;
 
-let status: PaymentMethodStatus;
+let status: PaymentStatus;
 
 beforeEach(() => {
     status = {
-        Card: true,
-        Paypal: true,
-        Apple: true,
-        Cash: true,
-        Bitcoin: true,
+        CountryCode: 'CH',
+        VendorStates: {
+            Card: true,
+            Paypal: true,
+            Apple: true,
+            Cash: true,
+            Bitcoin: true,
+        },
     };
 });
 
 describe('getNewMethods()', () => {
     it('should include card when card is available', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -57,10 +55,10 @@ describe('getNewMethods()', () => {
     });
 
     it('should not include card when card is not available', () => {
-        status.Card = false;
+        status.VendorStates.Card = false;
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -80,7 +78,7 @@ describe('getNewMethods()', () => {
     // tests for PayPal
     it('should include PayPal when PayPal is available', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -99,7 +97,7 @@ describe('getNewMethods()', () => {
 
     it('should not include PayPal when PayPal is not available due to amount less than minimum', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 50,
@@ -118,7 +116,7 @@ describe('getNewMethods()', () => {
 
     it('should not include PayPal when already used as payment method', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [
                 {
                     ID: '1',
@@ -149,7 +147,7 @@ describe('getNewMethods()', () => {
 
     it('should include Bitcoin when Bitcoin is available', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -170,7 +168,7 @@ describe('getNewMethods()', () => {
         'should not include Bitcoin when Bitcoin is not available due to flow %s',
         (flow) => {
             const methods = new PaymentMethods({
-                paymentMethodStatus: status,
+                paymentStatus: status,
                 paymentMethods: [],
                 chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
                 amount: 500,
@@ -190,7 +188,7 @@ describe('getNewMethods()', () => {
 
     it('should not include bitcoin due to amount less than minimum', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 50,
@@ -209,7 +207,7 @@ describe('getNewMethods()', () => {
 
     it('should include Cash when Cash is available', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -230,7 +228,7 @@ describe('getNewMethods()', () => {
         'should not include Cash when Cash is not available due to flow %s',
         (flow) => {
             const methods = new PaymentMethods({
-                paymentMethodStatus: status,
+                paymentStatus: status,
                 paymentMethods: [],
                 chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
                 amount: 500,
@@ -250,7 +248,7 @@ describe('getNewMethods()', () => {
 
     it('should return chargebee methods when they are enabled', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -274,7 +272,7 @@ describe('getNewMethods()', () => {
 
     it('should not return chargebee methods when they are disabled', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -300,7 +298,7 @@ describe('getNewMethods()', () => {
 describe('getUsedMethods()', () => {
     it('should return used methods: paypal and cards', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [
                 {
                     ID: '1',
@@ -370,7 +368,7 @@ describe('getUsedMethods()', () => {
 describe('getAvailablePaymentMethods()', () => {
     it('should return combination of new and used methods', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [
                 {
                     ID: '1',
@@ -446,7 +444,7 @@ describe('getAvailablePaymentMethods()', () => {
 describe('getLastUsedMethod()', () => {
     it('should return last used method', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [
                 {
                     ID: '1',
@@ -521,7 +519,7 @@ describe('getLastUsedMethod()', () => {
 describe('getSavedMethodById()', () => {
     it('should return the correct saved method by id', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [
                 {
                     ID: '1',
@@ -640,12 +638,15 @@ describe('getSavedMethodById()', () => {
 describe('initializePaymentMethods()', () => {
     it('should correctly initialize payment methods', async () => {
         const apiMock = jest.fn();
-        const paymentMethodStatus: PaymentMethodStatus = {
-            Card: true,
-            Paypal: true,
-            Apple: true,
-            Cash: true,
-            Bitcoin: true,
+        const paymentMethodStatus: PaymentStatus = {
+            CountryCode: 'CH',
+            VendorStates: {
+                Card: true,
+                Paypal: true,
+                Apple: true,
+                Cash: true,
+                Bitcoin: true,
+            },
         };
 
         const paymentMethods: SavedPaymentMethod[] = [
@@ -697,7 +698,7 @@ describe('initializePaymentMethods()', () => {
             flow: 'subscription' as PaymentMethodFlow,
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             paymentsApi: {
-                statusExtendedAutomatic: () => paymentMethodStatus,
+                paymentStatus: () => paymentMethodStatus,
             } as any as PaymentsApi,
             selectedPlanName: undefined,
             billingPlatform: undefined,
@@ -716,12 +717,15 @@ describe('initializePaymentMethods()', () => {
     it('should correctly initialize payment methods when user is not authenticated', async () => {
         const apiMock = jest.fn();
 
-        const paymentMethodStatus: PaymentMethodStatus = {
-            Card: true,
-            Paypal: true,
-            Apple: true,
-            Cash: true,
-            Bitcoin: true,
+        const paymentMethodStatus: PaymentStatus = {
+            CountryCode: 'CH',
+            VendorStates: {
+                Card: true,
+                Paypal: true,
+                Apple: true,
+                Cash: true,
+                Bitcoin: true,
+            },
         };
 
         apiMock.mockImplementation(({ url }) => {
@@ -744,7 +748,7 @@ describe('initializePaymentMethods()', () => {
             flow: 'subscription' as PaymentMethodFlow,
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             paymentsApi: {
-                statusExtendedAutomatic: () => paymentMethodStatus,
+                paymentStatus: () => paymentMethodStatus,
             } as any as PaymentsApi,
             selectedPlanName: undefined,
             billingPlatform: undefined,
@@ -766,7 +770,7 @@ describe('Cash', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -784,11 +788,11 @@ describe('Cash', () => {
     });
 
     it('should not display cash if status is false', () => {
-        const st = { ...status, Cash: false };
+        const st = { ...status, VendorStates: { ...status.VendorStates, Cash: false } };
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: st,
+            paymentStatus: st,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -807,7 +811,7 @@ describe('Cash', () => {
 
     it.each(signupFlows)('should not display cash in signup flows', (flow) => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -828,7 +832,7 @@ describe('Cash', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -852,7 +856,7 @@ describe('Cash', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -876,7 +880,7 @@ describe('Cash', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -899,7 +903,7 @@ describe('Chargebee Bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -917,11 +921,11 @@ describe('Chargebee Bitcoin', () => {
     });
 
     it('should not display bitcoin if status is false', () => {
-        const st = { ...status, Bitcoin: false };
+        const st = { ...status, VendorStates: { ...status.VendorStates, Bitcoin: false } };
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: st,
+            paymentStatus: st,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -948,7 +952,7 @@ describe('Chargebee Bitcoin', () => {
         'add-paypal',
     ] as PaymentMethodFlow[])('should not display bitcoin in %s flow', (flow) => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -969,7 +973,7 @@ describe('Chargebee Bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: MIN_BITCOIN_AMOUNT - 1,
@@ -992,7 +996,7 @@ describe('Chargebee Bitcoin', () => {
             const flow: PaymentMethodFlow = 'subscription';
 
             const methods = new PaymentMethods({
-                paymentMethodStatus: status,
+                paymentStatus: status,
                 paymentMethods: [],
                 chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
                 amount: 500,
@@ -1014,7 +1018,7 @@ describe('Chargebee Bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -1038,7 +1042,7 @@ describe('Chargebee Bitcoin', () => {
         const chargebeeUserExists = 0;
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1062,7 +1066,7 @@ describe('Chargebee Bitcoin', () => {
         const chargebeeUserExists = 1;
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1083,7 +1087,7 @@ describe('Chargebee Bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1110,7 +1114,7 @@ describe('Chargebee Bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1135,7 +1139,7 @@ describe('Chargebee Bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1165,7 +1169,7 @@ describe('Chargebee Bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1195,7 +1199,7 @@ describe('Chargebee Bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1221,7 +1225,7 @@ describe('Chargebee Bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1249,7 +1253,7 @@ describe('Chargebee Bitcoin', () => {
         });
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1273,7 +1277,7 @@ describe('Chargebee Bitcoin', () => {
         });
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1299,7 +1303,7 @@ describe('Chargebee Bitcoin', () => {
         });
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1321,7 +1325,7 @@ describe('Chargebee Bitcoin', () => {
 describe('Bitcoin', () => {
     it('should NOT be present when chargebee-bitcoin is available', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1341,7 +1345,7 @@ describe('Bitcoin', () => {
 
     it('should be available when INHOUSE_FORCED', () => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -1366,7 +1370,7 @@ describe('Bitcoin', () => {
         const chargebeeUserExists = 0;
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1388,7 +1392,7 @@ describe('Bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: st,
+            paymentStatus: st,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1415,7 +1419,7 @@ describe('Bitcoin', () => {
         'add-paypal',
     ] as PaymentMethodFlow[])('should not display bitcoin in %s flow', (flow) => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1436,7 +1440,7 @@ describe('Bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: MIN_BITCOIN_AMOUNT - 1,
@@ -1459,7 +1463,7 @@ describe('Bitcoin', () => {
             const flow: PaymentMethodFlow = 'subscription';
 
             const methods = new PaymentMethods({
-                paymentMethodStatus: status,
+                paymentStatus: status,
                 paymentMethods: [],
                 chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
                 amount: 500,
@@ -1483,7 +1487,7 @@ describe('Bitcoin', () => {
         });
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -1507,7 +1511,7 @@ describe('Bitcoin', () => {
         });
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -1531,7 +1535,7 @@ describe('Bitcoin', () => {
         });
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -1555,7 +1559,7 @@ describe('Bitcoin', () => {
         });
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -1604,7 +1608,7 @@ describe('Apple Pay', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
@@ -1627,7 +1631,7 @@ describe('Apple Pay', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
@@ -1651,7 +1655,7 @@ describe('Apple Pay', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
@@ -1674,7 +1678,7 @@ describe('Apple Pay', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT - 1,
@@ -1704,7 +1708,7 @@ describe('Apple Pay', () => {
         'subscription',
     ] as PaymentMethodFlow[])('should display Apple Pay for allowed flow %s', (flow) => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
@@ -1727,7 +1731,7 @@ describe('Apple Pay', () => {
         'should not display Apple Pay for disallowed flow %s',
         (flow) => {
             const methods = new PaymentMethods({
-                paymentMethodStatus: status,
+                paymentStatus: status,
                 paymentMethods: [],
                 chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
                 amount: MIN_APPLE_PAY_AMOUNT,
@@ -1753,7 +1757,7 @@ describe('Apple Pay', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
@@ -1776,7 +1780,7 @@ describe('Apple Pay', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT,
@@ -1799,7 +1803,7 @@ describe('Apple Pay', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: MIN_APPLE_PAY_AMOUNT * 10, // Much higher than minimum
@@ -1824,7 +1828,7 @@ describe('Chargebee card', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1845,7 +1849,7 @@ describe('Chargebee card', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -1869,7 +1873,7 @@ describe('Chargebee card', () => {
         const chargebeeUserExists = 0;
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1893,7 +1897,7 @@ describe('Chargebee card', () => {
         const chargebeeUserExists = 1;
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1912,11 +1916,11 @@ describe('Chargebee card', () => {
     });
 
     it('should not display chargebee card if status is false', () => {
-        const st = { ...status, Card: false };
+        const st = { ...status, VendorStates: { ...status.VendorStates, Card: false } };
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: st,
+            paymentStatus: st,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1937,7 +1941,7 @@ describe('Chargebee card', () => {
         const flow: PaymentMethodFlow = 'invoice';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1958,7 +1962,7 @@ describe('Chargebee card', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -1981,7 +1985,7 @@ describe('Chargebee PayPal', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -2002,7 +2006,7 @@ describe('Chargebee PayPal', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -2028,7 +2032,7 @@ describe('Chargebee PayPal', () => {
         const chargebeeUserExists = 0;
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -2052,7 +2056,7 @@ describe('Chargebee PayPal', () => {
         const chargebeeUserExists = 1;
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -2074,7 +2078,7 @@ describe('Chargebee PayPal', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [
                 {
                     ID: '123',
@@ -2106,7 +2110,7 @@ describe('Chargebee PayPal', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: MIN_PAYPAL_AMOUNT_CHARGEBEE - 1,
@@ -2127,7 +2131,7 @@ describe('Chargebee PayPal', () => {
         const flow: PaymentMethodFlow = 'invoice';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: MIN_PAYPAL_AMOUNT_CHARGEBEE - 1,
@@ -2145,11 +2149,11 @@ describe('Chargebee PayPal', () => {
     });
 
     it('should disable paypal if status is false', () => {
-        const st = { ...status, Paypal: false };
+        const st = { ...status, VendorStates: { ...status.VendorStates, Paypal: false } };
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: st,
+            paymentStatus: st,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -2172,7 +2176,7 @@ describe('SEPA', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
             amount: 500,
@@ -2195,7 +2199,7 @@ describe('SEPA', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -2224,7 +2228,7 @@ describe('SEPA', () => {
         'signup-wallet',
     ] as PaymentMethodFlow[])('should offer SEPA for %s flow', (flow) => {
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -2247,7 +2251,7 @@ describe('SEPA', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -2272,7 +2276,7 @@ describe('SEPA', () => {
         const enableSepaFalse = false;
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -2295,7 +2299,7 @@ describe('SEPA', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -2318,7 +2322,7 @@ describe('SEPA', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -2341,7 +2345,7 @@ describe('SEPA', () => {
         const flow: PaymentMethodFlow = 'signup-v2';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,
@@ -2366,7 +2370,7 @@ describe('SEPA', () => {
         const flow: PaymentMethodFlow = 'signup-v2';
 
         const methods = new PaymentMethods({
-            paymentMethodStatus: status,
+            paymentStatus: status,
             paymentMethods: [],
             chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
             amount: 500,

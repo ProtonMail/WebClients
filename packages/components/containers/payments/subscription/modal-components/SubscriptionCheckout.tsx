@@ -76,7 +76,7 @@ export const useAvailableCurrenciesForPlan = (plan: Plan | undefined, subscripti
     const { getAvailableCurrencies } = useCurrencies();
 
     return getAvailableCurrencies({
-        status: paymentStatus,
+        paymentStatus,
         subscription,
         user,
         plans,

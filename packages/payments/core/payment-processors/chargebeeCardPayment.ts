@@ -21,7 +21,7 @@ import type {
     ChargeableV5PaymentParameters,
     ChargebeeFetchedPaymentToken,
     ForceEnableChargebee,
-    PaymentMethodStatusExtended,
+    PaymentStatus,
     V5PaymentToken,
 } from '../interface';
 import { type ChargebeeIframeEvents, type ChargebeeIframeHandles } from '../interface';
@@ -66,16 +66,16 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
         private events: ChargebeeIframeEvents,
         public verifyOnly: boolean,
         private forceEnableChargebee: ForceEnableChargebee,
-        paymentsStatus: PaymentMethodStatusExtended | undefined,
+        paymentStatus: PaymentStatus | undefined,
         public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
     ) {
         super(
             {
                 countryCode:
-                    paymentsStatus?.CountryCode && isAllowedCountry(paymentsStatus.CountryCode)
-                        ? paymentsStatus?.CountryCode
+                    paymentStatus?.CountryCode && isAllowedCountry(paymentStatus.CountryCode)
+                        ? paymentStatus?.CountryCode
                         : 'US',
-                postalCode: paymentsStatus?.ZipCode ?? '',
+                postalCode: paymentStatus?.ZipCode ?? '',
                 submitted: false,
             },
             amountAndCurrency
