@@ -55,7 +55,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
@@ -123,7 +123,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
@@ -190,7 +190,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             },
@@ -240,7 +240,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             },
@@ -307,7 +307,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
@@ -378,7 +378,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             },
@@ -448,7 +448,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
@@ -518,7 +518,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
@@ -582,7 +582,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
@@ -651,7 +651,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
@@ -694,7 +694,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
@@ -730,7 +730,7 @@ describe('useAccessiblePlans', () => {
                     countries: 50,
                 },
             },
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },

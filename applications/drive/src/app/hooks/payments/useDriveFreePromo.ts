@@ -25,7 +25,7 @@ export function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
     const codesKey = useMemo(() => codes?.join(',') ?? '', [codes]);
     const currency = getPreferredCurrency({
         user,
-        status: paymentStatus,
+        paymentStatus,
         plans: plansResult?.plans,
         paramPlanName: PLANS.DRIVE,
     });

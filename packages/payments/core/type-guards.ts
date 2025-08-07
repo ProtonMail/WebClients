@@ -10,8 +10,6 @@ import type {
     PayPalDetails,
     PaymentMethodApplePay,
     PaymentMethodSepa,
-    PaymentMethodStatus,
-    PaymentMethodStatusExtended,
     PaymentMethodType,
     PaypalPayment,
     PlainPaymentMethodType,
@@ -43,16 +41,6 @@ export function isPaypalPayment(payment: any): payment is PaypalPayment {
 
 export function isTokenPaymentMethod(data: TokenPaymentMethod | undefined): data is TokenPaymentMethod {
     return !!data && isTokenPayment(data.Payment);
-}
-
-export function isPaymentMethodStatusExtended(
-    obj: PaymentMethodStatus | PaymentMethodStatusExtended | undefined
-): obj is PaymentMethodStatusExtended {
-    if (!obj) {
-        return false;
-    }
-
-    return 'VendorStates' in obj && !!obj.VendorStates;
 }
 
 export function isPaypalDetails(obj: SavedCardDetails | PayPalDetails | SepaDetails | undefined): obj is PayPalDetails {

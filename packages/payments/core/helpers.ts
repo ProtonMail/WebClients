@@ -3,22 +3,13 @@ import { ChargebeeEnabled, type User, type UserModel } from '@proton/shared/lib/
 import { type FeatureFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address/billing-address';
 import { type ADDON_NAMES, DEFAULT_CURRENCY, PLANS, signupFlows } from './constants';
-import type {
-    Currency,
-    Invoice,
-    PaymentMethodFlow,
-    PaymentMethodStatus,
-    PaymentMethodStatusExtended,
-    PlainPaymentMethodType,
-    PlanIDs,
-} from './interface';
+import type { Currency, Invoice, PaymentMethodFlow, PaymentStatus, PlainPaymentMethodType, PlanIDs } from './interface';
 import { type FreeSubscription } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
 import { type Plan } from './plan/interface';
 import { type Subscription } from './subscription/interface';
-import { isPaymentMethodStatusExtended, isValidPlanName } from './type-guards';
+import { isValidPlanName } from './type-guards';
 
 export function isChargebeePaymentMethod(paymentMethodType: PlainPaymentMethodType | undefined) {
     if (!paymentMethodType) {
@@ -85,14 +76,14 @@ export function getFallbackCurrency(currency: Currency): Currency {
 
 function getMaybeRegionalPlansCurrency(
     plans: Plan[] | undefined,
-    status: PaymentMethodStatusExtended | undefined
+    paymentStatus: PaymentStatus | undefined
 ): Currency | null {
     const plansCurrency = plans?.[0]?.Currency;
     const maybeRegionalPlansCurrency =
         !!plansCurrency &&
         isRegionalCurrency(plansCurrency) &&
-        !!status &&
-        plansCurrency === mapCountryToRegionalCurrency(status?.CountryCode, true)
+        !!paymentStatus &&
+        plansCurrency === mapCountryToRegionalCurrency(paymentStatus?.CountryCode, true)
             ? plansCurrency
             : null;
 
@@ -100,14 +91,14 @@ function getMaybeRegionalPlansCurrency(
 }
 
 export function getSupportedRegionalCurrencies({
-    status,
+    paymentStatus,
     plans,
     selectedPlanName,
     user,
     subscription,
     enableNewBatchCurrencies,
 }: {
-    status?: PaymentMethodStatusExtended;
+    paymentStatus?: PaymentStatus;
     plans?: Plan[];
     selectedPlanName?: PLANS | ADDON_NAMES;
     user?: User;
@@ -118,15 +109,15 @@ export function getSupportedRegionalCurrencies({
         return [];
     }
 
-    const statusCurrency = !!status
-        ? mapCountryToRegionalCurrency(status.CountryCode, enableNewBatchCurrencies)
+    const statusCurrency = !!paymentStatus
+        ? mapCountryToRegionalCurrency(paymentStatus.CountryCode, enableNewBatchCurrencies)
         : undefined;
 
     const currencies = [
         statusCurrency,
         subscription?.Currency,
         user?.Currency,
-        getMaybeRegionalPlansCurrency(plans, status),
+        getMaybeRegionalPlansCurrency(plans, paymentStatus),
     ]
         .filter(isTruthy)
         .filter(isRegionalCurrency)
@@ -144,7 +135,7 @@ export function getSupportedRegionalCurrencies({
 
 export type GetPreferredCurrencyParams = Parameters<typeof getPreferredCurrency>[0];
 export function getPreferredCurrency({
-    status,
+    paymentStatus,
     plans,
     paramCurrency,
     paramPlanName,
@@ -153,7 +144,7 @@ export function getPreferredCurrency({
     selectedPlan,
     enableNewBatchCurrencies,
 }: {
-    status?: PaymentMethodStatusExtended;
+    paymentStatus?: PaymentStatus;
     plans?: Plan[];
     selectedPlan?: Plan;
     paramCurrency?: Currency;
@@ -163,8 +154,8 @@ export function getPreferredCurrency({
     enableNewBatchCurrencies: boolean;
 }): Currency {
     const statusCurrency =
-        status && user?.ChargebeeUser !== ChargebeeEnabled.INHOUSE_FORCED
-            ? mapCountryToRegionalCurrency(status.CountryCode, enableNewBatchCurrencies)
+        paymentStatus && user?.ChargebeeUser !== ChargebeeEnabled.INHOUSE_FORCED
+            ? mapCountryToRegionalCurrency(paymentStatus.CountryCode, enableNewBatchCurrencies)
             : undefined;
 
     const userCurrency =
@@ -176,7 +167,7 @@ export function getPreferredCurrency({
         userCurrency,
         subscription?.Currency,
         statusCurrency,
-        getMaybeRegionalPlansCurrency(plans, status),
+        getMaybeRegionalPlansCurrency(plans, paymentStatus),
     ].filter(isTruthy);
 
     const fallbackResult = (() => {
@@ -229,7 +220,7 @@ export function getPreferredCurrency({
 }
 
 export function getAvailableCurrencies({
-    status,
+    paymentStatus,
     user,
     subscription,
     plans,
@@ -237,7 +228,7 @@ export function getAvailableCurrencies({
     paramCurrency,
     enableNewBatchCurrencies,
 }: {
-    status?: PaymentMethodStatusExtended;
+    paymentStatus?: PaymentStatus;
     user?: User;
     subscription?: Subscription | FreeSubscription;
     plans?: Plan[];
@@ -250,7 +241,7 @@ export function getAvailableCurrencies({
     }
 
     const regionalCurrencies = getSupportedRegionalCurrencies({
-        status,
+        paymentStatus,
         plans,
         selectedPlanName,
         user,
@@ -259,17 +250,6 @@ export function getAvailableCurrencies({
     });
 
     return [...mainCurrencies, ...regionalCurrencies];
-}
-
-export function extendStatus(status: PaymentMethodStatus | PaymentMethodStatusExtended): PaymentMethodStatusExtended {
-    if (!isPaymentMethodStatusExtended(status)) {
-        return {
-            VendorStates: status,
-            CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
-        };
-    }
-
-    return status;
 }
 
 export function isSignupFlow(flow: PaymentMethodFlow): boolean {

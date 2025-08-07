@@ -11,21 +11,21 @@ import {
     isRegionalCurrency,
     mainCurrencies,
 } from './helpers';
-import { type PaymentMethodStatusExtended } from './interface';
+import { type PaymentStatus } from './interface';
 import { type Plan } from './plan/interface';
 import { type Subscription } from './subscription/interface';
 
 describe('payments core helpers', () => {
     describe('getPreferredCurrency', () => {
         it.each(mainCurrencies)('should always respect param when currency is main - %s', (currency) => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     paramCurrency: currency,
                     enableNewBatchCurrencies: true,
                 })
@@ -33,14 +33,14 @@ describe('payments core helpers', () => {
         });
 
         it('should respect BRL param if status currency is the same', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     paramCurrency: 'BRL',
                     enableNewBatchCurrencies: true,
                 })
@@ -48,14 +48,14 @@ describe('payments core helpers', () => {
         });
 
         it('should return fallback currency if BRL is requested via param but status currency is not BRL', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     paramCurrency: 'BRL',
                     enableNewBatchCurrencies: true,
                 })
@@ -72,14 +72,14 @@ describe('payments core helpers', () => {
                     isPaid: true,
                 } as UserModel;
 
-                const status: PaymentMethodStatusExtended = {
+                const status: PaymentStatus = {
                     CountryCode: 'US',
                     VendorStates: {} as any,
                 };
 
                 expect(
                     getPreferredCurrency({
-                        status,
+                        paymentStatus: status,
                         paramCurrency: Currency,
                         user,
                         enableNewBatchCurrencies: true,
@@ -100,14 +100,14 @@ describe('payments core helpers', () => {
                     Currency,
                 } as Subscription;
 
-                const status: PaymentMethodStatusExtended = {
+                const status: PaymentStatus = {
                     CountryCode: 'US',
                     VendorStates: {} as any,
                 };
 
                 expect(
                     getPreferredCurrency({
-                        status,
+                        paymentStatus: status,
                         paramCurrency: Currency,
                         user,
                         subscription,
@@ -118,7 +118,7 @@ describe('payments core helpers', () => {
         );
 
         it('should return regional currency if there is no param currency', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -134,7 +134,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     plans,
                     enableNewBatchCurrencies: true,
                 })
@@ -142,7 +142,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return fallback currency if plans are provided but do not have the regional currency', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -155,7 +155,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     plans,
                     enableNewBatchCurrencies: true,
                 })
@@ -163,7 +163,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return the fallback currency if status is not regional', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -176,7 +176,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     plans,
                     enableNewBatchCurrencies: true,
                 })
@@ -184,7 +184,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return main currency from the plan as a fallback', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -200,7 +200,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     plans,
                     enableNewBatchCurrencies: true,
                 })
@@ -208,7 +208,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return the subscription currency if subscription is present', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -219,7 +219,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     subscription,
                     enableNewBatchCurrencies: true,
                 })
@@ -227,7 +227,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return the subscription currency if status is not regional', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -247,7 +247,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     plans,
                     subscription,
                     enableNewBatchCurrencies: true,
@@ -256,7 +256,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return user currency if user is paid', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -268,7 +268,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     user,
                     enableNewBatchCurrencies: true,
                 })
@@ -276,7 +276,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return user currency if user has regional currency', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             };
@@ -288,7 +288,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     user,
                     enableNewBatchCurrencies: true,
                 })
@@ -296,7 +296,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return user currency if user has positive balance', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -309,7 +309,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     user,
                     enableNewBatchCurrencies: true,
                 })
@@ -317,7 +317,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return status currency if user is free and has no credits', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -330,7 +330,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     user,
                     enableNewBatchCurrencies: true,
                 })
@@ -338,7 +338,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return the user currency if status is not regional', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -359,7 +359,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     plans,
                     user,
                     enableNewBatchCurrencies: true,
@@ -368,14 +368,14 @@ describe('payments core helpers', () => {
         });
 
         it('should not show regional currencies to inhouse forced users', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     user: {
                         Currency: 'USD',
                         ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED,
@@ -387,7 +387,7 @@ describe('payments core helpers', () => {
         });
 
         it('should use fallback currency if plan param does not support the currency', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -405,7 +405,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     plans,
                     paramPlanName: PLANS.VPN_BUSINESS,
                     enableNewBatchCurrencies: true,
@@ -414,7 +414,7 @@ describe('payments core helpers', () => {
         });
 
         it('should use fallback currency if plan param does not support the currency even if the param currency is provided', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -432,7 +432,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     plans,
                     paramPlanName: PLANS.VPN_BUSINESS,
 
@@ -478,7 +478,7 @@ describe('payments core helpers', () => {
             const status = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
-            } as PaymentMethodStatusExtended;
+            } as PaymentStatus;
 
             const user = {
                 Currency: 'BRL',
@@ -493,7 +493,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     subscription,
                     user,
                     plans,
@@ -534,7 +534,7 @@ describe('payments core helpers', () => {
                     user,
                     plans,
                     subscription,
-                    status,
+                    paymentStatus: status,
                     enableNewBatchCurrencies: true,
                 })
             ).toEqual('CHF');
@@ -554,7 +554,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     plans,
                     enableNewBatchCurrencies: false,
                 })
@@ -562,7 +562,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return regional currency if free plan is selected', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -571,7 +571,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getPreferredCurrency({
-                    status,
+                    paymentStatus: status,
                     plans,
                     enableNewBatchCurrencies: true,
                     paramPlanName: PLANS.FREE,
@@ -582,21 +582,21 @@ describe('payments core helpers', () => {
 
     describe('getAvailableCurrencies', () => {
         it('should return regional currency', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
 
             expect(
                 getAvailableCurrencies({
-                    status,
+                    paymentStatus: status,
                     enableNewBatchCurrencies: true,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
 
         it('should not return regional currency if plans do not have it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -609,7 +609,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getAvailableCurrencies({
-                    status,
+                    paymentStatus: status,
                     plans,
                     enableNewBatchCurrencies: true,
                 })
@@ -617,7 +617,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return regional currency if plans have it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -630,7 +630,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getAvailableCurrencies({
-                    status,
+                    paymentStatus: status,
                     plans,
                     enableNewBatchCurrencies: true,
                 })
@@ -638,7 +638,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return regional currency when user has it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -649,7 +649,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getAvailableCurrencies({
-                    status,
+                    paymentStatus: status,
                     user,
                     enableNewBatchCurrencies: true,
                 })
@@ -657,7 +657,7 @@ describe('payments core helpers', () => {
         });
 
         it('should not return regional currency when user has it and plans do not have it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -674,7 +674,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getAvailableCurrencies({
-                    status,
+                    paymentStatus: status,
                     user,
                     plans,
                     enableNewBatchCurrencies: true,
@@ -683,7 +683,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return regional currency when user has it and plans have it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -700,7 +700,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getAvailableCurrencies({
-                    status,
+                    paymentStatus: status,
                     user,
                     plans,
                     enableNewBatchCurrencies: true,
@@ -709,7 +709,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return regional currency when subscription has it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -720,7 +720,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getAvailableCurrencies({
-                    status,
+                    paymentStatus: status,
                     subscription,
                     enableNewBatchCurrencies: true,
                 })
@@ -728,7 +728,7 @@ describe('payments core helpers', () => {
         });
 
         it('should not return regional currency when subscription has it and plans do not have it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -745,7 +745,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getAvailableCurrencies({
-                    status,
+                    paymentStatus: status,
                     subscription,
                     plans,
                     enableNewBatchCurrencies: true,
@@ -754,7 +754,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return regional currency when subscription has it and plans have it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -771,7 +771,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getAvailableCurrencies({
-                    status,
+                    paymentStatus: status,
                     subscription,
                     plans,
                     enableNewBatchCurrencies: true,
@@ -780,7 +780,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return two regional currencies if status and user have it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -791,7 +791,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getAvailableCurrencies({
-                    status,
+                    paymentStatus: status,
                     user,
                     enableNewBatchCurrencies: true,
                 })
@@ -801,7 +801,7 @@ describe('payments core helpers', () => {
         it.each(mainCurrencies)(
             'should return only the main currencies if user provides main currency as currency param - %s',
             (mainCurrencyParam) => {
-                const status: PaymentMethodStatusExtended = {
+                const status: PaymentStatus = {
                     CountryCode: 'BR',
                     VendorStates: {} as any,
                 };
@@ -812,7 +812,7 @@ describe('payments core helpers', () => {
 
                 expect(
                     getAvailableCurrencies({
-                        status,
+                        paymentStatus: status,
                         user,
                         paramCurrency: mainCurrencyParam,
                         enableNewBatchCurrencies: true,
@@ -824,14 +824,14 @@ describe('payments core helpers', () => {
 
     describe('getSupportedRegionalCurrencies', () => {
         it('should return empty arre if user inhouse forced', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
 
             expect(
                 getSupportedRegionalCurrencies({
-                    status,
+                    paymentStatus: status,
                     user: {
                         Currency: 'ARS' as any,
                         ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED,
@@ -842,21 +842,21 @@ describe('payments core helpers', () => {
         });
 
         it('should return regional currency if regional currencies', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
 
             expect(
                 getSupportedRegionalCurrencies({
-                    status,
+                    paymentStatus: status,
                     enableNewBatchCurrencies: true,
                 })
             ).toEqual(['BRL']);
         });
 
         it('should return regional currency if user has it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -867,7 +867,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
-                    status,
+                    paymentStatus: status,
                     user,
                     enableNewBatchCurrencies: true,
                 })
@@ -875,7 +875,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return regional currency if subscription has it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -886,7 +886,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
-                    status,
+                    paymentStatus: status,
                     subscription,
                     enableNewBatchCurrencies: true,
                 })
@@ -894,7 +894,7 @@ describe('payments core helpers', () => {
         });
 
         it('should return regional currency if plans have it', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -907,7 +907,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
-                    status,
+                    paymentStatus: status,
                     plans,
                     enableNewBatchCurrencies: true,
                 })
@@ -915,7 +915,7 @@ describe('payments core helpers', () => {
         });
 
         it('should not return regional currency if plans have it but status does not', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
             };
@@ -928,7 +928,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
-                    status,
+                    paymentStatus: status,
                     plans,
                     enableNewBatchCurrencies: true,
                 })
@@ -936,7 +936,7 @@ describe('payments core helpers', () => {
         });
 
         it('should not return regional currencies if status has it but plans do not', () => {
-            const status: PaymentMethodStatusExtended = {
+            const status: PaymentStatus = {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             };
@@ -949,7 +949,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
-                    status,
+                    paymentStatus: status,
                     plans,
                     enableNewBatchCurrencies: true,
                 })
@@ -1122,7 +1122,7 @@ describe('payments core helpers', () => {
         ])(`should return two regional currencies - case $case`, ({ status, user, subscription, plans, expected }) => {
             expect(
                 getSupportedRegionalCurrencies({
-                    status,
+                    paymentStatus: status,
                     user,
                     subscription,
                     plans,
@@ -1165,7 +1165,7 @@ describe('payments core helpers', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
-                    status,
+                    paymentStatus: status,
                     user,
                     subscription,
                     plans,
@@ -1189,7 +1189,7 @@ describe('payments core helpers', () => {
 
         expect(
             getSupportedRegionalCurrencies({
-                status,
+                paymentStatus: status,
                 plans,
                 enableNewBatchCurrencies: false,
             })

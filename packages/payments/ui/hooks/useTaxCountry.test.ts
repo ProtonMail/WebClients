@@ -21,10 +21,10 @@ describe('useTaxCountry hook', () => {
     });
 
     describe('Core Functionality', () => {
-        it('should initialize with statusExtended values when provided', () => {
+        it('should initialize with paymentStatus values when provided', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                     },
@@ -36,17 +36,17 @@ describe('useTaxCountry hook', () => {
             expect(result.current.federalStateCode).toBe('CA');
         });
 
-        it('should initialize with default values when statusExtended is not provided', () => {
+        it('should initialize with default values when paymentStatus is not provided', () => {
             const { result } = renderHook(() => useTaxCountry({ zipCodeBackendValid: true }));
 
             expect(result.current.selectedCountryCode).toBe(DEFAULT_TAX_BILLING_ADDRESS.CountryCode);
             expect(result.current.federalStateCode).toBe(null);
         });
 
-        it('should update billing address when statusExtended changes', () => {
+        it('should update billing address when paymentStatus changes', () => {
             const { result, rerender } = renderHook((props) => useTaxCountry(props), {
                 initialProps: {
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                     },
@@ -60,7 +60,7 @@ describe('useTaxCountry hook', () => {
 
             // Update props
             rerender({
-                statusExtended: {
+                paymentStatus: {
                     CountryCode: 'CA',
                     State: 'ON',
                 },
@@ -72,11 +72,11 @@ describe('useTaxCountry hook', () => {
             expect(result.current.federalStateCode).toBe('ON');
         });
 
-        it('should not update billing address if statusExtended values are the same', () => {
+        it('should not update billing address if paymentStatus values are the same', () => {
             const onBillingAddressChange = jest.fn();
             const { rerender } = renderHook((props) => useTaxCountry(props), {
                 initialProps: {
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                     },
@@ -87,7 +87,7 @@ describe('useTaxCountry hook', () => {
 
             // Re-render with same values
             rerender({
-                statusExtended: {
+                paymentStatus: {
                     CountryCode: 'US',
                     State: 'CA',
                 },
@@ -104,7 +104,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'AL',
                     },
@@ -158,7 +158,7 @@ describe('useTaxCountry hook', () => {
             expect(result.current.zipCode).toBe('90210');
         });
 
-        it('should use default values when no statusExtended props provided', () => {
+        it('should use default values when no paymentStatus props provided', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     zipCodeBackendValid: true,
@@ -175,7 +175,7 @@ describe('useTaxCountry hook', () => {
             const { result, rerender } = renderHook((props) => useTaxCountry(props), {
                 initialProps: {
                     onBillingAddressChange,
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                         ZipCode: '90000', // Some zip code that might be invalid
@@ -190,7 +190,7 @@ describe('useTaxCountry hook', () => {
             // When zipCodeBackendValid becomes true, should override with previous valid zip code
             rerender({
                 onBillingAddressChange,
-                statusExtended: {
+                paymentStatus: {
                     CountryCode: 'US',
                     State: 'CA',
                     ZipCode: '90000',
@@ -209,7 +209,7 @@ describe('useTaxCountry hook', () => {
             const { result, rerender } = renderHook((props) => useTaxCountry(props), {
                 initialProps: {
                     onBillingAddressChange,
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                         ZipCode: '90210',
@@ -224,7 +224,7 @@ describe('useTaxCountry hook', () => {
             // When zipCodeBackendValid is already true, should not override
             rerender({
                 onBillingAddressChange,
-                statusExtended: {
+                paymentStatus: {
                     CountryCode: 'US',
                     State: 'CA',
                     ZipCode: '90210',
@@ -242,7 +242,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                         ZipCode: '90210',
@@ -280,7 +280,7 @@ describe('useTaxCountry hook', () => {
 
             const { result } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         ZipCode: '90210',
                     },
@@ -308,7 +308,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                     },
@@ -329,7 +329,7 @@ describe('useTaxCountry hook', () => {
         it('should validate missing state for countries that require states', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         // No State provided
                     },
@@ -346,7 +346,7 @@ describe('useTaxCountry hook', () => {
             // Missing country
             const { result: missingCountry } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: '',
                     },
                     zipCodeBackendValid: true,
@@ -358,7 +358,7 @@ describe('useTaxCountry hook', () => {
             // Missing zip code for US
             const { result: missingZipUS } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                         // No ZipCode
@@ -372,7 +372,7 @@ describe('useTaxCountry hook', () => {
             // Missing zip code for international country
             const { result: missingZipIntl } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'GB',
                         // No ZipCode
                     },
@@ -388,7 +388,7 @@ describe('useTaxCountry hook', () => {
             // Invalid zip code for US
             const { result: invalidUS } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                         ZipCode: 'invalid',
@@ -402,7 +402,7 @@ describe('useTaxCountry hook', () => {
             // Invalid zip code for international
             const { result: invalidIntl } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'GB',
                         ZipCode: 'invalid',
                     },
@@ -468,7 +468,7 @@ describe('useTaxCountry hook', () => {
         it('should set default postal codes for state changes', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'AL',
                     },
@@ -487,7 +487,7 @@ describe('useTaxCountry hook', () => {
         it('should handle invalid state codes gracefully', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'AL',
                     },
@@ -508,7 +508,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                     },
@@ -536,7 +536,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                     },
@@ -590,7 +590,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange: throwingCallback,
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                     },
@@ -641,7 +641,7 @@ describe('useTaxCountry hook', () => {
         it('should handle empty strings correctly', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: '',
                         State: '',
                         ZipCode: '',
@@ -667,7 +667,7 @@ describe('useTaxCountry hook', () => {
         it('should integrate zipCodeBackendValid flag correctly', () => {
             const { result: validResult } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                         ZipCode: '90210',
@@ -681,7 +681,7 @@ describe('useTaxCountry hook', () => {
 
             const { result: invalidResult } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                         ZipCode: '90210',
@@ -698,7 +698,7 @@ describe('useTaxCountry hook', () => {
             // Valid scenario
             const { result: valid } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                         ZipCode: '90210',
@@ -713,7 +713,7 @@ describe('useTaxCountry hook', () => {
             // Missing country
             const { result: missingCountry } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: '',
                     },
                     zipCodeBackendValid: true,
@@ -726,7 +726,7 @@ describe('useTaxCountry hook', () => {
             // Invalid zip code
             const { result: invalidZip } = renderHook(() =>
                 useTaxCountry({
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'US',
                         State: 'CA',
                         ZipCode: '90210',
@@ -784,7 +784,7 @@ describe('useTaxCountry hook', () => {
                 const { result } = renderHook(() =>
                     useTaxCountry({
                         onBillingAddressChange,
-                        statusExtended: {
+                        paymentStatus: {
                             CountryCode: 'US',
                             State: 'CA',
                             ZipCode: '90210',
@@ -813,7 +813,7 @@ describe('useTaxCountry hook', () => {
                 const { result } = renderHook(() =>
                     useTaxCountry({
                         onBillingAddressChange,
-                        statusExtended: {
+                        paymentStatus: {
                             CountryCode: 'US',
                             State: 'AL',
                         },
@@ -838,7 +838,7 @@ describe('useTaxCountry hook', () => {
                 const { result } = renderHook(() =>
                     useTaxCountry({
                         onBillingAddressChange,
-                        statusExtended: {
+                        paymentStatus: {
                             CountryCode: 'US',
                             State: 'CA',
                         },
@@ -855,12 +855,12 @@ describe('useTaxCountry hook', () => {
                 expect(onBillingAddressChange).toHaveBeenCalledTimes(0);
             });
 
-            it('should exclude ZipCode from initial billing address callback when statusExtended changes', () => {
+            it('should exclude ZipCode from initial billing address callback when paymentStatus changes', () => {
                 const onBillingAddressChange = jest.fn();
                 const { rerender } = renderHook((props) => useTaxCountry(props), {
                     initialProps: {
                         onBillingAddressChange,
-                        statusExtended: {
+                        paymentStatus: {
                             CountryCode: 'US',
                             State: 'CA',
                             ZipCode: '90210',
@@ -869,10 +869,10 @@ describe('useTaxCountry hook', () => {
                     },
                 });
 
-                // Update statusExtended - should trigger callback without ZipCode
+                // Update paymentStatus - should trigger callback without ZipCode
                 rerender({
                     onBillingAddressChange,
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'CA',
                         State: 'ON',
                         ZipCode: 'M5H 2N2',
@@ -898,7 +898,7 @@ describe('useTaxCountry hook', () => {
                 const { result } = renderHook(() =>
                     useTaxCountry({
                         onBillingAddressChange,
-                        statusExtended: {
+                        paymentStatus: {
                             CountryCode: 'US',
                             State: 'CA',
                             ZipCode: '90210',
@@ -924,7 +924,7 @@ describe('useTaxCountry hook', () => {
                 const { result } = renderHook(() =>
                     useTaxCountry({
                         onBillingAddressChange,
-                        statusExtended: {
+                        paymentStatus: {
                             CountryCode: 'US',
                             State: 'CA',
                         },
@@ -956,7 +956,7 @@ describe('useTaxCountry hook', () => {
                 const { result, rerender } = renderHook((props) => useTaxCountry(props), {
                     initialProps: {
                         onBillingAddressChange,
-                        statusExtended: {
+                        paymentStatus: {
                             CountryCode: 'US',
                             State: 'CA',
                             ZipCode: '90210',
@@ -982,7 +982,7 @@ describe('useTaxCountry hook', () => {
                 // Force re-render to pick up the new flag value
                 rerender({
                     onBillingAddressChange,
-                    statusExtended: {
+                    paymentStatus: {
                         CountryCode: 'CA',
                         State: 'AB',
                         ZipCode: 'T5J 2R7',

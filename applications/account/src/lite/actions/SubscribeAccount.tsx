@@ -30,7 +30,7 @@ import {
     FREE_PLAN,
     PLANS,
     PLAN_TYPES,
-    type PaymentMethodStatusExtended,
+    type PaymentStatus,
     fixPlanName,
     getAvailableSubscriptionActions,
     getHas2024OfferCoupon,
@@ -133,15 +133,15 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [organization, loadingOrganization] = useOrganization();
     const [error, setError] = useState({ title: '', message: '', error: '' });
-    const [paymentsStatus, setStatus] = useState<PaymentMethodStatusExtended>();
+    const [paymentStatus, setPaymentStatus] = useState<PaymentStatus>();
     const { paymentsApi } = usePaymentsApi();
 
     const canEdit = canPay(user);
 
     useEffect(() => {
         async function run() {
-            const status = await paymentsApi.statusExtendedAutomatic();
-            setStatus(status);
+            const status = await paymentsApi.paymentStatus();
+            setPaymentStatus(status);
         }
 
         void run();
@@ -153,7 +153,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
         loadingSubscription ||
         loadingPlans ||
         loadingOrganization ||
-        !paymentsStatus
+        !paymentStatus
     ) {
         return loader;
     }
@@ -370,7 +370,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
                                 onSubscribed={handleSuccess}
                                 onUnsubscribed={handleSuccess}
                                 onCancel={handleClose}
-                                paymentsStatus={paymentsStatus}
+                                paymentStatus={paymentStatus}
                                 onCheck={(data) => {
                                     // If the initial check completes, it's handled by the container itself
                                     if (data.model.initialCheckComplete) {
