@@ -15,6 +15,10 @@ interface Props extends MoveScheduledModalProps, ModalProps {
 }
 
 const MoveScheduledModal = ({ isMessage, onResolve, onReject, onCloseCustomAction, ...rest }: Props) => {
+    const text = isMessage
+        ? c('Info').t`Scheduled send of this message will be canceled.`
+        : c('Info').t`This conversation contains a scheduled message. Sending of this message will be canceled.`;
+
     const handleClose = () => {
         onCloseCustomAction?.();
         onReject();
@@ -30,10 +34,7 @@ const MoveScheduledModal = ({ isMessage, onResolve, onReject, onCloseCustomActio
             ]}
             {...rest}
         >
-            {isMessage
-                ? c('Info').t`Scheduled send of this message will be canceled.`
-                : c('Info')
-                      .t`This conversation contains a scheduled message. Sending of this message will be canceled.`}
+            {text}
         </Prompt>
     );
 };
