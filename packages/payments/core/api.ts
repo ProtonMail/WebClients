@@ -25,7 +25,7 @@ import type {
     WrappedCryptoPayment,
     WrappedPaypalPayment,
 } from './interface';
-import { type PaymentMethodStatusExtended } from './interface';
+import { type PaymentStatus } from './interface';
 import { formatPaymentMethods } from './methods';
 import { normalizePaymentMethodStatus } from './payment-status';
 import { PlanState } from './plan/constants';
@@ -36,13 +36,13 @@ import { FREE_PLAN } from './subscription/freePlans';
 import type { Subscription } from './subscription/interface';
 import { isTokenPaymentMethod, isV5PaymentToken } from './type-guards';
 
-export const queryPaymentMethodStatus = (version: PaymentsVersion) => ({
-    url: `payments/${version}/status`,
+export const queryPaymentMethodStatus = () => ({
+    url: `payments/v5/status`,
     method: 'get',
 });
 
 export async function getPaymentMethodStatus(api: Api) {
-    const result = await api<PaymentMethodStatusExtended>(queryPaymentMethodStatus('v5'));
+    const result = await api<PaymentStatus>(queryPaymentMethodStatus());
     return normalizePaymentMethodStatus(result);
 }
 

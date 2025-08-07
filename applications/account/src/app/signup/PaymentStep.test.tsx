@@ -1,6 +1,6 @@
 import { act, render } from '@testing-library/react';
 
-import type { PaymentMethodStatus } from '@proton/payments';
+import type { PaymentStatus } from '@proton/payments';
 import { CYCLE, DEFAULT_TAX_BILLING_ADDRESS, PLANS, PLAN_TYPES } from '@proton/payments';
 import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import {
@@ -20,20 +20,22 @@ import noop from '@proton/utils/noop';
 import type { Props } from './PaymentStep';
 import PaymentStep from './PaymentStep';
 
-let paymentMethodStatus: PaymentMethodStatus;
+let paymentStatus: PaymentStatus;
 beforeEach(() => {
     jest.clearAllMocks();
 
-    paymentMethodStatus = {
-        Card: true,
-        Paypal: true,
-        Apple: true,
-        Cash: true,
-        Bitcoin: true,
+    paymentStatus = {
+        VendorStates: {
+            Card: true,
+            Paypal: true,
+            Apple: true,
+            Cash: true,
+            Bitcoin: true,
+        },
+        CountryCode: 'CH',
     };
 
-    addApiMock('payments/v4/status', () => paymentMethodStatus);
-    addApiMock('payments/v5/status', () => paymentMethodStatus);
+    addApiMock('payments/v5/status', () => paymentStatus);
 });
 
 const PaymentStepContext = applyHOCs(

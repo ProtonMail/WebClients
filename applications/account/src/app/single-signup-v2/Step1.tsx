@@ -229,7 +229,7 @@ const Step1 = ({
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, options.planIDs) || FREE_PLAN;
 
     const availableCurrencies = getAvailableCurrencies({
-        status: model.paymentMethodStatusExtended,
+        paymentStatus: model.paymentStatus,
         plans: getAccessiblePlans({ planCards, audience, plans: model.plans }),
         user: model.session?.resumedSessionResult.User,
         subscription: model.session?.subscription,

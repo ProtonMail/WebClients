@@ -7,11 +7,7 @@ import {
     miniSerializeError,
 } from '@reduxjs/toolkit';
 
-import {
-    type PaymentMethodStatusExtended,
-    getPaymentMethodStatus,
-    normalizePaymentMethodStatus,
-} from '@proton/payments';
+import { type PaymentStatus, getPaymentMethodStatus } from '@proton/payments';
 import { type ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     cacheHelper,
@@ -29,7 +25,7 @@ import { type ModelState } from '../interface';
 const name = 'paymentStatus' as const;
 
 export interface PaymentStatusState {
-    [name]: ModelState<PaymentMethodStatusExtended>;
+    [name]: ModelState<PaymentStatus>;
 }
 
 type SliceState = PaymentStatusState[typeof name];
@@ -37,7 +33,7 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectPaymentStatus = (state: PaymentStatusState) => state.paymentStatus;
 
-export const changeBillingAddress = createAction<Pick<PaymentMethodStatusExtended, 'CountryCode' | 'State'>>(
+export const changeBillingAddress = createAction<Pick<PaymentStatus, 'CountryCode' | 'State'>>(
     'paymentStatus/changeBillingAddress'
 );
 
@@ -90,8 +86,7 @@ const thunk = ({ api: apiOverride }: { api?: Api } = {}): ThunkAction<
                 const api = apiOverride ?? extraArgument.api;
 
                 dispatch(slice.actions.pending());
-                const value = await getPaymentMethodStatus(api);
-                const normalizedPaymentStatus = normalizePaymentMethodStatus(value);
+                const normalizedPaymentStatus = await getPaymentMethodStatus(api);
                 dispatch(slice.actions.fulfilled(normalizedPaymentStatus));
                 return normalizedPaymentStatus;
             } catch (error) {

@@ -1,7 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
 import { componentsHookRenderer, componentsHookWrapper } from '@proton/components/containers/contacts/tests/render';
-import type { PaymentMethodStatusExtended, PaymentsApi, SavedPaymentMethod } from '@proton/payments';
+import type { PaymentStatus, PaymentsApi, SavedPaymentMethod } from '@proton/payments';
 import { Autopay, MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
@@ -9,14 +9,14 @@ import { addApiMock, apiMock } from '@proton/testing';
 
 import { useMethods } from './useMethods';
 
-let paymentMethodStatusExtended: PaymentMethodStatusExtended;
+let paymentStatus: PaymentStatus;
 
 let paymentMethods: SavedPaymentMethod[];
 
 beforeEach(() => {
     jest.clearAllMocks();
 
-    paymentMethodStatusExtended = {
+    paymentStatus = {
         CountryCode: 'US',
         State: 'AL',
         VendorStates: {
@@ -52,21 +52,20 @@ beforeEach(() => {
         PaymentMethods: paymentMethods,
     }));
 
-    addApiMock('payments/v4/status', () => paymentMethodStatusExtended);
-    addApiMock('payments/v5/status', () => paymentMethodStatusExtended);
+    addApiMock('payments/v5/status', () => paymentStatus);
 });
 
 it('should render', () => {
     const { result } = componentsHookRenderer(() =>
         useMethods(
             {
-                paymentMethodStatusExtended,
+                paymentStatus,
                 amount: 100,
                 currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
-                    status: () => paymentMethodStatusExtended,
+                    status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
             },
@@ -84,13 +83,13 @@ it('should initialize payment methods (no chargebee)', async () => {
     const { result } = componentsHookRenderer(() =>
         useMethods(
             {
-                paymentMethodStatusExtended,
+                paymentStatus,
                 amount: 1000,
                 currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
-                    status: () => paymentMethodStatusExtended,
+                    status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
             },
@@ -135,7 +134,7 @@ it('should initialize payment methods (no chargebee)', async () => {
         IsDefault: true,
     });
 
-    expect(result.current.status).toEqual(paymentMethodStatusExtended);
+    expect(result.current.status).toEqual(paymentStatus);
     expect(result.current.isNewPaypal).toBe(false);
     expect(result.current.usedMethods).toEqual([
         {
@@ -187,13 +186,13 @@ it('should initialize payment methods (with chargebee)', async () => {
     const { result } = componentsHookRenderer(() =>
         useMethods(
             {
-                paymentMethodStatusExtended,
+                paymentStatus,
                 amount: 1000,
                 currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.CHARGEBEE_FORCED,
                 paymentsApi: {
-                    status: () => paymentMethodStatusExtended,
+                    status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
             },
@@ -246,7 +245,7 @@ it('should initialize payment methods (with chargebee)', async () => {
     // this was before on-session migration
     // expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
 
-    expect(result.current.status).toEqual(paymentMethodStatusExtended);
+    expect(result.current.status).toEqual(paymentStatus);
     expect(result.current.isNewPaypal).toBe(false);
     expect(result.current.usedMethods).toEqual([
         {
@@ -319,13 +318,13 @@ it('should filter out external payment methods', async () => {
     const { result } = componentsHookRenderer(() =>
         useMethods(
             {
-                paymentMethodStatusExtended,
+                paymentStatus,
                 amount: 1000,
                 currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
-                    status: () => paymentMethodStatusExtended,
+                    status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
             },
@@ -429,13 +428,13 @@ it('should consider methods without External property internal', async () => {
     const { result } = componentsHookRenderer(() =>
         useMethods(
             {
-                paymentMethodStatusExtended,
+                paymentStatus,
                 amount: 1000,
                 currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
-                    status: () => paymentMethodStatusExtended,
+                    status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
             },
@@ -538,13 +537,13 @@ it('should filter out internal payment methods', async () => {
     const { result } = componentsHookRenderer(() =>
         useMethods(
             {
-                paymentMethodStatusExtended,
+                paymentStatus,
                 amount: 1000,
                 currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.CHARGEBEE_FORCED,
                 paymentsApi: {
-                    status: () => paymentMethodStatusExtended,
+                    status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
             },
@@ -626,13 +625,13 @@ it('should update methods when amount changes', async () => {
         ({ amount }) =>
             useMethods(
                 {
-                    paymentMethodStatusExtended,
+                    paymentStatus,
                     amount,
                     currency: 'USD',
                     flow: 'credit',
                     isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                     paymentsApi: {
-                        status: () => paymentMethodStatusExtended,
+                        status: () => paymentStatus,
                     } as any as PaymentsApi,
                     selectedPlanName: undefined,
                 },
@@ -680,13 +679,13 @@ it('should get saved method by its ID', async () => {
     const { result } = componentsHookRenderer(() =>
         useMethods(
             {
-                paymentMethodStatusExtended,
+                paymentStatus,
                 amount: 1000,
                 currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
-                    status: () => paymentMethodStatusExtended,
+                    status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
             },
@@ -722,13 +721,13 @@ it('should set selected method', async () => {
     const { result } = componentsHookRenderer(() =>
         useMethods(
             {
-                paymentMethodStatusExtended,
+                paymentStatus,
                 amount: 1000,
                 currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
-                    status: () => paymentMethodStatusExtended,
+                    status: () => paymentStatus,
                 } as any as PaymentsApi,
                 selectedPlanName: undefined,
             },
@@ -781,24 +780,24 @@ it('should set selected method', async () => {
 it('should update amount correctly even if the initialization is slow', async () => {
     addApiMock('payments/v4/status', async () => {
         await wait(100);
-        return paymentMethodStatusExtended;
+        return paymentStatus;
     });
     addApiMock('payments/v5/status', async () => {
         await wait(100);
-        return paymentMethodStatusExtended;
+        return paymentStatus;
     });
 
     const { result, rerender } = renderHook(
         ({ amount }) =>
             useMethods(
                 {
-                    paymentMethodStatusExtended,
+                    paymentStatus,
                     amount,
                     currency: 'USD',
                     flow: 'credit',
                     isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                     paymentsApi: {
-                        status: () => paymentMethodStatusExtended,
+                        status: () => paymentStatus,
                     } as any as PaymentsApi,
                     selectedPlanName: undefined,
                 },

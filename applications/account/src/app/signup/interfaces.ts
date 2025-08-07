@@ -5,7 +5,7 @@ import type {
     BillingAddress,
     ExtendedTokenPayment,
     PAYMENT_METHOD_TYPES,
-    PaymentMethodStatusExtended,
+    PaymentStatus,
     PlanIDs,
     SavedPaymentMethod,
 } from '@proton/payments';
@@ -110,7 +110,7 @@ export interface SignupModel {
     humanVerificationToken: string;
     selectedProductPlans: SelectedProductPlans;
     vpnServersCountData: VPNServersCountData;
-    paymentStatus: PaymentMethodStatusExtended;
+    paymentStatus: PaymentStatus;
 }
 
 export type SignupInviteParameters =

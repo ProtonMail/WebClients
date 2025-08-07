@@ -5,9 +5,9 @@ import type {
     AvailablePaymentMethod,
     BillingAddress,
     PaymentMethodFlow,
-    PaymentMethodStatusExtended,
     PaymentMethodType,
     PaymentMethods,
+    PaymentStatus,
     PaymentsApi,
     PlainPaymentMethodType,
     PlanIDs,
@@ -37,7 +37,7 @@ export interface Props {
     currency: Currency;
     coupon?: string | null;
     flow: PaymentMethodFlow;
-    paymentMethodStatusExtended?: PaymentMethodStatusExtended;
+    paymentStatus?: PaymentStatus;
     paymentMethods?: SavedPaymentMethod[];
     onMethodChanged?: OnMethodChangedHandler;
     isChargebeeEnabled: () => ChargebeeEnabled;
@@ -73,7 +73,7 @@ export type MethodsHook = {
     savedSelectedMethod: SavedPaymentMethod | undefined;
     selectMethod: (id?: string) => AvailablePaymentMethod | undefined;
     getSavedMethodByID: (id: string | undefined) => SavedPaymentMethod | undefined;
-    status: PaymentMethodStatusExtended | undefined;
+    status: PaymentStatus | undefined;
     savedMethods: SavedPaymentMethod[] | undefined;
     isNewPaypal: boolean;
     isNewApplePay: boolean;
@@ -164,7 +164,7 @@ const useInhouseToChargebeeSwitch = ({
 // todo: refactor this component and potentially get rid of the binding to a PaymentMethods class
 export const useMethods = (
     {
-        paymentMethodStatusExtended,
+        paymentStatus,
         paymentMethods,
         amount,
         currency,
@@ -204,7 +204,7 @@ export const useMethods = (
         pendingUser?: User;
         pendingPlanIDs?: PlanIDs;
         pendingSubscription?: Subscription;
-        pendingStatusExtended?: PaymentMethodStatusExtended;
+        pendingPaymentStatus?: PaymentStatus;
         pendingCanUseApplePay?: boolean;
         pendingEnableApplePay?: boolean;
         pendingIsTrial?: boolean;
@@ -217,7 +217,7 @@ export const useMethods = (
     });
     const [selectedMethod, setSelectedMethod] = useState<AvailablePaymentMethod | undefined>();
 
-    const [status, setStatus] = useState<PaymentMethodStatusExtended | undefined>(paymentMethodStatusExtended);
+    const [status, setStatus] = useState<PaymentStatus | undefined>(paymentStatus);
     const [savedMethods, setSavedMethods] = useState<SavedPaymentMethod[] | undefined>();
 
     const [overrideChargebeeUserExists, setOverrideChargebeeUserExists] = useState<ChargebeeUserExists | undefined>();
@@ -250,11 +250,11 @@ export const useMethods = (
 
     useEffect(() => {
         async function run() {
-            const paymentStatus = paymentMethodStatusExtended ?? (await getPaymentStatus({ api }));
+            const paymentStatusDefined = paymentStatus ?? (await getPaymentStatus({ api }));
 
             paymentMethodsRef.current = await initializePaymentMethods({
                 api,
-                maybePaymentMethodStatus: paymentStatus,
+                maybePaymentMethodStatus: paymentStatusDefined,
                 maybePaymentMethods: paymentMethods,
                 isAuthenticated,
                 amount,
@@ -298,7 +298,7 @@ export const useMethods = (
                     pendingUser,
                     pendingPlanIDs,
                     pendingSubscription,
-                    pendingStatusExtended,
+                    pendingPaymentStatus: pendingPaymentExtended,
                     pendingCanUseApplePay,
                     pendingEnableApplePay,
                     pendingIsTrial,
@@ -364,8 +364,8 @@ export const useMethods = (
                     paymentMethodsRef.current.subscription = pendingSubscription;
                 }
 
-                if (pendingStatusExtended !== undefined) {
-                    paymentMethodsRef.current.statusExtended = pendingStatusExtended;
+                if (pendingPaymentExtended !== undefined) {
+                    paymentMethodsRef.current.paymentStatus = pendingPaymentExtended;
                 }
 
                 if (pendingCanUseApplePay !== undefined) {
@@ -381,7 +381,7 @@ export const useMethods = (
                 }
             }
 
-            setStatus(paymentMethodsRef.current.statusExtended);
+            setStatus(paymentMethodsRef.current.paymentStatus);
             setSavedMethods(paymentMethodsRef.current.paymentMethods);
 
             const methods = updateMethods();
@@ -411,7 +411,7 @@ export const useMethods = (
                 pendingUser: user,
                 pendingPlanIDs: planIDs,
                 pendingSubscription: subscription,
-                pendingStatusExtended: paymentMethodStatusExtended,
+                pendingPaymentStatus: paymentStatus,
                 pendingCanUseApplePay: canUseApplePay,
                 pendingEnableApplePay: enableApplePay,
                 pendingIsTrial: isTrial,
@@ -436,9 +436,9 @@ export const useMethods = (
         paymentMethodsRef.current.canUseApplePay = !!canUseApplePay;
         paymentMethodsRef.current.enableApplePay = !!enableApplePay;
         paymentMethodsRef.current.isTrial = !!isTrial;
-        if (paymentMethodStatusExtended) {
-            paymentMethodsRef.current.statusExtended = paymentMethodStatusExtended;
-            setStatus(paymentMethodStatusExtended);
+        if (paymentStatus) {
+            paymentMethodsRef.current.paymentStatus = paymentStatus;
+            setStatus(paymentStatus);
         }
         updateMethods();
     }, [

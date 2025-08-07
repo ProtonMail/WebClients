@@ -143,7 +143,7 @@ describe('SubscriptionContainer', () => {
             organization: organizationDefaultResponse.Organization as any as Organization,
             plans: plansDefaultResponse.Plans as any as Plan[],
             freePlan: FREE_PLAN,
-            paymentsStatus: {
+            paymentStatus: {
                 CountryCode: 'CH',
                 VendorStates: {
                     Card: true,

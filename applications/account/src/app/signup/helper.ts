@@ -2,7 +2,7 @@ import type { Location } from 'history';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
-import type { BillingAddress, PaymentMethodStatusExtended, PaymentsApi } from '@proton/payments';
+import type { BillingAddress, PaymentStatus, PaymentsApi } from '@proton/payments';
 import {
     type CheckSubscriptionData,
     type Currency,
@@ -104,7 +104,7 @@ export const getOptimisticDomains = () => {
     return [secondLevelDomain, 'protonmail.com'];
 };
 
-export const getOptimisticPaymentMethods = (): PaymentMethodStatusExtended => {
+export const getOptimisticPaymentMethods = (): PaymentStatus => {
     const defaultValue = {
         VendorStates: {
             Card: false,

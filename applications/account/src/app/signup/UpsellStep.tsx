@@ -16,7 +16,7 @@ import {
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
-import type { PaymentMethodStatusExtended, PaymentsApi } from '@proton/payments';
+import type { PaymentStatus, PaymentsApi } from '@proton/payments';
 import {
     CYCLE,
     type Currency,
@@ -60,7 +60,7 @@ interface Props {
     mostPopularPlanName?: PLANS;
     upsellPlanName: PLANS;
     currencySignupParam: Currency | undefined;
-    paymentStatus: PaymentMethodStatusExtended;
+    paymentStatus: PaymentStatus;
     paymentsApi: PaymentsApi;
 }
 
@@ -157,7 +157,7 @@ const UpsellStep = ({
     const { getAvailableCurrencies } = useCurrencies();
 
     const availableCurrencies = getAvailableCurrencies({
-        status: paymentStatus,
+        paymentStatus,
         plans,
         paramCurrency: currencySignupParam,
     });

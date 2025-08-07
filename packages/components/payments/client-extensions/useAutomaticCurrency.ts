@@ -17,7 +17,7 @@ export const useAutomaticCurrency = () => {
     const currency = getPreferredCurrency({
         user,
         plans: plans?.plans,
-        status,
+        paymentStatus: status,
         subscription,
     });
 

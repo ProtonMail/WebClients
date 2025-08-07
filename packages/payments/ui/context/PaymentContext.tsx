@@ -31,7 +31,7 @@ import noop from '@proton/utils/noop';
 
 import { type CheckSubscriptionData } from '../../core/api';
 import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address/billing-address';
-import { getBillingAddressFromPaymentsStatus } from '../../core/billing-address/billing-address-from-payments-status';
+import { getBillingAddressFromPaymentStatus } from '../../core/billing-address/billing-address-from-payments-status';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '../../core/constants';
 import { type getAvailableCurrencies, type getPreferredCurrency, mainCurrencies } from '../../core/helpers';
 import type {
@@ -39,7 +39,7 @@ import type {
     Cycle,
     FreeSubscription,
     PaymentMethodFlow,
-    PaymentMethodStatusExtended,
+    PaymentStatus,
     PaymentsApi,
     PlanIDs,
 } from '../../core/interface';
@@ -201,7 +201,7 @@ export interface PaymentsContextTypeInner {
 
     billingAddress: BillingAddress;
     uiData: PaymentUiData;
-    paymentsStatus: PaymentMethodStatusExtended | undefined;
+    paymentStatus: PaymentStatus | undefined;
     paymentsApi: PaymentsApi;
     isGroupLoading: MultiCheckGroupsResult['isGroupLoading'];
     isGroupChecked: MultiCheckGroupsResult['isGroupChecked'];
@@ -248,7 +248,7 @@ export type PaymentsContextType = Pick<
     | 'plansMap'
     | 'freePlan'
     | 'checkResult'
-    | 'paymentsStatus'
+    | 'paymentStatus'
     | 'paymentsApi'
     | 'hasEssentialData'
     | 'isGroupLoading'
@@ -288,7 +288,7 @@ export const PaymentsContextProvider = ({
     const [plansData, setPlansData] = useState<{ plans: Plan[]; freePlan: FreePlanDefault }>(
         plansDataInitial ?? { plans: cachedPlans ?? [], freePlan: FREE_PLAN }
     );
-    const [paymentsStatus, setPaymentsStatus] = useState<PaymentMethodStatusExtended | undefined>(paymentStatusInitial);
+    const [paymentStatus, setPaymentStatus] = useState<PaymentStatus | undefined>(paymentStatusInitial);
     const [subscription, setSubscription] = useState<Subscription | FreeSubscription>(
         selectSubscription(store.getState())?.value || FREE_SUBSCRIPTION
     );
@@ -302,7 +302,7 @@ export const PaymentsContextProvider = ({
     // const [onChargeableCallback, setOnChargeableCallback] = useState<OnChargeable>(() => Promise.resolve());
 
     const [initialized, setInitialized] = useState(false);
-    const hasEssentialData = plans.length > 0 && paymentsStatus !== undefined && subscription !== undefined;
+    const hasEssentialData = plans.length > 0 && paymentStatus !== undefined && subscription !== undefined;
 
     const initialPlanIDs = { [PLANS.MAIL]: 1 };
 
@@ -316,7 +316,7 @@ export const PaymentsContextProvider = ({
             getPreferredCurrency,
             currencyOverrides: overrides ? { paramCurrency: overrides.paramCurrency } : undefined,
             user,
-            status: paymentsStatus,
+            paymentStatus,
             subscription,
             plans,
         }).plansMap;
@@ -332,7 +332,7 @@ export const PaymentsContextProvider = ({
         const autoCurrency = getPreferredCurrency({
             user,
             plans,
-            status: paymentsStatus,
+            paymentStatus,
             subscription,
         });
         const plansMap = getLocalizedPlansMap({ paramCurrency: autoCurrency });
@@ -414,7 +414,7 @@ export const PaymentsContextProvider = ({
                 return data;
             }),
             getPaymentStatus({ api }).then((data) => {
-                setPaymentsStatus(data);
+                setPaymentStatus(data);
                 return data;
             }),
             authenticated
@@ -441,18 +441,18 @@ export const PaymentsContextProvider = ({
 
         let preferredCurrency = getPreferredCurrency({
             paramCurrency,
-            status,
+            paymentStatus: status,
             plans,
         });
 
         const availableCurrencies = getAvailableCurrencies({
             paramCurrency,
-            status,
+            paymentStatus: status,
             plans,
         });
         setAvailableCurrencies(availableCurrencies);
 
-        const billingAddress: BillingAddress = getBillingAddressFromPaymentsStatus({
+        const billingAddress: BillingAddress = getBillingAddressFromPaymentStatus({
             CountryCode: status.CountryCode,
             State: status.State,
             ZipCode: status.ZipCode,
@@ -469,7 +469,7 @@ export const PaymentsContextProvider = ({
             getPreferredCurrency,
             currencyOverrides: { paramCurrency: preferredCurrency },
             user,
-            status: paymentsStatus,
+            paymentStatus,
             subscription,
             plans,
         }).plansMap;
@@ -651,7 +651,7 @@ export const PaymentsContextProvider = ({
         getAvailableCurrencies: (selectedPlanName: PLANS) =>
             getAvailableCurrencies({
                 selectedPlanName,
-                status: paymentsStatus,
+                paymentStatus,
                 user,
                 subscription,
                 plans,
@@ -661,7 +661,7 @@ export const PaymentsContextProvider = ({
         getPreferredCurrency: (selectedPlanName: PLANS) =>
             getPreferredCurrency({
                 paramPlanName: selectedPlanName,
-                status: paymentsStatus,
+                paymentStatus,
                 user,
                 subscription,
                 plans,
@@ -695,7 +695,7 @@ export const PaymentsContextProvider = ({
         uiData: {
             checkout: getCheckout({ planIDs: checkResult.requestData.Plans, plansMap, checkResult }),
         },
-        paymentsStatus,
+        paymentStatus,
         paymentsApi: paymentsApiRef.current,
         hasEssentialData,
         isGroupLoading,
@@ -720,8 +720,8 @@ export const usePaymentsInner = (): PaymentsContextTypeInner => {
 
 export const usePayments = usePaymentsInner as () => PaymentsContextType;
 
-export type PreloadedPaymentsContextType = Omit<PaymentsContextType, 'paymentsStatus'> & {
-    paymentsStatus: PaymentMethodStatusExtended;
+export type PreloadedPaymentsContextType = Omit<PaymentsContextType, 'paymentStatus'> & {
+    paymentStatus: PaymentStatus;
     plansMap: FullPlansMap;
     subscription: Subscription | FreeSubscription;
 };
