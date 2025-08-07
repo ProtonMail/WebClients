@@ -4,10 +4,11 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 export interface LogsData {
   yDocJSON?: any
   sheetsJSON?: any
+  editorJSON?: any
 }
 
 /**
- * Gets both Y.Doc and Sheets JSON logs from the editor controller
+ * Gets Y.Doc, Sheets JSON, and Editor JSON logs from the editor controller
  */
 export const getLogsAsJSON = async (
   editorController: EditorControllerInterface,
@@ -29,42 +30,54 @@ export const getLogsAsJSON = async (
     }
   }
 
+  // Get editor JSON if it's a document (not spreadsheet)
+  if (documentType === 'doc') {
+    const editorJSON = await editorController.getEditorJSON()
+    if (editorJSON) {
+      logs.editorJSON = editorJSON
+    }
+  }
+
   return logs
 }
+
+/**
+ * Helper function to download a single JSON file
+ */
+const downloadJSONFile = (data: any, filename: string) => {
+  const stringified = JSON.stringify(data, null, 2)
+  const blob = new Blob([stringified], { type: 'application/json' })
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  link.download = filename
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+  URL.revokeObjectURL(url)
+}
+
+/**
+ * Helper function to get file definitions from logs data
+ */
+const getFileDefinitions = (logsData: LogsData) => [
+  { data: logsData.yDocJSON, prefix: 'ydoc' },
+  { data: logsData.sheetsJSON, prefix: 'sheets' },
+  { data: logsData.editorJSON, prefix: 'editor' },
+]
 
 /**
  * Downloads individual files without ZIP compression
  */
 const downloadIndividualFiles = async (logsData: LogsData, documentType: DocumentType) => {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
+  const files = getFileDefinitions(logsData)
 
-  // Download Y.Doc JSON
-  if (logsData.yDocJSON) {
-    const yDocStringified = JSON.stringify(logsData.yDocJSON, null, 2)
-    const yDocBlob = new Blob([yDocStringified], { type: 'application/json' })
-    const yDocUrl = URL.createObjectURL(yDocBlob)
-    const yDocLink = document.createElement('a')
-    yDocLink.href = yDocUrl
-    yDocLink.download = `ydoc-${timestamp}.json`
-    document.body.appendChild(yDocLink)
-    yDocLink.click()
-    document.body.removeChild(yDocLink)
-    URL.revokeObjectURL(yDocUrl)
-  }
-
-  // Download Sheets JSON if available
-  if (logsData.sheetsJSON) {
-    const sheetsStringified = JSON.stringify(logsData.sheetsJSON, null, 2)
-    const sheetsBlob = new Blob([sheetsStringified], { type: 'application/json' })
-    const sheetsUrl = URL.createObjectURL(sheetsBlob)
-    const sheetsLink = document.createElement('a')
-    sheetsLink.href = sheetsUrl
-    sheetsLink.download = `sheets-${timestamp}.json`
-    document.body.appendChild(sheetsLink)
-    sheetsLink.click()
-    document.body.removeChild(sheetsLink)
-    URL.revokeObjectURL(sheetsUrl)
-  }
+  files.forEach(({ data, prefix }) => {
+    if (data) {
+      downloadJSONFile(data, `${prefix}-${timestamp}.json`)
+    }
+  })
 }
 
 /**
@@ -79,17 +92,14 @@ export const downloadLogsAsZip = async (logsData: LogsData, documentType: Docume
     const JSZip = (await import('jszip')).default
     const zip = new JSZip()
 
-    // Add Y.Doc JSON to zip
-    if (logsData.yDocJSON) {
-      const yDocStringified = JSON.stringify(logsData.yDocJSON, null, 2)
-      zip.file(`ydoc-${timestamp}.json`, yDocStringified)
-    }
-
-    // Add Sheets JSON to zip if available
-    if (logsData.sheetsJSON) {
-      const sheetsStringified = JSON.stringify(logsData.sheetsJSON, null, 2)
-      zip.file(`sheets-${timestamp}.json`, sheetsStringified)
-    }
+    // Add all available JSON files to zip
+    const files = getFileDefinitions(logsData)
+    files.forEach(({ data, prefix }) => {
+      if (data) {
+        const stringified = JSON.stringify(data, null, 2)
+        zip.file(`${prefix}-${timestamp}.json`, stringified)
+      }
+    })
 
     // Generate and download the zip file
     const zipBlob = await zip.generateAsync({ type: 'blob' })
