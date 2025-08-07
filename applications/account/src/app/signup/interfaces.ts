@@ -17,7 +17,6 @@ import {
     type PlansMap,
     type Subscription,
 } from '@proton/payments';
-import type { SetMnemonicPhrasePayload } from '@proton/shared/lib/api/settingsMnemonic';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -33,6 +32,8 @@ import type {
     User,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
+
+import type { DeferredMnemonicData } from '../containers/recoveryPhrase/types';
 
 export enum SignupSteps {
     NoSignup = 'no-signup',
@@ -161,19 +162,6 @@ export interface HumanVerificationData {
     methods: HumanVerificationMethodType[];
     token: string;
     trigger: HumanVerificationTrigger;
-}
-
-export interface MnemonicData {
-    recoveryPhrase: string;
-    blob: Blob;
-}
-
-export interface DeferredMnemonicData extends MnemonicData {
-    /**
-     * Payload to be sent to the BE.
-     * Handled by the sendMnemonicPayloadToBackend function
-     */
-    payload: SetMnemonicPhrasePayload;
 }
 
 export interface SetupData {
