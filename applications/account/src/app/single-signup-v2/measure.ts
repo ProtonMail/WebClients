@@ -1,4 +1,4 @@
-import type { PaymentMethodStatus } from '@proton/payments';
+import type { PaymentStatus } from '@proton/payments';
 import {
     type CYCLE,
     type Currency,
@@ -185,7 +185,9 @@ export const getPlanNameFromSession = (session: SessionData): PLANS => {
     return getPlan(session.subscription)?.Name || session.organization?.PlanName || PLANS.FREE;
 };
 
-export const getPaymentMethodsAvailable = (paymentMethodsAvailable: PaymentMethodStatus): TelemetryPaymentMethods => {
+export const getPaymentMethodsAvailable = (
+    paymentMethodsAvailable: PaymentStatus['VendorStates']
+): TelemetryPaymentMethods => {
     return {
         btc: paymentMethodsAvailable.Bitcoin ? 'yes' : 'no',
         paypal: paymentMethodsAvailable.Paypal ? 'yes' : 'no',

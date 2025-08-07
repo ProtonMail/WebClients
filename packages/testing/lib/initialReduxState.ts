@@ -1,6 +1,6 @@
 import type { OrganizationState, PaymentStatusState } from '@proton/account';
 import { type SubscriptionState } from '@proton/account';
-import { type PaymentMethodStatusExtended, type Subscription } from '@proton/payments';
+import { type PaymentStatus, type Subscription } from '@proton/payments';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 
 export const getSubscriptionState = (value: Subscription = {} as any): SubscriptionState['subscription'] => {
@@ -27,9 +27,7 @@ export const getOrganizationState = (value: OrganizationExtended = {} as any): O
     };
 };
 
-export const getPaymentStatusState = (
-    value: PaymentMethodStatusExtended = {} as any
-): PaymentStatusState['paymentStatus'] => {
+export const getPaymentStatusState = (value: PaymentStatus = {} as any): PaymentStatusState['paymentStatus'] => {
     return {
         meta: {
             fetchedAt: Date.now(),

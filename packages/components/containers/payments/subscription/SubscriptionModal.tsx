@@ -58,7 +58,7 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
         const [plansResult, loadingPlans] = usePlans();
         const plans = plansResult?.plans || [];
         const freePlan = plansResult?.freePlan || FREE_PLAN;
-        const [status, statusLoading] = usePaymentStatus();
+        const [paymentStatus, statusLoading] = usePaymentStatus();
         const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
         const [organization, loadingOrganization] = useOrganization();
         const [modalState, setModalState, render] = useModalState();
@@ -92,7 +92,11 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
             }
         }, [depsLoading]);
 
-        if (depsLoading || !subscriptionPropsRef.current || !(organization && subscription && render && status)) {
+        if (
+            depsLoading ||
+            !subscriptionPropsRef.current ||
+            !(organization && subscription && render && paymentStatus)
+        ) {
             return null;
         }
 
@@ -185,7 +189,7 @@ const SubscriptionModal = forwardRef<SubscriptionModalFowardedRefProps, Props>(
                 onCancel={handleClose}
                 mode={mode}
                 currency={currency}
-                paymentsStatus={status}
+                paymentStatus={paymentStatus}
                 upsellRef={upsellRef}
                 // Post subscription has advantage over config
                 disableThanksStep={postSubscriptionProps.disableThanksStep ?? rest.disableThanksStep}

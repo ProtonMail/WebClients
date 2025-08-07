@@ -48,7 +48,7 @@ function restorePartialCanadianPostalCode(normalized: BillingAddress): void {
 /**
  * Implements a set of fallbacks in case the backend doesn't return the complete billing address.
  */
-export function getBillingAddressFromPaymentsStatus(billingAddress: BillingAddress): BillingAddress {
+export function getBillingAddressFromPaymentStatus(billingAddress: BillingAddress): BillingAddress {
     const normalized = { ...billingAddress };
 
     restoreDefaultsIfCountryIsMissing(normalized);

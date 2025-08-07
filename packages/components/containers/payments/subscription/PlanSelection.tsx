@@ -25,7 +25,7 @@ import {
     type FreePlanDefault,
     type FreeSubscription,
     PLANS,
-    type PaymentMethodStatusExtended,
+    type PaymentStatus,
     type PaymentsApi,
     type Plan,
     type PlanIDs,
@@ -118,7 +118,7 @@ interface Props {
     subscription?: Subscription | FreeSubscription;
     organization?: Organization;
     filter?: Audience[];
-    paymentsStatus: PaymentMethodStatusExtended;
+    paymentStatus: PaymentStatus;
     paymentsApi: PaymentsApi;
     coupon?: string;
 }
@@ -199,7 +199,7 @@ export type AccessiblePlansHookProps = {
     | 'subscription'
     | 'planIDs'
     | 'hasFreePlan'
-    | 'paymentsStatus'
+    | 'paymentStatus'
     | 'plans'
     | 'currency'
     | 'audience'
@@ -212,7 +212,7 @@ export function useAccessiblePlans({
     planIDs,
     app,
     vpnServers,
-    paymentsStatus,
+    paymentStatus,
     user,
     plans,
     currency,
@@ -385,7 +385,7 @@ export function useAccessiblePlans({
     );
 
     const availableCurrencies = getAvailableCurrencies({
-        status: paymentsStatus,
+        paymentStatus,
         user,
         subscription,
         plans: accessiblePlansWithAllCurrencies,

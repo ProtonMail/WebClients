@@ -112,7 +112,7 @@ const CreditsSection = () => {
                 </span>
             </div>
             <hr />
-            {renderCreditModal && paymentStatus && <CreditsModal status={paymentStatus} {...creditModalProps} />}
+            {renderCreditModal && paymentStatus && <CreditsModal paymentStatus={paymentStatus} {...creditModalProps} />}
             {externalSubscriptionModal}
         </SettingsSection>
     );

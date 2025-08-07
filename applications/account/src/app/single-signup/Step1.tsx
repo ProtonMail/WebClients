@@ -521,7 +521,7 @@ const Step1 = ({
         api: silentApi,
         billingAddress: options.billingAddress,
         selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
-        paymentMethodStatusExtended: model.paymentMethodStatusExtended,
+        paymentStatus: model.paymentStatus,
         onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !checkTrial;
@@ -574,7 +574,7 @@ const Step1 = ({
 
     const taxCountry = useTaxCountry({
         onBillingAddressChange: handleChangeBillingAddress,
-        statusExtended: model.paymentMethodStatusExtended,
+        paymentStatus: model.paymentStatus,
         zipCodeBackendValid: model.subscriptionData.zipCodeValid,
         previosValidZipCode: model.subscriptionData.billingAddress.ZipCode,
         paymentFacade,
@@ -1009,7 +1009,7 @@ const Step1 = ({
     const currencySelector = model.loadingDependencies ? null : (
         <CurrencySelector
             currencies={getAvailableCurrencies({
-                status: model.paymentMethodStatusExtended,
+                paymentStatus: model.paymentStatus,
                 plans: model.plans,
                 selectedPlanName: selectedPlan.Name,
                 paramCurrency: currencyUrlParam,

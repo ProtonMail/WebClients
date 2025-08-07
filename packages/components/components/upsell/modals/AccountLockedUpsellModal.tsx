@@ -119,7 +119,7 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const currency = getPreferredCurrency({
         user,
-        status: paymentStatus,
+        paymentStatus,
         subscription,
         plans: plansResult?.plans,
     });

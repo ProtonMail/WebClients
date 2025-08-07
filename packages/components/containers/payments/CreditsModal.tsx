@@ -27,8 +27,8 @@ import {
     MIN_BITCOIN_AMOUNT,
     MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
-    type PaymentMethodStatusExtended,
     type PaymentProcessorHook,
+    type PaymentStatus,
     type PlainPaymentMethodType,
     getPaymentsVersion,
     isFreeSubscription,
@@ -57,7 +57,7 @@ const getCurrenciesI18N = () => ({
 });
 
 type Props = {
-    status: PaymentMethodStatusExtended;
+    paymentStatus: PaymentStatus;
 } & ModalProps;
 
 export const DEFAULT_CREDITS_AMOUNT = 5000;
@@ -68,7 +68,7 @@ const nonChargeableMethods = new Set<PlainPaymentMethodType | undefined>([
     PAYMENT_METHOD_TYPES.CASH,
 ]);
 
-const CreditsModal = ({ status, ...props }: Props) => {
+const CreditsModal = ({ paymentStatus, ...props }: Props) => {
     const { APP_NAME } = useConfig();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -91,7 +91,7 @@ const CreditsModal = ({ status, ...props }: Props) => {
         currency,
         billingPlatform: subscription?.BillingPlatform,
         chargebeeUserExists: user.ChargebeeUserExists,
-        paymentMethodStatusExtended: status,
+        paymentStatus,
         onChargeable: (operations, data) => {
             const run = async () => {
                 await operations.buyCredit();
@@ -266,7 +266,7 @@ const CreditsModal = ({ status, ...props }: Props) => {
                     </Href>
                 </div>
                 <AmountRow
-                    status={status}
+                    paymentStatus={paymentStatus}
                     paymentMethodType={paymentFacade.selectedMethodType}
                     amount={amount}
                     onChangeAmount={setAmount}

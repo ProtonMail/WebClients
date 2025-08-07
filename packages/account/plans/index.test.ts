@@ -1,4 +1,4 @@
-import { type PaymentMethodStatusExtended, type Plan, type Subscription } from '@proton/payments';
+import { type PaymentStatus, type Plan, type Subscription } from '@proton/payments';
 import { type Currency, PLANS } from '@proton/payments';
 import { FREE_PLAN } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -44,7 +44,7 @@ describe('plans', () => {
         }
     });
 
-    const defaultStatus: PaymentMethodStatusExtended = {
+    const defaultPaymentStatus: PaymentStatus = {
         CountryCode: 'CH',
         State: null,
         VendorStates: {
@@ -65,7 +65,7 @@ describe('plans', () => {
     } as Subscription;
 
     const setup = (
-        status: PaymentMethodStatusExtended = defaultStatus,
+        paymentStatus: PaymentStatus = defaultPaymentStatus,
         user: UserModel = defaultUser,
         subscription: Subscription = defaultSubscription
     ) => {
@@ -85,7 +85,7 @@ describe('plans', () => {
             reducer: { ...userReducer, ...paymentStatusReducer, ...subscriptionReducer, ...plansReducer },
             preloadedState: {
                 user: getModelState(user),
-                paymentStatus: getModelState(status),
+                paymentStatus: getModelState(paymentStatus),
                 subscription: subscriptionState,
             },
             extraThunkArguments,
@@ -219,7 +219,7 @@ describe('plans', () => {
     });
 
     it('should fetch BRL plans', async () => {
-        const { store } = setup({ ...defaultStatus, CountryCode: 'BR' });
+        const { store } = setup({ ...defaultPaymentStatus, CountryCode: 'BR' });
 
         mockPlans.USD = [
             {

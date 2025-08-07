@@ -22,12 +22,7 @@ import { useCurrencies, usePaymentFacade } from '@proton/components/payments/cli
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
-import type {
-    ExtendedTokenPayment,
-    PaymentMethodStatusExtended,
-    PaymentProcessorHook,
-    TokenPayment,
-} from '@proton/payments';
+import type { ExtendedTokenPayment, PaymentProcessorHook, PaymentStatus, TokenPayment } from '@proton/payments';
 import {
     CYCLE,
     type Currency,
@@ -70,7 +65,7 @@ export interface Props {
     plan: Plan | undefined;
     planTitle: string | undefined;
     currencySignupParam: Currency | undefined;
-    paymentStatus: PaymentMethodStatusExtended;
+    paymentStatus: PaymentStatus;
 }
 
 const PaymentStep = ({
@@ -225,14 +220,14 @@ const PaymentStep = ({
     const { getAvailableCurrencies } = useCurrencies();
 
     const availableCurrencies = getAvailableCurrencies({
-        status: paymentStatus,
+        paymentStatus,
         plans,
         paramCurrency: currencySignupParam,
     });
 
     const taxCountry = useTaxCountry({
         onBillingAddressChange: onChangeBillingAddress,
-        statusExtended: paymentFacade.statusExtended,
+        paymentStatus: paymentFacade.paymentStatus,
         zipCodeBackendValid: subscriptionData.zipCodeValid,
         previosValidZipCode: subscriptionData.billingAddress.ZipCode,
         paymentFacade,

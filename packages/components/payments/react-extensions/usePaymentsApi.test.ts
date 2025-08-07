@@ -1,10 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { addMonths } from 'date-fns';
 
 import { type CheckSubscriptionData, PLANS } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import { ChargebeeEnabled, SubscriptionMode } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import {
     addApiMock,
     apiMock,
@@ -15,14 +13,7 @@ import {
     withPaymentSwitcherContext,
 } from '@proton/testing';
 
-import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import { usePaymentsApi } from './usePaymentsApi';
-
-const mockUseChargebeeKillSwitch = useChargebeeKillSwitch as jest.Mock;
-jest.mock('../client-extensions/useChargebeeKillSwitch', () => ({
-    __esModule: true,
-    useChargebeeKillSwitch: jest.fn().mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(true) }),
-}));
 
 jest.mock('@proton/account/plans/hooks', () => ({
     __esModule: true,
@@ -47,13 +38,6 @@ beforeEach(() => {
             Paypal: 1,
         },
     }));
-    addApiMock('payments/v4/status', () => ({
-        Apple: 1,
-        Bitcoin: 1,
-        Card: 1,
-        InApp: 0,
-        Paypal: 1,
-    }));
 });
 
 describe('usePaymentsApi', () => {
@@ -65,24 +49,12 @@ describe('usePaymentsApi', () => {
         expect(result.current).toHaveProperty('getPaymentsApi');
     });
 
-    it('should call v4 status when user is inhouse forced', () => {
-        const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper: getWrapper(ChargebeeEnabled.INHOUSE_FORCED),
-        });
-
-        void result.current.paymentsApi.statusExtendedAutomatic();
-        expect(apiMock).toHaveBeenCalledWith({
-            url: `payments/v4/status`,
-            method: 'get',
-        });
-    });
-
     it('should call v5 status when user is chargebee forced', () => {
         const { result } = renderHook(() => usePaymentsApi(), {
             wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_FORCED),
         });
 
-        void result.current.paymentsApi.statusExtendedAutomatic();
+        void result.current.paymentsApi.paymentStatus();
         expect(apiMock).toHaveBeenCalledWith({
             url: `payments/v5/status`,
             method: 'get',
@@ -94,33 +66,11 @@ describe('usePaymentsApi', () => {
             wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
         });
 
-        void result.current.paymentsApi.statusExtendedAutomatic();
+        void result.current.paymentsApi.paymentStatus();
         expect(apiMock).toHaveBeenCalledWith({
             url: `payments/v5/status`,
             method: 'get',
         });
-    });
-
-    it('should not call v4 if kill switch was not triggered and returned false', async () => {
-        apiMock.mockRejectedValueOnce(new Error('status call failed in the unit test'));
-        mockUseChargebeeKillSwitch.mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(false) });
-        const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
-        });
-
-        await expect(result.current.paymentsApi.statusExtendedAutomatic()).rejects.toThrow(
-            'status call failed in the unit test'
-        );
-        expect(apiMock).toHaveBeenCalledWith({
-            url: `payments/v5/status`,
-            method: 'get',
-        });
-        const wasV4Called = apiMock.mock.calls.some(
-            (call) => call[0].url.includes('payments/v4/status') && call[0].method === 'get'
-        );
-        expect(wasV4Called).toBe(false);
-        // not relevant after kill switch is removed
-        // expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
     });
 
     const getCheckSubscriptionData = (): CheckSubscriptionData => {
@@ -134,21 +84,6 @@ describe('usePaymentsApi', () => {
 
         return data;
     };
-
-    // tests for checkWithAutomaticVersion
-    it('should call v4 check when user is inhouse forced', () => {
-        const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper: getWrapper(ChargebeeEnabled.INHOUSE_FORCED),
-        });
-
-        const data = getCheckSubscriptionData();
-        void result.current.paymentsApi.checkWithAutomaticVersion(data);
-        expect(apiMock).toHaveBeenCalledWith({
-            url: `payments/v4/subscription/check`,
-            method: 'post',
-            data,
-        });
-    });
 
     it('should call v5 check when user is chargebee forced', () => {
         const { result } = renderHook(() => usePaymentsApi(), {
@@ -180,72 +115,6 @@ describe('usePaymentsApi', () => {
         });
     });
 
-    it('should not call v4 if kill switch was not triggered and returned false', async () => {
-        apiMock.mockRejectedValueOnce(new Error('check call failed in the unit test'));
-        mockUseChargebeeKillSwitch.mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(false) });
-        const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
-        });
-
-        const data = getCheckSubscriptionData();
-        await expect(result.current.paymentsApi.checkWithAutomaticVersion(data)).rejects.toThrow(
-            'check call failed in the unit test'
-        );
-        expect(apiMock).toHaveBeenCalledWith({
-            url: `payments/v5/subscription/check`,
-            method: 'post',
-            data,
-            silence: false,
-        });
-        const wasV4Called = apiMock.mock.calls.some(
-            (call) => call[0].url.includes('payments/v4/subscription/check') && call[0].method === 'post'
-        );
-        expect(wasV4Called).toBe(false);
-        // not relevant after kill switch is removed
-        // expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
-    });
-
-    it('should return fallback value if it is available and if v5 check fails', async () => {
-        apiMock.mockRejectedValueOnce(new Error('check call failed in the unit test'));
-        mockUseChargebeeKillSwitch.mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(false) });
-
-        const requestData = getCheckSubscriptionData();
-
-        const fallbackValue: EnrichedCheckResponse = {
-            Amount: 999,
-            AmountDue: 999,
-            Coupon: null,
-            Currency: 'EUR',
-            Cycle: 12,
-            PeriodEnd: +addMonths(Date.now(), 1) / 1000,
-            SubscriptionMode: SubscriptionMode.Regular,
-            BaseRenewAmount: null,
-            RenewCycle: null,
-            requestData,
-        };
-
-        const { result } = renderHook(() => usePaymentsApi(undefined, () => fallbackValue), {
-            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
-        });
-
-        const resultPromise = result.current.paymentsApi.checkWithAutomaticVersion(requestData);
-
-        expect(apiMock).toHaveBeenCalledWith({
-            url: `payments/v5/subscription/check`,
-            method: 'post',
-            data: requestData,
-            // silence is true because we are using fallback value
-            silence: true,
-        });
-
-        const wasV4Called = apiMock.mock.calls.some(
-            (call) => call[0].url.includes('payments/v4/subscription/check') && call[0].method === 'post'
-        );
-        expect(wasV4Called).toBe(false);
-
-        await expect(resultPromise).resolves.toEqual(fallbackValue);
-    });
-
     it.each([
         {
             appName: APPS.PROTONACCOUNTLITE,
@@ -267,7 +136,7 @@ describe('usePaymentsApi', () => {
             ),
         });
 
-        const status = await result.current.paymentsApi.statusExtendedAutomatic();
+        const status = await result.current.paymentsApi.paymentStatus();
 
         expect(status.VendorStates.Cash).toEqual(expectedCashValue);
     });

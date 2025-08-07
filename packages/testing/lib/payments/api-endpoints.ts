@@ -1,4 +1,4 @@
-import type { PayPalDetails, PaymentMethodStatus, SavedCardDetails, SavedPaymentMethod } from '@proton/payments';
+import type { PayPalDetails, PaymentStatus, SavedCardDetails, SavedPaymentMethod } from '@proton/payments';
 import { Autopay, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS, createTokenV4 } from '@proton/payments';
 import lastItem from '@proton/utils/lastItem';
 
@@ -41,12 +41,15 @@ export function addTokensResolver() {
     return addApiResolver(tokensUrl);
 }
 
-export const MOCK_PAYMENT_STATUS: PaymentMethodStatus = {
-    Card: true,
-    Paypal: true,
-    Apple: true,
-    Cash: true,
-    Bitcoin: true,
+export const MOCK_PAYMENT_STATUS: PaymentStatus = {
+    CountryCode: 'CH',
+    VendorStates: {
+        Card: true,
+        Paypal: true,
+        Apple: true,
+        Cash: true,
+        Bitcoin: true,
+    },
 };
 
 export function mockPaymentStatus(status = MOCK_PAYMENT_STATUS) {

@@ -139,7 +139,7 @@ export type NonChargeablePaymentToken = Omit<ChargeablePaymentToken, 'chargeable
     approvalURL: string;
 };
 
-export interface PaymentMethodStatus {
+interface PaymentVendorStates {
     Card: boolean;
     Paypal: boolean;
     Apple: boolean;
@@ -147,8 +147,8 @@ export interface PaymentMethodStatus {
     Bitcoin: boolean;
 }
 
-export interface PaymentMethodStatusExtended extends BillingAddress {
-    VendorStates: PaymentMethodStatus;
+export interface PaymentStatus extends BillingAddress {
+    VendorStates: PaymentVendorStates;
 }
 
 export interface PayPalDetails {
@@ -358,7 +358,7 @@ export interface PaymentsApi {
         result: EnrichedCheckResponse
     ) => void;
 
-    statusExtendedAutomatic: () => Promise<PaymentMethodStatusExtended>;
+    paymentStatus: () => Promise<PaymentStatus>;
 
     getFullBillingAddress: () => Promise<FullBillingAddress>;
     updateFullBillingAddress: (fullBillingAddress: FullBillingAddress) => Promise<void>;
