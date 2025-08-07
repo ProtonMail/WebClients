@@ -144,6 +144,7 @@ enum DriveFeatureFlag {
 enum DocsFeatureFlag {
     // General
     DriveDocsDisabled = 'DriveDocsDisabled',
+    DownloadLogs = 'DownloadLogs',
     DocsAppSwitcher = 'DocsAppSwitcher',
     DocsPublicEditing = 'DocsPublicEditing',
     // Comments
