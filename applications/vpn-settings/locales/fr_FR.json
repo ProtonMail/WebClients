@@ -1740,8 +1740,8 @@
       "Advanced account protection": [
         "Protection avancée des comptes"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Toutes les applications ${ BRAND_NAME } et les fonctionnalités premium"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toutes les fonctionnalités de premier tiers ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Annuler et passer à un abonnement inférieur"
@@ -6263,8 +6263,8 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Vous pouvez appliquer les règles de mot de passe que les membres de votre organisation utiliseront lorsqu’ils créeront ou réinitialiseront le mot de passe de leur compte ${ BRAND_NAME }."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Vous pouvez bénéficier de tous nos services de confidentialité premium dans un seul et même forfait, et ce pour seulement **${ priceString }/mois**."
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Vous pouvez bénéficier de tous nos services de confidentialité premium dans une seule offre groupée — et ce, pour seulement **${ priceString }/mois**."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
@@ -7936,9 +7936,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tous les services de base de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Tous les services premium de ${ BRAND_NAME } avec simplement un seul abonnement"
-      ],
       "Apps for": [
         "Applications pour"
       ],
@@ -8291,9 +8288,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Toutes les applications et fonctionnalités ${ BRAND_NAME } for Business et premium pour protéger votre entreprise"
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Une protection de la vie privée et une sécurité totales grâce à l'ensemble des services ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
         "Accès en avant-première aux nouvelles fonctionnalités et applications"
@@ -9204,9 +9198,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Accès à toutes les applications ${ BRAND_NAME } et les fonctionnalités premium"
-      ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
       ],
@@ -9702,6 +9693,14 @@
         "contactez"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Toutes les fonctionnalités de premier tiers ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toutes les fonctionnalités de premier tiers ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } mois",
@@ -9716,11 +9715,11 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Tous les services ${ protonPlus }.${ br }Un abonnement facile."
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "En tant qu'abonné **${ currentPlanTitle }**, vous pouvez débloquer **${ unlockPlanTitle }** et d'autres services ${ BRAND_NAME } en passant à **${ upsellPlanTitle }**."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "En tant qu'abonné **${ currentPlanTitle }**, vous pouvez débloquer **${ unlockPlanTitle }** et tous les services de première qualité ${ BRAND_NAME } en passant à **${ upsellPlanTitle }**."
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Plus de services ${ BRAND_NAME }.${ br }Un abonnement facile."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Conserver ${ currentPlanTitle }"
@@ -11284,8 +11283,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } d'espace de stockage total"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } vous donne accès à toutes les applications et les fonctionnalités premium. La protection de votre vie privée est garantie pour que vous puissiez continuer à travailler en sachant que vos données et votre identité sont en sécurité."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } vous donne accès à toutes les fonctionnalités de premier tiers ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }. La confidentialité est intégrée pour que vous puissiez continuer à travailler en toute sécurité, vos données et votre identité étant protégées."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
@@ -13190,9 +13189,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Économisez jusqu'à ${ priceString }** avec un abonnement plus long. Les mêmes fonctionnalités premium à un prix réduit."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Tous les services premium de ${ BRAND_NAME }, un seul abonnement."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Tous les services premium de ${ BRAND_NAME }. À partir de seulement ${ fallBackString } par mois"
