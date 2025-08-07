@@ -7,10 +7,10 @@ import { useApi } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import type { DeferredMnemonicData } from '../../../containers/recoveryPhrase/types';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import Main from '../../../public/Main';
-import { type DeferredMnemonicData } from '../../../signup/interfaces';
 import { sendMnemonicPayloadToBackend } from '../../../signup/signupActions';
 import RecoveryKitAction from './RecoveryKitAction';
 import RecoveryStepUnderstoodCheckbox from './RecoveryStepUnderstoodCheckbox';
@@ -51,7 +51,8 @@ const MnemonicRecoveryStep = ({ onContinue, mnemonicData, onMeasureClick }: Prop
 
                 <RecoveryKitAction
                     className="mt-4"
-                    mnemonicData={mnemonicData}
+                    recoveryPhrase={mnemonicData.recoveryPhrase}
+                    recoveryKitBlob={mnemonicData.recoveryKitBlob}
                     setApiRecoveryPhrase={setApiRecoveryPhrase}
                 />
 
