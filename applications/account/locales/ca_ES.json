@@ -2705,8 +2705,8 @@
       "Advanced account protection": [
         "Protecció avançada del compte"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Totes les aplicacions de ${ BRAND_NAME } i característiques prèmium"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les característiques prèmium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Cancel·la i passa a un pla inferior"
@@ -9533,9 +9533,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
       ],
-      "Recovery kit copied to clipboard": [
-        "El paquet de recuperació s'ha copiat al porta-retalls"
-      ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
       ],
@@ -10551,8 +10548,8 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Podeu aplicar les regles de contrasenya que els membres de la vostra organització utilitzaran quan creïn o restableixin la contrasenya del seu compte de ${ BRAND_NAME }."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Podeu obtenir tots els nostres serveis de privadesa prèmium en un sol paquet—i només costa **${ priceString }/mes**."
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Podreu obtenir els nostres serveis de privadesa prèmium en un sol paquet—i només costa **${ priceString }/mes**."
       ],
       "You can import one data type at a time.": [
         "Podeu importar un tipus de dades alhora."
@@ -13737,9 +13734,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tots els serveis bàsics de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Tots els serveis prèmium de ${ BRAND_NAME }. Una subscripció senzilla"
-      ],
       "Apps for": [
         "Aplicacions per a"
       ],
@@ -14145,9 +14139,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Totes les aplicacions empresarials i característiques prèmium de ${ BRAND_NAME } per protegir tot el seu negoci."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Privadesa i seguretat integrals amb tots els serveis de ${ BRAND_NAME } combinats."
       ],
       "Early access to new apps and features": [
         "Accés anticipat a noves aplicacions i característiques"
@@ -15556,9 +15547,6 @@
       "/month /user, billed biennially": [
         "/mes /usuari, facturat biennalment"
       ],
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Accés a totes les aplicacions i funcions prèmium de ${ BRAND_NAME }"
-      ],
       "Advanced protection that goes beyond industry standards": [
         "Protecció avançada que va més enllà dels estàndards de la indústria"
       ],
@@ -15567,9 +15555,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Àlies per a la protecció del correu electrònic contra filtracions"
-      ],
-      "All premium ${ BRAND_NAME } services.": [
-        "Tots els serveis prèmium de ${ BRAND_NAME }."
       ],
       "Based in Switzerland, GDPR compliant": [
         "Amb seu a Suïssa, compatible amb el RGPD"
@@ -15580,11 +15565,11 @@
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
         "Però podeu obtenir un descompte de ${ discount } millorant a **${ upsellPlanTitle }**."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Però podeu desbloquejar **${ unlockPlanTitle }** i tots els serveis prèmium de ${ BRAND_NAME } amb la millora del pla a **${ upsellPlanTitle }** — només suposa un cost addicional de ${ relativePrice } per mes."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Però podreu desbloquejar **${ unlockPlanTitle }** i més serveis de ${ BRAND_NAME } amb la millora del pla a **${ upsellPlanTitle }** — només suposa un cost addicional de ${ relativePrice } per mes."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Però podeu desbloquejar **${ unlockPlanTitle }** i tots els serveis prèmium de ${ BRAND_NAME } millorant el pla a **${ upsellPlanTitle }**."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Però podreu desbloquejar **${ unlockPlanTitle }** i tots els serveis prèmium de ${ BRAND_NAME } amb la millora del pla a **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "En continuar, accepteu els nostres ${ termsAndConditionsLink } i ${ privacyPolicyLink }."
@@ -15675,9 +15660,6 @@
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Oferta de temps limitat: Obteniu ${ title } per ${ price } per usuari mensualment!"
-      ],
-      "One easy subscription.": [
-        "Una simple subscripció."
       ],
       "Open source and audited": [
         "De codi obert i auditat"
@@ -15777,14 +15759,14 @@
       "${ upsellPlanTitle } plan": [
         "Pla ${ upsellPlanTitle }"
       ],
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Tots els serveis de ${ BRAND_NAME } Plus. ${ br } Una subscripció senzilla."
-      ],
       "Create a ${ appName } account": [
         "Crea un compte de ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Creeu el vostre compte de ${ BRAND_NAME }"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Més serveis de ${ BRAND_NAME }.${ br }Una simple subscripció."
       ],
       "Request your organization administrator to upgrade": [
         "Demaneu a l'administrador de la vostra organització que millori el pla"
@@ -16340,14 +16322,17 @@
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Tots els productes prèmium de ${ BRAND_NAME } s'inclouen a Duo."
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Totes les característiques prèmium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Totes les característiques prèmium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "El millor si necessiteu ${ maxSpace } d'emmagatzematge i per a les parelles."
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Emmagatzematge al núvol i compartició de fitxers, tot amb la seguretat del xifratge d'extrem a extrem."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Privadesa i seguretat integrals amb tots els serveis de ${ BRAND_NAME } combinats."
       ],
       "For next-level password management and identity protection.": [
         "Per una gestió de contrasenyes i una protecció de la identitat del més alt nivell."
@@ -16382,11 +16367,11 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Tots els serveis de ${ protonPlus }.${ br }Amb una simple subscripció."
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Com a subscriptor de **${ currentPlanTitle }**, podreu desbloquejar **${ unlockPlanTitle }** i més serveis de ${ BRAND_NAME } tot millorant el pla a **${ upsellPlanTitle }**."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Com a subscriptor de **${ currentPlanTitle }**, podreu desbloquejar **${ unlockPlanTitle }** i tots els serveis prèmium de ${ BRAND_NAME } tot millorant el pla a **${ upsellPlanTitle }**."
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Més serveis de ${ BRAND_NAME }.${ br }Una simple subscripció."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Manteniu-vos a ${ currentPlanTitle }"
@@ -18999,8 +18984,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } d'emmagatzematge total"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } us ofereix accés a totes les aplicacions i característiques prèmium. La privacitat està integrada perquè pugueu continuar, sabent que les vostres dades i identitat estan segures."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } us donarà accés a totes les característiques prèmium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }. La Privacitat està integrada, de manera que podreu continuar amb la vostra feina, sabent que les vostres dades i la vostra identitat estan segures."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
@@ -21981,9 +21966,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Estalvieu fins a ${ priceString }** amb una subscripció més llarga. Mateixes funcionalitats prèmium per un preu més baix."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Tots els serveis prèmium de ${ BRAND_NAME } amb una subscripció senzilla."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Tots els serveis prèmium de ${ BRAND_NAME }. Des de només ${ fallBackString } al mes."
