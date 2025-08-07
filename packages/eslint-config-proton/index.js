@@ -341,6 +341,7 @@ module.exports = {
                     ['tests', path.resolve(__dirname, '../../tests')],
                     ['proton-pass-extension', path.resolve(__dirname, '../../applications/pass-extension/src')],
                     ['proton-pass-web', path.resolve(__dirname, '../../applications/pass/src')],
+                    ['proton-authenticator', path.resolve(__dirname, '../../applications/authenticator/src')],
                 ],
                 extensions: ['.ts', '.tsx'],
             },
