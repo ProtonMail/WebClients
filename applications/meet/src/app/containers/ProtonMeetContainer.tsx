@@ -85,8 +85,6 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         meetingName: '',
     });
 
-    const [handshakeInfo, setHandshakeInfo] = useState<SRPHandshakeInfo | null>(null);
-
     const { getParticipants, participantNameMap, participantsMap, resetParticipantNameMap } = useParticipantNameMap();
 
     const [initialisedParticipantNameMap, setInitialisedParticipantNameMap] = useState(false);
@@ -173,6 +171,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const submitPassword = async () => {
         try {
+            const handshakeInfo = await getHandshakeInfo(token);
+
             const roomName = await getRoomName({
                 customPassword: password,
                 urlPassword,
@@ -385,13 +385,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             return;
         }
 
-        const { handshakeInfo } = await handleHandsakeInfoFetch(token);
-
-        if (!handshakeInfo) {
-            return;
-        }
-
-        setHandshakeInfo(handshakeInfo as SRPHandshakeInfo);
+        await handleHandsakeInfoFetch(token);
     }, [handleHandsakeInfoFetch, token]);
 
     useEffect(() => {
