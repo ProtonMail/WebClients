@@ -21,6 +21,7 @@ import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider'
 import { ROUTE_MAIN } from './constants';
 import ComposerContainer from './containers/ComposerContainer';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
+import { GlobalModalProvider } from './containers/globalModals/GlobalModalProvider';
 import ChecklistsProvider from './containers/onboardingChecklist/provider/ChecklistsProvider';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
 import MailAppShell from './router/MailAppShell';
@@ -85,33 +86,36 @@ const MainContainer: FunctionComponent = () => {
     }, [featureSw, loadingSw]);
 
     return (
-        <KeyTransparencyManager>
-            <AssistantProvider>
-                <QuickSettingsRemindersProvider>
-                    <DrawerThemeInjector />
-                    <EncryptedSearchProvider>
-                        <MailContentRefProvider mailContentRef={mailContentRef}>
-                            <ChecklistsProvider>
-                                <SubscriptionModalProvider app={APP_NAME}>
-                                    <ComposerContainer>
-                                        <CheckAllRefProvider>
-                                            <ModalsChildren />
-                                            <ApiModalsHVUpsell api={extraThunkArguments.api} />
-                                            <Switch>
-                                                <Route
-                                                    path={ROUTE_MAIN}
-                                                    render={() => <MailAppShell ref={mailContentRef} />}
-                                                />
-                                            </Switch>
-                                        </CheckAllRefProvider>
-                                    </ComposerContainer>
-                                </SubscriptionModalProvider>
-                            </ChecklistsProvider>
-                        </MailContentRefProvider>
-                    </EncryptedSearchProvider>
-                </QuickSettingsRemindersProvider>
-            </AssistantProvider>
-        </KeyTransparencyManager>
+        <GlobalModalProvider>
+            <KeyTransparencyManager>
+                <AssistantProvider>
+                    <QuickSettingsRemindersProvider>
+                        <DrawerThemeInjector />
+                        <EncryptedSearchProvider>
+                            <MailContentRefProvider mailContentRef={mailContentRef}>
+                                <ChecklistsProvider>
+                                    <SubscriptionModalProvider app={APP_NAME}>
+                                        <ComposerContainer>
+                                            <CheckAllRefProvider>
+                                                <ModalsChildren />
+                                                <ApiModalsHVUpsell api={extraThunkArguments.api} />
+
+                                                <Switch>
+                                                    <Route
+                                                        path={ROUTE_MAIN}
+                                                        render={() => <MailAppShell ref={mailContentRef} />}
+                                                    />
+                                                </Switch>
+                                            </CheckAllRefProvider>
+                                        </ComposerContainer>
+                                    </SubscriptionModalProvider>
+                                </ChecklistsProvider>
+                            </MailContentRefProvider>
+                        </EncryptedSearchProvider>
+                    </QuickSettingsRemindersProvider>
+                </AssistantProvider>
+            </KeyTransparencyManager>
+        </GlobalModalProvider>
     );
 };
 
