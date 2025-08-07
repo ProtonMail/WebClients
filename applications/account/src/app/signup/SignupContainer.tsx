@@ -993,6 +993,7 @@ const SignupContainer = ({
                                     reportPaymentFailure(method, overrides);
                                 },
                                 hasZipCodeValidation,
+                                canGenerateMnemonic: false,
                             });
 
                             void measure(getSignupTelemetryData(model.plansMap, cache));
