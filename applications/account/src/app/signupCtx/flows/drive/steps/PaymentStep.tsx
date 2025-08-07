@@ -59,7 +59,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
             signup.submitPaymentData(options, data);
             return onPaymentTokenProcessed();
         },
-        paymentMethodStatusExtended: payments.paymentsStatus,
+        paymentStatus: payments.paymentStatus,
         flow: 'signup',
     });
 
@@ -72,7 +72,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
 
     const taxCountry = useTaxCountry({
         onBillingAddressChange: payments.selectBillingAddress,
-        statusExtended: payments.paymentsStatus,
+        paymentStatus: payments.paymentStatus,
         zipCodeBackendValid: payments.zipCodeValid,
         previosValidZipCode: payments.options.billingAddress.ZipCode,
         paymentFacade,

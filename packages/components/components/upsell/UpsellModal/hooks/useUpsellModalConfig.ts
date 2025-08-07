@@ -78,7 +78,7 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
             //
             // Fetch dependencies
             //
-            const [user, subscription, plansModel, status] = await Promise.all([
+            const [user, subscription, plansModel, paymentStatus] = await Promise.all([
                 dispatch(userThunk()),
                 dispatch(subscriptionThunk()),
                 dispatch(plansThunk()),
@@ -96,7 +96,7 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                 const currency = getPreferredCurrency({
                     user,
                     plans,
-                    status,
+                    paymentStatus,
                     subscription,
                     enableNewBatchCurrencies: getIsNewBatchCurrenciesEnabled(getFlag),
                 });

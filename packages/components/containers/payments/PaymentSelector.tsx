@@ -7,7 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import Input from '@proton/components/components/input/Input';
 import Label from '@proton/components/components/label/Label';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { type Currency, type PaymentMethodStatusExtended, getCurrencyRate } from '@proton/payments';
+import { type Currency, type PaymentStatus, getCurrencyRate } from '@proton/payments';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
 import AmountButton from './AmountButton';
@@ -21,7 +21,7 @@ interface Props {
     maxAmount?: number;
     minAmount?: number;
     disableCurrencySelector: boolean;
-    status: PaymentMethodStatusExtended;
+    paymentStatus: PaymentStatus;
 }
 
 const PaymentSelector = ({
@@ -32,7 +32,7 @@ const PaymentSelector = ({
     minAmount,
     maxAmount,
     disableCurrencySelector,
-    status,
+    paymentStatus,
 }: Props) => {
     const [subscription] = useSubscription();
     const [user] = useUser();
@@ -114,7 +114,7 @@ const PaymentSelector = ({
                 </div>
                 <div className="md:flex-1 mb-2 md:mb-0">
                     <CurrencySelector
-                        currencies={getAvailableCurrencies({ status, user, subscription })}
+                        currencies={getAvailableCurrencies({ paymentStatus, user, subscription })}
                         mode="select-two"
                         className="w-full"
                         id="id_desc_currency"

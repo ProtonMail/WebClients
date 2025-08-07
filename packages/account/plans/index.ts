@@ -94,7 +94,7 @@ const thunk = ({
                     : true;
 
             const availableCurrencies = getAvailableCurrencies({
-                status,
+                paymentStatus: status,
                 user,
                 subscription,
                 enableNewBatchCurrencies,

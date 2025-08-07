@@ -16,9 +16,9 @@ import type {
     ForceEnableChargebee,
     PLANS,
     PaymentMethodFlow,
-    PaymentMethodStatusExtended,
     PaymentMethodType,
     PaymentProcessorType,
+    PaymentStatus,
     PaymentVerificator,
     PaymentVerificatorV5,
     PaymentsVersion,
@@ -189,7 +189,7 @@ export const usePaymentFacade = (
         flow,
         onMethodChanged,
         paymentMethods,
-        paymentMethodStatusExtended,
+        paymentStatus,
         isChargebeeEnabled,
         chargebeeKillSwitch,
         forceEnableChargebee,
@@ -226,7 +226,7 @@ export const usePaymentFacade = (
         flow: PaymentMethodFlow;
         onMethodChanged?: OnMethodChangedHandler;
         paymentMethods?: SavedPaymentMethod[];
-        paymentMethodStatusExtended?: PaymentMethodStatusExtended;
+        paymentStatus?: PaymentStatus;
         isChargebeeEnabled: () => ChargebeeEnabled;
         chargebeeKillSwitch: ChargebeeKillSwitch;
         forceEnableChargebee: ForceEnableChargebee;
@@ -287,7 +287,7 @@ export const usePaymentFacade = (
             flow,
             onMethodChanged,
             paymentMethods,
-            paymentMethodStatusExtended,
+            paymentStatus,
             isChargebeeEnabled,
             paymentsApi,
             selectedPlanName,
@@ -431,7 +431,7 @@ export const usePaymentFacade = (
                     }
                 ),
             verifyOnly: flow === 'add-card' || isTrial,
-            paymentsStatus: paymentMethodStatusExtended,
+            paymentStatus,
         },
         {
             api,

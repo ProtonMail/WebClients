@@ -12,7 +12,7 @@ import {
     getBillingAddressStatus,
 } from '../../core/billing-address/billing-address';
 import { getDefaultState, isCountryWithStates } from '../../core/countries';
-import { type PaymentMethodStatusExtended } from '../../core/interface';
+import { type PaymentStatus } from '../../core/interface';
 import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
 import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
 
@@ -20,7 +20,7 @@ export type OnBillingAddressChange = (billingAddress: BillingAddress) => void;
 
 interface HookProps {
     onBillingAddressChange?: OnBillingAddressChange;
-    statusExtended?: Pick<PaymentMethodStatusExtended, 'CountryCode' | 'State' | 'ZipCode'>;
+    paymentStatus?: Pick<PaymentStatus, 'CountryCode' | 'State' | 'ZipCode'>;
     zipCodeBackendValid: boolean;
     paymentFacade?: PaymentFacade;
     previosValidZipCode?: string | null;
@@ -42,11 +42,11 @@ export interface TaxCountryHook {
 export const useTaxCountry = (props: HookProps): TaxCountryHook => {
     const zipCodeValidation = useFlag('PaymentsZipCodeValidation');
 
-    const initialBillingAddress: BillingAddress = props.statusExtended
+    const initialBillingAddress: BillingAddress = props.paymentStatus
         ? ({
-              CountryCode: props.statusExtended.CountryCode,
-              State: props.statusExtended.State,
-              ZipCode: zipCodeValidation ? props.statusExtended.ZipCode : null,
+              CountryCode: props.paymentStatus.CountryCode,
+              State: props.paymentStatus.State,
+              ZipCode: zipCodeValidation ? props.paymentStatus.ZipCode : null,
           } satisfies BillingAddress)
         : DEFAULT_TAX_BILLING_ADDRESS;
 
@@ -82,11 +82,11 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
     }, [taxBillingAddressRef.current.CountryCode, taxBillingAddressRef.current.ZipCode]);
 
     useEffect(() => {
-        const currentFromProps: BillingAddress = props.statusExtended
+        const currentFromProps: BillingAddress = props.paymentStatus
             ? ({
-                  CountryCode: props.statusExtended.CountryCode,
-                  State: props.statusExtended.State,
-                  ZipCode: zipCodeValidation ? props.statusExtended.ZipCode : null,
+                  CountryCode: props.paymentStatus.CountryCode,
+                  State: props.paymentStatus.State,
+                  ZipCode: zipCodeValidation ? props.paymentStatus.ZipCode : null,
               } satisfies BillingAddress)
             : DEFAULT_TAX_BILLING_ADDRESS;
 
@@ -101,12 +101,7 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
             setTaxBillingAddress(currentFromProps);
             billingAddressChanged(currentFromProps);
         }
-    }, [
-        props.statusExtended?.CountryCode,
-        props.statusExtended?.State,
-        props.statusExtended?.ZipCode,
-        zipCodeValidation,
-    ]);
+    }, [props.paymentStatus?.CountryCode, props.paymentStatus?.State, props.paymentStatus?.ZipCode, zipCodeValidation]);
 
     const selectedCountryCode = taxBillingAddressRef.current.CountryCode;
     const federalStateCode = taxBillingAddressRef.current.State ?? null;
