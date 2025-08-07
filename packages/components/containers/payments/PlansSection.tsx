@@ -69,7 +69,7 @@ const PlansSectionInner = ({ app }: Props) => {
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [plansResult, loadingPlans] = usePlans();
-    const [status, statusLoading] = usePaymentStatus();
+    const [paymentStatus, statusLoading] = usePaymentStatus();
     const plans = plansResult?.plans || [];
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [vpnServers] = useVPNServersCount();
@@ -83,7 +83,12 @@ const PlansSectionInner = ({ app }: Props) => {
 
     const [open] = useSubscriptionModal();
     const isLoading =
-        loadingPlans || loadingSubscription || loadingOrganization || statusLoading || !status || loadingCurrency;
+        loadingPlans ||
+        loadingSubscription ||
+        loadingOrganization ||
+        statusLoading ||
+        !paymentStatus ||
+        loadingCurrency;
     const [selectedCurrency, setCurrency] = useState<Currency>();
     const currency = selectedCurrency || preferredCurrency;
     const plansMap = getPlansMap(plans, currency);
@@ -181,7 +186,7 @@ const PlansSectionInner = ({ app }: Props) => {
                 plans={plans}
                 vpnServers={vpnServers}
                 currency={currency}
-                paymentsStatus={status}
+                paymentStatus={paymentStatus}
                 cycle={cycle}
                 onChangeCycle={setCycle}
                 planIDs={currentPlanIDs}

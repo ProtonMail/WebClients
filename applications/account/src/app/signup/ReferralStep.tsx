@@ -71,7 +71,7 @@ const ReferralStep = ({ paymentsApi, onSubscriptionData, onBack }: Props) => {
     };
 
     const taxCountry = useTaxCountry({
-        statusExtended: status,
+        paymentStatus: status,
         onBillingAddressChange,
         zipCodeBackendValid,
     });

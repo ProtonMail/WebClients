@@ -27,7 +27,7 @@ const TestTaxCountrySelector = ({
     zipCodeValid?: boolean;
 }) => {
     const taxCountry = useTaxCountry({
-        statusExtended: {
+        paymentStatus: {
             CountryCode: initialCountryCode,
             State: initialStateCode,
             ZipCode: initialZipCode,

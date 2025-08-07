@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { normalizePostalCode } from '../../postal-codes/format';
 import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
 import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
-import { type PaymentMethodStatusExtended } from '../interface';
+import { type PaymentStatus } from '../interface';
 
 export type BillingAddress = {
     CountryCode: string;
@@ -95,7 +95,7 @@ export type FullBillingAddress = {
     VatId: string | null;
 };
 
-export function paymentStatusToBillingAddress(status: PaymentMethodStatusExtended): BillingAddress {
+export function paymentStatusToBillingAddress(status: PaymentStatus): BillingAddress {
     return {
         CountryCode: status.CountryCode,
         State: status.State,

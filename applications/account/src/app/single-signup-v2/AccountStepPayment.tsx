@@ -169,7 +169,7 @@ const AccountStepPayment = ({
         selectedPlanName: selectedPlan.Name,
         flow,
         paymentMethods: model.session?.paymentMethods,
-        paymentMethodStatusExtended: model.paymentMethodStatusExtended,
+        paymentStatus: model.paymentStatus,
         api: normalApi,
         chargebeeEnabled: user?.ChargebeeUser,
         theme: publicTheme,
@@ -238,7 +238,7 @@ const AccountStepPayment = ({
 
     const taxCountry = useTaxCountry({
         onBillingAddressChange,
-        statusExtended: paymentFacade.statusExtended,
+        paymentStatus: paymentFacade.paymentStatus,
         zipCodeBackendValid: subscriptionData.zipCodeValid,
         previosValidZipCode: subscriptionData.billingAddress.ZipCode,
         paymentFacade,

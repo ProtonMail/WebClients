@@ -35,10 +35,10 @@ import {
     type MultiCheckSubscriptionData,
     PAYMENT_METHOD_TYPES,
     PLANS,
-    type PaymentMethodStatusExtended,
     type PaymentMethodType,
     type PaymentProcessorHook,
     type PaymentProcessorType,
+    type PaymentStatus,
     type PlainPaymentMethodType,
     type Plan,
     type PlanIDs,
@@ -190,7 +190,7 @@ export interface SubscriptionContainerProps {
      * If none specified, then shows all addons
      */
     allowedAddonTypes?: AddonGuard[];
-    paymentsStatus: PaymentMethodStatusExtended;
+    paymentStatus: PaymentStatus;
 }
 
 /**
@@ -234,7 +234,7 @@ const SubscriptionContainerInner = ({
     mode,
     parent,
     allowedAddonTypes,
-    paymentsStatus,
+    paymentStatus,
 }: SubscriptionContainerProps) => {
     const lumoAddonEnabled = canAddLumoAddon(subscription);
 
@@ -292,7 +292,7 @@ const SubscriptionContainerInner = ({
             subscription,
             plans,
             paramCurrency: maybeCurrency,
-            status: paymentsStatus,
+            paymentStatus,
             paramPlanName: plan,
         })
     );
@@ -348,9 +348,9 @@ const SubscriptionContainerInner = ({
             planIDs,
             initialCheckComplete: false,
             taxBillingAddress: {
-                CountryCode: paymentsStatus.CountryCode,
-                State: paymentsStatus.State,
-                ZipCode: paymentsStatus.ZipCode,
+                CountryCode: paymentStatus.CountryCode,
+                State: paymentStatus.State,
+                ZipCode: paymentStatus.ZipCode,
             },
             paymentForbidden: false,
             zipCodeValid: true,
@@ -546,7 +546,7 @@ const SubscriptionContainerInner = ({
         billingAddress: model.taxBillingAddress,
         billingPlatform: subscription?.BillingPlatform,
         chargebeeUserExists: user.ChargebeeUserExists,
-        paymentMethodStatusExtended: paymentsStatus,
+        paymentStatus,
         onChargeable: (operations, { paymentProcessorType, source }) => {
             const context: SubscriptionContext = {
                 operationsSubscriptionData: {
@@ -1013,7 +1013,7 @@ const SubscriptionContainerInner = ({
     const taxCountry = useTaxCountry({
         onBillingAddressChange: handleBillingAddressChange,
         zipCodeBackendValid: model.zipCodeValid,
-        statusExtended: paymentsStatus,
+        paymentStatus,
         paymentFacade,
         previosValidZipCode: model.taxBillingAddress.ZipCode,
     });
@@ -1175,7 +1175,7 @@ const SubscriptionContainerInner = ({
                     selectedProductPlans={selectedProductPlans}
                     onChangeSelectedProductPlans={setSelectedProductPlans}
                     organization={organization}
-                    paymentsStatus={paymentsStatus}
+                    paymentStatus={paymentStatus}
                     paymentsApi={paymentsApi}
                     coupon={maybeCoupon ?? undefined}
                 />
