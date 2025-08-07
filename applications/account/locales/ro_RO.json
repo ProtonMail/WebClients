@@ -2716,8 +2716,8 @@
       "Advanced account protection": [
         "Protecție avansată a contului"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Toate aplicațiile ${ BRAND_NAME } și funcțiile lor premium"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Anulare și retrogradare"
@@ -9639,9 +9639,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
       ],
-      "Recovery kit copied to clipboard": [
-        "Kit-ul de recuperare a fost copiat în memorie."
-      ],
       "Recovery phrase copied to clipboard": [
         "Fraza de recuperare a fost copiată în memorie."
       ],
@@ -10667,8 +10664,8 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Puteți impune reguli pentru parolele membrilor organizației atunci când aceștia își creează sau resetează parolele contului ${ BRAND_NAME }."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Puteți obține toate serviciile noastre de confidențialitate premium într-un singur pachet – și costă doar **${ priceString }/lună**."
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Puteți obține serviciile noastre de confidențialitate speciale într-un singur pachet – și costă doar **${ priceString }/lună**."
       ],
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
@@ -13915,9 +13912,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Toate serviciile ${ BRAND_NAME } premium cu un singur abonament."
-      ],
       "Apps for": [
         "Aplicații pentru"
       ],
@@ -14331,9 +14325,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Toate aplicațiile comerciale ${ BRAND_NAME } și funcțiile premium pentru a vă proteja întreaga afacere."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Confidențialitate și securitate cuprinzătoare cu toate serviciile ${ BRAND_NAME } combinate."
       ],
       "Early access to new apps and features": [
         "Acces timpuriu la aplicațiile și funcțiile noi"
@@ -15774,9 +15765,6 @@
       "/month /user, billed biennially": [
         "/lună /utizator, facturat la doi ani"
       ],
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Acces la toate aplicațiile ${ BRAND_NAME } și funcțiile lor premium"
-      ],
       "Advanced protection that goes beyond industry standards": [
         "Protecție avansată care depășește standardele din industrie"
       ],
@@ -15785,9 +15773,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Aliasuri pentru protecția adresei de e-mail împotriva divulgării"
-      ],
-      "All premium ${ BRAND_NAME } services.": [
-        "Toate serviciile premium ${ BRAND_NAME }."
       ],
       "Based in Switzerland, GDPR compliant": [
         "Situată în Elveția, în conformitate cu RGPD"
@@ -15798,11 +15783,11 @@
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
         "Dar puteți obține o reducere ${ discount } trecând la **${ upsellPlanTitle }**."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Dar puteți debloca **${ unlockPlanTitle }** și toate serviciile premium ${ BRAND_NAME } prin trecerea la **${ upsellPlanTitle }** - este doar ${ relativePrice } în plus pe lună."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Dar puteți debloca **${ unlockPlanTitle }** și mai multe servicii ${ BRAND_NAME } prin trecerea la **${ upsellPlanTitle }** — este doar ${ relativePrice } în plus pe lună."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Dar puteți debloca **${ unlockPlanTitle }** și toate serviciile premium ${ BRAND_NAME } trecând la **${ upsellPlanTitle }**."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Dar puteți debloca **${ unlockPlanTitle }** și mai multe servicii ${ BRAND_NAME } trecând la **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Continuând, sunteți de acord cu ${ termsAndConditionsLink } și cu ${ privacyPolicyLink }."
@@ -15893,9 +15878,6 @@
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Ofertă pe perioadă limitată: obțineți ${ title } cu ${ price } per utilizator lunar!"
-      ],
-      "One easy subscription.": [
-        "Un singur abonament."
       ],
       "Open source and audited": [
         "Cod sursă public și auditat"
@@ -15995,14 +15977,14 @@
       "${ upsellPlanTitle } plan": [
         "Abonament ${ upsellPlanTitle }"
       ],
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Toate serviciile ${ BRAND_NAME } Plus.${ br } Un singur abonament."
-      ],
       "Create a ${ appName } account": [
         "Creați un cont ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Creați-vă contul ${ BRAND_NAME }"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Mai multe servicii ${ BRAND_NAME }.${ br }Un singur abonament."
       ],
       "Request your organization administrator to upgrade": [
         "Solicitați administratorului organizației să modifice abonamentul"
@@ -16563,14 +16545,17 @@
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Toate produsele speciale ${ BRAND_NAME } incluse în Duo."
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Cel mai bun dacă aveți nevoie de ${ maxSpace } de stocare și pentru cupluri."
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Stocare în cloud și partajare fișier, securizată prin criptare bilaterală."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Confidențialitate și securitate cuprinzătoare cu toate serviciile ${ BRAND_NAME } combinate."
       ],
       "For next-level password management and identity protection.": [
         "Pentru gestionarea parolelor la un nivel superior și protecția identității."
@@ -16607,11 +16592,11 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Toate serviciile ${ protonPlus }.${ br }Un singur abonament."
-      ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "În calitate de abonat la **${ currentPlanTitle }**, puteți debloca **${ unlockPlanTitle }** și toate serviciile premium ale ${ BRAND_NAME } trecând la **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Mai multe servicii ${ BRAND_NAME }.${ br }Un singur abonament."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Rămân la ${ currentPlanTitle }"
@@ -16813,6 +16798,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
+      ]
+    },
+    "RecoveryPhrase: Action": {
+      "Reveal recovery phrase": [
+        "Afișare frază de recuperare"
       ]
     },
     "Remark about a key type option": {
@@ -19309,8 +19299,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } spațiu total"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } vă oferă acces la toate aplicațiile și funcțiile premium. Confidențialitatea este inclusă, astfel încât să puteți continua, știind că datele și identitatea vă sunt în siguranță."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } vă oferă acces la toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, și ${ CALENDAR_SHORT_APP_NAME }. Confidențialitatea este inclusă, astfel încât vă puteți continua activitatea, știind că datele și identitatea vă sunt în siguranță."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vă oferă toate aplicațiile, toate funcțiile, acces anticipat la versiuni noi și tot ce aveți nevoie pentru a avea controlul asupra datelor și asupra securității acestora."
@@ -22314,9 +22304,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Economisiți până la ${ priceString }** cu un abonament de durată mai mare. Aceleași funcții premium, preț mai mic."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Toate serviciile ${ BRAND_NAME } premium, un singur abonament simplu."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Toate serviciile ${ BRAND_NAME } premium. De la doar ${ fallBackString } lunar."

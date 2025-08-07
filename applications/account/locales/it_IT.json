@@ -652,6 +652,9 @@
       "Enable multi-user support": [
         "Abilita il supporto multi-utente"
       ],
+      "Enable post-quantum protection": [
+        "Attiva la protezione post-quantistica"
+      ],
       "Encrypt and export": [
         "Crittografa ed esporta"
       ],
@@ -1458,6 +1461,9 @@
       ],
       "Upgrade": [
         "Effettua l'upgrade"
+      ],
+      "Upgrade for 200GB": [
+        "Effettua l'upgrade per 200GB"
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
@@ -2753,8 +2759,8 @@
       "Advanced account protection": [
         "Protezione avanzata dell'account"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Tutte le app di ${ BRAND_NAME } e le funzionalità premium"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Annulla ed effettua il downgrade"
@@ -6861,6 +6867,11 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Force upgrade safety review": {
+      "I understand that I will no longer be able to sign in from older versions of ${ BRAND_NAME } mobile apps.": [
+        "Capisco che non potrò più accedere dalle versioni precedenti delle app mobili di ${ BRAND_NAME }."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "app web"
@@ -7078,6 +7089,12 @@
       ],
       "Servers": [
         "Server"
+      ],
+      "Sort folders": [
+        "Ordina cartelle"
+      ],
+      "Sort labels": [
+        "Ordina etichette"
       ],
       "Status": [
         "Stato"
@@ -7927,6 +7944,9 @@
       "Add a recovery phone number": [
         "Aggiungi un numero di telefono di recupero"
       ],
+      "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in. We recommend using ${ protonAuthenticatorDownloadLink } for storing your 2FA codes.": [
+        "Aggiungi un altro livello di sicurezza al tuo account. Dovrai verificarti con 2FA ogni volta che accedi. Ti consigliamo di usare ${ protonAuthenticatorDownloadLink } per archiviare i tuoi codici 2FA."
+      ],
       "Add domain": [
         "Aggiungi dominio"
       ],
@@ -8102,6 +8122,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Sei sicuro di voler rimuovere il dominio ${ boldDomain }?"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "Sei sicuro di voler ordinare le tue cartelle in ordine alfabetico?"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "Sei sicuro di voler ordinare le tue etichette in ordine alfabetico?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Chiedi all'amministratore della tua organizzazione di configurare i Gateway."
       ],
@@ -8134,6 +8160,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Elimina automaticamente le email spostate nel Cestino nello Spam da più di 30 giorni."
+      ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "Mostra automaticamente l'email successiva quando quella visualizzata viene eliminata, archiviata o spostata."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Disponibile su macOS, Windows e Linux."
@@ -8197,6 +8226,9 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
+      ],
+      "By enabling post-quantum protection, keys that are resistant against quantum computers will be generated for your account.": [
+        "Attivando la protezione post-quantistica, verranno generate chiavi resistenti contro i computer quantistici per il tuo account."
       ],
       "By leaving now, changes may not be saved": [
         "Uscendo ora, le modifiche potrebbero non essere salvate"
@@ -8383,6 +8415,9 @@
       ],
       "Delete link?": [
         "Vuoi eliminare il link?"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Elimina i messaggi nelle cartelle Cestino e Spam dopo 30 giorni. Attivare l'eliminazione automatica assegna ai messaggi già presenti nelle cartelle Cestino e Spam una data di eliminazione sulla base della data in cui sono stati spostati lì."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Eliminazione di ${ deletedServerCount } server gateway",
@@ -8653,6 +8688,9 @@
       "Example: ${ spfExample }": [
         "Esempio: ${ spfExample }"
       ],
+      "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
+        "I tuoi inoltri email crittografati end-to-end esistenti dovranno essere riattivati manualmente sotto **${ autoReplySettingsTitle }** nelle impostazioni."
+      ],
       "Expired": [
         "Scaduto"
       ],
@@ -8763,6 +8801,9 @@
       ],
       "Group deleted": [
         "Gruppo eliminato"
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Raggruppa o visualizza separatamente nella tua Posta in arrivo le email nella stessa conversazione."
       ],
       "Groups": [
         "Gruppi"
@@ -9174,6 +9215,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "I messaggi nelle cartelle Inviata e Bozze continueranno a comparire in quelle cartelle, anche se li sposti in un'altra cartella."
       ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "Messaggi nella cartella Spam o Cestino saranno esclusi dalla posizione Tutti i messaggi."
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "I messaggi a tutti i tuoi indirizzi email verranno inviati alla tua casella di posta."
       ],
@@ -9560,9 +9604,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di recupero rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
       ],
-      "Recovery kit copied to clipboard": [
-        "Il kit di recupero è copiato negli appunti."
-      ],
       "Recovery phrase copied to clipboard": [
         "Frase di recupero copiata negli appunti"
       ],
@@ -9829,6 +9870,9 @@
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Il supporto per il monitoraggio dei domini personalizzati e degli indirizzi email diversi da ${ BRAND_NAME } sarà presto disponibile."
+      ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "Il supporto per le chiavi post-quantum è attivato per il tuo account."
       ],
       "support team": [
         "team di supporto"
@@ -10575,8 +10619,8 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Puoi imporre le regole della password che i membri della tua organizzazione utilizzeranno quando creano o reimpostano la password per il loro account ${ BRAND_NAME }."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Puoi ottenere tutti i nostri servizi premium per la privacy in un unico pacchetto, al costo di soli **${ priceString }/mese**."
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Puoi ottenere i nostri servizi premium per la privacy in un unico pacchetto, al costo di soli **${ priceString }/mese**."
       ],
       "You can import one data type at a time.": [
         "Puoi importare un tipo di dati alla volta."
@@ -11048,11 +11092,26 @@
       "Generate key": [
         "Genera chiave"
       ],
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Se hai generato questa chiave perché sospetti che la tua chiave precedente sia stata compromessa, per favore contrassegnala come compromessa nelle tue impostazioni."
+      ],
+      "Key generation failed, please try again later.": [
+        "La generazione della chiave non è riuscita, riprova più tardi."
+      ],
       "Key successfully generated.": [
         "Chiave generata con successo."
       ],
+      "New key generated": [
+        "Nuova chiave generata"
+      ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Questa azione genererà una nuova chiave, che verrà utilizzata per crittografare i dettagli di contatto futuri, le chiavi di crittografia email e gli altri dati."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails and other data, for **${ emailAddress }**.": [
+        "Questa azione genererà una nuova chiave, che verrà utilizzata per crittografare le email future e altri dati, per **${ emailAddress }**."
+      ],
+      "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
+        "Hai già questo tipo di chiave. A meno che quella chiave non sia stata compromessa, generare **una nuova chiave potrebbe rallentare il tuo account**."
       ]
     },
     "Key state badge": {
@@ -11061,6 +11120,9 @@
       ],
       "Disabled": [
         "Disabilitata"
+      ],
+      "Fallback": [
+        "Alternativa"
       ],
       "Forwarding": [
         "Inoltro"
@@ -11076,6 +11138,27 @@
       ],
       "Primary": [
         "Principale"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Più veloce"
+      ],
+      "Slower, but stronger long-term security": [
+        "Più lenta, ma sicurezza a lungo termine più forte"
+      ]
+    },
+    "Key type option": {
+      "${ classicalProtection } (ECC Curve25519)": [
+        "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Seleziona tipo di chiave"
       ]
     },
     "Keyboard shortcut name": {
@@ -11314,6 +11397,9 @@
       "Export public key": [
         "Esporta la chiave pubblica"
       ],
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "Rende questa la ${ keyStatusBadgeTitles.primary } o ${ keyStatusBadgeTitles.fallback } chiave per la crittografia e la firma."
+      ],
       "Mark compromised": [
         "Segna come compromesso"
       ],
@@ -11325,6 +11411,9 @@
       ],
       "Mark obsolete": [
         "Segna come obsoleto"
+      ],
+      "Use for encryption and signing": [
+        "Usa per la crittografia e la firma"
       ]
     },
     "Knowledge base link label": {
@@ -11976,6 +12065,9 @@
       ],
       "Key": [
         "Chiave"
+      ],
+      "Key strength": [
+        "Robustezza della chiave"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Scorciatoia da tastiera: ${ shortcut }"
@@ -13730,9 +13822,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tutti i servizi ${ BRAND_NAME } di base (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Tutti i servizi premium di ${ BRAND_NAME }. Un semplice abbonamento"
-      ],
       "Apps for": [
         "App per"
       ],
@@ -14138,9 +14227,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tutte le app aziendali e le funzionalità premium di ${ BRAND_NAME } per proteggere l'intera azienda."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Privacy e sicurezza complete con tutti i servizi ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
         "Accesso anticipato a nuove app e funzionalità"
@@ -14879,6 +14965,9 @@
       "Limited-time offer": [
         "Offerta a tempo limitato"
       ],
+      "Limited-time offer, valid for your first month": [
+        "Offerta a tempo limitato, valida per il tuo primo mese"
+      ],
       "Maybe later": [
         "Forse più tardi"
       ],
@@ -14899,6 +14988,12 @@
       ],
       "This offer won't be shown again.": [
         "Questa offerta non verrà più mostrata."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Effettua l\"upgrade per la tua produttività per soli ${ pricingTitle } con ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Effettua l\"upgrade della tua archiviazione a soli ${ pricingTitle } con ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Quando si passa da un abbonamento mensile a uno annuale."
@@ -14925,11 +15020,20 @@
       "Advanced threat protection": [
         "Protezione avanzata dalle minacce"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Collabora con utenti non-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Dominio email personalizzato"
       ],
+      "Edit docs online": [
+        "Modifica documenti online"
+      ],
       "Email addresses": [
         "Indirizzi email"
+      ],
+      "File version history (over 1 week)": [
+        "Cronologia delle versioni del file (oltre 1 settimana)"
       ],
       "Free": [
         "Gratuito"
@@ -15555,9 +15659,6 @@
       "/month /user, billed biennially": [
         "/mese /utente, fatturazione biennale"
       ],
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Accesso a tutte le app di ${ BRAND_NAME } e alle funzionalità premium"
-      ],
       "Advanced protection that goes beyond industry standards": [
         "Protezione avanzata che va oltre gli standard aziendali"
       ],
@@ -15566,9 +15667,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Alias ​​per la protezione delle email dalle violazioni di dati"
-      ],
-      "All premium ${ BRAND_NAME } services.": [
-        "Tutti i servizi premium di ${ BRAND_NAME }."
       ],
       "Based in Switzerland, GDPR compliant": [
         "Sede in Svizzera, conforme al GDPR"
@@ -15579,11 +15677,11 @@
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
         "Ma puoi ottenere uno sconto del ${ discount } effettuando l'upgrade a **${ upsellPlanTitle }**."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Ma puoi sbloccare **${ unlockPlanTitle }** e tutti i servizi premium ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }** — costa solo ${ relativePrice } in più al mese."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Ma puoi sbloccare **${ unlockPlanTitle }** e altri servizi ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }** — costa solo ${ relativePrice } in più al mese."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Ma puoi sbloccare **${ unlockPlanTitle }** e tutti i servizi premium di ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ma puoi sbloccare **${ unlockPlanTitle }** e altri servizi di ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Continuando accetti i nostri ${ termsAndConditionsLink } e ${ privacyPolicyLink }."
@@ -15674,9 +15772,6 @@
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Offerta a tempo limitato: ${ title } a ${ price } per utente al mese!"
-      ],
-      "One easy subscription.": [
-        "Un semplice abbonamento."
       ],
       "Open source and audited": [
         "Open source e verificato"
@@ -15776,14 +15871,14 @@
       "${ upsellPlanTitle } plan": [
         "Piano ${ upsellPlanTitle }"
       ],
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Tutti i servizi Plus di ${ BRAND_NAME }.${ br }Un semplice abbonamento."
-      ],
       "Create a ${ appName } account": [
         "Crea un account ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Crea il tuo account ${ BRAND_NAME }"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Altri servizi ${ BRAND_NAME }.${ br }Un abbonamento standard."
       ],
       "Request your organization administrator to upgrade": [
         "Chiedi all'amministratore della tua organizzazione di effettuare l'upgrade"
@@ -16339,14 +16434,17 @@
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Tutti i prodotti premium di ${ BRAND_NAME } inclusi in Duo."
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Ideale se ti servono ${ maxSpace } di archiviazione e per le coppie."
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Archiviazione cloud e condivisione dei file, protetta da crittografia end-to-end."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Privacy e sicurezza complete con tutti i servizi ${ BRAND_NAME }."
       ],
       "For next-level password management and identity protection.": [
         "Per una gestione delle password e protezione dell'identità di livello superiore."
@@ -16381,17 +16479,72 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Tutti i servizi di ${ protonPlus }.${ br }Un semplice abbonamento."
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "In quanto abbonato a **${ currentPlanTitle }**, puoi sbloccare **${ unlockPlanTitle }** e più servizi ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "In quanto abbonato a **${ currentPlanTitle }**, puoi sbloccare **${ unlockPlanTitle }** e tutti i servizi premium di ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Altri servizi ${ BRAND_NAME }.${ br }Un abbonamento standard."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Rimani su ${ currentPlanTitle }"
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Effettua l'upgrade a ${ upsellPlanTitle }"
+      ]
+    },
+    "PQC account key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum account and address keys failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "La protezione post-quantistica è stata attivata sul tuo account, ma alcune operazioni non sono riuscite: la generazione delle chiavi post-quantistiche dell'account e dell'indirizzo è fallita. Puoi generare manualmente queste chiavi sotto le impostazioni ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC adress key generation": {
+      "Post-quantum protection has been enabled on your account, but some operations were not successful: generating post-quantum address keys for one or more addresses failed. You can manually generate these keys under the ${ encryptionAndKeysSettingsTitle } settings.": [
+        "La protezione post-quantistica è stata attivata sul tuo account, ma alcune operazioni non sono riuscite: la generazione delle chiavi di indirizzo post-quantistiche per uno o più indirizzi è fallita. Puoi generare manualmente queste chiavi sotto le impostazioni ${ encryptionAndKeysSettingsTitle }."
+      ]
+    },
+    "PQC compatibility warning": {
+      "Please update **all your ${ BRAND_NAME } mobile apps** to the latest version.": [
+        "Aggiorna **tutte le tue app mobile ${ BRAND_NAME }** all'ultima versione."
+      ]
+    },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "Questo genererà una nuova chiave dell'account e una nuova chiave di crittografia email per ogni indirizzo; queste verranno usate per crittografare e decriptare future email e altri dati."
+      ]
+    },
+    "PQC optin": {
+      "Enable and generate keys": [
+        "Attiva e genera chiavi"
+      ],
+      "Enable post-quantum protection": [
+        "Attiva la protezione post-quantistica"
+      ],
+      "Enable post-quantum protection?": [
+        "Attivare la protezione post-quantistica?"
+      ],
+      "Enabling post-quantum protection failed. Try again later.": [
+        "Attivazione della protezione post-quantistica non riuscita. Riprova più tardi."
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Tutto chiaro"
+      ]
+    },
+    "pqc-optin: Info": {
+      "Post-quantum protection has been enabled on your account!": [
+        "La protezione post-quantum è stata attivata sul tuo account!"
+      ]
+    },
+    "pqc-optin: Progress status": {
+      "Generating post-quantum account key": [
+        "Generazione di chiave account post-quantum"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "Generazione di chiavi di indirizzo post-quantistiche per ogni indirizzo"
+      ],
+      "Opting into post-quantum protection": [
+        "Attivazione della protezione post-quantistica"
       ]
     },
     "Price": {
@@ -16534,6 +16687,19 @@
         "Verificare il tuo numero di telefono migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
       ]
     },
+    "RecoveryPhrase: Action": {
+      "Reveal recovery phrase": [
+        "Rivela la frase di recupero"
+      ]
+    },
+    "Remark about a key type option": {
+      "Classic": [
+        "Classica"
+      ],
+      "Post-quantum": [
+        "Post-quantum"
+      ]
+    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Annullando l'iscrizione non avrai più accesso a questo calendario. Tutti gli eventi in questo calendario verranno eliminati dal tuo account, ma rimarranno accessibili dal link pubblico originale."
@@ -16588,8 +16754,20 @@
       ]
     },
     "retention_policy_2025_Action": {
+      "Add users or groups": [
+        "Aggiungere utenti o gruppi"
+      ],
+      "Cancel": [
+        "Annulla"
+      ],
+      "Confirm": [
+        "Conferma"
+      ],
       "Create retention rule": [
         "Crea una regola di conservazione"
+      ],
+      "Create rule": [
+        "Crea regola"
       ],
       "Delete": [
         "Elimina"
@@ -16597,8 +16775,46 @@
       "Delete rule": [
         "Elimina regola"
       ],
+      "Delete this scope": [
+        "Elimina questo ambito"
+      ],
       "Edit": [
         "Modifica"
+      ],
+      "Purge all": [
+        "Elimina tutto"
+      ],
+      "Purge deleted": [
+        "Eliminazione annullata"
+      ],
+      "Save changes": [
+        "Salva le modifiche"
+      ]
+    },
+    "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, inclusi quelli in Posta in arrivo, Inviata e Bozze. Questo potrebbe eliminare messaggi che gli utenti si aspettano di conservare. Non è possibile recuperare questi messaggi in seguito."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "Dopo ${ lifetime } giorno tutti i messaggi verranno eliminati",
+        "Dopo ${ lifetime } giorni tutti i messaggi saranno eliminati"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } days": [
+        "La durata deve essere superiore a ${ MIN_LIFETIME } giorni"
+      ],
+      "Lifetime must not be set for \"Retain All\" action": [
+        "La durata non deve essere impostata per l'azione \"Conserva tutto\""
+      ],
+      "Scope value is not valid": [
+        "Il valore dell'ambito non è valido"
+      ],
+      "Scope value is required": [
+        "Il valore dell'ambito è richiesto"
+      ],
+      "Scopes cannot have the same value": [
+        "Gli ambiti non possono avere lo stesso valore"
       ]
     },
     "retention_policy_2025_Info": {
@@ -16609,11 +16825,87 @@
         "${ rule.Lifetime } giorno",
         "${ rule.Lifetime } giorni"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Crea regole di conservazione per quanto tempo conservare i dati in linea con la politica di conservazione dei dati della tua organizzazione. Inoltre, attiva la cancellazione automatica dei dati scaduti."
+      ],
       "Forever": [
         "Per sempre"
+      ],
+      "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
+        "Include tutti i messaggi nella Posta in arrivo, Inviata e tutte le altre posizioni. I messaggi eliminati non possono essere recuperati."
+      ],
+      "Removes messages already deleted by users.": [
+        "Rimuove i messaggi già eliminati dagli utenti."
+      ],
+      "Retention rule \"${ formData.name }\" updated successfully": [
+        "Regola di conservazione \"${ formData.name }\" aggiornata con successo"
+      ],
+      "Retention rule \"${ payload.Name }\" created successfully": [
+        "Regola di conservazione \"${ payload.Name }\" creata con successo"
+      ],
+      "Retention rule \"${ retentionRule.Name }\" deleted successfully": [
+        "Regola di conservazione \"${ retentionRule.Name }\" eliminata con successo"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Dopo la scadenza del periodo di conservazione"
+      ],
+      "Applies to": [
+        "Si applica a"
+      ],
+      "days": [
+        "giorni"
+      ],
+      "Keep items forever": [
+        "Mantieni gli elementi per sempre"
+      ],
+      "Keep messages forever": [
+        "Mantieni i messaggi per sempre"
+      ],
+      "Retention period": [
+        "Periodo di conservazione"
+      ],
+      "Rule title": [
+        "Titolo della regola"
+      ],
+      "Select product": [
+        "Seleziona prodotto"
+      ],
+      "Set a duration": [
+        "Imposta una durata"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Tutti nell'organizzazione"
+      ],
+      "Group": [
+        "Gruppo"
+      ],
+      "Purge all messages": [
+        "Elimina tutti i messaggi"
+      ],
+      "Purge deleted messages only": [
+        "Elimina solo i messaggi eliminati"
+      ],
+      "Specific users or groups": [
+        "Utenti o gruppi specifici"
+      ],
+      "User": [
+        "Utente"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "E.g. Cleanup unused mailboxes": [
+        "Es. Pulizia delle caselle email inutilizzate"
+      ],
+      "Enter duration": [
+        "Inserisci durata"
+      ],
+      "Enter value": [
+        "Inserisci valore"
+      ],
       "Search for rule, users, period, action": [
         "Cerca per regola, utenti, periodo, azione"
       ],
@@ -16638,6 +16930,17 @@
     "retention_policy_2025_TableRow": {
       "No retention policies found": [
         "Nessun criterio di conservazione trovato"
+      ]
+    },
+    "retention_policy_2025_Title": {
+      "Confirm retention rule?": [
+        "Confermare regola di conservazione?"
+      ],
+      "Create retention rule": [
+        "Crea una regola di conservazione"
+      ],
+      "Edit retention rule": [
+        "Modifica la regola di conservazione"
       ]
     },
     "Role": {
@@ -18697,6 +19000,10 @@
         "${ ipAddresses } server dedicato",
         "${ ipAddresses } server dedicati"
       ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } per ${ maxLumo } utente",
+        "${ LUMO_APP_NAME } per ${ maxLumo } utenti"
+      ],
       "${ n } calendar per user": [
         "${ n } calendario per utente",
         "${ n } calendari per utente"
@@ -18823,8 +19130,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } di spazio di archiviazione totale"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } ti dà accesso a tutte le app e alle funzionalità premium. La privacy è integrata in modo che tu abbia la certezza che i tuoi dati e la tua identità sono al sicuro."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } ti dà accesso a tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }. La privacy è integrata, così puoi procedere sapendo che i tuoi dati e la tua identità sono al sicuro."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ti offre tutte le app, tutte le funzionalità, l'accesso anticipato alle nuove versioni e tutto ciò di cui hai bisogno per avere il controllo dei tuoi dati e della loro sicurezza."
@@ -20679,6 +20986,9 @@
       "Policies": [
         "Politiche"
       ],
+      "Post-quantum protection": [
+        "Protezione post-quantistica"
+      ],
       "Preview": [
         "Anteprima"
       ],
@@ -21022,8 +21332,17 @@
       "Upgrade plan": [
         "Effettua l'upgrade"
       ],
+      "Upgrade to ${ planName }": [
+        "Effettua l'upgrade a ${ planName }"
+      ],
       "Upgrade your privacy": [
         "Migliora la tua privacy"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Effettua l\"upgrade per la tua produttività per ${ formattedPrice } con ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Effettua l\"upgrade della tua archiviazione per ${ formattedPrice } con ${ planName }"
       ],
       "Upload and share files": [
         "Carica e condividi file"
@@ -21793,9 +22112,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Risparmia fino a ${ priceString }** con un abbonamento più lungo. Stesse funzionalità premium, prezzo più basso."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Tutti i servizi premium di ${ BRAND_NAME }, un semplice abbonamento."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Tutti i servizi premium ${ BRAND_NAME }. A partire da soli ${ fallBackString } al mese"

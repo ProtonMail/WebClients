@@ -280,6 +280,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Vahvista linkin ${ linkToShow } avaus"
       ],
+      "Confirm purchase": [
+        "Vahvista osto"
+      ],
       "Connect": [
         "Yhdistä"
       ],
@@ -369,6 +372,9 @@
       ],
       "Create folder": [
         "Luo kansio"
+      ],
+      "Create free account now": [
+        "Luo ilmainen tili nyt"
       ],
       "Create Gateway": [
         "Luo yhdyskäytävä"
@@ -591,6 +597,9 @@
       ],
       "Edit servers": [
         "Muokkaa palvelimia"
+      ],
+      "Edit Sieve": [
+        "Muokkaa Sieve-suodatinta"
       ],
       "Edit sign-in details": [
         "Muokkaa kirjautumistietoja"
@@ -909,6 +918,9 @@
       ],
       "More": [
         "Lisää"
+      ],
+      "More benefits": [
+        "Lisää etuja"
       ],
       "More info: ${ safeTitle }": [
         "Lisätietoja: ${ safeTitle }"
@@ -1426,6 +1438,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Ota ${ PROTON_SENTINEL_NAME } käyttöön päivittämällä tilauksesi"
       ],
+      "Upgrade to Professional": [
+        "Päivitä Professionaliin"
+      ],
       "Upgrade to view all": [
         "Näytä kaikki päivittämällä tilauksesi"
       ],
@@ -1594,6 +1609,10 @@
       ],
       "${ price } per user": [
         "${ price }/käyttäjä"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-lisenssi",
+        "${ seats } ${ LUMO_APP_NAME }-lisenssiä"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } kirjoitusavustajalisenssi",
@@ -2558,9 +2577,6 @@
       ],
       "Advanced account protection": [
         "Edistynyt tilin suojaus"
-      ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Kaikki ${ BRAND_NAME }-sovellukset ja niiden premium-ominaisuudet"
       ],
       "Cancel and downgrade": [
         "Peru ja alenna tilaus"
@@ -5162,6 +5178,9 @@
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
+      "Invalid ZIP code": [
+        "Virheellinen postinumero"
+      ],
       "Item content cannot exceed 40KB": [
         "Kohteen sisällön koko ei saa ylittää 40 kt"
       ],
@@ -5253,6 +5272,12 @@
       "Please enter a valid Entity ID URL": [
         "Syötä kelvollinen entiteetti-ID-URL"
       ],
+      "Please enter a valid ZIP code": [
+        "Syötä kelvollinen postinumero"
+      ],
+      "Please enter ZIP code": [
+        "Syötä postinumero"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Jatka korjaamalla korostettu ristiriita.",
         "Jatka korjaamalla korostetut ristiriidat."
@@ -5301,6 +5326,9 @@
       ],
       "Port is required": [
         "Portti vaaditaan"
+      ],
+      "Postal code is required": [
+        "Postinumero vaaditaan"
       ],
       "Primary address key is not decrypted": [
         "Ensisijaisen osoitteen avaimen salausta ei ole purettu"
@@ -9128,9 +9156,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
       ],
-      "Recovery kit copied to clipboard": [
-        "Palautuspaketti kopioitiin leikepöydälle"
-      ],
       "Recovery phrase copied to clipboard": [
         "Palautuslauseke kopioitiin leikepöydälle"
       ],
@@ -10113,9 +10138,6 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "Voit ottaa Kuvat-osion käyttöön käyttöliittymän alla olevalla painikkeella."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Saat kaikki premium-yksityisyyspalvelumme yhdessä paketissa – vain hintaan **${ priceString }/kk**."
-      ],
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
@@ -10544,6 +10566,9 @@
       "Key successfully generated.": [
         "Avain luotiin."
       ],
+      "New key generated": [
+        "Uusi avain luotu"
+      ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "Tämä luo uuden avaimen, jota käytetään jatkossa yhteystietojen, sähköpostin salausavainten ja muiden tietojen salaukseen."
       ]
@@ -10561,11 +10586,19 @@
       "Inactive": [
         "Ei käytössä"
       ],
+      "Invalid": [
+        "Virheellinen"
+      ],
       "Obsolete": [
         "Vanhentunut"
       ],
       "Primary": [
         "Ensisijainen"
+      ]
+    },
+    "Key type selection": {
+      "Select key type": [
+        "Valitse avaintyyppi"
       ]
     },
     "Keyboard shortcut name": {
@@ -12119,6 +12152,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postinumero"
+      ],
       "ZIP code": [
         "Postinumero"
       ]
@@ -12349,6 +12385,9 @@
       ],
       "Terms": [
         "Ehdot"
+      ],
+      "Terms and conditions": [
+        "Käyttöehdot"
       ],
       "Trouble signing in?": [
         "Ongelmia kirjautumisessa?"
@@ -13172,9 +13211,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Kaikki premium ${ BRAND_NAME } -palvelut. Yksi helppo tilaus"
-      ],
       "Auto-delete Spam and Trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
@@ -13571,9 +13607,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Kaikki ${ BRAND_NAME } -yrityssovellukset ja premium-ominaisuudet koko yrityksesi suojaamiseksi."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Kattavaa yksityisyyttä ja turvaa kaikkien ${ BRAND_NAME }-palveluiden yhdistelmällä."
       ],
       "Early access to new apps and features": [
         "Varhainen käyttöoikeus uusiin sovelluksiin ja ominaisuuksiin"
@@ -14910,9 +14943,6 @@
       "Aliases for email protection from breaches": [
         "Aliakset suojaavat sähköpostia tietomurroilta"
       ],
-      "All premium ${ BRAND_NAME } services.": [
-        "Kaikki ${ BRAND_NAME }-premium-palvelut."
-      ],
       "Based in Switzerland, GDPR compliant": [
         "Sveitsissä sijaitseva, GDPR:ää noudattava"
       ],
@@ -14921,12 +14951,6 @@
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
         "Mutta voit saada ${ discount } allennusta päivittämällä hintaan **${ upsellPlanTitle }**."
-      ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Mutta voit avata **${ unlockPlanTitle }**-tilauksen ja kaikki ${ BRAND_NAME }in premium-palvelut päivittämällä **${ upsellPlanTitle }**-tilaukseen — vain ${ relativePrice } kuukausikorotuksella."
-      ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Mutta voit avata **${ unlockPlanTitle }**-tilauksen ja kaikki premium-${ BRAND_NAME } -palvelut päivittämällä **${ upsellPlanTitle }**-tilaukseen."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Jatkamalla hyväksyt ${ termsAndConditionsLink } ja ${ privacyPolicyLink }."
@@ -15017,9 +15041,6 @@
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Rajoitettu tarjous: Hanki ${ title } hintaan ${ price }/käyttäjä kuukausittain!"
-      ],
-      "One easy subscription.": [
-        "Yksi helppo tilaus."
       ],
       "Open source and audited": [
         "Avoin lähdekoodi ja auditoitu"
@@ -15112,9 +15133,6 @@
     "pass_signup_2023: Title": {
       "${ upsellPlanTitle } plan": [
         "${ upsellPlanTitle } -tilaus"
-      ],
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Kaikki ${ BRAND_NAME }in Plus-palvelut.${ br }Yksi helppo tilaus."
       ],
       "Create a ${ appName } account": [
         "Luo ${ appName }-tili"
@@ -15414,6 +15432,20 @@
         "Katuosoite, postinumero ja kaupunki"
       ]
     },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Yritystunnus"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "ALV-numero"
+      ]
+    },
     "Permission": {
       "No permission": [
         "Ei käyttöoikeutta"
@@ -15541,6 +15573,9 @@
       "Please select the main reason": [
         "Valitse ensisijainen syy"
       ],
+      "Postal code": [
+        "Postinumero"
+      ],
       "Printer": [
         "Tulostin"
       ],
@@ -15591,6 +15626,9 @@
       ],
       "yourdomain.com": [
         "verkkotunnuksesi.fi"
+      ],
+      "ZIP code": [
+        "Postinumero"
       ]
     },
     "placeholder": {
@@ -15637,6 +15675,11 @@
       ],
       "Enjoying ${ planName }?": [
         "Nautitko ${ planName }ista?"
+      ]
+    },
+    "pqc-optin: Action": {
+      "Got it": [
+        "Selvä"
       ]
     },
     "Price": {
@@ -15779,6 +15822,11 @@
         "Puhelinnumeron vahvistus parantaa tilisi suojausta ja mahdollistaa lisää palautusvaihtoehtoja."
       ]
     },
+    "Remark about a key type option": {
+      "Classic": [
+        "Klassinen"
+      ]
+    },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
         "Peruessasi tilauksen, menetät kalenterin käyttöoikeuden ja tililtäsi poistetaan kaikki sen tapahtumat. Tapahtumat kuitenkin säilyvät alkuperäisessä julkisessa linkissä."
@@ -15830,6 +15878,36 @@
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Hallintaoikeuksiasi organisaatiossa on rajoitettu salasanan vaihdon seurauksena, eikä seuraavia toimintoja enää sallita:"
+      ]
+    },
+    "retention_policy_2025_Action": {
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Confirm": [
+        "Vahvista"
+      ],
+      "Create rule": [
+        "Luo sääntö"
+      ],
+      "Delete": [
+        "Poista"
+      ],
+      "Edit": [
+        "Muokkaa"
+      ]
+    },
+    "retention_policy_2025_Option": {
+      "Group": [
+        "Ryhmä"
+      ],
+      "User": [
+        "Käyttäjä"
+      ]
+    },
+    "retention_policy_2025_TableHeader": {
+      "Action": [
+        "Toiminto"
       ]
     },
     "Role": {
@@ -16768,6 +16846,9 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Jatka ${ PLAN_NAMES[plan] } käyttäen"
       ],
+      "Encrypted cloud storage": [
+        "Salattu pilvitallennustila"
+      ],
       "Encrypted password manager": [
         "Salattu salasanahallinta"
       ],
@@ -16776,6 +16857,12 @@
       ],
       "Free": [
         "Ilmainen"
+      ],
+      "Free for 14 days": [
+        "Ilmainen 14 päivän ajan"
+      ],
+      "Highest VPN speed": [
+        "Korkein VPN-nopeus"
       ],
       "Monthly": [
         "Kuukausittain"
@@ -16789,6 +16876,9 @@
       "Online documents": [
         "Verkkodokumentit"
       ],
+      "Password manager": [
+        "Salasanahallinta"
+      ],
       "Recover previous file versions": [
         "Palauta aiempia tiedostoversioita"
       ],
@@ -16801,6 +16891,9 @@
       "Secure file sharing": [
         "Suojattu tiedostojen jako"
       ],
+      "Select ${ title }": [
+        "Valitse ${ title }"
+      ],
       "Selected": [
         "Valittu"
       ],
@@ -16812,6 +16905,9 @@
       ],
       "Set your password": [
         "Aseta salasanasi"
+      ],
+      "Storage": [
+        "Tallennustila"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Yrityksen nimi näkyy käyttäjillesi, kun he ovat kirjautuneena."
@@ -17062,6 +17158,9 @@
       ],
       "Go to subscription plans": [
         "Siirry tilauksiin"
+      ],
+      "Increase your storage": [
+        "Lisää tallennustilaasi"
       ],
       "Upgrade": [
         "Päivitä tilaus"
@@ -17738,9 +17837,6 @@
       ],
       "${ planMaxSpace } total storage": [
         "Yhteensä ${ planMaxSpace } tallennustilaa"
-      ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja identiteettisi ovat turvassa."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
@@ -20626,9 +20722,6 @@
       ]
     },
     "Upsell": {
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Kaikki ${ BRAND_NAME }-premium-palvelut. Yksi helppo tilaus."
-      ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Kaikki ${ BRAND_NAME }-premium-palvelut. Alkaen vain ${ fallBackString } kuukaudessa"
       ],
@@ -20751,6 +20844,9 @@
       ],
       "It's you": [
         "Sinä"
+      ],
+      "Lumo": [
+        "Lumo"
       ],
       "Pending admin access": [
         "Odottaa ylläpito-oikeutta"
