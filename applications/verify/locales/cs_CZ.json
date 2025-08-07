@@ -1284,9 +1284,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Všechny prémiové služby ${ BRAND_NAME }. Jedno snadné předplatné"
-      ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
       ],
@@ -1525,6 +1522,11 @@
     "Placeholder": {
       "Password": [
         "Heslo"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {

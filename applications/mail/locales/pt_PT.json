@@ -1426,10 +1426,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
-      ],
       "Trust public key": [
         "Confiar na chave pública"
       ],
@@ -2543,9 +2539,6 @@
       ],
       "Advanced account protection": [
         "Proteção avançada de conta"
-      ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Todas as aplicações ${ BRAND_NAME } e funcionalidades premium"
       ],
       "Cancel and downgrade": [
         "Cancelar e diminuir o plano"
@@ -7162,7 +7155,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -10404,9 +10398,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Todos os serviços ${ BRAND_NAME } premiu com uma subscrição fácil"
-      ],
       "Auto-delete Spam and Trash": [
         "Eliminação automática das pastas Spam e Lixo"
       ],
@@ -10760,9 +10751,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Todas as aplicações e funcionalidades premium da ${ BRAND_NAME } for Business para proteger a sua empresa."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "Early access to new apps and features": [
         "Acesso antecipado a novas aplicações e funcionalidades"
@@ -11593,9 +11581,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Acede a todas as aplicações ${ BRAND_NAME } e funcionalidades premium"
-      ],
       "Secure vault sharing": [
         "Partilha segura de cofre"
       ],
@@ -12023,12 +12008,6 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Todos os serviços ${ protonPlus }.${ br }Uma subscrição fácil."
-      ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Como subscritor de **${ currentPlanTitle }**, pode desbloquear o **${ unlockPlanTitle }** e todos os serviços premium da ${ BRAND_NAME } ao atualizar para o **${ upsellPlanTitle }**."
-      ],
       "Stay on ${ currentPlanTitle }": [
         "Manter-se no plano ${ currentPlanTitle }"
       ],
@@ -13148,9 +13127,6 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
-      ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "O ${ planName } dá-lhe acesso a todas as aplicações e funcionalidades premium. A privacidade está integrada, para poder continuar o seu trabalho sabendo que os seus dados e identidade estão seguros."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } dá-lhe acesso a todas as aplicações, todas as funcionalidades, acesso antecipado às novas versões e tudo o que precisa para ter controlo sobre os seus dados e a sua segurança."

@@ -1462,8 +1462,8 @@
       "Advanced account protection": [
         "Proteção avançada de conta"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Todos os aplicativos e recursos premium da ${ BRAND_NAME }"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todos os recursos premium para ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Cancelar e fazer downgrade"
@@ -7036,9 +7036,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil"
-      ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
       ],
@@ -7392,9 +7389,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Todos os aplicativos da ${ BRAND_NAME } for Business e recursos premium para proteger a sua empresa."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
       ],
       "Early access to new apps and features": [
         "Acesso antecipado a novos aplicativos e recursos"
@@ -8245,9 +8239,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Acesse todos os aplicativos e recursos premium da ${ BRAND_NAME }"
-      ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
       ],
@@ -8617,12 +8608,20 @@
         "contato"
       ]
     },
-    "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Todos os serviços da ${ protonPlus }.${ br }assinatura facilitada."
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Todos os recursos premium para ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, e ${ PASS_SHORT_APP_NAME }."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Como assinante do **${ currentPlanTitle }**, você pode desbloquear **${ unlockPlanTitle }** e todos os serviços premium da ${ BRAND_NAME } fazendo upgrade para o **${ upsellPlanTitle }**."
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Todos os recursos premium para ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, e ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Como assinante do **${ currentPlanTitle }**, você pode desbloquear **${ unlockPlanTitle }** e mais serviços da ${ BRAND_NAME } fazendo upgrade para o **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Mais serviços da ${ BRAND_NAME }.${ br }assinatura facilitada."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Continuar no ${ currentPlanTitle }"

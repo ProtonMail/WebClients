@@ -1420,8 +1420,8 @@
       "Advanced account protection": [
         "향상된 계정 보호"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "모든 ${ BRAND_NAME } 앱들과 프리미엄 기능들"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
       ],
       "Cancel and downgrade": [
         "취소 및 다운그레이드"
@@ -6851,9 +6851,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독"
-      ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
@@ -7200,9 +7197,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "전체 비즈니스를 보호하는 모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "모든 ${ BRAND_NAME } 서비스를 결합한 포괄적인 개인 정보 보호 및 보안."
       ],
       "Early access to new apps and features": [
         "새로운 앱과 기능에 얼리 액세스"
@@ -8029,9 +8023,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "모든 ${ BRAND_NAME }앱과 프리미엄 기능에 접근하세요"
-      ],
       "Secure vault sharing": [
         "안전한 금고 공유"
       ],
@@ -8390,12 +8381,20 @@
         "연락"
       ]
     },
-    "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "모든 ${ protonPlus } 서비스.${ br }한 번의 쉬운 구독으로."
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME }의 모든 프리미엄 기능."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
+      ]
+    },
+    "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "**${ currentPlanTitle }** 구독자라면 **${ upsellPlanTitle }**으로 업그레이드하여 **${ unlockPlanTitle }** 및 모든 프리미엄 ${ BRAND_NAME } 서비스를 잠금 해제하실 수 있습니다."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "더 많은 ${ BRAND_NAME } 서비스.${ br }한 번의 간단한 구독으로."
       ],
       "Stay on ${ currentPlanTitle }": [
         "${ currentPlanTitle } 플랜 유지하기"

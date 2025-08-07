@@ -1459,8 +1459,8 @@
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Tüm ${ BRAND_NAME } uygulamaları ve ücretli özellikleri"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
       ],
       "Cancel and downgrade": [
         "İptal edip tarifeyi düşür"
@@ -6979,9 +6979,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik"
-      ],
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
@@ -7335,9 +7332,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tüm ${ BRAND_NAME } kurumsal uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
       ],
       "Early access to new apps and features": [
         "Yeni uygulama ve özelliklere erken erişim"
@@ -8183,9 +8177,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Tüm ${ BRAND_NAME } uygulamalarına ve ücretli özelliklerine erişim"
-      ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
       ],
@@ -8549,12 +8540,20 @@
         "görüşün"
       ]
     },
-    "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Tüm ${ protonPlus } hizmetleri.${ br }Tek bir kolay abonelik."
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } özellikleri."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "**${ currentPlanTitle }** abonesi olarak, **${ upsellPlanTitle }** tarifesine yükseltebilir **${ unlockPlanTitle }** ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
+      ]
+    },
+    "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "**${ currentPlanTitle }** abonesi olarak, **${ upsellPlanTitle }** tarifesine yükseltebilir **${ unlockPlanTitle }** ve ücretli diğer ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Diğer ${ BRAND_NAME } hizmetleri.${ br }Tek ve kolay bir abonelik."
       ],
       "Stay on ${ currentPlanTitle }": [
         "${ currentPlanTitle } tarifesinde kal"

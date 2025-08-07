@@ -1423,7 +1423,7 @@
         "신뢰"
       ],
       "Trust key": [
-        "키 신뢰하기"
+        "키 신뢰"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -2533,8 +2533,8 @@
       "Advanced account protection": [
         "향상된 계정 보호"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "모든 ${ BRAND_NAME } 앱들과 프리미엄 기능들"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
       ],
       "Cancel and downgrade": [
         "취소 및 다운그레이드"
@@ -4798,6 +4798,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "연락처 vCard를 내보낼 때 오류가 발생했어요."
+      ],
+      "This action cannot be performed": [
+        "이 동작을 실행할 수 없습니다"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
@@ -7242,6 +7245,9 @@
       ],
       "No action selected": [
         "선택한 액션 없음"
+      ],
+      "No change will be made to the selected emails": [
+        "선택된 이메일에 변경 사항이 적용되지 않습니다."
       ],
       "No contacts added yet": [
         "아직 추가된 연락처가 없습니다"
@@ -10240,9 +10246,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독"
-      ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
@@ -10589,9 +10592,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "전체 비즈니스를 보호하는 모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "모든 ${ BRAND_NAME } 서비스를 결합한 포괄적인 개인 정보 보호 및 보안."
       ],
       "Early access to new apps and features": [
         "새로운 앱과 기능에 얼리 액세스"
@@ -11437,9 +11437,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "모든 ${ BRAND_NAME }앱과 프리미엄 기능에 접근하세요"
-      ],
       "Secure vault sharing": [
         "안전한 금고 공유"
       ],
@@ -11861,12 +11858,20 @@
         "연락"
       ]
     },
-    "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "모든 ${ protonPlus } 서비스.${ br }한 번의 쉬운 구독으로."
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME }의 모든 프리미엄 기능."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
+      ]
+    },
+    "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
         "**${ currentPlanTitle }** 구독자라면 **${ upsellPlanTitle }**으로 업그레이드하여 **${ unlockPlanTitle }** 및 모든 프리미엄 ${ BRAND_NAME } 서비스를 잠금 해제하실 수 있습니다."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "더 많은 ${ BRAND_NAME } 서비스.${ br }한 번의 간단한 구독으로."
       ],
       "Stay on ${ currentPlanTitle }": [
         "${ currentPlanTitle } 플랜 유지하기"
@@ -12954,8 +12959,8 @@
       "${ planMaxSpace } total storage": [
         "총 저장공간 ${ planMaxSpace }"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName }로 모든 앱과 프리미엄 기능에 접근할 수 있습니다. 프라이버시는 기본이므로 당신의 데이터와 신원이 안전하다는 것을 인지하고 계속할 수 있습니다."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } 플랜으로 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, 그리고 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능을 경험하실 수 있어요. 개인정보 보호 기능이 내장되어 있어 회원님이 데이터와 신원이 안전하다는 것을 인지하면서 안심하고 이용하실 수 있습니다."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName }는 모든 앱, 모든 기능, 새 릴리스의 얼리 액세스, 그리고 당신의 데이터와 그 보안을 제어하기 위해 필요한 모든 것을 제공합니다."

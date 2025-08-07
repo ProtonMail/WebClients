@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
@@ -7,7 +7,7 @@ import TableRow from '@proton/components/components/table/TableRow';
 import type { RetentionRule, RetentionRuleScope } from '@proton/shared/lib/interfaces/RetentionRule';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getActionLabel, getLogoProductLabel } from './helpers';
+import { getActionLabel, getDaysStringFromLifetime, getLogoProductLabel } from './helpers';
 import { useRetentionRuleScopeSuggestion } from './useRetentionRuleScopeSuggestion';
 
 interface RetentionPolicyTableRowProps {
@@ -61,8 +61,6 @@ const RetentionPolicyTableRow = ({ rule, loading, onEdit, onDelete }: RetentionP
         );
     };
 
-    const days = rule.Lifetime ? Math.round(rule.Lifetime / (24 * 60 * 60)) : 0;
-
     return (
         <TableRow
             key={rule.ID}
@@ -75,7 +73,7 @@ const RetentionPolicyTableRow = ({ rule, loading, onEdit, onDelete }: RetentionP
                 <span>
                     {rule.Lifetime === null
                         ? c('retention_policy_2025_Info').t`Forever`
-                        : c('retention_policy_2025_Info').ngettext(msgid`${days} day`, `${days} days`, days)}
+                        : getDaysStringFromLifetime(rule.Lifetime)}
                 </span>,
                 <span>{rule.Lifetime === null ? '-' : getActionLabel(rule.Action)}</span>,
                 <DropdownActions

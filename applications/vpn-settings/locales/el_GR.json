@@ -1688,8 +1688,8 @@
       "Advanced account protection": [
         "Προηγμένη προστασία λογαριασμού"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Όλες οι εφαρμογές ${ BRAND_NAME } και οι premium δυνατότητες"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Ακύρωση και υποβάθμιση"
@@ -6203,8 +6203,8 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Μπορείτε να επιβάλετε τους κανόνες κωδικού που θα χρησιμοποιούν τα μέλη του οργανισμού σας όταν δημιουργούν ή κάνουν επαναφορά του κωδικού πρόσβασης για τον ${ BRAND_NAME } λογαριασμό τους."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Μπορείτε να λάβετε όλες τις premium υπηρεσίες ιδιωτικότητας σε ένα πακέτο—με μόνο **${ priceString }/μήνα**"
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Μπορείτε να αποκτήσετε τις premium υπηρεσίες ιδιωτικότητας σε ένα πακέτο—και είναι μόνο **${ priceString }/μήνα**."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
@@ -7876,9 +7876,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Όλες οι premium υπηρεσίες ${ BRAND_NAME }. Μια εύκολη συνδρομή"
-      ],
       "Apps for": [
         "Εφαρμογές για"
       ],
@@ -8227,9 +8224,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Όλες οι επιχειρηματικές εφαρμογές ${ BRAND_NAME } και premium δυνατότητες για την προστασία ολόκληρης της επιχείρησής σας."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Ολοκληρωμένη ιδιωτικότητα και ασφάλεια με όλες τις συνδιασμένες υπηρεσίες ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
         "Πρώιμη πρόσβαση σε νέες εφαρμογές και δυνατότητες"
@@ -9137,9 +9131,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Πρόσβαση σε όλες τις εφαρμογές ${ BRAND_NAME } και τις premium δυνατότητες"
-      ],
       "Secure vault sharing": [
         "Ασφαλής κοινή χρήση κρύπτης"
       ],
@@ -9632,6 +9623,14 @@
         "επικοινωνήστε"
       ]
     },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } μήνας",
@@ -9646,11 +9645,11 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Όλες οι ${ protonPlus } λειτουργίες.${ br }Μία εύκολη συνδρομή."
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ως συνδρομητής **${ currentPlanTitle }**, μπορείτε να ξεκλειδώσετε **${ unlockPlanTitle }** και περισσότερες υπηρεσίες ${ BRAND_NAME } αναβαθμίζοντας σε **${ upsellPlanTitle }**."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Ως συνδρομητής **${ currentPlanTitle }**, μπορείτε να ξεκλειδώσετε **${ unlockPlanTitle }** και όλες τις premium υπηρεσίες ${ BRAND_NAME } αναβαθμίζοντας σε **${ upsellPlanTitle }**."
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Περισσότερες ${ BRAND_NAME } υπηρεσίες.${ br }Μία εύκολη συνδρομή."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Παραμονή στο ${ currentPlanTitle }"
@@ -9875,7 +9874,7 @@
         "ημέρες"
       ],
       "Keep items forever": [
-        "Διατηρήστε αντικείμενα για πάντα"
+        "Διατηρήστε τα αντικείμενα για πάντα"
       ],
       "Keep messages forever": [
         "Διατηρήστε μηνύματα για πάντα"
@@ -11209,8 +11208,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } σας δίνει πρόσβαση σε όλες τις εφαρμογές και τις premium δυνατότητες. Το απόρρητο είναι ενσωματωμένο, ώστε να μπορείτε να συνεχίσετε με αυτό, γνωρίζοντας ότι τα δεδομένα και η ταυτότητά σας είναι ασφαλή."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } σάς παρέχει πρόσβαση σε όλες τις premium λειτουργίες από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }. Η ιδιωτικότητα είναι ενσωματωμένη ώστε να μπορείτε να προχωρήσετε, γνωρίζοντας ότι τα δεδομένα και η ταυτότητά σας είναι ασφαλή."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
@@ -13115,9 +13114,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Εξοικονομήστε έως ${ priceString }** με μια μεγαλύτερη συνδρομή. ΄Ιδιες προηγμένες δυνατότητες, χαμηλότερη τιμή."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Όλες οι προηγμένες ${ BRAND_NAME } υπηρεσίες, μία απλή συνδρομή."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Όλες οι προηγμένες ${ BRAND_NAME } υπηρεσίες. Από μόλις ${ fallBackString } το μήνα"

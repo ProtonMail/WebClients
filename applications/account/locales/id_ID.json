@@ -616,6 +616,9 @@
       "Edit Sieve": [
         "Sunting Sieve"
       ],
+      "Edit Sieve filter “${ Name }”": [
+        "Sunting filter Sieve “${ Name }”"
+      ],
       "Edit sign-in details": [
         "Sunting rincian masuk"
       ],
@@ -2685,9 +2688,6 @@
       "Advanced account protection": [
         "Perlindungan akun tingkat lanjut"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Seluruh aplikasi dan fitur premium ${ BRAND_NAME }"
-      ],
       "Cancel and downgrade": [
         "Batalkan dan turunkan"
       ],
@@ -4234,7 +4234,7 @@
         "Gunakan panduan ini agar organisasi Anda dapat menikmati ekosistem enkripsi dan privasi ${ BRAND_NAME } yang terdepan di industri dengan segera."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
-        "Anda tetap dapat mengundang lebih banyak teman, namun Anda tidak akan lagi dapat memperoleh saldo tambahan"
+        "Anda tetap dapat mengundang lebih banyak teman, namun Anda tidak akan lagi dapat memperoleh lebih banyak saldo"
       ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "Anda dapat mewajibkan peraturan kata sandi tertentu yang akan harus diikuti oleh para anggota organisasi pada saat mereka menghasilkan kata sandi di ${ PASS_APP_NAME }."
@@ -6976,6 +6976,9 @@
       "Servers": [
         "Server"
       ],
+      "Sort folders": [
+        "Urutkan folder"
+      ],
       "Sort labels": [
         "Sortir label"
       ],
@@ -7960,6 +7963,12 @@
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Apakah Anda yakin untuk menghapus domain ${ boldDomain }?"
       ],
+      "Are you sure you want to sort your folders alphabetically?": [
+        "Apakah Anda yakin ingin mengurutkan folder Anda secara alfabetis?"
+      ],
+      "Are you sure you want to sort your labels alphabetically?": [
+        "Apakah Anda yakin ingin mengurutkan label Anda secara alfabetis?"
+      ],
       "Ask your organization admin to setup Gateways.": [
         "Mintalah admin organisasi Anda untuk mengatur Gateway."
       ],
@@ -7992,6 +8001,9 @@
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Hapus email yang telah dipindahkan ke Sampah dan Spam lebih dari 30 hari yang lalu secara otomatis."
+      ],
+      "Automatically show the next email when an open email is deleted, archived or moved.": [
+        "Tampilkan email berikutnya secara otomatis pada saat email yang dibuka telah dihapus, diarsipkan, atau dipindahkan."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Tersedia pada macOS, Windows, dan Linux."
@@ -8241,6 +8253,9 @@
       ],
       "Delete link?": [
         "Hapus tautan?"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "Hapus pesan sampah dan spam setelah 30 hari. Dengan mengaktifkan penghapusan otomatis, pesan yang telah ada di sampah/spam akan memiliki tenggat waktu penghapusan berdasarkan tanggal pembuangan masing-masing pesan."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Menghapus ${ deletedServerCount } server gateway"
@@ -8605,6 +8620,9 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Dapatkan notifikasi apabila kata sandi atau data pribadi Anda lainnya dibocorkan. ${ learnMoreLinkNoBreach }"
       ],
+      "Get started with the referral link above.": [
+        "Mulai peroleh imbalan Anda dengan tautan rujukan di atas."
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Berikan token ini nama yang mudah dikenali, seperti nama layanan yang ingin Anda sandingkan dengannya, dan pilih salah satu alamat domain khusus aktif yang Anda miliki. Ke depannya, hanya alamat ini yang dapat mengirim email dengan token ini."
       ],
@@ -8619,6 +8637,9 @@
       ],
       "Group deleted": [
         "Grup dihapus"
+      ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Tentukan apakah email yang terhubung dalam rantai percakapan yang sama akan saling terkelompokkan atau ditampilkan secara terpisah pada kotak masuk Anda."
       ],
       "Groups": [
         "Grup"
@@ -9028,6 +9049,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Pesan yang terdapat pada folder Terkirim atau Draf akan tetap muncul pada kedua folder ini, bahkan apabila Anda memindahkannya ke folder lain."
       ],
+      "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
+        "Pesan dalam folder Spam atau Sampah akan dikecualikan dari Semua surat."
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "Pesan ke semua alamat email Anda akan menuju ke kotak masuk Anda."
       ],
@@ -9405,9 +9429,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap tersimpan pada perangkat ini kecuali Anda memilih untuk menghapusnya."
-      ],
-      "Recovery kit copied to clipboard": [
-        "Kit pemulihan disalin ke papan klip"
       ],
       "Recovery phrase copied to clipboard": [
         "Frasa pemulihan disalin ke papan klip"
@@ -10411,8 +10432,8 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Anda dapat memberlakukan aturan kata sandi yang akan digunakan oleh anggota organisasi Anda saat mereka membuat atau mengatur ulang kata sandi ke Akun ${ BRAND_NAME } mereka."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Anda dapat memperoleh seluruh layanan privasi premium kami dalam satu bundel—hanya dengan seharga **${ priceString }/bulan**."
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Anda dapat memperoleh seluruh layanan privasi premium kami dalam satu bundel — hanya dengan seharga **${ priceString }/bulan**."
       ],
       "You can import one data type at a time.": [
         "Anda dapat mengimpor satu jenis data dalam satu waktu."
@@ -10911,6 +10932,9 @@
     "Key type option": {
       "${ classicalProtection } (ECC Curve25519)": [
         "${ classicalProtection } (ECC Curve25519)"
+      ],
+      "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)": [
+        "${ postQuantumProtection } (MLDSA/MLKEM + ECC Curve25519)"
       ]
     },
     "Keyboard shortcut name": {
@@ -12710,6 +12734,9 @@
       "Terms": [
         "Ketentuan layanan"
       ],
+      "Terms and conditions": [
+        "Syarat dan ketentuan"
+      ],
       "Trouble signing in?": [
         "Mengalami masalah saat akan masuk?"
       ],
@@ -13529,9 +13556,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Seluruh layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Semua layanan ${ BRAND_NAME } premium. Satu langganan mudah"
-      ],
       "Apps for": [
         "Aplikasi untuk"
       ],
@@ -13929,9 +13953,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Seluruh aplikasi bisnis dan fitur premium ${ BRAND_NAME } untuk melindungi seantero bisnis Anda."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Privasi dan keamanan yang komprehensif dengan dukungan gabungan dari seluruh layanan ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
         "Akses dini ke berbagai aplikasi dan fitur baru"
@@ -15329,9 +15350,6 @@
       "/month /user, billed biennially": [
         "/bulan /pengguna, ditagihkan per dua tahun"
       ],
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Akses ke Seluruh aplikasi dan fitur premium ${ BRAND_NAME }"
-      ],
       "Advanced protection that goes beyond industry standards": [
         "Perlindungan tingkat lanjut yang melampaui standar industri"
       ],
@@ -15340,9 +15358,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Alias untuk melindungi email dari kebocoran"
-      ],
-      "All premium ${ BRAND_NAME } services.": [
-        "Seluruh layanan premium ${ BRAND_NAME }."
       ],
       "Based in Switzerland, GDPR compliant": [
         "Berbasis di Swiss dan tunduk terhadap GDPR"
@@ -15353,11 +15368,11 @@
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
         "Anda mendapat potongan ${ discount } dengan meningkatkannya ke **${ upsellPlanTitle }**."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Namun, Anda dapat mengakes **${ unlockPlanTitle }** dan seluruh layanan premium ${ BRAND_NAME } dengan meningkatkan paket Anda ke **${ upsellPlanTitle }** — hanya dengan biaya tambahan ${ relativePrice } per bulannya."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Namun, Anda dapat mengakses **${ unlockPlanTitle }** dan lebih banyak layanan ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }** — hanya dengan menambah ${ relativePrice } per bulannya."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Namun, Anda dapat mengakses **${ unlockPlanTitle }** dan seluruh layanan premium ${ BRAND_NAME } dengan meningkatkan paket Anda ke **${ upsellPlanTitle }**."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Namun, Anda dapat mengakses **${ unlockPlanTitle }** dan lebih banyak layanan ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Dengan melanjutkan, Anda menyatakan diri setuju terhadap ${ termsAndConditionsLink } dan ${ privacyPolicyLink } kami."
@@ -15448,9 +15463,6 @@
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Penawaran terbatas: Dapatkan ${ title } dengan harga ${ price } per pengguna per bulannya!"
-      ],
-      "One easy subscription.": [
-        "Dalam satu langganan mudah."
       ],
       "Open source and audited": [
         "Open source dan teraudit"
@@ -15550,14 +15562,14 @@
       "${ upsellPlanTitle } plan": [
         "Paket ${ upsellPlanTitle }"
       ],
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Seluruh layanan ${ BRAND_NAME } Plus.${ br }Dalam satu langganan mudah."
-      ],
       "Create a ${ appName } account": [
         "Buat akun ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Buat akun ${ BRAND_NAME } Anda"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Lebih banyak layanan ${ BRAND_NAME }.${ br }Satu langganan mudah."
       ],
       "Request your organization administrator to upgrade": [
         "Minta administrator organisasi Anda untuk meningkatkan paket langganan"
@@ -16114,8 +16126,8 @@
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Ruang penyimpanan cloud dan layanan berbagi berkas yang terlindung oleh enkripsi end-to-end."
       ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Privasi dan keamanan yang komprehensif dengan dukungan gabungan dari seluruh layanan ${ BRAND_NAME }."
+      "For next-level password management and identity protection.": [
+        "Untuk pengelolaan kata sandi dan perlindungan identitas tingkat lanjut."
       ],
       "Great for everyday use and photo backups.": [
         "Paket yang sesuai untuk penggunaan sehari-hari dan pencadangan foto."
@@ -16145,12 +16157,6 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Seluruh layanan ${ protonPlus }.${ br }Dalam satu langganan mudah."
-      ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Sebagai pelanggan **${ currentPlanTitle }**, Anda dapat membuka akses ke **${ unlockPlanTitle }** dan seluruh layanan premium ${ BRAND_NAME } dengan meningkatkan ke **${ upsellPlanTitle }**."
-      ],
       "Stay on ${ currentPlanTitle }": [
         "Tetap di ${ currentPlanTitle }"
       ],
@@ -16173,6 +16179,11 @@
         "Silakan perbarui **seluruh aplikasi ${ BRAND_NAME } seluler Anda** ke versi terbaru."
       ]
     },
+    "PQC optin": {
+      "Enable post-quantum protection": [
+        "Aktifkan perlindungan post-quantum"
+      ]
+    },
     "pqc-optin: Action": {
       "Got it": [
         "Mengerti"
@@ -16186,6 +16197,9 @@
     "pqc-optin: Progress status": {
       "Generating post-quantum account key": [
         "Menghasilkan kunci akun post-quantum"
+      ],
+      "Generating post-quantum address keys for each address": [
+        "Menghasilkan kunci alamat post-quantum untuk masing-masing alamat"
       ],
       "Opting into post-quantum protection": [
         "Menerapkan perlindungan post-quantum"
@@ -16403,6 +16417,9 @@
       ],
       "Delete rule": [
         "Hapus aturan"
+      ],
+      "Delete this scope": [
+        "Hapus cakupan ini"
       ]
     },
     "retention_policy_2025_Confirmation": {
@@ -16422,6 +16439,9 @@
       "${ rule.Lifetime } day": [
         "${ rule.Lifetime } hari"
       ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Buat aturan penyimpanan untuk mengatur seberapa lama data yang ada akan disimpan sebagaimana dengan kebijakan penyimpanan data organisasi Anda. Aturan ini juga akan mengaktifkan pembersihan otomatis untuk data yang telah kedaluwarsa."
+      ],
       "Forever": [
         "Selamanya"
       ],
@@ -16433,8 +16453,17 @@
       ]
     },
     "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Setelah masa penyimpanan data berakhir"
+      ],
+      "Keep messages forever": [
+        "Simpan pesan selamanya"
+      ],
       "Retention period": [
         "Masa penyimpanan"
+      ],
+      "Rule title": [
+        "Judul aturan"
       ],
       "Set a duration": [
         "Tentukan durasi"
@@ -16443,6 +16472,9 @@
     "retention_policy_2025_Option": {
       "Purge deleted messages only": [
         "Hanya bersihkan pesan yang telah dihapus"
+      ],
+      "Specific users or groups": [
+        "Pengguna atau grup tertentu"
       ]
     },
     "retention_policy_2025_Placeholder": {
@@ -16451,6 +16483,12 @@
       ],
       "Enter value": [
         "Masukkan nilai"
+      ],
+      "Search for rule, users, period, action": [
+        "Cari peraturan, pengguna, masa berlaku, tindakan"
+      ],
+      "Search policies": [
+        "Cari kebijakan"
       ]
     },
     "retention_policy_2025_TableHeader": {
@@ -17409,6 +17447,15 @@
       "${ value } total storage": [
         "Total ruang penyimpanan ${ value }"
       ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } koneksi VPN berkecepatan tinggi"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries }+ negara"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "${ vpnServersCountData.paid.servers }+ server di"
+      ],
       "/user": [
         "/pengguna"
       ],
@@ -17420,6 +17467,9 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Semua layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "And get ${ referralReward } in credits, if you subscribe.": [
+        "Dan dapatkan saldo senilai ${ referralReward } apabila Anda berlangganan."
       ],
       "Billing Cycle": [
         "Siklus Tagihan"
@@ -18576,9 +18626,6 @@
       ],
       "${ planMaxSpace } total storage": [
         "Ruang penyimpanan total ${ planMaxSpace }"
-      ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } memberikan Anda akses ke seluruh aplikasi dan fitur premium yang tersedia. Paket ini mengusung privasi secara bawaan, sehingga Anda dapat beraktivitas dengan tenang mengetahui bahwa data dan identitas Anda tersimpan dengan aman."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } memberikan Anda seluruh aplikasi, seluruh fitur, akses dini ke versi rilis terkini, dan segalanya yang Anda butuhkan untuk mengontrol data Anda beserta dengan keamanannya."
@@ -21527,9 +21574,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Hemat hingga ${ priceString }** dengan langganan yang berdurasi lebih lama. Fitur premium yang sama, harga yang lebih rendah."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Seluruh layanan permium ${ BRAND_NAME }, dalam satu langganan mudah."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Seluruh layanan premium ${ BRAND_NAME }. Dari hanya ${ fallBackString } per bulannya"

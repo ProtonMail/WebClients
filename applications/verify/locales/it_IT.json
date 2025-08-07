@@ -1254,9 +1254,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tutti i servizi ${ BRAND_NAME } di base (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Tutti i servizi premium di ${ BRAND_NAME }. Un semplice abbonamento"
-      ],
       "Auto-delete Spam and Trash": [
         "Eliminazione automatica dello spam e dal cestino"
       ],
@@ -1493,6 +1490,11 @@
     "Placeholder": {
       "Password": [
         "Password"
+      ]
+    },
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {

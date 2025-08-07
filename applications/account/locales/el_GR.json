@@ -2705,8 +2705,8 @@
       "Advanced account protection": [
         "Προηγμένη προστασία λογαριασμού"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Όλες οι εφαρμογές ${ BRAND_NAME } και οι premium δυνατότητες"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Ακύρωση και υποβάθμιση"
@@ -9539,9 +9539,6 @@
       "Recovery information will remain on this device unless you select to delete it.": [
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
       ],
-      "Recovery kit copied to clipboard": [
-        "Το κιτ ανάκτησης αντιγράφηκε στο πρόχειρο"
-      ],
       "Recovery phrase copied to clipboard": [
         "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
       ],
@@ -10557,8 +10554,8 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Μπορείτε να επιβάλετε τους κανόνες κωδικού που θα χρησιμοποιούν τα μέλη του οργανισμού σας όταν δημιουργούν ή κάνουν επαναφορά του κωδικού πρόσβασης για τον ${ BRAND_NAME } λογαριασμό τους."
       ],
-      "You can get all of our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
-        "Μπορείτε να λάβετε όλες τις premium υπηρεσίες ιδιωτικότητας σε ένα πακέτο—με μόνο **${ priceString }/μήνα**"
+      "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
+        "Μπορείτε να αποκτήσετε τις premium υπηρεσίες ιδιωτικότητας σε ένα πακέτο—και είναι μόνο **${ priceString }/μήνα**."
       ],
       "You can import one data type at a time.": [
         "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
@@ -13757,9 +13754,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Όλες οι premium υπηρεσίες ${ BRAND_NAME }. Μια εύκολη συνδρομή"
-      ],
       "Apps for": [
         "Εφαρμογές για"
       ],
@@ -14165,9 +14159,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Όλες οι επιχειρηματικές εφαρμογές ${ BRAND_NAME } και premium δυνατότητες για την προστασία ολόκληρης της επιχείρησής σας."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Ολοκληρωμένη ιδιωτικότητα και ασφάλεια με όλες τις συνδιασμένες υπηρεσίες ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
         "Πρώιμη πρόσβαση σε νέες εφαρμογές και δυνατότητες"
@@ -15576,9 +15567,6 @@
       "/month /user, billed biennially": [
         "/μήνας /χρήστης, χρεώνεται ανά διετία"
       ],
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Πρόσβαση σε όλες τις εφαρμογές ${ BRAND_NAME } και τις premium δυνατότητες"
-      ],
       "Advanced protection that goes beyond industry standards": [
         "Προηγμένη προστασία που υπερβαίνει τα βιομηχανικά πρότυπα"
       ],
@@ -15587,9 +15575,6 @@
       ],
       "Aliases for email protection from breaches": [
         "Ψευδώνυμα για προστασία ηλεκτρονικού ταχυδρομείου από παραβιάσεις"
-      ],
-      "All premium ${ BRAND_NAME } services.": [
-        "Όλες οι premium υπηρεσίες του ${ BRAND_NAME }."
       ],
       "Based in Switzerland, GDPR compliant": [
         "Με έδρα την Ελβετία, συμμορφώνεται με το GDPR"
@@ -15600,11 +15585,11 @@
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
         "Αλλά μπορείτε να λάβετε έκπτωση ${ discount } αναβαθμίζοντας σε **${ upsellPlanTitle }**"
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Αλλά μπορείτε να ξεκλειδώσετε το **${ unlockPlanTitle }** και όλες τις premium υπηρεσίες του ${ BRAND_NAME } αναβαθμίζοντας στο **${ upsellPlanTitle }** — είναι μόνο ${ relativePrice } επιπλέον ανά μήνα."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Αλλά μπορείτε να ξεκλειδώσετε το **${ unlockPlanTitle }** και περισσότερες υπηρεσίες του ${ BRAND_NAME } αναβαθμίζοντας στο **${ upsellPlanTitle }** — είναι μόνο ${ relativePrice } επιπλέον ανά μήνα."
       ],
-      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Αλλά μπορείτε να ξεκλειδώσετε **${ unlockPlanTitle }** και όλες τις premium υπηρεσίες ${ BRAND_NAME } αναβαθμίζοντας σε **${ upsellPlanTitle }**."
+      "But you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Αλλά μπορείτε να ξεκλειδώσετε **${ unlockPlanTitle }** και περισσότερες υπηρεσίες ${ BRAND_NAME } αναβαθμίζοντας σε **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
         "Συνεχίζοντας, συμφωνείτε με τους ${ termsAndConditionsLink } και ${ privacyPolicyLink }."
@@ -15695,9 +15680,6 @@
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Προσφορά περιορισμένου χρόνου: Λάβετε ${ title } για ${ price } ανά χρήστη μηνιαίως!"
-      ],
-      "One easy subscription.": [
-        "Μία εύκολη συνδρομή."
       ],
       "Open source and audited": [
         "Ανοιχτού κώδικα και ελεγμένο"
@@ -15797,14 +15779,14 @@
       "${ upsellPlanTitle } plan": [
         "${ upsellPlanTitle } πλάνο"
       ],
-      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Όλες οι ${ BRAND_NAME } Plus λειτουργείες.${ br }Μία εύκολη συνδρομή."
-      ],
       "Create a ${ appName } account": [
         "Δημιουργία ενός ${ appName } λογαριασμού"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Δημιουργήστε το ${ BRAND_NAME } λογαριασμό σας"
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Περισσότερες ${ BRAND_NAME } υπηρεσίες.${ br }Μία εύκολη συνδρομή."
       ],
       "Request your organization administrator to upgrade": [
         "Ζητήστε από το διαχειριστή του οργανισμού σας να κάνει αναβάθμιση"
@@ -16360,14 +16342,17 @@
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Όλα τα ${ BRAND_NAME } premium προϊόντα περιλαμβάνονται στο Duo."
       ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME }."
+      ],
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Είναι ιδανικό αν χρειάζεστε ${ maxSpace } αποθηκευτικού χώρου και για ζευγάρια."
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Αποθήκευση στο νέφος και κοινή χρήση αρχείων, με ασφάλεια μέσω διατερματικής κρυπτογράφησης."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Ολοκληρωμένη ιδιωτικότητα και ασφάλεια με όλες τις συνδιασμένες υπηρεσίες ${ BRAND_NAME }."
       ],
       "For next-level password management and identity protection.": [
         "Για διαχείριση κωδικών πρόσβασης και προστασία ταυτότητας επόμενου επιπέδου."
@@ -16402,11 +16387,11 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Όλες οι ${ protonPlus } λειτουργίες.${ br }Μία εύκολη συνδρομή."
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ως συνδρομητής **${ currentPlanTitle }**, μπορείτε να ξεκλειδώσετε **${ unlockPlanTitle }** και περισσότερες υπηρεσίες ${ BRAND_NAME } αναβαθμίζοντας σε **${ upsellPlanTitle }**."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Ως συνδρομητής **${ currentPlanTitle }**, μπορείτε να ξεκλειδώσετε **${ unlockPlanTitle }** και όλες τις premium υπηρεσίες ${ BRAND_NAME } αναβαθμίζοντας σε **${ upsellPlanTitle }**."
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Περισσότερες ${ BRAND_NAME } υπηρεσίες.${ br }Μία εύκολη συνδρομή."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Παραμονή στο ${ currentPlanTitle }"
@@ -16610,6 +16595,11 @@
         "Η επαλήθευση του αριθμού τηλεφώνου σας αυξάνει την ασφάλεια του λογαριασμού σας και επιτρέπει πρόσθετες επιλογές ανάκτησης."
       ]
     },
+    "RecoveryPhrase: Action": {
+      "Reveal recovery phrase": [
+        "Αποκάλυψη φράσης ανάκτησης"
+      ]
+    },
     "Remark about a key type option": {
       "Classic": [
         "Κλασικός"
@@ -16776,7 +16766,7 @@
         "ημέρες"
       ],
       "Keep items forever": [
-        "Διατηρήστε αντικείμενα για πάντα"
+        "Διατηρήστε τα αντικείμενα για πάντα"
       ],
       "Keep messages forever": [
         "Διατηρήστε μηνύματα για πάντα"
@@ -19043,8 +19033,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } σας δίνει πρόσβαση σε όλες τις εφαρμογές και τις premium δυνατότητες. Το απόρρητο είναι ενσωματωμένο, ώστε να μπορείτε να συνεχίσετε με αυτό, γνωρίζοντας ότι τα δεδομένα και η ταυτότητά σας είναι ασφαλή."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } σάς παρέχει πρόσβαση σε όλες τις premium λειτουργίες από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME }. Η ιδιωτικότητα είναι ενσωματωμένη ώστε να μπορείτε να προχωρήσετε, γνωρίζοντας ότι τα δεδομένα και η ταυτότητά σας είναι ασφαλή."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
@@ -22025,9 +22015,6 @@
     "Upsell": {
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Εξοικονομήστε έως ${ priceString }** με μια μεγαλύτερη συνδρομή. ΄Ιδιες προηγμένες δυνατότητες, χαμηλότερη τιμή."
-      ],
-      "All premium ${ BRAND_NAME } services, one easy subscription.": [
-        "Όλες οι προηγμένες ${ BRAND_NAME } υπηρεσίες, μία απλή συνδρομή."
       ],
       "All premium ${ BRAND_NAME } services. From only ${ fallBackString } per month": [
         "Όλες οι προηγμένες ${ BRAND_NAME } υπηρεσίες. Από μόλις ${ fallBackString } το μήνα"
