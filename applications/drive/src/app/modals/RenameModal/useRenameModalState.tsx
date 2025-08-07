@@ -17,9 +17,9 @@ export type UseRenameModalProps = ModalStateProps & {
     volumeId: string;
     linkId: string;
     name: string;
+    isFile: boolean; // isFile could come from getNode but it will be slow with noticeable delay in the modal
     // Delete below props once the OLD RenameModal is removed
     onSubmit: (newName: string) => Promise<void>;
-    isFile: boolean;
     isDoc: boolean;
 };
 
@@ -46,13 +46,13 @@ export const useRenameModalState = ({
     volumeId,
     linkId,
     name,
+    isFile,
     ...modalProps
 }: UseRenameModalProps) => {
     const { drive } = useDrive();
     const events = useDriveEventManager();
     const { createNotification } = useNotifications();
     const [node, setNode] = useState<null | NodeEntity>(null);
-    const isFile = node?.type === 'file';
     const ignoreExtension = getIgnoreExtension(node, name);
     const { handleError } = useSdkErrorHandler();
     useEffect(() => {
