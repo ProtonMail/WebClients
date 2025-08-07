@@ -8253,10 +8253,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@proton-meet/proton-meet-core@npm:0.1.4":
-  version: 0.1.4
-  resolution: "@proton-meet/proton-meet-core@npm:0.1.4"
-  checksum: 10c0/428a2cd0eb4d14ef605092a688e600f29282c5cd3d10326d5dccb06d0a8eecb239e4c1bb9d8a1feff46d1da46c026d55145ad71dd442d8cc0793e939b8b0ca1d
+"@proton-meet/proton-meet-core@npm:0.1.6":
+  version: 0.1.6
+  resolution: "@proton-meet/proton-meet-core@npm:0.1.6"
+  checksum: 10c0/7cd8e487596781c2ad11b17e24bd490239a0a57790f76d156a844af4e41b68b926f294fcf70925f4f93c8ead1bd7b468fb0cf8bb9411fddc5759a14667a93db3
   languageName: node
   linkType: hard
 
@@ -37656,7 +37656,7 @@ __metadata:
   dependencies:
     "@livekit/components-react": "npm:^2.9.3"
     "@proton-meet/livekit-client": "npm:2.15.4"
-    "@proton-meet/proton-meet-core": "npm:0.1.4"
+    "@proton-meet/proton-meet-core": "npm:0.1.6"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
     "@proton/crypto": "workspace:packages/crypto"
