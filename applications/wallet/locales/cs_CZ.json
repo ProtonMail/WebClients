@@ -280,6 +280,9 @@
       "Save": [
         "Uložit"
       ],
+      "Search countries": [
+        "Vyhledat země"
+      ],
       "Secure your wallet": [
         "Zabezpečte svou peněženku"
       ],
@@ -517,32 +520,6 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Pozvedněte e-mailovou produktivitu na novou úroveň. Dovolte ${ BRAND_NAME } Scribe pomoci vám se psaním, odpovídáním a korekturami vašich e-mailů."
-      ]
-    },
-    "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje každých ${ cycle } měsíců, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
-      ],
-      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební verze."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_LUMO_SEATS } licencí Lumo během zkušební verze."
-      ],
-      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_SCRIBE_SEATS } licencí Scribe během zkušební verze."
-      ],
-      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_USERS } uživatelů během zkušební verze."
-      ],
-      "You cannot add custom domains during the trial period.": [
-        "Během zkušební doby nelze přidávat vlastní domény."
-      ],
-      "You have reached the trial limit.": [
-        "Dosáhli jste limitu zkušební verze."
       ]
     },
     "b2b_trials_Action": {
@@ -1115,8 +1092,8 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Všechny ${ BRAND_NAME } aplikace a prémiové funkce"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Zrušit a snížit"
@@ -1175,14 +1152,6 @@
       ],
       "Expand": [
         "Rozbalit"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } je umělá inteligence s prioritou ochrany soukromí, která vám pomáhá zvládnout více a zároveň chrání vaše data. Využijte její plný potenciál a získejte přístup k novým funkcím ihned po jejich představení."
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Přidat ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -1248,6 +1217,9 @@
       ]
     },
     "Country name": {
+      "Abkhazia": [
+        "Abcházie"
+      ],
       "Afghanistan": [
         "Afghánistán"
       ],
@@ -1257,6 +1229,9 @@
       "Algeria": [
         "Alžírsko"
       ],
+      "American Samoa": [
+        "Americká Samoa"
+      ],
       "Andorra": [
         "Andora"
       ],
@@ -1265,6 +1240,9 @@
       ],
       "Anguilla": [
         "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktida"
       ],
       "Antigua and Barbuda": [
         "Antigua a Barbuda"
@@ -1277,6 +1255,9 @@
       ],
       "Aruba": [
         "Aruba"
+      ],
+      "Ascension Island": [
+        "Ostrov Ascension"
       ],
       "Australia": [
         "Austrálie"
@@ -1319,6 +1300,9 @@
       ],
       "Bolivia": [
         "Bolívie"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Svatý Eustach a Saba"
       ],
       "Bosnia and Herzegovina": [
         "Bosna a Hercegovina"
@@ -1395,6 +1379,9 @@
       "Congo (The Democratic Republic of the)": [
         "Kongo (Konžská demokratická republika)"
       ],
+      "Congo, Democratic Republic of the": [
+        "Demokratická republika Kongo"
+      ],
       "Cook Islands": [
         "Cookovy ostrovy"
       ],
@@ -1452,14 +1439,23 @@
       "Estonia": [
         "Estonsko"
       ],
+      "Eswatini": [
+        "Svazijsko"
+      ],
       "Ethiopia": [
         "Etiopie"
+      ],
+      "Falkland Islands": [
+        "Falklandské ostrovy"
       ],
       "Falkland Islands (Malvinas)": [
         "Falklandské ostrovy (Malvíny)"
       ],
       "Faroe Islands": [
         "Faerské ostrovy"
+      ],
+      "Federated States of Micronesia": [
+        "Federativní státy Mikronésie"
       ],
       "Fiji": [
         "Fidži"
@@ -1509,6 +1505,9 @@
       "Guadeloupe": [
         "Guadeloupe"
       ],
+      "Guam": [
+        "Guam"
+      ],
       "Guatemala": [
         "Guatemala"
       ],
@@ -1551,6 +1550,12 @@
       "Indonesia": [
         "Indonésie"
       ],
+      "International": [
+        "Mezinárodní"
+      ],
+      "Iran": [
+        "Írán"
+      ],
       "Iraq": [
         "Irák"
       ],
@@ -1559,6 +1564,9 @@
       ],
       "Islamic Republic of Iran": [
         "Íránská islámská republika"
+      ],
+      "Isle of Man": [
+        "Ostrov Man"
       ],
       "Israel": [
         "Izrael"
@@ -1571,6 +1579,9 @@
       ],
       "Japan": [
         "Japonsko"
+      ],
+      "Jersey": [
+        "Jersey"
       ],
       "Jordan": [
         "Jordánsko"
@@ -1602,6 +1613,9 @@
       "Lao People's Democratic Republic": [
         "Laoská lidově demokratická republika"
       ],
+      "Laos": [
+        "Laos"
+      ],
       "Latvia": [
         "Lotyšsko"
       ],
@@ -1613,6 +1627,9 @@
       ],
       "Liberia": [
         "Libérie"
+      ],
+      "Libya": [
+        "Libye"
       ],
       "Libyan Arab Jamahiriya": [
         "Libyjská arabská džamáhírije"
@@ -1722,8 +1739,14 @@
       "Norfolk Island": [
         "Norfolk"
       ],
+      "North Korea": [
+        "Severní Korea"
+      ],
       "North Macedonia": [
         "Severní Makedonie"
+      ],
+      "Northern Mariana Islands": [
+        "Severní Mariany"
       ],
       "Norway": [
         "Norsko"
@@ -1736,6 +1759,9 @@
       ],
       "Palau": [
         "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
       ],
       "Panama": [
         "Panama"
@@ -1779,6 +1805,9 @@
       "Rwanda": [
         "Rwanda"
       ],
+      "Saint Barthélemy": [
+        "Svatý Bartoloměj"
+      ],
       "Saint Helena": [
         "Svatá Helena"
       ],
@@ -1787,6 +1816,9 @@
       ],
       "Saint Lucia": [
         "Svatá Lucie"
+      ],
+      "Saint Martin (French Part)": [
+        "Svatý Martin (francouzská část)"
       ],
       "Saint Pierre and Miquelon": [
         "Saint-Pierre a Miquelon"
@@ -1821,6 +1853,9 @@
       "Singapore": [
         "Singapur"
       ],
+      "Sint Maarten": [
+        "Svatý Martin"
+      ],
       "Slovakia": [
         "Slovensko"
       ],
@@ -1838,6 +1873,12 @@
       ],
       "South Georgia and the South Sandwich Islands": [
         "Jižní Georgie a Jižní Sandwichovy ostrovy"
+      ],
+      "South Korea": [
+        "Jižní Korea"
+      ],
+      "South Ossetia": [
+        "Jižní Osetie"
       ],
       "South Sudan": [
         "Jižní Súdán"
@@ -1866,6 +1907,9 @@
       "Switzerland": [
         "Švýcarsko"
       ],
+      "Syria": [
+        "Sýrie"
+      ],
       "Syrian Arab Republic": [
         "Sýrie"
       ],
@@ -1875,11 +1919,17 @@
       "Tajikistan": [
         "Tádžikistán"
       ],
+      "Tanzania": [
+        "Tanzanie"
+      ],
       "Tanzania, United Republic of": [
         "Tanzanie, Tanzanská sjednocená republika"
       ],
       "Thailand": [
         "Thajsko"
+      ],
+      "Timor-Leste": [
+        "Východní Timor"
       ],
       "Togo": [
         "Togo"
@@ -1892,6 +1942,9 @@
       ],
       "Trinidad and Tobago": [
         "Trinidad a Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunisko"
@@ -1923,6 +1976,9 @@
       "United States": [
         "Spojené státy"
       ],
+      "United States Minor Outlying Islands": [
+        "Menší odlehlé ostrovy USA"
+      ],
       "Uruguay": [
         "Uruguay"
       ],
@@ -1938,6 +1994,12 @@
       "Vietnam": [
         "Vietnam"
       ],
+      "Virgin Islands, British": [
+        "Britské Panenské ostrovy"
+      ],
+      "Virgin Islands, U.S.": [
+        "Americké Panenské ostrovy"
+      ],
       "Wallis and Futuna": [
         "Wallis a Futuna"
       ],
@@ -1952,6 +2014,9 @@
       ],
       "Zimbabwe": [
         "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Ålandské ostrovy"
       ]
     },
     "Country select label": {
@@ -2712,6 +2777,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
+      "Country code": [
+        "Kód země"
+      ],
       "Create a secure cloud for ${ value } member": [
         "Vytvořte bezpečný cloud pro ${ value } člena",
         "Vytvořte bezpečný cloud pro ${ value } členy",
@@ -2855,6 +2923,9 @@
       ],
       "No payment is required at this time.": [
         "V tuto chvíli není nutná žádná platba."
+      ],
+      "No results found": [
+        "Nebyly nalezeny žádné výsledky"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
@@ -3686,9 +3757,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Všechny prémiové služby ${ BRAND_NAME }. Jedno snadné předplatné"
-      ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
       ],
@@ -4024,9 +4092,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Všechny firemní aplikace ${ BRAND_NAME } a prémiové funkce pro ochranu celé vaší firmy."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Komplexní ochrana soukromí a zabezpečení se všemi službami ${ BRAND_NAME } dohromady."
       ],
       "Early access to new apps and features": [
         "Předběžný přístup k novým aplikacím a funkcím"
@@ -4441,9 +4506,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Přístup ke všem aplikacím ${ BRAND_NAME } a prémiovým funkcím"
-      ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
       ],
@@ -4729,12 +4791,20 @@
         "kontaktujte"
       ]
     },
-    "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Všechny služby ${ protonPlus }.${ br }Jedno jednoduché předplatné."
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Jako předplatitel **${ currentPlanTitle }** můžete odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Jako předplatitel **${ currentPlanTitle }** můžete odemknout **${ unlockPlanTitle }** a další prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Více služeb ${ BRAND_NAME }.${ br }Jedno snadné předplatné."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Zůstat na ${ currentPlanTitle }"
