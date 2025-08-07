@@ -12,6 +12,7 @@ import type { InactiveKeysState } from '../inactiveKeys';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 import type { KtState } from '../kt';
+import type { OrganizationKeyState } from '../organizationKey';
 import type { UserState } from '../user';
 import type { UserKeysState } from '../userKeys';
 import type { IncomingDelegatedAccessOutput, OutgoingDelegatedAccessOutput } from './interface';
@@ -24,6 +25,7 @@ export interface DelegatedAccessState
         UserKeysState,
         AddressKeysState,
         InactiveKeysState,
+        OrganizationKeyState,
         KtState {
     [name]: {
         incomingDelegatedAccess: ModelState<IncomingDelegatedAccessOutput[]> & {
