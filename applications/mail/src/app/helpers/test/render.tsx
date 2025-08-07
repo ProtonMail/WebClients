@@ -40,6 +40,7 @@ import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 
 import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
+import { GlobalModalProvider } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
 import { MailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import type { AttachmentsState } from 'proton-mail/store/attachments/attachmentsTypes';
@@ -116,23 +117,25 @@ const TestProvider = ({ children, history }: Props) => {
                                                             containerRef={contentRef}
                                                             elementID={undefined}
                                                         >
-                                                            <ComposeProvider onCompose={onCompose}>
-                                                                <ComposerAssistantProvider>
-                                                                    <CheckAllRefProvider>
-                                                                        <Router history={history}>
-                                                                            <Route path={MAIN_ROUTE_PATH}>
-                                                                                <EncryptedSearchProvider>
-                                                                                    <LabelActionsContextProvider>
-                                                                                        <MailboxLayoutProvider>
-                                                                                            {children}
-                                                                                        </MailboxLayoutProvider>
-                                                                                    </LabelActionsContextProvider>
-                                                                                </EncryptedSearchProvider>
-                                                                            </Route>
-                                                                        </Router>
-                                                                    </CheckAllRefProvider>
-                                                                </ComposerAssistantProvider>
-                                                            </ComposeProvider>
+                                                            <GlobalModalProvider>
+                                                                <ComposeProvider onCompose={onCompose}>
+                                                                    <ComposerAssistantProvider>
+                                                                        <CheckAllRefProvider>
+                                                                            <Router history={history}>
+                                                                                <Route path={MAIN_ROUTE_PATH}>
+                                                                                    <EncryptedSearchProvider>
+                                                                                        <LabelActionsContextProvider>
+                                                                                            <MailboxLayoutProvider>
+                                                                                                {children}
+                                                                                            </MailboxLayoutProvider>
+                                                                                        </LabelActionsContextProvider>
+                                                                                    </EncryptedSearchProvider>
+                                                                                </Route>
+                                                                            </Router>
+                                                                        </CheckAllRefProvider>
+                                                                    </ComposerAssistantProvider>
+                                                                </ComposeProvider>
+                                                            </GlobalModalProvider>
                                                         </MailboxContainerContextProvider>
                                                     </ChecklistsProvider>
                                                 </MailContentRefProvider>
