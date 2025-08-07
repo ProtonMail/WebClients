@@ -1,6 +1,6 @@
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import type { OutgoingDelegatedAccessOutput } from '../../interface';
+import { DelegatedAccessStateEnum, type OutgoingDelegatedAccessOutput } from '../../interface';
 import { getContact, getParsedAccessibleTime } from '../helper';
 
 export const getParsedOutgoingDelegatedAccess = (
@@ -11,12 +11,14 @@ export const getParsedOutgoingDelegatedAccess = (
     const accessibleTriggerDelayMs = (value.TriggerDelay || 0) * 1000;
     const createdAtMs = (value.CreateTime || 0) * 1000;
     const email = value.TargetEmail || '';
+    const isDisabled = value.State === DelegatedAccessStateEnum.Disabled;
 
     return {
         contact: getContact(email, contactEmail),
         createdAtDate: new Date(createdAtMs),
         accessibleAtDate,
         accessibleTriggerDelayMs,
+        isDisabled,
     };
 };
 
@@ -34,7 +36,7 @@ export const getEnrichedOutgoingDelegatedAccess = (
 export const getMetaOutgoingDelegatedAccess = ({
     now,
     value: {
-        parsedOutgoingDelegatedAccess: { accessibleAtDate },
+        parsedOutgoingDelegatedAccess: { isDisabled, accessibleAtDate },
     },
 }: {
     now: number;
@@ -51,8 +53,8 @@ export const getMetaOutgoingDelegatedAccess = ({
     return {
         accessibleAtTimeDiff,
         hasRequestedAccess,
-        canLogin,
-        canRequestAccess,
+        canLogin: !isDisabled && canLogin,
+        canRequestAccess: !isDisabled && canRequestAccess,
         canDelete: true,
         canChangeWaitTime: true,
         canGrantAccess: hasRequestedAccess,
