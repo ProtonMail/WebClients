@@ -853,6 +853,9 @@
       "More actions": [
         "Lisää toimintoja"
       ],
+      "More benefits": [
+        "Lisää etuja"
+      ],
       "More details about ${ ariaLabelTitle }": [
         "Lisätietoja vastaanottajasta ${ ariaLabelTitle }"
       ],
@@ -1068,6 +1071,9 @@
       ],
       "Remove from favorites": [
         "Poista suosikeista"
+      ],
+      "Remove from list": [
+        "Poista listalta"
       ],
       "Remove gift code": [
         "Poista lahjakoodi"
@@ -1393,10 +1399,6 @@
       "Trust": [
         "Luota"
       ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
-      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -1637,6 +1639,10 @@
       ],
       "${ price } per user": [
         "${ price }/käyttäjä"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-lisenssi",
+        "${ seats } ${ LUMO_APP_NAME }-lisenssiä"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } kirjoitusavustajalisenssi",
@@ -2445,9 +2451,6 @@
       ],
       "Advanced account protection": [
         "Edistynyt tilin suojaus"
-      ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Kaikki ${ BRAND_NAME }-sovellukset ja niiden premium-ominaisuudet"
       ],
       "Cancel and downgrade": [
         "Peru ja alenna tilaus"
@@ -4430,6 +4433,9 @@
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
+      "Invalid ZIP code": [
+        "Virheellinen postinumero"
+      ],
       "Item content cannot exceed 40KB": [
         "Kohteen sisällön koko ei saa ylittää 40 kt"
       ],
@@ -4519,6 +4525,12 @@
       ],
       "Please activate your search again": [
         "Aktivoi hakusi uudelleen"
+      ],
+      "Please enter a valid ZIP code": [
+        "Syötä kelvollinen postinumero"
+      ],
+      "Please enter ZIP code": [
+        "Syötä postinumero"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Jatka korjaamalla korostettu ristiriita.",
@@ -6992,7 +7004,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8914,6 +8927,9 @@
       "Folder location": [
         "Kansion sijainti"
       ],
+      "Forums": [
+        "Foorumit"
+      ],
       "Forwards to": [
         "Ohjaa osoitteeseen"
       ],
@@ -9235,6 +9251,9 @@
       "Unsubscribed from ${ truncatedName }.": [
         "Tilaus ${ truncatedName } on peruttu."
       ],
+      "Updates": [
+        "Päivitykset"
+      ],
       "Upload picture": [
         "Lataa kuva"
       ],
@@ -9326,6 +9345,9 @@
       ]
     },
     "Label, credit card": {
+      "Postal code": [
+        "Postinumero"
+      ],
       "ZIP code": [
         "Postinumero"
       ]
@@ -10142,9 +10164,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Kaikki premium ${ BRAND_NAME } -palvelut. Yksi helppo tilaus"
-      ],
       "Auto-delete Spam and Trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
@@ -10492,9 +10511,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Kaikki ${ BRAND_NAME } -yrityssovellukset ja premium-ominaisuudet koko yrityksesi suojaamiseksi."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Kattavaa yksityisyyttä ja turvaa kaikkien ${ BRAND_NAME }-palveluiden yhdistelmällä."
       ],
       "Early access to new apps and features": [
         "Varhainen käyttöoikeus uusiin sovelluksiin ja ominaisuuksiin"
@@ -11462,6 +11478,20 @@
         "Katuosoite, postinumero ja kaupunki"
       ]
     },
+    "Payments.VAT number name": {
+      "ABN": [
+        "ABN"
+      ],
+      "Business Number": [
+        "Yritystunnus"
+      ],
+      "EIN": [
+        "EIN"
+      ],
+      "VAT number": [
+        "ALV-numero"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Avainta ei voida käyttää salaukseen"
@@ -11568,6 +11598,9 @@
       "Please share what you expected": [
         "Kerro, mitä odotit"
       ],
+      "Postal code": [
+        "Postinumero"
+      ],
       "Search date, name, email address, or subject line": [
         "Etsi päiväystä, nimeä, sähköpostiosoitetta tai aiheriviä"
       ],
@@ -11636,6 +11669,9 @@
       ],
       "Your organization name": [
         "Organisaatiosi nimi"
+      ],
+      "ZIP code": [
+        "Postinumero"
       ]
     },
     "Placeholder for contact group name": {
@@ -12334,6 +12370,9 @@
       "Go to subscription plans": [
         "Siirry tilauksiin"
       ],
+      "Increase your storage": [
+        "Lisää tallennustilaasi"
+      ],
       "Upgrade": [
         "Päivitä tilaus"
       ],
@@ -12721,9 +12760,6 @@
       ],
       "${ planMaxSpace } total storage": [
         "Yhteensä ${ planMaxSpace } tallennustilaa"
-      ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja identiteettisi ovat turvassa."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen käyttöoikeuden uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
@@ -14209,6 +14245,9 @@
       ],
       "Recover data": [
         "Palauta tiedot"
+      ],
+      "Remove from list?": [
+        "Poistetaanko listalta?"
       ],
       "Reply": [
         "Vastaa"
