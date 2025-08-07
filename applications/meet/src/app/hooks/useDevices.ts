@@ -5,7 +5,12 @@ import { useDevicePermissionsContext } from '../contexts/DevicePermissionsContex
 const getDevices = async (kind: MediaDeviceKind) => {
     try {
         const devices = await navigator.mediaDevices.enumerateDevices();
-        return devices.filter((d) => d.kind === kind);
+
+        return devices
+            .filter((d) => d.kind === kind && !d.label?.toLocaleLowerCase()?.includes('zoom'))
+            .sort((a) => {
+                return a.deviceId === 'default' ? -1 : 1;
+            });
     } catch (err) {
         console.log(err);
 
@@ -40,9 +45,9 @@ export const useDevices = () => {
         };
     }, []);
 
-    const defaultMicrophone = microphones[0];
-    const defaultCamera = cameras[0];
-    const defaultSpeaker = speakers[0];
+    const defaultMicrophone = microphones.find((m) => m.deviceId === 'default') ?? microphones[0];
+    const defaultCamera = cameras.find((c) => c.deviceId === 'default') ?? cameras[0];
+    const defaultSpeaker = speakers.find((s) => s.deviceId === 'default') ?? speakers[0];
 
     return {
         cameras,
