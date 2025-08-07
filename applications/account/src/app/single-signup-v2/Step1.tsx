@@ -189,7 +189,13 @@ const Step1 = ({
     const [checkTrialResult, setCheckTrialResult] = useState<CheckTrialPriceResult | undefined>();
     const [checkingTrial, withCheckingTrial] = useLoading();
 
-    const [isFormValid, setIsFormValid] = useState(false);
+    // this state should be true by default. Then two cases are possible:
+    // - <AccountStepDetails> (or any other component that uses setIsFormValid callback) is rendered and then it sets
+    //       the state to false when needed.
+    // - <AccountStepDetails> is not rendedered and then this state remains true. This allows pages that don't have the
+    // username/password form to have the "valid" form state. No form means it's always valid. In particular, it solves
+    // PayPal signups for the Porkbun page.
+    const [isFormValid, setIsFormValid] = useState(true);
 
     const [upsellDriveTrialModal, setUpsellDriveTrialModal, renderUpsellDriveTrialModal] = useModalState();
     const [upsellPassTrialModal, setUpsellPassTrialModal, renderUpsellPassTrialModal] = useModalState();
