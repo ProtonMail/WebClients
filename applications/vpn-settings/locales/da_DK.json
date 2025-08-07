@@ -975,6 +975,10 @@
       "${ price } per user": [
         "${ price } per bruger"
       ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-licens",
+        "${ seats } ${ LUMO_APP_NAME }-licenser"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } skriveassistentplads",
         "${ seats } skriveassistentpladser"
@@ -1626,9 +1630,6 @@
       ],
       "Advanced account protection": [
         "Avanceret kontobeskyttelse"
-      ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Alle ${ BRAND_NAME } apps og premium-funktioner"
       ],
       "Cancel and downgrade": [
         "Annuller og nedgrader"
@@ -7463,9 +7464,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Alle premium ${ BRAND_NAME }-tjenester. Ét nemt abonnement"
-      ],
       "Apps for": [
         "Apps til"
       ],
@@ -7814,9 +7812,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Alle erhvervs-apps til ${ BRAND_NAME } og premium-funktioner, der beskytter hele din virksomhed."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Omfattende privatlivsbeskyttelse og sikkerhed med alle ${ BRAND_NAME }-tjenester kombineret."
       ],
       "Early access to new apps and features": [
         "Forhåndsadgang til nye apps og funktioner"
@@ -8715,9 +8710,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Adgang til alle ${ BRAND_NAME } apps og premiumfunktioner"
-      ],
       "Secure vault sharing": [
         "Sikker deling af boks"
       ],
@@ -9218,12 +9210,6 @@
       ]
     },
     "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Alle ${ protonPlus }-tjenester.${ br }Ét nemt abonnement."
-      ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Som **${ currentPlanTitle }**-abonnent kan du låse op for **${ unlockPlanTitle }** og alle premium ${ BRAND_NAME }-tjenester ved at opgradere til **${ upsellPlanTitle }**."
-      ],
       "Stay on ${ currentPlanTitle }": [
         "Bliv på ${ currentPlanTitle }"
       ],
@@ -10512,9 +10498,6 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } lagerplads i alt"
-      ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } giver dig tilgang alle apps og eksklusive funktioner. Privatsfæren er indbygget, med velvidenheden om at dine data og din identitet er sikre."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } giver dig alle apps, alle funktioner, forhåndstilgang til nye udgivelser og alt, hvad der kræves for at have kontrol over dine datasikkerhed."
