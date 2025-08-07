@@ -1400,32 +1400,6 @@
         "Událost není podporována"
       ]
     },
-    "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje každých ${ cycle } měsíců, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude Vám nic účtováno."
-      ],
-      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební verze."
-      ],
-      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } Lumo seats during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_LUMO_SEATS } licencí Lumo během zkušební verze."
-      ],
-      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_SCRIBE_SEATS } licencí Scribe během zkušební verze."
-      ],
-      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Můžete mít až ${ TRIAL_MAX_USERS } uživatelů během zkušební verze."
-      ],
-      "You cannot add custom domains during the trial period.": [
-        "Během zkušební doby nelze přidávat vlastní domény."
-      ],
-      "You have reached the trial limit.": [
-        "Dosáhli jste limitu zkušební verze."
-      ]
-    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Zrušit předplatné"
@@ -1758,8 +1732,8 @@
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Všechny ${ BRAND_NAME } aplikace a prémiové funkce"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Zrušit a snížit"
@@ -1818,14 +1792,6 @@
       ],
       "Expand": [
         "Rozbalit"
-      ]
-    },
-    "collider_2025: Info": {
-      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
-        "${ LUMO_APP_NAME } je umělá inteligence s prioritou ochrany soukromí, která vám pomáhá zvládnout více a zároveň chrání vaše data. Využijte její plný potenciál a získejte přístup k novým funkcím ihned po jejich představení."
-      ],
-      "Add ${ LUMO_APP_NAME }": [
-        "Přidat ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -8192,9 +8158,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Všechny prémiové služby ${ BRAND_NAME }. Jedno snadné předplatné"
-      ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
       ],
@@ -8562,9 +8525,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Všechny firemní aplikace ${ BRAND_NAME } a prémiové funkce pro ochranu celé vaší firmy."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Komplexní ochrana soukromí a zabezpečení se všemi službami ${ BRAND_NAME } dohromady."
       ],
       "Early access to new apps and features": [
         "Předběžný přístup k novým aplikacím a funkcím"
@@ -9410,7 +9370,7 @@
         "Pokročilá ochrana před hrozbami"
       ],
       "Collaborate with non-${ BRAND_NAME } users": [
-        "Sdílet s uživateli, kteří nemají ${ BRAND_NAME }"
+        "Spolupracujte s těmi, kdo nejsou uživateli ${ BRAND_NAME }"
       ],
       "Custom email domain": [
         "Vlastní e-mailová doména"
@@ -9668,9 +9628,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Přístup ke všem aplikacím ${ BRAND_NAME } a prémiovým funkcím"
-      ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
       ],
@@ -10056,12 +10013,20 @@
         "kontaktujte"
       ]
     },
-    "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Všechny služby ${ protonPlus }.${ br }Jedno jednoduché předplatné."
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "Jako předplatitel **${ currentPlanTitle }** můžete odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Jako předplatitel **${ currentPlanTitle }** můžete odemknout **${ unlockPlanTitle }** a další prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Více služeb ${ BRAND_NAME }.${ br }Jedno snadné předplatné."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Zůstat na ${ currentPlanTitle }"
@@ -10451,14 +10416,6 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Sdílel/a ${ ownerName }"
-      ]
-    },
-    "sheets_2025:Action": {
-      "New spreadsheet": [
-        "Nová tabulka"
-      ],
-      "Open in ${ appName }": [
-        "Otevřít v ${ appName }"
       ]
     },
     "Signing preference for emails": {
@@ -10974,8 +10931,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } úložného prostoru"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } vám umožní přístup ke všem aplikacím a prémiovým funkcím. Je brán ohled na soukromí, takže můžete pokračovat v práci s vědomím, že vaše data a identita jsou v bezpečí."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } vám dává přístup ke všem prémiovým funkcím z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }. Soukromí je integrováno, abyste se mohli věnovat svým záležitostem s vědomím, že vaše data a identita jsou v bezpečí."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
