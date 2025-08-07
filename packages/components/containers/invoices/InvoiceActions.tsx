@@ -38,7 +38,7 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit 
                     return;
                 }
 
-                const status = await paymentsApi.statusExtendedAutomatic();
+                const status = await paymentsApi.paymentStatus();
                 const canPay = status.VendorStates.Card || status.VendorStates.Paypal;
 
                 if (!canPay) {

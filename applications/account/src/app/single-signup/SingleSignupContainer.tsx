@@ -430,7 +430,7 @@ const SingleSignupContainer = ({
 
         const preferredCurrency = getPreferredCurrency({
             paramCurrency: currency,
-            status: model.paymentMethodStatusExtended,
+            paymentStatus: model.paymentStatus,
             plans: plans,
         });
 
@@ -459,7 +459,7 @@ const SingleSignupContainer = ({
 
             void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const [{ Domains: domains }, { plans, freePlan }, paymentMethodStatusExtended] = await Promise.all([
+            const [{ Domains: domains }, { plans, freePlan }, paymentStatus] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 getPlans({ api: silentApi }),
                 getPaymentStatus({ api: silentApi }),
@@ -471,11 +471,11 @@ const SingleSignupContainer = ({
             });
             void measure({
                 event: TelemetryAccountSignupEvents.bePaymentMethods,
-                dimensions: getPaymentMethodsAvailable(paymentMethodStatusExtended.VendorStates),
+                dimensions: getPaymentMethodsAvailable(paymentStatus.VendorStates),
             });
 
             const preferredCurrency = getPreferredCurrency({
-                status: paymentMethodStatusExtended,
+                paymentStatus,
                 plans,
                 paramCurrency: signupParameters.currency,
                 paramPlanName: signupParameters.preSelectedPlan,
@@ -489,9 +489,9 @@ const SingleSignupContainer = ({
                     plans,
                     preferredCurrency,
                     billingAddress: {
-                        CountryCode: paymentMethodStatusExtended.CountryCode,
-                        State: paymentMethodStatusExtended.State,
-                        ZipCode: paymentMethodStatusExtended.ZipCode,
+                        CountryCode: paymentStatus.CountryCode,
+                        State: paymentStatus.State,
+                        ZipCode: paymentStatus.ZipCode,
                     },
                 });
 
@@ -508,7 +508,7 @@ const SingleSignupContainer = ({
                 plans,
                 freePlan,
                 plansMap,
-                paymentMethodStatusExtended,
+                paymentStatus,
                 subscriptionData,
                 subscriptionDataCycleMapping,
                 cycleData,

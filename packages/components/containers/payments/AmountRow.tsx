@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
-import type { PaymentMethodStatusExtended, PlainPaymentMethodType } from '@proton/payments';
+import type { PaymentStatus, PlainPaymentMethodType } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { type Currency } from '@proton/payments';
 
@@ -15,7 +15,7 @@ interface Props {
     currency: Currency;
     onChangeCurrency: (currency: Currency) => void;
     disableCurrencySelector: boolean;
-    status: PaymentMethodStatusExtended;
+    paymentStatus: PaymentStatus;
 }
 
 const AmountRow = ({
@@ -25,7 +25,7 @@ const AmountRow = ({
     currency,
     onChangeCurrency,
     disableCurrencySelector,
-    status,
+    paymentStatus,
 }: Props) => {
     if (paymentMethodType === PAYMENT_METHOD_TYPES.CASH) {
         return null;
@@ -36,7 +36,7 @@ const AmountRow = ({
             <span className="label" id="id_desc_amount">{c('Label').t`Amount`}</span>
             <Field>
                 <PaymentSelector
-                    status={status}
+                    paymentStatus={paymentStatus}
                     amount={amount}
                     onChangeAmount={onChangeAmount}
                     currency={currency}

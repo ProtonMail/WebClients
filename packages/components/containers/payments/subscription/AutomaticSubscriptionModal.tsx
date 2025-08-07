@@ -25,7 +25,7 @@ import {
     CURRENCIES,
     type Currency,
     DEFAULT_CYCLE,
-    type PaymentMethodStatusExtended,
+    type PaymentStatus,
     type Plan,
     SelectedPlan,
     type Subscription,
@@ -46,7 +46,7 @@ const getParameters = (
     subscription: Subscription,
     user: UserModel,
     getPreferredCurrency: ReturnType<typeof useCurrencies>['getPreferredCurrency'],
-    paymentStatus: PaymentMethodStatusExtended
+    paymentStatus: PaymentStatus
 ) => {
     const params = new URLSearchParams(search);
 
@@ -85,7 +85,7 @@ const getParameters = (
             user,
             subscription,
             plans,
-            status: paymentStatus,
+            paymentStatus,
         }),
         true
     );

@@ -13,20 +13,17 @@ import {
     type MultiCheckOptions,
     type MultiCheckSubscriptionData,
     PAYMENTS_API_ERROR_CODES,
-    type PaymentMethodStatus,
-    type PaymentMethodStatusExtended,
+    type PaymentStatus,
     type PaymentsApi,
     type PaymentsVersion,
     type RequestOptions,
     captureWrongPlanIDs,
-    extendStatus,
     getLifetimeProductType,
     getPaymentsVersion,
     getPlanName,
     isCheckForbidden,
     isCheckWithAutomaticOptions,
     isLifetimePlanSelected,
-    isPaymentMethodStatusExtended,
     normalizeBillingAddress,
     normalizePaymentMethodStatus,
     queryPaymentMethodStatus,
@@ -239,19 +236,8 @@ export const usePaymentsApi = (
     const getPaymentsApi = (api: Api, chargebeeEnabledOverride?: ChargebeeEnabled): PaymentsApi => {
         const getChargebeeEnabled = (): ChargebeeEnabled => chargebeeEnabledOverride ?? chargebeeEnabledCache();
 
-        const statusExtended = (version: PaymentsVersion): Promise<PaymentMethodStatusExtended> => {
-            return api<PaymentMethodStatusExtended | PaymentMethodStatus>(queryPaymentMethodStatus(version))
-                .then((result) => {
-                    // If that's already the extended status, aka v5 status, then we just return it,
-                    // or set the country code to the default one if it's missing
-                    if (isPaymentMethodStatusExtended(result)) {
-                        return result;
-                    }
-
-                    // if that's the v4 status, we extend it to mimic the v5 status.
-                    // It will simplify all further interactions with the status.
-                    return extendStatus(result);
-                })
+        const paymentStatus = (): Promise<PaymentStatus> => {
+            return api<PaymentStatus>(queryPaymentMethodStatus())
                 .then((status) => normalizePaymentMethodStatus(status))
                 .then((status) => {
                     // ProtonAccountLite doesn't support cash payments
@@ -261,16 +247,6 @@ export const usePaymentsApi = (
 
                     return status;
                 });
-        };
-
-        const statusExtendedAutomatic = async (): Promise<PaymentMethodStatusExtended> => {
-            const chargebeeEnabled = getChargebeeEnabled();
-
-            if (chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
-                return statusExtended('v4');
-            }
-
-            return statusExtended('v5');
         };
 
         const checkV4 = async (
@@ -483,7 +459,7 @@ export const usePaymentsApi = (
             checkWithAutomaticVersion,
             multiCheck,
             cacheMultiCheck,
-            statusExtendedAutomatic,
+            paymentStatus,
             getFullBillingAddress,
             updateFullBillingAddress,
             updateInvoiceBillingAddress,

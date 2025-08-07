@@ -17,7 +17,7 @@ import {
     PAYMENT_METHOD_TYPES,
     PLANS,
 } from './constants';
-import { extendStatus, isSignupFlow } from './helpers';
+import { isSignupFlow } from './helpers';
 import type {
     AvailablePaymentMethod,
     Currency,
@@ -25,8 +25,7 @@ import type {
     PaymentMethodApplePay,
     PaymentMethodFlow,
     PaymentMethodSepa,
-    PaymentMethodStatus,
-    PaymentMethodStatusExtended,
+    PaymentStatus,
     PaymentsApi,
     PlainPaymentMethodType,
     PlanIDs,
@@ -92,7 +91,7 @@ export function formatPaymentMethods(paymentMethods: SavedPaymentMethod[]): Save
 }
 
 export interface PaymentMethodsParameters {
-    paymentMethodStatus: PaymentMethodStatusExtended | PaymentMethodStatus;
+    paymentStatus: PaymentStatus;
     paymentMethods: SavedPaymentMethod[];
     chargebeeEnabled: ChargebeeEnabled;
     amount: number;
@@ -187,14 +186,14 @@ export class PaymentMethods {
         this._selectedPlanName = value;
     }
 
-    private _statusExtended: PaymentMethodStatusExtended;
+    private _paymentStatus: PaymentStatus;
 
-    public get statusExtended(): PaymentMethodStatusExtended {
-        return this._statusExtended;
+    public get paymentStatus(): PaymentStatus {
+        return this._paymentStatus;
     }
 
-    public set statusExtended(value: PaymentMethodStatusExtended) {
-        this._statusExtended = value;
+    public set paymentStatus(value: PaymentStatus) {
+        this._paymentStatus = value;
     }
 
     public paymentMethods: SavedPaymentMethod[];
@@ -245,7 +244,7 @@ export class PaymentMethods {
     public isTrial: boolean;
 
     constructor({
-        paymentMethodStatus,
+        paymentStatus,
         paymentMethods,
         chargebeeEnabled,
         amount,
@@ -265,7 +264,7 @@ export class PaymentMethods {
         enableApplePay,
         isTrial,
     }: PaymentMethodsParameters) {
-        this._statusExtended = extendStatus(paymentMethodStatus);
+        this._paymentStatus = paymentStatus;
 
         this.paymentMethods = paymentMethods;
         this.chargebeeEnabled = chargebeeEnabled;
@@ -306,25 +305,25 @@ export class PaymentMethods {
         const usedMethods: AvailablePaymentMethod[] = this.paymentMethods
             .filter((paymentMethod) => {
                 const isExistingCard =
-                    paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD && this.statusExtended.VendorStates.Card;
+                    paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD && this.paymentStatus.VendorStates.Card;
 
                 const isExistingChargebeeCard =
-                    paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && this.statusExtended.VendorStates.Card;
+                    paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && this.paymentStatus.VendorStates.Card;
 
                 const isExistingPaypal =
-                    paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL && this.statusExtended.VendorStates.Paypal;
+                    paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL && this.paymentStatus.VendorStates.Paypal;
 
                 const isExistingChargebeePaypal =
                     paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL &&
-                    this.statusExtended.VendorStates.Paypal;
+                    this.paymentStatus.VendorStates.Paypal;
 
                 const isExistingChargebeeSepaDirectDebit =
                     paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT &&
-                    this.statusExtended.VendorStates.Card &&
+                    this.paymentStatus.VendorStates.Card &&
                     this.paymentFlowSupportsSEPADirectDebit();
 
                 const isExistingApplePay =
-                    paymentMethod.Type === PAYMENT_METHOD_TYPES.APPLE_PAY && this.statusExtended.VendorStates.Apple;
+                    paymentMethod.Type === PAYMENT_METHOD_TYPES.APPLE_PAY && this.paymentStatus.VendorStates.Apple;
 
                 // Only Paypal and Card can be saved/used payment methods.
                 // E.g. it's not possible to make Bitcoin/Cash a saved payment method.
@@ -440,7 +439,7 @@ export class PaymentMethods {
 
     private isCashAvailable(): boolean {
         return (
-            this.statusExtended.VendorStates.Cash && !isSignupFlow(this.flow) && !this.isBF2024Offer() && !this.coupon
+            this.paymentStatus.VendorStates.Cash && !isSignupFlow(this.flow) && !this.isBF2024Offer() && !this.coupon
         );
     }
 
@@ -506,7 +505,7 @@ export class PaymentMethods {
         const notDelinquent = !this.user || !isDelinquent(this.user);
 
         return (
-            this.statusExtended.VendorStates.Bitcoin &&
+            this.paymentStatus.VendorStates.Bitcoin &&
             flowSupportsBtc &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
             !this.isB2BPlan() &&
@@ -516,7 +515,7 @@ export class PaymentMethods {
     }
 
     private isCardAvailable(): boolean {
-        if (!this.statusExtended.VendorStates.Card) {
+        if (!this.paymentStatus.VendorStates.Card) {
             return false;
         }
 
@@ -528,7 +527,7 @@ export class PaymentMethods {
             return false;
         }
 
-        const cardAvailable = this.statusExtended.VendorStates.Card;
+        const cardAvailable = this.paymentStatus.VendorStates.Card;
         if (this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
             return cardAvailable;
         }
@@ -549,7 +548,7 @@ export class PaymentMethods {
         const isInvoice = this.flow === 'invoice';
 
         return (
-            this.statusExtended.VendorStates.Paypal &&
+            this.paymentStatus.VendorStates.Paypal &&
             !alreadyHasPayPal &&
             (isPaypalAmountValid || isInvoice) &&
             !this.isChargebeePaypalAvailable()
@@ -569,7 +568,7 @@ export class PaymentMethods {
         const isInvoice = this.flow === 'invoice';
 
         const paypalAvailable =
-            this.statusExtended.VendorStates.Paypal && !alreadyHasPayPal && (isPaypalAmountValid || isInvoice);
+            this.paymentStatus.VendorStates.Paypal && !alreadyHasPayPal && (isPaypalAmountValid || isInvoice);
         if (this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
             return paypalAvailable;
         }
@@ -597,7 +596,7 @@ export class PaymentMethods {
         const isApplePayAmountValid = this.amount >= MIN_APPLE_PAY_AMOUNT;
 
         return (
-            this.statusExtended.VendorStates.Apple &&
+            this.paymentStatus.VendorStates.Apple &&
             this.enableApplePay &&
             isApplePayAmountValid &&
             isAllowedFlow &&
@@ -645,7 +644,7 @@ export async function initializePaymentMethods({
     ...props
 }: {
     api: Api;
-    maybePaymentMethodStatus: PaymentMethodStatusExtended | undefined;
+    maybePaymentMethodStatus: PaymentStatus | undefined;
     maybePaymentMethods: SavedPaymentMethod[] | undefined;
     isAuthenticated: boolean;
     amount: number;
@@ -667,7 +666,7 @@ export async function initializePaymentMethods({
     enableApplePay?: boolean;
     isTrial?: boolean;
 }) {
-    const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.statusExtendedAutomatic();
+    const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.paymentStatus();
     const paymentMethodsPromise = (() => {
         if (maybePaymentMethods) {
             return maybePaymentMethods;
@@ -704,7 +703,7 @@ export async function initializePaymentMethods({
     });
 
     return new PaymentMethods({
-        paymentMethodStatus,
+        paymentStatus: paymentMethodStatus,
         paymentMethods: mappedMethods,
         ...props,
     });

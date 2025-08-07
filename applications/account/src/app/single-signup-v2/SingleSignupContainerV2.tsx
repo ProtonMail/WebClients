@@ -552,7 +552,7 @@ const SingleSignupContainerV2 = ({
             ]);
 
             const currency = getPreferredCurrency({
-                status: paymentMethodStatus,
+                paymentStatus: paymentMethodStatus,
                 plans: getAccessiblePlans({
                     planCards,
                     audience,
@@ -687,7 +687,7 @@ const SingleSignupContainerV2 = ({
                 subscriptionDataCycleMapping,
                 referralData,
                 inviteData: signupParameters.invite?.type === 'generic' ? signupParameters.invite.data : undefined,
-                paymentMethodStatusExtended: paymentMethodStatus,
+                paymentStatus: paymentMethodStatus,
                 subscriptionData,
                 cache: undefined,
                 source: signupParameters.source,
@@ -813,11 +813,11 @@ const SingleSignupContainerV2 = ({
                 availableCycles: signupConfiguration.cycles,
             });
 
-            const statusPromise = paymentsApi.statusExtendedAutomatic();
+            const paymentStatusPromise = paymentsApi.paymentStatus();
 
-            const [{ subscriptionData, upsell }, paymentMethodStatusExtended] = await Promise.all([
+            const [{ subscriptionData, upsell }, paymentStatus] = await Promise.all([
                 userInfoPromise,
-                statusPromise,
+                paymentStatusPromise,
             ]);
 
             measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
@@ -828,7 +828,7 @@ const SingleSignupContainerV2 = ({
                 cache: undefined,
                 upsell,
                 subscriptionData,
-                paymentMethodStatusExtended,
+                paymentStatus,
             });
         } finally {
             accountRef.current.signingOut = false;

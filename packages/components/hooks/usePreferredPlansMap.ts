@@ -31,7 +31,7 @@ export const getPreferredPlansMap = ({
     user,
     subscription,
     plans,
-    status,
+    paymentStatus,
 }: {
     currencyFallback?: boolean;
     currencyOverrides?: GetPreferredCurrencyParamsHook;
@@ -39,14 +39,14 @@ export const getPreferredPlansMap = ({
     user: UserModel;
     subscription?: Subscription | FreeSubscription;
     plans: Plan[];
-    status: ReturnType<typeof usePaymentStatus>[0];
+    paymentStatus: ReturnType<typeof usePaymentStatus>[0];
 }) => {
     const preferredCurrency = getPreferredCurrency({
         ...currencyOverrides,
         user,
         subscription,
         plans,
-        status,
+        paymentStatus,
     });
 
     return {
@@ -70,7 +70,7 @@ export const usePreferredPlansMap = (currencyFallback?: boolean): PreferredPlans
             user,
             subscription,
             plans: plansData?.plans ?? [],
-            status,
+            paymentStatus: status,
         });
     };
 

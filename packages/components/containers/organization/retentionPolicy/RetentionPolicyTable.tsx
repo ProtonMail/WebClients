@@ -48,10 +48,9 @@ const RetentionPolicyTable = ({ rules, loading, onEdit, onDelete, onCreateNew }:
                 return true;
             }
 
+            const days = rule.Lifetime;
             const lifetimeText =
-                rule.Lifetime === null
-                    ? c('retention_policy_2025_Info').t`Forever`
-                    : getDaysStringFromLifetime(rule.Lifetime);
+                days === null ? c('retention_policy_2025_Info').t`Forever` : getDaysStringFromLifetime(rule.Lifetime);
             if (normalize(lifetimeText, true).includes(normalizedWords)) {
                 return true;
             }

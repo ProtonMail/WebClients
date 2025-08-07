@@ -11,9 +11,9 @@ import type {
     ChargebeeIframeHandles,
     PLANS,
     PaymentMethodFlow,
-    PaymentMethodStatusExtended,
     PaymentMethodType,
     PaymentProcessorType,
+    PaymentStatus,
     PaymentsVersion,
     PlainPaymentMethodType,
     PlanIDs,
@@ -95,7 +95,7 @@ type PaymentFacadeProps = {
      */
     onMethodChanged?: OnMethodChangedHandler;
     paymentMethods?: SavedPaymentMethod[];
-    paymentMethodStatusExtended?: PaymentMethodStatusExtended;
+    paymentStatus?: PaymentStatus;
     /**
      * Optional override for the API object. Can be helpful for auth/unauth flows.
      */
@@ -136,7 +136,7 @@ export const usePaymentFacade = ({
     telemetryFlow,
     onMethodChanged,
     paymentMethods,
-    paymentMethodStatusExtended,
+    paymentStatus,
     api: apiOverride,
     selectedPlanName,
     chargebeeEnabled: chargebeeEnabledOverride,
@@ -202,7 +202,7 @@ export const usePaymentFacade = ({
             flow,
             onMethodChanged,
             paymentMethods,
-            paymentMethodStatusExtended,
+            paymentStatus,
             isChargebeeEnabled,
             chargebeeKillSwitch,
             forceEnableChargebee,
@@ -387,7 +387,7 @@ export const usePaymentFacade = ({
         selectedMethodType: methods.selectedMethod?.type,
         showTaxCountry: getShowTaxCountry(),
         taxCountryLoading,
-        statusExtended: methods.status,
+        paymentStatus: methods.status,
         showInclusiveTax,
     };
 
