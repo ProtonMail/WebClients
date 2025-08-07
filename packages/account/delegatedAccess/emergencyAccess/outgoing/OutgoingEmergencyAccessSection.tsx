@@ -15,7 +15,6 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import { SECOND } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DelegatedAccessStateEnum } from '../../interface';
 import { ContactCell } from '../ContactCell';
 import {
     getFormattedAccessibleAtDate,
@@ -38,12 +37,11 @@ interface OutgoingItemProps {
 
 const OutgoingDelegatedAccessCell = ({
     value: {
-        outgoingDelegatedAccess,
-        parsedOutgoingDelegatedAccess: { accessibleAtDate },
+        parsedOutgoingDelegatedAccess: { accessibleAtDate, isDisabled },
     },
     meta: { hasRequestedAccess, accessibleAtTimeDiff, canRejectAccess },
 }: Pick<OutgoingItemProps, 'value' | 'meta'>) => {
-    if (outgoingDelegatedAccess.State === DelegatedAccessStateEnum.Disabled) {
+    if (isDisabled) {
         return <Badge type="origin">{c('emergency_access').t`Disabled`}</Badge>;
     }
 
