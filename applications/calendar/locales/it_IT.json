@@ -836,6 +836,9 @@
       "Upgrade": [
         "Effettua l'upgrade"
       ],
+      "Upgrade for 200GB": [
+        "Effettua l'upgrade per 200GB"
+      ],
       "Upgrade Now": [
         "Effettua l'upgrade ora"
       ],
@@ -1736,8 +1739,8 @@
       "Advanced account protection": [
         "Protezione avanzata dell'account"
       ],
-      "All ${ BRAND_NAME } apps and premium features": [
-        "Tutte le app di ${ BRAND_NAME } e le funzionalità premium"
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Cancel and downgrade": [
         "Annulla ed effettua il downgrade"
@@ -7447,9 +7450,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tutti i servizi ${ BRAND_NAME } di base (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "All premium ${ BRAND_NAME } services. One easy subscription": [
-        "Tutti i servizi premium di ${ BRAND_NAME }. Un semplice abbonamento"
-      ],
       "Auto-delete Spam and Trash": [
         "Eliminazione automatica dello spam e dal cestino"
       ],
@@ -7803,9 +7803,6 @@
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Tutte le app aziendali e le funzionalità premium di ${ BRAND_NAME } per proteggere l'intera azienda."
-      ],
-      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
-        "Privacy e sicurezza complete con tutti i servizi ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
         "Accesso anticipato a nuove app e funzionalità"
@@ -8408,6 +8405,9 @@
       "Limited-time offer": [
         "Offerta a tempo limitato"
       ],
+      "Limited-time offer, valid for your first month": [
+        "Offerta a tempo limitato, valida per il tuo primo mese"
+      ],
       "Maybe later": [
         "Forse più tardi"
       ],
@@ -8428,6 +8428,12 @@
       ],
       "This offer won't be shown again.": [
         "Questa offerta non verrà più mostrata."
+      ],
+      "Upgrade your productivity for just ${ pricingTitle } with ${ planName }": [
+        "Effettua l\"upgrade per la tua produttività per soli ${ pricingTitle } con ${ planName }"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Effettua l\"upgrade della tua archiviazione a soli ${ pricingTitle } con ${ planName }"
       ],
       "When you switch from a monthly to annual subscription.": [
         "Quando si passa da un abbonamento mensile a uno annuale."
@@ -8454,11 +8460,20 @@
       "Advanced threat protection": [
         "Protezione avanzata dalle minacce"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Collabora con utenti non-${ BRAND_NAME }"
+      ],
       "Custom email domain": [
         "Dominio email personalizzato"
       ],
+      "Edit docs online": [
+        "Modifica documenti online"
+      ],
       "Email addresses": [
         "Indirizzi email"
+      ],
+      "File version history (over 1 week)": [
+        "Cronologia delle versioni del file (oltre 1 settimana)"
       ],
       "Free": [
         "Gratuito"
@@ -8652,9 +8667,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Access to all ${ BRAND_NAME } apps and premium features": [
-        "Accesso a tutte le app di ${ BRAND_NAME } e alle funzionalità premium"
-      ],
       "Secure vault sharing": [
         "Condivisione sicura della cassaforte"
       ],
@@ -9041,12 +9053,20 @@
         "contatto"
       ]
     },
-    "plus_block": {
-      "All ${ protonPlus } services.${ br }One easy subscription.": [
-        "Tutti i servizi di ${ protonPlus }.${ br }Un semplice abbonamento."
+    "Plan description": {
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }."
       ],
-      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
-        "In quanto abbonato a **${ currentPlanTitle }**, puoi sbloccare **${ unlockPlanTitle }** e tutti i servizi premium di ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
+      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ]
+    },
+    "plus_block": {
+      "As a **${ currentPlanTitle }** subscriber, you can unlock **${ unlockPlanTitle }** and more ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "In quanto abbonato a **${ currentPlanTitle }**, puoi sbloccare **${ unlockPlanTitle }** e più servizi ${ BRAND_NAME } effettuando l'upgrade a **${ upsellPlanTitle }**."
+      ],
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Altri servizi ${ BRAND_NAME }.${ br }Un abbonamento standard."
       ],
       "Stay on ${ currentPlanTitle }": [
         "Rimani su ${ currentPlanTitle }"
@@ -9967,8 +9987,8 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } di spazio di archiviazione totale"
       ],
-      "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } ti dà accesso a tutte le app e alle funzionalità premium. La privacy è integrata in modo che tu abbia la certezza che i tuoi dati e la tua identità sono al sicuro."
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } ti dà accesso a tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }. La privacy è integrata, così puoi procedere sapendo che i tuoi dati e la tua identità sono al sicuro."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } ti offre tutte le app, tutte le funzionalità, l'accesso anticipato alle nuove versioni e tutto ciò di cui hai bisogno per avere il controllo dei tuoi dati e della loro sicurezza."
@@ -11182,6 +11202,15 @@
       ],
       "Upgrade complete!": [
         "Aggiornamento completato!"
+      ],
+      "Upgrade to ${ planName }": [
+        "Effettua l'upgrade a ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Effettua l\"upgrade per la tua produttività per ${ formattedPrice } con ${ planName }"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "Effettua l\"upgrade della tua archiviazione per ${ formattedPrice } con ${ planName }"
       ],
       "Upload and share files": [
         "Carica e condividi file"
