@@ -42,7 +42,7 @@ export const convertToRetentionRuleFormData = (retentionRule: RetentionRule): Re
         id: retentionRule.ID,
         name: retentionRule.Name,
         products: retentionRule.Products,
-        lifetime: retentionRule.Lifetime,
+        lifetime: retentionRule.Lifetime ? Math.round(retentionRule.Lifetime / (24 * 60 * 60)) : null, // Convert seconds to days
         action: retentionRule.Action,
         scopes: retentionRule.Scopes.map((scope) => ({
             id: scope.ID,
