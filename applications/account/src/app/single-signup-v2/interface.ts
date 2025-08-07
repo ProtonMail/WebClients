@@ -4,7 +4,7 @@ import type { LocationDescriptor } from 'history';
 
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/payments';
+import type { BillingAddress, PaymentStatus } from '@proton/payments';
 import {
     type CYCLE,
     type FreePlanDefault,
@@ -80,7 +80,7 @@ export interface SignupModelV2 {
     domains: string[];
     plans: Plan[];
     plansMap: PlansMap;
-    paymentMethodStatusExtended: PaymentMethodStatusExtended;
+    paymentStatus: PaymentStatus;
     humanVerificationMethods: HumanVerificationMethodType[];
     humanVerificationToken: string;
     selectedProductPlans: SelectedProductPlans;

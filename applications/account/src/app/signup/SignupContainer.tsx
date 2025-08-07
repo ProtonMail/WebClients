@@ -305,7 +305,7 @@ const SignupContainer = ({
             }
 
             const currency = getPreferredCurrency({
-                status: paymentStatus,
+                paymentStatus,
                 plans: Plans,
                 paramCurrency: signupParameters.currency,
             });
