@@ -9,7 +9,7 @@ import { useUIStateContext } from '../../contexts/UIStateContext';
 import { MeetingSideBars } from '../../types';
 
 export const MeetingDetails = () => {
-    const { meetingLink, roomName } = useMeetContext();
+    const { meetingLink, roomName, currentEpoch } = useMeetContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
 
@@ -29,7 +29,7 @@ export const MeetingDetails = () => {
             <h2 className="h3 mb-4">{roomName}</h2>
             <div className="flex flex-column">
                 <div className="bold mb-2">{c('meet_2025 Title').t`Joining info`}</div>
-                <div className="color-weak text-sm items-center text-break-all">
+                <div className="color-weak text-sm items-center text-break-all mb-2">
                     {meetingLink}
                     <Button
                         className="mb-1 inline-block"
@@ -41,6 +41,12 @@ export const MeetingDetails = () => {
                         <IcMeetCopy size={3} />
                     </Button>
                 </div>
+                {currentEpoch && (
+                    <>
+                        <div className="bold mb-2">{c('meet_2025 Title').t`Epoch`}</div>
+                        <div className="color-weak text-sm items-center text-break-all">{currentEpoch}</div>
+                    </>
+                )}
             </div>
         </SideBar>
     );

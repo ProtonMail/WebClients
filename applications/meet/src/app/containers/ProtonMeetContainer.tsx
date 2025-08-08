@@ -55,6 +55,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         MeetingDecryptionReadinessStatus.UNINITIALIZED
     );
 
+    const [currentEpoch, setCurrentEpoch] = useState<number | null>(null);
+
     const [password, setPassword] = useState('');
     const [invalidPassphrase, setInvalidPassphrase] = useState(false);
 
@@ -148,6 +150,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             await wasmAppRef.current.setMlsGroupUpdateHandler();
 
             const groupKeyData = await wasmAppRef.current.getGroupKey();
+            setCurrentEpoch(Number(groupKeyData.epoch));
 
             return groupKeyData;
         },
@@ -160,6 +163,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         setupWasmDependencies({
             getGroupKeyInfo: async () => {
                 const newGroupKeyInfo = (await wasmAppRef.current?.getGroupKey()) as GroupKeyInfo;
+                setCurrentEpoch(Number(newGroupKeyInfo.epoch));
 
                 return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
             },
@@ -474,6 +478,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                                 setParticipantSettings={setParticipantSettings}
                                 shareLink={shareLink}
                                 roomName={meetingDetails.meetingName as string}
+                                currentEpoch={currentEpoch}
                                 participantNameMap={participantNameMap}
                                 participantsMap={participantsMap}
                                 getParticipants={() => getParticipants(meetingDetails.meetingId as string)}
