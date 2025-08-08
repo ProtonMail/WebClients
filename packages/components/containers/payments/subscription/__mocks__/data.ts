@@ -451,7 +451,7 @@ export const passPlusUpsell = {
     ],
     otherCtas: [],
     price: {
-        value: 199,
+        value: 299,
         currency: 'EUR',
     },
 };

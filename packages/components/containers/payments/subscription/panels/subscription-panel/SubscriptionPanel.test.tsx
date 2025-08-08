@@ -102,7 +102,7 @@ describe('SubscriptionPanel', () => {
                     app={APPS.PROTONVPN_SETTINGS}
                     user={buildUser({ isPaid: true, hasPaidVpn: true })}
                     subscription={buildSubscription({
-                        planName: PLANS.VPN,
+                        planName: PLANS.VPN2024,
                         cycle: CYCLE.MONTHLY,
                         currency: 'USD',
                     })}

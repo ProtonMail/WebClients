@@ -3,11 +3,11 @@ import {
     CYCLE,
     hasAnniversary2025Coupon,
     hasBundle,
+    hasDeprecatedVPN,
     hasDrive,
     hasDuo,
     hasMail,
     hasPass,
-    hasVPN2022,
     hasVPN2024,
     isManagedExternally,
 } from '@proton/payments';
@@ -82,12 +82,12 @@ class OfferSubscription {
         return hasMail(this.subscription);
     }
 
-    hasVPN2022() {
+    hasDeprecatedVPN() {
         if (this.upcomingSubscription) {
-            return hasVPN2022(this.upcomingSubscription);
+            return hasDeprecatedVPN(this.upcomingSubscription);
         }
 
-        return hasVPN2022(this.subscription);
+        return hasDeprecatedVPN(this.subscription);
     }
 
     hasVPN2024() {

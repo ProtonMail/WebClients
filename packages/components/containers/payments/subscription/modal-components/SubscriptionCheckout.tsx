@@ -22,10 +22,8 @@ import {
     type PlanIDs,
     type Subscription,
     getPlanFromPlanIDs,
-    getPlanIDs,
     hasPlanIDs,
     isLifetimePlanSelected,
-    planIDsPositiveDifference,
 } from '@proton/payments';
 import { type TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
@@ -113,15 +111,6 @@ const SubscriptionCheckout = ({
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
-    const planIDsForDiscount = checkoutModifiers.isCustomBilling
-        ? planIDsPositiveDifference(getPlanIDs(subscription), planIDs)
-        : planIDs;
-    const { discountPercent } = getCheckout({
-        planIDs: planIDsForDiscount,
-        plansMap,
-        checkResult,
-    });
-
     const checkout = getCheckout({
         planIDs,
         plansMap,
@@ -184,7 +173,7 @@ const SubscriptionCheckout = ({
                 .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
             className="ml-2 text-semibold"
         >
-            -{discountPercent}%
+            -{checkout.discountPercent}%
         </Badge>
     );
 
@@ -214,7 +203,7 @@ const SubscriptionCheckout = ({
             <div className="mb-4 flex flex-column">
                 <div className="min-h-custom" style={{ '--min-h-custom': '1.5rem' }}>
                     <strong className="mb-1">{isFreePlanSelected ? c('Payments.plan_name').t`Free` : planTitle}</strong>
-                    {discountPercent !== 0 && !loading && !couponConfig?.hidden && discountBadgeElement}
+                    {checkout.discountPercent !== 0 && !loading && !couponConfig?.hidden && discountBadgeElement}
                 </div>
 
                 <div className="min-h-custom" style={{ '--min-h-custom': '1.25rem' }}>
