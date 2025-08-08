@@ -1,39 +1,25 @@
+import { type EitherOr, type Organization } from '@proton/shared/lib/interfaces';
+
+import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_TYPES } from './constants';
+import { type FreeSubscription, type PlanIDs } from './interface';
+import { getSupportedAddons, isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './plan/addons';
+import { getPlanNameFromIDs } from './plan/helpers';
+import { type Plan, type PlansMap } from './plan/interface';
+import { getPricePerCycle, getPricePerMember } from './price-helpers';
 import {
-    ADDON_NAMES,
     type AggregatedPricing,
-    CYCLE,
-    DEFAULT_CURRENCY,
-    type FreeSubscription,
-    PLANS,
-    PLAN_TYPES,
-    type Plan,
-    type PlanIDs,
-    type PlansMap,
     type PricingForCycles,
-    SelectedPlan,
-    type Subscription,
     allCycles,
     getMaxValue,
     getPlanIDs,
     getPlanMembers,
-    getPlanNameFromIDs,
-    getPricePerCycle,
-    getPricePerMember,
     getSubscriptionsArray,
-    getSupportedAddons,
-    getSupportedB2BAddons,
     hasLumoPlan,
-    isDomainAddon,
-    isFreeSubscription,
-    isIpAddon,
-    isLumoAddon,
     isManagedExternally,
-    isMemberAddon,
-    isScribeAddon,
-} from '@proton/payments';
-
-import type { EitherOr, Organization, SubscriptionCheckResponse, User } from '../interfaces';
-import { ChargebeeEnabled } from '../interfaces';
+} from './subscription/helpers';
+import { type Subscription, type SubscriptionCheckResponse } from './subscription/interface';
+import { SelectedPlan } from './subscription/selected-plan';
+import { isFreeSubscription } from './type-guards';
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
 export const hasFreePlanIDs = (planIDs: PlanIDs) => !hasPlanIDs(planIDs) || Boolean(planIDs[PLANS.FREE]);
@@ -91,17 +77,46 @@ const allAddons = ['lumo', 'ip', 'scribe', 'member', 'domain'] as const;
 type Addons = (typeof allAddons)[number];
 
 type SwitchPlanOptions = EitherOr<
-    {
-        currentPlanIDs: PlanIDs;
-        subscription: Subscription | FreeSubscription | null | undefined;
-        newPlan?: PLANS | ADDON_NAMES;
-        organization?: Organization;
-        plans: Plan[];
-        user: User | undefined;
-        dontTransferAddons?: Set<Addons> | Addons[] | Addons | boolean;
-    },
-    'currentPlanIDs' | 'subscription'
+    EitherOr<
+        {
+            currentPlanIDs: PlanIDs;
+            subscription: Subscription | FreeSubscription | null | undefined;
+            newPlan: PLANS | ADDON_NAMES | undefined;
+            newPlanIDs: PlanIDs;
+            organization: Organization | undefined;
+            plans: Plan[];
+            /**
+             * If you don't want to transfer some addons, you can pass a set of addons to this parameter.
+             * For example, if you want to transfer all addons except for `lumo`, you can pass `['lumo']`.
+             * If you don't want to transfer any addons, you can pass `true`.
+             * If you want to transfer all addons, you can pass an empty set/array or ignore this parameter.
+             */
+            dontTransferAddons?: Set<Addons> | Addons[] | Addons | boolean;
+        },
+        'currentPlanIDs' | 'subscription'
+    >,
+    'newPlan' | 'newPlanIDs'
 >;
+
+function getNewPlanIDs({ newPlan, newPlanIDs: newPlanIDsParam }: SwitchPlanOptions): PlanIDs {
+    const newPlanIDs = (() => {
+        if (newPlanIDsParam) {
+            return { ...newPlanIDsParam };
+        }
+
+        if (newPlan) {
+            return { [newPlan]: 1 };
+        }
+
+        return {};
+    })();
+
+    if (Object.keys(newPlanIDs).length === 0) {
+        return {};
+    }
+
+    return newPlanIDs;
+}
 
 /**
  * Transfer addons from one plan to another. In different plans, addons have different names
@@ -113,18 +128,19 @@ type SwitchPlanOptions = EitherOr<
  *
  * @returns
  */
-export const switchPlan = ({
-    currentPlanIDs: currentPlanIDsParam,
-    subscription,
-    newPlan,
-    organization,
-    plans,
-    user,
-    dontTransferAddons: dontTransferAddonsParam = new Set(),
-}: SwitchPlanOptions): PlanIDs => {
-    if (newPlan === undefined) {
+export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
+    const newPlanIDs = getNewPlanIDs(options);
+    if (Object.keys(newPlanIDs).length === 0) {
         return {};
     }
+
+    const {
+        currentPlanIDs: currentPlanIDsParam,
+        subscription,
+        organization,
+        plans,
+        dontTransferAddons: dontTransferAddonsParam = new Set(),
+    } = options;
 
     const currentPlanIDs = currentPlanIDsParam ?? getPlanIDs(subscription);
 
@@ -154,10 +170,9 @@ export const switchPlan = ({
         }
     }
 
-    const newPlanIDs = { [newPlan]: 1 };
     const supportedAddons = getSupportedAddons(newPlanIDs);
+    const plan = plans.find(({ Name }) => Name === getPlanNameFromIDs(newPlanIDs));
 
-    const plan = plans.find(({ Name }) => Name === newPlan);
     const supportedAddonNames = Object.keys(supportedAddons) as ADDON_NAMES[];
     // Transfer addons
     supportedAddonNames.forEach((addon) => {
@@ -238,12 +253,7 @@ export const switchPlan = ({
             }
         }
 
-        // In case if we have inhouse Visionary user with non-zero UsedAI and they can't use Chargebee yet
-        // (e.g. because of Business flag) then we forbid transfering Scribe addons, because it will go to v4 payments
-        // which don't support scribe.
-        const canTransferScribe = user?.ChargebeeUser !== ChargebeeEnabled.INHOUSE_FORCED;
-
-        if (isScribeAddon(addon) && plan && organization && canTransferScribe && !dontTransferAddons.has('scribe')) {
+        if (isScribeAddon(addon) && plan && organization && !dontTransferAddons.has('scribe')) {
             const gptAddon = plans.find(({ Name }) => Name === addon);
             const diffAIs = (organization.UsedAI || 0) - getMaxValue(plan, 'MaxAI');
 
@@ -303,11 +313,6 @@ export const setQuantity = (planIDs: PlanIDs, planID: PLANS | ADDON_NAMES, newQu
         ...restPlanIDs,
         [planID]: newQuantity,
     };
-};
-
-export const supportB2BAddons = (planIDs: PlanIDs) => {
-    const supportedAddons = getSupportedB2BAddons(planIDs);
-    return !!Object.keys(supportedAddons).length;
 };
 
 export function getPlanFromIDs(planIDs: PlanIDs, plansMap: PlansMap): Plan | undefined {

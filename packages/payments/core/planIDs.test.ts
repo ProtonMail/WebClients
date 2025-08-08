@@ -1,18 +1,12 @@
-import {
-    ADDON_NAMES,
-    type AggregatedPricing,
-    CYCLE,
-    PLANS,
-    type PlanIDs,
-    type PlansMap,
-    SelectedPlan,
-    SubscriptionPlatform,
-    getPlanNameFromIDs,
-} from '@proton/payments';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { type Organization } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP, getLongTestPlans } from '@proton/testing/data';
 
+import { ADDON_NAMES, CYCLE, PLANS } from './constants';
+import { type PlanIDs } from './interface';
+import { getPlanNameFromIDs } from './plan/helpers';
+import { type PlansMap } from './plan/interface';
 import {
     clearPlanIDs,
     getPlanFromIDs,
@@ -22,8 +16,11 @@ import {
     planIDsPositiveDifference,
     setQuantity,
     switchPlan,
-} from '../../lib/helpers/planIDs';
-import { ChargebeeEnabled, type Organization, type SubscriptionCheckResponse, type User } from '../../lib/interfaces';
+} from './planIDs';
+import { SubscriptionPlatform } from './subscription/constants';
+import { type AggregatedPricing } from './subscription/helpers';
+import { type SubscriptionCheckResponse } from './subscription/interface';
+import { SelectedPlan } from './subscription/selected-plan';
 
 const MOCK_ORGANIZATION = {} as Organization;
 
@@ -35,32 +32,32 @@ describe('hasPlanIDs', () => {
                 [PLANS.VPN]: 0,
                 [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
             })
-        ).toBeTrue();
+        ).toEqual(true);
 
         expect(
             hasPlanIDs({
                 [PLANS.MAIL_PRO]: 1,
             })
-        ).toBeTrue();
+        ).toEqual(true);
 
         expect(
             hasPlanIDs({
                 [PLANS.MAIL_PRO]: 1,
             })
-        ).toBeTrue();
+        ).toEqual(true);
 
         expect(
             hasPlanIDs({
                 [PLANS.MAIL_PRO]: 1,
                 [ADDON_NAMES.MEMBER_MAIL_PRO]: -1,
             })
-        ).toBeTrue();
+        ).toEqual(true);
 
         expect(
             hasPlanIDs({
                 [ADDON_NAMES.MEMBER_MAIL_PRO]: 1,
             })
-        ).toBeTrue();
+        ).toEqual(true);
     });
 
     it('should return false if plan IDs are not set', () => {
@@ -68,13 +65,13 @@ describe('hasPlanIDs', () => {
             hasPlanIDs({
                 [PLANS.MAIL_PRO]: 0,
             })
-        ).toBeFalse();
+        ).toEqual(false);
         expect(
             hasPlanIDs({
                 [PLANS.MAIL_PRO]: -1,
             })
-        ).toBeFalse();
-        expect(hasPlanIDs({})).toBeFalse();
+        ).toEqual(false);
+        expect(hasPlanIDs({})).toEqual(false);
     });
 });
 
@@ -123,10 +120,6 @@ describe('clearPlanIDs', () => {
 });
 
 describe('switchPlan', () => {
-    const user = {
-        ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED,
-    } as User;
-
     it('should remove previous plan', () => {
         const currentPlanIDs = { [PLANS.MAIL]: 1 };
         const newPlan = PLANS.VISIONARY;
@@ -136,7 +129,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
             })
         ).toEqual({
             [PLANS.VISIONARY]: 1,
@@ -152,7 +144,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -169,7 +160,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -187,7 +177,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -204,7 +193,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -221,7 +209,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
             })
         ).toEqual({
             [PLANS.VPN_BUSINESS]: 1,
@@ -238,7 +225,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
             })
         ).toEqual({
             [PLANS.MAIL]: 1,
@@ -255,7 +241,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization,
-                user,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO]: 1,
@@ -282,40 +267,11 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization,
-                user,
             })
         ).toEqual({
             [PLANS.MAIL_PRO]: 1,
             [ADDON_NAMES.MEMBER_MAIL_PRO]: 6,
             [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 7,
-        });
-    });
-
-    it('should not transfer scribe addons if user is not chargebee eligible', () => {
-        const currentPlanIDs = {
-            [PLANS.VISIONARY]: 1,
-        };
-
-        const newPlan = PLANS.BUNDLE_PRO_2024;
-
-        const organization = {
-            UsedAI: 6,
-        } as Organization;
-
-        const user = {
-            ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED,
-        } as User;
-
-        expect(
-            switchPlan({
-                currentPlanIDs,
-                newPlan,
-                plans: getLongTestPlans(),
-                organization,
-                user,
-            })
-        ).toEqual({
-            [PLANS.BUNDLE_PRO_2024]: 1,
         });
     });
 
@@ -338,7 +294,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization,
-                user,
             })
         ).toEqual({
             [PLANS.MAIL_PRO]: 1,
@@ -364,7 +319,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization,
-                user,
             })
         ).toEqual({
             [PLANS.MAIL]: 1,
@@ -389,7 +343,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization,
-                user,
             })
         ).toEqual({
             [PLANS.DUO]: 1,
@@ -411,7 +364,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization,
-                user,
             })
         ).toEqual({
             [PLANS.VISIONARY]: 1,
@@ -429,7 +381,6 @@ describe('switchPlan', () => {
                 newPlan: PLANS.MAIL,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
             })
         ).toEqual({
             [PLANS.MAIL]: 1,
@@ -453,7 +404,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: new Set(['member']),
             })
         ).toEqual({
@@ -470,7 +420,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: 'member',
             })
         ).toEqual({
@@ -488,7 +437,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: new Set(['ip']),
             })
         ).toEqual({
@@ -505,7 +453,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: 'ip',
             })
         ).toEqual({
@@ -523,7 +470,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: new Set(['domain']),
             })
         ).toEqual({
@@ -540,7 +486,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: 'domain',
             })
         ).toEqual({
@@ -558,7 +503,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: new Set(['lumo']),
             })
         ).toEqual({
@@ -575,7 +519,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: 'lumo',
             })
         ).toEqual({
@@ -593,7 +536,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: new Set(['scribe']),
             })
         ).toEqual({
@@ -610,7 +552,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: 'scribe',
             })
         ).toEqual({
@@ -629,7 +570,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: new Set(['member', 'ip', 'domain', 'lumo', 'scribe']),
             })
         ).toEqual({
@@ -643,7 +583,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: true,
             })
         ).toEqual({
@@ -657,7 +596,6 @@ describe('switchPlan', () => {
                 newPlan,
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
-                user,
                 dontTransferAddons: ['member', 'ip', 'domain', 'lumo', 'scribe'],
             })
         ).toEqual({
