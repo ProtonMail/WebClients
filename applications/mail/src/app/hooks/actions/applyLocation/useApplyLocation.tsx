@@ -87,6 +87,10 @@ export const useApplyLocation = () => {
         targetLabelID,
         showSuccessNotification = true,
     }: ApplyLocationParams): Promise<any> => {
+        if (!elements) {
+            throw new Error('Elements are required');
+        }
+
         const [firstElement] = elements;
         const isMessage = testIsMessage(firstElement);
         const isConversation = testIsConversation(firstElement);
@@ -121,17 +125,16 @@ export const useApplyLocation = () => {
             });
 
             if (shouldOpenModal === ModalType.Schedule) {
-                if (shouldOpenModal === ModalType.Schedule) {
-                    notify({
-                        type: ModalType.Schedule,
-                        value: {
-                            isMessage,
-                            onConfirm: () => {
-                                return dispatchConversation();
-                            },
+                notify({
+                    type: ModalType.Schedule,
+                    value: {
+                        isMessage,
+                        onConfirm: () => {
+                            return dispatchConversation();
                         },
-                    });
-                }
+                    },
+                });
+                return Promise.resolve();
             } else if (shouldOpenModal === ModalType.Snooze) {
                 notify({
                     type: ModalType.Snooze,
@@ -141,6 +144,7 @@ export const useApplyLocation = () => {
                         },
                     },
                 });
+                return Promise.resolve();
             } else if (shouldOpenModal === ModalType.Unsubscribe && askUnsubscribe) {
                 notify({
                     type: ModalType.Unsubscribe,
@@ -153,6 +157,7 @@ export const useApplyLocation = () => {
                         },
                     },
                 });
+                return Promise.resolve();
             }
 
             return dispatchConversation();
@@ -198,6 +203,7 @@ export const useApplyLocation = () => {
                         },
                     },
                 });
+                return Promise.resolve();
             } else if (shouldOpenModal === ModalType.Unsubscribe) {
                 notify({
                     type: ModalType.Unsubscribe,
@@ -216,6 +222,7 @@ export const useApplyLocation = () => {
                         },
                     },
                 });
+                return Promise.resolve();
             }
 
             return dispatchMessage({
