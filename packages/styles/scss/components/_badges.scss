@@ -6,6 +6,7 @@
 	padding-inline: em(8, 11);
 	line-height: rem(22);
 	border-radius: var(--border-radius-full);
+	text-align: center;
 }
 
 @each $color in (primary, danger, warning, success, info) {
