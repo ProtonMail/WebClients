@@ -361,7 +361,7 @@ export function getDefaultState(countryCode: CountryWithStates) {
     return getStateList(countryCode)[0].stateCode;
 }
 
-const getCountryByAbbrMap = () => {
+export const getCountryByAbbrMap = () => {
     return getCountries().reduce<{ [key: string]: string }>(
         (list, country) => ({ ...list, [country.value]: country.label }),
         {}
@@ -371,7 +371,7 @@ const getCountryByAbbrMap = () => {
 type CountryAbbrMap = ReturnType<typeof getCountryByAbbrMap>;
 
 const getCountryByAbbr = (abbr: string, countriesByAbbr: CountryAbbrMap) => {
-    return countriesByAbbr[abbr];
+    return countriesByAbbr[abbr] || new Intl.DisplayNames('en-US', { type: 'region' }).of(abbr);
 };
 
 export interface CountryOptions {
@@ -418,8 +418,6 @@ export const getLocalizedCountryByAbbr = (abbr: string, options: CountryOptions)
         return getCountryByAbbr(abbr, options.countryByAbbr);
     }
 };
-
-export const correctAbbr = (abbr: string) => (abbr === 'UK' ? 'GB' : abbr);
 
 export function getStateName(countryCode: string, stateCode: string) {
     const state = getStateList(countryCode).find(({ stateCode: code }) => code === stateCode);

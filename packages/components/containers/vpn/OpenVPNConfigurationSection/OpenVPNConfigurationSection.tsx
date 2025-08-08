@@ -17,7 +17,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useUserVPN from '@proton/components/hooks/useUserVPN';
 import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
 import { PLANS } from '@proton/payments';
-import { type CountryOptions, correctAbbr, getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import { type CountryOptions, getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import { SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
@@ -91,7 +91,7 @@ const OpenVPNConfigurationSection = ({
     const servers = useMemo((): EnhancedLogical[] => {
         return (result?.LogicalServers || []).map((server) => ({
             ...server,
-            country: getLocalizedCountryByAbbr(correctAbbr(server.ExitCountry), countryOptions),
+            country: getLocalizedCountryByAbbr(server.ExitCountry, countryOptions),
             isUpgradeRequired: getIsUpgradeRequired(server),
         }));
     }, [result?.LogicalServers, getIsUpgradeRequired]);
