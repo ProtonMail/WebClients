@@ -50,6 +50,7 @@ const user: User = {
         'pass-lifetime': false,
         'pass-from-sl': false,
         'has-a-byoe-address': false,
+        'delegated-access': false,
     },
     ChargebeeUser: 0,
     ChargebeeUserExists: 0,

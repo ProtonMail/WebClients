@@ -1,4 +1,5 @@
 import { type PersistedSessionLite, SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import {
     getMinimalPersistedSession,
     getPersistedSessions,
@@ -6,6 +7,7 @@ import {
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
+import isEnumValue from '@proton/utils/isEnumValue';
 import isTruthy from '@proton/utils/isTruthy';
 
 const cookieName = 'iaas';
@@ -23,23 +25,40 @@ const syncToCookie = (cookieValue: string) => {
 type SerializedItem =
     | {
           l: number;
-          s: 0 | 1;
+          s: 0 | 1; // Legacy value, not used anymore. TODO: Remove after all web clients are deployed and understand it.
+          a: AccessType;
       }
     | number;
 
 const toItem = (value: PersistedSessionLite): SerializedItem => {
-    if (!value.isSelf) {
-        return { l: value.localID, s: 0 };
+    if (value.accessType === AccessType.Self) {
+        return value.localID;
     }
-    return value.localID;
+    return {
+        l: value.localID,
+        a: value.accessType,
+        s: 0 /* Legacy clients only understand non-self admin-access (0). . TODO: Remove after all web clients are deployed and understand it */,
+    };
 };
 
 const fromItem = (value: any): PersistedSessionLite | undefined => {
     if (Number.isInteger(value)) {
-        return { localID: value, isSelf: true };
+        return { localID: value, accessType: AccessType.Self };
     }
-    if ('l' in value && 's' in value) {
-        return { localID: Number(value.l), isSelf: Boolean(value.s) };
+    if ('l' in value) {
+        if ('a' in value) {
+            return {
+                localID: Number(value.l),
+                accessType: isEnumValue(value.a, AccessType) ? value.a : AccessType.Self,
+            };
+        }
+        /* Legacy value. TODO: Remove after all web clients are deployed and understand it. */
+        if ('s' in value) {
+            return {
+                localID: Number(value.l),
+                accessType: Boolean(value.s) ? AccessType.Self : AccessType.AdminAccess,
+            };
+        }
     }
 };
 
