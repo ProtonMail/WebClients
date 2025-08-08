@@ -7,9 +7,9 @@ import {
     type PlansMap,
     getPlan,
     getPlanFromPlanIDs,
+    hasPlanIDs,
 } from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { Clients } from '@proton/shared/lib/pass/constants';
 
 import type { SessionData, SignupCacheResult } from '../signup/interfaces';

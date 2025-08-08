@@ -14,8 +14,8 @@ import {
     TRIAL_MAX_DEDICATED_IPS,
     TRIAL_MAX_USERS,
     getAddonType,
+    setQuantity,
 } from '@proton/payments';
-import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
 import clsx from '@proton/utils/clsx';
 
 import ButtonNumberInput, { type ButtonNumberInputProps } from './ButtonNumberInput';

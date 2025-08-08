@@ -17,6 +17,8 @@ import {
     type PlansMap,
     type Pricing,
     type Subscription,
+    type SubscriptionCheckResponse,
+    SubscriptionMode,
     VPN_PASS_PROMOTION_COUPONS,
     customCycles,
     getAddonMultiplier,
@@ -34,7 +36,6 @@ import {
 } from '@proton/payments';
 
 import { LUMO_APP_NAME } from '../constants';
-import { type SubscriptionCheckResponse, SubscriptionMode } from '../interfaces';
 
 export const getUserTitle = (users: number) => {
     return c('Checkout row').ngettext(msgid`${users} user`, `${users} users`, users);

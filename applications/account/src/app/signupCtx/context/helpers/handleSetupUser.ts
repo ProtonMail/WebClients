@@ -8,6 +8,7 @@ import {
     type PlanIDs,
     type Subscription,
     createSubscription,
+    hasFreePlanIDs,
 } from '@proton/payments';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -18,7 +19,6 @@ import { SessionSource } from '@proton/shared/lib/authentication/SessionInterfac
 import { type AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { type RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import { hasFreePlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
 import { handleSetupKeys } from '@proton/shared/lib/keys';

@@ -1,7 +1,7 @@
 import type { ExtendedTokenPayment } from '@proton/payments';
-import { CYCLE, DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { CYCLE, DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES, SubscriptionMode } from '@proton/payments';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { type HumanVerificationMethodType, SubscriptionMode } from '@proton/shared/lib/interfaces';
+import { type HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import type { SignupCacheResult, SubscriptionData } from '../interfaces';
