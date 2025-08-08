@@ -1,12 +1,12 @@
 import type { ReactNode } from 'react';
 
+import { PhotosWithAlbumsProvider } from '../photos/PhotosStore/PhotosWithAlbumsProvider';
 import { PublicSessionProvider } from './_api';
 import { DevicesProvider } from './_devices';
 import { DownloadsProvider, PublicDownloadsProvider } from './_downloads';
 import { DriveEventManagerProvider } from './_events';
 import { InvitationsStateProvider } from './_invitations/useInvitationsState';
 import { LinksProvider, PublicLinksProvider } from './_links';
-import { PhotosOrPhotosWithAlbumsProvider } from './_photos/PhotosOrPhotosWithAlbumsProvider';
 import { SearchProvider } from './_search';
 import { useUserSettings } from './_settings';
 import { SharesProvider } from './_shares';
@@ -31,9 +31,9 @@ export function DriveProvider({ children }: DriveProviderProps) {
                                 <UploadProvider>
                                     <SearchProvider>
                                         {photosEnabled && (
-                                            <PhotosOrPhotosWithAlbumsProvider>
+                                            <PhotosWithAlbumsProvider>
                                                 <InvitationsStateProvider>{children}</InvitationsStateProvider>
-                                            </PhotosOrPhotosWithAlbumsProvider>
+                                            </PhotosWithAlbumsProvider>
                                         )}
                                         {!photosEnabled && (
                                             <InvitationsStateProvider>{children}</InvitationsStateProvider>
