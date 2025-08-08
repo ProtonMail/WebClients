@@ -118,7 +118,6 @@ export {
     VPN_PASS_PROMOTION_COUPONS,
 } from './core/constants';
 export {
-    correctAbbr,
     getCountryOptions,
     getLocalizedCountryByAbbr,
     getStateList,
