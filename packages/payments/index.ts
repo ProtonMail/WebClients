@@ -297,7 +297,6 @@ export {
     getTotals,
     hasFreePlanIDs,
     hasPlanIDs,
-    planIDsPositiveDifference,
     setQuantity,
     switchPlan,
     type PricingMode,
@@ -305,6 +304,7 @@ export {
 } from './core/planIDs';
 export {
     getIpPricePerMonth,
+    getPrice,
     getPricePerCycle,
     getPricePerMember,
     getPriceStartsFrom,
@@ -428,7 +428,6 @@ export {
     hasThirty,
     hasTwoYears,
     hasVisionary,
-    hasVPN2022,
     hasVPN2024,
     hasVpnBusiness,
     hasVPNPassBundle,
