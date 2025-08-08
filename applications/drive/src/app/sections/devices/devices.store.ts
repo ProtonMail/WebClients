@@ -14,7 +14,7 @@ interface DeviceStore {
     deviceList: StoreDevice[];
     isLoading: boolean;
     setLoading: (isLoading: boolean) => void;
-    setDevices: (devices: Device[]) => void;
+    setDevice: (device: Device) => void;
     removeDevice: (id: string) => void;
     renameDevice: (id: string, name: string) => void;
     reset: () => void;
@@ -31,16 +31,15 @@ export const useDeviceStore = create<DeviceStore>((set) => ({
                 isLoading,
             };
         }),
-    setDevices: (devices: Device[]) =>
+    setDevice: (device: Device) =>
         set((state) => {
             const newDevices = new Map(state.devices);
-            for (const device of devices) {
-                const storeDevice: StoreDevice = {
-                    ...device,
-                    name: getDeviceName(device), // Convert complex name to string
-                };
-                newDevices.set(device.uid, storeDevice);
-            }
+            const storeDevice: StoreDevice = {
+                ...device,
+                name: getDeviceName(device), // Convert complex name to string
+            };
+            newDevices.set(device.uid, storeDevice);
+
             return {
                 ...state,
                 devices: newDevices,

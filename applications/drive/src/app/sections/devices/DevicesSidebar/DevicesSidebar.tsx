@@ -22,7 +22,7 @@ export const DevicesSidebar = ({
     collapsed: boolean;
 }) => {
     const [isListExpanded, setListExpanded] = useState(false);
-    const { setDevices, deviceList, isLoading, setLoading } = useDeviceStore();
+    const { setDevice, deviceList, isLoading, setLoading } = useDeviceStore();
     const { handleError } = useSdkErrorHandler();
 
     const { drive } = useDrive();
@@ -36,17 +36,18 @@ export const DevicesSidebar = ({
     useEffect(() => {
         const populateDevices = async () => {
             setLoading(true);
-            const tmpDevices = await Array.fromAsync(drive.iterateDevices()).catch((e) => {
+            try {
+                for await (let device of drive.iterateDevices()) {
+                    setDevice(device);
+                }
+            } catch (e) {
                 const errorNotiticationText = c('Notification').t`Error while listing devices`;
                 handleError(e, { fallbackMessage: errorNotiticationText });
-            });
-            setLoading(false);
-            if (tmpDevices) {
-                setDevices(tmpDevices);
             }
+            setLoading(false);
         };
         void populateDevices();
-    }, [drive, setDevices, setLoading, handleError]);
+    }, [drive, setDevice, setLoading, handleError]);
 
     const sortedDevices = deviceList.sort((a: StoreDevice, b: StoreDevice) => {
         const nameA = a.name.toUpperCase();
