@@ -45,7 +45,6 @@ export interface SharesState {
             photos: (Share | ShareWithKey)[];
         }
     >;
-    haveLockedOrRestoredOldPhotosShare: () => boolean;
     getDefaultShareId: () => string | undefined;
     getDefaultPhotosShareId: () => string | undefined;
     getDefaultShareEmail: () => string | undefined;
