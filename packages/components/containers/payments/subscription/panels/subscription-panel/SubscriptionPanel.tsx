@@ -9,7 +9,7 @@ import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
 import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
-import { Renew, type Subscription } from '@proton/payments';
+import { Renew, type Subscription, hasVPN2024 } from '@proton/payments';
 import {
     CYCLE,
     getHasVpnB2BPlan,
@@ -503,7 +503,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                     if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
                         return getVpnAppFree();
                     }
-                    if (hasDeprecatedVPN(subscription)) {
+                    if (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) {
                         return getVpnPlus();
                     }
                     if (hasVPNPassBundle(subscription)) {

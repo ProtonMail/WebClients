@@ -1,6 +1,6 @@
 import { ADDON_NAMES } from './constants';
 import { CYCLE, PLANS } from './constants';
-import { type Cycle } from './interface';
+import { type Cycle, type PlanIDs } from './interface';
 import { type Plan, type PlansMap } from './plan/interface';
 import { isLifetimePlan } from './subscription/helpers';
 
@@ -30,12 +30,16 @@ export function getIpPricePerMonth(cycle: CYCLE): number {
     return getIpPrice(cycle) / cycle;
 }
 
-/**
- * The purpose of this overridden price is to show a coupon discount in the cycle selector. If that would be supported
- * this would not be needed.
- */
 export function getPricePerCycle(plan: Plan | undefined, cycle: CYCLE) {
     return plan?.Pricing?.[cycle];
+}
+
+export function getPrice(planIDs: PlanIDs, cycle: CYCLE, plansMap: PlansMap): number {
+    return Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
+        const plan = plansMap[planName as keyof typeof plansMap];
+        const price = getPricePerCycle(plan, cycle) ?? 0;
+        return acc + price * quantity;
+    }, 0);
 }
 
 export function isMultiUserPersonalPlan(plan: Plan) {
