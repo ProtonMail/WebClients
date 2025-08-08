@@ -4,14 +4,7 @@ import { type ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import {
-    Audience,
-    ChargebeeEnabled,
-    type Organization,
-    type SubscriptionCheckResponse,
-    TaxInclusive,
-    type UserModel,
-} from '@proton/shared/lib/interfaces';
+import { Audience, ChargebeeEnabled, type Organization, type UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
@@ -37,9 +30,9 @@ import type { Plan, PlansMap, SubscriptionPlan } from '../plan/interface';
 import { getPricePerCycle, getPricePerMember, isMultiUserPersonalPlan } from '../price-helpers';
 import { isFreeSubscription } from '../type-guards';
 import { isSplittedUser, onSessionMigrationChargebeeStatus } from '../utils';
-import { SubscriptionPlatform } from './constants';
+import { SubscriptionPlatform, TaxInclusive } from './constants';
 import { FREE_PLAN } from './freePlans';
-import { type Subscription } from './interface';
+import { type Subscription, type SubscriptionCheckResponse } from './interface';
 import { SelectedPlan } from './selected-plan';
 
 export const getScribeAddonNameByPlan = (planName: PLANS) => {
@@ -1146,7 +1139,6 @@ export function isForbiddenLumoPlus({
     plansMap,
 }: {
     subscription: Subscription | FreeSubscription | null | undefined;
-    user: UserModel;
     newPlanName: PLANS | undefined;
     plansMap: PlansMap;
 }) {
@@ -1185,7 +1177,6 @@ export function isForbiddenPlusToPlus({
     newPlanName,
 }: {
     subscription: Subscription | FreeSubscription | null | undefined;
-    user: UserModel;
     newPlanName: PLANS | undefined;
 }): boolean {
     if (!subscription) {
@@ -1240,25 +1231,22 @@ export function isForbiddenPlusToPlus({
 
 export function getIsPlanTransitionForbidden({
     subscription,
-    user,
     plansMap,
     planIDs,
 }: {
     subscription: Subscription | FreeSubscription | null | undefined;
-    user: UserModel;
     planIDs: PlanIDs;
-    cycle: CYCLE;
     plansMap: PlansMap;
 }) {
     const newPlan = getPlanFromPlanIDs(plansMap, planIDs);
     const newPlanName = newPlan?.Name;
 
-    const lumoForbidden = isForbiddenLumoPlus({ plansMap, subscription, user, newPlanName });
+    const lumoForbidden = isForbiddenLumoPlus({ plansMap, subscription, newPlanName });
     if (lumoForbidden) {
         return { type: 'lumo-plus', newPlanIDs: lumoForbidden.planIDs, newPlanName: lumoForbidden.planName } as const;
     }
 
-    if (isForbiddenPlusToPlus({ subscription, user, newPlanName })) {
+    if (isForbiddenPlusToPlus({ subscription, newPlanName })) {
         return { type: 'plus-to-plus', newPlanName } as const;
     }
 

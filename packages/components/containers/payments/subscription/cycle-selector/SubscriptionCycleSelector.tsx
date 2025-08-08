@@ -14,11 +14,11 @@ import {
     type PlanIDs,
     type PlansMap,
     SelectedPlan,
+    type SubscriptionCheckResponse,
     getSupportedAddons,
     isMemberAddon,
 } from '@proton/payments';
-import { type PricingMode, type TotalPricings, getTotals } from '@proton/shared/lib/helpers/planIDs';
-import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { type PricingMode, type TotalPricings, getTotals } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 import { useCouponConfig } from '../coupon-config/useCouponConfig';

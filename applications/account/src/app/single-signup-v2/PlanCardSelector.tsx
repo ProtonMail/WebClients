@@ -23,12 +23,13 @@ import {
     getPlanFromPlanIDs,
     getPlanIDs,
     getPlanOffer,
+    getPricingFromPlanIDs,
     getRenewCycle,
+    getTotalFromPricing,
 } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

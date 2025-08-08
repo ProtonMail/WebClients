@@ -1,8 +1,7 @@
 import { screen } from '@testing-library/react';
 
-import { CYCLE, FREE_PLAN, PLANS } from '@proton/payments';
+import { CYCLE, FREE_PLAN, PLANS, type SubscriptionCheckResponse, SubscriptionMode } from '@proton/payments';
 import { useTaxCountry } from '@proton/payments/ui';
-import { type SubscriptionCheckResponse, SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 

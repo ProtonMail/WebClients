@@ -9,12 +9,12 @@ import {
     Renew,
     type Subscription,
     VPN_PASS_PROMOTION_COUPONS,
+    getPlanFromIDs,
     isFreeSubscription,
     isRegionalCurrency,
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
-import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 export const getVPNPlanToUse = ({
