@@ -197,19 +197,3 @@ export const queryDeleteAlbum = (
     params,
     silence: [API_CUSTOM_ERROR_CODES.ALBUM_DATA_LOSS],
 });
-
-export const queryPhotosVolumeMigrationState = () => ({
-    method: 'GET',
-    url: `drive/photos/migrate-legacy`,
-});
-
-export const queryPhotosVolumeMigrate = () => ({
-    method: 'POST',
-    url: `drive/photos/migrate-legacy`,
-    silence: [
-        API_CUSTOM_ERROR_CODES.ALREADY_EXISTS,
-        // With locked volumes and feature flags it can wrongly assume the migration should start.
-        // It is safe to ignore and not bother user about it.
-        API_CUSTOM_ERROR_CODES.INCOMPATIBLE_STATE,
-    ],
-});
