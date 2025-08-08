@@ -354,7 +354,8 @@ export function BaseDetailsModal({
     checkFirstBlockSignature,
     getPath,
     anonymousView,
-    ...modalProps
+    open,
+    onExit,
 }: BaseDetailsModalProps & ModalStateProps) {
     const {
         isLinkLoading,
@@ -367,7 +368,6 @@ export function BaseDetailsModal({
         signatureNetworkError,
         numberOfAccesses,
     } = useLinkDetailsView(shareId, linkId, checkFirstBlockSignature);
-
     const renderModalState = () => {
         if (isLinkLoading) {
             return <ModalContentLoader>{c('Info').t`Loading link`}</ModalContentLoader>;
@@ -414,7 +414,7 @@ export function BaseDetailsModal({
     };
 
     return (
-        <ModalTwo onClose={onClose} size="large" {...modalProps}>
+        <ModalTwo onClose={onClose} size="large" open={open} onExit={onExit}>
             <ModalTwoHeader title={getTitle(link)} />
             {renderModalState()}
             <ModalTwoFooter>
