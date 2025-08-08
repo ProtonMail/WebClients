@@ -30,7 +30,7 @@ export const getSelfLogoutOptions = ({ authentication }: { authentication: Authe
     }
     return {
         sessions: [selfSession],
-        users: [{ id: selfSession.UserID, isSelf: selfSession.isSelf }],
+        users: [{ id: selfSession.UserID, accessType: selfSession.accessType }],
         type: 'self',
     };
 };
@@ -51,13 +51,13 @@ export const getAllSessionsLogoutOptions = ({
         if (persistedSession) {
             acc.sessions.push(persistedSession);
         }
-        acc.users.push({ id: cur.remote.UserID, isSelf: cur.persisted.isSelf });
+        acc.users.push({ id: cur.remote.UserID, accessType: cur.persisted.accessType });
         return acc;
     }, self);
 
     return {
         sessions: uniqueBy(options.sessions, (x) => x.localID),
-        users: uniqueBy(options.users, (x) => `${x.id}-${x.isSelf}`),
+        users: uniqueBy(options.users, (x) => `${x.id}-${x.accessType}`),
         type: 'all',
     };
 };

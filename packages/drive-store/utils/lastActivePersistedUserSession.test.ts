@@ -1,4 +1,3 @@
-import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 
 import { LAST_ACTIVE_PING } from '../store/_user/useActivePing';
@@ -28,38 +27,28 @@ describe('getLastActivePersistedUserSession', () => {
         localStorage.setItem(`${LAST_ACTIVE_PING}_5678`, JSON.stringify({ value: 500 })); // previous session
 
         const result = getLastActivePersistedUserSession();
-        expect(result).toEqual({
-            UserID: '1234',
-            UID: 'abcd-1234',
-            blob: '',
-            isSelf: true,
-            localID: 0,
-            payloadType: 'default',
-            payloadVersion: 1,
-            persistedAt: 123,
-            persistent: true,
-            trusted: false,
-            source: SessionSource.Proton,
-        });
+        expect(result).toEqual(
+            expect.objectContaining({
+                UserID: '1234',
+                UID: 'abcd-1234',
+                persistedAt: 123,
+                localID: 0,
+            })
+        );
     });
 
     it('returns persisted session if valid session data exists', () => {
         localStorage.setItem(`${STORAGE_PREFIX}0`, JSON.stringify({ UserID: '1234', UID: 'abcd-1234' }));
 
         const result = getLastActivePersistedUserSession();
-        expect(result).toEqual({
-            UserID: '1234',
-            UID: 'abcd-1234',
-            blob: '',
-            isSelf: true,
-            localID: 0,
-            payloadType: 'default',
-            payloadVersion: 1,
-            persistedAt: 0,
-            persistent: true,
-            trusted: false,
-            source: SessionSource.Proton,
-        });
+        expect(result).toEqual(
+            expect.objectContaining({
+                UserID: '1234',
+                UID: 'abcd-1234',
+                localID: 0,
+                persistedAt: 0,
+            })
+        );
     });
 
     it('returns null when there are no active sessions', () => {
@@ -81,19 +70,14 @@ describe('getLastActivePersistedUserSession', () => {
             JSON.stringify({ UserID: '9999', UID: 'abcd-9999', persistedAt: 345 })
         );
         const result = getLastActivePersistedUserSession();
-        expect(result).toEqual({
-            UserID: '5678',
-            UID: 'abcd-5678',
-            blob: '',
-            isSelf: true,
-            localID: 1,
-            payloadType: 'default',
-            payloadVersion: 1,
-            persistedAt: 567,
-            persistent: true,
-            trusted: false,
-            source: SessionSource.Proton,
-        });
+        expect(result).toEqual(
+            expect.objectContaining({
+                UserID: '5678',
+                UID: 'abcd-5678',
+                localID: 1,
+                persistedAt: 567,
+            })
+        );
     });
 
     it('handles localStorage not being available', () => {

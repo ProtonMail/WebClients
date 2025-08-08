@@ -50,11 +50,11 @@ export const handleLogoutFromURL = ({ api }: { api: Api }) => {
 
     const silentApi = getSilentApi(api);
     const persistedSessions = getPersistedSessions();
-    params.sessions.forEach(({ id, isSelf }) => {
+    params.sessions.forEach(({ id, accessType }) => {
         const session = findPersistedSession({
             persistedSessions,
             UserID: id,
-            isSelf,
+            accessType,
             // Ignore oauth sessions, they are only used in BEX.
             // This is to avoid signing out the oauth session if the same user has signed out with srp.
             source: [SessionSource.Proton, SessionSource.Saml],
