@@ -292,6 +292,19 @@ export type {
     SubscriptionPlan,
 } from './core/plan/interface';
 export {
+    getPlanFromIDs,
+    getPricingFromPlanIDs,
+    getTotalFromPricing,
+    getTotals,
+    hasFreePlanIDs,
+    hasPlanIDs,
+    planIDsPositiveDifference,
+    setQuantity,
+    switchPlan,
+    type PricingMode,
+    type TotalPricings,
+} from './core/planIDs';
+export {
     getIpPricePerMonth,
     getPricePerCycle,
     getPricePerMember,
@@ -302,7 +315,14 @@ export {
 } from './core/price-helpers';
 export { getRenewCycle } from './core/renewals';
 export { extractIBAN, type ExtendedExtractIBANResult } from './core/sepa';
-export { BillingPlatform, Renew, SubscriptionPlatform } from './core/subscription/constants';
+export {
+    Audience,
+    BillingPlatform,
+    Renew,
+    SubscriptionMode,
+    SubscriptionPlatform,
+    TaxInclusive,
+} from './core/subscription/constants';
 export { FREE_PLAN, getFreeCheckResult, getFreeTitle } from './core/subscription/freePlans';
 export {
     allCycles,
@@ -435,7 +455,13 @@ export {
     type AggregatedPricing,
     type PricingForCycles,
 } from './core/subscription/helpers';
-export { type FullPlansMap, type Subscription } from './core/subscription/interface';
+export {
+    type Coupon,
+    type FullPlansMap,
+    type Subscription,
+    type SubscriptionCheckResponse,
+    type Tax,
+} from './core/subscription/interface';
 export {
     getAvailableCycles,
     getPlanByName,

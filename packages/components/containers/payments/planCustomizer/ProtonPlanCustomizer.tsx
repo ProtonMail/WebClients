@@ -41,8 +41,8 @@ import {
     isPassOrgSizeAddon,
     isScribeAddon,
 } from '@proton/payments';
+import { setQuantity } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
 import type { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 

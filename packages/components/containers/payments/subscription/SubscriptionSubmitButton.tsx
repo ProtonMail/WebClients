@@ -5,11 +5,16 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import useConfig from '@proton/components/hooks/useConfig';
 import { type PaymentFacade } from '@proton/components/payments/client-extensions';
-import { type Currency, PAYMENT_METHOD_TYPES, type Subscription, isTrial } from '@proton/payments';
+import {
+    type Currency,
+    PAYMENT_METHOD_TYPES,
+    type Subscription,
+    type SubscriptionCheckResponse,
+    isTrial,
+} from '@proton/payments';
 import { EditCardModal } from '@proton/payments/ui';
 import { PayButton, type TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
-import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import type { SUBSCRIPTION_STEPS } from './constants';
 

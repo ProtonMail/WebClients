@@ -3,10 +3,17 @@ import { useLocation } from 'react-router-dom';
 
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
-import { CYCLE, type Cycle, PLANS, type PlanIDs, getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/payments';
+import {
+    CYCLE,
+    type Cycle,
+    PLANS,
+    type PlanIDs,
+    getIsB2BAudienceFromPlan,
+    getPlanNameFromIDs,
+    hasFreePlanIDs,
+} from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
-import { hasFreePlanIDs } from '@proton/shared/lib/helpers/planIDs';
 
 import { SignupType } from '../../../signup/interfaces';
 import {
