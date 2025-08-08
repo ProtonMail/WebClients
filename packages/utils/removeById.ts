@@ -1,5 +1,5 @@
-export const removeById = <T extends { ID: string }>(list: T[], value: { ID: string }) => {
-    const index = list.findIndex(({ ID }) => ID === value.ID);
+export const removeById = <T, K extends keyof T>(list: T[], value: Pick<T, K>, key: K): T[] => {
+    const index = list.findIndex((otherValue) => otherValue[key] === value[key]);
     if (index === -1) {
         return list;
     }
