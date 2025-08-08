@@ -56,6 +56,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     );
 
     const [currentEpoch, setCurrentEpoch] = useState<number | null>(null);
+    const [currentKey, setCurrentKey] = useState<string | null>(null);
 
     const [password, setPassword] = useState('');
     const [invalidPassphrase, setInvalidPassphrase] = useState(false);
@@ -150,6 +151,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             await wasmAppRef.current.setMlsGroupUpdateHandler();
 
             const groupKeyData = await wasmAppRef.current.getGroupKey();
+            setCurrentKey(groupKeyData.key);
             setCurrentEpoch(Number(groupKeyData.epoch));
 
             return groupKeyData;
@@ -162,13 +164,25 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
         setupWasmDependencies({
             getGroupKeyInfo: async () => {
-                const newGroupKeyInfo = (await wasmAppRef.current?.getGroupKey()) as GroupKeyInfo;
-                setCurrentEpoch(Number(newGroupKeyInfo.epoch));
+                try {
+                    const newGroupKeyInfo = (await wasmAppRef.current?.getGroupKey()) as GroupKeyInfo;
+                    setCurrentKey(newGroupKeyInfo.key);
+                    setCurrentEpoch(Number(newGroupKeyInfo.epoch));
+                    console.log('getGroupKeyInfo', { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch });
 
-                return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
+                    return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
+                } catch (err: any) {
+                    console.error(err);
+                    throw err;
+                }
             },
-            onNewGroupKeyInfo: (key, epoch) => {
-                void keyProviderRef.current?.setKey(key, epoch);
+            onNewGroupKeyInfo: async (key, epoch) => {
+                try {
+                    await keyProviderRef.current?.setKey(key, epoch);
+                    console.log('Successfully set key in keyProvider', key, epoch);
+                } catch (err) {
+                    console.error('Could not set new encryption key', key, epoch, err);
+                }
             },
         });
     }, []);
@@ -479,6 +493,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                                 shareLink={shareLink}
                                 roomName={meetingDetails.meetingName as string}
                                 currentEpoch={currentEpoch}
+                                currentKey={currentKey}
                                 participantNameMap={participantNameMap}
                                 participantsMap={participantsMap}
                                 getParticipants={() => getParticipants(meetingDetails.meetingId as string)}

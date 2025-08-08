@@ -18,6 +18,7 @@ export interface MeetContextValues {
     setVideoDeviceId: (deviceId: string | null) => void;
     roomName: string;
     currentEpoch: number | null;
+    currentKey: string | null;
     resolution: string | null;
     setResolution: (resolution: string | null) => void;
     meetingLink: string;
@@ -58,6 +59,7 @@ export const MeetContext = createContext<MeetContextValues>({
     setVideoDeviceId: () => {},
     roomName: '',
     currentEpoch: null,
+    currentKey: null,
     resolution: null,
     setResolution: () => {},
     meetingLink: '',
