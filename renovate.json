@@ -52,6 +52,11 @@
             "groupName": "pass-desktop and inbox-desktop exclusions",
             "enabled": false,
             "matchPackageNames": ["@electron-forge/*", "@electron/fuses", "@vercel/webpack-asset-relocator-loader"]
+        },
+        {
+            "groupName": "quark packages",
+            "enabled": false,
+            "matchPackageNames": ["@tpe/quark-client", "@tpe/quark-types", "@tpe/user-builder"]
         }
     ]
 }
