@@ -4,13 +4,13 @@ import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
+import { usePhotosWithAlbums } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useSharesStore } from '../../zustand/share/shares.store';
 import type { DecryptedLink } from '../_links';
 import { useLinksActions, useLinksListing } from '../_links';
 import { type Share, type ShareWithKey } from '../_shares';
 import { waitFor } from '../_utils';
-import { usePhotosOrPhotosWithAlbums } from './PhotosOrPhotosWithAlbumsProvider';
 
 export type RECOVERY_STATE =
     | 'READY'
@@ -28,7 +28,7 @@ export type RECOVERY_STATE =
 const RECOVERY_STATE_CACHE_KEY = 'photos-recovery-state';
 
 export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}) => {
-    const { shareId, linkId, volumeId, volumeType, deletePhotosShare } = usePhotosOrPhotosWithAlbums();
+    const { shareId, linkId, volumeId, volumeType, deletePhotosShare } = usePhotosWithAlbums();
     const { getRestoredPhotosShares, removeShares } = useSharesStore((state) => ({
         getRestoredPhotosShares: state.getRestoredPhotosShares,
         removeShares: state.removeShares,

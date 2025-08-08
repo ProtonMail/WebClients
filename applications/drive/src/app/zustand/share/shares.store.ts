@@ -76,20 +76,6 @@ export const useSharesStore = create<SharesState>()(
             const { shares } = get();
             return findDefaultPhotosShareId(Object.values(shares));
         },
-        haveLockedOrRestoredOldPhotosShare: () => {
-            const { shares } = get();
-            const sharesValues = Object.values(shares);
-            return sharesValues
-                .filter((share) => share.isDefault)
-                .some((defaultShare) =>
-                    sharesValues.some(
-                        (share) =>
-                            (share.state === ShareState.restored || share.isLocked) &&
-                            share.type === ShareType.photos &&
-                            share.volumeId === defaultShare.volumeId
-                    )
-                );
-        },
         getRestoredPhotosShares: () => {
             const { shares } = get();
             return Object.values(shares).filter(

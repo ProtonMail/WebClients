@@ -1,35 +1,26 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
-import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
-import useFlag from '@proton/unleash/useFlag';
 
 import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useDriveEventManager } from '../_events';
 import { useInvitationsListing } from '../_invitations/useInvitationsListing';
 import { useUserSettings } from '../_settings';
-import { useDefaultShare } from '../_shares';
 import { useMemoArrayNoMatterTheOrder } from './utils';
 
 export const useInvitationsView = () => {
     const [isLoading, withLoading] = useLoading(true);
     const { getCachedInvitations, loadInvitations } = useInvitationsListing();
     const driveEventManager = useDriveEventManager();
-    const [showPhotosWithAlbums, setShowPhotosWithAlbums] = useState<undefined | boolean>();
     const { photosWithAlbumsEnabled } = useUserSettings();
     const cachedInvitations = getCachedInvitations();
 
     const invitations = useMemoArrayNoMatterTheOrder(
-        cachedInvitations.filter(
-            (invitation) => invitation.link.type !== LinkType.ALBUM || showPhotosWithAlbums || photosWithAlbumsEnabled
-        )
+        cachedInvitations.filter((invitation) => invitation.link.type !== LinkType.ALBUM || photosWithAlbumsEnabled)
     );
-
-    const { getDefaultPhotosShare } = useDefaultShare();
-    const photosWithAlbumsForNewVolume = useFlag('DriveAlbumsNewVolumes');
 
     const invitationsBrowserItems: SharedWithMeItem[] = useMemo(
         () =>
@@ -72,17 +63,6 @@ export const useInvitationsView = () => {
     useEffect(() => {
         const abortController = new AbortController();
         void withLoading(loadInvitations(abortController.signal).catch(sendErrorReport));
-
-        if (photosWithAlbumsEnabled) {
-            setShowPhotosWithAlbums(true);
-        } else {
-            void getDefaultPhotosShare(abortController.signal).then((photosShare) =>
-                setShowPhotosWithAlbums(
-                    photosShare?.volumeType === VolumeType.Photos ||
-                        (photosWithAlbumsForNewVolume && photosShare === undefined)
-                )
-            );
-        }
 
         return () => {
             abortController.abort();
