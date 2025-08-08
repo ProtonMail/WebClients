@@ -30,9 +30,9 @@ export const useMeetingUpdates = () => {
             passwordBase: string;
             meetingObject: Meeting;
         }) => {
-            const { privateKey } = await getMeetingDependencies();
+            const { userKeys } = await getMeetingDependencies();
 
-            const previousPassword = await decryptMeetingPassword(meetingObject?.Password as string, privateKey);
+            const previousPassword = await decryptMeetingPassword(meetingObject?.Password as string, userKeys);
 
             const sessionKey = (await decryptSessionKey({
                 encryptedSessionKey: meetingObject?.SessionKey as string,
@@ -55,9 +55,9 @@ export const useMeetingUpdates = () => {
 
     const saveMeetingName = useCallback(
         async ({ newTitle, id, meetingObject }: { newTitle: string; id: string; meetingObject: Meeting }) => {
-            const { privateKey } = await getMeetingDependencies();
+            const { userKeys } = await getMeetingDependencies();
 
-            const decryptedPassword = await decryptMeetingPassword(meetingObject?.Password as string, privateKey);
+            const decryptedPassword = await decryptMeetingPassword(meetingObject?.Password as string, userKeys);
 
             const sessionKey = (await decryptSessionKey({
                 encryptedSessionKey: meetingObject?.SessionKey as string,

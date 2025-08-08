@@ -86,12 +86,12 @@ export const ProtonMeetRow = ({ model, setModel, isActive }: ProtonMeetRowProps)
 
             const { meetingId, urlPassword } = parseMeetingLink(meetingLink);
 
-            const { privateKey } = await getMeetingDependencies();
+            const { userKeys } = await getMeetingDependencies();
 
             const passphrase = await getPassphraseFromEncryptedPassword({
                 encryptedPassword: meeting?.Password as string,
                 basePassword: urlPassword,
-                privateKey,
+                userKeys,
             });
 
             setMeetingDetails({
@@ -179,14 +179,14 @@ export const ProtonMeetRow = ({ model, setModel, isActive }: ProtonMeetRowProps)
             return;
         }
 
-        const { privateKey } = await getMeetingDependencies();
+        const { userKeys } = await getMeetingDependencies();
 
         const meeting = await getProtonMeetByLinkName(meetingId);
 
         const passphrase = await getPassphraseFromEncryptedPassword({
             encryptedPassword: meeting?.Password as string,
             basePassword: urlPassword,
-            privateKey,
+            userKeys,
         });
 
         setMeetingDetails({
