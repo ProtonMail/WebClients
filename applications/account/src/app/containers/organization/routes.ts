@@ -40,6 +40,7 @@ interface Props {
 }
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
+const scribeValidApplications = new Set<string>([APPS.PROTONMAIL]);
 
 export const getOrganizationAppRoutes = ({
     app,
@@ -108,7 +109,8 @@ export const getOrganizationAppRoutes = ({
             isScribeSupported(organization, user) &&
             // The user must have a plan that supports multi-user
             hasMemberCapablePlan &&
-            hasSubUsers
+            hasSubUsers &&
+            scribeValidApplications.has(app)
     );
 
     // add test to only show if org is elligible for zoom
