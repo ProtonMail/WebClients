@@ -63,7 +63,7 @@ export const ParticipantHostControls = ({
                             )
                         }
                     >
-                        <IcMeetCameraOff size={5} /> {c('l10n_nightly Action').t`Disable video`}
+                        <IcMeetCameraOff size={5} /> {c('meet_2025 Action').t`Disable video`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex items-center gap-2 color-weak border-none w-full shrink-0"
@@ -77,13 +77,13 @@ export const ParticipantHostControls = ({
                         }
                     >
                         <IcMeetMicrophoneOff size={5} />
-                        {c('l10n_nightly Action').t`Mute participant`}
+                        {c('meet_2025 Action').t`Mute participant`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left participant-host-controls-kick-button flex items-center gap-2 border-none w-full shrink-0"
                         onClick={() => mls?.removeParticipant(participant.identity)}
                     >
-                        <IcCrossCircle size={5} /> {c('l10n_nightly Action').t`Kick out`}
+                        <IcCrossCircle size={5} /> {c('meet_2025 Action').t`Kick out`}
                     </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>

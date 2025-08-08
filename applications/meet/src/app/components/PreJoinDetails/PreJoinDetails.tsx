@@ -26,21 +26,17 @@ export const PreJoinDetails = ({
 }: PreJoinDetailsProps) => {
     const notificationManager = useNotifications();
 
-    const actionLabel = instantMeeting
-        ? c('l10n_nightly Action').t`Start meeting`
-        : c('l10n_nightly Action').t`Join meeting`;
+    const actionLabel = instantMeeting ? c('meet_2025 Action').t`Start meeting` : c('meet_2025 Action').t`Join meeting`;
 
-    const title = instantMeeting
-        ? c('l10n_nightly Title').t`Talk confidentially`
-        : c('l10n_nightly Title').t`Join meeting`;
+    const title = instantMeeting ? c('meet_2025 Title').t`Talk confidentially` : c('meet_2025 Title').t`Join meeting`;
 
     const getSubtitle = () => {
         if (instantMeeting) {
-            return c('l10n_nightly Info')
+            return c('meet_2025 Info')
                 .t`Our end-to-end encrypted meetings protect privacy and empower truly free expression.`;
         }
 
-        return c('l10n_nightly Info')
+        return c('meet_2025 Info')
             .t`You've been invited to join a secure meeting. Confirm your name and click below to enter.`;
     };
 
@@ -57,11 +53,11 @@ export const PreJoinDetails = ({
                 {!instantMeeting && (
                     <InputFieldStacked classname="meeting-id-field hidden md:block" isGroupElement>
                         <InputFieldTwo
-                            label={c('l10n_nightly Label').t`Meeting ID`}
+                            label={c('meet_2025 Label').t`Meeting ID`}
                             type="text"
                             unstyled
                             inputClassName="rounded-none"
-                            value={roomId || c('l10n_nightly Placeholder').t`Loading...`}
+                            value={roomId || c('meet_2025 Placeholder').t`Loading...`}
                             onChange={(e) => e.preventDefault()}
                             readOnly
                             tabIndex={-1}
@@ -79,11 +75,11 @@ export const PreJoinDetails = ({
                                 void navigator.clipboard.writeText(shareLink);
                                 notificationManager.createNotification({
                                     type: 'info',
-                                    text: c('l10n_nightly Notification').t`Copied to clipboard`,
+                                    text: c('meet_2025 Notification').t`Copied to clipboard`,
                                     showCloseButton: false,
                                 });
                             }}
-                            aria-label={c('l10n_nightly Alt').t`Copy meeting link`}
+                            aria-label={c('meet_2025 Alt').t`Copy meeting link`}
                         >
                             <IcMeetCopy size={4} />
                         </Button>
@@ -92,13 +88,13 @@ export const PreJoinDetails = ({
 
                 <InputFieldStacked isGroupElement classname="pre-join-details-name-input-field">
                     <InputFieldTwo
-                        label={c('l10n_nightly Label').t`Your name`}
+                        label={c('meet_2025 Label').t`Your name`}
                         type="text"
                         unstyled
                         inputClassName="rounded-none"
                         value={displayName}
                         onChange={(e) => onDisplayNameChange(e.target.value)}
-                        placeholder={c('l10n_nightly Placeholder').t`Type your name`}
+                        placeholder={c('meet_2025 Placeholder').t`Type your name`}
                         maxLength={64}
                     />
                 </InputFieldStacked>

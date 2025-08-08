@@ -54,7 +54,7 @@ export const useMeetingAuthentication = () => {
                     salt: meetingInfo.MeetingInfo.Salt,
                 });
             } catch (error) {
-                throw new Error(c('l10n_nightly Error').t`Failed to get room name`);
+                throw new Error(c('meet_2025 Error').t`Failed to get room name`);
             }
 
             return meetingName;
@@ -71,7 +71,7 @@ export const useMeetingAuthentication = () => {
             };
         } catch (error: any) {
             console.log('Failed to get access details');
-            throw new Error(getApiError(error)?.message ?? c('l10n_nightly Error').t`Failed to get access details`);
+            throw new Error(getApiError(error)?.message ?? c('meet_2025 Error').t`Failed to get access details`);
         }
     }, []);
 

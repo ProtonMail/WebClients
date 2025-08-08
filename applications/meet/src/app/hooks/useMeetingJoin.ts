@@ -68,7 +68,7 @@ export const useMeetingJoin = () => {
             } catch (error: any) {
                 console.error(error);
                 throw new Error(
-                    error.message ?? c('l10n_nightly Error').t`Failed to join meeting. Please try again later`
+                    error.message ?? c('meet_2025 Error').t`Failed to join meeting. Please try again later`
                 );
             }
         },

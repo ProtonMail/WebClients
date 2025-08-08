@@ -32,7 +32,7 @@ export const useUpdateMeetingName = () => {
 
                 return Meeting;
             } catch (error) {
-                throw new Error(c('l10n_nightly Info').t`Failed to update meeting name`);
+                throw new Error(c('meet_2025 Info').t`Failed to update meeting name`);
             }
         },
         [api]

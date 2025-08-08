@@ -219,7 +219,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             } catch {
                 notifications.createNotification({
                     type: 'error',
-                    text: c('l10n_nightly Error')
+                    text: c('meet_2025 Error')
                         .t`The meeting link you are trying to access does not exist or may have been deleted.`,
                     expiration: 20000,
                 });
@@ -273,7 +273,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             } catch (error: any) {
                 createNotification({
                     type: 'error',
-                    text: error.message ?? c('l10n_nightly Error').t`Failed to join meeting. Please try again later`,
+                    text: error.message ?? c('meet_2025 Error').t`Failed to join meeting. Please try again later`,
                 });
 
                 setJoiningInProgress(false);
@@ -357,7 +357,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             } catch {
                 notifications.createNotification({
                     type: 'error',
-                    text: c('l10n_nightly Error').t`The meeting password is incorrect`,
+                    text: c('meet_2025 Error').t`The meeting password is incorrect`,
                 });
 
                 setJoiningInProgress(false);

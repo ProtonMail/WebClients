@@ -46,9 +46,9 @@ export const SideBarSearch = ({
                     setIsSearchOn(false);
                     setSearchExpression('');
                 }}
-                aria-label={c('l10n_nightly Alt').t`Close search`}
+                aria-label={c('meet_2025 Alt').t`Close search`}
             >
-                {c('l10n_nightly Action').t`Cancel`}
+                {c('meet_2025 Action').t`Cancel`}
             </Button>
         </div>
     );

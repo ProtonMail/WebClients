@@ -26,8 +26,8 @@ export const ChatButton = () => {
                 }}
                 indicatorContent={unreadMessages > 0 ? unreadMessages.toString() : undefined}
                 indicatorStatus="success"
-                ariaLabel={c('l10n_nightly Alt').t`Toggle chat`}
-                tooltipTitle={c('l10n_nightly Info').t`Chat with everyone`}
+                ariaLabel={c('meet_2025 Alt').t`Toggle chat`}
+                tooltipTitle={c('meet_2025 Info').t`Chat with everyone`}
             />
         </div>
     );

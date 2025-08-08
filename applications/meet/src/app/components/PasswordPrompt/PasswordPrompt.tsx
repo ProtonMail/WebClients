@@ -34,9 +34,9 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invali
             >
                 <ModalTwoContent className="py-4">
                     <div className="flex flex-column items-center">
-                        <div className="text-3xl text-semibold text-center mb-4 mt-4">{c('l10n_nightly Info')
+                        <div className="text-3xl text-semibold text-center mb-4 mt-4">{c('meet_2025 Info')
                             .t`This meeting is password protected`}</div>
-                        <div className="my-4 color-weak text-center">{c('l10n_nightly Info')
+                        <div className="my-4 color-weak text-center">{c('meet_2025 Info')
                             .t`Please enter the passphrase to decrypt and view this meeting`}</div>
 
                         <div className="relative w-full my-4">
@@ -45,11 +45,11 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invali
                                     <InputFieldTwo
                                         id="password-prompt-password-input"
                                         name="password p-4"
-                                        label={c('l10n_nightly Label').t`Passphrase`}
+                                        label={c('meet_2025 Label').t`Passphrase`}
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                         unstyled={true}
-                                        placeholder={c('l10n_nightly Placeholder').t`Enter passphrase`}
+                                        placeholder={c('meet_2025 Placeholder').t`Enter passphrase`}
                                         type={showPassword ? 'text' : 'password'}
                                         autoComplete="off"
                                     />
@@ -61,7 +61,7 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invali
                                 size="small"
                                 onClick={() => setShowPassword(!showPassword)}
                                 aria-pressed={showPassword}
-                                aria-label={c('l10n_nightly Alt').t`Show passphrase`}
+                                aria-label={c('meet_2025 Alt').t`Show passphrase`}
                                 style={{
                                     '--top-custom': '50%',
                                     '--right-custom': '1rem',
@@ -73,7 +73,7 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invali
                                 {showPassword ? <IcEye size={4} /> : <IcEyeSlash size={4} />}
                             </Button>
                             {invalidPassphrase && (
-                                <div className="color-danger w-full text-center">{c('l10n_nightly Error')
+                                <div className="color-danger w-full text-center">{c('meet_2025 Error')
                                     .t`Invalid passphrase`}</div>
                             )}
                         </div>
@@ -91,7 +91,7 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invali
                                 onClick={onPasswordSubmit}
                                 disabled={!password}
                             >
-                                {c('l10n_nightly Action').t`Continue`}
+                                {c('meet_2025 Action').t`Continue`}
                             </Button>
                         </div>
                     </div>

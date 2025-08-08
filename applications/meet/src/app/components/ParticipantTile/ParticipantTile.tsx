@@ -49,7 +49,7 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
 
     const isLocalParticipant = participant.identity === localParticipant.identity;
 
-    const participantName = participantNameMap[participant.identity] ?? c('l10n_nightly Info').t`Loading...`;
+    const participantName = participantNameMap[participant.identity] ?? c('meet_2025 Info').t`Loading...`;
 
     return (
         <div
@@ -122,9 +122,7 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
                 }}
                 title={participantName}
             >
-                <SecurityShield
-                    title={c('l10n_nightly Info').t`End-to-end encryption is active for audio and video.`}
-                />
+                <SecurityShield title={c('meet_2025 Info').t`End-to-end encryption is active for audio and video.`} />
                 {participantName}
             </div>
         </div>

@@ -54,14 +54,14 @@ export const MeetingReadyPopup = ({ meetingLink }: MeetingReadyPopupProps) => {
                     className="absolute top-custom right-custom"
                     style={{ '--top-custom': '0.5rem', '--right-custom': '0.5rem' }}
                 />
-                <div className="meeting-ready-popup-title text-3xl text-center text-semibold">{c('l10n_nightly Info')
+                <div className="meeting-ready-popup-title text-3xl text-center text-semibold">{c('meet_2025 Info')
                     .t`Your meeting is ready`}</div>
 
-                <div className="color-weak text-center">{c('l10n_nightly Info')
+                <div className="color-weak text-center">{c('meet_2025 Info')
                     .t`Share this link to invite others. You can also find it anytime by clicking the info icon in the toolbar.`}</div>
 
                 <div className="meeting-ready-popup-meeting-link flex flex-column w-full items-start">
-                    <div className="color-weak">{c('l10n_nightly Info').t`Meeting link`}</div>
+                    <div className="color-weak">{c('meet_2025 Info').t`Meeting link`}</div>
                     <div className="meeting-ready-popup-meeting-link-text w-full">{meetingLink}</div>
                 </div>
 

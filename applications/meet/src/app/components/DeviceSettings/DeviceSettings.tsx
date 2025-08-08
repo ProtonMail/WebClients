@@ -150,12 +150,12 @@ export const DeviceSettings = ({
                 <DeviceSelect
                     label={
                         noMicrophonePermission
-                            ? c('l10n_nightly Info').t`Permissions not given.`
+                            ? c('meet_2025 Info').t`Permissions not given.`
                             : (microphones.find((microphone) => microphone.deviceId === selectedMicrophoneId)?.label ??
                               '')
                     }
                     icon="meet-microphone"
-                    title={c('l10n_nightly Label').t`Audio`}
+                    title={c('meet_2025 Label').t`Audio`}
                     disabled={noMicrophonePermission}
                     isOpen={isAudioSettingsOpen}
                     setIsOpen={(newIsOpen) => {
@@ -178,11 +178,11 @@ export const DeviceSettings = ({
                 <DeviceSelect
                     label={
                         noCameraPermission
-                            ? c('l10n_nightly Info').t`Permissions not given.`
+                            ? c('meet_2025 Info').t`Permissions not given.`
                             : (cameras.find((camera) => camera.deviceId === selectedCameraId)?.label ?? '')
                     }
                     icon="meet-camera"
-                    title={c('l10n_nightly Label').t`Video`}
+                    title={c('meet_2025 Label').t`Video`}
                     disabled={noCameraPermission}
                     isOpen={isVideoSettingsOpen}
                     setIsOpen={(newIsOpen) => {

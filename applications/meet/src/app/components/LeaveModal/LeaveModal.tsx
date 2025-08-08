@@ -29,10 +29,10 @@ export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
                 pill={true}
                 size="large"
                 onClick={() => handleSetOpen(true)}
-                aria-label={c('l10n_nightly Alt').t`Leave Meeting`}
+                aria-label={c('meet_2025 Alt').t`Leave Meeting`}
             >
                 {isLargerThanMd ? (
-                    c('l10n_nightly Alt').t`Leave`
+                    c('meet_2025 Alt').t`Leave`
                 ) : (
                     <IcPhone className="shrink-0" size={5} style={{ transform: 'rotate(135deg)' }} />
                 )}
@@ -40,10 +40,10 @@ export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
             {render && (
                 <ModalTwo {...modalProps} rootClassName="bg-transparent leave-modal" className="meet-radius">
                     <ModalTwoContent className="flex flex-column justify-space-between p-4 mx-4 pb-0">
-                        <div className="text-center text-3xl">{c('l10n_nightly Action').t`Leave meeting`}</div>
+                        <div className="text-center text-3xl">{c('meet_2025 Action').t`Leave meeting`}</div>
 
                         <div className="w-full text-center color-weak">
-                            {c('l10n_nightly Info').t`Are you sure you want to leave the meeting?`}
+                            {c('meet_2025 Info').t`Are you sure you want to leave the meeting?`}
                         </div>
 
                         <div className="flex flex-column justify-end gap-2">
@@ -55,7 +55,7 @@ export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
                                     loading={loadingEndMeeting}
                                     size="large"
                                 >
-                                    {c('l10n_nightly Action').t`End meeting for all`}
+                                    {c('meet_2025 Action').t`End meeting for all`}
                                 </Button>
                             )}
                             <Button
@@ -67,7 +67,7 @@ export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
                                 disabled={loadingEndMeeting}
                                 size="large"
                             >
-                                {c('l10n_nightly Action').t`Leave meeting`}
+                                {c('meet_2025 Action').t`Leave meeting`}
                             </Button>
                             <Button
                                 className="border-none rounded-full w-full close-button"
@@ -75,7 +75,7 @@ export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
                                 disabled={loadingEndMeeting}
                                 size="large"
                             >
-                                {c('l10n_nightly Action').t`Cancel`}
+                                {c('meet_2025 Action').t`Cancel`}
                             </Button>
                         </div>
                     </ModalTwoContent>

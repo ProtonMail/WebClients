@@ -67,7 +67,7 @@ export const CreateContainer = ({ isEdit = false }: CreateContainerProps) => {
     const [values, setValues] = useState({
         ...getInitialValues(),
         timeZone: userTimeZone,
-        meetingName: c('l10n_nightly Info').t`${user.DisplayName}'s Meeting`,
+        meetingName: c('meet_2025 Info').t`${user.DisplayName}'s Meeting`,
     });
 
     const { createMeeting } = useCreateMeeting();
@@ -149,10 +149,10 @@ export const CreateContainer = ({ isEdit = false }: CreateContainerProps) => {
                     {isEdit && (
                         <>
                             <Button className="secondary-action-button rounded-full" onClick={noop} size="large">
-                                {c('l10n_nightly Action').t`Delete`}
+                                {c('meet_2025 Action').t`Delete`}
                             </Button>
                             <Button className="secondary-action-button rounded-full" onClick={noop} size="large">
-                                {c('l10n_nightly Action').t`Share`}
+                                {c('meet_2025 Action').t`Share`}
                             </Button>
                         </>
                     )}
@@ -161,20 +161,19 @@ export const CreateContainer = ({ isEdit = false }: CreateContainerProps) => {
                         onClick={handleSubmit}
                         size="large"
                         disabled={isDisabled}
-                    >{c('l10n_nightly Action').t`Create meeting`}</Button>
+                    >{c('meet_2025 Action').t`Create meeting`}</Button>
 
                     <CloseButton onClose={() => history.push('/join')} />
                 </div>
                 <div className="w-custom flex flex-column gap-2 my-auto" style={{ '--w-custom': '40rem' }}>
-                    <div className="text-4xl mb-6 w-full text-center">{c('l10n_nightly Title')
-                        .t`Schedule a meeting`}</div>
+                    <div className="text-4xl mb-6 w-full text-center">{c('meet_2025 Title').t`Schedule a meeting`}</div>
 
                     <div className="w-full flex flex-nowrap items-center gap-4">
                         <IcTextAlignLeft size={5} />
                         <InputFieldTwo
                             id="meetingName"
                             name="meetingName"
-                            placeholder={c('l10n_nightly Placeholder').t`Enter meeting title`}
+                            placeholder={c('meet_2025 Placeholder').t`Enter meeting title`}
                             onChange={(e) => setValues({ ...values, meetingName: e.target.value })}
                             autoComplete="off"
                             value={values.meetingName}
@@ -187,7 +186,7 @@ export const CreateContainer = ({ isEdit = false }: CreateContainerProps) => {
                             shape="ghost"
                             onClick={() => setShowTimezones(!showTimezones)}
                         >
-                            {c('l10n_nightly Action').t`${timeZoneAction} timezones`}
+                            {c('meet_2025 Action').t`${timeZoneAction} timezones`}
                         </Button>
                     </div>
 
@@ -233,9 +232,9 @@ export const CreateContainer = ({ isEdit = false }: CreateContainerProps) => {
                             <div className="w-full flex flex-nowrap items-center gap-1 text-center mt-4">
                                 <IcKey className="visibility-hidden" size={5} />
                                 <div className="flex flex-column flex-nowrap items-center gap-1">
-                                    <div className="text-xl text-semibold">{c('l10n_nightly Title')
+                                    <div className="text-xl text-semibold">{c('meet_2025 Title')
                                         .t`Secret Passphrase`}</div>
-                                    <div className="color-weak px-2">{c('l10n_nightly Info')
+                                    <div className="color-weak px-2">{c('meet_2025 Info')
                                         .t`For extra security, you can set a passphrase. It won’t be included in the calendar invite—remember to share it with your guests separately.`}</div>
                                 </div>
                             </div>
@@ -244,7 +243,7 @@ export const CreateContainer = ({ isEdit = false }: CreateContainerProps) => {
                                 <InputFieldTwo
                                     id="customPassword"
                                     name="customPassword"
-                                    placeholder={c('l10n_nightly Placeholder').t`Enter secret passphrase`}
+                                    placeholder={c('meet_2025 Placeholder').t`Enter secret passphrase`}
                                     as={PasswordInputTwo}
                                     autoComplete="off"
                                     value={values.customPassword}
@@ -263,7 +262,7 @@ export const CreateContainer = ({ isEdit = false }: CreateContainerProps) => {
                                     setAdvancedOptions(false);
                                 }}
                                 shape="ghost"
-                            >{c('l10n_nightly Action').t`Hide advanced options`}</Button>
+                            >{c('meet_2025 Action').t`Hide advanced options`}</Button>
                         ) : (
                             <Button
                                 className="create-container-button text-underline color-primary rounded-full user-select-none ml-4"
@@ -272,7 +271,7 @@ export const CreateContainer = ({ isEdit = false }: CreateContainerProps) => {
                                     setAdvancedOptions(true);
                                 }}
                                 shape="ghost"
-                            >{c('l10n_nightly Action').t`Show advanced options`}</Button>
+                            >{c('meet_2025 Action').t`Show advanced options`}</Button>
                         )}
                     </div>
                 </div>

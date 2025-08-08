@@ -128,13 +128,13 @@ export const ParticipantControls = () => {
                                 }}
                                 Content={AudioSettings}
                                 popUp={PopUpControls.Microphone}
-                                ariaLabel={c('l10n_nightly Alt').t`Toggle microphone`}
-                                secondaryAriaLabel={c('l10n_nightly Alt').t`Audio settings`}
+                                ariaLabel={c('meet_2025 Alt').t`Toggle microphone`}
+                                secondaryAriaLabel={c('meet_2025 Alt').t`Audio settings`}
                                 hasWarning={!hasMicrophonePermission}
                                 tooltipTitle={
                                     !hasMicrophonePermission
-                                        ? c('l10n_nightly Info').t`Permission denied`
-                                        : c('l10n_nightly Info').t`Turn ${microphoneActionStatus} microphone`
+                                        ? c('meet_2025 Info').t`Permission denied`
+                                        : c('meet_2025 Info').t`Turn ${microphoneActionStatus} microphone`
                                 }
                                 isOpen={popupState[PopUpControls.Microphone]}
                                 onPopupButtonClick={() => {
@@ -164,13 +164,13 @@ export const ParticipantControls = () => {
                                 }}
                                 Content={VideoSettings}
                                 popUp={PopUpControls.Camera}
-                                ariaLabel={c('l10n_nightly Alt').t`Toggle camera`}
-                                secondaryAriaLabel={c('l10n_nightly Alt').t`Video settings`}
+                                ariaLabel={c('meet_2025 Alt').t`Toggle camera`}
+                                secondaryAriaLabel={c('meet_2025 Alt').t`Video settings`}
                                 hasWarning={!hasCameraPermission}
                                 tooltipTitle={
                                     !hasCameraPermission
-                                        ? c('l10n_nightly Info').t`Permission denied`
-                                        : c('l10n_nightly Info').t`Turn ${cameraActionStatus} camera`
+                                        ? c('meet_2025 Info').t`Permission denied`
+                                        : c('meet_2025 Info').t`Turn ${cameraActionStatus} camera`
                                 }
                                 isOpen={popupState[PopUpControls.Camera]}
                                 onPopupButtonClick={() => {
@@ -197,7 +197,7 @@ export const ParticipantControls = () => {
                                 }}
                                 indicatorContent={hasMicrophonePermission ? undefined : '!'}
                                 indicatorStatus={hasMicrophonePermission ? 'success' : 'warning'}
-                                ariaLabel={c('l10n_nightly Alt').t`Toggle microphone`}
+                                ariaLabel={c('meet_2025 Alt').t`Toggle microphone`}
                             />
                             <CircleButton
                                 IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
@@ -228,7 +228,7 @@ export const ParticipantControls = () => {
                             }}
                             indicatorContent={participants.length.toString()}
                             indicatorStatus={sideBarState[MeetingSideBars.Participants] ? 'success' : 'default'}
-                            ariaLabel={c('l10n_nightly Alt').t`Toggle participants`}
+                            ariaLabel={c('meet_2025 Alt').t`Toggle participants`}
                         />
                         <ChatButton />
                         <CircleButton
@@ -237,13 +237,13 @@ export const ParticipantControls = () => {
                             onClick={() => {
                                 toggleSideBarState(MeetingSideBars.Settings);
                             }}
-                            ariaLabel={c('l10n_nightly Alt').t`Toggle settings`}
+                            ariaLabel={c('meet_2025 Alt').t`Toggle settings`}
                         />
                         <CircleButton
                             IconComponent={IcInfoCircle}
                             onClick={() => toggleSideBarState(MeetingSideBars.MeetingDetails)}
                             variant={sideBarState[MeetingSideBars.MeetingDetails] ? 'active' : 'default'}
-                            ariaLabel={c('l10n_nightly Alt').t`Toggle meeting details`}
+                            ariaLabel={c('meet_2025 Alt').t`Toggle meeting details`}
                         />
                     </div>
                     <div className="flex lg:hidden gap-2 flex-nowrap">

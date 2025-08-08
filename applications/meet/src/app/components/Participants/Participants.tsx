@@ -58,18 +58,18 @@ export const Participants = () => {
                             searchExpression={searchExpression}
                             setSearchExpression={setSearchExpression}
                             setIsSearchOn={setIsSearchOn}
-                            placeholder={c('l10n_nightly Placeholder').t`Find...`}
+                            placeholder={c('meet_2025 Placeholder').t`Find...`}
                         />
                     ) : (
                         <div className="text-semibold flex items-center">
-                            <div className="text-3xl">{c('l10n_nightly Title').t`Participants`}</div>
+                            <div className="text-3xl">{c('meet_2025 Title').t`Participants`}</div>
                             <div className="text-semibold text-3xl">({participants.length})</div>
                             <Button
                                 className="search-open-button p-0 ml-2 flex items-center justify-center"
                                 shape="ghost"
                                 size="small"
                                 onClick={() => setIsSearchOn(!isSearchOn)}
-                                aria-label={c('l10n_nightly Alt').t`Open participants search`}
+                                aria-label={c('meet_2025 Alt').t`Open participants search`}
                             >
                                 <IcMagnifier size={6} />
                             </Button>
@@ -89,7 +89,7 @@ export const Participants = () => {
                     );
                     const isMuted = !audioPublication || audioPublication.isMuted;
 
-                    const name = participantNameMap[participant.identity] ?? c('l10n_nightly Info').t`Loading...`;
+                    const name = participantNameMap[participant.identity] ?? c('meet_2025 Info').t`Loading...`;
 
                     return (
                         <div
@@ -150,7 +150,7 @@ export const Participants = () => {
                                             ]);
                                         }
                                     }}
-                                    aria-label={c('l10n_nightly Action').t`Enable video`}
+                                    aria-label={c('meet_2025 Action').t`Enable video`}
                                     aria-pressed={videoPub?.isEnabled}
                                 >
                                     {!!videoPub &&

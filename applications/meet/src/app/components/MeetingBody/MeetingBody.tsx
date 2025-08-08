@@ -88,7 +88,7 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
                             style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
                         >
                             <SecurityShield
-                                title={c('l10n_nightly Info').t`End-to-end encryption is active for screen share`}
+                                title={c('meet_2025 Info').t`End-to-end encryption is active for screen share`}
                             />
                         </div>
                         <video

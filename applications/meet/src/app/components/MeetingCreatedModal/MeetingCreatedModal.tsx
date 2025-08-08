@@ -57,7 +57,7 @@ export const MeetingCreatedModal = ({
         ? `${formatDate(startTime)}\n${formatTimeHHMM(startTime)} - ${formatTimeHHMM(endTime)} (${timeZone})`
         : `${formatDate(startTime)}\n${formatTimeHHMM(startTime)} (${timeZone})\n${formatDate(endTime)}\n${formatTimeHHMM(endTime)} (${timeZone})`;
 
-    const inviteText = c('l10n_nightly Info')
+    const inviteText = c('meet_2025 Info')
         .t`${user.DisplayName} has invited you to a ${BRAND_NAME} ${MEET_SHORT_APP_NAME} meeting:\n\n${time}\n\n${meetingLink}\n\nMeeting ID: ${id}`;
 
     return (
@@ -69,11 +69,9 @@ export const MeetingCreatedModal = ({
         >
             <ModalTwoHeader />
             <ModalTwoContent className="flex flex-column items-center justify-center">
-                <div className="text-3xl text-semibold text-center mt-4">
-                    {c('l10n_nightly Info').t`Meeting created`}
-                </div>
+                <div className="text-3xl text-semibold text-center mt-4">{c('meet_2025 Info').t`Meeting created`}</div>
                 <div className="mt-6 mb-6 color-weak text-center">
-                    {c('l10n_nightly Info').t`Share the meeting invitation with others`}
+                    {c('meet_2025 Info').t`Share the meeting invitation with others`}
                 </div>
                 <div
                     className="bg-weak border border-norm w-custom max-w-custom h-custom meet-radius flex flex-column items-start justify-space-between p-4 overflow-hidden"
@@ -82,7 +80,7 @@ export const MeetingCreatedModal = ({
                     <div className="flex flex-column items-start">
                         <div className="color-weak">Invitation preview</div>
                         <div className="text-lg text-semibold">
-                            {c('l10n_nightly Info')
+                            {c('meet_2025 Info')
                                 .t`${user.DisplayName} has invited you to a ${BRAND_NAME} ${MEET_SHORT_APP_NAME} meeting:`}
                         </div>
                     </div>
@@ -111,14 +109,14 @@ export const MeetingCreatedModal = ({
                     </div>
 
                     <div className="flex flex-column items-start">
-                        <div>{c('l10n_nightly Info').t`Meeting ID: ${id}`}</div>
+                        <div>{c('meet_2025 Info').t`Meeting ID: ${id}`}</div>
                     </div>
                 </div>
                 <CopyButton
                     className="mt-4"
                     text={inviteText}
                     isPrimary={true}
-                    title={c('l10n_nightly Action').t`invitation text`}
+                    title={c('meet_2025 Action').t`invitation text`}
                 />
             </ModalTwoContent>
         </ModalTwo>

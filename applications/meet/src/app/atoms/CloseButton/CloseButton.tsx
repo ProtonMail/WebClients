@@ -19,7 +19,7 @@ export const CloseButton = ({ onClose, className, style }: CloseButtonProps) => 
                 '--h-custom': '2.5rem',
                 ...style,
             }}
-            aria-label={c('l10n_nightly Alt').t`Close`}
+            aria-label={c('meet_2025 Alt').t`Close`}
             onClick={onClose}
             shape="ghost"
         >

@@ -88,7 +88,7 @@ export const decryptMeetingName = async ({
     });
 
     if (!sessionKey) {
-        throw new Error(c('l10n_nightly Error').t`Failed to decrypt session key`);
+        throw new Error(c('meet_2025 Error').t`Failed to decrypt session key`);
     }
 
     const decryptionKey = await deriveEncryptionKeyFromSessionKey(sessionKey);
