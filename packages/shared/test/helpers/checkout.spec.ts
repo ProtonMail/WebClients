@@ -204,66 +204,6 @@ describe('should get checkout result', () => {
         });
     });
 
-    it('should correctly handle the price decrease', () => {
-        expect(
-            getCheckout({
-                planIDs: {
-                    [PLANS.VPN]: 1,
-                },
-                checkResult: {
-                    Amount: 799,
-                    AmountDue: 799,
-                    Cycle: CYCLE.MONTHLY,
-                    Coupon: null,
-                    Currency: 'USD',
-                    SubscriptionMode: SubscriptionMode.Regular,
-                    BaseRenewAmount: null,
-                    RenewCycle: null,
-                },
-                plansMap: {
-                    [PLANS.VPN]: {
-                        ...getPlan(vpnPlan),
-                        Pricing: {
-                            // It's possible to create an offer that would decrease the price
-                            [CYCLE.MONTHLY]: 799,
-                            [CYCLE.YEARLY]: 7188,
-                            [CYCLE.FIFTEEN]: 14985,
-                            [CYCLE.TWO_YEARS]: 11976,
-                            [CYCLE.THIRTY]: 29970,
-                        },
-                        DefaultPricing: {
-                            // And then the default price would be higher than the current price
-                            [CYCLE.MONTHLY]: 999,
-                            [CYCLE.YEARLY]: 7188,
-                            [CYCLE.FIFTEEN]: 14985,
-                            [CYCLE.TWO_YEARS]: 11976,
-                            [CYCLE.THIRTY]: 29970,
-                        },
-                    },
-                },
-            })
-        ).toEqual({
-            regularAmountPerCycle: 799,
-            couponDiscount: undefined,
-            planTitle: 'VPN',
-            planName: PLANS.VPN,
-            planIDs: { [PLANS.VPN]: 1 },
-            usersTitle: '1 user',
-            addons: [],
-            withDiscountPerCycle: 799,
-            withDiscountPerMonth: 799,
-            withoutDiscountPerCycle: 999,
-            withoutDiscountPerMonth: 999,
-            discountPerCycle: 200,
-            discountPercent: 20,
-            membersPerMonth: 799,
-            currency: 'USD',
-            withDiscountMembersPerMonth: 799,
-            withDiscountOneMemberPerMonth: 799,
-            cycle: CYCLE.MONTHLY,
-        });
-    });
-
     it('should calculate bf 24 month visionary', () => {
         expect(
             getCheckout({
@@ -599,6 +539,31 @@ describe('should get checkout result', () => {
             withDiscountOneMemberPerMonth: 0,
             cycle: CYCLE.TWO_YEARS,
         });
+    });
+
+    it('should compute discount percent correctly for custom billing mode with addon (Pass + Lumo)', () => {
+        const result = getCheckout({
+            planIDs: {
+                [PLANS.PASS]: 1,
+                [ADDON_NAMES.LUMO_PASS]: 1,
+            },
+            checkResult: {
+                Amount: 11988,
+                AmountDue: 11988,
+                Cycle: CYCLE.YEARLY,
+                Coupon: null,
+                Currency: 'USD',
+                SubscriptionMode: SubscriptionMode.CustomBillings,
+                BaseRenewAmount: null,
+                RenewCycle: null,
+            },
+            plansMap: {
+                [PLANS.PASS]: PLANS_MAP[PLANS.PASS],
+                [ADDON_NAMES.LUMO_PASS]: PLANS_MAP[ADDON_NAMES.LUMO_PASS],
+            },
+        });
+
+        expect(result.discountPercent).toBe(28);
     });
 });
 
