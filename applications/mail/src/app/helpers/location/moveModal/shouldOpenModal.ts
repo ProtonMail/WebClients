@@ -15,7 +15,7 @@ interface ShouldOpenConfirmationModalMessageParams {
     mailSettings: MailSettings;
 }
 
-const scheduleTargetWithWarning = new Set<string>([
+export const scheduleTargetWithWarning = new Set<string>([
     MAILBOX_LABEL_IDS.ALL_DRAFTS,
     MAILBOX_LABEL_IDS.DRAFTS,
     MAILBOX_LABEL_IDS.TRASH,
@@ -83,7 +83,7 @@ export const shouldOpenConfirmationModalForConverversation = ({
     targetLabelID,
     folders,
     mailSettings,
-    conversationsFromState: conversationFromState,
+    conversationsFromState,
 }: ShouldOpenConfirmationModalConversationParams): ModalType | null => {
     if (scheduleTargetWithWarning.has(targetLabelID)) {
         const hasSomeElementsInSchedule = elements.some(
@@ -107,7 +107,7 @@ export const shouldOpenConfirmationModalForConverversation = ({
 
     if (targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
         if (mailSettings?.SpamAction === null) {
-            const canBeUnsubscribed = conversationFromState.some((conversation) =>
+            const canBeUnsubscribed = conversationsFromState.some((conversation) =>
                 conversation?.Messages?.some((message) => isUnsubscribable(message))
             );
             if (canBeUnsubscribed) {
