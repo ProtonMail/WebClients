@@ -2,14 +2,15 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Href } from '@proton/atoms';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import TopBanner from './TopBanner';
 
-const SubUserTopBanner = () => {
+const AccessTypeTopBanner = () => {
     const [user] = useUser();
 
-    if (user.isSelf) {
+    if (user.accessType === AccessType.Self) {
         return null;
     }
 
@@ -17,9 +18,11 @@ const SubUserTopBanner = () => {
         <TopBanner className="bg-info">
             {c('Info').t`You are currently signed in as ${user.Name} (${user.Email}).`}
             {` `}
-            <Href href={getKnowledgeBaseUrl('/manage-public-users-organization')}>{c('Link').t`Learn more`}</Href>
+            {user.accessType === AccessType.AdminAccess ? (
+                <Href href={getKnowledgeBaseUrl('/manage-public-users-organization')}>{c('Link').t`Learn more`}</Href>
+            ) : null}
         </TopBanner>
     );
 };
 
-export default SubUserTopBanner;
+export default AccessTypeTopBanner;

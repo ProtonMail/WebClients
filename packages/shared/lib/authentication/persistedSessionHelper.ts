@@ -1,5 +1,4 @@
 import { serverTime } from '@proton/crypto';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -8,10 +7,12 @@ import { getIs401Error } from '../api/helpers/apiErrorHelper';
 import { getUIDApi } from '../api/helpers/customConfig';
 import { InactiveSessionError } from '../api/helpers/errors';
 import { getUser } from '../api/user';
+import { type AccessType } from '../authentication/accessType';
+import { getAccessType } from '../authentication/getAccessType';
 import { withUIDHeaders } from '../fetch/headers';
+import { wait } from '../helpers/promise';
 import { captureMessage } from '../helpers/sentry';
 import type { Api, User as tsUser } from '../interfaces';
-import { isSelf } from '../user/helpers';
 import { appMode } from '../webpack.constants';
 import { type PersistedSession, type PersistedSessionLite, SessionSource } from './SessionInterface';
 import { generateClientKey, getClientKey } from './clientKey';
@@ -223,7 +224,7 @@ export const persistSession = async ({
         UID,
         UserID: User.ID,
         keyPassword,
-        isSelf: isSelf(User),
+        accessType: getAccessType(User),
         persistent,
         trusted,
         offlineKey,
@@ -247,19 +248,19 @@ export const persistSession = async ({
 export const findPersistedSession = ({
     persistedSessions,
     UserID,
-    isSelf,
+    accessType,
     source,
 }: {
     persistedSessions: PersistedSession[];
     UserID: string;
-    isSelf: boolean;
+    accessType: AccessType;
     source: SessionSource[] | null;
 }) => {
     return persistedSessions.find((persistedSession) => {
         const isSameUserID = persistedSession.UserID === UserID;
-        const isSameSelf = persistedSession.isSelf === isSelf;
+        const isSameAccessType = persistedSession.accessType === accessType;
         const isSameSource = source === null ? true : source.some((value) => value === persistedSession.source);
-        return isSameUserID && isSameSelf && isSameSource;
+        return isSameUserID && isSameAccessType && isSameSource;
     });
 };
 
@@ -601,7 +602,7 @@ export const maybeResumeSessionByUser = async ({
     const maybePersistedSession = findPersistedSession({
         persistedSessions: getPersistedSessions(),
         UserID: User.ID,
-        isSelf: isSelf(User),
+        accessType: getAccessType(User),
         source: options.source ?? defaultSessionOptions.source,
     });
     if (!maybePersistedSession) {

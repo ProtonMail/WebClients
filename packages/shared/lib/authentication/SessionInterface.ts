@@ -1,3 +1,4 @@
+import type { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 
 export enum SessionSource {
@@ -22,7 +23,7 @@ export interface DefaultPersistedSession {
     UserID: string;
     UID: string;
     blob?: string;
-    isSelf: boolean;
+    accessType: AccessType;
     persistent: boolean;
     trusted: boolean;
     payloadVersion: 2 | 1;
@@ -39,4 +40,4 @@ export interface OfflinePersistedSession extends Omit<DefaultPersistedSession, '
 export type PersistedSession = OfflinePersistedSession | DefaultPersistedSession;
 
 // The minimal amount of data needed to render the session list
-export type PersistedSessionLite = Pick<PersistedSession, 'localID' | 'isSelf'>;
+export type PersistedSessionLite = Pick<PersistedSession, 'localID' | 'accessType'>;

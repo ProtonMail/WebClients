@@ -836,7 +836,6 @@ export { LockedStateTopBanner } from './containers/topBanners/LockedStateTopBann
 export { default as OnlineTopBanner } from './containers/topBanners/OnlineTopBanner';
 export { default as PublicTopBanners } from './containers/topBanners/PublicTopBanners';
 export { default as StorageLimitTopBanner } from './containers/topBanners/StorageLimitTopBanner';
-export { default as SubUserTopBanner } from './containers/topBanners/SubUserTopBanner';
 export { default as TimeOutOfSyncTopBanner } from './containers/topBanners/TimeOutOfSyncTopBanner';
 export { default as TopBanner } from './containers/topBanners/TopBanner';
 export { default as TopBanners } from './containers/topBanners/TopBanners';
