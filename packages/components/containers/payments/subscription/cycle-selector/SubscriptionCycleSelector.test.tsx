@@ -72,7 +72,7 @@ it('should correctly display price per user per month when there are non-user ad
 
 it('should display the prices correctly for VPN Plus', () => {
     const planIDs = {
-        vpn2022: 1,
+        vpn2024: 1,
     };
 
     props = {
@@ -84,6 +84,6 @@ it('should display the prices correctly for VPN Plus', () => {
     const { queryByTestId } = render(<SubscriptionCycleSelector {...props} />);
 
     expect(queryByTestId('price-per-user-per-month-1')).toHaveTextContent('CHF 9.99/month');
-    expect(queryByTestId('price-per-user-per-month-12')).toHaveTextContent('CHF 5.99/month');
+    expect(queryByTestId('price-per-user-per-month-12')).toHaveTextContent('CHF 6.66/month');
     expect(queryByTestId('price-per-user-per-month-24')).toHaveTextContent('CHF 4.99/month');
 });
