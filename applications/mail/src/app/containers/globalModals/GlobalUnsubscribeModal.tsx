@@ -48,11 +48,15 @@ export const GlobalUnsubscribeModal = () => {
                 <Prompt
                     title={c('Title').t`Move to spam`}
                     buttons={[
-                        <Button color="norm" onClick={() => handleConfirm(SPAM_ACTION.SpamAndUnsub)}>{c('Action')
-                            .t`Move to spam and unsubscribe`}</Button>,
+                        <Button
+                            data-testid="confirm-spam-unsub-button"
+                            color="norm"
+                            onClick={() => handleConfirm(SPAM_ACTION.SpamAndUnsub)}
+                        >{c('Action').t`Move to spam and unsubscribe`}</Button>,
                         <Button onClick={() => handleConfirm(SPAM_ACTION.JustSpam)}>{c('Action')
                             .t`Move to spam`}</Button>,
-                        <Button onClick={() => setOpen(false)}>{c('Action').t`Cancel`}</Button>,
+                        <Button data-testid="cancel-button" onClick={() => setOpen(false)}>{c('Action')
+                            .t`Cancel`}</Button>,
                     ]}
                     {...modalProps}
                 >
