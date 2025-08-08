@@ -303,7 +303,6 @@ export function isAnyManagedExternally(
 export const hasVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VISIONARY);
 export const hasDeprecatedVPN = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
 export const hasVPN2024 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN2024);
-export const hasVPN2022 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
 export const hasVPNPassBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PASS_BUNDLE);
 export const hasMail = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL);
 export const hasMailPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_PRO);

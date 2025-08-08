@@ -481,23 +481,3 @@ export function getTotals(
         return acc;
     }, {} as any);
 }
-
-export function planIDsPositiveDifference(oldPlanIDs: PlanIDs, newPlanIDs: PlanIDs): PlanIDs {
-    if (!oldPlanIDs || !newPlanIDs) {
-        return {};
-    }
-
-    const increasedPlanIDs: PlanIDs = {};
-
-    for (const key of Object.keys(newPlanIDs) as (keyof PlanIDs)[]) {
-        const newQuantity = newPlanIDs[key] ?? 0;
-        const oldQuantity = oldPlanIDs[key] ?? 0;
-
-        const increase = newQuantity - oldQuantity;
-        if (increase > 0) {
-            increasedPlanIDs[key] = increase;
-        }
-    }
-
-    return increasedPlanIDs;
-}

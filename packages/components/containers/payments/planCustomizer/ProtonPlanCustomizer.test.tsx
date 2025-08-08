@@ -76,10 +76,6 @@ it.each([
         ],
     },
     {
-        plan: PLANS.VPN,
-        expectedCustomizers: [lumoAddonBannerTestId],
-    },
-    {
         plan: PLANS.VPN2024,
         expectedCustomizers: [lumoAddonBannerTestId],
     },

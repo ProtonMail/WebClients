@@ -39,7 +39,7 @@ export const getIsEligible = ({
         const offerSubscription = new OfferSubscription(subscription);
         const canModifySubscription = canModify(subscription);
         const hasVPNMonthly =
-            (offerSubscription.hasVPN2022() || offerSubscription.hasVPN2024()) && offerSubscription.isMonthly();
+            (offerSubscription.hasDeprecatedVPN() || offerSubscription.hasVPN2024()) && offerSubscription.isMonthly();
 
         return (
             hasValidApp && checkAllowed && hasVPNMonthly && canModifySubscription && user.canPay && !user.isDelinquent

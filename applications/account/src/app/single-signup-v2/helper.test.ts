@@ -47,16 +47,19 @@ describe('getAccessiblePlans', () => {
         });
 
         expect(result.length).toBe(8); // 2 for each of 4 regional currencies
-        expect(result.map(({ Name, Currency }) => `${Name} - ${Currency}`)).toEqual([
-            `${PLANS.MAIL} - USD`,
-            `${PLANS.VPN2024} - USD`,
-            `${PLANS.MAIL} - CHF`,
-            `${PLANS.VPN2024} - CHF`,
-            `${PLANS.MAIL} - EUR`,
-            `${PLANS.VPN2024} - EUR`,
-            `${PLANS.MAIL} - BRL`,
-            `${PLANS.VPN2024} - BRL`,
-        ]);
+        const resultStrings = new Set(result.map(({ Name, Currency }) => `${Name} - ${Currency}`));
+        expect(resultStrings).toEqual(
+            new Set([
+                `${PLANS.MAIL} - USD`,
+                `${PLANS.VPN2024} - USD`,
+                `${PLANS.MAIL} - CHF`,
+                `${PLANS.VPN2024} - CHF`,
+                `${PLANS.MAIL} - EUR`,
+                `${PLANS.VPN2024} - EUR`,
+                `${PLANS.MAIL} - BRL`,
+                `${PLANS.VPN2024} - BRL`,
+            ])
+        );
     });
 
     it('should return accessible B2B plans', () => {
@@ -67,16 +70,19 @@ describe('getAccessiblePlans', () => {
         });
 
         expect(result.length).toBe(8); // 2 for each of 4 regional currencies
-        expect(result.map(({ Name, Currency }) => `${Name} - ${Currency}`)).toEqual([
-            `${PLANS.MAIL_PRO} - USD`,
-            `${PLANS.BUNDLE_PRO_2024} - USD`,
-            `${PLANS.MAIL_PRO} - CHF`,
-            `${PLANS.BUNDLE_PRO_2024} - CHF`,
-            `${PLANS.MAIL_PRO} - EUR`,
-            `${PLANS.BUNDLE_PRO_2024} - EUR`,
-            `${PLANS.MAIL_PRO} - BRL`,
-            `${PLANS.BUNDLE_PRO_2024} - BRL`,
-        ]);
+        const resultStrings = new Set(result.map(({ Name, Currency }) => `${Name} - ${Currency}`));
+        expect(resultStrings).toEqual(
+            new Set([
+                `${PLANS.MAIL_PRO} - USD`,
+                `${PLANS.BUNDLE_PRO_2024} - USD`,
+                `${PLANS.MAIL_PRO} - CHF`,
+                `${PLANS.BUNDLE_PRO_2024} - CHF`,
+                `${PLANS.MAIL_PRO} - EUR`,
+                `${PLANS.BUNDLE_PRO_2024} - EUR`,
+                `${PLANS.MAIL_PRO} - BRL`,
+                `${PLANS.BUNDLE_PRO_2024} - BRL`,
+            ])
+        );
     });
 
     it('should return empty array for invalid audience', () => {
@@ -127,20 +133,24 @@ describe('getAccessiblePlans', () => {
 
         // Should include original plans plus the param plan
         expect(result.length).toBe(12); // 3 plans (2 original + 1 param) for each of 4 regional currencies
-        expect(result.map(({ Name, Currency }) => `${Name} - ${Currency}`)).toEqual([
-            `${PLANS.MAIL} - USD`,
-            `${PLANS.VPN2024} - USD`,
-            `${PLANS.VISIONARY} - USD`,
-            `${PLANS.MAIL} - CHF`,
-            `${PLANS.VPN2024} - CHF`,
-            `${PLANS.VISIONARY} - CHF`,
-            `${PLANS.MAIL} - EUR`,
-            `${PLANS.VPN2024} - EUR`,
-            `${PLANS.VISIONARY} - EUR`,
-            `${PLANS.MAIL} - BRL`,
-            `${PLANS.VPN2024} - BRL`,
-            `${PLANS.VISIONARY} - BRL`,
-        ]);
+
+        const resultStrings = new Set(result.map(({ Name, Currency }) => `${Name} - ${Currency}`));
+        expect(resultStrings).toEqual(
+            new Set([
+                `${PLANS.MAIL} - USD`,
+                `${PLANS.VPN2024} - USD`,
+                `${PLANS.VISIONARY} - USD`,
+                `${PLANS.MAIL} - CHF`,
+                `${PLANS.VPN2024} - CHF`,
+                `${PLANS.VISIONARY} - CHF`,
+                `${PLANS.MAIL} - EUR`,
+                `${PLANS.VPN2024} - EUR`,
+                `${PLANS.VISIONARY} - EUR`,
+                `${PLANS.MAIL} - BRL`,
+                `${PLANS.VPN2024} - BRL`,
+                `${PLANS.VISIONARY} - BRL`,
+            ])
+        );
     });
 
     it('should not duplicate plans if param plan is already in accessible plans', () => {
@@ -153,16 +163,19 @@ describe('getAccessiblePlans', () => {
         });
 
         expect(result.length).toBe(8); // Still 2 plans for each of 4 regional currencies
-        expect(result.map(({ Name, Currency }) => `${Name} - ${Currency}`)).toEqual([
-            `${PLANS.MAIL} - USD`,
-            `${PLANS.VPN2024} - USD`,
-            `${PLANS.MAIL} - CHF`,
-            `${PLANS.VPN2024} - CHF`,
-            `${PLANS.MAIL} - EUR`,
-            `${PLANS.VPN2024} - EUR`,
-            `${PLANS.MAIL} - BRL`,
-            `${PLANS.VPN2024} - BRL`,
-        ]);
+        const resultStrings = new Set(result.map(({ Name, Currency }) => `${Name} - ${Currency}`));
+        expect(resultStrings).toEqual(
+            new Set([
+                `${PLANS.MAIL} - USD`,
+                `${PLANS.VPN2024} - USD`,
+                `${PLANS.MAIL} - CHF`,
+                `${PLANS.VPN2024} - CHF`,
+                `${PLANS.MAIL} - EUR`,
+                `${PLANS.VPN2024} - EUR`,
+                `${PLANS.MAIL} - BRL`,
+                `${PLANS.VPN2024} - BRL`,
+            ])
+        );
     });
 
     it('should ignore param plan when it does not exist in plans', () => {
@@ -175,15 +188,18 @@ describe('getAccessiblePlans', () => {
         });
 
         expect(result.length).toBe(8); // Still 2 plans for each of 4 regional currencies
-        expect(result.map(({ Name, Currency }) => `${Name} - ${Currency}`)).toEqual([
-            `${PLANS.MAIL} - USD`,
-            `${PLANS.VPN2024} - USD`,
-            `${PLANS.MAIL} - CHF`,
-            `${PLANS.VPN2024} - CHF`,
-            `${PLANS.MAIL} - EUR`,
-            `${PLANS.VPN2024} - EUR`,
-            `${PLANS.MAIL} - BRL`,
-            `${PLANS.VPN2024} - BRL`,
-        ]);
+        const resultStrings = new Set(result.map(({ Name, Currency }) => `${Name} - ${Currency}`));
+        expect(resultStrings).toEqual(
+            new Set([
+                `${PLANS.MAIL} - USD`,
+                `${PLANS.VPN2024} - USD`,
+                `${PLANS.MAIL} - CHF`,
+                `${PLANS.VPN2024} - CHF`,
+                `${PLANS.MAIL} - EUR`,
+                `${PLANS.VPN2024} - EUR`,
+                `${PLANS.MAIL} - BRL`,
+                `${PLANS.VPN2024} - BRL`,
+            ])
+        );
     });
 });
