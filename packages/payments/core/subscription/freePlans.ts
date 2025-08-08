@@ -1,9 +1,9 @@
-import { type SubscriptionCheckResponse, SubscriptionMode } from '@proton/shared/lib/interfaces';
-
 import { CYCLE } from '../constants';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '../constants';
 import { type Currency, type Cycle } from '../interface';
 import { type FreePlanDefault } from '../plan/interface';
+import { SubscriptionMode } from './constants';
+import { type SubscriptionCheckResponse } from './interface';
 
 export const FREE_PLAN: FreePlanDefault = {
     ID: 'free',

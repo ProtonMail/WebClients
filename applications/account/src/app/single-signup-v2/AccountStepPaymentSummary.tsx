@@ -11,17 +11,18 @@ import { getTotalBillingText } from '@proton/components/containers/payments/subs
 import {
     COUPON_CODES,
     type Plan,
+    SubscriptionMode,
     TRIAL_DURATION_DAYS,
     getHas2024OfferCoupon,
     getIsB2BAudienceFromPlan,
+    getPricingFromPlanIDs,
+    getTotalFromPricing,
     isTaxInclusive,
 } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 

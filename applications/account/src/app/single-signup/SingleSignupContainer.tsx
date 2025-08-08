@@ -25,12 +25,14 @@ import {
     FREE_PLAN,
     PLANS,
     type Plan,
+    SubscriptionMode,
     getHas2024OfferCoupon,
     getIsVpnB2BPlan,
     getPlanFromPlanIDs,
     getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
+    hasPlanIDs,
 } from '@proton/payments';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -40,10 +42,8 @@ import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { SubscriptionMode } from '@proton/shared/lib/interfaces/Subscription';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import { useFlag, useFlagsStatus } from '@proton/unleash/index';

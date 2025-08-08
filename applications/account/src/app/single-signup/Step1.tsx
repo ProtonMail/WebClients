@@ -45,6 +45,7 @@ import {
     type Plan,
     type PlanIDs,
     type StrictPlan,
+    SubscriptionMode,
     TRIAL_DURATION_DAYS,
     getHas2024OfferCoupon,
     getPaymentsVersion,
@@ -66,7 +67,6 @@ import type { RequiredCheckResponse, SubscriptionCheckoutData } from '@proton/sh
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';

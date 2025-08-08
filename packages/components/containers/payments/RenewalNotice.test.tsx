@@ -8,12 +8,12 @@ import {
     type PlanIDs,
     type PlansMap,
     type Subscription,
+    SubscriptionMode,
     getFreeCheckResult,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 
 import { getCheckoutRenewNoticeText } from './RenewalNotice';
 

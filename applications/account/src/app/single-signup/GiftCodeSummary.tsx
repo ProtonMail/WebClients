@@ -5,8 +5,7 @@ import { c } from 'ttag';
 import { Button, CircleLoader, Input } from '@proton/atoms';
 import { Icon, Info, Price, useNotifications } from '@proton/components';
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
-import { type Currency, type PlanIDs, type PlansMap } from '@proton/payments';
-import { type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { type Currency, type PlanIDs, type PlansMap, type SubscriptionCheckResponse } from '@proton/payments';
 
 interface Props {
     coupon?: {

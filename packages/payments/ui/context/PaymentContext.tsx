@@ -24,8 +24,7 @@ import {
     getOptimisticCheckResult as innerGetOptimisticCheckResult,
 } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { hasFreePlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import type { Api, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -45,9 +44,14 @@ import type {
 } from '../../core/interface';
 import { getPlanFromPlanIDs } from '../../core/plan/helpers';
 import type { FreePlanDefault, Plan, PlansMap } from '../../core/plan/interface';
+import { hasFreePlanIDs } from '../../core/planIDs';
 import { FREE_PLAN } from '../../core/subscription/freePlans';
 import { isCheckForbidden } from '../../core/subscription/helpers';
-import { type FullPlansMap, type Subscription } from '../../core/subscription/interface';
+import {
+    type FullPlansMap,
+    type Subscription,
+    type SubscriptionCheckResponse,
+} from '../../core/subscription/interface';
 import { SelectedPlan } from '../../core/subscription/selected-plan';
 import { type MultiCheckGroupsResult, useMultiCheckGroups } from './useMultiCheckGroups';
 

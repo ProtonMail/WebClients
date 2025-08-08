@@ -150,7 +150,7 @@ export function getPreferredCurrency({
     paramCurrency?: Currency;
     paramPlanName?: string;
     user?: UserModel;
-    subscription?: Subscription | FreeSubscription;
+    subscription?: Subscription | FreeSubscription | null;
     enableNewBatchCurrencies: boolean;
 }): Currency {
     const statusCurrency =
