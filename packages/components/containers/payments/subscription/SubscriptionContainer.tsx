@@ -686,6 +686,35 @@ const SubscriptionContainerInner = ({
         });
     };
 
+    const normalizeModelBeforeCheck = (newModel: Model) => {
+        const planTransitionForbidden = getIsPlanTransitionForbidden({
+            subscription,
+            user,
+            plansMap,
+            planIDs: newModel.planIDs,
+            cycle: newModel.cycle,
+        });
+
+        if (planTransitionForbidden?.type === 'lumo-plus') {
+            newModel.planIDs = planTransitionForbidden.newPlanIDs;
+            newModel.cycle = subscription?.Cycle ?? newModel.cycle;
+        }
+
+        if (planTransitionForbidden?.type === 'plus-to-plus') {
+            setPlusToPlusUpsell({
+                unlockPlan: planTransitionForbidden.newPlanName
+                    ? plansMap[planTransitionForbidden.newPlanName]
+                    : undefined,
+            });
+            setUpsellModal(true);
+            // In case this transition is disallowed, reset the plan IDs to the plan IDs of the current subscription
+            newModel.planIDs = getPlanIDs(latestSubscription);
+            // Also, reset the step to the previous step (so that it doesn't change from plan selection -> checkout)
+            newModel.step = model.step;
+            // Continue here with the rest of the steps so that we actually perform the rest of the call correctly (but just with reset plan ids)
+        }
+    };
+
     const check = async (
         newModel: Model = model,
         wantToApplyNewGiftCode: boolean = false,
@@ -704,31 +733,7 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        const planTransitionForbidden = getIsPlanTransitionForbidden({
-            subscription,
-            user,
-            plansMap,
-            planIDs: copyNewModel.planIDs,
-            cycle: copyNewModel.cycle,
-        });
-
-        if (planTransitionForbidden?.type === 'lumo-plus') {
-            copyNewModel.planIDs = planTransitionForbidden.newPlanIDs;
-        }
-
-        if (planTransitionForbidden?.type === 'plus-to-plus') {
-            setPlusToPlusUpsell({
-                unlockPlan: planTransitionForbidden.newPlanName
-                    ? plansMap[planTransitionForbidden.newPlanName]
-                    : undefined,
-            });
-            setUpsellModal(true);
-            // In case this transition is disallowed, reset the plan IDs to the plan IDs of the current subscription
-            copyNewModel.planIDs = getPlanIDs(latestSubscription);
-            // Also, reset the step to the previous step (so that it doesn't change from plan selection -> checkout)
-            copyNewModel.step = model.step;
-            // Continue here with the rest of the steps so that we actually perform the rest of the call correctly (but just with reset plan ids)
-        }
+        normalizeModelBeforeCheck(copyNewModel);
 
         const dontQueryCheck = copyNewModel.step === SUBSCRIPTION_STEPS.PLAN_SELECTION;
 
