@@ -30,12 +30,15 @@ export const GlobalScheduleModal = () => {
                 <Prompt
                     title={c('Title').t`Moving a scheduled message`}
                     buttons={[
+                        <Button color="norm" onClick={scheduleModalProps.onConfirm} data-testid="confirm-button">{c(
+                            'Action'
+                        ).t`OK`}</Button>,
                         <Button
-                            color="norm"
-                            onClick={scheduleModalProps.onConfirm}
-                            data-testid="moveScheduledMessage"
-                        >{c('Action').t`OK`}</Button>,
-                        <Button onClick={() => setOpen(false)}>{c('Action').t`Cancel`}</Button>,
+                            data-testid="cancel-button"
+                            onClick={() => {
+                                setOpen(false);
+                            }}
+                        >{c('Action').t`Cancel`}</Button>,
                     ]}
                     {...modalProps}
                 >
