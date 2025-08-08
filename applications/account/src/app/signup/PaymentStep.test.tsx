@@ -1,8 +1,7 @@
 import { act, render } from '@testing-library/react';
 
 import type { PaymentStatus } from '@proton/payments';
-import { CYCLE, DEFAULT_TAX_BILLING_ADDRESS, PLANS, PLAN_TYPES } from '@proton/payments';
-import { SubscriptionMode } from '@proton/shared/lib/interfaces';
+import { CYCLE, DEFAULT_TAX_BILLING_ADDRESS, PLANS, PLAN_TYPES, SubscriptionMode } from '@proton/payments';
 import {
     addApiMock,
     applyHOCs,

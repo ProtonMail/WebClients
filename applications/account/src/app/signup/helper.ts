@@ -10,13 +10,13 @@ import {
     DEFAULT_TAX_BILLING_ADDRESS,
     PLANS,
     type PlanIDs,
+    type SubscriptionCheckResponse,
     getFreeCheckResult,
 } from '@proton/payments';
+import { hasPlanIDs } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import { type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 export async function getSubscriptionPrices(
     paymentsApi: PaymentsApi,
