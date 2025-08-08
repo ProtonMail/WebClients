@@ -119,9 +119,7 @@ enum DriveFeatureFlag {
     // Experiment
     DriveWebDownloadMechanismParameters = 'DriveWebDownloadMechanismParameters',
     // Albums
-    DriveAlbums = 'DriveAlbums',
     DriveAlbumsDisabled = 'DriveAlbumsDisabled',
-    DriveAlbumsNewVolumes = 'DriveAlbumsNewVolumes',
     DriveAlbumOnboardingModal = 'DriveAlbumOnboardingModal',
     // One-dollar offer
     DrivePostSignupOneDollarPromo = 'DrivePostSignupOneDollarPromo',

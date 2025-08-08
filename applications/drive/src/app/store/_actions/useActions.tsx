@@ -5,11 +5,11 @@ import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { usePhotosWithAlbums } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import useDevicesActions from '../_devices/useDevicesActions';
 import { useLinkActions, useLinksActions } from '../_links';
-import { usePhotosOrPhotosWithAlbums } from '../_photos/PhotosOrPhotosWithAlbumsProvider';
 import { useShareActions, useShareUrl } from '../_shares';
 import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
 import { TransferConflictStrategy } from '../_uploads/interface';
@@ -41,7 +41,7 @@ export default function useActions() {
     const shareUrl = useShareUrl();
     const shareActions = useShareActions();
     const devicesActions = useDevicesActions();
-    const { removePhotosFromCache } = usePhotosOrPhotosWithAlbums();
+    const { removePhotosFromCache } = usePhotosWithAlbums();
 
     const createFolder = async (
         abortSignal: AbortSignal,

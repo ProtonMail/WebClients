@@ -30,9 +30,8 @@ import { decryptedLinkToPhotos, photoPayloadToPhotos, useDebouncedRequest } from
 import { type DecryptedLink, useLink, useLinkActions } from '../../store/_links';
 import { useLinksActions } from '../../store/_links';
 import useLinksState from '../../store/_links/useLinksState';
-import { useShare, useShareActions } from '../../store/_shares';
+import { useShare } from '../../store/_shares';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
-import { SHOULD_MIGRATE_PHOTOS_STATUS } from '../../store/_shares/useShareActions';
 import { useBatchHelper } from '../../store/_utils/useBatchHelper';
 import { VolumeTypeForEvents, useVolumesState } from '../../store/_volumes';
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -113,16 +112,8 @@ export const PhotosWithAlbumsContext = createContext<{
         shareId: string
     ) => Promise<{ LinkID: string; shouldNotififyCopy: boolean }>;
     removeTagsFromPhoto: (abortSignal: AbortSignal, linkId: string, tags: PhotoTag[]) => Promise<void>;
-    migrationStatus: 'unknown' | 'migrating' | 'migrated' | 'no-share';
-    startPhotosMigration: () => void;
     clearAlbumPhotos: () => void;
 } | null>(null);
-
-export enum MIGRATION_STATUS {
-    UNKNOWN = 'unknown',
-    MIGRATING = 'migrating',
-    MIGRATED = 'migrated',
-}
 
 export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [photosShare, setPhotosShare] = useState<ShareWithKey>();
@@ -132,7 +123,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { getDefaultPhotosShare } = useDefaultShare();
     const { getPhotoCloneForAlbum, copyLinksToVolume } = useLinkActions();
     const { favoritePhotoLink } = useLinksActions();
-    const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
     const request = useDebouncedRequest();
     const { batchAPIHelper, batchPromiseHelper } = useBatchHelper();
     const driveEventManager = useDriveEventManager();
@@ -141,79 +131,42 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const [userAddressEmail, setUserAddressEmail] = useState<string>();
     const [photos, setPhotos] = useState<Photo[]>([]);
     const [albums, setAlbums] = useState<Map<string, DecryptedAlbum>>(new Map());
-    const [migrationStatus, setMigrationStatus] = useState<MIGRATION_STATUS>(MIGRATION_STATUS.UNKNOWN);
     const currentAlbumLinkId = useRef<string>();
     const [albumPhotos, setAlbumPhotos] = useState<AlbumPhoto[]>([]);
-    const { getShareWithKey, getShare, getShareCreatorKeys } = useShare();
+    const { getShare, getShareWithKey, getShareCreatorKeys } = useShare();
     const { getSharePermissions } = useDirectSharingInfo();
     const { getLink } = useLink();
     const { updatePhotoLinkTags } = useLinksState();
     const { setVolumeShareIds } = useVolumesState();
-    const { shouldMigratePhotos, migratePhotos } = useShareActions();
     const eventAbortController = useRef<AbortController | undefined>(undefined);
     const albumProgress = useAlbumProgressStore();
-
+    const { createPhotosWithAlbumsShare } = useCreatePhotosWithAlbums();
     const { createNotification } = useNotifications();
 
-    // we will need the photosShare for loadAlbum and loadPhotos
-    // the only other way to populate it would be with startPhotosMigration
-    // but we don't want to call it outside of the photos section
+    // We will need the photosShare for loadAlbum and loadPhotos
     useEffect(() => {
-        void getDefaultPhotosShare().then((defaultPhotosShare) => {
-            setPhotosShare(defaultPhotosShare);
+        const abortController = new AbortController();
+        void getDefaultPhotosShare().then(async (defaultPhotosShare) => {
+            let photosShare = defaultPhotosShare;
+            if (!defaultPhotosShare) {
+                const { shareId } = await createPhotosWithAlbumsShare();
+                photosShare = await getShareWithKey(abortController.signal, shareId);
+            }
+            if (!photosShare) {
+                return;
+            }
+
+            setPhotosShare(photosShare);
+            const { address } = await getShareCreatorKeys(abortController.signal, photosShare);
+            setUserAddressEmail(address.Email);
+            setVolumeShareIds(photosShare.volumeId, [photosShare.shareId]);
         });
+        return () => {
+            abortController.abort();
+        };
+        // Due to unstable deps params and because this will need to be done only once on load, we don't add deps params
+        // TODO: Make all used functions stable to prevent skipping deps params
     }, []);
-
-    const startPhotosMigration = useCallback(async () => {
-        const signal = new AbortController().signal;
-        const status = await shouldMigratePhotos();
-        // eslint-disable-next-line no-console
-        console.info('Photo migration status:', status);
-        let result;
-        let newPhotosShare;
-        if (status === SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATED) {
-            let defaultPhotosShare = await getDefaultPhotosShare();
-            if (!defaultPhotosShare) {
-                // Furce=true to re-fetch the share in case the local state is outdated.
-                // It can happen after recovery process depending on timing and user action.
-                defaultPhotosShare = await getDefaultPhotosShare(signal, true);
-            }
-            if (!defaultPhotosShare) {
-                throw new Error('No default photos share found');
-            }
-            newPhotosShare = defaultPhotosShare;
-        } else if (status === SHOULD_MIGRATE_PHOTOS_STATUS.NO_PHOTOS_SHARE) {
-            result = await createPhotosWithAlbumsShare();
-        } else if (status === SHOULD_MIGRATE_PHOTOS_STATUS.MIGRATION_IN_PROGRESS) {
-            setMigrationStatus(MIGRATION_STATUS.MIGRATING);
-            result = await migratePhotos(true);
-        } else {
-            setMigrationStatus(MIGRATION_STATUS.MIGRATING);
-            result = await migratePhotos();
-        }
-
-        if (!newPhotosShare && result) {
-            newPhotosShare = await getShareWithKey(signal, result.shareId);
-        }
-
-        if (!newPhotosShare) {
-            throw new Error('No photos share found during migration');
-        }
-
-        const { address } = await getShareCreatorKeys(signal, newPhotosShare);
-        setPhotosShare(newPhotosShare);
-        setUserAddressEmail(address.Email);
-        setMigrationStatus(MIGRATION_STATUS.MIGRATED);
-        setVolumeShareIds(newPhotosShare.volumeId, [newPhotosShare.shareId]);
-    }, [
-        createPhotosWithAlbumsShare,
-        getDefaultPhotosShare,
-        getShareCreatorKeys,
-        getShareWithKey,
-        migratePhotos,
-        setVolumeShareIds,
-        shouldMigratePhotos,
-    ]);
 
     useEffect(() => {
         if (volumeId === undefined) {
@@ -224,7 +177,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         return () => {
             driveEventManager.volumes.unsubscribe(volumeId);
         };
-    }, [volumeId]);
+    }, [driveEventManager.volumes, volumeId]);
 
     const loadPhotos = useCallback(
         async (abortSignal: AbortSignal, tags?: PhotoTag[]) => {
@@ -1194,8 +1147,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 favoritePhoto,
                 removeTagsFromPhoto,
                 userAddressEmail,
-                migrationStatus,
-                startPhotosMigration,
                 clearAlbumPhotos,
             }}
         >

@@ -3,9 +3,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { queryResolveContextShare } from '@proton/shared/lib/api/drive/share';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
-import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
-import useFlag from '@proton/unleash/useFlag';
+import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -14,17 +12,13 @@ import { useDebouncedRequest } from '../_api';
 import { EXTERNAL_INVITATIONS_ERROR_NAMES, useInvitations } from '../_invitations';
 import type { DecryptedLink } from '../_links';
 import { useLink } from '../_links';
-import { useUserSettings } from '../_settings';
-import { type ShareInvitationDetails, useDefaultShare } from '../_shares';
+import { type ShareInvitationDetails } from '../_shares';
 import { useVolumesState } from '../_volumes';
 
 export const useVolumeLinkView = () => {
     const { getInvitationDetails, convertExternalInvitation } = useInvitations();
     const { acceptInvitation } = useInvitationsActions();
     const debouncedRequest = useDebouncedRequest();
-    const photosWithAlbumsForNewVolume = useFlag('DriveAlbumsNewVolumes');
-    const { photosWithAlbumsEnabled } = useUserSettings();
-    const { getDefaultPhotosShare } = useDefaultShare();
     const { getLink } = useLink();
 
     const { createNotification } = useNotifications();
@@ -64,22 +58,6 @@ export const useVolumeLinkView = () => {
                 }
                 throw error;
             });
-
-            // TODO: Remove that after full rollout of photos
-            const volumeType = await getDefaultPhotosShare().then((photosShare) => photosShare?.volumeType);
-            const willHaveAlbum =
-                photosWithAlbumsEnabled ||
-                (!photosWithAlbumsEnabled && volumeType === VolumeType.Photos) ||
-                (photosWithAlbumsForNewVolume && volumeType === undefined);
-            if (invitationDetails?.link.type === LinkType.ALBUM && !willHaveAlbum) {
-                createNotification({
-                    type: 'info',
-                    text: c('Notification')
-                        .t`The Albums feature is on its way! We're rolling it out gradually — please try again soon`,
-                    expiration: 10000,
-                });
-                return;
-            }
 
             if (!invitationDetails) {
                 const link: DecryptedLink | undefined = await getContextShareLinkDetails(abortSignal, {
