@@ -14,7 +14,7 @@ import AlbumOnboardingImage from '@proton/styles/assets/img/onboarding/drive-pho
 import useFlag from '@proton/unleash/useFlag';
 
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
-import { usePhotosOrPhotosWithAlbums } from '../../../store/_photos/PhotosOrPhotosWithAlbumsProvider';
+import { usePhotosWithAlbums } from '../../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 
 const LS_KEY = 'modal_album_onboarding_shown';
@@ -70,7 +70,7 @@ export const useAlbumOnboardingModal = () => {
     const [render, show] = useModalTwoStatic(AlbumOnboardingModal);
     const isFlagEnabled = useFlag('DriveAlbumOnboardingModal');
     const [alreadyShown, setAlreadyShown] = useLocalState(false, LS_KEY);
-    const { albums, loadAlbums } = usePhotosOrPhotosWithAlbums();
+    const { albums, loadAlbums } = usePhotosWithAlbums();
     const [isLoading, withLoading] = useLoading(albums !== undefined);
 
     const { viewportWidth } = useActiveBreakpoint();
