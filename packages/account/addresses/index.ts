@@ -42,13 +42,13 @@ const slice = createSlice({
             if (!state.value) {
                 return;
             }
-            state.value = sortAddresses(removeById(state.value, action.payload));
+            state.value = sortAddresses(removeById(state.value, action.payload, 'ID'));
         },
         upsertAddress: (state, action: PayloadAction<Address>) => {
             if (!state.value) {
                 return;
             }
-            state.value = sortAddresses(upsertById(state.value, action.payload));
+            state.value = sortAddresses(upsertById(state.value, action.payload, 'ID'));
         },
     },
     extraReducers: (builder) => {

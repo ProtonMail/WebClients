@@ -77,13 +77,13 @@ const slice = createSlice({
             if (!state.value) {
                 return;
             }
-            state.value = removeById(state.value, action.payload);
+            state.value = removeById(state.value, action.payload, 'ID');
         },
         upsertDomain: (state, action: PayloadAction<Domain>) => {
             if (!state.value) {
                 return;
             }
-            state.value = upsertById(state.value, action.payload);
+            state.value = upsertById(state.value, action.payload, 'ID');
         },
     },
     extraReducers: (builder) => {
