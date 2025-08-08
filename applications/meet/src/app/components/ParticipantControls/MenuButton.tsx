@@ -18,22 +18,22 @@ export const MenuButton = () => {
         () => [
             {
                 icon: IcMeetParticipants,
-                label: c('l10n_nightly Alt').t`Participants`,
+                label: c('meet_2025 Alt').t`Participants`,
                 onClick: () => toggleSideBarState(MeetingSideBars.Participants),
             },
             {
                 icon: IcMeetChat,
-                label: c('l10n_nightly Alt').t`Chat`,
+                label: c('meet_2025 Alt').t`Chat`,
                 onClick: () => toggleSideBarState(MeetingSideBars.Chat),
             },
             {
                 icon: IcMeetSettings,
-                label: c('l10n_nightly Alt').t`Settings`,
+                label: c('meet_2025 Alt').t`Settings`,
                 onClick: () => toggleSideBarState(MeetingSideBars.Settings),
             },
             {
                 icon: IcInfoCircle,
-                label: c('l10n_nightly Alt').t`Meeting details`,
+                label: c('meet_2025 Alt').t`Meeting details`,
                 onClick: () => toggleSideBarState(MeetingSideBars.MeetingDetails),
             },
         ],

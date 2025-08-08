@@ -65,7 +65,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                     ref={textareaRef}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder={c('l10n_nightly Placeholder').t`Type an encrypted message...`}
+                    placeholder={c('meet_2025 Placeholder').t`Type an encrypted message...`}
                     unstyled={true}
                     className={clsx('border-none resize-none px-0 my-auto', 'hide-scrollbar')}
                     style={{
@@ -89,7 +89,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                         '--w-custom': '2.25rem',
                         '--h-custom': '2.25rem',
                     }}
-                    aria-label={c('l10n_nightly Alt').t`Send an encrypted message`}
+                    aria-label={c('meet_2025 Alt').t`Send an encrypted message`}
                     disabled={!trimMessage(message)}
                 >
                     <IcMeetSend size={5} className="color-invert" />

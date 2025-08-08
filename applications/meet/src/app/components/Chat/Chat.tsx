@@ -112,16 +112,16 @@ export const Chat = () => {
                     {!isSearchOn && (
                         <div className="text-semibold flex items-center">
                             <SecurityShield
-                                title={c('l10n_nightly Info').t`End-to-end encryption is active for this chat.`}
+                                title={c('meet_2025 Info').t`End-to-end encryption is active for this chat.`}
                             />
 
-                            <div className="text-semibold text-3xl">{c('l10n_nightly Title').t`Chat`}</div>
+                            <div className="text-semibold text-3xl">{c('meet_2025 Title').t`Chat`}</div>
                             <Button
                                 className="search-open-button p-0 ml-2 flex items-center justify-center"
                                 shape="ghost"
                                 size="small"
                                 onClick={() => setIsSearchOn(!isSearchOn)}
-                                aria-label={c('l10n_nightly Alt').t`Open chat message search`}
+                                aria-label={c('meet_2025 Alt').t`Open chat message search`}
                             >
                                 <IcMagnifier size={6} />
                             </Button>
@@ -132,7 +132,7 @@ export const Chat = () => {
                             searchExpression={searchExpression}
                             setSearchExpression={setSearchExpression}
                             setIsSearchOn={setIsSearchOn}
-                            placeholder={c('l10n_nightly Placeholder').t`Find...`}
+                            placeholder={c('meet_2025 Placeholder').t`Find...`}
                         />
                     )}
                 </div>
@@ -155,7 +155,7 @@ export const Chat = () => {
                             style={{ '--w-custom': '3rem', '--h-custom': '3rem' }}
                         />
                         <div className="text-center color-disabled">
-                            {c('l10n_nightly Info')
+                            {c('meet_2025 Info')
                                 .t`This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.`}
                         </div>
                     </div>
@@ -171,7 +171,7 @@ export const Chat = () => {
                             alt=""
                             style={{ '--w-custom': '3rem', '--h-custom': '3rem' }}
                         />
-                        <div className="text-center color-disabled">{c('l10n_nightly Info').t`No search results`}</div>
+                        <div className="text-center color-disabled">{c('meet_2025 Info').t`No search results`}</div>
                     </div>
                 )}
                 {filteredMeetingRoomUpdates.map((item, index) => (

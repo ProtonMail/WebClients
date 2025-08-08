@@ -79,10 +79,10 @@ export const PermissionRequest = () => {
         >
             <ModalTwoHeader />
             <ModalTwoContent className="flex flex-column justify-center gap-4 text-center ">
-                <div className="text-3xl text-semibold my-2">{c('l10n_nightly Info')
+                <div className="text-3xl text-semibold my-2">{c('meet_2025 Info')
                     .t`Do you want people to ${deviceContentType} you in the meeting?`}</div>
 
-                <div className="color-weak mb-8">{c('l10n_nightly Info')
+                <div className="color-weak mb-8">{c('meet_2025 Info')
                     .t`You can still turn off your microphone and camera anytime in the meeting`}</div>
 
                 <Button
@@ -93,7 +93,7 @@ export const PermissionRequest = () => {
                         askForPermission(permissionPromptStatus === PermissionPromptStatus.CAMERA ? 'video' : 'audio')
                     }
                 >
-                    {c('l10n_nightly Action').t`Use ${deviceName}`}
+                    {c('meet_2025 Action').t`Use ${deviceName}`}
                 </Button>
 
                 <Button
@@ -101,7 +101,7 @@ export const PermissionRequest = () => {
                     shape="ghost"
                     onClick={() => setPermissionPromptStatus(PermissionPromptStatus.CLOSED)}
                 >
-                    {c('l10n_nightly Action').t`Continue without ${deviceName}`}
+                    {c('meet_2025 Action').t`Continue without ${deviceName}`}
                 </Button>
             </ModalTwoContent>
         </ModalTwo>

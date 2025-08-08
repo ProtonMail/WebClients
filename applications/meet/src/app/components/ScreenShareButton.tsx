@@ -22,9 +22,9 @@ export const ScreenShareButton = () => {
             IconComponent={IcMeetScreenShare}
             onClick={handleClick}
             variant={isSharing ? 'active' : 'default'}
-            ariaLabel={c('l10n_nightly Alt').t`Toggle screen share`}
+            ariaLabel={c('meet_2025 Alt').t`Toggle screen share`}
             tooltipTitle={
-                isSharing ? c('l10n_nightly Info').t`Stop sharing your screen` : c('l10n_nightly Info').t`Share screen`
+                isSharing ? c('meet_2025 Info').t`Stop sharing your screen` : c('meet_2025 Info').t`Share screen`
             }
         />
     );

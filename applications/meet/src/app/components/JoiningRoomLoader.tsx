@@ -15,18 +15,17 @@ export const JoiningRoomLoader = ({ participantCount, participantsLoaded }: Join
 
     const joingingRoomTitles: { heading: (participantCount?: number) => string; description: string }[] = [
         {
-            heading: () => c('l10n_nightly Title').t`Securing meeting...`,
-            description: c('l10n_nightly Description').t`Setting up group end-to-end encryption with MLS.`,
+            heading: () => c('meet_2025 Title').t`Securing meeting...`,
+            description: c('meet_2025 Description').t`Setting up group end-to-end encryption with MLS.`,
         },
         {
             heading: (participantCount) =>
                 !participantCount
-                    ? c('l10n_nightly Title').t`Starting MLS as the first participant...`
-                    : c('l10n_nightly Title')
-                          .t`Negotiating new MLS key with ${participantCount} other participant(s)....`,
+                    ? c('meet_2025 Title').t`Starting MLS as the first participant...`
+                    : c('meet_2025 Title').t`Negotiating new MLS key with ${participantCount} other participant(s)....`,
             description: !participantCount
-                ? c('l10n_nightly Description').t`Generating new encryption key`
-                : c('l10n_nightly Description').t`Rotating encryption key`,
+                ? c('meet_2025 Description').t`Generating new encryption key`
+                : c('meet_2025 Description').t`Rotating encryption key`,
         },
     ];
 

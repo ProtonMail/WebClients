@@ -44,8 +44,8 @@ export const ParticipantSidebar = ({
                     }}
                     title={
                         participantSideBarOpen
-                            ? c('l10n_nightly Action').t`Hide participants`
-                            : c('l10n_nightly Action').t`Show participants`
+                            ? c('meet_2025 Action').t`Hide participants`
+                            : c('meet_2025 Action').t`Show participants`
                     }
                 >
                     {participantSideBarOpen ? (

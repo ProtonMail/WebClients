@@ -65,7 +65,7 @@ export const useUpdateMeetingPassword = () => {
             } catch (error) {
                 console.error(error);
 
-                throw new Error(c('l10n_nightly Info').t`Failed to update meeting password`);
+                throw new Error(c('meet_2025 Info').t`Failed to update meeting password`);
             }
         },
         [api]

@@ -38,7 +38,7 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
                                 {sanitizedUrl}
                             </a>
                         ) : (
-                            <span key={`invalid-${i}`}>{c('l10n_nightly Info').t`<Removed dangerous URL>`}</span>
+                            <span key={`invalid-${i}`}>{c('meet_2025 Info').t`<Removed dangerous URL>`}</span>
                         )}
                     </>
                 );

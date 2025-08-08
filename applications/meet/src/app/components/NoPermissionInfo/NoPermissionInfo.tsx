@@ -34,8 +34,8 @@ export const NoPermissionInfo = () => {
         return null;
     }
 
-    const microphoneLabel = c('l10n_nightly Info').t`microphone`;
-    const cameraLabel = c('l10n_nightly Info').t`camera`;
+    const microphoneLabel = c('meet_2025 Info').t`microphone`;
+    const cameraLabel = c('meet_2025 Info').t`camera`;
 
     const microphoneLinkButton = !hasMicrophonePermission && (
         <InlineLinkButton
@@ -59,7 +59,7 @@ export const NoPermissionInfo = () => {
         </InlineLinkButton>
     );
 
-    const andString = !hasCameraPermission && !hasMicrophonePermission && c('l10n_nightly Info').t` and `;
+    const andString = !hasCameraPermission && !hasMicrophonePermission && c('meet_2025 Info').t` and `;
 
     return (
         <div
@@ -68,7 +68,7 @@ export const NoPermissionInfo = () => {
         >
             {
                 // translator: full sentence is: Please enable access to your <microphone> and <camera> for the best experience.
-                c('l10n_nightly Info').jt`Please enable access to your ${
+                c('meet_2025 Info').jt`Please enable access to your ${
                     microphoneLinkButton
                 }${andString}${cameraLinkButton} for the best experience.`
             }
@@ -78,7 +78,7 @@ export const NoPermissionInfo = () => {
                 size="tiny"
                 className="ml-4 rounded-full"
                 onClick={() => setIsOpen(false)}
-                aria-label={c('l10n_nightly Action').t`Close`}
+                aria-label={c('meet_2025 Action').t`Close`}
             >
                 <IcCross className="color-hint" size={4} />
             </Button>

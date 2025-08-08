@@ -63,7 +63,7 @@ export const useMeetSrp = () => {
 
                 return response;
             } catch (error) {
-                throw new Error(c('l10n_nightly Error').t`Failed to initialize handshake`);
+                throw new Error(c('meet_2025 Error').t`Failed to initialize handshake`);
             }
         },
         [api]
@@ -107,7 +107,7 @@ export const useMeetSrp = () => {
 
                 return response;
             } catch (error) {
-                throw new Error(c('l10n_nightly Error').t`Failed to get meeting info`);
+                throw new Error(c('meet_2025 Error').t`Failed to get meeting info`);
             }
         },
         [api]

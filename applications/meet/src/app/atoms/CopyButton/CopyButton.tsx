@@ -44,7 +44,7 @@ export const CopyButton = ({ text, isPrimary = false, className, title = 'link' 
                 setShowNotifications(true);
             }}
         >
-            {showNotifications ? c('l10n_nightly Action').t`Copied` : c('l10n_nightly Action').t`Copy ${title}`}
+            {showNotifications ? c('meet_2025 Action').t`Copied` : c('meet_2025 Action').t`Copy ${title}`}
             {showNotifications && <IcCheckmark size={5} />}
         </Button>
     );

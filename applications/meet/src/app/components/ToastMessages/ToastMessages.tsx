@@ -47,10 +47,10 @@ export const ToastMessages = () => {
                             </div>
                             <div>
                                 {(message as ParticipantEventRecord).eventType === ParticipantEvent.Join
-                                    ? c('l10n_nightly Info').t`Joined`
-                                    : c('l10n_nightly Info').t`Left`}{' '}
+                                    ? c('meet_2025 Info').t`Joined`
+                                    : c('meet_2025 Info').t`Left`}{' '}
                                 <span className="ml-1" style={{ color: 'var(--interaction-norm)' }}>
-                                    {roomName || c('l10n_nightly Placeholder').t`the room`}
+                                    {roomName || c('meet_2025 Placeholder').t`the room`}
                                 </span>
                             </div>
                         </div>

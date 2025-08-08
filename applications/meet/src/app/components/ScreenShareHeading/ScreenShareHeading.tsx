@@ -21,15 +21,15 @@ export const ScreenShareHeading = ({ name, isLocalUser, onStopScreenShare }: Scr
                 <IcMeetScreenShare size={6} />
                 {!isLocalUser && (
                     <div>
-                        {name} {c('l10n_nightly Info').t`is presenting`}
+                        {name} {c('meet_2025 Info').t`is presenting`}
                     </div>
                 )}
-                {isLocalUser && <div>{c('l10n_nightly Info').t`You are presenting`}</div>}
+                {isLocalUser && <div>{c('meet_2025 Info').t`You are presenting`}</div>}
             </div>
             {isLocalUser && (
                 <div>
                     <Button className="color-invert rounded-full" onClick={onStopScreenShare} color="norm">
-                        {c('l10n_nightly Action').t`Stop presenting`}
+                        {c('meet_2025 Action').t`Stop presenting`}
                     </Button>
                 </div>
             )}

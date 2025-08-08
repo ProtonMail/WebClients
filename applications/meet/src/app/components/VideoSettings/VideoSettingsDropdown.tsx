@@ -37,7 +37,7 @@ const VideoSettingsDropdownComponent = ({
         >
             <div className="flex flex-column gap-2 p-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
                 <div className="flex flex-column gap-2">
-                    <div className="color-weak meet-font-weight">{c('l10n_nightly Info').t`Select a camera`}</div>
+                    <div className="color-weak meet-font-weight">{c('meet_2025 Info').t`Select a camera`}</div>
                     {cameras.map((camera) => (
                         <OptionButton
                             key={camera.deviceId}

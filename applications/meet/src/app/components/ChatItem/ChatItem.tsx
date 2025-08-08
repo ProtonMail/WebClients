@@ -77,8 +77,8 @@ export const ChatItem = ({ roomName, item, colors, displayDate = true, shouldGro
                     <div className="flex justify-start items-start text-semibold">
                         <span className="color-weak">
                             {item.eventType === ParticipantEvent.Join
-                                ? c('l10n_nightly Info').t`Joined`
-                                : c('l10n_nightly Info').t`Left`}
+                                ? c('meet_2025 Info').t`Joined`
+                                : c('meet_2025 Info').t`Left`}
                         </span>
 
                         <span className="ml-1" style={{ color: 'var(--interaction-norm)' }}>
