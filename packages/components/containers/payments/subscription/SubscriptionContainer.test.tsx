@@ -13,13 +13,14 @@ import {
     PAYMENT_METHOD_TYPES,
     PLANS,
     type Plan,
+    type SubscriptionCheckResponse,
     createSubscription,
     createTokenV4,
     getPlansMap,
 } from '@proton/payments';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import type { Organization, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { renderWithProviders, withPaymentContext } from '@proton/testing';
 import { addApiMock, apiMock, applyHOCs, withDeprecatedModals, withReduxStore } from '@proton/testing';

@@ -1,6 +1,5 @@
 import type { ADDON_NAMES, PlanIDs, PlansMap } from '@proton/payments';
-import { type Currency, type Cycle, PLANS } from '@proton/payments';
-import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
+import { type Currency, type Cycle, PLANS, getPlanFromIDs } from '@proton/payments';
 
 export const getSignupHref = ({
     plan,

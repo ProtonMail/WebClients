@@ -1,5 +1,6 @@
 import { type RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import { SubscriptionMode } from '@proton/shared/lib/interfaces';
+
+import { SubscriptionMode } from './subscription/constants';
 
 export interface CheckoutModifiers {
     isProration: boolean;
