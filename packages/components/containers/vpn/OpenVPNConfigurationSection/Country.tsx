@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { type CountryOptions, correctAbbr, getLocalizedCountryByAbbr } from '@proton/payments';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
 import { getFlagSvg } from '../flag';
@@ -13,17 +13,15 @@ const Country = ({
     countryOptions: CountryOptions;
 }) => {
     const isRouted = EntryCountry && EntryCountry !== ExitCountry;
-    const correctEntryCountry = correctAbbr(EntryCountry);
-    const correctExitCountry = correctAbbr(ExitCountry);
-    const entryCountryName = getLocalizedCountryByAbbr(correctEntryCountry, countryOptions);
-    const exitCountryName = getLocalizedCountryByAbbr(correctExitCountry, countryOptions);
+    const entryCountryName = getLocalizedCountryByAbbr(EntryCountry, countryOptions);
+    const exitCountryName = getLocalizedCountryByAbbr(ExitCountry, countryOptions);
 
     return (
         <div className="inline-flex *:self-center">
             <img
                 width={20}
                 className="mr-2 border"
-                src={getFlagSvg(correctExitCountry)}
+                src={getFlagSvg(ExitCountry)}
                 alt={exitCountryName}
                 loading="lazy"
             />
