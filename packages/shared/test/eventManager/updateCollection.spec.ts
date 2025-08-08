@@ -303,4 +303,133 @@ describe('update collection', () => {
             ]);
         });
     });
+
+    describe('key other than ID', () => {
+        it('should delete items', () => {
+            const labels = [
+                {
+                    LabelID: '123',
+                    foo: 'bar',
+                },
+            ];
+            const events = [
+                {
+                    ID: '123',
+                    Action: EVENT_ACTIONS.DELETE,
+                },
+            ] as const;
+            const newLabels = updateCollection({
+                model: labels,
+                events,
+                itemKey: 'Label',
+                item: ({ Label }) => Label,
+                idKey: 'LabelID',
+            });
+            expect(newLabels).toEqual([]);
+        });
+
+        it('should update items', () => {
+            const labels = [
+                {
+                    LabelID: '123',
+                    foo: 'bar',
+                },
+            ];
+            const events = [
+                {
+                    ID: '123',
+                    Action: EVENT_ACTIONS.UPDATE,
+                    Label: {
+                        LabelID: '123',
+                        foo: 'bar2',
+                    },
+                },
+            ] as const;
+            const newLabels = updateCollection({
+                model: labels,
+                events,
+                itemKey: 'Label',
+                item: ({ Label }) => Label,
+                idKey: 'LabelID',
+            });
+            expect(newLabels).toEqual([{ LabelID: '123', foo: 'bar2' }]);
+        });
+
+        it('should create items ', () => {
+            const labels = [
+                {
+                    LabelID: '123',
+                    foo: 'bar',
+                },
+            ];
+            const events = [
+                {
+                    ID: '124',
+                    Action: EVENT_ACTIONS.CREATE,
+                    Label: {
+                        LabelID: '124',
+                        foo: 'bar',
+                    },
+                },
+            ] as const;
+            const newLabels = updateCollection({
+                model: labels,
+                events,
+                itemKey: 'Label',
+                item: ({ Label }) => Label,
+                idKey: 'LabelID',
+            });
+            expect(newLabels).toEqual([
+                { LabelID: '123', foo: 'bar' },
+                { LabelID: '124', foo: 'bar' },
+            ]);
+        });
+
+        it('should delete, create and update items', () => {
+            const labels = [
+                {
+                    LabelID: '123',
+                    foo: 'bar',
+                },
+            ];
+            const events = [
+                {
+                    ID: '123',
+                    Action: EVENT_ACTIONS.UPDATE,
+                    Label: {
+                        LabelID: '123',
+                        foo: 'bar2',
+                    },
+                },
+                {
+                    ID: '123',
+                    Action: EVENT_ACTIONS.DELETE,
+                },
+                {
+                    ID: '124',
+                    Action: EVENT_ACTIONS.UPDATE,
+                    Label: {
+                        LabelID: '124',
+                        foo: 'bar3',
+                    },
+                },
+                {
+                    ID: '124',
+                    Action: EVENT_ACTIONS.CREATE,
+                    Label: {
+                        LabelID: '124',
+                        foo: 'bar',
+                    },
+                },
+            ] as const;
+            const newLabels = updateCollection({
+                model: labels,
+                events,
+                itemKey: 'Label',
+                item: ({ Label }) => Label,
+                idKey: 'LabelID',
+            });
+            expect(newLabels).toEqual([{ LabelID: '124', foo: 'bar3' }]);
+        });
+    });
 });

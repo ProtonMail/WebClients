@@ -13,31 +13,30 @@ const defaultCreate = <T, Y>(newModel: T): Y => {
     return newModel as unknown as Y;
 };
 
-export type EventItemModelPartial<EventItemModel> = Partial<EventItemModel>;
-
-export type CreateEventItemUpdate<EventItemModel, EventItemKey extends string> = {
+export type CreateEventItemUpdate<UpdateModel, PayloadKey extends string> = {
     ID: string;
-    Action: EVENT_ACTIONS.CREATE;
-} & { [key in EventItemKey]: EventItemModel };
+    Action: typeof EVENT_ACTIONS.CREATE;
+} & { [Key in PayloadKey]: UpdateModel };
 
-export type UpdateEventItemUpdate<EventItemModel, EventItemKey extends string> = {
+export type UpdateEventItemUpdate<UpdateModel, PayloadKey extends string> = {
     ID: string;
-    Action: EVENT_ACTIONS.UPDATE;
-} & { [key in EventItemKey]: EventItemModelPartial<EventItemModel> };
+    Action: typeof EVENT_ACTIONS.UPDATE;
+} & { [Key in PayloadKey]: Partial<UpdateModel> };
 
 export type DeleteEventItemUpdate = {
     ID: string;
-    Action: EVENT_ACTIONS.DELETE;
+    Action: typeof EVENT_ACTIONS.DELETE;
 };
 
-export type EventItemUpdate<EventItemModel, EventItemKey extends string> =
-    | CreateEventItemUpdate<EventItemModel, EventItemKey>
-    | UpdateEventItemUpdate<EventItemModel, EventItemKey>
-    | DeleteEventItemUpdate;
+type Model<IdKey extends string> = {
+    // The ID key is required and must be a string.
+    [key in IdKey]: string;
+};
 
-interface Model {
-    ID: string;
-}
+export type EventItemUpdate<UpdateModel, PayloadKey extends string> =
+    | CreateEventItemUpdate<UpdateModel, PayloadKey>
+    | UpdateEventItemUpdate<UpdateModel, PayloadKey>
+    | DeleteEventItemUpdate;
 
 export const sortCollection = <T>(sortByKey: keyof T | undefined, array: T[]) => {
     if (!sortByKey) {
@@ -48,11 +47,15 @@ export const sortCollection = <T>(sortByKey: keyof T | undefined, array: T[]) =>
 
 /**
  * Update a model collection with incoming events.
+ *
+ * IdKey defaults to "ID", Id to string|number.
+ * Both EventItemModel and EventItemUpdateModel MUST have the IdKey.
  */
 const updateCollection = <
-    EventItemUpdateModel extends Model,
-    EventItemModel extends Model,
+    EventItemUpdateModel extends Model<IdKey>,
+    EventItemModel extends Model<IdKey>,
     EventItemKey extends string,
+    IdKey extends string = 'ID',
 >({
     model = [],
     events = [],
@@ -60,6 +63,7 @@ const updateCollection = <
     itemKey,
     merge = defaultMerge,
     create = defaultCreate,
+    idKey = 'ID' as IdKey,
 }: {
     model: readonly EventItemModel[] | undefined;
     events: readonly EventItemUpdate<EventItemUpdateModel, EventItemKey>[];
@@ -67,74 +71,67 @@ const updateCollection = <
         event:
             | CreateEventItemUpdate<EventItemUpdateModel, EventItemKey>
             | UpdateEventItemUpdate<EventItemUpdateModel, EventItemKey>
-    ) => EventItemModelPartial<EventItemUpdateModel> | undefined;
+    ) => Partial<EventItemUpdateModel> | undefined;
     create?: (a: EventItemUpdateModel) => EventItemModel;
-    merge?: (a: EventItemModel, B: EventItemModelPartial<EventItemUpdateModel>) => EventItemModel;
+    merge?: (a: EventItemModel, b: Partial<EventItemUpdateModel>) => EventItemModel;
     itemKey: EventItemKey;
+    idKey?: IdKey;
 }): EventItemModel[] => {
-    const copy = [...model];
+    const collection = [...model];
 
-    const todo = events.reduce<{
-        [UPDATE]: EventItemModelPartial<EventItemUpdateModel>[];
-        [CREATE]: EventItemModelPartial<EventItemUpdateModel>[];
-        [DELETE]: { [key: string]: boolean };
+    const buckets = events.reduce<{
+        [UPDATE]: Partial<EventItemUpdateModel>[];
+        [CREATE]: Partial<EventItemUpdateModel>[];
+        [DELETE]: Set<string>;
     }>(
         (acc, task) => {
-            const { Action, ID } = task;
-
-            if (Action === DELETE) {
-                acc[DELETE][ID] = true;
+            const id = task.ID;
+            if (task.Action === DELETE) {
+                acc[DELETE].add(id);
                 return acc;
             }
-
-            if (Action === UPDATE || Action === CREATE) {
+            if (task.Action === UPDATE || task.Action === CREATE) {
                 const value = item?.(task) ?? task[itemKey];
                 if (value) {
-                    acc[Action].push(value);
+                    acc[task.Action].push(value);
                 }
             }
-
             return acc;
         },
-        { [UPDATE]: [], [CREATE]: [], [DELETE]: {} }
+        { [CREATE]: [], [UPDATE]: [], [DELETE]: new Set<string>() }
     );
 
-    const todos = [...todo[CREATE], ...todo[UPDATE]];
+    const todos = [...buckets[CREATE], ...buckets[UPDATE]];
 
-    const copiedMap = copy.reduce<{ [key: string]: number }>((acc, element, index) => {
-        acc[element.ID] = index;
+    const indexById = collection.reduce<{ [key: string]: number }>((acc, element, index) => {
+        const id = element[idKey];
+        if (id !== undefined) {
+            acc[id] = index;
+        }
         return acc;
     }, Object.create(null));
 
     // NOTE: We cannot trust Action so "create" and "update" events need to be handled in this way by going through the original model.
-    const { collection } = todos.reduce<{ collection: EventItemModel[]; map: { [key: string]: number } }>(
-        (acc, element) => {
-            const id = element.ID;
-            if (id === undefined) {
-                return acc;
-            }
-
-            // Update.
-            const index = acc.map[id];
-            if (index !== undefined) {
-                acc.collection[index] = merge(acc.collection[index], element);
-                return acc;
-            }
-
-            // Create. Assume it is never partial.
-            const length = acc.collection.push(create(element as EventItemUpdateModel));
-            // Set index in case there is an UPDATE on this CREATEd item afterwards.
-            acc.map[id] = length - 1; // index
-
-            return acc;
-        },
-        {
-            collection: copy,
-            map: copiedMap,
+    todos.forEach((element) => {
+        const id = element[idKey];
+        if (id === undefined) {
+            return;
         }
-    );
 
-    return collection.filter(({ ID }) => !todo[DELETE][ID]);
+        // Update.
+        const index = indexById[id];
+        if (index !== undefined) {
+            collection[index] = merge(collection[index], element);
+            return;
+        }
+
+        // Create. Assume it is never partial.
+        const length = collection.push(create(element as EventItemUpdateModel));
+        // Set index in case there is an UPDATE on this CREATEd item afterwards.
+        indexById[id] = length - 1; // index
+    });
+
+    return collection.filter((it) => !buckets[DELETE].has(it[idKey]));
 };
 
 export default updateCollection;
