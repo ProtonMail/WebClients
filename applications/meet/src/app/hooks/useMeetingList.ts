@@ -25,9 +25,9 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null] => {
     const getMeetingDependencies = useGetMeetingDependencies();
 
     const getDecryptedMeeting = async (meeting: Meeting) => {
-        const { privateKey } = await getMeetingDependencies();
+        const { userKeys } = await getMeetingDependencies();
 
-        const password = await decryptMeetingPassword(meeting.Password, privateKey);
+        const password = await decryptMeetingPassword(meeting.Password, userKeys);
 
         let meetingName = 'Secure meeting';
 

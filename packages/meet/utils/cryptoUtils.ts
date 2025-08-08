@@ -5,7 +5,7 @@ import { CryptoProxy } from '@proton/crypto';
 import { decryptData, deriveKey, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword as computeBcryptHash, generateKeySalt as generateBcryptSalt } from '@proton/srp';
 import getRandomString from '@proton/utils/getRandomString';
@@ -121,11 +121,16 @@ export const encryptMeetingPassword = async (password: string, primaryUserKey: P
     return result.message;
 };
 
-export const decryptMeetingPassword = async (encryptedPassword: string, primaryUserKey: PrivateKeyReference) => {
+export const decryptMeetingPassword = async (
+    encryptedPassword: string,
+    userKeys: DecryptedKey<PrivateKeyReference>[]
+) => {
+    const keys = userKeys.map((key) => key.privateKey);
+
     const result = await CryptoProxy.decryptMessage({
         armoredMessage: encryptedPassword,
-        decryptionKeys: [primaryUserKey as PrivateKeyReference],
-        verificationKeys: [primaryUserKey as PrivateKeyReference],
+        decryptionKeys: keys,
+        verificationKeys: keys,
         signatureContext: {
             value: 'pw.link.meet.proton',
             requiredAfter: new Date(0),
@@ -157,20 +162,22 @@ export const hashPasswordWithSalt = async (password: string, salt?: string) => {
 export const getPassphraseFromEncryptedPassword = async ({
     encryptedPassword,
     basePassword,
-    privateKey,
+    userKeys,
 }: {
     encryptedPassword: string;
     basePassword: string;
-    privateKey: PrivateKeyReference;
+    userKeys: DecryptedKey<PrivateKeyReference>[];
 }) => {
-    const password = await decryptMeetingPassword(encryptedPassword, privateKey);
+    const password = await decryptMeetingPassword(encryptedPassword, userKeys);
 
+    // Removing the base password from the password
     const passphrase = password.slice(basePassword.length);
 
     if (!passphrase) {
         return passphrase;
     }
 
+    // Removing the underscore from the passphrase, as the password is just the base password + _ + the passphrase
     return passphrase.slice(1);
 };
 
