@@ -321,8 +321,7 @@ export default function useActions() {
                 await links
                     .emptyTrash(abortSignal)
                     .then(() => {
-                        const notificationText = c('Notification')
-                            .t`All items will soon be permanently deleted from trash`;
+                        const notificationText = c('Notification').t`All items deleted permanently from trash`;
                         createNotification({ text: notificationText });
                     })
                     .catch((err: any) => {
