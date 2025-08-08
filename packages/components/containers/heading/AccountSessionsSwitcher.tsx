@@ -6,6 +6,7 @@ import { Button, Scroll } from '@proton/atoms';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import Icon from '@proton/components/components/icon/Icon';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { ActiveSessionLite } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getSessionDisplayData } from '@proton/shared/lib/authentication/sessionDisplay';
 import clsx from '@proton/utils/clsx';
@@ -85,10 +86,16 @@ const AccountSessionsSwitcher = ({
                                                     <span data-testid="sessions:item-username">
                                                         {sessionDisplayData.name}
                                                     </span>
-                                                    {sessionDisplayData.status.isAdminSignedIntoMember && (
+                                                    {sessionDisplayData.accessType === AccessType.AdminAccess && (
                                                         <span className="color-weak">
                                                             {' - '}
                                                             {c('Info').t`Member`}
+                                                        </span>
+                                                    )}
+                                                    {sessionDisplayData.accessType === AccessType.EmergencyAccess && (
+                                                        <span className="color-weak">
+                                                            {' - '}
+                                                            {c('emergency_access').t`Trusted contact`}
                                                         </span>
                                                     )}
                                                 </div>

@@ -1,5 +1,6 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
+import { getAccessType } from '../authentication/getAccessType';
 import { PRODUCT_BIT, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { decodeBase64URL } from '../helpers/encoding';
@@ -21,7 +22,7 @@ export const isPrivate = (user: User) => user.Private === 1;
 export const isFree = (user: User) => !isPaid(user);
 export const isAdmin = (user: User) => user.Role === ADMIN_ROLE;
 export const isMember = (user: User) => user.Role === MEMBER_ROLE;
-export const isSelf = (user: User) => !user.OrganizationPrivateKey;
+export const isSelf = (user: User) => !user.OrganizationPrivateKey && !user.Flags?.['delegated-access'];
 export const isDelinquent = (user: User) => !!user.Delinquent;
 export const getHasNonDelinquentScope = (user: User) => user.Delinquent < UNPAID_STATE.DELINQUENT;
 export const canPay = (user: User) => [ADMIN_ROLE, FREE_ROLE].includes(user.Role) && isSelf(user);
@@ -41,6 +42,7 @@ export const getInfo = (User: User): UserInfo => {
         hasPaidDrive: hasPaidDrive(User),
         hasPaidPass: hasPaidPass(User),
         hasPassLifetime: hasPassLifetime(User),
+        accessType: getAccessType(User),
         canPay: canPay(User),
     };
 };
