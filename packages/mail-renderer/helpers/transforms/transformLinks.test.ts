@@ -75,5 +75,11 @@ describe('transformLinks service', () => {
             const { querySelector } = setup(ADD_REF + EMPTY_LINK);
             expect(querySelector('#anchorLink')?.hasAttribute('style')).toBe(false);
         });
+
+        it('should add target and http to link', () => {
+            const { querySelector } = setup('<a id="test-link" href="testing.com">testing</a>');
+            expect(querySelector('#test-link')?.getAttribute('target')).toBe('_blank');
+            expect(querySelector('#test-link')?.getAttribute('href')).toBe('http://testing.com');
+        });
     });
 });
