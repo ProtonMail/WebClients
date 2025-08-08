@@ -42,9 +42,10 @@ export const GlobalSnoozeModal = () => {
                 <Prompt
                     title={c('Title').t`Moving a snoozed message`}
                     buttons={[
-                        <Button color="norm" onClick={handleConfirm} data-testid="moveSnoozedConversation">{c('Action')
+                        <Button color="norm" onClick={handleConfirm} data-testid="confirm-button">{c('Action')
                             .t`OK`}</Button>,
-                        <Button onClick={() => setOpen(true)}>{c('Action').t`Cancel`}</Button>,
+                        <Button data-testid="cancel-button" onClick={() => setOpen(true)}>{c('Action')
+                            .t`Cancel`}</Button>,
                     ]}
                     {...modalProps}
                 >
