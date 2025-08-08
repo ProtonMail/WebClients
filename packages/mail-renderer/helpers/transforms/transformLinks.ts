@@ -91,6 +91,7 @@ export const transformLinks = (
     const utmTrackers: MessageUTMTracker[] = [];
 
     links.forEach((link) => {
+        sanitizeRelativeHttpLinks(link);
         httpInNewTab(link);
         noReferrerInfo(link);
 
@@ -102,7 +103,6 @@ export const transformLinks = (
             }
         }
 
-        sanitizeRelativeHttpLinks(link);
         disableAnchors(link);
     });
 
