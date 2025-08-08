@@ -8,13 +8,14 @@ import type { Element } from 'proton-mail/models/element';
 import type { ConversationState } from 'proton-mail/store/conversations/conversationsTypes';
 
 import {
+    scheduleTargetWithWarning,
     shouldOpenConfirmationModalForConverversation,
     shouldOpenConfirmationModalForMessages,
 } from './shouldOpenModal';
 
 describe('shouldOpenConfirmationModalForMessages', () => {
     describe('Schedule modal', () => {
-        it.each([[MAILBOX_LABEL_IDS.TRASH], [MAILBOX_LABEL_IDS.DRAFTS], [MAILBOX_LABEL_IDS.ALL_DRAFTS]])(
+        it.each(Array.from(scheduleTargetWithWarning))(
             'should return schedule modal if the element is scheduled and moved to warning folder %s',
             (targetLabelID) => {
                 const result = shouldOpenConfirmationModalForMessages({
