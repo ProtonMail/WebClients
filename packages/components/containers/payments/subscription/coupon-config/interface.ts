@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react';
 
-import { type CYCLE, type PlanIDs, type PlansMap } from '@proton/payments';
-import { type StrictRequired, type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { type CYCLE, type PlanIDs, type PlansMap, type SubscriptionCheckResponse } from '@proton/payments';
+import { type StrictRequired } from '@proton/shared/lib/interfaces';
 
 export type CouponConfigProps = {
     checkResult: SubscriptionCheckResponse | undefined;

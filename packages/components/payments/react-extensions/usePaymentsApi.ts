@@ -28,10 +28,11 @@ import {
     normalizePaymentMethodStatus,
     queryPaymentMethodStatus,
 } from '@proton/payments';
+import { SubscriptionMode } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { type Api, ChargebeeEnabled, SubscriptionMode } from '@proton/shared/lib/interfaces';
+import { type Api, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { useGetFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';

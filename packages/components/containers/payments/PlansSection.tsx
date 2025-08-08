@@ -29,6 +29,7 @@ import {
     getPlansMap,
     getValidAudience,
     getValidCycle,
+    hasPlanIDs,
     isValidPlanName,
 } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
@@ -36,7 +37,6 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';

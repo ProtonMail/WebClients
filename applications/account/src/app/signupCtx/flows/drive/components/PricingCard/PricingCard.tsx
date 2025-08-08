@@ -4,11 +4,10 @@ import { c, msgid } from 'ttag';
 
 import { DriveLogo, Price, SkeletonLoader, getCheckoutRenewNoticeTextFromCheckResult } from '@proton/components';
 import { IcBagPercentFilled } from '@proton/icons';
-import type { Currency } from '@proton/payments';
+import type { Currency, Tax } from '@proton/payments';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
-import type { Tax } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 

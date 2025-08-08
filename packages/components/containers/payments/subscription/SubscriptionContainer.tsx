@@ -25,6 +25,7 @@ import metrics, { observeApiError } from '@proton/metrics';
 import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import {
     type AddonGuard,
+    Audience,
     type BillingAddress,
     type CheckSubscriptionData,
     type Currency,
@@ -44,6 +45,8 @@ import {
     type PlanIDs,
     ProrationMode,
     type Subscription,
+    type SubscriptionCheckResponse,
+    SubscriptionMode,
     captureWrongPlanIDs,
     captureWrongPlanName,
     getCheckoutModifiers,
@@ -61,10 +64,12 @@ import {
     getPlansMap,
     hasDeprecatedVPN,
     hasLumoPlan,
+    hasPlanIDs,
     isCheckForbidden,
     isFreeSubscription,
     isManagedExternally,
     shouldPassIsTrial as shouldPassIsTrialPayments,
+    switchPlan,
 } from '@proton/payments';
 import { PaymentsContextProvider, useIsB2BTrial, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -76,10 +81,8 @@ import {
     getIsCustomCycle,
     getOptimisticCheckResult,
 } from '@proton/shared/lib/helpers/checkout';
-import { hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { Organization, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { Audience, SubscriptionMode } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -315,7 +318,6 @@ const SubscriptionContainerInner = ({
                 newPlan,
                 organization,
                 plans,
-                user,
             });
         }
 
@@ -689,10 +691,8 @@ const SubscriptionContainerInner = ({
     const normalizeModelBeforeCheck = (newModel: Model) => {
         const planTransitionForbidden = getIsPlanTransitionForbidden({
             subscription,
-            user,
             plansMap,
             planIDs: newModel.planIDs,
-            cycle: newModel.cycle,
         });
 
         if (planTransitionForbidden?.type === 'lumo-plus') {
@@ -1344,7 +1344,6 @@ const SubscriptionContainerInner = ({
                                 newPlan: PLANS.BUNDLE,
                                 organization,
                                 plans,
-                                user,
                             }),
                             step: SUBSCRIPTION_STEPS.CHECKOUT,
                         }).catch(noop);

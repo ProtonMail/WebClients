@@ -8,6 +8,7 @@ import type {
     PaymentStatus,
     PlanIDs,
     SavedPaymentMethod,
+    SubscriptionCheckResponse,
 } from '@proton/payments';
 import {
     type Currency,
@@ -28,7 +29,6 @@ import type {
     HumanVerificationMethodType,
     KeyTransparencyActivation,
     Organization,
-    SubscriptionCheckResponse,
     User,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';

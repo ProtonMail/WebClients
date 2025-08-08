@@ -26,13 +26,14 @@ import {
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { SubscriptionMode } from '@proton/payments';
 import { type OnBillingAddressChange, PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { Audience, SubscriptionMode, isBilledUser } from '@proton/shared/lib/interfaces';
+import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
