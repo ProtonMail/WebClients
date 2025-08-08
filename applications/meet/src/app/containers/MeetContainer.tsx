@@ -20,6 +20,7 @@ interface MeetContainerProps {
     handleEndMeeting: () => Promise<void>;
     shareLink: string;
     roomName: string;
+    currentEpoch: number | null;
     participantsMap: Record<string, ParticipantEntity>;
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
@@ -44,6 +45,7 @@ export const MeetContainer = ({
     handleEndMeeting,
     shareLink,
     roomName,
+    currentEpoch,
     participantsMap,
     participantNameMap,
     getParticipants,
@@ -92,6 +94,7 @@ export const MeetContainer = ({
                     setAudioOutputDeviceId,
                     setVideoDeviceId,
                     roomName,
+                    currentEpoch,
                     resolution,
                     setResolution,
                     meetingLink: shareLink,
