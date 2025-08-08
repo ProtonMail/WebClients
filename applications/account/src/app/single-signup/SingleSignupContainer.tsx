@@ -567,6 +567,7 @@ const SingleSignupContainer = ({
                     reportPaymentFailure(method, overrides);
                 },
                 hasZipCodeValidation,
+                canGenerateMnemonic: false,
             }),
             wait(3500),
         ]);
