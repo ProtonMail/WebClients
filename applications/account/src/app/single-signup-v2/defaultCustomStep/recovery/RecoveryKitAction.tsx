@@ -3,47 +3,51 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import clsx from '@proton/utils/clsx';
 
 import CopyRecoveryPhraseContainer from '../../../containers/recoveryPhrase/CopyRecoveryPhraseContainer';
+import type { RecoveryKitBlob } from '../../../containers/recoveryPhrase/types';
 import useRecoveryKitDownload from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
-import type { DeferredMnemonicData } from '../../../signup/interfaces';
 
 interface Props {
-    mnemonicData: DeferredMnemonicData;
+    recoveryPhrase: string;
+    recoveryKitBlob: RecoveryKitBlob | null;
     setApiRecoveryPhrase: () => Promise<void>;
     className?: string;
 }
 
-const RecoveryKitAction = ({ mnemonicData, setApiRecoveryPhrase, className }: Props) => {
-    const { downloadRecoveryKit, downloadingRecoveryKit } = useRecoveryKitDownload({
-        mnemonicData,
-        setApiRecoveryPhrase,
-    });
-    const size = `(${humanSize({ bytes: mnemonicData.blob.size })})`;
+const RecoveryKitAction = ({ recoveryPhrase, recoveryKitBlob, setApiRecoveryPhrase, className }: Props) => {
+    const { canDownloadRecoveryKit, downloadRecoveryKit, downloadingRecoveryKit, recoveryKitBlobToDownload } =
+        useRecoveryKitDownload({
+            recoveryKitBlob,
+            setApiRecoveryPhrase,
+        });
 
-    if (!downloadRecoveryKit) {
+    if (!canDownloadRecoveryKit) {
         /**
          * Fallback to copy functionality
          */
         return (
             <CopyRecoveryPhraseContainer
                 className={className}
-                recoveryPhrase={mnemonicData.recoveryPhrase}
+                recoveryPhrase={recoveryPhrase}
                 setApiRecoveryPhrase={setApiRecoveryPhrase}
             />
         );
     }
 
+    const size = `(${humanSize({ bytes: recoveryKitBlobToDownload.size })})`;
+
     return (
         <Button
             color="norm"
             shape="ghost"
-            className={className}
+            className={clsx('inline-flex items-center', className)}
             onClick={downloadRecoveryKit}
             loading={downloadingRecoveryKit}
         >
             <Icon name="arrow-down-line" className="mr-2" />
-            {c('pass_signup_2023: Action').t`Download PDF ${size}`}
+            {c('RecoveryPhrase: Action').t`Download PDF ${size}`}
         </Button>
     );
 };

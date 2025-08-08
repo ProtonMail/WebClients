@@ -1,5 +1,3 @@
-import { format } from 'date-fns';
-
 import { MAX_CHARS_API } from '@proton/account';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
@@ -9,7 +7,6 @@ import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { Subscription } from '@proton/payments';
 import { type PaymentsVersion, createSubscription, getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/payments';
-import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -37,15 +34,16 @@ import {
     getDecryptedUserKeysHelper,
     handleSetupKeys,
 } from '@proton/shared/lib/keys';
-import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import { getOrganization } from '@proton/shared/lib/organization/api';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
+import generateRecoveryPhrasePayload from '../../containers/recoveryPhrase/generateRecoveryPhrasePayload';
+import type { DeferredMnemonicData } from '../../containers/recoveryPhrase/types';
+import { generateRecoveryKitBlob } from '../../containers/recoveryPhrase/useRecoveryKitDownload';
 import type {
-    DeferredMnemonicData,
     SignupActionDoneResponse,
     SignupActionResponse,
     SignupCacheResult,
@@ -408,36 +406,28 @@ export const handleSetupMnemonic = async ({
     keyPassword,
     api,
     emailAddress,
-    setupMnemonic,
 }: {
     api: Api;
-    setupMnemonic?: SetupMnemonic;
     emailAddress: string;
     user: User;
     keyPassword: string;
 }): Promise<DeferredMnemonicData | undefined> => {
-    if (!setupMnemonic?.enabled || !setupMnemonic?.generate || !user.Keys.length) {
+    const generatedRecoveryPhrasePayload = await generateRecoveryPhrasePayload({ user, keyPassword, api });
+
+    if (!generatedRecoveryPhrasePayload) {
         return;
     }
 
-    const { randomBytes, salt, recoveryPhrase } = await generateMnemonicWithSalt();
+    const { recoveryPhrase, payload } = generatedRecoveryPhrasePayload;
 
-    const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
-
-    const payload = await generateMnemonicPayload({ randomBytes, salt, userKeys, api, username: user.Name });
-
-    const pdf = await setupMnemonic.generate({
-        // Not translated because the PDF isn't translated
-        date: `Created on ${format(new Date(), 'PPP')}`,
-        emailAddress,
+    const recoveryKitBlob = await generateRecoveryKitBlob({
         recoveryPhrase,
+        emailAddress,
     });
-
-    const blob = new Blob([pdf.buffer], { type: 'application/pdf' });
 
     return {
         recoveryPhrase,
-        blob,
+        recoveryKitBlob,
         payload,
     };
 };
@@ -452,16 +442,11 @@ export const sendMnemonicPayloadToBackend = async ({
     return api({ ...reactivateMnemonicPhrase(payload), ignoreHandler: [HTTP_ERROR_CODES.UNLOCK] });
 };
 
-interface SetupMnemonic {
-    enabled: boolean;
-    generate?: typeof generatePDFKit;
-}
-
 export const handleSetupUser = async ({
     cache,
     api,
     ignoreVPN,
-    setupMnemonic,
+    canGenerateMnemonic,
     setupKeys = true,
     reportPaymentSuccess,
     reportPaymentFailure,
@@ -470,7 +455,7 @@ export const handleSetupUser = async ({
     cache: SignupCacheResult;
     api: Api;
     ignoreVPN?: boolean;
-    setupMnemonic?: SetupMnemonic;
+    canGenerateMnemonic: boolean;
     setupKeys?: boolean;
     reportPaymentSuccess: () => void;
     reportPaymentFailure: () => void;
@@ -543,13 +528,15 @@ export const handleSetupUser = async ({
         source: SessionSource.Proton,
     });
 
-    const mnemonicData = await handleSetupMnemonic({
-        emailAddress: userEmail,
-        user,
-        keyPassword: keySetupData.keyPassword,
-        api,
-        setupMnemonic,
-    });
+    let mnemonicData: DeferredMnemonicData | undefined;
+    if (canGenerateMnemonic) {
+        mnemonicData = await handleSetupMnemonic({
+            emailAddress: userEmail,
+            user,
+            keyPassword: keySetupData.keyPassword,
+            api,
+        });
+    }
 
     const newCache: SignupCacheResult = {
         ...cache,

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -50,7 +50,7 @@ import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getPathFromLocation, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
@@ -62,6 +62,7 @@ import noop from '@proton/utils/noop';
 
 import mailReferPage from '../../pages/refer-a-friend';
 import { PublicThemeProvider, getPublicTheme } from '../containers/PublicThemeProvider';
+import { usePrefetchGenerateRecoveryKit } from '../containers/recoveryPhrase/useRecoveryKitDownload';
 import type { Paths } from '../content/helper';
 import { cachedPlans, cachedPlansMap } from '../defaultPlans';
 import { getOptimisticDomains, isPorkbunSignup, isReferralSignup } from '../signup/helper';
@@ -150,11 +151,6 @@ const getPorkbunClaimUrl = ({
     );
 };
 
-const getRecoveryKit = async () => {
-    // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
-    return import(/* webpackChunkName: "recovery-kit" */ '@proton/recovery-kit');
-};
-
 interface Props {
     initialSearchParams?: URLSearchParams;
     onLogin: OnLoginCallback;
@@ -172,8 +168,6 @@ interface Props {
     onStartAuth: () => Promise<void>;
     initialSessionsLength: boolean;
 }
-
-let ranPreload = false;
 
 const SingleSignupContainerV2 = ({
     initialSearchParams,
@@ -369,23 +363,7 @@ const SingleSignupContainerV2 = ({
         run().catch(noop);
     }, []);
 
-    useLayoutEffect(() => {
-        if (!generateMnemonic || ranPreload) {
-            return;
-        }
-        ranPreload = true;
-
-        setTimeout(() => {
-            /* Custom preload */
-            getRecoveryKit()
-                .then((result) => {
-                    document.body.append(...result.getPrefetch());
-                })
-                .catch((e) => {
-                    traceError(e);
-                });
-        }, 0);
-    }, [generateMnemonic]);
+    usePrefetchGenerateRecoveryKit();
 
     const measure = (data: TelemetryMeasurementData) => {
         const values = 'values' in data ? data.values : {};
@@ -1083,18 +1061,6 @@ const SingleSignupContainerV2 = ({
             ? getSimplePriceString(model.optimistic.currency || model.subscriptionData.currency, relativePricePerMonth)
             : undefined;
 
-    const getMnemonicSetup = async () => {
-        const recoveryKitGeneration = canGenerateMnemonic
-            ? await getRecoveryKit()
-                  .then((result) => result.generatePDFKit)
-                  .catch(noop)
-            : undefined;
-        return {
-            enabled: canGenerateMnemonic,
-            generate: recoveryKitGeneration,
-        };
-    };
-
     const getTelemetryParams = (subscriptionData: SubscriptionData, isAuthenticated: boolean) => {
         const method: PaymentProcessorType | 'n/a' = subscriptionData.payment?.paymentProcessorType ?? 'n/a';
         const plan = getPlanNameFromIDs(subscriptionData.planIDs);
@@ -1132,21 +1098,20 @@ const SingleSignupContainerV2 = ({
     };
 
     const handleSetupExistingUser = async (cache: UserCacheResult) => {
-        const setupMnemonic = await getMnemonicSetup();
-
         const getMnemonicData = async () => {
-            if (!canGenerateMnemonic || !setupMnemonic.generate) {
+            if (!canGenerateMnemonic) {
                 return;
             }
             const user = cache.session.resumedSessionResult.User;
             const emailAddress = user.Email || user.Name || '';
+
             const mnemonicData = await handleSetupMnemonic({
                 api: silentApi,
-                setupMnemonic,
                 user,
                 keyPassword: cache.session.resumedSessionResult.keyPassword,
                 emailAddress,
             });
+
             return mnemonicData;
         };
 
@@ -1181,7 +1146,6 @@ const SingleSignupContainerV2 = ({
     };
 
     const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
-        const setupMnemonic = await getMnemonicSetup();
         const isAuthenticated = !!model.session?.resumedSessionResult.UID;
 
         const [result] = await Promise.all([
@@ -1189,7 +1153,7 @@ const SingleSignupContainerV2 = ({
                 cache,
                 api: silentApi,
                 ignoreVPN: true,
-                setupMnemonic,
+                canGenerateMnemonic,
                 reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
                 reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
                 hasZipCodeValidation,
