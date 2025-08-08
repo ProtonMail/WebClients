@@ -1,7 +1,7 @@
 import { getCountryByAbbrMap, getLocalizedCountryByAbbr } from './countries';
 
 describe('getLocalizedCountryByAbbr', () => {
-    it('should return a name in English for ISO code and common aliases', () => {
+    it('should return a relevant name for ISO code in the given language', () => {
         expect(getLocalizedCountryByAbbr('GB', {
             language: 'en-US',
             countryByAbbr: getCountryByAbbrMap(),
@@ -20,7 +20,7 @@ describe('getLocalizedCountryByAbbr', () => {
         })).toBe('Italie');
     });
 
-    it('should return a name in English for ISO code and common aliases', () => {
+    it('should return a relevant name for common country code aliases in the given language', () => {
         expect(getLocalizedCountryByAbbr('UK', {
             language: 'en-US',
             countryByAbbr: getCountryByAbbrMap(),
