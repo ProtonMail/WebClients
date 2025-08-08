@@ -1,9 +1,9 @@
 import { addDays, isSameDay } from 'date-fns';
 
 import {
-    addZoomInfoToDescription,
-    removeZoomInfoFromDescription,
-} from '@proton/calendar/components/videoConferencing/zoom/zoomHelpers';
+    addVideoConfInfoToDescription,
+    removeVideoConfInfoFromDescription,
+} from '@proton/calendar/components/videoConferencing/videoConfHelpers';
 import { dedupeNotifications } from '@proton/shared/lib/calendar/alarms';
 import { modelToValarmComponent } from '@proton/shared/lib/calendar/alarms/modelToValarm';
 import { ICAL_EVENT_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
@@ -151,34 +151,37 @@ const modelToDescriptionProperties = ({
     conferenceHost,
     conferenceProvider,
 }: Partial<EventModel>) => {
-    const hasZoom = !!(
+    const hasVideoConf = !!(
         conferenceUrl &&
         conferenceId &&
         ((conferenceProvider as VIDEO_CONFERENCE_PROVIDER) === VIDEO_CONFERENCE_PROVIDER.ZOOM ||
-            conferenceUrl.includes('zoom.us'))
+            conferenceUrl.includes('zoom.us') ||
+            (conferenceProvider as VIDEO_CONFERENCE_PROVIDER) === VIDEO_CONFERENCE_PROVIDER.PROTON_MEET)
     );
 
-    // Return an empty object if there is no description and no Zoom meeting
-    if (!description && !hasZoom) {
+    // Return an empty object if there is no description and no video conference
+    if (!description && !hasVideoConf) {
         return {};
     }
 
-    // Return the description if there is no Zoom meeting
-    if (description && !hasZoom) {
-        const cleanedDescription = removeZoomInfoFromDescription(description ?? '');
+    // Return the description if there is no video conference
+    if (description && !hasVideoConf) {
+        const cleanedDescription = removeVideoConfInfoFromDescription(description ?? '');
         return { description: { value: cleanedDescription?.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION) } };
     }
 
-    // We remove the Zoom info from the description to avoid saving it twice
-    const cleanedDescription = removeZoomInfoFromDescription(description ?? '');
-    // We slice the description smaller to avoid too long descriptions with the generated Zoom info
+    // We remove the video conferencing info from the description to avoid saving it twice
+    const cleanedDescription = removeVideoConfInfoFromDescription(description ?? '');
+    // We slice the description smaller to avoid too long descriptions with the generated video conferencing info
     const slicedDescription = cleanedDescription?.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION);
-    const newDescription = addZoomInfoToDescription({
+
+    const newDescription = addVideoConfInfoToDescription({
         host: conferenceHost,
         meedingURL: conferenceUrl,
         password: conferencePassword,
         meetingId: conferenceId,
         description: slicedDescription,
+        provider: conferenceProvider,
     });
 
     return {
