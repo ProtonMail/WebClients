@@ -36,23 +36,26 @@ import {
     type FullPlansMap,
     PLANS,
     type PlanIDs,
+    SubscriptionMode,
     type SubscriptionPlan,
     getFallbackCurrency,
     getHas2024OfferCoupon,
     getPlanFromPlanIDs,
     getPlanOffer,
     getPlansMap,
+    getPricingFromPlanIDs,
+    getTotalFromPricing,
     isRegionalCurrency,
+    switchPlan,
 } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import { getPricingFromPlanIDs, getTotalFromPricing, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { Audience, ChargebeeEnabled, SubscriptionMode } from '@proton/shared/lib/interfaces';
+import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin-logo.svg';
 import { useFlag } from '@proton/unleash';
@@ -426,13 +429,11 @@ const Step1 = ({
                 newPlan: planName,
                 organization: model.session.organization,
                 plans: model.plans,
-                user: model.session.resumedSessionResult.User,
             });
 
             checkOptions.planIDs = switchedPlanIds;
 
             const result = getUpdatedPlanIDs({
-                user: model.session.resumedSessionResult.User,
                 subscription: model.session.subscription,
                 organization: model.session.organization,
                 plans: model.plans,

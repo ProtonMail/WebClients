@@ -6,7 +6,14 @@ import { getInitialStorage, getStorageRange } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { Subscription } from '@proton/payments';
-import { type PaymentsVersion, createSubscription, getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/payments';
+import {
+    type PaymentsVersion,
+    SubscriptionMode,
+    createSubscription,
+    getIsPassB2BPlan,
+    getIsVpnB2BPlan,
+    hasPlanIDs,
+} from '@proton/payments';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -25,10 +32,8 @@ import { APPS, CLIENT_TYPES, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } fro
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api, HumanVerificationMethodType, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
-import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import {
     generatePasswordlessOrganizationKey,
     getDecryptedUserKeysHelper,

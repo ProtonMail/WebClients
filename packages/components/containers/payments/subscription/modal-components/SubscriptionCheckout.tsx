@@ -23,13 +23,14 @@ import {
     type Subscription,
     getPlanFromPlanIDs,
     getPlanIDs,
+    hasPlanIDs,
     isLifetimePlanSelected,
+    planIDsPositiveDifference,
 } from '@proton/payments';
 import { type TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helpers/planIDs';
 import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';

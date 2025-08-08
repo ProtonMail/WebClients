@@ -1,5 +1,6 @@
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
+import type { SubscriptionCheckResponse } from '@proton/payments';
 import {
     type ADDON_NAMES,
     type BillingAddress,
@@ -32,9 +33,12 @@ import {
     getPaymentMethods,
     getPlan,
     getPlanFromPlanIDs,
+    getPricingFromPlanIDs,
     getSubscription,
+    hasPlanIDs,
     isLifetimePlanSelected,
     isValidPlanName,
+    switchPlan,
 } from '@proton/payments';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -42,12 +46,10 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import type { Api, Organization, SubscriptionCheckResponse, User } from '@proton/shared/lib/interfaces';
+import type { Api, Organization, User } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getOrganization } from '@proton/shared/lib/organization/api';
 import {
-    formatUser,
     canPay as getCanPay,
     isAdmin as getIsAdmin,
     hasPaidDrive,
@@ -447,7 +449,6 @@ const hasAccess = ({
 export const getUpdatedPlanIDs = ({
     options,
     subscription,
-    user,
     plansMap,
     currentPlan,
     toApp,
@@ -458,7 +459,6 @@ export const getUpdatedPlanIDs = ({
         planIDs: PlanIDs | undefined;
         cycle: CYCLE;
     };
-    user: User;
     plansMap: PlansMap;
     plans: Plan[];
     toApp: APP_NAMES;
@@ -471,10 +471,8 @@ export const getUpdatedPlanIDs = ({
     }
     const planTransitionForbidden = getIsPlanTransitionForbidden({
         subscription,
-        user: formatUser(user),
         plansMap,
         planIDs: options.planIDs,
-        cycle: options.cycle,
     });
 
     if (planTransitionForbidden?.type === 'lumo-plus') {
@@ -508,7 +506,6 @@ export const getUpdatedPlanIDs = ({
             newPlan: PLANS.BUNDLE,
             organization,
             plans,
-            user,
         });
         return { upsell, planIDs };
     }
@@ -642,13 +639,11 @@ export const getUserInfo = async ({
                 newPlan: upsell.plan.Name,
                 organization,
                 plans,
-                user,
             }),
         };
     }
 
     const result = getUpdatedPlanIDs({
-        user,
         subscription,
         organization,
         plans,

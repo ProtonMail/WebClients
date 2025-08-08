@@ -11,10 +11,15 @@ import InclusiveVatText from '@proton/components/containers/payments/InclusiveVa
 import { useCouponConfig } from '@proton/components/containers/payments/subscription/coupon-config/useCouponConfig';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { type PaymentFacade } from '@proton/components/payments/client-extensions';
-import { ADDON_NAMES, type Plan, TRIAL_DURATION_DAYS } from '@proton/payments';
+import {
+    ADDON_NAMES,
+    type Plan,
+    SubscriptionMode,
+    TRIAL_DURATION_DAYS,
+    getPricingFromPlanIDs,
+    getTotalFromPricing,
+} from '@proton/payments';
 import type { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
-import { SubscriptionMode } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { OptimisticOptions } from '../single-signup-v2/interface';

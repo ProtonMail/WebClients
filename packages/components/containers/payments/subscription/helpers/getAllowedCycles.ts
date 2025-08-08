@@ -7,12 +7,12 @@ import {
     type PlanIDs,
     type PlansMap,
     type Subscription,
+    getPlanFromIDs,
     hasCycle,
     isRegularCycle,
     isTrial,
 } from '@proton/payments';
 import { type ProductParam } from '@proton/shared/lib/apps/product';
-import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
 
 import { type CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { isSamePlanCheckout } from './isSamePlanCheckout';

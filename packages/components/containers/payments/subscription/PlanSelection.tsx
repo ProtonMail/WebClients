@@ -52,11 +52,11 @@ import {
     isFreeSubscription,
     isRegionalCurrency,
     mainCurrencies,
+    switchPlan,
 } from '@proton/payments';
 import { OfferPrice } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
-import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { Audience, type Organization, type UserModel, type VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
@@ -657,7 +657,6 @@ const PlanSelection = (props: Props) => {
                             newPlan: isFree ? undefined : planName,
                             organization,
                             plans,
-                            user,
                         }),
                         cycle,
                         plan.Currency
