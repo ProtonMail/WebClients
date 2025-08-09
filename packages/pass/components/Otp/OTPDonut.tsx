@@ -1,6 +1,7 @@
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 'react';
 
-import type { OTPRendererHandles } from '@proton/pass/components/Otp/types';
+import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
+import type { MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import './OTPDonut.scss';
@@ -22,7 +23,10 @@ export const DEFAULT_OTP_COLORS: OTPDonutColorConfig<CSSVarColor> = {
     danger: '--signal-danger',
 };
 
-export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
+/** Should be customizable */
+const size = 36;
+
+export const OTPDonut = forwardRef<IOtpRenderer, Props>(
     ({ colors = DEFAULT_OTP_COLORS, enabled, thickness = 3 }, ref) => {
         const wrapperRef = useRef<HTMLDivElement>(null);
         const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -44,39 +48,39 @@ export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
             },
             [colors]
         );
+        useImperativeHandle<IOtpRenderer, IOtpRenderer>(ref, () => {
+            const setupCanvas = (countdown: number): MaybeNull<CanvasRenderingContext2D> => {
+                const canvas = canvasRef.current;
+                const ctx = canvas?.getContext('2d');
+                if (!(canvas && ctx)) return null;
 
-        useImperativeHandle<OTPRendererHandles, OTPRendererHandles>(
-            ref,
-            () => ({
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = size * dpr;
+                canvas.height = size * dpr;
+                ctx.scale(dpr, dpr);
+                ctx.clearRect(0, 0, size, size);
+
+                wrapperRef.current?.style.setProperty('--countdown-value', `"${countdown}"`);
+                return ctx;
+            };
+
+            return {
                 draw: (percent, period) => {
                     const countDown = Math.round(percent * period);
-                    wrapperRef.current?.style.setProperty('--countdown-value', `"${countDown}"`);
+                    const ctx = setupCanvas(countDown);
+                    if (!ctx) return;
 
-                    const canvas = canvasRef.current;
-                    const ctx = canvas?.getContext('2d');
-                    if (!(canvas && ctx)) return;
-
-                    const size = 36;
-                    const dpr = window.devicePixelRatio || 1;
-                    const computedColors = getColors(canvas);
-
-                    const emptyColor = computedColors.empty;
+                    const computedColors = getColors(canvasRef.current!);
                     const fillColor = (() => {
                         if (countDown <= 5) return computedColors.danger;
                         if (countDown <= 10) return computedColors.warning;
                         return computedColors.filled;
                     })();
 
-                    canvas.width = size * dpr;
-                    canvas.height = size * dpr;
-                    ctx.scale(dpr, dpr);
-
                     const center = size / 2;
                     const radius = center - thickness;
                     const startAngle = -Math.PI / 2;
                     const endAngle = startAngle + (1 - percent) * (2 * Math.PI);
-
-                    ctx.clearRect(0, 0, size, size);
 
                     ctx.strokeStyle = fillColor;
                     ctx.lineWidth = thickness;
@@ -84,15 +88,21 @@ export const OTPDonut = forwardRef<OTPRendererHandles, Props>(
                     ctx.arc(center, center, radius, endAngle, startAngle);
                     ctx.stroke();
 
-                    ctx.strokeStyle = emptyColor;
+                    ctx.strokeStyle = computedColors.empty;
                     ctx.lineWidth = thickness;
                     ctx.beginPath();
                     ctx.arc(center, center, radius, startAngle, endAngle);
                     ctx.stroke();
                 },
-            }),
-            [getColors]
-        );
+
+                drawFrom: (countdown, canvas) => {
+                    const ctx = setupCanvas(countdown);
+                    if (ctx) ctx.drawImage(canvas, 0, 0, size, size);
+                },
+
+                getCanvas: () => canvasRef.current ?? null,
+            };
+        }, [getColors]);
 
         useEffect(() => (colorsRef.current = undefined), [colors]);
 
