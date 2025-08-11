@@ -137,6 +137,7 @@ enum DriveFeatureFlag {
     DriveWebSDKFileDetailsModal = 'DriveWebSDKFileDetailsModal',
     DriveWebSDKFolders = 'DriveWebSDKFolders',
     DriveWebSDKSharedByMe = 'DriveWebSDKSharedByMe',
+    DriveWebSDKSharedWithMe = 'DriveWebSDKSharedWithMe',
 }
 
 enum DocsFeatureFlag {

@@ -49,6 +49,10 @@ export type {
     Author,
     InvalidNameError,
     ProtonDriveClient,
+    ProtonInvitationWithNode,
+    MaybeBookmark,
+    Bookmark,
+    BookmarkOrUid,
 } from '@protontech/drive-sdk';
 
 /* Other export */
@@ -64,6 +68,7 @@ export {
     RateLimitedError,
     ConnectionError,
     NonProtonInvitationState,
+    DriveEventType,
 } from '@protontech/drive-sdk';
 
 let driveSingleton: ProtonDriveClient;

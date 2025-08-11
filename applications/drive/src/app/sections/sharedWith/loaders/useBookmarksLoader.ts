@@ -1,0 +1,92 @@
+import { useCallback } from 'react';
+
+import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
+
+import { useNotifications } from '@proton/components';
+import { useDrive } from '@proton/drive/index';
+import useFlag from '@proton/unleash/useFlag';
+
+import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
+import { getBookmark } from '../../../utils/sdk/getBookmark';
+import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
+
+export const useBookmarksLoader = () => {
+    const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
+    const { drive } = useDrive();
+    const { createNotification } = useNotifications();
+    const { handleError } = useSdkErrorHandler();
+
+    const { setSharedWithMeItemInStore, setLoadingBookmarks } = useSharedWithMeListingStore(
+        useShallow((state) => ({
+            setSharedWithMeItemInStore: state.setSharedWithMeItem,
+            setLoadingBookmarks: state.setLoadingBookmarks,
+        }))
+    );
+
+    const loadBookmarks = useCallback(
+        async (abortSignal: AbortSignal) => {
+            if (useSharedWithMeListingStore.getState().isLoadingBookmarks || bookmarksFeatureDisabled) {
+                return;
+            }
+            setLoadingBookmarks(true);
+            try {
+                let showErrorNotification = false;
+
+                for await (const maybeBookmark of drive.iterateBookmarks(abortSignal)) {
+                    try {
+                        const { bookmark } = getBookmark(maybeBookmark);
+                        setSharedWithMeItemInStore({
+                            name: bookmark.node.name,
+                            type: bookmark.node.type,
+                            mediaType: bookmark.node.mediaType,
+                            itemType: ItemType.BOOKMARK,
+                            thumbnailId: undefined,
+                            size: undefined,
+                            bookmark: {
+                                uid: bookmark.uid,
+                                creationTime: bookmark.creationTime,
+                                url: bookmark.url,
+                            },
+                            legacy: {
+                                linkId: '',
+                                shareId: '',
+                                volumeId: '',
+                            },
+                        });
+                    } catch (e) {
+                        handleError(e, {
+                            showNotification: false,
+                        });
+                        showErrorNotification = true;
+                    }
+                }
+
+                if (showErrorNotification) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`We were not able to load some of your bookmarks`,
+                    });
+                }
+            } catch (e) {
+                handleError(e, {
+                    fallbackMessage: c('Error').t`We were not able to load some of your saved shared links`,
+                });
+            } finally {
+                setLoadingBookmarks(false);
+            }
+        },
+        [
+            bookmarksFeatureDisabled,
+            setLoadingBookmarks,
+            drive,
+            setSharedWithMeItemInStore,
+            handleError,
+            createNotification,
+        ]
+    );
+
+    return {
+        loadBookmarks,
+    };
+};

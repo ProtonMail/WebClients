@@ -6,7 +6,10 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { queryInvitationDetails, queryListPendingInvitations } from '@proton/shared/lib/api/drive/invitation';
 import type { ShareInvitationDetailsPayload } from '@proton/shared/lib/interfaces/drive/invitation';
-import { type ListDrivePendingInvitationsPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import {
+    type ListDrivePendingInvitationsPayload,
+    type ShareTargetType,
+} from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -34,7 +37,8 @@ export function useInvitationsListing() {
     const debouncedRequest = useDebouncedRequest();
     const { loadFullListingWithAnchor } = useLinksListingHelpers();
     const { decryptInvitationLinkName } = useInvitations();
-    const { setInvitations, getAllInvitations, getInvitation, removeInvitations } = useInvitationsState();
+    const { setInvitations, getAllInvitations, getAlbumsInvitations, getInvitation, removeInvitations } =
+        useInvitationsState();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const invitationsIdsState = useRef<Set<string>>(new Set());
@@ -126,7 +130,8 @@ export function useInvitationsListing() {
 
     const fetchInvitationsNextPage = async (
         signal: AbortSignal,
-        AnchorID?: string
+        AnchorID?: string,
+        shareTargetType?: ShareTargetType
     ): Promise<{ AnchorID: string; More: boolean }> => {
         if (fetchMeta.current.isEverythingFetched) {
             return {
@@ -138,7 +143,21 @@ export function useInvitationsListing() {
         const response = await debouncedRequest<ListDrivePendingInvitationsPayload>(
             queryListPendingInvitations({ AnchorID }),
             signal
-        );
+        ).then(({ Invitations, AnchorID, More }) => {
+            if (!shareTargetType) {
+                return { Invitations, AnchorID, More };
+            }
+
+            const filteredInvitations = Invitations.filter(
+                (Invitation) => Invitation.ShareTargetType === shareTargetType
+            );
+
+            return {
+                Invitations: filteredInvitations,
+                AnchorID,
+                More,
+            };
+        });
 
         const invitationsIds = response.Invitations.map((invitation) => invitation.InvitationID);
         setInvitationsIdsState(invitationsIds);
@@ -164,18 +183,24 @@ export function useInvitationsListing() {
     /**
      * Loads shared with me links.
      */
-    const loadInvitations = async (signal: AbortSignal): Promise<{ Count?: number } | void> => {
+    const loadInvitations = async (
+        signal: AbortSignal,
+        shareTargetType?: ShareTargetType
+    ): Promise<{ Count?: number } | void> => {
         // This function (loadSharedWithMeLinks) will be called only once (in useEffect of useSharedWithMeView).
         // We reset the state of fetchMeta to allow fetching new items in case of tab change for exemple
         fetchMeta.current.isEverythingFetched = false;
-        const callback = (AnchorID?: string) => fetchInvitationsNextPage(signal, AnchorID);
+        const callback = (AnchorID?: string) => fetchInvitationsNextPage(signal, AnchorID, shareTargetType);
         return loadFullListingWithAnchor(callback);
     };
 
     const getCachedInvitations = useCallback(() => getAllInvitations(), [getAllInvitations]);
 
+    const getCachedAlbumsInvitations = useCallback(() => getAlbumsInvitations(), [getAlbumsInvitations]);
+
     return {
         loadInvitations,
         getCachedInvitations,
+        getCachedAlbumsInvitations,
     };
 }
