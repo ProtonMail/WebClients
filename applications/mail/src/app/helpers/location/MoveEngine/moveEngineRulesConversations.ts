@@ -1,14 +1,9 @@
+import { getContextNumMessages } from '@proton/mail/helpers/conversation';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { isConversation } from 'proton-mail/helpers/elements';
-import { type Conversation } from 'proton-mail/models/conversation';
 
 import { ERROR_ELEMENT_NOT_CONVERSATION, type MoveEngineRule, MoveEngineRuleResult } from './moveEngineInterface';
-
-const getContextNumMessages = (conversation: Conversation, labelID: string) => {
-    const label = conversation.Labels?.find(({ ID }) => ID === labelID);
-    return label?.ContextNumMessages || 0;
-};
 
 // Any conversation can move to INBOX
 // Sent or drafts messages cannot move to INBOX, but they will be moved to SENT or DRAFTS if they are not already there

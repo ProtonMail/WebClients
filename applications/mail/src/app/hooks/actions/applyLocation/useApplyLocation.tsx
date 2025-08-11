@@ -3,8 +3,10 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail/index';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { type SPAM_ACTION, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { type SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import useFlag from '@proton/unleash/useFlag';
+import isTruthy from '@proton/utils/isTruthy';
+import unique from '@proton/utils/unique';
 
 import { useMailGlobalModals } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
@@ -15,11 +17,18 @@ import {
     shouldOpenConfirmationModalForMessages,
 } from 'proton-mail/helpers/location/moveModal/shouldOpenModal';
 import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
+import { useGetElementByID } from 'proton-mail/hooks/mailbox/useElements';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
-import { useMailDispatch } from 'proton-mail/store/hooks';
-import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
+import { paramsSelector } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import {
+    labelConversations,
+    labelMessages,
+    unlabelConversations,
+    unlabelMessages,
+} from 'proton-mail/store/mailbox/mailboxActions';
 
 export interface ApplyLocationParams {
     elements: Element[];
@@ -43,19 +52,34 @@ export const useApplyLocation = () => {
     const { conversationMoveEngine, messageMoveEngine } = useMoveEngine();
     const { notify } = useMailGlobalModals();
 
+    const sourceLabelID = useMailSelector(paramsSelector).labelID;
+
     const getConversationById = useGetConversation();
+    const getElementByID = useGetElementByID();
 
     const dispatchMessage = ({
         elements,
         removeLabel = false,
         targetLabelID,
         showSuccessNotification = true,
-    }: ApplyLocationParams): Promise<any> => {
+        spamAction,
+    }: ApplyLocationParams & { spamAction?: SPAM_ACTION }): Promise<any> => {
+        // Get all conversations in element state linked to messages that are moving
+        const conversationIDs = unique((elements as Message[]).map((message) => message.ConversationID));
+
+        const conversationsFromMessages: Conversation[] = conversationIDs
+            .map((id: string) => {
+                return getElementByID(id);
+            })
+            .filter(isTruthy);
+
         if (removeLabel) {
             return dispatch(
                 unlabelMessages({
                     elements: elements as Message[],
+                    conversations: conversationsFromMessages,
                     targetLabelID,
+                    sourceLabelID,
                     isEncryptedSearch: false,
                     showSuccessNotification,
                     labels,
@@ -66,6 +90,30 @@ export const useApplyLocation = () => {
             return dispatch(
                 labelMessages({
                     elements: elements as Message[],
+                    conversations: conversationsFromMessages,
+                    targetLabelID,
+                    sourceLabelID,
+                    isEncryptedSearch: false,
+                    showSuccessNotification,
+                    labels,
+                    folders,
+                    spamAction,
+                })
+            );
+        }
+    };
+
+    const dispatchConversation = ({
+        elements,
+        removeLabel = false,
+        targetLabelID,
+        showSuccessNotification = true,
+        spamAction,
+    }: ApplyLocationParams & { spamAction?: SPAM_ACTION }): Promise<any> => {
+        if (removeLabel) {
+            return dispatch(
+                unlabelConversations({
+                    conversations: elements as Conversation[],
                     targetLabelID,
                     isEncryptedSearch: false,
                     showSuccessNotification,
@@ -73,11 +121,20 @@ export const useApplyLocation = () => {
                     folders,
                 })
             );
+        } else {
+            return dispatch(
+                labelConversations({
+                    conversations: elements as Conversation[],
+                    targetLabelID,
+                    sourceLabelID,
+                    isEncryptedSearch: false,
+                    showSuccessNotification,
+                    labels,
+                    folders,
+                    spamAction,
+                })
+            );
         }
-    };
-
-    const dispatchConversation = (): Promise<any> => {
-        throw new Error('Not implemented');
     };
 
     const applyLocation = ({
@@ -130,7 +187,12 @@ export const useApplyLocation = () => {
                     value: {
                         isMessage,
                         onConfirm: () => {
-                            return dispatchConversation();
+                            return dispatchConversation({
+                                elements: result.allowedElements as Message[],
+                                targetLabelID,
+                                removeLabel,
+                                showSuccessNotification,
+                        });
                         },
                     },
                 });
@@ -140,7 +202,12 @@ export const useApplyLocation = () => {
                     type: ModalType.Snooze,
                     value: {
                         onConfirm: () => {
-                            return dispatchConversation();
+                            return dispatchConversation({
+                                elements: result.allowedElements as Message[],
+                                targetLabelID,
+                                removeLabel,
+                                showSuccessNotification,
+                            });
                         },
                     },
                 });
@@ -152,15 +219,25 @@ export const useApplyLocation = () => {
                         isMessage,
                         elementLength: elements.length,
                         onConfirm: (spamAction: SPAM_ACTION) => {
-                            alert(`Unsubscribed ${spamAction}`);
-                            return dispatchConversation();
+                            return dispatchConversation({
+                                elements: result.allowedElements as Message[],
+                                targetLabelID,
+                                removeLabel,
+                                showSuccessNotification,
+                                spamAction,
+                            });
                         },
                     },
                 });
                 return Promise.resolve();
             }
 
-            return dispatchConversation();
+            return dispatchConversation({
+                elements: result.allowedElements as Message[],
+                targetLabelID,
+                removeLabel,
+                showSuccessNotification,
+            });
         } else if (isMessage) {
             const result = messageMoveEngine.validateMove(targetLabelID, elements as Message[], removeLabel);
 
@@ -211,13 +288,12 @@ export const useApplyLocation = () => {
                         isMessage,
                         elementLength: elements.length,
                         onConfirm: (spamAction: SPAM_ACTION) => {
-                            // TODO handle in the conversation reducer merge request
-                            console.log(`spamAction: ${spamAction}`);
                             return dispatchMessage({
                                 elements: result.allowedElements as Message[],
                                 targetLabelID,
                                 removeLabel,
                                 showSuccessNotification,
+                                spamAction,
                             });
                         },
                     },
@@ -236,5 +312,5 @@ export const useApplyLocation = () => {
         }
     };
 
-    return { applyOptimisticLocationEnabled: flagState && mailSettings.ViewMode === VIEW_MODE.SINGLE, applyLocation };
+    return { applyOptimisticLocationEnabled: flagState, applyLocation };
 };

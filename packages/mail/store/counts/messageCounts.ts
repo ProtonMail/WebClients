@@ -8,7 +8,14 @@ import { type LabelCount } from '@proton/shared/lib/interfaces';
 
 import type { Element } from 'proton-mail/models/element';
 
-import { labelMessages, markMessagesAsRead, markMessagesAsUnread, unlabelMessages } from './messageCountsReducers';
+import {
+    labelConversationsPending,
+    labelMessages,
+    markMessagesAsRead,
+    markMessagesAsUnread,
+    unlabelConversationsPending,
+    unlabelMessages,
+} from './messageCountsReducers';
 
 const name = 'messageCounts' as const;
 
@@ -65,6 +72,12 @@ const slice = createSlice({
         },
         unlabelMessagesPending: (state, action) => {
             unlabelMessages(state, action);
+        },
+        labelConversationsPending: (state, action) => {
+            labelConversationsPending(state, action);
+        },
+        unlabelConversationsPending: (state, action) => {
+            unlabelConversationsPending(state, action);
         },
     },
     extraReducers: (builder) => {
