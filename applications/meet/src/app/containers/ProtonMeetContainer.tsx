@@ -94,6 +94,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const joinBlockedRef = useRef(false);
 
+    const refetchedParticipantNameMapRef = useRef(false);
+
     const handleDevicePermissionChange = useCallback(
         (permissions: { camera?: PermissionState; microphone?: PermissionState }) => {
             setDevicePermissions((prevPermissions) => ({ ...prevPermissions, ...permissions }));
@@ -450,6 +452,21 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             window.removeEventListener('unload', handleUnload);
         };
     }, []);
+
+    useEffect(() => {
+        if (refetchedParticipantNameMapRef.current) {
+            return;
+        }
+
+        if (
+            joinedRoom &&
+            roomRef.current &&
+            !participantNameMap[roomRef.current?.localParticipant.identity as string]
+        ) {
+            refetchedParticipantNameMapRef.current = true;
+            void getParticipants(token);
+        }
+    }, [getParticipants, token, participantNameMap, joinedRoom]);
 
     if (decryptionReadinessStatus === MeetingDecryptionReadinessStatus.UNINITIALIZED) {
         return null;

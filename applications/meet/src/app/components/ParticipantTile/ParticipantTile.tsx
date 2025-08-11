@@ -27,7 +27,7 @@ const getCameraVideoPublication = (participant: Participant) => {
 
 export const ParticipantTile = ({ participant, smallView = false }: ParticipantTileProps) => {
     const { localParticipant } = useLocalParticipant();
-    const { participantNameMap, disableVideos, participantsWithDisabledVideos } = useMeetContext();
+    const { participantNameMap, disableVideos, participantsWithDisabledVideos, displayName } = useMeetContext();
     const cameraVideoPublication = getCameraVideoPublication(participant);
     const audioPublication = Array.from(participant.trackPublications.values()).find(
         (pub) => pub.kind === Track.Kind.Audio && pub.track
@@ -49,7 +49,10 @@ export const ParticipantTile = ({ participant, smallView = false }: ParticipantT
 
     const isLocalParticipant = participant.identity === localParticipant.identity;
 
-    const participantName = participantNameMap[participant.identity] ?? c('meet_2025 Info').t`Loading...`;
+    const participantNameFallback =
+        participant.identity === localParticipant.identity ? displayName : c('meet_2025 Info').t`Loading...`;
+
+    const participantName = participantNameMap[participant.identity] ?? participantNameFallback;
 
     return (
         <div
