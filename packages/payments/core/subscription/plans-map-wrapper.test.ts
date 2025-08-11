@@ -174,7 +174,7 @@ describe('planExists', () => {
             } as Plan,
         ];
 
-        expect(planExists(plans, PLANS.VPN, 'USD', 1)).toBe(false);
+        expect(planExists(plans, PLANS.VPN2024, 'USD', 1)).toBe(false);
     });
 
     it('should return false if currency does not match', () => {
@@ -198,7 +198,7 @@ describe('getPlansMap', () => {
                 Currency: 'USD',
             } as Plan,
             {
-                Name: PLANS.VPN,
+                Name: PLANS.VPN2024,
                 Currency: 'USD',
             } as Plan,
         ];
@@ -206,7 +206,7 @@ describe('getPlansMap', () => {
         const plansMap = getPlansMap(plans, 'USD');
         expect(plansMap).toEqual({
             [PLANS.MAIL]: { Name: PLANS.MAIL, Currency: 'USD' },
-            [PLANS.VPN]: { Name: PLANS.VPN, Currency: 'USD' },
+            [PLANS.VPN2024]: { Name: PLANS.VPN2024, Currency: 'USD' },
         });
     });
 });

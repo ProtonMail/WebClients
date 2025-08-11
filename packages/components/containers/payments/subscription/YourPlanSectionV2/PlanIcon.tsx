@@ -42,7 +42,7 @@ export const PlanIcon = ({
     subscription?: Subscription | FreeSubscription;
     planName?: PLANS;
 }) => {
-    if (getHasConsumerVpnPlan(subscription) || planName === PLANS.VPN || planName === PLANS.VPN2024) {
+    if (getHasConsumerVpnPlan(subscription) || planName === PLANS.VPN2024) {
         return (
             <LogoIconShape>
                 <VpnLogo variant="glyph-only" />

@@ -221,7 +221,7 @@ describe('useAccessiblePlans', () => {
 
         const props: AccessiblePlansHookProps = {
             selectedProductPlans: {
-                b2c: PLANS.VPN,
+                b2c: PLANS.VPN2024,
                 b2b: PLANS.MAIL_PRO,
                 family: PLANS.FAMILY,
             },
@@ -259,7 +259,7 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.LUMO, 'USD', undefined, false),
             ],
             IndividualPlans: [
-                getPlanByName(plans, PLANS.MAIL, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.VPN2024, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.BUNDLE, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.DUO, 'USD', undefined, false),
             ],

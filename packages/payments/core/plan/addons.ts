@@ -107,7 +107,6 @@ const {
     DRIVE_1TB,
     PASS,
     PASS_FAMILY,
-    VPN,
     VPN2024,
     BUNDLE,
     FAMILY,
@@ -149,10 +148,6 @@ export function getSupportedB2CAddons(planIDs: PlanIDs): SupportedAddons {
 
     if (planIDs[PASS_FAMILY]) {
         supported[ADDON_NAMES.LUMO_PASS_FAMILY] = true;
-    }
-
-    if (planIDs[VPN]) {
-        supported[ADDON_NAMES.LUMO_VPN] = true;
     }
 
     if (planIDs[VPN2024]) {

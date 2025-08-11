@@ -58,14 +58,6 @@ export function getPlan(subscription: Subscription | FreeSubscription | undefine
     return result;
 }
 
-export function getPrimaryPlan(subscription: Subscription | FreeSubscription | undefined) {
-    if (!subscription) {
-        return;
-    }
-
-    return getPlan(subscription);
-}
-
 export function hasLifetimeCoupon(subscription: Subscription | FreeSubscription | undefined) {
     return subscription?.CouponCode === COUPON_CODES.LIFETIME;
 }
@@ -85,7 +77,7 @@ export function getSubscriptionPlanTitle(
 } {
     const primaryPlan = (() => {
         if (user.isPaid && !isFreeSubscription(subscription)) {
-            return getPrimaryPlan(subscription) ?? FREE_PLAN;
+            return getPlan(subscription) ?? FREE_PLAN;
         } else if (user.hasPassLifetime) {
             return {
                 Title: PLAN_NAMES[PLANS.PASS_LIFETIME],
@@ -131,8 +123,6 @@ export const getLumoAddonNameByPlan = (planName: PLANS) => {
             return ADDON_NAMES.LUMO_PASS;
         case PLANS.PASS_FAMILY:
             return ADDON_NAMES.LUMO_PASS_FAMILY;
-        case PLANS.VPN:
-            return ADDON_NAMES.LUMO_VPN;
         case PLANS.VPN2024:
             return ADDON_NAMES.LUMO_VPN2024;
         case PLANS.BUNDLE:
@@ -439,7 +429,6 @@ const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.DRIVE_1TB,
     PLANS.PASS,
     PLANS.PASS_FAMILY,
-    PLANS.VPN,
     PLANS.VPN2024,
     PLANS.LUMO,
     PLANS.BUNDLE,
@@ -531,7 +520,6 @@ export const getHasPlusPlan = (planName?: PLANS | ADDON_NAMES) => {
         planName &&
         [
             PLANS.MAIL,
-            PLANS.VPN,
             PLANS.VPN2024,
             PLANS.PASS,
             PLANS.DRIVE,
@@ -584,16 +572,6 @@ export const getHasMailB2BPlan = (subscription: MaybeFreeSubscription) => {
 
 export const getHasInboxB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription);
-};
-
-export const hasB2BPlan = (subscription: MaybeFreeSubscription) => {
-    return (
-        hasAnyBundlePro(subscription) ||
-        getHasMailB2BPlan(subscription) ||
-        getHasDriveB2BPlan(subscription) ||
-        getHasPassB2BPlan(subscription) ||
-        getHasVpnB2BPlan(subscription)
-    );
 };
 
 export const getBaseAmount = (
@@ -736,26 +714,6 @@ export function getLongerCycle(cycle: CYCLE | undefined): CYCLE | undefined {
 
     return cycle;
 }
-
-export const hasYearly = (subscription?: Subscription) => {
-    return subscription?.Cycle === CYCLE.YEARLY;
-};
-
-export const hasMonthly = (subscription?: Subscription) => {
-    return subscription?.Cycle === CYCLE.MONTHLY;
-};
-
-export const hasTwoYears = (subscription?: Subscription) => {
-    return subscription?.Cycle === CYCLE.TWO_YEARS;
-};
-
-export const hasFifteen = (subscription?: Subscription) => {
-    return subscription?.Cycle === CYCLE.FIFTEEN;
-};
-
-export const hasThirty = (subscription?: Subscription) => {
-    return subscription?.Cycle === CYCLE.THIRTY;
-};
 
 export interface PricingForCycles {
     [CYCLE.MONTHLY]: number;
@@ -1181,7 +1139,7 @@ export function isForbiddenPlusToPlus({
     if (!subscription) {
         return false;
     }
-    const subscribedPlan = getPrimaryPlan(subscription?.UpcomingSubscription ?? subscription);
+    const subscribedPlan = getPlan(subscription?.UpcomingSubscription ?? subscription);
     const subscribedPlans = [subscribedPlan].filter(isTruthy).filter(
         /**
          Ignore pass lifetime, they should always be allowed to change to another plus plan

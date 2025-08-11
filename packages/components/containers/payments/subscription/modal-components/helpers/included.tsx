@@ -122,7 +122,7 @@ export const getWhatsIncluded = ({
         ];
     }
 
-    const vpn = planIDs[PLANS.VPN] || planIDs[PLANS.VPN2024];
+    const vpn = planIDs[PLANS.VPN2024];
     if (vpn !== undefined && vpn > 0) {
         included = [
             {

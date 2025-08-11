@@ -79,7 +79,7 @@ export const getPlanInformation = ({
         };
     }
 
-    if (selectedPlan.Name === PLANS.VPN || selectedPlan.Name === PLANS.VPN2024) {
+    if (selectedPlan.Name === PLANS.VPN2024) {
         const plusServers = getPlusServers(vpnServersCountData.paid.servers, vpnServersCountData.paid.countries);
 
         return {

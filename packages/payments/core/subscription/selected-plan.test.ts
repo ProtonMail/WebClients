@@ -698,7 +698,7 @@ describe('SelectedPlan', () => {
         expect(selectedPlan.getTotalIPs()).toBe(4);
     });
 
-    it.each([{ [PLANS.VPN]: 1 }, { [PLANS.DRIVE]: 1 }])(
+    it.each([{ [PLANS.VPN2024]: 1 }, { [PLANS.DRIVE]: 1 }])(
         'should return 1 for total users if there are no members',
         (planIDs) => {
             const selectedPlan = new SelectedPlan(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');

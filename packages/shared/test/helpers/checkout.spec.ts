@@ -11,7 +11,7 @@ const getAddon = (data: Partial<Plan>) => {
 
 // TODO add AI addon tests
 const vpnPlan: Partial<Plan> = {
-    Name: PLANS.VPN,
+    Name: PLANS.VPN2024,
     Title: 'VPN',
     Pricing: {
         [CYCLE.MONTHLY]: 999,
@@ -104,7 +104,7 @@ describe('should get checkout result', () => {
         expect(
             getCheckout({
                 planIDs: {
-                    [PLANS.VPN]: 1,
+                    [PLANS.VPN2024]: 1,
                 },
                 checkResult: {
                     Amount: 999,
@@ -117,15 +117,15 @@ describe('should get checkout result', () => {
                     RenewCycle: null,
                 },
                 plansMap: {
-                    [PLANS.VPN]: getPlan(vpnPlan),
+                    [PLANS.VPN2024]: getPlan(vpnPlan),
                 },
             })
         ).toEqual({
             regularAmountPerCycle: 999,
             couponDiscount: undefined,
             planTitle: 'VPN',
-            planIDs: { [PLANS.VPN]: 1 },
-            planName: PLANS.VPN,
+            planIDs: { [PLANS.VPN2024]: 1 },
+            planName: PLANS.VPN2024,
             usersTitle: '1 user',
             addons: [],
             withDiscountPerCycle: 999,
@@ -139,6 +139,10 @@ describe('should get checkout result', () => {
             withDiscountMembersPerMonth: 999,
             withDiscountOneMemberPerMonth: 999,
             cycle: CYCLE.MONTHLY,
+            renewCycle: CYCLE.MONTHLY,
+            renewPrice: 999,
+            renewCycleOverriden: false,
+            renewPriceOverriden: false,
         });
     });
 
@@ -146,7 +150,7 @@ describe('should get checkout result', () => {
         expect(
             getCheckout({
                 planIDs: {
-                    [PLANS.VPN]: 1,
+                    [PLANS.VPN2024]: 1,
                 },
                 checkResult: {
                     Amount: 1199,
@@ -159,7 +163,7 @@ describe('should get checkout result', () => {
                     RenewCycle: null,
                 },
                 plansMap: {
-                    [PLANS.VPN]: {
+                    [PLANS.VPN2024]: {
                         ...getPlan(vpnPlan),
                         Pricing: {
                             // It's possible to create an offer that would INCREASE the price
@@ -184,8 +188,8 @@ describe('should get checkout result', () => {
             regularAmountPerCycle: 1199,
             couponDiscount: undefined,
             planTitle: 'VPN',
-            planName: PLANS.VPN,
-            planIDs: { [PLANS.VPN]: 1 },
+            planName: PLANS.VPN2024,
+            planIDs: { [PLANS.VPN2024]: 1 },
             usersTitle: '1 user',
             addons: [],
             // We don't want to show the price increase to the user, so we use the maximum of Pricing and
@@ -201,6 +205,10 @@ describe('should get checkout result', () => {
             withDiscountMembersPerMonth: 1199,
             withDiscountOneMemberPerMonth: 1199,
             cycle: CYCLE.MONTHLY,
+            renewCycle: CYCLE.MONTHLY,
+            renewPrice: 1199,
+            renewCycleOverriden: false,
+            renewPriceOverriden: false,
         });
     });
 
@@ -248,13 +256,17 @@ describe('should get checkout result', () => {
             withDiscountMembersPerMonth: 1800,
             withDiscountOneMemberPerMonth: 1800,
             cycle: CYCLE.TWO_YEARS,
+            renewCycle: CYCLE.TWO_YEARS,
+            renewPrice: 47976,
+            renewCycleOverriden: false,
+            renewPriceOverriden: false,
         });
     });
 
     it('should calculate bf 30 month vpn plus', () => {
         const result = getCheckout({
             planIDs: {
-                [PLANS.VPN]: 1,
+                [PLANS.VPN2024]: 1,
             },
             checkResult: {
                 Amount: 29970,
@@ -272,7 +284,7 @@ describe('should get checkout result', () => {
                 RenewCycle: null,
             },
             plansMap: {
-                [PLANS.VPN]: getPlan(vpnPlan),
+                [PLANS.VPN2024]: getPlan(vpnPlan),
             },
         });
 
@@ -281,8 +293,8 @@ describe('should get checkout result', () => {
             regularAmountPerCycle: 29970,
             couponDiscount: -17994,
             planTitle: 'VPN',
-            planName: PLANS.VPN,
-            planIDs: { [PLANS.VPN]: 1 },
+            planName: PLANS.VPN2024,
+            planIDs: { [PLANS.VPN2024]: 1 },
             usersTitle: '1 user',
             addons: [],
             withDiscountPerCycle: 11976,
@@ -296,6 +308,10 @@ describe('should get checkout result', () => {
             withDiscountMembersPerMonth: 399.2,
             withDiscountOneMemberPerMonth: 399.2,
             cycle: CYCLE.THIRTY,
+            renewCycle: CYCLE.THIRTY,
+            renewPrice: 29970,
+            renewCycleOverriden: false,
+            renewPriceOverriden: false,
         };
 
         // Use toBeCloseTo for the floating point value
@@ -373,6 +389,10 @@ describe('should get checkout result', () => {
             withDiscountMembersPerMonth: 2997,
             withDiscountOneMemberPerMonth: 999,
             cycle: CYCLE.TWO_YEARS,
+            renewCycle: CYCLE.TWO_YEARS,
+            renewPrice: 81288,
+            renewCycleOverriden: false,
+            renewPriceOverriden: false,
         });
     });
 
@@ -427,6 +447,10 @@ describe('should get checkout result', () => {
             withDiscountMembersPerMonth: twoYearPrice3Members / 24,
             withDiscountOneMemberPerMonth: 599,
             cycle: CYCLE.TWO_YEARS,
+            renewCycle: CYCLE.TWO_YEARS,
+            renewPrice: twoYearPrice3Members,
+            renewCycleOverriden: false,
+            renewPriceOverriden: false,
         });
     });
 
@@ -489,6 +513,10 @@ describe('should get checkout result', () => {
             withDiscountMembersPerMonth: 3596,
             withDiscountOneMemberPerMonth: 899,
             cycle: CYCLE.TWO_YEARS,
+            renewCycle: CYCLE.TWO_YEARS,
+            renewPrice: twoYearPrice3Members,
+            renewCycleOverriden: false,
+            renewPriceOverriden: false,
         });
     });
 
@@ -538,6 +566,10 @@ describe('should get checkout result', () => {
             withDiscountMembersPerMonth: 0,
             withDiscountOneMemberPerMonth: 0,
             cycle: CYCLE.TWO_YEARS,
+            renewCycle: CYCLE.TWO_YEARS,
+            renewPrice: 47976,
+            renewCycleOverriden: false,
+            renewPriceOverriden: false,
         });
     });
 
@@ -572,14 +604,14 @@ describe('getUsersAndAddons()', () => {
         expect(
             getUsersAndAddons(
                 {
-                    [PLANS.VPN]: 1,
+                    [PLANS.VPN2024]: 1,
                 },
                 {
-                    [PLANS.VPN]: getPlan(vpnPlan),
+                    [PLANS.VPN2024]: getPlan(vpnPlan),
                 }
             )
         ).toEqual({
-            planName: PLANS.VPN,
+            planName: PLANS.VPN2024,
             planTitle: 'VPN',
             users: 1,
             viewUsers: 1,

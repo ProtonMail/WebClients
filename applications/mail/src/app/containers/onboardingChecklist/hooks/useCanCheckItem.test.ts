@@ -50,18 +50,18 @@ describe('useCanCheckItem', () => {
             expect(result.current.canMarkItemsAsDone).toBe(false);
         });
 
-        it('should return true if paid VPN user with get-started checklist', () => {
+        it('should return true if paid VPN2024 user with get-started checklist', () => {
             mockUseUser.mockReturnValue([{ isFree: false }]);
-            mockUseSubscription.mockReturnValue([{ Plans: [{ Name: PLANS.VPN }] }]);
+            mockUseSubscription.mockReturnValue([{ Plans: [{ Name: PLANS.VPN2024 }] }]);
             mockUseUserSettings.mockReturnValue([{ Checklists: ['get-started'] }]);
 
             const { result } = renderHook(() => useCanCheckItem());
             expect(result.current.canMarkItemsAsDone).toBe(true);
         });
 
-        it('should return false if paid VPN user without get-started checklist', () => {
+        it('should return false if paid VPN2024 user without get-started checklist', () => {
             mockUseUser.mockReturnValue([{ isFree: false }]);
-            mockUseSubscription.mockReturnValue([{ Plans: [{ Name: PLANS.VPN }] }]);
+            mockUseSubscription.mockReturnValue([{ Plans: [{ Name: PLANS.VPN2024 }] }]);
             mockUseUserSettings.mockReturnValue([{ Checklists: [] }]);
 
             const { result } = renderHook(() => useCanCheckItem());
