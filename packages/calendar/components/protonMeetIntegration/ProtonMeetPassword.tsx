@@ -62,7 +62,7 @@ export const ProtonMeetPassword = () => {
     };
 
     const trimmedPassword = password.trim();
-    const isValid = (password.length === 0 || trimmedPassword.length > 0) && !/\s$/.test(password);
+    const isValid = (password.length === 0 && passphrase) || trimmedPassword.length > 0;
 
     return (
         <>
