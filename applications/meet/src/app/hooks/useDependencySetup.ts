@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import useFlag from '@proton/unleash/useFlag';
+
 import { useGetUserSettings } from '../store';
 import { useMeetingList } from './useMeetingList';
 
@@ -21,7 +23,8 @@ const useUnauthenticatedDependencySetup = () => {
 };
 
 export const useDependencySetup = (isGuest: boolean) => {
-    const useSetup = isGuest ? useUnauthenticatedDependencySetup : useAuthenticatedDependencySetup;
+    const isEarlyAccess = useFlag('MeetEarlyAccess');
+    const useSetup = isGuest || !isEarlyAccess ? useUnauthenticatedDependencySetup : useAuthenticatedDependencySetup;
 
     return useSetup();
 };
