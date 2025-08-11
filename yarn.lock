@@ -16624,6 +16624,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"argon2id@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "argon2id@npm:1.0.1"
+  checksum: 10c0/397373cdd1b0229b133d95bf03f5645bd0f507947f5811873fdad56df5ce1d7fbec4e29fc94c7e881acb4a9b14ed5bc4d97c6eef7156497039570c8920f2bf21
+  languageName: node
+  linkType: hard
+
 "argparse@npm:^1.0.7":
   version: 1.0.10
   resolution: "argparse@npm:1.0.10"
@@ -38380,6 +38387,7 @@ __metadata:
     "@redux-devtools/remote": "npm:^0.9.5"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/webextension-polyfill": "npm:^0.12.3"
+    argon2id: "npm:^1.0.1"
     babel-plugin-transform-require-context: "npm:^0.1.1"
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.1"
