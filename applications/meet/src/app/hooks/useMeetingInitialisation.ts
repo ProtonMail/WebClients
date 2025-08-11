@@ -1,6 +1,7 @@
 import type { LocalVideoTrack } from '@proton-meet/livekit-client';
 
 import { useChat } from './useChat';
+import { useDynamicDeviceHandling } from './useDynamicDeviceHandling';
 import { useE2EE } from './useE2EE';
 import { useFaceTrackingPublisher } from './useFaceTrackingPublisher';
 import { useLocalParticipantQualityControl } from './useLocalParticipantQualityControl';
@@ -28,4 +29,5 @@ export const useMeetingInitialisation = ({
     useLocalParticipantQualityControl();
     useMediaDeviceSetup();
     useParticipantNameMapUpdate();
+    useDynamicDeviceHandling();
 };
