@@ -1,4 +1,5 @@
 import { MetricVolumeType } from '@protontech/drive-sdk';
+
 import metrics from '@proton/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
@@ -549,7 +550,7 @@ describe('MetricHandler', () => {
                     eventName: 'decryptionError',
                     volumeType: MetricVolumeType.OwnVolume,
                     field: 'nodeKey',
-                    fromBefore2024: true,
+                    fromBefore2024: false,
                     error: 'Invalid key',
                 },
             });
@@ -562,20 +563,20 @@ describe('MetricHandler', () => {
                 extra: {
                     volumeType: MetricVolumeType.OwnVolume,
                     field: 'nodeKey',
-                    fromBefore2024: true,
+                    fromBefore2024: false,
                     error: 'Invalid key',
                 },
             });
         });
 
-        it('should not capture sentry message when fromBefore2024 is false', () => {
+        it('should not capture sentry message when fromBefore2024 is true', () => {
             metricHandler.onEvent({
                 time: new Date(),
                 event: {
                     eventName: 'decryptionError',
                     volumeType: MetricVolumeType.OwnVolume,
                     field: 'nodeKey',
-                    fromBefore2024: false,
+                    fromBefore2024: true,
                     error: 'Invalid key',
                 },
             });
@@ -591,7 +592,7 @@ describe('MetricHandler', () => {
                         eventName: 'decryptionError',
                         volumeType: MetricVolumeType.OwnVolume,
                         field: 'nodeKey',
-                        fromBefore2024: true,
+                        fromBefore2024: false,
                         error: 'Invalid key',
                     },
                 });
@@ -610,7 +611,7 @@ describe('MetricHandler', () => {
                         eventName: 'decryptionError',
                         volumeType: MetricVolumeType.OwnVolume,
                         field: 'nodeKey',
-                        fromBefore2024: true,
+                        fromBefore2024: false,
                         error: 'Invalid key',
                     },
                 });
@@ -636,7 +637,7 @@ describe('MetricHandler', () => {
                         eventName: 'decryptionError',
                         volumeType: MetricVolumeType.OwnVolume,
                         field: 'nodeKey',
-                        fromBefore2024: true,
+                        fromBefore2024: false,
                         error: 'Invalid key',
                     },
                 });

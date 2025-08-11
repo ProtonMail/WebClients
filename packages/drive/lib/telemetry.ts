@@ -203,9 +203,10 @@ export class MetricHandler {
             field,
             fromBefore2024: this.getYesNoUnknown(metric.fromBefore2024),
         });
-        this.reportIntegrityErroringUsers(metric);
 
-        if (metric.fromBefore2024 !== false) {
+        if (metric.fromBefore2024 === false) {
+            this.reportIntegrityErroringUsers(metric);
+
             captureMessage('Metric event details: decryption error', {
                 level: 'error',
                 tags: {
@@ -229,7 +230,9 @@ export class MetricHandler {
             fromBefore2024: this.getYesNoUnknown(metric.fromBefore2024),
         });
 
-        this.reportIntegrityErroringUsers(metric);
+        if (metric.fromBefore2024 === false && metric.addressMatchingDefaultShare === true) {
+            this.reportIntegrityErroringUsers(metric);
+        }
     }
 
     private reportIntegrityErroringUsers(metric: MetricDecryptionErrorEvent | MetricVerificationErrorEvent) {
