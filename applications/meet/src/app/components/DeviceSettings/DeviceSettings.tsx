@@ -139,7 +139,7 @@ export const DeviceSettings = ({
                 )}
 
                 <div
-                    className="device-toggle-buttons flex flex-nowrap w-full justify-center gap-2 absolute bottom-custom"
+                    className="device-toggle-buttons flex flex-nowrap w-full justify-center gap-2 absolute bottom-custom z-up"
                     style={{ '--bottom-custom': '1.5rem' }}
                 >
                     <CircleButton
