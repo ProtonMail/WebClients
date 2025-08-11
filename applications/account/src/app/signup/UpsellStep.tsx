@@ -125,7 +125,7 @@ const UpsellStep = ({
     const plansMap = getPlansMap(plans, currency, false);
 
     const shortFreePlan = (() => {
-        if (upsellPlanName === PLANS.VPN) {
+        if (upsellPlanName === PLANS.VPN2024) {
             return getFreeVPNPlan(vpnServers);
         }
 

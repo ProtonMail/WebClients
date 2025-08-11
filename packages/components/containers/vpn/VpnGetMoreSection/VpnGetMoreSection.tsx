@@ -51,13 +51,13 @@ export const VpnGetMoreSection = () => {
                 <Label
                     key="watch-shows-label"
                     prefix={<VpnLogo variant="glyph-only" size={5} />}
-                    text={PLAN_NAMES[PLANS.VPN]}
+                    text={PLAN_NAMES[PLANS.VPN2024]}
                 />
             ),
             description: () =>
                 hasPaidVpn(user)
                     ? getBoldFormattedText(c('Blog').t`**Streaming** is included in your subscription.`)
-                    : c('Blog').t`Stream from all major platforms with ${PLAN_NAMES[PLANS.VPN]}.`,
+                    : c('Blog').t`Stream from all major platforms with ${PLAN_NAMES[PLANS.VPN2024]}.`,
             image: tv,
             link: !hasPaidVpn(user) ? '/vpn/upgrade' : undefined,
         },

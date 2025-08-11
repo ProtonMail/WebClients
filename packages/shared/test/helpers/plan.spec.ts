@@ -10,7 +10,7 @@ describe('isSamePlan', () => {
 
     it('should return false if the plans are different', () => {
         const plan1: any = { Name: PLANS.MAIL, Cycle: CYCLE.MONTHLY };
-        const plan2: any = { Name: PLANS.VPN, Cycle: CYCLE.MONTHLY };
+        const plan2: any = { Name: PLANS.VPN2024, Cycle: CYCLE.MONTHLY };
         expect(isSamePlan(plan1, plan2)).toBe(false);
     });
 

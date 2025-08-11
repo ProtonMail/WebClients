@@ -32,7 +32,6 @@ export type PlanCapRule = {
 
 const defaultRules: PlanCapRule[] = [
     { plan: PLANS.MAIL, cycle: CYCLE.TWO_YEARS },
-    { plan: PLANS.VPN, cycle: CYCLE.YEARLY },
     { plan: PLANS.VPN2024, cycle: CYCLE.TWO_YEARS },
     { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY },
     { plan: PLANS.WALLET, cycle: CYCLE.YEARLY },

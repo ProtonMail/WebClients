@@ -151,7 +151,7 @@ const HighlightPlanDowngradeModal = ({
                             return c('storage_split: info')
                                 .t`You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.`;
                         }
-                        if (shortPlan.plan === PLANS.VPN) {
+                        if (shortPlan.plan === PLANS.VPN2024) {
                             return c('storage_split: info')
                                 .t`You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.`;
                         }
