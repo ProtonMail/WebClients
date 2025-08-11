@@ -1,3 +1,4 @@
+import { getContextNumMessages } from '@proton/mail/helpers/conversation';
 import { isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, MailSettings } from '@proton/shared/lib/interfaces';
@@ -5,7 +6,6 @@ import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
 
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 import { hasLabel } from 'proton-mail/helpers/elements';
-import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
 import type { ConversationState } from 'proton-mail/store/conversations/conversationsTypes';
 
@@ -20,12 +20,6 @@ export const scheduleTargetWithWarning = new Set<string>([
     MAILBOX_LABEL_IDS.DRAFTS,
     MAILBOX_LABEL_IDS.TRASH,
 ]);
-
-// TODO change this and move use the shared helper once the reducers are merged
-const getContextNumMessages = (conversation: Conversation, labelID: string) => {
-    const label = conversation.Labels?.find(({ ID }) => ID === labelID);
-    return label?.ContextNumMessages || 0;
-};
 
 /**
  * Test if we should open the schedule or the unsubscribe modal to confirm the user action.

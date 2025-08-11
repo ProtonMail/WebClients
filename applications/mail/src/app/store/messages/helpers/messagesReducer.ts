@@ -33,6 +33,9 @@ export const getLocalID = (state: Draft<MessagesState>, ID: string) =>
 export const getMessage = (state: Draft<MessagesState>, ID: string) =>
     messageByID({ messages: state } as MailState, { ID });
 
+export const getMessagesByConversationID = (state: Draft<MessagesState>, ConversationID: string) =>
+    messagesByConversationID({ messages: state } as MailState, { ConversationID });
+
 export const updateFromElements = (
     state: Draft<MessagesState>,
     action: PayloadAction<
@@ -223,5 +226,63 @@ export const unlabelMessagesPending = (
         }
 
         removeLabelFromMessage(messageState.data as Message, targetLabelID, labels);
+    });
+};
+
+export const labelConversationsPending = (
+    state: Draft<MessagesState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        {
+            arg: {
+                conversations: Conversation[];
+                targetLabelID: string;
+                sourceLabelID: string;
+                labels: Label[];
+                folders: Folder[];
+            };
+        }
+    >
+) => {
+    const { conversations, targetLabelID, labels, folders } = action.meta.arg;
+
+    conversations.forEach((conversation) => {
+        const messageStates = getMessagesByConversationID(state, conversation.ID);
+
+        if (!messageStates) {
+            return;
+        }
+
+        messageStates.forEach((messageState) => {
+            if (messageState?.data) {
+                applyLabelToMessage(messageState.data as Message, targetLabelID, folders, labels);
+            }
+        });
+    });
+};
+
+export const unlabelConversationsPending = (
+    state: Draft<MessagesState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        { arg: { conversations: Conversation[]; targetLabelID: string; labels: Label[] } }
+    >
+) => {
+    const { conversations, targetLabelID, labels } = action.meta.arg;
+
+    conversations.forEach((conversation) => {
+        const messageStates = getMessagesByConversationID(state, conversation.ID);
+
+        if (!messageStates) {
+            return;
+        }
+
+        messageStates.forEach((messageState) => {
+            if (messageState?.data) {
+                removeLabelFromMessage(messageState.data as Message, targetLabelID, labels);
+            }
+        });
     });
 };

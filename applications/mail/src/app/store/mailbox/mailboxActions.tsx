@@ -17,6 +17,7 @@ import {
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
 import UndoActionNotification from 'proton-mail/components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
@@ -26,6 +27,7 @@ import type { Element } from 'proton-mail/models/element';
 
 import type { MailThunkExtra } from '../store';
 import type { MailThunkArguments } from '../thunk';
+import { hasSentOrDraftMessages } from './locationHelpers';
 import {
     getNotificationTextLabelAdded,
     getNotificationTextLabelRemoved,
@@ -38,12 +40,14 @@ const runAction = async ({
     notificationText,
     elements,
     action,
+    onUndo,
 }: {
     extra: MailThunkArguments;
     notificationText?: string;
     finallyFetchEvents?: boolean;
     elements: Element[];
     action: (chunk: Element[]) => any;
+    onUndo?: () => void;
 }) => {
     const promise = new Promise<PromiseSettledResult<string | undefined>[]>(async (resolve, reject) => {
         let result: PromiseSettledResult<string | undefined>[] = [];
@@ -73,6 +77,7 @@ const runAction = async ({
                                     await extra.eventManager.call();
                                 };
                                 void undo();
+                                onUndo?.();
                                 // Reject the promise to undo the action optimistically (AsyncThunk: reject)
                                 reject(new Error('Undo action'));
                             }}
@@ -85,21 +90,22 @@ const runAction = async ({
             }
 
             result = await promise;
-
             resolve(result);
         } catch (error) {
             reject(error);
         }
     });
 
-    return promise.finally(async () => {
-        extra.eventManager.start();
+    await promise;
 
-        // We force-fetch events after the action is completed to ensure the UI is updated in cases where the optimistic update cannot be reliably predicted
-        if (finallyFetchEvents) {
-            await extra.eventManager.call();
-        }
-    });
+    extra.eventManager.start();
+
+    // We force-fetch events after the action is completed to ensure the UI is updated in cases where the optimistic update cannot be reliably predicted
+    if (finallyFetchEvents) {
+        await extra.eventManager.call();
+    }
+
+    return promise;
 };
 
 export const markMessagesAsRead = createAsyncThunk<
@@ -236,21 +242,40 @@ export const labelMessages = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
         elements: Message[];
+        conversations: Conversation[];
+        sourceLabelID: string;
         targetLabelID: string;
         isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
         labels: Label[];
         folders: Folder[];
+        spamAction?: SPAM_ACTION;
     },
     MailThunkExtra
 >(
     'mailbox/labelMessages',
     async (
-        { elements, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
+        {
+            elements,
+            labels,
+            folders,
+            targetLabelID,
+            isEncryptedSearch,
+            showSuccessNotification = true,
+            spamAction,
+            conversations,
+        },
         { extra, dispatch }
     ) => {
         try {
             dispatch(messageCountsActions.labelMessagesPending({ elements, targetLabelID, labels, folders }));
+            dispatch(
+                conversationCountsActions.labelMessagesPending({
+                    elements,
+                    targetLabelID,
+                    conversations,
+                })
+            );
             const result = await runAction({
                 extra,
                 finallyFetchEvents: isEncryptedSearch,
@@ -262,7 +287,7 @@ export const labelMessages = createAsyncThunk<
                     labelMessagesApi({
                         IDs: chunk.map((element: Element) => element.ID),
                         LabelID: targetLabelID,
-                        // SpamAction
+                        SpamAction: spamAction,
                     }),
             });
             return result;
@@ -277,6 +302,8 @@ export const unlabelMessages = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
         elements: Message[];
+        conversations: Conversation[];
+        sourceLabelID: string;
         targetLabelID: string;
         isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
@@ -287,11 +314,19 @@ export const unlabelMessages = createAsyncThunk<
 >(
     'mailbox/unlabelMessages',
     async (
-        { elements, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
+        { elements, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true, conversations },
         { extra, dispatch }
     ) => {
         try {
             dispatch(messageCountsActions.unlabelMessagesPending({ elements, targetLabelID, labels, folders }));
+            dispatch(
+                conversationCountsActions.unlabelMessagesPending({
+                    elements,
+                    conversations,
+                    targetLabelID,
+                    labels,
+                })
+            );
             const result = await runAction({
                 extra,
                 finallyFetchEvents: isEncryptedSearch,
@@ -317,33 +352,67 @@ export const labelConversations = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
         conversations: Conversation[];
+        sourceLabelID: string;
         targetLabelID: string;
         isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
         labels: Label[];
         folders: Folder[];
+        spamAction?: SPAM_ACTION;
     },
     MailThunkExtra
 >(
     'mailbox/labelConversations',
     async (
-        { conversations, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
-        { extra }
+        {
+            conversations,
+            labels,
+            folders,
+            targetLabelID,
+            sourceLabelID,
+            isEncryptedSearch,
+            showSuccessNotification = true,
+            spamAction,
+        },
+        { extra, dispatch }
     ) => {
-        return runAction({
-            extra,
-            finallyFetchEvents: isEncryptedSearch,
-            notificationText: showSuccessNotification
-                ? getNotificationTextLabelAdded(false, conversations.length, targetLabelID, labels, folders)
-                : undefined,
-            elements: conversations,
-            action: (chunk) =>
-                labelConversationsApi({
-                    IDs: chunk.map((conversation: Conversation) => conversation.ID),
-                    LabelID: targetLabelID,
-                    // SpamAction
-                }),
-        });
+        try {
+            dispatch(
+                conversationCountsActions.labelConversationsPending({
+                    conversations,
+                    targetLabelID,
+                    labels,
+                    folders,
+                    sourceLabelID,
+                })
+            );
+            dispatch(
+                messageCountsActions.labelConversationsPending({
+                    elements: conversations,
+                    targetLabelID,
+                    labels,
+                    folders,
+                })
+            );
+            const result = await runAction({
+                extra,
+                finallyFetchEvents: isEncryptedSearch || hasSentOrDraftMessages(conversations),
+                notificationText: showSuccessNotification
+                    ? getNotificationTextLabelAdded(false, conversations.length, targetLabelID, labels, folders)
+                    : undefined,
+                elements: conversations,
+                action: (chunk) =>
+                    labelConversationsApi({
+                        IDs: chunk.map((conversation: Conversation) => conversation.ID),
+                        LabelID: targetLabelID,
+                        SpamAction: spamAction,
+                    }),
+            });
+            return result;
+        } catch (error) {
+            // TODO: handle rejection
+            throw error;
+        }
     }
 );
 
@@ -362,12 +431,26 @@ export const unlabelConversations = createAsyncThunk<
     'mailbox/unlabelConversations',
     async (
         { conversations, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
-        { extra }
+        { extra, dispatch }
     ) => {
         try {
+            dispatch(
+                conversationCountsActions.unlabelConversationsPending({
+                    conversations,
+                    targetLabelID,
+                    labels,
+                })
+            );
+            dispatch(
+                messageCountsActions.unlabelConversationsPending({
+                    conversations,
+                    targetLabelID,
+                    labels,
+                })
+            );
             const result = await runAction({
                 extra,
-                finallyFetchEvents: isEncryptedSearch,
+                finallyFetchEvents: isEncryptedSearch || hasSentOrDraftMessages(conversations),
                 notificationText: showSuccessNotification
                     ? getNotificationTextLabelRemoved(false, conversations.length, targetLabelID, labels, folders)
                     : undefined,
@@ -380,6 +463,7 @@ export const unlabelConversations = createAsyncThunk<
             });
             return result;
         } catch (error) {
+            // TODO: handle rejection
             throw error;
         }
     }

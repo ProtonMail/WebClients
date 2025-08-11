@@ -3,10 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 import { globalReset } from '../actions';
 import { eventUpdates, load as loadElements } from '../elements/elementsActions';
 import {
+    labelConversations,
     markConversationsAsRead,
     markConversationsAsUnread,
     markMessagesAsRead,
     markMessagesAsUnread,
+    unlabelConversations,
 } from '../mailbox/mailboxActions';
 import * as messageDraftAction from '../messages/draft/messagesDraftActions';
 import {
@@ -34,6 +36,7 @@ import {
     eventMessagesUpdates as eventMessageUpdateReducer,
     globalReset as globalResetReducer,
     initialize as initializeReducer,
+    labelConversationsPending,
     loadFulfilled,
     loadRejected,
     markConversationsAsReadPending,
@@ -46,6 +49,7 @@ import {
     optimisticMarkAsConversation as optimisticMarkAsConversationReducer,
     optimisticRestore as optimisticRestoreReducer,
     retryLoading as retryLoadingReducer,
+    unlabelConversationsPending,
     updateConversation as updateConversationReducer,
     updateFromElements,
     updateFromLoadElements,
@@ -83,6 +87,8 @@ const conversationSlice = createSlice({
         builder.addCase(markMessagesAsUnread.pending, markMessagesAsUnreadPending);
         builder.addCase(markConversationsAsRead.pending, markConversationsAsReadPending);
         builder.addCase(markConversationsAsUnread.pending, markConversationsAsUnreadPending);
+        builder.addCase(labelConversations.pending, labelConversationsPending);
+        builder.addCase(unlabelConversations.pending, unlabelConversationsPending);
     },
 });
 

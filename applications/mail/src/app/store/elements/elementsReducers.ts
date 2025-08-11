@@ -15,7 +15,12 @@ import unique from '@proton/utils/unique';
 import { getElementContextIdentifier, parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
-import { applyLabelToMessage, removeLabelFromMessage } from '../mailbox/locationHelpers';
+import {
+    applyLabelToConversation,
+    applyLabelToMessage,
+    removeLabelFromConversation,
+    removeLabelFromMessage,
+} from '../mailbox/locationHelpers';
 import type { filterSubscriptionList } from '../newsletterSubscriptions/newsletterSubscriptionsActions';
 import { newElementsState } from './elementsSlice';
 import type {
@@ -843,10 +848,18 @@ export const labelMessagesPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: Message[]; targetLabelID: string; labels: Label[]; folders: Folder[] } }
+        {
+            arg: {
+                elements: Message[];
+                sourceLabelID: string;
+                targetLabelID: string;
+                labels: Label[];
+                folders: Folder[];
+            };
+        }
     >
 ) => {
-    const { elements, targetLabelID, labels, folders } = action.meta.arg;
+    const { elements, sourceLabelID, targetLabelID, labels, folders } = action.meta.arg;
 
     elements.forEach((element) => {
         const elementState = state.elements[element.ID] as Message;
@@ -856,6 +869,18 @@ export const labelMessagesPending = (
         }
 
         applyLabelToMessage(elementState, targetLabelID, folders, labels);
+    });
+
+    const uniqueConversationIDs = [...new Set(elements.map((element) => (element as Message).ConversationID))];
+
+    uniqueConversationIDs.forEach((conversationID) => {
+        const conversationElementState = state.elements[conversationID] as Conversation;
+
+        if (!conversationElementState) {
+            return;
+        }
+
+        applyLabelToConversation(conversationElementState, sourceLabelID, targetLabelID, labels, folders);
     });
 };
 
@@ -868,6 +893,7 @@ export const unlabelMessagesPending = (
     >
 ) => {
     const { elements, targetLabelID, labels } = action.meta.arg;
+    const conversationIDs = [...new Set(elements.map((element) => (element as Message).ConversationID))];
 
     elements.forEach((element) => {
         const elementState = state.elements[element.ID] as Message;
@@ -877,6 +903,16 @@ export const unlabelMessagesPending = (
         }
 
         removeLabelFromMessage(elementState, targetLabelID, labels);
+    });
+
+    conversationIDs.forEach((conversationID) => {
+        const conversationElementState = state.elements[conversationID] as Conversation;
+
+        if (!conversationElementState) {
+            return;
+        }
+
+        removeLabelFromConversation(conversationElementState, targetLabelID, labels);
     });
 };
 
@@ -899,5 +935,71 @@ export const labelMessagesRejected = (
 
         elementState.LabelIDs = element.LabelIDs;
         elementState.Unread = element.Unread;
+    });
+};
+
+export const labelConversationsPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        {
+            arg: {
+                conversations: Conversation[];
+                targetLabelID: string;
+                sourceLabelID: string;
+                labels: Label[];
+                folders: Folder[];
+            };
+        }
+    >
+) => {
+    const { conversations, sourceLabelID, targetLabelID, labels, folders } = action.meta.arg;
+
+    conversations.forEach((conversation) => {
+        const conversationState = state.elements[conversation.ID] as Conversation;
+
+        if (!conversationState) {
+            return;
+        }
+
+        applyLabelToConversation(conversationState, sourceLabelID, targetLabelID, labels, folders);
+
+        const messagesElementState = Object.values(state.elements).filter(
+            (element) => (element as Message).ConversationID === conversation.ID
+        );
+
+        messagesElementState.forEach((messageElementState) => {
+            applyLabelToMessage(messageElementState as Message, targetLabelID, folders, labels);
+        });
+    });
+};
+
+export const unlabelConversationsPending = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        { arg: { conversations: Conversation[]; targetLabelID: string; labels: Label[]; folders: Folder[] } }
+    >
+) => {
+    const { conversations, targetLabelID, labels } = action.meta.arg;
+
+    conversations.forEach((conversation) => {
+        const conversationState = state.elements[conversation.ID] as Conversation;
+
+        if (!conversationState) {
+            return;
+        }
+
+        removeLabelFromConversation(conversationState, targetLabelID, labels);
+
+        const messagesElementState = Object.values(state.elements).filter(
+            (element) => (element as Message).ConversationID === conversation.ID
+        );
+
+        messagesElementState.forEach((messageElementState) => {
+            removeLabelFromMessage(messageElementState as Message, targetLabelID, labels);
+        });
     });
 };
