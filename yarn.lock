@@ -9294,10 +9294,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@protontech/authenticator-rust-core@npm:^0.24.2":
-  version: 0.24.2
-  resolution: "@protontech/authenticator-rust-core@npm:0.24.2"
-  checksum: 10c0/f4bb041ea5371979c2853405667f57c63ccaee86d3de51b43cccfe7139e78b0034d6f5cc07bf2d9c486422b207dba8d1c0d9756453ba7698594d6554bbe23179
+"@protontech/authenticator-rust-core@npm:^0.25.9":
+  version: 0.25.9
+  resolution: "@protontech/authenticator-rust-core@npm:0.25.9"
+  checksum: 10c0/213bc286e76243ee99d7d488d0682898ad06aec567a28a574d1ffb56d45e3201ee08cccd64c82a21d962715a678fda01134015cc3252db9e0a9b2f2cf612968a
   languageName: node
   linkType: hard
 
@@ -36754,7 +36754,7 @@ __metadata:
     "@proton/pack": "workspace:^"
     "@proton/pass": "workspace:^"
     "@proton/styles": "workspace:^"
-    "@protontech/authenticator-rust-core": "npm:^0.24.2"
+    "@protontech/authenticator-rust-core": "npm:^0.25.9"
     "@reduxjs/toolkit": "npm:^2.8.2"
     "@tanstack/react-virtual": "npm:^3.13.12"
     "@tauri-apps/api": "npm:^2"
