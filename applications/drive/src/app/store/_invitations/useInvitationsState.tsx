@@ -1,5 +1,7 @@
 import { createContext, useCallback, useContext, useState } from 'react';
 
+import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+
 import type { ExtendedInvitationDetails } from './interface';
 
 type InvitationsState = {
@@ -40,10 +42,15 @@ export function useInvitationsStateProvider() {
         return Object.values(state);
     }, [state]);
 
+    const getAlbumsInvitations = useCallback((): ExtendedInvitationDetails[] => {
+        return Object.values(state).filter((invitation) => invitation.link.type === LinkType.ALBUM);
+    }, [state]);
+
     return {
         setInvitations,
         removeInvitations,
         getInvitation,
+        getAlbumsInvitations,
         getAllInvitations,
     };
 }

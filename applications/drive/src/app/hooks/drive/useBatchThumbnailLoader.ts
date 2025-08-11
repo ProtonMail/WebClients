@@ -56,7 +56,9 @@ export const useBatchThumbnailLoader = ({
         try {
             for await (const thumbnailResult of drive.iterateThumbnails(uidsToProcess, thumbnailType)) {
                 const item = itemsToProcess.find((item) => item.uid === thumbnailResult.nodeUid);
-                if (!item) {continue;}
+                if (!item) {
+                    continue;
+                }
 
                 if (thumbnailResult.ok) {
                     const url = URL.createObjectURL(new Blob([thumbnailResult.thumbnail], { type: 'image/jpeg' }));

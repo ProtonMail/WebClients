@@ -50,6 +50,10 @@ export type LegacyItem = FileBrowserBaseItem & {
      * @todo id is only ever needed for FileBrowser, specifically item selection that has the `id` property hardcoded
      */
     id: string;
+    directShare?: {
+        sharedOn: number;
+        sharedBy: string;
+    };
 };
 
 const getLegacyIsAnonymous = (node: NodeEntity) => {
