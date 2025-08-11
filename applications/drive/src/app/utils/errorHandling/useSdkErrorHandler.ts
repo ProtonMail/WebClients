@@ -12,6 +12,8 @@ export const shouldTrackError = (err: Error) =>
     !(err instanceof RateLimitedError) &&
     !(err instanceof ConnectionError);
 
+export const shouldShowNotification = (err: Error) => !(err instanceof AbortError);
+
 type HandleErrorOptions = {
     fallbackMessage?: string;
     extra?: {};
@@ -28,12 +30,12 @@ export const useSdkErrorHandler = () => {
         ) => {
             const errorToHandle = error instanceof Error ? error : new Error(fallbackMessage);
             const message = error instanceof ProtonDriveError ? errorToHandle.message : fallbackMessage;
-            if (showNotification) {
+            if (showNotification && shouldShowNotification(errorToHandle)) {
                 createNotification({ type: 'error', text: message, preWrap: true });
             }
 
+            console.error(errorToHandle);
             if (shouldTrackError(errorToHandle)) {
-                console.error(errorToHandle);
                 sendErrorReport(new EnrichedError(errorToHandle.message, { tags: { component: 'drive-sdk' }, extra }));
             }
         },
