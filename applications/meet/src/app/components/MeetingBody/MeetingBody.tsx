@@ -15,6 +15,8 @@ import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails } from '../MeetingDetails/MeetingDetails';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
+import { NoDeviceDetectedInfo } from '../NoDeviceDetectedInfo/NoDeviceDetectedInfo';
+import { NoDeviceDetectedModal } from '../NoDeviceDetectedModal/NoDeviceDetectedModal';
 import { NoPermissionInfo } from '../NoPermissionInfo/NoPermissionInfo';
 import { ParticipantControls } from '../ParticipantControls/ParticipantControls';
 import { ParticipantGrid } from '../ParticipantGrid';
@@ -120,6 +122,8 @@ export const MeetingBody = ({ isFaceTrackingEnabled, faceTrack }: MeetingBodyPro
             <ParticipantControls />
             <RoomAudioRenderer />
             <ToastMessages />
+            <NoDeviceDetectedInfo />
+            <NoDeviceDetectedModal />
             <NoPermissionInfo />
             <PermissionRequest />
             <MeetingReadyPopup meetingLink={meetingLink} />

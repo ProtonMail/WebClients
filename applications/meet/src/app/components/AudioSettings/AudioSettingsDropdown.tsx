@@ -29,6 +29,9 @@ const AudioSettingsDropdownComponent = ({
     microphones,
     speakers,
 }: AudioSettingsDropdownProps) => {
+    const noMicrophoneDetected = microphones.length === 0;
+    const noSpeakerDetected = speakers.length === 0;
+
     return (
         <Dropdown
             className="device-selector-dropdown border border-norm rounded-xl shadow-none meet-radius meet-scrollbar p-2 overflow-x-hidden overflow-y-auto"
@@ -44,7 +47,11 @@ const AudioSettingsDropdownComponent = ({
         >
             <div className="flex flex-column gap-2 p-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
                 <div className="flex flex-column gap-2">
-                    <div className="color-weak meet-font-weight">{c('meet_2025 Info').t`Select a microphone`}</div>
+                    <div className="color-weak meet-font-weight">
+                        {!noMicrophoneDetected
+                            ? c('meet_2025 Info').t`Select a microphone`
+                            : c('meet_2025 Info').t`No microphone detected`}
+                    </div>
                     {microphones.map((mic) => (
                         <OptionButton
                             key={mic.deviceId}
@@ -57,7 +64,11 @@ const AudioSettingsDropdownComponent = ({
                 </div>
                 {!isSafari() && (
                     <div className="flex flex-column gap-2">
-                        <div className="color-weak meet-font-weight">{c('meet_2025 Info').t`Select a speaker`}</div>
+                        <div className="color-weak meet-font-weight">
+                            {!noSpeakerDetected
+                                ? c('meet_2025 Info').t`Select a speaker`
+                                : c('meet_2025 Info').t`No speaker detected`}
+                        </div>
                         {speakers.map((speaker) => (
                             <OptionButton
                                 key={speaker.deviceId}
