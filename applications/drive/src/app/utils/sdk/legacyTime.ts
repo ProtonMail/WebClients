@@ -2,6 +2,8 @@ import { type NodeEntity } from '@proton/drive';
 
 export const dateToLegacyTimestamp = (date: Date) => Math.floor(date.getTime() / 1000);
 
+export const legacyTimestampToDate = (timestamp: number) => new Date(timestamp * 1000);
+
 export const getLegacyModifiedTime = (node: NodeEntity) => {
     const date = node.activeRevision?.claimedModificationTime
         ? node.activeRevision.claimedModificationTime
