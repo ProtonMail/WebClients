@@ -26,7 +26,8 @@ export const useInvitationsActions = () => {
     const handleAcceptInvitation = async (
         abortSignal: AbortSignal,
         invitationId: string,
-        preloadLink: boolean = true
+        preloadLink: boolean = true,
+        onSuccess?: (result: { shareId: string; linkId: string; volumeId: string }) => void
     ) => {
         const invitation = await getInvitation(abortSignal, invitationId);
         if (!invitation) {
@@ -80,11 +81,15 @@ export const useInvitationsActions = () => {
             text: c('Notification').t`Share invitation accepted successfully`,
         });
 
-        return {
+        const result = {
             shareId: invitation.share.shareId,
             linkId: invitation.link.linkId,
             volumeId: invitation.share.volumeId,
         };
+
+        onSuccess?.(result);
+
+        return result;
     };
 
     const handleRejectInvitation = async (
@@ -92,9 +97,11 @@ export const useInvitationsActions = () => {
         {
             showConfirmModal,
             invitationId,
+            onSuccess,
         }: {
             showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
             invitationId: string;
+            onSuccess?: () => void;
         }
     ) => {
         const invitation = await getInvitation(abortSignal, invitationId);
@@ -166,6 +173,8 @@ export const useInvitationsActions = () => {
                     type: 'success',
                     text: c('Notification').t`Share invitation declined`,
                 });
+
+                onSuccess?.();
             },
             canUndo: true, // Just to hide the undo message
         });
