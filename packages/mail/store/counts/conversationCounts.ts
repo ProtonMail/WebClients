@@ -4,16 +4,21 @@ import { type ModelState, getInitialModelState, serverEvent } from '@proton/acco
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, createHooks, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryConversationCount } from '@proton/shared/lib/api/conversations';
-import { type LabelCount } from '@proton/shared/lib/interfaces';
+import type { Folder, Label, LabelCount } from '@proton/shared/lib/interfaces';
+import { type Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
 
 import {
+    labelConversationsPending,
+    labelMessagesPending,
     markConversationsAsRead,
     markConversationsAsUnread,
     markMessagesAsRead,
     markMessagesAsUnread,
+    unlabelConversationsPending,
+    unlabelMessagesPending,
 } from './conversationCountsReducers';
 
 const name = 'conversationCounts' as const;
@@ -77,6 +82,45 @@ const slice = createSlice({
             action: PayloadAction<{ elements: Element[]; labelID: string; conversations: Conversation[] }>
         ) => {
             markMessagesAsUnread(state, action);
+        },
+        labelMessagesPending: (
+            state,
+            action: PayloadAction<{
+                elements: Message[];
+                targetLabelID: string;
+                conversations: Conversation[];
+            }>
+        ) => {
+            labelMessagesPending(state, action);
+        },
+        unlabelMessagesPending: (
+            state,
+            action: PayloadAction<{
+                elements: Message[];
+                conversations: Conversation[];
+                targetLabelID: string;
+                labels: Label[];
+            }>
+        ) => {
+            unlabelMessagesPending(state, action);
+        },
+        labelConversationsPending: (
+            state,
+            action: PayloadAction<{
+                conversations: Conversation[];
+                targetLabelID: string;
+                sourceLabelID: string;
+                labels: Label[];
+                folders: Folder[];
+            }>
+        ) => {
+            labelConversationsPending(state, action);
+        },
+        unlabelConversationsPending: (
+            state,
+            action: PayloadAction<{ conversations: Conversation[]; targetLabelID: string; labels: Label[] }>
+        ) => {
+            unlabelConversationsPending(state, action);
         },
     },
     extraReducers: (builder) => {
