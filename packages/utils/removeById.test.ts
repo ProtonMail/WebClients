@@ -7,7 +7,7 @@ describe('removeById', () => {
             { ID: '2', name: 'Item 2' },
         ];
         const value = { ID: '1' };
-        const result = removeById(list, value);
+        const result = removeById(list, value, 'ID');
         expect(result).toEqual([{ ID: '2', name: 'Item 2' }]);
     });
 
@@ -17,7 +17,7 @@ describe('removeById', () => {
             { ID: '2', name: 'Item 2' },
         ];
         const value = { ID: '3' };
-        const result = removeById(list, value);
+        const result = removeById(list, value, 'ID');
         expect(result).toEqual(list);
     });
 });
