@@ -202,11 +202,12 @@ export const useElements: UseElements = ({
         const hasPageJump = !pageIsConsecutive;
         const hasSortChange = !isDeepEqual(sort, stateParams.sort);
 
-        // Reset logic:
-        // - Always reset for search keyword changes (even in newsletter view)
-        // - For other changes, only reset if not in newsletter view
         const shouldResetElementsState =
+            // Always reset for search keyword changes (even in newsletter view)
             hasSearchKeywordChange ||
+            // When the view mode of the mailbox change
+            conversationMode !== stateParams.conversationMode ||
+            // For other changes, only reset if not in newsletter view
             (!isNavigatingToNewsletterView && (hasESEnabledChange || hasPageJump || hasSortChange));
 
         if (shouldResetElementsState) {
@@ -272,7 +273,7 @@ export const useElements: UseElements = ({
                 },
             })
         );
-    }, [mailSettings.PageSize, mailSettings.ViewMode]);
+    }, [mailSettings.PageSize]);
 
     // Main effect watching all inputs and responsible to trigger actions on the state
     useEffect(() => {
