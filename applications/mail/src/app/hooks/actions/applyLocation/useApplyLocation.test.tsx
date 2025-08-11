@@ -25,9 +25,14 @@ const mockedLabelMessages = labelMessages as jest.Mock;
 //@ts-ignore
 const mockedUnlabelMessages = unlabelMessages as jest.Mock;
 
-const mockUsetGetConversation = jest.fn();
+const mockUseGetConversation = jest.fn();
 jest.mock('proton-mail/hooks/conversation/useConversation', () => ({
-    useGetConversation: () => mockUsetGetConversation,
+    useGetConversation: () => mockUseGetConversation,
+}));
+
+const mockUseGetElementByID = jest.fn();
+jest.mock('proton-mail/hooks/mailbox/useElements', () => ({
+    useGetElementByID: () => mockUseGetElementByID,
 }));
 
 jest.mock('proton-mail/store/hooks', () => ({
@@ -278,6 +283,7 @@ describe('useApplyLocation', () => {
                     labels: [],
                     folders: [],
                     elements: [element],
+                    conversations: [],
                 });
                 expect(mockedUnlabelMessages).not.toHaveBeenCalled();
             });
@@ -303,6 +309,7 @@ describe('useApplyLocation', () => {
                     labels: [],
                     folders: [],
                     elements: [element],
+                    conversations: [],
                 });
                 expect(mockedUnlabelMessages).not.toHaveBeenCalled();
             });
@@ -330,6 +337,7 @@ describe('useApplyLocation', () => {
                     labels: [],
                     folders: [],
                     elements: [element],
+                    conversations: [],
                 });
             });
         });
@@ -365,33 +373,31 @@ describe('useApplyLocation', () => {
             it('should not display a notification if only one is denied', async () => {
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
-                expect(() =>
-                    result.current.applyLocation({
-                        elements: [
-                            {
-                                ID: '1',
-                                Labels: [
-                                    {
-                                        ID: MAILBOX_LABEL_IDS.SCHEDULED,
-                                        ContextNumMessages: 10,
-                                    },
-                                ],
-                                NumMessages: 10,
-                            },
-                            {
-                                ID: '2',
-                                Labels: [
-                                    {
-                                        ID: MAILBOX_LABEL_IDS.SCHEDULED,
-                                        ContextNumMessages: 1,
-                                    },
-                                ],
-                                NumMessages: 10,
-                            },
-                        ],
-                        targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                    })
-                ).toThrow('Not implemented');
+                await result.current.applyLocation({
+                    elements: [
+                        {
+                            ID: '1',
+                            Labels: [
+                                {
+                                    ID: MAILBOX_LABEL_IDS.SCHEDULED,
+                                    ContextNumMessages: 10,
+                                },
+                            ],
+                            NumMessages: 10,
+                        },
+                        {
+                            ID: '2',
+                            Labels: [
+                                {
+                                    ID: MAILBOX_LABEL_IDS.SCHEDULED,
+                                    ContextNumMessages: 1,
+                                },
+                            ],
+                            NumMessages: 10,
+                        },
+                    ],
+                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                });
 
                 expect(mockedCreateNotification).not.toHaveBeenCalled();
             });
@@ -424,33 +430,31 @@ describe('useApplyLocation', () => {
             it('should not display info notification when only one is not applicable', async () => {
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
-                expect(() =>
-                    result.current.applyLocation({
-                        elements: [
-                            {
-                                ID: '1',
-                                NumMessages: 10,
-                                Labels: [
-                                    {
-                                        ID: MAILBOX_LABEL_IDS.STARRED,
-                                        ContextNumMessages: 10,
-                                    },
-                                ],
-                            },
-                            {
-                                ID: '1',
-                                NumMessages: 10,
-                                Labels: [
-                                    {
-                                        ID: MAILBOX_LABEL_IDS.STARRED,
-                                        ContextNumMessages: 1,
-                                    },
-                                ],
-                            },
-                        ],
-                        targetLabelID: MAILBOX_LABEL_IDS.STARRED,
-                    })
-                ).toThrow('Not implemented');
+                await result.current.applyLocation({
+                    elements: [
+                        {
+                            ID: '1',
+                            NumMessages: 10,
+                            Labels: [
+                                {
+                                    ID: MAILBOX_LABEL_IDS.STARRED,
+                                    ContextNumMessages: 10,
+                                },
+                            ],
+                        },
+                        {
+                            ID: '1',
+                            NumMessages: 10,
+                            Labels: [
+                                {
+                                    ID: MAILBOX_LABEL_IDS.STARRED,
+                                    ContextNumMessages: 1,
+                                },
+                            ],
+                        },
+                    ],
+                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                });
 
                 expect(mockedCreateNotification).not.toHaveBeenCalled();
             });
@@ -490,23 +494,21 @@ describe('useApplyLocation', () => {
             it('should not call the schedule modal when moving schedule message to non blocked folder', async () => {
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
-                expect(() =>
-                    result.current.applyLocation({
-                        elements: [
-                            {
-                                ID: '1',
-                                NumMessages: 10,
-                                Labels: [
-                                    {
-                                        ID: MAILBOX_LABEL_IDS.SCHEDULED,
-                                        ContextNumMessages: 10,
-                                    },
-                                ],
-                            },
-                        ],
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
-                    })
-                ).toThrow('Not implemented');
+                await result.current.applyLocation({
+                    elements: [
+                        {
+                            ID: '1',
+                            NumMessages: 10,
+                            Labels: [
+                                {
+                                    ID: MAILBOX_LABEL_IDS.SCHEDULED,
+                                    ContextNumMessages: 10,
+                                },
+                            ],
+                        },
+                    ],
+                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                });
 
                 expect(notifyMock).not.toHaveBeenCalled();
             });
@@ -539,7 +541,7 @@ describe('useApplyLocation', () => {
             });
 
             it('should open the unsubscribe modal when moving one click newlsetter to spam', async () => {
-                mockUsetGetConversation.mockReturnValue({
+                mockUseGetConversation.mockReturnValue({
                     Messages: [
                         {
                             ID: '1',
@@ -582,7 +584,7 @@ describe('useApplyLocation', () => {
             });
 
             it('should not open the unsubscribe modal when moving https client newlsetter to spam', async () => {
-                mockUsetGetConversation.mockReturnValue({
+                mockUseGetConversation.mockReturnValue({
                     Messages: [
                         {
                             ID: '1',
@@ -599,29 +601,27 @@ describe('useApplyLocation', () => {
                 ]);
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
-                expect(() =>
-                    result.current.applyLocation({
-                        elements: [
-                            {
-                                ID: '1',
-                                NumMessages: 10,
-                                Labels: [
-                                    {
-                                        ID: MAILBOX_LABEL_IDS.STARRED,
-                                        ContextNumMessages: 1,
-                                    },
-                                ],
-                            },
-                        ],
-                        targetLabelID: MAILBOX_LABEL_IDS.SPAM,
-                    })
-                ).toThrow('Not implemented');
+                await result.current.applyLocation({
+                    elements: [
+                        {
+                            ID: '1',
+                            NumMessages: 10,
+                            Labels: [
+                                {
+                                    ID: MAILBOX_LABEL_IDS.STARRED,
+                                    ContextNumMessages: 1,
+                                },
+                            ],
+                        },
+                    ],
+                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                });
 
                 expect(notifyMock).not.toHaveBeenCalled();
             });
 
             it('should not the unsubscribe modal when moving one click newlsetter to spam and user has the setting', async () => {
-                mockUsetGetConversation.mockReturnValue({
+                mockUseGetConversation.mockReturnValue({
                     Messages: [
                         {
                             ID: '1',
@@ -638,23 +638,21 @@ describe('useApplyLocation', () => {
                 ]);
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
-                expect(() =>
-                    result.current.applyLocation({
-                        elements: [
-                            {
-                                ID: '1',
-                                NumMessages: 10,
-                                Labels: [
-                                    {
-                                        ID: MAILBOX_LABEL_IDS.STARRED,
-                                        ContextNumMessages: 1,
-                                    },
-                                ],
-                            },
-                        ],
-                        targetLabelID: MAILBOX_LABEL_IDS.SPAM,
-                    })
-                ).toThrow('Not implemented');
+                await result.current.applyLocation({
+                    elements: [
+                        {
+                            ID: '1',
+                            NumMessages: 10,
+                            Labels: [
+                                {
+                                    ID: MAILBOX_LABEL_IDS.STARRED,
+                                    ContextNumMessages: 1,
+                                },
+                            ],
+                        },
+                    ],
+                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                });
 
                 expect(notifyMock).not.toHaveBeenCalled();
             });

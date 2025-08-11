@@ -3,6 +3,7 @@ import type { Draft } from 'immer';
 
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
@@ -18,6 +19,12 @@ import { applyMarkAsChangesOnConversation } from '../../hooks/optimistic/useOpti
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import type { EventUpdates, QueryParams, QueryResults, TaskRunningInfo } from '../elements/elementsTypes';
+import {
+    applyLabelToConversation,
+    applyLabelToMessage,
+    removeLabelFromConversation,
+    removeLabelFromMessage,
+} from '../mailbox/locationHelpers';
 import type { MailState } from '../store';
 import { allConversations, conversationByID } from './conversationsSelectors';
 import type {
@@ -487,5 +494,63 @@ export const markConversationsAsUnreadPending = (
                 latestMessage.Unread = 1;
             }
         }
+    });
+};
+
+export const labelConversationsPending = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        {
+            arg: {
+                conversations: Conversation[];
+                targetLabelID: string;
+                sourceLabelID: string;
+                labels: Label[];
+                folders: Folder[];
+            };
+        }
+    >
+) => {
+    const { conversations, sourceLabelID, targetLabelID, labels, folders } = action.meta.arg;
+
+    conversations.forEach((conversation) => {
+        const conversationState = getConversation(state, conversation.ID);
+
+        if (!conversationState) {
+            return;
+        }
+
+        applyLabelToConversation(conversationState.Conversation, sourceLabelID, targetLabelID, labels, folders);
+
+        conversationState.Messages?.forEach((message) => {
+            applyLabelToMessage(message, targetLabelID, folders, labels);
+        });
+    });
+};
+
+export const unlabelConversationsPending = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        { arg: { conversations: Conversation[]; targetLabelID: string; labels: Label[] } }
+    >
+) => {
+    const { conversations, targetLabelID, labels } = action.meta.arg;
+
+    conversations.forEach((conversation) => {
+        const conversationState = getConversation(state, conversation.ID);
+
+        if (!conversationState) {
+            return;
+        }
+
+        removeLabelFromConversation(conversationState.Conversation, targetLabelID, labels);
+
+        conversationState.Messages?.forEach((message) => {
+            removeLabelFromMessage(message, targetLabelID, labels);
+        });
     });
 };

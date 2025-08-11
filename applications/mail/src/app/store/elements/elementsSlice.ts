@@ -5,11 +5,13 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { globalReset } from '../actions';
 import {
+    labelConversations,
     labelMessages,
     markConversationsAsRead,
     markConversationsAsUnread,
     markMessagesAsRead,
     markMessagesAsUnread,
+    unlabelConversations,
     unlabelMessages,
 } from '../mailbox/mailboxActions';
 import { deleteDraft } from '../messages/draft/messagesDraftActions';
@@ -53,6 +55,7 @@ import {
     expireElementsRejected,
     globalReset as globalResetReducer,
     invalidate as invalidateReducer,
+    labelConversationsPending,
     labelMessagesPending,
     labelMessagesRejected,
     loadFulfilled,
@@ -79,6 +82,7 @@ import {
     selectAllFulfilled,
     setParams as setParamsReducer,
     showSerializedElements as showSerializedElementsReducer,
+    unlabelConversationsPending,
     unlabelMessagesPending,
     updatePage as updatePageReducer,
 } from './elementsReducers';
@@ -187,6 +191,9 @@ const elementsSlice = createSlice({
         builder.addCase(labelMessages.rejected, labelMessagesRejected);
         builder.addCase(unlabelMessages.pending, unlabelMessagesPending);
         builder.addCase(unlabelMessages.rejected, labelMessagesRejected);
+
+        builder.addCase(labelConversations.pending, labelConversationsPending);
+        builder.addCase(unlabelConversations.pending, unlabelConversationsPending);
     },
 });
 
