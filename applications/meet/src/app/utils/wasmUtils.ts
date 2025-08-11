@@ -23,7 +23,7 @@ declare global {
             set_auth: (auth: string) => void;
         };
         newGroupKeyEvent: {
-            new_group_key_for: () => void;
+            new_group_key_for: () => Promise<void>;
         };
     }
 }
@@ -41,7 +41,7 @@ export const setupMounStorage = () => {
 
 interface SetupWasmDependenciesParameters {
     getGroupKeyInfo: () => Promise<{ key: string; epoch: bigint }>;
-    onNewGroupKeyInfo: (key: string, epoch: bigint) => void;
+    onNewGroupKeyInfo: (key: string, epoch: bigint) => Promise<void>;
 }
 
 export const setupWasmDependencies = ({ getGroupKeyInfo, onNewGroupKeyInfo }: SetupWasmDependenciesParameters) => {
