@@ -49,7 +49,7 @@ export const PreJoinDetails = ({
         >
             <h1 className="h2 text-center hidden md:block">{title}</h1>
             <div className="text-center color-weak hidden md:block">{subtitle}</div>
-            <InputFieldStackedGroup classname="md:mt-0 lg:mb-4 w-full">
+            <InputFieldStackedGroup classname="md:mt-0 lg:mt-4 lg:mb-4 w-full">
                 {!instantMeeting && (
                     <InputFieldStacked classname="meeting-id-field hidden md:block" isGroupElement>
                         <InputFieldTwo

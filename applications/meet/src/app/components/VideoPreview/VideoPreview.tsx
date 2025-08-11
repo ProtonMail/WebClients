@@ -50,8 +50,11 @@ export const VideoPreview = ({ selectedCameraId }: VideoPreviewProps) => {
 
     return (
         <>
-            <div className="gradient-overlay absolute top-0 left-0 w-full h-full" />
             <div className="h-full w-full relative overflow-hidden">
+                <div
+                    className="gradient-overlay absolute top-0 left-0 w-full h-full z-custom"
+                    style={{ '--z-custom': '2' }}
+                />
                 <video
                     className="absolute h-full w-full lg:h-auto lg:w-full"
                     ref={videoRef}
