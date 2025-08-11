@@ -247,7 +247,7 @@ export const useElements: UseElements = ({
                 })
             );
         }
-    }, [location.pathname, location.hash, mailSettings, labelIDs]);
+    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs]);
 
     // Reset the element state when receiving a setting update for page size or conversation mode
     useEffect(() => {
