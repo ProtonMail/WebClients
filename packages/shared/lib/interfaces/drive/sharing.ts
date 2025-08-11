@@ -199,6 +199,7 @@ export interface ListDriveSharedWithMeLinksPayload {
         VolumeID: string;
         ShareID: string;
         LinkID: string;
+        ShareTargetType: ShareTargetType.Album;
     }[];
     AnchorID: string;
     More: boolean;
