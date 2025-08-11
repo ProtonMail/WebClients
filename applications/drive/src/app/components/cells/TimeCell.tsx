@@ -1,0 +1,35 @@
+import { TableCell, TimeIntl } from '@proton/components';
+import { readableTime } from '@proton/shared/lib/helpers/time';
+import { dateLocale } from '@proton/shared/lib/i18n';
+
+interface Props {
+    time: number;
+    options?: Intl.DateTimeFormatOptions;
+    sameDayOptions?: Intl.DateTimeFormatOptions;
+}
+
+export const TimeCell = ({
+    time,
+    options = {
+        year: 'numeric',
+        day: 'numeric',
+        month: 'short',
+        hour: 'numeric',
+        minute: 'numeric',
+    },
+    sameDayOptions,
+}: Props) => {
+    return (
+        <TableCell
+            className="flex items-center m-0 w-1/6 text-ellipsis"
+            title={readableTime(time, { locale: dateLocale, format: 'PP' })}
+            data-testid="column-share-created"
+        >
+            <span className="text-pre">
+                <TimeIntl options={options} sameDayOptions={sameDayOptions}>
+                    {time}
+                </TimeIntl>
+            </span>
+        </TableCell>
+    );
+};

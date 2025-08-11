@@ -12,7 +12,7 @@ import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import SharedWithMe from './SharedWithMe';
 import SharedWithMeToolbar from './SharedWithMeToolbar';
 
-const SharedWithMeView = () => {
+export const SharedWithMeViewDeprecated = () => {
     useAppTitle(c('Title').t`Shared with me`);
     const { activeShareId, setDefaultRoot } = useActiveShare();
 
@@ -34,5 +34,3 @@ const SharedWithMeView = () => {
         </FileBrowserStateProvider>
     );
 };
-
-export default SharedWithMeView;
