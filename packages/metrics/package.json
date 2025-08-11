@@ -5,7 +5,7 @@
     "scripts": {
         "check-types": "tsc",
         "generate-metrics": "ts-node -P scripts/tsconfig.metrics-scripts.json ./scripts/generate-metrics.ts",
-        "generate-schema-types": "json2ts -i 'json-schema-registry/observability/client/web*.schema.json' -o types/ --no-additionalProperties && json2ts -i 'json-schema-registry/observability/client/drive*.schema.json' -o types/ --no-additionalProperties && json2ts -i 'json-schema-registry/observability/client/docs*.schema.json' -o types/ --no-additionalProperties && json2ts -i 'json-schema-registry/observability/client/desktop*.schema.json' -o types/ --no-additionalProperties && json2ts -i 'json-schema-registry/observability/client/core*.schema.json' -o types/ --no-additionalProperties",
+        "generate-schema-types": "bash scripts/generate-schema-types.sh",
         "lint": "eslint . --ext ts --quiet --cache",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci",
