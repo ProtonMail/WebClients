@@ -469,7 +469,7 @@ export const getFreeDrivePlan = (freePlan: FreePlanDefault): ShortPlan => {
 export const getVPNPlan = (plan: Plan, serversCount: VPNServersCountData): ShortPlan => {
     const plusServers = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
     return {
-        plan: PLANS.VPN,
+        plan: PLANS.VPN2024,
         title: plan.Title,
         label: '',
         description: c('new_plans: info')
@@ -492,7 +492,7 @@ export const getVPNPlan = (plan: Plan, serversCount: VPNServersCountData): Short
 export const getVPNPassPlan = (plan: Plan, serversCount: VPNServersCountData): ShortPlan => {
     const plusServers = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
     return {
-        plan: PLANS.VPN,
+        plan: PLANS.VPN2024,
         title: plan.Title,
         label: '',
         description: c('new_plans: info')

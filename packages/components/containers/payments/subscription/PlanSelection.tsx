@@ -73,12 +73,7 @@ import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 import { getAllowedCycles } from './helpers';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
-import {
-    getAutoCoupon,
-    getBundleProPlanToUse,
-    getVPNPlanToUse,
-    notHigherThanAvailableOnBackend,
-} from './helpers/payment';
+import { getAutoCoupon, getBundleProPlanToUse, notHigherThanAvailableOnBackend } from './helpers/payment';
 
 import './PlanSelection.scss';
 
@@ -230,7 +225,7 @@ export function useAccessiblePlans({
 
     const enabledProductB2CPlanNames = [
         PLANS.MAIL,
-        getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
+        PLANS.VPN2024,
         PLANS.DRIVE,
         !user.hasPassLifetime && PLANS.PASS,
         PLANS.LUMO,
