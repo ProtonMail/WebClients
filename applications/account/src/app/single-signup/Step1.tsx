@@ -477,8 +477,7 @@ const Step1 = ({
     // true iff trial detected through check result (thus the check prefix)
     const checkTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
     const hasGuarantee =
-        ([PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan) &&
-        !checkTrial;
+        ([PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan) && !checkTrial;
 
     const measurePay = (
         type: TelemetryPayType,
@@ -698,7 +697,7 @@ const Step1 = ({
             text: viewportWidth['>=large'] ? c('Info').t`Protected by Swiss privacy laws` : c('Info').t`Swiss based`,
         },
         viewportWidth['>=large'] &&
-            [PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE, PLANS.BUNDLE].includes(selectedPlan.Name as any) && {
+            [PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE, PLANS.BUNDLE].includes(selectedPlan.Name as any) && {
                 left: <Icon size={6} className={iconColorClassName} name="servers" />,
                 text: model.loadingDependencies ? (
                     <>
@@ -754,7 +753,7 @@ const Step1 = ({
 
     const handleCloseUpsellModal = () => {
         handleUpdate('plan');
-        if (![PLANS.VPN, PLANS.VPN_PASS_BUNDLE, PLANS.VPN2024].some((plan) => options.planIDs[plan])) {
+        if (![PLANS.VPN_PASS_BUNDLE, PLANS.VPN2024].some((plan) => options.planIDs[plan])) {
             withLoadingPaymentDetails(
                 handleOptimistic({
                     planIDs: {
