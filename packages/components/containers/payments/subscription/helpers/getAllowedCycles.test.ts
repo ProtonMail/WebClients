@@ -738,7 +738,7 @@ describe('getAllowedCycles', () => {
         ({ fromCycle, targetPlan }) => {
             const subscription = buildSubscription();
             subscription.Cycle = fromCycle;
-            subscription.Plans[0].Name = PLANS.VPN; // vpn2022
+            subscription.Plans[0].Name = PLANS.VPN; // vpn2022 by design of this unit test
 
             const planIDs: PlanIDs = {
                 [targetPlan]: 1,
@@ -979,15 +979,12 @@ describe('getAllowedCycles', () => {
 
     // when user on 24m plan tries to switch to non-VPN plus plan then they should see 1m, 12m
 
-    const b2cPlusPlans = [PLANS.VPN2024, PLANS.VPN, PLANS.WALLET, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS];
+    const b2cPlusPlans = [PLANS.VPN2024, PLANS.WALLET, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS];
 
     it.each(
         b2cPlusPlans
             .flatMap((sourcePlan) => b2cPlusPlans.map((targetPlan) => ({ sourcePlan, targetPlan })))
-            .filter(
-                ({ targetPlan }) =>
-                    targetPlan !== PLANS.VPN2024 && targetPlan !== PLANS.VPN && targetPlan !== PLANS.MAIL
-            )
+            .filter(({ targetPlan }) => targetPlan !== PLANS.VPN2024 && targetPlan !== PLANS.MAIL)
             .filter(({ sourcePlan, targetPlan }) => sourcePlan !== targetPlan)
     )(
         'should show 1m, 12m cycles when user is on $sourcePlan with 24m cycle and selects $targetPlan',
@@ -1416,7 +1413,7 @@ describe('defaultCycles', () => {
         const maximumCycle = CYCLE.THIRTY;
         const defaultCycles = [CYCLE.THIRTY, CYCLE.MONTHLY, CYCLE.FIFTEEN];
         const planIDs: PlanIDs = {
-            [PLANS.VPN]: 1,
+            [PLANS.VPN2024]: 1,
         };
 
         const result = getAllowedCycles({

@@ -35,7 +35,7 @@ const userModel: UserModel = {
     ID: 'user-123',
 } as UserModel;
 
-const vpnSubscription = buildSubscription(PLANS.VPN);
+const vpnSubscription = buildSubscription(PLANS.VPN2024);
 
 const mailProSubscription = buildSubscription(PLANS.MAIL_PRO);
 
@@ -116,7 +116,7 @@ describe('cancel subscription', () => {
         });
     });
 
-    it.each([PLANS.VPN, PLANS.VPN2024, PLANS.PASS, PLANS.VPN_PASS_BUNDLE])(
+    it.each([PLANS.VPN2024, PLANS.PASS, PLANS.VPN_PASS_BUNDLE])(
         'should send the API request for subscription cancellation and return the result: %s',
         async (plan) => {
             const subscription = {

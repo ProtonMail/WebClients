@@ -17,20 +17,6 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
-export const getVPNPlanToUse = ({
-    planIDs,
-}: {
-    plansMap: PlansMap;
-    planIDs: PlanIDs | undefined;
-    cycle: CYCLE | undefined;
-}) => {
-    // If the user is on the vpn2022 plan, we keep showing that
-    if (planIDs?.[PLANS.VPN]) {
-        return PLANS.VPN;
-    }
-    return PLANS.VPN2024;
-};
-
 export const getBundleProPlanToUse = ({ plansMap, planIDs }: { plansMap: PlansMap; planIDs: PlanIDs | undefined }) => {
     // If the user is on the bundlepro2022 plan, we keep showing that
     if (planIDs?.[PLANS.BUNDLE_PRO]) {
@@ -58,22 +44,10 @@ export const getIsVpn2024Deal = (planName: PLANS, coupon: string | undefined) =>
     );
 };
 
-export const getDefaultSelectedProductPlans = ({
-    appName,
-    plan,
-    planIDs,
-    plansMap,
-    cycle,
-}: {
-    appName: ProductParam;
-    plan?: string;
-    planIDs: PlanIDs;
-    cycle: CYCLE | undefined;
-    plansMap: PlansMap;
-}) => {
+export const getDefaultSelectedProductPlans = ({ appName, plan }: { appName: ProductParam; plan?: string }) => {
     let defaultB2CPlan = PLANS.MAIL;
     if (appName === APPS.PROTONVPN_SETTINGS) {
-        defaultB2CPlan = getVPNPlanToUse({ plansMap, planIDs, cycle });
+        defaultB2CPlan = PLANS.VPN2024;
     } else if (appName === APPS.PROTONDRIVE || appName === APPS.PROTONDOCS) {
         defaultB2CPlan = PLANS.DRIVE;
     } else if (appName === APPS.PROTONPASS) {
@@ -84,7 +58,7 @@ export const getDefaultSelectedProductPlans = ({
         defaultB2CPlan = PLANS.LUMO;
     }
 
-    const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, /*PLANS.VPN2024, */ PLANS.DRIVE, PLANS.WALLET].find(
+    const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN2024, PLANS.DRIVE, PLANS.WALLET].find(
         (planName) => plan === planName
     );
     const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].find((planName) => plan === planName);

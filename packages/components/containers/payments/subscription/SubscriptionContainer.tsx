@@ -371,9 +371,6 @@ const SubscriptionContainerInner = ({
         defaultSelectedProductPlans ||
             getDefaultSelectedProductPlans({
                 appName: app,
-                planIDs,
-                plansMap,
-                cycle: subscription?.Cycle,
             })
     );
 

@@ -257,6 +257,23 @@ export const getCheckout = ({
     const withDiscountMembersPerMonth = membersPerMonth - couponDiscountPerMonth;
     const withDiscountOneMemberPerMonth = withDiscountMembersPerMonth / usersAndAddons.users;
 
+    const renewCycle = checkResult.RenewCycle ?? checkResult.Cycle;
+    const renewCycleOverriden = !!checkResult.RenewCycle;
+
+    const renewPrice = (() => {
+        if (checkResult.BaseRenewAmount) {
+            return checkResult.BaseRenewAmount;
+        }
+
+        const couponMaxRedemptions = checkResult.Coupon?.MaximumRedemptionsPerUser ?? 0;
+        if (couponMaxRedemptions >= 1) {
+            return getPrice(planIDs, renewCycle, plansMap);
+        }
+
+        return getPrice(planIDs, renewCycle, plansMap);
+    })();
+    const renewPriceOverriden = !!checkResult.BaseRenewAmount;
+
     return {
         regularAmountPerCycle: amount,
         couponDiscount: checkResult.CouponDiscount,
@@ -276,6 +293,10 @@ export const getCheckout = ({
         withDiscountMembersPerMonth,
         withDiscountOneMemberPerMonth,
         cycle,
+        renewCycle,
+        renewPrice,
+        renewCycleOverriden,
+        renewPriceOverriden,
     };
 };
 
