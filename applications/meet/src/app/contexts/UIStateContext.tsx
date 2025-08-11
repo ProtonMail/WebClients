@@ -19,6 +19,8 @@ export interface UIStateContextType {
     togglePopupState: (popupState: PopUpControls) => void;
     permissionPromptStatus: PermissionPromptStatus;
     setPermissionPromptStatus: (permissionPromptStatus: PermissionPromptStatus) => void;
+    noDeviceDetected: PermissionPromptStatus;
+    setNoDeviceDetected: (permissionPromptStatus: PermissionPromptStatus) => void;
 }
 
 export const UIStateContext = createContext<UIStateContextType>({
@@ -38,6 +40,8 @@ export const UIStateContext = createContext<UIStateContextType>({
     togglePopupState: () => {},
     permissionPromptStatus: PermissionPromptStatus.CLOSED,
     setPermissionPromptStatus: () => {},
+    noDeviceDetected: PermissionPromptStatus.CLOSED,
+    setNoDeviceDetected: () => {},
 });
 
 export const useUIStateContext = () => {
@@ -67,6 +71,7 @@ export const UIStateProvider = ({
     });
 
     const [permissionPromptStatus, setPermissionPromptStatus] = useState(PermissionPromptStatus.CLOSED);
+    const [noDeviceDetected, setNoDeviceDetected] = useState(PermissionPromptStatus.CLOSED);
 
     const toggleSideBarState = useCallback(
         (sidebar: MeetingSideBars) => {
@@ -105,6 +110,8 @@ export const UIStateProvider = ({
                 togglePopupState,
                 permissionPromptStatus,
                 setPermissionPromptStatus,
+                noDeviceDetected,
+                setNoDeviceDetected,
             }}
         >
             {children}

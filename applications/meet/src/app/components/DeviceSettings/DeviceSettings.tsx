@@ -61,6 +61,12 @@ export const DeviceSettings = ({
     const noCameraPermission = camera !== 'granted';
     const noMicrophonePermission = microphone !== 'granted';
 
+    const noCameraDetected = cameras.length === 0;
+    const noMicrophoneDetected = microphones.length === 0;
+
+    const cameraHasWarning = noCameraPermission || noCameraDetected;
+    const microphoneHasWarning = noMicrophonePermission || noMicrophoneDetected;
+
     const [isAudioSettingsOpen, setIsAudioSettingsOpen] = useState(false);
     const [isVideoSettingsOpen, setIsVideoSettingsOpen] = useState(false);
 
@@ -84,6 +90,26 @@ export const DeviceSettings = ({
         },
         [onCameraChange, cameras]
     );
+
+    let microphoneLabel;
+    if (noMicrophonePermission) {
+        microphoneLabel = c('meet_2025 Info').t`Permissions not given.`;
+    } else if (noMicrophoneDetected) {
+        microphoneLabel = c('meet_2025 Info').t`No microphone detected.`;
+    } else {
+        const selectedMicrophone = microphones.find((microphone) => microphone.deviceId === selectedMicrophoneId);
+        microphoneLabel = selectedMicrophone?.label ?? '';
+    }
+
+    let cameraLabel;
+    if (noCameraPermission) {
+        cameraLabel = c('meet_2025 Info').t`Permissions not given.`;
+    } else if (noCameraDetected) {
+        cameraLabel = c('meet_2025 Info').t`No camera detected.`;
+    } else {
+        const selectedCamera = cameras.find((camera) => camera.deviceId === selectedCameraId);
+        cameraLabel = selectedCamera?.label ?? '';
+    }
 
     return (
         <div
@@ -118,7 +144,7 @@ export const DeviceSettings = ({
                 >
                     <CircleButton
                         className="border white-border"
-                        onClick={noMicrophonePermission ? undefined : onMicrophoneToggle}
+                        onClick={microphoneHasWarning ? undefined : onMicrophoneToggle}
                         IconComponent={
                             isMicrophoneEnabled
                                 ? ({ size }) => (
@@ -130,33 +156,28 @@ export const DeviceSettings = ({
                                 : IcMeetMicrophoneOff
                         }
                         variant={'transparent'}
-                        indicatorContent={noMicrophonePermission ? '!' : undefined}
-                        indicatorStatus={noMicrophonePermission ? 'danger' : 'default'}
+                        indicatorContent={microphoneHasWarning ? '!' : undefined}
+                        indicatorStatus={microphoneHasWarning ? 'danger' : 'default'}
                         noBorder={false}
                     />
 
                     <CircleButton
                         className="border white-border"
-                        onClick={noCameraPermission ? undefined : onCameraToggle}
+                        onClick={cameraHasWarning ? undefined : onCameraToggle}
                         IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
                         variant={'transparent'}
-                        indicatorContent={noCameraPermission ? '!' : undefined}
-                        indicatorStatus={noCameraPermission ? 'danger' : 'default'}
+                        indicatorContent={cameraHasWarning ? '!' : undefined}
+                        indicatorStatus={cameraHasWarning ? 'danger' : 'default'}
                         noBorder={false}
                     />
                 </div>
             </div>
             <div className="device-selectors hidden md:flex flex-nowrap gap-2 mt-2">
                 <DeviceSelect
-                    label={
-                        noMicrophonePermission
-                            ? c('meet_2025 Info').t`Permissions not given.`
-                            : (microphones.find((microphone) => microphone.deviceId === selectedMicrophoneId)?.label ??
-                              '')
-                    }
+                    label={microphoneLabel}
                     icon="meet-microphone"
                     title={c('meet_2025 Label').t`Audio`}
-                    disabled={noMicrophonePermission}
+                    disabled={microphoneHasWarning}
                     isOpen={isAudioSettingsOpen}
                     setIsOpen={(newIsOpen) => {
                         setIsAudioSettingsOpen(newIsOpen);
@@ -176,14 +197,10 @@ export const DeviceSettings = ({
                     }}
                 />
                 <DeviceSelect
-                    label={
-                        noCameraPermission
-                            ? c('meet_2025 Info').t`Permissions not given.`
-                            : (cameras.find((camera) => camera.deviceId === selectedCameraId)?.label ?? '')
-                    }
+                    label={cameraLabel}
                     icon="meet-camera"
                     title={c('meet_2025 Label').t`Video`}
-                    disabled={noCameraPermission}
+                    disabled={cameraHasWarning}
                     isOpen={isVideoSettingsOpen}
                     setIsOpen={(newIsOpen) => {
                         setIsVideoSettingsOpen(newIsOpen);

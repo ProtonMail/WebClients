@@ -1,0 +1,27 @@
+.no-device-available-backdrop {
+	background-color: color-mix(in srgb, var(--backdrop-norm), transparent 20%) !important;
+	border-radius: 1.5rem !important;
+}
+
+.no-device-available-modal {
+	box-shadow: none !important;
+	inline-size: 24.5rem !important;
+	block-size: 20rem !important;
+	border-radius: 1.5rem !important;
+
+	.modal-two-header {
+		--margin: 1rem !important;
+	}
+}
+
+.no-device-available-button {
+	&:hover {
+		color: var(--text-invert) !important;
+	}
+}
+
+.ignore-no-device-available-button {
+	&:hover {
+		color: var(--primary) !important;
+	}
+}

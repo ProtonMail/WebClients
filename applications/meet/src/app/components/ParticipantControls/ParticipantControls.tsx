@@ -40,8 +40,14 @@ export const ParticipantControls = () => {
 
     const isLargerThanMd = useIsLargerThanMd();
 
-    const { sideBarState, toggleSideBarState, togglePopupState, setPermissionPromptStatus, popupState } =
-        useUIStateContext();
+    const {
+        sideBarState,
+        toggleSideBarState,
+        togglePopupState,
+        setPermissionPromptStatus,
+        setNoDeviceDetected,
+        popupState,
+    } = useUIStateContext();
 
     const participants = useParticipants();
 
@@ -94,6 +100,32 @@ export const ParticipantControls = () => {
     const microphoneActionStatus = isMicrophoneEnabled ? 'off' : 'on';
     const cameraActionStatus = isCameraEnabled ? 'off' : 'on';
 
+    const microphoneHasWarning = !hasMicrophonePermission || microphones.length === 0;
+
+    let microphoneTooltipTitle;
+    if (microphoneHasWarning) {
+        if (!hasMicrophonePermission) {
+            microphoneTooltipTitle = c('meet_2025 Info').t`Permission denied`;
+        } else {
+            microphoneTooltipTitle = c('meet_2025 Info').t`No microphone detected`;
+        }
+    } else {
+        microphoneTooltipTitle = c('meet_2025 Info').t`Turn ${microphoneActionStatus} microphone`;
+    }
+
+    const cameraHasWarning = !hasCameraPermission || cameras.length === 0;
+
+    let cameraTooltipTitle;
+    if (cameraHasWarning) {
+        if (!hasCameraPermission) {
+            cameraTooltipTitle = c('meet_2025 Info').t`Permission denied`;
+        } else {
+            cameraTooltipTitle = c('meet_2025 Info').t`No camera detected`;
+        }
+    } else {
+        cameraTooltipTitle = c('meet_2025 Info').t`Turn ${cameraActionStatus} camera`;
+    }
+
     return (
         <div className="w-full flex flex-nowrap flex-column">
             {!isLargerThanMd && pageCount > 1 && (
@@ -115,12 +147,12 @@ export const ParticipantControls = () => {
                                 OffIconComponent={IcMeetMicrophoneOff}
                                 isOn={microphones.length === 0 ? false : isMicrophoneEnabled}
                                 onClick={() => {
-                                    if (microphones.length === 0) {
-                                        return;
-                                    }
-
                                     if (!hasMicrophonePermission) {
                                         setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE);
+                                        return;
+                                    }
+                                    if (microphones.length === 0) {
+                                        setNoDeviceDetected(PermissionPromptStatus.MICROPHONE);
                                         return;
                                     }
 
@@ -130,12 +162,8 @@ export const ParticipantControls = () => {
                                 popUp={PopUpControls.Microphone}
                                 ariaLabel={c('meet_2025 Alt').t`Toggle microphone`}
                                 secondaryAriaLabel={c('meet_2025 Alt').t`Audio settings`}
-                                hasWarning={!hasMicrophonePermission}
-                                tooltipTitle={
-                                    !hasMicrophonePermission
-                                        ? c('meet_2025 Info').t`Permission denied`
-                                        : c('meet_2025 Info').t`Turn ${microphoneActionStatus} microphone`
-                                }
+                                hasWarning={microphoneHasWarning}
+                                tooltipTitle={microphoneTooltipTitle}
                                 isOpen={popupState[PopUpControls.Microphone]}
                                 onPopupButtonClick={() => {
                                     if (!hasMicrophonePermission) {
@@ -150,11 +178,12 @@ export const ParticipantControls = () => {
                                 OffIconComponent={IcMeetCameraOff}
                                 isOn={cameras.length === 0 ? false : isCameraEnabled}
                                 onClick={() => {
-                                    if (cameras.length === 0) {
-                                        return;
-                                    }
                                     if (!hasCameraPermission) {
                                         setPermissionPromptStatus(PermissionPromptStatus.CAMERA);
+                                        return;
+                                    }
+                                    if (cameras.length === 0) {
+                                        setNoDeviceDetected(PermissionPromptStatus.CAMERA);
                                         return;
                                     }
 
@@ -166,12 +195,8 @@ export const ParticipantControls = () => {
                                 popUp={PopUpControls.Camera}
                                 ariaLabel={c('meet_2025 Alt').t`Toggle camera`}
                                 secondaryAriaLabel={c('meet_2025 Alt').t`Video settings`}
-                                hasWarning={!hasCameraPermission}
-                                tooltipTitle={
-                                    !hasCameraPermission
-                                        ? c('meet_2025 Info').t`Permission denied`
-                                        : c('meet_2025 Info').t`Turn ${cameraActionStatus} camera`
-                                }
+                                hasWarning={cameraHasWarning}
+                                tooltipTitle={cameraTooltipTitle}
                                 isOpen={popupState[PopUpControls.Camera]}
                                 onPopupButtonClick={() => {
                                     if (!hasCameraPermission) {
@@ -192,11 +217,15 @@ export const ParticipantControls = () => {
                                         setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE);
                                         return;
                                     }
+                                    if (microphones.length === 0) {
+                                        setNoDeviceDetected(PermissionPromptStatus.MICROPHONE);
+                                        return;
+                                    }
 
                                     void toggleAudio({ isEnabled: !isMicrophoneEnabled, audioDeviceId });
                                 }}
-                                indicatorContent={hasMicrophonePermission ? undefined : '!'}
-                                indicatorStatus={hasMicrophonePermission ? 'success' : 'warning'}
+                                indicatorContent={!microphoneHasWarning ? undefined : '!'}
+                                indicatorStatus={!microphoneHasWarning ? 'success' : 'warning'}
                                 ariaLabel={c('meet_2025 Alt').t`Toggle microphone`}
                             />
                             <CircleButton
@@ -207,13 +236,17 @@ export const ParticipantControls = () => {
                                         setPermissionPromptStatus(PermissionPromptStatus.CAMERA);
                                         return;
                                     }
+                                    if (cameras.length === 0) {
+                                        setNoDeviceDetected(PermissionPromptStatus.CAMERA);
+                                        return;
+                                    }
 
                                     if (videoDeviceId) {
                                         void toggleVideo({ isEnabled: !isCameraEnabled, videoDeviceId });
                                     }
                                 }}
-                                indicatorContent={hasCameraPermission ? undefined : '!'}
-                                indicatorStatus={hasCameraPermission ? 'success' : 'warning'}
+                                indicatorContent={!cameraHasWarning ? undefined : '!'}
+                                indicatorStatus={!cameraHasWarning ? 'success' : 'warning'}
                             />
                         </>
                     )}
