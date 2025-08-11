@@ -25,7 +25,7 @@ export interface PlanCardFeature {
         [PLANS.FREE]: PlanCardFeatureDefinition | null;
         [PLANS.BUNDLE]: PlanCardFeatureDefinition | null;
         [PLANS.MAIL]: PlanCardFeatureDefinition | null;
-        [PLANS.VPN]: PlanCardFeatureDefinition | null;
+        [PLANS.VPN2024]: PlanCardFeatureDefinition | null;
         [PLANS.DRIVE]: PlanCardFeatureDefinition | null;
         [PLANS.DRIVE_1TB]: PlanCardFeatureDefinition | null;
         [PLANS.DRIVE_BUSINESS]: PlanCardFeatureDefinition | null;
@@ -78,7 +78,7 @@ export interface ShortPlan {
         | PLANS.BUNDLE_PRO_2024
         | PLANS.MAIL_PRO
         | PLANS.MAIL_BUSINESS
-        | PLANS.VPN
+        | PLANS.VPN2024
         | PLANS.VISIONARY
         | PLANS.FAMILY
         | PLANS.DUO

@@ -179,7 +179,6 @@ const SingleSignupContainer = ({
         const validValues = [
             'free',
             PLANS.BUNDLE,
-            PLANS.VPN,
             PLANS.VPN2024,
             PLANS.VPN_PRO,
             PLANS.VPN_PASS_BUNDLE,

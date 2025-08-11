@@ -70,7 +70,7 @@ describe('go unlimites 2022 tests', () => {
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
-                                Name: PLANS.VPN,
+                                Name: PLANS.VPN2024,
                             },
                         ],
                     } as unknown as Subscription,
@@ -90,7 +90,7 @@ describe('go unlimites 2022 tests', () => {
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
-                                Name: PLANS.VPN,
+                                Name: PLANS.VPN2024,
                             },
                         ],
                     } as unknown as Subscription,

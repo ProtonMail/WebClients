@@ -75,16 +75,7 @@ interface Props {
     childOverride?: ReactNode;
 }
 
-const plusPlans = [
-    PLANS.VPN,
-    PLANS.VPN2024,
-    PLANS.MAIL,
-    PLANS.DRIVE,
-    PLANS.PASS,
-    PLANS.VPN_PASS_BUNDLE,
-    PLANS.WALLET,
-    PLANS.LUMO,
-];
+const plusPlans = [PLANS.VPN2024, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE, PLANS.WALLET, PLANS.LUMO];
 
 export const SubscribeAccountHeader = ({
     title,
@@ -197,7 +188,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
               )?.Name as PLANS | undefined);
 
     const { bgClassName, logo } = (() => {
-        if ([PLANS.VPN, PLANS.VPN2024].includes(plan as any)) {
+        if ([PLANS.VPN2024].includes(plan as any)) {
             return {
                 bgClassName: 'subscribe-account--vpn-bg',
                 logo: <Logo className="subscribe-account-logo" appName={APPS.PROTONVPN_SETTINGS} />,

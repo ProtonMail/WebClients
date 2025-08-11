@@ -40,7 +40,6 @@ import {
 } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import { getOptimisticRenewCycleAndPrice } from '@proton/shared/lib/helpers/renew';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -123,10 +122,7 @@ const SubscriptionRow = ({ subscription, plansMap }: SubscriptionRowProps) => {
 
     const { renewAmount, renewCurrency, renewLength } = (() => {
         const latestPlanIDs = getPlanIDs(latestSubscription);
-        if (
-            getHas2023OfferCoupon(latestSubscription.CouponCode) &&
-            (latestPlanIDs[PLANS.VPN] || latestPlanIDs[PLANS.VPN_PASS_BUNDLE])
-        ) {
+        if (getHas2023OfferCoupon(latestSubscription.CouponCode) && latestPlanIDs[PLANS.VPN_PASS_BUNDLE]) {
             const nextCycle = getNormalCycleFromCustomCycle(latestSubscription.Cycle);
             const latestCheckout = getCheckout({
                 plansMap,
@@ -144,20 +140,6 @@ const SubscriptionRow = ({ subscription, plansMap }: SubscriptionRowProps) => {
                 renewAmount: latestCheckout.withDiscountPerCycle,
                 renewCurrency: latestSubscription.Currency,
                 renewLength: nextCycle,
-            };
-        }
-
-        if (latestPlanIDs[PLANS.VPN2024]) {
-            const result = getOptimisticRenewCycleAndPrice({
-                plansMap,
-                planIDs: latestPlanIDs,
-                cycle: latestSubscription.Cycle,
-                currency: latestSubscription.Currency,
-            })!;
-            return {
-                renewAmount: result.renewPrice,
-                renewCurrency: latestSubscription.Currency,
-                renewLength: result.renewalLength,
             };
         }
 

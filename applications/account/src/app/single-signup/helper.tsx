@@ -7,7 +7,7 @@ import { CYCLE, PLANS, PLAN_NAMES, type Plan } from '@proton/payments';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
-    if (plan && plan.Name === PLANS.VPN) {
+    if (plan && plan.Name === PLANS.VPN2024) {
         const vpnPlan = getVPNPlan(plan, vpnServersCountData);
         return {
             logo: <VpnLogo variant="with-wordmark" />,

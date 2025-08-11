@@ -97,9 +97,6 @@ const PlansSectionInner = ({ app }: Props) => {
         return getDefaultSelectedProductPlans({
             appName: app,
             plan: searchParams.plan,
-            planIDs: getPlanIDs(subscription),
-            cycle: subscription.Cycle,
-            plansMap,
         });
     });
 
@@ -162,10 +159,7 @@ const PlansSectionInner = ({ app }: Props) => {
         setSelectedProductPlans(
             getDefaultSelectedProductPlans({
                 appName: app,
-                planIDs: getPlanIDs(subscription),
                 plan: searchParams.plan,
-                plansMap,
-                cycle: subscription.Cycle,
             })
         );
     }, [isLoading, subscription, app]);

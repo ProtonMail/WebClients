@@ -81,9 +81,9 @@ interface Card {
     shouldRender: (planName: string) => boolean;
 }
 
-const freeAndPlusPlans = [PLANS.FREE, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN, PLANS.VPN2024];
-const plusPlans = [PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN, PLANS.VPN2024];
-const vpnPlans = [PLANS.VPN, PLANS.VPN2024];
+const plusPlans = [PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN2024, PLANS.LUMO];
+const freeAndPlusPlans = [PLANS.FREE, ...plusPlans];
+const vpnPlans = [PLANS.VPN2024];
 const bundlePlans = [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO, PLANS.VISIONARY];
 
 interface CardProps {

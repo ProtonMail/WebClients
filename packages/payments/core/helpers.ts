@@ -364,6 +364,7 @@ export function fixPlanName(planName: string | null | undefined, source: string)
  */
 export function fixPlanIDs(planIDs: PlanIDs | undefined, source: string): PlanIDs | undefined {
     try {
+        // if we don't have the deprecated VPN plan then we don't have anything to fix and can return early
         if (!planIDs || !planIDs[PLANS.VPN]) {
             return planIDs;
         }

@@ -26,7 +26,7 @@ export const getIsEligible = ({ user, subscription, protonConfig }: Props) => {
     if (plan?.Name === PLANS.MAIL) {
         const isMonthly = subscription?.Cycle === CYCLE.MONTHLY;
         return commonConditions && !isMonthly;
-    } else if (plan?.Name === PLANS.VPN) {
+    } else if (plan?.Name === PLANS.VPN || plan?.Name === PLANS.VPN2024) {
         return commonConditions;
     }
 

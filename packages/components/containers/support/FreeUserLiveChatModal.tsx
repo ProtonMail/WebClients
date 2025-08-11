@@ -31,7 +31,7 @@ const FreeUserLiveChatModal = ({ open, onExit, onClose }: Props) => {
         handleClose?.();
     };
 
-    const planName = PLAN_NAMES[PLANS.VPN];
+    const planName = PLAN_NAMES[PLANS.VPN2024];
 
     return (
         <>

@@ -31,7 +31,6 @@ import {
     type SubscriptionCheckoutData,
     getCheckout,
 } from '@proton/shared/lib/helpers/checkout';
-import { getOptimisticRenewCycleAndPrice, isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
 
 type RenewalNoticeProps = {
@@ -102,20 +101,18 @@ const appendTermsAndConditionsLink = (
 };
 
 const getRegularRenewalNoticeText = ({
+    checkout,
     cycle,
     isCustomBilling,
     isScheduledChargedImmediately,
     isScheduledChargedLater,
     subscription,
     planIDs,
-    renewAmount,
-    renewCycle,
     currency,
     app,
 }: RenewalNoticeProps & {
+    checkout: SubscriptionCheckoutData;
     planIDs: PlanIDs;
-    renewAmount: number | null;
-    renewCycle: CYCLE | null;
     currency: Currency;
     app: APP_NAMES;
 }) => {
@@ -154,7 +151,10 @@ const getRegularRenewalNoticeText = ({
         return appendTermsAndConditionsLink([autoRenewNote, ' ', nextBillingDate], planIDs, cycle, app);
     }
 
-    if (renewAmount && renewCycle) {
+    const renewAmount = checkout.renewPrice;
+    const renewCycle = checkout.renewCycle;
+
+    if (checkout.renewPriceOverriden || checkout.renewCycleOverriden) {
         const one = c('Info').t`Your subscription will automatically renew on ${renewalTime}.`;
 
         const renewAmountStr = getSimplePriceString(currency, renewAmount);
@@ -184,90 +184,21 @@ const getRegularRenewalNoticeText = ({
     return appendTermsAndConditionsLink([start, ' ', nextBillingDate], planIDs, cycle, app);
 };
 
-const getSpecialLengthRenewNoticeText = ({
-    planIDs,
-    plansMap,
-    currency,
-    subscription,
-    renewAmount,
-    renewCycle,
-    ...renewalNoticeProps
-}: {
-    planIDs: PlanIDs;
-    plansMap: PlansMap;
-    currency: Currency;
-    renewAmount: number | null;
-    renewCycle: CYCLE | null;
-} & RenewalNoticeProps) => {
-    const { cycle } = renewalNoticeProps;
-
-    const { renewPrice, renewalLength } = getOptimisticRenewCycleAndPrice({
-        planIDs,
-        plansMap,
-        cycle,
-        currency,
-        renewAmount,
-        renewCycle,
-    });
-
-    if (renewalLength === CYCLE.YEARLY) {
-        let scheduledChangeText: string | string[] | null = null;
-        if (subscription && renewalNoticeProps.isScheduled) {
-            const renewalTime = getReadableTime({ value: subscription.PeriodEnd, format: 'PPP' });
-            scheduledChangeText = c('vpn_2024: renew').t`Your scheduled plan starts on ${renewalTime}.`;
-        }
-
-        const renewLengthText = (() => {
-            if (renewalNoticeProps.isScheduled) {
-                return c('vpn_2024: renew').ngettext(
-                    msgid`Your new subscription will automatically renew in ${cycle} month.`,
-                    `Your new subscription will automatically renew in ${cycle} months.`,
-                    cycle
-                );
-            }
-
-            // translator: typically cycle is 1, 12, or 24 months.
-            return c('vpn_2024: renew').ngettext(
-                msgid`Your subscription will automatically renew in ${cycle} month.`,
-                `Your subscription will automatically renew in ${cycle} months.`,
-                cycle
-            );
-        })();
-
-        const renewPriceStr = getSimplePriceString(currency, renewPrice);
-
-        const renewPriceText = c('vpn_2024: renew').jt`You'll then be billed every 12 months at ${renewPriceStr}.`;
-
-        let result = [renewLengthText, ' ', renewPriceText];
-        if (scheduledChangeText) {
-            result = [scheduledChangeText, ' ', ...result];
-        }
-
-        return result;
-    }
-};
-
 const getRenewNoticeTextForLimitedCoupons = ({
     coupon,
     cycle: subscriptionLength, // Elaborate name of the variable to help the translators
     planIDs,
-    plansMap,
     currency,
     checkout,
     short,
-    renewAmount,
-    renewCycle,
     app,
 }: {
     cycle: CYCLE;
     planIDs: PlanIDs;
-    plansMap: PlansMap;
     currency: Currency;
     coupon: Coupon;
     checkout: SubscriptionCheckoutData;
     short?: boolean;
-    renewAmount: number | null;
-    renewCycle: CYCLE | null;
     app: APP_NAMES;
 }) => {
     if (!coupon || !coupon.MaximumRedemptionsPerUser) {
@@ -278,14 +209,8 @@ const getRenewNoticeTextForLimitedCoupons = ({
 
     const priceWithDiscount = getSimplePriceString(currency, checkout.withDiscountPerCycle);
 
-    const { renewPrice, renewalLength } = getOptimisticRenewCycleAndPrice({
-        planIDs,
-        plansMap,
-        cycle: subscriptionLength,
-        currency,
-        renewAmount,
-        renewCycle,
-    });
+    const renewPrice = checkout.renewPrice;
+    const renewalLength = checkout.renewCycle;
 
     const renewPriceStr = getSimplePriceString(currency, renewPrice);
 
@@ -383,8 +308,6 @@ export const getCheckoutRenewNoticeText = ({
     currency,
     checkout,
     short,
-    renewAmount,
-    renewCycle,
     app,
     ...renewalNoticeProps
 }: {
@@ -395,41 +318,19 @@ export const getCheckoutRenewNoticeText = ({
     currency: Currency;
     checkout: SubscriptionCheckoutData;
     short?: boolean;
-    renewAmount: number | null;
-    renewCycle: CYCLE | null;
     app: APP_NAMES;
 } & RenewalNoticeProps): ReactNode => {
     if (isLifetimePlanSelected(planIDs)) {
         return getLifetimeRenewNoticeText({ ...renewalNoticeProps, planIDs });
     }
 
-    const isSpeciallyRenewedPlan = isSpecialRenewPlan(planIDs);
-    if (isSpeciallyRenewedPlan) {
-        const specialLengthRenewNotice = getSpecialLengthRenewNoticeText({
-            cycle,
-            planIDs,
-            plansMap,
-            currency,
-            renewAmount,
-            renewCycle,
-            ...renewalNoticeProps,
-        });
-
-        if (specialLengthRenewNotice) {
-            return specialLengthRenewNotice;
-        }
-    }
-
     const limitedCouponsNotice = getRenewNoticeTextForLimitedCoupons({
         coupon,
         cycle,
         planIDs,
-        plansMap,
         currency,
         checkout,
         short,
-        renewAmount,
-        renewCycle,
         app,
     });
 
@@ -438,10 +339,9 @@ export const getCheckoutRenewNoticeText = ({
     }
 
     return getRegularRenewalNoticeText({
+        checkout,
         cycle,
         planIDs,
-        renewAmount,
-        renewCycle,
         currency,
         app,
         ...renewalNoticeProps,
@@ -495,8 +395,6 @@ export const getCheckoutRenewNoticeTextFromCheckResult = ({
         currency: checkResult.Currency,
         coupon: checkResult.Coupon,
         short,
-        renewAmount: checkResult.BaseRenewAmount,
-        renewCycle: checkResult.RenewCycle,
         subscription,
         app,
         ...getCheckoutModifiers(checkResult),

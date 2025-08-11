@@ -294,7 +294,7 @@ const getUpsell = ({
                     return getBlackFridayUpsellData({ plan });
                 }
 
-                if ((currentPlan.Name === PLANS.VPN2024 || currentPlan.Name === PLANS.VPN) && hasMonthlyCycle) {
+                if (currentPlan.Name === PLANS.VPN2024 && hasMonthlyCycle) {
                     if (
                         (options.cycle === CYCLE.YEARLY || options.cycle === CYCLE.TWO_YEARS) &&
                         hasSelectedPlan(planParameters.plan, [PLANS.VPN2024])
