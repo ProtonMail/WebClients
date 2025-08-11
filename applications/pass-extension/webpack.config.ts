@@ -44,7 +44,7 @@ if (!['chrome', 'firefox', 'safari'].includes(BUILD_TARGET)) {
 
 const MANIFEST_KEYS = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'manifest-keys.json'), 'utf8'));
 const PUBLIC_KEY = BUILD_TARGET === 'chrome' ? MANIFEST_KEYS?.[MANIFEST_KEY] : null;
-const ARGON2_CHUNK_NAME = 'node_modules_openpgp_dist_lightweight_argon2id_min_mjs';
+const ARGON2_CHUNK_NAMES = ['node_modules_openpgp_dist_lightweight_argon2id_min_mjs', 'vendor_argon2id_loader_ts'];
 
 const section = (title: string, content: () => void) => {
     const width = process.stdout.columns || 80;
@@ -95,6 +95,7 @@ section('Proton Configuration', () => {
 });
 
 const USE_IMPORT_SCRIPTS = BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari';
+const CHROME_STORE_RELEASE = BUILD_TARGET === 'chrome' && BUILD_STORE_TARGET !== 'edge';
 
 const JS_EXCLUDES = createRegex(
     excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
@@ -226,6 +227,12 @@ const config: Configuration = {
                 : {}),
             /* friends don't let friends publish code with `eval` : but that didn't stop `ttag`  */
             ttag$: path.resolve(__dirname, '../../node_modules/ttag/dist/ttag.min.js'),
+
+            /** Patch openpgp argon2id.min.mjs to avoid WASM base64 inlining
+             * which gets flagged as code-obfuscation on chrome store review */
+            ...(CHROME_STORE_RELEASE
+                ? { './argon2id.min.mjs': path.resolve(__dirname, 'vendor/argon2id.loader.ts') }
+                : {}),
         },
     },
     cache: {
@@ -238,13 +245,13 @@ const config: Configuration = {
     },
     output: {
         filename: '[name].js',
-
+        webassemblyModuleFilename: 'assets/wasm/[hash].wasm',
         /** Some chunks need to be predictable in order for
          * importScripts to work properly in the context of
          * chromium builds (eg crypto lazy loaded modules) */
         chunkFilename: ({ chunk }) => {
             if (!chunk?.name) {
-                if (chunk?.id === ARGON2_CHUNK_NAME) return 'chunk.crypto-argon2.js';
+                if (chunk?.id && ARGON2_CHUNK_NAMES.includes(chunk.id.toString())) return 'chunk.crypto-argon2.js';
                 return 'chunk.[contenthash:8].js';
             }
 
@@ -252,7 +259,10 @@ const config: Configuration = {
         },
         path: path.resolve(__dirname, 'dist'),
         clean: true,
-        assetModuleFilename: 'assets/[hash][ext][query]',
+        assetModuleFilename: (asset) => {
+            if (asset.filename && /\.wasm$/.test(asset.filename)) return 'assets/wasm/[hash].wasm';
+            return 'assets/[hash][ext][query]';
+        },
         publicPath: '/',
     },
     plugins: [
