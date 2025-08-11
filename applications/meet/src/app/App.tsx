@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Route, useHistory } from 'react-router-dom';
+import { Route, useHistory, useLocation } from 'react-router-dom';
 
 import { ProtonApp } from '@proton/components';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -44,8 +44,16 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
     const isGuest = window.location.pathname.includes('guest');
 
     const history = useHistory();
+    const location = useLocation();
 
     useEffect(() => {
+        const userPattern = /\/u\/\d+/;
+
+        if (isGuest && location.pathname.match(userPattern)) {
+            const cleanPath = location.pathname.replace(userPattern, '');
+            history.replace(cleanPath);
+        }
+
         if (window.location.pathname.includes('dashboard') && isGuest) {
             history.push('/join');
         }
@@ -56,7 +64,7 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
         ) {
             history.push(isGuest ? '/join' : '/dashboard');
         }
-    });
+    }, []);
 
     return children;
 };
