@@ -60,8 +60,38 @@ export const isStringHumanLabelID = (labelID: string) => {
 export const isAutoRead = (labelID: MAILBOX_LABEL_IDS | string) =>
     LABELS_AUTO_READ.includes(labelID as MAILBOX_LABEL_IDS);
 
-export const isUnmodifiableByUser = (labelID: MAILBOX_LABEL_IDS | string) =>
-    LABELS_UNMODIFIABLE_BY_USER.includes(labelID as MAILBOX_LABEL_IDS);
+export const isUnmodifiableByUser = (
+    labelID: MAILBOX_LABEL_IDS | string,
+    labels: Label[] = [],
+    folders: Folder[] = []
+): boolean => {
+    if (LABELS_UNMODIFIABLE_BY_USER.includes(labelID as MAILBOX_LABEL_IDS)) {
+        return true;
+    }
+
+    if (isSystemLabel(labelID)) {
+        return false;
+    }
+
+    if (isSystemFolder(labelID)) {
+        return false;
+    }
+
+    if (isCategoryLabel(labelID)) {
+        return false;
+    }
+
+    if (isCustomLabel(labelID, labels)) {
+        return false;
+    }
+
+    if (isCustomFolder(labelID, folders)) {
+        return false;
+    }
+
+    // If the label ID is unknown (e.g. new label ID introduced by the API), we consider it as unmodifiable by user to avoid unexpected behavior
+    return true;
+};
 
 export const isHumalLabelIDKey = (labelID: string): labelID is keyof typeof LABEL_IDS_TO_HUMAN => {
     return labelID in LABEL_IDS_TO_HUMAN;
