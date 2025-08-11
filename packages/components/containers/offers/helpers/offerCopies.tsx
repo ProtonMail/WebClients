@@ -109,7 +109,7 @@ export const getUnlimitedDealFeatures = () => {
 };
 
 const getPremiumVPNFeature = () => ({
-    name: PLAN_NAMES[PLANS.VPN],
+    name: PLAN_NAMES[PLANS.VPN2024],
     tooltip: c('BF2024: Tooltip')
         .t`Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.`,
 });

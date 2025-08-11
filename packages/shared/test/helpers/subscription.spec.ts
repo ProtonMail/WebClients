@@ -313,7 +313,7 @@ describe('cycles', () => {
 
 describe('hasCancellablePlan', () => {
     it('should be cancellable with inhouse subscription', () => {
-        const testCases = [PLANS.PASS, PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE];
+        const testCases = [PLANS.PASS, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE];
 
         const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
 
@@ -358,7 +358,7 @@ describe('hasCancellablePlan', () => {
     });
 
     it('should have cancellable plan if user is on-session migration eligible', () => {
-        const testCases = [PLANS.PASS, PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE];
+        const testCases = [PLANS.PASS, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE];
 
         const subscription = buildSubscription(undefined, { BillingPlatform: BillingPlatform.Proton });
         const user = getUserMock({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists: 0 });
@@ -403,7 +403,6 @@ describe('hasCancellablePlan', () => {
     it('should have all plans cancellable if user is true chargebee user', () => {
         const testCases = [
             PLANS.PASS,
-            PLANS.VPN,
             PLANS.VPN2024,
             PLANS.VPN_PASS_BUNDLE,
             // ---
@@ -437,7 +436,6 @@ describe('hasCancellablePlan', () => {
     it('should have all plans cancellable if user is splitted', () => {
         const testCases = [
             PLANS.PASS,
-            PLANS.VPN,
             PLANS.VPN2024,
             PLANS.VPN_PASS_BUNDLE,
             // ---

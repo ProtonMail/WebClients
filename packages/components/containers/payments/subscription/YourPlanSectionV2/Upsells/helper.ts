@@ -1,8 +1,13 @@
 import { useMemo } from 'react';
 
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { type FreeSubscription, type PLANS, type Subscription, isFreeSubscription } from '@proton/payments';
-import { getPlanIDs, getPlanName } from '@proton/payments';
+import {
+    type FreeSubscription,
+    type PLANS,
+    type Subscription,
+    getPlanName,
+    isFreeSubscription,
+} from '@proton/payments';
 
 import { getAllowedCycles } from '../../helpers';
 
@@ -35,13 +40,11 @@ export const useSubscriptionPriceComparison = (
             return returnFalse;
         }
 
-        const latestSubscription = subscription.UpcomingSubscription ?? subscription;
-        const subscriptionPlanIDs = getPlanIDs(latestSubscription);
         const allowedCycles = getAllowedCycles({
             plansMap,
             subscription: subscription,
             currency: subscription.Currency,
-            planIDs: subscriptionPlanIDs,
+            planIDs: { [compareWithPlan]: 1 },
         });
 
         let pricingOptions = plansMap[compareWithPlan]?.Pricing;

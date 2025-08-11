@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { hasB2BPlan } from '@proton/payments';
+import { getIsB2BAudienceFromSubscription } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
@@ -14,7 +14,7 @@ const useShowVPNDashboard = (app: APP_NAMES) => {
     const isVPNDashboardEnabled = useFlag('VPNDashboard');
     const showVPNDashboardVariant = useVariant('VPNDashboard');
 
-    const isB2B = hasB2BPlan(subscription) || isOrganizationB2B(organization);
+    const isB2B = getIsB2BAudienceFromSubscription(subscription) || isOrganizationB2B(organization);
 
     const canShowVPNDashboard = useMemo(() => {
         return app === APPS.PROTONVPN_SETTINGS && !isB2B && isVPNDashboardEnabled;
