@@ -56,7 +56,7 @@ describe('transformLinks service', () => {
     describe('Fix links', () => {
         it('should add domain in from of the link relative', () => {
             const { querySelector } = setup(ADD_REF + EMPTY_LINK);
-            expect(querySelector('[href="http:///monique"]')).toBeTruthy();
+            expect(querySelector('[href="https:///monique"]')).toBeTruthy();
         });
 
         it('should not do anything for an empty anchor tag', () => {
@@ -79,7 +79,7 @@ describe('transformLinks service', () => {
         it('should add target and http to link', () => {
             const { querySelector } = setup('<a id="test-link" href="testing.com">testing</a>');
             expect(querySelector('#test-link')?.getAttribute('target')).toBe('_blank');
-            expect(querySelector('#test-link')?.getAttribute('href')).toBe('http://testing.com');
+            expect(querySelector('#test-link')?.getAttribute('href')).toBe('https://testing.com');
         });
     });
 });
