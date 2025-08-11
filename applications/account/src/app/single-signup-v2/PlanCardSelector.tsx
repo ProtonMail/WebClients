@@ -508,7 +508,7 @@ export const UpsellCardSelector = ({
                                     .t`For just **${relativePrice} per month** more, you get access to ${BRAND_NAME}'s premium VPN service!`
                             );
                         }
-                        if (currentPlan?.Name === PLANS.VPN && plan?.Name === PLANS.VPN_PASS_BUNDLE) {
+                        if (currentPlan?.Name === PLANS.VPN2024 && plan?.Name === PLANS.VPN_PASS_BUNDLE) {
                             return getBoldFormattedText(
                                 c('pass_signup_2023: Info')
                                     .t`For just **${relativePrice} per month** more, you get access to ${BRAND_NAME}'s premium password manager!`

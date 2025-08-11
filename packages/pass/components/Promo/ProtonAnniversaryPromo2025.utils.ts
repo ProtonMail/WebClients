@@ -11,7 +11,6 @@ export type EligiblePlan =
     | PLANS.FREE
     | PLANS.PASS
     | PLANS.MAIL
-    | PLANS.VPN
     | PLANS.VPN2024
     | PLANS.VPN_PASS_BUNDLE
     | PLANS.DRIVE
@@ -62,7 +61,6 @@ export const UPSELL_MAP: Record<
     },
     [PLANS.PASS]: upsellToUnlimited,
     [PLANS.MAIL]: upsellToUnlimited,
-    [PLANS.VPN]: upsellToUnlimited,
     [PLANS.VPN2024]: upsellToUnlimited,
     [PLANS.VPN_PASS_BUNDLE]: upsellToUnlimited,
     [PLANS.DRIVE]: upsellToUnlimited,
@@ -102,7 +100,6 @@ export const checkPlanEligible = (planName?: string): planName is EligiblePlan =
     planName === PLANS.FREE ||
     planName === PLANS.PASS ||
     planName === PLANS.MAIL ||
-    planName === PLANS.VPN ||
     planName === PLANS.VPN2024 ||
     planName === PLANS.VPN_PASS_BUNDLE ||
     planName === PLANS.DRIVE ||

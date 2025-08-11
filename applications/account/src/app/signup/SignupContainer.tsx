@@ -600,7 +600,7 @@ const SignupContainer = ({
 
     const { upsellPlanName, mostPopularPlanName }: { upsellPlanName: PLANS; mostPopularPlanName?: PLANS } = (() => {
         if (getIsVPNApp(toApp, clientType)) {
-            return { upsellPlanName: PLANS.VPN };
+            return { upsellPlanName: PLANS.VPN2024 };
         }
 
         if (toApp === APPS.PROTONDRIVE) {

@@ -159,7 +159,7 @@ const OpenVPNConfigurationSection = ({
         void fetchLogicals(30_000);
     }, []);
 
-    const vpnPlan = plans?.find(({ Name }) => Name === PLANS.VPN);
+    const vpnPlan = plans?.find(({ Name }) => Name === PLANS.VPN2024);
     const plusVpnConnections = vpnPlan?.MaxVPN || VPN_CONNECTIONS;
 
     const vpnPlus = vpnPlan?.Title;

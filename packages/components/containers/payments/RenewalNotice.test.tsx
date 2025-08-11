@@ -10,6 +10,7 @@ import {
     type Subscription,
     SubscriptionMode,
     getFreeCheckResult,
+    getPrice,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
@@ -239,8 +240,6 @@ describe('<RenewalNotice />', () => {
                     isCustomBilling={false}
                     isScheduledChargedImmediately={false}
                     subscription={undefined}
-                    renewAmount={null}
-                    renewCycle={null}
                     {...getProps()}
                 />
             );
@@ -257,8 +256,6 @@ describe('<RenewalNotice />', () => {
                     isCustomBilling={false}
                     isScheduledChargedImmediately={false}
                     subscription={undefined}
-                    renewAmount={null}
-                    renewCycle={null}
                     {...getProps()}
                 />
             );
@@ -282,8 +279,6 @@ describe('<RenewalNotice />', () => {
                             PeriodEnd: +new Date(2025, 7, 11) / 1000,
                         } as any
                     }
-                    renewAmount={null}
-                    renewCycle={null}
                     {...getProps()}
                 />
             );
@@ -305,8 +300,6 @@ describe('<RenewalNotice />', () => {
                             PeriodEnd: +new Date(2024, 1, 3) / 1000, // the current subscription period ends on 02/03/2024 (3rd of February 2024)
                         } as any
                     }
-                    renewAmount={null}
-                    renewCycle={null}
                     {...getProps()}
                 />
             );
@@ -580,8 +573,6 @@ describe('<RenewalNotice />', () => {
                     isProration={false}
                     planIDs={{ bundlepro2024: 1, '1domain-bundlepro2024': 5, '1member-bundlepro2024': 5 }}
                     subscription={subscription}
-                    renewAmount={null}
-                    renewCycle={null}
                 />
             );
 
@@ -595,31 +586,143 @@ describe('<RenewalNotice />', () => {
     });
 
     describe('vpn2024 special renew cycle', () => {
-        it.each([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.FIFTEEN, CYCLE.THIRTY])(
-            `should display special renewal notice for vpn2024 %s months`,
-            (cycle) => {
-                const { container } = render(
-                    <RenewalNotice
-                        {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
-                        cycle={cycle}
-                        renewAmount={null}
-                        renewCycle={null}
-                    />
-                );
+        it('should display special renewal notice for vpn2024 - 24 months', () => {
+            const cycle = CYCLE.TWO_YEARS;
 
-                expect(container).toHaveTextContent(
-                    `Your subscription will automatically renew in ${cycle} months. You'll then be billed every 12 months at CHF 79.95.`
-                );
-            }
-        );
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({
+                        planIDs: { [PLANS.VPN2024]: 1 },
+                        checkResult: {
+                            Amount: getPrice({ [PLANS.VPN2024]: 1 }, cycle, defaultPlansMap),
+                            AmountDue: getPrice({ [PLANS.VPN2024]: 1 }, cycle, defaultPlansMap),
+                            Proration: 0,
+                            CouponDiscount: 0,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: null,
+                            Cycle: cycle,
+                            TaxInclusive: 0,
+                            Taxes: [],
+                            Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.Regular,
+                            BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
+                            RenewCycle: CYCLE.YEARLY,
+                        },
+                    })}
+                    cycle={cycle}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                `Your subscription will automatically renew on November 1st, 2025. You'll then be billed every 12 months at CHF 79.95.`
+            );
+        });
+
+        it('should display special renewal notice for vpn2024 - 12 months', () => {
+            const cycle = CYCLE.YEARLY;
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({
+                        planIDs: { [PLANS.VPN2024]: 1 },
+                        checkResult: {
+                            Amount: getPrice({ [PLANS.VPN2024]: 1 }, cycle, defaultPlansMap),
+                            AmountDue: getPrice({ [PLANS.VPN2024]: 1 }, cycle, defaultPlansMap),
+                            Proration: 0,
+                            CouponDiscount: 0,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: null,
+                            Cycle: cycle,
+                            TaxInclusive: 0,
+                            Taxes: [],
+                            Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.Regular,
+                            BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
+                            RenewCycle: CYCLE.YEARLY,
+                        },
+                    })}
+                    cycle={cycle}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                `Your subscription will automatically renew on November 1st, 2024. You'll then be billed every 12 months at CHF 79.95.`
+            );
+        });
+
+        it('should display special renewal notice for vpn2024 - 15 months', () => {
+            const cycle = CYCLE.FIFTEEN;
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({
+                        planIDs: { [PLANS.VPN2024]: 1 },
+                        checkResult: {
+                            Amount: getPrice({ [PLANS.VPN2024]: 1 }, cycle, defaultPlansMap),
+                            AmountDue: getPrice({ [PLANS.VPN2024]: 1 }, cycle, defaultPlansMap),
+                            Proration: 0,
+                            CouponDiscount: 0,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: null,
+                            Cycle: cycle,
+                            TaxInclusive: 0,
+                            Taxes: [],
+                            Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.Regular,
+                            BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
+                            RenewCycle: CYCLE.YEARLY,
+                        },
+                    })}
+                    cycle={cycle}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                `Your subscription will automatically renew on February 1st, 2025. You'll then be billed every 12 months at CHF 79.95.`
+            );
+        });
+
+        it('should display special renewal notice for vpn2024 - 30 months', () => {
+            const cycle = CYCLE.THIRTY;
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps({
+                        planIDs: { [PLANS.VPN2024]: 1 },
+                        checkResult: {
+                            Amount: getPrice({ [PLANS.VPN2024]: 1 }, cycle, defaultPlansMap),
+                            AmountDue: getPrice({ [PLANS.VPN2024]: 1 }, cycle, defaultPlansMap),
+                            Proration: 0,
+                            CouponDiscount: 0,
+                            Gift: 0,
+                            Credit: 0,
+                            Coupon: null,
+                            Cycle: cycle,
+                            TaxInclusive: 0,
+                            Taxes: [],
+                            Currency: 'CHF',
+                            SubscriptionMode: SubscriptionMode.Regular,
+                            BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
+                            RenewCycle: CYCLE.YEARLY,
+                        },
+                    })}
+                    cycle={cycle}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                `Your subscription will automatically renew on May 1st, 2026. You'll then be billed every 12 months at CHF 79.95.`
+            );
+        });
 
         it(`should display special renewal notice for vpn2024 ${CYCLE.MONTHLY} months`, () => {
             const { container } = render(
                 <RenewalNotice
                     {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
                     cycle={CYCLE.MONTHLY}
-                    renewAmount={null}
-                    renewCycle={null}
                 />
             );
 
@@ -633,8 +736,6 @@ describe('<RenewalNotice />', () => {
                 <RenewalNotice
                     {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
                     cycle={CYCLE.THREE}
-                    renewAmount={null}
-                    renewCycle={null}
                 />
             );
 
@@ -675,18 +776,16 @@ describe('<RenewalNotice />', () => {
                                 ],
                                 Currency: 'CHF',
                                 SubscriptionMode: SubscriptionMode.Regular,
-                                BaseRenewAmount: null,
-                                RenewCycle: null,
+                                BaseRenewAmount: 7995,
+                                RenewCycle: 12,
                             },
                         })}
                         cycle={cycle}
-                        renewAmount={null}
-                        renewCycle={null}
                     />
                 );
 
                 expect(container).toHaveTextContent(
-                    `Your subscription will automatically renew in ${cycle} months. You'll then be billed every 12 months at CHF 79.95.`
+                    `The specially discounted price of CHF 107.76 is valid for the first ${cycle} months. Then it will automatically be renewed at CHF 79.95 for 12 months. You can cancel at any time.`
                 );
             }
         );
@@ -694,8 +793,6 @@ describe('<RenewalNotice />', () => {
         it(`should apply it for 12m vpnpass bundle`, () => {
             const { container } = render(
                 <RenewalNotice
-                    renewAmount={null}
-                    renewCycle={null}
                     {...getProps({
                         planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 },
                         checkResult: {
@@ -767,8 +864,6 @@ describe('<RenewalNotice />', () => {
                         },
                     })}
                     cycle={CYCLE.MONTHLY}
-                    renewAmount={null}
-                    renewCycle={null}
                 />
             );
             expect(container).toHaveTextContent(
@@ -782,8 +877,6 @@ describe('getPassLifetimeRenewNoticeText', () => {
     it('should show basic lifetime message when no subscription exists', () => {
         const { container } = render(
             <RenewalNotice
-                renewAmount={null}
-                renewCycle={null}
                 {...getProps()}
                 cycle={CYCLE.YEARLY}
                 subscription={undefined}
@@ -811,8 +904,6 @@ describe('getPassLifetimeRenewNoticeText', () => {
                 cycle={CYCLE.YEARLY}
                 subscription={subscription}
                 planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
-                renewAmount={null}
-                renewCycle={null}
             />
         );
 
@@ -837,8 +928,6 @@ describe('getPassLifetimeRenewNoticeText', () => {
                 cycle={CYCLE.YEARLY}
                 subscription={subscription}
                 planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
-                renewAmount={null}
-                renewCycle={null}
             />
         );
 
@@ -864,8 +953,6 @@ describe('getPassLifetimeRenewNoticeText', () => {
                 cycle={CYCLE.YEARLY}
                 subscription={subscription}
                 planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
-                renewAmount={null}
-                renewCycle={null}
             />
         );
 
