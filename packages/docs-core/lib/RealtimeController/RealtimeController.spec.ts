@@ -172,19 +172,6 @@ describe('RealtimeController', () => {
         })
         expect(spy).toHaveBeenCalledWith(payload.message, payload.debugSource)
       })
-
-      it('should not propagate conversion updates', () => {
-        const spy = jest.spyOn(controller, 'propagateUpdate')
-        const payload = {
-          message: { type: { wrapper: 'conversion' }, content: new Uint8Array() },
-          debugSource: BroadcastSource.TypingStatusChange,
-        } as { message: RtsMessagePayload; debugSource: BroadcastSource }
-        documentState.emitEvent({
-          name: 'EditorRequestsPropagationOfUpdate',
-          payload,
-        })
-        expect(spy).not.toHaveBeenCalled()
-      })
     })
 
     describe('DriveFileConversion subscriptions', () => {

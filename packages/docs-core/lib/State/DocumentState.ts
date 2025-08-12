@@ -1,4 +1,4 @@
-import type { ConnectionCloseReason } from '@proton/docs-proto'
+import type { ConnectionCloseReason, DocumentUpdate } from '@proton/docs-proto'
 import { BasePropertiesState } from '@proton/docs-shared'
 import type {
   DocumentRole,
@@ -43,6 +43,10 @@ export type DocumentEvent =
         message: RtsMessagePayload
         debugSource: BroadcastSource
       }
+    }
+  | {
+      name: 'CommitInitialConversionContent'
+      payload: DocumentUpdate
     }
   | {
       name: 'DriveFileConversionToDocBegan'

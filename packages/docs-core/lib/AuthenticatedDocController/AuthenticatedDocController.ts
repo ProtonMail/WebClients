@@ -23,6 +23,7 @@ import type { LoggerInterface } from '@proton/utils/logs'
 import { getErrorString } from '../Util/GetErrorString'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
+import type { DocumentUpdate } from '@proton/docs-proto'
 
 // This is part of a hack to make sure the name in the document sharing modal is updated when the document name changes.
 // While having these module-scoped variable here looks a bit stinky, it's completely fine because the purpose is to prevent a
@@ -69,14 +70,21 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
         return
       }
 
-      if (payload.message.type.wrapper === 'conversion') {
-        void this.handleEditorProvidingInitialConversionContent(payload.message.content)
-      } else if (payload.message.type.wrapper === 'du') {
+      if (payload.message.type.wrapper === 'du') {
         this.receivedOrSentDUs.push({
           content: payload.message.content,
           timestamp: Date.now(),
         })
       }
+    })
+
+    this.documentState.subscribeToEvent('CommitInitialConversionContent', (payload) => {
+      if (this.isDestroyed) {
+        return
+      }
+
+      this.logger.info('Committing initial conversion content', payload)
+      void this.handleEditorProvidingInitialConversionContent(payload)
     })
 
     this.documentState.subscribeToProperty('baseCommit', (value) => {
@@ -123,15 +131,17 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     }
   }
 
-  async handleEditorProvidingInitialConversionContent(content: Uint8Array): Promise<void> {
-    this.logger.info('Received conversion content from editor, seeding initial commit of size', content.byteLength)
+  async handleEditorProvidingInitialConversionContent(content: DocumentUpdate): Promise<void> {
+    const byteLength = content.encryptedContent.byteLength
+
+    this.logger.info('Received conversion content from editor, seeding initial commit of size', byteLength)
 
     this.documentState.emitEvent({
       name: 'DriveFileConversionToDocBegan',
       payload: undefined,
     })
 
-    if (content.byteLength >= MAX_DOC_SIZE) {
+    if (byteLength >= MAX_DOC_SIZE) {
       this.logger.info('Initial conversion content is too large')
 
       PostApplicationError(this.eventBus, {
@@ -171,14 +181,34 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     })
   }
 
-  public async createInitialCommit(content: Uint8Array): Promise<Result<unknown>> {
+  public async createInitialCommit(content: DocumentUpdate): Promise<Result<unknown>> {
     if (!isDocumentState(this.documentState)) {
       throw new Error('Cannot perform createInitialCommit as a public user')
     }
 
-    const result = await this._createInitialCommit.execute(
+    const result = await this._createInitialCommit.executeWithUpdate(
       this.documentState.getProperty('entitlements').nodeMeta,
       content,
+    )
+
+    if (result.isFailed()) {
+      this.logger.error('Failed to seed document', result.getError())
+    } else {
+      const resultValue = result.getValue()
+      this.documentState.setProperty('currentCommitId', resultValue.commitId)
+    }
+
+    return result
+  }
+
+  public async createInitialCommitFromEditorState(editorState: YjsState): Promise<Result<unknown>> {
+    if (!isDocumentState(this.documentState)) {
+      throw new Error('Cannot perform createInitialCommitFromEditorState as a public user')
+    }
+
+    const result = await this._createInitialCommit.execute(
+      this.documentState.getProperty('entitlements').nodeMeta,
+      editorState,
       this.documentState.getProperty('entitlements').keys,
     )
 
