@@ -72,19 +72,6 @@
         "Zobraziť faktúru"
       ]
     },
-    "BF2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Desktopová aplikácia ${ MAIL_APP_NAME }"
-      ],
-      "Use your own email domain": [
-        "Používajte vlastnú emailovú doménu"
-      ]
-    },
-    "Cancellation upsell": {
-      "Cloud storage and sharing for large files": [
-        "Cloudové úložisko a zdieľanie veľkých súborov"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abcházsko"
@@ -916,9 +903,6 @@
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
-      ],
-      "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Túto stránku sa nepodarilo načítať. Obnovte stránku, prosím, alebo skontrolujte svoje internetové pripojenie."
       ]
     },
     "fido2: Error": {
@@ -954,9 +938,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -983,37 +964,11 @@
         "Megabajty",
         "Megabajtov",
         "Megabajtov"
-      ],
-      "Terabyte": [
-        "terabajt",
-        "terabajty",
-        "terabajtov",
-        "terabajtov"
       ]
     },
     "Font face option": {
-      "System default": [
-        "Podľa systému"
-      ],
       "Theme font": [
         "Písmo motívu"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Veľké"
-      ],
-      "Medium (recommended)": [
-        "Stredné (odporúčané)"
-      ],
-      "Small": [
-        "Malé"
-      ],
-      "Very large": [
-        "Veľmi veľké"
-      ],
-      "Very small": [
-        "Veľmi malé"
       ]
     },
     "Human verification method": {
@@ -1046,9 +1001,6 @@
       "Country code": [
         "Kód krajiny"
       ],
-      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "Vytváranie viacerých bezplatných účtov nepovoľujú naše ${ termsLink }."
-      ],
       "Each code can only be used once": [
         "Každý kód je možné použiť iba raz"
       ],
@@ -1067,14 +1019,8 @@
       "Enter your own password (as organization admin).": [
         "Zadajte vlastné heslo (ako správca organizácie)."
       ],
-      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "Ak chcete získať ďalšie informácie a odstrániť obmedzenia, prihláste sa na adrese ${ mailLink }."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
-      ],
-      "If you believe we made a mistake, please ${ contactLink }.": [
-        "Ak sa domnievate, že sa stala chyba, kontaktujte nás, prosím, ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
@@ -1099,12 +1045,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
-      ],
-      "To remove restrictions, you can upgrade to a paid plan.": [
-        "Ak chcete odstrániť obmedzenia, môžete prejsť na platený plán."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.": [
-        "Máme plány navrhnuté špeciálne pre používateľov, ako ste vy, ktorí potrebujú viac ako jednu emailovú adresu."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Na adresu ${ strong } pošleme nový overovací kód"
@@ -1164,17 +1104,11 @@
       ]
     },
     "Link": {
-      "contact us": [
-        "kontaktujte nás"
-      ],
       "Learn more": [
         "Zistiť viac"
       ],
       "Request an invite": [
         "Požiadať o pozvánku"
-      ],
-      "terms of service": [
-        "podmienky používania"
       ]
     },
     "new_plans": {
@@ -1182,15 +1116,7 @@
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
       ]
     },
-    "new_plans: Action": {
-      "Get ${ planTitle }": [
-        "Získať ${ planTitle }"
-      ]
-    },
     "new_plans: feature": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asistent písania ${ BRAND_NAME } Scribe"
-      ],
       "${ n } custom email domain": [
         "${ n } vlastná emailová doména",
         "${ n } vlastné emailové domény",
@@ -1239,50 +1165,11 @@
         "${ n } správ za deň",
         "${ n } správ za deň"
       ],
-      "${ options }-day file version history": [
-        "${ options }-dňová história verzií súborov",
-        "${ options }-dňová história verzií súborov",
-        "${ options }-dňová história verzií súborov",
-        "${ options }-dňová história verzií súborov"
-      ],
       "${ size } attachment size": [
         "${ size } veľkosť prílohy"
       ],
-      "${ size } of secure storage per user": [
-        "${ size } bezpečného úložiska na používateľa"
-      ],
       "${ size } storage": [
         "${ size } úložisko"
-      ],
-      "${ size } storage per user": [
-        "${ size } úložisko na používateľa"
-      ],
-      "1 TB secure storage": [
-        "1 TB bezpečného úložiska"
-      ],
-      "10 email addresses/aliases": [
-        "10 emailových adries/aliasov"
-      ],
-      "10 more premium features": [
-        "10 ďalších prémiových funkcií"
-      ],
-      "10-year file version history": [
-        "10-ročná história verzií súborov"
-      ],
-      "15 GB storage": [
-        "15 GB úložisko"
-      ],
-      "200 GB of storage": [
-        "200 GB úložisko"
-      ],
-      "Advanced account protection": [
-        "Pokročilá ochrana účtu"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Všetky ${ BRAND_NAME } produkty a funkcie"
-      ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
@@ -1299,17 +1186,11 @@
       "Catch-all": [
         "Doménový kôš"
       ],
-      "Collaborate and share large files": [
-        "Spolupracujte a zdieľajte veľké súbory"
-      ],
       "Contact groups": [
         "Skupiny kontaktov"
       ],
       "Contact groups management": [
         "Správa skupín kontaktov"
-      ],
-      "Custom and secure business email": [
-        "Zákaznícky prispôsobený a zabezpečený firemný email"
       ],
       "Custom email domains": [
         "Vlastné emailové domény"
@@ -1323,62 +1204,23 @@
       "Email client support (via IMAP/SMTP)": [
         "Podpora emailových klientov (cez IMAP/SMTP)"
       ],
-      "Email groups": [
-        "Emailové skupiny"
-      ],
       "Encrypted contact details": [
         "Šifrované kontaktné údaje"
       ],
       "End-to-end encryption": [
         "Šifrovanie End-to-end"
       ],
-      "Generate emails with a prompt": [
-        "Generujte emaily len pomocou podnetu"
-      ],
       "HTML signatures": [
         "HTML podpisy"
-      ],
-      "Online document editor": [
-        "Online editor dokumentov"
-      ],
-      "Password health": [
-        "Zdravie hesla"
       ],
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
-      "Private photo backup": [
-        "Zálohovanie súkromných fotografií"
-      ],
-      "Proofread and refine your emails": [
-        "Korigujte a zdokonaľujte vaše emaily"
-      ],
-      "Quickly craft replies": [
-        "Rýchlo vytvárajte odpovede"
-      ],
-      "Recover previous file versions": [
-        "Obnova predchádzajúcich verzií súborov"
-      ],
-      "Save time emailing": [
-        "Ušetriť čas pri emailovaní"
-      ],
       "Schedule and snooze emails for any time": [
         "Plánovanie a odkladanie emailov na ľubovoľný čas"
       ],
-      "Secure file storage and sharing": [
-        "Bezpečné ukladanie a zdieľanie súborov"
-      ],
-      "Share files with no size limit": [
-        "Zdieľanie súborov bez obmedzenia veľkosti"
-      ],
       "SMTP submission": [
         "Odosielanie pomocou SMTP"
-      ],
-      "Support for up to 2 users": [
-        "Podpora až pre 2 používateľov"
-      ],
-      "Sync and backup all your files across devices": [
-        "Synchronizácia a zálohovanie všetkých vašich súborov medzi zariadeniami"
       ],
       "Unlimited filters": [
         "Neobmedzený počet filtrov"
@@ -1400,20 +1242,11 @@
       ]
     },
     "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 vlastná emailová doména"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Vytvorte si viacero emailových adries pre svoje online identity, napr. JohnShopper@${ domain } pre nákupné účty, JohnNews@${ domain2 } pre odber noviniek"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Obsahuje automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Zahŕňa podporu vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
@@ -1443,9 +1276,6 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
-      ],
-      "Email everyone in a group with a single email address": [
-        "Pošlite email všetkým v skupine pomocou jednej emailovej adresy"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zabezpečuje, aby ste dostávali všetky emaily odoslané na vašu doménu, aj keď emailová adresa neexistuje, už viac neexistuje alebo má preklep"
@@ -1511,12 +1341,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Zvýšte úložný priestor na ${ bundleStorage } celkom"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Podpora pre ${ n } vlastnú emailovú doménu",
-        "Podpora pre ${ n } vlastné emailové domény",
-        "Podpora pre ${ n } vlastných emailových domén",
-        "Podpora pre ${ n } vlastných emailových domén"
       ]
     },
     "Placeholder": {
@@ -1565,9 +1389,6 @@
       ]
     },
     "Title": {
-      "Account restricted": [
-        "Obmedzený účet"
-      ],
       "Enter 2FA code": [
         "Zadajte 2FA kód"
       ],
