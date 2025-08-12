@@ -9,6 +9,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import {
     ADDON_NAMES,
+    ADDON_PREFIXES,
     COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
@@ -35,17 +36,14 @@ import { FREE_PLAN } from './freePlans';
 import { type Subscription, type SubscriptionCheckResponse } from './interface';
 import { SelectedPlan } from './selected-plan';
 
+export function getAddonNameByPlan(addonPrefix: ADDON_PREFIXES, planName: PLANS) {
+    return Object.values(ADDON_NAMES)
+        .filter((addonName) => addonName.startsWith(addonPrefix))
+        .find((addonName) => addonName.includes(planName));
+}
+
 export const getScribeAddonNameByPlan = (planName: PLANS) => {
-    switch (planName) {
-        case PLANS.MAIL_PRO:
-            return ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO;
-        case PLANS.BUNDLE_PRO:
-            return ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO;
-        case PLANS.BUNDLE_PRO_2024:
-            return ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024;
-        case PLANS.MAIL_BUSINESS:
-            return ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS;
-    }
+    return getAddonNameByPlan(ADDON_PREFIXES.SCRIBE, planName);
 };
 
 export function getPlan(subscription: Subscription | FreeSubscription | undefined, service?: PLAN_SERVICES) {
@@ -111,49 +109,7 @@ export function getSubscriptionPlanTitles(
 }
 
 export const getLumoAddonNameByPlan = (planName: PLANS) => {
-    switch (planName) {
-        // B2C
-        case PLANS.MAIL:
-            return ADDON_NAMES.LUMO_MAIL;
-        case PLANS.DRIVE:
-            return ADDON_NAMES.LUMO_DRIVE;
-        // case PLANS.DRIVE_1TB:
-        //     return ADDON_NAMES.LUMO_DRIVE_1TB;
-        case PLANS.PASS:
-            return ADDON_NAMES.LUMO_PASS;
-        case PLANS.PASS_FAMILY:
-            return ADDON_NAMES.LUMO_PASS_FAMILY;
-        case PLANS.VPN2024:
-            return ADDON_NAMES.LUMO_VPN2024;
-        case PLANS.BUNDLE:
-            return ADDON_NAMES.LUMO_BUNDLE;
-        case PLANS.FAMILY:
-            return ADDON_NAMES.LUMO_FAMILY;
-        case PLANS.DUO:
-            return ADDON_NAMES.LUMO_DUO;
-
-        // B2B
-        case PLANS.MAIL_PRO:
-            return ADDON_NAMES.LUMO_MAIL_PRO;
-        case PLANS.MAIL_BUSINESS:
-            return ADDON_NAMES.LUMO_MAIL_BUSINESS;
-        case PLANS.DRIVE_PRO:
-            return ADDON_NAMES.LUMO_DRIVE_PRO;
-        case PLANS.DRIVE_BUSINESS:
-            return ADDON_NAMES.LUMO_DRIVE_BUSINESS;
-        case PLANS.BUNDLE_PRO:
-            return ADDON_NAMES.LUMO_BUNDLE_PRO;
-        case PLANS.BUNDLE_PRO_2024:
-            return ADDON_NAMES.LUMO_BUNDLE_PRO_2024;
-        case PLANS.VPN_PRO:
-            return ADDON_NAMES.LUMO_VPN_PRO;
-        case PLANS.VPN_BUSINESS:
-            return ADDON_NAMES.LUMO_VPN_BUSINESS;
-        case PLANS.PASS_PRO:
-            return ADDON_NAMES.LUMO_PASS_PRO;
-        case PLANS.PASS_BUSINESS:
-            return ADDON_NAMES.LUMO_PASS_BUSINESS;
-    }
+    return getAddonNameByPlan(ADDON_PREFIXES.LUMO, planName);
 };
 
 const lifetimePlans: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS_LIFETIME]);
