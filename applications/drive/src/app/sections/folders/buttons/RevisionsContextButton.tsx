@@ -13,7 +13,7 @@ interface Props {
     close: () => void;
 }
 
-export const RevisionsButton = ({ selectedItem, showRevisionsModal, close }: Props) => {
+export const RevisionsContextButton = ({ selectedItem, showRevisionsModal, close }: Props) => {
     const { openDocumentHistory } = useDocumentActions();
 
     return (

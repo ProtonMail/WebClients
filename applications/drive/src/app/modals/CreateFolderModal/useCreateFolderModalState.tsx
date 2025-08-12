@@ -13,7 +13,7 @@ import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 export type UseCreateFolderModalStateProps = ModalStateProps & {
     parentFolderUid?: string;
-    onCreateDone?: (folderUid: string) => void;
+    onSuccess?: (folderId: string, newName: string) => void;
 
     // Here only for retro compatibility, should be removed once the SDK migration is done
     folder?: { shareId: string; linkId: string };
@@ -22,7 +22,7 @@ export type UseCreateFolderModalStateProps = ModalStateProps & {
 
 export const useCreateFolderModalState = ({
     parentFolderUid,
-    onCreateDone,
+    onSuccess,
     onClose,
     // Here only for retro compatibility, should be removed once the SDK migration is done
     createFolder,
@@ -69,7 +69,7 @@ export const useCreateFolderModalState = ({
                 type: 'success',
                 text: c('Notification').jt`"${name}" created successfully`,
             });
-            onCreateDone?.(node.uid);
+            onSuccess?.(node.uid, name);
             onClose();
         } catch (error) {
             handleError(error, { fallbackMessage: c('Error').t`Failed to create folder`, extra: { parentFolderUid } });
