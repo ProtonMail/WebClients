@@ -4,12 +4,19 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader, InlineLinkButton, Scroll } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
-import { SkeletonLoader } from '@proton/components';
-import { ConfirmSignOutModal, Icon, useErrorHandler, useModalState, useNotifications } from '@proton/components';
+import {
+    ConfirmSignOutModal,
+    Icon,
+    SkeletonLoader,
+    useErrorHandler,
+    useModalState,
+    useNotifications,
+} from '@proton/components';
 import ConfirmSignOutAllModal from '@proton/components/components/confirmSignOutModal/ConfirmSignoutAllModal';
 import { useLoading } from '@proton/hooks';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
 import {
@@ -97,10 +104,16 @@ const AccountItem = ({
                 >
                     <div className="text-break">
                         <strong>{nameToDisplay}</strong>
-                        {sessionDisplayData.status.isAdminSignedIntoMember && (
+                        {sessionDisplayData.accessType === AccessType.AdminAccess && (
                             <span className="color-weak">
                                 {' - '}
                                 {c('Info').t`Member`}
+                            </span>
+                        )}
+                        {sessionDisplayData.accessType === AccessType.EmergencyAccess && (
+                            <span className="color-weak">
+                                {' - '}
+                                {c('emergency_access').t`Trusted contact`}
                             </span>
                         )}
                     </div>
