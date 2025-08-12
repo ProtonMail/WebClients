@@ -79,9 +79,6 @@
       "Change": [
         "變更"
       ],
-      "Change email": [
-        "更換電子郵件"
-      ],
       "Check DNS": [
         "檢查 DNS"
       ],
@@ -93,9 +90,6 @@
       ],
       "Clear": [
         "清除"
-      ],
-      "Clear search": [
-        "清除搜尋"
       ],
       "Close": [
         "關閉"
@@ -174,9 +168,6 @@
       ],
       "Delete alias": [
         "刪除別名"
-      ],
-      "Delete all": [
-        "全部刪除"
       ],
       "Delete it, I will never need it": [
         "刪除，我將不再使用"
@@ -442,14 +433,8 @@
       "Resend invitation": [
         "重新發送邀請"
       ],
-      "Reset": [
-        "重設"
-      ],
       "Reset history": [
         "重設歷史記錄"
-      ],
-      "Restore": [
-        "還原"
       ],
       "Restore item": [
         "還原項目"
@@ -620,11 +605,6 @@
       ],
       "Toggle developers tools": [
         "切換開發人員工具"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }桌面應用程式"
       ]
     },
     "Button": {
@@ -951,9 +931,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -968,34 +945,11 @@
       ],
       "Megabyte": [
         "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabytes"
       ]
     },
     "Font face option": {
-      "System default": [
-        "系統預設值"
-      ],
       "Theme font": [
         "選擇布景主題字體"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "大"
-      ],
-      "Medium (recommended)": [
-        "中（建議）"
-      ],
-      "Small": [
-        "小"
-      ],
-      "Very large": [
-        "非常大"
-      ],
-      "Very small": [
-        "非常小"
       ]
     },
     "Info": {
@@ -1083,9 +1037,6 @@
       "Change your password": [
         "變更您的密碼"
       ],
-      "Copied to clipboard": [
-        "已複製到剪貼簿"
-      ],
       "Current version": [
         "目前版本"
       ],
@@ -1109,12 +1060,6 @@
       ],
       "Disabling offline mode...": [
         "停用離線模式..."
-      ],
-      "Drop file here to upload": [
-        "拖曳檔案到此處來上傳"
-      ],
-      "Drop to import": [
-        "拖放以匯入"
       ],
       "Editor": [
         "編輯器"
@@ -1295,9 +1240,6 @@
       ],
       "Offline mode could not be disabled at the moment": [
         "離線模式目前無法被停用"
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
       ],
       "Owner": [
         "擁有者"
@@ -1532,9 +1474,6 @@
       ],
       "your domain": [
         "您的網域"
-      ],
-      "Your files will be encrypted and then saved": [
-        "你的檔案將加密後再儲存"
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
@@ -1952,9 +1891,6 @@
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "如何解鎖 ${ PASS_SHORT_APP_NAME }"
       ],
-      "IBAN": [
-        "國際銀行帳號"
-      ],
       "ID Card": [
         "身分識別證件"
       ],
@@ -2014,9 +1950,6 @@
       ],
       "Key type": [
         "金鑰類型"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "鍵盤快速鍵: ${ shortcut }"
       ],
       "Language": [
         "語言"
@@ -2396,9 +2329,6 @@
       "The URL has been copied to the clipboard": [
         "網址已複製到剪貼簿。"
       ],
-      "Theme": [
-        "主題"
-      ],
       "Tier/Level": [
         "等級/級別"
       ],
@@ -2546,11 +2476,6 @@
         "瞭解詳情"
       ]
     },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "啟用${ reason }"
-      ]
-    },
     "Medium": {
       "Plus": [
         "進階"
@@ -2581,17 +2506,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "要求組織雙重驗證"
-      ],
-      "SSO integration": [
-        "SSO 整合"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } 已停用。"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } 已啟用。"
       ]
     },
     "Option": {
@@ -2753,20 +2667,6 @@
       ],
       "Used on ${ url }": [
         "使用${ url }"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "偵測到 ${ name } 與 ${ remainingCount } 筆外洩的資料。開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳細資料。 ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "偵測到${ name }及一個其他潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "偵測到${ name }潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "您的資訊已證實暴露在最少一次的資料外洩事件中。請開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
       ]
     },
     "sso": {
