@@ -72,19 +72,6 @@
         "Vis faktura"
       ]
     },
-    "BF2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } desktop app"
-      ],
-      "Use your own email domain": [
-        "Brug dit eget e-mail-domæne"
-      ]
-    },
-    "Cancellation upsell": {
-      "Cloud storage and sharing for large files": [
-        "Sky-lagring og deling af store filer"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abkhasien"
@@ -916,9 +903,6 @@
       ],
       "Something went wrong": [
         "Noget gik galt"
-      ],
-      "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
       ]
     },
     "fido2: Error": {
@@ -952,9 +936,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -973,35 +954,11 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabyte"
       ]
     },
     "Font face option": {
-      "System default": [
-        "Systemstandard"
-      ],
       "Theme font": [
         "Temaskrifttype"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Stor"
-      ],
-      "Medium (recommended)": [
-        "Mellem (anbefalet)"
-      ],
-      "Small": [
-        "Lille"
-      ],
-      "Very large": [
-        "Meget stor"
-      ],
-      "Very small": [
-        "Meget lille"
       ]
     },
     "Human verification method": {
@@ -1034,9 +991,6 @@
       "Country code": [
         "Landekode"
       ],
-      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "Det er ikke tilladt at oprette flere gratis konti i henhold til vores ${ termsLink }."
-      ],
       "Each code can only be used once": [
         "Hver kode kan kun bruges én gang"
       ],
@@ -1055,14 +1009,8 @@
       "Enter your own password (as organization admin).": [
         "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
-      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "For yderligere information og for at fjerne begrænsninger, log ind på ${ mailLink }."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
-      ],
-      "If you believe we made a mistake, please ${ contactLink }.": [
-        "Hvis du mener vi har begået en fejl, bedes du ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
@@ -1087,12 +1035,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
-      ],
-      "To remove restrictions, you can upgrade to a paid plan.": [
-        "For at fjerne restriktioner, kan du opgradere til et betalt abonnement"
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.": [
-        "Vi har abonnementer, der er designet specifikt til brugere som dig, der har brug for mere end én e-mailadresse."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
@@ -1152,17 +1094,11 @@
       ]
     },
     "Link": {
-      "contact us": [
-        "kontakt os"
-      ],
       "Learn more": [
         "Få mere at vide"
       ],
       "Request an invite": [
         "Anmod om invitation"
-      ],
-      "terms of service": [
-        "servicevilkår"
       ]
     },
     "new_plans": {
@@ -1170,15 +1106,7 @@
         "Hold orden i din indbakke med mapper"
       ]
     },
-    "new_plans: Action": {
-      "Get ${ planTitle }": [
-        "Få ${ planTitle }"
-      ]
-    },
     "new_plans: feature": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-skriveassistent"
-      ],
       "${ n } custom email domain": [
         "${ n } brugerdefineret e-maildomæne",
         "${ n } brugerdefinerede e-maildomæner"
@@ -1211,48 +1139,11 @@
         "${ n } daglig besked",
         "${ n } daglige beskeder"
       ],
-      "${ options }-day file version history": [
-        "${ options }-dags filversionshistorik",
-        "${ options }-dags filversionshistorik"
-      ],
       "${ size } attachment size": [
         "${ size } vedhæftningsstørrelse"
       ],
-      "${ size } of secure storage per user": [
-        "${ size } sikker lagerplads pr. bruger"
-      ],
       "${ size } storage": [
         "${ size } lagerplads"
-      ],
-      "${ size } storage per user": [
-        "${ size } lagerplads pr. bruger"
-      ],
-      "1 TB secure storage": [
-        "1 TB sikker lagerplads"
-      ],
-      "10 email addresses/aliases": [
-        "10 e-mailadresser/aliasser"
-      ],
-      "10 more premium features": [
-        "10 flere premium-funktioner"
-      ],
-      "10-year file version history": [
-        "10-års fil-versionshistorik"
-      ],
-      "15 GB storage": [
-        "15 GB lagerplads"
-      ],
-      "200 GB of storage": [
-        "200 GB lagerplads"
-      ],
-      "Advanced account protection": [
-        "Avanceret kontobeskyttelse"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Alle ${ BRAND_NAME } produkter og funktioner"
-      ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
@@ -1269,17 +1160,11 @@
       "Catch-all": [
         "Catch-all"
       ],
-      "Collaborate and share large files": [
-        "Samarbejd og del store filer"
-      ],
       "Contact groups": [
         "Kontaktgrupper"
       ],
       "Contact groups management": [
         "Administration af kontaktgrupper"
-      ],
-      "Custom and secure business email": [
-        "Tilpasset og sikker erhvervsmail"
       ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
@@ -1293,62 +1178,23 @@
       "Email client support (via IMAP/SMTP)": [
         "Understøttelse af e-mailklient (via IMAP/SMTP)"
       ],
-      "Email groups": [
-        "Mail-grupper"
-      ],
       "Encrypted contact details": [
         "Krypterede kontaktoplysninger"
       ],
       "End-to-end encryption": [
         "End-to-end kryptering"
       ],
-      "Generate emails with a prompt": [
-        "Generer e-mails med et prompt"
-      ],
       "HTML signatures": [
         "HTML signatur"
-      ],
-      "Online document editor": [
-        "Online dokumentredigering"
-      ],
-      "Password health": [
-        "Adgangskode-sundhed"
       ],
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
       ],
-      "Private photo backup": [
-        "Privat sikkerhedskopiering af fotos"
-      ],
-      "Proofread and refine your emails": [
-        "Korrekturlæs og forfin dine e-mails"
-      ],
-      "Quickly craft replies": [
-        "Skriv hurtigt svar"
-      ],
-      "Recover previous file versions": [
-        "Gendan tidligere filversioner"
-      ],
-      "Save time emailing": [
-        "Spar tid ved at sende e-mail"
-      ],
       "Schedule and snooze emails for any time": [
         "Planlæg og snooze e-mails til enhver tid"
       ],
-      "Secure file storage and sharing": [
-        "Sikker fillagring og deling"
-      ],
-      "Share files with no size limit": [
-        "Del filer uden størrelsesbegrænsning"
-      ],
       "SMTP submission": [
         "SMTP-indsendelse"
-      ],
-      "Support for up to 2 users": [
-        "Support for op til 2 brugere"
-      ],
-      "Sync and backup all your files across devices": [
-        "Synkronisér og sikkerhedskopiér alle dine filer mellem enheder"
       ],
       "Unlimited filters": [
         "Ubegrænsede filtre"
@@ -1370,20 +1216,11 @@
       ]
     },
     "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 tilpasset e-maildomæne"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Opret flere e-mailadresser for dine online identiteter, f.eks. JensShopper@${ domain } for shoppingkonto, JensNyheder@${ domain2 } til nyhedsabonnementer."
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Beskyt dine filer med krypteret skylagring. Omfatter automatisk synkronisering, krypteret fildeling og mere til."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Beskyt dine e-mails med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede e-mail-domæner, 15 e-mail-adresser, ubegrænsede hide-my-email-aliaser, og mere."
       ],
@@ -1413,9 +1250,6 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opret op til ${ n } e-mailadresser/aliasser, som du kan tildele familiemedlemmer. Brug dem til onlineidentiteter, f.eks. JohnShopper@${ domain } til shoppingkonti."
-      ],
-      "Email everyone in a group with a single email address": [
-        "Send en mail til alle i en gruppe med en enkelt mailadresse"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Sikrer at du modtager alle e-mails sendt til dit domæne, selvom e-mailadressen ikke eksisterer, ikke længere eksisterer eller har en tastefejl"
@@ -1481,10 +1315,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Forøg din lagerplads til ${ bundleStorage } i alt"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Mulighed for ${ n } brugerdefineret e-mail-domæne",
-        "Mulighed for ${ n } brugerdefinerede e-mail-domæner"
       ]
     },
     "Placeholder": {
@@ -1533,9 +1363,6 @@
       ]
     },
     "Title": {
-      "Account restricted": [
-        "Konto begrænset:"
-      ],
       "Enter 2FA code": [
         "Indtast 2FA-kode"
       ],

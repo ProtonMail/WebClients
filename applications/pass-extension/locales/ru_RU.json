@@ -92,9 +92,6 @@
       "Change": [
         "Изменить"
       ],
-      "Change email": [
-        "Изменить e-mail"
-      ],
       "Check DNS": [
         "Проверить DNS-"
       ],
@@ -106,9 +103,6 @@
       ],
       "Clear": [
         "Очистить"
-      ],
-      "Clear search": [
-        "Очистить поиск"
       ],
       "Close": [
         "Закрыть"
@@ -202,9 +196,6 @@
       ],
       "Delete alias": [
         "Удалить псевдоним"
-      ],
-      "Delete all": [
-        "Удалить все"
       ],
       "Delete it, I will never need it": [
         "Удалить, мне это никогда не понадобится"
@@ -488,14 +479,8 @@
       "Resend invitation": [
         "Отправить повторное приглашение"
       ],
-      "Reset": [
-        "Сбросить"
-      ],
       "Reset history": [
         "Сбросить историю"
-      ],
-      "Restore": [
-        "Восстановить"
       ],
       "Restore item": [
         "Восстановить элемент"
@@ -685,11 +670,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -1223,9 +1203,6 @@
       ],
       "MB": [
         "МБ"
-      ],
-      "TB": [
-        "ТБ"
       ]
     },
     "file size format, long": {
@@ -1252,12 +1229,6 @@
         "Мегабайтов",
         "Мегабайтов",
         "Мегабайтов"
-      ],
-      "Terabyte": [
-        "Терабайт",
-        "Терабайта",
-        "Терабайтов",
-        "Терабайтов"
       ]
     },
     "Info": {
@@ -1531,9 +1502,6 @@
       "Congratulations, your access has been confirmed": [
         "Congratulations, your access has been confirmed"
       ],
-      "Copied to clipboard": [
-        "Скопировано в буфер обмена"
-      ],
       "Coupon successfully applied!": [
         "Купон успешно применен!"
       ],
@@ -1584,12 +1552,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Домен: ${ domainPath } или @"
-      ],
-      "Drop file here to upload": [
-        "Переместите файл сюда, чтобы скачать"
-      ],
-      "Drop to import": [
-        "Импортировать"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Легко импортируйте ваше существующие пароли в ${ PASS_APP_NAME }."
@@ -2425,9 +2387,6 @@
       "your domain": [
         "ваш домен"
       ],
-      "Your files will be encrypted and then saved": [
-        "Ваши файлы будут зашифрованы и затем сохранены"
-      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
       ]
@@ -2889,9 +2848,6 @@
       "https://example.com": [
         "https://primer.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "ID-карта"
       ],
@@ -2951,9 +2907,6 @@
       ],
       "Key type": [
         "Тип ключа"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Комбинация клавиш: ${ shortcut }"
       ],
       "Language": [
         "Язык"
@@ -3344,9 +3297,6 @@
       ],
       "The URL has been copied to the clipboard": [
         "URL был скопирован в буфер обмена"
-      ],
-      "Theme": [
-        "Тема"
       ],
       "Title": [
         "Заголовок"

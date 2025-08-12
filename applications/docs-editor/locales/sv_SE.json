@@ -44,9 +44,6 @@
       "Apply": [
         "Tillämpa"
       ],
-      "Bold": [
-        "Fet"
-      ],
       "Bulleted List": [
         "Punktlista"
       ],
@@ -76,9 +73,6 @@
       ],
       "Code block": [
         "Kodblock"
-      ],
-      "Color": [
-        "Färg"
       ],
       "Colour": [
         "Färg"
@@ -137,17 +131,11 @@
       "Insert left": [
         "Infoga vänster"
       ],
-      "Insert link": [
-        "Infoga länk"
-      ],
       "Insert right": [
         "Infoga höger"
       ],
       "Insert table": [
         "Infoga tabell"
-      ],
-      "Italic": [
-        "Kursiv"
       ],
       "Justify align": [
         "Justera justerat"
@@ -169,9 +157,6 @@
       ],
       "Outdent": [
         "Minska indrag"
-      ],
-      "Quote": [
-        "Citat"
       ],
       "Re-open": [
         "Öppna igen"
@@ -221,40 +206,16 @@
       "Table options": [
         "Tabellalternativ"
       ],
-      "Underline": [
-        "Understruken"
-      ],
       "Undo": [
         "Ångra"
       ]
     },
     "color": {
-      "apple": [
-        "äpple"
-      ],
-      "azureish white": [
-        "azurblått vitt"
-      ],
-      "black": [
-        "svart"
-      ],
-      "blanched almond": [
-        "blancherad mandel"
-      ],
-      "blue-gray": [
-        "blågrå"
-      ],
-      "caramel": [
-        "karamell"
-      ],
       "carrot": [
         "morot"
       ],
       "cerise": [
         "körsbär"
-      ],
-      "cinnabar": [
-        "cinnober"
       ],
       "cobalt": [
         "kobolt"
@@ -262,62 +223,17 @@
       "copper": [
         "koppar"
       ],
-      "cyan-blue azure": [
-        "cyan"
-      ],
-      "dandelion": [
-        "maskros"
-      ],
-      "dark cerulean": [
-        "mörk cerulean"
-      ],
-      "dark midnight blue": [
-        "mörk midnattsblå"
-      ],
-      "dim gray": [
-        "svagt grått"
-      ],
       "enzian": [
         "lila"
       ],
       "fern": [
         "ormbunke"
       ],
-      "field drab": [
-        "brun"
-      ],
       "forest": [
         "skog"
       ],
-      "gainsboro": [
-        "grå"
-      ],
       "gray": [
         "grå"
-      ],
-      "japanese laurel": [
-        "japansk lagerblad"
-      ],
-      "kiwi": [
-        "kiwi"
-      ],
-      "lemon yellow": [
-        "citrongul"
-      ],
-      "light carmine pink": [
-        "ljus karminrosa"
-      ],
-      "light moss green": [
-        "ljus mossgrön"
-      ],
-      "light red": [
-        "ljusröd"
-      ],
-      "maize": [
-        "majs"
-      ],
-      "mughal green": [
-        "mogulgrön"
       ],
       "ocean": [
         "hav"
@@ -325,32 +241,8 @@
       "olive": [
         "oliv"
       ],
-      "outer space": [
-        "yttre rymden"
-      ],
       "pacific": [
         "stilla havet"
-      ],
-      "palatinate blue": [
-        "blå"
-      ],
-      "pale cerulean": [
-        "blek azurblå"
-      ],
-      "pastel gray": [
-        "pastellgrå"
-      ],
-      "persian plum": [
-        "persiskt plommon"
-      ],
-      "persian red": [
-        "persisk röd"
-      ],
-      "philippine gray": [
-        "filippinsk grå"
-      ],
-      "philippine silver": [
-        "filippinskt silver"
       ],
       "pickle": [
         "gurka"
@@ -360,9 +252,6 @@
       ],
       "pink": [
         "rosa"
-      ],
-      "pistachio": [
-        "pistasch"
       ],
       "plum": [
         "plommon"
@@ -376,14 +265,8 @@
       "reef": [
         "rev"
       ],
-      "ruddy pink": [
-        "rödblommig rosa"
-      ],
       "sahara": [
         "sahara"
-      ],
-      "satin sheen gold": [
-        "satin glänsande guld"
       ],
       "slateblue": [
         "skifferblå"
@@ -393,12 +276,6 @@
       ],
       "strawberry": [
         "jordgubb"
-      ],
-      "vivid auburn": [
-        "intensiv kastanjebrun"
-      ],
-      "white": [
-        "vit"
       ]
     },
     "Confirm": {
@@ -458,28 +335,8 @@
       ]
     },
     "Font face option": {
-      "System default": [
-        "Systemstandard"
-      ],
       "Theme font": [
         "Temats typsnitt"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Stor"
-      ],
-      "Medium (recommended)": [
-        "Medium (rekommenderas)"
-      ],
-      "Small": [
-        "Liten"
-      ],
-      "Very large": [
-        "Mycket stor"
-      ],
-      "Very small": [
-        "Väldigt liten"
       ]
     },
     "Info": {
@@ -501,9 +358,6 @@
       ],
       "Comments": [
         "Kommentarer"
-      ],
-      "Copied to clipboard": [
-        "Kopierad till urklipp"
       ],
       "Editing": [
         "Redigerar"
@@ -543,9 +397,6 @@
       ],
       "Suggesting": [
         "Föreslår"
-      ],
-      "Text color": [
-        "Textfärg"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Innehållet du försöker klistra in är för stort för att klistras in på en gång. Försök igen genom att klistra in mindre delar åt gången."
@@ -639,9 +490,6 @@
       "Insert table row": [
         "Infoga tabellrad"
       ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Tangentbordsgenväg: ${ shortcut }"
-      ],
       "Link text": [
         "Länktext"
       ],
@@ -676,9 +524,6 @@
       ],
       "Reply...": [
         "Svara …"
-      ],
-      "Text": [
-        "Text"
       ]
     },
     "Title": {
