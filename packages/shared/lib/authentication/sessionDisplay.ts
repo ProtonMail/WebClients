@@ -4,7 +4,7 @@ import type { ActiveSessionLite } from './persistedSessionHelper';
 
 export const getSessionDisplayData = ({
     remote: { LocalID, DisplayName, Username, PrimaryEmail },
-    persisted: { isSelf },
+    persisted: { accessType },
 }: ActiveSessionLite) => {
     const nameToDisplay = DisplayName || Username || PrimaryEmail || '';
     const initials = getInitials(nameToDisplay);
@@ -20,8 +20,6 @@ export const getSessionDisplayData = ({
         email: PrimaryEmail,
         maybeEmailInBrackets,
         path,
-        status: {
-            isAdminSignedIntoMember: !isSelf,
-        },
+        accessType,
     };
 };

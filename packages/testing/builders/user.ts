@@ -1,3 +1,4 @@
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { ChargebeeEnabled, type Key, type UserModel } from '@proton/shared/lib/interfaces';
 
 import { privateKeyA } from '../data';
@@ -61,6 +62,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
             'pass-from-sl': false,
             sso: false,
             'has-a-byoe-address': false,
+            'delegated-access': false,
         },
         isAdmin: true,
         isMember: false,
@@ -76,6 +78,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         hasPaidPass: false,
         hasPassLifetime: false,
         canPay: true,
+        accessType: AccessType.Self,
         AccountRecovery: null,
         ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED,
         HasMultipleSubscriptions: false,

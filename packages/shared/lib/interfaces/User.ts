@@ -1,5 +1,6 @@
 import type { Currency } from '@proton/payments';
 
+import type { AccessType } from '../authentication/accessType';
 import type { USER_ROLES } from '../constants';
 import type { Key } from './Key';
 
@@ -103,6 +104,7 @@ export interface User {
         'pass-from-sl': boolean;
         sso: boolean;
         'has-a-byoe-address': boolean;
+        'delegated-access': boolean;
     };
     AccountRecovery: {
         State: SessionRecoveryState;
@@ -146,6 +148,7 @@ export interface UserInfo {
     hasPaidPass: boolean;
     hasPassLifetime: boolean;
     canPay: boolean;
+    accessType: AccessType;
 }
 
 export interface UserModel extends User, UserInfo {}

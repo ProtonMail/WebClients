@@ -1,4 +1,5 @@
 import { PLANS, getPlan } from '@proton/payments';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { user as mockUser, subscriptionBundlePro } from '../__mocks__/data';
@@ -37,6 +38,7 @@ const user = {
     isPrivate: false,
     isSelf: true,
     hasPassLifetime: false,
+    accessType: AccessType.Self,
 };
 
 describe('getReminderPageConfig', () => {

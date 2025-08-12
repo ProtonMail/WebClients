@@ -1,4 +1,5 @@
 import { type FreePlanDefault, PLANS, PLAN_TYPES, type Plan, type Subscription } from '@proton/payments';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type {
     OrganizationExtended,
@@ -634,6 +635,7 @@ export const user = {
     hasPaidMail: true,
     hasPaidVpn: true,
     canPay: true,
+    accessType: AccessType.Self,
 } as unknown as User;
 
 export const userSettings = {
