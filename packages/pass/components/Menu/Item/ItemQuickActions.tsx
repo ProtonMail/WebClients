@@ -93,7 +93,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
         ];
 
         return actions.filter(({ hidden }) => !hidden);
-    }, [showCustomItem]);
+    }, [showCustomItem, isFreePlan]);
 
     const disabled = !useSelector(selectCanCreateItems);
     const vaultCreationDisabled = useSelector(selectOrganizationVaultCreationDisabled);
