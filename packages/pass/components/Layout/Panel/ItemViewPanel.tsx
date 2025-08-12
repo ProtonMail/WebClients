@@ -11,7 +11,6 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuLabel';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
@@ -19,16 +18,15 @@ import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
+import { useItemActions } from '@proton/pass/hooks/items/useItemActions';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useItemLoading } from '@proton/pass/hooks/useItemLoading';
-import { isClonableItem, isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
-import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
+import { isMonitored, isPinned } from '@proton/pass/lib/items/item.predicates';
+import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
-import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
-import { BitField, type ItemType, ShareRole, SpotlightMessage } from '@proton/pass/types';
+import { selectAllVaults, selectRequestInFlight } from '@proton/pass/store/selectors';
+import { type ItemType, SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { Panel } from './Panel';
@@ -43,74 +41,72 @@ type Props = {
 } & ItemViewProps;
 
 export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
-    actions = [],
+    actions: extraActions = [],
     children,
     quickActions = [],
     revision,
     share,
     type,
-    handleCloneClick,
-    handleDeleteClick,
-    handleDismissClick,
-    handleEditClick,
-    handleHistoryClick,
-    handleLeaveItemClick,
-    handleManageClick,
-    handleMoveToTrashClick,
-    handleMoveToVaultClick,
-    handlePinClick,
-    handleRestoreClick,
-    handleRetryClick,
     handleSecureLinkClick,
-    handleShareItemClick,
-    handleToggleFlagsClick,
 }) => {
     const upsell = useUpselling();
 
     const { shareId, itemId, data, optimistic, failed } = revision;
     const { name } = data.metadata;
-    const trashed = isTrashed(revision);
     const pinned = isPinned(revision);
     const online = useOnline();
     const isVault = isVaultShare(share);
 
     const vaults = useSelector(selectAllVaults);
-    const plan = useSelector(selectPassPlan);
     const monitored = isMonitored(revision);
     const loading = useItemLoading(revision);
     const actionsDisabled = loading || optimistic;
 
-    const org = useOrganization();
-    const orgItemSharingDisabled = org?.settings.ItemShareMode === BitField.DISABLED;
+    const {
+        state: {
+            isShared,
+            isReadOnly,
+            isTrashed,
+            isFree,
 
-    const { shareRoleId, owner, targetMembers } = share;
-    const itemShared = isItemShared(revision);
-    /** Item is considered shared if either the revision
-     * or the share are flagged as being shared. */
-    const shared = itemShared || share.shared;
+            canMonitor,
+            canLeave,
+            canItemShare,
+            canLinkShare,
+            canManageAccess,
+            canMove,
+            canClone,
+            canHistory,
+        },
+        actions: {
+            onToggleFlags,
+            onShare,
+            onDismiss,
+            onRestore,
+            onDelete,
+            onLeave,
+            onRetry,
+            onEdit,
+            onMove,
+            onPin,
+            onHistory,
+            onClone,
+            onTrash,
+            onManage,
+        },
+    } = useItemActions(revision, share);
 
-    const free = plan === UserPassPlan.FREE;
-    const readOnly = shareRoleId === ShareRole.READ;
+    const { owner, targetMembers } = share;
 
     const hasMultipleVaults = vaults.length > 1;
-    const canMove = (!shared || !readOnly) && hasMultipleVaults;
 
     const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
     const canTogglePinned = !(pinInFlight || unpinInFlight);
     const accessCount = targetMembers + (revision.shareCount ?? 0);
 
-    const canManage = isShareManageable(share);
-    const canShare = canManage && type !== 'alias';
-    const canLinkShare = canShare;
-    const canItemShare = canShare && !orgItemSharingDisabled;
-    const canManageAccess = shared && !readOnly;
-    const canLeave = !isVault && !owner;
-    const canMonitor = !EXTENSION_BUILD && !trashed && data.type === 'login' && !readOnly;
-    const canClone = useFeatureFlag(PassFeature.PassItemCloning) && canManage && isClonableItem(free)(revision);
-
     const disabledSharing = !(canItemShare || canLinkShare || canManageAccess);
-    const showSharing = (owner || shared) && !readOnly;
+    const showSharing = (owner || isShared) && !isReadOnly;
 
     const autotypeEnabled = useFeatureFlag(PassFeature.PassDesktopAutotype);
     const autotypeDiscoverySpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_DISCOVERY);
@@ -119,7 +115,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const monitorActions = canMonitor && (
         <DropdownMenuButton
             disabled={actionsDisabled}
-            onClick={handleToggleFlagsClick}
+            onClick={onToggleFlags}
             icon={monitored ? 'eye-slash' : 'eye'}
             label={monitored ? c('Action').t`Exclude from monitoring` : c('Action').t`Include in monitoring`}
         />
@@ -128,17 +124,15 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     /** Free user might have shared the vault - avoid upselling
      * from the `manage access` button in this case */
     const onManageItem =
-        free && !share.shared
-            ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.ITEM_SHARING })
-            : handleManageClick;
+        isFree && !share.shared ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.ITEM_SHARING }) : onManage;
 
-    const onSecureLink = free
+    const onSecureLink = isFree
         ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.SECURE_LINKS })
         : handleSecureLinkClick;
 
-    const onItemShare = free
+    const onItemShare = isFree
         ? () => upsell({ type: 'pass-plus', upsellRef: UpsellRef.ITEM_SHARING })
-        : () => handleShareItemClick();
+        : () => onShare();
 
     return (
         <Panel
@@ -155,17 +149,17 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     className="mr-1"
                                     color="danger"
                                     shape="outline"
-                                    onClick={handleDismissClick}
+                                    onClick={onDismiss}
                                 >
                                     {c('Action').t`Dismiss`}
                                 </Button>,
-                                <Button key="retry-item-button" pill color="norm" onClick={handleRetryClick}>
+                                <Button key="retry-item-button" pill color="norm" onClick={onRetry}>
                                     {c('Action').t`Retry`}
                                 </Button>,
                             ];
                         }
 
-                        if (trashed) {
+                        if (isTrashed) {
                             return [
                                 <QuickActionsDropdown
                                     key="item-quick-actions-dropdown"
@@ -174,22 +168,22 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     disabled={actionsDisabled}
                                 >
                                     <DropdownMenuButton
-                                        onClick={handleRestoreClick}
+                                        onClick={onRestore}
                                         label={c('Action').t`Restore item`}
                                         icon="arrows-rotate"
-                                        disabled={readOnly}
+                                        disabled={isReadOnly}
                                     />
 
                                     <DropdownMenuButton
-                                        onClick={handleDeleteClick}
+                                        onClick={onDelete}
                                         label={c('Action').t`Delete permanently`}
                                         icon="trash-cross"
-                                        disabled={readOnly}
+                                        disabled={isReadOnly}
                                     />
 
                                     {canLeave && (
                                         <DropdownMenuButton
-                                            onClick={handleLeaveItemClick}
+                                            onClick={onLeave}
                                             label={c('Action').t`Leave`}
                                             icon="arrow-out-from-rectangle"
                                         />
@@ -207,14 +201,14 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                 pill
                                 shape="solid"
                                 color="weak"
-                                onClick={handleEditClick}
-                                disabled={actionsDisabled || readOnly}
+                                onClick={onEdit}
+                                disabled={actionsDisabled || isReadOnly}
                             >
                                 <Icon name="pencil" className="mr-1" />
                                 <span>{c('Action').t`Edit`}</span>
                             </Button>,
 
-                            ...actions,
+                            ...extraActions,
 
                             showSharing && (
                                 <QuickActionsDropdown
@@ -244,7 +238,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                                 />
                                             }
                                             icon="user-plus"
-                                            extra={free && <PassPlusPromotionButton className="ml-2" />}
+                                            extra={isFree && <PassPlusPromotionButton className="ml-2" />}
                                         />
                                     )}
 
@@ -258,7 +252,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                                 />
                                             }
                                             icon="link"
-                                            extra={free && <PassPlusPromotionButton className="ml-2" />}
+                                            extra={isFree && <PassPlusPromotionButton className="ml-2" />}
                                         />
                                     )}
 
@@ -287,7 +281,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                             >
                                 {canMove && (
                                     <DropdownMenuButton
-                                        onClick={handleMoveToVaultClick}
+                                        onClick={onMove}
                                         label={c('Action').t`Move to another vault`}
                                         icon="folder-arrow-in"
                                     />
@@ -295,43 +289,43 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                                 {canClone && (
                                     <DropdownMenuButton
-                                        onClick={handleCloneClick}
+                                        onClick={onClone}
                                         label={c('Action').t`Duplicate`}
                                         icon="squares-plus"
-                                        disabled={readOnly}
+                                        disabled={isReadOnly}
                                     />
                                 )}
 
                                 {quickActions}
 
                                 <DropdownMenuButton
-                                    onClick={handlePinClick}
+                                    onClick={onPin}
                                     label={pinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
                                     icon={pinned ? 'pin-angled-slash' : 'pin-angled'}
                                     disabled={!canTogglePinned}
                                     loading={!canTogglePinned}
                                 />
 
-                                {isPaidPlan(plan) && (
+                                {canHistory && (
                                     <DropdownMenuButton
-                                        onClick={handleHistoryClick}
+                                        onClick={onHistory}
                                         label={c('Action').t`View history`}
                                         icon={'clock-rotate-left'}
                                     />
                                 )}
 
                                 <DropdownMenuButton
-                                    onClick={handleMoveToTrashClick}
+                                    onClick={onTrash}
                                     label={c('Action').t`Move to Trash`}
                                     icon="trash"
-                                    disabled={readOnly}
+                                    disabled={isReadOnly}
                                 />
 
                                 {monitorActions}
 
                                 {canLeave && (
                                     <DropdownMenuButton
-                                        onClick={handleLeaveItemClick}
+                                        onClick={onLeave}
                                         label={c('Action').t`Leave`}
                                         icon="arrow-out-from-rectangle"
                                     />
