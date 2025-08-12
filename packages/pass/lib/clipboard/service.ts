@@ -12,7 +12,7 @@ export const createClipboardService = (clipboard: ClipboardApi): ClipboardServic
             if (timeoutMs <= 0) return;
 
             clipboardTimer = setTimeout(async () => {
-                const currentText = await clipboard.read();
+                const currentText = await clipboard.read().catch(noop());
                 if (currentText !== content) return;
                 clipboard.write('').catch(noop);
             }, timeoutMs);
