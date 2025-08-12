@@ -112,9 +112,6 @@
       "Change": [
         "Змяніць"
       ],
-      "Change email": [
-        "Змяніць эл. пошту"
-      ],
       "Check DNS": [
         "Праверыць DNS"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "Ачысціць"
-      ],
-      "Clear search": [
-        "Ачысціць пошук"
       ],
       "Close": [
         "Закрыць"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "Выдаліць псеўданім"
-      ],
-      "Delete all": [
-        "Выдаліць усе"
       ],
       "Delete it, I will never need it": [
         "Выдаліць яго. Ён мне больш непатрэбны"
@@ -511,14 +502,8 @@
       "Resend invitation": [
         "Паўторна адправіць запрашэнне"
       ],
-      "Reset": [
-        "Скінуць"
-      ],
       "Reset history": [
         "Скінуць гісторыю"
-      ],
-      "Restore": [
-        "Аднавіць"
       ],
       "Restore item": [
         "Аднавіць элемент"
@@ -727,11 +712,6 @@
         "Выдаліць ${ PASS_APP_NAME }"
       ]
     },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
-      ]
-    },
     "Button": {
       "More info": [
         "Падрабязней"
@@ -856,7 +836,7 @@
         "Першапачаткова неабходна праверыць дамен уладальніка."
       ],
       "Alias could not be updated at the moment. Please try again later": [
-        "У дадзены момант не ўдалося абнавіць псеўданім. Паспрабуйце яшчэ раз пазней"
+        "У дадзены момант не ўдаецца абнавіць псеўданім. Паспрабуйце яшчэ раз пазней"
       ],
       "Alias options could not be resolved": [
         "Не ўдалося вызначыць параметры псеўданіма"
@@ -883,16 +863,16 @@
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш другі пароль, каб працягнуць экспартаванне"
       ],
       "Cannot send invitation at the moment": [
-        "У дадзены момант не ўдалося адправіць запрашэнне",
-        "У дадзены момант не ўдалося адправіць запрашэнні",
-        "У дадзены момант не ўдалося адправіць запрашэнні",
-        "У дадзены момант не ўдалося адправіць запрашэнні"
+        "У дадзены момант не ўдаецца адправіць запрашэнне",
+        "У дадзены момант не ўдаецца адправіць запрашэнні",
+        "У дадзены момант не ўдаецца адправіць запрашэнні",
+        "У дадзены момант не ўдаецца адправіць запрашэнні"
       ],
       "Cannot send invitations at the moment": [
-        "У дадзены момант не ўдалося адправіць запрашэнні"
+        "У дадзены момант не ўдаецца адправіць запрашэнні"
       ],
       "Could not confirm this invite at the moment": [
-        "У дадзены момант не ўдалося пацвердзіць запрашэнне"
+        "У дадзены момант не ўдаецца пацвердзіць запрашэнне"
       ],
       "Could not leave item.": [
         "Не ўдалося выйсці з элемента."
@@ -901,7 +881,7 @@
         "Не ўдалося выйсці са сховішча."
       ],
       "Could not load recommendations at the moment.": [
-        "У дадзены момант не ўдалося загрузіць рэкамендацыі."
+        "У дадзены момант не ўдаецца загрузіць рэкамендацыі."
       ],
       "Could not open created vault": [
         "Не ўдалося адкрыць створанае сховішча"
@@ -919,7 +899,7 @@
         "Не ўдалося атрымаць запрашэнні карыстальніка для сховішча \"${ vaultName }\""
       ],
       "Could not validate addresses at the moment.": [
-        "У дадзены момант не ўдалося праверыць адрасы."
+        "У дадзены момант не ўдаецца праверыць адрасы."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Файл CSV не змяшчае неабходных загалоўкаў: ${ missingHeaders }"
@@ -1093,7 +1073,7 @@
         "Збой абнаўлення статусу назірання для гэтага адраса электроннай пошты"
       ],
       "File could not be parsed": [
-        "Не удалося прааналізаваць файл"
+        "Не ўдалося прааналізаваць файл"
       ],
       "File does not match expected format": [
         "Файл не адпавядае фармату, які чакаўся"
@@ -1156,7 +1136,7 @@
         "Не ўдалося аднавіць выдаленыя элементы"
       ],
       "Secure link could not be created.": [
-        "Не ўдалося стварыць бяспечную спасылку."
+        "Не ўдаецца стварыць бяспечную спасылку."
       ],
       "Secure link could not be opened.": [
         "Не ўдалося адкрыць бяспечную спасылку."
@@ -1298,9 +1278,6 @@
       ],
       "MB": [
         "МБ"
-      ],
-      "TB": [
-        "ТБ"
       ]
     },
     "file size format, long": {
@@ -1327,37 +1304,11 @@
         "Мегабайты",
         "Мегабайтаў",
         "Мегабайтаў"
-      ],
-      "Terabyte": [
-        "тэрабайт",
-        "тэрабайты",
-        "тэрабайтаў",
-        "тэрабайтаў"
       ]
     },
     "Font face option": {
-      "System default": [
-        "Адпаведна сістэме"
-      ],
       "Theme font": [
         "Шрыфт тэмы"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Вялікі"
-      ],
-      "Medium (recommended)": [
-        "Сярэдні (рэкамендуецца)"
-      ],
-      "Small": [
-        "Маленькі"
-      ],
-      "Very large": [
-        "Вельмі вялікі"
-      ],
-      "Very small": [
-        "Вельмі маленькі"
       ]
     },
     "Info": {
@@ -1613,9 +1564,6 @@
       "Congratulations, your access has been confirmed": [
         "Віншуем! Вы паспяхова пацвердзілі свой доступ"
       ],
-      "Copied to clipboard": [
-        "Скапіявана ў буфер абмену"
-      ],
       "Coupon successfully applied!": [
         "Купон паспяхова ўжыты!"
       ],
@@ -1660,12 +1608,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Дамен: ${ domainPath } або @"
-      ],
-      "Drop file here to upload": [
-        "Перацягніце файл сюды, каб запампаваць"
-      ],
-      "Drop to import": [
-        "Перацягніце, каб імпартаваць"
       ],
       "Editor": [
         "Рэдактар​​"
@@ -1880,9 +1822,6 @@
       "Latest breach on ${ formattedDate }": [
         "Апошняе парушэнне ў ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "Даведайцеся, што рабіць ${ dataLeakedLink }"
-      ],
       "Leaving item...": [
         "Выхад з элемента..."
       ],
@@ -1968,19 +1907,16 @@
         "Рэжым па-за сеткай"
       ],
       "Offline mode could not be disabled at the moment": [
-        "У дадзены момант не ўдалося адключыць рэжым па-за сеткай"
+        "У дадзены момант не ўдаецца адключыць рэжым па-за сеткай"
       ],
       "Offline mode could not be enabled at the moment": [
-        "У дадзены момант не ўдалося ўключыць рэжым па-за сеткай"
+        "У дадзены момант не ўдаецца ўключыць рэжым па-за сеткай"
       ],
       "Offline support successfully disabled": [
         "Падтрымка па-за сеткай паспяхова адключана"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для доступу праз інтэрнэт да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
       ],
       "Owner": [
         "Уладальнік"
@@ -2534,9 +2470,6 @@
       "your domain": [
         "ваш дамен"
       ],
-      "Your files will be encrypted and then saved": [
-        "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
-      ],
       "Your information was found on ${ displayedDate }": [
         "Вашы звесткі былі знойдзены ${ displayedDate }"
       ],
@@ -3064,9 +2997,6 @@
       "https://example.com": [
         "https://pryklad.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "Пасведчанне асобы"
       ],
@@ -3141,9 +3071,6 @@
       ],
       "Key type": [
         "Тып ключа"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Спалучэнні клавіш: ${ shortcut }"
       ],
       "Language": [
         "Мова"
@@ -3610,9 +3537,6 @@
       "The URL has been copied to the clipboard": [
         "URL-адрас скапіяваны ў буфер абмену"
       ],
-      "Theme": [
-        "Тэма"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Доступ да гэтага элемента можна атрымаць да ${ date } або да дасягнення абмежавання па праглядзе."
       ],
@@ -3783,16 +3707,8 @@
       "auto create rules ››": [
         "аўтаматычнае стварэнне правіл ››"
       ],
-      "if your data is leaked": [
-        "пры ўцечцы вашых даных"
-      ],
       "Learn more": [
         "Даведацца больш"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "Уключыць ${ reason }"
       ]
     },
     "Medium": {
@@ -3834,17 +3750,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Патрабаванне 2ФА для арганізацыі"
-      ],
-      "SSO integration": [
-        "Інтэграцыя SSO"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } было адключана"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } было ўключана"
       ]
     },
     "Option": {
@@ -4102,20 +4007,6 @@
       ],
       "Used on ${ url }": [
         "Выкарыстоўваецца на ${ url }"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ]
     },
     "sso": {
@@ -4457,9 +4348,6 @@
       "Inactive 2FA": [
         "Неактыўныя 2ФА"
       ],
-      "Information exposed in breach": [
-        "Звесткі, якія былі скампраметаваныя ў выніку парушэння"
-      ],
       "Install extension": [
         "Усталяваць пашырэнне"
       ],
@@ -4740,14 +4628,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сёння"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "Не ўсе пералічаныя тут звесткі былі скампраметаваныя для ўсіх карыстальнікаў."
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."
       ]
     },
     "Validation": {

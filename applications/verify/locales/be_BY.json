@@ -72,19 +72,6 @@
         "Паглядзець рахунак"
       ]
     },
-    "BF2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Праграма для камп'ютара ${ MAIL_APP_NAME }"
-      ],
-      "Use your own email domain": [
-        "Выкарыстоўвайце ўласны дамен электроннай пошты"
-      ]
-    },
-    "Cancellation upsell": {
-      "Cloud storage and sharing for large files": [
-        "Воблачнае сховішча і абагульванне для вялікіх файлаў"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Абхазія"
@@ -916,9 +903,6 @@
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
-      ],
-      "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
       ]
     },
     "fido2: Error": {
@@ -954,9 +938,6 @@
       ],
       "MB": [
         "МБ"
-      ],
-      "TB": [
-        "ТБ"
       ]
     },
     "file size format, long": {
@@ -983,37 +964,11 @@
         "Мегабайты",
         "Мегабайтаў",
         "Мегабайтаў"
-      ],
-      "Terabyte": [
-        "тэрабайт",
-        "тэрабайты",
-        "тэрабайтаў",
-        "тэрабайтаў"
       ]
     },
     "Font face option": {
-      "System default": [
-        "Адпаведна сістэме"
-      ],
       "Theme font": [
         "Шрыфт тэмы"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Вялікі"
-      ],
-      "Medium (recommended)": [
-        "Сярэдні (рэкамендуецца)"
-      ],
-      "Small": [
-        "Маленькі"
-      ],
-      "Very large": [
-        "Вельмі вялікі"
-      ],
-      "Very small": [
-        "Вельмі маленькі"
       ]
     },
     "Human verification method": {
@@ -1046,9 +1001,6 @@
       "Country code": [
         "Код краіны"
       ],
-      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "Стварэнне некалькіх бясплатных уліковых запісаў забаронена нашымі ${ termsLink }."
-      ],
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
       ],
@@ -1067,14 +1019,8 @@
       "Enter your own password (as organization admin).": [
         "Увядзіце свой пароль (адміністратара арганізацыі)."
       ],
-      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "Увайдзіце ў ${ mailLink } для дадавання дадатковых звестак і выдалення абмежаванняў."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
-      ],
-      "If you believe we made a mistake, please ${ contactLink }.": [
-        "Калі вы ўпэўнены, што гэта памылка, звяжыцеся з намі ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
@@ -1099,12 +1045,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
-      ],
-      "To remove restrictions, you can upgrade to a paid plan.": [
-        "Вы можаце перайсці на платны тарыфны план, каб зняць абмежаванне."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.": [
-        "У нас ёсць тарыфныя планы, якія распрацаваны для такіх карыстальнікаў як вы і якім неабходны больш за адзін адрас электроннай пошты."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы адправім новы праверачны код на ${ strong }"
@@ -1164,17 +1104,11 @@
       ]
     },
     "Link": {
-      "contact us": [
-        "звязацца з намі"
-      ],
       "Learn more": [
         "Даведацца больш"
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
-      ],
-      "terms of service": [
-        "умовы абслугоўвання"
       ]
     },
     "new_plans": {
@@ -1182,15 +1116,7 @@
         "Падтрымлівайце парадак у сваёй паштовай скрыні з дапамогай папак"
       ]
     },
-    "new_plans: Action": {
-      "Get ${ planTitle }": [
-        "Атрымаць ${ planTitle }"
-      ]
-    },
     "new_plans: feature": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
-      ],
       "${ n } custom email domain": [
         "${ n } карыстальніцкі дамен электроннай пошты",
         "${ n } карыстальніцкія дамены электроннай пошты",
@@ -1239,50 +1165,11 @@
         "${ n } паведамленняў у дзень",
         "${ n } паведамленняў у дзень"
       ],
-      "${ options }-day file version history": [
-        "${ options }-дзённая гісторыя версій файла",
-        "${ options }-дзённая гісторыя версій файла",
-        "${ options }-дзённая гісторыя версій файла",
-        "${ options }-дзённая гісторыя версій файла"
-      ],
       "${ size } attachment size": [
         "Памер далучэння: ${ size }"
       ],
-      "${ size } of secure storage per user": [
-        "${ size } бяспечнага сховішча на карыстальніка"
-      ],
       "${ size } storage": [
         "${ size } сховішча"
-      ],
-      "${ size } storage per user": [
-        "${ size } сховішча на карыстальніка"
-      ],
-      "1 TB secure storage": [
-        "1 ТБ бяспечнага сховішча"
-      ],
-      "10 email addresses/aliases": [
-        "10 адрасоў электроннай пошты/псеўданімаў"
-      ],
-      "10 more premium features": [
-        "І больш за 10 прэміяльных функцый"
-      ],
-      "10-year file version history": [
-        "Гісторыя версій файлаў за 10 гадоў"
-      ],
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "200 GB of storage": [
-        "200 ГБ сховішча"
-      ],
-      "Advanced account protection": [
-        "Пашыраная абарона ўліковага запісу"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Усе прадукты і функцыі ${ BRAND_NAME }"
-      ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Аўтавыдаленне спаму і смецця"
@@ -1299,17 +1186,11 @@
       "Catch-all": [
         "Уся пошта дамена"
       ],
-      "Collaborate and share large files": [
-        "Сумесная праца і абагульванне вялікіх файлаў"
-      ],
       "Contact groups": [
         "Групы кантактаў"
       ],
       "Contact groups management": [
         "Кіраванне групамі кантактаў"
-      ],
-      "Custom and secure business email": [
-        "Персаналізаваная і бяспечная электронная пошта для бізнесу"
       ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
@@ -1323,62 +1204,23 @@
       "Email client support (via IMAP/SMTP)": [
         "Падтрымка паштовых кліентаў (праз IMAP/SMTP)"
       ],
-      "Email groups": [
-        "Групы электроннай пошты"
-      ],
       "Encrypted contact details": [
         "Зашыфраваныя кантактныя звесткі"
       ],
       "End-to-end encryption": [
         "Скразное шыфраванне"
       ],
-      "Generate emails with a prompt": [
-        "Генерацыя лістоў з запытам"
-      ],
       "HTML signatures": [
         "Подпісы HTML"
-      ],
-      "Online document editor": [
-        "Рэдактар дакументаў у інтэрнэце"
-      ],
-      "Password health": [
-        "Якасць пароля"
       ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
-      "Private photo backup": [
-        "Прыватнае рэзерваванне фатаграфій"
-      ],
-      "Proofread and refine your emails": [
-        "Правярайце і ўдакладняйце свае электронныя лісты"
-      ],
-      "Quickly craft replies": [
-        "Хутка стварайце адказы"
-      ],
-      "Recover previous file versions": [
-        "Аднавіць папярэднія версіі файла"
-      ],
-      "Save time emailing": [
-        "Ашчаджайце час на напісанне лістоў"
-      ],
       "Schedule and snooze emails for any time": [
         "Планаванне і адкладанне лістоў у любы час"
       ],
-      "Secure file storage and sharing": [
-        "Бяспечнае файлавае сховішча і абагульванне"
-      ],
-      "Share files with no size limit": [
-        "Абагульванне файлаў без абмежавання памеру"
-      ],
       "SMTP submission": [
         "Адпраўка па SMTP"
-      ],
-      "Support for up to 2 users": [
-        "Падтрымка да 2 карыстальнікаў"
-      ],
-      "Sync and backup all your files across devices": [
-        "Сінхранізацыя і рэзервовае капіяванне ўсіх вашых файлаў паміж прыладамі"
       ],
       "Unlimited filters": [
         "Неабмежаваная колькасць фільтраў"
@@ -1400,20 +1242,11 @@
       ]
     },
     "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 карыстальніцкі дамен электроннай пошты"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Стварайце некалькі розных адрасоў электроннай пошты для сваіх ідэнтычнасцей у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Абараняйце свае лісты з дапамогай скразнога шыфравання. Уключае падтрымку карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і іншыя функцыі."
       ],
@@ -1443,9 +1276,6 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
-      ],
-      "Email everyone in a group with a single email address": [
-        "Адпраўка паведамлення кожнаму ў групе з адзінага адраса электроннай пошты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
@@ -1511,22 +1341,11 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Павысце агульны аб'ём свайго сховішча да ${ bundleStorage }"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Падтрымка для ${ n } карыстальніцкага дамена электроннай пошты",
-        "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты",
-        "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты",
-        "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"
       ]
     },
     "Placeholder": {
       "Password": [
         "Пароль"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Усе прэміяльныя функцыі з ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {
@@ -1570,9 +1389,6 @@
       ]
     },
     "Title": {
-      "Account restricted": [
-        "Уліковы запіс абмежаваны"
-      ],
       "Enter 2FA code": [
         "Увядзіце код 2ФА"
       ],

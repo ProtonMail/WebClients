@@ -72,19 +72,6 @@
         "Lihat faktur"
       ]
     },
-    "BF2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Aplikasi desktop ${ MAIL_APP_NAME }"
-      ],
-      "Use your own email domain": [
-        "Gunakan domain email milik Anda sendiri"
-      ]
-    },
-    "Cancellation upsell": {
-      "Cloud storage and sharing for large files": [
-        "Penyimpanan awan dan pembagian untuk berkas besar"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abkhazia"
@@ -916,9 +903,6 @@
       ],
       "Something went wrong": [
         "Terdapat suatu kesalahan"
-      ],
-      "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Kami tidak dapat memuat halaman ini. Silakan muat ulang halaman atau periksa koneksi internet Anda."
       ]
     },
     "fido2: Error": {
@@ -951,9 +935,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -968,34 +949,11 @@
       ],
       "Megabyte": [
         "Megabyte"
-      ],
-      "Terabyte": [
-        "Terabyte"
       ]
     },
     "Font face option": {
-      "System default": [
-        "Bawaan sistem"
-      ],
       "Theme font": [
         "Jenis tulisan tema"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Besar"
-      ],
-      "Medium (recommended)": [
-        "Sedang (direkomendasikan)"
-      ],
-      "Small": [
-        "Kecil"
-      ],
-      "Very large": [
-        "Sangat besar"
-      ],
-      "Very small": [
-        "Mungil"
       ]
     },
     "Human verification method": {
@@ -1028,9 +986,6 @@
       "Country code": [
         "Kode negara"
       ],
-      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "Membuat lebih dari satu akun gratis tidak diizinkan oleh ${ termsLink } kami."
-      ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan satu kali"
       ],
@@ -1049,14 +1004,8 @@
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
-      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "Untuk informasi lebih lanjut dan untuk menghapus batasan yang berlaku, silakan masuk pada ${ mailLink }."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
-      ],
-      "If you believe we made a mistake, please ${ contactLink }.": [
-        "Apabila Anda merasa kami telah membuat kesalahan, silakan ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email ini pada kotak masuk, silakan periksa folder spam Anda."
@@ -1081,12 +1030,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda manusia."
-      ],
-      "To remove restrictions, you can upgrade to a paid plan.": [
-        "Untuk menghilangkan batasan yang ada, Anda dapat meningkatkan ke paket berbayar."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.": [
-        "Kami memiliki paket yang secara khusus dirancang bagi pengguna seperti Anda yang membutuhkan lebih dari satu alamat email."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
@@ -1146,17 +1089,11 @@
       ]
     },
     "Link": {
-      "contact us": [
-        "hubungi kami"
-      ],
       "Learn more": [
         "Lebih lanjut"
       ],
       "Request an invite": [
         "Minta undangan"
-      ],
-      "terms of service": [
-        "ketentuan layanan"
       ]
     },
     "new_plans": {
@@ -1164,15 +1101,7 @@
         "Kelola kotak masuk Anda dengan folder yang tertata rapi"
       ]
     },
-    "new_plans: Action": {
-      "Get ${ planTitle }": [
-        "Dapatkan ${ planTitle }"
-      ]
-    },
     "new_plans: feature": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asisten penulisan ${ BRAND_NAME } Scribe"
-      ],
       "${ n } custom email domain": [
         "${ n } domain email khusus"
       ],
@@ -1197,47 +1126,11 @@
       "${ n } message per day": [
         "${ n } pesan per hari"
       ],
-      "${ options }-day file version history": [
-        "Riwayat versi berkas ${ options } hari"
-      ],
       "${ size } attachment size": [
         "Batas ukuran lampiran ${ size }"
       ],
-      "${ size } of secure storage per user": [
-        "${ size } penyimpanan aman per pengguna"
-      ],
       "${ size } storage": [
         "Ruang penyimpanan ${ size }"
-      ],
-      "${ size } storage per user": [
-        "Ruang penyimpanan ${ size } per pengguna"
-      ],
-      "1 TB secure storage": [
-        "Ruang penyimpanan aman 1 TB"
-      ],
-      "10 email addresses/aliases": [
-        "10 alamat email/alias"
-      ],
-      "10 more premium features": [
-        "10 fitur premium lainnya"
-      ],
-      "10-year file version history": [
-        "Riwayat versi berkas 10 tahun"
-      ],
-      "15 GB storage": [
-        "Ruang penyimpanan 15 GB"
-      ],
-      "200 GB of storage": [
-        "Ruang penyimpanan 200 GB"
-      ],
-      "Advanced account protection": [
-        "Perlindungan akun tingkat lanjut"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Seluruh produk dan fitur ${ BRAND_NAME }"
-      ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "Seluruh layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Kosongkan Spam dan Sampah secara otomatis"
@@ -1254,17 +1147,11 @@
       "Catch-all": [
         "Alamat email catch-all"
       ],
-      "Collaborate and share large files": [
-        "Kolaborasi dan berbagi file besar"
-      ],
       "Contact groups": [
         "Grup kontak"
       ],
       "Contact groups management": [
         "Pengelolaan grup kontak"
-      ],
-      "Custom and secure business email": [
-        "Email bisnis yang khusus dan aman"
       ],
       "Custom email domains": [
         "Domain email khusus"
@@ -1278,62 +1165,23 @@
       "Email client support (via IMAP/SMTP)": [
         "Dukungan klien email (via IMAP/SMTP)"
       ],
-      "Email groups": [
-        "Grup email"
-      ],
       "Encrypted contact details": [
         "Rincian kontak yang terenkripsi"
       ],
       "End-to-end encryption": [
         "Enkripsi end-to-end"
       ],
-      "Generate emails with a prompt": [
-        "Hasilkan email hanya dengan sebaris perintah"
-      ],
       "HTML signatures": [
         "Tanda tangan HTML"
-      ],
-      "Online document editor": [
-        "Editor dokumen online"
-      ],
-      "Password health": [
-        "Kesehatan kata sandi"
       ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
       ],
-      "Private photo backup": [
-        "Pencadangan foto pribadi"
-      ],
-      "Proofread and refine your emails": [
-        "Periksa dan sempurnakan email Anda"
-      ],
-      "Quickly craft replies": [
-        "Tulis pesan balasan dengan cepat"
-      ],
-      "Recover previous file versions": [
-        "Pulihkan versi berkas sebelumnya"
-      ],
-      "Save time emailing": [
-        "Hemat waktu dalam mengirim email"
-      ],
       "Schedule and snooze emails for any time": [
         "Jadwalkan dan tunda email kapan saja"
       ],
-      "Secure file storage and sharing": [
-        "Penyimpanan dan pembagian berkas yang aman"
-      ],
-      "Share files with no size limit": [
-        "Bagikan berkas tanpa batasan ukuran"
-      ],
       "SMTP submission": [
         "Submisi SMTP"
-      ],
-      "Support for up to 2 users": [
-        "Dukungan hingga 2 pengguna"
-      ],
-      "Sync and backup all your files across devices": [
-        "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
       ],
       "Unlimited filters": [
         "Tanpa batasan jumlah filter"
@@ -1355,20 +1203,11 @@
       ]
     },
     "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 domain email khusus"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }"
       ]
     },
     "new_plans: tooltip": {
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan cloud terenkripsi. Meliputi sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Amankan email Anda dengan enkripsi end-to-end. Meliputi dukungan untuk domain email khusus, 15 alamat email, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
@@ -1398,9 +1237,6 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Buat hingga ${ n } alamat/alias email yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
-      ],
-      "Email everyone in a group with a single email address": [
-        "Email seluruh anggota grup dengan satu alamat email"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"
@@ -1466,9 +1302,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Tingkatkan total ruang penyimpanan Anda ke ${ bundleStorage }"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Dukungan untuk ${ n } domain email khusus"
       ]
     },
     "Placeholder": {
@@ -1517,9 +1350,6 @@
       ]
     },
     "Title": {
-      "Account restricted": [
-        "Akun dibatasi"
-      ],
       "Enter 2FA code": [
         "Masukkan kode 2FA"
       ],
