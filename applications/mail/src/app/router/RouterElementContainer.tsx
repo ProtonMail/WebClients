@@ -1,3 +1,5 @@
+import { useDeferredValue } from 'react';
+
 import { ErrorBoundary, useActiveBreakpoint } from '@proton/components';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
@@ -9,6 +11,7 @@ import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTyp
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
+import { useMailSettingsViewModeEvent } from './hooks/useMailSettingsViewModeEvent';
 import type { MailboxActions, RouterNavigation } from './interface';
 
 interface Props {
@@ -24,9 +27,21 @@ export const RouterElementContainer = ({ params, navigation, elementsData, actio
     const { loading, placeholderCount, elements } = elementsData;
     const { checkedIDs, onMessageReady } = actions;
 
-    const { columnLayout, isConversationContentView, messageContainerRef, columnMode } = useMailboxLayoutProvider();
-
     const [mailSettings] = useMailSettings();
+
+    const {
+        columnLayout,
+        isConversationContentView: immediateIsConversationContentView,
+        messageContainerRef,
+        columnMode,
+    } = useMailboxLayoutProvider();
+
+    // Defer view mode change until navigation completes to prevent API errors
+    const isConversationContentView = useDeferredValue(immediateIsConversationContentView);
+
+    // Used to move back when the view mode change
+    useMailSettingsViewModeEvent({ navigation });
+
     const breakpoints = useActiveBreakpoint();
     const composersCount = useMailSelector(selectComposersCount);
 
