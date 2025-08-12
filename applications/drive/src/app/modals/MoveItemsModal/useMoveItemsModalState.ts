@@ -20,10 +20,12 @@ export type MoveItemsModalStateItem = {
 export type UseMoveItemsModalStateProps = ModalStateProps & {
     shareId: string;
     selectedItems: MoveItemsModalStateItem[];
+    onSuccess?: (targetFolderUid: string, movedItems: MoveItemsModalStateItem[]) => void;
 };
 
 export const useMoveItemsModalState = ({
     onClose,
+    onSuccess,
     shareId,
     selectedItems,
     ...modalProps
@@ -106,8 +108,9 @@ export const useMoveItemsModalState = ({
 
             const undoFunc = () => undoMove(itemMap, parentMap);
             createMovedItemsNotifications(successIds, failedIds, undoFunc);
+            onSuccess?.(targetFolderUid, selectedItems);
             const { volumeId } = splitNodeUid(targetFolderUid);
-            await events.pollEvents.volumes(volumeId);
+            await events.pollEvents.volumes(volumeId); // TODO:EVENTS
         } catch (e) {
             handleError(e, { extra: { itemsUId: uids, targetFolderUid } });
         }
@@ -140,7 +143,7 @@ export const useMoveItemsModalState = ({
 
         showCreateFolderModal({
             parentFolderUid: targetUid,
-            onCreateDone: async (newFolderUid: string) => {
+            onSuccess: async (newFolderUid: string) => {
                 setTargetFolderUid(newFolderUid);
 
                 // After creating the folder we want to expand its parent so it shows in the tree

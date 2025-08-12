@@ -14,6 +14,7 @@ import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 export type UseRenameModalProps = ModalStateProps & {
     onClose?: () => void;
+    onSuccess?: (newName: string) => void;
     volumeId: string;
     linkId: string;
     name: string;
@@ -42,6 +43,7 @@ export const getIgnoreExtension = (node: null | NodeEntity, name: string) => {
 
 export const useRenameModalState = ({
     onClose,
+    onSuccess,
     onSubmit,
     volumeId,
     linkId,
@@ -79,6 +81,7 @@ export const useRenameModalState = ({
             .then(async () => {
                 createNotification({ text: successNotificationText, preWrap: true });
                 await events.pollEvents.volumes(volumeId);
+                onSuccess?.(newName);
                 onClose();
             })
             .catch((e) => {

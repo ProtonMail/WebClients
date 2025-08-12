@@ -27,24 +27,24 @@ const formatLinkName = (str: string) => str.trim();
 
 interface Props {
     onClose?: () => void;
-    onCreateDone?: (folderId: string) => void;
     folder?: { shareId: string; linkId: string };
     createFolder?: (abortSignal: AbortSignal, shareId: string, parentLinkId: string, name: string) => Promise<string>;
     parentFolderUid?: string;
+    onSuccess?: (folderId: string, newName: string) => void;
 }
 
 const CreateFolderModalDeprecated = ({
     createFolder,
     onClose,
     folder,
-    onCreateDone,
     parentFolderUid,
+    onSuccess,
     ...modalProps
 }: Props & ModalStateProps) => {
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
-
+    const { drive } = useDrive();
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
         setFolderName(formatLinkName(target.value));
     };
@@ -69,13 +69,14 @@ const CreateFolderModalDeprecated = ({
         }
 
         if (createFolder) {
-            const folderId = await createFolder(
+            const nodeId = await createFolder(
                 new AbortController().signal,
                 parentFolder.shareId,
                 parentFolder.linkId,
                 formattedName
             );
-            onCreateDone?.(folderId);
+            const nodeUid = await drive.getNodeUid(parentFolder.shareId, nodeId);
+            onSuccess?.(nodeUid, formattedName);
         }
         onClose?.();
     };
