@@ -1,6 +1,6 @@
 import type { Dispatch, MutableRefObject, RefObject, SetStateAction } from 'react';
 import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
-import { Prompt, useHistory, useLocation } from 'react-router';
+import { Prompt } from 'react-router';
 
 import { c, msgid } from 'ttag';
 
@@ -8,7 +8,6 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { CircleLoader } from '@proton/atoms';
-import { calendarUrlQueryParams, calendarUrlQueryParamsActions } from '@proton/calendar';
 import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
@@ -216,8 +215,10 @@ import type {
     TargetEventData,
     TimeGridRef,
 } from './interface';
+import { openEventInEditMode } from './openEventInEditMode';
 import { useCalendarSearch } from './search/CalendarSearchProvider';
 import { getInitialTargetEventData } from './targetEventHelper';
+import { useCalendarActionsOnLoad } from './useCalendarActionsOnLoad';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
     if (!isAllDay) {
@@ -374,8 +375,6 @@ const InteractiveCalendarView = ({
     const cancelClosePopoverRef = useRef(false);
     const { startNESTMetric, stopNESTMetric } = useCalendarNESTMetric();
     const { startEALMetric, stopEALMetric } = useCalendarEALMetric();
-    const history = useHistory();
-    const location = useLocation();
 
     const [mustConnectToZoom, setMustConnectToZoom] = useState(false);
 
@@ -2134,12 +2133,14 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const getEditedTemporaryEvent = (isDuplication: boolean = false) => {
-        if (!targetEvent) {
+    const getEditedTemporaryEvent = (isDuplication: boolean = false, targetEventOverride?: CalendarViewEvent) => {
+        const currentTargetEvent = targetEventOverride ?? targetEvent;
+
+        if (!currentTargetEvent) {
             return null;
         }
 
-        const viewEventData = { ...targetEvent.data };
+        const viewEventData = { ...currentTargetEvent.data };
 
         const duplicateFromNonWritableCalendarData =
             isDuplication &&
@@ -2156,8 +2157,11 @@ const InteractiveCalendarView = ({
         if (!newTemporaryModel) {
             return null;
         }
-
-        return getTemporaryEvent(getEditTemporaryEvent(targetEvent, newTemporaryModel, tzid), newTemporaryModel, tzid);
+        return getTemporaryEvent(
+            getEditTemporaryEvent(currentTargetEvent, newTemporaryModel, tzid),
+            newTemporaryModel,
+            tzid
+        );
     };
 
     const preventFetchBusySlots = useBusySlots({
@@ -2167,45 +2171,40 @@ const InteractiveCalendarView = ({
         view,
     });
 
-    // Used for preventing trigger the event form opening multiple times
-    const eventFormOpened = useRef(false);
-
-    // Opening the create event modal in case of having a create action in the url
-    useEffect(() => {
-        const searchParams = new URLSearchParams(location.search);
-
-        const shouldOpenEventForm =
-            searchParams.get(calendarUrlQueryParams.action) === calendarUrlQueryParamsActions.create &&
-            !isEventCreationDisabled;
-
-        if (
-            shouldOpenEventForm &&
-            createEventCalendar &&
-            createEventCalendarBootstrap &&
-            activeAddresses.length > 0 &&
-            !eventFormOpened.current
-        ) {
-            eventFormOpened.current = true;
-
+    useCalendarActionsOnLoad({
+        create: () => {
             handleCreateEvent({ attendees: [] });
-
-            // Cleanup so the query params don't have the create action anymore
-
-            searchParams.delete(calendarUrlQueryParams.action);
-
-            history.replace({
-                ...location,
-                search: searchParams.toString() ? `?${searchParams.toString()}` : '',
-            });
-        }
-    }, [
-        createEventCalendar,
-        createEventCalendarBootstrap,
-        activeAddresses.length,
-        handleCreateEvent,
-        history,
-        location,
-    ]);
+        },
+        update: async (eventId: string, calendarID: string) => {
+            try {
+                await openEventInEditMode(eventId, calendarID, {
+                    cachedCalendars: calendarsEventsCacheRef.current.calendars,
+                    calendars,
+                    api,
+                    getOpenedMailEvents,
+                    getEventDecrypted,
+                    handleEditEvent,
+                    setEventTargetAction,
+                    setInteractiveData,
+                    getEditedTemporaryEvent,
+                    tzid,
+                });
+            } catch (error) {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`Invalid link to the event`,
+                });
+            }
+        },
+        dependencies: {
+            activeAddresses,
+            cachedCalendars: calendarsEventsCacheRef.current.calendars,
+            isEventCreationDisabled: isEventCreationDisabled,
+            createEventCalendar,
+            createEventCalendarBootstrap,
+            hasInteractiveData: !!interactiveData,
+        },
+    });
 
     return (
         <>
@@ -2381,6 +2380,7 @@ const InteractiveCalendarView = ({
                     ) {
                         return null;
                     }
+
                     if (targetEvent.isTemporary && temporaryEvent?.tmpData) {
                         return (
                             <CreateEventPopover
