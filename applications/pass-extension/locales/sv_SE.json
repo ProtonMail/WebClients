@@ -92,9 +92,6 @@
       "Change": [
         "Ändra"
       ],
-      "Change email": [
-        "Ändra e-post"
-      ],
       "Check DNS": [
         "Kontrollera DNS"
       ],
@@ -106,9 +103,6 @@
       ],
       "Clear": [
         "Rensa"
-      ],
-      "Clear search": [
-        "Rensa sök"
       ],
       "Close": [
         "Stäng"
@@ -202,9 +196,6 @@
       ],
       "Delete alias": [
         "Ta bort alias"
-      ],
-      "Delete all": [
-        "Ta bort alla"
       ],
       "Delete it, I will never need it": [
         "Ta bort det, jag kommer aldrig att behöva det"
@@ -491,14 +482,8 @@
       "Resend invitation": [
         "Skicka inbjudan igen"
       ],
-      "Reset": [
-        "Återställ"
-      ],
       "Reset history": [
         "Återställ historik"
-      ],
-      "Restore": [
-        "Återställ"
       ],
       "Restore item": [
         "Återställ objekt"
@@ -687,11 +672,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }-skrivbordsapp"
       ]
     },
     "Button": {
@@ -1223,9 +1203,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1244,10 +1221,6 @@
       "Megabyte": [
         "Kilobyte",
         "Megabyte"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabyte"
       ]
     },
     "Info": {
@@ -1507,9 +1480,6 @@
       "Congratulations, your access has been confirmed": [
         "Grattis, din åtkomst har bekräftats"
       ],
-      "Copied to clipboard": [
-        "Kopierad till urklipp"
-      ],
       "Coupon successfully applied!": [
         "Kupong tillämpad!"
       ],
@@ -1560,12 +1530,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domän: ${ domainPath } eller @"
-      ],
-      "Drop file here to upload": [
-        "Släpp filer här för att ladda upp"
-      ],
-      "Drop to import": [
-        "Släpp för att importera"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importera enkelt dina befintliga lösenord in till ${ PASS_APP_NAME }."
@@ -2381,9 +2345,6 @@
       "your domain": [
         "din domän"
       ],
-      "Your files will be encrypted and then saved": [
-        "Dina filer kommer att krypteras och sedan sparas"
-      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
       ]
@@ -2562,7 +2523,7 @@
         "Lås automatiskt efter"
       ],
       "Autofill": [
-        "Autofyll"
+        "Fyll automatiskt"
       ],
       "Autofill 2FA": [
         "Autofyll 2FA"
@@ -2831,9 +2792,6 @@
       "https://example.com": [
         "https://example.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "ID-kort"
       ],
@@ -2902,9 +2860,6 @@
       ],
       "Key type": [
         "Nyckeltyp"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Tangentbordsgenväg: ${ shortcut }"
       ],
       "Language": [
         "Språk"
@@ -3332,9 +3287,6 @@
       "The URL has been copied to the clipboard": [
         "URL:en har kopierats till urklipp"
       ],
-      "Theme": [
-        "Tema"
-      ],
       "Tier/Level": [
         "Nivå"
       ],
@@ -3479,7 +3431,7 @@
     },
     "Link": {
       "auto create rules ››": [
-        "autoskapa regler ››"
+        "skapa regler automatiskt ››"
       ]
     },
     "Message": {
@@ -3574,7 +3526,7 @@
         "Exporterar filer"
       ],
       "Failed linking files to item": [
-        "Misslyckades med att länka filer till objektet"
+        "Misslyckades länka filer till objekt"
       ],
       "File": [
         "Fil"

@@ -92,9 +92,6 @@
       "Change": [
         "Módosítás"
       ],
-      "Change email": [
-        "E-mail cím módosítása"
-      ],
       "Check DNS": [
         "DNS ellenőrzése"
       ],
@@ -106,9 +103,6 @@
       ],
       "Clear": [
         "Törlés"
-      ],
-      "Clear search": [
-        "Keresés törlése"
       ],
       "Close": [
         "Bezárás"
@@ -202,9 +196,6 @@
       ],
       "Delete alias": [
         "E-mail álnév törlése"
-      ],
-      "Delete all": [
-        "Összes törlése"
       ],
       "Delete it, I will never need it": [
         "Törlés, soha nem lesz rá szükségem"
@@ -491,14 +482,8 @@
       "Resend invitation": [
         "Meghívó újraküldése"
       ],
-      "Reset": [
-        "Alaphelyzet"
-      ],
       "Reset history": [
         "Előzmények visszaállítása"
-      ],
-      "Restore": [
-        "Helyreállítás"
       ],
       "Restore item": [
         "Elem helyreállítása"
@@ -687,11 +672,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Az Ön jelszómenedzsere nem látható? Kérje."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } asztali alkalmazás"
       ]
     },
     "Button": {
@@ -1223,9 +1203,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1244,10 +1221,6 @@
       "Megabyte": [
         "Megabájt",
         "Megabájt"
-      ],
-      "Terabyte": [
-        "Terabájt",
-        "Terabájt"
       ]
     },
     "Info": {
@@ -1504,9 +1477,6 @@
       "Congratulations, your access has been confirmed": [
         "A hozzáférése jóváhagyva"
       ],
-      "Copied to clipboard": [
-        "Vágólapra másolva"
-      ],
       "Coupon successfully applied!": [
         "A kupon sikeresen alkalmazva!"
       ],
@@ -1557,12 +1527,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domain: ${ domainPath } vagy @"
-      ],
-      "Drop file here to upload": [
-        "Húzza ide a fájlokat a feltöltéshez"
-      ],
-      "Drop to import": [
-        "Húzza ide az importáláshoz"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importálja a meglévő jelszavait könnyedén a ${ PASS_APP_NAME }-ba."
@@ -2378,9 +2342,6 @@
       "your domain": [
         "saját domain név"
       ],
-      "Your files will be encrypted and then saved": [
-        "A fájlok titkosításra majd pedig mentésre kerülnek"
-      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Szervezete megköveteli, hogy biztosítsa a ${ PASS_APP_NAME } alkalmazáshoz való hozzáférését"
       ]
@@ -2831,9 +2792,6 @@
       "https://example.com": [
         "https://example.com"
       ],
-      "IBAN": [
-        "IBAN szám"
-      ],
       "ID Card": [
         "Személyi igazolvány"
       ],
@@ -2902,9 +2860,6 @@
       ],
       "Key type": [
         "Kulcs típusa"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Gyorsbillentyű: ${ shortcut }"
       ],
       "Language": [
         "Nyelv"
@@ -3334,9 +3289,6 @@
       ],
       "The URL has been copied to the clipboard": [
         "Az URL a vágólapra lett másolva"
-      ],
-      "Theme": [
-        "Téma"
       ],
       "Tier/Level": [
         "Szint"
