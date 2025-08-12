@@ -21,7 +21,6 @@ import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/
 import { filterFromUrl, pageFromUrl, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
 import { useElements } from 'proton-mail/hooks/mailbox/useElements';
-import { paramsSelector } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { RouterLabelContainer } from './RouterLabelContainer';
@@ -34,7 +33,7 @@ import { useMailboxContainerSideEffects } from './sideEffects/useMailboxContaine
 
 export const RouterMailboxContainer = () => {
     // We get most of the data here to avoid unnecessary re-renders
-    const params = useMailSelector(paramsSelector);
+    const params = useMailSelector((state) => state.elements.params);
     const navigation = useRouterNavigation({ labelID: params.labelID });
     const elementsParams = useGetElementParams({ params, navigation });
     const elementsData = useElements(elementsParams);
