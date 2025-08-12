@@ -78,10 +78,10 @@ export const ExportStatementButton = ({ apiWalletData, apiAccount, ...rest }: Pr
         const time = BigInt(Math.floor(date.getTime() / SECOND).toString());
 
         if (format === ExportFormat.CSV) {
-            return generator.toCsv(time);
+            return generator.toCsv(time) as Promise<Uint8Array<ArrayBuffer>>;
         }
 
-        return generator.toPdf(time);
+        return generator.toPdf(time) as Promise<Uint8Array<ArrayBuffer>>;
     };
 
     const getMimeType = (format: ExportFormat): string => {

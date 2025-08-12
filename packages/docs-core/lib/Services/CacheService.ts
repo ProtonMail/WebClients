@@ -113,7 +113,7 @@ export class CacheService {
       const key = await this.encryptionKey
 
       const encryptedValue = await this.encryptionService.encryptDataForLocalStorage(
-        dto.commit.serializeBinary(),
+        dto.commit.serializeBinary() as Uint8Array<ArrayBuffer>,
         this.cacheConfig.namespace,
         key,
       )

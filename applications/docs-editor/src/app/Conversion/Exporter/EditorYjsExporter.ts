@@ -53,7 +53,7 @@ export class EditorYjsExporter extends EditorExporter {
 
     removeListener()
 
-    const editorYjsState = encodeStateAsUpdate(doc)
+    const editorYjsState = encodeStateAsUpdate(doc) as Uint8Array<ArrayBuffer>
     return editorYjsState
   }
 }

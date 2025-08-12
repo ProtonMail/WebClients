@@ -35,7 +35,7 @@ export const decryptTextData = async (armoredMessage: string, keys: PrivateKeyRe
     return { data };
 };
 
-type DecryptReturnType<T extends 'binary' | 'utf8'> = T extends 'binary' ? Uint8Array : string;
+type DecryptReturnType<T extends 'binary' | 'utf8'> = T extends 'binary' ? Uint8Array<ArrayBuffer> : string;
 
 export const decryptPgp = async <T extends 'binary' | 'utf8'>(
     armoredMessage: string,
@@ -54,7 +54,7 @@ export const decryptPgp = async <T extends 'binary' | 'utf8'>(
 
 const isString = (data: string | Uint8Array): data is string => typeof data === 'string';
 
-export const encryptPgp = async <T extends string | Uint8Array>(
+export const encryptPgp = async <T extends string | Uint8Array<ArrayBuffer>>(
     data: T,
     keys: PublicKeyReference[],
     signingKeys?: PrivateKeyReference[]
@@ -73,7 +73,7 @@ export const encryptPgp = async <T extends string | Uint8Array>(
         }).then(({ message }) => message);
     } else {
         message = await CryptoProxy.encryptMessage({
-            binaryData: data as Uint8Array,
+            binaryData: data as Uint8Array<ArrayBuffer>,
             ...common,
         }).then(({ message }) => message);
     }
@@ -115,7 +115,7 @@ export const encryptTransactionMessage = async (
     return { data_packet: uint8ArrayToBase64String(encrypted), key_packets: keyPackets };
 };
 
-export const signData = async <T extends string | Uint8Array>(
+export const signData = async <T extends string | Uint8Array<ArrayBuffer>>(
     data: T,
     context: WalletSignatureContext,
     keys: PrivateKeyReference[]
@@ -135,7 +135,7 @@ export const signData = async <T extends string | Uint8Array>(
         });
     } else {
         signature = await CryptoProxy.signMessage({
-            binaryData: data as Uint8Array,
+            binaryData: data as Uint8Array<ArrayBuffer>,
             ...common,
         });
     }
@@ -162,7 +162,7 @@ export const verifySignedData = async <T extends string | Uint8Array>(
         }).then(({ verificationStatus }) => verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID);
     } else {
         return CryptoProxy.verifyMessage({
-            binaryData: data as Uint8Array,
+            binaryData: data as Uint8Array<ArrayBuffer>,
             ...common,
         }).then(({ verificationStatus }) => verificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID);
     }
