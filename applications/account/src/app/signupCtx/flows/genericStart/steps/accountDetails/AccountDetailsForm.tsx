@@ -11,9 +11,9 @@ import { SignupType } from '../../../../../signup/interfaces';
 import { usePasswordInputInline } from '../../../../accountDetailsInputs/password/usePasswordInput';
 import useEmailInput from '../../../../accountDetailsInputs/username/useEmailInput';
 import { useSignup } from '../../../../context/SignupContext';
-import clubic from '../../assets/images/clubic.svg';
+import cybernews from '../../assets/images/cybernews.svg';
 import pcmag from '../../assets/images/pcmag.svg';
-import wired from '../../assets/images/wired.svg';
+import slashdot from '../../assets/images/slashdot.svg';
 import Terms from '../../components/Terms';
 
 type Step = 'email' | 'password';
@@ -175,9 +175,9 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
 
             {step === 'email' && (
                 <div className="grid grid-cols-3 gap-2 mt-8 lg:mt-12 mb-4 lg:mb-0">
-                    <img src={pcmag} alt="" className="max-w-full mx-auto" width={65} height={70} />
-                    <img src={wired} alt="" className="max-w-full mx-auto" width={81} height={70} />
-                    <img src={clubic} alt="" className="max-w-full mx-auto" width={68} height={70} />
+                    <img src={cybernews} alt="" className="max-w-full mx-auto" width={113} height={70} />
+                    <img src={pcmag} alt="" className="max-w-full mx-auto" width={66} height={70} />
+                    <img src={slashdot} alt="" className="max-w-full mx-auto" width={74} height={70} />
                 </div>
             )}
 
