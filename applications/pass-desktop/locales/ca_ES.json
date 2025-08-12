@@ -112,9 +112,6 @@
       "Change": [
         "Canvia"
       ],
-      "Change email": [
-        "Canvia el correu electrònic"
-      ],
       "Check DNS": [
         "Verifica el DNS"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "Neteja"
-      ],
-      "Clear search": [
-        "Esborra la cerca"
       ],
       "Close": [
         "Tanca"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "Elimina l'àlies"
-      ],
-      "Delete all": [
-        "Eliminar-ho tot"
       ],
       "Delete it, I will never need it": [
         "Elimina'l. No el necessitaré mai."
@@ -511,14 +502,8 @@
       "Resend invitation": [
         "Reenvia la invitació"
       ],
-      "Reset": [
-        "Restablir"
-      ],
       "Reset history": [
         "Restableix l'historial"
-      ],
-      "Restore": [
-        "Restaura"
       ],
       "Restore item": [
         "Restaura l'element"
@@ -721,11 +706,6 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Desinstal·la ${ PASS_APP_NAME }"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -1286,9 +1266,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1307,35 +1284,11 @@
       "Megabyte": [
         "megabyte",
         "megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
       ]
     },
     "Font face option": {
-      "System default": [
-        "Valor per defecte del sistema"
-      ],
       "Theme font": [
         "Família tipogràfica del tema"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Gran"
-      ],
-      "Medium (recommended)": [
-        "Mitjà (recomanat)"
-      ],
-      "Small": [
-        "Petit"
-      ],
-      "Very large": [
-        "Molt gran"
-      ],
-      "Very small": [
-        "Molt petit"
       ]
     },
     "Info": {
@@ -1571,9 +1524,6 @@
       "Congratulations, your access has been confirmed": [
         "S'ha confirmat el vostre accés"
       ],
-      "Copied to clipboard": [
-        "Copiat al porta-retalls"
-      ],
       "Coupon successfully applied!": [
         "S'ha aplicat el cupó."
       ],
@@ -1618,12 +1568,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domini: ${ domainPath } o @"
-      ],
-      "Drop file here to upload": [
-        "Arrossegueu el fitxer aquí per carregar-lo."
-      ],
-      "Drop to import": [
-        "Arrossegueu aquí per a importar"
       ],
       "Editor": [
         "Editor"
@@ -1832,9 +1776,6 @@
       "Latest breach on ${ formattedDate }": [
         "Última infracció el ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "Més informació sobre què fer ${ dataLeakedLink }"
-      ],
       "Leaving item...": [
         "S'està deixant l'element..."
       ],
@@ -1928,9 +1869,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN. Se us tancarà la sessió després de 3 intents que no han funcionat."
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest informe amb seguretat."
       ],
       "Owner": [
         "Propietari"
@@ -2472,9 +2410,6 @@
       "your domain": [
         "el vostre domini"
       ],
-      "Your files will be encrypted and then saved": [
-        "Es xifraran els fitxers i després es desaran."
-      ],
       "Your information was found on ${ displayedDate }": [
         "La vostra informació es va trobar el ${ displayedDate }"
       ],
@@ -2909,7 +2844,7 @@
         "Reenvia a"
       ],
       "Free": [
-        "Free"
+        "Gratuït"
       ],
       "Free forever": [
         "Gratuït per sempre"
@@ -2973,9 +2908,6 @@
       ],
       "https://example.com": [
         "https://exemple.cat"
-      ],
-      "IBAN": [
-        "IBAN"
       ],
       "ID Card": [
         "Targeta d'identitat"
@@ -3051,9 +2983,6 @@
       ],
       "Key type": [
         "Tipus de clau"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Drecera de teclat: ${ shortcut }"
       ],
       "Language": [
         "Idioma"
@@ -3520,9 +3449,6 @@
       "The URL has been copied to the clipboard": [
         "S'ha copiat l'URL al porta-retalls."
       ],
-      "Theme": [
-        "Tema"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Aquest element és accessible fins a ${ date } o fins que s'arribi al límit de visualitzacions."
       ],
@@ -3693,16 +3619,8 @@
       "auto create rules ››": [
         "crear regles automàticament ››"
       ],
-      "if your data is leaked": [
-        "si es filtren les vostres dades"
-      ],
       "Learn more": [
         "Més informació"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "Activa ${ reason }"
       ]
     },
     "Medium": {
@@ -3740,17 +3658,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Requereix A2F per a l'organització"
-      ],
-      "SSO integration": [
-        "Integració SSO"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } s'ha desactivat"
-      ],
-      "${ reason } has been enabled": [
-        "S'ha activat ${ reason } "
       ]
     },
     "Option": {
@@ -4006,20 +3913,6 @@
       ],
       "Used on ${ url }": [
         "Utilitzada a ${ url }"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ]
     },
     "sso": {
@@ -4355,9 +4248,6 @@
       "Inactive 2FA": [
         "2FA inactiva"
       ],
-      "Information exposed in breach": [
-        "Informació exposada en la filtració"
-      ],
       "Install extension": [
         "Instal·la l'extensió"
       ],
@@ -4628,14 +4518,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Avui"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
       ]
     },
     "Validation": {

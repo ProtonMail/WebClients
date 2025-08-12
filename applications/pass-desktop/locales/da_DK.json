@@ -112,9 +112,6 @@
       "Change": [
         "Skift"
       ],
-      "Change email": [
-        "Skift e-mail"
-      ],
       "Check DNS": [
         "Kontrollér DNS"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "Ryd"
-      ],
-      "Clear search": [
-        "Ryd søgning"
       ],
       "Close": [
         "Luk"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "Slet alias"
-      ],
-      "Delete all": [
-        "Slet alle"
       ],
       "Delete it, I will never need it": [
         "Slet det, jeg får aldrig brug for det"
@@ -511,14 +502,8 @@
       "Resend invitation": [
         "Gensend invitation"
       ],
-      "Reset": [
-        "Nulstil"
-      ],
       "Reset history": [
         "Nulstil historik"
-      ],
-      "Restore": [
-        "Gendan"
       ],
       "Restore item": [
         "Gendan element"
@@ -721,11 +706,6 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Afinstallér ${ PASS_APP_NAME }"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } skrivebordsapp"
       ]
     },
     "Button": {
@@ -1286,9 +1266,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1307,35 +1284,11 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabyte"
       ]
     },
     "Font face option": {
-      "System default": [
-        "Systemstandard"
-      ],
       "Theme font": [
         "Temaskrifttype"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Stor"
-      ],
-      "Medium (recommended)": [
-        "Mellem (anbefalet)"
-      ],
-      "Small": [
-        "Lille"
-      ],
-      "Very large": [
-        "Meget stor"
-      ],
-      "Very small": [
-        "Meget lille"
       ]
     },
     "Info": {
@@ -1571,9 +1524,6 @@
       "Congratulations, your access has been confirmed": [
         "Tillykke, din adgang er blevet bekræftet"
       ],
-      "Copied to clipboard": [
-        "Kopieret til udklipsholder"
-      ],
       "Coupon successfully applied!": [
         "Kupon anvendt!"
       ],
@@ -1618,12 +1568,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domæne: ${ domainPath } eller @"
-      ],
-      "Drop file here to upload": [
-        "Træk fil hertil for at uploade"
-      ],
-      "Drop to import": [
-        "Slip for at importere"
       ],
       "Editor": [
         "Redaktør"
@@ -1832,9 +1776,6 @@
       "Latest breach on ${ formattedDate }": [
         "Seneste databrud ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "Se hvad du skal gøre her ${ dataLeakedLink }"
-      ],
       "Leaving item...": [
         "Forlader element..."
       ],
@@ -1928,9 +1869,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online adgang til ${ PASS_APP_NAME } kræver en pinkode. Du bliver logget ud efter 3 mislykkede forsøg."
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Vores advarsler prioriterer sikkerhed. Hvis du ikke genkender nogen af de kompromitterede oplysninger, kan du roligt ignorere denne rapport."
       ],
       "Owner": [
         "Ejer"
@@ -2469,9 +2407,6 @@
       "your domain": [
         "dit domæne"
       ],
-      "Your files will be encrypted and then saved": [
-        "Din filer vil blive krypteret og derefter gemt"
-      ],
       "Your information was found on ${ displayedDate }": [
         "Dine oplysninger blev fundet ${ displayedDate }"
       ],
@@ -2971,9 +2906,6 @@
       "https://example.com": [
         "https://example.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "ID-kort"
       ],
@@ -3048,9 +2980,6 @@
       ],
       "Key type": [
         "Nøgletype"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Tastaturgenvej: ${ shortcut }"
       ],
       "Language": [
         "Sprog"
@@ -3517,9 +3446,6 @@
       "The URL has been copied to the clipboard": [
         "URL'en blev kopieret til udklipsholderen"
       ],
-      "Theme": [
-        "Tema"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Dette element er tilgængeligt indtil ${ date } eller indtil visningsgrænsen er nået."
       ],
@@ -3690,16 +3616,8 @@
       "auto create rules ››": [
         "regler for automatisk oprettelse ››"
       ],
-      "if your data is leaked": [
-        "hvis dine data er lækket"
-      ],
       "Learn more": [
         "Få mere at vide"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "Aktiver ${ reason }"
       ]
     },
     "Medium": {
@@ -3737,17 +3655,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Kræv 2FA for organisation"
-      ],
-      "SSO integration": [
-        "SSO-integration"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } er blevet deaktiveret"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } er blevet aktiveret"
       ]
     },
     "Option": {
@@ -4003,20 +3910,6 @@
       ],
       "Used on ${ url }": [
         "Brugt på ${ url }"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } og ${ remainingCount } andre potentielle lækager fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } og 1 anden potentiel lækage fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Et potentielt ${ name } læk blev opdaget. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Dine oplysninger blev fundet i mindst én datalækage. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
       ]
     },
     "sso": {
@@ -4346,9 +4239,6 @@
       "Inactive 2FA": [
         "Inaktiv 2FA"
       ],
-      "Information exposed in breach": [
-        "Information afsløret i en datalækage"
-      ],
       "Install extension": [
         "Installér udvidelse"
       ],
@@ -4619,14 +4509,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "I dag"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "Ikke alle oplysninger på listen blev afsløret for alle brugere"
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Medmindre de dechifreres, forbliver krypterede adgangskoder sikre, selv hvis de eksponeres."
       ]
     },
     "Validation": {

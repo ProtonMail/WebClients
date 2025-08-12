@@ -112,9 +112,6 @@
       "Change": [
         "Изменить"
       ],
-      "Change email": [
-        "Изменить e-mail"
-      ],
       "Check DNS": [
         "Проверить DNS-"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "Очистить"
-      ],
-      "Clear search": [
-        "Очистить поиск"
       ],
       "Close": [
         "Закрыть"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "Удалить псевдоним"
-      ],
-      "Delete all": [
-        "Удалить все"
       ],
       "Delete it, I will never need it": [
         "Удалить, мне это никогда не понадобится"
@@ -508,14 +499,8 @@
       "Resend invitation": [
         "Отправить повторное приглашение"
       ],
-      "Reset": [
-        "Сбросить"
-      ],
       "Reset history": [
         "Сбросить историю"
-      ],
-      "Restore": [
-        "Восстановить"
       ],
       "Restore item": [
         "Восстановить элемент"
@@ -719,11 +704,6 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Удалить ${ PASS_APP_NAME }"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -1286,9 +1266,6 @@
       ],
       "MB": [
         "МБ"
-      ],
-      "TB": [
-        "ТБ"
       ]
     },
     "file size format, long": {
@@ -1315,37 +1292,11 @@
         "Мегабайтов",
         "Мегабайтов",
         "Мегабайтов"
-      ],
-      "Terabyte": [
-        "Терабайт",
-        "Терабайта",
-        "Терабайтов",
-        "Терабайтов"
       ]
     },
     "Font face option": {
-      "System default": [
-        "Системный по умолчанию"
-      ],
       "Theme font": [
         "Шрифт темы"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Большой"
-      ],
-      "Medium (recommended)": [
-        "Средний (Рекомендуется)"
-      ],
-      "Small": [
-        "Маленький"
-      ],
-      "Very large": [
-        "Очень большой"
-      ],
-      "Very small": [
-        "Очень маленький"
       ]
     },
     "Info": {
@@ -1595,9 +1546,6 @@
       "Congratulations, your access has been confirmed": [
         "Congratulations, your access has been confirmed"
       ],
-      "Copied to clipboard": [
-        "Скопировано в буфер обмена"
-      ],
       "Coupon successfully applied!": [
         "Купон успешно применен!"
       ],
@@ -1642,12 +1590,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Домен: ${ domainPath } или @"
-      ],
-      "Drop file here to upload": [
-        "Переместите файл сюда, чтобы скачать"
-      ],
-      "Drop to import": [
-        "Импортировать"
       ],
       "Editor": [
         "Редактор"
@@ -1862,9 +1804,6 @@
       "Latest breach on ${ formattedDate }": [
         "Последняя утечка ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "Узнайте, что делать ${ dataLeakedLink }"
-      ],
       "Leaving item...": [
         "Покидание элемента..."
       ],
@@ -1960,9 +1899,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для онлайн-доступа к ${ PASS_APP_NAME } потребуется PIN-код. Вы выйдете из системы после 3 неудачных попыток."
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
       ],
       "Owner": [
         "Владелец"
@@ -2516,9 +2452,6 @@
       "your domain": [
         "ваш домен"
       ],
-      "Your files will be encrypted and then saved": [
-        "Ваши файлы будут зашифрованы и затем сохранены"
-      ],
       "Your information was found on ${ displayedDate }": [
         "Ваша информация была найдена ${ displayedDate }"
       ],
@@ -3034,9 +2967,6 @@
       "https://example.com": [
         "https://primer.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "ID-карта"
       ],
@@ -3102,9 +3032,6 @@
       ],
       "Key type": [
         "Тип ключа"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Комбинация клавиш: ${ shortcut }"
       ],
       "Language": [
         "Язык"
@@ -3532,9 +3459,6 @@
       "The URL has been copied to the clipboard": [
         "URL был скопирован в буфер обмена"
       ],
-      "Theme": [
-        "Тема"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Этот элемент доступен до ${ date } или пока не будет достигнут лимит просмотров."
       ],
@@ -3690,16 +3614,8 @@
       "auto create rules ››": [
         "автоматическое создание правил ››"
       ],
-      "if your data is leaked": [
-        "в случае утечки ваших данных"
-      ],
       "Learn more": [
         "Подробнее"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "Включите ${ reason }"
       ]
     },
     "Medium": {
@@ -3741,17 +3657,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Требуется двухфакторная идентификация для организации"
-      ],
-      "SSO integration": [
-        "Интеграция с SSO"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } был отключен"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } был включен"
       ]
     },
     "Option": {
@@ -4000,20 +3905,6 @@
       ],
       "Used on ${ url }": [
         "Использовать на ${ url }"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Обнаружены другие потенциальные утечки ${ name } и ${ remainingCount }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Обнаружена ${ name } и еще 1 потенциальная утечка. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Обнаружена потенциальная утечка ${ name }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра подробностей. ${ link }"
       ]
     },
     "sso": {
@@ -4355,9 +4246,6 @@
       "Inactive 2FA": [
         "Неактивная двухфакторная аутентификация"
       ],
-      "Information exposed in breach": [
-        "Информация, раскрытая при утечке"
-      ],
       "Install extension": [
         "Установить расширение"
       ],
@@ -4638,14 +4526,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Сегодня"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "Не вся перечисленная здесь информация была открыта для всех пользователей."
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Зашифрованные пароли остаются в безопасности, пока их не расшифруют, даже если они находятся в открытом доступе."
       ]
     },
     "Validation": {
