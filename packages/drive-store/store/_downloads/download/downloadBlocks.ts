@@ -41,7 +41,11 @@ type DownloadBlocksCallbacks = Omit<
         hash: Uint8Array<ArrayBuffer>;
         data: ReadableStream<Uint8Array<ArrayBuffer>>;
     }>;
-    checkManifestSignature?: (abortSignal: AbortSignal, hash: Uint8Array<ArrayBuffer>, signature: string) => Promise<void>;
+    checkManifestSignature?: (
+        abortSignal: AbortSignal,
+        hash: Uint8Array<ArrayBuffer>,
+        signature: string
+    ) => Promise<void>;
     scanForVirus?: (abortSignal: AbortSignal, encryptedXAttr: string) => Promise<void>;
     checkFileHash?: (abortSignal: AbortSignal, Hash: string) => Promise<void>;
     onProgress?: (bytes: number, blockIndexes: number[]) => void;
@@ -391,7 +395,7 @@ export default function initDownloadBlocks(
             }
 
             if (checkFileHash && hashInstance) {
-                const sha1Digest = hashInstance.digest();
+                const sha1Digest = hashInstance.digest() as Uint8Array<ArrayBuffer>;
                 const fileHash = arrayToHexString(sha1Digest);
                 await checkFileHash(abortController.signal, fileHash);
             }

@@ -391,7 +391,7 @@ export default function initDownloadBlocks(
             }
 
             if (checkFileHash && hashInstance) {
-                const sha1Digest = hashInstance.digest();
+                const sha1Digest = hashInstance.digest() as Uint8Array<ArrayBuffer>;
                 const fileHash = arrayToHexString(sha1Digest);
                 await checkFileHash(abortController.signal, fileHash);
             }

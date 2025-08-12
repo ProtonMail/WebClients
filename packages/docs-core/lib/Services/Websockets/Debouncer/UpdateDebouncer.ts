@@ -144,7 +144,7 @@ export class UpdateDebouncer {
 
     this.currentBufferSize = 0
 
-    const merged = mergeUpdates(updates.map((update) => update.decryptedValue))
+    const merged = mergeUpdates(updates.map((update) => update.decryptedValue)) as Uint8Array<ArrayBuffer>
 
     this.onEvent({
       type: UpdateDebouncerEventType.DidFlush,

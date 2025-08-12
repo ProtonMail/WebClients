@@ -185,7 +185,7 @@ export async function processMultipleDocumentUpdates(documentUpdates: DocumentUp
   const updates: DocumentUpdate[] = []
 
   for (const update of documentUpdates) {
-    const content = update.encryptedContent
+    const content = update.encryptedContent as Uint8Array<ArrayBuffer>
     if (isDocumentUpdateChunk(content)) {
       await processDocumentUpdateChunk(content, {
         state: documentUpdateChunkState,

@@ -53,7 +53,7 @@ interface ForkDataResult {
     // Anything in extra is data that isn't persisted (runtime only).
     extra: {
         qrCode: QRCodePayload;
-        bytes: Uint8Array;
+        bytes: Uint8Array<ArrayBuffer>;
     };
 }
 
