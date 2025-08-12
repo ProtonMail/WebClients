@@ -72,19 +72,6 @@
         "Afișare factură"
       ]
     },
-    "BF2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
-      ],
-      "Use your own email domain": [
-        "Utilizați propriul domeniu de e-mail"
-      ]
-    },
-    "Cancellation upsell": {
-      "Cloud storage and sharing for large files": [
-        "Stocare în cloud și partajare pentru fișiere mari"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "Abhazia"
@@ -916,9 +903,6 @@
       ],
       "Something went wrong": [
         "Ceva nu a funcționat corect."
-      ],
-      "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Această pagină nu s-a putut încărca. Reîmprospătați pagina sau verificați conexiunea la internet."
       ]
     },
     "fido2: Error": {
@@ -953,9 +937,6 @@
       ],
       "MB": [
         "MiB"
-      ],
-      "TB": [
-        "TiB"
       ]
     },
     "file size format, long": {
@@ -978,36 +959,11 @@
         "Megabait",
         "Megabaiți",
         "Megabaiți"
-      ],
-      "Terabyte": [
-        "Terabait",
-        "Terabaiți",
-        "Terabaiți"
       ]
     },
     "Font face option": {
-      "System default": [
-        "Implicit din sistem"
-      ],
       "Theme font": [
         "Font temă"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Mare"
-      ],
-      "Medium (recommended)": [
-        "Mediu (recomandat)"
-      ],
-      "Small": [
-        "Mic"
-      ],
-      "Very large": [
-        "Foarte mare"
-      ],
-      "Very small": [
-        "Foarte mic"
       ]
     },
     "Human verification method": {
@@ -1040,9 +996,6 @@
       "Country code": [
         "Cod țară"
       ],
-      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "Crearea de conturi gratuite multiple nu este permisă așa cum se specifică și în ${ termsLink }."
-      ],
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar o dată."
       ],
@@ -1061,14 +1014,8 @@
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
       ],
-      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "Pentru informații suplimentare și pentru a elimina restricțiile, conectați-vă la ${ mailLink }."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
-      ],
-      "If you believe we made a mistake, please ${ contactLink }.": [
-        "Dacă considerați că este o greșeală, vă rugăm ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
@@ -1093,12 +1040,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
-      ],
-      "To remove restrictions, you can upgrade to a paid plan.": [
-        "Pentru a elimina restricția, puteți trece la un plan cu plată."
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.": [
-        "Avem planuri concepute special pentru utilizatorii care au nevoie de mai multe adrese de e-mail."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
@@ -1158,17 +1099,11 @@
       ]
     },
     "Link": {
-      "contact us": [
-        "contactați-ne"
-      ],
       "Learn more": [
         "Detalii"
       ],
       "Request an invite": [
         "Solicitați o invitație"
-      ],
-      "terms of service": [
-        "termenii serviciului"
       ]
     },
     "new_plans": {
@@ -1176,15 +1111,7 @@
         "Păstrați-vă mesajele organizate cu foldere"
       ]
     },
-    "new_plans: Action": {
-      "Get ${ planTitle }": [
-        "Luați ${ planTitle }"
-      ]
-    },
     "new_plans: feature": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asistent de scriere ${ BRAND_NAME } Scribe"
-      ],
       "${ n } custom email domain": [
         "Un domeniu personal de e-mail",
         "${ n } domenii personale de e-mail",
@@ -1225,49 +1152,11 @@
         "${ n } mesaje pe zi",
         "${ n } de mesaje pe zi"
       ],
-      "${ options }-day file version history": [
-        "Istoric versiuni fișiere: ${ options } zi",
-        "Istoric versiuni fișiere: ${ options } zile",
-        "Istoric versiuni fișiere: ${ options } de zile"
-      ],
       "${ size } attachment size": [
         "${ size } mărime atașament"
       ],
-      "${ size } of secure storage per user": [
-        "${ size } de spațiu securizat per utilizator"
-      ],
       "${ size } storage": [
         "${ size } spațiu"
-      ],
-      "${ size } storage per user": [
-        "${ size } spațiu per utilizator"
-      ],
-      "1 TB secure storage": [
-        "1 TiB stocare securizată"
-      ],
-      "10 email addresses/aliases": [
-        "10 adrese de e-mail/aliasuri"
-      ],
-      "10 more premium features": [
-        "Încă 10 funcții premium"
-      ],
-      "10-year file version history": [
-        "10 ani istoric versiuni fișiere"
-      ],
-      "15 GB storage": [
-        "15 GiB spațiu de stocare"
-      ],
-      "200 GB of storage": [
-        "200 GiB spațiu de stocare"
-      ],
-      "Advanced account protection": [
-        "Protecție avansată a contului"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "Toate produsele și funcțiile ${ BRAND_NAME }"
-      ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -1284,17 +1173,11 @@
       "Catch-all": [
         "Adresă de agregare"
       ],
-      "Collaborate and share large files": [
-        "Colaborare și partajare fișiere mari"
-      ],
       "Contact groups": [
         "Grupuri de contacte"
       ],
       "Contact groups management": [
         "Gestionare grupuri de contacte"
-      ],
-      "Custom and secure business email": [
-        "E-mail de afaceri personalizat și securizat"
       ],
       "Custom email domains": [
         "Domenii personale de e-mail"
@@ -1308,62 +1191,23 @@
       "Email client support (via IMAP/SMTP)": [
         "Suport client de e-mail (prin IMAP/SMTP)"
       ],
-      "Email groups": [
-        "Grupuri de contacte"
-      ],
       "Encrypted contact details": [
         "Detalii contacte criptate"
       ],
       "End-to-end encryption": [
         "Criptare bilaterală"
       ],
-      "Generate emails with a prompt": [
-        "Generați mesaje cu o solicitare"
-      ],
       "HTML signatures": [
         "Semnături HTML"
-      ],
-      "Online document editor": [
-        "Editor online de documente"
-      ],
-      "Password health": [
-        "Stare parole"
       ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
-      "Private photo backup": [
-        "Conservare fotografii private"
-      ],
-      "Proofread and refine your emails": [
-        "Corectați și cizelați mesajele"
-      ],
-      "Quickly craft replies": [
-        "Redactați rapid răspunsuri"
-      ],
-      "Recover previous file versions": [
-        "Recuperați versiunile anterioare ale fișierelor"
-      ],
-      "Save time emailing": [
-        "Salvați timp la scrierea mesajelor"
-      ],
       "Schedule and snooze emails for any time": [
         "Programați și amânați mesaje pentru orice moment"
       ],
-      "Secure file storage and sharing": [
-        "Stocare și partajare securizată fișiere"
-      ],
-      "Share files with no size limit": [
-        "Partajați fișiere fără limită de dimensiune"
-      ],
       "SMTP submission": [
         "Trimitere SMTP"
-      ],
-      "Support for up to 2 users": [
-        "Acceptare până la doi utilizatori"
-      ],
-      "Sync and backup all your files across devices": [
-        "Sincronizați fișierele între dispozitive și păstrați copii de rezervă"
       ],
       "Unlimited filters": [
         "Filtre nelimitate"
@@ -1385,20 +1229,11 @@
       ]
     },
     "new_plans: feature info": {
-      "1 custom email domain": [
-        "Un domeniu de e-mail personal"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Creați adrese de e-mail multiple pentru identitățile personale online, de ex. ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain2 } pentru abonamentul la știri."
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
       ]
     },
     "new_plans: tooltip": {
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include sincronizare automată, partajarea fișierelor criptate și multe altele."
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare bilaterală. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
       ],
@@ -1429,9 +1264,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
       ],
-      "Email everyone in a group with a single email address": [
-        "Trimiteți mesaje tuturor dintr-un grup cu o singură adresă de e-mail"
-      ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Se asigură că primiți toate e-mailurile trimise către domeniul dvs., chiar dacă adresa de e-mail nu a existat, nu mai există sau e scrisă greșit."
       ],
@@ -1442,7 +1274,7 @@
         "Etichetele sunt etichete simple pe care le puteți adăuga la mesaje pentru a le face mai ușor de găsit sau de aplicat filtre."
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături web către datele de contact și multe altele."
+        "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de rețele sociale, legături web către datele de contact și multe altele."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
@@ -1496,21 +1328,11 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Măriți spațiul de stocare la ${ bundleStorage } în total"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Suport pentru ${ n } domeniu de e-mail personal",
-        "Suport pentru ${ n } domenii de e-mail personale",
-        "Suport pentru ${ n } de domenii de e-mail personale"
       ]
     },
     "Placeholder": {
       "Password": [
         "Parola"
-      ]
-    },
-    "Plan description": {
-      "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
-        "Toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "saml: Error": {
@@ -1554,9 +1376,6 @@
       ]
     },
     "Title": {
-      "Account restricted": [
-        "Cont restricționat"
-      ],
       "Enter 2FA code": [
         "Introduceți codul de A2F"
       ],
