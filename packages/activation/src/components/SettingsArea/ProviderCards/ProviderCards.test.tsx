@@ -22,6 +22,7 @@ const defaultUseUser = [
         hasPaidMail: true,
         hasPaidVpn: true,
         canPay: true,
+        accessType: 0,
     },
     false,
 ];

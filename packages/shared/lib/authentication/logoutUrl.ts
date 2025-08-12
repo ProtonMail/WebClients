@@ -1,14 +1,33 @@
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
+import isEnumValue from '@proton/utils/isEnumValue';
 
 import { ForkSearchParameters } from './fork';
-import type { SerializedSignoutUserData, SignoutActionOptions, SignoutUserData } from './logoutInterface';
+import type {
+    LegacySerializedSignoutUserData,
+    SerializedSignoutUserData,
+    SignoutActionOptions,
+    SignoutUserData,
+} from './logoutInterface';
 import { stripLocalBasenameFromPathname } from './pathnameHelper';
 
 const clearRecoveryParam = 'clear-recovery';
+
+const getAccessType = (session: SerializedSignoutUserData | LegacySerializedSignoutUserData) => {
+    // Legacy value
+    if ('s' in session) {
+        return session.s ? AccessType.Self : AccessType.AdminAccess;
+    } else if ('a' in session) {
+        if (isEnumValue(session.a, AccessType)) {
+            return session.a;
+        }
+    }
+    return AccessType.Self;
+};
 
 const parseSessions = (sessions: string | null) => {
     try {
@@ -18,12 +37,14 @@ const parseSessions = (sessions: string | null) => {
             if (result.length > 50) {
                 return [];
             }
-            return result.map((session: SerializedSignoutUserData): SignoutUserData => {
-                return {
-                    id: session.id,
-                    isSelf: session.s === false,
-                };
-            });
+            return result.map(
+                (session: SerializedSignoutUserData | LegacySerializedSignoutUserData): SignoutUserData => {
+                    return {
+                        id: session.id,
+                        accessType: getAccessType(session),
+                    };
+                }
+            );
         }
         return [];
     } catch (e) {
@@ -35,9 +56,9 @@ const serializeSessions = (sessions: SignoutUserData[]): string => {
     return encodeBase64URL(
         JSON.stringify(
             sessions.map(
-                (session): SerializedSignoutUserData => ({
+                (session): Omit<SerializedSignoutUserData, 's'> => ({
                     id: session.id,
-                    s: !session.isSelf,
+                    a: session.accessType,
                 })
             )
         )
