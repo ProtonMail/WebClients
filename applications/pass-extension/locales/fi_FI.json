@@ -92,9 +92,6 @@
       "Change": [
         "Muuta"
       ],
-      "Change email": [
-        "Vaihda sähköpostiosoitteesi"
-      ],
       "Check DNS": [
         "Tarkista DNS"
       ],
@@ -106,9 +103,6 @@
       ],
       "Clear": [
         "Tyhjennä"
-      ],
-      "Clear search": [
-        "Tyhjennä haku"
       ],
       "Close": [
         "Sulje"
@@ -202,9 +196,6 @@
       ],
       "Delete alias": [
         "Poista alias"
-      ],
-      "Delete all": [
-        "Poista kaikki"
       ],
       "Delete it, I will never need it": [
         "Poista se, en koskaan tarvitse sitä"
@@ -488,14 +479,8 @@
       "Resend invitation": [
         "Lähetä kutsu uudelleen"
       ],
-      "Reset": [
-        "Tyhjennä"
-      ],
       "Reset history": [
         "Nollaa historia"
-      ],
-      "Restore": [
-        "Palauta"
       ],
       "Restore item": [
         "Palauta kohde"
@@ -684,11 +669,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }in työpöytäsovellus"
       ]
     },
     "Button": {
@@ -1190,9 +1170,6 @@
       ],
       "MB": [
         "Mt"
-      ],
-      "TB": [
-        "Tt"
       ]
     },
     "file size format, long": {
@@ -1211,10 +1188,6 @@
       "Megabyte": [
         "Megatavu",
         "Megatavua"
-      ],
-      "Terabyte": [
-        "Teratavu",
-        "Teratavua"
       ]
     },
     "Info": {
@@ -1461,9 +1434,6 @@
       "Congratulations, your access has been confirmed": [
         "Onnittelut, käyttöoikeutesi on vahvistettu"
       ],
-      "Copied to clipboard": [
-        "Kopioitiin leikepöydälle"
-      ],
       "Coupon successfully applied!": [
         "Etukoodi käytettiin!"
       ],
@@ -1514,12 +1484,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Verkkotunnus: ${ domainPath } tai @"
-      ],
-      "Drop file here to upload": [
-        "Pudota ladattava tiedosto tähän"
-      ],
-      "Drop to import": [
-        "Tuo pudottamalla"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Tuo olemassa olevat salasanasi ${ PASS_APP_NAME }iin helposti."
@@ -2314,9 +2278,6 @@
       "your domain": [
         "sinun verkkotunnuksesi"
       ],
-      "Your files will be encrypted and then saved": [
-        "Tiedostosi salataan ja tallennetaan"
-      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
       ]
@@ -2761,9 +2722,6 @@
       "https://example.com": [
         "https://esimerkki.fi"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "Henkilökortti"
       ],
@@ -2829,9 +2787,6 @@
       ],
       "Key type": [
         "Avaimen tyyppi"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Pikanäppäin: ${ shortcut }"
       ],
       "Language": [
         "Kieli"
@@ -3246,9 +3201,6 @@
       ],
       "The URL has been copied to the clipboard": [
         "URL-osoite kopioitiin leikepöydälle"
-      ],
-      "Theme": [
-        "Teema"
       ],
       "Tier/Level": [
         "Taso"

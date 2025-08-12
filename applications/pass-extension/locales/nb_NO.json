@@ -92,9 +92,6 @@
       "Change": [
         "Endre"
       ],
-      "Change email": [
-        "Endre e-post"
-      ],
       "Check DNS": [
         "Sjekk DNS"
       ],
@@ -106,9 +103,6 @@
       ],
       "Clear": [
         "Tøm"
-      ],
-      "Clear search": [
-        "Tøm søk"
       ],
       "Close": [
         "Lukk"
@@ -202,9 +196,6 @@
       ],
       "Delete alias": [
         "Slett alias"
-      ],
-      "Delete all": [
-        "Slett alle"
       ],
       "Delete it, I will never need it": [
         "Slett det, jeg kommer aldri til å trenge det"
@@ -491,14 +482,8 @@
       "Resend invitation": [
         "Send invitasjon på nytt"
       ],
-      "Reset": [
-        "Tilbakestill"
-      ],
       "Reset history": [
         "Tilbakestill historikk"
-      ],
-      "Restore": [
-        "Gjenopprett"
       ],
       "Restore item": [
         "Gjenopprett element"
@@ -687,11 +672,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Passordbehandleren din er ikke her? Be om den."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }-skrivebordsapplikasjon"
       ]
     },
     "Button": {
@@ -1223,9 +1203,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1244,10 +1221,6 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
       ]
     },
     "Info": {
@@ -1510,9 +1483,6 @@
       "Congratulations, your access has been confirmed": [
         "Gratulerer, tilgangen din er bekreftet"
       ],
-      "Copied to clipboard": [
-        "Kopiert til utklippstavlen"
-      ],
       "Coupon successfully applied!": [
         "Kupong vellykket brukt!"
       ],
@@ -1563,12 +1533,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domene: ${ domainPath } eller @"
-      ],
-      "Drop file here to upload": [
-        "Slipp fil her for å laste opp"
-      ],
-      "Drop to import": [
-        "Slipp for å importere"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importer enkelt dine eksisterende passord til ${ PASS_APP_NAME }."
@@ -2384,9 +2348,6 @@
       "your domain": [
         "ditt domene"
       ],
-      "Your files will be encrypted and then saved": [
-        "Filene dine vil bli kryptert og deretter lagret"
-      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
       ]
@@ -2837,9 +2798,6 @@
       "https://example.com": [
         "https://eksempel.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "ID-kort"
       ],
@@ -2908,9 +2866,6 @@
       ],
       "Key type": [
         "Nøkkeltype"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Tastatursnarvei: ${ shortcut }"
       ],
       "Language": [
         "Språk"
@@ -3340,9 +3295,6 @@
       ],
       "The URL has been copied to the clipboard": [
         "Nettadressen er kopiert til utklippstavlen"
-      ],
-      "Theme": [
-        "Tema"
       ],
       "Tier/Level": [
         "Nivå"
