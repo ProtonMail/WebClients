@@ -11,7 +11,7 @@ import type { PublicDocumentState } from '../State/DocumentState'
 import type { DocumentState } from '../State/DocumentState'
 import type { FetchRealtimeToken } from '../UseCase/FetchRealtimeToken'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
-import { hours_to_ms, minutes_to_ms, seconds_to_ms } from '../Util/time-utils'
+import { hours_to_ms, seconds_to_ms } from '../Util/time-utils'
 
 /**
  * The heartbeat mechanism is temporarily disabled due to the fact that we cannot renew our heartbeat when receiving
@@ -38,7 +38,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   reconnectTimeout: ReturnType<typeof setTimeout> | undefined = undefined
   private destroyed = false
 
-  isWaitingBeforeQueuingReconnection = false
+  isReconnectionStoppedDueToTimeout = false
 
   private didReceiveReadyMessageFromRTS = false
   closeConnectionDueToGoingAwayTimer: ReturnType<typeof setTimeout> | undefined = undefined
@@ -336,17 +336,32 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
 
     if (reason.props.code === ConnectionCloseReason.CODES.DOCUMENT_TIMEOUT) {
-      this.logger.info('Connection closed due to document timeout, waiting for 1 minute before reconnecting')
-      this.isWaitingBeforeQueuingReconnection = true
-      this.state.resetAttempts()
-      setTimeout(() => {
-        this.isWaitingBeforeQueuingReconnection = false
-        this.queueReconnection()
-      }, minutes_to_ms(1))
+      this.logger.info('Connection closed due to document timeout, not queueing reconnection until user activity')
+      this.stopReconnectionUntilActivity()
       return
     }
 
     this.queueReconnection()
+  }
+
+  stopReconnectionUntilActivity() {
+    this.isReconnectionStoppedDueToTimeout = true
+
+    const reconnect = () => {
+      if (document.visibilityState !== 'visible') {
+        return
+      }
+      this.logger.info('User activity detected, resuming reconnection attempts')
+      this.isReconnectionStoppedDueToTimeout = false
+      this.queueReconnection({ skipDelay: true })
+      document.removeEventListener('mousemove', reconnect)
+      document.removeEventListener('keydown', reconnect)
+      document.removeEventListener('visibilitychange', reconnect)
+    }
+
+    document.addEventListener('mousemove', reconnect)
+    document.addEventListener('keydown', reconnect)
+    document.addEventListener('visibilitychange', reconnect)
   }
 
   queueReconnection(options: { skipDelay: boolean } = { skipDelay: false }): void {
@@ -355,8 +370,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       return
     }
 
-    if (this.isWaitingBeforeQueuingReconnection) {
-      this.logger.info('Not queueing reconnection because we are waiting before queuing reconnection')
+    if (this.isReconnectionStoppedDueToTimeout) {
+      this.logger.info('Not queueing reconnection because document was closed due to timeout')
       return
     }
 
