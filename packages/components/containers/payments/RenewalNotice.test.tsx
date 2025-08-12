@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import {
     ADDON_NAMES,
@@ -15,11 +15,16 @@ import {
 import { APPS } from '@proton/shared/lib/constants';
 import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { getTermsURL } from '@proton/shared/lib/helpers/url';
 
-import { getCheckoutRenewNoticeText } from './RenewalNotice';
+import { getCheckoutRenewNoticeText, getCheckoutRenewNoticeTextFromCheckResult } from './RenewalNotice';
 
 const RenewalNotice = (...props: Parameters<typeof getCheckoutRenewNoticeText>) => {
     return <div>{getCheckoutRenewNoticeText(...props)}</div>;
+};
+
+const RenewalNoticeFromCheck = (props: Parameters<typeof getCheckoutRenewNoticeTextFromCheckResult>[0]) => {
+    return <div>{getCheckoutRenewNoticeTextFromCheckResult(props)}</div>;
 };
 
 const getDefaultPlansMap = (): PlansMap => {
@@ -219,7 +224,7 @@ const getProps = (
     };
 };
 
-describe('<RenewalNotice />', () => {
+describe('RenewalNotice', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         jest.useFakeTimers();
@@ -232,7 +237,7 @@ describe('<RenewalNotice />', () => {
         jest.useRealTimers();
     });
 
-    describe('regular subscription renew', () => {
+    describe('Regular subscriptions', () => {
         it('should render', () => {
             const { container } = render(
                 <RenewalNotice
@@ -260,7 +265,7 @@ describe('<RenewalNotice />', () => {
                 />
             );
             expect(container).toHaveTextContent(
-                `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}.`
+                `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}. Renewal pricing subject to change according to terms & conditions.`
             );
         });
 
@@ -283,7 +288,7 @@ describe('<RenewalNotice />', () => {
                 />
             );
             expect(container).toHaveTextContent(
-                `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}.`
+                `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}. Renewal pricing subject to change according to terms & conditions.`
             );
         });
 
@@ -307,7 +312,7 @@ describe('<RenewalNotice />', () => {
             const expectedDateString = 'February 3rd, 2026'; // and finally the renewal date is 02/03/2026 (3rd of February 2026)
 
             expect(container).toHaveTextContent(
-                `Subscription auto-renews every 24 months. Your next billing date is ${expectedDateString}.`
+                `Subscription auto-renews every 24 months. Your next billing date is ${expectedDateString}. Renewal pricing subject to change according to terms & conditions.`
             );
         });
 
@@ -580,12 +585,34 @@ describe('<RenewalNotice />', () => {
             const expectedDateString = 'June 12th, 2025';
 
             expect(container).toHaveTextContent(
-                `Your scheduled plan starts on ${expectedDateString} and will auto-renew every 12 months. Your next billing date is ${expectedDateString}. Please contact support if you require an immediate plan change.`
+                `Your scheduled plan starts on ${expectedDateString} and will auto-renew every 12 months. Your next billing date is ${expectedDateString}. Please contact support if you require an immediate plan change. Renewal pricing subject to change according to terms & conditions.`
+            );
+        });
+
+        it('should render scheduled later monthly wording with T&C (full string)', () => {
+            const expectedDateString = 'January 5th, 2024';
+            const subscription: Subscription = {
+                PeriodEnd: +new Date(2024, 0, 5) / 1000,
+            } as any;
+
+            const { container } = render(
+                <RenewalNotice
+                    {...getProps()}
+                    cycle={CYCLE.MONTHLY}
+                    isCustomBilling={false}
+                    isScheduledChargedImmediately={false}
+                    isScheduledChargedLater={true}
+                    subscription={subscription}
+                />
+            );
+
+            expect(container).toHaveTextContent(
+                `Your scheduled plan starts on ${expectedDateString} and will auto-renew every month. Your next billing date is ${expectedDateString}. Please contact support if you require an immediate plan change. Renewal pricing subject to change according to terms & conditions.`
             );
         });
     });
 
-    describe('vpn2024 special renew cycle', () => {
+    describe('VPN2024 renewal overrides', () => {
         it('should display special renewal notice for vpn2024 - 24 months', () => {
             const cycle = CYCLE.TWO_YEARS;
 
@@ -615,7 +642,7 @@ describe('<RenewalNotice />', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Your subscription will automatically renew on November 1st, 2025. You'll then be billed every 12 months at CHF 79.95.`
+                `Your subscription will automatically renew on November 1st, 2025. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms & conditions.`
             );
         });
 
@@ -648,7 +675,7 @@ describe('<RenewalNotice />', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Your subscription will automatically renew on November 1st, 2024. You'll then be billed every 12 months at CHF 79.95.`
+                `Your subscription will automatically renew on November 1st, 2024. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms & conditions.`
             );
         });
 
@@ -681,7 +708,7 @@ describe('<RenewalNotice />', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Your subscription will automatically renew on February 1st, 2025. You'll then be billed every 12 months at CHF 79.95.`
+                `Your subscription will automatically renew on February 1st, 2025. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms & conditions.`
             );
         });
 
@@ -714,7 +741,7 @@ describe('<RenewalNotice />', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Your subscription will automatically renew on May 1st, 2026. You'll then be billed every 12 months at CHF 79.95.`
+                `Your subscription will automatically renew on May 1st, 2026. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms & conditions.`
             );
         });
 
@@ -727,7 +754,7 @@ describe('<RenewalNotice />', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Subscription auto-renews every month. Your next billing date is December 1st, 2023.`
+                `Subscription auto-renews every month. Your next billing date is December 1st, 2023. Renewal pricing subject to change according to terms & conditions.`
             );
         });
 
@@ -740,136 +767,329 @@ describe('<RenewalNotice />', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Subscription auto-renews every 3 months. Your next billing date is February 1st, 2024.`
+                `Subscription auto-renews every 3 months. Your next billing date is February 1st, 2024. Renewal pricing subject to change according to terms & conditions.`
             );
         });
     });
+});
 
-    describe('one time coupons', () => {
-        it.each([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.FIFTEEN, CYCLE.THIRTY])(
-            `should ignore coupon for vpn2024 with a coupon`,
-            (cycle) => {
-                const { container } = render(
-                    <RenewalNotice
-                        {...getProps({
-                            planIDs: { [PLANS.VPN2024]: 1 },
-                            checkResult: {
-                                Amount: 11976,
-                                AmountDue: 10776,
-                                Proration: 0,
-                                CouponDiscount: -1200,
-                                Gift: 0,
-                                Credit: 0,
-                                Coupon: {
-                                    Code: 'VPNINTROPRICE2024',
-                                    Description: 'Introductory price for VPN Plus',
-                                    MaximumRedemptionsPerUser: 1,
-                                },
-                                Cycle: 24,
-                                TaxInclusive: 1,
-                                Taxes: [
-                                    {
-                                        Name: 'Mehrwertsteuer (MWST)',
-                                        Rate: 8.0999999999999996,
-                                        Amount: 807,
-                                    },
-                                ],
-                                Currency: 'CHF',
-                                SubscriptionMode: SubscriptionMode.Regular,
-                                BaseRenewAmount: 7995,
-                                RenewCycle: 12,
-                            },
-                        })}
-                        cycle={cycle}
-                    />
-                );
+describe('Trials (from check result)', () => {
+    beforeEach(() => {
+        jest.useFakeTimers();
+        jest.setSystemTime(new Date(2023, 10, 1));
+    });
+    afterEach(() => {
+        jest.useRealTimers();
+    });
 
-                expect(container).toHaveTextContent(
-                    `The specially discounted price of CHF 107.76 is valid for the first ${cycle} months. Then it will automatically be renewed at CHF 79.95 for 12 months. You can cancel at any time.`
-                );
-            }
+    it('should render trial monthly notice with T&C (full string)', () => {
+        const { container } = render(
+            <RenewalNoticeFromCheck
+                checkResult={{
+                    Amount: 0,
+                    AmountDue: 0,
+                    Proration: 0,
+                    CouponDiscount: 0,
+                    Gift: 0,
+                    Credit: 0,
+                    Coupon: null,
+                    Cycle: CYCLE.MONTHLY,
+                    TaxInclusive: 1,
+                    Taxes: [],
+                    Currency: 'CHF',
+                    SubscriptionMode: SubscriptionMode.Trial,
+                    BaseRenewAmount: null,
+                    RenewCycle: CYCLE.MONTHLY,
+                }}
+                plansMap={getDefaultPlansMap()}
+                planIDs={{ [PLANS.MAIL]: 1 }}
+                app={APPS.PROTONMAIL}
+            />
+        );
+        expect(container).toHaveTextContent(
+            'After the trial ends on Nov 15, 2023, it will become a paid subscription that auto-renews monthly on Nov 15, 2023. You won’t be charged if you cancel before Nov 15, 2023. Renewal pricing subject to change according to terms & conditions.'
+        );
+    });
+
+    it('should render trial non-monthly notice with T&C (full string)', () => {
+        const { container } = render(
+            <RenewalNoticeFromCheck
+                checkResult={{
+                    Amount: 0,
+                    AmountDue: 0,
+                    Proration: 0,
+                    CouponDiscount: 0,
+                    Gift: 0,
+                    Credit: 0,
+                    Coupon: null,
+                    Cycle: CYCLE.THREE,
+                    TaxInclusive: 1,
+                    Taxes: [],
+                    Currency: 'CHF',
+                    SubscriptionMode: SubscriptionMode.Trial,
+                    BaseRenewAmount: null,
+                    RenewCycle: CYCLE.THREE,
+                }}
+                plansMap={getDefaultPlansMap()}
+                planIDs={{ [PLANS.MAIL]: 1 }}
+                app={APPS.PROTONMAIL}
+            />
+        );
+        expect(container).toHaveTextContent(
+            'After the trial ends on Nov 15, 2023, it will become a paid subscription that auto-renews every 3 months on Nov 15, 2023. You won’t be charged if you cancel before Nov 15, 2023. Renewal pricing subject to change according to terms & conditions.'
+        );
+    });
+});
+
+describe('Coupons - multiple redemptions', () => {
+    it('should render monthly multiple-redemptions coupon notice (+ T&C)', () => {
+        const { container } = render(
+            <RenewalNotice
+                {...getProps({
+                    planIDs: { [PLANS.MAIL]: 1 },
+                    checkResult: {
+                        Amount: 499,
+                        AmountDue: 100,
+                        Proration: 0,
+                        CouponDiscount: -399,
+                        Gift: 0,
+                        Credit: 0,
+                        Coupon: {
+                            Code: 'MULTI-RED-2',
+                            Description: 'multi redemption',
+                            MaximumRedemptionsPerUser: 2,
+                        },
+                        Cycle: CYCLE.MONTHLY,
+                        TaxInclusive: 1,
+                        Taxes: [],
+                        Currency: 'CHF',
+                        SubscriptionMode: SubscriptionMode.Regular,
+                        BaseRenewAmount: null,
+                        RenewCycle: null,
+                    },
+                })}
+                cycle={CYCLE.MONTHLY}
+            />
         );
 
-        it(`should apply it for 12m vpnpass bundle`, () => {
+        expect(container).toHaveTextContent(
+            'The specially discounted price of CHF 1 is valid for the first month. The coupon is valid for 2 renewals. Then it will automatically be renewed at CHF 4.99 for 1 month. You can cancel at any time. Renewal pricing subject to change according to terms & conditions.'
+        );
+    });
+
+    it('should render non-monthly multiple-redemptions coupon notice (+ T&C)', () => {
+        const { container } = render(
+            <RenewalNotice
+                {...getProps({
+                    planIDs: { [PLANS.MAIL]: 1 },
+                    checkResult: {
+                        Amount: 4788,
+                        AmountDue: 4788,
+                        Proration: 0,
+                        CouponDiscount: 0,
+                        Gift: 0,
+                        Credit: 0,
+                        Coupon: {
+                            Code: 'MULTI-RED-3',
+                            Description: 'multi redemption',
+                            MaximumRedemptionsPerUser: 3,
+                        },
+                        Cycle: CYCLE.YEARLY,
+                        TaxInclusive: 1,
+                        Taxes: [],
+                        Currency: 'CHF',
+                        SubscriptionMode: SubscriptionMode.Regular,
+                        BaseRenewAmount: null,
+                        RenewCycle: null,
+                    },
+                })}
+                cycle={CYCLE.YEARLY}
+            />
+        );
+
+        expect(container).toHaveTextContent(
+            'The specially discounted price of CHF 47.88 is valid for the first 12 months. The coupon is valid for 3 renewals. Then it will automatically be renewed at CHF 47.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms & conditions.'
+        );
+    });
+});
+
+describe('Coupons - one-time (standard notice)', () => {
+    it.each([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.FIFTEEN, CYCLE.THIRTY])(
+        'should render one-time coupon for vpn2024 (%i months) (+ T&C)',
+        (cycle) => {
             const { container } = render(
                 <RenewalNotice
                     {...getProps({
-                        planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 },
+                        planIDs: { [PLANS.VPN2024]: 1 },
                         checkResult: {
-                            Amount: 10395,
-                            AmountDue: 4788,
+                            Amount: 11976,
+                            AmountDue: 10776,
                             Proration: 0,
-                            CouponDiscount: -5607,
+                            CouponDiscount: -1200,
                             Gift: 0,
                             Credit: 0,
                             Coupon: {
-                                Code: 'TECHRADARVPNPASS',
-                                Description: '',
+                                Code: 'VPNINTROPRICE2024',
+                                Description: 'Introductory price for VPN Plus',
                                 MaximumRedemptionsPerUser: 1,
                             },
-                            Cycle: CYCLE.YEARLY,
+                            Cycle: 24,
                             TaxInclusive: 1,
                             Taxes: [
                                 {
                                     Name: 'Mehrwertsteuer (MWST)',
                                     Rate: 8.0999999999999996,
-                                    Amount: 359,
+                                    Amount: 807,
                                 },
                             ],
                             Currency: 'CHF',
                             SubscriptionMode: SubscriptionMode.Regular,
-                            BaseRenewAmount: null,
-                            RenewCycle: null,
+                            BaseRenewAmount: 7995,
+                            RenewCycle: 12,
                         },
                     })}
-                    cycle={CYCLE.YEARLY}
+                    cycle={cycle}
                 />
             );
 
             expect(container).toHaveTextContent(
-                'The specially discounted price of CHF 47.88 is valid for the first 12 months. Then it will automatically be renewed at CHF 95.88 for 12 months. You can cancel at any time.'
+                `The specially discounted price of CHF 107.76 is valid for the first ${cycle} months. Then it will automatically be renewed at CHF 79.95 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms & conditions.`
             );
-        });
+        }
+    );
 
-        it(`should apply it for 1m mail offer`, () => {
-            const { container } = render(
-                <RenewalNotice
-                    {...getProps({
-                        planIDs: { [PLANS.MAIL]: 1 },
-                        checkResult: {
-                            Amount: 499,
-                            AmountDue: 100,
-                            Proration: 0,
-                            CouponDiscount: -399,
-                            Gift: 0,
-                            Credit: 0,
-                            Coupon: {
-                                Code: 'MAILPLUSINTRO',
-                                Description: 'MAILPLUSINTRO',
-                                MaximumRedemptionsPerUser: 1,
+    it('should render one-time coupon for 12m vpnpass bundle (+ T&C)', () => {
+        const { container } = render(
+            <RenewalNotice
+                {...getProps({
+                    planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 },
+                    checkResult: {
+                        Amount: 10395,
+                        AmountDue: 4788,
+                        Proration: 0,
+                        CouponDiscount: -5607,
+                        Gift: 0,
+                        Credit: 0,
+                        Coupon: {
+                            Code: 'TECHRADARVPNPASS',
+                            Description: '',
+                            MaximumRedemptionsPerUser: 1,
+                        },
+                        Cycle: CYCLE.YEARLY,
+                        TaxInclusive: 1,
+                        Taxes: [
+                            {
+                                Name: 'Mehrwertsteuer (MWST)',
+                                Rate: 8.0999999999999996,
+                                Amount: 359,
                             },
-                            Cycle: 1,
-                            TaxInclusive: 1,
-                            Taxes: [
-                                {
-                                    Name: 'Mehrwertsteuer (MWST)',
-                                    Rate: 8.0999999999999996,
-                                    Amount: 7,
-                                },
-                            ],
-                            Currency: 'CHF',
-                            SubscriptionMode: SubscriptionMode.Regular,
-                            BaseRenewAmount: null,
-                            RenewCycle: null,
+                        ],
+                        Currency: 'CHF',
+                        SubscriptionMode: SubscriptionMode.Regular,
+                        BaseRenewAmount: null,
+                        RenewCycle: null,
+                    },
+                })}
+                cycle={CYCLE.YEARLY}
+            />
+        );
+
+        expect(container).toHaveTextContent(
+            'The specially discounted price of CHF 47.88 is valid for the first 12 months. Then it will automatically be renewed at CHF 95.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms & conditions.'
+        );
+    });
+
+    it('should render one-time coupon for Mail monthly (+ T&C)', () => {
+        const { container } = render(
+            <RenewalNotice
+                {...getProps({
+                    planIDs: { [PLANS.MAIL]: 1 },
+                    checkResult: {
+                        Amount: 499,
+                        AmountDue: 100,
+                        Proration: 0,
+                        CouponDiscount: -399,
+                        Gift: 0,
+                        Credit: 0,
+                        Coupon: {
+                            Code: 'MAILPLUSINTRO',
+                            Description: 'MAILPLUSINTRO',
+                            MaximumRedemptionsPerUser: 1,
                         },
-                    })}
-                    cycle={CYCLE.MONTHLY}
-                />
-            );
-            expect(container).toHaveTextContent(
-                'The specially discounted price of CHF 1 is valid for the first month. Then it will automatically be renewed at CHF 4.99 every month. You can cancel at any time.'
-            );
-        });
+                        Cycle: 1,
+                        TaxInclusive: 1,
+                        Taxes: [
+                            {
+                                Name: 'Mehrwertsteuer (MWST)',
+                                Rate: 8.0999999999999996,
+                                Amount: 7,
+                            },
+                        ],
+                        Currency: 'CHF',
+                        SubscriptionMode: SubscriptionMode.Regular,
+                        BaseRenewAmount: null,
+                        RenewCycle: null,
+                    },
+                })}
+                cycle={CYCLE.MONTHLY}
+            />
+        );
+        expect(container).toHaveTextContent(
+            'The specially discounted price of CHF 1 is valid for the first month. Then it will automatically be renewed at CHF 4.99 every month. You can cancel at any time. Renewal pricing subject to change according to terms & conditions.'
+        );
+    });
+});
+describe('Coupons - one-time (short notice)', () => {
+    it('should render short coupon notice without T&C (full string)', () => {
+        const { container } = render(
+            <RenewalNotice
+                {...getProps({
+                    planIDs: { [PLANS.MAIL]: 1 },
+                    checkResult: {
+                        Amount: 499,
+                        AmountDue: 100,
+                        Proration: 0,
+                        CouponDiscount: -399,
+                        Gift: 0,
+                        Credit: 0,
+                        Coupon: {
+                            Code: 'SHORT-ONE',
+                            Description: 'short one time',
+                            MaximumRedemptionsPerUser: 1,
+                        },
+                        Cycle: CYCLE.MONTHLY,
+                        TaxInclusive: 1,
+                        Taxes: [],
+                        Currency: 'CHF',
+                        SubscriptionMode: SubscriptionMode.Regular,
+                        BaseRenewAmount: null,
+                        RenewCycle: null,
+                    },
+                })}
+                cycle={CYCLE.MONTHLY}
+                short
+            />
+        );
+
+        expect(container).toHaveTextContent('Renews at CHF 4.99, cancel anytime.');
+        expect(container).not.toHaveTextContent('terms & conditions');
+    });
+});
+
+describe('Terms & Conditions link', () => {
+    it('should render T&C link with correct href', () => {
+        render(
+            <RenewalNotice
+                {...getProps()}
+                cycle={CYCLE.YEARLY}
+                isCustomBilling={false}
+                isScheduledChargedImmediately={false}
+                subscription={undefined}
+            />
+        );
+        const link = screen.getByRole('link', { name: /terms & conditions/i });
+        expect(link).toBeInTheDocument();
+        expect(link).toHaveAttribute('href', getTermsURL(APPS.PROTONMAIL));
     });
 });
 
@@ -957,7 +1177,7 @@ describe('getPassLifetimeRenewNoticeText', () => {
         );
 
         expect(container).toHaveTextContent(
-            "Pass lifetime deal has no renewal price, it's a one-time payment for lifetime access to Pass. Your Mail Plus subscription renewal price and date remain unchanged."
+            "Pass lifetime deal has no renewal price, it's a one-time payment for lifetime access to Pass. Your Mail Plus subscription renewal price and date remain unchanged. Renewal pricing subject to change according to terms & conditions."
         );
     });
 });
