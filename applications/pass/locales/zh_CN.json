@@ -112,9 +112,6 @@
       "Change": [
         "更改"
       ],
-      "Change email": [
-        "更换邮箱"
-      ],
       "Check DNS": [
         "检查 DNS"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "清除"
-      ],
-      "Clear search": [
-        "清除搜索条件"
       ],
       "Close": [
         "关闭"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "删除别名"
-      ],
-      "Delete all": [
-        "全部删除"
       ],
       "Delete it, I will never need it": [
         "删除它，我不在需要这个了"
@@ -502,14 +493,8 @@
       "Resend invitation": [
         "重新发送邀请"
       ],
-      "Reset": [
-        "重置"
-      ],
       "Reset history": [
         "重置历史记录"
-      ],
-      "Restore": [
-        "还原"
       ],
       "Restore item": [
         "恢复项目"
@@ -687,11 +672,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "您的密码管理器不在这里？请求添加它。"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } 桌面应用"
       ]
     },
     "Button": {
@@ -1248,9 +1228,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1265,9 +1242,6 @@
       ],
       "Megabyte": [
         "MB"
-      ],
-      "Terabyte": [
-        "TB"
       ]
     },
     "Info": {
@@ -1493,9 +1467,6 @@
       "Congratulations, your access has been confirmed": [
         "恭喜，您的访问权限已确认"
       ],
-      "Copied to clipboard": [
-        "已复制到剪贴板"
-      ],
       "Coupon successfully applied!": [
         "优惠券已成功应用！"
       ],
@@ -1540,12 +1511,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "域名：${ domainPath } 或 @"
-      ],
-      "Drop file here to upload": [
-        "拖至此处上传文件"
-      ],
-      "Drop to import": [
-        "拖至此处即可导入"
       ],
       "Editor": [
         "编辑者"
@@ -1751,9 +1716,6 @@
       "Latest breach on ${ formattedDate }": [
         "最近一次泄露的时间 ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "请通过 ${ dataLeakedLink } 了解应对措施"
-      ],
       "Leaving item...": [
         "正在离开项目..."
       ],
@@ -1843,9 +1805,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "在线访问 ${ PASS_APP_NAME } 将需要 PIN 码。您将在 3 次尝试失败后注销。"
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "我们的警报以安全为先。若您不认识任何被泄露的信息，则可以安全地忽略这份报告。"
       ],
       "Owner": [
         "所有者"
@@ -2216,9 +2175,6 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "深受全球 50,000 多家企业用户和 1 亿账户的信赖。"
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
-      ],
       "Unable to copy to clipboard": [
         "无法复制到剪贴板"
       ],
@@ -2380,9 +2336,6 @@
       ],
       "your domain": [
         "您的域名"
-      ],
-      "Your files will be encrypted and then saved": [
-        "文件会加密保存"
       ],
       "Your information was found on ${ displayedDate }": [
         "您的信息在 ${ displayedDate } 找到"
@@ -2553,9 +2506,6 @@
       ],
       "Bank Name": [
         "银行名称"
-      ],
-      "Beta Access": [
-        "测试版功能"
       ],
       "Biometrics": [
         "生物识别"
@@ -2851,9 +2801,6 @@
       "https://example.com": [
         "https://example.com"
       ],
-      "IBAN": [
-        "国际银行账户号码（IBAN）"
-      ],
       "ID Card": [
         "身份证"
       ],
@@ -2925,9 +2872,6 @@
       ],
       "Key type": [
         "密钥类型"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "快捷键：${ shortcut }"
       ],
       "Language": [
         "语言"
@@ -3373,9 +3317,6 @@
       "The URL has been copied to the clipboard": [
         "URL 已复制到剪贴板"
       ],
-      "Theme": [
-        "主题"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "在 ${ date } 或达到查看限制之前，都可以访问此项目。"
       ],
@@ -3543,16 +3484,8 @@
       "auto create rules ››": [
         "自动创建规则 ››"
       ],
-      "if your data is leaked": [
-        "如果您的数据遭到泄露"
-      ],
       "Learn more": [
         "了解详情"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "启用 ${ reason }"
       ]
     },
     "Medium": {
@@ -3574,17 +3507,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "可要求机构全员开启 2FA"
-      ],
-      "SSO integration": [
-        "SSO 集成"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } 已停用"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } 已启用"
       ]
     },
     "Option": {
@@ -3839,20 +3761,6 @@
       ],
       "Used on ${ url }": [
         "用于 ${ url }"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "检测到 ${ name } 和 ${ remainingCount } 个其他潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "检测到 ${ name } 和 1 个其他潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "检测到来自 ${ name } 的潜在泄露。打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "您的信息至少涉及一次数据泄露。请打开 ${ DARK_WEB_MONITORING_NAME } 以查看详细信息。${ link }"
       ]
     },
     "sso": {
@@ -4185,9 +4093,6 @@
       "Inactive 2FA": [
         "未启用 2FA"
       ],
-      "Information exposed in breach": [
-        "数据外泄事件中泄露的信息"
-      ],
       "Install extension": [
         "安装扩展"
       ],
@@ -4453,14 +4358,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今天"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "并非所有用户都能查看此处列出的全部信息。"
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "只要未被破译，即便加密密码遭到泄露，它们依然安全无虞。"
       ]
     },
     "Validation": {
