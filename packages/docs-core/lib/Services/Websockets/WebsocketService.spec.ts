@@ -11,7 +11,7 @@ import { WebsocketService } from './WebsocketService'
 import type { InternalEventBusInterface, WebsocketConnectionInterface } from '@proton/docs-shared'
 import { BroadcastSource } from '@proton/docs-shared'
 import { Result } from '@proton/docs-shared'
-import type { EncryptionMetadata } from '../../Types/EncryptionMetadata'
+import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { DocumentConnectionRecord } from './DocumentConnectionRecord'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import { type UpdateDebouncer } from './Debouncer/UpdateDebouncer'
@@ -151,16 +151,24 @@ describe('WebsocketService', () => {
   })
 
   describe('handleDocumentUpdateBufferFlush', () => {
+    const broadcastUpdate = async (
+      _: boolean,
+      content: Uint8Array,
+      metadata: EncryptionMetadata | AnonymousEncryptionMetadata,
+    ) => {
+      await service.createAndBroadcastDocumentUpdateMessage(document, content, metadata)
+    }
+
     it('should encrypt updates', async () => {
       const encryptMock = (service.encryptMessage = jest.fn().mockResolvedValueOnce(new Uint8Array()))
 
-      await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array())
+      await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array(), broadcastUpdate)
 
       expect(encryptMock).toHaveBeenCalled()
     })
 
     it('should broadcast message', async () => {
-      await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array())
+      await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array(), broadcastUpdate)
 
       expect(connection.broadcastMessage).toHaveBeenCalled()
     })
@@ -168,7 +176,7 @@ describe('WebsocketService', () => {
     it('should add message to ack ledger', async () => {
       service.ledger.messagePosted = jest.fn()
 
-      await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array())
+      await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array(), broadcastUpdate)
 
       expect(service.ledger.messagePosted).toHaveBeenCalled()
     })
