@@ -1,7 +1,7 @@
 /* eslint-disable monorepo-cop/no-relative-import-outside-package */
 
 import type { ForwardedRef } from 'react'
-import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react'
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 'react'
 import { functions } from '@rowsncolumns/functions'
 import { createCSVFromSheetData, createExcelFile } from '@rowsncolumns/toolkit'
 import type {
@@ -91,7 +91,15 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     onEditorLoadResult(TranslatedResult.ok())
   }, [onEditorLoadResult])
 
-  const { onInsertFile } = state
+  const { onInsertFile, importExcelFile, generateStatePatches } = state
+  const handleExcelFileImport = useCallback(
+    async (file: File) => {
+      await importExcelFile(file, 1000, 100)
+      const patches = await generateStatePatches()
+      state.yjsState.onBroadcastPatch([[patches]])
+    },
+    [generateStatePatches, importExcelFile, state.yjsState],
+  )
   useEffect(() => {
     const canConvertFile =
       editorInitializationConfig &&
@@ -102,12 +110,9 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       const file = new File([editorInitializationConfig.data], 'import.xlsx', {
         type: SupportedProtonDocsMimeTypes.xlsx,
       })
-      onInsertFile(file, undefined, undefined, {
-        minRowCount: 1000,
-        minColumnCount: 100,
-      }).catch(console.error)
+      void handleExcelFileImport(file)
     }
-  }, [editorInitializationConfig, onInsertFile])
+  }, [editorInitializationConfig, handleExcelFileImport])
 
   // TODO: document this effect
   const { onCreateNewSheet, onRenameSheet, calculateNow } = state

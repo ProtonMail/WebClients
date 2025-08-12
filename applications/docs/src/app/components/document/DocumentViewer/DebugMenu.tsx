@@ -53,7 +53,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
   const createInitialCommit = async () => {
     const editorState = await editorController.getDocumentState()
     if (editorState) {
-      void docController.createInitialCommit(editorState)
+      void docController.createInitialCommitFromEditorState(editorState)
     }
   }
 
