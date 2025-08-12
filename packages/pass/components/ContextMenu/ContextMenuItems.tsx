@@ -6,7 +6,7 @@ import ContextMenuButton from '@proton/components/components/contextMenu/Context
 import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import Icon from '@proton/components/components/icon/Icon';
 import { useContextMenuClose } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
-import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
+import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import type { ObfuscatedItemProperty } from '@proton/pass/types/data/obfuscation';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 

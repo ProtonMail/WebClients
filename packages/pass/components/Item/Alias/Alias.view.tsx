@@ -12,11 +12,13 @@ import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPane
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { useItemNavigation } from '@proton/pass/hooks/items/useItemNavigation';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 
 export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const navigate = useNavigate();
-    const { revision, share, handleHistoryClick } = itemViewProps;
+    const { revision, share } = itemViewProps;
+    const { onHistory } = useItemNavigation(revision);
     const { createTime, modifyTime, revision: revisionNumber, optimistic, itemId } = revision;
     const { shareId } = share;
     const aliasEmail = revision.aliasEmail!;
@@ -62,7 +64,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
             />
 
             <FileAttachmentsContentView revision={revision} />
-            <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={handleHistoryClick} />
+            <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={onHistory} />
             <MoreInfoDropdown shareId={shareId} itemId={itemId} revision={revisionNumber} vaultId={share.vaultId} />
         </ItemViewPanel>
     );
