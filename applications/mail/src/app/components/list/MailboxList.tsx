@@ -10,7 +10,6 @@ import type { MailboxActions } from 'proton-mail/router/interface';
 import { pageFromUrl } from '../../helpers/mailboxUrl';
 import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
 import { useRouterNavigation } from '../../router/hooks/useRouterNavigation';
-import { paramsSelector } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 import MailboxListBannersWrapper from './MailboxListBannersWrapper';
 import MailboxListContainer from './MailboxListContainer';
@@ -46,7 +45,7 @@ export default function MailboxList({
 }: MailboxListProps) {
     const [labels = []] = useLabels();
     const location = useLocation();
-    const params = useMailSelector(paramsSelector);
+    const params = useMailSelector((state) => state.elements.params);
     const { labelID, elementID } = params;
     const { total, loading, placeholderCount } = elementsData;
     const {
