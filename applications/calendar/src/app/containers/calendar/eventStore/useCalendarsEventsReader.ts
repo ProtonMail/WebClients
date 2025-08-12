@@ -39,7 +39,7 @@ const EVENTS_PER_BATCH_OLD = 5;
 const EVENTS_PER_BATCH = 200;
 const EVENTS_RACE_MS = 300;
 
-const getEventAndUpsert = async ({
+export const getEventAndUpsert = async ({
     calendarID,
     eventID,
     calendarEventsCache,
