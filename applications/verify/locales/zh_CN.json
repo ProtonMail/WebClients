@@ -72,19 +72,6 @@
         "查看账单"
       ]
     },
-    "BF2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } 桌面应用"
-      ],
-      "Use your own email domain": [
-        "个性化邮箱域名"
-      ]
-    },
-    "Cancellation upsell": {
-      "Cloud storage and sharing for large files": [
-        "大型文件的云存储和共享"
-      ]
-    },
     "Country name": {
       "Abkhazia": [
         "阿布哈兹"
@@ -916,9 +903,6 @@
       ],
       "Something went wrong": [
         "出错了"
-      ],
-      "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "页面加载失败，请刷新或检查网络连接。"
       ]
     },
     "fido2: Error": {
@@ -951,9 +935,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -968,34 +949,11 @@
       ],
       "Megabyte": [
         "MB"
-      ],
-      "Terabyte": [
-        "TB"
       ]
     },
     "Font face option": {
-      "System default": [
-        "跟随系统"
-      ],
       "Theme font": [
         "跟随配色"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "大"
-      ],
-      "Medium (recommended)": [
-        "中等（推荐）"
-      ],
-      "Small": [
-        "小"
-      ],
-      "Very large": [
-        "极大"
-      ],
-      "Very small": [
-        "极小"
       ]
     },
     "Human verification method": {
@@ -1028,9 +986,6 @@
       "Country code": [
         "国家/地区代码"
       ],
-      "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "我们的 ${ termsLink } 不允许创建多个免费帐户。"
-      ],
       "Each code can only be used once": [
         "每个恢复码只能使用一次"
       ],
@@ -1049,14 +1004,8 @@
       "Enter your own password (as organization admin).": [
         "请输入您自己的密码（作为组织管理员）。"
       ],
-      "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "欲了解更多信息和删除限制，请在 ${ mailLink } 登录。"
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
-      ],
-      "If you believe we made a mistake, please ${ contactLink }.": [
-        "若您认为我们产生了一个问题，请联系 ${ contactLink }。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
@@ -1081,12 +1030,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
-      ],
-      "To remove restrictions, you can upgrade to a paid plan.": [
-        "要移除这些限制，您可以升级到付费套餐。"
-      ],
-      "We have plans designed specifically for users like you who need more than one email address.": [
-        "我们有专门为您这样需要多个邮箱地址的用户所设计的套餐。"
       ],
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
@@ -1146,17 +1089,11 @@
       ]
     },
     "Link": {
-      "contact us": [
-        "联系我们"
-      ],
       "Learn more": [
         "了解详情"
       ],
       "Request an invite": [
         "申请注册"
-      ],
-      "terms of service": [
-        "服务条款"
       ]
     },
     "new_plans": {
@@ -1164,15 +1101,7 @@
         "使用文件夹整理邮件，让邮箱井然有序"
       ]
     },
-    "new_plans: Action": {
-      "Get ${ planTitle }": [
-        "开通 ${ planTitle }"
-      ]
-    },
     "new_plans: feature": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 写作助手"
-      ],
       "${ n } custom email domain": [
         "${ n } 个自有域名"
       ],
@@ -1197,47 +1126,11 @@
       "${ n } message per day": [
         "每天可发 ${ n } 封邮件"
       ],
-      "${ options }-day file version history": [
-        "${ options } 天文件版本历史记录"
-      ],
       "${ size } attachment size": [
         "附件可达 ${ size }"
       ],
-      "${ size } of secure storage per user": [
-        "每位用户 ${ size } 安全存储空间"
-      ],
       "${ size } storage": [
         "${ size } 存储空间"
-      ],
-      "${ size } storage per user": [
-        "每位用户 ${ size } 存储空间"
-      ],
-      "1 TB secure storage": [
-        "1 TB 安全存储空间"
-      ],
-      "10 email addresses/aliases": [
-        "10 个邮箱地址/别名"
-      ],
-      "10 more premium features": [
-        "新增 10 项高级功能"
-      ],
-      "10-year file version history": [
-        "10 年文件版本历史"
-      ],
-      "15 GB storage": [
-        "15 GB 存储空间"
-      ],
-      "200 GB of storage": [
-        "200 GB 存储空间"
-      ],
-      "Advanced account protection": [
-        "高级账户保护"
-      ],
-      "All ${ BRAND_NAME } products and features": [
-        "所有 ${ BRAND_NAME } 产品和功能"
-      ],
-      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "所有基本 ${ BRAND_NAME } 服务 ( ${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } )"
       ],
       "Auto-delete Spam and Trash": [
         "自动清理垃圾邮件和回收站"
@@ -1254,17 +1147,11 @@
       "Catch-all": [
         "通配邮箱"
       ],
-      "Collaborate and share large files": [
-        "协作和共享大型文件"
-      ],
       "Contact groups": [
         "联系人群组"
       ],
       "Contact groups management": [
         "联系人群组管理"
-      ],
-      "Custom and secure business email": [
-        "定制和安全的商务电子邮件"
       ],
       "Custom email domains": [
         "自有域名"
@@ -1278,62 +1165,23 @@
       "Email client support (via IMAP/SMTP)": [
         "支持 IMAP/SMTP 客户端"
       ],
-      "Email groups": [
-        "邮件组别"
-      ],
       "Encrypted contact details": [
         "加密联系人详情"
       ],
       "End-to-end encryption": [
         "端到端加密"
       ],
-      "Generate emails with a prompt": [
-        "根据提示语自动书写邮件"
-      ],
       "HTML signatures": [
         "HTML 落款"
-      ],
-      "Online document editor": [
-        "在线文档编辑器"
-      ],
-      "Password health": [
-        "密码安全"
       ],
       "Password-protected Emails": [
         "邮件密码保护"
       ],
-      "Private photo backup": [
-        "私人照片备份"
-      ],
-      "Proofread and refine your emails": [
-        "为您校对并润色邮件"
-      ],
-      "Quickly craft replies": [
-        "快速撰写回复"
-      ],
-      "Recover previous file versions": [
-        "恢复先前的文件版本"
-      ],
-      "Save time emailing": [
-        "节省发送邮件的时间"
-      ],
       "Schedule and snooze emails for any time": [
         "自由选择邮件收发时间"
       ],
-      "Secure file storage and sharing": [
-        "安全文件存储与共享"
-      ],
-      "Share files with no size limit": [
-        "共享文件无大小限制"
-      ],
       "SMTP submission": [
         "SMTP 投递邮件"
-      ],
-      "Support for up to 2 users": [
-        "最多支持 2 位用户"
-      ],
-      "Sync and backup all your files across devices": [
-        "跨设备同步并备份所有文件"
       ],
       "Unlimited filters": [
         "筛选规则数量不限"
@@ -1355,20 +1203,11 @@
       ]
     },
     "new_plans: feature info": {
-      "1 custom email domain": [
-        "1 个自定义电子邮件域名"
-      ],
-      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain2 } 用于收取时事新闻"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
       ]
     },
     "new_plans: tooltip": {
-      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }：使用加密云存储保护您的文件。包括自动同步、加密文件共享等功能。"
-      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }：采用端到端加密技术守护您的邮件安全。支持自有域名、15 个邮箱地址、无限量的 hide-my-email 别名等高级功能。"
       ],
@@ -1398,9 +1237,6 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "为全家人创建多达 ${ n } 个邮箱地址/别名，用于不同的网络服务。例如 ChenGouwu@${ domain } 用于网购商品。"
-      ],
-      "Email everyone in a group with a single email address": [
-        "使用单个电子邮件地址向群组中的每个人发送电子邮件"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
@@ -1466,9 +1302,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "总存储空间升至 ${ bundleStorage }"
-      ],
-      "Support for ${ n } custom email domain": [
-        "支持 ${ n } 个自定义域"
       ]
     },
     "Placeholder": {
@@ -1517,9 +1350,6 @@
       ]
     },
     "Title": {
-      "Account restricted": [
-        "账户受限"
-      ],
       "Enter 2FA code": [
         "输入 2FA 验证码"
       ],
