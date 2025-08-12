@@ -13,13 +13,14 @@ import './OfferModal.scss';
 const OFFER_DISCOUNT_PERCENTAGE = 80;
 
 type OfferModalProps = {
+    loading: boolean;
     rawPrice: number;
     getPrice: (price: number) => string;
     onClose: () => void;
     onContinue: (upgradeTo: MaybeNull<PLANS>) => void;
 };
 
-export const OfferModal: FC<OfferModalProps> = ({ rawPrice, getPrice, onClose, onContinue }) => {
+export const OfferModal: FC<OfferModalProps> = ({ loading, rawPrice, getPrice, onClose, onContinue }) => {
     const id = useId();
     const price = getPrice(rawPrice);
     const offerPrice = getPrice(rawPrice * (1 - OFFER_DISCOUNT_PERCENTAGE / 100));
@@ -67,6 +68,7 @@ export const OfferModal: FC<OfferModalProps> = ({ rawPrice, getPrice, onClose, o
                         fullWidth
                         pill
                         onClick={() => onContinue(PLANS.PASS)}
+                        loading={loading}
                     >
                         {c('Action').t`Get limited-time offer`}
                     </Button>
@@ -81,7 +83,14 @@ export const OfferModal: FC<OfferModalProps> = ({ rawPrice, getPrice, onClose, o
                     </div>
                     <div className="color-weak my-6 text-center text-sm">{c('Label')
                         .t`Renews at ${price}, cancel anytime.`}</div>
-                    <Button shape="ghost" color="norm" fullWidth pill onClick={() => onContinue(null)}>
+                    <Button
+                        shape="ghost"
+                        color="norm"
+                        fullWidth
+                        pill
+                        onClick={() => onContinue(null)}
+                        loading={loading}
+                    >
                         {c('Action').t`No thanks`}
                     </Button>
                 </div>
