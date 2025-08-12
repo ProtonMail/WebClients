@@ -165,7 +165,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
   }
 
   public getDocState(): Uint8Array<ArrayBuffer> {
-    return encodeStateAsUpdate(this.doc)
+    return encodeStateAsUpdate(this.doc) as Uint8Array<ArrayBuffer>
   }
 
   private handleWindowUnloadEvent = () => {
@@ -217,7 +217,9 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.setNeedsBroadcastCurrentAwarenessState(BroadcastSource.AwarenessUpdateHandler)
   }
 
-  handleDocBeingUpdatedByLexical = (update: Uint8Array<ArrayBuffer>, origin: any) => {
+  // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
+  handleDocBeingUpdatedByLexical = (_update: Uint8Array<ArrayBufferLike>, origin: any) => {
+    const update = _update as Uint8Array<ArrayBuffer> /* upcast Uint8Array<ArrayBuffer> to make TS happy */
     const isNonUserInitiatedChange = origin === this || origin === DocUpdateOrigin.InitialLoad
     if (isNonUserInitiatedChange) {
       return
@@ -238,7 +240,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     }
 
     const updateToPropagate = this.emptyNodeInitializationUpdate
-      ? mergeUpdates([this.emptyNodeInitializationUpdate, update])
+      ? (mergeUpdates([this.emptyNodeInitializationUpdate, update]) as Uint8Array<ArrayBuffer>)
       : update
 
     /**
@@ -261,7 +263,10 @@ export class DocState extends Observable<string> implements DocStateInterface {
     syncProtocol.readSyncMessage(decoder, unusedReply, this.doc, origin ?? this)
   }
 
-  private createSyncMessagePayload(update: Uint8Array<ArrayBuffer>, wrapperType: 'du' | 'conversion'): RtsMessagePayload {
+  private createSyncMessagePayload(
+    update: Uint8Array<ArrayBuffer>,
+    wrapperType: 'du' | 'conversion',
+  ): RtsMessagePayload {
     return {
       type: { wrapper: wrapperType },
       content: update,
@@ -284,7 +289,10 @@ export class DocState extends Observable<string> implements DocStateInterface {
   broadcastCurrentAwarenessState(source: BroadcastSource): void {
     const message: RtsMessagePayload = {
       type: { wrapper: 'events', eventType: EventTypeEnum.ClientIsBroadcastingItsPresenceState },
-      content: awarenessProtocol.encodeAwarenessUpdate(this.awareness, this.awareness.getClientIds()),
+      content: awarenessProtocol.encodeAwarenessUpdate(
+        this.awareness,
+        this.awareness.getClientIds(),
+      ) as Uint8Array<ArrayBuffer>,
     }
 
     void this.callbacks.docStateRequestsPropagationOfUpdate(message, source)

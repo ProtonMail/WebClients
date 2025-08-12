@@ -11,7 +11,7 @@ export const encodeVaultContent = (content: ShareContent<ShareType.Vault>): Uint
         },
     });
 
-    return Vault.toBinary(creation);
+    return Vault.toBinary(creation) as Uint8Array<ArrayBuffer>;
 };
 
 export const decodeVaultContent = (content: Uint8Array<ArrayBuffer>): ShareContent<ShareType.Vault> => {

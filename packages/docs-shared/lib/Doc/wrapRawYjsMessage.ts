@@ -4,5 +4,5 @@ export function wrapRawYjsMessage(message: Uint8Array<ArrayBuffer>, type: number
   const encoder = encoding.createEncoder()
   encoding.writeVarUint(encoder, type)
   encoding.writeVarUint8Array(encoder, message)
-  return encoding.toUint8Array(encoder)
+  return encoding.toUint8Array(encoder) as Uint8Array<ArrayBuffer>
 }

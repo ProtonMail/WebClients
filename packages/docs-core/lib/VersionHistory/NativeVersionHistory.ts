@@ -93,6 +93,6 @@ export class NativeVersionHistory {
     const flattenedBatches = this.versionHistoryBatches.slice(0, index + 1).flat()
     const updates = flattenedBatches.map((du) => du.content)
     const merged = mergeUpdates(updates)
-    return merged
+    return merged as Uint8Array<ArrayBuffer>
   }
 }

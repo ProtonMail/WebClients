@@ -177,7 +177,7 @@ export function FolderBrowser({ activeFolder }: Props) {
         try {
             for await (const thumbResult of drive.iterateThumbnails([item.uid], ThumbnailType.Type1)) {
                 if (thumbResult.ok) {
-                    const url = URL.createObjectURL(new Blob([thumbResult.thumbnail], { type: 'image/jpeg' }));
+                    const url = URL.createObjectURL(new Blob([thumbResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' }));
                     setThumbnail(item.thumbnailId, { sdUrl: url });
                 } else {
                     setThumbnail(item.thumbnailId, {});

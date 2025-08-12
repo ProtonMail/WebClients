@@ -8,11 +8,11 @@ export function isCompressedDocumentUpdate(data: Uint8Array<ArrayBuffer>): boole
 }
 
 export function compressDocumentUpdate(data: Uint8Array<ArrayBuffer>): Uint8Array<ArrayBuffer> {
-  return gzipSync(data)
+  return gzipSync(data) as Uint8Array<ArrayBuffer>
 }
 
 export function decompressDocumentUpdate(data: Uint8Array<ArrayBuffer>): Uint8Array<ArrayBuffer> {
-  return decompressSync(data)
+  return decompressSync(data) as Uint8Array<ArrayBuffer>
 }
 
 export function isDocumentUpdateCompressionEnabled(unleashClient: UnleashClient, documentType: DocumentType): boolean {

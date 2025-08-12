@@ -26,7 +26,7 @@ describe('create new user invite signature', () => {
         const shareKey = await createRandomVaultKey(0);
         const addressKey = await createRandomKey();
         const invitedEmail = 'test@proton.me';
-        const signatureBody = await core.create_new_user_invite_signature_body(invitedEmail, shareKey.raw);
+        const signatureBody = await core.create_new_user_invite_signature_body(invitedEmail, shareKey.raw) as Uint8Array<ArrayBuffer>;
 
         const signature = await createNewUserSignatureFactory(core)({
             invitedEmail,

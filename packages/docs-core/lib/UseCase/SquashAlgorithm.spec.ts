@@ -7,7 +7,7 @@ describe('SquashAlgorithm', () => {
         const updates: Uint8Array<ArrayBuffer>[] = []
 
         doc.on('update', (update) => {
-          updates.push(update)
+          updates.push(update as Uint8Array<ArrayBuffer>)
 
           if (updates.length === count) {
             resolve(updates)

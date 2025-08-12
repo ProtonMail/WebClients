@@ -119,7 +119,7 @@ const randomPrivateKey = () => {
 const getPublicKey = async (privateKey: Uint8Array<ArrayBuffer>): Promise<Uint8Array<ArrayBuffer>> => {
     const key = await Point.fromPrivateKey(privateKey);
 
-    return key.toRawBytes();
+    return key.toRawBytes() as Uint8Array<ArrayBuffer>;
 };
 
 const getFeatureLink = (feature: FeatureOption<any>) =>

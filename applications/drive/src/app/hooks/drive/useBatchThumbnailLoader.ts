@@ -61,7 +61,7 @@ export const useBatchThumbnailLoader = ({
                 }
 
                 if (thumbnailResult.ok) {
-                    const url = URL.createObjectURL(new Blob([thumbnailResult.thumbnail], { type: 'image/jpeg' }));
+                    const url = URL.createObjectURL(new Blob([thumbnailResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' }));
                     setThumbnail(item.thumbnailId, { sdUrl: url });
                 } else {
                     setThumbnail(item.thumbnailId, {});

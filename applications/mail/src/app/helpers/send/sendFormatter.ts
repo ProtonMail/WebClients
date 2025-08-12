@@ -7,7 +7,7 @@ const serializeJsonToFormData = (payload: any, context: string, data: any) => {
     if (!data || typeof data === 'boolean' || typeof data === 'number' || typeof data === 'string') {
         payload[context] = data;
     } else if (data instanceof Uint8Array) {
-        payload[context] = new Blob([data]);
+        payload[context] = new Blob([data as Uint8Array<ArrayBuffer>]);
     } else {
         Object.entries(data).forEach(([key, value]) => {
             serializeJsonToFormData(payload, `${context}[${key}]`, value);

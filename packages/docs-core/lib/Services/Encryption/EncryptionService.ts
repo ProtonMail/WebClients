@@ -50,7 +50,7 @@ export class EncryptionService<C extends EncryptionContext> {
 
       const hkdfSalt = crypto.getRandomValues(new Uint8Array(HKDF_SALT_SIZE))
       const key = await deriveGcmKey(sessionKey, hkdfSalt, contextBytes)
-      const ciphertext = await gcmEncryptWith16ByteIV(key, contentToEncrypt.serializeBinary(), contextBytes)
+      const ciphertext = await gcmEncryptWith16ByteIV(key, contentToEncrypt.serializeBinary() as Uint8Array<ArrayBuffer>, contextBytes)
       return Result.ok(mergeUint8Arrays([hkdfSalt, ciphertext]))
     } catch (error) {
       return Result.fail(`Failed to sign and encrypt data ${error}`)
@@ -71,7 +71,7 @@ export class EncryptionService<C extends EncryptionContext> {
 
       const hkdfSalt = crypto.getRandomValues(new Uint8Array(HKDF_SALT_SIZE))
       const key = await deriveGcmKey(sessionKey, hkdfSalt, contextBytes)
-      const ciphertext = await gcmEncryptWith16ByteIV(key, contentToEncrypt.serializeBinary(), contextBytes)
+      const ciphertext = await gcmEncryptWith16ByteIV(key, contentToEncrypt.serializeBinary() as Uint8Array<ArrayBuffer>, contextBytes)
       return Result.ok(mergeUint8Arrays([hkdfSalt, ciphertext]))
     } catch (error) {
       return Result.fail(`Failed to sign and encrypt data ${error}`)

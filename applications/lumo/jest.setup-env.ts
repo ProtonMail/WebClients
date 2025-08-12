@@ -5,6 +5,7 @@ import { TextDecoder, TextEncoder } from 'util';
 import 'whatwg-fetch';
 
 // Getting ReferenceError: TextDecoder is not defined without
+// @ts-ignore
 global.TextEncoder = TextEncoder;
 // @ts-ignore
 global.TextDecoder = TextDecoder;

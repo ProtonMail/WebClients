@@ -76,7 +76,7 @@ const hashPoints = async (...points: Point[]) => {
         algorithm: 'SHA512',
         data: mergeUint8Arrays([
             new Uint8Array([0x03, 0x02]),
-            ...points.map((p) => p.toRawBytes()),
+            ...points.map((p) => p.toRawBytes() as Uint8Array<ArrayBuffer>),
             new Uint8Array([0x00]),
         ]),
     });
@@ -92,7 +92,7 @@ const proofToHash = async (Gamma: Point) =>
         algorithm: 'SHA512',
         data: mergeUint8Arrays([
             new Uint8Array([0x03, 0x03]),
-            Gamma.multiply(CO_FACTOR).toRawBytes(),
+            Gamma.multiply(CO_FACTOR).toRawBytes() as Uint8Array<ArrayBuffer>,
             new Uint8Array([0x00]),
         ]),
     });
