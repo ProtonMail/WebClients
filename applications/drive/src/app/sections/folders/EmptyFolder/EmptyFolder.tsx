@@ -10,7 +10,7 @@ import { DriveEmptyView } from '../../../components/layout/DriveEmptyView';
 import { FolderContextMenu } from '../FolderBrowser/FolderContextMenu';
 import { useFolderStore } from '../useFolder.store';
 
-export const EmptyFolder = ({ shareId }: { shareId: string }) => {
+export const EmptyFolder = ({ shareId, linkId }: { shareId: string; linkId: string }) => {
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const { permissions } = useFolderStore(
@@ -49,13 +49,13 @@ export const EmptyFolder = ({ shareId }: { shareId: string }) => {
             <DriveEmptyView
                 image={emptySvg}
                 title={
-                    permissions.canEdit
+                    permissions.canCreateNode
                         ? // translator: Shown as a call to action when there are no files in a folder
                           c('Info').t`Drop files here`
                         : c('Info').t`Empty folder`
                 }
                 subtitle={
-                    permissions.canEdit
+                    permissions.canCreateNode
                         ? // translator: Shown as a call to action when there are no files in a folder
                           c('Info').t`Or use the "+ New" button`
                         : c('Info').t`There is nothing to see here`
@@ -66,6 +66,7 @@ export const EmptyFolder = ({ shareId }: { shareId: string }) => {
             />
             <FolderContextMenu
                 shareId={shareId}
+                linkId={linkId}
                 isOpen={isOpen}
                 open={open}
                 close={close}

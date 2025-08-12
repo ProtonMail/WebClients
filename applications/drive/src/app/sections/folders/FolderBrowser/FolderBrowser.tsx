@@ -246,7 +246,7 @@ export function FolderBrowser({ activeFolder }: Props) {
             return <EmptyDeviceRoot />;
         }
 
-        return <EmptyFolder shareId={shareId} />;
+        return <EmptyFolder shareId={shareId} linkId={linkId} />;
     }
 
     const Cells = viewportWidth['>=large'] ? myFilesLargeScreenCells : myFilesSmallScreenCells;
@@ -256,6 +256,7 @@ export function FolderBrowser({ activeFolder }: Props) {
         <>
             <FolderContextMenu
                 shareId={shareId}
+                linkId={linkId}
                 anchorRef={contextMenuAnchorRef}
                 close={browserContextMenu.close}
                 isOpen={browserContextMenu.isOpen}
@@ -264,6 +265,7 @@ export function FolderBrowser({ activeFolder }: Props) {
             />
             <FolderItemContextMenu
                 shareId={shareId}
+                linkId={linkId}
                 selectedItems={selectedItems}
                 anchorRef={contextMenuAnchorRef}
                 close={browserItemContextMenu.close}

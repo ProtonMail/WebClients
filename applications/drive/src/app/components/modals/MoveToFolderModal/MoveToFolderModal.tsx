@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { ModalTwo, useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
+import { splitNodeUid } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -70,9 +71,10 @@ const MoveToFolderModalDeprecated = ({ shareId, selectedItems, onClose, ...modal
 
         void showCreateFolderModal({
             folder: { shareId: shareId, linkId: targetLinkId },
-            onCreateDone: async (newFolderId: string) => {
+            onSuccess: async (newFolderUid: string) => {
                 expand(targetLinkId);
-                setSelectedFolder(newFolderId);
+                const { nodeId } = splitNodeUid(newFolderUid);
+                setSelectedFolder(nodeId);
             },
             createFolder,
         });

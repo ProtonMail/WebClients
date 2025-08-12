@@ -5,30 +5,26 @@ import { MemberRole } from '@proton/drive/index';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import type { ContextMenuProps } from '../../../components/FileBrowser';
-import { useDetailsModal } from '../../../components/modals/DetailsModal';
-import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
-import { useMoveToFolderModal } from '../../../components/modals/MoveToFolderModal/MoveToFolderModal';
-import { useRenameModal } from '../../../components/modals/RenameModal';
-import { useRevisionsModal } from '../../../components/modals/RevisionsModal/RevisionsModal';
-import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
-import {
-    CopyLinkButton,
-    DetailsButton,
-    DownloadButton,
-    OpenInDocsButton,
-    PreviewButton,
-    ShareLinkButton,
-} from '../../../components/sections/ContextMenu';
 import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
-import { MoveToFolderButton, MoveToTrashButton } from '../ContextMenuButtons';
-import { RenameButton } from '../ContextMenuButtons/RenameButton';
-import { RevisionsButton } from '../ContextMenuButtons/RevisionsButton';
+import { CopyLinkContextButton } from '../buttons/CopyLinkContextButton';
+import { DetailsButton } from '../buttons/DetailsButton';
+import { DownloadButton } from '../buttons/DownloadButton';
+import { MoveButton } from '../buttons/MoveButton';
+import { OpenInDocsButton } from '../buttons/OpenInDocsButton';
+import { PreviewButton } from '../buttons/PreviewButton';
+import { RenameButton } from '../buttons/RenameButton';
+import { RevisionsContextButton } from '../buttons/RevisionsContextButton';
+import { ShareLinkButton } from '../buttons/ShareLinkButton';
+import { TrashButton } from '../buttons/TrashButton';
+import { useDownloadActions } from '../hooks/useDownloadActions';
+import { useFolderActions } from '../hooks/useFolderActions';
 import { useFolderStore } from '../useFolder.store';
 
 export function FolderItemContextMenu({
     shareId,
+    linkId,
     selectedItems,
     anchorRef,
     isOpen,
@@ -38,11 +34,13 @@ export function FolderItemContextMenu({
     children,
 }: ContextMenuProps & {
     shareId: string;
+    linkId: string;
     selectedItems: LegacyItem[];
 }) {
     const selectedItem = selectedItems.length > 0 ? selectedItems[0] : undefined;
     const isOnlyOneItem = selectedItems.length === 1 && !!selectedItem;
-    const isOnlyOneFileItem = isOnlyOneItem && selectedItem.isFile;
+    const isOnlyOneFileItem = isOnlyOneItem && selectedItem?.isFile;
+    const { downloadItems } = useDownloadActions({ selectedItems });
     const { permissions, role } = useFolderStore(
         useShallow((state) => ({
             role: state.role,
@@ -51,62 +49,52 @@ export function FolderItemContextMenu({
     );
 
     const isAdmin = role === MemberRole.Admin;
-
-    const hasPreviewAvailable =
-        isOnlyOneFileItem && selectedItem.mimeType && isPreviewAvailable(selectedItem.mimeType, selectedItem.size);
-    const hasLink = isOnlyOneItem && selectedItem.shareUrl && !selectedItem.shareUrl.isExpired && !selectedItem.trashed;
-    const [detailsModal, showDetailsModal] = useDetailsModal();
-    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const [revisionsModal, showRevisionsModal] = useRevisionsModal();
-    const [renameModal, showRenameModal] = useRenameModal();
-    const [moveToFolderModal, showMoveToFolderModal] = useMoveToFolderModal();
-
     const openInDocs = useOpenInDocs(selectedItem);
+    const hasPreviewAvailable =
+        isOnlyOneFileItem && selectedItem?.mimeType && isPreviewAvailable(selectedItem.mimeType, selectedItem.size);
+    const {
+        actions: { showDetailsModal, showRevisionsModal, showRenameModal, showMoveModal, showLinkSharingModal },
+        modals,
+    } = useFolderActions({ selectedItems, shareId, linkId });
 
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-                {hasPreviewAvailable && (
-                    <PreviewButton shareId={selectedItem.rootShareId} linkId={selectedItem.linkId} close={close} />
-                )}
-                {isOnlyOneFileItem && openInDocs.canOpen && <OpenInDocsButton {...openInDocs} close={close} />}
+                {hasPreviewAvailable && <PreviewButton selectedItems={selectedItems} type="context" close={close} />}
+                {isOnlyOneFileItem && <OpenInDocsButton type="context" selectedItems={selectedItems} close={close} />}
                 {(hasPreviewAvailable || (isOnlyOneFileItem && openInDocs.canOpen)) && <ContextSeparator />}
-                <DownloadButton selectedBrowserItems={selectedItems} close={close} />
-                {isAdmin && hasLink && (
-                    <CopyLinkButton shareId={selectedItem.rootShareId} linkId={selectedItem.linkId} close={close} />
-                )}
+                <DownloadButton type="context" selectedItems={selectedItems} onClick={downloadItems} close={close} />
+                {isAdmin && <CopyLinkContextButton selectedItems={selectedItems} close={close} />}
                 {isAdmin && isOnlyOneItem && (
                     <ShareLinkButton
-                        volumeId={selectedItem.volumeId}
-                        shareId={selectedItem.rootShareId}
-                        showLinkSharingModal={showLinkSharingModal}
-                        linkId={selectedItem.linkId}
+                        type="context"
+                        selectedItems={selectedItems}
+                        onClick={showLinkSharingModal}
                         close={close}
                     />
                 )}
                 <ContextSeparator />
                 {permissions.canMove ? (
-                    <MoveToFolderButton
-                        shareId={shareId}
+                    <MoveButton
+                        type="context"
                         selectedItems={selectedItems}
                         close={close}
-                        showMoveToFolderModal={showMoveToFolderModal}
+                        onClick={() => showMoveModal(shareId)}
                     />
                 ) : null}
                 {permissions.canRename && isOnlyOneItem && (
-                    <RenameButton item={selectedItem} close={close} showRenameModal={showRenameModal} />
+                    <RenameButton
+                        type="context"
+                        selectedItems={selectedItems}
+                        close={close}
+                        onClick={showRenameModal}
+                    />
                 )}
-                <DetailsButton
-                    selectedBrowserItems={selectedItems}
-                    showDetailsModal={showDetailsModal}
-                    showFilesDetailsModal={showFilesDetailsModal}
-                    close={close}
-                />
+                <DetailsButton type="context" selectedItems={selectedItems} onClick={showDetailsModal} close={close} />
                 {permissions.canEdit && <ContextSeparator />}
                 {permissions.canEdit && isOnlyOneFileItem && (
                     <>
-                        <RevisionsButton
+                        <RevisionsContextButton
                             selectedItem={selectedItem}
                             showRevisionsModal={showRevisionsModal}
                             close={close}
@@ -114,15 +102,15 @@ export function FolderItemContextMenu({
                         <ContextSeparator />
                     </>
                 )}
-                {permissions.canEdit && <MoveToTrashButton selectedItems={selectedItems} close={close} />}
+                {permissions.canEdit && <TrashButton type="context" selectedItems={selectedItems} close={close} />}
                 {children}
             </ItemContextMenu>
-            {filesDetailsModal}
-            {detailsModal}
-            {linkSharingModal}
-            {revisionsModal}
-            {renameModal}
-            {moveToFolderModal}
+            {modals.detailsModal}
+            {modals.filesDetailsModal}
+            {modals.linkSharingModal}
+            {modals.revisionsModal}
+            {modals.renameModal}
+            {modals.moveModal}
         </>
     );
 }
