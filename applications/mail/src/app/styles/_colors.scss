@@ -361,10 +361,19 @@ $colors: (
 	),
 );
 
-// Generate background color classes
+/**
+ * Generate background color classes
+ * Weird concatenation is needed to avoid warning with the scss compiler.
+ *
+ * > You probably don't mean to use the color value yellow in interpolation here.
+ * > It may end up represented as yellow, which will likely produce invalid CSS.
+ * > Always quote color names when using them as strings or map keys (for example, "yellow").
+ * > If you really want to use the color value here, use '"" + $color-name'.
+ */
+
 @each $color-name, $color-map in $colors {
 	@each $shade, $value in $color-map {
-		.bg-#{$color-name}-#{$shade} {
+		.bg-#{'' + $color-name}-#{$shade} {
 			background-color: #{$value};
 		}
 	}
@@ -373,7 +382,7 @@ $colors: (
 // Generate border color classes
 @each $color-name, $color-map in $colors {
 	@each $shade, $value in $color-map {
-		.border-#{$color-name}-#{$shade} {
+		.border-#{'' + $color-name}-#{$shade} {
 			border-color: #{$value};
 		}
 	}
@@ -382,7 +391,7 @@ $colors: (
 // Generate text color classes
 @each $color-name, $color-map in $colors {
 	@each $shade, $value in $color-map {
-		.color-#{$color-name}-#{$shade} {
+		.color-#{'' + $color-name}-#{$shade} {
 			color: #{$value};
 		}
 	}
@@ -391,7 +400,7 @@ $colors: (
 // Generate hover background color classes
 @each $color-name, $color-map in $colors {
 	@each $shade, $value in $color-map {
-		.hover\:bg-#{$color-name}-#{$shade}:hover {
+		.hover\:bg-#{'' + $color-name}-#{$shade}:hover {
 			background-color: #{$value};
 		}
 	}
@@ -400,7 +409,7 @@ $colors: (
 // Generate hover border color classes
 @each $color-name, $color-map in $colors {
 	@each $shade, $value in $color-map {
-		.hover\:border-#{$color-name}-#{$shade}:hover {
+		.hover\:border-#{'' + $color-name}-#{$shade}:hover {
 			border-color: #{$value};
 		}
 	}
@@ -409,7 +418,7 @@ $colors: (
 // Generate hover text color classes
 @each $color-name, $color-map in $colors {
 	@each $shade, $value in $color-map {
-		.hover\:color-#{$color-name}-#{$shade}:hover {
+		.hover\:color-#{'' + $color-name}-#{$shade}:hover {
 			color: #{$value};
 		}
 	}
