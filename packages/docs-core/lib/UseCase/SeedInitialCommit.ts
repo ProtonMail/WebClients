@@ -1,3 +1,4 @@
+import type { DocumentUpdate } from '@proton/docs-proto'
 import { CommitVersion, DocumentUpdateVersion, CreateDocumentUpdate, CreateCommit } from '@proton/docs-proto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
@@ -37,6 +38,10 @@ export class SeedInitialCommit implements UseCaseInterface<SeedInitialCommitResu
       uuid: GenerateUUID(),
     })
 
+    return this.executeWithUpdate(nodeMeta, update)
+  }
+
+  async executeWithUpdate(nodeMeta: NodeMeta, update: DocumentUpdate): Promise<Result<SeedInitialCommitResult>> {
     const commit = CreateCommit({
       updates: [update],
       version: CommitVersion.V1,
