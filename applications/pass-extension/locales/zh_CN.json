@@ -92,9 +92,6 @@
       "Change": [
         "更改"
       ],
-      "Change email": [
-        "更换邮箱"
-      ],
       "Check DNS": [
         "检查 DNS"
       ],
@@ -106,9 +103,6 @@
       ],
       "Clear": [
         "清除"
-      ],
-      "Clear search": [
-        "清除搜索条件"
       ],
       "Close": [
         "关闭"
@@ -202,9 +196,6 @@
       ],
       "Delete alias": [
         "删除别名"
-      ],
-      "Delete all": [
-        "全部删除"
       ],
       "Delete it, I will never need it": [
         "删除它，我不在需要这个了"
@@ -491,14 +482,8 @@
       "Resend invitation": [
         "重新发送邀请"
       ],
-      "Reset": [
-        "重置"
-      ],
       "Reset history": [
         "重置历史记录"
-      ],
-      "Restore": [
-        "还原"
       ],
       "Restore item": [
         "恢复项目"
@@ -685,11 +670,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "您的密码管理器不在这里？请求添加它。"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } 桌面应用"
       ]
     },
     "Button": {
@@ -1217,9 +1197,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1234,9 +1211,6 @@
       ],
       "Megabyte": [
         "MB"
-      ],
-      "Terabyte": [
-        "TB"
       ]
     },
     "Info": {
@@ -1489,9 +1463,6 @@
       "Congratulations, your access has been confirmed": [
         "恭喜，您的访问权限已确认"
       ],
-      "Copied to clipboard": [
-        "已复制到剪贴板"
-      ],
       "Coupon successfully applied!": [
         "优惠券已成功应用！"
       ],
@@ -1542,12 +1513,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "域名：${ domainPath } 或 @"
-      ],
-      "Drop file here to upload": [
-        "拖至此处上传文件"
-      ],
-      "Drop to import": [
-        "拖至此处即可导入"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "轻松将您现有的密码导入到 ${ PASS_APP_NAME } 。"
@@ -2356,9 +2321,6 @@
       "your domain": [
         "您的域名"
       ],
-      "Your files will be encrypted and then saved": [
-        "文件会加密保存"
-      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
       ]
@@ -2793,9 +2755,6 @@
       "https://example.com": [
         "https://example.com"
       ],
-      "IBAN": [
-        "国际银行账户号码（IBAN）"
-      ],
       "ID Card": [
         "身份证"
       ],
@@ -2864,9 +2823,6 @@
       ],
       "Key type": [
         "密钥类型"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "快捷键：${ shortcut }"
       ],
       "Language": [
         "语言"
@@ -3296,9 +3252,6 @@
       ],
       "The URL has been copied to the clipboard": [
         "URL 已复制到剪贴板"
-      ],
-      "Theme": [
-        "主题"
       ],
       "Tier/Level": [
         "成员级别"

@@ -112,9 +112,6 @@
       "Change": [
         "Değiştir"
       ],
-      "Change email": [
-        "E-postayı değiştir"
-      ],
       "Check DNS": [
         "DNS kayıtlarını denetle"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "Temizle"
-      ],
-      "Clear search": [
-        "Aramayı temizle"
       ],
       "Close": [
         "Kapat"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "Takma adı sil"
-      ],
-      "Delete all": [
-        "Tümünü sil"
       ],
       "Delete it, I will never need it": [
         "Silebilirsin, onu asla kullanmayacağım"
@@ -502,14 +493,8 @@
       "Resend invitation": [
         "Daveti yeniden gönder"
       ],
-      "Reset": [
-        "Sıfırla"
-      ],
       "Reset history": [
         "Geçmişi sil"
-      ],
-      "Restore": [
-        "Geri yükle"
       ],
       "Restore item": [
         "Ögeyi geri yükle"
@@ -689,11 +674,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ]
     },
     "Button": {
@@ -1254,9 +1234,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1275,10 +1252,6 @@
       "Megabyte": [
         "Megabayt",
         "Megabayt"
-      ],
-      "Terabyte": [
-        "Terabayt",
-        "Terabayt"
       ]
     },
     "Info": {
@@ -1514,9 +1487,6 @@
       "Congratulations, your access has been confirmed": [
         "Tebrikler erişiminiz onaylandı"
       ],
-      "Copied to clipboard": [
-        "Panoya kopyalandı"
-      ],
       "Coupon successfully applied!": [
         "Kupon kodu uygulandı!"
       ],
@@ -1561,12 +1531,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Etki alanı: ${ domainPath } ya da @"
-      ],
-      "Drop file here to upload": [
-        "Yüklemek için dosyayı buraya bırakın"
-      ],
-      "Drop to import": [
-        "İçe aktarmak için bırakın"
       ],
       "Editor": [
         "Düzenleyici"
@@ -1775,9 +1739,6 @@
       "Latest breach on ${ formattedDate }": [
         "Son veri sızıntısı: ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "${ dataLeakedLink } ne yapacağınızı öğrenin"
-      ],
       "Leaving item...": [
         "Öge bırakılıyor…"
       ],
@@ -1868,9 +1829,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Uyarılarımız güvenliğe öncelik verir. Sızdırılmış bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
       ],
       "Owner": [
         "Sahibi"
@@ -2243,9 +2201,6 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Dünya çapında 50.000 üzerinde kurumsal kullanıcı ve 100 milyon hesap tarafından güveniliyor."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
-      ],
       "Unable to copy to clipboard": [
         "Panoya kopyalanamadı"
       ],
@@ -2411,9 +2366,6 @@
       ],
       "your domain": [
         "etki alanınız"
-      ],
-      "Your files will be encrypted and then saved": [
-        "Dosyalarınız şifrelendikten sonra kaydedilir"
       ],
       "Your information was found on ${ displayedDate }": [
         "Bilgileriniz ${ displayedDate } tarihinde bulundu"
@@ -2598,9 +2550,6 @@
       ],
       "Bank Name": [
         "Banka adı"
-      ],
-      "Beta Access": [
-        "Beta erişimi"
       ],
       "Biometrics": [
         "Biyometri"
@@ -2899,9 +2848,6 @@
       "https://example.com": [
         "https://ornek.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "Kimlik kartı"
       ],
@@ -2973,9 +2919,6 @@
       ],
       "Key type": [
         "Anahtar türü"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Klavye kısayolu: ${ shortcut }"
       ],
       "Language": [
         "Dil"
@@ -3421,9 +3364,6 @@
       "The URL has been copied to the clipboard": [
         "Adres panoya kopyalandı"
       ],
-      "Theme": [
-        "Tema"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Bu ögeye ${ date } tarihine kadar veya görüntüleme sayısı sınırına ulaşılana kadar erişilebilir."
       ],
@@ -3591,16 +3531,8 @@
       "auto create rules ››": [
         "kurallar otomatik oluşturulsun ››"
       ],
-      "if your data is leaked": [
-        "Verileriniz sızarsa"
-      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "${ reason } özelliğini aç"
       ]
     },
     "Medium": {
@@ -3624,17 +3556,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
-      ],
-      "SSO integration": [
-        "Tek oturum açma bütünleştirmesi"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } özelliği kapatıldı"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } özelliği açıldı"
       ]
     },
     "Option": {
@@ -3890,20 +3811,6 @@
       ],
       "Used on ${ url }": [
         "${ url } üzerinde kullanılmış"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } ve ${ remainingCount } diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } ve 1 diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Olası ${ name } veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Bilgileriniz en az bir veri sızıntısı olayında görüldü. Ayrıntıları görmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
       ]
     },
     "sso": {
@@ -4239,9 +4146,6 @@
       "Inactive 2FA": [
         "İki adımlı doğrulama etkin olmayan"
       ],
-      "Information exposed in breach": [
-        "Ele geçirilmede açığa çıkan bilgiler"
-      ],
       "Install extension": [
         "Eklentiyi kur"
       ],
@@ -4512,14 +4416,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Bugün"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmemiştir."
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Şifrelenmiş parolalar, şifreleri çözülmediği sürece açığa çıksalar bile güvende kalırlar."
       ]
     },
     "Validation": {

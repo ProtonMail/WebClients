@@ -112,9 +112,6 @@
       "Change": [
         "Muuta"
       ],
-      "Change email": [
-        "Vaihda sähköpostiosoitteesi"
-      ],
       "Check DNS": [
         "Tarkista DNS"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "Tyhjennä"
-      ],
-      "Clear search": [
-        "Tyhjennä haku"
       ],
       "Close": [
         "Sulje"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "Poista alias"
-      ],
-      "Delete all": [
-        "Poista kaikki"
       ],
       "Delete it, I will never need it": [
         "Poista se, en koskaan tarvitse sitä"
@@ -499,14 +490,8 @@
       "Resend invitation": [
         "Lähetä kutsu uudelleen"
       ],
-      "Reset": [
-        "Tyhjennä"
-      ],
       "Reset history": [
         "Nollaa historia"
-      ],
-      "Restore": [
-        "Palauta"
       ],
       "Restore item": [
         "Palauta kohde"
@@ -686,11 +671,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }in työpöytäsovellus"
       ]
     },
     "Button": {
@@ -1221,9 +1201,6 @@
       ],
       "MB": [
         "Mt"
-      ],
-      "TB": [
-        "Tt"
       ]
     },
     "file size format, long": {
@@ -1242,10 +1219,6 @@
       "Megabyte": [
         "Megatavu",
         "Megatavua"
-      ],
-      "Terabyte": [
-        "Teratavu",
-        "Teratavua"
       ]
     },
     "Info": {
@@ -1468,9 +1441,6 @@
       "Congratulations, your access has been confirmed": [
         "Onnittelut, käyttöoikeutesi on vahvistettu"
       ],
-      "Copied to clipboard": [
-        "Kopioitiin leikepöydälle"
-      ],
       "Coupon successfully applied!": [
         "Etukoodi käytettiin!"
       ],
@@ -1515,12 +1485,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Verkkotunnus: ${ domainPath } tai @"
-      ],
-      "Drop file here to upload": [
-        "Pudota ladattava tiedosto tähän"
-      ],
-      "Drop to import": [
-        "Tuo pudottamalla"
       ],
       "Editor": [
         "Muokkaus"
@@ -1729,9 +1693,6 @@
       "Latest breach on ${ formattedDate }": [
         "Edellinen murto tapahtui ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "Lue, mitä tehdä, ${ dataLeakedLink }"
-      ],
       "Leaving item...": [
         "Poistutaan kohteesta..."
       ],
@@ -1822,9 +1783,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }in käyttäminen yhdistettynä vaatii PIN-koodin. Kolmen epäonnistuneen yrityksen jälkeen sinut kirjataan ulos."
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
       ],
       "Owner": [
         "Omistaja"
@@ -2173,9 +2131,6 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin ${ PASS_APP_NAME }-kuvaketta."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
-      ],
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"
       ],
@@ -2335,9 +2290,6 @@
       ],
       "your domain": [
         "sinun verkkotunnuksesi"
-      ],
-      "Your files will be encrypted and then saved": [
-        "Tiedostosi salataan ja tallennetaan"
       ],
       "Your information was found on ${ displayedDate }": [
         "Tietosi havaittiin ${ displayedDate }"
@@ -2519,9 +2471,6 @@
       ],
       "Bank Name": [
         "Pankin nimi"
-      ],
-      "Beta Access": [
-        "Käytä beetaversiota"
       ],
       "Biometrics": [
         "Biometria"
@@ -2814,9 +2763,6 @@
       "https://example.com": [
         "https://esimerkki.fi"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "Henkilökortti"
       ],
@@ -2885,9 +2831,6 @@
       ],
       "Key type": [
         "Avaimen tyyppi"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Pikanäppäin: ${ shortcut }"
       ],
       "Language": [
         "Kieli"
@@ -3318,9 +3261,6 @@
       "The URL has been copied to the clipboard": [
         "URL-osoite kopioitiin leikepöydälle"
       ],
-      "Theme": [
-        "Teema"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Tämä kohde on käytettävissä ${ date } asti, tai kunnes katselurajoitus on saavutettu."
       ],
@@ -3479,16 +3419,8 @@
       "auto create rules ››": [
         "automaattisen luomisen sääntöjä ››"
       ],
-      "if your data is leaked": [
-        "jos tietosi vuotavat"
-      ],
       "Learn more": [
         "Lue lisää"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "Ota ${ reason } käyttöön"
       ]
     },
     "Medium": {
@@ -3512,17 +3444,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Vaadi organisaatiolle 2FA"
-      ],
-      "SSO integration": [
-        "SSO-integraatio"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } poistettiin käytöstä"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } otettiin käyttöön"
       ]
     },
     "Option": {
@@ -3766,20 +3687,6 @@
       ],
       "Used on ${ url }": [
         "Käytetään osoitteessa ${ url }"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä yhdestä muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ]
     },
     "sso": {
@@ -4115,9 +4022,6 @@
       "Inactive 2FA": [
         "2FA ei ole käytössä"
       ],
-      "Information exposed in breach": [
-        "Tietomurrossa paljastuneet tiedot"
-      ],
       "Install extension": [
         "Asenna laajennus"
       ],
@@ -4385,14 +4289,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Tänään"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "Kaikkia tässä lueteltuja tietoja ei paljastettu kaikille käyttäjille."
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Salatut salasanat pysyvät turvassa, vaikka ne paljastuisivat, ellei niiden salausta pureta."
       ]
     },
     "Validation": {

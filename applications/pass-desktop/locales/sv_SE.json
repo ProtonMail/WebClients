@@ -112,9 +112,6 @@
       "Change": [
         "Ändra"
       ],
-      "Change email": [
-        "Ändra e-post"
-      ],
       "Check DNS": [
         "Kontrollera DNS"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "Rensa"
-      ],
-      "Clear search": [
-        "Rensa sök"
       ],
       "Close": [
         "Stäng"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "Ta bort alias"
-      ],
-      "Delete all": [
-        "Ta bort alla"
       ],
       "Delete it, I will never need it": [
         "Ta bort det, jag kommer aldrig att behöva det"
@@ -511,14 +502,8 @@
       "Resend invitation": [
         "Skicka inbjudan igen"
       ],
-      "Reset": [
-        "Återställ"
-      ],
       "Reset history": [
         "Återställ historik"
-      ],
-      "Restore": [
-        "Återställ"
       ],
       "Restore item": [
         "Återställ objekt"
@@ -721,11 +706,6 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Avinstallera ${ PASS_APP_NAME }"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }-skrivbordsapp"
       ]
     },
     "Button": {
@@ -1286,9 +1266,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1307,35 +1284,11 @@
       "Megabyte": [
         "Kilobyte",
         "Megabyte"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabyte"
       ]
     },
     "Font face option": {
-      "System default": [
-        "Systemstandard"
-      ],
       "Theme font": [
         "Temats typsnitt"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Stor"
-      ],
-      "Medium (recommended)": [
-        "Medium (rekommenderas)"
-      ],
-      "Small": [
-        "Liten"
-      ],
-      "Very large": [
-        "Mycket stor"
-      ],
-      "Very small": [
-        "Väldigt liten"
       ]
     },
     "Info": {
@@ -1571,9 +1524,6 @@
       "Congratulations, your access has been confirmed": [
         "Grattis, din åtkomst har bekräftats"
       ],
-      "Copied to clipboard": [
-        "Kopierad till urklipp"
-      ],
       "Coupon successfully applied!": [
         "Kupong tillämpad!"
       ],
@@ -1618,12 +1568,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domän: ${ domainPath } eller @"
-      ],
-      "Drop file here to upload": [
-        "Släpp filer här för att ladda upp"
-      ],
-      "Drop to import": [
-        "Släpp för att importera"
       ],
       "Editor": [
         "Redigerare"
@@ -1832,9 +1776,6 @@
       "Latest breach on ${ formattedDate }": [
         "Senaste intrång den ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "Lär dig vad du ska göra ${ dataLeakedLink }"
-      ],
       "Leaving item...": [
         "Lämnar objekt …"
       ],
@@ -1928,9 +1869,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod. Du kommer att loggas ut efter 3 misslyckade försök."
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Våra varningar prioriterar säkerhet. Om du inte känner igen någon av intrångsinformationen kan du lugnt ignorera denna rapport."
       ],
       "Owner": [
         "Ägare"
@@ -2472,9 +2410,6 @@
       "your domain": [
         "din domän"
       ],
-      "Your files will be encrypted and then saved": [
-        "Dina filer kommer att krypteras och sedan sparas"
-      ],
       "Your information was found on ${ displayedDate }": [
         "Din information hittades den ${ displayedDate }"
       ],
@@ -2974,9 +2909,6 @@
       "https://example.com": [
         "https://example.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "ID-kort"
       ],
@@ -3051,9 +2983,6 @@
       ],
       "Key type": [
         "Nyckeltyp"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Tangentbordsgenväg: ${ shortcut }"
       ],
       "Language": [
         "Språk"
@@ -3517,9 +3446,6 @@
       "The URL has been copied to the clipboard": [
         "URL:en har kopierats till urklipp"
       ],
-      "Theme": [
-        "Tema"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Detta objekt är tillgängligt fram till ${ date } eller tills visningsgränsen nås."
       ],
@@ -3688,18 +3614,10 @@
     },
     "Link": {
       "auto create rules ››": [
-        "autoskapa regler ››"
-      ],
-      "if your data is leaked": [
-        "om dina uppgifter läcker ut"
+        "skapa regler automatiskt ››"
       ],
       "Learn more": [
         "Lär dig mer"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "Aktivera ${ reason }"
       ]
     },
     "Medium": {
@@ -3737,17 +3655,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Kräver 2FA för organisation"
-      ],
-      "SSO integration": [
-        "SSO-integration"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } har inaktiverats"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } har aktiverats"
       ]
     },
     "Option": {
@@ -3821,7 +3728,7 @@
         "Exporterar filer"
       ],
       "Failed linking files to item": [
-        "Misslyckades med att länka filer till objektet"
+        "Misslyckades länka filer till objekt"
       ],
       "File": [
         "Fil"
@@ -4003,20 +3910,6 @@
       ],
       "Used on ${ url }": [
         "Används på ${ url }"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
       ]
     },
     "sso": {
@@ -4352,9 +4245,6 @@
       "Inactive 2FA": [
         "Inaktiv 2FA"
       ],
-      "Information exposed in breach": [
-        "Information exponerad vid intrång"
-      ],
       "Install extension": [
         "Installera utökning"
       ],
@@ -4625,14 +4515,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Idag"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "All information som anges här har inte exponerats för alla användare."
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."
       ]
     },
     "Validation": {
