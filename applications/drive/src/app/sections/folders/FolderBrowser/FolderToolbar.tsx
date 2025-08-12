@@ -6,36 +6,34 @@ import { MemberRole } from '@proton/drive/index';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import { useSelection } from '../../../components/FileBrowser';
-import {
-    DetailsButton,
-    DownloadButton,
-    LayoutButton,
-    OpenInDocsButton,
-    PreviewButton,
-    ShareButton,
-    ShareLinkButton,
-} from '../../../components/sections/ToolbarButtons';
 import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
-import { useDocumentActions } from '../../../store';
-import {
-    ActionsDropdown,
-    CreateNewFileButton,
-    CreateNewFolderButton,
-    MoveToFolderButton,
-    MoveToTrashButton,
-    RenameButton,
-    UploadFileButton,
-    UploadFolderButton,
-} from '../ToolbarButtons';
-import { CreateNewDocumentButton } from '../ToolbarButtons/CreateNewDocumentButton';
-import { CreateNewSheetButton } from '../ToolbarButtons/CreateNewSheetButton';
+import { ActionsDropdown } from '../buttons/ActionsDropdown';
+import { CreateNewDocumentButton } from '../buttons/CreateNewDocumentButton';
+import { CreateNewFileButton } from '../buttons/CreateNewFileButton';
+import { CreateNewFolderButton } from '../buttons/CreateNewFolderButton';
+import { CreateNewSheetButton } from '../buttons/CreateNewSheetButton';
+import { DetailsButton } from '../buttons/DetailsButton';
+import { DownloadButton } from '../buttons/DownloadButton';
+import { LayoutToolbarButton } from '../buttons/LayoutButton';
+import { MoveButton } from '../buttons/MoveButton';
+import { OpenInDocsButton } from '../buttons/OpenInDocsButton';
+import { PreviewButton } from '../buttons/PreviewButton';
+import { RenameButton } from '../buttons/RenameButton';
+import { ShareLinkButton } from '../buttons/ShareLinkButton';
+import { ShareToolbarButton } from '../buttons/ShareToolbarButton';
+import { TrashButton } from '../buttons/TrashButton';
+import { UploadFileButton } from '../buttons/UploadFileButton';
+import { UploadFolderButton } from '../buttons/UploadFolderButton';
 import { getSelectedItems } from '../getSelectedItems';
+import { useDownloadActions } from '../hooks/useDownloadActions';
+import { useFolderActions } from '../hooks/useFolderActions';
 import { useFolderStore } from '../useFolder.store';
 
 interface Props {
     volumeId: string;
     shareId: string;
     linkId: string;
+
     showOptionsForNoSelection?: boolean;
 }
 
@@ -44,7 +42,6 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection();
     const isEditEnabled = useIsEditEnabled();
-    const { createDocument } = useDocumentActions();
     const { items, permissions, role } = useFolderStore(
         useShallow((state) => ({
             folder: state.folder,
@@ -53,15 +50,29 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
             role: state.role,
         }))
     );
+    const selectedItems = getSelectedItems(items, selectionControls?.selectedItemIds || []);
+    const {
+        actions: {
+            showRenameModal,
+            showMoveModal,
+            showCreateFileModal,
+            showCreateFolderModal,
+            createNewDocument,
+            createNewSheet,
+            showDetailsModal,
+            showLinkSharingModal,
+            showFileSharingModal,
+        },
+        uploadFile: { fileInputRef, handleFileClick, handleFileChange },
+        uploadFolder: { folderInputRef, handleFolderClick, handleFolderChange },
+        modals,
+    } = useFolderActions({ selectedItems, shareId, linkId });
 
     const isAdmin = role === MemberRole.Admin;
-
-    const selectedItems = getSelectedItems(items, selectionControls?.selectedItemIds || []);
-
     const shouldShowShareButton = permissions.canShare && selectedItems.length === 0 && items.length > 0;
     const shouldShowShareLinkButton = isAdmin && (selectedItems.length > 0 || permissions.canShareNode);
-
     const selectedItem = selectedItems.length === 1 ? selectedItems[0] : undefined;
+    const { downloadItems } = useDownloadActions({ selectedItems });
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -72,28 +83,26 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
                 <>
                     {permissions.canCreateNode ? (
                         <>
-                            <CreateNewFolderButton activeFolder={{ volumeId, shareId, linkId }} />
-                            {isEditEnabled && <CreateNewFileButton />}
+                            <CreateNewFolderButton type="toolbar" onClick={showCreateFolderModal} />
+                            {isEditEnabled && (
+                                <CreateNewFileButton type="toolbar" onClick={() => showCreateFileModal({})} />
+                            )}
                             {permissions.canCreateDocs && (
-                                <CreateNewDocumentButton
-                                    onClick={() => createDocument({ type: 'doc', shareId, parentLinkId: linkId })}
-                                />
+                                <CreateNewDocumentButton type="toolbar" onClick={createNewDocument} />
                             )}
                             {permissions.canCreateSheets && (
-                                <CreateNewSheetButton
-                                    onClick={() => createDocument({ type: 'sheet', shareId, parentLinkId: linkId })}
-                                />
+                                <CreateNewSheetButton type="toolbar" onClick={createNewSheet} />
                             )}
                             <Vr />
-                            {isDesktop && <UploadFolderButton />}
-                            <UploadFileButton />
+                            {isDesktop && <UploadFolderButton type="toolbar" onClick={handleFolderClick} />}
+                            <UploadFileButton type="toolbar" onClick={handleFileClick} />
                             <Vr />
                         </>
                     ) : null}
 
-                    {shouldShowShareButton && <ShareButton shareId={shareId} />}
+                    {shouldShowShareButton && <ShareToolbarButton onClick={showFileSharingModal} />}
                     {shouldShowShareLinkButton && (
-                        <ShareLinkButton volumeId={volumeId} shareId={shareId} linkId={linkId} />
+                        <ShareLinkButton type="toolbar" selectedItems={selectedItems} onClick={showLinkSharingModal} />
                     )}
                 </>
             );
@@ -101,9 +110,9 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
 
         return (
             <>
-                <PreviewButton selectedBrowserItems={selectedItems} />
-                <OpenInDocsButton selectedBrowserItems={selectedItems} />
-                <DownloadButton selectedBrowserItems={selectedItems} />
+                <PreviewButton selectedItems={selectedItems} type="toolbar" />
+                <OpenInDocsButton type="toolbar" selectedItems={selectedItems} />
+                <DownloadButton type="toolbar" selectedItems={selectedItems} onClick={downloadItems} />
                 {viewportWidth['<=small'] ? (
                     <ActionsDropdown volumeId={volumeId} shareId={shareId} selectedItems={selectedItems} role={role} />
                 ) : (
@@ -111,22 +120,30 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
                         {shouldShowShareLinkButton && selectedItem && (
                             <>
                                 <ShareLinkButton
-                                    volumeId={selectedItem.volumeId}
-                                    shareId={selectedItem.rootShareId}
-                                    linkId={selectedItem.linkId}
+                                    type="toolbar"
+                                    selectedItems={selectedItems}
+                                    onClick={showLinkSharingModal}
                                 />
                                 <Vr />
                             </>
                         )}
 
-                        {permissions.canMove && <MoveToFolderButton shareId={shareId} selectedItems={selectedItems} />}
-                        {permissions.canRename && <RenameButton selectedItems={selectedItems} />}
-                        <DetailsButton selectedBrowserItems={selectedItems} />
+                        {permissions.canMove && (
+                            <MoveButton
+                                type="toolbar"
+                                selectedItems={selectedItems}
+                                onClick={() => showMoveModal(shareId)}
+                            />
+                        )}
+                        {permissions.canRename && (
+                            <RenameButton selectedItems={selectedItems} type="toolbar" onClick={showRenameModal} />
+                        )}
+                        <DetailsButton type="toolbar" selectedItems={selectedItems} onClick={showDetailsModal} />
 
                         {permissions.canEdit && (
                             <>
                                 <Vr />
-                                <MoveToTrashButton selectedItems={selectedItems} />
+                                <TrashButton type="toolbar" selectedItems={selectedItems} />
                             </>
                         )}
                     </>
@@ -140,8 +157,17 @@ export const FolderToolbar = ({ volumeId, shareId, linkId, showOptionsForNoSelec
             <div className="gap-2 flex flex-nowrap shrink-0">{renderSelectionActions()}</div>
             <span className="ml-auto flex flex-nowrap shrink-0">
                 {selectedItems.length > 0 && <Vr className="hidden md:flex mx-2" />}
-                <LayoutButton />
+                <LayoutToolbarButton />
             </span>
+            <input multiple type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} />
+            <input type="file" ref={folderInputRef} className="hidden" onChange={handleFolderChange} />
+            {modals.renameModal}
+            {modals.moveModal}
+            {modals.createFileModal}
+            {modals.createFolderModal}
+            {modals.detailsModal}
+            {modals.filesDetailsModal}
+            {modals.linkSharingModal}
         </Toolbar>
     );
 };
