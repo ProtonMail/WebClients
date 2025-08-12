@@ -6,14 +6,17 @@ import { Button } from '@proton/atoms';
 import { Checkbox, Icon, Label } from '@proton/components';
 import { BRAND_NAME, RECOVERY_KIT_FILE_NAME } from '@proton/shared/lib/constants';
 
+import { Step } from '../PassSignup';
 import recoveryKitPDFImage from '../assets/images/recovery_kit_pdf.svg';
 import { Layout } from '../components/Layout/Layout';
-import { Step, useFlow } from '../contexts/FlowContext';
 import { RecoveryKitAside } from './RecoveryKitAside';
 
-export const RecoveryKitStep: FC = () => {
+type Props = {
+    setStep: (step: Step) => void;
+};
+
+export const RecoveryKitStep: FC<Props> = ({ setStep }) => {
     const [checked, setChecked] = useState(false);
-    const { setStep } = useFlow();
 
     const handleDownload = () => {
         // TODO: Check how to download the file

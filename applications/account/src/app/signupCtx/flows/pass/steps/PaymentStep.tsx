@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC, type FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,26 +8,26 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import useLoading from '@proton/hooks/useLoading';
 import { IcShield } from '@proton/icons';
 import { PAYMENT_METHOD_TYPES, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
-import type { PaymentProcessorHook } from '@proton/payments';
 import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
-import noop from '@proton/utils/noop';
 
 import { useSignup } from '../../../context/SignupContext';
+import { Step } from '../PassSignup';
 import { Layout } from '../components/Layout/Layout';
-import { Step, useFlow } from '../contexts/FlowContext';
 
-export const PaymentStep: FC = () => {
-    const { setStep } = useFlow();
+type Props = {
+    setStep: (step: Step) => void;
+};
+
+export const PaymentStep: FC<Props> = ({ setStep }) => {
     const signup = useSignup();
     const payments = usePaymentOptimistic();
-    const [submitting, withSubmitting] = useLoading();
+    const [loading, setLoading] = useState(false);
     const { options } = payments;
     const yearlyPlanValue = getSimplePriceString(payments.currency, payments.selectedPlan.getPlan().Amount * 12);
     const monthlyPlanValue = getSimplePriceString(payments.currency, payments.selectedPlan.getPlan().Amount);
@@ -39,17 +39,21 @@ export const PaymentStep: FC = () => {
         selectedPlanName: getPlanFromPlanIDs(payments.plansMap, options.planIDs)?.Name,
         billingAddress: options.billingAddress,
         onChargeable: async (operations, data) => {
-            signup.submitPaymentData(options, data);
-            await signup.createUser();
-            await signup.setupUser();
-            setStep(Step.InstallExtension);
+            try {
+                signup.submitPaymentData(options, data);
+                await signup.createUser();
+                await signup.setupUser();
+                setStep(Step.InstallExtension);
+            } catch (error) {
+                setLoading(false);
+            }
         },
-        paymentMethodStatusExtended: payments.paymentsStatus,
+        paymentStatus: payments.paymentStatus,
         flow: 'signup',
     });
 
     const validatePayment = () => {
-        if (submitting || !payments.initializationStatus.pricingInitialized || payments.loadingPaymentDetails) {
+        if (loading || !payments.initializationStatus.pricingInitialized || payments.loadingPaymentDetails) {
             return false;
         }
         return true;
@@ -57,7 +61,7 @@ export const PaymentStep: FC = () => {
 
     const taxCountry = useTaxCountry({
         onBillingAddressChange: payments.selectBillingAddress,
-        statusExtended: payments.paymentsStatus,
+        paymentStatus: payments.paymentStatus,
         zipCodeBackendValid: payments.zipCodeValid,
         previosValidZipCode: payments.options.billingAddress.ZipCode,
         paymentFacade,
@@ -69,45 +73,40 @@ export const PaymentStep: FC = () => {
         taxCountry,
     });
 
-    const process = (processor: PaymentProcessorHook | undefined) => {
-        if (!validatePayment()) {
+    const handleProcess = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const processor = paymentFacade.selectedProcessor;
+
+        if (!processor || !validatePayment()) {
             return;
         }
 
-        async function run() {
-            if (!processor) {
-                return;
-            }
-            try {
-                await processor.processPaymentToken();
-            } catch (error) {
-                const sentryError = getSentryError(error);
-                if (sentryError) {
-                    const context = {
-                        currency: payments.options.currency,
-                        amount: payments.checkResult.AmountDue,
-                        processorType: processor.meta.type,
-                        paymentMethod: paymentFacade.selectedMethodType,
-                        paymentMethodValue: paymentFacade.selectedMethodValue,
-                        cycle: payments.options.cycle,
-                        plan: payments.selectedPlan,
-                        planName: payments.selectedPlan.getPlanName(),
-                        paymentsVersion: getPaymentsVersion(),
-                    };
+        setLoading(true);
 
-                    captureMessage(`Payments: Failed to handle ${signup.flowId}`, {
-                        level: 'error',
-                        extra: { error: sentryError, context },
-                    });
-                }
+        try {
+            await processor.processPaymentToken();
+        } catch (error) {
+            const sentryError = getSentryError(error);
+            if (sentryError) {
+                const context = {
+                    currency: payments.options.currency,
+                    amount: payments.checkResult.AmountDue,
+                    processorType: processor.meta.type,
+                    paymentMethod: paymentFacade.selectedMethodType,
+                    paymentMethodValue: paymentFacade.selectedMethodValue,
+                    cycle: payments.options.cycle,
+                    plan: payments.selectedPlan,
+                    planName: payments.selectedPlan.getPlanName(),
+                    paymentsVersion: getPaymentsVersion(),
+                };
+
+                captureMessage(`Payments: Failed to handle ${signup.flowId}`, {
+                    level: 'error',
+                    extra: { error: sentryError, context },
+                });
             }
+            setLoading(false);
         }
-
-        withSubmitting(run()).catch(noop);
-    };
-
-    const handleProcess = () => {
-        return process(paymentFacade.selectedProcessor);
     };
 
     const methodsAllowed: string[] = [PAYMENT_METHOD_TYPES.CARD, PAYMENT_METHOD_TYPES.CHARGEBEE_CARD];
@@ -130,14 +129,7 @@ export const PaymentStep: FC = () => {
                     </div>
                     <span />
                 </div>
-                <form
-                    name="payment-form"
-                    onSubmit={(event) => {
-                        event.preventDefault();
-                        handleProcess();
-                    }}
-                    method="post"
-                >
+                <form name="payment-form" onSubmit={handleProcess} method="post">
                     {(() => {
                         const planIDs = payments.options.planIDs;
                         const { hasPlanCustomizer, currentPlan } = getHasPlanCustomizer({
@@ -182,7 +174,7 @@ export const PaymentStep: FC = () => {
                         pill
                         taxCountry={taxCountry}
                         paymentFacade={paymentFacade}
-                        loading={submitting}
+                        loading={loading}
                         data-testid="pay"
                         className="py-4 text-semibold"
                         suffix={
