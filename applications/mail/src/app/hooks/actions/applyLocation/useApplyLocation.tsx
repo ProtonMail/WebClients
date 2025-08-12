@@ -16,6 +16,7 @@ import {
     shouldOpenConfirmationModalForConverversation,
     shouldOpenConfirmationModalForMessages,
 } from 'proton-mail/helpers/location/moveModal/shouldOpenModal';
+import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
 import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
 import { useGetElementByID } from 'proton-mail/hooks/mailbox/useElements';
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -54,6 +55,8 @@ export const useApplyLocation = () => {
 
     const sourceLabelID = useMailSelector(paramsSelector).labelID;
 
+    const { getFilterActions } = useCreateFilters();
+
     const getConversationById = useGetConversation();
     const getElementByID = useGetElementByID();
 
@@ -63,15 +66,20 @@ export const useApplyLocation = () => {
         targetLabelID,
         showSuccessNotification = true,
         spamAction,
+        createFilters,
     }: ApplyLocationParams & { spamAction?: SPAM_ACTION }): Promise<any> => {
         // Get all conversations in element state linked to messages that are moving
         const conversationIDs = unique((elements as Message[]).map((message) => message.ConversationID));
-
         const conversationsFromMessages: Conversation[] = conversationIDs
             .map((id: string) => {
                 return getElementByID(id);
             })
             .filter(isTruthy);
+
+        const { doCreateFilters, undoCreateFilters } = getFilterActions();
+        if (createFilters) {
+            void doCreateFilters(elements, [targetLabelID], false);
+        }
 
         if (removeLabel) {
             return dispatch(
@@ -84,6 +92,11 @@ export const useApplyLocation = () => {
                     showSuccessNotification,
                     labels,
                     folders,
+                    onActionUndo: () => {
+                        if (createFilters) {
+                            void undoCreateFilters();
+                        }
+                    },
                 })
             );
         } else {
@@ -98,6 +111,11 @@ export const useApplyLocation = () => {
                     labels,
                     folders,
                     spamAction,
+                    onActionUndo: () => {
+                        if (createFilters) {
+                            void undoCreateFilters();
+                        }
+                    },
                 })
             );
         }
@@ -109,7 +127,13 @@ export const useApplyLocation = () => {
         targetLabelID,
         showSuccessNotification = true,
         spamAction,
+        createFilters,
     }: ApplyLocationParams & { spamAction?: SPAM_ACTION }): Promise<any> => {
+        const { doCreateFilters, undoCreateFilters } = getFilterActions();
+        if (createFilters) {
+            void doCreateFilters(elements, [targetLabelID], true);
+        }
+
         if (removeLabel) {
             return dispatch(
                 unlabelConversations({
@@ -119,6 +143,11 @@ export const useApplyLocation = () => {
                     showSuccessNotification,
                     labels,
                     folders,
+                    onActionUndo: () => {
+                        if (createFilters) {
+                            void undoCreateFilters();
+                        }
+                    },
                 })
             );
         } else {
@@ -132,6 +161,11 @@ export const useApplyLocation = () => {
                     labels,
                     folders,
                     spamAction,
+                    onActionUndo: () => {
+                        if (createFilters) {
+                            void undoCreateFilters();
+                        }
+                    },
                 })
             );
         }
@@ -143,6 +177,7 @@ export const useApplyLocation = () => {
         askUnsubscribe = true,
         targetLabelID,
         showSuccessNotification = true,
+        createFilters,
     }: ApplyLocationParams): Promise<any> => {
         if (!elements) {
             throw new Error('Elements are required');
@@ -192,10 +227,12 @@ export const useApplyLocation = () => {
                                 targetLabelID,
                                 removeLabel,
                                 showSuccessNotification,
-                        });
+                                createFilters,
+                            });
                         },
                     },
                 });
+
                 return Promise.resolve();
             } else if (shouldOpenModal === ModalType.Snooze) {
                 notify({
@@ -207,6 +244,7 @@ export const useApplyLocation = () => {
                                 targetLabelID,
                                 removeLabel,
                                 showSuccessNotification,
+                                createFilters,
                             });
                         },
                     },
@@ -225,6 +263,7 @@ export const useApplyLocation = () => {
                                 removeLabel,
                                 showSuccessNotification,
                                 spamAction,
+                                createFilters,
                             });
                         },
                     },
@@ -237,6 +276,7 @@ export const useApplyLocation = () => {
                 targetLabelID,
                 removeLabel,
                 showSuccessNotification,
+                createFilters,
             });
         } else if (isMessage) {
             const result = messageMoveEngine.validateMove(targetLabelID, elements as Message[], removeLabel);
@@ -276,6 +316,7 @@ export const useApplyLocation = () => {
                                 targetLabelID,
                                 removeLabel,
                                 showSuccessNotification,
+                                createFilters,
                             });
                         },
                     },
@@ -294,6 +335,7 @@ export const useApplyLocation = () => {
                                 removeLabel,
                                 showSuccessNotification,
                                 spamAction,
+                                createFilters,
                             });
                         },
                     },
@@ -306,6 +348,7 @@ export const useApplyLocation = () => {
                 targetLabelID,
                 removeLabel,
                 showSuccessNotification,
+                createFilters,
             });
         } else {
             throw new Error('Not implemented');
