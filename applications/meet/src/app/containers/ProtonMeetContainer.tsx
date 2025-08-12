@@ -119,6 +119,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const mlsEnabled = useFlag('EnableE2EE');
     const mlsSetupDone = useRef(false);
+    const startWsHealthCheck = useRef(false);
 
     const notifications = useNotifications();
 
@@ -156,6 +157,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             setCurrentKey(groupKeyData.key);
             setCurrentEpoch(Number(groupKeyData.epoch));
 
+            startWsHealthCheck.current = true;
+
             return groupKeyData;
         },
         [participantSettings, token]
@@ -187,6 +190,27 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 }
             },
         });
+    }, []);
+
+    useEffect(() => {
+        const intervalId = setInterval(async () => {
+            if (wasmAppRef.current && wasmAppRef.current.getWsState && startWsHealthCheck.current) {
+                try {
+                    const connectionStatus = await wasmAppRef.current.getWsState();
+                    console.log('connectionStatus', connectionStatus);
+                    if (connectionStatus !== 2) {
+                        console.error('ws disconnection');
+                        if (confirm('Connection lost, please join meeting again')) {
+                            window.location.reload();
+                        }
+                    }
+                } catch (error) {
+                    console.error('Failed to get connection status:', error);
+                }
+            }
+        }, 3000);
+
+        return () => clearInterval(intervalId);
     }, []);
 
     const submitPassword = async () => {
@@ -283,6 +307,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 room.on('disconnected', () => {
                     instantMeetingRef.current = false;
                     mlsSetupDone.current = false;
+                    startWsHealthCheck.current = false;
 
                     setInitialisedParticipantNameMap(false);
                     setJoinedRoom(false);
@@ -418,6 +443,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         resetParticipantNameMap();
         void wasmAppRef.current?.leaveMeeting();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
+        startWsHealthCheck.current = false;
 
         setInitialisedParticipantNameMap(false);
         setJoinedRoom(false);
