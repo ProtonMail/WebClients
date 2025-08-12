@@ -41,8 +41,6 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
         try {
             const clipboardTTL = overrideClipboardTTL ?? settingsClipboardTTL;
 
-            console.warn('[DEBUG] handleActualCopy', { value, clipboardTTL });
-
             await writeToClipboard(value, clipboardTTL);
 
             const timeoutDurationHumanReadable = getClipboardTTLOptions().find(
@@ -63,8 +61,6 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     };
 
     const onCopyToClipboard = async (value: string) => {
-        console.warn('[DEBUG] onCopyToClipboard', { settingsClipboardTTL });
-
         if (BUILD_TARGET !== 'web' && settingsClipboardTTL === undefined) {
             setCachedCopy(value);
             setModal('settings');
@@ -75,8 +71,6 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     };
 
     const onSettingsChange = async (timeoutMs: number, silent = false) => {
-        console.warn('[DEBUG] onSettingsChange', { timeoutMs, silent });
-
         dispatch(settingsEditIntent('behaviors', { clipboard: { timeoutMs } }, silent));
     };
 
