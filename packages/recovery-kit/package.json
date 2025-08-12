@@ -11,6 +11,7 @@
     "dependencies": {
         "@pdfme/common": "^5.3.1",
         "@pdfme/generator": "^5.3.1",
+        "@pdfme/schemas": "^5.3.1",
         "@proton/utils": "workspace:^"
     },
     "devDependencies": {
@@ -19,5 +20,8 @@
         "jest": "^29.7.0",
         "ts-jest": "^29.4.0",
         "typescript": "^5.8.3"
+    },
+    "installConfig": {
+        "hoistingLimits": "workspaces"
     }
 }
