@@ -42,8 +42,13 @@ const result = (opts: WebpackEnvArgumentsV2): Configuration => {
             new InjectManifest({
                 swSrc: './src/service-worker.js',
                 swDest: 'service-worker.js',
-                // Any other config if needed.
-                maximumFileSizeToCacheInBytes: 10000000,
+                /**
+                 * Keep this value above the size of the entry points to prevent
+                 * `InjectManifest` from being called multiple times.
+                 * The precache manifest generated after the first call could be
+                 * innacurate see https://github.com/GoogleChrome/workbox/issues/1790
+                 */
+                maximumFileSizeToCacheInBytes: 20_000_000,
             })
         );
         // }
