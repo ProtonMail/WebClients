@@ -151,20 +151,83 @@ describe('WebsocketConnection', () => {
       expect(connection.reconnectTimeout).toBeUndefined()
     })
 
-    it('should wait for 1 minute before queuing reconnection if last disconnect reason is document timeout', async () => {
-      jest.useFakeTimers()
+    describe('should not queue reconnection if last disconnect reason is document timeout until there is user activity', () => {
+      beforeEach(() => {
+        jest.useFakeTimers()
 
-      connection.queueReconnection = jest.fn()
-      connection.callbacks.onFailToConnect = jest.fn()
-      connection.handleSocketClose(3005, 'Document timeout')
+        connection.isReconnectionStoppedDueToTimeout = true
 
-      expect(connection.isWaitingBeforeQueuingReconnection).toBe(true)
-      expect(connection.queueReconnection).not.toHaveBeenCalled()
+        connection.queueReconnection = jest.fn()
+        connection.callbacks.onFailToConnect = jest.fn()
+        connection.handleSocketClose(3005, 'Document timeout')
+      })
 
-      jest.advanceTimersByTime(60000)
+      it('should not queue reconnection immediately', () => {
+        expect(connection.isReconnectionStoppedDueToTimeout).toBe(true)
+        expect(connection.queueReconnection).not.toHaveBeenCalled()
+      })
 
-      expect(connection.isWaitingBeforeQueuingReconnection).toBe(false)
-      expect(connection.queueReconnection).toHaveBeenCalled()
+      it('should not queue reconnection after some time', () => {
+        jest.advanceTimersByTime(3000) // slightly more than 2 seconds, which is the base reconnection delay
+        expect(connection.isReconnectionStoppedDueToTimeout).toBe(true)
+        expect(connection.queueReconnection).not.toHaveBeenCalled()
+      })
+
+      it('should queue reconnection on mouse move', () => {
+        document.dispatchEvent(new Event('mousemove'))
+        expect(connection.isReconnectionStoppedDueToTimeout).toBe(false)
+        expect(connection.queueReconnection).toHaveBeenCalledWith({ skipDelay: true })
+      })
+
+      it('should queue reconnection on key down', () => {
+        connection.handleSocketClose(3005, 'Document timeout')
+        jest.advanceTimersByTime(3000)
+        expect(connection.isReconnectionStoppedDueToTimeout).toBe(true)
+        expect(connection.queueReconnection).not.toHaveBeenCalled()
+        document.dispatchEvent(new Event('keydown'))
+        expect(connection.isReconnectionStoppedDueToTimeout).toBe(false)
+        expect(connection.queueReconnection).toHaveBeenCalledWith({ skipDelay: true })
+      })
+
+      it('should queue reconnection on visibility change to visible', () => {
+        connection.handleSocketClose(3005, 'Document timeout')
+        jest.advanceTimersByTime(3000)
+        expect(connection.isReconnectionStoppedDueToTimeout).toBe(true)
+        expect(connection.queueReconnection).not.toHaveBeenCalled()
+
+        Object.defineProperty(document, 'visibilityState', {
+          value: 'hidden',
+          writable: true,
+        })
+        document.dispatchEvent(new Event('visibilitychange'))
+        expect(connection.isReconnectionStoppedDueToTimeout).toBe(true)
+        expect(connection.queueReconnection).not.toHaveBeenCalled()
+
+        Object.defineProperty(document, 'visibilityState', {
+          value: 'visible',
+          writable: true,
+        })
+        document.dispatchEvent(new Event('visibilitychange'))
+        expect(connection.isReconnectionStoppedDueToTimeout).toBe(false)
+        expect(connection.queueReconnection).toHaveBeenCalledWith({ skipDelay: true })
+      })
+    })
+
+    describe('should queue reconnection normally if last disconnect reason is not document timeout', () => {
+      beforeEach(() => {
+        jest.useFakeTimers()
+
+        connection.isReconnectionStoppedDueToTimeout = false
+
+        connection.queueReconnection = jest.fn()
+        connection.callbacks.onFailToConnect = jest.fn()
+        connection.handleSocketClose(1000, 'Some other error')
+      })
+
+      it('should queue reconnection normally', () => {
+        expect(connection.isReconnectionStoppedDueToTimeout).toBe(false)
+        expect(connection.queueReconnection).toHaveBeenCalled()
+      })
     })
   })
 
