@@ -112,9 +112,6 @@
       "Change": [
         "Wijzigen"
       ],
-      "Change email": [
-        "E-mailadres wijzigen"
-      ],
       "Check DNS": [
         "Controleer DNS"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "Wissen"
-      ],
-      "Clear search": [
-        "Zoekveld leegmaken"
       ],
       "Close": [
         "Sluiten"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "Verwijder alias"
-      ],
-      "Delete all": [
-        "Alles verwijderen"
       ],
       "Delete it, I will never need it": [
         "Verwijder het, ik heb het nooit nodig"
@@ -511,14 +502,8 @@
       "Resend invitation": [
         "Uitnodiging opnieuw verzenden"
       ],
-      "Reset": [
-        "Resetten"
-      ],
       "Reset history": [
         "Reset historiek"
-      ],
-      "Restore": [
-        "Herstel"
       ],
       "Restore item": [
         "Item herstellen"
@@ -721,11 +706,6 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Deïnstalleer ${ PASS_APP_NAME }"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } desktop-app"
       ]
     },
     "Button": {
@@ -1286,9 +1266,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1307,35 +1284,11 @@
       "Megabyte": [
         "Megabyt",
         "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
       ]
     },
     "Font face option": {
-      "System default": [
-        "Systeem standaard"
-      ],
       "Theme font": [
         "Thema lettertype"
-      ]
-    },
-    "Font size option": {
-      "Large": [
-        "Groot"
-      ],
-      "Medium (recommended)": [
-        "Gemiddeld (aanbevolen)"
-      ],
-      "Small": [
-        "Klein"
-      ],
-      "Very large": [
-        "Zeer groot"
-      ],
-      "Very small": [
-        "Zeer klein"
       ]
     },
     "Info": {
@@ -1571,9 +1524,6 @@
       "Congratulations, your access has been confirmed": [
         "Gefeliciteerd, uw toegang werd bevestigd"
       ],
-      "Copied to clipboard": [
-        "Gekopieerd naar het klembord"
-      ],
       "Coupon successfully applied!": [
         "Kortingscode succesvol toegepast!"
       ],
@@ -1618,12 +1568,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domein: ${ domainPath } of @"
-      ],
-      "Drop file here to upload": [
-        "Sleep bestand hier om te uploaden"
-      ],
-      "Drop to import": [
-        "Neerzetten om te importeren"
       ],
       "Editor": [
         "Bewerker"
@@ -1832,9 +1776,6 @@
       "Latest breach on ${ formattedDate }": [
         "Laatste inbreuk op ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "Leer wat te doen ${ dataLeakedLink }"
-      ],
       "Leaving item...": [
         "Item verlaten..."
       ],
@@ -1928,9 +1869,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-toegang tot ${ PASS_APP_NAME } vereist een PIN-code. U wordt uitgelogd na 3 mislukte pogingen."
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
       ],
       "Owner": [
         "Eigenaar"
@@ -2472,9 +2410,6 @@
       "your domain": [
         "uw domein"
       ],
-      "Your files will be encrypted and then saved": [
-        "Uw bestanden worden versleuteld en vervolgens opgeslagen"
-      ],
       "Your information was found on ${ displayedDate }": [
         "Uw informatie is gevonden op ${ displayedDate }"
       ],
@@ -2974,9 +2909,6 @@
       "https://example.com": [
         "https://voorbeeld.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "ID-kaart"
       ],
@@ -3051,9 +2983,6 @@
       ],
       "Key type": [
         "Sleuteltype"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Toetsenbordsneltoets: ${ shortcut }"
       ],
       "Language": [
         "Taal"
@@ -3520,9 +3449,6 @@
       "The URL has been copied to the clipboard": [
         "De URL is naar het klembord gekopieerd."
       ],
-      "Theme": [
-        "Thema"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Dit item is toegankelijk tot ${ date } of totdat de weergavelimiet is bereikt."
       ],
@@ -3693,16 +3619,8 @@
       "auto create rules ››": [
         "automatisch regels creëren"
       ],
-      "if your data is leaked": [
-        "als uw gegevens zijn gelekt"
-      ],
       "Learn more": [
         "Meer informatie"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "${ reason } inschakelen"
       ]
     },
     "Medium": {
@@ -3740,17 +3658,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Tweestapsauthenticatie vereist voor organisatie"
-      ],
-      "SSO integration": [
-        "SSO-integratie"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } is uitgezet"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } is aangezet"
       ]
     },
     "Option": {
@@ -4003,20 +3910,6 @@
       ],
       "Used on ${ url }": [
         "Gebruikt op ${ url }"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } en ${ remainingCount } ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Een potentieel ${ name } lek werd gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Uw informatie is in ten minste één datalek gevonden. Shakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
       ]
     },
     "sso": {
@@ -4352,9 +4245,6 @@
       "Inactive 2FA": [
         "Inactieve 2FA"
       ],
-      "Information exposed in breach": [
-        "Informatie die is blootgesteld bij datalek"
-      ],
       "Install extension": [
         "Extensie installeren"
       ],
@@ -4625,14 +4515,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Vandaag"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "Niet alle hier vermelde informatie werd voor alle gebruikers blootgesteld."
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Tenzij ze worden ontcijferd, blijven versleutelde wachtwoorden veilig, zelfs als ze worden blootgesteld."
       ]
     },
     "Validation": {
