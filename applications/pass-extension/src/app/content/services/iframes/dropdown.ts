@@ -186,11 +186,11 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * field the current dropdown is attached to. */
     iframe.registerMessageHandler(
         IFramePortMessageType.AUTOFILL_LOGIN,
-        withContext((ctx, { payload }) => {
+        withContext(async (ctx, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
             if (!form) return;
 
-            ctx?.service.autofill.autofillLogin(form, payload);
+            await ctx?.service.autofill.autofillLogin(form, payload);
             fieldRef.current?.focus({ preventAction: true });
         }),
         { userAction: true }
@@ -201,13 +201,13 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * text through the secure extension port channel */
     iframe.registerMessageHandler(
         IFramePortMessageType.AUTOFILL_GENERATED_PW,
-        withContext((ctx, { payload }) => {
+        withContext(async (ctx, { payload }) => {
             const form = fieldRef.current?.getFormHandle();
             const prompt = ctx?.getSettings().autosave.passwordSuggest;
 
             if (!form) return;
 
-            ctx?.service.autofill.autofillPassword(form, payload.password);
+            await ctx?.service.autofill.autofillPassword(form, payload.password);
             fieldRef.current?.focus({ preventAction: true });
 
             form.tracker
@@ -223,8 +223,8 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
      * aliases everytime the injected iframe dropdown is opened */
     iframe.registerMessageHandler(
         IFramePortMessageType.AUTOFILL_EMAIL,
-        ({ payload }) => {
-            fieldRef.current?.autofill(payload.email);
+        async ({ payload }) => {
+            await fieldRef.current?.autofill(payload.email);
             fieldRef.current?.focus({ preventAction: true });
             void fieldRef.current?.getFormHandle()?.tracker?.sync({ submit: false, partial: true });
         },
@@ -233,10 +233,10 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
 
     iframe.registerMessageHandler(
         IFramePortMessageType.AUTOFILL_IDENTITY,
-        withContext((ctx, { payload }) => {
+        withContext(async (ctx, { payload }) => {
             const field = fieldRef.current;
             if (field) {
-                ctx?.service.autofill.autofillIdentity(field, payload);
+                await ctx?.service.autofill.autofillIdentity(field, payload);
                 fieldRef.current?.focus({ preventAction: true });
             }
         }),
