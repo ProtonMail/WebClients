@@ -110,7 +110,7 @@ export class DocsApi {
       volumeId: docMeta.volumeId,
       linkId: docMeta.linkId,
     }).seedInitialCommit({
-      data: commit.serializeBinary(),
+      data: commit.serializeBinary() as Uint8Array<ArrayBuffer>,
     })
 
     return this.routeExecutor.execute(route)
@@ -129,7 +129,7 @@ export class DocsApi {
     const route = new DocsApiPrivateRouteBuilder({
       volumeId: nodeMeta.volumeId,
       linkId: nodeMeta.linkId,
-    }).squashCommit({ commitId, data: squash.serializeBinary() })
+    }).squashCommit({ commitId, data: squash.serializeBinary() as Uint8Array<ArrayBuffer> })
 
     return this.routeExecutor.execute(route)
   }

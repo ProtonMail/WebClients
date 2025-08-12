@@ -158,7 +158,7 @@ export default function useUploadHelper() {
             }
         });
 
-        const sha1Hash = sha1Instance.digest();
+        const sha1Hash = sha1Instance.digest() as Uint8Array<ArrayBuffer>;
 
         const contentHash = await generateLookupHash(arrayToHexString(sha1Hash), parentHashKey);
 

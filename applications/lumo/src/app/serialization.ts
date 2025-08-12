@@ -294,7 +294,7 @@ export async function serializeAttachment(
             rawBytes,
         };
 
-        const packed = msgpackEncode(privPlus);
+        const packed = msgpackEncode(privPlus) as Uint8Array<ArrayBuffer>;
         const encrypted: EncryptedData = await encryptUint8Array(packed, spaceDek, ad);
         return {
             ...attachmentPubRest,

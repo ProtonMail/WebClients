@@ -35,7 +35,7 @@ export class DecryptedCommit {
           updates.push(content)
         }
       }
-      const merged = mergeUpdates(updates)
+      const merged = mergeUpdates(updates) as Uint8Array<ArrayBuffer>
       return merged
     } catch (error) {
       throw new Error(`Failed to merge updates: ${error}`)

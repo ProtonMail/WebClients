@@ -310,7 +310,8 @@ const itemToProtobuf = (item: DeobfuscatedItem): SafeProtobufItem => {
     }
 };
 
-export const encodeItemContent = (item: SafeProtobufItem): Uint8Array<ArrayBuffer> => ProtobufItem.toBinary(item);
+export const encodeItemContent = (item: SafeProtobufItem): Uint8Array<ArrayBuffer> =>
+    ProtobufItem.toBinary(item) as Uint8Array<ArrayBuffer>;
 
 /* serialization will strip extraneous data */
 export const serializeItemContent = (item: Item): Uint8Array<ArrayBuffer> => {
