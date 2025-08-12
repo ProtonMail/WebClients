@@ -6,7 +6,6 @@ import AssistantIframe from 'proton-mail/components/assistant/AssistantIframe';
 import PrivateLayout from 'proton-mail/components/layout/PrivateLayout';
 import { LabelActionsContextProvider } from 'proton-mail/components/sidebar/EditLabelContext';
 import MailStartupModals from 'proton-mail/containers/MailStartupModals';
-import { paramsSelector } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { RouterMailboxContainer } from './RouterMailboxContainer';
@@ -21,7 +20,7 @@ const MailAppShell = (_props: {}, ref: Ref<HTMLDivElement>) => {
      */
     useAppShellSideEffects({ openShortcutsModal: (value: boolean) => mailShortcut.openModal(value) });
 
-    const { labelID } = useMailSelector(paramsSelector);
+    const { labelID } = useMailSelector((state) => state.elements.params);
 
     return (
         <PrivateLayout ref={ref} labelID={labelID}>
