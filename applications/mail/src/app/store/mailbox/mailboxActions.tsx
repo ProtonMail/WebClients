@@ -250,6 +250,7 @@ export const labelMessages = createAsyncThunk<
         labels: Label[];
         folders: Folder[];
         spamAction?: SPAM_ACTION;
+        onActionUndo?: () => void;
     },
     MailThunkExtra
 >(
@@ -264,6 +265,7 @@ export const labelMessages = createAsyncThunk<
             showSuccessNotification = true,
             spamAction,
             conversations,
+            onActionUndo,
         },
         { extra, dispatch }
     ) => {
@@ -289,6 +291,9 @@ export const labelMessages = createAsyncThunk<
                         LabelID: targetLabelID,
                         SpamAction: spamAction,
                     }),
+                onUndo: () => {
+                    onActionUndo?.();
+                },
             });
             return result;
         } catch (error) {
@@ -309,12 +314,22 @@ export const unlabelMessages = createAsyncThunk<
         showSuccessNotification?: boolean;
         labels: Label[];
         folders: Folder[];
+        onActionUndo?: () => void;
     },
     MailThunkExtra
 >(
     'mailbox/unlabelMessages',
     async (
-        { elements, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true, conversations },
+        {
+            elements,
+            labels,
+            folders,
+            targetLabelID,
+            isEncryptedSearch,
+            showSuccessNotification = true,
+            conversations,
+            onActionUndo,
+        },
         { extra, dispatch }
     ) => {
         try {
@@ -339,6 +354,9 @@ export const unlabelMessages = createAsyncThunk<
                         IDs: chunk.map((element: Element) => element.ID),
                         LabelID: targetLabelID,
                     }),
+                onUndo: () => {
+                    onActionUndo?.();
+                },
             });
             return result;
         } catch (error) {
@@ -359,6 +377,7 @@ export const labelConversations = createAsyncThunk<
         labels: Label[];
         folders: Folder[];
         spamAction?: SPAM_ACTION;
+        onActionUndo?: () => void;
     },
     MailThunkExtra
 >(
@@ -373,6 +392,7 @@ export const labelConversations = createAsyncThunk<
             isEncryptedSearch,
             showSuccessNotification = true,
             spamAction,
+            onActionUndo,
         },
         { extra, dispatch }
     ) => {
@@ -407,6 +427,9 @@ export const labelConversations = createAsyncThunk<
                         LabelID: targetLabelID,
                         SpamAction: spamAction,
                     }),
+                onUndo: () => {
+                    onActionUndo?.();
+                },
             });
             return result;
         } catch (error) {
@@ -425,12 +448,21 @@ export const unlabelConversations = createAsyncThunk<
         showSuccessNotification?: boolean;
         labels: Label[];
         folders: Folder[];
+        onActionUndo?: () => void;
     },
     MailThunkExtra
 >(
     'mailbox/unlabelConversations',
     async (
-        { conversations, labels, folders, targetLabelID, isEncryptedSearch, showSuccessNotification = true },
+        {
+            conversations,
+            labels,
+            folders,
+            targetLabelID,
+            isEncryptedSearch,
+            showSuccessNotification = true,
+            onActionUndo,
+        },
         { extra, dispatch }
     ) => {
         try {
@@ -460,6 +492,9 @@ export const unlabelConversations = createAsyncThunk<
                         IDs: chunk.map((conversation: Conversation) => conversation.ID),
                         LabelID: targetLabelID,
                     }),
+                onUndo: () => {
+                    onActionUndo?.();
+                },
             });
             return result;
         } catch (error) {
