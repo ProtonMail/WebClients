@@ -13,6 +13,7 @@ import { DocumentMeta } from '../Models/DocumentMeta'
 import type { GetNode } from '../UseCase/GetNode'
 import type { DocumentStateValues } from '../State/DocumentState'
 import { DocumentState } from '../State/DocumentState'
+import { DocumentUpdate } from '@proton/docs-proto'
 
 describe('AuthenticatedDocController', () => {
   let controller: AuthenticatedDocController
@@ -63,7 +64,7 @@ describe('AuthenticatedDocController', () => {
     })
 
     it('should create initial commit', async () => {
-      await controller.handleEditorProvidingInitialConversionContent(new Uint8Array())
+      await controller.handleEditorProvidingInitialConversionContent(new DocumentUpdate())
 
       expect(controller.createInitialCommit).toHaveBeenCalled()
     })
