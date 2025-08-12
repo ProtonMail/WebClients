@@ -3,14 +3,15 @@ import { c, msgid } from 'ttag';
 import { NotificationButton, useNotifications } from '@proton/components';
 
 import { useErrorHandler } from '../_utils';
-import type { LinkInfo } from './interface';
+
+type Item = { linkId: string; name?: string };
 
 export default function useListNotifications() {
     const { createNotification } = useNotifications();
     const { showAggregatedErrorNotification } = useErrorHandler();
 
     const createSuccessMessage = (
-        linkInfos: LinkInfo[],
+        linkInfos: Item[],
         linkIds: string[],
         oneItemMessage: (name: string) => string,
         manyItemsMessage: (numberOfItems: number) => string,
@@ -40,7 +41,7 @@ export default function useListNotifications() {
     };
 
     const createFailureMessage = (
-        linkInfos: LinkInfo[],
+        linkInfos: Item[],
         failures: { [linkId: string]: any },
         oneItemMessage: (name: string) => string,
         manyItemsMessage: (numberOfItems: number) => string
@@ -56,7 +57,7 @@ export default function useListNotifications() {
     };
 
     const createMovedItemsNotifications = (
-        linkInfos: LinkInfo[],
+        linkInfos: Item[],
         ok: string[],
         failures: { [linkId: string]: any },
         undoAction?: () => Promise<void>
@@ -87,7 +88,7 @@ export default function useListNotifications() {
     };
 
     const createTrashedItemsNotifications = (
-        linkInfos: LinkInfo[],
+        linkInfos: Item[],
         ok: string[],
         failures: { [linkId: string]: any },
         undoAction?: () => Promise<void>
@@ -118,7 +119,7 @@ export default function useListNotifications() {
     };
 
     const createDeletedPublicItemsNotifications = (
-        linkInfos: LinkInfo[],
+        linkInfos: Item[],
         ok: string[],
         failures: { [linkId: string]: any }
     ) => {
@@ -147,7 +148,7 @@ export default function useListNotifications() {
     };
 
     const createRestoredItemsNotifications = (
-        linkInfos: LinkInfo[],
+        linkInfos: Item[],
         ok: string[],
         failures: { [linkId: string]: any },
         undoAction?: () => Promise<void>
@@ -178,11 +179,7 @@ export default function useListNotifications() {
         );
     };
 
-    const createDeletedItemsNotifications = (
-        linkInfos: LinkInfo[],
-        ok: string[],
-        failures: { [linkId: string]: any }
-    ) => {
+    const createDeletedItemsNotifications = (linkInfos: Item[], ok: string[], failures: { [linkId: string]: any }) => {
         createSuccessMessage(
             linkInfos,
             ok,
@@ -213,5 +210,7 @@ export default function useListNotifications() {
         createRestoredItemsNotifications,
         createDeletedItemsNotifications,
         createDeletedPublicItemsNotifications,
+        createSuccessMessage,
+        createFailureMessage,
     };
 }
