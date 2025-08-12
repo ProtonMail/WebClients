@@ -5,7 +5,7 @@ import { MemberRole } from '@proton/drive/index';
 
 import type { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 
-type FolderViewItem = {
+export type FolderViewItem = {
     uid: string;
     name: string;
     rootShareId: string;
@@ -46,6 +46,7 @@ type FolderPermissions = {
 type FolderState = {
     isLoading: boolean;
     items: Map<string, FolderViewItem>;
+    itemUids: Set<string>;
     folder?: FolderViewData;
     error: EnrichedError | null;
     role: MemberRole;
@@ -59,9 +60,11 @@ type FolderActions = {
     setError: (error: EnrichedError | null) => void;
     setRole: (role: MemberRole) => void;
     setItem: (item: FolderViewItem) => void;
+    updateItem: (uid: string, item: Partial<FolderViewItem>) => void;
+    removeItem: (uid: string) => void;
     reset: () => void;
-    getItemUids: () => string[];
     getFolderItems: () => FolderViewItem[];
+    getItemUids: () => string[];
 };
 
 type FolderStore = FolderState & FolderActions;
@@ -69,6 +72,7 @@ type FolderStore = FolderState & FolderActions;
 const initialState: FolderState = {
     isLoading: true,
     items: new Map(),
+    itemUids: new Set(),
     folder: undefined,
     error: null,
     role: MemberRole.Viewer,
@@ -92,12 +96,51 @@ export const useFolderStore = create<FolderStore>()(
             set((state) => {
                 const updatedItems = new Map(state.items);
                 updatedItems.set(item.uid, item);
+
+                if (!state.itemUids.has(item.uid)) {
+                    let newUids = new Set(state.itemUids);
+                    newUids.add(item.uid);
+                    return {
+                        items: updatedItems,
+                        itemUids: newUids,
+                    };
+                }
+
                 return {
                     items: updatedItems,
                 };
             }),
-        getItemUids: () => Array.from(get().items.keys()),
+        updateItem: (uid: string, item: Partial<FolderViewItem>) =>
+            set((state) => {
+                const updatedItems = new Map(state.items);
+                const existingItem = state.items.get(uid);
+                if (existingItem) {
+                    updatedItems.set(uid, {
+                        ...existingItem,
+                        ...item,
+                    });
+                } else {
+                    throw new Error(`Updating non existing uid: ${uid}`);
+                }
+
+                return {
+                    items: updatedItems,
+                };
+            }),
+        removeItem: (uid: string) =>
+            set((state) => {
+                const updatedItems = new Map(state.items);
+                updatedItems.delete(uid);
+                let newUids = new Set(state.itemUids);
+                newUids.delete(uid);
+
+                return {
+                    items: updatedItems,
+                    itemUids: newUids,
+                };
+            }),
         getFolderItems: () => Array.from(get().items.values()),
+        getItemUids: () => Array.from(get().itemUids),
         setPermissions: (permissions) => set({ permissions }),
         setFolder: (folder) => set({ folder }),
         setError: (error) => set({ error }),
