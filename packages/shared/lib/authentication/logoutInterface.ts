@@ -1,14 +1,22 @@
 import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
+import type { AccessType } from '@proton/shared/lib/authentication/accessType';
+
+export interface LegacySerializedSignoutUserData {
+    id: string;
+    // isSubUser: legacy passed value
+    s: boolean;
+    a: number;
+}
 
 export interface SerializedSignoutUserData {
     id: string;
     // isSubUser: legacy passed value
-    s: boolean;
+    a: number;
 }
 
 export interface SignoutUserData {
     id: string;
-    isSelf: boolean;
+    accessType: AccessType;
 }
 
 export interface SignoutSessions {

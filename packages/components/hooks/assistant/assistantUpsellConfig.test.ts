@@ -1,4 +1,5 @@
 import { ADDON_NAMES, CYCLE, PLANS, SelectedPlan } from '@proton/payments';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP } from '@proton/testing/data';
 
@@ -11,6 +12,7 @@ const baseConfig: any = {
 const getUser = (diff: Partial<UserModel>) => {
     return {
         isSelf: true,
+        accessType: AccessType.Self,
         ...diff,
     } as UserModel;
 };
@@ -19,6 +21,7 @@ describe('getAssistantUpsellConfig', () => {
     it('should return undefined if the user is a sub user', () => {
         const user = getUser({
             isSelf: false,
+            accessType: AccessType.AdminAccess,
         });
         const selectedPlan = new SelectedPlan({}, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
 

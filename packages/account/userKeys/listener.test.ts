@@ -30,6 +30,12 @@ jest.mock('@proton/shared/lib/keys', () => {
     };
 });
 
+const defaultUser = {
+    Flags: {},
+} as UserModel;
+
+const defaultPrivateKey = {} as UserModel['Keys'][0];
+
 const reducer = combineReducers({
     ...userReducer,
     ...userKeysReducer,
@@ -45,7 +51,7 @@ const setup = (preloadedState?: Partial<ReturnType<typeof reducer>>) => {
 
     const { store, startListening } = getTestStore({
         preloadedState: {
-            user: getModelState({ Keys: [{ PrivateKey: '1' }] } as UserModel),
+            user: getModelState({ ...defaultUser, Keys: [{ ...defaultPrivateKey, PrivateKey: '1' }] }),
             ...preloadedState,
         },
         reducer,
@@ -70,7 +76,7 @@ describe('user keys listener', () => {
     it('should react to user object server events when initialised', async () => {
         const { store } = setup();
 
-        store.dispatch(getServerEvent({ User: { Keys: [{ PrivateKey: '1' }] } as unknown as UserModel }));
+        store.dispatch(getServerEvent({ User: { ...defaultUser, Keys: [{ ...defaultPrivateKey, PrivateKey: '1' }] } }));
         expect(mockedUserKeysThunk).toHaveBeenCalledTimes(0);
         expect(mockedGetDecryptedUserKeysHelper).toHaveBeenCalledTimes(0);
         expect(selectUserKeys(store.getState()).value).toBeUndefined();
@@ -85,7 +91,7 @@ describe('user keys listener', () => {
 
         const result2 = [getKey(3), getKey(4), getKey(5)];
         mockedGetDecryptedUserKeysHelper.mockReturnValue(result2);
-        store.dispatch(getServerEvent({ User: { Keys: [{ PrivateKey: '2' }] } as unknown as UserModel }));
+        store.dispatch(getServerEvent({ User: { ...defaultUser, Keys: [{ ...defaultPrivateKey, PrivateKey: '2' }] } }));
         expect(mockedUserKeysThunk).toHaveBeenCalledTimes(2);
 
         await waitFor(() => expect(mockedGetDecryptedUserKeysHelper).toHaveBeenCalledTimes(2));
@@ -95,7 +101,15 @@ describe('user keys listener', () => {
         expect(mockedCryptoProxy.clearKey.mock.calls[0][0]).toEqual({ key: firstUserKeysResult[0].privateKey });
 
         // Again without any change should not trigger anything.
-        store.dispatch(getServerEvent({ User: { Name: 'b', Keys: [{ PrivateKey: '2' }] } as unknown as UserModel }));
+        store.dispatch(
+            getServerEvent({
+                User: {
+                    ...defaultUser,
+                    Name: 'b',
+                    Keys: [{ ...defaultPrivateKey, PrivateKey: '2' }],
+                },
+            })
+        );
         expect(mockedUserKeysThunk).toHaveBeenCalledTimes(2);
     });
 });

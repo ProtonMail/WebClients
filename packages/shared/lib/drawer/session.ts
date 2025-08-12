@@ -1,3 +1,4 @@
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { type PersistedSession, SessionSource } from '../authentication/SessionInterface';
@@ -50,7 +51,7 @@ export const resumeSessionDrawerApp = ({
                     payloadVersion: 1,
                     localID,
                     UserID: User.ID,
-                    isSelf: false,
+                    accessType: AccessType.Self,
                     source: SessionSource.Proton,
                     persistent,
                     persistedAt: Date.now(),

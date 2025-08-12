@@ -24,6 +24,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useLoading } from '@proton/hooks';
 import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { Fido2Data, InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -106,15 +107,33 @@ const PasswordForm = ({
     defaultPassword,
     onSubmit,
     loading,
-    isSignedInAsAdmin,
+    accessType = AccessType.Self,
 }: {
-    isSignedInAsAdmin: boolean;
+    accessType?: AccessType;
     defaultPassword: string;
     onSubmit: (password: string) => void;
     loading: boolean;
 }) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [password, setPassword] = useState(defaultPassword);
+    const { label, info } = (() => {
+        if (accessType === AccessType.EmergencyAccess) {
+            return {
+                info: c('Info').t`Enter your own password (as trusted contact).`,
+                label: c('Label').t`Your password (trusted contact)`,
+            };
+        }
+        if (accessType === AccessType.AdminAccess) {
+            return {
+                info: c('Info').t`Enter your own password (as organization admin).`,
+                label: c('Label').t`Your password (admin)`,
+            };
+        }
+        return {
+            info: null,
+            label: c('Label').t`Password`,
+        };
+    })();
     return (
         <Form
             id={FORM_ID}
@@ -125,9 +144,7 @@ const PasswordForm = ({
                 onSubmit(password);
             }}
         >
-            {isSignedInAsAdmin && (
-                <div className="mb-4">{c('Info').t`Enter your own password (as organization admin).`}</div>
-            )}
+            {info && <div className="mb-4">{info}</div>}
             <InputFieldTwo
                 autoFocus
                 autoComplete="current-password"
@@ -137,7 +154,7 @@ const PasswordForm = ({
                 disableChange={loading}
                 onValue={setPassword}
                 error={validator([requiredValidator(password)])}
-                label={isSignedInAsAdmin ? c('Label').t`Your password (admin)` : c('Label').t`Password`}
+                label={label}
                 placeholder={c('Placeholder').t`Password`}
             />
         </Form>
@@ -342,7 +359,7 @@ const SrpAuthModal = ({
                     <>
                         <PasswordForm
                             key={`${rerender}`}
-                            isSignedInAsAdmin={user?.isSelf === false}
+                            accessType={user?.accessType}
                             defaultPassword={password}
                             onSubmit={(password) => {
                                 return withSubmitting(handleSubmit({ step, password, twoFa: undefined }));

@@ -1,5 +1,7 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
+import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { omit } from '@proton/shared/lib/helpers/object';
+import isEnumValue from '@proton/utils/isEnumValue';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -41,15 +43,18 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
     }
     try {
         const parsedValue = JSON.parse(itemValue);
-        const isSelf = (() => {
+        const accessType = (() => {
             /* Legacy persisted value. The meaning has been inverted into `self`, so it compares to false. */
             if (parsedValue.isSubUser !== undefined) {
-                return parsedValue.isSubUser === false;
+                return parsedValue.isSubUser === false ? AccessType.Self : AccessType.AdminAccess;
             }
             if (parsedValue.isSelf !== undefined) {
-                return parsedValue.isSelf === true;
+                return parsedValue.isSelf === true ? AccessType.Self : AccessType.AdminAccess;
             }
-            return true;
+            if (parsedValue.accessType !== undefined && isEnumValue(parsedValue.accessType, AccessType)) {
+                return parsedValue.accessType as AccessType;
+            }
+            return AccessType.Self;
         })();
         return {
             localID,
@@ -57,7 +62,7 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
             UID: parsedValue.UID || '',
             blob: parsedValue.blob || '',
             source: parsedValue.source ?? SessionSource.Proton, // Default to Proton since we can't determine it properly
-            isSelf,
+            accessType,
             persistent: typeof parsedValue.persistent === 'boolean' ? parsedValue.persistent : true, // Default to true (old behavior)
             trusted: parsedValue.trusted || false,
             payloadVersion: parsedValue.payloadVersion || 1,
@@ -134,10 +139,10 @@ export const getPersistedSessionByUID = (UID: string) => {
     return persistedSessions.find((session) => session.UID === UID);
 };
 
-export const getMinimalPersistedSession = ({ localID, isSelf }: PersistedSession): PersistedSessionLite => {
+export const getMinimalPersistedSession = ({ localID, accessType }: PersistedSession): PersistedSessionLite => {
     return {
         localID,
-        isSelf,
+        accessType,
     };
 };
 
@@ -190,7 +195,7 @@ export const getPersistedSessionData = async (
         UID: string;
         keyPassword: string;
         offlineKey: OfflineKey | undefined;
-        isSelf: boolean;
+        accessType: AccessType;
         persistent: boolean;
         trusted: boolean;
         persistedAt: number;
@@ -233,7 +238,7 @@ export const getPersistedSessionData = async (
         localID,
         UserID: data.UserID,
         UID: data.UID,
-        isSelf: data.isSelf,
+        accessType: data.accessType,
         persistent: data.persistent,
         trusted: data.trusted,
         source: data.source,
