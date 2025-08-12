@@ -22,7 +22,6 @@ import { useGetElementByID } from 'proton-mail/hooks/mailbox/useElements';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
-import { paramsSelector } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
     labelConversations,
@@ -53,7 +52,7 @@ export const useApplyLocation = () => {
     const { conversationMoveEngine, messageMoveEngine } = useMoveEngine();
     const { notify } = useMailGlobalModals();
 
-    const sourceLabelID = useMailSelector(paramsSelector).labelID;
+    const sourceLabelID = useMailSelector((state) => state.elements.params).labelID;
 
     const { getFilterActions } = useCreateFilters();
 

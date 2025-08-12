@@ -37,7 +37,6 @@ import {
     loading as loadingSelector,
     messagesToLoadMoreES as messagesToLoadMoreESSelector,
     pageIsConsecutive as pageIsConsecutiveSelector,
-    params as paramsSelector,
     partialESSearch as partialESSearchSelector,
     pendingActions as pendingActionsSelector,
     placeholderCount as placeholderCountSelector,
@@ -140,7 +139,7 @@ export const useElements: UseElements = ({
 
     const counts = { counts: countValues, loading: countsLoading };
 
-    const stateParams = useMailSelector(paramsSelector);
+    const stateParams = useMailSelector((state) => state.elements.params);
     const elementsMap = useMailSelector(elementsMapSelector);
     const pendingActions = useMailSelector(pendingActionsSelector);
     const tasksRunning = useMailSelector(taskRunning);
