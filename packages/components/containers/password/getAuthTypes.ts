@@ -12,11 +12,11 @@ export const getAuthTypes = ({
 }: {
     scope: 'locked' | 'password';
     infoResult: InfoAuthedResponse | undefined;
-    userSettings: UserSettings;
+    userSettings: UserSettings | undefined;
     app: APP_NAMES;
 }) => {
     // locked scope doesn't require 2fa
-    const enabled = scope === 'locked' ? 0 : infoResult?.['2FA']?.Enabled || userSettings?.['2FA']?.Enabled || 0;
+    const enabled = scope === 'locked' ? 0 : (infoResult?.['2FA']?.Enabled ?? userSettings?.['2FA']?.Enabled) || 0;
     const hasTOTPEnabled = getHasTOTPEnabled(enabled);
     const hasFido2Enabled = getHasFIDO2Support(app, location.hostname) && getHasFIDO2Enabled(enabled);
 
