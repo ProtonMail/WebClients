@@ -22,7 +22,6 @@ import {
     getPlanName,
     getPlanNameFromIDs,
     getPlanTitle,
-    isLifetimePlan,
     isLifetimePlanSelected,
 } from '@proton/payments';
 import { type APP_NAMES, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -33,33 +32,7 @@ import {
 } from '@proton/shared/lib/helpers/checkout';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
 
-type RenewalNoticeProps = {
-    cycle: CYCLE;
-    subscription?: Subscription;
-} & Partial<CheckoutModifiers>;
-
-const isBundleB2CPlan = (planOrPlanIDs: PLANS | PlanIDs | undefined): boolean => {
-    if (!planOrPlanIDs) {
-        return false;
-    }
-
-    const plan = typeof planOrPlanIDs === 'string' ? planOrPlanIDs : getPlanNameFromIDs(planOrPlanIDs);
-    if (!plan) {
-        return false;
-    }
-
-    return [PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY].includes(plan);
-};
-
-export const getRenewalPricingSubjectToChangeText = (
-    planOrPlanIDs: PLANS | PlanIDs | undefined,
-    cycle: CYCLE,
-    app: APP_NAMES
-): string | string[] | null => {
-    if (!isBundleB2CPlan(planOrPlanIDs) || cycle <= CYCLE.YEARLY) {
-        return null;
-    }
-
+export const getRenewalPricingSubjectToChangeText = (app: APP_NAMES): string | string[] | null => {
     const termsAndConditionsUrl = getTermsURL(app);
     const termsAndConditionsLink = (
         <Href className="color-weak hover:color-weak" href={termsAndConditionsUrl}>
@@ -70,35 +43,30 @@ export const getRenewalPricingSubjectToChangeText = (
     return c('Payments').jt`Renewal pricing subject to change according to ${termsAndConditionsLink}.`;
 };
 
-// Disabling this for now as the result of P2-401. We don't need this annotation for now as we are replacing
-// it with clearer renewal notices. We might still need the T&C clause in the future, so I'd like to keep it for
-// now.
-// const appendTermsAndConditionsLink = (
-//     text: (string | string[])[],
-//     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//     planOrPlanIDs: PLANS | PlanIDs | undefined,
-//     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//     cycle: CYCLE,
-//     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//     app: APP_NAMES
-// ): (string | string[])[] => {
-//     return text;
-
-//     // const link = getRenewalPricingSubjectToChangeText(planOrPlanIDs, cycle, app);
-//     // if (!link) {
-//     //     return text;
-//     // }
-
-//     // return [...text, ' ', link];
-// };
+type Translation = string | (string | string[])[];
 
 const appendTermsAndConditionsLink = (
-    text: (string | string[])[],
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    ...args: any[]
-) => {
-    return text;
+    text: Translation,
+    app: APP_NAMES,
+    options?: { short?: boolean }
+): Translation => {
+    const short = options?.short ?? false;
+    if (short) {
+        return text;
+    }
+
+    const link = getRenewalPricingSubjectToChangeText(app);
+    if (!link) {
+        return text;
+    }
+
+    return [...text, ' ', link];
 };
+
+type RenewalNoticeProps = {
+    cycle: CYCLE;
+    subscription?: Subscription;
+} & Partial<CheckoutModifiers>;
 
 const getRegularRenewalNoticeText = ({
     checkout,
@@ -107,12 +75,10 @@ const getRegularRenewalNoticeText = ({
     isScheduledChargedImmediately,
     isScheduledChargedLater,
     subscription,
-    planIDs,
     currency,
     app,
 }: RenewalNoticeProps & {
     checkout: SubscriptionCheckoutData;
-    planIDs: PlanIDs;
     currency: Currency;
     app: APP_NAMES;
 }) => {
@@ -148,7 +114,7 @@ const getRegularRenewalNoticeText = ({
         const nextBillingDate = c('Info')
             .t`Your next billing date is ${renewalTime}. Please contact support if you require an immediate plan change.`;
 
-        return appendTermsAndConditionsLink([autoRenewNote, ' ', nextBillingDate], planIDs, cycle, app);
+        return appendTermsAndConditionsLink([autoRenewNote, ' ', nextBillingDate], app);
     }
 
     const renewAmount = checkout.renewPrice;
@@ -165,7 +131,7 @@ const getRegularRenewalNoticeText = ({
             renewCycle
         );
 
-        return appendTermsAndConditionsLink([one, ' ', two], planIDs, cycle, app);
+        return appendTermsAndConditionsLink([one, ' ', two], app);
     }
 
     const start = (() => {
@@ -181,20 +147,18 @@ const getRegularRenewalNoticeText = ({
     })();
 
     const nextBillingDate = c('Info').jt`Your next billing date is ${renewalTime}.`;
-    return appendTermsAndConditionsLink([start, ' ', nextBillingDate], planIDs, cycle, app);
+    return appendTermsAndConditionsLink([start, ' ', nextBillingDate], app);
 };
 
 const getRenewNoticeTextForLimitedCoupons = ({
     coupon,
     cycle: subscriptionLength, // Elaborate name of the variable to help the translators
-    planIDs,
     currency,
     checkout,
     short,
     app,
 }: {
     cycle: CYCLE;
-    planIDs: PlanIDs;
     currency: Currency;
     coupon: Coupon;
     checkout: SubscriptionCheckoutData;
@@ -216,12 +180,17 @@ const getRenewNoticeTextForLimitedCoupons = ({
 
     if (couponRedemptions === 1) {
         if (short) {
-            return c('Payments').jt`Renews at ${renewPriceStr}, cancel anytime.`;
+            return appendTermsAndConditionsLink(c('Payments').jt`Renews at ${renewPriceStr}, cancel anytime.`, app, {
+                short: true,
+            });
         }
 
         if (subscriptionLength === CYCLE.MONTHLY) {
-            return c('Payments')
-                .t`The specially discounted price of ${priceWithDiscount} is valid for the first month. Then it will automatically be renewed at ${renewPriceStr} every month. You can cancel at any time.`;
+            return appendTermsAndConditionsLink(
+                c('Payments')
+                    .t`The specially discounted price of ${priceWithDiscount} is valid for the first month. Then it will automatically be renewed at ${renewPriceStr} every month. You can cancel at any time.`,
+                app
+            );
         }
 
         const one = c('Payments').ngettext(
@@ -236,14 +205,17 @@ const getRenewNoticeTextForLimitedCoupons = ({
             renewalLength
         );
 
-        return appendTermsAndConditionsLink([one, ' ', two], planIDs, subscriptionLength, app);
+        return appendTermsAndConditionsLink([one, ' ', two], app);
     }
 
     if (subscriptionLength === CYCLE.MONTHLY) {
-        return c('Payments').ngettext(
-            msgid`The specially discounted price of ${priceWithDiscount} is valid for the first month. The coupon is valid for ${couponRedemptions} renewal. Then it will automatically be renewed at ${renewPriceStr} for 1 month. You can cancel at any time.`,
-            `The specially discounted price of ${priceWithDiscount} is valid for the first month. The coupon is valid for ${couponRedemptions} renewals. Then it will automatically be renewed at ${renewPriceStr} for 1 month. You can cancel at any time.`,
-            couponRedemptions
+        return appendTermsAndConditionsLink(
+            c('Payments').ngettext(
+                msgid`The specially discounted price of ${priceWithDiscount} is valid for the first month. The coupon is valid for ${couponRedemptions} renewal. Then it will automatically be renewed at ${renewPriceStr} for 1 month. You can cancel at any time.`,
+                `The specially discounted price of ${priceWithDiscount} is valid for the first month. The coupon is valid for ${couponRedemptions} renewals. Then it will automatically be renewed at ${renewPriceStr} for 1 month. You can cancel at any time.`,
+                couponRedemptions
+            ),
+            app
         );
     }
 
@@ -265,10 +237,16 @@ const getRenewNoticeTextForLimitedCoupons = ({
         renewalLength
     );
 
-    return appendTermsAndConditionsLink([one, ' ', two, ' ', three], planIDs, subscriptionLength, app);
+    return appendTermsAndConditionsLink([one, ' ', two, ' ', three], app);
 };
 
-export const getPassLifetimeRenewNoticeText = ({ subscription }: { subscription?: Subscription }) => {
+export const getPassLifetimeRenewNoticeText = ({
+    subscription,
+    app,
+}: {
+    subscription?: Subscription;
+    app: APP_NAMES;
+}) => {
     const planName = getPlanName(subscription);
     if (!planName || planName === PLANS.FREE) {
         return c('Info')
@@ -282,21 +260,25 @@ export const getPassLifetimeRenewNoticeText = ({ subscription }: { subscription?
     }
 
     const planTitle = getPlanTitle(subscription);
-    return c('Info')
-        .t`${PASS_SHORT_APP_NAME} lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${PASS_SHORT_APP_NAME}. Your ${planTitle} subscription renewal price and date remain unchanged.`;
+    return appendTermsAndConditionsLink(
+        c('Info')
+            .t`${PASS_SHORT_APP_NAME} lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${PASS_SHORT_APP_NAME}. Your ${planTitle} subscription renewal price and date remain unchanged.`,
+        app
+    );
 };
 
 export const getLifetimeRenewNoticeText = ({
     subscription,
     planIDs,
+    app,
 }: {
     planIDs: PlanIDs;
     subscription?: Subscription;
+    app: APP_NAMES;
 }) => {
     const planName = getPlanNameFromIDs(planIDs);
-
-    if (isLifetimePlan(planName)) {
-        return getPassLifetimeRenewNoticeText({ subscription });
+    if (planName === PLANS.PASS_LIFETIME) {
+        return getPassLifetimeRenewNoticeText({ subscription, app });
     }
 };
 
@@ -321,13 +303,12 @@ export const getCheckoutRenewNoticeText = ({
     app: APP_NAMES;
 } & RenewalNoticeProps): ReactNode => {
     if (isLifetimePlanSelected(planIDs)) {
-        return getLifetimeRenewNoticeText({ ...renewalNoticeProps, planIDs });
+        return getLifetimeRenewNoticeText({ ...renewalNoticeProps, planIDs, app });
     }
 
     const limitedCouponsNotice = getRenewNoticeTextForLimitedCoupons({
         coupon,
         cycle,
-        planIDs,
         currency,
         checkout,
         short,
@@ -341,25 +322,30 @@ export const getCheckoutRenewNoticeText = ({
     return getRegularRenewalNoticeText({
         checkout,
         cycle,
-        planIDs,
         currency,
         app,
         ...renewalNoticeProps,
     });
 };
 
-const getTrialRenewalNoticeText = ({ checkResult }: { checkResult: RequiredCheckResponse }) => {
+const getTrialRenewalNoticeText = ({ checkResult, app }: { checkResult: RequiredCheckResponse; app: APP_NAMES }) => {
     const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
     const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
     const cycle = checkResult.RenewCycle;
 
     if (cycle === CYCLE.MONTHLY) {
-        return c('b2b_trials_2025_Info')
-            .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews monthly on ${formattedDate}. You won’t be charged if you cancel before ${formattedDate}.`;
+        return appendTermsAndConditionsLink(
+            c('b2b_trials_2025_Info')
+                .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews monthly on ${formattedDate}. You won’t be charged if you cancel before ${formattedDate}.`,
+            app
+        );
     }
 
-    return c('b2b_trials_2025_Info')
-        .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews every ${cycle} months on ${formattedDate}. You won’t be charged if you cancel before ${formattedDate}.`;
+    return appendTermsAndConditionsLink(
+        c('b2b_trials_2025_Info')
+            .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews every ${cycle} months on ${formattedDate}. You won’t be charged if you cancel before ${formattedDate}.`,
+        app
+    );
 };
 
 export const getCheckoutRenewNoticeTextFromCheckResult = ({
@@ -380,7 +366,7 @@ export const getCheckoutRenewNoticeTextFromCheckResult = ({
     const isTrial = checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
     if (isTrial) {
-        return getTrialRenewalNoticeText({ checkResult });
+        return getTrialRenewalNoticeText({ checkResult, app });
     }
 
     return getCheckoutRenewNoticeText({
