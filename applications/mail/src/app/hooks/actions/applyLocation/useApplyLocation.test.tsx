@@ -40,6 +40,17 @@ jest.mock('proton-mail/store/hooks', () => ({
     useMailSelector: jest.fn().mockReturnValue(jest.fn()),
 }));
 
+jest.mock('proton-mail/hooks/actions/useCreateFilters', () => ({
+    useCreateFilters: jest.fn(() => ({
+        getSendersToFilter: jest.fn(),
+        getFilterActions: jest.fn(() => ({
+            getSendersToFilter: jest.fn(),
+            doCreateFilters: jest.fn(),
+            undoCreateFilters: jest.fn(),
+        })),
+    })),
+}));
+
 const mockedCreateNotification = jest.fn();
 jest.mock('@proton/components', () => {
     return {
@@ -284,6 +295,9 @@ describe('useApplyLocation', () => {
                     folders: [],
                     elements: [element],
                     conversations: [],
+                    sourceLabelID: undefined,
+                    spamAction: undefined,
+                    onActionUndo: expect.any(Function),
                 });
                 expect(mockedUnlabelMessages).not.toHaveBeenCalled();
             });
@@ -310,6 +324,9 @@ describe('useApplyLocation', () => {
                     folders: [],
                     elements: [element],
                     conversations: [],
+                    sourceLabelID: undefined,
+                    spamAction: undefined,
+                    onActionUndo: expect.any(Function),
                 });
                 expect(mockedUnlabelMessages).not.toHaveBeenCalled();
             });
@@ -338,6 +355,8 @@ describe('useApplyLocation', () => {
                     folders: [],
                     elements: [element],
                     conversations: [],
+                    onActionUndo: expect.any(Function),
+                    sourceLabelID: undefined,
                 });
             });
         });
