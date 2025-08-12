@@ -83,9 +83,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     })
 
     documentState.subscribeToEvent('EditorRequestsPropagationOfUpdate', (payload) => {
-      if (payload.message.type.wrapper !== 'conversion') {
-        this.propagateUpdate(payload.message, payload.debugSource)
-      }
+      this.propagateUpdate(payload.message, payload.debugSource)
     })
 
     documentState.subscribeToEvent('DriveFileConversionToDocBegan', () => {
@@ -359,6 +357,19 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
           debugSource,
         )
       }
+    } else if (message.type.wrapper === 'conversion') {
+      this.logger.info('Received conversion message, handling initial conversion content')
+      void this.websocketService.handleInitialConversionContent(
+        this.documentState.getProperty('entitlements').nodeMeta,
+        message.content,
+        (content) => {
+          console.debug('Creating initial commit from conversion content')
+          this.documentState.emitEvent({
+            name: 'CommitInitialConversionContent',
+            payload: content,
+          })
+        },
+      )
     } else if (message.type.wrapper === 'events') {
       void this.websocketService.sendEventMessage(
         this.documentState.getProperty('entitlements').nodeMeta,

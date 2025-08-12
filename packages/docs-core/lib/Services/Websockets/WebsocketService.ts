@@ -15,7 +15,7 @@ import type {
   ServerMessageWithMessageAcks,
   ConnectionReadyPayload,
 } from '@proton/docs-proto'
-import { DocumentUpdate } from '@proton/docs-proto'
+import { CreateDocumentUpdate, DocumentUpdate } from '@proton/docs-proto'
 import {
   ClientMessage,
   ServerMessage,
@@ -136,6 +136,15 @@ export class WebsocketService implements WebsocketServiceInterface {
     }
   }
 
+  publishSavingEvent(document: NodeMeta | PublicNodeMeta): void {
+    this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Saving]>({
+      type: WebsocketConnectionEvent.Saving,
+      payload: {
+        document,
+      },
+    })
+  }
+
   createConnection(documentState: DocumentState | PublicDocumentState): WebsocketConnectionInterface {
     const nodeMeta = documentState.nodeMeta
     this.logger.info(`Creating connection for document ${nodeMeta.linkId}`)
@@ -220,14 +229,11 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const debouncer = new UpdateDebouncer(nodeMeta, this.logger, (event) => {
       if (event.type === UpdateDebouncerEventType.DidFlush) {
-        void this.prepareAndBroadcastDocumentUpdate(nodeMeta, event.mergedUpdate)
-      } else if (event.type === UpdateDebouncerEventType.WillFlush) {
-        this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Saving]>({
-          type: WebsocketConnectionEvent.Saving,
-          payload: {
-            document: nodeMeta,
-          },
+        void this.prepareAndBroadcastDocumentUpdate(nodeMeta, event.mergedUpdate, async (_, content, metadata) => {
+          await this.createAndBroadcastDocumentUpdateMessage(nodeMeta, content, metadata)
         })
+      } else if (event.type === UpdateDebouncerEventType.WillFlush) {
+        this.publishSavingEvent(nodeMeta)
       }
     })
 
@@ -383,6 +389,11 @@ export class WebsocketService implements WebsocketServiceInterface {
   async prepareAndBroadcastDocumentUpdate(
     nodeMeta: NodeMeta | PublicNodeMeta,
     mergedUpdate: Uint8Array,
+    broadcastUpdate: (
+      isChunk: boolean,
+      content: Uint8Array,
+      metadata: EncryptionMetadata | AnonymousEncryptionMetadata,
+    ) => Promise<void>,
   ): Promise<void> {
     let update = mergedUpdate
     if (isDocumentUpdateCompressionEnabled(this.unleashClient, this.documentType)) {
@@ -433,13 +444,33 @@ export class WebsocketService implements WebsocketServiceInterface {
       })
       this.logger.info(`Created ${chunks.length} chunks from update`)
       for (const chunk of chunks) {
-        await this.createAndBroadcastDocumentUpdateMessage(nodeMeta, chunk, metadata)
+        await broadcastUpdate(true, chunk, metadata)
       }
     } else {
-      await this.createAndBroadcastDocumentUpdateMessage(nodeMeta, encryptedContent, metadata)
+      await broadcastUpdate(false, encryptedContent, metadata)
     }
 
     metrics.docs_document_updates_total.increment({})
+  }
+
+  async handleInitialConversionContent(
+    document: NodeMeta | PublicNodeMeta,
+    content: Uint8Array,
+    createInitialCommit: (content: DocumentUpdate) => void,
+  ): Promise<void> {
+    void this.prepareAndBroadcastDocumentUpdate(document, content, async (isChunk, encryptedContent, metadata) => {
+      if (isChunk) {
+        await this.createAndBroadcastDocumentUpdateMessage(document, encryptedContent, metadata)
+      } else {
+        const uuid = GenerateUUID()
+        const documentUpdate = CreateDocumentUpdate({
+          content: encryptedContent,
+          uuid: uuid,
+          ...metadata,
+        })
+        createInitialCommit(documentUpdate)
+      }
+    })
   }
 
   async sendDocumentUpdateMessage(nodeMeta: NodeMeta | PublicNodeMeta, rawContent: Uint8Array): Promise<void> {
@@ -451,7 +482,10 @@ export class WebsocketService implements WebsocketServiceInterface {
     // In Sheets, debouncing and merging updates before sending causes issues
     // with recalculating formulas, so we send updates immediately.
     if (this.documentType === 'sheet') {
-      void this.prepareAndBroadcastDocumentUpdate(nodeMeta, rawContent)
+      this.publishSavingEvent(nodeMeta)
+      void this.prepareAndBroadcastDocumentUpdate(nodeMeta, rawContent, async (_, content, metadata) => {
+        await this.createAndBroadcastDocumentUpdateMessage(nodeMeta, content, metadata)
+      })
       return
     }
 
