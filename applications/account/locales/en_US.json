@@ -4,11 +4,6 @@
     "language": "en_US"
   },
   "contexts": {
-    "BF2024: Deal details": {
-      "Unlimited folders, labels and filters": [
-        "Unlimited folders, labels, and filters"
-      ]
-    },
     "Info": {
       "Invite successfully sent": [
         "Invite sent",
@@ -22,41 +17,9 @@
         "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete."
       ]
     },
-    "new_plans: feature": {
-      "Tor over VPN": [
-        "TOR over VPN"
-      ]
-    },
-    "new_plans: info": {
-      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business."
-      ]
-    },
     "new_plans: tooltip": {
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Route your internet traffic through the TOR network with a single click"
-      ]
-    },
-    "session_recovery:available:info": {
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "You have ${ timeRemaining.inHours } hour to reset your password.",
-        "You have ${ timeRemaining.inHours } hours to reset your password."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
-        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "You have ${ timeRemaining.inSeconds } second to reset your password.",
-        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
-      ]
-    },
-    "Subscription reminder": {
-      "Users won’t be able to upload files on their devices": [
-        "Users won’t be able to upload files from their devices"
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -64,26 +27,12 @@
         "Shared with end-to-end encryption"
       ]
     },
-    "Tor out of date": {
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }"
-      ]
-    },
     "wallet_signup_2024: Info": {
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
-      "A safer way to hold your Bitcoin": [
-        "A safer way to hold your Bitcoin"
-      ],
       "Advanced account protection": [
         "Advanced account protection"
-      ],
-      "Bitcoin via Email": [
-        "Bitcoin via Email"
-      ],
-      "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name.": [
-        "Encrypted and secure ${ MAIL_APP_NAME } email address. You can easily send Bitcoin to anyone with just their ${ BRAND_NAME } name."
       ],
       "Encrypted cloud storage for photos and documents": [
         "Encrypted cloud storage for photos and documents"
@@ -97,9 +46,6 @@
       "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
         "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services."
       ],
-      "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
-        "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error"
-      ],
       "Securely hold and transact Bitcoin for free.": [
         "Securely hold and transact Bitcoin for free."
       ],
@@ -111,16 +57,6 @@
       ],
       "You're Invited.": [
         "You're Invited."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "A safer way to hold Bitcoin": [
-        "A safer way to hold Bitcoin"
-      ]
-    },
-    "wallet_signup_2024:Bug category": {
-      "Wallet problem": [
-        "Wallet problem"
       ]
     },
     "wallet_signup_2024:Navigation": {
