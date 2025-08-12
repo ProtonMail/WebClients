@@ -6,7 +6,6 @@ import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { MailLogo } from '@proton/components';
-import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { IcShield2CheckFilled } from '@proton/icons';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -14,8 +13,8 @@ import { SignupType } from '../../../../signup/interfaces';
 import { usePasswordInputInline } from '../../../accountDetailsInputs/password/usePasswordInput';
 import useEmailInput from '../../../accountDetailsInputs/username/useEmailInput';
 import { useSignup } from '../../../context/SignupContext';
+import { Step } from '../PassSignup';
 import { Layout } from '../components/Layout/Layout';
-import { Step, useFlow } from '../contexts/FlowContext';
 import { AccountDetailsAside } from './AccountDetailsAside';
 
 const SwitchSignupType = () => {
@@ -60,10 +59,12 @@ const SwitchSignupType = () => {
     );
 };
 
-export const AccountDetailsStep: FC = () => {
+type Props = {
+    setStep: (step: Step) => void;
+};
+
+export const AccountDetailsStep: FC<Props> = ({ setStep }) => {
     const signup = useSignup();
-    const { setStep } = useFlow();
-    const notifyError = useNotifyErrorHandler();
     const [loading, setLoading] = useState(false);
 
     const handleRequestSubmit = () => signup.accountForm.refs.form.current?.requestSubmit();
@@ -80,8 +81,6 @@ export const AccountDetailsStep: FC = () => {
             const accountData = await signup.accountForm.getValidAccountData({ passwords: true });
             signup.submitAccountData(accountData);
             setStep(Step.RecoveryKit);
-        } catch (error) {
-            notifyError(error);
         } finally {
             setLoading(false);
         }

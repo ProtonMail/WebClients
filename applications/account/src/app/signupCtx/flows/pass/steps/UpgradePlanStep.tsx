@@ -18,15 +18,19 @@ import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useSignup } from '../../../context/SignupContext';
+import { Step } from '../PassSignup';
 import { Layout } from '../components/Layout/Layout';
 import { OfferModal } from '../components/OfferModal/OfferModal';
 import { PlanCard, type PlanCardProps } from '../components/PlansTable/PlanCard';
-import { Step, useFlow } from '../contexts/FlowContext';
 
-export const UpgradePlanStep: FC = () => {
+type Props = {
+    setStep: (step: Step) => void;
+};
+
+export const UpgradePlanStep: FC<Props> = ({ setStep }) => {
     const payments = usePaymentOptimistic();
     const signup = useSignup();
-    const { setStep } = useFlow();
+
     const offerModal = useAsyncModalHandles<MaybeNull<PLANS>, object>({ getInitialModalState: () => ({}) });
 
     const getPrice = (price: number) => getSimplePriceString(payments.currency, price);
@@ -149,6 +153,7 @@ export const UpgradePlanStep: FC = () => {
                     getPrice={getPrice}
                     onClose={offerModal.abort}
                     onContinue={offerModal.resolver}
+                    loading={offerModal.state.loading}
                 />
             )}
         </Layout>
