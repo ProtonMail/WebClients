@@ -1,5 +1,4 @@
-// A global promise to avoid concurrency issues
-let creating: Promise<void> | null = null;
+import { asyncLock } from '@proton/pass/utils/fp/promises';
 
 // Offscreen is only working on Chrome at the moment
 // `chrome` dedicated api will throw if you try from any other browser
@@ -18,15 +17,11 @@ export const setupOffscreenDocument = async (path: string) => {
     }
 
     // create offscreen document
-    if (creating) {
-        await creating;
-    } else {
-        creating = chrome.offscreen.createDocument({
+    await asyncLock(() =>
+        chrome.offscreen.createDocument({
             url: path,
             reasons: ['CLIPBOARD'],
             justification: 'being able to clear clipboard after a delay',
-        });
-        await creating;
-        creating = null;
-    }
+        })
+    )();
 };
