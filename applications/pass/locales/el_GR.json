@@ -112,9 +112,6 @@
       "Change": [
         "Αλλαγή"
       ],
-      "Change email": [
-        "Αλλαγή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
-      ],
       "Check DNS": [
         "Έλεγχος DNS"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "Καθαρισμός"
-      ],
-      "Clear search": [
-        "Εκκαθάριση αναζήτησης"
       ],
       "Close": [
         "Κλείσιμο"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "Διαγραφή ψευδώνυμου"
-      ],
-      "Delete all": [
-        "Διαγραφή όλων"
       ],
       "Delete it, I will never need it": [
         "Διαγράψτε το, δε θα το χρειαστώ ποτέ"
@@ -502,14 +493,8 @@
       "Resend invitation": [
         "Επανάληψη αποστολής πρόσκλησης"
       ],
-      "Reset": [
-        "Επαναφορά"
-      ],
       "Reset history": [
         "Επαναφορά ιστορικού"
-      ],
-      "Restore": [
-        "Επαναφορά"
       ],
       "Restore item": [
         "Επαναφορά στοιχείου"
@@ -689,11 +674,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
       ]
     },
     "Button": {
@@ -1254,9 +1234,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1275,10 +1252,6 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
       ]
     },
     "Info": {
@@ -1514,9 +1487,6 @@
       "Congratulations, your access has been confirmed": [
         "Συγχαρητήρια, η πρόσβασή σας επιβεβαιώθηκε"
       ],
-      "Copied to clipboard": [
-        "Αντιγράφηκε στο πρόχειρο"
-      ],
       "Coupon successfully applied!": [
         "Το κουπόνι εφαρμόστηκε με επιτυχία!"
       ],
@@ -1561,12 +1531,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Τομέας: ${ domainPath } ή @"
-      ],
-      "Drop file here to upload": [
-        "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
-      ],
-      "Drop to import": [
-        "Απόθεση για εισαγωγή"
       ],
       "Editor": [
         "Πρόγραμμα επεξεργασίας"
@@ -1775,9 +1739,6 @@
       "Latest breach on ${ formattedDate }": [
         "Τελευταία παραβίαση στις ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "Μάθετε τι να κάνετε ${ dataLeakedLink }"
-      ],
       "Leaving item...": [
         "Αποχώρηση από το στοιχείο..."
       ],
@@ -1868,9 +1829,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Οι ειδοποιήσεις μας δίνουν προτεραιότητα στην ασφάλεια. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
       ],
       "Owner": [
         "Ιδιοκτήτης"
@@ -2243,9 +2201,6 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Εμπιστευόμενο από πάνω από 50.000 επαγγελματίες χρήστες και 100 εκατομμύρια λογαριασμούς παγκοσμίως."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
-      ],
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"
       ],
@@ -2411,9 +2366,6 @@
       ],
       "your domain": [
         "ο τομέας σας"
-      ],
-      "Your files will be encrypted and then saved": [
-        "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
       ],
       "Your information was found on ${ displayedDate }": [
         "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
@@ -2598,9 +2550,6 @@
       ],
       "Bank Name": [
         "Όνομα Τράπεζας"
-      ],
-      "Beta Access": [
-        "Πρόσβαση Beta"
       ],
       "Biometrics": [
         "Βιομετρικά"
@@ -2899,9 +2848,6 @@
       "https://example.com": [
         "https://example.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "Δελτίο Ταυτότητας"
       ],
@@ -2973,9 +2919,6 @@
       ],
       "Key type": [
         "Τύπος κλειδιού"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Συντόμευση πληκτρολογίου: ${ shortcut }"
       ],
       "Language": [
         "Γλώσσα"
@@ -3421,9 +3364,6 @@
       "The URL has been copied to the clipboard": [
         "Αυτός το URL αντιγράφτηκε στο πρόχειρο"
       ],
-      "Theme": [
-        "Θέμα"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Αυτό το στοιχείο είναι προσβάσιμο μέχρι τις ${ date } ή μέχρι να συμπληρωθεί το όριο προβολής."
       ],
@@ -3591,16 +3531,8 @@
       "auto create rules ››": [
         "αυτόματη δημιουργία κανόνων ››"
       ],
-      "if your data is leaked": [
-        "εάν τα δεδομένα σας υποστούν διαρρεύσει"
-      ],
       "Learn more": [
         "Μάθετε περισσότερα"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "Ενεργοποίηση ${ reason }"
       ]
     },
     "Medium": {
@@ -3624,17 +3556,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "Απαιτείται 2FA για οργάνωση"
-      ],
-      "SSO integration": [
-        "Ενσωμάτωση SSO"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } έχει απενεργοποιηθεί"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } έχει ενεργοποιηθεί"
       ]
     },
     "Option": {
@@ -3890,20 +3811,6 @@
       ],
       "Used on ${ url }": [
         "Χρησιμοποιείται στο ${ url }"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } και ${ remainingCount } εντοπίστηκαν άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
       ]
     },
     "sso": {
@@ -4239,9 +4146,6 @@
       "Inactive 2FA": [
         "Απενεργοποιημένο 2FA"
       ],
-      "Information exposed in breach": [
-        "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
-      ],
       "Install extension": [
         "Εγκατάσταση προέκτασης"
       ],
@@ -4512,14 +4416,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Σήμερα"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "Δεν εκτέθηκαν όλες οι πληροφορίες που παρατίθενται εδώ για όλους τους χρήστες."
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."
       ]
     },
     "Validation": {
