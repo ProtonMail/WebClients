@@ -112,9 +112,6 @@
       "Change": [
         "შეცვლა"
       ],
-      "Change email": [
-        "ელფოსტის შეცვლა"
-      ],
       "Check DNS": [
         "DNS-ის შემოწმება"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "გასუფთავება"
-      ],
-      "Clear search": [
-        "ძებნის გასუფთავება"
       ],
       "Close": [
         "დახურვა"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "ფსევდონიმი წაშლა"
-      ],
-      "Delete all": [
-        "ყველას წაშლა"
       ],
       "Delete it, I will never need it": [
         "წაშალე, ის მე არასდროს დამჭირდება"
@@ -502,14 +493,8 @@
       "Resend invitation": [
         "მოსაწვევის თავიდან გაგზავნა"
       ],
-      "Reset": [
-        "თავიდან"
-      ],
       "Reset history": [
         "ისტორიის ჩამოყრა"
-      ],
-      "Restore": [
-        "აღდგენა"
       ],
       "Restore item": [
         "ელემენტის აღდგენა"
@@ -689,11 +674,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ]
     },
     "Button": {
@@ -1236,9 +1216,6 @@
       ],
       "MB": [
         "მბ"
-      ],
-      "TB": [
-        "ტბ"
       ]
     },
     "file size format, long": {
@@ -1257,10 +1234,6 @@
       "Megabyte": [
         "მეგაბაიტი",
         "მეგაბაიტი"
-      ],
-      "Terabyte": [
-        "ტერაბაიტი",
-        "ტერაბაიტი"
       ]
     },
     "Info": {
@@ -1496,9 +1469,6 @@
       "Congratulations, your access has been confirmed": [
         "გილოცავთ, თქვენი წვდომა დადასტურებულია"
       ],
-      "Copied to clipboard": [
-        "დაკოპირდა გაცვლის ბაფერში"
-      ],
       "Coupon successfully applied!": [
         "კუპონის გამოყენება წარმატებულია!"
       ],
@@ -1543,12 +1513,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "დომენი: ${ domainPath } ან @"
-      ],
-      "Drop file here to upload": [
-        "ასატვირთად გადმოათრიეთ ფაილები აქ"
-      ],
-      "Drop to import": [
-        "შემოსატანად დააგდეთ"
       ],
       "Editor": [
         "რედაქტორი"
@@ -1751,9 +1715,6 @@
       "Latest breach on ${ formattedDate }": [
         "უახლესი გაჟონვის თარიღი ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "გაიგეთ, რა უნდა გააკეთოთ ${ dataLeakedLink }"
-      ],
       "Leaving item...": [
         "ელემენტიდან გასვლა..."
       ],
@@ -1844,9 +1805,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }-სთან ინტერნეტით წვდომისთვის PIN-კოდის შეყვანა მოგიწევთ. სისტემიდან გამოვარდებით 3 ჩავარდნილი მცდელობის შემდეგ."
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "ჩვენი გაფრთხილებები უსაფრთხოებაზეა კონცენტრირებული. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
       ],
       "Owner": [
         "მფლობელი"
@@ -2210,9 +2168,6 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "გვენდობა 50, 000-ზე მეტი ბიზნეს-მომხმარებელი და 100 მილიონი ანგარიში მთელი დედამიწიდან."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
-      ],
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
       ],
@@ -2378,9 +2333,6 @@
       ],
       "your domain": [
         "თქვენი დომენი"
-      ],
-      "Your files will be encrypted and then saved": [
-        "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
       ],
       "Your information was found on ${ displayedDate }": [
         "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
@@ -2565,9 +2517,6 @@
       ],
       "Bank Name": [
         "ბანკის სახელი"
-      ],
-      "Beta Access": [
-        "წვდომა ბეტა ვერსიებზე"
       ],
       "Biometrics": [
         "ბიომეტრია"
@@ -2866,9 +2815,6 @@
       "https://example.com": [
         "https://example.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "ID ბარათი"
       ],
@@ -2940,9 +2886,6 @@
       ],
       "Key type": [
         "გასაღების ტიპი"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "კლავიატურის მალსახმობი: ${ shortcut }"
       ],
       "Language": [
         "ენა"
@@ -3388,9 +3331,6 @@
       "The URL has been copied to the clipboard": [
         "ბმული დაკოპირდა ბუფერში"
       ],
-      "Theme": [
-        "თემა"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "ეს ელემენტი ხელმისაწვდომია ${ date }-მდე, ან, სანამ, ნახვების ლიმიტი არ მიიღწევა."
       ],
@@ -3558,16 +3498,8 @@
       "auto create rules ››": [
         "წესების ავტოშექმნა ››"
       ],
-      "if your data is leaked": [
-        "თუ თქვენი მონაცემები გაიჟონება"
-      ],
       "Learn more": [
         "გაიგეთ მეტი"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "${ reason }-ის ჩართვა"
       ]
     },
     "Medium": {
@@ -3591,17 +3523,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "2FA-ის მოთხოვნა ორგანიზაციისთვის"
-      ],
-      "SSO integration": [
-        "SSO-ის ინტეგრაცია"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } გაითიშა"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } ჩაირთო"
       ]
     },
     "Option": {
@@ -3854,20 +3775,6 @@
       ],
       "Used on ${ url }": [
         "გამოიყენება ${ url } -ზე"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
     },
     "sso": {
@@ -4203,9 +4110,6 @@
       "Inactive 2FA": [
         "არააქტიური 2FA"
       ],
-      "Information exposed in breach": [
-        "გაჟონილი ინფორმაცია"
-      ],
       "Install extension": [
         "გაფართოების დაყენება"
       ],
@@ -4476,14 +4380,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "დღეს"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "აქ ჩამოთვლილი ინფორმაცია ყველა მომხმარებლისთვის ხელმისაწვდომი არ იქნება."
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "თუ მათ არ გაშიფრავთ, დაშიფრული პაროლები დაცულია მაშინაც კი, თუ მათ ვინმე ნახავს."
       ]
     },
     "Validation": {

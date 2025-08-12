@@ -112,9 +112,6 @@
       "Change": [
         "Ubah"
       ],
-      "Change email": [
-        "Ubah email"
-      ],
       "Check DNS": [
         "Periksa DNS"
       ],
@@ -126,9 +123,6 @@
       ],
       "Clear": [
         "Bersihkan"
-      ],
-      "Clear search": [
-        "Hapus pencarian"
       ],
       "Close": [
         "Tutup"
@@ -213,9 +207,6 @@
       ],
       "Delete alias": [
         "Hapus alias"
-      ],
-      "Delete all": [
-        "Hapus semua"
       ],
       "Delete it, I will never need it": [
         "Lanjut hapus, saya tidak akan butuh alias ini lagi"
@@ -502,14 +493,8 @@
       "Resend invitation": [
         "Kirim ulang undangan"
       ],
-      "Reset": [
-        "Atur ulang"
-      ],
       "Reset history": [
         "Atur ulang riwayat"
-      ],
-      "Restore": [
-        "Pulihkan"
       ],
       "Restore item": [
         "Pulihkan item"
@@ -687,11 +672,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Pengelola kata sandi Anda tidak terdaftar? Mintalah kepada kami."
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplikasi Desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -1248,9 +1228,6 @@
       ],
       "MB": [
         "MB"
-      ],
-      "TB": [
-        "TB"
       ]
     },
     "file size format, long": {
@@ -1265,9 +1242,6 @@
       ],
       "Megabyte": [
         "Megabyte"
-      ],
-      "Terabyte": [
-        "Terabyte"
       ]
     },
     "Info": {
@@ -1493,9 +1467,6 @@
       "Congratulations, your access has been confirmed": [
         "Selamat, akses Anda telah dikonfirmasi"
       ],
-      "Copied to clipboard": [
-        "Disalin ke papan klip"
-      ],
       "Coupon successfully applied!": [
         "Kupon berhasil diterapkan!"
       ],
@@ -1540,12 +1511,6 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domain: ${ domainPath } atau @"
-      ],
-      "Drop file here to upload": [
-        "Lepaskan berkas di sini untuk mengunggah"
-      ],
-      "Drop to import": [
-        "Lepaskan untuk mengimpor"
       ],
       "Editor": [
         "Penyunting"
@@ -1751,9 +1716,6 @@
       "Latest breach on ${ formattedDate }": [
         "Kebocoran terkini pada ${ formattedDate }"
       ],
-      "Learn what to do ${ dataLeakedLink }": [
-        "Pelajari apa yang harus dilakukan ${ dataLeakedLink }"
-      ],
       "Leaving item...": [
         "Meninggalkan item..."
       ],
@@ -1843,9 +1805,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Akses online ke ${ PASS_APP_NAME } akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 upaya percobaan yang gagal."
-      ],
-      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
       "Owner": [
         "Pemilik"
@@ -2216,9 +2175,6 @@
       "Trusted by over 50,000 business users and 100 million accounts around the world.": [
         "Terpercaya oleh lebih dari 50.000 pengguna bisnis dan 100 juta akun di seluruh dunia."
       ],
-      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
-      ],
       "Unable to copy to clipboard": [
         "Tidak dapat menyalin ke papan klip"
       ],
@@ -2380,9 +2336,6 @@
       ],
       "your domain": [
         "domain Anda"
-      ],
-      "Your files will be encrypted and then saved": [
-        "Berkas Anda akan dienkripsi dan kemudian disimpan"
       ],
       "Your information was found on ${ displayedDate }": [
         "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
@@ -2553,9 +2506,6 @@
       ],
       "Bank Name": [
         "Nama Bank"
-      ],
-      "Beta Access": [
-        "Akses Beta"
       ],
       "Biometrics": [
         "Biometrik"
@@ -2854,9 +2804,6 @@
       "https://example.com": [
         "https://contoh.com"
       ],
-      "IBAN": [
-        "IBAN"
-      ],
       "ID Card": [
         "Kartu ID"
       ],
@@ -2928,9 +2875,6 @@
       ],
       "Key type": [
         "Jenis kunci"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Pintasan keyboard: ${ shortcut }"
       ],
       "Language": [
         "Bahasa"
@@ -3376,9 +3320,6 @@
       "The URL has been copied to the clipboard": [
         "URL telah disalin ke papan klip"
       ],
-      "Theme": [
-        "Tema"
-      ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
         "Item ini dapat diakses hingga ${ date } atau hingga batas jumlah tampilannya tercapai."
       ],
@@ -3546,16 +3487,8 @@
       "auto create rules ››": [
         "buat aturan otomatis ››"
       ],
-      "if your data is leaked": [
-        "apabila data Anda sampai dibocorkan"
-      ],
       "Learn more": [
         "Lebih lanjut"
-      ]
-    },
-    "Log preference": {
-      "Enable ${ reason }": [
-        "Aktifkan ${ reason }"
       ]
     },
     "Medium": {
@@ -3577,17 +3510,6 @@
     "new_plans: feature": {
       "Require 2FA for organization": [
         "2FA wajib bagi organisasi"
-      ],
-      "SSO integration": [
-        "Integrasi SSO"
-      ]
-    },
-    "Notification": {
-      "${ reason } has been disabled": [
-        "${ reason } telah dinonaktifkan"
-      ],
-      "${ reason } has been enabled": [
-        "${ reason } telah diaktifkan"
       ]
     },
     "Option": {
@@ -3842,20 +3764,6 @@
       ],
       "Used on ${ url }": [
         "Digunakan pada ${ url }"
-      ]
-    },
-    "Security Center - Info": {
-      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
-      ],
-      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } dan 1 kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
-      ],
-      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } kebocoran potensial terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
-      ],
-      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
       ]
     },
     "sso": {
@@ -4188,9 +4096,6 @@
       "Inactive 2FA": [
         "2FA yang tidak aktif"
       ],
-      "Information exposed in breach": [
-        "Informasi yang terpapar dalam kebocoran data"
-      ],
       "Install extension": [
         "Pasang ekstensi"
       ],
@@ -4456,14 +4361,6 @@
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hari ini"
-      ]
-    },
-    "Tooltip": {
-      "Not all information listed here was exposed for all users.": [
-        "Tidak semua informasi yang tercantum di sini terpapar untuk seluruh pengguna."
-      ],
-      "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
-        "Kecuali kata sandi ini didekripsi, kata sandi yang terenkripsi akan tetap aman bahkan apabila terpapar."
       ]
     },
     "Validation": {
