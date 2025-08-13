@@ -20,7 +20,6 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllMembers, updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
-import { type SetMnemonicPhrasePayload, reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { queryCheckEmailAvailability, queryCheckUsernameAvailability, queryUnlock } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
@@ -29,7 +28,7 @@ import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { sendPasswordChangeMessageToTabs } from '@proton/shared/lib/authentication/passwordChangeMessage';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, CLIENT_TYPES, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -45,9 +44,8 @@ import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
-import generateRecoveryPhrasePayload from '../../containers/recoveryPhrase/generateRecoveryPhrasePayload';
+import generateDeferredMnemonicData from '../../containers/recoveryPhrase/generateDeferredMnemonicData';
 import type { DeferredMnemonicData } from '../../containers/recoveryPhrase/types';
-import { generateRecoveryKitBlob } from '../../containers/recoveryPhrase/useRecoveryKitDownload';
 import type {
     SignupActionDoneResponse,
     SignupActionResponse,
@@ -401,52 +399,6 @@ export const handleSubscribeUser = async (
     }
 };
 
-/**
- * Generates the recovery phrase and pdf blob.
- * Defer's sending the payload to the BE so that generation can be done optimistically.
- * Use sendMnemonicPayloadToBackend to complete the recovery phrase setup
- */
-export const handleSetupMnemonic = async ({
-    user,
-    keyPassword,
-    api,
-    emailAddress,
-}: {
-    api: Api;
-    emailAddress: string;
-    user: User;
-    keyPassword: string;
-}): Promise<DeferredMnemonicData | undefined> => {
-    const generatedRecoveryPhrasePayload = await generateRecoveryPhrasePayload({ user, keyPassword, api });
-
-    if (!generatedRecoveryPhrasePayload) {
-        return;
-    }
-
-    const { recoveryPhrase, payload } = generatedRecoveryPhrasePayload;
-
-    const recoveryKitBlob = await generateRecoveryKitBlob({
-        recoveryPhrase,
-        emailAddress,
-    });
-
-    return {
-        recoveryPhrase,
-        recoveryKitBlob,
-        payload,
-    };
-};
-
-export const sendMnemonicPayloadToBackend = async ({
-    api,
-    payload,
-}: {
-    api: Api;
-    payload: SetMnemonicPhrasePayload;
-}): Promise<void> => {
-    return api({ ...reactivateMnemonicPhrase(payload), ignoreHandler: [HTTP_ERROR_CODES.UNLOCK] });
-};
-
 export const handleSetupUser = async ({
     cache,
     api,
@@ -535,10 +487,13 @@ export const handleSetupUser = async ({
 
     let mnemonicData: DeferredMnemonicData | undefined;
     if (canGenerateMnemonic) {
-        mnemonicData = await handleSetupMnemonic({
+        mnemonicData = await generateDeferredMnemonicData({
             emailAddress: userEmail,
-            user,
-            keyPassword: keySetupData.keyPassword,
+            username: user.Name,
+            getUserKeys: async () => {
+                const userKeys = await getDecryptedUserKeysHelper(user, keySetupData.keyPassword);
+                return userKeys;
+            },
             api,
         });
     }

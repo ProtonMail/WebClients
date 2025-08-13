@@ -14,8 +14,8 @@ const RecoveryStepUnderstoodCheckbox = ({ className, checked, onChange }: Props)
         <div className={clsx('flex flex-row items-start', className)}>
             <Checkbox id="understood-recovery-necessity" className="mt-2 mr-2" checked={checked} onChange={onChange} />
             <Label htmlFor="understood-recovery-necessity" className="flex-1">
-                {c('pass_signup_2023: Info')
-                    .t`I understand that if I lose my recovery details, I may permanently lose access to my account.`}
+                {c('RecoveryPhrase: Info')
+                    .t`I understand that if I lose my recovery phrase, I may permanently lose access to my account.`}
             </Label>
         </div>
     );
