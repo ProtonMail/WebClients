@@ -12,7 +12,7 @@ export enum MOVE_BACK_ACTION_TYPES {
 
 export interface MoveActionProps {
     type: MOVE_BACK_ACTION_TYPES.MOVE;
-    destinationLabelID: string;
+    targetLabelID: string;
 }
 
 export interface ApplyLabelActionProps {
@@ -22,7 +22,7 @@ export interface ApplyLabelActionProps {
 
 export interface StarActionProps {
     type: MOVE_BACK_ACTION_TYPES.STAR;
-    isUnstarringElement: boolean;
+    removeLabel: boolean;
 }
 
 export interface PermanentDeleteActionProps {

@@ -362,7 +362,7 @@ export const useApplyLocation = () => {
                 handleOnBackMoveAction({
                     type: MOVE_BACK_ACTION_TYPES.MOVE,
                     elements: params.elements,
-                    destinationLabelID: params.targetLabelID,
+                    targetLabelID: params.targetLabelID,
                 });
 
                 return moveToFolder({
@@ -385,7 +385,7 @@ export const useApplyLocation = () => {
                 handleOnBackMoveAction({
                     type: MOVE_BACK_ACTION_TYPES.STAR,
                     elements: params.elements,
-                    isUnstarringElement: params.removeLabel || false,
+                    removeLabel: params.removeLabel || false,
                 });
 
                 return moveToFolder({
