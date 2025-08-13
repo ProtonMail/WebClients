@@ -8,7 +8,7 @@ import {
     markConversationsAsUnread,
     markMessagesAsRead,
     markMessagesAsUnread,
-} from './conversationCountsReducers';
+} from '../../conversationCountsReducers';
 
 describe('conversationCountsReducers', () => {
     const labelID1 = 'label1';
