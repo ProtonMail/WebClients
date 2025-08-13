@@ -28,9 +28,6 @@ describe('scaleImageFile', () => {
                 clearRect: jest.fn(),
             };
         });
-        global.HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {
-            callback(new Blob(['abc']));
-        });
     });
 
     it('returns the scaled image', async () => {
