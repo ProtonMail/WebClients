@@ -54,7 +54,7 @@ export const useStar = () => {
             handleOnBackMoveAction({
                 type: MOVE_BACK_ACTION_TYPES.STAR,
                 elements,
-                isUnstarringElement: !value,
+                removeLabel: !value,
             });
 
             rollback = optimisticApplyLabels({
