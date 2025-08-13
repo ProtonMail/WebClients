@@ -10,7 +10,7 @@ export const EmergencyAccessSection = ({ app }: { app: APP_NAMES }) => {
     return (
         <div className="pt-6">
             <SettingsSectionWide className="mb-6">
-                <OutgoingControllerProvider>
+                <OutgoingControllerProvider app={app}>
                     <OutgoingEmergencyAccessSection />
                 </OutgoingControllerProvider>
             </SettingsSectionWide>
