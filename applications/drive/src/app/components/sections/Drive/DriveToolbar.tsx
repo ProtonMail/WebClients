@@ -7,7 +7,7 @@ import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import { type DecryptedLink, useActions, useDocumentActions } from '../../../store';
-import { useDriveDocsFeatureFlag, useDriveDocsSheetsFF } from '../../../store/_documents';
+import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../store/_documents';
 import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
@@ -63,7 +63,7 @@ const DriveToolbar = ({
     const { createFolder, trashLinks, renameLink } = useActions();
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const { isSheetsEnabled } = useDriveDocsSheetsFF();
+    const isSheetsEnabled = useIsSheetsEnabled();
 
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);

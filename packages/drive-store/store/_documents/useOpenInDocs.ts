@@ -3,7 +3,7 @@ import { type ProtonDocumentType, mimeTypeToOpenInDocsType } from '@proton/share
 import type { DecryptedLink } from '../_links';
 import { useDocumentActions } from './useDocumentActions';
 import { useDriveDocsFeatureFlag } from './useDriveDocsFeatureFlag';
-import { useDriveDocsSheetsFF } from './useDriveDocsSheetsFF';
+import { useIsSheetsEnabled } from './useDriveDocsSheetsFF';
 
 type OpenInDocsActionParameters = {
     /**
@@ -35,7 +35,7 @@ export const useOpenInDocs = (
 ): OpenInDocsInfo => {
     const { openDocument: openDocumentAction, convertDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const { isSheetsEnabled } = useDriveDocsSheetsFF();
+    const isSheetsEnabled = useIsSheetsEnabled();
 
     // Can't open if the link is not provided or it doesn't have a mime type.
     if (!link?.mimeType) {
