@@ -301,23 +301,25 @@ const CredentialLeakSection = () => {
                                         </SettingsParagraph>
                                     )}
 
-                                    <SettingsLayout>
-                                        <SettingsLayoutLeft>
-                                            <label className="text-semibold" htmlFor="data-breach-toggle">
-                                                <span className="mr-2">
-                                                    {getEnableString(DARK_WEB_MONITORING_NAME)}
-                                                </span>
-                                            </label>
-                                        </SettingsLayoutLeft>
-                                        <SettingsLayoutRight isToggleContainer>
-                                            <Toggle
-                                                id="data-breach-toggle"
-                                                disabled={false}
-                                                checked={false}
-                                                onClick={() => dwmUpsellModal.openModal(true)}
-                                            />
-                                        </SettingsLayoutRight>
-                                    </SettingsLayout>
+                                    {user.canPay && (
+                                        <SettingsLayout>
+                                            <SettingsLayoutLeft>
+                                                <label className="text-semibold" htmlFor="data-breach-toggle">
+                                                    <span className="mr-2">
+                                                        {getEnableString(DARK_WEB_MONITORING_NAME)}
+                                                    </span>
+                                                </label>
+                                            </SettingsLayoutLeft>
+                                            <SettingsLayoutRight isToggleContainer>
+                                                <Toggle
+                                                    id="data-breach-toggle"
+                                                    disabled={false}
+                                                    checked={false}
+                                                    onClick={() => dwmUpsellModal.openModal(true)}
+                                                />
+                                            </SettingsLayoutRight>
+                                        </SettingsLayout>
+                                    )}
                                 </div>
 
                                 <div className="hidden lg:flex">
