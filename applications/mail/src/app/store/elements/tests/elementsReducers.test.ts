@@ -9,8 +9,8 @@ import {
     markConversationsAsReadPending,
     markMessagesAsReadPending,
     markNewsletterElementsAsReadPending,
-} from './elementsReducers';
-import type { ElementsState } from './elementsTypes';
+} from '../elementsReducers';
+import type { ElementsState } from '../elementsTypes';
 
 describe('elementsReducers', () => {
     const labelID = '1';
