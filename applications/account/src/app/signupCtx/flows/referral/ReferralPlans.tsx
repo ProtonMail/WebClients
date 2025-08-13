@@ -40,7 +40,7 @@ const ReferralPlans = () => {
 
     return (
         <Layout>
-            <Header />
+            <Header showSignIn />
 
             <Wrapper minHeight="calc(100vh - 4.25rem - 4rem)">
                 <main
