@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/index';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { type SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
@@ -16,12 +17,12 @@ import {
     shouldOpenConfirmationModalForConverversation,
     shouldOpenConfirmationModalForMessages,
 } from 'proton-mail/helpers/location/moveModal/shouldOpenModal';
+import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useMoveBackAction';
 import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
 import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
 import { useGetElementByID } from 'proton-mail/hooks/mailbox/useElements';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Conversation } from 'proton-mail/models/conversation';
-import type { Element } from 'proton-mail/models/element';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
     labelConversations,
@@ -30,15 +31,14 @@ import {
     unlabelMessages,
 } from 'proton-mail/store/mailbox/mailboxActions';
 
-export interface ApplyLocationParams {
-    elements: Element[];
-    targetLabelID: string;
-    removeLabel?: boolean;
-    // This is used to avoid sending a unsubscribe request to a phishing email
-    askUnsubscribe?: boolean;
-    createFilters?: boolean;
-    showSuccessNotification?: boolean;
-}
+import { MOVE_BACK_ACTION_TYPES } from '../moveBackAction/interfaces';
+import {
+    APPLY_LOCATION_TYPES,
+    type ApplyLocationLabelProps,
+    type ApplyLocationMoveProps,
+    type ApplyLocationParams,
+    type ApplyLocationStarProps,
+} from './interface';
 
 export const useApplyLocation = () => {
     const mailSettings = useMailModel('MailSettings');
@@ -48,6 +48,7 @@ export const useApplyLocation = () => {
     const [folders = []] = useFolders();
 
     const { createNotification } = useNotifications();
+    const handleOnBackMoveAction = useMoveBackAction();
 
     const { conversationMoveEngine, messageMoveEngine } = useMoveEngine();
     const { notify } = useMailGlobalModals();
@@ -66,7 +67,7 @@ export const useApplyLocation = () => {
         showSuccessNotification = true,
         spamAction,
         createFilters,
-    }: ApplyLocationParams & { spamAction?: SPAM_ACTION }): Promise<any> => {
+    }: ApplyLocationParams): Promise<any> => {
         // Get all conversations in element state linked to messages that are moving
         const conversationIDs = unique((elements as Message[]).map((message) => message.ConversationID));
         const conversationsFromMessages: Conversation[] = conversationIDs
@@ -77,7 +78,8 @@ export const useApplyLocation = () => {
 
         const { doCreateFilters, undoCreateFilters } = getFilterActions();
         if (createFilters) {
-            void doCreateFilters(elements, [targetLabelID], false);
+            const isFolder = isCustomFolder(targetLabelID, folders || []) || isSystemFolder(targetLabelID);
+            void doCreateFilters(elements, [targetLabelID], isFolder);
         }
 
         if (removeLabel) {
@@ -127,10 +129,11 @@ export const useApplyLocation = () => {
         showSuccessNotification = true,
         spamAction,
         createFilters,
-    }: ApplyLocationParams & { spamAction?: SPAM_ACTION }): Promise<any> => {
+    }: ApplyLocationParams): Promise<any> => {
         const { doCreateFilters, undoCreateFilters } = getFilterActions();
         if (createFilters) {
-            void doCreateFilters(elements, [targetLabelID], true);
+            const isFolder = isCustomFolder(targetLabelID, folders || []) || isSystemFolder(targetLabelID);
+            void doCreateFilters(elements, [targetLabelID], isFolder);
         }
 
         if (removeLabel) {
@@ -170,14 +173,14 @@ export const useApplyLocation = () => {
         }
     };
 
-    const applyLocation = ({
+    const moveToFolder = ({
         elements,
         removeLabel = false,
         askUnsubscribe = true,
         targetLabelID,
         showSuccessNotification = true,
         createFilters,
-    }: ApplyLocationParams): Promise<any> => {
+    }: ApplyLocationMoveProps | ApplyLocationStarProps | ApplyLocationLabelProps): Promise<any> => {
         if (!elements) {
             throw new Error('Elements are required');
         }
@@ -231,7 +234,6 @@ export const useApplyLocation = () => {
                         },
                     },
                 });
-
                 return Promise.resolve();
             } else if (shouldOpenModal === ModalType.Snooze) {
                 notify({
@@ -351,6 +353,44 @@ export const useApplyLocation = () => {
             });
         } else {
             throw new Error('Not implemented');
+        }
+    };
+
+    const applyLocation = (params: ApplyLocationMoveProps | ApplyLocationLabelProps | ApplyLocationStarProps) => {
+        switch (params.type) {
+            case APPLY_LOCATION_TYPES.MOVE:
+                handleOnBackMoveAction({
+                    type: MOVE_BACK_ACTION_TYPES.MOVE,
+                    elements: params.elements,
+                    destinationLabelID: params.targetLabelID,
+                });
+
+                return moveToFolder({
+                    ...params,
+                    removeLabel: false,
+                });
+            case APPLY_LOCATION_TYPES.APPLY_LABEL:
+                handleOnBackMoveAction({
+                    type: MOVE_BACK_ACTION_TYPES.APPLY_LABEL,
+                    changes: params.changes,
+                    elements: params.elements,
+                });
+
+                return moveToFolder({
+                    ...params,
+                });
+
+                break;
+            case APPLY_LOCATION_TYPES.STAR:
+                handleOnBackMoveAction({
+                    type: MOVE_BACK_ACTION_TYPES.STAR,
+                    elements: params.elements,
+                    isUnstarringElement: params.removeLabel || false,
+                });
+
+                return moveToFolder({
+                    ...params,
+                });
         }
     };
 
