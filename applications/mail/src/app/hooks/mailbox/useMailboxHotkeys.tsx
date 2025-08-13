@@ -23,6 +23,7 @@ import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import type { Element } from '../../models/element';
+import { APPLY_LOCATION_TYPES } from '../actions/applyLocation/interface';
 import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from '../actions/delete/usePermanentDelete';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
@@ -136,10 +137,7 @@ export const useMailboxHotkeys = (
         const folderName = getFolderName(LabelID, folders);
 
         if (applyOptimisticLocationEnabled && !selectAll) {
-            await applyLocation({
-                elements,
-                targetLabelID: LabelID,
-            });
+            await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, targetLabelID: LabelID });
         } else {
             await moveToFolder({
                 elements,
@@ -393,9 +391,10 @@ export const useMailboxHotkeys = (
 
                     if (applyOptimisticLocationEnabled) {
                         await applyLocation({
+                            type: APPLY_LOCATION_TYPES.STAR,
+                            removeLabel: isAllStarred,
                             elements,
                             targetLabelID: MAILBOX_LABEL_IDS.STARRED,
-                            removeLabel: isAllStarred,
                             showSuccessNotification: false,
                         });
                     } else {

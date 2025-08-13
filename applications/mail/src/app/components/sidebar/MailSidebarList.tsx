@@ -22,6 +22,7 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
@@ -299,6 +300,8 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                         applyLabels={(params) =>
                             applyOptimisticLocationEnabled && !params.selectAll
                                 ? applyLocation({
+                                      type: APPLY_LOCATION_TYPES.APPLY_LABEL,
+                                      changes: params.changes,
                                       elements: params.elements,
                                       targetLabelID: params.targetLabelID!, // TODO: Improve this when removing old apply labels function
                                   })
@@ -307,6 +310,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                         moveToFolder={(params) =>
                             applyOptimisticLocationEnabled && !params.selectAll
                                 ? applyLocation({
+                                      type: APPLY_LOCATION_TYPES.MOVE,
                                       elements: params.elements,
                                       targetLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                   })
@@ -347,6 +351,8 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                     applyLabels={(params) =>
                                         applyOptimisticLocationEnabled && !params.selectAll
                                             ? applyLocation({
+                                                  type: APPLY_LOCATION_TYPES.APPLY_LABEL,
+                                                  changes: params.changes,
                                                   elements: params.elements,
                                                   targetLabelID: params.targetLabelID!, // TODO: Improve this when removing old apply labels function
                                               })
@@ -355,6 +361,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                     moveToFolder={(params) =>
                                         applyOptimisticLocationEnabled && !params.selectAll
                                             ? applyLocation({
+                                                  type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
                                                   targetLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                               })
@@ -393,6 +400,8 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                     applyLabels={(params) =>
                                         applyOptimisticLocationEnabled && !params.selectAll
                                             ? applyLocation({
+                                                  type: APPLY_LOCATION_TYPES.APPLY_LABEL,
+                                                  changes: params.changes,
                                                   elements: params.elements,
                                                   targetLabelID: params.targetLabelID!, // TODO: Improve this when removing old apply labels function
                                               })
@@ -401,6 +410,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                     moveToFolder={(params) =>
                                         applyOptimisticLocationEnabled && !params.selectAll
                                             ? applyLocation({
+                                                  type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
                                                   targetLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                               })
