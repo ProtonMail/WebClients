@@ -1,87 +1,23 @@
 import type { Draft } from '@reduxjs/toolkit';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation, ConversationLabel } from 'proton-mail/models/conversation';
 import { labelConversationsPending } from 'proton-mail/store/elements/elementsReducers';
 import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
-
-const CUSTOM_LABEL_ID1 = 'custom-label-1';
-const CUSTOM_LABEL_ID2 = 'custom-label-2';
-const CUSTOM_FOLDER_ID1 = 'custom-folder-1';
-const CUSTOM_FOLDER_ID2 = 'custom-folder-2';
-const CONVERSATION_ID = 'conversation-1';
-
-const customLabels = [
-    { ID: CUSTOM_LABEL_ID1, Name: 'Custom Label 1', Type: 1 } as Label,
-    { ID: CUSTOM_LABEL_ID2, Name: 'Custom Label 2', Type: 1 } as Label,
-];
-
-const customFolders = [
-    { ID: CUSTOM_FOLDER_ID1, Name: 'Custom Folder 1', Type: 1 } as Folder,
-    { ID: CUSTOM_FOLDER_ID2, Name: 'Custom Folder 2', Type: 1 } as Folder,
-];
-
-const setupConversation = ({
-    conversationLabels,
-    numMessages,
-    numUnread,
-    numAttachments,
-}: {
-    conversationLabels: ConversationLabel[];
-    numMessages: number;
-    numUnread: number;
-    numAttachments: number;
-}) => {
-    return {
-        ID: CONVERSATION_ID,
-        NumMessages: numMessages,
-        NumUnread: numUnread,
-        NumAttachments: numAttachments,
-        Labels: conversationLabels,
-    } as Conversation;
-};
-
-const setupMessageFromConversation = ({
-    messageID,
-    unreadState,
-    labelIDs,
-}: {
-    messageID: string;
-    labelIDs: string[];
-    unreadState: 'read' | 'unread';
-}) => {
-    return {
-        ID: messageID,
-        ConversationID: CONVERSATION_ID,
-        LabelIDs: labelIDs,
-        Unread: unreadState === 'unread' ? 1 : 0,
-    } as Message;
-};
-
-const expectConversationLabelsSameArray = (array1?: ConversationLabel[], array2?: ConversationLabel[]) => {
-    if (!array1 || !array2) {
-        throw new Error('Array is undefined');
-    }
-
-    const array1Sorted = array1.toSorted((a, b) => a.ID.localeCompare(b.ID));
-    const array2Sorted = array2.toSorted((a, b) => a.ID.localeCompare(b.ID));
-
-    expect(array1Sorted).toEqual(array2Sorted);
-};
-
-const expectMessagesLabelsSameArray = (array1?: string[], array2?: string[]) => {
-    if (!array1 || !array2) {
-        throw new Error('Array is undefined');
-    }
-
-    const array1Sorted = array1.sort();
-    const array2Sorted = array2.sort();
-
-    expect(array1Sorted).toEqual(array2Sorted);
-};
+import {
+    CONVERSATION_ID,
+    CUSTOM_FOLDER_ID1,
+    CUSTOM_LABEL_ID1,
+    CUSTOM_LABEL_ID2,
+    customFolders,
+    customLabels,
+    expectConversationLabelsSameArray,
+    expectMessagesLabelsSameArray,
+    setupConversation,
+    setupMessageFromConversation,
+} from 'proton-mail/store/elements/tests/elementsReducer.test.helpers';
 
 describe('labelConversationsPending', () => {
     let testState: Draft<ElementsState>;
