@@ -143,12 +143,12 @@ export const useMoveItemsModalState = ({
 
         showCreateFolderModal({
             parentFolderUid: targetUid,
-            onSuccess: async (newFolderUid: string) => {
-                setTargetFolderUid(newFolderUid);
-
+            onSuccess: async (newFolderId: string) => {
                 // After creating the folder we want to expand its parent so it shows in the tree
                 const { nodeId } = splitNodeUid(targetUid);
                 expand(nodeId);
+
+                setTargetFolderUid(newFolderId);
             },
         });
     };
