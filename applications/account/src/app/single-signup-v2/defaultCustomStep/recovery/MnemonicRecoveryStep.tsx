@@ -4,16 +4,14 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useApi } from '@proton/components';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import RecoveryStepUnderstoodCheckbox from '../../../containers/recoveryPhrase/RecoveryStepUnderstoodCheckbox';
+import SetRecoveryPhraseOnSignupContainer from '../../../containers/recoveryPhrase/SetRecoveryPhraseOnSignupContainer';
+import sendRecoveryPhrasePayload from '../../../containers/recoveryPhrase/sendRecoveryPhrasePayload';
 import type { DeferredMnemonicData } from '../../../containers/recoveryPhrase/types';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import Main from '../../../public/Main';
-import { sendMnemonicPayloadToBackend } from '../../../signup/signupActions';
-import RecoveryKitAction from './RecoveryKitAction';
-import RecoveryStepUnderstoodCheckbox from './RecoveryStepUnderstoodCheckbox';
 
 interface Props {
     onContinue: () => void;
@@ -23,11 +21,8 @@ interface Props {
 
 const MnemonicRecoveryStep = ({ onContinue, mnemonicData, onMeasureClick }: Props) => {
     const [understood, setUnderstood] = useState(false);
-    const api = useApi();
 
-    const setApiRecoveryPhrase = async () => {
-        await sendMnemonicPayloadToBackend({ api, payload: mnemonicData.payload });
-    };
+    const api = useApi();
 
     return (
         <Main>
@@ -36,44 +31,32 @@ const MnemonicRecoveryStep = ({ onContinue, mnemonicData, onMeasureClick }: Prop
                     title={c('pass_signup_2023: Title').t`Secure your account`}
                     subTitle={c('pass_signup_2023: Info').t`Save your recovery kit to continue`}
                 />
-                <p className="mt-4">
-                    {getBoldFormattedText(
-                        c('pass_signup_2023: Info')
-                            .t`If you get locked out of your ${BRAND_NAME} Account, your **Recovery kit** will allow you to sign in and recover your data.`
-                    )}
-                </p>
-                <p className="mb-0">
-                    {getBoldFormattedText(
-                        c('pass_signup_2023: Info')
-                            .t`It’s the only way to fully restore your account, so make sure you keep it somewhere safe.`
-                    )}
-                </p>
-
-                <RecoveryKitAction
-                    className="mt-4"
-                    recoveryPhrase={mnemonicData.recoveryPhrase}
-                    recoveryKitBlob={mnemonicData.recoveryKitBlob}
-                    setApiRecoveryPhrase={setApiRecoveryPhrase}
-                />
-
-                <RecoveryStepUnderstoodCheckbox
-                    className="mt-2"
-                    checked={understood}
-                    onChange={() => setUnderstood(!understood)}
-                />
-                <Button
-                    color="norm"
-                    size="large"
-                    fullWidth
-                    className="mt-4"
-                    disabled={!understood}
-                    onClick={() => {
-                        onMeasureClick('recovery_continue');
-                        onContinue();
+                <SetRecoveryPhraseOnSignupContainer
+                    recoveryPhraseData={mnemonicData}
+                    sendRecoveryPhrasePayload={() => sendRecoveryPhrasePayload({ api, payload: mnemonicData.payload })}
+                    continueButton={() => {
+                        return (
+                            <>
+                                <RecoveryStepUnderstoodCheckbox
+                                    checked={understood}
+                                    onChange={() => setUnderstood(!understood)}
+                                />
+                                <Button
+                                    color="norm"
+                                    size="large"
+                                    fullWidth
+                                    disabled={!understood}
+                                    onClick={() => {
+                                        onMeasureClick('recovery_continue');
+                                        onContinue();
+                                    }}
+                                >
+                                    {c('pass_signup_2023: Action').t`Continue`}
+                                </Button>
+                            </>
+                        );
                     }}
-                >
-                    {c('pass_signup_2023: Action').t`Continue`}
-                </Button>
+                />
             </Content>
         </Main>
     );
