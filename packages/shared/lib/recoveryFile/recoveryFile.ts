@@ -1,6 +1,7 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { isSelf } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
@@ -155,5 +156,5 @@ export const getIsRecoveryFileAvailable = ({
 
     const isPrivateUser = Boolean(user.Private);
 
-    return !!primaryKey?.privateKey && hasMigratedKeys && isPrivateUser;
+    return !!primaryKey?.privateKey && hasMigratedKeys && isPrivateUser && isSelf(user);
 };

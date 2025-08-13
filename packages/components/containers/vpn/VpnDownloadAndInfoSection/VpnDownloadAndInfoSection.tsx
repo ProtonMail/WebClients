@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { Button, DashboardGrid, DashboardGridSection, DashboardGridSectionHeader } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
@@ -14,6 +15,7 @@ import VpnDownloadSection from '../VpnDownloadSection/VpnDownloadSection';
 import VpnGetMoreSection from '../VpnGetMoreSection/VpnGetMoreSection';
 
 export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
+    const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
@@ -46,9 +48,11 @@ export const VpnDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
     );
 
     const vpnPlus = PLAN_NAMES[plan];
-    const downloadsSubtitle = !subscription?.Plans
-        ? c('Title').jt`Connect to ${VPN_CONNECTIONS} devices at once with ${vpnPlus}. ${upgradeButton}`
-        : c('Title').t`Get the app on all your devices and protect up to ${VPN_CONNECTIONS} at one time.`;
+    const downloadsSubtitle = !user.canPay
+        ? null
+        : !subscription?.Plans
+          ? c('Title').jt`Connect to ${VPN_CONNECTIONS} devices at once with ${vpnPlus}. ${upgradeButton}`
+          : c('Title').t`Get the app on all your devices and protect up to ${VPN_CONNECTIONS} at one time.`;
 
     return (
         <DashboardGrid columns={2}>
