@@ -51,7 +51,7 @@ const sanitizeRelativeHttpLinks = (link: HTMLLinkElement) => {
         const url = link.getAttribute('href');
 
         if (url) {
-            link.setAttribute('href', `http://${url}`);
+            link.setAttribute('href', `https://${url}`);
         }
     }
 };
