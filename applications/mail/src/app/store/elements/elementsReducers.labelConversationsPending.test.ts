@@ -2,6 +2,7 @@ import type { Draft } from '@reduxjs/toolkit';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation, ConversationLabel } from 'proton-mail/models/conversation';
 import { labelConversationsPending } from 'proton-mail/store/elements/elementsReducers';
@@ -43,13 +44,41 @@ const setupConversation = ({
     } as Conversation;
 };
 
-const expectSameArray = (array1?: ConversationLabel[], array2?: ConversationLabel[]) => {
+const setupMessageFromConversation = ({
+    messageID,
+    unreadState,
+    labelIDs,
+}: {
+    messageID: string;
+    labelIDs: string[];
+    unreadState: 'read' | 'unread';
+}) => {
+    return {
+        ID: messageID,
+        ConversationID: CONVERSATION_ID,
+        LabelIDs: labelIDs,
+        Unread: unreadState === 'unread' ? 1 : 0,
+    } as Message;
+};
+
+const expectConversationLabelsSameArray = (array1?: ConversationLabel[], array2?: ConversationLabel[]) => {
     if (!array1 || !array2) {
         throw new Error('Array is undefined');
     }
 
     const array1Sorted = array1.toSorted((a, b) => a.ID.localeCompare(b.ID));
     const array2Sorted = array2.toSorted((a, b) => a.ID.localeCompare(b.ID));
+
+    expect(array1Sorted).toEqual(array2Sorted);
+};
+
+const expectMessagesLabelsSameArray = (array1?: string[], array2?: string[]) => {
+    if (!array1 || !array2) {
+        throw new Error('Array is undefined');
+    }
+
+    const array1Sorted = array1.sort();
+    const array2Sorted = array2.sort();
 
     expect(array1Sorted).toEqual(array2Sorted);
 };
@@ -137,7 +166,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(2);
             expect(updatedConversation.NumUnread).toEqual(0);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
                     ContextNumMessages: 1,
@@ -227,7 +256,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(2);
             expect(updatedConversation.NumUnread).toEqual(1);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
                     ContextNumMessages: 1,
@@ -317,7 +346,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(2);
             expect(updatedConversation.NumUnread).toEqual(0);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
                     ContextNumMessages: 1,
@@ -407,7 +436,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(2);
             expect(updatedConversation.NumUnread).toEqual(1);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
                     ContextNumMessages: 1,
@@ -491,7 +520,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(2);
             expect(updatedConversation.NumUnread).toEqual(0);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
                     ContextNumMessages: 1,
@@ -575,7 +604,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(2);
             expect(updatedConversation.NumUnread).toEqual(1);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
                     ContextNumMessages: 1,
@@ -685,7 +714,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(1);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.SCHEDULED,
                     ContextNumMessages: 1,
@@ -796,7 +825,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 4, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 {
                     ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
@@ -870,7 +899,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(3);
             expect(updatedConversation.NumUnread).toEqual(1);
             expect(updatedConversation.NumAttachments).toEqual(0);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     ContextNumMessages: 3,
@@ -956,7 +985,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -1043,7 +1072,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(3);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
@@ -1136,7 +1165,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.DRAFTS, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -1223,7 +1252,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(3);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
@@ -1322,7 +1351,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -1417,7 +1446,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -1517,7 +1546,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -1624,7 +1653,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.INBOX,
                     ContextNumMessages: 1,
@@ -1734,7 +1763,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.INBOX,
                     ContextNumMessages: 1,
@@ -1844,7 +1873,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.INBOX,
                     ContextNumMessages: 1,
@@ -1960,7 +1989,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.INBOX,
                     ContextNumMessages: 1,
@@ -2082,7 +2111,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.INBOX,
                     ContextNumMessages: 1,
@@ -2205,7 +2234,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.INBOX,
                     ContextNumMessages: 1,
@@ -2318,7 +2347,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 4, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 {
                     ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
@@ -2392,7 +2421,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(3);
             expect(updatedConversation.NumUnread).toEqual(1);
             expect(updatedConversation.NumAttachments).toEqual(0);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     ContextNumMessages: 3,
@@ -2478,7 +2507,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -2565,7 +2594,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(3);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
@@ -2658,7 +2687,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.DRAFTS, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -2745,7 +2774,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(3);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
@@ -2844,7 +2873,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -2939,7 +2968,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -3039,7 +3068,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -3134,7 +3163,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 4, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 {
                     ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
@@ -3208,7 +3237,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(3);
             expect(updatedConversation.NumUnread).toEqual(1);
             expect(updatedConversation.NumAttachments).toEqual(0);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     ContextNumMessages: 3,
@@ -3294,7 +3323,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -3381,7 +3410,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(3);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
@@ -3474,7 +3503,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.DRAFTS, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -3561,7 +3590,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(3);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
@@ -3660,7 +3689,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -3755,7 +3784,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -3855,7 +3884,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
                 { ID: MAILBOX_LABEL_IDS.SENT, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 0 },
                 {
@@ -3962,7 +3991,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.INBOX,
                     ContextNumMessages: 1,
@@ -4090,7 +4119,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.INBOX,
                     ContextNumMessages: 1,
@@ -4214,7 +4243,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
                     ContextNumMessages: 2,
@@ -4323,7 +4352,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
                     ContextNumMessages: 2,
@@ -4438,7 +4467,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
                     ContextNumMessages: 2,
@@ -4547,7 +4576,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(2);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.ALL_SENT,
                     ContextNumMessages: 2,
@@ -4651,7 +4680,7 @@ describe('labelConversationsPending', () => {
             expect(updatedConversation.NumMessages).toEqual(4);
             expect(updatedConversation.NumUnread).toEqual(1);
             expect(updatedConversation.NumAttachments).toEqual(1);
-            expectSameArray(updatedConversation.Labels, [
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
                 {
                     ID: MAILBOX_LABEL_IDS.INBOX,
                     ContextNumMessages: 4,
@@ -4676,6 +4705,114 @@ describe('labelConversationsPending', () => {
                     ContextNumUnread: 1,
                     ContextNumAttachments: 1,
                 },
+            ]);
+        });
+    });
+
+    describe('Messages from conversation in element state are updated', () => {
+        it('should update messages in element state when moving a conversation', () => {
+            const conversation = setupConversation({
+                conversationLabels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.SENT,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_SENT,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 3,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 3,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                ] as ConversationLabel[],
+                numUnread: 2,
+                numMessages: 3,
+                numAttachments: 1,
+            });
+
+            const messageID = 'message1';
+            const sentMessage = setupMessageFromConversation({
+                messageID,
+                labelIDs: [
+                    MAILBOX_LABEL_IDS.SENT,
+                    MAILBOX_LABEL_IDS.ALL_SENT,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                ],
+                unreadState: 'unread',
+            });
+
+            testState.elements = {
+                [CONVERSATION_ID]: conversation,
+                [messageID]: sentMessage,
+            };
+
+            labelConversationsPending(testState, {
+                type: 'mailbox/labelConversations',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        conversations: [conversation],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                        labels: customLabels,
+                        folders: customFolders,
+                    },
+                },
+            });
+
+            const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+
+            expect(updatedConversation.NumMessages).toEqual(3);
+            expect(updatedConversation.NumUnread).toEqual(0);
+            expect(updatedConversation.NumAttachments).toEqual(1);
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
+                {
+                    ID: MAILBOX_LABEL_IDS.TRASH,
+                    ContextNumMessages: 3,
+                    ContextNumUnread: 0,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALL_SENT,
+                    ContextNumMessages: 1,
+                    ContextNumUnread: 0,
+                    ContextNumAttachments: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    ContextNumMessages: 3,
+                    ContextNumUnread: 0,
+                    ContextNumAttachments: 1,
+                },
+            ]);
+
+            const updatedMessage = testState.elements[messageID] as Message;
+
+            expect(updatedMessage.Unread).toEqual(0);
+            expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                MAILBOX_LABEL_IDS.TRASH,
+                MAILBOX_LABEL_IDS.ALL_SENT,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
             ]);
         });
     });
