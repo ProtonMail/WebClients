@@ -18,9 +18,10 @@ import {
     getAppIntentFromReferralPlan,
     getReferralPlanIDsFromPlan,
 } from './helpers/plans';
+import RecoveryPhraseStep from './steps/RecoveryPhraseStep';
 import AccountDetailsStep from './steps/accountDetails/AccountDetailsStep';
 
-type Step = 'account-details' | 'org-name' | 'display-name' | 'creating-account';
+type Step = 'account-details' | 'org-name' | 'recovery' | 'display-name' | 'creating-account';
 
 const ReferralSignupInner = () => {
     const [step, setStep] = useState<Step>('account-details');
@@ -44,10 +45,17 @@ const ReferralSignupInner = () => {
 
                             await signup.setupUser();
 
-                            setStep('display-name');
+                            setStep('recovery');
                         } catch (error) {
                             notifyError(error);
                         }
+                    }}
+                />
+            )}
+            {step === 'recovery' && (
+                <RecoveryPhraseStep
+                    onContinue={async () => {
+                        setStep('display-name');
                     }}
                 />
             )}
