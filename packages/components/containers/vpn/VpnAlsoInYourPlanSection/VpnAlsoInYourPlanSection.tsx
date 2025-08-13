@@ -226,7 +226,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
         card.shouldRender(planName)
     );
 
-    const showUnlimitedUpsell = freeAndPlusPlans.includes(planName) && !planIsManagedExternally;
+    const showUnlimitedUpsell = user.canPay && freeAndPlusPlans.includes(planName) && !planIsManagedExternally;
 
     if (filteredCards.length === 0) {
         return false;
