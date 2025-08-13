@@ -3,6 +3,7 @@ import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import type { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { type ReturnUrlResult, getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { getRedirect } from '@proton/shared/lib/subscription/redirect';
+import { isSelf } from '@proton/shared/lib/user/helpers';
 
 import { pushForkSession } from '../../api/auth';
 import { getAppHref, getClientID } from '../../apps/helper';
@@ -290,11 +291,8 @@ export const getRequiredForkParameters = (
 };
 
 const getCanUserReAuth = (user: User) => {
-    // The reauth container doesn't support an admin signed into a sub-user
-    if (user.OrganizationPrivateKey) {
-        return false;
-    }
-    return true;
+    // The reauth container doesn't support non-self
+    return isSelf(user);
 };
 
 const BYPASS_SESSION_MIN_AGE = 30_000; // 30 seconds
