@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { SimpleSidebarListItemHeader, Spotlight, useActiveBreakpoint, useLocalState } from '@proton/components';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
-import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { params } from 'proton-mail/store/elements/elementsSelectors';
@@ -63,15 +62,8 @@ interface Props {
 export const MailSidebarCustomView = ({ collapsed }: Props) => {
     const activeBreakpoint = useActiveBreakpoint();
 
-    const newsletterSubscriptionsView = useFlag('NewsletterSubscriptionView');
-
     const [user] = useUser();
-    const [displayView, toggleView] = useLocalState(newsletterSubscriptionsView, `${user.ID || 'item'}-display-views`);
-
-    // We return null if the subscription view is disabled because it's the only view at the moment
-    if (!newsletterSubscriptionsView) {
-        return null;
-    }
+    const [displayView, toggleView] = useLocalState(true, `${user.ID || 'item'}-display-views`);
 
     // The view is not availabe on mobile, we want to make sure to avoid showing it to users
     if (activeBreakpoint.viewportWidth['<=small']) {
