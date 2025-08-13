@@ -440,8 +440,13 @@ export const unlabelConversationsPending = (
     state: Draft<ModelState<LabelCount[]>>,
     action: PayloadAction<{ conversations: Conversation[]; targetLabelID: string; labels: Label[] }>
 ) => {
-    const { conversations, targetLabelID } = action.payload;
+    const { conversations, targetLabelID, labels } = action.payload;
     const messageCounter = state.value?.find((counter) => counter.LabelID === targetLabelID);
+    const isLabel = isCustomLabel(targetLabelID, labels) || targetLabelID === MAILBOX_LABEL_IDS.STARRED;
+
+    if (!isLabel) {
+        return;
+    }
 
     if (!messageCounter) {
         return;
