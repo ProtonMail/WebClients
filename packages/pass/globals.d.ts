@@ -5,6 +5,7 @@ declare global {
     const BUILD_TARGET: string;
     const BUILD_STORE_TARGET: string;
     const DESKTOP_BUILD: boolean;
+    const E2E_TESTS: boolean;
     const ENV: string;
     const EXTENSION_BUILD: boolean;
     const OFFLINE_SUPPORTED: boolean;
