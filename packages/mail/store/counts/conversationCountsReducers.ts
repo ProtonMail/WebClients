@@ -175,12 +175,15 @@ export const labelMessagesPending = (
 
             // If target is a category, only decrease counters in old category
             if (isCategoryLabel(targetLabelID)) {
-                if (isCategoryLabel(targetLabelID) && targetLabelID !== labelID) {
+                if (isCategoryLabel(targetLabelID) && isCategoryLabel(labelID) && targetLabelID !== labelID) {
                     if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
                         conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
                     }
 
-                    if (unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID)) {
+                    if (
+                        unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID) &&
+                        unreadMessagesFromConversationInLabel.length > 0
+                    ) {
                         conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
                     }
                 }
@@ -188,25 +191,42 @@ export const labelMessagesPending = (
             }
 
             if (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
-                // Decrease STARRED and custom labels counts since items are removed
-                if (isCustomLabel(labelID, labels) || isSystemLabel(labelID)) {
-                    if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
-                        conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
-                    }
-
-                    if (unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID)) {
-                        conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
-                    }
-                    return;
-                }
-
                 // Decrease ALMOST_ALL_MAIL and custom labels counts since items are no longer visible there
                 if (labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
                     if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
                         conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
                     }
 
-                    if (unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID)) {
+                    if (
+                        unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID) &&
+                        unreadMessagesFromConversationInLabel.length > 0
+                    ) {
+                        conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
+                    }
+                    return;
+                }
+
+                // Do not updated unmodifiable labels. However unread needs to be updated when moving to trash
+                if (isUnmodifiableByUser(labelID, labels, folders)) {
+                    if (
+                        targetLabelID === MAILBOX_LABEL_IDS.TRASH &&
+                        unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID) &&
+                        unreadMessagesFromConversationInLabel.length > 0
+                    ) {
+                        conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
+                    }
+                    return;
+                }
+                // Decrease STARRED and custom labels counts since items are removed
+                if (isCustomLabel(labelID, labels) || isSystemLabel(labelID)) {
+                    if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
+                        conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
+                    }
+
+                    if (
+                        unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID) &&
+                        unreadMessagesFromConversationInLabel.length > 0
+                    ) {
                         conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
                     }
                     return;
@@ -238,7 +258,10 @@ export const labelMessagesPending = (
                 conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
             }
 
-            if (unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, labelID)) {
+            if (
+                unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, labelID) &&
+                unreadMessagesFromConversationInLabel.length > 0
+            ) {
                 conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
             }
 
@@ -259,7 +282,7 @@ export const labelMessagesPending = (
                     getContextNumUnread(conversation, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) === 0 &&
                     unreadMessagesFromConversationInLabel.length > 0
                 ) {
-                    almostAllMailMessageCountState.Unread = safeDecreaseCount(almostAllMailMessageCountState.Unread, 1);
+                    almostAllMailMessageCountState.Unread = safeIncreaseCount(almostAllMailMessageCountState.Unread, 1);
                 }
             }
         });
@@ -464,8 +487,13 @@ export const unlabelConversationsPending = (
     state: Draft<ModelState<LabelCount[]>>,
     action: PayloadAction<{ conversations: Conversation[]; targetLabelID: string; labels: Label[] }>
 ) => {
-    const { conversations, targetLabelID } = action.payload;
+    const { conversations, targetLabelID, labels } = action.payload;
     const conversationCounter = state.value?.find((counter) => counter.LabelID === targetLabelID);
+    const isLabel = isCustomLabel(targetLabelID, labels) || targetLabelID === MAILBOX_LABEL_IDS.STARRED;
+
+    if (!isLabel) {
+        return;
+    }
 
     if (!conversationCounter) {
         return;
