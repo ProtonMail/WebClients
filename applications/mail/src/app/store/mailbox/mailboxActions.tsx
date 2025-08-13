@@ -131,7 +131,11 @@ export const markMessagesAsRead = createAsyncThunk<
                 extra,
                 finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
-                    ? getNotificationTextMarked(false, elements.length, MARK_AS_STATUS.READ)
+                    ? getNotificationTextMarked({
+                          isMessage: false,
+                          elementsCount: elements.length,
+                          status: MARK_AS_STATUS.READ,
+                      })
                     : undefined,
                 elements,
                 action: (chunk) => markMessageAsRead(chunk.map((element: Element) => element.ID)),
@@ -168,7 +172,11 @@ export const markMessagesAsUnread = createAsyncThunk<
                 extra,
                 finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
-                    ? getNotificationTextMarked(true, elements.length, MARK_AS_STATUS.UNREAD)
+                    ? getNotificationTextMarked({
+                          isMessage: true,
+                          elementsCount: elements.length,
+                          status: MARK_AS_STATUS.UNREAD,
+                      })
                     : undefined,
                 elements,
                 action: (chunk) => markMessageAsUnread(chunk.map((element: Element) => element.ID)),
@@ -195,7 +203,11 @@ export const markConversationsAsRead = createAsyncThunk<
                 extra,
                 finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
-                    ? getNotificationTextMarked(false, elements.length, MARK_AS_STATUS.READ)
+                    ? getNotificationTextMarked({
+                          isMessage: false,
+                          elementsCount: elements.length,
+                          status: MARK_AS_STATUS.READ,
+                      })
                     : undefined,
                 elements,
                 action: (chunk) => markConversationsAsReadApi(chunk.map((element: Element) => element.ID)),
@@ -221,7 +233,11 @@ export const markConversationsAsUnread = createAsyncThunk<
                 extra,
                 finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
-                    ? getNotificationTextMarked(true, elements.length, MARK_AS_STATUS.UNREAD)
+                    ? getNotificationTextMarked({
+                          isMessage: false,
+                          elementsCount: elements.length,
+                          status: MARK_AS_STATUS.UNREAD,
+                      })
                     : undefined,
                 elements,
                 action: (chunk) =>
@@ -282,7 +298,13 @@ export const labelMessages = createAsyncThunk<
                 extra,
                 finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
-                    ? getNotificationTextLabelAdded(true, elements.length, targetLabelID, labels, folders)
+                    ? getNotificationTextLabelAdded({
+                          isMessage: true,
+                          elementsCount: elements.length,
+                          targetLabelID,
+                          labels,
+                          folders,
+                      })
                     : undefined,
                 elements,
                 action: (chunk) =>
@@ -346,7 +368,13 @@ export const unlabelMessages = createAsyncThunk<
                 extra,
                 finallyFetchEvents: isEncryptedSearch,
                 notificationText: showSuccessNotification
-                    ? getNotificationTextLabelRemoved(true, elements.length, targetLabelID, labels, folders)
+                    ? getNotificationTextLabelRemoved({
+                          isMessage: true,
+                          elementsCount: elements.length,
+                          targetLabelID,
+                          labels,
+                          folders,
+                      })
                     : undefined,
                 elements,
                 action: (chunk) =>
@@ -408,17 +436,24 @@ export const labelConversations = createAsyncThunk<
             );
             dispatch(
                 messageCountsActions.labelConversationsPending({
-                    elements: conversations,
+                    conversations,
                     targetLabelID,
                     labels,
                     folders,
                 })
             );
+
             const result = await runAction({
                 extra,
                 finallyFetchEvents: isEncryptedSearch || hasSentOrDraftMessages(conversations),
                 notificationText: showSuccessNotification
-                    ? getNotificationTextLabelAdded(false, conversations.length, targetLabelID, labels, folders)
+                    ? getNotificationTextLabelAdded({
+                          isMessage: false,
+                          elementsCount: conversations.length,
+                          targetLabelID,
+                          labels,
+                          folders,
+                      })
                     : undefined,
                 elements: conversations,
                 action: (chunk) =>
@@ -484,7 +519,13 @@ export const unlabelConversations = createAsyncThunk<
                 extra,
                 finallyFetchEvents: isEncryptedSearch || hasSentOrDraftMessages(conversations),
                 notificationText: showSuccessNotification
-                    ? getNotificationTextLabelRemoved(false, conversations.length, targetLabelID, labels, folders)
+                    ? getNotificationTextLabelRemoved({
+                          isMessage: false,
+                          elementsCount: conversations.length,
+                          targetLabelID,
+                          labels,
+                          folders,
+                      })
                     : undefined,
                 elements: conversations,
                 action: (chunk) =>

@@ -8,6 +8,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import orderBy from '@proton/utils/orderBy';
 
+import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 
 import { getLabelIDs } from '../../helpers/elements';
@@ -53,6 +54,8 @@ const ItemLabels = ({
     const handleUnlabel = (labelID: string) => () => {
         if (applyOptimisticLocationEnabled) {
             return applyLocation({
+                type: APPLY_LOCATION_TYPES.APPLY_LABEL,
+                changes: { [labelID]: false },
                 elements: [element || ({} as Element)],
                 targetLabelID: labelID,
                 removeLabel: true,

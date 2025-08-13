@@ -8,6 +8,7 @@ import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 
 import { useMoveToFolder } from '../../../hooks/actions/move/useMoveToFolder';
@@ -41,6 +42,7 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
         );
         if (applyOptimisticLocationEnabled) {
             await applyLocation({
+                type: APPLY_LOCATION_TYPES.MOVE,
                 elements: [message.data || ({} as Element)],
                 targetLabelID: SPAM,
                 askUnsubscribe: false,

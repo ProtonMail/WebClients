@@ -10,6 +10,7 @@ import { type SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/u
 import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
 import { isMessage } from 'proton-mail/helpers/elements';
 import { setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
+import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from 'proton-mail/hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from 'proton-mail/hooks/actions/markAs/useMarkAs';
@@ -158,6 +159,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
         async (newLabelID: string, sourceAction: SOURCE_ACTION): Promise<void> => {
             if (applyOptimisticLocationEnabled && !selectAll) {
                 await applyLocation({
+                    type: APPLY_LOCATION_TYPES.MOVE,
                     elements: getElementsFromIDs(selectedIDs),
                     targetLabelID: newLabelID,
                 });

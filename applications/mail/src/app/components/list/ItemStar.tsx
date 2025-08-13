@@ -8,6 +8,7 @@ import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
@@ -51,9 +52,10 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
         if (applyOptimisticLocationEnabled) {
             void withLoading(
                 applyLocation({
+                    type: APPLY_LOCATION_TYPES.STAR,
+                    removeLabel: isStarred,
                     elements: [element || ({} as Element)],
                     targetLabelID: MAILBOX_LABEL_IDS.STARRED,
-                    removeLabel: isStarred,
                     showSuccessNotification: false,
                 })
             );

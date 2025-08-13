@@ -27,6 +27,7 @@ import { isStarred } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import type { Element } from '../../models/element';
+import { APPLY_LOCATION_TYPES } from '../actions/applyLocation/interface';
 import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../actions/move/useMoveToFolder';
@@ -114,6 +115,7 @@ export const useMessageHotkeys = (
 
         if (applyOptimisticLocationEnabled) {
             await applyLocation({
+                type: APPLY_LOCATION_TYPES.MOVE,
                 elements: [message.data],
                 targetLabelID: LabelID,
             });
@@ -306,9 +308,10 @@ export const useMessageHotkeys = (
 
                     if (applyOptimisticLocationEnabled) {
                         await applyLocation({
+                            type: APPLY_LOCATION_TYPES.STAR,
+                            removeLabel: isStarred(message.data),
                             elements: [message.data as Element],
                             targetLabelID: MAILBOX_LABEL_IDS.STARRED,
-                            removeLabel: isStarred(message.data),
                             showSuccessNotification: false,
                         });
                     } else {

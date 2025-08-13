@@ -6,7 +6,15 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { getLabelName } from '../../helpers/labels';
 
-export const getNotificationTextMarked = (isMessage: boolean, elementsCount: number, status: MARK_AS_STATUS) => {
+export const getNotificationTextMarked = ({
+    isMessage,
+    elementsCount,
+    status,
+}: {
+    isMessage: boolean;
+    elementsCount: number;
+    status: MARK_AS_STATUS;
+}) => {
     if (isMessage) {
         if (elementsCount === 1) {
             return status === MARK_AS_STATUS.READ
@@ -46,7 +54,13 @@ export const getNotificationTextMarked = (isMessage: boolean, elementsCount: num
           );
 };
 
-export const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
+export const getNotificationTextStarred = ({
+    isMessage,
+    elementsCount,
+}: {
+    isMessage: boolean;
+    elementsCount: number;
+}) => {
     if (isMessage) {
         if (elementsCount === 1) {
             return c('Success').t`Message marked as Starred.`;
@@ -69,7 +83,13 @@ export const getNotificationTextStarred = (isMessage: boolean, elementsCount: nu
     );
 };
 
-export const getNotificationTextUnstarred = (isMessage: boolean, elementsCount: number) => {
+export const getNotificationTextUnstarred = ({
+    isMessage,
+    elementsCount,
+}: {
+    isMessage: boolean;
+    elementsCount: number;
+}) => {
     if (isMessage) {
         if (elementsCount === 1) {
             return c('Success').t`Message removed from Starred.`;
@@ -92,15 +112,21 @@ export const getNotificationTextUnstarred = (isMessage: boolean, elementsCount: 
     );
 };
 
-export const getNotificationTextLabelRemoved = (
-    isMessage: boolean,
-    elementsCount: number,
-    targetLabelID: string,
-    labels: Label[],
-    folders: Folder[]
-) => {
+export const getNotificationTextLabelRemoved = ({
+    isMessage,
+    elementsCount,
+    targetLabelID,
+    labels,
+    folders,
+}: {
+    isMessage: boolean;
+    elementsCount: number;
+    targetLabelID: string;
+    labels: Label[];
+    folders: Folder[];
+}) => {
     if (targetLabelID === MAILBOX_LABEL_IDS.STARRED) {
-        return getNotificationTextUnstarred(isMessage, elementsCount);
+        return getNotificationTextUnstarred({ isMessage, elementsCount });
     }
 
     const labelName = getLabelName(targetLabelID, labels, folders);
@@ -127,37 +153,64 @@ export const getNotificationTextLabelRemoved = (
     );
 };
 
-export const getNotificationTextLabelAdded = (
-    isMessage: boolean,
-    elementsCount: number,
-    targetLabelID: string,
-    labels: Label[],
-    folders: Folder[]
-) => {
+export const getNotificationTextLabelAdded = ({
+    isMessage,
+    elementsCount,
+    targetLabelID,
+    labels,
+    folders,
+}: {
+    isMessage: boolean;
+    elementsCount: number;
+    targetLabelID: string;
+    labels: Label[];
+    folders: Folder[];
+}) => {
     if (targetLabelID === MAILBOX_LABEL_IDS.STARRED) {
-        return getNotificationTextStarred(isMessage, elementsCount);
+        return getNotificationTextStarred({ isMessage, elementsCount });
+    }
+
+    if (targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
+        if (isMessage) {
+            if (elementsCount === 1) {
+                return c('Success').t`Message moved to spam and sender added to your spam list.`;
+            }
+            return c('Success').ngettext(
+                msgid`${elementsCount} message moved to spam and sender added to your spam list.`,
+                `${elementsCount} messages moved to spam and senders added to your spam list.`,
+                elementsCount
+            );
+        } else {
+            if (elementsCount === 1) {
+                return c('Success').t`Conversation moved to spam and sender added to your spam list.`;
+            }
+            return c('Success').ngettext(
+                msgid`${elementsCount} conversation moved to spam and sender added to your spam list.`,
+                `${elementsCount} conversations moved to spam and senders added to your spam list.`,
+                elementsCount
+            );
+        }
     }
 
     const labelName = getLabelName(targetLabelID, labels, folders);
-
     if (isMessage) {
         if (elementsCount === 1) {
-            return c('Success').t`Message added to ${labelName}.`;
+            return c('Success').t`Message moved to ${labelName}.`;
         }
         return c('Success').ngettext(
-            msgid`${elementsCount} message added to ${labelName}.`,
-            `${elementsCount} messages added to ${labelName}.`,
+            msgid`${elementsCount} message moved to ${labelName}.`,
+            `${elementsCount} messages moved to ${labelName}.`,
             elementsCount
         );
     }
 
     if (elementsCount === 1) {
-        return c('Success').t`Conversation added to ${labelName}.`;
+        return c('Success').t`Conversation moved to ${labelName}.`;
     }
 
     return c('Success').ngettext(
-        msgid`${elementsCount} conversation added to ${labelName}.`,
-        `${elementsCount} conversations added to ${labelName}.`,
+        msgid`${elementsCount} conversation moved to ${labelName}.`,
+        `${elementsCount} conversations moved to ${labelName}.`,
         elementsCount
     );
 };
