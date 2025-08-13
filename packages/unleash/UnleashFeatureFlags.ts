@@ -140,6 +140,8 @@ enum DriveFeatureFlag {
     DriveWebSDKDevices = 'DriveWebSDKDevices',
     DriveWebSDKTrash = 'DriveWebSDKTrash',
     DriveWebSDKFileDetailsModal = 'DriveWebSDKFileDetailsModal',
+    // Video Preview
+    DriveWebVideoAutoPlay = 'DriveWebVideoAutoPlay',
 }
 
 enum DocsFeatureFlag {
