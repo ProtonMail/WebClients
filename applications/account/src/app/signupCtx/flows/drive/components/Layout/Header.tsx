@@ -12,7 +12,7 @@ interface HeaderProps {
     showSignIn?: boolean;
 }
 
-const Header = forwardRef<HTMLElement, HeaderProps>(function Header({ showSignIn = true }, ref) {
+const Header = forwardRef<HTMLElement, HeaderProps>(function Header({ showSignIn = false }, ref) {
     const { loginUrl } = useSignup();
 
     const signIn = (

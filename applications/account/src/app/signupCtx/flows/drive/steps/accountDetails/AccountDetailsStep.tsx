@@ -49,7 +49,7 @@ const AccountDetailsStep = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
     };
     return (
         <Layout>
-            <Header ref={topRef} />
+            <Header ref={topRef} showSignIn />
 
             <Wrapper minHeight="calc(100vh - 4.25rem)">
                 <Main>
