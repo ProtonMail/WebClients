@@ -368,10 +368,17 @@ export const getCountryByAbbrMap = () => {
     );
 };
 
+const getSafeRegion = (abbr: string) => {
+    try {
+        // Not available for all our supported browsers
+        return new Intl.DisplayNames('en-US', { type: 'region' }).of(abbr);
+    } catch (e) {}
+};
+
 type CountryAbbrMap = ReturnType<typeof getCountryByAbbrMap>;
 
 const getCountryByAbbr = (abbr: string, countriesByAbbr: CountryAbbrMap) => {
-    return countriesByAbbr[abbr] || new Intl.DisplayNames('en-US', { type: 'region' }).of(abbr);
+    return countriesByAbbr[abbr] || getSafeRegion(abbr);
 };
 
 export interface CountryOptions {
