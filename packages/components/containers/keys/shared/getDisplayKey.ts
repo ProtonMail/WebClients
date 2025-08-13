@@ -69,7 +69,7 @@ export const getDisplayKey = ({
         isForwarding,
     };
 
-    const hasUserPermission = isPrivate;
+    const hasUserPermission = isPrivate && isSelf;
     const canModify = isAddressKey && hasUserPermission && !isPrimary;
     const canDeleteForwarding = (isPrivate || !isSelf) && (AddressForwardingID === null || GroupMemberID === null);
 

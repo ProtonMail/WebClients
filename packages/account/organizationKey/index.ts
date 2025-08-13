@@ -35,7 +35,7 @@ type Model = NonNullable<SliceState['value']>;
 export const selectOrganizationKey = (state: OrganizationKeyState) => state.organizationKey;
 
 const canFetch = (user: UserModel, organization: Organization) => {
-    return user.isAdmin && organization.HasKeys;
+    return user.isSelf && user.isAdmin && organization.HasKeys;
 };
 
 const modelThunk = createAsyncModelThunk<Model, OrganizationKeyState, ProtonThunkArguments>(`${name}/fetch`, {

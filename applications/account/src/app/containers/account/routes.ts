@@ -388,24 +388,24 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Payment methods`,
                         id: 'payment-methods',
-                        available: isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton),
+                        available: user.isSelf && (isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton)),
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the credits for them here
                     {
                         text: c('Title').t`Credits`,
                         id: 'credits',
-                        available: isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton),
+                        available: user.isSelf && (isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton)),
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the invoices for them here
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
-                        available: isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton),
+                        available: user.isSelf && (isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton)),
                     },
                     {
                         text: c('Title').t`Delete account`,
                         id: 'delete',
-                        available: user.Type === UserType.PROTON || user.Type === UserType.EXTERNAL,
+                        available: user.isSelf && (user.Type === UserType.PROTON || user.Type === UserType.EXTERNAL),
                     },
                 ],
             },

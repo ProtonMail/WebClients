@@ -203,7 +203,7 @@ const YourStorageSection = ({ app }: Props) => {
                         };
                     }
                 })();
-                if (!data) {
+                if (!data || !user.canPay) {
                     return null;
                 }
                 return (

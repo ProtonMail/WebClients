@@ -347,6 +347,7 @@ const AddressKeysSection = () => {
     const hasDecryptedUserKeys = (userKeys?.length || 0) > 0;
 
     const canAdd = isSelf && isPrivate && hasDecryptedUserKeys;
+    const canReactivate = isSelf;
     const canImport = canAdd;
 
     const children = (() => {
@@ -379,7 +380,7 @@ const AddressKeysSection = () => {
                 <SettingsParagraph>
                     {c('Info').t`Download your PGP keys for use with other PGP-compatible services.`}
                 </SettingsParagraph>
-                {!!keyReactivationRequests.length && (
+                {canReactivate && !!keyReactivationRequests.length && (
                     <div className="mb-4">
                         <Button disabled={isLoadingKey} color="norm" onClick={() => setReactivateKeyModalOpen(true)}>
                             {c('Action').t`Reactivate keys`}
