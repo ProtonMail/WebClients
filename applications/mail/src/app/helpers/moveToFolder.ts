@@ -65,40 +65,42 @@ export const getNotificationTextMoved = (
         );
     }
 
+    // Done to avoid ttag library bug
+    const labelName = folderName;
     if (fromLabelID === SPAM && folderID !== TRASH) {
         if (isMessage) {
             if (elementsCount === 1) {
                 // translator: Strictly 1 message moved from spam, the variable is the name of the destination folder
-                return c('Success').t`Message moved to ${folderName} and sender added to your not spam list.`;
+                return c('Success').t`Message moved to ${labelName} and sender added to your not spam list.`;
             }
             return joinSentences(
                 c('Success').ngettext(
                     // translator: The first variable is the number of message moved, written in digits, and the second one is the name of the destination folder
-                    msgid`${elementsCount} message moved to ${folderName} and sender added to your not spam list.`,
-                    `${elementsCount} messages moved to ${folderName} and senders added to your not spam list.`,
+                    msgid`${elementsCount} message moved to ${labelName} and sender added to your not spam list.`,
+                    `${elementsCount} messages moved to ${labelName} and senders added to your not spam list.`,
                     elementsCount
                 ),
                 notAuthorized
             );
         }
         if (elementsCount === 1) {
-            return c('Success').t`Conversation moved to ${folderName} and sender added to your not spam list.`;
+            return c('Success').t`Conversation moved to ${labelName} and sender added to your not spam list.`;
         }
         return c('Success').ngettext(
-            msgid`${elementsCount} conversation moved to ${folderName} and sender added to your not spam list.`,
-            `${elementsCount} conversations moved to ${folderName} and senders added to your not spam list.`,
+            msgid`${elementsCount} conversation moved to ${labelName} and sender added to your not spam list.`,
+            `${elementsCount} conversations moved to ${labelName} and senders added to your not spam list.`,
             elementsCount
         );
     }
 
     if (isMessage) {
         if (elementsCount === 1) {
-            return c('Success').t`Message moved to ${folderName}.`;
+            return c('Success').t`Message moved to ${labelName}.`;
         }
         return joinSentences(
             c('Success').ngettext(
-                msgid`${elementsCount} message moved to ${folderName}.`,
-                `${elementsCount} messages moved to ${folderName}.`,
+                msgid`${elementsCount} message moved to ${labelName}.`,
+                `${elementsCount} messages moved to ${labelName}.`,
                 elementsCount
             ),
             notAuthorized
@@ -106,11 +108,11 @@ export const getNotificationTextMoved = (
     }
 
     if (elementsCount === 1) {
-        return c('Success').t`Conversation moved to ${folderName}.`;
+        return c('Success').t`Conversation moved to ${labelName}.`;
     }
     return c('Success').ngettext(
-        msgid`${elementsCount} conversation moved to ${folderName}.`,
-        `${elementsCount} conversations moved to ${folderName}.`,
+        msgid`${elementsCount} conversation moved to ${labelName}.`,
+        `${elementsCount} conversations moved to ${labelName}.`,
         elementsCount
     );
 };

@@ -13,6 +13,7 @@ import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
 import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { ROUTE_ELEMENT } from 'proton-mail/constants';
 import MailboxContainerPlaceholder from 'proton-mail/containers/mailbox/MailboxContainerPlaceholder';
+import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import { useMailCommander } from 'proton-mail/hooks/commander/useMailCommander';
 import { type ElementsStructure, useGetElementsFromIDs } from 'proton-mail/hooks/mailbox/useElements';
@@ -154,10 +155,7 @@ export const RouterLabelContainer = ({
             const folderName = getFolderName(newLabelID, folders);
             const elements = getElementsFromIDs(selectedIDs);
             if (applyOptimisticLocationEnabled && !selectAll) {
-                await applyLocation({
-                    elements,
-                    targetLabelID: newLabelID,
-                });
+                await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, targetLabelID: newLabelID });
             } else {
                 await moveToFolder({
                     elements,
