@@ -1,17 +1,27 @@
-import { useCallback } from 'react';
+import { useMemo } from 'react';
 
 import { useNavigationActions } from '@proton/pass/components/Navigation/NavigationActions';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 
-// As only ids are required for navigation, requiring the least to match even custom types
+// When only ids are required, requiring the least to match even custom types
 type SimpleItemRevision = { shareId: string; itemId: string };
 
-export const useItemNavigation = ({ shareId, itemId }: SimpleItemRevision) => {
+export type ItemNavigationActions = {
+    onEdit: () => void;
+    onHistory: () => void;
+};
+
+type UseItemNavigation = (item: SimpleItemRevision) => ItemNavigationActions;
+
+export const useItemNavigation: UseItemNavigation = ({ shareId, itemId }) => {
     const scope = useItemScope();
     const { selectItem } = useNavigationActions();
 
-    const onHistory = useCallback(() => selectItem(shareId, itemId, { view: 'history', scope }), [shareId, itemId]);
-    const onEdit = useCallback(() => selectItem(shareId, itemId, { view: 'edit', scope }), [shareId, itemId]);
-
-    return { onHistory, onEdit };
+    return useMemo(
+        () => ({
+            onHistory: () => selectItem(shareId, itemId, { view: 'history', scope }),
+            onEdit: () => selectItem(shareId, itemId, { view: 'edit', scope }),
+        }),
+        [shareId, itemId, scope]
+    );
 };
