@@ -11,8 +11,10 @@ import {
     type ContextMenuItem,
 } from '@proton/pass/components/ContextMenu/ContextMenuItems';
 import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
-import type { ItemStateAndActions } from '@proton/pass/hooks/items/useItemActions';
+import type { ItemActions } from '@proton/pass/hooks/items/useItemActions';
 import { useItemActions } from '@proton/pass/hooks/items/useItemActions';
+import type { ItemState } from '@proton/pass/hooks/items/useItemState';
+import { useItemState } from '@proton/pass/hooks/items/useItemState';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { selectItemWithOptimistic, selectShare } from '@proton/pass/store/selectors';
 import type { Item, ItemRevision, Maybe, MaybeNull, Share, UniqueItem } from '@proton/pass/types';
@@ -66,10 +68,10 @@ const getItemCopyButtons = (item: Item): ContextMenuItem[] => {
     }
 };
 
-const getItemActionButtons = ({
-    state: { isTrashed, canHistory, canTogglePinned, canMove },
-    actions: { onEdit, onMove, onPin, onHistory, onTrash },
-}: ItemStateAndActions): ContextMenuItem[] => {
+const getItemActionButtons = (
+    { isTrashed, canHistory, canTogglePinned, canMove }: ItemState,
+    { onEdit, onMove, onPin, onHistory, onTrash }: ItemActions
+): ContextMenuItem[] => {
     return isTrashed
         ? [
               /** FIXME: we should be able to restore/delete permanently */
@@ -116,15 +118,16 @@ type ConnectedProps = { item: ItemRevision; share: Share; anchorRef: RefObject<H
 const ConnectedItemsListContextMenu: FC<ConnectedProps> = ({ item, share, anchorRef }) => {
     const id = getItemKey(item);
 
-    const itemActions = useItemActions(item, share);
+    const itemState = useItemState(item, share);
+    const itemActions = useItemActions(item);
 
     const elements: ContextMenuElement[] = useMemo(() => {
         const copyBtns: ContextMenuElement[] = getItemCopyButtons(item.data).filter(({ copy }) => !isEmpty(copy));
-        const actionBtns = getItemActionButtons(itemActions);
+        const actionBtns = getItemActionButtons(itemState, itemActions);
         const separator = copyBtns.length > 0 && actionBtns.length > 0 ? [CONTEXT_MENU_SEPARATOR] : [];
 
         return copyBtns.concat(separator, actionBtns);
-    }, [item, itemActions]);
+    }, [item, itemState, itemActions]);
 
     return (
         <ContextMenu
