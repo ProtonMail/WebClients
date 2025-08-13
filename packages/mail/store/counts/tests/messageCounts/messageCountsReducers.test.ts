@@ -3,7 +3,7 @@ import { type Draft } from '@reduxjs/toolkit';
 import { type ModelState } from '@proton/account';
 import { type LabelCount } from '@proton/shared/lib/interfaces';
 
-import { markMessagesAsRead, markMessagesAsUnread } from './messageCountsReducers';
+import { markMessagesAsRead, markMessagesAsUnread } from '../../messageCountsReducers';
 
 describe('messageCountsReducers', () => {
     let state: Draft<ModelState<LabelCount[]>>;

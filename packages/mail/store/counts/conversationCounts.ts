@@ -89,6 +89,8 @@ const slice = createSlice({
                 elements: Message[];
                 targetLabelID: string;
                 conversations: Conversation[];
+                labels: Label[];
+                folders: Folder[];
             }>
         ) => {
             labelMessagesPending(state, action);
