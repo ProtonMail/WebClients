@@ -30,6 +30,9 @@ export const applyLabelToMessage = (
 
     if (isTargetAFolder) {
         if (labelIDsCopy.includes(MAILBOX_LABEL_IDS.TRASH) || labelIDsCopy.includes(MAILBOX_LABEL_IDS.SPAM)) {
+            if (targetLabelID !== MAILBOX_LABEL_IDS.TRASH && targetLabelID !== MAILBOX_LABEL_IDS.SPAM) {
+                labelIDsCopy.push(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL);
+            }
             // TODO [P3-120]: Remove auto-delete spam and trash expiration days
         }
 
@@ -48,7 +51,7 @@ export const applyLabelToMessage = (
             );
         }
     } else if (isTargetACategory) {
-        labelIDsCopy = labelIDsCopy.filter((labelID) => isCategoryLabel(labelID));
+        labelIDsCopy = labelIDsCopy.filter((labelID) => !isCategoryLabel(labelID));
     }
 
     message.LabelIDs = [...labelIDsCopy, targetLabelID];
