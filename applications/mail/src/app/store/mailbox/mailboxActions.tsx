@@ -292,6 +292,8 @@ export const labelMessages = createAsyncThunk<
                     elements,
                     targetLabelID,
                     conversations,
+                    labels,
+                    folders,
                 })
             );
             const result = await runAction({
