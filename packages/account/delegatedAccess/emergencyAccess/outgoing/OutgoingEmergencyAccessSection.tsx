@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Banner, Button } from '@proton/atoms';
 import Badge from '@proton/components/components/badge/Badge';
+import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Info from '@proton/components/components/link/Info';
 import Table from '@proton/components/components/table/Table';
@@ -193,22 +194,41 @@ export const OutgoingEmergencyAccessSection = () => {
                 {c('emergency_access').t`They may ask to access my account in case of an emergency.`}
             </SettingsParagraph>
             <div className="mb-4">
-                {controller.meta.hasReachedLimit ? (
-                    <Banner>
-                        {c('emergency_access').ngettext(
-                            msgid`You reached the maximum of ${controller.meta.count} trusted contact.`,
-                            `You reached the maximum of ${controller.meta.count} trusted contacts.`,
-                            controller.meta.count
-                        )}
-                    </Banner>
-                ) : (
-                    <Button
-                        color="norm"
-                        onClick={() => {
-                            controller.notify({ type: 'add' });
-                        }}
-                    >{c('emergency_access').t`Add emergency contact`}</Button>
-                )}
+                {(() => {
+                    if (controller.meta.hasReachedLimit) {
+                        return (
+                            <Banner>
+                                {c('emergency_access').ngettext(
+                                    msgid`You reached the maximum of ${controller.meta.count} trusted contact.`,
+                                    `You reached the maximum of ${controller.meta.count} trusted contacts.`,
+                                    controller.meta.count
+                                )}
+                            </Banner>
+                        );
+                    }
+
+                    if (controller.meta.hasUpsell) {
+                        return (
+                            <PromotionButton
+                                iconName="upgrade"
+                                onClick={() => {
+                                    controller.notify({ type: 'upsell' });
+                                }}
+                            >{c('emergency_access').t`Add emergency contact`}</PromotionButton>
+                        );
+                    }
+
+                    if (controller.meta.hasAccess) {
+                        return (
+                            <Button
+                                color="norm"
+                                onClick={() => {
+                                    controller.notify({ type: 'add' });
+                                }}
+                            >{c('emergency_access').t`Add emergency contact`}</Button>
+                        );
+                    }
+                })()}
             </div>
             {(controller.items.length > 0 || controller.loading) && (
                 <OutgoingTable items={controller.items} loading={controller.loading} notify={controller.notify} />
