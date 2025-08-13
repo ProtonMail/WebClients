@@ -733,6 +733,7 @@ export enum LUMO_UPSELL_PATHS {
 }
 
 export enum SHARED_UPSELL_PATHS {
+    EMERGENCY_ACCESS = 'emergency-access',
     MULTI_USER = 'multi-user',
     CONTACT_GROUP = 'contact-groups',
     STORAGE = 'storage',

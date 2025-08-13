@@ -7,6 +7,10 @@ export interface AddActionPayload {
     type: 'add';
 }
 
+export interface UpsellActionPayload {
+    type: 'upsell';
+}
+
 export interface DeleteActionPayload {
     type: 'delete';
     value: EnrichedOutgoingDelegatedAccess;
@@ -26,5 +30,6 @@ export type ActionPayload =
     | AddActionPayload
     | DeleteActionPayload
     | ChangeWaitTimeActionPayload
-    | GrantAccessActionPayload;
+    | GrantAccessActionPayload
+    | UpsellActionPayload;
 export type ActionListener = (payload: ActionPayload) => undefined;
