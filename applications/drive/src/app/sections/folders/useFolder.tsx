@@ -4,7 +4,7 @@ import { MemberRole } from '@proton/drive/index';
 import { useDrive } from '@proton/drive/index';
 
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
-import { useDriveDocsFeatureFlag, useDriveDocsSheetsFF } from '../../store/_documents';
+import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
@@ -27,7 +27,7 @@ export function useFolder() {
     const { handleError } = useSdkErrorHandler();
     const { activeFolder } = useActiveShare();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const { isSheetsEnabled } = useDriveDocsSheetsFF();
+    const isSheetsEnabled = useIsSheetsEnabled();
     const { devices } = useDeviceStore();
     // const { navigateToRoot, navigateToLink } = useDriveNavigation();
 

@@ -7,7 +7,7 @@ import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useActions, useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
-import { useDriveDocsFeatureFlag, useDriveDocsSheetsFF } from '../../../store/_documents';
+import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';
@@ -67,7 +67,7 @@ export function FolderContextMenu({
 
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const { isSheetsEnabled } = useDriveDocsSheetsFF();
+    const isSheetsEnabled = useIsSheetsEnabled();
 
     // All actions in this context menu needs editor permissions
     if (!isEditor) {
