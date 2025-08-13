@@ -30,6 +30,10 @@ describe('canvasToThumbnail', () => {
     });
 
     it('should throw an error if unable to create small enough thumbnail', async () => {
+        global.HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {
+            callback(new Blob(['x'.repeat(HD_THUMBNAIL_MAX_SIZE)]));
+        });
+
         // Create a large canvas that will exceed the size limit
         const largeCanvas = document.createElement('canvas');
         largeCanvas.width = 5000;
@@ -41,5 +45,5 @@ describe('canvasToThumbnail', () => {
         }
 
         await expect(canvasToThumbnail(largeCanvas)).rejects.toThrow('Cannot create small enough thumbnail');
-    }, 15000); // longer timeout since thumbnail generation takes time
+    });
 });

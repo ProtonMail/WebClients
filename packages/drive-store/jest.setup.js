@@ -20,8 +20,11 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: jest.fn(),
 }));
 
-// Silence JDOM warnings triggered by emoji-mart
+// Mock canvas (for e.g. canvasUtils tests)
 HTMLCanvasElement.prototype.getContext = jest.fn();
+HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {
+    callback(new Blob(['abc']));
+});
 
 jest.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
     __esModule: true,
