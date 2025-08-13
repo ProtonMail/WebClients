@@ -157,6 +157,7 @@ enum DocsFeatureFlag {
     DocsSuggestionsDisabled = 'DocsSuggestionsDisabled',
     // Sheets,
     DocsSheetsEnabled = 'DocsSheetsEnabled',
+    DocsSheetsDisabled = 'DocsSheetsDisabled',
     // Update compression and chunking
     DocsUpdateCompressionEnabled = 'DocsUpdateCompressionEnabled',
     DocsUpdateChunkingEnabled = 'DocsUpdateChunkingEnabled',

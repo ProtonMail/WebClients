@@ -7,7 +7,7 @@ import { getNewWindow } from '@proton/shared/lib/helpers/window';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
 import { usePublicActions } from '../../../store';
-import { useDriveDocsPublicSharingFF, useDriveDocsSheetsFF, useOpenDocument } from '../../../store/_documents';
+import { useDriveDocsPublicSharingFF, useIsSheetsEnabled, useOpenDocument } from '../../../store/_documents';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';
 
 interface Props {
@@ -22,7 +22,7 @@ export const CreateButton = ({ token, linkId }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { openDocumentWindow } = useOpenDocument();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
-    const { isSheetsEnabled } = useDriveDocsSheetsFF();
+    const isSheetsEnabled = useIsSheetsEnabled();
 
     const [isLoading, withLoading] = useLoading();
 

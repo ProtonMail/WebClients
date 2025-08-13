@@ -49,7 +49,8 @@ export function useSubscribe<T extends BasePropertyValues, K extends keyof T>(
 }
 
 export function useIsSheetsEnabled() {
-  return useFlag('DocsSheetsEnabled') || isDevOrBlack()
+  const killswitch = useFlag('DocsSheetsDisabled')
+  return (useFlag('DocsSheetsEnabled') || isDevOrBlack()) && !killswitch
 }
 
 /**

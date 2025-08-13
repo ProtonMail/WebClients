@@ -17,7 +17,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
 import { useActions, useFileUploadInput, useFolderUploadInput, useFolderView } from '../../../../store';
-import { useDocumentActions, useDriveDocsFeatureFlag, useDriveDocsSheetsFF } from '../../../../store/_documents';
+import { useDocumentActions, useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../../store/_documents';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { CreateDocumentButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 import CreateSheetButton from './ActionMenuButtons/CreateSheetButton';
@@ -51,7 +51,7 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const { isSheetsEnabled } = useDriveDocsSheetsFF();
+    const isSheetsEnabled = useIsSheetsEnabled();
 
     return (
         <>
