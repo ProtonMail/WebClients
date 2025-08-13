@@ -4,6 +4,7 @@ import type {
     ApiListenerCallback,
     ApiMissingScopeEvent,
     ApiVerificationEvent,
+    ApiForcePasswordChangeEvent,
     ApiWithListener,
 } from '@proton/shared/lib/api/createApi';
 import { queryUnlock } from '@proton/shared/lib/api/user';
@@ -31,6 +32,14 @@ const AuthModal = lazy(
         )
 );
 
+const ForcePasswordChangeModal = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "force-password-change-modal" */
+            './ForcePasswordChangeModal'
+        )
+);
+
 const ApiProvider = ({ api }: { api: ApiWithListener }) => {
     const [unlockModals, setUnlockModals] = useState<ApiModalPayload<ApiMissingScopeEvent['payload']>[]>([]);
     const [reauthModals, setReauthModals] = useState<ApiModalPayload<ApiMissingScopeEvent['payload']>[]>([]);
@@ -38,6 +47,9 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
     const [verificationModals, setVerificationModals] = useState<ApiModalPayload<ApiVerificationEvent['payload']>[]>(
         []
     );
+    const [forcePasswordChangeModals, setForcePasswordChangeModals] = useState<
+        ApiModalPayload<ApiForcePasswordChangeEvent['payload']>[]
+    >([]);
 
     useEffect(() => {
         const handleEvent: ApiListenerCallback = (event) => {
@@ -66,6 +78,11 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
                 return true;
             }
 
+            if (event.type === 'force-password-change') {
+                setForcePasswordChangeModals((prev) => [...prev, { open: true, payload: event.payload }]);
+                return true;
+            }
+
             return false;
         };
         api.addEventListener(handleEvent);
@@ -78,6 +95,7 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
     const reauth = reauthModals[0];
     const unlock = unlockModals[0];
     const verification = verificationModals[0];
+    const forcePasswordChange = forcePasswordChangeModals[0];
 
     return (
         <>
@@ -174,6 +192,24 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
                         }}
                         onExit={() => {
                             setReauthModals((arr) => remove(arr, reauth));
+                        }}
+                    />
+                </Suspense>
+            )}
+            {forcePasswordChange && (
+                <Suspense fallback={null}>
+                    <ForcePasswordChangeModal
+                        open={forcePasswordChange.open}
+                        message={forcePasswordChange.payload.message}
+                        onClose={() => {
+                            forcePasswordChange.payload.error.cancel = true;
+                            forcePasswordChange.payload.reject(forcePasswordChange.payload.error);
+                            setForcePasswordChangeModals((arr) =>
+                                replace(arr, forcePasswordChange, { ...forcePasswordChange, open: false })
+                            );
+                        }}
+                        onExit={() => {
+                            setForcePasswordChangeModals((arr) => remove(arr, forcePasswordChange));
                         }}
                     />
                 </Suspense>
