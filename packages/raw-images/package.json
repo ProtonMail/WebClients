@@ -16,6 +16,10 @@
         "dist/cr3.wasm"
     ],
     "scripts": {
-        "build": "bash ./build-dcraw.sh && bash ./build-cr3.sh"
+        "build": "bash ./build-dcraw.sh && bash ./build-cr3.sh",
+        "lint": "eslint . --ext .js,.ts --quiet --cache"
+    },
+    "devDependencies": {
+        "eslint": "^8.57.1"
     }
 }
