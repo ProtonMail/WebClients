@@ -34,13 +34,13 @@ interface CallbackProps {
 const executeCallback = ({ sourceLabelID, props, handleBack, labels, folders }: CallbackProps) => {
     switch (props.type) {
         case MOVE_BACK_ACTION_TYPES.MOVE:
-            moveOutMoveAction(sourceLabelID, props.destinationLabelID, handleBack, labels, folders);
+            moveOutMoveAction(sourceLabelID, props.targetLabelID, handleBack, labels, folders);
             break;
         case MOVE_BACK_ACTION_TYPES.APPLY_LABEL:
             moveOutApplyLabelAction(sourceLabelID, props.changes, handleBack);
             break;
         case MOVE_BACK_ACTION_TYPES.STAR:
-            moveOutStarAction(sourceLabelID, props.isUnstarringElement, handleBack);
+            moveOutStarAction(sourceLabelID, props.removeLabel, handleBack);
             break;
         case MOVE_BACK_ACTION_TYPES.PERMANENT_DELETE:
             moveOutPermanentDeleteAction(handleBack);
