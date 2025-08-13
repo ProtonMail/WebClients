@@ -3,6 +3,8 @@ packages/styles/scss/**/_index.scss
 packages/wasm/**/*
 packages/metrics/types/**/*.d.ts
 tests/account/poms/LoginPage/challenge.html
+tests/pass/hars/**/*
+tests/pass/extension/**/*
 applications/**/public/assets/sandbox.js
 applications/wallet/src/pkg/
 
@@ -34,4 +36,3 @@ build
 *.code-workspace
 .vscode
 .nyc_output
-
