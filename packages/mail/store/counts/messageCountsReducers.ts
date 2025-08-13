@@ -104,11 +104,7 @@ export const labelMessages = (
                 }
 
                 if (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
-                    if (
-                        selectedLabelID === MAILBOX_LABEL_IDS.STARRED ||
-                        selectedLabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL ||
-                        isCustomLabel(selectedLabelID, labels)
-                    ) {
+                    if (selectedLabelID === MAILBOX_LABEL_IDS.STARRED || isCustomLabel(selectedLabelID, labels)) {
                         const updatedMessageCounter = state.value?.find(
                             (counter) => counter.LabelID === selectedLabelID
                         );
@@ -135,6 +131,26 @@ export const labelMessages = (
                     }
                 }
             });
+        }
+
+        // Elements are removed from ALMOST_ALL_MAIL
+        const almostAllMailMessageCounter = state.value?.find(
+            (counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
+        );
+        if (
+            (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) &&
+            almostAllMailMessageCounter
+        ) {
+            almostAllMailMessageCounter.Total = safeDecreaseCount(almostAllMailMessageCounter.Total, 1);
+            if (selectedMessage.Unread === 1) {
+                almostAllMailMessageCounter.Unread = safeDecreaseCount(almostAllMailMessageCounter.Unread, 1);
+            }
+        }
+
+        // Additionally, ALL_MAIL unread count needs to be reduced if the message was unread
+        const allMailMessageCounter = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALL_MAIL);
+        if (targetLabelID === MAILBOX_LABEL_IDS.TRASH && selectedMessage.Unread === 1 && allMailMessageCounter) {
+            allMailMessageCounter.Unread = safeDecreaseCount(allMailMessageCounter.Unread, 1);
         }
 
         const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === targetLabelID);
@@ -209,22 +225,6 @@ export const labelConversationsPending = (
                 return;
             }
 
-            // If moving to TRASH or SPAM, no item should remain in ALMOST_ALL_MAIL
-            if (
-                (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) &&
-                labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
-            ) {
-                messageCountState.Total = safeDecreaseCount(
-                    messageCountState?.Total,
-                    getContextNumMessages(conversation, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL)
-                );
-                messageCountState.Unread = safeDecreaseCount(
-                    messageCountState?.Unread,
-                    getContextNumUnread(conversation, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL)
-                );
-                return;
-            }
-
             // If the label cannot be updated, do not update counters
             if (isUnmodifiableByUser(labelID, labels, folders)) {
                 return;
@@ -260,6 +260,20 @@ export const labelConversationsPending = (
                 return;
             }
 
+            // Do not update counters when moving to STARRED, custom folders or a category
+            if (
+                isCustomLabel(targetLabelID, labels) ||
+                isSystemLabel(targetLabelID) ||
+                isCategoryLabel(targetLabelID)
+            ) {
+                return;
+            }
+
+            // Do not update category
+            if (isCategoryLabel(labelID)) {
+                return;
+            }
+
             // Remove the conversation messages from all locations (except the destination)
             if (targetLabelID !== labelID) {
                 messageCountState.Total = safeDecreaseCount(
@@ -270,9 +284,56 @@ export const labelConversationsPending = (
                     messageCountState?.Unread,
                     getContextNumUnread(conversation, labelID)
                 );
+
+                // If items are moving out from TRASH or SPAM, we need to add them to ALMOST_ALL_MAIL count
+                const almostAllMailCountState = state.value?.find(
+                    (counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
+                );
+                if (
+                    (labelID === MAILBOX_LABEL_IDS.TRASH || labelID === MAILBOX_LABEL_IDS.SPAM) &&
+                    targetLabelID !== MAILBOX_LABEL_IDS.TRASH &&
+                    targetLabelID !== MAILBOX_LABEL_IDS.SPAM &&
+                    almostAllMailCountState
+                ) {
+                    almostAllMailCountState.Total = safeIncreaseCount(
+                        almostAllMailCountState?.Total,
+                        getContextNumMessages(conversation, labelID)
+                    );
+                    almostAllMailCountState.Unread = safeIncreaseCount(
+                        almostAllMailCountState?.Unread,
+                        getContextNumUnread(conversation, labelID)
+                    );
+                }
                 return;
             }
         });
+
+        // Elements are removed from ALMOST_ALL_MAIL
+        const almostAllMailMessageCountState = state.value?.find(
+            (counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
+        );
+        if (
+            (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) &&
+            almostAllMailMessageCountState
+        ) {
+            almostAllMailMessageCountState.Total = safeDecreaseCount(
+                almostAllMailMessageCountState?.Total,
+                getContextNumMessages(conversation, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL)
+            );
+            almostAllMailMessageCountState.Unread = safeDecreaseCount(
+                almostAllMailMessageCountState?.Unread,
+                getContextNumUnread(conversation, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL)
+            );
+        }
+
+        // Additionally, ALL_MAIL unread count needs to be reduced if some messages were unread
+        const allMailMessageCountState = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALL_MAIL);
+        if (targetLabelID === MAILBOX_LABEL_IDS.TRASH && allMailMessageCountState) {
+            allMailMessageCountState.Unread = safeDecreaseCount(
+                allMailMessageCountState?.Unread,
+                numUnreadMessagesInConversation
+            );
+        }
 
         // INCREASE count in destination locations
         const targetMessageCountState = state.value?.find((counter) => counter.LabelID === targetLabelID);
@@ -295,8 +356,7 @@ export const labelConversationsPending = (
         if (
             targetLabelID === MAILBOX_LABEL_IDS.INBOX ||
             targetLabelID === MAILBOX_LABEL_IDS.SENT ||
-            targetLabelID === MAILBOX_LABEL_IDS.DRAFTS ||
-            isCategoryLabel(targetLabelID)
+            targetLabelID === MAILBOX_LABEL_IDS.DRAFTS
         ) {
             // Move missing received messages in INBOX
             const inboxMessageCountState = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.INBOX);
@@ -333,7 +393,9 @@ export const labelConversationsPending = (
             }
 
             // Move all drafts messages to DRAFTS
-            const draftsMessageCountState = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.SENT);
+            const draftsMessageCountState = state.value?.find(
+                (counter) => counter.LabelID === MAILBOX_LABEL_IDS.DRAFTS
+            );
 
             if (draftsMessageCountState) {
                 draftsMessageCountState.Total = safeIncreaseCount(
@@ -345,38 +407,31 @@ export const labelConversationsPending = (
                     numUnreadMessagesInAllDrafts - numUnreadMessagesInDrafts
                 );
             }
+        } else if (isCategoryLabel(targetLabelID)) {
+            const numMessagesInCategory = getContextNumMessages(conversation, targetLabelID);
+            const numUnreadMessagesInCategory = getContextNumUnread(conversation, targetLabelID);
 
-            if (isCategoryLabel(targetLabelID)) {
-                const numMessagesInCategory = getContextNumMessages(conversation, targetLabelID);
-                const numUnreadMessagesInCategory = getContextNumUnread(conversation, targetLabelID);
+            const missingMessagesInCategory = numMessagesInConversation - numMessagesInCategory;
 
-                const missingMessagesInCategory =
-                    numMessagesInConversation - numMessagesInCategory - numMessagesInAllSent - numMessagesInAllDrafts;
+            const missingUnreadMessagesInCategory = numUnreadMessagesInConversation - numUnreadMessagesInCategory;
 
-                const missingUnreadMessagesInCategory =
-                    numUnreadMessagesInConversation -
-                    numUnreadMessagesInCategory -
-                    numUnreadMessagesInAllSent -
-                    numUnreadMessagesInAllDrafts;
-
-                targetMessageCountState.Total = safeIncreaseCount(
-                    targetMessageCountState.Total,
-                    missingMessagesInCategory
-                );
-                targetMessageCountState.Unread = safeIncreaseCount(
-                    targetMessageCountState.Unread,
-                    missingUnreadMessagesInCategory
-                );
-            }
+            targetMessageCountState.Total = safeIncreaseCount(targetMessageCountState.Total, missingMessagesInCategory);
+            targetMessageCountState.Unread = safeIncreaseCount(
+                targetMessageCountState.Unread,
+                missingUnreadMessagesInCategory
+            );
         } else {
             targetMessageCountState.Total = safeIncreaseCount(
                 targetMessageCountState.Total,
                 numMessagesInConversation - getContextNumMessages(conversation, targetLabelID)
             );
-            targetMessageCountState.Unread = safeIncreaseCount(
-                targetMessageCountState.Unread,
-                numUnreadMessagesInConversation - getContextNumUnread(conversation, targetLabelID)
-            );
+
+            if (targetLabelID !== MAILBOX_LABEL_IDS.TRASH) {
+                targetMessageCountState.Unread = safeIncreaseCount(
+                    targetMessageCountState.Unread,
+                    numUnreadMessagesInConversation - getContextNumUnread(conversation, targetLabelID)
+                );
+            }
         }
     });
 };
