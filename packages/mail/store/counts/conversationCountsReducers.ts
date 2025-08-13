@@ -11,7 +11,14 @@ import { type Conversation } from 'proton-mail/models/conversation';
 import { type Element } from 'proton-mail/models/element';
 
 import { getContextNumMessages, getContextNumUnread } from '../../helpers/conversation';
-import { isCategoryLabel, isCustomLabel, isSystemLabel, isUnmodifiableByUser } from '../../helpers/location';
+import {
+    isCategoryLabel,
+    isCustomFolder,
+    isCustomLabel,
+    isSystemFolder,
+    isSystemLabel,
+    isUnmodifiableByUser,
+} from '../../helpers/location';
 
 export const markConversationsAsUnread = (
     state: Draft<ModelState<LabelCount[]>>,
@@ -122,9 +129,11 @@ export const labelMessagesPending = (
         elements: Message[];
         targetLabelID: string;
         conversations: Conversation[];
+        labels: Label[];
+        folders: Folder[];
     }>
 ) => {
-    const { elements, conversations, targetLabelID } = action.payload;
+    const { elements, conversations, targetLabelID, labels, folders } = action.payload;
     const conversationCounterTarget = state.value?.find((counter) => counter.LabelID === targetLabelID);
 
     if (!conversationCounterTarget) {
@@ -141,6 +150,7 @@ export const labelMessagesPending = (
 
         // Decrease
         conversation.Labels?.forEach((label) => {
+            const labelID = label.ID;
             const conversationCounter = state.value?.find((counter) => counter.LabelID === label.ID);
 
             if (!conversationCounter) {
@@ -154,12 +164,103 @@ export const labelMessagesPending = (
                 (element as Message).LabelIDs.includes(label.ID)
             );
 
-            if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
+            // Do not decrease counters if moving to a custom label, STARRED, or a category
+            if (
+                isCustomLabel(targetLabelID, labels) ||
+                isSystemLabel(targetLabelID) ||
+                isUnmodifiableByUser(targetLabelID, labels, folders)
+            ) {
+                return;
+            }
+
+            // If target is a category, only decrease counters in old category
+            if (isCategoryLabel(targetLabelID)) {
+                if (isCategoryLabel(targetLabelID) && targetLabelID !== labelID) {
+                    if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
+                        conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
+                    }
+
+                    if (unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID)) {
+                        conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
+                    }
+                }
+                return;
+            }
+
+            if (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
+                // Decrease STARRED and custom labels counts since items are removed
+                if (isCustomLabel(labelID, labels) || isSystemLabel(labelID)) {
+                    if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
+                        conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
+                    }
+
+                    if (unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID)) {
+                        conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
+                    }
+                    return;
+                }
+
+                // Decrease ALMOST_ALL_MAIL and custom labels counts since items are no longer visible there
+                if (labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
+                    if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, label.ID)) {
+                        conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
+                    }
+
+                    if (unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID)) {
+                        conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
+                    }
+                    return;
+                }
+            }
+
+            // Do not update labels, categories and unmodifiable counters
+            if (
+                isCustomLabel(labelID, labels) ||
+                isSystemLabel(labelID) ||
+                isCategoryLabel(labelID) ||
+                isUnmodifiableByUser(labelID, labels, folders)
+            ) {
+                return;
+            }
+
+            const messageFolderID = messagesFromConversation[0].LabelIDs.find((labelID) => {
+                if (isSystemFolder(labelID) || isCustomFolder(labelID, folders)) {
+                    return labelID;
+                }
+            });
+            // Do nothing if is not the folder in which the message was located
+            if (labelID !== messageFolderID) {
+                return;
+            }
+
+            // Else decrease count
+            if (messagesFromConversationInLabel.length === getContextNumMessages(conversation, labelID)) {
                 conversationCounter.Total = safeDecreaseCount(conversationCounter.Total, 1);
             }
 
-            if (unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, label.ID)) {
+            if (unreadMessagesFromConversationInLabel.length === getContextNumUnread(conversation, labelID)) {
                 conversationCounter.Unread = safeDecreaseCount(conversationCounter.Unread, 1);
+            }
+
+            const almostAllMailMessageCountState = state.value?.find(
+                (counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
+            );
+            if (
+                (messageFolderID === MAILBOX_LABEL_IDS.TRASH || messageFolderID === MAILBOX_LABEL_IDS.SPAM) &&
+                targetLabelID !== MAILBOX_LABEL_IDS.TRASH &&
+                targetLabelID !== MAILBOX_LABEL_IDS.SPAM &&
+                almostAllMailMessageCountState
+            ) {
+                if (getContextNumMessages(conversation, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) === 0) {
+                    almostAllMailMessageCountState.Total = safeIncreaseCount(almostAllMailMessageCountState.Total, 1);
+                }
+
+                if (
+                    getContextNumUnread(conversation, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) === 0 &&
+                    unreadMessagesFromConversationInLabel.length > 0
+                ) {
+                    almostAllMailMessageCountState.Unread = safeDecreaseCount(almostAllMailMessageCountState.Unread, 1);
+                }
             }
         });
 
@@ -170,7 +271,11 @@ export const labelMessagesPending = (
             }
         }
 
-        if (getContextNumUnread(conversation, targetLabelID) === 0 && unreadMessagesFromConversation.length > 0) {
+        if (
+            getContextNumUnread(conversation, targetLabelID) === 0 &&
+            unreadMessagesFromConversation.length > 0 &&
+            targetLabelID !== MAILBOX_LABEL_IDS.TRASH
+        ) {
             if (conversationCounterTarget) {
                 conversationCounterTarget.Unread = safeIncreaseCount(conversationCounterTarget.Unread, 1);
             }
@@ -344,7 +449,11 @@ export const labelConversationsPending = (
             if (numMessagesInTarget === 0) {
                 targetMessageCountState.Total = safeIncreaseCount(targetMessageCountState.Total, 1);
             }
-            if (numUnreadMessagesInTarget === 0 && numUnreadMessagesInConversation > 0) {
+            if (
+                numUnreadMessagesInTarget === 0 &&
+                numUnreadMessagesInConversation > 0 &&
+                targetLabelID !== MAILBOX_LABEL_IDS.TRASH
+            ) {
                 targetMessageCountState.Unread = safeIncreaseCount(targetMessageCountState.Unread, 1);
             }
         }
