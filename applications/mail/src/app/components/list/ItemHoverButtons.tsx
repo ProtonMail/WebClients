@@ -10,6 +10,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
+import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -86,6 +87,7 @@ const ItemHoverButtons = ({
 
         if (applyOptimisticLocationEnabled) {
             void applyLocation({
+                type: APPLY_LOCATION_TYPES.MOVE,
                 elements: [element],
                 targetLabelID: ARCHIVE,
             });
@@ -105,10 +107,7 @@ const ItemHoverButtons = ({
         event.stopPropagation();
 
         if (applyOptimisticLocationEnabled) {
-            void applyLocation({
-                elements: [element],
-                targetLabelID: TRASH,
-            });
+            void applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements: [element], targetLabelID: TRASH });
         } else {
             void moveToFolder({
                 elements: [element],
@@ -139,9 +138,10 @@ const ItemHoverButtons = ({
         if (applyOptimisticLocationEnabled) {
             void withLoadingStar(
                 applyLocation({
+                    type: APPLY_LOCATION_TYPES.STAR,
+                    removeLabel: isStarred,
                     elements: [element],
                     targetLabelID: MAILBOX_LABEL_IDS.STARRED,
-                    removeLabel: isStarred,
                     showSuccessNotification: false,
                 })
             );

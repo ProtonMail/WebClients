@@ -27,8 +27,6 @@ import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
-
 import { getLabelIDs } from '../../helpers/elements';
 import { getStandardFolders } from '../../helpers/labels';
 import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
@@ -144,7 +142,6 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
     const [alsoArchive, updateAlsoArchive] = useState(false);
     const [always, setAlways] = useState(false);
     const getElementsFromIDs = useGetElementsFromIDs();
-    const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { applyLabels, applyLabelsToAllModal } = useApplyLabels(setContainFocus);
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
@@ -243,44 +240,17 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
 
         const promises = [];
 
-        if (applyOptimisticLocationEnabled && !selectAll) {
-            promises.push(
-                Object.entries(changes).map(([labelID, removeLabel]) => {
-                    return applyLocation({
-                        elements,
-                        targetLabelID: labelID,
-                        removeLabel,
-                        createFilters: always,
-                        showSuccessNotification: false,
-                    });
-                })
-            );
-
-            if (alsoArchive) {
-                promises.push(
-                    applyLocation({
-                        elements,
-                        targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        createFilters: always,
-                        showSuccessNotification: false,
-                    })
-                );
-            }
-
-            // TODO: Show success notification
-        } else {
-            promises.push(
-                applyLabels({
-                    elements,
-                    changes,
-                    createFilters: always,
-                    selectedLabelIDs: checkedIDs,
-                    labelID,
-                    selectAll,
-                    onCheckAll,
-                })
-            );
-        }
+        promises.push(
+            applyLabels({
+                elements,
+                changes,
+                createFilters: always,
+                selectedLabelIDs: checkedIDs,
+                labelID,
+                selectAll,
+                onCheckAll,
+            })
+        );
 
         if (alsoArchive) {
             const folderName = getStandardFolders()[MAILBOX_LABEL_IDS.ARCHIVE].name;

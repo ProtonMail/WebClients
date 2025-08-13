@@ -34,6 +34,7 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -149,6 +150,7 @@ const HeaderMoreDropdown = ({
 
         if (applyOptimisticLocationEnabled) {
             await applyLocation({
+                type: APPLY_LOCATION_TYPES.MOVE,
                 elements: [message.data || ({} as Element)],
                 targetLabelID: folderID,
             });
@@ -204,9 +206,10 @@ const HeaderMoreDropdown = ({
         if (applyOptimisticLocationEnabled) {
             void withLoading(
                 applyLocation({
+                    type: APPLY_LOCATION_TYPES.STAR,
+                    removeLabel: isStarred,
                     elements: [message.data || ({} as Element)],
                     targetLabelID: MAILBOX_LABEL_IDS.STARRED,
-                    removeLabel: isStarred,
                     showSuccessNotification: false,
                 })
             );
