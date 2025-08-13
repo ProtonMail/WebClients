@@ -26,6 +26,7 @@ import * as signupSearchParams from '../../helpers/signupSearchParams';
 import DisplayNameStep from './steps/DisplayNameStep';
 import OrgNameStep from './steps/OrgNameStep';
 import PaymentStep from './steps/PaymentStep';
+import RecoveryPhraseStep from './steps/RecoveryPhraseStep';
 import AccountDetailsStep from './steps/accountDetails/AccountDetailsStep';
 
 const getPlanIDsFromPlan = (plan: PLANS | undefined): PlanIDs => {
@@ -80,7 +81,7 @@ const getAvailablePlansWithCycles = (plans: { planIDs: PlanIDs }[], cycles: Cycl
     return availablePlans;
 };
 
-type Step = 'account-details' | 'payment' | 'org-name' | 'display-name' | 'creating-account';
+type Step = 'account-details' | 'payment' | 'org-name' | 'recovery' | 'display-name' | 'creating-account';
 
 const DriveSignupInner = () => {
     const [step, setStep] = useState<Step>('account-details');
@@ -111,7 +112,7 @@ const DriveSignupInner = () => {
 
                                 await signup.setupUser();
 
-                                setStep('display-name');
+                                setStep('recovery');
                             } catch (error) {
                                 notifyError(error);
                             }
@@ -134,13 +135,22 @@ const DriveSignupInner = () => {
 
                             await signup.setupUser();
 
-                            setStep('display-name');
+                            setStep('recovery');
                         } catch (error) {
                             notifyError(error);
                         }
                     }}
                 />
             )}
+
+            {step === 'recovery' && (
+                <RecoveryPhraseStep
+                    onContinue={async () => {
+                        setStep('display-name');
+                    }}
+                />
+            )}
+
             {step === 'display-name' && (
                 <DisplayNameStep
                     onSubmit={async (displayName) => {
