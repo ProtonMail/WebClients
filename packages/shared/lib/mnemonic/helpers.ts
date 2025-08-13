@@ -2,7 +2,7 @@ import { CryptoProxy } from '@proton/crypto';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 
 import { getHasMigratedAddressKeys } from '../../lib/keys';
-import { isPrivate } from '../../lib/user/helpers';
+import { isPrivate, isSelf } from '../../lib/user/helpers';
 import type { APP_NAMES } from '../constants';
 import { APPS } from '../constants';
 import { MNEMONIC_STATUS } from '../interfaces';
@@ -83,7 +83,7 @@ export const getIsMnemonicAvailable = ({
 }) => {
     const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
     const isNonPrivateUser = !isPrivate(user);
-    return hasMigratedKeys && !isNonPrivateUser && app !== APPS.PROTONVPN_SETTINGS;
+    return hasMigratedKeys && !isNonPrivateUser && app !== APPS.PROTONVPN_SETTINGS && isSelf(user);
 };
 
 export const getCanReactiveMnemonic = (user: User) => {

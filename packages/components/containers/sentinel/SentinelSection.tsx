@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
@@ -38,6 +39,7 @@ interface Props {
 
 export const SentinelSection = ({ app }: Props) => {
     const { APP_NAME } = useConfig();
+    const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const api = useApi();
@@ -154,17 +156,19 @@ export const SentinelSection = ({ app }: Props) => {
                     </SettingsLayout>
                 </>
             ) : (
-                <SettingsParagraph>
-                    <PromotionButton
-                        iconName="upgrade"
-                        iconGradient={true}
-                        onClick={handleUpgrade}
-                        disabled={loadingSubscriptionModal}
-                    >
-                        {/* translator: full sentence: "Upgrade to enable Proton Sentinel." */}
-                        {c('Action').t`Upgrade to enable ${PROTON_SENTINEL_NAME}`}
-                    </PromotionButton>
-                </SettingsParagraph>
+                user.canPay && (
+                    <SettingsParagraph>
+                        <PromotionButton
+                            iconName="upgrade"
+                            iconGradient={true}
+                            onClick={handleUpgrade}
+                            disabled={loadingSubscriptionModal}
+                        >
+                            {/* translator: full sentence: "Upgrade to enable Proton Sentinel." */}
+                            {c('Action').t`Upgrade to enable ${PROTON_SENTINEL_NAME}`}
+                        </PromotionButton>
+                    </SettingsParagraph>
+                )
             )}
         </SettingsSectionWide>
     );
