@@ -30,6 +30,7 @@ import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
+import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';
@@ -149,6 +150,7 @@ const MoveDropdown = ({
 
         if (applyOptimisticLocationEnabled && !selectAll) {
             await applyLocation({
+                type: APPLY_LOCATION_TYPES.MOVE,
                 elements,
                 targetLabelID: selectedFolderID,
                 createFilters: canApplyAlways ? always : false,
