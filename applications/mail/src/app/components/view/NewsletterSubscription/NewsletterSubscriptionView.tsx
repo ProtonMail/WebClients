@@ -11,7 +11,6 @@ import {
     LABEL_IDS_TO_HUMAN,
     type MARK_AS_STATUS,
 } from '@proton/shared/lib/mail/constants';
-import useFlag from '@proton/unleash/useFlag';
 
 import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
@@ -71,7 +70,6 @@ export const NewsletterSubscriptionView = ({
     navigation,
     params,
 }: NewsletterSubscriptionViewProps) => {
-    const newsletterSubscriptionsView = useFlag('NewsletterSubscriptionView');
     const { feature } = useFeature(FeatureCode.NewsletterSubscriptionViewOnboarding);
 
     const { resizeAreaRef } = useMailboxLayoutProvider();
@@ -127,7 +125,7 @@ export const NewsletterSubscriptionView = ({
     }, [activeSubscription?.ID, params.newsletterSubscriptionID]);
 
     // The view is not available on mobile, we want to make sure to avoid showing it to users
-    if (!newsletterSubscriptionsView || breakpoints.viewportWidth['<=small']) {
+    if (breakpoints.viewportWidth['<=small']) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
