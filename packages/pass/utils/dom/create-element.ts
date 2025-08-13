@@ -1,3 +1,5 @@
+import { sendToE2eTests } from '@proton/pass/utils/tests/e2e';
+
 declare global {
     interface ShadowRoot {
         wrappedJSObject?: ShadowRoot;
@@ -36,6 +38,8 @@ export const createCustomElement = <T extends HTMLElement>(options: {
 }): CustomElementRef<T> => {
     const customElement = document.createElement(options.type) as T;
     const shadowRoot = customElement.attachShadow({ mode: 'closed' });
+
+    sendToE2eTests('shadowRoot', options.type, shadowRoot);
 
     options.classNames?.forEach((className) => customElement.classList.add(className));
 
