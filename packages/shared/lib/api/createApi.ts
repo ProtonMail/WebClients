@@ -73,13 +73,26 @@ export type ApiVerificationEvent = {
         reject: (value: any) => void;
     };
 };
+
+export type ApiForcePasswordChangeEvent = {
+    type: 'force-password-change';
+    payload: {
+        error: any;
+        message: string | undefined;
+        resolve: (value?: any) => void;
+        reject: (value: any) => void;
+    };
+};
+
 export type ApiEvent =
     | ServerTimeEvent
     | ApiStatusEvent
     | ApiNotificationEvent
     | ApiLogoutEvent
     | ApiMissingScopeEvent
-    | ApiVerificationEvent;
+    | ApiVerificationEvent
+    | ApiForcePasswordChangeEvent;
+
 export type ApiListenerCallback = (event: ApiEvent) => boolean;
 
 export type ApiWithListener = Api & {
@@ -152,10 +165,31 @@ const createApi = ({
         });
     };
 
+    const handleForcePasswordChange = (data: any) => {
+        if (!listeners.length) {
+            return Promise.reject(data.error);
+        }
+        return new Promise((resolve, reject) => {
+            const handled = notify({
+                type: 'force-password-change',
+                payload: {
+                    ...data,
+                    resolve,
+                    reject,
+                },
+            });
+            if (handled) {
+                return;
+            }
+            return reject(data.error);
+        });
+    };
+
     const callWithApiHandlers = withApiHandlers({
         call,
         onMissingScopes: handleMissingScopes,
         onVerification: handleVerification,
+        onForcePasswordChange: handleForcePasswordChange,
     }) as any;
 
     const offlineSet = new Set<string>();

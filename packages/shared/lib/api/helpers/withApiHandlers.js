@@ -9,7 +9,7 @@ import {
 import { getDateHeader } from '../../fetch/helpers';
 import { wait } from '../../helpers/promise';
 import { setRefreshCookies } from '../auth';
-import { getApiError } from './apiErrorHelper';
+import { getApiError, getApiErrorMessage } from './apiErrorHelper';
 import { createDeviceHandlers } from './deviceVerificationHandler';
 import { AppVersionBadError, InactiveSessionError } from './errors';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from './refreshHandlers';
@@ -18,7 +18,7 @@ import { retryHandler } from './retryHandler';
 /**
  * Attach a catch handler to every API call to handle 401, 403, and other errors.
  */
-export default ({ call, onMissingScopes, onVerification }) => {
+export default ({ call, onMissingScopes, onVerification, onForcePasswordChange }) => {
     let loggedOut = false;
     let appVersionBad = false;
 
@@ -181,6 +181,18 @@ export default ({ call, onMissingScopes, onVerification }) => {
                             throw error;
                         });
                 }
+
+                const ignoreUserRestrictedState =
+                    Array.isArray(ignoreHandler) &&
+                    ignoreHandler.includes(API_CUSTOM_ERROR_CODES.USER_RESTRICTED_STATE);
+                if (code === API_CUSTOM_ERROR_CODES.USER_RESTRICTED_STATE && !ignoreUserRestrictedState) {
+                    const errorMessage = getApiErrorMessage(e);
+                    return onForcePasswordChange({
+                        error: e,
+                        message: errorMessage,
+                    });
+                }
+
                 throw e;
             });
         };
