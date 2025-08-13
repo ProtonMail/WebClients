@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -11,7 +10,7 @@ interface HeaderProps {
     showSignIn?: boolean;
 }
 
-const Header = forwardRef<HTMLElement, HeaderProps>(function Header({ showSignIn = true }, ref) {
+const Header = ({ showSignIn = false }: HeaderProps) => {
     const { loginUrl } = useSignup();
 
     const signIn = (
@@ -24,12 +23,11 @@ const Header = forwardRef<HTMLElement, HeaderProps>(function Header({ showSignIn
         <header
             className="flex justify-center items-center gap-4 py-4 px-4 md:px-8 max-w-custom md:h-custom justify-space-between mx-auto"
             style={{ '--max-w-custom': '90rem', '--md-h-custom': '4.4rem' }}
-            ref={ref}
         >
             <ProtonLogo />
             {showSignIn && <div>{c('Go to sign in').jt`Already have an account? ${signIn}`}</div>}
         </header>
     );
-});
+};
 
 export default Header;

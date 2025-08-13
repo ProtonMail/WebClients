@@ -18,7 +18,7 @@ const OrgNameStep = ({ onSubmit }: { onSubmit: (orgName: string) => Promise<void
     const { validator, onFormSubmit } = useFormErrors();
     return (
         <Layout>
-            <Header showSignIn={false} />
+            <Header />
 
             <div
                 className="flex flex-column flex-nowrap accountDetailsStep min-h-custom justify-center"

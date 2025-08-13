@@ -7,7 +7,7 @@ import Layout from '../components/Layout/Layout';
 const RecoveryPhraseStep = ({ onContinue }: { onContinue: () => void }) => {
     return (
         <Layout>
-            <Header showSignIn={false} />
+            <Header />
             <div
                 className="flex flex-column flex-nowrap accountDetailsStep min-h-custom justify-center"
                 style={{ '--min-h-custom': 'calc(100vh - 4.25rem - 3.75rem)' }}
