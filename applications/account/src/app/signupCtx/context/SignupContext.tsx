@@ -28,6 +28,8 @@ import { type Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
+import sendRecoveryPhrasePayloadHelper from '../../containers/recoveryPhrase/sendRecoveryPhrasePayload';
+import type { DeferredMnemonicData } from '../../containers/recoveryPhrase/types';
 import type { SignupType } from '../../signup/interfaces';
 import { type AccountData } from '../../signup/interfaces';
 import { handleSetupOrg } from '../../signup/signupActions';
@@ -99,6 +101,14 @@ interface SignupContextType {
     flowId: string;
     loading: { init: boolean; submitting: boolean };
     loginUrl: string;
+    /**
+     * Recovery phrase data generated during user setup
+     */
+    recoveryPhraseData?: DeferredMnemonicData;
+    /**
+     * Sends recovery phrase payload to backend when user downloads/copies recovery phrase
+     */
+    sendRecoveryPhrasePayload: () => Promise<void>;
 }
 
 const SignupContext = createContext<SignupContextType | null>(null);
@@ -215,6 +225,7 @@ export const InnerSignupContextProvider = ({
     const paymentsContext = usePaymentOptimistic();
     const setupUserResponseRef = useRef<Unwrap<ReturnType<typeof handleSetupUser>>>();
     const signupDataRef = useRef<SignupData>();
+    const [recoveryPhraseData, setRecoveryPhraseData] = useState<DeferredMnemonicData | undefined>();
 
     const updateSignupData = (partial: Partial<SignupData>) => {
         signupDataRef.current = { ...signupDataRef.current, ...partial };
@@ -439,13 +450,13 @@ export const InnerSignupContextProvider = ({
                 trusted,
                 api: silentApi,
                 keyTransparencyActivation: await getKtActivation(),
-
                 subscriptionData: paymentData?.subscriptionData,
                 productParam: app,
                 hasZipCodeValidation,
             });
 
             setupUserResponseRef.current = setupUserResponse;
+            setRecoveryPhraseData(setupUserResponse.recoveryPhraseData);
 
             if (referralData) {
                 const plan = (() => {
@@ -575,6 +586,31 @@ export const InnerSignupContextProvider = ({
         }
     };
 
+    const sendRecoveryPhrasePayload = async () => {
+        if (stageRef.current !== 'userSetup') {
+            captureSentryMessage(
+                `Invalid stage: ${stageRef.current}. Expected setupUser to have been completed successfully.`
+            );
+            setError(true);
+            return;
+        }
+
+        if (!setupUserResponseRef.current?.recoveryPhraseData) {
+            captureSentryMessage('Missing recovery phrase data');
+            return;
+        }
+
+        const { payload } = setupUserResponseRef.current.recoveryPhraseData;
+
+        try {
+            await sendRecoveryPhrasePayloadHelper({ api, payload });
+        } catch (error) {
+            traceSentryError(error);
+
+            throw error;
+        }
+    };
+
     const setDisplayName = async (displayName: string) => {
         if (stageRef.current !== 'userSetup') {
             captureSentryMessage(
@@ -640,7 +676,7 @@ export const InnerSignupContextProvider = ({
         }
 
         try {
-            await onLogin(setupUserResponseRef.current.session);
+            onLogin(setupUserResponseRef.current.session);
             metrics.core_signup_ctx_login_total.increment({
                 status: 'success',
             });
@@ -678,6 +714,8 @@ export const InnerSignupContextProvider = ({
         flowId,
         loading,
         loginUrl,
+        recoveryPhraseData,
+        sendRecoveryPhrasePayload,
     };
 
     return (
