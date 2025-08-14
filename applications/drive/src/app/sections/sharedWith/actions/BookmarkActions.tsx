@@ -11,18 +11,18 @@ interface BaseBookmarkActionsProps {
 }
 
 interface ContextMenuBookmarkActionsProps extends BaseBookmarkActionsProps {
-    type: 'contextMenu';
+    buttonType: 'contextMenu';
     close: () => void;
 }
 
 interface ToolbarBookmarkActionsProps extends BaseBookmarkActionsProps {
-    type: 'toolbar';
+    buttonType: 'toolbar';
     close?: never;
 }
 
 type BookmarkActionsProps = ContextMenuBookmarkActionsProps | ToolbarBookmarkActionsProps;
 
-export const BookmarkActions = ({ selectedBookmarks, showConfirmModal, close, type }: BookmarkActionsProps) => {
+export const BookmarkActions = ({ selectedBookmarks, showConfirmModal, close, buttonType }: BookmarkActionsProps) => {
     const itemChecker = createItemChecker(selectedBookmarks);
     const singleItem = selectedBookmarks.at(0);
 
@@ -31,12 +31,12 @@ export const BookmarkActions = ({ selectedBookmarks, showConfirmModal, close, ty
             <>
                 <OpenBookmarkButton
                     url={singleItem.bookmark.url}
-                    {...(type === 'contextMenu' ? { close, type } : { type })}
+                    {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
                 />
                 <RemoveBookmarkButton
                     uids={singleItem.bookmark.uid}
                     showConfirmModal={showConfirmModal}
-                    {...(type === 'contextMenu' ? { close, type } : { type })}
+                    {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
                 />
             </>
         );
@@ -47,7 +47,7 @@ export const BookmarkActions = ({ selectedBookmarks, showConfirmModal, close, ty
             <RemoveBookmarkButton
                 uids={selectedBookmarks.map((item) => item.bookmark.uid)}
                 showConfirmModal={showConfirmModal}
-                {...(type === 'contextMenu' ? { close, type } : { type })}
+                {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
         </>
     );

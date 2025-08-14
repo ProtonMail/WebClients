@@ -30,7 +30,7 @@ export function SharedWithMeContextMenu({
                     showDetailsModal={showDetailsModal}
                     showFilesDetailsModal={showFilesDetailsModal}
                     close={close}
-                    type="contextMenu"
+                    buttonType="contextMenu"
                 />
             </ItemContextMenu>
             {detailsModal}
