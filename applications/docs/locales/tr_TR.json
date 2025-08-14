@@ -117,6 +117,9 @@
       "Cancel trial and pay": [
         "Deneme süresini iptal et ve öde"
       ],
+      "Change password": [
+        "Parolayı değiştir"
+      ],
       "Change sort order": [
         "Sıralamayı değiştir"
       ],
@@ -439,6 +442,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Hesaplar için diğer seçenekler"
       ],
       "Move": [
         "Taşı"
@@ -876,6 +882,14 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Ücretli parola yöneticisi"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
       ]
     },
     "Billing cycle option": {
@@ -2110,6 +2124,11 @@
         "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Güvenilir kişi"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "\"${ sanitizedName }\" zaten var"
@@ -3205,6 +3224,9 @@
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/ay)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
       ],
@@ -3493,6 +3515,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Kendi parolanızı yazın (güvenilen kişi olarak)."
       ],
       "Error converting document: ${ errorMessage }": [
         "Belge dönüştürülürken sorun çıktı: ${ errorMessage }"
@@ -3783,6 +3808,9 @@
       ],
       "Organization size": [
         "Kuruluş boyutu"
+      ],
+      "Other accounts": [
+        "Diğer hesaplar"
       ],
       "Owner": [
         "Sahibi"
@@ -4853,6 +4881,9 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ],
+      "Your password (trusted contact)": [
+        "Parolanız (güvenilen kişi)"
       ]
     },
     "Label for contact group color": {
@@ -5309,6 +5340,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
@@ -5451,6 +5485,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "E-posta istemcisi desteği (IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-posta grupları"
       ],
       "Enables HIPAA compliance": [
         "HIPAA uyumluluğu"
@@ -5741,6 +5778,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Gruptaki herkese tek bir e-posta adresinden e-posta gönderin"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
@@ -7065,6 +7105,9 @@
       ],
       "Account recovery": [
         "Hesap kurtarma"
+      ],
+      "Account Temporarily Locked": [
+        "Hesap geçici olarak kilitlendi"
       ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
