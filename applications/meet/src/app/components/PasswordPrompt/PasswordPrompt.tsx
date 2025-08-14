@@ -10,6 +10,7 @@ import {
     ModalTwo,
     ModalTwoContent,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { IcEye, IcEyeSlash } from '@proton/icons';
 
 import './PasswordPrompt.scss';
@@ -23,6 +24,8 @@ interface PasswordPromptProps {
 
 export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invalidPassphrase }: PasswordPromptProps) => {
     const [showPassword, setShowPassword] = useState(false);
+    const [passwordChanged, setPasswordChanged] = useState(false);
+    const [loading, withLoading] = useLoading();
 
     return (
         <div className="password-prompt-wrapper text-center">
@@ -39,7 +42,7 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invali
                         <div className="my-4 color-weak text-center">{c('meet_2025 Info')
                             .t`Please enter the passphrase to decrypt and view this meeting`}</div>
 
-                        <div className="relative w-full my-4">
+                        <div className="relative w-full my-1">
                             <InputFieldStackedGroup classname="w-full relative">
                                 <InputFieldStacked isGroupElement>
                                     <InputFieldTwo
@@ -47,7 +50,10 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invali
                                         name="password p-4"
                                         label={c('meet_2025 Label').t`Passphrase`}
                                         value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
+                                        onChange={(e) => {
+                                            setPassword(e.target.value);
+                                            setPasswordChanged(true);
+                                        }}
                                         unstyled={true}
                                         placeholder={c('meet_2025 Placeholder').t`Enter passphrase`}
                                         type={showPassword ? 'text' : 'password'}
@@ -72,11 +78,12 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invali
                             >
                                 {showPassword ? <IcEye size={4} /> : <IcEyeSlash size={4} />}
                             </Button>
-                            {invalidPassphrase && (
-                                <div className="color-danger w-full text-center">{c('meet_2025 Error')
-                                    .t`Invalid passphrase`}</div>
-                            )}
                         </div>
+
+                        {!passwordChanged && invalidPassphrase && (
+                            <div className="color-danger w-full text-center mt-2">{c('meet_2025 Error')
+                                .t`Invalid passphrase`}</div>
+                        )}
 
                         <div
                             className="w-full absolute flex justify-center items-center bottom-custom px-8"
@@ -88,8 +95,12 @@ export const PasswordPrompt = ({ password, setPassword, onPasswordSubmit, invali
                                 className="continue-button rounded-full py-4 color-invert w-full text-semibold"
                                 color="norm"
                                 size="large"
-                                onClick={onPasswordSubmit}
-                                disabled={!password}
+                                onClick={() => {
+                                    void withLoading(onPasswordSubmit());
+                                    setPasswordChanged(false);
+                                }}
+                                loading={loading}
+                                disabled={!password || loading}
                             >
                                 {c('meet_2025 Action').t`Continue`}
                             </Button>

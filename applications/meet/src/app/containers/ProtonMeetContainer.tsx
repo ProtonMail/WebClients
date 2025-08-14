@@ -221,6 +221,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const submitPassword = async () => {
         try {
+            setInvalidPassphrase(false);
+
             const handshakeInfo = await getHandshakeInfo(token);
 
             const roomName = await getRoomName({
@@ -236,8 +238,6 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 ...prev,
                 meetingName: roomName,
             }));
-
-            setInvalidPassphrase(false);
 
             return true;
         } catch (error) {
