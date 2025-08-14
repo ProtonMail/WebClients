@@ -70,7 +70,7 @@ const ToolbarDropdown = ({
 
     return (
         <>
-            <Tooltip title={title}>
+            <Tooltip title={title} originalPlacement="bottom-start">
                 <DropdownButton
                     as="button"
                     type="button"
