@@ -11,6 +11,9 @@
       "Cancel": [
         "İptal"
       ],
+      "Change password": [
+        "Parolayı değiştir"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -70,6 +73,14 @@
       ],
       "View invoice": [
         "Faturayı görüntüle"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
       ]
     },
     "Country name": {
@@ -1009,6 +1020,9 @@
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Kendi parolanızı yazın (güvenilen kişi olarak)."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
@@ -1091,6 +1105,9 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ],
+      "Your password (trusted contact)": [
+        "Parolanız (güvenilen kişi)"
       ]
     },
     "Link": {
@@ -1107,6 +1124,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ n } custom email domain": [
         "${ n } özel e-posta etki alanı",
         "${ n } özel e-posta etki alanı"
@@ -1177,6 +1197,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "E-posta istemcisi desteği (IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-posta grupları"
       ],
       "Encrypted contact details": [
         "Şifrelenmiş kişi bilgileri"
@@ -1250,6 +1273,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Gruptaki herkese tek bir e-posta adresinden e-posta gönderin"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
@@ -1363,6 +1389,9 @@
       ]
     },
     "Title": {
+      "Account Temporarily Locked": [
+        "Hesap geçici olarak kilitlendi"
+      ],
       "Enter 2FA code": [
         "İki adımlı doğrulama kodunu yazın"
       ],
