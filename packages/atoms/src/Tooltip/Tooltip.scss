@@ -176,12 +176,12 @@
 
 	&--top-start::before,
 	&--bottom-start::before {
-		left: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
+		left: 0;
 	}
 
 	&--top-end::before,
 	&--bottom-end::before {
-		right: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
+		right: 0;
 	}
 
 	&--left::before,
@@ -191,12 +191,12 @@
 
 	&--left-start::before,
 	&--right-start::before {
-		top: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
+		top: 0;
 	}
 
 	&--left-end::before,
 	&--right-end::before {
-		bottom: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
+		bottom: 0;
 	}
 
 	/* stylelint-enable */
