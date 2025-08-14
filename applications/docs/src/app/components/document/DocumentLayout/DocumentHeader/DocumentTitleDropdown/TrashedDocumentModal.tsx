@@ -4,6 +4,7 @@ import { c } from 'ttag'
 import { Button, CircleLoader } from '@proton/atoms'
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components'
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
+import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
 
 export type TrashedDocumentModalProps = {
   controller: AuthenticatedDocControllerInterface
@@ -48,12 +49,12 @@ export function TrashedDocumentModal({
                   {trashedState === 'restoring' && <CircleLoader size="small" className="ml-2" />}
                 </Button>
                 <Button color="norm" onClick={onOpenProtonDrive}>
-                  {c('Action').t`Go to ${DRIVE_SHORT_APP_NAME}`}
+                  {goToPlanOrAppNameText(DRIVE_SHORT_APP_NAME)}
                 </Button>
               </>
             ) : (
               <>
-                <Button onClick={onOpenProtonDrive}>{c('Action').t`Go to ${DRIVE_SHORT_APP_NAME}`}</Button>
+                <Button onClick={onOpenProtonDrive}>{goToPlanOrAppNameText(DRIVE_SHORT_APP_NAME)}</Button>
                 <Button
                   color="norm"
                   onClick={() => {
