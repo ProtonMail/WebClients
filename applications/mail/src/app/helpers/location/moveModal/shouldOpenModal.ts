@@ -15,12 +15,6 @@ interface ShouldOpenConfirmationModalMessageParams {
     mailSettings: MailSettings;
 }
 
-export const scheduleTargetWithWarning = new Set<string>([
-    MAILBOX_LABEL_IDS.ALL_DRAFTS,
-    MAILBOX_LABEL_IDS.DRAFTS,
-    MAILBOX_LABEL_IDS.TRASH,
-]);
-
 /**
  * Test if we should open the schedule or the unsubscribe modal to confirm the user action.
  * The snooze modal is not visible for messages.
@@ -35,7 +29,7 @@ export const shouldOpenConfirmationModalForMessages = ({
     destinationLabelID,
     mailSettings,
 }: ShouldOpenConfirmationModalMessageParams): ModalType | null => {
-    if (scheduleTargetWithWarning.has(destinationLabelID)) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH) {
         const hasSomeElementsInSchedule = elements.some((element) => hasLabel(element, MAILBOX_LABEL_IDS.SCHEDULED));
         if (hasSomeElementsInSchedule) {
             return ModalType.Schedule;
@@ -79,7 +73,7 @@ export const shouldOpenConfirmationModalForConverversation = ({
     mailSettings,
     conversationsFromState,
 }: ShouldOpenConfirmationModalConversationParams): ModalType | null => {
-    if (scheduleTargetWithWarning.has(destinationLabelID)) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH) {
         const hasSomeElementsInSchedule = elements.some(
             (element) => getContextNumMessages(element, MAILBOX_LABEL_IDS.SCHEDULED) > 0
         );

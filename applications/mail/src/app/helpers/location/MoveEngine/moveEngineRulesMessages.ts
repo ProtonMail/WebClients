@@ -22,7 +22,7 @@ export const messageInboxRules: MoveEngineRule = ({ element }) => {
     return MoveEngineRuleResult.ALLOWED;
 };
 
-// Sent and received messages cannot move to ALL_DRAFTS
+// Sent, scheduled, and received messages cannot move to ALL_DRAFTS
 export const messageAllDraftRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -32,7 +32,7 @@ export const messageAllDraftRules: MoveEngineRule = ({ element }) => {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
-    if ((isSent(element) && !isScheduled(element)) || isReceived(element)) {
+    if (isSent(element) || isScheduled(element) || isReceived(element)) {
         return MoveEngineRuleResult.DENIED;
     }
 
@@ -143,7 +143,7 @@ export const messageSentRules: MoveEngineRule = ({ element }) => {
     return MoveEngineRuleResult.ALLOWED;
 };
 
-// Sent and received messages cannot move to drafts
+// Sent, scheduled, and received messages cannot move to drafts
 export const messageDraftRules: MoveEngineRule = ({ element }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -154,7 +154,7 @@ export const messageDraftRules: MoveEngineRule = ({ element }) => {
     }
 
     // Scheduled are sent messages, but we can move them to draft to get canceled
-    if ((isSent(element) && !isScheduled(element)) || isReceived(element)) {
+    if (isSent(element) || isScheduled(element) || isReceived(element)) {
         return MoveEngineRuleResult.DENIED;
     }
 
