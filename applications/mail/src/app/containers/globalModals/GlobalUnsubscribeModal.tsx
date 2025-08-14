@@ -33,6 +33,9 @@ export const GlobalUnsubscribeModal = () => {
             void api(updateSpamAction(spamAction));
         }
 
+        setOpen(false);
+        setUnsubscribeModalProps(null);
+
         unsubscribeModalProps?.onConfirm(spamAction);
     };
 
