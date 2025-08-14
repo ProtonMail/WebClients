@@ -15,12 +15,12 @@ interface BaseSharedWithMeActionsProps {
 }
 
 interface ContextMenuSharedWithMeActionsProps extends BaseSharedWithMeActionsProps {
-    type: 'contextMenu';
+    buttonType: 'contextMenu';
     close: () => void;
 }
 
 interface ToolbarSharedWithMeActionsProps extends BaseSharedWithMeActionsProps {
-    type: 'toolbar';
+    buttonType: 'toolbar';
     close?: never;
 }
 
@@ -32,7 +32,7 @@ export const SharedWithMeActions = ({
     showDetailsModal,
     showFilesDetailsModal,
     close,
-    type,
+    buttonType,
 }: SharedWithMeActionsProps) => {
     const itemChecker = createItemChecker(selectedItems);
 
@@ -46,7 +46,7 @@ export const SharedWithMeActions = ({
             <InvitationActions
                 selectedInvitations={invitations}
                 showConfirmModal={showConfirmModal}
-                {...(type === 'contextMenu' ? { close, type } : { type })}
+                {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
         );
     }
@@ -57,7 +57,7 @@ export const SharedWithMeActions = ({
             <BookmarkActions
                 selectedBookmarks={bookmarks}
                 showConfirmModal={showConfirmModal}
-                {...(type === 'contextMenu' ? { close, type } : { type })}
+                {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
         );
     }
@@ -71,7 +71,7 @@ export const SharedWithMeActions = ({
                 showConfirmModal={showConfirmModal}
                 showDetailsModal={showDetailsModal}
                 showFilesDetailsModal={showFilesDetailsModal}
-                {...(type === 'contextMenu' ? { close, type } : { type })}
+                {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
         );
     }

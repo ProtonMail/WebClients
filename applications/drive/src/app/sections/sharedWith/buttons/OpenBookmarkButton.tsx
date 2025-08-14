@@ -3,30 +3,30 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { useBookmarksActions } from '../../../hooks/drive/useBookmarksActions';
+import { useBookmarksActions } from '../hooks/useBookmarksActions';
 
 interface BaseProps {
     url: string;
 }
 
 interface ContextMenuProps extends BaseProps {
-    type: 'contextMenu';
+    buttonType: 'contextMenu';
     close: () => void;
 }
 
 interface ToolbarProps extends BaseProps {
-    type: 'toolbar';
+    buttonType: 'toolbar';
     close?: never;
 }
 
 type Props = ContextMenuProps | ToolbarProps;
 
-export const OpenBookmarkButton = ({ url, close, type }: Props) => {
+export const OpenBookmarkButton = ({ url, close, buttonType }: Props) => {
     const { openBookmark } = useBookmarksActions();
 
     const handleOpen = () => openBookmark(url);
 
-    if (type === 'toolbar') {
+    if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
                 title={c('Action').t`Open`}

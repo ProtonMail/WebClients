@@ -16,20 +16,20 @@ interface BaseProps {
 }
 
 interface ContextMenuProps extends BaseProps {
-    type: 'contextMenu';
+    buttonType: 'contextMenu';
     close: () => void;
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
 }
 
 interface ToolbarProps extends BaseProps {
-    type: 'toolbar';
+    buttonType: 'toolbar';
     close?: never;
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
 }
 
 type Props = ContextMenuProps | ToolbarProps;
 
-export const RemoveMeButton = ({ nodeUid, shareId, isAlbum, showConfirmModal, close, type }: Props) => {
+export const RemoveMeButton = ({ nodeUid, shareId, isAlbum, showConfirmModal, close, buttonType }: Props) => {
     const { removeMe } = useSharedWithMeActions();
     const { removeMe: legacyRemoveMe } = useLegacySharedWithMeActions();
     const removeSharedWithMeItemFromStore = useSharedWithMeListingStore(
@@ -46,7 +46,7 @@ export const RemoveMeButton = ({ nodeUid, shareId, isAlbum, showConfirmModal, cl
         }
     };
 
-    if (type === 'toolbar') {
+    if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
                 title={c('Action').t`Remove me`}
