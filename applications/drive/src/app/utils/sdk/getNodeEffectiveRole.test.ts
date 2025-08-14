@@ -10,6 +10,11 @@ describe('getNodeEffectiveRole', () => {
         mockDrive = {
             getNode: jest.fn(),
         } as any;
+        jest.spyOn(console, 'warn').mockImplementation(() => {});
+    });
+
+    afterEach(() => {
+        jest.clearAllMocks();
     });
 
     const createMockNode = (

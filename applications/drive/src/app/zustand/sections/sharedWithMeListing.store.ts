@@ -1,7 +1,11 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { type NodeType } from '@proton/drive';
+import { type NodeType, splitNodeUid } from '@proton/drive';
+
+import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
+import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
+import { legacyTimestampToDate } from '../../utils/sdk/legacyTime';
 
 export enum ItemType {
     BOOKMARK = 'bookmark',
@@ -90,138 +94,185 @@ export const getKeyUid = (item: SharedWithMeListingItemUI) =>
     item.itemType === ItemType.BOOKMARK ? item.bookmark.uid : item.nodeUid;
 
 export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
-    devtools((set, get) => ({
-        sharedWithMeItems: new Map(),
-        itemUids: new Set(),
-        itemsWithInvitationPosition: new Set(),
+    devtools(
+        (set, get) => ({
+            sharedWithMeItems: new Map(),
+            itemUids: new Set(),
+            itemsWithInvitationPosition: new Set(),
 
-        isLoadingNodes: false,
-        isLoadingInvitations: false,
-        isLoadingBookmarks: false,
-        isLoadingLegacy: false,
+            isLoadingNodes: false,
+            isLoadingInvitations: false,
+            isLoadingBookmarks: false,
+            isLoadingLegacy: false,
 
-        setSharedWithMeItem: (item: SharedWithMeListingItemUI) => {
-            set((state) => {
-                const keyUid = getKeyUid(item);
-                const isExistingItem = state.sharedWithMeItems.has(keyUid);
-                const wasInInvitationPosition = state.itemsWithInvitationPosition.has(keyUid);
-                const newItemUids = new Set(state.itemUids);
-                const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
-                newItemUids.add(keyUid);
+            setSharedWithMeItem: (item: SharedWithMeListingItemUI) => {
+                set((state) => {
+                    const keyUid = getKeyUid(item);
+                    const isExistingItem = state.sharedWithMeItems.has(keyUid);
+                    const wasInInvitationPosition = state.itemsWithInvitationPosition.has(keyUid);
+                    const newItemUids = new Set(state.itemUids);
+                    const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
+                    newItemUids.add(keyUid);
 
-                if (isExistingItem) {
-                    const existingItem = state.sharedWithMeItems.get(keyUid);
-                    const wasOriginallyInvitation = existingItem?.itemType === ItemType.INVITATION;
+                    if (isExistingItem) {
+                        const existingItem = state.sharedWithMeItems.get(keyUid);
+                        const wasOriginallyInvitation = existingItem?.itemType === ItemType.INVITATION;
+
+                        const newSharedWithMeItems = new Map(state.sharedWithMeItems);
+                        newSharedWithMeItems.set(keyUid, item);
+
+                        if (wasInInvitationPosition || wasOriginallyInvitation) {
+                            newItemsWithInvitationPosition.add(keyUid);
+                        }
+
+                        return {
+                            sharedWithMeItems: newSharedWithMeItems,
+                            itemUids: newItemUids,
+                            itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                        };
+                    }
+
+                    if (item.itemType === ItemType.INVITATION) {
+                        const newSharedWithMeItems = new Map();
+                        newSharedWithMeItems.set(keyUid, item);
+                        for (const [uid, existingItem] of state.sharedWithMeItems) {
+                            newSharedWithMeItems.set(uid, existingItem);
+                        }
+                        newItemsWithInvitationPosition.add(keyUid);
+
+                        return {
+                            sharedWithMeItems: newSharedWithMeItems,
+                            itemUids: newItemUids,
+                            itemsWithInvitationPosition: newItemsWithInvitationPosition,
+                        };
+                    }
 
                     const newSharedWithMeItems = new Map(state.sharedWithMeItems);
                     newSharedWithMeItems.set(keyUid, item);
-
-                    if (wasInInvitationPosition || wasOriginallyInvitation) {
-                        newItemsWithInvitationPosition.add(keyUid);
-                    }
-
                     return {
                         sharedWithMeItems: newSharedWithMeItems,
                         itemUids: newItemUids,
                         itemsWithInvitationPosition: newItemsWithInvitationPosition,
                     };
-                }
+                });
+            },
 
-                if (item.itemType === ItemType.INVITATION) {
-                    const newSharedWithMeItems = new Map();
-                    newSharedWithMeItems.set(keyUid, item);
-                    for (const [uid, existingItem] of state.sharedWithMeItems) {
-                        newSharedWithMeItems.set(uid, existingItem);
-                    }
-                    newItemsWithInvitationPosition.add(keyUid);
-
+            removeSharedWithMeItem: (uid: string) => {
+                set((state) => {
+                    const newSharedWithMeItems = new Map(state.sharedWithMeItems);
+                    newSharedWithMeItems.delete(uid);
+                    const newItemUids = new Set(state.itemUids);
+                    newItemUids.delete(uid);
+                    const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
+                    newItemsWithInvitationPosition.delete(uid);
                     return {
                         sharedWithMeItems: newSharedWithMeItems,
                         itemUids: newItemUids,
                         itemsWithInvitationPosition: newItemsWithInvitationPosition,
                     };
-                }
+                });
+            },
 
-                const newSharedWithMeItems = new Map(state.sharedWithMeItems);
-                newSharedWithMeItems.set(keyUid, item);
-                return {
-                    sharedWithMeItems: newSharedWithMeItems,
-                    itemUids: newItemUids,
-                    itemsWithInvitationPosition: newItemsWithInvitationPosition,
-                };
-            });
-        },
+            clearAll: () => {
+                set({
+                    sharedWithMeItems: new Map(),
+                    itemUids: new Set(),
+                    itemsWithInvitationPosition: new Set(),
+                });
+            },
 
-        removeSharedWithMeItem: (uid: string) => {
-            set((state) => {
-                const newSharedWithMeItems = new Map(state.sharedWithMeItems);
-                newSharedWithMeItems.delete(uid);
-                const newItemUids = new Set(state.itemUids);
-                newItemUids.delete(uid);
-                const newItemsWithInvitationPosition = new Set(state.itemsWithInvitationPosition);
-                newItemsWithInvitationPosition.delete(uid);
-                return {
-                    sharedWithMeItems: newSharedWithMeItems,
-                    itemUids: newItemUids,
-                    itemsWithInvitationPosition: newItemsWithInvitationPosition,
-                };
-            });
-        },
+            hasSharedWithMeItem: (uid: string) => get().sharedWithMeItems.has(uid),
+            getSharedWithMeItem: (uid: string) => get().sharedWithMeItems.get(uid),
+            getAllSharedWithMeItems: () => Array.from(get().sharedWithMeItems.values()),
+            getInvitations: () => {
+                const items = Array.from(get().sharedWithMeItems.values());
+                return items.filter((item) => item.itemType === ItemType.INVITATION);
+            },
+            getNonInvitationItems: () => {
+                const items = Array.from(get().sharedWithMeItems.values());
+                return items.filter((item) => item.itemType !== ItemType.INVITATION);
+            },
+            getInvitationPositionedItems: () => {
+                const state = get();
+                const items = Array.from(state.sharedWithMeItems.values());
+                return items.filter((item) => {
+                    const keyUid = getKeyUid(item);
+                    return item.itemType === ItemType.INVITATION || state.itemsWithInvitationPosition.has(keyUid);
+                });
+            },
+            getRegularItems: () => {
+                const state = get();
+                const items = Array.from(state.sharedWithMeItems.values());
+                return items.filter((item) => {
+                    const keyUid = getKeyUid(item);
+                    return item.itemType !== ItemType.INVITATION && !state.itemsWithInvitationPosition.has(keyUid);
+                });
+            },
+            clearItemsWithInvitationPosition: () => {
+                set({ itemsWithInvitationPosition: new Set() });
+            },
+            getItemUids: () => Array.from(get().itemUids),
+            getInvitiationCount: () => {
+                const items = Array.from(get().sharedWithMeItems.values());
+                return items.filter((item) => item.itemType === ItemType.INVITATION).length;
+            },
 
-        clearAll: () => {
-            set({
-                sharedWithMeItems: new Map(),
-                itemUids: new Set(),
-                itemsWithInvitationPosition: new Set(),
-            });
-        },
+            setLoadingNodes: (loading: boolean) => set({ isLoadingNodes: loading }),
+            setLoadingInvitations: (loading: boolean) => set({ isLoadingInvitations: loading }),
+            setLoadingBookmarks: (loading: boolean) => set({ isLoadingBookmarks: loading }),
+            setLoadingLegacy: (loading: boolean) => set({ isLoadingLegacy: loading }),
 
-        hasSharedWithMeItem: (uid: string) => get().sharedWithMeItems.has(uid),
-        getSharedWithMeItem: (uid: string) => get().sharedWithMeItems.get(uid),
-        getAllSharedWithMeItems: () => Array.from(get().sharedWithMeItems.values()),
-        getInvitations: () => {
-            const items = Array.from(get().sharedWithMeItems.values());
-            return items.filter((item) => item.itemType === ItemType.INVITATION);
-        },
-        getNonInvitationItems: () => {
-            const items = Array.from(get().sharedWithMeItems.values());
-            return items.filter((item) => item.itemType !== ItemType.INVITATION);
-        },
-        getInvitationPositionedItems: () => {
-            const state = get();
-            const items = Array.from(state.sharedWithMeItems.values());
-            return items.filter((item) => {
-                const keyUid = getKeyUid(item);
-                return item.itemType === ItemType.INVITATION || state.itemsWithInvitationPosition.has(keyUid);
-            });
-        },
-        getRegularItems: () => {
-            const state = get();
-            const items = Array.from(state.sharedWithMeItems.values());
-            return items.filter((item) => {
-                const keyUid = getKeyUid(item);
-                return item.itemType !== ItemType.INVITATION && !state.itemsWithInvitationPosition.has(keyUid);
-            });
-        },
-        clearItemsWithInvitationPosition: () => {
-            set({ itemsWithInvitationPosition: new Set() });
-        },
-        getItemUids: () => Array.from(get().itemUids),
-        getInvitiationCount: () => {
-            const items = Array.from(get().sharedWithMeItems.values());
-            return items.filter((item) => item.itemType === ItemType.INVITATION).length;
-        },
-
-        setLoadingNodes: (loading: boolean) => set({ isLoadingNodes: loading }),
-        setLoadingInvitations: (loading: boolean) => set({ isLoadingInvitations: loading }),
-        setLoadingBookmarks: (loading: boolean) => set({ isLoadingBookmarks: loading }),
-        setLoadingLegacy: (loading: boolean) => set({ isLoadingLegacy: loading }),
-
-        isLoading: () => {
-            const state = get();
-            return (
-                state.isLoadingNodes || state.isLoadingInvitations || state.isLoadingBookmarks || state.isLoadingLegacy
-            );
-        },
-    }))
+            isLoading: () => {
+                const state = get();
+                return (
+                    state.isLoadingNodes ||
+                    state.isLoadingInvitations ||
+                    state.isLoadingBookmarks ||
+                    state.isLoadingLegacy
+                );
+            },
+        }),
+        {
+            name: 'shared-with-me-listing-store',
+        }
+    )
 );
+
+getActionEventManager().subscribe(ActionEventName.DELETE_BOOKMARKS, (event) => {
+    const store = useSharedWithMeListingStore.getState();
+    event.uids.forEach((uid) => {
+        store.removeSharedWithMeItem(uid);
+    });
+});
+
+getActionEventManager().subscribe(ActionEventName.REJECT_INVITATIONS, (event) => {
+    const store = useSharedWithMeListingStore.getState();
+    event.uids.forEach((uid) => {
+        store.removeSharedWithMeItem(uid);
+    });
+});
+
+getActionEventManager().subscribe(ActionEventName.ACCEPT_INVITATIONS, (event) => {
+    const store = useSharedWithMeListingStore.getState();
+    event.items.forEach(({ node, sharedInfo }) => {
+        const { volumeId, nodeId } = splitNodeUid(node.uid);
+        store.setSharedWithMeItem({
+            nodeUid: node.uid,
+            name: node.name,
+            type: node.type,
+            mediaType: node.mediaType,
+            itemType: ItemType.DIRECT_SHARE,
+            thumbnailId: node.activeRevision?.uid || node.uid,
+            size: node.totalStorageSize,
+            directShare: {
+                sharedOn: legacyTimestampToDate(sharedInfo.sharedOn),
+                sharedBy: sharedInfo.sharedBy,
+            },
+            legacy: {
+                linkId: nodeId,
+                shareId: node.deprecatedShareId || '',
+                volumeId: volumeId,
+            },
+        });
+    });
+});

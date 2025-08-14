@@ -112,8 +112,8 @@ export const useBookmarksActions = () => {
             createNotification({
                 type: 'success',
                 text: c('Notification').ngettext(
-                    msgid`This item was successfully removed from your list`,
-                    `All items were successfully removed from your list`,
+                    msgid`Selected items were successfully removed from your list`,
+                    `Selected items were successfully removed from your list`,
                     tokensWithLinkId.length
                 ),
             });
@@ -121,8 +121,8 @@ export const useBookmarksActions = () => {
             createNotification({
                 type: 'error',
                 text: c('Notification').ngettext(
-                    msgid`This item was not removed from your list`,
-                    `Some items failed to be removed from your list`,
+                    msgid`Selected item was not removed from your list`,
+                    `Selected items failed to be removed from your list`,
                     tokensWithLinkId.length
                 ),
             });

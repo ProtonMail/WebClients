@@ -1,5 +1,4 @@
 import type { useConfirmActionModal } from '@proton/components';
-import { NodeType } from '@proton/drive/index';
 
 import type { InvitationItem } from '../../../zustand/sections/sharedWithMeListing.store';
 import { AcceptButton } from '../buttons/AcceptButton';
@@ -12,18 +11,23 @@ interface BaseInvitationActionsProps {
 }
 
 interface ContextMenuInvitationActionsProps extends BaseInvitationActionsProps {
-    type: 'contextMenu';
+    buttonType: 'contextMenu';
     close: () => void;
 }
 
 interface ToolbarInvitationActionsProps extends BaseInvitationActionsProps {
-    type: 'toolbar';
+    buttonType: 'toolbar';
     close?: never;
 }
 
 type InvitationActionsProps = ContextMenuInvitationActionsProps | ToolbarInvitationActionsProps;
 
-export const InvitationActions = ({ selectedInvitations, showConfirmModal, close, type }: InvitationActionsProps) => {
+export const InvitationActions = ({
+    selectedInvitations,
+    showConfirmModal,
+    close,
+    buttonType,
+}: InvitationActionsProps) => {
     const itemChecker = createItemChecker(selectedInvitations);
 
     if (!itemChecker.isOnlyOneItem) {
@@ -35,22 +39,21 @@ export const InvitationActions = ({ selectedInvitations, showConfirmModal, close
         return null;
     }
 
-    const isAlbum = invitation.type === NodeType.Album;
-
     return (
         <>
             <AcceptButton
                 nodeUid={invitation.nodeUid}
                 invitationUid={invitation.invitation.uid}
-                isAlbum={isAlbum}
-                {...(type === 'contextMenu' ? { close, type } : { type })}
+                type={invitation.type}
+                {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
             <DeclineButton
                 nodeUid={invitation.nodeUid}
                 invitationUid={invitation.invitation.uid}
-                isAlbum={isAlbum}
+                type={invitation.type}
+                name={invitation.name}
                 showConfirmModal={showConfirmModal}
-                {...(type === 'contextMenu' ? { close, type } : { type })}
+                {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
             />
         </>
     );

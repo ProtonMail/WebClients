@@ -13,10 +13,12 @@ import { EmptyCell } from '../../components/cells/EmptyCell';
 import { NameCell } from '../../components/cells/NameCell';
 import { SharedByCell } from '../../components/cells/SharedByCell';
 import { TimeCell } from '../../components/cells/TimeCell';
-import { useInvitationsActions } from '../../hooks/drive/useInvitationsActions';
+import useVolumesState from '../../store/_volumes/useVolumesState';
 import { dateToLegacyTimestamp } from '../../utils/sdk/legacyTime';
 import { ItemType, useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
 import { useThumbnailStore } from '../../zustand/thumbnail/thumbnail.store';
+import { useInvitationsActions } from './hooks/useInvitationsActions';
+import { useLegacyInvitationsActions } from './legacy/useLegacyInvitationsActions';
 
 export type SharedWithMeRowData = {
     uid: string;
@@ -99,41 +101,36 @@ const SharedOnCellWithInfo = ({ sharedOn }: { sharedOn: Date | undefined }) => {
 const AcceptOrRejectCellComponent = ({
     uid,
     invitationUid,
+    name,
     type,
 }: {
     uid: string;
     invitationUid: string;
+    name: string;
     type: NodeType;
 }) => {
-    const { acceptInvitation, rejectInvitation } = useInvitationsActions();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-
-    const isAlbum = type === NodeType.Album;
-
-    if (isAlbum) {
-        return (
-            <>
-                <AcceptOrRejectInviteCell
-                    onAccept={async () => {
-                        await acceptInvitation(uid, invitationUid);
-                    }}
-                    onReject={() => {
-                        void rejectInvitation(showConfirmModal, uid, invitationUid);
-                    }}
-                />
-                {confirmModal}
-            </>
-        );
-    }
+    // TODO: Remove that when we will have sdk for upload
+    const { setVolumeShareIds } = useVolumesState();
+    const { acceptInvitation, rejectInvitation } = useInvitationsActions({ setVolumeShareIds });
+    const { acceptLegacyInvitation, rejectLegacyInvitation } = useLegacyInvitationsActions();
 
     return (
         <>
             <AcceptOrRejectInviteCell
                 onAccept={async () => {
-                    await acceptInvitation(uid, invitationUid);
+                    if (type === NodeType.Album) {
+                        await acceptLegacyInvitation(uid, invitationUid);
+                    } else {
+                        await acceptInvitation(uid, invitationUid);
+                    }
                 }}
                 onReject={() => {
-                    void rejectInvitation(showConfirmModal, uid, invitationUid);
+                    if (type === NodeType.Album) {
+                        void rejectLegacyInvitation(showConfirmModal, { uid, invitationUid });
+                    } else {
+                        void rejectInvitation(showConfirmModal, { uid, invitationUid, name, type });
+                    }
                 }}
             />
             {confirmModal}
@@ -217,7 +214,12 @@ const largeScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: Sha
     ({ rowData }) => <SharedByCellWithInfo sharedBy={rowData.sharedBy} itemType={rowData.itemType} />,
     ({ rowData }) =>
         rowData.itemType === ItemType.INVITATION && rowData.invitationUid ? (
-            <AcceptOrRejectCellComponent uid={rowData.uid} invitationUid={rowData.invitationUid} type={rowData.type} />
+            <AcceptOrRejectCellComponent
+                uid={rowData.uid}
+                invitationUid={rowData.invitationUid}
+                type={rowData.type}
+                name={rowData.name}
+            />
         ) : (
             <SharedOnCellWithInfo sharedOn={rowData.sharedOn} />
         ),
@@ -237,7 +239,12 @@ const smallScreenCellComponents: React.FC<{ item: MappedLegacyItem; rowData: Sha
     ),
     ({ rowData }) =>
         rowData.itemType === ItemType.INVITATION && rowData.invitationUid ? (
-            <AcceptOrRejectCellComponent uid={rowData.uid} invitationUid={rowData.invitationUid} type={rowData.type} />
+            <AcceptOrRejectCellComponent
+                uid={rowData.uid}
+                invitationUid={rowData.invitationUid}
+                type={rowData.type}
+                name={rowData.name}
+            />
         ) : null,
     ({ item }) => <ContextMenuCell uid={item.id} />,
 ];

@@ -1,44 +1,37 @@
 import { c } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import { Icon, ToolbarButton } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { useBookmarksActions } from '../../../hooks/drive/useBookmarksActions';
-import { useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
+import { useBookmarksActions } from '../hooks/useBookmarksActions';
 
 interface BaseProps {
     uids: string | string[];
 }
 
 interface ContextMenuProps extends BaseProps {
-    type: 'contextMenu';
+    buttonType: 'contextMenu';
     close: () => void;
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
 }
 
 interface ToolbarProps extends BaseProps {
-    type: 'toolbar';
+    buttonType: 'toolbar';
     close?: never;
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
 }
 
 type RemoveBookmarkButtonProps = ContextMenuProps | ToolbarProps;
 
-export const RemoveBookmarkButton = ({ uids, showConfirmModal, close, type }: RemoveBookmarkButtonProps) => {
+export const RemoveBookmarkButton = ({ uids, showConfirmModal, close, buttonType }: RemoveBookmarkButtonProps) => {
     const { deleteBookmarks } = useBookmarksActions();
-    const removeSharedWithMeItemFromStore = useSharedWithMeListingStore(
-        useShallow((state) => state.removeSharedWithMeItem)
-    );
 
     const handleRemoveBookmark = () => {
-        void deleteBookmarks(showConfirmModal, Array.isArray(uids) ? uids : [uids], (removedUids) =>
-            removedUids.map(removeSharedWithMeItemFromStore)
-        );
+        void deleteBookmarks(showConfirmModal, Array.isArray(uids) ? uids : [uids]);
     };
 
-    if (type === 'toolbar') {
+    if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
                 title={c('Action').t`Remove`}

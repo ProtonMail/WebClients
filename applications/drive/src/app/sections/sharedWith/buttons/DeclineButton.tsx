@@ -1,28 +1,29 @@
 import { c } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import { Icon, ToolbarButton } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
+import { NodeType } from '@proton/drive';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { useInvitationsActions } from '../../../hooks/drive/useInvitationsActions';
-import { useInvitationsActions as useLegacyInvitationsActions } from '../../../store';
-import { useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
+import useVolumesState from '../../../store/_volumes/useVolumesState';
+import { useInvitationsActions } from '../hooks/useInvitationsActions';
+import { useLegacyInvitationsActions } from '../legacy/useLegacyInvitationsActions';
 
 interface BaseProps {
     nodeUid: string;
     invitationUid: string;
-    isAlbum: boolean;
+    name: string;
+    type: NodeType;
 }
 
 interface ContextMenuProps extends BaseProps {
-    type: 'contextMenu';
+    buttonType: 'contextMenu';
     close: () => void;
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
 }
 
 interface ToolbarProps extends BaseProps {
-    type: 'toolbar';
+    buttonType: 'toolbar';
     close?: never;
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
 }
@@ -32,32 +33,26 @@ type DeclineButtonProps = ContextMenuProps | ToolbarProps;
 export const DeclineButton = ({
     nodeUid,
     invitationUid,
-    isAlbum,
+    name,
+    type,
     showConfirmModal,
     close,
-    type,
+    buttonType,
 }: DeclineButtonProps) => {
-    const { rejectInvitation } = useInvitationsActions();
-    const { rejectInvitation: legacyRejectInvitation } = useLegacyInvitationsActions();
-    const removeSharedWithMeItemFromStore = useSharedWithMeListingStore(
-        useShallow((state) => state.removeSharedWithMeItem)
-    );
+    // TODO: Remove that when we will have sdk for upload
+    const { setVolumeShareIds } = useVolumesState();
+    const { rejectInvitation } = useInvitationsActions({ setVolumeShareIds });
+    const { rejectLegacyInvitation } = useLegacyInvitationsActions();
 
     const handleDecline = () => {
-        if (isAlbum) {
-            void legacyRejectInvitation(new AbortController().signal, {
-                showConfirmModal,
-                invitationId: invitationUid,
-                onSuccess: () => {
-                    removeSharedWithMeItemFromStore(nodeUid);
-                },
-            });
+        if (type === NodeType.Album) {
+            void rejectLegacyInvitation(showConfirmModal, { uid: nodeUid, invitationUid });
         } else {
-            void rejectInvitation(showConfirmModal, nodeUid, invitationUid);
+            void rejectInvitation(showConfirmModal, { uid: nodeUid, invitationUid, name, type });
         }
     };
 
-    if (type === 'toolbar') {
+    if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
                 title={c('Action').t`Decline`}
