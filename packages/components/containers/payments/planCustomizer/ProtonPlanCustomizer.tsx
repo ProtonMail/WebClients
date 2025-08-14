@@ -40,9 +40,9 @@ import {
     isOrgSizeAddon,
     isPassOrgSizeAddon,
     isScribeAddon,
+    setQuantity,
 } from '@proton/payments';
-import { setQuantity } from '@proton/payments';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -114,7 +114,7 @@ const getTrialProps = (
         [ADDON_PREFIXES.SCRIBE]: c('b2b_trials_2025_Info')
             .t`You can have up to ${TRIAL_MAX_SCRIBE_SEATS} Scribe seats during the trial period.`,
         [ADDON_PREFIXES.LUMO]: c('b2b_trials_2025_Info')
-            .t`You can have up to ${TRIAL_MAX_LUMO_SEATS} Lumo seats during the trial period.`,
+            .t`You can have up to ${TRIAL_MAX_LUMO_SEATS} ${LUMO_SHORT_APP_NAME} seats during the trial period.`,
         [ADDON_PREFIXES.IP]: c('b2b_trials_2025_Info')
             .t`You can have up to ${TRIAL_MAX_DEDICATED_IPS} dedicated server during the trial period.`,
         [ADDON_PREFIXES.DOMAIN]: c('b2b_trials_2025_Info').t`You cannot add custom domains during the trial period.`,

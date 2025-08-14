@@ -27,6 +27,8 @@ import duotoneTheme from '@proton/colors/themes/dist/duotone.theme.css';
 // @ts-ignore
 import legacyTheme from '@proton/colors/themes/dist/legacy.theme.css';
 // @ts-ignore
+import lumoLightTheme from '@proton/colors/themes/dist/lumo-light.theme.css';
+// @ts-ignore
 import monokaiTheme from '@proton/colors/themes/dist/monokai.theme.css';
 // @ts-ignore
 import passDarkTheme from '@proton/colors/themes/dist/pass-dark.theme.css';
@@ -249,6 +251,18 @@ export const PROTON_THEMES_MAP: Record<ThemeTypes, ThemeDefinition> = {
         },
         theme: walletDarkTheme.toString(),
     },
+    [ThemeTypes.LumoLight]: {
+        label: 'Proton',
+        identifier: ThemeTypes.LumoLight,
+        themeColorMeta: '#1b1340',
+        thumbColors: {
+            prominent: '#44348C',
+            standard: '#ffffff',
+            primary: '#936DFF',
+            weak: '#9186BE',
+        },
+        theme: lumoLightTheme.toString(),
+    },
 } as const;
 
 export const getDarkThemes = () => [
@@ -425,7 +439,7 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
 };
 
 const getValidatedThemeType = (themeType: number): ThemeTypes | undefined => {
-    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.WalletDark) {
+    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.LumoLight) {
         return themeType;
     }
 };
