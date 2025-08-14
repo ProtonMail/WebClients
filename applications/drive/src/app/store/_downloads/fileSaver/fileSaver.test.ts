@@ -6,7 +6,7 @@ import type { UnleashClient } from '@proton/unleash';
 
 import { streamToBuffer } from '../../../utils/stream';
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
-import { initDownloadSW, isServiceWorkersUnsupported, openDownloadStream } from './download';
+import { initDownloadSW, isOPFSSupported, isServiceWorkersSupported, openDownloadStream } from './download';
 import { FileSaver } from './fileSaver';
 
 jest.mock('@proton/shared/lib/helpers/cookies', () => ({
@@ -24,8 +24,9 @@ jest.mock('../../../utils/stream', () => ({
 
 jest.mock('./download', () => ({
     initDownloadSW: jest.fn(),
-    isServiceWorkersUnsupported: jest.fn(() => false),
+    isServiceWorkersSupported: jest.fn(() => true),
     openDownloadStream: jest.fn(),
+    isOPFSSupported: jest.fn(() => true),
 }));
 
 const mockStorageEstimate = jest.fn();
@@ -47,7 +48,8 @@ const mockUnleashStore = {
 };
 unleashVanillaStore.getState().setClient(mockUnleashStore as unknown as UnleashClient);
 const getCookieMock = jest.mocked(getCookie);
-const isServiceWorkersUnsupportedMock = jest.mocked(isServiceWorkersUnsupported);
+const isServiceWorkersSupportedMock = jest.mocked(isServiceWorkersSupported);
+const isOPFSSupportedMock = jest.mocked(isOPFSSupported);
 const openDownloadStreamMock = jest.mocked(openDownloadStream);
 const initDownloadSWMock = jest.mocked(initDownloadSW);
 const streamToBufferMock = jest.mocked(streamToBuffer);
@@ -73,7 +75,7 @@ describe('FileSaver', () => {
                 enabled: false,
                 name: 'base-memory',
             });
-            isServiceWorkersUnsupportedMock.mockReturnValue(false);
+            isServiceWorkersSupportedMock.mockReturnValue(true);
             mockStorageEstimate.mockResolvedValue({
                 quota: 0,
                 usage: 0,
@@ -183,14 +185,8 @@ describe('FileSaver', () => {
         });
 
         describe('fallback mechanisms', () => {
-            it('should return "memory_fallback" when useBlobFallback is true for big files', async () => {
-                fileSaver.useBlobFallback = true;
-                const result = await fileSaver.selectMechanismForDownload(MB * 1000);
-                expect(result).toBe('memory_fallback');
-            });
-
             it('should return "memory_fallback" when service workers are unsupported for big files', async () => {
-                isServiceWorkersUnsupportedMock.mockReturnValue(true);
+                isServiceWorkersSupportedMock.mockReturnValue(false);
                 const result = await fileSaver.selectMechanismForDownload(MB * 1000);
                 expect(result).toBe('memory_fallback');
             });
@@ -229,7 +225,7 @@ describe('FileSaver', () => {
 
         it('should use saveViaBuffer for memory_fallback mechanism', async () => {
             getCookieMock.mockReturnValue(undefined);
-            isServiceWorkersUnsupportedMock.mockReturnValue(true);
+            isServiceWorkersSupportedMock.mockReturnValue(false);
             const largeMeta = { ...mockMeta, size: 1000 * MB };
 
             await fileSaver.saveAsFile(mockStream, largeMeta, mockLog);
@@ -313,7 +309,7 @@ describe('FileSaver', () => {
             (mockStream as any).pipeTo = jest.fn().mockResolvedValue(undefined);
 
             mockUnleashStore.isEnabled.mockReturnValue(false);
-            isServiceWorkersUnsupportedMock.mockReturnValue(false);
+            isServiceWorkersSupportedMock.mockReturnValue(true);
             openDownloadStreamMock.mockResolvedValue(mockSaveStream);
             const largeMeta = { ...mockMeta, size: 1000 * MB };
 
@@ -342,41 +338,42 @@ describe('FileSaver', () => {
         });
     });
 
-    describe('isFileTooBig', () => {
-        it('should return false when useBlobFallback is false', () => {
-            fileSaver.useBlobFallback = false;
-            expect(fileSaver.isFileTooBig(1000 * MB)).toBe(false);
+    describe('isFallbackLimitExceeded', () => {
+        beforeAll(() => {
+            isServiceWorkersSupportedMock.mockReturnValue(false);
+            isOPFSSupportedMock.mockResolvedValue(false);
+        });
+
+        afterAll(() => {
+            jest.clearAllMocks();
         });
 
         it('should return false when file size is within limit', () => {
-            fileSaver.useBlobFallback = true;
             mockUnleashStore.getVariant.mockReturnValue({
                 enabled: true,
                 name: 'base-memory',
             });
 
-            expect(fileSaver.isFileTooBig(500 * MB)).toBe(false);
+            void expect(fileSaver.wouldExceeedMemoryLImit(500 * MB)).resolves.toBe(false);
         });
 
         it('should return true when file is too big and useBlobFallback is true', () => {
-            fileSaver.useBlobFallback = true;
             mockUnleashStore.getVariant.mockReturnValue({
                 enabled: true,
                 name: 'base-memory',
             });
 
-            expect(fileSaver.isFileTooBig(1000 * MB)).toBe(true);
+            void expect(fileSaver.wouldExceeedMemoryLImit(1000 * MB)).resolves.toBe(true);
         });
 
         it('should use correct memory limit based on variant', () => {
-            fileSaver.useBlobFallback = true;
             mockUnleashStore.getVariant.mockReturnValue({
                 enabled: true,
                 name: 'low-memory',
             });
 
-            expect(fileSaver.isFileTooBig(300 * MB)).toBe(true);
-            expect(fileSaver.isFileTooBig(200 * MB)).toBe(false);
+            void expect(fileSaver.wouldExceeedMemoryLImit(300 * MB)).resolves.toBe(true);
+            void expect(fileSaver.wouldExceeedMemoryLImit(200 * MB)).resolves.toBe(false);
         });
     });
 });

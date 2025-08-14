@@ -1,3 +1,4 @@
+import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
 
@@ -5,8 +6,24 @@ import type { TransferMeta } from '../../../components/TransferManager/transfer'
 
 let workerWakeupInterval: ReturnType<typeof setInterval>;
 
-export const isServiceWorkersUnsupported = () => {
-    return !('serviceWorker' in navigator);
+export const isServiceWorkersSupported = () => {
+    return 'serviceWorker' in navigator;
+};
+
+export const isOPFSSupported = async () => {
+    // Get the OPFS root directory
+    // Firefox has a bug where sometimes it fails to getDirectoy
+    // DOMException: Security error when calling GetDirectory
+    // Considered we haven't started the download yet, we fallback to SW download
+    // https://webcompat.com/issues/128011
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=1875283
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=1942530
+    try {
+        await navigator.storage.getDirectory();
+        return !isSafari() && !isMobile();
+    } catch {
+        return false;
+    }
 };
 
 // createDownloadIframe opens download URL created in service worker to
