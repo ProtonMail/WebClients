@@ -1078,9 +1078,6 @@
       "Send reminder": [
         "Herinnering versturen"
       ],
-      "Set as default mail application": [
-        "Stel in als standaard e-mailapplicatie"
-      ],
       "Set catch-all": [
         "Stel catch-all in"
       ],
@@ -3314,12 +3311,6 @@
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
-      ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } is niet uw standaard e-mailapplicatie."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } is uw standaard e-mailapplicatie."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Voeg mappen en bestanden toe aan ${ DRIVE_APP_NAME } en nodig teamleden uit om ze te bekijken of te bewerken."
@@ -8707,9 +8698,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Indien uitgeschakeld, voorkomt dit dat afbeeldingsbestanden op uw apparaat laden zonder dat u het weet."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Wanneer ingeschakeld, zullen we controleren of ${ MAIL_APP_NAME } uw standaard e-mail applicatie is en u informeren indien dit niet het geval is."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Wanneer u SAML inschakelt voor ${ appName } in uw identiteitsprovider, kunt u worden gevraagd om de callback (ACS) URL en uitgevende ID te gebruiken. Kopieer en plak onderstaande gegevens in de velden van uw identiteitsprovider."
@@ -15980,9 +15968,6 @@
       ],
       "Change second password": [
         "Verander tweede wachtwoord"
-      ],
-      "Check your default mail application": [
-        "Controleer uw standaard e-mailapplicatie"
       ],
       "Choose an account": [
         "Een account selecteren"
