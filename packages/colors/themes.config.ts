@@ -245,6 +245,15 @@ const config: ThemeConfig[] = [
             },
         ],
     },
+    {
+        output: './themes/dist/lumo-light.theme.css',
+        files: [
+            {
+                path: './themes/src/lumo-light/light-base.css',
+                type: 'light',
+            },
+        ],
+    },
 ];
 
 export default config;

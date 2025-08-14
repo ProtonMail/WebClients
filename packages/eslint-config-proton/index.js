@@ -176,6 +176,10 @@ module.exports = {
                     'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\Proton Sentinel\\b/i]',
                 message: 'Use `PROTON_SENTINEL_NAME` instead to avoid possible translation.',
             },
+            {
+                selector: 'TaggedTemplateExpression > TemplateLiteral > TemplateElement.quasis[value.raw=/\\Lumo\\b/i]',
+                message: 'Use `LUMO_SHORT_APP_NAME` instead to avoid possible translation.',
+            },
         ],
         'no-shadow': 'off',
         'no-void': [2, { allowAsStatement: true }],

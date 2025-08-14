@@ -1,0 +1,71 @@
+@import './mobile-constants';
+@import '~@proton/styles/scss/lib';
+
+@keyframes border-spin {
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+@keyframes spin {
+	from {
+		--angle: 0deg;
+	}
+
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+	syntax: '<angle>';
+	initial-value: 0deg;
+	inherits: false;
+}
+
+.loading {
+	position: relative;
+}
+
+.loading::after {
+	--angle: 0deg;
+
+	content: '';
+	position: absolute;
+	inset: -0.12rem;
+	border-radius: inherit;
+	background-image: conic-gradient(from var(--angle), #6d4aff 0deg, rgb(109 74 255 / 1) 0deg, transparent 80deg);
+	animation: spin 3s linear infinite;
+	z-index: -1;
+}
+
+.highlight-source {
+	background-color: var(--interaction-norm-minor-2);
+	transition: background-color 0.2s ease;
+}
+
+@media screen and (max-width: #{$mobile-breakpoint-width}) {
+	.assistant-msg-container {
+		padding: 0 !important; // reset .p-4
+		border: none !important; // reset .border, .border-weak
+		background-color: transparent !important; // reset bg-norm
+	}
+}
+
+.rectangle-skeleton {
+	inline-size: 200px;
+	block-size: 16px;
+	background: linear-gradient(90deg, #e5e7eb 0%, #e5e7eb 35%, #fff 50%, #e5e7eb 65%, #e5e7eb 100%);
+	background-size: 200% 100%;
+	animation: shine 2s ease-in-out infinite;
+}
+
+@keyframes shine {
+	0% {
+		background-position: 150% 0;
+	}
+
+	100% {
+		background-position: -250% 0;
+	}
+}

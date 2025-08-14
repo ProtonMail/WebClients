@@ -1,0 +1,26 @@
+@import '~@proton/styles/scss/lib';
+
+.lumo-chat-container {
+	// Smooth transitions when panels open/close
+	.lumo-chat-item {
+		@include media('>small') {
+			transition: inline-size 0.3s ease-in-out;
+		}
+	}
+	
+	&.lumo-chat-container-with-sources {
+		@include media('>small') {
+			.lumo-chat-item {
+				inline-size: 80%;
+			}
+		}
+	}
+	
+	&.lumo-chat-container-with-knowledge-base {
+		@include media('>small') {
+			.lumo-chat-item {
+				inline-size: 80%;
+			}
+		}
+	}
+}
