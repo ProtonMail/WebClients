@@ -58,6 +58,9 @@
       "Cancel trial and pay": [
         "Anulare perioadă de probare și plătire"
       ],
+      "Change password": [
+        "Schimbare parolă"
+      ],
       "Chat with us": [
         "Conversați cu noi"
       ],
@@ -183,6 +186,9 @@
       ],
       "More options": [
         "Mai multe opțiuni"
+      ],
+      "More options for accounts": [
+        "Mai multe opțiuni pentru conturi"
       ],
       "Need help?": [
         "Doriți ajutor?"
@@ -434,6 +440,14 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Manager de parole premium"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
       ]
     },
     "Billing cycle option": {
@@ -1823,6 +1837,11 @@
         "Nevoie temporară, poate voi mai reveni."
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contact aprobat"
+      ]
+    },
     "Error": {
       "Amount above the maximum.": [
         "Sumă peste cea maximă acceptată."
@@ -2156,6 +2175,9 @@
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/lună)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
       ],
@@ -2234,7 +2256,7 @@
         "Plan actual"
       ],
       "Custom email domains": [
-        "Domenii personale e-mail"
+        "Domenii personale de e-mail"
       ],
       "Dedicated servers": [
         "Servere dedicate"
@@ -2289,6 +2311,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduceți parola (ca și contact aprobat)."
       ],
       "Expired": [
         "Expirat"
@@ -2370,6 +2395,9 @@
       ],
       "Organization size": [
         "Mărime organizație"
+      ],
+      "Other accounts": [
+        "Alte conturi"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plățile sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
@@ -2758,6 +2786,9 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Your password (trusted contact)": [
+        "Parola dvs. (contact aprobat)"
       ]
     },
     "Label, credit card": {
@@ -2936,6 +2967,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } calendare",
@@ -3092,6 +3126,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Suport client de e-mail (prin IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupuri de contacte"
       ],
       "Enables HIPAA compliance": [
         "Se conformează regulilor HIPAA"
@@ -3381,6 +3418,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partajați calendarele ușor cu familia, prietenii sau colegii."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Trimiteți mesaje tuturor dintr-un grup cu o singură adresă de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Se asigură că primiți toate e-mailurile trimise către domeniul dvs., chiar dacă adresa de e-mail nu a existat, nu mai există sau e scrisă greșit."
@@ -4115,6 +4155,9 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } este acum activă"
+      ],
+      "Account Temporarily Locked": [
+        "Cont blocat temporar"
       ],
       "Add credit/debit card": [
         "Adăugare card de credit/debit"
