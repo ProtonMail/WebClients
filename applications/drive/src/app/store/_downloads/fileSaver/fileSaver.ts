@@ -1,5 +1,5 @@
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
-import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
@@ -13,23 +13,7 @@ import { streamToBuffer } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';
 import type { LogCallback } from '../interface';
-import { initDownloadSW, isServiceWorkersUnsupported, openDownloadStream } from './download';
-
-const isOPFSSupported = async () => {
-    // Get the OPFS root directory
-    // Firefox has a bug where sometimes it fails to getDirectoy
-    // DOMException: Security error when calling GetDirectory
-    // Considered we haven't started the download yet, we fallback to SW download
-    // https://webcompat.com/issues/128011
-    // https://bugzilla.mozilla.org/show_bug.cgi?id=1875283
-    // https://bugzilla.mozilla.org/show_bug.cgi?id=1942530
-    try {
-        await navigator.storage.getDirectory();
-        return !isSafari() && !isMobile();
-    } catch {
-        return false;
-    }
-};
+import { initDownloadSW, isOPFSSupported, isServiceWorkersSupported, openDownloadStream } from './download';
 
 const DOWNLOAD_SW_INIT_TIMEOUT = 15 * 1000;
 const MB = 1024 * 1024;
@@ -79,9 +63,9 @@ const getRemovalTimeout = (size?: number): number => {
 // one go. Bigger files are streamed and user can see the progress almost like
 // it would be normal file. See saveViaDownload for more info.
 export class FileSaver {
-    useBlobFallback: boolean = false;
-
     useSWFallback: boolean = false;
+
+    private useBlobFallback: boolean = false;
 
     private isSWReady: boolean = false;
 
@@ -102,11 +86,12 @@ export class FileSaver {
             return 'opfs';
         }
 
-        if (this.useBlobFallback === true || isServiceWorkersUnsupported()) {
-            return 'memory_fallback';
+        if (isServiceWorkersSupported()) {
+            return 'sw';
         }
 
-        return 'sw';
+        this.useBlobFallback = true;
+        return 'memory_fallback';
     }
 
     // saveViaDownload uses service workers to download file without need to
@@ -123,26 +108,22 @@ export class FileSaver {
     // difference between web and service worker) to reduce data exchanges.
     private async saveViaDownload(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
         if (!this.isSWReady) {
-            if (isServiceWorkersUnsupported()) {
+            // Always wait for Service Worker initialization to complete
+            try {
+                await promiseWithTimeout({
+                    timeoutMs: DOWNLOAD_SW_INIT_TIMEOUT,
+                    promise: initDownloadSW(),
+                });
+            } catch (error: unknown) {
                 this.useBlobFallback = true;
-            } else {
-                // Always wait for Service Worker initialization to complete
-                try {
-                    await promiseWithTimeout({
-                        timeoutMs: DOWNLOAD_SW_INIT_TIMEOUT,
-                        promise: initDownloadSW(),
-                    });
-                } catch (error: unknown) {
-                    this.useBlobFallback = true;
-                    if (error instanceof Error) {
-                        console.warn('Saving file will fallback to in-memory downloads:', error.message);
-                        log(`Service worker fail reason: ${error.message}`);
-                    } else {
-                        log(`Service worker throw not an Error: ${typeof error} ${String(error)}`);
-                    }
-                } finally {
-                    this.isSWReady = true;
+                if (error instanceof Error) {
+                    console.warn('Saving file will fallback to in-memory downloads:', error.message);
+                    log(`Service worker fail reason: ${error.message}`);
+                } else {
+                    log(`Service worker throw not an Error: ${typeof error} ${String(error)}`);
                 }
+            } finally {
+                this.isSWReady = true;
             }
         }
 
@@ -278,8 +259,9 @@ export class FileSaver {
         return this.saveViaDownload(stream, meta, log);
     }
 
-    isFileTooBig(size: number) {
-        return this.useBlobFallback && size > getMemoryLimit();
+    async wouldExceeedMemoryLImit(size: number): Promise<boolean> {
+        const mechanism = await this.selectMechanismForDownload(size);
+        return mechanism === 'memory_fallback' && size > getMemoryLimit();
     }
 }
 

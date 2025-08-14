@@ -9,8 +9,8 @@ import type { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { hasValidAnonymousSignature } from '../../../components/hasValidAnonymousSignature';
-import { useDownloadIsTooBigModal } from '../../../components/modals/DownloadIsTooBigModal';
-import { logError, sendErrorReport } from '../../../utils/errorHandling';
+import { useDownloadIsTooBigModal } from '../../../components/modals/useDownloadIsTooBigModal';
+import { errorToString, logError, sendErrorReport } from '../../../utils/errorHandling';
 import { bufferToStream } from '../../../utils/stream';
 import {
     isTransferCancelError,
@@ -140,9 +140,21 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                     queue.updateWithData(nextDownload.id, ({ state }) => state, { size });
                     control.updateLinkSizes(nextDownload.id, linkSizes);
 
-                    if (fileSaver.instance.isFileTooBig(size)) {
-                        void showDownloadIsTooBigModal({ onCancel: () => control.cancelDownloads(nextDownload.id) });
-                    }
+                    fileSaver.instance
+                        .wouldExceeedMemoryLImit(size)
+                        .then((limitExceeded) => {
+                            if (limitExceeded) {
+                                void showDownloadIsTooBigModal({
+                                    onCancel: () => control.cancelDownloads(nextDownload.id),
+                                });
+                            }
+                        })
+                        .catch((error) => {
+                            log(
+                                nextDownload.id,
+                                `error while checking memory limit for fallback download method: ${errorToString(error)}`
+                            );
+                        });
                 },
                 onProgress: (linkIds: string[], increment: number) => {
                     control.updateProgress(nextDownload.id, linkIds, increment);
@@ -181,7 +193,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
                     await handleSignatureIssue(abortSignal, nextDownload, link, signatureIssues);
                 },
                 onDecryptionIssue: (link: LinkDownload, error: unknown) => {
-                    log(nextDownload.id, `decryption issue: ${error instanceof Error ? error.message : String(error)}`);
+                    log(nextDownload.id, `decryption issue: ${errorToString(error)}`);
                     handleDecryptionIssue(link);
                 },
                 onContainsDocument: async (abortSignal: AbortSignal) => {
