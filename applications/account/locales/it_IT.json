@@ -1096,9 +1096,6 @@
       "Send reminder": [
         "Invia promemoria"
       ],
-      "Set as default mail application": [
-        "Imposta come applicazione mail predefinita"
-      ],
       "Set catch-all": [
         "Imposta catch-all"
       ],
@@ -3339,12 +3336,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ti consente di lavorare insieme ad altri in un ambiente sicuro e crittografato."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } non è la tua applicazione mail predefinita."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } è la tua applicazione mail predefinita."
-      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Aggiungi cartelle e file a ${ DRIVE_APP_NAME } e invita i membri del team a visualizzare o modificare."
       ],
@@ -4237,6 +4228,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Avviso"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contatti sicuri"
       ]
     },
     "Empty group name": {
@@ -7193,6 +7189,9 @@
       "Enter your own password (as organization admin).": [
         "Inserisci la tua password (come amministratore dell'organizzazione)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Inserisci la tua password (come contatto attendibile)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Inserisci il tuo indirizzo email di recupero e ti invieremo il tuo nome utente o indirizzo email."
       ],
@@ -8836,9 +8835,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Se disabilitato, questo bloccherà il caricamento di file di immagini sul tuo dispositivo senza che tu ne sia informato."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Se abilitata, verificheremo se ${ MAIL_APP_NAME } è la tua applicazione mail predefinita e ti informeremo se non lo è."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quando abiliti SAML per ${ appName } nel tuo fornitore di identità, ti potrebbe essere chiesto di usare l'issuer ID e l'URL (ACS) di callback. Copia e incolla i dati seguenti nei campi del tuo fornitore di identità."
@@ -10589,6 +10585,9 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "La tua password (contatto attendibile)"
       ],
       "Your referral link": [
         "Il tuo link di riferimento"
@@ -16660,9 +16659,6 @@
       ],
       "Change second password": [
         "Cambia la seconda password"
-      ],
-      "Check your default mail application": [
-        "Controlla la tua applicazione mail predefinita"
       ],
       "Choose an account": [
         "Scegli un account"

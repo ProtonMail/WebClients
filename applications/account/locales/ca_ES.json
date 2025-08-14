@@ -742,6 +742,9 @@
       "Increase": [
         "Incrementa"
       ],
+      "Insert image": [
+        "Insereix una imatge"
+      ],
       "Invite": [
         "Invita"
       ],
@@ -1097,7 +1100,7 @@
         "Envia un recordatori"
       ],
       "Set as default mail application": [
-        "Estableix com a aplicació de correu electrònic per defecte"
+        "Estableix com a aplicació de correu per defecte"
       ],
       "Set catch-all": [
         "Configura l'adreça d'arreplega"
@@ -1664,6 +1667,11 @@
         "Estalvieu encara més amb un pla de 12 mesos"
       ]
     },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Gestor de contrasenyes prèmium"
+      ]
+    },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Estalvieu amb les ofertes de Black Friday i obteniu una VPN suïssa d'alta velocitat"
@@ -1721,6 +1729,14 @@
         "L'oferta no està disponible."
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Utilitzeu el vostre propi domini de correu electrònic"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Es renova automàticament a ${ renewPrice } durant ${ renewLength } mes.",
@@ -1739,6 +1755,9 @@
       ],
       "Annually": [
         "Cada any"
+      ],
+      "Lifetime": [
+        "Per sempre"
       ],
       "Monthly": [
         "Mensual"
@@ -1789,6 +1808,9 @@
       ],
       "Protect your whole household with 1 device": [
         "Protegiu tota la vostra casa amb 1 dispositiu"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
+        "Gaudiu de transmissió en continu des de les principals plataformes amb ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Aquest article s'ha actualitzat per incloure els protocols VPN WireGuard i Stealth."
@@ -4174,6 +4196,11 @@
         "Advertència"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacte de confiança"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Sense nom"
@@ -4571,6 +4598,9 @@
       ],
       "The address might be misspelled": [
         "És possible que l'adreça estigui mal escrita."
+      ],
+      "The amount due has changed. Please try again.": [
+        "L'import que cal pagar ha canviat. Torneu-ho a provar."
       ],
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
@@ -6287,6 +6317,9 @@
       "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
         "${ PASS_APP_NAME } és el gestor de contrasenyes de nova generació dissenyat per a la facilitat d'ús i la productivitat. Amb codi obert i desenvolupat conjuntament per SimpleLogin i ${ BRAND_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantindran sense canvis."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
       ],
@@ -6377,6 +6410,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mes)"
       ],
       "(default)": [
         "(per defecte)"
@@ -7122,6 +7158,9 @@
       "Enter your own password (as organization admin).": [
         "Introduïu la vostra contrasenya (com a administrador d'organització)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Introduïu la vostra contrasenya (com a contacte de confiança)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduïu la vostra adreça de correu electrònic de recuperació i us enviarem el vostre usuari o adreça de correu electrònic."
       ],
@@ -7493,6 +7532,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "He estat usant @ProtonMail i he pensat que us podria agradar. És un servei de correu electrònic segur que protegeix la vostra privacitat. Registreu-vos amb el meu enllaç de referència per obtenir 1 mes de característiques prèmium gratuïtament: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "Logotip de JCB"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "Només confirmeu la vostra selecció i nosaltres farem la resta."
       ],
@@ -7774,6 +7816,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organitzeu els vostres servidors dedicats en Passarel·les i decidiu quins membres hi poden accedir."
       ],
+      "Other accounts": [
+        "Altres comptes"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existeixen altres administradors a la teva organització, ets el responsable de comunicar'ls-hi la nova contrasenya."
       ],
@@ -7965,6 +8010,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
+      ],
+      "Registering your subscription…": [
+        "S'està registrant la vostra subscripció…"
       ],
       "Remember to share the user's sign in details with them.": [
         "Recordeu compartir els detalls d'inici de sessió amb l'usuari."
@@ -9037,6 +9085,9 @@
       "Your ${ BRAND_NAME } password": [
         "La vostra contrasenya de ${ BRAND_NAME }"
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "La vostra subscripció ${ plan } se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant s'afegirà al vostre compte. L'oferta de ${ PASS_SHORT_APP_NAME } no té cost de renovació, és un pagament únic per a accedir a ${ PASS_SHORT_APP_NAME } de per vida."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Els vostres comptes ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } estan enllaçats. Per eliminar-los, inicieu la sessió a ${ loginLink } i elimineu-hi el compte."
       ],
@@ -9090,6 +9141,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "La pròxima data de facturació és ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "La pròxima data de facturació és el ${ renewalTime }. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "La vostra organització utilitza un inici de sessió únic (SSO). Premeu Inicia la sessió per a continuar amb el vostre proveïdor SSO."
       ],
@@ -9110,6 +9164,12 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "La vostra frase de recuperació és una sèrie de 12 paraules generades aleatòriament en un ordre específic."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada mes."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "La vostra subscripció es renovarà automàticament el ${ renewalTime }."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "S'ha tancat el tiquet de suport. Gràcies per contactar amb el suport de ${ BRAND_NAME }."
@@ -9393,6 +9453,9 @@
       ],
       "Export public key": [
         "Exporta la clau pública"
+      ],
+      "Makes this the ${ keyStatusBadgeTitles.primary } or ${ keyStatusBadgeTitles.fallback } key for encryption and signing.": [
+        "Converteix aquesta en la ${ keyStatusBadgeTitles.primary } o ${ keyStatusBadgeTitles.fallback } clau per a xifratge i signatura."
       ],
       "Mark compromised": [
         "Marca com a compromès"
@@ -10499,6 +10562,9 @@
       "Your password (admin)": [
         "La vostra contrasenya (administrador)"
       ],
+      "Your password (trusted contact)": [
+        "La vostra contrasenya (contacte de confiança)"
+      ],
       "Your referral link": [
         "El vostre enllaç de recomanació"
       ],
@@ -11592,6 +11658,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Compatibilitat amb clients de correu electrònic (per IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grups de correu electrònic"
+      ],
       "Enables HIPAA compliance": [
         "Permet el compliment de la llei HIPAA"
       ],
@@ -11915,6 +11984,9 @@
       "Downgrade account?": [
         "Voleu passar a un pla inferior?"
       ],
+      "Review subscription": [
+        "Reviseu la subscripció"
+      ],
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"
       ],
@@ -11991,6 +12063,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartiu fàcilment els vostres calendaris amb la família, els amics o els col·legues."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envieu un correu electrònic a tothom en un grup amb una única adreça de correu."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Assegura que rebeu tots els correus electrònics enviats al vostre domini, fins i tot si l'adreça de correu electrònic no existeix, ha deixat d'existir o té un error ortogràfic"
@@ -13286,8 +13361,23 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "Hi ha més plans disponibles en altres divises."
+      ],
       "Processing payment": [
         "S'està processant el pagament."
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "El preu de la renovació està subjecte a canvis segons ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
+      ],
+      "terms & conditions": [
+        "els termes i condicions"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPriceStr } cada mes. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "S'ha detectat la transacció. Els crèdits s'afegiran al vostre compte un cop la transacció estigui completament confirmada."
@@ -13317,6 +13407,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Gratuït"
       ]
     },
     "Permission": {
@@ -16343,6 +16438,9 @@
       "Account suspended": [
         "Compte suspès"
       ],
+      "Account Temporarily Locked": [
+        "Compte bloquejat temporalment"
+      ],
       "Action": [
         "Acció"
       ],
@@ -16528,7 +16626,7 @@
         "Canvia la segona contrasenya"
       ],
       "Check your default mail application": [
-        "Comproveu la vostra aplicació de correu electrònic per defecte"
+        "Comproveu la vostra aplicació de correu per defecte"
       ],
       "Choose an account": [
         "Tria un compte"
@@ -16595,6 +16693,9 @@
       ],
       "Couldn’t create accounts": [
         "No s'han pogut crear els comptes"
+      ],
+      "Coupon": [
+        "Cupó"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Crea ${ selectedUserIds.length } usuari",

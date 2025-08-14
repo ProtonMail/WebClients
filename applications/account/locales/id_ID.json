@@ -493,6 +493,12 @@
       "Download CSV sample": [
         "Unduh sampel CSV"
       ],
+      "Download for macOS": [
+        "Unduh untuk macOS"
+      ],
+      "Download for Windows": [
+        "Unduh untuk Windows"
+      ],
       "Download ICS": [
         "Unduh ICS"
       ],
@@ -735,6 +741,9 @@
       ],
       "Increase": [
         "Tambah"
+      ],
+      "Insert image": [
+        "Sisipkan gambar"
       ],
       "Invite": [
         "Undang"
@@ -1092,9 +1101,6 @@
       ],
       "Send reminder": [
         "Kirim pengingat"
-      ],
-      "Set as default mail application": [
-        "Tetapkan sebagai aplikasi email bawaan"
       ],
       "Set catch-all": [
         "Tentukan alamat catch-all"
@@ -1715,6 +1721,11 @@
         "Penawaran tidak tersedia"
       ]
     },
+    "BF2024: Deal details": {
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Diperbarui secara otomatis seharga ${ renewPrice }, selama ${ renewLength } bulan"
@@ -1782,6 +1793,9 @@
       ],
       "Protect your whole household with 1 device": [
         "Lindungi seluruh rumah tangga Anda dengan 1 perangkat"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
+        "Tonton tayangan streaming dari seluruh platform besar dengan ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Artikel ini telah diperbarui untuk meliputi protokol VPN WireGuard dan Stealth."
@@ -3260,12 +3274,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } di ${ DRIVE_APP_NAME } memungkinkan Anda untuk saling bekerja sama dalam lingkungan yang aman dan terenkripsi."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } bukan merupakan aplikasi email bawaan Anda."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } merupakan aplikasi email bawaan Anda."
-      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Tambahkan folder dan berkas ke ${ DRIVE_APP_NAME } dan undang anggota tim untuk meninjau atau menyunting berkas ini."
       ],
@@ -4155,6 +4163,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Peringatan"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Kontak terpercaya"
       ]
     },
     "Empty group name": {
@@ -7047,6 +7060,9 @@
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Masukkan kata sandi Anda (selaku kontak terpercaya)"
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Masukkan alamat email pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
       ],
@@ -8676,9 +8692,6 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pada saat dinonaktifkan, opsi ini akan mencegah berkas gambar untuk dimuat pada perangkat Anda tanpa Anda ketahui."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Pada saat diaktifkan, kami akan memeriksa apakah ${ MAIL_APP_NAME } merupakan aplikasi email bawaan Anda dan memberitahukan Anda apabila aplikasi kami tidak terpasang sebagai bawaan."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pada saat mengaktifkan SAML untuk ${ appName } di layanan penyedia identitas Anda, Anda mungkin akan diminta untuk menggunakan URL Callback (ACS) dan Issuer ID. Cukup salin dan tempel data di bawah ini ke kolom yang disediakan oleh penyedia identitas Anda."
       ],
@@ -9181,6 +9194,12 @@
       "Generate key": [
         "Hasilkan kunci"
       ],
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Apabila Anda menghasilkan kunci ini karena Anda menduga bahwa kunci Anda sebelumnya telah bocor, silakan tandai kunci lawas ini sebagai kunci yang telah bocor pada pengaturan Anda."
+      ],
+      "Key generation failed, please try again later.": [
+        "Kunci gagal dihasilkan. Silakan coba lagi nanti."
+      ],
       "Key successfully generated.": [
         "Kunci berhasil dihasilkan."
       ],
@@ -9510,6 +9529,9 @@
       ],
       "Backup password": [
         "Kata sandi cadangan"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing cycle": [
         "Siklus tagihan"
@@ -10398,6 +10420,9 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Kata sandi Anda (kontak terpercaya)"
       ],
       "Your referral link": [
         "Tautan rujukan Anda"
@@ -11470,6 +11495,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Dukungan klien email (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grup email"
+      ],
       "Enables HIPAA compliance": [
         "Memungkinkan kepatuhan HIPAA"
       ],
@@ -11864,6 +11892,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Email seluruh anggota grup dengan satu alamat email"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"
@@ -13678,6 +13709,9 @@
       "Cancel": [
         "Batal"
       ],
+      "Confirm": [
+        "Konfirmasi"
+      ],
       "Create retention rule": [
         "Buat peraturan penyimpanan data"
       ],
@@ -13693,6 +13727,12 @@
       "Delete this scope": [
         "Hapus cakupan ini"
       ],
+      "Edit": [
+        "Sunting"
+      ],
+      "Purge all": [
+        "Hapus semua"
+      ],
       "Purge deleted": [
         "Pembersihan dihapus"
       ],
@@ -13701,6 +13741,9 @@
       ]
     },
     "retention_policy_2025_Confirmation": {
+      "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
+        "${ strongText }, termasuk yang terdapat di Kotak Masuk, Terkirim, dan Draf. Pengaturan ini dapat menghapus pesan yang diharapkan oleh pengguna untuk tetap disimpan. Pesan yang telah dihapus tidak akan dapat dipulihkan kemudian."
+      ],
       "After ${ lifetime } day all messages will be deleted": [
         "Setelah ${ lifetime } hari, seluruh pesan akan dihapus"
       ]
@@ -13786,6 +13829,9 @@
       ],
       "Group": [
         "Grup"
+      ],
+      "Purge all messages": [
+        "Hapus seluruh pesan"
       ],
       "Purge deleted messages only": [
         "Hanya bersihkan pesan yang telah dihapus"
@@ -15630,6 +15676,11 @@
         "Alias email pendek @pm.me milik Anda"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Apakah Anda yakin?"
@@ -16341,9 +16392,6 @@
       "Change second password": [
         "Ubah kata sandi kedua"
       ],
-      "Check your default mail application": [
-        "Periksa aplikasi email bawaan Anda"
-      ],
       "Choose an account": [
         "Pilih akun"
       ],
@@ -16722,8 +16770,14 @@
       "Folders and labels": [
         "Folder dan label"
       ],
+      "For Linux": [
+        "Untuk Linux"
+      ],
       "For macOS": [
         "Untuk macOS"
+      ],
+      "For Windows": [
+        "Untuk Windows"
       ],
       "Forgot password": [
         "Lupa kata sandi"

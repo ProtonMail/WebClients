@@ -1093,9 +1093,6 @@
       "Send reminder": [
         "发送提醒"
       ],
-      "Set as default mail application": [
-        "设置为默认邮件应用"
-      ],
       "Set catch-all": [
         "设置通配邮箱"
       ],
@@ -3259,12 +3256,6 @@
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME } 中的 ${ DOCS_SHORT_APP_NAME } 允许您在安全、加密的环境中与他人协同办公。"
-      ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } 不是您的默认邮件应用。"
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } 是您的默认邮件应用。"
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "在 ${ DRIVE_APP_NAME } 中添加文件夹和文件，并邀请团队成员查看或编辑。"
@@ -8631,9 +8622,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "关闭后可防止在您不知情的情况下加载图像。"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "启用后，我们将检查 ${ MAIL_APP_NAME } 是否为您的默认邮件应用，并在不是时通知您。"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "在身份提供商中为 ${ appName } 启用 SAML 时，系统可能会提示您使用回调 (ACS) URL 和颁发者 ID。只需将以下数据复制粘贴到您的身份提供商字段中即可。"
@@ -16038,9 +16026,6 @@
       ],
       "Change second password": [
         "修改第二密码"
-      ],
-      "Check your default mail application": [
-        "检查您的默认邮件应用"
       ],
       "Choose an account": [
         "选择账户"

@@ -1072,9 +1072,6 @@
       "Send reminder": [
         "Emlékeztető beállítása"
       ],
-      "Set as default mail application": [
-        "Beállítás alapértelmezett levelező alkalmazásnak"
-      ],
       "Set catch-all": [
         "Gyűjtő e-mail beállítása"
       ],
@@ -3247,12 +3244,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } a ${ DRIVE_APP_NAME }-ben lehetővé teszi, hogy másokkal együtt dolgozzon egy biztonságos, titkosított környezetben."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "A(z) ${ MAIL_APP_NAME } nem az alapértelmezett levelező alkalmazás."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "A(z) ${ MAIL_APP_NAME } az alapértelmezett levelező alkalmazás."
-      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adjon hozzá mappákat és fájlokat a ${ DRIVE_APP_NAME }-hoz, és hívjon meg csapattagokat megtekinteni vagy szerkeszteni."
       ],
@@ -3580,7 +3571,7 @@
     },
     "drive_signup_2024: Info": {
       "**Collaborative:** online document editor": [
-        "**Együttműködő:** online dokumentum készítő"
+        "**Együttműködő:** online dokumentum szerkesztő"
       ],
       "**GDPR** and **HIPAA** compliant": [
         "**GDPR** és **HIPPA** megfelelő"
@@ -3592,13 +3583,13 @@
         "**Biztonságos** végpontok közti titkosítás"
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
-        "**Egyszerű és felhasználó-barát:** importálja a fájlait és állítson be mindent percek alatt"
+        "**Egyszerű és felhasználóbarát:** importáld fájljaidat és állítsd be percek alatt"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Fejlett védelem, amely túlmutat az iparági szabványokon"
       ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
-        "Csatlakozzon a 50.000+ szervezethez ami már ${ BRAND_NAME }-t használ a biztonságukhoz."
+        "Csatlakozz a több mint 50,000+ szervezethez akik már a ${ BRAND_NAME } biztonságát használják"
       ],
       "Protect sensitive business information and collaborate securely": [
         "Védje az érzékeny üzleti információkat és biztonságosan működjön együtt"
@@ -5449,7 +5440,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy by default."
+        "${ BRAND_NAME }. Adatvédelem az első."
       ]
     },
     "Free trial dekstop": {
@@ -6832,7 +6823,7 @@
         "Fedezze fel a ${ planTitle } csomaggal elérhetővé vált új funkciókat, és használja őket azonnal!"
       ],
       "Discover ProtectBuy logo": [
-        "Fedezze fel a ProtectBuy-t logó"
+        "Discover ProtectBuy logo"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
         "A DKIM lehetővé teszi, hogy a ${ BRAND_NAME } digitálisan aláírja az e-mailjeit és megakadályozza, hogy esetleges támadók manipulálják az üzeneteket. Vegye fel a következő CNAME rekordot a domain név beállításaihoz (azon a felületen található, ahol a saját domain nevet vásárolta)."
@@ -8597,7 +8588,7 @@
         "Ebben a böngészőben mentettünk egy biztonsági másolatot, mert engedélyezte az adatvisszaállítást ezen a ${ deviceLink } eszközön. Ha a biztonsági mentési fájl érvényes, azonnal visszanyeri a titkosított adatokhoz való teljes vagy részleges hozzáférést."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Erős ügyfélhitelesítést használunk az Ön fizetésének biztonsága érdekében."
+        "Fizetéseidet a 3-D Secure technológia védi"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A tranzakció befejezéséhez átirányítjuk a PayPalhoz egy új böngészőfülön. Kérjük engedélyezze a felugró ablakokat."
@@ -8631,9 +8622,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le képek az eszközére."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Ha engedélyezve van, megnézzük, hogy a(z) ${ MAIL_APP_NAME } az alapértelmezett levelező alkalmazás-e, és értesítjük, ha nem az."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Amikor engedélyezi a SAML-t a ${ appName } szolgáltatáshoz a személyazonosság-szolgáltatójában, a rendszer kérheti a visszahívási (ACS) URL-t és a kiállító azonosítóját. Másolja be az alábbi adatokat a személyazonosság-szolgáltatója mezőibe."
@@ -11305,7 +11293,7 @@
         "99.95% SLA"
       ],
       "Ad-blocker and malware protection": [
-        "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
+        "Hirdetésblokkoló és rosszindulatú program elleni védelem"
       ],
       "Admin console": [
         "Admin konzol"
@@ -11410,7 +11398,7 @@
         "Ingyenes VPN egy eszközön"
       ],
       "Fully refundable for 30 days": [
-        "30 napig teljesen visszaigényelhető"
+        "Teljes visszatérítés 30 napon belül"
       ],
       "GDPR data processing agreement": [
         "GDPR adatfeldolgozói megállapodás"
@@ -12660,7 +12648,7 @@
         "Nyílt forráskódú"
       ],
       "Protected by Swiss privacy laws": [
-        "Svájc adatvédelmi törvényei által védve"
+        "Svájci adatvédelmi törvények által védve"
       ],
       "Swiss based": [
         "Svájci székhelyű"
@@ -12808,7 +12796,7 @@
         "Ez az egyetlen lehetősége a fiókja teljes helyreállításához, tehát tartsa biztonságos helyen."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Csatlakozzon a több mint 100 millió emberhez akik a ${ BRAND_NAME } választották, hogy biztonságban maradjanak az interneten."
+        "Csatlakozz a több mint 100 millió emberhez akik a ${ BRAND_NAME }t választották az online biztonság érdekében"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } indítása"
@@ -13059,7 +13047,7 @@
         "Kártyaszám"
       ],
       "CVC": [
-        "Biztonsági kód"
+        "CVC"
       ],
       "MM/YY": [
         "HH/ÉÉ"
@@ -14417,10 +14405,10 @@
         "10 e-mail álnév az e-mail cím védelmére az adatvédelmi incidensektől"
       ],
       "Advanced security features": [
-        "Fejlett biztonsági funkciók"
+        "Fejlett biztonsági funkciókkal"
       ],
       "Advanced sharing security": [
-        "Fejlett megosztási biztonság"
+        "Fejlett megosztási biztonsággal"
       ],
       "Apps for all devices": [
         "Alkalmazások minden eszközre"
@@ -14429,16 +14417,16 @@
         "Svájci székhely, a GDPR-nak megfelelő"
       ],
       "Built-in encryption": [
-        "Beépíttet titkosítás"
+        "Beépíttet titkosítással"
       ],
       "Calendar, password manager, file storage, and VPN included": [
-        "Naptár, jelszókezelő, tárhely, és VPN"
+        "Naptárral, jelszókezelővel, tárhellyel és VPN szolgáltatással"
       ],
       "Device sync": [
         "Eszközszinkronizálás"
       ],
       "Email aliases": [
-        "E-mail álnevek"
+        "Email álnevekkel"
       ],
       "Email, calendar, password manager, and VPN included": [
         "E-mail, naptár, jelszókezelő és VPN is tartozik hozzá"
@@ -14456,7 +14444,7 @@
         "Integrált e-mail, naptár, fájltárhely, jelszókezelő és VPN"
       ],
       "ISO 27001 certified": [
-        "ISO 27001 tanúsított"
+        "ISO 27001 tanúsítvánnyal rendelkezik"
       ],
       "Open source and audited": [
         "Nyílt forráskódú és ellenőrzött"
@@ -14474,7 +14462,7 @@
         "Az egyetlen üzleti megoldás ami:"
       ],
       "The only cloud storage with:": [
-        "Az egyetlen felhőalapú tárhely:"
+        "Az egyetlen felhőalapú tárhely ami rendelkezik:"
       ],
       "The only email service with:": [
         "Az egyetlen e-mail szolgáltatás, amellyel:"
@@ -14488,7 +14476,7 @@
     },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
-        "GDPR és HIPPA megfelelő"
+        "GDPR és HIPPA szabályozásnak megfelelő"
       ]
     },
     "specialoffer: Action": {
@@ -15855,9 +15843,6 @@
       ],
       "Change second password": [
         "Második jelszó megváltoztatása"
-      ],
-      "Check your default mail application": [
-        "Ellenőrizze az alapértelmezett levelező alkalmazását"
       ],
       "Choose an account": [
         "Válasszon egy fiókot"
@@ -17803,7 +17788,7 @@
     },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
-        "Speciális VPN beállítások"
+        "Fejlett VPN beállítások"
       ],
       "No ads": [
         "Nincsenek hirdetések"
