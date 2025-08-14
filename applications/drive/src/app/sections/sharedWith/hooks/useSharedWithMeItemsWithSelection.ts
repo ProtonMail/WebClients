@@ -9,7 +9,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../../components/FileBrowser';
 import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
-import { useBookmarksActions } from '../../../hooks/drive/useBookmarksActions';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import { type SortField, type SortParams, useSortingWithDefault } from '../../../hooks/util/useSorting';
@@ -17,6 +16,7 @@ import { useDocumentActions, useUserSettings } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { dateToLegacyTimestamp } from '../../../utils/sdk/legacyTime';
 import { ItemType, getKeyUid, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
+import { useBookmarksActions } from './useBookmarksActions';
 
 const DEFAULT_SORT = {
     sortField: 'sharedOn' as SortField,

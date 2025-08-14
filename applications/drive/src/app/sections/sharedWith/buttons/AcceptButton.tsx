@@ -1,86 +1,45 @@
 import { c } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import { Icon, ToolbarButton } from '@proton/components';
-import { splitNodeUid } from '@proton/drive/index';
+import { NodeType } from '@proton/drive';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { useInvitationsActions } from '../../../hooks/drive/useInvitationsActions';
-import { useInvitationsActions as useLegacyInvitationsActions } from '../../../store';
-import { legacyTimestampToDate } from '../../../utils/sdk/legacyTime';
-import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
-import { useSharedInfoBatcher } from '../legacy/useLegacyDirectSharingInfo';
+import useVolumesState from '../../../store/_volumes/useVolumesState';
+import { useInvitationsActions } from '../hooks/useInvitationsActions';
+import { useLegacyInvitationsActions } from '../legacy/useLegacyInvitationsActions';
 
 interface BaseProps {
     nodeUid: string;
     invitationUid: string;
-    isAlbum: boolean;
+    type: NodeType;
 }
 
 interface ContextMenuProps extends BaseProps {
-    type: 'contextMenu';
+    buttonType: 'contextMenu';
     close: () => void;
 }
 
 interface ToolbarProps extends BaseProps {
-    type: 'toolbar';
+    buttonType: 'toolbar';
     close?: never;
 }
 
 type Props = ContextMenuProps | ToolbarProps;
-export const AcceptButton = ({ nodeUid, invitationUid, isAlbum, close, type }: Props) => {
-    const { acceptInvitation: legacyAcceptInvitation } = useLegacyInvitationsActions();
-    const { acceptInvitation } = useInvitationsActions();
-    const { loadSharedInfo } = useSharedInfoBatcher();
-
-    const { getSharedWithMeItemFromStore, setSharedWithMeItemToStore } = useSharedWithMeListingStore(
-        useShallow((state) => ({
-            getSharedWithMeItemFromStore: state.getSharedWithMeItem,
-            setSharedWithMeItemToStore: state.setSharedWithMeItem,
-        }))
-    );
+export const AcceptButton = ({ nodeUid, invitationUid, type, close, buttonType }: Props) => {
+    // TODO: Remove that when we will have sdk for upload
+    const { setVolumeShareIds } = useVolumesState();
+    const { acceptInvitation } = useInvitationsActions({ setVolumeShareIds });
+    const { acceptLegacyInvitation } = useLegacyInvitationsActions();
 
     const handleAcceptInvitation = async () => {
-        if (isAlbum) {
-            await legacyAcceptInvitation(new AbortController().signal, invitationUid, true, (result) => {
-                const sharedWithMeItem = getSharedWithMeItemFromStore(nodeUid);
-                if (sharedWithMeItem?.itemType === ItemType.INVITATION) {
-                    const { nodeId, volumeId } = splitNodeUid(nodeUid);
-                    loadSharedInfo(result.shareId, (sharedInfo) => {
-                        if (!sharedInfo) {
-                            console.warn(
-                                'The shared with me node entity is missing sharing info. It could be race condition and means it is probably not shared anymore.',
-                                { uid: nodeUid, shareId: result.shareId }
-                            );
-                            return;
-                        }
-                        setSharedWithMeItemToStore({
-                            nodeUid,
-                            name: sharedWithMeItem.name,
-                            type: sharedWithMeItem.type,
-                            mediaType: sharedWithMeItem.mediaType,
-                            itemType: ItemType.DIRECT_SHARE,
-                            thumbnailId: sharedWithMeItem.thumbnailId,
-                            size: sharedWithMeItem.size,
-                            directShare: {
-                                sharedOn: legacyTimestampToDate(sharedInfo.sharedOn),
-                                sharedBy: sharedInfo.sharedBy,
-                            },
-                            legacy: {
-                                linkId: nodeId,
-                                shareId: result.shareId,
-                                volumeId: volumeId,
-                            },
-                        });
-                    });
-                }
-            });
+        if (type === NodeType.Album) {
+            await acceptLegacyInvitation(nodeUid, invitationUid);
         } else {
             await acceptInvitation(nodeUid, invitationUid);
         }
     };
 
-    if (type === 'toolbar') {
+    if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
                 title={c('Action').t`Accept`}
