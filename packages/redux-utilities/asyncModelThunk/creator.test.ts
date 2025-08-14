@@ -77,7 +77,7 @@ describe('creator', () => {
                     [stateKey]: slice.reducer,
                 },
                 middleware: (getDefaultMiddleware) => {
-                    return getDefaultMiddleware({}).prepend(() => (next) => (action) => {
+                    return getDefaultMiddleware({}).prepend(() => (next: any) => (action: any) => {
                         actions.push(action);
                         return next(action);
                     });
