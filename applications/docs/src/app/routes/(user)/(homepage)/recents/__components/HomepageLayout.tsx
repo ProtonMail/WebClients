@@ -43,6 +43,7 @@ import clsx from '@proton/utils/clsx'
 import { IS_REFRESH_ENABLED, IS_FAVORITES_ENABLED } from '../__utils/features'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { useApplication } from '~/utils/application-context'
+import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
 
 const REFRESH_AFTER_NEW_DOCUMENT = 10000 // ms
 
@@ -350,7 +351,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
               target="_blank"
             >
               <SidebarListItemDiv className="flex items-center gap-2">
-                <Icon name="brand-proton-drive" /> {c('Info').t`Go to ${DRIVE_APP_NAME}`}
+                <Icon name="brand-proton-drive" /> {goToPlanOrAppNameText(DRIVE_APP_NAME)}
               </SidebarListItemDiv>
             </a>
           </SidebarListItem>
