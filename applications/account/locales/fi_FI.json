@@ -1072,9 +1072,6 @@
       "Send reminder": [
         "Lähetä muistutus"
       ],
-      "Set as default mail application": [
-        "Aseta oletussähköpostisovellukseksi"
-      ],
       "Set catch-all": [
         "Aseta nappaa kaikki"
       ],
@@ -3222,12 +3219,6 @@
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } ${ DRIVE_APP_NAME }ssä antaa sinun työskennellä yhdessä muiden kanssa, turvallisessa ja salatussa ympäristössä."
-      ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } ei ole oletussähköpostisovelluksesi."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } on oletussähköpostisovelluksesi."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Lisää kansioita ja tiedostoja ${ DRIVE_APP_NAME }en ja kutsu tiimin jäseniä tarkastelemaan tai muokkaamaan."
@@ -8473,9 +8464,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kun ei käytössä, estää kuvatiedostoja latautumasta laitteellesi ilman tietoasi."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Kun tämä on sallittu, tarkistamme onko ${ MAIL_APP_NAME } oletus sähköpostisovellus ja ilmoitamme, jos ei ole."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetintarjoajaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetintarjoajasi soveltuviin tietokenttiin."
@@ -15647,9 +15635,6 @@
       ],
       "Change second password": [
         "Vaihda toinen salasana"
-      ],
-      "Check your default mail application": [
-        "Tarkista oletussähköpostisovelluksesi"
       ],
       "Choose an account": [
         "Valitse tili"

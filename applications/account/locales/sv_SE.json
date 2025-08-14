@@ -835,6 +835,9 @@
       "More options": [
         "Fler alternativ"
       ],
+      "More options for accounts": [
+        "Fler alternativ för konton"
+      ],
       "Need help?": [
         "Behöver du hjälp?"
       ],
@@ -1101,6 +1104,9 @@
       ],
       "Send reminder": [
         "Skicka påminnelse"
+      ],
+      "Set as default": [
+        "Ställ in som standard"
       ],
       "Set as default mail application": [
         "Ställ in som standardapplikation för e-post"
@@ -4190,6 +4196,11 @@
         "Varning"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betrodd kontakt"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Namnlös"
@@ -6902,6 +6913,9 @@
       "default email address": [
         "standard e-postadress"
       ],
+      "Default email application": [
+        "Standardapplikation för e-post"
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Ta bort andra MX-poster eller se till att ${ MAIL_APP_NAME }s prioritet är det lägsta numret."
       ],
@@ -7137,6 +7151,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Ange ditt eget lösenord (som organisationsadministratör)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ange din e-postadress för återställning så skickar vi dig ditt användarnamn eller e-postadress."
@@ -7784,6 +7801,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organisera dina dedikerade servrar i gateways och bestäm vilka medlemmar som kan komma åt dem."
       ],
+      "Other accounts": [
+        "Andra konton"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Andra administratörer finns i din organisation, du är ansvarig för att kommunicera det nya lösenordet till dem."
       ],
@@ -8077,6 +8097,9 @@
       ],
       "Session timed out": [
         "Session timeout"
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
       ],
       "Set password": [
         "Ställ in lösenord"
@@ -8773,9 +8796,6 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "När den är inaktiverad förhindrar detta att bildfiler laddas på din enhet utan din vetskap."
       ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "När det är aktiverat kommer vi kontrollera om ${ MAIL_APP_NAME } är din standardapplikation för e-post och avisera dig om det inte är det."
-      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
       ],
@@ -9116,6 +9136,9 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Din återställningsfras är en serie av 12 slumpmässigt genererade ord i en specifik ordning."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer förnyas automatiskt varje månad."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
@@ -10515,6 +10538,9 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
       ],
       "Your referral link": [
         "Din hänvisningslänk"
@@ -13756,6 +13782,9 @@
     "RecoveryPhrase: Action": {
       "Download PDF ${ size }": [
         "Ladda ner PDF ${ size }"
+      ],
+      "Reveal recovery phrase": [
+        "Visa återställningsfras"
       ]
     },
     "Remark about a key type option": {
@@ -16311,6 +16340,9 @@
       "Account suspended": [
         "Konto avstängt"
       ],
+      "Account Temporarily Locked": [
+        "Konto tillfälligt låst"
+      ],
       "Action": [
         "Åtgärd"
       ],
@@ -16494,9 +16526,6 @@
       ],
       "Change second password": [
         "Ändra andra lösenord"
-      ],
-      "Check your default mail application": [
-        "Kontrollera din standardapplikation för e-post"
       ],
       "Choose an account": [
         "Välj ett konto"

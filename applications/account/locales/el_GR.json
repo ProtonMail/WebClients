@@ -838,6 +838,9 @@
       "More options": [
         "Περισσότερες επιλογές"
       ],
+      "More options for accounts": [
+        "Περισσότερες επιλογές για λογαριασμούς"
+      ],
       "Need help?": [
         "Χρειάζεστε βοήθεια;"
       ],
@@ -1104,6 +1107,9 @@
       ],
       "Send reminder": [
         "Αποστολή υπενθύμισης"
+      ],
+      "Set as default": [
+        "Ορισμός ως προεπιλογή"
       ],
       "Set as default mail application": [
         "Ορίστε ως προεπιλεγμένη εφαρμογή αλληλογραφίας"
@@ -3303,10 +3309,10 @@
         "Το ${ DOCS_SHORT_APP_NAME } στο ${ DRIVE_APP_NAME } σάς επιτρέπει να συνεργάζεστε με άλλους σε ένα ασφαλές, κρυπτογραφημένο περιβάλλον."
       ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
-        "Η ${ MAIL_APP_NAME } δεν είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
+        "Το ${ MAIL_APP_NAME } δεν είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
-        "Η ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
+        "Το ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Προσθέστε φακέλους και αρχεία στο ${ DRIVE_APP_NAME } και προσκαλέστε μέλη της ομάδας για προβολή ή επεξεργασία."
@@ -4200,6 +4206,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Προειδοποίηση"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Αξιόπιστη επαφή"
       ]
     },
     "Empty group name": {
@@ -6929,6 +6940,9 @@
       "default email address": [
         "προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
+      "Default email application": [
+        "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Διαγράψτε κάθε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ${ MAIL_APP_NAME } είναι ο μικρότερος αριθμός."
       ],
@@ -7167,6 +7181,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Εισάγετε τη διεύθυνση email ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -7823,6 +7840,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Οργανώστε τους αποκλειστικούς διακομιστές σας σε Πύλες και αποφασίστε ποια μέλη μπορούν να έχουν πρόσβαση σε αυτούς."
       ],
+      "Other accounts": [
+        "Άλλοι λογαριασμοί"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Υπάρχουν και άλλοι διαχειριστές στον οργανισμό σας, είστε υπεύθυνοι για την ενημέρωση τους σχετικά με τον νέο κωδικό πρόσβασης."
       ],
@@ -8113,6 +8133,9 @@
       ],
       "Session timed out": [
         "Η συνεδρία έληξε"
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Ορίστε το ${ MAIL_APP_NAME } ως την προεπιλεγμένη εφαρμογή αλληλογραφίας. Το ${ MAIL_APP_NAME } θα ανοίγει αυτόματα όταν κάνετε κλικ σε σύνδεσμο αλληλογραφίας."
       ],
       "Set password": [
         "Ορισμός κωδικού"
@@ -8816,7 +8839,7 @@
         "Όταν είναι απενεργοποιημένο, εμποδίζει τη φόρτωση αρχείων εικόνας στη συσκευή σας εν αγνοία σας."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Όταν ενεργοποιηθεί, θα ελέγξουμε εάν η ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας και θα σας ειδοποιήσουμε εάν δεν είναι."
+        "Όταν είναι ενεργοποιημένο, θα ελέγχουμε αν το ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας και θα σας ειδοποιούμε αν δεν είναι."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
@@ -10576,6 +10599,9 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
       ],
       "Your referral link": [
         "Ο σύνδεσμος παραπομπής σας"
@@ -16478,6 +16504,9 @@
       ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
+      ],
+      "Account Temporarily Locked": [
+        "Λογαριασμός Προσωρινά Κλειδωμένος"
       ],
       "Action": [
         "Ενέργεια"
