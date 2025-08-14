@@ -145,6 +145,14 @@ const ThemeProvider = ({ children, appName }: Props) => {
             };
         }
 
+        if (appName === APPS.PROTONLUMO) {
+            return {
+                ...themeSetting,
+                LightTheme: ThemeTypes.LumoLight,
+                DarkTheme: ThemeTypes.LumoLight,
+            };
+        }
+
         return themeSetting;
     }, [themeSetting]);
 

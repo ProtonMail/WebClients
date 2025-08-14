@@ -8,20 +8,24 @@ export const getImage = (Url: string, DryRun = 0, UID?: string) => ({
 
 export type SenderImageMode = 'light' | 'dark';
 
+export interface GetLogoParams {
+    Address?: string;
+    Domain?: string;
+    Size?: number;
+    BimiSelector?: string;
+    Mode?: SenderImageMode;
+    UID?: string;
+}
+
 /**
  * Get logo corresponding to address
  * @param Address encoded email address
  * @param Size The size of the logo to be returned, default 48
  * @returns
  */
-export const getLogo = (
-    Address: string,
-    Size?: number,
-    BimiSelector?: string,
-    Mode?: SenderImageMode,
-    UID?: string
-) => ({
+export const getLogo = (params: GetLogoParams, output?: string) => ({
     method: 'get',
     url: 'core/v4/images/logo',
-    params: { UID, Address, Size, BimiSelector, Mode },
+    output,
+    params,
 });

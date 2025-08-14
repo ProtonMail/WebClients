@@ -1,0 +1,24 @@
+@import '~@proton/styles/scss/lib';
+
+.conversation-title {
+	max-inline-size: 24rem;
+}
+
+.file-count {
+	inset-inline-end: 0;
+}
+
+.conversation-header {
+	.button-for-icon {
+		&.button-medium {
+			--padding-block: #{em(7)};
+			--padding-inline: #{em(7)};
+		}
+	}
+
+	@include media('<=small') {
+		.conversation-header-title-view {
+			display: none;
+		}
+	}
+}

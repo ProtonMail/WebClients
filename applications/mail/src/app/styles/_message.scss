@@ -237,7 +237,6 @@ $container-to-width: 4em !default;
 				@supports (display: ruby) {
 					display: ruby; // crazy fix when U200f characters are used, so hover state is not broken
 				}
-				
 			}
 
 			svg {

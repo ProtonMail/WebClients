@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1", maximum-scale=1.0, user-scalable=no, viewport-fit=cover />
+        <base href="/" />
+
+        <link rel="canonical" href="<%= url %>" />
+
+        <link rel="prefetch" href="https://account.proton.me/lumo/signup" />
+        <link rel="prefetch" href="https://account.proton.me/lumo" />
+
+        <title><%= appName %></title>
+        <meta name="description" content="<%= description %>" />
+
+        <meta property="og:title" content="<%= appName %>" />
+        <meta property="og:description" content="<%= description %>" />
+        <meta property="og:url" content="<%= url %>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="<%= ogImage %>" />
+        <meta property="og:image:alt" content="<%= appName %> logo" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@ProtonPrivacy" />
+        <meta name="twitter:title" content="<%= appName %>" />
+        <meta name="twitter:description" content="<%= description %>" />
+        <meta name="twitter:image" content="<%= ogImage %>" />
+        <meta name="twitter:image:alt" content="The shiny <%= appName %> logo" />
+
+        <meta name="google-play-app" content="app-id=me.proton.android.lumo" />
+        <meta name="apple-itunes-app" content="app-id=6746714949" />
+
+        <meta name="google" content="notranslate" />
+
+        <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+        <!-- Working around https://bugzilla.mozilla.org/show_bug.cgi?id=1801614
+           * otherwise Firefox picks the 1024x1024 declination of the apple-touch-icon -->
+<!--         <link rel="icon" href="/assets/favicon.ico" sizes="1025x1025" /> -->
+        <link rel="icon" href="<%= require('./favicon.svg') %>" type="image/svg+xml" />
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "webPage",
+                    "@id": "https://lumo.proton.me",
+                    "url": "https://lumo.proton.me",
+                    "name": "Lumo",
+                    "alternateName": "Lumo by Proton",
+                    "description": "Meet Lumo, the zero-access encrypted AI assistant by Proton that does not track or record your conversations. Ask me anything. Its confidential.",
+                    "isPartOf": {
+                        "@id": "https://proton.me/#website"
+                    },
+                    "inLanguage": "en",
+                    "significantLink": [
+                        "https://account.proton.me/lumo/signup",
+                        "https://account.proton.me/lumo",
+                        "https://lumo.proton.me/about",
+                        "https://lumo.proton.me/download"
+                    ],
+                    "copyrightHolder": {
+                        "@id": "https://proton.me/#corporation"
+                    },
+                    "creator": {
+                        "@id": "https://proton.me/#corporation"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "availability": "https://schema.org/InStock",
+                        "itemOffered": {
+                            "@id": "https://proton.me/#Lumo"
+                        }
+                    },
+                    "potentialAction": [
+                        {
+                            "@type": "RegisterAction",
+                            "target": "https://account.proton.me/lumo/signup"
+                        },
+                        {
+                            "@type": "UseAction",
+                            "target": "https://account.proton.me/lumo"
+                        }
+                            ],
+                    "mainEntity": {
+                        "@id": "https://proton.me/#Lumo"
+                    },
+                    "about": {
+                        "@id": "https://proton.me/#Lumo"
+                    }
+                },
+                {
+                    "@type": "WebApplication",
+                    "@id": "https://proton.me/#Lumo",
+                    "additionalType": "http://www.productontology.org/doc/Chatbot",
+                    "name": "Lumo",
+                    "alternateName": "Lumo by Proton",
+                    "description": "Meet Lumo, the zero-access encrypted AI assistant by Proton that does not track or record your conversations. Ask me anything. Its confidential.",
+                    "keywords": "Lumo, Lumo by Proton, Lumo chatbot, AI chatbot, AI agent, AI assistant",
+                    "applicationCategory": "ChatbotApplication",
+                    "isAccessibleForFree": "True",
+                    "logo": "https://lumo.proton.me/images/social/lumo-by-proton.png",
+                    "image": "https://lumo.proton.me/images/social/lumo-og.png",
+                    "sameAs": [
+                        "https://x.com/asklumo"
+                        ],
+                    "subjectOf": {
+                        "@id": "https://lumo.proton.me"
+                    },
+                    "url": "https://lumo.proton.me",
+                    "mainEntityOfPage": {
+                        "@id": "https://lumo.proton.me"
+                    },
+                    "copyrightHolder": {
+                        "@id": "https://proton.me/#corporation"
+                    },
+                    "creator": {
+                        "@id": "https://proton.me/#corporation"
+                    },
+                    "maintainer": {
+                        "@id": "https://proton.me/#corporation"
+                    }
+
+                },
+                {
+                    "@context": "https://schema.org/",
+                    "@type": "WebSite",
+                    "@id": "https://proton.me/#website",
+                    "url": "https://proton.me",
+                    "name": "Proton",
+                    "mainEntity": {
+                        "@id": "https://proton.me/#corporation"
+                    },
+                    "about": {
+                        "@id": "https://proton.me/#corporation"
+                    },
+                    "creator": {
+                        "@id": "https://proton.me/#corporation"
+                    },
+                    "publisher": {
+                        "@id": "https://proton.me/#corporation"
+                    },
+                    "copyrightHolder": {
+                        "@id": "https://proton.me/#corporation"
+                    },
+                    "copyrightNotice": "© Proton AG. All rights reserved.",
+                    "copyrightYear": "2023",
+                    "isAccessibleForFree": "True",
+                    "inLanguage": [
+                        "en",
+                        "fr",
+                        "de",
+                        "es",
+                        "it",
+                        "pl",
+                        "nl",
+                        "ru",
+                        "tr",
+                        "pt"
+                    ]
+                },
+                {
+                    "@type": "Corporation",
+                    "@id": "https://proton.me/#corporation",
+                    "additionalType": "http://www.productontology.org/id/Technology_company",
+                    "name": "Proton",
+                    "legalName": "Proton AG",
+                    "url": "https://proton.me",
+                    "logo": "https://proton.me/images/social/proton-logo-square.png",
+                    "slogan": "Privacy by default",
+                    "foundingDate": "2014-07-18",
+                    "description": "Proton provides easy-to-use encrypted email, calendar, cloud storage, password manager, bitcoin wallet and VPN services, built on the principle of your data, your rules.",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "Switzerland",
+                        "addressRegion": "Geneve",
+                        "addressLocality": "Plan-les-Ouates",
+                        "postalCode": "1228",
+                        "streetAddress": "Route de la Galaise 32"
+                    },
+                    "sameAs": [
+                        "https://www.linkedin.com/company/protonprivacy/",
+                        "https://x.com/ProtonPrivacy",
+                        "https://www.facebook.com/Proton",
+                        "https://www.instagram.com/protonprivacy/",
+                        "https://www.wikidata.org/wiki/Q30537036",
+                        "https://en.wikipedia.org/wiki/Proton_(Swiss_company)",
+                        "https://www.google.com/search?kgmid=/g/11g8vthvmc"
+                    ],
+                    "employee": {
+                        "@type": "Person",
+                        "name": "Andy Yen",
+                        "jobTitle": "Chief Executive Officer",
+                        "sameAs": [
+                            "https://x.com/andyyen",
+                            "https://www.linkedin.com/in/andy-yen-03a9676/",
+                            "https://www.wikidata.org/wiki/Q23759707"
+                        ]
+                    }
+                }
+            ]
+        }
+        </script>
+
+    </head>
+    <body>
+        <div class="app-root"></div>
+        <!-- <div class="app-root-loader"></div> -->
+        <noscript class="app-noscript">
+            <h1>Hey, I'm Lumo. Ask me anything. It's confidential."</h1>
+            <h1>The AI that respects your privacy</h1>
+            <p>An AI assistant should empower you, not exploit you for your data. That’s why we built Lumo: To bring
+            you all the benefits of AI, without compromising your privacy and data security.</p>
+
+            <h2>Built by the team that knows privacy</h2>
+            <p>AIs from Big Tech are built on harvesting your data. But Lumo is different. It was created by the
+            scientists behind innovative, privacy-first services like Proton Mail and Proton VPN. And it’s owned by
+            a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.</p>
+            <h2>How does Lumo keep our conversations confidential?</h2>
+
+            <h3>Your chats are yours alone</h3>
+            <p>We keep no logs of what you ask, or what Lumo replies. Your chats can’t be seen, shared, or used to
+            profile you. Lumo saves nothing on our servers.</p>
+            <h3>Only you have access</h3>
+            <p>Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device.
+            Neither Proton nor anyone else can see them.</p>
+            <h3>Tech that you can trust</h3>
+            <p>Lumo’s code is fully open source, so anyone can independently verify that it’s private and secure—and
+            that we never use your data to train the model.</p>
+            <h3>You’re in control</h3>
+            <p>Your data isn’t shared with advertisers, governments, or anyone else. Lumo is a European service subject
+            to GDPR, so you can delete your data anytime.</p>
+
+        </noscript>
+<!--        <script src="https://cdn.jsdelivr.net/npm/react-scan/dist/auto.global.js"></script>-->
+    </body>
+</html>

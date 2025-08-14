@@ -130,6 +130,7 @@ export type IconName =
     | 'chevron-up-filled'
     | 'chevrons-left'
     | 'chevrons-right'
+    | 'chip'
     | 'circle'
     | 'circle-filled'
     | 'circle-half-filled'
@@ -539,6 +540,7 @@ export { IcChevronUp } from './icons/IcChevronUp';
 export { IcChevronUpFilled } from './icons/IcChevronUpFilled';
 export { IcChevronsLeft } from './icons/IcChevronsLeft';
 export { IcChevronsRight } from './icons/IcChevronsRight';
+export { IcChip } from './icons/IcChip';
 export { IcCircle } from './icons/IcCircle';
 export { IcCircleFilled } from './icons/IcCircleFilled';
 export { IcCircleHalfFilled } from './icons/IcCircleHalfFilled';
@@ -663,6 +665,7 @@ export { IcMailbox } from './icons/IcMailbox';
 export { IcMap } from './icons/IcMap';
 export { IcMapPin } from './icons/IcMapPin';
 export { IcMegaphoneFilled } from './icons/IcMegaphoneFilled';
+export { IcMicrophone } from './icons/IcMicrophone';
 export { IcMinus } from './icons/IcMinus';
 export { IcMinusCircle } from './icons/IcMinusCircle';
 export { IcMinusCircleFilled } from './icons/IcMinusCircleFilled';

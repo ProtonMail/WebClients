@@ -628,6 +628,7 @@ export enum APP_UPSELL_REF_PATH {
     DOCS_UPSELL_REF_PATH = 'upsell_docs-',
     ACCOUNT_UPSELL_REF_PATH = 'upsell_account-',
     WALLET_UPSELL_REF_PATH = 'upsell_wallet-',
+    LUMO_UPSELL_REF_PATH = 'upsell_lumo-',
 }
 
 export enum UPSELL_COMPONENT {
@@ -718,6 +719,19 @@ export enum DRIVE_UPSELL_PATHS {
     PLUS_MONTHLY_SUBSCRIBER_NUDGE_VARIANT_MONEY = 'plus_monthly-subscriber-nudge-variant-money',
 }
 
+export enum LUMO_UPSELL_PATHS {
+    TOP_NAVIGATION_BAR = 'top-navigation-bar',
+    CHAT_HISTORY = 'chat-history',
+    SIDEBAR = 'sidebar',
+    SIDEBAR_BUTTON = 'sidebar-button',
+    SETTINGS_MODAL = 'settings-modal',
+    SETTINGS_MODAL_PLAN = 'settings-modal-plan',
+    LIMIT_QUESTIONS = 'limit-questions',
+    QUESTION_LIMIT_FREE = 'free-user-question-limit',
+    QUESTION_LIMIT_B2B_B2C = 'paid-user-question-limit',
+    LUMO_PLUS_UPGRADE_MODAL = 'lumo-plus-upgrade-modal',
+}
+
 export enum SHARED_UPSELL_PATHS {
     MULTI_USER = 'multi-user',
     CONTACT_GROUP = 'contact-groups',
@@ -748,7 +762,7 @@ export enum DASHBOARD_UPSELL_PATHS {
 }
 
 export type UPSELL_FEATURE =
-    `${MAIL_UPSELL_PATHS | MAIL_UPSELL_BANNER_LINK_ID_REF_PATH | CALENDAR_UPSELL_PATHS | DRIVE_UPSELL_PATHS | SHARED_UPSELL_PATHS | DASHBOARD_UPSELL_PATHS}`;
+    `${MAIL_UPSELL_PATHS | MAIL_UPSELL_BANNER_LINK_ID_REF_PATH | CALENDAR_UPSELL_PATHS | DRIVE_UPSELL_PATHS | SHARED_UPSELL_PATHS | DASHBOARD_UPSELL_PATHS | LUMO_UPSELL_PATHS}`;
 
 export const LOYAL_BONUS_STORAGE = 5 * sizeUnits.GB;
 export const LOYAL_BONUS_CONNECTION = 2;

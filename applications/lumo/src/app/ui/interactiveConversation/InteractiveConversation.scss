@@ -1,0 +1,146 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
+.main-text {
+	font-family: Syne, Inter, system-ui, sans-serif;
+	font-size: rem(36);
+
+	&-onboarded {
+		font-size: rem(48);
+	}
+
+	&-small {
+		font-size: rem(22);
+	}
+}
+
+// /* Container layout */
+// .messages-container {
+// 	display: flex;
+// 	flex-direction: column;
+// 	flex: 1;
+// }
+
+// /* Virtuoso container fixes */
+// [data-virtuoso-scroller='true'] {
+// 	padding: 0 !important;
+// 	scrollbar-width: thin;
+// }
+
+// /* Ensure proper space between virtuoso items */
+// [data-virtuoso-item] {
+// 	margin-block-end: 0.75rem;
+// 	padding-inline: 0;
+// }
+
+// /* Last item (avatar) specific styling */
+// [data-virtuoso-item]:last-child {
+// 	margin-block-end: 2rem !important;
+// 	padding-block-start: 0.5rem !important;
+// 	min-block-size: 90px !important; /* Ensure enough height for the avatar */
+// }
+
+// /* Fix for Virtuoso list height */
+// .virtuoso-container {
+// 	block-size: 100%;
+// 	padding-block-end: 20px !important;
+// }
+
+// [ref='messageChainRef'] {
+// 	display: flex;
+// 	flex-direction: column;
+// 	position: relative;
+// }
+
+// .message-row {
+// 	inline-size: 100% !important;
+// 	visibility: visible !important;
+// 	display: block !important;
+// 	overflow: visible !important;
+// 	position: relative !important;
+// 	margin-block-end: 8px !important;
+// }
+
+// .message-container-wrapper {
+// 	position: relative;
+// 	inline-size: 100%;
+// 	display: block;
+// }
+
+// /* Avatar styling in message list */
+// .avatar-message {
+// 	display: flex !important;
+// 	visibility: visible !important;
+// 	opacity: 1 !important;
+// 	position: relative !important;
+// 	margin-block: 0.5rem 1rem !important;
+// 	z-index: 5 !important;
+// 	min-block-size: 60px !important;
+// }
+
+// .assistant-msg-container,
+// .user-msg-container {
+// 	// inline-size: 100%;
+// 	// max-inline-size: 100%;
+// 	overflow-wrap: break-word;
+// 	word-break: break-word;
+// }
+
+// .user-msg {
+// 	&.mb-6 {
+// 		margin-block-end: 1rem;
+// 	}
+// }
+
+// .assistant-msg {
+// 	&.mb-6 {
+// 		margin-block-end: 1rem;
+// 	}
+
+// 	&#{&} {
+// 		border-start-start-radius: 0;
+// 	}
+// }
+
+// // .markdown-rendering {
+// // 	inline-size: 100%;
+// // 	max-inline-size: 100%;
+// // }
+
+// .avatar-container {
+// 	display: flex !important;
+// 	visibility: visible !important;
+// 	opacity: 1 !important;
+// 	position: relative !important;
+// 	margin-block-end: 1rem;
+// 	z-index: 1;
+// }
+
+// /* Fixed avatar for the static display */
+// .fixed-avatar {
+// 	position: absolute !important;
+// 	inset-block-end: 0 !important;
+// 	inset-inline: 0 !important;
+// 	padding-block-end: 1rem;
+// 	background: linear-gradient(to top, var(--background-norm) 50%, transparent);
+// }
+
+// .virtualized-chat-container {
+// 	position: relative;
+// 	z-index: 1;
+// 	overflow: visible !important;
+// }
+
+// .virtualized-chat-container .message-row + .message-row {
+// 	margin-block-start: 12px !important;
+// }
+
+// [class*='MessageComponent'],
+// [class*='UserMessage'],
+// [class*='AssistantMessage'] {
+// 	// inline-size: 100% !important;
+// 	max-inline-size: 100% !important;
+// 	overflow-wrap: break-word !important;
+// 	word-break: break-word !important;
+// 	display: block !important;
+// }
