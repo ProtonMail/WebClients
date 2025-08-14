@@ -134,6 +134,9 @@
       "Change": [
         "შეცვლა"
       ],
+      "Change password": [
+        "პაროლის შეცვლა"
+      ],
       "Chat with us": [
         "დაგველაპარაკეთ"
       ],
@@ -208,6 +211,9 @@
       ],
       "Continue import": [
         "შემოტანის გაგრძელება"
+      ],
+      "Continue on web": [
+        "გაგრძელება ვებზე"
       ],
       "Continue transfers": [
         "გადაწერების გაგრძელება"
@@ -307,6 +313,9 @@
       "Details": [
         "დეტალები"
       ],
+      "Diagnostics": [
+        "დიაგნოსტიკა"
+      ],
       "Discard": [
         "მოცილება"
       ],
@@ -337,11 +346,20 @@
       "Download anyway": [
         "მაინც გადმოწერა"
       ],
+      "Download app": [
+        "აპის გადმოწერა"
+      ],
       "Download apps": [
         "გადმოწერეთ აპები"
       ],
+      "Download info": [
+        "ინფორმაციის გაფდმოწერა"
+      ],
       "Download logs": [
         "ჟურნალის გადმოწერა"
+      ],
+      "Download results": [
+        "შედეგების გადმოწერა"
       ],
       "Drive Locked": [
         "საცავი ჩაკეტილია"
@@ -598,6 +616,9 @@
       "OK": [
         "დიახ"
       ],
+      "Open": [
+        "გახსნა"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
@@ -744,6 +765,9 @@
       ],
       "Retry": [
         "თავიდან"
+      ],
+      "Run diagnostics": [
+        "დიაგნოსტიკის გაშვება"
       ],
       "Save": [
         "შენახვა"
@@ -1083,6 +1107,9 @@
       ],
       "Annually": [
         "წელიწადში ერთხელ"
+      ],
+      "Lifetime": [
+        "სამუდამოდ"
       ],
       "Monthly": [
         "თვეში ერთხელ"
@@ -2288,6 +2315,11 @@
         "მოვლენის განახლება ${ formattedStart }-დან"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "სანდო კონტაქტი"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "\"${ sanitizedName }\" უკვე არსებობს"
@@ -2365,6 +2397,9 @@
       ],
       "Device name does not match": [
         "მოწყობილობის სახელი არ ემთხვევა"
+      ],
+      "Diagnostics failed": [
+        "დიაგნოსტიკა ჩავარდა"
       ],
       "Domain not available, try again later": [
         "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
@@ -3781,6 +3816,9 @@
         "დაბლოკილი დისკის წაშლა",
         "დაბლოკილი დისკების წაშლა"
       ],
+      "Details": [
+        "დეტალები"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "ციფრული ხელმოწერა შემოწმებულია. ეს ფაილი დაცულად ატვირთა ${ emailAddress }-მა."
       ],
@@ -4047,6 +4085,9 @@
       "Invite link copied": [
         "მოსაწვევის ბმული დაკოპირდა"
       ],
+      "Issues found": [
+        "აღმოჩენილი პრობლემები"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "როგორ ჩანს, ახლახან ${ uploadName }-ის ატვირთვა სცადეთ. თუ ატვირთვა წარუმატებლად დასრულდა, გთხოვთ ${ replaceFile }. თუ ატვირთვა ჯერ კიდევ მიმდინარეობს, მისი ჩანაცვლება პროცესს გააუქმებს."
       ],
@@ -4064,6 +4105,9 @@
       ],
       "Jan": [
         "იან"
+      ],
+      "JCB logo": [
+        "JCB ლოგო"
       ],
       "Jul": [
         "ივლ"
@@ -4192,6 +4236,9 @@
       "No group found": [
         "ჯგუფი ნაპოვნი არაა"
       ],
+      "No issue found": [
+        "პრობლემების გარეშე"
+      ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
       ],
@@ -4248,6 +4295,9 @@
       ],
       "Organization size": [
         "ორგანიზაციის ზომა"
+      ],
+      "Other accounts": [
+        "სხვა ანგარიშები"
       ],
       "Owner": [
         "მფლობელი"
@@ -4618,6 +4668,9 @@
       ],
       "This will upload a new version of the folder": [
         "ეს საქაღალდის ახალ ვერსიას ატვირთავს"
+      ],
+      "Time": [
+        "დრო"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "გადახდის დასასრულებლად, გამოაგზავნეთ ${ btcAmountBold } ქვემორე მისამართზე."
@@ -6207,6 +6260,9 @@
       "Email client support (via IMAP/SMTP)": [
         "ელფოსტის კლიენტის მხარდაჭერა (IMAP/SMTP-ით)"
       ],
+      "Email groups": [
+        "ელფოსტის ჯგუფები"
+      ],
       "Enables HIPAA compliance": [
         "ჩართავს HIPAA-სთან თავსებადობას"
       ],
@@ -6430,6 +6486,9 @@
       ],
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
+      ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
       ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
@@ -7128,6 +7187,12 @@
       ],
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
+      ],
+      "Verify content": [
+        "შემცველობის გადამოწმება"
+      ],
+      "Verify thumbnails": [
+        "მინიატურების გადამოწმება"
       ]
     },
     "Option group label": {
@@ -7205,6 +7270,9 @@
       "MM/YY": [
         "თთ/წწ"
       ],
+      "terms & conditions": [
+        "პირობები და წესები"
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ]
@@ -7227,6 +7295,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "PGP key encryption warning": {
@@ -8198,6 +8271,9 @@
       "Continue with partial import?": [
         "გავაგრძელო ნაწილობრივი შემოტანით?"
       ],
+      "Coupon": [
+        "კუპონი"
+      ],
       "Create a new file": [
         "ახალი ფაილის შექმნა"
       ],
@@ -8267,8 +8343,14 @@
       "Desktop": [
         "სამუშაო მაგიდა"
       ],
+      "Device": [
+        "მოწყობილობა"
+      ],
       "Devices": [
         "მოწყობილობები"
+      ],
+      "Diagnostics": [
+        "დიაგნოსტიკა"
       ],
       "Discard": [
         "მოცილება"
@@ -8419,11 +8501,20 @@
       "Last uploaded by": [
         "ბოლო ატვირთვის ავტორი"
       ],
+      "Level": [
+        "დონე"
+      ],
       "Link confirmation": [
         "ბმულის დადასტურება"
       ],
       "Location": [
         "მდებარეობა"
+      ],
+      "Logger": [
+        "რეგისტრატორი"
+      ],
+      "Logs": [
+        "ჟურნალი"
       ],
       "Manage secure link": [
         "დაცული ბმულის მორგება"
@@ -8436,6 +8527,9 @@
       ],
       "Merging contacts": [
         "კონტაქტების შერწყმა"
+      ],
+      "Message": [
+        "შეტყობინება"
       ],
       "MIME type": [
         "MIME ტიპი"
@@ -8698,6 +8792,9 @@
       ],
       "This link is password protected": [
         "ეს ბმული პაროლითაა დაცული"
+      ],
+      "Time": [
+        "დრო"
       ],
       "Total size": [
         "ჯამური ზომა"

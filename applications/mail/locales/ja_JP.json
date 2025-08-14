@@ -162,6 +162,9 @@
       "Change page": [
         "ページの変更"
       ],
+      "Change password": [
+        "パスワードを変更"
+      ],
       "Change sorting": [
         "並べ替えの変更"
       ],
@@ -9400,12 +9403,6 @@
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } 件の会話を未読にしました。"
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount }件のメッセージを${ folderName }に移動し、送信元のアドレスは迷惑メールから除外されました。"
-      ],
-      "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } 件の会話を ${ folderName } に移動しました。"
-      ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } 件の会話を迷惑メールに移動し、送信元のアドレスは迷惑メールリストに登録されました。"
       ],
@@ -9432,12 +9429,6 @@
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } 件のメッセージを未読にしました。"
-      ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount }件のメールを${ folderName }に移動し、送信元のアドレスは迷惑メールから除外されました。"
-      ],
-      "${ elementsCount } message moved to ${ folderName }.": [
-        "${ elementsCount } 件のメッセージが ${ folderName } に移動されました。"
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
         "${ elementsCount }件のメールを迷惑メールに移動しました。差出人は迷惑メールリストに登録済みです。"
@@ -9489,12 +9480,6 @@
       ],
       "Conversation marked as unread.": [
         "会話を未読にしました。"
-      ],
-      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "会話を${ folderName }に移動し、差出人のアドレスは迷惑メールから除外されました。"
-      ],
-      "Conversation moved to ${ folderName }.": [
-        "会話が ${ folderName } に移動されました。"
       ],
       "Conversation moved to spam and sender added to your spam list.": [
         "会話を迷惑メールに移動し、差出人のアドレスは迷惑メールリストに追加されました。"
@@ -9558,12 +9543,6 @@
       ],
       "Message marked as unread.": [
         "メッセージを未読にしました。"
-      ],
-      "Message moved to ${ folderName } and sender added to your not spam list.": [
-        "メールを${ folderName }に移動し、送信元のアドレスは迷惑メールから除外しました。"
-      ],
-      "Message moved to ${ folderName }.": [
-        "メッセージが ${ folderName } に移動されました。"
       ],
       "Message moved to spam and sender added to your spam list.": [
         "メールを迷惑メールに移動しました。送信元のアドレスは迷惑メールリストに登録済みです。"

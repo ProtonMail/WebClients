@@ -489,6 +489,9 @@
       "More options": [
         "Περισσότερες επιλογές"
       ],
+      "More options for accounts": [
+        "Περισσότερες επιλογές για λογαριασμούς"
+      ],
       "Need help?": [
         "Χρειάζεστε βοήθεια;"
       ],
@@ -2597,6 +2600,11 @@
         "Στάλθηκε μήνυμα επαλήθευσης στο ${ address }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Αξιόπιστη επαφή"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Χωρίς όνομα"
@@ -4202,6 +4210,9 @@
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Εισάγετε τη διεύθυνση email ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
@@ -4617,6 +4628,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Οργανώστε τους αποκλειστικούς διακομιστές σας σε Πύλες και αποφασίστε ποια μέλη μπορούν να έχουν πρόσβαση σε αυτούς."
+      ],
+      "Other accounts": [
+        "Άλλοι λογαριασμοί"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Υπάρχουν και άλλοι διαχειριστές στον οργανισμό σας, είστε υπεύθυνοι για την ενημέρωση τους σχετικά με τον νέο κωδικό πρόσβασης."
@@ -6242,6 +6256,9 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
       ],
       "ZIP code": [
         "Τ.Κ."
@@ -9686,6 +9703,9 @@
       ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
+      ],
+      "Account Temporarily Locked": [
+        "Λογαριασμός Προσωρινά Κλειδωμένος"
       ],
       "Action": [
         "Ενέργεια"

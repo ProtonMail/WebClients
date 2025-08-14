@@ -739,6 +739,9 @@
       "Increase": [
         "გაგრძელება"
       ],
+      "Insert image": [
+        "გამოსახულების ჩასმა"
+      ],
       "Invite": [
         "მოწვევა"
       ],
@@ -849,6 +852,9 @@
       ],
       "OK": [
         "დიახ"
+      ],
+      "Open": [
+        "გახსნა"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
@@ -1093,8 +1099,8 @@
       "Send reminder": [
         "შეხსენების გაგზავნა"
       ],
-      "Set as default mail application": [
-        "ნაგულიხმევ ელფოსტის აპლიკაციად დაყენება"
+      "Set as default": [
+        "ნაგულისხმევად დაყენება"
       ],
       "Set catch-all": [
         "დომენის ყველა ელფოსტის მიღება"
@@ -1736,6 +1742,9 @@
       ],
       "Annually": [
         "წელიწადში ერთხელ"
+      ],
+      "Lifetime": [
+        "სამუდამოდ"
       ],
       "Monthly": [
         "თვეში ერთხელ"
@@ -3259,12 +3268,6 @@
       ]
     },
     "Description": {
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია არაა."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაციაა."
-      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "დაამატეთ საქაღალდეები და ფაილები ${ DRIVE_APP_NAME }-ს და მოიწვიეთ გუნდის წევრები მის სანახავად, ან ჩასასწორებლად."
       ],
@@ -4090,6 +4093,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "გაფრთხილება"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "სანდო კონტაქტი"
       ]
     },
     "Empty group name": {
@@ -7348,6 +7356,9 @@
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "მე ვიყენებდი @ProtonMail-ს და ვიფიქრე, თქვენც მოგეწონებოდათ. უფასო, დაცული ელფოსტის სერვისი, რომელიც იცავს თქვენს პირად სივრცეს. ერთთვიანი, პრემიუმ-კლასის, უფასო ანგარიშის მისაღები ბმული: ${ referrerLink }"
       ],
+      "JCB logo": [
+        "JCB ლოგო"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
       ],
@@ -7619,6 +7630,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "დაალაგეთ თქვენი გამოყოფილი სერვერები რაუტერებში და გადაწყვიტეთ, რომელ წევრს აქვს მასთან წვდომა."
+      ],
+      "Other accounts": [
+        "სხვა ანგარიშები"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "თქვენს ორგანიზაციას სხვა ადმინისტრატორებიც გყავს. თქვენ მათთვის ახალი პაროლის გადაცემაზე პასუხისმგებელი ბრძანდებით."
@@ -8587,9 +8601,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "თუ გამორთულია, თქვენს მოწყობილობებზე გამოსახულებები თქვენი უფლების გარეშე არ ჩაიტვირთება."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "როცა ჩართულია, შეამოწმებს, არის თუ არა ${ MAIL_APP_NAME } თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია და გაგაფრთხილებთ, თუ არაა."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "${ appName }-სთვის თქვენს იდენტიფიკატორის მომწოდებელში SAML-ის ჩართვისას, შეიძლება გკითხონ, გნებავთ თუ არა უკუკავშირის (ACS) ბმული და გამომცემლის ID გამოიყენოთ. უბრალოდ დააკოპირეთ ქვემოთ მოყვანილი მონაცემები და ჩასვით ისინი იდენტიფიკატორის მომწოდებლის შესაბამის ველებში."
@@ -11380,6 +11391,9 @@
       "Email client support (via IMAP/SMTP)": [
         "ელფოსტის კლიენტის მხარდაჭერა (IMAP/SMTP-ით)"
       ],
+      "Email groups": [
+        "ელფოსტის ჯგუფები"
+      ],
       "Enables HIPAA compliance": [
         "ჩართავს HIPAA-სთან თავსებადობას"
       ],
@@ -11699,6 +11713,9 @@
       ],
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
+      ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
       ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
@@ -13057,6 +13074,9 @@
       "Processing payment": [
         "გადახდის დამუშავება"
       ],
+      "terms & conditions": [
+        "პირობები და წესები"
+      ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "ტრანზაქცია წარამატებითაა აღმოჩენილი. კრედიტები დაემატება თქვენს ანგარიშს, როცა ტრანზაქცია ბოლომდე დადასტურდება."
       ],
@@ -13085,6 +13105,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Permission": {
@@ -13577,6 +13602,10 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ n } day": [
+        "${ n } დღე",
+        "${ n } დღე"
+      ],
       "${ remainingCount } more": [
         "კიდევ ${ remainingCount }"
       ],
@@ -16152,9 +16181,6 @@
       "Change second password": [
         "მეორე პაროლის შეცვლა"
       ],
-      "Check your default mail application": [
-        "შეამოწმეთ თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია"
-      ],
       "Choose an account": [
         "აირჩიეთ ანგარიში"
       ],
@@ -16220,6 +16246,9 @@
       ],
       "Couldn’t create accounts": [
         "ანგარიშების შექმნის შეცდომა"
+      ],
+      "Coupon": [
+        "კუპონი"
       ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } მომხმარებლის შექმნა",

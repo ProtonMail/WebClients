@@ -11,6 +11,9 @@
       "Cancel": [
         "Batal"
       ],
+      "Change password": [
+        "Ubah kata sandi"
+      ],
       "Close": [
         "Tutup"
       ],
@@ -70,6 +73,11 @@
       ],
       "View invoice": [
         "Lihat faktur"
+      ]
+    },
+    "BF2024: Deal details": {
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
       ]
     },
     "Country name": {
@@ -1004,6 +1012,9 @@
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Masukkan kata sandi Anda (selaku kontak terpercaya)"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
@@ -1086,6 +1097,9 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Kata sandi Anda (kontak terpercaya)"
       ]
     },
     "Link": {
@@ -1165,6 +1179,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Dukungan klien email (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grup email"
+      ],
       "Encrypted contact details": [
         "Rincian kontak yang terenkripsi"
       ],
@@ -1237,6 +1254,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Buat hingga ${ n } alamat/alias email yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Email seluruh anggota grup dengan satu alamat email"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"

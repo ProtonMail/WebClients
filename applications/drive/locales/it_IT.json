@@ -134,6 +134,9 @@
       "Change": [
         "Modifica"
       ],
+      "Change password": [
+        "Cambia la password"
+      ],
       "Chat with us": [
         "Chatta con noi"
       ],
@@ -310,6 +313,9 @@
       "Details": [
         "Dettagli"
       ],
+      "Diagnostics": [
+        "Diagnostica"
+      ],
       "Discard": [
         "Scarta"
       ],
@@ -346,8 +352,14 @@
       "Download apps": [
         "Scarica le app"
       ],
+      "Download info": [
+        "Scaricamento in corso"
+      ],
       "Download logs": [
         "Scarica i log"
+      ],
+      "Download results": [
+        "Scaricamento risultati"
       ],
       "Drive Locked": [
         "Spazio Bloccato"
@@ -750,6 +762,9 @@
       ],
       "Retry": [
         "Riprova"
+      ],
+      "Run diagnostics": [
+        "Esegui diagnostica"
       ],
       "Save": [
         "Salva"
@@ -2343,6 +2358,11 @@
         "Aggiornamento per un evento che inizia il ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contatti sicuri"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "«${ sanitizedName }» esiste già."
@@ -2420,6 +2440,9 @@
       ],
       "Device name does not match": [
         "Il nome del dispositivo non corrisponde"
+      ],
+      "Diagnostics failed": [
+        "Diagnostica fallita"
       ],
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
@@ -3851,6 +3874,9 @@
         "Elimina spazio bloccato",
         "Elimina spazi bloccati"
       ],
+      "Details": [
+        "Dettagli"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digitale verificata. Questo file è stato caricato in modo sicuro da ${ emailAddress }."
       ],
@@ -3956,6 +3982,9 @@
       "Enter your own password (as organization admin).": [
         "Inserisci la tua password (come amministratore dell'organizzazione)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Inserisci la tua password (come contatto attendibile)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo stimato rimanente: ${ estimatedMinutes } minuto",
         "Tempo stimato rimanente: ${ estimatedMinutes } minuti"
@@ -4031,6 +4060,9 @@
       ],
       "from the version history?": [
         "della cronologia delle versioni?"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Ottieni log e altre informazioni per supporto tecnico e risoluzione dei problemi"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Ottieni l'app per eseguire il backup delle foto dal tuo telefono o caricale qui."
@@ -4111,6 +4143,9 @@
       "Initializing": [
         "Avvio in corso"
       ],
+      "Integrity issues found": [
+        "Problemi di integrità rilevati"
+      ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
       ],
@@ -4122,6 +4157,9 @@
       ],
       "Invite link copied": [
         "Link di invito copiato"
+      ],
+      "Issues found": [
+        "Problemi trovati"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Sembra che tu abbia recentemente provato a caricare ${ uploadName }. Se il caricamento non è riuscito, ${ replaceFile }. Se il caricamento è ancora in corso, sostituirlo annullerà il caricamento in corso."
@@ -4267,6 +4305,9 @@
       ],
       "No group found": [
         "Nessun gruppo trovato"
+      ],
+      "No issue found": [
+        "Nessun problema rilevato"
       ],
       "No payment is required at this time.": [
         "Al momento non è richiesto alcun pagamento."
@@ -4472,6 +4513,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "Ripristino delle foto in corso. Mantieni aperta la scheda."
+      ],
+      "Running diagnostics...": [
+        "Diagnostica in corso..."
       ],
       "Saving...": [
         "Salvataggio..."
@@ -4710,6 +4754,9 @@
       ],
       "This will upload a new version of the folder": [
         "Si importerà una nuova versione della cartella."
+      ],
+      "Time": [
+        "Ora"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Per completare il pagamento, per favore invia ${ btcAmountBold } all'indirizzo sottostante."
@@ -5698,6 +5745,9 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "La tua password (contatto attendibile)"
       ]
     },
     "Label for contact group color": {
@@ -7310,6 +7360,18 @@
       ],
       "No parent folder": [
         "Nessuna cartella principale"
+      ],
+      "Only current location": [
+        "Solo posizione attuale"
+      ],
+      "Only current location: ${ name }": [
+        "Solo posizione attuale: ${ name }"
+      ],
+      "Verify content": [
+        "Verifica contenuto"
+      ],
+      "Verify thumbnails": [
+        "Verifica delle miniature"
       ]
     },
     "Option group label": {
@@ -8460,8 +8522,14 @@
       "Desktop": [
         "Desktop"
       ],
+      "Device": [
+        "Dispositivo"
+      ],
       "Devices": [
         "Dispositivi"
+      ],
+      "Diagnostics": [
+        "Diagnostica"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Firma digitale parzialmente verificata. Questo file è stato creato utilizzando un link di condivisione accessibile pubblicamente da un utente senza un account ${ BRAND_NAME }, quindi la sua identità non può essere verificata."
@@ -8636,11 +8704,20 @@
       "Last uploaded by": [
         "Ultimo caricamento effettuato da"
       ],
+      "Level": [
+        "Livello"
+      ],
       "Link confirmation": [
         "Conferma il link"
       ],
       "Location": [
         "Posizione"
+      ],
+      "Logger": [
+        "Sistema di registrazione"
+      ],
+      "Logs": [
+        "Log"
       ],
       "Manage secure link": [
         "Gestisci link sicuri"
@@ -8653,6 +8730,9 @@
       ],
       "Merging contacts": [
         "Unendo i contatti"
+      ],
+      "Message": [
+        "Messaggio"
       ],
       "MIME type": [
         "Tipo MIME"
@@ -8924,6 +9004,9 @@
       ],
       "This link is password protected": [
         "Questo link è protetto con password"
+      ],
+      "Time": [
+        "Ora"
       ],
       "Total size": [
         "Dimensione totale"

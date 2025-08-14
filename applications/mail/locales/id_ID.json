@@ -72,11 +72,17 @@
       "Add to group": [
         "Tambah ke grup"
       ],
+      "All Unstarred": [
+        "Semua yang Tidak Dibintangi"
+      ],
       "Apply": [
         "Terapkan"
       ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
+      ],
+      "Attachment": [
+        "Lampiran"
       ],
       "Attention required": [
         "Diperlukan perhatian"
@@ -95,6 +101,9 @@
       ],
       "Cancel subscription": [
         "Batalkan langganan"
+      ],
+      "Change password": [
+        "Ubah kata sandi"
       ],
       "Chat with us": [
         "Mengobrol dengan kami"
@@ -237,17 +246,26 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
       ],
+      "Download all attachments": [
+        "Unduh seluruh lampiran"
+      ],
       "Download logs": [
         "Unduh log"
       ],
       "Download now": [
         "Unduh sekarang"
       ],
+      "Downloading": [
+        "Mengunduh"
+      ],
       "Edit": [
         "Sunting"
       ],
       "Edit email address": [
         "Sunting alamat email"
+      ],
+      "Edit folder": [
+        "Sunting folder"
       ],
       "Edit label": [
         "Sunting label"
@@ -267,17 +285,29 @@
       "Emoji": [
         "Emoji"
       ],
+      "Enable": [
+        "Aktifkan"
+      ],
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
       ],
+      "exclude message content": [
+        "kecualikan isi pesan"
+      ],
       "Expand": [
         "Lebarkan"
+      ],
+      "Expand URL": [
+        "Perpanjang URL"
       ],
       "Export": [
         "Ekspor"
       ],
       "Export contact group": [
         "Ekspor grup kontak"
+      ],
+      "Fewer search options": [
+        "Tutup opsi tambahan"
       ],
       "Fit to window": [
         "Sesuaikan dengan jendela"
@@ -345,8 +375,20 @@
       "Increase": [
         "Tambah"
       ],
+      "Insert contacts": [
+        "Sisipkan kontak"
+      ],
+      "Insert image": [
+        "Sisipkan gambar"
+      ],
+      "Later this week": [
+        "Waktu yang akan datang pada pekan ini"
+      ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "Least read": [
+        "Paling jarang dibaca"
       ],
       "Let's talk": [
         "Mari berbincang"
@@ -369,6 +411,9 @@
       "Manage labels": [
         "Kelola label"
       ],
+      "Manage Snooze": [
+        "Kelola Penundaan"
+      ],
       "Manage users/addresses": [
         "Kelola pengguna/alamat"
       ],
@@ -380,6 +425,9 @@
       ],
       "Mark for deletion": [
         "Tandai untuk dihapus"
+      ],
+      "Mark legitimate": [
+        "Tandai sah"
       ],
       "Maybe": [
         "Mungkin"
@@ -393,11 +441,20 @@
       "Merge contacts": [
         "Gabungkan kontak"
       ],
+      "Modify": [
+        "Ubah"
+      ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
       ],
+      "More search options": [
+        "Opsi lainnya"
+      ],
       "Move": [
         "Pindahkan"
+      ],
+      "Move all to archive": [
+        "Pindahkan semua ke arsip"
       ],
       "Move to folder": [
         "Pindah ke folder"
@@ -441,6 +498,9 @@
       "Open navigation": [
         "Buka navigasi"
       ],
+      "Pause": [
+        "Jeda"
+      ],
       "Pay": [
         "Bayar"
       ],
@@ -455,6 +515,9 @@
       ],
       "Previous": [
         "Sebelumnya"
+      ],
+      "Previous message": [
+        "Pesan sebelumnya"
       ],
       "Previous month": [
         "Bulan sebelumnya"
@@ -473,6 +536,9 @@
       ],
       "Refer a friend": [
         "Rujuk teman"
+      ],
+      "Refine it": [
+        "Persempit kata kunci pencarian"
       ],
       "Refresh the page": [
         "Muat ulang halaman"
@@ -507,6 +573,9 @@
       "Resend code": [
         "Kirim ulang kode"
       ],
+      "Reset search form": [
+        "Atur ulang pencarian"
+      ],
       "Reset to default": [
         "Atur ulang ke pengaturan bawaan"
       ],
@@ -516,11 +585,20 @@
       "Save": [
         "Simpan"
       ],
+      "Saving${ ellipsis }": [
+        "Menyimpan${ ellipsis }"
+      ],
       "Search": [
         "Cari"
       ],
       "Search countries": [
         "Cari negara"
+      ],
+      "Search in ${ option.text }": [
+        "Cari di ${ option.text }"
+      ],
+      "Search message content": [
+        "Pencarian konten pesan"
       ],
       "See plan features": [
         "Lihat fitur paket"
@@ -528,11 +606,20 @@
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
+      "Select All": [
+        "Pilih Semua"
+      ],
       "Select all": [
         "Pilih semua"
       ],
+      "Select date and time": [
+        "Pilih tanggal dan waktu"
+      ],
       "Send": [
         "Kirim"
+      ],
+      "Set encryption": [
+        "Atur enkripsi"
       ],
       "Set recovery methods": [
         "Atur metode pemulihan"
@@ -567,11 +654,17 @@
       "Show advanced PGP settings": [
         "Tampilkan pengaturan PGP lanjutan"
       ],
+      "Show fewer search options": [
+        "Tampilkan lebih sedikit opsi pencarian"
+      ],
       "Show less": [
         "Tampilkan lebih sedikit"
       ],
       "Show more": [
         "Tampilkan lebih banyak"
+      ],
+      "Show more search options": [
+        "Opsi lainnya"
       ],
       "Show preview": [
         "Tampilkan pratinjau"
@@ -588,6 +681,9 @@
       "Skip verification": [
         "Lewati verifikasi"
       ],
+      "Snooze": [
+        "Tunda"
+      ],
       "Start import": [
         "Mulai impor"
       ],
@@ -597,14 +693,26 @@
       "Stay": [
         "Tinggal"
       ],
+      "Stop marking as read": [
+        "Berhenti menandai sebagai telah dibaca"
+      ],
       "Submit": [
         "Kirim"
       ],
       "Take a tour": [
         "Ikuti tur kami"
       ],
+      "This weekend": [
+        "Akhir pekan ini"
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "Untuk mencari isi email Anda dengan aman, kami perlu untuk mengunduh salinan pesan Anda ke browser Anda. Proses ini dapat memakan waktu sejenak untuk unduhan kali pertama."
+      ],
       "Toggle Calendar app": [
         "Tampilkan/sembunyikan aplikasi Calendar"
+      ],
+      "Tomorrow": [
+        "Besok"
       ],
       "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
         "Perlindungan pelacak mencegah sebagian gambar untuk termuat. Mohon untuk hanya muat gambar ini apabila Anda memercayai sumbernya."
@@ -632,6 +740,9 @@
       ],
       "Unmark for deletion": [
         "Batal tandai untuk menghapus"
+      ],
+      "Unsnooze": [
+        "Batal tunda"
       ],
       "Unsubscribe": [
         "Berhenti berlangganan"
@@ -699,6 +810,9 @@
       "View invoice": [
         "Lihat faktur"
       ],
+      "View message details": [
+        "Lihat rincian pesan"
+      ],
       "What do I get?": [
         "Apa yang akan saya dapatkan?"
       ],
@@ -739,6 +853,11 @@
       ],
       "You don't have any groups.": [
         "Anda tidak memiliki grup."
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Pesan kedaluwarsa"
       ]
     },
     "Addon": {
@@ -791,6 +910,11 @@
         "Aplikasi ${ BRAND_NAME }"
       ]
     },
+    "Assistant option": {
+      "Securely run on device": [
+        "Jalankan secara aman pada perangkat lokal"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Berkas ICS kosong"
@@ -809,6 +933,11 @@
       ],
       "Unsupported event": [
         "Acara tidak didukung"
+      ]
+    },
+    "BF2024: Deal details": {
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
       ]
     },
     "Billing cycle option": {
@@ -928,9 +1057,33 @@
         "Ikuti tur kami"
       ]
     },
+    "Calendar attachment tooltip": {
+      "Has a calendar event": [
+        "Memiliki acara pada kalender"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Hadiri?"
+      ]
+    },
+    "Calendar invite info": {
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } meminta pembaruan terkini untuk acara yang tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan yang terdapat pada kalender Anda."
+      ],
+      "${ participantName } declined an invitation and proposed a new time for this event.": [
+        "${ participantName } telah menolak undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk acara ini."
+      ],
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "${ participantName } menolak undangan untuk salah satu keberlangsungan acara."
+      ],
+      "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } telah menolak undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk salah satu acara dalam rangkaian acara ini."
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "Batal"
       ]
     },
     "Checkout row": {
@@ -1009,6 +1162,22 @@
       ],
       "strawberry": [
         "stroberi"
+      ]
+    },
+    "Commander action": {
+      "Create a new folder": [
+        "Buat folder baru"
+      ],
+      "Search": [
+        "Cari"
+      ]
+    },
+    "Composer email icon": {
+      "PGP-encrypted to verified recipient": [
+        "Terenkripsi PGP untuk penerima terverifikasi"
+      ],
+      "PGP-signed": [
+        "Ditandatangani PGP"
       ]
     },
     "Confirm modal title": {
@@ -1986,6 +2155,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gunakan panduan ini agar organisasi Anda dapat menikmati ekosistem enkripsi dan privasi ${ BRAND_NAME } yang terdepan di industri dengan segera."
       ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "Dengan waktu tunda khusus, Anda dapat menyembunyikan email tertentu dan mengatur email ini agar muncul kembali di waktu yang lebih sesuai."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
       ],
@@ -2021,6 +2193,16 @@
         "Saya hanya bermaksud menurunkan jenis akun saya untuk sementara waktu"
       ]
     },
+    "Email reminder decryption error": {
+      "Event details cannot be decrypted. ${ whyNotLink }": [
+        "Rincian acara tidak dapat didekripsi. ${ whyNotLink }"
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was updated. This reminder is out-of-date.": [
+        "Waktu acara telah diperbarui. Pengingat ini tidak lagi sesuai dengan jadwal."
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Pembatalan acara pada ${ formattedStart }"
@@ -2039,6 +2221,16 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Pembaruan untuk acara yang dimulai pada ${ formattedStart }"
+      ]
+    },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Terenkripsi secara zero-access. Penerima pesan telah menonaktifkan enkripsi end-to-end pada akun mereka."
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Kontak terpercaya"
       ]
     },
     "Error": {
@@ -2071,6 +2263,9 @@
       ],
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Pilih tanggal yang berada dalam rentang ${ n } hari ke depan."
       ],
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
@@ -2116,6 +2311,12 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
+      ],
+      "Error while saving draft. Please try again.": [
+        "Terjadi kesalahan pada saat menyimpan draf. Silakan coba lagi."
+      ],
+      "Failed to encrypt attachment. Please try again.": [
+        "Lampiran gagal dienkripsi. Silakan coba lagi."
       ],
       "Failed to load the STL preview": [
         "Pratinjau STL gagal dimuat"
@@ -2240,6 +2441,12 @@
       "Process aborted": [
         "Proses dibatalkan"
       ],
+      "re-activate the previous key": [
+        "mengaktifkan kembali kunci terdahulu"
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Penerima duplikat dihapus: ${ recipents }"
+      ],
       "Request timed out": [
         "Waktu permintaan habis"
       ],
@@ -2285,6 +2492,9 @@
       "The folder name is too long. Please choose a different name.": [
         "Nama folder terlalu panjang. Mohon pilih nama lain."
       ],
+      "The key properties for ${ emailAddress } could not be extracted": [
+        "Properti kunci untuk ${ emailAddress } tidak dapat diekstrak"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "Nama label tidak valid. Silakan pilih nama lain."
       ],
@@ -2297,8 +2507,14 @@
       "The sending key is not valid": [
         "Kunci pengiriman tidak valid"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Sistem sedang sibuk. Silakan coba lagi dalam beberapa menit."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
+      ],
+      "There has been an issue with content search. Default search has been used instead.": [
+        "Terjadi kesalahan dengan pencarian konten. Pencarian standar telah digunakan sebagai gantinya."
       ],
       "There was an error when exporting the contacts vCards": [
         "Terdapat kesalahan pada saat mengekspor kontak vCard"
@@ -2350,6 +2566,17 @@
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
+      ],
+      "Your search matched too many results. Please limit your search and try again.": [
+        "Pencarian Anda membuahkan terlalu banyak hasil. Silakan persempit kriteria pencarian Anda dan coba lagi."
+      ]
+    },
+    "Error display when performing invalid move on message": {
+      "Drafts cannot be moved to Spam": [
+        "Draf tidak dapat dipindahkan ke Spam"
+      ],
+      "This action cannot be performed": [
+        "Tindakan ini tidak dapat dilangsungkan"
       ]
     },
     "Error importing calendar": {
@@ -2630,6 +2857,11 @@
         "${ Label.Name } berhasil diperbarui"
       ]
     },
+    "Filter option": {
+      "All": [
+        "Semua"
+      ]
+    },
     "filter: Label": {
       "the email was sent ${ label }": [
         "email terkirim ${ label }"
@@ -2656,9 +2888,32 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Free trial desktop": {
+      "Get unlimited access with any ${ MAIL_APP_NAME } plan.": [
+        "Dapatkan akses tanpa batas dengan paket langganan ${ MAIL_APP_NAME } mana pun."
+      ]
+    },
     "Get started checklist instructions": {
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Selamat karena telah menjadikan email Anda lebih aman, nyaman, dan relevan! Kami telah meningkatkan ruang penyimpanan gratis Anda ke 1 GB."
+      ],
+      "Discover privacy features": [
+        "Telusuri berbagai fitur privasi kami"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Enkripsi yang teramat kuat, yang memastikan email Anda hanya dapat dibaca oleh para penerima dan diri Anda sendiri."
+      ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Terus gunakan ${ MAIL_APP_NAME } untuk menelusuri lebih banyak cara bagaimana ${ BRAND_NAME } melindungi privasi Anda dan menyederhanakan pengiriman email."
+      ],
       "Protection from trackers": [
         "Perlindungan pelacak"
+      ],
+      "This feature is currently unavailable": [
+        "Fitur saat ini belum tersedia"
+      ],
+      "You've unlocked 1 GB": [
+        "Anda telah memperoleh 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -2678,6 +2933,15 @@
       ],
       "Apps": [
         "Aplikasi"
+      ],
+      "Custom folders": [
+        "Folder khusus"
+      ],
+      "Default folders": [
+        "Folder bawaan"
+      ],
+      "Labels": [
+        "Label"
       ],
       "Network": [
         "Jaringan"
@@ -2993,11 +3257,35 @@
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Anggota"
       ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } anggota)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } mengandung lebih dari satu alamat email."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontak ditemukan"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } dari ${ totalProgress }"
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } percakapan akan dipindahkan"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } percakapan tidak akan lagi dilabeli sebagai:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } pesan akan dilabeli sebagai:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } pesan akan ditandai sebagai telah dibaca."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } pesan akan ditandai sebagai belum dibaca."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } pesan akan dipindahkan"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: gambar ukuran penuh"
@@ -3007,6 +3295,12 @@
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } pesan dalam percakapan"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } kecocokan ditemukan"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
@@ -3031,6 +3325,9 @@
       ],
       "${ storage } storage": [
         "Kuota penyimpanan ${ storage }"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } pelacak diblokir"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
@@ -3058,6 +3355,9 @@
       ],
       "Account successfully updated": [
         "Akun berhasil diperbarui"
+      ],
+      "Activation in progress": [
+        "Aktivasi sedang berlangsung"
       ],
       "Address copied to clipboard": [
         "Alamat disalin ke papan klip"
@@ -3098,11 +3398,20 @@
       "and": [
         "dan"
       ],
+      "Another tip will be displayed next time you open Mail": [
+        "Tips lainnya akan ditampilkan pada saat Anda kembali membuka Mail"
+      ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Seluruh pesan yang terjadwal atau ditunda akan dibatalkan."
+      ],
       "Are you sure you want to discard your changes?": [
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Setidaknya ${ BETTER_PASSWORD_LENGTH } karakter"
+      ],
+      "Attach public key": [
+        "Lampirkan kunci publik"
       ],
       "Attention required": [
         "Diperlukan perhatian"
@@ -3118,6 +3427,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
+      ],
+      "Bulk delete": [
+        "Penghapusan massal"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
@@ -3137,11 +3449,17 @@
       "Clear data": [
         "Hapus data"
       ],
+      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
+        "Membersihkan data browser akan ikut menonaktikan pencarian konten pesan pada perangkat ini. Seluruh pesan akan perlu untuk diunduh ulang demi melangsungkan pencarian konten pesan."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
       ],
       "Close this screen to exit.": [
         "Tutup layar ini untuk keluar."
+      ],
+      "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
+        "Tentukan kapan waktu yang paling tepat bagi para penerima untuk menerima email Anda, dan jadwalkan pengiriman Anda sesuai dengan waktu ini."
       ],
       "Country code": [
         "Kode negara"
@@ -3203,6 +3521,9 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "Do you want to download this attachment anyway?": [
+        "Apakah Anda tetap ingin mengunduh lampiran ini?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Tidak melihat layar apapun? Jangan lupa untuk menonaktifkan pemblokir pop-up Anda."
       ],
@@ -3214,6 +3535,9 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
+      ],
+      "Downloading paused": [
+        "Pengunduhan dijeda"
       ],
       "Duplicate key updated": [
         "Kunci duplikat diperbarui"
@@ -3229,6 +3553,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Hosting email hanya tersedia untuk domain yang telah Anda miliki. Pendaftaran domain melalui ${ BRAND_NAME } saat ini tidak tersedia. Anda dapat meng-host email untuk domain yang terdaftar pada pendaftar domain mana pun."
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "Email yang masuk akan diteruskan menuju kotak surat Anda; alamat email asli Anda akan tetap tersembunyi."
       ],
       "Email tracker protection is disabled": [
         "Perlindungan pelacak email dinonakifkan"
@@ -3260,6 +3587,9 @@
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Masukkan kata sandi Anda (selaku kontak terpercaya)"
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Perkiraan waktu yang tersisa: ${ estimatedMinutes } menit"
       ],
@@ -3272,14 +3602,26 @@
       "Expired": [
         "Kedaluwarsa"
       ],
+      "Expires in ${ minutesDiff } minute": [
+        "Kedaluwarsa dalam ${ minutesDiff } menit"
+      ],
       "finance": [
         "keuangan"
+      ],
+      "For messages newer than ${ oldestDate }": [
+        "Untuk pesan yang lebih baru dari ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Untuk lebih banyak hasil pencarian, cobalah untuk mencari kata kunci ini di dalam konten email Anda."
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Coba gratis selama ${ ASSISTANT_TRIAL_TIME_DAYS } hari"
       ],
       "here": [
         "di sini"
+      ],
+      "Hide original message": [
+        "Sembunyikan pesan asli"
       ],
       "High Priority": [
         "Prioritas Tinggi"
@@ -3380,6 +3722,9 @@
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "Jumlah lampiran maksimum (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) terlampaui."
+      ],
       "Medium Priority": [
         "Prioritas Menengah"
       ],
@@ -3388,6 +3733,9 @@
       ],
       "Merged": [
         "Tergabung"
+      ],
+      "Message download status:": [
+        "Status unduhan pesan:"
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Pesan ke semua alamat email Anda akan menuju ke kotak masuk Anda."
@@ -3410,8 +3758,14 @@
       "No email address": [
         "Tidak ada alamat email"
       ],
+      "No folder found": [
+        "Tidak ada folder yang ditemukan"
+      ],
       "No group found": [
         "Tidak ada grup yang ditemukan"
+      ],
+      "No more results found": [
+        "Tidak ada hasil lainnya yang ditemukan"
       ],
       "No payment is required at this time.": [
         "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
@@ -3442,6 +3796,9 @@
       ],
       "Organization size": [
         "Ukuran organisasi"
+      ],
+      "Our system flagged this message as a phishing attempt. Please check to ensure that it is legitimate.": [
+        "Sistem kami menandai pesan ini sebagai bentuk upaya phishing. Mohon periksa keabsahan pesan ini."
       ],
       "password": [
         "kata sandi"
@@ -3515,6 +3872,21 @@
       "Restore": [
         "Pulihkan"
       ],
+      "Sat, ${ formatTime }": [
+        "Sab, ${ formatTime }"
+      ],
+      "Saved at ${ dateString }": [
+        "Disimpan pada ${ dateString }"
+      ],
+      "Scribe panel": [
+        "Panel Scribe"
+      ],
+      "Search option that lets you securely search for keywords in the body of email messages.": [
+        "Opsi pencarian yang memungkinkan Anda untuk mencari berdasarkan kata kunci yang terkandung di dalam badan email secara aman."
+      ],
+      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
+        "Pencarian memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dari sesi pencarian ini."
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
       ],
@@ -3523,6 +3895,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
+      ],
+      "Selection pane": [
+        "Panel pilihan"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -3545,6 +3920,21 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Ditunda hingga ${ dateString } pada pukul ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Ditunda hingga hari ini, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Ditunda hingga besok, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "Penundaan percakapan ini akan dibatalkan."
+      ],
+      "Sorry, this message does not exist or has already expired.": [
+        "Maaf, pesan ini tidak ada atau telah kedaluwarsa."
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Mulai membagikan dengan kontak Anda dan gunakan untuk layanan daring."
       ],
@@ -3554,11 +3944,17 @@
       "Storage allocated to this user": [
         "Ruang penyimpanan yang dialokasikan kepada pengguna ini"
       ],
+      "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
+        "Kapabilitas penyimpanan tidak didukung pada browser ini. Kami membutuhkan dukungan ini untuk mengaktifkan pencarian konten pesan."
+      ],
       "Storage for users": [
         "Ruang penyimpanan untuk anggota"
       ],
       "Storage used by this user": [
         "Ruang penyimpanan yang digunakan oleh pengguna ini"
+      ],
+      "Subject:": [
+        "Subjek:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
@@ -3572,6 +3968,9 @@
       "Temporarily unavailable. Please check back later.": [
         "Tindakan ini untuk sementara tidak tersedia. Silakan periksa kembali di kemudian waktu."
       ],
+      "The data you have entered in the draft may not be saved if you leave the page.": [
+        "Data yang Anda masukkan ke draf dapat tidak tersimpan apabila Anda meninggalkan halaman ini."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Jumlah unduhan meliputi berapa kali berkas telah diunduh dan berapa kali berkas telah dipratinjau"
       ],
@@ -3581,6 +3980,12 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
       ],
+      "The local database is being prepared": [
+        "Database lokal sedang dipersiapkan"
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Verifikasi ${ contactNames } gagal: kontak tidak ditandatangani dengan benar.\nHal ini kemungkinan disebabkan oleh pengaturan ulang kata sandi.\nAnda harus terlebih dahulu menandatangani ulang atau menyunting rincian kontak untuk dapat mengirim pesan ke ${ contactAddresses }."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
       ],
@@ -3589,6 +3994,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Browser ini tidak mendukung pratinjau dokumen PDF. Silakan unduh berkas yang bersangkutan."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Percakapan ini akan ditandai sebagai spam. Apakah Anda juga ingin berhenti menerima email dari alamat ini?"
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Nama ini adalah nama atau julukan organisasi yang akan dilihat oleh para pengguna Anda. Anda dapat mengubah nama ini kapan saja."
@@ -3602,8 +4010,17 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
       ],
+      "This message will be automatically deleted on ${ value }": [
+        "Pesan ini akan dihapus secara otomatis pada ${ value }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Pesan ini akan ditandai sebagai spam. Apakah Anda juga ingin berhenti menerima email dari alamat ini?"
+      ],
+      "This was shown to you because your email subject line contains password reset keywords.": [
+        "Informasi ini ditampilkan kepada Anda karena baris subjek email Anda mengandung kata kunci untuk pengaturan ulang kata sandi."
+      ],
+      "This will remove the newsletter entry from this list. It will not unsubscribe you from the newsletter. It will reappear if you receive new messages.": [
+        "Tindakan ini akan menghapus entri buletin ini dari daftar ini. Hal ini tidak akan menghentikan langganan Anda dari buletin. Entri buletin ini akan kembali muncul apabila Anda menerima pesan baru."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Tindakan ini akan mengeluarkan seluruh akun milik Anda yang sedang terhubung masuk."
@@ -3626,6 +4043,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Untuk menggunakan Verifikasi Alamat, Anda harus terlebih dahulu memercayai satu atau lebih kunci publik yang tersedia, termasuk kunci yang ingin Anda gunakan untuk mengirim. Hal ini mencegah kunci enkripsi untuk dapat dipalsukan."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Besok, ${ formattedTime }"
+      ],
       "Total email addresses": [
         "Total alamat email"
       ],
@@ -3638,14 +4058,35 @@
       "Total VPN connections": [
         "Total koneksi VPN"
       ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Nonaktifkan pilihan ini untuk membatasi pencarian hanya berdasarkan tanggal, nama, alamat email, atau baris subjek. Untuk menonaktifkan pencarian konten pesan (dan menghapus pesan yang telah diunduh untuk mengaktifkan fitur ini), tuju menu Pengaturan."
+      ],
+      "Turn on to search the content of your messages": [
+        "Aktifkan untuk mencari konten pesan Anda"
+      ],
+      "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
+        "Kapabilitas penyimpanan tidak dapat diakses pada browser ini. Kami membutuhkan akses ini untuk mengaktifkan pencarian konten pesan."
+      ],
       "Unsaved changes": [
         "Perubahan yang belum disimpan"
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
       ],
+      "Updating message content search...": [
+        "Memperbarui pencarian konten pesan..."
+      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
+      ],
+      "Upgrade to ${ plan } to unlock": [
+        "Tingkatkan ke ${ plan } untuk membuka fitur"
+      ],
+      "Upgrade to send emails to contact groups easily.": [
+        "Tingkatkan akun Anda untuk mengirim email ke grup kontak secara mudah."
+      ],
+      "Upgrade to support privacy and get more features.": [
+        "Tingkatkan akun Anda untuk mendukung privasi dan memperoleh lebih banyak fitur."
       ],
       "Uppercase and lowercase letters": [
         "Huruf besar dan kecil"
@@ -3667,6 +4108,12 @@
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
+      ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Kami telah memblokir para pengiklan dan organisasi berikut agar mereka tidak dapat melacak kapan Anda membuka email ini, perangkat apa yang Anda gunakan, dan di mana Anda berada."
+      ],
+      "We cannot enable message content search in this browser.": [
+        "Kami tidak dapat mengaktifkan pencarian konten pesan pada browser ini."
       ],
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
@@ -3691,6 +4138,12 @@
       ],
       "Week": [
         "Pekan"
+      ],
+      "When do you want your message to self-destruct?": [
+        "Kapan Anda ingin pesan ini terhapus secara otomatis?"
+      ],
+      "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
+        "Pada saat Anda memberikan alamat email, gunakanlah alamat email samaran sekali pakai yang dihasilkan oleh hide-my-email alih-alih alamat email asli Anda."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
@@ -3725,6 +4178,12 @@
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
+      "You can either update your search query or ${ button }": [
+        "Anda dapat memperbarui kueri pencarian atau ${ button }"
+      ],
+      "You can either update your search query or clear it": [
+        "Anda dapat memperbarui atau menghapus kueri pencarian Anda"
+      ],
       "You can import one data type at a time.": [
         "Anda dapat mengimpor satu jenis data dalam satu waktu."
       ],
@@ -3749,11 +4208,20 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Anda memiliki langganan ${ planTitle } yang berada dalam masa uji coba. Tidak ada pembayaran yang diperlukan untuk saat ini. Langganan Anda akan diperbarui secara otomatis pada akhir masa uji coba."
       ],
+      "You have not given your email any subject. Do you want to send the message anyway?": [
+        "Anda belum menuliskan subjek apa pun pada email Anda. Apakah Anda ingin tetap mengirim pesan ini?"
+      ],
       "You may be redirected to your bank’s website.": [
         "Anda mungkin akan dialihkan ke situs web milik bank Anda."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Anda harus terlebih dahulu menonaktifkan atau menghapus seluruh pengguna, alamat, dan domain khusus tambahan yang terdapat pada ${ MAIL_APP_NAME } sebelum Anda dapat menurunkan jenis akun Anda."
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Anda memilih **${ count } percakapan** dari folder ini"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Anda memilih **${ count } pesan** dengan label ini"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
@@ -3835,6 +4303,9 @@
       ]
     },
     "Label": {
+      "${ boldActive } Move all messages to ${ boldFolderName }": [
+        "${ boldActive } Pindahkan seluruh pesan ke ${ boldFolderName }"
+      ],
       "${ BRAND_NAME } username": [
         "Nama pengguna ${ BRAND_NAME }"
       ],
@@ -3867,6 +4338,9 @@
       ],
       "Authenticator app": [
         "Aplikasi autentikator"
+      ],
+      "BCC": [
+        "BCC"
       ],
       "Billing cycle": [
         "Siklus tagihan"
@@ -3949,6 +4423,9 @@
       "Don't ask again": [
         "Jangan tanyakan lagi"
       ],
+      "Don't like the style": [
+        "Tidak suka gayanya"
+      ],
       "Email": [
         "Email"
       ],
@@ -4015,6 +4492,9 @@
       "Integrated 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
       ],
+      "Keyword": [
+        "Kata kunci"
+      ],
       "Label messages as": [
         "Labeli pesan sebagai"
       ],
@@ -4041,6 +4521,9 @@
       ],
       "Manage categories": [
         "Kelola kategori"
+      ],
+      "Move messages to": [
+        "Pindahkan pesan ke"
       ],
       "Move to Archive": [
         "Pindahkan ke Arsip"
@@ -4114,11 +4597,20 @@
       "Public keys": [
         "Kunci publik"
       ],
+      "Recipient": [
+        "Penerima"
+      ],
       "Region": [
         "Provinsi"
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
+      ],
+      "Search in": [
+        "Cari di"
+      ],
+      "Sender": [
+        "Pengirim"
       ],
       "Sign emails": [
         "Tanda tangani email"
@@ -4140,6 +4632,12 @@
       ],
       "System information": [
         "Informasi sistem"
+      ],
+      "Time": [
+        "Waktu"
+      ],
+      "To:": [
+        "Kepada:"
       ],
       "To: ${ toEmail }": [
         "Kepada: ${ toEmail }"
@@ -4176,6 +4674,9 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Kata sandi Anda (kontak terpercaya)"
       ]
     },
     "Label for contact group color": {
@@ -4235,6 +4736,9 @@
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
       ],
+      "Enable the email address linked to the disabled calendar to modify your answer.": [
+        "Aktifkan alamat email yang terhubung dengan kalender yang dinonaktifkan untuk mengubah jawaban Anda."
+      ],
       "Enforcing 2FA for organizations": [
         "Mewajibkan 2FA untuk organisasi"
       ],
@@ -4286,6 +4790,9 @@
       "Learn more": [
         "Lebih lanjut"
       ],
+      "Manage blocked email addresses": [
+        "Kelola alamat email yang diblokir"
+      ],
       "Pay invoice": [
         "Bayar faktur"
       ],
@@ -4297,6 +4804,12 @@
       ],
       "settings": [
         "pengaturan"
+      ],
+      "Snooze": [
+        "Tunda"
+      ],
+      "Snoozed": [
+        "Ditunda"
       ],
       "Terms": [
         "Ketentuan layanan"
@@ -4372,6 +4885,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Versi baru ${ appName } telah tersedia. ${ reloadButton }."
+      ]
+    },
+    "Message notification": {
+      "Sending undone": [
+        "Pengiriman diurungkan"
       ]
     },
     "MIME type": {
@@ -4697,6 +5215,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Dukungan klien email (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grup email"
+      ],
       "Enables HIPAA compliance": [
         "Memungkinkan kepatuhan HIPAA"
       ],
@@ -4980,6 +5501,9 @@
       "Easily share your calendars with your family, friends, or colleagues": [
         "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
       ],
+      "Email everyone in a group with a single email address": [
+        "Email seluruh anggota grup dengan satu alamat email"
+      ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"
       ],
@@ -5176,11 +5700,23 @@
       ]
     },
     "Onboarding modal": {
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } di Play Store"
+      ],
       "${ protectionFromTrackersTitle } means no more being followed across the internet.": [
         "${ protectionFromTrackersTitle } berarti bahwa Anda tidak akan lagi diikuti di jagat maya."
       ],
+      "Android": [
+        "Android"
+      ],
+      "Let's get started": [
+        "Mari kita mulai"
+      ],
       "Protection from trackers": [
         "Perlindungan pelacak"
+      ],
+      "Replay introduction": [
+        "Ulangi pengenalan"
       ]
     },
     "Onboarding Proton": {
@@ -5190,6 +5726,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Telusuri seluruh layanan ${ BRAND_NAME }"
       ],
+      "Make it your own": [
+        "Jadikan aplikasi ini milik Anda"
+      ],
       "Set up your organization": [
         "Siapkan organisasi Anda"
       ]
@@ -5197,11 +5736,17 @@
     "Online Accounts Name": {
       "Food and beverage": [
         "Makanan dan minuman"
+      ],
+      "Most popular": [
+        "Terpopuler"
       ]
     },
     "Option": {
       "Add to existing group": [
         "Tambah ke grup yang sudah ada"
+      ],
+      "All": [
+        "Semua"
       ],
       "Automatic (${ value })": [
         "Otomatis (${ value })"
@@ -5349,6 +5894,9 @@
       "Email address": [
         "Alamat email"
       ],
+      "Filter folders": [
+        "Filter folder"
+      ],
       "Filter groups": [
         "Filter grup"
       ],
@@ -5376,11 +5924,20 @@
       "Please describe the problem and include any error messages": [
         "Mohon uraikan masalah Anda dan sertakan pesan kesalahan yang Anda temui"
       ],
+      "Search date, name, email address, or subject line": [
+        "Cari tanggal, nama, alamat email, atau baris subjek"
+      ],
       "Search for group name": [
         "Cari nama grup"
       ],
       "Search for name or email": [
         "Cari nama atau email"
+      ],
+      "Search messages": [
+        "Cari pesan"
+      ],
+      "Search name, email or group": [
+        "Cari nama, email, atau grup"
       ],
       "Select": [
         "Pilih"
@@ -5390,6 +5947,9 @@
       ],
       "Start typing an email address": [
         "Mulai ketik alamat email"
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "Beritahukan asisten penulisan apa yang harus ditulis. Contoh: \"Undang Jane ke pesta saya\""
       ],
       "Your organization name": [
         "Nama organisasi Anda"
@@ -5462,9 +6022,39 @@
         "Kantor"
       ]
     },
+    "Received email icon": {
+      "PGP-encrypted message": [
+        "Pesan terenkripsi PGP"
+      ],
+      "PGP-signed message": [
+        "Pesan yang ditandatangani PGP"
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } hr"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Entri masuk tidak berhasil dirampungkan."
+      ]
+    },
+    "Search - no results": {
+      "No messages found": [
+        "Tidak ada pesan yang ditemukan"
+      ],
+      "No messages scheduled": [
+        "Tidak ada pesan yang terjadwal"
+      ],
+      "No results found": [
+        "Tidak ada hasil yang ditemukan"
+      ],
+      "No snoozed messages": [
+        "Tidak ada pesan yang ditunda"
+      ],
+      "No unread messages found": [
+        "Tidak ada pesan belum dibaca yang ditemukan"
       ]
     },
     "Section": {
@@ -5521,6 +6111,17 @@
         "Tidak ada hasil yang ditemukan"
       ]
     },
+    "Sent email icon": {
+      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
+        "Dienkripsi oleh ${ MAIL_APP_NAME } untuk penerima PGP yang terverifikasi"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Dikirim oleh ${ MAIL_APP_NAME } dengan enkripsi zero-access kepada penerima yang terverifikasi"
+      ],
+      "Stored with zero-access encryption": [
+        "Disimpan dengan enkripsi zero-access"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "Pengaturan ulang kata sandi dibatalkan"
@@ -5547,6 +6148,14 @@
     "Signup label": {
       "Display name": [
         "Nama tampilan"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Tunda Pesan"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Kapan Anda ingin pesan ini muncul kembali pada kotak masuk Anda?"
       ]
     },
     "specialoffer: Action": {
@@ -5598,11 +6207,17 @@
       ]
     },
     "Spotlight": {
+      "Email tracking protection": [
+        "Perlindungan pelacak email"
+      ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
+      ],
+      "This is now your default address. Open the dropdown to send from a different address. ": [
+        "Alamat ini kini merupakan alamat bawaan Anda. Buka menu dropdown untuk mengirim dari alamat yang berbeda. "
       ]
     },
     "sso": {
@@ -5614,6 +6229,11 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Masukkan alamat ${ MAIL_APP_NAME } Anda sebagai alamat yang baru, lalu simpan, konfirmasi, atau verifikasi perubahan ini"
       ]
     },
     "Storage": {
@@ -5809,6 +6429,11 @@
         "Alias email pendek @pm.me milik Anda"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Apakah Anda yakin?"
@@ -5836,8 +6461,32 @@
       ]
     },
     "Success": {
+      "${ count } conversation deleted": [
+        "${ count } percakapan dihapus"
+      ],
+      "${ count } message deleted": [
+        "${ count } pesan dihapus"
+      ],
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontak terlihat identik."
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } percakapan ditambahkan ke ${ labelName }."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } percakapan ditandai sebagai telah dibaca."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } percakapan ditandai sebagai belum dibaca."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } percakapan dihapus dari ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } percakapan ditunda"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } percakapan batal ditunda"
       ],
       "${ elementsCount } message marked as read.": [
         "${ elementsCount } pesan ditandai telah dibaca."
@@ -5881,11 +6530,20 @@
       "Last modified aliases stored in your oldest vault": [
         "Alias yang terakhir digunakan tersimpan dalam brankas terlawas Anda"
       ],
+      "Message content search enabled": [
+        "Pencarian konten pesan diaktifkan"
+      ],
+      "Move ${ selectionCount } message": [
+        "Pindahkan ${ selectionCount } pesan"
+      ],
       "Payment method added": [
         "Metode pembayaran ditambahkan"
       ],
       "Payment method updated": [
         "Metode pembayaran diperbarui"
+      ],
+      "Phishing reported": [
+        "Upaya phishing dilaporkan"
       ],
       "Phone number copied to clipboard": [
         "Nomor telepon disalin ke clipboard"
@@ -5913,6 +6571,11 @@
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
+      ]
+    },
+    "Success notification": {
+      "The filter has been enabled": [
+        "Filter telah diaktifkan"
       ]
     },
     "Suffix": {
@@ -6011,6 +6674,9 @@
       ]
     },
     "Tip Action": {
+      "Activate": [
+        "Aktifkan"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Unduh ${ VPN_APP_NAME }"
       ]
@@ -6021,6 +6687,9 @@
       ],
       "${ numMessages } message": [
         "${ numMessages } pesan"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } pesan yang belum dibaca"
       ],
       "Account recovery": [
         "Pemulihan akun"
@@ -6058,14 +6727,23 @@
       "Auto-deletion is active": [
         "Penghapusan otomatis aktif"
       ],
+      "Bad time for this email?": [
+        "Bukan waktu yang tepat untuk email ini?"
+      ],
       "Billing cycle": [
         "Siklus tagihan"
+      ],
+      "Block sender": [
+        "Blokir pengirim"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Batalkan langganan ${ MAIL_SHORT_APP_NAME }"
       ],
       "Cancel subscription?": [
         "Batalkan langganan?"
+      ],
+      "Carbon Copy": [
+        "Tembusan"
       ],
       "Card verification": [
         "Verifikasi kartu"
@@ -6109,8 +6787,17 @@
       "Continue with partial import?": [
         "Lanjut impor walau hanya sebagian?"
       ],
+      "Conversation list": [
+        "Daftar percakapan"
+      ],
       "Create contact": [
         "Buat kontak"
+      ],
+      "Create folder \"${ search }\"": [
+        "Buat folder \"${ search }\""
+      ],
+      "Create label \"${ search }\"": [
+        "Buat label \"${ search }\""
       ],
       "Create new group": [
         "Buat grup baru"
@@ -6138,6 +6825,12 @@
       ],
       "Delete ${ count } contact group": [
         "Hapus ${ count } grup kontak"
+      ],
+      "Delete ${ count } conversation": [
+        "Hapus ${ count } percakapan"
+      ],
+      "Delete ${ count } draft": [
+        "Hapus ${ count } draf"
       ],
       "Delete ${ value }": [
         "Hapus ${ value }"
@@ -6180,6 +6873,9 @@
       ],
       "Enable advanced account protection": [
         "Aktifkan perlindungan akun lanjutan"
+      ],
+      "Enable message content search": [
+        "Aktifkan pencarian konten pesan"
       ],
       "Enhance security with 2FA": [
         "Tingkatkan keamanan dengan 2FA"
@@ -6226,11 +6922,17 @@
       "Import failed": [
         "Proses impor gagal"
       ],
+      "Increase your privacy with more addresses": [
+        "Tingkatkan privasi Anda dengan lebih banyak alamat"
+      ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
       "Link confirmation": [
         "Konfirmasi tautan"
+      ],
+      "Mark as unread": [
+        "Tandai belum dibaca"
       ],
       "Merge contacts": [
         "Gabungkan kontak"
@@ -6244,8 +6946,20 @@
       "Mobile": [
         "Seluler"
       ],
+      "Moving a snoozed message": [
+        "Memindahkan pesan yang ditunda"
+      ],
       "Network error": [
         "Kesalahan jaringan"
+      ],
+      "Next conversation": [
+        "Percakapan selanjutnya"
+      ],
+      "No unsubscribed newsletters": [
+        "Tidak ada buletin yang tidak dilanggan"
+      ],
+      "On-device suggestions": [
+        "Saran pada perangkat"
       ],
       "Open actions dropdown": [
         "Buka menu tindakan"
@@ -6292,6 +7006,9 @@
       "Recover data": [
         "Pulihkan data"
       ],
+      "Reply all": [
+        "Balas semua"
+      ],
       "Report a problem": [
         "Laporkan masalah"
       ],
@@ -6306,6 +7023,12 @@
       ],
       "Select contact group": [
         "Pilih grup kontak"
+      ],
+      "Send email": [
+        "Kirim email"
+      ],
+      "Sending notice": [
+        "Notifikasi pengiriman"
       ],
       "Set recovery methods": [
         "Atur metode pemulihan"
@@ -6334,17 +7057,29 @@
       "Simplify password management": [
         "Sederhanakan pengelolaan kata sandi"
       ],
+      "Snooze": [
+        "Tunda"
+      ],
+      "Snooze message": [
+        "Tunda pesan"
+      ],
       "Start a new import": [
         "Mulai impor baru"
       ],
       "Start import process": [
         "Mulai proses impor"
       ],
+      "Storage capacity warning": [
+        "Peringatan kapasitas penyimpanan"
+      ],
       "Summary": [
         "Ikhtisar"
       ],
       "Trash": [
         "Sampah"
+      ],
+      "Trust new key?": [
+        "Percayai kunci baru?"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
@@ -6537,6 +7272,9 @@
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Sebagian kontak yang akan digabungkan menampilkan kesalahan. Silakan periksa kontak ini satu per satu"
       ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Tanda tangan lampiran gagal diverifikasi.\nAnda akan tetap dapat mengunduh lampiran ini, namun lampiran ini mungkin saja telah dimodifikasi."
+      ],
       "The contact data is corrupted and cannot be displayed.": [
         "Data kontak telah rusak dan tidak dapat dimunculkan."
       ],
@@ -6569,6 +7307,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Sen, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sab, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Ming, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
