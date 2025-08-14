@@ -42,7 +42,7 @@ interface Props {
     containerClassName?: string;
     navContainerClassName?: string;
     contentClassName?: string;
-    variant?: 'underline' | 'modern';
+    variant?: 'underline' | 'modern' | 'radio';
 }
 
 export const Tabs = ({
@@ -146,6 +146,7 @@ export const Tabs = ({
                         className={clsx([
                             'tabs-list unstyled flex flex-nowrap relative m-0 p-0',
                             fullWidth && 'tabs-list--fullWidth',
+                            variant === 'radio' && 'gap-2',
                             'items-end',
                         ])}
                         role="tablist"
@@ -171,7 +172,8 @@ export const Tabs = ({
                                         !selected && 'color-weak hover:color-norm',
                                         variant === 'underline' && 'text-semibold',
                                         variant === 'underline' && selected && 'color-norm',
-                                        variant === 'modern' && selected && 'text-semibold color-norm'
+                                        variant === 'modern' && selected && 'text-semibold color-norm',
+                                        variant === 'radio' && selected && 'text-semibold color-primary'
                                     )}
                                     role="presentation"
                                     ref={selected ? setSelectedTabEl : undefined}
@@ -184,9 +186,10 @@ export const Tabs = ({
                                         }}
                                         type="button"
                                         className={clsx(
-                                            'tabs-list-link flex flex-nowrap justify-center items-center gap-1 relative interactive--no-background',
-                                            variant === 'underline' && 'interactive-pseudo-inset',
-                                            variant === 'modern' && 'interactive-pseudo rounded'
+                                            'tabs-list-link flex flex-nowrap items-center gap-1 relative interactive--no-background',
+                                            variant === 'underline' && 'justify-center interactive-pseudo-inset',
+                                            variant === 'modern' && 'justify-center interactive-pseudo rounded',
+                                            variant === 'radio' && 'p-1 interactive-pseudo rounded'
                                         )}
                                         id={label}
                                         role="tab"
@@ -195,6 +198,20 @@ export const Tabs = ({
                                         aria-selected={selected}
                                         data-testid={`tab-header-${title.replace(/\s+/, '-').toLowerCase()}-button`}
                                     >
+                                        {variant === 'radio' && (
+                                            <span
+                                                className="rounded-full border flex items-center justify-center shrink-0 grow-0 bg-norm w-custom ratio-square mr-1"
+                                                style={{ '--w-custom': '1.25rem' }}
+                                            >
+                                                <span
+                                                    className={clsx(
+                                                        selected ? 'block' : 'hidden',
+                                                        'fade-in w-custom ratio-square rounded-full bg-primary'
+                                                    )}
+                                                    style={{ '--w-custom': '0.5rem' }}
+                                                />
+                                            </span>
+                                        )}
                                         {icon && iconPosition === 'leading' && (
                                             <Icon name={icon} className="shrink-0" />
                                         )}

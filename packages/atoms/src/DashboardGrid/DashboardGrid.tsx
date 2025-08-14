@@ -50,13 +50,15 @@ export const DashboardGridSectionTitle = ({
     children,
     center,
     cta,
+    className,
 }: {
     children: ReactNode;
     center?: ReactNode;
     cta?: ReactNode;
+    className?: string;
 }) => {
     return (
-        <div className="DashboardGrid-SectionTitle flex gap-2 lg:flex-nowrap justify-space-between">
+        <div className={clsx("DashboardGrid-SectionTitle flex gap-2 lg:flex-nowrap justify-space-between", className)}>
             <h2 className="m-0 text-2xl text-semibold">{children}</h2>
             {center && <div>{center}</div>}
             {cta && <DashboardGridSectionCta>{cta}</DashboardGridSectionCta>}
@@ -72,18 +74,20 @@ export const DashboardGridSectionHeader = ({
     title,
     subtitle,
     className,
+    titleClassName,
     center,
     cta,
 }: {
     title: ReactNode;
     subtitle?: ReactNode;
     className?: string;
+    titleClassName?: string;
     center?: ReactNode;
     cta?: ReactNode;
 }) => {
     return (
         <div className={clsx('DashboardGrid-SectionHeader', className)}>
-            <DashboardGridSectionTitle cta={cta} center={center}>
+            <DashboardGridSectionTitle cta={cta} center={center} className={titleClassName}>
                 {title}
             </DashboardGridSectionTitle>
             <DashboardGridSectionSubtitle>{subtitle}</DashboardGridSectionSubtitle>

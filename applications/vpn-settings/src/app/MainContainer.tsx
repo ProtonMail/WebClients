@@ -108,13 +108,14 @@ const MainContainer: FunctionComponent = () => {
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const [groups, loadingGroups] = useGroups();
-    const { showVPNDashboard } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
+    const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     const vpnRoutes = getRoutes({
         user,
         subscription,
         showVPNDashboard,
+        showVPNDashboardVariant: showVPNDashboardVariant.name,
         isB2BTrial,
     });
 

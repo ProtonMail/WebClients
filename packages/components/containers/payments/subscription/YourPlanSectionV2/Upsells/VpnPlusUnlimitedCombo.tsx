@@ -37,6 +37,7 @@ import {
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { everythingInPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSelectFromNCountries, getVpnDevices } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
@@ -119,7 +120,7 @@ const cards = (plansMap: PlansMap, freePlan: FreePlanDefault): CardProps[] => {
             popoverImage: vpnImage,
             features: [
                 {
-                    text: c('Feature').t`Everything in ${PLAN_NAMES[PLANS.VPN2024]}`,
+                    text: everythingInPlanOrAppNameText(PLAN_NAMES[PLANS.VPN2024]),
                     included: true,
                 },
             ],
@@ -189,7 +190,7 @@ const PopoverCard = ({ card }: { card: CardProps }) => {
                 <div
                     ref={floating}
                     style={{ ...position, ...arrow }}
-                    className="UpsellMultiBox-popover rounded-lg shadow-lg bg-white p-4"
+                    className="UpsellMultiBox-popover rounded-lg shadow-lg bg-white p-4 pointer-events-none"
                 >
                     <DashboardCard rounded="lg" className="shadow-lifted">
                         <DashboardCardImage>
@@ -247,12 +248,19 @@ const getSaveLabel = (plan: PLANS | undefined, cycle: CYCLE | undefined, plansMa
 
     const pricing = getPricingFromPlanIDs({ [plan]: 1 }, plansMap);
     const totals = getTotalFromPricing(pricing, cycle);
+    const discountPercent = totals.discountPercentage;
 
-    if (!totals.discountPercentage) {
+    if (!discountPercent) {
         return;
     }
 
-    return <CustomSaveLabel>{c('upsell panel').t`-${totals.discountPercentage}%`}</CustomSaveLabel>;
+    return (
+        <CustomSaveLabel>
+            {'-'}
+            {discountPercent}
+            {'%'}
+        </CustomSaveLabel>
+    );
 };
 
 const CurrentPlan = ({ app, subscription, user, serversCount }: UpsellSectionProps) => {

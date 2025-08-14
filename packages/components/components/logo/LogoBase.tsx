@@ -11,6 +11,7 @@ export interface LogoProps extends Omit<ComponentPropsWithoutRef<'svg'>, 'size'>
     size?: IconSize;
     variant?: LogoVariant;
     hasTitle?: boolean;
+    scale?: number;
 }
 
 type Props = ComponentPropsWithoutRef<'svg'> & {
@@ -20,12 +21,28 @@ type Props = ComponentPropsWithoutRef<'svg'> & {
     uid: string;
     variant: LogoVariant;
     size?: IconSize;
+    scale?: number;
 };
 
-const LogoBase = ({ title, logoWidth, logoHeight, className, variant, size, uid, children, ...rest }: Props) => {
+const LogoBase = ({
+    title,
+    logoWidth,
+    logoHeight,
+    className,
+    variant,
+    size,
+    uid,
+    children,
+    scale = 1,
+    ...rest
+}: Props) => {
+    const logoWidthScaled = Math.ceil(logoWidth * scale);
+    const logoHeightScaled = Math.ceil(logoHeight * scale);
+
     const hasIconSize = size && variant === 'glyph-only';
     // this ensure logo scales properly with text zoom
-    const logoWidthStyles = !hasIconSize && variant === 'with-wordmark' ? getLogoWidthStyles(logoWidth) : undefined;
+    const logoWidthStyles =
+        !hasIconSize && variant === 'with-wordmark' ? getLogoWidthStyles(logoWidthScaled) : undefined;
 
     return (
         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
@@ -35,8 +52,8 @@ const LogoBase = ({ title, logoWidth, logoHeight, className, variant, size, uid,
             // eslint-disable-next-line custom-rules/deprecate-sizing-classes
             xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox={`0 0 ${logoWidth} ${logoHeight}`}
-            width={logoWidth}
-            height={logoHeight}
+            width={logoWidthScaled}
+            height={logoHeightScaled}
             fill="none"
             role="img"
             className={clsx('logo', hasIconSize && `icon-size-${size}`, variant, className)}

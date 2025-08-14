@@ -184,7 +184,7 @@ const MainContainer = () => {
     const [memberships, loadingGroupMembership] = useGroupMemberships();
     const [groups, loadingGroups] = useGroups();
 
-    const { showVPNDashboard } = useShowVPNDashboard(app);
+    const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(app);
 
     const { isB2B: isB2BDrive } = useDrivePlan();
 
@@ -202,6 +202,7 @@ const MainContainer = () => {
         recoveryNotification: recoveryNotification?.color,
         isBreachesAccountDashboardEnabled,
         showVPNDashboard,
+        showVPNDashboardVariant: showVPNDashboardVariant.name,
         isUserGroupsFeatureEnabled,
         showThemeSelection,
         assistantKillSwitch,
