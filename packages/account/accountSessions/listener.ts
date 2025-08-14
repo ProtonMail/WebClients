@@ -24,7 +24,10 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
         effect: async (_, listenerApi) => {
             const state = selectAccountSessions(listenerApi.getState());
 
-            if (state.meta.loading) {
+            const isStaleRefetch = getIsStaleRefetch(state.meta.fetchedEphemeral, CacheType.StaleRefetch);
+
+            // Loading may have been persisted to storage while an update was happening. This ignores that in case it's a stale refetch.
+            if (state.meta.loading && !isStaleRefetch) {
                 return;
             }
 
@@ -38,10 +41,7 @@ export const startAccountSessionsListener = (startListening: SharedStartListenin
                 support: state.meta.support,
             };
 
-            if (
-                isExpired(state.meta.fetchedAt, 1 * DAY) ||
-                getIsStaleRefetch(state.meta.fetchedEphemeral, CacheType.StaleRefetch)
-            ) {
+            if (isExpired(state.meta.fetchedAt, 1 * DAY) || isStaleRefetch) {
                 // Reset cached sessions so that it's re-fetched
                 cache.value = [];
             }
