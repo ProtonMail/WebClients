@@ -453,6 +453,7 @@ export const InnerSignupContextProvider = ({
                 subscriptionData: paymentData?.subscriptionData,
                 productParam: app,
                 hasZipCodeValidation,
+                traceSignupSentryError: traceSentryError,
             });
 
             setupUserResponseRef.current = setupUserResponse;

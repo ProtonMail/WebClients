@@ -138,6 +138,7 @@ export const handleSetupUser = async ({
     productParam,
     keyTransparencyActivation,
     hasZipCodeValidation,
+    traceSignupSentryError,
 }: {
     accountData: AccountData;
     api: Api;
@@ -147,6 +148,7 @@ export const handleSetupUser = async ({
     productParam: ProductParam;
     keyTransparencyActivation: KeyTransparencyActivation;
     hasZipCodeValidation: boolean;
+    traceSignupSentryError: (error: any) => void;
 }) => {
     const { username, email, domain, password, signupType } = accountData;
 
@@ -195,15 +197,20 @@ export const handleSetupUser = async ({
         source: SessionSource.Proton,
     });
 
-    const recoveryPhraseData = await generateDeferredMnemonicData({
-        emailAddress: userEmail,
-        username: user.Name,
-        getUserKeys: async () => {
-            const userKeys = await getDecryptedUserKeysHelper(user, keySetupData.keyPassword);
-            return userKeys;
-        },
-        api,
-    });
+    let recoveryPhraseData;
+    try {
+        recoveryPhraseData = await generateDeferredMnemonicData({
+            emailAddress: userEmail,
+            username: user.Name,
+            getUserKeys: async () => {
+                const userKeys = await getDecryptedUserKeysHelper(user, keySetupData.keyPassword);
+                return userKeys;
+            },
+            api,
+        });
+    } catch (error) {
+        traceSignupSentryError(error);
+    }
 
     return {
         session,

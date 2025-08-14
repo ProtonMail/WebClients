@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -23,6 +23,15 @@ const RecoveryStepContent = ({ onContinue, title }: Props) => {
     const [understood, setUnderstood] = useState(false);
 
     const { recoveryPhraseData, sendRecoveryPhrasePayload } = useSignup();
+
+    useEffect(() => {
+        if (!recoveryPhraseData) {
+            /**
+             * Recovery data has not been setup. We should gracefully handle and skip this step
+             */
+            onContinue();
+        }
+    }, [recoveryPhraseData]);
 
     if (!recoveryPhraseData) {
         return null;

@@ -20,10 +20,9 @@ const generateRecoveryPhrasePayload = async ({
 }) => {
     const userKeys = await getUserKeys();
 
-    // if (!user.Keys.length) {
-    //     // TODO: [CP-10304] observe occurrences of this case
-    //     return;
-    // }
+    if (!userKeys.length) {
+        throw new Error('Unable to generate recovery phrase. No keys found.');
+    }
 
     const { randomBytes, salt, recoveryPhrase } = await generateMnemonicWithSalt();
 
@@ -50,12 +49,8 @@ const generateDeferredMnemonicData = async ({
     emailAddress: string;
     username: string;
     getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>;
-}): Promise<DeferredMnemonicData | undefined> => {
+}): Promise<DeferredMnemonicData> => {
     const generatedRecoveryPhrasePayload = await generateRecoveryPhrasePayload({ username, getUserKeys, api });
-
-    if (!generatedRecoveryPhrasePayload) {
-        return;
-    }
 
     const { recoveryPhrase, payload } = generatedRecoveryPhrasePayload;
 
