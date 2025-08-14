@@ -46,12 +46,12 @@
         "react-redux": "^9.2.0",
         "react-router-dom": "^5.3.4",
         "ttag": "^1.8.12",
-        "webpack": "^5.101.0"
+        "webpack": "^5.101.1"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
-        "@testing-library/jest-dom": "^6.6.4",
+        "@testing-library/jest-dom": "^6.7.0",
         "@testing-library/react": "^15.0.7",
         "@vitejs/plugin-react-swc": "^3.11.0",
         "eslint": "^8.57.1",

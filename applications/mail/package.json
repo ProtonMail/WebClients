@@ -23,7 +23,7 @@
         "test:watch": "jest --watch --coverage=false"
     },
     "dependencies": {
-        "@babel/plugin-transform-runtime": "^7.28.0",
+        "@babel/plugin-transform-runtime": "^7.28.3",
         "@proton/account": "workspace:^",
         "@proton/activation": "workspace:^",
         "@proton/atoms": "workspace:^",
@@ -61,7 +61,7 @@
         "dompurify": "^3.2.6",
         "jszip": "^3.10.1",
         "markdown-it": "^14.1.0",
-        "msw": "^2.10.4",
+        "msw": "^2.10.5",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-redux": "^9.2.0",
@@ -79,7 +79,7 @@
         "@proton/jest-env": "workspace:^",
         "@proton/testing": "workspace:^",
         "@testing-library/dom": "^10.4.1",
-        "@testing-library/jest-dom": "^6.6.4",
+        "@testing-library/jest-dom": "^6.7.0",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
         "@testing-library/user-event": "^14.6.1",
