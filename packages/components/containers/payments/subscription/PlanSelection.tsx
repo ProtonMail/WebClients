@@ -57,6 +57,7 @@ import {
 import { OfferPrice } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
+import { selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { Audience, type Organization, type UserModel, type VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
@@ -551,7 +552,7 @@ const PlanSelection = (props: Props) => {
 
         const planTitle = shortPlan.title;
         const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
-        const action = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
+        const action = isCurrentPlan ? selectedPlanLabel : selectPlanOrAppNameText(planTitle);
         const actionLabel =
             plan.Name === PLANS.VPN_BUSINESS ? (
                 <ActionLabel plan={plan} currency={plan.Currency} cycle={cycle} />

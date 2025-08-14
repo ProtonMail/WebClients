@@ -10,11 +10,12 @@ import family from './logo/plan-family.svg';
 import mailFree from './logo/plan-mail-free.svg';
 import passFreeDark from './logo/plan-pass-free-dark.svg';
 import passFreeLight from './logo/plan-pass-free-light.svg';
+import vpnBusiness from './logo/plan-vpn-business.svg';
 import vpnFree from './logo/plan-vpn-free.svg';
 
 interface Props extends ComponentPropsWithoutRef<'img'> {
     app?: APP_NAMES;
-    planName?: PLANS.BUNDLE | PLANS.DUO | PLANS.FAMILY;
+    planName?: PLANS.BUNDLE | PLANS.DUO | PLANS.FAMILY | PLANS.VPN_BUSINESS;
     size?: number;
     dark?: boolean;
 }
@@ -28,6 +29,9 @@ const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
     }
     if (planName === PLANS.FAMILY) {
         return <img {...rest} src={family} width={size} alt="" />;
+    }
+    if (planName === PLANS.VPN_BUSINESS) {
+        return <img {...rest} src={vpnBusiness} width={size} alt="" />;
     }
     if (app === APPS.PROTONMAIL) {
         return <img {...rest} src={mailFree} width={size} alt="" />;

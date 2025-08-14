@@ -44,6 +44,7 @@ import {
     PASS_SHORT_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
+import { everythingInPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getStorageFeature, getSyncAndBackupFeature, getVersionHistory } from '../../../features/drive';
@@ -108,7 +109,7 @@ const cards = (plansMap: PlansMap, freePlan: FreePlanDefault): CardProps[] => {
     return [
         {
             name: APPS.PROTONMAIL,
-            logo: <MailLogo />,
+            logo: <MailLogo scale={0.66} />,
             text: () => c('Plan card').t`Secure email that protects your privacy`,
             popoverImage: mailImage,
             features: [
@@ -119,7 +120,7 @@ const cards = (plansMap: PlansMap, freePlan: FreePlanDefault): CardProps[] => {
         },
         {
             name: APPS.PROTONDRIVE,
-            logo: <DriveLogo />,
+            logo: <DriveLogo scale={0.66} />,
             text: () => c('Plan card').t`Encrypted cloud storage for photos and files`,
             popoverImage: driveImage,
             features: [
@@ -130,19 +131,19 @@ const cards = (plansMap: PlansMap, freePlan: FreePlanDefault): CardProps[] => {
         },
         {
             name: APPS.PROTONVPN_SETTINGS,
-            logo: <VpnLogo />,
+            logo: <VpnLogo scale={0.66} />,
             text: () => c('Plan card').t`Your gateway to online freedom`,
             popoverImage: vpnImage,
             features: [
                 {
-                    text: c('Feature').t`Everything in ${PLAN_NAMES[PLANS.VPN2024]}`,
+                    text: everythingInPlanOrAppNameText(PLAN_NAMES[PLANS.VPN2024]),
                     included: true,
                 },
             ],
         },
         {
             name: APPS.PROTONPASS,
-            logo: <PassLogo />,
+            logo: <PassLogo scale={0.66} />,
             text: () => c('Plan card').t`Password manager with identity protection`,
             popoverImage: passImage,
             features: [getVaults(PASS_PLUS_VAULTS), getHideMyEmailAliases('unlimited'), get2FAAuthenticator(true)],
@@ -183,7 +184,7 @@ const PopoverCard = ({ card }: { card: CardProps }) => {
                 <div
                     ref={floating}
                     style={{ ...position, ...arrow }}
-                    className="UpsellMultiBox-popover rounded-lg shadow-lg bg-white p-4"
+                    className="UpsellMultiBox-popover rounded-lg shadow-lg bg-white p-4 pointer-events-none"
                 >
                     <DashboardCard rounded="lg" className="shadow-lifted">
                         <DashboardCardImage>

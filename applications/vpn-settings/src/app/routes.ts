@@ -6,15 +6,17 @@ import { getHasVpnB2BPlan, hasCancellablePlan, isCancellableOnlyViaSupport } fro
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 interface Arguments {
     user: UserModel;
     subscription?: Subscription;
     showVPNDashboard: boolean;
+    showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
     isB2BTrial: boolean;
 }
 
-export const getRoutes = ({ user, subscription, showVPNDashboard, isB2BTrial }: Arguments) => {
+export const getRoutes = ({ user, subscription, showVPNDashboard, showVPNDashboardVariant, isB2BTrial }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const cancellablePlan = hasCancellablePlan(subscription, user);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
@@ -34,6 +36,7 @@ export const getRoutes = ({ user, subscription, showVPNDashboard, isB2BTrial }: 
                     text: c('Title').t`Your plan`,
                     invisibleTitle: true,
                     id: 'YourPlanV2',
+                    available: !(user.isFree && showVPNDashboardVariant === 'B'),
                 },
                 {
                     text: c('Title').t`Upgrade your privacy`,
