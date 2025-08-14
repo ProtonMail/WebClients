@@ -44,7 +44,6 @@ const CreateFolderModalDeprecated = ({
     const [folderName, setFolderName] = useState('');
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
-    const { drive } = useDrive();
     const handleBlur = ({ target }: FocusEvent<HTMLInputElement>) => {
         setFolderName(formatLinkName(target.value));
     };
@@ -75,8 +74,7 @@ const CreateFolderModalDeprecated = ({
                 parentFolder.linkId,
                 formattedName
             );
-            const nodeUid = await drive.getNodeUid(parentFolder.shareId, nodeId);
-            onSuccess?.(nodeUid, formattedName);
+            onSuccess?.(nodeId, formattedName);
         }
         onClose?.();
     };
