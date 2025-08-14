@@ -57,6 +57,7 @@ const SetRecoveryPhraseOnSignupContainer = ({
 
     const copyRecoverySwitchButton = (
         <InlineLinkButton
+            key="copy-recovery-phrase-button"
             onClick={() => {
                 setMethod('text');
             }}
@@ -70,6 +71,7 @@ const SetRecoveryPhraseOnSignupContainer = ({
 
     const downloadRecoveryKitSwitchButton = (
         <InlineLinkButton
+            key="download-pdf-button"
             onClick={() => {
                 setMethod('recovery-kit');
             }}
