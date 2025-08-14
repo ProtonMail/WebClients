@@ -36,11 +36,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
+      "A to Z": [
+        "A-დან Z-მდე"
+      ],
       "Activate": [
         "აქტივაცია"
       ],
       "Activate recovery": [
         "აღდგენის აქტივაცია"
+      ],
+      "Active": [
+        "აქტიური"
       ],
       "Add": [
         "დამატება"
@@ -50,6 +56,12 @@
       ],
       "Add address": [
         "მისამართის დამატება"
+      ],
+      "Add Bcc recipients": [
+        "Bcc მიმღებების დამატება"
+      ],
+      "Add Cc recipients": [
+        "Cc მიმღებების დამატება"
       ],
       "Add contact": [
         "კონტაქტის დამატება"
@@ -66,17 +78,41 @@
       "Add new group": [
         "ახალი ჯგუფის დამატება"
       ],
+      "Add participant": [
+        "მონაწილის დამატება"
+      ],
       "Add phone number": [
         "ტელეფონის ნომრის დამატება"
       ],
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
+      "All Read": [
+        "ყველა წაკითხული"
+      ],
+      "All Starred": [
+        "ყველა, ვარსკვლავიანი"
+      ],
+      "All Unread": [
+        "ყველა წაუკითხავი"
+      ],
+      "All Unstarred": [
+        "ყველა უვარსკვლავო"
+      ],
       "Apply": [
         "გადატარება"
       ],
+      "Archive": [
+        "არქივი"
+      ],
+      "As Scheduled": [
+        "როგორც დაგეგმილია"
+      ],
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
+      ],
+      "Attachment": [
+        "მიმაგრებული ფაილი"
       ],
       "Attention required": [
         "საჭიროა ყურადღება"
@@ -87,14 +123,35 @@
       "Back": [
         "უკან"
       ],
+      "Blind Carbon Copy": [
+        "ბრმა ასლი"
+      ],
       "Block": [
         "დაბლოკვა"
+      ],
+      "Block sender": [
+        "გამომგზავნის დაბლოკვა"
+      ],
+      "Block senders": [
+        "გამომგზავნების დაბლოკვა"
       ],
       "Cancel": [
         "გაუქმება"
       ],
       "Cancel subscription": [
         "გამოწერის გაუქმება"
+      ],
+      "Carbon Copy": [
+        "ასლი"
+      ],
+      "Change page": [
+        "გვერდის შეცვლა"
+      ],
+      "Change password": [
+        "პაროლის შეცვლა"
+      ],
+      "Change sorting": [
+        "დალაგების შეცვლა"
       ],
       "Chat with us": [
         "დაგველაპარაკეთ"
@@ -114,6 +171,9 @@
       "Clear data": [
         "მონაცემების გასუფთავება"
       ],
+      "clear it": [
+        "გასუფთავება"
+      ],
       "Clear query": [
         "მოთხოვნის გასუფთავება"
       ],
@@ -126,6 +186,9 @@
       "Close": [
         "დახურვა"
       ],
+      "Close composer": [
+        "რედაქტორის დახურვა"
+      ],
       "Close navigation": [
         "ნავიგაციის დახურვა"
       ],
@@ -134,6 +197,9 @@
       ],
       "Collaborate on documents": [
         "იმუშავეთ ერთად დოკუმენტებზე"
+      ],
+      "Collapse URL": [
+        "URL-ის ჩაკეცვა"
       ],
       "Compose": [
         "შედგენა"
@@ -162,6 +228,12 @@
       "Continue with Google": [
         "Google-ით გაგრძელება"
       ],
+      "Contract composer": [
+        "რედაქტორის ფანჯრის შეკუმშვა"
+      ],
+      "Copy addresses": [
+        "მისამართების კოპირება"
+      ],
       "Copy alias “${ name }”": [
         "ფსევდონიმის \"${ name }\" კოპირება"
       ],
@@ -174,14 +246,26 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
+      "Create a new folder": [
+        "ახალი საქაღალდის შექმნა"
+      ],
+      "Create a new label": [
+        "ახალი ჭდის შექმნა"
+      ],
       "Create alias": [
         "ფსევდონიმის შექმნა"
+      ],
+      "Create new message": [
+        "ახალი შეტყობინების შექმნა"
       ],
       "Create new password": [
         "ახალი პაროლის შექმნა"
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
+      ],
+      "Custom": [
+        "ხელით"
       ],
       "Customize": [
         "მორგება"
@@ -209,6 +293,15 @@
       "Delete contact group": [
         "კონტაქტების ჯგუფის წაშლა"
       ],
+      "Delete draft": [
+        "მონახაზის წაშლა"
+      ],
+      "Delete folder": [
+        "საქაღალდის წაშლა"
+      ],
+      "Delete label": [
+        "ჭდის წაშლა"
+      ],
       "Delete permanently": [
         "სამუდამოდ წაშლა"
       ],
@@ -219,6 +312,9 @@
         "დეტალები"
       ],
       "Disable alias": [
+        "ფსევდონიმის გათიშვა"
+      ],
+      "Disabling alias": [
         "ფსევდონიმის გათიშვა"
       ],
       "Discard": [
@@ -245,11 +341,26 @@
       "Download now": [
         "ახლა გადმოწერა"
       ],
+      "Downloading": [
+        "გადმოწერა"
+      ],
       "Edit": [
         "ჩასწორება"
       ],
+      "Edit address": [
+        "მისამართის ჩასწორება"
+      ],
+      "Edit draft": [
+        "მონახაზის ჩასწორება"
+      ],
       "Edit email address": [
         "ელ-ფოსტის მისამართის ჩასწორება"
+      ],
+      "Edit encryption": [
+        "შიფრაციის ჩასწორება"
+      ],
+      "Edit folder": [
+        "საქაღალდის ჩასწორება"
       ],
       "Edit label": [
         "ჭდის ჩასწორება"
@@ -269,11 +380,26 @@
       "Emoji": [
         "ემოჯი"
       ],
+      "Enable": [
+        "ჩართვა"
+      ],
       "enable desktop notifications": [
         "სამუშაო მაგიდის გაფრთხილებების ჩართვა"
       ],
+      "Encryption": [
+        "დაშიფრვა"
+      ],
       "Expand": [
         "ამოკეცვა"
+      ],
+      "Expand composer": [
+        "რედაქტორის გადიდება"
+      ],
+      "Expand URL": [
+        "URL-ის გაშლა"
+      ],
+      "Expiration time": [
+        "ვადა"
       ],
       "Export": [
         "გატანა"
@@ -281,17 +407,32 @@
       "Export contact group": [
         "კონტაქტების ჯგუფის გატანა"
       ],
+      "External encryption": [
+        "გარე შიფრაცია"
+      ],
+      "Fewer search options": [
+        "ნაკლები ძებნის პარამეტრი"
+      ],
+      "Filter on...": [
+        "ფილტრი ჩართულია..."
+      ],
       "Fit to window": [
         "ფანჯარაში ჩატევა"
       ],
       "Forgot password?": [
         "დაგავიწყდათ პაროლი?"
       ],
+      "Formalize": [
+        "ფორმალიზება"
+      ],
       "Forward as attachment": [
         "გადაგზავნა მიმაგრებული ფაილის სახით"
       ],
       "Generate password": [
         "პაროლის გენერირება"
+      ],
+      "Generate text": [
+        "ტექსტის გენერაცია"
       ],
       "Get in touch": [
         "დაგვიკავშირდით"
@@ -308,8 +449,17 @@
       "Go to label": [
         "ჭდეზე გადასვლა"
       ],
+      "Go to next page": [
+        "შემდეგ გვერდზე გადასვლა"
+      ],
+      "Go to page ${ page }": [
+        "${ page }-ე გვერდზე გადასვლა"
+      ],
       "Go to panel ${ index }": [
         "${ index }-ე პანელზე გადასვლა"
+      ],
+      "Go to previous page": [
+        "წინა გვერდზე გადასვლა"
       ],
       "Got it": [
         "გავიგე"
@@ -319,6 +469,21 @@
       ],
       "Hide advanced PGP settings": [
         "PGP-ის დამატებითი პარამეტრების დამალვა"
+      ],
+      "Hide details": [
+        "დეტალების დამალვა"
+      ],
+      "Hide messages": [
+        "შეტყობინებების დამალვა"
+      ],
+      "Hide toolbar": [
+        "ხელსაწყოების პანელის დამალვა"
+      ],
+      "Hide-my-email": [
+        "Hide-my-email"
+      ],
+      "I like this response": [
+        "მე მომწონს ეს პასუხი"
       ],
       "Import": [
         "შემოტანა"
@@ -344,20 +509,56 @@
       "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
         "ხელმისაწვდომია მნიშვნელოვანი განახლება. ამ აპის გამოყენების გასაგრძელებლად განახლდით უკანასკნელ ვერსიამდე. ${ downloadUpdate }"
       ],
+      "In the morning": [
+        "დილით"
+      ],
       "Increase": [
         "გაგრძელება"
+      ],
+      "Inline": [
+        "იქვე"
+      ],
+      "Insert contact": [
+        "კონტაქტის ჩასმა"
+      ],
+      "Insert contacts": [
+        "კონტაქტების ჩასმა"
+      ],
+      "Insert image": [
+        "გამოსახულების ჩასმა"
+      ],
+      "Label as": [
+        "დანიშვნა, როგორც"
+      ],
+      "Label as...": [
+        "ჭდის დადება..."
+      ],
+      "Later this week": [
+        "მოგვიანებით ამ კვირაში"
       ],
       "Learn more": [
         "გაიგეთ მეტი"
       ],
+      "Least read": [
+        "ყველაზე ნაკლებად წაკითხვადი"
+      ],
       "Let's talk": [
         "ვიბაზროთ"
+      ],
+      "Load embedded images": [
+        "ჩადგმული გამოსახულებების ჩატვირთვა"
       ],
       "Load image": [
         "გამოსახულების ჩატვირთვა"
       ],
       "Load more": [
         "მეტის ჩატვირთვა"
+      ],
+      "Loading${ ellipsis }": [
+        "იტვირთება${ ellipsis }"
+      ],
+      "Make it friendly": [
+        "გახადეთ მეგობრული"
       ],
       "Manage advanced account protections": [
         "ანგარიშის დამატებითი დაცვის მართვა"
@@ -371,17 +572,32 @@
       "Manage labels": [
         "ჭდეების მართვა"
       ],
+      "Manage Snooze": [
+        "დროებით დადუმების მართვა"
+      ],
       "Manage users/addresses": [
         "მომხმარებლების/ფსევდონიმების მართვა"
       ],
       "Mark as favorite": [
         "რჩეულად მონიშვნა"
       ],
+      "Mark as read": [
+        "წაკითხულად მონიშვნა"
+      ],
       "Mark as resolved": [
         "მონიშნე გადაწყვეტილად"
       ],
+      "Mark as unread": [
+        "წაუკითხავად მონიშვნა"
+      ],
       "Mark for deletion": [
         "მონიშნეთ წასაშლელად"
+      ],
+      "Mark legitimate": [
+        "მონიშვნა, როგორც ნამდვილის"
+      ],
+      "Maximize composer": [
+        "რედაქტორის გაშლა"
       ],
       "Maybe": [
         "შეიძლება"
@@ -395,14 +611,56 @@
       "Merge contacts": [
         "კონტაქტების შერწყმა"
       ],
+      "Minimize composer": [
+        "რედაქტორის ჩაკეცვა"
+      ],
+      "Modify": [
+        "შეცვლა"
+      ],
+      "Modify selection": [
+        "მონიშნულის შეცვლა"
+      ],
+      "Monday": [
+        "ორშაბათი"
+      ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "მეტი დახვეწის ქმედებები"
+      ],
+      "More search options": [
+        "მეტი ძებნის პარამეტრი"
+      ],
+      "Most read": [
+        "ყველაზე წაკითხვადი"
       ],
       "Move": [
         "გადატანა"
       ],
+      "Move all to archive": [
+        "ყველაფრის არქივში გადატანა"
+      ],
+      "Move all to trash": [
+        "ყველაფრის ნაგვის ყუთში გადატანა"
+      ],
+      "Move to": [
+        "გადატანა სად"
+      ],
+      "Move to archive": [
+        "არქივში გადატანა"
+      ],
+      "Move to Archive": [
+        "არქივში გადატანა"
+      ],
       "Move to folder": [
         "საქაღალდეში გადატანა"
+      ],
+      "Move to inbox": [
+        "შემომავლებში გადატანა"
+      ],
+      "Move to spam": [
+        "სპამში გადატანა"
       ],
       "Move to trash": [
         "ნაგვის ყუთში გადატანა"
@@ -410,11 +668,23 @@
       "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
+      "Move to...": [
+        "გადატანა სად..."
+      ],
       "Need help?": [
         "დახმარება გჭირდებათ?"
       ],
+      "Never show": [
+        "არასდროს მაჩვენო"
+      ],
       "Next": [
         "შემდეგი"
+      ],
+      "Next conversation": [
+        "შემდეგი საუბარი"
+      ],
+      "Next message": [
+        "შემდეგი შეტყობინება"
       ],
       "Next month": [
         "შემდეგი თვე"
@@ -431,14 +701,26 @@
       "Not now": [
         "არა ახლა"
       ],
+      "Not saved": [
+        "არაა შენახული"
+      ],
       "OK": [
         "დიახ"
+      ],
+      "Open": [
+        "გახსნა"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
+      ],
+      "Page ${ pageNumber }": [
+        "გვერდი ${ pageNumber }"
+      ],
+      "Pause": [
+        "შეჩერება"
       ],
       "Pay": [
         "გადახდა"
@@ -455,14 +737,29 @@
       "Previous": [
         "წინა"
       ],
+      "Previous message": [
+        "წინა შეტყობინება"
+      ],
       "Previous month": [
         "წინა თვე"
+      ],
+      "Proofread": [
+        "კორექტირება"
       ],
       "Quit": [
         "გასვლა"
       ],
       "Re-sign": [
         "ხელახლა ხელმოწერა"
+      ],
+      "Read message": [
+        "შეტყობინების წაკითხვა"
+      ],
+      "Read receipt sent": [
+        "წაკითხულობის ანგარიში გაიგზავნა"
+      ],
+      "Recently received": [
+        "ახლახან მიღებული"
       ],
       "Reconnect": [
         "თავიდან დაკავშირება"
@@ -473,6 +770,9 @@
       "Refer a friend": [
         "მიმართეთ მეგობარს"
       ],
+      "Refine it": [
+        "გაუმჯობესება"
+      ],
       "Refresh the page": [
         "გვერდის განახლება"
       ],
@@ -482,17 +782,32 @@
       "Remove bonuses": [
         "ბონუსების წაშლა"
       ],
+      "Remove encryption": [
+        "შიფრაციის მოცილება"
+      ],
       "Remove from favorites": [
         "წაშლა რჩეულებიდან"
       ],
+      "Remove from list": [
+        "სიიდან წაშლა"
+      ],
       "Remove gift code": [
         "სასაჩუქრე კოდის წაშლა"
+      ],
+      "Replace": [
+        "ჩანაცვლება"
+      ],
+      "Reply securely": [
+        "უსაფრთხოდ პასუხი"
       ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
       ],
       "Report an issue": [
         "პრობლემის ანგარიშის გადაგზავნა"
+      ],
+      "Report phishing": [
+        "ფიშინგის შესახებ შეტყობინება"
       ],
       "Request a call": [
         "ზარის შეკვეთა"
@@ -506,14 +821,32 @@
       "Resend code": [
         "კოდის თავიდან გაგზავნა"
       ],
+      "Reset search form": [
+        "ძებნის ფორმის განულება"
+      ],
       "Reset to default": [
         "ნაგულისხმებზე დაბრუნება"
+      ],
+      "Resize panel": [
+        "პანელის ზომის შეცვლა"
       ],
       "Resume": [
         "გაგრძელება"
       ],
+      "Resume downloading": [
+        "გადმოწერის გაგრძელება"
+      ],
       "Save": [
         "შენახვა"
+      ],
+      "Saving${ ellipsis }": [
+        "შენახვა${ ellipsis }"
+      ],
+      "Schedule message": [
+        "შეტყობინებების განრიგი"
+      ],
+      "Scroll to bottom": [
+        "ბოლოში გადახვევა"
       ],
       "Search": [
         "ძებნა"
@@ -521,17 +854,47 @@
       "Search countries": [
         "ქვეყნების ძებნა"
       ],
+      "See business plans": [
+        "იხილეთ ბიზნეს გეგმები"
+      ],
       "See plan features": [
         "ტარიფის თვისებების ნახვა"
       ],
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
       ],
+      "Select All": [
+        "ყველას მონიშვნა"
+      ],
       "Select all": [
         "ყველაფრის მონიშვნა"
       ],
+      "Select all messages": [
+        "ყველა შეტყობინების მონიშვნა"
+      ],
+      "Select date and time": [
+        "აირჩიეთ თარიღი და დრო"
+      ],
       "Send": [
         "გაგზავნა"
+      ],
+      "Send anyway": [
+        "მაინც გაგზავნა"
+      ],
+      "Send read receipt": [
+        "წაკითხულობის ანგარიშის გაგზავნა"
+      ],
+      "Set": [
+        "დაყენება"
+      ],
+      "Set as default": [
+        "ნაგულისხმევად დაყენება"
+      ],
+      "Set encryption": [
+        "შიფრაციის დაყენება"
+      ],
+      "Set expiration time": [
+        "ვადის დაყენება"
       ],
       "Set recovery methods": [
         "აღდგენის მეთოდების დაყენება"
@@ -560,20 +923,32 @@
       "Sharing options": [
         "გაზიარების მორგება"
       ],
+      "Shorten": [
+        "შემოკლება"
+      ],
       "Show": [
         "ჩვენება"
       ],
       "Show advanced PGP settings": [
         "PGP-ის დამატებითი პარამეტრების ჩვენება"
       ],
+      "Show details": [
+        "დეტალების ჩვენება"
+      ],
       "Show less": [
         "ნაკლების ჩვენება"
+      ],
+      "Show messages": [
+        "შეტყობინებების ჩვენება"
       ],
       "Show more": [
         "მეტის ჩვენება"
       ],
       "Show preview": [
         "გადახედვის ჩვენება"
+      ],
+      "Show toolbar": [
+        "ხელსაწყოების პანელის ჩვენება"
       ],
       "Sign out": [
         "გასვლა"
@@ -587,6 +962,12 @@
       "Skip verification": [
         "შემოწმების გამოტოვება"
       ],
+      "Snooze": [
+        "დროებით დადუმება"
+      ],
+      "Star": [
+        "ვარსკვლავი"
+      ],
       "Start import": [
         "შემოტანის დაწყება"
       ],
@@ -596,17 +977,35 @@
       "Stay": [
         "დარჩენა"
       ],
+      "Stop marking as read": [
+        "წაკითხულად მონიშვნის შეწყვეტა"
+      ],
+      "Stop moving to Trash": [
+        "ნაგვის ყუთში გადატანის შეწყვეტა"
+      ],
       "Submit": [
         "დამტკიცება"
       ],
       "Take a tour": [
         "გასაცნობი ტური"
       ],
+      "This weekend": [
+        "ამ კვირის ბოლოს"
+      ],
       "Toggle Calendar app": [
         "კალენდრის აპის გადართვა"
       ],
+      "Toggle VPN dashboard": [
+        "VPN-ის მართვის პანელის გადართვა"
+      ],
+      "Tomorrow": [
+        "ხვალ"
+      ],
       "Trust": [
         "ნდობა"
+      ],
+      "Trust public key": [
+        "ამ საჯარო გასაღების ნდობა"
       ],
       "Try again": [
         "კიდევ ცდა"
@@ -620,6 +1019,9 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
       ],
+      "Unblock": [
+        "განბლოკვა"
+      ],
       "Undo": [
         "დაბრუნება"
       ],
@@ -629,7 +1031,19 @@
       "Unmark for deletion": [
         "მონიშვნის წასაშლელად მოხსნა"
       ],
+      "Unsnooze": [
+        "დროებით დადუმების გაუქმება"
+      ],
+      "Unstar": [
+        "ვარსკვლავის მოხსნა"
+      ],
       "Unsubscribe": [
+        "გამოწერის გაუქმება"
+      ],
+      "Unsubscribed": [
+        "გამოწერა გაუქმებულია"
+      ],
+      "Unsubscribing": [
         "გამოწერის გაუქმება"
       ],
       "Untrust": [
@@ -683,6 +1097,9 @@
       "Use recovery code": [
         "აღდგენის კოდის გამოყენება"
       ],
+      "Use this": [
+        "ამის გამოყენება"
+      ],
       "Verify": [
         "გადამოწმება"
       ],
@@ -692,11 +1109,32 @@
       "View": [
         "ნახვა"
       ],
+      "View headers": [
+        "თავსართების ნახვა"
+      ],
+      "View HTML": [
+        "HTML-ის ნახვა"
+      ],
       "View invoice": [
         "ინვოისის ნახვა"
       ],
+      "View keys": [
+        "გასაღებების ნახვა"
+      ],
+      "View recipients": [
+        "მიმღებების ნახვა"
+      ],
+      "View rendered HTML": [
+        "დარენდერებული HTML-ის ნახვა"
+      ],
       "What do I get?": [
         "რას მივიღებ?"
+      ],
+      "Why not?": [
+        "რატომ არა?"
+      ],
+      "Write for me": [
+        "დაწერე ჩემთვის"
       ],
       "Yes": [
         "დიახ"
@@ -737,6 +1175,16 @@
         "არ გაქვთ არცერთი ჯგუფი."
       ]
     },
+    "Add participant to calendar event": {
+      "Participant added": [
+        "მონაწილე დაემატა"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "ვადიანი შეტყობინება"
+      ]
+    },
     "Addon": {
       "${ ips } server": [
         "${ ips } სერვერი",
@@ -762,6 +1210,37 @@
       ],
       "By leaving now, some events may not be imported": [
         "თუ ახლა გახვალთ, ზოგი მოვლენა შეიძლება შემოტანილი არ იყოს"
+      ]
+    },
+    "Alt": {
+      "Forwarded": [
+        "გადაგზავნილია"
+      ],
+      "Replied to": [
+        "უპასუხეთ"
+      ],
+      "Replied to all": [
+        "ყველას უპასუხეთ"
+      ],
+      "Star conversation": [
+        "საუბარზე ვარსკვლავის დასმა"
+      ],
+      "Star message": [
+        "შეტყობინებაზე ვარსკვლავის დასმა"
+      ],
+      "Unread email": [
+        "წაუკითხავი ელფოსტა"
+      ],
+      "Unstar conversation": [
+        "საუბრიდან ვარსკვლავის მოხსნა"
+      ],
+      "Unstar message": [
+        "შეტყობინებისთვის ვარსკვლავის მოხსნა"
+      ]
+    },
+    "Alternative text for conversation image": {
+      "Conversation": [
+        "საუბარი"
       ]
     },
     "Animation": {
@@ -818,6 +1297,9 @@
       ],
       "Annually": [
         "წელიწადში ერთხელ"
+      ],
+      "Lifetime": [
+        "სამუდამოდ"
       ],
       "Monthly": [
         "თვეში ერთხელ"
@@ -931,6 +1413,22 @@
         "დაესწრებით?"
       ]
     },
+    "Calendar widget banner": {
+      "Event already ended": [
+        "მოვლენა უკვე დასრულდა"
+      ],
+      "Event in progress": [
+        "მოვლენა ახლა ტარდება"
+      ]
+    },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Cancel expiration": [
+        "ვადის გაუქმება"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } მომხმარებელი",
@@ -1011,7 +1509,64 @@
         "მარწყვისფერი"
       ]
     },
+    "Commander action": {
+      "Create a new folder": [
+        "ახალი საქაღალდის შექმნა"
+      ],
+      "Create a new label": [
+        "ახალი ჭდის შექმნა"
+      ],
+      "Go to Archive": [
+        "არქივზე გადასვლა"
+      ],
+      "Go to Drafts": [
+        "მონახაზებზე გადასვლა"
+      ],
+      "Go to Inbox": [
+        "შემოსულ წერილებზე გადასვლა"
+      ],
+      "Go to Sent": [
+        "გაგზავნილებზე გადასვლა"
+      ],
+      "Go to Spam": [
+        "სპამზე გადასვლა"
+      ],
+      "Go to Starred": [
+        "ვარსკვლავიანებზე გადასვლა"
+      ],
+      "Go to Trash": [
+        "ნაგვის ყუთზე გადასვლა"
+      ],
+      "New message": [
+        "ახალი შეტყობინება"
+      ],
+      "Search": [
+        "ძებნა"
+      ]
+    },
+    "Composer email icon": {
+      "End-to-end encrypted": [
+        "გამჭოლად დაშიფრული"
+      ],
+      "PGP-encrypted": [
+        "PGP-ით დაშიფრული"
+      ],
+      "PGP-signed": [
+        "PGP-ის ხელმოწერილი"
+      ]
+    },
+    "Composer size": {
+      "Maximized": [
+        "მთელ ეკრანზე გაშლილი"
+      ],
+      "Normal": [
+        "ნორმალური"
+      ]
+    },
     "Confirm modal title": {
+      "Edit and reschedule": [
+        "ჩასწორება და გადაგეგმვა"
+      ],
       "Quit import customization?": [
         "დავამთავროთ შემოტანის მორგება?"
       ],
@@ -1865,6 +2420,26 @@
         "ალანდის კუნძულები"
       ]
     },
+    "CustomFilter": {
+      "Attachment": [
+        "მიმაგრება"
+      ],
+      "Filter on": [
+        "ფილტრი"
+      ],
+      "Next": [
+        "შემდეგი"
+      ],
+      "Recipient": [
+        "მიმღები"
+      ],
+      "Sender": [
+        "გამომგზავნი"
+      ],
+      "Subject": [
+        "საგანი"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/თვე"
@@ -1889,6 +2464,14 @@
         "${ dateString }-მდე"
       ]
     },
+    "Date label": {
+      "Today": [
+        "დღეს"
+      ],
+      "Tomorrow": [
+        "ხვალ"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "უცნობი"
@@ -1907,6 +2490,14 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "ინვოისი გადაცილებულია"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "კომფორტული"
+      ],
+      "Compact": [
+        "კომპაქტური"
       ]
     },
     "Description": {
@@ -1958,6 +2549,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების შერწყმა... ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
+      "No folders": [
+        "საქაღალდეების გარეშე"
+      ],
+      "No labels": [
+        "ჭდეების გარეშე"
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "მოირგეთ ანგარიშები ყველა მომხმარებლისთვის და მოიწვიეთ ისინი ${ BRAND_NAME }-ზე."
       ],
@@ -1985,6 +2582,11 @@
         "თქვენს მიერ ატვირთულ CSV ფაილში ამოჩენილია შემდეგი ველები. მონიშნეთ ისინი, რომლების შემოტანაც გსურთ."
       ]
     },
+    "Desktop notification title": {
+      "New email received": [
+        "ახალი ელფოსტა"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "შეცდომები ან ხარისხის პრობლემები"
@@ -2005,6 +2607,19 @@
         "დროებითი საჭიროება შეიძლება, დაბრუნდეს მომავალში"
       ]
     },
+    "Email reminder banner": {
+      "Event is tomorrow": [
+        "მოვლენა ხვალაა"
+      ],
+      "Event starting now": [
+        "მოვლენა იწყება"
+      ]
+    },
+    "Email reminder out of date alert": {
+      "Event was canceled": [
+        "მოვლენა გაუქმდა"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "მოვლენის გაუქმება ${ formattedStart }-ზე"
@@ -2023,6 +2638,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "მოვლენის განახლება ${ formattedStart }-დან"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "სანდო კონტაქტი"
       ]
     },
     "Error": {
@@ -2099,6 +2719,9 @@
       ],
       "Enter 6 digits": [
         "შეიყვანეთ 6 ციფრი"
+      ],
+      "Enter a password": [
+        "შეიყვანეთ პაროლი"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin-ის API-თან მიერთების შეცდომა."
@@ -2317,6 +2940,9 @@
       "Unknown error": [
         "უცნობი შეცდომა"
       ],
+      "Unknown error.": [
+        "უცნობი შეცდომა."
+      ],
       "Unknown payment token status": [
         "გადახდის სტატუსის არასწორი კოდი"
       ],
@@ -2462,6 +3088,9 @@
     "Error message": {
       "Error: ${ errorMessage }": [
         "შეცდომა: ${ errorMessage }"
+      ],
+      "No results found": [
+        "შედეგების გარეშე"
       ],
       "Oops, something went wrong": [
         "უფს, რაღაც არასწორად წავიდა"
@@ -2615,9 +3244,50 @@
         "მეგაბაიტი"
       ]
     },
+    "Filter": {
+      "Show": [
+        "ჩვენება"
+      ]
+    },
+    "Filter modal type": {
+      "If the attachments": [
+        "თუ მიმაგრება"
+      ],
+      "If the recipient": [
+        "თუ მიმღები"
+      ],
+      "If the sender": [
+        "თუ გამომგზავნი"
+      ],
+      "If the subject": [
+        "თუ საგანი"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } განახლდა"
+      ]
+    },
+    "Filter option": {
+      "All": [
+        "ყველა"
+      ],
+      "Hide moved message": [
+        "გადატანილი შეტყობინების დამალვა"
+      ],
+      "Read": [
+        "წაკითხული"
+      ],
+      "Show moved message": [
+        "გადატანილი შეტყობინების ჩვენება"
+      ],
+      "Unread": [
+        "წაუკითხავი"
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "აქვს მიმაგრებული ფაილები"
       ]
     },
     "filter: Label": {
@@ -2646,6 +3316,63 @@
         "${ BRAND_NAME }. კონფიდენციალობა ნაგულისხმევია."
       ]
     },
+    "forwardmessage": {
+      "Date: On ${ date }": [
+        "თარიღი: ${ date }"
+      ],
+      "To: ${ toString }": [
+        "მიმღები: ${ toString }"
+      ]
+    },
+    "Free trial desktop": {
+      "Start free trial": [
+        "უფასო საცდელი ვერსიის ჩართვა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ]
+    },
+    "Get started checklist instructions": {
+      "account logins": [
+        "ანგარიშის შესვლის დეტალები"
+      ],
+      "Auto-forward Gmail": [
+        "Gmail-ის ავტომატური გადაგზავნა"
+      ],
+      "auto-forwarding": [
+        "ავტომატურად გადაგზავნა"
+      ],
+      "Changed accounts": [
+        "შეცვლილი ანგარიშები"
+      ],
+      "Checklist complete": [
+        "საკონტროლო სია დასრულდა"
+      ],
+      "Finish setup": [
+        "მორგების დასრულება"
+      ],
+      "For your eyes only": [
+        "მხოლოდ, თქვენს დასანახად"
+      ],
+      "Get more storage": [
+        "მიიღეთ მეტი საცავი"
+      ],
+      "Get the App": [
+        "გადმოიწერეთ აპი"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
+      "privacy features": [
+        "კონფიდენციალობის ფუნქციები"
+      ],
+      "Storage unlocked": [
+        "საცავი განბლოკილია"
+      ],
+      "Update your logins": [
+        "განაახლეთ თქვენი შესვლის დეტალები"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "ავტომატური გადაგზავნა"
@@ -2664,6 +3391,15 @@
       "Apps": [
         "აპები"
       ],
+      "Custom folders": [
+        "მითითებული საქაღალდეები"
+      ],
+      "Default folders": [
+        "ნაგულისხმები საქაღალდეები"
+      ],
+      "Labels": [
+        "ჭდეები"
+      ],
       "Network": [
         "ქსელი"
       ],
@@ -2677,6 +3413,15 @@
     "Header": {
       "Contacts": [
         "კონტაქტები"
+      ],
+      "Report an issue": [
+        "პრობლემის ანგარიშის გადაგზავნა"
+      ],
+      "Resume downloading": [
+        "გადმოწერის გაგრძელება"
+      ],
+      "Tell us more": [
+        "გვითხარით მეტი"
       ]
     },
     "Hint": {
@@ -2699,6 +3444,11 @@
       ],
       "SMS": [
         "SMS"
+      ]
+    },
+    "ICS widget label for event details": {
+      "Organizer:": [
+        "ორგანიზატორი:"
       ]
     },
     "Import calendar": {
@@ -3036,6 +3786,10 @@
       "${ storage } storage": [
         "${ storage } საცავი"
       ],
+      "${ total } message": [
+        "${ total } შეტყობინება",
+        "${ total } შეტყობინება"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } კონტაქტი წარმატებით განახლდა.",
         "${ updated } კონტაქტი წარმატებით განახლდა."
@@ -3043,6 +3797,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } წევრი)",
         "(${ memberCount } წევრი)"
+      ],
+      "(No Recipient)": [
+        "(მიმღების გარეშე)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
@@ -3113,6 +3870,9 @@
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "სულ ცოტა ${ BETTER_PASSWORD_LENGTH } სიმბოლო"
       ],
+      "Attach public key": [
+        "საჯარო გასაღების მიმაგრება"
+      ],
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
@@ -3127,6 +3887,15 @@
       ],
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
+      ],
+      "Block sender": [
+        "გამომგზავნის დაბლოკვა"
+      ],
+      "Body: ": [
+        "სხეული: "
+      ],
+      "Bulk delete": [
+        "ერთდროული წაშლა"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
@@ -3143,14 +3912,23 @@
       "Checking contact ${ progress } of ${ max }...": [
         "მოწმდება ${ progress }-ე კონტაქტი ${ max }-დან..."
       ],
+      "Clear browser data": [
+        "ბრაუზერის მონაცემების წაშლა"
+      ],
       "Clear data": [
         "მონაცემების გასუფთავება"
+      ],
+      "Clear selection": [
+        "არჩევანის გასუფთავება"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
       ],
       "Close this screen to exit.": [
         "გასასვლელად დახურეთ ეს ეკრანი."
+      ],
+      "Composer:": [
+        "წერილთმწერი:"
       ],
       "Country code": [
         "ქვეყნის კოდი"
@@ -3225,6 +4003,18 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "გადმოწერეთ თქვენი რჩეული აპლიკაცია დღეს და გქონდეთ თქვენი კონფიდენციალობა თან, სადაც უნდა წახვიდეთ."
       ],
+      "Downloading paused": [
+        "გადმოწერა შეჩერებულია"
+      ],
+      "Draft": [
+        "მონახაზი"
+      ],
+      "Draft discarded": [
+        "მონახაზი მოცილებულია"
+      ],
+      "Draft saved.": [
+        "მონახაზი შენახულია."
+      ],
       "Duplicate key updated": [
         "დუბლირებული გასაღები განახლებულია"
       ],
@@ -3233,6 +4023,12 @@
       ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
+      ],
+      "Edit encryption": [
+        "შიფრაციის ჩასწორება"
+      ],
+      "Edit expiration time": [
+        "ვადის ჩასწორება"
       ],
       "email": [
         "ელფოსტა"
@@ -3246,8 +4042,15 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "ელფოსტები, რომლებიც ნაგვის ყუთში ან სპამში 30 ან მეტი დღის წინ მოხვდნენ, ავტომატურად წაიშლება."
       ],
+      "embedded image": [
+        "ჩადგმული გამოსახულება",
+        "ჩადგმული გამოსახულება"
+      ],
       "Enabling auto-deletion…": [
         "ავტოამოცნობის ჩართვა…"
+      ],
+      "Encrypt message": [
+        "შეტყობინების დაშიფრვა"
       ],
       "Enter the code from your authenticator app": [
         "შეიყვანეთ კოდი თქვენი ავთენტიკატორი აპიდან"
@@ -3274,11 +4077,33 @@
       "Estimating time remaining...": [
         "დაახლოებით დარჩენილი დროის გამოთვლა..."
       ],
+      "Expand selection": [
+        "მონიშვნის გაფართოება"
+      ],
+      "Expand text": [
+        "ტექსტის გაფართოება"
+      ],
+      "Expiration time": [
+        "ვადა"
+      ],
       "Expired": [
         "ვადაგასულია"
       ],
+      "file attached": [
+        "მიმაგრებული ფაილი",
+        "მიმაგრებული ფაილი"
+      ],
       "finance": [
         "ფინანსები"
+      ],
+      "Folder": [
+        "საქაღალდე"
+      ],
+      "From": [
+        "ვისგან"
+      ],
+      "Generate text": [
+        "ტექსტის გენერაცია"
       ],
       "here": [
         "აქ"
@@ -3323,11 +4148,21 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
       ],
+      "Include Spam/Trash.": [
+        "სპამის/ნაგვის ყუთის ჩათვლა"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }%-ის ჩათვლით ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "მემკვიდრეობით მშობელი საქაღალდისგან"
+      ],
+      "Initializing…": [
+        "ინიციალიზაცია…"
+      ],
+      "Insert image": [
+        "გამოსახულების ჩასმა",
+        "გამოსახულებების ჩასმა"
       ],
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
@@ -3340,6 +4175,9 @@
       ],
       "It's better to have:": [
         "უკეთესია, გქონდეთ:"
+      ],
+      "JCB logo": [
+        "JCB ლოგო"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
@@ -3362,6 +4200,9 @@
       "Learn more": [
         "მეტის ნახვა"
       ],
+      "Links cleaned:": [
+        "ბმულები გასუფთავდა:"
+      ],
       "Loading": [
         "იტვირთება"
       ],
@@ -3370,6 +4211,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
+      ],
+      "Loading message": [
+        "შეტყობინების ჩატვირთვა"
       ],
       "Loading preview": [
         "გადახედვის ჩატვირთვა"
@@ -3380,6 +4224,15 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
+      "Manage your folders": [
+        "თქვენი საქაღალდეების მართვა"
+      ],
+      "Manage your labels": [
+        "გამართეთ თქვენი ჭდეები"
+      ],
+      "Mark all as read": [
+        "ყველას მონიშვნა წაკითხულად"
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
       ],
@@ -3389,8 +4242,26 @@
       "Member": [
         "წევრი"
       ],
+      "Members": [
+        "წევრები"
+      ],
       "Merged": [
         "შერწყმული"
+      ],
+      "Message headers": [
+        "შეტყობინების თავსართები"
+      ],
+      "Message list": [
+        "შეტყობინებების სია"
+      ],
+      "Message sent": [
+        "შეტყობინება გაიგზავნა"
+      ],
+      "Message sent.": [
+        "შეტყობინება გაიგზავნა."
+      ],
+      "Message view": [
+        "შეტყობინებების ნახვა"
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "შეტყობინებები ყველა თქვენს ელფოსტის მისამართზე საფოსტ ყუთში მოგივათ."
@@ -3401,11 +4272,20 @@
       "Monthly ${ onDayString }": [
         "ყოველ თვე, ${ onDayString }"
       ],
+      "More info": [
+        "მეტი ინფორმაცია"
+      ],
+      "More refine actions": [
+        "მეტი დახვეწის ქმედებები"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
       ],
       "New": [
         "ახალი"
+      ],
+      "newsletter": [
+        "სიახლე"
       ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
@@ -3413,8 +4293,20 @@
       "No email address": [
         "ელ-ფოსტის მისამართის გარეშე"
       ],
+      "No folder found": [
+        "საქაღალდე ნაპოვნი არაა"
+      ],
       "No group found": [
         "ჯგუფი ნაპოვნი არაა"
+      ],
+      "No label found": [
+        "ჭდეები ნაპოვნი არაა"
+      ],
+      "No links cleaned": [
+        "ბმულები არ გასუფთავებულა"
+      ],
+      "No messages to show": [
+        "საჩვენებელი შეტყობინებების გარეშე"
       ],
       "No payment is required at this time.": [
         "ჯერჯერობით გადახდა საჭირო არაა."
@@ -3422,8 +4314,14 @@
       "No results found": [
         "შედეგების გარეშე"
       ],
+      "No trackers found": [
+        "ტრეკერები ვერ ვიპოვე"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "ატვირთული გასაღებებიდან დასაშიფრად ვერც ერთს ვერ გამოვიყენებთ. ამ მისამართზე შეტყობინებების გასაგზავნად ატვირთეთ სწორი გასაღები ან გამორთეთ \"ელფოსტების დაშიფვრა\"."
+      ],
+      "Normal": [
+        "ნორმალური"
       ],
       "Not a valid URL": [
         "არასწორი URL"
@@ -3440,11 +4338,17 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
       ],
+      "Optional": [
+        "არასავალდებულო"
+      ],
       "or discover other features:": [
         "ან აღმოაჩინეთ სხვა ფუნქციები:"
       ],
       "Organization size": [
         "ორგანიზაციის ზომა"
+      ],
+      "Other accounts": [
+        "სხვა ანგარიშები"
       ],
       "password": [
         "პაროლი"
@@ -3460,6 +4364,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME ავტომატურად აგზავნის შეტყობინებას, რედაქტორის მიმდინარე რეჟიმის გამოყენებით."
+      ],
+      "Plain text": [
+        "უბრალო ტექსტი"
       ],
       "Please authenticate your card in the verification tab.": [
         "გთხოვთ, დაადასტუროთ თქვენი ბარათი გადამოწმების ჩანართში."
@@ -3498,6 +4405,9 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "მოითმინეთ, მიმდინარეობს არააქტიური გასაღებით დაშიფრული მონაცემების ძებნა."
       ],
+      "Preferences updated": [
+        "პარამეტრები განახლდა"
+      ],
       "Preview failed to be loaded": [
         "მინიატურის ჩატვირთვის შეცდომა"
       ],
@@ -3510,6 +4420,21 @@
       "Primary": [
         "ძირითადი"
       ],
+      "Print email": [
+        "ელფოსტის დაბეჭდვა"
+      ],
+      "Proofread selection": [
+        "მონიშნულის კორექტურა"
+      ],
+      "Proofread text": [
+        "ტექსტის კორექცია"
+      ],
+      "Quickly spot": [
+        "სწრაფი პოვნა"
+      ],
+      "Recipient: ": [
+        "მიმღები: "
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "აღდგენის ინფორმაცია დარჩება ამ მოწყობილობაზე, თუ მას ხელით არ წაშლით."
       ],
@@ -3519,6 +4444,18 @@
       "Restore": [
         "აღდგენა"
       ],
+      "Sat, ${ formatTime }": [
+        "შაბათს, ${ formatTime }"
+      ],
+      "Saved yesterday": [
+        "გუშინ შენახული"
+      ],
+      "Saving draft…": [
+        "მონახაზის შენახვა…"
+      ],
+      "Scribe panel": [
+        "Scribe-ის პანელი"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "აირჩიეთ მითითებულ მისამართზე ელფოსტის გაგზავნისას გამოყენებული ფორმატი."
       ],
@@ -3527,6 +4464,15 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
+      ],
+      "Selection pane": [
+        "მონიშნულის პანელი"
+      ],
+      "Sending": [
+        "იგზავნება"
+      ],
+      "Sending message...": [
+        "შეტყობინების გაგზავნა..."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "გაგზავნილია <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> დაცული ელფოსტით."
@@ -3546,6 +4492,12 @@
       "Setting up your new address…": [
         "თქვენი ახალი მისამართის მორგება…"
       ],
+      "Shorten selection": [
+        "მონიშნულის შემოკლება"
+      ],
+      "Shorten text": [
+        "ტექსტის შემოკლება"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
       ],
@@ -3563,6 +4515,15 @@
       ],
       "Storage used by this user": [
         "ამ მომხმარებლის მიერ გამოყენებული საცავი"
+      ],
+      "Subject": [
+        "საგანი"
+      ],
+      "Subject:": [
+        "თემა:"
+      ],
+      "Subject: ": [
+        "თემა: "
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
@@ -3636,8 +4597,23 @@
       "Total VPN connections": [
         "VPN შეერთებები სულ"
       ],
+      "Trackers blocked:": [
+        "დაბლოკილი ტრეკერები:"
+      ],
+      "Unlock message": [
+        "შეტყობინების განბლოკვა"
+      ],
+      "Unread conversations": [
+        "წაუკითხავი საუბრები"
+      ],
+      "Unread messages": [
+        "წაუკითხავი შეტყობინებები"
+      ],
       "Unsaved changes": [
         "შეუნახავი ცვლილებები"
+      ],
+      "Unsubscribe": [
+        "გამოწერის გაუქმება"
       ],
       "Unsupported file": [
         "ფაილის მხარდაჭერა არ არსებობს"
@@ -3845,8 +4821,14 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
+      "/month": [
+        "/თვე"
+      ],
       "Account storage": [
         "ანგარიშის საცავი"
+      ],
+      "Active filter:": [
+        "აქტიური ფილტრი:"
       ],
       "Add email address": [
         "ელფოსტის მისამართის დამატება"
@@ -3860,6 +4842,12 @@
       "Address": [
         "მისამართი"
       ],
+      "All contacts": [
+        "ყველა კონტაქტი"
+      ],
+      "Also archive": [
+        "არქივის ჩათვლით"
+      ],
       "App password": [
         "აპის პაროლი"
       ],
@@ -3869,8 +4857,14 @@
       "Authenticator app": [
         "ავთენტიკატორი აპი"
       ],
+      "BCC": [
+        "ბრმა ასლი"
+      ],
       "Billing cycle": [
         "გადახდის პერიოდი"
+      ],
+      "Blind Carbon Copy": [
+        "ბრმა ასლი"
       ],
       "Browser": [
         "ბრაუზერი"
@@ -3890,6 +4884,9 @@
       "Calendars": [
         "კალენდრები"
       ],
+      "Carbon Copy": [
+        "ასლი"
+      ],
       "Card details": [
         "ბარათის დეტალები"
       ],
@@ -3905,8 +4902,14 @@
       "Category": [
         "კატეგორია"
       ],
+      "CC": [
+        "ასლი"
+      ],
       "City": [
         "ქალაქი"
+      ],
+      "Cleaned": [
+        "გასუფთავებულია"
       ],
       "Code is 6 digits without spaces": [
         "კოდი წარმოადგენს 6 ციფრს გამოტოვებების გარეშე"
@@ -3938,6 +4941,9 @@
       "Date": [
         "თარიღი"
       ],
+      "Date:": [
+        "თარიღი:"
+      ],
       "Delete": [
         "წაშლა"
       ],
@@ -3949,6 +4955,12 @@
       ],
       "Don't ask again": [
         "აღარ მკითხო"
+      ],
+      "Don't like the style": [
+        "არ მომწონს სტილი"
+      ],
+      "Don't show again": [
+        "აღარ მაჩვენო"
       ],
       "Email": [
         "ელფოსტა"
@@ -3974,6 +4986,9 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
+      "Enable filter": [
+        "ფილტრის ჩართვა"
+      ],
       "Encrypt emails": [
         "ელფოსტების დაშიფრვა"
       ],
@@ -3989,8 +5004,20 @@
       "Folder location": [
         "საქაღალდის მდებარეობა"
       ],
+      "Forums": [
+        "ფორუმები"
+      ],
       "Forwards to": [
         "გადაგზავნა"
+      ],
+      "Frequency": [
+        "სიხშირე"
+      ],
+      "From": [
+        "ვისგან"
+      ],
+      "From:": [
+        "ვისგან:"
       ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
@@ -4016,6 +5043,9 @@
       "Integrated 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
       ],
+      "Keyword": [
+        "საკვანძო სიტყვა"
+      ],
       "Label messages as": [
         "შეტყობინებების მონიშვნა, როგორც"
       ],
@@ -4031,6 +5061,9 @@
       "Last name": [
         "გვარი"
       ],
+      "Layout": [
+        "განლაგება"
+      ],
       "Location": [
         "მდებარეობა"
       ],
@@ -4043,11 +5076,29 @@
       "Manage categories": [
         "კატეგორიების მართვა"
       ],
+      "Manage my addresses": [
+        "ჩემი მისამართების მართვა"
+      ],
+      "Marked as read": [
+        "მონიშნულია წაკითხულად"
+      ],
+      "Message:": [
+        "შეტყობინება:"
+      ],
+      "Move messages to": [
+        "შეტყობინების გადატანა სად"
+      ],
       "Move to Archive": [
         "არქივში გადატანა"
       ],
       "Move to Inbox": [
         "შემომავლებში გადატანა"
+      ],
+      "Moved to Archive": [
+        "გადატანილია არქივში"
+      ],
+      "Moved to Trash": [
+        "გადატანილია ნაგვის ყუთში"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
@@ -4061,11 +5112,17 @@
       "New password": [
         "ახალი პაროლი"
       ],
+      "Newsletters": [
+        "სიახლეები"
+      ],
       "Note": [
         "შენიშვნა"
       ],
       "Notification": [
         "შეტყობინება"
+      ],
+      "Open in a new tab": [
+        "ახალ ჩანართში გახსნა"
       ],
       "Operating system": [
         "ოპერაციული სისტემა"
@@ -4076,11 +5133,17 @@
       "Optional": [
         "არასავალდებულო"
       ],
+      "Original link": [
+        "საწყისი ბმული"
+      ],
       "Participants": [
         "მონაწილეები"
       ],
       "Password": [
         "პაროლი"
+      ],
+      "Password hint": [
+        "პაროლის მინიშნება"
       ],
       "Payer": [
         "გადამხდელი"
@@ -4109,20 +5172,44 @@
       "Primary": [
         "ძირითადი"
       ],
+      "Promotions": [
+        "რეკლამა"
+      ],
       "Proration": [
         "პროპორცია"
       ],
       "Public keys": [
         "საჯარო გასაღებები"
       ],
+      "Recipient": [
+        "მიმღები"
+      ],
       "Region": [
         "რაიონი"
+      ],
+      "Remember my choice": [
+        "დაიმახსოვრე ჩემი არჩევანი"
+      ],
+      "Remove metadata": [
+        "მეტამონაცემების წაშლა"
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
       ],
+      "Search in": [
+        "რაში მოვძებნო"
+      ],
+      "Sender": [
+        "გამომგზავნი"
+      ],
       "Sign emails": [
         "ელფოსტის ხელმოწერა"
+      ],
+      "Size:": [
+        "ზომა:"
+      ],
+      "Social": [
+        "სოციალური"
       ],
       "Start date": [
         "საწყისი თარიღი"
@@ -4136,11 +5223,20 @@
       "Strong password": [
         "ძლიერი პაროლი"
       ],
+      "Subject:": [
+        "თემა:"
+      ],
       "Subscription options": [
         "გამოწერის პარამეტრები"
       ],
       "System information": [
         "სისტემის ინფორმაცია"
+      ],
+      "Time": [
+        "დრო"
+      ],
+      "To:": [
+        "ვის:"
       ],
       "To: ${ toEmail }": [
         "მიმღები: ${ toEmail }"
@@ -4148,8 +5244,14 @@
       "Toolbar": [
         "ხელსაწყოების ზოლი"
       ],
+      "Transactions": [
+        "ტრანზაქციები"
+      ],
       "Unknown": [
         "უცნობი"
+      ],
+      "Updates": [
+        "განახლებები"
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
@@ -4175,8 +5277,21 @@
       "What happened?": [
         "რა მოხდა?"
       ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
+      ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ]
+    },
+    "Label attach to date input to select a date": {
+      "Date": [
+        "თარიღი"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "დრო"
       ]
     },
     "Label for contact group color": {
@@ -4187,6 +5302,14 @@
     "Label for contact group name": {
       "Name": [
         "სახელი"
+      ]
+    },
+    "Label Recipient": {
+      "From": [
+        "ვისგან"
+      ],
+      "To": [
+        "ვის"
       ]
     },
     "Label, credit card": {
@@ -4218,6 +5341,14 @@
         "გვერდითი პანელი"
       ]
     },
+    "Layout mode": {
+      "Column": [
+        "სვეტი"
+      ],
+      "Row": [
+        "მწკრივი"
+      ]
+    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "ახალი კალენდრის დასამატებლად არსებული წაშალეთ."
@@ -4233,11 +5364,23 @@
       "Add a gift code": [
         "ჩასვით სასაჩუქრე კოდი"
       ],
+      "All mail": [
+        "ყველა ელფოსტა"
+      ],
+      "Archive": [
+        "არქივი"
+      ],
       "clearing your browser cache": [
         "ბრაუზერის ქეშის გასუფთავება"
       ],
+      "Drafts": [
+        "მონახაზები"
+      ],
       "Enforcing 2FA for organizations": [
         "2FA-ის მოთხოვნა ორგანიზაციებისთვის"
+      ],
+      "Folders": [
+        "საქაღალდეები"
       ],
       "How to add users": [
         "როგორ დავამატო მომხმარებლები"
@@ -4284,8 +5427,26 @@
       "How to use Groups": [
         "როგორ გამოვიყენო ჯგუფები"
       ],
+      "Inbox": [
+        "შემომავალი"
+      ],
+      "Labels": [
+        "ჭდეები"
+      ],
       "Learn more": [
         "გაიგეთ მეტი"
+      ],
+      "Less": [
+        "ნაკლები"
+      ],
+      "Manage your folders": [
+        "თქვენი საქაღალდეების მართვა"
+      ],
+      "More": [
+        "მეტი"
+      ],
+      "Outbox": [
+        "გამავალი"
       ],
       "Pay invoice": [
         "ინვოისის გადახდა"
@@ -4296,8 +5457,29 @@
       "Request an invite": [
         "მოსაწვევის მოთხოვნა"
       ],
+      "Scheduled": [
+        "დაგეგმილია"
+      ],
+      "Sent": [
+        "გაგზავნილები"
+      ],
       "settings": [
         "მორგება"
+      ],
+      "Sign up for free": [
+        "უფასო რეგისტრაცია"
+      ],
+      "Snooze": [
+        "დროებით დადუმება"
+      ],
+      "Snoozed": [
+        "დროებით დადუმებულია"
+      ],
+      "Spam": [
+        "სპამი"
+      ],
+      "Starred": [
+        "ვარსკვლავიანები"
       ],
       "Terms": [
         "წესები"
@@ -4308,8 +5490,16 @@
       "Types of recovery methods": [
         "აღდგენის მეთოდის ტიპები"
       ],
+      "Views": [
+        "ხედები"
+      ],
       "What’s this?": [
         "რა არის ეს?"
+      ]
+    },
+    "Link to settings": {
+      "settings": [
+        "მორგება"
       ]
     },
     "Loading info": {
@@ -4359,6 +5549,20 @@
         "${ BRAND_NAME } Scribe წერის დამხმარე"
       ]
     },
+    "Mailbox": {
+      "Archive": [
+        "არქივი"
+      ],
+      "Inbox": [
+        "შემომავალი"
+      ],
+      "Spam": [
+        "სპამი"
+      ],
+      "Trash": [
+        "ნაგვის ყუთი"
+      ]
+    },
     "Message": {
       "Fw:": [
         "გადა:"
@@ -4373,6 +5577,14 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "ხელმისაწვდომია ${ appName }-ის ახალი ვერსია. ${ reloadButton }."
+      ]
+    },
+    "Message notification": {
+      "Sending undone": [
+        "გაგზავნა გაუქმებულია"
+      ],
+      "Undoing send...": [
+        "გაგზავნის გაუქმება..."
       ]
     },
     "MIME type": {
@@ -4713,6 +5925,9 @@
       "Email client support (via IMAP/SMTP)": [
         "ელფოსტის კლიენტის მხარდაჭერა (IMAP/SMTP-ით)"
       ],
+      "Email groups": [
+        "ელფოსტის ჯგუფები"
+      ],
       "Enables HIPAA compliance": [
         "ჩართავს HIPAA-სთან თავსებადობას"
       ],
@@ -4936,6 +6151,9 @@
       ],
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
+      ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
       ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
@@ -5179,11 +6397,17 @@
       ]
     },
     "Notification": {
+      "Block removed": [
+        "განბლოკილია"
+      ],
       "Contact group created": [
         "კონტაქტების ჯგუფი შეიქმნა"
       ],
       "Contact group updated": [
         "კონტაქტების ჯგუფი განახლდა"
+      ],
+      "Senders blocked": [
+        "გამომგზავნები დაბლოკილია"
       ]
     },
     "Oauth instructions": {
@@ -5196,6 +6420,55 @@
         "შემოსატანად საჭიროა, რომ მონიშნოთ ყველა საჭირო ელემენტი, ისე, როგორც ეს GIF-ზეა."
       ]
     },
+    "Onboarding List Placeholder": {
+      "Finance": [
+        "ფინანსები"
+      ],
+      "Shopping": [
+        "შოპინგი"
+      ],
+      "Social media": [
+        "სოციალური მედია"
+      ]
+    },
+    "Onboarding modal": {
+      "Activate selected": [
+        "მონიშნულის გააქტიურება"
+      ],
+      "Ad-free promise": [
+        "დაპირება რეკლამის გარეშე"
+      ],
+      "Advanced encryption": [
+        "დამატებითი დაშიფვრა"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "Continue": [
+        "გაგრძელება"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Let's get started": [
+        "დავიწყოთ"
+      ],
+      "Maybe later": [
+        "შესაძლოა მოგვიანებით"
+      ],
+      "Next": [
+        "შემდეგი"
+      ],
+      "Replay introduction": [
+        "შესავლის თავიდან დაკვრა"
+      ],
+      "Set a display name": [
+        "საჩვენებელი სახელის დაყენება"
+      ],
+      "You are all set!": [
+        "ყველაფერი მზადაა!"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "მოირგეთ თქვენი ორგანიზაცია, მიაბით თქვენი დომენური სახელი და შექმენით ანგარშები, რომ დარწმუნდეთ, რომ თქვენი ორგანიზაციის ყველა წევრი დაცულია."
@@ -5203,13 +6476,45 @@
       "Discover all ${ BRAND_NAME } services": [
         "აღმოაჩინეთ ${ BRAND_NAME }-ის ყველა სერვისი"
       ],
+      "Make it your own": [
+        "გახადეთ ის თქვენი"
+      ],
       "Set up your organization": [
         "ორგანიზაციის მორგება"
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "საბანკო საქმიანობა"
+      ],
+      "Crypto": [
+        "კრიპტო"
+      ],
+      "Entertainment": [
+        "გართობა"
+      ],
+      "Food and beverage": [
+        "კვება და სასმელი"
+      ],
+      "Gaming": [
+        "თამაშები"
+      ],
+      "Most popular": [
+        "ყველაზე პოპულარული"
+      ],
+      "Travel": [
+        "მოგზაურობა"
+      ],
+      "Utilities": [
+        "ხელსაწყოები"
       ]
     },
     "Option": {
       "Add to existing group": [
         "არსებულ ჯგუფში ჩამატება"
+      ],
+      "All": [
+        "ყველა"
       ],
       "Automatic (${ value })": [
         "ავტომატური (${ value })"
@@ -5299,6 +6604,9 @@
       "MM/YY": [
         "თთ/წწ"
       ],
+      "terms & conditions": [
+        "პირობები და წესები"
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ]
@@ -5321,6 +6629,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "PGP key encryption warning": {
@@ -5354,14 +6667,26 @@
       "Email address": [
         "ელ-ფოსტის მისამართი"
       ],
+      "Filter folders": [
+        "საქაღალდეების გაფილტვრა"
+      ],
       "Filter groups": [
         "ჯგუფების გაფილტრვა"
+      ],
+      "Filter labels": [
+        "ჭდეების ფილტრი"
+      ],
+      "Generating": [
+        "გენერაცია"
       ],
       "Gift code": [
         "სასაჩუქრე კოდი"
       ],
       "Group name": [
         "ჯგუფის სახელი"
+      ],
+      "Hint": [
+        "მინიშნება"
       ],
       "Image URL": [
         "გამოსახულების ბმული"
@@ -5387,6 +6712,9 @@
       "Search for name or email": [
         "სახელის ან ელფოსტის ძებნა"
       ],
+      "Search messages": [
+        "შეტყობინებების ძებნა"
+      ],
       "Select": [
         "აირჩიეთ"
       ],
@@ -5395,6 +6723,12 @@
       ],
       "Start typing an email address": [
         "დაიწყეთ ელფოსტის მისამართის აკრეფა"
+      ],
+      "Subject": [
+        "თემა"
+      ],
+      "To": [
+        "ვის"
       ],
       "Your organization name": [
         "თქვენი ორგანიზაციის სახელი"
@@ -5470,9 +6804,39 @@
         "სამსახურის"
       ]
     },
+    "Received email icon": {
+      "PGP-signed message": [
+        "PGP-ით ხელმოწერილი შეტყობინება"
+      ]
+    },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } დღე",
+        "${ remainingDays } დღე"
+      ],
+      "<1 d": [
+        "<1 დღე"
+      ]
+    },
+    "Reply to calendar invitation": {
+      "Answer sent": [
+        "პასუხი გაგზავნილია"
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "შესვლა წარმატებით არ დასრულდა."
+      ]
+    },
+    "Search - no results": {
+      "No messages found": [
+        "შეტყობინებები ნაპოვნი არაა"
+      ],
+      "No results found": [
+        "შედეგების გარეშე"
+      ],
+      "No snoozed messages": [
+        "დროებით დადუმებული შეტყობინებების გარეშე"
       ]
     },
     "Section": {
@@ -5529,6 +6893,19 @@
         "შედეგების გარეშე"
       ]
     },
+    "Sender verification details": {
+      "Sender verification": [
+        "გამგზავნის გადამოწმება"
+      ]
+    },
+    "Sent email icon": {
+      "End-to-end encrypted": [
+        "გამჭოლად დაშიფრული"
+      ],
+      "PGP-signed": [
+        "PGP-ის ხელმოწერილი"
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset canceled": [
         "პაროლის ჩამოყრა გაუქმდა"
@@ -5555,6 +6932,25 @@
     "Signup label": {
       "Display name": [
         "საჩვენებელი სახელი"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "შეტყობინების დროებით დადუმება"
+      ]
+    },
+    "Sort option": {
+      "Largest first": [
+        "ჯერ ყველაზე დიდი"
+      ],
+      "Newest first": [
+        "ჯერ უახლესი"
+      ],
+      "Oldest first": [
+        "ჯერ უძველესი"
+      ],
+      "Smallest first": [
+        "ჯერ ყველაზე პატარა"
       ]
     },
     "specialoffer: Action": {
@@ -5616,6 +7012,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
+      ],
+      "Schedule send": [
+        "გაგზავნის დაგეგმვა"
       ]
     },
     "sso": {
@@ -5627,6 +7026,14 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
+      ]
+    },
+    "Status": {
+      "Alias disabled": [
+        "ფსევდონიმი გათიშულია"
+      ],
+      "Unsubscribed": [
+        "გამოწერა გაუქმებულია"
       ]
     },
     "Storage": {
@@ -5888,6 +7295,9 @@
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Draft deleted": [
+        "მონახაზი წაიშალა"
+      ],
       "Email address copied to clipboard": [
         "ელფოსტის მისამართები დაკოპირდა გაცვლის ბაფერში"
       ],
@@ -5897,14 +7307,23 @@
       "Import record deleted": [
         "შემოტანის ჩანაწერი წაშლილია"
       ],
+      "Labels applied.": [
+        "ჭდეები გადატარებულია."
+      ],
       "Last modified aliases stored in your oldest vault": [
         "ბოლოს შეცვლილი ფსევდონიმები თქვენს უძველეს საცავშია შენახული"
+      ],
+      "Message deleted": [
+        "შეტყობინება წაშლილია"
       ],
       "Payment method added": [
         "გადახდის მეთოდი დამატებულია"
       ],
       "Payment method updated": [
         "გადახდის მეთოდი განახლებულია"
+      ],
+      "Phishing reported": [
+        "ფიშინგის ანგარიში გაგზავნილია"
       ],
       "Phone number copied to clipboard": [
         "ტელეფონის ნომერი დაკოპირებულია გაცვლის ბაფერში"
@@ -5914,6 +7333,12 @@
       ],
       "Preferences saved": [
         "პარამეტრები შენახულია"
+      ],
+      "Public key trusted": [
+        "საჯარო გასაღებები სანდოა"
+      ],
+      "Read receipt sent": [
+        "წაკითხულობის ანგარიში გაიგზავნა"
       ],
       "Undo in progress": [
         "მიმდინარეობს გაუქმება"
@@ -5932,6 +7357,11 @@
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
+      ]
+    },
+    "Success notification": {
+      " is now active": [
+        " ახლა აქტიურია"
       ]
     },
     "Suffix": {
@@ -6007,6 +7437,11 @@
         "vCard-ის ველი"
       ]
     },
+    "Time": {
+      "Yesterday": [
+        "გუშინ"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } საათი",
@@ -6035,12 +7470,32 @@
         "${ minutes } წუთი"
       ]
     },
+    "Tip Action": {
+      "Activate": [
+        "გააქტიურება"
+      ],
+      "Create an alias": [
+        "ფსევდონიმის შექმნა"
+      ],
+      "Download Desktop app": [
+        "გადმოწერეთ კომპიუტერის აპი"
+      ],
+      "Open ": [
+        "გახსნა "
+      ],
+      "Show me how": [
+        "მაჩვენე, როგორ"
+      ]
+    },
     "Title": {
       "${ feature } is now active": [
         "${ feature } ახლა აქტიურია"
       ],
       "Account recovery": [
         "ანგარიშის აღდგენა"
+      ],
+      "Action all messages": [
+        "გადატარება ყველა შეტყობნებაზე"
       ],
       "Add contact group name": [
         "დაამატეთ კონტაქტის ჯგუფის სახელი"
@@ -6067,17 +7522,32 @@
       "Apply gift code": [
         "სასაჩუქრე კოდის გადატარება"
       ],
+      "Archive": [
+        "არქივი"
+      ],
       "Are you sure you want to close the preview?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, დახუროთ მინიატურა?"
       ],
       "Are you sure?": [
         "დარწმუნებული ბრძანდებით?"
       ],
+      "Attachments": [
+        "მიმაგრებული ფაილები"
+      ],
       "Auto-deletion is active": [
         "ავტოამოცნობა ჩართულია"
       ],
+      "BCC": [
+        "ბრმა ასლი"
+      ],
       "Billing cycle": [
         "გადახდის პერიოდი"
+      ],
+      "Blind Carbon Copy": [
+        "ბრმა ასლი"
+      ],
+      "Block sender": [
+        "გამომგზავნის დაბლოკვა"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } გამოწერის გაუქმება"
@@ -6085,8 +7555,14 @@
       "Cancel subscription?": [
         "გავაუქმო ხელმოწერა?"
       ],
+      "Carbon Copy": [
+        "ასლი"
+      ],
       "Card verification": [
         "ბარათის გადამოწმება"
+      ],
+      "CC": [
+        "ასლი"
       ],
       "Change my answer": [
         "პასუხის შეცვლა"
@@ -6127,6 +7603,15 @@
       "Continue with partial import?": [
         "გავაგრძელო ნაწილობრივი შემოტანით?"
       ],
+      "Conversation list": [
+        "საუბრების სია"
+      ],
+      "Coupon": [
+        "კუპონი"
+      ],
+      "Craft better emails": [
+        "შექმენით უკეთესი ელფოსტები"
+      ],
       "Create contact": [
         "კონტაქტის შექმნა"
       ],
@@ -6151,6 +7636,9 @@
       "Data recovery": [
         "მონაცემების აღდგენა"
       ],
+      "Decryption error": [
+        "გაშიფვრის შეცდომა"
+      ],
       "Delete ${ count } contact": [
         "${ count } კონტაქტის წაშლა",
         "${ count } კონტაქტის წაშლა"
@@ -6161,6 +7649,18 @@
       ],
       "Delete ${ value }": [
         "${ value }-ის წაშლა"
+      ],
+      "Delete all messages": [
+        "ყველა შეტყობინების წაშლა"
+      ],
+      "Delete conversation": [
+        "საუბრის წაშლა"
+      ],
+      "Delete draft": [
+        "მონახაზის წაშლა"
+      ],
+      "Delete message": [
+        "შეტყობინების წაშლა"
       ],
       "Deleting contacts": [
         "კონტაქტების წაშლა"
@@ -6195,6 +7695,9 @@
       "Email addresses": [
         "ელფოსტის მისამართები"
       ],
+      "Email content": [
+        "ელფოსტის შემცველობა"
+      ],
       "Email settings": [
         "ელფოსტის მორგება"
       ],
@@ -6216,6 +7719,18 @@
       "Exporting contacts": [
         "კონტაქტების გატანა"
       ],
+      "External encryption": [
+        "გარე შიფრაცია"
+      ],
+      "Filter on...": [
+        "ფილტრი ჩართულია..."
+      ],
+      "Folder options": [
+        "საქაღალდის მორგება"
+      ],
+      "Forward": [
+        "გადაგზავნა"
+      ],
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
       ],
@@ -6230,6 +7745,9 @@
       ],
       "Human verification": [
         "ადამიანის შემოწმება"
+      ],
+      "Image": [
+        "გამოსახულება"
       ],
       "Import as simple event?": [
         "შემოვიტანო მარტივი მოვლენის სახით?",
@@ -6247,11 +7765,32 @@
       "Import failed": [
         "შემოტანის შეცდომა"
       ],
+      "Insert contacts": [
+        "კონტაქტების ჩასმა"
+      ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
       ],
+      "Label as": [
+        "დანიშვნა, როგორც"
+      ],
+      "Label options": [
+        "ჭდის მორგება"
+      ],
       "Link confirmation": [
         "ბმულის დადასტურება"
+      ],
+      "Load embedded images": [
+        "ჩადგმული გამოსახულებების ჩატვირთვა"
+      ],
+      "Load remote content": [
+        "გარე შემცველობის ჩატვირთვა"
+      ],
+      "Mark as read": [
+        "წაკითხულად მონიშვნა"
+      ],
+      "Mark as unread": [
+        "წაუკითხავად მონიშვნა"
       ],
       "Merge contacts": [
         "კონტაქტების შერწყმა"
@@ -6259,14 +7798,71 @@
       "Merging contacts": [
         "კონტაქტების შერწყმა"
       ],
+      "Message details": [
+        "შეტყობინების დეტალები"
+      ],
+      "Message list": [
+        "შეტყობინებების სია"
+      ],
+      "Message will expire": [
+        "ვადიანი შეტყობინება"
+      ],
       "Minicalendar": [
         "მინიკალენდარი"
       ],
       "Mobile": [
         "მობილური"
       ],
+      "More": [
+        "მეტი"
+      ],
+      "More actions": [
+        "მეტი ქმედება"
+      ],
+      "More options": [
+        "მეტი პარამეტრი"
+      ],
+      "More selections": [
+        "მეტი არჩევანი"
+      ],
+      "Move all messages": [
+        "ყველა შეტყობინების გადატანა"
+      ],
+      "Move to": [
+        "გადატანა სად"
+      ],
+      "Move to inbox": [
+        "შემომავლებში გადატანა"
+      ],
+      "Move to spam": [
+        "სპამში გადატანა"
+      ],
+      "Move to trash": [
+        "ნაგვის ყუთში გადატანა"
+      ],
       "Network error": [
         "ქსელის შეცდომა"
+      ],
+      "New message": [
+        "ახალი შეტყობინება"
+      ],
+      "Newsletters": [
+        "სიახლეები"
+      ],
+      "Newsletters view": [
+        "სიახლეების ხედი"
+      ],
+      "Next conversation": [
+        "შემდეგი საუბარი"
+      ],
+      "Next message": [
+        "შემდეგი შეტყობინება"
+      ],
+      "No attachment found": [
+        "მიმაგრებული ფაილების გარეშე"
+      ],
+      "No trackers found": [
+        "ტრეკერები ვერ ვიპოვე"
       ],
       "Open actions dropdown": [
         "ქმედებების ჩამოსაშლელი მენიუდან აღება"
@@ -6292,14 +7888,26 @@
       "Preview": [
         "გადახედვა"
       ],
+      "Previous message": [
+        "წინა შეტყობინება"
+      ],
       "Processing...": [
         "დამუშავება..."
       ],
       "Re-sign all contacts": [
         "ყველა კონტაქტის თავიდან ხელმოწერა"
       ],
+      "Re-sign contact": [
+        "კონტაქტის თავიდან ხელმოწერა"
+      ],
       "Re-signing contacts": [
         "კონტაქტის თავიდან ხელმოწერა"
+      ],
+      "Recipient missing": [
+        "აკლია მიმღები"
+      ],
+      "Recipients": [
+        "მიმღებები"
       ],
       "Recommended": [
         "რეკომენდებულია"
@@ -6313,20 +7921,50 @@
       "Recover data": [
         "მონაცემების აღდგენა"
       ],
+      "Remove from list?": [
+        "წავშალო სიიდან?"
+      ],
+      "Reply": [
+        "პასუხი"
+      ],
+      "Reply all": [
+        "ყველასთვის პასუხი"
+      ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
       ],
       "Request new code": [
         "ახალი კოდის გამოთხოვა"
       ],
+      "Schedule send": [
+        "გაგზავნის დაგეგმვა"
+      ],
       "Select a plan": [
         "აირჩეთ გეგმა"
+      ],
+      "Select a theme": [
+        "აირჩიეთ თემა"
       ],
       "Select action to take on contact group": [
         "აირჩიეთ კონტაქტების ჯგუფზე განსახორციელებელი ქმედება"
       ],
       "Select contact group": [
         "მონიშნეთ კონტაქტების ჯგუფი"
+      ],
+      "Send email": [
+        "ელ-ფოსტის გაგზავნა"
+      ],
+      "Sender": [
+        "გამომგზავნი"
+      ],
+      "Sender changed": [
+        "გამგზავნი შეიცვალა"
+      ],
+      "Sending error": [
+        "გაგზავნის შეცდომა"
+      ],
+      "Sending notice": [
+        "შეტყობინების გაგზავნა"
       ],
       "Set recovery methods": [
         "აღდგენის მეთოდების დაყენება"
@@ -6355,20 +7993,54 @@
       "Simplify password management": [
         "პაროლების მართვის გამარტივება"
       ],
+      "Snooze": [
+        "დროებით დადუმება"
+      ],
+      "Snooze message": [
+        "შეტყობინების დროებით დადუმება"
+      ],
+      "Sort conversations": [
+        "საუბრების დალაგება"
+      ],
+      "Sort messages": [
+        "შეტყობინებების დალაგება"
+      ],
       "Start a new import": [
         "ახალი შემოტანის დაწყება"
       ],
       "Start import process": [
         "შემოტანის დაწყება"
       ],
+      "Subject missing": [
+        "საგნის გარეშე"
+      ],
       "Summary": [
         "შეჯამება"
+      ],
+      "To": [
+        "ვის"
       ],
       "Trash": [
         "ნაგვის ყუთი"
       ],
+      "Trash all messages?": [
+        "გადავიტანო ნაგვის ყუთში ყველაფერი?"
+      ],
+      "Trust new key?": [
+        "ენდობით ახალ გასაღებს?",
+        "ენდობით ახალ გასაღებებს?"
+      ],
+      "Trust pinned keys?": [
+        "ვენდო მიმაგრებულ გასაღებებს?"
+      ],
+      "Trust public key?": [
+        "ენდობით ამ საჯარო გასაღებს?"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
+      ],
+      "Unsubscribe": [
+        "გამოწერის გაუქმება"
       ],
       "Upgrade complete!": [
         "განახლება დასრულებულია!"
@@ -6378,6 +8050,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "გამოიყენეთ ${ VPN_SHORT_APP_NAME } მონაცემთა კონფიდენციალობისთვის"
+      ],
+      "Verification error": [
+        "შემოწმების შეცდომა"
       ],
       "Verification failed": [
         "გადამოწმების შეცდომა"
@@ -6393,6 +8068,9 @@
       ],
       "Warning: suspected fake website": [
         "გაფრთხილება: დიდი ალბათობით, ვებგვერდი ყალბია"
+      ],
+      "Welcome": [
+        "მოგესალმებით"
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "მოგესალმებათ ${ BRAND_NAME } for Business"
@@ -6597,6 +8275,11 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "ორშ, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

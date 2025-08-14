@@ -96,6 +96,9 @@
       "Cancel subscription": [
         "Cancelar assinatura"
       ],
+      "Change password": [
+        "Alterar senha"
+      ],
       "Chat with us": [
         "Converse conosco"
       ],
@@ -2074,6 +2077,11 @@
         "Atualização para um evento começando em ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contato de confiança"
+      ]
+    },
     "Error": {
       "A group with this name already exists": [
         "Já existe um grupo com esse"
@@ -3425,6 +3433,9 @@
       "Enter your own password (as organization admin).": [
         "Digite sua própria senha (como administrador da organização)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Digite sua própria senha (como contato de confiança)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo restante estimado: ${ estimatedMinutes } minuto",
         "Tempo restante estimado: ${ estimatedMinutes } minutos"
@@ -4415,6 +4426,9 @@
       ],
       "Your password (admin)": [
         "Sua senha (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Sua senha (contato de confiança)"
       ]
     },
     "Label for contact group color": {
@@ -6136,14 +6150,6 @@
         "${ elementsCount } conversa marcada como não lida.",
         "${ elementsCount } conversas marcadas como não lidas."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } conversa movida para ${ folderName } e remetente adicionado à sua lista de permitidos.",
-        "${ elementsCount } conversas movidas para ${ folderName } e remetentes adicionados à sua lista de permitidos."
-      ],
-      "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } conversa movida para ${ folderName }.",
-        "${ elementsCount } conversas movidas para ${ folderName }."
-      ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } conversa movida para o spam e o remetente adicionado à sua lista de spam.",
         "${ elementsCount } conversas movidas para o spam e os remetentes adicionados à sua lista de spam."
@@ -6175,14 +6181,6 @@
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } mensagem marcada como não lida.",
         "${ elementsCount } mensagens marcadas como não lidas."
-      ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } mensagem movida para ${ folderName } e remetente adicionado à sua lista de permitidos.",
-        "${ elementsCount } mensagens movidas para ${ folderName } e remetentes adicionados à sua lista de permitidos."
-      ],
-      "${ elementsCount } message moved to ${ folderName }.": [
-        "${ elementsCount } mensagem movida para ${ folderName }.",
-        "${ elementsCount } mensagens movidas para ${ folderName }."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",

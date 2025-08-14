@@ -96,6 +96,9 @@
       "Cancel subscription": [
         "Отменить подписку"
       ],
+      "Change password": [
+        "Изменить пароль"
+      ],
       "Chat with us": [
         "Поговорите с нами"
       ],
@@ -2101,7 +2104,7 @@
         "Параметры псевдонима не могут быть определены"
       ],
       "Aliases could not be loaded": [
-        "Псевдонимы не могут быть загружены"
+        "Не удалось загрузить псевдонимы"
       ],
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
@@ -2543,7 +2546,7 @@
         "Хм. Что-то пошло не так"
       ],
       "Please refresh the page or try again later.": [
-        "Пожалуйста, обновите страницу или повторите попытку позже."
+        "Обновите страницу или повторите попытку позже."
       ],
       "Something went wrong": [
         "Что-то пошло не так"
@@ -2732,6 +2735,14 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Get started checklist instructions": {
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } день остался",
+        "${ remainingDaysCount } дня осталось",
+        "${ remainingDaysCount } дней осталось",
+        "${ remainingDaysCount } дней осталось"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Автоматическая пересылка"
@@ -2785,6 +2796,14 @@
       ],
       "SMS": [
         "СМС"
+      ]
+    },
+    "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } участник",
+        "${ totalAttendees } участника",
+        "${ totalAttendees } участников",
+        "${ totalAttendees } участников"
       ]
     },
     "Import calendar": {
@@ -3120,6 +3139,12 @@
         "Найдено ${ groupCounts } группы",
         "Найдено ${ groupCounts } групп",
         "Найдено ${ groupCounts } группы"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } ссылка очищена",
+        "${ numberOfUTMTrackers } ссылки очищены",
+        "${ numberOfUTMTrackers } ссылок очищено",
+        "${ numberOfUTMTrackers } ссылок очищено"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
@@ -6280,6 +6305,12 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } теперь активна"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } непрочитанное сообщение",
+        "${ unreads } непрочитанных сообщения",
+        "${ unreads } непрочитанных сообщений",
+        "${ unreads } непрочитанных сообщений"
       ],
       "Account recovery": [
         "Восстановление аккаунта"

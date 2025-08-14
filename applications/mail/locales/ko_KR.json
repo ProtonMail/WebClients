@@ -102,6 +102,9 @@
       "Cancel subscription": [
         "구독 취소"
       ],
+      "Change password": [
+        "비밀번호 변경"
+      ],
       "Change sorting": [
         "정렬 변경"
       ],
@@ -6372,12 +6375,6 @@
       "${ elementsCount } conversation marked as unread.": [
         "대화 ${ elementsCount }개를 읽지않음으로 표시했습니다."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "대화 ${ elementsCount }개가 ${ folderName }(으)로 이동되고 보낸 사람이 스팸 아님 목록에 추가되었습니다."
-      ],
-      "${ elementsCount } conversation moved to ${ folderName }.": [
-        "대화 ${ elementsCount }개가 ${ folderName }으로 이동되었습니다."
-      ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "대화 ${ elementsCount }개가 스팸으로 이동되고 보낸 사람이 스팸 목록에 추가되었습니다."
       ],
@@ -6404,12 +6401,6 @@
       ],
       "${ elementsCount } message marked as unread.": [
         "메시지 ${ elementsCount }개가 읽지않음으로 표시되었습니다."
-      ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "메시지 ${ elementsCount }개가 ${ folderName }(으)로 이동 및 보낸 사람이 스팸 아님 목록에 추가되었습니다."
-      ],
-      "${ elementsCount } message moved to ${ folderName }.": [
-        "메시지 ${ elementsCount }개가 ${ folderName }(으)로 이동되었습니다."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ labelName }에서 메시지 ${ elementsCount }개를 삭제했습니다."
@@ -6443,12 +6434,6 @@
       ],
       "Conversation added to ${ labelName }.": [
         "대화가 ${ labelName }에 추가되었습니다."
-      ],
-      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "대화가 ${ folderName }(으)로 이동되었으며 보낸 사람이 스팸 아님 목록에 추가되었습니다."
-      ],
-      "Conversation moved to ${ folderName }.": [
-        "대화가 ${ folderName }(으)로 이동되었습니다."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } 로 부터 전송된 대화가 ${ labelsList } 로 라벨 표시됩니다"
