@@ -631,6 +631,16 @@ describe('moveEngineRulesMessages', () => {
                 run: messageCategoryRules,
                 destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
             },
+            {
+                name: 'allDraftRules, scheduled',
+                run: messageAllDraftRules,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
+            },
+            {
+                name: 'draftRules, scheduled',
+                run: messageDraftRules,
+                destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+            },
         ])('should return denied if the element is scheduled, $name', ({ run, destinationLabelID }) => {
             const result = run({
                 element: {
@@ -677,11 +687,6 @@ describe('moveEngineRulesMessages', () => {
                 destinationLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
             },
             {
-                name: 'allDraftRules, scheduled',
-                run: messageAllDraftRules,
-                destinationLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
-            },
-            {
                 name: 'trashRules, scheduled',
                 run: messageTrashRules,
                 destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
@@ -700,11 +705,6 @@ describe('moveEngineRulesMessages', () => {
                 name: 'sentRules, scheduled',
                 run: messageSentRules,
                 destinationLabelID: MAILBOX_LABEL_IDS.SENT,
-            },
-            {
-                name: 'draftRules, scheduled',
-                run: messageDraftRules,
-                destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
             },
             {
                 name: 'customFolderRules, scheduled',
