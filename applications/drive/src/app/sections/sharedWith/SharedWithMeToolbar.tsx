@@ -44,7 +44,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
                 showConfirmModal={showConfirmModal}
                 showDetailsModal={showDetailsModal}
                 showFilesDetailsModal={showFilesDetailsModal}
-                type="toolbar"
+                buttonType="toolbar"
             />
         );
     };

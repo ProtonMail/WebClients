@@ -20,7 +20,7 @@ jest.mock('../../../hooks/drive/useBatchThumbnailLoader', () => ({
     }),
 }));
 
-jest.mock('../../../hooks/drive/useBookmarksActions', () => ({
+jest.mock('./useBookmarksActions', () => ({
     useBookmarksActions: () => ({
         openBookmark: jest.fn(),
     }),

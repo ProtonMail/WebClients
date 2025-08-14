@@ -29,12 +29,12 @@ interface BaseDirectShareActionsProps {
 }
 
 interface ContextMenuDirectShareActionsProps extends BaseDirectShareActionsProps {
-    type: 'contextMenu';
+    buttonType: 'contextMenu';
     close: () => void;
 }
 
 interface ToolbarDirectShareActionsProps extends BaseDirectShareActionsProps {
-    type: 'toolbar';
+    buttonType: 'toolbar';
     close?: never;
 }
 
@@ -46,7 +46,7 @@ export const DirectShareActions = ({
     showDetailsModal,
     showFilesDetailsModal,
     close,
-    type,
+    buttonType,
 }: DirectShareActionsProps) => {
     const itemChecker = createItemChecker(selectedItems);
     const singleItem = selectedItems.at(0);
@@ -69,7 +69,7 @@ export const DirectShareActions = ({
     const legacyItems = mapToLegacyFormat(selectedItems);
     const hasPreviewAvailable = itemChecker.hasPreviewAvailable(isPreviewAvailable);
 
-    if (type === 'toolbar') {
+    if (buttonType === 'toolbar') {
         return (
             <>
                 <ToolbarPreviewButton selectedBrowserItems={legacyItems} />
@@ -84,7 +84,7 @@ export const DirectShareActions = ({
                             shareId={singleItem.legacy.shareId}
                             isAlbum={singleItem.type === NodeType.Album}
                             showConfirmModal={showConfirmModal}
-                            type="toolbar"
+                            buttonType="toolbar"
                         />
                     </>
                 )}
@@ -124,7 +124,7 @@ export const DirectShareActions = ({
                         isAlbum={singleItem.type === NodeType.Album}
                         showConfirmModal={showConfirmModal}
                         close={close}
-                        type="contextMenu"
+                        buttonType="contextMenu"
                     />
                 </>
             )}
