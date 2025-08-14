@@ -501,6 +501,9 @@
       "OK": [
         "დიახ"
       ],
+      "Open": [
+        "გახსნა"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
@@ -1090,6 +1093,9 @@
       ],
       "Annually": [
         "წელიწადში ერთხელ"
+      ],
+      "Lifetime": [
+        "სამუდამოდ"
       ],
       "Monthly": [
         "თვეში ერთხელ"
@@ -2516,6 +2522,11 @@
     "Email verification": {
       "Verification email sent to ${ address }": [
         "გადამოწმების ელფოსტა გაგზავნილია ${ address }-თან"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "სანდო კონტაქტი"
       ]
     },
     "Empty group name": {
@@ -4317,6 +4328,9 @@
       "Item updated in vault": [
         "ელემენტი განახლდა საცავში"
       ],
+      "JCB logo": [
+        "JCB ლოგო"
+      ],
       "Keys created": [
         "გასაღებები შექმნა"
       ],
@@ -4495,6 +4509,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "დაალაგეთ თქვენი გამოყოფილი სერვერები რაუტერებში და გადაწყვიტეთ, რომელ წევრს აქვს მასთან წვდომა."
+      ],
+      "Other accounts": [
+        "სხვა ანგარიშები"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "თქვენს ორგანიზაციას სხვა ადმინისტრატორებიც გყავს. თქვენ მათთვის ახალი პაროლის გადაცემაზე პასუხისმგებელი ბრძანდებით."
@@ -6708,6 +6725,9 @@
       "Email client support (via IMAP/SMTP)": [
         "ელფოსტის კლიენტის მხარდაჭერა (IMAP/SMTP-ით)"
       ],
+      "Email groups": [
+        "ელფოსტის ჯგუფები"
+      ],
       "Enables HIPAA compliance": [
         "ჩართავს HIPAA-სთან თავსებადობას"
       ],
@@ -6973,6 +6993,9 @@
       ],
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
+      ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
       ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
@@ -7689,6 +7712,9 @@
       "Processing payment": [
         "გადახდის დამუშავება"
       ],
+      "terms & conditions": [
+        "პირობები და წესები"
+      ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "ტრანზაქცია წარამატებითაა აღმოჩენილი. კრედიტები დაემატება თქვენს ანგარიშს, როცა ტრანზაქცია ბოლომდე დადასტურდება."
       ],
@@ -7717,6 +7743,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Permission": {
@@ -8047,6 +8078,10 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ n } day": [
+        "${ n } დღე",
+        "${ n } დღე"
+      ],
       "${ remainingCount } more": [
         "კიდევ ${ remainingCount }"
       ],
@@ -9612,6 +9647,9 @@
       ],
       "Couldn’t create accounts": [
         "ანგარიშების შექმნის შეცდომა"
+      ],
+      "Coupon": [
+        "კუპონი"
       ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } მომხმარებლის შექმნა",

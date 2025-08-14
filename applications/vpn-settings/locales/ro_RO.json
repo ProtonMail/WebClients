@@ -489,6 +489,9 @@
       "More options": [
         "Mai multe opțiuni"
       ],
+      "More options for accounts": [
+        "Mai multe opțiuni pentru conturi"
+      ],
       "Need help?": [
         "Doriți ajutor?"
       ],
@@ -1086,6 +1089,14 @@
         "Ofertă indisponibilă"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewLength } lună.",
@@ -1155,6 +1166,9 @@
       ],
       "Protect your whole household with 1 device": [
         "Protejați-vă întreaga casă cu un singur dispozitiv"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
+        "Vizionați de pe toate platformele cu redare în flux cu ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Acest articol a fost actualizat pentru a include protocoalele WireGuard și Stealth VPN."
@@ -2596,6 +2610,11 @@
         "Mesajul de verificare a fost trimis la ${ address }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contact aprobat"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Nedenumit"
@@ -3375,7 +3394,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy by default."
+        "${ BRAND_NAME }. Confidențialitate implicită."
       ]
     },
     "Gmail forwarding": {
@@ -3738,6 +3757,9 @@
         "(${ memberCount } membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/lună)"
       ],
       "(default)": [
         "(implicit)"
@@ -4237,6 +4259,9 @@
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Introduceți parola (ca și contact aprobat)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduceți adresa de e-mail de recuperare și veți primi numele de utilizator sau adresa de e-mail."
       ],
@@ -4654,6 +4679,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organizați-vă serverele dedicate în porți de acces și decideți ce membri le pot accesa."
+      ],
+      "Other accounts": [
+        "Alte conturi"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Mai există și alți administratori în cadrul organizației și va trebui să le comunicați noua parolă."
@@ -6308,6 +6336,9 @@
       "Your password (admin)": [
         "Parola dvs. (administrator)"
       ],
+      "Your password (trusted contact)": [
+        "Parola dvs. (contact aprobat)"
+      ],
       "ZIP code": [
         "Cod poștal"
       ]
@@ -6799,6 +6830,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } de calendare",
@@ -6955,6 +6989,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Suport client de e-mail (prin IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupuri de contacte"
       ],
       "Enables HIPAA compliance": [
         "Se conformează regulilor HIPAA"
@@ -7294,6 +7331,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partajați calendarele ușor cu familia, prietenii sau colegii."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Trimiteți mesaje tuturor dintr-un grup cu o singură adresă de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Se asigură că primiți toate e-mailurile trimise către domeniul dvs., chiar dacă adresa de e-mail nu a existat, nu mai există sau e scrisă greșit."
@@ -9786,6 +9826,9 @@
       ],
       "Account suspended": [
         "Cont suspendat"
+      ],
+      "Account Temporarily Locked": [
+        "Cont blocat temporar"
       ],
       "Action": [
         "Acțiune"
