@@ -14,11 +14,11 @@
         "react": "^18.3.1"
     },
     "devDependencies": {
-        "@babel/core": "^7.28.0",
-        "@babel/preset-env": "^7.28.0",
+        "@babel/core": "^7.28.3",
+        "@babel/preset-env": "^7.28.3",
         "@jest/globals": "^29.7.0",
         "@mlc-ai/web-llm": "patch:@mlc-ai/web-llm@npm%3A0.2.32#~/.yarn/patches/@mlc-ai-web-llm-npm-0.2.32-df249f5180.patch",
-        "@testing-library/jest-dom": "^6.6.4",
+        "@testing-library/jest-dom": "^6.7.0",
         "@testing-library/react": "^15.0.7",
         "@types/jest": "^29.5.14",
         "@webgpu/types": "^0.1.64",
@@ -28,7 +28,7 @@
         "jest-environment-jsdom": "^29.7.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "ts-jest": "^29.4.0",
+        "ts-jest": "^29.4.1",
         "typescript": "^5.8.3"
     }
 }

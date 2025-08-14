@@ -54,7 +54,7 @@
         "client-zip": "^2.5.0",
         "comlink": "^4.4.2",
         "exifreader": "^4.31.1",
-        "heic-to": "^1.2.1",
+        "heic-to": "^1.2.2",
         "idb-keyval": "^6.2.2",
         "mime-types": "^2.1.35",
         "react": "^18.3.1",
@@ -72,7 +72,7 @@
         "@proton/i18n": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/testing": "workspace:^",
-        "@testing-library/jest-dom": "^6.6.4",
+        "@testing-library/jest-dom": "^6.7.0",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
         "@types/mime-types": "^2.1.4",
@@ -91,7 +91,7 @@
         "prettier": "^3.6.2",
         "pretty-format": "^29.7.0",
         "typescript": "^5.8.3",
-        "webpack": "^5.101.0"
+        "webpack": "^5.101.1"
     },
     "peerDependencies": {
         "@openpgp/web-stream-tools": "^0.1.0"
