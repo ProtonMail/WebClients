@@ -260,7 +260,7 @@ export const labelMessages = createAsyncThunk<
         elements: Message[];
         conversations: Conversation[];
         sourceLabelID: string;
-        targetLabelID: string;
+        destinationLabelID: string;
         isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
         labels: Label[];
@@ -276,7 +276,7 @@ export const labelMessages = createAsyncThunk<
             elements,
             labels,
             folders,
-            targetLabelID,
+            destinationLabelID,
             isEncryptedSearch,
             showSuccessNotification = true,
             spamAction,
@@ -286,11 +286,11 @@ export const labelMessages = createAsyncThunk<
         { extra, dispatch }
     ) => {
         try {
-            dispatch(messageCountsActions.labelMessagesPending({ elements, targetLabelID, labels, folders }));
+            dispatch(messageCountsActions.labelMessagesPending({ elements, destinationLabelID, labels, folders }));
             dispatch(
                 conversationCountsActions.labelMessagesPending({
                     elements,
-                    targetLabelID,
+                    destinationLabelID,
                     conversations,
                     labels,
                     folders,
@@ -303,7 +303,7 @@ export const labelMessages = createAsyncThunk<
                     ? getNotificationTextLabelAdded({
                           isMessage: true,
                           elementsCount: elements.length,
-                          targetLabelID,
+                          destinationLabelID,
                           labels,
                           folders,
                       })
@@ -312,7 +312,7 @@ export const labelMessages = createAsyncThunk<
                 action: (chunk) =>
                     labelMessagesApi({
                         IDs: chunk.map((element: Element) => element.ID),
-                        LabelID: targetLabelID,
+                        LabelID: destinationLabelID,
                         SpamAction: spamAction,
                     }),
                 onUndo: () => {
@@ -333,7 +333,7 @@ export const unlabelMessages = createAsyncThunk<
         elements: Message[];
         conversations: Conversation[];
         sourceLabelID: string;
-        targetLabelID: string;
+        destinationLabelID: string;
         isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
         labels: Label[];
@@ -348,7 +348,7 @@ export const unlabelMessages = createAsyncThunk<
             elements,
             labels,
             folders,
-            targetLabelID,
+            destinationLabelID,
             isEncryptedSearch,
             showSuccessNotification = true,
             conversations,
@@ -357,12 +357,12 @@ export const unlabelMessages = createAsyncThunk<
         { extra, dispatch }
     ) => {
         try {
-            dispatch(messageCountsActions.unlabelMessagesPending({ elements, targetLabelID, labels, folders }));
+            dispatch(messageCountsActions.unlabelMessagesPending({ elements, destinationLabelID, labels, folders }));
             dispatch(
                 conversationCountsActions.unlabelMessagesPending({
                     elements,
                     conversations,
-                    targetLabelID,
+                    destinationLabelID,
                     labels,
                 })
             );
@@ -373,7 +373,7 @@ export const unlabelMessages = createAsyncThunk<
                     ? getNotificationTextLabelRemoved({
                           isMessage: true,
                           elementsCount: elements.length,
-                          targetLabelID,
+                          destinationLabelID,
                           labels,
                           folders,
                       })
@@ -382,7 +382,7 @@ export const unlabelMessages = createAsyncThunk<
                 action: (chunk) =>
                     unlabelMessagesApi({
                         IDs: chunk.map((element: Element) => element.ID),
-                        LabelID: targetLabelID,
+                        LabelID: destinationLabelID,
                     }),
                 onUndo: () => {
                     onActionUndo?.();
@@ -401,7 +401,7 @@ export const labelConversations = createAsyncThunk<
     {
         conversations: Conversation[];
         sourceLabelID: string;
-        targetLabelID: string;
+        destinationLabelID: string;
         isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
         labels: Label[];
@@ -417,7 +417,7 @@ export const labelConversations = createAsyncThunk<
             conversations,
             labels,
             folders,
-            targetLabelID,
+            destinationLabelID,
             sourceLabelID,
             isEncryptedSearch,
             showSuccessNotification = true,
@@ -430,7 +430,7 @@ export const labelConversations = createAsyncThunk<
             dispatch(
                 conversationCountsActions.labelConversationsPending({
                     conversations,
-                    targetLabelID,
+                    destinationLabelID,
                     labels,
                     folders,
                     sourceLabelID,
@@ -439,7 +439,7 @@ export const labelConversations = createAsyncThunk<
             dispatch(
                 messageCountsActions.labelConversationsPending({
                     conversations,
-                    targetLabelID,
+                    destinationLabelID,
                     labels,
                     folders,
                 })
@@ -452,7 +452,7 @@ export const labelConversations = createAsyncThunk<
                     ? getNotificationTextLabelAdded({
                           isMessage: false,
                           elementsCount: conversations.length,
-                          targetLabelID,
+                          destinationLabelID,
                           labels,
                           folders,
                       })
@@ -461,7 +461,7 @@ export const labelConversations = createAsyncThunk<
                 action: (chunk) =>
                     labelConversationsApi({
                         IDs: chunk.map((conversation: Conversation) => conversation.ID),
-                        LabelID: targetLabelID,
+                        LabelID: destinationLabelID,
                         SpamAction: spamAction,
                     }),
                 onUndo: () => {
@@ -480,7 +480,7 @@ export const unlabelConversations = createAsyncThunk<
     PromiseSettledResult<string | undefined>[],
     {
         conversations: Conversation[];
-        targetLabelID: string;
+        destinationLabelID: string;
         isEncryptedSearch: boolean;
         showSuccessNotification?: boolean;
         labels: Label[];
@@ -495,7 +495,7 @@ export const unlabelConversations = createAsyncThunk<
             conversations,
             labels,
             folders,
-            targetLabelID,
+            destinationLabelID,
             isEncryptedSearch,
             showSuccessNotification = true,
             onActionUndo,
@@ -506,14 +506,14 @@ export const unlabelConversations = createAsyncThunk<
             dispatch(
                 conversationCountsActions.unlabelConversationsPending({
                     conversations,
-                    targetLabelID,
+                    destinationLabelID,
                     labels,
                 })
             );
             dispatch(
                 messageCountsActions.unlabelConversationsPending({
                     conversations,
-                    targetLabelID,
+                    destinationLabelID,
                     labels,
                 })
             );
@@ -524,7 +524,7 @@ export const unlabelConversations = createAsyncThunk<
                     ? getNotificationTextLabelRemoved({
                           isMessage: false,
                           elementsCount: conversations.length,
-                          targetLabelID,
+                          destinationLabelID,
                           labels,
                           folders,
                       })
@@ -533,7 +533,7 @@ export const unlabelConversations = createAsyncThunk<
                 action: (chunk) =>
                     unlabelConversationsApi({
                         IDs: chunk.map((conversation: Conversation) => conversation.ID),
-                        LabelID: targetLabelID,
+                        LabelID: destinationLabelID,
                     }),
                 onUndo: () => {
                     onActionUndo?.();

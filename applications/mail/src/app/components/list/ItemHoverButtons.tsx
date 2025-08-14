@@ -89,7 +89,7 @@ const ItemHoverButtons = ({
             void applyLocation({
                 type: APPLY_LOCATION_TYPES.MOVE,
                 elements: [element],
-                targetLabelID: ARCHIVE,
+                destinationLabelID: ARCHIVE,
             });
         } else {
             void moveToFolder({
@@ -107,7 +107,7 @@ const ItemHoverButtons = ({
         event.stopPropagation();
 
         if (applyOptimisticLocationEnabled) {
-            void applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements: [element], targetLabelID: TRASH });
+            void applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements: [element], destinationLabelID: TRASH });
         } else {
             void moveToFolder({
                 elements: [element],
@@ -141,7 +141,7 @@ const ItemHoverButtons = ({
                     type: APPLY_LOCATION_TYPES.STAR,
                     removeLabel: isStarred,
                     elements: [element],
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     showSuccessNotification: false,
                 })
             );

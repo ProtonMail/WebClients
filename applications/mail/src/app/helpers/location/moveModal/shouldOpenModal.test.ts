@@ -17,7 +17,7 @@ describe('shouldOpenConfirmationModalForMessages', () => {
     describe('Schedule modal', () => {
         it.each(Array.from(scheduleTargetWithWarning))(
             'should return schedule modal if the element is scheduled and moved to warning folder %s',
-            (targetLabelID) => {
+            (destinationLabelID) => {
                 const result = shouldOpenConfirmationModalForMessages({
                     elements: [
                         {
@@ -25,7 +25,7 @@ describe('shouldOpenConfirmationModalForMessages', () => {
                             LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED],
                         } as unknown as Element,
                     ],
-                    targetLabelID,
+                    destinationLabelID,
                     mailSettings: {} as MailSettings,
                 });
 
@@ -36,7 +36,7 @@ describe('shouldOpenConfirmationModalForMessages', () => {
         it('should return null if element is empty', () => {
             const result = shouldOpenConfirmationModalForMessages({
                 elements: [],
-                targetLabelID: '123',
+                destinationLabelID: '123',
                 mailSettings: {} as MailSettings,
             });
 
@@ -51,7 +51,7 @@ describe('shouldOpenConfirmationModalForMessages', () => {
                         LabelIDs: [],
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
                 mailSettings: {} as MailSettings,
             });
 
@@ -66,7 +66,7 @@ describe('shouldOpenConfirmationModalForMessages', () => {
                         LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED],
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
                 mailSettings: {} as MailSettings,
             });
 
@@ -83,7 +83,7 @@ describe('shouldOpenConfirmationModalForMessages', () => {
                         LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED],
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 mailSettings: {
                     SpamAction: null,
                 } as MailSettings,
@@ -103,7 +103,7 @@ describe('shouldOpenConfirmationModalForMessages', () => {
                         },
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 mailSettings: {
                     SpamAction: SPAM_ACTION.JustSpam,
                 } as MailSettings,
@@ -123,7 +123,7 @@ describe('shouldOpenConfirmationModalForMessages', () => {
                         },
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
                 mailSettings: {
                     SpamAction: null,
                 } as MailSettings,
@@ -143,7 +143,7 @@ describe('shouldOpenConfirmationModalForMessages', () => {
                         },
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 mailSettings: {
                     SpamAction: null,
                 } as MailSettings,
@@ -158,7 +158,7 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
     describe('Schedule modal', () => {
         it.each([[MAILBOX_LABEL_IDS.TRASH], [MAILBOX_LABEL_IDS.DRAFTS], [MAILBOX_LABEL_IDS.ALL_DRAFTS]])(
             'should return schedule modal if the element is scheduled and moved to warning folder %s',
-            (targetLabelID) => {
+            (destinationLabelID) => {
                 const result = shouldOpenConfirmationModalForConverversation({
                     elements: [
                         {
@@ -166,7 +166,7 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
                             Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 1 }],
                         } as unknown as Element,
                     ],
-                    targetLabelID,
+                    destinationLabelID,
                     mailSettings: {} as MailSettings,
                     folders: [],
                     conversationsFromState: [undefined],
@@ -179,7 +179,7 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
         it('should return null if the element is empty', () => {
             const result = shouldOpenConfirmationModalForConverversation({
                 elements: [],
-                targetLabelID: '123',
+                destinationLabelID: '123',
                 mailSettings: {} as MailSettings,
                 folders: [],
                 conversationsFromState: [undefined],
@@ -196,7 +196,7 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
                         LabelIDs: [],
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
                 mailSettings: {} as MailSettings,
                 folders: [],
                 conversationsFromState: [undefined],
@@ -213,7 +213,7 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
                         LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED],
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
                 mailSettings: {} as MailSettings,
                 folders: [],
                 conversationsFromState: [undefined],
@@ -232,26 +232,29 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
             [MAILBOX_LABEL_IDS.SENT],
             [MAILBOX_LABEL_IDS.DRAFTS],
             ['custom-folder'],
-        ])('should return snooze modal if the element is snooze and moved to warning folder %s', (targetLabelID) => {
-            const result = shouldOpenConfirmationModalForConverversation({
-                elements: [
-                    {
-                        ConversationID: '123',
-                        Labels: [{ ID: MAILBOX_LABEL_IDS.SNOOZED, ContextNumMessages: 1 }],
-                    } as unknown as Element,
-                ],
-                targetLabelID,
-                mailSettings: {} as MailSettings,
-                folders: [
-                    {
-                        ID: 'custom-folder',
-                    } as Folder,
-                ],
-                conversationsFromState: [undefined],
-            });
+        ])(
+            'should return snooze modal if the element is snooze and moved to warning folder %s',
+            (destinationLabelID) => {
+                const result = shouldOpenConfirmationModalForConverversation({
+                    elements: [
+                        {
+                            ConversationID: '123',
+                            Labels: [{ ID: MAILBOX_LABEL_IDS.SNOOZED, ContextNumMessages: 1 }],
+                        } as unknown as Element,
+                    ],
+                    destinationLabelID,
+                    mailSettings: {} as MailSettings,
+                    folders: [
+                        {
+                            ID: 'custom-folder',
+                        } as Folder,
+                    ],
+                    conversationsFromState: [undefined],
+                });
 
-            expect(result).toBe(ModalType.Snooze);
-        });
+                expect(result).toBe(ModalType.Snooze);
+            }
+        );
 
         it('should return null if the element is not snoozed', () => {
             const result = shouldOpenConfirmationModalForConverversation({
@@ -261,7 +264,7 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
                         Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 1 }],
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 mailSettings: {} as MailSettings,
                 folders: [],
                 conversationsFromState: [undefined],
@@ -280,7 +283,7 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
                         LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED],
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 mailSettings: {
                     SpamAction: null,
                 } as MailSettings,
@@ -302,7 +305,7 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
                         },
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 mailSettings: {
                     SpamAction: SPAM_ACTION.JustSpam,
                 } as MailSettings,
@@ -324,7 +327,7 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
                         },
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
                 mailSettings: {
                     SpamAction: null,
                 } as MailSettings,
@@ -346,7 +349,7 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
                         },
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 mailSettings: {
                     SpamAction: null,
                 } as MailSettings,
@@ -378,7 +381,7 @@ describe('shouldOpenConfirmationModalForConverversation', () => {
                         },
                     } as unknown as Element,
                 ],
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 mailSettings: {
                     SpamAction: null,
                 } as MailSettings,

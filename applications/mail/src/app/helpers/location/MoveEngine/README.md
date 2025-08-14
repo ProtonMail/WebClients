@@ -65,9 +65,9 @@ import { useMessageMoveEngine } from './useMessageMoveEngine';
 export const useApplyLocation = () => {
     const moveEngine = useMessageMoveEngine();
 
-    const applyLocation = ({ elements, targetLabelID, removeLabel = false }) => {
+    const applyLocation = ({ elements, destinationLabelID, removeLabel = false }) => {
         // Validate the move operation
-        const result = moveEngine.validateMove(targetLabelID, elements);
+        const result = moveEngine.validateMove(destinationLabelID, elements);
 
         // Handle error - show notification to user if all elements are denied
         if (result.deniedElements.length > 0 && result.allowedElements.length === 0) {

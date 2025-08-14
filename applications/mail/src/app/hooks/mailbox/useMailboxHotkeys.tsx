@@ -137,7 +137,7 @@ export const useMailboxHotkeys = (
         const folderName = getFolderName(LabelID, folders);
 
         if (applyOptimisticLocationEnabled && !selectAll) {
-            await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, targetLabelID: LabelID });
+            await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID: LabelID });
         } else {
             await moveToFolder({
                 elements,
@@ -394,7 +394,7 @@ export const useMailboxHotkeys = (
                             type: APPLY_LOCATION_TYPES.STAR,
                             removeLabel: isAllStarred,
                             elements,
-                            targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                            destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                             showSuccessNotification: false,
                         });
                     } else {

@@ -152,7 +152,7 @@ const HeaderMoreDropdown = ({
             await applyLocation({
                 type: APPLY_LOCATION_TYPES.MOVE,
                 elements: [message.data || ({} as Element)],
-                targetLabelID: folderID,
+                destinationLabelID: folderID,
             });
         } else {
             await moveToFolder({
@@ -209,7 +209,7 @@ const HeaderMoreDropdown = ({
                     type: APPLY_LOCATION_TYPES.STAR,
                     removeLabel: isStarred,
                     elements: [message.data || ({} as Element)],
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     showSuccessNotification: false,
                 })
             );

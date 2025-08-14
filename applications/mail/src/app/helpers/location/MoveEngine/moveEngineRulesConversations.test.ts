@@ -60,7 +60,7 @@ describe('moveEngineConversations', () => {
             const message = { ConversationID: 'conversationID' } as Message;
 
             expect(() =>
-                run({ element: message, targetLabelID: MAILBOX_LABEL_IDS.INBOX, labels: [], folders: [] })
+                run({ element: message, destinationLabelID: MAILBOX_LABEL_IDS.INBOX, labels: [], folders: [] })
             ).toThrow(ERROR_ELEMENT_NOT_CONVERSATION);
         });
     });
@@ -73,7 +73,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.ALL_SENT, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -87,7 +87,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.ALL_DRAFTS, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -103,7 +103,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -143,7 +143,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: labelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.OUTBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.OUTBOX,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -183,7 +183,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: labelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -223,7 +223,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: labelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.SNOOZED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SNOOZED,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -248,7 +248,7 @@ describe('moveEngineConversations', () => {
 
                 const result = run({
                     element: conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: [],
                     folders: [],
                 });
@@ -263,7 +263,7 @@ describe('moveEngineConversations', () => {
 
                     const result = run({
                         element: conversation,
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: [],
                         folders: [],
                     });
@@ -275,76 +275,84 @@ describe('moveEngineConversations', () => {
 
         describe('All message from conversation are in target label ID', () => {
             it.each([
-                { name: 'conversationTrashRules', run: conversationTrashRules, targetLabelID: MAILBOX_LABEL_IDS.TRASH },
-                { name: 'conversationSpamRules', run: conversationSpamRules, targetLabelID: MAILBOX_LABEL_IDS.SPAM },
-                { name: 'allMailRules', run: conversationAllMailRules, targetLabelID: MAILBOX_LABEL_IDS.ALL_MAIL },
+                {
+                    name: 'conversationTrashRules',
+                    run: conversationTrashRules,
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                },
+                {
+                    name: 'conversationSpamRules',
+                    run: conversationSpamRules,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
+                },
+                { name: 'allMailRules', run: conversationAllMailRules, destinationLabelID: MAILBOX_LABEL_IDS.ALL_MAIL },
                 {
                     name: 'conversationStarredRules',
                     run: conversationStarredRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                 },
                 {
                     name: 'conversationArchiveRules',
                     run: conversationArchiveRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                 },
                 {
                     name: 'conversationAlmostAllMailRules',
                     run: conversationAlmostAllMailRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                 },
                 {
                     name: 'conversationCategoryRules',
                     run: conversationCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 },
                 {
                     name: 'conversationCategoryRules',
                     run: conversationCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 },
                 {
                     name: 'conversationCategoryRules',
                     run: conversationCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
                 },
                 {
                     name: 'conversationCategoryRules',
                     run: conversationCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
                 },
                 {
                     name: 'conversationCategoryRules',
                     run: conversationCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 },
                 {
                     name: 'conversationCategoryRules',
                     run: conversationCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                 },
                 {
                     name: 'conversationCategoryRules',
                     run: conversationCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                 },
                 {
                     name: 'conversationCustomFolderRules',
                     run: conversationCustomFolderRules,
-                    targetLabelID: 'customFolderID',
+                    destinationLabelID: 'customFolderID',
                 },
                 {
                     name: 'conversationCustomLabelRules',
                     run: conversationCustomLabelRules,
-                    targetLabelID: 'customLabelID',
+                    destinationLabelID: 'customLabelID',
                 },
-            ])('should return not applicable when all message are in $name', ({ run, targetLabelID }) => {
+            ])('should return not applicable when all message are in $name', ({ run, destinationLabelID }) => {
                 const result = run({
                     element: {
                         NumMessages: 3,
-                        Labels: [{ ID: targetLabelID, ContextNumMessages: 3 }],
+                        Labels: [{ ID: destinationLabelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID,
+                    destinationLabelID,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -356,21 +364,25 @@ describe('moveEngineConversations', () => {
                 {
                     name: 'conversationOutboxRules',
                     run: conversationOutboxRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.OUTBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.OUTBOX,
                 },
-                { name: 'scheduledRules', run: conversationScheduleRules, targetLabelID: MAILBOX_LABEL_IDS.SCHEDULED },
+                {
+                    name: 'scheduledRules',
+                    run: conversationScheduleRules,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                },
                 {
                     name: 'conversationSnoozedRules',
                     run: conversationSnoozedRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.SNOOZED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SNOOZED,
                 },
-            ])('should return denied when all message are in $name', ({ run, targetLabelID }) => {
+            ])('should return denied when all message are in $name', ({ run, destinationLabelID }) => {
                 const result = run({
                     element: {
                         NumMessages: 3,
-                        Labels: [{ ID: targetLabelID, ContextNumMessages: 3 }],
+                        Labels: [{ ID: destinationLabelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID,
+                    destinationLabelID,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -408,7 +420,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: labelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -429,7 +441,7 @@ describe('moveEngineConversations', () => {
                             { ID: MAILBOX_LABEL_IDS.ALL_DRAFTS, ContextNumMessages: 1 },
                         ],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -443,7 +455,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.ALL_SENT, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -457,7 +469,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.ALL_DRAFTS, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -471,7 +483,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -489,7 +501,7 @@ describe('moveEngineConversations', () => {
                             { ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 1 },
                         ],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -508,7 +520,7 @@ describe('moveEngineConversations', () => {
                             { ID: MAILBOX_LABEL_IDS.ALL_DRAFTS, ContextNumMessages: 3 },
                         ],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -522,7 +534,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -541,7 +553,7 @@ describe('moveEngineConversations', () => {
                             { ID: MAILBOX_LABEL_IDS.ALL_SENT, ContextNumMessages: 3 },
                         ],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -555,7 +567,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -594,7 +606,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: labelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -630,7 +642,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: labelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -651,7 +663,7 @@ describe('moveEngineConversations', () => {
                             { ID: MAILBOX_LABEL_IDS.ALL_DRAFTS, ContextNumMessages: 1 },
                         ],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -672,7 +684,7 @@ describe('moveEngineConversations', () => {
                             { ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 1 },
                         ],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -686,7 +698,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -725,7 +737,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: labelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -763,7 +775,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: labelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -780,7 +792,7 @@ describe('moveEngineConversations', () => {
                             { ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 1 },
                         ],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -799,7 +811,7 @@ describe('moveEngineConversations', () => {
                             { ID: MAILBOX_LABEL_IDS.ALL_SENT, ContextNumMessages: 3 },
                         ],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -813,7 +825,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -832,7 +844,7 @@ describe('moveEngineConversations', () => {
                             { ID: MAILBOX_LABEL_IDS.ALL_DRAFTS, ContextNumMessages: 3 },
                         ],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -846,7 +858,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -882,7 +894,7 @@ describe('moveEngineConversations', () => {
                             NumMessages: 3,
                             Labels: [{ ID: labelID, ContextNumMessages: 3 }],
                         } as Conversation,
-                        targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                         labels: customLabels,
                         folders: customFolders,
                     });
@@ -904,7 +916,7 @@ describe('moveEngineConversations', () => {
                             { ID: MAILBOX_LABEL_IDS.ALL_DRAFTS, ContextNumMessages: 1 },
                         ],
                     } as Conversation,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -926,7 +938,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.ALL_SENT, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: category,
+                    destinationLabelID: category,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -948,7 +960,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.ALL_DRAFTS, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: category,
+                    destinationLabelID: category,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -970,7 +982,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: category,
+                    destinationLabelID: category,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -996,7 +1008,7 @@ describe('moveEngineConversations', () => {
                             { ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 1 },
                         ],
                     } as Conversation,
-                    targetLabelID: category,
+                    destinationLabelID: category,
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -1036,7 +1048,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: labelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: 'customFolderID2',
+                    destinationLabelID: 'customFolderID2',
                     labels: customLabels,
                     folders: customFolders,
                 });
@@ -1076,7 +1088,7 @@ describe('moveEngineConversations', () => {
                         NumMessages: 3,
                         Labels: [{ ID: labelID, ContextNumMessages: 3 }],
                     } as Conversation,
-                    targetLabelID: 'customLabelID2',
+                    destinationLabelID: 'customLabelID2',
                     labels: customLabels,
                     folders: customFolders,
                 });
