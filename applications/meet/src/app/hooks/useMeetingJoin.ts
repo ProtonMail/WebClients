@@ -48,6 +48,7 @@ export const useMeetingJoin = () => {
                 }
 
                 if (setupKeyUpdate) {
+                    console.log('setupKeyUpdate');
                     // @ts-ignore
                     await setupKeyUpdate(e2eeOptions.e2ee?.keyProvider as ExternalE2EEKeyProvider);
                 }

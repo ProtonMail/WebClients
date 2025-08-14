@@ -123,6 +123,33 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const notifications = useNotifications();
 
+    const getGroupKeyInfo = async () => {
+        console.log('Calling getGroupKeyInfo');
+        try {
+            const newGroupKeyInfo = (await wasmAppRef.current?.getGroupKey()) as GroupKeyInfo;
+            setCurrentKey(newGroupKeyInfo.key);
+            setCurrentEpoch(Number(newGroupKeyInfo.epoch));
+            console.log('Got new key and epoch', {
+                key: newGroupKeyInfo.key,
+                epoch: newGroupKeyInfo.epoch,
+            });
+            return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
+        } catch (err: any) {
+            console.error('Error while calling getGroupKeyInfo', err);
+            throw err;
+        }
+    };
+
+    const onNewGroupKeyInfo = async (key: string, epoch: bigint) => {
+        console.log('Calling onNewGroupKeyInfo');
+        try {
+            await keyProviderRef.current?.setKey(key, epoch);
+            console.log('Successfully set key in keyProvider:', key, epoch);
+        } catch (err) {
+            console.error('Could not set new encryption key:', key, epoch, err);
+        }
+    };
+
     const handleMlsSetup = useCallback(
         async (meetingLinkName: string, accessToken: string) => {
             const baseHostName = window.location.hostname.split('.').slice(1).join('.');
@@ -143,6 +170,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 wasmAppRef.current = await new App(env, appVersion, userAgent, dbPath, wsHost, userID ?? '', uid ?? '');
 
                 mlsSetupDone.current = true;
+
+                setupWasmDependencies({ getGroupKeyInfo, onNewGroupKeyInfo });
             }
 
             if (!wasmAppRef.current) {
@@ -166,30 +195,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const handleKeyUpdate = useCallback(async (keyProvider: ExternalE2EEKeyProvider) => {
         keyProviderRef.current = keyProvider;
-
-        setupWasmDependencies({
-            getGroupKeyInfo: async () => {
-                try {
-                    const newGroupKeyInfo = (await wasmAppRef.current?.getGroupKey()) as GroupKeyInfo;
-                    setCurrentKey(newGroupKeyInfo.key);
-                    setCurrentEpoch(Number(newGroupKeyInfo.epoch));
-                    console.log('getGroupKeyInfo', { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch });
-
-                    return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
-                } catch (err: any) {
-                    console.error(err);
-                    throw err;
-                }
-            },
-            onNewGroupKeyInfo: async (key, epoch) => {
-                try {
-                    await keyProviderRef.current?.setKey(key, epoch);
-                    console.log('Successfully set key in keyProvider', key, epoch);
-                } catch (err) {
-                    console.error('Could not set new encryption key', key, epoch, err);
-                }
-            },
-        });
+        console.log('Successfully set new keyProvider');
     }, []);
 
     useEffect(() => {
