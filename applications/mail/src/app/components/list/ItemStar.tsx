@@ -55,7 +55,7 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
                     type: APPLY_LOCATION_TYPES.STAR,
                     removeLabel: isStarred,
                     elements: [element || ({} as Element)],
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     showSuccessNotification: false,
                 })
             );
