@@ -58,6 +58,9 @@
       "Cancel trial and pay": [
         "Ακύρωση δοκιμής και πληρωμή"
       ],
+      "Change password": [
+        "Αλλαγή κωδικού πρόσβασης"
+      ],
       "Chat with us": [
         "Επικοινωνήστε μαζί μας"
       ],
@@ -183,6 +186,9 @@
       ],
       "More options": [
         "Περισσότερες επιλογές"
+      ],
+      "More options for accounts": [
+        "Περισσότερες επιλογές για λογαριασμούς"
       ],
       "Need help?": [
         "Χρειάζεστε βοήθεια;"
@@ -1827,6 +1833,11 @@
         "Προσωρινή ανάγκη, ενδεχόμενη επιστροφή στο μέλλον"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Αξιόπιστη επαφή"
+      ]
+    },
     "Error": {
       "Amount above the maximum.": [
         "Ποσό μεγαλύτερο από το μέγιστο επιτρεπόμενο."
@@ -2290,6 +2301,9 @@
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
+      ],
       "Expired": [
         "Ληγμένο"
       ],
@@ -2370,6 +2384,9 @@
       ],
       "Organization size": [
         "Μέγεθος οργανισμού"
+      ],
+      "Other accounts": [
+        "Άλλοι λογαριασμοί"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Οι πληρωμές προστατεύονται με κρυπτογράφηση TLS και με Ελβετικούς νόμους περί ιδιωτικότητας."
@@ -2755,6 +2772,9 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
       ]
     },
     "Label, credit card": {
@@ -4096,6 +4116,9 @@
     "Title": {
       "${ feature } is now active": [
         "Το ${ feature } είναι πλέον ενεργό"
+      ],
+      "Account Temporarily Locked": [
+        "Λογαριασμός Προσωρινά Κλειδωμένος"
       ],
       "Add credit/debit card": [
         "Προσθήκη πιστωτικής/χρεωστικής κάρτας"

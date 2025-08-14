@@ -55,6 +55,9 @@
       "Cancel subscription": [
         "Annuler l'abonnement"
       ],
+      "Change password": [
+        "Changer le mot de passe"
+      ],
       "Chat with us": [
         "Discutez avec nous"
       ],
@@ -1842,6 +1845,11 @@
         "Il s'agit d'un besoin temporaire qui pourrait revenir à l'avenir."
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacts de confiance"
+      ]
+    },
     "Error": {
       "Amount above the maximum.": [
         "Le montant est supérieur au maximum."
@@ -2293,6 +2301,9 @@
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
+      ],
       "Expired": [
         "Expiré"
       ],
@@ -2740,6 +2751,9 @@
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Votre mot de passe (contacts de confiance)"
       ]
     },
     "Label, credit card": {
@@ -4049,6 +4063,9 @@
     "Title": {
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
+      ],
+      "Account Temporarily Locked": [
+        "Compte temporairement verrouillé"
       ],
       "Add credit/debit card": [
         "Ajouter une carte de paiement"
