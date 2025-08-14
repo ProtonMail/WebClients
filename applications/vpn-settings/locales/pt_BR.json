@@ -2626,6 +2626,11 @@
         "O e-mail de verificação foi enviado para ${ address }."
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contato de confiança"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Sem nome"
@@ -4218,6 +4223,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Digite sua própria senha (como administrador da organização)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Digite sua própria senha (como contato de confiança)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Digite o seu endereço de e-mail de recuperação e nós enviaremos o seu nome de usuário ou endereço de e-mail."
@@ -6247,6 +6255,9 @@
       ],
       "Your password (admin)": [
         "Sua senha (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Sua senha (contato de confiança)"
       ],
       "ZIP code": [
         "CEP"
