@@ -58,6 +58,7 @@ const RecoveryKitAction = ({ recoveryPhrase, recoveryKitDownload, sendPayload, m
                 size="large"
                 onClick={downloadRecoveryKit}
                 loading={downloadingRecoveryKit}
+                data-testid="download-recovery-kit-button"
             >
                 <IcArrowDownLine size={6} />
             </Button>
