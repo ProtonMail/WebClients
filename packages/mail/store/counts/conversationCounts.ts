@@ -87,7 +87,7 @@ const slice = createSlice({
             state,
             action: PayloadAction<{
                 elements: Message[];
-                targetLabelID: string;
+                destinationLabelID: string;
                 conversations: Conversation[];
                 labels: Label[];
                 folders: Folder[];
@@ -100,7 +100,7 @@ const slice = createSlice({
             action: PayloadAction<{
                 elements: Message[];
                 conversations: Conversation[];
-                targetLabelID: string;
+                destinationLabelID: string;
                 labels: Label[];
             }>
         ) => {
@@ -110,7 +110,7 @@ const slice = createSlice({
             state,
             action: PayloadAction<{
                 conversations: Conversation[];
-                targetLabelID: string;
+                destinationLabelID: string;
                 sourceLabelID: string;
                 labels: Label[];
                 folders: Folder[];
@@ -120,7 +120,7 @@ const slice = createSlice({
         },
         unlabelConversationsPending: (
             state,
-            action: PayloadAction<{ conversations: Conversation[]; targetLabelID: string; labels: Label[] }>
+            action: PayloadAction<{ conversations: Conversation[]; destinationLabelID: string; labels: Label[] }>
         ) => {
             unlabelConversationsPending(state, action);
         },

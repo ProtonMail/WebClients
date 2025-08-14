@@ -4,7 +4,7 @@ import type { Element } from 'proton-mail/models/element';
 
 export interface ApplyLocationParams {
     elements: Element[];
-    targetLabelID: string;
+    destinationLabelID: string;
     removeLabel?: boolean;
     // This is used to avoid sending a unsubscribe request to a phishing email
     askUnsubscribe?: boolean;

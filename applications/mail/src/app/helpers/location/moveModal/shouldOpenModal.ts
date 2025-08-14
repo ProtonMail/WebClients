@@ -11,7 +11,7 @@ import type { ConversationState } from 'proton-mail/store/conversations/conversa
 
 interface ShouldOpenConfirmationModalMessageParams {
     elements: Element[];
-    targetLabelID: string;
+    destinationLabelID: string;
     mailSettings: MailSettings;
 }
 
@@ -26,23 +26,23 @@ export const scheduleTargetWithWarning = new Set<string>([
  * The snooze modal is not visible for messages.
  *
  * @param elements - The list of elements to move
- * @param targetLabelID - The target where the elements are moved
+ * @param destinationLabelID - The target where the elements are moved
  * @params mailSettings - The user settings used for the unsubscribe modal
  * @returns The modal to open or null if no modal is needed
  */
 export const shouldOpenConfirmationModalForMessages = ({
     elements,
-    targetLabelID,
+    destinationLabelID,
     mailSettings,
 }: ShouldOpenConfirmationModalMessageParams): ModalType | null => {
-    if (scheduleTargetWithWarning.has(targetLabelID)) {
+    if (scheduleTargetWithWarning.has(destinationLabelID)) {
         const hasSomeElementsInSchedule = elements.some((element) => hasLabel(element, MAILBOX_LABEL_IDS.SCHEDULED));
         if (hasSomeElementsInSchedule) {
             return ModalType.Schedule;
         }
     }
 
-    if (targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
         if (mailSettings?.SpamAction === null) {
             const canBeUnsubscribed = elements.some((message) => isUnsubscribable(message));
             if (canBeUnsubscribed) {
@@ -56,7 +56,7 @@ export const shouldOpenConfirmationModalForMessages = ({
 
 interface ShouldOpenConfirmationModalConversationParams {
     elements: Element[];
-    targetLabelID: string;
+    destinationLabelID: string;
     folders: Folder[];
     mailSettings: MailSettings;
     conversationsFromState: (ConversationState | undefined)[];
@@ -66,7 +66,7 @@ interface ShouldOpenConfirmationModalConversationParams {
  * Test if we should open the schedule or the unsubscribe modal to confirm the user action.
  *
  * @param elements - The list of elements to move
- * @param targetLabelID - The target where the elements are moved
+ * @param destinationLabelID - The target where the elements are moved
  * @params folders - The custom folders of the user, used for the snooze modal
  * @params mailSettings - The user settings used for the unsubscribe modal
  * @params conversationsFromState - The conversation state of the elements to move, used for the unusbscibe modal
@@ -74,12 +74,12 @@ interface ShouldOpenConfirmationModalConversationParams {
  */
 export const shouldOpenConfirmationModalForConverversation = ({
     elements,
-    targetLabelID,
+    destinationLabelID,
     folders,
     mailSettings,
     conversationsFromState,
 }: ShouldOpenConfirmationModalConversationParams): ModalType | null => {
-    if (scheduleTargetWithWarning.has(targetLabelID)) {
+    if (scheduleTargetWithWarning.has(destinationLabelID)) {
         const hasSomeElementsInSchedule = elements.some(
             (element) => getContextNumMessages(element, MAILBOX_LABEL_IDS.SCHEDULED) > 0
         );
@@ -89,7 +89,7 @@ export const shouldOpenConfirmationModalForConverversation = ({
         }
     }
 
-    if (isCustomFolder(targetLabelID, folders || []) || isSystemFolder(targetLabelID)) {
+    if (isCustomFolder(destinationLabelID, folders || []) || isSystemFolder(destinationLabelID)) {
         const hasSomeElementsInSnooze = elements.some(
             (element) => getContextNumMessages(element, MAILBOX_LABEL_IDS.SNOOZED) > 0
         );
@@ -99,7 +99,7 @@ export const shouldOpenConfirmationModalForConverversation = ({
         }
     }
 
-    if (targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
         if (mailSettings?.SpamAction === null) {
             const canBeUnsubscribed = conversationsFromState.some((conversation) =>
                 conversation?.Messages?.some((message) => isUnsubscribable(message))
