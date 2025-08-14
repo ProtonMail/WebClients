@@ -1,0 +1,549 @@
+@import './assets/fonts/fonts.css';
+@import '~@proton/styles/scss/proton-lumo';
+@import '~@proton/styles/scss/lib';
+
+.main-text-container {
+	container-type: inline-size;
+	container-name: maintext;
+}
+
+.main-text {
+	font-family: Syne, Inter, system-ui, sans-serif;
+	font-size: rem(36);
+	font-feature-settings: 'ss04';
+
+	@include media('<=medium') {
+		font-size: rem(30);
+	}
+
+	@container maintext (width < 16rem) {
+		font-size: rem(24);
+	}
+
+	&.small {
+		font-size: rem(22);
+	}
+}
+
+.lumo-welcome-section {
+	transition: opacity 0.3s ease-out;
+
+	&.is-hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&.is-visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+.sidebar {
+	background-color: inherit;
+
+	// Safari performance optimizations
+	will-change: transform;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+
+	// Smooth transitions for Safari
+	transition:
+		transform 0.3s ease-in-out,
+		inline-size 0.3s ease-in-out;
+
+	&--collapsed {
+		// Hardware acceleration for collapsed state
+		transform: translateZ(0);
+	}
+}
+
+.sidebar-expanded {
+	background-color: var(--background-weak);
+
+	// Safari performance optimizations for expanded state
+	will-change: transform;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+}
+
+// Safari-specific backdrop optimizations
+.sidebar-backdrop {
+	// Use hardware acceleration for backdrop
+	will-change: opacity;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+
+	// Smooth backdrop transitions
+	transition: opacity 0.3s ease-in-out;
+}
+
+// prevent extra padding in sidebar
+.navigation > .navigation-list:last-child,
+.navigation > div > .navigation-list:last-child {
+	padding-block-end: 0;
+}
+
+html,
+body {
+	// enforce light theme regardless of user settings
+	color-scheme: only light;
+}
+
+.header-lumo {
+	block-size: rem(60);
+
+	button {
+		img {
+			block-size: 30px;
+		}
+	}
+}
+
+.user-dropdown-text:not(.homepage-wrapper *, .mobile-user-dropdown *) {
+	display: none;
+}
+
+.user-dropdown-button {
+	flex-shrink: 0;
+
+	.user-initials {
+		font-size: rem(12);
+	}
+
+	.rounded {
+		border-radius: var(--border-radius-md);
+	}
+}
+
+.chat-container {
+	// border: 1px solid;
+	border-image: linear-gradient(134.93deg, rgb(226 219 255 / 0.3) -0.55%, rgb(226 219 255 / 0) 29.89%);
+	border-image-slice: 1;
+	border-radius: 1rem;
+	background-color: #ffffff0d;
+}
+
+// override for circle progression color
+.circle-chart-circle {
+	stroke: var(--primary);
+}
+
+.composer {
+	outline: none;
+	border: none;
+}
+
+.composer:focus {
+	outline: none;
+	border: none;
+}
+
+// override input element to fix outline in firefox
+.input-element:focus {
+	outline: none;
+}
+
+// force minimal layout shifts to improve safari ux
+.ProseMirror {
+	will-change: contents;
+	contain: layout;
+	backface-visibility: hidden;
+}
+
+.ProseMirror:focus {
+	outline: none;
+	border: none;
+}
+
+.tiptap p {
+	margin-block: 0;
+	font-size: 16px !important;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+	// placeholder text
+	color: var(--text-weak);
+	content: attr(data-placeholder);
+	float: inline-start;
+	block-size: 0;
+	pointer-events: none;
+}
+
+.action-toolbar {
+	opacity: 0.8;
+}
+
+.timeline-unpinned {
+	background-color: #c5b7ff26;
+}
+
+.timeline-bar {
+	background-color: var(--border-norm);
+}
+
+.message-chain .assistant-msg:last-child {
+	margin-block-end: 0;
+}
+
+/*
+ * Hide a div injected by the Proton framework.
+ */
+
+#icons-root {
+	display: none;
+}
+
+.markdown-rendering {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem; // space-y-3
+	color: #24292e;
+	contain: layout style;
+	word-break: break-word;
+
+	/* Improve text rendering */
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	> *:not(:first-child, h1, h2, h3, h4, h5, h6),
+	> .p:not(:first-child) {
+		margin-block-start: 0.75rem;
+	}
+
+	// If an element appears after a header, we'll customize the margin based on the header size
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
+		+ * {
+			margin-block-start: unset !important;
+		}
+	}
+
+	/* Optimize paragraph spacing in list items */
+	li > p:nth-of-type(n + 2) {
+		margin-block-start: 0.5rem;
+	}
+
+	/* Set consistent paragraph line height */
+	p {
+		line-height: 1.6;
+		margin: 0;
+		padding: 0;
+
+		+ p {
+			margin-block-start: 0.5rem;
+		}
+	}
+
+	ul,
+	ol {
+		margin-block: 0.5rem 0.5rem;
+		margin-inline: 0;
+		padding: 0;
+		gap: 0.25rem;
+		display: flex;
+		flex-direction: column;
+		margin-inline-start: 1.5em;
+		white-space: normal;
+	}
+
+	// markdownheader styles
+	$line-height: 1.2; // Consistent line-height
+
+	@for $i from 1 through 6 {
+		h#{$i} {
+			line-height: $line-height;
+		}
+	}
+
+	h1 {
+		font-size: 32px;
+		font-weight: bold;
+		margin-block: 1.5rem 0.5rem;
+	}
+
+	h2 {
+		font-size: 24px;
+		font-weight: bold;
+		margin-block: 1.3rem 0.45rem;
+	}
+
+	h3 {
+		font-size: 19px;
+		font-weight: 600;
+		margin-block: 1.2rem 0.4rem;
+	}
+
+	h4 {
+		font-size: 17px;
+		font-weight: normal;
+		color: var(--text-weak);
+		margin-block: 1.15rem 0.35rem;
+	}
+
+	h5 {
+		font-size: 15px;
+		font-weight: normal;
+		color: var(--text-weak);
+		margin-block: 1.1rem 0.3rem;
+	}
+
+	h6 {
+		font-size: 13px;
+		font-weight: normal;
+		font-style: italic;
+		color: var(--text-weak);
+		margin-block: 1.1rem 0.3rem;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	ul.unstyled {
+		gap: 0;
+		margin: 0;
+		padding-inline-start: 0;
+		list-style-type: none;
+	}
+
+	b {
+		font-weight: bold;
+	}
+
+	i {
+		font-style: italic;
+	}
+
+	a:not(.ref-link) {
+		text-decoration: underline;
+		color: var(--primary);
+		line-height: 1;
+	}
+
+	pre {
+		margin-block: 0.75rem;
+
+		// border: 1px solid #e1e4e8;
+		border-radius: 0.5rem;
+		padding-block: 1.25rem;
+		padding-inline: 1rem;
+		inline-size: 100%;
+		background-color: #f8f9fa;
+		position: relative;
+	}
+
+	pre div {
+		white-space: pre-wrap;
+		word-break: break-word;
+		margin: 0 !important;
+		box-sizing: border-box;
+		border-radius: 0.5em !important;
+		font-family: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+		font-size: 0.98em;
+		line-height: 1.6;
+	}
+
+	pre code {
+		white-space: pre-wrap;
+		word-break: break-word;
+		color: #24292e;
+	}
+
+	code:not(pre code) {
+		color: #24292e;
+		background-color: #f1f3f5;
+		padding-inline: 0.25rem;
+		padding-block: 0.125rem;
+		border-radius: 0.25rem;
+		border: 1px solid #e1e4e8;
+		font-family: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+		font-size: 0.98em;
+	}
+
+	code span.token {
+		white-space: pre-wrap;
+	}
+
+	blockquote {
+		padding-block: 0.2rem;
+		padding-inline-start: 0.6rem;
+		border-inline-start: 0.4rem solid rgb(219 215 255 / 0.9);
+	}
+
+	blockquote,
+	q {
+		&::before {
+			content: none !important;
+		}
+
+		&::after {
+			content: none !important;
+		}
+	}
+
+	hr {
+		block-size: 2px;
+		color: white;
+	}
+
+	code {
+		line-height: 1;
+	}
+
+	// markdown task list styles
+	ul.contains-task-list {
+		margin-inline-start: 0;
+
+		& li.task-list-item {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			margin-inline-start: 0;
+			padding: 0;
+			gap: 0.5rem;
+		}
+	}
+
+	input[type='checkbox'] {
+		opacity: 1;
+		appearance: none;
+		inline-size: 0.8rem;
+		block-size: 0.8rem;
+		margin-block: 4px 0;
+		margin-inline: 0 0;
+		flex-shrink: 0;
+		background-color: var(--background-norm, white);
+		font: inherit;
+		color: currentcolor;
+		border: 1px solid #999;
+		border-radius: 2px;
+		display: grid;
+		place-content: center;
+		position: relative;
+
+		&::before {
+			content: '✓';
+			font-size: 0.75rem;
+			font-weight: bold;
+			opacity: 0;
+			transform: scale(0.8);
+			transition: all 120ms ease-in-out;
+			color: black;
+		}
+
+		&:checked {
+			&::before {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+
+	.message-container {
+		position: relative;
+		overflow: visible;
+	}
+
+	// Token colors for syntax highlighting
+	.token.comment,
+	.token.prolog,
+	.token.doctype,
+	.token.cdata {
+		color: #5c6370;
+	}
+
+	.token.punctuation {
+		color: #5c6370;
+	}
+
+	.token.property,
+	.token.tag,
+	.token.constant,
+	.token.symbol,
+	.token.deleted {
+		color: #e06c75;
+	}
+
+	.token.boolean,
+	.token.number {
+		color: #d19a66;
+	}
+
+	.token.selector,
+	.token.attr-name,
+	.token.string,
+	.token.char,
+	.token.builtin,
+	.token.inserted {
+		color: #98c379;
+	}
+
+	// Skeleton loading animation
+	@keyframes loading {
+		0% {
+			background-position: 200% 0;
+		}
+
+		100% {
+			background-position: -200% 0;
+		}
+	}
+}
+
+.link-over-btn {
+	&:hover {
+		color: var(--primary-hover); // hover:text-primary-hover
+	}
+
+	cursor: pointer; // cursor-pointer
+}
+
+@media print {
+	.lumo-avatar {
+		position: static;
+	}
+
+	.user-msg-container {
+		display: block;
+		page-break-inside: auto;
+	}
+
+	main {
+		margin: 1em;
+	}
+
+	.assistant-msg,
+	.user-msg {
+		margin-block-end: 1em;
+		page-break-inside: auto;
+	}
+}
+
+@media print {
+	.no-print {
+		display: none !important;
+	}
+}
+
+// override for Prompt component size
+.prompt {
+	&#{&} {
+		--size: #{rem(320)};
+	}
+}
+
+@media screen and (width <= 600px) {
+	.border-top {
+		border-block-start: none !important;
+	}
+}

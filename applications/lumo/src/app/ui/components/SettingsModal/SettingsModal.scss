@@ -1,0 +1,14 @@
+@import '~@proton/styles/scss/lib';
+
+.lumo-settings-modal {
+	block-size: 680px;
+}
+
+.settings-modal-panel {
+	background-color: #f7f5ff;
+}
+
+.plan-name {
+	background-color: var(--interaction-norm-minor-2);
+	color: var(--interaction-norm);
+}

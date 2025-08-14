@@ -1,0 +1,10 @@
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+.lumo-avatar {
+	inline-size: 90px;
+	block-size: 90px;
+	display: block;
+	margin-block: -6px;
+	margin-inline: -16px;
+}

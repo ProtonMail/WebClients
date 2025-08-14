@@ -69,6 +69,23 @@ export const getSignupParameters = ({
         }
     }
 
+    if (toApp === APPS.PROTONLUMO && preVerifiedAddressToken) {
+        const email = result.email;
+        if (email) {
+            mode = SignupMode.Invite;
+            localID = -1;
+            invite = {
+                type: 'lumo',
+                data: {
+                    invitee: email,
+                    preVerifiedAddressToken,
+                },
+            };
+            result.preSelectedPlan = PLANS.FREE;
+            result.noPromo = true;
+        }
+    }
+
     let signIn: SignupParameters2['signIn'] = 'standard';
 
     if (partner === 'porkbun') {

@@ -1,0 +1,51 @@
+@import './mobile-constants';
+
+.avatar-and-notice {
+	container-type: inline-size;
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	&__notice {
+		flex-shrink: 0;
+		order: 1;
+	}
+
+	&__avatar {
+		order: 2;
+	}
+
+	// Hide notice when screen size falls below $small-breakpoint-width
+	@media screen and (max-width: #{$mobile-breakpoint-width}) {
+		&__notice {
+			display: none; /* This makes the notice invisible */
+		}
+
+		&__container {
+			flex-direction: column; /* Ensuring proper stacking even after removal */
+		}
+	}
+
+	// Switch to horizontal layout when container is wide enough
+	$breakpoint-width: 224px; // min width of the last assistant message, above the avatar and notice
+	@media screen {
+		@container (min-width: #{$breakpoint-width}) {
+			&__container {
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: space-between;
+			}
+
+			&__notice {
+				order: 2;
+			}
+
+			&__avatar {
+				order: 1;
+			}
+		}
+	}
+}

@@ -59,7 +59,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { resendUnprivatizationLink } from '@proton/shared/lib/api/members';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { LUMO_SHORT_APP_NAME, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
@@ -719,7 +719,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                             )}
                                                             {member.NumLumo > 0 && (
                                                                 <UserTableBadge type="weak">
-                                                                    {c('Users table: badge').t`Lumo`}
+                                                                    {LUMO_SHORT_APP_NAME}
                                                                 </UserTableBadge>
                                                             )}
                                                             {Boolean(hasPendingAllowAdminAccessRequest) && (

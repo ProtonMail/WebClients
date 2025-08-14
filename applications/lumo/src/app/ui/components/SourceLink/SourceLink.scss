@@ -1,0 +1,18 @@
+.source-link {
+	&#{&} {
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: var(--background-strong);
+	}
+}
+
+.clampped {
+	line-clamp: 3;
+	-webkit-line-clamp: 3;
+	display: flex;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}

@@ -1,0 +1,35 @@
+.line-clamp-1 {
+	/* stylelint-disable-next-line */
+	display: -webkit-box;
+	/* stylelint-disable-next-line */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	-webkit-line-clamp: 1;
+}
+
+// .user-msg {
+// 	justify-content: flex-end;
+// }
+
+// .user-msg-container {
+// 	// inline-size: 100%;
+// 	border-radius: 0.75rem;
+// 	position: relative;
+
+// 	&.editing {
+// 		inline-size: 100%;
+// 	}
+// }
+
+// .user-toolbar {
+// 	position: absolute;
+// 	display: flex;
+// 	align-items: center;
+// 	opacity: 0;
+// 	transition: opacity 0.2s ease-in-out;
+
+// 	&:hover,
+// 	.group-hover\:opacity-100 {
+// 		opacity: 1;
+// 	}
+// }
