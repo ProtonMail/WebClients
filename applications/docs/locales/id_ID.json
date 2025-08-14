@@ -114,6 +114,9 @@
       "Cancel subscription": [
         "Batalkan langganan"
       ],
+      "Change password": [
+        "Ubah kata sandi"
+      ],
       "Change sort order": [
         "Ubah kriteria penyortiran"
       ],
@@ -837,6 +840,11 @@
       ],
       "Unsupported event": [
         "Acara tidak didukung"
+      ]
+    },
+    "BF2024: Deal details": {
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
       ]
     },
     "Billing cycle option": {
@@ -2056,6 +2064,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Pembaruan untuk acara yang dimulai pada ${ formattedStart }"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Kontak terpercaya"
       ]
     },
     "Error": {
@@ -3394,6 +3407,9 @@
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Masukkan kata sandi Anda (selaku kontak terpercaya)"
+      ],
       "Error converting document: ${ errorMessage }": [
         "Terjadi kesalahan dalam mengonversi dokumen: ${ errorMessage }"
       ],
@@ -4729,6 +4745,9 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Kata sandi Anda (kontak terpercaya)"
       ]
     },
     "Label for contact group color": {
@@ -5366,6 +5385,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Dukungan klien email (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grup email"
+      ],
       "Enables HIPAA compliance": [
         "Memungkinkan kepatuhan HIPAA"
       ],
@@ -5648,6 +5670,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Email seluruh anggota grup dengan satu alamat email"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"
@@ -6659,6 +6684,11 @@
       ],
       "Priority support": [
         "Dukungan prioritas"
+      ]
+    },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "dan 15 fitur premium lainnya"
       ]
     },
     "Subscription renewal state": {
