@@ -117,7 +117,7 @@ export const useMessageHotkeys = (
             await applyLocation({
                 type: APPLY_LOCATION_TYPES.MOVE,
                 elements: [message.data],
-                targetLabelID: LabelID,
+                destinationLabelID: LabelID,
             });
         } else {
             await moveToFolder({
@@ -311,7 +311,7 @@ export const useMessageHotkeys = (
                             type: APPLY_LOCATION_TYPES.STAR,
                             removeLabel: isStarred(message.data),
                             elements: [message.data as Element],
-                            targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                            destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                             showSuccessNotification: false,
                         });
                     } else {

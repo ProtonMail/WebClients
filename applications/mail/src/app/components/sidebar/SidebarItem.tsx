@@ -163,7 +163,7 @@ const SidebarItem = ({
                         labelID: currentLabelID,
                         selectAll,
                         onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
-                        targetLabelID: labelID,
+                        destinationLabelID: labelID,
                     });
                 }
             }

@@ -77,14 +77,14 @@ export const labelMessages = (
     action: PayloadAction<{
         elements: Element[];
         sourceLabelID: string;
-        targetLabelID: string;
+        destinationLabelID: string;
         labels: Label[];
         folders: Folder[];
     }>
 ) => {
-    const { elements, targetLabelID, folders, labels } = action.payload;
-    const isTargetAFolder = isSystemFolder(targetLabelID) || isCustomFolder(targetLabelID, folders);
-    const isTargetACategory = isCategoryLabel(targetLabelID);
+    const { elements, destinationLabelID, folders, labels } = action.payload;
+    const isTargetAFolder = isSystemFolder(destinationLabelID) || isCustomFolder(destinationLabelID, folders);
+    const isTargetACategory = isCategoryLabel(destinationLabelID);
 
     elements.forEach((element) => {
         const selectedMessage = element as Message;
@@ -103,7 +103,7 @@ export const labelMessages = (
                     }
                 }
 
-                if (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
+                if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
                     if (selectedLabelID === MAILBOX_LABEL_IDS.STARRED || isCustomLabel(selectedLabelID, labels)) {
                         const updatedMessageCounter = state.value?.find(
                             (counter) => counter.LabelID === selectedLabelID
@@ -138,7 +138,7 @@ export const labelMessages = (
             (counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
         );
         if (
-            (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) &&
+            (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) &&
             almostAllMailMessageCounter
         ) {
             almostAllMailMessageCounter.Total = safeDecreaseCount(almostAllMailMessageCounter.Total, 1);
@@ -149,19 +149,19 @@ export const labelMessages = (
 
         // Additionally, ALL_MAIL unread count needs to be reduced if the message was unread
         const allMailMessageCounter = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALL_MAIL);
-        if (targetLabelID === MAILBOX_LABEL_IDS.TRASH && selectedMessage.Unread === 1 && allMailMessageCounter) {
+        if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH && selectedMessage.Unread === 1 && allMailMessageCounter) {
             allMailMessageCounter.Unread = safeDecreaseCount(allMailMessageCounter.Unread, 1);
         }
 
-        const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === targetLabelID);
+        const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === destinationLabelID);
 
         if (updatedMessageCounter) {
             updatedMessageCounter.Total = safeIncreaseCount(updatedMessageCounter.Total, 1);
 
             if (
                 selectedMessage.Unread === 1 &&
-                targetLabelID !== MAILBOX_LABEL_IDS.TRASH &&
-                targetLabelID !== MAILBOX_LABEL_IDS.SPAM
+                destinationLabelID !== MAILBOX_LABEL_IDS.TRASH &&
+                destinationLabelID !== MAILBOX_LABEL_IDS.SPAM
             ) {
                 updatedMessageCounter.Unread = safeIncreaseCount(updatedMessageCounter.Unread, 1);
             }
@@ -174,13 +174,13 @@ export const unlabelMessages = (
     action: PayloadAction<{
         elements: Element[];
         sourceLabelID: string;
-        targetLabelID: string;
+        destinationLabelID: string;
         labels: Label[];
         folders: Folder[];
     }>
 ) => {
-    const { elements, targetLabelID, labels } = action.payload;
-    const isLabel = isCustomLabel(targetLabelID, labels) || targetLabelID === MAILBOX_LABEL_IDS.STARRED;
+    const { elements, destinationLabelID, labels } = action.payload;
+    const isLabel = isCustomLabel(destinationLabelID, labels) || destinationLabelID === MAILBOX_LABEL_IDS.STARRED;
 
     if (!isLabel) {
         return;
@@ -188,7 +188,7 @@ export const unlabelMessages = (
 
     elements.forEach((element) => {
         const selectedMessage = element as Message;
-        const messageCount = state.value?.find((counter) => counter.LabelID === targetLabelID);
+        const messageCount = state.value?.find((counter) => counter.LabelID === destinationLabelID);
 
         if (messageCount) {
             messageCount.Total = safeDecreaseCount(messageCount.Total, 1);
@@ -204,13 +204,13 @@ export const labelConversationsPending = (
     state: Draft<ModelState<LabelCount[]>>,
     action: PayloadAction<{
         conversations: Conversation[];
-        targetLabelID: string;
+        destinationLabelID: string;
         sourceLabelID: string;
         labels: Label[];
         folders: Folder[];
     }>
 ) => {
-    const { conversations, targetLabelID, labels, folders } = action.payload;
+    const { conversations, destinationLabelID, labels, folders } = action.payload;
 
     conversations.forEach((conversation) => {
         const numMessagesInConversation = conversation.NumMessages || 0;
@@ -232,7 +232,7 @@ export const labelConversationsPending = (
 
             if (isSystemLabel(labelID) || isCustomLabel(labelID, labels)) {
                 // If moving to TRASH or SPAM, labels are removed
-                if (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
+                if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
                     messageCountState.Total = safeDecreaseCount(
                         messageCountState?.Total,
                         getContextNumMessages(conversation, labelID)
@@ -248,7 +248,7 @@ export const labelConversationsPending = (
             }
 
             // When changing the category, remove the messages from the old category
-            if (isCategoryLabel(labelID) && isCategoryLabel(targetLabelID) && targetLabelID !== labelID) {
+            if (isCategoryLabel(labelID) && isCategoryLabel(destinationLabelID) && destinationLabelID !== labelID) {
                 messageCountState.Total = safeDecreaseCount(
                     messageCountState?.Total,
                     getContextNumMessages(conversation, labelID)
@@ -262,9 +262,9 @@ export const labelConversationsPending = (
 
             // Do not update counters when moving to STARRED, custom folders or a category
             if (
-                isCustomLabel(targetLabelID, labels) ||
-                isSystemLabel(targetLabelID) ||
-                isCategoryLabel(targetLabelID)
+                isCustomLabel(destinationLabelID, labels) ||
+                isSystemLabel(destinationLabelID) ||
+                isCategoryLabel(destinationLabelID)
             ) {
                 return;
             }
@@ -275,7 +275,7 @@ export const labelConversationsPending = (
             }
 
             // Remove the conversation messages from all locations (except the destination)
-            if (targetLabelID !== labelID) {
+            if (destinationLabelID !== labelID) {
                 messageCountState.Total = safeDecreaseCount(
                     messageCountState?.Total,
                     getContextNumMessages(conversation, labelID)
@@ -291,8 +291,8 @@ export const labelConversationsPending = (
                 );
                 if (
                     (labelID === MAILBOX_LABEL_IDS.TRASH || labelID === MAILBOX_LABEL_IDS.SPAM) &&
-                    targetLabelID !== MAILBOX_LABEL_IDS.TRASH &&
-                    targetLabelID !== MAILBOX_LABEL_IDS.SPAM &&
+                    destinationLabelID !== MAILBOX_LABEL_IDS.TRASH &&
+                    destinationLabelID !== MAILBOX_LABEL_IDS.SPAM &&
                     almostAllMailCountState
                 ) {
                     almostAllMailCountState.Total = safeIncreaseCount(
@@ -313,7 +313,7 @@ export const labelConversationsPending = (
             (counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL
         );
         if (
-            (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) &&
+            (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) &&
             almostAllMailMessageCountState
         ) {
             almostAllMailMessageCountState.Total = safeDecreaseCount(
@@ -328,7 +328,7 @@ export const labelConversationsPending = (
 
         // Additionally, ALL_MAIL unread count needs to be reduced if some messages were unread
         const allMailMessageCountState = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.ALL_MAIL);
-        if (targetLabelID === MAILBOX_LABEL_IDS.TRASH && allMailMessageCountState) {
+        if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH && allMailMessageCountState) {
             allMailMessageCountState.Unread = safeDecreaseCount(
                 allMailMessageCountState?.Unread,
                 numUnreadMessagesInConversation
@@ -336,7 +336,7 @@ export const labelConversationsPending = (
         }
 
         // INCREASE count in destination locations
-        const targetMessageCountState = state.value?.find((counter) => counter.LabelID === targetLabelID);
+        const targetMessageCountState = state.value?.find((counter) => counter.LabelID === destinationLabelID);
 
         if (!targetMessageCountState) {
             return;
@@ -354,9 +354,9 @@ export const labelConversationsPending = (
         const numUnreadMessagesInDrafts = getContextNumUnread(conversation, MAILBOX_LABEL_IDS.DRAFTS);
 
         if (
-            targetLabelID === MAILBOX_LABEL_IDS.INBOX ||
-            targetLabelID === MAILBOX_LABEL_IDS.SENT ||
-            targetLabelID === MAILBOX_LABEL_IDS.DRAFTS
+            destinationLabelID === MAILBOX_LABEL_IDS.INBOX ||
+            destinationLabelID === MAILBOX_LABEL_IDS.SENT ||
+            destinationLabelID === MAILBOX_LABEL_IDS.DRAFTS
         ) {
             // Move missing received messages in INBOX
             const inboxMessageCountState = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.INBOX);
@@ -407,9 +407,9 @@ export const labelConversationsPending = (
                     numUnreadMessagesInAllDrafts - numUnreadMessagesInDrafts
                 );
             }
-        } else if (isCategoryLabel(targetLabelID)) {
-            const numMessagesInCategory = getContextNumMessages(conversation, targetLabelID);
-            const numUnreadMessagesInCategory = getContextNumUnread(conversation, targetLabelID);
+        } else if (isCategoryLabel(destinationLabelID)) {
+            const numMessagesInCategory = getContextNumMessages(conversation, destinationLabelID);
+            const numUnreadMessagesInCategory = getContextNumUnread(conversation, destinationLabelID);
 
             const missingMessagesInCategory = numMessagesInConversation - numMessagesInCategory;
 
@@ -423,13 +423,13 @@ export const labelConversationsPending = (
         } else {
             targetMessageCountState.Total = safeIncreaseCount(
                 targetMessageCountState.Total,
-                numMessagesInConversation - getContextNumMessages(conversation, targetLabelID)
+                numMessagesInConversation - getContextNumMessages(conversation, destinationLabelID)
             );
 
-            if (targetLabelID !== MAILBOX_LABEL_IDS.TRASH) {
+            if (destinationLabelID !== MAILBOX_LABEL_IDS.TRASH) {
                 targetMessageCountState.Unread = safeIncreaseCount(
                     targetMessageCountState.Unread,
-                    numUnreadMessagesInConversation - getContextNumUnread(conversation, targetLabelID)
+                    numUnreadMessagesInConversation - getContextNumUnread(conversation, destinationLabelID)
                 );
             }
         }
@@ -438,11 +438,11 @@ export const labelConversationsPending = (
 
 export const unlabelConversationsPending = (
     state: Draft<ModelState<LabelCount[]>>,
-    action: PayloadAction<{ conversations: Conversation[]; targetLabelID: string; labels: Label[] }>
+    action: PayloadAction<{ conversations: Conversation[]; destinationLabelID: string; labels: Label[] }>
 ) => {
-    const { conversations, targetLabelID, labels } = action.payload;
-    const messageCounter = state.value?.find((counter) => counter.LabelID === targetLabelID);
-    const isLabel = isCustomLabel(targetLabelID, labels) || targetLabelID === MAILBOX_LABEL_IDS.STARRED;
+    const { conversations, destinationLabelID, labels } = action.payload;
+    const messageCounter = state.value?.find((counter) => counter.LabelID === destinationLabelID);
+    const isLabel = isCustomLabel(destinationLabelID, labels) || destinationLabelID === MAILBOX_LABEL_IDS.STARRED;
 
     if (!isLabel) {
         return;
@@ -453,8 +453,8 @@ export const unlabelConversationsPending = (
     }
 
     conversations.forEach((conversation) => {
-        const totalMessagesFromConversationInTargetLabel = getContextNumMessages(conversation, targetLabelID);
-        const unreadMessagesFromConversationInTargetLabel = getContextNumUnread(conversation, targetLabelID);
+        const totalMessagesFromConversationInTargetLabel = getContextNumMessages(conversation, destinationLabelID);
+        const unreadMessagesFromConversationInTargetLabel = getContextNumUnread(conversation, destinationLabelID);
 
         messageCounter.Total = safeDecreaseCount(messageCounter.Total, totalMessagesFromConversationInTargetLabel);
 

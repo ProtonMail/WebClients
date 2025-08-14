@@ -303,7 +303,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                       type: APPLY_LOCATION_TYPES.APPLY_LABEL,
                                       changes: params.changes,
                                       elements: params.elements,
-                                      targetLabelID: params.targetLabelID!, // TODO: Improve this when removing old apply labels function
+                                      destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                   })
                                 : applyLabels(params)
                         }
@@ -312,7 +312,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                 ? applyLocation({
                                       type: APPLY_LOCATION_TYPES.MOVE,
                                       elements: params.elements,
-                                      targetLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                      destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                   })
                                 : moveToFolder(params)
                         }
@@ -354,7 +354,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                                   type: APPLY_LOCATION_TYPES.APPLY_LABEL,
                                                   changes: params.changes,
                                                   elements: params.elements,
-                                                  targetLabelID: params.targetLabelID!, // TODO: Improve this when removing old apply labels function
+                                                  destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                               })
                                             : applyLabels(params)
                                     }
@@ -363,7 +363,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                             ? applyLocation({
                                                   type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
-                                                  targetLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                                  destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                               })
                                             : moveToFolder(params)
                                     }
@@ -403,7 +403,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                                   type: APPLY_LOCATION_TYPES.APPLY_LABEL,
                                                   changes: params.changes,
                                                   elements: params.elements,
-                                                  targetLabelID: params.targetLabelID!, // TODO: Improve this when removing old apply labels function
+                                                  destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                               })
                                             : applyLabels(params)
                                     }
@@ -412,7 +412,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                                             ? applyLocation({
                                                   type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
-                                                  targetLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                                  destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
                                               })
                                             : moveToFolder(params)
                                     }

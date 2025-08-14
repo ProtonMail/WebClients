@@ -196,10 +196,10 @@ export const labelMessagesPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { elements: Message[]; targetLabelID: string; labels: Label[]; folders: Folder[] } }
+        { arg: { elements: Message[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
     >
 ) => {
-    const { elements, targetLabelID, labels, folders } = action.meta.arg;
+    const { elements, destinationLabelID, labels, folders } = action.meta.arg;
 
     elements.forEach((element) => {
         const messageState = getMessage(state, element.ID);
@@ -208,15 +208,19 @@ export const labelMessagesPending = (
             return;
         }
 
-        applyLabelToMessage(messageState.data as Message, targetLabelID, folders, labels);
+        applyLabelToMessage(messageState.data as Message, destinationLabelID, folders, labels);
     });
 };
 
 export const unlabelMessagesPending = (
     state: Draft<MessagesState>,
-    action: PayloadAction<undefined, string, { arg: { elements: Message[]; targetLabelID: string; labels: Label[] } }>
+    action: PayloadAction<
+        undefined,
+        string,
+        { arg: { elements: Message[]; destinationLabelID: string; labels: Label[] } }
+    >
 ) => {
-    const { elements, targetLabelID, labels } = action.meta.arg;
+    const { elements, destinationLabelID, labels } = action.meta.arg;
 
     elements.forEach((element) => {
         const messageState = getMessage(state, element.ID);
@@ -225,7 +229,7 @@ export const unlabelMessagesPending = (
             return;
         }
 
-        removeLabelFromMessage(messageState.data as Message, targetLabelID, labels);
+        removeLabelFromMessage(messageState.data as Message, destinationLabelID, labels);
     });
 };
 
@@ -237,7 +241,7 @@ export const labelConversationsPending = (
         {
             arg: {
                 conversations: Conversation[];
-                targetLabelID: string;
+                destinationLabelID: string;
                 sourceLabelID: string;
                 labels: Label[];
                 folders: Folder[];
@@ -245,7 +249,7 @@ export const labelConversationsPending = (
         }
     >
 ) => {
-    const { conversations, targetLabelID, labels, folders } = action.meta.arg;
+    const { conversations, destinationLabelID, labels, folders } = action.meta.arg;
 
     conversations.forEach((conversation) => {
         const messageStates = getMessagesByConversationID(state, conversation.ID);
@@ -256,7 +260,7 @@ export const labelConversationsPending = (
 
         messageStates.forEach((messageState) => {
             if (messageState?.data) {
-                applyLabelToMessage(messageState.data as Message, targetLabelID, folders, labels);
+                applyLabelToMessage(messageState.data as Message, destinationLabelID, folders, labels);
             }
         });
     });
@@ -267,10 +271,10 @@ export const unlabelConversationsPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { conversations: Conversation[]; targetLabelID: string; labels: Label[] } }
+        { arg: { conversations: Conversation[]; destinationLabelID: string; labels: Label[] } }
     >
 ) => {
-    const { conversations, targetLabelID, labels } = action.meta.arg;
+    const { conversations, destinationLabelID, labels } = action.meta.arg;
 
     conversations.forEach((conversation) => {
         const messageStates = getMessagesByConversationID(state, conversation.ID);
@@ -281,7 +285,7 @@ export const unlabelConversationsPending = (
 
         messageStates.forEach((messageState) => {
             if (messageState?.data) {
-                removeLabelFromMessage(messageState.data as Message, targetLabelID, labels);
+                removeLabelFromMessage(messageState.data as Message, destinationLabelID, labels);
             }
         });
     });

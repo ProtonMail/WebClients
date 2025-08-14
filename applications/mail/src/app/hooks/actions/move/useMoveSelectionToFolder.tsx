@@ -73,7 +73,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
         elements,
         sourceLabelID,
         folderName,
-        destinationLabelID: targetLabelID,
+        destinationLabelID,
         createFilters = false,
         silent = false,
         askUnsub = true,
@@ -87,7 +87,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
 
         // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
         await searchForScheduled(
-            targetLabelID,
+            destinationLabelID,
             isMessage,
             elements,
             setCanUndo,
@@ -99,7 +99,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
         // We only check if we're in the ALMOST_ALL_MAIL, ALL_MAIL or SNOOZE folder since this is the only place where we have snoozed emails
         if (sourceLabelID === ALMOST_ALL_MAIL_ID || sourceLabelID === ALL_MAIL || sourceLabelID === SNOOZED) {
             await searchForSnoozed(
-                targetLabelID,
+                destinationLabelID,
                 isMessage,
                 elements,
                 setCanUndo,
@@ -112,7 +112,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
         if (askUnsub) {
             // Open a modal when moving items to spam to propose to unsubscribe them
             spamAction = await askToUnsubscribe(
-                targetLabelID,
+                destinationLabelID,
                 isMessage,
                 elements,
                 api,
@@ -123,13 +123,13 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
 
         if (!authorizedToMove.length) {
             createNotification({
-                text: getNotificationTextUnauthorized(targetLabelID, sourceLabelID),
+                text: getNotificationTextUnauthorized(destinationLabelID, sourceLabelID),
                 type: 'error',
             });
             return;
         }
 
-        handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.MOVE, targetLabelID, elements });
+        handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.MOVE, destinationLabelID, elements });
 
         const { doCreateFilters, undoCreateFilters } = getFilterActions();
 
@@ -174,7 +174,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                 dispatch(backendActionStarted());
                 rollback = optimisticApplyLabels({
                     elements: authorizedToMove,
-                    inputChanges: { [targetLabelID]: true },
+                    inputChanges: { [destinationLabelID]: true },
                     isMove: true,
                     unreadStatuses: [],
                     // We need to pass a "real" folder to perform optimistic on custom labels
@@ -186,9 +186,9 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                         api,
                         items: elementIDs,
                         chunkSize: mailActionsChunkSize,
-                        action: (chunk) => action({ LabelID: targetLabelID, IDs: chunk, SpamAction: spamAction }),
+                        action: (chunk) => action({ LabelID: destinationLabelID, IDs: chunk, SpamAction: spamAction }),
                     }),
-                    createFilters ? doCreateFilters(elements, [targetLabelID], true) : undefined,
+                    createFilters ? doCreateFilters(elements, [destinationLabelID], true) : undefined,
                 ]);
             } catch (error: any) {
                 createNotification({
@@ -220,7 +220,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                 authorizedToMove.length,
                 elements.length - authorizedToMove.length,
                 folderName,
-                targetLabelID,
+                destinationLabelID,
                 sourceLabelID
             );
 

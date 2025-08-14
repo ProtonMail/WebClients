@@ -29,17 +29,17 @@ export enum MoveEngineRuleResult {
 // TODO How do we manage the unlabel case?
 /**
  * A rule for the move engine.
- * @param {string} targetLabelID - The ID of the target label.
+ * @param {string} destinationLabelID - The ID of the target label.
  * @param {Element[]} element - The elements to move, is a list for conversations
  * @returns {MoveEngineRuleResult} The result of the rule, can be ALLOW, DENY, or NOT_APPLICABLE
  */
 export type MoveEngineRule = ({
-    targetLabelID,
+    destinationLabelID,
     element,
     labels,
     folders,
 }: {
-    targetLabelID: string;
+    destinationLabelID: string;
     element: Element;
     labels: Label[];
     folders: Folder[];

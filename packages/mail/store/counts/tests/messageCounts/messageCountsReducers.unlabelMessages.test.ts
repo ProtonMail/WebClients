@@ -38,7 +38,7 @@ describe('message counts - unlabel conversations', () => {
             payload: {
                 elements: [message],
                 sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 labels: customLabels,
                 folders: customFolders,
             },
@@ -64,7 +64,7 @@ describe('message counts - unlabel conversations', () => {
             payload: {
                 elements: [message],
                 sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                 labels: customLabels,
                 folders: customFolders,
             },
@@ -93,7 +93,7 @@ describe('message counts - unlabel conversations', () => {
             payload: {
                 elements: [message],
                 sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                targetLabelID: CUSTOM_LABEL_ID1,
+                destinationLabelID: CUSTOM_LABEL_ID1,
                 labels: customLabels,
                 folders: customFolders,
             },

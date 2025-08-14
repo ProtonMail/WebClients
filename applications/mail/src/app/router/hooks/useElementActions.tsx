@@ -161,7 +161,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
                 await applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
                     elements: getElementsFromIDs(selectedIDs),
-                    targetLabelID: newLabelID,
+                    destinationLabelID: newLabelID,
                 });
             } else {
                 await moveToFolder({

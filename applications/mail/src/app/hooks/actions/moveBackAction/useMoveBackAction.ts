@@ -34,7 +34,7 @@ interface CallbackProps {
 const executeCallback = ({ sourceLabelID, props, handleBack, labels, folders }: CallbackProps) => {
     switch (props.type) {
         case MOVE_BACK_ACTION_TYPES.MOVE:
-            moveOutMoveAction(sourceLabelID, props.targetLabelID, handleBack, labels, folders);
+            moveOutMoveAction(sourceLabelID, props.destinationLabelID, handleBack, labels, folders);
             break;
         case MOVE_BACK_ACTION_TYPES.APPLY_LABEL:
             moveOutApplyLabelAction(sourceLabelID, props.changes, handleBack);

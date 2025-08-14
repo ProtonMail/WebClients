@@ -90,7 +90,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                        destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -180,7 +180,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -270,7 +270,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                        destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -360,7 +360,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -444,7 +444,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                        destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -528,7 +528,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -638,7 +638,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -749,7 +749,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -823,7 +823,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -909,7 +909,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -996,7 +996,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -1089,7 +1089,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -1176,7 +1176,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -1275,7 +1275,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -1370,7 +1370,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -1470,7 +1470,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -1577,7 +1577,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -1687,7 +1687,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -1797,7 +1797,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -1913,7 +1913,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -2035,7 +2035,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -2158,7 +2158,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -2271,7 +2271,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -2345,7 +2345,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -2431,7 +2431,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -2518,7 +2518,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -2611,7 +2611,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -2698,7 +2698,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -2797,7 +2797,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -2892,7 +2892,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -2992,7 +2992,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                        destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -3087,7 +3087,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                        destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -3161,7 +3161,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                        destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -3247,7 +3247,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                        destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -3334,7 +3334,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                        destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -3427,7 +3427,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                        destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -3514,7 +3514,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                        destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -3613,7 +3613,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                        destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -3708,7 +3708,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                        destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -3808,7 +3808,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                        destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -3915,7 +3915,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                        destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -4043,7 +4043,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        targetLabelID: CUSTOM_LABEL_ID2,
+                        destinationLabelID: CUSTOM_LABEL_ID2,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -4167,7 +4167,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -4276,7 +4276,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -4391,7 +4391,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -4500,7 +4500,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -4604,7 +4604,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.TRASH,
-                        targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                         labels: customLabels,
                         folders: customFolders,
                     },
@@ -4709,7 +4709,7 @@ describe('labelConversationsPending', () => {
                     arg: {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                        destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                         labels: customLabels,
                         folders: customFolders,
                     },

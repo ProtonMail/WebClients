@@ -91,7 +91,7 @@ describe('useApplyLocation', () => {
                     type: APPLY_LOCATION_TYPES.MOVE,
                     // @ts-ignore
                     elements: undefined,
-                    targetLabelID: '10',
+                    destinationLabelID: '10',
                 })
             ).toThrow('Elements are required');
         });
@@ -104,7 +104,7 @@ describe('useApplyLocation', () => {
                     type: APPLY_LOCATION_TYPES.MOVE,
                     // @ts-ignore
                     elements: [],
-                    targetLabelID: '10',
+                    destinationLabelID: '10',
                 })
             ).not.toThrow();
         });
@@ -118,7 +118,7 @@ describe('useApplyLocation', () => {
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
                     elements: [{ ID: '1', ConversationID: '123', Flags: MESSAGE_FLAGS.FLAG_SENT }],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
                 expect(mockedCreateNotification).toHaveBeenCalledWith({
@@ -136,7 +136,7 @@ describe('useApplyLocation', () => {
                         { ID: '1', ConversationID: '123', Flags: MESSAGE_FLAGS.FLAG_SENT },
                         { ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.ARCHIVE] },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
                 expect(mockedCreateNotification).not.toHaveBeenCalled();
@@ -148,7 +148,7 @@ describe('useApplyLocation', () => {
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
                     elements: [{ ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.INBOX] }],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
                 expect(mockedCreateNotification).toHaveBeenCalledWith({
@@ -166,7 +166,7 @@ describe('useApplyLocation', () => {
                         { ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.INBOX] },
                         { ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.ARCHIVE] },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
                 expect(mockedCreateNotification).not.toHaveBeenCalled();
@@ -176,13 +176,13 @@ describe('useApplyLocation', () => {
         describe('modal tests', () => {
             it.each(Array.from(scheduleTargetWithWarning))(
                 'should display schedule modal when moving from schedule to trash %s',
-                async (targetLabelID) => {
+                async (destinationLabelID) => {
                     const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
                     await result.current.applyLocation({
                         type: APPLY_LOCATION_TYPES.MOVE,
                         elements: [{ ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED] }],
-                        targetLabelID,
+                        destinationLabelID,
                     });
 
                     expect(notifyMock).toHaveBeenCalled();
@@ -200,7 +200,7 @@ describe('useApplyLocation', () => {
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
                     elements: [{ ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED] }],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
                 expect(notifyMock).not.toHaveBeenCalled();
@@ -225,7 +225,7 @@ describe('useApplyLocation', () => {
                             },
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 });
 
                 expect(notifyMock).toHaveBeenCalled();
@@ -255,7 +255,7 @@ describe('useApplyLocation', () => {
                             },
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 });
 
                 expect(notifyMock).not.toHaveBeenCalled();
@@ -280,7 +280,7 @@ describe('useApplyLocation', () => {
                             },
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 });
 
                 expect(notifyMock).not.toHaveBeenCalled();
@@ -300,13 +300,13 @@ describe('useApplyLocation', () => {
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
                     elements: [element],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
                 expect(mockedLabelMessages).toHaveBeenCalledWith({
                     isEncryptedSearch: false,
                     showSuccessNotification: true,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: [],
                     folders: [],
                     elements: [element],
@@ -330,13 +330,13 @@ describe('useApplyLocation', () => {
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.MOVE,
                     elements: [element, { ...element, LabelIDs: [MAILBOX_LABEL_IDS.INBOX] }],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
                 expect(mockedLabelMessages).toHaveBeenCalledWith({
                     isEncryptedSearch: false,
                     showSuccessNotification: true,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: [],
                     folders: [],
                     elements: [element],
@@ -360,7 +360,7 @@ describe('useApplyLocation', () => {
                 await result.current.applyLocation({
                     type: APPLY_LOCATION_TYPES.STAR,
                     elements: [element],
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     removeLabel: true,
                 });
 
@@ -368,7 +368,7 @@ describe('useApplyLocation', () => {
                 expect(mockedUnlabelMessages).toHaveBeenCalledWith({
                     isEncryptedSearch: false,
                     showSuccessNotification: true,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: [],
                     folders: [],
                     elements: [element],
@@ -399,7 +399,7 @@ describe('useApplyLocation', () => {
                             NumMessages: 10,
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                 });
 
                 expect(mockedCreateNotification).toHaveBeenCalledWith({
@@ -435,7 +435,7 @@ describe('useApplyLocation', () => {
                             NumMessages: 10,
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                 });
 
                 expect(mockedCreateNotification).not.toHaveBeenCalled();
@@ -458,7 +458,7 @@ describe('useApplyLocation', () => {
                             ],
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                 });
 
                 expect(mockedCreateNotification).toHaveBeenCalledWith({
@@ -494,7 +494,7 @@ describe('useApplyLocation', () => {
                             ],
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                 });
 
                 expect(mockedCreateNotification).not.toHaveBeenCalled();
@@ -504,7 +504,7 @@ describe('useApplyLocation', () => {
         describe('modal tests', () => {
             it.each(Array.from(scheduleTargetWithWarning))(
                 'should display schedule modal when moving from schedule to trash %s',
-                async (targetLabelID) => {
+                async (destinationLabelID) => {
                     const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
                     await result.current.applyLocation({
@@ -521,7 +521,7 @@ describe('useApplyLocation', () => {
                                 ],
                             },
                         ],
-                        targetLabelID,
+                        destinationLabelID,
                     });
 
                     expect(notifyMock).toHaveBeenCalled();
@@ -550,7 +550,7 @@ describe('useApplyLocation', () => {
                             ],
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
                 expect(notifyMock).not.toHaveBeenCalled();
@@ -573,7 +573,7 @@ describe('useApplyLocation', () => {
                             ],
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 });
 
                 expect(notifyMock).toHaveBeenCalled();
@@ -617,7 +617,7 @@ describe('useApplyLocation', () => {
                             ],
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 });
 
                 expect(notifyMock).toHaveBeenCalled();
@@ -660,7 +660,7 @@ describe('useApplyLocation', () => {
                             ],
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 });
 
                 expect(notifyMock).not.toHaveBeenCalled();
@@ -698,7 +698,7 @@ describe('useApplyLocation', () => {
                             ],
                         },
                     ],
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 });
 
                 expect(notifyMock).not.toHaveBeenCalled();

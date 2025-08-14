@@ -74,7 +74,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -139,7 +139,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -204,7 +204,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -269,7 +269,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -345,7 +345,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -421,7 +421,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -497,7 +497,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -550,7 +550,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -606,7 +606,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -681,7 +681,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -766,7 +766,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -851,7 +851,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -936,7 +936,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -1010,7 +1010,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -1080,7 +1080,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -1152,7 +1152,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -1208,7 +1208,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: CUSTOM_LABEL_ID1,
+                    destinationLabelID: CUSTOM_LABEL_ID1,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,
@@ -1277,7 +1277,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     elements: [message1],
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     conversations: [conversation],
                     labels: customLabels,
                     folders: customFolders,

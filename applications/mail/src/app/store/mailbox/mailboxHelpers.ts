@@ -115,21 +115,21 @@ export const getNotificationTextUnstarred = ({
 export const getNotificationTextLabelRemoved = ({
     isMessage,
     elementsCount,
-    targetLabelID,
+    destinationLabelID,
     labels,
     folders,
 }: {
     isMessage: boolean;
     elementsCount: number;
-    targetLabelID: string;
+    destinationLabelID: string;
     labels: Label[];
     folders: Folder[];
 }) => {
-    if (targetLabelID === MAILBOX_LABEL_IDS.STARRED) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.STARRED) {
         return getNotificationTextUnstarred({ isMessage, elementsCount });
     }
 
-    const labelName = getLabelName(targetLabelID, labels, folders);
+    const labelName = getLabelName(destinationLabelID, labels, folders);
 
     if (isMessage) {
         if (elementsCount === 1) {
@@ -156,21 +156,21 @@ export const getNotificationTextLabelRemoved = ({
 export const getNotificationTextLabelAdded = ({
     isMessage,
     elementsCount,
-    targetLabelID,
+    destinationLabelID,
     labels,
     folders,
 }: {
     isMessage: boolean;
     elementsCount: number;
-    targetLabelID: string;
+    destinationLabelID: string;
     labels: Label[];
     folders: Folder[];
 }) => {
-    if (targetLabelID === MAILBOX_LABEL_IDS.STARRED) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.STARRED) {
         return getNotificationTextStarred({ isMessage, elementsCount });
     }
 
-    if (targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
         if (isMessage) {
             if (elementsCount === 1) {
                 return c('Success').t`Message moved to spam and sender added to your spam list.`;
@@ -192,7 +192,7 @@ export const getNotificationTextLabelAdded = ({
         }
     }
 
-    const labelName = getLabelName(targetLabelID, labels, folders);
+    const labelName = getLabelName(destinationLabelID, labels, folders);
     if (isMessage) {
         if (elementsCount === 1) {
             return c('Success').t`Message moved to ${labelName}.`;

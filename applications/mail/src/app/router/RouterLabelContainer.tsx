@@ -155,7 +155,7 @@ export const RouterLabelContainer = ({
             const folderName = getFolderName(newLabelID, folders);
             const elements = getElementsFromIDs(selectedIDs);
             if (applyOptimisticLocationEnabled && !selectAll) {
-                await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, targetLabelID: newLabelID });
+                await applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID: newLabelID });
             } else {
                 await moveToFolder({
                     elements,

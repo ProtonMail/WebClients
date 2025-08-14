@@ -161,7 +161,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: true,
                     elementsCount: 1,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     folders: [],
                     labels: [],
                 });
@@ -172,7 +172,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: true,
                     elementsCount: 2,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     folders: [],
                     labels: [],
                 });
@@ -183,7 +183,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: false,
                     elementsCount: 1,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     folders: [],
                     labels: [],
                 });
@@ -194,7 +194,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: false,
                     elementsCount: 2,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     folders: [],
                     labels: [],
                 });
@@ -207,7 +207,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: true,
                     elementsCount: 1,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     folders: [],
                     labels: [],
                 });
@@ -218,7 +218,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: true,
                     elementsCount: 1,
-                    targetLabelID: 'customfolder1',
+                    destinationLabelID: 'customfolder1',
                     folders: customFolders,
                     labels: [],
                 });
@@ -229,7 +229,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: true,
                     elementsCount: 1,
-                    targetLabelID: 'customlabel1',
+                    destinationLabelID: 'customlabel1',
                     folders: [],
                     labels: customLabels,
                 });
@@ -240,7 +240,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: true,
                     elementsCount: 2,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     folders: [],
                     labels: [],
                 });
@@ -251,7 +251,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: true,
                     elementsCount: 2,
-                    targetLabelID: 'customfolder1',
+                    destinationLabelID: 'customfolder1',
                     folders: customFolders,
                     labels: [],
                 });
@@ -262,7 +262,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: true,
                     elementsCount: 2,
-                    targetLabelID: 'customlabel1',
+                    destinationLabelID: 'customlabel1',
                     folders: [],
                     labels: customLabels,
                 });
@@ -275,7 +275,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: false,
                     elementsCount: 1,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     folders: [],
                     labels: [],
                 });
@@ -286,7 +286,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: false,
                     elementsCount: 1,
-                    targetLabelID: 'customfolder1',
+                    destinationLabelID: 'customfolder1',
                     folders: customFolders,
                     labels: [],
                 });
@@ -297,7 +297,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: false,
                     elementsCount: 1,
-                    targetLabelID: 'customlabel1',
+                    destinationLabelID: 'customlabel1',
                     folders: [],
                     labels: customLabels,
                 });
@@ -308,7 +308,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: false,
                     elementsCount: 2,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     folders: [],
                     labels: [],
                 });
@@ -319,7 +319,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: false,
                     elementsCount: 2,
-                    targetLabelID: 'customfolder1',
+                    destinationLabelID: 'customfolder1',
                     folders: customFolders,
                     labels: [],
                 });
@@ -330,7 +330,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelRemoved({
                     isMessage: false,
                     elementsCount: 2,
-                    targetLabelID: 'customlabel1',
+                    destinationLabelID: 'customlabel1',
                     folders: [],
                     labels: customLabels,
                 });
@@ -345,7 +345,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: true,
                     elementsCount: 1,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: [],
                     folders: [],
                 });
@@ -356,7 +356,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: true,
                     elementsCount: 2,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: [],
                     folders: [],
                 });
@@ -367,7 +367,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: false,
                     elementsCount: 1,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: [],
                     folders: [],
                 });
@@ -378,7 +378,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: false,
                     elementsCount: 2,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: [],
                     folders: [],
                 });
@@ -391,7 +391,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: true,
                     elementsCount: 1,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: [],
                     folders: [],
                 });
@@ -402,7 +402,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: true,
                     elementsCount: 1,
-                    targetLabelID: 'customfolder1',
+                    destinationLabelID: 'customfolder1',
                     labels: [],
                     folders: customFolders,
                 });
@@ -413,7 +413,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: true,
                     elementsCount: 1,
-                    targetLabelID: 'customlabel1',
+                    destinationLabelID: 'customlabel1',
                     labels: customLabels,
                     folders: [],
                 });
@@ -424,7 +424,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: true,
                     elementsCount: 2,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: [],
                     folders: [],
                 });
@@ -435,7 +435,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: true,
                     elementsCount: 2,
-                    targetLabelID: 'customfolder1',
+                    destinationLabelID: 'customfolder1',
                     labels: [],
                     folders: customFolders,
                 });
@@ -446,7 +446,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: true,
                     elementsCount: 2,
-                    targetLabelID: 'customlabel1',
+                    destinationLabelID: 'customlabel1',
                     labels: customLabels,
                     folders: [],
                 });
@@ -459,7 +459,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: false,
                     elementsCount: 1,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: [],
                     folders: [],
                 });
@@ -470,7 +470,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: false,
                     elementsCount: 1,
-                    targetLabelID: 'customfolder1',
+                    destinationLabelID: 'customfolder1',
                     labels: [],
                     folders: customFolders,
                 });
@@ -481,7 +481,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: false,
                     elementsCount: 1,
-                    targetLabelID: 'customlabel1',
+                    destinationLabelID: 'customlabel1',
                     labels: customLabels,
                     folders: [],
                 });
@@ -492,7 +492,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: false,
                     elementsCount: 2,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: [],
                     folders: [],
                 });
@@ -503,7 +503,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: false,
                     elementsCount: 2,
-                    targetLabelID: 'customfolder1',
+                    destinationLabelID: 'customfolder1',
                     labels: [],
                     folders: customFolders,
                 });
@@ -514,7 +514,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: false,
                     elementsCount: 2,
-                    targetLabelID: 'customlabel1',
+                    destinationLabelID: 'customlabel1',
                     labels: customLabels,
                     folders: [],
                 });
@@ -527,7 +527,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: true,
                     elementsCount: 1,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: [],
                     folders: [],
                 });
@@ -538,7 +538,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: true,
                     elementsCount: 2,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: [],
                     folders: [],
                 });
@@ -549,7 +549,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: false,
                     elementsCount: 1,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: [],
                     folders: [],
                 });
@@ -560,7 +560,7 @@ describe('mailboxHelpers', () => {
                 const result = getNotificationTextLabelAdded({
                     isMessage: false,
                     elementsCount: 2,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: [],
                     folders: [],
                 });
