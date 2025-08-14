@@ -116,6 +116,13 @@ export const getAccountAppRoutes = ({
 
     const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
 
+    const paymentsSectionAvailable =
+        user.isSelf &&
+        (isFamilyOrDuoPlanMember ||
+            // we do NOT display payment sections to Visionary admins here (display only to members),
+            // because they should have them on the dashboard or subscription pages
+            (isVisionaryPlan && isMemberProton && isMember));
+
     return <const>{
         available: true,
         header: c('Settings section title').t`Account`,
@@ -388,19 +395,19 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Payment methods`,
                         id: 'payment-methods',
-                        available: user.isSelf && (isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton)),
+                        available: paymentsSectionAvailable,
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the credits for them here
                     {
                         text: c('Title').t`Credits`,
                         id: 'credits',
-                        available: user.isSelf && (isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton)),
+                        available: paymentsSectionAvailable,
                     },
                     //Family members or Proton account that are part of Visionary don't have access to the dashboard, display the invoices for them here
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
-                        available: user.isSelf && (isFamilyOrDuoPlanMember || (isVisionaryPlan && isMemberProton)),
+                        available: paymentsSectionAvailable,
                     },
                     {
                         text: c('Title').t`Delete account`,
