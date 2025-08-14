@@ -1102,9 +1102,6 @@
       "Send reminder": [
         "リマインダーを送信"
       ],
-      "Set as default mail application": [
-        "デフォルトのメールアプリとして設定"
-      ],
       "Set catch-all": [
         "Catch-All を設定"
       ],
@@ -3277,11 +3274,8 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME }の${ DOCS_SHORT_APP_NAME }では、安全で暗号化された環境で他の人と共同作業ができます。"
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME }はデフォルトのメールアプリではありません。"
-      ],
       "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME }はデフォルトのメールアプリです。"
+        "デフォルトのメールアプリは${ MAIL_APP_NAME }です。"
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "${ DRIVE_APP_NAME } にフォルダやファイルを追加し、チームメンバーを招待して表示または編集を許可します。"
@@ -8707,9 +8701,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "無効にすると、知らないうちに画像ファイルがデバイスに読み込まれるのを防ぎます。"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "有効にすると、 ${ MAIL_APP_NAME } がデフォルトのメールアプリであるかを確認し、そうでない場合は通知します。"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "ID プロバイダーで ${ appName } の SAML を有効にすると、コールバック (ACS) URL と発行者 ID を使用するように求められる場合があります。以下のデータをコピーして ID プロバイダーのフィールドに貼り付けるだけです。"
@@ -16438,9 +16429,6 @@
       ],
       "Change second password": [
         "セカンドパスワードを変更"
-      ],
-      "Check your default mail application": [
-        "デフォルトのメールアプリを確認"
       ],
       "Choose an account": [
         "アカウントの選択"

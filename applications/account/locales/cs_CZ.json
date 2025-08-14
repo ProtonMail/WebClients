@@ -1096,9 +1096,6 @@
       "Send reminder": [
         "Poslat připomenutí"
       ],
-      "Set as default mail application": [
-        "Nastavit jako výchozí e-mailovou aplikaci"
-      ],
       "Set catch-all": [
         "Nastavení doménového koše"
       ],
@@ -3296,12 +3293,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vám umožní spolupracovat s ostatními v bezpečném a šifrovaném prostředí."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } není vaše výchozí e-mailová aplikace."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } je vaše výchozí e-mailová aplikace."
-      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Přidejte složky a soubory do ${ DRIVE_APP_NAME } a pozvěte členy týmu k prohlížení nebo úpravám."
       ],
@@ -4200,6 +4191,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Varování"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Důvěryhodný kontakt"
       ]
     },
     "Empty group name": {
@@ -8241,6 +8237,9 @@
       "Session timed out": [
         "Relace vypršela"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci. ${ MAIL_APP_NAME } se automaticky otevře po kliknutí na e-mailový odkaz."
+      ],
       "Set password": [
         "Nastavte heslo"
       ],
@@ -8951,9 +8950,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pokud je vypnuto, zabraňuje načítání obrázkových souborů na vašem zařízení bez vašeho vědomí."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Pokud je povoleno, zkontrolujeme, zda je ${ MAIL_APP_NAME } vaší výchozí e-mailovou aplikací, a upozorníme vás, pokud tomu tak není."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Při povolování SAML pro ${ appName } u poskytovatele identit můžete být vyzváni k použití zpětné adresy URL (ACS) a ID vydavatele. Níže uvedené údaje stačí zkopírovat a vložit do polí poskytovatele identit."
@@ -16981,9 +16977,6 @@
       ],
       "Change second password": [
         "Změnit druhé heslo"
-      ],
-      "Check your default mail application": [
-        "Zkontrolujte výchozí e-mailovou aplikaci"
       ],
       "Choose an account": [
         "Vybrat účet"
