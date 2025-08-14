@@ -24,15 +24,21 @@ export const GlobalScheduleModal = () => {
         return unsubscribe;
     }, [subscribe]);
 
+    const handleConfirm = () => {
+        setOpen(false);
+        setScheduleModalProps(null);
+
+        scheduleModalProps?.onConfirm();
+    };
+
     return (
         <>
             {shouldRender && scheduleModalProps && (
                 <Prompt
                     title={c('Title').t`Moving a scheduled message`}
                     buttons={[
-                        <Button color="norm" onClick={scheduleModalProps.onConfirm} data-testid="confirm-button">{c(
-                            'Action'
-                        ).t`OK`}</Button>,
+                        <Button color="norm" onClick={() => handleConfirm()} data-testid="confirm-button">{c('Action')
+                            .t`OK`}</Button>,
                         <Button
                             data-testid="cancel-button"
                             onClick={() => {
