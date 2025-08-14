@@ -19,7 +19,7 @@
         "@proton/crypto": "workspace:^",
         "@proton/srp": "workspace:^",
         "@proton/styles": "workspace:^",
-        "@protontech/bip39": "^1.0.2",
+        "@protontech/bip39": "^1.1.0",
         "@protontech/mimemessage": "~v1.1.4",
         "@protontech/mutex-browser": "^1.0.5",
         "@protontech/telemetry": "^1.0.2",
@@ -27,7 +27,7 @@
         "@protontech/timezone-support": "^2.1.0",
         "@scure/base": "^1.2.6",
         "@sentry/browser": "^7.120.4",
-        "@types/node": "^22.17.0",
+        "@types/node": "^22.17.1",
         "@types/papaparse": "^5.3.16",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.8",
@@ -46,7 +46,7 @@
         "zod": "^3.25.76"
     },
     "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.28.0",
+        "@babel/plugin-transform-runtime": "^7.28.3",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@types/jasmine": "^5.1.8",
@@ -69,6 +69,6 @@
         "ttag": "^1.8.12",
         "typescript": "^5.8.3",
         "url-loader": "^4.1.1",
-        "webpack": "^5.101.0"
+        "webpack": "^5.101.1"
     }
 }
