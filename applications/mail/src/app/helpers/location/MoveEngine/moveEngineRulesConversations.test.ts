@@ -231,6 +231,50 @@ describe('moveEngineConversations', () => {
                 expect(result).toBe(MoveEngineRuleResult.DENIED);
             });
         });
+
+        describe('move to DRAFT', () => {
+            it('should be possible to move from INBOX to DRAFT', () => {
+                const result = conversationDraftRules({
+                    element: {
+                        NumMessages: 3,
+                        Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 3 }],
+                    } as Conversation,
+                    destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                    labels: customLabels,
+                    folders: customFolders,
+                });
+
+                expect(result).toBe(MoveEngineRuleResult.ALLOWED);
+            });
+
+            it('should not be possible to move from SCHEDULED to DRAFT', () => {
+                const result = conversationDraftRules({
+                    element: {
+                        NumMessages: 3,
+                        Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 3 }],
+                    } as Conversation,
+                    destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                    labels: customLabels,
+                    folders: customFolders,
+                });
+
+                expect(result).toBe(MoveEngineRuleResult.DENIED);
+            });
+
+            it('should not be possible to move from SCHEDULED to ALL_DRAFTS', () => {
+                const result = conversationDraftRules({
+                    element: {
+                        NumMessages: 3,
+                        Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 3 }],
+                    } as Conversation,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                    labels: customLabels,
+                    folders: customFolders,
+                });
+
+                expect(result).toBe(MoveEngineRuleResult.DENIED);
+            });
+        });
     });
 
     describe('NOT_APPLICABLE actions', () => {
