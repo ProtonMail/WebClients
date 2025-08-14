@@ -110,6 +110,9 @@
       "Cancel subscription": [
         "Annulla abbonamento"
       ],
+      "Change password": [
+        "Cambia la password"
+      ],
       "Chat with us": [
         "Chatta con noi"
       ],
@@ -2484,6 +2487,11 @@
         "Aggiornamento per un evento che inizia il ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contatti sicuri"
+      ]
+    },
     "Error": {
       "${ list } doesn't have a valid email address": [
         "${ list } non ha un indirizzo email valido",
@@ -3927,6 +3935,9 @@
       "Enter your own password (as organization admin).": [
         "Inserisci la tua password (come amministratore dell'organizzazione)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Inserisci la tua password (come contatto attendibile)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo stimato rimanente: ${ estimatedMinutes } minuto",
         "Tempo stimato rimanente: ${ estimatedMinutes } minuti"
@@ -5145,6 +5156,9 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "La tua password (contatto attendibile)"
       ]
     },
     "Label for contact group color": {

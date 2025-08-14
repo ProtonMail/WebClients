@@ -113,6 +113,9 @@
       "Cancel trial and pay": [
         "Anulare perioadă de probare și plătire"
       ],
+      "Change password": [
+        "Schimbare parolă"
+      ],
       "Chat with us": [
         "Conversați cu noi"
       ],
@@ -443,6 +446,9 @@
       ],
       "More options": [
         "Mai multe opțiuni"
+      ],
+      "More options for accounts": [
+        "Mai multe opțiuni pentru conturi"
       ],
       "New event": [
         "Eveniment nou"
@@ -913,6 +919,14 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Manager de parole premium"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
       ]
     },
     "Billing cycle option": {
@@ -2473,6 +2487,11 @@
         "Actualizarea unui eveniment care începe ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contact aprobat"
+      ]
+    },
     "Error": {
       "${ list } doesn't have a valid email address": [
         "${ list } nu are o adresă de e-mail validă.",
@@ -3687,6 +3706,9 @@
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/lună)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
       ],
@@ -3879,7 +3901,7 @@
         "Zilnic personalizat"
       ],
       "Custom email domains": [
-        "Domenii personale e-mail"
+        "Domenii personale de e-mail"
       ],
       "Custom monthly": [
         "Lunar personalizat"
@@ -3969,6 +3991,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduceți parola (ca și contact aprobat)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Timp estimat rămas: ${ estimatedMinutes } minut",
@@ -4192,6 +4217,9 @@
       ],
       "Organization size": [
         "Mărime organizație"
+      ],
+      "Other accounts": [
+        "Alte conturi"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Alți utilizatori din organizație vă vor vedea perioadele când aveți activități. Detaliile despre eveniment nu sunt distribuite."
@@ -5215,6 +5243,9 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Your password (trusted contact)": [
+        "Parola dvs. (contact aprobat)"
       ]
     },
     "Label for contact group color": {
@@ -5676,6 +5707,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } calendare",
@@ -5832,6 +5866,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Suport client de e-mail (prin IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupuri de contacte"
       ],
       "Enables HIPAA compliance": [
         "Se conformează regulilor HIPAA"
@@ -6126,6 +6163,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partajați calendarele ușor cu familia, prietenii sau colegii."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Trimiteți mesaje tuturor dintr-un grup cu o singură adresă de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Se asigură că primiți toate e-mailurile trimise către domeniul dvs., chiar dacă adresa de e-mail nu a existat, nu mai există sau e scrisă greșit."
@@ -7664,6 +7704,9 @@
       ],
       "Account recovery": [
         "Recuperare cont"
+      ],
+      "Account Temporarily Locked": [
+        "Cont blocat temporar"
       ],
       "Add another notification to remind you of this event": [
         "Adăugare altă notificare pentru reamintirea acestui eveniment"

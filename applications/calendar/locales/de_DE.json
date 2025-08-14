@@ -110,6 +110,9 @@
       "Cancel subscription": [
         "Abonnement kündigen"
       ],
+      "Change password": [
+        "Passwort ändern"
+      ],
       "Chat with us": [
         "Chatte mit uns"
       ],
@@ -2484,6 +2487,11 @@
         "Aktualisierung zu einem Termin, der am ${ formattedStart } beginnt"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Vertrauenswürdiger Kontakt"
+      ]
+    },
     "Error": {
       "${ list } doesn't have a valid email address": [
         "${ list } enthält keine gültige E-Mail-Adresse",
@@ -3927,6 +3935,9 @@
       "Enter your own password (as organization admin).": [
         "Eigenes Passwort (als Organisationsadministrator) eingeben."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minute",
         "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minuten"
@@ -5145,6 +5156,9 @@
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Dein Passwort (vertrauenswürdiger Kontakt)"
       ]
     },
     "Label for contact group color": {
@@ -7497,6 +7511,9 @@
       ],
       "Account recovery": [
         "Kontowiederherstellung"
+      ],
+      "Account Temporarily Locked": [
+        "Konto vorübergehend gesperrt"
       ],
       "Add another notification to remind you of this event": [
         "Weitere Benachrichtigung hinzufügen, um dich an diesen Termin zu erinnern"

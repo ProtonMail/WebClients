@@ -110,6 +110,9 @@
       "Cancel subscription": [
         "გამოწერის გაუქმება"
       ],
+      "Change password": [
+        "პაროლის შეცვლა"
+      ],
       "Chat with us": [
         "დაგველაპარაკეთ"
       ],
@@ -912,6 +915,9 @@
       ],
       "Annually": [
         "წელიწადში ერთხელ"
+      ],
+      "Lifetime": [
+        "სამუდამოდ"
       ],
       "Monthly": [
         "თვეში ერთხელ"
@@ -2433,6 +2439,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "მოვლენის განახლება ${ formattedStart }-დან"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "სანდო კონტაქტი"
       ]
     },
     "Error": {
@@ -3970,6 +3981,9 @@
       "It's better to have:": [
         "უკეთესია, გქონდეთ:"
       ],
+      "JCB logo": [
+        "JCB ლოგო"
+      ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
       ],
@@ -4089,6 +4103,9 @@
       ],
       "Organization size": [
         "ორგანიზაციის ზომა"
+      ],
+      "Other accounts": [
+        "სხვა ანგარიშები"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "სხვა მომხმარებლები თქვენს ორგანიზაციაში დაინახავენ თქვენს დაკავებულ სლოტებს. მოვლენის დეტალები გაზიარებული არ იქნება."
@@ -5685,6 +5702,9 @@
       "Email client support (via IMAP/SMTP)": [
         "ელფოსტის კლიენტის მხარდაჭერა (IMAP/SMTP-ით)"
       ],
+      "Email groups": [
+        "ელფოსტის ჯგუფები"
+      ],
       "Enables HIPAA compliance": [
         "ჩართავს HIPAA-სთან თავსებადობას"
       ],
@@ -5908,6 +5928,9 @@
       ],
       "Downgrade account?": [
         "გნებავთ ანგარიშის გეგმის ჩამოწევა?"
+      ],
+      "Review subscription": [
+        "გამოწერის გადახედვა"
       ],
       "Review subscription and pay": [
         "გადახედეთ გამოწერას და გადაიხადეთ"
@@ -6496,6 +6519,9 @@
       "MM/YY": [
         "თთ/წწ"
       ],
+      "terms & conditions": [
+        "პირობები და წესები"
+      ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
       ]
@@ -6518,6 +6544,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "PGP key encryption warning": {
@@ -7551,6 +7582,9 @@
       ],
       "Continue with partial import?": [
         "გავაგრძელო ნაწილობრივი შემოტანით?"
+      ],
+      "Coupon": [
+        "კუპონი"
       ],
       "Create contact": [
         "კონტაქტის შექმნა"

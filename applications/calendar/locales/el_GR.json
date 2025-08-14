@@ -113,6 +113,9 @@
       "Cancel trial and pay": [
         "Ακύρωση δοκιμής και πληρωμή"
       ],
+      "Change password": [
+        "Αλλαγή κωδικού πρόσβασης"
+      ],
       "Chat with us": [
         "Επικοινωνήστε μαζί μας"
       ],
@@ -441,6 +444,9 @@
       ],
       "More options": [
         "Περισσότερες επιλογές"
+      ],
+      "More options for accounts": [
+        "Περισσότερες επιλογές για λογαριασμούς"
       ],
       "New event": [
         "Νέα εκδήλωση"
@@ -2469,6 +2475,11 @@
         "Ενημέρωση για ένα γεγονός που αρχίζει στις ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Αξιόπιστη επαφή"
+      ]
+    },
     "Error": {
       "${ list } doesn't have a valid email address": [
         "Ο ${ list } δεν έχει έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου",
@@ -3924,6 +3935,9 @@
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
         "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτά"
@@ -4144,6 +4158,9 @@
       ],
       "Organization size": [
         "Μέγεθος οργανισμού"
+      ],
+      "Other accounts": [
+        "Άλλοι λογαριασμοί"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Οι άλλοι χρήστες εντός του οργανισμού σας θα βλέπουν τις απασχολημένες υποδοχές σας. Δεν κοινοποιούνται λεπτομέρειες συμβάντος."
@@ -5160,6 +5177,9 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
       ]
     },
     "Label for contact group color": {
@@ -7549,6 +7569,9 @@
       ],
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
+      ],
+      "Account Temporarily Locked": [
+        "Λογαριασμός Προσωρινά Κλειδωμένος"
       ],
       "Add another notification to remind you of this event": [
         "Προσθέστε μια άλλη ειδοποίηση για να σας υπενθυμίσει αυτήν την εκδήλωση"

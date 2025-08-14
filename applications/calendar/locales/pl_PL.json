@@ -110,6 +110,12 @@
       "Cancel subscription": [
         "Anuluj subskrypcję"
       ],
+      "Cancel trial and pay": [
+        "Anuluj wersję próbną i zapłać"
+      ],
+      "Change password": [
+        "Zmień hasło"
+      ],
       "Chat with us": [
         "Czat z nami"
       ],
@@ -442,6 +448,9 @@
       ],
       "More options": [
         "Więcej opcji"
+      ],
+      "More options for accounts": [
+        "Więcej opcji dla kont"
       ],
       "New event": [
         "Nowe wydarzenie"
@@ -937,6 +946,19 @@
         "Nowość!"
       ]
     },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Menedżer haseł w wersji premium"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Użyj własnej domeny"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 miesiąc"
@@ -946,6 +968,9 @@
       ],
       "Annually": [
         "Rocznie"
+      ],
+      "Lifetime": [
+        "Dożywotnio"
       ],
       "Monthly": [
         "Miesięcznie"
@@ -2508,6 +2533,11 @@
         "Aktualizacja wydarzenia rozpoczynającego się w dniu: ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Zaufany kontakt"
+      ]
+    },
     "Error": {
       "${ list } doesn't have a valid email address": [
         "Grupa ${ list } nie posiada prawidłowego adresu e-mail",
@@ -2865,6 +2895,9 @@
       ],
       "The address might be misspelled": [
         "Adres mógł zostać błędnie wpisany"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Kwota do spłaty uległa zmianie. Spróbuj ponownie."
       ],
       "The email addresses do not match": [
         "Adresy e-mail nie pasują do siebie"
@@ -3702,6 +3735,12 @@
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Dożywotnia subskrypcja ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }. Cena i data odnowienia subskrypcji ${ planTitle } pozostaje niezmienna."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
@@ -3752,6 +3791,9 @@
         "(${ memberCount } członków)",
         "(${ memberCount } członków)",
         "(${ memberCount } członków)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } / miesiąc)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
@@ -4041,6 +4083,9 @@
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Wpisz swoje hasło (jako zaufany kontakt)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Szacowany pozostały czas: ${ estimatedMinutes } minuta",
         "Szacowany pozostały czas: ${ estimatedMinutes } minuty",
@@ -4142,6 +4187,9 @@
       ],
       "It's better to have:": [
         "Lepiej mieć:"
+      ],
+      "JCB logo": [
+        "Logo JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
@@ -4263,6 +4311,9 @@
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
+      "Other accounts": [
+        "Inne konta"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Pokaż użytkownikom organizacji, kiedy jestem zajęty. Szczegóły wydarzeń nie zostaną udostępnione."
       ],
@@ -4334,6 +4385,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
+      ],
+      "Registering your subscription…": [
+        "Rejestrowanie subskrypcji…"
       ],
       "Removed participants will be notified.": [
         "Usunięci uczestnicy zostaną powiadomieni."
@@ -4683,6 +4737,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Subskrypcja ${ plan } zostanie zastąpiona subskrypcją ${ PASS_SHORT_APP_NAME } Lifetime. Pozostałe saldo subskrypcji zostanie dodane do konta. Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta zostanie wkrótce ograniczony. ${ payInvoiceLink }"
       ],
@@ -4722,11 +4779,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
       "Your password was leaked:": [
         "Twoje hasło zostało ujawnione:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Twoja strefa czasowa w systemie zmieniła się na ${ timezone }. Czy chcesz zaktualizować ustawienia strefy czasowej?"
@@ -5274,6 +5340,9 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ],
+      "Your password (trusted contact)": [
+        "Twoje hasło (zaufany kontakt)"
       ]
     },
     "Label for contact group color": {
@@ -5741,6 +5810,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } kalendarz",
         "${ n } kalendarze",
@@ -5911,6 +5983,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Wsparcie aplikacji pocztowych (przez IMAP / SMTP)"
+      ],
+      "Email groups": [
+        "Grupy kontaktów"
       ],
       "Enables HIPAA compliance": [
         "Zgodność z wymogami HIPAA"
@@ -6142,6 +6217,9 @@
       "Downgrade account?": [
         "Obniżyć plan?"
       ],
+      "Review subscription": [
+        "Podsumowanie subskrypcji"
+      ],
       "Review subscription and pay": [
         "Przejrzyj subskrypcję i zapłać"
       ],
@@ -6206,6 +6284,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Udostępnij swoje kalendarze rodzinie, znajomym i współpracownikom"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Wysyłaj wiadomości do wszystkich członków grupy za pomocą jednego adresu e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zapewnia odbieranie wszystkich wiadomości wysyłanych do domeny, nawet jeśli adres e-mail nie istnieje, przestał istnieć lub zawiera literówkę"
@@ -6783,6 +6864,21 @@
       "MM/YY": [
         "MM/RR"
       ],
+      "More plans are available in other currencies": [
+        "Więcej planów jest dostępnych w innych walutach"
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Cena odnowienia może ulec zmianie zgodnie z ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
+      ],
+      "terms & conditions": [
+        "regulaminem"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie."
+      ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
       ]
@@ -6805,6 +6901,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "PGP key encryption warning": {
@@ -7441,6 +7542,11 @@
         "Krótki alias @pm.me"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Czy na pewno?"
@@ -7765,6 +7871,9 @@
       "Account recovery": [
         "Odzyskiwanie konta"
       ],
+      "Account Temporarily Locked": [
+        "Konto zostało tymczasowo zablokowane"
+      ],
       "Add another notification to remind you of this event": [
         "Dodaj kolejne powiadomienie o wydarzeniu"
       ],
@@ -7878,6 +7987,9 @@
       ],
       "Continue with partial import?": [
         "Kontynuować częściowe importowanie?"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create contact": [
         "Utwórz kontakt"
