@@ -72,6 +72,9 @@
       "Add to group": [
         "Dodaj do grupy"
       ],
+      "All Unstarred": [
+        "Wszystkie niewyróżnione"
+      ],
       "Apply": [
         "Zastosuj"
       ],
@@ -95,6 +98,12 @@
       ],
       "Cancel subscription": [
         "Anuluj subskrypcję"
+      ],
+      "Cancel trial and pay": [
+        "Anuluj wersję próbną i zapłać"
+      ],
+      "Change password": [
+        "Zmień hasło"
       ],
       "Chat with us": [
         "Czat z nami"
@@ -213,6 +222,9 @@
       "Delete contact group": [
         "Usuń grupę kontaktów"
       ],
+      "Delete folder": [
+        "Usuń folder"
+      ],
       "Delete permanently": [
         "Usuń trwale"
       ],
@@ -279,6 +291,9 @@
       "Expand": [
         "Rozwiń"
       ],
+      "Explore ${ VPN_APP_NAME }": [
+        "Poznaj plan ${ VPN_APP_NAME }"
+      ],
       "Export": [
         "Eksportuj"
       ],
@@ -321,8 +336,14 @@
       "Hide": [
         "Ukryj"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Ukryj asystenta pisania ${ BRAND_NAME } Scribe"
+      ],
       "Hide advanced PGP settings": [
         "Ukryj zaawansowane ustawienia PGP"
+      ],
+      "Hide details": [
+        "Ukryj szczegóły"
       ],
       "Import": [
         "Importuj"
@@ -351,6 +372,9 @@
       "Increase": [
         "Zwiększ"
       ],
+      "Insert image": [
+        "Wstaw obraz"
+      ],
       "Learn more": [
         "Dowiedz się więcej"
       ],
@@ -362,6 +386,9 @@
       ],
       "Load more": [
         "Załaduj więcej"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application": [
+        "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową"
       ],
       "Manage advanced account protections": [
         "Zarządzaj zaawansowanymi zabezpieczeniami konta"
@@ -402,11 +429,17 @@
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Więcej opcji dla kont"
+      ],
       "Move": [
         "Przenieś"
       ],
       "Move to folder": [
         "Przenieś do folderu"
+      ],
+      "Move to inbox (not spam)": [
+        "Przenieś do Odebranych (to nie jest spam)"
       ],
       "Move to trash": [
         "Przenieś do kosza"
@@ -437,6 +470,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Open": [
+        "Otwórz"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -519,6 +555,9 @@
       "Save": [
         "Zapisz"
       ],
+      "Schedule message": [
+        "Zaplanuj wiadomość"
+      ],
       "Search": [
         "Szukaj"
       ],
@@ -531,11 +570,20 @@
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
+      "Select All": [
+        "Zaznacz wszystko"
+      ],
       "Select all": [
         "Zaznacz wszystkie"
       ],
+      "Select date and time": [
+        "Wybierz datę i godzinę"
+      ],
       "Send": [
         "Wyślij"
+      ],
+      "Set encryption": [
+        "Ustaw szyfrowanie"
       ],
       "Set recovery methods": [
         "Ustaw metody odzyskiwania"
@@ -772,6 +820,11 @@
         "Jeśli wyjdziesz teraz, niektóre wydarzenia nie zostaną zaimportowane"
       ]
     },
+    "Alt": {
+      "Unstar message": [
+        "Usuń wyróżnienie wiadomości"
+      ]
+    },
     "Animation": {
       "${ nameToDisplay }'s inbox": [
         "Poczta ${ nameToDisplay }"
@@ -843,6 +896,19 @@
         "Osiągnięto limit okresu próbnego."
       ]
     },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Menedżer haseł w wersji premium"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Użyj własnej domeny"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 miesiąc"
@@ -852,6 +918,9 @@
       ],
       "Annually": [
         "Rocznie"
+      ],
+      "Lifetime": [
+        "Dożywotnio"
       ],
       "Monthly": [
         "Miesięcznie"
@@ -965,6 +1034,20 @@
         "Będziesz uczestniczyć?"
       ]
     },
+    "Calendar invite info": {
+      "${ participantName } declined an invitation to one occurrence of the event.": [
+        "Uczestnik ${ participantName } odrzucił zaproszenie na wydarzenie w tej serii."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "Uczestnik ${ participantName } wstępnie zaakceptował zaproszenie na wydarzenie i zaproponował nową godzinę, ale propozycja i odpowiedź są nieaktualne."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Ta propozycja nie pasuje do szczegółów Twojego zaproszenia. Zweryfikuj je w kalendarzu."
+      ],
+      "This response is out of date. You have no calendars.": [
+        "Odpowiedź jest nieaktualna. Nie masz kalendarzy."
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } użytkownik",
@@ -1055,6 +1138,11 @@
       ],
       "strawberry": [
         "truskawkowy"
+      ]
+    },
+    "Commander action": {
+      "Go to Sent": [
+        "Przejdź do Wysłanych"
       ]
     },
     "Confirm modal title": {
@@ -1911,6 +1999,11 @@
         "Wyspy Alandzkie"
       ]
     },
+    "CustomFilter": {
+      "Sender": [
+        "Nadawca"
+      ]
+    },
     "Cycle": {
       "/month": [
         "/ miesiąc"
@@ -2020,6 +2113,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa scalanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
+      "No labels": [
+        "Brak etykiet"
+      ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Skonfiguruj konta dla wszystkich użytkowników i zaproś ich do ${ BRAND_NAME }."
       ],
@@ -2088,6 +2184,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Aktualizacja wydarzenia rozpoczynającego się w dniu: ${ formattedStart }"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Zaufany kontakt"
       ]
     },
     "Error": {
@@ -2340,6 +2441,9 @@
       "Tab closed": [
         "Karta została zamknięta"
       ],
+      "The amount due has changed. Please try again.": [
+        "Kwota do spłaty uległa zmianie. Spróbuj ponownie."
+      ],
       "The email addresses do not match": [
         "Adresy e-mail nie pasują do siebie"
       ],
@@ -2411,6 +2515,11 @@
       ],
       "Your import will not be processed.": [
         "Twój import nie zostanie przetworzony."
+      ]
+    },
+    "Error display when performing invalid move on message": {
+      "Sent messages cannot be moved to Spam": [
+        "Wysłane wiadomości nie mogły zostać przeniesione do spamu"
       ]
     },
     "Error importing calendar": {
@@ -2733,6 +2842,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dzień",
+        "${ remainingDaysCount } dni",
+        "${ remainingDaysCount } dni",
+        "${ remainingDaysCount } dnia"
+      ],
+      "Discover privacy features": [
+        "Poznaj funkcje ochrony prywatności"
       ]
     },
     "Gmail forwarding": {
@@ -3112,6 +3232,24 @@
         "${ contactsCount } znalezionych kontaktów",
         "${ contactsCount } znalezionych kontaktów"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } wątek zostanie oznaczony jako:",
+        "${ elementsCount } wątki zostaną oznaczone jako:",
+        "${ elementsCount } wątków zostanie oznaczonych jako:",
+        "${ elementsCount } wątków zostanie oznaczonych jako:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } wątek zostanie oznaczony jako przeczytany.",
+        "${ elementsCount } wątki zostaną oznaczone jako przeczytane.",
+        "${ elementsCount } wątków zostanie oznaczonych jako przeczytane.",
+        "${ elementsCount } wątków zostanie oznaczonych jako przeczytane."
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } osadzony obraz",
+        "${ embeddedAttachmentsCount } osadzone obrazy",
+        "${ embeddedAttachmentsCount } osadzonych obrazów",
+        "${ embeddedAttachmentsCount } osadzonych obrazów"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: obraz w pełnym rozmiarze"
       ],
@@ -3123,6 +3261,12 @@
         "${ groupCounts } znalezione grupy",
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Dożywotnia subskrypcja ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }. Cena i data odnowienia subskrypcji ${ planTitle } pozostaje niezmienna."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
@@ -3141,6 +3285,18 @@
         "${ providerFoldersNumLocalized } znalezione etykiety w poczcie Gmail",
         "${ providerFoldersNumLocalized } znalezionych etykiet w poczcie Gmail",
         "${ providerFoldersNumLocalized } znalezionych etykiet w poczcie Gmail"
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } załącznik",
+        "${ pureAttachmentsCount } załączniki",
+        "${ pureAttachmentsCount } załączników",
+        "${ pureAttachmentsCount } załączników"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } wiadomość w ostatnim miesiącu",
+        "${ receivedMessagesCount } wiadomości w ostatnim miesiącu",
+        "${ receivedMessagesCount } wiadomości w ostatnim miesiącu",
+        "${ receivedMessagesCount } wiadomości w ostatnim miesiącu"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } na ${ providerCalendars.length } kalendarz",
@@ -3163,6 +3319,18 @@
       "${ storage } storage": [
         "${ storage } przestrzeni dyskowej"
       ],
+      "${ total } message": [
+        "${ total } wiadomość",
+        "${ total } wiadomości",
+        "${ total } wiadomości",
+        "${ total } wiadomości"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } newsletter",
+        "${ unreadCount } newslettery",
+        "${ unreadCount } newsletterów",
+        "${ unreadCount } newsletterów"
+      ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
         "Zaktualizowano ${ updated } kontakty.",
@@ -3174,6 +3342,12 @@
         "(${ memberCount } członków)",
         "(${ memberCount } członków)",
         "(${ memberCount } członków)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } / miesiąc)"
+      ],
+      "(No Recipient)": [
+        "(brak odbiorcy)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
@@ -3246,6 +3420,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
+      ],
+      "Are you sure you want to permanently delete this conversation?": [
+        "Czy na pewno chcesz trwale usunąć ten wątek?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minimum ${ BETTER_PASSWORD_LENGTH } znaków"
@@ -3364,6 +3541,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "Pobieranie asystenta… ${ progressDisplay } GB"
+      ],
       "Duplicate key updated": [
         "Zduplikowany klucz został zaktualizowany"
       ],
@@ -3403,6 +3583,9 @@
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Wpisz swoje hasło (jako zaufany kontakt)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Szacowany pozostały czas: ${ estimatedMinutes } minuta",
         "Szacowany pozostały czas: ${ estimatedMinutes } minuty",
@@ -3418,11 +3601,20 @@
       "Expired": [
         "Wygasła"
       ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Wygasa za mniej niż ${ hoursDiff } godzinę",
+        "Wygasa za mniej niż ${ hoursDiff } godziny",
+        "Wygasa za mniej niż ${ hoursDiff } godzin",
+        "Wygasa za mniej niż ${ hoursDiff } godziny"
+      ],
       "finance": [
         "finanse"
       ],
       "here": [
         "tutaj"
+      ],
+      "Hide original message": [
+        "Ukryj oryginalną wiadomość"
       ],
       "High Priority": [
         "Wysoki priorytet"
@@ -3483,6 +3675,9 @@
       ],
       "It's better to have:": [
         "Lepiej mieć:"
+      ],
+      "JCB logo": [
+        "Logo JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
@@ -3589,6 +3784,9 @@
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
+      "Other accounts": [
+        "Inne konta"
+      ],
       "password": [
         "hasło"
       ],
@@ -3603,6 +3801,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora."
+      ],
+      "Please add at least one recipient.": [
+        "Wpisz co najmniej jednego odbiorcę."
       ],
       "Please authenticate your card in the verification tab.": [
         "Potwierdź kartę w nowej karcie."
@@ -3660,6 +3861,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
+      ],
+      "Registering your subscription…": [
+        "Rejestrowanie subskrypcji…"
       ],
       "Restore": [
         "Przywróć"
@@ -3750,6 +3954,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
+      ],
+      "This message is from a mailing list.": [
+        "Ta wiadomość pochodzi z listy mailingowej."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ta czynność spowoduje wylogowanie ze wszystkich kont."
@@ -3901,6 +4108,9 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Masz wersję próbną subskrypcji ${ planTitle }. Płatność nie jest wymagana. Subskrypcja zostanie automatycznie odnowiona na koniec wersji próbnej."
       ],
+      "You have not given your email any subject. Do you want to send the message anyway?": [
+        "Nie wpisano żadnego tematu wiadomości. Czy chcesz wysłać tę wiadomość mimo to?"
+      ],
       "You may be redirected to your bank’s website.": [
         "Możesz zostać przekierowany na stronę banku."
       ],
@@ -3915,6 +4125,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
+      ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Subskrypcja ${ plan } zostanie zastąpiona subskrypcją ${ PASS_SHORT_APP_NAME } Lifetime. Pozostałe saldo subskrypcji zostanie dodane do konta. Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta zostanie wkrótce ograniczony. ${ payInvoiceLink }"
@@ -3946,11 +4159,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
       "Your password was leaked:": [
         "Twoje hasło zostało ujawnione:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ]
     },
     "Info on errors": {
@@ -4091,6 +4313,9 @@
       ],
       "Date": [
         "Data"
+      ],
+      "Date:": [
+        "Data:"
       ],
       "Delete": [
         "Usuń"
@@ -4302,6 +4527,9 @@
       "Toolbar": [
         "Pasek narzędzi"
       ],
+      "Transactions": [
+        "Transakcje"
+      ],
       "Unknown": [
         "Nieznany"
       ],
@@ -4331,6 +4559,9 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ],
+      "Your password (trusted contact)": [
+        "Twoje hasło (zaufany kontakt)"
       ]
     },
     "Label for contact group color": {
@@ -4441,6 +4672,9 @@
       "Learn more": [
         "Dowiedz się więcej"
       ],
+      "Open updated event in ${ CALENDAR_APP_NAME }": [
+        "Otwórz zaktualizowane wydarzenie w ${ CALENDAR_APP_NAME }"
+      ],
       "Pay invoice": [
         "Zapłać fakturę"
       ],
@@ -4455,6 +4689,9 @@
       ],
       "Terms": [
         "Regulamin"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
+        "Plik ICS zawiera wiele wydarzeń. Pobierz i zaimportuj wydarzenia w aplikacji ${ CALENDAR_APP_NAME }"
       ],
       "Trash": [
         "Kosz"
@@ -4736,6 +4973,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } kalendarz",
         "${ n } kalendarze",
@@ -4906,6 +5146,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Wsparcie aplikacji pocztowych (przez IMAP / SMTP)"
+      ],
+      "Email groups": [
+        "Grupy kontaktów"
       ],
       "Enables HIPAA compliance": [
         "Zgodność z wymogami HIPAA"
@@ -5137,6 +5380,9 @@
       "Downgrade account?": [
         "Obniżyć plan?"
       ],
+      "Review subscription": [
+        "Podsumowanie subskrypcji"
+      ],
       "Review subscription and pay": [
         "Przejrzyj subskrypcję i zapłać"
       ],
@@ -5201,6 +5447,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Udostępnij swoje kalendarze rodzinie, znajomym i współpracownikom"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Wysyłaj wiadomości do wszystkich członków grupy za pomocą jednego adresu e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zapewnia odbieranie wszystkich wiadomości wysyłanych do domeny, nawet jeśli adres e-mail nie istnieje, przestał istnieć lub zawiera literówkę"
@@ -5400,6 +5649,11 @@
         "Aby zaimportować dane, zaznacz wszystkie żądane elementy, jak pokazano na grafice GIF."
       ]
     },
+    "Onboarding modal": {
+      "Clear out deleted and spam emails after 30 days.": [
+        "Usuwaj wiadomości z kosza i spamu po 30 dniach."
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Ustaw swoją organizację, połącz nazwę domeny i utwórz konta, aby zapewnić ochronę wszystkim użytkownikom organizacji."
@@ -5409,6 +5663,11 @@
       ],
       "Set up your organization": [
         "Skonfiguruj organizację"
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Bankowość"
       ]
     },
     "Option": {
@@ -5503,6 +5762,21 @@
       "MM/YY": [
         "MM/RR"
       ],
+      "More plans are available in other currencies": [
+        "Więcej planów jest dostępnych w innych walutach"
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Cena odnowienia może ulec zmianie zgodnie z ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
+      ],
+      "terms & conditions": [
+        "regulaminem"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie."
+      ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
       ]
@@ -5525,6 +5799,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "PGP key encryption warning": {
@@ -5560,6 +5839,9 @@
       ],
       "Filter groups": [
         "Filtruj grupy"
+      ],
+      "Filter labels": [
+        "Filtruj etykiety"
       ],
       "Gift code": [
         "Kod podarunkowy"
@@ -5680,9 +5962,27 @@
         "Służbowy"
       ]
     },
+    "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } d",
+        "${ remainingDays } d",
+        "${ remainingDays } d",
+        "${ remainingDays } d"
+      ]
+    },
+    "Reply to calendar invitation": {
+      "Re-encrypting invitation failed. Please try again.": [
+        "Ponowne szyfrowanie zaproszenia nie powiodło się. Spróbuj ponownie."
+      ]
+    },
     "saml: Error": {
       "Sign in wasn't successfully completed.": [
         "Logowanie nie zostało zakończone."
+      ]
+    },
+    "Search - no results": {
+      "No messages scheduled": [
+        "Brak zaplanowanych wiadomości"
       ]
     },
     "Section": {
@@ -5826,6 +6126,9 @@
       ]
     },
     "Spotlight": {
+      "Check out what's included with your subscription and start enjoying the benefits.": [
+        "Sprawdź, co zawiera subskrypcja i zacznij czerpać z niej korzyści."
+      ],
       "Get up to ${ credits } in credits.": [
         "Uzyskaj do ${ credits }."
       ],
@@ -5842,6 +6145,14 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Nastąpi przekierowanie do zewnętrznego dostawcy SSO."
+      ]
+    },
+    "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Wpisz adres e-mail ${ MAIL_APP_NAME } jako nowy adres i zapisz, potwierdź lub zweryfikuj zmianę"
+      ],
+      "Select service to update": [
+        "Wybierz usługę do zaktualizowania"
       ]
     },
     "Storage": {
@@ -6055,6 +6366,11 @@
         "Krótki alias @pm.me"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Czy na pewno?"
@@ -6088,6 +6404,30 @@
         "${ countMergeableContacts } kontaktów wygląda identycznie.",
         "${ countMergeableContacts } kontaktów wygląda identycznie."
       ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } wątek został przeniesiony do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wątki zostały przeniesione do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wątków zostało przeniesionych do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wątków zostało przeniesionych do folderu ${ labelName }, a nadawca został usunięty z listy spamu."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "Przeniesiono ${ elementsCount } wątek do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wątki do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wątków do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wątków do folderu ${ labelName }."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } wiadomość została przeniesiona do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wiadomości zostały przeniesione do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ labelName }, a nadawca został usunięty z listy spamu.",
+        "${ elementsCount } wiadomości zostało przeniesionych do folderu ${ labelName }, a nadawca został usunięty z listy spamu."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "Przeniesiono ${ elementsCount } wiadomość do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wiadomości do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wiadomości do folderu ${ labelName }.",
+        "Przeniesiono ${ elementsCount } wiadomości do folderu ${ labelName }."
+      ],
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"
       ],
@@ -6118,8 +6458,20 @@
       "Contacts deleted": [
         "Kontakty zostały usunięte"
       ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Wątek został przeniesiony do folderu ${ labelName }, a nadawca został usunięty z listy spamu."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Wątek został przeniesiony do folderu ${ labelName }."
+      ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Wątki od ${ sendersList } zostaną oznaczone jako ${ labelsList }"
+      ],
       "Copied to clipboard": [
         "Skopiowano do schowka"
+      ],
+      "Draft deleted": [
+        "Szkic został usunięty"
       ],
       "Email address copied to clipboard": [
         "Adres e-mail został skopiowany do schowka"
@@ -6132,6 +6484,18 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "Ostatnio zmodyfikowane aliasy są przechowywane w najstarszym sejfie"
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Wiadomość została przeniesiona do folderu ${ labelName }, a nadawca został usunięty z listy spamu."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Wiadomość została przeniesiona do folderu ${ labelName }."
+      ],
+      "Move ${ selectionCount } conversation": [
+        "Przenieś ${ selectionCount } wątek",
+        "Przenieś ${ selectionCount } wątki",
+        "Przenieś ${ selectionCount } wątków",
+        "Przenieś ${ selectionCount } wątków"
       ],
       "Payment method added": [
         "Metoda płatności została dodana"
@@ -6284,8 +6648,17 @@
       "${ feature } is now active": [
         "Funkcja ${ feature } jest aktywna"
       ],
+      "${ unreads } unread message": [
+        "${ unreads } nieprzeczytana wiadomość",
+        "${ unreads } nieprzeczytane wiadomości",
+        "${ unreads } nieprzeczytanych wiadomości",
+        "${ unreads } nieprzeczytanych wiadomości"
+      ],
       "Account recovery": [
         "Odzyskiwanie konta"
+      ],
+      "Account Temporarily Locked": [
+        "Konto zostało tymczasowo zablokowane"
       ],
       "Add contact group name": [
         "Dodaj nazwę grupy kontaktów"
@@ -6374,8 +6747,14 @@
       "Continue with partial import?": [
         "Kontynuować częściowe importowanie?"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Create contact": [
         "Utwórz kontakt"
+      ],
+      "Create folder \"${ search }\"": [
+        "Utwórz folder \"${ search }\""
       ],
       "Create new group": [
         "Utwórz nową grupę"
@@ -6410,8 +6789,29 @@
         "Usuń ${ count } grup kontaktów",
         "Usuń ${ count } grupy kontaktów"
       ],
+      "Delete ${ count } conversation": [
+        "Usuń ${ count } wątek",
+        "Usuń ${ count } wątki",
+        "Usuń ${ count } wątków",
+        "Usuń ${ count } wątów"
+      ],
+      "Delete ${ count } draft": [
+        "Usuń ${ count } szkic",
+        "Usuń ${ count } szkice",
+        "Usuń ${ count } szkiców",
+        "Usuń ${ count } szkiców"
+      ],
+      "Delete ${ count } message": [
+        "Usuń ${ count } wiadomość",
+        "Usuń ${ count } wiadomości",
+        "Usuń ${ count } wiadomości",
+        "Usuń ${ count } wiadomości"
+      ],
       "Delete ${ value }": [
         "Usuń ${ value }"
+      ],
+      "Delete draft": [
+        "Usuń szkic"
       ],
       "Deleting contacts": [
         "Usuwanie kontaktów"
@@ -6506,6 +6906,9 @@
       "Link confirmation": [
         "Potwierdź otwieranie linków"
       ],
+      "Mark messages as unread": [
+        "Oznacz wiadomości jako nieprzeczytane"
+      ],
       "Merge contacts": [
         "Scal kontakty"
       ],
@@ -6520,6 +6923,12 @@
       ],
       "Network error": [
         "Błąd sieci"
+      ],
+      "New message": [
+        "Nowa wiadomość"
+      ],
+      "Next conversation": [
+        "Następny wątek"
       ],
       "Open actions dropdown": [
         "Otwórz listę akcji"
@@ -6545,11 +6954,17 @@
       "Preview": [
         "Podgląd"
       ],
+      "Previous conversation": [
+        "Poprzedni wątek"
+      ],
       "Processing...": [
         "Przetwarzanie..."
       ],
       "Re-sign all contacts": [
         "Podpisz ponownie wszystkie kontakty"
+      ],
+      "Re-sign contact": [
+        "Podpisz ponownie kontakt"
       ],
       "Re-signing contacts": [
         "Ponowne podpisywanie kontaktów"
@@ -6572,6 +6987,9 @@
       "Request new code": [
         "Poproś o nowy kod"
       ],
+      "Schedule send": [
+        "Zaplanuj wysyłanie"
+      ],
       "Select a plan": [
         "Wybierz plan"
       ],
@@ -6580,6 +6998,9 @@
       ],
       "Select contact group": [
         "Wybierz grupę kontaktów"
+      ],
+      "Send with encryption disabled?": [
+        "Wysłać bez szyfrowania?"
       ],
       "Set recovery methods": [
         "Ustaw metody odzyskiwania"

@@ -162,6 +162,9 @@
       "Change page": [
         "Schimbare pagină"
       ],
+      "Change password": [
+        "Schimbare parolă"
+      ],
       "Change sorting": [
         "Modificare sortare"
       ],
@@ -591,6 +594,9 @@
       "Insert contacts": [
         "Inserare contacte"
       ],
+      "Insert image": [
+        "Inserare imagine"
+      ],
       "Label as": [
         "Etichetare cu"
       ],
@@ -701,6 +707,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Mai multe opțiuni pentru conturi"
       ],
       "More refine actions": [
         "Mai multe acțiuni de cizelare"
@@ -1016,6 +1025,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Setare ${ MAIL_APP_NAME } ca aplicație implicită de e-mail"
+      ],
+      "Set as default": [
+        "Setare ca implicită"
       ],
       "Set encryption": [
         "Setare criptare"
@@ -1501,6 +1513,14 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Manager de parole premium"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
       ]
     },
     "Billing cycle option": {
@@ -3222,6 +3242,11 @@
         "Criptare fără acces extern. Destinatarul și-a dezactivat din cont criptarea bilaterală."
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contact aprobat"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Antete nume fișier criptate"
@@ -4111,7 +4136,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy by default."
+        "${ BRAND_NAME }. Confidențialitate implicită."
       ]
     },
     "forwardmessage": {
@@ -4902,6 +4927,9 @@
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/lună)"
+      ],
       "(No Recipient)": [
         "(Fără destinatar)"
       ],
@@ -5189,7 +5217,7 @@
         "Zilnic personalizat"
       ],
       "Custom email domains": [
-        "Domenii personale e-mail"
+        "Domenii personale de e-mail"
       ],
       "Custom monthly": [
         "Lunar personalizat"
@@ -5208,6 +5236,9 @@
       ],
       "default email address": [
         "adresa de e-mail implicită"
+      ],
+      "Default email application": [
+        "Aplicația de e-mail implicită"
       ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Detectarea se execută pe dispozitiv, astfel că nu se trimit nici un fel de date spre servere."
@@ -5347,6 +5378,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduceți parola (ca și contact aprobat)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Timp estimat rămas: ${ estimatedMinutes } minut",
@@ -5496,6 +5530,11 @@
       ],
       "Initializing…": [
         "Se inițializează…"
+      ],
+      "Insert image": [
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
@@ -5728,6 +5767,9 @@
       "Organization size": [
         "Mărime organizație"
       ],
+      "Other accounts": [
+        "Alte conturi"
+      ],
       "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
         "Sistemul nostru a marcat acest mesaj ca suspect. Dacă nu este un mesaj înșelător sau fraudulos, marcați-l ca legitim."
       ],
@@ -5938,6 +5980,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest navigator web. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
       ],
       "Setting up ${ feature }…": [
         "Se setează ${ feature }…"
@@ -7237,6 +7282,9 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Your password (trusted contact)": [
+        "Parola dvs. (contact aprobat)"
       ]
     },
     "Label attach to date input to select a date": {
@@ -7848,6 +7896,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } calendare",
@@ -8004,6 +8055,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Suport client de e-mail (prin IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupuri de contacte"
       ],
       "Enables HIPAA compliance": [
         "Se conformează regulilor HIPAA"
@@ -8298,6 +8352,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partajați calendarele ușor cu familia, prietenii sau colegii."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Trimiteți mesaje tuturor dintr-un grup cu o singură adresă de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Se asigură că primiți toate e-mailurile trimise către domeniul dvs., chiar dacă adresa de e-mail nu a existat, nu mai există sau e scrisă greșit."
@@ -9738,15 +9795,15 @@
         "Conversații marcate ca necitite: ${ elementsCount }.",
         "Conversații marcate ca necitite: ${ elementsCount }."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "Conversații mutate în «${ folderName }»: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise.",
-        "Conversații mutate în «${ folderName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise.",
-        "Conversații mutate în «${ folderName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise."
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Conversații mutate în «${ labelName }»: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise.",
+        "Conversații mutate în «${ labelName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise.",
+        "Conversații mutate în «${ labelName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise."
       ],
-      "${ elementsCount } conversation moved to ${ folderName }.": [
-        "Conversații mutate în ${ folderName }: ${ elementsCount }.",
-        "Conversații mutate în ${ folderName }: ${ elementsCount }.",
-        "Conversații mutate în ${ folderName }: ${ elementsCount }."
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "Conversații mutate în «${ labelName }»: ${ elementsCount }.",
+        "Conversații mutate în «${ labelName }»: ${ elementsCount }.",
+        "Conversații mutate în «${ labelName }»: ${ elementsCount }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "Conversații mutate în «Nedorite»: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese blocate.",
@@ -9793,15 +9850,15 @@
         "Mesaje marcate ca necitite: ${ elementsCount }",
         "Mesaje marcate ca necitite: ${ elementsCount }"
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "Mesaje mutate în «${ folderName }»: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise.",
-        "Mesaje mutate în «${ folderName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise.",
-        "Mesaje mutate în «${ folderName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise."
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "Mesaje mutate în «${ labelName }»: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise.",
+        "Mesaje mutate în «${ labelName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise.",
+        "Mesaje mutate în «${ labelName }»: ${ elementsCount }. Expeditorii au fost adăugați în lista de adrese permise."
       ],
-      "${ elementsCount } message moved to ${ folderName }.": [
-        "Mesaje mutate în «${ folderName }»: ${ elementsCount }.",
-        "Mesaje mutate în «${ folderName }»: ${ elementsCount }.",
-        "Mesaje mutate în «${ folderName }»: ${ elementsCount }."
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "Mesaje mutate în «${ labelName }»: ${ elementsCount }.",
+        "Mesaje mutate în «${ labelName }»: ${ elementsCount }.",
+        "Mesaje mutate în «${ labelName }»: ${ elementsCount }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
         "Mesaje mutate în folderul «Nedorite»: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese blocate.",
@@ -9864,11 +9921,11 @@
       "Conversation marked as unread.": [
         "Conversație marcată ca necitită."
       ],
-      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "Conversația a fost mutată în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise."
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Conversația a fost mutată în «${ labelName }» și expeditorul a fost adăugat în lista de adrese permise."
       ],
-      "Conversation moved to ${ folderName }.": [
-        "Conversația a fost mutată în «${ folderName }»."
+      "Conversation moved to ${ labelName }.": [
+        "Conversația a fost mutată în «${ labelName }»."
       ],
       "Conversation moved to spam and sender added to your spam list.": [
         "Conversația a fost mutată în «Nedorite» și expeditorul adăugat în lista de adrese blocate."
@@ -9933,11 +9990,11 @@
       "Message marked as unread.": [
         "Mesaj marcat ca necitit."
       ],
-      "Message moved to ${ folderName } and sender added to your not spam list.": [
-        "Mesajul a fost mutat în «${ folderName }» și expeditorul a fost adăugat în lista de adrese permise."
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Mesajul a fost mutat în «${ labelName }» și expeditorul a fost adăugat în lista de adrese permise."
       ],
-      "Message moved to ${ folderName }.": [
-        "Mesaj mutat în ${ folderName }."
+      "Message moved to ${ labelName }.": [
+        "Mesaj mutat în «${ labelName }»."
       ],
       "Message moved to spam and sender added to your spam list.": [
         "Mesajul a fost mutat în «Nedorite» și expeditorul adăugat în lista de adrese blocate."
@@ -10193,6 +10250,9 @@
       ],
       "Account recovery": [
         "Recuperare cont"
+      ],
+      "Account Temporarily Locked": [
+        "Cont blocat temporar"
       ],
       "Action all conversations": [
         "Aplicare la toate conversațiile"

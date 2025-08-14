@@ -99,6 +99,9 @@
       "Cancel subscription": [
         "Annuler l'abonnement"
       ],
+      "Change password": [
+        "Changer le mot de passe"
+      ],
       "Chat with us": [
         "Discutez avec nous"
       ],
@@ -225,7 +228,7 @@
         "Désactiver l'alias"
       ],
       "Disabling alias": [
-        "Désactiver l'alias"
+        "Désactivation de l'alias"
       ],
       "Discard": [
         "Abandonner"
@@ -330,7 +333,7 @@
         "Masquer les paramètres PGP avancés"
       ],
       "hide-my-email aliases": [
-        "Les alias « cacher-mon-adresse » (ide-my-email)"
+        "alias hide-my-email"
       ],
       "Import": [
         "Importer"
@@ -2097,6 +2100,11 @@
         "Mise à jour d'un événement qui commence ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacts de confiance"
+      ]
+    },
     "Error": {
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
@@ -2409,6 +2417,10 @@
       ],
       "Wrong password": [
         "Le mot de passe n'est pas correct."
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtre de composition à la fois.",
+        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtres de composition à la fois"
       ],
       "You must set a name": [
         "Vous devez définir un nom."
@@ -3104,6 +3116,26 @@
         "${ contactsCount } contact trouvé",
         "${ contactsCount } contacts trouvés"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } sur ${ totalProgress }",
+        "${ currentProgress } sur ${ totalProgress }"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "Le message ${ elementsCount } sera étiqueté comme suit :",
+        "Les messages ${ elementsCount } seront étiquetés comme suit :"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } message sera marqué comme lu.",
+        "${ elementsCount } messages seront marqués comme lus."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } message sera marqué comme non lu.",
+        "${ elementsCount } messages seront marqués comme non lus."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } message sera déplacé.",
+        "${ elementsCount } messages seront déplacés."
+      ],
       "${ fileName }: full-size image": [
         "${ fileName } : image en taille réelle"
       ],
@@ -3121,6 +3153,10 @@
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } lien nettoyé",
         "${ numberOfUTMTrackers } liens nettoyés"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } occurrence trouvée",
+        "${ numOccurrences } occurrences trouvées"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
@@ -3152,8 +3188,8 @@
         "${ storage } d'espace de stockage"
       ],
       "${ trackersCount } tracker blocked": [
-        "${ trackersCount } traqueur bloqué",
-        "${ trackersCount } traqueurs bloqués"
+        "${ trackersCount } traqueur a été bloqué",
+        "${ trackersCount } traqueurs ont été bloqués"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact a été mis à jour.",
@@ -3377,6 +3413,10 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Les e-mails déplacés vers le dossier Corbeille ou Indésirables/spam de plus de 30 jours seront supprimés automatiquement."
       ],
+      "embedded image": [
+        "image intégrée",
+        "images intégrées"
+      ],
       "Enabling auto-deletion…": [
         "Activation de la suppression automatique…"
       ],
@@ -3395,6 +3435,9 @@
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Temps restant estimé : ${ estimatedMinutes } minute",
         "Temps restant estimé : ${ estimatedMinutes } minutes"
@@ -3410,6 +3453,10 @@
       ],
       "finance": [
         "finance"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Essai gratuit pendant ${ ASSISTANT_TRIAL_TIME_DAYS } jour",
+        "Essai gratuit pendant ${ ASSISTANT_TRIAL_TIME_DAYS } jours"
       ],
       "here": [
         "ici"
@@ -3650,6 +3697,10 @@
       "Restore": [
         "Restauration"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Sélectionnez ${ elementsCount } dans ${ location }",
+        "Sélectionnez ${ elementsCount } dans ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous voulez utiliser par défaut pour l'envoi d'un message à cette adresse e-mail."
       ],
@@ -3725,6 +3776,10 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent sécurisées et chiffrées. ${ learnMoreLink }"
       ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "La vérification de ${ contactNames } a échoué : le contact n'est pas correctement signé. Cela peut être dû à une réinitialisation du mot de passe. Vous devez à nouveau signer le contact pour envoyer un message à ${ contactAddresses } ou le modifier.",
+        "La vérification de ${ contactNames } a échoué : les contacts ne sont pas correctement signés. Cela peut être dû à une réinitialisation du mot de passe. Vous devez à nouveau signer les contacts pour envoyer un message à ${ contactAddresses } ou les modifier."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
       ],
@@ -3749,6 +3804,10 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Ce message sera considéré comme indésirable. Voulez-vous également vous désabonner des prochains courriels ?",
+        "Ces messages seront considérés comme indésirables. Voulez-vous également vous désabonner des prochains courriels ?"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ceci vous déconnectera de tous les comptes actuellement connectés."
@@ -3916,6 +3975,10 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Vous devez désactiver ou retirer vos autres utilisateurs ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir passer à un abonnement inférieur."
       ],
+      "You selected **${ count } conversation** from this folder": [
+        "Vous avez sélectionné(e) **${ count } conversation** dans ce dossier",
+        "Vous avez sélectionné(e) **${ count } conversations** dans ce dossier"
+      ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
         "Vous avez sélectionné(e) **${ elementsCount } conversation** dans ${ location }",
         "Vous avez sélectionné(e) **${ elementsCount } conversations** dans ${ location }"
@@ -4057,7 +4120,7 @@
         "Application d'authentification"
       ],
       "BCC": [
-        "Copie invisible"
+        "Cci"
       ],
       "Billing cycle": [
         "Cycle de facturation"
@@ -4370,6 +4433,9 @@
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Votre mot de passe (contacts de confiance)"
       ]
     },
     "Label for contact group color": {
@@ -6074,17 +6140,25 @@
         "${ countMergeableContacts } contact semble identique.",
         "${ countMergeableContacts } contacts semblent identiques."
       ],
-      "${ elementsCount } conversation moved to ${ folderName }.": [
-        "La conversation ${ elementsCount } a été déplacée vers ${ folderName }.",
-        "${ elementsCount } conversations déplacées vers ${ folderName }."
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } conversation marquée comme non lue.",
+        "${ elementsCount } conversations marquées comme non lues."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } conversation a été déplacée dans ${ labelName } et l'expéditeur a été ajouté à votre liste des non indésirables/spam.",
+        "${ elementsCount } conversations ont été déplacées dans le dossier ${ labelName } et les expéditeurs ont été ajoutés à votre liste des non indésirables/spam."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } conversation a été déplacée dans ${ labelName }.",
+        "${ elementsCount } conversations ont été déplacées dans ${ labelName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "La conversation ${ elementsCount } a été déplacée vers le pourriel et l'expéditeur a été ajouté à votre liste de spam.",
-        "${ elementsCount } conversations déplacées vers le pourriel et les expéditeurs ajoutés à votre liste de spam."
+        "${ elementsCount } conversation a été déplacée dans le dossier Indésirables/spam et l'expéditeur a été ajouté à votre liste d'indésirables/spam.",
+        "${ elementsCount } conversations ont été déplacées dans le dossier Indésirables/spam et les expéditeurs ont été ajoutés à votre liste d'indésirables/spam."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } conversation supprimée de ${ labelName }.",
-        "${ elementsCount } conversations supprimées de ${ labelName }."
+        "${ elementsCount } conversation a été supprimée de ${ labelName }.",
+        "${ elementsCount } conversations ont été supprimées de ${ labelName }."
       ],
       "${ elementsCount } conversation removed from Starred.": [
         "${ elementsCount } conversation supprimée des favoris.",
@@ -6098,17 +6172,21 @@
         "${ elementsCount } conversation n'est plus en attente.",
         "${ elementsCount } conversations ne sont plus en attente"
       ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } message marqué comme lu.",
+        "${ elementsCount } messages marqués comme lus."
+      ],
       "${ elementsCount } message marked as unread.": [
-        "${ elementsCount } message marqué comme non lu.",
-        "${ elementsCount } messages marqués comme non lus."
+        "${ elementsCount } message est marqué comme non lu.",
+        "${ elementsCount } messages sont marqués comme non lus."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "Le message ${ elementsCount } a été déplacé vers ${ folderName } et l'expéditeur a été ajouté à votre liste de non-spam.",
-        "Les messages ${ elementsCount } ont étés déplacés vers ${ folderName } et l'expéditeur a été ajouté à votre liste de non-spam."
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } conversation a été déplacée dans ${ labelName } et l'expéditeur a été ajouté à votre liste des non indésirables/spam.",
+        "${ elementsCount } conversation ont été déplacées dans le dossier ${ labelName } et les expéditeurs ont été ajoutés à votre liste des non indésirables/spam."
       ],
-      "${ elementsCount } message moved to ${ folderName }.": [
-        "Le message ${ elementsCount } a été déplacé vers ${ folderName }.",
-        "${ elementsCount } messages déplacés vers ${ folderName }."
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } message a été déplacé dans ${ labelName }.",
+        "${ elementsCount } messages ont été déplacés dans ${ labelName }."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } message supprimé de ${ labelName }.",
@@ -6144,6 +6222,12 @@
       "Contacts deleted": [
         "Les contacts ont été supprimés."
       ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "La conversation a été déplacée dans ${ labelName } et l'expéditeur a été ajouté à votre liste de non indésirables/spam."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "La conversation a été déplacée dans ${ labelName }."
+      ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
@@ -6158,6 +6242,16 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "Derniers alias modifiés stockés dans votre coffre-fort le plus ancien"
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Le message a été déplacé dans ${ labelName } et l'expéditeur a été ajouté à votre liste de non indésirables/spam."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Le message a été déplacé dans ${ labelName }."
+      ],
+      "Move ${ selectionCount } message": [
+        "Déplacer ${ selectionCount } message.",
+        "Déplacer ${ selectionCount } messages."
       ],
       "Payment method added": [
         "Le moyen de paiement a été ajouté."
@@ -6303,8 +6397,19 @@
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
       ],
+      "${ numMessages } message": [
+        "${ numMessages } message",
+        "${ numMessages } messages"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } message non lu",
+        "${ unreads } messages non lus"
+      ],
       "Account recovery": [
         "Récupération du compte"
+      ],
+      "Account Temporarily Locked": [
+        "Compte temporairement verrouillé"
       ],
       "Add contact group name": [
         "Ajouter le nom du groupe de contacts"
@@ -6426,9 +6531,13 @@
         "Supprimer ${ count } groupe de contacts",
         "Supprimer ${ count } groupes de contacts"
       ],
+      "Delete ${ count } conversation": [
+        "Supprimer ${ count } conversation",
+        "Supprimer ${ count } conversations"
+      ],
       "Delete ${ count } draft": [
-        "Supprimer le brouillon ${ count }",
-        "Supprimer les brouillons ${ count }"
+        "Supprimer ${ count } brouillon",
+        "Supprimer ${ count } brouillons"
       ],
       "Delete ${ value }": [
         "Supprimer ${ value } "
@@ -6588,7 +6697,7 @@
         "Récupérer les données"
       ],
       "Reply all": [
-        "Répondre à tous."
+        "Répondre à tous"
       ],
       "Report a problem": [
         "Signaler un bug"
@@ -6643,6 +6752,10 @@
       ],
       "Trash": [
         "Corbeille"
+      ],
+      "Trust new key?": [
+        "Approuver la nouvelle clé ?",
+        "Approuver les nouvelles clés ?"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activer ${ DARK_WEB_MONITORING_NAME }"
@@ -6841,6 +6954,10 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Certains contacts à fusionner affichent des erreurs. Nous vous invitons à les examiner individuellement."
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "La signature de la pièce jointe a échoué à la vérification. Vous pouvez toujours télécharger cette pièce jointe, mais elle a peut-être été falsifiée.",
+        "La vérification des signatures de certaines pièces jointes a échoué. Vous pouvez toujours télécharger ces pièces jointes, mais elles pourraient avoir été falsifiées."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Les données du contact sont corrompues et ne peuvent pas être affichées."
