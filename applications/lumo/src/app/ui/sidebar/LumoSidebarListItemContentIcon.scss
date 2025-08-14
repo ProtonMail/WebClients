@@ -1,0 +1,7 @@
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+.lumo-sidebar-icon {
+	--upgrade-color-stop-1: var(--optional-upgrade-color-1);
+	--upgrade-color-stop-2: var(--optional-upgrade-color-2);
+}

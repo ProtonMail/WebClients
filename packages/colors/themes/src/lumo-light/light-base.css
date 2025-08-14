@@ -1,0 +1,71 @@
+:root,
+.ui-standard {
+    --primary: #6D4AFF;
+    --signal-danger: #DC3251;
+    --signal-warning: #FF9900;
+    --signal-success: #1EA885;
+    --signal-info: #239ECE;
+
+    --interaction-norm: #6D4AFF;
+    --interaction-norm-hover: #6243E6;
+    --interaction-norm-active: #573BCC;
+
+    --interaction-weak: #EAE7E4;
+    --interaction-weak-hover: #DEDBD9;
+    --interaction-weak-active: #D3D0CD;
+
+    --text-norm: #0C0C14;
+    --text-weak: #5C5958;
+    --text-hint: #8F8D8A;
+    --text-disabled: #9E9B98;
+    --text-invert: white;
+
+    --field-norm: #ADABA8;
+    --field-hover: #8F8D8A;
+    --field-disabled: #D1CFCD;
+
+    --focus-outline: var(--primary);
+    --focus-ring: rgba(109, 74, 255, 0.2);
+
+    --border-norm: #D1CFCD;
+    --border-weak: #EAE7E4;
+
+    --background-norm: white;
+    --background-weak: #F8FAFC;
+    --background-strong: #E5E8EB;
+    --background-invert: #1A1A1A;
+
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(186 190 199 / 0.2);
+    --interaction-default-active: rgb(186 190 199 / 0.3);
+
+    --shadow-norm-opacity: 0.1;
+    --shadow-raised-opacity: 0.1;
+    --shadow-lifted-opacity: 0.16;
+
+    --backdrop-norm: rgb(38 42 51 / 0.48);
+
+    /*  new colors */
+    --interaction-secondary: #FFAC2F;
+    --interaction-secondary-hover: #E69A2A;
+    --interaction-secondary-active: #D48F26;
+
+    --reinforce-norm: #372580;
+    --reinforce-hover: #2F1E6F;
+    --reinforce-active: #27185F;
+
+    --link-norm: var(--primary);
+    --link-hover: var(--interaction-norm-hover);
+    --link-active: var(--interaction-norm-active);
+
+    --optional-promotion-background-start: rgb(109 74 255 / 0.15);
+    --optional-promotion-background-end: rgb(70 26 255 / 0.04);
+    --optional-upgrade-color-1: #FFAC2E;
+    --optional-upgrade-color-2: #6D4AFF;
+
+    --text-error-banner-title: #15006F;
+    --text-error-banner-message: #50409B;
+    --text-error-banner-button: var(--interaction-norm);
+
+
+}

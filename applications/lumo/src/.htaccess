@@ -1,0 +1,46 @@
+RewriteEngine On
+
+# Add MIME type for .mjs files
+AddType application/javascript .mjs
+
+# Redirect to https if not coming from https && not forwarded from https && not curl nor any health check user-agent
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Ignore any requests to the assets folder, to avoid the index.html fallback and return 404 there
+RewriteRule ^assets/ - [L]
+
+# Redirect nothing to app
+RewriteRule ^$ /index.html [NC,L]
+
+# Hide .git stuff
+RewriteRule ^.*?\.git.* /index.html [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+RewriteRule ^(.*) /index.html [NC,L]
+
+ErrorDocument 404 /assets/404.html
+
+<Files ~ "(index.html|version.json)">
+    FileETag None
+    Header unset ETag
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</Files>
+
+<Files ~ "^pass.service-worker">
+  Header set Service-Worker-Allowed "/"
+  Header set Service-Worker "script"
+</Files>
+
+<IfModule mod_deflate.c>
+  AddOutputFilter INCLUDES;DEFLATE svg mjs
+</IfModule>
+
