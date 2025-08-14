@@ -17,7 +17,7 @@ export interface AssistantFeedback {
     Sentiment: 'Positive' | 'Negative' | 'Neutral';
     Environment: 'Local' | 'Remote';
     ModelID?: string;
-    Component: 'Mail';
+    Component: 'Mail' | 'Lumo';
     Body: string;
     Prompt?: string;
     ModelOutput?: string;

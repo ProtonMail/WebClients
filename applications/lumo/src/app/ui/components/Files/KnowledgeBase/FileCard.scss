@@ -1,0 +1,36 @@
+@import '~@proton/styles/scss/lib';
+
+.file-card {
+	border-radius: rem(12);
+
+	&-dismiss-button {
+		position: absolute;
+		top: #{rem(-6)};
+		right: #{rem(-6)};
+		z-index: 10;
+		
+		// Button styling
+		background: var(--background-norm);
+		border: 1px solid var(--border-weak);
+		border-radius: 50%;
+		box-shadow: var(--shadow-norm);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.2s ease, visibility 0.2s ease;
+		
+		// Size
+		width: #{rem(24)};
+		height: #{rem(24)};
+		padding: #{rem(3)};
+	}
+	
+	&:hover .file-card-dismiss-button {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+// // override - TODO: remove from index.scss file
+// .circle-chart-circle {
+//     stroke: var(--primary)
+// }

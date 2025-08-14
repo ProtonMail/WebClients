@@ -2,8 +2,8 @@
 @import '~@proton/styles/scss/lib';
 
 .button-promotion {
-	--upgrade-color-stop-1: #fd4baf;
-	--upgrade-color-stop-2: #22d8ff;
+	--upgrade-color-stop-1: var(--optional-upgrade-color-1, #fd4baf);
+	--upgrade-color-stop-2: var(--optional-upgrade-color-2, #22d8ff);
 	--upgrade-background-color: var(--background-norm);
 
 	position: relative;
@@ -119,5 +119,9 @@
 
 			border-color: var(--interaction-weak-major-1);
 		}
+	}
+
+	&--lumo {
+		--text-norm: var(--link-norm);
 	}
 }
