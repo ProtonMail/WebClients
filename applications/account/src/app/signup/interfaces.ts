@@ -120,6 +120,7 @@ export type SignupInviteParameters =
     | { type: 'wallet'; data: { invitee: string; preVerifiedAddressToken: string } }
     | { type: 'pass'; data: { invitee: string; inviter?: string; preVerifiedAddressToken?: string } }
     | { type: 'mail'; data: { referrer: string; invite: string | undefined } }
+    | { type: 'lumo'; data: { invitee: string; preVerifiedAddressToken?: string } }
     | { type: 'porkbun'; data: { invitee: string; preVerifiedAddressToken?: string; porkbunToken: string } };
 
 export class HumanVerificationError extends Error {

@@ -1,0 +1,82 @@
+@import '~@proton/styles/scss/lib';
+
+.lumo-input-container {
+	border-color: var(--primary-contrast) !important;
+	border-radius: #{rem(22)};
+	padding: #{rem(6)};
+	transition: all 0.3s ease-out;
+
+	@include media('<=small') {
+		border-end-start-radius: 0 !important;
+		border-end-end-radius: 0 !important;
+		border-block-end: none !important;
+	}
+
+	&.ghost-mode {
+		// Ghost mode color palette
+		--ghost-bg-primary: #16141c;
+		--ghost-bg-secondary: #292733;
+		--ghost-border: #343140;
+		--ghost-text: #a7a4b5;
+		--ghost-text-weak: #8a8896;
+
+		border-color: var(--ghost-border);
+		background-color: var(--ghost-bg-primary) !important;
+		color: var(--ghost-text);
+
+		.color-weak {
+			color: var(--ghost-text-weak) !important;
+		}
+
+		span,
+		.text-sm {
+			color: var(--ghost-text);
+		}
+
+		.markdown-rendering {
+			color: var(--ghost-text);
+		}
+
+		.lumo-input {
+			background-color: var(--ghost-bg-secondary);
+			border-color: var(--ghost-border);
+			color: var(--ghost-text);
+		}
+
+		.file-card {
+			background-color: var(--ghost-bg-secondary);
+			border-color: var(--ghost-border);
+		}
+
+		@include media('<=small') {
+			border-end-start-radius: var(--border-radius-xl) !important;
+			border-end-end-radius: var(--border-radius-xl) !important;
+			inline-size: 98% !important;
+			margin-inline-start: 1% !important;
+			margin-block-end: 5px;
+		}
+	}
+}
+
+.lumo-input {
+	border-radius: #{rem(16)};
+	font-size: 16px !important;
+	transition: all 0.3s ease-out;
+}
+
+.web-search-button.is-active {
+	background-color: rgb(186 186 247 / 0.3);
+	color: var(--interaction-norm);
+}
+
+$mobile-breakpoint-width: 680px;
+
+@media screen and (max-width: #{$mobile-breakpoint-width}) {
+	.lumo-input-container {
+		background-color: white !important;
+	}
+
+	.lumo-input {
+		border: none !important;
+	}
+}

@@ -126,6 +126,8 @@ export const getUpsellRefFromApp = ({
         return getUpsellRef({ app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH, feature, component });
     } else if (app === APPS.PROTONDRIVE) {
         return getUpsellRef({ app: APP_UPSELL_REF_PATH.DRIVE_UPSELL_REF_PATH, feature, component });
+    } else if (app === APPS.PROTONLUMO) {
+        return getUpsellRef({ app: APP_UPSELL_REF_PATH.LUMO_UPSELL_REF_PATH, feature, component });
     } else if (app === APPS.PROTONACCOUNT && fromApp) {
         if (fromApp === APPS.PROTONMAIL) {
             return getUpsellRef({
@@ -157,6 +159,13 @@ export const getUpsellRefFromApp = ({
             });
         } else if (fromApp === APPS.PROTONVPN_SETTINGS) {
             return getUpsellRef({ app: APP_UPSELL_REF_PATH.VPN_UPSELL_REF_PATH, feature, component, isSettings: true });
+        } else if (fromApp === APPS.PROTONLUMO) {
+            return getUpsellRef({
+                app: APP_UPSELL_REF_PATH.LUMO_UPSELL_REF_PATH,
+                feature,
+                component,
+                isSettings: true,
+            });
         }
     }
 

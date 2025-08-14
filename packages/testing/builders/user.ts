@@ -16,6 +16,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         MaxDriveSpace: 7516192768,
         MaxUpload: 26214400,
         NumAI: 0,
+        NumLumo: 0,
         UsedSpace: 99993,
         UsedDriveSpace: 99993,
         UsedBaseSpace: 99993,

@@ -2,7 +2,7 @@
  * Usage node linter.mjs [arg]
  *  - arg can be a directory or a single file (default src)
  */
-import { readFile } from 'fs/promises';
+import { readFile, stat } from 'fs/promises';
 import { sync } from 'glob';
 import path from 'path';
 
@@ -79,6 +79,13 @@ async function* errorIterator(source = 'src', options = { isVerbose: false }) {
             continue;
         }
         if (file.includes('stories')) {
+            continue;
+        }
+
+        const fileStat = await stat(file);
+
+        // We have a directory.tsx inside lumo
+        if (fileStat.isDirectory()) {
             continue;
         }
 
