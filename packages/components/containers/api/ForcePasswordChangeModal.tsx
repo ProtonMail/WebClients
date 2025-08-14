@@ -24,7 +24,7 @@ const ForcePasswordChangeModal = ({
 
     return (
         <Modal open={open} onClose={onClose} onExit={onExit} {...rest}>
-            <ModalHeader title={c('Title').t`Account Temporarily Locked`} />
+            <ModalHeader title={c('Title').t`Account temporarily locked`} />
             <ModalContent>
                 {message && (
                     <div className="mb-4">
