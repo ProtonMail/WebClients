@@ -132,11 +132,17 @@
       "Cancel subscription": [
         "Anuluj subskrypcję"
       ],
+      "Cancel trial and pay": [
+        "Anuluj wersję próbną i zapłać"
+      ],
       "Cancel upload": [
         "Anuluj przesyłanie"
       ],
       "Change": [
         "Zmień"
+      ],
+      "Change password": [
+        "Zmień hasło"
       ],
       "Chat with us": [
         "Czat z nami"
@@ -318,6 +324,9 @@
       "Details": [
         "Szczegóły"
       ],
+      "Diagnostics": [
+        "Diagnostyka"
+      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -354,8 +363,14 @@
       "Download apps": [
         "Pobierz aplikacje"
       ],
+      "Download info": [
+        "Pobierz informacje"
+      ],
       "Download logs": [
         "Pobierz logi"
+      ],
+      "Download results": [
+        "Pobierz wyniki"
       ],
       "Drive Locked": [
         "Dysk jest zablokowany"
@@ -567,6 +582,9 @@
       "More options": [
         "Więcej opcji"
       ],
+      "More options for accounts": [
+        "Więcej opcji dla kont"
+      ],
       "Move": [
         "Przenieś"
       ],
@@ -611,6 +629,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Open": [
+        "Otwórz"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -758,6 +779,9 @@
       ],
       "Retry": [
         "Spróbuj ponownie"
+      ],
+      "Run diagnostics": [
+        "Uruchom diagnostykę"
       ],
       "Save": [
         "Zapisz"
@@ -1118,6 +1142,19 @@
         "Zaproszony"
       ]
     },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Menedżer haseł w wersji premium"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Użyj własnej domeny"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 miesiąc"
@@ -1127,6 +1164,9 @@
       ],
       "Annually": [
         "Rocznie"
+      ],
+      "Lifetime": [
+        "Dożywotnio"
       ],
       "Monthly": [
         "Miesięcznie"
@@ -2359,6 +2399,11 @@
         "Aktualizacja wydarzenia rozpoczynającego się w dniu: ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Zaufany kontakt"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "\"${ sanitizedName }\" już istnieje"
@@ -2440,6 +2485,9 @@
       ],
       "Device name does not match": [
         "Nazwy urządzeń nie pasują do siebie"
+      ],
+      "Diagnostics failed": [
+        "Diagnostyka nie powiodła się"
       ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
@@ -2708,6 +2756,9 @@
       "The address might be misspelled": [
         "Adres mógł zostać błędnie wpisany"
       ],
+      "The amount due has changed. Please try again.": [
+        "Kwota do spłaty uległa zmianie. Spróbuj ponownie."
+      ],
       "The email addresses do not match": [
         "Adresy e-mail nie pasują do siebie"
       ],
@@ -2804,11 +2855,32 @@
       "Validation error": [
         "Błąd weryfikacji"
       ],
+      "We were not able some of your shared items": [
+        "Nie mogliśmy załadować niektórych udostępnionych elementów"
+      ],
+      "We were not able to load some invitations": [
+        "Nie mogliśmy załadować niektórych zaproszeń"
+      ],
+      "We were not able to load some items shared with you": [
+        "Nie mogliśmy załadować niektórych elementów udostępnionych Tobie"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "Nie mogliśmy załadować niektórych zakładek"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "Nie mogliśmy załadować niektórych zaproszeń do udostępnionych elementów"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Nie mogliśmy załadować niektórych udostępnionych linków"
+      ],
       "We were not able to load some of your shared items": [
         "Nie mogliśmy załadować niektórych udostępnionych elementów"
       ],
       "We were not able to load some of your shared items details": [
         "Nie mogliśmy załadować niektórych szczegółów udostępnionych elementów"
+      ],
+      "We were not able to load some of your shared items info": [
+        "Nie mogliśmy załadować niektórych informacji o udostępnionych elementach"
       ],
       "You must set a name": [
         "Musisz wpisać nazwę"
@@ -3620,6 +3692,18 @@
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
       ],
+      "${ invitationsCount } pending invitation": [
+        "${ invitationsCount } oczekujące zaproszenie",
+        "${ invitationsCount } oczekujące zaproszenia",
+        "${ invitationsCount } oczekujących zaproszeń",
+        "${ invitationsCount } oczekujących zaproszeń"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Dożywotnia subskrypcja ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }. Cena i data odnowienia subskrypcji ${ planTitle } pozostaje niezmienna."
+      ],
       "${ pausedCount } paused": [
         "Transfer ${ pausedCount } pliku został wstrzymany",
         "Transfer ${ pausedCount } plików został wstrzymany",
@@ -3706,6 +3790,9 @@
         "(${ memberCount } członków)",
         "(${ memberCount } członków)",
         "(${ memberCount } członków)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } / miesiąc)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
@@ -3977,6 +4064,9 @@
         "Usuń zablokowane dyski",
         "Usuń zablokowane dyski"
       ],
+      "Details": [
+        "Szczegóły"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Podpis cyfrowy został zweryfikowany. Plik został bezpiecznie przesłany przez ${ emailAddress }."
       ],
@@ -4082,6 +4172,9 @@
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Wpisz swoje hasło (jako zaufany kontakt)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Szacowany pozostały czas: ${ estimatedMinutes } minuta",
         "Szacowany pozostały czas: ${ estimatedMinutes } minuty",
@@ -4159,6 +4252,9 @@
       ],
       "from the version history?": [
         "z historii wersji?"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Pobierz logi i inne informacje na potrzeby wsparcia technicznego i rozwiązywania problemów"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Pobierz aplikację do tworzenia kopii zapasowych zdjęć z telefonu lub prześlij je tutaj."
@@ -4241,6 +4337,9 @@
       "Initializing": [
         "Inicjowanie"
       ],
+      "Integrity issues found": [
+        "Znaleziono problemy z integralnością"
+      ],
       "Internet connection lost": [
         "Połączenie z Internetem zostało utracone"
       ],
@@ -4252,6 +4351,9 @@
       ],
       "Invite link copied": [
         "Link został skopiowany"
+      ],
+      "Issues found": [
+        "Znaleziono problemy"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Próbujesz przesłać plik ${ uploadName }. ${ replaceFile }, jeśli przesyłanie nie powiodło się. Jeśli przesyłanie jest w toku, zastąpienie pliku spowoduje anulowanie przesyłania."
@@ -4270,6 +4372,9 @@
       ],
       "Jan": [
         "Sty"
+      ],
+      "JCB logo": [
+        "Logo JCB"
       ],
       "Jul": [
         "Lip"
@@ -4400,6 +4505,9 @@
       "No group found": [
         "Nie znaleziono grupy"
       ],
+      "No issue found": [
+        "Nie znaleziono problemów"
+      ],
       "No payment is required at this time.": [
         "Płatność nie jest wymagana."
       ],
@@ -4456,6 +4564,9 @@
       ],
       "Organization size": [
         "Rozmiar ogranizacji"
+      ],
+      "Other accounts": [
+        "Inne konta"
       ],
       "Owner": [
         "Właściciel"
@@ -4586,6 +4697,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
+      "Registering your subscription…": [
+        "Rejestrowanie subskrypcji…"
+      ],
       "Report has been sent": [
         "Raport został wysłany"
       ],
@@ -4603,6 +4717,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "Przywracanie zdjęć... Pozostaw kartę otwartą"
+      ],
+      "Running diagnostics...": [
+        "Uruchamianie diagnostyki..."
       ],
       "Saving...": [
         "Zapisywanie..."
@@ -4843,6 +4960,9 @@
       ],
       "This will upload a new version of the folder": [
         "Spowoduje to przesłanie nowej wersji folderu"
+      ],
+      "Time": [
+        "Czas"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Wyślij ${ btcAmountBold } na poniższy adres, aby zakończyć płatność."
@@ -5165,6 +5285,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Subskrypcja ${ plan } zostanie zastąpiona subskrypcją ${ PASS_SHORT_APP_NAME } Lifetime. Pozostałe saldo subskrypcji zostanie dodane do konta. Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta zostanie wkrótce ograniczony. ${ payInvoiceLink }"
       ],
@@ -5207,6 +5330,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
       "Your password was leaked:": [
         "Twoje hasło zostało ujawnione:"
       ],
@@ -5221,6 +5347,12 @@
       ],
       "Your previous recovery phrase": [
         "Poprzednie hasło odzyskiwania"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ]
     },
     "Info on errors": {
@@ -5849,6 +5981,9 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ],
+      "Your password (trusted contact)": [
+        "Twoje hasło (zaufany kontakt)"
       ]
     },
     "Label for contact group color": {
@@ -6392,6 +6527,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } kalendarz",
         "${ n } kalendarze",
@@ -6562,6 +6700,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Wsparcie aplikacji pocztowych (przez IMAP / SMTP)"
+      ],
+      "Email groups": [
+        "Grupy kontaktów"
       ],
       "Enables HIPAA compliance": [
         "Zgodność z wymogami HIPAA"
@@ -6793,6 +6934,9 @@
       "Downgrade account?": [
         "Obniżyć plan?"
       ],
+      "Review subscription": [
+        "Podsumowanie subskrypcji"
+      ],
       "Review subscription and pay": [
         "Przejrzyj subskrypcję i zapłać"
       ],
@@ -6857,6 +7001,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Udostępnij swoje kalendarze rodzinie, znajomym i współpracownikom"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Wysyłaj wiadomości do wszystkich członków grupy za pomocą jednego adresu e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zapewnia odbieranie wszystkich wiadomości wysyłanych do domeny, nawet jeśli adres e-mail nie istnieje, przestał istnieć lub zawiera literówkę"
@@ -7191,6 +7338,9 @@
       ],
       "Album renamed successfully": [
         "Nazwa albumu została zmieniona"
+      ],
+      "All items deleted permanently from trash": [
+        "Wszystkie elementy zostały trwale usunięte z kosza"
       ],
       "An invitation has been sent": [
         "Zaproszenie zostało wysłane"
@@ -7554,6 +7704,18 @@
       ],
       "No parent folder": [
         "Brak folderu nadrzędnego"
+      ],
+      "Only current location": [
+        "Tylko obecna lokalizacja"
+      ],
+      "Only current location: ${ name }": [
+        "Tylko obecna lokalizacja: ${ name }"
+      ],
+      "Verify content": [
+        "Zweryfikuj zawartość"
+      ],
+      "Verify thumbnails": [
+        "Zweryfikuj podglądy"
       ]
     },
     "Option group label": {
@@ -7631,6 +7793,21 @@
       "MM/YY": [
         "MM/RR"
       ],
+      "More plans are available in other currencies": [
+        "Więcej planów jest dostępnych w innych walutach"
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Cena odnowienia może ulec zmianie zgodnie z ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
+      ],
+      "terms & conditions": [
+        "regulaminem"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie."
+      ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
       ]
@@ -7653,6 +7830,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "PGP key encryption warning": {
@@ -8222,6 +8404,11 @@
         "Krótki alias @pm.me"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Czy na pewno?"
@@ -8548,6 +8735,9 @@
       "Account recovery": [
         "Odzyskiwanie konta"
       ],
+      "Account Temporarily Locked": [
+        "Konto zostało tymczasowo zablokowane"
+      ],
       "Active": [
         "Aktywne"
       ],
@@ -8683,6 +8873,9 @@
       "Continue with partial import?": [
         "Kontynuować częściowe importowanie?"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Create a new file": [
         "Utwórz nowy plik"
       ],
@@ -8758,8 +8951,14 @@
       "Desktop": [
         "Komputer"
       ],
+      "Device": [
+        "Urządzenie"
+      ],
       "Devices": [
         "Urządzenia"
+      ],
+      "Diagnostics": [
+        "Diagnostyka"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Podpis cyfrowy został częściowo zweryfikowany. Plik został utworzony z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
@@ -8938,11 +9137,20 @@
       "Last uploaded by": [
         "Przesłano przez"
       ],
+      "Level": [
+        "Poziom"
+      ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"
       ],
       "Location": [
         "Lokalizacja"
+      ],
+      "Logger": [
+        "Rejestrator"
+      ],
+      "Logs": [
+        "Logi"
       ],
       "Manage secure link": [
         "Zarządzaj linkiem"
@@ -8955,6 +9163,9 @@
       ],
       "Merging contacts": [
         "Scalanie kontaktów"
+      ],
+      "Message": [
+        "Wiadomość"
       ],
       "MIME type": [
         "Typ MIME"
@@ -9228,6 +9439,9 @@
       ],
       "This link is password protected": [
         "Link jest chroniony hasłem"
+      ],
+      "Time": [
+        "Czas"
       ],
       "Total size": [
         "Łączny rozmiar"

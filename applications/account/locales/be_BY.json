@@ -1096,9 +1096,6 @@
       "Send reminder": [
         "Адправіць напамін"
       ],
-      "Set as default mail application": [
-        "Задаць у якасці прадвызначанай паштовай праграмы"
-      ],
       "Set catch-all": [
         "Задаць адрас для ўсёй пошты дамена"
       ],
@@ -1797,6 +1794,9 @@
       ],
       "Protect your whole household with 1 device": [
         "Абараніце ўсё сваё домаўладанне з дапамогай 1 прылады"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
+        "Плыні з усіх асноўных платформ на тарыфным плане ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Гэты артыкул быў абноўлены і ў яго ўвайшлі пратаколы VPN з тэхналогіямі WireGuard і Stealth."
@@ -3296,12 +3296,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным і зашыфраваным асяроддзі."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } не з'яўляецца вашай прадвызначанай паштовай праграмай."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } з'яўляецца вашай прадвызначанай паштовай праграмай."
-      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Дадайце папкі і файлы ў ${ DRIVE_APP_NAME } і запрасіце ўдзельнікаў каманды для прагляду або рэдагавання."
       ],
@@ -4200,6 +4194,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Папярэджанне"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Давераны кантакт"
       ]
     },
     "Empty group name": {
@@ -7284,6 +7283,9 @@
       "Enter your own password (as organization admin).": [
         "Увядзіце свой пароль (адміністратара арганізацыі)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Увядзіце свой пароль (як давераны кантакт)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Увядзіце адрас электроннай пошты, які вы выкарыстоўваеце для аднаўлення доступу, і мы адправім вам ваша імя карыстальніка або адрас электроннай пошты."
       ],
@@ -8238,6 +8240,9 @@
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Задаць ${ MAIL_APP_NAME } у якасці прадвызначанай паштовай праграмы. ${ MAIL_APP_NAME } будзе адкрывацца аўтаматычна пры націску на спасылку электроннай пошты."
+      ],
       "Set password": [
         "Задаць пароль"
       ],
@@ -8948,9 +8953,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Калі адключана, то гэта не дазволіць загружаць відарысы на вашу прыладу без вашай згоды.\t"
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Пры ўключанай функцыі будзе адбывацца праверка, ці з'яўляецца ${ MAIL_APP_NAME } вашай прадвызначанай паштовай праграмай і калі гэта не так, то вы атрымаеце апавяшчэнне аб гэтым."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
@@ -10734,6 +10736,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ваш пароль (давераны кантакт)"
       ],
       "Your referral link": [
         "Ваша рэферальная спасылка"
@@ -16957,9 +16962,6 @@
       ],
       "Change second password": [
         "Змяніць другі пароль"
-      ],
-      "Check your default mail application": [
-        "Праверце сваю прадвызначаную паштовую праграму"
       ],
       "Choose an account": [
         "Выберыце ўліковы запіс"

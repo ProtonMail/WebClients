@@ -96,6 +96,9 @@
       "Cancel subscription": [
         "Cancelar suscripción"
       ],
+      "Change password": [
+        "Cambiar contraseña"
+      ],
       "Chat with us": [
         "Chatee con nosotros"
       ],
@@ -2693,6 +2696,12 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } día restante",
+        "${ remainingDaysCount } días restantes"
       ]
     },
     "Gmail forwarding": {
@@ -5983,10 +5992,6 @@
         "${ countMergeableContacts } contacto parece idéntico.",
         "${ countMergeableContacts } contactos parecen idénticos."
       ],
-      "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } conversación movida a ${ folderName }.",
-        "${ elementsCount } conversaciones movidas a ${ folderName }."
-      ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } conversación movida a spam y el remitente agregado a la lista de spam.",
         "${ elementsCount } conversaciones movidas a spam y los remitentes agregados a la lista de spam."
@@ -5998,14 +6003,6 @@
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } mensaje marcado como no leído.",
         "${ elementsCount } mensajes marcados como no leídos."
-      ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } mensaje movido a ${ folderName } y el remitente agregado a la lista de no spam.",
-        "${ elementsCount } mensajes movidos a ${ folderName } y los remitentes agregados a la lista de no spam."
-      ],
-      "${ elementsCount } message moved to ${ folderName }.": [
-        "${ elementsCount } mensaje movido a ${ folderName }.",
-        "${ elementsCount } mensajes movidos a ${ folderName }."
       ],
       "${ elementsCount } message removed from Starred.": [
         "${ elementsCount } mensaje borrado de Destacados.",

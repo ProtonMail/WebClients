@@ -1097,7 +1097,7 @@
         "Erinnerung senden"
       ],
       "Set as default mail application": [
-        "Als Standard-Mail-Anwendung festlegen"
+        "Als Standard-E-Mail-Anwendung festlegen"
       ],
       "Set catch-all": [
         "Catch-All festlegen"
@@ -3340,10 +3340,10 @@
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ermöglicht es dir, mit anderen in einer sicheren, verschlüsselten Umgebung zusammenzuarbeiten."
       ],
       "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } ist nicht deine Standard-Mail-Anwendung."
+        "${ MAIL_APP_NAME } ist nicht deine Standard-E-Mail-Anwendung."
       ],
       "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } ist deine Standard-Mail-Anwendung."
+        "${ MAIL_APP_NAME } ist deine Standard-E-Mail-Anwendung."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Füge Ordner und Dateien zu ${ DRIVE_APP_NAME } hinzu und lade Teammitglieder ein, sie anzuzeigen oder zu bearbeiten."
@@ -4237,6 +4237,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Warnung"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Vertrauenswürdiger Kontakt"
       ]
     },
     "Empty group name": {
@@ -7193,6 +7198,9 @@
       "Enter your own password (as organization admin).": [
         "Eigenes Passwort (als Organisationsadministrator) eingeben."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Gib deine E-Mail-Adresse für die Wiederherstellung ein und es wird dir dein Benutzername oder deine E-Mail-Adresse zugeschickt."
       ],
@@ -8835,7 +8843,7 @@
         "Wenn diese Funktion deaktiviert ist, verhindert sie, dass Bilddateien ohne dein Wissen auf dein Gerät geladen werden."
       ],
       "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Wenn diese Option aktiviert ist, wird geprüft, ob ${ MAIL_APP_NAME } deine Standard-Mail-Anwendung ist, und du wirst benachrichtigt, wenn dies nicht der Fall ist."
+        "Wenn diese Option aktiviert ist, wird geprüft, ob ${ MAIL_APP_NAME } deine Standard-E-Mail-Anwendung ist, und du wirst benachrichtigt, wenn dies nicht der Fall ist."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Beim Aktivieren von SAML für ${ appName } in deinem Identitätsanbieter wirst du vielleicht aufgefordert, die Callback (ACS) URL und die Aussteller-ID zu nutzen. Kopiere einfach die Daten unten in die Felder deines Identitätsanbieters."
@@ -10583,6 +10591,9 @@
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Dein Passwort (vertrauenswürdiger Kontakt)"
       ],
       "Your referral link": [
         "Dein Empfehlungslink"
@@ -16454,6 +16465,9 @@
       "Account suspended": [
         "Konto gesperrt"
       ],
+      "Account Temporarily Locked": [
+        "Konto vorübergehend gesperrt"
+      ],
       "Action": [
         "Aktion"
       ],
@@ -16639,7 +16653,7 @@
         "Zusätzliches Passwort ändern"
       ],
       "Check your default mail application": [
-        "Überprüfe deine Standard-Mail-Anwendung"
+        "Überprüfe deine Standard-E-Mail-Anwendung"
       ],
       "Choose an account": [
         "Konto auswählen"

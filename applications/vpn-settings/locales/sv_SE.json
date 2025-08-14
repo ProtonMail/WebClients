@@ -489,6 +489,9 @@
       "More options": [
         "Fler alternativ"
       ],
+      "More options for accounts": [
+        "Fler alternativ för konton"
+      ],
       "Need help?": [
         "Behöver du hjälp?"
       ],
@@ -2597,6 +2600,11 @@
         "E-postverifiering skickat till ${ address }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betrodd kontakt"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Namnlös"
@@ -4187,6 +4195,9 @@
       "Enter your own password (as organization admin).": [
         "Ange ditt eget lösenord (som organisationsadministratör)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ange din e-postadress för återställning så skickar vi dig ditt användarnamn eller e-postadress."
       ],
@@ -4599,6 +4610,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organisera dina dedikerade servrar i gateways och bestäm vilka medlemmar som kan komma åt dem."
+      ],
+      "Other accounts": [
+        "Andra konton"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Andra administratörer finns i din organisation, du är ansvarig för att kommunicera det nya lösenordet till dem."
@@ -5471,6 +5485,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer förnyas automatiskt varje månad."
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
       ],
@@ -6217,6 +6234,9 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
       ],
       "ZIP code": [
         "Postnummer"
@@ -9614,6 +9634,9 @@
       ],
       "Account suspended": [
         "Konto avstängt"
+      ],
+      "Account Temporarily Locked": [
+        "Konto tillfälligt låst"
       ],
       "Action": [
         "Åtgärd"

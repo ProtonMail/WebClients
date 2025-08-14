@@ -96,6 +96,9 @@
       "Cancel subscription": [
         "Annulla abbonamento"
       ],
+      "Change password": [
+        "Cambia la password"
+      ],
       "Chat with us": [
         "Chatta con noi"
       ],
@@ -2074,6 +2077,11 @@
         "Aggiornamento per un evento che inizia il ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contatti sicuri"
+      ]
+    },
     "Error": {
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
@@ -3339,6 +3347,9 @@
       "Enter your own password (as organization admin).": [
         "Inserisci la tua password (come amministratore dell'organizzazione)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Inserisci la tua password (come contatto attendibile)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo stimato rimanente: ${ estimatedMinutes } minuto",
         "Tempo stimato rimanente: ${ estimatedMinutes } minuti"
@@ -4289,6 +4300,9 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "La tua password (contatto attendibile)"
       ]
     },
     "Label for contact group color": {
@@ -5993,9 +6007,13 @@
         "${ countMergeableContacts } contatto sembra identico.",
         "${ countMergeableContacts } contatti sembrano identici."
       ],
-      "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount }  conversazione spostata in ${ folderName }",
-        "${ elementsCount } conversazioni spostate in ${ folderName }."
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } conversazione è stata spostata in ${ labelName } e il mittente è stato aggiunto alla tua lista non spam.",
+        "${ elementsCount } conversazioni spostate in ${ labelName } e mittenti aggiunti alla tua lista non spam."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } conversazione spostata in ${ labelName }",
+        "${ elementsCount } conversazioni spostate in ${ labelName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount }conversazione spostata nello spam e il mittente è stato aggiunto alla tua lista di spam.",
@@ -6013,13 +6031,13 @@
         "${ elementsCount } messaggio segnato come non letto.",
         "${ elementsCount } messaggi segnati come non letti."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount }messaggi spostati in ${ folderName } e il mittente è stato aggiunto alla tua lista di non spam",
-        "${ elementsCount } messaggi spostati in ${ folderName } e i mittenti sono stati aggiunti alla tua lista di non spam"
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } messaggio spostato in ${ labelName } e il mittente è stato aggiunto alla tua lista di non spam.",
+        "${ elementsCount } messaggi spostati in ${ labelName } e i mittenti sono stati aggiunti alla tua lista di non spam"
       ],
-      "${ elementsCount } message moved to ${ folderName }.": [
-        "${ elementsCount } messaggio spostato in${ folderName }.",
-        "${ elementsCount } messaggi spostati in${ folderName }."
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } messaggio spostato in${ labelName }.",
+        "${ elementsCount } messaggi spostati in ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
         "${ elementsCount } messaggio rimosso da Speciali.",
@@ -6051,6 +6069,12 @@
       "Contacts deleted": [
         "Contatti eliminati"
       ],
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Conversazione spostata in ${ labelName } e mittente aggiunto alla tua lista non spam."
+      ],
+      "Conversation moved to ${ labelName }.": [
+        "Conversazione spostata in ${ labelName }."
+      ],
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
@@ -6065,6 +6089,12 @@
       ],
       "Last modified aliases stored in your oldest vault": [
         "Ultimi alias modificati memorizzati nella cassaforte più vecchia"
+      ],
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Il messaggio è stato spostato in ${ labelName } e il mittente è stato aggiunto alla tua lista non spam."
+      ],
+      "Message moved to ${ labelName }.": [
+        "Messaggio spostato in ${ labelName }."
       ],
       "Payment method added": [
         "Metodo di pagamento aggiunto"
