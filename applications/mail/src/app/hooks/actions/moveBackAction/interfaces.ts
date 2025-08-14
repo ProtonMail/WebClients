@@ -12,7 +12,7 @@ export enum MOVE_BACK_ACTION_TYPES {
 
 export interface MoveActionProps {
     type: MOVE_BACK_ACTION_TYPES.MOVE;
-    targetLabelID: string;
+    destinationLabelID: string;
 }
 
 export interface ApplyLabelActionProps {

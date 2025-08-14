@@ -275,7 +275,7 @@ export const shouldDisplayTotal = (labelID: string) => {
 
 export const canMoveAll = (
     currentLabelID: string,
-    targetLabelID: string,
+    destinationLabelID: string,
     elementIDs: string[],
     selectedIDs: string[],
     isSearch: boolean
@@ -283,7 +283,7 @@ export const canMoveAll = (
     // We also need to hide move all actions in ALL_DRAFTS and ALL_SENT location because the goal of this setting
     // is to keep the message in DRAFTS and SENT locations all the time.
     return (
-        !labelIncludes(currentLabelID, targetLabelID, ALL_MAIL, SCHEDULED, ALL_DRAFTS, ALL_SENT) &&
+        !labelIncludes(currentLabelID, destinationLabelID, ALL_MAIL, SCHEDULED, ALL_DRAFTS, ALL_SENT) &&
         elementIDs.length > 0 &&
         selectedIDs.length === 0 &&
         !isSearch

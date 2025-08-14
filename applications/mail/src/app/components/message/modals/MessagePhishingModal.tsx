@@ -44,7 +44,7 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
             await applyLocation({
                 type: APPLY_LOCATION_TYPES.MOVE,
                 elements: [message.data || ({} as Element)],
-                targetLabelID: SPAM,
+                destinationLabelID: SPAM,
                 askUnsubscribe: false,
             });
         } else {

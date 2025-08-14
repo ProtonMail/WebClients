@@ -27,7 +27,7 @@ interface MailboxListProviderProps {
     customActions?: {
         onMarkAs?: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => void;
         onDelete?: (sourceAction: SOURCE_ACTION) => void;
-        onMove?: (targetLabelID: string, sourceAction: SOURCE_ACTION) => void;
+        onMove?: (destinationLabelID: string, sourceAction: SOURCE_ACTION) => void;
     };
 }
 
