@@ -656,6 +656,9 @@ export const InnerSignupContextProvider = ({
 
         try {
             await api(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
+            metrics.core_signup_ctx_setDisplayName_total.increment({
+                status: 'success',
+            });
         } catch (error) {
             observeError(error, (status) =>
                 metrics.core_signup_ctx_setDisplayName_total.increment({
@@ -684,7 +687,20 @@ export const InnerSignupContextProvider = ({
         }
 
         try {
-            onLogin(setupUserResponseRef.current.session);
+            /**
+             * Ensure all metrics have been sent before login
+             */
+            await metrics.processAllRequests();
+
+            await onLogin(setupUserResponseRef.current.session);
+
+            /**
+             * TODO: [CP-10334]
+             * This is only sent if a redirect to the applications does not occur.
+             * ie for drive signup, the user is redirected to drive.proton.me and this metric is never sent
+             *
+             * For generic signup, we redirect to account.proton.me/apps, and so the metric is sent
+             */
             metrics.core_signup_ctx_login_total.increment({
                 status: 'success',
             });
