@@ -134,6 +134,9 @@
       "Change": [
         "Modifier"
       ],
+      "Change password": [
+        "Changer le mot de passe"
+      ],
       "Chat with us": [
         "Discutez avec nous"
       ],
@@ -310,6 +313,9 @@
       "Details": [
         "Détails"
       ],
+      "Diagnostics": [
+        "Diagnostics"
+      ],
       "Discard": [
         "Abandonner"
       ],
@@ -346,8 +352,14 @@
       "Download apps": [
         "Télécharger les applications"
       ],
+      "Download info": [
+        "Information sur le téléchargement"
+      ],
       "Download logs": [
         "Télécharger les journaux"
+      ],
+      "Download results": [
+        "Télécharger les résultats"
       ],
       "Drive Locked": [
         "Disque verrouillé"
@@ -750,6 +762,9 @@
       ],
       "Retry": [
         "Réessayer"
+      ],
+      "Run diagnostics": [
+        "Exécuter des diagnostics"
       ],
       "Save": [
         "Enregistrer"
@@ -2343,6 +2358,11 @@
         "Mise à jour d'un événement qui commence ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacts de confiance"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "« ${ sanitizedName } » existe déjà."
@@ -2420,6 +2440,9 @@
       ],
       "Device name does not match": [
         "Le nom de l'appareil ne correspond pas."
+      ],
+      "Diagnostics failed": [
+        "Les Diagnostics n'ont pas abouti"
       ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
@@ -3873,6 +3896,9 @@
         "Supprimer le disque verrouillé",
         "Supprimer les disques verrouillés"
       ],
+      "Details": [
+        "Informations"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "La signature numérique a été vérifiée. Ce fichier a été chargé de manière sécurisée par ${ emailAddress }."
       ],
@@ -3978,6 +4004,9 @@
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Temps restant estimé : ${ estimatedMinutes } minute",
         "Temps restant estimé : ${ estimatedMinutes } minutes"
@@ -4053,6 +4082,9 @@
       ],
       "from the version history?": [
         "de l'historique des versions ?"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Obtenir les journaux et d'autres informations pour le support technique et le dépannage"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Téléchargez l'application pour sauvegarder vos photos depuis votre téléphone ou importez-les ici."
@@ -4133,6 +4165,9 @@
       "Initializing": [
         "Initialisation en cours"
       ],
+      "Integrity issues found": [
+        "Problèmes d'intégrité détectés"
+      ],
       "Internet connection lost": [
         "La connexion internet est perdue."
       ],
@@ -4144,6 +4179,9 @@
       ],
       "Invite link copied": [
         "Le lien de l'invitation a été copié."
+      ],
+      "Issues found": [
+        "Problèmes trouvés"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Il semble que vous ayez récemment essayé de charger ${ uploadName }. Si le chargement n'a pas abouti, nous vous invitons à ${ replaceFile }. Si le chargement est toujours en cours, remplacer le fichier annulera le chargement en cours."
@@ -4289,6 +4327,9 @@
       ],
       "No group found": [
         "Aucun groupe n'a été trouvé."
+      ],
+      "No issue found": [
+        "Aucun problème n'a été trouvé"
       ],
       "No payment is required at this time.": [
         "Aucun paiement n'est nécessaire pour le moment."
@@ -4494,6 +4535,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "Restauration des photos en cours. Gardez l'onglet ouvert."
+      ],
+      "Running diagnostics...": [
+        "Exécution des diagnostics..."
       ],
       "Saving...": [
         "Enregistrement..."
@@ -5723,6 +5767,9 @@
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Votre mot de passe (contacts de confiance)"
       ]
     },
     "Label for contact group color": {
@@ -7339,6 +7386,12 @@
       ],
       "No parent folder": [
         "Aucun dossier parent"
+      ],
+      "Verify content": [
+        "Vérifier le contenu"
+      ],
+      "Verify thumbnails": [
+        "Vérifier les vignettes"
       ]
     },
     "Option group label": {
@@ -8289,6 +8342,9 @@
       "Account recovery": [
         "Récupération du compte"
       ],
+      "Account Temporarily Locked": [
+        "Compte temporairement verrouillé"
+      ],
       "Active": [
         "Actifs"
       ],
@@ -8489,8 +8545,14 @@
       "Desktop": [
         "Bureau"
       ],
+      "Device": [
+        "Appareil"
+      ],
       "Devices": [
         "Appareils"
+      ],
+      "Diagnostics": [
+        "Diagnostics"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "La signature numérique a été partiellement vérifiée. Ce fichier a été créé à l'aide d'un lien de partage mis à disposition publiquement par un utilisateur ne disposant pas d'un compte ${ BRAND_NAME }. Son identité ne peut pas être vérifiée."
@@ -8665,11 +8727,20 @@
       "Last uploaded by": [
         "Dernière importation par"
       ],
+      "Level": [
+        "Niveau"
+      ],
       "Link confirmation": [
         "Confirmation du lien"
       ],
       "Location": [
         "Emplacement"
+      ],
+      "Logger": [
+        "Registre"
+      ],
+      "Logs": [
+        "Journaux"
       ],
       "Manage secure link": [
         "Gérer les liens sécurisés"
@@ -8682,6 +8753,9 @@
       ],
       "Merging contacts": [
         "Fusion des contacts"
+      ],
+      "Message": [
+        "Message"
       ],
       "MIME type": [
         "Type MIME"

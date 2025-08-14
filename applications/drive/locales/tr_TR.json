@@ -137,6 +137,9 @@
       "Change": [
         "Değiştir"
       ],
+      "Change password": [
+        "Parolayı değiştir"
+      ],
       "Chat with us": [
         "Bizimle canlı görüşün"
       ],
@@ -313,6 +316,9 @@
       "Details": [
         "Bilgiler"
       ],
+      "Diagnostics": [
+        "Tanılama"
+      ],
       "Discard": [
         "Sil"
       ],
@@ -349,8 +355,14 @@
       "Download apps": [
         "Uygulamaları indirin"
       ],
+      "Download info": [
+        "Bilgileri indir"
+      ],
       "Download logs": [
         "Günlüğü indir"
+      ],
+      "Download results": [
+        "Sonuçları indir"
       ],
       "Drive Locked": [
         "Drive kilitlendi"
@@ -398,7 +410,7 @@
         "Kişi grubunu dışa aktar"
       ],
       "Export system log": [
-        "Sistem günlüğünü dışa aktar"
+        "Sistem günlüğü kayıtlarını dışa aktar"
       ],
       "Fit to window": [
         "Pencereye sığdır"
@@ -561,6 +573,9 @@
       ],
       "More options": [
         "Diğer seçenekler"
+      ],
+      "More options for accounts": [
+        "Hesaplar için diğer seçenekler"
       ],
       "Move": [
         "Taşı"
@@ -756,6 +771,9 @@
       ],
       "Retry": [
         "Yeniden dene"
+      ],
+      "Run diagnostics": [
+        "Tanılamayı başlat"
       ],
       "Save": [
         "Kaydet"
@@ -1115,6 +1133,14 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Ücretli parola yöneticisi"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
       ]
     },
     "Billing cycle option": {
@@ -2357,6 +2383,11 @@
         "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Güvenilir kişi"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "\"${ sanitizedName }\" zaten var"
@@ -2434,6 +2465,9 @@
       ],
       "Device name does not match": [
         "Aygıt adı eşleşmiyor"
+      ],
+      "Diagnostics failed": [
+        "Tanılama tamamlanamadı"
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
@@ -2791,11 +2825,32 @@
       "Validation error": [
         "Doğrulama sorunu"
       ],
+      "We were not able some of your shared items": [
+        "Paylaşılan ögelerinizden bazıları yüklenemedi"
+      ],
+      "We were not able to load some invitations": [
+        "Bazı davetler yüklenemedi"
+      ],
+      "We were not able to load some items shared with you": [
+        "Sizinle paylaşılan bazı ögeler yüklenemedi"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "Yer işaretlerinizden bazıları yüklenemedi"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "Paylaşılan ögelere yaptığınız davetleriden bazıları yüklenemedi"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Kaydedilmiş paylaşılan bağlantılarınızdan bazıları yüklenemedi"
+      ],
       "We were not able to load some of your shared items": [
         "Paylaşılan ögelerinizden bazıları yüklenemedi"
       ],
       "We were not able to load some of your shared items details": [
         "Paylaşılan ögelerinizden bazılarının ayrıntıları yüklenemedi"
+      ],
+      "We were not able to load some of your shared items info": [
+        "Paylaşılan öge bilgilerinizin bazıları yüklenemedi"
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
@@ -3545,6 +3600,10 @@
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
       ],
+      "${ invitationsCount } pending invitation": [
+        "${ invitationsCount } bekleyen davet var",
+        "${ invitationsCount } bekleyen davet var"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
@@ -3613,6 +3672,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/ay)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
@@ -3874,6 +3936,9 @@
         "Kilitlenmiş sürücüyü sil",
         "Kilitlenmiş sürücüleri sil"
       ],
+      "Details": [
+        "Ayrıntılar"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Sayısal imza doğrulandı. Bu dosya ${ emailAddress } tarafından güvenli şekilde yüklendi."
       ],
@@ -3979,6 +4044,9 @@
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Kendi parolanızı yazın (güvenilen kişi olarak)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Öngörülen kalan süre: ${ estimatedMinutes } dakika",
         "Öngörülen kalan süre: ${ estimatedMinutes } dakika"
@@ -4054,6 +4122,9 @@
       ],
       "from the version history?": [
         "sürüm geçmişinden?"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Teknik destek ve sorun giderme için günlük kayıtlarını ve diğer bilgileri alın."
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Telefonunuzdaki fotoğrafları yedeklemek için uygulamayı edinin ya da buradan yükleyin."
@@ -4134,6 +4205,9 @@
       "Initializing": [
         "Hazırlanıyor"
       ],
+      "Integrity issues found": [
+        "Bütünlük sorunları bulundu"
+      ],
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
       ],
@@ -4145,6 +4219,9 @@
       ],
       "Invite link copied": [
         "Davet bağlantısı kopyalandı"
+      ],
+      "Issues found": [
+        "Sorunlar bulundu"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Yakın zamanda ${ uploadName } dosyasını yüklemeyi denemişsiniz gibi görünüyor. Yüklenemediyse, lütfen ${ replaceFile }in. Yükleme hala sürüyorsa, dosyanın değiştirilmesi süren yükleme işlemini iptal eder."
@@ -4294,6 +4371,9 @@
       "No group found": [
         "Grup bulunamadı"
       ],
+      "No issue found": [
+        "Herhangi bir sorun bulunamadı"
+      ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
       ],
@@ -4350,6 +4430,9 @@
       ],
       "Organization size": [
         "Kuruluş boyutu"
+      ],
+      "Other accounts": [
+        "Diğer hesaplar"
       ],
       "Owner": [
         "Sahibi"
@@ -4501,6 +4584,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "Fotoğraflar geri yükleniyor... Lütfen sekmeyi açık tutun"
+      ],
+      "Running diagnostics...": [
+        "Tanılama yapılıyor..."
       ],
       "Saving...": [
         "Kaydediliyor..."
@@ -4739,6 +4825,9 @@
       ],
       "This will upload a new version of the folder": [
         "Bu işlem klasörün yeni bir sürümünü yükler"
+      ],
+      "Time": [
+        "Zaman"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Ödemenizi tamamlamak için aşağıdaki adrese ${ btcAmountBold } gönderin."
@@ -5739,6 +5828,9 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ],
+      "Your password (trusted contact)": [
+        "Parolanız (güvenilen kişi)"
       ]
     },
     "Label for contact group color": {
@@ -6215,6 +6307,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
@@ -6357,6 +6452,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "E-posta istemcisi desteği (IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-posta grupları"
       ],
       "Enables HIPAA compliance": [
         "HIPAA uyumluluğu"
@@ -6647,6 +6745,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Gruptaki herkese tek bir e-posta adresinden e-posta gönderin"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
@@ -7301,6 +7402,18 @@
       ],
       "No parent folder": [
         "Üst klasör yok"
+      ],
+      "Only current location": [
+        "Yalnızca geçerli konum"
+      ],
+      "Only current location: ${ name }": [
+        "Yalnızca geçerli konum: ${ name }"
+      ],
+      "Verify content": [
+        "İçeriği doğrula"
+      ],
+      "Verify thumbnails": [
+        "Küçük görselleri doğrula"
       ]
     },
     "Option group label": {
@@ -8271,6 +8384,9 @@
       "Account recovery": [
         "Hesap kurtarma"
       ],
+      "Account Temporarily Locked": [
+        "Hesap geçici olarak kilitlendi"
+      ],
       "Active": [
         "İşlenen"
       ],
@@ -8474,8 +8590,14 @@
       "Desktop": [
         "Bilgisayar"
       ],
+      "Device": [
+        "Aygıt"
+      ],
       "Devices": [
         "Aygıtlar"
+      ],
+      "Diagnostics": [
+        "Tanılama"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Sayısal imzanın bir bölümü doğrulandı. Bu dosya, ${ BRAND_NAME } hesabı olmayan bir kullanıcı tarafından herkese açık bir paylaşım bağlantısı ile oluşturulmuş. Bu nedenle kimliği doğrulanamadı."
@@ -8650,11 +8772,20 @@
       "Last uploaded by": [
         "Son yükleyen"
       ],
+      "Level": [
+        "Düzey"
+      ],
       "Link confirmation": [
         "Bağlantı onayı"
       ],
       "Location": [
         "Konum"
+      ],
+      "Logger": [
+        "Günlük kaydı oluşturucu"
+      ],
+      "Logs": [
+        "Günlük kayıtları"
       ],
       "Manage secure link": [
         "Güvenli bağlantıyı yönet"
@@ -8667,6 +8798,9 @@
       ],
       "Merging contacts": [
         "Kişileri birleştirme"
+      ],
+      "Message": [
+        "İleti"
       ],
       "MIME type": [
         "MIME türü"
@@ -8938,6 +9072,9 @@
       ],
       "This link is password protected": [
         "Bu bağlantı parola ile korunmuş"
+      ],
+      "Time": [
+        "Zaman"
       ],
       "Total size": [
         "Toplam boyut"

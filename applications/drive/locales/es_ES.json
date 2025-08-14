@@ -134,6 +134,9 @@
       "Change": [
         "Cambio"
       ],
+      "Change password": [
+        "Cambiar contraseña"
+      ],
       "Chat with us": [
         "Chatea con nosotros"
       ],
@@ -307,6 +310,9 @@
       "Details": [
         "Detalles"
       ],
+      "Diagnostics": [
+        "Diagnósticos"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -340,8 +346,14 @@
       "Download apps": [
         "Descargar aplicaciones"
       ],
+      "Download info": [
+        "Descargar información"
+      ],
       "Download logs": [
         "Descargar los registros"
+      ],
+      "Download results": [
+        "Descargar resultados"
       ],
       "Drive Locked": [
         "Unidad bloqueada"
@@ -744,6 +756,9 @@
       ],
       "Retry": [
         "Reintentar"
+      ],
+      "Run diagnostics": [
+        "Ejecutar diagnósticos"
       ],
       "Save": [
         "Guardar"
@@ -2337,6 +2352,11 @@
         "Actualización de un evento que comienza el ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacto de confianza"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "«${ sanitizedName }» ya existe."
@@ -2414,6 +2434,9 @@
       ],
       "Device name does not match": [
         "El nombre del dispositivo no coincide."
+      ],
+      "Diagnostics failed": [
+        "Diagnóstico fallido"
       ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
@@ -3845,6 +3868,9 @@
         "Eliminar unidad bloqueada",
         "Eliminar unidades bloqueadas"
       ],
+      "Details": [
+        "Detalles"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Se ha cargado este archivo de forma segura por ${ emailAddress }."
       ],
@@ -3950,6 +3976,9 @@
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Introduce tu propia contraseña (como contacto de confianza)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tiempo restante estimado: ${ estimatedMinutes } minuto",
         "Tiempo restante estimado: ${ estimatedMinutes } minutos"
@@ -4025,6 +4054,9 @@
       ],
       "from the version history?": [
         "del historial de versiones?"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Obtener registros y otra información para soporte técnico y resolución de problemas"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Descarga la aplicación para hacer una copia de seguridad de las fotos de tu teléfono o cárgalas aquí."
@@ -4105,6 +4137,9 @@
       "Initializing": [
         "Inicializando"
       ],
+      "Integrity issues found": [
+        "Problemas de integridad encontrados"
+      ],
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
       ],
@@ -4116,6 +4151,9 @@
       ],
       "Invite link copied": [
         "Se ha copiado el enlace de la invitación."
+      ],
+      "Issues found": [
+        "Problemas encontrados"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece ser que recientemente has intentado cargar ${ uploadName }. Si no se ha podido cargar, ${ replaceFile }. Si la carga está en proceso, reemplazarla cancela la carga en curso."
@@ -4261,6 +4299,9 @@
       ],
       "No group found": [
         "No se ha encontrado ningún grupo."
+      ],
+      "No issue found": [
+        "No se encontró ningún problema"
       ],
       "No payment is required at this time.": [
         "En este momento no se requiere ningún pago."
@@ -4466,6 +4507,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "Restaurando Fotos... Deja la pestaña abierta."
+      ],
+      "Running diagnostics...": [
+        "Ejecutando diagnósticos..."
       ],
       "Saving...": [
         "Guardando..."
@@ -4704,6 +4748,9 @@
       ],
       "This will upload a new version of the folder": [
         "Esto cargará una nueva versión de la carpeta."
+      ],
+      "Time": [
+        "Fecha"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar tu pago, envía ${ btcAmountBold } a la dirección de abajo."
@@ -5692,6 +5739,9 @@
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Tu contraseña (contacto de confianza)"
       ]
     },
     "Label for contact group color": {
@@ -7305,6 +7355,18 @@
       ],
       "No parent folder": [
         "No hay carpeta superior."
+      ],
+      "Only current location": [
+        "Solo ubicación actual"
+      ],
+      "Only current location: ${ name }": [
+        "Solo la ubicación actual: ${ name }"
+      ],
+      "Verify content": [
+        "Verificar contenido"
+      ],
+      "Verify thumbnails": [
+        "Verificar miniaturas"
       ]
     },
     "Option group label": {
@@ -8255,6 +8317,9 @@
       "Account recovery": [
         "Recuperación de cuenta"
       ],
+      "Account Temporarily Locked": [
+        "Cuenta temporalmente bloqueada"
+      ],
       "Active": [
         "Activo"
       ],
@@ -8455,8 +8520,14 @@
       "Desktop": [
         "Escritorio"
       ],
+      "Device": [
+        "Dispositivo"
+      ],
       "Devices": [
         "Dispositivos"
+      ],
+      "Diagnostics": [
+        "Diagnósticos"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Firma digital parcialmente verificada. Este archivo fue creado usando un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que su identidad no puede ser verificada."
@@ -8631,11 +8702,20 @@
       "Last uploaded by": [
         "Subido por última vez por"
       ],
+      "Level": [
+        "Nivel"
+      ],
       "Link confirmation": [
         "Confirmación de enlace"
       ],
       "Location": [
         "Ubicación"
+      ],
+      "Logger": [
+        "Creador de registros"
+      ],
+      "Logs": [
+        "Registros"
       ],
       "Manage secure link": [
         "Administrar enlace seguro"
@@ -8648,6 +8728,9 @@
       ],
       "Merging contacts": [
         "Combinando contactos"
+      ],
+      "Message": [
+        "Mensaje"
       ],
       "MIME type": [
         "Tipo MIME"
@@ -8919,6 +9002,9 @@
       ],
       "This link is password protected": [
         "Este enlace está protegido con contraseña."
+      ],
+      "Time": [
+        "Fecha"
       ],
       "Total size": [
         "Tamaño total"
