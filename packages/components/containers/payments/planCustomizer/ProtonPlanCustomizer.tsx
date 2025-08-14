@@ -197,7 +197,14 @@ const AddonCustomizer = ({
         // So we need to prevent user from doing that.
         const isForbiddenScheduledModification = latestSubscription?.Renew === Renew.Disabled;
         const minAddonNumberIfModificationFordidden = subscriptionPlan.getTotalByMaxKey(addonMaxKey);
-        if (isForbiddenScheduledModification && minAddonNumberIfModificationFordidden > value) {
+
+        if (
+            isForbiddenScheduledModification &&
+            minAddonNumberIfModificationFordidden > value &&
+            // If user changes the plan, then we don't need to check for forbidden modification,
+            // because in this case it will be SubscriptionMode.Proration which doesn't have this limitation.
+            subscriptionPlan.getPlanName() === selectedPlan.getPlanName()
+        ) {
             decreaseBlockedReasons.push('forbidden-modification');
             return minAddonNumberIfModificationFordidden;
         }
