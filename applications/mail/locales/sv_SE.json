@@ -150,6 +150,9 @@
       "Change page": [
         "Ändra sida"
       ],
+      "Change password": [
+        "Ändra lösenord"
+      ],
       "Change sorting": [
         "Ändra sortering"
       ],
@@ -413,6 +416,9 @@
       "Expand": [
         "Expandera"
       ],
+      "Expand composer": [
+        "Expandera redigeringsfönster"
+      ],
       "Expand navigation bar to see folders": [
         "Expandera navigeringsfält för att se mappar"
       ],
@@ -642,6 +648,9 @@
       "Mark legitimate": [
         "Markera legitimt"
       ],
+      "Maximize composer": [
+        "Maximera redigeringsfönster"
+      ],
       "Maybe": [
         "Kanske"
       ],
@@ -660,6 +669,9 @@
       "Messages to this recipient": [
         "Meddelanden till denna mottagare"
       ],
+      "Minimize composer": [
+        "Minimera redigeringsfönster"
+      ],
       "Modify": [
         "Modifiera"
       ],
@@ -674,6 +686,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Fler alternativ för konton"
       ],
       "More refine actions": [
         "Fler finjusterande åtgärder"
@@ -989,6 +1004,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Ställ in ${ MAIL_APP_NAME } som standardapplikation för e-post"
+      ],
+      "Set as default": [
+        "Ställ in som standard"
       ],
       "Set encryption": [
         "Ställ in kryptering"
@@ -1747,6 +1765,9 @@
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } hade preliminärt accepterat en inbjudan och föreslagit en ny tid för en förekomst av denna händelse. Svar och förslag är inaktuella."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } har preliminärt accepterat en inbjudan och föreslagit en ny tid för denna händelse. Svar och förslag är inaktuella."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
         "${ participantName } hade preliminärt accepterat en inbjudan till en förekomst av händelsen."
@@ -3030,6 +3051,9 @@
         "Nya e-postmeddelanden från ${ senderEmailAddress } och ${ otherSendersCount } annan kommer inte att levereras och kommer att tas bort permanent.",
         "Nya e-postmeddelanden från ${ senderEmailAddress } och ${ otherSendersCount } andra kommer inte att levereras och kommer att tas bort permanent."
       ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
+        "Nya e-postmeddelanden från ${ senderEmailAddress } kommer inte att levereras och kommer att tas bort permanent."
+      ],
       "No folders": [
         "Inga mappar"
       ],
@@ -3182,6 +3206,11 @@
         "Krypterad med noll åtkomst. Mottagaren har inaktiverat end-to-end-kryptering på sitt konto."
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betrodd kontakt"
+      ]
+    },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } för <${ email }>. Du kan lägga till en annan nyckel eller inaktivera kryptering för denna kontakt för att lösa problemet."
@@ -3286,6 +3315,9 @@
       ],
       "Error while saving draft. Please try again.": [
         "Fel när utkast sparades. Försök igen."
+      ],
+      "Error while sending the message. Message is not sent.": [
+        "Fel när meddelandet skulle skickas. Meddelandet skickades inte."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Misslyckades att kryptera bilaga. Försök igen."
@@ -3531,6 +3563,9 @@
       ],
       "The label name is too long. Please choose a different name.": [
         "Etikettnamnet är för långt. Välj ett annat namn."
+      ],
+      "The maximum expiration is 4 weeks": [
+        "Den maximala utgången är 4 veckor"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
@@ -5035,6 +5070,9 @@
       "default email address": [
         "standard e-postadress"
       ],
+      "Default email application": [
+        "Standardapplikation för e-post"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Detektering sker på din enhet, så ingen data från din e-post skickas till våra servrar."
       ],
@@ -5162,6 +5200,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Ange ditt eget lösenord (som organisationsadministratör)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Beräknad återstående tid: ${ estimatedMinutes } minut",
@@ -5534,6 +5575,9 @@
       "Organization size": [
         "Organisationens storlek"
       ],
+      "Other accounts": [
+        "Andra konton"
+      ],
       "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
         "Vårt system flaggade detta som misstänkt. Om det inte är ett nätfiske eller bedrägerimeddelande, markera som legitimt."
       ],
@@ -5736,6 +5780,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post för denna webbläsare. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Ställ in ${ MAIL_APP_NAME } som din standardapplikation för e-post. ${ MAIL_APP_NAME } kommer öppnas automatiskt när du klickar på en e-postlänk."
       ],
       "Setting up ${ feature }…": [
         "Ställer in ${ feature }…"
@@ -6379,6 +6426,9 @@
       "Your private writing assistant": [
         "Din privata skrivassistent"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer förnyas automatiskt varje månad."
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
       ]
@@ -6414,6 +6464,12 @@
       ],
       "WKD": [
         "WKD"
+      ]
+    },
+    "Key pinning": {
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Vill du lita på den primära offentliga nyckeln med följande fingeravtryck?",
+        "Vill du lita på de primära offentliga nycklarna med följande fingeravtryck?"
       ]
     },
     "Key validation warning": {
@@ -6932,6 +6988,9 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
       ]
     },
     "Label attach to date input to select a date": {
@@ -8857,6 +8916,10 @@
       "Do you want to send the email anyway?": [
         "Vill du skicka e-posten ändå?"
       ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Vi har upptäckt fel. Din e-post kan inte skickas till den angivna e-postadressen på grund av följande anledning:",
+        "Vi har upptäckt fel. Din e-post kan inte skickas till någon av de angivna e-postadresserna på grund av följande anledningar:"
+      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Vi har upptäckt några fel. Din e-post kan inte skickas till en eller flera av de angivna e-postadresserna på grund av följande anledning:"
       ]
@@ -9371,9 +9434,13 @@
         "${ elementsCount } konversation markerad som oläst.",
         "${ elementsCount } konversationer markerade som olästa."
       ],
-      "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } konversation flyttades till ${ folderName }.",
-        "${ elementsCount } konversationer flyttades till ${ folderName }."
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } konversation flyttades till ${ labelName }.",
+        "${ elementsCount } konversationer flyttades till ${ labelName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } konversation flyttad till skräppost och avsändare lades till i din skräppostlista.",
+        "${ elementsCount } konversationer flyttades till skräppost och avsändare lades till i din skräppostlista."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } konversation borttaget från ${ labelName }.",
@@ -9403,9 +9470,9 @@
         "${ elementsCount } meddelande markerat som oläst.",
         "${ elementsCount } meddelanden markerade som olästa."
       ],
-      "${ elementsCount } message moved to ${ folderName }.": [
-        "${ elementsCount } meddelande flyttat till ${ folderName }.",
-        "${ elementsCount } meddelanden flyttade till ${ folderName }."
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } meddelande flyttades till ${ labelName }.",
+        "${ elementsCount } meddelanden flyttades till ${ labelName }."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } meddelande borttaget från ${ labelName }.",
@@ -9459,11 +9526,8 @@
       "Conversation marked as unread.": [
         "Konversation markerad som oläst."
       ],
-      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "Konversation flyttat till ${ folderName } och avsändaren har lagts till i din lista som inte är skräppost."
-      ],
-      "Conversation moved to ${ folderName }.": [
-        "Konversation flyttad till ${ folderName }."
+      "Conversation moved to ${ labelName }.": [
+        "Konversation flyttad till ${ labelName }."
       ],
       "Conversation moved to spam and sender added to your spam list.": [
         "Konversation flyttad till skräppost och avsändare lades till i din skräppostlista."
@@ -9525,11 +9589,11 @@
       "Message marked as unread.": [
         "Meddelande markerat som oläst."
       ],
-      "Message moved to ${ folderName } and sender added to your not spam list.": [
-        "Meddelandet flyttat till ${ folderName } och avsändaren har lagts till i din lista som inte är skräppost."
+      "Message moved to ${ labelName }.": [
+        "Meddelande flyttat till ${ labelName }."
       ],
-      "Message moved to ${ folderName }.": [
-        "Meddelande flyttat till ${ folderName }."
+      "Message moved to spam and sender added to your spam list.": [
+        "Meddelande flyttad till skräppost och avsändare lades till i din skräppostlista."
       ],
       "Message removed from ${ labelName }.": [
         "Meddelande borttaget från ${ labelName }."
@@ -9772,6 +9836,9 @@
       ],
       "Account recovery": [
         "Kontoåterställning"
+      ],
+      "Account Temporarily Locked": [
+        "Konto tillfälligt låst"
       ],
       "Action all conversations": [
         "Åtgärda alla konversationer"
@@ -10400,6 +10467,9 @@
       ],
       "Start import process": [
         "Starta importprocessen"
+      ],
+      "Storage capacity warning": [
+        "Varning för lagringskapacitet"
       ],
       "Subject missing": [
         "Ämne saknas"
