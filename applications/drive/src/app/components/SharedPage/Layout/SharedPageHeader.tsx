@@ -7,6 +7,7 @@ import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
 import { getAppHref, getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
+import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import useFlag from '@proton/unleash/useFlag';
 
 import config from '../../../config';
@@ -77,7 +78,7 @@ export const SharedPageHeader = () => {
                             href={getAppHref('/', APPS.PROTONDRIVE, localID)}
                             target="_blank"
                         >
-                            {c('Action').t`Go to ${DRIVE_SHORT_APP_NAME}`}
+                            {goToPlanOrAppNameText(DRIVE_SHORT_APP_NAME)}
                         </ButtonLike>
                         <UserInfo user={user} />
                     </>
