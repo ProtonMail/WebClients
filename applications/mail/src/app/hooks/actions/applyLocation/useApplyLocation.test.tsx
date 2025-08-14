@@ -10,7 +10,6 @@ import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
 import { GlobalModalContext } from 'proton-mail/containers/globalModals/GlobalModalProvider';
 import { ModalType } from 'proton-mail/containers/globalModals/inteface';
-import { scheduleTargetWithWarning } from 'proton-mail/helpers/location/moveModal/shouldOpenModal';
 import { labelMessages, unlabelMessages } from 'proton-mail/store/mailbox/mailboxActions';
 
 import { APPLY_LOCATION_TYPES } from './interface';
@@ -174,25 +173,22 @@ describe('useApplyLocation', () => {
         });
 
         describe('modal tests', () => {
-            it.each(Array.from(scheduleTargetWithWarning))(
-                'should display schedule modal when moving from schedule to trash %s',
-                async (destinationLabelID) => {
-                    const { result } = renderHook(() => useApplyLocation(), { wrapper });
+            it('should display schedule modal when moving from SCHEDULED to TRASH', async () => {
+                const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
-                    await result.current.applyLocation({
-                        type: APPLY_LOCATION_TYPES.MOVE,
-                        elements: [{ ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED] }],
-                        destinationLabelID,
-                    });
+                await result.current.applyLocation({
+                    type: APPLY_LOCATION_TYPES.MOVE,
+                    elements: [{ ID: '1', ConversationID: '123', LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED] }],
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                });
 
-                    expect(notifyMock).toHaveBeenCalled();
-                    expect(notifyMock).toHaveBeenCalledWith(
-                        expect.objectContaining({
-                            type: ModalType.Schedule,
-                        })
-                    );
-                }
-            );
+                expect(notifyMock).toHaveBeenCalled();
+                expect(notifyMock).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        type: ModalType.Schedule,
+                    })
+                );
+            });
 
             it('should not call the schedule modal when moving schedule message to non blocked folder', async () => {
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });
@@ -502,36 +498,33 @@ describe('useApplyLocation', () => {
         });
 
         describe('modal tests', () => {
-            it.each(Array.from(scheduleTargetWithWarning))(
-                'should display schedule modal when moving from schedule to trash %s',
-                async (destinationLabelID) => {
-                    const { result } = renderHook(() => useApplyLocation(), { wrapper });
+            it('should display schedule modal when moving from SCHEDULED to TRASH', async () => {
+                const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
-                    await result.current.applyLocation({
-                        type: APPLY_LOCATION_TYPES.MOVE,
-                        elements: [
-                            {
-                                ID: '1',
-                                NumMessages: 10,
-                                Labels: [
-                                    {
-                                        ID: MAILBOX_LABEL_IDS.SCHEDULED,
-                                        ContextNumMessages: 10,
-                                    },
-                                ],
-                            },
-                        ],
-                        destinationLabelID,
-                    });
+                await result.current.applyLocation({
+                    type: APPLY_LOCATION_TYPES.MOVE,
+                    elements: [
+                        {
+                            ID: '1',
+                            NumMessages: 10,
+                            Labels: [
+                                {
+                                    ID: MAILBOX_LABEL_IDS.SCHEDULED,
+                                    ContextNumMessages: 10,
+                                },
+                            ],
+                        },
+                    ],
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                });
 
-                    expect(notifyMock).toHaveBeenCalled();
-                    expect(notifyMock).toHaveBeenCalledWith(
-                        expect.objectContaining({
-                            type: ModalType.Schedule,
-                        })
-                    );
-                }
-            );
+                expect(notifyMock).toHaveBeenCalled();
+                expect(notifyMock).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        type: ModalType.Schedule,
+                    })
+                );
+            });
 
             it('should not call the schedule modal when moving schedule message to non blocked folder', async () => {
                 const { result } = renderHook(() => useApplyLocation(), { wrapper });

@@ -8,30 +8,26 @@ import type { Element } from 'proton-mail/models/element';
 import type { ConversationState } from 'proton-mail/store/conversations/conversationsTypes';
 
 import {
-    scheduleTargetWithWarning,
     shouldOpenConfirmationModalForConverversation,
     shouldOpenConfirmationModalForMessages,
 } from './shouldOpenModal';
 
 describe('shouldOpenConfirmationModalForMessages', () => {
     describe('Schedule modal', () => {
-        it.each(Array.from(scheduleTargetWithWarning))(
-            'should return schedule modal if the element is scheduled and moved to warning folder %s',
-            (destinationLabelID) => {
-                const result = shouldOpenConfirmationModalForMessages({
-                    elements: [
-                        {
-                            ConversationID: '123',
-                            LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED],
-                        } as unknown as Element,
-                    ],
-                    destinationLabelID,
-                    mailSettings: {} as MailSettings,
-                });
+        it('should return schedule modal if the element is scheduled and moved to TRASH', () => {
+            const result = shouldOpenConfirmationModalForMessages({
+                elements: [
+                    {
+                        ConversationID: '123',
+                        LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED],
+                    } as unknown as Element,
+                ],
+                destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                mailSettings: {} as MailSettings,
+            });
 
-                expect(result).toBe(ModalType.Schedule);
-            }
-        );
+            expect(result).toBe(ModalType.Schedule);
+        });
 
         it('should return null if element is empty', () => {
             const result = shouldOpenConfirmationModalForMessages({
@@ -156,25 +152,22 @@ describe('shouldOpenConfirmationModalForMessages', () => {
 
 describe('shouldOpenConfirmationModalForConverversation', () => {
     describe('Schedule modal', () => {
-        it.each([[MAILBOX_LABEL_IDS.TRASH], [MAILBOX_LABEL_IDS.DRAFTS], [MAILBOX_LABEL_IDS.ALL_DRAFTS]])(
-            'should return schedule modal if the element is scheduled and moved to warning folder %s',
-            (destinationLabelID) => {
-                const result = shouldOpenConfirmationModalForConverversation({
-                    elements: [
-                        {
-                            ConversationID: '123',
-                            Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 1 }],
-                        } as unknown as Element,
-                    ],
-                    destinationLabelID,
-                    mailSettings: {} as MailSettings,
-                    folders: [],
-                    conversationsFromState: [undefined],
-                });
+        it('should return schedule modal if the element is scheduled and moved to TRASH', () => {
+            const result = shouldOpenConfirmationModalForConverversation({
+                elements: [
+                    {
+                        ConversationID: '123',
+                        Labels: [{ ID: MAILBOX_LABEL_IDS.SCHEDULED, ContextNumMessages: 1 }],
+                    } as unknown as Element,
+                ],
+                destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                mailSettings: {} as MailSettings,
+                folders: [],
+                conversationsFromState: [undefined],
+            });
 
-                expect(result).toBe(ModalType.Schedule);
-            }
-        );
+            expect(result).toBe(ModalType.Schedule);
+        });
 
         it('should return null if the element is empty', () => {
             const result = shouldOpenConfirmationModalForConverversation({

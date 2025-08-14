@@ -22,6 +22,11 @@ export const conversationAllDraftRules: MoveEngineRule = ({ element }) => {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
 
+    const conversationNumMessages = element.NumMessages;
+    if (getContextNumMessages(element, MAILBOX_LABEL_IDS.SCHEDULED) === conversationNumMessages) {
+        return MoveEngineRuleResult.DENIED;
+    }
+
     return MoveEngineRuleResult.ALLOWED;
 };
 
@@ -135,11 +140,16 @@ export const conversationSentRules: MoveEngineRule = ({ element }) => {
     return MoveEngineRuleResult.ALLOWED;
 };
 
-// Any conversation can move to DRAFTS
+// Any conversation can move to DRAFTS except schedule
 // Sent or received messages cannot move to DRAFTS, but they will be moved to SENT or INBOX if they are not already there
 export const conversationDraftRules: MoveEngineRule = ({ element }) => {
     if (!isConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
+    }
+
+    const conversationNumMessages = element.NumMessages;
+    if (getContextNumMessages(element, MAILBOX_LABEL_IDS.SCHEDULED) === conversationNumMessages) {
+        return MoveEngineRuleResult.DENIED;
     }
 
     return MoveEngineRuleResult.ALLOWED;
