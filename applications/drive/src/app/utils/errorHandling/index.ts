@@ -74,3 +74,7 @@ export function sendErrorReport(error: Error | EnrichedError | unknown, addition
     console.warn(error, context);
     traceError(errorForReporting, context);
 }
+
+export function errorToString(error: unknown): string {
+    return error instanceof Error ? error.message : String(error);
+}
