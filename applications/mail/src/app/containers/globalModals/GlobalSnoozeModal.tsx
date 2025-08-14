@@ -33,6 +33,9 @@ export const GlobalSnoozeModal = () => {
             setItem(HIDE_SNOOZE_CONFIRMATION_LS_KEY, 'true');
         }
 
+        setOpen(false);
+        setSnoozeModalProps(null);
+
         snoozeModalProps?.onConfirm();
     };
 
