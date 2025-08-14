@@ -15,6 +15,7 @@ import {
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 
+import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupType } from '../../../signup/interfaces';
 import {
     type AvailablePlan,
@@ -91,6 +92,11 @@ const DriveSignupInner = () => {
     const { options, initializationStatus } = usePaymentOptimistic();
 
     const notifyError = useNotifyErrorHandler();
+
+    /**
+     * We have a recovery step in this flow, so let's prefetch the recovery kit
+     */
+    usePrefetchGenerateRecoveryKit();
 
     /**
      * Prevent content flashes where selected plan is initially the default before initialization occurs
