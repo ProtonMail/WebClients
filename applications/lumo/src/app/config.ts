@@ -1,0 +1,13 @@
+export const CLIENT_TYPE = 1;
+export const CLIENT_SECRET = '';
+export const APP_VERSION = '5.0.999.999';
+export const COMMIT = '5a9a2fe0b0600cc7425071ea562a1b7d92c10f2b';
+export const BRANCH = 'jj/keep/5a9a2fe0b0600cc7425071ea562a1b7d92c10f2b';
+export const DATE_VERSION = 'Mon, 21 Jul 2025 15:17:51 GMT';
+export const APP_NAME = 'proton-lumo';
+export const API_URL =  '/api';
+export const SSO_URL = '';
+export const LOCALES = {"en_US":"English"};
+export const VERSION_PATH = '/assets/version.json';
+export const SENTRY_DSN = '';
+export const SENTRY_DESKTOP_DSN = '';

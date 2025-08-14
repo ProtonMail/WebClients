@@ -1,0 +1,13 @@
+@keyframes skeleton-loading {
+	to {
+		background-position: left;
+	}
+}
+
+.skeleton {
+	content: ' ';
+	background: linear-gradient(90deg, rgb(133 236 211 / 0.09) 14.93%, rgb(167 146 255 / 0.3) 100%) right / 300% 100%;
+	animation: skeleton-loading 1.5s linear infinite alternate;
+
+	// background: radial-gradient(221.27% 579.55% at 217.5% -69.64%, rgba(133, 236, 211, 0.09) 14.93%, rgba(167, 146, 255, 0.3) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+}

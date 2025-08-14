@@ -167,6 +167,7 @@ export const handleCreateUser = async ({
                                     ((invite.type === 'wallet' && invite.data.preVerifiedAddressToken) ||
                                         (invite.type === 'drive' && invite.data.preVerifiedAddressToken) ||
                                         (invite.type === 'pass' && invite.data.preVerifiedAddressToken) ||
+                                        (invite.type === 'lumo' && invite.data.preVerifiedAddressToken) ||
                                         (invite.type === 'porkbun' && invite.data.preVerifiedAddressToken))
                                 ) {
                                     return {

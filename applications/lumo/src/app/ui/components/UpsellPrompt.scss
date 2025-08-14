@@ -1,0 +1,6 @@
+@import '~@proton/styles/scss/lib';
+
+.lumoprompt {
+	min-block-size: #{rem(500)};
+	inline-size: #{rem(400)};
+}

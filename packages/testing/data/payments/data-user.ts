@@ -32,6 +32,7 @@ const user: User = {
     Delinquent: 0,
     Billed: 0 as any,
     NumAI: 0,
+    NumLumo: 0,
     Keys: [],
     ToMigrate: 0,
     Email: 'testusermock@proton.me',

@@ -1,0 +1,24 @@
+@import '~@proton/styles/scss/lib';
+
+.modal-two--upsell-lumoplus {
+	--size: #{rem(480)};
+
+	&-gradient {
+		background: linear-gradient(27deg, var(--promotion-background-start) 0%, var(--background-norm) 100%);
+	}
+}
+
+.feature-table-layout {
+	display: grid;
+	grid-template-columns: 1fr 8em 8em;
+}
+
+.table-rounded {
+	border-start-start-radius: var(--border-radius-lg);
+	border-start-end-radius: var(--border-radius-lg);
+}
+
+.feature-table-item:last-child {
+	border-end-start-radius: var(--border-radius-lg);
+	border-end-end-radius: var(--border-radius-lg);
+}

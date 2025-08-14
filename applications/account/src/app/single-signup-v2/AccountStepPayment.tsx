@@ -463,6 +463,7 @@ const AccountStepPayment = ({
                             loading={loadingSignup || loadingPaymentDetails}
                             pill
                             data-testid="pay"
+                            className="lumo-payment-trigger" //do not remove `lumo-payment-trigger` it's being used by lumo mobile
                             suffix={(type) => {
                                 if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
                                     return (

@@ -1,0 +1,24 @@
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+.upsell-card {
+	--upgrade-color-stop-1: #734afd;
+	--upgrade-color-stop-2: #d94fd3;
+	--upgrade-background-color: #ffffff0d;
+
+	background: linear-gradient(85.16deg, rgb(197 183 255 / 0.15) 0%, rgb(197 183 255 / 0.05) 100%);
+	border: 1px solid #c5b7ff26;
+	inset-block-end: 8px;
+
+	.upsell-card-title {
+		color: var(--text-error-banner-title);
+	}
+
+	.upsell-card-message {
+		color: var(--text-error-banner-message);
+	}
+
+	.upsell-card-button {
+		color: var(--text-error-banner-button);
+	}
+}

@@ -1,0 +1,52 @@
+@use 'sass:math';
+@import '~@proton/styles/scss/lib';
+
+@keyframes slideAcross {
+	from {
+		transform: translateX(100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+.error-card {
+	// --upgrade-background-color: #ffffff0d;
+	background: linear-gradient(85.16deg, rgb(255 172 47 / 0.15) 0%, rgb(255 172 47 / 0.05) 100%);
+	border: 1px solid #c5b7ff26;
+	inset-block-end: 8px;
+
+	&.high-load-warning {
+		inset-block-end: 0;
+		background: linear-gradient(85.16deg, rgb(255 172 47 / 0.15) 0%, rgb(255 172 47 / 0.05) 100%), white;
+		animation: slideAcross 0.3s ease-out;
+		border-radius: var(--border-radius-xl);
+
+		@include media('<=small') {
+			border-radius: 0;
+		}
+	}
+
+	.error-card-title {
+		color: var(--text-error-banner-title);
+	}
+
+	.error-card-message {
+		color: var(--text-error-banner-message);
+	}
+
+	.error-card-button {
+		color: var(--text-error-banner-button);
+	}
+
+	&-dismiss-button {
+		&#{&} {
+			transform: translate(35%, -35%);
+
+			// to get 24px button
+			--padding-block: #{rem(3)};
+			--padding-inline: #{rem(3)};
+		}
+	}
+}

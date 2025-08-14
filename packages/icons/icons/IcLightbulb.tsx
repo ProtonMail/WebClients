@@ -40,3 +40,4 @@ export const IcLightbulb = ({ alt, title, size = 4, className = '', viewBox = '0
         </>
     );
 };
+

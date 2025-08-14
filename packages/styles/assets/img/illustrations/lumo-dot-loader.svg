@@ -1,0 +1,19 @@
+<svg viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="dot-loader">
+        <circle cx="3" cy="8" r="1.5" fill="#1ea885">
+            <!-- First circle animates quickly without easing -->
+            <animate attributeName="r" values="1.5;2.25;1.5" dur="0.9s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="0.9s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="9" cy="8" r="1.5" fill="#1ea885" opacity="0.5">
+            <!-- Second circle starts animation quickly without easing -->
+            <animate attributeName="r" values="1.5;2.25;1.5" begin="0.3s" dur="0.9s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.5;1;0.5" begin="0.3s" dur="0.9s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="15" cy="8" r="1.5" fill="#1ea885" opacity="0.5">
+            <!-- Third circle starts animation quickly without easing -->
+            <animate attributeName="r" values="1.5;2.25;1.5" begin="0.6s" dur="0.9s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.5;1;0.5" begin="0.6s" dur="0.9s" repeatCount="indefinite" />
+        </circle>
+    </g>
+</svg>

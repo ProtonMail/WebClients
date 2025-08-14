@@ -46,6 +46,10 @@ enum CommonFeatureFlag {
     CryptoEnforceOpenpgpGrammar = 'CryptoEnforceOpenpgpGrammar',
     ReferralExpansion = 'ReferralExpansion',
     AlwaysOnUpsell = 'AlwaysOnUpsell',
+    LumoEarlyAccess = 'LumoEarlyAccess',
+    LumoTooling = 'LumoTooling',
+    LumoHighLoad = 'LumoHighLoad',
+    LumoDeactivateGuestModeFrontend = 'LumoDeactivateGuestModeFrontend',
 }
 
 enum AccountFlag {

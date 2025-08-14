@@ -22,15 +22,24 @@ class ProtonTelemetry {
      */
     private preInitialisationEventQueue: EventArgs[] = [];
 
-    public init({ config, uid }: { config: ProtonConfig; uid: string }) {
+    public init({
+        config,
+        uid,
+        eventOptions,
+        overridenPageTitle,
+    }: {
+        config: ProtonConfig;
+        uid: string;
+        eventOptions?: TelemetryConfig['events'];
+        overridenPageTitle?: string;
+    }) {
         this.UID = uid;
         this.config = {
             endpoint: `${config.API_URL}/data/v1/telemetry`,
             appVersion: getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION),
             debug: process.env.NODE_ENV !== 'production',
-            events: {
-                click: false,
-            },
+            events: { ...eventOptions, click: false },
+            pageTitle: overridenPageTitle,
         };
 
         this.setTelemetry();

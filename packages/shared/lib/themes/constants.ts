@@ -14,6 +14,7 @@ export enum ThemeTypes {
     StorefrontWallet = 11,
     PassLight = 12,
     WalletDark = 13,
+    LumoLight = 14,
 }
 
 export enum ThemeModeSetting {

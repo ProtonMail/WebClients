@@ -1,0 +1,65 @@
+@import '~@proton/styles/scss/lib';
+
+.blob-top-right {
+	position: absolute;
+	inline-size: 62.5vw;
+	block-size: 78.125vh;
+	inset-block-start: -58.59vh;
+	inset-inline-end: -18.75vw;
+	border-radius: 50%;
+	background-color: rgb(109 74 255 / 0.05);
+	filter: blur(100px);
+	transform: rotate(41deg);
+	transform-origin: center center;
+	will-change: transform;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+}
+
+.blob-bottom-left {
+	position: absolute;
+	inline-size: 62.5vw;
+	block-size: 78.125vh;
+	inset-block-end: -43.95vh;
+	inset-inline-start: -25vw;
+	border-radius: 50%;
+	background-color: rgb(109 74 255 / 0.05);
+	filter: blur(100px);
+	will-change: transform;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+}
+
+/* Additional media query for smaller screens to adjust blur and size */
+@include media('<=#{em(768, 16)}') {
+	.blob-top-right {
+		display: none;
+	}
+
+	.blob-bottom-left {
+		display: none;
+	}
+}
+
+/* Extra adjustment for very small screens */
+@include media('<=#{em(480, 16)}') {
+	.blob-top-right {
+		inset-block-start: -50vw;
+		inset-inline-end: -40vw;
+		filter: blur(60px);
+	}
+
+	.blob-bottom-left {
+		inset-block-end: -30vw;
+		inset-inline-start: -40vw;
+		filter: blur(60px);
+	}
+}
+
+/* Safari-specific optimizations - improves sidebar rendering */
+@supports (-webkit-backdrop-filter: blur(1px)) {
+	.blob-top-right,
+	.blob-bottom-left {
+		transform: translateZ(0);
+	}
+}

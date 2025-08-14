@@ -18,9 +18,9 @@ interface AesGcmKeyOptions {
  */
 export const importKey = async (
     key: Uint8Array,
-    keyUsage: AesGcmKeyUsage[] = ['decrypt', 'encrypt']
+    { keyUsage = ['decrypt', 'encrypt'], extractable = false }: AesGcmKeyOptions = {}
 ): Promise<AesGcmCryptoKey> => {
-    return crypto.subtle.importKey('raw', key, ENCRYPTION_ALGORITHM, false, keyUsage);
+    return crypto.subtle.importKey('raw', key, ENCRYPTION_ALGORITHM, extractable, keyUsage);
 };
 
 /**
@@ -176,7 +176,7 @@ export const wrapKey = async (keyToWrap: AesGcmCryptoKey, wrappingKey: WrappingC
 export const unwrapKey = async (
     encryptedKeyBytes: Uint8Array,
     wrappingKey: WrappingCryptoKey,
-    unwrappedKeyUsage: AesGcmKeyUsage[] = ['decrypt', 'encrypt']
+    { keyUsage: unwrappedKeyUsage = ['decrypt', 'encrypt'], extractable = false }: AesGcmKeyOptions = {}
 ): Promise<AesGcmCryptoKey> => {
     const aesGcmKey = await crypto.subtle.unwrapKey(
         'raw',
@@ -185,7 +185,7 @@ export const unwrapKey = async (
         KEY_WRAPPING_ALGORITHM,
         // options for the key to unwrap
         ENCRYPTION_ALGORITHM,
-        false,
+        extractable,
         unwrappedKeyUsage
     );
     return aesGcmKey;
