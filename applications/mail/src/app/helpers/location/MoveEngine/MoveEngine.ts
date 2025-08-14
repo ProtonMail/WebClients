@@ -19,23 +19,23 @@ export class MoveEngine {
         this.folders = folders;
     }
 
-    private getRuleKey(targetLabelID: string) {
-        if (isCustomFolder(targetLabelID, this.folders)) {
+    private getRuleKey(destinationLabelID: string) {
+        if (isCustomFolder(destinationLabelID, this.folders)) {
             return CUSTOM_FOLDER_KEY;
         }
-        if (isCustomLabel(targetLabelID, this.labels)) {
+        if (isCustomLabel(destinationLabelID, this.labels)) {
             return CUSTOM_LABEL_KEY;
         }
-        return targetLabelID;
+        return destinationLabelID;
     }
 
-    addRule(targetLabelID: string, rule: MoveEngineRule) {
-        this.rules[targetLabelID] = rule;
+    addRule(destinationLabelID: string, rule: MoveEngineRule) {
+        this.rules[destinationLabelID] = rule;
     }
 
-    validateMove(targetLabelID: string, elements: Element[], removeLabel: boolean): MoveEngineCanMoveResult {
+    validateMove(destinationLabelID: string, elements: Element[], removeLabel: boolean): MoveEngineCanMoveResult {
         if (removeLabel) {
-            if (isCustomLabel(targetLabelID, this.labels) || targetLabelID === MAILBOX_LABEL_IDS.STARRED) {
+            if (isCustomLabel(destinationLabelID, this.labels) || destinationLabelID === MAILBOX_LABEL_IDS.STARRED) {
                 return {
                     allowedElements: elements,
                     deniedElements: [],
@@ -44,12 +44,12 @@ export class MoveEngine {
                 };
             }
 
-            throw new Error(`Cannot unlabel ${targetLabelID}`);
+            throw new Error(`Cannot unlabel ${destinationLabelID}`);
         }
 
-        const rule = this.rules[this.getRuleKey(targetLabelID)];
+        const rule = this.rules[this.getRuleKey(destinationLabelID)];
         if (!rule) {
-            throw new Error(`No rule found for destination ${targetLabelID}`);
+            throw new Error(`No rule found for destination ${destinationLabelID}`);
         }
 
         const errors: MoveEngineError[] = [];
@@ -59,7 +59,7 @@ export class MoveEngine {
 
         for (const element of elements) {
             const result = rule({
-                targetLabelID,
+                destinationLabelID,
                 labels: this.labels,
                 folders: this.folders,
                 element,

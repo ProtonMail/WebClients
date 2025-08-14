@@ -209,12 +209,12 @@ export const messageSnoozedRules: MoveEngineRule = ({ element }) => {
 };
 
 // Sent, drafts and scheduled messages cannot move to a category (which should be a "children of INBOX)
-export const messageCategoryRules: MoveEngineRule = ({ element, targetLabelID }) => {
+export const messageCategoryRules: MoveEngineRule = ({ element, destinationLabelID }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
-    if (hasLabel(element, targetLabelID)) {
+    if (hasLabel(element, destinationLabelID)) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
@@ -226,12 +226,12 @@ export const messageCategoryRules: MoveEngineRule = ({ element, targetLabelID })
 };
 
 // Any message can move to a custom folder
-export const messageCustomFolderRules: MoveEngineRule = ({ element, targetLabelID }) => {
+export const messageCustomFolderRules: MoveEngineRule = ({ element, destinationLabelID }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
-    if (hasLabel(element, targetLabelID)) {
+    if (hasLabel(element, destinationLabelID)) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
@@ -239,12 +239,12 @@ export const messageCustomFolderRules: MoveEngineRule = ({ element, targetLabelI
 };
 
 // Any message can move to a custom label
-export const messageCustomLabelRules: MoveEngineRule = ({ element, targetLabelID }) => {
+export const messageCustomLabelRules: MoveEngineRule = ({ element, destinationLabelID }) => {
     if (!isMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
     }
 
-    if (hasLabel(element, targetLabelID)) {
+    if (hasLabel(element, destinationLabelID)) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 

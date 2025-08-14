@@ -57,7 +57,7 @@ const ItemLabels = ({
                 type: APPLY_LOCATION_TYPES.APPLY_LABEL,
                 changes: { [labelID]: false },
                 elements: [element || ({} as Element)],
-                targetLabelID: labelID,
+                destinationLabelID: labelID,
                 removeLabel: true,
             });
         }
