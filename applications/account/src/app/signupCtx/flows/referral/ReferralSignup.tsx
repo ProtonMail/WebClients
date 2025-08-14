@@ -6,6 +6,7 @@ import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler'
 import { usePaymentOptimistic, usePaymentsInner } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
+import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import * as signupSearchParams from '../../helpers/signupSearchParams';
@@ -30,6 +31,11 @@ const ReferralSignupInner = () => {
     const signup = useSignup();
 
     const notifyError = useNotifyErrorHandler();
+
+    /**
+     * We have a recovery step in this flow, so let's prefetch the recovery kit
+     */
+    usePrefetchGenerateRecoveryKit();
 
     return (
         <>
