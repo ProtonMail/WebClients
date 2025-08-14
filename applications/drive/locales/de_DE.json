@@ -134,6 +134,9 @@
       "Change": [
         "Ändern"
       ],
+      "Change password": [
+        "Passwort ändern"
+      ],
       "Chat with us": [
         "Chatte mit uns"
       ],
@@ -310,6 +313,9 @@
       "Details": [
         "Details"
       ],
+      "Diagnostics": [
+        "Diagnose"
+      ],
       "Discard": [
         "Verwerfen"
       ],
@@ -346,8 +352,14 @@
       "Download apps": [
         "Apps herunterladen"
       ],
+      "Download info": [
+        "Infos herunterladen"
+      ],
       "Download logs": [
         "Protokolle herunterladen"
+      ],
+      "Download results": [
+        "Ergebnisse herunterladen"
       ],
       "Drive Locked": [
         "Laufwerk gesperrt"
@@ -750,6 +762,9 @@
       ],
       "Retry": [
         "Erneut versuchen"
+      ],
+      "Run diagnostics": [
+        "Diagnose ausführen"
       ],
       "Save": [
         "Speichern"
@@ -2343,6 +2358,11 @@
         "Aktualisierung zu einem Termin, der am ${ formattedStart } beginnt"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Vertrauenswürdiger Kontakt"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "„${ sanitizedName }“ ist bereits vorhanden"
@@ -2420,6 +2440,9 @@
       ],
       "Device name does not match": [
         "Gerätename stimmt nicht überein"
+      ],
+      "Diagnostics failed": [
+        "Diagnose fehlgeschlagen"
       ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
@@ -3873,6 +3896,9 @@
         "Gesperrtes Laufwerk löschen",
         "Gesperrte Laufwerke löschen"
       ],
+      "Details": [
+        "Details"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitale Signatur verifiziert. Diese Datei wurde von ${ emailAddress } sicher hochgeladen."
       ],
@@ -3978,6 +4004,9 @@
       "Enter your own password (as organization admin).": [
         "Eigenes Passwort (als Organisationsadministrator) eingeben."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minute",
         "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minuten"
@@ -4053,6 +4082,9 @@
       ],
       "from the version history?": [
         "dauerhaft aus dem Versionsverlauf löschen möchtest?"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Protokolle und andere Informationen für den technischen Support und die Fehlerbehebung abrufen"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Hol dir die App, um Fotos von deinem Telefon zu sichern, oder lade sie hier hoch."
@@ -4133,6 +4165,9 @@
       "Initializing": [
         "Wird initialisiert"
       ],
+      "Integrity issues found": [
+        "Integritätsprobleme gefunden"
+      ],
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
       ],
@@ -4144,6 +4179,9 @@
       ],
       "Invite link copied": [
         "Einladungslink kopiert"
+      ],
+      "Issues found": [
+        "Probleme gefunden"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Es sieht so aus, als hättest du kürzlich versucht, ${ uploadName } hochzuladen. Falls der Upload fehlgeschlagen hat, ersetze bitte ${ replaceFile }. Wenn der Upload noch im Gange ist, bricht das Ersetzen der Datei den laufenden Upload ab."
@@ -4289,6 +4327,9 @@
       ],
       "No group found": [
         "Keine Gruppe gefunden"
+      ],
+      "No issue found": [
+        "Kein Problem gefunden"
       ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
@@ -4494,6 +4535,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "Fotos werden wiederhergestellt... bitte behalte den Tab offen."
+      ],
+      "Running diagnostics...": [
+        "Diagnose wird ausgeführt ..."
       ],
       "Saving...": [
         "Wird gespeichert..."
@@ -4732,6 +4776,9 @@
       ],
       "This will upload a new version of the folder": [
         "Dadurch wird eine neue Version des Ordners hochgeladen."
+      ],
+      "Time": [
+        "Zeit"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
@@ -5720,6 +5767,9 @@
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Dein Passwort (vertrauenswürdiger Kontakt)"
       ]
     },
     "Label for contact group color": {
@@ -7336,6 +7386,18 @@
       ],
       "No parent folder": [
         "Kein übergeordneter Ordner"
+      ],
+      "Only current location": [
+        "Nur aktueller Standort"
+      ],
+      "Only current location: ${ name }": [
+        "Nur aktueller Standort: ${ name }"
+      ],
+      "Verify content": [
+        "Inhalt bestätigen"
+      ],
+      "Verify thumbnails": [
+        "Vorschaubilder überprüfen"
       ]
     },
     "Option group label": {
@@ -8286,6 +8348,9 @@
       "Account recovery": [
         "Kontowiederherstellung"
       ],
+      "Account Temporarily Locked": [
+        "Konto vorübergehend gesperrt"
+      ],
       "Active": [
         "Aktiv"
       ],
@@ -8486,8 +8551,14 @@
       "Desktop": [
         "Desktop"
       ],
+      "Device": [
+        "Gerät"
+      ],
       "Devices": [
         "Geräte"
+      ],
+      "Diagnostics": [
+        "Diagnose"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digitale Signatur teilweise verifiziert. Diese Datei wurde über einen öffentlich zugänglichen Teilen-Link von einem Benutzer ohne ${ BRAND_NAME }-Konto erstellt, weshalb dessen Identität nicht verifiziert werden kann."
@@ -8662,11 +8733,20 @@
       "Last uploaded by": [
         "Zuletzt hochgeladen von"
       ],
+      "Level": [
+        "Stufe"
+      ],
       "Link confirmation": [
         "Linkbestätigung"
       ],
       "Location": [
         "Speicherort"
+      ],
+      "Logger": [
+        "Quelle"
+      ],
+      "Logs": [
+        "Protokolle"
       ],
       "Manage secure link": [
         "Sicheren Link verwalten"
@@ -8679,6 +8759,9 @@
       ],
       "Merging contacts": [
         "Kontakte werden zusammengeführt"
+      ],
+      "Message": [
+        "Nachricht"
       ],
       "MIME type": [
         "MIME-Typ"
@@ -8950,6 +9033,9 @@
       ],
       "This link is password protected": [
         "Dieser Link ist passwortgeschützt"
+      ],
+      "Time": [
+        "Zeit"
       ],
       "Total size": [
         "Gesamtgröße"

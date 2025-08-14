@@ -137,6 +137,9 @@
       "Change": [
         "Αλλαγή"
       ],
+      "Change password": [
+        "Αλλαγή κωδικού πρόσβασης"
+      ],
       "Chat with us": [
         "Επικοινωνήστε μαζί μας"
       ],
@@ -313,6 +316,9 @@
       "Details": [
         "Λεπτομέρειες"
       ],
+      "Diagnostics": [
+        "Διαγνωστικά"
+      ],
       "Discard": [
         "Απόρριψη"
       ],
@@ -349,8 +355,14 @@
       "Download apps": [
         "Λήψη εφαρμογών"
       ],
+      "Download info": [
+        "Λήψη πληροφοριών"
+      ],
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
+      ],
+      "Download results": [
+        "Λήψη αποτελεσμάτων"
       ],
       "Drive Locked": [
         "Δίσκος κλειδωμένος"
@@ -562,6 +574,9 @@
       "More options": [
         "Περισσότερες επιλογές"
       ],
+      "More options for accounts": [
+        "Περισσότερες επιλογές για λογαριασμούς"
+      ],
       "Move": [
         "Μετακίνηση"
       ],
@@ -756,6 +771,9 @@
       ],
       "Retry": [
         "Δοκιμάστε ξανά"
+      ],
+      "Run diagnostics": [
+        "Εκτέλεση διαγνωστικών"
       ],
       "Save": [
         "Αποθήκευση"
@@ -2331,6 +2349,11 @@
         "Ενημέρωση για ένα γεγονός που αρχίζει στις ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Αξιόπιστη επαφή"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "Το όνομα \"${ sanitizedName }\" υπάρχει ήδη"
@@ -2408,6 +2431,9 @@
       ],
       "Device name does not match": [
         "Το όνομα της συσκευής δεν ταιριάζει"
+      ],
+      "Diagnostics failed": [
+        "Τα διαγνωστικά απέτυχαν"
       ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
@@ -2765,11 +2791,32 @@
       "Validation error": [
         "Σφάλμα επικύρωσης"
       ],
+      "We were not able some of your shared items": [
+        "Δεν μπορέσαμε να φορτώσουμε μερικά από τα κοινοποιημένα αντικείμενά σας"
+      ],
+      "We were not able to load some invitations": [
+        "Δεν μπορέσαμε να φορτώσουμε μερικές προσκλήσεις"
+      ],
+      "We were not able to load some items shared with you": [
+        "Δεν μπορέσαμε να φορτώσουμε μερικά αντικείμενα που κοινοποιήθηκαν σε εσάς"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "Δεν μπορέσαμε να φορτώσουμε μερικούς από τους σελιδοδείκτες σας"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "Δεν μπορέσαμε να φορτώσουμε μερικές από τις προσκλήσεις σας σε κοινοποιημένα αντικείμενα"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Δεν μπορέσαμε να φορτώσουμε μερικούς από τους αποθηκευμένους κοινοποιημένους συνδέσμους σας"
+      ],
       "We were not able to load some of your shared items": [
         "Δεν μπορέσαμε να φορτώσουμε μερικά από τα κοινόχρηστα αντικείμενά σας"
       ],
       "We were not able to load some of your shared items details": [
         "Δεν ήταν δυνατή η φόρτωση ορισμένων λεπτομερειών των κοινοποιημένων στοιχείων σας"
+      ],
+      "We were not able to load some of your shared items info": [
+        "Δεν μπορέσαμε να φορτώσουμε πληροφορίες για ορισμένα από τα κοινοποιημένα αντικείμενά σας"
       ],
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
@@ -3519,6 +3566,10 @@
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
       ],
+      "${ invitationsCount } pending invitation": [
+        "${ invitationsCount } πρόσκληση σε εκκρεμότητα",
+        "${ invitationsCount } προσκλήσεις σε εκκρεμότητα"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Η προσφορά διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
@@ -3851,6 +3902,9 @@
         "Διαγραφή κλειδωμένου δίσκου",
         "Διαγραφή κλειδωμένων δίσκων"
       ],
+      "Details": [
+        "Λεπτομέρειες"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο μεταφορτώθηκε διασφαλισμένα από ${ emailAddress }."
       ],
@@ -3956,6 +4010,9 @@
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
         "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτά"
@@ -4031,6 +4088,9 @@
       ],
       "from the version history?": [
         "από το ιστορικό εκδόσεων;"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Λάβετε αρχεία καταγραφής και άλλες πληροφορίες για τεχνική υποστήριξη και αντιμετώπιση προβλημάτων"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Αποκτήστε την εφαρμογή για να δημιουργήσετε αντίγραφα ασφαλείας φωτογραφιών από το τηλέφωνό σας ή να τις ανεβάσετε εδώ."
@@ -4111,6 +4171,9 @@
       "Initializing": [
         "Εκκίνηση"
       ],
+      "Integrity issues found": [
+        "Βρέθηκαν προβλήματα ακεραιότητας"
+      ],
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
@@ -4122,6 +4185,9 @@
       ],
       "Invite link copied": [
         "Ο σύνδεσμος πρόσκλησης αντιγράφηκε"
+      ],
+      "Issues found": [
+        "Βρέθηκαν προβλήματα"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Φαίνεται ότι πρόσφατα προσπαθήσατε να ανεβάσετε το ${ uploadName }. Εάν η μεταφόρτωση απέτυχε, παρακαλούμε ${ replaceFile }. Αν η μεταφόρτωση βρίσκεται ακόμη σε εξέλιξη, η αντικατάστασή της θα ακυρώσει τη μεταφόρτωση που βρίσκεται σε εξέλιξη."
@@ -4271,6 +4337,9 @@
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
       ],
+      "No issue found": [
+        "Δεν βρέθηκε πρόβλημα"
+      ],
       "No payment is required at this time.": [
         "Δεν απαιτείται πληρωμή αυτή τη στιγμή."
       ],
@@ -4327,6 +4396,9 @@
       ],
       "Organization size": [
         "Μέγεθος οργανισμού"
+      ],
+      "Other accounts": [
+        "Άλλοι λογαριασμοί"
       ],
       "Owner": [
         "Ιδιοκτήτης"
@@ -4478,6 +4550,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "Επαναφορά Φωτογραφιών... Κρατήστε την καρτέλα ανοιχτή"
+      ],
+      "Running diagnostics...": [
+        "Εκτέλεση διαγνωστικών..."
       ],
       "Saving...": [
         "Αποθήκευση..."
@@ -4716,6 +4791,9 @@
       ],
       "This will upload a new version of the folder": [
         "Αυτό θα ανεβάσει μια νέα έκδοση του φακέλου"
+      ],
+      "Time": [
+        "Ώρα"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Για να ολοκληρώσετε την πληρωμή σας, στείλτε ${ btcAmountBold } στην παρακάτω διεύθυνση."
@@ -5716,6 +5794,9 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
       ]
     },
     "Label for contact group color": {
@@ -7287,6 +7368,18 @@
       ],
       "No parent folder": [
         "Δεν υπάρχει γονικός φάκελος"
+      ],
+      "Only current location": [
+        "Μόνο η τρέχουσα τοποθεσία"
+      ],
+      "Only current location: ${ name }": [
+        "Μόνο η τρέχουσα τοποθεσία: ${ name }"
+      ],
+      "Verify content": [
+        "Επαλήθευση περιεχομένου"
+      ],
+      "Verify thumbnails": [
+        "Επαληθεύστε τις μικρογραφίες"
       ]
     },
     "Option group label": {
@@ -8254,6 +8347,9 @@
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
       ],
+      "Account Temporarily Locked": [
+        "Λογαριασμός Προσωρινά Κλειδωμένος"
+      ],
       "Active": [
         "Ενεργά"
       ],
@@ -8457,8 +8553,14 @@
       "Desktop": [
         "Υπολογιστής"
       ],
+      "Device": [
+        "Συσκευή"
+      ],
       "Devices": [
         "Συσκευές"
+      ],
+      "Diagnostics": [
+        "Διαγνωστικά"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε εν μέρει. Αυτό το αρχείο δημιουργήθηκε χρησιμοποιώντας έναν δημόσια προσβάσιμο σύνδεσμο κοινής χρήσης από έναν χρήστη χωρίς λογαριασμό ${ BRAND_NAME }, επομένως δεν είναι δυνατή η επαλήθευση της ταυτότητάς του."
@@ -8633,11 +8735,20 @@
       "Last uploaded by": [
         "Τελευταία μεταφόρτωση από"
       ],
+      "Level": [
+        "Επίπεδο"
+      ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
       ],
       "Location": [
         "Τοποθεσία"
+      ],
+      "Logger": [
+        "Καταγραφέας"
+      ],
+      "Logs": [
+        "Αρχεία καταγραφής"
       ],
       "Manage secure link": [
         "Διαχείριση ασφαλούς συνδέσμου"
@@ -8650,6 +8761,9 @@
       ],
       "Merging contacts": [
         "Συγχώνευση Επαφών"
+      ],
+      "Message": [
+        "Μήνυμα"
       ],
       "MIME type": [
         "Τύπος MIME"
@@ -8921,6 +9035,9 @@
       ],
       "This link is password protected": [
         "Αυτός ο σύνδεσμος προστατεύεται με κωδικό πρόσβασης"
+      ],
+      "Time": [
+        "Ώρα"
       ],
       "Total size": [
         "Συνολικό μέγεθος"
