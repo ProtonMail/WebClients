@@ -1063,9 +1063,6 @@
       "Send reminder": [
         "Отправить напоминание"
       ],
-      "Set as default mail application": [
-        "Установить как почтовое приложение по умолчанию"
-      ],
       "Set catch-all": [
         "Установить прием всей почты домена"
       ],
@@ -3304,12 +3301,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } в ${ DRIVE_APP_NAME } позволяет вам работать вместе с другими людьми в защищенной и зашифрованной среде."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } не является вашим почтовым приложением по умолчанию."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } является вашим почтовым приложением по умолчанию."
-      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Добавляйте папки и файлы в ${ DRIVE_APP_NAME } и приглашайте членов команды для просмотра или изменения."
       ],
@@ -4875,7 +4866,7 @@
         "Хм. Что-то пошло не так"
       ],
       "Please refresh the page or try again later.": [
-        "Пожалуйста, обновите страницу или повторите попытку позже."
+        "Обновите страницу или повторите попытку позже."
       ],
       "Something went wrong": [
         "Что-то пошло не так"
@@ -8791,9 +8782,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Если отключено, то предотвращает загрузку изображений на вашем устройстве без вашего ведома."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "При включении мы проверим, является ли ${ MAIL_APP_NAME } вашим почтовым приложением по умолчанию, и уведомим вас, если это не так."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "При включении SAML для ${ appName } у поставщика личных данных вам может быть предложено использовать URL обратного вызова (ACS) и ID эмитента. Просто скопируйте и вставьте приведенные ниже данные в поля поставщика личных данных."
@@ -16209,9 +16197,6 @@
       ],
       "Change second password": [
         "Изменить второй пароль"
-      ],
-      "Check your default mail application": [
-        "Проверьте почтовое приложение по умолчанию"
       ],
       "Choose an account": [
         "Выберите аккаунт"

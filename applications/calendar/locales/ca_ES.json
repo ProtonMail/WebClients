@@ -110,6 +110,9 @@
       "Cancel subscription": [
         "Cancel·la la subscripció"
       ],
+      "Change password": [
+        "Canvia la contrasenya"
+      ],
       "Chat with us": [
         "Xategeu amb nosaltres"
       ],
@@ -903,6 +906,19 @@
         "Nou"
       ]
     },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Gestor de contrasenyes prèmium"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Utilitzeu el vostre propi domini de correu electrònic"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 mes"
@@ -912,6 +928,9 @@
       ],
       "Annually": [
         "Cada any"
+      ],
+      "Lifetime": [
+        "Per sempre"
       ],
       "Monthly": [
         "Mensual"
@@ -2450,6 +2469,11 @@
         "Actualització d'un esdeveniment que comença el ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacte de confiança"
+      ]
+    },
     "Error": {
       "${ list } doesn't have a valid email address": [
         "${ list } no té una adreça de correu electrònic vàlida.",
@@ -2785,6 +2809,9 @@
       ],
       "The address might be misspelled": [
         "És possible que l'adreça estigui mal escrita."
+      ],
+      "The amount due has changed. Please try again.": [
+        "L'import que cal pagar ha canviat. Torneu-ho a provar."
       ],
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
@@ -3578,6 +3605,9 @@
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "L'oferta de per vida de ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a accedir durant tota la vida a ${ PASS_SHORT_APP_NAME }. El preu i la data de renovació de la subscripció de ${ planTitle } es mantindran sense canvis."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
       ],
@@ -3614,6 +3644,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mes)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
@@ -3893,6 +3926,9 @@
       "Enter your own password (as organization admin).": [
         "Introduïu la vostra contrasenya (com a administrador d'organització)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Introduïu la vostra contrasenya (com a contacte de confiança)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Temps restant estimat: ${ estimatedMinutes } minut",
         "Temps restant estimat: ${ estimatedMinutes } minuts"
@@ -3990,6 +4026,9 @@
       ],
       "It's better to have:": [
         "És millor tenir:"
+      ],
+      "JCB logo": [
+        "Logotip de JCB"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Només confirmeu la vostra selecció i nosaltres farem la resta."
@@ -4111,6 +4150,9 @@
       "Organization size": [
         "Mida de l'organització"
       ],
+      "Other accounts": [
+        "Altres comptes"
+      ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Altres usuaris de l'organització veuran els vostres espais ocupats. No es comparteix cap detall dels esdeveniments."
       ],
@@ -4180,6 +4222,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
+      ],
+      "Registering your subscription…": [
+        "S'està registrant la vostra subscripció…"
       ],
       "Removed participants will be notified.": [
         "Els participants esborrats seran notificats."
@@ -4523,6 +4568,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "El vostre compte de ${ BRAND_NAME } actualment està suspès. Els correus electrònics ja no es lliuren a la vostra safata d'entrada. Els vostres enllaços compartits de Drive ja no estan actius i no podeu carregar-hi fitxers nous. Per a continuar utilitzant el vostre compte, pagueu les factures vençudes."
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "La vostra subscripció ${ plan } se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant s'afegirà al vostre compte. L'oferta de ${ PASS_SHORT_APP_NAME } no té cost de renovació, és un pagament únic per a accedir a ${ PASS_SHORT_APP_NAME } de per vida."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
       ],
@@ -4562,11 +4610,20 @@
       "Your next billing date is ${ renewalTime }.": [
         "La pròxima data de facturació és ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "La pròxima data de facturació és el ${ renewalTime }. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
+      ],
       "Your password was leaked:": [
         "S'ha filtrat la vostra contrasenya:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada mes."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "La vostra subscripció es renovarà automàticament el ${ renewalTime }."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Sembla que el fus horari del sistema ha canviat a ${ timezone }. Voleu actualitzar la vostra preferència de fus horari?"
@@ -5111,6 +5168,9 @@
       ],
       "Your password (admin)": [
         "La vostra contrasenya (administrador)"
+      ],
+      "Your password (trusted contact)": [
+        "La vostra contrasenya (contacte de confiança)"
       ]
     },
     "Label for contact group color": {
@@ -5709,6 +5769,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Compatibilitat amb clients de correu electrònic (per IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grups de correu electrònic"
+      ],
       "Enables HIPAA compliance": [
         "Permet el compliment de la llei HIPAA"
       ],
@@ -5933,6 +5996,9 @@
       "Downgrade account?": [
         "Voleu passar a un pla inferior?"
       ],
+      "Review subscription": [
+        "Reviseu la subscripció"
+      ],
       "Review subscription and pay": [
         "Reviseu la subscripció i pagueu"
       ],
@@ -5995,6 +6061,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartiu fàcilment els vostres calendaris amb la família, els amics o els col·legues."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envieu un correu electrònic a tothom en un grup amb una única adreça de correu."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Assegura que rebeu tots els correus electrònics enviats al vostre domini, fins i tot si l'adreça de correu electrònic no existeix, ha deixat d'existir o té un error ortogràfic"
@@ -6520,6 +6589,21 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "Hi ha més plans disponibles en altres divises."
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "El preu de la renovació està subjecte a canvis segons ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
+      ],
+      "terms & conditions": [
+        "els termes i condicions"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPriceStr } cada mes. Podeu cancel·lar-ho en qualsevol moment."
+      ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
       ]
@@ -6542,6 +6626,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Gratuït"
       ]
     },
     "PGP key encryption warning": {
@@ -7464,6 +7553,9 @@
       "Account recovery": [
         "Recuperació de compte"
       ],
+      "Account Temporarily Locked": [
+        "Compte bloquejat temporalment"
+      ],
       "Add another notification to remind you of this event": [
         "Afegeix una altra notificació per recordar-vos aquest esdeveniment"
       ],
@@ -7575,6 +7667,9 @@
       ],
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
+      ],
+      "Coupon": [
+        "Cupó"
       ],
       "Create contact": [
         "Crea un contacte"

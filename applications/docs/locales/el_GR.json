@@ -117,6 +117,9 @@
       "Cancel trial and pay": [
         "Ακύρωση δοκιμής και πληρωμή"
       ],
+      "Change password": [
+        "Αλλαγή κωδικού πρόσβασης"
+      ],
       "Change sort order": [
         "Αλλαγή σειράς ταξινόμησης"
       ],
@@ -439,6 +442,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
+      ],
+      "More options for accounts": [
+        "Περισσότερες επιλογές για λογαριασμούς"
       ],
       "Move": [
         "Μετακίνηση"
@@ -2084,6 +2090,11 @@
         "Ενημέρωση για ένα γεγονός που αρχίζει στις ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Αξιόπιστη επαφή"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "Το όνομα \"${ sanitizedName }\" υπάρχει ήδη"
@@ -3471,6 +3482,9 @@
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
+      ],
       "Error converting document: ${ errorMessage }": [
         "Σφάλμα κατά τη μετατροπή εγγράφου: ${ errorMessage }"
       ],
@@ -3760,6 +3774,9 @@
       ],
       "Organization size": [
         "Μέγεθος οργανισμού"
+      ],
+      "Other accounts": [
+        "Άλλοι λογαριασμοί"
       ],
       "Owner": [
         "Ιδιοκτήτης"
@@ -4830,6 +4847,9 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
       ]
     },
     "Label for contact group color": {
@@ -7000,6 +7020,9 @@
       ],
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
+      ],
+      "Account Temporarily Locked": [
+        "Λογαριασμός Προσωρινά Κλειδωμένος"
       ],
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
