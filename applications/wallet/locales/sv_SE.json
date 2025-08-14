@@ -58,6 +58,9 @@
       "Cancel trial and pay": [
         "Avbryt provperiod och betala"
       ],
+      "Change password": [
+        "Ändra lösenord"
+      ],
       "Chat with us": [
         "Chatta med oss"
       ],
@@ -183,6 +186,9 @@
       ],
       "More options": [
         "Fler alternativ"
+      ],
+      "More options for accounts": [
+        "Fler alternativ för konton"
       ],
       "Need help?": [
         "Behöver du hjälp?"
@@ -1827,6 +1833,11 @@
         "Tillfälligt behov, kan komma tillbaka i framtiden"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betrodd kontakt"
+      ]
+    },
     "Error": {
       "Amount above the maximum.": [
         "Belopp över det maximala."
@@ -2281,6 +2292,9 @@
       "Enter your own password (as organization admin).": [
         "Ange ditt eget lösenord (som organisationsadministratör)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
+      ],
       "Expired": [
         "Löpt ut"
       ],
@@ -2361,6 +2375,9 @@
       ],
       "Organization size": [
         "Organisationens storlek"
+      ],
+      "Other accounts": [
+        "Andra konton"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
@@ -2562,6 +2579,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer förnyas automatiskt varje månad."
+      ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
       ]
@@ -2740,6 +2760,9 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
       ]
     },
     "Label, credit card": {
@@ -4076,6 +4099,9 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } är nu aktivt"
+      ],
+      "Account Temporarily Locked": [
+        "Konto tillfälligt låst"
       ],
       "Add credit/debit card": [
         "Lägg till kredit-/betalkort"

@@ -1146,6 +1146,9 @@
       "Protect your whole household with 1 device": [
         "Абараніце ўсё сваё домаўладанне з дапамогай 1 прылады"
       ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
+        "Плыні з усіх асноўных платформ на тарыфным плане ${ PLAN_NAMES[PLANS.VPN2024] }."
+      ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Гэты артыкул быў абноўлены і ў яго ўвайшлі пратаколы VPN з тэхналогіямі WireGuard і Stealth."
       ],
@@ -2590,6 +2593,11 @@
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Праверачны ліст адпраўлены на ${ address }"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Давераны кантакт"
       ]
     },
     "Empty group name": {
@@ -4262,6 +4270,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Увядзіце свой пароль (адміністратара арганізацыі)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Увядзіце свой пароль (як давераны кантакт)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Увядзіце адрас электроннай пошты, які вы выкарыстоўваеце для аднаўлення доступу, і мы адправім вам ваша імя карыстальніка або адрас электроннай пошты."
@@ -6327,6 +6338,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ваш пароль (давераны кантакт)"
       ],
       "ZIP code": [
         "Паштовы індэкс"

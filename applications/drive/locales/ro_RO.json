@@ -139,6 +139,9 @@
       "Change": [
         "Schimbare"
       ],
+      "Change password": [
+        "Schimbare parolă"
+      ],
       "Chat with us": [
         "Conversați cu noi"
       ],
@@ -317,6 +320,9 @@
       "Details": [
         "Detalii"
       ],
+      "Diagnostics": [
+        "Diagnosticare"
+      ],
       "Discard": [
         "Renunțare"
       ],
@@ -353,8 +359,14 @@
       "Download apps": [
         "Descărcare aplicație"
       ],
+      "Download info": [
+        "Descărcare informații"
+      ],
       "Download logs": [
         "Jurnal descărcare"
+      ],
+      "Download results": [
+        "Descărcare rezultate"
       ],
       "Drive Locked": [
         "Unitate blocată"
@@ -566,6 +578,9 @@
       "More options": [
         "Mai multe opțiuni"
       ],
+      "More options for accounts": [
+        "Mai multe opțiuni pentru conturi"
+      ],
       "Move": [
         "Mutare"
       ],
@@ -760,6 +775,9 @@
       ],
       "Retry": [
         "Reîncercare"
+      ],
+      "Run diagnostics": [
+        "Rulare diagnostic"
       ],
       "Save": [
         "Salvare"
@@ -1095,6 +1113,14 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Manager de parole premium"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
       ]
     },
     "Billing cycle option": {
@@ -2331,6 +2357,11 @@
         "Actualizarea unui eveniment care începe ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contact aprobat"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "„${ sanitizedName }” există deja"
@@ -2410,6 +2441,9 @@
       ],
       "Device name does not match": [
         "Numele dispozitivului nu se potrivește"
+      ],
+      "Diagnostics failed": [
+        "Diagnosticarea a eșuat"
       ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil. Reîncercați mai târziu."
@@ -2772,11 +2806,32 @@
       "Validation error": [
         "Eroare validare."
       ],
+      "We were not able some of your shared items": [
+        "Unele articolele partajate nu sau putut încărca."
+      ],
+      "We were not able to load some invitations": [
+        "Nu s-au putut încărca unele invitații"
+      ],
+      "We were not able to load some items shared with you": [
+        "Unele elemente care vi s-au partajat nu sau putut încărca."
+      ],
+      "We were not able to load some of your bookmarks": [
+        "Unele semnele de carte nu s-au putut încărca."
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "Unele invitații la articolele partajate nu s-au putut încărca."
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Invitații în așteptare: ${ invitationsCount }"
+      ],
       "We were not able to load some of your shared items": [
         "Nu sau putut încărca unele dintre articolele partajate."
       ],
       "We were not able to load some of your shared items details": [
         "Nu s-au putut încărca detaliile unora dintre articolele partajate."
+      ],
+      "We were not able to load some of your shared items info": [
+        "Unele articolele partajate nu s-au putut încărca."
       ],
       "You must set a name": [
         "Trebuie specificat un nume"
@@ -3557,6 +3612,11 @@
         "Grupuri găsite: ${ groupCounts }",
         "Grupuri găsite: ${ groupCounts }"
       ],
+      "${ invitationsCount } pending invitation": [
+        "Invitații în așteptare: ${ invitationsCount }",
+        "Invitații în așteptare: ${ invitationsCount }",
+        "Invitații în așteptare: ${ invitationsCount }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
@@ -3637,6 +3697,9 @@
         "(${ memberCount } membru)",
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/lună)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
@@ -3884,7 +3947,7 @@
         "Versiune curentă"
       ],
       "Custom email domains": [
-        "Domenii personale e-mail"
+        "Domenii personale de e-mail"
       ],
       "Dec": [
         "Dec"
@@ -3902,6 +3965,9 @@
         "Ștergere unitate blocată",
         "Ștergere unități blocate",
         "Ștergere unități blocate"
+      ],
+      "Details": [
+        "Detalii"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ emailAddress }."
@@ -4008,6 +4074,9 @@
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Introduceți parola (ca și contact aprobat)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Timp estimat rămas: ${ estimatedMinutes } minut",
         "Timp estimat rămas: ${ estimatedMinutes } minute",
@@ -4084,6 +4153,9 @@
       ],
       "from the version history?": [
         "din istoricul versiunilor?"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Obțineți jurnale și alte informații pentru asistență tehnică și depanare."
       ],
       "Get the app to backup photos from your phone or upload them here.": [
         "Luați aplicația pentru a vă conserva fotografiile din telefon sau încărcați-le aici."
@@ -4165,6 +4237,9 @@
       "Initializing": [
         "Se inițializează"
       ],
+      "Integrity issues found": [
+        "S-au găsit probleme de integritate."
+      ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
       ],
@@ -4176,6 +4251,9 @@
       ],
       "Invite link copied": [
         "Legătura de invitare a fost copiată."
+      ],
+      "Issues found": [
+        "Probleme găsite"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Se pare că ați încercat recent să încărcați ${ uploadName }. Dacă încărcarea a eșuat, ${ replaceFile }. Dacă încă este în desfășurare, înlocuirea va anula încărcarea în desfășurare."
@@ -4326,6 +4404,9 @@
       "No group found": [
         "Nu există grupuri"
       ],
+      "No issue found": [
+        "Nu s-au găsit probleme"
+      ],
       "No payment is required at this time.": [
         "Momentan nu este necesară nicio plată."
       ],
@@ -4382,6 +4463,9 @@
       ],
       "Organization size": [
         "Mărime organizație"
+      ],
+      "Other accounts": [
+        "Alte conturi"
       ],
       "Owner": [
         "Proprietar"
@@ -4534,6 +4618,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "Se restaurează fotografiile... Păstrați fila deschisă."
+      ],
+      "Running diagnostics...": [
+        "Se execută diagnosticul..."
       ],
       "Saving...": [
         "Se salvează..."
@@ -4773,6 +4860,9 @@
       ],
       "This will upload a new version of the folder": [
         "Aceasta va încărca o nouă versiune a folderului."
+      ],
+      "Time": [
+        "Ora"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Pentru a finaliza plata, trimiteți ${ btcAmountBold } la adresa de mai jos."
@@ -5782,6 +5872,9 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Your password (trusted contact)": [
+        "Parola dvs. (contact aprobat)"
       ]
     },
     "Label for contact group color": {
@@ -6263,6 +6356,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } calendare",
@@ -6419,6 +6515,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Suport client de e-mail (prin IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupuri de contacte"
       ],
       "Enables HIPAA compliance": [
         "Se conformează regulilor HIPAA"
@@ -6713,6 +6812,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partajați calendarele ușor cu familia, prietenii sau colegii."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Trimiteți mesaje tuturor dintr-un grup cu o singură adresă de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Se asigură că primiți toate e-mailurile trimise către domeniul dvs., chiar dacă adresa de e-mail nu a existat, nu mai există sau e scrisă greșit."
@@ -7390,6 +7492,18 @@
       ],
       "No parent folder": [
         "Fără folder părinte"
+      ],
+      "Only current location": [
+        "Doar poziția actuală"
+      ],
+      "Only current location: ${ name }": [
+        "Doar poziția curentă: ${ name }"
+      ],
+      "Verify content": [
+        "Verificare conținut"
+      ],
+      "Verify thumbnails": [
+        "Verificare miniaturi"
       ]
     },
     "Option group label": {
@@ -8379,6 +8493,9 @@
       "Account recovery": [
         "Recuperare cont"
       ],
+      "Account Temporarily Locked": [
+        "Cont blocat temporar"
+      ],
       "Active": [
         "Activ"
       ],
@@ -8587,8 +8704,14 @@
       "Desktop": [
         "Desktop"
       ],
+      "Device": [
+        "Dispozitiv"
+      ],
       "Devices": [
         "Dispozitive"
+      ],
+      "Diagnostics": [
+        "Diagnosticare"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Semnătura digitală parțial verificată. Acest fișier a fost creat folosind o legătură web de partajare accesibilă public de către un utilizator fără un cont ${ BRAND_NAME }, astfel că identitatea acestuia nu poate fi verificată."
@@ -8765,11 +8888,20 @@
       "Last uploaded by": [
         "Încărcat ultima dată de către"
       ],
+      "Level": [
+        "Nivel"
+      ],
       "Link confirmation": [
         "legătură web de confirmare"
       ],
       "Location": [
         "Amplasare"
+      ],
+      "Logger": [
+        "Înregistrator"
+      ],
+      "Logs": [
+        "Jurnale"
       ],
       "Manage secure link": [
         "Gestionare legătură web securizată"
@@ -8782,6 +8914,9 @@
       ],
       "Merging contacts": [
         "Îmbinare contacte"
+      ],
+      "Message": [
+        "Mesaj"
       ],
       "MIME type": [
         "Tip MIME"
@@ -9054,6 +9189,9 @@
       ],
       "This link is password protected": [
         "Legătura este protejată cu parolă"
+      ],
+      "Time": [
+        "Ora"
       ],
       "Total size": [
         "Mărime totală"

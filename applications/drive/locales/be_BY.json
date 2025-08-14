@@ -138,6 +138,9 @@
       "Change": [
         "Змяніць"
       ],
+      "Change password": [
+        "Змяніць пароль"
+      ],
       "Chat with us": [
         "Чат з намі"
       ],
@@ -2325,6 +2328,11 @@
         "Абнаўленне для падзеі, якая пачнецца ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Давераны кантакт"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "\"${ sanitizedName }\" ужо існуе"
@@ -2770,11 +2778,32 @@
       "Validation error": [
         "Памылка праверкі"
       ],
+      "We were not able some of your shared items": [
+        "Не ўдалося загрузіць некаторыя вашы абагуленыя элементы"
+      ],
+      "We were not able to load some invitations": [
+        "Не ўдалося загрузіць некаторыя запрашэнні"
+      ],
+      "We were not able to load some items shared with you": [
+        "Не ўдалося загрузіць некаторыя элементы абагуленыя для вас"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "Не ўдалося загрузіць некаторыя вашы закладкі"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "Не ўдалося загрузіць некаторыя вашыя запрашэнні да абагуленых элементаў"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Не ўдалося загрузіць некаторыя вашы захаваныя абагуленыя спасылкі"
+      ],
       "We were not able to load some of your shared items": [
         "Не ўдалося загрузіць некаторыя вашы абагуленыя элементы"
       ],
       "We were not able to load some of your shared items details": [
         "Не ўдалося загрузіць падрабязнасці некаторых вашых абагуленых элементаў"
+      ],
+      "We were not able to load some of your shared items info": [
+        "Не ўдалося загрузіць некаторыя вашы абагуленыя інфармацыйныя элементы"
       ],
       "You must set a name": [
         "Вы павінны задаць назву"
@@ -3586,6 +3615,12 @@
         "Знойдзена ${ groupCounts } груп",
         "Знойдзена ${ groupCounts } груп"
       ],
+      "${ invitationsCount } pending invitation": [
+        "${ invitationsCount } у чаканні запрашэння",
+        "${ invitationsCount } у чаканні запрашэння",
+        "${ invitationsCount } у чаканні запрашэння",
+        "${ invitationsCount } у чаканні запрашэння"
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } прыпынены",
         "${ pausedCount } прыпынена",
@@ -4047,6 +4082,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Увядзіце свой пароль (адміністратара арганізацыі)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Увядзіце свой пароль (як давераны кантакт)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Прыблізна засталося часу: ${ estimatedMinutes } хвіліна",
@@ -5818,6 +5856,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ваш пароль (давераны кантакт)"
       ]
     },
     "Label for contact group color": {
@@ -8715,6 +8756,9 @@
       ],
       "Desktop": [
         "Для камп'ютара"
+      ],
+      "Device": [
+        "Прылада"
       ],
       "Devices": [
         "Прылады"

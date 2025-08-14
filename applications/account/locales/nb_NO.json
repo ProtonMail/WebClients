@@ -1096,9 +1096,6 @@
       "Send reminder": [
         "Send påminnelse"
       ],
-      "Set as default mail application": [
-        "Angi som standard e-postapplikasjon"
-      ],
       "Set catch-all": [
         "Konfigurer catch-all"
       ],
@@ -3274,12 +3271,6 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } i ${ DRIVE_APP_NAME } lar deg samarbeide med andre i et sikkert og kryptert miljø."
       ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "${ MAIL_APP_NAME } er ikke din standard e-postapplikasjon."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "${ MAIL_APP_NAME } er din standard e-postapplikasjon."
-      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Legg til mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til å se eller redigere."
       ],
@@ -4172,6 +4163,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Advarsel"
+      ]
+    },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betrodd kontakt"
       ]
     },
     "Empty group name": {
@@ -8071,6 +8067,9 @@
       "Session timed out": [
         "Økten ble tidsavbrutt"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Angi ${ MAIL_APP_NAME } som din standard e-postapplikasjon. ${ MAIL_APP_NAME } vil åpne automatisk når du klikker en e-postkobling."
+      ],
       "Set password": [
         "Angi passord"
       ],
@@ -8771,9 +8770,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Når deaktivert, vil dette forhindre bildefiler fra å laste på enheten din uten din viten."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Når aktivert, vil vi sjekke om ${ MAIL_APP_NAME } er standard e-postapplikasjon og varsle deg hvis den ikke er det."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Når du aktiverer SAML for ${ appName } i identitetsleverandøren, kan du bli bedt om å bruke URL-adressen for tilbakeringing (ACS) og utsteder-ID. Bare kopier og lim inn dataene nedenfor i identitetsleverandørfeltene dine."
@@ -16387,6 +16383,9 @@
       "Account suspended": [
         "Kontoen er suspendert"
       ],
+      "Account Temporarily Locked": [
+        "Konto midlertidig låst"
+      ],
       "Action": [
         "Handling"
       ],
@@ -16570,9 +16569,6 @@
       ],
       "Change second password": [
         "Endre andre passord"
-      ],
-      "Check your default mail application": [
-        "Sjekk standard e-postapplikasjon"
       ],
       "Choose an account": [
         "Velg en konto"

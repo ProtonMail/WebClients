@@ -1093,9 +1093,6 @@
       "Send reminder": [
         "Enviar um lembrete"
       ],
-      "Set as default mail application": [
-        "Definir como aplicação de e-mail predefinida"
-      ],
       "Set catch-all": [
         "Definir Catch-all"
       ],
@@ -3270,12 +3267,6 @@
     "Description": {
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "O ${ DOCS_SHORT_APP_NAME } no ${ DRIVE_APP_NAME } permite que trabalhe em conjunto com outras pessoas num ambiente seguro e encriptado."
-      ],
-      "${ MAIL_APP_NAME } is not your default mail application.": [
-        "O ${ MAIL_APP_NAME } não é a sua aplicação de e-mail predefinida."
-      ],
-      "${ MAIL_APP_NAME } is your default mail application.": [
-        "O ${ MAIL_APP_NAME } é a sua aplicação de e-mail predefinida."
       ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adicione pastas e ficheiros ao ${ DRIVE_APP_NAME } e convide membros da equipa a visualizar ou editar."
@@ -8724,9 +8715,6 @@
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Quando desativado, impede o carregamento de ficheiros de imagem no dispositivo sem o seu conhecimento."
-      ],
-      "When enabled, we will check if ${ MAIL_APP_NAME } is your default mail application and notify you if it is not.": [
-        "Quando a opção estiver ativada, verificaremos se o ${ MAIL_APP_NAME } é a sua aplicação de e-mail predefinida e iremos notificá-lo caso não esteja."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ao ativar o SAML para o ${ appName } no seu fornecedor de identidade, poderá ser solicitado a utilizar o URL de callback (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu fornecedor de identidade."
@@ -16233,9 +16221,6 @@
       ],
       "Change second password": [
         "Alterar a segunda palavra-passe"
-      ],
-      "Check your default mail application": [
-        "Verifique a sua aplicação de e-mail predefinida"
       ],
       "Choose an account": [
         "Escolha uma conta"

@@ -137,6 +137,9 @@
       "Change": [
         "Ändra"
       ],
+      "Change password": [
+        "Ändra lösenord"
+      ],
       "Chat with us": [
         "Chatta med oss"
       ],
@@ -313,6 +316,9 @@
       "Details": [
         "Detaljer"
       ],
+      "Diagnostics": [
+        "Diagnostik"
+      ],
       "Discard": [
         "Avfärda"
       ],
@@ -349,8 +355,14 @@
       "Download apps": [
         "Ladda ner appar"
       ],
+      "Download info": [
+        "Ladda ner info"
+      ],
       "Download logs": [
         "Ladda ner loggar"
+      ],
+      "Download results": [
+        "Ladda ner resultat"
       ],
       "Drive Locked": [
         "Drive låst"
@@ -562,6 +574,9 @@
       "More options": [
         "Fler alternativ"
       ],
+      "More options for accounts": [
+        "Fler alternativ för konton"
+      ],
       "Move": [
         "Flytta"
       ],
@@ -756,6 +771,9 @@
       ],
       "Retry": [
         "Försök igen"
+      ],
+      "Run diagnostics": [
+        "Kör diagnostik"
       ],
       "Save": [
         "Spara"
@@ -2331,6 +2349,11 @@
         "Uppdatering av en händelse som börjar den ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Betrodd kontakt"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "”${ sanitizedName }” finns redan"
@@ -2408,6 +2431,9 @@
       ],
       "Device name does not match": [
         "Enhetsnamn matchar inte"
+      ],
+      "Diagnostics failed": [
+        "Diagnostik misslyckades"
       ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
@@ -3849,6 +3875,9 @@
         "Ta bort låst lagringsenhet",
         "Ta bort låsta lagringsenheter"
       ],
+      "Details": [
+        "Detaljer"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verifierad. Denna fil laddades upp säkert av ${ emailAddress }."
       ],
@@ -3953,6 +3982,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Ange ditt eget lösenord (som organisationsadministratör)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Beräknad återstående tid: ${ estimatedMinutes } minut",
@@ -4109,6 +4141,9 @@
       "Initializing": [
         "Initierar"
       ],
+      "Integrity issues found": [
+        "Integritetsproblem hittades"
+      ],
       "Internet connection lost": [
         "Internetanslutning förlorades"
       ],
@@ -4120,6 +4155,9 @@
       ],
       "Invite link copied": [
         "Inbjudningslänk kopierad"
+      ],
+      "Issues found": [
+        "Problem hittades"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Det verkar som att du nyligen försökte ladda upp ${ uploadName }. Om uppladdningen misslyckades, ${ replaceFile }. Om uppladdningen fortfarande pågår kommer den pågående uppladdningen att avbrytas om den ersätts."
@@ -4269,6 +4307,9 @@
       "No group found": [
         "Ingen grupp hittades"
       ],
+      "No issue found": [
+        "Inget problem hittades"
+      ],
       "No payment is required at this time.": [
         "Ingen betalning krävs just nu."
       ],
@@ -4325,6 +4366,9 @@
       ],
       "Organization size": [
         "Organisationens storlek"
+      ],
+      "Other accounts": [
+        "Andra konton"
       ],
       "Owner": [
         "Ägare"
@@ -4476,6 +4520,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "Återställer foton... Håll fliken öppen"
+      ],
+      "Running diagnostics...": [
+        "Kör diagnostik …"
       ],
       "Saving...": [
         "Sparar …"
@@ -4714,6 +4761,9 @@
       ],
       "This will upload a new version of the folder": [
         "Detta kommer ladda upp en ny version av mappen"
+      ],
+      "Time": [
+        "Tid"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "För att slutföra din betalning, skicka ${ btcAmountBold } till adressen nedan."
@@ -5073,6 +5123,9 @@
       ],
       "Your previous recovery phrase": [
         "Din föregående återställningsfras"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Ditt schemalagda paket startar den ${ renewalTime } och kommer förnyas automatiskt varje månad."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
@@ -5696,6 +5749,9 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
       ]
     },
     "Label for contact group color": {
@@ -7326,6 +7382,18 @@
       ],
       "No parent folder": [
         "Ingen överordnad mapp"
+      ],
+      "Only current location": [
+        "Endast nuvarande plats"
+      ],
+      "Only current location: ${ name }": [
+        "Endast nuvarande plats: ${ name }"
+      ],
+      "Verify content": [
+        "Verifiera innehåll"
+      ],
+      "Verify thumbnails": [
+        "Verifiera miniatyrer"
       ]
     },
     "Option group label": {
@@ -8283,6 +8351,9 @@
       "Account recovery": [
         "Kontoåterställning"
       ],
+      "Account Temporarily Locked": [
+        "Konto tillfälligt låst"
+      ],
       "Active": [
         "Aktiv"
       ],
@@ -8486,8 +8557,14 @@
       "Desktop": [
         "Stationär dator"
       ],
+      "Device": [
+        "Enhet"
+      ],
       "Devices": [
         "Enheter"
+      ],
+      "Diagnostics": [
+        "Diagnostik"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Digital signatur delvis verifierad. Denna fil skapades med en offentligt åtkomlig delningslänk av en användare utan ett ${ BRAND_NAME }-konto, så deras identitet kan inte verifieras."
@@ -8662,11 +8739,20 @@
       "Last uploaded by": [
         "Senast uppladdad av"
       ],
+      "Level": [
+        "Nivå"
+      ],
       "Link confirmation": [
         "Länkbekräftelse"
       ],
       "Location": [
         "Plats"
+      ],
+      "Logger": [
+        "Loggare"
+      ],
+      "Logs": [
+        "Loggar"
       ],
       "Manage secure link": [
         "Hantera säker länk"
@@ -8679,6 +8765,9 @@
       ],
       "Merging contacts": [
         "Slår ihop kontakter"
+      ],
+      "Message": [
+        "Meddelande"
       ],
       "MIME type": [
         "MIME-typ"
@@ -8944,6 +9033,9 @@
       ],
       "This link is password protected": [
         "Denna länk är lösenordsskyddad"
+      ],
+      "Time": [
+        "Tid"
       ],
       "Total size": [
         "Total storlek"

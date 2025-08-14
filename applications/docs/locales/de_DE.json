@@ -114,6 +114,9 @@
       "Cancel subscription": [
         "Abonnement kündigen"
       ],
+      "Change password": [
+        "Passwort ändern"
+      ],
       "Change sort order": [
         "Sortierreihenfolge ändern"
       ],
@@ -2096,6 +2099,11 @@
         "Aktualisierung zu einem Termin, der am ${ formattedStart } beginnt"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Vertrauenswürdiger Kontakt"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "„${ sanitizedName }“ ist bereits vorhanden"
@@ -3471,6 +3479,9 @@
       "Enter your own password (as organization admin).": [
         "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
+      ],
       "Error converting document: ${ errorMessage }": [
         "Fehler beim Umwandeln des Dokuments: ${ errorMessage }"
       ],
@@ -4812,6 +4823,9 @@
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Dein Passwort (vertrauenswürdiger Kontakt)"
       ]
     },
     "Label for contact group color": {
@@ -7058,6 +7072,9 @@
       ],
       "Account recovery": [
         "Kontowiederherstellung"
+      ],
+      "Account Temporarily Locked": [
+        "Konto vorübergehend gesperrt"
       ],
       "Add contact group name": [
         "Name der Kontaktgruppe hinzufügen"

@@ -110,6 +110,9 @@
       "Cancel subscription": [
         "Скасаваць падпіску"
       ],
+      "Change password": [
+        "Змяніць пароль"
+      ],
       "Chat with us": [
         "Чат з намі"
       ],
@@ -2474,6 +2477,11 @@
         "Абнаўленне для падзеі, якая пачнецца ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Давераны кантакт"
+      ]
+    },
     "Error": {
       "${ list } doesn't have a valid email address": [
         "У ${ list } няма сапраўднага адраса электроннай пошты",
@@ -4007,6 +4015,9 @@
       "Enter your own password (as organization admin).": [
         "Увядзіце свой пароль (адміністратара арганізацыі)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Увядзіце свой пароль (як давераны кантакт)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Прыблізна засталося часу: ${ estimatedMinutes } хвіліна",
         "Прыблізна засталося часу: ${ estimatedMinutes } хвіліны",
@@ -5243,6 +5254,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ваш пароль (давераны кантакт)"
       ]
     },
     "Label for contact group color": {

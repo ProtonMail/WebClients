@@ -114,6 +114,9 @@
       "Cancel subscription": [
         "Annulla abbonamento"
       ],
+      "Change password": [
+        "Cambia la password"
+      ],
       "Change sort order": [
         "Cambia l'ordine"
       ],
@@ -2096,6 +2099,11 @@
         "Aggiornamento per un evento che inizia il ${ formattedStart }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contatti sicuri"
+      ]
+    },
     "Error": {
       "\"${ sanitizedName }\" already exists": [
         "«${ sanitizedName }» esiste già."
@@ -3471,6 +3479,9 @@
       "Enter your own password (as organization admin).": [
         "Inserisci la tua password (come amministratore dell'organizzazione)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Inserisci la tua password (come contatto attendibile)."
+      ],
       "Error converting document: ${ errorMessage }": [
         "Errore durante la conversione del documento: ${ errorMessage }"
       ],
@@ -4812,6 +4823,9 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "La tua password (contatto attendibile)"
       ]
     },
     "Label for contact group color": {

@@ -113,6 +113,9 @@
       "Cancel trial and pay": [
         "Deneme süresini iptal et ve öde"
       ],
+      "Change password": [
+        "Parolayı değiştir"
+      ],
       "Chat with us": [
         "Bizimle canlı görüşün"
       ],
@@ -441,6 +444,9 @@
       ],
       "More options": [
         "Diğer seçenekler"
+      ],
+      "More options for accounts": [
+        "Hesaplar için diğer seçenekler"
       ],
       "New event": [
         "Yeni etkinlik"
@@ -935,6 +941,14 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Ücretli parola yöneticisi"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
       ]
     },
     "Billing cycle option": {
@@ -2495,6 +2509,11 @@
         "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Güvenilir kişi"
+      ]
+    },
     "Error": {
       "${ list } doesn't have a valid email address": [
         "${ list } içinde geçerli bir e-posta adresi yok",
@@ -3669,6 +3688,9 @@
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/ay)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
       ],
@@ -3947,6 +3969,9 @@
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Kendi parolanızı yazın (güvenilen kişi olarak)."
+      ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Öngörülen kalan süre: ${ estimatedMinutes } dakika",
         "Öngörülen kalan süre: ${ estimatedMinutes } dakika"
@@ -4167,6 +4192,9 @@
       ],
       "Organization size": [
         "Kuruluş boyutu"
+      ],
+      "Other accounts": [
+        "Diğer hesaplar"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Kuruluşunuzdaki diğer kullanıcılar meşgul zamanlarınızı görecek. Etkinlik bilgileri paylaşılmaz."
@@ -5183,6 +5211,9 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ],
+      "Your password (trusted contact)": [
+        "Parolanız (güvenilen kişi)"
       ]
     },
     "Label for contact group color": {
@@ -5638,6 +5669,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
@@ -5780,6 +5814,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "E-posta istemcisi desteği (IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-posta grupları"
       ],
       "Enables HIPAA compliance": [
         "HIPAA uyumluluğu"
@@ -6070,6 +6107,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Gruptaki herkese tek bir e-posta adresinden e-posta gönderin"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
@@ -7558,6 +7598,9 @@
       ],
       "Account recovery": [
         "Hesap kurtarma"
+      ],
+      "Account Temporarily Locked": [
+        "Hesap geçici olarak kilitlendi"
       ],
       "Add another notification to remind you of this event": [
         "Bu etkinliği hatırlatacak başka bir bildirim ekleyin"

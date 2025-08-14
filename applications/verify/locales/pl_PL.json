@@ -11,6 +11,9 @@
       "Cancel": [
         "Anuluj"
       ],
+      "Change password": [
+        "Zmień hasło"
+      ],
       "Close": [
         "Zamknij"
       ],
@@ -70,6 +73,14 @@
       ],
       "View invoice": [
         "Pokaż fakturę"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Użyj własnej domeny"
       ]
     },
     "Country name": {
@@ -1019,6 +1030,9 @@
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Wpisz swoje hasło (jako zaufany kontakt)."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
       ],
@@ -1101,6 +1115,9 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ],
+      "Your password (trusted contact)": [
+        "Twoje hasło (zaufany kontakt)"
       ]
     },
     "Link": {
@@ -1117,6 +1134,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ n } custom email domain": [
         "${ n } niestandardowa domena",
         "${ n } niestandardowe domeny",
@@ -1204,6 +1224,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Wsparcie aplikacji pocztowych (przez IMAP / SMTP)"
       ],
+      "Email groups": [
+        "Grupy kontaktów"
+      ],
       "Encrypted contact details": [
         "Zaszyfrowane szczegóły kontaktu"
       ],
@@ -1276,6 +1299,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Utwórz do ${ n } adresów e-mail lub aliasów, które możesz przypisać do członków rodziny. Używaj ich do tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Wysyłaj wiadomości do wszystkich członków grupy za pomocą jednego adresu e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zapewnia odbieranie wszystkich wiadomości wysyłanych do domeny, nawet jeśli adres e-mail nie istnieje, przestał istnieć lub zawiera literówkę"
@@ -1389,6 +1415,9 @@
       ]
     },
     "Title": {
+      "Account Temporarily Locked": [
+        "Konto zostało tymczasowo zablokowane"
+      ],
       "Enter 2FA code": [
         "Wpisz kod uwierzytelniający"
       ],

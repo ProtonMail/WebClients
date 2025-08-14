@@ -162,6 +162,9 @@
       "Change page": [
         "Αλλαγή σελίδας"
       ],
+      "Change password": [
+        "Αλλαγή κωδικού πρόσβασης"
+      ],
       "Change sorting": [
         "Αλλαγή ταξινόμησης"
       ],
@@ -702,6 +705,9 @@
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
       ],
+      "More options for accounts": [
+        "Περισσότερες επιλογές για λογαριασμούς"
+      ],
       "More refine actions": [
         "Περισσότερες ενέργειες βελτίωσης"
       ],
@@ -1016,6 +1022,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as default email application": [
         "Ορίστε ${ MAIL_APP_NAME } ως προεπιλεγμένη εφαρμογή email"
+      ],
+      "Set as default": [
+        "Ορισμός ως προεπιλογή"
       ],
       "Set encryption": [
         "Ορισμός κρυπτογράφησης"
@@ -3224,6 +3233,11 @@
         "Κρυπτογράφηση μηδενικής πρόσβασης. Ο παραλήπτης έχει απενεργοποιήσει την κρυπτογράφηση από άκρο σε άκρο στον λογαριασμό του."
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Αξιόπιστη επαφή"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Όνομα αρχείου κρυπτογραφημένων κεφαλίδων"
@@ -5137,6 +5151,9 @@
       "default email address": [
         "προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
+      "Default email application": [
+        "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
+      ],
       "Detection takes place on your device, so no data from your emails is sent to our servers.": [
         "Η ανίχνευση πραγματοποιείται στη συσκευή σας, επομένως δεν αποστέλλονται δεδομένα από τα ηλεκτρονικά μηνύματά σας στους διακομιστές μας."
       ],
@@ -5273,6 +5290,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
@@ -5651,6 +5671,9 @@
       "Organization size": [
         "Μέγεθος οργανισμού"
       ],
+      "Other accounts": [
+        "Άλλοι λογαριασμοί"
+      ],
       "Our system flagged this as suspicious. If it is not a phishing or scam email, mark as legitimate.": [
         "Το σύστημά μας το επισήμανε ως ύποπτο. Εάν δεν πρόκειται για μήνυμα ηλεκτρονικού ψαρέματος (phishing) ή απάτης, επισημάνετέ το ως νόμιμο."
       ],
@@ -5859,6 +5882,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Ορίστε το ${ MAIL_APP_NAME } ως προεπιλεγμένη εφαρμογή αλληλογραφίας σε αυτόν τον περιηγητή. Το κλικ σε σύνδεσμο αλληλογραφίας θα ανοίγει αυτόματα το ${ MAIL_APP_NAME }."
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "Ορίστε το ${ MAIL_APP_NAME } ως την προεπιλεγμένη εφαρμογή αλληλογραφίας. Το ${ MAIL_APP_NAME } θα ανοίγει αυτόματα όταν κάνετε κλικ σε σύνδεσμο αλληλογραφίας."
       ],
       "Setting up ${ feature }…": [
         "Ρύθμιση ${ feature }…"
@@ -7137,6 +7163,9 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
       ]
     },
     "Label attach to date input to select a date": {
@@ -9599,13 +9628,13 @@
         "${ elementsCount } συνομιλία σημάνθηκε ως μη διαβασμένη.",
         "${ elementsCount } συνομιλίες σημάνθηκαν ως μη διαβασμένες."
       ],
-      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } συνομιλία μετακινήθηκε στο ${ folderName } και ο αποστολέας προστέθηκε στη λίστα επιθυμητών.",
-        "${ elementsCount } συνομιλίες μετακινήθηκαν στο ${ folderName } και οι αποστολείς προστέθηκαν στη λίστα επιθυμητών."
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } συνομιλία μετακινήθηκε σε ${ labelName } και ο αποστολέας προστέθηκε στη λίστα επιθυμητών.",
+        "${ elementsCount } συνομιλίες μετακινήθηκαν σε ${ labelName } και οι αποστολείς προστέθηκαν στη λίστα επιθυμητών."
       ],
-      "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } συνομιλία μετακινήθηκε στο ${ folderName }.",
-        "${ elementsCount } συνομιλίες μεταφέρθηκαν σε ${ folderName }."
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } συνομιλία μετακινήθηκε στο ${ labelName }.",
+        "${ elementsCount } συνομιλίες μεταφέρθηκαν σε ${ labelName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } συνομιλία μετακινήθηκε στα Ενοχλητικά και ο αποστολέας προστέθηκε στη λίστα ενοχλητικών.",
@@ -9643,13 +9672,13 @@
         "${ elementsCount } μήνυμα σημάνθηκε ως μη διαβασμένο.",
         "${ elementsCount } μηνύματα σημάνθηκαν ως μη διαβασμένα."
       ],
-      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
-        "${ elementsCount } μήνυμα μετακινήθηκε στο ${ folderName } και ο αποστολέας προστέθηκε στη λίστα επιθυμητών.",
-        "${ elementsCount } μηνύματα μετακινήθηκαν στο ${ folderName } και οι αποστολείς προστέθηκαν στη λίστα επιθυμητών."
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } μήνυμα μετακινήθηκε σε ${ labelName } και ο αποστολέας προστέθηκε στη λίστα επιθυμητών.",
+        "${ elementsCount } μηνύματα μετακινήθηκαν σε ${ labelName } και οι αποστολείς προστέθηκαν στη λίστα επιθυμητών."
       ],
-      "${ elementsCount } message moved to ${ folderName }.": [
-        "${ elementsCount } το μήνυμα μεταφέρθηκε σε ${ folderName }.",
-        "${ elementsCount } μηνύματα μεταφέρθηκαν σε ${ folderName }."
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } μήνυμα μετακινήθηκε σε ${ labelName }.",
+        "${ elementsCount } μηνύματα μετακινήθηκαν σε ${ labelName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
         "${ elementsCount } μήνυμα μετακινήθηκε στα Ενοχλητικά και ο αποστολέας προστέθηκε στη λίστα ενοχλητικών.",
@@ -9707,11 +9736,11 @@
       "Conversation marked as unread.": [
         "Η συνομιλία σημάνθηκε ως μη διαβασμένη."
       ],
-      "Conversation moved to ${ folderName } and sender added to your not spam list.": [
-        "Η συνομιλία μετακινήθηκε στον φάκελο ${ folderName } και ο αποστολέας προστέθηκε στη λίστα μη ανεπιθύμητων μηνυμάτων."
+      "Conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "Η συνομιλία μετακινήθηκε στον φάκελο ${ labelName } και ο αποστολέας προστέθηκε στη λίστα μη ενοχλητικών."
       ],
-      "Conversation moved to ${ folderName }.": [
-        "Η συνομιλία μετακινήθηκε στον φάκελο ${ folderName }."
+      "Conversation moved to ${ labelName }.": [
+        "Η συνομιλία μετακινήθηκε στον φάκελο ${ labelName }."
       ],
       "Conversation moved to spam and sender added to your spam list.": [
         "Η συνομιλία μετακινήθηκε στα Ενοχλητικά και ο αποστολέας προστέθηκε στη λίστα ενοχλητικών."
@@ -9776,11 +9805,11 @@
       "Message marked as unread.": [
         "Το μήνυμα σημάνθηκε ως μη διαβασμένο."
       ],
-      "Message moved to ${ folderName } and sender added to your not spam list.": [
-        "Το μήνυμα μετακινήθηκε στον φάκελο ${ folderName } και ο αποστολέας προστέθηκε στη λίστα μη ανεπιθύμητων μηνυμάτων."
+      "Message moved to ${ labelName } and sender added to your not spam list.": [
+        "Το μήνυμα μετακινήθηκε σε ${ labelName } και ο αποστολέας προστέθηκε στη λίστα μη ανεπιθύμητων μηνυμάτων."
       ],
-      "Message moved to ${ folderName }.": [
-        "Το μήνυμα μετακινήθηκε στον φάκελο ${ folderName }."
+      "Message moved to ${ labelName }.": [
+        "Το μήνυμα μετακινήθηκε σε ${ labelName }."
       ],
       "Message moved to spam and sender added to your spam list.": [
         "Το μήνυμα μετακινήθηκε στα Ενοχλητικά και ο αποστολέας προστέθηκε στη λίστα ενοχλητικών."
@@ -10026,6 +10055,9 @@
       ],
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
+      ],
+      "Account Temporarily Locked": [
+        "Λογαριασμός Προσωρινά Κλειδωμένος"
       ],
       "Action all conversations": [
         "Εφαρμογή σε όλες τις συνομιλίες"

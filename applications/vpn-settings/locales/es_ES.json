@@ -2626,6 +2626,11 @@
         "Se ha enviado el correo electrónico de verificación a ${ address }."
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacto de confianza"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Sin nombre"
@@ -4218,6 +4223,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduce tu propia contraseña (como contacto de confianza)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduce tu dirección de correo electrónico de recuperación y te enviaremos tu nombre de usuario o dirección de correo electrónico."
@@ -6238,6 +6246,9 @@
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Tu contraseña (contacto de confianza)"
       ],
       "ZIP code": [
         "Código postal"
@@ -9656,6 +9667,9 @@
       ],
       "Account suspended": [
         "Cuenta suspendida"
+      ],
+      "Account Temporarily Locked": [
+        "Cuenta temporalmente bloqueada"
       ],
       "Action": [
         "Acción"

@@ -117,6 +117,9 @@
       "Cancel subscription": [
         "Anuluj subskrypcję"
       ],
+      "Cancel trial and pay": [
+        "Anuluj wersję próbną i zapłać"
+      ],
       "Change": [
         "Zmień"
       ],
@@ -486,6 +489,9 @@
       "More options": [
         "Więcej opcji"
       ],
+      "More options for accounts": [
+        "Więcej opcji dla kont"
+      ],
       "Need help?": [
         "Potrzebujesz pomocy?"
       ],
@@ -500,6 +506,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Open": [
+        "Otwórz"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -1088,6 +1097,11 @@
         "Zaoszczędź jeszcze więcej dzięki planu rocznemu"
       ]
     },
+    "bf2023: Deal details": {
+      "Premium Password Manager": [
+        "Menedżer haseł w wersji premium"
+      ]
+    },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Oszczędź na szybkich, szwajcarskich usługach VPN z okazji Czarnego Piątku"
@@ -1124,6 +1138,14 @@
         "Oferta jest niedostępna"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Użyj własnej domeny"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "Automatyczne odnowienie co ${ renewLength } miesiąc w kwocie ${ renewPrice }",
@@ -1144,6 +1166,9 @@
       ],
       "Annually": [
         "Rocznie"
+      ],
+      "Lifetime": [
+        "Dożywotnio"
       ],
       "Monthly": [
         "Co miesiąc"
@@ -1191,6 +1216,9 @@
       ],
       "Protect your whole household with 1 device": [
         "Ochrona całego domu za pomocą 1 urządzenia"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
+        "Streamuj ze wszystkich głównych platform w planie ${ PLAN_NAMES[PLANS.VPN2024] }."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Ten artykuł został zaktualizowany w celu uwzględnienia protokołów WireGuard i Stealth VPN."
@@ -2646,6 +2674,11 @@
         "Wiadomość weryfikacyjna została wysłana do ${ address }"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Zaufany kontakt"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Bez nazwy"
@@ -2879,6 +2912,9 @@
       ],
       "Tab closed": [
         "Karta została zamknięta"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Kwota do spłaty uległa zmianie. Spróbuj ponownie."
       ],
       "The email addresses do not match": [
         "Adresy e-mail nie pasują do siebie"
@@ -3726,6 +3762,12 @@
         "${ number } serwerów",
         "${ number } serwerów"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Dożywotnia subskrypcja ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }. Cena i data odnowienia subskrypcji ${ planTitle } pozostaje niezmienna."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
@@ -3809,6 +3851,9 @@
         "(${ memberCount } członków)",
         "(${ memberCount } członków)",
         "(${ memberCount } członków)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } / miesiąc)"
       ],
       "(default)": [
         "(domyślnie)"
@@ -4317,6 +4362,9 @@
       "Enter your own password (as organization admin).": [
         "Wpisz swoje hasło (jako administrator organizacji)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Wpisz swoje hasło (jako zaufany kontakt)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Wpisz adres pomocniczy w celu wysłania Twojej nazwy użytkownika lub adresu e-mail."
       ],
@@ -4548,6 +4596,9 @@
       "Item updated in vault": [
         "Zaktualizowanie elementu w sejfie"
       ],
+      "JCB logo": [
+        "Logo JCB"
+      ],
       "Keys created": [
         "Klucze zostały utworzone"
       ],
@@ -4734,6 +4785,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organizuj dedykowane serwery w bramy i decyduj, którzy użytkownicy mają do nich dostęp."
       ],
+      "Other accounts": [
+        "Inne konta"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organizacja posiada jeszcze innych administratorów. Jesteś odpowiedzialny za przekazanie im nowego hasła."
       ],
@@ -4850,6 +4904,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
+      ],
+      "Registering your subscription…": [
+        "Rejestrowanie subskrypcji…"
       ],
       "Remember to share the user's sign in details with them.": [
         "Pamiętaj, aby udostępnić użytkownikowi dane logowania."
@@ -5595,6 +5652,9 @@
       "Your ${ BRAND_NAME } password": [
         "Hasło ${ BRAND_NAME }"
       ],
+      "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Subskrypcja ${ plan } zostanie zastąpiona subskrypcją ${ PASS_SHORT_APP_NAME } Lifetime. Pozostałe saldo subskrypcji zostanie dodane do konta. Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Twoje konta ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } są połączone. Aby je usunąć, zaloguj się na ${ loginLink } i usuń konto."
       ],
@@ -5625,6 +5685,9 @@
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
+      "Your next billing date is ${ renewalTime }. Please contact support if you require an immediate plan change.": [
+        "Następne rozliczenie nastąpi ${ renewalTime }. Jeśli potrzebujesz natychmiastowej zmiany planu, skontaktuj się ze wsparciem klienta."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizacja używa logowania SSO. Kliknij \"Zaloguj się\", aby skorzystać z dostawcy tożsamości SSO."
       ],
@@ -5636,6 +5699,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
+        "Zaplanowany plan rozpocznie się ${ renewalTime } i odnowi się automatycznie co miesiąc."
+      ],
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Możliwość dodania serwerów do innej bramy będzie możliwa natychmiast."
@@ -6388,6 +6457,9 @@
       "Your password (admin)": [
         "Twoje hasło (administratora)"
       ],
+      "Your password (trusted contact)": [
+        "Twoje hasło (zaufany kontakt)"
+      ],
       "ZIP code": [
         "Kod pocztowy"
       ]
@@ -6879,6 +6951,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ n } custom email domain": [
         "${ n } niestandardowa domena",
         "${ n } niestandardowe domeny",
@@ -7028,6 +7103,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Wsparcie aplikacji pocztowych (przez IMAP / SMTP)"
+      ],
+      "Email groups": [
+        "Grupy kontaktów"
       ],
       "Enables HIPAA compliance": [
         "Zgodność z wymogami HIPAA"
@@ -7301,6 +7379,9 @@
       "Downgrade account?": [
         "Obniżyć plan?"
       ],
+      "Review subscription": [
+        "Podsumowanie subskrypcji"
+      ],
       "Review subscription and pay": [
         "Przejrzyj subskrypcję i zapłać"
       ],
@@ -7373,6 +7454,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Udostępnij swoje kalendarze rodzinie, znajomym i współpracownikom"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Wysyłaj wiadomości do wszystkich członków grupy za pomocą jednego adresu e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zapewnia odbieranie wszystkich wiadomości wysyłanych do domeny, nawet jeśli adres e-mail nie istnieje, przestał istnieć lub zawiera literówkę"
@@ -8017,8 +8101,23 @@
       "MM/YY": [
         "MM/RR"
       ],
+      "More plans are available in other currencies": [
+        "Więcej planów jest dostępnych w innych walutach"
+      ],
       "Processing payment": [
         "Przetwarzanie płatności"
+      ],
+      "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
+        "Cena odnowienia może ulec zmianie zgodnie z ${ termsAndConditionsLink }."
+      ],
+      "Renews at ${ renewPriceStr }, cancel anytime.": [
+        "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
+      ],
+      "terms & conditions": [
+        "regulaminem"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
+        "Specjalna obniżona cena ${ priceWithDiscount } ważna przez pierwszy miesiąc. Odnowienie nastąpi w cenie ${ renewPriceStr } miesięcznie. Możesz anulować w dowolnym momencie."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakcja została wykryta. Środki zostaną dodane do konta po pełnym potwierdzeniu transakcji."
@@ -8048,6 +8147,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
+      ]
+    },
+    "Payments.plan_name": {
+      "Free": [
+        "Free"
       ]
     },
     "Permission": {
@@ -9494,6 +9598,11 @@
         "Krótki alias @pm.me"
       ]
     },
+    "subscription reminder": {
+      "and 15 more premium features": [
+        "i 15 więcej funkcji premium"
+      ]
+    },
     "Subscription renewal state": {
       "Are you sure?": [
         "Czy na pewno?"
@@ -9870,6 +9979,9 @@
       "Account suspended": [
         "Konto zostało zawieszone"
       ],
+      "Account Temporarily Locked": [
+        "Konto zostało tymczasowo zablokowane"
+      ],
       "Action": [
         "Akcja"
       ],
@@ -10064,6 +10176,9 @@
       ],
       "Couldn’t create accounts": [
         "Nie można utworzyć kont"
+      ],
+      "Coupon": [
+        "Kupon"
       ],
       "Create ${ selectedUserIds.length } user": [
         "Utwórz ${ selectedUserIds.length } użytkownika",

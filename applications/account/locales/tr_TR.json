@@ -745,6 +745,9 @@
       "Increase": [
         "Artır"
       ],
+      "Insert image": [
+        "Görsel ekle"
+      ],
       "Invite": [
         "Davet et"
       ],
@@ -834,6 +837,9 @@
       ],
       "More options": [
         "Diğer seçenekler"
+      ],
+      "More options for accounts": [
+        "Hesaplar için diğer seçenekler"
       ],
       "Need help?": [
         "Yardım gerekiyor mu?"
@@ -1101,6 +1107,9 @@
       ],
       "Send reminder": [
         "Hatırlatıcı gönder"
+      ],
+      "Set as default": [
+        "Varsayılan olarak ayarla"
       ],
       "Set as default mail application": [
         "Varsayılan e-posta uygulaması olarak ayarla"
@@ -1786,6 +1795,14 @@
         "Teklif kullanılamıyor"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
         "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir",
@@ -1857,6 +1874,9 @@
       ],
       "Protect your whole household with 1 device": [
         "1 aygıtla tüm evinizi koruyun"
+      ],
+      "Stream from all major platforms with ${ PLAN_NAMES[PLANS.VPN2024] }.": [
+        "${ PLAN_NAMES[PLANS.VPN2024] } tarifesi ile tüm büyük platformlardaki yayın akışlarını izleyin."
       ],
       "This article has been updated to include the WireGuard and Stealth VPN protocols.": [
         "Bu yazı, WireGuard ve Stealth VPN iletişim kurallarını kapsayacak şekilde güncellendi."
@@ -4250,6 +4270,11 @@
         "Uyarı"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Güvenilir kişi"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Adlandırılmamış"
@@ -6469,6 +6494,9 @@
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/ay)"
+      ],
       "(default)": [
         "(varsayılan)"
       ],
@@ -7213,6 +7241,9 @@
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Kendi parolanızı yazın (güvenilen kişi olarak)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Kurtarma e-posta adresinizi yazın. Size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
       ],
@@ -7868,6 +7899,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Özel sunucularınızı ağ geçitleri olarak düzenleyin ve hangi üyelerin bunlara erişebileceğini belirleyin."
       ],
+      "Other accounts": [
+        "Diğer hesaplar"
+      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Kuruluşunuzda başka yöneticiler de var. Yeni parolayı onlara bildirmek sizin sorumluluğunuzdur."
       ],
@@ -8158,6 +8192,9 @@
       ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
+      ],
+      "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız olarak ayarlayın. Bir e-posta bağlantısına tıkladığınızda ${ MAIL_APP_NAME } otomatik olarak açılır."
       ],
       "Set password": [
         "Parola ayarla"
@@ -10622,6 +10659,9 @@
       "Your password (admin)": [
         "Parolanız (yönetici)"
       ],
+      "Your password (trusted contact)": [
+        "Parolanız (güvenilen kişi)"
+      ],
       "Your referral link": [
         "Öneri bağlantınız"
       ],
@@ -11551,6 +11591,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
@@ -11714,6 +11757,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "E-posta istemcisi desteği (IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-posta grupları"
       ],
       "Enables HIPAA compliance": [
         "HIPAA uyumluluğu"
@@ -12117,6 +12163,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Gruptaki herkese tek bir e-posta adresinden e-posta gönderin"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
@@ -16514,6 +16563,9 @@
       ],
       "Account suspended": [
         "Hesap askıya alınmış"
+      ],
+      "Account Temporarily Locked": [
+        "Hesap geçici olarak kilitlendi"
       ],
       "Action": [
         "İşlem"

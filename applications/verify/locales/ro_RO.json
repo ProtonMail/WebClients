@@ -11,6 +11,9 @@
       "Cancel": [
         "Anulare"
       ],
+      "Change password": [
+        "Schimbare parolă"
+      ],
       "Close": [
         "Închidere"
       ],
@@ -70,6 +73,14 @@
       ],
       "View invoice": [
         "Afișare factură"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
       ]
     },
     "Country name": {
@@ -1014,6 +1025,9 @@
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Introduceți parola (ca și contact aprobat)."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
@@ -1096,6 +1110,9 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Your password (trusted contact)": [
+        "Parola dvs. (contact aprobat)"
       ]
     },
     "Link": {
@@ -1112,6 +1129,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ n } custom email domain": [
         "Un domeniu personal de e-mail",
         "${ n } domenii personale de e-mail",
@@ -1191,6 +1211,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Suport client de e-mail (prin IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grupuri de contacte"
+      ],
       "Encrypted contact details": [
         "Detalii contacte criptate"
       ],
@@ -1263,6 +1286,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Trimiteți mesaje tuturor dintr-un grup cu o singură adresă de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Se asigură că primiți toate e-mailurile trimise către domeniul dvs., chiar dacă adresa de e-mail nu a existat, nu mai există sau e scrisă greșit."
@@ -1376,6 +1402,9 @@
       ]
     },
     "Title": {
+      "Account Temporarily Locked": [
+        "Cont blocat temporar"
+      ],
       "Enter 2FA code": [
         "Introduceți codul de A2F"
       ],
