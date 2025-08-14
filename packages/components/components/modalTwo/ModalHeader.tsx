@@ -47,6 +47,10 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
      */
     sublineClassName?: string;
     /**
+     * Additional content to be rendered above the title.
+     */
+    leadingContent?: JSX.Element;
+    /**
      * Additional content to be rendered above the scrollable section.
      */
     additionalContent?: JSX.Element;
@@ -81,6 +85,7 @@ const ModalHeader = ({
     closeButtonProps,
     titleClassName,
     sublineClassName,
+    leadingContent,
     additionalContent,
     hasClose = true,
     ...rest
@@ -99,6 +104,7 @@ const ModalHeader = ({
                 )}
                 {...rest}
             >
+                {leadingContent}
                 {title && (
                     <div className="modal-two-header-title mt-1">
                         <h1
