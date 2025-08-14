@@ -31,7 +31,7 @@ function DownloadIsTooBigModal({ onSubmit, onCancel, onClose, open, ...modalProp
         <BasicModal
             title={c('Title').t`Browser might run out of memory`}
             isOpen={open === undefined ? true : open}
-            onClose={handleCancel}
+            onClose={onClose}
             footer={<TooBigModalFooter onCancel={handleCancel} onContinue={handleContinue} />}
             {...modalProps}
         >
