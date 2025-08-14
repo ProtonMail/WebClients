@@ -36,7 +36,20 @@ export const useSdkErrorHandler = () => {
 
             console.error(errorToHandle);
             if (shouldTrackError(errorToHandle)) {
-                sendErrorReport(new EnrichedError(errorToHandle.message, { tags: { component: 'drive-sdk' }, extra }));
+                sendErrorReport(
+                    new EnrichedError(errorToHandle.message, {
+                        tags: {
+                            component: 'drive-sdk',
+                        },
+                        extra: {
+                            fallbackMessage,
+                            originalErrorName: errorToHandle.name,
+                            originalErrorStack: errorToHandle.stack,
+                            originalErrorCause: errorToHandle.cause,
+                            ...extra,
+                        },
+                    })
+                );
             }
         },
         [createNotification]

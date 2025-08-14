@@ -92,7 +92,7 @@ export class MetricHandler {
         });
 
         captureMessage('Metric event details: apiRetrySucceeded', {
-            level: 'info',
+            level: 'debug', // Debug as we need it only when we investigate metric reports.
             tags: {
                 driveSdkMetricEvent: 'apiRetrySucceeded',
             },
@@ -135,7 +135,7 @@ export class MetricHandler {
 
             if (metric.error === 'unknown') {
                 captureMessage('Metric event details: upload unknown error', {
-                    level: 'error',
+                    level: 'debug', // Debug as we need it only when we investigate metric reports.
                     tags: {
                         driveSdkMetricEvent: 'uploadError',
                     },
@@ -182,7 +182,7 @@ export class MetricHandler {
 
             if (metric.error === 'unknown') {
                 captureMessage('Metric event details: download unknown error', {
-                    level: 'error',
+                    level: 'debug', // Debug as we need it only when we investigate metric reports.
                     tags: {
                         driveSdkMetricEvent: 'downloadError',
                     },
@@ -208,7 +208,7 @@ export class MetricHandler {
             this.reportIntegrityErroringUsers(metric);
 
             captureMessage('Metric event details: decryption error', {
-                level: 'error',
+                level: 'debug', // Debug as we need it only when we investigate metric reports.
                 tags: {
                     driveSdkMetricEvent: 'decryptionError',
                 },
