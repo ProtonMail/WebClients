@@ -11,6 +11,9 @@
       "Cancel": [
         "Cancel·la"
       ],
+      "Change password": [
+        "Canvia la contrasenya"
+      ],
       "Close": [
         "Tanca"
       ],
@@ -70,6 +73,14 @@
       ],
       "View invoice": [
         "Mostra la factura"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "Use your own email domain": [
+        "Utilitzeu el vostre propi domini de correu electrònic"
       ]
     },
     "Country name": {
@@ -1009,6 +1020,9 @@
       "Enter your own password (as organization admin).": [
         "Introduïu la vostra contrasenya (com a administrador d'organització)."
       ],
+      "Enter your own password (as trusted contact).": [
+        "Introduïu la vostra contrasenya (com a contacte de confiança)."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
@@ -1091,6 +1105,9 @@
       ],
       "Your password (admin)": [
         "La vostra contrasenya (administrador)"
+      ],
+      "Your password (trusted contact)": [
+        "La vostra contrasenya (contacte de confiança)"
       ]
     },
     "Link": {
@@ -1178,6 +1195,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Compatibilitat amb clients de correu electrònic (per IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grups de correu electrònic"
+      ],
       "Encrypted contact details": [
         "Detalls de contacte xifrats"
       ],
@@ -1250,6 +1270,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envieu un correu electrònic a tothom en un grup amb una única adreça de correu."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Assegura que rebeu tots els correus electrònics enviats al vostre domini, fins i tot si l'adreça de correu electrònic no existeix, ha deixat d'existir o té un error ortogràfic"
@@ -1363,6 +1386,9 @@
       ]
     },
     "Title": {
+      "Account Temporarily Locked": [
+        "Compte bloquejat temporalment"
+      ],
       "Enter 2FA code": [
         "Introduïu el codi 2FA"
       ],
