@@ -55,7 +55,7 @@ describe('moveEngineRulesMessages', () => {
             const conversation = {} as Conversation;
 
             expect(() =>
-                run({ element: conversation, targetLabelID: MAILBOX_LABEL_IDS.INBOX, labels: [], folders: [] })
+                run({ element: conversation, destinationLabelID: MAILBOX_LABEL_IDS.INBOX, labels: [], folders: [] })
             ).toThrow(ERROR_ELEMENT_NOT_MESSAGE);
         });
 
@@ -65,7 +65,7 @@ describe('moveEngineRulesMessages', () => {
                 const conversation = {} as Conversation;
 
                 expect(() =>
-                    run({ element: conversation, targetLabelID: MAILBOX_LABEL_IDS.INBOX, labels: [], folders: [] })
+                    run({ element: conversation, destinationLabelID: MAILBOX_LABEL_IDS.INBOX, labels: [], folders: [] })
                 ).not.toThrow();
             }
         );
@@ -77,120 +77,120 @@ describe('moveEngineRulesMessages', () => {
                 {
                     name: 'inboxRules',
                     run: messageInboxRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
                 },
                 {
                     name: 'allDraftRules',
                     run: messageAllDraftRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
                 },
                 {
                     name: 'allSentRules',
                     run: messageAllSentRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_SENT],
                 },
                 {
                     name: 'trashRules',
                     run: messageTrashRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     LabelIDs: [MAILBOX_LABEL_IDS.TRASH],
                 },
                 {
                     name: 'spamRules',
                     run: messageSpamRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     LabelIDs: [MAILBOX_LABEL_IDS.SPAM],
                 },
                 {
                     name: 'starredRules',
                     run: messageStarredRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     LabelIDs: [MAILBOX_LABEL_IDS.STARRED],
                 },
                 {
                     name: 'archiveRules',
                     run: messageArchiveRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     LabelIDs: [MAILBOX_LABEL_IDS.ARCHIVE],
                 },
                 {
                     name: 'sentRules',
                     run: messageSentRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                     LabelIDs: [MAILBOX_LABEL_IDS.SENT],
                 },
                 {
                     name: 'draftRules',
                     run: messageDraftRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                     LabelIDs: [MAILBOX_LABEL_IDS.DRAFTS],
                 },
                 {
                     name: 'catRule, default',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                     LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT],
                 },
                 {
                     name: 'catRule, forums',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
                     LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_FORUMS],
                 },
                 {
                     name: 'catRule, social',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                     LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL],
                 },
                 {
                     name: 'catRule, newsletters',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
                 },
                 {
                     name: 'catRule, promotions',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
                 },
                 {
                     name: 'catRule trans',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                     LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS],
                 },
                 {
                     name: 'catRule, updates',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
                     LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_UPDATES],
                 },
                 {
                     name: 'customFolderRules',
                     run: messageCustomFolderRules,
-                    targetLabelID: CUSTOM_FOLDER_KEY,
+                    destinationLabelID: CUSTOM_FOLDER_KEY,
                     LabelIDs: [CUSTOM_FOLDER_KEY],
                 },
                 {
                     name: 'customLabelRules',
                     run: messageCustomLabelRules,
-                    targetLabelID: CUSTOM_LABEL_KEY,
+                    destinationLabelID: CUSTOM_LABEL_KEY,
                     LabelIDs: [CUSTOM_LABEL_KEY],
                 },
             ])(
                 'should return not applicable if the element is in the label, $name',
-                ({ run, LabelIDs, targetLabelID }) => {
+                ({ run, LabelIDs, destinationLabelID }) => {
                     const result = run({
                         element: {
                             ...element,
                             LabelIDs,
                         },
-                        targetLabelID,
+                        destinationLabelID,
                         labels: [],
                         folders: [],
                     });
@@ -202,57 +202,57 @@ describe('moveEngineRulesMessages', () => {
 
         describe('allow when LabelIDs empty', () => {
             it.each([
-                { name: 'inboxRules', run: messageInboxRules, targetLabelID: MAILBOX_LABEL_IDS.INBOX },
-                { name: 'allDraftRules', run: messageAllDraftRules, targetLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS },
-                { name: 'allSentRules', run: messageAllSentRules, targetLabelID: MAILBOX_LABEL_IDS.ALL_SENT },
-                { name: 'trashRules', run: messageTrashRules, targetLabelID: MAILBOX_LABEL_IDS.TRASH },
-                { name: 'spamRules', run: messageSpamRules, targetLabelID: MAILBOX_LABEL_IDS.SPAM },
-                { name: 'starredRules', run: messageStarredRules, targetLabelID: MAILBOX_LABEL_IDS.STARRED },
-                { name: 'archiveRules', run: messageArchiveRules, targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE },
-                { name: 'sentRules', run: messageSentRules, targetLabelID: MAILBOX_LABEL_IDS.SENT },
-                { name: 'draftRules', run: messageDraftRules, targetLabelID: MAILBOX_LABEL_IDS.DRAFTS },
+                { name: 'inboxRules', run: messageInboxRules, destinationLabelID: MAILBOX_LABEL_IDS.INBOX },
+                { name: 'allDraftRules', run: messageAllDraftRules, destinationLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS },
+                { name: 'allSentRules', run: messageAllSentRules, destinationLabelID: MAILBOX_LABEL_IDS.ALL_SENT },
+                { name: 'trashRules', run: messageTrashRules, destinationLabelID: MAILBOX_LABEL_IDS.TRASH },
+                { name: 'spamRules', run: messageSpamRules, destinationLabelID: MAILBOX_LABEL_IDS.SPAM },
+                { name: 'starredRules', run: messageStarredRules, destinationLabelID: MAILBOX_LABEL_IDS.STARRED },
+                { name: 'archiveRules', run: messageArchiveRules, destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE },
+                { name: 'sentRules', run: messageSentRules, destinationLabelID: MAILBOX_LABEL_IDS.SENT },
+                { name: 'draftRules', run: messageDraftRules, destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS },
                 {
                     name: 'catRule, default',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 },
                 {
                     name: 'catRule, forum',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
                 },
                 {
                     name: 'catRule, newsletter',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                 },
                 {
                     name: 'catRule, promotion',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 },
                 {
                     name: 'catRule, social',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 },
                 {
                     name: 'catRule, transaction',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                 },
                 {
                     name: 'catRule, update',
                     run: messageCategoryRules,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
                 },
-            ])('should return allow when LabelIDs are empty, $name', ({ run, targetLabelID }) => {
+            ])('should return allow when LabelIDs are empty, $name', ({ run, destinationLabelID }) => {
                 const result = run({
                     element: {
                         ...element,
                         LabelIDs: [],
                     },
-                    targetLabelID,
+                    destinationLabelID,
                     labels: [],
                     folders: [],
                 });
@@ -267,123 +267,123 @@ describe('moveEngineRulesMessages', () => {
                     name: 'inboxRules',
                     run: messageInboxRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_SENT],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 },
                 {
                     name: 'allDraftRules',
                     run: messageAllDraftRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_SENT],
-                    targetLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
                 },
                 {
                     name: 'allSentRules',
                     run: messageAllSentRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
                 },
                 {
                     name: 'trashRules',
                     run: messageTrashRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                 },
                 {
                     name: 'spamRules',
                     run: messageSpamRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 },
                 {
                     name: 'starredRules',
                     run: messageStarredRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                 },
                 {
                     name: 'archiveRules',
                     run: messageArchiveRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                 },
                 {
                     name: 'sentRules',
                     run: messageSentRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                 },
                 {
                     name: 'draftRules',
                     run: messageDraftRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                 },
                 {
                     name: 'draftRules',
                     run: messageDraftRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_SENT],
-                    targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                 },
                 {
                     name: 'catRule, default',
                     run: messageCategoryRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 },
                 {
                     name: 'catRule, forum',
                     run: messageCategoryRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
                 },
                 {
                     name: 'catRule, newsletter',
                     run: messageCategoryRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                 },
                 {
                     name: 'catRule, promotion',
                     run: messageCategoryRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 },
                 {
                     name: 'catRule, social',
                     run: messageCategoryRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 },
                 {
                     name: 'catRule, transaction',
                     run: messageCategoryRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                 },
                 {
                     name: 'catRule, update',
                     run: messageCategoryRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
                 },
                 {
                     name: 'customFolderRules',
                     run: messageCustomFolderRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: CUSTOM_FOLDER_KEY,
+                    destinationLabelID: CUSTOM_FOLDER_KEY,
                 },
                 {
                     name: 'customLabelRules',
                     run: messageCustomLabelRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    targetLabelID: CUSTOM_LABEL_KEY,
+                    destinationLabelID: CUSTOM_LABEL_KEY,
                 },
-            ])('should return allow with LabelIDs config, $name', ({ run, LabelIDs, targetLabelID }) => {
+            ])('should return allow with LabelIDs config, $name', ({ run, LabelIDs, destinationLabelID }) => {
                 const result = run({
                     element: {
                         ...element,
                         LabelIDs,
                     },
-                    targetLabelID,
+                    destinationLabelID,
                     labels: [],
                     folders: [],
                 });
@@ -398,23 +398,23 @@ describe('moveEngineRulesMessages', () => {
             {
                 name: 'spam rules, draft flag',
                 run: messageSpamRules,
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 Flags: MESSAGE_FLAGS.FLAG_INTERNAL,
             },
             {
                 name: 'spam rules, sent flag',
                 run: messageSpamRules,
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 Flags: MESSAGE_FLAGS.FLAG_SENT,
             },
-        ])('should return allowed if the element has the flag $name', ({ run, targetLabelID, Flags }) => {
+        ])('should return allowed if the element has the flag $name', ({ run, destinationLabelID, Flags }) => {
             const result = run({
                 element: {
                     ...element,
                     LabelIDs: [],
                     Flags,
                 },
-                targetLabelID,
+                destinationLabelID,
                 labels: [],
                 folders: [],
             });
@@ -426,71 +426,71 @@ describe('moveEngineRulesMessages', () => {
             {
                 name: 'inbox, sent flag',
                 run: messageInboxRules,
-                targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 Flags: MESSAGE_FLAGS.FLAG_SENT,
             },
             {
                 name: 'inbox, draft flag',
                 run: messageInboxRules,
-                targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                 Flags: MESSAGE_FLAGS.FLAG_INTERNAL,
             },
             {
                 name: 'all draft, sent flag',
                 run: messageAllDraftRules,
-                targetLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
                 Flags: MESSAGE_FLAGS.FLAG_SENT,
             },
             {
                 name: 'all draft, received flag',
                 run: messageAllDraftRules,
-                targetLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
                 Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
             },
             {
                 name: 'all sent rules, draft flag',
                 run: messageAllSentRules,
-                targetLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
                 Flags: MESSAGE_FLAGS.FLAG_INTERNAL,
             },
             {
                 name: 'all sent rules, received flag',
                 run: messageAllSentRules,
-                targetLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
                 Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
             },
             {
                 name: 'sent rules, draft flag',
                 run: messageSentRules,
-                targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                 Flags: MESSAGE_FLAGS.FLAG_INTERNAL,
             },
             {
                 name: 'sent rules, received flag',
                 run: messageSentRules,
-                targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                destinationLabelID: MAILBOX_LABEL_IDS.SENT,
                 Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
             },
             {
                 name: 'draft rules, sent flag',
                 run: messageDraftRules,
-                targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                 Flags: MESSAGE_FLAGS.FLAG_SENT,
             },
             {
                 name: 'draft rules, received flag',
                 run: messageDraftRules,
-                targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
                 Flags: MESSAGE_FLAGS.FLAG_RECEIVED,
             },
-        ])('should return deny if the element has the flag $name', ({ run, targetLabelID, Flags }) => {
+        ])('should return deny if the element has the flag $name', ({ run, destinationLabelID, Flags }) => {
             const result = run({
                 element: {
                     ...element,
                     LabelIDs: [],
                     Flags,
                 },
-                targetLabelID,
+                destinationLabelID,
                 labels: [],
                 folders: [],
             });
@@ -505,84 +505,87 @@ describe('moveEngineRulesMessages', () => {
                 name: 'allMailRules, all mail',
                 run: messageAllMailRules,
                 LabelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL],
-                targetLabelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALL_MAIL,
             },
             {
                 name: 'allMailRules, inbox',
                 run: messageAllMailRules,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
-                targetLabelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALL_MAIL,
             },
             {
                 name: 'almostAllMailRules, almost all mail',
                 run: messageAlmostAllMailRules,
                 LabelIDs: [MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
-                targetLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
             },
             {
                 name: 'almostAllMailRules, inbox',
                 run: messageAlmostAllMailRules,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
-                targetLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
             },
-        ])('should return not applicable if the element is in the label, $name', ({ run, LabelIDs, targetLabelID }) => {
-            const result = run({
-                element: {
-                    ...element,
-                    LabelIDs,
-                },
-                targetLabelID,
-                labels: [],
-                folders: [],
-            });
+        ])(
+            'should return not applicable if the element is in the label, $name',
+            ({ run, LabelIDs, destinationLabelID }) => {
+                const result = run({
+                    element: {
+                        ...element,
+                        LabelIDs,
+                    },
+                    destinationLabelID,
+                    labels: [],
+                    folders: [],
+                });
 
-            expect(result).toBe(MoveEngineRuleResult.NOT_APPLICABLE);
-        });
+                expect(result).toBe(MoveEngineRuleResult.NOT_APPLICABLE);
+            }
+        );
 
         it.each([
             {
                 name: 'outboxRules, outbox',
                 run: messageOutboxRules,
                 LabelIDs: [MAILBOX_LABEL_IDS.OUTBOX],
-                targetLabelID: MAILBOX_LABEL_IDS.OUTBOX,
+                destinationLabelID: MAILBOX_LABEL_IDS.OUTBOX,
             },
             {
                 name: 'outboxRules, inbox',
                 run: messageOutboxRules,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
-                targetLabelID: MAILBOX_LABEL_IDS.OUTBOX,
+                destinationLabelID: MAILBOX_LABEL_IDS.OUTBOX,
             },
             {
                 name: 'scheduleRules, scheduled',
                 run: messageScheduleRules,
                 LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED],
-                targetLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
             },
             {
                 name: 'scheduleRules, inbox',
                 run: messageScheduleRules,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
-                targetLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
             },
             {
                 name: 'snoozedRules, snoozed',
                 run: messageSnoozedRules,
                 LabelIDs: [MAILBOX_LABEL_IDS.SNOOZED],
-                targetLabelID: MAILBOX_LABEL_IDS.SNOOZED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SNOOZED,
             },
             {
                 name: 'snoozedRules, inbox',
                 run: messageSnoozedRules,
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
-                targetLabelID: MAILBOX_LABEL_IDS.SNOOZED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SNOOZED,
             },
-        ])('should return denied if the element is in the label, $name', ({ run, LabelIDs, targetLabelID }) => {
+        ])('should return denied if the element is in the label, $name', ({ run, LabelIDs, destinationLabelID }) => {
             const result = run({
                 element: {
                     ...element,
                     LabelIDs,
                 },
-                targetLabelID,
+                destinationLabelID,
                 labels: [],
                 folders: [],
             });
@@ -596,45 +599,45 @@ describe('moveEngineRulesMessages', () => {
             {
                 name: 'inboxRules, scheduled',
                 run: messageInboxRules,
-                targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
             },
             {
                 name: 'spamRules, scheduled',
                 run: messageSpamRules,
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
             },
             {
                 name: 'archiveRules, scheduled',
                 run: messageArchiveRules,
-                targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
             },
             {
                 name: 'outboxRules, scheduled',
                 run: messageOutboxRules,
-                targetLabelID: MAILBOX_LABEL_IDS.OUTBOX,
+                destinationLabelID: MAILBOX_LABEL_IDS.OUTBOX,
             },
             {
                 name: 'scheduleRules, scheduled',
                 run: messageScheduleRules,
-                targetLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SCHEDULED,
             },
             {
                 name: 'snoozedRules, scheduled',
                 run: messageSnoozedRules,
-                targetLabelID: MAILBOX_LABEL_IDS.SNOOZED,
+                destinationLabelID: MAILBOX_LABEL_IDS.SNOOZED,
             },
             {
                 name: 'categoryRules, scheduled',
                 run: messageCategoryRules,
-                targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
             },
-        ])('should return denied if the element is scheduled, $name', ({ run, targetLabelID }) => {
+        ])('should return denied if the element is scheduled, $name', ({ run, destinationLabelID }) => {
             const result = run({
                 element: {
                     ...element,
                     LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED],
                 },
-                targetLabelID,
+                destinationLabelID,
                 labels: [],
                 folders: [],
             });
@@ -646,20 +649,20 @@ describe('moveEngineRulesMessages', () => {
             {
                 name: 'allMailRules, scheduled',
                 run: messageAllMailRules,
-                targetLabelID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALL_MAIL,
             },
             {
                 name: 'almostAllMailRules, scheduled',
                 run: messageAlmostAllMailRules,
-                targetLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
             },
-        ])('should return not applicable if the element is scheduled, $name', ({ run, targetLabelID }) => {
+        ])('should return not applicable if the element is scheduled, $name', ({ run, destinationLabelID }) => {
             const result = run({
                 element: {
                     ...element,
                     LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED],
                 },
-                targetLabelID,
+                destinationLabelID,
                 labels: [],
                 folders: [],
             });
@@ -671,50 +674,50 @@ describe('moveEngineRulesMessages', () => {
             {
                 name: 'allSentRules, scheduled',
                 run: messageAllSentRules,
-                targetLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALL_SENT,
             },
             {
                 name: 'allDraftRules, scheduled',
                 run: messageAllDraftRules,
-                targetLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
+                destinationLabelID: MAILBOX_LABEL_IDS.ALL_DRAFTS,
             },
             {
                 name: 'trashRules, scheduled',
                 run: messageTrashRules,
-                targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
             },
             {
                 name: 'starredRules, scheduled',
                 run: messageStarredRules,
-                targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
             },
             {
                 name: 'customLabelRules, scheduled',
                 run: messageCustomLabelRules,
-                targetLabelID: CUSTOM_LABEL_KEY,
+                destinationLabelID: CUSTOM_LABEL_KEY,
             },
             {
                 name: 'sentRules, scheduled',
                 run: messageSentRules,
-                targetLabelID: MAILBOX_LABEL_IDS.SENT,
+                destinationLabelID: MAILBOX_LABEL_IDS.SENT,
             },
             {
                 name: 'draftRules, scheduled',
                 run: messageDraftRules,
-                targetLabelID: MAILBOX_LABEL_IDS.DRAFTS,
+                destinationLabelID: MAILBOX_LABEL_IDS.DRAFTS,
             },
             {
                 name: 'customFolderRules, scheduled',
                 run: messageCustomFolderRules,
-                targetLabelID: CUSTOM_FOLDER_KEY,
+                destinationLabelID: CUSTOM_FOLDER_KEY,
             },
-        ])('should return allowed if the element is scheduled, $name', ({ run, targetLabelID }) => {
+        ])('should return allowed if the element is scheduled, $name', ({ run, destinationLabelID }) => {
             const result = run({
                 element: {
                     ...element,
                     LabelIDs: [MAILBOX_LABEL_IDS.SCHEDULED],
                 },
-                targetLabelID,
+                destinationLabelID,
                 labels: [],
                 folders: [],
             });

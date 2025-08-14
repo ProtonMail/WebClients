@@ -26,7 +26,7 @@ export const useListActions = ({
     customActions?: {
         onMarkAs?: (status: any, sourceAction: SOURCE_ACTION) => void;
         onDelete?: (sourceAction: SOURCE_ACTION) => void;
-        onMove?: (targetLabelID: string, sourceAction: SOURCE_ACTION) => void;
+        onMove?: (destinationLabelID: string, sourceAction: SOURCE_ACTION) => void;
     };
 }) => {
     const { onMarkAs = noop, onDelete = noop, onMove = noop } = customActions;

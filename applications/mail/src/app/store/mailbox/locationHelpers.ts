@@ -20,17 +20,17 @@ import type { Conversation } from 'proton-mail/models/conversation';
 
 export const applyLabelToMessage = (
     message: Message,
-    targetLabelID: string,
+    destinationLabelID: string,
     folders: Folder[],
     labels: Label[]
 ): Message => {
     let labelIDsCopy = [...message.LabelIDs];
-    const isTargetAFolder = isSystemFolder(targetLabelID) || isCustomFolder(targetLabelID, folders);
-    const isTargetACategory = isCategoryLabel(targetLabelID);
+    const isTargetAFolder = isSystemFolder(destinationLabelID) || isCustomFolder(destinationLabelID, folders);
+    const isTargetACategory = isCategoryLabel(destinationLabelID);
 
     if (isTargetAFolder) {
         if (labelIDsCopy.includes(MAILBOX_LABEL_IDS.TRASH) || labelIDsCopy.includes(MAILBOX_LABEL_IDS.SPAM)) {
-            if (targetLabelID !== MAILBOX_LABEL_IDS.TRASH && targetLabelID !== MAILBOX_LABEL_IDS.SPAM) {
+            if (destinationLabelID !== MAILBOX_LABEL_IDS.TRASH && destinationLabelID !== MAILBOX_LABEL_IDS.SPAM) {
                 labelIDsCopy.push(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL);
             }
             // TODO [P3-120]: Remove auto-delete spam and trash expiration days
@@ -39,8 +39,8 @@ export const applyLabelToMessage = (
         labelIDsCopy = labelIDsCopy.filter((labelID) => !isSystemFolder(labelID) && !isCustomFolder(labelID, folders));
 
         // Only for trash and spam, we need to remove almost all mail and starred labels
-        if (targetLabelID === MAILBOX_LABEL_IDS.TRASH || targetLabelID === MAILBOX_LABEL_IDS.SPAM) {
-            if (targetLabelID === MAILBOX_LABEL_IDS.TRASH) {
+        if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
+            if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH) {
                 message.Unread = 0; // Mark message as read when moving to trash
             }
             labelIDsCopy = labelIDsCopy.filter(
@@ -54,25 +54,25 @@ export const applyLabelToMessage = (
         labelIDsCopy = labelIDsCopy.filter((labelID) => !isCategoryLabel(labelID));
     }
 
-    message.LabelIDs = [...labelIDsCopy, targetLabelID];
+    message.LabelIDs = [...labelIDsCopy, destinationLabelID];
 
     return message;
 };
 
-export const removeLabelFromMessage = (message: Message, targetLabelID: string, labels: Label[]): Message => {
-    const isTargetALabel = isSystemLabel(targetLabelID) || isCustomLabel(targetLabelID, labels);
+export const removeLabelFromMessage = (message: Message, destinationLabelID: string, labels: Label[]): Message => {
+    const isTargetALabel = isSystemLabel(destinationLabelID) || isCustomLabel(destinationLabelID, labels);
 
     if (!isTargetALabel) {
         return message;
     }
 
-    message.LabelIDs = message.LabelIDs.filter((labelID) => labelID !== targetLabelID);
+    message.LabelIDs = message.LabelIDs.filter((labelID) => labelID !== destinationLabelID);
 
     return message;
 };
 
-export const trashedNumUnread = (targetLabelID: string, numUnread: number): number => {
-    if (targetLabelID === MAILBOX_LABEL_IDS.TRASH) {
+export const trashedNumUnread = (destinationLabelID: string, numUnread: number): number => {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH) {
         return 0;
     }
     return numUnread;
@@ -81,21 +81,21 @@ export const trashedNumUnread = (targetLabelID: string, numUnread: number): numb
 const updateAlmostAllMail = ({
     conversation,
     sourceLabelID,
-    targetLabelID,
+    destinationLabelID,
     labels,
 }: {
     conversation: Conversation;
-    targetLabelID: string;
+    destinationLabelID: string;
     sourceLabelID: string;
     labels: Label[];
 }) => {
     if (
         (sourceLabelID === MAILBOX_LABEL_IDS.TRASH || sourceLabelID === MAILBOX_LABEL_IDS.SPAM) &&
-        targetLabelID !== MAILBOX_LABEL_IDS.TRASH &&
-        targetLabelID !== MAILBOX_LABEL_IDS.SPAM &&
-        !isSystemLabel(targetLabelID) &&
-        !isCategoryLabel(targetLabelID) &&
-        !isCustomLabel(targetLabelID, labels)
+        destinationLabelID !== MAILBOX_LABEL_IDS.TRASH &&
+        destinationLabelID !== MAILBOX_LABEL_IDS.SPAM &&
+        !isSystemLabel(destinationLabelID) &&
+        !isCategoryLabel(destinationLabelID) &&
+        !isCustomLabel(destinationLabelID, labels)
     ) {
         const almostAllMail = conversation.Labels?.find((label) => label.ID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL);
 
@@ -117,13 +117,13 @@ const updateAlmostAllMail = ({
 
 export const moveContextValues = (
     sourceLabelID: string,
-    targetLabelID: string,
+    destinationLabelID: string,
     conversation: Conversation,
     labels: Label[],
     folders: Folder[]
 ): { ContextNumMessages: number; ContextNumUnread: number; ContextNumAttachments: number } => {
     // All messages are moved, so the conversation should disappear from ALMOST_ALL_MAIL
-    if (targetLabelID === MAILBOX_LABEL_IDS.TRASH && sourceLabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH && sourceLabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
         return {
             ContextNumMessages: 0,
             ContextNumUnread: 0,
@@ -132,7 +132,7 @@ export const moveContextValues = (
     }
 
     // All messages are moved, so the conversation should disappear from ALMOST_ALL_MAIL
-    if (targetLabelID === MAILBOX_LABEL_IDS.SPAM && sourceLabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.SPAM && sourceLabelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
         return {
             ContextNumMessages: 0,
             ContextNumUnread: 0,
@@ -147,7 +147,7 @@ export const moveContextValues = (
     if (isUnmodifiableByUser(sourceLabelID, labels, folders)) {
         return {
             ContextNumMessages: getContextNumMessages(conversation, sourceLabelID),
-            ContextNumUnread: trashedNumUnread(targetLabelID, getContextNumUnread(conversation, sourceLabelID)),
+            ContextNumUnread: trashedNumUnread(destinationLabelID, getContextNumUnread(conversation, sourceLabelID)),
             ContextNumAttachments: getContextNumAttachments(conversation, sourceLabelID),
         };
     }
@@ -158,7 +158,7 @@ export const moveContextValues = (
     if (sourceLabelID === MAILBOX_LABEL_IDS.SCHEDULED) {
         return {
             ContextNumMessages: getContextNumMessages(conversation, sourceLabelID),
-            ContextNumUnread: trashedNumUnread(targetLabelID, getContextNumUnread(conversation, sourceLabelID)),
+            ContextNumUnread: trashedNumUnread(destinationLabelID, getContextNumUnread(conversation, sourceLabelID)),
             ContextNumAttachments: getContextNumAttachments(conversation, sourceLabelID),
         };
     }
@@ -166,7 +166,7 @@ export const moveContextValues = (
     /**
      * Move to INBOX
      */
-    if (targetLabelID === MAILBOX_LABEL_IDS.INBOX) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.INBOX) {
         // Update destination - all received messages are moved to INBOX
         if (sourceLabelID === MAILBOX_LABEL_IDS.INBOX) {
             return {
@@ -202,7 +202,7 @@ export const moveContextValues = (
         }
 
         // When moving out from TRASH or SPAM, ALMOST_ALL_MAIL needs to be updated
-        updateAlmostAllMail({ conversation, sourceLabelID, targetLabelID, labels });
+        updateAlmostAllMail({ conversation, sourceLabelID, destinationLabelID, labels });
 
         // Messages should be removed from other labels, so the value should be 0
         return {
@@ -215,9 +215,9 @@ export const moveContextValues = (
     /**
      * Move to CATEGORY
      */
-    if (isCategoryLabel(targetLabelID)) {
+    if (isCategoryLabel(destinationLabelID)) {
         // Update destination - all received messages are moved to the category and to INBOX.
-        if (isCategoryLabel(sourceLabelID) && targetLabelID === sourceLabelID) {
+        if (isCategoryLabel(sourceLabelID) && destinationLabelID === sourceLabelID) {
             return {
                 ContextNumMessages:
                     (conversation.NumMessages || 0) -
@@ -250,7 +250,7 @@ export const moveContextValues = (
     /**
      * Move to SENT
      */
-    if (targetLabelID === MAILBOX_LABEL_IDS.SENT) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.SENT) {
         // All sent messages should end up in SENT
         if (sourceLabelID === MAILBOX_LABEL_IDS.SENT) {
             return getContextValues(conversation, MAILBOX_LABEL_IDS.ALL_SENT);
@@ -285,7 +285,7 @@ export const moveContextValues = (
         }
 
         // When moving out from TRASH or SPAM, ALMOST_ALL_MAIL needs to be updated
-        updateAlmostAllMail({ conversation, sourceLabelID, targetLabelID, labels });
+        updateAlmostAllMail({ conversation, sourceLabelID, destinationLabelID, labels });
 
         // Messages should be removed from other labels, so the value should be 0
         return {
@@ -298,7 +298,7 @@ export const moveContextValues = (
     /**
      * Move to DRAFTS
      */
-    if (targetLabelID === MAILBOX_LABEL_IDS.DRAFTS) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.DRAFTS) {
         // All drafts messages should end up in DRAFTS
         if (sourceLabelID === MAILBOX_LABEL_IDS.DRAFTS) {
             return getContextValues(conversation, MAILBOX_LABEL_IDS.ALL_DRAFTS);
@@ -333,7 +333,7 @@ export const moveContextValues = (
         }
 
         // When moving out from TRASH or SPAM, ALMOST_ALL_MAIL needs to be updated
-        updateAlmostAllMail({ conversation, sourceLabelID, targetLabelID, labels });
+        updateAlmostAllMail({ conversation, sourceLabelID, destinationLabelID, labels });
 
         // Messages should be removed from other labels, so the value should be 0
         return {
@@ -347,8 +347,8 @@ export const moveContextValues = (
      * Move to a System Label or Custom Label
      * All messages should be moved to the label, while staying in their current location
      */
-    if (isSystemLabel(targetLabelID) || isCustomLabel(targetLabelID, labels)) {
-        if (targetLabelID === sourceLabelID) {
+    if (isSystemLabel(destinationLabelID) || isCustomLabel(destinationLabelID, labels)) {
+        if (destinationLabelID === sourceLabelID) {
             return {
                 ContextNumMessages: conversation.NumMessages || 0,
                 ContextNumUnread: conversation.NumUnread || 0,
@@ -363,22 +363,22 @@ export const moveContextValues = (
      * Default scenario
      * All messages should be moved to destination and removed from their current label
      */
-    if (targetLabelID === sourceLabelID) {
+    if (destinationLabelID === sourceLabelID) {
         return {
             ContextNumMessages: conversation.NumMessages || 0,
-            ContextNumUnread: trashedNumUnread(targetLabelID, conversation.NumUnread || 0),
+            ContextNumUnread: trashedNumUnread(destinationLabelID, conversation.NumUnread || 0),
             ContextNumAttachments: conversation.NumAttachments || 0,
         };
     }
 
     // When moving out from TRASH or SPAM, ALMOST_ALL_MAIL needs to be updated
-    updateAlmostAllMail({ conversation, sourceLabelID, targetLabelID, labels });
+    updateAlmostAllMail({ conversation, sourceLabelID, destinationLabelID, labels });
 
     // Custom and system labels should be kept unless moving to TRASH or SPAM
     if (
         (isSystemLabel(sourceLabelID) || isCustomLabel(sourceLabelID, labels)) &&
-        targetLabelID !== MAILBOX_LABEL_IDS.TRASH &&
-        targetLabelID !== MAILBOX_LABEL_IDS.SPAM
+        destinationLabelID !== MAILBOX_LABEL_IDS.TRASH &&
+        destinationLabelID !== MAILBOX_LABEL_IDS.SPAM
     ) {
         return getContextValues(conversation, sourceLabelID);
     }
@@ -387,7 +387,7 @@ export const moveContextValues = (
     if (isCategoryLabel(sourceLabelID)) {
         return {
             ContextNumMessages: getContextNumMessages(conversation, sourceLabelID),
-            ContextNumUnread: trashedNumUnread(targetLabelID, getContextNumUnread(conversation, sourceLabelID)),
+            ContextNumUnread: trashedNumUnread(destinationLabelID, getContextNumUnread(conversation, sourceLabelID)),
             ContextNumAttachments: getContextNumAttachments(conversation, sourceLabelID),
         };
     }
@@ -399,9 +399,9 @@ export const moveContextValues = (
     };
 };
 
-export const moveNumUnread = (targetLabelID: string, conversation: Conversation): number => {
+export const moveNumUnread = (destinationLabelID: string, conversation: Conversation): number => {
     // When moving to TRASH, all items should be marked as read. Otherwise, NumUnread should not change.
-    if (targetLabelID === MAILBOX_LABEL_IDS.TRASH) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH) {
         return 0;
     }
 
@@ -411,7 +411,7 @@ export const moveNumUnread = (targetLabelID: string, conversation: Conversation)
 export const applyLabelToConversation = (
     conversation: Conversation,
     sourceLabelID: string,
-    targetLabelID: string,
+    destinationLabelID: string,
     labels: Label[],
     folders: Folder[]
 ): Conversation => {
@@ -420,23 +420,23 @@ export const applyLabelToConversation = (
     // - For each Conversation.Labels, we need to update their ContextNumMessages, ContextNumUnread and ContextNumAttachments
     // Other fields like ContextTime cannot be updated since we need to have all messages with their order.
 
-    conversation.NumUnread = moveNumUnread(targetLabelID, conversation);
+    conversation.NumUnread = moveNumUnread(destinationLabelID, conversation);
 
     conversation.Labels =
         conversation.Labels?.map((label) => {
             return {
                 ...label,
-                ...moveContextValues(label.ID, targetLabelID, conversation, labels, folders),
+                ...moveContextValues(label.ID, destinationLabelID, conversation, labels, folders),
             };
         }) || [];
 
     // If the target label was not already present on the conversation labels, it needs to be added
-    const targetLabel = conversation.Labels.find((label) => label.ID === targetLabelID);
+    const targetLabel = conversation.Labels.find((label) => label.ID === destinationLabelID);
 
     if (!targetLabel) {
         conversation.Labels.push({
-            ID: targetLabelID,
-            ...moveContextValues(targetLabelID, targetLabelID, conversation, labels, folders),
+            ID: destinationLabelID,
+            ...moveContextValues(destinationLabelID, destinationLabelID, conversation, labels, folders),
         });
     }
 
@@ -460,7 +460,7 @@ export const applyLabelToConversation = (
         getContextNumAttachments(conversation, MAILBOX_LABEL_IDS.ALL_SENT) -
         getContextNumAttachments(conversation, MAILBOX_LABEL_IDS.ALL_DRAFTS);
 
-    if (targetLabelID === MAILBOX_LABEL_IDS.INBOX) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.INBOX) {
         // When moving to INBOX, all sent messages should end up in SENT
         if (!hasSentMessages && hasAllSentMessages) {
             conversation.Labels.push({
@@ -478,7 +478,7 @@ export const applyLabelToConversation = (
         }
     }
 
-    if (targetLabelID === MAILBOX_LABEL_IDS.SENT) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.SENT) {
         // When moving to SENT, all received messages should end up in INBOX
         if (!hasInboxMessages && hasReceivedMessages) {
             conversation.Labels.push({
@@ -498,7 +498,7 @@ export const applyLabelToConversation = (
         }
     }
 
-    if (targetLabelID === MAILBOX_LABEL_IDS.DRAFTS) {
+    if (destinationLabelID === MAILBOX_LABEL_IDS.DRAFTS) {
         // When moving to DRAFTS, all received messages should end up in INBOX
         if (!hasInboxMessages && hasReceivedMessages) {
             conversation.Labels.push({
@@ -528,13 +528,13 @@ export const applyLabelToConversation = (
 
 export const removeLabelFromConversation = (
     conversation: Conversation,
-    targetLabelID: string,
+    destinationLabelID: string,
     labels: Label[]
 ): Conversation => {
-    if (isSystemLabel(targetLabelID) || isCustomLabel(targetLabelID, labels)) {
+    if (isSystemLabel(destinationLabelID) || isCustomLabel(destinationLabelID, labels)) {
         conversation.Labels =
             conversation.Labels?.filter((label) => {
-                return label.ID !== targetLabelID;
+                return label.ID !== destinationLabelID;
             }) || [];
     }
 

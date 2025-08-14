@@ -83,7 +83,7 @@ describe('conversation counts - unlabel messages', () => {
             type: 'mailbox/labelMessages',
             payload: {
                 elements: [message1],
-                targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                 conversations: [conversation],
                 labels: customLabels,
             },
@@ -152,7 +152,7 @@ describe('conversation counts - unlabel messages', () => {
             type: 'mailbox/labelMessages',
             payload: {
                 elements: [message1],
-                targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                 conversations: [conversation],
                 labels: customLabels,
             },
@@ -224,7 +224,7 @@ describe('conversation counts - unlabel messages', () => {
             type: 'mailbox/labelMessages',
             payload: {
                 elements: [message1],
-                targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                 conversations: [conversation],
                 labels: customLabels,
             },
@@ -296,7 +296,7 @@ describe('conversation counts - unlabel messages', () => {
             type: 'mailbox/labelMessages',
             payload: {
                 elements: [message1],
-                targetLabelID: CUSTOM_LABEL_ID1,
+                destinationLabelID: CUSTOM_LABEL_ID1,
                 conversations: [conversation],
                 labels: customLabels,
             },
@@ -368,7 +368,7 @@ describe('conversation counts - unlabel messages', () => {
             type: 'mailbox/labelMessages',
             payload: {
                 elements: [message1],
-                targetLabelID: CUSTOM_LABEL_ID1,
+                destinationLabelID: CUSTOM_LABEL_ID1,
                 conversations: [conversation],
                 labels: customLabels,
             },

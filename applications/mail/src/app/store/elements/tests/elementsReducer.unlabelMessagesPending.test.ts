@@ -46,7 +46,7 @@ describe('unlabelMessagesPending', () => {
             meta: {
                 arg: {
                     elements: [message],
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -84,7 +84,7 @@ describe('unlabelMessagesPending', () => {
             meta: {
                 arg: {
                     elements: [message],
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -122,7 +122,7 @@ describe('unlabelMessagesPending', () => {
             meta: {
                 arg: {
                     elements: [message],
-                    targetLabelID: CUSTOM_LABEL_ID1,
+                    destinationLabelID: CUSTOM_LABEL_ID1,
                     labels: customLabels,
                     folders: customFolders,
                 },

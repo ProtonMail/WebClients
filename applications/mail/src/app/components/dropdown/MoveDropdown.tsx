@@ -152,7 +152,7 @@ const MoveDropdown = ({
             await applyLocation({
                 type: APPLY_LOCATION_TYPES.MOVE,
                 elements,
-                targetLabelID: selectedFolderID,
+                destinationLabelID: selectedFolderID,
                 createFilters: canApplyAlways ? always : false,
             });
         } else {
