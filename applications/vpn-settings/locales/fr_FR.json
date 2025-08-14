@@ -2635,6 +2635,11 @@
         "Le message de vérification a été envoyé à ${ address }."
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "Contacts de confiance"
+      ]
+    },
     "Empty group name": {
       "Unnamed": [
         "Sans nom"
@@ -4227,6 +4232,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Saisissez votre adresse e-mail de récupération et nous vous enverrons votre nom d'utilisateur ou votre adresse e-mail."
@@ -6250,6 +6258,9 @@
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Votre mot de passe (contacts de confiance)"
       ],
       "ZIP code": [
         "Code postal"
@@ -8313,7 +8324,7 @@
         "Sélectionner un produit"
       ],
       "Set a duration": [
-        "Définir la durée."
+        "Indiquez une durée"
       ]
     },
     "retention_policy_2025_Option": {
@@ -9672,6 +9683,9 @@
       ],
       "Account suspended": [
         "Compte suspendu"
+      ],
+      "Account Temporarily Locked": [
+        "Compte temporairement verrouillé"
       ],
       "Action": [
         "Action"
