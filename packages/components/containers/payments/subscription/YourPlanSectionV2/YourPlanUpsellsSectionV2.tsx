@@ -25,6 +25,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { type Upsell } from '../helpers';
+import CurrentPlanInfoWithUpsellSection from './Upsells/CurrentPlanInfoSection';
+import DuoBanner from './Upsells/DuoBanner';
 import DuoBannerExtendSubscription, { useDuoBannerExtendSubscription } from './Upsells/DuoBannerExtendSubscription';
 import ExploreGroupPlansBanner from './Upsells/ExploreGroupPlansBanner';
 import FamilyBanner from './Upsells/FamilyBanner';
@@ -36,6 +38,7 @@ import UnlimitedBannerExtendSubscription, {
 } from './Upsells/UnlimitedBannerExtendSubscription';
 import UnlimitedBannerGradient, { useUnlimitedBannerGradientUpsells } from './Upsells/UnlimitedBannerGradient';
 import UnlimitedBannerPlain from './Upsells/UnlimitedBannerPlain';
+import VPNB2BBanner from './Upsells/VPNB2BBanner';
 import VpnPlusExtendSubscription, { useVpnPlusExtendSubscription } from './Upsells/VpnPlusExtendSubscription';
 import VpnPlusFromFree, { useVpnPlusFromFreeUpsells } from './Upsells/VpnPlusFromFree';
 
@@ -83,6 +86,11 @@ const useUpsellSection = ({
 }: GetUpsellSectionProps) => {
     const isFree = user.isFree;
 
+    const variant = useVariant('VPNDashboard');
+
+    const showAVariant = variant.name === 'A';
+    const showBVariant = variant.name === 'B';
+
     const hasMailFree = isFree && app === APPS.PROTONMAIL;
     const hasDriveFree = isFree && app === APPS.PROTONDRIVE;
     const hasPassFree = isFree && app === APPS.PROTONPASS && !user.hasPassLifetime;
@@ -111,12 +119,13 @@ const useUpsellSection = ({
     const upsellSections = [
         {
             enabled:
-                hasMailFree ||
-                hasPassFree ||
-                hasVPNFree ||
-                hasDriveFree ||
-                // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
-                hasLumo,
+                (hasMailFree ||
+                    hasPassFree ||
+                    hasVPNFree ||
+                    hasDriveFree ||
+                    // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
+                    hasLumo) &&
+                showAVariant,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
             element: (
                 <>
@@ -132,7 +141,35 @@ const useUpsellSection = ({
         },
         {
             enabled:
-                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && subscription?.Cycle === CYCLE.YEARLY,
+                (hasMailFree ||
+                    hasPassFree ||
+                    hasVPNFree ||
+                    hasDriveFree ||
+                    // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
+                    hasLumo) &&
+                showBVariant,
+            upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],
+            element: (
+                <CurrentPlanInfoWithUpsellSection
+                    subscription={subscription as Subscription}
+                    app={app}
+                    user={user}
+                    serversCount={serversCount}
+                    plansMap={plansMap}
+                    freePlan={freePlan}
+                    vpnUpsells={vpnPlusFromFreeUpsells.upsells}
+                    bundleUpsells={unlimitedBannerGradientUpsells.upsells}
+                    handleExplorePlans={vpnPlusFromFreeUpsells.handleExplorePlans}
+                    telemetryFlow={vpnPlusFromFreeUpsells.telemetryFlow}
+                    userCanHave24MonthPlan={userCanHave24MonthPlan}
+                />
+            ),
+        },
+        {
+            enabled:
+                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
+                subscription?.Cycle === CYCLE.YEARLY &&
+                showAVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
@@ -146,7 +183,9 @@ const useUpsellSection = ({
         },
         {
             enabled:
-                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && subscription?.Cycle === CYCLE.TWO_YEARS,
+                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
+                subscription?.Cycle === CYCLE.YEARLY &&
+                showBVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
                 <UnlimitedBannerGradient
@@ -160,7 +199,44 @@ const useUpsellSection = ({
             ),
         },
         {
-            enabled: hasDeprecatedVPN(subscription) || hasVPN2024(subscription),
+            enabled:
+                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
+                subscription?.Cycle === CYCLE.TWO_YEARS &&
+                showAVariant,
+            upsells: unlimitedBannerGradientUpsells.upsells,
+            element: (
+                <UnlimitedBannerGradient
+                    showProductCards={true}
+                    showUpsellPanels={false}
+                    showDiscoverButton={false}
+                    showUpsellHeader={true}
+                    subscription={subscription as Subscription}
+                    {...unlimitedBannerGradientUpsells}
+                />
+            ),
+        },
+        {
+            enabled:
+                (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) &&
+                subscription?.Cycle === CYCLE.TWO_YEARS &&
+                showBVariant,
+            upsells: unlimitedBannerGradientUpsells.upsells,
+            element: (
+                <>
+                    <UnlimitedBannerGradient
+                        showProductCards={true}
+                        showUpsellPanels={false}
+                        showDiscoverButton={false}
+                        showUpsellHeader={true}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                    <DuoBanner app={app} subscription={subscription as Subscription} />
+                </>
+            ),
+        },
+        {
+            enabled: (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && showAVariant,
             upsells: vpnPlusExtendSubscriptionUpsells.upsells,
             element: (
                 <>
@@ -169,6 +245,22 @@ const useUpsellSection = ({
                         {...vpnPlusExtendSubscriptionUpsells}
                     />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
+                </>
+            ),
+        },
+        {
+            enabled: (hasDeprecatedVPN(subscription) || hasVPN2024(subscription)) && showBVariant,
+            upsells: unlimitedBannerGradientUpsells.upsells,
+            element: (
+                <>
+                    <UnlimitedBannerGradient
+                        showProductCards={true}
+                        showUpsellPanels={false}
+                        showDiscoverButton={false}
+                        showUpsellHeader={true}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
                 </>
             ),
         },
@@ -212,6 +304,10 @@ const useUpsellSection = ({
                     {...familyBannerExtendSubscriptionUpsells}
                 />
             ),
+        },
+        {
+            enabled: showBVariant && hasFamily(subscription) && subscription?.Cycle !== CYCLE.MONTHLY,
+            element: <VPNB2BBanner app={app} />,
         },
     ];
 
