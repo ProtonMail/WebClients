@@ -37,16 +37,16 @@ export const getContactEmailsModel = (api: Api) => {
     });
 };
 
-interface State {
+export interface ContactEmailsState {
     [name]: ModelState<ContactEmail[]>;
 }
 
-type SliceState = State[typeof name];
+type SliceState = ContactEmailsState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectContactEmails = (state: State) => state[name];
+export const selectContactEmails = (state: ContactEmailsState) => state[name];
 
-const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
+const modelThunk = createAsyncModelThunk<Model, ContactEmailsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument }) => {
         return getContactEmailsModel(extraArgument.api);
     },
