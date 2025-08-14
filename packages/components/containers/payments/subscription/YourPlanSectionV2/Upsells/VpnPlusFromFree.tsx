@@ -29,7 +29,7 @@ import shieldIcon from '../icons/shield.svg';
 import streamingIcon from '../icons/streaming.svg';
 import UpsellMultiBox from './UpsellMultiBox';
 
-const getVPNFeatures = (vpnServers: VPNServersCountData): PlanCardFeatureDefinition[] => {
+export const getVPNFeatures = (vpnServers: VPNServersCountData): PlanCardFeatureDefinition[] => {
     return [
         {
             text: getSelectFromNCountries(vpnServers.paid.countries),

@@ -33,6 +33,7 @@ import {
 } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
+import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 import { recoveryIds } from './recoveryIds';
 
@@ -47,6 +48,7 @@ export const getAccountAppRoutes = ({
     organization,
     isBreachesAccountDashboardEnabled,
     showVPNDashboard,
+    showVPNDashboardVariant,
     showThemeSelection,
     assistantKillSwitch,
     isUserGroupsMembershipFeatureEnabled,
@@ -66,6 +68,7 @@ export const getAccountAppRoutes = ({
     organization?: OrganizationExtended;
     isBreachesAccountDashboardEnabled: boolean;
     showVPNDashboard: boolean;
+    showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
     showThemeSelection: boolean;
     assistantKillSwitch: boolean;
     isUserGroupsMembershipFeatureEnabled: boolean;
@@ -138,6 +141,7 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Your plan`,
                         invisibleTitle: true,
                         id: 'YourPlanV2',
+                        available: !(isFree && showVPNDashboardVariant === 'B'),
                     },
                     {
                         text: c('Title').t`Upgrade your privacy`,

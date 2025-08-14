@@ -49,7 +49,7 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
+import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
 import ProductLink from '../../app/ProductLink';
@@ -108,14 +108,14 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
             app: APPS.PROTONMAIL,
             copy: () => c('VPN Dashboard').t`Communicate and schedule with end-to-end encryption.`,
             image: mail,
-            buttonCopy: () => getPlanOrAppNameText(MAIL_APP_NAME),
+            buttonCopy: () => goToPlanOrAppNameText(MAIL_APP_NAME),
             logo: <MailLogo />,
             shouldRender: (planName: string) => planName !== PLANS.MAIL && freeAndPlusPlans.includes(planName as PLANS),
         },
         {
             app: APPS.PROTONMAIL,
             image: mail,
-            buttonCopy: () => getPlanOrAppNameText(MAIL_APP_NAME),
+            buttonCopy: () => goToPlanOrAppNameText(MAIL_APP_NAME),
             logo: <MailLogo />,
             features: [
                 getNAddressesFeature({ n: plan?.MaxAddresses || 0 }),
@@ -130,7 +130,7 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
                 c('VPN Dashboard')
                     .t`Keep your files, photos, and documents safe with ${maxDriveSpace} free cloud storage.`,
             image: drive,
-            buttonCopy: () => getPlanOrAppNameText(DRIVE_APP_NAME),
+            buttonCopy: () => goToPlanOrAppNameText(DRIVE_APP_NAME),
             logo: <DriveLogo />,
             shouldRender: (planName: string) =>
                 planName !== PLANS.DRIVE && freeAndPlusPlans.includes(planName as PLANS),
@@ -138,7 +138,7 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
         {
             app: APPS.PROTONDRIVE,
             image: drive,
-            buttonCopy: () => getPlanOrAppNameText(DRIVE_APP_NAME),
+            buttonCopy: () => goToPlanOrAppNameText(DRIVE_APP_NAME),
             logo: <DriveLogo />,
             features: [
                 getStorageFeature(space.maxSpace, {
@@ -156,14 +156,14 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
             app: APPS.PROTONPASS,
             copy: () => c('VPN Dashboard').t`Set secure passwords without the hassle.`,
             image: pass,
-            buttonCopy: () => getPlanOrAppNameText(PASS_APP_NAME),
+            buttonCopy: () => goToPlanOrAppNameText(PASS_APP_NAME),
             logo: <PassLogo />,
             shouldRender: (planName: string) => planName !== PLANS.PASS && freeAndPlusPlans.includes(planName as PLANS),
         },
         {
             app: APPS.PROTONPASS,
             image: pass,
-            buttonCopy: () => getPlanOrAppNameText(PASS_APP_NAME),
+            buttonCopy: () => goToPlanOrAppNameText(PASS_APP_NAME),
             logo: <PassLogo />,
             features: [getLoginsAndNotes('paid'), getVaultSharing(PASS_PLUS_VAULT_SHARING), get2FAAuthenticator(true)],
             shouldRender: (planName: string) => bundlePlans.includes(planName as PLANS),

@@ -179,13 +179,13 @@ export const FreeVPNFeaturesB = ({
         return false;
     }
     return (
-        <ul className="m-0 unstyled flex flex-column flex-nowrap gap-4">
+        <ul className="m-0 unstyled px-2 flex flex-column flex-nowrap gap-3">
             <li className="flex flex-nowrap gap-1 items-center">
-                <IcCheckmark className="color-success shrink-0" />
+                <IcCheckmark size={6} className="color-success shrink-0" />
                 {getAutoSelectFromCountries(serversCount.free.countries)}
             </li>
             <li className="flex flex-nowrap gap-1 items-center">
-                <IcCheckmark className="color-success shrink-0" />
+                <IcCheckmark size={6} className="color-success shrink-0" />
                 {getVpnDevices(FREE_VPN_CONNECTIONS)}
             </li>
         </ul>
