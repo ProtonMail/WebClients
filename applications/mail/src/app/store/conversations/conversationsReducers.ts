@@ -505,7 +505,7 @@ export const labelConversationsPending = (
         {
             arg: {
                 conversations: Conversation[];
-                targetLabelID: string;
+                destinationLabelID: string;
                 sourceLabelID: string;
                 labels: Label[];
                 folders: Folder[];
@@ -513,7 +513,7 @@ export const labelConversationsPending = (
         }
     >
 ) => {
-    const { conversations, sourceLabelID, targetLabelID, labels, folders } = action.meta.arg;
+    const { conversations, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
 
     conversations.forEach((conversation) => {
         const conversationState = getConversation(state, conversation.ID);
@@ -522,10 +522,10 @@ export const labelConversationsPending = (
             return;
         }
 
-        applyLabelToConversation(conversationState.Conversation, sourceLabelID, targetLabelID, labels, folders);
+        applyLabelToConversation(conversationState.Conversation, sourceLabelID, destinationLabelID, labels, folders);
 
         conversationState.Messages?.forEach((message) => {
-            applyLabelToMessage(message, targetLabelID, folders, labels);
+            applyLabelToMessage(message, destinationLabelID, folders, labels);
         });
     });
 };
@@ -535,10 +535,10 @@ export const unlabelConversationsPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { conversations: Conversation[]; targetLabelID: string; labels: Label[] } }
+        { arg: { conversations: Conversation[]; destinationLabelID: string; labels: Label[] } }
     >
 ) => {
-    const { conversations, targetLabelID, labels } = action.meta.arg;
+    const { conversations, destinationLabelID, labels } = action.meta.arg;
 
     conversations.forEach((conversation) => {
         const conversationState = getConversation(state, conversation.ID);
@@ -547,10 +547,10 @@ export const unlabelConversationsPending = (
             return;
         }
 
-        removeLabelFromConversation(conversationState.Conversation, targetLabelID, labels);
+        removeLabelFromConversation(conversationState.Conversation, destinationLabelID, labels);
 
         conversationState.Messages?.forEach((message) => {
-            removeLabelFromMessage(message, targetLabelID, labels);
+            removeLabelFromMessage(message, destinationLabelID, labels);
         });
     });
 };

@@ -192,7 +192,7 @@ export const conversationSnoozedRules: MoveEngineRule = ({ element }) => {
 };
 
 // Any conversation can move to a category. If all messages are already in the category, do nothing.
-export const conversationCategoryRules: MoveEngineRule = ({ element, targetLabelID }) => {
+export const conversationCategoryRules: MoveEngineRule = ({ element, destinationLabelID }) => {
     if (!isConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
@@ -203,7 +203,7 @@ export const conversationCategoryRules: MoveEngineRule = ({ element, targetLabel
 
     const conversationNumMessages = element.NumMessages || 0;
 
-    if (getContextNumMessages(element, targetLabelID) === conversationNumMessages) {
+    if (getContextNumMessages(element, destinationLabelID) === conversationNumMessages) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
@@ -211,7 +211,7 @@ export const conversationCategoryRules: MoveEngineRule = ({ element, targetLabel
 };
 
 // Any conversation can move to a custom folder. If all messages are already in the custom folder, do nothing.
-export const conversationCustomFolderRules: MoveEngineRule = ({ element, targetLabelID }) => {
+export const conversationCustomFolderRules: MoveEngineRule = ({ element, destinationLabelID }) => {
     if (!isConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
@@ -222,7 +222,7 @@ export const conversationCustomFolderRules: MoveEngineRule = ({ element, targetL
 
     const conversationNumMessages = element.NumMessages || 0;
 
-    if (getContextNumMessages(element, targetLabelID) === conversationNumMessages) {
+    if (getContextNumMessages(element, destinationLabelID) === conversationNumMessages) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
@@ -230,7 +230,7 @@ export const conversationCustomFolderRules: MoveEngineRule = ({ element, targetL
 };
 
 // Any conversation can move to a custom label. If all messages are already in the custom label, do nothing.
-export const conversationCustomLabelRules: MoveEngineRule = ({ element, targetLabelID }) => {
+export const conversationCustomLabelRules: MoveEngineRule = ({ element, destinationLabelID }) => {
     if (!isConversation(element)) {
         throw new Error(ERROR_ELEMENT_NOT_CONVERSATION);
     }
@@ -241,7 +241,7 @@ export const conversationCustomLabelRules: MoveEngineRule = ({ element, targetLa
 
     const conversationNumMessages = element.NumMessages || 0;
 
-    if (getContextNumMessages(element, targetLabelID) === conversationNumMessages) {
+    if (getContextNumMessages(element, destinationLabelID) === conversationNumMessages) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 

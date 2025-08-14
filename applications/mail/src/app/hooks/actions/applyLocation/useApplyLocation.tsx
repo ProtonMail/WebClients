@@ -63,7 +63,7 @@ export const useApplyLocation = () => {
     const dispatchMessage = ({
         elements,
         removeLabel = false,
-        targetLabelID,
+        destinationLabelID,
         showSuccessNotification = true,
         spamAction,
         createFilters,
@@ -78,8 +78,8 @@ export const useApplyLocation = () => {
 
         const { doCreateFilters, undoCreateFilters } = getFilterActions();
         if (createFilters) {
-            const isFolder = isCustomFolder(targetLabelID, folders || []) || isSystemFolder(targetLabelID);
-            void doCreateFilters(elements, [targetLabelID], isFolder);
+            const isFolder = isCustomFolder(destinationLabelID, folders || []) || isSystemFolder(destinationLabelID);
+            void doCreateFilters(elements, [destinationLabelID], isFolder);
         }
 
         if (removeLabel) {
@@ -87,7 +87,7 @@ export const useApplyLocation = () => {
                 unlabelMessages({
                     elements: elements as Message[],
                     conversations: conversationsFromMessages,
-                    targetLabelID,
+                    destinationLabelID,
                     sourceLabelID,
                     isEncryptedSearch: false,
                     showSuccessNotification,
@@ -105,7 +105,7 @@ export const useApplyLocation = () => {
                 labelMessages({
                     elements: elements as Message[],
                     conversations: conversationsFromMessages,
-                    targetLabelID,
+                    destinationLabelID,
                     sourceLabelID,
                     isEncryptedSearch: false,
                     showSuccessNotification,
@@ -125,22 +125,22 @@ export const useApplyLocation = () => {
     const dispatchConversation = ({
         elements,
         removeLabel = false,
-        targetLabelID,
+        destinationLabelID,
         showSuccessNotification = true,
         spamAction,
         createFilters,
     }: ApplyLocationParams): Promise<any> => {
         const { doCreateFilters, undoCreateFilters } = getFilterActions();
         if (createFilters) {
-            const isFolder = isCustomFolder(targetLabelID, folders || []) || isSystemFolder(targetLabelID);
-            void doCreateFilters(elements, [targetLabelID], isFolder);
+            const isFolder = isCustomFolder(destinationLabelID, folders || []) || isSystemFolder(destinationLabelID);
+            void doCreateFilters(elements, [destinationLabelID], isFolder);
         }
 
         if (removeLabel) {
             return dispatch(
                 unlabelConversations({
                     conversations: elements as Conversation[],
-                    targetLabelID,
+                    destinationLabelID,
                     isEncryptedSearch: false,
                     showSuccessNotification,
                     labels,
@@ -156,7 +156,7 @@ export const useApplyLocation = () => {
             return dispatch(
                 labelConversations({
                     conversations: elements as Conversation[],
-                    targetLabelID,
+                    destinationLabelID,
                     sourceLabelID,
                     isEncryptedSearch: false,
                     showSuccessNotification,
@@ -177,7 +177,7 @@ export const useApplyLocation = () => {
         elements,
         removeLabel = false,
         askUnsubscribe = true,
-        targetLabelID,
+        destinationLabelID,
         showSuccessNotification = true,
         createFilters,
     }: ApplyLocationMoveProps | ApplyLocationStarProps | ApplyLocationLabelProps): Promise<any> => {
@@ -190,7 +190,7 @@ export const useApplyLocation = () => {
         const isConversation = testIsConversation(firstElement);
 
         if (isConversation) {
-            const result = conversationMoveEngine.validateMove(targetLabelID, elements as Message[], removeLabel);
+            const result = conversationMoveEngine.validateMove(destinationLabelID, elements as Message[], removeLabel);
 
             if (result.deniedElements.length > 0 && result.allowedElements.length === 0) {
                 createNotification({
@@ -213,7 +213,7 @@ export const useApplyLocation = () => {
             const shouldOpenModal = shouldOpenConfirmationModalForConverversation({
                 elements: result.allowedElements as Conversation[],
                 conversationsFromState: elements.map((conversation) => getConversationById(conversation.ID)),
-                targetLabelID,
+                destinationLabelID,
                 mailSettings,
                 folders,
             });
@@ -226,7 +226,7 @@ export const useApplyLocation = () => {
                         onConfirm: () => {
                             return dispatchConversation({
                                 elements: result.allowedElements as Message[],
-                                targetLabelID,
+                                destinationLabelID,
                                 removeLabel,
                                 showSuccessNotification,
                                 createFilters,
@@ -242,7 +242,7 @@ export const useApplyLocation = () => {
                         onConfirm: () => {
                             return dispatchConversation({
                                 elements: result.allowedElements as Message[],
-                                targetLabelID,
+                                destinationLabelID,
                                 removeLabel,
                                 showSuccessNotification,
                                 createFilters,
@@ -260,7 +260,7 @@ export const useApplyLocation = () => {
                         onConfirm: (spamAction: SPAM_ACTION) => {
                             return dispatchConversation({
                                 elements: result.allowedElements as Message[],
-                                targetLabelID,
+                                destinationLabelID,
                                 removeLabel,
                                 showSuccessNotification,
                                 spamAction,
@@ -274,13 +274,13 @@ export const useApplyLocation = () => {
 
             return dispatchConversation({
                 elements: result.allowedElements as Message[],
-                targetLabelID,
+                destinationLabelID,
                 removeLabel,
                 showSuccessNotification,
                 createFilters,
             });
         } else if (isMessage) {
-            const result = messageMoveEngine.validateMove(targetLabelID, elements as Message[], removeLabel);
+            const result = messageMoveEngine.validateMove(destinationLabelID, elements as Message[], removeLabel);
 
             if (result.deniedElements.length > 0 && result.allowedElements.length === 0) {
                 createNotification({
@@ -302,7 +302,7 @@ export const useApplyLocation = () => {
 
             const shouldOpenModal = shouldOpenConfirmationModalForMessages({
                 elements: result.allowedElements as Message[],
-                targetLabelID,
+                destinationLabelID,
                 mailSettings,
             });
 
@@ -314,7 +314,7 @@ export const useApplyLocation = () => {
                         onConfirm: () => {
                             return dispatchMessage({
                                 elements: result.allowedElements as Message[],
-                                targetLabelID,
+                                destinationLabelID,
                                 removeLabel,
                                 showSuccessNotification,
                                 createFilters,
@@ -332,7 +332,7 @@ export const useApplyLocation = () => {
                         onConfirm: (spamAction: SPAM_ACTION) => {
                             return dispatchMessage({
                                 elements: result.allowedElements as Message[],
-                                targetLabelID,
+                                destinationLabelID,
                                 removeLabel,
                                 showSuccessNotification,
                                 spamAction,
@@ -346,7 +346,7 @@ export const useApplyLocation = () => {
 
             return dispatchMessage({
                 elements: result.allowedElements as Message[],
-                targetLabelID,
+                destinationLabelID,
                 removeLabel,
                 showSuccessNotification,
                 createFilters,
@@ -362,7 +362,7 @@ export const useApplyLocation = () => {
                 handleOnBackMoveAction({
                     type: MOVE_BACK_ACTION_TYPES.MOVE,
                     elements: params.elements,
-                    targetLabelID: params.targetLabelID,
+                    destinationLabelID: params.destinationLabelID,
                 });
 
                 return moveToFolder({

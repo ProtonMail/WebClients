@@ -3,7 +3,7 @@ import type { Element } from 'proton-mail/models/element';
 export interface ApplyLabelsParams {
     elements: Element[];
     changes: { [labelID: string]: boolean };
-    targetLabelID?: string;
+    destinationLabelID?: string;
     createFilters?: boolean;
     silent?: boolean;
     selectedLabelIDs?: string[];

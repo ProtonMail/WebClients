@@ -74,7 +74,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                    targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -158,7 +158,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -232,7 +232,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: CUSTOM_LABEL_ID1,
-                    targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -306,7 +306,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: CUSTOM_LABEL_ID1,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -374,7 +374,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                    targetLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -438,7 +438,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                    targetLabelID: MAILBOX_LABEL_IDS.SPAM,
+                    destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -504,7 +504,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                    targetLabelID: MAILBOX_LABEL_IDS.STARRED,
+                    destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -554,7 +554,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                    targetLabelID: CUSTOM_LABEL_ID1,
+                    destinationLabelID: CUSTOM_LABEL_ID1,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -612,7 +612,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                    targetLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -667,7 +667,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -726,7 +726,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -785,7 +785,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -844,7 +844,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                    targetLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -891,7 +891,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.TRASH,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: customLabels,
                     folders: customFolders,
                 },
@@ -941,7 +941,7 @@ describe('conversation counts - label messages', () => {
                 payload: {
                     conversations: [conversation],
                     sourceLabelID: MAILBOX_LABEL_IDS.SPAM,
-                    targetLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
                     labels: customLabels,
                     folders: customFolders,
                 },
