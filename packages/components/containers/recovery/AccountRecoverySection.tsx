@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
@@ -11,10 +12,11 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import type { AuthModalResult } from '@proton/components/containers/password/interface';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 import noop from '@proton/utils/noop';
 
@@ -24,10 +26,10 @@ import RecoveryPhone from './phone/RecoveryPhone';
 
 export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }) => {
     const [userSettings, loadingUserSettings] = useUserSettings();
+    const dispatch = useDispatch();
     const [loadingEmailReset, withLoadingEmailReset] = useLoading();
     const [loadingPhoneReset, withLoadingPhoneReset] = useLoading();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
     const defaultCountry = useMyCountry();
     const [authModal, showAuthModal] = useModalTwoPromise<{ config: any }, AuthModalResult>();
 
@@ -43,7 +45,7 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
             });
         }
         await showAuthModal({ config: updateResetEmail({ Reset: value }) });
-        await call();
+        await dispatch(userSettingsThunk({ cache: CacheType.None }));
     };
 
     const handleChangePasswordPhoneToggle = async (value: number) => {
@@ -51,7 +53,7 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
             return createNotification({ type: 'error', text: c('Error').t`Please set a recovery phone number first` });
         }
         await showAuthModal({ config: updateResetPhone({ Reset: value }) });
-        await call();
+        await dispatch(userSettingsThunk({ cache: CacheType.None }));
     };
 
     return (

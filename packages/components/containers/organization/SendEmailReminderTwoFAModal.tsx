@@ -10,7 +10,6 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { sendEmailReminderTwoFA } from '@proton/shared/lib/api/organization';
@@ -26,14 +25,12 @@ interface Props extends ModalProps {
 
 const SendEmailReminderTwoFAModal = ({ onClose, members, memberAddressesMap, ...rest }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { onFormSubmit } = useFormErrors();
     const [loading, withLoading] = useLoading();
 
     const handleSubmit = async () => {
         await api(sendEmailReminderTwoFA());
-        await call();
         createNotification({ text: c('Notification').t`Reminder has been sent` });
         onClose?.();
     };

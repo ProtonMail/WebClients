@@ -14,11 +14,12 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import ConfirmSortModal from '@proton/components/containers/labels/modals/ConfirmSortModal';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useFolders } from '@proton/mail';
+import { categoriesThunk, useFolders } from '@proton/mail';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { orderAllFolders } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
@@ -45,9 +46,9 @@ interface Props {
 export default function FoldersSection({ showPromptOnAction = false }: Props) {
     const [user] = useUser();
     const [folders = [], loadingFolders] = useFolders();
+    const dispatch = useDispatch();
     const [mailSettings] = useMailSettings();
     const [loading, withLoading] = useLoading();
-    const { call } = useEventManager();
     const api = useApi();
     const { createNotification } = useNotifications();
     const canCreateFolder = !hasReachedFolderLimit(user, folders);
@@ -60,7 +61,7 @@ export default function FoldersSection({ showPromptOnAction = false }: Props) {
             await showConfirmModal();
         }
         await api(orderAllFolders());
-        await call();
+        await dispatch(categoriesThunk({ cache: CacheType.None }));
         createNotification({ text: c('Success message after sorting folders').t`Folders sorted` });
     };
 

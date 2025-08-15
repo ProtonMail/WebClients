@@ -108,6 +108,11 @@ export const queryContactEmails = ({
     params: { Page, PageSize, Email, LabelID },
 });
 
+export const queryContactEmail = (contactEmailID: string) => ({
+    url: `contacts/v4/contacts/emails/${contactEmailID}`,
+    method: 'get',
+});
+
 export const labelContactEmails = ({ LabelID, ContactEmailIDs }: { LabelID: string; ContactEmailIDs: string[] }) => ({
     url: 'contacts/v4/contacts/emails/label',
     method: 'put',

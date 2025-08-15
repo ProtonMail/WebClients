@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetSamlSSO } from '@proton/account/samlSSO/hooks';
 import { Button } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
@@ -11,10 +12,10 @@ import SettingsLayout from '@proton/components/containers/account/SettingsLayout
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
+import { CacheType } from '@proton/redux-utilities';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Domain, EdugainAffiliations, SSO } from '@proton/shared/lib/interfaces';
@@ -41,7 +42,7 @@ interface Props extends IdentityProviderEndpointsContentProps {
 
 const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestSaml }: Props) => {
     const { onFormSubmit, validator } = useFormErrors();
-    const { call } = useEventManager();
+    const getSamlSSO = useGetSamlSSO();
     const { createNotification } = useNotifications();
     const api = useApi();
 
@@ -102,7 +103,7 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
                 })
             );
 
-            await call();
+            await getSamlSSO({ cache: CacheType.None });
             setSsoDiff({});
 
             createNotification({ text: c('Info').t`SAML configuration saved` });

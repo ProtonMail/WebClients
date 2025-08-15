@@ -3,6 +3,8 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { createInvite, editInvite } from '@proton/account/members/actions';
+import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -14,20 +16,18 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { hasDuo, hasFamily, hasPassFamily, hasVisionary } from '@proton/payments';
-import { editMemberInvitation, inviteMember, updateAI, updateLumo } from '@proton/shared/lib/api/members';
-import { BRAND_NAME, LUMO_APP_NAME, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { type Subscription, hasDuo, hasFamily, hasPassFamily, hasVisionary } from '@proton/payments';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { BRAND_NAME, LUMO_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
 import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
-import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import MemberStorageSelector from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 
 interface Props extends ModalStateProps {
@@ -42,6 +42,56 @@ interface Props extends ModalStateProps {
     allowStorageConfiguration?: boolean;
 }
 
+interface MemberState {
+    email: string;
+    storage: number;
+    numAI: boolean;
+    lumo: boolean;
+}
+
+const getMemberState = ({
+    member,
+    organization,
+    subscription,
+    storageRange,
+    aiSeatsRemaining,
+    lumoSeatsRemaining,
+}: {
+    member: Member | null | undefined;
+    organization: Organization | undefined;
+    subscription: Subscription | undefined;
+    storageRange: { min: number; max: number };
+    aiSeatsRemaining: boolean;
+    lumoSeatsRemaining: boolean;
+}): MemberState => {
+    const isVisionary = hasVisionary(subscription);
+    const isDuo = hasDuo(subscription);
+    const isFamily = hasFamily(subscription);
+
+    return {
+        email: '',
+        storage: member
+            ? member.MaxSpace
+            : clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
+        numAI: aiSeatsRemaining && (isVisionary || isDuo || isFamily), // Visionary, Duo and Family users should have the toggle set to true by default
+        lumo: member ? !!member.NumLumo : lumoSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
+    };
+};
+
+const getMemberDiff = ({
+    model,
+    initialModel,
+}: {
+    model: MemberState;
+    initialModel: MemberState;
+}): Partial<MemberState> => {
+    return Object.fromEntries(
+        Object.entries(model).filter(([key, value]) => {
+            return initialModel[key as keyof typeof initialModel] !== value;
+        })
+    );
+};
+
 const UserInviteOrEditModal = ({
     organization,
     member,
@@ -54,8 +104,7 @@ const UserInviteOrEditModal = ({
     lumoSeatsRemaining,
     ...modalState
 }: Props) => {
-    const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [submitting, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { validator, onFormSubmit } = useFormErrors();
@@ -65,32 +114,25 @@ const UserInviteOrEditModal = ({
     const isEditing = !!member?.ID;
 
     const [subscription] = useSubscription();
-    const isVisionary = hasVisionary(subscription);
-    const isDuo = hasDuo(subscription);
-    const isFamily = hasFamily(subscription);
 
     const initialModel = useMemo(
-        () => ({
-            address: '',
-            storage: member
-                ? member.MaxSpace
-                : clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
-            vpn: !!member?.MaxVPN,
-            numAI: aiSeatsRemaining && (isVisionary || isDuo || isFamily), // Visionary, Duo and Family users should have the toggle set to true by default
-            lumo: member ? !!member.NumLumo : lumoSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
-            admin: member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
-        }),
+        () =>
+            getMemberState({
+                member,
+                subscription,
+                organization,
+                storageRange,
+                aiSeatsRemaining,
+                lumoSeatsRemaining,
+            }),
         [member]
     );
     const [model, setModel] = useState(initialModel);
-
-    const lumoHasChanged = model.lumo !== initialModel.lumo;
 
     const handleClose = () => {
         if (submitting) {
             return;
         }
-
         modalState.onClose();
     };
 
@@ -98,49 +140,26 @@ const UserInviteOrEditModal = ({
         setModel({ ...model, [key]: value });
     };
 
+    const filterModel = <T extends Partial<MemberState>>(model: T) => {
+        return {
+            ...model,
+            numAI: !allowAIAssistantUpdate ? undefined : model.numAI,
+            lumo: !allowLumoUpdate ? undefined : model.lumo,
+        };
+    };
+
     const sendInvitation = async () => {
-        const maxAI = (() => {
-            if (!allowAIAssistantUpdate) {
-                return;
-            }
-
-            return model.numAI ? 1 : 0;
-        })();
-
-        const maxLumo = (() => {
-            if (!allowLumoUpdate) {
-                return;
-            }
-
-            return model.lumo ? 1 : 0;
-        })();
-
-        await api(
-            inviteMember({
-                email: model.address,
-                maxSpace: model.storage,
-                maxAI,
-                maxLumo,
-            })
-        );
-
+        await dispatch(createInvite(filterModel(model)));
         createNotification({ text: c('Success').t`Invitation sent` });
     };
 
     const editInvitation = async () => {
-        let updated = false;
-        await api(editMemberInvitation(member!.ID, model.storage));
-
-        if (allowAIAssistantUpdate) {
-            await api(updateAI(member!.ID, model.numAI ? 1 : 0));
+        if (!member) {
+            throw new Error('Member is not defined');
         }
-
-        if (allowLumoUpdate && lumoHasChanged) {
-            await api(updateLumo(member!.ID, model.lumo ? 1 : 0));
-        }
-
-        updated = true;
-        if (updated) {
+        const memberDiff = filterModel(getMemberDiff({ model, initialModel }));
+        const result = await dispatch(editInvite({ member, memberDiff }));
+        if (result.diff) {
             createNotification({ text: c('familyOffer_2023:Success').t`Member updated` });
         }
     };
@@ -151,7 +170,6 @@ const UserInviteOrEditModal = ({
         } else {
             await sendInvitation();
         }
-        await call();
         modalState.onClose();
     };
 
@@ -165,7 +183,7 @@ const UserInviteOrEditModal = ({
             ? editingCreateAccountCopyFamilyWithAccount
             : editingCreateAccountCopyFamily;
 
-    const mailFieldValidator = !isEditing ? [requiredValidator(model.address), emailValidator(model.address)] : [];
+    const mailFieldValidator = !isEditing ? [requiredValidator(model.email), emailValidator(model.email)] : [];
     const modalTitle = isEditing
         ? c('familyOffer_2023:Title').t`Edit user storage`
         : c('familyOffer_2023:Title').t`Invite a user`;
@@ -200,9 +218,9 @@ const UserInviteOrEditModal = ({
                         autoCapitalize="off"
                         autoComplete="off"
                         autoCorrect="off"
-                        value={model.address}
+                        value={model.email}
                         error={validator(mailFieldValidator)}
-                        onValue={handleChange('address')}
+                        onValue={handleChange('email')}
                         label={c('Label').t`Email address`}
                         placeholder="thomas.anderson@proton.me"
                         disableChange={submitting}

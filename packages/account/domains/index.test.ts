@@ -1,3 +1,5 @@
+import { waitFor } from '@testing-library/react';
+
 import { getServerEvent } from '@proton/account/test/getServerEvent';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
@@ -74,6 +76,6 @@ describe('domains', () => {
         );
         expect(selectDomains(store.getState())).toMatchObject(getState([{ ID: '1' }, { ID: '2' }], 1));
         store.dispatch(getServerEvent({ User: { ...defaultUser, Subscribed: 0 } }));
-        expect(selectDomains(store.getState())).toMatchObject(getState([], 0));
+        await waitFor(() => expect(selectDomains(store.getState())).toMatchObject(getState([], 0)));
     });
 });

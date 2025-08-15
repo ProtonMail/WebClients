@@ -1,10 +1,11 @@
+import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 
-import type { ApiEvent } from '@proton/activation/src/api/api.interface';
-import { useSubscribeEventManager } from '@proton/components';
+import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
+import useEventManager from '@proton/components/hooks/useEventManager';
 
 import MainModal from '../components/Modals/MainModal';
-import { event } from './actions';
+import { event, eventLoopV6 } from './actions';
 import { useEasySwitchDispatch, useGenerateEasySwitchStore } from './store';
 
 interface Props {
@@ -14,9 +15,23 @@ interface Props {
 const EasySwitchEventListener = ({ children }: Props) => {
     const dispatch = useEasySwitchDispatch();
 
-    useSubscribeEventManager((apiEvent: ApiEvent) => {
-        dispatch(event(apiEvent));
-    });
+    const { subscribe } = useEventManager();
+    const { coreEventV6Manager } = useEventManagerV6();
+
+    useEffect(() => {
+        const unsubcribe = subscribe((apiEvent) => {
+            dispatch(event(apiEvent));
+        });
+
+        const unsubscribeV6 = coreEventV6Manager?.subscribe(async (event) => {
+            await dispatch(eventLoopV6(event));
+        });
+
+        return () => {
+            unsubcribe?.();
+            unsubscribeV6?.();
+        };
+    }, [dispatch]);
 
     return <>{children}</>;
 };

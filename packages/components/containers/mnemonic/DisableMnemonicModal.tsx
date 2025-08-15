@@ -1,12 +1,14 @@
 import { c } from 'ttag';
 
+import { userThunk } from '@proton/account/user';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import AuthModal from '@proton/components/containers/password/AuthModal';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 
 interface DisableMnemonicModalProps {
@@ -19,7 +21,7 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
     const [authModalProps, setAuthModalOpen, renderAuthModal] = useModalState();
 
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
 
     return (
         <>
@@ -30,7 +32,7 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
                     {...authModalProps}
                     onCancel={undefined}
                     onSuccess={async () => {
-                        await call();
+                        await dispatch(userThunk({ cache: CacheType.None }));
                         onClose?.();
                         createNotification({ text: c('Info').t`Recovery phrase has been disabled` });
                     }}

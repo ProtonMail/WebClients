@@ -3,10 +3,13 @@ import { Link, Redirect } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button, ButtonLike } from '@proton/atoms';
-import { useApi, useEventManager, useSecurityCheckup } from '@proton/components';
+import { useApi, useSecurityCheckup } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { updateResetEmail } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
@@ -25,10 +28,9 @@ const EnableEmailContainer = () => {
     const api = useApi();
     const { securityState } = useSecurityCheckup();
     const { email } = securityState;
+    const dispatch = useDispatch();
 
     const [step, setStep] = useState<STEPS>(STEPS.ENABLE);
-
-    const { call } = useEventManager();
 
     const [enabling, withEnabling] = useLoading();
 
@@ -63,7 +65,7 @@ const EnableEmailContainer = () => {
     const enablePasswordResetViaEmail = async () => {
         await api(updateResetEmail({ Reset: 1, PersistPasswordScope: true }));
 
-        await call();
+        await dispatch(userSettingsThunk({ cache: CacheType.None }));
         setStep(STEPS.SUCCESS);
     };
 

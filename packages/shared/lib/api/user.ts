@@ -150,6 +150,11 @@ export const getInvitations = (): FetchConfig => ({
     method: 'get',
 });
 
+export const getInvitation = (invitationID: string): FetchConfig => ({
+    url: `core/v4/users/invitations/${invitationID}`,
+    method: 'get',
+});
+
 export const acceptInvitation = (invitationID: string): FetchConfig => ({
     url: `core/v4/users/invitations/${invitationID}/accept`,
     method: 'post',
