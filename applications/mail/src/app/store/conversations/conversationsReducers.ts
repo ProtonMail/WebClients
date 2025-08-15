@@ -25,6 +25,7 @@ import {
     applyLabelToMessage,
     removeLabelFromConversation,
     removeLabelFromMessage,
+    removeLabelToConversationMessage,
 } from '../mailbox/locationHelpers';
 import type { MailState } from '../store';
 import { allConversations, conversationByID } from './conversationsSelectors';
@@ -586,6 +587,26 @@ export const labelMessagesPending = (
                 destinationLabelID,
                 labels
             );
+        }
+    });
+};
+
+export const unlabelMessagesPending = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        { arg: { elements: Message[]; destinationLabelID: string; labels: Label[]; folders: Folder[] } }
+    >
+) => {
+    const { elements, destinationLabelID, labels } = action.meta.arg;
+
+    // Update conversation first so that message is not updated yet
+    elements.forEach((element) => {
+        const conversationState = state[element.ConversationID] as ConversationState;
+
+        if (conversationState) {
+            removeLabelToConversationMessage(element, conversationState.Conversation, destinationLabelID, labels);
         }
     });
 };
