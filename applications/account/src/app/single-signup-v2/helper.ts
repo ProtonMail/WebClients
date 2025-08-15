@@ -10,7 +10,6 @@ import {
     type Cycle,
     type CycleMapping,
     DEFAULT_CURRENCY,
-    DEFAULT_TAX_BILLING_ADDRESS,
     FREE_PLAN,
     FREE_SUBSCRIPTION,
     type FullPlansMap,
@@ -106,15 +105,16 @@ export const getSubscriptionData = async (
         trial?: boolean;
     }
 ): Promise<SubscriptionData> => {
-    const { planIDs, checkResult } = await getSubscriptionPrices(
+    const { planIDs, checkResult } = await getSubscriptionPrices({
         paymentsApi,
-        options.planIDs || {},
-        options.currency,
-        options.cycle,
-        options.billingAddress,
-        options.coupon,
-        options.trial
-    )
+        planIDs: options.planIDs || {},
+        currency: options.currency,
+        cycle: options.cycle,
+        billingAddress: options.billingAddress,
+        coupon: options.coupon,
+        trial: options.trial,
+        ValidateZipCode: options.ValidateZipCode,
+    })
         .then((checkResult) => {
             return {
                 checkResult,
@@ -663,6 +663,7 @@ export const getUserInfo = async ({
         if (!state.payable || state.access) {
             return getFreeSubscriptionData(optionsWithSubscriptionDefaults);
         }
+
         return getSubscriptionData(paymentsApi, optionsWithSubscriptionDefaults);
     })();
 
@@ -918,11 +919,13 @@ export const getSubscriptionDataCycleMapping = async ({
     plansMap,
     coupon,
     signupConfiguration,
+    billingAddress,
 }: {
     paymentsApi: PaymentsApi;
     plansMap: FullPlansMap;
     coupon: string | undefined | null;
     signupConfiguration: SignupConfiguration;
+    billingAddress: BillingAddress;
 }) => {
     const [b2c, b2b] = await Promise.all(
         ([Audience.B2C, Audience.B2B] as const).map((audienceToFetch) => {
@@ -933,7 +936,7 @@ export const getSubscriptionDataCycleMapping = async ({
                 cycles: signupConfiguration.cycles,
                 paymentsApi,
                 coupon,
-                billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+                billingAddress,
             });
         })
     );
