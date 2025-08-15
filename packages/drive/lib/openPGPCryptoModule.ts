@@ -6,7 +6,7 @@ import type { WorkerEncryptSessionKeyOptions } from '@proton/crypto/lib/worker/a
 type CryptoProxyCompatibility = typeof CryptoProxy & {
     // SDK enforces `binary` format for encrypting session keys, while
     // CryptoProxy has `armored` as default and only available via types.
-    encryptSessionKey: (options: WorkerEncryptSessionKeyOptions & { format?: 'binary' }) => Promise<Uint8Array>;
+    encryptSessionKey: (options: WorkerEncryptSessionKeyOptions & { format?: 'binary' }) => Promise<Uint8Array<ArrayBuffer>>;
 };
 
 // TODO: remove `as any` when the type is fixed in the sdk

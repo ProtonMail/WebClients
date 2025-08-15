@@ -87,7 +87,7 @@ export async function openDownloadStream(
 ) {
     const channel = new MessageChannel();
     const stream = new WritableStream({
-        write(block: Uint8Array) {
+        write(block: Uint8Array<ArrayBuffer>) {
             channel.port1.postMessage({ action: 'download_chunk', payload: block });
         },
         close() {

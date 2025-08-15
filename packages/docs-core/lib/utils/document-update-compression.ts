@@ -2,16 +2,16 @@ import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { UnleashClient } from '@proton/unleash'
 import { gzipSync, decompressSync } from 'fflate'
 
-export function isCompressedDocumentUpdate(data: Uint8Array): boolean {
+export function isCompressedDocumentUpdate(data: Uint8Array<ArrayBuffer>): boolean {
   // Check if the first two bytes match the gzip magic number
   return data.length >= 2 && data[0] === 0x1f && data[1] === 0x8b
 }
 
-export function compressDocumentUpdate(data: Uint8Array): Uint8Array {
+export function compressDocumentUpdate(data: Uint8Array<ArrayBuffer>): Uint8Array<ArrayBuffer> {
   return gzipSync(data)
 }
 
-export function decompressDocumentUpdate(data: Uint8Array): Uint8Array {
+export function decompressDocumentUpdate(data: Uint8Array<ArrayBuffer>): Uint8Array<ArrayBuffer> {
   return decompressSync(data)
 }
 

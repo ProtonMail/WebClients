@@ -50,7 +50,7 @@ export interface EventsObject {
  * Object containing the ciphertext of items as stored in IDB
  */
 export interface AesGcmCiphertext {
-    iv: Uint8Array;
+    iv: Uint8Array<ArrayBuffer>;
     ciphertext: ArrayBuffer;
 }
 

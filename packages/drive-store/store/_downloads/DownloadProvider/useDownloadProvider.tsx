@@ -102,7 +102,7 @@ export default function useDownloadProvider(user: UserModel | undefined, initDow
         // right away.
         if (nextDownload.links.every(({ buffer }) => !!buffer)) {
             const buffer = nextDownload.links.flatMap(({ buffer }) => buffer);
-            const stream = bufferToStream(buffer as Uint8Array[]);
+            const stream = bufferToStream(buffer as Uint8Array<ArrayBuffer>[]);
             void preventLeave(
                 fileSaver.instance.saveAsFile(stream, nextDownload.meta, (message) => log(nextDownload.id, message))
             ).catch(logError);

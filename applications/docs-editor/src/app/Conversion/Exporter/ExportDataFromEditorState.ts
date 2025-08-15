@@ -13,7 +13,7 @@ export async function exportDataFromEditorState(
   callbacks: {
     fetchExternalImageAsBase64: DocxExportContext['fetchExternalImageAsBase64']
   },
-): Promise<Uint8Array> {
+): Promise<Uint8Array<ArrayBuffer>> {
   switch (format) {
     case 'txt':
       return new EditorTxtExporter(editorState, callbacks).export()

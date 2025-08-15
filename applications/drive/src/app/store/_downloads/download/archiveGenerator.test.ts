@@ -21,7 +21,7 @@ async function* generateLinks(links: TestLink[]) {
                 name: link.name,
                 parentPath: link.path || [],
                 fileModifyTime: link.fileModifyTime,
-                stream: new ReadableStream<Uint8Array>(),
+                stream: new ReadableStream<Uint8Array<ArrayBuffer>>(),
             };
         } else {
             yield {

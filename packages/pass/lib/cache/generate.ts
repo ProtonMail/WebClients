@@ -29,7 +29,7 @@ export const generateCache =
 
         const encoder = new TextEncoder();
 
-        const encryptedState: Uint8Array = await encryptData(cacheKey, encoder.encode(cache), PassEncryptionTag.Cache);
+        const encryptedState: Uint8Array<ArrayBuffer> = await encryptData(cacheKey, encoder.encode(cache), PassEncryptionTag.Cache);
         const encryptedSnapshot = await encryptData(cacheKey, stringToUint8Array(snapshot), PassEncryptionTag.Cache);
 
         return {

@@ -2,7 +2,7 @@ import type { ProcessResult } from './raw';
 
 export interface RawProcessorWorkerInterface {
     initialize(): Promise<void>;
-    extractThumbnail(rawData: Uint8Array, fileName?: string): Promise<ProcessResult>;
+    extractThumbnail(rawData: Uint8Array<ArrayBuffer>, fileName?: string): Promise<ProcessResult>;
     terminate(): void;
 }
 
@@ -19,7 +19,7 @@ type WorkerResponse = {
  * @param fileName Optional filename to use (helps with identifying the file format)
  * @returns True if it's a CR3 file, false otherwise
  */
-const isCR3File = (data: Uint8Array, fileName: string = '') => {
+const isCR3File = (data: Uint8Array<ArrayBuffer>, fileName: string = '') => {
     if (data.length < 12) {
         return false;
     }
@@ -39,7 +39,7 @@ const isCR3File = (data: Uint8Array, fileName: string = '') => {
  * Creates a RawProcessor instance wrapped in a Web Worker for background processing
  * @returns Promise resolving to a worker interface
  */
-export async function createWorker(rawData: Uint8Array, fileName?: string): Promise<RawProcessorWorkerInterface> {
+export async function createWorker(rawData: Uint8Array<ArrayBuffer>, fileName?: string): Promise<RawProcessorWorkerInterface> {
     const worker = isCR3File(rawData, fileName)
         ? new Worker(/* webpackChunkName: "proton-cr3-images" */ new URL('./worker-cr3', import.meta.url))
         : new Worker(/* webpackChunkName: "proton-raw-images" */ new URL('./worker-dcraw', import.meta.url));
@@ -92,7 +92,7 @@ export async function createWorker(rawData: Uint8Array, fileName?: string): Prom
     return {
         initialize: () => sendMessage('initialize', {}),
 
-        extractThumbnail: (rawData: Uint8Array, fileName?: string) => {
+        extractThumbnail: (rawData: Uint8Array<ArrayBuffer>, fileName?: string) => {
             return sendMessage<ProcessResult>('extractThumbnail', { data: rawData, fileName }, [rawData.buffer]);
         },
 

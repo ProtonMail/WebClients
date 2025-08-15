@@ -1,4 +1,4 @@
-type Data = Uint8Array | string;
+type Data = Uint8Array<ArrayBuffer> | string;
 type ChunkWithData<T> = { done: boolean; value?: T };
 enum STREAM_CONTROL_TYPE {
     'READ',
@@ -7,12 +7,12 @@ enum STREAM_CONTROL_TYPE {
 // Transfer a readable stream chunk by chunk using message channels
 export const ReadableStreamSerializer = {
     canHandle: (obj: any): obj is ReadableStream => typeof obj === 'object' && obj.getReader,
-    serialize: (readableStream: ReadableStream<Uint8Array>): MessagePort => {
+    serialize: (readableStream: ReadableStream<Uint8Array<ArrayBuffer>>): MessagePort => {
         const { port1, port2 } = new MessageChannel();
 
         // wait to get the reader until the first chunk is requested
         // in case the user wants to cancel the stream before starting reading it
-        let reader: ReadableStreamDefaultReader<Uint8Array> | null = null;
+        let reader: ReadableStreamDefaultReader<Uint8Array<ArrayBuffer>> | null = null;
 
         port1.onmessage = async ({ data: { type } }) => {
             switch (type) {

@@ -5,7 +5,7 @@ import { CreateEvent } from './CreateEvent'
 
 export function CreateServerMessageWithEvents(dto: {
   type: EventTypeEnum
-  content: Uint8Array
+  content: Uint8Array<ArrayBuffer>
 }): ServerMessageWithEvents {
   const event = CreateEvent({
     type: dto.type,

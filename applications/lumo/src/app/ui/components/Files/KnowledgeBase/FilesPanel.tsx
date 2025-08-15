@@ -76,7 +76,7 @@ export const FilesPanel = ({
     };
 
     const handleDriveFileSelect = React.useCallback(
-        async (file: DriveNode, content: Uint8Array) => {
+        async (file: DriveNode, content: Uint8Array<ArrayBuffer>) => {
             try {
                 // Use the MIME type from the file metadata, or derive it from the extension
                 const detectedMimeType = getMimeTypeFromExtension(file.name);

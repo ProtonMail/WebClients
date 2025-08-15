@@ -12,18 +12,18 @@ export interface WebsocketServiceInterface {
 
   sendDocumentUpdateMessage(
     document: NodeMeta | PublicNodeMeta,
-    rawContent: Uint8Array | Uint8Array[],
+    rawContent: Uint8Array<ArrayBuffer> | Uint8Array<ArrayBuffer>[],
     source: BroadcastSource,
   ): Promise<void>
   sendEventMessage(
     document: NodeMeta | PublicNodeMeta,
-    rawContent: Uint8Array,
+    rawContent: Uint8Array<ArrayBuffer>,
     type: EventTypeEnum,
     source: BroadcastSource,
   ): Promise<void>
   handleInitialConversionContent(
     document: NodeMeta | PublicNodeMeta,
-    content: Uint8Array,
+    content: Uint8Array<ArrayBuffer>,
     createInitialCommit: (content: DocumentUpdate) => void,
   ): Promise<void>
 

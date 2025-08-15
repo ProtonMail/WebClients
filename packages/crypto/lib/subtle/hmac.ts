@@ -8,7 +8,7 @@ type HmacKeyUsage = 'sign' | 'verify';
  * Import an HMAC-SHA256 key in order to use it with `signData` and `verifyData`.
  */
 export const importKey = async (
-    key: Uint8Array,
+    key: Uint8Array<ArrayBuffer>,
     keyUsage: HmacKeyUsage[] = ['sign', 'verify']
 ): Promise<HmacCryptoKey> => {
     // From https://datatracker.ietf.org/doc/html/rfc2104:
@@ -29,7 +29,7 @@ export const importKey = async (
  * @param data - data to sign
  * @param additionalData - additional data to authenticate
  */
-export const signData = async (key: HmacCryptoKey, data: Uint8Array) => {
+export const signData = async (key: HmacCryptoKey, data: Uint8Array<ArrayBuffer>) => {
     const signatureBuffer = await crypto.subtle.sign({ name: 'HMAC', hash: HASH_ALGORITHM }, key, data);
     return new Uint8Array(signatureBuffer);
 };
@@ -41,6 +41,6 @@ export const signData = async (key: HmacCryptoKey, data: Uint8Array) => {
  * @param data - data to verify
  * @param additionalData - additional data to authenticate
  */
-export const verifyData = async (key: HmacCryptoKey, signature: Uint8Array, data: Uint8Array) => {
+export const verifyData = async (key: HmacCryptoKey, signature: Uint8Array<ArrayBuffer>, data: Uint8Array<ArrayBuffer>) => {
     return crypto.subtle.verify({ name: 'HMAC', hash: HASH_ALGORITHM }, key, signature, data);
 };

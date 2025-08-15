@@ -5,7 +5,7 @@ export const getDecryptedSessionKey = async ({
     data: serializedMessage,
     privateKeys,
 }: {
-    data: string | Uint8Array;
+    data: string | Uint8Array<ArrayBuffer>;
     privateKeys: PrivateKeyReference | PrivateKeyReference[];
 }) => {
     const messageType = serializedMessage instanceof Uint8Array ? 'binaryMessage' : 'armoredMessage';
