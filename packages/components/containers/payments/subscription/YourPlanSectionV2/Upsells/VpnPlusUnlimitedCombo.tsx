@@ -31,7 +31,7 @@ import {
     getPlanByName,
     getPricePerCycle,
     getPricingFromPlanIDs,
-    getSubscriptionPlanTitleAndName,
+    getSubscriptionPlanTitle,
     getTotalFromPricing,
 } from '@proton/payments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -264,7 +264,7 @@ const getSaveLabel = (plan: PLANS | undefined, cycle: CYCLE | undefined, plansMa
 };
 
 const CurrentPlan = ({ app, subscription, user, serversCount }: UpsellSectionProps) => {
-    const { planTitle, planName } = getSubscriptionPlanTitleAndName(user, subscription);
+    const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
 
     return (
         <DashboardCard>

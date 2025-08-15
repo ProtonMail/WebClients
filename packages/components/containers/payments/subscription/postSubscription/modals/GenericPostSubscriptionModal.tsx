@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { getSubscriptionPlanTitleAndName } from '@proton/payments';
+import { getSubscriptionPlanTitle } from '@proton/payments';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
 import { SUBSCRIPTION_STEPS } from '../../constants';
@@ -21,7 +21,7 @@ const GenericPostSubscriptionModal = ({
 }: PostSubscriptionModalComponentProps) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const { planTitle } = getSubscriptionPlanTitleAndName(user, subscription);
+    const { planTitle } = getSubscriptionPlanTitle(user, subscription);
     const canCloseModal = step === SUBSCRIPTION_STEPS.THANKS;
 
     return (

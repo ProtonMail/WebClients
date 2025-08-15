@@ -1,7 +1,13 @@
 import type { ADDON_NAMES, PlanIDs } from '@proton/payments';
-import { AddonKey, AddonLimit, type Cycle, type Plan } from '@proton/payments';
-import { getSupportedAddons } from '@proton/payments';
-import { getAddonMultiplier, getMaxValue, getPlanMaxIPs } from '@proton/payments';
+import {
+    AddonFeatureLimitKeyMapping,
+    AddonLimit,
+    type Cycle,
+    type Plan,
+    getAddonMultiplier,
+    getPlanFeatureLimit,
+    getSupportedAddons,
+} from '@proton/payments';
 import isTruthy from '@proton/utils/isTruthy';
 
 export default function getAddonsPricing({
@@ -17,37 +23,31 @@ export default function getAddonsPricing({
 }) {
     const supportedAddons = getSupportedAddons(planIDs);
 
-    return Object.entries(supportedAddons)
-        .map(([addonName]) => {
-            const addon = plansMap[addonName];
+    const supportedAddonNames = Object.keys(supportedAddons) as ADDON_NAMES[];
 
+    return supportedAddonNames
+        .map((addonName) => {
+            const addon = plansMap[addonName];
             if (!addon) {
                 return;
             }
 
-            const addonNameKey = addon.Name as ADDON_NAMES;
             const quantity = planIDs[addon.Name] ?? 0;
 
-            const isSupported = !!supportedAddons[addonNameKey];
-            const addonMaxKey = AddonKey[addonNameKey];
+            const isSupported = !!supportedAddons[addonName];
+            const featureLimitKey = AddonFeatureLimitKeyMapping[addonName];
 
-            const addonMultiplier = getAddonMultiplier(addonMaxKey, addon);
+            const addonMultiplier = getAddonMultiplier(featureLimitKey, addon);
 
-            // The same workaround as above
-            const min: number = getMaxValue(currentPlan, addonMaxKey);
+            const min: number = getPlanFeatureLimit(currentPlan, featureLimitKey);
 
-            const max = AddonLimit[addonNameKey] * addonMultiplier;
+            const max = AddonLimit[addonName] * addonMultiplier;
+
             // Member addon comes with MaxSpace + MaxAddresses
             const value = isSupported
                 ? min + quantity * addonMultiplier
                 : Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
-                      // and the same workaround as above
-                      let multiplier: number;
-                      if (addonMaxKey === 'MaxIPs') {
-                          multiplier = getPlanMaxIPs(plansMap[planName]);
-                      } else {
-                          multiplier = getMaxValue(plansMap[planName], addonMaxKey);
-                      }
+                      const multiplier: number = getPlanFeatureLimit(plansMap[planName], featureLimitKey);
 
                       return acc + quantity * multiplier;
                   }, 0);

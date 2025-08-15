@@ -11,7 +11,7 @@ import {
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
     getIsCustomCycle,
-    getSubscriptionPlanTitleAndName,
+    getSubscriptionPlanTitle,
     hasVPNPassBundle,
     isManagedExternally,
 } from '@proton/payments';
@@ -52,7 +52,7 @@ const PlanNameSection = ({
     user: UserModel;
     subscription: Subscription;
 }) => {
-    const { planTitle, planName } = getSubscriptionPlanTitleAndName(user, subscription);
+    const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
     const amount = (subscription?.Amount ?? 0) / cycle;

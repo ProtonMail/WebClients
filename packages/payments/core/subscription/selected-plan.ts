@@ -1,7 +1,7 @@
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS } from '../constants';
-import type { Currency, FreeSubscription, MaxKeys, PlanIDs } from '../interface';
+import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
 import {
     type AddonGuard,
     getAddonType,
@@ -16,7 +16,7 @@ import {
 import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '../plan/helpers';
 import { type Plan, type PlansMap } from '../plan/interface';
 import { FREE_PLAN } from './freePlans';
-import { getMaxValue, getPlanIDs } from './helpers';
+import { getPlanFeatureLimit, getPlanIDs } from './helpers';
 import { getLumoAddonNameByPlan, getScribeAddonNameByPlan } from './helpers';
 import { type Subscription } from './interface';
 import { getPlansMap } from './plans-map-wrapper';
@@ -163,20 +163,26 @@ export class SelectedPlan {
         return this.getTotalAddons(isLumoAddon, 'MaxLumo');
     }
 
-    getTotalByMaxKey(maxKey: MaxKeys): number {
-        if (maxKey === 'MaxMembers') {
-            return this.getTotalMembers();
-        } else if (maxKey === 'MaxIPs') {
-            return this.getTotalIPs();
-        } else if (maxKey === 'MaxDomains') {
-            return this.getTotalDomains();
-        } else if (maxKey === 'MaxAI') {
-            return this.getTotalScribes();
-        } else if (maxKey === 'MaxLumo') {
-            return this.getTotalLumos();
-        } else {
-            // Just count the respective maxKey in all the addons and plans
-            return this.getTotalAddons(() => true, maxKey);
+    /**
+     * Returns the entitelment number for the selected plan. It takes into account the numbers included both in the plan
+     * and in the specified addons. For example, `MaxMembers` will return the total number of user seats the specified
+     * planIDs.
+     */
+    getTotal(featureLimitKey: FeatureLimitKey): number {
+        switch (featureLimitKey) {
+            case 'MaxMembers':
+                return this.getTotalMembers();
+            case 'MaxIPs':
+                return this.getTotalIPs();
+            case 'MaxDomains':
+                return this.getTotalDomains();
+            case 'MaxAI':
+                return this.getTotalScribes();
+            case 'MaxLumo':
+                return this.getTotalLumos();
+            default:
+                // Just count the respective featureLimitKey in all the addons and plans
+                return this.getTotalAddons(() => true, featureLimitKey);
         }
     }
 
@@ -307,20 +313,20 @@ export class SelectedPlan {
         return this;
     }
 
-    private getTotalAddons(guard: AddonGuard, maxKey: MaxKeys): number {
-        return this.getCountInPlan(maxKey) + this.getCountInAddons(guard, maxKey);
+    private getTotalAddons(guard: AddonGuard, featureLimitKey: FeatureLimitKey): number {
+        return this.getCountInPlan(featureLimitKey) + this.getCountInAddons(guard, featureLimitKey);
     }
 
-    private getCountInPlan(maxKey: MaxKeys): number {
-        return getMaxValue(this.getPlan(), maxKey);
+    private getCountInPlan(featureLimitKey: FeatureLimitKey): number {
+        return getPlanFeatureLimit(this.getPlan(), featureLimitKey);
     }
 
-    private getCountInAddons(guard: AddonGuard, maxKey: MaxKeys): number {
+    private getCountInAddons(guard: AddonGuard, featureLimitKey: FeatureLimitKey): number {
         return this.getAddons(guard)
             .filter(isTruthy)
             .reduce((acc, addon) => {
                 const addonCount = this.getPlanCount(addon.Name);
-                return acc + getMaxValue(addon, maxKey) * addonCount;
+                return acc + getPlanFeatureLimit(addon, featureLimitKey) * addonCount;
             }, 0);
     }
 

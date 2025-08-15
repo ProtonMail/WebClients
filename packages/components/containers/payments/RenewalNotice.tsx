@@ -35,7 +35,7 @@ import { getTermsURL } from '@proton/shared/lib/helpers/url';
 export const getRenewalPricingSubjectToChangeText = (app: APP_NAMES): string | string[] | null => {
     const termsAndConditionsUrl = getTermsURL(app);
     const termsAndConditionsLink = (
-        <Href className="color-weak hover:color-weak" href={termsAndConditionsUrl}>
+        <Href className="color-inherit" href={termsAndConditionsUrl}>
             {c('Payments').t`terms & conditions`}
         </Href>
     );
