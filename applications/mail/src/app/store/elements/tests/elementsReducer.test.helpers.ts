@@ -64,15 +64,18 @@ export const setupMessageFromConversation = ({
     messageID,
     unreadState,
     labelIDs,
+    flags,
 }: {
     messageID: string;
     labelIDs: string[];
     unreadState: 'read' | 'unread';
+    flags?: number;
 }) => {
     return {
         ID: messageID,
         ConversationID: CONVERSATION_ID,
         LabelIDs: labelIDs,
+        Flags: flags || undefined,
         Unread: unreadState === 'unread' ? 1 : 0,
     } as Message;
 };

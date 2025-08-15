@@ -16,6 +16,7 @@ import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { isDraft, isReceived, isSent } from '@proton/shared/lib/mail/messages';
 
 import { hasLabel } from 'proton-mail/helpers/elements';
 import type { Conversation } from 'proton-mail/models/conversation';
@@ -56,7 +57,24 @@ export const applyLabelToMessage = (
         labelIDsCopy = labelIDsCopy.filter((labelID) => !isCategoryLabel(labelID));
     }
 
-    message.LabelIDs = [...labelIDsCopy, destinationLabelID];
+    if (
+        isReceived(message) &&
+        (destinationLabelID === MAILBOX_LABEL_IDS.SENT || destinationLabelID === MAILBOX_LABEL_IDS.DRAFTS)
+    ) {
+        message.LabelIDs = [...labelIDsCopy, MAILBOX_LABEL_IDS.INBOX];
+    } else if (
+        isSent(message) &&
+        (destinationLabelID === MAILBOX_LABEL_IDS.INBOX || destinationLabelID === MAILBOX_LABEL_IDS.DRAFTS)
+    ) {
+        message.LabelIDs = [...labelIDsCopy, MAILBOX_LABEL_IDS.SENT];
+    } else if (
+        isDraft(message) &&
+        (destinationLabelID === MAILBOX_LABEL_IDS.SENT || destinationLabelID === MAILBOX_LABEL_IDS.INBOX)
+    ) {
+        message.LabelIDs = [...labelIDsCopy, MAILBOX_LABEL_IDS.DRAFTS];
+    } else {
+        message.LabelIDs = [...labelIDsCopy, destinationLabelID];
+    }
 
     return message;
 };
@@ -665,6 +683,45 @@ export const applyLabelToConversationMessage = (
             ContextNumUnread: isMessageUnread && destinationLabelID !== MAILBOX_LABEL_IDS.TRASH ? 1 : 0,
             ContextNumAttachments: message.Attachments.length,
         });
+    }
+
+    // Empty labels can be removed
+    conversation.Labels = conversation.Labels.filter((label) => {
+        return (label.ContextNumMessages || 0) > 0;
+    });
+
+    return conversation;
+};
+
+export const removeLabelToConversationMessage = (
+    message: Message,
+    conversation: Conversation,
+    destinationLabelID: string,
+    labels: Label[]
+): Conversation => {
+    if (!conversation.Labels) {
+        return conversation;
+    }
+
+    if (!isCustomLabel(destinationLabelID, labels) && !isSystemLabel(destinationLabelID)) {
+        return conversation;
+    }
+
+    const destinationLabel = conversation.Labels.find((label) => label.ID === destinationLabelID);
+
+    const isMessageUnread = message.Unread;
+    const messageNumAttachments = message.Attachments?.length || 0;
+
+    if (destinationLabel) {
+        destinationLabel.ContextNumMessages = safeDecreaseCount(destinationLabel?.ContextNumMessages, 1);
+        destinationLabel.ContextNumAttachments = safeDecreaseCount(
+            destinationLabel?.ContextNumAttachments,
+            messageNumAttachments
+        );
+
+        if (isMessageUnread) {
+            destinationLabel.ContextNumUnread = safeDecreaseCount(destinationLabel?.ContextNumUnread, 1);
+        }
     }
 
     // Empty labels can be removed
