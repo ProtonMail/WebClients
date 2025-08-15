@@ -1,14 +1,15 @@
 import { c } from 'ttag';
 
+import { calendarSettingsActions } from '@proton/calendar/calendarUserSettings';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
@@ -18,14 +19,16 @@ interface Props {
 
 const AutoDetectPrimaryTimezoneSection = ({ calendarUserSettings }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const [loadingAutoDetect, withLoadingAutoDetect] = useLoading();
     const checked = !!calendarUserSettings.AutoDetectPrimaryTimezone;
 
     const handleChange = async (data: Partial<CalendarUserSettings>) => {
-        await api(updateCalendarUserSettings(data));
-        await call();
+        const { CalendarUserSettings } = await api<{ CalendarUserSettings: CalendarUserSettings }>(
+            updateCalendarUserSettings(data)
+        );
+        await dispatch(calendarSettingsActions.update(CalendarUserSettings));
         createNotification({ text: c('Success').t`Preference saved` });
     };
 

@@ -8,10 +8,12 @@ import { Href } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import { useDispatch } from '@proton/components/containers/filters/useDispatch';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { filtersThunk } from '@proton/mail/store/filters';
 import { useFilters } from '@proton/mail/store/filters/hooks';
+import { CacheType } from '@proton/redux-utilities';
 import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -20,7 +22,7 @@ import FilterSortableList from './FilterSortableList';
 import type { Filter } from './interfaces';
 
 function FiltersSection() {
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [filters, loading] = useFilters();
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -52,7 +54,7 @@ function FiltersSection() {
 
             const filterIds = nextFilters.map(({ ID }) => ID);
             await api(updateFilterOrder(filterIds));
-            await call();
+            await dispatch(filtersThunk({ cache: CacheType.None }));
         } catch (e: any) {
             setFilters(filters || []);
         }

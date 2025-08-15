@@ -49,18 +49,16 @@ export const getDecryptedPersistedState = async <T>({
 
 export const setEncryptedPersistedState = async ({
     userID,
-    eventID,
     clientKey,
     state,
     config,
 }: {
     userID: string;
-    eventID: string;
     state: string;
     clientKey: string;
     config: ProtonConfig;
 }) => {
-    if (!eventID || !clientKey || !state || !userID) {
+    if (!clientKey || !state || !userID) {
         return;
     }
     try {
@@ -70,7 +68,6 @@ export const setEncryptedPersistedState = async ({
         });
         const persistedValue = {
             state: encryptedCache,
-            eventID,
             appVersion: config.APP_VERSION,
         };
         await writeStore(userID, persistedValue);

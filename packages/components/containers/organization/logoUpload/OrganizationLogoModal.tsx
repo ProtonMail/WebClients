@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { organizationThunk } from '@proton/account/organization';
 import { Button, CircleLoader } from '@proton/atoms';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import Form from '@proton/components/components/form/Form';
@@ -15,10 +16,11 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { updateOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -45,7 +47,7 @@ interface UploadedLogo {
 
 const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const { onFormSubmit } = useFormErrors();
     const [uploadedLogo, setUploadedLogo] = useState<UploadedLogo | undefined>();
@@ -68,7 +70,7 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
             await api(updateOrganizationLogo(base64));
             // Set ShowName to true here, this might get its own setting in the future
             await api(updateOrganizationSettings({ ShowName: true }));
-            await call();
+            await dispatch(organizationThunk({ cache: CacheType.None, type: 'settings' }));
 
             metrics.core_lightLabelling_logoUpload_total.increment({
                 status: 'success',

@@ -11,11 +11,10 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { checkLabelAvailability, create as createLabel, updateLabel } from '@proton/shared/lib/api/labels';
+import { checkLabelAvailable, createLabel, updateLabel } from '@proton/mail/store/labels/actions';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -71,9 +70,8 @@ const EditLabelModal = ({
     onCloseCustomAction,
     ...rest
 }: Props) => {
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
-    const api = useApi();
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
     const { onClose } = rest;
@@ -97,8 +95,7 @@ const EditLabelModal = ({
     };
 
     const create = async (label: LabelModel) => {
-        const { Label } = await api(createLabel(prepareLabel(label)));
-        await call();
+        const Label = await dispatch(createLabel({ label: prepareLabel(label) }));
         createNotification({
             text: c('label/folder notification').t`${Label.Name} created`,
         });
@@ -108,8 +105,7 @@ const EditLabelModal = ({
 
     const update = async (label: LabelModel) => {
         if (label.ID) {
-            const { Label } = await api(updateLabel(label.ID, prepareLabel(label)));
-            await call();
+            const Label = await dispatch(updateLabel({ labelID: label.ID, label: prepareLabel(label) }));
             createNotification({
                 text: c('Filter notification').t`${Label.Name} updated`,
             });
@@ -119,7 +115,7 @@ const EditLabelModal = ({
     };
 
     const checkIsAvailable = async (label: LabelModel) => {
-        await api(checkLabelAvailability(label));
+        await dispatch(checkLabelAvailable({ label }));
         onCheckAvailable(model);
         handleClose();
     };

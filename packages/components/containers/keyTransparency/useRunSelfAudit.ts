@@ -6,7 +6,6 @@ import { getKTUserContext } from '@proton/account/kt/actions';
 import { userKeysThunk } from '@proton/account/userKeys';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { CryptoProxy, serverTime } from '@proton/crypto';
 import {
     type SelfAuditResult,
@@ -19,10 +18,10 @@ import {
     selfAudit,
 } from '@proton/key-transparency';
 import { useDispatch } from '@proton/redux-shared-store';
+import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { INTERVAL_EVENT_TIMER, MINUTE } from '@proton/shared/lib/constants';
+import { MINUTE } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import type { DecryptedAddressKey, KeyPair, SelfAuditState } from '@proton/shared/lib/interfaces';
 
 const SELF_AUDIT_MAX_TRIALS = 6;
@@ -40,7 +39,6 @@ const reportError = (error: any, tooManyRetries: boolean) => {
 const useRunSelfAudit = () => {
     const normalApi = useApi();
     const { APP_NAME: appName } = useConfig();
-    const { subscribe } = useEventManager();
     const dispatch = useDispatch();
 
     const createSelfAuditStateUserKeys = useCallback(async (): Promise<KeyPair[]> => {
@@ -74,24 +72,8 @@ const useRunSelfAudit = () => {
     }, []);
 
     const createSelfAuditStateAddressKeys = useCallback(async () => {
-        /*
-         * Wait for the event loop to return an event with no address change
-         * At this point self audit can be sure to have the latest version of addresses.
-         */
-        const waitForAddressUpdates = async () => {
-            let resolve: () => void;
-            const eventPromise = new Promise<void>((_resolve) => (resolve = _resolve));
-            const unsubscribe = subscribe((data) => {
-                if (!data.Addresses) {
-                    resolve();
-                }
-            });
-            await Promise.any([eventPromise, wait(5 * INTERVAL_EVENT_TIMER)]);
-            unsubscribe();
-        };
-
-        await waitForAddressUpdates();
-        const addressesWithoutKeys = await dispatch(addressesThunk());
+        // Ensure addresses are at the latest state
+        const addressesWithoutKeys = await dispatch(addressesThunk({ cache: CacheType.None }));
         const addressesKeys = await Promise.all(
             addressesWithoutKeys.map((address) => dispatch(addressKeysThunk({ addressID: address.ID })))
         );

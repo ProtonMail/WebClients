@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { MemberKeyPayload } from '@proton/account';
-import { getMemberKeyPayloads, setAdminRoles } from '@proton/account';
+import { type MemberKeyPayload, getMemberKeyPayloads, setAdminRoles } from '@proton/account';
 import { getKTUserContext } from '@proton/account/kt/actions';
 import { Button, CircleLoader } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';

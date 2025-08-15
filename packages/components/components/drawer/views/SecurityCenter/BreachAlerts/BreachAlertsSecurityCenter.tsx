@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -25,7 +26,6 @@ import { useBreaches } from '@proton/components/containers/credentialLeak/useBre
 import GenericError from '@proton/components/containers/error/GenericError';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
@@ -34,6 +34,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { APP_UPSELL_REF_PATH, DARK_WEB_MONITORING_NAME, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import ProtonSentinelPlusLogo from '@proton/styles/assets/img/illustrations/sentinel-shield-bolt-breach-alert.svg';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
@@ -62,7 +63,6 @@ const BreachAlertsSecurityCenter = () => {
     const [error, setError] = useState<{ message: string } | null>(null);
     const api = useApi();
     const [selectedBreachID, setSelectedBreachID] = useState<string | null>(null);
-    const { call } = useEventManager();
     const hasAlertsEnabled = userSettings.BreachAlerts.Value === 1;
     const [sample, setSample] = useState<SampleBreach | null>(null);
     // upsellCount is the Count returned from reponse that represents the number of breaches a free user has
@@ -121,14 +121,17 @@ const BreachAlertsSecurityCenter = () => {
         withLoading(fetchLeakData()).catch(noop);
     }, [hasAlertsEnabled, shouldRefreshFlag, canDisplayBreachNotifications]);
 
-    const enableBreachAlerts = async () => {
-        try {
-            await withToggleLoading(api(enableBreachAlert()));
-            createNotification({ text: getEnabledString(DARK_WEB_MONITORING_NAME) });
-            await call();
-        } catch (e) {
-            handleError(e);
-        }
+    const enableBreachAlerts = () => {
+        const run = async () => {
+            try {
+                const { UserSettings } = await api<{ UserSettings: UserSettings }>(enableBreachAlert());
+                dispatch(userSettingsActions.update({ UserSettings }));
+                createNotification({ text: getEnabledString(DARK_WEB_MONITORING_NAME) });
+            } catch (e) {
+                handleError(e);
+            }
+        };
+        withToggleLoading(run()).catch(noop);
     };
 
     const markAsOpened = async (breach: FetchedBreaches) => {

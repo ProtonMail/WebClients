@@ -26,42 +26,32 @@ export const loadPending = (state: Draft<IncomingDefaultsState>) => {
 };
 
 export const event = (state: Draft<IncomingDefaultsState>, action: PayloadAction<IncomingDefaultEvent>) => {
-    const { Action, IncomingDefault } = action.payload;
+    action.payload.forEach((itemUpdate) => {
+        const { Action, ID } = itemUpdate;
 
-    if (!IncomingDefault?.ID) {
-        return state;
-    }
+        if (Action === EVENT_ACTIONS.DELETE) {
+            state.list = state.list.filter((item) => item.ID !== ID);
+        }
+        if (Action === EVENT_ACTIONS.UPDATE) {
+            const { IncomingDefault } = itemUpdate;
+            const itemIndex = state.list.findIndex((item) => item.ID === ID);
 
-    if (Action === EVENT_ACTIONS.DELETE) {
-        state.list = state.list.filter((item) => item.ID !== IncomingDefault.ID);
-    }
-    if (Action === EVENT_ACTIONS.UPDATE) {
-        const itemIndex = state.list.findIndex((item) => item.ID === IncomingDefault.ID);
-
-        if (itemIndex !== -1) {
-            const createdAt = state.list[itemIndex].Time;
-            const updatedAt = IncomingDefault.Time;
-
-            if (updatedAt > createdAt) {
-                state.list[itemIndex] = { ...IncomingDefault };
+            if (itemIndex !== -1) {
+                state.list[itemIndex] = { ...state.list[itemIndex], ...IncomingDefault };
             }
         }
-    }
-    if (Action === EVENT_ACTIONS.CREATE) {
-        const itemIndex = state.list.findIndex((item) => item.ID === IncomingDefault.ID);
+        if (Action === EVENT_ACTIONS.CREATE) {
+            const { IncomingDefault } = itemUpdate;
+            const itemIndex = state.list.findIndex((item) => item.ID === ID);
 
-        if (itemIndex === -1) {
-            state.list.push({ ...IncomingDefault });
-            return;
-        }
+            if (itemIndex === -1) {
+                state.list.push({ ...IncomingDefault });
+                return;
+            }
 
-        const createdAt = state.list[itemIndex].Time;
-        const updatedAt = IncomingDefault.Time;
-
-        if (updatedAt > createdAt) {
             state.list[itemIndex] = { ...IncomingDefault };
         }
-    }
+    });
 };
 
 export const blockAddressesFullfilled = (

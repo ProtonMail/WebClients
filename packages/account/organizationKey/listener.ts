@@ -7,6 +7,7 @@ import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { addressesThunk, selectAddresses } from '../addresses';
+import { coreEventLoopV6 } from '../coreEventLoop';
 import { serverEvent } from '../eventLoop';
 import { selectMembers } from '../members';
 import { selectOrganization } from '../organization';
@@ -24,9 +25,24 @@ export const organizationKeysListener = (startListening: SharedStartListening<Or
             // Warning: There is no event update coming for organization key changes, however, an update for the organization
             // is received as the keys are changed. So each time it changes, it will redo this.
             return !!(
-                serverEvent.match(action) &&
-                action.payload.Organization &&
-                !!selectOrganizationKey(currentState).value
+                !!selectOrganizationKey(currentState).value &&
+                ((serverEvent.match(action) && action.payload.Organization) ||
+                    (coreEventLoopV6.match(action) && action.payload.event.Organizations?.length))
+            );
+        },
+        effect: async (action, listenerApi) => {
+            await listenerApi.dispatch(organizationKeyThunk({ cache: CacheType.None }));
+        },
+    });
+
+    startListening({
+        predicate: (action, currentState, previousState) => {
+            const oldValue = selectOrganization(previousState).value;
+            const newValue = selectOrganization(currentState).value;
+            return !!(
+                !!selectOrganizationKey(currentState).value &&
+                newValue?.HasKeys &&
+                newValue?.HasKeys !== oldValue?.HasKeys
             );
         },
         effect: async (action, listenerApi) => {
