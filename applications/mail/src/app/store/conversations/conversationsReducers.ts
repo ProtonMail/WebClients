@@ -573,7 +573,7 @@ export const labelMessagesPending = (
         }
     >
 ) => {
-    const { elements, sourceLabelID, destinationLabelID, labels } = action.meta.arg;
+    const { elements, sourceLabelID, destinationLabelID, folders, labels } = action.meta.arg;
 
     // Update conversation first so that message is not updated yet
     elements.forEach((element) => {
@@ -587,6 +587,12 @@ export const labelMessagesPending = (
                 destinationLabelID,
                 labels
             );
+
+            conversationState.Messages?.forEach((message) => {
+                if (message.ID === element.ID) {
+                    applyLabelToMessage(message, destinationLabelID, folders, labels);
+                }
+            });
         }
     });
 };
