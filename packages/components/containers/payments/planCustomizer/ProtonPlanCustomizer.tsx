@@ -7,8 +7,8 @@ import Price from '@proton/components/components/price/Price';
 import {
     ADDON_NAMES,
     ADDON_PREFIXES,
+    AddonFeatureLimitKeyMapping,
     type AddonGuard,
-    AddonKey,
     AddonLimit,
     type Currency,
     type Cycle,
@@ -29,7 +29,7 @@ import {
     getAddonMultiplier,
     getAddonType,
     getHasPassB2BPlan,
-    getMaxValue,
+    getPlanFeatureLimit,
     getSupportedAddons,
     isDomainAddon,
     isDriveOrgSizeAddon,
@@ -50,7 +50,7 @@ import ScribeAddon from '../ScribeAddon';
 import { IPsNumberCustomiser } from './IPsNumberCustomiser';
 import LumoAddon from './LumoAddon';
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
-import type { DecreaseBlockedReason, IncreaseBlockedReason } from './helpers';
+import type { DecreaseBlockedReason } from './helpers';
 
 import './ProtonPlanCustomizer.scss';
 
@@ -68,13 +68,12 @@ const isWithinPassOrgSizeLimit = ({ size, isPassPro }: { size: number; isPassPro
 };
 
 interface AddonCustomizerProps {
-    addonName: string;
+    addonName: ADDON_NAMES;
     cycle: Cycle;
     currency: Currency;
-    planIDs: PlanIDs;
+    selectedPlanIDs: PlanIDs;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     plansMap: { [key: string]: Plan };
-    currentPlan: Plan;
     loading?: boolean;
     showUsersTooltip?: boolean;
     latestSubscription?: Subscription | FreeSubscription;
@@ -131,10 +130,9 @@ const AddonCustomizer = ({
     addonName,
     cycle,
     currency,
-    planIDs,
+    selectedPlanIDs,
     onChangePlanIDs,
     plansMap,
-    currentPlan,
     loading,
     showUsersTooltip,
     latestSubscription,
@@ -145,27 +143,19 @@ const AddonCustomizer = ({
     mode,
     isTrialMode,
 }: AddonCustomizerProps) => {
-    const addon = plansMap[addonName];
     const [showScribeBanner, setShowScribeBanner] = useState(mode === 'signup');
 
-    const selectedPlan = new SelectedPlan(planIDs, plansMap, cycle, currency);
-    const planTotalMembers = selectedPlan.getTotalUsers();
+    const selectedPlan = new SelectedPlan(selectedPlanIDs, plansMap, cycle, currency);
 
     const subscriptionPlan = SelectedPlan.createFromSubscription(latestSubscription, plansMap);
     const latestPlanTotalMembers = subscriptionPlan.getTotalUsers();
 
-    const addonNameKey = addon.Name as ADDON_NAMES;
-    const quantity = planIDs[addon.Name] ?? 0;
+    const featureLimitKey = AddonFeatureLimitKeyMapping[addonName];
+    const addon = plansMap[addonName];
 
-    const addonMaxKey = AddonKey[addonNameKey];
+    const addonMultiplier = getAddonMultiplier(featureLimitKey, addon);
 
-    const addonMultiplier = getAddonMultiplier(addonMaxKey, addon);
-
-    const min: number = getMaxValue(currentPlan, addonMaxKey);
-
-    const value = min + quantity * addonMultiplier;
-
-    const isPassProOrgSizeAddon = addonNameKey === ADDON_NAMES.MEMBER_PASS_PRO;
+    const isPassProOrgSizeAddon = addonName === ADDON_NAMES.MEMBER_PASS_PRO;
 
     /**
      * Only enforce Pass organization size limit for:
@@ -174,7 +164,7 @@ const AddonCustomizer = ({
      * Don't enforce for existing Pass B2B users who aren't within limit.
      */
     const enforcePassOrgSizeLimit =
-        isPassOrgSizeAddon(addonNameKey) &&
+        isPassOrgSizeAddon(addonName) &&
         (!getHasPassB2BPlan(latestSubscription) ||
             isWithinPassOrgSizeLimit({
                 size: latestPlanTotalMembers,
@@ -182,25 +172,29 @@ const AddonCustomizer = ({
             }));
 
     const decreaseBlockedReasons: DecreaseBlockedReason[] = [];
-    const increaseBlockedReasons: IncreaseBlockedReason[] = [];
 
-    const applyForbiddenModificationLimitation = (value: number) => {
-        // The check for the free subscription here is just a type guard. In practice,
-        // the free subscription can't be cancelled.
+    /**
+     * The forbidden modification check tracks states where it's not possible to switch from one plan to
+     * another. Currently there is the only forbidden modification: decreasing addons that will be handled as
+     * `SubscriptionMode.ScheduledChargedLater` while the renewal of the current subscription is disabled. This is
+     * because renewal cancellation is a scheduled change by itself, and we can't stack another scheduled change on top
+     * of it.
+     */
+    const applyForbiddenModificationLimitation = (preferredMinValue: number) => {
+        // The check for the free subscription here is just a type guard. In practice, the free subscription can't be
+        // cancelled.
         if (isFreeSubscription(latestSubscription)) {
-            return value;
+            return preferredMinValue;
         }
 
         // If user disabled subscription renewal then it counts like a scheduled modification.
-        // At the same time, the addon downgrading will also create scheduled modification
         // The system can't process /check if user wants to schedule another modification.
         // So we need to prevent user from doing that.
         const isForbiddenScheduledModification = latestSubscription?.Renew === Renew.Disabled;
-        const minAddonNumberIfModificationFordidden = subscriptionPlan.getTotalByMaxKey(addonMaxKey);
-
+        const minAddonNumberIfModificationFordidden = subscriptionPlan.getTotal(featureLimitKey);
         if (
             isForbiddenScheduledModification &&
-            minAddonNumberIfModificationFordidden > value &&
+            minAddonNumberIfModificationFordidden > preferredMinValue &&
             // If user changes the plan, then we don't need to check for forbidden modification,
             // because in this case it will be SubscriptionMode.Proration which doesn't have this limitation.
             subscriptionPlan.getPlanName() === selectedPlan.getPlanName()
@@ -209,24 +203,25 @@ const AddonCustomizer = ({
             return minAddonNumberIfModificationFordidden;
         }
 
-        return value;
+        return preferredMinValue;
     };
 
+    const minAddonValueInSelectedPlan: number = getPlanFeatureLimit(selectedPlan.getPlan(), featureLimitKey);
     const displayMin = (() => {
         if (enforcePassOrgSizeLimit) {
             return applyForbiddenModificationLimitation(MIN_MEMBER_PASS_B2B_ADDON);
         }
 
-        return applyForbiddenModificationLimitation(min);
+        return applyForbiddenModificationLimitation(minAddonValueInSelectedPlan);
     })();
+    const value = selectedPlan.getTotal(featureLimitKey);
 
+    const planTotalMembers = selectedPlan.getTotalUsers();
     // The total number of scribe or lumo addons can't be higher than the total number of members
     const max =
-        isScribeAddon(addonNameKey) || isLumoAddon(addonNameKey)
-            ? planTotalMembers
-            : AddonLimit[addonNameKey] * addonMultiplier;
+        isScribeAddon(addonName) || isLumoAddon(addonName) ? planTotalMembers : AddonLimit[addonName] * addonMultiplier;
 
-    const trialProps = getTrialProps(isTrialMode, addonNameKey);
+    const trialProps = getTrialProps(isTrialMode, addonName);
 
     const sharedNumberCustomizerProps: Pick<
         NumberCustomiserProps,
@@ -246,21 +241,21 @@ const AddonCustomizer = ({
         max,
         disabled: loading,
         onChange: (newQuantity) => {
-            const newValue = (newQuantity - min) / addonMultiplier;
-            let newPlanIDs = setQuantity(planIDs, addon.Name, newValue);
+            const newValue = (newQuantity - minAddonValueInSelectedPlan) / addonMultiplier;
+            let newPlanIDs = setQuantity(selectedPlanIDs, addon.Name, newValue);
             const scribeAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isScribeAddon);
             const lumoAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isLumoAddon);
 
-            if (isMemberAddon(addonNameKey) && scribeAddonKey) {
+            if (isMemberAddon(addonName) && scribeAddonKey) {
                 const membersValue = value;
-                const scribeValue = planIDs[scribeAddonKey];
+                const scribeValue = selectedPlanIDs[scribeAddonKey];
                 const scribeConstrain = membersValue === scribeValue;
                 if (scribeConstrain) {
                     newPlanIDs = setQuantity(newPlanIDs, scribeAddonKey, newQuantity);
                 }
             }
 
-            if (isLumoAddon(addonNameKey) && scribeAddonKey) {
+            if (isLumoAddon(addonName) && scribeAddonKey) {
                 const newSelectedPlan = SelectedPlan.createNormalized(
                     newPlanIDs,
                     plansMap,
@@ -271,7 +266,7 @@ const AddonCustomizer = ({
                 newPlanIDs = newSelectedPlan.planIDs;
             }
 
-            if (isScribeAddon(addonNameKey) && lumoAddonKey) {
+            if (isScribeAddon(addonName) && lumoAddonKey) {
                 const newSelectedPlan = SelectedPlan.createNormalized(
                     newPlanIDs,
                     plansMap,
@@ -286,7 +281,7 @@ const AddonCustomizer = ({
         },
         step: addonMultiplier,
         decreaseBlockedReasons,
-        increaseBlockedReasons,
+        increaseBlockedReasons: [],
     };
 
     useEffect(() => {
@@ -295,17 +290,25 @@ const AddonCustomizer = ({
         // - max 30 only for Pass Pro plan
         if (enforcePassOrgSizeLimit) {
             if (planTotalMembers < MIN_MEMBER_PASS_B2B_ADDON) {
-                const newPlanIDs = setQuantity(planIDs, addon.Name, MIN_MEMBER_PASS_B2B_ADDON - min);
+                const newPlanIDs = setQuantity(
+                    selectedPlanIDs,
+                    addon.Name,
+                    MIN_MEMBER_PASS_B2B_ADDON - minAddonValueInSelectedPlan
+                );
                 onChangePlanIDs(newPlanIDs);
             } else if (isPassProOrgSizeAddon && planTotalMembers > MAX_MEMBER_PASS_PRO_ADDON) {
-                const newPlanIDs = setQuantity(planIDs, addon.Name, MAX_MEMBER_PASS_PRO_ADDON - min);
+                const newPlanIDs = setQuantity(
+                    selectedPlanIDs,
+                    addon.Name,
+                    MAX_MEMBER_PASS_PRO_ADDON - minAddonValueInSelectedPlan
+                );
                 onChangePlanIDs(newPlanIDs);
             }
         }
     }, [planTotalMembers, enforcePassOrgSizeLimit]);
 
-    if (isMemberAddon(addonNameKey)) {
-        if (isDriveOrgSizeAddon(addonNameKey)) {
+    if (isMemberAddon(addonName)) {
+        if (isDriveOrgSizeAddon(addonName)) {
             return (
                 <NumberCustomiser
                     key={`${addon.Name}-drive`}
@@ -320,7 +323,7 @@ const AddonCustomizer = ({
             );
         }
 
-        if (isOrgSizeAddon(addonNameKey)) {
+        if (isOrgSizeAddon(addonName)) {
             return (
                 <NumberCustomiser
                     key={`${addon.Name}-org-size`}
@@ -347,7 +350,7 @@ const AddonCustomizer = ({
         );
     }
 
-    if (isDomainAddon(addonNameKey)) {
+    if (isDomainAddon(addonName)) {
         return (
             <NumberCustomiser
                 key={`${addon.Name}-domain`}
@@ -360,7 +363,7 @@ const AddonCustomizer = ({
         );
     }
 
-    if (isIpAddon(addonNameKey)) {
+    if (isIpAddon(addonName)) {
         return (
             <IPsNumberCustomiser
                 key={`${addon.Name}-ips`}
@@ -377,7 +380,7 @@ const AddonCustomizer = ({
             key={`${addon.Name}-1`}
             currency={currency}
             suffix={
-                isScribeAddon(addonNameKey)
+                isScribeAddon(addonName)
                     ? c('Suffix for price').t`per user per month`
                     : c('Suffix for price').t`per month`
             }
@@ -386,7 +389,7 @@ const AddonCustomizer = ({
         </Price>
     );
 
-    if (isScribeAddon(addonNameKey) && scribeAddonEnabled) {
+    if (isScribeAddon(addonName) && scribeAddonEnabled) {
         return (
             <ScribeAddon
                 key={`${addon.Name}-size`}
@@ -394,7 +397,7 @@ const AddonCustomizer = ({
                 showScribeBanner={showScribeBanner}
                 onAddScribe={() => {
                     setShowScribeBanner(false);
-                    onChangePlanIDs(setQuantity(planIDs, addon.Name, max));
+                    onChangePlanIDs(setQuantity(selectedPlanIDs, addon.Name, max));
                 }}
                 showTooltip={showUsersTooltip}
                 audience={audience}
@@ -404,13 +407,13 @@ const AddonCustomizer = ({
         );
     }
 
-    if (isLumoAddon(addonNameKey) && lumoAddonEnabled) {
+    if (isLumoAddon(addonName) && lumoAddonEnabled) {
         return (
             <LumoAddon
                 key={`${addon.Name}-size`}
                 price={addonPriceInline}
                 onAddLumo={() => {
-                    onChangePlanIDs(setQuantity(planIDs, addon.Name, max));
+                    onChangePlanIDs(setQuantity(selectedPlanIDs, addon.Name, max));
                 }}
                 {...sharedNumberCustomizerProps}
                 {...trialProps}
@@ -424,8 +427,7 @@ const AddonCustomizer = ({
 export interface Props extends ComponentPropsWithoutRef<'div'> {
     cycle: Cycle;
     currency: Currency;
-    currentPlan: Plan;
-    planIDs: PlanIDs;
+    selectedPlanIDs: PlanIDs;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     plansMap: { [key: string]: Plan };
     loading?: boolean;
@@ -445,9 +447,8 @@ export const ProtonPlanCustomizer = ({
     mode,
     currency,
     onChangePlanIDs,
-    planIDs,
+    selectedPlanIDs,
     plansMap,
-    currentPlan,
     loading,
     className,
     showUsersTooltip,
@@ -460,8 +461,8 @@ export const ProtonPlanCustomizer = ({
     isTrialMode = false,
     ...rest
 }: Props) => {
-    const normalizePlanIds = SelectedPlan.createNormalized(planIDs, plansMap, cycle, currency).planIDs;
-    const supportedAddons = getSupportedAddons(normalizePlanIds);
+    const normalizedSelectedPlanIds = SelectedPlan.createNormalized(selectedPlanIDs, plansMap, cycle, currency).planIDs;
+    const supportedAddons = getSupportedAddons(normalizedSelectedPlanIds);
 
     const isAllowedAddon = useCallback(
         (addonName: ADDON_NAMES) => {
@@ -498,13 +499,12 @@ export const ProtonPlanCustomizer = ({
                         addonName={addonName}
                         cycle={cycle}
                         currency={currency}
-                        planIDs={normalizePlanIds}
+                        selectedPlanIDs={normalizedSelectedPlanIds}
                         onChangePlanIDs={(planIDs) => {
                             const selectedPlan = SelectedPlan.createNormalized(planIDs, plansMap, cycle, currency);
                             onChangePlanIDs(selectedPlan.planIDs);
                         }}
                         plansMap={plansMap}
-                        currentPlan={currentPlan}
                         loading={loading}
                         showUsersTooltip={showUsersTooltip}
                         latestSubscription={latestSubscription}
