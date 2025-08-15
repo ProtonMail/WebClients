@@ -587,18 +587,6 @@ export const getHasMemberCapablePlan = (
     return (organization?.MaxMembers || 0) > 1 || (Object.keys(supportedAddons) as ADDON_NAMES[]).some(isMemberAddon);
 };
 
-const endOfYearDiscountCoupons: Set<string> = new Set([
-    COUPON_CODES.END_OF_YEAR_2023,
-    COUPON_CODES.BLACK_FRIDAY_2023,
-    COUPON_CODES.EOY_2023_1M_INTRO,
-]);
-export const getHas2023OfferCoupon = (coupon: string | undefined | null): boolean => {
-    if (!coupon) {
-        return false;
-    }
-    return endOfYearDiscountCoupons.has(coupon);
-};
-
 export const allCycles = Object.freeze(
     Object.values(CYCLE)
         .filter((cycle): cycle is CYCLE => typeof cycle === 'number')
