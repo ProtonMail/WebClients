@@ -111,6 +111,7 @@ export type CheckSubscriptionData = {
     BillingAddress?: BillingAddress;
     ProrationMode?: ProrationMode;
     IsTrial?: boolean;
+    ValidateZipCode?: boolean;
 };
 
 type CommonSubscribeData = {

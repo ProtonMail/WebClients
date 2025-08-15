@@ -18,7 +18,6 @@ import {
     useModalState,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
@@ -55,7 +54,7 @@ import { APPS, BRAND_NAME, DRIVE_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@pro
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin-logo.svg';
 import { useFlag } from '@proton/unleash';
@@ -186,7 +185,6 @@ const Step1 = ({
     const silentApi = getSilentApi(normalApi);
     const { getPaymentsApi } = usePaymentsApi();
     const handleError = useErrorHandler();
-    const isChargebeeEnabled = useIsChargebeeEnabled();
 
     const [upsellMailTrialModal, setUpsellMailTrialModal, renderUpsellMailTrialModal] = useModalState();
     const [checkTrialResult, setCheckTrialResult] = useState<CheckTrialPriceResult | undefined>();
@@ -247,12 +245,7 @@ const Step1 = ({
     });
 
     const getSilentPaymentApi = async () => {
-        let chargebeeEnabled = undefined;
-        if (model.session?.resumedSessionResult) {
-            const user = model.session.resumedSessionResult.User;
-            chargebeeEnabled = await isChargebeeEnabled(model.session.resumedSessionResult.UID, async () => user);
-        }
-        return getPaymentsApi(silentApi, chargebeeEnabled?.result);
+        return getPaymentsApi(silentApi);
     };
 
     const latestRef = useRef<any>();
@@ -265,15 +258,16 @@ const Step1 = ({
         trial?: boolean;
     }) => {
         const paymentsApi = await getSilentPaymentApi();
-        return getSubscriptionPrices(
+        return getSubscriptionPrices({
             paymentsApi,
-            values.planIDs,
-            values.currency,
-            values.cycle,
-            values.billingAddress,
-            values.coupon,
-            values.trial
-        );
+            planIDs: values.planIDs,
+            currency: values.currency,
+            cycle: values.cycle,
+            billingAddress: values.billingAddress,
+            coupon: values.coupon,
+            trial: values.trial,
+            ValidateZipCode: true,
+        });
     };
 
     const handleOptimisticCheck = async (optimistic: Parameters<typeof check>[0], latest: any) => {
@@ -1491,7 +1485,7 @@ const Step1 = ({
                                         subscriptionData: { ...model.subscriptionData, vatNumber },
                                     }));
                                 }}
-                                paymentsApi={getPaymentsApi(silentApi, ChargebeeEnabled.CHARGEBEE_FORCED)}
+                                paymentsApi={getPaymentsApi(silentApi)}
                             />
                         </BoxContent>
                     </Box>
