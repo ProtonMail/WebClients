@@ -623,8 +623,18 @@ export const InnerSignupContextProvider = ({
                 flowId,
                 productIntent: app,
             });
+
+            metrics.core_signup_ctx_recoveryPhrasePayloadSent_total.increment({
+                status: 'success',
+            });
         } catch (error) {
             traceSentryError(error);
+
+            observeError(error, (status) =>
+                metrics.core_signup_ctx_recoveryPhrasePayloadSent_total.increment({
+                    status,
+                })
+            );
 
             throw error;
         }
