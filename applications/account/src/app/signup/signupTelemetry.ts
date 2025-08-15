@@ -77,6 +77,25 @@ export const sendSignupAccountCreationTelemetry = ({
     );
 };
 
+export const sendSignupRecoveryPhraseSetTelemetry = ({
+    flowId,
+    productIntent,
+}: {
+    flowId: FlowId;
+    productIntent: ProductParam;
+}) => {
+    telemetry.sendCustomEvent(
+        /**
+         * Event type version should be updated when the data structure changes
+         */
+        'signup_recovery_phrase_set_v1',
+        {
+            flowId,
+            productIntent: productIntent || 'generic',
+        }
+    );
+};
+
 export const sendSignupSubscriptionTelemetryEvent = ({
     planIDs,
     flowId,
