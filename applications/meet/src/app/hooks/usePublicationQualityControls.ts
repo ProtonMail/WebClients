@@ -17,6 +17,10 @@ export const usePublicationQualityControls = () => {
     const sortedParticipantIdentities = sortedParticipants.map((participant) => participant.identity).join(',');
     const pagedParticipantIdentities = pagedParticipants.map((participant) => participant.identity).join(',');
 
+    const publicationSignature = sortedParticipants
+        .map((participant) => Array.from(participant.trackPublications.keys()).join(','))
+        .join('|');
+
     useEffect(() => {
         sortedParticipants.forEach((participant) => {
             if (participant.identity === localParticipant.identity) {
@@ -56,6 +60,7 @@ export const usePublicationQualityControls = () => {
     }, [
         sortedParticipantIdentities,
         pagedParticipantIdentities,
+        publicationSignature,
         quality,
         disableVideos,
         participantsWithDisabledVideos,
