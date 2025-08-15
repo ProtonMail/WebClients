@@ -6,7 +6,11 @@ import { ProtonLogo } from '@proton/components';
 
 import { useSignup } from '../../../../context/SignupContext';
 
-const Header = () => {
+interface HeaderProps {
+    showSignIn?: boolean;
+}
+
+const Header = ({ showSignIn = false }: HeaderProps) => {
     const { loginUrl } = useSignup();
 
     const signIn = (
@@ -21,7 +25,7 @@ const Header = () => {
             style={{ '--max-w-custom': '90rem', '--md-h-custom': '4.4rem' }}
         >
             <ProtonLogo />
-            <div>{c('Go to sign in').jt`Already have an account? ${signIn}`}</div>
+            {showSignIn && <div>{c('Go to sign in').jt`Already have an account? ${signIn}`}</div>}
         </header>
     );
 };
