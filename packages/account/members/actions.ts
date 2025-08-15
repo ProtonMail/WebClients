@@ -13,6 +13,8 @@ import {
     createMember as createMemberConfig,
     deleteMember as deleteMemberConfig,
     deleteUnprivatizationRequest,
+    editMemberInvitation,
+    inviteMember,
     privatizeMember as privatizeMemberConfig,
     removeSSOSamlMember,
     requestUnprivatization as requestUnprivatizationConfig,
@@ -806,5 +808,76 @@ export const attachMemberSSO = ({
         }
         await api(addSSOSamlMember(member.ID));
         dispatch(upsertMember({ member: await getMember(api, member.ID) }));
+    };
+};
+
+interface InviteMemberPayload {
+    email: string;
+    storage: number;
+    numAI: boolean | undefined;
+    lumo: boolean | undefined;
+}
+export const createInvite = ({
+    email,
+    storage,
+    numAI,
+    lumo,
+}: InviteMemberPayload): ThunkAction<
+    Promise<void>,
+    KtState & MemberState & MembersState & OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch, getState, extra) => {
+        const { Member } = await extra.api<{ Member: Member }>(
+            inviteMember({
+                email,
+                maxSpace: storage,
+                maxAI: numAI === undefined ? undefined : numAI ? 1 : 0,
+                maxLumo: lumo === undefined ? undefined : lumo ? 1 : 0,
+            })
+        );
+        dispatch(upsertMember({ member: Member }));
+        dispatch(organizationThunk({ cache: CacheType.None }));
+    };
+};
+
+export const editInvite = ({
+    member,
+    memberDiff,
+}: {
+    member: Member;
+    memberDiff: Partial<InviteMemberPayload>;
+}): ThunkAction<
+    Promise<{ member: Member; diff: boolean }>,
+    KtState & MemberState & MembersState & OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch, getState, extra) => {
+        const api = extra.api;
+        let diff = false;
+        if (memberDiff.storage !== undefined) {
+            await api(editMemberInvitation(member.ID, memberDiff.storage));
+            diff = true;
+        }
+        if (memberDiff.numAI !== undefined) {
+            await api(updateAI(member.ID, memberDiff.numAI ? 1 : 0));
+            diff = true;
+        }
+        if (memberDiff.lumo !== undefined) {
+            await api(updateLumo(member.ID, memberDiff.lumo ? 1 : 0));
+            diff = true;
+        }
+        if (diff) {
+            const [updatedMember] = await Promise.all([
+                getMember(api, member.ID),
+                // Upserting the member also has an effect on the org values, so they need to be updated too.
+                dispatch(organizationThunk({ cache: CacheType.None })),
+            ]);
+            dispatch(upsertMember({ member: updatedMember }));
+            return { member: updatedMember, diff: true };
+        }
+        return { member, diff: false };
     };
 };

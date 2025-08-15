@@ -325,6 +325,11 @@ export const checkInvoice = (invoiceID: string, version?: PaymentsVersion, GiftC
     data: { GiftCode },
 });
 
+export const queryPaymentMethod = (methodID: string, forceVersion?: PaymentsVersion) => ({
+    url: `payments/${forceVersion ?? paymentsVersion}/methods/${methodID}`,
+    method: 'get',
+});
+
 export type SetPaymentMethodDataV4 = TokenPayment & { Autopay?: Autopay };
 
 export const setPaymentMethodV4 = (data: SetPaymentMethodDataV4) => ({

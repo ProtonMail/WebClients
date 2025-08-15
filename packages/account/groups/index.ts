@@ -1,13 +1,16 @@
+import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import { getGroups } from '@proton/shared/lib/api/groups';
+import { CacheType, createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
+import { getGroup, getGroups } from '@proton/shared/lib/api/groups';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
+import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
+import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Group, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import type { Api, Group, Organization, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { DomainsState } from '../domains';
 import { serverEvent } from '../eventLoop';
@@ -34,6 +37,11 @@ const canFetch = (user: UserModel, organization: Organization) => {
     return user.isAdmin && organization?.ID; // just need an org ID to get groups
 };
 
+export const fetchGroup = async (groupID: string, api: Api) => {
+    const { Group } = await api<{ Group: Group }>(getGroup(groupID));
+    return Group;
+};
+
 const modelThunk = createAsyncModelThunk<Model, GroupsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
         const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
@@ -52,6 +60,11 @@ const slice = createSlice({
     name,
     initialState,
     reducers: {
+        eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<Group>>) => {
+            if (state.value) {
+                state.value = updateCollectionV6(state.value, action.payload);
+            }
+        },
         addGroup: (state, action: PayloadAction<Group>) => {
             if (!state.value) {
                 state.value = [];
@@ -75,8 +88,7 @@ const slice = createSlice({
         },
         removeGroup: (state, action: PayloadAction<string>) => {
             if (state.value && action.payload) {
-                const updatedGroups = state.value.filter((group) => group.ID !== action.payload);
-                state.value = updatedGroups;
+                state.value = state.value.filter((group) => group.ID !== action.payload);
             }
         },
         setNoEncryptFlag: (state, action: PayloadAction<{ addressID: string; noEncryptFlag: boolean }>) => {
@@ -140,4 +152,22 @@ const slice = createSlice({
 });
 export const { addGroup, updateGroup, removeGroup, setNoEncryptFlag } = slice.actions;
 export const groupsReducer = { [name]: slice.reducer };
+export const groupsActions = slice.actions;
 export const groupThunk = modelThunk.thunk;
+
+export const groupsEventLoopV6Thunk = ({
+    event,
+    api,
+}: {
+    event: CoreEventV6Response;
+    api: Api;
+}): ThunkAction<Promise<void>, GroupsState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        await updateCollectionAsyncV6({
+            events: event.Groups,
+            get: (ID) => fetchGroup(ID, api),
+            refetch: () => dispatch(groupThunk({ cache: CacheType.None })),
+            update: (result) => dispatch(groupsActions.eventLoopV6(result)),
+        });
+    };
+};

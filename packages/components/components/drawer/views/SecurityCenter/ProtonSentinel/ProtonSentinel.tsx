@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Href } from '@proton/atoms';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
@@ -10,8 +11,9 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import { getDisabledString, getEnabledString } from '@proton/components/containers/credentialLeak/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
@@ -28,7 +30,7 @@ import ProtonSentinelUpsellModal from './modal/ProtonSentinelUpsellModal';
 const ProtonSentinel = () => {
     const api = useApi();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const upsellModal = useModalStateObject();
     const [loadingSentinel, setLoadingSentinel] = useState(false);
@@ -67,7 +69,7 @@ const ProtonSentinel = () => {
                 });
                 createNotification({ text: getDisabledString(PROTON_SENTINEL_NAME) });
             }
-            await call();
+            await dispatch(userSettingsThunk({ cache: CacheType.None }));
         } catch (e) {
             console.error(e);
             traceInitiativeError('drawer-security-center', e);

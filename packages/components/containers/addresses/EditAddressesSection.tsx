@@ -3,18 +3,18 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import { Button, Input } from '@proton/atoms';
 import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import type { EditorActions } from '@proton/components/components/editor/interface';
 import Info from '@proton/components/components/link/Info';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { updateAddress } from '@proton/shared/lib/api/addresses';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
@@ -34,8 +34,8 @@ interface Props {
 
 const EditAddressesSection = ({ address }: Props) => {
     const [mailSettings = DEFAULT_MAILSETTINGS] = useMailSettings();
-    const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
+    const handleError = useErrorHandler();
     const [loading, withLoading] = useLoading();
     const [editorReady, setEditorReady] = useState(false);
     const [displayName, setDisplayName] = useState(address.DisplayName);
@@ -57,16 +57,13 @@ const EditAddressesSection = ({ address }: Props) => {
     };
 
     const handleSubmit = async () => {
-        const signature = signatureUpdated ? (editorRef.current?.getContent() as string) : address.Signature;
-
-        await api(
-            updateAddress(address.ID, {
-                DisplayName: displayName,
-                Signature: formatSignature(signature),
-            })
-        );
-        await call();
-        createNotification({ text: c('Success').t`Address updated` });
+        try {
+            const signature = signatureUpdated ? (editorRef.current?.getContent() as string) : address.Signature;
+            await dispatch(updateAddressThunk({ address, displayName, signature: formatSignature(signature) }));
+            createNotification({ text: c('Success').t`Address updated` });
+        } catch (e) {
+            handleError(e);
+        }
     };
 
     useHotkeys(editorWrapperRef, [

@@ -1,12 +1,14 @@
 import { c } from 'ttag';
 
+import { userThunk } from '@proton/account/user';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { deleteRecoverySecrets } from '@proton/shared/lib/api/settingsRecovery';
 
 interface Props extends Omit<ModalProps, 'children' | 'size'> {
@@ -15,7 +17,7 @@ interface Props extends Omit<ModalProps, 'children' | 'size'> {
 }
 
 const VoidRecoveryFilesModal = ({ deviceRecoveryEnabled, onVoid, onClose, ...rest }: Props) => {
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const api = useApi();
     const { createNotification } = useNotifications();
 
@@ -23,7 +25,7 @@ const VoidRecoveryFilesModal = ({ deviceRecoveryEnabled, onVoid, onClose, ...res
 
     const handleVoidClick = async () => {
         await api(deleteRecoverySecrets());
-        await call();
+        await dispatch(userThunk({ cache: CacheType.None }));
         await onVoid();
         createNotification({ type: 'info', text: c('Info').t`Recovery files have been voided` });
         onClose?.();

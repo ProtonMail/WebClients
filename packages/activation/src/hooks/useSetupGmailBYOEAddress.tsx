@@ -9,12 +9,14 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 import { deleteSyncItem, loadSyncList } from '@proton/activation/src/logic/sync/sync.actions';
 import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
 import { getAllSync } from '@proton/activation/src/logic/sync/sync.selectors';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { findUserAddress } from '@proton/shared/lib/helpers/address';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/index';
+import noop from '@proton/utils/noop';
 
 const useSetupGmailBYOEAddress = () => {
     const [user] = useUser();
@@ -24,6 +26,7 @@ const useSetupGmailBYOEAddress = () => {
     const isInMaintenance = useFlag('MaintenanceImporter');
     const easySwitchDispatch = useEasySwitchDispatch();
     const allSyncs = useEasySwitchSelector(getAllSync);
+    const handleError = useErrorHandler();
 
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
@@ -70,9 +73,10 @@ const useSetupGmailBYOEAddress = () => {
                     if (address) {
                         createNotification({ text: c('Success').t`Address successfully added` });
                     }
-                } catch {
+                } catch (e) {
+                    handleError(e);
                     // If we're not able to add the address, we want to delete the forwarding we just added
-                    void dispatchEasySwitch(deleteSyncItem({ syncId: sync.id, showNotification: false }));
+                    dispatchEasySwitch(deleteSyncItem({ syncId: sync.id, showNotification: false })).catch(noop);
                 }
             }
         }

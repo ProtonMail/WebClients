@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { applyHOCs, withConfig, withNotifications, withPaymentSwitcherContext, withReduxStore } from '@proton/testing';
 
 import InvoicesSection from './InvoicesSection';
@@ -49,6 +49,11 @@ jest.mock('../../hooks/useModals', () => {
 
 jest.mock('@proton/components/payments/client-extensions/useChargebeeContext');
 
+jest.mock('@proton/components/hooks/useEventManager', () => ({
+    __esModule: true,
+    default: jest.fn(),
+}));
+
 const InvoicesSectionContext = applyHOCs(
     withConfig(),
     withPaymentSwitcherContext(),
@@ -57,21 +62,25 @@ const InvoicesSectionContext = applyHOCs(
 )(InvoicesSection);
 
 describe('InvoicesSection', () => {
-    let useSubscribeEventManagerMock: jest.Mock;
-
-    beforeAll(() => {
-        useSubscribeEventManagerMock = useSubscribeEventManager as jest.Mock;
-    });
+    let subscribeMock: jest.Mock;
 
     beforeEach(() => {
         jest.clearAllMocks();
+        subscribeMock = jest.fn();
+        (useEventManager as jest.Mock).mockReturnValue({
+            subscribe: subscribeMock,
+        });
     });
 
     it('should request the list of invoices again when there is an Invoices event', () => {
+        subscribeMock.mockImplementation(() => {
+            // Simulate immediate subscription
+            return () => {};
+        });
         render(<InvoicesSectionContext />);
 
-        expect(useSubscribeEventManagerMock).toHaveBeenCalledTimes(1);
-        let [callback] = useSubscribeEventManagerMock.mock.lastCall;
+        expect(subscribeMock).toHaveBeenCalledTimes(1);
+        const callback = subscribeMock.mock.calls[0][0];
 
         callback({
             Invoices: [{ ID: '123' }],
@@ -81,42 +90,46 @@ describe('InvoicesSection', () => {
     });
 
     it('should not request invoices additionally if the Invoices array is empty', () => {
+        subscribeMock.mockImplementation(() => {
+            return () => {};
+        });
         render(<InvoicesSectionContext />);
 
-        expect(useSubscribeEventManagerMock).toHaveBeenCalledTimes(1);
-        let [callback] = useSubscribeEventManagerMock.mock.lastCall;
+        expect(subscribeMock).toHaveBeenCalledTimes(1);
+        const callback = subscribeMock.mock.calls[0][0];
 
         callback({
             Invoices: [],
         });
 
-        // it's just the initial request
         expect(requestMock).toHaveBeenCalledTimes(1);
     });
 
     it('should not request invoices if the Invoices are not there ', () => {
+        subscribeMock.mockImplementation(() => {
+            return () => {};
+        });
         render(<InvoicesSectionContext />);
 
-        let useSubscribeEventManagerMock = useSubscribeEventManager as jest.Mock;
-        expect(useSubscribeEventManagerMock).toHaveBeenCalledTimes(1);
-        let [callback] = useSubscribeEventManagerMock.mock.lastCall;
+        expect(subscribeMock).toHaveBeenCalledTimes(1);
+        const callback = subscribeMock.mock.calls[0][0];
 
         callback({});
 
-        // it's just the initial request
         expect(requestMock).toHaveBeenCalledTimes(1);
     });
 
     it('should not request invoices if the callback does not have an argument', () => {
+        subscribeMock.mockImplementation(() => {
+            return () => {};
+        });
         render(<InvoicesSectionContext />);
 
-        let useSubscribeEventManagerMock = useSubscribeEventManager as jest.Mock;
-        expect(useSubscribeEventManagerMock).toHaveBeenCalledTimes(1);
-        let [callback] = useSubscribeEventManagerMock.mock.lastCall;
+        expect(subscribeMock).toHaveBeenCalledTimes(1);
+        const callback = subscribeMock.mock.calls[0][0];
 
         callback();
 
-        // it's just the initial request
         expect(requestMock).toHaveBeenCalledTimes(1);
     });
 });

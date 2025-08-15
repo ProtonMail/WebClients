@@ -649,11 +649,7 @@ export { default as MemberActions } from './containers/members/MemberActions';
 export { default as MemberAddresses } from './containers/members/MemberAddresses';
 export { default as MemberFeatures } from './containers/members/MemberFeatures';
 export { default as MemberRole } from './containers/members/MemberRole';
-export {
-    getInitialStorage,
-    getStorageRange,
-    default as MemberStorageSelector,
-} from './containers/members/MemberStorageSelector';
+export { default as MemberStorageSelector } from './containers/members/MemberStorageSelector';
 export { default as MultiUserCreationSection } from './containers/members/multipleUserCreation/MultiUserCreationSection';
 export { default as SubUserCreateModal } from './containers/members/SubUserCreateModal';
 export { default as SubUserEditModal } from './containers/members/SubUserEditModal';

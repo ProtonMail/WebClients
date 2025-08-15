@@ -12,6 +12,7 @@ import {
     StandardErrorPage,
     StandardLoadErrorPage,
 } from '@proton/components';
+import { EventManagerV6Provider } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
@@ -64,15 +65,24 @@ const PrivateApp = () => {
                             <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
                                 <Router history={extraThunkArguments.history}>
                                     <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                        <CalendarModelEventManagerProvider
-                                            calendarModelEventManager={extraThunkArguments.calendarModelEventManager}
+                                        <EventManagerV6Provider
+                                            coreEventV6Manager={extraThunkArguments.coreEventV6Manager}
+                                            mailEventV6Manager={extraThunkArguments.mailEventV6Manager}
+                                            contactEventV6Manager={extraThunkArguments.contactEventV6Manager}
+                                            calendarEventV6Manager={extraThunkArguments.calendarEventV6Manager}
                                         >
-                                            <ApiProvider api={extraThunkArguments.api}>
-                                                <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                    <state.MainContainer />
-                                                </ErrorBoundary>
-                                            </ApiProvider>
-                                        </CalendarModelEventManagerProvider>
+                                            <CalendarModelEventManagerProvider
+                                                calendarModelEventManager={
+                                                    extraThunkArguments.calendarModelEventManager
+                                                }
+                                            >
+                                                <ApiProvider api={extraThunkArguments.api}>
+                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                        <state.MainContainer />
+                                                    </ErrorBoundary>
+                                                </ApiProvider>
+                                            </CalendarModelEventManagerProvider>
+                                        </EventManagerV6Provider>
                                     </EventManagerProvider>
                                 </Router>
                             </FlagProvider>

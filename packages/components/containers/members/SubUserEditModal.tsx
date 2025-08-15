@@ -12,6 +12,7 @@ import {
     getPrivateText,
 } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button, Card, Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -51,7 +52,7 @@ import noop from '@proton/utils/noop';
 
 import Addresses from '../addresses/Addresses';
 import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
-import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import MemberStorageSelector from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 import SubUserCreateHint from './SubUserCreateHint';
 import { adminTooltipText } from './constants';

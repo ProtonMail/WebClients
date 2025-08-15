@@ -1,7 +1,7 @@
 import type { OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { ForwardingType } from '@proton/shared/lib/interfaces';
 
-import { getIsLastOutgoingNonE2EEForwarding } from './helpers';
+import { getIsLastOutgoingNonE2EEForwarding } from './forwardHelper';
 
 describe('getIsLastOutgoingNonE2EEForwarding', () => {
     describe('when the forwarding is e2ee', () => {

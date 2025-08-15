@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -14,9 +15,10 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { renameSecurityKey } from '@proton/shared/lib/api/settings';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
@@ -32,7 +34,7 @@ const EditSecurityKeyModal = ({ id, name, onClose, ...rest }: Props) => {
     const normalApi = useApi();
     const errorHandler = useErrorHandler();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { validator, onFormSubmit } = useFormErrors();
     const [newName, setNewName] = useState(name);
     const { createNotification } = useNotifications();
@@ -41,7 +43,7 @@ const EditSecurityKeyModal = ({ id, name, onClose, ...rest }: Props) => {
         const run = async () => {
             try {
                 await silentApi(renameSecurityKey(id, { Name: newName }));
-                await call();
+                await dispatch(userSettingsThunk({ cache: CacheType.None }));
                 createNotification({
                     text: c('fido2: Info').t`Security key updated`,
                 });

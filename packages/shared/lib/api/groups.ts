@@ -52,9 +52,19 @@ export const getGroups = () => ({
     url: 'core/v4/groups',
 });
 
+export const getGroup = (groupID: string) => ({
+    method: 'get',
+    url: `core/v4/groups/${groupID}`,
+});
+
 export const getGroupMembers = (groupID: string) => ({
     method: 'get',
     url: `core/v4/groups/${groupID}/members`,
+});
+
+export const getGroupMember = (memberID: string) => ({
+    method: 'get',
+    url: `core/v4/groups/members/${memberID}`,
 });
 
 export interface GroupMemberParameters {

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { rotateOrganizationKeys } from '@proton/account';
+import { organizationKeyThunk, rotateOrganizationKeys } from '@proton/account';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Form from '@proton/components/components/form/Form';
@@ -17,10 +17,10 @@ import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInp
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
+import { CacheType } from '@proton/redux-utilities';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
@@ -38,7 +38,6 @@ interface Props extends ModalProps {
 const ChangeOrganizationKeysModal = ({ onClose, mode, hasOtherAdmins, organizationKey, ...rest }: Props) => {
     const [authModalProps, setAuthModal, renderAuthModal] = useModalState();
     const dispatch = useDispatch();
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { validator, onFormSubmit } = useFormErrors();
     const [config, setConfig] = useState<any>();
@@ -72,7 +71,7 @@ const ChangeOrganizationKeysModal = ({ onClose, mode, hasOtherAdmins, organizati
                     }}
                     onExit={() => setConfig(undefined)}
                     onSuccess={async () => {
-                        await call();
+                        await dispatch(organizationKeyThunk({ cache: CacheType.None }));
                         createNotification({ text: c('Success').t`Keys updated` });
                         onClose?.();
                     }}

@@ -8,8 +8,9 @@ import { useGetUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
-import { useApi, useAuthentication, useConfig, useEventManager, useSecurityCheckup } from '@proton/components';
+import { useApi, useAuthentication, useConfig, useSecurityCheckup } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { CacheType } from '@proton/redux-utilities';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
@@ -36,7 +37,6 @@ const EnableDeviceRecoveryContainer = () => {
     const { APP_NAME } = useConfig();
     const api = useApi();
     const authentication = useAuthentication();
-    const { call } = useEventManager();
 
     const getUser = useGetUser();
     const getUserKeys = useGetUserKeys();
@@ -92,7 +92,7 @@ const EnableDeviceRecoveryContainer = () => {
     const enableDeviceRecovery = async () => {
         await api(updateDeviceRecovery({ DeviceRecovery: 1 }));
         await syncDeviceRecoveryHelper({ DeviceRecovery: 1 });
-        await call();
+        await getUserSettings({ cache: CacheType.None });
 
         setStep(STEPS.SUCCESS);
     };

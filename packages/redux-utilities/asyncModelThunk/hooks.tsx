@@ -129,7 +129,7 @@ export const createHooks = <State, Extra, Returned, ThunkArg = void>(
             return [undefined, true];
         }
 
-        const { error, value } = result;
+        const { error, value, meta } = result;
 
         if ((error !== undefined || value !== undefined) && queueRef.state) {
             // Reset the queued state when the thunk has resolved.
@@ -147,7 +147,11 @@ export const createHooks = <State, Extra, Returned, ThunkArg = void>(
             queueRef.state = false;
         }
 
-        if ((value === undefined || !queueRef.once) && !queueRef.state && queueRef.queue) {
+        if (
+            (value === undefined || meta.fetchedEphemeral === undefined || !queueRef.once) &&
+            !queueRef.state &&
+            queueRef.queue
+        ) {
             queueRef.state = true;
             queueRef.once = true;
             queueRef.queue.enqueue(thunk);

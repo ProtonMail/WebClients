@@ -24,7 +24,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import ForwardModal from './ForwardModal';
 import IncomingForwardTable from './IncomingForwardTable';
 import OutgoingForwardTable from './OutgoingForwardTable';
-import { getChainedForwardingEmails } from './helpers';
+import { getChainedForwardingEmails } from './forwardHelper';
 
 const upsellRef = getUpsellRef({
     app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,

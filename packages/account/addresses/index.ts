@@ -1,10 +1,14 @@
-import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { CacheType, createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
+import { getAddress as getAddressConfig } from '@proton/shared/lib/api/addresses';
+import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
+import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
+import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address, Api } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { removeById } from '@proton/utils/removeById';
 import { upsertById } from '@proton/utils/upsertById';
@@ -38,6 +42,11 @@ const slice = createSlice({
     name,
     initialState,
     reducers: {
+        eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<Address>>) => {
+            if (state.value) {
+                state.value = sortAddresses(updateCollectionV6(state.value, action.payload));
+            }
+        },
         deleteAddress: (state, action: PayloadAction<{ ID: string }>) => {
             if (!state.value) {
                 return;
@@ -76,3 +85,38 @@ const slice = createSlice({
 export const addressesReducer = { [name]: slice.reducer };
 export const addressesThunk = modelThunk.thunk;
 export const addressActions = slice.actions;
+
+export const getAddress = async (api: Api, ID: string) => {
+    const { Address } = await api<{ Address: Address }>(getAddressConfig(ID));
+    return Address;
+};
+
+export const addressThunk = ({
+    address: oldAddress,
+}: {
+    address: Address & { ID: string };
+    cache: CacheType;
+}): ThunkAction<Promise<Address>, AddressesState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, getState, extra) => {
+        const address = await getAddress(extra.api, oldAddress.ID);
+        dispatch(addressActions.upsertAddress(address));
+        return address;
+    };
+};
+
+export const addressesEventLoopV6Thunk = ({
+    event,
+    api,
+}: {
+    event: CoreEventV6Response;
+    api: Api;
+}): ThunkAction<Promise<void>, AddressesState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        await updateCollectionAsyncV6({
+            events: event.Addresses,
+            get: (ID) => getAddress(api, ID),
+            refetch: () => dispatch(addressesThunk({ cache: CacheType.None })),
+            update: (result) => dispatch(addressActions.eventLoopV6(result)),
+        });
+    };
+};

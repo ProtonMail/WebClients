@@ -3,13 +3,15 @@ import { Link, Redirect } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useInactiveKeys } from '@proton/account';
+import { useInactiveKeys, userThunk } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
-import { Checkbox, Icon, Label, useApi, useEventManager, useSecurityCheckup } from '@proton/components';
+import { Checkbox, Icon, Label, useApi, useSecurityCheckup } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import {
@@ -41,7 +43,7 @@ enum STEPS {
 
 const DownloadPhrase = ({ recoveryPhraseData }: { recoveryPhraseData: DeferredMnemonicData }) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
 
     const { securityState } = useSecurityCheckup();
     const { phrase } = securityState;
@@ -115,7 +117,7 @@ const DownloadPhrase = ({ recoveryPhraseData }: { recoveryPhraseData: DeferredMn
 
     const downloadRecoveryKit = async () => {
         downloadFile(blob, RECOVERY_KIT_FILE_NAME);
-        await call();
+        await dispatch(userThunk({ cache: CacheType.None }));
 
         setStep(STEPS.SUCCESS);
     };

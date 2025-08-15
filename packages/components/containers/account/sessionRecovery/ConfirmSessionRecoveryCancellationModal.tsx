@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
@@ -14,10 +15,11 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { abortSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { srpAuth } from '@proton/shared/lib/srp';
@@ -32,7 +34,7 @@ interface Props extends ModalProps {
 const ConfirmSessionRecoveryCancellationModal = ({ onBack, onClose, ...rest }: Props) => {
     const api = useApi();
     const [user] = useUser();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const { validator, onFormSubmit } = useFormErrors();
     const [password, setPassword] = useState('');
@@ -58,7 +60,7 @@ const ConfirmSessionRecoveryCancellationModal = ({ onBack, onClose, ...rest }: P
                     config: abortSessionRecovery(),
                 });
 
-                await call();
+                await dispatch(userThunk({ cache: CacheType.None }));
                 dismissSessionRecoveryCancelled();
                 createNotification({
                     text: c('session_recovery:cancellation:notification').t`Password reset canceled`,

@@ -35,7 +35,7 @@ export interface GroupMember {
     // the backend is currently returning Id but it should use ID
     // TODO(plavarin): 2024-07-23, remove when fixed
     AddressId?: string;
-    Email: string;
+    Email: string | null;
     State: GROUP_MEMBER_STATE;
     Permissions: GROUP_MEMBER_PERMISSIONS;
     GroupMemberAddressPendingKey?: GroupMemberAddressPendingKey;

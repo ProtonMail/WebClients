@@ -7,7 +7,22 @@ import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hel
 import type { Feature } from '@proton/features';
 import metrics from '@proton/metrics';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
-import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
+import {
+    type CalendarEventV6Response,
+    type ContactEventV6Response,
+    type CoreEventV6Response,
+    type MailEventV6Response,
+    getCalendarEventsV6,
+    getContactEventsV6,
+    getCoreEventsV6,
+    getEvents,
+    getLatestCalendarEventIDV6,
+    getLatestContactEventIDV6,
+    getLatestCoreEventIDV6,
+    getLatestID,
+    getLatestMailEventIDV6,
+    getMailEventsV6,
+} from '@proton/shared/lib/api/events';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
@@ -37,6 +52,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { storeAppVersion } from '@proton/shared/lib/desktop/version';
 import { resumeSessionDrawerApp } from '@proton/shared/lib/drawer/session';
+import createCompatEventManager from '@proton/shared/lib/eventManager/compatEventManager';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import type { FetchConfig } from '@proton/shared/lib/fetch/interface';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
@@ -52,8 +68,7 @@ import type { Api, Environment, ProtonConfig, User, UserSettings } from '@proton
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
-import { createCustomFetch, getUnleashConfig } from '@proton/unleash';
-import { EVENTS, UnleashClient } from '@proton/unleash';
+import { EVENTS, UnleashClient, createCustomFetch, getUnleashConfig } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';
@@ -354,6 +369,58 @@ export const loadCrypto = ({
             enforceOpenpgpGrammar: !!unleashClient?.isEnabled('CryptoEnforceOpenpgpGrammar'),
         })
     );
+};
+
+export const coreEventManagerV6 = ({ api }: { api: Api }) => {
+    return createEventManager<CoreEventV6Response>({
+        getLatestEventID: (options) =>
+            api<{
+                EventID: string;
+            }>({ ...getLatestCoreEventIDV6(), ...options }).then(({ EventID }) => EventID),
+        getEvents: ({ eventID, ...rest }) => {
+            return api<CoreEventV6Response>({ ...getCoreEventsV6(eventID), ...rest });
+        },
+    });
+};
+
+export const mailEventManagerV6 = ({ api }: { api: Api }) => {
+    return createEventManager<MailEventV6Response>({
+        getLatestEventID: (options) =>
+            api<{
+                EventID: string;
+            }>({ ...getLatestMailEventIDV6(), ...options }).then(({ EventID }) => EventID),
+        getEvents: ({ eventID, ...rest }) => {
+            return api<MailEventV6Response>({ ...getMailEventsV6(eventID), ...rest });
+        },
+    });
+};
+
+export const contactEventManagerV6 = ({ api }: { api: Api }) => {
+    return createEventManager<ContactEventV6Response>({
+        getLatestEventID: (options) =>
+            api<{
+                EventID: string;
+            }>({ ...getLatestContactEventIDV6(), ...options }).then(({ EventID }) => EventID),
+        getEvents: ({ eventID, ...rest }) => {
+            return api<ContactEventV6Response>({ ...getContactEventsV6(eventID), ...rest });
+        },
+    });
+};
+
+export const calendarEventManagerV6 = ({ api }: { api: Api }) => {
+    return createEventManager<CalendarEventV6Response>({
+        getLatestEventID: (options) =>
+            api<{
+                EventID: string;
+            }>({ ...getLatestCalendarEventIDV6(), ...options }).then(({ EventID }) => EventID),
+        getEvents: ({ eventID, ...rest }) => {
+            return api<CalendarEventV6Response>({ ...getCalendarEventsV6(eventID), ...rest });
+        },
+    });
+};
+
+export const compatEventManagerV6 = (parameters: Parameters<typeof createCompatEventManager>[0]) => {
+    return createCompatEventManager<any>(parameters);
 };
 
 export const loadLocales = ({

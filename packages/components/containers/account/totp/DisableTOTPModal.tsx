@@ -1,17 +1,19 @@
 import { c } from 'ttag';
 
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import AuthModal from '@proton/components/containers/password/AuthModal';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { disableTotp } from '@proton/shared/lib/api/settings';
 
 const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [authModalProps, setAuthModalOpen, renderAuthModal] = useModalState();
@@ -25,7 +27,7 @@ const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                     {...authModalProps}
                     onCancel={onClose}
                     onSuccess={async () => {
-                        await withLoading(call());
+                        await withLoading(dispatch(userSettingsThunk({ cache: CacheType.None })));
                         onClose?.();
                         createNotification({ text: c('Info').t`Two-factor authentication disabled` });
                     }}

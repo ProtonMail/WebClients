@@ -8,7 +8,6 @@ const dbVersion = 5;
 
 interface StoredEncryptedCache {
     state: Uint8Array<ArrayBuffer>;
-    eventID: string;
     date: Date;
     appVersion: string;
     version: number;
@@ -21,13 +20,11 @@ export interface StoreDB extends DBSchema {
 export type EncryptedCache = {
     state: Uint8Array<ArrayBuffer>;
     appVersion: string;
-    eventID: string;
 };
 
 export type DecryptedCache<T> = {
     state: T;
     appVersion: string;
-    eventID: string;
 };
 
 export const CACHE_DB_VERSION = 1;
@@ -55,7 +52,6 @@ export const writeStore = async (userID: string, cache: EncryptedCache): Promise
             {
                 state: cache.state,
                 appVersion: cache.appVersion,
-                eventID: cache.eventID,
                 date: new Date(),
                 version: dbVersion,
             },
@@ -83,14 +79,13 @@ export const readStore = async (userID: string): Promise<EncryptedCache | undefi
             if (!value) {
                 return undefined;
             }
-            const { state, appVersion, eventID, version = 0 } = value;
+            const { state, appVersion, version = 0 } = value;
             if (!state || version !== dbVersion) {
                 return undefined;
             }
             return {
                 state,
                 appVersion,
-                eventID,
                 version,
             };
         }),

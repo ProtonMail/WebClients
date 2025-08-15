@@ -1,7 +1,10 @@
+import { userThunk } from '@proton/account/user';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import usePrimaryRecoverySecret from '@proton/components/hooks/usePrimaryRecoverySecret';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { setNewRecoverySecret } from '@proton/shared/lib/api/settingsRecovery';
 import {
     exportRecoveryFile,
@@ -11,7 +14,7 @@ import {
 
 const useDownloadRecoveryFile = () => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
 
     const getUserKeys = useGetUserKeys();
 
@@ -33,7 +36,10 @@ const useDownloadRecoveryFile = () => {
                 })
             );
             await exportRecoveryFile({ recoverySecret, userKeys });
-            await call();
+            await Promise.all([
+                dispatch(userSettingsThunk({ cache: CacheType.None })),
+                dispatch(userThunk({ cache: CacheType.None })),
+            ]);
             return;
         }
 

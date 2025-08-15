@@ -17,24 +17,16 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { FilterStatement } from '@proton/components/containers/filters/interfaces';
-import {
-    editFilter,
-    finalizeForwardingSetup,
-    fixupPrimaryKeyV6,
-    fixupUnsupportedPrimaryKeyV4,
-    initForwardingSetup,
-} from '@proton/components/containers/forward/ForwardModalActions';
-import {
-    type ForwardModalKeyState,
-    type ForwardModalState,
-    ForwardModalStep,
-} from '@proton/components/containers/forward/ForwardModalInterface';
-import { getSieveParameters } from '@proton/components/containers/forward/helpers';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import {
+    type ForwardModalKeyState,
+    editFilter,
+    setupForwarding,
+} from '@proton/mail/store/forwarding/outgoingForwardingActions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_RECEIVE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -47,6 +39,9 @@ import forwardingSuccessIllustration from '@proton/styles/assets/img/illustratio
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import ForwardConditions from './ForwardConditions';
+import { fixupPrimaryKeyV6, fixupUnsupportedPrimaryKeyV4, initForwardingSetup } from './ForwardModalActions';
+import { type ForwardModalState, ForwardModalStep } from './ForwardModalInterface';
+import { getSieveParameters, getSieveTree } from './helpers';
 
 interface Props extends ModalProps {
     existingForwardingConfig?: OutgoingAddressForwarding;
@@ -196,13 +191,12 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
         }
         await dispatch(
             editFilter({
-                filterID: existingForwardingConfig.ID,
-                filter: {
+                forward: existingForwardingConfig,
+                sieveTree: getSieveTree({
                     conditions: model.conditions,
                     statement: model.statement,
                     email: model.forwardeeEmail,
-                    version: existingForwardingConfig.Filter?.Version,
-                },
+                }),
             })
         );
         onClose?.();
@@ -237,18 +231,17 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
             throw new Error('Invalid state');
         }
 
-        const email = model.forwardeeEmail;
-
+        const forwardeeEmail = model.forwardeeEmail;
         await dispatch(
-            finalizeForwardingSetup({
+            setupForwarding({
                 forwarderAddressID: model.addressID,
-                filterID: existingForwardingConfig?.ID,
-                filter: {
-                    email,
+                forwardeeEmail,
+                forward: existingForwardingConfig,
+                sieveTree: getSieveTree({
                     conditions: model.conditions,
                     statement: model.statement,
-                    version: existingForwardingConfig?.Filter?.Version,
-                },
+                    email: forwardeeEmail,
+                }),
                 keyState: keyStateRef.current,
                 isInternal: model.isInternal,
                 isExternal: model.isExternal,
@@ -329,7 +322,14 @@ const ForwardModal = ({ existingForwardingConfig, onClose, ...rest }: Props) => 
             as={Form}
             size={model.step === ForwardModalStep.SuccessNotification ? 'xsmall' : undefined}
             onClose={onClose}
-            onSubmit={() => withLoading(handleSubmit().catch(handleError))}
+            onSubmit={() =>
+                withLoading(
+                    handleSubmit().catch((e) => {
+                        console.trace(e);
+                        handleError(e);
+                    })
+                )
+            }
             onReset={() => {
                 onClose?.();
             }}

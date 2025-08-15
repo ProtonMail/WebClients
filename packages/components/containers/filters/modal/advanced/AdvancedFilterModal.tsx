@@ -12,12 +12,13 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useDispatch } from '@proton/components/containers/filters/useDispatch';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { addFilter, updateFilter } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
-import { addTreeFilter, checkSieveFilter, updateFilter } from '@proton/shared/lib/api/filters';
+import { checkSieveFilter } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { FILTER_VERSION } from '../../constants';
@@ -61,7 +62,7 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const [filters = []] = useFilters();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
 
     const [closeFilterModalProps, setCloseFilterModalOpen] = useModalState();
 
@@ -91,21 +92,19 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
 
     const createFilter = async (filter: CreateFilter) => {
         try {
-            const { Filter } = await api(addTreeFilter(filter));
+            const Filter = await dispatch(addFilter({ filter }));
             createNotification({
                 text: c('Notification').t`${Filter.Name} created`,
             });
         } finally {
             // Some failed request will add the filter but in disabled mode
             // So we have to refresh the list in both cases
-            await call();
             onClose?.();
         }
     };
 
     const editFilter = async (filter: CreateFilter) => {
-        const { Filter } = await api(updateFilter(filter.ID, filter));
-        await call();
+        const Filter = await dispatch(updateFilter({ id: filter.ID, filter }));
         createNotification({
             text: c('Filter notification').t`Filter ${Filter.Name} updated`,
         });

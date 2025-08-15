@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { userSettingsActions } from '@proton/account/userSettings';
 import { Button, Href, InlineLinkButton } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
 import Form from '@proton/components/components/form/Form';
@@ -20,9 +21,9 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TOTP_WRONG_ERROR, setupTotp } from '@proton/shared/lib/api/settings';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -30,6 +31,7 @@ import { APPS, BRAND_NAME, TWO_FA_RECOVERY_CODES_FILE_NAME } from '@proton/share
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
 import noop from '@proton/utils/noop';
 
@@ -43,6 +45,7 @@ interface ModalProperties {
 
 interface SetupTOTPResponse {
     TwoFactorRecoveryCodes: string[];
+    UserSettings: UserSettings;
 }
 
 const STEPS = {
@@ -56,7 +59,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
     const { APP_NAME } = useConfig();
     const [user] = useUser();
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const [{ sharedSecret, uri = '', period, digits }] = useState(() => {
         return getTOTPData(user.Email || user.Name);
@@ -236,7 +239,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
             const handleSubmit = async () => {
                 try {
                     const result = await api<SetupTOTPResponse>(setupTotp(sharedSecret, confirmationCode));
-                    await call();
+                    dispatch(userSettingsActions.update({ UserSettings: result.UserSettings }));
                     createNotification({ text: c('Info').t`Two-factor authentication enabled` });
                     setRecoveryCodes(result.TwoFactorRecoveryCodes);
                     setStep(STEPS.RECOVERY_CODES);

@@ -3,6 +3,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
 import { createKTVerifier, createKeyMigrationKTVerifier } from '@proton/key-transparency';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
@@ -75,7 +76,8 @@ export const runKeyBackgroundManager = (): ThunkAction<
                   )
                       .then(async () => {
                           await keyTransparencyCommit(user, userKeys);
-                          await extra.eventManager.call();
+                          // Refetch all the addresses to get the updated key for the address
+                          await dispatch(addressesThunk({ cache: CacheType.None }));
                       })
                       .catch(traceError)
                 : undefined;
@@ -92,7 +94,8 @@ export const runKeyBackgroundManager = (): ThunkAction<
                   })
                       .then(async () => {
                           await keyTransparencyCommit(user, userKeys);
-                          await extra.eventManager.call();
+                          // Refetch all the addresses to get the updated key for the address
+                          await dispatch(addressesThunk({ cache: CacheType.None }));
                       })
                       .catch(traceError)
                 : undefined;
@@ -128,7 +131,12 @@ export const runKeyBackgroundManager = (): ThunkAction<
             if (hasDoneMigration) {
                 await keyTransparencyCommit(user, userKeys);
                 // Force a refresh directly so they're good to be used
-                await extra.eventManager.call();
+                await Promise.all([
+                    // Refetch the user to get the update keys
+                    dispatch(userThunk({ cache: CacheType.None })),
+                    // Refetch all the addresses to get the updated key for the address
+                    dispatch(addressesThunk({ cache: CacheType.None })),
+                ]);
                 hasMigratedAddressKeys = true;
             }
 

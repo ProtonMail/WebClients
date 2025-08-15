@@ -54,7 +54,7 @@ export const syncDomain = (
         const silentApi = getSilentApi(extra.api);
 
         // Fetching the domain to ensure we have the latest data. It triggers a verification update.
-        const { Domain } = await silentApi<{ Domain: Domain }>(getDomain(domain.ID));
+        const { Domain } = await silentApi<{ Domain: Domain }>(getDomain(domain.ID, true));
 
         dispatch(upsertDomain(Domain));
         return Domain;

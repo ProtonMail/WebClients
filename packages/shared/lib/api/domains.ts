@@ -4,9 +4,10 @@ export const queryDomains = (params?: { Page: number; PageSize: number }) => ({
     params,
 });
 
-export const getDomain = (domainID: string) => ({
+export const getDomain = (domainID: string, refresh: boolean) => ({
     url: `domains/${domainID}`,
     method: 'get',
+    params: { Refresh: +refresh },
 });
 
 export const queryDomainAddresses = (domainID: string, params?: { Page: number; PageSize: number }) => ({

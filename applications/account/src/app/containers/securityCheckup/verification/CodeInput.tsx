@@ -2,17 +2,11 @@ import { type ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
-import {
-    Form,
-    InputFieldTwo,
-    TotpInput,
-    useApi,
-    useEventManager,
-    useFormErrors,
-    useNotifications,
-} from '@proton/components';
+import { Form, InputFieldTwo, TotpInput, useApi, useFormErrors, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { CacheType } from '@proton/redux-utilities';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -29,9 +23,9 @@ interface Props {
 
 export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
     const api = useApi();
+    const getUserSettings = useGetUserSettings();
 
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
 
     const [token, setToken] = useState();
 
@@ -65,8 +59,8 @@ export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
                 code,
                 api,
                 method,
-                call,
             });
+            await getUserSettings({ cache: CacheType.None });
 
             onSuccess();
         } catch (error: any) {

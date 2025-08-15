@@ -29,6 +29,7 @@ import {
     getIsUpcomingSubscriptionUnpaid,
     getPlanTitle,
     getRenewalTime,
+    isFreeSubscription,
     isManagedExternally,
     onSessionMigrationPaymentsVersion,
 } from '@proton/payments';
@@ -53,12 +54,11 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const eventManager = useEventManager();
     const upcoming = subscription?.UpcomingSubscription ?? undefined;
     const [organization] = useOrganization();
+    const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     const planTitle = getPlanTitle(subscription);
 
     const { renewDisabled, subscriptionExpiresSoon } = subscriptionExpires(subscription);
-
-    const isB2BTrial = useIsB2BTrial(subscription, organization);
 
     const status = useMemo(() => {
         if (subscriptionExpiresSoon) {
@@ -80,6 +80,10 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
             label: c('Subscription status').t`Active`,
         };
     }, [subscriptionExpiresSoon, isB2BTrial]);
+
+    if (isFreeSubscription(subscription)) {
+        return null;
+    }
 
     const showReactivateButton = renewDisabled && !isManagedExternally(subscription);
     const reactivateAction: DropdownActionProps[] = [

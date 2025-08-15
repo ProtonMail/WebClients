@@ -10,8 +10,11 @@ import {
     getFetchedEphemeral,
     previousSelector,
 } from '@proton/redux-utilities';
+import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';
+import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
+import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, Api, EnhancedMember, Member, User } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
@@ -21,9 +24,10 @@ import type { AddressesState } from '../addresses';
 import { addressesThunk } from '../addresses';
 import { bootstrapEvent } from '../bootstrap/action';
 import { serverEvent } from '../eventLoop';
+import { initEvent } from '../init';
 import type { ModelState } from '../interface';
-import type { UserState } from '../user';
-import { userThunk } from '../user';
+import { type UserState, userFulfilled, userThunk } from '../user';
+import { getMember } from './getMember';
 
 const name = 'members' as const;
 
@@ -97,6 +101,23 @@ const slice = createSlice({
     name,
     initialState,
     reducers: {
+        eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<Member>>) => {
+            if (state.value) {
+                state.value = updateCollectionV6(state.value, action.payload, {
+                    create: (a) => ({
+                        ...a,
+                        // In the event loop v6 we are always fetching individual members and get partial addresses
+                        addressState: 'partial',
+                    }),
+                    merge: (a, b): EnhancedMember => ({
+                        ...a,
+                        ...b,
+                        // In the event loop v6 we are always fetching individual members and get partial addresses
+                        addressState: 'partial',
+                    }),
+                });
+            }
+        },
         pending: (state) => {
             state.error = undefined;
         },
@@ -172,6 +193,36 @@ const slice = createSlice({
             state.unprivatization = initialState.unprivatization;
         });
 
+        const handleUserUpdate = (state: MembersState['members'], user: User | undefined) => {
+            if (!state.value) {
+                return;
+            }
+
+            const isFreeMembers = original(state)?.meta?.type === ValueType.dummy;
+
+            // Do not get any members update when user becomes unsubscribed.
+            if (!isFreeMembers && user && !canFetch(user)) {
+                state.unprivatization = initialState.unprivatization;
+                state.value = freeMembers;
+                state.error = undefined;
+                state.meta.fetchedEphemeral = undefined;
+                state.meta.fetchedAt = 0;
+            }
+
+            if (isFreeMembers && user && canFetch(user)) {
+                state.error = undefined;
+                state.meta.fetchedEphemeral = undefined;
+                state.meta.fetchedAt = 0;
+            }
+        };
+
+        builder.addCase(initEvent, (state, action) => {
+            handleUserUpdate(state, action.payload.User);
+        });
+        builder.addCase(userFulfilled, (state, action) => {
+            handleUserUpdate(state, action.payload);
+        });
+
         builder.addCase(serverEvent, (state, action) => {
             if (!state.value) {
                 return;
@@ -201,18 +252,7 @@ const slice = createSlice({
                     },
                 });
             } else {
-                if (!isFreeMembers && action.payload.User && !canFetch(action.payload.User)) {
-                    // Do not get any members update when user becomes unsubscribed.
-                    state.value = freeMembers;
-                    state.error = undefined;
-                    state.meta.type = ValueType.dummy;
-                }
-
-                if (isFreeMembers && action.payload.User && canFetch(action.payload.User)) {
-                    state.value = undefined;
-                    state.error = undefined;
-                    state.meta.type = ValueType.complete;
-                }
+                handleUserUpdate(state, action.payload.User);
             }
         });
     },
@@ -332,7 +372,29 @@ export const getMemberAddresses = ({
 export const membersReducer = { [name]: slice.reducer };
 export const membersThunk = modelThunk;
 export const upsertMember = slice.actions.upsertMember;
+export const membersActions = slice.actions;
 export const setUnprivatizationState = slice.actions.setUnprivatizationState;
 export { default as UnavailableAddressesError } from './errors/UnavailableAddressesError';
 export { default as InvalidAddressesError } from './errors/InvalidAddressesError';
 export { default as MemberCreationValidationError } from './errors/MemberCreationValidationError';
+
+export const membersEventLoopV6Thunk = ({
+    event,
+    api,
+}: {
+    event: CoreEventV6Response;
+    api: Api;
+}): ThunkAction<Promise<void>, MembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        const user = await dispatch(userThunk());
+        if (!canFetch(user)) {
+            return;
+        }
+        await updateCollectionAsyncV6({
+            events: event.Members,
+            get: (ID) => getMember(api, ID),
+            refetch: () => dispatch(membersThunk({ cache: CacheType.None })),
+            update: (result) => dispatch(membersActions.eventLoopV6(result)),
+        });
+    };
+};

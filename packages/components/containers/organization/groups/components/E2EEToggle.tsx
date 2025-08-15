@@ -1,13 +1,19 @@
 import { c } from 'ttag';
 
+import {
+    disableGroupAddressEncryption,
+    enableGroupAddressEncryption,
+} from '@proton/account/groups/setGroupAddressFlags';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { Group } from '@proton/shared/lib/interfaces';
+import type { Address, Group } from '@proton/shared/lib/interfaces';
 
 import type { GroupsManagementReturn } from '../types';
-import useGroupCrypto from '../useGroupCrypto';
 
 interface Props {
     group: Group;
@@ -17,12 +23,25 @@ interface Props {
 const E2EEToggle = ({ group, groupsManagement }: Props) => {
     const groupAddressID = group.Address.ID;
     const address = groupsManagement.groups.find(({ Address: { ID } }) => ID === groupAddressID)?.Address;
+    const { createNotification } = useNotifications();
+    const handleError = useErrorHandler();
 
     const primaryGroupAddressKey = address?.Keys[0];
     const isE2EEEnabled = !hasBit(primaryGroupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
 
-    const { disableEncryption, enableEncryption } = useGroupCrypto();
     const [toggleLoading, withToggleLoading] = useLoading();
+
+    const dispatch = useDispatch();
+
+    const disableEncryption = async (groupAddress: Address) => {
+        await dispatch(disableGroupAddressEncryption({ groupAddress }));
+        createNotification({ text: c('Success notification').t`Group end-to-end email encryption disabled` });
+    };
+
+    const enableEncryption = async (groupAddress: Address) => {
+        await dispatch(enableGroupAddressEncryption({ groupAddress }));
+        createNotification({ text: c('Success notification').t`Group end-to-end email encryption enabled` });
+    };
 
     const handleE2EEToggle = async () => {
         if (!address) {
@@ -31,7 +50,9 @@ const E2EEToggle = ({ group, groupsManagement }: Props) => {
         try {
             const toggleAction = isE2EEEnabled ? disableEncryption : enableEncryption;
             await withToggleLoading(toggleAction(address));
-        } catch (error) {}
+        } catch (error) {
+            handleError(error);
+        }
     };
 
     return (

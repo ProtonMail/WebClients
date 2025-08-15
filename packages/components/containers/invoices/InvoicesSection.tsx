@@ -11,10 +11,10 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Pagination from '@proton/components/components/pagination/Pagination';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
+import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
-import { INVOICE_OWNER, INVOICE_STATE, InvoiceDocument, type PaymentsVersion } from '@proton/payments';
-import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { INVOICE_OWNER, INVOICE_STATE, InvoiceDocument } from '@proton/payments';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -68,18 +68,32 @@ const InvoicesSection = () => {
 
     const hasUnpaid = invoicesHook.invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
 
-    useSubscribeEventManager(({ Invoices, User } = {}) => {
-        if (Invoices && Invoices.length > 0) {
-            // it helps with rare routing issue when user pays in one tab but then
-            // the invoices are queried in another tab with the old v4 version.
-            // Aparanently there is a concurrency isue between setting the global payments version and the invoices request.
-            const paymentsVersion: PaymentsVersion | undefined =
-                User?.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED ? 'v5' : undefined;
+    const { subscribe } = useEventManager();
+    const { coreEventV6Manager } = useEventManagerV6();
 
-            void invoicesHook.request(paymentsVersion);
+    useEffect(() => {
+        const handler = (event: { Invoices?: /*TODO*/ any[] | null }) => {
+            if (!event?.Invoices?.length) {
+                return;
+            }
+
+            void invoicesHook.request();
             setDocument(DocumentType.Invoice);
-        }
-    });
+        };
+
+        const unsubscribe = subscribe((event) => {
+            handler(event);
+        });
+
+        const unsubscribeV6 = coreEventV6Manager?.subscribe(({ Invoices }) => {
+            handler({ Invoices });
+        });
+
+        return () => {
+            unsubscribe();
+            unsubscribeV6?.();
+        };
+    }, [invoicesHook.request]);
 
     useEffect(() => {
         void hook.request();
