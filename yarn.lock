@@ -9275,7 +9275,7 @@ __metadata:
     jest: "npm:^29.7.0"
     prettier: "npm:^3.6.2"
     typescript: "npm:^5.9.2"
-    unleash-proxy-client: "npm:^3.7.7"
+    unleash-proxy-client: "npm:^3.7.8"
   peerDependencies:
     date-fns: ^3.6.0
     react: ^18.3.1
@@ -45908,13 +45908,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unleash-proxy-client@npm:^3.7.7":
-  version: 3.7.7
-  resolution: "unleash-proxy-client@npm:3.7.7"
+"unleash-proxy-client@npm:^3.7.8":
+  version: 3.7.8
+  resolution: "unleash-proxy-client@npm:3.7.8"
   dependencies:
     tiny-emitter: "npm:^2.1.0"
     uuid: "npm:^9.0.1"
-  checksum: 10c0/3fac1cc43548f26ca247b89c9e61bd1702f1a28aa4bde8b2ea7e6a5df7f1276d1e572a1bd2947b1a9e804005e172f6d604c7b87386758e759a8114d52f0411f7
+  checksum: 10c0/c34a958e59ef6d9bba1e3df1dee6282c6b8d2c3a6b21c9a3a78f3ca2e3d247204648d864855067f3779c77a42e72ad5a1bc43d07dabea10d6b4002bb9a5f67cb
   languageName: node
   linkType: hard
 
