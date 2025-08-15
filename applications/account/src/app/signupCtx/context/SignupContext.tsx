@@ -596,15 +596,22 @@ export const InnerSignupContextProvider = ({
             return;
         }
 
+        const { accountData } = signupDataRef.current || {};
+        if (!accountData) {
+            captureSentryMessage('Missing accountData');
+            return;
+        }
+
         if (!setupUserResponseRef.current?.recoveryPhraseData) {
             captureSentryMessage('Missing recovery phrase data');
             return;
         }
 
         const { payload } = setupUserResponseRef.current.recoveryPhraseData;
+        const password = accountData.password;
 
         try {
-            await sendRecoveryPhrasePayloadHelper({ api, payload });
+            await sendRecoveryPhrasePayloadHelper({ api, payload, password });
         } catch (error) {
             traceSentryError(error);
 
