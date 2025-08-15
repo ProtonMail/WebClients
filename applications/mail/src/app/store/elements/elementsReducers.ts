@@ -21,6 +21,7 @@ import {
     applyLabelToMessage,
     removeLabelFromConversation,
     removeLabelFromMessage,
+    removeLabelToConversationMessage,
 } from '../mailbox/locationHelpers';
 import type { filterSubscriptionList } from '../newsletterSubscriptions/newsletterSubscriptionsActions';
 import { newElementsState } from './elementsSlice';
@@ -862,8 +863,8 @@ export const labelMessagesPending = (
 ) => {
     const { elements, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
 
-    // Update conversation first so that message is not updated yet
     elements.forEach((element) => {
+        // Update conversation first because we need to have the initial state of the element
         const conversationElementState = state.elements[element.ConversationID] as Conversation;
 
         if (conversationElementState) {
@@ -875,16 +876,14 @@ export const labelMessagesPending = (
                 labels
             );
         }
-    });
 
-    // Then update message
-    elements.forEach((element) => {
         const elementState = state.elements[element.ID] as Message;
 
         if (!elementState) {
             return;
         }
 
+        // Then update message since the mutation are done in the conversation
         applyLabelToMessage(elementState, destinationLabelID, folders, labels);
     });
 };
@@ -898,9 +897,14 @@ export const unlabelMessagesPending = (
     >
 ) => {
     const { elements, destinationLabelID, labels } = action.meta.arg;
-    const conversationIDs = [...new Set(elements.map((element) => (element as Message).ConversationID))];
 
     elements.forEach((element) => {
+        const conversationElementState = state.elements[element.ConversationID] as Conversation;
+
+        if (conversationElementState) {
+            removeLabelToConversationMessage(element, { ...conversationElementState }, destinationLabelID, labels);
+        }
+
         const elementState = state.elements[element.ID] as Message;
 
         if (!elementState) {
@@ -908,16 +912,6 @@ export const unlabelMessagesPending = (
         }
 
         removeLabelFromMessage(elementState, destinationLabelID, labels);
-    });
-
-    conversationIDs.forEach((conversationID) => {
-        const conversationElementState = state.elements[conversationID] as Conversation;
-
-        if (!conversationElementState) {
-            return;
-        }
-
-        removeLabelFromConversation(conversationElementState, destinationLabelID, labels);
     });
 };
 
