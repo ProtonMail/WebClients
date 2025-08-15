@@ -10,7 +10,7 @@ import {
     type AggregatedPricing,
     type PricingForCycles,
     allCycles,
-    getMaxValue,
+    getPlanFeatureLimit,
     getPlanIDs,
     getPlanMembers,
     getSubscriptionsArray,
@@ -37,11 +37,11 @@ const getLumoWithEnoughSeats = ({
     toPlan: Plan;
     plans: Plan[];
 }) => {
-    const diffAddons = (organization?.MaxLumo || 0) - getMaxValue(toPlan, 'MaxLumo');
+    const diffAddons = (organization?.MaxLumo || 0) - getPlanFeatureLimit(toPlan, 'MaxLumo');
 
     const lumoAddonsWithEnoughSeats =
-        diffAddons > 0 && getMaxValue(lumoAddon, 'MaxLumo')
-            ? Math.ceil(diffAddons / getMaxValue(lumoAddon, 'MaxLumo'))
+        diffAddons > 0 && getPlanFeatureLimit(lumoAddon, 'MaxLumo')
+            ? Math.ceil(diffAddons / getPlanFeatureLimit(lumoAddon, 'MaxLumo'))
             : 0;
 
     // let count all available lumo addons in the new planIDs selection
@@ -255,12 +255,12 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
 
         if (isScribeAddon(addon) && plan && organization && !dontTransferAddons.has('scribe')) {
             const gptAddon = plans.find(({ Name }) => Name === addon);
-            const diffAIs = (organization.UsedAI || 0) - getMaxValue(plan, 'MaxAI');
+            const diffAIs = (organization.UsedAI || 0) - getPlanFeatureLimit(plan, 'MaxAI');
 
             if (gptAddon) {
                 const gptAddonsWithEnoughSeats =
-                    diffAIs > 0 && getMaxValue(gptAddon, 'MaxAI')
-                        ? Math.ceil(diffAIs / getMaxValue(gptAddon, 'MaxAI'))
+                    diffAIs > 0 && getPlanFeatureLimit(gptAddon, 'MaxAI')
+                        ? Math.ceil(diffAIs / getPlanFeatureLimit(gptAddon, 'MaxAI'))
                         : 0;
 
                 // let count all available GPT addons in the new planIDs selection

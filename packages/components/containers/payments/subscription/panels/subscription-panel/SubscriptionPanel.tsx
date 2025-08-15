@@ -16,7 +16,7 @@ import {
     getIsB2BAudienceFromSubscription,
     getIsPassB2BPlan,
     getIsSentinelPlan,
-    getSubscriptionPlanTitleAndName,
+    getSubscriptionPlanTitle,
     hasDeprecatedVPN,
     hasDriveBusiness,
     hasLumoPlan,
@@ -91,7 +91,7 @@ interface Props {
 }
 
 const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, addresses, upsells }: Props) => {
-    const { planTitle, planName } = getSubscriptionPlanTitleAndName(user, subscription);
+    const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
     const isPassB2bPlan = getIsPassB2BPlan(planName);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();

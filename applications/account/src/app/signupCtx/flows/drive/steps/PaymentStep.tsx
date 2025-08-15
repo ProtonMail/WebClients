@@ -150,12 +150,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
             >
                 {(() => {
                     const planIDs = payments.options.planIDs;
-                    const { hasPlanCustomizer, currentPlan } = getHasPlanCustomizer({
-                        plansMap: payments.plansMap,
-                        planIDs,
-                    });
 
-                    if (!hasPlanCustomizer || !currentPlan) {
+                    if (!getHasPlanCustomizer(planIDs)) {
                         return null;
                     }
                     return (
@@ -163,11 +159,10 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                             separator
                             mode="signup"
                             loading={false}
-                            currentPlan={currentPlan}
                             currency={payments.options.currency}
                             cycle={payments.options.cycle}
                             plansMap={payments.plansMap}
-                            planIDs={planIDs}
+                            selectedPlanIDs={planIDs}
                             onChangePlanIDs={(planIDs) => payments.selectPlanIDs(planIDs)}
                             audience={isB2BPlan ? Audience.B2B : Audience.B2C}
                             scribeAddonEnabled

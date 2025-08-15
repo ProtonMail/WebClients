@@ -7,8 +7,8 @@ import {
     type CheckSubscriptionData,
     type Currency,
     DEFAULT_CYCLE,
+    type FeatureLimitKey,
     INCLUDED_IP_PRICING,
-    type MaxKeys,
     PLANS,
     PLAN_NAMES,
     PLAN_TYPES,
@@ -41,7 +41,7 @@ export const getUserTitle = (users: number) => {
 };
 
 const getAddonQuantity = (addon: Plan, quantity: number) => {
-    let maxKey: MaxKeys | undefined;
+    let maxKey: FeatureLimitKey | undefined;
     if (isDomainAddon(addon.Name)) {
         maxKey = 'MaxDomains';
     } else if (isMemberAddon(addon.Name)) {
@@ -54,13 +54,6 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
         maxKey = 'MaxLumo';
     }
 
-    /**
-     * Workaround specifically for MaxIPs property. There is an upcoming mirgation in payments API v5
-     * That will structure all these Max* properties in a different way.
-     * For now, we need to handle MaxIPs separately.
-     * See {@link MaxKeys} and {@link Plan}. Note that all properties from MaxKeys must be present in Plan
-     * with the exception of MaxIPs.
-     */
     const addonMultiplier = maxKey ? getAddonMultiplier(maxKey, addon) : 0;
 
     return quantity * addonMultiplier;

@@ -467,7 +467,11 @@ export type PlanIDs = Partial<{
     [planName in PLANS | ADDON_NAMES]: Quantity;
 }>;
 
-export type MaxKeys =
+/**
+ * The number of entitlements for the selected plan or addon. For example, `MaxMembers` key shows how many user seats
+ * are included with a certain plan or addon.
+ */
+export type FeatureLimitKey =
     | 'MaxDomains'
     | 'MaxAddresses'
     | 'MaxSpace'

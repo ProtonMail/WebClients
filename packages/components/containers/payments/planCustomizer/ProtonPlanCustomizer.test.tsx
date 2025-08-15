@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS, type Plan, type PlanIDs, Renew } from '@proton/payments';
+import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS, type PlanIDs, Renew } from '@proton/payments';
 import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP } from '@proton/testing/data';
 
@@ -14,8 +14,7 @@ const defaultProps: Props = {
     loading: false,
     currency: 'EUR',
     cycle: CYCLE.MONTHLY,
-    currentPlan: PLANS_MAP[PLANS.MAIL] as Plan,
-    planIDs: {
+    selectedPlanIDs: {
         [PLANS.MAIL]: 1,
     },
     onChangePlanIDs: onChangePlanIDsMock,
@@ -136,8 +135,7 @@ it.each([
 ])('should show available addons for $plan', ({ plan, expectedCustomizers }) => {
     const props: Props = {
         ...defaultProps,
-        currentPlan: PLANS_MAP[plan] as Plan,
-        planIDs: {
+        selectedPlanIDs: {
             [plan]: 1,
         },
     };
@@ -160,8 +158,7 @@ it('should disable decrease button if the user cancelled the subscription', () =
         latestSubscription: buildSubscription(planIDs, {
             Renew: Renew.Disabled,
         }),
-        planIDs,
-        currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
+        selectedPlanIDs: planIDs,
     };
 
     render(<ProtonPlanCustomizer {...props} />);
@@ -196,8 +193,7 @@ it.each(plansWithIpAddons)(
 
         const props: Props = {
             ...defaultProps,
-            planIDs,
-            currentPlan: PLANS_MAP[plan] as Plan,
+            selectedPlanIDs: planIDs,
             latestSubscription: buildSubscription(planIDs),
         };
 
@@ -215,8 +211,7 @@ it('should increase the number of scribes together with the number of members', 
 
     const props: Props = {
         ...defaultProps,
-        planIDs,
-        currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
+        selectedPlanIDs: planIDs,
         latestSubscription: buildSubscription(planIDs),
     };
 
@@ -241,8 +236,7 @@ it('should decrease the number of scribes together with the number of members', 
 
     const props: Props = {
         ...defaultProps,
-        planIDs,
-        currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
+        selectedPlanIDs: planIDs,
         latestSubscription: buildSubscription(planIDs),
     };
 
@@ -264,8 +258,7 @@ it('should not increase the number of scribes if the number of members is not th
 
     const props: Props = {
         ...defaultProps,
-        planIDs,
-        currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
+        selectedPlanIDs: planIDs,
         latestSubscription: buildSubscription(planIDs),
     };
 
@@ -289,8 +282,7 @@ it('should not decrease the number of scribes if the number of members is not th
 
     const props: Props = {
         ...defaultProps,
-        planIDs,
-        currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
+        selectedPlanIDs: planIDs,
         latestSubscription: buildSubscription(planIDs),
     };
 
@@ -313,8 +305,7 @@ it('should allow input of members through text field', async () => {
 
     const props: Props = {
         ...defaultProps,
-        planIDs,
-        currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
+        selectedPlanIDs: planIDs,
         latestSubscription: buildSubscription(planIDs),
     };
 
@@ -338,8 +329,7 @@ it('should balance scribes and lumos when total exceeds members', () => {
 
     const props: Props = {
         ...defaultProps,
-        planIDs,
-        currentPlan: PLANS_MAP[PLANS.MAIL_PRO] as Plan,
+        selectedPlanIDs: planIDs,
         latestSubscription: buildSubscription(planIDs),
     };
 
@@ -354,7 +344,7 @@ it('should balance scribes and lumos when total exceeds members', () => {
         [ADDON_NAMES.LUMO_MAIL_PRO]: 4,
     };
     expect(onChangePlanIDsMock).toHaveBeenCalledWith(newPlanIDs);
-    rerender(<ProtonPlanCustomizer {...props} planIDs={newPlanIDs} />);
+    rerender(<ProtonPlanCustomizer {...props} selectedPlanIDs={newPlanIDs} />);
 
     // at this point we have max number of lumos so addon add button is disabled
     expect(screen.getByTestId(`increase-addon-${ADDON_NAMES.LUMO_MAIL_PRO}`)).toBeDisabled();
@@ -376,7 +366,7 @@ it('should balance scribes and lumos when total exceeds members', () => {
         [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 1,
         [ADDON_NAMES.LUMO_MAIL_PRO]: 3,
     };
-    rerender(<ProtonPlanCustomizer {...props} planIDs={newPlanIDs2} />);
+    rerender(<ProtonPlanCustomizer {...props} selectedPlanIDs={newPlanIDs2} />);
     const increaseLumoButton = screen.getByTestId(`increase-addon-${ADDON_NAMES.LUMO_MAIL_PRO}`);
     fireEvent.click(increaseLumoButton);
     expect(onChangePlanIDsMock).toHaveBeenCalledWith({
