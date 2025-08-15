@@ -8,45 +8,50 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import {
     type CheckSubscriptionData,
-    type CheckWithAutomaticOptions,
     type FullBillingAddress,
     type MultiCheckOptions,
-    type MultiCheckSubscriptionData,
     PAYMENTS_API_ERROR_CODES,
     type PaymentStatus,
     type PaymentsApi,
     type PaymentsVersion,
     type RequestOptions,
+    SubscriptionMode,
     captureWrongPlanIDs,
     getLifetimeProductType,
     getPaymentsVersion,
     getPlanName,
     isCheckForbidden,
-    isCheckWithAutomaticOptions,
     isLifetimePlanSelected,
     normalizeBillingAddress,
     normalizePaymentMethodStatus,
     queryPaymentMethodStatus,
 } from '@proton/payments';
-import { SubscriptionMode } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { type EnrichedCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { type Api, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { type Api } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { useGetFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
+import { useChargebeeContext } from '../client-extensions/useChargebeeContext';
 import { InvalidZipCodeError } from './errors';
 
-const checkSubscription = (data: CheckSubscriptionData, version: PaymentsVersion, hasZipCodeValidation: boolean) => {
+const checkSubscriptionQuery = (
+    data: CheckSubscriptionData,
+    version: PaymentsVersion,
+    hasZipCodeValidation: boolean
+) => {
     let normalizedData: CheckSubscriptionData = {
         ...data,
     };
 
     if (normalizedData.BillingAddress && normalizedData.BillingAddress.ZipCode) {
         normalizedData.BillingAddress = normalizeBillingAddress(normalizedData.BillingAddress, hasZipCodeValidation);
+    }
+
+    if (!hasZipCodeValidation) {
+        delete normalizedData.ValidateZipCode;
     }
 
     return {
@@ -168,7 +173,7 @@ export const useMultiCheckCache = () => {
             }, '');
     };
 
-    const hash = (data: CheckSubscriptionData, options?: CheckWithAutomaticOptions) => {
+    const hash = (data: CheckSubscriptionData) => {
         const plans = getPlanID(data.Plans);
 
         const id =
@@ -178,26 +183,18 @@ export const useMultiCheckCache = () => {
             `.codes-${data.Codes?.join(',') ?? ''}` +
             `.cc-${data.BillingAddress?.CountryCode}` +
             `.s-${data.BillingAddress?.State}` +
-            `.z-${data.BillingAddress?.ZipCode}` +
-            `.v-${options?.forcedVersion ?? ''}`;
+            `.z-${data.BillingAddress?.ZipCode}`;
 
         return btoa(id);
     };
 
-    const get = (
-        data: CheckSubscriptionData,
-        options?: CheckWithAutomaticOptions
-    ): EnrichedCheckResponse | undefined => {
-        const id = hash(data, options);
+    const get = (data: CheckSubscriptionData): EnrichedCheckResponse | undefined => {
+        const id = hash(data);
         return cacheRef.current[id];
     };
 
-    const set = (
-        data: CheckSubscriptionData,
-        options: CheckWithAutomaticOptions | undefined,
-        value: EnrichedCheckResponse
-    ) => {
-        const id = hash(data, options);
+    const set = (data: CheckSubscriptionData, value: EnrichedCheckResponse) => {
+        const id = hash(data);
         cacheRef.current[id] = value;
 
         const planID = getPlanID(data.Plans);
@@ -224,19 +221,16 @@ export const usePaymentsApi = (
     checkV5Fallback?: (data: CheckSubscriptionData) => EnrichedCheckResponse | null
 ): {
     paymentsApi: PaymentsApi;
-    getPaymentsApi: (api: Api, chargebeeEnabled?: ChargebeeEnabled) => PaymentsApi;
+    getPaymentsApi: (api: Api) => PaymentsApi;
 } => {
     const regularApi = useApi();
     const apiHook = apiOverride ?? regularApi;
-    const chargebeeEnabledCache = useChargebeeEnabledCache();
     const { APP_NAME } = useConfig();
     const reportRoutingError = useReportRoutingError();
     const multiCheckCache = useMultiCheckCache();
     const getFlag = useGetFlag();
 
-    const getPaymentsApi = (api: Api, chargebeeEnabledOverride?: ChargebeeEnabled): PaymentsApi => {
-        const getChargebeeEnabled = (): ChargebeeEnabled => chargebeeEnabledOverride ?? chargebeeEnabledCache();
-
+    const getPaymentsApi = (api: Api): PaymentsApi => {
         const paymentStatus = (): Promise<PaymentStatus> => {
             return api<PaymentStatus>(queryPaymentMethodStatus())
                 .then((status) => normalizePaymentMethodStatus(status))
@@ -250,34 +244,16 @@ export const usePaymentsApi = (
                 });
         };
 
-        const checkV4 = async (
+        const checkSubscription = async (
             data: CheckSubscriptionData,
-            requestOptions: RequestOptions = {},
-            additionalContext?: any
+            requestOptions: RequestOptions = {}
         ): Promise<EnrichedCheckResponse> => {
-            try {
-                // These functions get stale, so need to ensure the flag is up-to-date
-                const zipCodeValidation = getFlag('PaymentsZipCodeValidation');
-                const result = await api({
-                    ...checkSubscription(data, 'v4', zipCodeValidation),
-                    ...requestOptions,
-                });
+            captureWrongPlanIDs(data.Plans, { source: 'check' });
 
-                return {
-                    ...result,
-                    requestData: data,
-                };
-            } catch (error) {
-                reportRoutingError(error, additionalContext);
-                throw error;
+            if (isLifetimePlanSelected(data.Plans)) {
+                return api(checkProduct(data));
             }
-        };
 
-        const checkV5 = async (
-            data: CheckSubscriptionData,
-            requestOptions: RequestOptions = {},
-            additionalContext?: any
-        ): Promise<EnrichedCheckResponse> => {
             // Patch for coupons compatibility v4 vs v5
             if (!data.Codes || data.Codes.length === 0) {
                 data.Codes = data.CouponCode ? [data.CouponCode] : [];
@@ -286,12 +262,12 @@ export const usePaymentsApi = (
             const fallback = checkV5Fallback?.(data);
             try {
                 // These functions get stale, so need to ensure the flag is up-to-date
-                const zipCodeValidation = getFlag('PaymentsZipCodeValidation');
+                const hasZipCodeValidation = getFlag('PaymentsZipCodeValidation');
 
                 const silence = !!fallback || !!requestOptions.silence;
 
                 const result = await api({
-                    ...checkSubscription(data, 'v5', zipCodeValidation),
+                    ...checkSubscriptionQuery(data, 'v5', hasZipCodeValidation),
                     ...requestOptions,
                     silence,
                 });
@@ -316,80 +292,27 @@ export const usePaymentsApi = (
                     };
                 }
 
-                reportRoutingError(error, additionalContext);
+                reportRoutingError(error, { system: 'chargebee', reason: 'default' });
                 throw error;
             }
         };
 
-        const checkWithAutomaticVersion = async (
-            data: CheckSubscriptionData,
-            requestOptions: RequestOptions = {},
-            options?: CheckWithAutomaticOptions
-        ): Promise<EnrichedCheckResponse> => {
-            captureWrongPlanIDs(data.Plans, { source: 'checkWithAutomaticVersion' });
-
-            if (isLifetimePlanSelected(data.Plans)) {
-                return api(checkProduct(data));
-            }
-
-            const chargebeeEnabled = getChargebeeEnabled();
-            if (chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
-                return checkV4(data, requestOptions, { system: 'inhouse', reason: 'forced' });
-            }
-
-            if (options?.forcedVersion === 'v4') {
-                return checkV4(data, requestOptions, { system: 'inhouse', reason: options.reason });
-            }
-
-            if (chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
-                return checkV5(data, requestOptions, { system: 'chargebee', reason: 'forced' });
-            }
-
-            if (options?.forcedVersion === 'v5') {
-                return checkV5(data, requestOptions, { system: 'chargebee', reason: options.reason });
-            }
-
-            return checkV5(data, requestOptions, { system: 'chargebee', reason: 'default' });
-        };
-
         const multiCheck = (
-            multiCheckData: MultiCheckSubscriptionData[],
+            requestData: CheckSubscriptionData[],
             { cached, ...requestOptions }: MultiCheckOptions = {}
         ): Promise<EnrichedCheckResponse[]> => {
-            const requestData: {
-                data: CheckSubscriptionData;
-                options: CheckWithAutomaticOptions | undefined;
-            }[] = multiCheckData.map((data) => {
-                if (isCheckWithAutomaticOptions(data)) {
-                    const { forcedVersion, reason, ...rest } = data;
-
-                    return {
-                        data: rest,
-                        options: {
-                            forcedVersion,
-                            reason,
-                        },
-                    };
-                }
-
-                return {
-                    data: data,
-                    options: undefined,
-                };
-            });
-
             return Promise.all(
-                requestData.map(async ({ data, options }) => {
+                requestData.map(async (data) => {
                     if (cached) {
-                        const cachedResult = multiCheckCache.get(data, options);
+                        const cachedResult = multiCheckCache.get(data);
                         if (cachedResult) {
                             return cachedResult;
                         }
                     }
 
-                    const result = await checkWithAutomaticVersion(data, requestOptions, options);
+                    const result = await checkSubscription(data, requestOptions);
                     if (cached) {
-                        multiCheckCache.set(data, options, result);
+                        multiCheckCache.set(data, result);
                     }
 
                     return result;
@@ -397,17 +320,13 @@ export const usePaymentsApi = (
             );
         };
 
-        const cachedCheck = async (data: MultiCheckSubscriptionData): Promise<EnrichedCheckResponse> => {
+        const cachedCheck = async (data: CheckSubscriptionData): Promise<EnrichedCheckResponse> => {
             const result = await multiCheck([data], { cached: true });
             return result[0];
         };
 
-        const cacheMultiCheck = (
-            data: CheckSubscriptionData,
-            options: CheckWithAutomaticOptions | undefined,
-            result: EnrichedCheckResponse
-        ) => {
-            multiCheckCache.set(data, options, result);
+        const cacheMultiCheck = (data: CheckSubscriptionData, result: EnrichedCheckResponse) => {
+            multiCheckCache.set(data, result);
         };
 
         const formatFullBillingAddress = (response: FullBillingAddressResponse): FullBillingAddress => {
@@ -449,7 +368,7 @@ export const usePaymentsApi = (
         };
 
         const getCachedCheck = (data: CheckSubscriptionData) => {
-            return multiCheckCache.get(data, undefined);
+            return multiCheckCache.get(data);
         };
 
         const getCachedCheckByPlans = (plans: CheckSubscriptionData['Plans']) => {
@@ -457,7 +376,7 @@ export const usePaymentsApi = (
         };
 
         return {
-            checkWithAutomaticVersion,
+            checkSubscription,
             multiCheck,
             cacheMultiCheck,
             paymentStatus,

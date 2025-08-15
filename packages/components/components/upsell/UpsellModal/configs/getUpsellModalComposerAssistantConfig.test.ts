@@ -28,7 +28,7 @@ const getIsSuperAdminMock = jest.fn();
 
 // @ts-expect-error - mock
 const paymentsApiMock: PaymentsApi = {
-    checkWithAutomaticVersion: jest.fn(),
+    checkSubscription: jest.fn(),
 };
 
 const getAssistantUpsellConfigPlanAndCycleMock = jest.fn();
@@ -68,7 +68,7 @@ async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin
     );
 
     // @ts-expect-error - mock of paymentApi call
-    paymentsApiMock.checkWithAutomaticVersion.mockResolvedValue({
+    paymentsApiMock.checkSubscription.mockResolvedValue({
         AmountDue: NON_MAIN_CURRENCY_MOCK_AMOUNT,
     });
     // @ts-expect-error - mock of checkout call

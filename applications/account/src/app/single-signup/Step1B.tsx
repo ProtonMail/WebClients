@@ -333,15 +333,16 @@ const Step1B = ({
             const coupon =
                 couponCode || subscriptionMapping?.checkResult.Coupon?.Code || options.checkResult.Coupon?.Code;
 
-            const checkResult = await getSubscriptionPrices(
-                getPaymentsApi(silentApi),
-                newPlanIDs,
-                newCurrency,
-                newCycle,
-                newBillingAddress,
-                coupon,
-                signupTrial
-            );
+            const checkResult = await getSubscriptionPrices({
+                paymentsApi: getPaymentsApi(silentApi),
+                planIDs: newPlanIDs,
+                currency: newCurrency,
+                cycle: newCycle,
+                billingAddress: newBillingAddress,
+                coupon: coupon,
+                trial: signupTrial,
+                ValidateZipCode: true,
+            });
 
             if (!validateFlow()) {
                 return;
@@ -1085,15 +1086,16 @@ const Step1B = ({
                     planIDs={options.planIDs}
                     plansMap={model.plansMap}
                     onApplyCode={async (code) => {
-                        const checkResult = await getSubscriptionPrices(
-                            getPaymentsApi(silentApi),
-                            options.planIDs,
-                            options.currency,
-                            options.cycle,
-                            model.subscriptionData.billingAddress,
-                            code,
-                            signupTrial
-                        );
+                        const checkResult = await getSubscriptionPrices({
+                            paymentsApi: getPaymentsApi(silentApi),
+                            planIDs: options.planIDs,
+                            currency: options.currency,
+                            cycle: options.cycle,
+                            billingAddress: model.subscriptionData.billingAddress,
+                            coupon: code,
+                            trial: signupTrial,
+                            ValidateZipCode: true,
+                        });
 
                         setModel((old) => ({
                             ...old,
@@ -1110,15 +1112,16 @@ const Step1B = ({
                         }
                     }}
                     onRemoveCode={async () => {
-                        const checkResult = await getSubscriptionPrices(
-                            getPaymentsApi(silentApi),
-                            options.planIDs,
-                            options.currency,
-                            options.cycle,
-                            model.subscriptionData.billingAddress,
-                            undefined, // don't pass coupon code, it will be removed
-                            signupTrial
-                        );
+                        const checkResult = await getSubscriptionPrices({
+                            paymentsApi: getPaymentsApi(silentApi),
+                            planIDs: options.planIDs,
+                            currency: options.currency,
+                            cycle: options.cycle,
+                            billingAddress: model.subscriptionData.billingAddress,
+                            coupon: undefined, // don't pass coupon code, it will be removed
+                            trial: signupTrial,
+                            ValidateZipCode: true,
+                        });
 
                         setModel((old) => ({
                             ...old,
