@@ -1,5 +1,5 @@
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation, ConversationLabel } from 'proton-mail/models/conversation';
 
@@ -44,16 +44,19 @@ export const setupMessage = ({
     messageID,
     unreadState,
     labelIDs,
+    attachments,
 }: {
     messageID: string;
     unreadState: 'read' | 'unread';
     labelIDs: string[];
+    attachments?: Attachment[];
 }) => {
     return {
         ID: messageID,
         ConversationID: CONVERSATION_ID,
         LabelIDs: labelIDs,
         Unread: unreadState === 'unread' ? 1 : 0,
+        Attachments: attachments || [],
     } as Message;
 };
 

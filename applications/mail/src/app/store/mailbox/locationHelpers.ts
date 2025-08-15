@@ -12,10 +12,12 @@ import {
     isSystemLabel,
     isUnmodifiableByUser,
 } from '@proton/mail/helpers/location';
+import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { hasLabel } from 'proton-mail/helpers/elements';
 import type { Conversation } from 'proton-mail/models/conversation';
 
 export const applyLabelToMessage = (
@@ -516,6 +518,153 @@ export const applyLabelToConversation = (
                 ...getContextValues(conversation, MAILBOX_LABEL_IDS.ALL_SENT),
             });
         }
+    }
+
+    // Empty labels can be removed
+    conversation.Labels = conversation.Labels.filter((label) => {
+        return (label.ContextNumMessages || 0) > 0;
+    });
+
+    return conversation;
+};
+
+export const applyLabelToConversationMessage = (
+    message: Message,
+    conversation: Conversation,
+    sourceLabelID: string,
+    destinationLabelID: string,
+    labels: Label[]
+): Conversation => {
+    if (!conversation.Labels) {
+        return conversation;
+    }
+
+    const sourceLabel = conversation.Labels.find((label) => label.ID === sourceLabelID);
+    const destinationLabel = conversation.Labels.find((label) => label.ID === destinationLabelID);
+    const allMailLabel = conversation.Labels.find((label) => label.ID === MAILBOX_LABEL_IDS.ALL_MAIL);
+    const almostAllMailLabel = conversation.Labels.find((label) => label.ID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL);
+    const starredLabel = conversation.Labels.find((label) => label.ID === MAILBOX_LABEL_IDS.STARRED);
+
+    const isMessageStarred = hasLabel(message, MAILBOX_LABEL_IDS.STARRED);
+    const messageCustomLabels = message.LabelIDs.filter((labelID) => isCustomLabel(labelID, labels));
+    const isMessageUnread = message.Unread;
+    const messageNumAttachments = message.Attachments?.length || 0;
+
+    if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH || destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
+        // Remove message from ALMOST_ALL_MAIL
+        if (almostAllMailLabel) {
+            almostAllMailLabel.ContextNumMessages = safeDecreaseCount(almostAllMailLabel?.ContextNumMessages, 1);
+            almostAllMailLabel.ContextNumAttachments = safeDecreaseCount(
+                almostAllMailLabel?.ContextNumAttachments,
+                messageNumAttachments
+            );
+            if (isMessageUnread) {
+                almostAllMailLabel.ContextNumUnread = safeDecreaseCount(almostAllMailLabel?.ContextNumUnread, 1);
+            }
+        }
+
+        // Remove message from STARRED
+        if (isMessageStarred && starredLabel) {
+            starredLabel.ContextNumMessages = safeDecreaseCount(starredLabel?.ContextNumMessages, 1);
+            starredLabel.ContextNumAttachments = safeDecreaseCount(
+                starredLabel?.ContextNumAttachments,
+                messageNumAttachments
+            );
+            if (isMessageUnread) {
+                starredLabel.ContextNumUnread = safeDecreaseCount(starredLabel?.ContextNumUnread, 1);
+            }
+        }
+
+        // Remove message from custom labels
+        messageCustomLabels.forEach((labelID) => {
+            const customLabel = conversation.Labels?.find((label) => label.ID === labelID);
+            if (customLabel) {
+                customLabel.ContextNumMessages = safeDecreaseCount(customLabel?.ContextNumMessages, 1);
+                customLabel.ContextNumAttachments = safeDecreaseCount(
+                    customLabel?.ContextNumAttachments,
+                    messageNumAttachments
+                );
+                if (isMessageUnread) {
+                    customLabel.ContextNumUnread = safeDecreaseCount(customLabel?.ContextNumUnread, 1);
+                }
+            }
+        });
+
+        // If move to trash, reduce number of unread in conversation and ALL_MAIL
+        if (destinationLabelID === MAILBOX_LABEL_IDS.TRASH) {
+            conversation.NumUnread = safeDecreaseCount(conversation.NumUnread, 1);
+            if (allMailLabel) {
+                allMailLabel.ContextNumUnread = safeDecreaseCount(allMailLabel?.ContextNumUnread, 1);
+            }
+        }
+    }
+
+    // If moving out from TRASH or SPAM, update ALMOST_ALL_MAIL
+    if (sourceLabelID === MAILBOX_LABEL_IDS.TRASH || sourceLabelID === MAILBOX_LABEL_IDS.SPAM) {
+        if (almostAllMailLabel) {
+            almostAllMailLabel.ContextNumMessages = safeIncreaseCount(almostAllMailLabel?.ContextNumMessages, 1);
+            almostAllMailLabel.ContextNumAttachments = safeIncreaseCount(
+                almostAllMailLabel?.ContextNumAttachments,
+                messageNumAttachments
+            );
+            if (isMessageUnread) {
+                almostAllMailLabel.ContextNumUnread = safeIncreaseCount(almostAllMailLabel?.ContextNumUnread, 1);
+            }
+        }
+    }
+
+    // Remove message from source label
+    if (
+        !isSystemLabel(destinationLabelID) &&
+        !isCustomLabel(destinationLabelID, labels) &&
+        !isCategoryLabel(destinationLabelID) &&
+        sourceLabel
+    ) {
+        sourceLabel.ContextNumMessages = safeDecreaseCount(sourceLabel?.ContextNumMessages, 1);
+        sourceLabel.ContextNumAttachments = safeDecreaseCount(
+            sourceLabel?.ContextNumAttachments,
+            messageNumAttachments
+        );
+        if (isMessageUnread) {
+            sourceLabel.ContextNumUnread = safeDecreaseCount(sourceLabel?.ContextNumUnread, 1);
+        }
+    }
+
+    // If moving to a category, decrease old category
+    if (isCategoryLabel(destinationLabelID)) {
+        const messageOldCategoryLabel = conversation.Labels.filter((label) => isCategoryLabel(label.ID))[0];
+        if (messageOldCategoryLabel) {
+            const oldCategoryLabel = conversation.Labels.find((label) => label.ID === messageOldCategoryLabel.ID);
+            if (oldCategoryLabel) {
+                oldCategoryLabel.ContextNumMessages = safeDecreaseCount(oldCategoryLabel?.ContextNumMessages, 1);
+                oldCategoryLabel.ContextNumAttachments = safeDecreaseCount(
+                    oldCategoryLabel?.ContextNumAttachments,
+                    messageNumAttachments
+                );
+                if (isMessageUnread) {
+                    oldCategoryLabel.ContextNumUnread = safeDecreaseCount(oldCategoryLabel?.ContextNumUnread, 1);
+                }
+            }
+        }
+    }
+
+    // Add message in source label
+    if (destinationLabel) {
+        destinationLabel.ContextNumMessages = safeIncreaseCount(destinationLabel?.ContextNumMessages, 1);
+        destinationLabel.ContextNumAttachments = safeIncreaseCount(
+            destinationLabel?.ContextNumAttachments,
+            messageNumAttachments
+        );
+        if (isMessageUnread && destinationLabelID !== MAILBOX_LABEL_IDS.TRASH) {
+            destinationLabel.ContextNumUnread = safeIncreaseCount(destinationLabel?.ContextNumUnread, 1);
+        }
+    } else {
+        conversation.Labels.push({
+            ID: destinationLabelID,
+            ContextNumMessages: 1,
+            ContextNumUnread: isMessageUnread && destinationLabelID !== MAILBOX_LABEL_IDS.TRASH ? 1 : 0,
+            ContextNumAttachments: message.Attachments.length,
+        });
     }
 
     // Empty labels can be removed

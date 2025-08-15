@@ -1,7 +1,7 @@
 import type { Draft } from '@reduxjs/toolkit';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation, ConversationLabel } from 'proton-mail/models/conversation';
 import { labelMessagesPending } from 'proton-mail/store/elements/elementsReducers';
@@ -767,22 +767,766 @@ describe('labelMessagesPending', () => {
     });
 
     describe('Conversation from message in element state are updated', () => {
-        it('should update the conversation in element state', () => {
-            const message = setupMessage({
-                messageID: MESSAGE_ID,
-                unreadState: 'unread',
-                labelIDs: [
+        describe('Move to TRASH', () => {
+            it('should decrease ALMOST_ALL_MAIL from the conversation in element state when moving message to TRASH', () => {
+                const message = setupMessage({
+                    messageID: MESSAGE_ID,
+                    unreadState: 'unread',
+                    labelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
+                    attachments: [{ Name: 'att' }] as Attachment[],
+                });
+
+                const conversation = setupConversation({
+                    conversationLabels: [
+                        {
+                            ID: MAILBOX_LABEL_IDS.INBOX,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                    ] as ConversationLabel[],
+                    numMessages: 2,
+                    numUnread: 2,
+                    numAttachments: 1,
+                });
+
+                testState.elements = {
+                    [CONVERSATION_ID]: conversation,
+                    [MESSAGE_ID]: message,
+                };
+
+                labelMessagesPending(testState, {
+                    type: 'mailbox/labelMessages',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            elements: [message],
+                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                            labels: customLabels,
+                            folders: customFolders,
+                        },
+                    },
+                });
+
+                const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+                expect(updatedMessage.Unread).toEqual(0);
+                expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                    MAILBOX_LABEL_IDS.TRASH,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                ]);
+
+                const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+                expect(updatedConversation.NumMessages).toBe(2);
+                expect(updatedConversation.NumUnread).toBe(1);
+                expect(updatedConversation.NumAttachments).toBe(1);
+                expectConversationLabelsSameArray(updatedConversation.Labels, [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.TRASH,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                ]);
+            });
+
+            it('should decrease ALL_MAIL unread from the conversation in element state when moving message to TRASH', () => {
+                const message = setupMessage({
+                    messageID: MESSAGE_ID,
+                    unreadState: 'unread',
+                    labelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
+                    attachments: [{ Name: 'att' }] as Attachment[],
+                });
+
+                const conversation = setupConversation({
+                    conversationLabels: [
+                        {
+                            ID: MAILBOX_LABEL_IDS.INBOX,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                    ] as ConversationLabel[],
+                    numMessages: 2,
+                    numUnread: 2,
+                    numAttachments: 1,
+                });
+
+                testState.elements = {
+                    [CONVERSATION_ID]: conversation,
+                    [MESSAGE_ID]: message,
+                };
+
+                labelMessagesPending(testState, {
+                    type: 'mailbox/labelMessages',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            elements: [message],
+                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                            labels: customLabels,
+                            folders: customFolders,
+                        },
+                    },
+                });
+
+                const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+                expect(updatedMessage.Unread).toEqual(0);
+                expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                    MAILBOX_LABEL_IDS.TRASH,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                ]);
+
+                const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+                expect(updatedConversation.NumMessages).toBe(2);
+                expect(updatedConversation.NumUnread).toBe(1);
+                expect(updatedConversation.NumAttachments).toBe(1);
+                expectConversationLabelsSameArray(updatedConversation.Labels, [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.TRASH,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                ]);
+            });
+
+            it('should decrease STARRED from the conversation in element state when moving message to TRASH', () => {
+                const message = setupMessage({
+                    messageID: MESSAGE_ID,
+                    unreadState: 'unread',
+                    labelIDs: [
+                        MAILBOX_LABEL_IDS.INBOX,
+                        MAILBOX_LABEL_IDS.ALL_MAIL,
+                        MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        MAILBOX_LABEL_IDS.STARRED,
+                    ],
+                    attachments: [{ Name: 'att' }] as Attachment[],
+                });
+
+                const conversation = setupConversation({
+                    conversationLabels: [
+                        {
+                            ID: MAILBOX_LABEL_IDS.INBOX,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.STARRED,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                    ] as ConversationLabel[],
+                    numMessages: 2,
+                    numUnread: 2,
+                    numAttachments: 1,
+                });
+
+                testState.elements = {
+                    [CONVERSATION_ID]: conversation,
+                    [MESSAGE_ID]: message,
+                };
+
+                labelMessagesPending(testState, {
+                    type: 'mailbox/labelMessages',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            elements: [message],
+                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                            labels: customLabels,
+                            folders: customFolders,
+                        },
+                    },
+                });
+
+                const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+                expect(updatedMessage.Unread).toEqual(0);
+                expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                    MAILBOX_LABEL_IDS.TRASH,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                ]);
+
+                const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+                expect(updatedConversation.NumMessages).toBe(2);
+                expect(updatedConversation.NumUnread).toBe(1);
+                expect(updatedConversation.NumAttachments).toBe(1);
+                expectConversationLabelsSameArray(updatedConversation.Labels, [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.TRASH,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.STARRED,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                ]);
+            });
+
+            it('should decrease Custom label from the conversation in element state when moving message to TRASH', () => {
+                const message = setupMessage({
+                    messageID: MESSAGE_ID,
+                    unreadState: 'unread',
+                    labelIDs: [
+                        MAILBOX_LABEL_IDS.INBOX,
+                        MAILBOX_LABEL_IDS.ALL_MAIL,
+                        MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        CUSTOM_LABEL_ID1,
+                    ],
+                    attachments: [{ Name: 'att' }] as Attachment[],
+                });
+
+                const conversation = setupConversation({
+                    conversationLabels: [
+                        {
+                            ID: MAILBOX_LABEL_IDS.INBOX,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        { ID: CUSTOM_LABEL_ID1, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
+                    ] as ConversationLabel[],
+                    numMessages: 2,
+                    numUnread: 2,
+                    numAttachments: 1,
+                });
+
+                testState.elements = {
+                    [CONVERSATION_ID]: conversation,
+                    [MESSAGE_ID]: message,
+                };
+
+                labelMessagesPending(testState, {
+                    type: 'mailbox/labelMessages',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            elements: [message],
+                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                            labels: customLabels,
+                            folders: customFolders,
+                        },
+                    },
+                });
+
+                const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+                expect(updatedMessage.Unread).toEqual(0);
+                expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                    MAILBOX_LABEL_IDS.TRASH,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                ]);
+
+                const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+                expect(updatedConversation.NumMessages).toBe(2);
+                expect(updatedConversation.NumUnread).toBe(1);
+                expect(updatedConversation.NumAttachments).toBe(1);
+                expectConversationLabelsSameArray(updatedConversation.Labels, [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.TRASH,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    { ID: CUSTOM_LABEL_ID1, ContextNumMessages: 1, ContextNumUnread: 1, ContextNumAttachments: 0 },
+                ]);
+            });
+
+            it('should not decrease category from the conversation in element state when moving message to TRASH', () => {
+                const message = setupMessage({
+                    messageID: MESSAGE_ID,
+                    unreadState: 'unread',
+                    labelIDs: [
+                        MAILBOX_LABEL_IDS.INBOX,
+                        MAILBOX_LABEL_IDS.ALL_MAIL,
+                        MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    ],
+                    attachments: [{ Name: 'att' }] as Attachment[],
+                });
+
+                const conversation = setupConversation({
+                    conversationLabels: [
+                        {
+                            ID: MAILBOX_LABEL_IDS.INBOX,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                    ] as ConversationLabel[],
+                    numMessages: 2,
+                    numUnread: 2,
+                    numAttachments: 1,
+                });
+
+                testState.elements = {
+                    [CONVERSATION_ID]: conversation,
+                    [MESSAGE_ID]: message,
+                };
+
+                labelMessagesPending(testState, {
+                    type: 'mailbox/labelMessages',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            elements: [message],
+                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
+                            labels: customLabels,
+                            folders: customFolders,
+                        },
+                    },
+                });
+
+                const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+                expect(updatedMessage.Unread).toEqual(0);
+                expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                    MAILBOX_LABEL_IDS.TRASH,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ]);
+
+                const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+                expect(updatedConversation.NumMessages).toBe(2);
+                expect(updatedConversation.NumUnread).toBe(1);
+                expect(updatedConversation.NumAttachments).toBe(1);
+                expectConversationLabelsSameArray(updatedConversation.Labels, [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.TRASH,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 0,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                ]);
+            });
+        });
+
+        describe('Move out from TRASH or SPAM', () => {
+            it('should update ALMOST_ALL_MAIL from the conversation when moving out from TRASH', () => {
+                const message = setupMessage({
+                    messageID: MESSAGE_ID,
+                    unreadState: 'unread',
+                    labelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.TRASH],
+                    attachments: [{ Name: 'att' }] as Attachment[],
+                });
+
+                const conversation = setupConversation({
+                    conversationLabels: [
+                        {
+                            ID: MAILBOX_LABEL_IDS.INBOX,
+                            ContextNumMessages: 1,
+                            ContextNumUnread: 1,
+                            ContextNumAttachments: 0,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.TRASH,
+                            ContextNumMessages: 1,
+                            ContextNumUnread: 1,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                            ContextNumMessages: 1,
+                            ContextNumUnread: 1,
+                            ContextNumAttachments: 0,
+                        },
+                    ] as ConversationLabel[],
+                    numMessages: 2,
+                    numUnread: 2,
+                    numAttachments: 1,
+                });
+
+                testState.elements = {
+                    [CONVERSATION_ID]: conversation,
+                    [MESSAGE_ID]: message,
+                };
+
+                labelMessagesPending(testState, {
+                    type: 'mailbox/labelMessages',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            elements: [message],
+                            sourceLabelID: MAILBOX_LABEL_IDS.TRASH,
+                            destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            labels: customLabels,
+                            folders: customFolders,
+                        },
+                    },
+                });
+
+                const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+                expect(updatedMessage.Unread).toEqual(1);
+                expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                ]);
+
+                const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+                expect(updatedConversation.NumMessages).toBe(2);
+                expect(updatedConversation.NumUnread).toBe(2);
+                expect(updatedConversation.NumAttachments).toBe(1);
+                expectConversationLabelsSameArray(updatedConversation.Labels, [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                ]);
+            });
+
+            it('should update ALMOST_ALL_MAIL from the conversation when moving out from SPAM', () => {
+                const message = setupMessage({
+                    messageID: MESSAGE_ID,
+                    unreadState: 'unread',
+                    labelIDs: [MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.SPAM],
+                    attachments: [{ Name: 'att' }] as Attachment[],
+                });
+
+                const conversation = setupConversation({
+                    conversationLabels: [
+                        {
+                            ID: MAILBOX_LABEL_IDS.INBOX,
+                            ContextNumMessages: 1,
+                            ContextNumUnread: 1,
+                            ContextNumAttachments: 0,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.SPAM,
+                            ContextNumMessages: 1,
+                            ContextNumUnread: 1,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                            ContextNumMessages: 1,
+                            ContextNumUnread: 1,
+                            ContextNumAttachments: 0,
+                        },
+                    ] as ConversationLabel[],
+                    numMessages: 2,
+                    numUnread: 2,
+                    numAttachments: 1,
+                });
+
+                testState.elements = {
+                    [CONVERSATION_ID]: conversation,
+                    [MESSAGE_ID]: message,
+                };
+
+                labelMessagesPending(testState, {
+                    type: 'mailbox/labelMessages',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            elements: [message],
+                            sourceLabelID: MAILBOX_LABEL_IDS.SPAM,
+                            destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            labels: customLabels,
+                            folders: customFolders,
+                        },
+                    },
+                });
+
+                const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+                expect(updatedMessage.Unread).toEqual(1);
+                expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                ]);
+
+                const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+                expect(updatedConversation.NumMessages).toBe(2);
+                expect(updatedConversation.NumUnread).toBe(2);
+                expect(updatedConversation.NumAttachments).toBe(1);
+                expectConversationLabelsSameArray(updatedConversation.Labels, [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                ]);
+            });
+        });
+
+        describe('Move to STARRED or custom label', () => {
+            it('should not decrease source label from the conversation when moving to STARRED', () => {
+                const message = setupMessage({
+                    messageID: MESSAGE_ID,
+                    unreadState: 'unread',
+                    labelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
+                    attachments: [{ Name: 'att' }] as Attachment[],
+                });
+
+                const conversation = setupConversation({
+                    conversationLabels: [
+                        {
+                            ID: MAILBOX_LABEL_IDS.INBOX,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                    ] as ConversationLabel[],
+                    numMessages: 2,
+                    numUnread: 2,
+                    numAttachments: 1,
+                });
+
+                testState.elements = {
+                    [CONVERSATION_ID]: conversation,
+                    [MESSAGE_ID]: message,
+                };
+
+                labelMessagesPending(testState, {
+                    type: 'mailbox/labelMessages',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            elements: [message],
+                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+                            labels: customLabels,
+                            folders: customFolders,
+                        },
+                    },
+                });
+
+                const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+                expect(updatedMessage.Unread).toEqual(1);
+                expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
                     MAILBOX_LABEL_IDS.INBOX,
                     MAILBOX_LABEL_IDS.ALL_MAIL,
                     MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     MAILBOX_LABEL_IDS.STARRED,
-                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                    CUSTOM_LABEL_ID1,
-                ],
-            });
+                ]);
 
-            const conversation = setupConversation({
-                conversationLabels: [
+                const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+                expect(updatedConversation.NumMessages).toBe(2);
+                expect(updatedConversation.NumUnread).toBe(2);
+                expect(updatedConversation.NumAttachments).toBe(1);
+                expectConversationLabelsSameArray(updatedConversation.Labels, [
                     {
                         ID: MAILBOX_LABEL_IDS.INBOX,
                         ContextNumMessages: 2,
@@ -803,69 +1547,225 @@ describe('labelMessagesPending', () => {
                     },
                     {
                         ID: MAILBOX_LABEL_IDS.STARRED,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                ]);
+            });
+
+            it('should not decrease source label from the conversation when moving to Custom label', () => {
+                const message = setupMessage({
+                    messageID: MESSAGE_ID,
+                    unreadState: 'unread',
+                    labelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
+                    attachments: [{ Name: 'att' }] as Attachment[],
+                });
+
+                const conversation = setupConversation({
+                    conversationLabels: [
+                        {
+                            ID: MAILBOX_LABEL_IDS.INBOX,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: CUSTOM_LABEL_ID1,
+                            ContextNumMessages: 1,
+                            ContextNumUnread: 1,
+                            ContextNumAttachments: 0,
+                        },
+                    ] as ConversationLabel[],
+                    numMessages: 2,
+                    numUnread: 2,
+                    numAttachments: 1,
+                });
+
+                testState.elements = {
+                    [CONVERSATION_ID]: conversation,
+                    [MESSAGE_ID]: message,
+                };
+
+                labelMessagesPending(testState, {
+                    type: 'mailbox/labelMessages',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            elements: [message],
+                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            destinationLabelID: CUSTOM_LABEL_ID1,
+                            labels: customLabels,
+                            folders: customFolders,
+                        },
+                    },
+                });
+
+                const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+                expect(updatedMessage.Unread).toEqual(1);
+                expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    CUSTOM_LABEL_ID1,
+                ]);
+
+                const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+                expect(updatedConversation.NumMessages).toBe(2);
+                expect(updatedConversation.NumUnread).toBe(2);
+                expect(updatedConversation.NumAttachments).toBe(1);
+                expectConversationLabelsSameArray(updatedConversation.Labels, [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
                         ContextNumMessages: 2,
                         ContextNumUnread: 2,
                         ContextNumAttachments: 1,
                     },
-                    { ID: CUSTOM_LABEL_ID1, ContextNumMessages: 2, ContextNumUnread: 2, ContextNumAttachments: 1 },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: CUSTOM_LABEL_ID1,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                ]);
+            });
+        });
+
+        describe('Move to a category', () => {
+            it('should decrease old category and increase new category from the conversation when moving to a Category', () => {
+                const message = setupMessage({
+                    messageID: MESSAGE_ID,
+                    unreadState: 'unread',
+                    labelIDs: [
+                        MAILBOX_LABEL_IDS.INBOX,
+                        MAILBOX_LABEL_IDS.ALL_MAIL,
+                        MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    ],
+                    attachments: [{ Name: 'att' }] as Attachment[],
+                });
+
+                const conversation = setupConversation({
+                    conversationLabels: [
+                        {
+                            ID: MAILBOX_LABEL_IDS.INBOX,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                        {
+                            ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                            ContextNumMessages: 2,
+                            ContextNumUnread: 2,
+                            ContextNumAttachments: 1,
+                        },
+                    ] as ConversationLabel[],
+                    numMessages: 2,
+                    numUnread: 2,
+                    numAttachments: 1,
+                });
+
+                testState.elements = {
+                    [CONVERSATION_ID]: conversation,
+                    [MESSAGE_ID]: message,
+                };
+
+                labelMessagesPending(testState, {
+                    type: 'mailbox/labelMessages',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            elements: [message],
+                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                            labels: customLabels,
+                            folders: customFolders,
+                        },
+                    },
+                });
+
+                const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+                expect(updatedMessage.Unread).toEqual(1);
+                expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                ]);
+
+                const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+                expect(updatedConversation.NumMessages).toBe(2);
+                expect(updatedConversation.NumUnread).toBe(2);
+                expect(updatedConversation.NumAttachments).toBe(1);
+                expectConversationLabelsSameArray(updatedConversation.Labels, [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
                     {
                         ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 2,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
                         ContextNumAttachments: 1,
                     },
-                ] as ConversationLabel[],
-                numMessages: 2,
-                numUnread: 2,
-                numAttachments: 1,
+                ]);
             });
-
-            testState.elements = {
-                [CONVERSATION_ID]: conversation,
-                [MESSAGE_ID]: message,
-            };
-
-            labelMessagesPending(testState, {
-                type: 'mailbox/labelMessages',
-                payload: undefined,
-                meta: {
-                    arg: {
-                        elements: [message],
-                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                        destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
-                        labels: customLabels,
-                        folders: customFolders,
-                    },
-                },
-            });
-
-            const updatedMessage = testState.elements[MESSAGE_ID] as Message;
-            expect(updatedMessage.Unread).toEqual(0);
-            expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
-                MAILBOX_LABEL_IDS.TRASH,
-                MAILBOX_LABEL_IDS.ALL_MAIL,
-                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-            ]);
-
-            const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
-            expect(updatedConversation.NumMessages).toBe(2);
-            expect(updatedConversation.NumUnread).toBe(0);
-            expect(updatedConversation.NumAttachments).toBe(1);
-            expectConversationLabelsSameArray(updatedConversation.Labels, [
-                { ID: MAILBOX_LABEL_IDS.TRASH, ContextNumMessages: 2, ContextNumUnread: 0, ContextNumAttachments: 1 },
-                {
-                    ID: MAILBOX_LABEL_IDS.ALL_MAIL,
-                    ContextNumMessages: 2,
-                    ContextNumUnread: 0,
-                    ContextNumAttachments: 1,
-                },
-                {
-                    ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                    ContextNumMessages: 2,
-                    ContextNumUnread: 0,
-                    ContextNumAttachments: 1,
-                },
-            ]);
         });
     });
 });
