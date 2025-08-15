@@ -18,7 +18,9 @@ interface Props {
     canOnlyDelete: boolean;
 }
 
-const compareMemberNames = (a: GroupMember, b: GroupMember) => a.Email.localeCompare(b.Email);
+const compareMemberNames = (a: GroupMember, b: GroupMember) => {
+    return a.Email?.localeCompare(b?.Email ?? '') ?? 0;
+};
 const getSortedGroupMembers = (members: GroupMember[]) => {
     return [...members].sort(compareMemberNames);
 };

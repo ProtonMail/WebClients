@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { organizationThunk } from '@proton/account/organization';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -12,9 +13,10 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -27,7 +29,7 @@ interface Props extends ModalProps {
 
 const OrganizationNameModal = ({ onClose, organization, ...rest }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
     const [name, setName] = useState(organization.Name);
@@ -37,7 +39,7 @@ const OrganizationNameModal = ({ onClose, organization, ...rest }: Props) => {
 
     const handleSubmit = async () => {
         await api(updateOrganizationName(name));
-        await call();
+        await dispatch(organizationThunk({ cache: CacheType.None }));
         let message = c('Success').t`Organization name updated`;
         if (isFamilyOrg) {
             message = c('familyOffer_2023:Success').t`Family name updated`;

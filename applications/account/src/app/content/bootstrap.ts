@@ -8,15 +8,20 @@ import {
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { coreEventLoopV6 } from '@proton/account/coreEventLoop';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { createCalendarModelEventManager } from '@proton/calendar';
+import { calendarEventLoopV6 } from '@proton/calendar/calendarEventLoop';
 import { initMainHost } from '@proton/cross-storage';
 import { FeatureCode, fetchFeatures } from '@proton/features';
+import { contactEventLoopV6 } from '@proton/mail/store/contactEventLoop';
+import { mailEventLoopV6 } from '@proton/mail/store/mailEventLoop';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getOAuthSettingsUrl } from '@proton/shared/lib/authentication/fork/oauth2SettingsUrl';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
@@ -111,18 +116,100 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         // postLoad needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
 
-        const eventManager = bootstrap.eventManager({ api: silentApi });
         const calendarModelEventManager = createCalendarModelEventManager({ api: silentApi });
 
-        extendStore({ eventManager, calendarModelEventManager });
-        const unsubscribeEventManager = eventManager.subscribe((event) => {
-            dispatch(serverEvent(event));
+        let coreEventV6Manager: ReturnType<typeof bootstrap.coreEventManagerV6> | undefined;
+        let mailEventV6Manager: ReturnType<typeof bootstrap.mailEventManagerV6> | undefined;
+        let contactEventV6Manager: ReturnType<typeof bootstrap.contactEventManagerV6> | undefined;
+        let calendarEventV6Manager: ReturnType<typeof bootstrap.calendarEventManagerV6> | undefined;
+        let eventManager: ReturnType<typeof bootstrap.eventManager> | undefined;
+
+        let hasEventLoopV6Enabled =
+            unleashClient.isEnabled('CoreV6EventLoop') &&
+            config.APP_NAME === 'proton-account' &&
+            pathname.includes(APPS_CONFIGURATION[APPS.PROTONMAIL].settingsSlug);
+
+        let unsubscribe: () => void | undefined;
+        let reset: () => void | undefined;
+
+        if (hasEventLoopV6Enabled) {
+            coreEventV6Manager = bootstrap.coreEventManagerV6({ api: silentApi });
+            mailEventV6Manager = bootstrap.mailEventManagerV6({ api: silentApi });
+            contactEventV6Manager = bootstrap.contactEventManagerV6({ api: silentApi });
+            calendarEventV6Manager = bootstrap.calendarEventManagerV6({ api: silentApi });
+
+            eventManager = bootstrap.compatEventManagerV6({
+                eventManagers: [coreEventV6Manager, mailEventV6Manager, contactEventV6Manager, calendarEventV6Manager],
+            });
+
+            const unsubscribeCoreEventManagerV6 = coreEventV6Manager?.subscribe(async (event) => {
+                const promises: Promise<void>[] = [];
+                dispatch(coreEventLoopV6({ event, promises }));
+                await Promise.all(promises);
+            });
+
+            const unsubscribeMailEventManagerV6 = mailEventV6Manager?.subscribe(async (event) => {
+                const promises: Promise<void>[] = [];
+                dispatch(mailEventLoopV6({ event, promises }));
+                await Promise.all(promises);
+            });
+
+            const unsubscribeContactEventManagerV6 = contactEventV6Manager?.subscribe(async (event) => {
+                const promises: Promise<void>[] = [];
+                dispatch(contactEventLoopV6({ event, promises }));
+                await Promise.all(promises);
+            });
+
+            const unsubscribeCalendarEventManagerV6 = calendarEventV6Manager?.subscribe(async (event) => {
+                const promises: Promise<void>[] = [];
+                dispatch(calendarEventLoopV6({ event, promises }));
+                await Promise.all(promises);
+            });
+
+            unsubscribe = () => {
+                unsubscribeMailEventManagerV6();
+                unsubscribeCoreEventManagerV6();
+                unsubscribeContactEventManagerV6();
+                unsubscribeCalendarEventManagerV6();
+            };
+
+            reset = () => {
+                coreEventV6Manager?.reset();
+                mailEventV6Manager?.reset();
+                contactEventV6Manager?.reset();
+                calendarEventV6Manager?.reset();
+            };
+
+            coreEventV6Manager.start();
+            mailEventV6Manager.start();
+            contactEventV6Manager.start();
+            calendarEventV6Manager.start();
+        } else {
+            eventManager = bootstrap.eventManager({ api: silentApi });
+
+            unsubscribe = eventManager?.subscribe((event) => {
+                dispatch(serverEvent(event));
+            });
+
+            reset = () => {
+                eventManager?.reset();
+            };
+
+            eventManager.start();
+        }
+
+        extendStore({
+            eventManager,
+            coreEventV6Manager,
+            contactEventV6Manager,
+            mailEventV6Manager,
+            calendarEventV6Manager,
+            calendarModelEventManager,
         });
-        eventManager.start();
 
         bootstrap.onAbort(signal, () => {
-            unsubscribeEventManager();
-            eventManager.reset();
+            unsubscribe?.();
+            reset();
             unleashClient.stop();
             store.unsubscribe();
         });

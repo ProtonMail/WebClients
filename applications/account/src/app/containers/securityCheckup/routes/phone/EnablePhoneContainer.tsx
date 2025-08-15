@@ -3,11 +3,14 @@ import { Link, Redirect } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button, ButtonLike } from '@proton/atoms';
-import { useApi, useEventManager, useSecurityCheckup } from '@proton/components';
+import { useApi, useSecurityCheckup } from '@proton/components';
 import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { updateResetPhone } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
@@ -29,7 +32,7 @@ const EnablePhoneContainer = () => {
 
     const [step, setStep] = useState<STEPS>(STEPS.ENABLE);
 
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
 
     const [enabling, withEnabling] = useLoading();
 
@@ -66,7 +69,7 @@ const EnablePhoneContainer = () => {
     const enablePasswordResetViaPhone = async () => {
         await api(updateResetPhone({ Reset: 1, PersistPasswordScope: true }));
 
-        await call();
+        await dispatch(userSettingsThunk({ cache: CacheType.None }));
         setStep(STEPS.SUCCESS);
     };
 

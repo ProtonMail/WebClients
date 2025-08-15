@@ -3,7 +3,6 @@ import { type ReactNode, useCallback, useRef } from 'react';
 import useIsInboxElectronApp from '../../hooks/useIsInboxElectronApp';
 import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import LocaleInjector from '../app/LocaleInjector';
-import EventNotices from '../eventManager/EventNotices';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import type { RefreshFn } from '../forceRefresh/context';
 import DensityInjector from '../layouts/DensityInjector';
@@ -33,7 +32,6 @@ const StandardPrivateApp = ({ children, noModals }: Props) => {
     return (
         <PaymentSwitcher>
             <SessionRecoveryLocalStorageManager>
-                <EventNotices />
                 <ThemeInjector />
                 <DensityInjector />
                 <NotificationsChildren />

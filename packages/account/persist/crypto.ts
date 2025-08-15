@@ -18,10 +18,10 @@ const decrypt = async <T>(options: { data: Uint8Array<ArrayBuffer>; key: CryptoK
 };
 
 export const getDecryptedCache = async <T>(
-    { state: encryptedState, eventID, appVersion }: Partial<EncryptedCache>,
+    { state: encryptedState, appVersion }: Partial<EncryptedCache>,
     { clientKey }: { clientKey: string }
 ): Promise<DecryptedCache<T> | undefined> => {
-    if (!encryptedState || !eventID || !appVersion) {
+    if (!encryptedState || !appVersion) {
         return;
     }
     const key = await getClientKey(clientKey);
@@ -32,5 +32,5 @@ export const getDecryptedCache = async <T>(
         return;
     }
 
-    return { state, eventID, appVersion };
+    return { state, appVersion };
 };

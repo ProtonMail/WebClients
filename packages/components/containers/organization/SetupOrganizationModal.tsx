@@ -2,10 +2,18 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { OrganizationKeyRotationPayload } from '@proton/account';
-import { MAX_CHARS_API, createPasswordlessOrganizationKeys, getKeyRotationPayload } from '@proton/account';
+import {
+    MAX_CHARS_API,
+    type OrganizationKeyRotationPayload,
+    createPasswordlessOrganizationKeys,
+    getKeyRotationPayload,
+    membersThunk,
+    organizationKeyThunk,
+    organizationThunk,
+} from '@proton/account';
 import { useMembers } from '@proton/account/members/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
@@ -20,11 +28,11 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getHasExternalMemberCapableB2BPlan, hasPassFamily } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
+import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
@@ -36,11 +44,7 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
-import MemberStorageSelector, {
-    getInitialStorage,
-    getStorageRange,
-    getTotalStorage,
-} from '../members/MemberStorageSelector';
+import MemberStorageSelector from '../members/MemberStorageSelector';
 import AdministratorList from './AdministratorList';
 
 enum STEPS {
@@ -54,7 +58,6 @@ const storageSizeUnit = sizeUnits.GB;
 const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const goToSettings = useSettingsLink();
 
@@ -90,7 +93,11 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
         model.storage === -1 ? clamp(initialStorage, storageRange.min, storageRange.max) : model.storage;
 
     const finalizeOrganizationCreation = async () => {
-        await call();
+        await Promise.all([
+            dispatch(organizationThunk({ cache: CacheType.None })),
+            dispatch(organizationKeyThunk({ cache: CacheType.None })),
+            dispatch(membersThunk({ cache: CacheType.None })),
+        ]);
         createNotification({ text: c('Success').t`Organization activated` });
         onClose?.();
         goToSettings('/users-addresses');

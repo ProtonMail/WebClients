@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
@@ -14,6 +15,8 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from '@proton/components/hooks/useDeviceRecovery';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import type { KeyGenConfig, KeyGenConfigV6 } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
@@ -27,7 +30,8 @@ const UserKeysSections = () => {
     const { createModal } = useModals();
     const [User] = useUser();
     const api = useApi();
-    const { call, stop, start } = useEventManager();
+    const { stop, start } = useEventManager();
+    const dispatch = useDispatch();
     const authentication = useAuthentication();
     const [userKeys, loadingUserKeys] = useUserKeys();
     const getOrganizationKey = useGetOrganizationKey();
@@ -83,7 +87,7 @@ const UserKeysSections = () => {
                 addresses,
                 passphrase: authentication.getPassword(),
             });
-            await call();
+            await dispatch(userThunk({ cache: CacheType.None }));
             return newKey.getFingerprint();
         } finally {
             start();

@@ -1,19 +1,25 @@
 import { type UnknownAction } from '@reduxjs/toolkit';
 import { type ThunkAction } from 'redux-thunk';
 
-import { type MemberState, memberThunk } from '@proton/account/member';
-import { type OrganizationState, organizationActions, organizationThunk } from '@proton/account/organization/index';
+import { type ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities';
+import { updateQuota } from '@proton/shared/lib/api/members';
+import {
+    leaveOrganisation as leaveOrganisationConfig,
+    updateOrganizationName,
+} from '@proton/shared/lib/api/organization';
+import clamp from '@proton/utils/clamp';
+
+import { type MemberState, memberThunk } from '../member';
+import { type OrganizationState, organizationActions, organizationThunk } from '../organization/index';
 import {
     type RotateOrganizationKeysState,
     createPasswordlessOrganizationKeys,
     getKeyRotationPayload,
-} from '@proton/account/organizationKey/actions';
-import { getInitialStorage, getStorageRange } from '@proton/components/containers/members/MemberStorageSelector';
-import { type ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType } from '@proton/redux-utilities';
-import { updateQuota } from '@proton/shared/lib/api/members';
-import { updateOrganizationName } from '@proton/shared/lib/api/organization';
-import clamp from '@proton/utils/clamp';
+} from '../organizationKey/actions';
+import { type SubscriptionState, subscriptionThunk } from '../subscription';
+import { userThunk } from '../user';
+import { getInitialStorage, getStorageRange } from './storage';
 
 export const setDefaultStorage = (): ThunkAction<
     Promise<void>,
@@ -79,5 +85,21 @@ export const initOrganization = ({
         await dispatch(setName({ name }));
         await dispatch(setKeys());
         await dispatch(setDefaultStorage());
+    };
+};
+
+export const leaveOrganization = (): ThunkAction<
+    Promise<void>,
+    OrganizationState & SubscriptionState & MemberState & RotateOrganizationKeysState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch, getState, extra) => {
+        await extra.api(leaveOrganisationConfig());
+        await Promise.all([
+            dispatch(userThunk({ cache: CacheType.None })),
+            dispatch(organizationThunk({ cache: CacheType.None })),
+            dispatch(subscriptionThunk({ cache: CacheType.None })),
+        ]);
     };
 };
