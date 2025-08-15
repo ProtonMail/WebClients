@@ -31,15 +31,15 @@ export const loadStreamsPolyfill = async (): Promise<void> => {
 };
 
 export const loadCreateReadableStreamWrapper = async (
-    stream: ReadableStream<Uint8Array<ArrayBufferLike>>
-): Promise<ReadableStream<Uint8Array<ArrayBufferLike>>> => {
+    stream: ReadableStream<Uint8Array<ArrayBuffer>>
+): Promise<ReadableStream<Uint8Array<ArrayBuffer>>> => {
     if (needStreamsPolyfill) {
         const { createReadableStreamWrapper } = await import(
             /* webpackChunkName: "web-streams-adapter" */
             '@mattiasbuelens/web-streams-adapter'
         );
         const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
-        return toPolyfillReadable(stream) as ReadableStream<Uint8Array<ArrayBufferLike>>;
+        return toPolyfillReadable(stream) as ReadableStream<Uint8Array<ArrayBuffer>>;
     }
     return stream;
 };

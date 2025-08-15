@@ -339,7 +339,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         docState.broadcastPresenceState()
       },
 
-      async exportData(format): Promise<Uint8Array> {
+      async exportData(format): Promise<Uint8Array<ArrayBuffer>> {
         if (editorRef.current) {
           const editorState = editorRef.current.getEditorState().toJSON()
 

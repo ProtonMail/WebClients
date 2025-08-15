@@ -86,7 +86,7 @@ export class Logger {
 
     private encryptionKey: AesGcmCryptoKey | null = null;
 
-    private encryptionContext: Uint8Array | null = null;
+    private encryptionContext: Uint8Array<ArrayBuffer> | null = null;
 
     private loggerID?: string;
 

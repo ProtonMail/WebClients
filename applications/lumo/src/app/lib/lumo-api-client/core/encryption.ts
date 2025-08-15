@@ -68,7 +68,7 @@ export async function encryptString(
 /**
  * Convert CryptoKey to bytes for transmission
  */
-export async function cryptoKeyToBytes(key: CryptoKey): Promise<Uint8Array> {
+export async function cryptoKeyToBytes(key: CryptoKey): Promise<Uint8Array<ArrayBuffer>> {
     const exported = await crypto.subtle.exportKey('raw', key);
     return new Uint8Array(exported);
 }

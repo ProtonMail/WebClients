@@ -35,7 +35,7 @@ export type DocumentEvent =
     }
   | {
       name: 'RealtimeReceivedOtherClientPresenceState'
-      payload: Uint8Array
+      payload: Uint8Array<ArrayBuffer>
     }
   | {
       name: 'EditorRequestsPropagationOfUpdate'

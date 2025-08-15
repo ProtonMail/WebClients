@@ -32,7 +32,7 @@ import { Toolbar } from './components/Toolbar/Toolbar'
 import { Menubar } from './components/Menubar/Menubar'
 
 export type SpreadsheetRef = {
-  exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array>
+  exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
 }
 
 export type SpreadsheetProps = {

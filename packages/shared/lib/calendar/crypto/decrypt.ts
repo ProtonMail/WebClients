@@ -36,7 +36,7 @@ export const getAggregatedEventVerificationStatus = (arr: (EVENT_VERIFICATION_ST
 };
 
 export const getDecryptedSessionKey = async (
-    data: Uint8Array,
+    data: Uint8Array<ArrayBuffer>,
     privateKeys: PrivateKeyReference | PrivateKeyReference[]
 ) => {
     return CryptoProxy.decryptSessionKey({ binaryMessage: data, decryptionKeys: privateKeys });
@@ -105,7 +105,7 @@ export const verifySignedCard = async (
 };
 
 export const decryptCard = async (
-    dataToDecrypt: Uint8Array,
+    dataToDecrypt: Uint8Array<ArrayBuffer>,
     signature: string | null,
     publicKeys: PublicKeyReference | PublicKeyReference[],
     sessionKey: SessionKey

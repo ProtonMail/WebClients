@@ -22,7 +22,7 @@ import { FileItemCard, type FileItemData } from './FileItemCard';
 import { type UploadProgress, UploadProgressOverlay } from './UploadProgressOverlay';
 
 interface DriveBrowserProps {
-    onFileSelect: (file: DriveNode, content: Uint8Array) => void;
+    onFileSelect: (file: DriveNode, content: Uint8Array<ArrayBuffer>) => void;
     onError?: (error: Error) => void;
     onClose?: () => void; // Close the entire panel
     onBack?: () => void; // Go back to FilesPanel

@@ -6,7 +6,7 @@ export enum DocControllerEvent {
 
 export type DocControllerEventPayloads = {
   [DocControllerEvent.RealtimeCommentMessageReceived]: {
-    message: Uint8Array
+    message: Uint8Array<ArrayBuffer>
   }
   [DocControllerEvent.SquashVerificationObjectionDecisionRequired]: {}
   [DocControllerEvent.UnableToResolveCommitIdConflict]: {}

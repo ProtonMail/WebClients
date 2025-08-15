@@ -79,7 +79,7 @@ export default function useLegacyShareUrl() {
         return ShareURLs.length ? shareUrlPayloadToShareUrlLEGACY(ShareURLs[0]) : undefined;
     };
 
-    const decryptShareSessionKey = async (keyPacket: string | Uint8Array, password: string) => {
+    const decryptShareSessionKey = async (keyPacket: string | Uint8Array<ArrayBuffer>, password: string) => {
         const messageType = keyPacket instanceof Uint8Array ? 'binaryMessage' : 'armoredMessage';
         return CryptoProxy.decryptSessionKey({ [messageType]: keyPacket, passwords: [password] });
     };

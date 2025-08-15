@@ -1,5 +1,5 @@
 export interface ThumbnailInfo {
-    thumbnailData: Uint8Array;
+    thumbnailData: Uint8Array<ArrayBuffer>;
     thumbnailType: ThumbnailType;
 }
 

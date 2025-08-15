@@ -10,7 +10,7 @@ declare module 'proton-pass-desktop/lib/ipc' {
         'biometrics:canCheckPresence': IPCChannel<[], boolean>;
         'biometrics:checkPresence': IPCChannel<[reason?: string], void>;
         'biometrics:getSecret': IPCChannel<[key: string, version: number], MaybeNull<string>>;
-        'biometrics:setSecret': IPCChannel<[key: string, secret: Uint8Array], void>;
+        'biometrics:setSecret': IPCChannel<[key: string, secret: Uint8Array<ArrayBuffer>], void>;
         'biometrics:deleteSecret': IPCChannel<[key: string], void>;
     }
 }

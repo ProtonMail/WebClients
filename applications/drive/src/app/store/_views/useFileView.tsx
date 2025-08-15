@@ -143,7 +143,7 @@ function useFileViewBase(
 
     const [error, setError] = useState<any>();
     const [link, setLink] = useState<DecryptedLink>();
-    const [contents, setContents] = useState<Uint8Array[]>();
+    const [contents, setContents] = useState<Uint8Array<ArrayBuffer>[]>();
 
     const [videoData, setVideoData] = useState<VideoData>();
 

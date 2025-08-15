@@ -8,7 +8,7 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type UpdateItemProcessParams = {
     itemKey: ItemKey;
-    content: Uint8Array;
+    content: Uint8Array<ArrayBuffer>;
     lastRevision: number;
 };
 

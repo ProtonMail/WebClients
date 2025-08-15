@@ -102,7 +102,7 @@ async function encryptThumbnail(
 
 async function encryptBlock(
     index: number,
-    chunk: Uint8Array,
+    chunk: Uint8Array<ArrayBuffer>,
     addressPrivateKey: PrivateKeyReference | undefined,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,

@@ -32,7 +32,7 @@ export interface ExternalEditorActions
     extends Pick<EditorActions, 'getSelectionContent' | 'setSelectionContent' | 'getContent'> {
     setContent: (message: MessageState) => void;
     focus: () => void;
-    insertEmbedded: (attachment: Attachment, data: string | Uint8Array) => void;
+    insertEmbedded: (attachment: Attachment, data: string | Uint8Array<ArrayBuffer>) => void;
     removeEmbedded: (attachment: Attachment) => void;
     /** Is editor unmounted */
     isDisposed: () => boolean | undefined;
@@ -170,7 +170,7 @@ const EditorWrapper = ({
     };
 
     // Editors actions ref to add and remove embedded image
-    const handleInsertEmbedded = useCallback((attachment: Attachment, data: string | Uint8Array) => {
+    const handleInsertEmbedded = useCallback((attachment: Attachment, data: string | Uint8Array<ArrayBuffer>) => {
         const { cid } = readContentIDandLocation(attachment);
         const url = createBlob(attachment, data);
 

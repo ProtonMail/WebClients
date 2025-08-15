@@ -35,13 +35,13 @@ type DownloadBlocksCallbacks = Omit<
     ) => Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string; xAttr: string }>;
     transformBlockStream: (
         abortSignal: AbortSignal,
-        stream: ReadableStream<Uint8Array>,
+        stream: ReadableStream<Uint8Array<ArrayBuffer>>,
         EncSignature: string
     ) => Promise<{
-        hash: Uint8Array;
-        data: ReadableStream<Uint8Array>;
+        hash: Uint8Array<ArrayBuffer>;
+        data: ReadableStream<Uint8Array<ArrayBuffer>>;
     }>;
-    checkManifestSignature?: (abortSignal: AbortSignal, hash: Uint8Array, signature: string) => Promise<void>;
+    checkManifestSignature?: (abortSignal: AbortSignal, hash: Uint8Array<ArrayBuffer>, signature: string) => Promise<void>;
     scanForVirus?: (abortSignal: AbortSignal, encryptedXAttr: string) => Promise<void>;
     checkFileHash?: (abortSignal: AbortSignal, Hash: string) => Promise<void>;
     onProgress?: (bytes: number, blockIndexes: number[]) => void;
@@ -69,8 +69,8 @@ export default function initDownloadBlocks(
     log: LogCallback,
     downloadBlockCallback = downloadBlock
 ) {
-    class ObserverStream extends TransformStream<Uint8Array, Uint8Array> {
-        constructor(fn?: (chunk: Uint8Array) => void) {
+    class ObserverStream extends TransformStream<Uint8Array<ArrayBuffer>, Uint8Array<ArrayBuffer>> {
+        constructor(fn?: (chunk: Uint8Array<ArrayBuffer>) => void) {
             super({
                 transform(chunk, controller) {
                     fn?.(chunk);
@@ -99,15 +99,15 @@ export default function initDownloadBlocks(
             throw new TransferCancel({ message: `Transfer canceled` });
         }
 
-        const buffers = new Map<number, { done: boolean; chunks: Uint8Array[] }>();
+        const buffers = new Map<number, { done: boolean; chunks: Uint8Array<ArrayBuffer>[] }>();
         let fromBlockIndex = 1;
 
         let blocks: DriveFileBlock[] = [];
         let activeIndex = 1;
 
         const hashInstance = checkFileHash ? sha1.create() : undefined;
-        const hashes: Uint8Array[] = [];
-        let thumbnailHashes: Uint8Array[] = [];
+        const hashes: Uint8Array<ArrayBuffer>[] = [];
+        let thumbnailHashes: Uint8Array<ArrayBuffer>[] = [];
         let manifestSignature: string;
         let xAttr: string;
 

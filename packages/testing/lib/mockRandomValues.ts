@@ -1,6 +1,6 @@
 type TypedArray =
     | Int8Array
-    | Uint8Array
+    | Uint8Array<ArrayBuffer>
     | Uint8ClampedArray
     | Int16Array
     | Uint16Array

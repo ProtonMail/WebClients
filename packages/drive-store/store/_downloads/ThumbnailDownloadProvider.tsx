@@ -61,7 +61,7 @@ export const ThumbnailsDownloadProvider = ({
         downloadToken: string,
         activeRevisionId?: string
     ) => Promise<{
-        contents: Promise<Uint8Array[]>;
+        contents: Promise<Uint8Array<ArrayBuffer>[]>;
         verificationStatusPromise: Promise<VERIFICATION_STATUS>;
     }>;
     children: React.ReactNode;

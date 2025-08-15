@@ -20,14 +20,14 @@ type UpdateDebouncerEventPayload =
     }
   | {
       type: UpdateDebouncerEventType.DidFlush
-      mergedUpdate: Uint8Array
+      mergedUpdate: Uint8Array<ArrayBuffer>
     }
 
 /**
  * An object that collects document updates and occasionally dispatches them, merging them into one update before so.
  */
 export class UpdateDebouncer {
-  readonly buffer: DecryptedValue<Uint8Array>[] = []
+  readonly buffer: DecryptedValue<Uint8Array<ArrayBuffer>>[] = []
   realtimeStreamingInterval: ReturnType<typeof setInterval> | null = null
   singlePlayerIdleTimeout: ReturnType<typeof setTimeout> | null = null
   private mode: DocumentDebounceMode = DocumentDebounceMode.SinglePlayer
@@ -88,7 +88,7 @@ export class UpdateDebouncer {
     this.logger.info(`Setting debounce mode to ${DocumentDebounceMode[mode]}`)
   }
 
-  public addUpdates(updates: DecryptedValue<Uint8Array>[]): void {
+  public addUpdates(updates: DecryptedValue<Uint8Array<ArrayBuffer>>[]): void {
     for (const update of updates) {
       this.buffer.push(update)
 

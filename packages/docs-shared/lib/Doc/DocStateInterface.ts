@@ -5,7 +5,7 @@ import type { RtsMessagePayload } from './RtsMessagePayload'
 
 export interface DocStateInterface extends Observable<string> {
   receiveMessage(message: RtsMessagePayload): void
-  getDocState(): Uint8Array
+  getDocState(): Uint8Array<ArrayBuffer>
   performOpeningCeremony(): void
   performClosingCeremony(): void
   getClientId(): number

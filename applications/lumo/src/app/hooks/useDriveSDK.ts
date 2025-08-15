@@ -301,11 +301,11 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 const claimedSize = downloader.getClaimedSizeInBytes() || 0;
 
                 // Create a WritableStream to collect the data
-                const chunks: Uint8Array[] = [];
+                const chunks: Uint8Array<ArrayBuffer>[] = [];
                 let downloadedBytes = 0;
 
                 const stream = new WritableStream({
-                    write(chunk: Uint8Array) {
+                    write(chunk: Uint8Array<ArrayBuffer>) {
                         chunks.push(chunk);
                         downloadedBytes += chunk.length;
 

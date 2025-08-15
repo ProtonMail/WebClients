@@ -1,5 +1,5 @@
 export interface VersionHistoryUpdate {
-  content: Uint8Array
+  content: Uint8Array<ArrayBuffer>
   timestamp: number
 }
 

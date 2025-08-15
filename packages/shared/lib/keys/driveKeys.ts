@@ -9,11 +9,11 @@ import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 
 interface UnsignedEncryptionPayload {
-    message: string | Uint8Array;
+    message: string | Uint8Array<ArrayBuffer>;
     publicKey: PublicKeyReference;
 }
 
-export const sign = async (data: string | Uint8Array, privateKeys: PrivateKeyReference | PrivateKeyReference[]) => {
+export const sign = async (data: string | Uint8Array<ArrayBuffer>, privateKeys: PrivateKeyReference | PrivateKeyReference[]) => {
     const dataType = data instanceof Uint8Array ? 'binaryData' : 'textData';
     const signature = await CryptoProxy.signMessage({
         [dataType]: data,
@@ -101,7 +101,7 @@ export const generateDriveKey = async (rawPassphrase: string) => {
     return { privateKey, privateKeyArmored };
 };
 
-export const generateLookupHash = async (name: string, parentHashKey: Uint8Array) => {
+export const generateLookupHash = async (name: string, parentHashKey: Uint8Array<ArrayBuffer>) => {
     const key = await importHmacKey(parentHashKey);
 
     const signature = await computeHmacSignature(key, stringToUtf8Array(name));
@@ -159,7 +159,7 @@ export const generateShareKeys = async (linkNodeKey: PrivateKeyReference, addres
     return { privateKey, NodeKey, NodePassphrase, NodePassphraseSignature, sessionKey };
 };
 
-export const generateContentHash = async (content: Uint8Array) => {
+export const generateContentHash = async (content: Uint8Array<ArrayBuffer>) => {
     const data = await CryptoProxy.computeHash({ algorithm: 'SHA256', data: content });
     return { HashType: 'sha256', BlockHash: data };
 };

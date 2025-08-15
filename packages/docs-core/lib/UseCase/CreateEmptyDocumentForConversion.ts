@@ -21,7 +21,7 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
     contents,
   }: {
     node: DecryptedNode
-    contents: Uint8Array
+    contents: Uint8Array<ArrayBuffer>
   }): Promise<Result<FileToDocConversionResult>> {
     try {
       const parentMeta: NodeMeta = node.parentNodeId

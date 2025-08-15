@@ -96,7 +96,7 @@ async function start(
     addressEmail: string,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
-    parentHashKey: Uint8Array,
+    parentHashKey: Uint8Array<ArrayBuffer>,
     verificationData: VerificationData
 ) {
     const log = (message: string) => uploadWorker.postLog(message);

@@ -3,7 +3,7 @@ export const getChunkFromBlocksData = (
         start: number;
         end: number;
     },
-    blocks: Uint8Array[],
+    blocks: Uint8Array<ArrayBuffer>[],
     indices: number[],
     blockSizes: number[]
 ) => {
@@ -26,7 +26,7 @@ export interface VideoStream {
     blockSizes: number[];
     totalSize: number;
     mimeType: string;
-    cache: LRUMap<number, Uint8Array>;
+    cache: LRUMap<number, Uint8Array<ArrayBuffer>>;
 }
 
 export const parseRange = (rangeHeader: string, videoStream: VideoStream): { start: number; end: number } | null => {

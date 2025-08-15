@@ -104,7 +104,7 @@ export default function useActions() {
         parentLinkId: string,
         newName: string,
         mimeType: string,
-        content: Uint8Array[]
+        content: Uint8Array<ArrayBuffer>[]
     ) => {
         // saveFile is using file upload using name with replace strategy as
         // default. That's not the best way - better would be to use link ID

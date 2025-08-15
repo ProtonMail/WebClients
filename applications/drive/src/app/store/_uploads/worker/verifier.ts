@@ -25,7 +25,7 @@ export class VerificationError extends EnrichedError {
 }
 
 export const createVerifier = ({ verificationCode, verifierSessionKey }: VerificationData): Verifier => {
-    return async (encryptedData: Uint8Array) => {
+    return async (encryptedData: Uint8Array<ArrayBuffer>) => {
         // Attempt to decrypt data block, to try to detect bitflips / bad hardware
         //
         // We don't check the signature as it is an expensive operation,

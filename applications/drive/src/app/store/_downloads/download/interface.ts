@@ -15,6 +15,6 @@ export type StartedNestedLinkDownload =
           isFile: true;
           name: string;
           parentPath: string[];
-          stream: ReadableStream<Uint8Array>;
+          stream: ReadableStream<Uint8Array<ArrayBuffer>>;
           fileModifyTime?: number;
       };

@@ -17,7 +17,7 @@ export class DuplicateDocument {
   ) {}
 
   /** Execute for a private document */
-  async executePrivate(nodeMeta: NodeMeta, node: DecryptedNode, state: Uint8Array): Promise<Result<DocumentNodeMeta>> {
+  async executePrivate(nodeMeta: NodeMeta, node: DecryptedNode, state: Uint8Array<ArrayBuffer>): Promise<Result<DocumentNodeMeta>> {
     try {
       const node = await this.driveCompat.getNode(nodeMeta)
 
@@ -43,7 +43,7 @@ export class DuplicateDocument {
   }
 
   /** Execute for a public document */
-  async executePublic(originalName: string, state: Uint8Array): Promise<Result<DocumentNodeMeta>> {
+  async executePublic(originalName: string, state: Uint8Array<ArrayBuffer>): Promise<Result<DocumentNodeMeta>> {
     try {
       const parentMeta: NodeMeta = await this.driveCompat.getMyFilesNodeMeta()
       return await this.genericDuplicate(originalName, parentMeta, state)
@@ -55,7 +55,7 @@ export class DuplicateDocument {
   private async genericDuplicate(
     newName: string,
     parentMeta: NodeMeta,
-    state: Uint8Array,
+    state: Uint8Array<ArrayBuffer>,
     documentType: DocumentType = 'doc',
   ): Promise<Result<DocumentNodeMeta>> {
     try {

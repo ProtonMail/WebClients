@@ -16,7 +16,7 @@ export function PublicDocumentCopier() {
   const application = useApplication()
 
   const performCopy = useCallback(
-    async (name: string, yjsData: Uint8Array) => {
+    async (name: string, yjsData: Uint8Array<ArrayBuffer>) => {
       const duplicateDocument = application.duplicateDocumentUseCase
       const result = await duplicateDocument.executePublic(name, yjsData)
 

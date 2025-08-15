@@ -104,7 +104,7 @@ export const EOLoadEmbedded = createAsyncThunk<EOLoadEmbeddedResults, EOLoadEmbe
                 );
                 return {
                     attachment,
-                    blob: createBlob(attachment, buffer.data as Uint8Array),
+                    blob: createBlob(attachment, buffer.data as Uint8Array<ArrayBuffer>),
                 };
             })
         );

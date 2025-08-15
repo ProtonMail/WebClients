@@ -69,7 +69,7 @@ describe('IndexedDatabase', () => {
 
     it('should apply multiple inline migrations defined in the test', async () => {
       interface TestSchemaV1 {
-        commits: { id: string; data: Uint8Array }
+        commits: { id: string; data: Uint8Array<ArrayBuffer> }
       }
 
       interface TestSchemaV2 extends TestSchemaV1 {

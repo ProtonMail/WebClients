@@ -463,7 +463,7 @@ export type AttachmentPub = {
 // This is represents the sensitive data in its decrypted form.
 export type AttachmentPriv = {
     filename: string;
-    data?: Uint8Array; // original binary as sent by user // TODO: figure out if we really need to keep this around and persist it?
+    data?: Uint8Array<ArrayBuffer>; // original binary as sent by user // TODO: figure out if we really need to keep this around and persist it?
     markdown?: string; // after conversion
     errorMessage?: string; // detailed error message for processing failures
     truncated?: boolean; // indicates if the file content was truncated for context limits

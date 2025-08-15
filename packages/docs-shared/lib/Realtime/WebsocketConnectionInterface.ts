@@ -9,5 +9,5 @@ export interface WebsocketConnectionInterface {
   markAsReadyToAcceptMessages(): void
   canBroadcastMessages(): boolean
   isConnected(): boolean
-  broadcastMessage(data: Uint8Array, source: BroadcastSource): Promise<void>
+  broadcastMessage(data: Uint8Array<ArrayBuffer>, source: BroadcastSource): Promise<void>
 }

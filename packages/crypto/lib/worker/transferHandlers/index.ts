@@ -164,7 +164,7 @@ const ResultTranferer = {
             .filter((name) => result[name] instanceof Uint8Array)
             .map((name) => result[name].buffer);
         // 'signatures' are always in binary form
-        return transferables.concat(result.signatures ? result.signatures.map((sig: Uint8Array) => sig.buffer) : []);
+        return transferables.concat(result.signatures ? result.signatures.map((sig: Uint8Array<ArrayBuffer>) => sig.buffer) : []);
     },
     deserialize: (serializedResult: any) => {
         const result = { ...serializedResult };
@@ -193,16 +193,16 @@ const oneWayTransferHanders: OneWayTransferHandler[] = [
     {
         name: 'Uint8Array', // automatically transfer Uint8Arrays from worker (but not vice versa)
         workerHandler: {
-            canHandle: (input: any): input is Uint8Array => input instanceof Uint8Array,
-            serialize: (bytes: Uint8Array) => [
+            canHandle: (input: any): input is Uint8Array<ArrayBuffer> => input instanceof Uint8Array,
+            serialize: (bytes: Uint8Array<ArrayBuffer>) => [
                 bytes,
                 [bytes.buffer], // transferables
             ],
             deserialize: (bytes) => bytes,
         },
         mainThreadHandler: {
-            canHandle: (input: any): input is Uint8Array => input instanceof Uint8Array,
-            serialize: (bytes: Uint8Array) => [
+            canHandle: (input: any): input is Uint8Array<ArrayBuffer> => input instanceof Uint8Array,
+            serialize: (bytes: Uint8Array<ArrayBuffer>) => [
                 bytes,
                 [], // transferables: no transferring from main thread
             ],
@@ -217,7 +217,7 @@ const oneWayTransferHanders: OneWayTransferHandler[] = [
             deserialize: ComputeHashStreamOptionsSerializer.deserialize,
         },
         mainThreadHandler: {
-            canHandle: (input: any): input is { dataStream: ReadableStream<Uint8Array> } =>
+            canHandle: (input: any): input is { dataStream: ReadableStream<Uint8Array<ArrayBuffer>> } =>
                 typeof input === 'object' && ReadableStreamSerializer.canHandle(input.dataStream),
             serialize: ({ dataStream, ...rest }) => {
                 const serializedStreamPort = ReadableStreamSerializer.serialize(dataStream);

@@ -36,7 +36,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
   private messageQueue: RtsMessagePayload[] = []
 
   docWasInitializedWithEmptyNode = false
-  emptyNodeInitializationUpdate?: Uint8Array = undefined
+  emptyNodeInitializationUpdate?: Uint8Array<ArrayBuffer> = undefined
 
   broadcastPresenceInterval: ReturnType<typeof setInterval>
   needsPresenceBroadcast?: BroadcastSource = undefined
@@ -164,7 +164,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     }
   }
 
-  public getDocState(): Uint8Array {
+  public getDocState(): Uint8Array<ArrayBuffer> {
     return encodeStateAsUpdate(this.doc)
   }
 
@@ -217,7 +217,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.setNeedsBroadcastCurrentAwarenessState(BroadcastSource.AwarenessUpdateHandler)
   }
 
-  handleDocBeingUpdatedByLexical = (update: Uint8Array, origin: any) => {
+  handleDocBeingUpdatedByLexical = (update: Uint8Array<ArrayBuffer>, origin: any) => {
     const isNonUserInitiatedChange = origin === this || origin === DocUpdateOrigin.InitialLoad
     if (isNonUserInitiatedChange) {
       return
@@ -253,7 +253,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.emptyNodeInitializationUpdate = undefined
   }
 
-  private handleRawSyncMessage(update: Uint8Array, origin?: any): void {
+  private handleRawSyncMessage(update: Uint8Array<ArrayBuffer>, origin?: any): void {
     const unusedReply = encoding.createEncoder()
     encoding.writeVarUint(unusedReply, 0)
 
@@ -261,7 +261,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     syncProtocol.readSyncMessage(decoder, unusedReply, this.doc, origin ?? this)
   }
 
-  private createSyncMessagePayload(update: Uint8Array, wrapperType: 'du' | 'conversion'): RtsMessagePayload {
+  private createSyncMessagePayload(update: Uint8Array<ArrayBuffer>, wrapperType: 'du' | 'conversion'): RtsMessagePayload {
     return {
       type: { wrapper: wrapperType },
       content: update,

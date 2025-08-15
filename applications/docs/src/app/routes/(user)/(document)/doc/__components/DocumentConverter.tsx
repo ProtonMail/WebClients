@@ -10,7 +10,7 @@ import { useApplication } from '~/utils/application-context'
 export type DocumentConverterProps = {
   lookup: NodeMeta
   onSuccess: (result: FileToDocConversionResult) => void
-  getNodeContents: (meta: NodeMeta) => Promise<{ contents: Uint8Array; node: DecryptedNode }>
+  getNodeContents: (meta: NodeMeta) => Promise<{ contents: Uint8Array<ArrayBuffer>; node: DecryptedNode }>
 }
 
 export function DocumentConverter({ lookup, onSuccess, getNodeContents }: DocumentConverterProps) {
@@ -20,7 +20,7 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Docume
   const [conversionResult, setConversionResult] = useState<Result<FileToDocConversionResult> | null>(null)
 
   const [isLoading, withLoading] = useLoading()
-  const [contents, setContents] = useState<Uint8Array | null>(null)
+  const [contents, setContents] = useState<Uint8Array<ArrayBuffer> | null>(null)
   const [node, setNode] = useState<DecryptedNode | null>(null)
   const [error, setError] = useState<Error | null>(null)
 

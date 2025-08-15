@@ -216,7 +216,7 @@ async function uploadBlock(
 async function uploadBlockData(
     url: string,
     token: string,
-    content: Uint8Array,
+    content: Uint8Array<ArrayBuffer>,
     onProgress: (relativeIncrement: number) => void,
     signal: AbortSignal
 ) {

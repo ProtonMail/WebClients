@@ -21,7 +21,7 @@ export const createFileChunk = async (
     chunk: Blob,
     chunkIndex: number,
     totalChunks: number,
-    fileKey: Uint8Array,
+    fileKey: Uint8Array<ArrayBuffer>,
     encryptionVersion: number
 ): Promise<Blob> => {
     const key = await importSymmetricKey(fileKey);

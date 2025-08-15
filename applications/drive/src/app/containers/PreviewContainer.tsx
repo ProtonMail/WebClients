@@ -167,7 +167,7 @@ export default function PreviewContainer() {
     }, [link]);
 
     const handleSaveFile = useCallback(
-        (content: Uint8Array[]) => {
+        (content: Uint8Array<ArrayBuffer>[]) => {
             if (!link) {
                 return Promise.reject('missing link');
             }

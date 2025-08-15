@@ -23,9 +23,9 @@ export class DecryptedCommit {
     return this.numberOfMessages() > GetCommitDULimit()
   }
 
-  async squashedRepresentation(): Promise<Uint8Array> {
+  async squashedRepresentation(): Promise<Uint8Array<ArrayBuffer>> {
     try {
-      const updates: Uint8Array[] = []
+      const updates: Uint8Array<ArrayBuffer>[] = []
       for (const message of this.messages) {
         const content = message.content
         if (isCompressedDocumentUpdate(content)) {

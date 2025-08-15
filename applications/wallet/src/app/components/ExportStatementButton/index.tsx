@@ -74,7 +74,7 @@ export const ExportStatementButton = ({ apiWalletData, apiAccount, ...rest }: Pr
         }).filter(Boolean) as GetAccountsProps[];
     };
 
-    const getData = async (generator: WasmAccountStatementGenerator, format: ExportFormat): Promise<Uint8Array> => {
+    const getData = async (generator: WasmAccountStatementGenerator, format: ExportFormat): Promise<Uint8Array<ArrayBuffer>> => {
         const time = BigInt(Math.floor(date.getTime() / SECOND).toString());
 
         if (format === ExportFormat.CSV) {
