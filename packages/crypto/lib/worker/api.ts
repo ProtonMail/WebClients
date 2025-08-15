@@ -77,7 +77,7 @@ import type {
 // - streams are currently not supported since they are not Transferable (not in all browsers).
 // - when returning binary data, the values are always transferred.
 
-type SerializedSignatureOptions = { armoredSignature?: string; binarySignature?: Uint8Array };
+type SerializedSignatureOptions = { armoredSignature?: string; binarySignature?: Uint8Array<ArrayBuffer> };
 const getSignature = async ({ armoredSignature, binarySignature }: SerializedSignatureOptions) => {
     if (armoredSignature) {
         return readSignature({ armoredSignature });
@@ -87,7 +87,7 @@ const getSignature = async ({ armoredSignature, binarySignature }: SerializedSig
     throw new Error('Must provide `armoredSignature` or `binarySignature`');
 };
 
-type SerializedMessageOptions = { armoredMessage?: string; binaryMessage?: Uint8Array };
+type SerializedMessageOptions = { armoredMessage?: string; binaryMessage?: Uint8Array<ArrayBuffer> };
 const getMessage = async ({ armoredMessage, binaryMessage }: SerializedMessageOptions) => {
     if (armoredMessage) {
         return readMessage({ armoredMessage });
@@ -97,7 +97,7 @@ const getMessage = async ({ armoredMessage, binaryMessage }: SerializedMessageOp
     throw new Error('Must provide `armoredMessage` or `binaryMessage`');
 };
 
-type SerializedKeyOptions = { armoredKey?: string; binaryKey?: Uint8Array };
+type SerializedKeyOptions = { armoredKey?: string; binaryKey?: Uint8Array<ArrayBuffer> };
 const getKey = async ({ armoredKey, binaryKey }: SerializedKeyOptions) => {
     if (armoredKey) {
         return readKey({ armoredKey });
@@ -250,7 +250,7 @@ type SerialisedOutputFormat = 'armored' | 'binary' | undefined;
 type SerialisedOutputTypeFromFormat<F extends SerialisedOutputFormat> = F extends 'armored'
     ? string
     : F extends 'binary'
-      ? Uint8Array
+      ? Uint8Array<ArrayBuffer>
       : never;
 
 class KeyManagementApi {
@@ -577,7 +577,7 @@ export class Api extends KeyManagementApi {
 
         const serialisedResult = {
             ...verificationResultWithoutSignatures,
-            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array), // no support for streamed input for now
+            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array<ArrayBuffer>), // no support for streamed input for now
         };
 
         return serialisedResult;
@@ -605,7 +605,7 @@ export class Api extends KeyManagementApi {
 
         const serialisedResult = {
             ...verificationResultWithoutSignatures,
-            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array), // no support for streamed input for now
+            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array<ArrayBuffer>), // no support for streamed input for now
         };
 
         return serialisedResult;
@@ -665,7 +665,7 @@ export class Api extends KeyManagementApi {
         const serialisedResult = {
             ...decryptionResultWithoutSignatures,
             // TODO once more apps opt-into v6-PQC support: consider returning a single signature by concatenating the serialized ones.
-            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array), // no support for streamed input for now
+            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array<ArrayBuffer>), // no support for streamed input for now
         };
 
         return serialisedResult;
@@ -838,7 +838,7 @@ export class Api extends KeyManagementApi {
 
         const serialisedResult = {
             ...resultWithoutSignature,
-            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array),
+            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array<ArrayBuffer>),
         };
         return serialisedResult;
     }
@@ -886,7 +886,7 @@ export class Api extends KeyManagementApi {
     /**
      * Armor a message signature in binary form
      */
-    async getArmoredSignature({ binarySignature }: { binarySignature: Uint8Array }) {
+    async getArmoredSignature({ binarySignature }: { binarySignature: Uint8Array<ArrayBuffer> }) {
         const signature = await getSignature({ binarySignature });
         return signature.armor();
     }
@@ -894,7 +894,7 @@ export class Api extends KeyManagementApi {
     /**
      * Armor a message given in binary form
      */
-    async getArmoredMessage({ binaryMessage }: { binaryMessage: Uint8Array }) {
+    async getArmoredMessage({ binaryMessage }: { binaryMessage: Uint8Array<ArrayBuffer> }) {
         const armoredMessage = await armorBytes(binaryMessage);
         return armoredMessage;
     }
@@ -904,7 +904,7 @@ export class Api extends KeyManagementApi {
      * The keys are not imported into the key store nor processed further. Both private and public keys are supported.
      * @returns array of armored keys
      */
-    async getArmoredKeys({ binaryKeys }: { binaryKeys: Uint8Array }) {
+    async getArmoredKeys({ binaryKeys }: { binaryKeys: Uint8Array<ArrayBuffer> }) {
         const keys = await readKeys({ binaryKeys });
         return keys.map((key) => key.armor());
     }
@@ -944,7 +944,7 @@ export class Api extends KeyManagementApi {
         data,
     }: {
         algorithm: 'unsafeMD5' | 'unsafeSHA1' | 'SHA512' | 'SHA256';
-        data: Uint8Array;
+        data: Uint8Array<ArrayBuffer>;
     }) {
         let hash;
         switch (algorithm) {

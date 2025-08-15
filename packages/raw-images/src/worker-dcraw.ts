@@ -3,7 +3,7 @@ import { type ProcessResult, RawProcessor } from './raw';
 type WorkerMessage = {
     type: 'initialize' | 'extractThumbnail';
     id: number;
-    data?: Uint8Array;
+    data?: Uint8Array<ArrayBuffer>;
     fileName?: string;
 };
 

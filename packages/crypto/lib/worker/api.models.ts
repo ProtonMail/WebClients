@@ -38,25 +38,25 @@ export interface WorkerDecryptionOptions
         'message' | 'signature' | 'encryptedSignature' | 'verificationKeys' | 'decryptionKeys'
     > {
     armoredSignature?: string;
-    binarySignature?: Uint8Array;
+    binarySignature?: Uint8Array<ArrayBuffer>;
     armoredMessage?: string;
-    binaryMessage?: Uint8Array;
+    binaryMessage?: Uint8Array<ArrayBuffer>;
     armoredEncryptedSignature?: string;
-    binaryEncryptedSignature?: Uint8Array;
+    binaryEncryptedSignature?: Uint8Array<ArrayBuffer>;
     verificationKeys?: MaybeArray<PublicKeyReference>;
     decryptionKeys?: MaybeArray<PrivateKeyReference>;
     sessionKeys?: MaybeArray<SessionKey>;
     config?: PartialConfig;
 }
 export interface WorkerDecryptionResult<T extends Data> extends Omit<DecryptResultPmcrypto<T>, 'signatures'> {
-    signatures: Uint8Array[];
+    signatures: Uint8Array<ArrayBuffer>[];
 }
 
 // TODO to make Option interfaces easy to use for the user, might be best to set default param types (e.g. T extends Data = Data).
 export interface WorkerVerifyOptions<T extends Data>
     extends Omit<VerifyOptionsPmcrypto<T>, 'signature' | 'verificationKeys'> {
     armoredSignature?: string;
-    binarySignature?: Uint8Array;
+    binarySignature?: Uint8Array<ArrayBuffer>;
     verificationKeys: MaybeArray<PublicKeyReference>;
     config?: PartialConfig;
 }
@@ -67,7 +67,7 @@ export interface WorkerVerifyCleartextOptions
     config?: PartialConfig;
 }
 export interface WorkerVerificationResult<T extends Data = Data> extends Omit<VerifyMessageResult<T>, 'signatures'> {
-    signatures: Uint8Array[];
+    signatures: Uint8Array<ArrayBuffer>[];
 }
 
 export interface WorkerSignOptions<T extends Data> extends Omit<SignOptionsPmcrypto<T>, 'signingKeys'> {
@@ -78,7 +78,7 @@ export interface WorkerEncryptOptions<T extends Data>
     extends Omit<EncryptOptionsPmcrypto<T>, 'signature' | 'signingKeys' | 'encryptionKeys'> {
     format?: 'armored' | 'binary';
     armoredSignature?: string;
-    binarySignature?: Uint8Array;
+    binarySignature?: Uint8Array<ArrayBuffer>;
     encryptionKeys?: MaybeArray<PublicKeyReference>;
     signingKeys?: MaybeArray<PrivateKeyReference>;
     compress?: boolean;
@@ -90,27 +90,27 @@ export interface WorkerProcessMIMEOptions extends Omit<ProcessMIMEOptions, 'veri
 }
 
 export interface WorkerProcessMIMEResult extends Omit<ProcessMIMEResult, 'signatures'> {
-    signatures: Uint8Array[];
+    signatures: Uint8Array<ArrayBuffer>[];
 }
 
 export type WorkerExportedKey<F extends 'armored' | 'binary' | undefined = 'armored'> = F extends 'armored'
     ? string
-    : Uint8Array;
+    : Uint8Array<ArrayBuffer>;
 
 export interface WorkerImportDecryptedPrivateKeyOptions<T extends Data> {
     armoredKey?: T extends string ? T : never;
-    binaryKey?: T extends Uint8Array ? T : never;
+    binaryKey?: T extends Uint8Array<ArrayBuffer> ? T : never;
 }
 
 export interface WorkerImportEncryptedPrivateKeyOptions<T extends Data> {
     armoredKey?: T extends string ? T : never;
-    binaryKey?: T extends Uint8Array ? T : never;
+    binaryKey?: T extends Uint8Array<ArrayBuffer> ? T : never;
     passphrase: string;
 }
 
 export interface WorkerImportPrivateKeyOptions<T extends Data> {
     armoredKey?: T extends string ? T : never;
-    binaryKey?: T extends Uint8Array ? T : never;
+    binaryKey?: T extends Uint8Array<ArrayBuffer> ? T : never;
     /**
      * null if the key is expected to be already decrypted, e.g. when user uploads a new private key that is unencrypted
      */
@@ -124,7 +124,7 @@ export interface WorkerImportPrivateKeyOptions<T extends Data> {
 
 export type WorkerImportPublicKeyOptions<T extends Data> = {
     armoredKey?: T extends string ? T : never;
-    binaryKey?: T extends Uint8Array ? T : never;
+    binaryKey?: T extends Uint8Array<ArrayBuffer> ? T : never;
     /**
      * Check whether the key is compatible with all Proton clients.
      * This should be used when importing a key that was generate outside of Proton.
@@ -154,13 +154,13 @@ export interface WorkerGenerateSessionKeyOptions extends Omit<GenerateSessionKey
 export interface WorkerDecryptSessionKeyOptions
     extends Omit<DecryptSessionKeyOptionsPmcrypto, 'message' | 'decryptionKeys'> {
     armoredMessage?: string;
-    binaryMessage?: Uint8Array;
+    binaryMessage?: Uint8Array<ArrayBuffer>;
     decryptionKeys?: MaybeArray<PrivateKeyReference>;
 }
 
 export interface WorkerGetMessageInfoOptions<T extends Data> {
     armoredMessage?: T extends string ? T : never;
-    binaryMessage?: T extends Uint8Array ? T : never;
+    binaryMessage?: T extends Uint8Array<ArrayBuffer> ? T : never;
 }
 
 export interface MessageInfo {
@@ -170,12 +170,12 @@ export interface MessageInfo {
 
 export interface WorkerGetSignatureInfoOptions<T extends Data> {
     armoredSignature?: T extends string ? T : never;
-    binarySignature?: T extends Uint8Array ? T : never;
+    binarySignature?: T extends Uint8Array<ArrayBuffer> ? T : never;
 }
 
 export interface WorkerGetKeyInfoOptions<T extends Data> {
     armoredKey?: T extends string ? T : never;
-    binaryKey?: T extends Uint8Array ? T : never;
+    binaryKey?: T extends Uint8Array<ArrayBuffer> ? T : never;
 }
 
 export interface SignatureInfo {
@@ -265,5 +265,5 @@ export interface PrivateKeyReferenceV6 extends PrivateKeyReference {
 
 export interface ComputeHashStreamOptions {
     algorithm: 'unsafeSHA1';
-    dataStream: ReadableStream<Uint8Array>;
+    dataStream: ReadableStream<Uint8Array<ArrayBuffer>>;
 }

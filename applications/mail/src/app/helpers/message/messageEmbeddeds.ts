@@ -77,7 +77,7 @@ export const setEmbeddedAttr = (cid: string, cloc: string, element: Element) => 
 /**
  * Create a Blob and its URL for an attachment
  */
-export const createBlob = (attachment: Attachment, data: Uint8Array | string) => {
+export const createBlob = (attachment: Attachment, data: Uint8Array<ArrayBuffer> | string) => {
     const blob = new Blob([data], { type: attachment.MIMEType });
     return urlCreator().createObjectURL(blob);
 };

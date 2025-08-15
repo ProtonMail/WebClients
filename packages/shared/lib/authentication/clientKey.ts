@@ -6,7 +6,7 @@ export const getParsedClientKey = (value: string) => {
     return base64StringToUint8Array(value);
 };
 
-const getSerializedClientKey = (value: Uint8Array) => {
+const getSerializedClientKey = (value: Uint8Array<ArrayBuffer>) => {
     return uint8ArrayToBase64String(value);
 };
 

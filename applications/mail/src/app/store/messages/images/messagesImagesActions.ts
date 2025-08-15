@@ -32,7 +32,7 @@ export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedPa
                 );
                 return {
                     attachment,
-                    blob: createBlob(attachment, buffer.data as Uint8Array),
+                    blob: createBlob(attachment, buffer.data as Uint8Array<ArrayBuffer>),
                 };
             })
         );

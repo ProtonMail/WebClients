@@ -158,7 +158,7 @@ export type PublicDocumentPostMessageEvent = 'public-copier-ready' | 'data-for-c
 
 export type PublicDocumentPostMessageDataForCopying = {
   name: string
-  yjsData: Uint8Array
+  yjsData: Uint8Array<ArrayBuffer>
 }
 
 export type PublicDocumentCopyingOptions = {

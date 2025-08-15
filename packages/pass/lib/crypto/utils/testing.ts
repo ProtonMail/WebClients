@@ -62,7 +62,7 @@ export function randomAddress(): Address {
     };
 }
 
-export function randomContents(length: number = 20): Uint8Array {
+export function randomContents(length: number = 20): Uint8Array<ArrayBuffer> {
     let a = [];
     for (let i = 0; i < length; i++) {
         a[i] = Math.ceil(Math.random() * 255);
@@ -73,7 +73,7 @@ export function randomContents(length: number = 20): Uint8Array {
 export const createRandomShareResponses = async (
     userKey: DecryptedKey,
     addressId: string,
-    content?: Uint8Array
+    content?: Uint8Array<ArrayBuffer>
 ): Promise<[ShareGetResponse, ShareKeyResponse]> => {
     const vault = await createVault({ content: content ?? randomContents(), userKey, addressId });
 

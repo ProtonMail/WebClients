@@ -24,6 +24,7 @@ module.exports = {
         'jsx-a11y',
         'custom-rules',
         'lodash',
+        '@protontech/enforce-uint8array-arraybuffer',
     ],
     rules: {
         '@typescript-eslint/array-type': [
@@ -245,6 +246,7 @@ module.exports = {
         'custom-rules/date-formatting-locale': 'warn',
         '@typescript-eslint/consistent-type-imports': 'error',
         'lodash/import-scope': [2, 'method'],
+        '@protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer': 'error',
     },
     settings: {
         'import/resolver': {

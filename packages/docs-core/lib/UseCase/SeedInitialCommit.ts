@@ -19,7 +19,7 @@ export class SeedInitialCommit implements UseCaseInterface<SeedInitialCommitResu
     private encryptMessage: EncryptMessage,
   ) {}
 
-  async execute(nodeMeta: NodeMeta, state: Uint8Array, keys: DocumentKeys): Promise<Result<SeedInitialCommitResult>> {
+  async execute(nodeMeta: NodeMeta, state: Uint8Array<ArrayBuffer>, keys: DocumentKeys): Promise<Result<SeedInitialCommitResult>> {
     const metadata = {
       version: DocumentUpdateVersion.V1,
       authorAddress: keys.userOwnAddress,

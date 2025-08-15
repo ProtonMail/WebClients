@@ -247,7 +247,7 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
     const downloadStream = (
         link: LinkDownload,
         eventCallbacks?: DownloadEventCallbacks
-    ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array> } => {
+    ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array<ArrayBuffer>> } => {
         const controls = initDownloadStream(
             [link],
             {
@@ -291,7 +291,7 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
             () => {
                 return getThumbnail(cacheKey);
             },
-            (data: Uint8Array<ArrayBufferLike>) => {
+            (data: Uint8Array<ArrayBuffer>) => {
                 void addThumbnail(cacheKey, data);
             }
         );
@@ -350,7 +350,7 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
     const getThumbnailFromBlobUrl = async (thumbnailUrl: string) => {
         return fetch(thumbnailUrl)
             .then((r) => r.blob())
-            .then((blob) => blob.stream() as ReadableStream<Uint8Array>)
+            .then((blob) => blob.stream() as ReadableStream<Uint8Array<ArrayBuffer>>)
             .then((buffer) => streamToBuffer(buffer));
     };
 
@@ -422,7 +422,7 @@ export default function useDownload({ customDebouncedRequest, loadChildren, getC
         link: LinkDownload,
         blocks: DriveFileBlock[],
         manifestSignature: string
-    ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array> } => {
+    ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array<ArrayBuffer>> } => {
         const controls = initDownloadStream(
             [link],
             {

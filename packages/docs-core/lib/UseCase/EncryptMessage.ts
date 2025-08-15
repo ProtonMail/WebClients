@@ -11,14 +11,14 @@ import type { PublicDocumentKeys } from '@proton/drive-store'
 /**
  * Encrypts a message directed towards the RTS.
  */
-export class EncryptMessage implements UseCaseInterface<Uint8Array> {
+export class EncryptMessage implements UseCaseInterface<Uint8Array<ArrayBuffer>> {
   constructor(private encryption: EncryptionService<EncryptionContext.RealtimeMessage>) {}
 
   async execute(
-    update: Uint8Array,
+    update: Uint8Array<ArrayBuffer>,
     metadata: EncryptionMetadata | AnonymousEncryptionMetadata,
     keys: DocumentKeys | PublicDocumentKeys,
-  ): Promise<Result<Uint8Array>> {
+  ): Promise<Result<Uint8Array<ArrayBuffer>>> {
     const aad = GetAssociatedEncryptionDataForRealtimeMessage(metadata)
 
     if (canKeysSign(keys)) {

@@ -56,7 +56,7 @@ const deserializeItem = (value: string | undefined) => {
     }
 };
 
-const serializeItem = (value: Uint8Array) => {
+const serializeItem = (value: Uint8Array<ArrayBuffer>) => {
     return btoa(uint8ArrayToString(value));
 };
 

@@ -3,7 +3,7 @@ import { CR3Processor, type ProcessResult } from './raw';
 type WorkerMessage = {
     type: 'initialize' | 'extractThumbnail';
     id: number;
-    data?: Uint8Array;
+    data?: Uint8Array<ArrayBuffer>;
     fileName?: string;
 };
 

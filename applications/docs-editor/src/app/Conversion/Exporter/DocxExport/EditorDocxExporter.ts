@@ -11,7 +11,7 @@ import { createHorizontalRuleChild } from './LexicalToDocx/createHorizontalRuleC
 import { NumberingLevelsConfig } from './NumberingLevelsConfig'
 
 export class EditorDocxExporter extends EditorExporter {
-  async export(): Promise<Uint8Array> {
+  async export(): Promise<Uint8Array<ArrayBuffer>> {
     const state = this.editor.getEditorState()
     const docx = await this.generateDocxFromEditorState(state)
     const buffer = await Packer.toBlob(docx)
