@@ -21,25 +21,18 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useCancellationTelemetry from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { useLoading } from '@proton/hooks';
 import {
-    PLANS,
-    type PlansMap,
     Renew,
     type Subscription,
     changeRenewState,
-    getHas2023OfferCoupon,
     getIsUpcomingSubscriptionUnpaid,
-    getNormalCycleFromCustomCycle,
-    getPlanIDs,
     getPlanTitle,
     getRenewalTime,
     isManagedExternally,
     onSessionMigrationPaymentsVersion,
 } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
-import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -50,10 +43,9 @@ import { subscriptionExpires } from './subscription/helpers';
 
 interface SubscriptionRowProps {
     subscription: Subscription;
-    plansMap: PlansMap;
 }
 
-const SubscriptionRow = ({ subscription, plansMap }: SubscriptionRowProps) => {
+const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const [reactivating, withReactivating] = useLoading();
     const api = useApi();
     const { sendDashboardReactivateReport } = useCancellationTelemetry();
@@ -121,28 +113,6 @@ const SubscriptionRow = ({ subscription, plansMap }: SubscriptionRowProps) => {
     const isUpcomingSubscriptionUnpaid = getIsUpcomingSubscriptionUnpaid(subscription);
 
     const { renewAmount, renewCurrency, renewLength } = (() => {
-        const latestPlanIDs = getPlanIDs(latestSubscription);
-        if (getHas2023OfferCoupon(latestSubscription.CouponCode) && latestPlanIDs[PLANS.VPN_PASS_BUNDLE]) {
-            const nextCycle = getNormalCycleFromCustomCycle(latestSubscription.Cycle);
-            const latestCheckout = getCheckout({
-                plansMap,
-                planIDs: latestPlanIDs,
-                checkResult: getOptimisticCheckResult({
-                    planIDs: latestPlanIDs,
-                    plansMap,
-                    cycle: nextCycle,
-                    currency: latestSubscription.Currency,
-                }),
-            });
-            return {
-                // The API doesn't return the correct next cycle or RenewAmount for the VPN or VPN+Pass bundle plan since we don't have chargebee
-                // So we calculate it with the cycle discount here
-                renewAmount: latestCheckout.withDiscountPerCycle,
-                renewCurrency: latestSubscription.Currency,
-                renewLength: nextCycle,
-            };
-        }
-
         if (upcoming && isUpcomingSubscriptionUnpaid) {
             return {
                 renewAmount: upcoming.Amount,
@@ -212,11 +182,8 @@ const SubscriptionRow = ({ subscription, plansMap }: SubscriptionRowProps) => {
 };
 
 const SubscriptionsSection = () => {
-    const { plansMap, plansMapLoading } = usePreferredPlansMap();
-
     const [subscription, subscriptionLoading] = useSubscription();
-
-    if (subscriptionLoading || plansMapLoading || !subscription) {
+    if (subscriptionLoading || !subscription) {
         return <Loader />;
     }
 
@@ -236,7 +203,7 @@ const SubscriptionsSection = () => {
                     </TableHeader>
                     <TableBody colSpan={4}>
                         {subscriptions.map((subscription) => (
-                            <SubscriptionRow key={subscription.ID} subscription={subscription} plansMap={plansMap} />
+                            <SubscriptionRow key={subscription.ID} subscription={subscription} />
                         ))}
                     </TableBody>
                 </Table>
