@@ -25,7 +25,7 @@ import {
     PLANS,
     PLAN_NAMES,
     type Subscription,
-    getSubscriptionPlanTitleAndName,
+    getSubscriptionPlanTitle,
     isManagedExternally,
 } from '@proton/payments';
 import { getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
@@ -102,7 +102,7 @@ const PlanNameSection = ({
     user: UserModel;
     subscription?: Subscription;
 }) => {
-    const { planTitle, planName } = getSubscriptionPlanTitleAndName(user, subscription);
+    const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
 
     const cycle = subscription?.Cycle ?? 1; // CYCLE.MONTHLY = 1
     const amount = (subscription?.Amount ?? 0) / cycle;

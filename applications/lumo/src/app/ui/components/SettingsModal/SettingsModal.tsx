@@ -11,7 +11,7 @@ import { Icon, ModalTwo, ModalTwoContent, ModalTwoHeader, SettingsLink } from '@
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import Time from '@proton/components/components/time/Time';
 import useConfig from '@proton/components/hooks/useConfig';
-import { getRenewalTime, getSubscriptionPlanTitleAndName } from '@proton/payments';
+import { getRenewalTime, getSubscriptionPlanTitle } from '@proton/payments';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { UserType } from '@proton/shared/lib/interfaces';
 
@@ -310,7 +310,7 @@ const AccountSettingsPanel = () => {
     // showing Manage account button for users that can see Delete account section in settings - for mobile apps
     const canShowManageAccountButton = user.Type === UserType.PROTON || user.Type === UserType.EXTERNAL;
 
-    const planTitle = user.isMember ? '' : getSubscriptionPlanTitleAndName(user, subscription).planTitle;
+    const planTitle = user.isMember ? '' : getSubscriptionPlanTitle(user, subscription).planTitle;
     const renewalTime = subscription ? getRenewalTime(subscription) : undefined;
 
     // TODO: use when handling paid user upsells in app
