@@ -15,7 +15,7 @@ export interface PdfPreviewControls {
 
 interface Preview {
     item: Invoice | Transaction;
-    contents?: Uint8Array[];
+    contents?: Uint8Array<ArrayBuffer>[];
 }
 
 type Props =
@@ -48,7 +48,7 @@ const PaymentsPdfPreviewBase = ({ items, onDownload, getFilename }: Props, ref: 
             return getInvoicePDF(item.ID, getInvoicePaymentsVersion(item));
         };
 
-        const buffer = await api<Uint8Array>(getPDF());
+        const buffer = await api<Uint8Array<ArrayBuffer>>(getPDF());
         setPreviewing((previewing) => {
             if (previewing === undefined || previewing.item !== item) {
                 return previewing;

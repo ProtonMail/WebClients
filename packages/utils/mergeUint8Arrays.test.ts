@@ -2,7 +2,7 @@ import mergeUint8Arrays from './mergeUint8Arrays';
 
 describe('mergeUint8Arrays()', () => {
     it('returns empty array if arrays is empty', () => {
-        const arrays: Uint8Array[] = [];
+        const arrays: Uint8Array<ArrayBuffer>[] = [];
 
         const result = mergeUint8Arrays(arrays);
 

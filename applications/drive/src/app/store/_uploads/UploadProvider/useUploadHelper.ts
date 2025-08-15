@@ -152,13 +152,13 @@ export default function useUploadHelper() {
 
         const fileStream = file.stream();
         const sha1Instance = sha1.create();
-        await untilStreamEnd<Uint8Array>(fileStream, async (chunk) => {
+        await untilStreamEnd<Uint8Array<ArrayBuffer>>(fileStream, async (chunk) => {
             if (chunk?.buffer) {
                 sha1Instance.update(new Uint8Array(chunk.buffer));
             }
         });
 
-        const sha1Hash = sha1Instance.digest();
+        const sha1Hash = sha1Instance.digest() as Uint8Array<ArrayBuffer>;
 
         const contentHash = await generateLookupHash(arrayToHexString(sha1Hash), parentHashKey);
 

@@ -60,7 +60,7 @@ export async function deriveKeyFromPRFCredential(credential: MaybeNull<Credentia
     return key;
 }
 
-export async function getSerializedCredential(credentialId: Uint8Array) {
+export async function getSerializedCredential(credentialId: Uint8Array<ArrayBuffer>) {
     const credential = await navigator.credentials.get({
         mediation: 'required',
         publicKey: {

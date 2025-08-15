@@ -18,7 +18,7 @@ export default class ChunkFileReader {
         const fileReader = new FileReader();
         const blob = this.blob.slice(this.offset, this.offset + this.chunkSize);
 
-        return new Promise<Uint8Array>((resolve, reject) => {
+        return new Promise<Uint8Array<ArrayBuffer>>((resolve, reject) => {
             fileReader.onerror = (e) => {
                 reject(e.target?.error || new Error('Cannot open file for reading'));
             };

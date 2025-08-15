@@ -6,10 +6,10 @@ const CRITICAL_FIELDS = OPTIONAL_FIELDS.concat(MANDATORY_FIELDS);
 
 export interface AutocryptHeader {
     addr: string;
-    keydata: Uint8Array;
+    keydata: Uint8Array<ArrayBuffer>;
     'prefer-encrypt'?: 'mutual';
     // Non-critical optional fields
-    [_key: string]: undefined | string | Uint8Array;
+    [_key: string]: undefined | string | Uint8Array<ArrayBuffer>;
 }
 
 // Parse according to https://autocrypt.org/level1.html#the-autocrypt-header

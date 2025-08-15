@@ -9,7 +9,7 @@ export const openSecureLink = async ({
     encryptedItemKey,
     content,
     linkKey,
-}: OpenSecureLinkParams): Promise<Uint8Array> => {
+}: OpenSecureLinkParams): Promise<Uint8Array<ArrayBuffer>> => {
     const raw = stringToUint8Array(decodeBase64URL(linkKey));
     const itemKey = (
         await openItemKey({

@@ -18,7 +18,7 @@ interface Props {
     mimeType: string;
     fileName?: string;
     onDownload?: () => void;
-    contents?: Uint8Array[];
+    contents?: Uint8Array<ArrayBuffer>[];
     placeholderSrc?: string;
     isLoading: boolean;
     isZoomEnabled?: boolean;
@@ -59,7 +59,7 @@ function getImageDimensions(imageElement: HTMLImageElement | null): ElementDimen
  * 10 seconds on slow computer as is mine, but we talk about huge SVGs as 30 MB.
  * Because such SVG is more edge case, we can live with that.
  */
-function sanitizeSVG(contents: Uint8Array[]): Uint8Array[] {
+function sanitizeSVG(contents: Uint8Array<ArrayBuffer>[]): Uint8Array<ArrayBuffer>[] {
     const contentsString = contents.map(uint8ArrayToString).join('');
     const sanitzedSVG = DOMPurify.sanitize(contentsString);
     return [stringToUint8Array(sanitzedSVG)];

@@ -2,7 +2,7 @@ import { DocumentUpdate } from '../Generated'
 import type { DocumentUpdateVersion } from '../Version'
 
 export function CreateDocumentUpdate(dto: {
-  content: Uint8Array
+  content: Uint8Array<ArrayBuffer>
   authorAddress: string | undefined
   timestamp: number
   version: DocumentUpdateVersion

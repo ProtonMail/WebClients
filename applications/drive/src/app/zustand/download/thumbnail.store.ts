@@ -14,8 +14,8 @@ interface ThumbnailMetadata {
 
 interface ThumbnailCacheState {
     thumbnailIds: string[];
-    addThumbnail: (id: string, data: Uint8Array<ArrayBufferLike>) => Promise<void>;
-    getThumbnail: (id: string) => Promise<Uint8Array<ArrayBufferLike> | undefined>;
+    addThumbnail: (id: string, data: Uint8Array<ArrayBuffer>) => Promise<void>;
+    getThumbnail: (id: string) => Promise<Uint8Array<ArrayBuffer> | undefined>;
 }
 
 const thumbnailStore = createStore('thumbnail-encrypted-cache-db', 'thumbnail-data');
@@ -80,7 +80,7 @@ const enforceStorageLimits = async (metadata: ThumbnailMetadata): Promise<void> 
         }
 
         try {
-            const thumbnail = await getStore<Uint8Array<ArrayBufferLike>>(oldestId, thumbnailStore);
+            const thumbnail = await getStore<Uint8Array<ArrayBuffer>>(oldestId, thumbnailStore);
             if (thumbnail) {
                 meta.totalSize -= thumbnail.byteLength;
                 await del(oldestId, thumbnailStore);
@@ -107,7 +107,7 @@ export const useThumbnailCacheStore = create<ThumbnailCacheState>()(
         (set) => ({
             thumbnailIds: [],
 
-            addThumbnail: async (id: string, data: Uint8Array<ArrayBufferLike>) => {
+            addThumbnail: async (id: string, data: Uint8Array<ArrayBuffer>) => {
                 try {
                     const meta = await getMetadata();
 
@@ -137,9 +137,9 @@ export const useThumbnailCacheStore = create<ThumbnailCacheState>()(
                 }
             },
 
-            getThumbnail: async (id: string): Promise<Uint8Array<ArrayBufferLike> | undefined> => {
+            getThumbnail: async (id: string): Promise<Uint8Array<ArrayBuffer> | undefined> => {
                 try {
-                    const result = await getStore<Uint8Array<ArrayBufferLike>>(id, thumbnailStore);
+                    const result = await getStore<Uint8Array<ArrayBuffer>>(id, thumbnailStore);
                     return result;
                 } catch (e) {
                     console.error(`Failed to get thumbnail '${id}':`, e);

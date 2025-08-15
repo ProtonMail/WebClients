@@ -53,5 +53,5 @@ export abstract class EditorExporter {
     rejectAllSuggestions(this.editor)
   }
 
-  abstract export(): Promise<Uint8Array>
+  abstract export(): Promise<Uint8Array<ArrayBuffer>>
 }

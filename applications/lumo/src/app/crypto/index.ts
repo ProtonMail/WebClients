@@ -34,7 +34,7 @@ export async function encryptString(
 }
 
 export async function encryptUint8Array(
-    plaintextBytes: Uint8Array,
+    plaintextBytes: Uint8Array<ArrayBuffer>,
     { encryptKey }: AesGcmCryptoKey,
     adString?: string
 ): Promise<string> {
@@ -49,13 +49,13 @@ export async function cryptoKeyToBase64(key: CryptoKey): Promise<Base64> {
     return uint8ArrayToBase64String(keyBuffer);
 }
 
-export async function cryptoKeyToBytes(key: CryptoKey): Promise<Uint8Array> {
+export async function cryptoKeyToBytes(key: CryptoKey): Promise<Uint8Array<ArrayBuffer>> {
     const exportedKey = await crypto.subtle.exportKey('raw', key);
     const keyBuffer = new Uint8Array(exportedKey);
     return keyBuffer;
 }
 
-export async function bytesToAesGcmCryptoKey(bytes: Uint8Array, extractable?: boolean): Promise<AesGcmCryptoKey> {
+export async function bytesToAesGcmCryptoKey(bytes: Uint8Array<ArrayBuffer>, extractable?: boolean): Promise<AesGcmCryptoKey> {
     if (bytes.length !== 32) {
         throw new Error('Unexpected AES-GCM key size');
     }
@@ -73,7 +73,7 @@ async function base64ToAesGcmCryptoKey(base64Key: string, extractable?: boolean)
 
 export const base64ToSpaceKey = base64ToAesGcmCryptoKey;
 
-export async function bytesToAesWrapKey(bytes: Uint8Array): Promise<AesKwCryptoKey> {
+export async function bytesToAesWrapKey(bytes: Uint8Array<ArrayBuffer>): Promise<AesKwCryptoKey> {
     const wrappingKey = await importWrappingKey(bytes);
     return {
         type: 'AesKwCryptoKey',
@@ -93,8 +93,8 @@ export async function decryptUint8Array(
     encryptedBase64: EncryptedData,
     { encryptKey }: AesGcmCryptoKey,
     ad: AdString
-): Promise<Uint8Array> {
-    let encryptedBytes: Uint8Array;
+): Promise<Uint8Array<ArrayBuffer>> {
+    let encryptedBytes: Uint8Array<ArrayBuffer>;
     if (typeof encryptedBase64 === 'string') {
         encryptedBytes = base64StringToUint8Array(encryptedBase64);
     } else if (isOldEncryptedData(encryptedBase64)) {
@@ -139,7 +139,7 @@ const HKDF_PARAMS_SPACE_DATA_ENCRYPTION = {
     info: stringToUtf8Array(SPACE_DEK_CONTEXT),
 };
 
-export async function deriveDataEncryptionKey(spaceKeyBytes: Uint8Array): Promise<AesGcmCryptoKey> {
+export async function deriveDataEncryptionKey(spaceKeyBytes: Uint8Array<ArrayBuffer>): Promise<AesGcmCryptoKey> {
     const encryptKey = await deriveKey(
         spaceKeyBytes,
         HKDF_PARAMS_SPACE_DATA_ENCRYPTION.salt,
@@ -151,13 +151,13 @@ export async function deriveDataEncryptionKey(spaceKeyBytes: Uint8Array): Promis
     };
 }
 
-export async function wrapAesKey(keyToWrap: AesGcmCryptoKey, { wrappingKey }: AesKwCryptoKey): Promise<Uint8Array> {
+export async function wrapAesKey(keyToWrap: AesGcmCryptoKey, { wrappingKey }: AesKwCryptoKey): Promise<Uint8Array<ArrayBuffer>> {
     const wrappedBytes = await wrapKey(keyToWrap.encryptKey, wrappingKey);
     return wrappedBytes;
 }
 
 export async function unwrapAesKey(
-    encryptedKeyBytes: Uint8Array,
+    encryptedKeyBytes: Uint8Array<ArrayBuffer>,
     masterKey: AesKwCryptoKey,
     extractable?: boolean
 ): Promise<AesGcmCryptoKey> {

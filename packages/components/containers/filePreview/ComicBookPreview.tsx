@@ -12,7 +12,7 @@ const extract = (files: typeof JSZip.files) =>
         .filter((name) => /\.(jpe?g|png)$/i.test(name)) // we can have some extra metadata files, we only care about images
         .sort(); // CBZ images are sorted by page number
 
-const getExtractedImagesFromCBZ = async (cbz: Blob | Uint8Array[]) => {
+const getExtractedImagesFromCBZ = async (cbz: Blob | Uint8Array<ArrayBuffer>[]) => {
     const zip = await JSZip.loadAsync(cbz instanceof Blob ? cbz : new Blob(cbz));
     return Promise.all(
         extract(zip.files).map(async (fileName) => {
@@ -42,7 +42,7 @@ const ComicBookPreview = ({
     mimeType,
     isPublic,
 }: {
-    contents: Uint8Array[];
+    contents: Uint8Array<ArrayBuffer>[];
     mimeType: string;
     isPublic: boolean;
 }) => {

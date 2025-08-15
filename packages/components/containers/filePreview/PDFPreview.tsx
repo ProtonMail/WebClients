@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 interface PDFPreviewProps {
     filename?: string;
-    contents: Uint8Array[];
+    contents: Uint8Array<ArrayBuffer>[];
 }
 
 const PDFPreview = ({ filename = 'preview.pdf', contents }: PDFPreviewProps) => {

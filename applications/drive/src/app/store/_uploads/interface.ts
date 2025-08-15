@@ -70,7 +70,7 @@ type InitializedFileMeta = {
     fileName: string;
     privateKey: PrivateKeyReference;
     sessionKey: SessionKey;
-    parentHashKey: Uint8Array;
+    parentHashKey: Uint8Array<ArrayBuffer>;
     address?: {
         privateKey: PrivateKeyReference;
         email: string;
@@ -80,10 +80,10 @@ type InitializedFileMeta = {
 export type EncryptedBlock = {
     index: number;
     originalSize: number;
-    encryptedData: Uint8Array;
-    hash: Uint8Array;
+    encryptedData: Uint8Array<ArrayBuffer>;
+    hash: Uint8Array<ArrayBuffer>;
     signature: string;
-    verificationToken: Uint8Array;
+    verificationToken: Uint8Array<ArrayBuffer>;
 
     // Thumbnails specific properties
     thumbnailType?: never;
@@ -92,8 +92,8 @@ export type EncryptedBlock = {
 export type ThumbnailEncryptedBlock = {
     index: number;
     originalSize: number;
-    encryptedData: Uint8Array;
-    hash: Uint8Array;
+    encryptedData: Uint8Array<ArrayBuffer>;
+    hash: Uint8Array<ArrayBuffer>;
 
     // Thumbnails specific properties
     thumbnailType: ThumbnailType;
@@ -102,20 +102,20 @@ export type ThumbnailEncryptedBlock = {
 export type FileRequestBlock = {
     index: number;
     size: number;
-    hash: Uint8Array;
+    hash: Uint8Array<ArrayBuffer>;
     signature: string;
-    verificationToken: Uint8Array;
+    verificationToken: Uint8Array<ArrayBuffer>;
 };
 
 export type ThumbnailRequestBlock = {
     index: number;
     size: number;
-    hash: Uint8Array;
+    hash: Uint8Array<ArrayBuffer>;
     type: ThumbnailType;
 };
 
 export type VerificationData = {
-    verificationCode: Uint8Array;
+    verificationCode: Uint8Array<ArrayBuffer>;
     verifierSessionKey: SessionKey;
 };
 

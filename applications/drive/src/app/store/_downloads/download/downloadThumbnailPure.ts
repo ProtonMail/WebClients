@@ -9,9 +9,9 @@ import { markErrorAsCrypto } from '../markErrorAsCrypto';
 import downloadBlock from './downloadBlock';
 
 type GetKeysCallback = () => Promise<DecryptFileKeys>;
-type GetCache = () => Promise<Uint8Array<ArrayBufferLike> | undefined>;
-type SetCache = (data: Uint8Array<ArrayBufferLike>) => void;
-type StreamOrCache = ReadableStream<Uint8Array> | Uint8Array<ArrayBufferLike>;
+type GetCache = () => Promise<Uint8Array<ArrayBuffer> | undefined>;
+type SetCache = (data: Uint8Array<ArrayBuffer>) => void;
+type StreamOrCache = ReadableStream<Uint8Array<ArrayBuffer>> | Uint8Array<ArrayBuffer>;
 
 function assertStream(value: StreamOrCache | undefined): asserts value is StreamOrCache {
     if (value === undefined) {
@@ -48,19 +48,19 @@ async function decryptThumbnail(
     streamOrCache: StreamOrCache,
     getKeys: GetKeysCallback,
     setCache: SetCache
-): Promise<{ data: ReadableStream<Uint8Array>; verificationStatusPromise: Promise<VERIFICATION_STATUS> }> {
+): Promise<{ data: ReadableStream<Uint8Array<ArrayBuffer>>; verificationStatusPromise: Promise<VERIFICATION_STATUS> }> {
     const { sessionKeys, addressPublicKeys } = await getKeys();
 
     const binaryMessage =
         streamOrCache instanceof Uint8Array
             ? streamOrCache
-            : await readToEnd<Uint8Array<ArrayBufferLike>>(streamOrCache);
+            : await readToEnd<Uint8Array<ArrayBuffer>>(streamOrCache);
     if (!(streamOrCache instanceof Uint8Array) && binaryMessage instanceof Uint8Array) {
         setCache(binaryMessage);
     }
 
     const { data, verificationStatus } = await markErrorAsCrypto<{
-        data: Uint8Array;
+        data: Uint8Array<ArrayBuffer>;
         verificationStatus: VERIFICATION_STATUS;
     }>(async () => {
         const { data, verificationStatus } = await CryptoProxy.decryptMessage({
@@ -77,7 +77,7 @@ async function decryptThumbnail(
     });
 
     return {
-        data: toStream(data) as ReadableStream<Uint8Array>,
+        data: toStream(data) as ReadableStream<Uint8Array<ArrayBuffer>>,
         verificationStatusPromise: Promise.resolve(verificationStatus), // TODO lara/michal: refactor this since we no longer use streaming on decryption, hence verified is no longer a promise
     };
 }

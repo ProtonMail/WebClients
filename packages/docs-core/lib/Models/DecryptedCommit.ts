@@ -23,9 +23,9 @@ export class DecryptedCommit {
     return this.numberOfMessages() > GetCommitDULimit()
   }
 
-  async squashedRepresentation(): Promise<Uint8Array> {
+  async squashedRepresentation(): Promise<Uint8Array<ArrayBuffer>> {
     try {
-      const updates: Uint8Array[] = []
+      const updates: Uint8Array<ArrayBuffer>[] = []
       for (const message of this.messages) {
         const content = message.content
         if (isCompressedDocumentUpdate(content)) {
@@ -35,7 +35,7 @@ export class DecryptedCommit {
           updates.push(content)
         }
       }
-      const merged = mergeUpdates(updates)
+      const merged = mergeUpdates(updates) as Uint8Array<ArrayBuffer>
       return merged
     } catch (error) {
       throw new Error(`Failed to merge updates: ${error}`)

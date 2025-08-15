@@ -1,8 +1,8 @@
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { Callback, FileID, Maybe, ShareId } from '@proton/pass/types';
 
-export const consumeStream = async <T>(stream: ReadableStream<T>, signal: AbortSignal): Promise<Uint8Array> => {
-    const chunks: Uint8Array[] = [];
+export const consumeStream = async <T>(stream: ReadableStream<T>, signal: AbortSignal): Promise<Uint8Array<ArrayBuffer>> => {
+    const chunks: Uint8Array<ArrayBuffer>[] = [];
     let totalLength = 0;
 
     const writableStream = new WritableStream({
@@ -35,12 +35,12 @@ export const createDownloadStream = (
     /** Chunk request's response body as a stream */
     getChunkStream: (chunkID: string) => Promise<ReadableStream>,
     signal: AbortSignal
-): ReadableStream<Uint8Array> => {
+): ReadableStream<Uint8Array<ArrayBuffer>> => {
     const { shareId, fileID, chunkIDs, encryptionVersion } = options;
     let chunkIndex = 0;
     let onAbort: Maybe<Callback>;
 
-    return new ReadableStream<Uint8Array>({
+    return new ReadableStream<Uint8Array<ArrayBuffer>>({
         async start(controller) {
             onAbort = () => controller.error(new DOMException('Download aborted', 'AbortError'));
 

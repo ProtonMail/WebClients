@@ -7,12 +7,12 @@ import {
     uint8ArrayToString,
 } from '../helpers/encoding';
 
-export const getEncryptedBlob = async (key: CryptoKey, data: string, additionalData?: Uint8Array) => {
+export const getEncryptedBlob = async (key: CryptoKey, data: string, additionalData?: Uint8Array<ArrayBuffer>) => {
     const result = await encryptDataWith16ByteIV(key, stringToUint8Array(data), additionalData);
     return uint8ArrayToBase64String(result);
 };
 
-export const getDecryptedBlob = async (key: CryptoKey, blob: string, additionalData?: Uint8Array) => {
+export const getDecryptedBlob = async (key: CryptoKey, blob: string, additionalData?: Uint8Array<ArrayBuffer>) => {
     const result = await decryptData(key, base64StringToUint8Array(blob), additionalData, true);
     return uint8ArrayToString(result);
 };

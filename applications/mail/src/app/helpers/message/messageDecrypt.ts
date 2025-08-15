@@ -23,7 +23,7 @@ import { convert } from '../attachment/attachmentConverter';
 
 const { NOT_VERIFIED, NOT_SIGNED } = MAIL_VERIFICATION_STATUS;
 
-const binaryToString = (data: Uint8Array) =>
+const binaryToString = (data: Uint8Array<ArrayBuffer>) =>
     utf8ArrayToString(data)
         .replace(/\r\n/g, '\n')
         // nbsp can be contained in message body and "crash" DOMPurify
@@ -31,10 +31,10 @@ const binaryToString = (data: Uint8Array) =>
 
 export interface DecryptMessageResult {
     decryptedBody: string;
-    decryptedRawContent: Uint8Array;
+    decryptedRawContent: Uint8Array<ArrayBuffer>;
     attachments?: Attachment[];
     decryptedSubject?: string;
-    signature?: Uint8Array;
+    signature?: Uint8Array<ArrayBuffer>;
     errors?: MessageErrors;
     mimetype?: MIME_TYPES;
 }
@@ -146,18 +146,18 @@ export const decryptMessage = async (
  * The `message` is only used to detect mime format
  */
 export const verifyMessage = async (
-    decryptedRawContent: Uint8Array,
-    cryptoSignature: Uint8Array | undefined,
+    decryptedRawContent: Uint8Array<ArrayBuffer>,
+    cryptoSignature: Uint8Array<ArrayBuffer> | undefined,
     message: Message,
     publicKeys: PublicKeyReference[]
 ): Promise<{
     verificationStatus: MAIL_VERIFICATION_STATUS;
-    signature?: Uint8Array;
+    signature?: Uint8Array<ArrayBuffer>;
     verificationErrors?: Error[];
 }> => {
     try {
         let cryptoVerified: VERIFICATION_STATUS | undefined;
-        let mimeSignature: Uint8Array | undefined;
+        let mimeSignature: Uint8Array<ArrayBuffer> | undefined;
         let mimeVerified: VERIFICATION_STATUS | undefined;
 
         const contentType = getParsedHeadersFirstValue(message, 'Content-Type');

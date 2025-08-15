@@ -88,7 +88,7 @@ export const getEncryptedRSVPCommentWithSignature = async ({
     sessionKey,
 }: {
     comment: string;
-    signatures: Uint8Array<ArrayBufferLike>[];
+    signatures: Uint8Array<ArrayBuffer>[];
     sessionKey: SessionKey | undefined;
 }) => {
     const encryptResult = await CryptoProxy.encryptMessage({

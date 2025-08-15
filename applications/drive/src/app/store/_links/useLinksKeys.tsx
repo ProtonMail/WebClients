@@ -21,7 +21,7 @@ type FolderLinkKeys = {
     passphrase?: string;
     passphraseSessionKey?: SessionKey;
     privateKey?: PrivateKeyReference;
-    hashKey?: Uint8Array;
+    hashKey?: Uint8Array<ArrayBuffer>;
 };
 
 /**
@@ -51,7 +51,7 @@ export class LinksKeys {
         return this.keys[shareId]?.[linkId]?.sessionKey;
     }
 
-    getHashKey(shareId: string, linkId: string): Uint8Array | undefined {
+    getHashKey(shareId: string, linkId: string): Uint8Array<ArrayBuffer> | undefined {
         return this.keys[shareId]?.[linkId]?.hashKey;
     }
 
@@ -79,7 +79,7 @@ export class LinksKeys {
         });
     }
 
-    setHashKey(shareId: string, linkId: string, hashKey: Uint8Array) {
+    setHashKey(shareId: string, linkId: string, hashKey: Uint8Array<ArrayBuffer>) {
         this.setKey(shareId, linkId, (keys: LinkKeys) => {
             keys.hashKey = hashKey;
         });

@@ -7,7 +7,7 @@ export const DATABASE_NAME = 'proton-docs'
 /** A persisted version of a document @Commit */
 interface IndexedCommit {
   id: string
-  data: Uint8Array
+  data: Uint8Array<ArrayBuffer>
 }
 
 export interface DatabaseSchema {
