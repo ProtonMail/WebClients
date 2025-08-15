@@ -16,14 +16,14 @@ export const fetchDealPrices = async (
                 return Promise.resolve([]);
             }
 
-            const withoutCouponPromise = paymentsApi.checkWithAutomaticVersion({
+            const withoutCouponPromise = paymentsApi.checkSubscription({
                 Plans: planIDs,
                 Currency: currency,
                 Cycle: cycle,
             });
 
             const withCouponPromise = couponCode
-                ? paymentsApi.checkWithAutomaticVersion({
+                ? paymentsApi.checkSubscription({
                       Plans: planIDs,
                       CouponCode: couponCode,
                       Currency: currency,
@@ -34,7 +34,7 @@ export const fetchDealPrices = async (
             // There are plans without montly price. The frontend shouldn't fetch them.
             const hasMonthlyCycle = hasCycle(plan, CYCLE.MONTHLY);
             const monthlyPromise = hasMonthlyCycle
-                ? paymentsApi.checkWithAutomaticVersion({
+                ? paymentsApi.checkSubscription({
                       Plans: planIDs,
                       Currency: currency,
                       Cycle: CYCLE.MONTHLY,

@@ -98,8 +98,10 @@ const getSubscriptionDataFromPlanToCheck = (
         currency,
         coupon,
         billingAddress: newBillingAddress,
+        ValidateZipCode,
     }: PlanToCheck & {
         billingAddress?: BillingAddress;
+        ValidateZipCode?: boolean;
     },
     billingAddress: BillingAddress
 ): CheckSubscriptionData => ({
@@ -108,6 +110,7 @@ const getSubscriptionDataFromPlanToCheck = (
     Cycle: cycle,
     Codes: coupon ? [coupon] : [],
     BillingAddress: newBillingAddress ?? billingAddress,
+    ValidateZipCode,
 });
 
 /**
@@ -383,16 +386,19 @@ export const PaymentsContextProvider = ({
             return newCheckResult;
         }
 
-        const subscriptionData = getSubscriptionDataFromPlanToCheck(newPlanToCheck, billingAddress);
+        const subscriptionData = getSubscriptionDataFromPlanToCheck(
+            { ...newPlanToCheck, ValidateZipCode: true },
+            billingAddress
+        );
         const newBillingAddress = newPlanToCheck.billingAddress;
         if (newBillingAddress) {
             setBillingAddress((old) => (isDeepEqual(old, newBillingAddress) ? old : newBillingAddress));
         }
 
         try {
-            const newCheckResult = await paymentsApiRef.current.checkWithAutomaticVersion(subscriptionData);
+            const newCheckResult = await paymentsApiRef.current.checkSubscription(subscriptionData);
             setPlanToCheck({ planToCheck: newPlanToCheck, checkResult: newCheckResult, zipCodeValid: true });
-            paymentsApiRef.current.cacheMultiCheck(subscriptionData, undefined, newCheckResult);
+            paymentsApiRef.current.cacheMultiCheck(subscriptionData, newCheckResult);
             return newCheckResult;
         } catch (error) {
             if (error instanceof InvalidZipCodeError) {
@@ -456,11 +462,7 @@ export const PaymentsContextProvider = ({
         });
         setAvailableCurrencies(availableCurrencies);
 
-        const billingAddress: BillingAddress = getBillingAddressFromPaymentStatus({
-            CountryCode: status.CountryCode,
-            State: status.State,
-            ZipCode: status.ZipCode,
-        });
+        const billingAddress: BillingAddress = getBillingAddressFromPaymentStatus(status);
         setBillingAddress(billingAddress);
 
         const paymentsApi = getPaymentsApi(api);

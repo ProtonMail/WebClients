@@ -33,7 +33,7 @@ export const useGetPlanPriceWithCoupon = ({ plan }: Props) => {
         }
 
         const getPrices = async () => {
-            const result = await paymentsApi.checkWithAutomaticVersion({
+            const result = await paymentsApi.checkSubscription({
                 Plans: { [plan]: 1 },
                 Currency: currency,
                 Cycle: CYCLE.YEARLY,

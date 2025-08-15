@@ -33,7 +33,6 @@ import {
     DEFAULT_CURRENCY,
     DisplayablePaymentError,
     type FreePlanDefault,
-    type MultiCheckSubscriptionData,
     PAYMENT_METHOD_TYPES,
     PLANS,
     type PaymentMethodType,
@@ -49,6 +48,7 @@ import {
     SubscriptionMode,
     captureWrongPlanIDs,
     captureWrongPlanName,
+    getBillingAddressFromPaymentStatus,
     getCheckoutModifiers,
     getFreeCheckResult,
     getHas2024OfferCoupon,
@@ -349,11 +349,7 @@ const SubscriptionContainerInner = ({
             coupon: maybeCoupon || subscription.CouponCode || undefined,
             planIDs,
             initialCheckComplete: false,
-            taxBillingAddress: {
-                CountryCode: paymentStatus.CountryCode,
-                State: paymentStatus.State,
-                ZipCode: paymentStatus.ZipCode,
-            },
+            taxBillingAddress: getBillingAddressFromPaymentStatus(paymentStatus),
             paymentForbidden: false,
             zipCodeValid: true,
         };
@@ -634,7 +630,7 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        paymentsApi.cacheMultiCheck(checkPayload, undefined, checkResult);
+        paymentsApi.cacheMultiCheck(checkPayload, checkResult);
 
         const additionalCycles = computeAllowedCycles(newModel.planIDs)
             // skip the cycle that was just checked
@@ -648,7 +644,7 @@ const SubscriptionContainerInner = ({
                 ({
                     ...checkPayload,
                     Cycle,
-                }) as MultiCheckSubscriptionData
+                }) as CheckSubscriptionData
         );
         const additionalChecks = await paymentsApi.multiCheck(additionalPayloads, {
             signal,
@@ -812,9 +808,10 @@ const SubscriptionContainerInner = ({
                             ? ProrationMode.Exact
                             : undefined,
                     IsTrial: shouldPassIsTrial(newModel, false),
+                    ValidateZipCode: true,
                 };
 
-                const checkResult = await paymentsApi.checkWithAutomaticVersion(checkPayload, {
+                const checkResult = await paymentsApi.checkSubscription(checkPayload, {
                     signal: abortControllerRef.current.signal,
                     silence: true,
                 });
