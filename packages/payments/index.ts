@@ -333,7 +333,6 @@ export {
     getCanAccessFamilyPlans,
     getCanSubscriptionAccessDuoPlan,
     getCanSubscriptionAccessPassFamilyPlan,
-    getHas2023OfferCoupon,
     getHas2024OfferCoupon,
     getHasConsumerVpnPlan,
     getHasDriveB2BPlan,
