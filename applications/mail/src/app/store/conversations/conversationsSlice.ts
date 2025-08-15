@@ -4,6 +4,7 @@ import { globalReset } from '../actions';
 import { eventUpdates, load as loadElements } from '../elements/elementsActions';
 import {
     labelConversations,
+    labelMessages,
     markConversationsAsRead,
     markConversationsAsUnread,
     markMessagesAsRead,
@@ -37,6 +38,7 @@ import {
     globalReset as globalResetReducer,
     initialize as initializeReducer,
     labelConversationsPending,
+    labelMessagesPending,
     loadFulfilled,
     loadRejected,
     markConversationsAsReadPending,
@@ -89,6 +91,7 @@ const conversationSlice = createSlice({
         builder.addCase(markConversationsAsUnread.pending, markConversationsAsUnreadPending);
         builder.addCase(labelConversations.pending, labelConversationsPending);
         builder.addCase(unlabelConversations.pending, unlabelConversationsPending);
+        builder.addCase(labelMessages.pending, labelMessagesPending);
     },
 });
 
