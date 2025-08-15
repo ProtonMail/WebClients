@@ -15,9 +15,9 @@ function getPathString(path: string[]): string {
  * are written into the archive stream.
  */
 export default class ArchiveGenerator {
-    stream: ReadableStream<Uint8Array>;
+    stream: ReadableStream<Uint8Array<ArrayBuffer>>;
 
-    private writer: WritableStream<Uint8Array>;
+    private writer: WritableStream<Uint8Array<ArrayBuffer>>;
 
     private canceled: boolean;
 

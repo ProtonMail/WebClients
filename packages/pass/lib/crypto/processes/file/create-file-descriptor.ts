@@ -5,9 +5,9 @@ import { PassEncryptionTag } from '@proton/pass/types';
 
 export type FileDescriptorProcessResult = {
     /** Raw file key contents */
-    fileKey: Uint8Array;
+    fileKey: Uint8Array<ArrayBuffer>;
     /** Decrypted file metadata  */
-    metadata: Uint8Array;
+    metadata: Uint8Array<ArrayBuffer>;
 };
 
 export const getFileMetadataEncryptionTag = (encryptionVersion: number) => {
@@ -26,9 +26,9 @@ export const getFileMetadataEncryptionTag = (encryptionVersion: number) => {
  * registration. If this happens during an update, the metadata
  * won't be decryptable as the file key won't be registered */
 export const createFileDescriptor = async (
-    encodedMetadata: Uint8Array,
+    encodedMetadata: Uint8Array<ArrayBuffer>,
     encryptionVersion: number,
-    fileKey?: Uint8Array
+    fileKey?: Uint8Array<ArrayBuffer>
 ): Promise<FileDescriptorProcessResult> => {
     if (encodedMetadata.length === 0) throw new PassCryptoFileError('File content cannot be empty');
 

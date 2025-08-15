@@ -153,7 +153,7 @@ describe('WebsocketService', () => {
   describe('handleDocumentUpdateBufferFlush', () => {
     const broadcastUpdate = async (
       _: boolean,
-      content: Uint8Array,
+      content: Uint8Array<ArrayBuffer>,
       metadata: EncryptionMetadata | AnonymousEncryptionMetadata,
     ) => {
       await service.createAndBroadcastDocumentUpdateMessage(document, content, metadata)

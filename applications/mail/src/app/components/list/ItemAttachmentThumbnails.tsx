@@ -14,7 +14,7 @@ import { useAttachmentThumbnailDownload } from 'proton-mail/hooks/attachments/us
 
 interface Preview {
     attachment: AttachmentsMetadata;
-    contents?: Uint8Array[];
+    contents?: Uint8Array<ArrayBuffer>[];
 }
 
 interface Props {

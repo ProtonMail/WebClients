@@ -19,15 +19,15 @@ const { ENCRYPTED_AND_SIGNED, SIGNED } = CALENDAR_CARD_TYPE;
 interface FormatDataArguments {
     sharedSignedPart?: SignPartResult;
     sharedEncryptedPart?: EncryptPartResult;
-    sharedSessionKey?: Uint8Array;
+    sharedSessionKey?: Uint8Array<ArrayBuffer>;
     cancelledOccurrenceSignedPart?: SignPartResult;
     calendarSignedPart?: SignPartResult;
     calendarEncryptedPart?: EncryptPartResult;
-    calendarSessionKey?: Uint8Array;
+    calendarSessionKey?: Uint8Array<ArrayBuffer>;
     attendeesEncryptedPart?: EncryptPartResult;
     attendeesClearPart?: AttendeeClearPartResult[];
     removedAttendeesEmails?: string[];
-    attendeesEncryptedSessionKeysMap?: SimpleMap<Uint8Array>;
+    attendeesEncryptedSessionKeysMap?: SimpleMap<Uint8Array<ArrayBuffer>>;
     notificationsPart?: CalendarNotificationSettings[];
     colorPart?: string;
     eventCommentsMap?: { [token: string]: AttendeeComment };

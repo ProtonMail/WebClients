@@ -67,12 +67,12 @@ interface FilePreviewProps {
         onVideoPlaybackError?: (error?: unknown) => void;
     };
 
-    contents?: Uint8Array[];
+    contents?: Uint8Array<ArrayBuffer>[];
     sharedStatus?: SharedStatus;
 
     onClose?: () => void;
     onDownload?: () => void;
-    onSave?: (content: Uint8Array[]) => Promise<void>;
+    onSave?: (content: Uint8Array<ArrayBuffer>[]) => Promise<void>;
     onDetails?: () => void;
     onShare?: () => void;
     onRestore?: () => void; // revision's specific
@@ -128,10 +128,10 @@ export const FilePreviewContent = ({
         onVideoPlaybackError?: (error?: unknown) => void;
     };
 
-    contents?: Uint8Array[];
+    contents?: Uint8Array<ArrayBuffer>[];
 
     onDownload?: () => void;
-    onNewContents?: (content: Uint8Array[]) => void;
+    onNewContents?: (content: Uint8Array<ArrayBuffer>[]) => void;
     onOpenInDocs?: () => void;
 
     signatureConfirmation?: ReactNode;
@@ -311,7 +311,7 @@ const FilePreview = (
 
     const [isSaving, withSaving] = useLoading(false);
     const [isDirty, setIsDirty] = useState<boolean>(false);
-    const [newContent, setNewContent] = useState<Uint8Array[]>([]);
+    const [newContent, setNewContent] = useState<Uint8Array<ArrayBuffer>[]>([]);
 
     // Block browser from leaving and do not refresh page with unsaved document.
     useBeforeUnload(isDirty);
@@ -410,7 +410,7 @@ const FilePreview = (
                 onDownload={onDownload}
                 onNewContents={
                     onSave
-                        ? (content: Uint8Array[]) => {
+                        ? (content: Uint8Array<ArrayBuffer>[]) => {
                               setIsDirty(true);
                               setNewContent(content);
                           }

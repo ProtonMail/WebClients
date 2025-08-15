@@ -21,8 +21,8 @@ import type { Media, ThumbnailInfo } from './media';
 
 type GenerateKeysMessage = {
     command: 'generate_keys';
-    addressPrivateKey: Uint8Array | undefined;
-    parentPrivateKey: Uint8Array;
+    addressPrivateKey: Uint8Array<ArrayBuffer> | undefined;
+    parentPrivateKey: Uint8Array<ArrayBuffer>;
     serverTime: Date;
 };
 
@@ -33,11 +33,11 @@ type StartMessage = {
     isForPhotos: boolean;
     thumbnails?: ThumbnailInfo[];
     media?: Media;
-    addressPrivateKey: Uint8Array | undefined;
+    addressPrivateKey: Uint8Array<ArrayBuffer> | undefined;
     addressEmail: string;
-    privateKey: Uint8Array;
+    privateKey: Uint8Array<ArrayBuffer>;
     sessionKey: SessionKey;
-    parentHashKey: Uint8Array;
+    parentHashKey: Uint8Array<ArrayBuffer>;
     verificationData: VerificationData;
 };
 
@@ -102,7 +102,7 @@ interface WorkerHandlers {
         addressEmail: string,
         privateKey: PrivateKeyReference,
         sessionKey: SessionKey,
-        parentHashKey: Uint8Array,
+        parentHashKey: Uint8Array<ArrayBuffer>,
         verificationData: VerificationData
     ) => void;
     createdBlocks: (fileLinks: Link[], thumbnailLinks?: Link[]) => void;
@@ -117,7 +117,7 @@ type KeysGeneratedMessage = {
     nodePassphraseSignature: string;
     contentKeyPacket: string;
     contentKeyPacketSignature: string;
-    privateKey: Uint8Array;
+    privateKey: Uint8Array<ArrayBuffer>;
     sessionKey: SessionKey;
 };
 
@@ -645,7 +645,7 @@ export class UploadWorkerController {
         addressEmail: string,
         privateKey: PrivateKeyReference,
         sessionKey: SessionKey,
-        parentHashKey: Uint8Array,
+        parentHashKey: Uint8Array<ArrayBuffer>,
         verificationData: VerificationData
     ) {
         this.worker.postMessage({

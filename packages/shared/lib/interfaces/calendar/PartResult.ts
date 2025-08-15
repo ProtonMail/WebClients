@@ -1,5 +1,5 @@
 export interface EncryptPartResult {
-    dataPacket: Uint8Array;
+    dataPacket: Uint8Array<ArrayBuffer>;
     signature: string;
 }
 

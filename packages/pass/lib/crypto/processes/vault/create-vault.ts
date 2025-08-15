@@ -7,7 +7,7 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 type CreateVaultProcessParams = {
-    content: Uint8Array;
+    content: Uint8Array<ArrayBuffer>;
     userKey: DecryptedKey;
     addressId: string;
 };

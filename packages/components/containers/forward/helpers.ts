@@ -133,9 +133,9 @@ const encryptAndSignPassphrase = async (
 
 interface ProxyInstance {
     keyVersion: number;
-    forwarderKeyFingerprint: Uint8Array;
-    forwardeeKeyFingerprint: Uint8Array;
-    proxyParameter: Uint8Array;
+    forwarderKeyFingerprint: Uint8Array<ArrayBuffer>;
+    forwardeeKeyFingerprint: Uint8Array<ArrayBuffer>;
+    proxyParameter: Uint8Array<ArrayBuffer>;
 }
 
 const mapProxyInstance = (proxyInstance: ProxyInstance) => ({

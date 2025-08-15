@@ -3,7 +3,7 @@ import { LRUMap, type VideoStream, getBlockIndices, getChunkFromBlocksData, pars
 declare const self: ServiceWorkerGlobalScope;
 
 interface DownloadConfig {
-    stream: ReadableStream<Uint8Array>;
+    stream: ReadableStream<Uint8Array<ArrayBuffer>>;
     filename: string;
     mimeType: string;
     size?: number;
@@ -21,7 +21,7 @@ type GetBlockDataRequest = {
     indices: number[];
 };
 
-type BlockDataResponse = Uint8Array[];
+type BlockDataResponse = Uint8Array<ArrayBuffer>[];
 
 const SECURITY_HEADERS = {
     'Content-Security-Policy': "default-src 'none'; frame-ancestors 'self'",
@@ -44,7 +44,7 @@ const MAXIMUM_CONCURRENT_STREAMS = 3;
  * @param port MessageChannel port to listen on
  */
 function createDownloadStream(port: MessagePort) {
-    return new ReadableStream<Uint8Array>({
+    return new ReadableStream<Uint8Array<ArrayBuffer>>({
         start(controller) {
             port.onmessage = ({ data }) => {
                 switch (data?.action) {
@@ -181,7 +181,7 @@ class DownloadServiceWorker {
                         });
 
                         // Get blocks from cache and track which indices need to be fetched
-                        const cachedBlocks = new Map<number, Uint8Array>();
+                        const cachedBlocks = new Map<number, Uint8Array<ArrayBuffer>>();
                         const indicesToFetch = [];
 
                         for (const index of indices) {
@@ -194,7 +194,7 @@ class DownloadServiceWorker {
                         }
 
                         // Only fetch blocks that aren't in cache
-                        let fetchedBlocks = new Map<number, Uint8Array>();
+                        let fetchedBlocks = new Map<number, Uint8Array<ArrayBuffer>>();
                         if (indicesToFetch.length > 0) {
                             client.postMessage(
                                 { type: 'get_block_data', indices: indicesToFetch } as GetBlockDataRequest,
@@ -209,7 +209,7 @@ class DownloadServiceWorker {
                         }
 
                         // Merge cached and fetched blocks in original indices order
-                        const finalBlocks: Uint8Array[] = [];
+                        const finalBlocks: Uint8Array<ArrayBuffer>[] = [];
                         for (const index of indices) {
                             const cache = cachedBlocks.get(index);
                             if (cache) {
@@ -291,7 +291,7 @@ class DownloadServiceWorker {
                 blockSizes: msg.blockSizes,
                 totalSize: msg.blockSizes.reduce((sum, s) => sum + s, 0),
                 mimeType: msg.mimeType,
-                cache: new LRUMap<number, Uint8Array>(MAXIMUM_BLOCKS_CACHE),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(MAXIMUM_BLOCKS_CACHE),
             });
             return;
         }

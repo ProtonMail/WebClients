@@ -89,10 +89,10 @@ export class NativeVersionHistory {
     return formattedBatchGroups
   }
 
-  public getMergedUpdateForBatchIndex(index: number): Uint8Array {
+  public getMergedUpdateForBatchIndex(index: number): Uint8Array<ArrayBuffer> {
     const flattenedBatches = this.versionHistoryBatches.slice(0, index + 1).flat()
     const updates = flattenedBatches.map((du) => du.content)
     const merged = mergeUpdates(updates)
-    return merged
+    return merged as Uint8Array<ArrayBuffer>
   }
 }

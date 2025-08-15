@@ -6,7 +6,7 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
-        "lint": "true",
+        "lint": "eslint . --ext ts --quiet --cache",
         "pretty:fix": "prettier --write  .",
         "test": "jest --logHeapUsage --forceExit",
         "test:ci": "jest --coverage --runInBand --ci --forceExit",
@@ -34,6 +34,6 @@
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "ts-jest": "^29.4.1",
-        "typescript": "^5.8.3"
+        "typescript": "^5.9.2"
     }
 }

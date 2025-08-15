@@ -16,7 +16,7 @@ import { cleanUsername } from './utils/username';
 /**
  * Expand a hash
  */
-export const expandHash = async (input: Uint8Array) => {
+export const expandHash = async (input: Uint8Array<ArrayBuffer>) => {
     const promises = [];
     const arr = mergeUint8Arrays([input, new Uint8Array([0])]);
     for (let i = 1; i <= 4; i++) {
@@ -29,7 +29,7 @@ export const expandHash = async (input: Uint8Array) => {
 /**
  * Format a hash
  */
-const formatHash = async (password: string, salt: string, modulus: Uint8Array) => {
+const formatHash = async (password: string, salt: string, modulus: Uint8Array<ArrayBuffer>) => {
     const unexpandedHash = await bcryptHash(password, BCRYPT_PREFIX + salt);
     return expandHash(mergeUint8Arrays([binaryStringToArray(unexpandedHash), modulus]));
 };
@@ -37,7 +37,7 @@ const formatHash = async (password: string, salt: string, modulus: Uint8Array) =
 /**
  * Hash password in version 3.
  */
-const hashPassword3 = (password: string, salt: string, modulus: Uint8Array) => {
+const hashPassword3 = (password: string, salt: string, modulus: Uint8Array<ArrayBuffer>) => {
     const saltBinary = binaryStringToArray(`${salt}proton`);
     return formatHash(password, bcryptEncodeBase64(saltBinary, 16), modulus);
 };
@@ -45,7 +45,7 @@ const hashPassword3 = (password: string, salt: string, modulus: Uint8Array) => {
 /**
  * Hash password in version 1.
  */
-const hashPassword1 = async (password: string, username: string, modulus: Uint8Array) => {
+const hashPassword1 = async (password: string, username: string, modulus: Uint8Array<ArrayBuffer>) => {
     const value = binaryStringToArray(encodeUtf8(username.toLowerCase()));
     const salt = arrayToHexString(await CryptoProxy.computeHash({ algorithm: 'unsafeMD5', data: value }));
     return formatHash(password, salt, modulus);
@@ -54,7 +54,7 @@ const hashPassword1 = async (password: string, username: string, modulus: Uint8A
 /**
  * Hash password in version 0.
  */
-const hashPassword0 = async (password: string, username: string, modulus: Uint8Array) => {
+const hashPassword0 = async (password: string, username: string, modulus: Uint8Array<ArrayBuffer>) => {
     const value = await CryptoProxy.computeHash({
         algorithm: 'SHA512',
         data: binaryStringToArray(username.toLowerCase() + encodeUtf8(password)),
@@ -76,7 +76,7 @@ export const hashPassword = ({
     password: string;
     salt?: string;
     username?: string;
-    modulus: Uint8Array;
+    modulus: Uint8Array<ArrayBuffer>;
     version: number;
 }) => {
     if (version === 4 || version === 3) {

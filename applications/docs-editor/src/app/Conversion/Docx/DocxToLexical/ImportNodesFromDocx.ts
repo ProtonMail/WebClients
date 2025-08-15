@@ -9,7 +9,7 @@ import { CreateLexicalNodeFromDocxInfo } from './CreateLexicalNodeFromDocxInfo'
 
 export async function $importNodesFromDocx(
   editor: LexicalEditor,
-  docx: Blob | ArrayBuffer | Uint8Array,
+  docx: Blob | ArrayBuffer | Uint8Array<ArrayBuffer>,
 ): Promise<TranslatedResult<void>> {
   try {
     const parsedDocx = await parseAsync(docx, {

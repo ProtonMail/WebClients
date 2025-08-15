@@ -85,7 +85,7 @@ export interface ExtraCertificateFeatures {
 const isExtraFeatureKey = getKeyOfCheck<ExtraCertificateFeatures>(['peerIp', 'peerName', 'peerPublicKey', 'platform']);
 
 // From https://github.com/paulmillr/noble-ed25519/blob/d87d6e953304c9d4dbfb275e8e67a0c975d3262b/index.js
-const bytesToNumberLE = (uint8a: Uint8Array) => {
+const bytesToNumberLE = (uint8a: Uint8Array<ArrayBuffer>) => {
     let value = BigInt(0);
 
     for (let i = 0; i < uint8a.length; i++) {
@@ -116,10 +116,10 @@ const randomPrivateKey = () => {
     throw new Error('Valid private key was not found in 1024 iterations. PRNG is broken');
 };
 
-const getPublicKey = async (privateKey: Uint8Array): Promise<Uint8Array> => {
+const getPublicKey = async (privateKey: Uint8Array<ArrayBuffer>): Promise<Uint8Array<ArrayBuffer>> => {
     const key = await Point.fromPrivateKey(privateKey);
 
-    return key.toRawBytes();
+    return key.toRawBytes() as Uint8Array<ArrayBuffer>;
 };
 
 const getFeatureLink = (feature: FeatureOption<any>) =>

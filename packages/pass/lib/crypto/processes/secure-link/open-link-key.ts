@@ -7,5 +7,5 @@ type OpenLinkKeyParams = {
     key: CryptoKey;
 };
 
-export const openLinkKey = async ({ encryptedLinkKey, key }: OpenLinkKeyParams): Promise<Uint8Array> =>
+export const openLinkKey = async ({ encryptedLinkKey, key }: OpenLinkKeyParams): Promise<Uint8Array<ArrayBuffer>> =>
     decryptData(key, base64StringToUint8Array(encryptedLinkKey), PassEncryptionTag.LinkKey);

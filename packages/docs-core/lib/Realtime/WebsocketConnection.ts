@@ -438,7 +438,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     return this.state.isConnected && this.socket?.readyState === WebSocket.OPEN
   }
 
-  async broadcastMessage(data: Uint8Array): Promise<void> {
+  async broadcastMessage(data: Uint8Array<ArrayBuffer>): Promise<void> {
     if (!this.didReceiveReadyMessageFromRTS) {
       this.logger.error('Cannot send message, RTS is not ready to accept messages')
       return

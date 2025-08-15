@@ -41,7 +41,7 @@ export const useNode = () => {
         linkId,
         volumeId,
     }: LegacyNodeMeta): Promise<{
-        contents: Uint8Array;
+        contents: Uint8Array<ArrayBuffer>;
         node: DecryptedNode;
     }> => {
         const link = await getLink(abortSignal, shareId, linkId);

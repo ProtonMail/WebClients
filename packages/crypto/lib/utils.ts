@@ -39,7 +39,7 @@ export const binaryStringToArray = (str: string) => {
  * @param bytes data to encode
  * @return string-encoded bytes
  */
-export const arrayToBinaryString = (bytes: Uint8Array) => {
+export const arrayToBinaryString = (bytes: Uint8Array<ArrayBuffer>) => {
     const result = [];
     const bs = 1 << 14;
     const j = bytes.length;
@@ -70,7 +70,7 @@ export const hexStringToArray = (hex: string) => {
  * @param bytes Array of 8-bit integers to convert
  * @returns Hexadecimal representation of the array
  */
-export const arrayToHexString = (bytes: Uint8Array) => {
+export const arrayToHexString = (bytes: Uint8Array<ArrayBuffer>) => {
     const hexAlphabet = '0123456789abcdef';
     let s = '';
     bytes.forEach((v) => {
@@ -84,7 +84,7 @@ export const arrayToHexString = (bytes: Uint8Array) => {
  * @param str - The string to convert
  * @returns A valid squence of utf8 bytes.
  */
-export function stringToUtf8Array(str: string): Uint8Array {
+export function stringToUtf8Array(str: string): Uint8Array<ArrayBuffer> {
     const encoder = new TextEncoder();
 
     return encoder.encode(str);
@@ -95,7 +95,7 @@ export function stringToUtf8Array(str: string): Uint8Array {
  * @param utf8 - A valid squence of utf8 bytes
  * @returns A native javascript string.
  */
-export function utf8ArrayToString(utf8: Uint8Array): string {
+export function utf8ArrayToString(utf8: Uint8Array<ArrayBuffer>): string {
     const decoder = new TextDecoder();
 
     return decoder.decode(utf8);

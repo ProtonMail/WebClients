@@ -16,7 +16,7 @@ export const portTransferWriter: FilePortWriter = (fileRef, stream, signal, port
     };
 
     const writer = new WritableStream({
-        write: (chunk: Uint8Array) => {
+        write: (chunk: Uint8Array<ArrayBuffer>) => {
             port.postMessage({
                 type: WorkerMessageType.FS_WRITE,
                 payload: {

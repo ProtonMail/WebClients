@@ -189,7 +189,7 @@ export default class UploadWorkerBuffer {
         this.uploadingFinished = true;
     }
 
-    get hash(): Uint8Array {
+    get hash(): Uint8Array<ArrayBuffer> {
         this.thumbnailBlockHashes.sort((a, b) => a.index - b.index);
         this.blockHashes.sort((a, b) => a.index - b.index);
         const hashes = [

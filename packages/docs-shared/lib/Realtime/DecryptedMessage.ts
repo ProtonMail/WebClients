@@ -1,13 +1,13 @@
 export class DecryptedMessage {
-  public content: Uint8Array
-  public signature: Uint8Array
+  public content: Uint8Array<ArrayBuffer>
+  public signature: Uint8Array<ArrayBuffer>
   public authorAddress: string
   public aad: string
   public timestamp: number
 
   constructor(dto: {
-    content: Uint8Array
-    signature: Uint8Array
+    content: Uint8Array<ArrayBuffer>
+    signature: Uint8Array<ArrayBuffer>
     authorAddress: string
     aad: string
     timestamp: number

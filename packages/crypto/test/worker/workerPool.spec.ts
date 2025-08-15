@@ -70,7 +70,7 @@ describe('Worker Pool', () => {
 
     it('computeHashStream - the hash instance should not be disrupted with multiple workers', async () => {
         const data = new Uint8Array(100).fill(1);
-        const dataStream = new ReadableStream<Uint8Array>({
+        const dataStream = new ReadableStream<Uint8Array<ArrayBuffer>>({
             pull: (controller) => {
                 for (let i = 0; i < 10; i++) {
                     controller.enqueue(data.subarray(i, i + 10));

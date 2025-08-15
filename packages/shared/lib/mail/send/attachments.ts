@@ -9,7 +9,7 @@ import type { Packets } from '../../interfaces/mail/crypto';
 import { MESSAGE_FLAGS } from '../constants';
 
 export const encryptAttachment = async (
-    data: Uint8Array | string,
+    data: Uint8Array<ArrayBuffer> | string,
     { name, type, size }: File = {} as File,
     inline: boolean,
     encryptionKey: PublicKeyReference,

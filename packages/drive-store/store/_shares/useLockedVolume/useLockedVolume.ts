@@ -244,7 +244,7 @@ export function useLockedVolumeInner({
 
     const restoreVolume = async (
         privateKey: PrivateKeyReference,
-        hashKey: Uint8Array,
+        hashKey: Uint8Array<ArrayBuffer>,
         addressKey: PrivateKeyReference,
         address: Address,
         lockedVolumeId: string,

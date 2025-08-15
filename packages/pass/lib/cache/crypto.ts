@@ -34,7 +34,7 @@ const HKDF_INFO = stringToUint8Array('pass-extension-cache-key'); // context ide
  */
 export const getCacheEncryptionKey = async (
     keyPassword: string,
-    salt: Uint8Array,
+    salt: Uint8Array<ArrayBuffer>,
     sessionLockToken: Maybe<string>
 ): Promise<CryptoKey> => {
     // We run a key derivation step (HKDF) to achieve domain separation (preventing the encrypted data to be
@@ -63,19 +63,19 @@ export const OFFLINE_ARGON2_PARAMS = ARGON2_PARAMS.RECOMMENDED;
  * one-password mode - for future-proofing against SSO support and two-password mode. */
 export const getOfflineKeyDerivation = async (
     loginPassword: string,
-    salt: Uint8Array,
+    salt: Uint8Array<ArrayBuffer>,
     params: Argon2Params = OFFLINE_ARGON2_PARAMS
-): Promise<Uint8Array> => CryptoProxy.computeArgon2({ params, password: loginPassword, salt });
+): Promise<Uint8Array<ArrayBuffer>> => CryptoProxy.computeArgon2({ params, password: loginPassword, salt });
 
 /** Encrypts the raw cache key with the offline key */
-export const encryptOfflineCacheKey = async (cacheKey: CryptoKey, offlineKD: Uint8Array): Promise<Uint8Array> => {
+export const encryptOfflineCacheKey = async (cacheKey: CryptoKey, offlineKD: Uint8Array<ArrayBuffer>): Promise<Uint8Array<ArrayBuffer>> => {
     const rawCacheKey = await crypto.subtle.exportKey('raw', cacheKey);
     const offlineKey = await importSymmetricKey(offlineKD);
 
     return encryptData(offlineKey, new Uint8Array(rawCacheKey), PassEncryptionTag.Offline);
 };
 
-export const getOfflineVerifier = async (offlineKD: Uint8Array): Promise<string> => {
+export const getOfflineVerifier = async (offlineKD: Uint8Array<ArrayBuffer>): Promise<string> => {
     const offlineKey = await importSymmetricKey(offlineKD);
     const verifier = generateKey();
     const offlineVerifier = await encryptData(offlineKey, verifier, PassEncryptionTag.Offline);

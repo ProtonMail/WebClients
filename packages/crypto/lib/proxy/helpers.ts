@@ -14,12 +14,12 @@ export async function getMatchingSigningKey(options: {
     preferV6Key?: boolean;
 }): Promise<KeyReference | undefined>;
 export async function getMatchingSigningKey(options: {
-    binarySignature: Uint8Array;
+    binarySignature: Uint8Array<ArrayBuffer>;
     keys: KeyReference[];
     preferV6Key?: boolean;
 }): Promise<KeyReference | undefined>;
 export async function getMatchingSigningKey(options: {
-    binarySignature?: Uint8Array;
+    binarySignature?: Uint8Array<ArrayBuffer>;
     armoredSignature?: string;
     keys: KeyReference[];
     preferV6Key?: boolean;

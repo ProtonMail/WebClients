@@ -55,7 +55,7 @@ export class DecryptComment implements UseCaseInterface<Comment> {
         dto.CommentID,
         new ServerTime(dto.CreateTime),
         new ServerTime(dto.ModifyTime),
-        utf8ArrayToString(decrypted.getValue().content),
+        utf8ArrayToString(decrypted.getValue().content as Uint8Array<ArrayBuffer>),
         dto.ParentCommentID,
         emailToUse,
         [],
@@ -112,8 +112,8 @@ export class DecryptComment implements UseCaseInterface<Comment> {
     }
 
     const verifyResult = await this.encryption.verifyData(
-      content.content,
-      content.signature,
+      content.content as Uint8Array<ArrayBuffer>,
+      content.signature as Uint8Array<ArrayBuffer>,
       aad,
       verificationKey.getValue(),
     )

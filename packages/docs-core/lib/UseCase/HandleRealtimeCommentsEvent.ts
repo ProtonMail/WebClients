@@ -21,7 +21,7 @@ import { Result } from '@proton/docs-shared'
  * Updates the local comment state after receiving a message from the RTS.
  */
 export class HandleRealtimeCommentsEvent implements SyncUseCaseInterface<void> {
-  execute(localCommentsState: LocalCommentsState, liveComments: LiveComments, content: Uint8Array): Result<void> {
+  execute(localCommentsState: LocalCommentsState, liveComments: LiveComments, content: Uint8Array<ArrayBuffer>): Result<void> {
     try {
       const jsonString = utf8ArrayToString(content)
       const { type, data } = JSON.parse(jsonString) as { type: CommentsMessageType; data: AnyCommentMessageData }

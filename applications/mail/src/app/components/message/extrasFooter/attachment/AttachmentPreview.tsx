@@ -15,7 +15,7 @@ export interface AttachmentPreviewControls {
 
 interface Preview {
     attachment: Attachment;
-    contents?: Uint8Array[];
+    contents?: Uint8Array<ArrayBuffer>[];
 }
 
 interface Props {

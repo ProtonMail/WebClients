@@ -4,7 +4,7 @@ export class ProcessedIncomingRealtimeEventMessage {
   constructor(
     public readonly props:
       | {
-          content: Uint8Array
+          content: Uint8Array<ArrayBuffer>
           type:
             | EventTypeEnum.ServerIsInformingClientThatTheDocumentCommitHasBeenUpdated
             | EventTypeEnum.ClientHasSentACommentMessage

@@ -15,7 +15,7 @@ export default async function downloadBlock(
     abortController: AbortController,
     url: string,
     token: string
-): Promise<ReadableStream<Uint8Array>> {
+): Promise<ReadableStream<Uint8Array<ArrayBuffer>>> {
     const doFetch = async (attempt = 0): Promise<Response> => {
         let isTimeout = false;
         const timeoutController = new AbortController();

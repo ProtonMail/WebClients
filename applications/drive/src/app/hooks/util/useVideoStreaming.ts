@@ -13,7 +13,7 @@ type UseVideoStreamingProps = {
     videoData?: {
         blockSizes: number[];
     };
-    downloadSlice?: (abortSignal: AbortSignal, indices: number[]) => Promise<Uint8Array[] | undefined>;
+    downloadSlice?: (abortSignal: AbortSignal, indices: number[]) => Promise<Uint8Array<ArrayBuffer>[] | undefined>;
 };
 const FIRST_BLOCK_TIMEOUT = 30000; // 30 seconds for first block to be downloaded
 const SW_READY_TIMEOUT = 15 * 1000; // 15 seconds for SW to register

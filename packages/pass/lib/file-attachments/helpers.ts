@@ -10,7 +10,7 @@ export const isFileForRevision = (revision: number) => (file: FileDescriptor) =>
     revision >= file.revisionAdded && (!file.revisionRemoved || revision < file.revisionRemoved);
 
 const intoFileDescriptor =
-    (decryptMetadata: (file: ItemFileOutput) => Promise<Uint8Array>) =>
+    (decryptMetadata: (file: ItemFileOutput) => Promise<Uint8Array<ArrayBuffer>>) =>
     async (file: ItemFileOutput): Promise<Maybe<FileDescriptor>> => {
         try {
             const descriptor = decodeFileMetadata(await decryptMetadata(file));
@@ -31,7 +31,7 @@ const intoFileDescriptor =
     };
 
 const openFileDescriptors =
-    (decryptMetadata: (file: ItemFileOutput) => Promise<Uint8Array>) =>
+    (decryptMetadata: (file: ItemFileOutput) => Promise<Uint8Array<ArrayBuffer>>) =>
     async (files: ItemFileOutput[]): Promise<FileDescriptor[]> =>
         (await Promise.all(files.map(intoFileDescriptor(decryptMetadata)))).filter(truthy);
 

@@ -5,7 +5,7 @@ import '../test/setup';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/setup';
 import { AUTH_RESPONSE, FAKE_RANDOM, SERVER_MODULUS, SERVER_MODULUS_FAKE } from '../test/srp.data';
 
-const mockRandomValues = (buf: Uint8Array) => new Uint8Array(FAKE_RANDOM.slice(0, buf.length));
+const mockRandomValues = (buf: Uint8Array<ArrayBuffer>) => new Uint8Array(FAKE_RANDOM.slice(0, buf.length));
 
 describe('srp', () => {
     beforeAll(async () => {

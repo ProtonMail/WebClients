@@ -35,7 +35,7 @@ const verifyVRFProof = async (proof: Proof, email: string) => {
     }
 };
 
-const getMerkleTreePath = (vrfHash: Uint8Array, revision: number): Uint8Array => {
+const getMerkleTreePath = (vrfHash: Uint8Array<ArrayBuffer>, revision: number): Uint8Array<ArrayBuffer> => {
     return mergeUint8Arrays([
         vrfHash.subarray(0, 28),
         new Uint8Array([revision >>> 24, revision >>> 18, revision >>> 8, revision]),
@@ -51,11 +51,11 @@ const getMerkleTreePath = (vrfHash: Uint8Array, revision: number): Uint8Array =>
 const verifyNeighbors = async (
     Neighbors: (string | null)[],
     TreeHash: string,
-    vrfHash: Uint8Array,
+    vrfHash: Uint8Array<ArrayBuffer>,
     email: string,
     revision: number,
     proofType: KTPROOF_TYPE,
-    leafValue: Uint8Array = new Uint8Array(KT_LEN).fill(0),
+    leafValue: Uint8Array<ArrayBuffer> = new Uint8Array(KT_LEN).fill(0),
     incompleteHashing: boolean = true
 ) => {
     if (Neighbors.length !== KT_LEN * 8) {
@@ -145,7 +145,7 @@ export const verifyProofOfAbsenceForAllRevision = async (proof: Proof, email: st
  * Compute the leaf value as the SHA256 of the concatenation of the content,
  * either an obsolescence token or a SKL's data, and the revision
  */
-const computeLeafValue = async (content: Uint8Array, minEpochID: number): Promise<Uint8Array> => {
+const computeLeafValue = async (content: Uint8Array<ArrayBuffer>, minEpochID: number): Promise<Uint8Array<ArrayBuffer>> => {
     return CryptoProxy.computeHash({
         algorithm: 'SHA256',
         data: mergeUint8Arrays([

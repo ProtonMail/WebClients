@@ -28,11 +28,11 @@ export class EncryptionService<C extends EncryptionContext> {
   }
 
   public async signAndEncryptData(
-    data: Uint8Array,
+    data: Uint8Array<ArrayBuffer>,
     associatedData: string,
     sessionKey: SessionKey,
     signingKey: PrivateKeyReference,
-  ): Promise<Result<Uint8Array>> {
+  ): Promise<Result<Uint8Array<ArrayBuffer>>> {
     try {
       const contextString = this.getContext(associatedData)
       const contextBytes = stringToUtf8Array(contextString)
@@ -50,7 +50,7 @@ export class EncryptionService<C extends EncryptionContext> {
 
       const hkdfSalt = crypto.getRandomValues(new Uint8Array(HKDF_SALT_SIZE))
       const key = await deriveGcmKey(sessionKey, hkdfSalt, contextBytes)
-      const ciphertext = await gcmEncryptWith16ByteIV(key, contentToEncrypt.serializeBinary(), contextBytes)
+      const ciphertext = await gcmEncryptWith16ByteIV(key, contentToEncrypt.serializeBinary() as Uint8Array<ArrayBuffer>, contextBytes)
       return Result.ok(mergeUint8Arrays([hkdfSalt, ciphertext]))
     } catch (error) {
       return Result.fail(`Failed to sign and encrypt data ${error}`)
@@ -58,10 +58,10 @@ export class EncryptionService<C extends EncryptionContext> {
   }
 
   public async encryptAnonymousData(
-    data: Uint8Array,
+    data: Uint8Array<ArrayBuffer>,
     associatedData: string,
     sessionKey: SessionKey,
-  ): Promise<Result<Uint8Array>> {
+  ): Promise<Result<Uint8Array<ArrayBuffer>>> {
     try {
       const contextString = this.getContext(associatedData)
       const contextBytes = stringToUtf8Array(contextString)
@@ -71,7 +71,7 @@ export class EncryptionService<C extends EncryptionContext> {
 
       const hkdfSalt = crypto.getRandomValues(new Uint8Array(HKDF_SALT_SIZE))
       const key = await deriveGcmKey(sessionKey, hkdfSalt, contextBytes)
-      const ciphertext = await gcmEncryptWith16ByteIV(key, contentToEncrypt.serializeBinary(), contextBytes)
+      const ciphertext = await gcmEncryptWith16ByteIV(key, contentToEncrypt.serializeBinary() as Uint8Array<ArrayBuffer>, contextBytes)
       return Result.ok(mergeUint8Arrays([hkdfSalt, ciphertext]))
     } catch (error) {
       return Result.fail(`Failed to sign and encrypt data ${error}`)
@@ -79,10 +79,10 @@ export class EncryptionService<C extends EncryptionContext> {
   }
 
   public async encryptDataForLocalStorage(
-    data: Uint8Array,
+    data: Uint8Array<ArrayBuffer>,
     associatedData: string,
     encryptionKey: CryptoKey,
-  ): Promise<Result<Uint8Array>> {
+  ): Promise<Result<Uint8Array<ArrayBuffer>>> {
     try {
       const contextBytes = stringToUtf8Array(this.getContext(associatedData))
       const cipherbytes = await encryptData(encryptionKey, data, contextBytes)
@@ -93,10 +93,10 @@ export class EncryptionService<C extends EncryptionContext> {
   }
 
   public async decryptDataForLocalStorage(
-    data: Uint8Array,
+    data: Uint8Array<ArrayBuffer>,
     associatedData: string,
     encryptionKey: CryptoKey,
-  ): Promise<Result<Uint8Array>> {
+  ): Promise<Result<Uint8Array<ArrayBuffer>>> {
     try {
       const contextBytes = stringToUtf8Array(this.getContext(associatedData))
       const decryptedData = await gcmDecrypt(encryptionKey, data, contextBytes)
@@ -107,7 +107,7 @@ export class EncryptionService<C extends EncryptionContext> {
   }
 
   public async decryptData(
-    encryptedData: Uint8Array,
+    encryptedData: Uint8Array<ArrayBuffer>,
     associatedData: string,
     sessionKey: SessionKey,
   ): Promise<Result<SignedPlaintextContent>> {
@@ -126,8 +126,8 @@ export class EncryptionService<C extends EncryptionContext> {
   }
 
   async verifyData(
-    data: Uint8Array,
-    signature: Uint8Array,
+    data: Uint8Array<ArrayBuffer>,
+    signature: Uint8Array<ArrayBuffer>,
     associatedData: string,
     verificationKeys: MaybeArray<PublicKeyReference>,
   ): Promise<Result<VERIFICATION_STATUS>> {

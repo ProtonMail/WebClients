@@ -500,7 +500,7 @@ export function useLinkInner(
      */
     const getLinkHashKey = debouncedFunctionDecorator(
         'getLinkHashKey',
-        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<Uint8Array> => {
+        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<Uint8Array<ArrayBuffer>> => {
             let cachedHashKey = linksKeys.getHashKey(shareId, linkId);
             if (cachedHashKey) {
                 return cachedHashKey;
@@ -903,7 +903,7 @@ export function useLinkInner(
         downloadCallback: (
             downloadUrl: string,
             downloadToken: string
-        ) => Promise<{ contents: Promise<Uint8Array[]>; verificationStatusPromise: Promise<VERIFICATION_STATUS> }>
+        ) => Promise<{ contents: Promise<Uint8Array<ArrayBuffer>[]>; verificationStatusPromise: Promise<VERIFICATION_STATUS> }>
     ): Promise<string | undefined> => {
         const link = await getLink(abortSignal, shareId, linkId);
         if (link.cachedThumbnailUrl || !link.hasThumbnail || !link.activeRevision) {

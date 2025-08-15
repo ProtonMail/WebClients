@@ -42,7 +42,7 @@ export interface ClientRequiresEditorMethods {
   handleUnresolveCommentMarkNode(markID: string): Promise<void>
   changeLockedState(locked: boolean): Promise<void>
   broadcastPresenceState(): Promise<void>
-  exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array>
+  exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array<ArrayBuffer>>
   copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   printAsPDF(): Promise<void>
   loadUserSettings(settings: UserSettings): Promise<void>

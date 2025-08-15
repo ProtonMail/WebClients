@@ -10,7 +10,7 @@ import type { SceneRef } from './STLPreviewSetup';
 import { initThreeJS } from './STLPreviewSetup';
 
 interface STLPreviewProps {
-    stlFile: Uint8Array<ArrayBufferLike>[];
+    stlFile: Uint8Array<ArrayBuffer>[];
     onDownload?: () => void;
 }
 

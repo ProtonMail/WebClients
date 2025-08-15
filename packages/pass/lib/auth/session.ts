@@ -76,7 +76,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'sso',
 ];
 
-export const getSessionEncryptionTag = (version?: AuthSessionVersion): Maybe<Uint8Array> =>
+export const getSessionEncryptionTag = (version?: AuthSessionVersion): Maybe<Uint8Array<ArrayBuffer>> =>
     version === 2 ? stringToUtf8Array('session') : undefined;
 
 /* Given a local session key, encrypts sensitive session components of

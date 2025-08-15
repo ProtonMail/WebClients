@@ -41,7 +41,7 @@ export type PassCryptoManagerContext = {
     primaryUserKey?: DecryptedKey;
     primaryAddress?: Address;
     shareManagers: Map<ShareId, ShareManager>;
-    fileKeys: Map<string, Uint8Array>;
+    fileKeys: Map<string, Uint8Array<ArrayBuffer>>;
 };
 
 export type PassCryptoSnapshot = Pick<PassCryptoManagerContext, 'shareManagers'>;
@@ -59,8 +59,8 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     }) => Promise<void>;
     clear: () => void;
     getShareManager: (shareId: ShareId) => ShareManager;
-    createVault: (content: Uint8Array) => Promise<VaultCreateRequest>;
-    updateVault: (data: { shareId: ShareId; content: Uint8Array }) => Promise<VaultUpdateRequest>;
+    createVault: (content: Uint8Array<ArrayBuffer>) => Promise<VaultCreateRequest>;
+    updateVault: (data: { shareId: ShareId; content: Uint8Array<ArrayBuffer> }) => Promise<VaultUpdateRequest>;
     canOpenShare: (shareId: ShareId) => boolean;
     openShare: <T extends ShareType = ShareType>(data: {
         encryptedShare: ShareGetResponse;
@@ -69,8 +69,8 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     updateShareKeys: (data: { shareId: ShareId; shareKeys: ShareKeyResponse[] }) => Promise<void>;
     removeShare: (shareId: ShareId) => void;
     openItem: (data: { shareId: ShareId; encryptedItem: ItemRevisionContentsResponse }) => Promise<OpenedItem>;
-    createItem: (data: { shareId: ShareId; content: Uint8Array }) => Promise<ItemCreateRequest>;
-    updateItem: (data: { content: Uint8Array; lastRevision: number; itemKey: ItemKey }) => Promise<ItemUpdateRequest>;
+    createItem: (data: { shareId: ShareId; content: Uint8Array<ArrayBuffer> }) => Promise<ItemCreateRequest>;
+    updateItem: (data: { content: Uint8Array<ArrayBuffer>; lastRevision: number; itemKey: ItemKey }) => Promise<ItemUpdateRequest>;
     moveItem: (data: {
         encryptedItemKeys: EncodedItemKeyRotation[];
         itemId: ItemId;
@@ -102,11 +102,11 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         invitedAddressId: string;
         inviteKey: KeyRotationKeyPair;
         inviterPublicKeys: string[];
-    }) => Promise<Uint8Array>;
+    }) => Promise<Uint8Array<ArrayBuffer>>;
     createFileDescriptor: (
-        data: FileIdentifier & { encryptionVersion: number; metadata: Uint8Array }
+        data: FileIdentifier & { encryptionVersion: number; metadata: Uint8Array<ArrayBuffer> }
     ) => Promise<FileDescriptorProcessResult>;
-    openFileDescriptor: (data: { file: ItemFileOutput; itemKey: ItemKey; shareId: ShareId }) => Promise<Uint8Array>;
+    openFileDescriptor: (data: { file: ItemFileOutput; itemKey: ItemKey; shareId: ShareId }) => Promise<Uint8Array<ArrayBuffer>>;
     createFileChunk: (data: {
         chunk: Blob;
         chunkIndex: number;
@@ -116,26 +116,26 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         totalChunks: number;
     }) => Promise<Blob>;
     openFileChunk: (data: {
-        chunk: Uint8Array;
+        chunk: Uint8Array<ArrayBuffer>;
         chunkIndex: number;
         encryptionVersion: number;
         fileID: FileID;
         shareId: ShareId;
         totalChunks: number;
-    }) => Promise<Uint8Array>;
-    registerFileKey: (data: FileIdentifier & { fileKey: Uint8Array }) => void;
+    }) => Promise<Uint8Array<ArrayBuffer>>;
+    registerFileKey: (data: FileIdentifier & { fileKey: Uint8Array<ArrayBuffer> }) => void;
     unregisterFileKey: (data: FileIdentifier) => void;
-    getFileKey: (data: FileIdentifier) => Uint8Array;
-    encryptFileKey: (data: FileIdentifier & { itemKey: ItemKey }) => Promise<Uint8Array>;
+    getFileKey: (data: FileIdentifier) => Uint8Array<ArrayBuffer>;
+    encryptFileKey: (data: FileIdentifier & { itemKey: ItemKey }) => Promise<Uint8Array<ArrayBuffer>>;
     createSecureLink: (data: { itemKey: ItemKey }) => Promise<CreateSecureLinkData>;
-    openSecureLink: (data: { linkKey: string; publicLinkContent: PublicLinkGetContentResponse }) => Promise<Uint8Array>;
+    openSecureLink: (data: { linkKey: string; publicLinkContent: PublicLinkGetContentResponse }) => Promise<Uint8Array<ArrayBuffer>>;
     openLinkKey: (data: {
         encryptedLinkKey: string;
         linkKeyShareKeyRotation: number;
         shareId: ShareId;
         itemId: ItemId;
         linkKeyEncryptedWithItemKey: boolean;
-    }) => Promise<Uint8Array>;
+    }) => Promise<Uint8Array<ArrayBuffer>>;
     openItemKey: (data: { encryptedItemKey: EncodedItemKeyRotation; shareId: ShareId }) => Promise<ItemKey>;
     openSecureLinkFileDescriptor: (data: {
         encryptedFileKey: string;
@@ -144,7 +144,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         encryptionVersion: number;
         fileID: FileID;
         linkKey: string;
-    }) => Promise<Uint8Array>;
+    }) => Promise<Uint8Array<ArrayBuffer>>;
 }
 
 export type ShareContext<T extends ShareType = ShareType> = {
@@ -181,7 +181,7 @@ export interface SerializableCryptoContext<S> {
 
 export type SerializedCryptoContext<T> =
     T extends SerializableCryptoContext<infer U> ? SerializedCryptoContext<U>
-    : T extends Uint8Array ? string
+    : T extends Uint8Array<ArrayBuffer> ? string
     : T extends Map<infer K, infer U> ? (readonly [K, SerializedCryptoContext<U>])[]
     : T extends (infer U)[] ? SerializedCryptoContext<U>[]
     : T extends {} ? { [K in keyof T as T[K] extends CryptoKey ? never : K]: SerializedCryptoContext<T[K]> }

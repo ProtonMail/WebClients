@@ -46,7 +46,7 @@ export type LlmFile = {
 
 export type DownloadResult = {
     headers: string;
-    chunks: Uint8Array<ArrayBufferLike>[];
+    chunks: Uint8Array<ArrayBuffer>[];
     statusText: string;
     status: number;
 };
@@ -78,7 +78,7 @@ async function downloadFile(
     const reader = response.body?.getReader();
     const contentLength = +response.headers.get('Content-Length')!;
     let receivedLength = 0;
-    const chunks: Uint8Array<ArrayBufferLike>[] = [];
+    const chunks: Uint8Array<ArrayBuffer>[] = [];
 
     // Debounce the progress callback call to avoid sending too many events to the iframe parent
     const debouncedCallback = throttle((callback) => {

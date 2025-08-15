@@ -4,7 +4,7 @@ import type { EditorClient } from '../TestUtils/EditorClient'
 import { createEditorClient } from '../TestUtils/EditorClient'
 import type { RtsMessagePayload } from '@proton/docs-shared/lib/Doc/RtsMessagePayload'
 
-function corruptBytes(bytes: Uint8Array, corruptionRate = 0.1): Uint8Array {
+function corruptBytes(bytes: Uint8Array<ArrayBuffer>, corruptionRate = 0.1): Uint8Array<ArrayBuffer> {
   const corrupted = new Uint8Array(bytes)
   for (let i = 0; i < corrupted.length; i++) {
     if (Math.random() < corruptionRate) {

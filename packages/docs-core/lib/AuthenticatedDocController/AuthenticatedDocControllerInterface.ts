@@ -14,7 +14,7 @@ export interface AuthenticatedDocControllerInterface {
   debugSendCommitCommandToRTS(): Promise<void>
   deinit(): void
   destroy(): void
-  duplicateDocument(editorYjsState: Uint8Array): Promise<void>
+  duplicateDocument(editorYjsState: Uint8Array<ArrayBuffer>): Promise<void>
   getVersionHistory(): NativeVersionHistory | undefined
   openDocumentSharingModal(): void
   openMoveToFolderModal(): void

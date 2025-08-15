@@ -5,13 +5,13 @@ import { ExportFormat } from '@proton/pass/lib/export/types';
 import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-export const getProtonPassImportPGPType = async (buffer: Uint8Array): Promise<ExportFormat> => {
+export const getProtonPassImportPGPType = async (buffer: Uint8Array<ArrayBuffer>): Promise<ExportFormat> => {
     const head = buffer.slice(0, 5);
     if (new TextDecoder().decode(head).startsWith('{')) return ExportFormat.JSON;
     else return ExportFormat.ZIP;
 };
 
-export const decryptProtonPassImport = async (file: File, passphrase?: string): Promise<Uint8Array> => {
+export const decryptProtonPassImport = async (file: File, passphrase?: string): Promise<Uint8Array<ArrayBuffer>> => {
     try {
         return await decryptPassExport(await file.text(), passphrase ?? '');
     } catch (err: unknown) {

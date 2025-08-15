@@ -6,7 +6,7 @@ import { getValidatedForkType, getValidatedRawKey } from './validation';
 export interface ConsumeForkParameters {
     selector: string;
     state: string;
-    key: Uint8Array;
+    key: Uint8Array<ArrayBuffer>;
     persistent: boolean;
     source: SessionSource;
     trusted: boolean;

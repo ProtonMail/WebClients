@@ -6,7 +6,7 @@ import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
  * that instead - as long as the export feature is alpha, it’s okay to release
  * without argon2, but let’s pass config: { s2kIterationCountByte: 255 } to
  * encryptMessage with the highest security we have atm */
-export const encryptPassExport = async (data: Uint8Array, passphrase: string): Promise<string> => {
+export const encryptPassExport = async (data: Uint8Array<ArrayBuffer>, passphrase: string): Promise<string> => {
     if (!passphrase) throw new Error('Passphrase not provided');
 
     await loadCoreCryptoWorker();
@@ -20,7 +20,7 @@ export const encryptPassExport = async (data: Uint8Array, passphrase: string): P
     ).message;
 };
 
-export const decryptPassExport = async (data: string, passphrase: string): Promise<Uint8Array> => {
+export const decryptPassExport = async (data: string, passphrase: string): Promise<Uint8Array<ArrayBuffer>> => {
     await loadCoreCryptoWorker();
 
     return (

@@ -6,7 +6,7 @@ import PreviewError from './PreviewError';
 import PreviewLoader from './PreviewLoader';
 
 interface IWADPreviewProps {
-    contents: Uint8Array[];
+    contents: Uint8Array<ArrayBuffer>[];
     filename?: string;
 }
 

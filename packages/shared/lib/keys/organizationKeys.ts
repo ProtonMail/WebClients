@@ -353,7 +353,7 @@ export const verifyOrganizationTokenSignature = async ({
     verificationKeys,
 }: {
     armoredSignature: string;
-    binaryData: Uint8Array;
+    binaryData: Uint8Array<ArrayBuffer>;
     verificationKeys: PublicKeyReference[];
 }) => {
     const result = await CryptoProxy.verifyMessage({
@@ -427,7 +427,7 @@ export const getVerifiedPublicKeys = async ({
 
 export interface OrganizationKeyTokenData {
     sessionKey: SessionKey;
-    binaryData: Uint8Array<ArrayBufferLike>;
+    binaryData: Uint8Array<ArrayBuffer>;
 }
 
 export const getDecryptedOrganizationKeyTokenData = async ({

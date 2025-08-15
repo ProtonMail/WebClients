@@ -12,7 +12,7 @@ export type UpdatePair = {
 
 export type SquashResult = {
   unmodifiedUpdates: UpdatePair[]
-  updatesAsSquashed: Uint8Array | undefined
+  updatesAsSquashed: Uint8Array<ArrayBuffer> | undefined
 }
 
 export class SquashAlgorithm implements UseCaseInterface<SquashResult> {
@@ -41,7 +41,7 @@ export class SquashAlgorithm implements UseCaseInterface<SquashResult> {
     const updatesToSquash = updates.slice(-numUpdatesToSquash)
     const unmodifiedUpdates = updates.slice(0, updates.length - numUpdatesToSquash)
 
-    const updatesAsSquashed = mergeUpdates(updatesToSquash.map((update) => update.decrypted.content))
+    const updatesAsSquashed = mergeUpdates(updatesToSquash.map((update) => update.decrypted.content)) as Uint8Array<ArrayBuffer>
 
     this.logger.info(`[Squash] Squashed ${updatesToSquash.length} updates`)
 

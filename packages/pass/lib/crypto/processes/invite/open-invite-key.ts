@@ -15,7 +15,7 @@ export const openInviteKey = async ({
     inviteKey,
     invitedPrivateKey,
     inviterPublicKeys,
-}: OpenInviteKeyProcessParams): Promise<Uint8Array> => {
+}: OpenInviteKeyProcessParams): Promise<Uint8Array<ArrayBuffer>> => {
     const { data, verificationStatus } = await CryptoProxy.decryptMessage({
         binaryMessage: base64StringToUint8Array(inviteKey.Key),
         decryptionKeys: invitedPrivateKey,

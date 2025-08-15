@@ -19,9 +19,9 @@ import { c } from 'ttag'
 export interface EditorControllerInterface {
   copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
-  exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array>
+  exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array<ArrayBuffer>>
   getDocumentClientId(): Promise<number | undefined>
-  getDocumentState(): Promise<Uint8Array>
+  getDocumentState(): Promise<Uint8Array<ArrayBuffer>>
   getEditorJSON(): Promise<SerializedEditorState | undefined>
   getLatestSpreadsheetStateToLogJSON(): Promise<unknown>
   getYDocAsJSON(): Promise<unknown>
@@ -287,7 +287,7 @@ export class EditorController implements EditorControllerInterface {
     void this.editorInvoker.showCommentsPanel()
   }
 
-  async exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array> {
+  async exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array<ArrayBuffer>> {
     if (!this.editorInvoker) {
       throw new Error(`Attepting to export document before editor invoker or decrypted node is initialized`)
     }
@@ -303,7 +303,7 @@ export class EditorController implements EditorControllerInterface {
     return this.editorInvoker.copyCurrentSelection(format)
   }
 
-  async getDocumentState(): Promise<Uint8Array> {
+  async getDocumentState(): Promise<Uint8Array<ArrayBuffer>> {
     if (!this.editorInvoker) {
       throw new Error('Attempting to get document state before editor invoker is initialized')
     }

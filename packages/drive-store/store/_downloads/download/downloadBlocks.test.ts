@@ -21,7 +21,7 @@ let expiredURL = '';
 let responseDelay = 0;
 
 const createStreamResponse = (chunks: number[][]) =>
-    new ReadableStream<Uint8Array>({
+    new ReadableStream<Uint8Array<ArrayBuffer>>({
         start(ctrl) {
             chunks.forEach((data) => ctrl.enqueue(new Uint8Array(data)));
             ctrl.close();
@@ -37,15 +37,15 @@ const createGetBlocksResponse = (blocks: DriveFileBlock[], manifestSignature = '
     };
 };
 
-const mockTransformBlockStream = async (abortSignal: AbortSignal, stream: ReadableStream<Uint8Array>) => {
+const mockTransformBlockStream = async (abortSignal: AbortSignal, stream: ReadableStream<Uint8Array<ArrayBuffer>>) => {
     return {
-        hash: [] as unknown as Uint8Array,
+        hash: [] as unknown as Uint8Array<ArrayBuffer>,
         data: stream,
     };
 };
 
 const mockDownloadBlock = jest.fn(
-    (abortController: AbortController, url: string): Promise<ReadableStream<Uint8Array>> => {
+    (abortController: AbortController, url: string): Promise<ReadableStream<Uint8Array<ArrayBuffer>>> => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (url === offlineURL) {

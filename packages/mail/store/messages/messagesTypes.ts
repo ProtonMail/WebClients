@@ -147,13 +147,13 @@ export interface MessageDecryption {
      * Decrypted raw content
      * Often the same as decryptedBody except for pgp-mime format, used for signature verification
      */
-    decryptedRawContent?: Uint8Array;
+    decryptedRawContent?: Uint8Array<ArrayBuffer>;
 
     /**
      * Message signature obtained after decryption, if any
      * Warning, there could also be a signature in the mime content which is different
      */
-    signature?: Uint8Array;
+    signature?: Uint8Array<ArrayBuffer>;
 
     /**
      * Decrypted subject
@@ -356,7 +356,7 @@ export interface VerificationParams {
     verificationPreferences?: VerificationPreferences;
     verification?: {
         verificationStatus: MAIL_VERIFICATION_STATUS;
-        signature?: Uint8Array;
+        signature?: Uint8Array<ArrayBuffer>;
         verificationErrors?: Error[];
     };
     signingPublicKey?: PublicKeyReference;

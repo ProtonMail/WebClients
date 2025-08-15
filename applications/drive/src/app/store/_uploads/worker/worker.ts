@@ -96,7 +96,7 @@ async function start(
     addressEmail: string,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
-    parentHashKey: Uint8Array,
+    parentHashKey: Uint8Array<ArrayBuffer>,
     verificationData: VerificationData
 ) {
     const log = (message: string) => uploadWorker.postLog(message);
@@ -130,7 +130,7 @@ async function start(
         uploadWorker.postLog(`Computing and validating manifest`);
 
         const fileHash = buffer.hash;
-        const sha1Digest = hashInstance.digest();
+        const sha1Digest = hashInstance.digest() as Uint8Array<ArrayBuffer>;
 
         // It seems very unlikely but we had one case when we requested block
         // upload, provided correct original size, but no block was uploaded

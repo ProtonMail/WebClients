@@ -7,7 +7,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type CreateItemProcessParams = {
-    content: Uint8Array;
+    content: Uint8Array<ArrayBuffer>;
     vaultKey: VaultShareKey;
 };
 

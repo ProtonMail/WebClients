@@ -47,7 +47,7 @@ interface CryptoProxyInterface extends CryptoApiInterface {
  * @param options - verification options, with `date` already set to server time
  */
 async function verifyMessageWithFallback<
-    DataType extends string | Uint8Array,
+    DataType extends string | Uint8Array<ArrayBuffer>,
     FormatType extends WorkerVerifyOptions<DataType>['format'] = 'utf8',
 >(options: WorkerVerifyOptions<DataType> & { format?: FormatType }) {
     const verificationResult = await assertNotNull(endpoint).verifyMessage<DataType, FormatType>(options);
