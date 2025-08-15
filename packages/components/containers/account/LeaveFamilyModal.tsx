@@ -1,15 +1,14 @@
 import { c } from 'ttag';
 
+import { leaveOrganization } from '@proton/account/organization/actions';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { leaveOrganisation } from '@proton/shared/lib/api/organization';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { isOrganizationFamily, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
 
@@ -21,25 +20,23 @@ const family = PLAN_NAMES[PLANS.FAMILY];
 const passFamily = PLAN_NAMES[PLANS.PASS_FAMILY];
 const duo = PLAN_NAMES[PLANS.DUO];
 
-const LeaveFamilyModal = ({ organisationName, ...modalState }: Props) => {
+const LeaveFamilyModal = ({ organisationName, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
     const { createNotification } = useNotifications();
-    const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
 
     const handleLeave = async () => {
-        await withLoading(api(leaveOrganisation()));
-        modalState.onClose();
-        await call();
+        await withLoading(dispatch(leaveOrganization()));
         createNotification({ text: c('familyOffer_2023:Info').t`You left this plan` });
+        rest.onClose();
     };
 
     const handleClose = () => {
         if (loading) {
             return;
         }
-        modalState.onClose();
+        rest.onClose();
     };
 
     let plan;
@@ -58,7 +55,7 @@ const LeaveFamilyModal = ({ organisationName, ...modalState }: Props) => {
 
     return (
         <Prompt
-            {...modalState}
+            {...rest}
             title={c('Title').t`Leave ${organisationName}?`}
             footnote={
                 withTrial

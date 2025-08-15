@@ -22,11 +22,11 @@ export const getDefaultOrganizationSettings = (): OrganizationSettings => {
         HighSecurity: 0,
         OrganizationPolicy: {
             Enforced: 0,
-        }
+        },
     };
 };
 
-export const getOrganizationSettings = ({ api }: { api: Api }) => {
+export const getOrganizationSettings = ({ api }: { api: Api }): Promise<OrganizationSettings> => {
     const defaultSettings = getDefaultOrganizationSettings();
     return api<OrganizationSettings>(getOrganizationSettingsConfig())
         .then((value) => ({

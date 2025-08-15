@@ -4,26 +4,23 @@ import DropdownActions from '@proton/components/components/dropdown/DropdownActi
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
 import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import {
     deleteForwarding,
-    pauseForwarding,
+    requestConfirmation,
     resendForwardingInvitation,
-    resumeForwarding,
-    updateForwarding,
-} from '@proton/shared/lib/api/forwardings';
+    toggleForwardingInvitation,
+} from '@proton/mail/store/forwarding/outgoingForwardingActions';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shared/lib/interfaces';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useAddressFlags from '../../hooks/useAddressFlags';
 import ConfirmDeleteForwarding from './ConfirmDeleteForwarding';
 import ForwardModal from './ForwardModal';
-import { getInternalParametersPrivate } from './helpers';
 
 interface Props {
     existingForwardingConfig: OutgoingAddressForwarding;
@@ -51,29 +48,22 @@ const OutgoingForwardActions = ({
     const pointToProton = address?.ProtonMX === true; // the domain's record point to Proton servers
     const reActivateE2EE = pointToProton && isLastOutgoingNonE2EEForwarding;
 
-    const api = useApi();
-    const addressFlags = useAddressFlags(address);
+    const dispatch = useDispatch();
     const getPublicKeysForInbox = useGetPublicKeysForInbox();
     const getAddressKeysByUsage = useGetAddressKeysByUsage();
-    const { call } = useEventManager();
+    const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
     const [forwardModal, showForwardModal] = useModalTwoStatic(ForwardModal);
     const [confirmDeleteModalProps, setConfirmDeleteModalOpen, renderConfirmDeleteModal] = useModalState();
 
     const handleDeleteForwarding = async () => {
-        await api(deleteForwarding(existingForwardingConfig.ID));
-
-        // Re-enable E2EE for this address if deleting last outgoing forwarding
-        if (reActivateE2EE && addressFlags && addressFlags.data.isEncryptionDisabled) {
-            await addressFlags.handleSetAddressFlags({
-                encryptionDisabled: false,
-                expectSignatureDisabled: addressFlags.data.isExpectSignatureDisabled,
-            });
+        try {
+            await dispatch(deleteForwarding({ address, forward: existingForwardingConfig, reActivateE2EE }));
+            setConfirmDeleteModalOpen(false);
+            createNotification({ text: 'Forwarding deleted' });
+        } catch (e) {
+            handleError(e);
         }
-
-        await call();
-        setConfirmDeleteModalOpen(false);
-        createNotification({ text: 'Forwarding deleted' });
     };
 
     const list = [
@@ -98,38 +88,30 @@ const OutgoingForwardActions = ({
             isRejected && {
                 text: c('email_forwarding_2023: Action').t`Request confirmation`,
                 onClick: async () => {
-                    const [forwarderAddressKeysByUsage, forwardeePublicKeys] = await Promise.all([
-                        getAddressKeysByUsage({
-                            AddressID: existingForwardingConfig.ForwarderAddressID,
-                            // a primary v4 is expected here, but as sanity check
-                            // we want the v6 key to be returned is present, so that
-                            // the forwarding key generation will fail already client-side,
-                            // instead of on the BE
-                            withV6Support: true,
-                        }),
-                        getPublicKeysForInbox({ email: existingForwardingConfig.ForwardeeEmail, lifetime: 0 }),
-                    ]);
-                    const forwardeePrimaryPublicKey = forwardeePublicKeys.publicKeys[0].publicKey;
-                    const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
-                        forwarderAddressKeysByUsage.encryptionKey,
-                        [
-                            {
-                                email: existingForwardingConfig.ForwardeeEmail,
-                                name: existingForwardingConfig.ForwardeeEmail,
-                            },
-                        ],
-                        forwardeePrimaryPublicKey
-                    );
-                    await api(
-                        updateForwarding({
-                            ID: existingForwardingConfig.ID,
-                            ForwardeePrivateKey: forwardeeKey,
-                            ActivationToken: activationToken,
-                            ProxyInstances: proxyInstances,
-                        })
-                    );
-                    await call();
-                    createNotification({ text: sentSuccessMessage });
+                    try {
+                        const [forwarderAddressKeysByUsage, forwardeePublicKeys] = await Promise.all([
+                            getAddressKeysByUsage({
+                                AddressID: existingForwardingConfig.ForwarderAddressID,
+                                // a primary v4 is expected here, but as sanity check
+                                // we want the v6 key to be returned is present, so that
+                                // the forwarding key generation will fail already client-side,
+                                // instead of on the BE
+                                withV6Support: true,
+                            }),
+                            getPublicKeysForInbox({ email: existingForwardingConfig.ForwardeeEmail, lifetime: 0 }),
+                        ]);
+                        const forwardeePrimaryPublicKey = forwardeePublicKeys.publicKeys[0].publicKey;
+                        await dispatch(
+                            requestConfirmation({
+                                forward: existingForwardingConfig,
+                                encryptionKey: forwarderAddressKeysByUsage.encryptionKey,
+                                forwardeePrimaryPublicKey,
+                            })
+                        );
+                        createNotification({ text: sentSuccessMessage });
+                    } catch (e) {
+                        handleError(e);
+                    }
                 },
             },
         user.hasPaidMail &&
@@ -137,9 +119,12 @@ const OutgoingForwardActions = ({
             isRejected && {
                 text: c('email_forwarding_2023: Action').t`Request confirmation`,
                 onClick: async () => {
-                    await api(resendForwardingInvitation(existingForwardingConfig.ID));
-                    await call();
-                    createNotification({ text: sentSuccessMessage });
+                    try {
+                        await dispatch(resendForwardingInvitation({ forward: existingForwardingConfig }));
+                        createNotification({ text: sentSuccessMessage });
+                    } catch (e) {
+                        handleError(e);
+                    }
                 },
             },
         user.hasPaidMail &&
@@ -147,27 +132,40 @@ const OutgoingForwardActions = ({
             isPending && {
                 text: c('email_forwarding_2023: Action').t`Re-send confirmation email`,
                 onClick: async () => {
-                    await api(resendForwardingInvitation(existingForwardingConfig.ID));
-                    await call();
-                    createNotification({ text: sentSuccessMessage });
+                    try {
+                        await dispatch(resendForwardingInvitation({ forward: existingForwardingConfig }));
+                        createNotification({ text: sentSuccessMessage });
+                    } catch (e) {
+                        handleError(e);
+                    }
                 },
             },
         user.hasPaidMail &&
             isActive && {
                 text: c('email_forwarding_2023: Action').t`Pause`,
                 onClick: async () => {
-                    await api(pauseForwarding(existingForwardingConfig.ID));
-                    await call();
-                    createNotification({ text: c('email_forwarding_2023: Success').t`Forwarding paused` });
+                    try {
+                        await dispatch(
+                            toggleForwardingInvitation({ forward: existingForwardingConfig, enabled: false })
+                        );
+                        createNotification({ text: c('email_forwarding_2023: Success').t`Forwarding paused` });
+                    } catch (e) {
+                        handleError(e);
+                    }
                 },
             },
         user.hasPaidMail &&
             isPaused && {
                 text: c('email_forwarding_2023: Action').t`Resume`,
                 onClick: async () => {
-                    await api(resumeForwarding(existingForwardingConfig.ID));
-                    await call();
-                    createNotification({ text: c('email_forwarding_2023: Success').t`Forwarding resumed` });
+                    try {
+                        await dispatch(
+                            toggleForwardingInvitation({ forward: existingForwardingConfig, enabled: true })
+                        );
+                        createNotification({ text: c('email_forwarding_2023: Success').t`Forwarding resumed` });
+                    } catch (e) {
+                        handleError(e);
+                    }
                 },
             },
         {

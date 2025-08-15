@@ -69,13 +69,11 @@ export const verifyCode = async ({
     code,
     api,
     method,
-    call,
 }: {
     token: string;
     code: string;
     api: Api;
     method: VerificationMethod;
-    call: () => Promise<void>;
 }) => {
     const hvMethod = getHVMethod(method);
 
@@ -83,8 +81,6 @@ export const verifyCode = async ({
 
     const { Token } = await silentApi<VerificationTokenResult>(verifyVerificationCode(token, hvMethod, code));
     await api(withVerificationHeaders(Token, hvMethod, getInitiationCall(method)));
-
-    await call();
 };
 
 export const sendNewCode = async ({ token, api, method }: { token: string; api: Api; method: VerificationMethod }) => {

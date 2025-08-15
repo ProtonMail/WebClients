@@ -1,5 +1,6 @@
 import { isAnyOf } from '@reduxjs/toolkit';
 
+import { coreEventLoopV6 } from '@proton/account/coreEventLoop';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import {
     getPersistedSessions,
@@ -49,12 +50,11 @@ export const startPersistListener = <T extends UserState>(
 
                 const state = listenerApi.getState();
 
-                const eventID = eventManager.getEventID();
                 const clientKey = authentication.getClientKey();
                 const user = selectUser(state)?.value;
                 const userID = user?.ID;
 
-                if (!eventID || !clientKey || !state || !userID || !isSelf(user)) {
+                if (!clientKey || !state || !userID || !isSelf(user)) {
                     return;
                 }
 
@@ -62,7 +62,6 @@ export const startPersistListener = <T extends UserState>(
 
                 setEncryptedPersistedState({
                     state: transformedState,
-                    eventID,
                     clientKey,
                     userID,
                     config,
@@ -89,7 +88,10 @@ export const startPersistListener = <T extends UserState>(
 
     startListening({
         predicate: (action) => {
-            return serverEvent.match(action) && action.payload.Refresh === EVENT_ERRORS.ALL;
+            return (
+                (serverEvent.match(action) && action.payload.Refresh === EVENT_ERRORS.ALL) ||
+                (coreEventLoopV6.match(action) && action.payload.event.Refresh)
+            );
         },
         effect: async (action, listenerApi) => {
             const userID = selectUser(listenerApi.getState())?.value?.ID;

@@ -14,10 +14,11 @@ import LabelsUpsellModal from '@proton/components/components/upsell/modals/Label
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import ConfirmSortModal from '@proton/components/containers/labels/modals/ConfirmSortModal';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useLabels } from '@proton/mail';
+import { categoriesThunk, useLabels } from '@proton/mail';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { orderLabels } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
@@ -38,7 +39,7 @@ interface Props {
 function LabelsSection({ showPromptOnAction }: Props) {
     const [user] = useUser();
     const [labels = [], loadingLabels] = useLabels();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -82,7 +83,7 @@ function LabelsSection({ showPromptOnAction }: Props) {
 
         const sync = async () => {
             await api(orderLabels({ LabelIDs: debouncedLabels.map(({ ID }) => ID) }));
-            await call();
+            await dispatch(categoriesThunk({ cache: CacheType.None }));
         };
 
         void sync();

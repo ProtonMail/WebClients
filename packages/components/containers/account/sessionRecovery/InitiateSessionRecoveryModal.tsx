@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -11,10 +12,11 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { initiateSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
@@ -35,8 +37,8 @@ interface Props extends ModalProps {
 
 const InitiateSessionRecoveryModal = ({ confirmedStep = false, onUseRecoveryMethodClick, onClose, ...rest }: Props) => {
     const [user] = useUser();
+    const dispatch = useDispatch();
     const api = useApi();
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [availableRecoveryMethods] = useAvailableRecoveryMethods();
     const hasRecoveryMethod = availableRecoveryMethods.length > 0;
@@ -72,7 +74,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onUseRecoveryMeth
     const handleInitiateSessionRecovery = async () => {
         try {
             await api(initiateSessionRecovery());
-            await call();
+            await dispatch(userThunk({ cache: CacheType.None }));
             createNotification({
                 text: c('session_recovery:initiation:notification').t`Password reset confirmed`,
                 showCloseButton: false,

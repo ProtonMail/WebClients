@@ -1,15 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {
+    type PayloadAction,
+    type ThunkAction,
+    type UnknownAction,
+    createSlice,
+    miniSerializeError,
+} from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
-    createAsyncModelThunk,
+    type CacheType,
+    cacheHelper,
+    createPromiseStore,
     getFetchedAt,
     getFetchedEphemeral,
-    handleAsyncModel,
     previousSelector,
 } from '@proton/redux-utilities';
 import { getUser } from '@proton/shared/lib/api/user';
-import { DAY } from '@proton/shared/lib/constants';
 import type { User, UserModel } from '@proton/shared/lib/interfaces';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
@@ -29,23 +35,26 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectUser = (state: UserState) => state.user;
 
-const modelThunk = createAsyncModelThunk<Model, UserState, ProtonThunkArguments>(`${name}/fetch`, {
-    expiry: 7 * DAY,
-    miss: ({ extraArgument }) => {
-        return extraArgument.api<{ User: User }>(getUser()).then(({ User }) => {
-            return formatUser(User);
-        });
-    },
-    previous: previousSelector(selectUser),
-});
-
 const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
+    reducers: {
+        pending: (state) => {
+            state.error = undefined;
+        },
+        fulfilled: (state, action: PayloadAction<Model>) => {
+            state.value = action.payload;
+            state.error = undefined;
+            state.meta.fetchedAt = getFetchedAt();
+            state.meta.fetchedEphemeral = getFetchedEphemeral();
+        },
+        rejected: (state, action) => {
+            state.error = action.payload;
+            state.meta.fetchedAt = getFetchedAt();
+        },
+    },
     extraReducers: (builder) => {
-        handleAsyncModel(builder, modelThunk);
         builder
             .addCase(initEvent, (state, action) => {
                 if (action.payload.User) {
@@ -76,4 +85,34 @@ const slice = createSlice({
 });
 
 export const userReducer = { [name]: slice.reducer };
-export const userThunk = modelThunk.thunk;
+export const userActions = slice.actions;
+export const userFulfilled = userActions.fulfilled;
+
+const promiseStore = createPromiseStore<Model>();
+const previous = previousSelector(selectUser);
+
+export const userThunk = (options?: {
+    cache?: CacheType;
+}): ThunkAction<Promise<Model>, UserState, ProtonThunkArguments, UnknownAction> => {
+    return (dispatch, getState, extraArgument) => {
+        const select = () => {
+            return previous({ dispatch, getState, extraArgument, options });
+        };
+        const getPayload = async () => {
+            const result = await extraArgument.api<{ User: User }>(getUser());
+            return formatUser(result.User);
+        };
+        const cb = async () => {
+            try {
+                dispatch(userActions.pending());
+                const payload = await getPayload();
+                dispatch(userActions.fulfilled(payload));
+                return payload;
+            } catch (error) {
+                dispatch(userActions.rejected(miniSerializeError(error)));
+                throw error;
+            }
+        };
+        return cacheHelper({ store: promiseStore, select, cb, cache: options?.cache });
+    };
+};

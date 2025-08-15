@@ -32,6 +32,11 @@ export const queryFilters = () => ({
     url: 'mail/v4/filters',
 });
 
+export const queryFilter = (id: string) => ({
+    method: 'get',
+    url: `mail/v4/filters/${id}`,
+});
+
 export const clearFilters = () => ({
     method: 'delete',
     url: 'mail/v4/filters',

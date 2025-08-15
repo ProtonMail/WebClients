@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
@@ -16,11 +17,12 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { PROTON_SENTINEL_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -44,7 +46,7 @@ export const SentinelSection = ({ app }: Props) => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const api = useApi();
     const [loadingSentinel, withLoadingSentinel] = useLoading();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const bundleProPlan = useBundleProPlan();
 
@@ -84,7 +86,7 @@ export const SentinelSection = ({ app }: Props) => {
             await api(disableHighSecurity());
             createNotification({ text: getDisabledString(PROTON_SENTINEL_NAME) });
         }
-        await call();
+        await dispatch(userSettingsThunk({ cache: CacheType.None }));
     };
 
     const handleUpgrade = () => {
