@@ -1,9 +1,7 @@
-import { useRef } from 'react';
 import { useLayoutEffect } from 'react';
 
 import { format } from 'date-fns';
 
-import { useErrorHandler } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { RECOVERY_KIT_FILE_NAME } from '@proton/shared/lib/constants';
 import { isIos, isIpad } from '@proton/shared/lib/helpers/browser';
@@ -12,6 +10,11 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import type { RecoveryKitBlob } from './types';
+
+const getRecoveryKit = async () => {
+    // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
+    return import(/* webpackChunkName: "recovery-kit" */ '@proton/recovery-kit');
+};
 
 /**
  * If true, we can use the recovery kit pdf download.
@@ -28,11 +31,6 @@ const canUseRecoveryKitPdfDownload = () => {
 };
 
 let ranPreload = false;
-
-export const getRecoveryKit = async () => {
-    // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
-    return import(/* webpackChunkName: "recovery-kit" */ '@proton/recovery-kit');
-};
 
 /**
  * Prefetch @proton/recovery-kit
@@ -59,6 +57,9 @@ export const usePrefetchGenerateRecoveryKit = () => {
     }, []);
 };
 
+/**
+ * Speed up usage by prefetching the recovery kit generation with usePrefetchGenerateRecoveryKit
+ */
 export const generateRecoveryKitBlob = async ({
     recoveryPhrase,
     emailAddress,
@@ -67,9 +68,9 @@ export const generateRecoveryKitBlob = async ({
     emailAddress: string;
 }): Promise<RecoveryKitBlob | null> => {
     try {
-        const generatePDFRecoveryKit = await getRecoveryKit().then((result) => result.generatePDFKit);
+        const { generatePDFKit } = await getRecoveryKit();
 
-        const pdf = await generatePDFRecoveryKit({
+        const pdf = await generatePDFKit({
             // Not translated because the PDF isn't translated
             date: `Created on ${format(new Date(), 'PPP', { locale: dateLocale })}`,
             emailAddress,
@@ -129,18 +130,16 @@ type ReturnValue = ReturnValueUnsupported | ReturnValueSupported;
  */
 const useRecoveryKitDownload = ({
     recoveryKitBlob,
-    setApiRecoveryPhrase,
+    sendPayload,
 }: {
     /**
      * Blob of the pdf that will be downloaded.
-     * Null if an error occured while generating.
+     * Null if an error occurred while generating.
      */
     recoveryKitBlob: RecoveryKitBlob | null;
-    setApiRecoveryPhrase: () => Promise<void>;
+    sendPayload: () => Promise<void>;
 }): ReturnValue => {
     const [downloadingRecoveryKit, withLoading] = useLoading();
-    const onceRef = useRef(false);
-    const handleError = useErrorHandler();
 
     if (!recoveryKitBlob || !canUseRecoveryKitPdfDownload()) {
         /**
@@ -156,20 +155,10 @@ const useRecoveryKitDownload = ({
     }
 
     const handleDownload = async () => {
-        const isFirstDownload = !onceRef.current;
-
-        if (isFirstDownload) {
-            try {
-                await setApiRecoveryPhrase();
-            } catch (error) {
-                handleError(error);
-                return;
-            }
-
-            onceRef.current = true;
-        }
-
-        downloadFile(recoveryKitBlob, RECOVERY_KIT_FILE_NAME);
+        try {
+            await sendPayload();
+            downloadFile(recoveryKitBlob, RECOVERY_KIT_FILE_NAME);
+        } catch (error) {}
     };
 
     return {

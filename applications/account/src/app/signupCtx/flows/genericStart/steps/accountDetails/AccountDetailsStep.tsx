@@ -12,7 +12,7 @@ import '../../../../shared/styles/arizona.scss';
 const AccountDetailsStep = ({ onSuccess }: { onSuccess: () => Promise<void> }) => {
     return (
         <Layout>
-            <Header />
+            <Header showSignIn />
 
             <Wrapper minHeight="calc(100vh - 4.25rem - 3.85rem)">
                 <Main>

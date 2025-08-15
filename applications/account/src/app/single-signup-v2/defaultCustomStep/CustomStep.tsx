@@ -135,6 +135,7 @@ const CustomStep = ({
                             dimensions: { click: type },
                         });
                     }}
+                    accountData={accountData}
                     mnemonicData={mnemonicData!}
                     onContinue={() => handleNextStep()}
                 />

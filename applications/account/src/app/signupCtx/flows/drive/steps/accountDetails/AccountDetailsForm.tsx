@@ -9,9 +9,9 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { SignupType } from '../../../../../signup/interfaces';
-import { usePasswordInputInline } from '../../../../accountDetailsInputs/password/usePasswordInput';
-import useEmailInput from '../../../../accountDetailsInputs/username/useEmailInput';
 import Terms from '../../../../components/Terms';
+import { usePasswordInputInline } from '../../../../containers/password/usePasswordInput';
+import useEmailInput from '../../../../containers/username/useEmailInput';
 import { useSignup } from '../../../../context/SignupContext';
 import digitaltrends from '../../assets/images/digitaltrends.svg';
 import pcmag from '../../assets/images/pcmag.svg';

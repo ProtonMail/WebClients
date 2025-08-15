@@ -21,10 +21,11 @@ import { persistSession } from '@proton/shared/lib/authentication/persistedSessi
 import { type RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
-import { handleSetupKeys } from '@proton/shared/lib/keys';
+import { getDecryptedUserKeysHelper, handleSetupKeys } from '@proton/shared/lib/keys';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
+import generateDeferredMnemonicData from '../../../containers/recoveryPhrase/generateDeferredMnemonicData';
 import { type AccountData, SignupType } from '../../../signup/interfaces';
 
 export interface SubscriptionData2 {
@@ -133,21 +134,21 @@ export const handleSetupUser = async ({
     api,
     persistent,
     trusted,
-
     subscriptionData,
     productParam,
     keyTransparencyActivation,
     hasZipCodeValidation,
+    traceSignupSentryError,
 }: {
     accountData: AccountData;
     api: Api;
     persistent: boolean;
     trusted: boolean;
-
     subscriptionData: SubscriptionData2 | undefined;
     productParam: ProductParam;
     keyTransparencyActivation: KeyTransparencyActivation;
     hasZipCodeValidation: boolean;
+    traceSignupSentryError: (error: any) => void;
 }) => {
     const { username, email, domain, password, signupType } = accountData;
 
@@ -196,6 +197,21 @@ export const handleSetupUser = async ({
         source: SessionSource.Proton,
     });
 
+    let recoveryPhraseData;
+    try {
+        recoveryPhraseData = await generateDeferredMnemonicData({
+            emailAddress: userEmail,
+            username: user.Name,
+            getUserKeys: async () => {
+                const userKeys = await getDecryptedUserKeysHelper(user, keySetupData.keyPassword);
+                return userKeys;
+            },
+            api,
+        });
+    } catch (error) {
+        traceSignupSentryError(error);
+    }
+
     return {
         session,
         user,
@@ -203,5 +219,6 @@ export const handleSetupUser = async ({
         addresses,
         authResponse,
         subscription,
+        recoveryPhraseData,
     };
 };

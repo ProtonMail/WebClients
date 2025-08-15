@@ -15,7 +15,7 @@ import AccountDetailsForm from './AccountDetailsForm';
 const AccountDetailsStep = ({ onBack, onSuccess }: { onBack: () => void; onSuccess: () => Promise<void> }) => {
     return (
         <Layout>
-            <Header />
+            <Header showSignIn />
 
             <Wrapper minHeight="calc(100vh - 4.25rem - 4rem)">
                 <Main>

@@ -20,7 +20,7 @@ const DisplayNameStep = ({ onSubmit }: { onSubmit: (displayName: string) => Prom
 
     return (
         <Layout>
-            <Header showSignIn={false} />
+            <Header />
 
             <div
                 className="flex flex-column flex-nowrap accountDetailsStep min-h-custom justify-center"

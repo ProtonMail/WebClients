@@ -83,6 +83,7 @@ const CustomStepB2B = ({ measure, productAppName, logo, model, signupParameters 
                             dimensions: { click: type },
                         });
                     }}
+                    accountData={accountData}
                     mnemonicData={mnemonicData!}
                     onContinue={() => setStep(getNextPassStep())}
                 />

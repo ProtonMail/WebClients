@@ -6,6 +6,7 @@ import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler'
 import { usePaymentOptimistic, usePaymentsInner } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
+import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import * as signupSearchParams from '../../helpers/signupSearchParams';
@@ -18,9 +19,10 @@ import {
     getAppIntentFromReferralPlan,
     getReferralPlanIDsFromPlan,
 } from './helpers/plans';
+import RecoveryPhraseStep from './steps/RecoveryPhraseStep';
 import AccountDetailsStep from './steps/accountDetails/AccountDetailsStep';
 
-type Step = 'account-details' | 'org-name' | 'display-name' | 'creating-account';
+type Step = 'account-details' | 'org-name' | 'recovery' | 'display-name' | 'creating-account';
 
 const ReferralSignupInner = () => {
     const [step, setStep] = useState<Step>('account-details');
@@ -29,6 +31,11 @@ const ReferralSignupInner = () => {
     const signup = useSignup();
 
     const notifyError = useNotifyErrorHandler();
+
+    /**
+     * We have a recovery step in this flow, so let's prefetch the recovery kit
+     */
+    usePrefetchGenerateRecoveryKit();
 
     return (
         <>
@@ -44,10 +51,17 @@ const ReferralSignupInner = () => {
 
                             await signup.setupUser();
 
-                            setStep('display-name');
+                            setStep('recovery');
                         } catch (error) {
                             notifyError(error);
                         }
+                    }}
+                />
+            )}
+            {step === 'recovery' && (
+                <RecoveryPhraseStep
+                    onContinue={async () => {
+                        setStep('display-name');
                     }}
                 />
             )}

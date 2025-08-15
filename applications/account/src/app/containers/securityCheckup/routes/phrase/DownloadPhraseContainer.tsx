@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
-import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { useInactiveKeys } from '@proton/account';
@@ -22,10 +21,10 @@ import {
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import type { GeneratedMnemonicData } from '@proton/shared/lib/mnemonic';
-import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import noop from '@proton/utils/noop';
 
+import generateDeferredMnemonicData from '../../../recoveryPhrase/generateDeferredMnemonicData';
+import type { DeferredMnemonicData } from '../../../recoveryPhrase/types';
 import methodErrorSrc from '../../assets/method-error.svg';
 import methodSuccessSrc from '../../assets/method-success.svg';
 import SecurityCheckupMain from '../../components/SecurityCheckupMain';
@@ -34,20 +33,13 @@ import SecurityCheckupMainTitle from '../../components/SecurityCheckupMainTitle'
 import { phraseIcon } from '../../methodIcons';
 import recoveryKitSrc from './recovery-kit.svg';
 
-const getRecoveryKit = async () => {
-    // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
-    return import(/* webpackChunkName: "recovery-kit" */ '@proton/recovery-kit');
-};
-
-type Payload = Awaited<ReturnType<typeof generateMnemonicPayload>>;
-
 enum STEPS {
     DOWNLOAD,
     ERROR,
     SUCCESS,
 }
 
-const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => {
+const DownloadPhrase = ({ recoveryPhraseData }: { recoveryPhraseData: DeferredMnemonicData }) => {
     const api = useApi();
     const { call } = useEventManager();
 
@@ -114,6 +106,13 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
         );
     }
 
+    if (!recoveryPhraseData.recoveryKitBlob) {
+        // TODO: use the recovery copy fallback in this case
+        return <Redirect to={SECURITY_CHECKUP_PATHS.ROOT} />;
+    }
+
+    const blob = recoveryPhraseData.recoveryKitBlob;
+
     const downloadRecoveryKit = async () => {
         downloadFile(blob, RECOVERY_KIT_FILE_NAME);
         await call();
@@ -129,9 +128,9 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
 
         try {
             if (callReactivateEndpoint) {
-                await api(reactivateMnemonicPhrase(payload));
+                await api(reactivateMnemonicPhrase(recoveryPhraseData.payload));
             } else {
-                await api(updateMnemonicPhrase({ ...payload, PersistPasswordScope: true }));
+                await api(updateMnemonicPhrase({ ...recoveryPhraseData.payload, PersistPasswordScope: true }));
             }
 
             await downloadRecoveryKit();
@@ -145,7 +144,7 @@ const DownloadPhrase = ({ payload, blob }: { payload: Payload; blob: Blob }) => 
         }
     };
 
-    const size = `(${humanSize({ bytes: blob.size })})`;
+    const size = `(${humanSize({ bytes: recoveryPhraseData.recoveryKitBlob.size })})`;
 
     const showUnderstoodCheckBox = phrase.isOutdated && !!inactiveKeys.length;
 
@@ -237,52 +236,27 @@ const DownloadPhraseContainer = () => {
 
     const [generatingData, withGeneratingData] = useLoading(true);
 
-    const [payload, setPayload] = useState<Payload>();
-    const [blob, setBlob] = useState<Blob>();
-
-    const generatePdfBlob = async (recoveryPhrase: string) => {
-        const emailAddress = Email || Name || '';
-
-        const { generatePDFKit } = await getRecoveryKit();
-
-        const pdf = await generatePDFKit({
-            date: `Created on ${format(new Date(), 'PPP')}`,
-            emailAddress,
-            recoveryPhrase,
-        });
-
-        return new Blob([pdf.buffer], { type: 'application/pdf' });
-    };
-
-    const getPayload = async (data: GeneratedMnemonicData) => {
-        const userKeys = await getUserKeys();
-        const { randomBytes, salt } = data;
-
-        return generateMnemonicPayload({ randomBytes, salt, userKeys, api, username: Name });
-    };
+    const [recoveryPhraseData, setRecoveryPhraseData] = useState<DeferredMnemonicData>();
 
     useEffect(() => {
         const generateMnemonicData = async () => {
-            const data = await generateMnemonicWithSalt();
+            const emailAddress = Email || Name || '';
+            const data = await generateDeferredMnemonicData({ api, emailAddress, username: Name, getUserKeys });
 
-            const [payload, blob] = await Promise.all([getPayload(data), generatePdfBlob(data.recoveryPhrase)]);
-
-            setPayload(payload);
-            setBlob(blob);
+            setRecoveryPhraseData(data);
         };
 
         void withGeneratingData(generateMnemonicData());
     }, []);
 
-    if (generatingData || !payload || !blob) {
+    if (generatingData || !recoveryPhraseData) {
         return (
             <SecurityCheckupMain className="flex items-center justify-center">
                 <CircleLoader size="medium" className="my-16 color-primary" />
             </SecurityCheckupMain>
         );
     }
-
-    return <DownloadPhrase payload={payload} blob={blob} />;
+    return <DownloadPhrase recoveryPhraseData={recoveryPhraseData} />;
 };
 
 export default DownloadPhraseContainer;

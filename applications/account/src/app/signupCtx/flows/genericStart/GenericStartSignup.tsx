@@ -5,12 +5,14 @@ import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { CYCLE } from '@proton/payments';
 
+import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import DisplayNameStep from './steps/DisplayNameStep';
+import RecoveryPhraseStep from './steps/RecoveryPhraseStep';
 import AccountDetailsStep from './steps/accountDetails/AccountDetailsStep';
 
-type Step = 'account-details' | 'display-name' | 'creating-account';
+type Step = 'account-details' | 'recovery' | 'display-name' | 'creating-account';
 
 const GenericStartSignupInner = () => {
     const [step, setStep] = useState<Step>('account-details');
@@ -18,6 +20,11 @@ const GenericStartSignupInner = () => {
     const signup = useSignup();
 
     const notifyError = useNotifyErrorHandler();
+
+    /**
+     * We have a recovery step in this flow, so let's prefetch the recovery kit
+     */
+    usePrefetchGenerateRecoveryKit();
 
     return (
         <>
@@ -30,10 +37,18 @@ const GenericStartSignupInner = () => {
 
                             await signup.setupUser();
 
-                            setStep('display-name');
+                            setStep('recovery');
                         } catch (error) {
                             notifyError(error);
                         }
+                    }}
+                />
+            )}
+
+            {step === 'recovery' && (
+                <RecoveryPhraseStep
+                    onContinue={async () => {
+                        setStep('display-name');
                     }}
                 />
             )}
