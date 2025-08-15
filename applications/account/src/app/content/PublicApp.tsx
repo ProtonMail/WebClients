@@ -257,7 +257,7 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
         searchParams: initialSearchParams,
     });
 
-    const handleLoginResult = async (result: LoginResult) => {
+    const handleLoginResult = (result: LoginResult) => {
         if (result.type === 'done') {
             const url = result.payload.url;
             replaceUrl(url.toString());
@@ -423,7 +423,9 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                                     payload: state,
                                     location: SSO_PATHS.OAUTH_PARTNERS,
                                 };
-                                handleLoginResult(loginLocationState).catch(noop);
+                                try {
+                                    handleLoginResult(loginLocationState);
+                                } catch (error) {}
                             }}
                             onLogin={({ username, token, flow }) => {
                                 const state: LoginContainerState = {
