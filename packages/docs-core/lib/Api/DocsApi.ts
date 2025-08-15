@@ -80,7 +80,7 @@ export class DocsApi {
     return this.routeExecutor.execute(route)
   }
 
-  async getCommitData(lookup: NodeMeta | PublicNodeMeta, commitId: string): Promise<ApiResult<Uint8Array>> {
+  async getCommitData(lookup: NodeMeta | PublicNodeMeta, commitId: string): Promise<ApiResult<Uint8Array<ArrayBuffer>>> {
     if (isPublicNodeMeta(lookup) && !this.publicContextHeaders) {
       throw new Error('Public context headers not set')
     }
@@ -116,7 +116,7 @@ export class DocsApi {
     return this.routeExecutor.execute(route)
   }
 
-  async lockDocument(nodeMeta: NodeMeta, fetchCommitId?: string): Promise<ApiResult<Uint8Array>> {
+  async lockDocument(nodeMeta: NodeMeta, fetchCommitId?: string): Promise<ApiResult<Uint8Array<ArrayBuffer>>> {
     const route = new DocsApiPrivateRouteBuilder({
       volumeId: nodeMeta.volumeId,
       linkId: nodeMeta.linkId,
@@ -125,7 +125,7 @@ export class DocsApi {
     return this.routeExecutor.execute(route)
   }
 
-  async squashCommit(nodeMeta: NodeMeta, commitId: string, squash: SquashCommit): Promise<ApiResult<Uint8Array>> {
+  async squashCommit(nodeMeta: NodeMeta, commitId: string, squash: SquashCommit): Promise<ApiResult<Uint8Array<ArrayBuffer>>> {
     const route = new DocsApiPrivateRouteBuilder({
       volumeId: nodeMeta.volumeId,
       linkId: nodeMeta.linkId,

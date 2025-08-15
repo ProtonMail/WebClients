@@ -368,7 +368,7 @@ export const postMessageParentToIframe = (message: ParentToIframeMessage) => {
 export const postMessageIframeToParent = (
     message: IframeToParentMessage,
     parentURL: string,
-    arrayBuffers?: ArrayBufferLike[]
+    arrayBuffers?: ArrayBuffer[]
 ) => {
     window.parent?.postMessage(message, parentURL, arrayBuffers || undefined);
 };

@@ -265,7 +265,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     }
   }
 
-  public async duplicateDocument(editorYjsState: Uint8Array): Promise<void> {
+  public async duplicateDocument(editorYjsState: Uint8Array<ArrayBuffer>): Promise<void> {
     const node = this.documentState.getProperty('decryptedNode')
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,

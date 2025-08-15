@@ -146,7 +146,7 @@ function useDriveCrypto() {
     );
 
     const sign = useCallback(
-        async (payload: string | Uint8Array, keys?: { privateKey: PrivateKeyReference; address: Address }) => {
+        async (payload: string | Uint8Array<ArrayBuffer>, keys?: { privateKey: PrivateKeyReference; address: Address }) => {
             const { privateKey, address } = keys || (await getPrimaryAddressKey());
             const signature = await signMessage(payload, [privateKey]);
             return { signature, address };

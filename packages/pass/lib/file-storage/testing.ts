@@ -1,6 +1,6 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-export const createMockChunk = (sizeInBytes: number = 16): Uint8Array => {
+export const createMockChunk = (sizeInBytes: number = 16): Uint8Array<ArrayBuffer> => {
     const data = new Uint8Array(sizeInBytes);
     return crypto.getRandomValues(data);
 };

@@ -4,7 +4,7 @@
 // This is based on reverse engineering of Apple MarkerNote as there is no official documentation
 
 type AppleMakerNote = {
-    value: number[] | Uint8Array | ArrayBuffer;
+    value: number[] | Uint8Array<ArrayBuffer> | ArrayBuffer;
 };
 
 /**
@@ -12,7 +12,7 @@ type AppleMakerNote = {
  * @param note - The potential maker note object
  * @returns A Uint8Array if valid, undefined otherwise
  */
-export const isAppleMakerNote = (note?: unknown): Uint8Array | undefined => {
+export const isAppleMakerNote = (note?: unknown): Uint8Array<ArrayBuffer> | undefined => {
     if (!note || typeof note !== 'object' || note === null) {
         return undefined;
     }
@@ -51,7 +51,7 @@ export const isAppleMakerNote = (note?: unknown): Uint8Array | undefined => {
  * @param data - The maker note data
  * @returns boolean indicating if it's Apple format
  */
-function checkAppleFormat(data: Uint8Array): boolean {
+function checkAppleFormat(data: Uint8Array<ArrayBuffer>): boolean {
     if (data.length < 5) {
         return false;
     }
@@ -71,7 +71,7 @@ function checkAppleFormat(data: Uint8Array): boolean {
  * @param makerNote - The maker note data
  * @returns The extracted 4-byte value, or null if not found
  */
-const extractValueFromMakerNote = (tagToFind: number, makerNote?: Uint8Array): number | null => {
+const extractValueFromMakerNote = (tagToFind: number, makerNote?: Uint8Array<ArrayBuffer>): number | null => {
     if (!makerNote || makerNote.length < 20) {
         return null;
     }
@@ -92,7 +92,7 @@ const extractValueFromMakerNote = (tagToFind: number, makerNote?: Uint8Array): n
  * @param makerNote - The maker note data
  * @returns The camera type value (0 = Back Wide, 1 = Back Normal, 6 = Front), or null if not found
  */
-const findCameraTypeInMakerNote = (makerNote?: Uint8Array): number | null => {
+const findCameraTypeInMakerNote = (makerNote?: Uint8Array<ArrayBuffer>): number | null => {
     // https://github.com/exiftool/exiftool/blob/master/lib/Image/ExifTool/Apple.pm#L222
     return extractValueFromMakerNote(0x002e, makerNote);
 };
@@ -102,7 +102,7 @@ const findCameraTypeInMakerNote = (makerNote?: Uint8Array): number | null => {
  * @param makerNote - The Apple Maker Note data
  * @returns The image capture type or null if not found
  */
-const getImageCaptureType = (makerNote?: Uint8Array): number | null => {
+const getImageCaptureType = (makerNote?: Uint8Array<ArrayBuffer>): number | null => {
     // https://github.com/exiftool/exiftool/blob/master/lib/Image/ExifTool/Apple.pm#L123
     return extractValueFromMakerNote(0x0014, makerNote);
 };
@@ -118,7 +118,7 @@ enum CameraType {
  * @param makerNote - The Apple Maker Note as a Uint8Array
  * @returns boolean indicating if the image is a selfie, or null if unable to determine
  */
-export const detectSelfieFromMakerNote = (makerNote?: Uint8Array): boolean => {
+export const detectSelfieFromMakerNote = (makerNote?: Uint8Array<ArrayBuffer>): boolean => {
     if (!makerNote || makerNote.length < 20) {
         return false;
     }
@@ -145,7 +145,7 @@ enum ImageCaptureType {
  * @param makerNote - The Apple Maker Note as a Uint8Array
  * @returns boolean indicating if the image is a selfie, or null if unable to determine
  */
-export const detectPortraitFromMakerNote = (makerNote?: Uint8Array): boolean => {
+export const detectPortraitFromMakerNote = (makerNote?: Uint8Array<ArrayBuffer>): boolean => {
     if (!makerNote || makerNote.length < 20) {
         return false;
     }

@@ -7,7 +7,7 @@ import UnsupportedPreview from './UnsupportedPreview';
 
 interface Props {
     mimeType: string;
-    contents?: Uint8Array[];
+    contents?: Uint8Array<ArrayBuffer>[];
     onDownload?: () => void;
     isSharedFile?: boolean;
 }

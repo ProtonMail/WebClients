@@ -18,7 +18,7 @@ export interface LinkDownload {
     revisionId?: string;
     signatureEmail?: string;
     signatureIssues?: SignatureIssues;
-    buffer?: Uint8Array[];
+    buffer?: Uint8Array<ArrayBuffer>[];
     isAnonymous?: boolean;
     parentLinkId?: string;
 }
@@ -31,7 +31,7 @@ export type DownloadControls = {
 };
 
 export type DownloadStreamControls = Omit<DownloadControls, 'start'> & {
-    start: (doNotCheckManifestSignatureOnlyForVideoStreaming?: boolean) => ReadableStream<Uint8Array>;
+    start: (doNotCheckManifestSignatureOnlyForVideoStreaming?: boolean) => ReadableStream<Uint8Array<ArrayBuffer>>;
 };
 
 export type DownloadEventCallbacks = {

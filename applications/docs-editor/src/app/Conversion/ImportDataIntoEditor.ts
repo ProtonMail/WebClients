@@ -22,7 +22,7 @@ export function isValidSuperString(editor: LexicalEditor, superString: string): 
 
 export async function $importDataIntoEditor(
   editor: LexicalEditor,
-  data: Uint8Array,
+  data: Uint8Array<ArrayBuffer>,
   dataFormat: ConvertibleDataType,
   options?: {
     html?: {

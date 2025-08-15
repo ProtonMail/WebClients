@@ -26,17 +26,17 @@ export interface Packets {
     MIMEType: MIME_TYPES;
     FileSize: number;
     Inline: boolean;
-    signature?: Uint8Array;
-    Preview: Uint8Array | string;
-    keys: Uint8Array;
-    data: Uint8Array;
+    signature?: Uint8Array<ArrayBuffer>;
+    Preview: Uint8Array<ArrayBuffer> | string;
+    keys: Uint8Array<ArrayBuffer>;
+    data: Uint8Array<ArrayBuffer>;
 }
 
 export interface Package {
     Flags?: number;
     Addresses?: { [email: string]: Package };
     MIMEType?: MIME_TYPES;
-    Body?: string | Uint8Array;
+    Body?: string | Uint8Array<ArrayBuffer>;
     BodyKey?: any;
     BodyKeyPacket?: string;
     Type?: PACKAGE_TYPE | 0;

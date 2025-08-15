@@ -1,7 +1,7 @@
 import type { ShareContent, ShareType } from '@proton/pass/types';
 import { Vault } from '@proton/pass/types';
 
-export const encodeVaultContent = (content: ShareContent<ShareType.Vault>): Uint8Array => {
+export const encodeVaultContent = (content: ShareContent<ShareType.Vault>): Uint8Array<ArrayBuffer> => {
     const creation = Vault.create({
         name: content.name,
         description: content.description,
@@ -14,7 +14,7 @@ export const encodeVaultContent = (content: ShareContent<ShareType.Vault>): Uint
     return Vault.toBinary(creation);
 };
 
-export const decodeVaultContent = (content: Uint8Array): ShareContent<ShareType.Vault> => {
+export const decodeVaultContent = (content: Uint8Array<ArrayBuffer>): ShareContent<ShareType.Vault> => {
     const decoded = Vault.fromBinary(content);
     return {
         name: decoded.name,

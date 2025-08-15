@@ -3,7 +3,7 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { objectMap } from '../object/map';
 
-type ByteArrays = ArrayBuffer | ArrayBufferView | Uint8Array;
+type ByteArrays = ArrayBuffer | ArrayBufferView | Uint8Array<ArrayBuffer>;
 
 export type SanitizedBuffers<T> = T extends ByteArrays
     ? string
@@ -16,7 +16,7 @@ export type SanitizedBuffers<T> = T extends ByteArrays
 const isArrayBuffer = (value: unknown): value is ArrayBuffer =>
     value instanceof ArrayBuffer || (typeof window !== 'undefined' && value instanceof window.ArrayBuffer);
 
-const isUint8Array = (value: unknown): value is Uint8Array =>
+const isUint8Array = (value: unknown): value is Uint8Array<ArrayBuffer> =>
     value instanceof Uint8Array || (typeof window !== 'undefined' && value instanceof window.Uint8Array);
 
 const isInt8Array = (value: unknown): value is Int8Array =>

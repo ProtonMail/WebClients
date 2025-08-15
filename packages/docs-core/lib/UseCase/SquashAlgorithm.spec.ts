@@ -2,9 +2,9 @@ import * as Y from 'yjs'
 
 describe('SquashAlgorithm', () => {
   describe('yjs merge', () => {
-    const harvestUpdates = async (doc: Y.Doc, count: number): Promise<Uint8Array[]> => {
+    const harvestUpdates = async (doc: Y.Doc, count: number): Promise<Uint8Array<ArrayBuffer>[]> => {
       return new Promise((resolve) => {
-        const updates: Uint8Array[] = []
+        const updates: Uint8Array<ArrayBuffer>[] = []
 
         doc.on('update', (update) => {
           updates.push(update)
