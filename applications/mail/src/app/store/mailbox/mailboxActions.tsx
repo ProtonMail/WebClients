@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { conversationCountsActions, messageCountsActions } from '@proton/mail';
+import { getContextNumMessages } from '@proton/mail/helpers/conversation';
 import {
     labelConversations as labelConversationsApi,
     markConversationsAsRead as markConversationsAsReadApi,
@@ -14,6 +15,7 @@ import {
     markMessageAsUnread,
     unlabelMessages as unlabelMessagesApi,
 } from '@proton/shared/lib/api/messages';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -22,6 +24,7 @@ import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import UndoActionNotification from 'proton-mail/components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
+import { hasLabel } from 'proton-mail/helpers/elements';
 import type { Conversation } from 'proton-mail/models/conversation';
 import type { Element } from 'proton-mail/models/element';
 
@@ -296,6 +299,7 @@ export const labelMessages = createAsyncThunk<
                     folders,
                 })
             );
+
             const result = await runAction({
                 extra,
                 finallyFetchEvents: isEncryptedSearch,
@@ -304,6 +308,7 @@ export const labelMessages = createAsyncThunk<
                           isMessage: true,
                           elementsCount: elements.length,
                           destinationLabelID,
+                          isComingFromSpam: elements.some((element) => hasLabel(element, MAILBOX_LABEL_IDS.SPAM)),
                           labels,
                           folders,
                       })
@@ -452,6 +457,9 @@ export const labelConversations = createAsyncThunk<
                     ? getNotificationTextLabelAdded({
                           isMessage: false,
                           elementsCount: conversations.length,
+                          isComingFromSpam: conversations.some(
+                              (conversation) => getContextNumMessages(conversation, MAILBOX_LABEL_IDS.SPAM) > 0
+                          ),
                           destinationLabelID,
                           labels,
                           folders,
