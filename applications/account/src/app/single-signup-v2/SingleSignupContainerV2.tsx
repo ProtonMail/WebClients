@@ -17,7 +17,6 @@ import {
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { AuthSession } from '@proton/components/containers/login/interface';
-import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -28,6 +27,7 @@ import {
     DEFAULT_CYCLE,
     PAYMENT_METHOD_TYPES,
     PLANS,
+    getBillingAddressFromPaymentStatus,
     getPlanIDs,
     getPlanNameFromIDs,
     getPlansMap,
@@ -230,7 +230,6 @@ const SingleSignupContainerV2 = ({
     const getPlans = useGetPlans();
     const getPaymentStatus = useGetPaymentStatus();
     const { getPreferredCurrency } = useCurrencies();
-    const isChargebeeEnabled = useIsChargebeeEnabled();
     const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
         flow: 'signup-pass',
     });
@@ -466,6 +465,7 @@ const SingleSignupContainerV2 = ({
             plansMap,
             signupConfiguration,
             coupon: signupParameters.coupon,
+            billingAddress: model.subscriptionData.billingAddress,
         });
 
         setModelDiff({
@@ -515,14 +515,11 @@ const SingleSignupContainerV2 = ({
                 await new Promise<void>(() => {});
             }
 
-            let chargebeeEnabled = undefined;
             if (resumedSession) {
                 silentApi = getUIDApi(resumedSession.UID, silentApi);
-                const user = resumedSession.User;
-                chargebeeEnabled = await isChargebeeEnabled(resumedSession.UID, async () => user);
             }
 
-            const paymentsApi = getPaymentsApi(silentApi, chargebeeEnabled?.result);
+            const paymentsApi = getPaymentsApi(silentApi);
 
             const [{ plans, freePlan }, paymentMethodStatus] = await Promise.all([
                 getPlans({ api: silentApi }),
@@ -564,6 +561,8 @@ const SingleSignupContainerV2 = ({
 
             void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
+            const billingAddress = getBillingAddressFromPaymentStatus(paymentMethodStatus);
+
             const [
                 { Domains: domains },
                 referralData,
@@ -595,12 +594,9 @@ const SingleSignupContainerV2 = ({
                         currency,
                         cycle,
                         coupon,
-                        billingAddress: {
-                            CountryCode: paymentMethodStatus.CountryCode,
-                            State: paymentMethodStatus.State,
-                            ZipCode: paymentMethodStatus.ZipCode,
-                        },
+                        billingAddress,
                         trial: signupTrial,
+                        ValidateZipCode: true,
                     },
                     toApp: product,
                     availableCycles: signupConfiguration.cycles,
@@ -612,6 +608,7 @@ const SingleSignupContainerV2 = ({
                     // if plan parameters are defined, we assume we won't be showing the plan cards
                     // and that we won't need to fetch the subscription data from the API call with each coupon
                     coupon: planParameters.defined ? null : coupon,
+                    billingAddress,
                 }),
             ]);
 
@@ -781,6 +778,7 @@ const SingleSignupContainerV2 = ({
                     coupon: signupParameters.coupon,
                     billingAddress: model.subscriptionData.billingAddress,
                     trial: signupTrial,
+                    ValidateZipCode: true,
                 },
                 planParameters: model.planParameters!,
                 signupParameters,
@@ -852,8 +850,6 @@ const SingleSignupContainerV2 = ({
                 authSession.data.User || silentApi<{ User: User }>(getUser()).then(({ User }) => User),
             ]);
 
-            const chargebeeEnabled = await isChargebeeEnabled(authSession.data.UID, async () => user);
-
             const { cycle, currency, planIDs } = (() => {
                 const modelCycle = model.subscriptionData.cycle;
                 const modelCurrency = model.subscriptionData.currency;
@@ -881,7 +877,7 @@ const SingleSignupContainerV2 = ({
             const { subscriptionData, upsell, ...userInfo } = await getUserInfo({
                 api: silentApi,
                 audience,
-                paymentsApi: getPaymentsApi(silentApi, chargebeeEnabled.result),
+                paymentsApi: getPaymentsApi(silentApi),
                 user,
                 plans: model.plans,
                 plansMap: model.plansMap,
@@ -896,6 +892,7 @@ const SingleSignupContainerV2 = ({
                     coupon: model.subscriptionData.checkResult?.Coupon?.Code,
                     billingAddress: model.subscriptionData.billingAddress,
                     trial: signupTrial,
+                    ValidateZipCode: true,
                 },
                 toApp: product,
                 availableCycles: signupConfiguration.cycles,

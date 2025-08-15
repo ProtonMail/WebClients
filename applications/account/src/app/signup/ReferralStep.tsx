@@ -16,7 +16,7 @@ import {
     PLANS,
     PLAN_NAMES,
     type PaymentsApi,
-    paymentStatusToBillingAddress,
+    getBillingAddressFromPaymentStatus,
 } from '@proton/payments';
 import { TaxCountrySelector, useTaxCountry } from '@proton/payments/ui';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -53,13 +53,14 @@ const ReferralStep = ({ paymentsApi, onSubscriptionData, onBack }: Props) => {
             setBillingAddress(newBillingAddress);
 
             try {
-                await paymentsApi.checkWithAutomaticVersion({
+                await paymentsApi.checkSubscription({
                     Plans: {
                         [plan]: 1,
                     },
                     Currency: DEFAULT_CURRENCY,
                     Cycle: CYCLE.MONTHLY,
                     BillingAddress: newBillingAddress,
+                    ValidateZipCode: true,
                 });
                 setZipCodeBackendValid(true);
             } catch (error) {
@@ -85,7 +86,7 @@ const ReferralStep = ({ paymentsApi, onSubscriptionData, onBack }: Props) => {
 
     useEffect(() => {
         if (!statusLoading && status) {
-            onBillingAddressChange(paymentStatusToBillingAddress(status));
+            onBillingAddressChange(getBillingAddressFromPaymentStatus(status));
         }
     }, [statusLoading]);
 

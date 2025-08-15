@@ -320,14 +320,6 @@ export type ChargeableV5PaymentParameters = ChargeablePaymentParameters & {
 export type ChargebeeFetchedPaymentToken = (ChargeableV5PaymentToken | NonChargeableV5PaymentToken) &
     (AuthorizedV5PaymentToken | NonAuthorizedV5PaymentToken);
 
-export type CheckWithAutomaticOptions = {
-    forcedVersion: PaymentsVersion;
-    reason: string;
-    silence?: boolean;
-};
-
-export type MultiCheckSubscriptionData = CheckSubscriptionData & (CheckWithAutomaticOptions | {});
-
 export type RequestOptions = {
     signal?: AbortSignal;
     silence?: boolean;
@@ -342,21 +334,13 @@ export type GetPlansData = {
 };
 
 export interface PaymentsApi {
-    checkWithAutomaticVersion: (
-        data: CheckSubscriptionData,
-        requestOptions?: RequestOptions,
-        options?: CheckWithAutomaticOptions
-    ) => Promise<EnrichedCheckResponse>;
+    checkSubscription: (data: CheckSubscriptionData, requestOptions?: RequestOptions) => Promise<EnrichedCheckResponse>;
 
-    multiCheck: (data: MultiCheckSubscriptionData[], options?: MultiCheckOptions) => Promise<EnrichedCheckResponse[]>;
+    multiCheck: (data: CheckSubscriptionData[], options?: MultiCheckOptions) => Promise<EnrichedCheckResponse[]>;
 
     cachedCheck: (data: CheckSubscriptionData) => Promise<EnrichedCheckResponse>;
 
-    cacheMultiCheck: (
-        data: CheckSubscriptionData,
-        options: CheckWithAutomaticOptions | undefined,
-        result: EnrichedCheckResponse
-    ) => void;
+    cacheMultiCheck: (data: CheckSubscriptionData, result: EnrichedCheckResponse) => void;
 
     paymentStatus: () => Promise<PaymentStatus>;
 

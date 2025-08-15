@@ -26,6 +26,7 @@ import {
     PLANS,
     type Plan,
     SubscriptionMode,
+    getBillingAddressFromPaymentStatus,
     getHas2024OfferCoupon,
     getIsVpnB2BPlan,
     getPlanFromPlanIDs,
@@ -398,6 +399,7 @@ const SingleSignupContainer = ({
                 coupon,
                 billingAddress,
                 trial: checkSignupTrial,
+                ValidateZipCode: true,
             });
         }
 
@@ -487,11 +489,7 @@ const SingleSignupContainer = ({
                 await checkPlans({
                     plans,
                     preferredCurrency,
-                    billingAddress: {
-                        CountryCode: paymentStatus.CountryCode,
-                        State: paymentStatus.State,
-                        ZipCode: paymentStatus.ZipCode,
-                    },
+                    billingAddress: getBillingAddressFromPaymentStatus(paymentStatus),
                 });
 
             sendSignupLoadTelemetry({

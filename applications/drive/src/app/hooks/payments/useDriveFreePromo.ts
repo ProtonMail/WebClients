@@ -41,7 +41,7 @@ export function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
                     Codes: codes,
                 };
                 try {
-                    const res = await paymentsApi.checkWithAutomaticVersion(subscriptionData);
+                    const res = await paymentsApi.checkSubscription(subscriptionData);
                     setResult(res);
                 } catch (error) {
                     setHasError(true);

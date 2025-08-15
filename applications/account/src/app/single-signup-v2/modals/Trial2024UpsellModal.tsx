@@ -45,7 +45,7 @@ export async function checkTrialPriceCommon({
         [planName]: 1,
     };
 
-    const checkResult = await paymentsApi.checkWithAutomaticVersion({
+    const checkResult = await paymentsApi.checkSubscription({
         Plans: planIDs,
         Currency: currency,
         Cycle: cycle,

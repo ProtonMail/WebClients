@@ -1,10 +1,4 @@
-import {
-    type CheckWithAutomaticOptions,
-    type Currency,
-    type RequestOptions,
-    isMainCurrency,
-    type CheckSubscriptionData,
-} from '@proton/payments';
+import { type CheckSubscriptionData, type Currency, type RequestOptions, isMainCurrency } from '@proton/payments';
 
 import { usePaymentsApi } from '../payments/react-extensions/usePaymentsApi';
 
@@ -17,21 +11,19 @@ export const useRegionalPricing = () => {
         currency,
         expectedPrice = defaultPrice,
         requestOptions,
-        options,
     }: {
         data: CheckSubscriptionData;
         defaultPrice: number;
         currency: Currency;
         expectedPrice?: number;
         requestOptions?: RequestOptions;
-        options?: CheckWithAutomaticOptions;
     }): Promise<number> => {
         if (isMainCurrency(currency)) {
             return expectedPrice ?? defaultPrice;
         }
 
         try {
-            const result = await paymentsApi.checkWithAutomaticVersion(data, requestOptions, options);
+            const result = await paymentsApi.checkSubscription(data, requestOptions);
             return result.AmountDue ?? defaultPrice;
         } catch (e) {
             return defaultPrice;

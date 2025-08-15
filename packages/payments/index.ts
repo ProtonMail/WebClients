@@ -58,7 +58,6 @@ export {
     DEFAULT_TAX_BILLING_ADDRESS,
     getBillingAddressStatus,
     normalizeBillingAddress,
-    paymentStatusToBillingAddress,
     type BillingAddress,
     type BillingAddressProperty,
     type BillingAddressStatus,
@@ -172,7 +171,6 @@ export type {
     ChargebeeIframeHandles,
     ChargebeeKillSwitch,
     ChargebeeKillSwitchData,
-    CheckWithAutomaticOptions,
     Currency,
     Cycle,
     CycleMapping,
@@ -187,7 +185,6 @@ export type {
     LatestSubscription,
     MaxKeys,
     MultiCheckOptions,
-    MultiCheckSubscriptionData,
     NonChargeablePaymentToken,
     NonChargeableV5PaymentToken,
     PaymentMethodCardDetails,
@@ -470,7 +467,6 @@ export {
 } from './core/transactions';
 export {
     isCardPayment,
-    isCheckWithAutomaticOptions,
     isExistingPaymentMethod,
     isFreeSubscription,
     isPaypalDetails,
