@@ -89,7 +89,7 @@ const TrialExplanation = () => {
                 />
                 <VerticalStep
                     title={c('Signup').t`Get ${referralReward} in credits`}
-                    description={c('Signup').t`To reedeem on your next paid subscription.`}
+                    description={c('Signup').t`To redeem on your next paid subscription.`}
                     icon={<span className="m-auto">3</span>}
                     className="pb-0"
                 />
