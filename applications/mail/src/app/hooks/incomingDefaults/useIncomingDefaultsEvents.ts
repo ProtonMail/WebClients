@@ -1,20 +1,26 @@
-import { useSubscribeEventManager } from '@proton/components';
+import { useEffect } from 'react';
+
+import { useEventManager } from '@proton/components';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import type { Event } from '../../models/event';
 import { event } from '../../store/incomingDefaults/incomingDefaultsActions';
 
 export default () => {
     const dispatch = useMailDispatch();
+    const { subscribe } = useEventManager();
 
-    useSubscribeEventManager(async ({ IncomingDefaults }: Event) => {
-        if (!Array.isArray(IncomingDefaults)) {
-            return;
-        }
+    useEffect(() => {
+        const unsubscribe = subscribe(({ IncomingDefaults }) => {
+            if (!Array.isArray(IncomingDefaults)) {
+                return;
+            }
 
-        for (const IncomingDefaultEvent of IncomingDefaults) {
-            dispatch(event(IncomingDefaultEvent));
-        }
-    });
+            dispatch(event(IncomingDefaults));
+        });
+
+        return () => {
+            unsubscribe?.();
+        };
+    }, []);
 };

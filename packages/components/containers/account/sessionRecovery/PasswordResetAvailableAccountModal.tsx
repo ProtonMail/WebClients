@@ -3,11 +3,9 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { sessionRecoveryChangePassword } from '@proton/account/password/sessionRecoveryChangePassword';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -18,23 +16,15 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
 import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import {
     useIsSessionRecoveryInitiatedByCurrentSession,
     useSessionRecoveryInsecureTimeRemaining,
 } from '@proton/components/hooks/useSessionRecovery';
 import metrics, { observeApiError } from '@proton/metrics';
-import { consumeSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
-import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
-import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { generateKeySaltAndPassphrase, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
-import { getArmoredPrivateUserKeys, getEncryptedArmoredOrganizationKey } from '@proton/shared/lib/keys/changePassword';
-import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
@@ -52,19 +42,13 @@ interface Props extends ModalProps {
 
 const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...rest }: Props) => {
     const [user] = useUser();
-    const api = useApi();
-    const { call, stop, start } = useEventManager();
-
-    const getOrganizationKey = useGetOrganizationKey();
-    const getUserKeys = useGetUserKeys();
-    const getAddresses = useGetAddresses();
 
     const [loading, setLoading] = useState(false);
     const formErrors = useFormErrors();
     const { onFormSubmit } = formErrors;
     const errorHandler = useErrorHandler();
     const { createNotification } = useNotifications();
-    const authentication = useAuthentication();
+    const dispatch = useDispatch();
 
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -252,70 +236,12 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                 setLoading(true);
 
                 try {
-                    stop();
-
-                    const [addresses, userKeysList, organizationKey] = await Promise.all([
-                        getAddresses(),
-                        getUserKeys(),
-                        getOrganizationKey(),
-                    ]);
-
-                    /**
-                     * This is the case for a user who does not have any keys set-up.
-                     * They will be in 2-password mode, but not have any keys.
-                     * Changing to one-password mode or mailbox password is not allowed.
-                     * It's not handled better because it's a rare case.
-                     */
-                    if (userKeysList.length === 0) {
-                        throw new Error(
-                            c('session_recovery:available:error')
-                                .t`Please generate keys before you try to change your password`
-                        );
-                    }
-
-                    const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
-                    if (!hasMigratedAddressKeys) {
-                        throw new Error(
-                            c('session_recovery:available:error')
-                                .t`Account recovery not available for legacy address keys`
-                        );
-                    }
-
-                    const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(newPassword);
-
-                    const [armoredUserKeys, armoredOrganizationKey] = await Promise.all([
-                        getArmoredPrivateUserKeys(userKeysList, keyPassword),
-                        getEncryptedArmoredOrganizationKey(organizationKey?.privateKey, keyPassword),
-                    ]);
-
-                    await srpVerify({
-                        api,
-                        credentials: {
-                            password: newPassword,
-                        },
-                        config: consumeSessionRecovery({
-                            UserKeys: armoredUserKeys,
-                            KeySalt: keySalt,
-                            OrganizationKey: armoredOrganizationKey,
-                        }),
-                    });
-
-                    await innerMutatePassword({
-                        api,
-                        authentication,
-                        keyPassword,
-                        clearKeyPassword: newPassword,
-                        User: user,
-                    });
-
-                    await call();
+                    await dispatch(sessionRecoveryChangePassword({ newPassword }));
 
                     createNotification({
                         text: c('session_recovery:available:notification').t`Password saved`,
                         showCloseButton: false,
                     });
-
-                    void api(lockSensitiveSettings());
 
                     metrics.core_session_recovery_consume_total.increment({
                         status: 'success',
@@ -331,7 +257,6 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                     );
                 } finally {
                     setLoading(false);
-                    start();
                 }
             };
 

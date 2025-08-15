@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Checkbox from '@proton/components/components/input/Checkbox';
@@ -18,8 +19,9 @@ import RegisterSecurityKeyContent from '@proton/components/containers/account/fi
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -54,8 +56,8 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     const [loading, withLoading] = useLoading();
     const normalApi = useApi();
     const errorHandler = useErrorHandler();
+    const dispatch = useDispatch();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const { call } = useEventManager();
     const { validator, onFormSubmit, reset } = useFormErrors();
     const [name, setName] = useState('');
     const [fidoError, setFidoError] = useState(false);
@@ -102,7 +104,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             try {
                 await silentApi(registerSecurityKey({ ...payload, Name: name }));
                 await silentApi(lockSensitiveSettings());
-                await call();
+                await dispatch(userSettingsThunk({ cache: CacheType.None }));
             } catch (e) {
                 errorHandler(e);
                 return;

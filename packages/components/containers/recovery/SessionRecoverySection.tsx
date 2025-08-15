@@ -1,13 +1,15 @@
 import { c } from 'ttag';
 
+import { userThunk } from '@proton/account/user';
 import { Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 
 import {
@@ -27,7 +29,7 @@ import ConfirmDisableSessionRecoveryModal from './ConfirmDisableSessionRecoveryM
 
 export const SessionRecoverySection = () => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
 
     const [loadingSessionRecovery, withLoadingSessionRecovery] = useLoading();
 
@@ -50,7 +52,7 @@ export const SessionRecoverySection = () => {
     const handleEnableSessionRecoveryToggle = async () => {
         try {
             await api(updateSessionAccountRecovery({ SessionAccountRecovery: 1 }));
-            await call();
+            await dispatch(userThunk({ cache: CacheType.None }));
             metrics.core_session_recovery_settings_update_total.increment({
                 status: 'success',
             });

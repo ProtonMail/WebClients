@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useGetSamlSSO } from '@proton/account/samlSSO/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -9,9 +10,9 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { SsoAppInfo } from '@proton/components/containers/organization/sso/ssoAppInfo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { CacheType } from '@proton/redux-utilities';
 import { removeSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import type { SSO } from '@proton/shared/lib/interfaces';
 import errorImg from '@proton/styles/assets/img/errors/error-generic-triangle.svg';
@@ -23,13 +24,13 @@ interface Props extends ModalProps {
 
 const RemoveSSOModal = ({ sso, ssoAppInfo, onClose, ...rest }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const getSamlSSO = useGetSamlSSO();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
 
     const removeSSO = async () => {
         await api(removeSAMLConfig(sso.ID));
-        await call();
+        await getSamlSSO({ cache: CacheType.None });
 
         createNotification({
             text:

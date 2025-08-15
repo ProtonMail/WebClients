@@ -9,7 +9,7 @@ import { setAddressFlagsHelper } from '@proton/shared/lib/keys/addressFlagsHelpe
 
 import type { KtState } from '..//kt';
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys/index';
-import { addressesThunk } from '../addresses';
+import { addressThunk, addressesThunk } from '../addresses';
 import { getKTActivation } from '../kt/actions';
 
 export const setAddressFlags = ({
@@ -46,11 +46,6 @@ export const setAddressFlags = ({
             keyTransparencyVerify,
             api,
         });
-        const result = await dispatch(addressesThunk({ cache: CacheType.None }));
-
-        // TODO: Remove dependency on call
-        extra.eventManager.call();
-
-        return result.find((otherAddress) => initialAddress.ID === otherAddress.ID);
+        return dispatch(addressThunk({ address, cache: CacheType.None }));
     };
 };

@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { addressesThunk, useInactiveKeys, userKeysThunk } from '@proton/account';
+import { addressThunk, useInactiveKeys } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
+import { reactivateKeysThunk } from '@proton/account/addressKeys/reactivateKeysActions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { getKTActivation } from '@proton/account/kt/actions';
 import { useUser } from '@proton/account/user/hooks';
@@ -17,11 +18,13 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useModals from '@proton/components/hooks/useModals';
 import { resignSKLWithPrimaryKey } from '@proton/key-transparency';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
+import { CacheType } from '@proton/redux-utilities';
 import { ForwardingState, ForwardingType, type KeyGenConfig, type KeyGenConfigV6 } from '@proton/shared/lib/interfaces';
 import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
 import {
@@ -29,12 +32,10 @@ import {
     deleteAddressKey,
     getPrimaryAddressKeysForSigning,
     importKeysProcess,
-    reactivateKeysProcess,
     setAddressKeyFlags,
     setPrimaryAddressKey,
 } from '@proton/shared/lib/keys';
 import { FlagAction, getNewAddressKeyFlags } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
-import noop from '@proton/utils/noop';
 
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';
@@ -50,8 +51,9 @@ import { getKeyByID } from './shared/helper';
 import { useKeysMetadata } from './shared/useKeysMetadata';
 
 const AddressKeysSection = () => {
+    const handleError = useErrorHandler();
     const { createModal } = useModals();
-    const { call, stop, start } = useEventManager();
+    const { stop, start } = useEventManager();
     const authentication = useAuthentication();
     const api = useApi();
     const [User] = useUser();
@@ -136,7 +138,7 @@ const AddressKeysSection = () => {
                     }),
                     keyTransparencyCommit(User, userKeys),
                 ]);
-                await call();
+                await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
             } finally {
                 setLoadingKeyID('');
             }
@@ -178,7 +180,7 @@ const AddressKeysSection = () => {
                 keyTransparencyVerify
             );
             await keyTransparencyCommit(User, userKeys);
-            await call();
+            await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
         } finally {
             setLoadingKeyID('');
         }
@@ -205,7 +207,7 @@ const AddressKeysSection = () => {
             const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
             await deleteAddressKey(api, Address, addressKeys, ID, keyTransparencyVerify);
             await keyTransparencyCommit(User, userKeys);
-            await call();
+            await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
         };
 
         const onExport = (): Promise<void> => {
@@ -271,7 +273,7 @@ const AddressKeysSection = () => {
                 }),
                 keyTransparencyCommit(User, userKeys),
             ]);
-            await call();
+            await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
             return newKey.fingerprint;
         } finally {
             start();
@@ -308,7 +310,7 @@ const AddressKeysSection = () => {
                 keyTransparencyVerify,
             });
             await keyTransparencyCommit(User, userKeys);
-            return await call();
+            await dispatch(addressThunk({ address: Address, cache: CacheType.None }));
         } finally {
             start();
         }
@@ -439,28 +441,12 @@ const AddressKeysSection = () => {
                     userKeys={userKeys || []}
                     keyReactivationRequests={keyReactivationRequests}
                     onProcess={async (keyReactivationRecords, onReactivation) => {
-                        try {
-                            stop();
-                            const [userKeys, addresses] = await Promise.all([
-                                dispatch(userKeysThunk()),
-                                dispatch(addressesThunk()),
-                            ]);
-                            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-                            await reactivateKeysProcess({
-                                api,
-                                user: User,
-                                userKeys,
-                                addresses,
+                        await dispatch(
+                            reactivateKeysThunk({
                                 keyReactivationRecords,
-                                keyPassword: authentication.getPassword(),
                                 onReactivation,
-                                keyTransparencyVerify,
-                            });
-                            await keyTransparencyCommit(User, userKeys).catch(noop);
-                            return await call();
-                        } finally {
-                            start();
-                        }
+                            })
+                        ).catch(handleError);
                     }}
                     {...reactivateKeyProps}
                 />

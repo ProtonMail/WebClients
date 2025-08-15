@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account';
+import { useUserSettings, userSettingsThunk } from '@proton/account';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { enableHighSecurity } from '@proton/shared/lib/api/settings';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
@@ -23,7 +24,7 @@ const SentinelPostSubscriptionModal = (props: PostSubscriptionModalComponentProp
     const [displayLoadingModal, setDisplayLoadingModal] = useState(true);
     const api = useApi();
     const [userSettings] = useUserSettings();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const isPremiumFeatureEnabled = userSettings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED;
 
     const isSetupActionDoneRef = useRef(false);
@@ -33,7 +34,7 @@ const SentinelPostSubscriptionModal = (props: PostSubscriptionModalComponentProp
             const setupAction = async () => {
                 if (!isPremiumFeatureEnabled) {
                     await api(enableHighSecurity());
-                    await call();
+                    await dispatch(userSettingsThunk({ cache: CacheType.None }));
                 } else {
                     return Promise.resolve();
                 }

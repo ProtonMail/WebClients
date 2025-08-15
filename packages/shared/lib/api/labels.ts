@@ -8,13 +8,21 @@ export const get = (Type: number) => ({
     params: { Type },
 });
 
+export const getByIds = (IDS: string[]) => ({
+    url: `core/v4/labels/by-ids`,
+    method: 'post',
+    data: { LabelIDs: IDS },
+});
+
 interface PartialLabelOrderArgument {
     LabelIDs: string[];
     ParentID?: string | number;
 }
+
 interface LabelOrderArgument extends PartialLabelOrderArgument {
     Type: number;
 }
+
 export const order = ({ LabelIDs, ParentID, Type }: LabelOrderArgument) => ({
     method: 'put',
     url: 'core/v4/labels/order',
@@ -34,9 +42,11 @@ interface PartialCreateLabelArgument {
     Expanded?: number;
     Sticky?: number;
 }
+
 interface CreateLabelArgument extends PartialCreateLabelArgument {
     Type: number;
 }
+
 export const create = ({ Name, Color, Type, Notify, ParentID, Expanded }: CreateLabelArgument) => ({
     method: 'post',
     url: 'core/v4/labels',
@@ -52,6 +62,7 @@ interface UpdateLabelArguments {
     Expanded?: number;
     Display?: number;
 }
+
 export const updateLabel = (
     labelID: string,
     { Name, Color, Notify, ParentID, Sticky, Expanded, Display }: UpdateLabelArguments

@@ -2,13 +2,15 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { disableTotp, removeSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { getHasFIDO2SettingEnabled } from '@proton/shared/lib/settings/twoFactor';
@@ -28,9 +30,9 @@ enum STEP {
 
 const LostTwoFAModal = ({ availableRecoveryMethods, onClose, ...rest }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
     const { createNotification, clearNotifications } = useNotifications();
     const [step, setStep] = useState(STEP.PROMPT);
+    const dispatch = useDispatch();
 
     const [userSettings] = useUserSettings();
 
@@ -58,8 +60,8 @@ const LostTwoFAModal = ({ availableRecoveryMethods, onClose, ...rest }: Props) =
                     }
 
                     await api(disableTotp());
-                    await api(lockSensitiveSettings());
-                    await call();
+                    await dispatch(userSettingsThunk({ cache: CacheType.None }));
+                    await api(lockSensitiveSettings()).catch(noop);
 
                     clearNotifications();
                     createNotification({ text: c('Info').t`2FA disabled` });

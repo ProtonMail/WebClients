@@ -2,8 +2,12 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { OrganizationKeyRotationPayload } from '@proton/account';
-import { getKeyRotationPayload, rotatePasswordlessOrganizationKeys } from '@proton/account';
+import {
+    type OrganizationKeyRotationPayload,
+    getKeyRotationPayload,
+    organizationKeyThunk,
+    rotatePasswordlessOrganizationKeys,
+} from '@proton/account';
 import { Button, CircleLoader } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -14,10 +18,10 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
+import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
 import AdministratorList from './AdministratorList';
@@ -33,7 +37,6 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
     const [loadingInit, withLoadingInit] = useLoading(true);
     const api = useApi();
     const silentApi = getSilentApi(api);
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [authModalProps, setAuthModal, renderAuthModal] = useModalState();
     const [result, setResult] = useState<null | OrganizationKeyRotationPayload>(null);
@@ -76,7 +79,7 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
                     }}
                     onExit={() => setConfig(undefined)}
                     onSuccess={async () => {
-                        await call();
+                        await dispatch(organizationKeyThunk({ cache: CacheType.None }));
                         createNotification({ text: c('passwordless').t`Organization key updated` });
                         onClose?.();
                     }}

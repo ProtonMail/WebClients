@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
@@ -16,7 +17,6 @@ import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInp
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
@@ -34,9 +34,9 @@ interface Props extends ModalProps {
 }
 
 const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }: Props) => {
+    const getOrganization = useGetOrganization();
     const getOrganizationKey = useGetOrganizationKey();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
     const authentication = useAuthentication();
     const api = useApi();
     const { validator, onFormSubmit } = useFormErrors();
@@ -98,9 +98,11 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
                 passphrase: authentication.getPassword(),
             });
             await api(activateOrganizationKey(armoredPrivateKey));
-            await call();
-            // Warning: Force a refetch of the org key because it's not present in the event manager.
-            await getOrganizationKey({ cache: CacheType.None });
+            await Promise.all([
+                getOrganization({ cache: CacheType.None }),
+                // Warning: Force a refetch of the org key because it's not present in the event manager.
+                getOrganizationKey({ cache: CacheType.None }),
+            ]);
 
             createNotification({ text: success });
             onClose?.();

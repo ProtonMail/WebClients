@@ -8,10 +8,11 @@ import { addGroup, removeGroup, updateGroup, updateMembersAfterEdit } from '@pro
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
+import { addGroupMemberThunk } from '@proton/account/groups/addGroupMember';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useMembers } from '@proton/account/members/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import useAddGroupMember from '@proton/components/containers/organization/groups/useAddGroupMember';
+import useGroupKeys from '@proton/components/containers/organization/groups/useGroupKeys';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -19,7 +20,7 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { deleteGroup } from '@proton/shared/lib/api/groups';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
+import type { Address, EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 
 import type { GroupFormData, GroupsManagementReturn } from './types';
@@ -45,8 +46,16 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const [selectedGroup, setSelectedGroup] = useState<Group | undefined>(undefined);
     const [uiState, setUiState] = useState<GROUPS_STATE>('empty');
     const [customDomains, loadingCustomDomains] = useCustomDomains();
-    const addGroupMember = useAddGroupMember();
     const pmMeDomain = usePmMeDomain();
+    const { getMemberPublicKeys } = useGroupKeys();
+
+    const addGroupMember = async (group: { ID: string; Address: Address }, email: string) => {
+        try {
+            await dispatch(addGroupMemberThunk({ group, email, getMemberPublicKeys }));
+        } catch (e: unknown) {
+            handleError(e);
+        }
+    };
 
     const addressToMemberMap = useMemo(() => {
         const value: { [id: string]: EnhancedMember | undefined } = {};

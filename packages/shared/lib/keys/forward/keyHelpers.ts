@@ -1,8 +1,8 @@
-import { getKTActivation } from '@proton/account';
 import { type PrivateKeyReferenceV4, toPublicKeyReference } from '@proton/crypto';
 import { type KTVerifier, resignSKLWithPrimaryKey } from '@proton/key-transparency';
-import { createAddressKeyRouteV2 } from '@proton/shared/lib/api/keys';
-import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
+
+import { createAddressKeyRouteV2 } from '../../api/keys';
+import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../../constants';
 import type {
     ActiveAddressKeysByVersion,
     ActiveKey,
@@ -13,7 +13,7 @@ import type {
     KeyTransparencyActivation,
     KeyTransparencyVerify,
     UserModel,
-} from '@proton/shared/lib/interfaces';
+} from '../../interfaces';
 import {
     addAddressKeysProcess,
     getActiveKeyObject,
@@ -22,10 +22,7 @@ import {
     getPrimaryAddressKeysForSigning,
     getSignedKeyListWithDeferredPublish,
     unsetV6PrimaryAddressKey,
-} from '@proton/shared/lib/keys';
-
-import type { PrivateAuthenticationStore } from '../app/interface';
-import { getKeyByID } from '../keys/shared/helper';
+} from '../../keys';
 
 export interface ForwardingAddressKeyParameters {
     api: Api;
@@ -96,7 +93,7 @@ export const handleUnsetV6PrimaryKey = async ({
     User,
     userKeys,
     ktVerifier,
-    dispatch,
+    ktActivation,
 }: {
     ID: string;
     api: Api;
@@ -105,9 +102,9 @@ export const handleUnsetV6PrimaryKey = async ({
     User: UserModel;
     userKeys: DecryptedKey[];
     ktVerifier: KTVerifier;
-    dispatch: (thunkAction: ReturnType<typeof getKTActivation>) => KeyTransparencyActivation;
+    ktActivation: KeyTransparencyActivation;
 }) => {
-    const addressKey = getKeyByID(addressKeys, ID);
+    const addressKey = addressKeys.find(({ ID: otherID }) => otherID === ID);
     if (!addressKey) {
         throw new Error('Key not found');
     }
@@ -123,7 +120,7 @@ export const handleUnsetV6PrimaryKey = async ({
     await Promise.all([
         resignSKLWithPrimaryKey({
             api,
-            ktActivation: dispatch(getKTActivation()),
+            ktActivation,
             address: forwarderAddress,
             newPrimaryKeys: getPrimaryAddressKeysForSigning(newActiveKeys, true),
             formerPrimaryKeys: getPrimaryAddressKeysForSigning(formerActiveKeys, true),
@@ -142,7 +139,7 @@ export const generateNewE2EEForwardingCompatibleAddressKey = async ({
     User,
     userKeys,
     ktVerifier,
-    authentication,
+    keyPassword,
 }: {
     api: Api;
     forwarderAddress: Address;
@@ -151,7 +148,7 @@ export const generateNewE2EEForwardingCompatibleAddressKey = async ({
     User: UserModel;
     userKeys: DecryptedKey[];
     ktVerifier: KTVerifier;
-    authentication: PrivateAuthenticationStore;
+    keyPassword: string;
 }) => {
     const { keyTransparencyVerify, keyTransparencyCommit } = ktVerifier;
     const [newKey] = await addAddressKeysProcess({
@@ -161,7 +158,7 @@ export const generateNewE2EEForwardingCompatibleAddressKey = async ({
         addresses,
         address: forwarderAddress,
         addressKeys,
-        keyPassword: authentication.getPassword(),
+        keyPassword,
         keyTransparencyVerify,
     });
 

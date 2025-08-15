@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { addressThunk } from '@proton/account/addresses';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Editor from '@proton/components/components/editor/Editor';
@@ -12,9 +13,10 @@ import Input from '@proton/components/components/input/Input';
 import Label from '@proton/components/components/label/Label';
 import FormModal from '@proton/components/components/modal/FormModal';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import type { Address } from '@proton/shared/lib/interfaces';
 
@@ -28,7 +30,7 @@ interface Props {
 }
 const EditAddressModal = ({ onClose, address, ...rest }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const [model, updateModel] = useState({
         displayName: address.DisplayName,
@@ -49,7 +51,7 @@ const EditAddressModal = ({ onClose, address, ...rest }: Props) => {
         await api(
             updateAddress(address.ID, { DisplayName: model.displayName, Signature: formatSignature(model.signature) })
         );
-        await call();
+        await dispatch(addressThunk({ address, cache: CacheType.None }));
         onClose?.();
         createNotification({ text: c('Success').t`Address updated` });
     };

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { organizationThunk } from '@proton/account/organization';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -9,10 +10,11 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { deleteOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -27,16 +29,16 @@ interface Props extends ModalProps {
 
 const OrganizationLogoRemovalModal = ({ onClose, organization, app, ...rest }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { onFormSubmit } = useFormErrors();
     const { createNotification } = useNotifications();
+    const dispatch = useDispatch();
 
     const handleSubmit = async () => {
         try {
             await api(deleteOrganizationLogo());
             await api(updateOrganizationSettings({ ShowName: false }));
-            await call();
+            await dispatch(organizationThunk({ cache: CacheType.None, type: 'settings' }));
 
             metrics.core_lightLabelling_logoRemoval_total.increment({
                 status: 'success',

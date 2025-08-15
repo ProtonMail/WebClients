@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetSamlSSO } from '@proton/account/samlSSO/hooks';
 import { Button, Href } from '@proton/atoms';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import Form from '@proton/components/components/form/Form';
@@ -16,10 +17,10 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
+import { CacheType } from '@proton/redux-utilities';
 import { setupSAMLFields, setupSAMLUrl, setupSAMLXml } from '@proton/shared/lib/api/samlSSO';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -100,7 +101,7 @@ const ConfigureSamlModal = ({ ssoAppInfo, domain, onClose, issuerID, callbackURL
     const { createNotification } = useNotifications();
 
     const api = useApi();
-    const { call } = useEventManager();
+    const getSamlSSO = useGetSamlSSO();
     const [submitting, withSubmitting] = useLoading();
     const { validator, onFormSubmit, reset } = useFormErrors();
 
@@ -225,7 +226,7 @@ const ConfigureSamlModal = ({ ssoAppInfo, domain, onClose, issuerID, callbackURL
                     }
                 }
 
-                await call();
+                await getSamlSSO({ cache: CacheType.None });
                 createNotification({ text: c('Info').t`SAML configuration saved` });
                 onClose();
             };

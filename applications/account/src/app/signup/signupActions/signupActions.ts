@@ -1,8 +1,8 @@
 import { MAX_CHARS_API } from '@proton/account';
+import { getInitialStorage, getStorageRange } from '@proton/account/organization/storage';
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import type { VerificationModel } from '@proton/components';
-import { getInitialStorage, getStorageRange } from '@proton/components';
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
 import type { Subscription } from '@proton/payments';

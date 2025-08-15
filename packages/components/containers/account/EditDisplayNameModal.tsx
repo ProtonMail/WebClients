@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -11,11 +12,10 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { updateAddress } from '@proton/shared/lib/api/addresses';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces';
 
 interface Props extends ModalProps<'form'> {
@@ -24,23 +24,21 @@ interface Props extends ModalProps<'form'> {
 
 const EditDisplayNameModal = ({ address, ...rest }: Props) => {
     const [initialDisplayName] = useState(address.DisplayName);
-    const [model, setModel] = useState('');
+    const [displayName, setDisplayName] = useState('');
     const { createNotification } = useNotifications();
     const { onFormSubmit } = useFormErrors();
     const [submitting, withLoading] = useLoading();
-    const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
+    const handleError = useErrorHandler();
 
     const handleSubmit = async () => {
-        await api(
-            updateAddress(address.ID, {
-                DisplayName: model,
-                Signature: address.Signature,
-            })
-        );
-        await call();
-        createNotification({ text: c('Success').t`Display name updated` });
-        rest.onClose?.();
+        try {
+            await dispatch(updateAddressThunk({ address, displayName }));
+            createNotification({ text: c('Success').t`Display name updated` });
+            rest.onClose?.();
+        } catch (e) {
+            handleError(e);
+        }
     };
 
     const handleClose = submitting ? undefined : rest.onClose;
@@ -56,7 +54,7 @@ const EditDisplayNameModal = ({ address, ...rest }: Props) => {
                 if (!onFormSubmit()) {
                     return;
                 }
-                withLoading(handleSubmit());
+                void withLoading(handleSubmit());
             }}
             onClose={handleClose}
         >
@@ -73,9 +71,9 @@ const EditDisplayNameModal = ({ address, ...rest }: Props) => {
                 <InputFieldTwo
                     id="displayName"
                     autoFocus
-                    value={model}
+                    value={displayName}
                     maxLength={255}
-                    onValue={setModel}
+                    onValue={setDisplayName}
                     label={c('Label').t`New display name`}
                 />
             </ModalContent>

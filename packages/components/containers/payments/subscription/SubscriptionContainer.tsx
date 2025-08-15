@@ -257,7 +257,7 @@ const SubscriptionContainerInner = ({
     const { paymentsApi } = usePaymentsApi(api);
     const [user] = useUser();
     const isB2BTrial = useIsB2BTrial(subscription, organization);
-    const { call } = useEventManager();
+    const eventManager = useEventManager();
     const pollEventsMultipleTimes = usePollEvents();
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
     const { createNotification } = useNotifications();
@@ -445,6 +445,7 @@ const SubscriptionContainerInner = ({
         // When user has an error during checkout, we need to return him to the exact same step
         const checkoutStep = model.step;
         try {
+            eventManager.stop();
             setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE }));
             try {
                 await changeDefaultPaymentMethodBeforePayment(
@@ -491,7 +492,7 @@ const SubscriptionContainerInner = ({
 
                 throw error;
             }
-            await call();
+            await eventManager.call();
 
             void metrics.payments_subscription_total.increment({
                 ...metricsProps,
@@ -521,6 +522,8 @@ const SubscriptionContainerInner = ({
 
             setModel((model) => ({ ...model, step: checkoutStep }));
             throw error;
+        } finally {
+            eventManager.start();
         }
     };
 

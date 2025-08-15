@@ -1098,7 +1098,7 @@ export const migrateOrganizationKeyPasswordless = (): ThunkAction<
     ProtonThunkArguments,
     UnknownAction
 > => {
-    return async (dispatch, _, { api, eventManager }) => {
+    return async (dispatch, _, { api }) => {
         const userKeys = await dispatch(userKeysThunk());
         const organizationKey = await dispatch(organizationKeyThunk());
         if (getIsPasswordless(organizationKey?.Key)) {
@@ -1179,7 +1179,10 @@ export const migrateOrganizationKeyPasswordless = (): ThunkAction<
                 })
             );
 
-            await eventManager.call();
+            await Promise.all([
+                dispatch(organizationKeyThunk({ cache: CacheType.None })),
+                dispatch(membersThunk({ cache: CacheType.None })),
+            ]);
         } catch (e: any) {
             const error = getSentryError(e);
             if (error) {
@@ -1195,7 +1198,7 @@ export const migrateOrganizationKeyPasswordlessPrivateAdmin = (): ThunkAction<
     ProtonThunkArguments,
     UnknownAction
 > => {
-    return async (dispatch, _, { api, eventManager }) => {
+    return async (dispatch, _, { api }) => {
         const userKeys = await dispatch(userKeysThunk());
         const organizationKey = await dispatch(organizationKeyThunk());
         if (!getIsPasswordless(organizationKey?.Key) || !organizationKey.privateKey) {
@@ -1232,7 +1235,6 @@ export const migrateOrganizationKeyPasswordlessPrivateAdmin = (): ThunkAction<
                     },
                 })
             );
-            await eventManager.call();
         } catch (e: any) {
             const error = getSentryError(e);
             if (error) {

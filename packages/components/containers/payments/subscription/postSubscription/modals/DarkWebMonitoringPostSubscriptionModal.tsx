@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account';
+import { useUserSettings, userSettingsActions } from '@proton/account';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
 import { SUBSCRIPTION_STEPS } from '../../constants';
@@ -23,7 +24,7 @@ const DarkWebMonitoringPostSubscriptionModal = (props: PostSubscriptionModalComp
     const [displayLoadingModal, setDisplayLoadingModal] = useState(true);
     const api = useApi();
     const [userSettings] = useUserSettings();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const isPremiumFeatureEnabled = userSettings.BreachAlerts.Value === DARK_WEB_MONITORING_STATE.ENABLED;
 
     const isSetupActionDoneRef = useRef(false);
@@ -32,8 +33,8 @@ const DarkWebMonitoringPostSubscriptionModal = (props: PostSubscriptionModalComp
         if (step === SUBSCRIPTION_STEPS.THANKS && !isSetupActionDoneRef.current) {
             const setupAction = async () => {
                 if (!isPremiumFeatureEnabled) {
-                    await api(enableBreachAlert());
-                    await call();
+                    const { UserSettings } = await api<{ UserSettings: UserSettings }>(enableBreachAlert());
+                    dispatch(userSettingsActions.update({ UserSettings }));
                 } else {
                     return Promise.resolve();
                 }

@@ -15,6 +15,7 @@ interface ProxyInstance {
     ForwardeeKeyFingerprint: string;
     ProxyParam: string;
 }
+
 interface QueryProps {
     AddressID?: string;
     Page?: number;
@@ -25,6 +26,11 @@ export const queryOutgoingForwardings = ({ AddressID, Page, PageSize }: QueryPro
     method: 'get',
     url: 'mail/v4/forwardings/outgoing',
     params: { Page, PageSize, AddressID },
+});
+
+export const queryOutgoingForwarding = (id: string) => ({
+    method: 'get',
+    url: `mail/v4/forwardings/outgoing/${id}`,
 });
 
 export const queryAllOutgoingForwardings = (api: Api) => {
@@ -44,6 +50,11 @@ export const queryIncomingForwardings = ({ AddressID, Page, PageSize }: QueryPro
     method: 'get',
     url: 'mail/v4/forwardings/incoming',
     params: { Page, PageSize, AddressID },
+});
+
+export const queryIncomingForwarding = (id: string) => ({
+    method: 'get',
+    url: `mail/v4/forwardings/incoming/${id}`,
 });
 
 export const queryAllIncomingForwardings = (api: Api) => {

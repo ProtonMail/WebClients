@@ -1,16 +1,11 @@
-import { addressesThunk, useInactiveKeys, userKeysThunk } from '@proton/account';
-import { useUser } from '@proton/account/user/hooks';
+import { useInactiveKeys } from '@proton/account';
+import { reactivateKeysThunk } from '@proton/account/addressKeys/reactivateKeysActions';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { reactivateKeysProcess } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash';
-import noop from '@proton/utils/noop';
 
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
@@ -26,16 +21,11 @@ interface Props {
 }
 
 export const OverviewSection = ({ ids }: Props) => {
-    const { call, stop, start } = useEventManager();
-    const authentication = useAuthentication();
-    const api = useApi();
-    const [User] = useUser();
+    const handleError = useErrorHandler();
     const [userKeys] = useUserKeys();
     const dispatch = useDispatch();
 
     const keyReactivationRequests = useInactiveKeys();
-
-    const createKTVerifier = useKTVerifier();
 
     const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKeys] = useModalState();
     const [confirmProps, setDismissConfirmModalOpen, renderConfirm] = useModalState();
@@ -61,28 +51,12 @@ export const OverviewSection = ({ ids }: Props) => {
                     userKeys={userKeys || []}
                     keyReactivationRequests={keyReactivationRequests}
                     onProcess={async (keyReactivationRecords, onReactivation) => {
-                        try {
-                            stop();
-                            const [userKeys, addresses] = await Promise.all([
-                                dispatch(userKeysThunk()),
-                                dispatch(addressesThunk()),
-                            ]);
-                            const { keyTransparencyVerify, keyTransparencyCommit } = await createKTVerifier();
-                            await reactivateKeysProcess({
-                                api,
-                                user: User,
-                                userKeys,
-                                addresses,
+                        await dispatch(
+                            reactivateKeysThunk({
                                 keyReactivationRecords,
-                                keyPassword: authentication.getPassword(),
                                 onReactivation,
-                                keyTransparencyVerify,
-                            });
-                            await keyTransparencyCommit(User, userKeys).catch(noop);
-                            return await call();
-                        } finally {
-                            start();
-                        }
+                            })
+                        ).catch(handleError);
                     }}
                     {...reactivateKeyProps}
                 />

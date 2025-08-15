@@ -1,4 +1,4 @@
-import type { PayloadAction} from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -9,12 +9,12 @@ import type { Organization, SSO, User } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
+import { initEvent } from '../init';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
-import type { OrganizationState} from '../organization';
+import { type OrganizationState, organizationFulfilled } from '../organization';
 import { organizationThunk } from '../organization';
-import type { UserState} from '../user';
-import { userThunk } from '../user';
+import { type UserState, userFulfilled, userThunk } from '../user';
 
 const name = 'sso' as const;
 
@@ -31,6 +31,12 @@ interface ScimInfo {
 const defaultScimInfo: ScimInfo = {
     state: 0,
     baseUrl: '',
+};
+
+const defaultValue = {
+    configs: [],
+    staticInfo: { EntityID: '', CallbackURL: '' },
+    scimInfo: defaultScimInfo,
 };
 
 export interface SamlState extends UserState, OrganizationState {
@@ -54,11 +60,7 @@ const modelThunk = createAsyncModelThunk<Model, SamlState, ProtonThunkArguments>
     miss: async ({ dispatch, extraArgument }) => {
         const user = await dispatch(userThunk());
         if (!canFetchSSO(user)) {
-            return {
-                configs: [],
-                staticInfo: { EntityID: '', CallbackURL: '' },
-                scimInfo: defaultScimInfo,
-            };
+            return defaultValue;
         }
 
         const organization = await dispatch(organizationThunk());
@@ -105,18 +107,32 @@ const slice = createSlice({
     },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
-        builder.addCase(serverEvent, (state, action) => {
-            if (state.value && action.payload.User && !canFetchSSO(action.payload.User)) {
+
+        const handleUserUpdate = (state: SamlState['sso'], user: User | undefined) => {
+            if (state.value && user && !canFetchSSO(user)) {
                 // Do not get any SSO update when user becomes unsubscribed.
-                state.value.configs = [];
-                state.value.scimInfo = defaultScimInfo;
-                return;
+                return defaultValue;
             }
+        };
 
-            if (state.value && action.payload.Organization && !canFetchScim(action.payload.Organization)) {
+        const handleOrganizationUpdate = (state: SamlState['sso'], organization: Organization | undefined) => {
+            if (state.value && organization && !canFetchScim(organization)) {
                 state.value.scimInfo = defaultScimInfo;
             }
+        };
 
+        builder.addCase(initEvent, (state, action) => {
+            handleUserUpdate(state, action.payload.User);
+        });
+        builder.addCase(userFulfilled, (state, action) => {
+            handleUserUpdate(state, action.payload);
+        });
+
+        builder.addCase(organizationFulfilled, (state, action) => {
+            handleOrganizationUpdate(state, action.payload.value);
+        });
+
+        builder.addCase(serverEvent, (state, action) => {
             if (state.value && action.payload.SSO) {
                 state.value.configs = updateCollection({
                     model: state.value.configs,
@@ -124,6 +140,8 @@ const slice = createSlice({
                     itemKey: 'SSO',
                 });
             }
+            handleUserUpdate(state, action.payload.User);
+            handleOrganizationUpdate(state, action.payload.Organization);
         });
     },
 });

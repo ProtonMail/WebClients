@@ -1,12 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { type PayloadAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
+import type { ThunkAction } from 'redux-thunk';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import type { ProtonThunkArguments, SharedStartListening } from '@proton/redux-shared-store-types';
 import { CacheType, createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import { getInvitations } from '@proton/shared/lib/api/user';
+import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
+import { getInvitation, getInvitations } from '@proton/shared/lib/api/user';
+import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
+import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { PendingInvitation } from '@proton/shared/lib/interfaces';
-import type { Api, PendingInvitation as PendingUserInvitation } from '@proton/shared/lib/interfaces';
+import type { Api, PendingInvitation, PendingInvitation as PendingUserInvitation } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { serverEvent } from '../eventLoop';
@@ -19,6 +21,12 @@ const fetchPendingUserInvitations = (api: Api) =>
     api<{ UserInvitations: PendingUserInvitation[] }>(getInvitations()).then(({ UserInvitations }) => {
         return UserInvitations;
     });
+
+const fetchUserInvitation = (invitationID: string, api: Api) => {
+    return api<{ UserInvitation: PendingUserInvitation }>(getInvitation(invitationID)).then(({ UserInvitation }) => {
+        return UserInvitation;
+    });
+};
 
 const name = 'userInvitations' as const;
 
@@ -42,7 +50,13 @@ const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
+    reducers: {
+        eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<PendingInvitation>>) => {
+            if (state.value) {
+                state.value = updateCollectionV6(state.value, action.payload);
+            }
+        },
+    },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
@@ -58,6 +72,7 @@ const slice = createSlice({
 });
 
 export const userInvitationsReducer = { [name]: slice.reducer };
+const userInvitationsActions = slice.actions;
 export const userInvitationsThunk = modelThunk.thunk;
 
 export const userInvitationsListener = (startListening: SharedStartListening<UserInvitationsState>) => {
@@ -75,4 +90,21 @@ export const userInvitationsListener = (startListening: SharedStartListening<Use
             listenerApi.dispatch(userInvitationsThunk({ cache: CacheType.None })).catch(noop);
         },
     });
+};
+
+export const userInvitationsEventLoopV6Thunk = ({
+    event,
+    api,
+}: {
+    event: CoreEventV6Response;
+    api: Api;
+}): ThunkAction<Promise<void>, UserInvitationsState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        await updateCollectionAsyncV6({
+            events: event.UserInvitations,
+            get: (ID) => fetchUserInvitation(ID, api),
+            refetch: () => dispatch(userInvitationsThunk({ cache: CacheType.None })),
+            update: (result) => dispatch(userInvitationsActions.eventLoopV6(result)),
+        });
+    };
 };

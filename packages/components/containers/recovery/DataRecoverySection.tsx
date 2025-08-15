@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { userThunk } from '@proton/account/user';
 import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { useGetUserSettings, useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -14,11 +16,12 @@ import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/us
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
 import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
 import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -40,7 +43,7 @@ import VoidRecoveryFilesModal from './VoidRecoveryFilesModal';
 export const DataRecoverySection = () => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const api = useApi();
     const { APP_NAME } = useConfig();
     const authentication = useAuthentication();
@@ -114,7 +117,10 @@ export const DataRecoverySection = () => {
         }
         await api(updateDeviceRecovery({ DeviceRecovery }));
         await syncDeviceRecoveryHelper({ DeviceRecovery });
-        await call();
+        await Promise.all([
+            dispatch(userThunk({ cache: CacheType.None })),
+            dispatch(userSettingsThunk({ cache: CacheType.None })),
+        ]);
     };
 
     return (

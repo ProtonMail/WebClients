@@ -32,6 +32,7 @@ export {
     queryFreePlan,
     queryInvoices,
     queryPaymentMethodStatus,
+    queryPaymentMethod,
     queryPlans,
     queryTransactions,
     setPaymentMethodV4,

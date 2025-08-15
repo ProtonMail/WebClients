@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 
-import { isChainedForwarding } from './helpers';
+import { isChainedForwarding } from './forwardHelper';
 
 interface Props {
     chainedEmails: string[];

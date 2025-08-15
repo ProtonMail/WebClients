@@ -24,8 +24,9 @@ import formatSubscription from '@proton/shared/lib/subscription/format';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
+import { initEvent } from '../init';
 import type { ModelState } from '../interface';
-import { type UserState, userThunk } from '../user';
+import { type UserState, userFulfilled, userThunk } from '../user';
 
 const name = 'subscription' as const;
 
@@ -82,6 +83,38 @@ const slice = createSlice({
         },
     },
     extraReducers: (builder) => {
+        const handleUserUpdate = (state: SubscriptionState['subscription'], user: User | undefined) => {
+            if (!state.value || !user) {
+                return;
+            }
+
+            const isFreeSubscription = original(state)?.meta?.type === ValueType.dummy;
+
+            // User who downgrades does not receive a subscription update, so this resets it to free.
+            if (!isFreeSubscription && user && !canFetch(user)) {
+                state.value = freeSubscription;
+                state.error = undefined;
+                state.meta.type = ValueType.dummy;
+                state.meta.fetchedEphemeral = undefined;
+                state.meta.fetchedAt = 0;
+            }
+
+            // Otherwise, if there was no subscription update received, but the user became an admin, we reset the value so that it gets re-fetched. Typically happens for members who get promoted.
+            if (isFreeSubscription && user && canFetch(user)) {
+                state.error = undefined;
+                state.meta.type = ValueType.complete;
+                state.meta.fetchedEphemeral = undefined;
+                state.meta.fetchedAt = 0;
+            }
+        };
+
+        builder.addCase(initEvent, (state, action) => {
+            handleUserUpdate(state, action.payload.User);
+        });
+        builder.addCase(userFulfilled, (state, action) => {
+            handleUserUpdate(state, action.payload);
+        });
+
         builder.addCase(serverEvent, (state, action) => {
             if (!state.value) {
                 return;
@@ -113,21 +146,7 @@ const slice = createSlice({
                 state.error = undefined;
                 state.meta.type = ValueType.complete;
             } else {
-                const isFreeSubscription = original(state)?.meta?.type === ValueType.dummy;
-
-                // User who downgrades does not receive a subscription update, so this resets it to free.
-                if (!isFreeSubscription && action.payload.User && !canFetch(action.payload.User)) {
-                    state.value = freeSubscription;
-                    state.error = undefined;
-                    state.meta.type = ValueType.dummy;
-                }
-
-                // Otherwise, if there was no subscription update received, but the user became an admin, we reset the value so that it gets re-fetched. Typically happens for members who get promoted.
-                if (isFreeSubscription && action.payload.User && canFetch(action.payload.User)) {
-                    state.value = undefined;
-                    state.error = undefined;
-                    state.meta.type = ValueType.complete;
-                }
+                handleUserUpdate(state, action.payload.User);
             }
         });
     },

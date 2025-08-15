@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
+import merge from 'lodash/merge';
 
 import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -32,7 +33,14 @@ const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
+    reducers: {
+        update: (state, action: PayloadAction<CalendarUserSettings>) => {
+            if (!state.value) {
+                return;
+            }
+            state.value = merge(state.value, action.payload);
+        },
+    },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
@@ -45,3 +53,4 @@ const slice = createSlice({
 
 export const calendarSettingsReducer = { [name]: slice.reducer };
 export const calendarSettingsThunk = modelThunk.thunk;
+export const calendarSettingsActions = slice.actions;

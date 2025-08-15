@@ -1,12 +1,12 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { baseUseSelector } from '@proton/react-redux-store';
-import { KeyReactivationRequest } from '@proton/shared/lib/keys';
+import type { KeyReactivationRequest } from '@proton/shared/lib/keys';
 import { getAllKeysReactivationRequests } from '@proton/shared/lib/keys/getInactiveKeys';
 
 import { type AddressesState, selectAddresses } from '../addresses';
 import { type UserState, selectUser } from '../user';
-import { InactiveKeysState, selectInactiveKeys } from './index';
+import { type InactiveKeysState, selectInactiveKeys } from './index';
 
 type Result = KeyReactivationRequest[];
 
