@@ -151,7 +151,7 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
      */
     // accountSetupSteps?: AccountSetupSteps[];
 
-    onLogin: (session: ResumedSessionResult) => void;
+    onLogin: (session: ResumedSessionResult) => Promise<void>;
 
     /**
      * Configuration for the account form (username/email and password input form)
