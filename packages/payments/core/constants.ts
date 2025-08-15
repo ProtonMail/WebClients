@@ -1,4 +1,4 @@
-import type { Currency, MaxKeys, PaymentMethodFlow } from './interface';
+import type { Currency, FeatureLimitKey, PaymentMethodFlow } from './interface';
 
 export enum PAYMENT_TOKEN_STATUS {
     STATUS_PENDING = 0,
@@ -185,8 +185,8 @@ export enum PLANS {
     LUMO = 'lumo2024',
 }
 
-export const AddonKey: Readonly<{
-    [K in ADDON_NAMES]: MaxKeys;
+export const AddonFeatureLimitKeyMapping: Readonly<{
+    [K in ADDON_NAMES]: FeatureLimitKey;
 }> = {
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 'MaxDomains',
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 'MaxDomains',
