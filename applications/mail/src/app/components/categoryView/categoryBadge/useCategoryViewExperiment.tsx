@@ -1,9 +1,10 @@
 import useFlag from '@proton/unleash/useFlag';
 
 export const useCategoryViewExperiment = () => {
-    const isAvailable = useFlag('ShowMessageCategory');
+    const showCategoryBadges = useFlag('ShowMessageCategory');
+    const categoryViewAccess = useFlag('CategoryView');
 
     return {
-        canSeeCategoryLabel: isAvailable,
+        canSeeCategoryLabel: showCategoryBadges && !categoryViewAccess,
     };
 };
