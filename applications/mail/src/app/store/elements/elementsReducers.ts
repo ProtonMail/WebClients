@@ -17,6 +17,7 @@ import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import {
     applyLabelToConversation,
+    applyLabelToConversationMessage,
     applyLabelToMessage,
     removeLabelFromConversation,
     removeLabelFromMessage,
@@ -861,6 +862,22 @@ export const labelMessagesPending = (
 ) => {
     const { elements, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
 
+    // Update conversation first so that message is not updated yet
+    elements.forEach((element) => {
+        const conversationElementState = state.elements[element.ConversationID] as Conversation;
+
+        if (conversationElementState) {
+            applyLabelToConversationMessage(
+                element,
+                conversationElementState,
+                sourceLabelID,
+                destinationLabelID,
+                labels
+            );
+        }
+    });
+
+    // Then update message
     elements.forEach((element) => {
         const elementState = state.elements[element.ID] as Message;
 
@@ -869,18 +886,6 @@ export const labelMessagesPending = (
         }
 
         applyLabelToMessage(elementState, destinationLabelID, folders, labels);
-    });
-
-    const uniqueConversationIDs = [...new Set(elements.map((element) => (element as Message).ConversationID))];
-
-    uniqueConversationIDs.forEach((conversationID) => {
-        const conversationElementState = state.elements[conversationID] as Conversation;
-
-        if (!conversationElementState) {
-            return;
-        }
-
-        applyLabelToConversation(conversationElementState, sourceLabelID, destinationLabelID, labels, folders);
     });
 };
 

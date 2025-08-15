@@ -21,6 +21,7 @@ import type { Element } from '../../models/element';
 import type { EventUpdates, QueryParams, QueryResults, TaskRunningInfo } from '../elements/elementsTypes';
 import {
     applyLabelToConversation,
+    applyLabelToConversationMessage,
     applyLabelToMessage,
     removeLabelFromConversation,
     removeLabelFromMessage,
@@ -552,5 +553,39 @@ export const unlabelConversationsPending = (
         conversationState.Messages?.forEach((message) => {
             removeLabelFromMessage(message, destinationLabelID, labels);
         });
+    });
+};
+
+export const labelMessagesPending = (
+    state: Draft<ConversationsState>,
+    action: PayloadAction<
+        undefined,
+        string,
+        {
+            arg: {
+                elements: Message[];
+                sourceLabelID: string;
+                destinationLabelID: string;
+                labels: Label[];
+                folders: Folder[];
+            };
+        }
+    >
+) => {
+    const { elements, sourceLabelID, destinationLabelID, labels } = action.meta.arg;
+
+    // Update conversation first so that message is not updated yet
+    elements.forEach((element) => {
+        const conversationState = state[element.ConversationID] as ConversationState;
+
+        if (conversationState) {
+            applyLabelToConversationMessage(
+                element,
+                conversationState.Conversation,
+                sourceLabelID,
+                destinationLabelID,
+                labels
+            );
+        }
     });
 };
