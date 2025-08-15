@@ -348,6 +348,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('Message marked as Starred.');
             });
@@ -359,6 +360,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('2 messages marked as Starred.');
             });
@@ -370,6 +372,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('Conversation marked as Starred.');
             });
@@ -381,6 +384,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('2 conversations marked as Starred.');
             });
@@ -394,6 +398,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('Message moved to Archive.');
             });
@@ -405,6 +410,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: 'customfolder1',
                     labels: [],
                     folders: customFolders,
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('Message moved to Custom folder 1.');
             });
@@ -416,6 +422,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: 'customlabel1',
                     labels: customLabels,
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('Message moved to Custom label 1.');
             });
@@ -427,6 +434,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('2 messages moved to Archive.');
             });
@@ -438,6 +446,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: 'customfolder1',
                     labels: [],
                     folders: customFolders,
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('2 messages moved to Custom folder 1.');
             });
@@ -449,6 +458,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: 'customlabel1',
                     labels: customLabels,
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('2 messages moved to Custom label 1.');
             });
@@ -462,6 +472,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('Conversation moved to Archive.');
             });
@@ -473,6 +484,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: 'customfolder1',
                     labels: [],
                     folders: customFolders,
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('Conversation moved to Custom folder 1.');
             });
@@ -484,6 +496,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: 'customlabel1',
                     labels: customLabels,
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('Conversation moved to Custom label 1.');
             });
@@ -495,6 +508,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('2 conversations moved to Archive.');
             });
@@ -506,6 +520,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: 'customfolder1',
                     labels: [],
                     folders: customFolders,
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('2 conversations moved to Custom folder 1.');
             });
@@ -517,6 +532,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: 'customlabel1',
                     labels: customLabels,
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('2 conversations moved to Custom label 1.');
             });
@@ -530,6 +546,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('Message moved to spam and sender added to your spam list.');
             });
@@ -541,6 +558,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('2 messages moved to spam and senders added to your spam list.');
             });
@@ -552,6 +570,7 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('Conversation moved to spam and sender added to your spam list.');
             });
@@ -563,8 +582,57 @@ describe('mailboxHelpers', () => {
                     destinationLabelID: MAILBOX_LABEL_IDS.SPAM,
                     labels: [],
                     folders: [],
+                    isComingFromSpam: false,
                 });
                 expect(result).toBe('2 conversations moved to spam and senders added to your spam list.');
+            });
+
+            it('should return the correct notification when one message moving out from spam', () => {
+                const result = getNotificationTextLabelAdded({
+                    isMessage: true,
+                    elementsCount: 1,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: [],
+                    folders: [],
+                    isComingFromSpam: true,
+                });
+                expect(result).toBe('Message moved to Inbox and sender added to your not spam list.');
+            });
+
+            it('should return the correct notification when two messages moving out from spam', () => {
+                const result = getNotificationTextLabelAdded({
+                    isMessage: true,
+                    elementsCount: 2,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: [],
+                    folders: [],
+                    isComingFromSpam: true,
+                });
+                expect(result).toBe('2 messages moved to Inbox and senders added to your not spam list.');
+            });
+
+            it('should return the correct notification when one conversation moving out from spam', () => {
+                const result = getNotificationTextLabelAdded({
+                    isMessage: false,
+                    elementsCount: 1,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: [],
+                    folders: [],
+                    isComingFromSpam: true,
+                });
+                expect(result).toBe('Conversation moved to Inbox and sender added to your not spam list.');
+            });
+
+            it('should return the correct notification when two conversations moving out from spam', () => {
+                const result = getNotificationTextLabelAdded({
+                    isMessage: false,
+                    elementsCount: 2,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: [],
+                    folders: [],
+                    isComingFromSpam: true,
+                });
+                expect(result).toBe('2 conversations moved to Inbox and senders added to your not spam list.');
             });
         });
     });

@@ -156,12 +156,14 @@ export const getNotificationTextLabelRemoved = ({
 export const getNotificationTextLabelAdded = ({
     isMessage,
     elementsCount,
+    isComingFromSpam,
     destinationLabelID,
     labels,
     folders,
 }: {
     isMessage: boolean;
     elementsCount: number;
+    isComingFromSpam: boolean;
     destinationLabelID: string;
     labels: Label[];
     folders: Folder[];
@@ -193,6 +195,27 @@ export const getNotificationTextLabelAdded = ({
     }
 
     const labelName = getLabelName(destinationLabelID, labels, folders);
+    if (isComingFromSpam && destinationLabelID !== MAILBOX_LABEL_IDS.TRASH) {
+        if (isMessage) {
+            if (elementsCount === 1) {
+                return c('Success').t`Message moved to ${labelName} and sender added to your not spam list.`;
+            }
+            return c('Success').ngettext(
+                msgid`${elementsCount} message moved to ${labelName} and sender added to your not spam list.`,
+                `${elementsCount} messages moved to ${labelName} and senders added to your not spam list.`,
+                elementsCount
+            );
+        }
+        if (elementsCount === 1) {
+            return c('Success').t`Conversation moved to ${labelName} and sender added to your not spam list.`;
+        }
+        return c('Success').ngettext(
+            msgid`${elementsCount} conversation moved to ${labelName} and sender added to your not spam list.`,
+            `${elementsCount} conversations moved to ${labelName} and senders added to your not spam list.`,
+            elementsCount
+        );
+    }
+
     if (isMessage) {
         if (elementsCount === 1) {
             return c('Success').t`Message moved to ${labelName}.`;
