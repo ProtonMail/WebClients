@@ -110,6 +110,11 @@ interface SignupContextType {
      * Sends recovery phrase payload to backend when user downloads/copies recovery phrase
      */
     sendRecoveryPhrasePayload: () => Promise<void>;
+    /**
+     * Capture a message to sentry.
+     * Includes relevant tags for the signup flow
+     */
+    captureSignupSentryMessage: (msg: string) => void;
 }
 
 const SignupContext = createContext<SignupContextType | null>(null);
@@ -751,6 +756,7 @@ export const InnerSignupContextProvider = ({
         loginUrl,
         recoveryPhraseData,
         sendRecoveryPhrasePayload,
+        captureSignupSentryMessage: captureSentryMessage,
     };
 
     return (
