@@ -10,6 +10,7 @@ import {
     markMessagesAsRead,
     markMessagesAsUnread,
     unlabelConversations,
+    unlabelMessages,
 } from '../mailbox/mailboxActions';
 import * as messageDraftAction from '../messages/draft/messagesDraftActions';
 import {
@@ -52,6 +53,7 @@ import {
     optimisticRestore as optimisticRestoreReducer,
     retryLoading as retryLoadingReducer,
     unlabelConversationsPending,
+    unlabelMessagesPending,
     updateConversation as updateConversationReducer,
     updateFromElements,
     updateFromLoadElements,
@@ -92,6 +94,7 @@ const conversationSlice = createSlice({
         builder.addCase(labelConversations.pending, labelConversationsPending);
         builder.addCase(unlabelConversations.pending, unlabelConversationsPending);
         builder.addCase(labelMessages.pending, labelMessagesPending);
+        builder.addCase(unlabelMessages.pending, unlabelMessagesPending);
     },
 });
 
