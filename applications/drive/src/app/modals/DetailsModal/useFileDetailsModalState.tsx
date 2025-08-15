@@ -25,6 +25,7 @@ export type FileDetails = {
     uploadedTime: Date;
     claimedModifiedTime?: Date;
     isShared?: boolean;
+    numberOfDownloads?: number | string;
     file?: {
         mediaType?: string;
         descriptiveMediaType?: string;
@@ -57,7 +58,8 @@ export const useFileDetailsModalState = ({ volumeId, linkId, ...modalProps }: Us
     useEffect(() => {
         const fetchFileDetails = async () => {
             try {
-                const node = await drive.getNode(generateNodeUid(volumeId, linkId));
+                const nodeUid = generateNodeUid(volumeId, linkId);
+                const node = await drive.getNode(nodeUid);
                 setTitle(getTitle(node));
 
                 const fileType = node.ok ? node.value.type : node.error.type;
@@ -68,6 +70,7 @@ export const useFileDetailsModalState = ({ volumeId, linkId, ...modalProps }: Us
                     : node.error.activeRevision?.ok
                       ? node.error.activeRevision.value
                       : undefined;
+                const numberOfDownloads = await getNumberOfDownloads(drive, nodeUid);
 
                 setDetails({
                     uid: nodeEntity.uid,
@@ -102,6 +105,7 @@ export const useFileDetailsModalState = ({ volumeId, linkId, ...modalProps }: Us
                     uploadedTime: nodeEntity.creationTime,
                     claimedModifiedTime: activeRevision?.claimedModificationTime,
                     isShared: isOwnFile(node) ? nodeEntity.isShared : undefined,
+                    numberOfDownloads,
                     file:
                         fileType === NodeType.File
                             ? {
@@ -226,6 +230,26 @@ async function getNodeLocation(
     }
 
     return `/${location.reverse().join('/')}`;
+}
+
+async function getNumberOfDownloads(
+    drive: {
+        getSharingInfo: (
+            nodeUid: string
+        ) => Promise<{ publicLink?: { numberOfInitializedDownloads: number } } | undefined>;
+    },
+    nodeUid: string
+): Promise<number | string | undefined> {
+    try {
+        const sharingInfo = await drive.getSharingInfo(nodeUid);
+        if (!sharingInfo?.publicLink) {
+            return undefined;
+        }
+        return sharingInfo.publicLink.numberOfInitializedDownloads;
+    } catch (error: unknown) {
+        console.error(error);
+        return c('Error').t`Unknown number of downloads`;
+    }
 }
 
 function getNodeParentUid(node: MaybeNode): string | undefined {
