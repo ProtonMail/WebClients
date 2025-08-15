@@ -690,7 +690,12 @@ export const InnerSignupContextProvider = ({
             /**
              * Ensure all metrics have been sent before login
              */
-            await metrics.processAllRequests();
+            await metrics.processAllRequests().catch(
+                /**
+                 * Gracefully handle error, but report to sentry
+                 */
+                traceSentryError
+            );
 
             await onLogin(setupUserResponseRef.current.session);
 
