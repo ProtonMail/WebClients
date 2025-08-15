@@ -57,6 +57,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const [currentEpoch, setCurrentEpoch] = useState<number | null>(null);
     const [currentKey, setCurrentKey] = useState<string | null>(null);
+    const currentKeyRef = useRef<string | null>(null);
 
     const [password, setPassword] = useState('');
     const [invalidPassphrase, setInvalidPassphrase] = useState(false);
@@ -119,7 +120,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const mlsEnabled = useFlag('EnableE2EE');
     const mlsSetupDone = useRef(false);
-    const startWsHealthCheck = useRef(false);
+    const startHealthCheck = useRef(false);
 
     const notifications = useNotifications();
 
@@ -186,7 +187,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
             setCurrentKey(groupKeyData.key);
             setCurrentEpoch(Number(groupKeyData.epoch));
 
-            startWsHealthCheck.current = true;
+            startHealthCheck.current = true;
 
             return groupKeyData;
         },
@@ -200,7 +201,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     useEffect(() => {
         const intervalId = setInterval(async () => {
-            if (wasmAppRef.current && wasmAppRef.current.getWsState && startWsHealthCheck.current) {
+            if (wasmAppRef.current && wasmAppRef.current.getWsState && startHealthCheck.current) {
                 try {
                     const connectionStatus = await wasmAppRef.current.getWsState();
                     console.log('connectionStatus', connectionStatus);
@@ -212,6 +213,32 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                     }
                 } catch (error) {
                     console.error('Failed to get connection status:', error);
+                }
+            }
+        }, 3000);
+
+        return () => clearInterval(intervalId);
+    }, []);
+
+    useEffect(() => {
+        currentKeyRef.current = currentKey;
+    }, [currentKey]);
+
+    useEffect(() => {
+        const intervalId = setInterval(async () => {
+            if (wasmAppRef.current && startHealthCheck.current) {
+                try {
+                    const groupKeyData = await wasmAppRef.current.getGroupKey();
+                    const isKeyChanged = groupKeyData.key !== currentKeyRef.current;
+                    if (isKeyChanged) {
+                        console.info('MLSgroup updated, update to align the latest status.');
+
+                        await onNewGroupKeyInfo(groupKeyData.key, groupKeyData.epoch);
+                        setCurrentKey(groupKeyData.key);
+                        setCurrentEpoch(Number(groupKeyData.epoch));
+                    }
+                } catch (error) {
+                    console.error('Failed to check groupKey:', error);
                 }
             }
         }, 3000);
@@ -313,7 +340,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                 room.on('disconnected', () => {
                     instantMeetingRef.current = false;
                     mlsSetupDone.current = false;
-                    startWsHealthCheck.current = false;
+                    startHealthCheck.current = false;
 
                     setInitialisedParticipantNameMap(false);
                     setJoinedRoom(false);
@@ -449,7 +476,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         resetParticipantNameMap();
         void wasmAppRef.current?.leaveMeeting();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
-        startWsHealthCheck.current = false;
+        startHealthCheck.current = false;
 
         setInitialisedParticipantNameMap(false);
         setJoinedRoom(false);

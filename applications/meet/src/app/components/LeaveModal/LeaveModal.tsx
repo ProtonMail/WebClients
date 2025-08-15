@@ -63,8 +63,9 @@ export const LeaveModal = ({ hasAdminPermission }: LeaveModalProps) => {
                                     'border-none rounded-full w-full leave-meeting-button',
                                     hasAdminPermission ? 'leave-meeting-button-admin' : 'leave-meeting-button'
                                 )}
-                                onClick={handleLeave}
+                                onClick={() => withLoadingEndMeeting(async () => handleLeave())}
                                 disabled={loadingEndMeeting}
+                                loading={loadingEndMeeting}
                                 size="large"
                             >
                                 {c('meet_2025 Action').t`Leave meeting`}
