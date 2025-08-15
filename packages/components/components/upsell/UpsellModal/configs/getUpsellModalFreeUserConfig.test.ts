@@ -20,7 +20,7 @@ jest.mock('@proton/payments/core/subscription/selected-plan', () => ({
 
 // @ts-expect-error - mock of paymentApi call
 let paymentsApiMock: PaymentsApi = {
-    checkWithAutomaticVersion: jest.fn(),
+    checkSubscription: jest.fn(),
 };
 
 const NON_MAIN_CURRENCY_MOCK_AMOUNT = 12;
@@ -29,7 +29,7 @@ const MAIN_CURRENCY_MONTHLY_MAIL_PLUS_AMOUNT = 8;
 
 async function setupTest(currency: Currency) {
     // @ts-expect-error - mock of paymentApi call
-    paymentsApiMock.checkWithAutomaticVersion.mockResolvedValue({
+    paymentsApiMock.checkSubscription.mockResolvedValue({
         AmountDue: NON_MAIN_CURRENCY_MOCK_AMOUNT,
     });
 
@@ -73,7 +73,7 @@ describe('getUpsellModalFreeUserConfig', () => {
 
         // Should not be called because it's a main currency
         // and we use the default ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE
-        expect(paymentsApiMock.checkWithAutomaticVersion).not.toHaveBeenCalled();
+        expect(paymentsApiMock.checkSubscription).not.toHaveBeenCalled();
 
         expect(config).toHaveProperty('planIDs', { [PLANS.MAIL]: 1 });
         expect(config).toHaveProperty('cycle', CYCLE.MONTHLY);
@@ -104,7 +104,7 @@ describe('getUpsellModalFreeUserConfig', () => {
         // Should be called because it's not a main currency
         // In this case we call it twice because we display a price with coupon
         // and a price without coupon.
-        expect(paymentsApiMock.checkWithAutomaticVersion).toHaveBeenCalledTimes(1);
+        expect(paymentsApiMock.checkSubscription).toHaveBeenCalledTimes(1);
 
         expect(config).toHaveProperty('planIDs', { [PLANS.MAIL]: 1 });
         expect(config).toHaveProperty('cycle', CYCLE.MONTHLY);

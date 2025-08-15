@@ -29,6 +29,7 @@ import {
     DEFAULT_CYCLE,
     PLANS,
     type PlanIDs,
+    getBillingAddressFromPaymentStatus,
     getIsB2BAudienceFromPlan,
     getPlanFromPlanIDs,
     getPlanIDs,
@@ -315,11 +316,7 @@ const SignupContainer = ({
                 plan: PLANS.FREE,
             });
             const cycle = signupParameters.cycle || DEFAULT_CYCLE;
-            const billingAddress: BillingAddress = {
-                CountryCode: paymentStatus.CountryCode,
-                State: paymentStatus.State,
-                ZipCode: paymentStatus.ZipCode,
-            };
+            const billingAddress: BillingAddress = getBillingAddressFromPaymentStatus(paymentStatus);
             const coupon = signupParameters.coupon;
 
             const subscriptionData = await getSubscriptionData(paymentsSilentApi, {
@@ -330,6 +327,7 @@ const SignupContainer = ({
                 coupon,
                 billingAddress,
                 skipUpsell: planParameters.defined,
+                ValidateZipCode: true,
             });
 
             setModelDiff({

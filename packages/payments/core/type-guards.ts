@@ -2,7 +2,6 @@ import { type ADDON_NAMES, MethodStorage, PAYMENT_METHOD_TYPES, PLANS } from './
 import type {
     CardPayment,
     ChargeablePaymentParameters,
-    CheckWithAutomaticOptions,
     CreateCardDetailsBackend,
     ExistingPaymentMethod,
     ExtendedTokenPayment,
@@ -115,10 +114,6 @@ export function isV5PaymentToken(
     data: Omit<ChargeablePaymentParameters, 'Amount' | 'Currency' | 'type' | 'chargeable'>
 ): data is V5PaymentToken {
     return Boolean(data.PaymentToken && isV5Payments(data));
-}
-
-export function isCheckWithAutomaticOptions(data: any): data is CheckWithAutomaticOptions {
-    return !!data && !!data.forcedVersion && !!data.reason;
 }
 
 export const isValidPlanName = (value: string | PLANS | ADDON_NAMES): value is PLANS =>

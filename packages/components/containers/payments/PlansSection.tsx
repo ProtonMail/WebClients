@@ -113,7 +113,7 @@ const PlansSectionInner = ({ app }: Props) => {
         }
 
         const couponCode = CouponCode || undefined; // From current subscription; CouponCode can be null
-        const { Coupon } = await paymentsApi.checkWithAutomaticVersion({
+        const { Coupon } = await paymentsApi.checkSubscription({
             Plans: newPlanIDs,
             Currency: currency,
             Cycle: newCycle,

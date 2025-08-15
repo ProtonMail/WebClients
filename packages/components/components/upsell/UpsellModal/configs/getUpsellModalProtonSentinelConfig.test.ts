@@ -11,7 +11,7 @@ jest.mock('@proton/payments/core/subscription/selected-plan', () => ({
 
 // @ts-expect-error - mock of paymentApi call
 let paymentsApiMock: PaymentsApi = {
-    checkWithAutomaticVersion: jest.fn(),
+    checkSubscription: jest.fn(),
 };
 
 const MOCK_YEARLY_PRICE_BRL = 120;
@@ -20,7 +20,7 @@ const MOCK_YEARLY_PRICE_USD = 100;
 
 async function setupTest(currency: Currency) {
     // @ts-expect-error - mock of paymentApi call
-    paymentsApiMock.checkWithAutomaticVersion.mockResolvedValue({
+    paymentsApiMock.checkSubscription.mockResolvedValue({
         AmountDue: MOCK_YEARLY_PRICE_BRL,
     });
     // @ts-expect-error - mock of checkout call
@@ -63,7 +63,7 @@ describe('getUpsellModalProtonSentinelConfig', () => {
 
         // Should not be called because it's a main currency
         // and we don't need to fetch the price because it's already in the plan
-        expect(paymentsApiMock.checkWithAutomaticVersion).toHaveBeenCalledTimes(0);
+        expect(paymentsApiMock.checkSubscription).toHaveBeenCalledTimes(0);
 
         expect(config).toHaveProperty('planIDs', { [PLANS.BUNDLE]: 1 });
         expect(config).toHaveProperty('cycle', CYCLE.YEARLY);
@@ -83,7 +83,7 @@ describe('getUpsellModalProtonSentinelConfig', () => {
 
         // Should be called because it's not a main currency and we need to fetch the price in this case
         // because the plan doesn't have the price in BRL
-        expect(paymentsApiMock.checkWithAutomaticVersion).toHaveBeenCalledTimes(1);
+        expect(paymentsApiMock.checkSubscription).toHaveBeenCalledTimes(1);
 
         expect(config).toHaveProperty('planIDs', { [PLANS.BUNDLE]: 1 });
         expect(config).toHaveProperty('cycle', CYCLE.YEARLY);
