@@ -76,7 +76,6 @@ import {
     getUnlimitedPasswordsBenefit,
     getWorksOnAllDevicesBenefit,
 } from '../configuration/helper';
-import recoveryKit from '../defaultCustomStep/recovery/recovery-kit.svg';
 import type { SignupConfiguration } from '../interface';
 import { SignupMode } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
@@ -717,7 +716,6 @@ export const getPassConfiguration = ({
         setupImg: <img src={setupAccount} alt="" />,
         preload: (
             <>
-                <link rel="prefetch" href={recoveryKit} as="image" />
                 <link rel="prefetch" href={setupAccount} as="image" />
                 {audience === Audience.B2B && <link rel="prefetch" href={onboardingFamilyPlan} as="image" />}
                 {getInfo(null, noop).preload}

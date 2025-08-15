@@ -25,6 +25,7 @@ enum Step {
 
 const CustomStepB2C = ({ measure, setupImg, productAppName, fork, onSetup, logo, model }: SignupCustomStepProps) => {
     const mnemonicData = model.cache?.setupData?.mnemonicData;
+    const accountData = model.cache?.type === 'signup' ? model.cache.accountData : undefined;
 
     useEffect(() => {
         void measure({ event: TelemetryAccountSignupEvents.onboardingStart, dimensions: {} });
@@ -53,6 +54,7 @@ const CustomStepB2C = ({ measure, setupImg, productAppName, fork, onSetup, logo,
         <Layout logo={logo} hasDecoration={false}>
             {step === Step.Recovery && (
                 <MnemonicRecoveryStep
+                    accountData={accountData}
                     onMeasureClick={(type) => {
                         void measure({
                             event: TelemetryAccountSignupEvents.interactRecoveryKit,

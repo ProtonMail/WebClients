@@ -54,6 +54,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getPathFromLocation, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
+import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import { useFlag, useFlagsStatus } from '@proton/unleash';
@@ -62,6 +63,7 @@ import noop from '@proton/utils/noop';
 
 import mailReferPage from '../../pages/refer-a-friend';
 import { PublicThemeProvider, getPublicTheme } from '../containers/PublicThemeProvider';
+import generateDeferredMnemonicData from '../containers/recoveryPhrase/generateDeferredMnemonicData';
 import { usePrefetchGenerateRecoveryKit } from '../containers/recoveryPhrase/useRecoveryKitDownload';
 import type { Paths } from '../content/helper';
 import { cachedPlans, cachedPlansMap } from '../defaultPlans';
@@ -76,7 +78,7 @@ import type {
     UserCacheResult,
 } from '../signup/interfaces';
 import { getPlanIDsFromParams } from '../signup/searchParams';
-import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
+import { handleDone, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import {
     sendSignupAccountCreationTelemetry,
@@ -1102,10 +1104,16 @@ const SingleSignupContainerV2 = ({
             const user = cache.session.resumedSessionResult.User;
             const emailAddress = user.Email || user.Name || '';
 
-            const mnemonicData = await handleSetupMnemonic({
+            const mnemonicData = await generateDeferredMnemonicData({
                 api: silentApi,
-                user,
-                keyPassword: cache.session.resumedSessionResult.keyPassword,
+                username: user.Name,
+                getUserKeys: async () => {
+                    const userKeys = await getDecryptedUserKeysHelper(
+                        user,
+                        cache.session.resumedSessionResult.keyPassword
+                    );
+                    return userKeys;
+                },
                 emailAddress,
             });
 
