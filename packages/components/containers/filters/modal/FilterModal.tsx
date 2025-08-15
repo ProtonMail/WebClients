@@ -11,13 +11,14 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useDispatch } from '@proton/components/containers/filters/useDispatch';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
+import { addFilter, updateFilter } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
-import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/api/filters';
+import { applyFilters } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
@@ -116,7 +117,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
     const [folders = [], loadingFolders] = useFolders();
     const api = useApi();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const isEdit = !!filter?.ID;
 
@@ -215,28 +216,24 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
 
     const createFilter = async (filter: CreateFilter) => {
         try {
-            const { Filter } = await api(addTreeFilter(filter));
+            const Filter = await dispatch(addFilter({ filter }));
             createNotification({
                 text: c('Notification').t`${Filter.Name} created`,
             });
-
             return Filter;
         } finally {
             // Some failed request will add the filter but in disabled mode
             // So we have to refresh the list in both cases
-            await call();
             handleCloseModal();
         }
     };
 
     const editFilter = async (filter: CreateFilter) => {
-        const { Filter } = await api(updateFilter(filter.ID, filter));
-        await call();
+        const Filter = await dispatch(updateFilter({ id: filter.ID, filter }));
         createNotification({
             text: c('Filter notification').t`Filter ${Filter.Name} updated`,
         });
         handleCloseModal();
-
         return Filter;
     };
 

@@ -9,9 +9,9 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { CacheType } from '@proton/redux-utilities';
 import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSettings';
 
 import FontFaceSelect from '../../../containers/layouts/FontFaceSelect';
@@ -27,12 +27,12 @@ interface Props {
 const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
     const api = useApi();
     const [settings] = useMailSettings();
+    const getMailSettings = useGetMailSettings();
 
     const [fontFace, setFontFace] = useState(getFontFaceValueFromId(settings?.FontFace) || DEFAULT_FONT_FACE);
     const [fontSize, setFontSize] = useState(settings?.FontSize || DEFAULT_FONT_SIZE);
     const [loading, setLoading] = useState(false);
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
 
     const changedFontFace = fontFace !== settings?.FontFace;
     const changedFontSize = fontSize !== settings?.FontSize;
@@ -55,7 +55,7 @@ const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
         }
 
         if (somethingChanged) {
-            await call();
+            await getMailSettings({ cache: CacheType.None });
             notifyPreferenceSaved();
         }
 

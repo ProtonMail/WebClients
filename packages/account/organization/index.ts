@@ -14,12 +14,17 @@ import {
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
-import { getOrganizationExtended } from '@proton/shared/lib/organization/api';
+import type { OrganizationExtended, User } from '@proton/shared/lib/interfaces';
+import {
+    getDefaultOrganizationSettings,
+    getOrganization,
+    getOrganizationSettings,
+} from '@proton/shared/lib/organization/api';
 
 import { serverEvent } from '../eventLoop';
+import { initEvent } from '../init';
 import type { ModelState } from '../interface';
-import { type UserState, userThunk } from '../user';
+import { type UserState, userFulfilled, userThunk } from '../user';
 import { canFetchOrganization } from './helper';
 
 const name = 'organization' as const;
@@ -84,6 +89,37 @@ const slice = createSlice({
         },
     },
     extraReducers: (builder) => {
+        const handleUserUpdate = (state: OrganizationState['organization'], user: User | undefined) => {
+            if (!state.value || !user) {
+                return;
+            }
+
+            const isFreeOrganization = original(state)?.meta.type === ValueType.dummy;
+
+            if (!isFreeOrganization && user && !canFetchOrganization(user)) {
+                // Do not get any organization update when user becomes unsubscribed.
+                state.value = freeOrganization;
+                state.error = undefined;
+                state.meta.type = ValueType.dummy;
+                state.meta.fetchedEphemeral = undefined;
+                state.meta.fetchedAt = 0;
+            }
+
+            if (isFreeOrganization && user && canFetchOrganization(user)) {
+                state.error = undefined;
+                state.meta.type = ValueType.complete;
+                state.meta.fetchedEphemeral = undefined;
+                state.meta.fetchedAt = 0;
+            }
+        };
+
+        builder.addCase(initEvent, (state, action) => {
+            handleUserUpdate(state, action.payload.User);
+        });
+        builder.addCase(userFulfilled, (state, action) => {
+            handleUserUpdate(state, action.payload);
+        });
+
         builder.addCase(serverEvent, (state, action) => {
             if (!state.value) {
                 return;
@@ -98,20 +134,7 @@ const slice = createSlice({
                 state.error = undefined;
                 state.meta.type = ValueType.complete;
             } else {
-                const isFreeOrganization = original(state)?.meta.type === ValueType.dummy;
-
-                if (!isFreeOrganization && action.payload.User && !canFetchOrganization(action.payload.User)) {
-                    // Do not get any organization update when user becomes unsubscribed.
-                    state.value = freeOrganization;
-                    state.error = undefined;
-                    state.meta.type = ValueType.dummy;
-                }
-
-                if (isFreeOrganization && action.payload.User && canFetchOrganization(action.payload.User)) {
-                    state.value = undefined;
-                    state.error = undefined;
-                    state.meta.type = ValueType.complete;
-                }
+                handleUserUpdate(state, action.payload.User);
             }
         });
     },
@@ -122,6 +145,7 @@ const previous = previousSelector(selectOrganization);
 
 const modelThunk = (options?: {
     cache?: CacheType;
+    type?: 'extended' | 'organization' | 'settings';
 }): ThunkAction<Promise<Model>, OrganizationState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
@@ -137,11 +161,47 @@ const modelThunk = (options?: {
                 return defaultValue;
             }
 
+            const getOrganizationPromise = () => {
+                return getOrganization({ api: extraArgument.api });
+            };
+
+            const getSettingsPromise = () => {
+                return extraArgument.config.APP_NAME === APPS.PROTONACCOUNTLITE
+                    ? getDefaultOrganizationSettings()
+                    : getOrganizationSettings({ api: extraArgument.api });
+            };
+
+            const getValue = async (): Promise<OrganizationExtended> => {
+                const originalOrganization = select()?.value;
+                const originalSettings = originalOrganization?.Settings;
+
+                if (originalSettings && options?.type === 'organization') {
+                    const organization = await getOrganizationPromise();
+                    const settings = select()?.value?.Settings || originalSettings;
+                    return {
+                        ...organization,
+                        Settings: settings,
+                    };
+                }
+
+                if (originalOrganization && options?.type === 'settings') {
+                    const settings = await getSettingsPromise();
+                    const organization = select()?.value || originalOrganization;
+                    return {
+                        ...organization,
+                        Settings: settings,
+                    };
+                }
+
+                const [organization, settings] = await Promise.all([getOrganizationPromise(), getSettingsPromise()]);
+                return {
+                    ...organization,
+                    Settings: settings,
+                };
+            };
+
             try {
-                const value = await getOrganizationExtended({
-                    api: extraArgument.api,
-                    defaultSettings: extraArgument.config.APP_NAME === APPS.PROTONACCOUNTLITE,
-                });
+                const value = await getValue();
                 return {
                     value: value,
                     type: ValueType.complete,
@@ -171,6 +231,7 @@ const modelThunk = (options?: {
 export const organizationReducer = { [name]: slice.reducer };
 export const organizationActions = slice.actions;
 export const organizationThunk = modelThunk;
+export const organizationFulfilled = slice.actions.fulfilled;
 
 export const MAX_CHARS_API = {
     ORG_NAME: 40,

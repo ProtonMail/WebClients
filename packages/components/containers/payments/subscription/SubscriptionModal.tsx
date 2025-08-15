@@ -46,6 +46,7 @@ export interface SubscriptionModalFowardedRefProps {
     /** Opens the subscription modal */
     open: (subscriptionProps: OpenCallbackProps) => void;
 }
+
 const isOverridablableStep = (step: SUBSCRIPTION_STEPS): step is SubscriptionOverridableStep =>
     [SUBSCRIPTION_STEPS.UPGRADE, SUBSCRIPTION_STEPS.THANKS].includes(step);
 

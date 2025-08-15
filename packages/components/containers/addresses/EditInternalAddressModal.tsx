@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { renameInternalAddressThunk } from '@proton/account/addresses/renameInternalAddress';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -13,16 +12,13 @@ import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { renameInternalAddress, updateAddress } from '@proton/shared/lib/api/addresses';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CANONICALIZE_SCHEME, canonicalizeEmail, getEmailParts } from '@proton/shared/lib/helpers/email';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Address } from '@proton/shared/lib/interfaces';
-import { getRenamedAddressKeys } from '@proton/shared/lib/keys';
-import noop from '@proton/utils/noop';
 
 interface Props extends ModalProps<'form'> {
     address: Address;
@@ -36,39 +32,21 @@ const EditInternalAddressModal = ({ address, ...rest }: Props) => {
     const [displayName, setDisplayName] = useState(initialDisplayName);
     const [localEmail, setEmail] = useState(initialLocalEmail);
     const newEmail = `${localEmail}@${domain}`;
-    const getUserKeys = useGetUserKeys();
-    const getOrganizationKey = useGetOrganizationKey();
     const { createNotification } = useNotifications();
     const { onFormSubmit, validator } = useFormErrors();
     const [submitting, withLoading] = useLoading();
-    const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
+    const handleError = useErrorHandler();
 
     const handleSubmit = async () => {
-        if (localEmail !== initialLocalEmail) {
-            const userKeys = await getUserKeys();
-            const organizationKey = await getOrganizationKey();
-            await api(
-                renameInternalAddress(address.ID, {
-                    Local: localEmail,
-                    AddressKeys: await getRenamedAddressKeys({
-                        userKeys,
-                        addressKeys: address.Keys,
-                        organizationKey: organizationKey?.privateKey ? organizationKey : undefined,
-                        email: newEmail,
-                    }),
-                })
-            );
-        }
-        if (displayName !== initialDisplayName) {
-            await api(
-                updateAddress(address.ID, {
-                    DisplayName: displayName,
-                    Signature: address.Signature,
-                })
-            ).catch(noop);
-        }
-        await call();
+        await dispatch(
+            renameInternalAddressThunk({
+                address,
+                newEmail,
+                localEmail: localEmail !== initialLocalEmail ? localEmail : undefined,
+                displayName: displayName !== initialDisplayName ? displayName : undefined,
+            })
+        );
         createNotification({ text: c('Success').t`Email address updated` });
         rest.onClose?.();
     };
@@ -86,7 +64,7 @@ const EditInternalAddressModal = ({ address, ...rest }: Props) => {
                 if (!onFormSubmit()) {
                     return;
                 }
-                withLoading(handleSubmit());
+                withLoading(handleSubmit()).catch(handleError);
             }}
             onClose={handleClose}
             noValidate

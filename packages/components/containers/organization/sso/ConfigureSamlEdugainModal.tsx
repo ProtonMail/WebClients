@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetSamlSSO } from '@proton/account/samlSSO/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Loader from '@proton/components/components/loader/Loader';
@@ -16,9 +17,9 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { CacheType } from '@proton/redux-utilities';
 import { getSAMLEdugainInfo, setupEdugainSAML } from '@proton/shared/lib/api/samlSSO';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
@@ -65,7 +66,7 @@ const ConfigureSamlEdugainModal = ({ domain, onClose, SSOEntityID, ExistingEduga
     const { createNotification } = useNotifications();
 
     const api = useApi();
-    const { call } = useEventManager();
+    const getSamlSSO = useGetSamlSSO();
     const [submitting, withSubmitting] = useLoading();
     const { onFormSubmit } = useFormErrors();
 
@@ -201,7 +202,7 @@ const ConfigureSamlEdugainModal = ({ domain, onClose, SSOEntityID, ExistingEduga
                     throw error;
                 }
 
-                await call();
+                await getSamlSSO({ cache: CacheType.None });
                 createNotification({ text: c('Info').t`eduGAIN configuration saved` });
                 onClose();
             };

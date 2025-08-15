@@ -3,14 +3,14 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { fireEvent, render } from '@testing-library/react';
 
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
+import { orderAddresses } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
 import useAddressFlags from '@proton/components/hooks/useAddressFlags';
-import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { orderAddress } from '@proton/shared/lib/api/addresses';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { mockUseFeatureBarrel } from '@proton/testing/lib/mockUseFeatureBarrel';
@@ -33,6 +33,12 @@ jest.mock('@proton/components/hooks/mail/usePostSubscriptionTourTelemetry', () =
     },
 }));
 
+jest.mock('@proton/account/addresses/actions');
+const mockedOrderAddresses = orderAddresses as jest.MockedFunction<typeof orderAddresses>;
+
+jest.mock('@proton/redux-shared-store/sharedProvider');
+const mockedUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>;
+
 jest.mock('@proton/shared/lib/helpers/upsell.ts', () => ({ __esModule: true, getUpsellRef: () => '' }));
 
 jest.mock('@proton/components/components/orderableTable/OrderableTable');
@@ -41,9 +47,6 @@ const mockedOrderableTable = OrderableTable as jest.MockedFunction<typeof Ordera
 
 jest.mock('@proton/account/addresses/hooks');
 const mockedUseAddresses = useAddresses as jest.MockedFunction<typeof useAddresses>;
-
-jest.mock('@proton/components/hooks/useApi');
-const mockedUseApi = useApi as jest.MockedFunction<typeof useApi>;
 
 jest.mock('@proton/components/hooks/useAddressFlags');
 const mockedUseAddressFlags = useAddressFlags as jest.MockedFunction<typeof useAddressFlags>;
@@ -101,8 +104,8 @@ describe('addresses with user', () => {
     };
 
     it('should be able to set an alias as default', async () => {
-        const mockApi = jest.fn();
-        mockedUseApi.mockReturnValue(mockApi);
+        const mockDispatch = jest.fn();
+        mockedUseDispatch.mockReturnValue(mockDispatch);
 
         const { getByTestId, getByText, container } = render(
             <AddressesWithUser user={user} allowAddressDeletion={false} />
@@ -111,7 +114,11 @@ describe('addresses with user', () => {
         // Assumes that "Make default" is displayed on the address we're interested in
         fireEvent.click(getByTestId('dropdownActions:dropdown'));
         fireEvent.click(getByText('Set as default'));
-        expect(mockApi).toHaveBeenCalledWith(orderAddress(['3', '1', '2', '4']));
+        const [address1, address2, address3, address4] = addresses;
+        expect(mockedOrderAddresses).toHaveBeenCalledWith({
+            addresses: [address3, address1, address2, address4],
+            member: undefined,
+        });
         expect(getFirstAddress(container)?.innerHTML).toBe('a1@proton.me');
     });
 

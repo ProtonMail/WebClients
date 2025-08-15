@@ -9,9 +9,12 @@ import {
     getFetchedAt,
     getFetchedEphemeral,
 } from '@proton/redux-utilities';
-import { getGroupMembers } from '@proton/shared/lib/api/groups';
+import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
+import { getGroupMember, getGroupMembers } from '@proton/shared/lib/api/groups';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { GROUP_MEMBER_STATE, type GroupMember } from '@proton/shared/lib/interfaces';
+import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
+import { type UpdateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
+import { type Api, GROUP_MEMBER_STATE, type GroupMember } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
@@ -36,12 +39,42 @@ type SliceState = GroupMembersState[typeof name];
 
 export const selectGroupMembers = (state: GroupMembersState) => state[name];
 
+const fetchGroupMember = (api: Api, memberID: string) =>
+    api<{ GroupMember: GroupMember }>(getGroupMember(memberID)).then((response) => response.GroupMember);
+
 const initialState: SliceState = {};
+
+const getValue = (value: GroupMembers) => {
+    return {
+        value,
+        error: undefined,
+        meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: getFetchedEphemeral() },
+    };
+};
 
 const slice = createSlice({
     name,
     initialState,
     reducers: {
+        eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<GroupMember>>) => {
+            const groups = Object.values(state);
+            for (const memberID of action.payload.delete) {
+                for (const group of groups) {
+                    if (group.value?.[memberID]) {
+                        delete group.value[memberID];
+                    }
+                }
+            }
+            for (const groupMember of action.payload.upsert) {
+                const { GroupID, GroupId, ID: memberID } = groupMember;
+                const groupId = GroupId ?? GroupID;
+                if (!state[groupId]?.value) {
+                    state[groupId] = getValue({ [memberID]: groupMember });
+                } else {
+                    state[groupId].value[memberID] = groupMember;
+                }
+            }
+        },
         pending: (state, action: PayloadAction<{ id: string }>) => {
             const oldValue = state[action.payload.id];
             if (oldValue && oldValue.error) {
@@ -49,11 +82,7 @@ const slice = createSlice({
             }
         },
         fulfilled: (state, action: PayloadAction<{ value: GroupMembers; id: string }>) => {
-            state[action.payload.id] = {
-                value: action.payload.value,
-                error: undefined,
-                meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: getFetchedEphemeral() },
-            };
+            state[action.payload.id] = getValue(action.payload.value);
         },
         rejected: (state, action) => {
             state[action.payload.id] = {
@@ -176,3 +205,23 @@ export const updateMembersAfterEdit = ({
 };
 
 export const groupMembersReducer = { [name]: slice.reducer };
+export const groupMembersActions = slice.actions;
+
+export const groupMembersEventLoopV6Thunk = ({
+    event,
+    api,
+}: {
+    event: CoreEventV6Response;
+    api: Api;
+}): ThunkAction<Promise<void>, GroupMembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        await updateCollectionAsyncV6({
+            n: 100,
+            events: event.GroupMembers,
+            get: (memberID: string) => fetchGroupMember(api, memberID),
+            // This is not supported since it targets a specific group.
+            refetch: async () => [],
+            update: (result) => dispatch(groupMembersActions.eventLoopV6(result)),
+        });
+    };
+};

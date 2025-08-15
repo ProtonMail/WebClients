@@ -10,11 +10,10 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import OrderableTableRow from '@proton/components/components/orderableTable/OrderableTableRow';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import { useDispatch } from '@proton/components/containers/filters/useDispatch';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { deleteFilter, toggleEnable } from '@proton/shared/lib/api/filters';
+import { deleteFilter, enableFilter } from '@proton/mail/store/filters/actions';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 
@@ -33,10 +32,9 @@ interface Props {
 }
 
 function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props) {
-    const api = useApi();
     const [user] = useUser();
     const [loading, withLoading] = useLoading();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
 
     const [applyFilterModalOpen, setApplyFilterModalOpen] = useState(false);
@@ -49,16 +47,14 @@ function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     const handleChangeStatus = async ({ target }: ChangeEvent<HTMLInputElement>) => {
-        await api(toggleEnable(ID, target.checked));
-        await call();
+        await dispatch(enableFilter({ filter, enabled: target.checked }));
         createNotification({
             text: c('Success notification').t`Status updated`,
         });
     };
 
     const handleRemove = async () => {
-        await api(deleteFilter(filter.ID));
-        await call();
+        await dispatch(deleteFilter({ filter }));
         createNotification({ text: c('Success notification').t`Filter removed` });
     };
 
