@@ -12,14 +12,16 @@ import type { DeferredMnemonicData } from '../../../containers/recoveryPhrase/ty
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import Main from '../../../public/Main';
+import type { AccountData } from '../../../signup/interfaces';
 
 interface Props {
     onContinue: () => void;
     mnemonicData: DeferredMnemonicData;
+    accountData: AccountData | undefined | null;
     onMeasureClick: (type: 'recovery_download' | 'recovery_download_again' | 'recovery_continue') => void;
 }
 
-const MnemonicRecoveryStep = ({ onContinue, mnemonicData, onMeasureClick }: Props) => {
+const MnemonicRecoveryStep = ({ onContinue, accountData, mnemonicData, onMeasureClick }: Props) => {
     const [understood, setUnderstood] = useState(false);
 
     const api = useApi();
@@ -33,7 +35,13 @@ const MnemonicRecoveryStep = ({ onContinue, mnemonicData, onMeasureClick }: Prop
                 />
                 <SetRecoveryPhraseOnSignupContainer
                     recoveryPhraseData={mnemonicData}
-                    sendRecoveryPhrasePayload={() => sendRecoveryPhrasePayload({ api, payload: mnemonicData.payload })}
+                    sendRecoveryPhrasePayload={() =>
+                        sendRecoveryPhrasePayload({
+                            api,
+                            payload: mnemonicData.payload,
+                            password: accountData?.password,
+                        })
+                    }
                     continueButton={() => {
                         return (
                             <>
