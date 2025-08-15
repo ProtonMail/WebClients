@@ -59,7 +59,7 @@ export interface DriveCompat {
     /**
      * Gets the contents of a node.
      */
-    getNodeContents: (meta: NodeMeta) => Promise<{ contents: Uint8Array; node: DecryptedNode }>;
+    getNodeContents: (meta: NodeMeta) => Promise<{ contents: Uint8Array<ArrayBuffer>; node: DecryptedNode }>;
 
     /**
      * Gets permissions associated to a specific node.

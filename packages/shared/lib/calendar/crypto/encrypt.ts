@@ -84,7 +84,7 @@ export const getEncryptedSessionKeysMap = async (
     if (!emails.length) {
         return;
     }
-    const result: SimpleMap<Uint8Array> = {};
+    const result: SimpleMap<Uint8Array<ArrayBuffer>> = {};
     await Promise.all(
         emails.map(async (email) => {
             const publicKey = publicKeyMap[email];

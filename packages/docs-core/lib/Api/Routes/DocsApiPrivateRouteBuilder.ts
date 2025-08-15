@@ -29,7 +29,7 @@ export class DocsApiPrivateRouteBuilder extends DocsApiRouteBuilder {
     }
   }
 
-  seedInitialCommit(params: { data: Uint8Array }): DocsRoute {
+  seedInitialCommit(params: { data: Uint8Array<ArrayBuffer> }): DocsRoute {
     return {
       method: 'post',
       url: `${this.basePath}/seed-initial-commit`,
@@ -48,7 +48,7 @@ export class DocsApiPrivateRouteBuilder extends DocsApiRouteBuilder {
     }
   }
 
-  squashCommit(params: { commitId: string; data: Uint8Array }): DocsRoute {
+  squashCommit(params: { commitId: string; data: Uint8Array<ArrayBuffer> }): DocsRoute {
     return {
       method: 'put',
       url: `${this.basePath}/commits/${params.commitId}/squash`,

@@ -3,7 +3,7 @@ import type { Runtime } from 'webextension-polyfill';
 import type { FileStorageGarbageCollector } from '@proton/pass/lib/file-storage/fs.gc';
 import type { AnyStorage, Maybe, StorageData } from '@proton/pass/types';
 
-export type FileBuffer = Blob | Uint8Array;
+export type FileBuffer = Blob | Uint8Array<ArrayBuffer>;
 export interface FileStorage {
     /** Type of the FS interface */
     type: string;

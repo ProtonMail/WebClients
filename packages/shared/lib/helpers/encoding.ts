@@ -4,7 +4,7 @@ export const uint8ArrayToString = arrayToBinaryString;
 
 export const stringToUint8Array = binaryStringToArray;
 
-export const uint8ArrayToBase64String = (array: Uint8Array) => encodeBase64(uint8ArrayToString(array));
+export const uint8ArrayToBase64String = (array: Uint8Array<ArrayBuffer>) => encodeBase64(uint8ArrayToString(array));
 
 export const base64StringToUint8Array = (string: string) => stringToUint8Array(decodeBase64(string) || '');
 
@@ -29,7 +29,7 @@ export const decodeBase64URL = (str: string) => {
     return decodeBase64((str + '==='.slice((str.length + 3) % 4)).replace(/-/g, '+').replace(/_/g, '/'));
 };
 
-export const uint8ArrayToPaddedBase64URLString = (array: Uint8Array) =>
+export const uint8ArrayToPaddedBase64URLString = (array: Uint8Array<ArrayBuffer>) =>
     encodeBase64URL(uint8ArrayToString(array), false);
 
 export const validateBase64string = (str: string, useVariantAlphabet?: boolean) => {
@@ -62,5 +62,5 @@ export const blobToUint8Array = async (blob: Blob) => new Uint8Array(await blob.
 /**
  * Convert a Uint8Array into a Blob
  */
-export const uint8ArrayToBlob = (uint8Array: Uint8Array, mimeType = 'application/octet-stream') =>
+export const uint8ArrayToBlob = (uint8Array: Uint8Array<ArrayBuffer>, mimeType = 'application/octet-stream') =>
     new Blob([uint8Array], { type: mimeType });

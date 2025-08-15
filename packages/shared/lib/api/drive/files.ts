@@ -105,7 +105,7 @@ export const queryFileBlock = (url: string) => {
     };
 };
 
-export const queryUploadFileBlock = (url: string, chunk: Uint8Array) => {
+export const queryUploadFileBlock = (url: string, chunk: Uint8Array<ArrayBuffer>) => {
     return {
         method: 'put',
         input: 'binary',

@@ -20,7 +20,7 @@ export class DecryptMessage implements UseCaseInterface<DecryptedMessage> {
 
   async execute(dto: DecryptMessageDTO): Promise<Result<DecryptedMessage>> {
     const decrypted = await this.encryption.decryptData(
-      dto.message instanceof DocumentUpdate ? dto.message.encryptedContent : dto.message.content,
+      (dto.message instanceof DocumentUpdate ? dto.message.encryptedContent : dto.message.content) as Uint8Array<ArrayBuffer>,
       GetAssociatedEncryptionDataForRealtimeMessage(dto.message),
       dto.documentContentKey,
     )
@@ -37,8 +37,8 @@ export class DecryptMessage implements UseCaseInterface<DecryptedMessage> {
       }
 
       const verifyResult = await this.encryption.verifyData(
-        decrypted.getValue().content,
-        decrypted.getValue().signature,
+        decrypted.getValue().content  as Uint8Array<ArrayBuffer>,
+        decrypted.getValue().signature  as Uint8Array<ArrayBuffer>,
         GetAssociatedEncryptionDataForRealtimeMessage(dto.message),
         verificationKey.getValue(),
       )
@@ -53,8 +53,8 @@ export class DecryptMessage implements UseCaseInterface<DecryptedMessage> {
     }
 
     const message = new DecryptedMessage({
-      content: decrypted.getValue().content,
-      signature: decrypted.getValue().signature,
+      content: decrypted.getValue().content as Uint8Array<ArrayBuffer>,
+      signature: decrypted.getValue().signature as Uint8Array<ArrayBuffer>,
       aad: GetAssociatedEncryptionDataForRealtimeMessage(dto.message),
       authorAddress: dto.message.authorAddress,
       timestamp: dto.message.timestamp,

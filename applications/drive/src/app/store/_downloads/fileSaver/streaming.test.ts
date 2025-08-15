@@ -1,6 +1,6 @@
 import { LRUMap, type VideoStream, getBlockIndices, getChunkFromBlocksData, parseRange } from './streaming';
 
-const arrayEquals = (a: Uint8Array, b: Uint8Array): boolean => {
+const arrayEquals = (a: Uint8Array<ArrayBuffer>, b: Uint8Array<ArrayBuffer>): boolean => {
     if (a.length !== b.length) {
         return false;
     }
@@ -150,7 +150,7 @@ describe('parseRange', () => {
         blockSizes: [1024, 2048, 4096],
         totalSize: 10000,
         mimeType: 'video/mp4',
-        cache: new LRUMap<number, Uint8Array>(3),
+        cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
     };
 
     describe('valid range headers', () => {
@@ -194,7 +194,7 @@ describe('parseRange', () => {
                 blockSizes: [],
                 totalSize: 5000,
                 mimeType: 'video/mp4',
-                cache: new LRUMap<number, Uint8Array>(3),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
             };
 
             const result = parseRange('bytes=1000-', streamWithEmptyBlocks);
@@ -207,7 +207,7 @@ describe('parseRange', () => {
                 blockSizes: [512],
                 totalSize: 2000,
                 mimeType: 'video/mp4',
-                cache: new LRUMap<number, Uint8Array>(3),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
             };
 
             const result = parseRange('bytes=100-', streamWithSingleBlock);
@@ -219,7 +219,7 @@ describe('parseRange', () => {
                 blockSizes: [50000],
                 totalSize: 10000,
                 mimeType: 'video/mp4',
-                cache: new LRUMap<number, Uint8Array>(3),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
             };
 
             const result = parseRange('bytes=0-', streamWithLargeBlock);
@@ -288,7 +288,7 @@ describe('parseRange', () => {
                 blockSizes: [1024],
                 totalSize: 999999999,
                 mimeType: 'video/mp4',
-                cache: new LRUMap<number, Uint8Array>(3),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
             };
 
             const result = parseRange('bytes=999999998-', largeVideoStream);
@@ -307,7 +307,7 @@ describe('parseRange', () => {
                 blockSizes: [2048],
                 totalSize: 8000,
                 mimeType: 'video/webm',
-                cache: new LRUMap<number, Uint8Array>(3),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
             };
 
             const result = parseRange('bytes=1000-', webmStream);
@@ -319,7 +319,7 @@ describe('parseRange', () => {
                 blockSizes: [10000],
                 totalSize: 100,
                 mimeType: 'video/mp4',
-                cache: new LRUMap<number, Uint8Array>(3),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
             };
 
             const result = parseRange('bytes=50-', smallStream);
@@ -333,7 +333,7 @@ describe('getBlockIndices', () => {
         blockSizes: [1000, 2000, 1500, 3000, 500],
         totalSize: 8000,
         mimeType: 'video/mp4',
-        cache: new LRUMap<number, Uint8Array>(3),
+        cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
     };
     // Block layout:
     // Block 0: bytes 0-999 (size 1000)
@@ -446,7 +446,7 @@ describe('getBlockIndices', () => {
                 blockSizes: [5000],
                 totalSize: 5000,
                 mimeType: 'video/mp4',
-                cache: new LRUMap<number, Uint8Array>(3),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
             };
 
             const result = getBlockIndices(1000, 3000, singleBlockStream);
@@ -458,7 +458,7 @@ describe('getBlockIndices', () => {
                 blockSizes: [1000, 1000, 1000, 1000],
                 totalSize: 4000,
                 mimeType: 'video/mp4',
-                cache: new LRUMap<number, Uint8Array>(3),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
             };
             // Block 0: 0-999, Block 1: 1000-1999, Block 2: 2000-2999, Block 3: 3000-3999
 
@@ -471,7 +471,7 @@ describe('getBlockIndices', () => {
                 blockSizes: [10, 20, 30, 40],
                 totalSize: 100,
                 mimeType: 'video/mp4',
-                cache: new LRUMap<number, Uint8Array>(3),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
             };
             // Block 0: 0-9, Block 1: 10-29, Block 2: 30-59, Block 3: 60-99
 
@@ -484,7 +484,7 @@ describe('getBlockIndices', () => {
                 blockSizes: [],
                 totalSize: 1000,
                 mimeType: 'video/mp4',
-                cache: new LRUMap<number, Uint8Array>(3),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
             };
 
             const result = getBlockIndices(0, 500, emptyBlockStream);
@@ -496,7 +496,7 @@ describe('getBlockIndices', () => {
                 blockSizes: [100, 5000, 50, 2000],
                 totalSize: 7150,
                 mimeType: 'video/mp4',
-                cache: new LRUMap<number, Uint8Array>(3),
+                cache: new LRUMap<number, Uint8Array<ArrayBuffer>>(3),
             };
             // Block 0: 0-99, Block 1: 100-5099, Block 2: 5100-5149, Block 3: 5150-7149
 

@@ -14,9 +14,9 @@ import { expandHash, hashPassword } from './passwords';
 import { verifyAndGetModulus } from './utils/modulus';
 import { checkUsername } from './utils/username';
 
-export const srpHasher = (arr: Uint8Array) => expandHash(arr);
+export const srpHasher = (arr: Uint8Array<ArrayBuffer>) => expandHash(arr);
 
-const littleEndianArrayToBigInteger = async (arr: Uint8Array) => uint8ArrayToBigInt(arr.slice().reverse());
+const littleEndianArrayToBigInteger = async (arr: Uint8Array<ArrayBuffer>) => uint8ArrayToBigInt(arr.slice().reverse());
 
 /**
  * Generate a random client secret.
@@ -30,7 +30,7 @@ interface GenerateParametersArgs {
     byteLength: number;
     generator: bigint;
     modulus: bigint;
-    serverEphemeralArray: Uint8Array;
+    serverEphemeralArray: Uint8Array<ArrayBuffer>;
 }
 
 const generateParameters = async ({ byteLength, generator, modulus, serverEphemeralArray }: GenerateParametersArgs) => {
@@ -75,9 +75,9 @@ const getParameters = async ({ byteLength, generator, modulus, serverEphemeralAr
 
 interface GenerateProofsArgs {
     byteLength: number;
-    modulusArray: Uint8Array;
-    hashedPasswordArray: Uint8Array;
-    serverEphemeralArray: Uint8Array;
+    modulusArray: Uint8Array<ArrayBuffer>;
+    hashedPasswordArray: Uint8Array<ArrayBuffer>;
+    serverEphemeralArray: Uint8Array<ArrayBuffer>;
 }
 
 export const generateProofs = async ({
@@ -219,7 +219,7 @@ export const getSrp = async (
     };
 };
 
-const generateVerifier = async (byteLength: number, hashedPasswordBytes: Uint8Array, modulusBytes: Uint8Array) => {
+const generateVerifier = async (byteLength: number, hashedPasswordBytes: Uint8Array<ArrayBuffer>, modulusBytes: Uint8Array<ArrayBuffer>) => {
     const generator = BigInt(2);
 
     const modulus = await littleEndianArrayToBigInteger(modulusBytes);

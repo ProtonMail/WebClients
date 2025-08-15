@@ -32,7 +32,7 @@ export const encryptAndSignKeyPacket = async ({
     signatureContext,
 }: {
     sessionKey: SessionKey;
-    binaryData: Uint8Array;
+    binaryData: Uint8Array<ArrayBuffer>;
     encryptionKey: PublicKeyReference;
     signingKey: PrivateKeyReference;
     signatureContext?: ContextSigningOptions;

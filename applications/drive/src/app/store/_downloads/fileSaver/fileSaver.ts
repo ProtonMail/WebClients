@@ -106,7 +106,7 @@ export class FileSaver {
     // Ideally, once we update to openpgpjs v5 with custom web workers, would
     // be great if we could merge this to the same worker (but note the
     // difference between web and service worker) to reduce data exchanges.
-    private async saveViaDownload(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
+    private async saveViaDownload(stream: ReadableStream<Uint8Array<ArrayBuffer>>, meta: TransferMeta, log: LogCallback) {
         if (!this.isSWReady) {
             // Always wait for Service Worker initialization to complete
             try {
@@ -148,7 +148,7 @@ export class FileSaver {
         }
     }
 
-    private async saveViaOPFS(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
+    private async saveViaOPFS(stream: ReadableStream<Uint8Array<ArrayBuffer>>, meta: TransferMeta, log: LogCallback) {
         if (this.useSWFallback) {
             return this.saveViaDownload(stream, meta, log);
         }
@@ -220,7 +220,7 @@ export class FileSaver {
 
     // saveViaBuffer reads the stream and downloads the file in one go.
     // eslint-disable-next-line class-methods-use-this
-    private async saveViaBuffer(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
+    private async saveViaBuffer(stream: ReadableStream<Uint8Array<ArrayBuffer>>, meta: TransferMeta, log: LogCallback) {
         log('Saving via buffer');
         try {
             const chunks = await streamToBuffer(stream);
@@ -243,7 +243,7 @@ export class FileSaver {
         }
     }
 
-    async saveAsFile(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
+    async saveAsFile(stream: ReadableStream<Uint8Array<ArrayBuffer>>, meta: TransferMeta, log: LogCallback) {
         const mechanism = await this.selectMechanismForDownload(meta.size);
 
         log(`Saving file. meta size: ${meta.size}, mechanism: ${mechanism}`);

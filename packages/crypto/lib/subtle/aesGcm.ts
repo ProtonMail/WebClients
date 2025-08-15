@@ -17,7 +17,7 @@ interface AesGcmKeyOptions {
  * Import an AES-GCM key in order to use it with `encryptData` and `decryptData`.
  */
 export const importKey = async (
-    key: Uint8Array,
+    key: Uint8Array<ArrayBuffer>,
     { keyUsage = ['decrypt', 'encrypt'], extractable = false }: AesGcmKeyOptions = {}
 ): Promise<AesGcmCryptoKey> => {
     return crypto.subtle.importKey('raw', key, ENCRYPTION_ALGORITHM, extractable, keyUsage);
@@ -27,7 +27,7 @@ export const importKey = async (
  * Generate key (bytes) for AES-GCM.
  * The key needs to be imported using `importKey` to used for `encryptData` and `decryptData`.
  */
-export const generateKey = (): Uint8Array => crypto.getRandomValues(new Uint8Array(KEY_LENGTH_BYTES));
+export const generateKey = (): Uint8Array<ArrayBuffer> => crypto.getRandomValues(new Uint8Array(KEY_LENGTH_BYTES));
 
 /**
  * Generate key for AES-GCM that is already imported, and can thus be used directly for `encryptData` and `decryptData`.
@@ -49,9 +49,9 @@ export const generateAndImportKey = (keyUsage: AesGcmKeyUsage[] = ['decrypt', 'e
  * @param info - context or application specific information to bind to the derived key
  */
 export const deriveKey = async (
-    highEntropySecret: Uint8Array,
-    salt: Uint8Array,
-    info: Uint8Array,
+    highEntropySecret: Uint8Array<ArrayBuffer>,
+    salt: Uint8Array<ArrayBuffer>,
+    info: Uint8Array<ArrayBuffer>,
     { keyUsage = ['decrypt', 'encrypt'], extractable = false }: AesGcmKeyOptions = {}
 ): Promise<AesGcmCryptoKey> => {
     // This is meant more as a sanity check than a security safe-guard, since entropy might still be
@@ -77,7 +77,7 @@ export const deriveKey = async (
  * @param data - data to encrypt
  * @param additionalData - additional data to authenticate
  */
-export const encryptData = async (key: AesGcmCryptoKey, data: Uint8Array, additionalData?: Uint8Array) => {
+export const encryptData = async (key: AesGcmCryptoKey, data: Uint8Array<ArrayBuffer>, additionalData?: Uint8Array<ArrayBuffer>) => {
     const iv = crypto.getRandomValues(new Uint8Array(IV_LENGTH_BYTES));
     const ciphertext = await crypto.subtle.encrypt(
         { name: ENCRYPTION_ALGORITHM, iv, ...(additionalData !== undefined ? { additionalData } : undefined) },
@@ -97,8 +97,8 @@ export const encryptData = async (key: AesGcmCryptoKey, data: Uint8Array, additi
  */
 export const decryptData = async (
     key: AesGcmCryptoKey,
-    data: Uint8Array,
-    additionalData?: Uint8Array,
+    data: Uint8Array<ArrayBuffer>,
+    additionalData?: Uint8Array<ArrayBuffer>,
     with16ByteIV = false
 ) => {
     const ivLength = with16ByteIV ? 16 : IV_LENGTH_BYTES;
@@ -121,7 +121,7 @@ export const decryptData = async (
  * @param additionalData - additional data to authenticate
  * @deprecated use `encryptData` instead; this helper is kept around for legacy use-cases only.
  */
-export const encryptDataWith16ByteIV = async (key: AesGcmCryptoKey, data: Uint8Array, additionalData?: Uint8Array) => {
+export const encryptDataWith16ByteIV = async (key: AesGcmCryptoKey, data: Uint8Array<ArrayBuffer>, additionalData?: Uint8Array<ArrayBuffer>) => {
     const ivLength = 16;
     // A random 16-byte IV is non-standard, but it does not negatively affect the max number of encryptable messages using the same key,
     // nor does it increase the risk of nonce collision; see summary at https://crypto.stackexchange.com/a/80390.
@@ -147,7 +147,7 @@ export type WrappingCryptoKey = CryptoKey;
  * Import AES-KW wrapping key in order to use it with `wrapKey` and `unwrapKey`.
  */
 export const importWrappingKey = async (
-    key: Uint8Array,
+    key: Uint8Array<ArrayBuffer>,
     keyUsage: WrappingKeyUsage[] = ['wrapKey', 'unwrapKey']
 ): Promise<WrappingCryptoKey> => {
     return crypto.subtle.importKey('raw', key, KEY_WRAPPING_ALGORITHM, false, keyUsage);
@@ -157,7 +157,7 @@ export const importWrappingKey = async (
  * Generate wrapping key (bytes) for AES-KW, to be used with `wrapKey` and `unwrapKey`.
  * The key needs to be imported using `importWrappingKey` to used.
  */
-export const generateWrappingKey = (): Uint8Array => crypto.getRandomValues(new Uint8Array(KEY_LENGTH_BYTES));
+export const generateWrappingKey = (): Uint8Array<ArrayBuffer> => crypto.getRandomValues(new Uint8Array(KEY_LENGTH_BYTES));
 
 /**
  * Encrypt and export an AES-GCM key using the AES-KW algorithm
@@ -174,7 +174,7 @@ export const wrapKey = async (keyToWrap: AesGcmCryptoKey, wrappingKey: WrappingC
  * @returns imported AES-GCM key, which can be used with `encryptData` and `decryptData`.
  */
 export const unwrapKey = async (
-    encryptedKeyBytes: Uint8Array,
+    encryptedKeyBytes: Uint8Array<ArrayBuffer>,
     wrappingKey: WrappingCryptoKey,
     { keyUsage: unwrappedKeyUsage = ['decrypt', 'encrypt'], extractable = false }: AesGcmKeyOptions = {}
 ): Promise<AesGcmCryptoKey> => {

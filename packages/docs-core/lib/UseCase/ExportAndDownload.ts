@@ -5,7 +5,7 @@ import { Result } from '@proton/docs-shared'
 
 export class ExportAndDownload implements UseCaseInterface<void> {
   async execute(
-    data: Uint8Array,
+    data: Uint8Array<ArrayBuffer>,
     docName: string,
     format: DataTypesThatDocumentCanBeExportedAs,
   ): Promise<Result<void>> {

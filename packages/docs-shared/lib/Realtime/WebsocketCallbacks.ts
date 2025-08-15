@@ -7,6 +7,6 @@ export type WebsocketCallbacks = {
   onFailToConnect(reason: ConnectionCloseReason): void
   onEncryptionError(error: string): void
   onConnecting: () => void
-  onMessage: (message: Uint8Array) => void
+  onMessage: (message: Uint8Array<ArrayBuffer>) => void
   onOpen(): void
 }

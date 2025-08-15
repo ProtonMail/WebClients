@@ -256,7 +256,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     )
   }
 
-  onDocumentConnectionReadyToBroadcast(record: DocumentConnectionRecord, content: Uint8Array): void {
+  onDocumentConnectionReadyToBroadcast(record: DocumentConnectionRecord, content: Uint8Array<ArrayBuffer>): void {
     this.logger.info('Received ready to broadcast message from RTS')
 
     record.connection.markAsReadyToAcceptMessages()
@@ -310,7 +310,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const messageWrapper = new ClientMessage({ documentUpdatesMessage: message })
 
-    const binary = messageWrapper.serializeBinary()
+    const binary = messageWrapper.serializeBinary() as Uint8Array<ArrayBuffer>
 
     this.logger.info(`Broadcasting failed document update of size: ${binary.byteLength} bytes`)
 
@@ -353,7 +353,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
   async createAndBroadcastDocumentUpdateMessage(
     nodeMeta: NodeMeta | PublicNodeMeta,
-    content: Uint8Array,
+    content: Uint8Array<ArrayBuffer>,
     metadata: EncryptionMetadata | AnonymousEncryptionMetadata,
   ): Promise<void> {
     const record = this.getConnectionRecord(nodeMeta.linkId)
@@ -370,7 +370,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     })
 
     const messageWrapper = new ClientMessage({ documentUpdatesMessage: message })
-    const binary = messageWrapper.serializeBinary()
+    const binary = messageWrapper.serializeBinary() as Uint8Array<ArrayBuffer>
 
     this.logger.info(`Broadcasting document update ${uuid} of size: ${binary.byteLength} bytes`)
 
@@ -388,10 +388,10 @@ export class WebsocketService implements WebsocketServiceInterface {
    */
   async prepareAndBroadcastDocumentUpdate(
     nodeMeta: NodeMeta | PublicNodeMeta,
-    mergedUpdate: Uint8Array,
+    mergedUpdate: Uint8Array<ArrayBuffer>,
     broadcastUpdate: (
       isChunk: boolean,
-      content: Uint8Array,
+      content: Uint8Array<ArrayBuffer>,
       metadata: EncryptionMetadata | AnonymousEncryptionMetadata,
     ) => Promise<void>,
   ): Promise<void> {
@@ -455,7 +455,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
   async handleInitialConversionContent(
     document: NodeMeta | PublicNodeMeta,
-    content: Uint8Array,
+    content: Uint8Array<ArrayBuffer>,
     createInitialCommit: (content: DocumentUpdate) => void,
   ): Promise<void> {
     void this.prepareAndBroadcastDocumentUpdate(document, content, async (isChunk, encryptedContent, metadata) => {
@@ -473,7 +473,10 @@ export class WebsocketService implements WebsocketServiceInterface {
     })
   }
 
-  async sendDocumentUpdateMessage(nodeMeta: NodeMeta | PublicNodeMeta, rawContent: Uint8Array): Promise<void> {
+  async sendDocumentUpdateMessage(
+    nodeMeta: NodeMeta | PublicNodeMeta,
+    rawContent: Uint8Array<ArrayBuffer>,
+  ): Promise<void> {
     const record = this.getConnectionRecord(nodeMeta.linkId)
     if (!record) {
       throw new Error('Connection not found')
@@ -494,7 +497,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
   async sendEventMessage(
     nodeMeta: NodeMeta | PublicNodeMeta,
-    rawContent: Uint8Array,
+    rawContent: Uint8Array<ArrayBuffer>,
     type: EventTypeEnum,
     source: BroadcastSource,
   ): Promise<void> {
@@ -536,7 +539,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     })
 
     const messageWrapper = new ClientMessage({ eventsMessage: message })
-    const binary = messageWrapper.serializeBinary()
+    const binary = messageWrapper.serializeBinary() as Uint8Array<ArrayBuffer>
 
     this.logger.info(
       `Broadcasting event message of type: ${EventTypeEnum[type]} from source: ${source} size: ${binary.byteLength} bytes`,
@@ -546,12 +549,12 @@ export class WebsocketService implements WebsocketServiceInterface {
   }
 
   async encryptMessage(
-    content: Uint8Array,
+    content: Uint8Array<ArrayBuffer>,
     metadata: EncryptionMetadata | AnonymousEncryptionMetadata,
     document: NodeMeta | PublicNodeMeta,
     keys: DocumentKeys | PublicDocumentKeys,
     source: BroadcastSource,
-  ): Promise<Uint8Array> {
+  ): Promise<Uint8Array<ArrayBuffer>> {
     const result = await this._encryptMessage.execute(content, metadata, keys)
 
     if (result.isFailed()) {
@@ -585,7 +588,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     return new Uint8Array(result.getValue())
   }
 
-  async handleConnectionMessage(document: NodeMeta | PublicNodeMeta, data: Uint8Array): Promise<void> {
+  async handleConnectionMessage(document: NodeMeta | PublicNodeMeta, data: Uint8Array<ArrayBuffer>): Promise<void> {
     const record = this.getConnectionRecord(document.linkId)
     if (!record) {
       throw new Error('Connection not found')
@@ -673,7 +676,7 @@ export class WebsocketService implements WebsocketServiceInterface {
         this.switchToRealtimeMode(debouncer, 'receiving DU from other user')
       }
 
-      const content = update.encryptedContent
+      const content = update.encryptedContent as Uint8Array<ArrayBuffer>
       if (isDocumentUpdateChunk(content)) {
         await processDocumentUpdateChunk(content, {
           state: this.documentUpdateChunkState,
@@ -732,7 +735,7 @@ export class WebsocketService implements WebsocketServiceInterface {
         case EventTypeEnum.ServerIsInformingOtherServersOfTheParticipants:
           break
         case EventTypeEnum.ServerIsReadyToAcceptClientMessages:
-          this.onDocumentConnectionReadyToBroadcast(record, event.content)
+          this.onDocumentConnectionReadyToBroadcast(record, event.content as Uint8Array<ArrayBuffer>)
           break
         case EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState:
         case EventTypeEnum.ServerIsRequestingClientToBroadcastItsState:
@@ -747,7 +750,7 @@ export class WebsocketService implements WebsocketServiceInterface {
           processedMessages.push(
             new ProcessedIncomingRealtimeEventMessage({
               type: type.value,
-              content: event.content,
+              content: event.content as Uint8Array<ArrayBuffer>,
             }),
           )
           break

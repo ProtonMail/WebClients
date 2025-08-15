@@ -36,7 +36,7 @@ export default function initDownloadLinkFile(
 
     const transformBlockStream = async (
         abortSignal: AbortSignal,
-        stream: ReadableStream<Uint8Array>,
+        stream: ReadableStream<Uint8Array<ArrayBuffer>>,
         encSignature: string
     ) => {
         if (!keysPromise) {
@@ -46,7 +46,7 @@ export default function initDownloadLinkFile(
         const keys = await keysPromise;
 
         const decryptedSignature = encSignature
-            ? await markErrorAsCrypto<Uint8Array>(async () => {
+            ? await markErrorAsCrypto<Uint8Array<ArrayBuffer>>(async () => {
                   const { data: decryptedSignature } = await CryptoProxy.decryptMessage({
                       armoredMessage: encSignature,
                       decryptionKeys: keys.privateKey,
@@ -56,12 +56,12 @@ export default function initDownloadLinkFile(
               })
             : undefined;
 
-        const binaryMessage = await readToEnd<Uint8Array>(stream);
+        const binaryMessage = await readToEnd<Uint8Array<ArrayBuffer>>(stream);
         const hash = (await generateContentHash(binaryMessage)).BlockHash;
 
         try {
             const { data, verificationStatus } = await markErrorAsCrypto<{
-                data: Uint8Array;
+                data: Uint8Array<ArrayBuffer>;
                 verificationStatus: VERIFICATION_STATUS;
             }>(async () => {
                 const { data, verificationStatus } = await CryptoProxy.decryptMessage({
@@ -80,7 +80,7 @@ export default function initDownloadLinkFile(
 
             return {
                 hash,
-                data: toStream(data) as ReadableStream<Uint8Array>,
+                data: toStream(data) as ReadableStream<Uint8Array<ArrayBuffer>>,
             };
         } catch (e: unknown) {
             await callbacks.onDecryptionIssue?.(link, e);
@@ -88,7 +88,7 @@ export default function initDownloadLinkFile(
         }
     };
 
-    const checkManifestSignature = async (abortSignal: AbortSignal, hash: Uint8Array, signature: string) => {
+    const checkManifestSignature = async (abortSignal: AbortSignal, hash: Uint8Array<ArrayBuffer>, signature: string) => {
         if (!keysPromise) {
             keysPromise = callbacks.getKeys(abortSignal, link);
         }

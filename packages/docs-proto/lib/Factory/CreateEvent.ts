@@ -3,7 +3,7 @@ import { Event } from '../Generated'
 
 export function CreateEvent(dto: {
   type: EventTypeEnum
-  content: Uint8Array
+  content: Uint8Array<ArrayBuffer>
   authorAddress: string | undefined
   timestamp: number
   version: number
