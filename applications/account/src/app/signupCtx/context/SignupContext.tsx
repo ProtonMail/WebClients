@@ -36,6 +36,7 @@ import { handleSetupOrg } from '../../signup/signupActions';
 import {
     sendSignupAccountCreationTelemetry,
     sendSignupLoadTelemetry,
+    sendSignupRecoveryPhraseSetTelemetry,
     sendSignupSubscriptionTelemetryEvent,
 } from '../../signup/signupTelemetry';
 import { useGetAccountKTActivation } from '../../useGetAccountKTActivation';
@@ -612,6 +613,11 @@ export const InnerSignupContextProvider = ({
 
         try {
             await sendRecoveryPhrasePayloadHelper({ api, payload, password });
+
+            sendSignupRecoveryPhraseSetTelemetry({
+                flowId,
+                productIntent: app,
+            });
         } catch (error) {
             traceSentryError(error);
 
