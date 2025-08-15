@@ -34,7 +34,7 @@ export const getUpsellPlanMonthlyPrice = async (
         price = getPricePerCycle(getPlanByName(data.plans, data.planIDs, data.currency), data.cycle) || 0;
         regularPrice = price;
     } else {
-        const checkResult = await data.paymentsApi.checkWithAutomaticVersion({
+        const checkResult = await data.paymentsApi.checkSubscription({
             Plans: data.planIDs,
             Currency: data.currency,
             Cycle: data.cycle,

@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { normalizePostalCode } from '../../postal-codes/format';
 import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
 import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
-import { type PaymentStatus } from '../interface';
 
 export type BillingAddress = {
     CountryCode: string;
@@ -94,14 +93,6 @@ export type FullBillingAddress = {
     LastName: string | null;
     VatId: string | null;
 };
-
-export function paymentStatusToBillingAddress(status: PaymentStatus): BillingAddress {
-    return {
-        CountryCode: status.CountryCode,
-        State: status.State,
-        ZipCode: status.ZipCode,
-    };
-}
 
 /**
  * Use it before sending the billing address to the backend. Either /check endpoint or /subscription endpoint.

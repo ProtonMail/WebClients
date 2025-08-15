@@ -91,7 +91,7 @@ describe('usePaymentsApi', () => {
         });
 
         const data = getCheckSubscriptionData();
-        void result.current.paymentsApi.checkWithAutomaticVersion(data);
+        void result.current.paymentsApi.checkSubscription(data);
         expect(apiMock).toHaveBeenCalledWith({
             url: `payments/v5/subscription/check`,
             method: 'post',
@@ -106,7 +106,7 @@ describe('usePaymentsApi', () => {
         });
 
         const data = getCheckSubscriptionData();
-        void result.current.paymentsApi.checkWithAutomaticVersion(data);
+        void result.current.paymentsApi.checkSubscription(data);
         expect(apiMock).toHaveBeenCalledWith({
             url: `payments/v5/subscription/check`,
             method: 'post',

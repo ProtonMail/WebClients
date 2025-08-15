@@ -18,15 +18,25 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
-export async function getSubscriptionPrices(
-    paymentsApi: PaymentsApi,
-    planIDs: PlanIDs,
-    currency: Currency,
-    cycle: Cycle,
-    billingAddress?: BillingAddress,
-    maybeCoupon?: string,
-    trial?: boolean
-): Promise<SubscriptionCheckResponse> {
+export async function getSubscriptionPrices({
+    paymentsApi,
+    planIDs,
+    currency,
+    cycle,
+    billingAddress,
+    coupon: maybeCoupon,
+    trial,
+    ValidateZipCode,
+}: {
+    paymentsApi: PaymentsApi;
+    planIDs: PlanIDs;
+    currency: Currency;
+    cycle: Cycle;
+    billingAddress?: BillingAddress;
+    coupon?: string;
+    trial?: boolean;
+    ValidateZipCode?: boolean;
+}): Promise<SubscriptionCheckResponse> {
     if (!hasPlanIDs(planIDs) || planIDs[PLANS.FREE]) {
         return getFreeCheckResult(currency, cycle);
     }
@@ -38,6 +48,7 @@ export async function getSubscriptionPrices(
         Currency: currency,
         Cycle: cycle,
         CouponCode: coupon,
+        ValidateZipCode,
     };
 
     if (billingAddress) {
@@ -52,7 +63,7 @@ export async function getSubscriptionPrices(
         data.IsTrial = true;
     }
 
-    return paymentsApi.checkWithAutomaticVersion(data);
+    return paymentsApi.checkSubscription(data);
 }
 
 export async function getSubscriptionPricesWithFallback<T>(
@@ -69,7 +80,16 @@ export async function getSubscriptionPricesWithFallback<T>(
     }
 ): Promise<SubscriptionCheckResponse | T> {
     try {
-        return await getSubscriptionPrices(paymentsApi, planIDs, currency, cycle, billingAddress, maybeCoupon);
+        return await getSubscriptionPrices({
+            paymentsApi,
+            planIDs,
+            currency,
+            cycle,
+            billingAddress,
+            coupon: maybeCoupon,
+            trial: false,
+            ValidateZipCode: true,
+        });
     } catch (error) {
         if (error instanceof InvalidZipCodeError) {
             return invalidZipCodeFallback();
