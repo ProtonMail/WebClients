@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, BannerVariants, Button } from '@proton/atoms';
+import { Banner, BannerVariants, Button, Tooltip } from '@proton/atoms';
 import {
     Collapsible,
     CollapsibleContent,
@@ -12,6 +12,7 @@ import {
     type ModalStateProps,
     ModalTwoContent,
 } from '@proton/components';
+import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { BaseDetailsModal } from './BaseDetailsModal';
@@ -95,7 +96,18 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                         <TextRow label={c('Title').t`Media type`} text={details.file.mediaType} />
                     )}
                     {details.file.storageSize && (
-                        <SizeRow label={c('Title').t`Size`} size={details.file.storageSize} dataTestId="file-size" />
+                        <SizeRow
+                            label={
+                                <>
+                                    {c('Title').t`Size`}
+                                    <Tooltip title={getSizeTooltipMessage()} className="ml-1 mb-1">
+                                        <Icon name="info-circle" size={3.5} alt={getSizeTooltipMessage()} />
+                                    </Tooltip>
+                                </>
+                            }
+                            size={details.file.storageSize}
+                            dataTestId="file-size"
+                        />
                     )}
                     {details.file.claimedSize && (
                         <SizeRow label={c('Title').t`Original size`} size={details.file.claimedSize} />
@@ -107,6 +119,19 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                     label={c('Title').t`Shared`}
                     text={details.isShared ? c('Info').t`Yes` : c('Info').t`No`}
                     dataTestId="drive:is-shared"
+                />
+            )}
+            {details.numberOfDownloads !== undefined && (
+                <TextRow
+                    label={
+                        <>
+                            {c('Title').t`Number of downloads`}
+                            <Tooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1">
+                                <Icon name="info-circle" size={3.5} alt={getNumAccessesTooltipMessage()} />
+                            </Tooltip>
+                        </>
+                    }
+                    text={details.numberOfDownloads}
                 />
             )}
 
