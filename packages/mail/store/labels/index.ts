@@ -1,11 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
 import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import { getContactGroup, getFolders, getLabels, getSystemFolders } from '@proton/shared/lib/api/labels';
+import { CacheType, createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import type { MailEventV6Response } from '@proton/shared/lib/api/events';
+import { getByIds, getContactGroup, getFolders, getLabels, getSystemFolders } from '@proton/shared/lib/api/labels';
+import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
+import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';
 import type { Api, Category } from '@proton/shared/lib/interfaces';
+import { removeById } from '@proton/utils/removeById';
+import { upsertById } from '@proton/utils/upsertById';
 
 const name = 'categories' as const;
 
@@ -41,7 +46,31 @@ const initialState = getInitialModelState<Model>();
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
+    reducers: {
+        eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<Category>>) => {
+            if (state.value) {
+                state.value = sortCollection('Order', updateCollectionV6(state.value, action.payload));
+            }
+        },
+        stale: (state) => {
+            if (!state.value) {
+                return;
+            }
+            state.meta.fetchedEphemeral = undefined;
+        },
+        upsertCategory: (state, action: PayloadAction<Category>) => {
+            if (!state.value) {
+                return;
+            }
+            state.value = upsertById(state.value, action.payload, 'ID');
+        },
+        deleteCategory: (state, action: PayloadAction<Category>) => {
+            if (!state.value) {
+                return;
+            }
+            state.value = removeById(state.value, action.payload, 'ID');
+        },
+    },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
@@ -63,3 +92,26 @@ const slice = createSlice({
 
 export const categoriesReducer = { [name]: slice.reducer };
 export const categoriesThunk = modelThunk.thunk;
+export const categoriesActions = slice.actions;
+
+export const getCategory = async (api: Api, ID: string) => {
+    const { Labels } = await api<{ Labels: Category[] }>(getByIds([ID]));
+    return Object.values(Labels)[0];
+};
+
+export const categoriesEventLoopV6Thunk = ({
+    event,
+    api,
+}: {
+    event: MailEventV6Response;
+    api: Api;
+}): ThunkAction<Promise<void>, CategoriesState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        await updateCollectionAsyncV6({
+            events: event.Labels,
+            get: (ID) => getCategory(api, ID),
+            refetch: () => dispatch(categoriesThunk({ cache: CacheType.None })),
+            update: (result) => dispatch(categoriesActions.eventLoopV6(result)),
+        });
+    };
+};

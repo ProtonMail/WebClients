@@ -6,7 +6,6 @@ import { renderWithProviders } from '@proton/components/containers/contacts/test
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { rejectForwarding } from '@proton/shared/lib/api/forwardings';
 import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
 import { ForwardingState } from '@proton/shared/lib/interfaces';
 import { applyHOCs, withApi, withAuthentication, withCache, withConfig, withEventManager } from '@proton/testing';
@@ -77,14 +76,6 @@ describe('IncomingForwardActions', () => {
             const { getByText } = setup();
             expect(getByText('Accept')).toBeInTheDocument();
             expect(getByText('Decline')).toBeInTheDocument();
-        });
-    });
-
-    describe('when we click "Decline"', () => {
-        it('should call the api', () => {
-            const { getByText, mockApi, forward } = setup();
-            fireEvent.click(getByText('Decline'));
-            expect(mockApi).toHaveBeenCalledWith(rejectForwarding(forward.ID));
         });
     });
 });

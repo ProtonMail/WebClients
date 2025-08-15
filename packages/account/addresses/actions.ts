@@ -6,15 +6,24 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import {
     createAddress as createAddressConfig,
-    orderAddress,
+    deleteAddress as deleteAddressConfig,
+    disableAddress as disableAddressConfig,
+    enableAddress as enableAddressConfig,
+    orderAddress as orderAddressConfig,
     setupAddress as setupAddressConfig,
 } from '@proton/shared/lib/api/addresses';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import mutatePassword from '@proton/shared/lib/authentication/mutate';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { ADDRESS_TYPE, DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import {
+    ADDRESS_STATUS,
+    ADDRESS_TYPE,
+    type APP_NAMES,
+    DEFAULT_KEYGEN_TYPE,
+    KEYGEN_CONFIGS,
+    MEMBER_PRIVATE,
+} from '@proton/shared/lib/constants';
 import type { Address, Member } from '@proton/shared/lib/interfaces';
 import {
     type AddressGenerationPayload,
@@ -33,14 +42,16 @@ import noop from '@proton/utils/noop';
 
 import type { KtState } from '../kt';
 import { getKTActivation } from '../kt/actions';
-import { getMemberAddresses } from '../members';
+import { getMemberAddresses, upsertMember } from '../members';
+import { getMember } from '../members/getMember';
 import { organizationThunk } from '../organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import { type ProtonDomainsState, protonDomainsThunk } from '../protonDomains';
-import { type UserState, userThunk } from '../user';
+import { type UserState } from '../user';
+import { userThunk } from '../user';
 import { type UserKeysState, userKeysThunk } from '../userKeys';
 import { type UserSettingsState, userSettingsThunk } from '../userSettings';
-import { type AddressesState, addressesThunk } from './index';
+import { type AddressesState, addressThunk, addressesThunk } from './index';
 
 type RequiredState = KtState &
     UserState &
@@ -49,6 +60,23 @@ type RequiredState = KtState &
     UserKeysState &
     ProtonDomainsState &
     UserSettingsState;
+
+export const orderAddresses = ({
+    member,
+    addresses,
+}: {
+    member: Member | undefined;
+    addresses: Address[];
+}): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, getState, extra) => {
+        await extra.api(orderAddressConfig(addresses.map(({ ID }) => ID)));
+        if (!member || member.Self) {
+            // If the address is getting set as default it affects the user.Email value
+            dispatch(addressesThunk({ cache: CacheType.None })).catch(noop);
+            dispatch(userThunk({ cache: CacheType.None })).catch(noop);
+        }
+    };
+};
 
 export const createAddress = ({
     member: selectedMember,
@@ -166,13 +194,16 @@ export const createAddress = ({
 
         if (setDefault) {
             // Default address is the first one in the list so we need to reorder the addresses
-            await api(orderAddress([Address.ID, ...addresses.map(({ ID }) => ID)]));
+            await dispatch(orderAddresses({ member: selectedMember, addresses: [Address, ...addresses] }));
         }
 
-        const result = await dispatch(addressesThunk({ cache: CacheType.None }));
+        // Refetch all the addresses to get the updated key for the address that was just created
+        const result = await dispatch(
+            getMemberAddresses({ member: selectedMember, cache: CacheType.None, retry: true })
+        );
 
-        // TODO: Remove dependency on call
-        extra.eventManager.call();
+        // Creating an address affects the `UsedAddresses` in organization
+        dispatch(organizationThunk({ cache: CacheType.None }));
 
         return result.find(({ ID }) => ID === Address.ID) || Address;
     };
@@ -234,15 +265,10 @@ export const createPremiumAddress = ({
 
         if (setDefault) {
             // Default address is the first one in the list so we need to reorder the addresses
-            await api(orderAddress([Address.ID, ...addresses.map(({ ID }) => ID)]));
+            await dispatch(orderAddresses({ member: undefined, addresses: [Address, ...addresses] }));
         }
 
-        const result = await dispatch(addressesThunk({ cache: CacheType.None }));
-
-        // TODO: Remove dependency on call
-        extra.eventManager.call();
-
-        return result.find(({ ID }) => ID === Address.ID) || Address;
+        return dispatch(addressThunk({ address: Address, cache: CacheType.None }));
     };
 };
 
@@ -301,7 +327,10 @@ export const createMissingKeys = ({
                 });
 
                 await keyTransparencyCommit(user, userKeys);
-                await extra.eventManager.call();
+                // Refetch the member to get the updated keys
+                dispatch(upsertMember({ member: await getMember(api, member.ID) }));
+                // Refetch all the addresses to get the updated key for the address that was just cr
+                await dispatch(getMemberAddresses({ member, cache: CacheType.None, retry: true }));
 
                 addressesToGenerate.forEach((address) => onUpdate(address.ID, { status: 'ok' }));
             } else {
@@ -317,8 +346,7 @@ export const createMissingKeys = ({
                     keyTransparencyVerify,
                 });
 
-                await keyTransparencyCommit(user, userKeys);
-                await extra.eventManager.call();
+                await dispatch(getMemberAddresses({ member, cache: CacheType.None, retry: true }));
 
                 const errorResult = result.find((result) => result.type === 'error');
                 if (errorResult) {
@@ -349,7 +377,9 @@ export const createMissingKeys = ({
             });
 
             await keyTransparencyCommit(user, userKeys);
-            await extra.eventManager.call();
+            // Refetch all the addresses to get the updated key for the address that was just created.
+            // This can be optimized by just updating the address in question.
+            await dispatch(addressesThunk({ cache: CacheType.None }));
 
             const errorResult = result.find((result) => result.type === 'error');
             if (errorResult) {
@@ -399,6 +429,7 @@ export const setupUser = ({
             User: user,
         });
         await preAuthKTVerifier.preAuthKTCommit(user.ID, api);
+        await dispatch(userThunk({ cache: CacheType.None }));
     };
 };
 
@@ -477,8 +508,7 @@ export const createBYOEAddress = ({
         const addresses = await dispatch(addressesThunk());
         const api = getSilentApi(extra.api);
 
-        // Use regular api to display an error if necessary
-        const { Address } = await extra.api<{ Address: Address }>(
+        const { Address } = await api<{ Address: Address }>(
             createAddressConfig({
                 Local: emailAddressParts.Local,
                 Domain: emailAddressParts.Domain,
@@ -505,11 +535,78 @@ export const createBYOEAddress = ({
         });
         await keyTransparencyCommit(await dispatch(userThunk()), userKeys);
 
-        const result = await dispatch(addressesThunk({ cache: CacheType.None }));
-
-        // TODO: Remove dependency on call
-        extra.eventManager.call();
+        const [, result] = await Promise.all([
+            dispatch(userThunk({ cache: CacheType.None })),
+            dispatch(addressesThunk({ cache: CacheType.None })),
+        ]);
 
         return result.find(({ ID }) => ID === Address.ID) || Address;
+    };
+};
+
+export const deleteAddress = ({
+    address,
+    member,
+}: {
+    address: Address;
+    member: Member | undefined;
+}): ThunkAction<Promise<undefined>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        const api = getSilentApi(extra.api);
+        if (address.Status === ADDRESS_STATUS.STATUS_ENABLED) {
+            await api(disableAddressConfig(address.ID));
+        }
+        await api(deleteAddressConfig(address.ID));
+
+        await Promise.all([
+            dispatch(organizationThunk({ cache: CacheType.None })),
+            member
+                ? dispatch(getMemberAddresses({ member, cache: CacheType.None, retry: true }))
+                : dispatch(addressesThunk({ cache: CacheType.None })),
+        ]);
+    };
+};
+
+export const disableAddress = ({
+    address,
+    member,
+}: {
+    address: Address;
+    member: Member | undefined;
+}): ThunkAction<Promise<undefined>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        if (address.Status === ADDRESS_STATUS.STATUS_ENABLED) {
+            const api = getSilentApi(extra.api);
+            await api(disableAddressConfig(address.ID));
+
+            await Promise.all([
+                dispatch(organizationThunk({ cache: CacheType.None })),
+                member
+                    ? dispatch(getMemberAddresses({ member, cache: CacheType.None, retry: true }))
+                    : dispatch(addressesThunk({ cache: CacheType.None })),
+            ]);
+        }
+    };
+};
+
+export const enableAddress = ({
+    address,
+    member,
+}: {
+    address: Address;
+    member: Member | undefined;
+}): ThunkAction<Promise<undefined>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        if (address.Status === ADDRESS_STATUS.STATUS_DISABLED) {
+            const api = getSilentApi(extra.api);
+            await api(enableAddressConfig(address.ID));
+
+            await Promise.all([
+                dispatch(organizationThunk({ cache: CacheType.None })),
+                member
+                    ? dispatch(getMemberAddresses({ member, cache: CacheType.None, retry: true }))
+                    : dispatch(addressesThunk({ cache: CacheType.None })),
+            ]);
+        }
     };
 };

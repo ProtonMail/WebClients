@@ -1,16 +1,15 @@
 import { c } from 'ttag';
 
 import { disableAllowAddressDeletion } from '@proton/account';
+import { deleteAddress, disableAddress, enableAddress } from '@proton/account/addresses/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
-import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
-import { ADDRESS_STATUS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import type { Address, Member, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -120,14 +119,13 @@ const AddressActions = ({
     permissions,
     allowAddressDeletion,
 }: Props) => {
-    const api = useApi();
-    const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const addressFlagsActionsList = useAddressFlagsActionsList(address, user, member);
     const dispatch = useDispatch();
     const [organizationKey] = useOrganizationKey();
     const emailAddress = address.Email;
+    const handleError = useErrorHandler();
 
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressPromptProps, setDeleteAddressPromptOpen, renderDeleteAddressPrompt] = useModalState();
@@ -137,29 +135,39 @@ const AddressActions = ({
     const [editExternalAddressProps, setEditExternalAddressOpen, renderEditExternalAddressModal] = useModalState();
 
     const handleDelete = async () => {
-        if (address.Status === ADDRESS_STATUS.STATUS_ENABLED) {
-            await api(disableAddress(address.ID));
+        try {
+            await dispatch(deleteAddress({ address, member }));
+            createNotification({ text: c('Success notification').t`Address deleted` });
+        } catch (e) {
+            handleError(e);
         }
-        await api(deleteAddress(address.ID));
-        await call();
-        createNotification({ text: c('Success notification').t`Address deleted` });
     };
 
     const handleDeleteOncePerYear = async () => {
-        await handleDelete();
-        dispatch(disableAllowAddressDeletion());
+        try {
+            await handleDelete();
+            dispatch(disableAllowAddressDeletion());
+        } catch (e) {
+            handleError(e);
+        }
     };
 
     const handleEnable = async () => {
-        await api(enableAddress(address.ID));
-        await call();
-        createNotification({ text: c('Success notification').t`Address enabled` });
+        try {
+            await dispatch(enableAddress({ address, member }));
+            createNotification({ text: c('Success notification').t`Address enabled` });
+        } catch (e) {
+            handleError(e);
+        }
     };
 
     const handleDisable = async () => {
-        await api(disableAddress(address.ID));
-        await call();
-        createNotification({ text: c('Success notification').t`Address disabled` });
+        try {
+            await dispatch(disableAddress({ address, member }));
+            createNotification({ text: c('Success notification').t`Address disabled` });
+        } catch (e) {
+            handleError(e);
+        }
     };
 
     const mustActivateOrganizationKey = member?.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey;

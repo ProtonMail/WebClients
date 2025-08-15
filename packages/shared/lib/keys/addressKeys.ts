@@ -373,8 +373,15 @@ interface ReplaceAddressTokens {
     privateKeys: PrivateKeyReference[];
     addresses: Address[];
 }
+export interface ReplaceAddressTokensResult {
+    AddressKeyTokens: { AddressKeyID: string; KeyPacket: string; Signature: string }[];
+}
 
-export const getReplacedAddressKeyTokens = async ({ addresses, privateKeys, privateKey }: ReplaceAddressTokens) => {
+export const getReplacedAddressKeyTokens = async ({
+    addresses,
+    privateKeys,
+    privateKey,
+}: ReplaceAddressTokens): Promise<ReplaceAddressTokensResult> => {
     const reEncryptedTokens = await Promise.all(
         addresses.map(async (address) => {
             const result = await Promise.all(

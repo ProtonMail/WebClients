@@ -1,7 +1,7 @@
-import { type InvoiceDocument, queryInvoices, type PaymentsVersion } from "@proton/payments";
+import { useCallback, useEffect } from 'react';
 
-import { useEffect } from 'react';
 import type { INVOICE_OWNER, Invoice, InvoiceResponse } from '@proton/payments';
+import { type InvoiceDocument, queryInvoices } from '@proton/payments';
 
 import { usePaginationAsync } from '../../components/pagination';
 import useApiResult from '../../hooks/useApiResult';
@@ -28,16 +28,16 @@ const useInvoices = ({ owner, Document }: { owner: INVOICE_OWNER; Document: Invo
         request,
         error,
     } = useApiResult<InvoiceResponse>(
-        (paymentsVersion?: PaymentsVersion) =>
-            queryInvoices(
-                {
+        useCallback(
+            () =>
+                queryInvoices({
                     Page: page - 1,
                     PageSize: ELEMENTS_PER_PAGE,
                     Owner: owner,
                     Document,
-                },
-                paymentsVersion
-            ),
+                }),
+            [page, owner, Document]
+        ),
         [page],
         false,
         true

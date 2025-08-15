@@ -4,11 +4,10 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { updateLabel } from '@proton/shared/lib/api/labels';
+import { updateLabel } from '@proton/mail/store/labels/actions';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 interface Props {
@@ -16,8 +15,7 @@ interface Props {
 }
 
 const ToggleNotify = ({ label }: Props) => {
-    const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
@@ -28,8 +26,7 @@ const ToggleNotify = ({ label }: Props) => {
             ...label,
             Notify: +target.checked,
         };
-        await api(updateLabel(label.ID, newLabel));
-        await call();
+        await dispatch(updateLabel({ labelID: label.ID, label: newLabel }));
         createNotification({
             text: c('label/folder notification').t`${labelName} updated`,
         });

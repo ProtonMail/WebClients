@@ -6,7 +6,7 @@ import { useGetUserKeys, useUserKeys } from '@proton/account/userKeys/hooks';
 import { useGetUserSettings, useUserSettings } from '@proton/account/userSettings/hooks';
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import { CacheType } from '@proton/redux-utilities';
 import { getIsDeviceRecoveryEnabled, syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import noop from '@proton/utils/noop';
 
@@ -31,7 +31,6 @@ export const useDeviceRecovery = () => {
     const getAddresses = useGetAddresses();
     const getUserSettings = useGetUserSettings();
     const authentication = useAuthentication();
-    const { call } = useEventManager();
     const api = useApi();
     const { APP_NAME } = useConfig();
 
@@ -61,7 +60,7 @@ export const useDeviceRecovery = () => {
                 authentication,
             });
             if (result) {
-                await call();
+                await Promise.all([getUser({ cache: CacheType.None }), getUserSettings({ cache: CacheType.None })]);
             }
         };
         run().catch(noop);

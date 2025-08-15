@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { userKeysThunk } from '@proton/account/userKeys';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -14,8 +15,9 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
@@ -50,8 +52,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
     const [step, setStep] = useState(confirmStep ? STEPS.CONFIRM : nonConfirmStep);
 
     const api = useApi();
-    const { call } = useEventManager();
-    const getUserKeys = useGetUserKeys();
+    const dispatch = useDispatch();
 
     const [generating, withGenerating] = useLoading();
     const [reactivating, withReactivating] = useLoading();
@@ -59,7 +60,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
     const [mnemonicData, setMnemonicData] = useState<GeneratedMnemonicData>();
 
     const getPayload = async (data: GeneratedMnemonicData) => {
-        const userKeys = await getUserKeys();
+        const userKeys = await dispatch(userKeysThunk());
         const { randomBytes, salt } = data;
 
         return generateMnemonicPayload({ randomBytes, salt, userKeys, api, username: Name });
@@ -69,7 +70,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
         try {
             const payload = await getPayload(data);
             await api(reactivateMnemonicPhrase(payload));
-            await call();
+            await dispatch(userThunk({ cache: CacheType.None }));
 
             if (confirmStep) {
                 setStep(STEPS.MNEMONIC_PHRASE);
@@ -111,7 +112,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
                         try {
                             const payload = await getPayload(mnemonicData);
                             await api(updateMnemonicPhrase(payload));
-                            await call();
+                            await dispatch(userThunk({ cache: CacheType.None }));
                             await api(lockSensitiveSettings());
                             setStep(STEPS.MNEMONIC_PHRASE);
                         } catch (e) {

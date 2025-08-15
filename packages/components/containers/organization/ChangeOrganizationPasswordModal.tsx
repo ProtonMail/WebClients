@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { organizationKeyThunk } from '@proton/account/organizationKey';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Form from '@proton/components/components/form/Form';
@@ -15,10 +16,11 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { CacheType } from '@proton/redux-utilities';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
 import {
     confirmPasswordValidator,
@@ -34,7 +36,7 @@ interface Props extends ModalProps {
 }
 
 const ChangeOrganizationPasswordModal = ({ hasOtherAdmins, organizationKey, onClose, ...rest }: Props) => {
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [loadingPromise, withLoading] = useLoading();
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -64,7 +66,7 @@ const ChangeOrganizationPasswordModal = ({ hasOtherAdmins, organizationKey, onCl
                     {...authModal}
                     onCancel={undefined}
                     onSuccess={async () => {
-                        await call();
+                        await dispatch(organizationKeyThunk({ cache: CacheType.None }));
                         createNotification({ text: c('Success').t`Password updated` });
                         onClose?.();
                     }}

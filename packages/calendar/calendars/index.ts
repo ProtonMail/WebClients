@@ -1,13 +1,17 @@
-import type { PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { AddressesState, ModelState } from '@proton/account';
+import { type AddressesState, type ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account/initialModelState';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import { queryCalendars } from '@proton/shared/lib/api/calendars';
+import { CacheType, createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { getCalendar, queryCalendars } from '@proton/shared/lib/api/calendars';
+import type { CalendarEventV6Response } from '@proton/shared/lib/api/events';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
+import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
+import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
+import type { Api } from '@proton/shared/lib/interfaces';
 import {
     CALENDAR_ORDER_BY,
     CALENDAR_RETURN_FLAGS,
@@ -25,6 +29,11 @@ type Model = NonNullable<SliceState['value']>;
 export const selectCalendars = (state: CalendarsState) => state[name];
 
 export const selectCalendarsWithMembers = (state: CalendarsState) => state[name].value;
+
+const fetchCalendar = (api: Api, calendarID: string) =>
+    api(getCalendar(calendarID)).then((result) => {
+        return result;
+    });
 
 const modelThunk = createAsyncModelThunk<Model, CalendarsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
@@ -56,6 +65,11 @@ const slice = createSlice({
     name,
     initialState,
     reducers: {
+        eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<CalendarWithOwnMembers>>) => {
+            if (state.value) {
+                state.value = updateCollectionV6(state.value, action.payload);
+            }
+        },
         updateCalendarVisibility: (
             state,
             action: PayloadAction<{ calendarID: string; memberID: string; display: boolean }>
@@ -101,3 +115,20 @@ const slice = createSlice({
 export const calendarsReducer = { [name]: slice.reducer };
 export const calendarsActions = slice.actions;
 export const calendarsThunk = modelThunk.thunk;
+
+export const calendarsEventLoopV6Thunk = ({
+    event,
+    api,
+}: {
+    event: CalendarEventV6Response;
+    api: Api;
+}): ThunkAction<Promise<void>, CalendarsState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        await updateCollectionAsyncV6({
+            events: event.Calendars,
+            get: (ID) => fetchCalendar(api, ID),
+            refetch: () => dispatch(calendarsThunk({ cache: CacheType.None })),
+            update: (result) => dispatch(calendarsActions.eventLoopV6(result)),
+        });
+    };
+};

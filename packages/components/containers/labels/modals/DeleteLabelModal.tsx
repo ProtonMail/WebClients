@@ -3,11 +3,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { deleteLabel } from '@proton/shared/lib/api/labels';
+import { deleteLabel } from '@proton/mail/store/labels/actions';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 
@@ -17,16 +16,14 @@ interface Props extends ModalProps {
 }
 
 const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
-    const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const { onClose } = rest;
 
     const [loading, withLoading] = useLoading();
 
     const handleRemove = async () => {
-        await api(deleteLabel(label.ID));
-        await call();
+        await dispatch(deleteLabel({ label }));
         createNotification({
             text: c('Success notification').t`${label.Name} removed`,
         });

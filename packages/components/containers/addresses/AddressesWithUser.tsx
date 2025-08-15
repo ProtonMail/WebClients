@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { orderAddresses } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
 import { Href, Tooltip } from '@proton/atoms';
@@ -15,10 +16,8 @@ import MailUpsellButton from '@proton/components/components/upsell/MailUpsellBut
 import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { orderAddress } from '@proton/shared/lib/api/addresses';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import {
     ADDRESS_TYPE,
@@ -67,10 +66,9 @@ const AddressesUser = ({
     hasAccessToBYOE,
     app,
 }: Props) => {
-    const api = useApi();
     const { createNotification } = useNotifications();
     const [savingIndex, setSavingIndex] = useState<number | undefined>();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
     const sendTelemetryEvent = usePostSubscriptionTourTelemetry();
@@ -112,8 +110,7 @@ const AddressesUser = ({
                 setAddresses(newList);
                 setSavingIndex(newIndex);
 
-                await api(orderAddress(newList.map(({ ID }) => ID)));
-                await call();
+                await dispatch(orderAddresses({ member, addresses: newList }));
 
                 setSavingIndex(undefined);
 

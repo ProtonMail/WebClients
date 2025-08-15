@@ -11,7 +11,7 @@ import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shar
 import ForwardStatus from './ForwardStatus';
 import OutgoingForwardActions from './OutgoingForwardActions';
 import WarningChainedForwarding from './WarningChainedForwarding';
-import { getIsLastOutgoingNonE2EEForwarding } from './helpers';
+import { getIsLastOutgoingNonE2EEForwarding } from './forwardHelper';
 
 interface Props {
     addresses: Address[];

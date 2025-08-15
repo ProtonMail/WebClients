@@ -11,6 +11,7 @@ import {
     getPrivateAdminError,
     getPrivateText,
 } from '@proton/account';
+import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -60,7 +61,7 @@ import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
 import LumoUpdateSubscriptionButton from '../payments/subscription/lumo/LumoUpdateSubscriptionButton';
-import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import MemberStorageSelector from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
 import SubUserCreateHint from './SubUserCreateHint';

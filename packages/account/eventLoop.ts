@@ -1,8 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import type { Filter } from '@proton/components/containers/filters/interfaces';
-import type { SavedPaymentMethod } from '@proton/payments';
 import { type Subscription } from '@proton/payments';
+import type { Invoice, SavedPaymentMethod } from '@proton/payments';
 import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import type {
@@ -14,6 +14,7 @@ import type {
     GroupMember,
     GroupMembership,
     IncomingAddressForwarding,
+    IncomingDefault,
     LabelCount,
     MailSettings,
     Member,
@@ -59,8 +60,10 @@ export interface EventLoop {
     Notices?: string[];
     ConversationCounts?: LabelCount[];
     PaymentMethods?: EventItemUpdate<SavedPaymentMethod, 'PaymentMethod'>[];
+    Invoices?: EventItemUpdate<Invoice, 'Invoice'>[];
     IncomingAddressForwardings?: EventItemUpdate<IncomingAddressForwarding, 'IncomingAddressForwarding'>[];
     OutgoingAddressForwardings?: EventItemUpdate<OutgoingAddressForwarding, 'OutgoingAddressForwarding'>[];
+    IncomingDefaults?: EventItemUpdate<IncomingDefault, 'IncomingDefault'>[];
     Subscription?: Subscription & { UpcomingSubscription?: Subscription };
     Config?: ApiEnvironmentConfig;
     SSO?: EventItemUpdate<SSO, 'SSO'>[];

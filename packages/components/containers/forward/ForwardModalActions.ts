@@ -2,67 +2,30 @@ import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import { type AddressKeysState, addressKeysThunk } from '@proton/account/addressKeys';
-import { setAddressFlags } from '@proton/account/addressKeys/actions';
 import { addressesThunk } from '@proton/account/addresses';
-import type { DomainsState } from '@proton/account/domains';
 import type { KtState } from '@proton/account/kt';
 import { getKTActivation } from '@proton/account/kt/actions';
-import type { OrganizationState } from '@proton/account/organization';
 import { userThunk } from '@proton/account/user';
 import { userKeysThunk } from '@proton/account/userKeys';
-import { getInternalParametersPrivate, getSieveTree } from '@proton/components/containers/forward/helpers';
-import {
-    generateNewE2EEForwardingCompatibleAddressKey,
-    handleUnsetV6PrimaryKey,
-} from '@proton/components/containers/forward/keyHelpers';
-import { CryptoProxy, type PrivateKeyReferenceV4, type PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, type PublicKeyReference } from '@proton/crypto';
 import { createKTVerifier } from '@proton/key-transparency/lib';
+import type { ForwardModalKeyState } from '@proton/mail/store/forwarding/outgoingForwardingActions';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
-import {
-    type SetupForwardingParameters,
-    setupForwarding,
-    updateForwarding,
-    updateForwardingFilter,
-} from '@proton/shared/lib/api/forwardings';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
-import { getAddressFlagsData } from '@proton/shared/lib/helpers/address';
-import { ForwardingType } from '@proton/shared/lib/interfaces';
 import type { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/GetPublicKeysForInbox';
 import {
     getActiveAddressKeys,
     getEmailFromKey,
     getPrimaryActiveAddressKeyForEncryption,
 } from '@proton/shared/lib/keys';
+import {
+    generateNewE2EEForwardingCompatibleAddressKey,
+    handleUnsetV6PrimaryKey,
+} from '@proton/shared/lib/keys/forward/keyHelpers';
 
-import type { ForwardModalKeyState, ForwardModalState } from './ForwardModalInterface';
-
-export const editFilter = ({
-    filterID,
-    filter: { email, conditions, statement, version },
-}: {
-    filterID: string;
-    filter: Parameters<typeof getSieveTree>[0];
-}): ThunkAction<Promise<void>, DomainsState & OrganizationState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch, getState, extra) => {
-        const silentApi = getSilentApi(extra.api);
-
-        await silentApi(
-            updateForwardingFilter(
-                filterID,
-                getSieveTree({
-                    conditions,
-                    statement,
-                    email,
-                }),
-                version || 2
-            )
-        );
-
-        await extra.eventManager.call();
-    };
-};
+import type { ForwardModalState } from './ForwardModalInterface';
 
 export const initForwardingSetup = ({
     // We take the addressID instead of the address itself since the latter is potentially
@@ -151,116 +114,6 @@ export const initForwardingSetup = ({
         };
     };
 };
-export const finalizeForwardingSetup = ({
-    // We take the addressID instead of the address itself since the latter is potentially
-    // stale since it's getting modified by these actions and is called in succession
-    forwarderAddressID,
-    filterID,
-    filter,
-    keyState,
-    isReEnablingForwarding,
-    isInternal,
-    isExternal,
-}: {
-    forwarderAddressID: string;
-    filterID: string | undefined;
-    keyState: ForwardModalKeyState;
-    filter: Parameters<typeof getSieveTree>[0];
-    isReEnablingForwarding: boolean | undefined;
-    isInternal: boolean | undefined;
-    isExternal: boolean | undefined;
-}): ThunkAction<Promise<void>, AddressKeysState & KtState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch, getState, extra) => {
-        const { email, version, conditions, statement } = filter;
-
-        const forwarderAddress = (await dispatch(addressesThunk())).find(
-            (address) => forwarderAddressID === address.ID
-        );
-        if (!forwarderAddress) {
-            throw new Error('Address deleted');
-        }
-
-        const setupForwardingParams: Omit<SetupForwardingParameters, 'Tree' /* added later */> = {
-            ForwarderAddressID: forwarderAddress.ID,
-            ForwardeeEmail: email,
-            Type: isInternal ? ForwardingType.InternalEncrypted : ForwardingType.ExternalUnencrypted,
-            Version: version || 2,
-        };
-
-        const silentApi = getSilentApi(extra.api);
-
-        // e2ee forwarding case
-        if (isInternal && keyState.forwardeePublicKey && keyState.forwarderPrimaryKeysInfo) {
-            const forwarderAddressKeys = await dispatch(addressKeysThunk({ addressID: forwarderAddressID }));
-            // useGetAddressKeysByUsage would be preferable, but since we need the ActiveKey helpers
-            // for the setup phase, we reuse them here.
-            const activeKeysByVersion = await getActiveAddressKeys(
-                forwarderAddress.SignedKeyList,
-                forwarderAddressKeys
-            );
-            const forwarderKey = getPrimaryActiveAddressKeyForEncryption(
-                activeKeysByVersion,
-                // set for sanity checks: v6 is never actually returned, since it's dealt with in
-                // `fixupPrimaryKeyV6`
-                true
-            ).privateKey as PrivateKeyReferenceV4;
-
-            const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
-                forwarderKey,
-                [{ email, name: email }],
-                keyState.forwardeePublicKey
-            );
-
-            const e2eeForwardingParams = {
-                ForwardeePrivateKey: forwardeeKey,
-                ActivationToken: activationToken,
-                ProxyInstances: proxyInstances,
-            };
-
-            await silentApi(
-                isReEnablingForwarding && filterID
-                    ? updateForwarding({
-                          ID: filterID,
-                          ...e2eeForwardingParams,
-                      })
-                    : setupForwarding({
-                          ...setupForwardingParams,
-                          Tree: getSieveTree({
-                              conditions,
-                              statement,
-                              email,
-                          }),
-                          ...e2eeForwardingParams,
-                      })
-            );
-        } else {
-            const addressFlags = getAddressFlagsData(forwarderAddress);
-            // Disable encryption if the email is external
-            if (isExternal && !addressFlags.isEncryptionDisabled) {
-                await dispatch(
-                    setAddressFlags({
-                        address: forwarderAddress,
-                        encryptionDisabled: true,
-                        expectSignatureDisabled: addressFlags.isExpectSignatureDisabled,
-                    })
-                );
-            }
-
-            await silentApi(
-                setupForwarding({
-                    ...setupForwardingParams,
-                    Tree: getSieveTree({
-                        conditions,
-                        statement,
-                        email,
-                    }),
-                })
-            );
-        }
-
-        await extra.eventManager.call();
-    };
-};
 
 export const fixupPrimaryKeyV6 = ({
     // We take the addressID instead of the address itself since the latter is potentially
@@ -298,16 +151,21 @@ export const fixupPrimaryKeyV6 = ({
             throw new Error('Address deleted');
         }
 
-        const forwarderAddressKeys = await dispatch(addressKeysThunk({ addressID: forwarderAddressID }));
+        const [ktActivation, forwarderAddressKeys, user, userKeys] = await Promise.all([
+            dispatch(getKTActivation()),
+            dispatch(addressKeysThunk({ addressID: forwarderAddressID })),
+            dispatch(userThunk()),
+            dispatch(userKeysThunk()),
+        ]);
         await handleUnsetV6PrimaryKey({
             api: silentApi,
             ID: keyState.forwarderPrimaryKeysInfo.v6.ID,
             forwarderAddress,
             addressKeys: forwarderAddressKeys,
-            User: await dispatch(userThunk()),
-            userKeys: await dispatch(userKeysThunk()),
-            dispatch,
+            User: user,
+            userKeys,
             ktVerifier,
+            ktActivation,
         });
 
         // force re-fetch of addresses and address keys:
@@ -365,16 +223,21 @@ export const fixupUnsupportedPrimaryKeyV4 = ({
             config: extra.config,
         });
 
-        const forwarderAddressKeys = await dispatch(addressKeysThunk({ addressID: forwarderAddressID }));
+        const [forwarderAddressKeys, user, userKeys] = await Promise.all([
+            dispatch(addressKeysThunk({ addressID: forwarderAddressID })),
+            dispatch(userThunk()),
+            dispatch(userKeysThunk()),
+        ]);
+        const keyPassword = extra.authentication.getPassword();
         const newKey = await generateNewE2EEForwardingCompatibleAddressKey({
             api: silentApi,
             forwarderAddress,
             addresses,
             addressKeys: forwarderAddressKeys,
-            User: await dispatch(userThunk()),
-            userKeys: await dispatch(userKeysThunk()),
+            User: user,
+            userKeys,
             ktVerifier,
-            authentication: extra.authentication,
+            keyPassword,
         });
 
         // force re-fetch of addresses and address keys:
