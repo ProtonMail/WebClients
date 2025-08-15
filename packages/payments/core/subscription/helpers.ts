@@ -24,7 +24,7 @@ import {
     TRIAL_MAX_USERS,
 } from '../constants';
 import { isRegionalCurrency } from '../helpers';
-import type { Currency, FreeSubscription, MaxKeys, PlanIDs, Pricing } from '../interface';
+import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs, Pricing } from '../interface';
 import { getSupportedAddons, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from '../plan/addons';
 import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from '../plan/helpers';
 import type { Plan, PlansMap, SubscriptionPlan } from '../plan/interface';
@@ -902,7 +902,7 @@ const getPlanMaxAIs = (plan: Plan) => {
     return isScribeAddon(plan.Name) ? 1 : 0;
 };
 
-export const getMaxValue = (plan: Plan, key: MaxKeys): number => {
+export const getPlanFeatureLimit = (plan: Plan, key: FeatureLimitKey): number => {
     let result: number;
 
     if (key === 'MaxIPs') {
@@ -934,24 +934,14 @@ export function getPlansQuantity(planIDs: PlanIDs, plansMap: PlansMap): PlansQua
         .filter((elem) => elem !== undefined);
 }
 
-export function getPlansLimit(plans: PlansQuantity, maxKey: MaxKeys): number {
+export function getPlansLimit(plans: PlansQuantity, maxKey: FeatureLimitKey): number {
     return plans.reduce((acc, { plan, quantity }) => {
-        return acc + quantity * getMaxValue(plan, maxKey);
+        return acc + quantity * getPlanFeatureLimit(plan, maxKey);
     }, 0);
 }
 
-export function getAddonMultiplier(addonMaxKey: MaxKeys, addon: Plan): number {
-    let addonMultiplier: number;
-    if (addonMaxKey === 'MaxIPs') {
-        addonMultiplier = getPlanMaxIPs(addon);
-        if (addonMultiplier === 0) {
-            addonMultiplier = 1;
-        }
-    } else {
-        addonMultiplier = getMaxValue(addon, addonMaxKey);
-    }
-
-    return addonMultiplier;
+export function getAddonMultiplier(addonMaxKey: FeatureLimitKey, addon: Plan): number {
+    return Math.max(1, getPlanFeatureLimit(addon, addonMaxKey));
 }
 
 export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
@@ -1331,7 +1321,7 @@ export const shouldPassIsTrial = ({
         MaxIPs: TRIAL_MAX_DEDICATED_IPS,
         MaxAI: TRIAL_MAX_SCRIBE_SEATS,
         MaxLumo: TRIAL_MAX_LUMO_SEATS,
-    }) as [MaxKeys, number][];
+    }) as [FeatureLimitKey, number][];
 
     for (const [maxKey, limit] of limits) {
         const newLimit = getPlansLimit(newPlans, maxKey);
